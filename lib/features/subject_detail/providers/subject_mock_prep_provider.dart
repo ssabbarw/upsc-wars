@@ -3,13 +3,13 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/providers/catalog_providers.dart';
 import '../../../core/providers/user_database_provider.dart';
-import '../data/subject_topic_danger_last30.dart';
+import '../data/subject_topic_danger.dart';
 import '../domain/subject_mock_prep_insights.dart';
 
 const _minTopicConfidentForSafe = 3;
 const _maxList = 5;
 
-/// Mock-oriented topic lists: where confident wrongs cluster (30d), and where confident play is above your global rate.
+/// Mock-oriented topic lists: where confident wrongs cluster (lifetime), and where confident play is above your global rate.
 final subjectMockPrepInsightsProvider =
     FutureProvider.autoDispose.family<SubjectMockPrepInsights, String>(
   (ref, subject) async {
@@ -17,7 +17,7 @@ final subjectMockPrepInsightsProvider =
     final catalog = await ref.watch(topicTestTopicsProvider(subject).future);
     final byKey = {for (final t in catalog) t.topic: t.displayName};
 
-    final dangerByTopic = await fetchSubjectTopicDangerLast30(db, subject);
+    final dangerByTopic = await fetchSubjectTopicDanger(db, subject);
 
     final revise = dangerByTopic.entries
         .where((e) => e.value.sure + e.value.guess > 0)
@@ -116,7 +116,7 @@ final subjectMockPrepInsightsProvider =
       return a.displayName.toLowerCase().compareTo(b.displayName.toLowerCase());
     });
 
-    // If a topic is both a strong "revise" (30d confident wrongs) and "safe"
+    // If a topic is both a strong "revise" (lifetime confident wrongs) and "safe"
     // (above global), keep it in one list: compare all-time confident
     // wrongs vs confident corrects (very_sure + somewhat_sure, scored only).
     final reviseKeySet = {for (final r in revise) r.topicKey};
@@ -124,7 +124,7 @@ final subjectMockPrepInsightsProvider =
     for (final topicKey in reviseKeySet.intersection(safeKeySet)) {
       final stat = topicAllTime[topicKey];
       if (stat == null) {
-        // Topic has 30d wrongs; keep it on revise, drop from safe.
+        // Topic has confident wrongs; keep it on revise, drop from safe.
         for (var i = safeCandidates.length - 1; i >= 0; i--) {
           if (safeCandidates[i].topicKey == topicKey) {
             safeCandidates.removeAt(i);

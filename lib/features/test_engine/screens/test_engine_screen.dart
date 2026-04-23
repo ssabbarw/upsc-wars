@@ -170,7 +170,11 @@ class TestEngineScreen extends HookConsumerWidget {
               actionId: 'leave_after_dialog',
               actionKind: 'back',
             );
-            context.go('/');
+            if (context.canPop()) {
+              context.pop();
+            } else {
+              context.go('/');
+            }
           }
         }
       },
@@ -231,7 +235,11 @@ class _TestEngineAsyncBody extends HookConsumerWidget {
                       actionId: 'error_go_home',
                       actionKind: 'back',
                     );
-                    context.go('/');
+                    if (context.canPop()) {
+                      context.pop();
+                    } else {
+                      context.go('/');
+                    }
                   },
                   child: Text('Home', style: AppTextStyles.label()),
                 ),

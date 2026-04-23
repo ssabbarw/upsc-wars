@@ -35,7 +35,7 @@ void main() {
         );
   }
 
-  test('subjectInsightsProvider aggregates 30-day danger by subject and topics', () async {
+  test('subjectInsightsProvider aggregates lifetime danger by subject and topics', () async {
     await seedQuestion('qa', 'TopicAlpha');
     await seedQuestion('qb', 'TopicBeta');
     await seedQuestion('qc', 'TopicGamma');
@@ -98,10 +98,10 @@ void main() {
       subjectInsightsProvider('ancient_history').future,
     );
 
-    expect(insights.dangerZoneCountLast30Days, 3);
-    expect(insights.dangerZoneSureWrongCountLast30Days, 2);
-    expect(insights.dangerZoneEducatedGuessWrongCountLast30Days, 1);
-    expect(insights.dangerZoneMarksLast30, closeTo(1.98, 0.001));
+    expect(insights.dangerZoneWrongCount, 3);
+    expect(insights.dangerZoneSureWrongCount, 2);
+    expect(insights.dangerZoneEducatedGuessWrongCount, 1);
+    expect(insights.dangerZoneMarks, closeTo(1.98, 0.001));
 
     expect(insights.topicPercentiles, hasLength(2));
     final byTopic = {for (final t in insights.topicPercentiles) t.topic: t};
@@ -109,5 +109,54 @@ void main() {
     expect(byTopic['TopicBeta']!.dangerCount, 1);
     expect(byTopic['TopicAlpha']!.tier, RiskTier.high);
     expect(byTopic['TopicBeta']!.tier, RiskTier.medium);
+  });
+
+  test('subjectInsightsProvider counts danger attempts older than 30 days', () async {
+    await seedQuestion('q-old', 'TopicOld');
+
+    const sessionId = 's-old';
+    final oldAttempt = DateTime.now().subtract(const Duration(days: 100));
+
+    await db.into(db.sessions).insert(
+          SessionsCompanion.insert(
+            id: sessionId,
+            createdAt: oldAttempt,
+            completedAt: Value(oldAttempt),
+            subject: 'ancient_history',
+            mode: 'exam',
+            status: 'completed',
+            questionCount: 1,
+            isTimed: false,
+          ),
+        );
+
+    await db.into(db.sessionQuestions).insert(
+          SessionQuestionsCompanion.insert(
+            id: 'r-old',
+            sessionId: sessionId,
+            questionUuid: 'q-old',
+            position: 1,
+            selectedOption: const Value('b'),
+            isCorrect: const Value(false),
+            status: const Value('wrong'),
+            attemptedAt: Value(oldAttempt),
+            confidence: Value(AnswerConfidence.verySure),
+          ),
+        );
+
+    final container = ProviderContainer(
+      overrides: [
+        userDatabaseProvider.overrideWithValue(db),
+      ],
+    );
+    addTearDown(container.dispose);
+
+    final insights = await container.read(
+      subjectInsightsProvider('ancient_history').future,
+    );
+
+    expect(insights.dangerZoneWrongCount, 1);
+    expect(insights.dangerZoneSureWrongCount, 1);
+    expect(insights.topicPercentiles.single.topic, 'TopicOld');
   });
 }

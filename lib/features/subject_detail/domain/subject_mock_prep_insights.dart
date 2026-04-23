@@ -1,4 +1,4 @@
-/// One topic to highlight before mocks (confident wrongs, last 30 days).
+/// One topic to highlight before mocks (confident wrongs, lifetime).
 class ReviseBeforeMockRow {
   const ReviseBeforeMockRow({
     required this.topicKey,

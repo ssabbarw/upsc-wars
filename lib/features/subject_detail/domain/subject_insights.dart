@@ -38,27 +38,28 @@ class TopicPercentileRow {
   final RiskTier tier;
 }
 
-/// Subject-scoped Danger Zone + topic ranking (last 30 days).
+/// Subject-scoped Danger Zone + topic ranking (lifetime scored attempts).
 class SubjectInsights {
   const SubjectInsights({
-    required this.dangerZoneCountLast30Days,
-    required this.dangerZoneSureWrongCountLast30Days,
-    required this.dangerZoneEducatedGuessWrongCountLast30Days,
-    required this.dangerZoneMarksLast30,
+    required this.dangerZoneWrongCount,
+    required this.dangerZoneSureWrongCount,
+    required this.dangerZoneEducatedGuessWrongCount,
+    required this.dangerZoneMarks,
     required this.topicPercentiles,
   });
 
-  final int dangerZoneCountLast30Days;
+  /// Sure + educated-guess wrongs in the danger zone definition.
+  final int dangerZoneWrongCount;
   /// Wrong attempts where confidence was "Sure" (`very_sure` in the DB).
-  final int dangerZoneSureWrongCountLast30Days;
+  final int dangerZoneSureWrongCount;
   /// Wrong attempts where confidence was "Educated guess" (`somewhat_sure`).
-  final int dangerZoneEducatedGuessWrongCountLast30Days;
-  final double dangerZoneMarksLast30;
+  final int dangerZoneEducatedGuessWrongCount;
+  final double dangerZoneMarks;
   final List<TopicPercentileRow> topicPercentiles;
 
   bool get hasTopicData => topicPercentiles.isNotEmpty;
 
-  bool get isWellCalibratedThisMonth => dangerZoneCountLast30Days == 0;
+  bool get isWellCalibrated => dangerZoneWrongCount == 0;
 }
 
 /// Top ~20% of topics by danger count → high, next ~30% → medium, rest low.

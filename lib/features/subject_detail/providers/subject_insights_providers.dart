@@ -10,7 +10,6 @@ final subjectInsightsProvider =
     FutureProvider.autoDispose.family<SubjectInsights, String>(
   (ref, subject) async {
     final db = ref.watch(userDatabaseProvider);
-    final since = DateTime.now().subtract(const Duration(days: 30));
 
     final splitRow = await db
         .customSelect(
@@ -23,13 +22,9 @@ final subjectInsightsProvider =
           WHERE q.subject = ?
             AND a.is_correct = 0
             AND a.attempted_at IS NOT NULL
-            AND a.attempted_at >= ?
             AND a.confidence IN ('very_sure', 'somewhat_sure')
           ''',
-          variables: [
-            Variable.withString(subject),
-            Variable.withDateTime(since),
-          ],
+          variables: [Variable.withString(subject)],
           readsFrom: {db.sessionQuestions, db.questions},
         )
         .getSingle();
@@ -47,15 +42,11 @@ final subjectInsightsProvider =
           WHERE q.subject = ?
             AND a.is_correct = 0
             AND a.attempted_at IS NOT NULL
-            AND a.attempted_at >= ?
             AND a.confidence IN ('very_sure', 'somewhat_sure')
           GROUP BY q.topic
           ORDER BY danger_count DESC
           ''',
-          variables: [
-            Variable.withString(subject),
-            Variable.withDateTime(since),
-          ],
+          variables: [Variable.withString(subject)],
           readsFrom: {db.sessionQuestions, db.questions},
         )
         .get();
@@ -72,10 +63,10 @@ final subjectInsightsProvider =
     final tiered = topicRowsWithPercentileTiers(raw);
 
     return SubjectInsights(
-      dangerZoneCountLast30Days: dangerTotal,
-      dangerZoneSureWrongCountLast30Days: sureWrong,
-      dangerZoneEducatedGuessWrongCountLast30Days: guessWrong,
-      dangerZoneMarksLast30: marks,
+      dangerZoneWrongCount: dangerTotal,
+      dangerZoneSureWrongCount: sureWrong,
+      dangerZoneEducatedGuessWrongCount: guessWrong,
+      dangerZoneMarks: marks,
       topicPercentiles: tiered,
     );
   },

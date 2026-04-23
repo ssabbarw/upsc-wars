@@ -2,13 +2,12 @@ import 'package:drift/drift.dart';
 
 import '../../../core/database/user_db.dart';
 
-/// One row per question: wrong, in window, with the given confidence.
+/// One row per question: wrong, with the given confidence (lifetime).
 /// Ordered by most recent attempt.
 Future<List<String>> querySubjectDangerZoneReviseUuids(
   UserDatabase db, {
   required String subject,
   required String confidence,
-  required DateTime since,
 }) async {
   final rows = await db
       .customSelect(
@@ -19,14 +18,12 @@ Future<List<String>> querySubjectDangerZoneReviseUuids(
         WHERE q.subject = ?
           AND a.is_correct = 0
           AND a.attempted_at IS NOT NULL
-          AND a.attempted_at >= ?
           AND a.confidence = ?
         GROUP BY a.question_uuid
         ORDER BY MAX(a.attempted_at) DESC
         ''',
         variables: [
           Variable.withString(subject),
-          Variable.withDateTime(since),
           Variable.withString(confidence),
         ],
         readsFrom: {db.sessionQuestions, db.questions},
@@ -41,7 +38,6 @@ Future<List<String>> queryTopicDangerZoneReviseUuids(
   required String subject,
   required String topic,
   required String confidence,
-  required DateTime since,
 }) async {
   final rows = await db
       .customSelect(
@@ -53,7 +49,6 @@ Future<List<String>> queryTopicDangerZoneReviseUuids(
           AND q.topic = ?
           AND a.is_correct = 0
           AND a.attempted_at IS NOT NULL
-          AND a.attempted_at >= ?
           AND a.confidence = ?
         GROUP BY a.question_uuid
         ORDER BY MAX(a.attempted_at) DESC
@@ -61,7 +56,6 @@ Future<List<String>> queryTopicDangerZoneReviseUuids(
         variables: [
           Variable.withString(subject),
           Variable.withString(topic),
-          Variable.withDateTime(since),
           Variable.withString(confidence),
         ],
         readsFrom: {db.sessionQuestions, db.questions},

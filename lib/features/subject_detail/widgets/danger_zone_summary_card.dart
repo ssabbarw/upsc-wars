@@ -14,7 +14,7 @@ import '../../../core/theme/app_text_styles.dart';
 import '../domain/subject_insights.dart';
 import '../providers/subject_danger_zone_revise_uuids.dart';
 
-/// Danger Zone card: counts + Revise for Sure / Educated guess (last 30 days).
+/// Danger Zone card: counts + Revise for Sure / Educated guess (lifetime).
 ///
 /// [dangerZoneContextLabel] is shown as "Danger zone of **{label}**".
 /// When [topic] is set, revise lists and session are scoped to that topic.
@@ -42,10 +42,10 @@ class DangerZoneSummaryCard extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final count = insights.dangerZoneCountLast30Days;
-    final calm = insights.isWellCalibratedThisMonth;
-    final sureWrong = insights.dangerZoneSureWrongCountLast30Days;
-    final guessWrong = insights.dangerZoneEducatedGuessWrongCountLast30Days;
+    final count = insights.dangerZoneWrongCount;
+    final calm = insights.isWellCalibrated;
+    final sureWrong = insights.dangerZoneSureWrongCount;
+    final guessWrong = insights.dangerZoneEducatedGuessWrongCount;
     const markWeight = 0.66;
     final sureMarksStr = (sureWrong * markWeight).toStringAsFixed(2);
     final guessMarksStr = (guessWrong * markWeight).toStringAsFixed(2);
@@ -69,7 +69,6 @@ class DangerZoneSummaryCard extends HookConsumerWidget {
       revBusy.value = key;
       try {
         final db = ref.read(userDatabaseProvider);
-        final since = DateTime.now().subtract(const Duration(days: 30));
         final scopedTopic = topic;
         final uuids = scopedTopic != null
             ? await queryTopicDangerZoneReviseUuids(
@@ -77,13 +76,11 @@ class DangerZoneSummaryCard extends HookConsumerWidget {
                 subject: subject,
                 topic: scopedTopic,
                 confidence: confidence,
-                since: since,
               )
             : await querySubjectDangerZoneReviseUuids(
                 db,
                 subject: subject,
                 confidence: confidence,
-                since: since,
               );
         if (!context.mounted) return;
         if (uuids.isEmpty) {
@@ -157,7 +154,7 @@ class DangerZoneSummaryCard extends HookConsumerWidget {
                   ),
                   const SizedBox(height: AppSpacing.xs),
                   Text(
-                    'Wrong answers with Sure or Educated-guess (last 30 days)',
+                    'Wrong answers with Sure or Educated-guess (all-time)',
                     style: AppTextStyles.caption().copyWith(
                       color: scheme.onSurfaceVariant,
                     ),
@@ -165,14 +162,14 @@ class DangerZoneSummaryCard extends HookConsumerWidget {
                   const SizedBox(height: AppSpacing.md),
                   if (calm)
                     Text(
-                      'No Sure or Educated-guess wrong answers in the last 30 days.',
+                      'No Sure or Educated-guess wrong answers yet.',
                       style: AppTextStyles.bodyMd().copyWith(
                         color: scheme.onSurface,
                       ),
                     )
                   else ...[
                     Text(
-                      'Total: $count wrong · about ${insights.dangerZoneMarksLast30.toStringAsFixed(2)} marks (0.66 each if counted)',
+                      'Total: $count wrong · about ${insights.dangerZoneMarks.toStringAsFixed(2)} marks (0.66 each if counted)',
                       style: AppTextStyles.bodySm().copyWith(
                         color: scheme.onSurface,
                         height: 1.35,

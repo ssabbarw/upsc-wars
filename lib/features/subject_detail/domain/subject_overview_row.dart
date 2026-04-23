@@ -8,7 +8,7 @@ class SubjectOverviewRow {
     required this.subject,
     required this.displayName,
     required this.icon,
-    required this.wrongCountLast30Days,
+    required this.wrongAnswerCount,
     required this.totalAttempted,
     required this.totalCorrect,
   });
@@ -17,8 +17,8 @@ class SubjectOverviewRow {
   final String displayName;
   final IconData icon;
 
-  /// Wrong answers in the last 30 days.
-  final int wrongCountLast30Days;
+  /// Wrong answers (all-time, scored attempts).
+  final int wrongAnswerCount;
 
   /// Total answered questions (all-time, correct + wrong only).
   final int totalAttempted;
@@ -32,5 +32,5 @@ class SubjectOverviewRow {
   double? get accuracyPercent =>
       totalAttempted > 0 ? (totalCorrect / totalAttempted) * 100 : null;
 
-  RiskTier get riskTier => riskTierForWrongCount(wrongCountLast30Days);
+  RiskTier get riskTier => riskTierForWrongCount(wrongAnswerCount);
 }

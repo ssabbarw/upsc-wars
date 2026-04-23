@@ -9,7 +9,6 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
-import '../../../shared/widgets/accuracy_percentage_text.dart';
 import '../../../shared/widgets/contact_us_entry.dart';
 import '../../../shared/widgets/test_config_bottom_sheet.dart';
 import '../domain/subject_mock_prep_insights.dart';
@@ -77,9 +76,8 @@ class SubjectDetailScreen extends ConsumerWidget {
                   AppSpacing.lg,
                   0,
                 ),
-                child: _InsightsSection(
+                child: _HistoryHubSection(
                   subject: subject,
-                  displayName: displayName,
                   borderColor: borderColor,
                 ),
               ),
@@ -92,8 +90,9 @@ class SubjectDetailScreen extends ConsumerWidget {
                   AppSpacing.lg,
                   0,
                 ),
-                child: _HistoryHubSection(
+                child: _InsightsSection(
                   subject: subject,
+                  displayName: displayName,
                   borderColor: borderColor,
                 ),
               ),
@@ -722,14 +721,7 @@ class _InsightsSection extends ConsumerWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const _ScreenSectionHeader(
-          title: 'INSIGHTS',
-          subtitle:
-              'Last 30 days, danger zone, and mock prep. A topic is never '
-              'in both mock cards: all-time confident wrongs are compared to '
-              'confident rights; if equal, we keep it under Revise.',
-        ),
-        const SizedBox(height: AppSpacing.sm),
+        const _ScreenSectionHeader(title: 'INSIGHTS'),
         insightsAsync.when(
           loading: () => _InsightsSkeleton(borderColor: borderColor),
           error: (e, _) => _InsightsLoadError(
@@ -859,74 +851,80 @@ class _AdviceForSubjectMockPrepGroupState
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
-    return _SubjectPanel(
-      borderColor: widget.borderColor,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Material(
-            color: Colors.transparent,
-            child: InkWell(
-              onTap: () {
-                setState(() => _expanded = !_expanded);
-                if (_expanded) {
-                  _scheduleNudgeForCurrentTab();
-                }
-              },
-              borderRadius: BorderRadius.circular(AppRadius.md),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: AppSpacing.xs),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Expanded(
-                      child: Text(
-                        'Advice for ${widget.displayName}',
-                        style: AppTextStyles.h2().copyWith(
-                          color: scheme.onSurface,
-                        ),
-                      ),
-                    ),
-                    Icon(
-                      _expanded ? Icons.expand_less : Icons.expand_more,
-                      color: scheme.onSurfaceVariant,
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-          if (_expanded) ...[
-            const SizedBox(height: AppSpacing.md),
-            TabBar(
-              controller: _tabController,
-              tabs: const [
-                Tab(text: 'Revise'),
-                Tab(text: 'Safe areas'),
-              ],
-            ),
-            SizedBox(
-              height: _tabViewHeight(context),
-              child: TabBarView(
-                controller: _tabController,
-                physics: const ClampingScrollPhysics(),
+    final adviceTitle = 'ADVICE FOR ${widget.displayName.toUpperCase()}';
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        SizedBox(height: AppSpacing.xxl),
+        Material(
+          color: Colors.transparent,
+          child: InkWell(
+            onTap: () {
+              setState(() => _expanded = !_expanded);
+              if (_expanded) {
+                _scheduleNudgeForCurrentTab();
+              }
+            },
+            borderRadius: BorderRadius.circular(AppRadius.md),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: AppSpacing.xs),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  _ReviseBeforeNextMockCard(
-                    mock: widget.mock,
-                    borderColor: widget.borderColor,
-                    scrollController: _reviseScrollController,
+                  Expanded(
+                    child: _ScreenSectionHeader(
+                      title: adviceTitle,
+                      subtitle:
+                          'Mock prep: where to revise vs where confident play is strong.',
+                    ),
                   ),
-                  _MockSafeAreasCard(
-                    mock: widget.mock,
-                    borderColor: widget.borderColor,
-                    scrollController: _safeScrollController,
+                  Icon(
+                    _expanded ? Icons.expand_less : Icons.expand_more,
+                    color: scheme.onSurfaceVariant,
                   ),
                 ],
               ),
             ),
-          ],
+          ),
+        ),
+        if (_expanded) ...[
+          const SizedBox(height: AppSpacing.sm),
+          _SubjectPanel(
+            borderColor: widget.borderColor,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                TabBar(
+                  controller: _tabController,
+                  tabs: const [
+                    Tab(text: 'Revise'),
+                    Tab(text: 'Safe areas'),
+                  ],
+                ),
+                SizedBox(
+                  height: _tabViewHeight(context),
+                  child: TabBarView(
+                    controller: _tabController,
+                    physics: const ClampingScrollPhysics(),
+                    children: [
+                      _ReviseBeforeNextMockCard(
+                        mock: widget.mock,
+                        borderColor: widget.borderColor,
+                        scrollController: _reviseScrollController,
+                      ),
+                      _MockSafeAreasCard(
+                        mock: widget.mock,
+                        borderColor: widget.borderColor,
+                        scrollController: _safeScrollController,
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
         ],
-      ),
+      ],
     );
   }
 }
@@ -1058,10 +1056,10 @@ class _ReviseBeforeNextMockCard extends StatelessWidget {
               icon: Icons.fact_check_outlined,
               title: 'No topics to list',
               body:
-                  'In the last 30 days, no topic in this subject has enough '
-                  'wrong answers marked “Very sure” or “Somewhat sure” to '
-                  'show here. As that pattern shows up, you will see it broken '
-                  'down by type of confidence.',
+                  'No topic in this subject has enough wrong answers marked '
+                  '“Very sure” or “Somewhat sure” to show here yet. As that '
+                  'pattern shows up, you will see it broken down by type of '
+                  'confidence.',
               borderColor: borderColor,
               accentTint: accent,
             )
@@ -1272,33 +1270,39 @@ class _MockPrepInsightsSkeleton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
-    return _SubjectPanel(
-      borderColor: borderColor,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Expanded(
-                child: Text(
-                  'Advice for $displayName',
-                  style: AppTextStyles.h2().copyWith(color: scheme.onSurface),
-                ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Expanded(
+              child: _ScreenSectionHeader(
+                title: 'ADVICE FOR ${displayName.toUpperCase()}',
+                subtitle:
+                    'Mock prep: where to revise vs where confident play is strong.',
               ),
-              Icon(Icons.expand_more, color: scheme.onSurfaceVariant),
-            ],
+            ),
+            Icon(Icons.expand_more, color: scheme.onSurfaceVariant),
+          ],
+        ),
+        const SizedBox(height: AppSpacing.sm),
+        Container(
+          padding: const EdgeInsets.all(AppSpacing.lg),
+          decoration: BoxDecoration(
+            color: scheme.surface,
+            borderRadius: BorderRadius.circular(AppRadius.lg),
+            border: Border.all(color: borderColor, width: 0.5),
           ),
-          const SizedBox(height: AppSpacing.md),
-          ClipRRect(
+          child: ClipRRect(
             borderRadius: BorderRadius.circular(2),
             child: LinearProgressIndicator(
               minHeight: 3,
               backgroundColor: scheme.surfaceContainerHighest,
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

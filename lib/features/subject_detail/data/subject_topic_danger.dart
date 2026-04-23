@@ -2,13 +2,12 @@ import 'package:drift/drift.dart';
 
 import '../../../core/database/user_db.dart';
 
-/// Per-topic counts of wrong attempts with Sure / Educated-guess (last 30 days).
+/// Per-topic counts of wrong attempts with Sure / Educated-guess (lifetime).
 /// Keys are [Question.topic] strings.
-Future<Map<String, ({int sure, int guess})>> fetchSubjectTopicDangerLast30(
+Future<Map<String, ({int sure, int guess})>> fetchSubjectTopicDanger(
   UserDatabase db,
   String subject,
 ) async {
-  final since = DateTime.now().subtract(const Duration(days: 30));
   final dangerRows = await db
       .customSelect(
         '''
@@ -21,14 +20,10 @@ Future<Map<String, ({int sure, int guess})>> fetchSubjectTopicDangerLast30(
         WHERE q.subject = ?
           AND a.is_correct = 0
           AND a.attempted_at IS NOT NULL
-          AND a.attempted_at >= ?
           AND a.confidence IN ('very_sure', 'somewhat_sure')
         GROUP BY q.topic
         ''',
-        variables: [
-          Variable.withString(subject),
-          Variable.withDateTime(since),
-        ],
+        variables: [Variable.withString(subject)],
         readsFrom: {db.sessionQuestions, db.questions},
       )
       .get();

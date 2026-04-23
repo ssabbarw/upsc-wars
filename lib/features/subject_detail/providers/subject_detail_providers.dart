@@ -5,7 +5,7 @@ import '../../../core/domain/entities/subject_info.dart';
 import '../../../core/domain/entities/topic_info.dart';
 import '../../../core/providers/catalog_providers.dart';
 import '../../../core/providers/user_database_provider.dart';
-import '../data/subject_topic_danger_last30.dart';
+import '../data/subject_topic_danger.dart';
 
 /// SubjectInfo for a single subject, derived from the cached subject list.
 final subjectInfoProvider =
@@ -24,7 +24,7 @@ final subjectTopicsProvider =
     FutureProvider.autoDispose.family<List<TopicInfo>, String>((ref, subject) async {
   final rawTopics = await ref.watch(topicTestTopicsProvider(subject).future);
   final db = ref.watch(userDatabaseProvider);
-  final dangerByTopic = await fetchSubjectTopicDangerLast30(db, subject);
+  final dangerByTopic = await fetchSubjectTopicDanger(db, subject);
 
   final statsRows = await db.userTopicStatsDao.fetchBySubject(subject);
   final statsByTopic = {for (final row in statsRows) row.topic: row};
@@ -54,8 +54,8 @@ final subjectTopicsProvider =
         attemptCount: attemptCount,
         accuracyPercent: accuracyPercent,
       ),
-      dangerSureWrongLast30: d?.sure ?? 0,
-      dangerEducatedGuessWrongLast30: d?.guess ?? 0,
+      dangerSureWrong: d?.sure ?? 0,
+      dangerEducatedGuessWrong: d?.guess ?? 0,
     );
   }).toList();
 

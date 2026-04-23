@@ -175,8 +175,8 @@ List<TopicInfo> _sortTopics(List<TopicInfo> copy, TopicListSortMode mode) {
       });
     case TopicListSortMode.dangerZone:
       copy.sort((a, b) {
-        final da = a.dangerSureWrongLast30 + a.dangerEducatedGuessWrongLast30;
-        final db = b.dangerSureWrongLast30 + b.dangerEducatedGuessWrongLast30;
+        final da = a.dangerSureWrong + a.dangerEducatedGuessWrong;
+        final db = b.dangerSureWrong + b.dangerEducatedGuessWrong;
         if (db != da) return db.compareTo(da);
         return a.displayName
             .toLowerCase()
@@ -377,8 +377,8 @@ class _TopicCard extends StatelessWidget {
                             _TopicLabeledLine(
                               label: 'Danger zone',
                               child: Text(
-                                'Sure ${topic.dangerSureWrongLast30} · '
-                                'Educated guess ${topic.dangerEducatedGuessWrongLast30} (30 days)',
+                                'Sure ${topic.dangerSureWrong} · '
+                                'Educated guess ${topic.dangerEducatedGuessWrong} (all-time)',
                                 style: AppTextStyles.caption().copyWith(
                                   color: scheme.onSurfaceVariant,
                                   height: 1.3,

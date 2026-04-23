@@ -6,7 +6,7 @@ import '../../../core/domain/accuracy_rules.dart';
 import '../../../core/domain/entities/topic_info.dart';
 import '../../../core/providers/catalog_providers.dart';
 import '../../../core/providers/user_database_provider.dart';
-import '../../subject_detail/data/subject_topic_danger_last30.dart';
+import '../../subject_detail/data/subject_topic_danger.dart';
 import '../domain/topic_list_filter.dart';
 
 part 'topic_test_ui_providers.g.dart';
@@ -34,7 +34,7 @@ Future<List<TopicInfo>> topicTestDisplayedTopics(Ref ref) async {
   final raw = await ref.watch(topicTestTopicsProvider(subject).future);
   final filtered = TopicListFilter.filter(raw, query);
   final db = ref.watch(userDatabaseProvider);
-  final dangerByTopic = await fetchSubjectTopicDangerLast30(db, subject);
+  final dangerByTopic = await fetchSubjectTopicDanger(db, subject);
   final statsRows = await db.userTopicStatsDao.fetchBySubject(subject);
   final statsByTopic = {for (final row in statsRows) row.topic: row};
 
@@ -65,8 +65,8 @@ Future<List<TopicInfo>> topicTestDisplayedTopics(Ref ref) async {
             attemptCount: attemptCount,
             accuracyPercent: accuracyPercent,
           ),
-          dangerSureWrongLast30: d?.sure ?? 0,
-          dangerEducatedGuessWrongLast30: d?.guess ?? 0,
+          dangerSureWrong: d?.sure ?? 0,
+          dangerEducatedGuessWrong: d?.guess ?? 0,
         );
       })
       .toList();

@@ -1,4 +1,3 @@
-import 'package:drift/drift.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/constants/subject_constants.dart';
@@ -17,9 +16,8 @@ enum SubjectSortMode { mistakes, accuracy, alphabetical }
 final allSubjectsOverviewProvider =
     FutureProvider.autoDispose<List<SubjectOverviewRow>>((ref) async {
   final db = ref.watch(userDatabaseProvider);
-  final since = DateTime.now().subtract(const Duration(days: 30));
 
-  // ── 1. Wrong count per subject, last 30 days ──────────────────────────────
+  // ── 1. Wrong count per subject (all-time) ─────────────────────────────────
   final wrongRows = await db
       .customSelect(
         '''
@@ -28,10 +26,9 @@ final allSubjectsOverviewProvider =
         INNER JOIN questions q ON q.uuid = a.question_uuid
         WHERE a.is_correct = 0
           AND a.attempted_at IS NOT NULL
-          AND a.attempted_at >= ?
         GROUP BY q.subject
         ''',
-        variables: [Variable.withDateTime(since)],
+        variables: [],
         readsFrom: {db.sessionQuestions, db.questions},
       )
       .get();
@@ -74,7 +71,7 @@ final allSubjectsOverviewProvider =
       subject: def.slug,
       displayName: def.displayName,
       icon: def.materialIcon,
-      wrongCountLast30Days: wrongBySubject[def.slug] ?? 0,
+      wrongAnswerCount: wrongBySubject[def.slug] ?? 0,
       totalAttempted: totalBySubject[def.slug] ?? 0,
       totalCorrect: correctBySubject[def.slug] ?? 0,
     );

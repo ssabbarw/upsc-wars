@@ -42,7 +42,7 @@ class ProgressScreen extends HookConsumerWidget {
             final sorted = _sortedRows(rows, sortMode.value);
             final totalWrong = rows.fold(
               0,
-              (sum, r) => sum + r.wrongCountLast30Days,
+              (sum, r) => sum + r.wrongAnswerCount,
             );
             final attemptedCount = rows.where((r) => r.hasAttempts).length;
 
@@ -113,7 +113,7 @@ class ProgressScreen extends HookConsumerWidget {
           if (!a.hasAttempts && !b.hasAttempts) return 0;
           if (!a.hasAttempts) return 1;
           if (!b.hasAttempts) return -1;
-          final byCounts = b.wrongCountLast30Days.compareTo(a.wrongCountLast30Days);
+          final byCounts = b.wrongAnswerCount.compareTo(a.wrongAnswerCount);
           if (byCounts != 0) return byCounts;
           return b.totalAttempted.compareTo(a.totalAttempted);
         });
@@ -209,8 +209,8 @@ class _Header extends StatelessWidget {
                         ),
                         TextSpan(
                           text: totalWrong == 1
-                              ? 'mistake this month · '
-                              : 'mistakes this month · ',
+                              ? 'wrong answer (all-time) · '
+                              : 'wrong answers (all-time) · ',
                         ),
                         TextSpan(
                           text: '$attemptedCount/8',
@@ -372,7 +372,7 @@ class _SubjectRow extends ConsumerWidget {
                   _RiskBadge(row: row, isDark: isDark),
                   const SizedBox(height: 4),
                   Text(
-                    '${row.wrongCountLast30Days} this month',
+                    '${row.wrongAnswerCount} wrong (all-time)',
                     style: AppTextStyles.bodySm().copyWith(
                       color: scheme.onSurfaceVariant,
                       fontSize: 11,

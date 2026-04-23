@@ -4,12 +4,11 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../../core/providers/user_database_provider.dart';
 import '../domain/subject_insights.dart';
 
-/// Danger Zone counts for one catalog topic (last 30 days, same window as [subjectInsightsProvider]).
+/// Danger Zone counts for one catalog topic (lifetime, same window as [subjectInsightsProvider]).
 final topicInsightsProvider =
     FutureProvider.autoDispose.family<SubjectInsights, ({String subject, String topic})>(
   (ref, arg) async {
     final db = ref.watch(userDatabaseProvider);
-    final since = DateTime.now().subtract(const Duration(days: 30));
 
     final splitRow = await db
         .customSelect(
@@ -23,13 +22,11 @@ final topicInsightsProvider =
             AND q.topic = ?
             AND a.is_correct = 0
             AND a.attempted_at IS NOT NULL
-            AND a.attempted_at >= ?
             AND a.confidence IN ('very_sure', 'somewhat_sure')
           ''',
           variables: [
             Variable.withString(arg.subject),
             Variable.withString(arg.topic),
-            Variable.withDateTime(since),
           ],
           readsFrom: {db.sessionQuestions, db.questions},
         )
@@ -40,10 +37,10 @@ final topicInsightsProvider =
     final marks = dangerTotal * 0.66;
 
     return SubjectInsights(
-      dangerZoneCountLast30Days: dangerTotal,
-      dangerZoneSureWrongCountLast30Days: sureWrong,
-      dangerZoneEducatedGuessWrongCountLast30Days: guessWrong,
-      dangerZoneMarksLast30: marks,
+      dangerZoneWrongCount: dangerTotal,
+      dangerZoneSureWrongCount: sureWrong,
+      dangerZoneEducatedGuessWrongCount: guessWrong,
+      dangerZoneMarks: marks,
       topicPercentiles: const [],
     );
   },

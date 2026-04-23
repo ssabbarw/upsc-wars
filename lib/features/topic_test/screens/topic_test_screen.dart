@@ -348,12 +348,12 @@ class _TopicRow extends HookConsumerWidget {
                                     .copyWith(color: scheme.onSurfaceVariant),
                               ),
                             ],
-                            if (topic.dangerSureWrongLast30 > 0 ||
-                                topic.dangerEducatedGuessWrongLast30 > 0) ...[
+                            if (topic.dangerSureWrong > 0 ||
+                                topic.dangerEducatedGuessWrong > 0) ...[
                               const SizedBox(height: AppSpacing.xs),
                               Text(
-                                'Sure wrong: ${topic.dangerSureWrongLast30} · '
-                                'Educated guess wrong: ${topic.dangerEducatedGuessWrongLast30} (30 days)',
+                                'Sure wrong: ${topic.dangerSureWrong} · '
+                                'Educated guess wrong: ${topic.dangerEducatedGuessWrong} (all-time)',
                                 style: AppTextStyles.caption().copyWith(
                                   color: scheme.onSurfaceVariant,
                                   height: 1.3,
