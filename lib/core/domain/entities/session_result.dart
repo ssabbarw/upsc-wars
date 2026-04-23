@@ -76,4 +76,9 @@ class SessionResult {
 
   /// When set (e.g. `mcq_battle`), identifies the session's originating feature.
   final String? analyticsFeatureKey;
+
+  /// At least one scored question was marked Sure or Educated guess; needed to
+  /// interpret Danger Zone (confident wrongs) vs only pure guess / unset.
+  bool get hasSureOrEducatedGuessMarks =>
+      confidenceSureTotal > 0 || confidenceIntelligentTotal > 0;
 }

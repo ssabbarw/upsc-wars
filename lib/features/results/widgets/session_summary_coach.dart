@@ -553,6 +553,9 @@ class _DangerZoneCard extends StatelessWidget {
     final n = result.dangerZoneWrongCount;
     final marks = result.dangerZoneMarksEstimate;
     if (n <= 0) {
+      final attempted = result.correct + result.wrong;
+      final missingConfidenceBaseline =
+          attempted > 0 && !result.hasSureOrEducatedGuessMarks;
       return _CoachSurfaceCard(
         scheme: scheme,
         isDark: isDark,
@@ -562,15 +565,25 @@ class _DangerZoneCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Icon(
-                Icons.check_circle_outline,
-                color: AppColors.correct,
+                missingConfidenceBaseline
+                    ? Icons.info_outline
+                    : Icons.check_circle_outline,
+                color: missingConfidenceBaseline
+                    ? scheme.primary
+                    : AppColors.correct,
                 size: 28,
               ),
               const SizedBox(width: 12),
               Expanded(
                 child: Text(
-                  'No Danger Zone questions! When you were confident, you stayed accurate.',
-                  style: AppTextStyles.bodyMd().copyWith(
+                  missingConfidenceBaseline
+                      ? 'Danger Zone needs Sure or Educated guess. '
+                          'None marked—try next time.'
+                      : 'No Danger Zone questions! When you were confident, you stayed accurate.',
+                  style: (missingConfidenceBaseline
+                          ? AppTextStyles.bodySm()
+                          : AppTextStyles.bodyMd())
+                      .copyWith(
                     color: scheme.onSurface,
                     height: 1.35,
                   ),

@@ -133,6 +133,7 @@ void main() {
     expect(r.confidenceIntelligentCorrect, 0);
     expect(r.confidencePureTotal, 1);
     expect(r.confidencePureCorrect, 0);
+    expect(r.hasSureOrEducatedGuessMarks, isTrue);
   });
 
   test('getSessionResult danger zone is zero when no confident wrongs', () async {
@@ -159,5 +160,6 @@ void main() {
 
     expect(r.dangerZoneWrongCount, 0);
     expect(r.dangerZoneMarksEstimate, 0.0);
+    expect(r.hasSureOrEducatedGuessMarks, isFalse);
   });
 }
