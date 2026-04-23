@@ -18,6 +18,7 @@ import '../../community/open_challenge/open_challenge_exam_registry.dart';
 import '../../community/open_challenge/open_challenge_post_results_submit.dart';
 import '../../community/widgets/open_challenge_post_from_results_card.dart';
 import '../../community/widgets/open_challenge_results_actions.dart';
+import '../widgets/deferred_push_permission_results_hook.dart';
 import '../widgets/session_summary_coach.dart';
 
 class ResultsScreen extends ConsumerWidget {
@@ -71,116 +72,134 @@ class ResultsScreen extends ConsumerWidget {
               ),
             ),
             data: (r) {
-              final ocCtx =
-                  ref.read(openChallengeExamRegistryProvider).peek(sessionId);
+              final ocCtx = ref
+                  .read(openChallengeExamRegistryProvider)
+                  .peek(sessionId);
               final isAcceptOpenChallenge =
                   r.analyticsFeatureKey == OpenChallengeAnalytics.accept &&
-                      ocCtx?.kind == OpenChallengeExamKind.accept;
+                  ocCtx?.kind == OpenChallengeExamKind.accept;
 
               if (isAcceptOpenChallenge) {
-                return OpenChallengeAcceptResultsShell(
-                  sessionId: sessionId,
-                  result: r,
+                return Stack(
+                  children: [
+                    Positioned.fill(
+                      child: OpenChallengeAcceptResultsShell(
+                        sessionId: sessionId,
+                        result: r,
+                      ),
+                    ),
+                    const DeferredPushPermissionResultsHook(),
+                  ],
                 );
               }
 
               final displaySubject = displayNameForSessionSubject(r.subject);
 
-              return Column(
+              return Stack(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(
-                      AppSpacing.xs,
-                      AppSpacing.sm,
-                      AppSpacing.lg,
-                      AppSpacing.sm,
-                    ),
-                    child: Row(
+                  Positioned.fill(
+                    child: Column(
                       children: [
-                        IconButton(
-                          style: IconButton.styleFrom(
-                            foregroundColor: scheme.onSurface,
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(
+                            AppSpacing.xs,
+                            AppSpacing.sm,
+                            AppSpacing.lg,
+                            AppSpacing.sm,
                           ),
-                          onPressed: () => context.canPop()
-                              ? context.pop()
-                              : context.go('/'),
-                          icon: const Icon(Icons.arrow_back_ios_new_rounded),
-                        ),
-                        IconButton(
-                          tooltip: 'Share questions',
-                          style: IconButton.styleFrom(
-                            foregroundColor: scheme.onSurface,
-                          ),
-                          onPressed: () => unawaited(
-                            shareSessionQuestionsLink(
-                              ref: ref,
-                              sessionId: sessionId,
-                            ),
-                          ),
-                          icon: const Icon(Icons.ios_share_rounded),
-                        ),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                          child: Row(
                             children: [
-                              Text(
-                                'Session summary',
-                                style: AppTextStyles.h2().copyWith(
-                                  color: scheme.onSurface,
-                                  letterSpacing: -0.5,
+                              IconButton(
+                                style: IconButton.styleFrom(
+                                  foregroundColor: scheme.onSurface,
+                                ),
+                                onPressed: () => context.canPop()
+                                    ? context.pop()
+                                    : context.go('/'),
+                                icon: const Icon(
+                                  Icons.arrow_back_ios_new_rounded,
                                 ),
                               ),
-                              Text(
-                                displaySubject,
-                                style: AppTextStyles.bodySm().copyWith(
-                                  color: scheme.onSurfaceVariant,
+                              IconButton(
+                                tooltip: 'Share questions',
+                                style: IconButton.styleFrom(
+                                  foregroundColor: scheme.onSurface,
                                 ),
-                                maxLines: 1,
-                                overflow: TextOverflow.ellipsis,
+                                onPressed: () => unawaited(
+                                  shareSessionQuestionsLink(
+                                    ref: ref,
+                                    sessionId: sessionId,
+                                  ),
+                                ),
+                                icon: const Icon(Icons.ios_share_rounded),
+                              ),
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'Session summary',
+                                      style: AppTextStyles.h2().copyWith(
+                                        color: scheme.onSurface,
+                                        letterSpacing: -0.5,
+                                      ),
+                                    ),
+                                    Text(
+                                      displaySubject,
+                                      style: AppTextStyles.bodySm().copyWith(
+                                        color: scheme.onSurfaceVariant,
+                                      ),
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                  ],
+                                ),
                               ),
                             ],
+                          ),
+                        ),
+                        Expanded(
+                          child: Center(
+                            child: ConstrainedBox(
+                              constraints: const BoxConstraints(maxWidth: 700),
+                              child: ListView(
+                                physics: const BouncingScrollPhysics(),
+                                padding: const EdgeInsets.fromLTRB(
+                                  AppSpacing.lg,
+                                  0,
+                                  AppSpacing.lg,
+                                  AppSpacing.xxl,
+                                ),
+                                children: [
+                                  if (r.analyticsFeatureKey ==
+                                      'mcq_battle') ...[
+                                    BattleLiveScoreboard(sessionId: sessionId),
+                                    const SizedBox(height: AppSpacing.md),
+                                  ],
+                                  OpenChallengeResultsActions(
+                                    sessionId: sessionId,
+                                    result: r,
+                                  ),
+                                  OpenChallengePostFromResultsCard(
+                                    sessionId: sessionId,
+                                    result: r,
+                                  ),
+                                  SessionSummaryCoachContent(
+                                    sessionId: sessionId,
+                                    result: r,
+                                    displaySubjectName: displaySubject,
+                                  ),
+                                  const SizedBox(height: AppSpacing.lg),
+                                  const Center(child: ContactUsTextButton()),
+                                ],
+                              ),
+                            ),
                           ),
                         ),
                       ],
                     ),
                   ),
-                  Expanded(
-                    child: Center(
-                      child: ConstrainedBox(
-                        constraints: const BoxConstraints(maxWidth: 700),
-                        child: ListView(
-                          physics: const BouncingScrollPhysics(),
-                          padding: const EdgeInsets.fromLTRB(
-                            AppSpacing.lg,
-                            0,
-                            AppSpacing.lg,
-                            AppSpacing.xxl,
-                          ),
-                          children: [
-                            if (r.analyticsFeatureKey == 'mcq_battle') ...[
-                              BattleLiveScoreboard(sessionId: sessionId),
-                              const SizedBox(height: AppSpacing.md),
-                            ],
-                            OpenChallengeResultsActions(
-                              sessionId: sessionId,
-                              result: r,
-                            ),
-                            OpenChallengePostFromResultsCard(
-                              sessionId: sessionId,
-                              result: r,
-                            ),
-                            SessionSummaryCoachContent(
-                              sessionId: sessionId,
-                              result: r,
-                              displaySubjectName: displaySubject,
-                            ),
-                            const SizedBox(height: AppSpacing.lg),
-                            const Center(child: ContactUsTextButton()),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
+                  const DeferredPushPermissionResultsHook(),
                 ],
               );
             },

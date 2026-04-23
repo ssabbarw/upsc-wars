@@ -39,11 +39,6 @@ class BattleMessagingService {
         });
       };
       await AppLocalNotificationsService.ensureInitialized();
-      await messaging.requestPermission(
-        alert: true,
-        badge: true,
-        sound: true,
-      );
     }
 
     FcmTokenSyncService.ensureTokenRefreshSubscription();
@@ -53,8 +48,8 @@ class BattleMessagingService {
 
     FirebaseMessaging.onMessageOpenedApp.listen(_handleDataMessage);
 
-    final initial = _pendingOpenedNotification ??
-        await messaging.getInitialMessage();
+    final initial =
+        _pendingOpenedNotification ?? await messaging.getInitialMessage();
     _pendingOpenedNotification = null;
     if (initial != null) {
       _scheduleNavigateFromOpenedNotification(router, initial);
@@ -65,20 +60,19 @@ class BattleMessagingService {
     final n = message.notification;
     final title = n?.title?.trim();
     final bodyRaw = n?.body?.trim();
-    final resolvedTitle =
-        (title != null && title.isNotEmpty) ? title : 'Message';
-    final resolvedBody =
-        (bodyRaw != null && bodyRaw.isNotEmpty)
-            ? bodyRaw
-            : (message.data.isEmpty ? 'New notification' : message.data.toString());
+    final resolvedTitle = (title != null && title.isNotEmpty)
+        ? title
+        : 'Message';
+    final resolvedBody = (bodyRaw != null && bodyRaw.isNotEmpty)
+        ? bodyRaw
+        : (message.data.isEmpty ? 'New notification' : message.data.toString());
 
     final rawSessionId = message.data['sessionId'];
-    final sessionId =
-        rawSessionId == null
-            ? null
-            : rawSessionId.toString().trim().isEmpty
-            ? null
-            : rawSessionId.toString().trim();
+    final sessionId = rawSessionId == null
+        ? null
+        : rawSessionId.toString().trim().isEmpty
+        ? null
+        : rawSessionId.toString().trim();
     final kind = message.data['kind']?.toString().trim().toLowerCase();
     final isSelfTest = kind == 'self_test';
     final isBattleJoinInvite =
@@ -93,10 +87,9 @@ class BattleMessagingService {
       unawaited(
         AppLocalNotificationsService.showForegroundBattleInvite(
           title: resolvedTitle == 'Message' ? 'Battle invite' : resolvedTitle,
-          body:
-              resolvedBody == 'New notification'
-                  ? 'Tap to join this battle'
-                  : resolvedBody,
+          body: resolvedBody == 'New notification'
+              ? 'Tap to join this battle'
+              : resolvedBody,
           sessionId: sessionId,
         ),
       );
@@ -139,7 +132,9 @@ class BattleMessagingService {
   ) {
     void go() {
       if (kDebugMode) {
-        debugPrint('BattleMessagingService: notification opened, data=${message.data}');
+        debugPrint(
+          'BattleMessagingService: notification opened, data=${message.data}',
+        );
       }
       if (messageOpensLongHtmlScreen(message)) {
         router.push('/notification/long-html');
@@ -147,8 +142,9 @@ class BattleMessagingService {
       }
       final ocKind = message.data['kind']?.toString().trim().toLowerCase();
       if (ocKind == OpenChallengeFcm.kind) {
-        final id =
-            message.data[OpenChallengeFcm.challengeId]?.toString().trim();
+        final id = message.data[OpenChallengeFcm.challengeId]
+            ?.toString()
+            .trim();
         if (id != null && id.isNotEmpty) {
           router.go('/community/open-challenges/$id');
         }
@@ -163,6 +159,18 @@ class BattleMessagingService {
     // Defer one frame so the shell route is committed before [push] (cold
     // start from notification tap).
     WidgetsBinding.instance.addPostFrameCallback((_) => go());
+  }
+
+  /// System notification permission + token sync (call after user-facing prompt).
+  static Future<AuthorizationStatus?> requestPushAuthorizationAndSync() async {
+    if (kIsWeb) return null;
+    final settings = await FirebaseMessaging.instance.requestPermission(
+      alert: true,
+      badge: true,
+      sound: true,
+    );
+    await FcmTokenSyncService.syncForCurrentUser();
+    return settings.authorizationStatus;
   }
 
   /// Returns the device token for storing on `users/{email}` (server targets invites).

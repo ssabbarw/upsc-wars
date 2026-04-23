@@ -1679,11 +1679,26 @@ class _MechanismPage extends StatelessWidget {
         _onb(context, 4),
       ),
       children: [
-        Text('HOW IT WORKS', style: _eyebrow(context, false)),
+        Text(
+          'HOW IT WORKS',
+          style: GoogleFonts.dmSans(
+            fontSize: _onb(context, 24),
+            fontWeight: FontWeight.w800,
+            letterSpacing: 0.4,
+            height: 1.15,
+            color: AppColors.primaryDark,
+          ),
+        ),
         SizedBox(height: _onb(context, 6)),
         Text(
           'Pick an option, then how sure you are.',
-          style: _headline(context, false),
+          style: GoogleFonts.dmSans(
+            fontSize: _onb(context, 15),
+            height: 1.3,
+            fontWeight: FontWeight.w600,
+            letterSpacing: -0.2,
+            color: AppColors.onSurfaceLight,
+          ),
         ),
         SizedBox(height: _onb(context, 6)),
         Text(

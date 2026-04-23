@@ -1,6 +1,7 @@
 import 'package:drift/drift.dart';
 
-import 'user_db_connection_io.dart' if (dart.library.html) 'user_db_connection_web.dart'
+import 'user_db_connection_io.dart'
+    if (dart.library.html) 'user_db_connection_web.dart'
     as user_db_connection;
 
 part 'user_db.g.dart';
@@ -21,6 +22,7 @@ class Questions extends Table {
       boolean().named('has_table').withDefault(const Constant(false))();
   BoolColumn get negativeFraming =>
       boolean().named('negative_framing').withDefault(const Constant(false))();
+
   /// 1-based position within a PYQ year paper; null for non-PYQ questions.
   IntColumn get paperOrder => integer().named('paper_order').nullable()();
 
@@ -113,6 +115,7 @@ class SessionQuestions extends Table {
   IntColumn get timeSpentSecs => integer().nullable()();
   BoolColumn get flagged => boolean().withDefault(const Constant(false))();
   DateTimeColumn get attemptedAt => dateTime().nullable()();
+
   /// `very_sure` | `somewhat_sure` | `guessing`; null = not captured / ignored.
   TextColumn get confidence => text().nullable()();
 
@@ -135,16 +138,19 @@ class RevisionQueue extends Table {
   TextColumn get id => text()();
   TextColumn get questionUuid =>
       text().named('question_uuid').unique().references(Questions, #uuid)();
-  DateTimeColumn get dateAddedToQueue => dateTime().named('date_added_to_queue')();
+  DateTimeColumn get dateAddedToQueue =>
+      dateTime().named('date_added_to_queue')();
   IntColumn get numberOfTimesAnsweredCorrectlyInRevision => integer()
       .named('number_of_times_answered_correctly_in_revision')
       .withDefault(const Constant(0))();
   IntColumn get numberOfTimesAnsweredIncorrectlyInRevision => integer()
       .named('number_of_times_answered_incorrectly_in_revision')
       .withDefault(const Constant(0))();
-  BoolColumn get hasGraduatedFromQueue =>
-      boolean().named('has_graduated_from_queue').withDefault(const Constant(false))();
-  DateTimeColumn get dateGraduated => dateTime().named('date_graduated').nullable()();
+  BoolColumn get hasGraduatedFromQueue => boolean()
+      .named('has_graduated_from_queue')
+      .withDefault(const Constant(false))();
+  DateTimeColumn get dateGraduated =>
+      dateTime().named('date_graduated').nullable()();
 
   @override
   Set<Column> get primaryKey => {id};
@@ -164,8 +170,7 @@ class UserTopicStats extends Table {
       integer().named('total_time_spent_secs').withDefault(const Constant(0))();
   RealColumn get accuracyPercentage =>
       real().named('accuracy_percentage').withDefault(const Constant(0.0))();
-  DateTimeColumn get lastAttemptedAt =>
-      dateTime().named('last_attempted_at')();
+  DateTimeColumn get lastAttemptedAt => dateTime().named('last_attempted_at')();
 
   @override
   List<Set<Column>> get uniqueKeys => [
@@ -198,7 +203,8 @@ class UserTrapStats extends Table {
 }
 
 @DriftAccessor(tables: [Questions])
-class QuestionsDao extends DatabaseAccessor<UserDatabase> with _$QuestionsDaoMixin {
+class QuestionsDao extends DatabaseAccessor<UserDatabase>
+    with _$QuestionsDaoMixin {
   QuestionsDao(super.db);
 
   Future<Question?> getByUuid(String uuid) =>
@@ -329,7 +335,9 @@ class QuestionsDao extends DatabaseAccessor<UserDatabase> with _$QuestionsDaoMix
     return row.read<int>('c');
   }
 
-  Future<List<TopicQuestionCount>> getTopicQuestionCountsForSubject(String subject) async {
+  Future<List<TopicQuestionCount>> getTopicQuestionCountsForSubject(
+    String subject,
+  ) async {
     return customSelect(
       'SELECT topic, COUNT(*) AS c FROM questions WHERE subject = ? GROUP BY topic ORDER BY topic ASC',
       variables: [Variable.withString(subject)],
@@ -348,7 +356,10 @@ class QuestionsDao extends DatabaseAccessor<UserDatabase> with _$QuestionsDaoMix
     final result = <String, QuestionSubjectTopic>{};
     final rows = await getByUuidsInOrder(uuids);
     for (final row in rows) {
-      result[row.uuid] = QuestionSubjectTopic(subject: row.subject, topic: row.topic);
+      result[row.uuid] = QuestionSubjectTopic(
+        subject: row.subject,
+        topic: row.topic,
+      );
     }
     return result;
   }
@@ -443,7 +454,9 @@ class QuestionsDao extends DatabaseAccessor<UserDatabase> with _$QuestionsDaoMix
     final placeholders = List.filled(values.length, '?').join(',');
     return (
       'uuid NOT IN ($placeholders)',
-      values.map((value) => Variable.withString(value) as Variable<Object>).toList(),
+      values
+          .map((value) => Variable.withString(value) as Variable<Object>)
+          .toList(),
     );
   }
 
@@ -452,7 +465,9 @@ class QuestionsDao extends DatabaseAccessor<UserDatabase> with _$QuestionsDaoMix
     final placeholders = List.filled(values.length, '?').join(',');
     return (
       'uuid IN ($placeholders)',
-      values.map((value) => Variable.withString(value) as Variable<Object>).toList(),
+      values
+          .map((value) => Variable.withString(value) as Variable<Object>)
+          .toList(),
     );
   }
 
@@ -467,7 +482,10 @@ class QuestionsDao extends DatabaseAccessor<UserDatabase> with _$QuestionsDaoMix
 }
 
 class SubjectQuestionCount {
-  const SubjectQuestionCount({required this.subject, required this.questionCount});
+  const SubjectQuestionCount({
+    required this.subject,
+    required this.questionCount,
+  });
 
   final String subject;
   final int questionCount;
@@ -496,12 +514,10 @@ class QuestionTranslationsDao extends DatabaseAccessor<UserDatabase>
     String questionUuid,
     String language,
   ) {
-    return (select(questionTranslations)
-          ..where(
-            (t) =>
-                t.questionUuid.equals(questionUuid) &
-                t.language.equals(language),
-          ))
+    return (select(questionTranslations)..where(
+          (t) =>
+              t.questionUuid.equals(questionUuid) & t.language.equals(language),
+        ))
         .getSingleOrNull();
   }
 }
@@ -512,9 +528,9 @@ class QuestionTablesDao extends DatabaseAccessor<UserDatabase>
   QuestionTablesDao(super.db);
 
   Future<QuestionTable?> getByQuestionUuid(String questionUuid) {
-    return (select(questionTables)
-          ..where((t) => t.questionUuid.equals(questionUuid)))
-        .getSingleOrNull();
+    return (select(
+      questionTables,
+    )..where((t) => t.questionUuid.equals(questionUuid))).getSingleOrNull();
   }
 }
 
@@ -523,22 +539,23 @@ class TopicTranslationsDao extends DatabaseAccessor<UserDatabase>
     with _$TopicTranslationsDaoMixin {
   TopicTranslationsDao(super.db);
 
-  Future<TopicTranslation?> getByEnglishName(String englishName) =>
-      (select(topicTranslations)
-            ..where((t) => t.englishName.equals(englishName)))
-          .getSingleOrNull();
+  Future<TopicTranslation?> getByEnglishName(String englishName) => (select(
+    topicTranslations,
+  )..where((t) => t.englishName.equals(englishName))).getSingleOrNull();
 }
 
 @DriftAccessor(tables: [Sessions])
-class SessionsDao extends DatabaseAccessor<UserDatabase> with _$SessionsDaoMixin {
+class SessionsDao extends DatabaseAccessor<UserDatabase>
+    with _$SessionsDaoMixin {
   SessionsDao(super.db);
 
   Future<int> insertSession(SessionsCompanion session) =>
       into(sessions).insert(session);
 
   Future<int> updateSessionStatus(String id, String status) =>
-      (update(sessions)..where((t) => t.id.equals(id)))
-          .write(SessionsCompanion(status: Value(status)));
+      (update(sessions)..where((t) => t.id.equals(id))).write(
+        SessionsCompanion(status: Value(status)),
+      );
 
   Future<int> updateSessionCompletedAt(String id, DateTime? completedAt) =>
       (update(sessions)..where((t) => t.id.equals(id))).write(
@@ -550,8 +567,9 @@ class SessionsDao extends DatabaseAccessor<UserDatabase> with _$SessionsDaoMixin
         SessionsCompanion(examRemainingSecs: Value(examRemainingSecs)),
       );
 
-  Future<List<Session>> getAllSessionsOrderedByCreatedAtDesc() =>
-      (select(sessions)..orderBy([(t) => OrderingTerm.desc(t.createdAt)])).get();
+  Future<List<Session>> getAllSessionsOrderedByCreatedAtDesc() => (select(
+    sessions,
+  )..orderBy([(t) => OrderingTerm.desc(t.createdAt)])).get();
 
   Future<Session?> getSessionById(String id) =>
       (select(sessions)..where((t) => t.id.equals(id))).getSingleOrNull();
@@ -574,6 +592,14 @@ class SessionsDao extends DatabaseAccessor<UserDatabase> with _$SessionsDaoMixin
             ..orderBy([(t) => OrderingTerm.desc(t.createdAt)]))
           .get();
 
+  Future<int> countCompletedSessions() async {
+    final row = await customSelect(
+      "SELECT COUNT(*) AS c FROM sessions WHERE status = 'completed'",
+      readsFrom: {sessions},
+    ).getSingle();
+    return row.read<int?>('c') ?? 0;
+  }
+
   /// Whether this PYQ 25-question pack has at least one completed session.
   Future<bool> hasCompletedPyqPack({
     required String subject,
@@ -583,10 +609,7 @@ class SessionsDao extends DatabaseAccessor<UserDatabase> with _$SessionsDaoMixin
     final row = await customSelect(
       "SELECT COUNT(*) AS c FROM sessions "
       "WHERE subject = ? AND topic = ? AND status = 'completed'",
-      variables: [
-        Variable.withString(subject),
-        Variable.withString(topic),
-      ],
+      variables: [Variable.withString(subject), Variable.withString(topic)],
       readsFrom: {sessions},
     ).getSingle();
     return (row.read<int?>('c') ?? 0) > 0;
@@ -616,17 +639,16 @@ class SessionQuestionsDao extends DatabaseAccessor<UserDatabase>
     Value<int?> timeSpentSecs = const Value.absent(),
     Value<DateTime?> attemptedAt = const Value.absent(),
     Value<String?> confidence = const Value.absent(),
-  }) =>
-      (update(sessionQuestions)..where((t) => t.id.equals(id))).write(
-        SessionQuestionsCompanion(
-          selectedOption: selectedOption,
-          isCorrect: isCorrect,
-          status: status,
-          timeSpentSecs: timeSpentSecs,
-          attemptedAt: attemptedAt,
-          confidence: confidence,
-        ),
-      );
+  }) => (update(sessionQuestions)..where((t) => t.id.equals(id))).write(
+    SessionQuestionsCompanion(
+      selectedOption: selectedOption,
+      isCorrect: isCorrect,
+      status: status,
+      timeSpentSecs: timeSpentSecs,
+      attemptedAt: attemptedAt,
+      confidence: confidence,
+    ),
+  );
 
   Future<int> updateFlagged(String id, bool flagged) =>
       (update(sessionQuestions)..where((t) => t.id.equals(id))).write(
@@ -704,25 +726,29 @@ class ScoredSessionQuestionRow {
 }
 
 @DriftAccessor(tables: [Bookmarks])
-class BookmarksDao extends DatabaseAccessor<UserDatabase> with _$BookmarksDaoMixin {
+class BookmarksDao extends DatabaseAccessor<UserDatabase>
+    with _$BookmarksDaoMixin {
   BookmarksDao(super.db);
 
-  Future<int> insertBookmark(BookmarksCompanion row) => into(bookmarks).insert(row);
+  Future<int> insertBookmark(BookmarksCompanion row) =>
+      into(bookmarks).insert(row);
 
-  Future<int> deleteBookmarkByQuestionUuid(String questionUuid) =>
-      (delete(bookmarks)..where((t) => t.questionUuid.equals(questionUuid))).go();
+  Future<int> deleteBookmarkByQuestionUuid(String questionUuid) => (delete(
+    bookmarks,
+  )..where((t) => t.questionUuid.equals(questionUuid))).go();
 
-  Future<Bookmark?> getBookmarkByQuestionUuid(String questionUuid) =>
-      (select(bookmarks)..where((t) => t.questionUuid.equals(questionUuid)))
-          .getSingleOrNull();
+  Future<Bookmark?> getBookmarkByQuestionUuid(String questionUuid) => (select(
+    bookmarks,
+  )..where((t) => t.questionUuid.equals(questionUuid))).getSingleOrNull();
 
   Future<bool> isQuestionBookmarked(String questionUuid) async {
     final row = await getBookmarkByQuestionUuid(questionUuid);
     return row != null;
   }
 
-  Future<List<Bookmark>> getAllBookmarksOrderedByCreatedAtDesc() =>
-      (select(bookmarks)..orderBy([(t) => OrderingTerm.desc(t.createdAt)])).get();
+  Future<List<Bookmark>> getAllBookmarksOrderedByCreatedAtDesc() => (select(
+    bookmarks,
+  )..orderBy([(t) => OrderingTerm.desc(t.createdAt)])).get();
 
   Future<List<String>> getRandomBookmarkUuids(int limit) async {
     final rows = await customSelect(
@@ -751,9 +777,9 @@ class RevisionQueueDao extends DatabaseAccessor<UserDatabase>
     required String questionUuid,
     required DateTime dateAddedToQueue,
   }) async {
-    final existing = await (select(revisionQueue)
-          ..where((t) => t.questionUuid.equals(questionUuid)))
-        .getSingleOrNull();
+    final existing = await (select(
+      revisionQueue,
+    )..where((t) => t.questionUuid.equals(questionUuid))).getSingleOrNull();
     if (existing == null) {
       await into(revisionQueue).insert(
         RevisionQueueCompanion.insert(
@@ -777,9 +803,9 @@ class RevisionQueueDao extends DatabaseAccessor<UserDatabase>
     required String questionUuid,
     required bool answeredCorrectly,
   }) async {
-    final row = await (select(revisionQueue)
-          ..where((t) => t.questionUuid.equals(questionUuid)))
-        .getSingleOrNull();
+    final row = await (select(
+      revisionQueue,
+    )..where((t) => t.questionUuid.equals(questionUuid))).getSingleOrNull();
     if (row == null) return;
     final correct = answeredCorrectly
         ? row.numberOfTimesAnsweredCorrectlyInRevision + 1
@@ -787,7 +813,9 @@ class RevisionQueueDao extends DatabaseAccessor<UserDatabase>
     final incorrect = answeredCorrectly
         ? row.numberOfTimesAnsweredIncorrectlyInRevision
         : row.numberOfTimesAnsweredIncorrectlyInRevision + 1;
-    await (update(revisionQueue)..where((t) => t.questionUuid.equals(questionUuid))).write(
+    await (update(
+      revisionQueue,
+    )..where((t) => t.questionUuid.equals(questionUuid))).write(
       RevisionQueueCompanion(
         numberOfTimesAnsweredCorrectlyInRevision: Value(correct),
         numberOfTimesAnsweredIncorrectlyInRevision: Value(incorrect),
@@ -796,8 +824,9 @@ class RevisionQueueDao extends DatabaseAccessor<UserDatabase>
   }
 
   Future<int> graduate(String questionUuid, DateTime dateGraduated) {
-    return (update(revisionQueue)..where((t) => t.questionUuid.equals(questionUuid)))
-        .write(
+    return (update(
+      revisionQueue,
+    )..where((t) => t.questionUuid.equals(questionUuid))).write(
       RevisionQueueCompanion(
         hasGraduatedFromQueue: const Value(true),
         dateGraduated: Value(dateGraduated),
@@ -805,9 +834,11 @@ class RevisionQueueDao extends DatabaseAccessor<UserDatabase>
     );
   }
 
-  Future<RevisionQueueData?> getRevisionQueueItemByQuestionUuid(String questionUuid) =>
-      (select(revisionQueue)..where((t) => t.questionUuid.equals(questionUuid)))
-          .getSingleOrNull();
+  Future<RevisionQueueData?> getRevisionQueueItemByQuestionUuid(
+    String questionUuid,
+  ) => (select(
+    revisionQueue,
+  )..where((t) => t.questionUuid.equals(questionUuid))).getSingleOrNull();
 
   Future<List<RevisionQueueData>> fetchActiveQueue() =>
       (select(revisionQueue)
@@ -845,7 +876,8 @@ class RevisionQueueDao extends DatabaseAccessor<UserDatabase>
     ).get();
 
     return {
-      for (final row in rows) row.read<String>('topic'): row.read<int>('queue_count'),
+      for (final row in rows)
+        row.read<String>('topic'): row.read<int>('queue_count'),
     };
   }
 
@@ -898,9 +930,9 @@ class UserFeatureStatsDao extends DatabaseAccessor<UserDatabase>
     int starts = 0,
     int completions = 0,
   }) async {
-    final existing = await (select(userFeatureStats)
-          ..where((t) => t.featureName.equals(featureName)))
-        .getSingleOrNull();
+    final existing = await (select(
+      userFeatureStats,
+    )..where((t) => t.featureName.equals(featureName))).getSingleOrNull();
     if (existing == null) {
       await into(userFeatureStats).insert(
         UserFeatureStatsCompanion.insert(
@@ -913,8 +945,9 @@ class UserFeatureStatsDao extends DatabaseAccessor<UserDatabase>
       );
       return;
     }
-    await (update(userFeatureStats)..where((t) => t.featureName.equals(featureName)))
-        .write(
+    await (update(
+      userFeatureStats,
+    )..where((t) => t.featureName.equals(featureName))).write(
       UserFeatureStatsCompanion(
         totalViews: Value(existing.totalViews + views),
         totalStarts: Value(existing.totalStarts + starts),
@@ -924,26 +957,27 @@ class UserFeatureStatsDao extends DatabaseAccessor<UserDatabase>
     );
   }
 
-  Future<List<UserFeatureStat>> fetchAll() =>
-      (select(userFeatureStats)..orderBy([(t) => OrderingTerm.asc(t.featureName)]))
-          .get();
+  Future<List<UserFeatureStat>> fetchAll() => (select(
+    userFeatureStats,
+  )..orderBy([(t) => OrderingTerm.asc(t.featureName)])).get();
 
-  Stream<List<UserFeatureStat>> watchAll() =>
-      (select(userFeatureStats)..orderBy([(t) => OrderingTerm.asc(t.featureName)]))
-          .watch();
+  Stream<List<UserFeatureStat>> watchAll() => (select(
+    userFeatureStats,
+  )..orderBy([(t) => OrderingTerm.asc(t.featureName)])).watch();
 }
 
 @DriftAccessor(tables: [UserTrapStats])
-class UserTrapStatsDao extends DatabaseAccessor<UserDatabase> with _$UserTrapStatsDaoMixin {
+class UserTrapStatsDao extends DatabaseAccessor<UserDatabase>
+    with _$UserTrapStatsDaoMixin {
   UserTrapStatsDao(super.db);
 
   Future<void> recordFailure({
     required String trapType,
     required DateTime at,
   }) async {
-    final existing = await (select(userTrapStats)
-          ..where((t) => t.trapType.equals(trapType)))
-        .getSingleOrNull();
+    final existing = await (select(
+      userTrapStats,
+    )..where((t) => t.trapType.equals(trapType))).getSingleOrNull();
     if (existing == null) {
       await into(userTrapStats).insert(
         UserTrapStatsCompanion.insert(
@@ -954,7 +988,9 @@ class UserTrapStatsDao extends DatabaseAccessor<UserDatabase> with _$UserTrapSta
       );
       return;
     }
-    await (update(userTrapStats)..where((t) => t.trapType.equals(trapType))).write(
+    await (update(
+      userTrapStats,
+    )..where((t) => t.trapType.equals(trapType))).write(
       UserTrapStatsCompanion(
         totalFailures: Value(existing.totalFailures + 1),
         lastFailedAt: Value(at),
@@ -977,12 +1013,14 @@ class UserTopicStatsDao extends DatabaseAccessor<UserDatabase>
     required int timeSpentSecsSum,
     required DateTime attemptedAt,
   }) async {
-    final existing = await (select(userTopicStats)
-          ..where((t) => t.subject.equals(subject) & t.topic.equals(topic)))
-        .getSingleOrNull();
+    final existing =
+        await (select(userTopicStats)
+              ..where((t) => t.subject.equals(subject) & t.topic.equals(topic)))
+            .getSingleOrNull();
     if (existing == null) {
-      final accuracy =
-          attemptedToAdd == 0 ? 0.0 : (correctToAdd / attemptedToAdd) * 100;
+      final accuracy = attemptedToAdd == 0
+          ? 0.0
+          : (correctToAdd / attemptedToAdd) * 100;
       await into(userTopicStats).insert(
         UserTopicStatsCompanion.insert(
           subject: subject,
@@ -1001,8 +1039,12 @@ class UserTopicStatsDao extends DatabaseAccessor<UserDatabase>
     final newCorrect = existing.totalCorrect + correctToAdd;
     final newWrong = existing.wrongAttempts + wrongToAdd;
     final newTime = existing.totalTimeSpentSecs + timeSpentSecsSum;
-    final newAccuracy = newAttempted == 0 ? 0.0 : (newCorrect / newAttempted) * 100;
-    await (update(userTopicStats)..where((t) => t.id.equals(existing.id))).write(
+    final newAccuracy = newAttempted == 0
+        ? 0.0
+        : (newCorrect / newAttempted) * 100;
+    await (update(
+      userTopicStats,
+    )..where((t) => t.id.equals(existing.id))).write(
       UserTopicStatsCompanion(
         totalAttempted: Value(newAttempted),
         totalCorrect: Value(newCorrect),
@@ -1020,8 +1062,9 @@ class UserTopicStatsDao extends DatabaseAccessor<UserDatabase>
             ..orderBy([(t) => OrderingTerm.asc(t.topic)]))
           .get();
 
-  Future<List<UserTopicStat>> fetchAll() =>
-      (select(userTopicStats)..orderBy([(t) => OrderingTerm.asc(t.subject)])).get();
+  Future<List<UserTopicStat>> fetchAll() => (select(
+    userTopicStats,
+  )..orderBy([(t) => OrderingTerm.asc(t.subject)])).get();
 
   /// Keys `subject||topic` where the learner is under ~55% after enough attempts.
   Future<Set<String>> weakTopicKeysAmong(
@@ -1033,9 +1076,11 @@ class UserTopicStatsDao extends DatabaseAccessor<UserDatabase>
       final key = '${p.subject}||${p.topic}';
       if (seen.contains(key)) continue;
       seen.add(key);
-      final row = await (select(userTopicStats)
-            ..where((t) => t.subject.equals(p.subject) & t.topic.equals(p.topic)))
-          .getSingleOrNull();
+      final row =
+          await (select(userTopicStats)..where(
+                (t) => t.subject.equals(p.subject) & t.topic.equals(p.topic),
+              ))
+              .getSingleOrNull();
       if (row != null &&
           row.totalAttempted >= 5 &&
           row.accuracyPercentage < 55.0) {
@@ -1086,12 +1131,7 @@ class UserDatabase extends _$UserDatabase {
     final row = await customSelect(
       "SELECT COUNT(*) AS c FROM pragma_table_info('$table') "
       "WHERE name = '$column'",
-      readsFrom: {
-        questions,
-        sessions,
-        sessionQuestions,
-        userTopicStats,
-      },
+      readsFrom: {questions, sessions, sessionQuestions, userTopicStats},
     ).getSingle();
     return (row.read<int?>('c') ?? 0) > 0;
   }
@@ -1100,74 +1140,66 @@ class UserDatabase extends _$UserDatabase {
     final row = await customSelect(
       "SELECT COUNT(*) AS c FROM sqlite_master "
       "WHERE type = 'table' AND name = '$name'",
-      readsFrom: {
-        questions,
-        sessions,
-        sessionQuestions,
-        userTopicStats,
-      },
+      readsFrom: {questions, sessions, sessionQuestions, userTopicStats},
     ).getSingle();
     return (row.read<int?>('c') ?? 0) > 0;
   }
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
-        onCreate: (Migrator m) async {
-          await m.createAll();
-          // Performance index for subject-scoped queries.
-          await customStatement(
-            'CREATE INDEX IF NOT EXISTS idx_questions_subject '
-            'ON questions(subject)',
-          );
-        },
-        onUpgrade: (Migrator m, int from, int to) async {
-          if (from < 2) {
-            if (!await _sqliteColumnExists('sessions', 'analytics_feature_key')) {
-              await m.addColumn(sessions, sessions.analyticsFeatureKey);
-            }
-            if (!await _sqliteColumnExists('user_topic_stats', 'wrong_attempts')) {
-              await m.addColumn(userTopicStats, userTopicStats.wrongAttempts);
-            }
-            if (!await _sqliteColumnExists(
-              'user_topic_stats',
-              'total_time_spent_secs',
-            )) {
-              await m.addColumn(
-                userTopicStats,
-                userTopicStats.totalTimeSpentSecs,
-              );
-            }
-            if (!await _sqliteTableExists('user_feature_stats')) {
-              await m.createTable(userFeatureStats);
-            }
-            if (!await _sqliteTableExists('user_trap_stats')) {
-              await m.createTable(userTrapStats);
-            }
-            await customStatement(
-              'UPDATE user_topic_stats SET wrong_attempts = '
-              'CASE WHEN total_attempted - total_correct > 0 '
-              'THEN total_attempted - total_correct ELSE 0 END',
-            );
-          }
-          if (from < 3) {
-            // Add subject index for existing installations.
-            await customStatement(
-              'CREATE INDEX IF NOT EXISTS idx_questions_subject '
-              'ON questions(subject)',
-            );
-          }
-          if (from < 4) {
-            if (!await _sqliteColumnExists('attempts', 'confidence')) {
-              await m.addColumn(sessionQuestions, sessionQuestions.confidence);
-            }
-          }
-          if (from < 5) {
-            if (!await _sqliteColumnExists('questions', 'paper_order')) {
-              await m.addColumn(questions, questions.paperOrder);
-            }
-          }
-        },
+    onCreate: (Migrator m) async {
+      await m.createAll();
+      // Performance index for subject-scoped queries.
+      await customStatement(
+        'CREATE INDEX IF NOT EXISTS idx_questions_subject '
+        'ON questions(subject)',
       );
+    },
+    onUpgrade: (Migrator m, int from, int to) async {
+      if (from < 2) {
+        if (!await _sqliteColumnExists('sessions', 'analytics_feature_key')) {
+          await m.addColumn(sessions, sessions.analyticsFeatureKey);
+        }
+        if (!await _sqliteColumnExists('user_topic_stats', 'wrong_attempts')) {
+          await m.addColumn(userTopicStats, userTopicStats.wrongAttempts);
+        }
+        if (!await _sqliteColumnExists(
+          'user_topic_stats',
+          'total_time_spent_secs',
+        )) {
+          await m.addColumn(userTopicStats, userTopicStats.totalTimeSpentSecs);
+        }
+        if (!await _sqliteTableExists('user_feature_stats')) {
+          await m.createTable(userFeatureStats);
+        }
+        if (!await _sqliteTableExists('user_trap_stats')) {
+          await m.createTable(userTrapStats);
+        }
+        await customStatement(
+          'UPDATE user_topic_stats SET wrong_attempts = '
+          'CASE WHEN total_attempted - total_correct > 0 '
+          'THEN total_attempted - total_correct ELSE 0 END',
+        );
+      }
+      if (from < 3) {
+        // Add subject index for existing installations.
+        await customStatement(
+          'CREATE INDEX IF NOT EXISTS idx_questions_subject '
+          'ON questions(subject)',
+        );
+      }
+      if (from < 4) {
+        if (!await _sqliteColumnExists('attempts', 'confidence')) {
+          await m.addColumn(sessionQuestions, sessionQuestions.confidence);
+        }
+      }
+      if (from < 5) {
+        if (!await _sqliteColumnExists('questions', 'paper_order')) {
+          await m.addColumn(questions, questions.paperOrder);
+        }
+      }
+    },
+  );
 }
 
 LazyDatabase _openUnifiedDb() => user_db_connection.openUserDb();

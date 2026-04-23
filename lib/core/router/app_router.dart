@@ -6,6 +6,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../analytics/analytics_route_observer.dart';
+import '../services/deferred_push_permission_coordinator.dart';
 import '../config/feature_flags.dart';
 import '../../features/bookmarks/screens/bookmarks_screen.dart';
 import '../../features/battle/domain/entities/battle_result_payload.dart';
@@ -77,10 +78,9 @@ GoRouter appRouter(Ref ref) {
 
   bool communityTabVisibleForRedirect() {
     if (!shellHasCommunity) return false;
-    return ref.read(communityTabRemoteEnabledProvider).maybeWhen(
-          data: (v) => v,
-          orElse: () => true,
-        );
+    return ref
+        .read(communityTabRemoteEnabledProvider)
+        .maybeWhen(data: (v) => v, orElse: () => true);
   }
 
   final shellBranches = <StatefulShellBranch>[
@@ -121,9 +121,7 @@ GoRouter appRouter(Ref ref) {
               final tab = state.uri.queryParameters['tab'];
               final openChallenge =
                   tab == 'open_challenge' || tab == 'open-challenge';
-              return CommunityScreen(
-                initialTabIndex: openChallenge ? 1 : 0,
-              );
+              return CommunityScreen(initialTabIndex: openChallenge ? 1 : 0);
             },
           ),
         ],
@@ -254,9 +252,8 @@ GoRouter appRouter(Ref ref) {
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/pyq-year/:year',
-        builder: (context, state) => PyqYearPacksScreen(
-          year: state.pathParameters['year']!,
-        ),
+        builder: (context, state) =>
+            PyqYearPacksScreen(year: state.pathParameters['year']!),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
@@ -285,9 +282,8 @@ GoRouter appRouter(Ref ref) {
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/battle/join/:sessionId',
-        builder: (context, state) => BattleJoinScreen(
-          sessionId: state.pathParameters['sessionId']!,
-        ),
+        builder: (context, state) =>
+            BattleJoinScreen(sessionId: state.pathParameters['sessionId']!),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
@@ -426,10 +422,7 @@ class _CommunityTabIcon extends StatelessWidget {
     final stack = Stack(
       clipBehavior: Clip.none,
       children: [
-        Icon(
-          outlined ? Icons.groups_outlined : Icons.groups,
-          size: 22,
-        ),
+        Icon(outlined ? Icons.groups_outlined : Icons.groups, size: 22),
         if (showUnreadDot)
           Positioned(
             right: -3,
@@ -447,11 +440,7 @@ class _CommunityTabIcon extends StatelessWidget {
       ],
     );
     if (!showUnreadDot) return stack;
-    return UnreadPulseWrapper(
-      active: true,
-      scheme: scheme,
-      child: stack,
-    );
+    return UnreadPulseWrapper(active: true, scheme: scheme, child: stack);
   }
 }
 
@@ -465,6 +454,7 @@ class _AppShell extends HookConsumerWidget {
     ref.listen(authActionsProvider, (previous, next) {
       next.whenOrNull(
         error: (error, _) {
+          DeferredPushPermissionCoordinator.clearCommunitySignInArmed();
           final messenger = ScaffoldMessenger.of(context);
           messenger.hideCurrentSnackBar();
           messenger.showSnackBar(
@@ -472,6 +462,22 @@ class _AppShell extends HookConsumerWidget {
           );
         },
       );
+    });
+
+    ref.listen(authStateChangesProvider, (previous, next) {
+      if (previous == null) return;
+      final wasSignedOut = previous.asData?.value == null;
+      final nowSignedIn = next.asData?.value != null;
+      if (!wasSignedOut || !nowSignedIn) return;
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (!context.mounted) return;
+        unawaited(
+          DeferredPushPermissionCoordinator.onSignedInAfterCommunityPromptArmed(
+            context,
+            ref,
+          ),
+        );
+      });
     });
 
     final scheme = Theme.of(context).colorScheme;
@@ -482,10 +488,12 @@ class _AppShell extends HookConsumerWidget {
     final isAuthBusy = authActions.isLoading;
     final shellHasCommunity = FeatureFlags.communityTab;
     final remoteCommunity = ref.watch(communityTabRemoteEnabledProvider);
-    final showCommunityTab = shellHasCommunity &&
+    final showCommunityTab =
+        shellHasCommunity &&
         remoteCommunity.maybeWhen(data: (v) => v, orElse: () => true);
-    final chatUnreadDot =
-        showCommunityTab ? ref.watch(chatInboxHasUnreadProvider) : false;
+    final chatUnreadDot = showCommunityTab
+        ? ref.watch(chatInboxHasUnreadProvider)
+        : false;
 
     final navItems = <BottomNavigationBarItem>[
       const BottomNavigationBarItem(
@@ -549,6 +557,7 @@ class _AppShell extends HookConsumerWidget {
                       isLoading: isAuthBusy,
                       onGoogleTap: () {
                         Navigator.of(context).pop();
+                        DeferredPushPermissionCoordinator.armCommunitySignInPrompt();
                         ref
                             .read(authActionsProvider.notifier)
                             .signInWithGoogle();

@@ -2,6 +2,7 @@ import 'package:cloud_functions/cloud_functions.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
 
+import 'package:upsc_wars/core/services/battle_messaging_service.dart';
 import 'package:upsc_wars/core/services/fcm_token_sync_service.dart';
 
 /// Result of [BattleSelfTestPushCloudService.sendTestNotificationToSelf].
@@ -48,12 +49,9 @@ class BattleSelfTestPushCloudService {
 
   Future<SelfPushTestOutcome> sendTestNotificationToSelf() async {
     if (!kIsWeb) {
-      final settings = await FirebaseMessaging.instance.requestPermission(
-        alert: true,
-        badge: true,
-        sound: true,
-      );
-      if (settings.authorizationStatus == AuthorizationStatus.denied) {
+      final status =
+          await BattleMessagingService.requestPushAuthorizationAndSync();
+      if (status == AuthorizationStatus.denied) {
         return const SelfPushTestOutcome._(
           notificationSent: false,
           serverReason: 'notifications_denied',
@@ -83,17 +81,11 @@ class BattleSelfTestPushCloudService {
         'sendSelfTestNotification FirebaseFunctionsException: ${e.code} ${e.message}',
       );
       debugPrintStack(stackTrace: st);
-      return SelfPushTestOutcome._(
-        notificationSent: false,
-        transportError: e,
-      );
+      return SelfPushTestOutcome._(notificationSent: false, transportError: e);
     } catch (e, st) {
       debugPrint('sendSelfTestNotification: $e');
       debugPrintStack(stackTrace: st);
-      return SelfPushTestOutcome._(
-        notificationSent: false,
-        transportError: e,
-      );
+      return SelfPushTestOutcome._(notificationSent: false, transportError: e);
     }
   }
 }
