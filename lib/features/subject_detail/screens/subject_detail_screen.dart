@@ -1510,8 +1510,7 @@ class _AdviceForSubjectMockPrepGroupState
     final hasLists = _mockPrepHasTopicLists(widget.mock);
     final subtitle = hasLists
         ? 'Where to revise vs where to attempt more'
-        : 'On scored attempts, mark how sure you are. Revise lists and '
-              'safe-area picks appear once that pattern exists.';
+        : 'Start attempting MCQs with marking confidence to see advices and insights here';
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
