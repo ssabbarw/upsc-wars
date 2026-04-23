@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../../core/constants/subject_constants.dart';
+import '../../../core/domain/entities/answer_confidence.dart';
 import '../../../core/domain/entities/subject_info.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
@@ -12,9 +13,11 @@ import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/widgets/contact_us_entry.dart';
 import '../../../shared/widgets/test_config_bottom_sheet.dart';
 import '../domain/subject_mock_prep_insights.dart';
+import '../domain/subject_scored_accuracy_summary.dart';
 import '../providers/subject_detail_providers.dart';
 import '../providers/subject_insights_providers.dart';
 import '../providers/subject_mock_prep_provider.dart';
+import '../providers/subject_scored_accuracy_provider.dart';
 import '../widgets/danger_zone_summary_card.dart';
 import '../widgets/mock_prep_why_bottom_sheet.dart';
 
@@ -700,6 +703,90 @@ class _HistoryHubSection extends ConsumerWidget {
   }
 }
 
+// ── Subject accuracy + Sure calibration (under INSIGHTS) ─────────────────────
+
+class _SubjectAccuracyInsightsStrip extends StatelessWidget {
+  const _SubjectAccuracyInsightsStrip({
+    required this.summary,
+    required this.borderColor,
+  });
+
+  final SubjectScoredAccuracySummary summary;
+  final Color borderColor;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    final sureLabel = AnswerConfidence.examShortLabel(
+      AnswerConfidence.verySure,
+    );
+    final guessLabel = AnswerConfidence.examShortLabel(
+      AnswerConfidence.somewhatSure,
+    );
+
+    final String line1;
+    if (summary.scoredAttempted == 0) {
+      line1 = '📊 No scored data yet — finish a test to populate this.';
+    } else {
+      final acc = summary.accuracyPercent!;
+      line1 =
+          '📊 ${summary.scoredAttempted} Attemped · ${acc.round()}% accuracy ';
+    }
+
+    final String line2;
+    if (summary.sureTotal == 0) {
+      line2 = '⚡ $sureLabel — not used yet';
+    } else {
+      final pct = summary.wrongWhenSurePercent!.round();
+      line2 =
+          '⚡ $sureLabel → $pct% wrong '
+          '(${summary.sureWrong}/${summary.sureTotal})';
+    }
+
+    final String line3;
+    if (summary.educatedGuessTotal == 0) {
+      line3 = '🧠 $guessLabel — not used yet';
+    } else {
+      final pct = summary.wrongWhenEducatedGuessPercent!.round();
+      line3 =
+          '🧠 $guessLabel → $pct% wrong '
+          '(${summary.educatedGuessWrong}/${summary.educatedGuessTotal})';
+    }
+
+    return _SubjectPanel(
+      borderColor: borderColor,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            line1,
+            style: AppTextStyles.bodySm().copyWith(
+              color: scheme.onSurface,
+              height: 1.35,
+            ),
+          ),
+          const SizedBox(height: AppSpacing.sm),
+          Text(
+            line2,
+            style: AppTextStyles.caption().copyWith(
+              color: scheme.onSurfaceVariant,
+              height: 1.4,
+            ),
+          ),
+          const SizedBox(height: AppSpacing.xs),
+          Text(
+            line3,
+            style: AppTextStyles.caption().copyWith(
+              color: scheme.onSurfaceVariant,
+              height: 1.4,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
 // ── Insights Section ────────────────────────────────────────────────────────────
 
 class _InsightsSection extends ConsumerWidget {
@@ -717,11 +804,51 @@ class _InsightsSection extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final insightsAsync = ref.watch(subjectInsightsProvider(subject));
     final mockPrepAsync = ref.watch(subjectMockPrepInsightsProvider(subject));
+    final accuracyAsync = ref.watch(subjectScoredAccuracyProvider(subject));
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const _ScreenSectionHeader(title: 'INSIGHTS'),
+        _ScreenSectionHeader(
+          title: 'INSIGHTS FROM $displayName',
+          subtitle: 'Keep attempting more questions to get better insights.',
+        ),
+        const SizedBox(height: AppSpacing.sm),
+        accuracyAsync.when(
+          loading: () => Container(
+            height: 96,
+            decoration: BoxDecoration(
+              color: Theme.of(context).colorScheme.surfaceContainerLow,
+              borderRadius: BorderRadius.circular(AppRadius.lg),
+            ),
+          ),
+          error: (e, _) => _SubjectPanel(
+            borderColor: borderColor,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                  child: Text(
+                    '⚠️ Could not load accuracy.',
+                    style: AppTextStyles.bodySm().copyWith(
+                      color: Theme.of(context).colorScheme.onSurface,
+                    ),
+                  ),
+                ),
+                TextButton(
+                  onPressed: () =>
+                      ref.invalidate(subjectScoredAccuracyProvider(subject)),
+                  child: Text('Retry', style: AppTextStyles.label()),
+                ),
+              ],
+            ),
+          ),
+          data: (summary) => _SubjectAccuracyInsightsStrip(
+            summary: summary,
+            borderColor: borderColor,
+          ),
+        ),
+        const SizedBox(height: AppSpacing.sm),
         insightsAsync.when(
           loading: () => _InsightsSkeleton(borderColor: borderColor),
           error: (e, _) => _InsightsLoadError(
@@ -750,6 +877,16 @@ class _InsightsSection extends ConsumerWidget {
             displayName: displayName,
             mock: mock,
             borderColor: borderColor,
+          ),
+        ),
+        const SizedBox(height: AppSpacing.md),
+        Text(
+          '📈 More scored answers → sharper stats here',
+          style: AppTextStyles.caption().copyWith(
+            color: Theme.of(context).colorScheme.onSurfaceVariant,
+            height: 1.4,
+            fontWeight: FontWeight.w600,
+            letterSpacing: 0.2,
           ),
         ),
       ],

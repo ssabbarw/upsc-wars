@@ -980,7 +980,6 @@ class _SubjectGrid extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
-    final isDark = Theme.of(context).brightness == Brightness.dark;
     final subjectsAsync = ref.watch(subjectTestListProvider);
 
     return Column(
@@ -1016,7 +1015,6 @@ class _SubjectGrid extends ConsumerWidget {
                 icon: def?.materialIcon ?? Icons.school_outlined,
                 accent: accent,
                 borderColor: borderColor,
-                isDark: isDark,
               );
             },
           ),
@@ -1032,19 +1030,16 @@ class _SubjectGridCard extends StatelessWidget {
     required this.icon,
     required this.accent,
     required this.borderColor,
-    required this.isDark,
   });
 
   final SubjectInfo info;
   final IconData icon;
   final Color accent;
   final Color borderColor;
-  final bool isDark;
 
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
-    final hasAttempts = info.attemptCount > 0;
 
     return Material(
       color: AppColors.transparent,
@@ -1062,25 +1057,7 @@ class _SubjectGridCard extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Progress ring wrapping the subject icon
-              SizedBox(
-                width: 34,
-                height: 34,
-                child: Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    CircularProgressIndicator(
-                      value: (info.accuracyPercent ?? 0) / 100,
-                      strokeWidth: 2.5,
-                      backgroundColor: accent.withValues(alpha: 0.18),
-                      valueColor: AlwaysStoppedAnimation<Color>(
-                        hasAttempts ? accent : AppColors.transparent,
-                      ),
-                    ),
-                    Icon(icon, size: 16, color: accent),
-                  ],
-                ),
-              ),
+              Icon(icon, size: 22, color: accent),
               const Spacer(),
               Text(
                 info.displayName,
@@ -1089,15 +1066,6 @@ class _SubjectGridCard extends StatelessWidget {
                 style: AppTextStyles.labelSm().copyWith(
                   color: scheme.onSurface,
                   height: 1.2,
-                ),
-              ),
-              const SizedBox(height: AppSpacing.xs),
-              Text(
-                hasAttempts
-                    ? '${info.attemptCount} · ${(info.accuracyPercent ?? 0).toStringAsFixed(0)}%'
-                    : 'No practice yet',
-                style: AppTextStyles.caption().copyWith(
-                  color: scheme.onSurfaceVariant,
                 ),
               ),
             ],
