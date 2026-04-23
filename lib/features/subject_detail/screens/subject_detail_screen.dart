@@ -125,10 +125,7 @@ class SubjectDetailScreen extends ConsumerWidget {
 // ── Shared section chrome ─────────────────────────────────────────────────────
 
 class _ScreenSectionHeader extends StatelessWidget {
-  const _ScreenSectionHeader({
-    required this.title,
-    this.subtitle,
-  });
+  const _ScreenSectionHeader({required this.title, this.subtitle});
 
   final String title;
   final String? subtitle;
@@ -163,10 +160,7 @@ class _ScreenSectionHeader extends StatelessWidget {
 }
 
 class _SubjectPanel extends StatelessWidget {
-  const _SubjectPanel({
-    required this.borderColor,
-    required this.child,
-  });
+  const _SubjectPanel({required this.borderColor, required this.child});
 
   final Color borderColor;
   final Widget child;
@@ -189,10 +183,7 @@ class _SubjectPanel extends StatelessWidget {
 
 /// Mock-prep cards: warning tint (revise) vs success tint (safe).
 class _MockPrepThemedPanel extends StatelessWidget {
-  const _MockPrepThemedPanel({
-    required this.isRevise,
-    required this.child,
-  });
+  const _MockPrepThemedPanel({required this.isRevise, required this.child});
 
   final bool isRevise;
   final Widget child;
@@ -227,9 +218,8 @@ class _MockPrepThemedPanel extends StatelessWidget {
             : AppColors.correctBg.withValues(alpha: 0.55),
         borderRadius: BorderRadius.circular(AppRadius.lg),
         border: Border.all(
-          color:
-              (isDark ? AppColors.correctTextDark : AppColors.correctText)
-                  .withValues(alpha: 0.32),
+          color: (isDark ? AppColors.correctTextDark : AppColors.correctText)
+              .withValues(alpha: 0.32),
           width: 1,
         ),
       ),
@@ -251,6 +241,7 @@ class _SubjectInsightEmptyPanel extends StatelessWidget {
   final String title;
   final String body;
   final Color borderColor;
+
   /// When set, border and fill pick up warning (revise) or success (safe).
   final Color? accentTint;
 
@@ -276,11 +267,7 @@ class _SubjectInsightEmptyPanel extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Icon(
-            icon,
-            size: 22,
-            color: tint ?? scheme.onSurfaceVariant,
-          ),
+          Icon(icon, size: 22, color: tint ?? scheme.onSurfaceVariant),
           const SizedBox(width: AppSpacing.md),
           Expanded(
             child: Column(
@@ -524,7 +511,8 @@ class _PracticeSection extends ConsumerWidget {
       children: [
         const _ScreenSectionHeader(
           title: 'PRACTICE',
-          subtitle: 'Start a test across the full subject, or open a specific topic.',
+          subtitle:
+              'Start a test across the full subject, or open a specific topic.',
         ),
         const SizedBox(height: AppSpacing.sm),
         _PracticeCard(
@@ -683,10 +671,8 @@ class _HistorySection extends ConsumerWidget {
         const SizedBox(height: AppSpacing.sm),
         historyAsync.when(
           loading: () => _HistorySkeleton(borderColor: borderColor),
-          error: (_, _) => _HistoryLoadError(
-            borderColor: borderColor,
-            scheme: scheme,
-          ),
+          error: (_, _) =>
+              _HistoryLoadError(borderColor: borderColor, scheme: scheme),
           data: (sessions) {
             if (sessions.isEmpty) {
               return _HistoryEmpty(
@@ -724,10 +710,7 @@ class _HistorySection extends ConsumerWidget {
 }
 
 class _HistoryLoadError extends StatelessWidget {
-  const _HistoryLoadError({
-    required this.borderColor,
-    required this.scheme,
-  });
+  const _HistoryLoadError({required this.borderColor, required this.scheme});
 
   final Color borderColor;
   final ColorScheme scheme;
@@ -978,7 +961,8 @@ class _InsightsSection extends ConsumerWidget {
       children: [
         const _ScreenSectionHeader(
           title: 'INSIGHTS',
-          subtitle: 'Last 30 days, danger zone, and mock prep. A topic is never '
+          subtitle:
+              'Last 30 days, danger zone, and mock prep. A topic is never '
               'in both mock cards: all-time confident wrongs are compared to '
               'confident rights; if equal, we keep it under Revise.',
         ),
@@ -1007,15 +991,9 @@ class _InsightsSection extends ConsumerWidget {
           data: (mock) => Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              _ReviseBeforeNextMockCard(
-                mock: mock,
-                borderColor: borderColor,
-              ),
+              _ReviseBeforeNextMockCard(mock: mock, borderColor: borderColor),
               const SizedBox(height: AppSpacing.sm),
-              _MockSafeAreasCard(
-                mock: mock,
-                borderColor: borderColor,
-              ),
+              _MockSafeAreasCard(mock: mock, borderColor: borderColor),
             ],
           ),
         ),
@@ -1050,15 +1028,10 @@ class _MockPrepSubheading extends StatelessWidget {
 
 /// Advice plus inline "Read why?" in the same text flow (same line when width allows).
 class _MockPrepReadWhyLine extends StatelessWidget {
-  const _MockPrepReadWhyLine({
-    required this.sentence,
-    required this.isRevise,
-    required this.mock,
-  });
+  const _MockPrepReadWhyLine({required this.sentence, required this.isRevise});
 
   final String sentence;
   final bool isRevise;
-  final SubjectMockPrepInsights mock;
 
   @override
   Widget build(BuildContext context) {
@@ -1086,12 +1059,8 @@ class _MockPrepReadWhyLine extends StatelessWidget {
           WidgetSpan(
             alignment: PlaceholderAlignment.middle,
             child: GestureDetector(
-              onTap: () => showMockPrepWhyBottomSheet(
-                context,
-                isRevise: isRevise,
-                globalMistakeRatePercent: mock.globalConfidentMistakeRatePercent,
-                globalReliableRatePercent: mock.globalConfidentRatePercent,
-              ),
+              onTap: () =>
+                  showMockPrepWhyBottomSheet(context, isRevise: isRevise),
               child: Text('Read why?', style: linkStyle),
             ),
           ),
@@ -1140,22 +1109,16 @@ class _ReviseBeforeNextMockCard extends StatelessWidget {
           const SizedBox(height: AppSpacing.lg),
           const _MockPrepSubheading('Advice'),
           _MockPrepReadWhyLine(
-            sentence: 'You are likely to lose marks here due to overconfidence '
+            sentence:
+                'You are likely to lose marks here due to overconfidence '
                 'and risky guessing.',
             isRevise: true,
-            mock: mock,
-          ),
-          const SizedBox(height: AppSpacing.xs),
-          Text(
-            'Data window: last 30 days',
-            style: AppTextStyles.caption().copyWith(
-              color: scheme.onSurfaceVariant,
-              fontWeight: FontWeight.w500,
-              letterSpacing: 0.15,
-            ),
           ),
           const SizedBox(height: AppSpacing.lg),
-          const _MockPrepSubheading('Action item'),
+          Divider(),
+          const SizedBox(height: AppSpacing.lg),
+          const _MockPrepSubheading('Topics to revise'),
+          const SizedBox(height: AppSpacing.xs),
           if (!mock.hasReviseData)
             _SubjectInsightEmptyPanel(
               icon: Icons.fact_check_outlined,
@@ -1227,10 +1190,7 @@ class _ReviseBeforeMockRowWidget extends StatelessWidget {
 }
 
 class _MockSafeAreasCard extends StatelessWidget {
-  const _MockSafeAreasCard({
-    required this.mock,
-    required this.borderColor,
-  });
+  const _MockSafeAreasCard({required this.mock, required this.borderColor});
 
   final SubjectMockPrepInsights mock;
   final Color borderColor;
@@ -1250,11 +1210,7 @@ class _MockSafeAreasCard extends StatelessWidget {
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Icon(
-                Icons.verified_user_outlined,
-                size: 20,
-                color: accent,
-              ),
+              Icon(Icons.verified_user_outlined, size: 20, color: accent),
               const SizedBox(width: AppSpacing.sm),
               Expanded(
                 child: Text(
@@ -1269,21 +1225,14 @@ class _MockSafeAreasCard extends StatelessWidget {
           const SizedBox(height: AppSpacing.lg),
           const _MockPrepSubheading('Advice'),
           _MockPrepReadWhyLine(
-            sentence: 'You can trust your judgment more in these topics during mocks.',
+            sentence:
+                'You can trust your judgment more in these topics during mocks.',
             isRevise: false,
-            mock: mock,
-          ),
-          const SizedBox(height: AppSpacing.xs),
-          Text(
-            'Compared to your account-wide “confident and correct” rate',
-            style: AppTextStyles.caption().copyWith(
-              color: scheme.onSurfaceVariant,
-              fontWeight: FontWeight.w500,
-              letterSpacing: 0.15,
-            ),
           ),
           const SizedBox(height: AppSpacing.lg),
-          const _MockPrepSubheading('Action item'),
+          Divider(),
+          const SizedBox(height: AppSpacing.lg),
+          const _MockPrepSubheading('List of Topics'),
           if (!mock.hasSafeData)
             _SubjectInsightEmptyPanel(
               icon: mock.globalConfidentRatePercent == null
@@ -1294,11 +1243,11 @@ class _MockSafeAreasCard extends StatelessWidget {
                   : 'No topics qualify yet',
               body: mock.globalConfidentRatePercent == null
                   ? 'We need a solid sample of scored answers where you were '
-                      'very or somewhat sure. Keep using confidence on tests so '
-                      'we can set your global rate and list topics that beat it.'
+                        'very or somewhat sure. Keep using confidence on tests so '
+                        'we can set your global rate and list topics that beat it.'
                   : 'In this subject, no topic is clearly above your overall '
-                      'confident-correct rate yet. The list will update as you '
-                      'add more very sure or somewhat sure attempts.',
+                        'confident-correct rate yet. The list will update as you '
+                        'add more very sure or somewhat sure attempts.',
               borderColor: borderColor,
               accentTint: accent,
             )
@@ -1312,10 +1261,7 @@ class _MockSafeAreasCard extends StatelessWidget {
                       color: divider,
                       thickness: 0.5,
                     ),
-                  _MockSafeAreaRow(
-                    row: mock.safeTopics[i],
-                    statColor: accent,
-                  ),
+                  _MockSafeAreaRow(row: mock.safeTopics[i], statColor: accent),
                 ],
               ],
             ),
@@ -1326,10 +1272,7 @@ class _MockSafeAreasCard extends StatelessWidget {
 }
 
 class _MockSafeAreaRow extends StatelessWidget {
-  const _MockSafeAreaRow({
-    required this.row,
-    required this.statColor,
-  });
+  const _MockSafeAreaRow({required this.row, required this.statColor});
 
   final SafeAreaRow row;
   final Color statColor;
@@ -1361,10 +1304,7 @@ class _MockSafeAreaRow extends StatelessWidget {
 }
 
 class _MockPrepLoadError extends StatelessWidget {
-  const _MockPrepLoadError({
-    required this.borderColor,
-    required this.onRetry,
-  });
+  const _MockPrepLoadError({required this.borderColor, required this.onRetry});
 
   final Color borderColor;
   final VoidCallback onRetry;

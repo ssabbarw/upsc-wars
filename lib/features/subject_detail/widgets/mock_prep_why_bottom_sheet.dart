@@ -4,55 +4,46 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../shared/widgets/contact_us_entry.dart';
 
 /// Explains "Revise before mock" vs "Safe areas" mock-prep cards.
 void showMockPrepWhyBottomSheet(
   BuildContext context, {
   required bool isRevise,
-  required double? globalMistakeRatePercent,
-  required double? globalReliableRatePercent,
 }) {
   showModalBottomSheet<void>(
     context: context,
     isScrollControlled: true,
     useSafeArea: true,
     backgroundColor: Colors.transparent,
-    enableDrag: false,
+    enableDrag: true,
+    showDragHandle: true,
     isDismissible: true,
     builder: (ctx) {
-      final screenH = MediaQuery.sizeOf(ctx).height;
-      final sheetHeight = (screenH * 0.72).clamp(420.0, 620.0);
+      final padding = MediaQuery.paddingOf(ctx);
+      final safeH = MediaQuery.sizeOf(ctx).height - padding.vertical;
+      // Reserve space for top inset, Done button, and outer padding (~100pt).
+      final maxBodyScrollHeight = (safeH - 100).clamp(160.0, 640.0);
       return Padding(
         padding: const EdgeInsets.fromLTRB(8, 0, 8, 8),
         child: _MockPrepWhySheet(
-          sheetHeight: sheetHeight,
+          maxBodyScrollHeight: maxBodyScrollHeight,
           isRevise: isRevise,
-          globalMistakeRatePercent: globalMistakeRatePercent,
-          globalReliableRatePercent: globalReliableRatePercent,
         ),
       );
     },
   );
 }
 
-String _formatPct(double? p) {
-  if (p == null) return '';
-  if (p >= 10 || p == p.roundToDouble()) return p.round().toString();
-  return p.toStringAsFixed(1);
-}
-
 class _MockPrepWhySheet extends StatelessWidget {
   const _MockPrepWhySheet({
-    required this.sheetHeight,
+    required this.maxBodyScrollHeight,
     required this.isRevise,
-    required this.globalMistakeRatePercent,
-    required this.globalReliableRatePercent,
   });
 
-  final double sheetHeight;
+  /// Cap for the scrollable region when content is long.
+  final double maxBodyScrollHeight;
   final bool isRevise;
-  final double? globalMistakeRatePercent;
-  final double? globalReliableRatePercent;
 
   @override
   Widget build(BuildContext context) {
@@ -68,141 +59,134 @@ class _MockPrepWhySheet extends StatelessWidget {
         : (isDark
               ? AppColors.correctBgDark.withValues(alpha: 0.32)
               : AppColors.correctBg.withValues(alpha: 0.65));
-    final emoji = isRevise ? '⚠️' : '✨';
-    final hEmoji = isRevise ? '🔎' : '📊';
     final doEmoji = isRevise ? '📚' : '🎯';
 
-    return SizedBox(
-      height: sheetHeight,
-      child: Material(
-        color: scheme.surface,
-        borderRadius: const BorderRadius.vertical(
-          top: Radius.circular(AppRadius.xl + 4),
-        ),
-        clipBehavior: Clip.antiAlias,
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            const SizedBox(height: AppSpacing.lg),
-            Center(child: Text(emoji, style: const TextStyle(fontSize: 36))),
-            const SizedBox(height: AppSpacing.md),
-            Expanded(
-              child: SingleChildScrollView(
-                padding: const EdgeInsets.fromLTRB(
-                  AppSpacing.lg,
-                  0,
-                  AppSpacing.lg,
-                  AppSpacing.xl,
+    return Material(
+      color: scheme.surface,
+      borderRadius: const BorderRadius.vertical(
+        top: Radius.circular(AppRadius.xl + 4),
+      ),
+      clipBehavior: Clip.antiAlias,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          const SizedBox(height: AppSpacing.lg),
+          ConstrainedBox(
+            constraints: BoxConstraints(maxHeight: maxBodyScrollHeight),
+            child: ListView(
+              shrinkWrap: true,
+              physics: const ClampingScrollPhysics(),
+              padding: const EdgeInsets.fromLTRB(
+                AppSpacing.lg,
+                0,
+                AppSpacing.lg,
+                AppSpacing.md,
+              ),
+              children: [
+                if (isRevise) ...[
+                  _TitleBlock(
+                    title: 'Revise Before Your Next Mock',
+                    accent: accent,
+                    softBg: softBg,
+                  ),
+                  const SizedBox(height: AppSpacing.lg),
+                  Text(
+                    'These are topics where your Sure + Incorrect and '
+                    'Educated Guess + Incorrect are higher than your usual average.',
+                    style: AppTextStyles.bodySm().copyWith(
+                      color: scheme.onSurface,
+                      height: 1.45,
+                    ),
+                  ),
+                  const SizedBox(height: AppSpacing.lg),
+                  Divider(
+                    height: 1,
+                    thickness: 1,
+                    color: scheme.outlineVariant.withValues(alpha: 0.45),
+                  ),
+                  const SizedBox(height: AppSpacing.md),
+                  _SectionHeader(
+                    icon: doEmoji,
+                    label: 'What to do',
+                    accent: accent,
+                  ),
+                  const SizedBox(height: AppSpacing.sm),
+                  Text(
+                    'Revise Practice these topics from your notes first before your next mock to reduce '
+                    'costly mistakes and improve your score.',
+                    style: _bodyStyle(scheme),
+                  ),
+                ] else ...[
+                  _TitleBlock(
+                    title: 'Safe Areas for Higher Attempts',
+                    accent: accent,
+                    softBg: softBg,
+                  ),
+                  const SizedBox(height: AppSpacing.lg),
+                  Text(
+                    'These are topics where your Sure + Correct and Educated '
+                    'Guess + Correct are better than your usual average.',
+                    style: AppTextStyles.bodySm().copyWith(
+                      color: scheme.onSurface,
+                      height: 1.45,
+                    ),
+                  ),
+                  const SizedBox(height: AppSpacing.lg),
+                  Divider(
+                    height: 1,
+                    thickness: 1,
+                    color: scheme.outlineVariant.withValues(alpha: 0.45),
+                  ),
+                  const SizedBox(height: AppSpacing.md),
+                  _SectionHeader(
+                    icon: doEmoji,
+                    label: 'What to do',
+                    accent: accent,
+                  ),
+                  const SizedBox(height: AppSpacing.sm),
+                  Text(
+                    'Be more confident while attempting questions from these '
+                    'topics in mocks and exams.',
+                    style: _bodyStyle(scheme),
+                  ),
+                ],
+                const SizedBox(height: AppSpacing.xl),
+                const _ContactClarityLine(),
+                const SizedBox(height: AppSpacing.lg),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(
+              AppSpacing.lg,
+              AppSpacing.sm,
+              AppSpacing.lg,
+              AppSpacing.lg,
+            ),
+            child: FilledButton(
+              onPressed: () => Navigator.of(context).pop(),
+              style: FilledButton.styleFrom(
+                backgroundColor: AppColors.primary,
+                foregroundColor: AppColors.onPrimary,
+                elevation: 0,
+                padding: const EdgeInsets.symmetric(
+                  vertical: AppSpacing.md,
                 ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    if (isRevise) ...[
-                      _TitleBlock(
-                        title: 'Revise Before Your Next Mock',
-                        body: '',
-                        accent: accent,
-                        softBg: softBg,
-                      ),
-                      const SizedBox(height: AppSpacing.lg),
-                      Text(
-                        'These are topics where your Sure + Incorrect and '
-                        'Educated Guess + Incorrect are higher than your usual average.',
-                        style: AppTextStyles.bodySm().copyWith(
-                          color: scheme.onSurface,
-                          height: 1.45,
-                        ),
-                      ),
-                      const SizedBox(height: AppSpacing.xl),
-                      _SectionHeader(
-                        icon: hEmoji,
-                        label: 'How we identify these topics',
-                        accent: accent,
-                      ),
-                      const SizedBox(height: AppSpacing.sm),
-
-                      _SectionHeader(
-                        icon: doEmoji,
-                        label: 'What to do',
-                        accent: accent,
-                      ),
-                      const SizedBox(height: AppSpacing.sm),
-                      Text(
-                        'Practice these topics first before your next mock to reduce '
-                        'costly mistakes and improve your score.',
-                        style: _bodyStyle(scheme),
-                      ),
-                    ] else ...[
-                      _TitleBlock(
-                        title: 'Safe Areas for Higher Attempts',
-                        body:
-                            'You are more likely to score well in these topics '
-                            'because your confidence and elimination are stronger here.',
-                        accent: accent,
-                        softBg: softBg,
-                      ),
-                      const SizedBox(height: AppSpacing.lg),
-                      Text(
-                        'These are topics where your Sure + Correct and Educated '
-                        'Guess + Correct are better than your usual average.',
-                        style: AppTextStyles.bodySm().copyWith(
-                          color: scheme.onSurface,
-                          height: 1.45,
-                        ),
-                      ),
-                      const SizedBox(height: AppSpacing.xl),
-                      _SectionHeader(
-                        icon: hEmoji,
-                        label: 'How we identify these topics',
-                        accent: accent,
-                      ),
-                      const SizedBox(height: AppSpacing.sm),
-                      if (globalReliableRatePercent != null)
-                        Text(
-                          'Across all subjects, about '
-                          '${_formatPct(globalReliableRatePercent)}% of your very sure '
-                          'or somewhat sure, scored answers are correct — we use that '
-                          'as your usual baseline for “reliable” attempts.',
-                          style: _bodyStyle(scheme),
-                        )
-                      else
-                        Text(
-                          'We need more confident, scored practice before we can show '
-                          'this percentage. Keep using confidence levels on your tests.',
-                          style: _bodyStyle(scheme),
-                        ),
-                      const SizedBox(height: AppSpacing.md),
-                      Text(
-                        'If a topic performs better than this, you can trust your '
-                        'judgment more there in mocks and exams.',
-                        style: _bodyStyle(scheme),
-                      ),
-                      const SizedBox(height: AppSpacing.md),
-                      Text(
-                        'That is why these topics are placed here.',
-                        style: _bodyStyle(scheme, weight: FontWeight.w600),
-                      ),
-                      const SizedBox(height: AppSpacing.xl),
-                      _SectionHeader(
-                        icon: doEmoji,
-                        label: 'What to do',
-                        accent: accent,
-                      ),
-                      const SizedBox(height: AppSpacing.sm),
-                      Text(
-                        'Be more confident while attempting questions from these '
-                        'topics in mocks and exams.',
-                        style: _bodyStyle(scheme),
-                      ),
-                    ],
-                    const SizedBox(height: AppSpacing.lg),
-                  ],
+                minimumSize: const Size(double.infinity, 48),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(AppRadius.lg),
+                ),
+              ),
+              child: Text(
+                'Done',
+                style: AppTextStyles.label().copyWith(
+                  color: AppColors.onPrimary,
+                  fontWeight: FontWeight.w600,
                 ),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
@@ -219,13 +203,11 @@ class _MockPrepWhySheet extends StatelessWidget {
 class _TitleBlock extends StatelessWidget {
   const _TitleBlock({
     required this.title,
-    required this.body,
     required this.accent,
     required this.softBg,
   });
 
   final String title;
-  final String body;
   final Color accent;
   final Color softBg;
 
@@ -240,22 +222,44 @@ class _TitleBlock extends StatelessWidget {
         borderRadius: BorderRadius.circular(AppRadius.lg),
         border: Border.all(color: accent.withValues(alpha: 0.25)),
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: Text(
+        title,
+        textAlign: TextAlign.center,
+        style: AppTextStyles.label().copyWith(
+          color: scheme.onSurface,
+          fontSize: 16,
+        ),
+      ),
+    );
+  }
+}
+
+class _ContactClarityLine extends StatelessWidget {
+  const _ContactClarityLine();
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    final body = AppTextStyles.bodySm().copyWith(
+      color: scheme.onSurfaceVariant,
+      height: 1.45,
+    );
+    final link = AppTextStyles.labelSm().copyWith(
+      color: scheme.primary,
+      fontWeight: FontWeight.w600,
+      decoration: TextDecoration.underline,
+      decorationColor: scheme.primary,
+    );
+    return Text.rich(
+      TextSpan(
+        style: body,
         children: [
-          Text(
-            title,
-            style: AppTextStyles.label().copyWith(
-              color: scheme.onSurface,
-              fontSize: 16,
-            ),
-          ),
-          const SizedBox(height: AppSpacing.md),
-          Text(
-            body,
-            style: AppTextStyles.bodySm().copyWith(
-              color: scheme.onSurface,
-              height: 1.45,
+          const TextSpan(text: 'Want further clarity? '),
+          WidgetSpan(
+            alignment: PlaceholderAlignment.middle,
+            child: GestureDetector(
+              onTap: () => showContactUsSheet(context),
+              child: Text('Contact us', style: link),
             ),
           ),
         ],
