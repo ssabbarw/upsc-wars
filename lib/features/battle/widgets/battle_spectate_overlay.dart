@@ -217,7 +217,6 @@ class BattleSpectateFabHost extends HookConsumerWidget {
       return t.cancel;
     }, [s?.sessionId]);
 
-    final fabKey = useMemoized(GlobalKey.new);
     final fabTopLeft = useState<Offset?>(null);
     final fabSize = useState(const Size(200, 48));
     final persistTimer = useRef<Timer?>(null);
@@ -236,16 +235,6 @@ class BattleSpectateFabHost extends HookConsumerWidget {
         persistTimer.value?.cancel();
       };
     }, const []);
-
-    useEffect(() {
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        final box = fabKey.currentContext?.findRenderObject() as RenderBox?;
-        if (box != null && box.hasSize) {
-          fabSize.value = box.size;
-        }
-      });
-      return null;
-    }, [s?.sessionId]);
 
     if (s == null || sheetOpen) return const SizedBox.shrink();
 
@@ -294,7 +283,6 @@ class BattleSpectateFabHost extends HookConsumerWidget {
           schedulePersistFab(next);
         },
         child: Material(
-          key: fabKey,
           elevation: 10,
           color: accent,
           shape: RoundedRectangleBorder(

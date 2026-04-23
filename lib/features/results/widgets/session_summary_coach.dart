@@ -15,6 +15,24 @@ import '../../../features/topic_test/providers/topic_test_ui_providers.dart';
 import '../providers/session_coach_providers.dart';
 import '../providers/session_topic_accuracy_provider.dart';
 
+/// Opens session question review. When the user is already on Danger Zone for
+/// this session, [Navigator] page keys from stacked `/history/...` routes can
+/// collide; replacing that route avoids the duplicate-key assert.
+void _openSessionHistoryReview(
+  BuildContext context,
+  String sessionId, {
+  bool focusWrong = false,
+}) {
+  final loc =
+      focusWrong ? '/history/$sessionId?focus=wrong' : '/history/$sessionId';
+  final path = GoRouter.of(context).state.uri.path;
+  if (path.startsWith('/danger-zone/')) {
+    context.pushReplacement(loc);
+  } else {
+    context.push(loc);
+  }
+}
+
 /// Post-test “coach” summary: score, danger zone, next action, trend, revision, advanced.
 class SessionSummaryCoachContent extends ConsumerWidget {
   const SessionSummaryCoachContent({
@@ -469,7 +487,7 @@ class _ScoreTrendCard extends StatelessWidget {
                 onPressed: () {
                   HapticFeedback.lightImpact();
                   if (context.mounted) {
-                    context.push('/history/$sessionId');
+                    _openSessionHistoryReview(context, sessionId);
                   }
                 },
                 child: Text(
@@ -756,7 +774,7 @@ Future<void> _runPrimaryCoachAction(
       break;
     case _CoachPrimaryKind.reviewWrong:
       if (context.mounted) {
-        context.push('/history/$sessionId?focus=wrong');
+        _openSessionHistoryReview(context, sessionId, focusWrong: true);
       }
       break;
     case _CoachPrimaryKind.browseTopics:

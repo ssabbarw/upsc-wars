@@ -121,43 +121,61 @@ class _DangerZonePager extends HookConsumerWidget {
         : AnswerConfidence.displayLabel(q.confidence!);
     final isBookmarked = bookmarks.value[q.uuid] ?? false;
 
-    return ReviewBody(
-      title: 'Danger Zone Review',
-      showRevisionBadge: false,
-      progressRight: '${q.subject} · ${q.topic}',
-      question: q,
-      current: current,
-      total: total,
-      isBookmarked: isBookmarked,
-      isQueued: false,
-      confidenceSessionId: sessionId,
-      onToggleBookmark: () async {
-        final repo = await ref.read(testEngineRepositoryProvider.future);
-        if (isBookmarked) {
-          await repo.removeBookmark(q.uuid);
-        } else {
-          await repo.addBookmark(q.uuid);
-        }
-        bookmarks.value = {...bookmarks.value, q.uuid: !isBookmarked};
-      },
-      onPrev: () {
-        if (index.value > 0) index.value = index.value - 1;
-      },
-      onNext: () {
-        if (current == total) {
-          if (context.canPop()) {
-            context.pop();
-          } else {
-            context.go('/');
-          }
-        } else {
-          index.value = index.value + 1;
-        }
-      },
-      onAddToRevision: null,
-      uiLanguage: uiLanguage.value,
-      onLanguageChanged: (lang) => uiLanguage.value = lang,
-      confidenceBanner: 'You were $confLabel',
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Expanded(
+          child: ReviewBody(
+            title: 'Danger Zone Review',
+            showRevisionBadge: false,
+            progressRight: '${q.subject} · ${q.topic}',
+            question: q,
+            current: current,
+            total: total,
+            isBookmarked: isBookmarked,
+            isQueued: false,
+            confidenceSessionId: sessionId,
+            onToggleBookmark: () async {
+              final repo = await ref.read(testEngineRepositoryProvider.future);
+              if (isBookmarked) {
+                await repo.removeBookmark(q.uuid);
+              } else {
+                await repo.addBookmark(q.uuid);
+              }
+              bookmarks.value = {...bookmarks.value, q.uuid: !isBookmarked};
+            },
+            onPrev: () {
+              if (index.value > 0) index.value = index.value - 1;
+            },
+            onNext: () {
+              if (current == total) {
+                if (context.canPop()) {
+                  context.pop();
+                } else {
+                  context.go('/');
+                }
+              } else {
+                index.value = index.value + 1;
+              }
+            },
+            onAddToRevision: null,
+            uiLanguage: uiLanguage.value,
+            onLanguageChanged: (lang) => uiLanguage.value = lang,
+            confidenceBanner: 'You were $confLabel',
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
+          child: OutlinedButton(
+            onPressed: () =>
+                context.pushReplacement('/history/$sessionId'),
+            child: Text(
+              'Review full session in History',
+              style: AppTextStyles.label(),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
