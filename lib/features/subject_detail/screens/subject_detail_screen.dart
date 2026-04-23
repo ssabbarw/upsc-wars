@@ -1,3 +1,5 @@
+import 'dart:async' show unawaited;
+
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -393,20 +395,6 @@ class _HeaderStats extends StatelessWidget {
                   color: scheme.onSurfaceVariant,
                 ),
               ),
-              const SizedBox(height: AppSpacing.xs),
-              if (!hasAttempts)
-                Text(
-                  'No practice yet — start your first test!',
-                  style: AppTextStyles.caption().copyWith(
-                    color: scheme.onSurfaceVariant,
-                  ),
-                )
-              else
-                AccuracyPercentageText(
-                  attemptCount: info.attemptCount,
-                  accuracyPercent: info.accuracyPercent,
-                  tier: info.accuracyTier,
-                ),
             ],
           ),
         ),
@@ -799,16 +787,67 @@ class _AdviceForSubjectMockPrepGroupState
     with SingleTickerProviderStateMixin {
   bool _expanded = true;
   late final TabController _tabController;
+  late final ScrollController _reviseScrollController;
+  late final ScrollController _safeScrollController;
 
   @override
   void initState() {
     super.initState();
     _tabController = TabController(length: 2, vsync: this);
+    _reviseScrollController = ScrollController();
+    _safeScrollController = ScrollController();
+    _tabController.addListener(_onTabChanged);
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted && _expanded) {
+        _scheduleNudgeForCurrentTab();
+      }
+    });
+  }
+
+  void _onTabChanged() {
+    if (_tabController.indexIsChanging) return;
+    _scheduleNudgeForCurrentTab();
+  }
+
+  void _scheduleNudgeForCurrentTab() {
+    if (!_expanded) return;
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      final c = _tabController.index == 0
+          ? _reviseScrollController
+          : _safeScrollController;
+      unawaited(_nudgeScrollIfScrollable(c));
+    });
+  }
+
+  Future<void> _nudgeScrollIfScrollable(ScrollController c) async {
+    if (!c.hasClients) return;
+    final max = c.position.maxScrollExtent;
+    if (max < 16) return;
+    final delta = (max * 0.14).clamp(10.0, 48.0);
+    try {
+      await c.animateTo(
+        delta,
+        duration: const Duration(milliseconds: 340),
+        curve: Curves.easeOutCubic,
+      );
+      if (!mounted || !c.hasClients) return;
+      await c.animateTo(
+        0,
+        duration: const Duration(milliseconds: 400),
+        curve: Curves.easeOutCubic,
+      );
+    } catch (_) {
+      // Controller disposed mid-animation.
+    }
   }
 
   @override
   void dispose() {
+    _tabController.removeListener(_onTabChanged);
     _tabController.dispose();
+    _reviseScrollController.dispose();
+    _safeScrollController.dispose();
     super.dispose();
   }
 
@@ -828,7 +867,12 @@ class _AdviceForSubjectMockPrepGroupState
           Material(
             color: Colors.transparent,
             child: InkWell(
-              onTap: () => setState(() => _expanded = !_expanded),
+              onTap: () {
+                setState(() => _expanded = !_expanded);
+                if (_expanded) {
+                  _scheduleNudgeForCurrentTab();
+                }
+              },
               borderRadius: BorderRadius.circular(AppRadius.md),
               child: Padding(
                 padding: const EdgeInsets.symmetric(vertical: AppSpacing.xs),
@@ -870,10 +914,12 @@ class _AdviceForSubjectMockPrepGroupState
                   _ReviseBeforeNextMockCard(
                     mock: widget.mock,
                     borderColor: widget.borderColor,
+                    scrollController: _reviseScrollController,
                   ),
                   _MockSafeAreasCard(
                     mock: widget.mock,
                     borderColor: widget.borderColor,
+                    scrollController: _safeScrollController,
                   ),
                 ],
               ),
@@ -957,10 +1003,12 @@ class _ReviseBeforeNextMockCard extends StatelessWidget {
   const _ReviseBeforeNextMockCard({
     required this.mock,
     required this.borderColor,
+    required this.scrollController,
   });
 
   final SubjectMockPrepInsights mock;
   final Color borderColor;
+  final ScrollController scrollController;
 
   @override
   Widget build(BuildContext context) {
@@ -972,8 +1020,9 @@ class _ReviseBeforeNextMockCard extends StatelessWidget {
     return _MockPrepThemedPanel(
       isRevise: true,
       child: ListView(
+        controller: scrollController,
         padding: EdgeInsets.zero,
-        physics: const ClampingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         children: [
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -1068,10 +1117,15 @@ class _ReviseBeforeMockRowWidget extends StatelessWidget {
 }
 
 class _MockSafeAreasCard extends StatelessWidget {
-  const _MockSafeAreasCard({required this.mock, required this.borderColor});
+  const _MockSafeAreasCard({
+    required this.mock,
+    required this.borderColor,
+    required this.scrollController,
+  });
 
   final SubjectMockPrepInsights mock;
   final Color borderColor;
+  final ScrollController scrollController;
 
   @override
   Widget build(BuildContext context) {
@@ -1083,8 +1137,9 @@ class _MockSafeAreasCard extends StatelessWidget {
     return _MockPrepThemedPanel(
       isRevise: false,
       child: ListView(
+        controller: scrollController,
         padding: EdgeInsets.zero,
-        physics: const ClampingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         children: [
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
