@@ -1,129 +1,144 @@
-# Database schema (SQLite)
+# App data stores — schema reference
 
-This document matches the unified app database: Drift definitions in `lib/core/database/user_db.dart` and the shipped file produced by `tools/build_question_db.py`.
-
-**Drift ↔ SQLite names:** Drift class `QuestionTranslations` maps to table **`explanations`**. Drift class `SessionQuestions` maps to table **`attempts`**.
-
-**Storage note:** Drift maps `bool` to SQLite **INTEGER** (0/1). Drift maps `DateTime` to SQLite **INTEGER** using its built-in datetime encoding (not necessarily plain Unix seconds). The offline builder (`build_question_db.py`) uses **INTEGER** Unix **seconds** for `sessions`, `bookmarks`, `revision_queue`, and `user_topic_stats` timestamps on the prebuilt asset; at runtime the app may insert rows through Drift with the same logical columns—keep formats consistent if mixing raw SQL and Drift writes.
-
-**Metadata:** `PRAGMA user_version = 1` is set when building the asset DB.
+This project uses **one on-device SQLite file** for questions and user progress, plus **Firebase Realtime Database** for chat and presence. Drift models live in `lib/core/database/user_db.dart`; the bundled file is produced by `tools/build_question_db.py` and copied at startup from `assets/db/upsc_wars_questions.db` to `upsc_wars_questions.db` under the app documents directory (`QuestionBankSetup` / `user_db_connection_io.dart`).
 
 ---
 
-## `questions`
+## SQLite — `upsc_wars_questions.db`
 
-| Column | Type | Constraints / notes |
-|--------|------|---------------------|
-| `uuid` | TEXT | PRIMARY KEY |
-| `subject` | TEXT | NOT NULL — display string (e.g. `Ancient History`, `Polity`) |
-| `topic` | TEXT | NOT NULL |
-| `sub_topic` | TEXT | NOT NULL |
-| `question_type` | TEXT | NOT NULL — e.g. `direct`, `multi-statement-correct`, `multi-statement-incorrect` |
-| `trap_type` | TEXT | NULLABLE |
-| `correct_option` | TEXT | NOT NULL — `a` \| `b` \| `c` \| `d` |
-| `concept_anchor` | TEXT | NOT NULL |
-| `concepts_used` | TEXT | NOT NULL — JSON array |
-| `en_display_text` | TEXT | NULLABLE — may be null for table-first questions |
-| `hi_display_text` | TEXT | NULLABLE |
-| `has_table` | INTEGER | NOT NULL DEFAULT 0 — 0 \| 1 |
-| `negative_framing` | INTEGER | NOT NULL DEFAULT 0 — 0 \| 1 |
+**`PRAGMA user_version`:** `5` (set in `build_question_db.py` and matched by `UserDatabase.schemaVersion`).
+
+**Drift ↔ table names:** class `QuestionTranslations` → table **`explanations`**. class `SessionQuestions` → table **`attempts`**.
+
+**Type mapping:** SQLite stores Drift `bool` as **INTEGER** `0`/`1` (with `CHECK` constraints from Drift). Drift `DateTime` is stored as **INTEGER** (Drift’s datetime encoding at runtime). The Python builder uses **Unix epoch seconds** for integer timestamps on the shipped asset (`sessions`, `bookmarks`, `revision_queue`, `user_topic_stats`, `user_feature_stats`, `user_trap_stats`); keep that consistent if you mix raw SQL and Drift on the same file.
+
+**Foreign keys:** enabled in the builder script (`PRAGMA foreign_keys = ON`).
+
+---
+
+### `questions`
+
+| Column | SQLite type | Null | Default | Notes |
+|--------|-------------|------|---------|--------|
+| `uuid` | TEXT | NOT NULL | — | PRIMARY KEY |
+| `subject` | TEXT | NOT NULL | — | Display label (e.g. Polity) |
+| `topic` | TEXT | NOT NULL | — | |
+| `sub_topic` | TEXT | NOT NULL | — | |
+| `question_type` | TEXT | NOT NULL | — | e.g. `direct`, `multi-statement-correct`, … |
+| `trap_type` | TEXT | YES | — | Optional trap label |
+| `correct_option` | TEXT | NOT NULL | — | `a`–`d` |
+| `concept_anchor` | TEXT | NOT NULL | — | |
+| `concepts_used` | TEXT | NOT NULL | — | JSON array as text |
+| `en_display_text` | TEXT | YES | — | May be null when `has_table` supplies copy |
+| `hi_display_text` | TEXT | YES | — | |
+| `has_table` | INTEGER | NOT NULL | `0` | `0` / `1` |
+| `negative_framing` | INTEGER | NOT NULL | `0` | `0` / `1` |
+| `paper_order` | INTEGER | YES | — | 1-based order in a PYQ paper; null for non-PYQ |
 
 **Indexes**
 
 - `idx_questions_subject` ON (`subject`)
 - `idx_questions_subject_topic` ON (`subject`, `topic`)
 
----
-
-## `explanations` (Drift: `QuestionTranslations`)
-
-| Column | Type | Constraints / notes |
-|--------|------|---------------------|
-| `id` | INTEGER | PRIMARY KEY AUTOINCREMENT |
-| `question_uuid` | TEXT | NOT NULL, FK → `questions.uuid` ON DELETE CASCADE |
-| `language` | TEXT | NOT NULL — `en` \| `hi` |
-| `strong_distractor` | TEXT | NOT NULL |
-| `elimination_logic` | TEXT | NOT NULL — JSON array |
-| `upsc_trap_explanation` | TEXT | NOT NULL |
-| `final_explanation` | TEXT | NOT NULL |
-| `statement_analysis` | TEXT | NULLABLE — JSON array; statement-type questions |
-
-**Constraints:** UNIQUE (`question_uuid`, `language`)
+**FKs:** none (root entity).
 
 ---
 
-## `question_tables` (Drift: `QuestionTables`)
+### `explanations` (Drift: `QuestionTranslations`)
 
-One row per question that has a table: bilingual payloads in the same row.
+Physical tables created from the **asset builder** include a surrogate key. Drift’s Dart table does **not** declare `id`; it relies on `UNIQUE (question_uuid, language)`. The shipped DB still has `id` for SQLite convenience—Drift ignores the extra column.
 
-| Column | Type | Constraints / notes |
-|--------|------|---------------------|
-| `id` | INTEGER | PRIMARY KEY AUTOINCREMENT |
-| `question_uuid` | TEXT | NOT NULL, FK → `questions.uuid` ON DELETE CASCADE |
-| `en_header_text` | TEXT | NULLABLE |
-| `en_footer_text` | TEXT | NULLABLE |
-| `en_columns` | TEXT | NOT NULL — JSON array of header strings |
-| `en_rows` | TEXT | NOT NULL — JSON 2D array of cell values |
-| `hi_header_text` | TEXT | NULLABLE |
-| `hi_footer_text` | TEXT | NULLABLE |
-| `hi_columns` | TEXT | NOT NULL — JSON array |
-| `hi_rows` | TEXT | NOT NULL — JSON 2D array |
+| Column | SQLite type | Null | Default | Notes |
+|--------|-------------|------|---------|--------|
+| `id` | INTEGER | NOT NULL | AUTOINCREMENT | PRIMARY KEY (builder / bundled DB) |
+| `question_uuid` | TEXT | NOT NULL | — | FK → `questions.uuid` ON DELETE CASCADE |
+| `language` | TEXT | NOT NULL | — | `en` \| `hi` |
+| `strong_distractor` | TEXT | NOT NULL | — | |
+| `elimination_logic` | TEXT | NOT NULL | — | JSON array as text |
+| `upsc_trap_explanation` | TEXT | NOT NULL | — | |
+| `final_explanation` | TEXT | NOT NULL | — | |
+| `statement_analysis` | TEXT | YES | — | JSON array; statement-style items |
 
-**Constraints:** UNIQUE (`question_uuid`)
+**Constraints / indexes**
 
----
-
-## `topic_translations`
-
-| Column | Type | Constraints / notes |
-|--------|------|---------------------|
-| `id` | INTEGER | PRIMARY KEY AUTOINCREMENT |
-| `english_name` | TEXT | NOT NULL |
-| `hindi_name` | TEXT | NOT NULL |
-
-**Constraints:** UNIQUE (`english_name`)
-
-**Note:** Soft lookup — `questions.topic` / `questions.sub_topic` can be matched to `english_name`. No FK. The offline question DB builder may leave this table empty until Hindi topic names are available.
+- UNIQUE (`question_uuid`, `language`) — index name `uq_explanations_question_lang`
 
 ---
 
-## `sessions`
+### `question_tables` (Drift: `QuestionTables`)
 
-| Column | Type | Constraints / notes |
-|--------|------|---------------------|
-| `id` | TEXT | PRIMARY KEY — UUID string |
-| `created_at` | INTEGER | NOT NULL — Unix time (builder); Drift `DateTime` |
-| `completed_at` | INTEGER | NULLABLE |
-| `subject` | TEXT | NOT NULL |
-| `topic` | TEXT | NULLABLE — null = whole-subject session |
-| `sub_topic` | TEXT | NULLABLE |
-| `mode` | TEXT | NOT NULL — app uses `exam` \| `learning` (history/filters may reference these) |
-| `status` | TEXT | NOT NULL — e.g. `in_progress`, `completed`, `abandoned` |
-| `question_count` | INTEGER | NOT NULL |
-| `score` | INTEGER | NULLABLE |
-| `is_timed` | INTEGER | NOT NULL DEFAULT 0 — 0 \| 1 |
-| `time_limit_secs` | INTEGER | NULLABLE |
-| `exam_remaining_secs` | INTEGER | NULLABLE |
-| `language` | TEXT | NOT NULL DEFAULT `en` — `en` \| `hi` |
+| Column | SQLite type | Null | Default | Notes |
+|--------|-------------|------|---------|--------|
+| `id` | INTEGER | NOT NULL | AUTOINCREMENT | PRIMARY KEY |
+| `question_uuid` | TEXT | NOT NULL | — | FK → `questions.uuid` ON DELETE CASCADE |
+| `en_header_text` | TEXT | YES | — | |
+| `en_footer_text` | TEXT | YES | — | |
+| `en_columns` | TEXT | NOT NULL | — | JSON array of headers |
+| `en_rows` | TEXT | NOT NULL | — | JSON 2D array |
+| `hi_header_text` | TEXT | YES | — | |
+| `hi_footer_text` | TEXT | YES | — | |
+| `hi_columns` | TEXT | NOT NULL | — | JSON array |
+| `hi_rows` | TEXT | NOT NULL | — | JSON 2D array |
 
-**Indexes:** None required by builder; add in SQL if you introduce `idx_sessions_status` etc.
+**Constraints / indexes**
+
+- UNIQUE (`question_uuid`) — `uq_question_tables_question`
 
 ---
 
-## `attempts` (Drift: `SessionQuestions`)
+### `topic_translations` (Drift: `TopicTranslations`)
 
-| Column | Type | Constraints / notes |
-|--------|------|---------------------|
-| `id` | TEXT | PRIMARY KEY — UUID string |
-| `session_id` | TEXT | NOT NULL, FK → `sessions.id` ON DELETE CASCADE |
-| `question_uuid` | TEXT | NOT NULL, FK → `questions.uuid` ON DELETE CASCADE |
-| `position` | INTEGER | NOT NULL — 1-based order in session |
-| `selected_option` | TEXT | NULLABLE — `a` \| `b` \| `c` \| `d` |
-| `is_correct` | INTEGER | NULLABLE — 0 \| 1; null if unattempted |
-| `status` | TEXT | NOT NULL DEFAULT `unattempted` — app uses `unattempted` \| `correct` \| `wrong` \| `timed_out` |
-| `time_spent_secs` | INTEGER | NULLABLE |
-| `flagged` | INTEGER | NOT NULL DEFAULT 0 — 0 \| 1 |
-| `attempted_at` | INTEGER | NULLABLE — Unix time |
+| Column | SQLite type | Null | Default | Notes |
+|--------|-------------|------|---------|--------|
+| `id` | INTEGER | NOT NULL | AUTOINCREMENT | PRIMARY KEY |
+| `english_name` | TEXT | NOT NULL | — | |
+| `hindi_name` | TEXT | NOT NULL | — | |
+
+**Constraints / indexes**
+
+- UNIQUE (`english_name`) — `uq_topic_translations_english`
+
+**Note:** Soft lookup for Hindi labels; no FK to `questions`.
+
+---
+
+### `sessions` (Drift: `Sessions`)
+
+| Column | SQLite type | Null | Default | Notes |
+|--------|-------------|------|---------|--------|
+| `id` | TEXT | NOT NULL | — | PRIMARY KEY, UUID string |
+| `created_at` | INTEGER | NOT NULL | — | Epoch seconds on asset; Drift `DateTime` |
+| `completed_at` | INTEGER | YES | — | |
+| `subject` | TEXT | NOT NULL | — | |
+| `topic` | TEXT | YES | — | null = whole-subject / special packs |
+| `sub_topic` | TEXT | YES | — | |
+| `mode` | TEXT | NOT NULL | — | App persists `exam` \| `learning` |
+| `status` | TEXT | NOT NULL | — | e.g. `in_progress`, `completed`, `abandoned` |
+| `question_count` | INTEGER | NOT NULL | — | |
+| `score` | INTEGER | YES | — | |
+| `is_timed` | INTEGER | NOT NULL | — | `0` / `1` (no default in shipped SQL) |
+| `time_limit_secs` | INTEGER | YES | — | |
+| `exam_remaining_secs` | INTEGER | YES | — | |
+| `language` | TEXT | NOT NULL | `'en'` | `en` \| `hi` |
+| `analytics_feature_key` | TEXT | YES | — | Optional analytics bucket |
+
+---
+
+### `attempts` (Drift: `SessionQuestions`)
+
+| Column | SQLite type | Null | Default | Notes |
+|--------|-------------|------|---------|--------|
+| `id` | TEXT | NOT NULL | — | PRIMARY KEY, UUID |
+| `session_id` | TEXT | NOT NULL | — | FK → `sessions.id` ON DELETE CASCADE |
+| `question_uuid` | TEXT | NOT NULL | — | FK → `questions.uuid` ON DELETE CASCADE |
+| `position` | INTEGER | NOT NULL | — | 1-based order in session |
+| `selected_option` | TEXT | YES | — | `a`–`d` |
+| `is_correct` | INTEGER | YES | — | `0` / `1`; null if not scored |
+| `status` | TEXT | NOT NULL | `'unattempted'` | `unattempted` \| `correct` \| `wrong` \| `timed_out` |
+| `time_spent_secs` | INTEGER | YES | — | |
+| `flagged` | INTEGER | NOT NULL | `0` | `0` / `1` |
+| `attempted_at` | INTEGER | YES | — | Epoch seconds (asset); Drift `DateTime` |
+| `confidence` | TEXT | YES | — | `very_sure` \| `somewhat_sure` \| `guessing`; null if unset |
 
 **Indexes**
 
@@ -132,43 +147,118 @@ One row per question that has a table: bilingual payloads in the same row.
 
 ---
 
-## `bookmarks`
+### `bookmarks` (Drift: `Bookmarks`)
 
-| Column | Type | Constraints / notes |
-|--------|------|---------------------|
-| `id` | TEXT | PRIMARY KEY — UUID string |
-| `question_uuid` | TEXT | NOT NULL UNIQUE, FK → `questions.uuid` ON DELETE CASCADE |
-| `created_at` | INTEGER | NOT NULL — Unix time (builder); Drift `DateTime` |
-| `user_note` | TEXT | NULLABLE |
-
----
-
-## `revision_queue`
-
-| Column | Type | Constraints / notes |
-|--------|------|---------------------|
-| `id` | TEXT | PRIMARY KEY — UUID string |
-| `question_uuid` | TEXT | NOT NULL UNIQUE, FK → `questions.uuid` ON DELETE CASCADE |
-| `date_added_to_queue` | INTEGER | NOT NULL — Unix time (builder); Drift `DateTime` |
-| `number_of_times_answered_correctly_in_revision` | INTEGER | NOT NULL DEFAULT 0 |
-| `number_of_times_answered_incorrectly_in_revision` | INTEGER | NOT NULL DEFAULT 0 |
-| `has_graduated_from_queue` | INTEGER | NOT NULL DEFAULT 0 — 0 \| 1 |
-| `date_graduated` | INTEGER | NULLABLE — Unix time |
+| Column | SQLite type | Null | Default | Notes |
+|--------|-------------|------|---------|--------|
+| `id` | TEXT | NOT NULL | — | PRIMARY KEY, UUID |
+| `question_uuid` | TEXT | NOT NULL | — | UNIQUE, FK → `questions.uuid` ON DELETE CASCADE |
+| `created_at` | INTEGER | NOT NULL | — | Epoch seconds / Drift `DateTime` |
+| `user_note` | TEXT | YES | — | |
 
 ---
 
-## `user_topic_stats`
+### `revision_queue` (Drift: `RevisionQueue`)
 
-| Column | Type | Constraints / notes |
-|--------|------|---------------------|
-| `id` | INTEGER | PRIMARY KEY AUTOINCREMENT |
-| `subject` | TEXT | NOT NULL |
-| `topic` | TEXT | NOT NULL |
-| `total_attempted` | INTEGER | NOT NULL DEFAULT 0 |
-| `total_correct` | INTEGER | NOT NULL DEFAULT 0 |
-| `accuracy_percentage` | REAL | NOT NULL DEFAULT 0.0 |
-| `last_attempted_at` | INTEGER | NOT NULL — Unix time (builder); Drift `DateTime` |
+| Column | SQLite type | Null | Default | Notes |
+|--------|-------------|------|---------|--------|
+| `id` | TEXT | NOT NULL | — | PRIMARY KEY, UUID |
+| `question_uuid` | TEXT | NOT NULL | — | UNIQUE, FK → `questions.uuid` ON DELETE CASCADE |
+| `date_added_to_queue` | INTEGER | NOT NULL | — | Epoch seconds / Drift `DateTime` |
+| `number_of_times_answered_correctly_in_revision` | INTEGER | NOT NULL | `0` | |
+| `number_of_times_answered_incorrectly_in_revision` | INTEGER | NOT NULL | `0` | |
+| `has_graduated_from_queue` | INTEGER | NOT NULL | `0` | `0` / `1` |
+| `date_graduated` | INTEGER | YES | — | Epoch seconds / Drift `DateTime` |
 
-**Constraints:** UNIQUE (`subject`, `topic`)
+---
 
-**Note:** No FK to `questions` or `attempts`. Rows are updated by app logic after session completion.
+### `user_topic_stats` (Drift: `UserTopicStats`)
+
+| Column | SQLite type | Null | Default | Notes |
+|--------|-------------|------|---------|--------|
+| `id` | INTEGER | NOT NULL | AUTOINCREMENT | PRIMARY KEY |
+| `subject` | TEXT | NOT NULL | — | |
+| `topic` | TEXT | NOT NULL | — | |
+| `total_attempted` | INTEGER | NOT NULL | `0` | |
+| `total_correct` | INTEGER | NOT NULL | `0` | |
+| `accuracy_percentage` | REAL | NOT NULL | `0.0` | Percent 0–100 |
+| `last_attempted_at` | INTEGER | NOT NULL | — | Epoch seconds / Drift `DateTime` |
+| `wrong_attempts` | INTEGER | NOT NULL | `0` | |
+| `total_time_spent_secs` | INTEGER | NOT NULL | `0` | |
+
+**Constraints**
+
+- UNIQUE (`subject`, `topic`)
+
+---
+
+### `user_feature_stats` (Drift: `UserFeatureStats`)
+
+| Column | SQLite type | Null | Default | Notes |
+|--------|-------------|------|---------|--------|
+| `feature_name` | TEXT | NOT NULL | — | PRIMARY KEY |
+| `total_views` | INTEGER | NOT NULL | `0` | |
+| `total_starts` | INTEGER | NOT NULL | `0` | |
+| `total_completions` | INTEGER | NOT NULL | `0` | |
+| `last_used_at` | INTEGER | NOT NULL | — | Epoch seconds / Drift `DateTime` |
+
+---
+
+### `user_trap_stats` (Drift: `UserTrapStats`)
+
+| Column | SQLite type | Null | Default | Notes |
+|--------|-------------|------|---------|--------|
+| `trap_type` | TEXT | NOT NULL | — | PRIMARY KEY |
+| `total_failures` | INTEGER | NOT NULL | `0` | |
+| `last_failed_at` | INTEGER | NOT NULL | — | Epoch seconds / Drift `DateTime` |
+
+---
+
+### SQLite indexes vs Drift `onCreate`
+
+Drift’s `UserDatabase.migration.onCreate` creates **`idx_questions_subject`** only. The **bundled** DB from `build_question_db.py` also creates **`idx_questions_subject_topic`**. Treat the builder script as the source of truth for the shipped file.
+
+---
+
+## Firebase Realtime Database (JSON)
+
+Rules are in `database.rules.json` (authenticated read/write on the trees below). Shapes follow `RealtimeChatService`.
+
+### `chatMessages/{chatId}/{messageId}`
+
+| Field | Type | Notes |
+|-------|------|--------|
+| `senderEmail` | string | Lowercased email |
+| `text` | string | |
+| `createdAt` | number | `ServerValue.timestamp` |
+
+### `chatThreads/{chatId}`
+
+| Field | Type | Notes |
+|-------|------|--------|
+| `participantEmails` | array of string | Sorted pair of emails |
+| `participants/{userKey}` | boolean | `userKey` from `ChatIds.emailKey` |
+| `lastMessageText` | string | |
+| `lastMessageBy` | string | Email |
+| `lastMessageAt` | number | Server timestamp |
+| `updatedAt` | number | Server timestamp |
+| `unread/{userKey}` | number | Count; optional per `ChatRuntimeConfig` |
+
+### `chatTyping/{chatId}/{userKey}`
+
+| Value | Type | Notes |
+|-------|------|--------|
+| (leaf) | boolean | `true` while typing; removed on disconnect |
+
+### `presence/{userKey}`
+
+| Field | Type | Notes |
+|-------|------|--------|
+| `isOnline` | boolean | |
+| `lastSeenAt` | number | Server timestamp |
+
+---
+
+## Other cloud data
+
+Community and related features also use **Firestore** (e.g. bucket/presence documents). That is separate from this file; see `lib/features/community/` and repository code for field-level detail.
