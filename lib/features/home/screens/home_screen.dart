@@ -883,6 +883,18 @@ class _SubjectGridCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
+    // Subtle tonal background
+    final cardFill = Color.lerp(
+      scheme.surface,
+      accent,
+      isDark ? 0.12 : 0.05,
+    );
+
+    // Colored border matching subject accent
+    final cardBorder = accent.withValues(alpha: isDark ? 0.4 : 0.2);
+    final iconBg = accent.withValues(alpha: isDark ? 0.25 : 0.1);
 
     return Material(
       color: AppColors.transparent,
@@ -890,23 +902,30 @@ class _SubjectGridCard extends StatelessWidget {
         onTap: () =>
             context.push('/subject/${Uri.encodeComponent(info.subject)}'),
         borderRadius: BorderRadius.circular(AppRadius.lg),
-        child: Container(
+        child: Ink(
           padding: const EdgeInsets.all(AppSpacing.md),
           decoration: BoxDecoration(
-            color: scheme.surface,
+            color: cardFill,
             borderRadius: BorderRadius.circular(AppRadius.lg),
-            border: Border.all(color: borderColor, width: 0.5),
+            border: Border.all(color: cardBorder, width: 1.0),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Icon(icon, size: 22, color: accent),
+              Container(
+                padding: const EdgeInsets.all(AppSpacing.xs),
+                decoration: BoxDecoration(
+                  color: iconBg,
+                  borderRadius: BorderRadius.circular(AppRadius.sm),
+                ),
+                child: Icon(icon, size: 18, color: accent),
+              ),
               const Spacer(),
               Text(
                 info.displayName,
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
-                style: AppTextStyles.labelSm().copyWith(
+                style: AppTextStyles.label().copyWith(
                   color: scheme.onSurface,
                   height: 1.2,
                 ),
