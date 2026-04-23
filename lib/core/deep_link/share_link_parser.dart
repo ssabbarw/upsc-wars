@@ -37,7 +37,7 @@ ShareLinkPayload? parseShareLinkUri(Uri uri) {
     kind = k;
     shareIdRaw = segments[1];
   } else if (uri.scheme == 'https' &&
-      uri.host.toLowerCase() == 'upscwars.com' &&
+      uri.host.toLowerCase() == 'upscwars.in' &&
       uri.pathSegments.length >= 3 &&
       uri.pathSegments[0].toLowerCase() == 'share') {
     final segments = uri.pathSegments;

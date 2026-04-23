@@ -23,6 +23,7 @@ import '../../community/widgets/open_challenge_post_from_results_card.dart';
 import '../../community/widgets/open_challenge_results_actions.dart';
 import '../../../core/services/deferred_push_permission_coordinator.dart';
 import '../widgets/session_summary_coach.dart';
+import '../widgets/share_test_bottom_sheet.dart';
 
 String _sessionResultPhase(AsyncValue<SessionResult>? v) {
   if (v == null) return '(none)';
@@ -178,13 +179,13 @@ class ResultsScreen extends ConsumerWidget {
                           ),
                         ),
                         IconButton(
-                          tooltip: 'Share questions',
+                          tooltip: 'Share test',
                           style: IconButton.styleFrom(
                             foregroundColor: scheme.onSurface,
                           ),
                           onPressed: () => unawaited(
-                            shareSessionQuestionsLink(
-                              ref: ref,
+                            showShareTestBottomSheet(
+                              context: context,
                               sessionId: sessionId,
                             ),
                           ),

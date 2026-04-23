@@ -1,6 +1,6 @@
 import 'share_link_kind.dart';
 
-const shareLinkWebHost = 'upscwars.com';
+const shareLinkWebHost = 'upscwars.in';
 const shareLinkHttpsOrigin = 'https://$shareLinkWebHost';
 
 /// Builds the public HTTPS link used in the system share sheet (Universal Links).

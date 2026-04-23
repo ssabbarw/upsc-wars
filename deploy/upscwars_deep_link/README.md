@@ -1,6 +1,6 @@
-# upscwars.com — share links, hosting, and local browser tests
+# upscwars.in — share links, hosting, and local browser tests
 
-Upload the `public/` folder to the root of **https://upscwars.com** (or merge `.well-known/` and `share/` into your CDN).
+Upload the `public/` folder to the root of **https://upscwars.in** (or merge `.well-known/` and `share/` into your CDN).
 
 ## Firestore rules (required for browser + app)
 
@@ -31,7 +31,7 @@ Until this succeeds, the web player’s Firestore REST `GET` will return **403**
 | `/.well-known/assetlinks.json` | Android App Links |
 | `/share/...` | Web player (`share/index.html` or SPA rewrite so path is `/share/test/{shareId}`) |
 
-## Test in the browser **without** upscwars.com hosting (Mac)
+## Test in the browser **without** upscwars.in hosting (Mac)
 
 Firestore reads work from **any origin** once rules allow public read. The static page expects pathname **`/share/test/{shareId}`** (same as production).
 
@@ -58,8 +58,8 @@ Trailing slash is fine; the page reads `/share/test/{uuid}` from the path.
 
 **404 in DevTools “Network”:**  
 - **`favicon.ico` / `apple-touch-icon`**: harmless; ignored.  
-- **`firestore.googleapis.com` … 404**: no document at `session/{shareId}` — create it (Share from app, or Firebase Console) and use that **exact** document ID in the URL.  
-- **`firestore.googleapis.com` … 403**: deploy [`firestore.rules`](../../firestore.rules) (`firebase deploy --only firestore:rules`).
+- **`firestore.googleapis.in` … 404**: no document at `session/{shareId}` — create it (Share from app, or Firebase Console) and use that **exact** document ID in the URL.  
+- **`firestore.googleapis.in` … 403**: deploy [`firestore.rules`](../../firestore.rules) (`firebase deploy --only firestore:rules`).
 
 5. Answer a question, set confidence, reload the page — progress should remain (**localStorage** key `upscwars_share_v1_{shareId}`).
 
@@ -71,4 +71,4 @@ Trailing slash is fine; the page reads `/share/test/{uuid}` from the path.
 
 ## QA on devices
 
-Universal / App Links for **`https://upscwars.com/share/*`** need real **Android + iOS** hardware after DNS + `.well-known` are live.
+Universal / App Links for **`https://upscwars.in/share/*`** need real **Android + iOS** hardware after DNS + `.well-known` are live.

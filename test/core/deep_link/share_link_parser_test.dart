@@ -20,9 +20,7 @@ void main() {
   });
 
   test('parses https universal link', () {
-    final u = Uri.parse(
-      'https://upscwars.com/share/battle/$share?ids=$id1',
-    );
+    final u = Uri.parse('https://upscwars.in/share/battle/$share?ids=$id1');
     final p = parseShareLinkUri(u)!;
     expect(p.kind, ShareLinkKind.battle);
     expect(p.questionIds, [id1]);
@@ -30,30 +28,31 @@ void main() {
 
   test('question kind requires single id', () {
     final bad = Uri.parse(
-      'https://upscwars.com/share/question/$share?ids=$id1,$id2',
+      'https://upscwars.in/share/question/$share?ids=$id1,$id2',
     );
     expect(parseShareLinkUri(bad), isNull);
 
     final good = Uri.parse(
-      'https://upscwars.com/share/question/$share?ids=$id1',
+      'https://upscwars.in/share/question/$share?ids=$id1',
     );
     expect(parseShareLinkUri(good)!.questionIds, [id1]);
   });
 
   test('rejects bad uuid in ids', () {
-    final u = Uri.parse(
-      'upscwars://share/test/$share?ids=not-a-uuid',
-    );
+    final u = Uri.parse('upscwars://share/test/$share?ids=not-a-uuid');
     expect(parseShareLinkUri(u), isNull);
   });
 
   test('rejects unrelated urls', () {
-    expect(parseShareLinkUri(Uri.parse('https://example.com/share/test/x')), isNull);
-    expect(parseShareLinkUri(Uri.parse('https://upscwars.com/other')), isNull);
+    expect(
+      parseShareLinkUri(Uri.parse('https://example.com/share/test/x')),
+      isNull,
+    );
+    expect(parseShareLinkUri(Uri.parse('https://upscwars.in/other')), isNull);
   });
 
   test('parses firestore-backed link without ids query', () {
-    final u = Uri.parse('https://upscwars.com/share/test/$share');
+    final u = Uri.parse('https://upscwars.in/share/test/$share');
     final p = parseShareLinkUri(u)!;
     expect(p.questionIds, isEmpty);
     expect(p.shareId, share);
@@ -61,7 +60,7 @@ void main() {
 
   test('rejects non-uuid share id', () {
     expect(
-      parseShareLinkUri(Uri.parse('https://upscwars.com/share/test/not-a-uuid')),
+      parseShareLinkUri(Uri.parse('https://upscwars.in/share/test/not-a-uuid')),
       isNull,
     );
   });

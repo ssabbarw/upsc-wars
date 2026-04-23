@@ -50,7 +50,7 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data
                     android:scheme="https"
-                    android:host="upscwars.com"
+                    android:host="upscwars.in"
                     android:pathPrefix="/share" />
             </intent-filter>
         </activity>

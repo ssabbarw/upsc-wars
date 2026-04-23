@@ -147,9 +147,21 @@ Future<void> shareSessionQuestionsLink({
   required WidgetRef ref,
   required String sessionId,
 }) async {
+  final uri = await createShareLinkForSession(ref: ref, sessionId: sessionId);
+  if (uri == null) return;
+
+  await SharePlus.instance.share(ShareParams(uri: uri));
+}
+
+/// Creates a share link for current session: writes Firestore `session/{shareId}`
+/// returns the HTTPS [Uri].
+Future<Uri?> createShareLinkForSession({
+  required WidgetRef ref,
+  required String sessionId,
+}) async {
   if (FirebaseAuth.instance.currentUser == null) {
     showShareLinkMessage('Sign in to share a question set.');
-    return;
+    return null;
   }
 
   final load = await ref.read(loadSessionUseCaseProvider.future);
@@ -158,7 +170,7 @@ Future<void> shareSessionQuestionsLink({
     ..sort((a, b) => a.position.compareTo(b.position));
   if (sorted.isEmpty) {
     showShareLinkMessage('No questions to share.');
-    return;
+    return null;
   }
 
   final kind = active.analyticsFeatureKey == 'mcq_battle'
@@ -181,7 +193,9 @@ Future<void> shareSessionQuestionsLink({
       questionMaps: maps,
     );
   } on FirebaseException catch (e, st) {
-    debugPrint('shareSessionQuestionsLink FirebaseException: ${e.code} ${e.message}');
+    debugPrint(
+      'createShareLinkForSession FirebaseException: ${e.code} ${e.message}',
+    );
     debugPrintStack(stackTrace: st);
     final msg = switch (e.code) {
       'permission-denied' =>
@@ -190,12 +204,12 @@ Future<void> shareSessionQuestionsLink({
       _ => 'Could not upload share (${e.code}).',
     };
     showShareLinkMessage(msg);
-    return;
+    return null;
   } catch (e, st) {
-    debugPrint('shareSessionQuestionsLink: $e');
+    debugPrint('createShareLinkForSession: $e');
     debugPrintStack(stackTrace: st);
     showShareLinkMessage('Could not upload share: $e');
-    return;
+    return null;
   }
 
   final uri = buildShareHttpsUri(
@@ -204,10 +218,11 @@ Future<void> shareSessionQuestionsLink({
     subject: active.subject,
     topic: active.topic,
   );
-  await SharePlus.instance.share(ShareParams(uri: uri));
+
   if (kDebugMode) {
-    debugPrint('shareSessionQuestionsLink: shared $kind shareId=$shareId');
+    debugPrint('createShareLinkForSession: generated $kind shareId=$shareId');
   }
+
   unawaited(() async {
     final prefs = await ref.read(prefsServiceProvider.future);
     await logActivationMilestoneForServices(
@@ -216,4 +231,6 @@ Future<void> shareSessionQuestionsLink({
       id: ActivationMilestones.firstScorecardShare,
     );
   }());
+
+  return uri;
 }

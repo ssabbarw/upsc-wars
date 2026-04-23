@@ -8,7 +8,7 @@
 - Types: `battle`, `test`, `question`
 
 **2. Universal Links (Web Fallback)**
-- When recipient doesn't have app → link opens web page at `https://upscwars.com/share/{type}/{share_id}`
+- When recipient doesn't have app → link opens web page at `https://upscwars.in/share/{type}/{share_id}`
 - Web page shows "Download App" banner at top
 - Same URL works for both scenarios (OS decides app vs web)
 
@@ -16,13 +16,13 @@
 
 **Android:**
 - Custom URL scheme: `upscwars://`
-- Android App Links: `https://upscwars.com/share/*` opens app if installed
-- Needs: `AndroidManifest.xml` configuration + `assetlinks.json` hosted at `https://upscwars.com/.well-known/assetlinks.json`
+- Android App Links: `https://upscwars.in/share/*` opens app if installed
+- Needs: `AndroidManifest.xml` configuration + `assetlinks.json` hosted at `https://upscwars.in/.well-known/assetlinks.json`
 
 **iOS:**
 - Custom URL scheme: `upscwars://`
-- Universal Links: `https://upscwars.com/share/*` opens app if installed
-- Needs: `Info.plist` configuration + `apple-app-site-association` hosted at `https://upscwars.com/.well-known/apple-app-site-association`
+- Universal Links: `https://upscwars.in/share/*` opens app if installed
+- Needs: `Info.plist` configuration + `apple-app-site-association` hosted at `https://upscwars.in/.well-known/apple-app-site-association`
 
 **4. Routing in App**
 - Deep link handler extracts `type` and `share_id` from URL
@@ -36,7 +36,7 @@
 **5. Share Link Generation**
 - When user taps "Share" button → app generates link with format:
   ```
-  https://upscwars.com/share/battle/{share_id}?ids=uuid1,uuid2&subject=Ancient%20History&topic=Education
+  https://upscwars.in/share/battle/{share_id}?ids=uuid1,uuid2&subject=Ancient%20History&topic=Education
   ```
 - Open system share sheet with pre-filled message
 - No server call needed (link is self-contained)
@@ -46,7 +46,7 @@
 - ❌ QR codes
 - ❌ SMS deep linking
 - ❌ Email deep linking (standard links work fine)
-- ❌ Custom domain per user (e.g., `user123.upscwars.com`)
+- ❌ Custom domain per user (e.g., `user123.upscwars.in`)
 - ❌ Dynamic link shortening (Firebase Dynamic Links) — use full URLs for now
 
 ## Critical Constraint
@@ -56,4 +56,4 @@
 
 ---
 
-Implement deep linking for `upscwars://` scheme and `https://upscwars.com/share/*` universal links. Handle routing to learning mode screens based on URL parameters. Configure both Android and iOS platform files for app link association.
+Implement deep linking for `upscwars://` scheme and `https://upscwars.in/share/*` universal links. Handle routing to learning mode screens based on URL parameters. Configure both Android and iOS platform files for app link association.
