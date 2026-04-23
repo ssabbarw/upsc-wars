@@ -179,10 +179,17 @@ class _SheetTile extends StatelessWidget {
 
 /// Subtle inline control that opens [showContactUsSheet].
 class ContactUsTextButton extends StatelessWidget {
-  const ContactUsTextButton({super.key, this.leadingText});
+  const ContactUsTextButton({
+    super.key,
+    this.leadingText,
+    this.linkLabel = 'Contact us',
+  });
 
   /// Shown before the link, e.g. `'Want further clarity? '` (include trailing space).
   final String? leadingText;
+
+  /// Visible link text. Defaults to `Contact us`; subject detail uses `Get in touch`.
+  final String linkLabel;
 
   @override
   Widget build(BuildContext context) {
@@ -208,7 +215,7 @@ class ContactUsTextButton extends StatelessWidget {
               alignment: PlaceholderAlignment.middle,
               child: GestureDetector(
                 onTap: () => showContactUsSheet(context),
-                child: Text('Contact us', style: linkStyle),
+                child: Text(linkLabel, style: linkStyle),
               ),
             ),
           ],
@@ -224,7 +231,7 @@ class ContactUsTextButton extends StatelessWidget {
         foregroundColor: scheme.primary,
       ),
       child: Text(
-        'Contact us',
+        linkLabel,
         style: AppTextStyles.labelSm().copyWith(
           color: scheme.primary,
           fontWeight: FontWeight.w600,

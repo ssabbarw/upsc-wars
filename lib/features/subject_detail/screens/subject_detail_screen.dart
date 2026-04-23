@@ -114,6 +114,7 @@ class SubjectDetailScreen extends ConsumerWidget {
                 child: const Center(
                   child: ContactUsTextButton(
                     leadingText: 'Any questions or feedback?\n',
+                    linkLabel: 'Get in touch',
                   ),
                 ),
               ),
