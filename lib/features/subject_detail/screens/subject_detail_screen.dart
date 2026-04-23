@@ -1174,6 +1174,8 @@ class _ConfidenceBreakdownSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
+        Divider(),
+        const SizedBox(height: AppSpacing.md),
         Text(
           'Your confidence breakdown in this subject',
           style: AppTextStyles.label().copyWith(
@@ -1549,6 +1551,8 @@ class _AdviceForSubjectMockPrepGroupState
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
+        Divider(),
+        const SizedBox(height: AppSpacing.md),
         Material(
           color: Colors.transparent,
           child: InkWell(
