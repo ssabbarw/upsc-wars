@@ -19,6 +19,7 @@ import 'package:upsc_wars/features/history/widgets/explanation_card.dart';
 import 'package:upsc_wars/features/test_engine/providers/test_session_state.dart';
 import 'package:upsc_wars/shared/extensions/context_extensions.dart';
 import 'package:upsc_wars/shared/theme/dark_mode_toggle.dart';
+import 'package:upsc_wars/shared/widgets/debug_correct_answer_banner.dart';
 import 'package:upsc_wars/shared/widgets/question_table_view.dart';
 import 'package:upsc_wars/shared/widgets/selectable_copy_search_text.dart';
 import 'package:upsc_wars/shared/widgets/top_snack_bar.dart';
@@ -929,6 +930,7 @@ class _BattleQuestionBlock extends StatelessWidget {
           ),
           QuestionTableView(table: tableData),
         ],
+        DebugCorrectAnswerBanner(question: question),
         const SizedBox(height: AppSpacing.lg),
         for (final opt in const ['a', 'b', 'c', 'd']) ...[
           _BattleOptionRow(

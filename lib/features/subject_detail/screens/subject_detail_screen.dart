@@ -13,10 +13,12 @@ import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/widgets/accuracy_percentage_text.dart';
 import '../../../shared/widgets/contact_us_entry.dart';
 import '../../../shared/widgets/test_config_bottom_sheet.dart';
-import '../domain/subject_insights.dart';
+import '../domain/subject_mock_prep_insights.dart';
 import '../providers/subject_detail_providers.dart';
 import '../providers/subject_insights_providers.dart';
+import '../providers/subject_mock_prep_provider.dart';
 import '../widgets/danger_zone_summary_card.dart';
+import '../widgets/mock_prep_why_bottom_sheet.dart';
 
 class SubjectDetailScreen extends ConsumerWidget {
   const SubjectDetailScreen({super.key, required this.subject});
@@ -57,7 +59,7 @@ class SubjectDetailScreen extends ConsumerWidget {
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(
                   AppSpacing.lg,
-                  AppSpacing.xxl,
+                  AppSpacing.xxxl,
                   AppSpacing.lg,
                   0,
                 ),
@@ -73,7 +75,7 @@ class SubjectDetailScreen extends ConsumerWidget {
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(
                   AppSpacing.lg,
-                  AppSpacing.xxl,
+                  AppSpacing.xxxl,
                   AppSpacing.lg,
                   0,
                 ),
@@ -90,7 +92,7 @@ class SubjectDetailScreen extends ConsumerWidget {
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(
                   AppSpacing.lg,
-                  AppSpacing.xxl,
+                  AppSpacing.xxxl,
                   AppSpacing.lg,
                   0,
                 ),
@@ -115,6 +117,193 @@ class SubjectDetailScreen extends ConsumerWidget {
             const SliverToBoxAdapter(child: SizedBox(height: AppSpacing.xxxl)),
           ],
         ),
+      ),
+    );
+  }
+}
+
+// ── Shared section chrome ─────────────────────────────────────────────────────
+
+class _ScreenSectionHeader extends StatelessWidget {
+  const _ScreenSectionHeader({
+    required this.title,
+    this.subtitle,
+  });
+
+  final String title;
+  final String? subtitle;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          title,
+          style: AppTextStyles.caption().copyWith(
+            color: scheme.onSurfaceVariant,
+            letterSpacing: 0.6,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+        if (subtitle != null) ...[
+          const SizedBox(height: AppSpacing.xs),
+          Text(
+            subtitle!,
+            style: AppTextStyles.caption().copyWith(
+              color: scheme.onSurfaceVariant,
+              height: 1.4,
+            ),
+          ),
+        ],
+      ],
+    );
+  }
+}
+
+class _SubjectPanel extends StatelessWidget {
+  const _SubjectPanel({
+    required this.borderColor,
+    required this.child,
+  });
+
+  final Color borderColor;
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(AppSpacing.lg),
+      decoration: BoxDecoration(
+        color: scheme.surface,
+        borderRadius: BorderRadius.circular(AppRadius.lg),
+        border: Border.all(color: borderColor, width: 0.5),
+      ),
+      child: child,
+    );
+  }
+}
+
+/// Mock-prep cards: warning tint (revise) vs success tint (safe).
+class _MockPrepThemedPanel extends StatelessWidget {
+  const _MockPrepThemedPanel({
+    required this.isRevise,
+    required this.child,
+  });
+
+  final bool isRevise;
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    if (isRevise) {
+      return Container(
+        width: double.infinity,
+        padding: const EdgeInsets.all(AppSpacing.lg),
+        decoration: BoxDecoration(
+          color: isDark
+              ? AppColors.warningBgDark.withValues(alpha: 0.35)
+              : AppColors.warningBg.withValues(alpha: 0.75),
+          borderRadius: BorderRadius.circular(AppRadius.lg),
+          border: Border.all(
+            color: (isDark ? AppColors.warningTextDark : AppColors.warningText)
+                .withValues(alpha: 0.38),
+            width: 1,
+          ),
+        ),
+        child: child,
+      );
+    }
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(AppSpacing.lg),
+      decoration: BoxDecoration(
+        color: isDark
+            ? AppColors.correctBgDark.withValues(alpha: 0.28)
+            : AppColors.correctBg.withValues(alpha: 0.55),
+        borderRadius: BorderRadius.circular(AppRadius.lg),
+        border: Border.all(
+          color:
+              (isDark ? AppColors.correctTextDark : AppColors.correctText)
+                  .withValues(alpha: 0.32),
+          width: 1,
+        ),
+      ),
+      child: child,
+    );
+  }
+}
+
+class _SubjectInsightEmptyPanel extends StatelessWidget {
+  const _SubjectInsightEmptyPanel({
+    required this.icon,
+    required this.title,
+    required this.body,
+    required this.borderColor,
+    this.accentTint,
+  });
+
+  final IconData icon;
+  final String title;
+  final String body;
+  final Color borderColor;
+  /// When set, border and fill pick up warning (revise) or success (safe).
+  final Color? accentTint;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final tint = accentTint;
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(AppSpacing.md),
+      decoration: BoxDecoration(
+        color: tint != null
+            ? tint.withValues(alpha: isDark ? 0.12 : 0.14)
+            : scheme.surfaceContainerLow,
+        borderRadius: BorderRadius.circular(AppRadius.md),
+        border: Border.all(
+          color: tint != null
+              ? tint.withValues(alpha: 0.45)
+              : borderColor.withValues(alpha: 0.4),
+        ),
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Icon(
+            icon,
+            size: 22,
+            color: tint ?? scheme.onSurfaceVariant,
+          ),
+          const SizedBox(width: AppSpacing.md),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: AppTextStyles.label().copyWith(
+                    color: scheme.onSurface,
+                  ),
+                ),
+                const SizedBox(height: AppSpacing.xs),
+                Text(
+                  body,
+                  style: AppTextStyles.caption().copyWith(
+                    color: scheme.onSurfaceVariant,
+                    height: 1.45,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -327,19 +516,15 @@ class _PracticeSection extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final info = infoAsync.asData?.value;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          'PRACTICE',
-          style: AppTextStyles.caption().copyWith(
-            color: scheme.onSurfaceVariant,
-            letterSpacing: 0.6,
-          ),
+        const _ScreenSectionHeader(
+          title: 'PRACTICE',
+          subtitle: 'Start a test across the full subject, or open a specific topic.',
         ),
         const SizedBox(height: AppSpacing.sm),
         _PracticeCard(
@@ -491,21 +676,16 @@ class _HistorySection extends ConsumerWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          'TEST HISTORY',
-          style: AppTextStyles.caption().copyWith(
-            color: scheme.onSurfaceVariant,
-            letterSpacing: 0.6,
-          ),
+        const _ScreenSectionHeader(
+          title: 'TEST HISTORY',
+          subtitle: 'Recent learning and exam sessions for this subject.',
         ),
         const SizedBox(height: AppSpacing.sm),
         historyAsync.when(
           loading: () => _HistorySkeleton(borderColor: borderColor),
-          error: (_, _) => Text(
-            'Could not load history.',
-            style: AppTextStyles.bodySm().copyWith(
-              color: scheme.onSurfaceVariant,
-            ),
+          error: (_, _) => _HistoryLoadError(
+            borderColor: borderColor,
+            scheme: scheme,
           ),
           data: (sessions) {
             if (sessions.isEmpty) {
@@ -539,6 +719,39 @@ class _HistorySection extends ConsumerWidget {
           },
         ),
       ],
+    );
+  }
+}
+
+class _HistoryLoadError extends StatelessWidget {
+  const _HistoryLoadError({
+    required this.borderColor,
+    required this.scheme,
+  });
+
+  final Color borderColor;
+  final ColorScheme scheme;
+
+  @override
+  Widget build(BuildContext context) {
+    return _SubjectPanel(
+      borderColor: borderColor,
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Icon(Icons.error_outline, size: 20, color: scheme.onSurfaceVariant),
+          const SizedBox(width: AppSpacing.md),
+          Expanded(
+            child: Text(
+              'We could not load your test history. Try again in a moment.',
+              style: AppTextStyles.caption().copyWith(
+                color: scheme.onSurfaceVariant,
+                height: 1.45,
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
@@ -757,18 +970,17 @@ class _InsightsSection extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final scheme = Theme.of(context).colorScheme;
     final insightsAsync = ref.watch(subjectInsightsProvider(subject));
+    final mockPrepAsync = ref.watch(subjectMockPrepInsightsProvider(subject));
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          'INSIGHTS',
-          style: AppTextStyles.caption().copyWith(
-            color: scheme.onSurfaceVariant,
-            letterSpacing: 0.6,
-          ),
+        const _ScreenSectionHeader(
+          title: 'INSIGHTS',
+          subtitle: 'Last 30 days, danger zone, and mock prep. A topic is never '
+              'in both mock cards: all-time confident wrongs are compared to '
+              'confident rights; if equal, we keep it under Revise.',
         ),
         const SizedBox(height: AppSpacing.sm),
         insightsAsync.when(
@@ -777,17 +989,31 @@ class _InsightsSection extends ConsumerWidget {
             borderColor: borderColor,
             onRetry: () => ref.invalidate(subjectInsightsProvider(subject)),
           ),
-          data: (insights) => Column(
+          data: (insights) => DangerZoneSummaryCard(
+            dangerZoneContextLabel: displayName,
+            subject: subject,
+            insights: insights,
+            borderColor: borderColor,
+          ),
+        ),
+        const SizedBox(height: AppSpacing.sm),
+        mockPrepAsync.when(
+          loading: () => _MockPrepInsightsSkeleton(borderColor: borderColor),
+          error: (e, _) => _MockPrepLoadError(
+            borderColor: borderColor,
+            onRetry: () =>
+                ref.invalidate(subjectMockPrepInsightsProvider(subject)),
+          ),
+          data: (mock) => Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              DangerZoneSummaryCard(
-                dangerZoneContextLabel: displayName,
-                subject: subject,
-                insights: insights,
+              _ReviseBeforeNextMockCard(
+                mock: mock,
                 borderColor: borderColor,
               ),
               const SizedBox(height: AppSpacing.sm),
-              _TopicPercentileCard(
-                insights: insights,
+              _MockSafeAreasCard(
+                mock: mock,
                 borderColor: borderColor,
               ),
             ],
@@ -798,57 +1024,164 @@ class _InsightsSection extends ConsumerWidget {
   }
 }
 
-// ── Card 2: Topic risk (percentile bands, 30 days) ─────────────────────────────
+// ── Mock prep: Revise (30d) + Safe confident topics ───────────────────────────
 
-class _TopicPercentileCard extends StatelessWidget {
-  const _TopicPercentileCard({
-    required this.insights,
+class _MockPrepSubheading extends StatelessWidget {
+  const _MockPrepSubheading(this.label);
+
+  final String label;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return Padding(
+      padding: const EdgeInsets.only(bottom: AppSpacing.sm),
+      child: Text(
+        label,
+        style: AppTextStyles.caption().copyWith(
+          color: scheme.onSurface,
+          fontWeight: FontWeight.w600,
+          letterSpacing: 0.2,
+        ),
+      ),
+    );
+  }
+}
+
+/// Advice plus inline "Read why?" in the same text flow (same line when width allows).
+class _MockPrepReadWhyLine extends StatelessWidget {
+  const _MockPrepReadWhyLine({
+    required this.sentence,
+    required this.isRevise,
+    required this.mock,
+  });
+
+  final String sentence;
+  final bool isRevise;
+  final SubjectMockPrepInsights mock;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    final bodyStyle = AppTextStyles.caption().copyWith(
+      color: scheme.onSurfaceVariant,
+      height: 1.4,
+    );
+    final linkStyle = AppTextStyles.caption().copyWith(
+      color: AppColors.primary,
+      fontWeight: FontWeight.w600,
+      height: 1.4,
+      decoration: TextDecoration.underline,
+      decorationColor: AppColors.primary,
+    );
+    final textBeforeLink = sentence.trim().endsWith(' ')
+        ? sentence.trim()
+        : '${sentence.trim()} ';
+
+    return Text.rich(
+      TextSpan(
+        style: bodyStyle,
+        children: [
+          TextSpan(text: textBeforeLink),
+          WidgetSpan(
+            alignment: PlaceholderAlignment.middle,
+            child: GestureDetector(
+              onTap: () => showMockPrepWhyBottomSheet(
+                context,
+                isRevise: isRevise,
+                globalMistakeRatePercent: mock.globalConfidentMistakeRatePercent,
+                globalReliableRatePercent: mock.globalConfidentRatePercent,
+              ),
+              child: Text('Read why?', style: linkStyle),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _ReviseBeforeNextMockCard extends StatelessWidget {
+  const _ReviseBeforeNextMockCard({
+    required this.mock,
     required this.borderColor,
   });
-  final SubjectInsights insights;
+
+  final SubjectMockPrepInsights mock;
   final Color borderColor;
 
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final accent = isDark ? AppColors.warningTextDark : AppColors.warningText;
+    final divider = accent.withValues(alpha: 0.2);
 
-    return Container(
-      padding: const EdgeInsets.all(AppSpacing.lg),
-      decoration: BoxDecoration(
-        color: scheme.surface,
-        borderRadius: BorderRadius.circular(AppRadius.lg),
-        border: Border.all(color: borderColor, width: 0.5),
-      ),
+    return _MockPrepThemedPanel(
+      isRevise: true,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            'Topic Risk Ranking',
-            style: AppTextStyles.label().copyWith(color: scheme.onSurface),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Icon(Icons.warning_amber_rounded, size: 20, color: accent),
+              const SizedBox(width: AppSpacing.sm),
+              Expanded(
+                child: Text(
+                  'Revise Before Your Next Mock',
+                  style: AppTextStyles.label().copyWith(
+                    color: scheme.onSurface,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: AppSpacing.lg),
+          const _MockPrepSubheading('Advice'),
+          _MockPrepReadWhyLine(
+            sentence: 'You are likely to lose marks here due to overconfidence '
+                'and risky guessing.',
+            isRevise: true,
+            mock: mock,
           ),
           const SizedBox(height: AppSpacing.xs),
           Text(
-            'Where you are confidently wrong lately (percentile bands)',
+            'Data window: last 30 days',
             style: AppTextStyles.caption().copyWith(
               color: scheme.onSurfaceVariant,
+              fontWeight: FontWeight.w500,
+              letterSpacing: 0.15,
             ),
           ),
-          const SizedBox(height: AppSpacing.md),
-          if (!insights.hasTopicData)
-            const _InsightsEmptyHint(
-              message: 'No Danger Zone data by topic in the last 30 days yet.',
+          const SizedBox(height: AppSpacing.lg),
+          const _MockPrepSubheading('Action item'),
+          if (!mock.hasReviseData)
+            _SubjectInsightEmptyPanel(
+              icon: Icons.fact_check_outlined,
+              title: 'No topics to list',
+              body:
+                  'In the last 30 days, no topic in this subject has enough '
+                  'wrong answers marked “Very sure” or “Somewhat sure” to '
+                  'show here. As that pattern shows up, you will see it broken '
+                  'down by type of confidence.',
+              borderColor: borderColor,
+              accentTint: accent,
             )
           else
             Column(
               children: [
-                for (var i = 0; i < insights.topicPercentiles.length; i++) ...[
+                for (var i = 0; i < mock.reviseTopics.length; i++) ...[
                   if (i > 0)
                     Divider(
                       height: AppSpacing.lg,
-                      color: borderColor,
+                      color: divider,
                       thickness: 0.5,
                     ),
-                  _TopicPercentileRow(row: insights.topicPercentiles[i]),
+                  _ReviseBeforeMockRowWidget(
+                    row: mock.reviseTopics[i],
+                    statColor: accent,
+                  ),
                 ],
               ],
             ),
@@ -858,33 +1191,227 @@ class _TopicPercentileCard extends StatelessWidget {
   }
 }
 
-class _TopicPercentileRow extends StatelessWidget {
-  const _TopicPercentileRow({required this.row});
-  final TopicPercentileRow row;
+class _ReviseBeforeMockRowWidget extends StatelessWidget {
+  const _ReviseBeforeMockRowWidget({
+    required this.row,
+    required this.statColor,
+  });
+
+  final ReviseBeforeMockRow row;
+  final Color statColor;
 
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
-
-    return Row(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(row.tier.emoji, style: const TextStyle(fontSize: 14)),
-        const SizedBox(width: AppSpacing.sm),
-        Expanded(
-          child: Text(
-            row.topic,
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
+        Text(
+          row.displayName,
+          maxLines: 2,
+          overflow: TextOverflow.ellipsis,
+          style: AppTextStyles.bodySm().copyWith(color: scheme.onSurface),
+        ),
+        const SizedBox(height: 2),
+        Text(
+          'Sure: ${row.sureWrong} wrong'
+          ' · Educated guess: ${row.educatedGuessWrong} wrong',
+          style: AppTextStyles.caption().copyWith(
+            color: statColor,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class _MockSafeAreasCard extends StatelessWidget {
+  const _MockSafeAreasCard({
+    required this.mock,
+    required this.borderColor,
+  });
+
+  final SubjectMockPrepInsights mock;
+  final Color borderColor;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final accent = isDark ? AppColors.correctTextDark : AppColors.correctText;
+    final divider = accent.withValues(alpha: 0.2);
+
+    return _MockPrepThemedPanel(
+      isRevise: false,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Icon(
+                Icons.verified_user_outlined,
+                size: 20,
+                color: accent,
+              ),
+              const SizedBox(width: AppSpacing.sm),
+              Expanded(
+                child: Text(
+                  'Safe Areas for Higher Attempts',
+                  style: AppTextStyles.label().copyWith(
+                    color: scheme.onSurface,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: AppSpacing.lg),
+          const _MockPrepSubheading('Advice'),
+          _MockPrepReadWhyLine(
+            sentence: 'You can trust your judgment more in these topics during mocks.',
+            isRevise: false,
+            mock: mock,
+          ),
+          const SizedBox(height: AppSpacing.xs),
+          Text(
+            'Compared to your account-wide “confident and correct” rate',
+            style: AppTextStyles.caption().copyWith(
+              color: scheme.onSurfaceVariant,
+              fontWeight: FontWeight.w500,
+              letterSpacing: 0.15,
+            ),
+          ),
+          const SizedBox(height: AppSpacing.lg),
+          const _MockPrepSubheading('Action item'),
+          if (!mock.hasSafeData)
+            _SubjectInsightEmptyPanel(
+              icon: mock.globalConfidentRatePercent == null
+                  ? Icons.hourglass_empty_outlined
+                  : Icons.insights_outlined,
+              title: mock.globalConfidentRatePercent == null
+                  ? 'Baseline not ready'
+                  : 'No topics qualify yet',
+              body: mock.globalConfidentRatePercent == null
+                  ? 'We need a solid sample of scored answers where you were '
+                      'very or somewhat sure. Keep using confidence on tests so '
+                      'we can set your global rate and list topics that beat it.'
+                  : 'In this subject, no topic is clearly above your overall '
+                      'confident-correct rate yet. The list will update as you '
+                      'add more very sure or somewhat sure attempts.',
+              borderColor: borderColor,
+              accentTint: accent,
+            )
+          else
+            Column(
+              children: [
+                for (var i = 0; i < mock.safeTopics.length; i++) ...[
+                  if (i > 0)
+                    Divider(
+                      height: AppSpacing.lg,
+                      color: divider,
+                      thickness: 0.5,
+                    ),
+                  _MockSafeAreaRow(
+                    row: mock.safeTopics[i],
+                    statColor: accent,
+                  ),
+                ],
+              ],
+            ),
+        ],
+      ),
+    );
+  }
+}
+
+class _MockSafeAreaRow extends StatelessWidget {
+  const _MockSafeAreaRow({
+    required this.row,
+    required this.statColor,
+  });
+
+  final SafeAreaRow row;
+  final Color statColor;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          row.displayName,
+          maxLines: 2,
+          overflow: TextOverflow.ellipsis,
+          style: AppTextStyles.bodySm().copyWith(color: scheme.onSurface),
+        ),
+        const SizedBox(height: 2),
+        Text(
+          'When confident: ${row.ratePercent.toStringAsFixed(1)}% right'
+          ' · Your overall: ${row.globalRatePercent.toStringAsFixed(1)}%',
+          style: AppTextStyles.caption().copyWith(
+            color: statColor,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class _MockPrepLoadError extends StatelessWidget {
+  const _MockPrepLoadError({
+    required this.borderColor,
+    required this.onRetry,
+  });
+
+  final Color borderColor;
+  final VoidCallback onRetry;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return _SubjectPanel(
+      borderColor: borderColor,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Could not load mock-prep tips.',
             style: AppTextStyles.bodySm().copyWith(color: scheme.onSurface),
           ),
-        ),
-        const SizedBox(width: AppSpacing.sm),
-        Text(
-          '${row.dangerCount} · ${row.tier.label}',
-          style: AppTextStyles.caption().copyWith(
-            color: scheme.onSurfaceVariant,
+          const SizedBox(height: AppSpacing.md),
+          OutlinedButton(
+            onPressed: onRetry,
+            child: Text('Retry', style: AppTextStyles.label()),
           ),
-        ),
+        ],
+      ),
+    );
+  }
+}
+
+class _MockPrepInsightsSkeleton extends StatelessWidget {
+  const _MockPrepInsightsSkeleton({required this.borderColor});
+  final Color borderColor;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return Column(
+      children: [
+        for (var i = 0; i < 2; i++) ...[
+          if (i > 0) const SizedBox(height: AppSpacing.sm),
+          Container(
+            height: 120,
+            decoration: BoxDecoration(
+              color: scheme.surfaceContainerLow,
+              borderRadius: BorderRadius.circular(AppRadius.lg),
+              border: Border.all(color: borderColor.withValues(alpha: 0.2)),
+            ),
+          ),
+        ],
       ],
     );
   }
@@ -901,14 +1428,8 @@ class _InsightsLoadError extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
-    return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.all(AppSpacing.lg),
-      decoration: BoxDecoration(
-        color: scheme.surface,
-        borderRadius: BorderRadius.circular(AppRadius.lg),
-        border: Border.all(color: borderColor, width: 0.5),
-      ),
+    return _SubjectPanel(
+      borderColor: borderColor,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -927,20 +1448,6 @@ class _InsightsLoadError extends StatelessWidget {
   }
 }
 
-class _InsightsEmptyHint extends StatelessWidget {
-  const _InsightsEmptyHint({required this.message});
-  final String message;
-
-  @override
-  Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-    return Text(
-      message,
-      style: AppTextStyles.caption().copyWith(color: scheme.onSurfaceVariant),
-    );
-  }
-}
-
 class _InsightsSkeleton extends StatelessWidget {
   const _InsightsSkeleton({required this.borderColor});
   final Color borderColor;
@@ -948,19 +1455,12 @@ class _InsightsSkeleton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
-    return Column(
-      children: [
-        for (var i = 0; i < 2; i++) ...[
-          if (i > 0) const SizedBox(height: AppSpacing.sm),
-          Container(
-            height: i == 0 ? 100 : 140,
-            decoration: BoxDecoration(
-              color: scheme.surfaceContainerLow,
-              borderRadius: BorderRadius.circular(AppRadius.lg),
-            ),
-          ),
-        ],
-      ],
+    return Container(
+      height: 112,
+      decoration: BoxDecoration(
+        color: scheme.surfaceContainerLow,
+        borderRadius: BorderRadius.circular(AppRadius.lg),
+      ),
     );
   }
 }

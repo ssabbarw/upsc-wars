@@ -23,6 +23,7 @@ import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/extensions/context_extensions.dart';
 import '../../../shared/widgets/question_table_view.dart';
 import '../../../shared/theme/dark_mode_toggle.dart';
+import '../../../shared/widgets/debug_correct_answer_banner.dart';
 import '../../../shared/widgets/selectable_copy_search_text.dart';
 import '../../../shared/widgets/top_snack_bar.dart';
 import '../../community/widgets/share_qotd_sheet.dart';
@@ -1002,6 +1003,7 @@ class _QuestionArea extends HookConsumerWidget {
             ),
             QuestionTableView(table: tableData),
           ],
+          DebugCorrectAnswerBanner(question: question),
           const SizedBox(height: AppSpacing.lg),
           _OptionRow(
             keyLabel: 'A',

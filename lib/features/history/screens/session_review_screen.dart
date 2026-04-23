@@ -15,6 +15,7 @@ import 'package:upsc_wars/core/providers/user_database_provider.dart';
 import 'package:upsc_wars/shared/extensions/context_extensions.dart';
 import 'package:upsc_wars/shared/theme/dark_mode_toggle.dart';
 import 'package:upsc_wars/shared/widgets/question_table_view.dart';
+import 'package:upsc_wars/shared/widgets/debug_correct_answer_banner.dart';
 import 'package:upsc_wars/shared/widgets/selectable_copy_search_text.dart';
 import 'package:upsc_wars/features/history/providers/review_session_provider.dart';
 import 'package:upsc_wars/features/history/widgets/explanation_card.dart';
@@ -431,6 +432,7 @@ class ReviewBody extends StatelessWidget {
             padding: const EdgeInsets.fromLTRB(16, 14, 16, 16),
             children: [
               _VerdictStrip(question: question, status: status),
+              DebugCorrectAnswerBanner(question: question),
               const SizedBox(height: 14),
               const Text(
                 'QUESTION',

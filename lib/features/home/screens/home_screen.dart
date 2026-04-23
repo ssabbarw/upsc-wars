@@ -1219,15 +1219,6 @@ class _LastSessionCard extends HookConsumerWidget {
   }
 }
 
-class _Q {
-  const _Q(this.title, this.subtitle, this.icon, this.color, this.route);
-  final String title;
-  final String subtitle;
-  final IconData icon;
-  final Color color;
-  final String route;
-}
-
 // ── Quick Practice Section ────────────────────────────────────────────────────
 
 class _QuickPracticeSection extends HookConsumerWidget {
