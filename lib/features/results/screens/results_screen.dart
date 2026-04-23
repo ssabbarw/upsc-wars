@@ -7,7 +7,6 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../../core/analytics/screen_flow_analytics.dart';
 import '../../../core/debug/upsc_wars_trace.dart';
 import '../../../core/presentation/session_subject_label.dart';
-import '../../../core/deep_link/share_session_opener.dart';
 import '../../../core/domain/entities/session_result.dart';
 import '../../../core/domain/errors/app_errors.dart';
 import '../../../core/providers/catalog_providers.dart';

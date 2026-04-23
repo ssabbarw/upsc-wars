@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:share_plus/share_plus.dart';
+import 'package:upsc_wars/core/domain/entities/test_question.dart';
 import 'package:uuid/uuid.dart';
 
 import 'package:upsc_wars/core/analytics/activation_milestones.dart';
@@ -231,6 +232,131 @@ Future<Uri?> createShareLinkForSession({
       id: ActivationMilestones.firstScorecardShare,
     );
   }());
+
+  return uri;
+}
+
+/// Creates a share link for a specific question in a session.
+Future<Uri?> createShareLinkForQuestion({
+  required WidgetRef ref,
+  required String sessionId,
+  required String questionUuid,
+}) async {
+  if (FirebaseAuth.instance.currentUser == null) {
+    showShareLinkMessage('Sign in to share a question.');
+    return null;
+  }
+
+  final load = await ref.read(loadSessionUseCaseProvider.future);
+  final active = await load.execute(sessionId);
+  final question = active.questions.cast<TestQuestion?>().firstWhere(
+    (q) => q?.uuid == questionUuid,
+    orElse: () => null,
+  );
+
+  if (question == null) {
+    showShareLinkMessage('Question not found in session.');
+    return null;
+  }
+
+  final kind = ShareLinkKind.question;
+  final shareId = _shareUuid.v4();
+  final maps = [testQuestionToShareMap(question)];
+  final subjectForShare = active.subject.trim().isEmpty
+      ? 'Misc'
+      : active.subject.trim();
+
+  try {
+    final fs = SharedSessionFirestoreRepository();
+    await fs.uploadSession(
+      shareId: shareId,
+      kind: kind,
+      subject: subjectForShare,
+      topic: active.topic,
+      questionMaps: maps,
+    );
+  } on FirebaseException catch (e, st) {
+    debugPrint(
+      'createShareLinkForQuestion FirebaseException: ${e.code} ${e.message}',
+    );
+    debugPrintStack(stackTrace: st);
+    final msg = switch (e.code) {
+      'permission-denied' =>
+        'Share upload blocked (permission). Deploy latest firestore.rules and sign in.',
+      'unavailable' => 'Network issue. Try again when online.',
+      _ => 'Could not upload share (${e.code}).',
+    };
+    showShareLinkMessage(msg);
+    return null;
+  } catch (e, st) {
+    debugPrint('createShareLinkForQuestion: $e');
+    debugPrintStack(stackTrace: st);
+    showShareLinkMessage('Could not upload share: $e');
+    return null;
+  }
+
+  final uri = buildShareHttpsUri(
+    kind: kind,
+    shareId: shareId,
+    subject: active.subject,
+    topic: active.topic,
+  );
+
+  return uri;
+}
+
+/// Creates a share link for a specific TestQuestion object (no session needed).
+Future<Uri?> createShareLinkForTestQuestion({
+  required WidgetRef ref,
+  required TestQuestion question,
+}) async {
+  if (FirebaseAuth.instance.currentUser == null) {
+    showShareLinkMessage('Sign in to share a question.');
+    return null;
+  }
+
+  final kind = ShareLinkKind.question;
+  final shareId = _shareUuid.v4();
+  final maps = [testQuestionToShareMap(question)];
+  final subjectForShare = question.subject.trim().isEmpty
+      ? 'Misc'
+      : question.subject.trim();
+
+  try {
+    final fs = SharedSessionFirestoreRepository();
+    await fs.uploadSession(
+      shareId: shareId,
+      kind: kind,
+      subject: subjectForShare,
+      topic: question.topic,
+      questionMaps: maps,
+    );
+  } on FirebaseException catch (e, st) {
+    debugPrint(
+      'createShareLinkForTestQuestion FirebaseException: ${e.code} ${e.message}',
+    );
+    debugPrintStack(stackTrace: st);
+    final msg = switch (e.code) {
+      'permission-denied' =>
+        'Share upload blocked (permission). Deploy latest firestore.rules and sign in.',
+      'unavailable' => 'Network issue. Try again when online.',
+      _ => 'Could not upload share (${e.code}).',
+    };
+    showShareLinkMessage(msg);
+    return null;
+  } catch (e, st) {
+    debugPrint('createShareLinkForTestQuestion: $e');
+    debugPrintStack(stackTrace: st);
+    showShareLinkMessage('Could not upload share: $e');
+    return null;
+  }
+
+  final uri = buildShareHttpsUri(
+    kind: kind,
+    shareId: shareId,
+    subject: question.subject,
+    topic: question.topic,
+  );
 
   return uri;
 }

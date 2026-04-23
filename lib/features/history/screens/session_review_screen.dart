@@ -5,7 +5,6 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import 'package:upsc_wars/core/deep_link/share_session_opener.dart';
 import 'package:upsc_wars/core/domain/entities/answer_confidence.dart';
 import 'package:upsc_wars/core/domain/entities/test_question.dart';
 import 'package:upsc_wars/core/providers/catalog_providers.dart';
@@ -19,6 +18,7 @@ import 'package:upsc_wars/shared/widgets/debug_correct_answer_banner.dart';
 import 'package:upsc_wars/shared/widgets/selectable_copy_search_text.dart';
 import 'package:upsc_wars/features/history/providers/review_session_provider.dart';
 import 'package:upsc_wars/features/history/widgets/explanation_card.dart';
+import 'package:upsc_wars/features/results/widgets/share_test_bottom_sheet.dart';
 
 String _reviewConfidenceCaption(String? stored) {
   final v = (stored ?? '').trim();
@@ -154,7 +154,13 @@ class _SingleQuestionReviewScreenState
           isBookmarked: isBookmarked,
           isQueued: isQueued,
           confidenceSessionId: null,
-          onShare: null,
+          onShare: () => unawaited(
+            showShareTestBottomSheet(
+              context: context,
+              sessionId: '',
+              question: q,
+            ),
+          ),
           onToggleBookmark: () async {
             final repo = await ref.read(testEngineRepositoryProvider.future);
             if (isBookmarked) {
@@ -248,7 +254,11 @@ class SessionReviewScreen extends HookConsumerWidget {
               isQueued: isQueued,
               confidenceSessionId: sessionId,
               onShare: () => unawaited(
-                shareSessionQuestionsLink(ref: ref, sessionId: sessionId),
+                showShareTestBottomSheet(
+                  context: context,
+                  sessionId: sessionId,
+                  question: q,
+                ),
               ),
               onToggleBookmark: () async {
                 final repo = await ref.read(
@@ -298,6 +308,7 @@ class SessionReviewScreen extends HookConsumerWidget {
 
 class ReviewBody extends StatelessWidget {
   const ReviewBody({
+    super.key,
     required this.title,
     required this.showRevisionBadge,
     required this.progressRight,
@@ -333,6 +344,7 @@ class ReviewBody extends StatelessWidget {
   final bool isRevisionMode;
   final String uiLanguage;
   final ValueChanged<String> onLanguageChanged;
+
   /// Optional headline for Danger Zone style review.
   final String? confidenceBanner;
 
@@ -372,7 +384,10 @@ class ReviewBody extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 12,
+                    vertical: 8,
+                  ),
                   child: Text(
                     confidenceBanner!,
                     style: TextStyle(
@@ -698,10 +713,7 @@ class _TopBar extends HookConsumerWidget {
           const SizedBox(width: 8),
           InkWell(
             onTap: () async {
-              await setDarkModeEnabled(
-                ref: ref,
-                darkModeEnabled: !isDark,
-              );
+              await setDarkModeEnabled(ref: ref, darkModeEnabled: !isDark);
             },
             child: Icon(
               isDark ? Icons.dark_mode : Icons.light_mode,
@@ -833,8 +845,7 @@ class _Options extends ConsumerWidget {
     final isDark = context.isDarkMode;
     final prefs = ref.watch(prefsServiceProvider).value;
     final confidenceOn = prefs?.confidenceTrackingEnabled ?? false;
-    final scored =
-        question.status == 'correct' || question.status == 'wrong';
+    final scored = question.status == 'correct' || question.status == 'wrong';
     final selected = question.selectedOption?.toLowerCase();
 
     Widget? stripFor(String letter) {
@@ -850,9 +861,8 @@ class _Options extends ConsumerWidget {
             style: TextStyle(
               fontSize: 12,
               height: 1.35,
-              fontWeight: AnswerConfidence.isDangerouslyConfident(
-                    question.confidence,
-                  )
+              fontWeight:
+                  AnswerConfidence.isDangerouslyConfident(question.confidence)
                   ? FontWeight.w700
                   : FontWeight.w500,
               color: _reviewConfidenceCaptionColor(
