@@ -78,26 +78,34 @@ class CommunityQotdTab extends HookConsumerWidget {
                   ],
                 ),
               ),
-              ToggleButtons(
-                isSelected: [uiLang == 'en', uiLang == 'hi'],
-                onPressed: (i) => tabLangOverride.value = i == 0 ? 'en' : 'hi',
-                constraints: const BoxConstraints(minHeight: 32, minWidth: 40),
-                borderRadius: BorderRadius.circular(AppRadius.sm),
-                children: const [
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 6),
-                    child: Text('EN'),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  FilledButton.tonal(
+                    onPressed: () => context.push('/community/qotd/post'),
+                    child: const Text('✨ Create'),
                   ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 6),
-                    child: Text('HI'),
+                  const SizedBox(height: AppSpacing.xs),
+                  ToggleButtons(
+                    isSelected: [uiLang == 'en', uiLang == 'hi'],
+                    onPressed: (i) =>
+                        tabLangOverride.value = i == 0 ? 'en' : 'hi',
+                    constraints:
+                        const BoxConstraints(minHeight: 32, minWidth: 40),
+                    borderRadius: BorderRadius.circular(AppRadius.sm),
+                    children: const [
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 6),
+                        child: Text('EN'),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 6),
+                        child: Text('HI'),
+                      ),
+                    ],
                   ),
                 ],
-              ),
-              const SizedBox(width: AppSpacing.sm),
-              FilledButton.tonal(
-                onPressed: () => context.push('/community/qotd/post'),
-                child: const Text('✨ Create'),
               ),
             ],
           ),

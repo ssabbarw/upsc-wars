@@ -52,9 +52,16 @@ class QotdRepository {
       })> fetchPage({
     required int limit,
     DocumentSnapshot<Map<String, dynamic>>? startAfter,
+    bool onlyLiveWindow = true,
   }) async {
+    final minCreatedAt = onlyLiveWindow
+        ? Timestamp.fromDate(DateTime.now().subtract(kQotdPostLiveDuration))
+        : null;
     Query<Map<String, dynamic>> q =
         _col.orderBy('created_at', descending: true).limit(limit);
+    if (minCreatedAt != null) {
+      q = q.where('created_at', isGreaterThan: minCreatedAt);
+    }
     if (startAfter != null) {
       q = q.startAfterDocument(startAfter);
     }

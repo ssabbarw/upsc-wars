@@ -59,7 +59,8 @@ class _QotdPostCardState extends ConsumerState<QotdPostCard> {
   bool _reactionSaving = false;
   bool _tileExpanded = false;
 
-  /// Per-card display language for stem / options / table (EN or HI).
+  /// Display language for stem / options / table (EN or HI).
+  /// This follows the tab-level `uiLanguage` (no per-card override).
   late String _displayLang;
 
   static String _normUiLang(String? code) =>
@@ -438,26 +439,6 @@ class _QotdPostCardState extends ConsumerState<QotdPostCard> {
                   ),
                 ),
                 const Spacer(),
-                ToggleButtons(
-                  isSelected: [_displayLang == 'en', _displayLang == 'hi'],
-                  onPressed: (i) =>
-                      setState(() => _displayLang = i == 0 ? 'en' : 'hi'),
-                  constraints: const BoxConstraints(
-                    minHeight: 28,
-                    minWidth: 36,
-                  ),
-                  borderRadius: BorderRadius.circular(8),
-                  children: const [
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 6),
-                      child: Text('EN'),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 6),
-                      child: Text('HI'),
-                    ),
-                  ],
-                ),
               ],
             ),
             if (!_tileExpanded) ...[
