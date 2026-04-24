@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../shared/widgets/app_toast.dart';
 import '../domain/qotd_comment_rules.dart';
 
 /// Bottom sheet: optional comment with hint; empty or ≥50 chars after normalize; no newlines.
@@ -145,9 +146,7 @@ class _QotdPostCommentSheetContentState
                           debugPrintStack(stackTrace: st);
                           if (mounted) {
                             setState(() => _isPosting = false);
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(content: Text('$e')),
-                            );
+                            AppToast.showText(context, '$e');
                           }
                         }
                       },

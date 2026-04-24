@@ -3,15 +3,19 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 
 import '../../../core/constants/app_constants.dart';
 import '../../../core/presentation/user_display_name.dart';
+import '../../../core/services/battle_messaging_service.dart';
+import '../../../core/services/push_notifications_ensure_service.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/widgets/pop_to_shell_home_scope.dart';
 import '../../../shared/widgets/unread_pulse_wrapper.dart';
 import '../../../shared/widgets/tappable_circular_avatar.dart';
+import '../../../shared/widgets/app_toast.dart';
 import '../../chat/providers/chat_providers.dart';
 import '../../home/providers/auth_providers.dart';
 import '../domain/entities/community_user.dart';
@@ -23,6 +27,11 @@ import '../widgets/open_challenge_community_section.dart';
 
 export '../widgets/community_user_profile_sheet.dart'
     show showCommunityUserProfileSheet;
+
+final communityPushDeniedProvider = FutureProvider.autoDispose<bool>((ref) async {
+  final s = await BattleMessagingService.notificationAuthorizationStatus();
+  return s == AuthorizationStatus.denied;
+});
 
 class CommunityScreen extends HookConsumerWidget {
   const CommunityScreen({super.key, this.initialTabIndex = 0});
@@ -99,15 +108,98 @@ class CommunityScreen extends HookConsumerWidget {
             ),
           ],
         ),
-        body: TabBarView(
-          controller: tabController,
+        body: Column(
           children: [
-            _RecentTab(scheme: scheme),
-            const _OpenChallengesTab(),
-            const CommunityQotdTab(),
+            const _CommunityNotificationsDeniedBanner(),
+            Expanded(
+              child: TabBarView(
+                controller: tabController,
+                children: [
+                  _RecentTab(scheme: scheme),
+                  const _OpenChallengesTab(),
+                  const CommunityQotdTab(),
+                ],
+              ),
+            ),
           ],
         ),
       ),
+    );
+  }
+}
+
+class _CommunityNotificationsDeniedBanner extends ConsumerWidget {
+  const _CommunityNotificationsDeniedBanner();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final async = ref.watch(communityPushDeniedProvider);
+    return async.when(
+      loading: () => const SizedBox.shrink(),
+      error: (_, _) => const SizedBox.shrink(),
+      data: (denied) {
+        if (!denied) return const SizedBox.shrink();
+        final scheme = Theme.of(context).colorScheme;
+        return Padding(
+          padding: const EdgeInsets.fromLTRB(
+            AppSpacing.lg,
+            AppSpacing.md,
+            AppSpacing.lg,
+            0,
+          ),
+          child: Material(
+            color: scheme.surfaceContainerHighest.withValues(alpha: 0.55),
+            borderRadius: BorderRadius.circular(AppRadius.md),
+            child: Padding(
+              padding: const EdgeInsets.all(AppSpacing.md),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'You’re missing Community alerts',
+                          style: AppTextStyles.label().copyWith(
+                            color: scheme.onSurface,
+                          ),
+                        ),
+                        const SizedBox(height: AppSpacing.xs),
+                        Text(
+                          'Turn on notifications to get battle invites, challenge updates, and chat replies.',
+                          style: AppTextStyles.caption().copyWith(
+                            color: scheme.onSurfaceVariant,
+                            height: 1.25,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(width: AppSpacing.sm),
+                  TextButton(
+                    onPressed: () async {
+                      await PushNotificationsEnsureService.ensureEnabled(
+                        context,
+                        ref,
+                        source: 'community_banner_denied',
+                        allowEducationSheet: false,
+                      );
+                      ref.invalidate(communityPushDeniedProvider);
+                    },
+                    child: Text(
+                      'Enable alerts',
+                      style: AppTextStyles.label().copyWith(
+                        color: scheme.primary,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        );
+      },
     );
   }
 }
@@ -507,11 +599,7 @@ Future<void> _showSettings(BuildContext context, WidgetRef ref) async {
                             );
                       } catch (_) {
                         if (context.mounted) {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
-                              content: Text('Failed to save settings'),
-                            ),
-                          );
+                          AppToast.showText(context, 'Failed to save settings');
                         }
                       }
                     },

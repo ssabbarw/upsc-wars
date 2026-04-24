@@ -1,27 +1,43 @@
 import 'package:flutter/material.dart';
 
+import 'app_toast.dart';
+
 void showTopSnackBar(
   BuildContext context, {
   required Widget content,
   SnackBarAction? action,
   Duration duration = const Duration(seconds: 4),
 }) {
-  final messenger = ScaffoldMessenger.of(context);
-  final media = MediaQuery.of(context);
-  final topOffset = media.viewPadding.top + kToolbarHeight + 8;
-  final bottomMargin = (media.size.height - topOffset - 56).clamp(
-    12.0,
-    media.size.height - 12.0,
-  );
-
-  messenger.hideCurrentSnackBar();
-  messenger.showSnackBar(
-    SnackBar(
-      content: content,
-      action: action,
-      duration: duration,
-      behavior: SnackBarBehavior.floating,
-      margin: EdgeInsets.fromLTRB(12, 0, 12, bottomMargin),
-    ),
+  final resolvedContent = content is Text
+      ? Text(
+          content.data ?? '',
+          key: content.key,
+          style: (content.style ?? const TextStyle()).copyWith(
+            color: Colors.white,
+          ),
+          strutStyle: content.strutStyle,
+          textAlign: content.textAlign,
+          textDirection: content.textDirection,
+          locale: content.locale,
+          softWrap: content.softWrap,
+          overflow: content.overflow,
+          maxLines: content.maxLines,
+          semanticsLabel: content.semanticsLabel,
+          textWidthBasis: content.textWidthBasis,
+          textHeightBehavior: content.textHeightBehavior,
+          selectionColor: content.selectionColor,
+        )
+      : content;
+  AppToast.show(
+    context,
+    child: resolvedContent,
+    duration: duration,
+    top: true,
+    action: action == null
+        ? null
+        : AppToastAction(
+            label: action.label,
+            onPressed: action.onPressed,
+          ),
   );
 }

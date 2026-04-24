@@ -11,6 +11,7 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../shared/widgets/app_toast.dart';
 import '../domain/subject_insights.dart';
 import '../providers/subject_danger_zone_revise_uuids.dart';
 
@@ -84,9 +85,7 @@ class DangerZoneSummaryCard extends HookConsumerWidget {
               );
         if (!context.mounted) return;
         if (uuids.isEmpty) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('No questions in this category.')),
-          );
+          AppToast.showText(context, 'No questions in this category.');
           return;
         }
         final create = await ref.read(createSessionUseCaseProvider.future);
@@ -108,9 +107,7 @@ class DangerZoneSummaryCard extends HookConsumerWidget {
         if (context.mounted) await navigateToTest(id);
       } catch (e) {
         if (context.mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('Could not start session: $e')),
-          );
+        AppToast.showText(context, 'Could not start session: $e');
         }
       } finally {
         if (context.mounted) revBusy.value = null;

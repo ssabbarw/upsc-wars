@@ -10,6 +10,7 @@ import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/theme/dark_mode_toggle.dart';
 import '../../../shared/widgets/contact_us_entry.dart';
+import '../../../shared/widgets/app_toast.dart';
 import '../../../shared/widgets/test_config_bottom_sheet.dart';
 import '../domain/subject_insights.dart';
 import '../domain/subject_mock_prep_insights.dart';
@@ -1212,9 +1213,7 @@ Future<void> _openTopicEntryFromRow(
     }
     if (!context.mounted) return;
     if (match == null) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Topic not found in catalog.')),
-      );
+      AppToast.showText(context, 'Topic not found in catalog.');
       return;
     }
     if (!context.mounted) return;
@@ -1229,9 +1228,7 @@ Future<void> _openTopicEntryFromRow(
     );
   } catch (e) {
     if (context.mounted) {
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(SnackBar(content: Text('Could not open topic: $e')));
+      AppToast.showText(context, 'Could not open topic: $e');
     }
   }
 }

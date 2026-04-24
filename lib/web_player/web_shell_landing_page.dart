@@ -10,6 +10,7 @@ import 'package:upsc_wars/core/theme/app_radius.dart';
 import 'package:upsc_wars/core/theme/app_spacing.dart';
 import 'package:upsc_wars/core/theme/app_text_styles.dart';
 import 'package:upsc_wars/shared/extensions/context_extensions.dart';
+import 'package:upsc_wars/shared/widgets/app_toast.dart';
 import 'package:upsc_wars/web_player/web_player_ui_tokens.dart';
 
 /// Marketing home for the Flutter web shell when the URL is not a `/share/…` link.
@@ -29,20 +30,17 @@ class WebShellLandingPage extends StatelessWidget {
     final uri = Uri.parse(url);
     final ok = await launchUrl(uri, mode: LaunchMode.externalApplication);
     if (!context.mounted || ok) return;
-    ScaffoldMessenger.of(
-      context,
-    ).showSnackBar(SnackBar(content: Text('Could not open link:\n$url')));
+    AppToast.showText(context, 'Could not open link:\n$url');
   }
 
   Future<void> _copyEmail(BuildContext context) async {
     await Clipboard.setData(ClipboardData(text: AppConstants.supportEmail));
     if (!context.mounted) return;
-    ScaffoldMessenger.of(context).hideCurrentSnackBar();
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text('Copied ${AppConstants.supportEmail}'),
-        duration: const Duration(seconds: 3),
-      ),
+    AppToast.dismiss();
+    AppToast.showText(
+      context,
+      'Copied ${AppConstants.supportEmail}',
+      duration: const Duration(seconds: 3),
     );
   }
 

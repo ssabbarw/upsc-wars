@@ -1,9 +1,12 @@
 import 'package:cloud_functions/cloud_functions.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'package:upsc_wars/core/services/battle_messaging_service.dart';
 import 'package:upsc_wars/core/services/fcm_token_sync_service.dart';
+import 'package:upsc_wars/core/services/push_notifications_ensure_service.dart';
 
 /// Result of [BattleSelfTestPushCloudService.sendTestNotificationToSelf].
 class SelfPushTestOutcome {
@@ -47,10 +50,19 @@ class SelfPushTestOutcome {
 class BattleSelfTestPushCloudService {
   const BattleSelfTestPushCloudService();
 
-  Future<SelfPushTestOutcome> sendTestNotificationToSelf() async {
+  Future<SelfPushTestOutcome> sendTestNotificationToSelf(
+    BuildContext context,
+    WidgetRef ref,
+  ) async {
     if (!kIsWeb) {
+      await PushNotificationsEnsureService.ensureEnabled(
+        context,
+        ref,
+        source: 'self_push_test',
+        allowEducationSheet: true,
+      );
       final status =
-          await BattleMessagingService.requestPushAuthorizationAndSync();
+          await BattleMessagingService.notificationAuthorizationStatus();
       if (status == AuthorizationStatus.denied) {
         return const SelfPushTestOutcome._(
           notificationSent: false,

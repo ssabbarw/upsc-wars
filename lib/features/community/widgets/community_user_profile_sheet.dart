@@ -10,6 +10,7 @@ import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/widgets/tappable_circular_avatar.dart';
+import '../../../shared/widgets/app_toast.dart';
 import '../../battle/domain/entities/battle_invite_target.dart';
 import '../../chat/domain/chat_ids.dart';
 import '../../chat/domain/entities/chat_thread_route_payload.dart';
@@ -21,9 +22,7 @@ Future<void> openCommunityExternalUrl(BuildContext context, String url) async {
   final uri = Uri.parse(url);
   if (!await launchUrl(uri, mode: LaunchMode.externalApplication) &&
       context.mounted) {
-    ScaffoldMessenger.of(
-      context,
-    ).showSnackBar(const SnackBar(content: Text('Could not open link')));
+    AppToast.showText(context, 'Could not open link');
   }
 }
 
@@ -171,26 +170,18 @@ Future<void> showCommunityUserProfileSheet(
                                   }
                                   setState(() => isBlocked = nextBlocked);
                                   if (context.mounted) {
-                                    ScaffoldMessenger.of(context).showSnackBar(
-                                      SnackBar(
-                                        content: Text(
-                                          nextBlocked
-                                              ? 'You will not see messages or '
-                                                    'battle invites from '
-                                                    '${user.name}.'
-                                              : '${user.name} has been unblocked.',
-                                        ),
-                                      ),
+                                    AppToast.showText(
+                                      context,
+                                      nextBlocked
+                                          ? 'You will not see messages or battle invites from ${user.name}.'
+                                          : '${user.name} has been unblocked.',
                                     );
                                   }
                                 } catch (e) {
                                   if (context.mounted) {
-                                    ScaffoldMessenger.of(context).showSnackBar(
-                                      SnackBar(
-                                        content: Text(
-                                          'Could not update block: $e',
-                                        ),
-                                      ),
+                                    AppToast.showText(
+                                      context,
+                                      'Could not update block: $e',
                                     );
                                   }
                                 }

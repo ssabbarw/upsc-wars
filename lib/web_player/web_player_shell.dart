@@ -30,6 +30,7 @@ import 'package:upsc_wars/shared/extensions/context_extensions.dart';
 import 'package:upsc_wars/shared/widgets/question_table_view.dart';
 import 'package:upsc_wars/core/constants/app_constants.dart';
 import 'package:upsc_wars/shared/widgets/selectable_copy_search_text.dart';
+import 'package:upsc_wars/shared/widgets/app_toast.dart';
 
 class WebPlayerRoot extends StatefulWidget {
   const WebPlayerRoot({super.key});
@@ -487,12 +488,11 @@ class _WebPlayerShellState extends State<WebPlayerShell>
   Future<void> _copyFeedbackEmailToClipboard() async {
     await Clipboard.setData(ClipboardData(text: AppConstants.supportEmail));
     if (!mounted) return;
-    ScaffoldMessenger.of(context).hideCurrentSnackBar();
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text('Copied ${AppConstants.supportEmail}'),
-        duration: const Duration(seconds: 3),
-      ),
+    AppToast.dismiss();
+    AppToast.showText(
+      context,
+      'Copied ${AppConstants.supportEmail}',
+      duration: const Duration(seconds: 3),
     );
   }
 
@@ -513,18 +513,15 @@ class _WebPlayerShellState extends State<WebPlayerShell>
     );
     final ok = await launchUrl(uri, mode: LaunchMode.externalApplication);
     if (!mounted || ok) return;
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: const Text(
-          'Could not open email. You can copy our address below.',
-        ),
-        action: SnackBarAction(
-          label: 'Copy email',
-          onPressed: () {
-            unawaited(_copyFeedbackEmailToClipboard());
-          },
-        ),
-        duration: const Duration(seconds: 8),
+    AppToast.show(
+      context,
+      child: const Text('Could not open email. You can copy our address below.'),
+      duration: const Duration(seconds: 8),
+      action: AppToastAction(
+        label: 'Copy email',
+        onPressed: () {
+          unawaited(_copyFeedbackEmailToClipboard());
+        },
       ),
     );
   }
@@ -963,9 +960,7 @@ class _WebPlayerShellState extends State<WebPlayerShell>
 
   Future<void> _onExamTimeUp() async {
     if (!mounted) return;
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Test time is up. Saving your attempt…')),
-    );
+    AppToast.showText(context, 'Test time is up. Saving your attempt…');
     await _finishTestRun();
   }
 
@@ -980,9 +975,7 @@ class _WebPlayerShellState extends State<WebPlayerShell>
     unawaited(_writeSaved());
     setState(() {});
     if (!mounted) return;
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Time is up for this question.')),
-    );
+    AppToast.showText(context, 'Time is up for this question.');
   }
 
   TestQuestion get _q => _questions[_index];

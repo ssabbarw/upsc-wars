@@ -15,6 +15,7 @@ import '../open_challenge/open_challenge_create_availability.dart';
 import '../open_challenge/open_challenge_post_eligibility.dart';
 import '../providers/community_providers.dart';
 import '../providers/open_challenge_providers.dart';
+import '../../../shared/widgets/app_toast.dart';
 
 /// Encourages posting a strong 10-question exam as a community open challenge.
 class OpenChallengePostFromResultsCard extends ConsumerStatefulWidget {
@@ -150,9 +151,7 @@ class _OpenChallengePostFromResultsCardState
       }
     } catch (e) {
       if (context.mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('$e')),
-        );
+        AppToast.showText(context, '$e');
       }
     } finally {
       if (mounted) setState(() => _busy = false);

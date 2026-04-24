@@ -9,6 +9,7 @@ import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/extensions/context_extensions.dart';
+import '../../../shared/widgets/app_toast.dart';
 import '../../../shared/widgets/tappable_circular_avatar.dart';
 import '../../home/providers/auth_providers.dart';
 import '../domain/entities/community_user.dart';
@@ -282,11 +283,7 @@ Future<void> _openAnswererProfile(
   final email = (e.authorEmail ?? '').trim().toLowerCase();
   if (email.isEmpty) {
     if (context.mounted) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Profile is not available for this attempt yet.'),
-        ),
-      );
+      AppToast.showText(context, 'Profile is not available for this attempt yet.');
     }
     return;
   }

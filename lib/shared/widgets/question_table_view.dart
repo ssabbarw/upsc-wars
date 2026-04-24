@@ -15,6 +15,36 @@ class QuestionTableView extends StatelessWidget {
 
   final QuestionTableData table;
 
+  static Map<int, TableColumnWidth> _columnWidthsForContent(
+    List<List<String>> allRows,
+    int columnCount,
+  ) {
+    bool isTightColumn(int col) {
+      var maxLen = 0;
+      var allNumeric = true;
+      var anyNonEmpty = false;
+      for (final row in allRows) {
+        if (col >= row.length) continue;
+        final v = row[col].trim();
+        if (v.isEmpty) continue;
+        anyNonEmpty = true;
+        if (v.length > maxLen) maxLen = v.length;
+        if (!RegExp(r'^\d+$').hasMatch(v)) allNumeric = false;
+      }
+      if (!anyNonEmpty) return true;
+      if (allNumeric && maxLen <= 4) return true;
+      if (maxLen <= 3) return true;
+      return false;
+    }
+
+    return <int, TableColumnWidth>{
+      for (var i = 0; i < columnCount; i++)
+        i: isTightColumn(i)
+            ? const IntrinsicColumnWidth()
+            : const FlexColumnWidth(),
+    };
+  }
+
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
@@ -44,6 +74,8 @@ class QuestionTableView extends StatelessWidget {
       }),
     ];
 
+    final columnWidths = _columnWidthsForContent(allRows, columnCount);
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -68,10 +100,7 @@ class QuestionTableView extends StatelessWidget {
             child: Table(
               defaultVerticalAlignment: TableCellVerticalAlignment.middle,
               border: TableBorder.all(color: border, width: 0.5),
-              columnWidths: {
-                for (var i = 0; i < columnCount; i++)
-                  i: const FlexColumnWidth(),
-              },
+              columnWidths: columnWidths,
               children: [
                 for (var rowIndex = 0; rowIndex < allRows.length; rowIndex++)
                   TableRow(

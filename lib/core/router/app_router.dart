@@ -61,6 +61,7 @@ import '../../features/weak_areas/screens/trap_patterns_screen.dart';
 import '../../features/weak_areas/screens/trap_pattern_detail_screen.dart';
 import '../../shared/widgets/google_login_bottom_sheet.dart';
 import '../../shared/widgets/unread_pulse_wrapper.dart';
+import '../../shared/widgets/app_toast.dart';
 import '../providers/app_bootstrap.dart';
 import '../providers/kill_switch_provider.dart';
 import '../theme/app_colors.dart';
@@ -510,11 +511,8 @@ class _AppShell extends HookConsumerWidget {
       next.whenOrNull(
         error: (error, _) {
           DeferredPushPermissionCoordinator.clearCommunitySignInArmed();
-          final messenger = ScaffoldMessenger.of(context);
-          messenger.hideCurrentSnackBar();
-          messenger.showSnackBar(
-            SnackBar(content: Text(authErrorMessage(error))),
-          );
+          AppToast.dismiss();
+          AppToast.showText(context, authErrorMessage(error));
         },
       );
     });

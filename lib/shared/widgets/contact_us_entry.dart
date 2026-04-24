@@ -7,6 +7,7 @@ import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_radius.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_text_styles.dart';
+import 'app_toast.dart';
 
 /// Opens a bottom sheet with Telegram DM, email, and Telegram group.
 Future<void> showContactUsSheet(BuildContext context) async {
@@ -88,15 +89,12 @@ Future<void> showContactUsSheet(BuildContext context) async {
 }
 
 Future<void> _launchAndPop(BuildContext sheetContext, Uri uri) async {
-  final messenger = ScaffoldMessenger.maybeOf(sheetContext);
   final navigator = Navigator.maybeOf(sheetContext);
   await HapticFeedback.selectionClick();
   navigator?.pop();
   final ok = await launchUrl(uri, mode: LaunchMode.externalApplication);
-  if (!ok && messenger != null) {
-    messenger.showSnackBar(
-      const SnackBar(content: Text('Could not open link.')),
-    );
+  if (!ok) {
+    AppToast.showText(sheetContext, 'Could not open link.');
   }
 }
 

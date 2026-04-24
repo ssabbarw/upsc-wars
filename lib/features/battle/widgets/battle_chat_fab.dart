@@ -10,6 +10,7 @@ import 'package:intl/intl.dart';
 import '../../../core/router/app_router.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../shared/widgets/app_toast.dart';
 import '../../../shared/widgets/tappable_circular_avatar.dart';
 import '../../chat/domain/chat_ids.dart';
 import '../../chat/domain/entities/chat_runtime_config.dart';
@@ -375,9 +376,7 @@ class _BattleChatSheet extends HookConsumerWidget {
         }
       } catch (e) {
         if (context.mounted) {
-          ScaffoldMessenger.of(
-            context,
-          ).showSnackBar(SnackBar(content: Text('Failed to send: $e')));
+          AppToast.showText(context, 'Failed to send: $e');
         }
       }
     }

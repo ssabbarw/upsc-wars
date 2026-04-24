@@ -8,6 +8,7 @@ import '../domain/entities/community_user.dart';
 import '../data/qotd_local_post_limit.dart';
 import '../providers/community_providers.dart';
 import '../providers/qotd_providers.dart';
+import '../../../shared/widgets/app_toast.dart';
 import 'qotd_post_comment_sheet.dart';
 
 Future<void> showShareQotdSheet({
@@ -52,9 +53,7 @@ Future<void> showShareQotdSheet({
       QotdLocalPostLimit.recordPost(prefs);
       ref.invalidate(qotdFeedNotifierProvider);
       if (context.mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Posted to Community QOTD')),
-        );
+        AppToast.showText(context, 'Posted to Community QOTD');
       }
     },
   );

@@ -16,6 +16,7 @@ import '../providers/auth_providers.dart';
 import '../services/instagram_link_service.dart';
 import '../services/profile_photo_service.dart';
 import '../../../shared/widgets/google_login_bottom_sheet.dart';
+import '../../../shared/widgets/app_toast.dart';
 import '../../../shared/widgets/tappable_circular_avatar.dart';
 
 class _ProfileFooter extends StatelessWidget {
@@ -197,14 +198,10 @@ class _SignedInProfileBody extends HookConsumerWidget {
         final (ok, err) = await photoService.pickCropUploadAndUpdateProfile();
         if (!context.mounted) return;
         if (ok) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Profile photo updated')),
-          );
+          AppToast.showText(context, 'Profile photo updated');
           unawaited(CommunityBucketPresenceService.syncForCurrentUser(ref));
         } else if (err != null) {
-          ScaffoldMessenger.of(
-            context,
-          ).showSnackBar(SnackBar(content: Text(err)));
+          AppToast.showText(context, err);
         }
       } finally {
         uploadingPhoto.value = false;
@@ -434,11 +431,7 @@ class _CommunityProfileCard extends HookConsumerWidget {
 
       final tele = telegramController.text.trim();
       if (tele.contains('/')) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('Telegram username should not contain /'),
-          ),
-        );
+        AppToast.showText(context, 'Telegram username should not contain /');
         return;
       }
 
@@ -454,9 +447,7 @@ class _CommunityProfileCard extends HookConsumerWidget {
               'lastOnlineTime': DateTime.now().millisecondsSinceEpoch,
             }, SetOptions(merge: true));
         if (context.mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Community profile updated')),
-          );
+          AppToast.showText(context, 'Community profile updated');
         }
       } finally {
         saving.value = false;
@@ -471,35 +462,25 @@ class _CommunityProfileCard extends HookConsumerWidget {
         instagramHandle.value = username;
         instagramLinked.value = true;
         if (context.mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('Instagram @$username connected')),
-          );
+          AppToast.showText(context, 'Instagram @$username connected');
         }
       } on InstagramLinkCancelled {
         // User closed the browser; no message.
       } on InstagramLinkFailed catch (e) {
         if (context.mounted) {
-          ScaffoldMessenger.of(
-            context,
-          ).showSnackBar(SnackBar(content: Text(e.message)));
+          AppToast.showText(context, e.message);
         }
       } on FirebaseFunctionsException catch (e) {
         if (context.mounted) {
-          ScaffoldMessenger.of(
-            context,
-          ).showSnackBar(SnackBar(content: Text(e.message ?? e.code)));
+          AppToast.showText(context, e.message ?? e.code);
         }
       } on UnsupportedError catch (e) {
         if (context.mounted) {
-          ScaffoldMessenger.of(
-            context,
-          ).showSnackBar(SnackBar(content: Text(e.toString())));
+          AppToast.showText(context, e.toString());
         }
       } catch (e) {
         if (context.mounted) {
-          ScaffoldMessenger.of(
-            context,
-          ).showSnackBar(SnackBar(content: Text(e.toString())));
+          AppToast.showText(context, e.toString());
         }
       } finally {
         instagramBusy.value = false;
@@ -533,15 +514,11 @@ class _CommunityProfileCard extends HookConsumerWidget {
         instagramLinked.value = false;
         instagramHandle.value = '';
         if (context.mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Instagram disconnected')),
-          );
+          AppToast.showText(context, 'Instagram disconnected');
         }
       } on FirebaseFunctionsException catch (e) {
         if (context.mounted) {
-          ScaffoldMessenger.of(
-            context,
-          ).showSnackBar(SnackBar(content: Text(e.message ?? e.code)));
+          AppToast.showText(context, e.message ?? e.code);
         }
       } finally {
         instagramBusy.value = false;

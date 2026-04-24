@@ -7,6 +7,7 @@ import '../../../core/domain/entities/session_config.dart';
 import '../../../core/providers/catalog_providers.dart';
 import '../../../core/providers/user_database_provider.dart';
 import '../data/open_challenge_repository.dart';
+import '../../../shared/widgets/app_toast.dart';
 import 'open_challenge_analytics.dart';
 import 'open_challenge_exam_context.dart';
 import 'open_challenge_exam_registry.dart';
@@ -92,9 +93,7 @@ Future<void> launchOpenChallengeExam(
     }
   } catch (e) {
     if (context.mounted) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('$e')),
-      );
+      AppToast.showText(context, '$e');
     }
   }
 }

@@ -12,6 +12,7 @@ import 'package:upsc_wars/core/services/app_local_notifications_service.dart';
 import 'package:upsc_wars/core/services/fcm_token_sync_service.dart';
 import 'package:upsc_wars/features/community/open_challenge/open_challenge_fcm.dart';
 import 'package:upsc_wars/features/notifications/long_html_notification_constants.dart';
+import 'package:upsc_wars/shared/widgets/app_toast.dart';
 
 /// FCM setup for battle invites, long HTML announcements, and deep links.
 class BattleMessagingService {
@@ -106,11 +107,10 @@ class BattleMessagingService {
 
     final ctx = rootNavigatorKey.currentContext;
     if (ctx == null || !ctx.mounted) return;
-    ScaffoldMessenger.maybeOf(ctx)?.showSnackBar(
-      SnackBar(
-        content: Text('$resolvedTitle\n$resolvedBody'),
-        duration: const Duration(seconds: 6),
-      ),
+    AppToast.showText(
+      ctx,
+      '$resolvedTitle\n$resolvedBody',
+      duration: const Duration(seconds: 6),
     );
   }
 

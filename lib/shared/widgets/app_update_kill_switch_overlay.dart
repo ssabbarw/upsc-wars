@@ -11,6 +11,7 @@ import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_radius.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_text_styles.dart';
+import 'app_toast.dart';
 
 /// Full-screen, non-dismissable scrim + compact bottom sheet (kill switch).
 class AppUpdateKillSwitchOverlay extends StatelessWidget {
@@ -25,9 +26,7 @@ class AppUpdateKillSwitchOverlay extends StatelessWidget {
     final uri = Uri.parse(url);
     final ok = await launchUrl(uri, mode: LaunchMode.externalApplication);
     if (!ok && context.mounted) {
-      ScaffoldMessenger.maybeOf(context)?.showSnackBar(
-        const SnackBar(content: Text('Could not open the store.')),
-      );
+      AppToast.showText(context, 'Could not open the store.');
     }
   }
 

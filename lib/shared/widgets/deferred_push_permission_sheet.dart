@@ -16,6 +16,7 @@ import '../../core/theme/app_text_styles.dart';
 /// Returns `true` if the user chose to open the system permission flow.
 Future<bool?> showDeferredPushPermissionSheet(BuildContext context) async {
   try {
+    upscWarsTrace('showDeferredPushPermissionSheet: open');
     return await showModalBottomSheet<bool>(
     context: context,
     useRootNavigator: true,
@@ -186,6 +187,7 @@ class _DeferredPushPermissionPanel extends HookConsumerWidget {
                 const SizedBox(height: AppSpacing.lg),
                 FilledButton(
                   onPressed: () {
+                    upscWarsTrace('showDeferredPushPermissionSheet: tap_enable');
                     ScreenFlow.logAction(
                       ref,
                       screenName: ScreenFlow.deferredPushPrePrompt,
@@ -201,6 +203,7 @@ class _DeferredPushPermissionPanel extends HookConsumerWidget {
                 const SizedBox(height: AppSpacing.sm),
                 TextButton(
                   onPressed: () {
+                    upscWarsTrace('showDeferredPushPermissionSheet: tap_not_now');
                     ScreenFlow.logAction(
                       ref,
                       screenName: ScreenFlow.deferredPushPrePrompt,

@@ -10,6 +10,7 @@ import '../../../core/theme/app_text_styles.dart';
 import '../open_challenge/open_challenge_analytics.dart';
 import '../open_challenge/open_challenge_exam_registry.dart';
 import '../open_challenge/open_challenge_post_results_submit.dart';
+import '../../../shared/widgets/app_toast.dart';
 
 /// Open-challenge **create** only: auto-publishes from [ResultsScreen].
 /// Accept flow uses [OpenChallengeAcceptResultsShell] instead.
@@ -178,9 +179,7 @@ class _OpenChallengeResultsActionsState
             : '$e'.contains('challenge_expired')
                 ? 'This challenge has expired.'
                 : '$e';
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(msg)),
-        );
+        AppToast.showText(context, msg);
       }
       if (mounted) setState(() => _failed = true);
     } finally {

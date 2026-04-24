@@ -1,7 +1,5 @@
 import 'dart:async';
 
-import 'package:app_settings/app_settings.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -9,8 +7,8 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:upsc_wars/core/analytics/analytics.dart';
 import 'package:upsc_wars/core/analytics/analytics_events.dart';
 import 'package:upsc_wars/core/providers/prefs_provider.dart';
-import 'package:upsc_wars/core/services/battle_messaging_service.dart';
 import 'package:upsc_wars/core/services/deferred_push_permission_coordinator.dart';
+import 'package:upsc_wars/core/services/push_notifications_ensure_service.dart';
 import 'package:upsc_wars/core/theme/app_radius.dart';
 import 'package:upsc_wars/core/theme/app_spacing.dart';
 import 'package:upsc_wars/core/theme/app_text_styles.dart';
@@ -93,18 +91,12 @@ class _DeferredPushHomeNudgeWithAnalytics extends HookConsumerWidget {
                       const DeferredPushHomeNudgeTapEnableEvent(),
                     ),
                   );
-                  final status =
-                      await BattleMessagingService
-                          .notificationAuthorizationStatus();
-                  if (!context.mounted) return;
-                  if (status == AuthorizationStatus.denied) {
-                    await AppSettings.openAppSettings(
-                      type: AppSettingsType.notification,
-                    );
-                  } else {
-                    await BattleMessagingService
-                        .requestPushAuthorizationAndSync();
-                  }
+                  await PushNotificationsEnsureService.ensureEnabled(
+                    context,
+                    ref,
+                    source: 'home_nudge',
+                    allowEducationSheet: false,
+                  );
                   if (!context.mounted) return;
                   ref.invalidate(prefsServiceProvider);
                   ref.invalidate(deferredPushHomeNudgeVisibleProvider);

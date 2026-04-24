@@ -18,6 +18,7 @@ import 'package:upsc_wars/core/domain/entities/test_question_share_map.dart';
 import 'package:upsc_wars/core/providers/catalog_providers.dart';
 import 'package:upsc_wars/core/providers/user_database_provider.dart';
 import 'package:upsc_wars/core/router/app_router.dart';
+import 'package:upsc_wars/shared/widgets/app_toast.dart';
 
 import 'share_link_kind.dart';
 import 'share_link_parser.dart';
@@ -36,9 +37,7 @@ String? _analyticsKeyForKind(ShareLinkKind kind) {
 void showShareLinkMessage(String message) {
   final ctx = rootNavigatorKey.currentContext;
   if (ctx == null || !ctx.mounted) return;
-  ScaffoldMessenger.maybeOf(ctx)?.showSnackBar(
-    SnackBar(content: Text(message)),
-  );
+  AppToast.showText(ctx, message);
 }
 
 /// Imports a fixed-id session from [payload] and navigates to the test engine.

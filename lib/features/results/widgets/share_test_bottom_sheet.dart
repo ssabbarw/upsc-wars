@@ -9,6 +9,7 @@ import 'package:upsc_wars/core/theme/app_colors.dart';
 import 'package:upsc_wars/core/theme/app_radius.dart';
 import 'package:upsc_wars/core/theme/app_spacing.dart';
 import 'package:upsc_wars/core/theme/app_text_styles.dart';
+import 'package:upsc_wars/shared/widgets/app_toast.dart';
 
 /// Shows a bottom sheet to share a test with friends.
 ///
@@ -100,11 +101,10 @@ class _ShareTestBottomSheetBodyState
   Future<void> _copyToClipboard(String text) async {
     await Clipboard.setData(ClipboardData(text: text));
     if (mounted) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Link copied to clipboard'),
-          duration: Duration(seconds: 2),
-        ),
+      AppToast.showText(
+        context,
+        'Link copied to clipboard',
+        duration: const Duration(seconds: 2),
       );
     }
   }

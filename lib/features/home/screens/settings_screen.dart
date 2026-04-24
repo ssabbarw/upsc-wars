@@ -15,6 +15,7 @@ import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../core/constants/creator_contact.dart';
 import '../../../shared/theme/dark_mode_toggle.dart';
+import '../../../shared/widgets/app_toast.dart';
 
 class SettingsScreen extends ConsumerWidget {
   const SettingsScreen({super.key});
@@ -327,11 +328,7 @@ class _RateReviewCard extends StatelessWidget {
     final uri = Uri.parse(url);
     final ok = await launchUrl(uri, mode: LaunchMode.externalApplication);
     if (!ok && context.mounted) {
-      ScaffoldMessenger.maybeOf(context)?.showSnackBar(
-        const SnackBar(
-          content: Text('Could not open the store. Try again later.'),
-        ),
-      );
+      AppToast.showText(context, 'Could not open the store. Try again later.');
     }
   }
 
@@ -428,9 +425,7 @@ class _FeedbackCard extends StatelessWidget {
     await HapticFeedback.selectionClick();
     final ok = await launchUrl(uri, mode: LaunchMode.externalApplication);
     if (!ok && context.mounted) {
-      ScaffoldMessenger.maybeOf(
-        context,
-      )?.showSnackBar(const SnackBar(content: Text('Could not open link.')));
+      AppToast.showText(context, 'Could not open link.');
     }
   }
 

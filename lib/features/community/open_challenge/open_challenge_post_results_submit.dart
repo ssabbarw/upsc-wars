@@ -18,6 +18,7 @@ import '../open_challenge/open_challenge_exam_context.dart';
 import '../open_challenge/open_challenge_exam_registry.dart';
 import '../providers/community_providers.dart';
 import '../providers/open_challenge_providers.dart';
+import '../../../shared/widgets/app_toast.dart';
 
 /// Thrown when [performOpenChallengePostResultsPublish] blocks create (24h local cooldown).
 final class OpenChallengePublishCooldownException implements Exception {
@@ -188,9 +189,7 @@ class _OpenChallengeAcceptResultsShellState
             : '$e'.contains('challenge_expired')
                 ? 'This challenge has expired.'
                 : '$e';
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(msg)),
-        );
+        AppToast.showText(context, msg);
         setState(() => _failed = true);
       }
     } finally {

@@ -16,6 +16,7 @@ import 'package:upsc_wars/features/battle/data/battle_firestore_paths.dart';
 import 'package:upsc_wars/features/battle/data/battle_match_firestore_service.dart';
 import 'package:upsc_wars/features/battle/domain/battle_monogram_palette.dart';
 import 'package:upsc_wars/features/home/providers/auth_providers.dart';
+import 'package:upsc_wars/shared/widgets/app_toast.dart';
 
 /// Human-readable room-style id (stable for a given session UUID).
 /// Host wait for human guest to open the invite before [Start battle] is enabled.
@@ -249,9 +250,7 @@ class _BattleWaitingScreenState extends ConsumerState<BattleWaitingScreen> {
       await svc.signalHostStartedBattle(widget.sessionId);
     } catch (_) {
       if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Could not start battle. Try again.')),
-        );
+        AppToast.showText(context, 'Could not start battle. Try again.');
       }
     } finally {
       if (mounted) setState(() => _startingBattle = false);

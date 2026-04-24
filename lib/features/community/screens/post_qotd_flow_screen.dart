@@ -18,6 +18,7 @@ import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/widgets/question_table_view.dart';
 import '../../../shared/widgets/selectable_copy_search_text.dart';
 import '../../../shared/widgets/test_config_sheet_widgets.dart';
+import '../../../shared/widgets/app_toast.dart';
 import '../../history/screens/session_review_screen.dart';
 import '../../home/providers/auth_providers.dart';
 import '../data/open_challenge_repository.dart' show profileFromFirebaseUser;
@@ -68,20 +69,14 @@ class PostQotdFlowScreen extends HookConsumerWidget {
         );
         if (!context.mounted) return;
         if (uuid == null) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-              content: Text('No questions found for this subject.'),
-            ),
-          );
+          AppToast.showText(context, 'No questions found for this subject.');
           return;
         }
         final repo = await ref.read(testEngineRepositoryProvider.future);
         final q = await repo.loadStandaloneQuestionByUuid(uuid);
         if (!context.mounted) return;
         if (q == null) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Could not load that question.')),
-          );
+          AppToast.showText(context, 'Could not load that question.');
           return;
         }
         question.value = q;
@@ -93,9 +88,7 @@ class PostQotdFlowScreen extends HookConsumerWidget {
 
     Future<void> startWithSubject() async {
       if (subjectKey.value == null) {
-        ScaffoldMessenger.of(
-          context,
-        ).showSnackBar(const SnackBar(content: Text('Pick a subject first.')));
+        AppToast.showText(context, 'Pick a subject first.');
         return;
       }
       step.value = 1;
@@ -151,9 +144,7 @@ class PostQotdFlowScreen extends HookConsumerWidget {
             ActivationMilestones.firstQotdPosted,
           ),
         );
-        ScaffoldMessenger.of(
-          context,
-        ).showSnackBar(const SnackBar(content: Text('Posted to QOTD')));
+        AppToast.showText(context, 'Posted to QOTD');
         context.pop();
       }
     }

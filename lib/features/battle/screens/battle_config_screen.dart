@@ -21,6 +21,7 @@ import 'package:upsc_wars/features/battle/domain/entities/battle_invite_target.d
 import 'package:upsc_wars/features/battle/domain/services/battle_name_service.dart';
 import 'package:upsc_wars/features/community/providers/community_providers.dart';
 import 'package:upsc_wars/features/home/providers/auth_providers.dart';
+import 'package:upsc_wars/shared/widgets/app_toast.dart';
 import 'package:upsc_wars/shared/widgets/test_config_sheet_widgets.dart';
 
 class BattleConfigScreen extends ConsumerStatefulWidget {
@@ -267,12 +268,9 @@ class _BattleConfigScreenState extends ConsumerState<BattleConfigScreen> {
         );
         if (hostBlockedGuest) {
           if (context.mounted) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(
-                content: Text(
-                  'Unblock this player in Community before inviting them.',
-                ),
-              ),
+            AppToast.showText(
+              context,
+              'Unblock this player in Community before inviting them.',
             );
           }
           return;
@@ -349,9 +347,7 @@ class _BattleConfigScreenState extends ConsumerState<BattleConfigScreen> {
               !inviteOutcome.notificationSent &&
               inviteOutcome.serverReason == 'blocked';
           if (!serverSaysBlocked) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(content: Text(inviteOutcome.userFacingMessage)),
-            );
+            AppToast.showText(context, inviteOutcome.userFacingMessage);
           }
         }
       }
@@ -380,29 +376,22 @@ class _BattleConfigScreenState extends ConsumerState<BattleConfigScreen> {
             'Firestore is temporarily unavailable. Check your connection and try again.',
           _ => e.message ?? 'Battle setup failed (${e.code}).',
         };
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(msg)),
-        );
+        AppToast.showText(context, msg);
       }
     } on TimeoutException catch (e, st) {
       debugPrint('Battle start timed out: $e');
       debugPrintStack(stackTrace: st);
       if (context.mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text(
-              'Saving the battle timed out. Check your internet connection and try again.',
-            ),
-          ),
+        AppToast.showText(
+          context,
+          'Saving the battle timed out. Check your internet connection and try again.',
         );
       }
     } catch (e, st) {
       debugPrint('Battle start: $e');
       debugPrintStack(stackTrace: st);
       if (context.mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('$e')),
-        );
+        AppToast.showText(context, '$e');
       }
     } finally {
       if (mounted) setState(() => _submitting = false);

@@ -16,6 +16,7 @@ import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/widgets/question_table_view.dart';
 import '../../../shared/widgets/selectable_copy_search_text.dart';
 import '../../../shared/widgets/tappable_circular_avatar.dart';
+import '../../../shared/widgets/app_toast.dart';
 import '../data/open_challenge_repository.dart' show profileFromFirebaseUser;
 import '../domain/qotd_models.dart';
 import '../domain/qotd_reactions.dart';
@@ -163,9 +164,7 @@ class _QotdPostCardState extends ConsumerState<QotdPostCard> {
         _correct = rollbackCorrect;
         _wrong = rollbackWrong;
       });
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(SnackBar(content: Text('Could not save attempt: $e')));
+      AppToast.showText(context, 'Could not save attempt: $e');
     }
   }
 
@@ -207,9 +206,7 @@ class _QotdPostCardState extends ConsumerState<QotdPostCard> {
         _myReactionId = null;
         _reactionSaving = false;
       });
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(SnackBar(content: Text('Could not update reaction: $e')));
+      AppToast.showText(context, 'Could not update reaction: $e');
     }
   }
 

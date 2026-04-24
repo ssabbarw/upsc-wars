@@ -12,6 +12,7 @@ import '../../../core/constants/app_constants.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/widgets/tappable_circular_avatar.dart';
+import '../../../shared/widgets/app_toast.dart';
 import '../../community/domain/entities/community_user.dart';
 import '../../community/providers/community_providers.dart';
 import '../../community/providers/user_block_providers.dart';
@@ -111,11 +112,7 @@ class ChatThreadScreen extends HookConsumerWidget {
         }
       } catch (e) {
         if (context.mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text('Message failed to send: $e'),
-            ),
-          );
+          AppToast.showText(context, 'Message failed to send: $e');
         }
       }
     }
@@ -481,9 +478,7 @@ class _MessageText extends StatelessWidget {
   static Future<void> _openUri(BuildContext context, Uri uri) async {
     final ok = await launchUrl(uri, mode: LaunchMode.externalApplication);
     if (!ok && context.mounted) {
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(const SnackBar(content: Text('Could not open link')));
+      AppToast.showText(context, 'Could not open link');
     }
   }
 }
