@@ -163,7 +163,7 @@ class PostQotdFlowScreen extends HookConsumerWidget {
                 isSelected: [uiLang == 'en', uiLang == 'hi'],
                 onPressed: (i) =>
                     qotdLangOverride.value = i == 0 ? 'en' : 'hi',
-                constraints: const BoxConstraints(minHeight: 32, minWidth: 40),
+                constraints: const BoxConstraints(minHeight: 32, minWidth: 60),
                 borderRadius: BorderRadius.circular(AppRadius.sm),
                 children: const [
                   Padding(
@@ -172,7 +172,7 @@ class PostQotdFlowScreen extends HookConsumerWidget {
                   ),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 6),
-                    child: Text('HI'),
+                    child: Text('हि'),
                   ),
                 ],
               ),

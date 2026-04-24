@@ -837,7 +837,7 @@ class _TopBar extends HookConsumerWidget {
             isSelected: [uiLanguage == 'en', uiLanguage == 'hi'],
             onPressed: (index) => onLanguageChanged(index == 0 ? 'en' : 'hi'),
             borderRadius: BorderRadius.circular(AppRadius.sm),
-            constraints: const BoxConstraints(minHeight: 28, minWidth: 40),
+            constraints: const BoxConstraints(minHeight: 28, minWidth: 60),
             children: const [
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 8),
@@ -845,7 +845,7 @@ class _TopBar extends HookConsumerWidget {
               ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 8),
-                child: Text('HI'),
+                child: Text('हि'),
               ),
             ],
           ),

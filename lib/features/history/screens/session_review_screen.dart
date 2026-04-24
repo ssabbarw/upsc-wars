@@ -873,7 +873,7 @@ class _TopBar extends HookConsumerWidget {
           ToggleButtons(
             isSelected: [uiLanguage == 'en', uiLanguage == 'hi'],
             onPressed: (index) => onLanguageChanged(index == 0 ? 'en' : 'hi'),
-            constraints: const BoxConstraints(minHeight: 28, minWidth: 36),
+            constraints: const BoxConstraints(minHeight: 28, minWidth: 60),
             borderRadius: BorderRadius.circular(8),
             children: const [
               Padding(
@@ -882,7 +882,7 @@ class _TopBar extends HookConsumerWidget {
               ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 6),
-                child: Text('HI'),
+                child: Text('हि'),
               ),
             ],
           ),

@@ -894,7 +894,7 @@ class _BattleQuestionArea extends StatelessWidget {
           isSelected: [uiLanguage == 'en', uiLanguage == 'hi'],
           onPressed: onLanguageChanged,
           borderRadius: BorderRadius.circular(AppRadius.sm),
-          constraints: const BoxConstraints(minHeight: 28, minWidth: 40),
+          constraints: const BoxConstraints(minHeight: 28, minWidth: 60),
           children: const [
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 8),
@@ -902,7 +902,7 @@ class _BattleQuestionArea extends StatelessWidget {
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 8),
-              child: Text('HI'),
+              child: Text('हि'),
             ),
           ],
         ),

@@ -534,7 +534,15 @@ class _AppShell extends HookConsumerWidget {
       }
 
       final missingName = (user.displayName ?? '').trim().isEmpty;
-      if (missingName && !didPromptCompleteProfile.value) {
+      final missingPhoto = (user.photoURL ?? '').trim().isEmpty;
+      final needsCompleteProfile = missingName || missingPhoto;
+
+      if (!needsCompleteProfile) {
+        didPromptCompleteProfile.value = false;
+        return;
+      }
+
+      if (!didPromptCompleteProfile.value) {
         WidgetsBinding.instance.addPostFrameCallback((_) {
           if (!context.mounted) return;
           didPromptCompleteProfile.value = true;

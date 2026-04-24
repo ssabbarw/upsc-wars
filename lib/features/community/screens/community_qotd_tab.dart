@@ -93,7 +93,7 @@ class CommunityQotdTab extends HookConsumerWidget {
                         tabLangOverride.value = i == 0 ? 'en' : 'hi',
                     constraints: const BoxConstraints(
                       minHeight: 32,
-                      minWidth: 40,
+                      minWidth: 60,
                     ),
                     borderRadius: BorderRadius.circular(AppRadius.sm),
                     children: const [
@@ -103,7 +103,7 @@ class CommunityQotdTab extends HookConsumerWidget {
                       ),
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 6),
-                        child: Text('HI'),
+                        child: Text('हि'),
                       ),
                     ],
                   ),

@@ -9,8 +9,10 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/constants/app_constants.dart';
 import '../../../shared/widgets/app_toast.dart';
+import '../../../shared/widgets/google_login_bottom_sheet.dart';
 import '../../../shared/widgets/tappable_circular_avatar.dart';
 import '../../community/services/community_bucket_presence_service.dart';
+import '../providers/auth_providers.dart';
 import '../services/profile_photo_service.dart';
 
 class CompleteProfileScreen extends HookConsumerWidget {
@@ -20,6 +22,16 @@ class CompleteProfileScreen extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final auth = FirebaseAuth.instance;
     final user = auth.currentUser;
+    final authActions = ref.watch(authActionsProvider);
+    final isBusy = authActions.isLoading;
+
+    ref.listen(authActionsProvider, (_, next) {
+      next.whenOrNull(
+        error: (error, __) {
+          if (context.mounted) AppToast.showText(context, error.toString());
+        },
+      );
+    });
 
     final nameController = useTextEditingController(
       text: (user?.displayName ?? '').trim(),
@@ -54,6 +66,10 @@ class CompleteProfileScreen extends HookConsumerWidget {
       }
 
       final name = nameController.text.trim();
+      if (name.toLowerCase().contains('upsc wars')) {
+        AppToast.showText(context, 'UPSC War is not allowed in name');
+        return;
+      }
       if (name.length < 2) {
         AppToast.showText(context, 'Please enter your name');
         return;
@@ -98,6 +114,56 @@ class CompleteProfileScreen extends HookConsumerWidget {
             child: ListView(
               padding: const EdgeInsets.fromLTRB(20, 20, 20, 24),
               children: [
+                if (effectiveUser == null) ...[
+                  Card(
+                    elevation: 0,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(24),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(18, 18, 18, 18),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Text(
+                            'Sign in to continue',
+                            style: Theme.of(context).textTheme.titleMedium,
+                          ),
+                          const SizedBox(height: 6),
+                          Text(
+                            'Connect your account to sync your profile and progress across devices.',
+                            style: Theme.of(context).textTheme.bodyMedium
+                                ?.copyWith(color: scheme.onSurfaceVariant),
+                          ),
+                          const SizedBox(height: 14),
+                          FilledButton.icon(
+                            onPressed: isBusy
+                                ? null
+                                : () => showGoogleLoginBottomSheet(
+                                      context: context,
+                                      isLoading: isBusy,
+                                      onAppleTap: () {
+                                        Navigator.of(context).pop();
+                                        ref
+                                            .read(authActionsProvider.notifier)
+                                            .signInWithApple();
+                                      },
+                                      onGoogleTap: () {
+                                        Navigator.of(context).pop();
+                                        ref
+                                            .read(authActionsProvider.notifier)
+                                            .signInWithGoogle();
+                                      },
+                                    ),
+                            icon: const Icon(Icons.login_rounded),
+                            label: Text(isBusy ? 'Signing in…' : 'Sign in'),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 14),
+                ],
                 Text(
                   'This helps others recognize you in Community and chat.',
                   style: Theme.of(context).textTheme.bodyMedium?.copyWith(

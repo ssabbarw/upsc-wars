@@ -149,7 +149,7 @@ class WebPlayerSessionChrome extends StatelessWidget {
                   borderRadius: BorderRadius.circular(AppRadius.sm),
                   constraints: const BoxConstraints(
                     minHeight: 28,
-                    minWidth: 40,
+                    minWidth: 60,
                   ),
                   children: const [
                     Padding(
@@ -158,7 +158,7 @@ class WebPlayerSessionChrome extends StatelessWidget {
                     ),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 8),
-                      child: Text('HI'),
+                      child: Text('हि'),
                     ),
                   ],
                 ),

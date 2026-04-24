@@ -12,7 +12,6 @@ import '../../../core/constants/subject_constants.dart';
 import '../../../core/constants/timed_exam_debug_constants.dart';
 import '../../../core/domain/entities/session_config.dart';
 import '../../../core/domain/entities/subject_info.dart';
-import '../../../core/presentation/user_display_name.dart';
 import '../../../core/providers/catalog_providers.dart';
 import '../../../core/providers/app_bootstrap.dart';
 import '../../../core/providers/kill_switch_provider.dart';
@@ -77,13 +76,10 @@ class HomeScreen extends HookConsumerWidget {
 
     final greeting = _greeting();
     final user = authState.asData?.value;
-    final userName = user == null
-        ? 'Aspirant'
-        : displayNameForViewer(
-            name: _toTitleCase(user.displayName?.trim() ?? 'Aspirant'),
-            viewerEmail: user.email,
-            subjectEmail: user.email,
-          );
+    final rawName = user?.displayName?.trim() ?? '';
+    final safeName = rawName.toLowerCase() == 'you' ? '' : rawName;
+    final userName =
+        safeName.isNotEmpty ? _toTitleCase(safeName) : (user?.email ?? 'Aspirant');
     final avatarInitials = _avatarInitials(user?.displayName);
     final avatarBackgroundColor = _avatarBackgroundColor(
       user?.displayName,
