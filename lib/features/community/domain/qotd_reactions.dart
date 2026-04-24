@@ -12,28 +12,11 @@ class QotdReactionOption {
 }
 
 const List<QotdReactionOption> qotdReactionOptions = [
-  QotdReactionOption(
-    id: 'easy_peasy',
-    label: 'Easy-peasy',
-    emoji: '😎',
-  ),
-  QotdReactionOption(
-    id: 'hard',
-    label: 'Hard',
-    emoji: '😰',
-  ),
-  QotdReactionOption(
-    id: 'very_tough',
-    label: 'Very tough',
-    emoji: '🤯',
-  ),
-  QotdReactionOption(
-    id: 'impossible',
-    label: 'Impossible',
-    emoji: '💀',
-  ),
+  QotdReactionOption(id: 'good_one', label: 'Good one', emoji: '👍🏻'),
+  QotdReactionOption(id: 'easy_peasy', label: 'Easy-peasy', emoji: '😀'),
+  QotdReactionOption(id: 'hard', label: 'Hard', emoji: '😬'),
+  QotdReactionOption(id: 'very_tough', label: 'Very tough', emoji: '🙁'),
+  QotdReactionOption(id: 'impossible', label: 'Impossible', emoji: '😭'),
 ];
 
-final Set<String> qotdReactionIds = {
-  for (final o in qotdReactionOptions) o.id,
-};
+final Set<String> qotdReactionIds = {for (final o in qotdReactionOptions) o.id};

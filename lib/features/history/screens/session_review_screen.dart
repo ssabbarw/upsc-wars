@@ -20,6 +20,140 @@ import 'package:upsc_wars/features/history/providers/review_session_provider.dar
 import 'package:upsc_wars/features/history/widgets/explanation_card.dart';
 import 'package:upsc_wars/features/results/widgets/share_test_bottom_sheet.dart';
 
+OverlayEntry _buildSessionReviewShareCoachOverlay({
+  required BuildContext context,
+  required LayerLink link,
+  required VoidCallback onDismiss,
+}) {
+  final scheme = Theme.of(context).colorScheme;
+  final overlay = Overlay.of(context);
+  final size = overlay.context.size ?? MediaQuery.sizeOf(context);
+
+  Widget bubble(BuildContext context) {
+    return Material(
+      color: Colors.transparent,
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(maxWidth: 320),
+        child: DecoratedBox(
+          decoration: BoxDecoration(
+            color: scheme.surface,
+            borderRadius: BorderRadius.circular(14),
+            border: Border.all(color: scheme.outlineVariant.withValues(alpha: 0.7)),
+            boxShadow: [
+              BoxShadow(
+                color: scheme.shadow.withValues(alpha: 0.22),
+                blurRadius: 22,
+                offset: const Offset(0, 10),
+              ),
+            ],
+          ),
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(14, 12, 14, 12),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Share this review',
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w700,
+                    color: scheme.onSurface,
+                  ),
+                ),
+                const SizedBox(height: 6),
+                Text(
+                  'Tap Share to send this question (or the whole test) to friends.\n\n'
+                  'Found an error in a question? Use Share to report it to the UPSC Wars developer.',
+                  style: TextStyle(
+                    fontSize: 13,
+                    height: 1.35,
+                    color: scheme.onSurfaceVariant,
+                  ),
+                ),
+                const SizedBox(height: 10),
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: FilledButton(
+                    onPressed: onDismiss,
+                    child: const Text('Got it'),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  return OverlayEntry(
+    builder: (ctx) {
+      return Stack(
+        children: [
+          Positioned.fill(
+            child: GestureDetector(
+              behavior: HitTestBehavior.opaque,
+              onTap: onDismiss,
+              child: ColoredBox(color: Colors.black.withValues(alpha: 0.55)),
+            ),
+          ),
+          // Halo around the target (approx).
+          CompositedTransformFollower(
+            link: link,
+            showWhenUnlinked: false,
+            followerAnchor: Alignment.center,
+            targetAnchor: Alignment.center,
+            child: IgnorePointer(
+              child: Container(
+                width: 44,
+                height: 44,
+                decoration: BoxDecoration(
+                  color: Colors.transparent,
+                  borderRadius: BorderRadius.circular(14),
+                  border: Border.all(
+                    color: scheme.primary.withValues(alpha: 0.95),
+                    width: 2,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: scheme.primary.withValues(alpha: 0.25),
+                      blurRadius: 18,
+                      spreadRadius: 3,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          // Coach bubble slightly below-left of the icon.
+          CompositedTransformFollower(
+            link: link,
+            showWhenUnlinked: false,
+            followerAnchor: Alignment.topRight,
+            targetAnchor: Alignment.bottomRight,
+            offset: const Offset(0, 10),
+            child: Padding(
+              padding: EdgeInsets.only(
+                left: 12,
+                right: 12,
+                bottom: MediaQuery.viewPaddingOf(ctx).bottom + 12,
+              ),
+              child: Align(
+                alignment: Alignment.topRight,
+                child: SizedBox(
+                  width: size.width.clamp(0, 360).toDouble(),
+                  child: bubble(ctx),
+                ),
+              ),
+            ),
+          ),
+        ],
+      );
+    },
+  );
+}
+
 String _reviewConfidenceCaption(String? stored) {
   final v = (stored ?? '').trim();
   if (v.isEmpty) {
@@ -232,6 +366,8 @@ class SessionReviewScreen extends HookConsumerWidget {
               state.bookmarkedByUuid,
             );
             final queue = useState<Map<String, bool>>(state.queuedByUuid);
+            final shareLayerLink = useMemoized(LayerLink.new);
+            final shareCoachRequested = useRef(false);
             final q = state.questions[index.value];
             final total = state.total;
             final current = index.value + 1;
@@ -243,6 +379,39 @@ class SessionReviewScreen extends HookConsumerWidget {
                 .length;
             final isBookmarked = bookmarks.value[q.uuid] ?? false;
             final isQueued = queue.value[q.uuid] ?? false;
+
+            useEffect(() {
+              if (shareCoachRequested.value) return null;
+              shareCoachRequested.value = true;
+              var cancelled = false;
+              WidgetsBinding.instance.addPostFrameCallback((_) {
+                unawaited(() async {
+                  final prefs = await ref.read(prefsServiceProvider.future);
+                  if (cancelled || !context.mounted) return;
+                  if (prefs.sessionReviewShareCoachSeen) return;
+                  prefs.sessionReviewShareCoachSeen = true;
+                  ref.invalidate(prefsServiceProvider);
+
+                  if (!context.mounted) return;
+                  late final OverlayEntry entry;
+                  void dismiss() {
+                    if (!entry.mounted) return;
+                    entry.remove();
+                  }
+
+                  entry = _buildSessionReviewShareCoachOverlay(
+                    context: context,
+                    link: shareLayerLink,
+                    onDismiss: dismiss,
+                  );
+                  Overlay.of(context).insert(entry);
+                }());
+              });
+              return () {
+                cancelled = true;
+              };
+            }, const []);
+
             return ReviewBody(
               title: 'Session review',
               showRevisionBadge: false,
@@ -260,6 +429,7 @@ class SessionReviewScreen extends HookConsumerWidget {
                   question: q,
                 ),
               ),
+              shareLayerLink: shareLayerLink,
               onToggleBookmark: () async {
                 final repo = await ref.read(
                   testEngineRepositoryProvider.future,
@@ -327,6 +497,7 @@ class ReviewBody extends StatelessWidget {
     this.confidenceBanner,
     this.confidenceSessionId,
     this.onShare,
+    this.shareLayerLink,
   });
 
   final String title;
@@ -351,6 +522,7 @@ class ReviewBody extends StatelessWidget {
   /// When set, a read-only confidence line is shown under the user’s chosen option.
   final String? confidenceSessionId;
   final VoidCallback? onShare;
+  final LayerLink? shareLayerLink;
 
   @override
   Widget build(BuildContext context) {
@@ -370,6 +542,7 @@ class ReviewBody extends StatelessWidget {
           showRevisionBadge: showRevisionBadge,
           onBookmark: onToggleBookmark,
           onShare: onShare,
+          shareLayerLink: shareLayerLink,
           uiLanguage: uiLanguage,
           onLanguageChanged: onLanguageChanged,
         ),
@@ -617,6 +790,7 @@ class _TopBar extends HookConsumerWidget {
     required this.showRevisionBadge,
     required this.onBookmark,
     this.onShare,
+    this.shareLayerLink,
     required this.uiLanguage,
     required this.onLanguageChanged,
   });
@@ -625,6 +799,7 @@ class _TopBar extends HookConsumerWidget {
   final bool showRevisionBadge;
   final VoidCallback onBookmark;
   final VoidCallback? onShare;
+  final LayerLink? shareLayerLink;
   final String uiLanguage;
   final ValueChanged<String> onLanguageChanged;
   @override
@@ -724,12 +899,15 @@ class _TopBar extends HookConsumerWidget {
           ),
           const SizedBox(width: 8),
           if (onShare != null) ...[
-            InkWell(
-              onTap: onShare,
-              child: Icon(
-                Icons.ios_share_rounded,
-                size: 20,
-                color: scheme.onSurfaceVariant,
+            CompositedTransformTarget(
+              link: shareLayerLink ?? LayerLink(),
+              child: InkWell(
+                onTap: onShare,
+                child: Icon(
+                  Icons.ios_share_rounded,
+                  size: 20,
+                  color: scheme.onSurfaceVariant,
+                ),
               ),
             ),
             const SizedBox(width: 8),

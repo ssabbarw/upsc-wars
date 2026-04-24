@@ -533,15 +533,10 @@ class _AppShell extends HookConsumerWidget {
           final branches = navigationShell.route.branches;
           if (branches.isEmpty) return;
           final communityIndex = branches.length - 1;
-          navigationShell.goBranch(
-            communityIndex,
-            initialLocation: false,
-          );
+          navigationShell.goBranch(communityIndex, initialLocation: false);
           ref.invalidate(communityChallengersProvider);
           ref.invalidate(openChallengesListProvider);
-          unawaited(
-            ref.read(communityRecentUsersProvider.notifier).refresh(),
-          );
+          unawaited(ref.read(communityRecentUsersProvider.notifier).refresh());
         }
       });
     });
@@ -651,9 +646,7 @@ class _AppShell extends HookConsumerWidget {
           );
           ref.invalidate(communityChallengersProvider);
           ref.invalidate(openChallengesListProvider);
-          unawaited(
-            ref.read(communityRecentUsersProvider.notifier).refresh(),
-          );
+          unawaited(ref.read(communityRecentUsersProvider.notifier).refresh());
           return;
         }
         onWillSwitchMainTab(index);

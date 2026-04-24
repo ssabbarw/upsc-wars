@@ -36,6 +36,10 @@ abstract final class PrefKeys {
   static const patternInterruptOnboardingSeen =
       'pattern_interrupt_onboarding_seen_v1';
 
+  /// Shown once: session review share button coach mark.
+  static const sessionReviewShareCoachSeen =
+      'session_review_share_coach_seen_v1';
+
   /// Last Remote Config `home_page_video` JSON `version` the user dismissed.
   static const homePageVideoDismissedVersion =
       'home_page_video_dismissed_version_v1';
@@ -145,6 +149,11 @@ class PrefsService {
       _p.getBool(PrefKeys.patternInterruptOnboardingSeen) ?? false;
   set patternInterruptOnboardingSeen(bool v) =>
       _p.setBool(PrefKeys.patternInterruptOnboardingSeen, v);
+
+  bool get sessionReviewShareCoachSeen =>
+      _p.getBool(PrefKeys.sessionReviewShareCoachSeen) ?? false;
+  set sessionReviewShareCoachSeen(bool v) =>
+      _p.setBool(PrefKeys.sessionReviewShareCoachSeen, v);
 
   int get homePageVideoDismissedVersion =>
       _p.getInt(PrefKeys.homePageVideoDismissedVersion) ?? 0;

@@ -91,8 +91,10 @@ class CommunityQotdTab extends HookConsumerWidget {
                     isSelected: [uiLang == 'en', uiLang == 'hi'],
                     onPressed: (i) =>
                         tabLangOverride.value = i == 0 ? 'en' : 'hi',
-                    constraints:
-                        const BoxConstraints(minHeight: 32, minWidth: 40),
+                    constraints: const BoxConstraints(
+                      minHeight: 32,
+                      minWidth: 40,
+                    ),
                     borderRadius: BorderRadius.circular(AppRadius.sm),
                     children: const [
                       Padding(
