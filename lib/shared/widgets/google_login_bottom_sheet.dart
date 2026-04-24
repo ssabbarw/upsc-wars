@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:sign_in_button/sign_in_button.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 
 import '../../core/constants/app_constants.dart';
@@ -151,34 +152,15 @@ class GoogleLoginBottomSheet extends StatelessWidget {
             ],
             SizedBox(
               width: double.infinity,
-              child: OutlinedButton(
-                onPressed: isLoading ? null : onGoogleTap,
-                style: OutlinedButton.styleFrom(
-                  backgroundColor: Colors.white,
-                  foregroundColor: const Color(0xFF3C4043),
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 16,
-                    vertical: 12,
+              child: IgnorePointer(
+                ignoring: isLoading,
+                child: Opacity(
+                  opacity: isLoading ? 0.6 : 1,
+                  child: SignInButton(
+                    Buttons.google,
+                    onPressed: onGoogleTap,
+                    text: isLoading ? 'Signing in...' : 'Continue with Google',
                   ),
-                  side: const BorderSide(color: Color(0xFFDADCE0)),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const _GoogleGlyph(),
-                    const SizedBox(width: 12),
-                    Text(
-                      isLoading ? 'Signing in...' : 'Continue with Google',
-                      style: const TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w600,
-                        color: Color(0xFF3C4043),
-                      ),
-                    ),
-                  ],
                 ),
               ),
             ),
@@ -209,23 +191,6 @@ class GoogleLoginBottomSheet extends StatelessWidget {
             ),
           ],
         ),
-      ),
-    );
-  }
-}
-
-class _GoogleGlyph extends StatelessWidget {
-  const _GoogleGlyph();
-
-  @override
-  Widget build(BuildContext context) {
-    return const Text(
-      'G',
-      style: TextStyle(
-        fontSize: 18,
-        fontWeight: FontWeight.w700,
-        color: Color(0xFF4285F4),
-        height: 1,
       ),
     );
   }

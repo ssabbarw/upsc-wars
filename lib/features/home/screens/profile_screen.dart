@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:sign_in_button/sign_in_button.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 
 import '../../../core/constants/app_constants.dart';
@@ -129,7 +130,7 @@ class ProfileScreen extends HookConsumerWidget {
                             ),
                             const SizedBox(height: 8),
                             Text(
-                              'Sign in to sync your progress and keep your preparation data safe across devices.',
+                              'Sign in to join the community, participate in battles, and build your profile.',
                               textAlign: TextAlign.center,
                               style: Theme.of(context).textTheme.bodyMedium,
                             ),
@@ -183,19 +184,21 @@ class ProfileScreen extends HookConsumerWidget {
                                     ),
                                     const SizedBox(height: 12),
                                   ],
-                                  FilledButton.icon(
-                                    onPressed: isBusy
-                                        ? null
-                                        : () => ref
+                                  IgnorePointer(
+                                    ignoring: isBusy,
+                                    child: Opacity(
+                                      opacity: isBusy ? 0.6 : 1,
+                                      child: SignInButton(
+                                        Buttons.google,
+                                        onPressed: () => ref
                                             .read(
                                               authActionsProvider.notifier,
                                             )
                                             .signInWithGoogle(),
-                                    icon: const Icon(Icons.login_rounded),
-                                    label: Text(
-                                      isBusy
-                                          ? 'Signing in...'
-                                          : 'Continue with Google',
+                                        text: isBusy
+                                            ? 'Signing in...'
+                                            : 'Continue with Google',
+                                      ),
                                     ),
                                   ),
                                 ],
