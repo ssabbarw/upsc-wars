@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/constants/subject_constants.dart';
+import '../../../core/responsive/app_breakpoints.dart';
 import '../../../core/domain/entities/topic_info.dart';
 import '../domain/topic_list_sort_mode.dart';
 import '../../../core/theme/app_colors.dart';
@@ -32,113 +33,157 @@ class TopicsListScreen extends HookConsumerWidget {
 
     final topicsAsync = ref.watch(subjectTopicsProvider(subject));
 
+    final hPadding = AppBreakpoints.fullScreenHPadding(
+      MediaQuery.sizeOf(context).width,
+    );
+
     return Scaffold(
       backgroundColor: scheme.surfaceContainerLowest,
       body: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            // Header
-            Padding(
-              padding: const EdgeInsets.fromLTRB(
-                AppSpacing.sm,
-                AppSpacing.sm,
-                AppSpacing.lg,
-                AppSpacing.md,
-              ),
-              child: Row(
-                children: [
-                  IconButton(
-                    icon: const Icon(Icons.chevron_left),
-                    color: scheme.onSurface,
-                    onPressed: () => context.pop(),
-                  ),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          '$displayName Topics',
-                          style: AppTextStyles.h2().copyWith(
-                            color: scheme.onSurface,
-                          ),
-                        ),
-                        topicsAsync.when(
-                          data: (topics) => Text(
-                            '${topics.length} topics',
-                            style: AppTextStyles.bodySm().copyWith(
-                              color: scheme.onSurfaceVariant,
+        child: Padding(
+          padding: hPadding,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              // Header
+              Padding(
+                padding: const EdgeInsets.fromLTRB(
+                  AppSpacing.sm,
+                  AppSpacing.sm,
+                  AppSpacing.lg,
+                  AppSpacing.md,
+                ),
+                child: Row(
+                  children: [
+                    IconButton(
+                      icon: const Icon(Icons.chevron_left),
+                      color: scheme.onSurface,
+                      onPressed: () => context.pop(),
+                    ),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            '$displayName Topics',
+                            style: AppTextStyles.h2().copyWith(
+                              color: scheme.onSurface,
                             ),
                           ),
-                          loading: () => const SizedBox.shrink(),
-                          error: (_, _) => const SizedBox.shrink(),
-                        ),
-                      ],
+                          topicsAsync.when(
+                            data: (topics) => Text(
+                              '${topics.length} topics',
+                              style: AppTextStyles.bodySm().copyWith(
+                                color: scheme.onSurfaceVariant,
+                              ),
+                            ),
+                            loading: () => const SizedBox.shrink(),
+                            error: (_, _) => const SizedBox.shrink(),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                ],
-              ),
-            ),
-            topicsAsync.when(
-              loading: () => const SizedBox.shrink(),
-              error: (_, _) => const SizedBox.shrink(),
-              data: (topics) {
-                if (topics.isEmpty) return const SizedBox.shrink();
-                return _TopicSortChips(
-                  sortMode: sortMode.value,
-                  onSortChanged: (m) => sortMode.value = m,
-                );
-              },
-            ),
-            // Topics list
-            Expanded(
-              child: topicsAsync.when(
-                loading: () => _LoadingSkeleton(),
-                error: (e, _) => _ErrorState(
-                  onRetry: () => ref.invalidate(subjectTopicsProvider(subject)),
+                  ],
                 ),
+              ),
+              topicsAsync.when(
+                loading: () => const SizedBox.shrink(),
+                error: (_, _) => const SizedBox.shrink(),
                 data: (topics) {
-                  if (topics.isEmpty) {
-                    return _EmptyState();
-                  }
-                  final sorted = _sortTopics(
-                    List<TopicInfo>.from(topics),
-                    sortMode.value,
-                  );
-                  return ListView.separated(
-                    primary: false,
-                    shrinkWrap: true,
-                    physics: const BouncingScrollPhysics(),
-                    padding: const EdgeInsets.fromLTRB(
-                      AppSpacing.lg,
-                      0,
-                      AppSpacing.lg,
-                      AppSpacing.xxl,
-                    ),
-                    itemCount: sorted.length + 1,
-                    separatorBuilder: (context, index) {
-                      if (index == sorted.length - 1) {
-                        return const SizedBox(height: AppSpacing.xl);
-                      }
-                      return const SizedBox(height: AppSpacing.cardListGap);
-                    },
-                    itemBuilder: (context, i) {
-                      if (i == sorted.length) {
-                        return const Center(child: ContactUsTextButton());
-                      }
-                      return _TopicCard(
-                        topic: sorted[i],
-                        subject: subject,
-                        displayName: displayName,
-                        borderColor: borderColor,
-                        isDark: isDark,
-                      );
-                    },
+                  if (topics.isEmpty) return const SizedBox.shrink();
+                  return _TopicSortChips(
+                    sortMode: sortMode.value,
+                    onSortChanged: (m) => sortMode.value = m,
                   );
                 },
               ),
-            ),
-          ],
+              // Topics list
+              Expanded(
+                child: topicsAsync.when(
+                  loading: () => _LoadingSkeleton(),
+                  error: (e, _) => _ErrorState(
+                    onRetry: () =>
+                        ref.invalidate(subjectTopicsProvider(subject)),
+                  ),
+                  data: (topics) {
+                    if (topics.isEmpty) {
+                      return _EmptyState();
+                    }
+                    final sorted = _sortTopics(
+                      List<TopicInfo>.from(topics),
+                      sortMode.value,
+                    );
+                    return LayoutBuilder(
+                      builder: (context, constraints) {
+                        final isWide =
+                            constraints.maxWidth >= AppBreakpoints.tablet;
+                        if (isWide) {
+                          return GridView.builder(
+                            primary: false,
+                            shrinkWrap: true,
+                            physics: const BouncingScrollPhysics(),
+                            padding: const EdgeInsets.fromLTRB(
+                              AppSpacing.lg,
+                              0,
+                              AppSpacing.lg,
+                              AppSpacing.xxl,
+                            ),
+                            gridDelegate:
+                                const SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount: 2,
+                                  crossAxisSpacing: AppSpacing.sm,
+                                  mainAxisSpacing: AppSpacing.sm,
+                                  childAspectRatio: 2.8,
+                                ),
+                            itemCount: sorted.length,
+                            itemBuilder: (context, i) => _TopicCard(
+                              topic: sorted[i],
+                              subject: subject,
+                              displayName: displayName,
+                              borderColor: borderColor,
+                              isDark: isDark,
+                            ),
+                          );
+                        }
+                        return ListView.separated(
+                          primary: false,
+                          shrinkWrap: true,
+                          physics: const BouncingScrollPhysics(),
+                          padding: const EdgeInsets.fromLTRB(
+                            AppSpacing.lg,
+                            0,
+                            AppSpacing.lg,
+                            AppSpacing.xxl,
+                          ),
+                          itemCount: sorted.length + 1,
+                          separatorBuilder: (context, index) {
+                            if (index == sorted.length - 1) {
+                              return const SizedBox(height: AppSpacing.xl);
+                            }
+                            return const SizedBox(
+                              height: AppSpacing.cardListGap,
+                            );
+                          },
+                          itemBuilder: (context, i) {
+                            if (i == sorted.length) {
+                              return const Center(child: ContactUsTextButton());
+                            }
+                            return _TopicCard(
+                              topic: sorted[i],
+                              subject: subject,
+                              displayName: displayName,
+                              borderColor: borderColor,
+                              isDark: isDark,
+                            );
+                          },
+                        );
+                      },
+                    );
+                  },
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -151,9 +196,8 @@ List<TopicInfo> _sortTopics(List<TopicInfo> copy, TopicListSortMode mode) {
   switch (mode) {
     case TopicListSortMode.alphabetical:
       copy.sort(
-        (a, b) => a.displayName.toLowerCase().compareTo(
-              b.displayName.toLowerCase(),
-            ),
+        (a, b) =>
+            a.displayName.toLowerCase().compareTo(b.displayName.toLowerCase()),
       );
     case TopicListSortMode.accuracy:
       copy.sort((a, b) {
@@ -161,36 +205,33 @@ List<TopicInfo> _sortTopics(List<TopicInfo> copy, TopicListSortMode mode) {
         final bAtt = b.attemptCount > 0;
         if (aAtt != bAtt) return aAtt ? -1 : 1;
         if (!aAtt && !bAtt) {
-          return a.displayName
-              .toLowerCase()
-              .compareTo(b.displayName.toLowerCase());
+          return a.displayName.toLowerCase().compareTo(
+            b.displayName.toLowerCase(),
+          );
         }
         final byAcc = (a.accuracyPercent ?? 0).compareTo(
           b.accuracyPercent ?? 0,
         );
         if (byAcc != 0) return byAcc;
-        return a.displayName
-            .toLowerCase()
-            .compareTo(b.displayName.toLowerCase());
+        return a.displayName.toLowerCase().compareTo(
+          b.displayName.toLowerCase(),
+        );
       });
     case TopicListSortMode.dangerZone:
       copy.sort((a, b) {
         final da = a.dangerSureWrong + a.dangerEducatedGuessWrong;
         final db = b.dangerSureWrong + b.dangerEducatedGuessWrong;
         if (db != da) return db.compareTo(da);
-        return a.displayName
-            .toLowerCase()
-            .compareTo(b.displayName.toLowerCase());
+        return a.displayName.toLowerCase().compareTo(
+          b.displayName.toLowerCase(),
+        );
       });
   }
   return copy;
 }
 
 class _TopicSortChips extends StatelessWidget {
-  const _TopicSortChips({
-    required this.sortMode,
-    required this.onSortChanged,
-  });
+  const _TopicSortChips({required this.sortMode, required this.onSortChanged});
 
   final TopicListSortMode sortMode;
   final ValueChanged<TopicListSortMode> onSortChanged;
@@ -245,10 +286,7 @@ class _TopicSortChips extends StatelessWidget {
 // ── Topic Card ──────────────────────────────────────────────────────────────────
 
 class _TopicLabeledLine extends StatelessWidget {
-  const _TopicLabeledLine({
-    required this.label,
-    required this.child,
-  });
+  const _TopicLabeledLine({required this.label, required this.child});
 
   final String label;
   final Widget child;
@@ -291,7 +329,8 @@ class _TopicCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
-    final isWeak = topic.attemptCount > 0 && (topic.accuracyPercent ?? 100) < 50;
+    final isWeak =
+        topic.attemptCount > 0 && (topic.accuracyPercent ?? 100) < 50;
     final notStarted = topic.attemptCount == 0;
 
     return Material(
@@ -359,16 +398,17 @@ class _TopicCard extends StatelessWidget {
                                       children: [
                                         AccuracyPercentageText(
                                           attemptCount: topic.attemptCount,
-                                          accuracyPercent: topic.accuracyPercent,
+                                          accuracyPercent:
+                                              topic.accuracyPercent,
                                           tier: topic.accuracyTier,
                                         ),
                                         Text(
                                           '· ${topic.attemptCount} ${topic.attemptCount == 1 ? 'attempt' : 'attempts'}',
                                           style: AppTextStyles.caption()
                                               .copyWith(
-                                            color: scheme.onSurfaceVariant,
-                                            height: 1.3,
-                                          ),
+                                                color: scheme.onSurfaceVariant,
+                                                height: 1.3,
+                                              ),
                                         ),
                                       ],
                                     ),
@@ -378,7 +418,7 @@ class _TopicCard extends StatelessWidget {
                               label: 'Danger zone',
                               child: Text(
                                 'Sure ${topic.dangerSureWrong} · '
-                                'Educated guess ${topic.dangerEducatedGuessWrong} (all-time)',
+                                'Educated guess ${topic.dangerEducatedGuessWrong}',
                                 style: AppTextStyles.caption().copyWith(
                                   color: scheme.onSurfaceVariant,
                                   height: 1.3,
@@ -503,7 +543,11 @@ class _EmptyState extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(Icons.topic_outlined, size: 40, color: scheme.onSurfaceVariant),
+            Icon(
+              Icons.topic_outlined,
+              size: 40,
+              color: scheme.onSurfaceVariant,
+            ),
             const SizedBox(height: AppSpacing.md),
             Text(
               'No topics found for this subject.',

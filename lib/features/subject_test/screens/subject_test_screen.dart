@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/constants/subject_constants.dart';
+import '../../../core/responsive/app_breakpoints.dart';
 import '../../../core/domain/entities/subject_info.dart';
 import '../../../core/providers/catalog_providers.dart';
 import '../../../core/theme/app_colors.dart';
@@ -26,10 +27,16 @@ class SubjectTestScreen extends HookConsumerWidget {
     final borderColor = isDark ? AppColors.borderDark : AppColors.borderLight;
     final async = ref.watch(subjectTestListProvider);
 
+    final hPadding = AppBreakpoints.fullScreenHPadding(
+      MediaQuery.sizeOf(context).width,
+    );
+
     return Scaffold(
       backgroundColor: scheme.surfaceContainerLowest,
       body: SafeArea(
-        child: Column(
+        child: Padding(
+          padding: hPadding,
+          child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Padding(
@@ -72,7 +79,58 @@ class SubjectTestScreen extends HookConsumerWidget {
             ),
             Expanded(
               child: async.when(
-                data: (subjects) => ListView.separated(
+                data: (subjects) => LayoutBuilder(
+                  builder: (context, constraints) {
+                    final isWide =
+                        constraints.maxWidth >= AppBreakpoints.tablet;
+                    if (isWide) {
+                      return GridView.builder(
+                        physics: const BouncingScrollPhysics(),
+                        padding: const EdgeInsets.fromLTRB(
+                          AppSpacing.lg,
+                          0,
+                          AppSpacing.lg,
+                          AppSpacing.xxl,
+                        ),
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 2,
+                              crossAxisSpacing: AppSpacing.sm,
+                              mainAxisSpacing: AppSpacing.sm,
+                              childAspectRatio: 2.4,
+                            ),
+                        itemCount: subjects.length,
+                        itemBuilder: (context, i) {
+                          final s = subjects[i];
+                          final def = SubjectConstants.bySlug(s.subject);
+                          return _SubjectCard(
+                            info: s,
+                            icon: def?.materialIcon ?? Icons.school_outlined,
+                            borderColor: borderColor,
+                            onTap: () => showTestConfigBottomSheet(
+                              context: context,
+                              args: TestConfigSheetArgs(
+                                subject: s.subject,
+                                subjectDisplayName: s.displayName,
+                                availableQuestionCount: s.questionCount,
+                                topicCountWhenSubjectOnly: s.topicCount,
+                                lockedQuestionCount:
+                                    botBattleMode ? 10 : null,
+                                forceExamMode: botBattleMode,
+                                startButtonLabel:
+                                    botBattleMode ? 'Start battle' : null,
+                                onSessionCreated: (id) => context.push(
+                                  botBattleMode
+                                      ? '/battle/$id'
+                                      : '/test/$id',
+                                ),
+                              ),
+                            ),
+                          );
+                        },
+                      );
+                    }
+                    return ListView.separated(
                   physics: const BouncingScrollPhysics(),
                   padding: const EdgeInsets.fromLTRB(
                     AppSpacing.lg,
@@ -115,6 +173,8 @@ class SubjectTestScreen extends HookConsumerWidget {
                         ),
                       ),
                     );
+                  },
+                );
                   },
                 ),
                 loading: () => ListView.separated(
@@ -173,6 +233,7 @@ class SubjectTestScreen extends HookConsumerWidget {
               ),
             ),
           ],
+          ),
         ),
       ),
     );

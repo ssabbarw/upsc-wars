@@ -6,6 +6,7 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/debug/upsc_wars_trace.dart';
+import '../../../core/responsive/app_breakpoints.dart';
 import '../../../core/analytics/activation_milestones.dart';
 import '../../../core/analytics/analytics.dart';
 import '../../../core/analytics/analytics_events.dart';
@@ -407,8 +408,13 @@ class _TestEngineLoaded extends HookConsumerWidget {
 
     final scheme = Theme.of(context).colorScheme;
     final isDark = context.isDarkMode;
+    final hPadding = AppBreakpoints.fullScreenHPadding(
+      MediaQuery.sizeOf(context).width,
+    );
 
-    return Column(
+    return Padding(
+      padding: hPadding,
+      child: Column(
       children: [
         _TestEngineTimerTicker(sessionId: sessionId),
         if (showBanner)
@@ -475,6 +481,7 @@ class _TestEngineLoaded extends HookConsumerWidget {
           },
         ),
       ],
+      ),
     );
   }
 }
@@ -1007,97 +1014,143 @@ class _QuestionArea extends HookConsumerWidget {
     final tableData = isHindi ? question.tableDataHi : question.tableData;
     final trimmedDisplayText = displayText.trim();
 
-    return SingleChildScrollView(
-      physics: const BouncingScrollPhysics(),
-      padding: const EdgeInsets.all(AppSpacing.lg),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          if (trimmedDisplayText.isNotEmpty && !question.hasTable)
-            SelectableCopySearchText(
-              trimmedDisplayText,
-              style: AppTextStyles.question().copyWith(color: scheme.onSurface),
-            ),
-          if (question.hasTable && tableData != null) ...[
-            SizedBox(
-              height: trimmedDisplayText.isNotEmpty
-                  ? AppSpacing.sm
-                  : AppSpacing.xs,
-            ),
-            QuestionTableView(table: tableData),
-          ],
-          DebugCorrectAnswerBanner(question: question),
-          const SizedBox(height: AppSpacing.lg),
-          _OptionRow(
-            keyLabel: 'A',
-            optionKey: 'a',
-            optionText: optionA,
-            visual: _optionVisual(mode, question, 'a', explanationVisible),
-            mode: mode,
-            explanationVisible: explanationVisible,
-            sessionId: sessionId,
-            question: question,
-            onTap: (mode == 'learning' && explanationVisible)
-                ? null
-                : () => onSelectOption('a'),
+    Widget questionContent = Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        if (trimmedDisplayText.isNotEmpty && !question.hasTable)
+          SelectableCopySearchText(
+            trimmedDisplayText,
+            style: AppTextStyles.question().copyWith(color: scheme.onSurface),
           ),
-          const SizedBox(height: AppSpacing.sm),
-          _OptionRow(
-            keyLabel: 'B',
-            optionKey: 'b',
-            optionText: optionB,
-            visual: _optionVisual(mode, question, 'b', explanationVisible),
-            mode: mode,
-            explanationVisible: explanationVisible,
-            sessionId: sessionId,
-            question: question,
-            onTap: (mode == 'learning' && explanationVisible)
-                ? null
-                : () => onSelectOption('b'),
+        if (question.hasTable && tableData != null) ...[
+          SizedBox(
+            height:
+                trimmedDisplayText.isNotEmpty ? AppSpacing.sm : AppSpacing.xs,
           ),
-          const SizedBox(height: AppSpacing.sm),
-          _OptionRow(
-            keyLabel: 'C',
-            optionKey: 'c',
-            optionText: optionC,
-            visual: _optionVisual(mode, question, 'c', explanationVisible),
-            mode: mode,
-            explanationVisible: explanationVisible,
-            sessionId: sessionId,
-            question: question,
-            onTap: (mode == 'learning' && explanationVisible)
-                ? null
-                : () => onSelectOption('c'),
-          ),
-          const SizedBox(height: AppSpacing.sm),
-          _OptionRow(
-            keyLabel: 'D',
-            optionKey: 'd',
-            optionText: optionD,
-            visual: _optionVisual(mode, question, 'd', explanationVisible),
-            mode: mode,
-            explanationVisible: explanationVisible,
-            sessionId: sessionId,
-            question: question,
-            onTap: (mode == 'learning' && explanationVisible)
-                ? null
-                : () => onSelectOption('d'),
-          ),
-          if (mode == 'learning') ...[
-            const SizedBox(height: AppSpacing.lg),
-            AnimatedSwitcher(
-              duration: const Duration(milliseconds: 200),
-              child: explanationVisible
-                  ? _ExplanationCard(
-                      question: question,
-                      uiLanguage: uiLanguage,
-                      verdict: learningVerdict,
-                    )
-                  : const SizedBox.shrink(),
-            ),
-          ],
+          QuestionTableView(table: tableData),
         ],
-      ),
+        DebugCorrectAnswerBanner(question: question),
+      ],
+    );
+
+    Widget optionsContent = Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        _OptionRow(
+          keyLabel: 'A',
+          optionKey: 'a',
+          optionText: optionA,
+          visual: _optionVisual(mode, question, 'a', explanationVisible),
+          mode: mode,
+          explanationVisible: explanationVisible,
+          sessionId: sessionId,
+          question: question,
+          onTap: (mode == 'learning' && explanationVisible)
+              ? null
+              : () => onSelectOption('a'),
+        ),
+        const SizedBox(height: AppSpacing.sm),
+        _OptionRow(
+          keyLabel: 'B',
+          optionKey: 'b',
+          optionText: optionB,
+          visual: _optionVisual(mode, question, 'b', explanationVisible),
+          mode: mode,
+          explanationVisible: explanationVisible,
+          sessionId: sessionId,
+          question: question,
+          onTap: (mode == 'learning' && explanationVisible)
+              ? null
+              : () => onSelectOption('b'),
+        ),
+        const SizedBox(height: AppSpacing.sm),
+        _OptionRow(
+          keyLabel: 'C',
+          optionKey: 'c',
+          optionText: optionC,
+          visual: _optionVisual(mode, question, 'c', explanationVisible),
+          mode: mode,
+          explanationVisible: explanationVisible,
+          sessionId: sessionId,
+          question: question,
+          onTap: (mode == 'learning' && explanationVisible)
+              ? null
+              : () => onSelectOption('c'),
+        ),
+        const SizedBox(height: AppSpacing.sm),
+        _OptionRow(
+          keyLabel: 'D',
+          optionKey: 'd',
+          optionText: optionD,
+          visual: _optionVisual(mode, question, 'd', explanationVisible),
+          mode: mode,
+          explanationVisible: explanationVisible,
+          sessionId: sessionId,
+          question: question,
+          onTap: (mode == 'learning' && explanationVisible)
+              ? null
+              : () => onSelectOption('d'),
+        ),
+        if (mode == 'learning') ...[
+          const SizedBox(height: AppSpacing.lg),
+          AnimatedSwitcher(
+            duration: const Duration(milliseconds: 200),
+            child: explanationVisible
+                ? _ExplanationCard(
+                    question: question,
+                    uiLanguage: uiLanguage,
+                    verdict: learningVerdict,
+                  )
+                : const SizedBox.shrink(),
+          ),
+        ],
+      ],
+    );
+
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final isTwoColumn = constraints.maxWidth >= AppBreakpoints.largeTablet;
+        if (isTwoColumn) {
+          return Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                flex: 55,
+                child: SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  padding: const EdgeInsets.all(AppSpacing.lg),
+                  child: questionContent,
+                ),
+              ),
+              VerticalDivider(
+                width: 1,
+                thickness: 0.5,
+                color: scheme.outlineVariant.withValues(alpha: 0.4),
+              ),
+              Expanded(
+                flex: 45,
+                child: SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  padding: const EdgeInsets.all(AppSpacing.lg),
+                  child: optionsContent,
+                ),
+              ),
+            ],
+          );
+        }
+        return SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
+          padding: const EdgeInsets.all(AppSpacing.lg),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              questionContent,
+              const SizedBox(height: AppSpacing.lg),
+              optionsContent,
+            ],
+          ),
+        );
+      },
     );
   }
 

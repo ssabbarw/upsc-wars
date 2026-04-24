@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/constants/subject_constants.dart';
+import '../../../core/responsive/app_breakpoints.dart';
 import '../../../core/domain/entities/topic_info.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
@@ -40,10 +41,16 @@ class TopicTestScreen extends HookConsumerWidget {
     final topicsAsync = ref.watch(topicTestDisplayedTopicsProvider);
     final revisionCountsAsync = ref.watch(topicRevisionQueueCountsByTopicProvider);
 
+    final hPadding = AppBreakpoints.fullScreenHPadding(
+      MediaQuery.sizeOf(context).width,
+    );
+
     return Scaffold(
       backgroundColor: scheme.surfaceContainerLowest,
       body: SafeArea(
-        child: Column(
+        child: Padding(
+          padding: hPadding,
+          child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Padding(
@@ -174,48 +181,84 @@ class TopicTestScreen extends HookConsumerWidget {
                       ),
                     );
                   }
-                  return ListView.separated(
-                    physics: const BouncingScrollPhysics(),
-                    padding: const EdgeInsets.fromLTRB(
-                      AppSpacing.lg,
-                      0,
-                      AppSpacing.lg,
-                      AppSpacing.xxl,
-                    ),
-                    itemCount: topics.length + 1,
-                    separatorBuilder: (context, index) {
-                      if (index == topics.length - 1) {
-                        return const SizedBox(height: AppSpacing.xl);
+                  return LayoutBuilder(
+                    builder: (context, constraints) {
+                      final isWide =
+                          constraints.maxWidth >= AppBreakpoints.tablet;
+
+                      Widget buildRow(TopicInfo t) {
+                        final subj = SubjectConstants.bySlug(t.subject);
+                        final revisionQueueCount =
+                            revisionCountsAsync.maybeWhen(
+                          data: (counts) => counts[t.topic] ?? 0,
+                          orElse: () => 0,
+                        );
+                        final isWeak = t.attemptCount > 0 &&
+                            (t.accuracyPercent ?? 0) < 50;
+                        return _TopicRow(
+                          topic: t,
+                          borderColor: borderColor,
+                          revisionQueueCount: revisionQueueCount,
+                          isWeak: isWeak,
+                          onTap: () => showTopicEntryBottomSheet(
+                            context: context,
+                            subject: t.subject,
+                            topic: t.topic,
+                            subjectDisplayName:
+                                subj?.displayName ?? t.subject,
+                            topicDisplayName: t.displayName,
+                            availableQuestionCount: t.questionCount,
+                            onTestSessionCreated: (id) =>
+                                context.push('/test/$id'),
+                          ),
+                        );
                       }
-                      return const SizedBox(height: AppSpacing.cardListGap);
-                    },
-                    itemBuilder: (context, i) {
-                      if (i == topics.length) {
-                        return const Center(child: ContactUsTextButton());
+
+                      if (isWide) {
+                        return GridView.builder(
+                          physics: const BouncingScrollPhysics(),
+                          padding: const EdgeInsets.fromLTRB(
+                            AppSpacing.lg,
+                            0,
+                            AppSpacing.lg,
+                            AppSpacing.xxl,
+                          ),
+                          gridDelegate:
+                              const SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 2,
+                                crossAxisSpacing: AppSpacing.sm,
+                                mainAxisSpacing: AppSpacing.sm,
+                                childAspectRatio: 2.8,
+                              ),
+                          itemCount: topics.length,
+                          itemBuilder: (context, i) => buildRow(topics[i]),
+                        );
                       }
-                      final t = topics[i];
-                      final subj = SubjectConstants.bySlug(t.subject);
-                      final revisionQueueCount = revisionCountsAsync.maybeWhen(
-                        data: (counts) => counts[t.topic] ?? 0,
-                        orElse: () => 0,
-                      );
-                      final isWeak = t.attemptCount > 0 && (t.accuracyPercent ?? 0) < 50;
-                      return _TopicRow(
-                        topic: t,
-                        borderColor: borderColor,
-                        revisionQueueCount: revisionQueueCount,
-                        isWeak: isWeak,
-                        onTap: () => showTopicEntryBottomSheet(
-                          context: context,
-                          subject: t.subject,
-                          topic: t.topic,
-                          subjectDisplayName:
-                              subj?.displayName ?? t.subject,
-                          topicDisplayName: t.displayName,
-                          availableQuestionCount: t.questionCount,
-                          onTestSessionCreated: (id) =>
-                              context.push('/test/$id'),
+                      return ListView.separated(
+                        physics: const BouncingScrollPhysics(),
+                        padding: const EdgeInsets.fromLTRB(
+                          AppSpacing.lg,
+                          0,
+                          AppSpacing.lg,
+                          AppSpacing.xxl,
                         ),
+                        itemCount: topics.length + 1,
+                        separatorBuilder: (context, index) {
+                          if (index == topics.length - 1) {
+                            return const SizedBox(height: AppSpacing.xl);
+                          }
+                          return const SizedBox(
+                            height: AppSpacing.cardListGap,
+                          );
+                        },
+                        itemBuilder: (context, i) {
+                          if (i == topics.length) {
+                            return const Center(
+                              child: ContactUsTextButton(),
+                            );
+                          }
+                          return buildRow(topics[i]);
+                        },
                       );
                     },
                   );
@@ -277,6 +320,7 @@ class TopicTestScreen extends HookConsumerWidget {
               ),
             ),
           ],
+          ),
         ),
       ),
     );

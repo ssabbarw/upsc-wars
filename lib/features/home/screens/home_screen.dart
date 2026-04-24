@@ -17,6 +17,7 @@ import '../../../core/providers/catalog_providers.dart';
 import '../../../core/providers/app_bootstrap.dart';
 import '../../../core/providers/kill_switch_provider.dart';
 import '../../../core/providers/quick_practice_providers.dart';
+import '../../../core/responsive/app_breakpoints.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
@@ -676,19 +677,40 @@ class _PyqYearCarousel extends StatelessWidget {
           accent: AppColors.primary,
         ),
         const SizedBox(height: AppSpacing.sm),
-        _HorizontalDiscoveryStrip(
-          children: [
-            for (var i = 0; i < years.length; i++) ...[
-              if (i != 0) const SizedBox(width: AppSpacing.sm),
-              _HomeDiscoveryCard(
-                borderColor: borderColor,
-                titleText: years[i],
-                icon: _icons[i % _icons.length],
-                accent: _accents[i % _accents.length],
-                onTap: () => context.push('/pyq-year/${years[i]}'),
-              ),
-            ],
-          ],
+        LayoutBuilder(
+          builder: (context, constraints) {
+            final isWide = constraints.maxWidth >= AppBreakpoints.tablet;
+            if (isWide) {
+              return Wrap(
+                spacing: AppSpacing.sm,
+                runSpacing: AppSpacing.sm,
+                children: [
+                  for (var i = 0; i < years.length; i++)
+                    _HomeDiscoveryCard(
+                      borderColor: borderColor,
+                      titleText: years[i],
+                      icon: _icons[i % _icons.length],
+                      accent: _accents[i % _accents.length],
+                      onTap: () => context.push('/pyq-year/${years[i]}'),
+                    ),
+                ],
+              );
+            }
+            return _HorizontalDiscoveryStrip(
+              children: [
+                for (var i = 0; i < years.length; i++) ...[
+                  if (i != 0) const SizedBox(width: AppSpacing.sm),
+                  _HomeDiscoveryCard(
+                    borderColor: borderColor,
+                    titleText: years[i],
+                    icon: _icons[i % _icons.length],
+                    accent: _accents[i % _accents.length],
+                    onTap: () => context.push('/pyq-year/${years[i]}'),
+                  ),
+                ],
+              ],
+            );
+          },
         ),
       ],
     );
@@ -837,25 +859,30 @@ class _SubjectGrid extends ConsumerWidget {
         subjectsAsync.when(
           loading: () => _SubjectGridSkeleton(borderColor: borderColor),
           error: (_, _) => const SizedBox.shrink(),
-          data: (subjects) => GridView.builder(
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              mainAxisSpacing: AppSpacing.sm,
-              crossAxisSpacing: AppSpacing.sm,
-              childAspectRatio: 1.55,
-            ),
-            itemCount: subjects.length,
-            itemBuilder: (context, i) {
-              final s = subjects[i];
-              final def = SubjectConstants.bySlug(s.subject);
-              final accent = _accentColors[i % _accentColors.length];
-              return _SubjectGridCard(
-                info: s,
-                icon: def?.materialIcon ?? Icons.school_outlined,
-                accent: accent,
-                borderColor: borderColor,
+          data: (subjects) => LayoutBuilder(
+            builder: (context, constraints) {
+              final cols = AppBreakpoints.gridColumns(constraints.maxWidth);
+              return GridView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: cols,
+                  mainAxisSpacing: AppSpacing.sm,
+                  crossAxisSpacing: AppSpacing.sm,
+                  childAspectRatio: 1.55,
+                ),
+                itemCount: subjects.length,
+                itemBuilder: (context, i) {
+                  final s = subjects[i];
+                  final def = SubjectConstants.bySlug(s.subject);
+                  final accent = _accentColors[i % _accentColors.length];
+                  return _SubjectGridCard(
+                    info: s,
+                    icon: def?.materialIcon ?? Icons.school_outlined,
+                    accent: accent,
+                    borderColor: borderColor,
+                  );
+                },
               );
             },
           ),
@@ -957,22 +984,27 @@ class _SubjectGridSkeleton extends HookWidget {
       animation: ctrl,
       builder: (_, _) => Opacity(
         opacity: opacity,
-        child: GridView.count(
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-          crossAxisCount: 2,
-          mainAxisSpacing: AppSpacing.sm,
-          crossAxisSpacing: AppSpacing.sm,
-          childAspectRatio: 1.55,
-          children: List.generate(
-            8,
-            (_) => Container(
-              decoration: BoxDecoration(
-                color: scheme.surfaceContainerLow,
-                borderRadius: BorderRadius.circular(AppRadius.lg),
+        child: LayoutBuilder(
+          builder: (context, constraints) {
+            final cols = AppBreakpoints.gridColumns(constraints.maxWidth);
+            return GridView.count(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              crossAxisCount: cols,
+              mainAxisSpacing: AppSpacing.sm,
+              crossAxisSpacing: AppSpacing.sm,
+              childAspectRatio: 1.55,
+              children: List.generate(
+                8,
+                (_) => Container(
+                  decoration: BoxDecoration(
+                    color: scheme.surfaceContainerLow,
+                    borderRadius: BorderRadius.circular(AppRadius.lg),
+                  ),
+                ),
               ),
-            ),
-          ),
+            );
+          },
         ),
       ),
     );

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../../core/constants/subject_constants.dart';
+import '../../../core/responsive/app_breakpoints.dart';
 import '../../../core/domain/entities/subject_info.dart';
 import '../../../core/domain/entities/topic_info.dart';
 import '../../../core/theme/app_colors.dart';
@@ -41,10 +42,16 @@ class SubjectDetailScreen extends ConsumerWidget {
     final infoAsync = ref.watch(subjectInfoProvider(subject));
     final insightsAsync = ref.watch(subjectInsightsProvider(subject));
 
+    final hPadding = AppBreakpoints.fullScreenHPadding(
+      MediaQuery.sizeOf(context).width,
+    );
+
     return Scaffold(
       backgroundColor: scheme.surfaceContainerLowest,
       body: SafeArea(
-        child: CustomScrollView(
+        child: Padding(
+          padding: hPadding,
+          child: CustomScrollView(
           physics: const BouncingScrollPhysics(),
           slivers: [
             SliverToBoxAdapter(
@@ -135,6 +142,7 @@ class SubjectDetailScreen extends ConsumerWidget {
               ),
             ),
           ],
+          ),
         ),
       ),
     );

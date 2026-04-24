@@ -63,6 +63,7 @@ import '../../shared/widgets/unread_pulse_wrapper.dart';
 import '../../shared/widgets/app_toast.dart';
 import '../providers/app_bootstrap.dart';
 import '../providers/kill_switch_provider.dart';
+import '../responsive/app_breakpoints.dart';
 import '../theme/app_colors.dart';
 import '../theme/app_text_styles.dart';
 
@@ -613,6 +614,128 @@ class _AppShell extends HookConsumerWidget {
         ),
     ];
 
+    final currentNavIndex = () {
+      if (!shellHasCommunity) return navigationShell.currentIndex;
+      if (showCommunityTab) return navigationShell.currentIndex;
+      final i = navigationShell.currentIndex;
+      return i >= 3 ? 0 : i;
+    }();
+
+    Future<void> handleTab(int index) async {
+      if (!shellHasCommunity) {
+        onWillSwitchMainTab(index);
+        navigationShell.goBranch(
+          index,
+          initialLocation: index == navigationShell.currentIndex,
+        );
+        return;
+      }
+      if (showCommunityTab) {
+        final communityTabIndex = navItems.length - 1;
+        if (index == communityTabIndex) {
+          if (authState.asData?.value == null) {
+            await showGoogleLoginBottomSheet(
+              context: context,
+              isLoading: isAuthBusy,
+              onGoogleTap: () {
+                Navigator.of(context).pop();
+                ref.read(authActionsProvider.notifier).signInWithGoogle();
+              },
+            );
+            return;
+          }
+          onWillSwitchMainTab(index);
+          navigationShell.goBranch(
+            index,
+            initialLocation: index == navigationShell.currentIndex,
+          );
+          ref.invalidate(communityChallengersProvider);
+          ref.invalidate(openChallengesListProvider);
+          unawaited(
+            ref.read(communityRecentUsersProvider.notifier).refresh(),
+          );
+          return;
+        }
+        onWillSwitchMainTab(index);
+        navigationShell.goBranch(
+          index,
+          initialLocation: index == navigationShell.currentIndex,
+        );
+        return;
+      }
+      onWillSwitchMainTab(index);
+      navigationShell.goBranch(
+        index,
+        initialLocation: index == navigationShell.currentIndex,
+      );
+    }
+
+    final screenWidth = MediaQuery.sizeOf(context).width;
+    final isTablet = screenWidth >= AppBreakpoints.tablet;
+    final isLargeTablet = screenWidth >= AppBreakpoints.largeTablet;
+
+    if (isTablet) {
+      final railDestinations = <NavigationRailDestination>[
+        const NavigationRailDestination(
+          icon: Icon(Icons.home_outlined, size: 22),
+          selectedIcon: Icon(Icons.home, size: 22),
+          label: Text('Home'),
+        ),
+        const NavigationRailDestination(
+          icon: Icon(Icons.access_time_outlined, size: 22),
+          selectedIcon: Icon(Icons.access_time, size: 22),
+          label: Text('History'),
+        ),
+        const NavigationRailDestination(
+          icon: Icon(Icons.bar_chart_outlined, size: 22),
+          selectedIcon: Icon(Icons.bar_chart, size: 22),
+          label: Text('Progress'),
+        ),
+        if (showCommunityTab)
+          NavigationRailDestination(
+            icon: _CommunityTabIcon(
+              outlined: true,
+              showUnreadDot: chatUnreadDot,
+              scheme: scheme,
+            ),
+            selectedIcon: _CommunityTabIcon(
+              outlined: false,
+              showUnreadDot: chatUnreadDot,
+              scheme: scheme,
+            ),
+            label: const Text('Community'),
+          ),
+      ];
+
+      return Scaffold(
+        body: Row(
+          children: [
+            NavigationRail(
+              backgroundColor: scheme.surface,
+              selectedIndex: currentNavIndex,
+              onDestinationSelected: handleTab,
+              extended: isLargeTablet,
+              selectedIconTheme: IconThemeData(color: AppColors.primary),
+              unselectedIconTheme: IconThemeData(
+                color: scheme.onSurfaceVariant,
+              ),
+              selectedLabelTextStyle: AppTextStyles.navLabel().copyWith(
+                color: AppColors.primary,
+                fontWeight: FontWeight.w600,
+              ),
+              unselectedLabelTextStyle: AppTextStyles.navLabel().copyWith(
+                color: scheme.onSurfaceVariant,
+              ),
+              indicatorColor: AppColors.primary.withValues(alpha: 0.12),
+              destinations: railDestinations,
+            ),
+            VerticalDivider(width: 1, thickness: 0.5, color: borderColor),
+            Expanded(child: navigationShell),
+          ],
+        ),
+      );
+    }
+
     return Scaffold(
       body: navigationShell,
       bottomNavigationBar: Column(
@@ -620,62 +743,8 @@ class _AppShell extends HookConsumerWidget {
         children: [
           Container(height: 0.5, color: borderColor),
           BottomNavigationBar(
-            currentIndex: () {
-              if (!shellHasCommunity) return navigationShell.currentIndex;
-              if (showCommunityTab) return navigationShell.currentIndex;
-              final i = navigationShell.currentIndex;
-              return i >= 3 ? 0 : i;
-            }(),
-            onTap: (index) async {
-              if (!shellHasCommunity) {
-                onWillSwitchMainTab(index);
-                navigationShell.goBranch(
-                  index,
-                  initialLocation: index == navigationShell.currentIndex,
-                );
-                return;
-              }
-              if (showCommunityTab) {
-                final communityTabIndex = navItems.length - 1;
-                if (index == communityTabIndex) {
-                  if (authState.asData?.value == null) {
-                    await showGoogleLoginBottomSheet(
-                      context: context,
-                      isLoading: isAuthBusy,
-                      onGoogleTap: () {
-                        Navigator.of(context).pop();
-                        ref
-                            .read(authActionsProvider.notifier)
-                            .signInWithGoogle();
-                      },
-                    );
-                    return;
-                  }
-                  onWillSwitchMainTab(index);
-                  navigationShell.goBranch(
-                    index,
-                    initialLocation: index == navigationShell.currentIndex,
-                  );
-                  ref.invalidate(communityChallengersProvider);
-                  ref.invalidate(openChallengesListProvider);
-                  unawaited(
-                    ref.read(communityRecentUsersProvider.notifier).refresh(),
-                  );
-                  return;
-                }
-                onWillSwitchMainTab(index);
-                navigationShell.goBranch(
-                  index,
-                  initialLocation: index == navigationShell.currentIndex,
-                );
-                return;
-              }
-              onWillSwitchMainTab(index);
-              navigationShell.goBranch(
-                index,
-                initialLocation: index == navigationShell.currentIndex,
-              );
-            },
+            currentIndex: currentNavIndex,
+            onTap: handleTab,
             type: BottomNavigationBarType.fixed,
             elevation: 0,
             backgroundColor: scheme.surface,
