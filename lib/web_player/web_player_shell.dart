@@ -545,6 +545,32 @@ class _WebPlayerShellState extends State<WebPlayerShell>
     await _pushResultsScreen(completedAt: completedAt);
   }
 
+  bool get _isSingleQuestionShare {
+    final kind = _linkKind ?? ShareLinkKind.parse(_kind ?? '');
+    if (kind == ShareLinkKind.question) return true;
+    return _questions.length == 1;
+  }
+
+  Future<void> _startSingleQuestionRun() async {
+    if (!mounted) return;
+    setState(() {
+      _sessionMode = 'learning';
+      _timed = true;
+      _perQuestionSecs = 60;
+      _running = true;
+      _index = 0;
+      _attempts.clear();
+      _sessionCompleted = false;
+      _completedAtIso = null;
+      _reviewMode = false;
+      _runStartedAt = DateTime.now().toUtc();
+      _examTimeLimitSecs = null;
+      _examRemainingSecs = 0;
+    });
+    await _clearSaved();
+    _startQuestionTimer();
+  }
+
   /// Single welcome sheet — same structure as in-app test config (mode,
   /// fixed count, timed exam / per-question learning, summary).
   Future<void> _showModeThenWelcome() async {
@@ -556,6 +582,11 @@ class _WebPlayerShellState extends State<WebPlayerShell>
       return;
     }
     if (!mounted) return;
+    // Single-question share: do not gate with name or mode.
+    if (_isSingleQuestionShare) {
+      await _startSingleQuestionRun();
+      return;
+    }
     final ready = await _ensureParticipantIntro();
     if (!mounted || !ready) return;
     final outcome = await showWebPlayerWelcomeSheet(

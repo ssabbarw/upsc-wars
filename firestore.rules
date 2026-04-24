@@ -66,6 +66,27 @@ service cloud.firestore {
         && d.createdAt == request.time;
     }
 
+    /// Shared test leaderboard entries (`session/{shareId}/leaderboard/{id}`).
+    /// Web players are not authenticated, so allow public create with strict shape validation.
+    function leaderboardFieldKeysOk() {
+      let ks = request.resource.data.keys();
+      return ks.hasOnly(['name', 'score', 'attemptedAt', 'attemptedAtMs']);
+    }
+
+    function validLeaderboardCreate() {
+      let d = request.resource.data;
+      return leaderboardFieldKeysOk()
+        && d.name is string
+        && d.name.size() > 0
+        && d.name.size() <= 40
+        && d.score is number
+        && d.score >= 0
+        && d.score <= 100
+        && d.attemptedAt == request.time
+        && d.attemptedAtMs is int
+        && d.attemptedAtMs > 0;
+    }
+
     match /session/{shareId} {
       allow read: if true;
       allow create: if signedIn()
@@ -73,6 +94,12 @@ service cloud.firestore {
         && shareId.size() <= 128
         && validSessionCreate();
       allow update, delete: if false;
+
+      match /leaderboard/{entryId} {
+        allow read: if true;
+        allow create: if validLeaderboardCreate();
+        allow update, delete: if false;
+      }
     }
 
     /// Community open challenges — public scores; clients enforce one attempt per user.
