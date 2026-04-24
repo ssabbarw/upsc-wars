@@ -467,18 +467,20 @@ class _CommunityTabIcon extends StatelessWidget {
     required this.outlined,
     required this.showUnreadDot,
     required this.scheme,
+    this.size = 22,
   });
 
   final bool outlined;
   final bool showUnreadDot;
   final ColorScheme scheme;
+  final double size;
 
   @override
   Widget build(BuildContext context) {
     final stack = Stack(
       clipBehavior: Clip.none,
       children: [
-        Icon(outlined ? Icons.groups_outlined : Icons.groups, size: 22),
+        Icon(outlined ? Icons.groups_outlined : Icons.groups, size: size),
         if (showUnreadDot)
           Positioned(
             right: -3,
@@ -528,16 +530,11 @@ class _AppShell extends HookConsumerWidget {
             ref
                 .read(communityTabRemoteEnabledProvider)
                 .maybeWhen(data: (v) => v, orElse: () => true);
-        if (showCommunityTab) {
-          if (!context.mounted) return;
-          final branches = navigationShell.route.branches;
-          if (branches.isEmpty) return;
-          final communityIndex = branches.length - 1;
-          navigationShell.goBranch(communityIndex, initialLocation: false);
-          ref.invalidate(communityChallengersProvider);
-          ref.invalidate(openChallengesListProvider);
-          unawaited(ref.read(communityRecentUsersProvider.notifier).refresh());
-        }
+        if (!showCommunityTab) return;
+        // Prefetch community data after sign-in, but keep the user on Home.
+        ref.invalidate(communityChallengersProvider);
+        ref.invalidate(openChallengesListProvider);
+        unawaited(ref.read(communityRecentUsersProvider.notifier).refresh());
       });
     });
 
@@ -668,21 +665,22 @@ class _AppShell extends HookConsumerWidget {
     final isLargeTablet = screenWidth >= AppBreakpoints.largeTablet;
 
     if (isTablet) {
+      final railIconSize = isLargeTablet ? 30.0 : 26.0;
       final railDestinations = <NavigationRailDestination>[
-        const NavigationRailDestination(
-          icon: Icon(Icons.home_outlined, size: 22),
-          selectedIcon: Icon(Icons.home, size: 22),
-          label: Text('Home'),
+        NavigationRailDestination(
+          icon: Icon(Icons.home_outlined, size: railIconSize),
+          selectedIcon: Icon(Icons.home, size: railIconSize),
+          label: const Text('Home'),
         ),
-        const NavigationRailDestination(
-          icon: Icon(Icons.access_time_outlined, size: 22),
-          selectedIcon: Icon(Icons.access_time, size: 22),
-          label: Text('History'),
+        NavigationRailDestination(
+          icon: Icon(Icons.access_time_outlined, size: railIconSize),
+          selectedIcon: Icon(Icons.access_time, size: railIconSize),
+          label: const Text('History'),
         ),
-        const NavigationRailDestination(
-          icon: Icon(Icons.bar_chart_outlined, size: 22),
-          selectedIcon: Icon(Icons.bar_chart, size: 22),
-          label: Text('Progress'),
+        NavigationRailDestination(
+          icon: Icon(Icons.bar_chart_outlined, size: railIconSize),
+          selectedIcon: Icon(Icons.bar_chart, size: railIconSize),
+          label: const Text('Progress'),
         ),
         if (showCommunityTab)
           NavigationRailDestination(
@@ -690,11 +688,13 @@ class _AppShell extends HookConsumerWidget {
               outlined: true,
               showUnreadDot: chatUnreadDot,
               scheme: scheme,
+              size: railIconSize,
             ),
             selectedIcon: _CommunityTabIcon(
               outlined: false,
               showUnreadDot: chatUnreadDot,
               scheme: scheme,
+              size: railIconSize,
             ),
             label: const Text('Community'),
           ),

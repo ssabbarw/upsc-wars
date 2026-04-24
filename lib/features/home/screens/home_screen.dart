@@ -911,11 +911,7 @@ class _SubjectGridCard extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     // Subtle tonal background
-    final cardFill = Color.lerp(
-      scheme.surface,
-      accent,
-      isDark ? 0.12 : 0.05,
-    );
+    final cardFill = Color.lerp(scheme.surface, accent, isDark ? 0.12 : 0.05);
 
     // Colored border matching subject accent
     final cardBorder = accent.withValues(alpha: isDark ? 0.4 : 0.2);
@@ -943,7 +939,14 @@ class _SubjectGridCard extends StatelessWidget {
                   color: iconBg,
                   borderRadius: BorderRadius.circular(AppRadius.sm),
                 ),
-                child: Icon(icon, size: 18, color: accent),
+                child: Icon(
+                  icon,
+                  size: (MediaQuery.sizeOf(context).shortestSide * 0.06).clamp(
+                    20.0,
+                    45.0,
+                  ),
+                  color: accent,
+                ),
               ),
               const Spacer(),
               Text(

@@ -57,6 +57,7 @@ class UpscWarsApp extends HookConsumerWidget {
       ),
       error: (error, stackTrace) => MaterialApp(
         title: AppConstants.appDisplayName,
+        debugShowCheckedModeBanner: false,
         theme: AppTheme.light(),
         darkTheme: AppTheme.dark(),
         themeMode: themeMode,
@@ -244,6 +245,7 @@ class _RootMaterialApp extends HookConsumerWidget {
     );
     return MaterialApp.router(
       title: AppConstants.appDisplayName,
+      debugShowCheckedModeBanner: false,
       theme: AppTheme.light(),
       darkTheme: AppTheme.dark(),
       themeMode: themeMode,
