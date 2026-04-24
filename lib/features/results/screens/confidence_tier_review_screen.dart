@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/domain/entities/answer_confidence.dart';
+import '../../../core/responsive/app_breakpoints.dart';
 import '../../../core/domain/entities/test_question.dart';
 import '../../../core/providers/catalog_providers.dart';
 import '../../../core/theme/app_spacing.dart';
@@ -53,9 +54,12 @@ class ConfidenceTierReviewScreen extends HookConsumerWidget {
       )),
     );
 
+    final hPad = AppBreakpoints.fullScreenHPadding(MediaQuery.sizeOf(context).width);
     return Scaffold(
       body: SafeArea(
-        child: async.when(
+        child: Padding(
+          padding: hPad,
+          child: async.when(
           loading: () => const Center(child: CircularProgressIndicator()),
           error: (_, _) => Center(
             child: Padding(
@@ -94,6 +98,7 @@ class ConfidenceTierReviewScreen extends HookConsumerWidget {
               questions: questions,
             );
           },
+        ),
         ),
       ),
     );

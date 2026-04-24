@@ -7,6 +7,7 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'package:upsc_wars/core/constants/app_constants.dart';
+import 'package:upsc_wars/core/responsive/app_breakpoints.dart';
 import 'package:upsc_wars/core/presentation/user_display_name.dart';
 import 'package:upsc_wars/core/theme/app_colors.dart';
 import 'package:upsc_wars/core/theme/app_radius.dart';
@@ -502,14 +503,19 @@ class _BattleWaitBotCountdownState extends State<_BattleWaitBotCountdown>
         ),
         SafeArea(
           top: false,
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(
-              AppSpacing.lg,
-              0,
-              AppSpacing.lg,
-              AppSpacing.md,
-            ),
-            child: AnimatedBuilder(
+          child: Builder(
+            builder: (context) {
+              final hPad = AppBreakpoints.fullScreenHPadding(
+                MediaQuery.sizeOf(context).width,
+              );
+              return Padding(
+                padding: EdgeInsets.fromLTRB(
+                  AppSpacing.lg + hPad.left,
+                  0,
+                  AppSpacing.lg + hPad.right,
+                  AppSpacing.md,
+                ),
+                child: AnimatedBuilder(
               animation: _pulse,
               builder: (context, child) {
                 final o = 0.42 + _pulse.value * 0.48;
@@ -524,7 +530,9 @@ class _BattleWaitBotCountdownState extends State<_BattleWaitBotCountdown>
                 ),
                 textAlign: TextAlign.center,
               ),
-            ),
+                ),
+              );
+            },
           ),
         ),
       ],
@@ -759,15 +767,20 @@ class _HumanLobbyBody extends StatelessWidget {
         ),
         SafeArea(
           top: false,
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(
-              AppSpacing.lg,
-              0,
-              AppSpacing.lg,
-              AppSpacing.md,
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
+          child: Builder(
+            builder: (context) {
+              final hPad = AppBreakpoints.fullScreenHPadding(
+                MediaQuery.sizeOf(context).width,
+              );
+              return Padding(
+                padding: EdgeInsets.fromLTRB(
+                  AppSpacing.lg + hPad.left,
+                  0,
+                  AppSpacing.lg + hPad.right,
+                  AppSpacing.md,
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 if (isHost &&
                     !guestReady &&
@@ -857,7 +870,9 @@ class _HumanLobbyBody extends StatelessWidget {
                   ),
                 ],
               ],
-            ),
+                ),
+              );
+            },
           ),
         ),
       ],

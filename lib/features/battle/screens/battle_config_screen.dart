@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:upsc_wars/core/responsive/app_breakpoints.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:upsc_wars/core/analytics/activation_milestones.dart';
 import 'package:upsc_wars/core/analytics/analytics.dart';
@@ -50,6 +51,7 @@ class _BattleConfigScreenState extends ConsumerState<BattleConfigScreen> {
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final me = ref.watch(authStateChangesProvider).asData?.value;
+    final hPad = AppBreakpoints.fullScreenHPadding(MediaQuery.sizeOf(context).width);
 
     return Scaffold(
       backgroundColor: isDark
@@ -68,10 +70,10 @@ class _BattleConfigScreenState extends ConsumerState<BattleConfigScreen> {
                   : AppColors.surfacePrimaryLight,
               child: subjectsAsync.when(
                 data: (subjects) => SingleChildScrollView(
-                  padding: const EdgeInsets.fromLTRB(
+                  padding: EdgeInsets.fromLTRB(
+                    AppSpacing.lg + hPad.left,
                     AppSpacing.lg,
-                    AppSpacing.lg,
-                    AppSpacing.lg,
+                    AppSpacing.lg + hPad.right,
                     AppSpacing.md,
                   ),
                   child: Column(
@@ -192,10 +194,10 @@ class _BattleConfigScreenState extends ConsumerState<BattleConfigScreen> {
                 ? AppColors.surfacePrimaryDark
                 : AppColors.surfacePrimaryLight,
             child: Padding(
-              padding: const EdgeInsets.fromLTRB(
-                AppSpacing.lg,
+              padding: EdgeInsets.fromLTRB(
+                AppSpacing.lg + hPad.left,
                 AppSpacing.sm,
-                AppSpacing.lg,
+                AppSpacing.lg + hPad.right,
                 AppSpacing.lg,
               ),
               child: SafeArea(

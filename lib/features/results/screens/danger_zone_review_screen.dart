@@ -8,6 +8,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../../core/analytics/activation_milestones.dart';
 import '../../../core/analytics/screen_flow_analytics.dart';
 import '../../../core/domain/entities/answer_confidence.dart';
+import '../../../core/responsive/app_breakpoints.dart';
 import '../../../core/domain/entities/test_question.dart';
 import '../../../core/providers/catalog_providers.dart';
 import '../../../core/theme/app_spacing.dart';
@@ -24,9 +25,12 @@ class DangerZoneReviewScreen extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final async = ref.watch(dangerZoneQuestionsProvider(sessionId));
 
+    final hPad = AppBreakpoints.fullScreenHPadding(MediaQuery.sizeOf(context).width);
     return Scaffold(
       body: SafeArea(
-        child: async.when(
+        child: Padding(
+          padding: hPad,
+          child: async.when(
           loading: () => const Center(child: CircularProgressIndicator()),
           error: (_, _) => Center(
             child: Padding(
@@ -61,6 +65,7 @@ class DangerZoneReviewScreen extends HookConsumerWidget {
             }
             return _DangerZonePager(sessionId: sessionId, questions: questions);
           },
+        ),
         ),
       ),
     );
@@ -194,9 +199,19 @@ class _DangerZonePager extends HookConsumerWidget {
             confidenceBanner: 'You were $confLabel',
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
-          child: OutlinedButton(
+        Builder(
+          builder: (context) {
+            final hPad = AppBreakpoints.fullScreenHPadding(
+              MediaQuery.sizeOf(context).width,
+            );
+            return Padding(
+              padding: EdgeInsets.fromLTRB(
+                16 + hPad.left,
+                0,
+                16 + hPad.right,
+                12,
+              ),
+              child: OutlinedButton(
             onPressed: () {
               ScreenFlow.logAction(
                 ref,
@@ -210,6 +225,8 @@ class _DangerZonePager extends HookConsumerWidget {
               style: AppTextStyles.label(),
             ),
           ),
+            );
+          },
         ),
       ],
     );

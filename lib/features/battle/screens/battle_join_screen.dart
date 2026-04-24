@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:upsc_wars/core/responsive/app_breakpoints.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'package:upsc_wars/core/analytics/activation_milestones.dart';
@@ -162,6 +163,7 @@ class _BattleJoinScreenState extends ConsumerState<BattleJoinScreen> {
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
+    final hPad = AppBreakpoints.fullScreenHPadding(MediaQuery.sizeOf(context).width);
     return PopScope(
       canPop: false,
       onPopInvokedWithResult: (didPop, result) {
@@ -177,7 +179,12 @@ class _BattleJoinScreenState extends ConsumerState<BattleJoinScreen> {
         ),
         body: Center(
           child: Padding(
-            padding: const EdgeInsets.all(AppSpacing.lg),
+            padding: EdgeInsets.fromLTRB(
+              AppSpacing.lg + hPad.left,
+              AppSpacing.lg,
+              AppSpacing.lg + hPad.right,
+              AppSpacing.lg,
+            ),
             child: _busy
                 ? const CircularProgressIndicator()
                 : Column(

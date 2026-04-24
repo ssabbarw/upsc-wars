@@ -5,6 +5,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:upsc_wars/core/analytics/analytics.dart';
+import 'package:upsc_wars/core/responsive/app_breakpoints.dart';
 import 'package:upsc_wars/core/analytics/analytics_events.dart';
 import 'package:upsc_wars/core/analytics/session_analytics_derive.dart';
 import 'package:upsc_wars/core/domain/entities/test_question.dart';
@@ -225,7 +226,11 @@ class _BattleTestSessionView extends HookConsumerWidget {
           ],
         ),
         body: SafeArea(
-          child: Column(
+          child: Padding(
+            padding: AppBreakpoints.fullScreenHPadding(
+              MediaQuery.sizeOf(context).width,
+            ),
+            child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Padding(
@@ -361,60 +366,15 @@ class _BattleTestSessionView extends HookConsumerWidget {
                 ),
               ),
               Expanded(
-                child: SingleChildScrollView(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: AppSpacing.lg,
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Expanded(
-                            child: Text(
-                              'Question',
-                              style: AppTextStyles.caption().copyWith(
-                                color: scheme.onSurfaceVariant,
-                              ),
-                            ),
-                          ),
-                          ToggleButtons(
-                            isSelected: [
-                              uiLanguage.value == 'en',
-                              uiLanguage.value == 'hi',
-                            ],
-                            onPressed:
-                                (i) =>
-                                    uiLanguage.value = i == 0 ? 'en' : 'hi',
-                            borderRadius: BorderRadius.circular(AppRadius.sm),
-                            constraints: const BoxConstraints(
-                              minHeight: 28,
-                              minWidth: 40,
-                            ),
-                            children: const [
-                              Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 8),
-                                child: Text('EN'),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 8),
-                                child: Text('HI'),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: AppSpacing.sm),
-                      _BattleQuestionBlock(
-                        question: q,
-                        uiLanguage: uiLanguage.value,
-                        revealed: revealed,
-                        selectedOption: selectedForCurrent,
-                        optionsLocked: state.waitingForGuestToJoin,
-                        onSelectOption: notifier.selectOption,
-                      ),
-                    ],
-                  ),
+                child: _BattleQuestionArea(
+                  question: q,
+                  uiLanguage: uiLanguage.value,
+                  onLanguageChanged: (i) =>
+                      uiLanguage.value = i == 0 ? 'en' : 'hi',
+                  revealed: revealed,
+                  selectedOption: selectedForCurrent,
+                  optionsLocked: state.waitingForGuestToJoin,
+                  onSelectOption: notifier.selectOption,
                 ),
               ),
               if (state.errorMessage != null) ...[
@@ -516,6 +476,7 @@ class _BattleTestSessionView extends HookConsumerWidget {
                 ),
               ),
             ],
+          ),
           ),
         ),
       ),
@@ -879,10 +840,13 @@ class _BattlePaletteCell extends StatelessWidget {
   }
 }
 
-class _BattleQuestionBlock extends StatelessWidget {
-  const _BattleQuestionBlock({
+/// Responsive question area: single-column on phone/tablet, two-column on
+/// large tablet (≥900px). Mirrors the test_engine two-column split pattern.
+class _BattleQuestionArea extends StatelessWidget {
+  const _BattleQuestionArea({
     required this.question,
     required this.uiLanguage,
+    required this.onLanguageChanged,
     required this.revealed,
     required this.selectedOption,
     required this.onSelectOption,
@@ -891,6 +855,7 @@ class _BattleQuestionBlock extends StatelessWidget {
 
   final TestQuestion question;
   final String uiLanguage;
+  final ValueChanged<int> onLanguageChanged;
   final bool revealed;
   final String? selectedOption;
   final bool optionsLocked;
@@ -910,13 +875,41 @@ class _BattleQuestionBlock extends StatelessWidget {
 
     LearningVerdict? verdict;
     if (revealed) {
-      verdict =
-          question.status == 'correct'
-              ? LearningVerdict.correct
-              : LearningVerdict.incorrect;
+      verdict = question.status == 'correct'
+          ? LearningVerdict.correct
+          : LearningVerdict.incorrect;
     }
 
-    return Column(
+    final headerRow = Row(
+      children: [
+        Expanded(
+          child: Text(
+            'Question',
+            style: AppTextStyles.caption().copyWith(
+              color: scheme.onSurfaceVariant,
+            ),
+          ),
+        ),
+        ToggleButtons(
+          isSelected: [uiLanguage == 'en', uiLanguage == 'hi'],
+          onPressed: onLanguageChanged,
+          borderRadius: BorderRadius.circular(AppRadius.sm),
+          constraints: const BoxConstraints(minHeight: 28, minWidth: 40),
+          children: const [
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 8),
+              child: Text('EN'),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 8),
+              child: Text('HI'),
+            ),
+          ],
+        ),
+      ],
+    );
+
+    final questionContent = Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         if (trimmed.isNotEmpty && !question.hasTable)
@@ -931,20 +924,18 @@ class _BattleQuestionBlock extends StatelessWidget {
           QuestionTableView(table: tableData),
         ],
         DebugCorrectAnswerBanner(question: question),
-        const SizedBox(height: AppSpacing.lg),
+      ],
+    );
+
+    final optionsContent = Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
         for (final opt in const ['a', 'b', 'c', 'd']) ...[
           _BattleOptionRow(
             keyLabel: opt.toUpperCase(),
             optionText: _optText(opt, optionA, optionB, optionC, optionD),
-            visual: _battleOptionVisual(
-              question,
-              opt,
-              revealed,
-            ),
-            onTap:
-                revealed || optionsLocked
-                    ? null
-                    : () => onSelectOption(opt),
+            visual: _battleOptionVisual(question, opt, revealed),
+            onTap: revealed || optionsLocked ? null : () => onSelectOption(opt),
           ),
           const SizedBox(height: AppSpacing.sm),
         ],
@@ -958,15 +949,65 @@ class _BattleQuestionBlock extends StatelessWidget {
         ],
       ],
     );
+
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final isTwoColumn =
+            constraints.maxWidth >= AppBreakpoints.largeTablet;
+        if (isTwoColumn) {
+          return Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                flex: 55,
+                child: SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  padding: const EdgeInsets.all(AppSpacing.lg),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      headerRow,
+                      const SizedBox(height: AppSpacing.sm),
+                      questionContent,
+                    ],
+                  ),
+                ),
+              ),
+              VerticalDivider(
+                width: 1,
+                thickness: 0.5,
+                color: scheme.outlineVariant.withValues(alpha: 0.4),
+              ),
+              Expanded(
+                flex: 45,
+                child: SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  padding: const EdgeInsets.all(AppSpacing.lg),
+                  child: optionsContent,
+                ),
+              ),
+            ],
+          );
+        }
+        return SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
+          padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              headerRow,
+              const SizedBox(height: AppSpacing.sm),
+              questionContent,
+              const SizedBox(height: AppSpacing.lg),
+              optionsContent,
+            ],
+          ),
+        );
+      },
+    );
   }
 
-  String _optText(
-    String opt,
-    String a,
-    String b,
-    String c,
-    String d,
-  ) {
+  String _optText(String opt, String a, String b, String c, String d) {
     switch (opt) {
       case 'a':
         return a;

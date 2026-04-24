@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/analytics/screen_flow_analytics.dart';
+import '../../../core/responsive/app_breakpoints.dart';
 import '../../../core/debug/upsc_wars_trace.dart';
 import '../../../core/presentation/session_subject_label.dart';
 import '../../../core/domain/entities/session_result.dart';
@@ -56,6 +57,7 @@ class ResultsScreen extends ConsumerWidget {
 
     final async = ref.watch(sessionResultProvider(sessionId));
     final scheme = Theme.of(context).colorScheme;
+    final hPad = AppBreakpoints.fullScreenHPadding(MediaQuery.sizeOf(context).width);
 
     // Submit uses go('/results/...'), so the root stack often cannot pop.
     return PopScope(
@@ -143,10 +145,10 @@ class ResultsScreen extends ConsumerWidget {
               return Column(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(
-                      AppSpacing.xs,
+                    padding: EdgeInsets.fromLTRB(
+                      AppSpacing.xs + hPad.left,
                       AppSpacing.sm,
-                      AppSpacing.lg,
+                      AppSpacing.lg + hPad.right,
                       AppSpacing.sm,
                     ),
                     child: Row(
@@ -219,7 +221,7 @@ class ResultsScreen extends ConsumerWidget {
                             height: h,
                             child: ListView(
                               physics: const BouncingScrollPhysics(),
-                              padding: const EdgeInsets.fromLTRB(
+                              padding: EdgeInsets.fromLTRB(
                                 AppSpacing.lg,
                                 0,
                                 AppSpacing.lg,

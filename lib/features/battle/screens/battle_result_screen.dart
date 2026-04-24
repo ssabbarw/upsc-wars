@@ -7,6 +7,7 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'package:upsc_wars/core/analytics/screen_flow_analytics.dart';
+import 'package:upsc_wars/core/responsive/app_breakpoints.dart';
 import 'package:upsc_wars/core/providers/catalog_providers.dart';
 import 'package:upsc_wars/core/theme/app_spacing.dart';
 import 'package:upsc_wars/core/theme/app_text_styles.dart';
@@ -58,6 +59,7 @@ class BattleResultScreen extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
+    final hPad = AppBreakpoints.fullScreenHPadding(MediaQuery.sizeOf(context).width);
     final spectate = ref.watch(battleSpectateProvider);
     final battleUi = ref.watch(battleSessionProvider(payload.sessionId));
     final battle = battleUi.battleSession;
@@ -205,7 +207,12 @@ class BattleResultScreen extends HookConsumerWidget {
           ),
         ),
         body: SingleChildScrollView(
-          padding: const EdgeInsets.all(AppSpacing.lg),
+          padding: EdgeInsets.fromLTRB(
+            AppSpacing.lg + hPad.left,
+            AppSpacing.lg,
+            AppSpacing.lg + hPad.right,
+            AppSpacing.lg,
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
