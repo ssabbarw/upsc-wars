@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 
 import '../../../core/constants/app_constants.dart';
 import '../../../core/presentation/user_display_name.dart';
@@ -15,7 +16,6 @@ import '../../community/services/community_bucket_presence_service.dart';
 import '../providers/auth_providers.dart';
 import '../services/instagram_link_service.dart';
 import '../services/profile_photo_service.dart';
-import '../../../shared/widgets/google_login_bottom_sheet.dart';
 import '../../../shared/widgets/app_toast.dart';
 import '../../../shared/widgets/tappable_circular_avatar.dart';
 
@@ -138,35 +138,67 @@ class ProfileScreen extends HookConsumerWidget {
                             const SizedBox(height: 22),
                             SizedBox(
                               width: double.infinity,
-                              child: FilledButton.icon(
-                                onPressed: isBusy
-                                    ? null
-                                    : () => showGoogleLoginBottomSheet(
-                                        context: context,
-                                        isLoading: isBusy,
-                                        onAppleTap: () {
-                                          Navigator.of(context).pop();
-                                          ref
-                                              .read(
-                                                authActionsProvider.notifier,
-                                              )
-                                              .signInWithApple();
-                                        },
-                                        onGoogleTap: () {
-                                          Navigator.of(context).pop();
-                                          ref
-                                              .read(
-                                                authActionsProvider.notifier,
-                                              )
-                                              .signInWithGoogle();
-                                        },
-                                      ),
-                                icon: const Icon(Icons.login_rounded),
-                                label: Text(
-                                  isBusy
-                                      ? 'Signing in...'
-                                      : 'Continue with Google',
-                                ),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                                children: [
+                                  if (!kIsWeb &&
+                                      defaultTargetPlatform ==
+                                          TargetPlatform.iOS) ...[
+                                    FutureBuilder<bool>(
+                                      future: SignInWithApple.isAvailable(),
+                                      builder: (context, snapshot) {
+                                        final available =
+                                            snapshot.data ?? false;
+                                        if (!available) {
+                                          return const SizedBox.shrink();
+                                        }
+                                        final isDark = Theme.of(context)
+                                                .brightness ==
+                                            Brightness.dark;
+                                        return SizedBox(
+                                          width: double.infinity,
+                                          child: SignInWithAppleButton(
+                                            onPressed: isBusy
+                                                ? null
+                                                : () => ref
+                                                    .read(
+                                                      authActionsProvider
+                                                          .notifier,
+                                                    )
+                                                    .signInWithApple(),
+                                            style: isDark
+                                                ? SignInWithAppleButtonStyle
+                                                    .white
+                                                : SignInWithAppleButtonStyle
+                                                    .black,
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                            height: 48,
+                                            text: isBusy
+                                                ? 'Signing in...'
+                                                : 'Continue with Apple',
+                                          ),
+                                        );
+                                      },
+                                    ),
+                                    const SizedBox(height: 12),
+                                  ],
+                                  FilledButton.icon(
+                                    onPressed: isBusy
+                                        ? null
+                                        : () => ref
+                                            .read(
+                                              authActionsProvider.notifier,
+                                            )
+                                            .signInWithGoogle(),
+                                    icon: const Icon(Icons.login_rounded),
+                                    label: Text(
+                                      isBusy
+                                          ? 'Signing in...'
+                                          : 'Continue with Google',
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
                           ],

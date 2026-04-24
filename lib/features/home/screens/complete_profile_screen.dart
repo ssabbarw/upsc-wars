@@ -22,6 +22,7 @@ class CompleteProfileScreen extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final auth = FirebaseAuth.instance;
     final user = auth.currentUser;
+
     final authActions = ref.watch(authActionsProvider);
     final isBusy = authActions.isLoading;
 
@@ -98,15 +99,12 @@ class CompleteProfileScreen extends HookConsumerWidget {
 
     final scheme = Theme.of(context).colorScheme;
     final effectiveUser = user;
-    final displayName =
-        (effectiveUser?.displayName ?? '').trim().isNotEmpty
-            ? effectiveUser!.displayName!.trim()
-            : 'User';
+    final displayName = (effectiveUser?.displayName ?? '').trim().isNotEmpty
+        ? effectiveUser!.displayName!.trim()
+        : 'User';
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Complete your profile'),
-      ),
+      appBar: AppBar(title: const Text('Complete your profile')),
       body: SafeArea(
         child: Center(
           child: ConstrainedBox(
@@ -140,21 +138,21 @@ class CompleteProfileScreen extends HookConsumerWidget {
                             onPressed: isBusy
                                 ? null
                                 : () => showGoogleLoginBottomSheet(
-                                      context: context,
-                                      isLoading: isBusy,
-                                      onAppleTap: () {
-                                        Navigator.of(context).pop();
-                                        ref
-                                            .read(authActionsProvider.notifier)
-                                            .signInWithApple();
-                                      },
-                                      onGoogleTap: () {
-                                        Navigator.of(context).pop();
-                                        ref
-                                            .read(authActionsProvider.notifier)
-                                            .signInWithGoogle();
-                                      },
-                                    ),
+                                    context: context,
+                                    isLoading: isBusy,
+                                    onAppleTap: () {
+                                      Navigator.of(context).pop();
+                                      ref
+                                          .read(authActionsProvider.notifier)
+                                          .signInWithApple();
+                                    },
+                                    onGoogleTap: () {
+                                      Navigator.of(context).pop();
+                                      ref
+                                          .read(authActionsProvider.notifier)
+                                          .signInWithGoogle();
+                                    },
+                                  ),
                             icon: const Icon(Icons.login_rounded),
                             label: Text(isBusy ? 'Signing in…' : 'Sign in'),
                           ),
@@ -167,9 +165,9 @@ class CompleteProfileScreen extends HookConsumerWidget {
                 Text(
                   'This helps others recognize you in Community and chat.',
                   style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                        color: scheme.onSurfaceVariant,
-                        height: 1.4,
-                      ),
+                    color: scheme.onSurfaceVariant,
+                    height: 1.4,
+                  ),
                 ),
                 const SizedBox(height: 18),
                 Card(
@@ -200,7 +198,9 @@ class CompleteProfileScreen extends HookConsumerWidget {
                                   shape: const CircleBorder(),
                                   clipBehavior: Clip.antiAlias,
                                   child: InkWell(
-                                    onTap: uploadingPhoto.value ? null : onChangePhoto,
+                                    onTap: uploadingPhoto.value
+                                        ? null
+                                        : onChangePhoto,
                                     customBorder: const CircleBorder(),
                                     child: Padding(
                                       padding: const EdgeInsets.all(8),
@@ -229,9 +229,8 @@ class CompleteProfileScreen extends HookConsumerWidget {
                           Text(
                             'Profile photo can be changed in the Android or iOS app.',
                             textAlign: TextAlign.center,
-                            style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                                  color: scheme.onSurfaceVariant,
-                                ),
+                            style: Theme.of(context).textTheme.bodySmall
+                                ?.copyWith(color: scheme.onSurfaceVariant),
                           ),
                         ],
                         const SizedBox(height: 16),
@@ -258,9 +257,8 @@ class CompleteProfileScreen extends HookConsumerWidget {
                         Text(
                           'You can change your photo anytime from Profile.',
                           textAlign: TextAlign.center,
-                          style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                                color: scheme.onSurfaceVariant,
-                              ),
+                          style: Theme.of(context).textTheme.bodySmall
+                              ?.copyWith(color: scheme.onSurfaceVariant),
                         ),
                       ],
                     ),
@@ -271,9 +269,9 @@ class CompleteProfileScreen extends HookConsumerWidget {
                   'Privacy note: Apple may not share your real email/name on future sign-ins. '
                   'We store this name only to show it inside ${AppConstants.appDisplayName}.',
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: scheme.onSurfaceVariant,
-                        height: 1.4,
-                      ),
+                    color: scheme.onSurfaceVariant,
+                    height: 1.4,
+                  ),
                 ),
               ],
             ),
@@ -283,4 +281,3 @@ class CompleteProfileScreen extends HookConsumerWidget {
     );
   }
 }
-
