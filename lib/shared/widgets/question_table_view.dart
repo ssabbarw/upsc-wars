@@ -22,12 +22,19 @@ class QuestionTableView extends StatelessWidget {
     final border = isDark ? AppColors.borderDark : AppColors.borderLight;
     final header = table.header?.trim();
     final footer = table.footer?.trim();
-    final columnCount = table.columns.length;
+    var columns = table.columns;
+    if (table.rows.isNotEmpty) {
+      final firstRowLength = table.rows.first.length;
+      if (columns.length == firstRowLength - 1) {
+        columns = ['', ...columns];
+      }
+    }
 
+    final columnCount = columns.length;
     if (columnCount == 0) return const SizedBox.shrink();
 
     final allRows = <List<String>>[
-      table.columns,
+      columns,
       ...table.rows.map((row) {
         if (row.length == columnCount) return row;
         if (row.length < columnCount) {

@@ -57,7 +57,7 @@ abstract final class AppConstants {
 
   // ── Release (bump when publishing) ───────────────────────────────────────
   /// Shown on Profile and compared to Remote Config [kill_switch_version].
-  static const String releaseVersionLabel = 'v2.1';
+  static const String releaseVersionLabel = 'v2.3';
 }
 
 /// Comparable version from `v2.1`, `2.1`, or `2.1.0`.

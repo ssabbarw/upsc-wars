@@ -919,7 +919,7 @@ class _BattleQuestionBlock extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        if (trimmed.isNotEmpty)
+        if (trimmed.isNotEmpty && !question.hasTable)
           SelectableCopySearchText(
             trimmed,
             style: AppTextStyles.question().copyWith(color: scheme.onSurface),

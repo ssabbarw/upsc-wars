@@ -459,15 +459,16 @@ class ReviewBody extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 8),
-              SelectableCopySearchText(
-                parsed.stem,
-                style: TextStyle(
-                  fontSize: 13.5,
-                  height: 1.6,
-                  color: scheme.onSurface,
+              if (parsed.stem.isNotEmpty && !question.hasTable)
+                SelectableCopySearchText(
+                  parsed.stem,
+                  style: TextStyle(
+                    fontSize: 13.5,
+                    height: 1.6,
+                    color: scheme.onSurface,
+                  ),
                 ),
-              ),
-              if (parsed.statements.isNotEmpty) ...[
+              if (parsed.statements.isNotEmpty && !question.hasTable) ...[
                 const SizedBox(height: 10),
                 for (final st in parsed.statements)
                   Container(

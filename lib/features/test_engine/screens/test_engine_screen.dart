@@ -1013,7 +1013,7 @@ class _QuestionArea extends HookConsumerWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          if (trimmedDisplayText.isNotEmpty)
+          if (trimmedDisplayText.isNotEmpty && !question.hasTable)
             SelectableCopySearchText(
               trimmedDisplayText,
               style: AppTextStyles.question().copyWith(color: scheme.onSurface),
