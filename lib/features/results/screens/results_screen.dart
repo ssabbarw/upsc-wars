@@ -20,7 +20,6 @@ import '../../community/open_challenge/open_challenge_exam_registry.dart';
 import '../../community/open_challenge/open_challenge_post_results_submit.dart';
 import '../../community/widgets/open_challenge_post_from_results_card.dart';
 import '../../community/widgets/open_challenge_results_actions.dart';
-import '../../../core/services/deferred_push_permission_coordinator.dart';
 import '../widgets/session_summary_coach.dart';
 import '../widgets/share_test_bottom_sheet.dart';
 
@@ -78,10 +77,6 @@ class ResultsScreen extends ConsumerWidget {
           actionKind: 'back',
         );
         unawaited(() async {
-          await DeferredPushPermissionCoordinator.tryOfferFromResultsUserAction(
-            context,
-            ref,
-          );
           if (context.mounted) context.go('/');
         }());
       },
@@ -161,11 +156,6 @@ class ResultsScreen extends ConsumerWidget {
                             foregroundColor: scheme.onSurface,
                           ),
                           onPressed: () async {
-                            await DeferredPushPermissionCoordinator
-                                .tryOfferFromResultsUserAction(
-                              context,
-                              ref,
-                            );
                             if (!context.mounted) return;
                             if (context.canPop()) {
                               context.pop();

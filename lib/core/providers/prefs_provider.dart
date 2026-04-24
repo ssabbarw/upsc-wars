@@ -60,10 +60,9 @@ abstract final class PrefKeys {
   static const deferredPushHomeNudgeDismissedV2 =
       'deferred_push_home_nudge_dismissed_v2';
 
-  /// Last time we triggered the OS notification permission prompt (epoch ms).
-  /// Used to rate-limit system prompts (max once per 24 hours).
-  static const pushSystemPromptLastShownAtMsV1 =
-      'push_system_prompt_last_shown_at_ms_v1';
+  /// Number of times the app process was opened (local counter).
+  /// Used for "ask notification permission on 2nd open".
+  static const appOpenCountV1 = 'app_open_count_v1';
 
   /// JSON list of [ActivationMilestones] ids already logged to analytics.
   static const activationMilestonesV1 = 'activation_milestones_v1';
@@ -186,17 +185,8 @@ class PrefsService {
   set deferredPushHomeNudgeDismissedV2(bool v) =>
       _p.setBool(PrefKeys.deferredPushHomeNudgeDismissedV2, v);
 
-  int? get pushSystemPromptLastShownAtMs =>
-      _p.containsKey(PrefKeys.pushSystemPromptLastShownAtMsV1)
-      ? _p.getInt(PrefKeys.pushSystemPromptLastShownAtMsV1)
-      : null;
-  set pushSystemPromptLastShownAtMs(int? v) {
-    if (v == null) {
-      _p.remove(PrefKeys.pushSystemPromptLastShownAtMsV1);
-    } else {
-      _p.setInt(PrefKeys.pushSystemPromptLastShownAtMsV1, v);
-    }
-  }
+  int get appOpenCount => _p.getInt(PrefKeys.appOpenCountV1) ?? 0;
+  set appOpenCount(int v) => _p.setInt(PrefKeys.appOpenCountV1, v);
 
   /// Ids of [activation_milestone] events already sent (one-time activation).
   Set<String> get activationMilestones {

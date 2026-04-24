@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:firebase_auth/firebase_auth.dart' show User;
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -157,6 +158,27 @@ class _RootMaterialApp extends HookConsumerWidget {
 
       bindGlobalAnalytics(dispatch);
       unawaited(Analytics.track(ref, const AppOpenedEvent()));
+      // Push permission: ask on 2nd app open only (no education sheet).
+      unawaited(() async {
+        try {
+          final p = await ref.read(prefsServiceProvider.future);
+          p.appOpenCount = p.appOpenCount + 1;
+          upscWarsTrace('app_open_count=${p.appOpenCount}');
+          if (p.appOpenCount != 2) return;
+          final s = await BattleMessagingService.notificationAuthorizationStatus();
+          upscWarsTrace('push_auto_prompt status=$s');
+          if (s == AuthorizationStatus.notDetermined) {
+            await FirebaseMessaging.instance.requestPermission(
+              alert: true,
+              badge: true,
+              sound: true,
+            );
+            await FcmTokenSyncService.syncForCurrentUser();
+          }
+        } catch (e, st) {
+          upscWarsTrace('push_auto_prompt error', error: e, stackTrace: st);
+        }
+      }());
       unawaited(() async {
         final p = await ref.read(prefsServiceProvider.future);
         await logActivationMilestoneForServices(

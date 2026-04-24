@@ -20,7 +20,6 @@ import 'package:upsc_wars/features/battle/widgets/battle_chat_fab.dart';
 import 'package:upsc_wars/features/battle/widgets/battle_live_scoreboard.dart';
 import 'package:upsc_wars/features/battle/widgets/battle_result_score_breakdown.dart';
 import 'package:upsc_wars/features/battle/widgets/battle_spectate_overlay.dart';
-import 'package:upsc_wars/core/services/deferred_push_permission_coordinator.dart';
 import 'package:upsc_wars/features/home/providers/auth_providers.dart';
 
 Future<void> _leaveBattleResultScreen(
@@ -32,11 +31,6 @@ Future<void> _leaveBattleResultScreen(
     screenName: ScreenFlow.battleResults,
     actionId: 'leave_to_home',
     actionKind: 'back',
-  );
-  if (!context.mounted) return;
-  await DeferredPushPermissionCoordinator.tryOfferFromResultsUserAction(
-    context,
-    ref,
   );
   if (!context.mounted) return;
   // Always home: stack is usually battle test → results; pop would reopen the test.
@@ -262,8 +256,6 @@ class BattleResultScreen extends HookConsumerWidget {
                     screenName: ScreenFlow.battleResults,
                     actionId: 'review_explanations',
                   );
-                  await DeferredPushPermissionCoordinator
-                      .tryOfferFromResultsUserAction(context, ref);
                   if (context.mounted) {
                     context.push('/history/${payload.sessionId}');
                   }
@@ -274,8 +266,6 @@ class BattleResultScreen extends HookConsumerWidget {
               const SizedBox(height: AppSpacing.sm),
               OutlinedButton(
                 onPressed: () async {
-                  await DeferredPushPermissionCoordinator
-                      .tryOfferFromResultsUserAction(context, ref);
                   if (context.mounted) context.go('/');
                 },
                 child: const Text('Back to Home'),

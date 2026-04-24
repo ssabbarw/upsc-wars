@@ -10,10 +10,8 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../../core/constants/app_constants.dart';
 import '../../../core/constants/subject_constants.dart';
 import '../../../core/constants/timed_exam_debug_constants.dart';
-import '../../../core/domain/entities/home_state.dart';
 import '../../../core/domain/entities/session_config.dart';
 import '../../../core/domain/entities/subject_info.dart';
-import '../../../core/presentation/session_subject_label.dart';
 import '../../../core/presentation/user_display_name.dart';
 import '../../../core/providers/catalog_providers.dart';
 import '../../../core/providers/app_bootstrap.dart';
@@ -24,7 +22,7 @@ import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../providers/auth_providers.dart';
-import '../widgets/deferred_push_home_nudge_banner.dart';
+import '../../../shared/widgets/push_denied_banner.dart';
 import '../../../shared/theme/dark_mode_toggle.dart';
 import '../../../shared/widgets/app_update_kill_switch_overlay.dart';
 import '../../../shared/widgets/prelims_countdown_card.dart';
@@ -450,7 +448,7 @@ class HomeScreen extends HookConsumerWidget {
                             years: pyqYears,
                           ),
                           const SizedBox(height: AppSpacing.md),
-                          const DeferredPushHomeNudgeBanner(),
+                          const PushDeniedBanner(),
                           _QuickPracticeSection(borderColor: borderColor),
                           if (h.revisionTrapCount > 0) ...[
                             const SizedBox(height: AppSpacing.md),

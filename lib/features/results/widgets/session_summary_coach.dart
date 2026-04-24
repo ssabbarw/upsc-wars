@@ -11,7 +11,6 @@ import '../../../core/analytics/analytics_global_dispatch.dart';
 import '../../../core/domain/entities/revision_queue_item.dart';
 import '../../../core/domain/entities/session_result.dart';
 import '../../../core/providers/catalog_providers.dart';
-import '../../../core/services/deferred_push_permission_coordinator.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
@@ -465,10 +464,6 @@ class _ScoreTrendCard extends ConsumerWidget {
                 ),
                 onPressed: () async {
                   HapticFeedback.lightImpact();
-                  await DeferredPushPermissionCoordinator.tryOfferFromResultsUserAction(
-                    context,
-                    ref,
-                  );
                   if (!context.mounted) return;
                   if (context.canPop()) {
                     context.pop();
@@ -499,10 +494,6 @@ class _ScoreTrendCard extends ConsumerWidget {
                 ),
                 onPressed: () async {
                   HapticFeedback.lightImpact();
-                  await DeferredPushPermissionCoordinator.tryOfferFromResultsUserAction(
-                    context,
-                    ref,
-                  );
                   if (context.mounted) {
                     _openSessionHistoryReview(context, sessionId);
                   }
@@ -821,19 +812,11 @@ Future<void> _runPrimaryCoachAction(
           context.go('/subject/${Uri.encodeComponent(result.subject)}/topics');
         }
       } else if (context.mounted) {
-        await DeferredPushPermissionCoordinator.tryOfferFromResultsUserAction(
-          context,
-          ref,
-        );
         if (context.mounted) context.go('/');
       }
       break;
     case _CoachPrimaryKind.home:
       if (context.mounted) {
-        await DeferredPushPermissionCoordinator.tryOfferFromResultsUserAction(
-          context,
-          ref,
-        );
         if (context.mounted) context.go('/');
       }
       break;

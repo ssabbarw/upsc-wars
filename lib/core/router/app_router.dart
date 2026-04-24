@@ -11,7 +11,6 @@ import '../analytics/analytics_route_observer.dart';
 import '../analytics/screen_dwell_route_observer.dart';
 import '../analytics/screen_flow_analytics.dart';
 import '../debug/upsc_wars_trace.dart';
-import '../services/deferred_push_permission_coordinator.dart';
 import '../config/feature_flags.dart';
 import '../../features/bookmarks/screens/bookmarks_screen.dart';
 import '../../features/battle/domain/entities/battle_result_payload.dart';
@@ -510,7 +509,6 @@ class _AppShell extends HookConsumerWidget {
     ref.listen(authActionsProvider, (previous, next) {
       next.whenOrNull(
         error: (error, _) {
-          DeferredPushPermissionCoordinator.clearCommunitySignInArmed();
           AppToast.dismiss();
           AppToast.showText(context, authErrorMessage(error));
         },
@@ -529,31 +527,21 @@ class _AppShell extends HookConsumerWidget {
             ref
                 .read(communityTabRemoteEnabledProvider)
                 .maybeWhen(data: (v) => v, orElse: () => true);
-        unawaited(
-          DeferredPushPermissionCoordinator.onSignedInAfterCommunityPromptArmed(
-            context,
-            ref,
-            onSignedInFromCommunityTab: showCommunityTab
-                ? () {
-                    if (!context.mounted) return;
-                    final branches = navigationShell.route.branches;
-                    if (branches.isEmpty) return;
-                    final communityIndex = branches.length - 1;
-                    navigationShell.goBranch(
-                      communityIndex,
-                      initialLocation: false,
-                    );
-                    ref.invalidate(communityChallengersProvider);
-                    ref.invalidate(openChallengesListProvider);
-                    unawaited(
-                      ref
-                          .read(communityRecentUsersProvider.notifier)
-                          .refresh(),
-                    );
-                  }
-                : null,
-          ),
-        );
+        if (showCommunityTab) {
+          if (!context.mounted) return;
+          final branches = navigationShell.route.branches;
+          if (branches.isEmpty) return;
+          final communityIndex = branches.length - 1;
+          navigationShell.goBranch(
+            communityIndex,
+            initialLocation: false,
+          );
+          ref.invalidate(communityChallengersProvider);
+          ref.invalidate(openChallengesListProvider);
+          unawaited(
+            ref.read(communityRecentUsersProvider.notifier).refresh(),
+          );
+        }
       });
     });
 
@@ -656,7 +644,6 @@ class _AppShell extends HookConsumerWidget {
                       isLoading: isAuthBusy,
                       onGoogleTap: () {
                         Navigator.of(context).pop();
-                        DeferredPushPermissionCoordinator.armCommunitySignInPrompt();
                         ref
                             .read(authActionsProvider.notifier)
                             .signInWithGoogle();
