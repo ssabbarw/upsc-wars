@@ -29,6 +29,8 @@ class AppToast {
     Duration duration = const Duration(seconds: 4),
     AppToastAction? action,
     bool top = true,
+    Color? backgroundColor,
+    Color? foregroundColor,
   }) {
     show(
       context,
@@ -36,6 +38,8 @@ class AppToast {
       duration: duration,
       action: action,
       top: top,
+      backgroundColor: backgroundColor,
+      foregroundColor: foregroundColor,
     );
   }
 
@@ -45,6 +49,8 @@ class AppToast {
     Duration duration = const Duration(seconds: 4),
     AppToastAction? action,
     bool top = true,
+    Color? backgroundColor,
+    Color? foregroundColor,
   }) {
     final overlay = Overlay.maybeOf(context, rootOverlay: true);
     if (overlay == null) return;
@@ -86,6 +92,8 @@ class AppToast {
                           child: child,
                           action: action,
                           onDismiss: dismiss,
+                          backgroundColor: backgroundColor,
+                          foregroundColor: foregroundColor,
                         ),
                       );
                     },
@@ -129,16 +137,20 @@ class _ToastCard extends StatelessWidget {
     required this.child,
     required this.action,
     required this.onDismiss,
+    required this.backgroundColor,
+    required this.foregroundColor,
   });
 
   final ColorScheme scheme;
   final Widget child;
   final AppToastAction? action;
   final VoidCallback onDismiss;
+  final Color? backgroundColor;
+  final Color? foregroundColor;
 
   @override
   Widget build(BuildContext context) {
-    final fg = Colors.white;
+    final fg = foregroundColor ?? Colors.white;
     final textStyle = Theme.of(context).textTheme.bodyMedium?.copyWith(
       color: fg,
       height: 1.25,
@@ -159,7 +171,7 @@ class _ToastCard extends StatelessWidget {
         child: Material(
           elevation: 10,
           shadowColor: Colors.black.withValues(alpha: 0.35),
-          color: AppColors.correct,
+          color: backgroundColor ?? AppColors.correct,
           borderRadius: BorderRadius.circular(14),
           clipBehavior: Clip.antiAlias,
           child: InkWell(

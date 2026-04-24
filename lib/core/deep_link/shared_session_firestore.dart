@@ -63,14 +63,18 @@ class SharedSessionFirestoreRepository {
     required ShareLinkKind kind,
     required String subject,
     String? topic,
+    String? sharedBy,
     required List<Map<String, dynamic>> questionMaps,
   }) async {
     // Firestore rules expect schemaVersion as a number; use explicit int.
     final safeSubject = subject.trim().isEmpty ? 'Misc' : subject.trim();
+    final safeSharedBy = sharedBy?.trim();
     await _db.collection(SharedSessionFirestore.collectionName).doc(shareId).set({
       'kind': kind.pathSegment,
       'subject': safeSubject,
       if (topic != null && topic.trim().isNotEmpty) 'topic': topic.trim(),
+      if (safeSharedBy != null && safeSharedBy.isNotEmpty)
+        'sharedBy': safeSharedBy,
       'uuids': questionMaps,
       'createdAt': FieldValue.serverTimestamp(),
       'schemaVersion': 1,

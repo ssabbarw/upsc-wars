@@ -12,7 +12,6 @@ import 'package:upsc_wars/web_player/web_player_ui_tokens.dart';
 /// Post-test summary for the web player: **this run only** (no history / coach).
 enum WebPlayerResultsExit { review, dangerZoneReview, reattempt }
 
-
 class WebPlayerResultsScreen extends StatelessWidget {
   const WebPlayerResultsScreen({
     super.key,
@@ -190,7 +189,9 @@ class _DangerZoneAttentionCard extends StatelessWidget {
                   vertical: 6,
                 ),
                 decoration: BoxDecoration(
-                  color: AppColors.wrong.withValues(alpha: isDark ? 0.24 : 0.16),
+                  color: AppColors.wrong.withValues(
+                    alpha: isDark ? 0.24 : 0.16,
+                  ),
                   borderRadius: BorderRadius.circular(999),
                   border: Border.all(
                     color: AppColors.wrong.withValues(alpha: 0.45),
@@ -199,7 +200,9 @@ class _DangerZoneAttentionCard extends StatelessWidget {
                 child: Text(
                   'ACTION REQUIRED',
                   style: AppTextStyles.caption().copyWith(
-                    color: isDark ? AppColors.wrongTextDark : AppColors.wrongText,
+                    color: isDark
+                        ? AppColors.wrongTextDark
+                        : AppColors.wrongText,
                     fontWeight: FontWeight.w900,
                     letterSpacing: 0.6,
                   ),
@@ -289,8 +292,7 @@ class _WebPlayerLeaderboardCard extends StatefulWidget {
 }
 
 class _WebPlayerLeaderboardCardState extends State<_WebPlayerLeaderboardCard> {
-  late final Future<List<SharedLeaderboardEntry>> _future =
-      _fetchLeaderboard();
+  late final Future<List<SharedLeaderboardEntry>> _future = _fetchLeaderboard();
 
   Future<List<SharedLeaderboardEntry>> _fetchLeaderboard() async {
     final shareId = widget.shareId;
@@ -348,8 +350,7 @@ class _WebPlayerLeaderboardCardState extends State<_WebPlayerLeaderboardCard> {
 
           Widget rowLine(int rank, _LbRow r) {
             final nameTrimmed = r.name.trim();
-            final showYouSuffix =
-                r.isYou && nameTrimmed.toLowerCase() != 'you';
+            final showYouSuffix = r.isYou && nameTrimmed.toLowerCase() != 'you';
             return Container(
               padding: r.isYou
                   ? const EdgeInsets.symmetric(horizontal: 10, vertical: 10)
@@ -436,14 +437,13 @@ class _WebPlayerLeaderboardCardState extends State<_WebPlayerLeaderboardCard> {
               const SizedBox(height: AppSpacing.sm),
               if (merged.isEmpty)
                 Text(
-                  "It's empty — be the first to finish this test.",
+                  "Be the first to finish this test.",
                   style: AppTextStyles.bodySm().copyWith(
                     color: Colors.white.withValues(alpha: 0.82),
                   ),
                 )
               else ...[
-                for (var i = 0; i < top5.length; i++)
-                  rowLine(i + 1, top5[i]),
+                for (var i = 0; i < top5.length; i++) rowLine(i + 1, top5[i]),
                 if (!youInTop5) ...[
                   const SizedBox(height: AppSpacing.xs),
                   Divider(color: Colors.white.withValues(alpha: 0.14)),
@@ -476,12 +476,16 @@ class _WebPlayerConfidenceSummaryCard extends StatelessWidget {
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final sureTotal = result.confidenceSureTotal;
-    final sureWrong = (result.confidenceSureTotal - result.confidenceSureCorrect)
-        .clamp(0, 1 << 30);
+    final sureWrong =
+        (result.confidenceSureTotal - result.confidenceSureCorrect).clamp(
+          0,
+          1 << 30,
+        );
     final eduTotal = result.confidenceIntelligentTotal;
-    final eduWrong = (result.confidenceIntelligentTotal -
-            result.confidenceIntelligentCorrect)
-        .clamp(0, 1 << 30);
+    final eduWrong =
+        (result.confidenceIntelligentTotal -
+                result.confidenceIntelligentCorrect)
+            .clamp(0, 1 << 30);
     final anyConfidence = (sureTotal + eduTotal) > 0;
 
     return Container(

@@ -159,10 +159,8 @@ Future<Uri?> createShareLinkForSession({
   required WidgetRef ref,
   required String sessionId,
 }) async {
-  if (FirebaseAuth.instance.currentUser == null) {
-    showShareLinkMessage('Sign in to share a question set.');
-    return null;
-  }
+  final sharer = FirebaseAuth.instance.currentUser;
+  final sharedBy = (sharer?.displayName ?? sharer?.email ?? 'A friend').trim();
 
   final load = await ref.read(loadSessionUseCaseProvider.future);
   final active = await load.execute(sessionId);
@@ -190,6 +188,7 @@ Future<Uri?> createShareLinkForSession({
       kind: kind,
       subject: subjectForShare,
       topic: active.topic,
+      sharedBy: sharedBy.isEmpty ? 'A friend' : sharedBy,
       questionMaps: maps,
     );
   } on FirebaseException catch (e, st) {
@@ -241,10 +240,8 @@ Future<Uri?> createShareLinkForQuestion({
   required String sessionId,
   required String questionUuid,
 }) async {
-  if (FirebaseAuth.instance.currentUser == null) {
-    showShareLinkMessage('Sign in to share a question.');
-    return null;
-  }
+  final sharer = FirebaseAuth.instance.currentUser;
+  final sharedBy = (sharer?.displayName ?? sharer?.email ?? 'A friend').trim();
 
   final load = await ref.read(loadSessionUseCaseProvider.future);
   final active = await load.execute(sessionId);
@@ -272,6 +269,7 @@ Future<Uri?> createShareLinkForQuestion({
       kind: kind,
       subject: subjectForShare,
       topic: active.topic,
+      sharedBy: sharedBy.isEmpty ? 'A friend' : sharedBy,
       questionMaps: maps,
     );
   } on FirebaseException catch (e, st) {
@@ -309,10 +307,8 @@ Future<Uri?> createShareLinkForTestQuestion({
   required WidgetRef ref,
   required TestQuestion question,
 }) async {
-  if (FirebaseAuth.instance.currentUser == null) {
-    showShareLinkMessage('Sign in to share a question.');
-    return null;
-  }
+  final sharer = FirebaseAuth.instance.currentUser;
+  final sharedBy = (sharer?.displayName ?? sharer?.email ?? 'A friend').trim();
 
   final kind = ShareLinkKind.question;
   final shareId = _shareUuid.v4();
@@ -328,6 +324,7 @@ Future<Uri?> createShareLinkForTestQuestion({
       kind: kind,
       subject: subjectForShare,
       topic: question.topic,
+      sharedBy: sharedBy.isEmpty ? 'A friend' : sharedBy,
       questionMaps: maps,
     );
   } on FirebaseException catch (e, st) {

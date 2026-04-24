@@ -91,6 +91,7 @@ class _WebPlayerShellState extends State<WebPlayerShell>
   String? _shareId;
   String? _kind;
   ShareLinkKind? _linkKind;
+  bool _showLandingNotFoundToast = false;
   String _subject = '';
   String _topic = '';
   String _sharedBy = 'A friend';
@@ -154,6 +155,7 @@ class _WebPlayerShellState extends State<WebPlayerShell>
       setState(() {
         _loading = false;
         _landing = true;
+        _showLandingNotFoundToast = false;
       });
       return;
     }
@@ -185,9 +187,17 @@ class _WebPlayerShellState extends State<WebPlayerShell>
       if (!mounted) return;
       await _maybeOfferResume();
     } catch (e) {
+      final msg = e.toString();
+      final notFound = msg.contains('Shared session not found');
       setState(() {
         _loading = false;
-        _error = e.toString();
+        if (notFound) {
+          _landing = true;
+          _showLandingNotFoundToast = true;
+          _error = null;
+        } else {
+          _error = msg;
+        }
       });
     }
   }
@@ -525,7 +535,9 @@ class _WebPlayerShellState extends State<WebPlayerShell>
     if (!mounted || ok) return;
     AppToast.show(
       context,
-      child: const Text('Could not open email. You can copy our address below.'),
+      child: const Text(
+        'Could not open email. You can copy our address below.',
+      ),
       duration: const Duration(seconds: 8),
       action: AppToastAction(
         label: 'Copy email',
@@ -671,7 +683,9 @@ class _WebPlayerShellState extends State<WebPlayerShell>
           builder: (ctx, setModalState) => AnimatedPadding(
             duration: const Duration(milliseconds: 180),
             curve: Curves.easeOut,
-            padding: EdgeInsets.only(bottom: MediaQuery.viewInsetsOf(ctx).bottom),
+            padding: EdgeInsets.only(
+              bottom: MediaQuery.viewInsetsOf(ctx).bottom,
+            ),
             child: Padding(
               padding: EdgeInsets.only(
                 left: AppSpacing.lg,
@@ -686,7 +700,9 @@ class _WebPlayerShellState extends State<WebPlayerShell>
                     top: Radius.circular(20),
                   ),
                   border: Border.all(
-                    color: isDark ? AppColors.borderDark : AppColors.borderLight,
+                    color: isDark
+                        ? AppColors.borderDark
+                        : AppColors.borderLight,
                   ),
                 ),
                 child: SingleChildScrollView(
@@ -695,180 +711,190 @@ class _WebPlayerShellState extends State<WebPlayerShell>
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                  Text(
-                    'Before you begin',
-                    style: AppTextStyles.h3().copyWith(color: scheme.onSurface),
-                  ),
-                  const SizedBox(height: AppSpacing.sm),
-                  Text(
-                    '$_sharedBy shared this test with you.',
-                    style: AppTextStyles.body().copyWith(
-                      color: scheme.onSurfaceVariant,
-                    ),
-                  ),
-                  const SizedBox(height: AppSpacing.md),
-                  TextField(
-                    controller: controller,
-                    textInputAction: TextInputAction.done,
-                    autofocus: controller.text.trim().isEmpty,
-                    decoration: InputDecoration(
-                      labelText: 'Your name',
-                      hintText: 'Enter your display name',
-                      errorText: validationError.isEmpty
-                          ? null
-                          : validationError,
-                    ),
-                    onSubmitted: (_) {
-                      final name = controller.text.trim();
-                      if (name.isEmpty) {
-                        setModalState(() {
-                          validationError =
-                              "If you don't want to give your name, enter any random name";
-                        });
-                        return;
-                      }
-                      accepted = true;
-                      Navigator.pop(ctx);
-                    },
-                  ),
-                  const SizedBox(height: AppSpacing.md),
-                  Container(
-                    padding: const EdgeInsets.all(AppSpacing.md),
-                    decoration: BoxDecoration(
-                      color: AppColors.correct,
-                      borderRadius: BorderRadius.circular(AppRadius.md),
-                      border: Border.all(
-                        color: Colors.white.withValues(alpha: 0.14),
+                      Text(
+                        'Before you begin',
+                        style: AppTextStyles.h3().copyWith(
+                          color: scheme.onSurface,
+                        ),
                       ),
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
+                      const SizedBox(height: AppSpacing.sm),
+                      Text(
+                        '$_sharedBy shared this test with you.',
+                        style: AppTextStyles.body().copyWith(
+                          color: scheme.onSurfaceVariant,
+                        ),
+                      ),
+                      const SizedBox(height: AppSpacing.md),
+                      TextField(
+                        controller: controller,
+                        textInputAction: TextInputAction.done,
+                        autofocus: controller.text.trim().isEmpty,
+                        decoration: InputDecoration(
+                          labelText: 'Your name',
+                          hintText: 'Enter your display name',
+                          errorText: validationError.isEmpty
+                              ? null
+                              : validationError,
+                        ),
+                        onSubmitted: (_) {
+                          final name = controller.text.trim();
+                          if (name.isEmpty) {
+                            setModalState(() {
+                              validationError =
+                                  "If you don't want to give your name, enter any random name";
+                            });
+                            return;
+                          }
+                          accepted = true;
+                          Navigator.pop(ctx);
+                        },
+                      ),
+                      const SizedBox(height: AppSpacing.md),
+                      Container(
+                        padding: const EdgeInsets.all(AppSpacing.md),
+                        decoration: BoxDecoration(
+                          color: AppColors.correct,
+                          borderRadius: BorderRadius.circular(AppRadius.md),
+                          border: Border.all(
+                            color: Colors.white.withValues(alpha: 0.14),
+                          ),
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Icon(
-                              Icons.emoji_events_rounded,
-                              size: 18,
-                              color: Colors.white.withValues(alpha: 0.9),
+                            Row(
+                              children: [
+                                Icon(
+                                  Icons.emoji_events_rounded,
+                                  size: 18,
+                                  color: Colors.white.withValues(alpha: 0.9),
+                                ),
+                                const SizedBox(width: AppSpacing.xs),
+                                Text(
+                                  'Leaderboard · Top 5',
+                                  style: AppTextStyles.label().copyWith(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w800,
+                                  ),
+                                ),
+                              ],
                             ),
-                            const SizedBox(width: AppSpacing.xs),
+                            const SizedBox(height: AppSpacing.sm),
+                            if (leaderboard.isEmpty)
+                              Text(
+                                "Be the first to take this test.",
+                                style: AppTextStyles.bodySm().copyWith(
+                                  color: Colors.white.withValues(alpha: 0.82),
+                                ),
+                              )
+                            else
+                              for (
+                                var i = 0;
+                                i < leaderboard.length && i < 5;
+                                i++
+                              )
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom: 6),
+                                  child: Row(
+                                    children: [
+                                      SizedBox(
+                                        width: 30,
+                                        child: Text(
+                                          '#${i + 1}',
+                                          style: AppTextStyles.caption()
+                                              .copyWith(
+                                                color: Colors.white.withValues(
+                                                  alpha: 0.72,
+                                                ),
+                                                fontWeight: FontWeight.w800,
+                                              ),
+                                        ),
+                                      ),
+                                      const SizedBox(width: AppSpacing.xs),
+                                      Expanded(
+                                        child: Text(
+                                          leaderboard[i].name,
+                                          maxLines: 1,
+                                          overflow: TextOverflow.ellipsis,
+                                          style: AppTextStyles.bodySm()
+                                              .copyWith(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.w700,
+                                              ),
+                                        ),
+                                      ),
+                                      const SizedBox(width: AppSpacing.sm),
+                                      Text(
+                                        '${leaderboard[i].score.toStringAsFixed(1)}%',
+                                        style: AppTextStyles.bodySm().copyWith(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.w800,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(height: AppSpacing.md),
+                      Container(
+                        padding: const EdgeInsets.all(AppSpacing.md),
+                        decoration: BoxDecoration(
+                          color: scheme.surfaceContainerLow,
+                          borderRadius: BorderRadius.circular(AppRadius.md),
+                          border: Border.all(
+                            color: isDark
+                                ? AppColors.borderDark
+                                : AppColors.borderLight,
+                            width: 0.6,
+                          ),
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
                             Text(
-                              'Leaderboard · Top 5',
-                              style: AppTextStyles.label().copyWith(
-                                color: Colors.white,
-                                fontWeight: FontWeight.w800,
+                              'You are about to start a shared practice test.',
+                              style: AppTextStyles.bodySm().copyWith(
+                                color: scheme.onSurface,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            const SizedBox(height: AppSpacing.xs),
+                            Text(
+                              _topic.isNotEmpty
+                                  ? 'Subject: $_subject · $_topic'
+                                  : 'Subject: $_subject',
+                              style: AppTextStyles.bodySm().copyWith(
+                                color: scheme.onSurfaceVariant,
+                              ),
+                            ),
+                            Text(
+                              'Questions: ${_questions.length}',
+                              style: AppTextStyles.bodySm().copyWith(
+                                color: scheme.onSurfaceVariant,
                               ),
                             ),
                           ],
                         ),
-                        const SizedBox(height: AppSpacing.sm),
-                        if (leaderboard.isEmpty)
-                          Text(
-                            "It's empty — be the first to finish this test.",
-                            style: AppTextStyles.bodySm().copyWith(
-                              color: Colors.white.withValues(alpha: 0.82),
-                            ),
-                          )
-                        else
-                          for (var i = 0; i < leaderboard.length && i < 5; i++)
-                            Padding(
-                              padding: const EdgeInsets.only(bottom: 6),
-                              child: Row(
-                                children: [
-                                  SizedBox(
-                                    width: 30,
-                                    child: Text(
-                                      '#${i + 1}',
-                                      style: AppTextStyles.caption().copyWith(
-                                        color: Colors.white.withValues(alpha: 0.72),
-                                        fontWeight: FontWeight.w800,
-                                      ),
-                                    ),
-                                  ),
-                                  const SizedBox(width: AppSpacing.xs),
-                                  Expanded(
-                                    child: Text(
-                                      leaderboard[i].name,
-                                      maxLines: 1,
-                                      overflow: TextOverflow.ellipsis,
-                                      style: AppTextStyles.bodySm().copyWith(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w700,
-                                      ),
-                                    ),
-                                  ),
-                                  const SizedBox(width: AppSpacing.sm),
-                                  Text(
-                                    '${leaderboard[i].score.toStringAsFixed(1)}%',
-                                    style: AppTextStyles.bodySm().copyWith(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.w800,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(height: AppSpacing.md),
-                  Container(
-                    padding: const EdgeInsets.all(AppSpacing.md),
-                    decoration: BoxDecoration(
-                      color: scheme.surfaceContainerLow,
-                      borderRadius: BorderRadius.circular(AppRadius.md),
-                      border: Border.all(
-                        color: isDark
-                            ? AppColors.borderDark
-                            : AppColors.borderLight,
-                        width: 0.6,
                       ),
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'You are about to start a shared practice test.',
-                          style: AppTextStyles.bodySm().copyWith(
-                            color: scheme.onSurface,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                        const SizedBox(height: AppSpacing.xs),
-                        Text(
-                          _topic.isNotEmpty
-                              ? 'Subject: $_subject · $_topic'
-                              : 'Subject: $_subject',
-                          style: AppTextStyles.bodySm().copyWith(
-                            color: scheme.onSurfaceVariant,
-                          ),
-                        ),
-                        Text(
-                          'Questions: ${_questions.length}',
-                          style: AppTextStyles.bodySm().copyWith(
-                            color: scheme.onSurfaceVariant,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(height: AppSpacing.lg),
-                  ElevatedButton(
-                    style: WebPlayerUiTokens.primaryCta(ctx),
-                    onPressed: () {
-                      final name = controller.text.trim();
-                      if (name.isEmpty) {
-                        setModalState(() {
-                          validationError =
-                              "If you don't want to give your name, enter any random name";
-                        });
-                        return;
-                      }
-                      accepted = true;
-                      Navigator.pop(ctx);
-                    },
-                    child: const Text('Continue'),
-                  ),
+                      const SizedBox(height: AppSpacing.lg),
+                      ElevatedButton(
+                        style: WebPlayerUiTokens.primaryCta(ctx),
+                        onPressed: () {
+                          final name = controller.text.trim();
+                          if (name.isEmpty) {
+                            setModalState(() {
+                              validationError =
+                                  "If you don't want to give your name, enter any random name";
+                            });
+                            return;
+                          }
+                          accepted = true;
+                          Navigator.pop(ctx);
+                        },
+                        child: const Text('Continue'),
+                      ),
                     ],
                   ),
                 ),
@@ -1048,7 +1074,9 @@ class _WebPlayerShellState extends State<WebPlayerShell>
   }
 
   List<TestQuestion> get _activeQuestions =>
-      _reviewMode && _reviewQuestions.isNotEmpty ? _reviewQuestions : _questions;
+      _reviewMode && _reviewQuestions.isNotEmpty
+      ? _reviewQuestions
+      : _questions;
 
   TestQuestion get _q => _activeQuestions[_index];
 
@@ -1116,17 +1144,16 @@ class _WebPlayerShellState extends State<WebPlayerShell>
                 ),
                 const SizedBox(height: AppSpacing.lg),
                 FilledButton(
-                  onPressed: () => Navigator.pop(ctx, AnswerConfidence.verySure),
+                  onPressed: () =>
+                      Navigator.pop(ctx, AnswerConfidence.verySure),
                   child: Text(
                     AnswerConfidence.examShortLabel(AnswerConfidence.verySure),
                   ),
                 ),
                 const SizedBox(height: AppSpacing.sm),
                 OutlinedButton(
-                  onPressed: () => Navigator.pop(
-                    ctx,
-                    AnswerConfidence.somewhatSure,
-                  ),
+                  onPressed: () =>
+                      Navigator.pop(ctx, AnswerConfidence.somewhatSure),
                   child: Text(
                     AnswerConfidence.examShortLabel(
                       AnswerConfidence.somewhatSure,
@@ -1259,6 +1286,25 @@ class _WebPlayerShellState extends State<WebPlayerShell>
       return const Scaffold(body: Center(child: CircularProgressIndicator()));
     }
     if (_landing) {
+      if (_showLandingNotFoundToast) {
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          if (!mounted) return;
+          _showLandingNotFoundToast = false;
+        AppToast.show(
+          context,
+          duration: const Duration(seconds: 8),
+          top: true,
+          backgroundColor: AppColors.wrong,
+          foregroundColor: Colors.white,
+          child: const Center(
+            child: Text(
+              'Link not found (expired).',
+              textAlign: TextAlign.center,
+            ),
+          ),
+        );
+        });
+      }
       return WebShellLandingPage(onToggleTheme: widget.onToggleTheme);
     }
     if (_error != null) {
@@ -1434,26 +1480,28 @@ class _WebPlayerShellState extends State<WebPlayerShell>
                         showConfidenceHeader: false,
                         confidenceFooter:
                             att.selectedOption != null &&
-                                    att.selectedOption == L &&
-                                    ((_sessionMode == 'exam' &&
-                                            (att.examAnswered || _reviewMode)) ||
-                                        (_sessionMode == 'learning' &&
-                                            (att.revealed || _reviewMode)))
-                                ? WebPlayerExamConfidenceStrip(
-                                    confidence: att.confidence,
-                                    enabled: !_reviewMode &&
-                                        (_sessionMode == 'exam' ||
-                                            att.confidence == null ||
-                                            !att.revealed),
-                                    onTierPressed: (tier) {
-                                      if (_reviewMode) return;
-                                      final next =
-                                          att.confidence == tier ? null : tier;
-                                      setState(() => att.confidence = next);
-                                      unawaited(_writeSaved());
-                                    },
-                                  )
-                                : null,
+                                att.selectedOption == L &&
+                                ((_sessionMode == 'exam' &&
+                                        (att.examAnswered || _reviewMode)) ||
+                                    (_sessionMode == 'learning' &&
+                                        (att.revealed || _reviewMode)))
+                            ? WebPlayerExamConfidenceStrip(
+                                confidence: att.confidence,
+                                enabled:
+                                    !_reviewMode &&
+                                    (_sessionMode == 'exam' ||
+                                        att.confidence == null ||
+                                        !att.revealed),
+                                onTierPressed: (tier) {
+                                  if (_reviewMode) return;
+                                  final next = att.confidence == tier
+                                      ? null
+                                      : tier;
+                                  setState(() => att.confidence = next);
+                                  unawaited(_writeSaved());
+                                },
+                              )
+                            : null,
                       ),
                       const SizedBox(height: AppSpacing.sm),
                     ],
@@ -1530,7 +1578,7 @@ class _WebPlayerShellState extends State<WebPlayerShell>
                   label: Text(
                     _sessionMode == 'exam' && !_reviewMode
                         ? 'Next'
-                          : (_index >= _activeQuestions.length - 1
+                        : (_index >= _activeQuestions.length - 1
                               ? 'Finish'
                               : 'Next'),
                   ),

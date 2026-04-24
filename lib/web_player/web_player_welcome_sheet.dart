@@ -132,9 +132,9 @@ class _WebPlayerWelcomeSheetBodyState extends State<_WebPlayerWelcomeSheetBody> 
 
   String _startLabel() {
     if (widget.learningOnly || _sessionMode == 'learning') {
-      return 'Start learning session';
+      return 'Start in learning mode';
     }
-    return 'Start exam';
+    return 'Start in exam mode';
   }
 
   ButtonStyle _startButtonStyle(BuildContext context, ColorScheme scheme) {

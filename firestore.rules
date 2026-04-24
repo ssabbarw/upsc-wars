@@ -44,7 +44,9 @@ service cloud.firestore {
     /// Share links (`session/{shareId}`): browser + app must read without auth.
     function sessionFieldKeysOk() {
       let ks = request.resource.data.keys();
-      return ks.hasOnly(['kind', 'subject', 'uuids', 'schemaVersion', 'createdAt'])
+      return ks.hasOnly(['kind', 'subject', 'uuids', 'schemaVersion', 'createdAt', 'sharedBy'])
+        || ks.hasOnly(['kind', 'subject', 'topic', 'uuids', 'schemaVersion', 'createdAt', 'sharedBy'])
+        || ks.hasOnly(['kind', 'subject', 'uuids', 'schemaVersion', 'createdAt'])
         || ks.hasOnly(['kind', 'subject', 'topic', 'uuids', 'schemaVersion', 'createdAt']);
     }
 
@@ -58,6 +60,8 @@ service cloud.firestore {
         && d.subject.size() <= 200
         && (!('topic' in d)
           || (d.topic is string && d.topic.size() > 0 && d.topic.size() <= 200))
+        && (!('sharedBy' in d)
+          || (d.sharedBy is string && d.sharedBy.size() > 0 && d.sharedBy.size() <= 60))
         && d.uuids is list
         && d.uuids.size() > 0
         && d.uuids.size() <= 100
@@ -89,8 +93,9 @@ service cloud.firestore {
 
     match /session/{shareId} {
       allow read: if true;
-      allow create: if signedIn()
-        && shareId.size() >= 8
+      // Share links are created by the app. Allow unauthenticated create so
+      // users can share even before sign-in; enforce strict schema validation.
+      allow create: if shareId.size() >= 8
         && shareId.size() <= 128
         && validSessionCreate();
       allow update, delete: if false;

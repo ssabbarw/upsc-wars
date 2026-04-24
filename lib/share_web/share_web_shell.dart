@@ -80,6 +80,7 @@ class _ShareWebShellState extends State<ShareWebShell>
   String? _shareId;
   String? _kind;
   ShareLinkKind? _linkKind;
+  bool _showLandingNotFoundToast = false;
   String _subject = '';
   String _topic = '';
   String _sharedBy = 'A friend';
@@ -120,6 +121,7 @@ class _ShareWebShellState extends State<ShareWebShell>
       setState(() {
         _loading = false;
         _landing = true;
+        _showLandingNotFoundToast = false;
       });
       return;
     }
@@ -151,9 +153,17 @@ class _ShareWebShellState extends State<ShareWebShell>
       if (!mounted) return;
       await _maybeOfferResume();
     } catch (e) {
+      final msg = e.toString();
+      final notFound = msg.contains('Shared session not found');
       setState(() {
         _loading = false;
-        _error = e.toString();
+        if (notFound) {
+          _landing = true;
+          _showLandingNotFoundToast = true;
+          _error = null;
+        } else {
+          _error = msg;
+        }
       });
     }
   }
@@ -993,6 +1003,25 @@ class _ShareWebShellState extends State<ShareWebShell>
       return const Scaffold(body: Center(child: CircularProgressIndicator()));
     }
     if (_landing) {
+      if (_showLandingNotFoundToast) {
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          if (!mounted) return;
+          _showLandingNotFoundToast = false;
+          AppToast.show(
+            context,
+            duration: const Duration(seconds: 8),
+            top: true,
+            backgroundColor: AppColors.wrong,
+            foregroundColor: Colors.white,
+            child: const Center(
+              child: Text(
+                'Link not found (expired).',
+                textAlign: TextAlign.center,
+              ),
+            ),
+          );
+        });
+      }
       return WebShellLandingPage(onToggleTheme: widget.onToggleTheme);
     }
     if (_error != null) {
