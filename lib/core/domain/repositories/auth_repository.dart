@@ -8,5 +8,6 @@ abstract class AuthRepository {
 
   User? get currentUser;
   Future<UserCredential> signInWithGoogle();
+  Future<UserCredential> signInWithApple();
   Future<void> signOut();
 }

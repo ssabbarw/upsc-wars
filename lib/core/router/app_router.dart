@@ -37,6 +37,7 @@ import '../../features/home/screens/home_screen.dart';
 import '../../features/onboarding/screens/onboarding_flow_screen.dart';
 import '../../features/notifications/screens/long_html_notification_screen.dart';
 import '../../features/pyq/screens/pyq_year_packs_screen.dart';
+import '../../features/home/screens/complete_profile_screen.dart';
 import '../../features/home/screens/profile_screen.dart';
 import '../../features/home/screens/settings_screen.dart';
 import '../../features/home/screens/progress_screen.dart';
@@ -173,6 +174,12 @@ GoRouter appRouter(Ref ref) {
         path: '/profile',
         name: 'profile',
         builder: (context, state) => const ProfileScreen(),
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/complete-profile',
+        name: 'complete_profile',
+        builder: (context, state) => const CompleteProfileScreen(),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
@@ -509,6 +516,7 @@ class _AppShell extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final didPromptCompleteProfile = useRef(false);
     ref.listen(authActionsProvider, (previous, next) {
       next.whenOrNull(
         error: (error, _) {
@@ -519,6 +527,27 @@ class _AppShell extends HookConsumerWidget {
     });
 
     ref.listen(authStateChangesProvider, (previous, next) {
+      final user = next.asData?.value;
+      if (user == null) {
+        didPromptCompleteProfile.value = false;
+        return;
+      }
+
+      final missingName = (user.displayName ?? '').trim().isEmpty;
+      if (missingName && !didPromptCompleteProfile.value) {
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          if (!context.mounted) return;
+          didPromptCompleteProfile.value = true;
+          final router = GoRouter.of(context);
+          final cfg = router.routerDelegate.currentConfiguration;
+          final matchedLocation = cfg.isEmpty
+              ? router.routeInformationProvider.value.uri.path
+              : router.state.matchedLocation;
+          if (matchedLocation == '/complete-profile') return;
+          router.push('/complete-profile');
+        });
+      }
+
       if (previous == null) return;
       final wasSignedOut = previous.asData?.value == null;
       final nowSignedIn = next.asData?.value != null;
@@ -629,6 +658,10 @@ class _AppShell extends HookConsumerWidget {
             await showGoogleLoginBottomSheet(
               context: context,
               isLoading: isAuthBusy,
+              onAppleTap: () {
+                Navigator.of(context).pop();
+                ref.read(authActionsProvider.notifier).signInWithApple();
+              },
               onGoogleTap: () {
                 Navigator.of(context).pop();
                 ref.read(authActionsProvider.notifier).signInWithGoogle();

@@ -144,6 +144,14 @@ class ProfileScreen extends HookConsumerWidget {
                                     : () => showGoogleLoginBottomSheet(
                                         context: context,
                                         isLoading: isBusy,
+                                        onAppleTap: () {
+                                          Navigator.of(context).pop();
+                                          ref
+                                              .read(
+                                                authActionsProvider.notifier,
+                                              )
+                                              .signInWithApple();
+                                        },
                                         onGoogleTap: () {
                                           Navigator.of(context).pop();
                                           ref
@@ -330,7 +338,7 @@ class _SignedInProfileBody extends HookConsumerWidget {
                             const _InfoRow(
                               icon: Icons.verified_user_outlined,
                               label: 'Authentication',
-                              value: 'Google account connected',
+                              value: 'Account connected',
                             ),
                             const SizedBox(height: 10),
                             const _InfoRow(

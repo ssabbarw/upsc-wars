@@ -7,6 +7,7 @@ import 'package:go_router/go_router.dart';
 
 import 'package:upsc_wars/core/analytics/analytics_events.dart';
 import 'package:upsc_wars/core/analytics/analytics_global_dispatch.dart';
+import 'package:upsc_wars/core/debug/cursor_debug_log.dart';
 import 'package:upsc_wars/core/router/app_router.dart';
 import 'package:upsc_wars/core/services/app_local_notifications_service.dart';
 import 'package:upsc_wars/core/services/fcm_token_sync_service.dart';
@@ -32,6 +33,26 @@ class BattleMessagingService {
     _router = router;
     final messaging = FirebaseMessaging.instance;
     await messaging.setAutoInitEnabled(true);
+    // #region agent log
+    unawaited(
+      () async {
+        final settings = await messaging.getNotificationSettings();
+        final apns = await messaging.getAPNSToken();
+        final fcm = await messaging.getToken();
+        await CursorDebugLog.write(
+          hypothesisId: 'A',
+          location: 'battle_messaging_service.dart:initialize',
+          message: 'Push bootstrap snapshot',
+          data: {
+            'platform': defaultTargetPlatform.toString(),
+            'authStatus': settings.authorizationStatus.toString(),
+            'apnsTokenPresent': apns != null && apns.trim().isNotEmpty,
+            'fcmTokenPresent': fcm != null && fcm.trim().isNotEmpty,
+          },
+        );
+      }(),
+    );
+    // #endregion
 
     if (!kIsWeb) {
       AppLocalNotificationsService.onBattleInviteLocalTap = (sessionId) {
@@ -216,6 +237,18 @@ class BattleMessagingService {
       badge: true,
       sound: true,
     );
+    // #region agent log
+    unawaited(
+      CursorDebugLog.write(
+        hypothesisId: 'A',
+        location: 'battle_messaging_service.dart:requestPushAuthorizationAndSync',
+        message: 'requestPermission result',
+        data: {
+          'authStatus': settings.authorizationStatus.toString(),
+        },
+      ),
+    );
+    // #endregion
     await FcmTokenSyncService.syncForCurrentUser();
     return settings.authorizationStatus;
   }
@@ -223,7 +256,20 @@ class BattleMessagingService {
   /// Returns the device token for storing on `users/{email}` (server targets invites).
   static Future<String?> refreshFcmToken() async {
     try {
-      return await FirebaseMessaging.instance.getToken();
+      final t = await FirebaseMessaging.instance.getToken();
+      // #region agent log
+      unawaited(
+        CursorDebugLog.write(
+          hypothesisId: 'B',
+          location: 'battle_messaging_service.dart:refreshFcmToken',
+          message: 'FirebaseMessaging.getToken result',
+          data: {
+            'fcmTokenPresent': t != null && t.trim().isNotEmpty,
+          },
+        ),
+      );
+      // #endregion
+      return t;
     } catch (e, st) {
       debugPrint('BattleMessagingService.refreshFcmToken: $e');
       debugPrintStack(stackTrace: st);

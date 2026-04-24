@@ -33,6 +33,19 @@ class AuthActionsNotifier extends AsyncNotifier<void> {
     }
   }
 
+  Future<void> signInWithApple() async {
+    state = const AsyncLoading();
+    try {
+      final repo = ref.read(authRepositoryProvider);
+      await repo.signInWithApple();
+      state = const AsyncData(null);
+    } catch (error, stackTrace) {
+      debugPrint('AuthActionsNotifier.signInWithApple error: $error');
+      debugPrintStack(stackTrace: stackTrace);
+      state = AsyncError(authErrorMessage(error), stackTrace);
+    }
+  }
+
   Future<void> signOut() async {
     state = const AsyncLoading();
     try {
@@ -55,7 +68,7 @@ String authErrorMessage(Object error) {
   if (error is FirebaseAuthException) {
     switch (error.code) {
       case 'sign_in_cancelled':
-        return 'Sign-in was cancelled. If this keeps happening, remove and re-add your Google account on the device, then try again.';
+        return 'Sign-in was cancelled. Please try again.';
       case 'network-request-failed':
         return 'No internet connection. Please try again.';
       case 'account-exists-with-different-credential':
@@ -64,6 +77,8 @@ String authErrorMessage(Object error) {
         return 'Invalid sign-in credential. Please try again.';
       case 'missing_google_id_token':
         return 'Could not retrieve Google token. Please retry.';
+      case 'missing_apple_identity_token':
+        return 'Could not retrieve Apple token. Please retry.';
       default:
         return error.message ?? 'Authentication failed. Please try again.';
     }

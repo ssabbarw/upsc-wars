@@ -70,7 +70,12 @@ class BattleChatFabHost extends HookConsumerWidget {
         : router.state.uri.path;
     useEffect(() {
       if (location == '/') {
-        ref.read(battleChatOverlayProvider.notifier).deactivate();
+        // Defer provider mutation until after the current frame to avoid
+        // "Tried to modify a provider while the widget tree was building."
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          if (!context.mounted) return;
+          ref.read(battleChatOverlayProvider.notifier).deactivate();
+        });
       }
       return null;
     }, [location]);

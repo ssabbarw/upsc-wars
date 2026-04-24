@@ -1,4 +1,6 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 
 import '../../core/constants/app_constants.dart';
 
@@ -77,16 +79,24 @@ class GoogleLoginBottomSheet extends StatelessWidget {
   const GoogleLoginBottomSheet({
     super.key,
     required this.onGoogleTap,
+    this.onAppleTap,
     this.isLoading = false,
   });
 
   final VoidCallback onGoogleTap;
+  final VoidCallback? onAppleTap;
   final bool isLoading;
 
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
     final small = Theme.of(context).textTheme.bodySmall;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final canShowApple =
+        onAppleTap != null &&
+        !kIsWeb &&
+        (defaultTargetPlatform == TargetPlatform.iOS ||
+            defaultTargetPlatform == TargetPlatform.macOS);
 
     return SafeArea(
       top: false,
@@ -117,6 +127,28 @@ class GoogleLoginBottomSheet extends StatelessWidget {
               style: Theme.of(context).textTheme.bodyMedium,
             ),
             const SizedBox(height: 20),
+            if (canShowApple) ...[
+              FutureBuilder<bool>(
+                future: SignInWithApple.isAvailable(),
+                builder: (context, snapshot) {
+                  final available = snapshot.data ?? false;
+                  if (!available) return const SizedBox.shrink();
+                  return SizedBox(
+                    width: double.infinity,
+                    child: SignInWithAppleButton(
+                      onPressed: isLoading ? null : onAppleTap,
+                      style: isDark
+                          ? SignInWithAppleButtonStyle.white
+                          : SignInWithAppleButtonStyle.black,
+                      borderRadius: BorderRadius.circular(8),
+                      height: 48,
+                      text: isLoading ? 'Signing in...' : 'Continue with Apple',
+                    ),
+                  );
+                },
+              ),
+              const SizedBox(height: 12),
+            ],
             SizedBox(
               width: double.infinity,
               child: OutlinedButton(
@@ -153,7 +185,7 @@ class GoogleLoginBottomSheet extends StatelessWidget {
             const SizedBox(height: 12),
             Text(
               'By continuing, you agree to our Privacy Policy and to authenticate '
-              'with Google via Firebase.',
+              'with Apple or Google via Firebase.',
               style: small,
             ),
             Align(
@@ -202,6 +234,7 @@ class _GoogleGlyph extends StatelessWidget {
 Future<void> showGoogleLoginBottomSheet({
   required BuildContext context,
   required VoidCallback onGoogleTap,
+  VoidCallback? onAppleTap,
   bool isLoading = false,
 }) {
   return showModalBottomSheet<void>(
@@ -209,6 +242,10 @@ Future<void> showGoogleLoginBottomSheet({
     isScrollControlled: true,
     useSafeArea: true,
     builder: (_) =>
-        GoogleLoginBottomSheet(onGoogleTap: onGoogleTap, isLoading: isLoading),
+        GoogleLoginBottomSheet(
+          onGoogleTap: onGoogleTap,
+          onAppleTap: onAppleTap,
+          isLoading: isLoading,
+        ),
   );
 }
