@@ -85,8 +85,13 @@
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>UPSC Wars needs photo library access so you can choose a profile picture.</string>
+	<key>NSMicrophoneUsageDescription</key>
+<string>Microphone access may be required only for optional media features such as video recording. The app primarily uses photo selection for profile pictures.</string>
 </dict>
 </plist>
