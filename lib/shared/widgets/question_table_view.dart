@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 
 import 'package:upsc_wars/core/domain/entities/test_question.dart';
@@ -19,8 +21,19 @@ class QuestionTableView extends StatelessWidget {
     List<List<String>> allRows,
     int columnCount,
   ) {
-    bool isTightColumn(int col) {
+    int maxLenForCol(int col) {
       var maxLen = 0;
+      for (final row in allRows) {
+        if (col >= row.length) continue;
+        final v = row[col].trim();
+        if (v.length > maxLen) maxLen = v.length;
+      }
+      return maxLen;
+    }
+
+    bool isTightNumericOrTiny(int col, int maxLen) {
+      if (maxLen == 0) return true;
+      if (maxLen <= 3) return true;
       var allNumeric = true;
       var anyNonEmpty = false;
       for (final row in allRows) {
@@ -28,20 +41,26 @@ class QuestionTableView extends StatelessWidget {
         final v = row[col].trim();
         if (v.isEmpty) continue;
         anyNonEmpty = true;
-        if (v.length > maxLen) maxLen = v.length;
         if (!RegExp(r'^\d+$').hasMatch(v)) allNumeric = false;
       }
-      if (!anyNonEmpty) return true;
-      if (allNumeric && maxLen <= 4) return true;
-      if (maxLen <= 3) return true;
-      return false;
+      return anyNonEmpty && allNumeric && maxLen <= 5;
     }
+
+    // Convert content length to a stable flex weight: longer content => more width.
+    // sqrt dampens extremes so one very long cell doesn't monopolize the table.
+    double flexWeightFor(int maxLen) {
+      if (maxLen <= 0) return 1;
+      final w = math.sqrt(maxLen.toDouble());
+      return w.clamp(1.0, 8.0);
+    }
+
+    final maxLens = List<int>.generate(columnCount, maxLenForCol);
 
     return <int, TableColumnWidth>{
       for (var i = 0; i < columnCount; i++)
-        i: isTightColumn(i)
+        i: isTightNumericOrTiny(i, maxLens[i])
             ? const IntrinsicColumnWidth()
-            : const FlexColumnWidth(),
+            : FlexColumnWidth(flexWeightFor(maxLens[i])),
     };
   }
 

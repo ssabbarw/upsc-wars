@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -50,17 +52,70 @@ class FeatureHealthScreen extends ConsumerWidget {
             );
           }
 
+          Map<int, TableColumnWidth> columnWidthsForContent(
+            List<List<String>> rows,
+          ) {
+            if (rows.isEmpty) return const {};
+            final columnCount = rows.first.length;
+
+            int maxLenForCol(int col) {
+              var maxLen = 0;
+              for (final r in rows) {
+                if (col >= r.length) continue;
+                final v = r[col].trim();
+                if (v.length > maxLen) maxLen = v.length;
+              }
+              return maxLen;
+            }
+
+            bool isTightNumericOrTiny(int col, int maxLen) {
+              if (maxLen == 0) return true;
+              if (maxLen <= 3) return true;
+              var allNumeric = true;
+              var anyNonEmpty = false;
+              for (final r in rows) {
+                if (col >= r.length) continue;
+                final v = r[col].trim();
+                if (v.isEmpty) continue;
+                anyNonEmpty = true;
+                if (!RegExp(r'^\d+$').hasMatch(v)) allNumeric = false;
+              }
+              return anyNonEmpty && allNumeric && maxLen <= 6;
+            }
+
+            double flexWeightFor(int maxLen) {
+              if (maxLen <= 0) return 1;
+              final w = math.sqrt(maxLen.toDouble());
+              return w.clamp(1.0, 8.0);
+            }
+
+            final maxLens = List<int>.generate(columnCount, maxLenForCol);
+
+            return <int, TableColumnWidth>{
+              for (var i = 0; i < columnCount; i++)
+                i: isTightNumericOrTiny(i, maxLens[i])
+                    ? const IntrinsicColumnWidth()
+                    : FlexColumnWidth(flexWeightFor(maxLens[i])),
+            };
+          }
+
+          final dataRows = <List<String>>[
+            ['Feature', 'Views', 'Starts', 'Done', 'Repeat'],
+            for (final entry in _kFeatureRows)
+              [
+                entry.$2,
+                '${byName[entry.$1]?.totalViews ?? 0}',
+                '${byName[entry.$1]?.totalStarts ?? 0}',
+                '${byName[entry.$1]?.totalCompletions ?? 0}',
+                '${_repeatUsage(byName[entry.$1])}',
+              ],
+          ];
+
           return SingleChildScrollView(
             padding: const EdgeInsets.all(AppSpacing.lg),
             child: Table(
               border: TableBorder.all(color: scheme.outlineVariant, width: 0.5),
-              columnWidths: const {
-                0: FlexColumnWidth(2.2),
-                1: FlexColumnWidth(1),
-                2: FlexColumnWidth(1),
-                3: FlexColumnWidth(1.1),
-                4: FlexColumnWidth(1.1),
-              },
+              columnWidths: columnWidthsForContent(dataRows),
               children: [
                 TableRow(
                   decoration: BoxDecoration(color: scheme.surfaceContainerLow),
