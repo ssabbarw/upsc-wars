@@ -56,8 +56,16 @@ abstract final class AppConstants {
   );
 
   // ── Release (bump when publishing) ───────────────────────────────────────
-  /// Shown on Profile and compared to Remote Config [kill_switch_version].
-  static const String releaseVersionLabel = 'v2.3';
+  /// Shown on Profile and compared to Remote Config `kill_switch_version`.
+  ///
+  /// Kill switch rule (see `kill_switch_provider.dart`):
+  /// - If `appVersion` < Remote Config `kill_switch_version` ⇒ update screen blocks the app.
+  ///
+  /// What value to set to block a version:
+  /// - To block **this** build, set `kill_switch_version` to a **higher** version than this
+  ///   label. Example: if this is `v2.4`, set `kill_switch_version` to `2.5` (or `v2.5`).
+  /// - To block **all 2.4.x** builds, set `kill_switch_version` to `2.5`.
+  static const String releaseVersionLabel = 'v2.4';
 }
 
 /// Comparable version from `v2.1`, `2.1`, or `2.1.0`.
