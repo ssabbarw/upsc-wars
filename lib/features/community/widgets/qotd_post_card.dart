@@ -39,6 +39,15 @@ String _qotdPostedFriendlyAgo(DateTime? posted) {
   return '${(diff.inDays / 7).floor()}w ago';
 }
 
+String _qotdCompactMeta(QotdPost post) {
+  final ago = _qotdPostedFriendlyAgo(post.createdAt);
+  if (post.createdAt == null) return ago;
+  if (post.isExpired) return '$ago · ended';
+  final until = post.liveUntil;
+  if (until == null) return ago;
+  return '$ago · live till ${_qotdLiveUntilFormatted(until)}';
+}
+
 class QotdPostCard extends ConsumerStatefulWidget {
   const QotdPostCard({super.key, required this.post, required this.uiLanguage});
 
@@ -174,6 +183,7 @@ class _QotdPostCardState extends ConsumerState<QotdPostCard> {
     if (uid == null || _myReactionId != null || _reactionSaving) return;
     final rollbackReactions = Map<String, int>.from(_reactions);
     final id = ++_reactionRequestId;
+    final label = _reactionLabel(reactionId);
     final optimistic = Map<String, int>.from(_reactions);
     optimistic[reactionId] = (optimistic[reactionId] ?? 0) + 1;
     setState(() {
@@ -181,6 +191,7 @@ class _QotdPostCardState extends ConsumerState<QotdPostCard> {
       _reactions = optimistic;
       _myReactionId = reactionId;
     });
+    AppToast.showText(context, 'You reacted: $label');
     try {
       final repo = ref.read(qotdRepositoryProvider);
       await repo.setUserReaction(
@@ -265,7 +276,7 @@ class _QotdPostCardState extends ConsumerState<QotdPostCard> {
               ),
             );
           }
-          return _expandableCard(context, scheme, vm.question, vm.subTopic);
+          return _expandableCard(context, scheme, vm.question);
         },
       ),
     );
@@ -318,24 +329,17 @@ class _QotdPostCardState extends ConsumerState<QotdPostCard> {
   Widget _catalogMetaLines(
     ColorScheme scheme,
     TestQuestion q,
-    String subTopic,
+    bool expanded,
   ) {
     final cap = AppTextStyles.caption().copyWith(
       color: scheme.onSurfaceVariant,
     );
-    final trap = (q.trapType ?? '').trim().isEmpty ? '—' : q.trapType!.trim();
-    final st = subTopic.trim().isEmpty ? '—' : subTopic.trim();
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text('Subject · ${q.subject}', style: cap),
-        SizedBox(height: AppSpacing.xs),
-        Text('Topic · ${q.topic}', style: cap),
-        SizedBox(height: AppSpacing.xs),
-        Text('Subtopic · $st', style: cap),
-        SizedBox(height: AppSpacing.xs),
-        Text('Trap · $trap', style: cap),
-      ],
+    return Text(
+      'Subject · ${q.subject}   Topic · ${q.topic}',
+      style: cap,
+      maxLines: expanded ? 2 : 1,
+      overflow: TextOverflow.ellipsis,
+      softWrap: true,
     );
   }
 
@@ -343,7 +347,6 @@ class _QotdPostCardState extends ConsumerState<QotdPostCard> {
     BuildContext context,
     ColorScheme scheme,
     TestQuestion q,
-    String subTopic,
   ) {
     final me = FirebaseAuth.instance.currentUser;
     final authorLabel = displayNameForViewer(
@@ -411,40 +414,14 @@ class _QotdPostCardState extends ConsumerState<QotdPostCard> {
               const SizedBox(height: AppSpacing.xs),
               _QotdMetaRow(
                 scheme: scheme,
-                icon: Icons.schedule_rounded,
-                text: _qotdPostedFriendlyAgo(widget.post.createdAt),
+                icon: widget.post.isExpired
+                    ? Icons.timer_off_outlined
+                    : Icons.schedule_rounded,
+                text: _qotdCompactMeta(widget.post),
               ),
-              const SizedBox(height: AppSpacing.xs),
-              if (widget.post.isExpired)
-                _QotdMetaRow(
-                  scheme: scheme,
-                  icon: Icons.timer_off_outlined,
-                  text: 'This QOTD has ended (posts last 24 hours).',
-                )
-              else if (widget.post.liveUntil != null)
-                _QotdMetaRow(
-                  scheme: scheme,
-                  icon: Icons.hourglass_top_rounded,
-                  text:
-                      'Live till ${_qotdLiveUntilFormatted(widget.post.liveUntil!)}',
-                ),
             ],
-            const SizedBox(height: AppSpacing.xs),
-            Row(
-              children: [
-                Text(
-                  'Question',
-                  style: AppTextStyles.caption().copyWith(
-                    color: scheme.onSurfaceVariant,
-                  ),
-                ),
-                const Spacer(),
-              ],
-            ),
-            if (!_tileExpanded) ...[
-              const SizedBox(height: AppSpacing.sm),
-              _catalogMetaLines(scheme, q, subTopic),
-            ],
+            const SizedBox(height: AppSpacing.sm),
+            _catalogMetaLines(scheme, q, _tileExpanded),
             const SizedBox(height: AppSpacing.sm),
             Text(
               'How did it feel?',
@@ -463,6 +440,13 @@ class _QotdPostCardState extends ConsumerState<QotdPostCard> {
                 ),
               ),
             ],
+            const SizedBox(height: AppSpacing.sm),
+            Text(
+              'Question',
+              style: AppTextStyles.caption().copyWith(
+                color: scheme.onSurfaceVariant,
+              ),
+            ),
           ],
         ),
         subtitle: _tileExpanded
