@@ -1655,7 +1655,7 @@ class _OnboardingExamConfidenceStrip extends StatelessWidget {
           const SizedBox(width: AppSpacing.sm),
           Expanded(
             child: _OnboardingTierToggle(
-              label: 'Intelligent\nguess',
+              label: 'Educated\nguess',
               maxLines: 2,
               selected: confidence == AnswerConfidence.somewhatSure,
               accent: AppColors.warning,

@@ -515,7 +515,7 @@ class WebPlayerExamConfidenceStrip extends StatelessWidget {
             const SizedBox(width: AppSpacing.sm),
             Expanded(
               child: _WebPlayerExamTierToggle(
-                label: 'Intelligent\nguess',
+                label: 'Educated\nguess',
                 maxLines: 2,
                 selected: confidence == AnswerConfidence.somewhatSure,
                 accent: AppColors.warning,
@@ -903,31 +903,34 @@ Future<void> showWebPlayerQuestionGridSheet({
                 ],
                 const SizedBox(height: AppSpacing.lg),
                 if (showSubmitPanel && onSubmitTest != null)
-                  Row(
-                    children: [
-                      Expanded(
-                        child: OutlinedButton(
-                          onPressed: () => Navigator.of(ctx).pop(),
-                          style: WebPlayerUiTokens.outlineFullWidth(ctx),
-                          child: const Text('Go back'),
-                        ),
-                      ),
-                      const SizedBox(width: AppSpacing.sm),
-                      Expanded(
-                        child: ElevatedButton(
-                          onPressed: () async {
-                            Navigator.of(ctx).pop();
-                            await onSubmitTest();
-                          },
-                          style: WebPlayerUiTokens.destructiveCta(
-                            ctx,
-                            isDark: isDark,
-                            scheme: scheme,
+                  SafeArea(
+                    top: false,
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: OutlinedButton(
+                            onPressed: () => Navigator.of(ctx).pop(),
+                            style: WebPlayerUiTokens.outlineFullWidth(ctx),
+                            child: const Text('Go back'),
                           ),
-                          child: Text(isExamMode ? 'Submit Test' : 'Submit'),
                         ),
-                      ),
-                    ],
+                        const SizedBox(width: AppSpacing.sm),
+                        Expanded(
+                          child: ElevatedButton(
+                            onPressed: () async {
+                              Navigator.of(ctx).pop();
+                              await onSubmitTest();
+                            },
+                            style: WebPlayerUiTokens.destructiveCta(
+                              ctx,
+                              isDark: isDark,
+                              scheme: scheme,
+                            ),
+                            child: Text(isExamMode ? 'Submit Test' : 'Submit'),
+                          ),
+                        ),
+                      ],
+                    ),
                   )
                 else
                   SizedBox(

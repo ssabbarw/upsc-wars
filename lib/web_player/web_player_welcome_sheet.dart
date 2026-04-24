@@ -43,7 +43,8 @@ Future<WebPlayerWelcomeOutcome?> showWebPlayerWelcomeSheet({
   return showModalBottomSheet<WebPlayerWelcomeOutcome>(
     context: context,
     isScrollControlled: true,
-    isDismissible: true,
+    isDismissible: false,
+    enableDrag: false,
     backgroundColor: Colors.transparent,
     builder: (ctx) => _WebPlayerWelcomeSheetBody(
       kind: kind,
@@ -216,7 +217,7 @@ class _WebPlayerWelcomeSheetBodyState extends State<_WebPlayerWelcomeSheetBody> 
                         minWidth: 44,
                         minHeight: 40,
                       ),
-                      onPressed: () => Navigator.of(context).pop(),
+                      onPressed: null,
                       icon: Icon(
                         Icons.close_rounded,
                         color: scheme.onSurfaceVariant,

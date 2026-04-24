@@ -19,7 +19,6 @@ import 'package:upsc_wars/core/theme/app_spacing.dart';
 import 'package:upsc_wars/core/theme/app_text_styles.dart';
 import 'package:upsc_wars/core/theme/app_theme.dart';
 import 'package:upsc_wars/features/history/widgets/explanation_card.dart';
-import 'package:upsc_wars/web_player/web_player_danger_zone_review_screen.dart';
 import 'package:upsc_wars/web_player/web_player_results_screen.dart';
 import 'package:upsc_wars/web_player/web_player_ui_tokens.dart';
 import 'package:upsc_wars/web_player/web_shell_landing_page.dart';
@@ -97,6 +96,7 @@ class _WebPlayerShellState extends State<WebPlayerShell>
   String _sharedBy = 'A friend';
   String _participantName = '';
   List<TestQuestion> _questions = [];
+  List<TestQuestion> _reviewQuestions = [];
   bool _loading = true;
   bool _landing = false;
   String? _error;
@@ -280,6 +280,19 @@ class _WebPlayerShellState extends State<WebPlayerShell>
     await p.remove(_prefsKey());
   }
 
+  String _capitalizeDisplayName(String raw) {
+    final s = raw.trim();
+    if (s.isEmpty) return '';
+    final parts = s.split(RegExp(r'\s+')).where((e) => e.isNotEmpty);
+    return parts
+        .map((w) {
+          final lower = w.toLowerCase();
+          if (lower.length == 1) return lower.toUpperCase();
+          return '${lower[0].toUpperCase()}${lower.substring(1)}';
+        })
+        .join(' ');
+  }
+
   SessionResult _buildSessionResult({required DateTime completedAt}) {
     final started = _runStartedAt ?? completedAt;
     final snaps = <String, WebPlayerAttemptSnapshot>{};
@@ -314,39 +327,9 @@ class _WebPlayerShellState extends State<WebPlayerShell>
   ) {
     return WebPlayerResultsScreen(
       result: result,
-      onReviewDangerZone: result.dangerZoneWrongCount > 0
-          ? () {
-              final list = _buildDangerZoneQuestionList();
-              if (list.isEmpty || !routeContext.mounted) return;
-              Navigator.of(routeContext).push<void>(
-                MaterialPageRoute<void>(
-                  builder: (_) =>
-                      WebPlayerDangerZoneReviewScreen(questions: list),
-                ),
-              );
-            }
-          : null,
+      shareId: _shareId,
+      participantName: _participantName,
     );
-  }
-
-  List<TestQuestion> _buildDangerZoneQuestionList() {
-    final out = <TestQuestion>[];
-    for (final q in _questions) {
-      final a = _attempts[q.uuid];
-      if (a == null) continue;
-      final sel = a.selectedOption;
-      if (sel == null) continue;
-      if (sel == q.correctOption.toLowerCase()) continue;
-      if (!AnswerConfidence.isDangerouslyConfident(a.confidence)) continue;
-      out.add(
-        q.copyWith(
-          selectedOption: sel,
-          status: 'wrong',
-          confidence: a.confidence,
-        ),
-      );
-    }
-    return out;
   }
 
   void _openResultsFromReview() {
@@ -377,6 +360,7 @@ class _WebPlayerShellState extends State<WebPlayerShell>
         _sessionCompleted = false;
         _completedAtIso = null;
         _reviewMode = false;
+        _reviewQuestions = const [];
         _attempts.clear();
         _runStartedAt = null;
         _index = 0;
@@ -388,7 +372,32 @@ class _WebPlayerShellState extends State<WebPlayerShell>
       _applySaved(snap, forReview: true);
       setState(() => _running = true);
       _startQuestionTimer();
+    } else if (action == WebPlayerResultsExit.dangerZoneReview) {
+      final snap = await _readSaved();
+      if (!mounted || snap == null) return;
+      _applySaved(snap, forReview: true);
+      final filtered = _buildDangerZoneReviewList();
+      setState(() {
+        _reviewQuestions = filtered;
+        _index = 0;
+        _running = true;
+      });
+      _startQuestionTimer();
     }
+  }
+
+  List<TestQuestion> _buildDangerZoneReviewList() {
+    final out = <TestQuestion>[];
+    for (final q in _questions) {
+      final a = _attempts[q.uuid];
+      if (a == null) continue;
+      final sel = a.selectedOption;
+      if (sel == null) continue;
+      if (sel == q.correctOption.toLowerCase()) continue;
+      if (!AnswerConfidence.isDangerouslyConfident(a.confidence)) continue;
+      out.add(q);
+    }
+    return out;
   }
 
   Future<void> _maybeOfferResume() async {
@@ -467,7 +476,8 @@ class _WebPlayerShellState extends State<WebPlayerShell>
         : null;
     _reviewMode = forReview;
     final rawIndex = (saved['currentIndex'] as num?)?.toInt() ?? 0;
-    _index = (forReview ? 0 : rawIndex).clamp(0, _questions.length - 1);
+    _reviewQuestions = const [];
+    _index = (forReview ? 0 : rawIndex).clamp(0, _activeQuestions.length - 1);
     _attempts.clear();
     final am = saved['attempts'];
     if (am is Map) {
@@ -587,6 +597,13 @@ class _WebPlayerShellState extends State<WebPlayerShell>
       await _startSingleQuestionRun();
       return;
     }
+    // Show question UI immediately; gate progress via non-dismissible sheets.
+    if (!_running && mounted) {
+      setState(() {
+        _running = true;
+        _index = 0;
+      });
+    }
     final ready = await _ensureParticipantIntro();
     if (!mounted || !ready) return;
     final outcome = await showWebPlayerWelcomeSheet(
@@ -651,27 +668,33 @@ class _WebPlayerShellState extends State<WebPlayerShell>
         final scheme = Theme.of(ctx).colorScheme;
         final isDark = Theme.of(ctx).brightness == Brightness.dark;
         return StatefulBuilder(
-          builder: (ctx, setModalState) => Padding(
-            padding: EdgeInsets.only(
-              left: AppSpacing.lg,
-              right: AppSpacing.lg,
-              bottom: MediaQuery.paddingOf(ctx).bottom + AppSpacing.lg,
-            ),
-            child: Container(
-              padding: const EdgeInsets.all(AppSpacing.lg),
-              decoration: BoxDecoration(
-                color: isDark ? scheme.surfaceContainerHigh : scheme.surface,
-                borderRadius: const BorderRadius.vertical(
-                  top: Radius.circular(20),
-                ),
-                border: Border.all(
-                  color: isDark ? AppColors.borderDark : AppColors.borderLight,
-                ),
+          builder: (ctx, setModalState) => AnimatedPadding(
+            duration: const Duration(milliseconds: 180),
+            curve: Curves.easeOut,
+            padding: EdgeInsets.only(bottom: MediaQuery.viewInsetsOf(ctx).bottom),
+            child: Padding(
+              padding: EdgeInsets.only(
+                left: AppSpacing.lg,
+                right: AppSpacing.lg,
+                bottom: MediaQuery.paddingOf(ctx).bottom + AppSpacing.lg,
               ),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
+              child: Container(
+                padding: const EdgeInsets.all(AppSpacing.lg),
+                decoration: BoxDecoration(
+                  color: isDark ? scheme.surfaceContainerHigh : scheme.surface,
+                  borderRadius: const BorderRadius.vertical(
+                    top: Radius.circular(20),
+                  ),
+                  border: Border.all(
+                    color: isDark ? AppColors.borderDark : AppColors.borderLight,
+                  ),
+                ),
+                child: SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
                   Text(
                     'Before you begin',
                     style: AppTextStyles.h3().copyWith(color: scheme.onSurface),
@@ -684,76 +707,111 @@ class _WebPlayerShellState extends State<WebPlayerShell>
                     ),
                   ),
                   const SizedBox(height: AppSpacing.md),
-                  if (leaderboard.isNotEmpty) ...[
-                    Container(
-                      padding: const EdgeInsets.all(AppSpacing.md),
-                      decoration: BoxDecoration(
-                        color: scheme.primaryContainer.withValues(
-                          alpha: isDark ? 0.3 : 0.55,
-                        ),
-                        borderRadius: BorderRadius.circular(AppRadius.md),
-                        border: Border.all(
-                          color: scheme.primary.withValues(alpha: 0.28),
-                        ),
+                  TextField(
+                    controller: controller,
+                    textInputAction: TextInputAction.done,
+                    autofocus: controller.text.trim().isEmpty,
+                    decoration: InputDecoration(
+                      labelText: 'Your name',
+                      hintText: 'Enter your display name',
+                      errorText: validationError.isEmpty
+                          ? null
+                          : validationError,
+                    ),
+                    onSubmitted: (_) {
+                      final name = controller.text.trim();
+                      if (name.isEmpty) {
+                        setModalState(() {
+                          validationError =
+                              "If you don't want to give your name, enter any random name";
+                        });
+                        return;
+                      }
+                      accepted = true;
+                      Navigator.pop(ctx);
+                    },
+                  ),
+                  const SizedBox(height: AppSpacing.md),
+                  Container(
+                    padding: const EdgeInsets.all(AppSpacing.md),
+                    decoration: BoxDecoration(
+                      color: AppColors.correct,
+                      borderRadius: BorderRadius.circular(AppRadius.md),
+                      border: Border.all(
+                        color: Colors.white.withValues(alpha: 0.14),
                       ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            children: [
-                              Icon(
-                                Icons.emoji_events_rounded,
-                                size: 18,
-                                color: scheme.primary,
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            Icon(
+                              Icons.emoji_events_rounded,
+                              size: 18,
+                              color: Colors.white.withValues(alpha: 0.9),
+                            ),
+                            const SizedBox(width: AppSpacing.xs),
+                            Text(
+                              'Leaderboard · Top 5',
+                              style: AppTextStyles.label().copyWith(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w800,
                               ),
-                              const SizedBox(width: AppSpacing.xs),
-                              Text(
-                                'Leaderboard · Top 5',
-                                style: AppTextStyles.label().copyWith(
-                                  color: scheme.onSurface,
-                                ),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(height: AppSpacing.sm),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: AppSpacing.sm),
+                        if (leaderboard.isEmpty)
+                          Text(
+                            "It's empty — be the first to finish this test.",
+                            style: AppTextStyles.bodySm().copyWith(
+                              color: Colors.white.withValues(alpha: 0.82),
+                            ),
+                          )
+                        else
                           for (var i = 0; i < leaderboard.length && i < 5; i++)
                             Padding(
-                              padding: const EdgeInsets.only(
-                                bottom: AppSpacing.xs,
-                              ),
+                              padding: const EdgeInsets.only(bottom: 6),
                               child: Row(
                                 children: [
-                                  Text(
-                                    '#${i + 1}',
-                                    style: AppTextStyles.caption().copyWith(
-                                      color: scheme.onSurfaceVariant,
-                                      fontWeight: FontWeight.w700,
-                                    ),
-                                  ),
-                                  const SizedBox(width: AppSpacing.sm),
-                                  Expanded(
+                                  SizedBox(
+                                    width: 30,
                                     child: Text(
-                                      leaderboard[i].name,
-                                      style: AppTextStyles.bodySm().copyWith(
-                                        color: scheme.onSurface,
+                                      '#${i + 1}',
+                                      style: AppTextStyles.caption().copyWith(
+                                        color: Colors.white.withValues(alpha: 0.72),
+                                        fontWeight: FontWeight.w800,
                                       ),
                                     ),
                                   ),
+                                  const SizedBox(width: AppSpacing.xs),
+                                  Expanded(
+                                    child: Text(
+                                      leaderboard[i].name,
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
+                                      style: AppTextStyles.bodySm().copyWith(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w700,
+                                      ),
+                                    ),
+                                  ),
+                                  const SizedBox(width: AppSpacing.sm),
                                   Text(
                                     '${leaderboard[i].score.toStringAsFixed(1)}%',
                                     style: AppTextStyles.bodySm().copyWith(
-                                      color: scheme.primary,
-                                      fontWeight: FontWeight.w700,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w800,
                                     ),
                                   ),
                                 ],
                               ),
                             ),
-                        ],
-                      ),
+                      ],
                     ),
-                    const SizedBox(height: AppSpacing.md),
-                  ],
+                  ),
+                  const SizedBox(height: AppSpacing.md),
                   Container(
                     padding: const EdgeInsets.all(AppSpacing.md),
                     decoration: BoxDecoration(
@@ -794,30 +852,6 @@ class _WebPlayerShellState extends State<WebPlayerShell>
                       ],
                     ),
                   ),
-                  const SizedBox(height: AppSpacing.md),
-                  TextField(
-                    controller: controller,
-                    textInputAction: TextInputAction.done,
-                    autofocus: controller.text.trim().isEmpty,
-                    decoration: InputDecoration(
-                      labelText: 'Your name',
-                      hintText: 'Enter your display name',
-                      errorText: validationError.isEmpty
-                          ? null
-                          : validationError,
-                    ),
-                    onSubmitted: (_) {
-                      final name = controller.text.trim();
-                      if (name.isEmpty) {
-                        setModalState(() {
-                          validationError = 'Please enter your name';
-                        });
-                        return;
-                      }
-                      accepted = true;
-                      Navigator.pop(ctx);
-                    },
-                  ),
                   const SizedBox(height: AppSpacing.lg),
                   ElevatedButton(
                     style: WebPlayerUiTokens.primaryCta(ctx),
@@ -825,7 +859,8 @@ class _WebPlayerShellState extends State<WebPlayerShell>
                       final name = controller.text.trim();
                       if (name.isEmpty) {
                         setModalState(() {
-                          validationError = 'Please enter your name';
+                          validationError =
+                              "If you don't want to give your name, enter any random name";
                         });
                         return;
                       }
@@ -834,7 +869,9 @@ class _WebPlayerShellState extends State<WebPlayerShell>
                     },
                     child: const Text('Continue'),
                   ),
-                ],
+                    ],
+                  ),
+                ),
               ),
             ),
           ),
@@ -847,8 +884,9 @@ class _WebPlayerShellState extends State<WebPlayerShell>
     }
     final name = controller.text.trim();
     controller.dispose();
-    _participantName = name;
-    await _writeParticipantName(name);
+    final formatted = _capitalizeDisplayName(name);
+    _participantName = formatted;
+    await _writeParticipantName(formatted);
     return true;
   }
 
@@ -908,7 +946,7 @@ class _WebPlayerShellState extends State<WebPlayerShell>
       setState(() {});
       return;
     }
-    final att = _attempts[_questions[_index].uuid];
+    final att = _attempts[_q.uuid];
     if (att?.revealed == true) {
       _remainingSecs = 0;
       setState(() {});
@@ -917,7 +955,7 @@ class _WebPlayerShellState extends State<WebPlayerShell>
     _remainingSecs = _perQuestionSecs;
     _learningQTimer = Timer.periodic(const Duration(seconds: 1), (_) {
       if (!mounted) return;
-      final a = _attempts[_questions[_index].uuid];
+      final a = _attempts[_q.uuid];
       if (a?.revealed == true) {
         _stopLearningTimer();
         return;
@@ -996,7 +1034,7 @@ class _WebPlayerShellState extends State<WebPlayerShell>
   }
 
   void _onLearningTimeUp() {
-    final q = _questions[_index];
+    final q = _q;
     _attempts[q.uuid] = _Attempt(
       selectedOption: null,
       confidence: null,
@@ -1009,7 +1047,10 @@ class _WebPlayerShellState extends State<WebPlayerShell>
     AppToast.showText(context, 'Time is up for this question.');
   }
 
-  TestQuestion get _q => _questions[_index];
+  List<TestQuestion> get _activeQuestions =>
+      _reviewMode && _reviewQuestions.isNotEmpty ? _reviewQuestions : _questions;
+
+  TestQuestion get _q => _activeQuestions[_index];
 
   bool _optionTapEnabled(_Attempt att) {
     if (_reviewMode) return false;
@@ -1030,6 +1071,84 @@ class _WebPlayerShellState extends State<WebPlayerShell>
     unawaited(_writeSaved());
   }
 
+  Future<String?> _pickLearningConfidence() async {
+    if (!mounted) return null;
+    return showModalBottomSheet<String>(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
+      isDismissible: false,
+      enableDrag: false,
+      builder: (ctx) {
+        final scheme = Theme.of(ctx).colorScheme;
+        final isDark = Theme.of(ctx).brightness == Brightness.dark;
+        return Padding(
+          padding: EdgeInsets.only(
+            left: AppSpacing.lg,
+            right: AppSpacing.lg,
+            bottom: MediaQuery.paddingOf(ctx).bottom + AppSpacing.lg,
+          ),
+          child: Container(
+            padding: const EdgeInsets.all(AppSpacing.lg),
+            decoration: BoxDecoration(
+              color: isDark ? scheme.surfaceContainerHigh : scheme.surface,
+              borderRadius: const BorderRadius.vertical(
+                top: Radius.circular(20),
+              ),
+              border: Border.all(
+                color: isDark ? AppColors.borderDark : AppColors.borderLight,
+              ),
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Text(
+                  'How sure are you?',
+                  style: AppTextStyles.h3().copyWith(color: scheme.onSurface),
+                ),
+                const SizedBox(height: AppSpacing.xs),
+                Text(
+                  'Pick before you see the answer — this builds your Danger Zone map.',
+                  style: AppTextStyles.caption().copyWith(
+                    color: scheme.onSurfaceVariant,
+                  ),
+                ),
+                const SizedBox(height: AppSpacing.lg),
+                FilledButton(
+                  onPressed: () => Navigator.pop(ctx, AnswerConfidence.verySure),
+                  child: Text(
+                    AnswerConfidence.examShortLabel(AnswerConfidence.verySure),
+                  ),
+                ),
+                const SizedBox(height: AppSpacing.sm),
+                OutlinedButton(
+                  onPressed: () => Navigator.pop(
+                    ctx,
+                    AnswerConfidence.somewhatSure,
+                  ),
+                  child: Text(
+                    AnswerConfidence.examShortLabel(
+                      AnswerConfidence.somewhatSure,
+                    ),
+                  ),
+                ),
+                const SizedBox(height: AppSpacing.sm),
+                TextButton(
+                  onPressed: () =>
+                      Navigator.pop(ctx, AnswerConfidence.guessing),
+                  child: Text(
+                    AnswerConfidence.examShortLabel(AnswerConfidence.guessing),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+
   Future<void> _pickOption(String letter) async {
     if (_sessionMode == 'exam') {
       _selectExamOption(letter);
@@ -1038,10 +1157,12 @@ class _WebPlayerShellState extends State<WebPlayerShell>
     final att = _attempts.putIfAbsent(_q.uuid, () => _Attempt());
     if (att.revealed) return;
     _stopLearningTimer();
+    setState(() => att.selectedOption = letter);
+    final conf = await _pickLearningConfidence();
+    if (!mounted || conf == null) return;
     setState(() {
-      att.selectedOption = letter;
+      att.confidence = conf;
       att.revealed = true;
-      att.confidence = null;
     });
     unawaited(_writeSaved());
   }
@@ -1070,7 +1191,7 @@ class _WebPlayerShellState extends State<WebPlayerShell>
   }
 
   Future<void> _next() async {
-    if (_index >= _questions.length - 1) {
+    if (_index >= _activeQuestions.length - 1) {
       if (_reviewMode) {
         await _writeSaved();
         if (!mounted) return;
@@ -1102,22 +1223,24 @@ class _WebPlayerShellState extends State<WebPlayerShell>
 
   int _furthestRevealedIndex() {
     var m = -1;
-    for (var i = 0; i < _questions.length; i++) {
-      if (_attempts[_questions[i].uuid]?.revealed == true) m = i;
+    final list = _activeQuestions;
+    for (var i = 0; i < list.length; i++) {
+      if (_attempts[list[i].uuid]?.revealed == true) m = i;
     }
     return m;
   }
 
   int _furthestExamAnsweredIndex() {
     var m = -1;
-    for (var i = 0; i < _questions.length; i++) {
-      if (_attempts[_questions[i].uuid]?.examAnswered == true) m = i;
+    final list = _activeQuestions;
+    for (var i = 0; i < list.length; i++) {
+      if (_attempts[list[i].uuid]?.examAnswered == true) m = i;
     }
     return m;
   }
 
   bool _canGoNext(_Attempt att) {
-    final last = _index >= _questions.length - 1;
+    final last = _index >= _activeQuestions.length - 1;
     if (_reviewMode) {
       return true;
     }
@@ -1149,7 +1272,7 @@ class _WebPlayerShellState extends State<WebPlayerShell>
       );
     }
 
-    if (!_running && _questions.isNotEmpty) {
+    if (!_running && _activeQuestions.isNotEmpty) {
       final scheme = Theme.of(context).colorScheme;
       final isDark = context.isDarkMode;
       return Scaffold(
@@ -1252,7 +1375,7 @@ class _WebPlayerShellState extends State<WebPlayerShell>
           children: [
             WebPlayerSessionChrome(
               currentIndex: _index,
-              totalQuestions: _questions.length,
+              totalQuestions: _activeQuestions.length,
               contextLine: contextLine,
               uiLanguage: _uiLang,
               onLanguageChanged: (v) => setState(() => _uiLang = v),
@@ -1310,27 +1433,27 @@ class _WebPlayerShellState extends State<WebPlayerShell>
                         confidenceStored: att.confidence,
                         showConfidenceHeader: false,
                         confidenceFooter:
-                            !_reviewMode &&
-                                att.selectedOption != null &&
-                                att.selectedOption == L &&
-                                ((_sessionMode == 'exam' && att.examAnswered) ||
-                                    (_sessionMode == 'learning' &&
-                                        att.revealed))
-                            ? WebPlayerExamConfidenceStrip(
-                                confidence: att.confidence,
-                                enabled:
-                                    _sessionMode == 'exam' ||
-                                    att.confidence == null ||
-                                    !att.revealed,
-                                onTierPressed: (tier) {
-                                  final next = att.confidence == tier
-                                      ? null
-                                      : tier;
-                                  setState(() => att.confidence = next);
-                                  unawaited(_writeSaved());
-                                },
-                              )
-                            : null,
+                            att.selectedOption != null &&
+                                    att.selectedOption == L &&
+                                    ((_sessionMode == 'exam' &&
+                                            (att.examAnswered || _reviewMode)) ||
+                                        (_sessionMode == 'learning' &&
+                                            (att.revealed || _reviewMode)))
+                                ? WebPlayerExamConfidenceStrip(
+                                    confidence: att.confidence,
+                                    enabled: !_reviewMode &&
+                                        (_sessionMode == 'exam' ||
+                                            att.confidence == null ||
+                                            !att.revealed),
+                                    onTierPressed: (tier) {
+                                      if (_reviewMode) return;
+                                      final next =
+                                          att.confidence == tier ? null : tier;
+                                      setState(() => att.confidence = next);
+                                      unawaited(_writeSaved());
+                                    },
+                                  )
+                                : null,
                       ),
                       const SizedBox(height: AppSpacing.sm),
                     ],
@@ -1407,7 +1530,9 @@ class _WebPlayerShellState extends State<WebPlayerShell>
                   label: Text(
                     _sessionMode == 'exam' && !_reviewMode
                         ? 'Next'
-                        : (_index >= _questions.length - 1 ? 'Finish' : 'Next'),
+                          : (_index >= _activeQuestions.length - 1
+                              ? 'Finish'
+                              : 'Next'),
                   ),
                 ),
               ),
@@ -1423,7 +1548,7 @@ class _WebPlayerShellState extends State<WebPlayerShell>
     unawaited(
       showWebPlayerQuestionGridSheet(
         context: context,
-        questions: _questions,
+        questions: _activeQuestions,
         attemptFor: (uuid) {
           final a = _attempts[uuid];
           if (a == null) {

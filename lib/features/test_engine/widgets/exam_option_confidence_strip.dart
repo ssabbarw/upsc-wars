@@ -125,7 +125,7 @@ class ExamOptionConfidenceStrip extends ConsumerWidget {
                 const SizedBox(width: AppSpacing.sm),
                 Expanded(
                   child: _TierToggle(
-                    label: 'Intelligent\nguess',
+                    label: 'Educated\nguess',
                     maxLines: 2,
                     selected:
                         question.confidence == AnswerConfidence.somewhatSure,
