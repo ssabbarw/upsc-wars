@@ -169,12 +169,7 @@ class _RootMaterialApp extends HookConsumerWidget {
           final s = await BattleMessagingService.notificationAuthorizationStatus();
           upscWarsTrace('push_auto_prompt status=$s');
           if (s == AuthorizationStatus.notDetermined) {
-            await FirebaseMessaging.instance.requestPermission(
-              alert: true,
-              badge: true,
-              sound: true,
-            );
-            await FcmTokenSyncService.syncForCurrentUser();
+            await BattleMessagingService.requestPushAuthorizationAndSync();
           }
         } catch (e, st) {
           upscWarsTrace('push_auto_prompt error', error: e, stackTrace: st);

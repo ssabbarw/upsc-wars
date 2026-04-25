@@ -25,6 +25,10 @@ class BattleMessagingService {
 
   static GoRouter? _router;
 
+  /// iOS throws `permissionRequestInProgress` if `requestPermission()` is called
+  /// concurrently. Keep a single in-flight request and share it across callers.
+  static Future<AuthorizationStatus?>? _pushPermissionRequestInFlight;
+
   static void setPendingOpenedNotification(RemoteMessage message) {
     _pendingOpenedNotification = message;
   }
@@ -232,25 +236,38 @@ class BattleMessagingService {
   /// System notification permission + token sync (call after user-facing prompt).
   static Future<AuthorizationStatus?> requestPushAuthorizationAndSync() async {
     if (kIsWeb) return null;
-    final settings = await FirebaseMessaging.instance.requestPermission(
-      alert: true,
-      badge: true,
-      sound: true,
-    );
-    // #region agent log
-    unawaited(
-      CursorDebugLog.write(
-        hypothesisId: 'A',
-        location: 'battle_messaging_service.dart:requestPushAuthorizationAndSync',
-        message: 'requestPermission result',
-        data: {
-          'authStatus': settings.authorizationStatus.toString(),
-        },
-      ),
-    );
-    // #endregion
-    await FcmTokenSyncService.syncForCurrentUser();
-    return settings.authorizationStatus;
+    final inFlight = _pushPermissionRequestInFlight;
+    if (inFlight != null) return inFlight;
+
+    final future = () async {
+      try {
+        final settings = await FirebaseMessaging.instance.requestPermission(
+          alert: true,
+          badge: true,
+          sound: true,
+        );
+        // #region agent log
+        unawaited(
+          CursorDebugLog.write(
+            hypothesisId: 'A',
+            location:
+                'battle_messaging_service.dart:requestPushAuthorizationAndSync',
+            message: 'requestPermission result',
+            data: {
+              'authStatus': settings.authorizationStatus.toString(),
+            },
+          ),
+        );
+        // #endregion
+        await FcmTokenSyncService.syncForCurrentUser();
+        return settings.authorizationStatus;
+      } finally {
+        _pushPermissionRequestInFlight = null;
+      }
+    }();
+
+    _pushPermissionRequestInFlight = future;
+    return future;
   }
 
   /// Returns the device token for storing on `users/{email}` (server targets invites).

@@ -17,6 +17,7 @@ class AppLocalNotificationsService {
       FlutterLocalNotificationsPlugin();
 
   static bool _initialized = false;
+  static Future<void>? _initInFlight;
 
   /// Set from [BattleMessagingService] before [ensureInitialized] so taps route correctly.
   static void Function(String sessionId)? onBattleInviteLocalTap;
@@ -39,22 +40,32 @@ class AppLocalNotificationsService {
   static Future<void> ensureInitialized() async {
     if (_initialized) return;
     if (kIsWeb) return;
+    final inFlight = _initInFlight;
+    if (inFlight != null) return inFlight;
 
-    const darwinInit = DarwinInitializationSettings(
-      requestAlertPermission: false,
-      requestBadgePermission: false,
-      requestSoundPermission: false,
-    );
-    await _plugin.initialize(
-      settings: const InitializationSettings(
-        android: AndroidInitializationSettings('@drawable/ic_notification'),
-        iOS: darwinInit,
-        macOS: darwinInit,
-      ),
-      onDidReceiveNotificationResponse: _onNotificationResponse,
-    );
+    final future = () async {
+      try {
+        const darwinInit = DarwinInitializationSettings(
+          requestAlertPermission: false,
+          requestBadgePermission: false,
+          requestSoundPermission: false,
+        );
+        await _plugin.initialize(
+          settings: const InitializationSettings(
+            android: AndroidInitializationSettings('@drawable/ic_notification'),
+            iOS: darwinInit,
+            macOS: darwinInit,
+          ),
+          onDidReceiveNotificationResponse: _onNotificationResponse,
+        );
+        _initialized = true;
+      } finally {
+        _initInFlight = null;
+      }
+    }();
 
-    _initialized = true;
+    _initInFlight = future;
+    return future;
   }
 
   static void _onNotificationResponse(NotificationResponse response) {

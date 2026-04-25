@@ -202,7 +202,7 @@ class ProfileScreen extends HookConsumerWidget {
                                               ? 'Signing in...'
                                               : 'Continue with Google',
                                           textStyle: const TextStyle(
-                                            fontSize: 16,
+                                            fontSize: 20,
                                             fontWeight: FontWeight.w600,
                                           ),
                                         ),
