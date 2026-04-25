@@ -519,6 +519,18 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
   }
 
   @override
+  Future<void> discardSession(String sessionId) async {
+    await _userDb.transaction(() async {
+      await (_userDb.delete(_userDb.sessionQuestions)
+            ..where((t) => t.sessionId.equals(sessionId)))
+          .go();
+      await (_userDb.delete(_userDb.sessions)
+            ..where((t) => t.id.equals(sessionId)))
+          .go();
+    });
+  }
+
+  @override
   Future<bool> isBookmarked(String questionUuid) =>
       _userDb.bookmarksDao.isQuestionBookmarked(questionUuid);
 

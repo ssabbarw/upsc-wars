@@ -70,6 +70,11 @@ dev_dependencies:
   riverpod_generator: ^4.0.3
   drift_dev: ^2.31.0
 
+dependency_overrides:
+  # `sign_in_button` 4.1.0 expects FontAwesome icons to be `IconData`.
+  # `font_awesome_flutter` 11.x changed icon typing (FaIconData), which breaks compilation.
+  font_awesome_flutter: ^10.7.0
+
 flutter:
   uses-material-design: true
 
@@ -77,3 +82,13 @@ flutter:
     - assets/app_icon.png
     - assets/db/upsc_wars_questions.db
     - assets/data/
+
+  fonts:
+    - family: DM Sans
+      fonts:
+        - asset: assets/fonts/dm_sans/DMSans-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/dm_sans/DMSans-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/dm_sans/DMSans-Bold.ttf
+          weight: 700

@@ -156,10 +156,17 @@ class GoogleLoginBottomSheet extends StatelessWidget {
                 ignoring: isLoading,
                 child: Opacity(
                   opacity: isLoading ? 0.6 : 1,
-                  child: SignInButton(
-                    Buttons.google,
-                    onPressed: onGoogleTap,
-                    text: isLoading ? 'Signing in...' : 'Continue with Google',
+                  child: SizedBox(
+                    height: 48,
+                    child: SignInButton(
+                      Buttons.google,
+                      onPressed: onGoogleTap,
+                      text: isLoading ? 'Signing in...' : 'Continue with Google',
+                      textStyle: const TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
                   ),
                 ),
               ),

@@ -5,6 +5,7 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:workmanager/workmanager.dart';
 
@@ -20,6 +21,9 @@ import 'core/services/prelims_workmanager_callback.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  // Never fetch fonts over the network at runtime.
+  GoogleFonts.config.allowRuntimeFetching = false;
 
   FlutterError.onError = (FlutterErrorDetails details) {
     FlutterError.presentError(details);

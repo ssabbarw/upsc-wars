@@ -142,17 +142,26 @@ class TestEngineScreen extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final notifier = ref.read(testSessionProvider(sessionId).notifier);
+    final mode = ref.watch(
+      testSessionProvider(sessionId).select((a) => a.asData?.value.session?.mode),
+    );
 
     return PopScope(
       canPop: false,
       onPopInvokedWithResult: (didPop, result) async {
         if (didPop) return;
+        final isDiscard = mode == 'exam' || mode == 'learning';
         final confirmed = await showDialog<bool>(
           context: context,
           builder: (ctx) => AlertDialog(
-            title: Text('Leave test?', style: AppTextStyles.h3()),
+            title: Text(
+              isDiscard ? 'Go back?' : 'Leave test?',
+              style: AppTextStyles.h3(),
+            ),
             content: Text(
-              'Your progress will be saved and you can resume later.',
+              isDiscard
+                  ? 'Are you sure? Your progress will be lost.'
+                  : 'Your progress will be saved and you can resume later.',
               style: AppTextStyles.bodyMd(),
             ),
             actions: [
@@ -162,13 +171,17 @@ class TestEngineScreen extends HookConsumerWidget {
               ),
               TextButton(
                 onPressed: () => Navigator.pop(ctx, true),
-                child: const Text('Leave'),
+                child: Text(isDiscard ? 'Go back' : 'Leave'),
               ),
             ],
           ),
         );
         if (confirmed == true) {
-          await notifier.markAbandoned();
+          if (isDiscard) {
+            await notifier.discardSession();
+          } else {
+            await notifier.markAbandoned();
+          }
           if (context.mounted) {
             ScreenFlow.logAction(
               ref,
@@ -446,6 +459,7 @@ class _TestEngineLoaded extends HookConsumerWidget {
                 sessionId: sessionId,
                 uiLanguage: uiLanguage.value,
                 onLanguageChanged: (value) => uiLanguage.value = value,
+                onBack: () => Navigator.of(context).maybePop(),
               ),
               _ExamActionRow(
                 sessionId: sessionId,
@@ -758,11 +772,13 @@ class _TopBar extends HookConsumerWidget {
     required this.sessionId,
     required this.uiLanguage,
     required this.onLanguageChanged,
+    required this.onBack,
   });
 
   final String sessionId;
   final String uiLanguage;
   final ValueChanged<String> onLanguageChanged;
+  final VoidCallback onBack;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -813,6 +829,12 @@ class _TopBar extends HookConsumerWidget {
       ),
       child: Row(
         children: [
+          IconButton(
+            tooltip: 'Back',
+            onPressed: onBack,
+            icon: const Icon(Icons.arrow_back),
+          ),
+          const SizedBox(width: AppSpacing.xs),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

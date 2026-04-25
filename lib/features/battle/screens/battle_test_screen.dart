@@ -161,7 +161,7 @@ class _BattleTestSessionView extends HookConsumerWidget {
             (ctx) => AlertDialog(
               title: Text('Leave battle?', style: AppTextStyles.h3()),
               content: Text(
-                'Your progress will be saved and you can resume later.',
+                'Going back means you want to quit the battle, but your progress will be saved.',
                 style: AppTextStyles.bodyMd(),
               ),
               actions: [

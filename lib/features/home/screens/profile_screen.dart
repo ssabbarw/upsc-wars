@@ -153,8 +153,8 @@ class ProfileScreen extends HookConsumerWidget {
                                         if (!available) {
                                           return const SizedBox.shrink();
                                         }
-                                        final isDark = Theme.of(context)
-                                                .brightness ==
+                                        final isDark =
+                                            Theme.of(context).brightness ==
                                             Brightness.dark;
                                         return SizedBox(
                                           width: double.infinity,
@@ -162,18 +162,19 @@ class ProfileScreen extends HookConsumerWidget {
                                             onPressed: isBusy
                                                 ? null
                                                 : () => ref
-                                                    .read(
-                                                      authActionsProvider
-                                                          .notifier,
-                                                    )
-                                                    .signInWithApple(),
+                                                      .read(
+                                                        authActionsProvider
+                                                            .notifier,
+                                                      )
+                                                      .signInWithApple(),
                                             style: isDark
                                                 ? SignInWithAppleButtonStyle
-                                                    .white
+                                                      .white
                                                 : SignInWithAppleButtonStyle
-                                                    .black,
-                                            borderRadius:
-                                                BorderRadius.circular(10),
+                                                      .black,
+                                            borderRadius: BorderRadius.circular(
+                                              10,
+                                            ),
                                             height: 48,
                                             text: isBusy
                                                 ? 'Signing in...'
@@ -188,16 +189,23 @@ class ProfileScreen extends HookConsumerWidget {
                                     ignoring: isBusy,
                                     child: Opacity(
                                       opacity: isBusy ? 0.6 : 1,
-                                      child: SignInButton(
-                                        Buttons.google,
-                                        onPressed: () => ref
-                                            .read(
-                                              authActionsProvider.notifier,
-                                            )
-                                            .signInWithGoogle(),
-                                        text: isBusy
-                                            ? 'Signing in...'
-                                            : 'Continue with Google',
+                                      child: SizedBox(
+                                        height: 48,
+                                        child: SignInButton(
+                                          Buttons.google,
+                                          onPressed: () => ref
+                                              .read(
+                                                authActionsProvider.notifier,
+                                              )
+                                              .signInWithGoogle(),
+                                          text: isBusy
+                                              ? 'Signing in...'
+                                              : 'Continue with Google',
+                                          textStyle: const TextStyle(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                        ),
                                       ),
                                     ),
                                   ),

@@ -15,7 +15,7 @@ class DebugCorrectAnswerBanner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (kDebugMode) return const SizedBox.shrink();
+    if (!kDebugMode) return const SizedBox.shrink();
     final letter = question.correctOption.trim().toUpperCase();
     return Padding(
       padding: const EdgeInsets.only(bottom: AppSpacing.sm),

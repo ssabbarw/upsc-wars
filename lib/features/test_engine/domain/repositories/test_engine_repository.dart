@@ -51,6 +51,10 @@ abstract class TestEngineRepository {
 
   Future<void> markSessionAbandoned(String sessionId);
 
+  /// Permanently deletes an in-progress session and its attempts.
+  /// Used when the user explicitly chooses to discard progress.
+  Future<void> discardSession(String sessionId);
+
   Future<bool> isBookmarked(String questionUuid);
   Future<void> addBookmark(String questionUuid);
   Future<void> removeBookmark(String questionUuid);

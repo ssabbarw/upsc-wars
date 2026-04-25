@@ -473,6 +473,18 @@ class TestSessionNotifier extends _$TestSessionNotifier {
     }
   }
 
+  Future<void> discardSession() async {
+    final current = state.asData?.value;
+    final s = current?.session;
+    if (current == null || s == null) return;
+    try {
+      final repo = await ref.read(testEngineRepositoryProvider.future);
+      await repo.discardSession(s.id);
+    } catch (_) {
+      _showStorageSnack();
+    }
+  }
+
   void tickSecond() {
     final current = state.asData?.value;
     final s = current?.session;
