@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../core/constants/timed_exam_debug_constants.dart';
 import '../../core/domain/entities/session_config.dart';
 import '../../core/providers/catalog_providers.dart';
+import '../../core/providers/prefs_provider.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_radius.dart';
 import '../../core/theme/app_spacing.dart';
@@ -83,6 +85,8 @@ class TestConfigBottomSheet extends HookConsumerWidget {
     final learningSecs = useState(60);
     final isSubmitting = useState(false);
 
+    final prefsAsync = ref.watch(prefsServiceProvider);
+
     final maxQ = args.availableQuestionCount;
     final countChoices = useMemoized(() {
       if (maxQ <= 0) return <int>[];
@@ -157,24 +161,87 @@ class TestConfigBottomSheet extends HookConsumerWidget {
       }
     }
 
+    Widget confidenceReminder() {
+      return prefsAsync.when(
+        data: (prefs) {
+          if (prefs.confidenceTrackingEnabled) return const SizedBox.shrink();
+          return Material(
+            color: AppColors.transparent,
+            child: InkWell(
+              borderRadius: BorderRadius.circular(AppRadius.lg),
+              onTap: () {
+                final router = GoRouter.of(context);
+                Navigator.of(context).pop();
+                Future.microtask(() => router.pushNamed('settings'));
+              },
+              child: Container(
+                padding: const EdgeInsets.all(AppSpacing.md),
+                decoration: BoxDecoration(
+                  color: scheme.surfaceContainerLow,
+                  borderRadius: BorderRadius.circular(AppRadius.lg),
+                  border: Border.all(
+                    color: (isDark ? AppColors.borderDark : AppColors.borderLight)
+                        .withValues(alpha: 0.9),
+                    width: 0.5,
+                  ),
+                ),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Icon(
+                      Icons.psychology_alt_rounded,
+                      color: AppColors.warning,
+                      size: 22,
+                    ),
+                    const SizedBox(width: AppSpacing.sm),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Confidence rating is off',
+                            style: AppTextStyles.labelSm().copyWith(
+                              color: scheme.onSurface,
+                            ),
+                          ),
+                          const SizedBox(height: 2),
+                          Text(
+                            'Turn it on to track how sure you were before reveal '
+                            'and unlock Danger Zone insights.',
+                            style: AppTextStyles.bodySm().copyWith(
+                              color: scheme.onSurfaceVariant,
+                              height: 1.35,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(width: AppSpacing.sm),
+                    Icon(
+                      Icons.chevron_right_rounded,
+                      color: scheme.onSurfaceVariant,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          );
+        },
+        loading: () => const SizedBox.shrink(),
+        error: (_, stack) => const SizedBox.shrink(),
+      );
+    }
+
     return Align(
       alignment: Alignment.bottomCenter,
       child: Container(
-        decoration: BoxDecoration(
-          color: scheme.surface,
-          borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
-        ),
-        child: SingleChildScrollView(
-          physics: const BouncingScrollPhysics(),
-          padding: const EdgeInsets.fromLTRB(
-            AppSpacing.xxl,
-            AppSpacing.sm,
-            AppSpacing.xxl,
-            AppSpacing.xxl,
+          decoration: BoxDecoration(
+            color: scheme.surface,
+            borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
           ),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               SizedBox(
                 height: 40,
@@ -193,8 +260,8 @@ class TestConfigBottomSheet extends HookConsumerWidget {
                       ),
                     ),
                     Positioned(
-                      right: -AppSpacing.sm,
-                      top: 0,
+                      right: AppSpacing.sm,
+                      top: AppSpacing.xs,
                       child: IconButton(
                         visualDensity: VisualDensity.compact,
                         padding: EdgeInsets.zero,
@@ -207,19 +274,35 @@ class TestConfigBottomSheet extends HookConsumerWidget {
                           Icons.close_rounded,
                           color: scheme.onSurfaceVariant,
                         ),
-                        tooltip: MaterialLocalizations.of(context)
-                            .closeButtonTooltip,
+                        tooltip:
+                            MaterialLocalizations.of(context).closeButtonTooltip,
                       ),
                     ),
                   ],
                 ),
               ),
-              const SizedBox(height: AppSpacing.sm),
-              Text(
-                args.subjectDisplayName,
-                style: AppTextStyles.h2().copyWith(color: scheme.onSurface),
-              ),
-              const SizedBox(height: AppSpacing.sm),
+              Flexible(
+                fit: FlexFit.loose,
+                child: SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  padding: const EdgeInsets.fromLTRB(
+                    AppSpacing.xxl,
+                    AppSpacing.sm,
+                    AppSpacing.xxl,
+                    AppSpacing.xxl,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const SizedBox(height: AppSpacing.sm),
+                      Text(
+                        args.subjectDisplayName,
+                        style: AppTextStyles.h2().copyWith(color: scheme.onSurface),
+                      ),
+                      const SizedBox(height: AppSpacing.sm),
+                      confidenceReminder(),
+                      const SizedBox(height: AppSpacing.sm),
               if (args.topicDisplayName != null) ...[
                 Text(
                   args.topicDisplayName!,
@@ -463,9 +546,12 @@ class TestConfigBottomSheet extends HookConsumerWidget {
                         ),
                 ),
               ),
+                    ],
+                  ),
+                ),
+              ),
             ],
           ),
-        ),
       ),
     );
   }

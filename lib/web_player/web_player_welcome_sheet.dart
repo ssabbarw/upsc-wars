@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:upsc_wars/core/constants/app_constants.dart';
 import 'package:upsc_wars/core/constants/timed_exam_debug_constants.dart';
 import 'package:upsc_wars/core/deep_link/share_link_kind.dart';
 import 'package:upsc_wars/core/theme/app_colors.dart';
@@ -157,24 +156,12 @@ class _WebPlayerWelcomeSheetBodyState extends State<_WebPlayerWelcomeSheetBody> 
     return WebPlayerUiTokens.primaryCta(context);
   }
 
-  String _timingSummaryLine() {
-    if (_isLearning) {
-      return '${_learningSecs}s per question';
-    }
-    if (!_examTimed) {
-      return 'Untimed — no countdown for this exam';
-    }
-    return 'Timed — ${_formatExamDurationTotal()} '
-        '(${kDebugSecondsPerQuestion}s × ${widget.questionCount} questions)';
-  }
-
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
     final isDark = theme.brightness == Brightness.dark;
     final borderColor = isDark ? AppColors.borderDark : AppColors.borderLight;
-    final maxH = MediaQuery.sizeOf(context).height * 0.92;
     final sheetBg = theme.bottomSheetTheme.backgroundColor ??
         (isDark ? AppColors.surfacePrimaryDark : AppColors.surfacePrimaryLight);
 
@@ -184,9 +171,7 @@ class _WebPlayerWelcomeSheetBodyState extends State<_WebPlayerWelcomeSheetBody> 
         right: AppSpacing.sm,
         bottom: MediaQuery.paddingOf(context).bottom + AppSpacing.sm,
       ),
-      child: SizedBox(
-        height: maxH,
-        child: Container(
+      child: Container(
           decoration: BoxDecoration(
             color: sheetBg,
             borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
@@ -239,7 +224,8 @@ class _WebPlayerWelcomeSheetBodyState extends State<_WebPlayerWelcomeSheetBody> 
                   ],
                 ),
               ),
-              Expanded(
+              Flexible(
+                fit: FlexFit.loose,
                 child: SingleChildScrollView(
                   physics: const BouncingScrollPhysics(),
                   padding: const EdgeInsets.fromLTRB(
@@ -434,8 +420,6 @@ class _WebPlayerWelcomeSheetBodyState extends State<_WebPlayerWelcomeSheetBody> 
                         ],
                       ],
                       const SizedBox(height: AppSpacing.xxl),
-                      _buildSummary(scheme, isDark),
-                      const SizedBox(height: AppSpacing.lg),
                       if (widget.onFeedbackPressed != null)
                         Center(
                           child: TextButton.icon(
@@ -464,129 +448,6 @@ class _WebPlayerWelcomeSheetBodyState extends State<_WebPlayerWelcomeSheetBody> 
               ),
             ],
           ),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildSummary(ColorScheme scheme, bool isDark) {
-    final effectiveMode = widget.learningOnly ? 'learning' : _sessionMode;
-    final modeTitle = effectiveMode == 'exam' ? 'Exam' : 'Learning';
-
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        Text(
-          'Summary',
-          style: AppTextStyles.label().copyWith(
-            color: scheme.onSurface,
-          ),
-        ),
-        const SizedBox(height: AppSpacing.md),
-        DecoratedBox(
-          decoration: BoxDecoration(
-            color: scheme.surfaceContainerLow,
-            borderRadius: BorderRadius.circular(AppRadius.md),
-            border: Border.all(
-              color: isDark ? AppColors.borderDark : AppColors.borderLight,
-              width: 0.6,
-            ),
-          ),
-          child: Padding(
-            padding: const EdgeInsets.all(AppSpacing.md),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                _summaryRow(scheme, 'Subject', widget.subject),
-                if (_topicLine.isNotEmpty)
-                  _summaryRow(scheme, 'Topic', _topicLine),
-                _summaryRow(
-                  scheme,
-                  'Questions',
-                  '${formatIntCount(widget.questionCount)} (fixed)',
-                ),
-                _summaryRow(scheme, 'Mode', modeTitle),
-                _summaryRow(scheme, 'Timing', _timingSummaryLine()),
-                const SizedBox(height: AppSpacing.sm),
-                Text(
-                  'Configured in this sheet',
-                  style: AppTextStyles.caption().copyWith(
-                    color: scheme.onSurfaceVariant,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-                const SizedBox(height: AppSpacing.xs),
-                Text(
-                  _configuredBullets(),
-                  style: AppTextStyles.bodySm().copyWith(
-                    color: scheme.onSurfaceVariant,
-                    height: 1.4,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-        const SizedBox(height: AppSpacing.md),
-        Text(
-          'This test is brought to you by "${AppConstants.appDisplayName} mobile app".',
-          style: AppTextStyles.bodyMd().copyWith(
-            color: scheme.onSurfaceVariant,
-            height: 1.45,
-          ),
-        ),
-      ],
-    );
-  }
-
-  String _configuredBullets() {
-    final parts = <String>[];
-    if (widget.learningOnly) {
-      parts.add('• Learning flow from this share link');
-    } else if (_sessionMode == 'learning') {
-      parts.add('• Learning mode — explanations after each question');
-    } else {
-      parts.add('• Exam mode — score the full set, then review');
-    }
-    if (_isLearning) {
-      parts.add('• ${_learningSecs}s limit per question');
-    } else if (_examTimed) {
-      parts.add(
-        '• Timed exam — $kDebugSecondsPerQuestion s per question '
-        '(${_formatExamDurationTotal().toLowerCase()})',
-      );
-    } else {
-      parts.add('• No timer — take as long as you need');
-    }
-    parts.add(
-      '• ${formatIntCount(widget.questionCount)} questions from the shared set',
-    );
-    return parts.join('\n');
-  }
-
-  Widget _summaryRow(ColorScheme scheme, String label, String value) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: AppSpacing.sm),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SizedBox(
-            width: 88,
-            child: Text(
-              label,
-              style: AppTextStyles.caption().copyWith(
-                color: scheme.onSurfaceVariant,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-          ),
-          Expanded(
-            child: Text(
-              value,
-              style: AppTextStyles.bodySm().copyWith(color: scheme.onSurface),
-            ),
-          ),
-        ],
       ),
     );
   }

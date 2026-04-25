@@ -12,6 +12,10 @@ import '../analytics/screen_dwell_route_observer.dart';
 import '../analytics/screen_flow_analytics.dart';
 import '../debug/upsc_wars_trace.dart';
 import '../config/feature_flags.dart';
+import '../theme/app_colors.dart';
+import '../theme/app_radius.dart';
+import '../theme/app_spacing.dart';
+import '../theme/app_text_styles.dart';
 import '../../features/bookmarks/screens/bookmarks_screen.dart';
 import '../../features/battle/domain/entities/battle_result_payload.dart';
 import '../../features/battle/domain/entities/battle_invite_target.dart';
@@ -53,6 +57,7 @@ import '../../features/subject_detail/screens/subject_history_screen.dart';
 import '../../features/subject_detail/screens/topics_list_screen.dart';
 import '../../features/subject_test/screens/subject_test_screen.dart';
 import '../../features/test_engine/screens/test_engine_screen.dart';
+import '../deep_link/shared_test_launch_screen.dart';
 import '../../features/topic_test/screens/topic_test_screen.dart';
 import '../../features/weak_areas/screens/weak_areas_hub_screen.dart';
 import '../../features/weak_areas/screens/concept_detail_screen.dart'
@@ -65,8 +70,6 @@ import '../../shared/widgets/app_toast.dart';
 import '../providers/app_bootstrap.dart';
 import '../providers/kill_switch_provider.dart';
 import '../responsive/app_breakpoints.dart';
-import '../theme/app_colors.dart';
-import '../theme/app_text_styles.dart';
 
 part 'app_router.g.dart';
 
@@ -140,7 +143,131 @@ GoRouter appRouter(Ref ref) {
     initialLocation: '/',
     refreshListenable: redirectRefresh,
     debugLogDiagnostics: kDebugMode,
+    errorBuilder: (context, state) {
+      // Avoid flashing raw exception pages during cold-start deep link handling.
+      final p = state.uri.path;
+      final isShareLaunch = p.startsWith('/share-launch/');
+      if (isShareLaunch) {
+        return const Scaffold(body: Center(child: CircularProgressIndicator()));
+      }
+      final raw = (state.error ?? '').toString();
+      final looksLikeShareLink = raw.toLowerCase().contains(
+        'upscwars.in/share',
+      );
+      final title = looksLikeShareLink ? 'Link could not be opened' : 'Oh snap';
+      final body = looksLikeShareLink
+          ? 'This link could not be opened.\nPlease try again.'
+          : 'Something went wrong.\nPlease try again.';
+
+      final scheme = Theme.of(context).colorScheme;
+      final isDark = Theme.of(context).brightness == Brightness.dark;
+
+      return Scaffold(
+        backgroundColor: isDark ? AppColors.gray900 : scheme.surface,
+        body: SafeArea(
+          child: Center(
+            child: Padding(
+              padding: const EdgeInsets.all(AppSpacing.xxl),
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(maxWidth: 520),
+                child: Container(
+                  padding: const EdgeInsets.all(AppSpacing.xl),
+                  decoration: BoxDecoration(
+                    color: scheme.surface,
+                    borderRadius: BorderRadius.circular(AppRadius.xl),
+                    border: Border.all(
+                      color: isDark
+                          ? AppColors.borderDark
+                          : AppColors.borderLight,
+                      width: 0.8,
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withValues(
+                          alpha: isDark ? 0.35 : 0.12,
+                        ),
+                        blurRadius: 24,
+                        offset: const Offset(0, 14),
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Container(
+                        width: 54,
+                        height: 54,
+                        decoration: BoxDecoration(
+                          color: AppColors.wrong.withValues(alpha: 0.12),
+                          borderRadius: BorderRadius.circular(18),
+                        ),
+                        child: const Icon(
+                          Icons.link_off_rounded,
+                          color: AppColors.wrong,
+                          size: 28,
+                        ),
+                      ),
+                      const SizedBox(height: AppSpacing.md),
+                      Text(
+                        title,
+                        textAlign: TextAlign.center,
+                        style: AppTextStyles.h2().copyWith(
+                          color: scheme.onSurface,
+                        ),
+                      ),
+                      const SizedBox(height: AppSpacing.sm),
+                      Text(
+                        body,
+                        textAlign: TextAlign.center,
+                        style: AppTextStyles.bodyMd().copyWith(
+                          color: scheme.onSurfaceVariant,
+                          height: 1.35,
+                        ),
+                      ),
+                      const SizedBox(height: AppSpacing.lg),
+                      SizedBox(
+                        width: double.infinity,
+                        child: FilledButton(
+                          onPressed: () => GoRouter.of(context).go('/'),
+                          child: const Text('Go home'),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+      );
+    },
     redirect: (context, state) {
+      // Cold-start deep links can arrive as a full https URL "location" on mobile.
+      // Normalize `https://upscwars.in/share/<kind>/<uuid>` to our internal route.
+      final u = state.uri;
+      if (u.scheme == 'https' || u.scheme == 'http') {
+        var host = u.host.toLowerCase();
+        var segs = u.pathSegments.where((s) => s.isNotEmpty).toList();
+
+        // Some devices deliver a malformed host/path split like:
+        // https://upscwars/in/share/...  -> host=upscwars, segs[0]='in'
+        if (host == 'upscwars' && segs.isNotEmpty && segs.first == 'in') {
+          host = 'upscwars.in';
+          segs = segs.skip(1).toList();
+        }
+
+        if (host == 'upscwars.in' && segs.length >= 3 && segs[0] == 'share') {
+          final shareId = segs[2].trim();
+          final uuid = RegExp(
+            r'^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$',
+          );
+          if (uuid.hasMatch(shareId) &&
+              !state.matchedLocation.startsWith('/share-launch/')) {
+            return '/share-launch/$shareId';
+          }
+        }
+      }
+
       if (!communityTabVisibleForRedirect() &&
           state.matchedLocation == '/community') {
         upscWarsTrace(
@@ -307,6 +434,16 @@ GoRouter appRouter(Ref ref) {
           final extra = state.extra;
           final isBotBattle = extra is Map && extra['battleMode'] == 'bot';
           return SubjectTestScreen(botBattleMode: isBotBattle);
+        },
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/share-launch/:shareId',
+        name: 'share_launch',
+        builder: (context, state) {
+          return SharedTestLaunchScreen(
+            shareId: state.pathParameters['shareId']!,
+          );
         },
       ),
       GoRoute(
@@ -533,9 +670,14 @@ class _AppShell extends HookConsumerWidget {
         return;
       }
 
+      final isAppleUser = user.providerData.any(
+        (p) => p.providerId == 'apple.com',
+      );
       final missingName = (user.displayName ?? '').trim().isEmpty;
-      final missingPhoto = (user.photoURL ?? '').trim().isEmpty;
-      final needsCompleteProfile = missingName || missingPhoto;
+      // Apple users can opt out of sharing name. In that case we must ask for it.
+      // Profile photo is always optional, so we should not gate on it.
+      // This flow must not appear for Google sign-in.
+      final needsCompleteProfile = isAppleUser && missingName;
 
       if (!needsCompleteProfile) {
         didPromptCompleteProfile.value = false;

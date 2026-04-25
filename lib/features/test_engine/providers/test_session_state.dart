@@ -23,6 +23,7 @@ class TestSessionState {
     required this.weakTopicKeys,
     required this.pendingSelectedOption,
     required this.confidencePromptVisible,
+    required this.preStartPaused,
   });
 
   factory TestSessionState.initial() => const TestSessionState(
@@ -45,6 +46,7 @@ class TestSessionState {
     weakTopicKeys: {},
     pendingSelectedOption: null,
     confidencePromptVisible: false,
+    preStartPaused: false,
   );
 
   final bool isLoading;
@@ -67,6 +69,7 @@ class TestSessionState {
   final Set<String> weakTopicKeys;
   final String? pendingSelectedOption;
   final bool confidencePromptVisible;
+  final bool preStartPaused;
 
   TestSessionState copyWith({
     bool? isLoading,
@@ -91,6 +94,7 @@ class TestSessionState {
     String? pendingSelectedOption,
     bool clearPendingOption = false,
     bool? confidencePromptVisible,
+    bool? preStartPaused,
   }) {
     return TestSessionState(
       isLoading: isLoading ?? this.isLoading,
@@ -122,6 +126,7 @@ class TestSessionState {
           clearPendingOption ? null : (pendingSelectedOption ?? this.pendingSelectedOption),
       confidencePromptVisible:
           confidencePromptVisible ?? this.confidencePromptVisible,
+      preStartPaused: preStartPaused ?? this.preStartPaused,
     );
   }
 }

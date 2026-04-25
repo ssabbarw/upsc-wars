@@ -66,6 +66,12 @@ class TestSessionNotifier extends _$TestSessionNotifier {
     });
   }
 
+  void setPreStartPaused(bool paused) {
+    final cur = state.asData?.value;
+    if (cur == null) return;
+    state = AsyncData(cur.copyWith(preStartPaused: paused));
+  }
+
   TestSessionState _stateForLoadedSession(
     ActiveSession active,
     Map<String, bool> bookmarkedByUuid, {

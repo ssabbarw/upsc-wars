@@ -77,6 +77,11 @@ class PrefsService {
 
   final SharedPreferences _p;
 
+  String? getString(String key) => _p.getString(key);
+  Future<bool> setString(String key, String value) => _p.setString(key, value);
+  bool getBool(String key) => _p.getBool(key) ?? false;
+  Future<bool> setBool(String key, bool value) => _p.setBool(key, value);
+
   int get currentStreak => _p.getInt(PrefKeys.currentStreak) ?? 0;
   set currentStreak(int v) => _p.setInt(PrefKeys.currentStreak, v);
 

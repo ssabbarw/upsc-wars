@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:cloud_functions/cloud_functions.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +12,6 @@ import '../../../core/constants/app_constants.dart';
 import '../../../core/presentation/user_display_name.dart';
 import '../../community/services/community_bucket_presence_service.dart';
 import '../providers/auth_providers.dart';
-import '../services/instagram_link_service.dart';
 import '../services/profile_photo_service.dart';
 import '../../../shared/widgets/app_toast.dart';
 import '../../../shared/widgets/auth_provider_sign_in_button.dart';
@@ -149,10 +147,10 @@ class ProfileScreen extends HookConsumerWidget {
                                       onPressed: isBusy
                                           ? null
                                           : () => ref
-                                              .read(
-                                                authActionsProvider.notifier,
-                                              )
-                                              .signInWithApple(),
+                                                .read(
+                                                  authActionsProvider.notifier,
+                                                )
+                                                .signInWithApple(),
                                       isLoading: isBusy,
                                       text: isBusy
                                           ? 'Signing in...'
@@ -165,10 +163,10 @@ class ProfileScreen extends HookConsumerWidget {
                                     onPressed: isBusy
                                         ? null
                                         : () => ref
-                                            .read(
-                                              authActionsProvider.notifier,
-                                            )
-                                            .signInWithGoogle(),
+                                              .read(
+                                                authActionsProvider.notifier,
+                                              )
+                                              .signInWithGoogle(),
                                     isLoading: isBusy,
                                     text: isBusy
                                         ? 'Signing in...'
@@ -407,29 +405,10 @@ class _CommunityProfileCard extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final statusController = useTextEditingController();
     final optionalController = useTextEditingController();
+    final instagramController = useTextEditingController();
     final telegramController = useTextEditingController();
     final didLoad = useState(false);
     final saving = useState(false);
-    final instagramBusy = useState(false);
-    final instagramLinked = useState(false);
-    final instagramHandle = useState('');
-    final scheme = Theme.of(context).colorScheme;
-
-    void ensureValidSelection(TextEditingController controller) {
-      final textLength = controller.text.length;
-      final sel = controller.selection;
-      final base = sel.baseOffset;
-      final extent = sel.extentOffset;
-      if (base < 0 || extent < 0 || base > textLength || extent > textLength) {
-        final fixed = TextSelection.collapsed(offset: textLength);
-        if (controller.selection != fixed) {
-          controller.value = controller.value.copyWith(
-            selection: fixed,
-            composing: TextRange.empty,
-          );
-        }
-      }
-    }
 
     Future<void> loadCommunityProfile() async {
       final userEmail = email;
@@ -442,14 +421,8 @@ class _CommunityProfileCard extends HookConsumerWidget {
       if (data != null) {
         statusController.text = (data['my_status'] as String?) ?? '';
         optionalController.text = (data['optional'] as String?) ?? '';
+        instagramController.text = (data['insta'] as String?) ?? '';
         telegramController.text = (data['telegram'] as String?) ?? '';
-        ensureValidSelection(statusController);
-        ensureValidSelection(optionalController);
-        ensureValidSelection(telegramController);
-        final ig = (data['insta'] as String?)?.trim() ?? '';
-        instagramHandle.value = ig;
-        final linked = data['insta_user_id'] != null;
-        instagramLinked.value = linked;
       }
       didLoad.value = true;
     }
@@ -458,28 +431,6 @@ class _CommunityProfileCard extends HookConsumerWidget {
       Future(loadCommunityProfile);
       return null;
     }, [email]);
-
-    useEffect(() {
-      void onAnyChange() {
-        ensureValidSelection(statusController);
-        ensureValidSelection(optionalController);
-        ensureValidSelection(telegramController);
-      }
-
-      statusController.addListener(onAnyChange);
-      optionalController.addListener(onAnyChange);
-      telegramController.addListener(onAnyChange);
-
-      // If the field gets focused before any edits, selection can still be the
-      // default invalid state (-1). Fix it proactively.
-      onAnyChange();
-
-      return () {
-        statusController.removeListener(onAnyChange);
-        optionalController.removeListener(onAnyChange);
-        telegramController.removeListener(onAnyChange);
-      };
-    }, [statusController, optionalController, telegramController]);
 
     Future<void> saveCommunityProfile() async {
       final userEmail = email;
@@ -492,6 +443,13 @@ class _CommunityProfileCard extends HookConsumerWidget {
         return;
       }
 
+      final instaRaw = instagramController.text.trim();
+      final insta = instaRaw.replaceAll('@', '').trim();
+      if (insta.contains('/')) {
+        AppToast.showText(context, 'Instagram username should not contain /');
+        return;
+      }
+
       saving.value = true;
       try {
         await FirebaseFirestore.instance
@@ -500,6 +458,7 @@ class _CommunityProfileCard extends HookConsumerWidget {
             .set({
               'my_status': statusController.text.trim(),
               'optional': optionalController.text.trim(),
+              'insta': insta,
               'telegram': tele,
               'lastOnlineTime': DateTime.now().millisecondsSinceEpoch,
             }, SetOptions(merge: true));
@@ -510,79 +469,6 @@ class _CommunityProfileCard extends HookConsumerWidget {
         saving.value = false;
       }
     }
-
-    Future<void> onConnectInstagram() async {
-      if (instagramBusy.value || isBusy) return;
-      instagramBusy.value = true;
-      try {
-        final username = await InstagramLinkService.connectInstagramAccount();
-        instagramHandle.value = username;
-        instagramLinked.value = true;
-        if (context.mounted) {
-          AppToast.showText(context, 'Instagram @$username connected');
-        }
-      } on InstagramLinkCancelled {
-        // User closed the browser; no message.
-      } on InstagramLinkFailed catch (e) {
-        if (context.mounted) {
-          AppToast.showText(context, e.message);
-        }
-      } on FirebaseFunctionsException catch (e) {
-        if (context.mounted) {
-          AppToast.showText(context, e.message ?? e.code);
-        }
-      } on UnsupportedError catch (e) {
-        if (context.mounted) {
-          AppToast.showText(context, e.toString());
-        }
-      } catch (e) {
-        if (context.mounted) {
-          AppToast.showText(context, e.toString());
-        }
-      } finally {
-        instagramBusy.value = false;
-      }
-    }
-
-    Future<void> onDisconnectInstagram() async {
-      final ok = await showDialog<bool>(
-        context: context,
-        builder: (c) => AlertDialog(
-          title: const Text('Disconnect Instagram?'),
-          content: const Text(
-            'Your profile will no longer show a verified Instagram link.',
-          ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.of(c).pop(false),
-              child: const Text('Cancel'),
-            ),
-            FilledButton(
-              onPressed: () => Navigator.of(c).pop(true),
-              child: const Text('Disconnect'),
-            ),
-          ],
-        ),
-      );
-      if (ok != true || instagramBusy.value) return;
-      instagramBusy.value = true;
-      try {
-        await InstagramLinkService.unlinkInstagramAccount();
-        instagramLinked.value = false;
-        instagramHandle.value = '';
-        if (context.mounted) {
-          AppToast.showText(context, 'Instagram disconnected');
-        }
-      } on FirebaseFunctionsException catch (e) {
-        if (context.mounted) {
-          AppToast.showText(context, e.message ?? e.code);
-        }
-      } finally {
-        instagramBusy.value = false;
-      }
-    }
-
-    final igConfigured = AppConstants.instagramOAuthAppId.trim().isNotEmpty;
 
     return Card(
       elevation: 0,
@@ -622,91 +508,15 @@ class _CommunityProfileCard extends HookConsumerWidget {
               ),
             ),
             const SizedBox(height: 14),
-            Text('Instagram', style: Theme.of(context).textTheme.labelLarge),
-            const SizedBox(height: 4),
-            Text(
-              kIsWeb
-                  ? 'Open the mobile app to connect Instagram.'
-                  : 'Uses Meta login. Instagram Professional (Business or Creator) accounts only.',
-              style: Theme.of(
-                context,
-              ).textTheme.bodySmall?.copyWith(color: scheme.onSurfaceVariant),
+            TextField(
+              controller: instagramController,
+              maxLength: 30,
+              decoration: const InputDecoration(
+                labelText: 'Instagram (without @)',
+                border: OutlineInputBorder(),
+              ),
             ),
-            const SizedBox(height: 8),
-            if (!igConfigured)
-              Padding(
-                padding: const EdgeInsets.only(bottom: 8),
-                child: Text(
-                  'Instagram linking is not enabled in this build (missing INSTAGRAM_APP_ID).',
-                  style: Theme.of(
-                    context,
-                  ).textTheme.bodySmall?.copyWith(color: scheme.error),
-                ),
-              ),
-            if (instagramLinked.value) ...[
-              Row(
-                children: [
-                  Expanded(
-                    child: Text(
-                      instagramHandle.value.isEmpty
-                          ? 'Connected'
-                          : '@${instagramHandle.value}',
-                      style: Theme.of(context).textTheme.bodyLarge,
-                    ),
-                  ),
-                  Icon(Icons.verified_rounded, color: scheme.primary, size: 22),
-                  const SizedBox(width: 6),
-                  Text(
-                    'Verified',
-                    style: Theme.of(
-                      context,
-                    ).textTheme.labelLarge?.copyWith(color: scheme.primary),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 8),
-              Align(
-                alignment: Alignment.centerLeft,
-                child: TextButton(
-                  onPressed: instagramBusy.value || isBusy
-                      ? null
-                      : onDisconnectInstagram,
-                  child: const Text('Disconnect Instagram'),
-                ),
-              ),
-            ] else ...[
-              if (instagramHandle.value.isNotEmpty)
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 8),
-                  child: Text(
-                    'Previous unverified handle (replaced when you connect): '
-                    '@${instagramHandle.value}',
-                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                      color: scheme.onSurfaceVariant,
-                    ),
-                  ),
-                ),
-              SizedBox(
-                width: double.infinity,
-                child: OutlinedButton.icon(
-                  onPressed:
-                      (!igConfigured || kIsWeb || instagramBusy.value || isBusy)
-                      ? null
-                      : onConnectInstagram,
-                  icon: instagramBusy.value
-                      ? const SizedBox(
-                          width: 18,
-                          height: 18,
-                          child: CircularProgressIndicator(strokeWidth: 2),
-                        )
-                      : const Icon(Icons.link_rounded),
-                  label: Text(
-                    instagramBusy.value ? 'Connecting…' : 'Connect Instagram',
-                  ),
-                ),
-              ),
-            ],
-            const SizedBox(height: 14),
+            const SizedBox(height: 10),
             TextField(
               controller: telegramController,
               maxLength: 30,

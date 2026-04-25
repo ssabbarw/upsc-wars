@@ -12,8 +12,6 @@ import 'package:uuid/uuid.dart';
 import 'package:upsc_wars/core/analytics/activation_milestones.dart';
 import 'package:upsc_wars/core/providers/analytics_provider.dart';
 import 'package:upsc_wars/core/providers/prefs_provider.dart';
-import 'package:upsc_wars/core/constants/timed_exam_debug_constants.dart';
-import 'package:upsc_wars/core/domain/entities/session_config.dart';
 import 'package:upsc_wars/core/domain/entities/test_question_share_map.dart';
 import 'package:upsc_wars/core/providers/catalog_providers.dart';
 import 'package:upsc_wars/core/providers/user_database_provider.dart';
@@ -22,17 +20,8 @@ import 'package:upsc_wars/shared/widgets/app_toast.dart';
 
 import 'share_link_kind.dart';
 import 'share_link_parser.dart';
-import 'share_link_test_mode_sheet.dart';
 import 'share_link_url_builder.dart';
 import 'shared_session_firestore.dart';
-
-String? _analyticsKeyForKind(ShareLinkKind kind) {
-  return switch (kind) {
-    ShareLinkKind.battle => 'share_deep_link_battle',
-    ShareLinkKind.test => 'share_deep_link_test',
-    ShareLinkKind.question => 'share_deep_link_question',
-  };
-}
 
 void showShareLinkMessage(String message) {
   final ctx = rootNavigatorKey.currentContext;
@@ -52,17 +41,27 @@ Future<void> openShareLinkPayload({
   required GoRouter router,
   required ShareLinkPayload payload,
 }) async {
+  debugPrint(
+    '[share-link] openShareLinkPayload kind=${payload.kind} shareId=${payload.shareId} '
+    'ids=${payload.questionIds.length} subject=${payload.subject} topic=${payload.topic}',
+  );
   try {
     var questionIds = payload.questionIds;
     var subject = payload.subject;
     var topic = payload.topic;
+    var sharedBy = 'A friend';
 
     if (questionIds.isEmpty) {
+      debugPrint('[share-link] resolving questions from Firestore shareId=${payload.shareId}');
       final repo = SharedSessionFirestoreRepository();
       final doc = await repo.fetch(payload.shareId);
       questionIds = doc.orderedQuestionUuids;
       subject ??= doc.subject;
       topic ??= doc.topic;
+      sharedBy = doc.sharedBy ?? 'A friend';
+      debugPrint(
+        '[share-link] firestore resolved count=${questionIds.length} subject=$subject topic=$topic sharedBy=$sharedBy',
+      );
       if (payload.kind == ShareLinkKind.question && questionIds.length != 1) {
         showShareLinkMessage('Invalid shared question.');
         return;
@@ -70,6 +69,7 @@ Future<void> openShareLinkPayload({
     }
 
     if (subject == null || subject.isEmpty) {
+      debugPrint('[share-link] resolving subject from local db');
       final q = await ref
           .read(userDatabaseProvider)
           .questionsDao
@@ -78,52 +78,39 @@ Future<void> openShareLinkPayload({
       topic ??= q?.topic;
     }
 
-    final trimmedSubject = subject.trim();
-    final subjectResolved =
-        trimmedSubject.isEmpty ? 'Misc' : trimmedSubject;
-
-    final sheetContext = rootNavigatorKey.currentContext;
-    if (sheetContext == null || !sheetContext.mounted) {
-      showShareLinkMessage('Could not open share sheet.');
-      return;
-    }
-
-    final chosenMode = await showShareLinkTestModeSheet(
-      context: sheetContext,
-      subject: subjectResolved,
-      topic: topic,
-      questionCount: questionIds.length,
-      kind: payload.kind,
-    );
-    if (chosenMode == null) return;
-
-    final uc = await ref.read(createSessionUseCaseProvider.future);
-    final lang = await ref.read(appLanguageProvider.future);
-
-    final timeLimitSecs = chosenMode == 'exam'
-        ? questionIds.length * kDebugSecondsPerQuestion
-        : 60;
-
-    final config = SessionConfig(
-      subject: subjectResolved,
-      topic: topic,
-      mode: chosenMode,
-      questionCount: questionIds.length,
-      isTimed: true,
-      timeLimitSecs: timeLimitSecs,
-      language: lang,
-      specificQuestionUuids: questionIds,
-      analyticsFeatureKey: _analyticsKeyForKind(payload.kind),
-    );
-
-    await uc.importSharedBattle(sessionId: payload.shareId, config: config);
-
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      router.go('/test/${payload.shareId}');
+      final loc = '/share-launch/${payload.shareId}';
+      debugPrint('[share-link] navigating to $loc');
+      try {
+        router.go(loc);
+      } on GoException catch (e, st) {
+        debugPrint('[share-link] GoException while navigating to $loc: $e');
+        debugPrintStack(stackTrace: st);
+        // Router may not be ready yet (cold start). Retry once after a short delay.
+        unawaited(() async {
+          await Future<void>.delayed(const Duration(milliseconds: 250));
+          try {
+            debugPrint('[share-link] retry navigating to $loc');
+            router.go(loc);
+          } catch (e2, st2) {
+            debugPrint('[share-link] retry failed for $loc: $e2');
+            debugPrintStack(stackTrace: st2);
+            showShareLinkMessage(
+              'Could not open link. Please try again.',
+            );
+          }
+        }());
+      } catch (e, st) {
+        debugPrint('[share-link] Unexpected navigation error to $loc: $e');
+        debugPrintStack(stackTrace: st);
+        showShareLinkMessage('Could not open link.');
+      }
     });
   } on StateError catch (e) {
+    debugPrint('[share-link] StateError: ${e.message}');
     showShareLinkMessage(e.message);
   } catch (_) {
+    debugPrint('[share-link] Unknown error opening shared questions.');
     showShareLinkMessage('Could not open shared questions.');
   }
 }
@@ -134,7 +121,9 @@ Future<void> openShareUriIfApplicable({
   required GoRouter router,
   required Uri uri,
 }) async {
+  debugPrint('[share-link] incoming uri=$uri');
   final parsed = parseShareLinkUri(uri);
+  debugPrint('[share-link] parsed payload=$parsed');
   if (parsed == null) return;
   await openShareLinkPayload(ref: ref, router: router, payload: parsed);
 }

@@ -283,7 +283,8 @@ class _TestEngineTimerTicker extends HookConsumerWidget {
       testSessionProvider(sessionId).select((a) {
         final v = a.asData?.value;
         if (v?.session == null) return false;
-        if (v!.explanationVisible && v.session!.mode == 'learning') {
+        if (v!.preStartPaused) return false;
+        if (v.explanationVisible && v.session!.mode == 'learning') {
           return false;
         }
         return true;

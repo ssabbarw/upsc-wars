@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../core/analytics/analytics.dart';
 import '../../core/analytics/analytics_events.dart';
 import '../../core/analytics/screen_flow_analytics.dart';
+import '../../core/providers/analytics_provider.dart';
 import '../../core/debug/upsc_wars_trace.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_radius.dart';
@@ -62,11 +62,11 @@ class _DeferredPushPermissionPanel extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final started = useRef(DateTime.now());
+    final analytics = ref.read(analyticsServiceProvider);
     useEffect(
       () {
         unawaited(
-          Analytics.track(
-            ref,
+          analytics.track(
             ScreenViewedEvent(screenName: ScreenFlow.deferredPushPrePrompt),
           ),
         );
@@ -75,8 +75,7 @@ class _DeferredPushPermissionPanel extends HookConsumerWidget {
               DateTime.now().difference(started.value).inMilliseconds;
           if (d < 0) return;
           unawaited(
-            Analytics.track(
-              ref,
+            analytics.track(
               ScreenDwellEndedEvent(
                 screenName: ScreenFlow.deferredPushPrePrompt,
                 durationMs: d,

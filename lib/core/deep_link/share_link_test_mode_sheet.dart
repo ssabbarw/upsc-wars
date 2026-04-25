@@ -15,17 +15,20 @@ Future<String?> showShareLinkTestModeSheet({
   required String? topic,
   required int questionCount,
   required ShareLinkKind kind,
+  bool dismissible = true,
 }) {
   return showModalBottomSheet<String>(
     context: context,
     isScrollControlled: true,
-    isDismissible: true,
+    isDismissible: dismissible,
+    enableDrag: dismissible,
     backgroundColor: Colors.transparent,
     builder: (ctx) => _ShareLinkTestModeSheetBody(
       subject: subject,
       topic: topic,
       questionCount: questionCount,
       kind: kind,
+      dismissible: dismissible,
     ),
   );
 }
@@ -36,12 +39,14 @@ class _ShareLinkTestModeSheetBody extends StatefulWidget {
     required this.topic,
     required this.questionCount,
     required this.kind,
+    required this.dismissible,
   });
 
   final String subject;
   final String? topic;
   final int questionCount;
   final ShareLinkKind kind;
+  final bool dismissible;
 
   @override
   State<_ShareLinkTestModeSheetBody> createState() =>
@@ -91,20 +96,22 @@ class _ShareLinkTestModeSheetBodyState extends State<_ShareLinkTestModeSheetBody
                     style: AppTextStyles.h3().copyWith(color: scheme.onSurface),
                   ),
                 ),
-                IconButton(
-                  visualDensity: VisualDensity.compact,
-                  padding: EdgeInsets.zero,
-                  constraints: const BoxConstraints(
-                    minWidth: 40,
-                    minHeight: 40,
+                if (widget.dismissible)
+                  IconButton(
+                    visualDensity: VisualDensity.compact,
+                    padding: EdgeInsets.zero,
+                    constraints: const BoxConstraints(
+                      minWidth: 40,
+                      minHeight: 40,
+                    ),
+                    onPressed: () => Navigator.of(context).pop(),
+                    icon: Icon(
+                      Icons.close_rounded,
+                      color: scheme.onSurfaceVariant,
+                    ),
+                    tooltip:
+                        MaterialLocalizations.of(context).closeButtonTooltip,
                   ),
-                  onPressed: () => Navigator.of(context).pop(),
-                  icon: Icon(
-                    Icons.close_rounded,
-                    color: scheme.onSurfaceVariant,
-                  ),
-                  tooltip: MaterialLocalizations.of(context).closeButtonTooltip,
-                ),
               ],
             ),
             const SizedBox(height: AppSpacing.sm),
@@ -184,7 +191,11 @@ class _ShareLinkTestModeSheetBodyState extends State<_ShareLinkTestModeSheetBody
             const SizedBox(height: AppSpacing.lg),
             FilledButton(
               onPressed: () => Navigator.pop(context, _mode),
-              child: const Text('Start'),
+              child: Text(
+                _mode == 'exam'
+                    ? 'Start in exam mode'
+                    : 'Start in learning mode',
+              ),
             ),
           ],
         ),
