@@ -8,8 +8,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:sign_in_button/sign_in_button.dart';
-import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 
 import '../../../core/constants/app_constants.dart';
 import '../../../core/presentation/user_display_name.dart';
@@ -18,6 +16,7 @@ import '../providers/auth_providers.dart';
 import '../services/instagram_link_service.dart';
 import '../services/profile_photo_service.dart';
 import '../../../shared/widgets/app_toast.dart';
+import '../../../shared/widgets/auth_provider_sign_in_button.dart';
 import '../../../shared/widgets/tappable_circular_avatar.dart';
 
 class _ProfileFooter extends StatelessWidget {
@@ -145,69 +144,35 @@ class ProfileScreen extends HookConsumerWidget {
                                   if (!kIsWeb &&
                                       defaultTargetPlatform ==
                                           TargetPlatform.iOS) ...[
-                                    FutureBuilder<bool>(
-                                      future: SignInWithApple.isAvailable(),
-                                      builder: (context, snapshot) {
-                                        final available =
-                                            snapshot.data ?? false;
-                                        if (!available) {
-                                          return const SizedBox.shrink();
-                                        }
-                                        final isDark =
-                                            Theme.of(context).brightness ==
-                                            Brightness.dark;
-                                        return SizedBox(
-                                          width: double.infinity,
-                                          child: SignInWithAppleButton(
-                                            onPressed: isBusy
-                                                ? null
-                                                : () => ref
-                                                      .read(
-                                                        authActionsProvider
-                                                            .notifier,
-                                                      )
-                                                      .signInWithApple(),
-                                            style: isDark
-                                                ? SignInWithAppleButtonStyle
-                                                      .white
-                                                : SignInWithAppleButtonStyle
-                                                      .black,
-                                            borderRadius: BorderRadius.circular(
-                                              10,
-                                            ),
-                                            height: 48,
-                                            text: isBusy
-                                                ? 'Signing in...'
-                                                : 'Continue with Apple',
-                                          ),
-                                        );
-                                      },
-                                    ),
-                                    const SizedBox(height: 12),
-                                  ],
-                                  IgnorePointer(
-                                    ignoring: isBusy,
-                                    child: Opacity(
-                                      opacity: isBusy ? 0.6 : 1,
-                                      child: SizedBox(
-                                        height: 48,
-                                        child: SignInButton(
-                                          Buttons.google,
-                                          onPressed: () => ref
+                                    AuthProviderSignInButton(
+                                      type: AuthProviderButtonType.apple,
+                                      onPressed: isBusy
+                                          ? null
+                                          : () => ref
                                               .read(
                                                 authActionsProvider.notifier,
                                               )
-                                              .signInWithGoogle(),
-                                          text: isBusy
-                                              ? 'Signing in...'
-                                              : 'Continue with Google',
-                                          textStyle: const TextStyle(
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.w600,
-                                          ),
-                                        ),
-                                      ),
+                                              .signInWithApple(),
+                                      isLoading: isBusy,
+                                      text: isBusy
+                                          ? 'Signing in...'
+                                          : 'Continue with Apple',
                                     ),
+                                    const SizedBox(height: 12),
+                                  ],
+                                  AuthProviderSignInButton(
+                                    type: AuthProviderButtonType.google,
+                                    onPressed: isBusy
+                                        ? null
+                                        : () => ref
+                                            .read(
+                                              authActionsProvider.notifier,
+                                            )
+                                            .signInWithGoogle(),
+                                    isLoading: isBusy,
+                                    text: isBusy
+                                        ? 'Signing in...'
+                                        : 'Continue with Google',
                                   ),
                                 ],
                               ),
@@ -450,6 +415,22 @@ class _CommunityProfileCard extends HookConsumerWidget {
     final instagramHandle = useState('');
     final scheme = Theme.of(context).colorScheme;
 
+    void ensureValidSelection(TextEditingController controller) {
+      final textLength = controller.text.length;
+      final sel = controller.selection;
+      final base = sel.baseOffset;
+      final extent = sel.extentOffset;
+      if (base < 0 || extent < 0 || base > textLength || extent > textLength) {
+        final fixed = TextSelection.collapsed(offset: textLength);
+        if (controller.selection != fixed) {
+          controller.value = controller.value.copyWith(
+            selection: fixed,
+            composing: TextRange.empty,
+          );
+        }
+      }
+    }
+
     Future<void> loadCommunityProfile() async {
       final userEmail = email;
       if (userEmail == null || userEmail.isEmpty || didLoad.value) return;
@@ -462,6 +443,9 @@ class _CommunityProfileCard extends HookConsumerWidget {
         statusController.text = (data['my_status'] as String?) ?? '';
         optionalController.text = (data['optional'] as String?) ?? '';
         telegramController.text = (data['telegram'] as String?) ?? '';
+        ensureValidSelection(statusController);
+        ensureValidSelection(optionalController);
+        ensureValidSelection(telegramController);
         final ig = (data['insta'] as String?)?.trim() ?? '';
         instagramHandle.value = ig;
         final linked = data['insta_user_id'] != null;
@@ -474,6 +458,28 @@ class _CommunityProfileCard extends HookConsumerWidget {
       Future(loadCommunityProfile);
       return null;
     }, [email]);
+
+    useEffect(() {
+      void onAnyChange() {
+        ensureValidSelection(statusController);
+        ensureValidSelection(optionalController);
+        ensureValidSelection(telegramController);
+      }
+
+      statusController.addListener(onAnyChange);
+      optionalController.addListener(onAnyChange);
+      telegramController.addListener(onAnyChange);
+
+      // If the field gets focused before any edits, selection can still be the
+      // default invalid state (-1). Fix it proactively.
+      onAnyChange();
+
+      return () {
+        statusController.removeListener(onAnyChange);
+        optionalController.removeListener(onAnyChange);
+        telegramController.removeListener(onAnyChange);
+      };
+    }, [statusController, optionalController, telegramController]);
 
     Future<void> saveCommunityProfile() async {
       final userEmail = email;

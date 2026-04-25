@@ -1,9 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:sign_in_button/sign_in_button.dart';
-import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 
 import '../../core/constants/app_constants.dart';
+import 'auth_provider_sign_in_button.dart';
 
 String _privacyPolicyBody() => '''
 ${AppConstants.appDisplayName} — Privacy Policy
@@ -92,7 +91,6 @@ class GoogleLoginBottomSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
     final small = Theme.of(context).textTheme.bodySmall;
-    final isDark = Theme.of(context).brightness == Brightness.dark;
     final canShowApple =
         onAppleTap != null &&
         !kIsWeb &&
@@ -129,47 +127,19 @@ class GoogleLoginBottomSheet extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             if (canShowApple) ...[
-              FutureBuilder<bool>(
-                future: SignInWithApple.isAvailable(),
-                builder: (context, snapshot) {
-                  final available = snapshot.data ?? false;
-                  if (!available) return const SizedBox.shrink();
-                  return SizedBox(
-                    width: double.infinity,
-                    child: SignInWithAppleButton(
-                      onPressed: isLoading ? null : onAppleTap,
-                      style: isDark
-                          ? SignInWithAppleButtonStyle.white
-                          : SignInWithAppleButtonStyle.black,
-                      borderRadius: BorderRadius.circular(8),
-                      height: 48,
-                      text: isLoading ? 'Signing in...' : 'Continue with Apple',
-                    ),
-                  );
-                },
+              AuthProviderSignInButton(
+                type: AuthProviderButtonType.apple,
+                onPressed: onAppleTap,
+                isLoading: isLoading,
+                text: isLoading ? 'Signing in...' : 'Continue with Apple',
               ),
               const SizedBox(height: 12),
             ],
-            SizedBox(
-              width: double.infinity,
-              child: IgnorePointer(
-                ignoring: isLoading,
-                child: Opacity(
-                  opacity: isLoading ? 0.6 : 1,
-                  child: SizedBox(
-                    height: 48,
-                    child: SignInButton(
-                      Buttons.google,
-                      onPressed: onGoogleTap,
-                      text: isLoading ? 'Signing in...' : 'Continue with Google',
-                      textStyle: const TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
+            AuthProviderSignInButton(
+              type: AuthProviderButtonType.google,
+              onPressed: isLoading ? null : onGoogleTap,
+              isLoading: isLoading,
+              text: isLoading ? 'Signing in...' : 'Continue with Google',
             ),
             const SizedBox(height: 12),
             Text(

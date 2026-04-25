@@ -28,21 +28,14 @@ class AuthProviderSignInButton extends StatelessWidget {
 
     final (bg, fg, border) = switch (type) {
       AuthProviderButtonType.google => (
-          Colors.white,
-          const Color(0xFF1F1F1F),
-          const Color(0xFFDADCE0),
-        ),
-      AuthProviderButtonType.apple => isDark
-          ? (
-              Colors.white,
-              const Color(0xFF0A0A0A),
-              const Color(0x00000000),
-            )
-          : (
-              Colors.black,
-              Colors.white,
-              const Color(0x00000000),
-            ),
+        Colors.white,
+        const Color(0xFF1F1F1F),
+        const Color(0xFFDADCE0),
+      ),
+      AuthProviderButtonType.apple =>
+        isDark
+            ? (Colors.white, const Color(0xFF0A0A0A), const Color(0x00000000))
+            : (Colors.black, Colors.white, const Color(0x00000000)),
     };
 
     final textStyle = TextStyle(
@@ -110,26 +103,30 @@ class _Logo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final boxSize = switch (type) {
+      AuthProviderButtonType.google => 28.0,
+      AuthProviderButtonType.apple => 22.0,
+    };
     return SizedBox(
-      width: 22,
-      height: 22,
+      width: boxSize,
+      height: boxSize,
       child: Center(
         child: switch (type) {
           AuthProviderButtonType.google => Image.asset(
-              'assets/logos/google_light.png',
-              package: 'sign_in_button',
-              height: 18,
-            ),
+            'assets/logos/google_light.png',
+            package: 'sign_in_button',
+            height: 24,
+            fit: BoxFit.contain,
+          ),
           AuthProviderButtonType.apple => Icon(
-              Icons.apple_rounded,
-              size: 20,
-              color: Theme.of(context).brightness == Brightness.dark
-                  ? Colors.black
-                  : Colors.white,
-            ),
+            Icons.apple_rounded,
+            size: 20,
+            color: Theme.of(context).brightness == Brightness.dark
+                ? Colors.black
+                : Colors.white,
+          ),
         },
       ),
     );
   }
 }
-
