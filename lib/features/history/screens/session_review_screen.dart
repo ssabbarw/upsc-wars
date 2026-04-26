@@ -38,7 +38,9 @@ OverlayEntry _buildSessionReviewShareCoachOverlay({
           decoration: BoxDecoration(
             color: scheme.surface,
             borderRadius: BorderRadius.circular(14),
-            border: Border.all(color: scheme.outlineVariant.withValues(alpha: 0.7)),
+            border: Border.all(
+              color: scheme.outlineVariant.withValues(alpha: 0.7),
+            ),
             boxShadow: [
               BoxShadow(
                 color: scheme.shadow.withValues(alpha: 0.22),
@@ -54,7 +56,7 @@ OverlayEntry _buildSessionReviewShareCoachOverlay({
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Share this review',
+                  'Share this test',
                   style: TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w700,

@@ -13,7 +13,8 @@ abstract final class AppConstants {
   static const String playStoreUrl =
       'https://play.google.com/store/apps/details?id=practice.upsc.indiaapps.com.upscmcqpractice';
 
-  static const String appStoreUrl = '';
+  static const String appStoreUrl =
+      'https://apps.apple.com/in/app/upsc-wars/id1550273627';
 
   // ── Telegram ─────────────────────────────────────────────────────────────
   static const String developerTelegramUrl = 'https://t.me/upsc_wars_sachin';

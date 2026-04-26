@@ -170,7 +170,7 @@ Future<_BattleSubmitChoice?> _showBattleSubmitConfirmationSheet(
                   OutlinedButton(
                     onPressed: () =>
                         Navigator.pop(ctx, _BattleSubmitChoice.watchAndExit),
-                    child: const Text('Watch their progress'),
+                    child: const Text('Submit and Watch their progress'),
                   ),
                 ],
                 const SizedBox(height: AppSpacing.sm),

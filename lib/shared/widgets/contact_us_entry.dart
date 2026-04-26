@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../core/constants/creator_contact.dart';
@@ -7,6 +8,7 @@ import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_radius.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_text_styles.dart';
+import '../../core/review/app_review_service.dart';
 import 'app_toast.dart';
 
 /// Opens a bottom sheet with Telegram DM, email, and Telegram group.
@@ -94,6 +96,7 @@ Future<void> _launchAndPop(BuildContext sheetContext, Uri uri) async {
   navigator?.pop();
   final ok = await launchUrl(uri, mode: LaunchMode.externalApplication);
   if (!ok) {
+    if (!sheetContext.mounted) return;
     AppToast.showText(sheetContext, 'Could not open link.');
   }
 }
@@ -181,6 +184,7 @@ class ContactUsTextButton extends StatelessWidget {
     super.key,
     this.leadingText,
     this.linkLabel = 'Contact us',
+    this.showRateReviewCta = true,
   });
 
   /// Shown before the link, e.g. `'Want further clarity? '` (include trailing space).
@@ -188,6 +192,9 @@ class ContactUsTextButton extends StatelessWidget {
 
   /// Visible link text. Defaults to `Contact us`; subject detail uses `Get in touch`.
   final String linkLabel;
+
+  /// When true, shows a subtle "Rate / review" link next to contact.
+  final bool showRateReviewCta;
 
   @override
   Widget build(BuildContext context) {
@@ -197,6 +204,16 @@ class ContactUsTextButton extends StatelessWidget {
       fontWeight: FontWeight.w600,
       decoration: TextDecoration.underline,
       decorationColor: scheme.primary,
+    );
+
+    Widget rateReviewLink() => Consumer(
+      builder: (context, ref, _) => GestureDetector(
+        onTap: () async {
+          await HapticFeedback.selectionClick();
+          await ref.read(appReviewServiceProvider).openStoreListing();
+        },
+        child: Text('Rate / review', style: linkStyle),
+      ),
     );
 
     if (leadingText != null && leadingText!.isNotEmpty) {
@@ -216,25 +233,41 @@ class ContactUsTextButton extends StatelessWidget {
                 child: Text(linkLabel, style: linkStyle),
               ),
             ),
+            if (showRateReviewCta) ...[
+              const TextSpan(text: '  ·  '),
+              WidgetSpan(
+                alignment: PlaceholderAlignment.middle,
+                child: rateReviewLink(),
+              ),
+            ],
           ],
         ),
       );
     }
 
-    return TextButton(
-      onPressed: () => showContactUsSheet(context),
-      style: TextButton.styleFrom(
-        visualDensity: VisualDensity.compact,
-        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-        foregroundColor: scheme.primary,
-      ),
-      child: Text(
-        linkLabel,
-        style: AppTextStyles.labelSm().copyWith(
-          color: scheme.primary,
-          fontWeight: FontWeight.w600,
+    return Wrap(
+      alignment: WrapAlignment.center,
+      crossAxisAlignment: WrapCrossAlignment.center,
+      spacing: 10,
+      runSpacing: 4,
+      children: [
+        TextButton(
+          onPressed: () => showContactUsSheet(context),
+          style: TextButton.styleFrom(
+            visualDensity: VisualDensity.compact,
+            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+            foregroundColor: scheme.primary,
+          ),
+          child: Text(
+            linkLabel,
+            style: AppTextStyles.labelSm().copyWith(
+              color: scheme.primary,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
         ),
-      ),
+        if (showRateReviewCta) rateReviewLink(),
+      ],
     );
   }
 }

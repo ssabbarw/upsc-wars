@@ -27,7 +27,17 @@ class SettingsScreen extends ConsumerWidget {
     final bottomInset = MediaQuery.paddingOf(context).bottom;
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Settings')),
+      appBar: AppBar(
+        title: const Text('Settings'),
+        actions: [
+          TextButton.icon(
+            onPressed: () => context.push('/about-us'),
+            icon: const Icon(Icons.info_outline_rounded, size: 18),
+            label: const Text('About us'),
+          ),
+          const SizedBox(width: 8),
+        ],
+      ),
       backgroundColor: scheme.surface,
       body: SafeArea(
         child: ListView(
@@ -40,7 +50,7 @@ class SettingsScreen extends ConsumerWidget {
           ),
           children: [
             _SettingsIntroBanner(isDark: isDark),
-            const SizedBox(height: AppSpacing.xl),
+            const SizedBox(height: AppSpacing.lg),
             _SectionHeader(
               icon: Icons.palette_rounded,
               label: 'Appearance',
@@ -50,32 +60,32 @@ class SettingsScreen extends ConsumerWidget {
             const _DarkModeToggleCard(),
             const SizedBox(height: AppSpacing.sm),
             const _ConfidenceTrackingCard(),
-            const SizedBox(height: AppSpacing.xxl),
+            const SizedBox(height: AppSpacing.lg),
             _SectionHeader(
               icon: Icons.notifications_active_rounded,
-              label: 'Stay in rhythm',
+              label: 'Prelims',
               scheme: scheme,
             ),
             const SizedBox(height: AppSpacing.sm),
             const _PrelimsPersistentNotificationCard(),
-            const SizedBox(height: AppSpacing.xxl),
+            const SizedBox(height: AppSpacing.lg),
             _SectionHeader(
-              icon: Icons.star_rounded,
-              label: 'Spread the word',
-              scheme: scheme,
-            ),
-            const SizedBox(height: AppSpacing.sm),
-            _RateReviewCard(scheme: scheme),
-            const SizedBox(height: AppSpacing.xxl),
-            _SectionHeader(
-              icon: Icons.forum_rounded,
-              label: 'Talk to us',
+              icon: Icons.support_agent_rounded,
+              label: 'Support',
               scheme: scheme,
             ),
             const SizedBox(height: AppSpacing.sm),
             _FeedbackCard(scheme: scheme),
+            const SizedBox(height: AppSpacing.lg),
+            _SectionHeader(
+              icon: Icons.star_rounded,
+              label: 'Store',
+              scheme: scheme,
+            ),
+            const SizedBox(height: AppSpacing.sm),
+            _RateReviewCard(scheme: scheme),
             if (kDebugMode) ...[
-              const SizedBox(height: AppSpacing.xxl),
+              const SizedBox(height: AppSpacing.lg),
               _SectionHeader(
                 icon: Icons.analytics_outlined,
                 label: 'Internal',

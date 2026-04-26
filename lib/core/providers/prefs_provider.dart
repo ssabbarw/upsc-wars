@@ -70,6 +70,9 @@ abstract final class PrefKeys {
 
   /// JSON list of [ActivationMilestones] ids already logged to analytics.
   static const activationMilestonesV1 = 'activation_milestones_v1';
+
+  /// One-time in-app rating/review prompt was already shown (never ask again).
+  static const appReviewPromptShownV1 = 'app_review_prompt_shown_v1';
 }
 
 class PrefsService {
@@ -223,6 +226,10 @@ class PrefsService {
     s.add(id);
     _p.setString(PrefKeys.activationMilestonesV1, jsonEncode(s.toList()..sort()));
   }
+
+  bool get appReviewPromptShown =>
+      _p.getBool(PrefKeys.appReviewPromptShownV1) ?? false;
+  set appReviewPromptShown(bool v) => _p.setBool(PrefKeys.appReviewPromptShownV1, v);
 }
 
 @Riverpod(keepAlive: true)

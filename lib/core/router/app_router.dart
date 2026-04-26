@@ -44,6 +44,7 @@ import '../../features/pyq/screens/pyq_year_packs_screen.dart';
 import '../../features/home/screens/complete_profile_screen.dart';
 import '../../features/home/screens/profile_screen.dart';
 import '../../features/home/screens/settings_screen.dart';
+import '../../features/home/screens/about_us_screen.dart';
 import '../../features/home/screens/progress_screen.dart';
 import '../../features/internal/screens/feature_health_screen.dart';
 import '../../features/home/providers/auth_providers.dart';
@@ -313,6 +314,12 @@ GoRouter appRouter(Ref ref) {
         path: '/settings',
         name: 'settings',
         builder: (context, state) => const SettingsScreen(),
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/about-us',
+        name: 'about_us',
+        builder: (context, state) => const AboutUsScreen(),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,

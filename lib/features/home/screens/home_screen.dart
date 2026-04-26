@@ -277,6 +277,30 @@ class HomeScreen extends HookConsumerWidget {
                           ),
                         ),
                       ),
+                      Material(
+                        color: AppColors.transparent,
+                        child: InkWell(
+                          onTap: () => context.push('/settings'),
+                          borderRadius: BorderRadius.circular(AppRadius.md),
+                          child: Container(
+                            padding: const EdgeInsets.all(AppSpacing.sm),
+                            margin: const EdgeInsets.only(right: AppSpacing.sm),
+                            decoration: BoxDecoration(
+                              color: scheme.surfaceContainerLow,
+                              borderRadius: BorderRadius.circular(AppRadius.md),
+                              border: Border.all(
+                                color: borderColor,
+                                width: 0.5,
+                              ),
+                            ),
+                            child: Icon(
+                              Icons.settings_outlined,
+                              size: 18,
+                              color: scheme.onSurfaceVariant,
+                            ),
+                          ),
+                        ),
+                      ),
                       Container(
                         padding: const EdgeInsets.symmetric(
                           horizontal: AppSpacing.md,
