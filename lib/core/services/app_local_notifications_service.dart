@@ -1,5 +1,6 @@
 import 'dart:ui' show Color;
 
+import 'package:device_info_plus/device_info_plus.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:intl/intl.dart';
@@ -27,6 +28,14 @@ class AppLocalNotificationsService {
   static const _battleChannelDescription =
       'Battle invites while you are in the app (tap to join)';
 
+  // IMPORTANT: Android channels are sticky. We versioned this channel so existing
+  // installs that previously had a silent/low-importance default channel will
+  // get a brand-new, loud channel without needing a user setting change.
+  static const _generalChannelIdV1 = 'general';
+  static const _generalChannelIdV2 = 'general_v2';
+  static const _generalChannelName = 'General';
+  static const _generalChannelDescription = 'General app notifications';
+
   /// One slot so a new foreground invite replaces the previous banner.
   static const foregroundBattleInviteNotificationId = 9001;
 
@@ -36,6 +45,31 @@ class AppLocalNotificationsService {
   static const _prelimsChannelName = 'Prelims Countdown';
   static const _prelimsChannelDescription =
       'Persistent UPSC prelims countdown reminder';
+
+  static Future<int?> _androidSdkInt() async {
+    if (kIsWeb || defaultTargetPlatform != TargetPlatform.android) return null;
+    final info = await DeviceInfoPlugin().androidInfo;
+    return info.version.sdkInt;
+  }
+
+  /// Android 13+ requires a runtime permission for posting notifications.
+  static Future<bool?> requestAndroidNotificationsPermissionIfNeeded() async {
+    if (kIsWeb || defaultTargetPlatform != TargetPlatform.android) return null;
+    final sdkInt = await _androidSdkInt();
+    if (sdkInt == null || sdkInt < 33) return true;
+    await ensureInitialized();
+    final androidImpl = _plugin.resolvePlatformSpecificImplementation<
+        AndroidFlutterLocalNotificationsPlugin>();
+    return androidImpl?.requestNotificationsPermission();
+  }
+
+  static Future<bool?> androidNotificationsEnabled() async {
+    if (kIsWeb || defaultTargetPlatform != TargetPlatform.android) return null;
+    await ensureInitialized();
+    final androidImpl = _plugin.resolvePlatformSpecificImplementation<
+        AndroidFlutterLocalNotificationsPlugin>();
+    return androidImpl?.areNotificationsEnabled();
+  }
 
   static Future<void> ensureInitialized() async {
     if (_initialized) return;
@@ -58,6 +92,30 @@ class AppLocalNotificationsService {
           ),
           onDidReceiveNotificationResponse: _onNotificationResponse,
         );
+
+        // Create a loud default channel for FCM background notifications.
+        // Android 8+ channels are sticky; ensure this exists early.
+        final androidImpl = _plugin.resolvePlatformSpecificImplementation<
+            AndroidFlutterLocalNotificationsPlugin>();
+        // Keep v1 around (older builds may have referenced it), but default new
+        // FCM deliveries to v2 via AndroidManifest meta-data.
+        await androidImpl?.createNotificationChannel(
+          const AndroidNotificationChannel(
+            _generalChannelIdV1,
+            _generalChannelName,
+            description: _generalChannelDescription,
+            importance: Importance.high,
+          ),
+        );
+        await androidImpl?.createNotificationChannel(
+          const AndroidNotificationChannel(
+            _generalChannelIdV2,
+            _generalChannelName,
+            description: _generalChannelDescription,
+            importance: Importance.high,
+          ),
+        );
+
         _initialized = true;
       } finally {
         _initInFlight = null;

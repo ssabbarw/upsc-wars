@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:device_info_plus/device_info_plus.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -37,6 +38,14 @@ class BattleMessagingService {
     _router = router;
     final messaging = FirebaseMessaging.instance;
     await messaging.setAutoInitEnabled(true);
+    if (!kIsWeb && defaultTargetPlatform == TargetPlatform.iOS) {
+      // iOS: required for banner/sound while the app is in foreground.
+      await messaging.setForegroundNotificationPresentationOptions(
+        alert: true,
+        badge: true,
+        sound: true,
+      );
+    }
     // #region agent log
     unawaited(
       () async {
@@ -214,6 +223,14 @@ class BattleMessagingService {
   /// Current OS notification authorization (does not prompt).
   static Future<AuthorizationStatus> notificationAuthorizationStatus() async {
     if (kIsWeb) return AuthorizationStatus.authorized;
+    if (defaultTargetPlatform == TargetPlatform.android) {
+      final sdkInt = (await DeviceInfoPlugin().androidInfo).version.sdkInt;
+      if (sdkInt >= 33) {
+        final enabled = await AppLocalNotificationsService.androidNotificationsEnabled();
+        if (enabled == true) return AuthorizationStatus.authorized;
+        if (enabled == false) return AuthorizationStatus.denied;
+      }
+    }
     final settings = await FirebaseMessaging.instance.getNotificationSettings();
     return settings.authorizationStatus;
   }
@@ -241,11 +258,28 @@ class BattleMessagingService {
 
     final future = () async {
       try {
+        // Android 13+: explicitly request POST_NOTIFICATIONS runtime permission.
+        if (defaultTargetPlatform == TargetPlatform.android) {
+          final granted = await AppLocalNotificationsService
+              .requestAndroidNotificationsPermissionIfNeeded();
+          if (granted == false) {
+            return AuthorizationStatus.denied;
+          }
+        }
         final settings = await FirebaseMessaging.instance.requestPermission(
           alert: true,
           badge: true,
           sound: true,
         );
+        if (!kIsWeb && defaultTargetPlatform == TargetPlatform.iOS) {
+          // If the user just granted permission, ensure foreground delivery is visible.
+          await FirebaseMessaging.instance
+              .setForegroundNotificationPresentationOptions(
+            alert: true,
+            badge: true,
+            sound: true,
+          );
+        }
         // #region agent log
         unawaited(
           CursorDebugLog.write(
