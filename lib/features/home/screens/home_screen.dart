@@ -491,7 +491,6 @@ class HomeScreen extends HookConsumerWidget {
                   const Center(
                     child: ContactUsTextButton(showRateReviewCta: false),
                   ),
-                  const SizedBox(height: AppSpacing.sm),
                   Center(
                     child: Consumer(
                       builder: (context, ref, child) {

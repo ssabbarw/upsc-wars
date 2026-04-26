@@ -79,8 +79,8 @@ Future<void> showRateReviewSheet(BuildContext context, WidgetRef ref) async {
                     }
                   },
                   child: Text(
-                    'Read About the Developer',
-                    style: AppTextStyles.labelMd().copyWith(
+                    'Read About Journey of UPSC Wars',
+                    style: AppTextStyles.labelSm().copyWith(
                       color: scheme.primary,
                       fontWeight: FontWeight.w700,
                     ),
@@ -91,7 +91,7 @@ Future<void> showRateReviewSheet(BuildContext context, WidgetRef ref) async {
               const SizedBox(height: AppSpacing.sm),
 
               Text(
-                'If UPSC Wars is helping your preparation, your review can help other aspirants find it too. 😊',
+                'If UPSC Wars is helping your preparation, your review can help other aspirants find it too.',
                 style: AppTextStyles.bodyMd().copyWith(
                   color: scheme.onSurfaceVariant,
                   height: 1.4,
