@@ -539,171 +539,197 @@ Future<void> _showTestPaletteSheet(
       .length;
   await showModalBottomSheet<void>(
     context: context,
+    isScrollControlled: true,
     backgroundColor: AppColors.transparent,
     builder: (ctx) {
-      return Container(
-        decoration: BoxDecoration(
-          color: isDark ? scheme.surfaceContainerHigh : scheme.surface,
-          borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
-          border: Border.all(
-            color: isDark ? AppColors.borderDark : AppColors.borderLight,
-            width: 0.8,
-          ),
-          boxShadow: [
-            BoxShadow(
-              color: AppColors.gray900.withValues(alpha: isDark ? 0.45 : 0.14),
-              blurRadius: 16,
-              offset: const Offset(0, -4),
-            ),
-          ],
-        ),
-        padding: const EdgeInsets.all(AppSpacing.lg),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                'Question Grid',
-                style: AppTextStyles.h3().copyWith(color: scheme.onSurface),
-              ),
-            ),
-            const SizedBox(height: AppSpacing.xs),
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                'Tap any number to jump to that question',
-                style: AppTextStyles.caption().copyWith(
-                  color: scheme.onSurfaceVariant,
-                ),
-              ),
-            ),
-            const SizedBox(height: AppSpacing.md),
-            Wrap(
-              spacing: AppSpacing.md,
-              runSpacing: AppSpacing.xs,
-              children: [
-                _LegendItem(
-                  label: 'Current',
-                  bg: AppColors.primary,
-                  fg: AppColors.onPrimary,
-                ),
-                _LegendItem(
-                  label: 'Attempted',
-                  bg: isDark ? AppColors.correctBgDark : AppColors.correctBg,
-                  fg: isDark
-                      ? AppColors.correctTextDark
-                      : AppColors.correctText,
-                ),
-                _LegendItem(
-                  label: 'Flagged',
-                  bg: isDark ? AppColors.warningBgDark : AppColors.warningBg,
-                  fg: isDark
-                      ? AppColors.warningTextDark
-                      : AppColors.warningText,
-                ),
-                _LegendItem(
-                  label: 'Not visited',
-                  bg: scheme.surfaceContainerLow,
-                  fg: scheme.onSurfaceVariant,
-                ),
-              ],
-            ),
-            const SizedBox(height: AppSpacing.md),
-            Wrap(
-              spacing: AppSpacing.sm,
-              runSpacing: AppSpacing.sm,
-              children: [
-                for (var i = 0; i < session.questions.length; i++)
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.of(ctx).pop();
-                      notifier.jumpToIndex(i);
-                    },
-                    child: _PaletteCell(
-                      index: i,
-                      currentIndex: state.currentIndex,
-                      q: session.questions[i],
-                      isDark: isDark,
-                    ),
-                  ),
-              ],
-            ),
-            const SizedBox(height: AppSpacing.lg),
-            Container(
-              width: double.infinity,
+      final bottomInset = MediaQuery.of(ctx).viewInsets.bottom;
+      final screenH = MediaQuery.of(ctx).size.height;
+      return SafeArea(
+        top: false,
+        child: Padding(
+          padding: EdgeInsets.only(bottom: bottomInset),
+          child: Align(
+            alignment: Alignment.bottomCenter,
+            child: ConstrainedBox(
+              constraints: BoxConstraints(maxHeight: screenH * 0.9),
+              child: Container(
               decoration: BoxDecoration(
-                color: scheme.surfaceContainerLow,
-                borderRadius: BorderRadius.circular(AppRadius.md),
+                color: isDark ? scheme.surfaceContainerHigh : scheme.surface,
+                borderRadius:
+                    const BorderRadius.vertical(top: Radius.circular(20)),
                 border: Border.all(
                   color: isDark ? AppColors.borderDark : AppColors.borderLight,
-                  width: 0.6,
+                  width: 0.8,
                 ),
-              ),
-              child: Table(
-                border: TableBorder.symmetric(
-                  inside: BorderSide(
-                    color: isDark
-                        ? AppColors.borderDark
-                        : AppColors.borderLight,
-                    width: 0.6,
+                boxShadow: [
+                  BoxShadow(
+                    color: AppColors.gray900.withValues(
+                      alpha: isDark ? 0.45 : 0.14,
+                    ),
+                    blurRadius: 16,
+                    offset: const Offset(0, -4),
                   ),
-                ),
+                ],
+              ),
+              padding: const EdgeInsets.all(AppSpacing.lg),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
                 children: [
-                  TableRow(
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      'Question Grid',
+                      style: AppTextStyles.h3().copyWith(color: scheme.onSurface),
+                    ),
+                  ),
+                  const SizedBox(height: AppSpacing.xs),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      'Tap any number to jump to that question',
+                      style: AppTextStyles.caption().copyWith(
+                        color: scheme.onSurfaceVariant,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: AppSpacing.md),
+                  Wrap(
+                    spacing: AppSpacing.md,
+                    runSpacing: AppSpacing.xs,
                     children: [
-                      _CountCell(label: 'Attempted', value: '$attempted'),
-                      _CountCell(label: 'Skipped', value: '$skipped'),
-                      _CountCell(label: 'Flagged', value: '$flagged'),
+                      _LegendItem(
+                        label: 'Current',
+                        bg: AppColors.primary,
+                        fg: AppColors.onPrimary,
+                      ),
+                      _LegendItem(
+                        label: 'Attempted',
+                        bg:
+                            isDark ? AppColors.correctBgDark : AppColors.correctBg,
+                        fg: isDark
+                            ? AppColors.correctTextDark
+                            : AppColors.correctText,
+                      ),
+                      _LegendItem(
+                        label: 'Flagged',
+                        bg:
+                            isDark ? AppColors.warningBgDark : AppColors.warningBg,
+                        fg: isDark
+                            ? AppColors.warningTextDark
+                            : AppColors.warningText,
+                      ),
+                      _LegendItem(
+                        label: 'Not visited',
+                        bg: scheme.surfaceContainerLow,
+                        fg: scheme.onSurfaceVariant,
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: AppSpacing.md),
+                  Flexible(
+                    fit: FlexFit.loose,
+                    child: SingleChildScrollView(
+                      child: Wrap(
+                        spacing: AppSpacing.sm,
+                        runSpacing: AppSpacing.sm,
+                        children: [
+                          for (var i = 0; i < session.questions.length; i++)
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.of(ctx).pop();
+                                notifier.jumpToIndex(i);
+                              },
+                              child: _PaletteCell(
+                                index: i,
+                                currentIndex: state.currentIndex,
+                                q: session.questions[i],
+                                isDark: isDark,
+                              ),
+                            ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: AppSpacing.lg),
+                  Container(
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: scheme.surfaceContainerLow,
+                      borderRadius: BorderRadius.circular(AppRadius.md),
+                      border: Border.all(
+                        color: isDark ? AppColors.borderDark : AppColors.borderLight,
+                        width: 0.6,
+                      ),
+                    ),
+                    child: Table(
+                      border: TableBorder.symmetric(
+                        inside: BorderSide(
+                          color: isDark
+                              ? AppColors.borderDark
+                              : AppColors.borderLight,
+                          width: 0.6,
+                        ),
+                      ),
+                      children: [
+                        TableRow(
+                          children: [
+                            _CountCell(label: 'Attempted', value: '$attempted'),
+                            _CountCell(label: 'Skipped', value: '$skipped'),
+                            _CountCell(label: 'Flagged', value: '$flagged'),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: AppSpacing.lg),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: OutlinedButton(
+                          onPressed: () => Navigator.of(ctx).pop(),
+                          child: const Text('Go back'),
+                        ),
+                      ),
+                      const SizedBox(width: AppSpacing.sm),
+                      Expanded(
+                        child: ElevatedButton(
+                          onPressed: () async {
+                            try {
+                              final id = await notifier.submit();
+                              if (ctx.mounted) Navigator.pop(ctx);
+                              if (context.mounted) {
+                                upscWarsTrace(
+                                  'TestEngine palette submit -> go /results/$id',
+                                );
+                                context.go('/results/$id');
+                              }
+                            } catch (e, st) {
+                              upscWarsTrace(
+                                'TestEngine palette submit FAILED',
+                                error: e,
+                                stackTrace: st,
+                              );
+                            }
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: isDark
+                                ? scheme.errorContainer
+                                : AppColors.wrong,
+                            foregroundColor:
+                                isDark ? scheme.onErrorContainer : null,
+                          ),
+                          child: Text(
+                            session.mode == 'exam' ? 'Submit Test' : 'Submit',
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                 ],
               ),
             ),
-            const SizedBox(height: AppSpacing.lg),
-            Row(
-              children: [
-                Expanded(
-                  child: OutlinedButton(
-                    onPressed: () => Navigator.of(ctx).pop(),
-                    child: const Text('Go back'),
-                  ),
-                ),
-                const SizedBox(width: AppSpacing.sm),
-                Expanded(
-                  child: ElevatedButton(
-                    onPressed: () async {
-                      try {
-                        final id = await notifier.submit();
-                        if (ctx.mounted) Navigator.pop(ctx);
-                        if (context.mounted) {
-                          upscWarsTrace(
-                            'TestEngine palette submit -> go /results/$id',
-                          );
-                          context.go('/results/$id');
-                        }
-                      } catch (e, st) {
-                        upscWarsTrace(
-                          'TestEngine palette submit FAILED',
-                          error: e,
-                          stackTrace: st,
-                        );
-                      }
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: isDark
-                          ? scheme.errorContainer
-                          : AppColors.wrong,
-                      foregroundColor: isDark ? scheme.onErrorContainer : null,
-                    ),
-                    child: Text(
-                      session.mode == 'exam' ? 'Submit Test' : 'Submit',
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ],
+          ),
+        ),
         ),
       );
     },
