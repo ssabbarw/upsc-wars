@@ -29,6 +29,8 @@ import '../../../shared/widgets/prelims_countdown_card.dart';
 import '../../../shared/widgets/quick_practice_mode_sheet.dart';
 import '../../../shared/widgets/contact_us_entry.dart';
 import '../../../shared/widgets/home_page_video_banner.dart';
+import '../../../core/providers/prefs_provider.dart';
+import '../../../shared/widgets/rate_review_sheet.dart';
 
 class HomeScreen extends HookConsumerWidget {
   const HomeScreen({super.key});
@@ -204,7 +206,7 @@ class HomeScreen extends HookConsumerWidget {
                                               .round(),
                                       fadeInDuration: Duration.zero,
                                       fadeOutDuration: Duration.zero,
-                                      errorWidget: (_, __, ___) => Center(
+                                      errorWidget: (context, url, error) => Center(
                                         child: Text(
                                           avatarInitials,
                                           style: AppTextStyles.label().copyWith(
@@ -327,7 +329,7 @@ class HomeScreen extends HookConsumerWidget {
                                 loading: () =>
                                     cachedStreakText.value ??
                                     'Start your streak',
-                                error: (_, __) =>
+                                error: (error, stackTrace) =>
                                     cachedStreakText.value ??
                                     'Start your streak',
                               ),
@@ -416,7 +418,7 @@ class HomeScreen extends HookConsumerWidget {
                               ),
                             )
                           : const SizedBox.shrink(),
-                      error: (_, __) => const SizedBox.shrink(),
+                      error: (error, stackTrace) => const SizedBox.shrink(),
                     ),
                   ),
                   const SizedBox(height: AppSpacing.md),
@@ -483,7 +485,38 @@ class HomeScreen extends HookConsumerWidget {
                     },
                   ),
                   const SizedBox(height: AppSpacing.lg),
-                  const Center(child: ContactUsTextButton()),
+                  const Center(
+                    child: ContactUsTextButton(showRateReviewCta: false),
+                  ),
+                  const SizedBox(height: AppSpacing.xxl),
+                  Center(
+                    child: Consumer(
+                      builder: (context, ref, child) {
+                        final prefsAsync = ref.watch(prefsServiceProvider);
+                        final shown =
+                            prefsAsync.asData?.value.appReviewPromptShown;
+                        if (shown == null || shown) return const SizedBox.shrink();
+                        return TextButton(
+                          style: TextButton.styleFrom(
+                            visualDensity: VisualDensity.compact,
+                            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                            foregroundColor:
+                                Theme.of(context).colorScheme.primary,
+                          ),
+                          onPressed: () => unawaited(
+                            showRateReviewSheet(context, ref),
+                          ),
+                          child: Text(
+                            'Rate & review',
+                            style: AppTextStyles.labelSm().copyWith(
+                              fontWeight: FontWeight.w700,
+                              decoration: TextDecoration.underline,
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
                   const SizedBox(height: AppSpacing.sm),
                 ],
               ),

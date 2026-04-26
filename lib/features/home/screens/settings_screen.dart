@@ -9,7 +9,6 @@ import '../../../core/constants/prelims_countdown.dart';
 import '../../../core/constants/app_constants.dart';
 import '../../../core/providers/prefs_provider.dart';
 import '../../../core/services/prelims_surfaces_refresh.dart';
-import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
@@ -23,20 +22,11 @@ class SettingsScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
-    final isDark = Theme.of(context).brightness == Brightness.dark;
     final bottomInset = MediaQuery.paddingOf(context).bottom;
 
     return Scaffold(
       appBar: AppBar(
         title: const Text('Settings'),
-        actions: [
-          TextButton.icon(
-            onPressed: () => context.push('/about-us'),
-            icon: const Icon(Icons.info_outline_rounded, size: 18),
-            label: const Text('About us'),
-          ),
-          const SizedBox(width: 8),
-        ],
       ),
       backgroundColor: scheme.surface,
       body: SafeArea(
@@ -49,59 +39,83 @@ class SettingsScreen extends ConsumerWidget {
             AppSpacing.xxxl + bottomInset,
           ),
           children: [
-            _SettingsIntroBanner(isDark: isDark),
+            _Header(scheme: scheme),
             const SizedBox(height: AppSpacing.lg),
-            _SectionHeader(
-              icon: Icons.palette_rounded,
-              label: 'Appearance',
-              scheme: scheme,
+
+            _Section(
+              title: 'Preferences',
+              children: const [
+                _DarkModeTile(),
+                _ConfidenceTrackingTile(),
+              ],
             ),
-            const SizedBox(height: AppSpacing.sm),
-            const _DarkModeToggleCard(),
-            const SizedBox(height: AppSpacing.sm),
-            const _ConfidenceTrackingCard(),
             const SizedBox(height: AppSpacing.lg),
-            _SectionHeader(
-              icon: Icons.notifications_active_rounded,
-              label: 'Prelims',
-              scheme: scheme,
+
+            const _Section(
+              title: 'Prelims',
+              children: [
+                _PrelimsPersistentNotificationTile(),
+              ],
             ),
-            const SizedBox(height: AppSpacing.sm),
-            const _PrelimsPersistentNotificationCard(),
             const SizedBox(height: AppSpacing.lg),
-            _SectionHeader(
-              icon: Icons.support_agent_rounded,
-              label: 'Support',
-              scheme: scheme,
+
+            _Section(
+              title: 'Support',
+              children: [
+                _ExternalLinkTile(
+                  icon: Icons.mark_email_unread_outlined,
+                  title: 'Send feedback',
+                  subtitle: CreatorContact.email,
+                  uriBuilder: CreatorContact.mailtoFeedbackUri,
+                ),
+                const _ExternalLinkTile(
+                  icon: Icons.send_rounded,
+                  title: 'Telegram (direct)',
+                  subtitle: 't.me/upsc_wars_sachin',
+                  uriBuilder: _telegramDirectUri,
+                ),
+                const _ExternalLinkTile(
+                  icon: Icons.groups_2_rounded,
+                  title: 'Telegram (group)',
+                  subtitle: 't.me/upsc_wars_group',
+                  uriBuilder: _telegramGroupUri,
+                ),
+              ],
             ),
-            const SizedBox(height: AppSpacing.sm),
-            _FeedbackCard(scheme: scheme),
             const SizedBox(height: AppSpacing.lg),
-            _SectionHeader(
-              icon: Icons.star_rounded,
-              label: 'Store',
-              scheme: scheme,
+
+            _Section(
+              title: 'About',
+              children: [
+                _NavTile(
+                  icon: Icons.info_outline_rounded,
+                  title: 'About us',
+                  subtitle: 'What we’re building, why it exists',
+                  onTap: () => context.push('/about-us'),
+                ),
+                _NavTile(
+                  icon: Icons.star_rate_rounded,
+                  title: 'Rate the app',
+                  subtitle: defaultTargetPlatform == TargetPlatform.iOS
+                      ? 'Open App Store'
+                      : 'Open Play Store',
+                  onTap: () => _openStore(context),
+                ),
+              ],
             ),
-            const SizedBox(height: AppSpacing.sm),
-            _RateReviewCard(scheme: scheme),
+
             if (kDebugMode) ...[
               const SizedBox(height: AppSpacing.lg),
-              _SectionHeader(
-                icon: Icons.analytics_outlined,
-                label: 'Internal',
-                scheme: scheme,
-              ),
-              const SizedBox(height: AppSpacing.sm),
-              ListTile(
-                title: Text('Feature health', style: AppTextStyles.label()),
-                subtitle: Text(
-                  'Local usage aggregates (SQLite)',
-                  style: AppTextStyles.caption().copyWith(
-                    color: scheme.onSurfaceVariant,
+              _Section(
+                title: 'Internal',
+                children: [
+                  _NavTile(
+                    icon: Icons.analytics_outlined,
+                    title: 'Feature health',
+                    subtitle: 'Local usage aggregates (SQLite)',
+                    onTap: () => context.push('/internal/feature-health'),
                   ),
-                ),
-                trailing: const Icon(Icons.chevron_right_rounded),
-                onTap: () => context.push('/internal/feature-health'),
+                ],
               ),
             ],
             const SizedBox(height: AppSpacing.xl),
@@ -121,45 +135,149 @@ class SettingsScreen extends ConsumerWidget {
   }
 }
 
-class _SettingsIntroBanner extends StatelessWidget {
-  const _SettingsIntroBanner({required this.isDark});
+Future<void> _openStore(BuildContext context) async {
+  await HapticFeedback.lightImpact();
+  final ios = defaultTargetPlatform == TargetPlatform.iOS;
+  final appStore = AppConstants.appStoreUrl.trim();
+  final url = ios
+      ? (appStore.isNotEmpty
+            ? appStore
+            : 'https://apps.apple.com/search?term=${Uri.encodeComponent(AppConstants.appDisplayName)}')
+      : AppConstants.playStoreUrl;
+  final uri = Uri.parse(url);
+  final ok = await launchUrl(uri, mode: LaunchMode.externalApplication);
+  if (!ok && context.mounted) {
+    AppToast.showText(context, 'Could not open the store. Try again later.');
+  }
+}
 
-  final bool isDark;
+Uri _telegramDirectUri() => Uri.parse(CreatorContact.telegramDirectUrl);
+Uri _telegramGroupUri() => Uri.parse(CreatorContact.telegramGroupUrl);
+
+class _Header extends StatelessWidget {
+  const _Header({required this.scheme});
+
+  final ColorScheme scheme;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
       padding: const EdgeInsets.all(AppSpacing.lg),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-        gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: isDark
-              ? [
-                  AppColors.primaryDeep,
-                  AppColors.primary.withValues(alpha: 0.4),
-                  AppColors.primaryDeep,
-                ]
-              : [
-                  AppColors.primary,
-                  AppColors.primaryDark,
-                  AppColors.primaryDeep,
-                ],
+        color: scheme.surfaceContainerLow,
+        borderRadius: BorderRadius.circular(AppRadius.xl),
+        border: Border.all(
+          color: scheme.outlineVariant.withValues(alpha: 0.45),
         ),
       ),
-      child: Text(
-        'Quiet tweaks, loud support — shape how ${AppConstants.appDisplayName} feels for you.',
-        style: AppTextStyles.bodySm().copyWith(
-          color: Colors.white.withValues(alpha: 0.95),
-          height: 1.45,
-          shadows: const [
-            Shadow(
-              color: Color(0x66000000),
-              blurRadius: 10,
-              offset: Offset(0, 1),
+      child: Row(
+        children: [
+          Container(
+            width: 44,
+            height: 44,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(14),
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  scheme.primary,
+                  Color.lerp(scheme.primary, Colors.black, 0.18)!,
+                ],
+              ),
             ),
+            child: const Icon(
+              Icons.tune_rounded,
+              color: Colors.white,
+              size: 24,
+            ),
+          ),
+          const SizedBox(width: AppSpacing.md),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  AppConstants.appDisplayName,
+                  style: AppTextStyles.label().copyWith(
+                    color: scheme.onSurfaceVariant,
+                    letterSpacing: 0.2,
+                  ),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  'Make the app feel like yours.',
+                  style: AppTextStyles.h2().copyWith(color: scheme.onSurface),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _Section extends StatelessWidget {
+  const _Section({required this.title, required this.children});
+
+  final String title;
+  final List<Widget> children;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(left: 4, bottom: AppSpacing.sm),
+          child: Text(
+            title.toUpperCase(),
+            style: AppTextStyles.labelSm().copyWith(
+              color: scheme.onSurfaceVariant,
+              letterSpacing: 1.1,
+              fontWeight: FontWeight.w700,
+            ),
+          ),
+        ),
+        _CardGroup(children: children),
+      ],
+    );
+  }
+}
+
+class _CardGroup extends StatelessWidget {
+  const _CardGroup({required this.children});
+
+  final List<Widget> children;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return Material(
+      color: scheme.surface,
+      clipBehavior: Clip.antiAlias,
+      borderRadius: BorderRadius.circular(AppRadius.xl),
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(AppRadius.xl),
+          border: Border.all(
+            color: scheme.outlineVariant.withValues(alpha: 0.45),
+          ),
+        ),
+        child: Column(
+          children: [
+            for (int i = 0; i < children.length; i++) ...[
+              children[i],
+              if (i != children.length - 1)
+                Divider(
+                  height: 1,
+                  thickness: 1,
+                  color: scheme.outlineVariant.withValues(alpha: 0.35),
+                ),
+            ],
           ],
         ),
       ),
@@ -167,273 +285,64 @@ class _SettingsIntroBanner extends StatelessWidget {
   }
 }
 
-class _ConfidenceTrackingCard extends ConsumerWidget {
-  const _ConfidenceTrackingCard();
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final scheme = Theme.of(context).colorScheme;
-    return ref
-        .watch(prefsServiceProvider)
-        .when(
-          data: (prefs) {
-            return Container(
-              decoration: BoxDecoration(
-                color: scheme.surfaceContainerLow,
-                borderRadius: BorderRadius.circular(24),
-                border: Border.all(
-                  color: scheme.outlineVariant.withValues(alpha: 0.45),
-                ),
-              ),
-              child: SwitchListTile(
-                contentPadding: const EdgeInsets.symmetric(
-                  horizontal: AppSpacing.lg,
-                  vertical: AppSpacing.xs,
-                ),
-                value: prefs.confidenceTrackingEnabled,
-                onChanged: (v) async {
-                  final s = await ref.read(prefsServiceProvider.future);
-                  s.confidenceTrackingEnabled = v;
-                  ref.invalidate(prefsServiceProvider);
-                },
-                secondary: Icon(
-                  Icons.psychology_alt_rounded,
-                  color: scheme.primary,
-                  size: 28,
-                ),
-                title: Text(
-                  'Confidence before reveal',
-                  style: AppTextStyles.label(),
-                ),
-                subtitle: Text(
-                  'When on, the app asks how sure you are on important questions '
-                  'before showing the answer — powers Danger Zone insights.',
-                  style: AppTextStyles.bodySm().copyWith(
-                    color: scheme.onSurfaceVariant,
-                  ),
-                ),
-              ),
-            );
-          },
-          loading: () => const SizedBox(
-            height: 72,
-            child: Center(child: CircularProgressIndicator(strokeWidth: 2)),
-          ),
-          error: (_, _) => const SizedBox.shrink(),
-        );
-  }
-}
-
-class _DarkModeToggleCard extends ConsumerWidget {
-  const _DarkModeToggleCard();
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final scheme = Theme.of(context).colorScheme;
-    return ref
-        .watch(prefsServiceProvider)
-        .when(
-          data: (prefs) {
-            return Container(
-              decoration: BoxDecoration(
-                color: scheme.surfaceContainerLow,
-                borderRadius: BorderRadius.circular(24),
-                border: Border.all(
-                  color: scheme.outlineVariant.withValues(alpha: 0.45),
-                ),
-              ),
-              child: SwitchListTile(
-                contentPadding: const EdgeInsets.symmetric(
-                  horizontal: AppSpacing.lg,
-                  vertical: AppSpacing.xs,
-                ),
-                value: prefs.darkModeEnabled,
-                onChanged: (v) async {
-                  await setDarkModeEnabled(
-                    ref: ref,
-                    darkModeEnabled: v,
-                  );
-                },
-                secondary: Icon(
-                  prefs.darkModeEnabled
-                      ? Icons.dark_mode_rounded
-                      : Icons.light_mode_rounded,
-                  color: scheme.primary,
-                  size: 28,
-                ),
-                title: Text('Dark mode', style: AppTextStyles.label()),
-                subtitle: Text(
-                  'Match the app to your room and late-night sessions.',
-                  style: AppTextStyles.bodySm().copyWith(
-                    color: scheme.onSurfaceVariant,
-                  ),
-                ),
-              ),
-            );
-          },
-          loading: () => const SizedBox(
-            height: 72,
-            child: Center(child: CircularProgressIndicator(strokeWidth: 2)),
-          ),
-          error: (_, _) => const SizedBox.shrink(),
-        );
-  }
-}
-
-class _SectionHeader extends StatelessWidget {
-  const _SectionHeader({
+class _NavTile extends StatelessWidget {
+  const _NavTile({
     required this.icon,
-    required this.label,
-    required this.scheme,
+    required this.title,
+    required this.subtitle,
+    required this.onTap,
   });
 
   final IconData icon;
-  final String label;
-  final ColorScheme scheme;
+  final String title;
+  final String subtitle;
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Container(
-          padding: const EdgeInsets.all(8),
-          decoration: BoxDecoration(
-            color: scheme.primaryContainer.withValues(alpha: 0.65),
-            borderRadius: BorderRadius.circular(AppRadius.md),
-          ),
-          child: Icon(icon, size: 20, color: scheme.primary),
-        ),
-        const SizedBox(width: AppSpacing.md),
-        Expanded(
-          child: Text(
-            label.toUpperCase(),
-            maxLines: 2,
-            overflow: TextOverflow.ellipsis,
-            style: AppTextStyles.labelSm().copyWith(
-              color: scheme.onSurfaceVariant,
-              letterSpacing: 1.1,
-              fontWeight: FontWeight.w600,
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-}
-
-class _RateReviewCard extends StatelessWidget {
-  const _RateReviewCard({required this.scheme});
-
-  final ColorScheme scheme;
-
-  Future<void> _openStore(BuildContext context) async {
-    await HapticFeedback.lightImpact();
-    final ios = defaultTargetPlatform == TargetPlatform.iOS;
-    final appStore = AppConstants.appStoreUrl.trim();
-    final url = ios
-        ? (appStore.isNotEmpty
-              ? appStore
-              : 'https://apps.apple.com/search?term=${Uri.encodeComponent(AppConstants.appDisplayName)}')
-        : AppConstants.playStoreUrl;
-    final uri = Uri.parse(url);
-    final ok = await launchUrl(uri, mode: LaunchMode.externalApplication);
-    if (!ok && context.mounted) {
-      AppToast.showText(context, 'Could not open the store. Try again later.');
-    }
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Material(
-      color: scheme.surface,
-      elevation: 0,
-      shadowColor: Colors.transparent,
-      clipBehavior: Clip.antiAlias,
-      borderRadius: BorderRadius.circular(24),
-      child: InkWell(
-        onTap: () => _openStore(context),
-        borderRadius: BorderRadius.circular(24),
-        child: Container(
-          padding: const EdgeInsets.all(AppSpacing.xl),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(24),
-            border: Border.all(
-              color: scheme.outlineVariant.withValues(alpha: 0.45),
-            ),
-            gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [
-                scheme.surfaceContainerHighest.withValues(alpha: 0.35),
-                scheme.surface,
-              ],
-            ),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: List.generate(
-                  5,
-                  (_) => const Padding(
-                    padding: EdgeInsets.only(right: 2),
-                    child: Icon(
-                      Icons.star_rounded,
-                      size: 28,
-                      color: AppColors.warning,
-                    ),
-                  ),
-                ),
-              ),
-              const SizedBox(height: AppSpacing.md),
-              Text(
-                'Rate & review',
-                style: AppTextStyles.h2().copyWith(color: scheme.onSurface),
-              ),
-              const SizedBox(height: AppSpacing.xs),
-              Text(
-                'A thirty-second review is oxygen for a solo dev. '
-                'Tell the Play Store what clicked — brutal honesty welcome, warm fuzzies even more.',
-                style: AppTextStyles.bodyMd().copyWith(
-                  color: scheme.onSurfaceVariant,
-                  height: 1.55,
-                ),
-              ),
-              const SizedBox(height: AppSpacing.lg),
-              FilledButton.tonalIcon(
-                onPressed: () => _openStore(context),
-                icon: const Icon(Icons.storefront_rounded, size: 22),
-                label: Text(
-                  defaultTargetPlatform == TargetPlatform.iOS
-                      ? 'Find us on the App Store'
-                      : 'Open Play Store listing',
-                ),
-                style: FilledButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 20,
-                    vertical: 14,
-                  ),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(AppRadius.lg),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
+    final scheme = Theme.of(context).colorScheme;
+    return ListTile(
+      onTap: () async {
+        await HapticFeedback.selectionClick();
+        onTap();
+      },
+      leading: Icon(icon, color: scheme.primary),
+      title: Text(title, style: AppTextStyles.label()),
+      subtitle: Text(
+        subtitle,
+        style: AppTextStyles.bodySm().copyWith(color: scheme.onSurfaceVariant),
+      ),
+      trailing: Icon(
+        Icons.chevron_right_rounded,
+        color: scheme.onSurfaceVariant.withValues(alpha: 0.6),
+      ),
+      contentPadding: const EdgeInsets.symmetric(
+        horizontal: AppSpacing.lg,
+        vertical: AppSpacing.xs,
       ),
     );
   }
 }
 
-class _FeedbackCard extends StatelessWidget {
-  const _FeedbackCard({required this.scheme});
+class _ExternalLinkTile extends StatelessWidget {
+  const _ExternalLinkTile({
+    required this.icon,
+    required this.title,
+    required this.subtitle,
+    required this.uriBuilder,
+  });
 
-  final ColorScheme scheme;
+  final IconData icon;
+  final String title;
+  final String subtitle;
+  final Uri Function() uriBuilder;
 
-  Future<void> _launch(BuildContext context, Uri uri) async {
+  Future<void> _launch(BuildContext context) async {
     await HapticFeedback.selectionClick();
-    final ok = await launchUrl(uri, mode: LaunchMode.externalApplication);
+    final ok = await launchUrl(
+      uriBuilder(),
+      mode: LaunchMode.externalApplication,
+    );
     if (!ok && context.mounted) {
       AppToast.showText(context, 'Could not open link.');
     }
@@ -441,282 +350,164 @@ class _FeedbackCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final mailUri = CreatorContact.mailtoFeedbackUri();
-
-    return Container(
-      decoration: BoxDecoration(
-        color: scheme.surface,
-        borderRadius: BorderRadius.circular(24),
-        border: Border.all(
-          color: scheme.outlineVariant.withValues(alpha: 0.45),
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: scheme.shadow.withValues(alpha: 0.06),
-            blurRadius: 24,
-            offset: const Offset(0, 12),
-          ),
-        ],
+    final scheme = Theme.of(context).colorScheme;
+    return ListTile(
+      onTap: () => _launch(context),
+      leading: Icon(icon, color: scheme.primary),
+      title: Text(title, style: AppTextStyles.label()),
+      subtitle: Text(
+        subtitle,
+        style: AppTextStyles.bodySm().copyWith(color: scheme.onSurfaceVariant),
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.fromLTRB(
-              AppSpacing.xl,
-              AppSpacing.xl,
-              AppSpacing.xl,
-              AppSpacing.sm,
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Send feedback',
-                  style: AppTextStyles.h2().copyWith(color: scheme.onSurface),
-                ),
-                const SizedBox(height: AppSpacing.xs),
-                Text(
-                  'Bug, idea, roast, or “this feature saved my mock”? '
-                  'I read every message — pick the lane that feels fastest.',
-                  style: AppTextStyles.bodyMd().copyWith(
-                    color: scheme.onSurfaceVariant,
-                    height: 1.55,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          const Divider(height: 1),
-          _FeedbackTile(
-            icon: Icons.mark_email_unread_outlined,
-            iconBg: AppColors.infoBg,
-            iconColor: AppColors.info,
-            title: 'Email',
-            subtitle: CreatorContact.email,
-            hint: 'Best for long context, screenshots, or attachments',
-            onTap: () => _launch(context, mailUri),
-          ),
-          const Divider(height: 1),
-          _FeedbackTile(
-            icon: Icons.send_rounded,
-            iconBg: AppColors.infoBg,
-            iconColor: AppColors.info,
-            title: 'Telegram — direct',
-            subtitle: 't.me/upsc_wars_sachin',
-            hint: 'Quick ping, voice notes, “this broke today”',
-            onTap: () =>
-                _launch(context, Uri.parse(CreatorContact.telegramDirectUrl)),
-          ),
-          const Divider(height: 1),
-          _FeedbackTile(
-            icon: Icons.groups_2_rounded,
-            iconBg: AppColors.primaryLight,
-            iconColor: AppColors.primaryDark,
-            title: 'Telegram — group',
-            subtitle: 't.me/upsc_wars_group',
-            hint: 'Crowd wisdom, peer energy, battle banter',
-            onTap: () =>
-                _launch(context, Uri.parse(CreatorContact.telegramGroupUrl)),
-          ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(
-              AppSpacing.xl,
-              AppSpacing.md,
-              AppSpacing.xl,
-              AppSpacing.xl,
-            ),
-            child: Text(
-              'Average response: human, not bot — bear with spikes on prelims week.',
-              style: AppTextStyles.caption().copyWith(
-                color: scheme.onSurfaceVariant.withValues(alpha: 0.85),
-                fontStyle: FontStyle.italic,
-              ),
-            ),
-          ),
-        ],
+      trailing: Icon(
+        Icons.open_in_new_rounded,
+        size: 20,
+        color: scheme.onSurfaceVariant.withValues(alpha: 0.6),
+      ),
+      contentPadding: const EdgeInsets.symmetric(
+        horizontal: AppSpacing.lg,
+        vertical: AppSpacing.xs,
       ),
     );
   }
 }
 
-class _FeedbackTile extends StatelessWidget {
-  const _FeedbackTile({
-    required this.icon,
-    required this.iconBg,
-    required this.iconColor,
-    required this.title,
-    required this.subtitle,
-    required this.hint,
-    required this.onTap,
-  });
-
-  final IconData icon;
-  final Color iconBg;
-  final Color iconColor;
-  final String title;
-  final String subtitle;
-  final String hint;
-  final VoidCallback onTap;
+class _DarkModeTile extends ConsumerWidget {
+  const _DarkModeTile();
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
-    return Material(
-      color: Colors.transparent,
-      clipBehavior: Clip.antiAlias,
-      child: InkWell(
-        onTap: onTap,
-        splashColor: scheme.primary.withValues(alpha: 0.08),
-        highlightColor: scheme.primary.withValues(alpha: 0.05),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: AppSpacing.lg,
-            vertical: AppSpacing.md,
-          ),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                width: 48,
-                height: 48,
-                decoration: BoxDecoration(
-                  color: iconBg,
-                  borderRadius: BorderRadius.circular(14),
-                ),
-                child: Icon(icon, color: iconColor, size: 24),
+    return ref.watch(prefsServiceProvider).when(
+          data: (prefs) {
+            return SwitchListTile(
+              value: prefs.darkModeEnabled,
+              onChanged: (v) async {
+                await setDarkModeEnabled(ref: ref, darkModeEnabled: v);
+              },
+              secondary: Icon(
+                prefs.darkModeEnabled
+                    ? Icons.dark_mode_rounded
+                    : Icons.light_mode_rounded,
+                color: scheme.primary,
               ),
-              const SizedBox(width: AppSpacing.md),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      title,
-                      style: AppTextStyles.label().copyWith(
-                        color: scheme.onSurface,
-                      ),
-                    ),
-                    const SizedBox(height: 2),
-                    Text(
-                      subtitle,
-                      style: AppTextStyles.bodyMd().copyWith(
-                        color: scheme.primary,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                    const SizedBox(height: 4),
-                    Text(
-                      hint,
-                      style: AppTextStyles.bodySm().copyWith(
-                        color: scheme.onSurfaceVariant,
-                      ),
-                    ),
-                  ],
+              title: Text('Dark mode', style: AppTextStyles.label()),
+              subtitle: Text(
+                'Comfortable contrast for long sessions.',
+                style: AppTextStyles.bodySm()
+                    .copyWith(color: scheme.onSurfaceVariant),
+              ),
+              contentPadding: const EdgeInsets.symmetric(
+                horizontal: AppSpacing.lg,
+                vertical: AppSpacing.xs,
+              ),
+            );
+          },
+          loading: () => const ListTile(
+            contentPadding: EdgeInsets.symmetric(
+              horizontal: AppSpacing.lg,
+              vertical: AppSpacing.xs,
+            ),
+            title: SizedBox(
+              height: 18,
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: SizedBox(
+                  width: 18,
+                  height: 18,
+                  child: CircularProgressIndicator(strokeWidth: 2),
                 ),
               ),
-              Icon(
-                Icons.open_in_new_rounded,
-                size: 20,
-                color: scheme.onSurfaceVariant.withValues(alpha: 0.6),
-              ),
-            ],
+            ),
           ),
-        ),
-      ),
-    );
+          error: (_, __) => const SizedBox.shrink(),
+        );
   }
 }
 
-class _PrelimsPersistentNotificationCard extends ConsumerWidget {
-  const _PrelimsPersistentNotificationCard();
+class _ConfidenceTrackingTile extends ConsumerWidget {
+  const _ConfidenceTrackingTile();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final scheme = Theme.of(context).colorScheme;
+    return ref.watch(prefsServiceProvider).when(
+          data: (prefs) {
+            return SwitchListTile(
+              value: prefs.confidenceTrackingEnabled,
+              onChanged: (v) async {
+                final s = await ref.read(prefsServiceProvider.future);
+                s.confidenceTrackingEnabled = v;
+                ref.invalidate(prefsServiceProvider);
+              },
+              secondary: Icon(
+                Icons.psychology_alt_rounded,
+                color: scheme.primary,
+              ),
+              title: Text('Confidence before reveal', style: AppTextStyles.label()),
+              subtitle: Text(
+                'Ask “how sure are you?” before showing answers.',
+                style: AppTextStyles.bodySm()
+                    .copyWith(color: scheme.onSurfaceVariant),
+              ),
+              contentPadding: const EdgeInsets.symmetric(
+                horizontal: AppSpacing.lg,
+                vertical: AppSpacing.xs,
+              ),
+            );
+          },
+          loading: () => const ListTile(
+            contentPadding: EdgeInsets.symmetric(
+              horizontal: AppSpacing.lg,
+              vertical: AppSpacing.xs,
+            ),
+            title: SizedBox(
+              height: 18,
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: SizedBox(
+                  width: 18,
+                  height: 18,
+                  child: CircularProgressIndicator(strokeWidth: 2),
+                ),
+              ),
+            ),
+          ),
+          error: (_, __) => const SizedBox.shrink(),
+        );
+  }
+}
+
+class _PrelimsPersistentNotificationTile extends ConsumerWidget {
+  const _PrelimsPersistentNotificationTile();
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
 
     if (kIsWeb || defaultTargetPlatform != TargetPlatform.android) {
-      return Container(
-        padding: const EdgeInsets.all(AppSpacing.xl),
-        decoration: BoxDecoration(
-          color: scheme.surface,
-          borderRadius: BorderRadius.circular(24),
-          border: Border.all(
-            color: scheme.outlineVariant.withValues(alpha: 0.45),
-          ),
+      return ListTile(
+        leading: Icon(Icons.notifications_active_outlined, color: scheme.primary),
+        title: Text('Status bar reminder', style: AppTextStyles.label()),
+        subtitle: Text(
+          'Available on Android.',
+          style: AppTextStyles.bodySm().copyWith(color: scheme.onSurfaceVariant),
         ),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Icon(
-              Icons.notifications_active_outlined,
-              color: scheme.primary,
-              size: 28,
-            ),
-            const SizedBox(width: AppSpacing.md),
-            Expanded(
-              child: Text(
-                'The ambient Prelims strip in your status bar is an Android-only flourish for now.',
-                style: AppTextStyles.bodyMd().copyWith(
-                  color: scheme.onSurfaceVariant,
-                ),
-              ),
-            ),
-          ],
+        contentPadding: const EdgeInsets.symmetric(
+          horizontal: AppSpacing.lg,
+          vertical: AppSpacing.xs,
         ),
       );
     }
 
-    return ref
-        .watch(prefsServiceProvider)
-        .when(
+    return ref.watch(prefsServiceProvider).when(
           data: (prefs) {
             final enabled = prefs.prelimsPersistentNotificationEnabled;
-            return Container(
-              decoration: BoxDecoration(
-                color: scheme.surface,
-                borderRadius: BorderRadius.circular(24),
-                border: Border.all(
-                  color: scheme.outlineVariant.withValues(alpha: 0.45),
-                ),
-              ),
-              padding: const EdgeInsets.fromLTRB(
-                AppSpacing.xl,
-                AppSpacing.lg,
-                AppSpacing.xl,
-                AppSpacing.xl,
-              ),
+            return Padding(
+              padding: const EdgeInsets.only(bottom: AppSpacing.md),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    'Prelims reminder',
-                    style: AppTextStyles.h2().copyWith(color: scheme.onSurface),
-                  ),
-                  const SizedBox(height: AppSpacing.xs),
-                  Text(
-                    'A quiet, persistent nudge in your status bar that keeps the '
-                    'days-until-Prelims count in sight, calmly and continuously. '
-                    'Let it be your pocket-sized motivation: fewer aimless unlocks, '
-                    'a faster pull back to the desk—each time the screen wakes in your hand.',
-                    style: AppTextStyles.bodySm().copyWith(
-                      color: scheme.onSurfaceVariant,
-                      height: 1.5,
-                    ),
-                  ),
-                  const SizedBox(height: AppSpacing.sm),
                   SwitchListTile(
-                    contentPadding: EdgeInsets.zero,
-                    title: Text(
-                      'Show in status bar',
-                      style: AppTextStyles.label(),
-                    ),
-                    subtitle: Text(
-                      'Low priority · No sound or vibration',
-                      style: AppTextStyles.bodySm().copyWith(
-                        color: scheme.onSurfaceVariant,
-                      ),
-                    ),
                     value: enabled,
                     onChanged: (v) async {
                       final s = await ref.read(prefsServiceProvider.future);
@@ -724,34 +515,62 @@ class _PrelimsPersistentNotificationCard extends ConsumerWidget {
                       ref.invalidate(prefsServiceProvider);
                       await PrelimsSurfacesRefresh.refreshAllSurfaces();
                     },
-                  ),
-                  const SizedBox(height: AppSpacing.xs),
-                  Text(
-                    enabled ? 'Preview' : 'Preview (dimmed while off)',
-                    style: AppTextStyles.labelSm().copyWith(
-                      color: scheme.onSurfaceVariant,
-                      letterSpacing: 0.3,
+                    secondary: Icon(
+                      Icons.notifications_active_outlined,
+                      color: scheme.primary,
+                    ),
+                    title: Text('Status bar reminder', style: AppTextStyles.label()),
+                    subtitle: Text(
+                      'Keep the days-until-Prelims count visible.',
+                      style: AppTextStyles.bodySm()
+                          .copyWith(color: scheme.onSurfaceVariant),
+                    ),
+                    contentPadding: const EdgeInsets.symmetric(
+                      horizontal: AppSpacing.lg,
+                      vertical: AppSpacing.xs,
                     ),
                   ),
-                  const SizedBox(height: AppSpacing.sm),
-                  Opacity(
-                    opacity: enabled ? 1 : 0.5,
-                    child: const _AndroidPrelimsNotificationPreview(),
+                  AnimatedCrossFade(
+                    firstChild: const SizedBox.shrink(),
+                    secondChild: Padding(
+                      padding: const EdgeInsets.fromLTRB(
+                        AppSpacing.lg,
+                        AppSpacing.xs,
+                        AppSpacing.lg,
+                        0,
+                      ),
+                      child: Opacity(
+                        opacity: enabled ? 1 : 0.55,
+                        child: const _AndroidPrelimsNotificationPreview(),
+                      ),
+                    ),
+                    crossFadeState: enabled
+                        ? CrossFadeState.showSecond
+                        : CrossFadeState.showFirst,
+                    duration: const Duration(milliseconds: 180),
                   ),
                 ],
               ),
             );
           },
-          loading: () => Container(
-            height: 120,
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              color: scheme.surface,
-              borderRadius: BorderRadius.circular(24),
+          loading: () => const ListTile(
+            contentPadding: EdgeInsets.symmetric(
+              horizontal: AppSpacing.lg,
+              vertical: AppSpacing.xs,
             ),
-            child: const CircularProgressIndicator(strokeWidth: 2),
+            title: SizedBox(
+              height: 18,
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: SizedBox(
+                  width: 18,
+                  height: 18,
+                  child: CircularProgressIndicator(strokeWidth: 2),
+                ),
+              ),
+            ),
           ),
-          error: (_, _) => const SizedBox.shrink(),
+          error: (_, __) => const SizedBox.shrink(),
         );
   }
 }

@@ -1,50 +1,68 @@
-import 'dart:io';
+import 'dart:async';
 
-import 'package:in_app_review/in_app_review.dart';
+import 'package:flutter/foundation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:in_app_review/in_app_review.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../constants/app_constants.dart';
 import '../providers/prefs_provider.dart';
 
+/// Handles "rate/review" actions and enforces one-time prompting policy.
 final appReviewServiceProvider = Provider<AppReviewService>((ref) {
-  return AppReviewService(ref);
+  return AppReviewService(
+    prefs: ref.watch(prefsServiceProvider),
+  );
 });
 
 final class AppReviewService {
-  AppReviewService(this._ref);
+  AppReviewService({required this.prefs});
 
-  final Ref _ref;
+  final AsyncValue<PrefsService> prefs;
 
-  /// Fire-and-forget: opens the store listing (explicit user intent).
-  Future<void> openStoreListing() async {
-    final url = Platform.isIOS ? AppConstants.appStoreUrl : AppConstants.playStoreUrl;
-    if (url.trim().isEmpty) return;
-    final uri = Uri.parse(url);
-    await launchUrl(uri, mode: LaunchMode.externalApplication);
-  }
+  static const _iosAppStoreId = '1550273627';
 
-  /// One-time-only: tries the native in-app review flow; if unavailable, falls
-  /// back to opening the store listing. Once invoked successfully (shown or
-  /// attempted), it is never asked again.
-  Future<void> maybeRequestReviewOnce() async {
-    final prefs = await _ref.read(prefsServiceProvider.future);
-    if (prefs.appReviewPromptShown) return;
+  Future<void> requestReviewOnce() async {
+    final p = prefs.asData?.value;
+    if (p == null) return;
+    if (p.appReviewPromptShown) return;
 
-    prefs.appReviewPromptShown = true;
-    _ref.invalidate(prefsServiceProvider);
+    // Mark it immediately to satisfy "only once ever" even if the platform
+    // dialog fails to show (some devices/OS versions silently no-op).
+    p.appReviewPromptShown = true;
 
-    final review = InAppReview.instance;
+    final inApp = InAppReview.instance;
     try {
-      final available = await review.isAvailable();
+      final available = await inApp.isAvailable();
       if (available) {
-        await review.requestReview();
+        await inApp.requestReview();
         return;
       }
     } catch (_) {
-      // Non-blocking; fall back to store listing.
+      // fall through to store listing
     }
+
     await openStoreListing();
+  }
+
+  Future<void> openStoreListing() async {
+    // Prefer in_app_review store listing when possible.
+    final inApp = InAppReview.instance;
+    try {
+      await inApp.openStoreListing(
+        appStoreId: _iosAppStoreId,
+        microsoftStoreId: null,
+      );
+      return;
+    } catch (_) {
+      // fall back to external URL
+    }
+
+    final url = defaultTargetPlatform == TargetPlatform.iOS
+        ? AppConstants.appStoreUrl
+        : AppConstants.playStoreUrl;
+    final uri = Uri.parse(url);
+    unawaited(launchUrl(uri, mode: LaunchMode.externalApplication));
   }
 }
 

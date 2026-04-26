@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:in_app_review/in_app_review.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../core/constants/creator_contact.dart';
@@ -10,6 +11,8 @@ import '../../../core/theme/app_text_styles.dart';
 class AboutUsScreen extends StatelessWidget {
   const AboutUsScreen({super.key});
 
+  static const _iosAppStoreId = '1550273627';
+
   Future<void> _launchExternal(BuildContext context, Uri uri) async {
     final ok = await launchUrl(uri, mode: LaunchMode.externalApplication);
     if (!ok && context.mounted) {
@@ -17,6 +20,25 @@ class AboutUsScreen extends StatelessWidget {
         context,
       ).showSnackBar(const SnackBar(content: Text('Could not open link')));
     }
+  }
+
+  Future<void> _openStoreListing(BuildContext context) async {
+    // Prefer native store listing when possible.
+    final inApp = InAppReview.instance;
+    try {
+      await inApp.openStoreListing(
+        appStoreId: _iosAppStoreId,
+        microsoftStoreId: null,
+      );
+      return;
+    } catch (_) {
+      // Fall back to external URL.
+    }
+
+    final url = defaultTargetPlatform == TargetPlatform.iOS
+        ? 'https://apps.apple.com/in/app/upsc-wars/id1550273627'
+        : 'https://play.google.com/store/apps/details?id=practice.upsc.indiaapps.com.upscmcqpractice';
+    await _launchExternal(context, Uri.parse(url));
   }
 
   Widget _profileAvatar({
@@ -34,7 +56,7 @@ class AboutUsScreen extends StatelessWidget {
           width: 108,
           height: 108,
           fit: BoxFit.cover,
-          errorBuilder: (_, __, ___) => Center(
+          errorBuilder: (context, error, stackTrace) => Center(
             child: Text(
               fallbackLetter,
               style: AppTextStyles.h2().copyWith(color: scheme.onSurface),
@@ -207,12 +229,7 @@ class AboutUsScreen extends StatelessWidget {
                   SizedBox(
                     width: double.infinity,
                     child: FilledButton(
-                      onPressed: () {
-                        final url = defaultTargetPlatform == TargetPlatform.iOS
-                            ? 'https://apps.apple.com/in/app/upsc-wars/id1550273627'
-                            : 'https://play.google.com/store/apps/details?id=practice.upsc.indiaapps.com.upscmcqpractice&hl=en_IN';
-                        _launchExternal(context, Uri.parse(url));
-                      },
+                      onPressed: () async => _openStoreListing(context),
                       child: const Text('Rate/Review UPSC Wars'),
                     ),
                   ),
