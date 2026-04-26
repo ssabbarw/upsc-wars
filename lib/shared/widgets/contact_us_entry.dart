@@ -166,10 +166,7 @@ class _SheetTile extends StatelessWidget {
                   ],
                 ),
               ),
-              Icon(
-                Icons.chevron_right_rounded,
-                color: scheme.onSurfaceVariant,
-              ),
+              Icon(Icons.chevron_right_rounded, color: scheme.onSurfaceVariant),
             ],
           ),
         ),
@@ -202,7 +199,6 @@ class ContactUsTextButton extends StatelessWidget {
     final linkStyle = AppTextStyles.labelSm().copyWith(
       color: scheme.primary,
       fontWeight: FontWeight.w600,
-      decoration: TextDecoration.underline,
       decorationColor: scheme.primary,
     );
 

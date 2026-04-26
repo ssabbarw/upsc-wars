@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
@@ -21,6 +19,7 @@ Future<void> showRateReviewSheet(BuildContext context, WidgetRef ref) async {
       final scheme = Theme.of(sheetContext).colorScheme;
       final bottom = MediaQuery.paddingOf(sheetContext).bottom;
       final maxW = MediaQuery.sizeOf(sheetContext).width;
+
       final content = Padding(
         padding: EdgeInsets.fromLTRB(
           AppSpacing.lg,
@@ -39,84 +38,105 @@ Future<void> showRateReviewSheet(BuildContext context, WidgetRef ref) async {
                 style: AppTextStyles.h3().copyWith(color: scheme.onSurface),
                 textAlign: TextAlign.center,
               ),
-              const SizedBox(height: AppSpacing.md),
+
+              const SizedBox(height: AppSpacing.sm),
+
               Text(
-                'UPSC Wars was built by an ex-UPSC aspirant who faced the same struggle of solving endless MCQs without clearly knowing where marks were actually being lost.\n\n'
+                'Built by an ex-UPSC aspirant who faced the same struggle of solving endless MCQs without clearly knowing where marks were being lost.',
+                style: AppTextStyles.bodyMd().copyWith(
+                  color: scheme.onSurfaceVariant,
+                  height: 1.4,
+                ),
+                textAlign: TextAlign.center,
+              ),
+
+              const SizedBox(height: AppSpacing.md),
+
+              Text(
                 'The goal was simple: help aspirants prepare smarter by identifying confident mistakes, danger zones, safe risk areas, and better revision priorities.',
                 style: AppTextStyles.bodyMd().copyWith(
                   color: scheme.onSurfaceVariant,
-                  height: 1.45,
+                  height: 1.4,
                 ),
+                textAlign: TextAlign.center,
               ),
+
               const SizedBox(height: AppSpacing.md),
-              Text.rich(
-                TextSpan(
-                  style: AppTextStyles.bodyMd().copyWith(
-                    color: scheme.onSurfaceVariant,
-                    height: 1.45,
+
+              Center(
+                child: TextButton(
+                  onPressed: () async {
+                    await HapticFeedback.selectionClick();
+
+                    if (sheetContext.mounted) {
+                      Navigator.of(sheetContext).pop();
+                    }
+
+                    await Future.delayed(const Duration(milliseconds: 200));
+
+                    if (context.mounted) {
+                      context.push('/about-us');
+                    }
+                  },
+                  child: Text(
+                    'Read About the Developer',
+                    style: AppTextStyles.labelMd().copyWith(
+                      color: scheme.primary,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
-                  children: [
-                    const TextSpan(
-                      text:
-                          'Read about the journey and intent behind building UPSC Wars ',
-                    ),
-                    WidgetSpan(
-                      alignment: PlaceholderAlignment.middle,
-                      child: GestureDetector(
-                        onTap: () async {
-                          await HapticFeedback.selectionClick();
-                          if (sheetContext.mounted) {
-                            Navigator.of(sheetContext).pop();
-                          }
-                          if (context.mounted) context.push('/about-us');
-                        },
-                        child: Text(
-                          'here',
-                          style: AppTextStyles.labelSm().copyWith(
-                            color: scheme.primary,
-                            fontWeight: FontWeight.w700,
-                            decoration: TextDecoration.underline,
-                            decorationColor: scheme.primary,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
                 ),
               ),
-              const SizedBox(height: AppSpacing.md),
+
+              const SizedBox(height: AppSpacing.sm),
+
               Text(
-                'If the app is helping your preparation, your review can help another serious aspirant discover it too.',
+                'If UPSC Wars is helping your preparation, your review can help other aspirants find it too. 😊',
                 style: AppTextStyles.bodyMd().copyWith(
                   color: scheme.onSurfaceVariant,
-                  height: 1.45,
+                  height: 1.4,
                 ),
+                textAlign: TextAlign.center,
               ),
+
               const SizedBox(height: AppSpacing.lg),
+
               SizedBox(
                 height: 48,
                 child: FilledButton(
                   onPressed: () async {
                     await HapticFeedback.selectionClick();
-                    await ref.read(appReviewServiceProvider).requestReviewOnce();
+
+                    await ref
+                        .read(appReviewServiceProvider)
+                        .requestReviewOnce();
+
                     ref.invalidate(prefsServiceProvider);
-                    if (sheetContext.mounted) Navigator.of(sheetContext).pop();
+
+                    if (sheetContext.mounted) {
+                      Navigator.of(sheetContext).pop();
+                    }
                   },
                   style: FilledButton.styleFrom(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(AppRadius.md),
                     ),
                   ),
-                  child: const Text('⭐ Leave a Review'),
+                  child: const Text('⭐ Rate & Review UPSC Wars'),
                 ),
               ),
+
               const SizedBox(height: AppSpacing.sm),
+
               SizedBox(
                 height: 44,
                 child: OutlinedButton(
                   onPressed: () async {
                     await HapticFeedback.selectionClick();
-                    if (sheetContext.mounted) Navigator.of(sheetContext).pop();
+
+                    if (sheetContext.mounted) {
+                      Navigator.of(sheetContext).pop();
+                    }
                   },
                   child: const Text('Not now'),
                 ),
@@ -125,8 +145,8 @@ Future<void> showRateReviewSheet(BuildContext context, WidgetRef ref) async {
           ),
         ),
       );
+
       return SafeArea(child: content);
     },
   );
 }
-

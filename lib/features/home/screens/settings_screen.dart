@@ -9,7 +9,6 @@ import '../../../core/constants/prelims_countdown.dart';
 import '../../../core/constants/app_constants.dart';
 import '../../../core/providers/prefs_provider.dart';
 import '../../../core/services/prelims_surfaces_refresh.dart';
-import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../core/constants/creator_contact.dart';
@@ -22,13 +21,14 @@ class SettingsScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     final bottomInset = MediaQuery.paddingOf(context).bottom;
 
     return Scaffold(
       appBar: AppBar(
         title: const Text('Settings'),
       ),
-      backgroundColor: scheme.surface,
+      backgroundColor: isDark ? scheme.surface : const Color(0xFFF5F3EE),
       body: SafeArea(
         child: ListView(
           physics: const BouncingScrollPhysics(),
@@ -64,18 +64,24 @@ class SettingsScreen extends ConsumerWidget {
               children: [
                 _ExternalLinkTile(
                   icon: Icons.mark_email_unread_outlined,
+                  iconBg: Color(0xFFEAF1FF),
+                  iconColor: Color(0xFF2F6BFF),
                   title: 'Send feedback',
                   subtitle: CreatorContact.email,
                   uriBuilder: CreatorContact.mailtoFeedbackUri,
                 ),
                 const _ExternalLinkTile(
                   icon: Icons.send_rounded,
+                  iconBg: Color(0xFFEAF1FF),
+                  iconColor: Color(0xFF2F6BFF),
                   title: 'Telegram (direct)',
                   subtitle: 't.me/upsc_wars_sachin',
                   uriBuilder: _telegramDirectUri,
                 ),
                 const _ExternalLinkTile(
                   icon: Icons.groups_2_rounded,
+                  iconBg: Color(0xFFE8F7F0),
+                  iconColor: Color(0xFF0F8F5E),
                   title: 'Telegram (group)',
                   subtitle: 't.me/upsc_wars_group',
                   uriBuilder: _telegramGroupUri,
@@ -89,12 +95,16 @@ class SettingsScreen extends ConsumerWidget {
               children: [
                 _NavTile(
                   icon: Icons.info_outline_rounded,
+                  iconBg: Color(0xFFF1F0FF),
+                  iconColor: Color(0xFF5A43FF),
                   title: 'About us',
                   subtitle: 'What we’re building, why it exists',
                   onTap: () => context.push('/about-us'),
                 ),
                 _NavTile(
                   icon: Icons.star_rate_rounded,
+                  iconBg: Color(0xFFFFF4E6),
+                  iconColor: Color(0xFFB25A00),
                   title: 'Rate the app',
                   subtitle: defaultTargetPlatform == TargetPlatform.iOS
                       ? 'Open App Store'
@@ -111,6 +121,8 @@ class SettingsScreen extends ConsumerWidget {
                 children: [
                   _NavTile(
                     icon: Icons.analytics_outlined,
+                    iconBg: Color(0xFFEEF1F6),
+                    iconColor: Color(0xFF334155),
                     title: 'Feature health',
                     subtitle: 'Local usage aggregates (SQLite)',
                     onTap: () => context.push('/internal/feature-health'),
@@ -162,13 +174,20 @@ class _Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(AppSpacing.lg),
+      padding: const EdgeInsets.symmetric(
+        horizontal: AppSpacing.lg,
+        vertical: AppSpacing.md,
+      ),
       decoration: BoxDecoration(
-        color: scheme.surfaceContainerLow,
-        borderRadius: BorderRadius.circular(AppRadius.xl),
-        border: Border.all(
-          color: scheme.outlineVariant.withValues(alpha: 0.45),
-        ),
+        color: scheme.surface,
+        borderRadius: BorderRadius.circular(18),
+        boxShadow: [
+          BoxShadow(
+            color: scheme.shadow.withValues(alpha: 0.06),
+            blurRadius: 22,
+            offset: const Offset(0, 10),
+          ),
+        ],
       ),
       child: Row(
         children: [
@@ -177,14 +196,7 @@ class _Header extends StatelessWidget {
             height: 44,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(14),
-              gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: [
-                  scheme.primary,
-                  Color.lerp(scheme.primary, Colors.black, 0.18)!,
-                ],
-              ),
+              color: const Color(0xFF18A36B),
             ),
             child: const Icon(
               Icons.tune_rounded,
@@ -198,10 +210,11 @@ class _Header extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  AppConstants.appDisplayName,
-                  style: AppTextStyles.label().copyWith(
-                    color: scheme.onSurfaceVariant,
-                    letterSpacing: 0.2,
+                  AppConstants.appDisplayName.toUpperCase(),
+                  style: AppTextStyles.labelSm().copyWith(
+                    color: scheme.onSurfaceVariant.withValues(alpha: 0.8),
+                    letterSpacing: 1.0,
+                    fontWeight: FontWeight.w700,
                   ),
                 ),
                 const SizedBox(height: 4),
@@ -232,7 +245,7 @@ class _Section extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: const EdgeInsets.only(left: 4, bottom: AppSpacing.sm),
+          padding: const EdgeInsets.only(left: 8, bottom: AppSpacing.sm),
           child: Text(
             title.toUpperCase(),
             style: AppTextStyles.labelSm().copyWith(
@@ -259,13 +272,17 @@ class _CardGroup extends StatelessWidget {
     return Material(
       color: scheme.surface,
       clipBehavior: Clip.antiAlias,
-      borderRadius: BorderRadius.circular(AppRadius.xl),
+      borderRadius: BorderRadius.circular(18),
       child: Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(AppRadius.xl),
-          border: Border.all(
-            color: scheme.outlineVariant.withValues(alpha: 0.45),
-          ),
+          borderRadius: BorderRadius.circular(18),
+          boxShadow: [
+            BoxShadow(
+              color: scheme.shadow.withValues(alpha: 0.05),
+              blurRadius: 22,
+              offset: const Offset(0, 10),
+            ),
+          ],
         ),
         child: Column(
           children: [
@@ -275,7 +292,9 @@ class _CardGroup extends StatelessWidget {
                 Divider(
                   height: 1,
                   thickness: 1,
-                  color: scheme.outlineVariant.withValues(alpha: 0.35),
+                  indent: 72,
+                  endIndent: AppSpacing.lg,
+                  color: scheme.outlineVariant.withValues(alpha: 0.22),
                 ),
             ],
           ],
@@ -288,12 +307,16 @@ class _CardGroup extends StatelessWidget {
 class _NavTile extends StatelessWidget {
   const _NavTile({
     required this.icon,
+    required this.iconBg,
+    required this.iconColor,
     required this.title,
     required this.subtitle,
     required this.onTap,
   });
 
   final IconData icon;
+  final Color iconBg;
+  final Color iconColor;
   final String title;
   final String subtitle;
   final VoidCallback onTap;
@@ -306,7 +329,7 @@ class _NavTile extends StatelessWidget {
         await HapticFeedback.selectionClick();
         onTap();
       },
-      leading: Icon(icon, color: scheme.primary),
+      leading: _LeadingIcon(icon: icon, bg: iconBg, color: iconColor),
       title: Text(title, style: AppTextStyles.label()),
       subtitle: Text(
         subtitle,
@@ -318,7 +341,7 @@ class _NavTile extends StatelessWidget {
       ),
       contentPadding: const EdgeInsets.symmetric(
         horizontal: AppSpacing.lg,
-        vertical: AppSpacing.xs,
+        vertical: 10,
       ),
     );
   }
@@ -327,12 +350,16 @@ class _NavTile extends StatelessWidget {
 class _ExternalLinkTile extends StatelessWidget {
   const _ExternalLinkTile({
     required this.icon,
+    required this.iconBg,
+    required this.iconColor,
     required this.title,
     required this.subtitle,
     required this.uriBuilder,
   });
 
   final IconData icon;
+  final Color iconBg;
+  final Color iconColor;
   final String title;
   final String subtitle;
   final Uri Function() uriBuilder;
@@ -353,7 +380,7 @@ class _ExternalLinkTile extends StatelessWidget {
     final scheme = Theme.of(context).colorScheme;
     return ListTile(
       onTap: () => _launch(context),
-      leading: Icon(icon, color: scheme.primary),
+      leading: _LeadingIcon(icon: icon, bg: iconBg, color: iconColor),
       title: Text(title, style: AppTextStyles.label()),
       subtitle: Text(
         subtitle,
@@ -366,8 +393,34 @@ class _ExternalLinkTile extends StatelessWidget {
       ),
       contentPadding: const EdgeInsets.symmetric(
         horizontal: AppSpacing.lg,
-        vertical: AppSpacing.xs,
+        vertical: 10,
       ),
+    );
+  }
+}
+
+class _LeadingIcon extends StatelessWidget {
+  const _LeadingIcon({
+    required this.icon,
+    required this.bg,
+    required this.color,
+  });
+
+  final IconData icon;
+  final Color bg;
+  final Color color;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 42,
+      height: 42,
+      decoration: BoxDecoration(
+        color: bg,
+        borderRadius: BorderRadius.circular(14),
+      ),
+      alignment: Alignment.center,
+      child: Icon(icon, color: color, size: 22),
     );
   }
 }
@@ -385,11 +438,12 @@ class _DarkModeTile extends ConsumerWidget {
               onChanged: (v) async {
                 await setDarkModeEnabled(ref: ref, darkModeEnabled: v);
               },
-              secondary: Icon(
-                prefs.darkModeEnabled
+              secondary: _LeadingIcon(
+                icon: prefs.darkModeEnabled
                     ? Icons.dark_mode_rounded
                     : Icons.light_mode_rounded,
-                color: scheme.primary,
+                bg: const Color(0xFFEEF1F6),
+                color: const Color(0xFF334155),
               ),
               title: Text('Dark mode', style: AppTextStyles.label()),
               subtitle: Text(
@@ -399,7 +453,7 @@ class _DarkModeTile extends ConsumerWidget {
               ),
               contentPadding: const EdgeInsets.symmetric(
                 horizontal: AppSpacing.lg,
-                vertical: AppSpacing.xs,
+                vertical: 10,
               ),
             );
           },
@@ -440,9 +494,10 @@ class _ConfidenceTrackingTile extends ConsumerWidget {
                 s.confidenceTrackingEnabled = v;
                 ref.invalidate(prefsServiceProvider);
               },
-              secondary: Icon(
-                Icons.psychology_alt_rounded,
-                color: scheme.primary,
+              secondary: const _LeadingIcon(
+                icon: Icons.psychology_alt_rounded,
+                bg: Color(0xFFE8F7F0),
+                color: Color(0xFF0F8F5E),
               ),
               title: Text('Confidence before reveal', style: AppTextStyles.label()),
               subtitle: Text(
@@ -452,7 +507,7 @@ class _ConfidenceTrackingTile extends ConsumerWidget {
               ),
               contentPadding: const EdgeInsets.symmetric(
                 horizontal: AppSpacing.lg,
-                vertical: AppSpacing.xs,
+                vertical: 10,
               ),
             );
           },
@@ -487,7 +542,11 @@ class _PrelimsPersistentNotificationTile extends ConsumerWidget {
 
     if (kIsWeb || defaultTargetPlatform != TargetPlatform.android) {
       return ListTile(
-        leading: Icon(Icons.notifications_active_outlined, color: scheme.primary),
+        leading: const _LeadingIcon(
+          icon: Icons.notifications_active_outlined,
+          bg: Color(0xFFE8F7F0),
+          color: Color(0xFF0F8F5E),
+        ),
         title: Text('Status bar reminder', style: AppTextStyles.label()),
         subtitle: Text(
           'Available on Android.',
@@ -495,7 +554,7 @@ class _PrelimsPersistentNotificationTile extends ConsumerWidget {
         ),
         contentPadding: const EdgeInsets.symmetric(
           horizontal: AppSpacing.lg,
-          vertical: AppSpacing.xs,
+          vertical: 10,
         ),
       );
     }
@@ -515,9 +574,10 @@ class _PrelimsPersistentNotificationTile extends ConsumerWidget {
                       ref.invalidate(prefsServiceProvider);
                       await PrelimsSurfacesRefresh.refreshAllSurfaces();
                     },
-                    secondary: Icon(
-                      Icons.notifications_active_outlined,
-                      color: scheme.primary,
+                    secondary: const _LeadingIcon(
+                      icon: Icons.notifications_active_outlined,
+                      bg: Color(0xFFE8F7F0),
+                      color: Color(0xFF0F8F5E),
                     ),
                     title: Text('Status bar reminder', style: AppTextStyles.label()),
                     subtitle: Text(
@@ -527,7 +587,7 @@ class _PrelimsPersistentNotificationTile extends ConsumerWidget {
                     ),
                     contentPadding: const EdgeInsets.symmetric(
                       horizontal: AppSpacing.lg,
-                      vertical: AppSpacing.xs,
+                      vertical: 10,
                     ),
                   ),
                   AnimatedCrossFade(

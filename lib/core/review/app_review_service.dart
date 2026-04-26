@@ -10,26 +10,24 @@ import '../providers/prefs_provider.dart';
 
 /// Handles "rate/review" actions and enforces one-time prompting policy.
 final appReviewServiceProvider = Provider<AppReviewService>((ref) {
-  return AppReviewService(
-    prefs: ref.watch(prefsServiceProvider),
-  );
+  return AppReviewService(ref);
 });
 
 final class AppReviewService {
-  AppReviewService({required this.prefs});
+  AppReviewService(this._ref);
 
-  final AsyncValue<PrefsService> prefs;
+  final Ref _ref;
 
   static const _iosAppStoreId = '1550273627';
 
   Future<void> requestReviewOnce() async {
-    final p = prefs.asData?.value;
-    if (p == null) return;
+    final p = await _ref.read(prefsServiceProvider.future);
     if (p.appReviewPromptShown) return;
 
     // Mark it immediately to satisfy "only once ever" even if the platform
     // dialog fails to show (some devices/OS versions silently no-op).
     p.appReviewPromptShown = true;
+    _ref.invalidate(prefsServiceProvider);
 
     final inApp = InAppReview.instance;
     try {

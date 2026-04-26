@@ -29,7 +29,6 @@ import '../../../shared/widgets/prelims_countdown_card.dart';
 import '../../../shared/widgets/quick_practice_mode_sheet.dart';
 import '../../../shared/widgets/contact_us_entry.dart';
 import '../../../shared/widgets/home_page_video_banner.dart';
-import '../../../core/providers/prefs_provider.dart';
 import '../../../shared/widgets/rate_review_sheet.dart';
 
 class HomeScreen extends HookConsumerWidget {
@@ -80,8 +79,9 @@ class HomeScreen extends HookConsumerWidget {
     final user = authState.asData?.value;
     final rawName = user?.displayName?.trim() ?? '';
     final safeName = rawName.toLowerCase() == 'you' ? '' : rawName;
-    final userName =
-        safeName.isNotEmpty ? _toTitleCase(safeName) : (user?.email ?? 'Aspirant');
+    final userName = safeName.isNotEmpty
+        ? _toTitleCase(safeName)
+        : (user?.email ?? 'Aspirant');
     final avatarInitials = _avatarInitials(user?.displayName);
     final avatarBackgroundColor = _avatarBackgroundColor(
       user?.displayName,
@@ -206,14 +206,17 @@ class HomeScreen extends HookConsumerWidget {
                                               .round(),
                                       fadeInDuration: Duration.zero,
                                       fadeOutDuration: Duration.zero,
-                                      errorWidget: (context, url, error) => Center(
-                                        child: Text(
-                                          avatarInitials,
-                                          style: AppTextStyles.label().copyWith(
-                                            color: scheme.onPrimaryContainer,
+                                      errorWidget: (context, url, error) =>
+                                          Center(
+                                            child: Text(
+                                              avatarInitials,
+                                              style: AppTextStyles.label()
+                                                  .copyWith(
+                                                    color: scheme
+                                                        .onPrimaryContainer,
+                                                  ),
+                                            ),
                                           ),
-                                        ),
-                                      ),
                                     ),
                                   ),
                           ),
@@ -488,24 +491,20 @@ class HomeScreen extends HookConsumerWidget {
                   const Center(
                     child: ContactUsTextButton(showRateReviewCta: false),
                   ),
-                  const SizedBox(height: AppSpacing.xxl),
+                  const SizedBox(height: AppSpacing.sm),
                   Center(
                     child: Consumer(
                       builder: (context, ref, child) {
-                        final prefsAsync = ref.watch(prefsServiceProvider);
-                        final shown =
-                            prefsAsync.asData?.value.appReviewPromptShown;
-                        if (shown == null || shown) return const SizedBox.shrink();
                         return TextButton(
                           style: TextButton.styleFrom(
                             visualDensity: VisualDensity.compact,
                             tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                            foregroundColor:
-                                Theme.of(context).colorScheme.primary,
+                            foregroundColor: Theme.of(
+                              context,
+                            ).colorScheme.primary,
                           ),
-                          onPressed: () => unawaited(
-                            showRateReviewSheet(context, ref),
-                          ),
+                          onPressed: () =>
+                              unawaited(showRateReviewSheet(context, ref)),
                           child: Text(
                             'Rate & review',
                             style: AppTextStyles.labelSm().copyWith(
