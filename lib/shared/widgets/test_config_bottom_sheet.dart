@@ -301,8 +301,16 @@ class TestConfigBottomSheet extends HookConsumerWidget {
                         style: AppTextStyles.h2().copyWith(color: scheme.onSurface),
                       ),
                       const SizedBox(height: AppSpacing.sm),
-                      confidenceReminder(),
-                      const SizedBox(height: AppSpacing.sm),
+                      if (args.fixedQuestionSetLabel != null) ...[
+                        Text(
+                          args.fixedQuestionSetLabel!,
+                          style: AppTextStyles.bodyMd().copyWith(
+                            color: scheme.onSurfaceVariant,
+                            height: 1.3,
+                          ),
+                        ),
+                        const SizedBox(height: AppSpacing.sm),
+                      ],
               if (args.topicDisplayName != null) ...[
                 Text(
                   args.topicDisplayName!,
@@ -397,8 +405,7 @@ class TestConfigBottomSheet extends HookConsumerWidget {
                     border: Border.all(color: borderColor, width: 0.5),
                   ),
                   child: Text(
-                    args.fixedQuestionSetLabel ??
-                        '${args.lockedQuestionCount} questions (fixed for battle)',
+                    '${args.lockedQuestionCount} questions (fixed set)',
                     style: AppTextStyles.bodySm().copyWith(
                       color: scheme.onSurfaceVariant,
                     ),
@@ -434,6 +441,8 @@ class TestConfigBottomSheet extends HookConsumerWidget {
                 ),
               if (isExam.value) ...[
                 const SizedBox(height: AppSpacing.xxl),
+                confidenceReminder(),
+                const SizedBox(height: AppSpacing.sm),
                 if (!args.forceExamMode)
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,

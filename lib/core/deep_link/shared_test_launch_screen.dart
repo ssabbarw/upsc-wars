@@ -4,6 +4,8 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'package:upsc_wars/core/deep_link/share_link_kind.dart';
 import 'package:upsc_wars/core/deep_link/shared_session_firestore.dart';
+import 'package:upsc_wars/core/domain/entities/session_config.dart';
+import 'package:upsc_wars/core/providers/catalog_providers.dart';
 import 'package:upsc_wars/core/theme/app_spacing.dart';
 import 'package:upsc_wars/core/theme/app_text_styles.dart';
 import 'package:upsc_wars/core/presentation/session_subject_label.dart';
@@ -23,6 +25,9 @@ class _SharedTestLaunchScreenState extends ConsumerState<SharedTestLaunchScreen>
   bool _started = false;
   bool _didStartSession = false;
   String? _error;
+
+  static const String _kSingleQuestionTutorialKey =
+      'share_single_question_tutorial';
 
   @override
   void didChangeDependencies() {
@@ -53,9 +58,35 @@ class _SharedTestLaunchScreenState extends ConsumerState<SharedTestLaunchScreen>
         return;
       }
 
+      // Special-case: a shared link with only one question opens directly in an
+      // untimed tutorial flow (confidence -> reveal -> explanation), with no
+      // config sheet and no submit UI.
+      if (ordered.length == 1) {
+        final create = await ref.read(createSessionUseCaseProvider.future);
+        final lang = await ref.read(appLanguageProvider.future);
+        final config = SessionConfig(
+          subject: doc.subject,
+          topic: doc.topic,
+          subTopic: null,
+          mode: 'learning',
+          questionCount: 1,
+          isTimed: false,
+          timeLimitSecs: null,
+          language: lang,
+          specificQuestionUuids: ordered,
+          analyticsFeatureKey: _kSingleQuestionTutorialKey,
+        );
+        final sessionId = await create.execute(config);
+        if (!mounted) return;
+        _didStartSession = true;
+        context.go('/test/$sessionId');
+        return;
+      }
+
       final subjectDisplayName = displayNameForSessionSubject(doc.subject);
       final topicDisplayName = doc.topic?.trim().isNotEmpty == true ? doc.topic : null;
-      final sharedBy = (doc.sharedBy ?? 'A friend').trim();
+      final sharedByRaw = (doc.sharedBy ?? '').trim();
+      final sharedBy = sharedByRaw.isEmpty ? 'a friend' : sharedByRaw;
 
       await showTestConfigBottomSheet(
         context: context,
@@ -69,7 +100,7 @@ class _SharedTestLaunchScreenState extends ConsumerState<SharedTestLaunchScreen>
           topicCountWhenSubjectOnly: 0,
           lockedQuestionCount: ordered.length,
           specificQuestionUuids: ordered,
-          fixedQuestionSetLabel: '$sharedBy shared this test with you',
+          fixedQuestionSetLabel: 'Test shared by $sharedBy',
           analyticsFeatureKey: _analyticsKeyForKind(doc.kind),
           onSessionCreated: (sessionId) {
             if (!mounted) return;

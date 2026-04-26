@@ -20,6 +20,15 @@ part 'test_session_provider.g.dart';
 
 @Riverpod(keepAlive: true)
 class TestSessionNotifier extends _$TestSessionNotifier {
+  static const String _kSingleQuestionTutorialKey =
+      'share_single_question_tutorial';
+
+  bool _isSingleQuestionTutorial(ActiveSession s) {
+    return s.mode == 'learning' &&
+        s.questionCount == 1 &&
+        (s.analyticsFeatureKey == _kSingleQuestionTutorialKey);
+  }
+
   @override
   Future<TestSessionState> build(String sessionId) async {
     final load = await ref.read(loadSessionUseCaseProvider.future);
@@ -141,6 +150,18 @@ class TestSessionNotifier extends _$TestSessionNotifier {
     if (s.mode == 'learning' && current.explanationVisible) return;
 
     if (current.confidencePromptVisible) return;
+
+    // Special-case: shared single-question tutorial flow always prompts
+    // confidence before reveal, regardless of user settings/policy.
+    if (_isSingleQuestionTutorial(s)) {
+      state = AsyncData(
+        current.copyWith(
+          pendingSelectedOption: option,
+          confidencePromptVisible: true,
+        ),
+      );
+      return;
+    }
 
     final prefs = await ref.read(prefsServiceProvider.future);
 

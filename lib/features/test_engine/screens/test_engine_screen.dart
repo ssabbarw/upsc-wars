@@ -341,6 +341,9 @@ class _TestEngineLoaded extends HookConsumerWidget {
 
   final String sessionId;
 
+  static const String _kSingleQuestionTutorialKey =
+      'share_single_question_tutorial';
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final notifier = ref.read(testSessionProvider(sessionId).notifier);
@@ -426,6 +429,16 @@ class _TestEngineLoaded extends HookConsumerWidget {
       MediaQuery.sizeOf(context).width,
     );
 
+    final isSingleQuestionTutorial = ref.watch(
+      testSessionProvider(sessionId).select((a) {
+        final s = a.asData?.value.session;
+        if (s == null) return false;
+        return s.mode == 'learning' &&
+            s.questionCount == 1 &&
+            (s.analyticsFeatureKey == _kSingleQuestionTutorialKey);
+      }),
+    );
+
     return Padding(
       padding: hPadding,
       child: Column(
@@ -462,11 +475,14 @@ class _TestEngineLoaded extends HookConsumerWidget {
                 onLanguageChanged: (value) => uiLanguage.value = value,
                 onBack: () => Navigator.of(context).maybePop(),
               ),
-              _ExamActionRow(
-                sessionId: sessionId,
-                onPalette: () => _showTestPaletteSheet(context, ref, sessionId),
-                onSubmit: () => _showTestPaletteSheet(context, ref, sessionId),
-              ),
+              if (!isSingleQuestionTutorial)
+                _ExamActionRow(
+                  sessionId: sessionId,
+                  onPalette: () =>
+                      _showTestPaletteSheet(context, ref, sessionId),
+                  onSubmit: () =>
+                      _showTestPaletteSheet(context, ref, sessionId),
+                ),
             ],
           ),
         ),
@@ -477,24 +493,25 @@ class _TestEngineLoaded extends HookConsumerWidget {
             onSelectOption: notifier.selectOption,
           ),
         ),
-        _BottomBar(
-          sessionId: sessionId,
-          onPrev: notifier.movePrev,
-          onNext: notifier.moveNext,
-          onBookmark: () async {
-            final marked = await notifier.toggleBookmark();
-            if (!context.mounted) return;
-            showTopSnackBar(
-              context,
-              content: Text(
-                marked ? 'Bookmarked' : 'Bookmark removed',
-                style: AppTextStyles.bodyMd().copyWith(
-                  color: Theme.of(context).colorScheme.onSurface,
+        if (!isSingleQuestionTutorial)
+          _BottomBar(
+            sessionId: sessionId,
+            onPrev: notifier.movePrev,
+            onNext: notifier.moveNext,
+            onBookmark: () async {
+              final marked = await notifier.toggleBookmark();
+              if (!context.mounted) return;
+              showTopSnackBar(
+                context,
+                content: Text(
+                  marked ? 'Bookmarked' : 'Bookmark removed',
+                  style: AppTextStyles.bodyMd().copyWith(
+                    color: Theme.of(context).colorScheme.onSurface,
+                  ),
                 ),
-              ),
-            );
-          },
-        ),
+              );
+            },
+          ),
       ],
       ),
     );
