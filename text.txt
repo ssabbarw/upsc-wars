@@ -1,0 +1,274 @@
+# UPSC Wars Home Screen & Retention Discussion
+
+I want your product critique, especially around retention and home screen design.
+
+## Context
+
+UPSC Wars is a UPSC preparation app.
+
+Current DAU: ~72
+
+Current MAU: ~1.2K
+
+Total users (Firebase): ~3,878
+
+Average engagement time: ~18 minutes
+
+Engaged sessions/user: ~2.7
+
+Play Store conversion: ~31% (store visitors → acquisitions)
+
+D1 retention appears around ~20%.
+
+D7 retention appears roughly ~8-10%.
+
+Users who engage appear reasonably engaged, but retention is not where I want it to be.
+
+---
+
+## Core Differentiator
+
+Most UPSC apps only track right/wrong.
+
+UPSC Wars also asks users how confident they were before answering:
+
+* Sure
+* Educated Guess
+* Pure Guess
+
+The app then builds:
+
+* Confidence analysis
+* Trap awareness
+* Weak topic detection
+* Revision recommendations
+* Subject insights
+
+Example:
+
+A user marks "Sure" but gets the answer wrong.
+
+The app treats this as more dangerous than a normal wrong answer.
+
+---
+
+## Analytics Findings
+
+One concern:
+
+Total users: ~3,878
+
+Users with question_attempted event: ~609
+
+Question attempts: ~26,000
+
+Feature completed users: ~470
+
+The ratio between total users and question users seems surprisingly low, though analytics tracking started later and may not cover the full user base.
+
+Users who do attempt questions seem reasonably engaged.
+
+---
+
+## Current Home Screen
+
+Current structure is roughly:
+
+* Greeting
+* Countdown to prelims
+* Motivational quote
+* Subject grid
+
+Example subjects:
+
+* Polity
+* Economy
+* History
+* Geography
+
+There is currently no strong surfacing of:
+
+* Confidence insights
+* Trap awareness
+* Revision recommendations
+* Weak topic analysis
+
+---
+
+## Current Result Screen
+
+After a test, users see:
+
+* Score
+* Confidence analysis
+* Revision queue
+* Progress graphs
+* Detailed breakdowns
+
+The problem we identified:
+
+The most differentiated insights exist, but are buried below the fold or mixed with other information.
+
+---
+
+## Main Product Concern
+
+My onboarding heavily talks about:
+
+* Confidence tracking
+* Hidden mistakes
+* Better self-awareness
+
+But the home screen mostly feels like a traditional subject-wise MCQ app.
+
+Potential mismatch:
+
+Onboarding promise:
+"We'll show you mistakes other apps miss."
+
+Home screen reality:
+"Choose a subject."
+
+---
+
+## Home Screen Direction Being Considered
+
+### Recovery Plan becomes a major feature
+
+Not necessarily the only feature.
+
+But a highly visible section near the top.
+
+The goal:
+
+Surface the unique value of UPSC Wars every day.
+
+---
+
+### Proposed Recovery Plan
+
+Instead of one mixed queue, we discussed multiple cards.
+
+#### Card 1: Current Focus
+
+Review 6 confident mistakes from Polity.
+
+Why?
+
+Because the user has recently spent most study time in Polity.
+
+---
+
+#### Card 2: Due For Revision
+
+Review 4 mistakes from Medieval History.
+
+Why?
+
+These mistakes have not been revisited for a long time.
+
+---
+
+Potential future card:
+
+#### Weak Area
+
+Practice questions from a topic where the user's accuracy is poor.
+
+---
+
+## Current Debate
+
+I am unsure about the actual algorithm behind Recovery Plan.
+
+One concern:
+
+If a user is currently studying Polity, they may not appreciate seeing Ancient History questions from two months ago.
+
+Another concern:
+
+If Recovery Plan only follows recent subjects, it may ignore important weak areas.
+
+We discussed:
+
+* Current focus subjects
+* Confident mistakes
+* Weak topics
+* Long-overdue revision
+
+But have not finalized the balance.
+
+---
+
+## New Users
+
+We also discussed how Recovery Plan should appear for first-time users.
+
+Ideas considered:
+
+1. Interactive onboarding
+2. Discovery quiz
+3. Unlock insights after enough questions
+4. Guided "Today's Plan"
+
+We rejected the idea of generating deep insights from only 5 questions because the sample size is too small to be meaningful.
+
+---
+
+## Current Home Screen Concept
+
+Top:
+
+Good Morning
+85 Days to Prelims
+
+Then:
+
+Recovery Plan (primary)
+
+Card carousel:
+
+* Current Focus
+* Due For Revision
+* Weak Area
+
+Then:
+
+Subjects
+
+The last studied subject gets a larger card.
+
+Example:
+
+Polity
+Last practiced 2 hours ago
+
+Other subjects remain normal-sized cards.
+
+Potentially remove:
+
+* Daily goals
+* Streaks
+* Motivational quote
+
+unless they are shown to provide clear retention value.
+
+---
+
+## Questions
+
+1. Do you agree that the home screen currently under-surfaces the app's unique value?
+
+2. Should Recovery Plan be a primary home-screen feature or remain secondary to subject selection?
+
+3. How would you design the Recovery Plan algorithm?
+
+4. How would you explain Recovery Plan to users without making it feel random?
+
+5. How would you handle Recovery Plan for:
+
+   * New users
+   * Returning users after a long gap
+   * Active users
+
+6. What would your ideal home screen look like if your goal was increasing DAU from ~72 to 1000 over time?

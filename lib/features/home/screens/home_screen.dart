@@ -25,7 +25,6 @@ import '../../../core/analytics/analytics.dart';
 import '../../../core/analytics/analytics_events.dart';
 import '../providers/auth_providers.dart';
 import '../providers/home_activation_provider.dart';
-import '../widgets/did_you_know_card.dart';
 import '../widgets/get_started_card.dart';
 import '../widgets/recovery_plan_section.dart';
 import '../../../shared/widgets/push_denied_banner.dart';
@@ -379,7 +378,6 @@ class HomeScreen extends HookConsumerWidget {
                       );
                     },
                   ),
-                  const DidYouKnowCard(),
                   const RecoveryPlanSection(),
                   const SizedBox(height: AppSpacing.md),
                   Consumer(

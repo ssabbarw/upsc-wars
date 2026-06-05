@@ -281,6 +281,13 @@ class PrefsService {
     );
   }
 
+  /// Clears Did You Know drip prefs (debug / QA).
+  void resetDidYouKnowDrip() {
+    _p.remove(PrefKeys.didYouKnowDismissedIdsV1);
+    _p.remove(PrefKeys.didYouKnowLastShownAtMsV1);
+    _p.remove(PrefKeys.didYouKnowSessionsAtLastShowV1);
+  }
+
   DateTime? get didYouKnowLastShownAt {
     if (!_p.containsKey(PrefKeys.didYouKnowLastShownAtMsV1)) return null;
     final ms = _p.getInt(PrefKeys.didYouKnowLastShownAtMsV1);

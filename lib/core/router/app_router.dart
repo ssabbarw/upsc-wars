@@ -46,6 +46,7 @@ import '../../features/home/screens/profile_screen.dart';
 import '../../features/home/screens/settings_screen.dart';
 import '../../features/home/screens/about_us_screen.dart';
 import '../../features/home/screens/progress_screen.dart';
+import '../../features/internal/screens/did_you_know_debug_screen.dart';
 import '../../features/internal/screens/feature_health_screen.dart';
 import '../../features/home/providers/auth_providers.dart';
 import '../../features/results/screens/confidence_tier_review_screen.dart';
@@ -327,6 +328,13 @@ GoRouter appRouter(Ref ref) {
         name: 'feature_health',
         builder: (context, state) => const FeatureHealthScreen(),
       ),
+      if (kDebugMode)
+        GoRoute(
+          parentNavigatorKey: rootNavigatorKey,
+          path: '/internal/did-you-know',
+          name: 'did_you_know_debug',
+          builder: (context, state) => const DidYouKnowDebugScreen(),
+        ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/notification/long-html',

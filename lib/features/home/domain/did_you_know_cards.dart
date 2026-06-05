@@ -1,6 +1,8 @@
 /// Static catalog for the post-activation Did You Know drip.
 library;
 
+import 'home_recommendation_snapshot.dart';
+
 enum DidYouKnowAction {
   openWeakAreasHub,
   openRevisionQueue,
@@ -66,9 +68,33 @@ DidYouKnowCardDef? didYouKnowCardById(String id) {
   return null;
 }
 
-DidYouKnowCardDef? nextDidYouKnowCard(Set<String> dismissedIds) {
+bool isDidYouKnowCardEligible(
+  DidYouKnowCardDef card,
+  HomeRecommendationSnapshot snapshot,
+) {
+  switch (card.id) {
+    case 'confident_mistakes':
+      return snapshot.confidentMistakeCount > 0;
+    case 'trap_explanations':
+      return snapshot.completedSessionCount > 0 && snapshot.wrongAnswerCount > 0;
+    case 'revision_queue':
+      return snapshot.revisionQueueCount > kDidYouKnowRevisionQueueMinCount;
+    case 'battles':
+      return snapshot.completedSessionCount >=
+          kDidYouKnowBattlesMinCompletedSessions;
+    default:
+      return false;
+  }
+}
+
+DidYouKnowCardDef? nextDidYouKnowCard(
+  Set<String> dismissedIds,
+  HomeRecommendationSnapshot snapshot,
+) {
   for (final c in kDidYouKnowCards) {
-    if (!dismissedIds.contains(c.id)) return c;
+    if (dismissedIds.contains(c.id)) continue;
+    if (!isDidYouKnowCardEligible(c, snapshot)) continue;
+    return c;
   }
   return null;
 }

@@ -3,8 +3,16 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 import '../../../core/providers/prefs_provider.dart';
 import '../../../core/providers/user_database_provider.dart';
 import '../domain/did_you_know_cards.dart';
+import '../domain/home_recommendation_snapshot.dart';
 
 part 'home_activation_provider.g.dart';
+
+/// TEMP — revert to `false` before release.
+/// Forces Did You Know on home and shows the next card immediately after dismiss/CTA.
+const kDebugDidYouKnowRapidFire = true;
+
+/// One-time drip reset per app launch so QA always starts at card 1.
+var _didYouKnowDebugResetDone = false;
 
 /// Minimum completed sessions between Did You Know cards.
 const kDidYouKnowMinSessionsBetweenCards = 3;
@@ -81,7 +89,26 @@ class HomeActivation extends _$HomeActivation {
     final consecutiveDays = consecutiveActivationSessionDays(sessionDays);
 
     final dismissed = prefs.didYouKnowDismissedIds;
-    final nextCard = nextDidYouKnowCard(dismissed);
+    final snapshot = await ref.watch(homeRecommendationSnapshotProvider.future);
+    var nextCard = nextDidYouKnowCard(dismissed, snapshot);
+
+    if (kDebugDidYouKnowRapidFire) {
+      if (!_didYouKnowDebugResetDone) {
+        prefs.resetDidYouKnowDrip();
+        _didYouKnowDebugResetDone = true;
+        nextCard = nextDidYouKnowCard(const {}, snapshot);
+      } else if (nextCard == null) {
+        prefs.resetDidYouKnowDrip();
+        nextCard = nextDidYouKnowCard(const {}, snapshot);
+      }
+      return HomeActivationState(
+        activationComplete: activationComplete,
+        completedSessionCount: completedCount,
+        consecutiveSessionDays: consecutiveDays,
+        shouldShowDidYouKnow: nextCard != null,
+        nextDidYouKnowCardId: nextCard?.id,
+      );
+    }
 
     final dripStopped = activationComplete &&
         (completedCount >= kDidYouKnowMaxSessions ||
