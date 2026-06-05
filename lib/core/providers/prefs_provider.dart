@@ -80,16 +80,6 @@ abstract final class PrefKeys {
   /// User completed activation (any session with Sure/Edu confidence logged).
   static const homeActivationCompleteV1 = 'home_activation_complete_v1';
 
-  /// JSON list of Did You Know card ids dismissed or completed via CTA.
-  static const didYouKnowDismissedIdsV1 = 'did_you_know_dismissed_ids_v1';
-
-  /// When the last Did You Know card was shown (epoch ms).
-  static const didYouKnowLastShownAtMsV1 = 'did_you_know_last_shown_at_ms_v1';
-
-  /// Completed session count snapshot when last Did You Know card was shown.
-  static const didYouKnowSessionsAtLastShowV1 =
-      'did_you_know_sessions_at_last_show_v1';
-
   /// JSON list of yyyy-MM-dd days with at least one completed session.
   static const activationSessionDaysV1 = 'activation_session_days_v1';
 }
@@ -258,55 +248,6 @@ class PrefsService {
       _p.getBool(PrefKeys.homeActivationCompleteV1) ?? false;
   set homeActivationComplete(bool v) =>
       _p.setBool(PrefKeys.homeActivationCompleteV1, v);
-
-  Set<String> get didYouKnowDismissedIds {
-    final raw = _p.getString(PrefKeys.didYouKnowDismissedIdsV1);
-    if (raw == null || raw.isEmpty) return <String>{};
-    try {
-      final list = jsonDecode(raw);
-      if (list is! List) return <String>{};
-      return list.map((e) => e.toString()).toSet();
-    } catch (_) {
-      return <String>{};
-    }
-  }
-
-  void addDidYouKnowDismissedId(String id) {
-    if (id.isEmpty) return;
-    final s = didYouKnowDismissedIds;
-    s.add(id);
-    _p.setString(
-      PrefKeys.didYouKnowDismissedIdsV1,
-      jsonEncode(s.toList()..sort()),
-    );
-  }
-
-  /// Clears Did You Know drip prefs (debug / QA).
-  void resetDidYouKnowDrip() {
-    _p.remove(PrefKeys.didYouKnowDismissedIdsV1);
-    _p.remove(PrefKeys.didYouKnowLastShownAtMsV1);
-    _p.remove(PrefKeys.didYouKnowSessionsAtLastShowV1);
-  }
-
-  DateTime? get didYouKnowLastShownAt {
-    if (!_p.containsKey(PrefKeys.didYouKnowLastShownAtMsV1)) return null;
-    final ms = _p.getInt(PrefKeys.didYouKnowLastShownAtMsV1);
-    if (ms == null) return null;
-    return DateTime.fromMillisecondsSinceEpoch(ms);
-  }
-
-  set didYouKnowLastShownAt(DateTime? v) {
-    if (v == null) {
-      _p.remove(PrefKeys.didYouKnowLastShownAtMsV1);
-    } else {
-      _p.setInt(PrefKeys.didYouKnowLastShownAtMsV1, v.millisecondsSinceEpoch);
-    }
-  }
-
-  int get didYouKnowSessionsAtLastShow =>
-      _p.getInt(PrefKeys.didYouKnowSessionsAtLastShowV1) ?? 0;
-  set didYouKnowSessionsAtLastShow(int v) =>
-      _p.setInt(PrefKeys.didYouKnowSessionsAtLastShowV1, v);
 
   List<String> get activationSessionDays {
     final raw = _p.getString(PrefKeys.activationSessionDaysV1);

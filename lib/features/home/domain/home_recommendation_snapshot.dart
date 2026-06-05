@@ -51,10 +51,8 @@ class HomeRecommendationSnapshot {
   }
 }
 
-const kDidYouKnowRevisionQueueMinCount = 10;
 const kWeakAreaMinAttempts = 5;
 const kWeakAreaMaxAccuracyPercent = 50;
-const kDidYouKnowBattlesMinCompletedSessions = 2;
 
 final homeRecommendationSnapshotProvider =
     FutureProvider.autoDispose<HomeRecommendationSnapshot>((ref) async {

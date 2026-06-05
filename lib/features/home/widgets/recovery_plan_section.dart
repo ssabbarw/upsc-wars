@@ -13,9 +13,7 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
-import '../providers/home_activation_provider.dart';
 import '../providers/recovery_plan_provider.dart';
-import 'did_you_know_card.dart';
 
 class RecoveryPlanSection extends ConsumerWidget {
   const RecoveryPlanSection({super.key});
@@ -23,52 +21,37 @@ class RecoveryPlanSection extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final async = ref.watch(recoveryPlanProvider);
-    final activation = ref.watch(homeActivationProvider);
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final borderColor = isDark ? AppColors.borderDark : AppColors.borderLight;
 
-    final showDidYouKnow = activation.maybeWhen(
-      data: (s) =>
-          s.shouldShowDidYouKnow && s.nextDidYouKnowCardId != null,
-      orElse: () => false,
-    );
+    return async.when(
+      loading: () => const SizedBox.shrink(),
+      error: (_, _) => const SizedBox.shrink(),
+      data: (state) {
+        if (state.cards.isEmpty) return const SizedBox.shrink();
 
-    Widget buildSection({required List<RecoveryPlanCardModel> planCards}) {
-      if (!showDidYouKnow && planCards.isEmpty) {
-        return const SizedBox.shrink();
-      }
-
-      return Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Text(
-            "TODAY'S PLAN",
-            style: AppTextStyles.caption().copyWith(
-              fontWeight: FontWeight.w800,
-              letterSpacing: 1.1,
-              color: scheme.onSurfaceVariant,
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text(
+              "TODAY'S PLAN",
+              style: AppTextStyles.caption().copyWith(
+                fontWeight: FontWeight.w800,
+                letterSpacing: 1.1,
+                color: scheme.onSurfaceVariant,
+              ),
             ),
-          ),
-          const SizedBox(height: AppSpacing.sm),
-          if (showDidYouKnow) const DidYouKnowStrip(),
-          if (showDidYouKnow && planCards.isNotEmpty)
             const SizedBox(height: AppSpacing.sm),
-          if (planCards.isNotEmpty)
             _TodayPlanCarousel(
-              cards: planCards,
+              cards: state.cards,
               borderColor: borderColor,
               isDark: isDark,
               onCardTap: (card) => _handleTap(context, ref, card),
             ),
-        ],
-      );
-    }
-
-    return async.when(
-      loading: () => buildSection(planCards: const []),
-      error: (_, _) => buildSection(planCards: const []),
-      data: (state) => buildSection(planCards: state.cards),
+          ],
+        );
+      },
     );
   }
 
