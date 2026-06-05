@@ -45,10 +45,8 @@ bool _resultsNeedsScrollableExtras(SessionResult r) {
   return key.startsWith('share_deep_link_');
 }
 
-bool _resultsUseFixedCanvas(SessionResult r) {
-  final attempted = r.correct + r.wrong;
-  return attempted > 0 && !_resultsNeedsScrollableExtras(r);
-}
+bool _resultsUseFixedCanvas(SessionResult r) =>
+    !_resultsNeedsScrollableExtras(r);
 
 class ResultsScreen extends ConsumerWidget {
   const ResultsScreen({super.key, required this.sessionId});

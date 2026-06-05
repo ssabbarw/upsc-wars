@@ -64,15 +64,17 @@ class SessionInsightHeroCard extends ConsumerWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Text(
-            style.eyebrow,
-            style: AppTextStyles.caption().copyWith(
-              fontWeight: FontWeight.w800,
-              letterSpacing: 1.1,
-              color: style.accent,
+          if (style.eyebrow.isNotEmpty) ...[
+            Text(
+              style.eyebrow,
+              style: AppTextStyles.caption().copyWith(
+                fontWeight: FontWeight.w800,
+                letterSpacing: 1.1,
+                color: style.accent,
+              ),
             ),
-          ),
-          const SizedBox(height: AppSpacing.xs),
+            const SizedBox(height: AppSpacing.xs),
+          ],
           Text(
             style.title(
               sureWrong: sureWrong,
@@ -115,14 +117,25 @@ class SessionInsightHeroCard extends ConsumerWidget {
           if (marks > 0 &&
               insightCase != SessionInsightCase.e &&
               insightCase != SessionInsightCase.fLockedSettings &&
-              insightCase != SessionInsightCase.fLockedSkipped) ...[
+              insightCase != SessionInsightCase.fLockedSkipped &&
+              insightCase != SessionInsightCase.fNoAttempts) ...[
             const SizedBox(height: AppSpacing.sm),
-            Text(
-              'Real exam cost: −${marks.toStringAsFixed(2)} marks',
-              style: AppTextStyles.labelSm().copyWith(
-                color: AppColors.wrong,
-                fontWeight: FontWeight.w700,
-              ),
+            Row(
+              children: [
+                const Icon(
+                  Icons.menu_book_outlined,
+                  size: 16,
+                  color: AppColors.wrong,
+                ),
+                const SizedBox(width: AppSpacing.xs),
+                Text(
+                  'Real exam cost: −${marks.toStringAsFixed(2)} marks',
+                  style: AppTextStyles.labelSm().copyWith(
+                    color: AppColors.wrong,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+              ],
             ),
           ],
           if (topRiskTopic != null &&
@@ -151,7 +164,7 @@ class SessionInsightHeroCard extends ConsumerWidget {
           const SizedBox(height: AppSpacing.md),
           SizedBox(
             height: 44,
-            child: FilledButton(
+            child: FilledButton.icon(
               style: FilledButton.styleFrom(
                 backgroundColor: style.ctaBackground,
                 foregroundColor: style.ctaForeground,
@@ -160,7 +173,8 @@ class SessionInsightHeroCard extends ConsumerWidget {
                 ),
               ),
               onPressed: () => _onCta(context, ref),
-              child: Text(
+              icon: const Icon(Icons.adjust, size: 20),
+              label: Text(
                 style.ctaLabel(
                   sureWrong: sureWrong,
                   eduWrong: eduWrong,
@@ -215,6 +229,12 @@ class SessionInsightHeroCard extends ConsumerWidget {
       case SessionInsightCase.fLockedSettings:
         context.push('/settings');
       case SessionInsightCase.fLockedSkipped:
+        if (result.subject.isNotEmpty && result.subject != 'revision_quick') {
+          context.go('/subject/${Uri.encodeComponent(result.subject)}');
+        } else {
+          context.go('/');
+        }
+      case SessionInsightCase.fNoAttempts:
         if (result.subject.isNotEmpty && result.subject != 'revision_quick') {
           context.go('/subject/${Uri.encodeComponent(result.subject)}');
         } else {
@@ -445,23 +465,44 @@ _CaseStyle _caseStyle(SessionInsightCase c, bool isDark) {
       );
     case SessionInsightCase.fLockedSkipped:
       return _CaseStyle(
-        eyebrow: 'INSIGHTS LOCKED',
+        eyebrow: '',
         subtitle:
-            'Mark how sure you are on each question to unlock danger-zone insights.',
+            'As this test was attempted without marking confidence.',
         background: _schemeNeutralBg(isDark),
         border: AppColors.borderLight,
         accent: AppColors.primaryDark,
         ctaBackground: AppColors.primary,
         ctaForeground: AppColors.onPrimary,
         title: ({required sureWrong, required eduWrong, required wrong}) =>
-            'Insights locked',
+            'Confidence insights not available',
         ctaLabel: ({
           required sureWrong,
           required eduWrong,
           required wrong,
           required weakestTopic,
         }) =>
-            'Retry with confidence labels',
+            'Retry with confidence marking',
+      );
+    case SessionInsightCase.fNoAttempts:
+      return _CaseStyle(
+        eyebrow: '',
+        subtitle:
+            'You submitted without answering any questions. '
+            'Try again when you are ready.',
+        background: _schemeNeutralBg(isDark),
+        border: AppColors.borderLight,
+        accent: AppColors.primaryDark,
+        ctaBackground: AppColors.primary,
+        ctaForeground: AppColors.onPrimary,
+        title: ({required sureWrong, required eduWrong, required wrong}) =>
+            'No questions attempted',
+        ctaLabel: ({
+          required sureWrong,
+          required eduWrong,
+          required wrong,
+          required weakestTopic,
+        }) =>
+            'Retry test',
       );
   }
 }

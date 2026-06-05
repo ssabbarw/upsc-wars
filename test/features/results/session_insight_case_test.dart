@@ -56,6 +56,17 @@ void main() {
       );
     });
 
+    test('no attempts returns fNoAttempts', () {
+      final r = _result(correct: 0, wrong: 0);
+      expect(
+        classifySessionInsight(
+          result: r,
+          confidenceTrackingEnabled: true,
+        ),
+        SessionInsightCase.fNoAttempts,
+      );
+    });
+
     test('F when exam with low coverage', () {
       final r = _result(
         correct: 1,

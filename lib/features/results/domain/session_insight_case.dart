@@ -22,6 +22,9 @@ enum SessionInsightCase {
 
   /// Tracking on but insufficient confidence coverage on this session.
   fLockedSkipped,
+
+  /// Session submitted with zero questions attempted.
+  fNoAttempts,
 }
 
 const kPrelimsWrongMarkPenalty = 0.66;
@@ -61,6 +64,10 @@ SessionInsightCase classifySessionInsight({
   final sureWrong = sessionSureWrongCount(result);
   final eduWrong = sessionEduWrongCount(result);
 
+  if (answered == 0) {
+    return SessionInsightCase.fNoAttempts;
+  }
+
   if (!confidenceTrackingEnabled) {
     return SessionInsightCase.fLockedSettings;
   }
@@ -99,5 +106,6 @@ String sessionInsightCaseAnalyticsName(SessionInsightCase c) {
     SessionInsightCase.e => 'e_clean',
     SessionInsightCase.fLockedSettings => 'f_locked_settings',
     SessionInsightCase.fLockedSkipped => 'f_locked_skipped',
+    SessionInsightCase.fNoAttempts => 'f_no_attempts',
   };
 }

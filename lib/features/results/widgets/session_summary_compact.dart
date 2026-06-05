@@ -1,3 +1,4 @@
+import 'dart:math' as math;
 import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
@@ -121,12 +122,6 @@ class SessionSummaryCompactView extends HookConsumerWidget {
         ),
         if (moreExpanded.value) ...[
           const SizedBox(height: AppSpacing.sm),
-          _RevisionInline(
-            wrongInSession: result.wrong,
-            revisionAsync: revisionAsync,
-            scheme: scheme,
-          ),
-          const SizedBox(height: AppSpacing.sm),
           if (ConfidenceInsightsSection.shouldShow(result))
             ConfidenceInsightsSection(
               sessionId: sessionId,
@@ -168,7 +163,19 @@ class SessionSummaryCompactView extends HookConsumerWidget {
           ),
         ),
         const SizedBox(height: AppSpacing.sm),
-        _QuickStatsRow(result: result, scheme: scheme),
+        _QuickStatsRow(
+          result: result,
+          scheme: scheme,
+          isDark: isDark,
+          timeAsync: timeAsync,
+        ),
+        const SizedBox(height: AppSpacing.sm),
+        _RevisionQueueCard(
+          wrongInSession: result.wrong,
+          revisionAsync: revisionAsync,
+          scheme: scheme,
+          isDark: isDark,
+        ),
         const SizedBox(height: AppSpacing.sm),
         _TopTopicsSection(
           topics: topicDisplay,
@@ -263,74 +270,257 @@ class _CompactScoreRow extends StatelessWidget {
       );
     }
 
+    final positiveMarks = result.correct * 2.0;
+    final negativeMarks = result.wrong * 0.66;
+    final accColor = attempted == 0
+        ? scheme.onSurfaceVariant
+        : result.accuracy >= 50
+        ? AppColors.coachTrendEmerald
+        : AppColors.wrong;
+
+    return _SummarySurfaceCard(
+      scheme: scheme,
+      isDark: isDark,
+      child: Padding(
+        padding: const EdgeInsets.all(AppSpacing.md),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Your Score',
+              style: AppTextStyles.caption().copyWith(
+                color: scheme.onSurfaceVariant,
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+            const SizedBox(height: AppSpacing.xs),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        net.toStringAsFixed(2),
+                        style: AppTextStyles.h2().copyWith(
+                          fontSize: compact ? 28 : 32,
+                          fontWeight: FontWeight.w900,
+                          color: netColor,
+                          height: 1.05,
+                          fontFeatures: const [
+                            ui.FontFeature.tabularFigures(),
+                          ],
+                        ),
+                      ),
+                      Text(
+                        '${result.correct} / ${result.questionCount} correct',
+                        style: AppTextStyles.caption().copyWith(
+                          color: scheme.onSurfaceVariant,
+                        ),
+                      ),
+                      if (trend != null) ...[
+                        const SizedBox(height: 2),
+                        trend,
+                      ],
+                    ],
+                  ),
+                ),
+                _SemiCircularAccuracyGauge(
+                  accuracy: result.accuracy,
+                  attempted: attempted,
+                  accLabel: accLabel,
+                  accColor: accColor,
+                  positiveMarks: positiveMarks,
+                  negativeMarks: negativeMarks,
+                  scheme: scheme,
+                  isDark: isDark,
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _SemiCircularAccuracyGauge extends StatelessWidget {
+  const _SemiCircularAccuracyGauge({
+    required this.accuracy,
+    required this.attempted,
+    required this.accLabel,
+    required this.accColor,
+    required this.positiveMarks,
+    required this.negativeMarks,
+    required this.scheme,
+    required this.isDark,
+  });
+
+  final double accuracy;
+  final int attempted;
+  final String accLabel;
+  final Color accColor;
+  final double positiveMarks;
+  final double negativeMarks;
+  final ColorScheme scheme;
+  final bool isDark;
+
+  @override
+  Widget build(BuildContext context) {
+    final trackColor = isDark
+        ? AppColors.gray600.withValues(alpha: 0.35)
+        : AppColors.gray200;
+    final progress = attempted == 0 ? 0.0 : (accuracy / 100).clamp(0.0, 1.0);
+
     return Row(
+      mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Your Score',
-                style: AppTextStyles.caption().copyWith(
-                  color: scheme.onSurfaceVariant,
-                  fontWeight: FontWeight.w700,
-                ),
+        SizedBox(
+          height: 54,
+          child: Align(
+            alignment: Alignment.center,
+            child: Text(
+              'Accuracy',
+              style: AppTextStyles.caption().copyWith(
+                color: scheme.onSurfaceVariant,
+                fontWeight: FontWeight.w600,
               ),
-              Text(
-                net.toStringAsFixed(2),
-                style: AppTextStyles.h2().copyWith(
-                  fontSize: compact ? 28 : 32,
-                  fontWeight: FontWeight.w900,
-                  color: netColor,
-                  fontFeatures: const [ui.FontFeature.tabularFigures()],
-                ),
-              ),
-              Text(
-                '${result.correct} / ${result.questionCount} correct',
-                style: AppTextStyles.caption().copyWith(
-                  color: scheme.onSurfaceVariant,
-                ),
-              ),
-              if (trend != null) ...[
-                const SizedBox(height: 2),
-                trend,
-              ],
-            ],
+            ),
           ),
         ),
-        SizedBox(
-          width: 72,
-          height: 72,
-          child: Stack(
-            alignment: Alignment.center,
-            children: [
-              CircularProgressIndicator(
-                value: attempted == 0 ? 0 : result.accuracy / 100,
-                strokeWidth: 6,
-                backgroundColor: scheme.surfaceContainerHighest,
-                color: netColor,
-              ),
-              Text(
-                accLabel,
-                style: AppTextStyles.labelSm().copyWith(
-                  fontWeight: FontWeight.w800,
-                  color: scheme.onSurface,
+        const SizedBox(width: AppSpacing.xs),
+        Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            SizedBox(
+              width: 96,
+              height: 54,
+              child: CustomPaint(
+                painter: _SemiArcPainter(
+                  progress: progress,
+                  progressColor: accColor,
+                  trackColor: trackColor,
+                  strokeWidth: 7,
+                ),
+                child: Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Padding(
+                    padding: const EdgeInsets.only(bottom: 2),
+                    child: Text(
+                      accLabel,
+                      style: AppTextStyles.labelSm().copyWith(
+                        fontWeight: FontWeight.w800,
+                        color: accColor,
+                      ),
+                    ),
+                  ),
                 ),
               ),
-            ],
-          ),
+            ),
+            const SizedBox(height: 2),
+            Text.rich(
+              TextSpan(
+                style: AppTextStyles.caption().copyWith(
+                  fontWeight: FontWeight.w600,
+                  fontFeatures: const [ui.FontFeature.tabularFigures()],
+                ),
+                children: [
+                  TextSpan(
+                    text: '(+${positiveMarks.toStringAsFixed(2)}',
+                    style: const TextStyle(color: AppColors.coachTrendEmerald),
+                  ),
+                  const TextSpan(
+                    text: ' / ',
+                    style: TextStyle(color: AppColors.gray400),
+                  ),
+                  TextSpan(
+                    text: negativeMarks == 0
+                        ? '0)'
+                        : '−${negativeMarks.toStringAsFixed(2)})',
+                    style: const TextStyle(color: AppColors.wrong),
+                  ),
+                ],
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ],
         ),
       ],
     );
   }
 }
 
+class _SemiArcPainter extends CustomPainter {
+  _SemiArcPainter({
+    required this.progress,
+    required this.progressColor,
+    required this.trackColor,
+    required this.strokeWidth,
+  });
+
+  final double progress;
+  final Color progressColor;
+  final Color trackColor;
+  final double strokeWidth;
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    const startAngle = math.pi;
+    const sweepAngle = math.pi;
+    final diameter = size.width - strokeWidth;
+    final arcRect = Rect.fromLTWH(
+      strokeWidth / 2,
+      size.height - diameter / 2,
+      diameter,
+      diameter,
+    );
+
+    final trackPaint = Paint()
+      ..color = trackColor
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = strokeWidth
+      ..strokeCap = StrokeCap.round;
+
+    final progressPaint = Paint()
+      ..color = progressColor
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = strokeWidth
+      ..strokeCap = StrokeCap.round;
+
+    canvas.drawArc(arcRect, startAngle, sweepAngle, false, trackPaint);
+    if (progress > 0) {
+      canvas.drawArc(
+        arcRect,
+        startAngle,
+        sweepAngle * progress,
+        false,
+        progressPaint,
+      );
+    }
+  }
+
+  @override
+  bool shouldRepaint(covariant _SemiArcPainter oldDelegate) =>
+      oldDelegate.progress != progress ||
+      oldDelegate.progressColor != progressColor ||
+      oldDelegate.trackColor != trackColor;
+}
+
 class _QuickStatsRow extends StatelessWidget {
-  const _QuickStatsRow({required this.result, required this.scheme});
+  const _QuickStatsRow({
+    required this.result,
+    required this.scheme,
+    required this.isDark,
+    required this.timeAsync,
+  });
 
   final SessionResult result;
   final ColorScheme scheme;
+  final bool isDark;
+  final AsyncValue<({int avgSecs, int minSecs, int maxSecs})> timeAsync;
 
   @override
   Widget build(BuildContext context) {
@@ -341,51 +531,81 @@ class _QuickStatsRow extends StatelessWidget {
         ? '—'
         : '${(100 * result.confidenceIntelligentCorrect / result.confidenceIntelligentTotal).round()}%';
     final avgTime = result.avgTimeSpentSecs?.round() ?? 0;
+    final timeSub = timeAsync.maybeWhen(
+      data: (t) => 'Fastest ${t.minSecs}s / Slowest ${t.maxSecs}s',
+      orElse: () => null,
+    );
+    final dividerColor = isDark
+        ? AppColors.borderDark
+        : AppColors.borderLight;
 
-    return Row(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Expanded(
-          child: _StatTile(
-            label: 'Confident',
-            value: surePct,
-            sub: result.confidenceSureTotal > 0
-                ? '${result.confidenceSureCorrect}/${result.confidenceSureTotal}'
-                : null,
-            scheme: scheme,
-            icon: Icons.verified_outlined,
-            color: AppColors.correct,
+        Text(
+          'Quick Stats',
+          style: AppTextStyles.labelSm().copyWith(
+            fontWeight: FontWeight.w700,
+            color: scheme.onSurface,
           ),
         ),
-        Expanded(
-          child: _StatTile(
-            label: 'Educated',
-            value: eduPct,
-            sub: result.confidenceIntelligentTotal > 0
-                ? '${result.confidenceIntelligentCorrect}/${result.confidenceIntelligentTotal}'
-                : null,
-            scheme: scheme,
-            icon: Icons.psychology_outlined,
-            color: AppColors.warning,
-          ),
-        ),
-        Expanded(
-          child: _StatTile(
-            label: 'Avg time',
-            value: '${avgTime}s',
-            sub: null,
-            scheme: scheme,
-            icon: Icons.timer_outlined,
-            color: AppColors.info,
-          ),
-        ),
-        Expanded(
-          child: _StatTile(
-            label: 'Done',
-            value: '${result.questionCount}',
-            sub: 'Q',
-            scheme: scheme,
-            icon: Icons.check_circle_outline,
-            color: AppColors.primary,
+        const SizedBox(height: AppSpacing.xs),
+        _SummarySurfaceCard(
+          scheme: scheme,
+          isDark: isDark,
+          child: IntrinsicHeight(
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Expanded(
+                  child: _StatTile(
+                    label: 'Confident',
+                    value: surePct,
+                    sub: result.confidenceSureTotal > 0
+                        ? '(${result.confidenceSureCorrect} / ${result.confidenceSureTotal})'
+                        : null,
+                    scheme: scheme,
+                    icon: Icons.check_circle_outline,
+                    color: AppColors.correct,
+                  ),
+                ),
+                VerticalDivider(width: 1, thickness: 1, color: dividerColor),
+                Expanded(
+                  child: _StatTile(
+                    label: 'Educated Guess',
+                    value: eduPct,
+                    sub: result.confidenceIntelligentTotal > 0
+                        ? '(${result.confidenceIntelligentCorrect} / ${result.confidenceIntelligentTotal})'
+                        : null,
+                    scheme: scheme,
+                    icon: Icons.help_outline,
+                    color: AppColors.warning,
+                  ),
+                ),
+                VerticalDivider(width: 1, thickness: 1, color: dividerColor),
+                Expanded(
+                  child: _StatTile(
+                    label: 'Avg. Time / Q',
+                    value: '${avgTime}s',
+                    sub: timeSub,
+                    scheme: scheme,
+                    icon: Icons.schedule_outlined,
+                    color: AppColors.info,
+                  ),
+                ),
+                VerticalDivider(width: 1, thickness: 1, color: dividerColor),
+                Expanded(
+                  child: _StatTile(
+                    label: 'Questions',
+                    value: '${result.questionCount}',
+                    sub: 'Completed',
+                    scheme: scheme,
+                    icon: Icons.emoji_events_outlined,
+                    color: AppColors.primary,
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ],
@@ -412,26 +632,181 @@ class _StatTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Icon(icon, size: 16, color: color),
-        const SizedBox(height: 2),
-        Text(
-          value,
-          style: AppTextStyles.labelSm().copyWith(
-            fontWeight: FontWeight.w800,
-            color: scheme.onSurface,
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: AppSpacing.xs,
+        vertical: AppSpacing.sm,
+      ),
+      child: Column(
+        children: [
+          Icon(icon, size: 16, color: color),
+          const SizedBox(height: 2),
+          Text(
+            value,
+            style: AppTextStyles.labelSm().copyWith(
+              fontWeight: FontWeight.w800,
+              color: scheme.onSurface,
+            ),
           ),
+          if (sub != null) ...[
+            const SizedBox(height: 1),
+            Text(
+              sub!,
+              style: AppTextStyles.caption().copyWith(
+                fontSize: 8,
+                color: scheme.onSurfaceVariant,
+              ),
+              textAlign: TextAlign.center,
+              maxLines: 2,
+            ),
+          ],
+          const SizedBox(height: 2),
+          Text(
+            label,
+            style: AppTextStyles.caption().copyWith(
+              fontSize: 9,
+              color: scheme.onSurfaceVariant,
+            ),
+            textAlign: TextAlign.center,
+            maxLines: 2,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _RevisionQueueCard extends StatelessWidget {
+  const _RevisionQueueCard({
+    required this.wrongInSession,
+    required this.revisionAsync,
+    required this.scheme,
+    required this.isDark,
+  });
+
+  final int wrongInSession;
+  final AsyncValue<List<RevisionQueueItem>> revisionAsync;
+  final ColorScheme scheme;
+  final bool isDark;
+
+  @override
+  Widget build(BuildContext context) {
+    final due = revisionAsync.maybeWhen(data: (l) => l.length, orElse: () => 0);
+
+    return Container(
+      decoration: BoxDecoration(
+        color: isDark
+            ? AppColors.warningBgDark.withValues(alpha: 0.25)
+            : AppColors.warningBg.withValues(alpha: 0.45),
+        borderRadius: BorderRadius.circular(AppRadius.lg),
+        border: Border.all(
+          color: isDark ? AppColors.borderDark : AppColors.borderLight,
         ),
-        Text(
-          label,
-          style: AppTextStyles.caption().copyWith(
-            fontSize: 9,
+      ),
+      padding: const EdgeInsets.all(AppSpacing.md),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Icon(
+            Icons.library_books_outlined,
+            size: 28,
             color: scheme.onSurfaceVariant,
           ),
-          textAlign: TextAlign.center,
+          const SizedBox(width: AppSpacing.sm),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                if (wrongInSession > 0)
+                  Text(
+                    '+ $wrongInSession question${wrongInSession == 1 ? '' : 's'} '
+                    'from this test added (incorrect)',
+                    style: AppTextStyles.caption().copyWith(
+                      color: AppColors.coachTrendEmerald,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  )
+                else
+                  Text(
+                    'No incorrect answers added from this test.',
+                    style: AppTextStyles.caption().copyWith(
+                      color: scheme.onSurfaceVariant,
+                    ),
+                  ),
+                if (due > 0) ...[
+                  const SizedBox(height: 4),
+                  Text(
+                    '$due question${due == 1 ? '' : 's'} in your queue',
+                    style: AppTextStyles.caption().copyWith(
+                      color: AppColors.summaryOrange,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ],
+              ],
+            ),
+          ),
+          const SizedBox(width: AppSpacing.xs),
+          OutlinedButton(
+            style: OutlinedButton.styleFrom(
+              foregroundColor: AppColors.summaryCtaBlue,
+              side: const BorderSide(color: AppColors.summaryCtaBlue),
+              padding: const EdgeInsets.symmetric(
+                horizontal: AppSpacing.sm,
+                vertical: AppSpacing.xs,
+              ),
+              minimumSize: Size.zero,
+              tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+            ),
+            onPressed: () {
+              HapticFeedback.lightImpact();
+              logGlobalAnalytics(
+                const UspSessionCoachCtaTappedEvent(
+                  action: 'results_revision_queue_nudge_tap',
+                ),
+              );
+              logGlobalAnalytics(
+                const RevisionRecommendationClickedEvent(
+                  source: 'results_revision_queue_nudge',
+                ),
+              );
+              context.push('/revision-queue');
+            },
+            child: Text(
+              'Go to Queue',
+              style: AppTextStyles.caption().copyWith(
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _SummarySurfaceCard extends StatelessWidget {
+  const _SummarySurfaceCard({
+    required this.scheme,
+    required this.isDark,
+    required this.child,
+  });
+
+  final ColorScheme scheme;
+  final bool isDark;
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        color: scheme.surface,
+        borderRadius: BorderRadius.circular(AppRadius.lg),
+        border: Border.all(
+          color: isDark ? AppColors.borderDark : AppColors.borderLight,
         ),
-      ],
+      ),
+      child: child,
     );
   }
 }
@@ -594,29 +969,6 @@ class _MoreInsightsTile extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-}
-
-class _RevisionInline extends StatelessWidget {
-  const _RevisionInline({
-    required this.wrongInSession,
-    required this.revisionAsync,
-    required this.scheme,
-  });
-
-  final int wrongInSession;
-  final AsyncValue<List<RevisionQueueItem>> revisionAsync;
-  final ColorScheme scheme;
-
-  @override
-  Widget build(BuildContext context) {
-    final due = revisionAsync.maybeWhen(data: (l) => l.length, orElse: () => 0);
-    return Text(
-      wrongInSession > 0
-          ? '+ $wrongInSession added to revision · $due in queue'
-          : '$due questions in revision queue',
-      style: AppTextStyles.caption().copyWith(color: scheme.onSurfaceVariant),
     );
   }
 }
