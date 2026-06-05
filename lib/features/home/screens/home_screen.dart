@@ -24,6 +24,10 @@ import '../../../core/theme/app_text_styles.dart';
 import '../../../core/analytics/analytics.dart';
 import '../../../core/analytics/analytics_events.dart';
 import '../providers/auth_providers.dart';
+import '../providers/home_activation_provider.dart';
+import '../widgets/did_you_know_card.dart';
+import '../widgets/get_started_card.dart';
+import '../widgets/recovery_plan_section.dart';
 import '../../../shared/widgets/push_denied_banner.dart';
 import '../../../shared/theme/dark_mode_toggle.dart';
 import '../../../shared/widgets/app_update_kill_switch_overlay.dart';
@@ -64,6 +68,7 @@ class HomeScreen extends HookConsumerWidget {
         final uc = await ref.read(updateStreakUseCaseProvider.future);
         await uc.execute();
         ref.invalidate(homeStateProvider);
+        ref.invalidate(homeActivationProvider);
       });
       return null;
     }, const []);
@@ -347,8 +352,35 @@ class HomeScreen extends HookConsumerWidget {
                       ),
                     ],
                   ),
+                  const SizedBox(height: AppSpacing.sm),
+                  const Align(
+                    alignment: Alignment.centerLeft,
+                    child: PrelimsDaysInfo(),
+                  ),
                   const SizedBox(height: AppSpacing.md),
-                  const PrelimsCountdownCard(),
+                  Consumer(
+                    builder: (context, ref, _) {
+                      final activation = ref.watch(homeActivationProvider);
+                      return activation.when(
+                        loading: () => const SizedBox.shrink(),
+                        error: (_, _) => const SizedBox.shrink(),
+                        data: (state) {
+                          if (state.activationComplete) {
+                            return const SizedBox.shrink();
+                          }
+                          return const Column(
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: [
+                              GetStartedCard(),
+                              SizedBox(height: AppSpacing.md),
+                            ],
+                          );
+                        },
+                      );
+                    },
+                  ),
+                  const DidYouKnowCard(),
+                  const RecoveryPlanSection(),
                   const SizedBox(height: AppSpacing.md),
                   Align(
                     alignment: Alignment.centerLeft,
@@ -427,7 +459,19 @@ class HomeScreen extends HookConsumerWidget {
                     ),
                   ),
                   const SizedBox(height: AppSpacing.md),
-                  _SubjectGrid(borderColor: borderColor),
+                  Consumer(
+                    builder: (context, ref, _) {
+                      final activation = ref.watch(homeActivationProvider);
+                      final secondary = activation.maybeWhen(
+                        data: (s) => !s.activationComplete,
+                        orElse: () => false,
+                      );
+                      return _SubjectGrid(
+                        borderColor: borderColor,
+                        secondary: secondary,
+                      );
+                    },
+                  ),
                   const SizedBox(height: AppSpacing.md),
                   home.when(
                     loading: () {
@@ -879,8 +923,9 @@ class _HomeDiscoveryCard extends StatelessWidget {
 // ── Subject Grid ────────────────────────────────────────────────────────────────
 
 class _SubjectGrid extends ConsumerWidget {
-  const _SubjectGrid({required this.borderColor});
+  const _SubjectGrid({required this.borderColor, this.secondary = false});
   final Color borderColor;
+  final bool secondary;
 
   static const _accentColors = <Color>[
     AppColors.info,
@@ -898,18 +943,21 @@ class _SubjectGrid extends ConsumerWidget {
     final scheme = Theme.of(context).colorScheme;
     final subjectsAsync = ref.watch(subjectTestListProvider);
 
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          'SUBJECTS',
-          style: AppTextStyles.caption().copyWith(
-            color: scheme.onSurfaceVariant,
-            letterSpacing: 0.6,
+    return Opacity(
+      opacity: secondary ? 0.88 : 1,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            secondary ? 'OR PICK ANY SUBJECT' : 'SUBJECTS',
+            style: AppTextStyles.caption().copyWith(
+              color: scheme.onSurfaceVariant,
+              letterSpacing: secondary ? 0.8 : 0.6,
+              fontWeight: secondary ? FontWeight.w600 : FontWeight.normal,
+            ),
           ),
-        ),
-        const SizedBox(height: AppSpacing.sm),
-        subjectsAsync.when(
+          const SizedBox(height: AppSpacing.sm),
+          subjectsAsync.when(
           loading: () => _SubjectGridSkeleton(borderColor: borderColor),
           error: (_, _) => const SizedBox.shrink(),
           data: (subjects) => LayoutBuilder(
@@ -941,6 +989,7 @@ class _SubjectGrid extends ConsumerWidget {
           ),
         ),
       ],
+      ),
     );
   }
 }

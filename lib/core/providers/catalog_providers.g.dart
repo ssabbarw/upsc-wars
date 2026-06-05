@@ -1264,7 +1264,7 @@ final class BookmarksRepositoryProvider
 }
 
 String _$bookmarksRepositoryHash() =>
-    r'25201f681e57a194a59b488c85d47edfeb9121f8';
+    r'9e723777195dda8276eb7168248eced466a1fa15';
 
 @ProviderFor(getBookmarksUseCase)
 final getBookmarksUseCaseProvider = GetBookmarksUseCaseProvider._();

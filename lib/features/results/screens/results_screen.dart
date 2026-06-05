@@ -26,6 +26,7 @@ import '../../community/open_challenge/open_challenge_exam_registry.dart';
 import '../../community/open_challenge/open_challenge_post_results_submit.dart';
 import '../../community/widgets/open_challenge_post_from_results_card.dart';
 import '../../community/widgets/open_challenge_results_actions.dart';
+import '../../home/providers/home_activation_provider.dart';
 import '../widgets/session_summary_coach.dart';
 import '../widgets/share_test_bottom_sheet.dart';
 
@@ -36,6 +37,17 @@ String _sessionResultPhase(AsyncValue<SessionResult>? v) {
     loading: () => 'loading',
     error: (_, _) => 'error',
   );
+}
+
+bool _resultsNeedsScrollableExtras(SessionResult r) {
+  if (r.analyticsFeatureKey == 'mcq_battle') return true;
+  final key = r.analyticsFeatureKey ?? '';
+  return key.startsWith('share_deep_link_');
+}
+
+bool _resultsUseFixedCanvas(SessionResult r) {
+  final attempted = r.correct + r.wrong;
+  return attempted > 0 && !_resultsNeedsScrollableExtras(r);
 }
 
 class ResultsScreen extends ConsumerWidget {
@@ -51,6 +63,9 @@ class ResultsScreen extends ConsumerWidget {
         'ResultsScreen sessionResult $sessionId: '
         '${_sessionResultPhase(prev)} -> ${_sessionResultPhase(next)}',
       );
+      if (next.hasValue && prev?.hasValue != true) {
+        ref.invalidate(homeActivationProvider);
+      }
       if (next.hasError) {
         upscWarsTrace(
           'ResultsScreen sessionResult error sessionId=$sessionId',
@@ -219,6 +234,55 @@ class ResultsScreen extends ConsumerWidget {
                             ? constraints.maxWidth
                             : 700.0;
                         final h = constraints.maxHeight;
+                        final horizontalPad = EdgeInsets.fromLTRB(
+                          AppSpacing.lg,
+                          0,
+                          AppSpacing.lg,
+                          AppSpacing.xxl,
+                        );
+                        final contactUs = const Center(
+                          child: ContactUsTextButton(),
+                        );
+
+                        if (_resultsUseFixedCanvas(r)) {
+                          return Align(
+                            alignment: Alignment.topCenter,
+                            child: SizedBox(
+                              width: w,
+                              height: h,
+                              child: Padding(
+                                padding: horizontalPad,
+                                child: Column(
+                                  crossAxisAlignment:
+                                      CrossAxisAlignment.stretch,
+                                  children: [
+                                    Expanded(
+                                      child: LayoutBuilder(
+                                        builder: (context, coachConstraints) {
+                                          return SessionSummaryCoachContent(
+                                            sessionId: sessionId,
+                                            result: r,
+                                            displaySubjectName: displaySubject,
+                                            maxHeight: coachConstraints.maxHeight,
+                                          );
+                                        },
+                                      ),
+                                    ),
+                                    contactUs,
+                                  ],
+                                ),
+                              ),
+                            ),
+                          );
+                        }
+
+                        final coach = SessionSummaryCoachContent(
+                          sessionId: sessionId,
+                          result: r,
+                          displaySubjectName: displaySubject,
+                          maxHeight: h,
+                        );
+
                         return Align(
                           alignment: Alignment.topCenter,
                           child: SizedBox(
@@ -226,12 +290,7 @@ class ResultsScreen extends ConsumerWidget {
                             height: h,
                             child: ListView(
                               physics: const BouncingScrollPhysics(),
-                              padding: EdgeInsets.fromLTRB(
-                                AppSpacing.lg,
-                                0,
-                                AppSpacing.lg,
-                                AppSpacing.xxl,
-                              ),
+                              padding: horizontalPad,
                               children: [
                                 if (r.analyticsFeatureKey == 'mcq_battle') ...[
                                   BattleLiveScoreboard(sessionId: sessionId),
@@ -254,13 +313,9 @@ class ResultsScreen extends ConsumerWidget {
                                   ),
                                   const SizedBox(height: AppSpacing.lg),
                                 ],
-                                SessionSummaryCoachContent(
-                                  sessionId: sessionId,
-                                  result: r,
-                                  displaySubjectName: displaySubject,
-                                ),
+                                coach,
                                 const SizedBox(height: AppSpacing.lg),
-                                const Center(child: ContactUsTextButton()),
+                                contactUs,
                               ],
                             ),
                           ),

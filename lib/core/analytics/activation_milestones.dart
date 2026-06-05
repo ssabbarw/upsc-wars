@@ -25,6 +25,7 @@ abstract final class ActivationMilestones {
   static const firstRevisionTest = 'first_revision_test_started';
   static const firstScorecardShare = 'first_session_scorecard_link_shared';
   static const firstAccountSignIn = 'first_account_signed_in';
+  static const getStartedDiagnosticCompleted = 'get_started_diagnostic_completed';
 }
 
 /// Logs [ActivationMilestoneEvent] at most once per [id] (see [PrefsService]).

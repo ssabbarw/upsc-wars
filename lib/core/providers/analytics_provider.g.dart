@@ -8,9 +8,14 @@ part of 'analytics_provider.dart';
 
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, type=warning
+/// Global [AnalyticsService] wiring [FirebaseAnalyticsSink] and
+/// [LocalAnalyticsSink]; event meanings are on each [AnalyticsEvent] subclass.
 
 @ProviderFor(analyticsService)
 final analyticsServiceProvider = AnalyticsServiceProvider._();
+
+/// Global [AnalyticsService] wiring [FirebaseAnalyticsSink] and
+/// [LocalAnalyticsSink]; event meanings are on each [AnalyticsEvent] subclass.
 
 final class AnalyticsServiceProvider
     extends
@@ -20,6 +25,8 @@ final class AnalyticsServiceProvider
           AnalyticsService
         >
     with $Provider<AnalyticsService> {
+  /// Global [AnalyticsService] wiring [FirebaseAnalyticsSink] and
+  /// [LocalAnalyticsSink]; event meanings are on each [AnalyticsEvent] subclass.
   AnalyticsServiceProvider._()
     : super(
         from: null,

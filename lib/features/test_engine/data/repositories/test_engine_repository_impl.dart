@@ -5,6 +5,7 @@ import 'package:drift/drift.dart';
 import 'package:intl/intl.dart';
 import 'package:uuid/uuid.dart';
 
+import 'package:upsc_wars/core/analytics/activation_milestones.dart';
 import 'package:upsc_wars/core/analytics/analytics_events.dart';
 import 'package:upsc_wars/core/analytics/analytics_service.dart';
 import 'package:upsc_wars/core/analytics/question_attempt_analytics_input.dart';
@@ -414,6 +415,9 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
     if (completedSessionCount == 1) {
       await _analytics.track(const FirstSessionCompletedEvent());
     }
+
+    await _recordHomeActivation(sessionId, sessionMeta?.analyticsFeatureKey);
+
     await _updateTopicStatsForSession(sessionId);
 
     final prevStreak = _prefsService.currentStreak;
@@ -733,5 +737,34 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
     if (!hasAllOptions) return footer;
     final stem = parsed.stem.trim();
     return stem.isEmpty ? null : stem;
+  }
+
+  Future<void> _recordHomeActivation(
+    String sessionId,
+    String? analyticsFeatureKey,
+  ) async {
+    final now = DateTime.now();
+    final dayKey = DateFormat('yyyy-MM-dd').format(now);
+    _prefsService.appendActivationSessionDay(dayKey);
+
+    final rows = await _userDb.sessionQuestionsDao.getSessionQuestionsOrdered(
+      sessionId,
+    );
+    final hasSureOrEdu = rows.any(
+      (r) =>
+          (r.status == 'correct' || r.status == 'wrong') &&
+          AnswerConfidence.isDangerouslyConfident(r.confidence),
+    );
+    if (hasSureOrEdu) {
+      _prefsService.homeActivationComplete = true;
+    }
+
+    if (analyticsFeatureKey == 'get_started_diagnostic') {
+      await logActivationMilestoneForServices(
+        _analytics,
+        _prefsService,
+        id: ActivationMilestones.getStartedDiagnosticCompleted,
+      );
+    }
   }
 }

@@ -17,6 +17,7 @@ import '../../../core/theme/app_text_styles.dart';
 import '../../../features/topic_test/providers/topic_test_ui_providers.dart';
 import '../providers/session_coach_providers.dart';
 import '../providers/session_topic_accuracy_provider.dart';
+import 'session_summary_compact.dart';
 
 /// Opens session question review. When the user is already on Danger Zone for
 /// this session, [Navigator] page keys from stacked `/history/...` routes can
@@ -47,11 +48,13 @@ class SessionSummaryCoachContent extends ConsumerWidget {
     required this.sessionId,
     required this.result,
     required this.displaySubjectName,
+    this.maxHeight = 600,
   });
 
   final String sessionId;
   final SessionResult result;
   final String displaySubjectName;
+  final double maxHeight;
 
   bool get _canSubjectScope =>
       result.subject.isNotEmpty && result.subject != 'revision_quick';
@@ -79,6 +82,15 @@ class SessionSummaryCoachContent extends ConsumerWidget {
       data: (rows) => _pickWeakestTopic(rows),
       orElse: () => null,
     );
+
+    if (attempted > 0) {
+      return SessionSummaryCompactView(
+        sessionId: sessionId,
+        result: result,
+        displaySubjectName: displaySubjectName,
+        maxHeight: maxHeight,
+      );
+    }
 
     final plan = _CoachNextPlan.build(result: result, weak: weak);
 
@@ -447,40 +459,6 @@ class _ScoreTrendCard extends ConsumerWidget {
             const SizedBox(height: 18),
             trendChild,
             const SizedBox(height: 18),
-            SizedBox(
-              height: 48,
-              width: double.infinity,
-              child: OutlinedButton(
-                style: OutlinedButton.styleFrom(
-                  foregroundColor: scheme.onSurface,
-                  side: BorderSide(
-                    color: isDark
-                        ? AppColors.borderDark
-                        : AppColors.borderLight,
-                  ),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                ),
-                onPressed: () async {
-                  HapticFeedback.lightImpact();
-                  if (!context.mounted) return;
-                  if (context.canPop()) {
-                    context.pop();
-                  } else {
-                    context.go('/');
-                  }
-                },
-                child: Text(
-                  'Go back',
-                  style: AppTextStyles.label().copyWith(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-              ),
-            ),
-            const SizedBox(height: 10),
             SizedBox(
               height: 48,
               width: double.infinity,

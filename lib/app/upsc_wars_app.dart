@@ -23,6 +23,7 @@ import '../core/services/share_deep_link_service.dart';
 import '../core/services/fcm_token_sync_service.dart';
 import '../features/community/services/community_bucket_presence_service.dart';
 import '../features/home/providers/auth_providers.dart';
+import '../features/home/providers/home_activation_provider.dart';
 import '../core/providers/prefs_provider.dart';
 import '../core/router/app_router.dart'
     show appRouterProvider, rootNavigatorKey;
@@ -79,6 +80,11 @@ class _RootMaterialApp extends HookConsumerWidget {
         prefsAsync.value?.patternInterruptOnboardingSeen ?? false;
     final bilingualSeen =
         prefsAsync.value?.bilingualQuestionWelcomeSeen ?? false;
+    final activationAsync = ref.watch(homeActivationProvider);
+    final activationComplete = activationAsync.maybeWhen(
+      data: (s) => s.activationComplete,
+      orElse: () => false,
+    );
 
     useEffect(() {
       var cancelled = false;
@@ -102,10 +108,14 @@ class _RootMaterialApp extends HookConsumerWidget {
     }, const []);
 
     /// First launch only: [PrefsService.bilingualQuestionWelcomeSeen].
-    /// Deferred until [PrefsService.patternInterruptOnboardingSeen] is true.
+    /// Deferred until [PrefsService.patternInterruptOnboardingSeen] and home activation.
     useEffect(() {
       if (!prefsReady) return null;
       if (!patternInterruptDone) {
+        welcomeScheduled.value = false;
+        return null;
+      }
+      if (!activationComplete) {
         welcomeScheduled.value = false;
         return null;
       }
@@ -128,6 +138,14 @@ class _RootMaterialApp extends HookConsumerWidget {
             welcomeScheduled.value = false;
             return;
           }
+          final activation =
+              await ref.read(homeActivationProvider.future);
+          if (cancelled ||
+              !navCtx.mounted ||
+              !activation.activationComplete) {
+            welcomeScheduled.value = false;
+            return;
+          }
           await showFirstLaunchBilingualWelcomeSheet(navCtx);
           if (cancelled || !navCtx.mounted) return;
           (await ref.read(
@@ -139,7 +157,7 @@ class _RootMaterialApp extends HookConsumerWidget {
       return () {
         cancelled = true;
       };
-    }, [prefsReady, patternInterruptDone, bilingualSeen]);
+    }, [prefsReady, patternInterruptDone, bilingualSeen, activationComplete]);
 
     useEffect(() {
       WidgetsBinding.instance.addPostFrameCallback((_) {

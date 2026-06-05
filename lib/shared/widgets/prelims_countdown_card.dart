@@ -9,6 +9,42 @@ import '../../core/theme/app_radius.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_text_styles.dart';
 
+/// Compact one-line prelims countdown for the home screen.
+class PrelimsDaysInfo extends StatelessWidget {
+  const PrelimsDaysInfo({super.key});
+
+  static String label({DateTime? now}) {
+    final days = PrelimsCountdown.daysLeft(now: now);
+    if (days <= 0) return 'Prelims: today';
+    if (days == 1) return 'Prelims: 1 day';
+    return 'Prelims: $days days';
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Icon(
+          Icons.event_outlined,
+          size: 14,
+          color: scheme.onSurfaceVariant,
+        ),
+        const SizedBox(width: AppSpacing.xs),
+        Text(
+          label(),
+          style: AppTextStyles.caption().copyWith(
+            color: scheme.onSurfaceVariant,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
 class PrelimsCountdownCard extends HookWidget {
   const PrelimsCountdownCard({super.key});
 

@@ -327,6 +327,28 @@ class FirebaseAnalyticsSink implements AnalyticsSink {
           'subject': subject,
           'risk_tier': riskTier,
         });
+      case GetStartedCardShownEvent():
+        await _log('get_started_card_shown', const {});
+      case GetStartedCardTappedEvent(:final subject):
+        await _log('get_started_card_tapped', {
+          if (subject case final s?) 'subject': s,
+        });
+      case DidYouKnowShownEvent(:final cardId):
+        await _log('did_you_know_shown', {'card_id': cardId});
+      case DidYouKnowDismissedEvent(:final cardId):
+        await _log('did_you_know_dismissed', {'card_id': cardId});
+      case DidYouKnowCtaTappedEvent(:final cardId):
+        await _log('did_you_know_cta_tapped', {'card_id': cardId});
+      case SessionInsightCaseShownEvent(
+          :final caseName,
+          :final sureWrong,
+          :final eduWrong,
+        ):
+        await _log('session_insight_case_shown', {
+          'case': caseName,
+          'sure_wrong': sureWrong,
+          'edu_wrong': eduWrong,
+        });
     }
   }
 

@@ -604,3 +604,63 @@ final class RiskCardClickedEvent extends AnalyticsEvent {
   final String subject;
   final String riskTier;
 }
+
+// ── Home activation & Did You Know ─────────────────────────────────────────
+
+/// **Get Started card shown** on home for pre-activation users.
+///
+/// **GA4:** `get_started_card_shown` (no parameters).
+final class GetStartedCardShownEvent extends AnalyticsEvent {
+  const GetStartedCardShownEvent();
+}
+
+/// **User tapped Get Started** on home.
+///
+/// **GA4:** `get_started_card_tapped` with optional `subject` when picked.
+final class GetStartedCardTappedEvent extends AnalyticsEvent {
+  const GetStartedCardTappedEvent({this.subject});
+
+  final String? subject;
+}
+
+/// **Did You Know card shown** on home.
+///
+/// **GA4:** `did_you_know_shown` with `card_id`.
+final class DidYouKnowShownEvent extends AnalyticsEvent {
+  const DidYouKnowShownEvent({required this.cardId});
+
+  final String cardId;
+}
+
+/// **User dismissed Did You Know** without tapping CTA.
+///
+/// **GA4:** `did_you_know_dismissed` with `card_id`.
+final class DidYouKnowDismissedEvent extends AnalyticsEvent {
+  const DidYouKnowDismissedEvent({required this.cardId});
+
+  final String cardId;
+}
+
+/// **User tapped Did You Know CTA.**
+///
+/// **GA4:** `did_you_know_cta_tapped` with `card_id`.
+final class DidYouKnowCtaTappedEvent extends AnalyticsEvent {
+  const DidYouKnowCtaTappedEvent({required this.cardId});
+
+  final String cardId;
+}
+
+/// **Session summary hero insight case** rendered after a test.
+///
+/// **GA4:** `session_insight_case_shown` with `case`, `sure_wrong`, `edu_wrong`.
+final class SessionInsightCaseShownEvent extends AnalyticsEvent {
+  const SessionInsightCaseShownEvent({
+    required this.caseName,
+    required this.sureWrong,
+    required this.eduWrong,
+  });
+
+  final String caseName;
+  final int sureWrong;
+  final int eduWrong;
+}

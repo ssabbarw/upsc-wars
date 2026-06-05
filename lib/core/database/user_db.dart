@@ -257,6 +257,58 @@ class QuestionsDao extends DatabaseAccessor<UserDatabase>
     return getByUuidsInOrder([...unseenUuids, ...seenUuids]);
   }
 
+  /// Picks [questionCount] questions spread across up to [maxTopics] distinct
+  /// topics within [subject] (unseen-first per topic).
+  Future<List<Question>> getUnseenFirstBySubjectSpreadTopics({
+    required String subject,
+    required int questionCount,
+    required int maxTopics,
+    required Set<String> attemptedQuestionUuids,
+  }) async {
+    if (questionCount <= 0 || maxTopics <= 0) return const [];
+    final topicRows = await getTopicQuestionCountsForSubject(subject);
+    if (topicRows.isEmpty) return const [];
+
+    final topics = topicRows.map((e) => e.topic).toList();
+    if (topics.length > maxTopics) {
+      topics.shuffle();
+      topics.removeRange(maxTopics, topics.length);
+    }
+
+    final perTopic = (questionCount / topics.length).ceil();
+    final picked = <Question>[];
+    final usedUuids = {...attemptedQuestionUuids};
+
+    for (final topic in topics) {
+      if (picked.length >= questionCount) break;
+      final need = (questionCount - picked.length).clamp(1, perTopic);
+      final batch = await getUnseenFirstByTopic(
+        subject: subject,
+        topic: topic,
+        limit: need,
+        attemptedQuestionUuids: usedUuids,
+      );
+      for (final q in batch) {
+        if (picked.length >= questionCount) break;
+        if (usedUuids.add(q.uuid)) picked.add(q);
+      }
+    }
+
+    if (picked.length < questionCount) {
+      final fill = await getUnseenFirstBySubject(
+        subject: subject,
+        limit: questionCount - picked.length,
+        attemptedQuestionUuids: usedUuids,
+      );
+      for (final q in fill) {
+        if (picked.length >= questionCount) break;
+        if (usedUuids.add(q.uuid)) picked.add(q);
+      }
+    }
+
+    return picked;
+  }
+
   Future<List<Question>> getUnseenFirstByTopic({
     required String subject,
     required String topic,
@@ -690,6 +742,22 @@ class SessionQuestionsDao extends DatabaseAccessor<UserDatabase>
       readsFrom: {sessionQuestions},
     ).map((row) => row.read<String>('question_uuid')).get();
     return rows.toSet();
+  }
+
+  /// True if any completed session has Sure or Educated guess on a scored row.
+  Future<bool> hasSureOrEducatedOnCompletedSessions() async {
+    final row = await customSelect(
+      '''
+      SELECT COUNT(*) AS c
+      FROM session_questions sq
+      INNER JOIN sessions s ON s.id = sq.session_id
+      WHERE s.status = 'completed'
+        AND sq.status IN ('correct', 'wrong')
+        AND sq.confidence IN ('very_sure', 'somewhat_sure')
+      ''',
+      readsFrom: {sessionQuestions, sessions},
+    ).getSingle();
+    return (row.read<int?>('c') ?? 0) > 0;
   }
 
   Future<int> updateAttempt({
