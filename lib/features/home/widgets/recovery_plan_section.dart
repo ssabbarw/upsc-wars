@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -21,9 +22,8 @@ class RecoveryPlanSection extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final async = ref.watch(recoveryPlanProvider);
     final scheme = Theme.of(context).colorScheme;
-    final borderColor = Theme.of(context).brightness == Brightness.dark
-        ? AppColors.borderDark
-        : AppColors.borderLight;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final borderColor = isDark ? AppColors.borderDark : AppColors.borderLight;
 
     return async.when(
       loading: () => const SizedBox.shrink(),
@@ -43,15 +43,11 @@ class RecoveryPlanSection extends ConsumerWidget {
               ),
             ),
             const SizedBox(height: AppSpacing.sm),
-            ...state.cards.map(
-              (card) => Padding(
-                padding: const EdgeInsets.only(bottom: AppSpacing.sm),
-                child: _RecoveryCard(
-                  model: card,
-                  borderColor: borderColor,
-                  onTap: () => _handleTap(context, ref, card),
-                ),
-              ),
+            _TodayPlanCarousel(
+              cards: state.cards,
+              borderColor: borderColor,
+              isDark: isDark,
+              onCardTap: (card) => _handleTap(context, ref, card),
             ),
           ],
         );
@@ -86,13 +82,6 @@ class RecoveryPlanSection extends ConsumerWidget {
           ),
         );
         if (context.mounted) context.push('/test/$id');
-      case RecoveryPlanCardKind.continueSubject:
-        if (card.sessionId != null) {
-          context.push('/test/${card.sessionId}');
-          return;
-        }
-        if (card.subject == null) return;
-        context.push('/subject/${Uri.encodeComponent(card.subject!)}');
       case RecoveryPlanCardKind.dueForRevision:
         final create = await ref.read(createSessionUseCaseProvider.future);
         final n = card.questionCount ?? 10;
@@ -112,6 +101,105 @@ class RecoveryPlanSection extends ConsumerWidget {
         if (card.subject == null) return;
         context.push('/subject/${Uri.encodeComponent(card.subject!)}');
     }
+  }
+}
+
+class _TodayPlanCarousel extends HookWidget {
+  const _TodayPlanCarousel({
+    required this.cards,
+    required this.borderColor,
+    required this.isDark,
+    required this.onCardTap,
+  });
+
+  static const _carouselHeight = 168.0;
+
+  final List<RecoveryPlanCardModel> cards;
+  final Color borderColor;
+  final bool isDark;
+  final void Function(RecoveryPlanCardModel card) onCardTap;
+
+  @override
+  Widget build(BuildContext context) {
+    final hasMultiple = cards.length > 1;
+    final pageController = usePageController(
+      viewportFraction: hasMultiple ? 0.92 : 1.0,
+    );
+    final currentPage = useState(0);
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        SizedBox(
+          height: _carouselHeight,
+          child: PageView.builder(
+            controller: pageController,
+            physics: const BouncingScrollPhysics(),
+            onPageChanged: (index) => currentPage.value = index,
+            itemCount: cards.length,
+            itemBuilder: (context, index) {
+              final card = cards[index];
+              return Padding(
+                padding: EdgeInsets.only(
+                  right: hasMultiple ? AppSpacing.sm : 0,
+                ),
+                child: _RecoveryCard(
+                  model: card,
+                  borderColor: borderColor,
+                  onTap: () => onCardTap(card),
+                ),
+              );
+            },
+          ),
+        ),
+        if (hasMultiple) ...[
+          const SizedBox(height: AppSpacing.sm),
+          _PlanCarouselDots(
+            index: currentPage.value,
+            count: cards.length,
+            isDark: isDark,
+          ),
+        ],
+      ],
+    );
+  }
+}
+
+class _PlanCarouselDots extends StatelessWidget {
+  const _PlanCarouselDots({
+    required this.index,
+    required this.count,
+    required this.isDark,
+  });
+
+  final int index;
+  final int count;
+  final bool isDark;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: List.generate(count, (i) {
+        final on = i == index;
+        return Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 3),
+          child: AnimatedContainer(
+            duration: const Duration(milliseconds: 200),
+            width: on ? 18 : 7,
+            height: 7,
+            decoration: BoxDecoration(
+              color: on
+                  ? AppColors.primary
+                  : (isDark
+                        ? AppColors.onSurfaceDark.withValues(alpha: 0.25)
+                        : AppColors.gray200),
+              borderRadius: BorderRadius.circular(100),
+            ),
+          ),
+        );
+      }),
+    );
   }
 }
 
@@ -137,6 +225,7 @@ class _RecoveryCard extends StatelessWidget {
         onTap: onTap,
         borderRadius: BorderRadius.circular(AppRadius.lg),
         child: Container(
+          height: double.infinity,
           padding: const EdgeInsets.all(AppSpacing.lg),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(AppRadius.lg),
@@ -147,6 +236,8 @@ class _RecoveryCard extends StatelessWidget {
             children: [
               Text(
                 model.title,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
                 style: AppTextStyles.labelSm().copyWith(
                   fontWeight: FontWeight.w800,
                   color: AppColors.primaryDark,
@@ -155,27 +246,31 @@ class _RecoveryCard extends StatelessWidget {
               const SizedBox(height: AppSpacing.xs),
               Text(
                 model.subtitle,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
                 style: AppTextStyles.bodyMd().copyWith(
                   fontWeight: FontWeight.w700,
                   color: scheme.onSurface,
                 ),
               ),
               const SizedBox(height: AppSpacing.xs),
-              Text(
-                model.why,
-                style: AppTextStyles.caption().copyWith(
-                  color: scheme.onSurfaceVariant,
+              Expanded(
+                child: Text(
+                  model.why,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style: AppTextStyles.caption().copyWith(
+                    color: scheme.onSurfaceVariant,
+                  ),
                 ),
               ),
-              const SizedBox(height: AppSpacing.sm),
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  model.ctaLabel,
-                  style: AppTextStyles.labelSm().copyWith(
-                    color: AppColors.primary,
-                    fontWeight: FontWeight.w700,
-                  ),
+              Text(
+                model.ctaLabel,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: AppTextStyles.labelSm().copyWith(
+                  color: AppColors.primary,
+                  fontWeight: FontWeight.w700,
                 ),
               ),
             ],

@@ -10,7 +10,6 @@ import '../providers/home_activation_provider.dart';
 
 enum RecoveryPlanCardKind {
   currentFocus,
-  continueSubject,
   dueForRevision,
   weakArea,
 }
@@ -24,7 +23,6 @@ class RecoveryPlanCardModel {
     required this.ctaLabel,
     this.subject,
     this.topic,
-    this.sessionId,
     this.questionCount,
     this.questionUuids,
   });
@@ -36,7 +34,6 @@ class RecoveryPlanCardModel {
   final String ctaLabel;
   final String? subject;
   final String? topic;
-  final String? sessionId;
   final int? questionCount;
   final List<String>? questionUuids;
 }
@@ -90,27 +87,7 @@ final recoveryPlanProvider = FutureProvider.autoDispose<RecoveryPlanState>((
     }
   }
 
-  // F2: Continue last subject.
-  final last = home.lastSession;
-  if (last != null &&
-      last.subject.isNotEmpty &&
-      last.subject != 'revision_quick') {
-    cards.add(
-      RecoveryPlanCardModel(
-        kind: RecoveryPlanCardKind.continueSubject,
-        title: 'Continue',
-        subtitle: last.subject,
-        why: last.status == 'in_progress'
-            ? 'You have a session in progress.'
-            : 'Pick up where you left off.',
-        ctaLabel: last.status == 'in_progress' ? 'Resume' : 'Practice again',
-        subject: last.subject,
-        sessionId: last.status == 'in_progress' ? last.sessionId : null,
-      ),
-    );
-  }
-
-  // F3: Due for revision — oldest queue items (proxy).
+  // F2: Due for revision — oldest queue items (proxy).
   if (home.revisionQueueCount > 0) {
     final queue = await ref.watch(revisionQueueItemsProvider.future);
     if (queue.isNotEmpty) {
@@ -129,7 +106,7 @@ final recoveryPlanProvider = FutureProvider.autoDispose<RecoveryPlanState>((
     }
   }
 
-  // F4: Weak area — lowest accuracy subject with attempts.
+  // F3: Weak area — lowest accuracy subject with attempts.
   final overview = await ref.watch(allSubjectsOverviewProvider.future);
   SubjectOverviewRow? weakest;
   for (final row in overview) {
