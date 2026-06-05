@@ -285,11 +285,11 @@ class TestConfigBottomSheet extends HookConsumerWidget {
                 fit: FlexFit.loose,
                 child: SingleChildScrollView(
                   physics: const BouncingScrollPhysics(),
-                  padding: const EdgeInsets.fromLTRB(
+                  padding: EdgeInsets.fromLTRB(
                     AppSpacing.xxl,
                     AppSpacing.sm,
                     AppSpacing.xxl,
-                    AppSpacing.xxl,
+                    AppSpacing.xxl + MediaQuery.paddingOf(context).bottom,
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
