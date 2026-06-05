@@ -1,8 +1,12 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../core/analytics/analytics.dart';
+import '../../../core/analytics/analytics_events.dart';
 import '../../../shared/widgets/pop_to_shell_home_scope.dart';
 import '../../../shared/widgets/contact_us_entry.dart';
 import '../../../shared/widgets/shimmer_box.dart';
@@ -307,9 +311,18 @@ class _SubjectRow extends ConsumerWidget {
         accuracy != null ? '${accuracy.toStringAsFixed(0)}%' : null;
 
     return GestureDetector(
-      onTap: () => context.push(
-        '/subject/${Uri.encodeComponent(row.subject)}',
-      ),
+      onTap: () {
+        unawaited(
+          Analytics.track(
+            ref,
+            RiskCardClickedEvent(
+              subject: row.subject,
+              riskTier: row.riskTier.name,
+            ),
+          ),
+        );
+        context.push('/subject/${Uri.encodeComponent(row.subject)}');
+      },
       child: Container(
         padding: const EdgeInsets.all(AppSpacing.md),
         decoration: BoxDecoration(

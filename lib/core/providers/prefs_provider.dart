@@ -71,6 +71,9 @@ abstract final class PrefKeys {
   /// JSON list of [ActivationMilestones] ids already logged to analytics.
   static const activationMilestonesV1 = 'activation_milestones_v1';
 
+  /// One-time: first time the user saw any Insights surface (per device).
+  static const firstInsightSeenV1 = 'first_insight_seen_v1';
+
   /// One-time in-app rating/review prompt was already shown (never ask again).
   static const appReviewPromptShownV1 = 'app_review_prompt_shown_v1';
 }
@@ -226,6 +229,10 @@ class PrefsService {
     s.add(id);
     _p.setString(PrefKeys.activationMilestonesV1, jsonEncode(s.toList()..sort()));
   }
+
+  bool get firstInsightSeen =>
+      _p.getBool(PrefKeys.firstInsightSeenV1) ?? false;
+  set firstInsightSeen(bool v) => _p.setBool(PrefKeys.firstInsightSeenV1, v);
 
   bool get appReviewPromptShown =>
       _p.getBool(PrefKeys.appReviewPromptShownV1) ?? false;

@@ -1063,6 +1063,11 @@ class _RevisionNudgeCard extends StatelessWidget {
               ),
               onPressed: () {
                 _logUspSessionCoach('results_revision_queue_nudge_tap');
+                logGlobalAnalytics(
+                  const RevisionRecommendationClickedEvent(
+                    source: 'results_revision_queue_nudge',
+                  ),
+                );
                 context.push('/revision-queue');
               },
               child: const Text('Go to Revision Queue'),

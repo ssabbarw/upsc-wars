@@ -556,3 +556,51 @@ final class AppNotificationOpenEvent extends AnalyticsEvent {
   final String channel;
   final String kind;
 }
+
+// ── Insights & recommendations ─────────────────────────────────────────────
+
+/// **First time the user saw any Insights surface** (per device).
+///
+/// This is intentionally a one-time event (guarded by [PrefsService]) to power
+/// activation funnels for analytics.
+///
+/// **GA4:** `first_insight_seen` (no parameters).
+final class FirstInsightSeenEvent extends AnalyticsEvent {
+  const FirstInsightSeenEvent();
+}
+
+/// **User opened the Insights / Weak Areas dashboard.**
+///
+/// **GA4:** `insights_dashboard_opened` (no parameters).
+final class InsightsDashboardOpenedEvent extends AnalyticsEvent {
+  const InsightsDashboardOpenedEvent();
+}
+
+/// **User opened Trap Awareness / Trap Patterns.**
+///
+/// **GA4:** `trap_awareness_opened` (no parameters).
+final class TrapAwarenessOpenedEvent extends AnalyticsEvent {
+  const TrapAwarenessOpenedEvent();
+}
+
+/// **User clicked a revision recommendation** CTA (nudge card, quick practice).
+///
+/// **GA4:** `revision_recommendation_clicked` with `source` (string).
+final class RevisionRecommendationClickedEvent extends AnalyticsEvent {
+  const RevisionRecommendationClickedEvent({required this.source});
+
+  final String source;
+}
+
+/// **User clicked a “risk” card** (e.g. subject row/risk badge surface).
+///
+/// **GA4:** `risk_card_clicked` with `subject` and `risk_tier`.
+final class RiskCardClickedEvent extends AnalyticsEvent {
+  const RiskCardClickedEvent({
+    required this.subject,
+    required this.riskTier,
+  });
+
+  final String subject;
+  final String riskTier;
+}

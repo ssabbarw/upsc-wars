@@ -312,6 +312,21 @@ class FirebaseAnalyticsSink implements AnalyticsSink {
           'channel': channel,
           'kind': kind,
         });
+      case FirstInsightSeenEvent():
+        await _log('first_insight_seen', const {});
+      case InsightsDashboardOpenedEvent():
+        await _log('insights_dashboard_opened', const {});
+      case TrapAwarenessOpenedEvent():
+        await _log('trap_awareness_opened', const {});
+      case RevisionRecommendationClickedEvent(:final source):
+        await _log('revision_recommendation_clicked', {
+          'source': source,
+        });
+      case RiskCardClickedEvent(:final subject, :final riskTier):
+        await _log('risk_card_clicked', {
+          'subject': subject,
+          'risk_tier': riskTier,
+        });
     }
   }
 

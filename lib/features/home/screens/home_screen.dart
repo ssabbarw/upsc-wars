@@ -21,6 +21,8 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../core/analytics/analytics.dart';
+import '../../../core/analytics/analytics_events.dart';
 import '../providers/auth_providers.dart';
 import '../../../shared/widgets/push_denied_banner.dart';
 import '../../../shared/theme/dark_mode_toggle.dart';
@@ -1162,6 +1164,17 @@ class _QuickPracticeCard extends HookConsumerWidget {
     Future<void> startSession() async {
       if (loading.value) return;
       if (!context.mounted) return;
+
+      if (subject == 'revision_quick' || subject == 'revision') {
+        unawaited(
+          Analytics.track(
+            ref,
+            const RevisionRecommendationClickedEvent(
+              source: 'home_quick_practice',
+            ),
+          ),
+        );
+      }
 
       final mode = await showQuickPracticeModeSheet(context);
       if (mode == null) return;

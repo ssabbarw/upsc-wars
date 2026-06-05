@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
@@ -12,6 +14,9 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../core/analytics/analytics.dart';
+import '../../../core/analytics/analytics_events.dart';
+import '../../../core/providers/prefs_provider.dart';
 import '../../../shared/widgets/test_config_bottom_sheet.dart';
 
 class _NoScrollbarBehavior extends ScrollBehavior {
@@ -57,6 +62,27 @@ class WeakAreasHubScreen extends HookConsumerWidget {
     final border = isDark ? AppColors.borderDark : AppColors.borderLight;
     final weakTopicGroups = ref.watch(weakTopicGroupsProvider);
     final selectedSubject = useState<String?>(null);
+
+    useEffect(() {
+      unawaited(Analytics.track(ref, const InsightsDashboardOpenedEvent()));
+      return null;
+    }, const []);
+
+    useEffect(() {
+      final hasData = weakTopicGroups.maybeWhen(
+        data: (groups) => groups.isNotEmpty,
+        orElse: () => false,
+      );
+      if (!hasData) return null;
+      Future(() async {
+        final prefs = await ref.read(prefsServiceProvider.future);
+        if (prefs.firstInsightSeen) return;
+        prefs.firstInsightSeen = true;
+        ref.invalidate(prefsServiceProvider);
+        await Analytics.track(ref, const FirstInsightSeenEvent());
+      });
+      return null;
+    }, [weakTopicGroups]);
 
     return Scaffold(
       body: SafeArea(
