@@ -18,7 +18,6 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
-import '../../../shared/widgets/contact_us_entry.dart';
 import '../../battle/widgets/battle_live_scoreboard.dart';
 import '../../community/open_challenge/open_challenge_analytics.dart';
 import '../../community/open_challenge/open_challenge_exam_context.dart';
@@ -39,14 +38,76 @@ String _sessionResultPhase(AsyncValue<SessionResult>? v) {
   );
 }
 
-bool _resultsNeedsScrollableExtras(SessionResult r) {
-  if (r.analyticsFeatureKey == 'mcq_battle') return true;
-  final key = r.analyticsFeatureKey ?? '';
-  return key.startsWith('share_deep_link_');
+List<Widget> _resultsScrollChildren({
+  required String sessionId,
+  required SessionResult result,
+  required String displaySubject,
+  required double contentHeight,
+}) {
+  return [
+    if (result.analyticsFeatureKey == 'mcq_battle') ...[
+      BattleLiveScoreboard(sessionId: sessionId),
+      const SizedBox(height: AppSpacing.md),
+    ],
+    OpenChallengeResultsActions(
+      sessionId: sessionId,
+      result: result,
+    ),
+    OpenChallengePostFromResultsCard(
+      sessionId: sessionId,
+      result: result,
+    ),
+    if ((result.analyticsFeatureKey ?? '').startsWith('share_deep_link_')) ...[
+      const SizedBox(height: AppSpacing.md),
+      _SharedLeaderboardSection(
+        shareId: sessionId,
+        scorePct: result.accuracy,
+      ),
+      const SizedBox(height: AppSpacing.lg),
+    ],
+    SessionSummaryCoachContent(
+      sessionId: sessionId,
+      result: result,
+      displaySubjectName: displaySubject,
+      maxHeight: contentHeight,
+    ),
+  ];
 }
 
-bool _resultsUseFixedCanvas(SessionResult r) =>
-    !_resultsNeedsScrollableExtras(r);
+Future<void> _confirmLeaveResultsAndGoHome(
+  BuildContext context,
+  WidgetRef ref, {
+  required String actionId,
+}) async {
+  final confirmed = await showDialog<bool>(
+    context: context,
+    builder: (ctx) => AlertDialog(
+      title: Text('Are you sure?', style: AppTextStyles.h3()),
+      content: Text(
+        'You will return to the home screen.',
+        style: AppTextStyles.bodyMd(),
+      ),
+      actions: [
+        TextButton(
+          onPressed: () => Navigator.pop(ctx, false),
+          child: const Text('Cancel'),
+        ),
+        TextButton(
+          onPressed: () => Navigator.pop(ctx, true),
+          child: const Text('Go to Home'),
+        ),
+      ],
+    ),
+  );
+  if (confirmed != true || !context.mounted) return;
+  ScreenFlow.logAction(
+    ref,
+    screenName: ScreenFlow.sessionResults,
+    actionId: actionId,
+    actionKind: 'back',
+  );
+  context.go('/');
+}
 
 class ResultsScreen extends ConsumerWidget {
   const ResultsScreen({super.key, required this.sessionId});
@@ -79,26 +140,16 @@ class ResultsScreen extends ConsumerWidget {
 
     // Submit uses go('/results/...'), so the root stack often cannot pop.
     return PopScope(
-      canPop: context.canPop(),
+      canPop: false,
       onPopInvokedWithResult: (didPop, _) {
-        if (didPop) {
-          ScreenFlow.logAction(
+        if (didPop) return;
+        unawaited(
+          _confirmLeaveResultsAndGoHome(
+            context,
             ref,
-            screenName: ScreenFlow.sessionResults,
             actionId: 'system_back_pop',
-            actionKind: 'back',
-          );
-          return;
-        }
-        ScreenFlow.logAction(
-          ref,
-          screenName: ScreenFlow.sessionResults,
-          actionId: 'back_to_home',
-          actionKind: 'back',
+          ),
         );
-        unawaited(() async {
-          if (context.mounted) context.go('/');
-        }());
       },
       child: Scaffold(
         backgroundColor: scheme.surface,
@@ -175,14 +226,13 @@ class ResultsScreen extends ConsumerWidget {
                           style: IconButton.styleFrom(
                             foregroundColor: scheme.onSurface,
                           ),
-                          onPressed: () async {
-                            if (!context.mounted) return;
-                            if (context.canPop()) {
-                              context.pop();
-                            } else {
-                              context.go('/');
-                            }
-                          },
+                          onPressed: () => unawaited(
+                            _confirmLeaveResultsAndGoHome(
+                              context,
+                              ref,
+                              actionId: 'app_bar_back',
+                            ),
+                          ),
                           icon: const Icon(
                             Icons.arrow_back_ios_new_rounded,
                           ),
@@ -236,85 +286,22 @@ class ResultsScreen extends ConsumerWidget {
                           AppSpacing.lg,
                           0,
                           AppSpacing.lg,
-                          AppSpacing.xxl,
-                        );
-                        final contactUs = const Center(
-                          child: ContactUsTextButton(),
-                        );
-
-                        if (_resultsUseFixedCanvas(r)) {
-                          return Align(
-                            alignment: Alignment.topCenter,
-                            child: SizedBox(
-                              width: w,
-                              height: h,
-                              child: Padding(
-                                padding: horizontalPad,
-                                child: Column(
-                                  crossAxisAlignment:
-                                      CrossAxisAlignment.stretch,
-                                  children: [
-                                    Expanded(
-                                      child: LayoutBuilder(
-                                        builder: (context, coachConstraints) {
-                                          return SessionSummaryCoachContent(
-                                            sessionId: sessionId,
-                                            result: r,
-                                            displaySubjectName: displaySubject,
-                                            maxHeight: coachConstraints.maxHeight,
-                                          );
-                                        },
-                                      ),
-                                    ),
-                                    contactUs,
-                                  ],
-                                ),
-                              ),
-                            ),
-                          );
-                        }
-
-                        final coach = SessionSummaryCoachContent(
-                          sessionId: sessionId,
-                          result: r,
-                          displaySubjectName: displaySubject,
-                          maxHeight: h,
+                          AppSpacing.sm,
                         );
 
                         return Align(
                           alignment: Alignment.topCenter,
-                          child: SizedBox(
-                            width: w,
-                            height: h,
+                          child: ConstrainedBox(
+                            constraints: BoxConstraints(maxWidth: w),
                             child: ListView(
-                              physics: const BouncingScrollPhysics(),
+                              physics: const ClampingScrollPhysics(),
                               padding: horizontalPad,
-                              children: [
-                                if (r.analyticsFeatureKey == 'mcq_battle') ...[
-                                  BattleLiveScoreboard(sessionId: sessionId),
-                                  const SizedBox(height: AppSpacing.md),
-                                ],
-                                OpenChallengeResultsActions(
-                                  sessionId: sessionId,
-                                  result: r,
-                                ),
-                                OpenChallengePostFromResultsCard(
-                                  sessionId: sessionId,
-                                  result: r,
-                                ),
-                                if ((r.analyticsFeatureKey ?? '')
-                                    .startsWith('share_deep_link_')) ...[
-                                  const SizedBox(height: AppSpacing.md),
-                                  _SharedLeaderboardSection(
-                                    shareId: sessionId,
-                                    scorePct: r.accuracy,
-                                  ),
-                                  const SizedBox(height: AppSpacing.lg),
-                                ],
-                                coach,
-                                const SizedBox(height: AppSpacing.lg),
-                                contactUs,
-                              ],
+                              children: _resultsScrollChildren(
+                                sessionId: sessionId,
+                                result: r,
+                                displaySubject: displaySubject,
+                                contentHeight: h,
+                              ),
                             ),
                           ),
                         );

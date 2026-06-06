@@ -540,9 +540,7 @@ class ReviewBody extends StatelessWidget {
       children: [
         _TopBar(
           title: title,
-          isBookmarked: isBookmarked,
           showRevisionBadge: showRevisionBadge,
-          onBookmark: onToggleBookmark,
           onShare: onShare,
           shareLayerLink: shareLayerLink,
           uiLanguage: uiLanguage,
@@ -742,7 +740,19 @@ class ReviewBody extends StatelessWidget {
                   child: const Text('← Prev'),
                 ),
               ),
-              const SizedBox(width: 10),
+              const SizedBox(width: 8),
+              IconButton(
+                tooltip: isBookmarked ? 'Remove bookmark' : 'Bookmark',
+                onPressed: onToggleBookmark,
+                icon: Icon(
+                  isBookmarked ? Icons.bookmark : Icons.bookmark_border,
+                  size: 20,
+                  color: isBookmarked
+                      ? scheme.primary
+                      : scheme.onSurfaceVariant,
+                ),
+              ),
+              const SizedBox(width: 8),
               Expanded(
                 child: FilledButton(
                   style: FilledButton.styleFrom(
@@ -788,18 +798,14 @@ class ReviewBody extends StatelessWidget {
 class _TopBar extends HookConsumerWidget {
   const _TopBar({
     required this.title,
-    required this.isBookmarked,
     required this.showRevisionBadge,
-    required this.onBookmark,
     this.onShare,
     this.shareLayerLink,
     required this.uiLanguage,
     required this.onLanguageChanged,
   });
   final String title;
-  final bool isBookmarked;
   final bool showRevisionBadge;
-  final VoidCallback onBookmark;
   final VoidCallback? onShare;
   final LayerLink? shareLayerLink;
   final String uiLanguage;
@@ -875,15 +881,19 @@ class _TopBar extends HookConsumerWidget {
           ToggleButtons(
             isSelected: [uiLanguage == 'en', uiLanguage == 'hi'],
             onPressed: (index) => onLanguageChanged(index == 0 ? 'en' : 'hi'),
-            constraints: const BoxConstraints(minHeight: 28, minWidth: 60),
-            borderRadius: BorderRadius.circular(8),
+            constraints: const BoxConstraints(minHeight: 24, minWidth: 34),
+            borderRadius: BorderRadius.circular(6),
+            textStyle: const TextStyle(
+              fontSize: 11,
+              fontWeight: FontWeight.w500,
+            ),
             children: const [
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 6),
+                padding: EdgeInsets.symmetric(horizontal: 4),
                 child: Text('EN'),
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 6),
+                padding: EdgeInsets.symmetric(horizontal: 4),
                 child: Text('हि'),
               ),
             ],
@@ -914,14 +924,6 @@ class _TopBar extends HookConsumerWidget {
             ),
             const SizedBox(width: 8),
           ],
-          InkWell(
-            onTap: onBookmark,
-            child: Icon(
-              isBookmarked ? Icons.bookmark : Icons.bookmark_border,
-              size: 20,
-              color: isBookmarked ? scheme.primary : scheme.onSurfaceVariant,
-            ),
-          ),
         ],
       ),
     );

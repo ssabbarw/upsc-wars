@@ -30,14 +30,41 @@ void _openSessionHistoryReview(
   String sessionId, {
   bool focusWrong = false,
 }) {
-  final loc =
-      focusWrong ? '/history/$sessionId?focus=wrong' : '/history/$sessionId';
+  final loc = focusWrong
+      ? '/history/$sessionId?focus=wrong'
+      : '/history/$sessionId';
   final path = GoRouter.of(context).state.uri.path;
   if (path.startsWith('/danger-zone/')) {
     context.pushReplacement(loc);
   } else {
     context.push(loc);
   }
+}
+
+/// Scales spacing and typography to fit smaller result viewports.
+class _SummaryLayoutMetrics {
+  const _SummaryLayoutMetrics(this.factor);
+
+  factory _SummaryLayoutMetrics.fromViewportHeight(double height) {
+    final factor = (height / 740).clamp(0.72, 1.0);
+    return _SummaryLayoutMetrics(factor);
+  }
+
+  final double factor;
+
+  bool get compact => factor < 0.88;
+  double get sectionGap => AppSpacing.sm * factor;
+  double get cardPadding => AppSpacing.md * factor;
+  double get scoreFontSize => 32 * factor;
+  double get gaugeWidth => 96 * factor;
+  double get gaugeHeight => 54 * factor;
+  double get gaugeStroke => (7 * factor).clamp(5.0, 7.0);
+  double get statIconSize => (16 * factor).clamp(12.0, 16.0);
+  double get statSubFontSize => (8 * factor).clamp(7.0, 8.0);
+  double get statLabelFontSize => (9 * factor).clamp(8.0, 9.0);
+  double get revisionIconSize => (28 * factor).clamp(22.0, 28.0);
+  double get buttonHeight => (48 * factor).clamp(40.0, 48.0);
+  int get defaultTopicCount => factor < 0.82 ? 2 : 3;
 }
 
 /// Compact one-screen session summary (score, insight hero, stats, topics).
@@ -62,6 +89,7 @@ class SessionSummaryCompactView extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final metrics = _SummaryLayoutMetrics.fromViewportHeight(maxHeight);
     final topicsExpanded = useState(maxHeight >= 700);
     final moreExpanded = useState(false);
     final insightCaseAsync = ref.watch(_insightCaseProvider(result));
@@ -105,6 +133,9 @@ class SessionSummaryCompactView extends HookConsumerWidget {
       data: (rows) => topTopicsForDisplay(marksRows, rows),
       orElse: () => marksRows.take(3).toList(),
     );
+    final attempted = result.correct + result.wrong;
+    final showRevisionQueue = result.wrong > 0;
+    final showMoreInsights = attempted > 0;
 
     final bottomSection = Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -113,28 +144,29 @@ class SessionSummaryCompactView extends HookConsumerWidget {
         _ReviewAllButton(
           sessionId: sessionId,
           questionCount: result.questionCount,
+          metrics: metrics,
         ),
-        const SizedBox(height: AppSpacing.sm),
-        _MoreInsightsTile(
-          expanded: moreExpanded.value,
-          onToggle: () => moreExpanded.value = !moreExpanded.value,
-          scheme: scheme,
-        ),
-        if (moreExpanded.value) ...[
-          const SizedBox(height: AppSpacing.sm),
-          if (ConfidenceInsightsSection.shouldShow(result))
-            ConfidenceInsightsSection(
-              sessionId: sessionId,
-              result: result,
-            ),
-          const SizedBox(height: AppSpacing.sm),
-          _TimeInline(timeAsync: timeAsync, scheme: scheme),
+        if (showMoreInsights) ...[
+          SizedBox(height: metrics.sectionGap),
+          _MoreInsightsTile(
+            expanded: moreExpanded.value,
+            onToggle: () => moreExpanded.value = !moreExpanded.value,
+            scheme: scheme,
+          ),
+          if (moreExpanded.value) ...[
+            SizedBox(height: metrics.sectionGap),
+            if (ConfidenceInsightsSection.shouldShow(result))
+              ConfidenceInsightsSection(sessionId: sessionId, result: result),
+            SizedBox(height: metrics.sectionGap),
+            _TimeInline(timeAsync: timeAsync, scheme: scheme),
+          ],
         ],
       ],
     );
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
+      mainAxisSize: MainAxisSize.min,
       children: [
         _CompactScoreRow(
           result: result,
@@ -143,13 +175,15 @@ class SessionSummaryCompactView extends HookConsumerWidget {
           isDark: isDark,
           historyAsync: historyAsync,
           canScope: _canSubjectScope,
-          compact: maxHeight < 640,
+          metrics: metrics,
         ),
-        const SizedBox(height: AppSpacing.sm),
+        SizedBox(height: metrics.sectionGap),
         insightCaseAsync.when(
-          loading: () => const SizedBox(
-            height: 120,
-            child: Center(child: CircularProgressIndicator(strokeWidth: 2)),
+          loading: () => SizedBox(
+            height: 120 * metrics.factor,
+            child: const Center(
+              child: CircularProgressIndicator(strokeWidth: 2),
+            ),
           ),
           error: (_, _) => const SizedBox.shrink(),
           data: (insightCase) => SessionInsightHeroCard(
@@ -159,42 +193,38 @@ class SessionSummaryCompactView extends HookConsumerWidget {
             topRiskTopic: topRisk?.topic,
             topRiskPct: topRisk?.pctOfLoss,
             weakestTopicName: weak?.topic,
-            compact: maxHeight < 640,
+            compact: metrics.compact,
           ),
         ),
-        const SizedBox(height: AppSpacing.sm),
+        SizedBox(height: metrics.sectionGap),
         _QuickStatsRow(
           result: result,
           scheme: scheme,
           isDark: isDark,
           timeAsync: timeAsync,
+          metrics: metrics,
         ),
-        const SizedBox(height: AppSpacing.sm),
-        _RevisionQueueCard(
-          wrongInSession: result.wrong,
-          revisionAsync: revisionAsync,
-          scheme: scheme,
-          isDark: isDark,
-        ),
-        const SizedBox(height: AppSpacing.sm),
+        if (showRevisionQueue) ...[
+          SizedBox(height: metrics.sectionGap),
+          _RevisionQueueCard(
+            wrongInSession: result.wrong,
+            revisionAsync: revisionAsync,
+            scheme: scheme,
+            isDark: isDark,
+            metrics: metrics,
+          ),
+        ],
+        SizedBox(height: metrics.sectionGap),
         _TopTopicsSection(
           topics: topicDisplay,
           accuracyRows: topicRowsAsync.asData?.value ?? const [],
           expanded: topicsExpanded.value,
           onToggle: () => topicsExpanded.value = !topicsExpanded.value,
           scheme: scheme,
+          defaultVisibleCount: metrics.defaultTopicCount,
         ),
-        if (moreExpanded.value)
-          Flexible(
-            child: SingleChildScrollView(
-              physics: const ClampingScrollPhysics(),
-              child: bottomSection,
-            ),
-          )
-        else ...[
-          const Spacer(),
-          bottomSection,
-        ],
+        SizedBox(height: metrics.sectionGap),
+        bottomSection,
       ],
     );
   }
@@ -232,7 +262,7 @@ class _CompactScoreRow extends StatelessWidget {
     required this.isDark,
     required this.historyAsync,
     required this.canScope,
-    required this.compact,
+    required this.metrics,
   });
 
   final SessionResult result;
@@ -241,7 +271,7 @@ class _CompactScoreRow extends StatelessWidget {
   final bool isDark;
   final AsyncValue<SessionCoachHistory> historyAsync;
   final bool canScope;
-  final bool compact;
+  final _SummaryLayoutMetrics metrics;
 
   @override
   Widget build(BuildContext context) {
@@ -251,7 +281,7 @@ class _CompactScoreRow extends StatelessWidget {
     final accLabel = attempted == 0 ? '—' : '${result.accuracy.round()}%';
 
     Widget? trend;
-    if (!compact && canScope) {
+    if (!metrics.compact && canScope) {
       trend = historyAsync.when(
         data: (h) {
           if (h.vsImmediatePrevious == null) return null;
@@ -282,7 +312,7 @@ class _CompactScoreRow extends StatelessWidget {
       scheme: scheme,
       isDark: isDark,
       child: Padding(
-        padding: const EdgeInsets.all(AppSpacing.md),
+        padding: EdgeInsets.all(metrics.cardPadding),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -305,13 +335,11 @@ class _CompactScoreRow extends StatelessWidget {
                       Text(
                         net.toStringAsFixed(2),
                         style: AppTextStyles.h2().copyWith(
-                          fontSize: compact ? 28 : 32,
+                          fontSize: metrics.scoreFontSize,
                           fontWeight: FontWeight.w900,
                           color: netColor,
                           height: 1.05,
-                          fontFeatures: const [
-                            ui.FontFeature.tabularFigures(),
-                          ],
+                          fontFeatures: const [ui.FontFeature.tabularFigures()],
                         ),
                       ),
                       Text(
@@ -320,10 +348,7 @@ class _CompactScoreRow extends StatelessWidget {
                           color: scheme.onSurfaceVariant,
                         ),
                       ),
-                      if (trend != null) ...[
-                        const SizedBox(height: 2),
-                        trend,
-                      ],
+                      if (trend != null) ...[const SizedBox(height: 2), trend],
                     ],
                   ),
                 ),
@@ -336,6 +361,7 @@ class _CompactScoreRow extends StatelessWidget {
                   negativeMarks: negativeMarks,
                   scheme: scheme,
                   isDark: isDark,
+                  metrics: metrics,
                 ),
               ],
             ),
@@ -356,6 +382,7 @@ class _SemiCircularAccuracyGauge extends StatelessWidget {
     required this.negativeMarks,
     required this.scheme,
     required this.isDark,
+    required this.metrics,
   });
 
   final double accuracy;
@@ -366,6 +393,7 @@ class _SemiCircularAccuracyGauge extends StatelessWidget {
   final double negativeMarks;
   final ColorScheme scheme;
   final bool isDark;
+  final _SummaryLayoutMetrics metrics;
 
   @override
   Widget build(BuildContext context) {
@@ -379,7 +407,7 @@ class _SemiCircularAccuracyGauge extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(
-          height: 54,
+          height: metrics.gaugeHeight,
           child: Align(
             alignment: Alignment.center,
             child: Text(
@@ -387,23 +415,24 @@ class _SemiCircularAccuracyGauge extends StatelessWidget {
               style: AppTextStyles.caption().copyWith(
                 color: scheme.onSurfaceVariant,
                 fontWeight: FontWeight.w600,
+                fontSize: (12 * metrics.factor).clamp(10.0, 12.0),
               ),
             ),
           ),
         ),
-        const SizedBox(width: AppSpacing.xs),
+        SizedBox(width: AppSpacing.xs * metrics.factor),
         Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             SizedBox(
-              width: 96,
-              height: 54,
+              width: metrics.gaugeWidth,
+              height: metrics.gaugeHeight,
               child: CustomPaint(
                 painter: _SemiArcPainter(
                   progress: progress,
                   progressColor: accColor,
                   trackColor: trackColor,
-                  strokeWidth: 7,
+                  strokeWidth: metrics.gaugeStroke,
                 ),
                 child: Align(
                   alignment: Alignment.bottomCenter,
@@ -515,12 +544,14 @@ class _QuickStatsRow extends StatelessWidget {
     required this.scheme,
     required this.isDark,
     required this.timeAsync,
+    required this.metrics,
   });
 
   final SessionResult result;
   final ColorScheme scheme;
   final bool isDark;
   final AsyncValue<({int avgSecs, int minSecs, int maxSecs})> timeAsync;
+  final _SummaryLayoutMetrics metrics;
 
   @override
   Widget build(BuildContext context) {
@@ -535,9 +566,7 @@ class _QuickStatsRow extends StatelessWidget {
       data: (t) => 'Fastest ${t.minSecs}s / Slowest ${t.maxSecs}s',
       orElse: () => null,
     );
-    final dividerColor = isDark
-        ? AppColors.borderDark
-        : AppColors.borderLight;
+    final dividerColor = isDark ? AppColors.borderDark : AppColors.borderLight;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -567,6 +596,7 @@ class _QuickStatsRow extends StatelessWidget {
                     scheme: scheme,
                     icon: Icons.check_circle_outline,
                     color: AppColors.correct,
+                    metrics: metrics,
                   ),
                 ),
                 VerticalDivider(width: 1, thickness: 1, color: dividerColor),
@@ -580,6 +610,7 @@ class _QuickStatsRow extends StatelessWidget {
                     scheme: scheme,
                     icon: Icons.help_outline,
                     color: AppColors.warning,
+                    metrics: metrics,
                   ),
                 ),
                 VerticalDivider(width: 1, thickness: 1, color: dividerColor),
@@ -591,6 +622,7 @@ class _QuickStatsRow extends StatelessWidget {
                     scheme: scheme,
                     icon: Icons.schedule_outlined,
                     color: AppColors.info,
+                    metrics: metrics,
                   ),
                 ),
                 VerticalDivider(width: 1, thickness: 1, color: dividerColor),
@@ -602,6 +634,7 @@ class _QuickStatsRow extends StatelessWidget {
                     scheme: scheme,
                     icon: Icons.emoji_events_outlined,
                     color: AppColors.primary,
+                    metrics: metrics,
                   ),
                 ),
               ],
@@ -621,6 +654,7 @@ class _StatTile extends StatelessWidget {
     required this.scheme,
     required this.icon,
     required this.color,
+    required this.metrics,
   });
 
   final String label;
@@ -629,42 +663,44 @@ class _StatTile extends StatelessWidget {
   final ColorScheme scheme;
   final IconData icon;
   final Color color;
+  final _SummaryLayoutMetrics metrics;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: AppSpacing.xs,
-        vertical: AppSpacing.sm,
+      padding: EdgeInsets.symmetric(
+        horizontal: AppSpacing.xs * metrics.factor,
+        vertical: AppSpacing.sm * metrics.factor,
       ),
       child: Column(
         children: [
-          Icon(icon, size: 16, color: color),
-          const SizedBox(height: 2),
+          Icon(icon, size: metrics.statIconSize, color: color),
+          SizedBox(height: 2 * metrics.factor),
           Text(
             value,
             style: AppTextStyles.labelSm().copyWith(
               fontWeight: FontWeight.w800,
               color: scheme.onSurface,
+              fontSize: (13 * metrics.factor).clamp(11.0, 13.0),
             ),
           ),
           if (sub != null) ...[
-            const SizedBox(height: 1),
+            SizedBox(height: 1 * metrics.factor),
             Text(
               sub!,
               style: AppTextStyles.caption().copyWith(
-                fontSize: 8,
+                fontSize: metrics.statSubFontSize,
                 color: scheme.onSurfaceVariant,
               ),
               textAlign: TextAlign.center,
               maxLines: 2,
             ),
           ],
-          const SizedBox(height: 2),
+          SizedBox(height: 2 * metrics.factor),
           Text(
             label,
             style: AppTextStyles.caption().copyWith(
-              fontSize: 9,
+              fontSize: metrics.statLabelFontSize,
               color: scheme.onSurfaceVariant,
             ),
             textAlign: TextAlign.center,
@@ -682,12 +718,14 @@ class _RevisionQueueCard extends StatelessWidget {
     required this.revisionAsync,
     required this.scheme,
     required this.isDark,
+    required this.metrics,
   });
 
   final int wrongInSession;
   final AsyncValue<List<RevisionQueueItem>> revisionAsync;
   final ColorScheme scheme;
   final bool isDark;
+  final _SummaryLayoutMetrics metrics;
 
   @override
   Widget build(BuildContext context) {
@@ -703,13 +741,13 @@ class _RevisionQueueCard extends StatelessWidget {
           color: isDark ? AppColors.borderDark : AppColors.borderLight,
         ),
       ),
-      padding: const EdgeInsets.all(AppSpacing.md),
+      padding: EdgeInsets.all(metrics.cardPadding),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Icon(
             Icons.library_books_outlined,
-            size: 28,
+            size: metrics.revisionIconSize,
             color: scheme.onSurfaceVariant,
           ),
           const SizedBox(width: AppSpacing.sm),
@@ -818,6 +856,7 @@ class _TopTopicsSection extends StatelessWidget {
     required this.expanded,
     required this.onToggle,
     required this.scheme,
+    this.defaultVisibleCount = 3,
   });
 
   final List<TopicMarksLost> topics;
@@ -825,12 +864,15 @@ class _TopTopicsSection extends StatelessWidget {
   final bool expanded;
   final VoidCallback onToggle;
   final ColorScheme scheme;
+  final int defaultVisibleCount;
 
   @override
   Widget build(BuildContext context) {
     if (topics.isEmpty) return const SizedBox.shrink();
 
-    final visible = expanded ? topics : topics.take(3).toList();
+    final visible = expanded
+        ? topics
+        : topics.take(defaultVisibleCount).toList();
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -845,7 +887,7 @@ class _TopTopicsSection extends StatelessWidget {
               ),
             ),
             const Spacer(),
-            if (topics.length > 3)
+            if (topics.length > defaultVisibleCount)
               TextButton(
                 onPressed: onToggle,
                 child: Text(expanded ? 'Show less' : 'View all'),
@@ -899,15 +941,17 @@ class _ReviewAllButton extends StatelessWidget {
   const _ReviewAllButton({
     required this.sessionId,
     required this.questionCount,
+    required this.metrics,
   });
 
   final String sessionId;
   final int questionCount;
+  final _SummaryLayoutMetrics metrics;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 48,
+      height: metrics.buttonHeight,
       width: double.infinity,
       child: OutlinedButton.icon(
         style: OutlinedButton.styleFrom(
@@ -924,10 +968,13 @@ class _ReviewAllButton extends StatelessWidget {
           );
           _openSessionHistoryReview(context, sessionId);
         },
-        icon: const Icon(Icons.menu_book_outlined, size: 20),
+        icon: Icon(Icons.menu_book_outlined, size: 20 * metrics.factor),
         label: Text(
           'Review all questions ($questionCount)',
-          style: AppTextStyles.label().copyWith(fontWeight: FontWeight.w700),
+          style: AppTextStyles.label().copyWith(
+            fontWeight: FontWeight.w700,
+            fontSize: (14 * metrics.factor).clamp(12.0, 14.0),
+          ),
         ),
       ),
     );
@@ -987,9 +1034,7 @@ class _TimeInline extends StatelessWidget {
       data: (t) => Text(
         'Avg ${t.avgSecs}s per question · '
         'Fastest ${t.minSecs}s · Slowest ${t.maxSecs}s',
-        style: AppTextStyles.caption().copyWith(
-          color: scheme.onSurfaceVariant,
-        ),
+        style: AppTextStyles.caption().copyWith(color: scheme.onSurfaceVariant),
       ),
     );
   }
