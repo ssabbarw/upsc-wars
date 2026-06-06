@@ -7,6 +7,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'package:upsc_wars/core/domain/entities/answer_confidence.dart';
 import 'package:upsc_wars/core/domain/entities/test_question.dart';
+import 'package:upsc_wars/core/providers/app_language_helpers.dart';
 import 'package:upsc_wars/core/providers/catalog_providers.dart';
 import 'package:upsc_wars/core/theme/app_colors.dart';
 import 'package:upsc_wars/core/providers/prefs_provider.dart';
@@ -215,8 +216,18 @@ class _SingleQuestionReviewScreenState
   @override
   void initState() {
     super.initState();
-    _uiLanguage = widget.args.initialUiLanguage;
+    _uiLanguage = normalizeAppLanguage(widget.args.initialUiLanguage);
+    unawaited(_loadInitialLanguage());
     _loadMeta();
+  }
+
+  Future<void> _loadInitialLanguage() async {
+    final prefs = await ref.read(prefsServiceProvider.future);
+    if (!mounted) return;
+    final saved = normalizeAppLanguage(prefs.language);
+    if (saved != _uiLanguage) {
+      setState(() => _uiLanguage = saved);
+    }
   }
 
   @override
@@ -330,7 +341,10 @@ class _SingleQuestionReviewScreenState
             setState(() => _queued = true);
           },
           uiLanguage: _uiLanguage,
-          onLanguageChanged: (lang) => setState(() => _uiLanguage = lang),
+          onLanguageChanged: (lang) {
+            setState(() => _uiLanguage = lang);
+            unawaited(persistAppLanguage(ref, lang));
+          },
         ),
       ),
     );
@@ -363,7 +377,8 @@ class SessionReviewScreen extends HookConsumerWidget {
           ),
           data: (state) {
             final index = useState(0);
-            final uiLanguage = useState('en');
+            final preferredLanguage = watchAppLanguage(ref);
+            final uiLanguage = useState(preferredLanguage);
             final bookmarks = useState<Map<String, bool>>(
               state.bookmarkedByUuid,
             );
@@ -469,7 +484,10 @@ class SessionReviewScreen extends HookConsumerWidget {
                 queue.value = {...queue.value, q.uuid: true};
               },
               uiLanguage: uiLanguage.value,
-              onLanguageChanged: (lang) => uiLanguage.value = lang,
+              onLanguageChanged: (lang) {
+                uiLanguage.value = lang;
+                unawaited(persistAppLanguage(ref, lang));
+              },
             );
           },
         ),

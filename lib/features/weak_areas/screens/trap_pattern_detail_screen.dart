@@ -66,13 +66,14 @@ class TrapPatternDetailScreen extends HookConsumerWidget {
           loading.value = true;
           try {
             final create = await ref.read(createSessionUseCaseProvider.future);
+            final lang = await ref.read(appLanguageProvider.future);
             final id = await create.execute(SessionConfig(
               subject: 'revision',
               mode: 'learning',
               questionCount: group.questionUuids.length,
               isTimed: true,
               timeLimitSecs: 60,
-              language: 'en',
+              language: lang,
               specificQuestionUuids: group.questionUuids,
               analyticsFeatureKey: 'trap_awareness',
             ));

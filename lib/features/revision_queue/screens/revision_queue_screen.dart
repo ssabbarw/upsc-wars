@@ -24,15 +24,16 @@ class RevisionQueueScreen extends HookConsumerWidget {
 
     Future<void> start(List<dynamic> items) async {
       final create = await ref.read(createSessionUseCaseProvider.future);
+      final lang = await ref.read(appLanguageProvider.future);
       final count = items.length > 50 ? 50 : items.length;
       if (count == 0) return;
-      final id = await create.execute(const SessionConfig(
+      final id = await create.execute(SessionConfig(
         subject: 'revision',
         mode: 'learning',
         questionCount: 50,
         isTimed: true,
         timeLimitSecs: 60,
-        language: 'en',
+        language: lang,
       ).copyWith(questionCount: count));
       if (context.mounted) context.push('/test/$id');
     }

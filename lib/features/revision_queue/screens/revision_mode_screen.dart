@@ -1,8 +1,11 @@
+import 'dart:async' show unawaited;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import 'package:upsc_wars/core/providers/app_language_helpers.dart';
 import 'package:upsc_wars/core/providers/catalog_providers.dart';
 import 'package:upsc_wars/features/history/providers/review_session_provider.dart';
 import 'package:upsc_wars/features/history/screens/session_review_screen.dart';
@@ -34,7 +37,8 @@ class RevisionModeScreen extends HookConsumerWidget {
               ),
           data: (state) {
             final index = useState(0);
-            final uiLanguage = useState('en');
+            final preferredLanguage = watchAppLanguage(ref);
+            final uiLanguage = useState(preferredLanguage);
             final bookmarks = useState<Map<String, bool>>(
               state.bookmarkedByUuid,
             );
@@ -79,7 +83,10 @@ class RevisionModeScreen extends HookConsumerWidget {
                 }
               },
               uiLanguage: uiLanguage.value,
-              onLanguageChanged: (lang) => uiLanguage.value = lang,
+              onLanguageChanged: (lang) {
+                uiLanguage.value = lang;
+                unawaited(persistAppLanguage(ref, lang));
+              },
             );
           },
         ),

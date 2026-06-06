@@ -1153,6 +1153,7 @@ class _QuickPracticeCard extends HookConsumerWidget {
       loading.value = true;
       try {
         final create = await ref.read(createSessionUseCaseProvider.future);
+        final lang = await ref.read(appLanguageProvider.future);
         final isTutor = mode == 'tutor';
         final id = await create.execute(
           SessionConfig(
@@ -1161,7 +1162,7 @@ class _QuickPracticeCard extends HookConsumerWidget {
             questionCount: 10,
             isTimed: true,
             timeLimitSecs: isTutor ? 60 : capped * kDebugSecondsPerQuestion,
-            language: 'en',
+            language: lang,
           ),
         );
         if (context.mounted) context.push('/test/$id');

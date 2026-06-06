@@ -16,6 +16,7 @@ import '../../../core/presentation/session_subject_label.dart';
 import '../../../core/domain/entities/answer_confidence.dart';
 import '../../../core/domain/entities/test_question.dart';
 import '../../../core/domain/errors/app_errors.dart';
+import '../../../core/providers/app_language_helpers.dart';
 import '../../../core/providers/prefs_provider.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
@@ -416,7 +417,8 @@ class _TestEngineLoaded extends HookConsumerWidget {
           ).select((a) => a.asData?.value.session?.language),
         ) ??
         'en';
-    final uiLanguage = useState(sessionLanguage);
+    final preferredLanguage = watchAppLanguage(ref, fallback: sessionLanguage);
+    final uiLanguage = useState(preferredLanguage);
     final showBanner = ref.watch(
       testSessionProvider(
         sessionId,
@@ -472,7 +474,10 @@ class _TestEngineLoaded extends HookConsumerWidget {
               _TopBar(
                 sessionId: sessionId,
                 uiLanguage: uiLanguage.value,
-                onLanguageChanged: (value) => uiLanguage.value = value,
+                onLanguageChanged: (value) {
+                  uiLanguage.value = value;
+                  unawaited(persistAppLanguage(ref, value));
+                },
                 onBack: () => Navigator.of(context).maybePop(),
               ),
               if (!isSingleQuestionTutorial)

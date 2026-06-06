@@ -68,6 +68,7 @@ class RecoveryPlanSection extends ConsumerWidget {
       case RecoveryPlanCardKind.currentFocus:
         if (card.questionUuids == null || card.subject == null) return;
         final create = await ref.read(createSessionUseCaseProvider.future);
+        final lang = await ref.read(appLanguageProvider.future);
         final id = await create.execute(
           SessionConfig(
             subject: card.subject!,
@@ -75,7 +76,7 @@ class RecoveryPlanSection extends ConsumerWidget {
             questionCount: card.questionUuids!.length,
             isTimed: false,
             timeLimitSecs: null,
-            language: 'en',
+            language: lang,
             specificQuestionUuids: card.questionUuids,
             analyticsFeatureKey: 'recovery_current_focus',
             dangerReviseHistoryConfidence: AnswerConfidence.verySure,
@@ -84,6 +85,7 @@ class RecoveryPlanSection extends ConsumerWidget {
         if (context.mounted) context.push('/test/$id');
       case RecoveryPlanCardKind.dueForRevision:
         final create = await ref.read(createSessionUseCaseProvider.future);
+        final lang = await ref.read(appLanguageProvider.future);
         final n = card.questionCount ?? 10;
         final id = await create.execute(
           SessionConfig(
@@ -92,7 +94,7 @@ class RecoveryPlanSection extends ConsumerWidget {
             questionCount: n,
             isTimed: true,
             timeLimitSecs: n * kDebugSecondsPerQuestion,
-            language: 'en',
+            language: lang,
             analyticsFeatureKey: 'recovery_due_revision',
           ),
         );

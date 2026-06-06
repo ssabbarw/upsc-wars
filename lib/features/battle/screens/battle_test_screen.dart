@@ -9,6 +9,7 @@ import 'package:upsc_wars/core/responsive/app_breakpoints.dart';
 import 'package:upsc_wars/core/analytics/analytics_events.dart';
 import 'package:upsc_wars/core/analytics/session_analytics_derive.dart';
 import 'package:upsc_wars/core/domain/entities/test_question.dart';
+import 'package:upsc_wars/core/providers/app_language_helpers.dart';
 import 'package:upsc_wars/core/theme/app_colors.dart';
 import 'package:upsc_wars/core/theme/app_radius.dart';
 import 'package:upsc_wars/core/theme/app_spacing.dart';
@@ -149,7 +150,8 @@ class _BattleTestSessionView extends HookConsumerWidget {
     final selectedForCurrent =
         battle.playerResponsesByQuestion[q.uuid] ?? q.selectedOption;
     final revealed = selectedForCurrent != null || q.status != 'unattempted';
-    final uiLanguage = useState(session.language);
+    final preferredLanguage = watchAppLanguage(ref, fallback: session.language);
+    final uiLanguage = useState(preferredLanguage);
     final remain = _remainingSecs(state);
     final scheme = Theme.of(context).colorScheme;
     final isDark = context.isDarkMode;
@@ -369,8 +371,11 @@ class _BattleTestSessionView extends HookConsumerWidget {
                 child: _BattleQuestionArea(
                   question: q,
                   uiLanguage: uiLanguage.value,
-                  onLanguageChanged: (i) =>
-                      uiLanguage.value = i == 0 ? 'en' : 'hi',
+                  onLanguageChanged: (i) {
+                    final value = i == 0 ? 'en' : 'hi';
+                    uiLanguage.value = value;
+                    unawaited(persistAppLanguage(ref, value));
+                  },
                   revealed: revealed,
                   selectedOption: selectedForCurrent,
                   optionsLocked: state.waitingForGuestToJoin,

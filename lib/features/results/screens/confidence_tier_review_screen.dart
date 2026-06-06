@@ -1,3 +1,5 @@
+import 'dart:async' show unawaited;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
@@ -6,6 +8,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../../core/domain/entities/answer_confidence.dart';
 import '../../../core/responsive/app_breakpoints.dart';
 import '../../../core/domain/entities/test_question.dart';
+import '../../../core/providers/app_language_helpers.dart';
 import '../../../core/providers/catalog_providers.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
@@ -164,7 +167,8 @@ class _TierPager extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final index = useState(0);
-    final uiLanguage = useState('en');
+    final preferredLanguage = watchAppLanguage(ref);
+    final uiLanguage = useState(preferredLanguage);
     final bookmarks = useState<Map<String, bool>>({});
 
     useEffect(() {
@@ -225,7 +229,10 @@ class _TierPager extends HookConsumerWidget {
       },
       onAddToRevision: null,
       uiLanguage: uiLanguage.value,
-      onLanguageChanged: (lang) => uiLanguage.value = lang,
+      onLanguageChanged: (lang) {
+        uiLanguage.value = lang;
+        unawaited(persistAppLanguage(ref, lang));
+      },
       confidenceBanner: 'Logged as: $tierLabel$filterSuffix',
     );
   }
