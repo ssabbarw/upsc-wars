@@ -12,7 +12,6 @@ import '../../../core/analytics/analytics.dart';
 import '../../../core/analytics/analytics_events.dart';
 import '../../../core/analytics/screen_flow_analytics.dart';
 import '../../../core/analytics/session_analytics_derive.dart';
-import '../../../core/presentation/session_subject_label.dart';
 import '../../../core/domain/entities/answer_confidence.dart';
 import '../../../core/domain/entities/test_question.dart';
 import '../../../core/domain/errors/app_errors.dart';
@@ -843,31 +842,14 @@ class _TopBar extends HookConsumerWidget {
         return (
           v.currentIndex,
           s.questions.length,
-          s.mode,
-          s.subject,
-          s.topic,
           q.flagged,
-          v.explanationVisible,
         );
       }),
     );
 
     if (snap == null) return const SizedBox.shrink();
 
-    final (
-      currentIndex,
-      qLen,
-      mode,
-      subject,
-      topic,
-      flagged,
-      explanationVisible,
-    ) = snap;
-
-    final subj = subject == 'revision'
-        ? 'Revision'
-        : displayNameForSessionSubject(subject);
-    final contextText = topic == null ? subj : '$subj · $topic';
+    final (currentIndex, qLen, flagged) = snap;
 
     return Padding(
       padding: const EdgeInsets.fromLTRB(
@@ -881,32 +863,23 @@ class _TopBar extends HookConsumerWidget {
           IconButton(
             tooltip: 'Back',
             onPressed: onBack,
+            visualDensity: VisualDensity.compact,
+            padding: EdgeInsets.zero,
+            constraints: const BoxConstraints(minWidth: 40, minHeight: 40),
             icon: const Icon(Icons.arrow_back),
           ),
           const SizedBox(width: AppSpacing.xs),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Q${currentIndex + 1} of $qLen',
-                  style: AppTextStyles.label().copyWith(
-                    color: scheme.onSurface,
-                  ),
-                ),
-                Text(
-                  contextText,
-                  style: AppTextStyles.caption().copyWith(
-                    color: scheme.onSurfaceVariant,
-                  ),
-                ),
-              ],
+          Text(
+            'Q${currentIndex + 1} of $qLen',
+            style: AppTextStyles.label().copyWith(
+              color: scheme.onSurface,
             ),
           ),
-          const SizedBox(width: AppSpacing.sm),
+          const Spacer(),
           ToggleButtons(
             isSelected: [uiLanguage == 'en', uiLanguage == 'hi'],
-            onPressed: (index) => onLanguageChanged(index == 0 ? 'en' : 'hi'),
+            onPressed: (index) =>
+                onLanguageChanged(index == 0 ? 'en' : 'hi'),
             borderRadius: BorderRadius.circular(AppRadius.sm),
             constraints: const BoxConstraints(minHeight: 28, minWidth: 60),
             children: const [
@@ -922,8 +895,9 @@ class _TopBar extends HookConsumerWidget {
           ),
           const SizedBox(width: AppSpacing.sm),
           InkWell(
-            onTap: () =>
-                ref.read(testSessionProvider(sessionId).notifier).toggleFlag(),
+            onTap: () => ref
+                .read(testSessionProvider(sessionId).notifier)
+                .toggleFlag(),
             borderRadius: BorderRadius.circular(AppRadius.md),
             child: Container(
               padding: const EdgeInsets.all(AppSpacing.sm),
@@ -1643,6 +1617,9 @@ class _ExamActionRow extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
     final isDark = context.isDarkMode;
+    final topic = ref.watch(
+      testSessionProvider(sessionId).select((a) => a.asData?.value.session?.topic),
+    );
     return Padding(
       padding: const EdgeInsets.fromLTRB(
         AppSpacing.lg,
@@ -1650,26 +1627,57 @@ class _ExamActionRow extends HookConsumerWidget {
         AppSpacing.lg,
         AppSpacing.sm,
       ),
-      child: Row(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          OutlinedButton(
-            onPressed: onPalette,
-            style: OutlinedButton.styleFrom(
-              minimumSize: const Size(44, 44),
-              padding: const EdgeInsets.symmetric(horizontal: AppSpacing.sm),
-            ),
-            child: const Icon(Icons.grid_view_outlined, size: 18),
+          Row(
+            children: [
+              OutlinedButton(
+                onPressed: onPalette,
+                style: OutlinedButton.styleFrom(
+                  minimumSize: const Size(44, 44),
+                  padding: const EdgeInsets.symmetric(horizontal: AppSpacing.sm),
+                ),
+                child: const Icon(Icons.grid_view_outlined, size: 18),
+              ),
+              const Spacer(),
+              OutlinedButton(
+                onPressed: onSubmit,
+                style: OutlinedButton.styleFrom(
+                  minimumSize: const Size(0, 36),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: AppSpacing.md,
+                    vertical: AppSpacing.xs,
+                  ),
+                  visualDensity: VisualDensity.compact,
+                  foregroundColor: isDark ? scheme.error : AppColors.wrong,
+                  side: BorderSide(
+                    color: isDark ? scheme.error : AppColors.wrong,
+                  ),
+                ),
+                child: const Text('Submit'),
+              ),
+            ],
           ),
-          const SizedBox(width: AppSpacing.sm),
-          _TopBarTimerLabel(sessionId: sessionId),
-          const Spacer(),
-          ElevatedButton(
-            onPressed: onSubmit,
-            style: ElevatedButton.styleFrom(
-              backgroundColor: isDark ? scheme.errorContainer : AppColors.wrong,
-              foregroundColor: isDark ? scheme.onErrorContainer : null,
-            ),
-            child: const Text('Submit'),
+          const SizedBox(height: AppSpacing.xs),
+          Row(
+            children: [
+              if (topic != null && topic.isNotEmpty)
+                Expanded(
+                  child: Text(
+                    topic,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: AppTextStyles.caption().copyWith(
+                      color: scheme.onSurfaceVariant,
+                    ),
+                  ),
+                )
+              else
+                const Spacer(),
+              const SizedBox(width: AppSpacing.sm),
+              _TopBarTimerLabel(sessionId: sessionId),
+            ],
           ),
         ],
       ),
