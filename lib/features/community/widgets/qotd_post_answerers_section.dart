@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/constants/app_constants.dart';
+import '../../../core/layout/system_insets.dart';
 import '../../../core/presentation/user_display_name.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
@@ -38,7 +39,9 @@ Future<void> showQotdAnswerersBottomSheet(
         minChildSize: 0.32,
         maxChildSize: 0.92,
         builder: (ctx, scrollController) {
-          return Column(
+          return Padding(
+            padding: EdgeInsets.only(bottom: systemBottomInset(ctx)),
+            child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Padding(
@@ -146,6 +149,7 @@ Future<void> showQotdAnswerersBottomSheet(
                 ),
               ),
             ],
+            ),
           );
         },
       );

@@ -939,7 +939,9 @@ class _AppShell extends HookConsumerWidget {
 
     return Scaffold(
       body: navigationShell,
-      bottomNavigationBar: Column(
+      bottomNavigationBar: SafeArea(
+        top: false,
+        child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           Container(height: 0.5, color: borderColor),
@@ -957,6 +959,7 @@ class _AppShell extends HookConsumerWidget {
             items: navItems,
           ),
         ],
+        ),
       ),
     );
   }

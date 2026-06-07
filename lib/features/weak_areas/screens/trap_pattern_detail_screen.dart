@@ -211,7 +211,9 @@ class TrapPatternDetailScreen extends HookConsumerWidget {
           Expanded(child: child),
         ]),
       ),
-      bottomNavigationBar: bottomBar,
+      bottomNavigationBar: bottomBar == null
+          ? null
+          : SafeArea(top: false, child: bottomBar),
     );
   }
 }

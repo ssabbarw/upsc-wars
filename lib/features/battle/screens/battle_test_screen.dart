@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:upsc_wars/core/layout/system_insets.dart';
 import 'package:upsc_wars/core/analytics/analytics.dart';
 import 'package:upsc_wars/core/responsive/app_breakpoints.dart';
 import 'package:upsc_wars/core/analytics/analytics_events.dart';
@@ -543,7 +544,12 @@ Future<void> _showBattleQuestionGrid(
                 ),
               ],
             ),
-            padding: const EdgeInsets.all(AppSpacing.lg),
+            padding: EdgeInsets.fromLTRB(
+              AppSpacing.lg,
+              AppSpacing.lg,
+              AppSpacing.lg,
+              paddedBottomInset(ctx, AppSpacing.lg),
+            ),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.stretch,

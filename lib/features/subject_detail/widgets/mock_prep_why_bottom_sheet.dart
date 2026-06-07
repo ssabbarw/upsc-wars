@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../core/layout/system_insets.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
@@ -23,7 +24,8 @@ void showMockPrepWhyBottomSheet(
       final padding = MediaQuery.paddingOf(ctx);
       final safeH = MediaQuery.sizeOf(ctx).height - padding.vertical;
       // Reserve space for top inset, Done button, and outer padding (~100pt).
-      final maxBodyScrollHeight = (safeH - 100).clamp(160.0, 640.0);
+      final maxBodyScrollHeight =
+          (safeH - 100 - padding.bottom).clamp(160.0, 640.0);
       return Padding(
         padding: const EdgeInsets.fromLTRB(8, 0, 8, 8),
         child: _MockPrepWhySheet(
@@ -113,7 +115,7 @@ class _MockPrepWhySheet extends StatelessWidget {
                   ),
                   const SizedBox(height: AppSpacing.sm),
                   Text(
-                    'Revise Practice these topics from your notes first before your next mock to reduce '
+                    'Revise these topics from your notes first before your next mock to reduce '
                     'costly mistakes and improve your score.',
                     style: _bodyStyle(scheme),
                   ),
@@ -160,11 +162,11 @@ class _MockPrepWhySheet extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.fromLTRB(
+            padding: EdgeInsets.fromLTRB(
               AppSpacing.lg,
               AppSpacing.sm,
               AppSpacing.lg,
-              AppSpacing.lg,
+              paddedBottomInset(context, AppSpacing.lg),
             ),
             child: FilledButton(
               onPressed: () => Navigator.of(context).pop(),

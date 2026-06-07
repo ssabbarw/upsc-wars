@@ -5,6 +5,7 @@ import 'package:intl/intl.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../core/constants/app_constants.dart';
+import '../../../core/layout/system_insets.dart';
 import '../../../core/presentation/user_display_name.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
@@ -76,11 +77,11 @@ Future<void> showCommunityUserProfileSheet(
             !isSelf;
         return SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(
+            padding: EdgeInsets.fromLTRB(
               AppSpacing.lg,
               AppSpacing.lg,
               AppSpacing.lg,
-              AppSpacing.xxl,
+              paddedBottomInset(context, AppSpacing.xxl),
             ),
             child: Column(
               mainAxisSize: MainAxisSize.min,

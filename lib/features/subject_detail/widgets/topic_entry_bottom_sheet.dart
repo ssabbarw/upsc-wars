@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../core/layout/system_insets.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
@@ -30,7 +31,7 @@ Future<void> showTopicEntryBottomSheet({
     builder: (modalContext) {
       return Padding(
         padding: EdgeInsets.only(
-          bottom: MediaQuery.viewInsetsOf(modalContext).bottom,
+          bottom: sheetBottomPadding(modalContext),
         ),
         child: Align(
           alignment: Alignment.bottomCenter,
@@ -44,7 +45,7 @@ Future<void> showTopicEntryBottomSheet({
             ),
             child: SingleChildScrollView(
               physics: const BouncingScrollPhysics(),
-              padding: const EdgeInsets.fromLTRB(
+              padding: EdgeInsets.fromLTRB(
                 AppSpacing.xxl,
                 AppSpacing.sm,
                 AppSpacing.xxl,

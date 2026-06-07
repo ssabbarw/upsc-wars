@@ -5,6 +5,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 
 import '../../../core/constants/app_constants.dart';
+import '../../../core/layout/system_insets.dart';
 import '../../../core/presentation/user_display_name.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
@@ -532,7 +533,7 @@ Future<void> _showSettings(BuildContext context, WidgetRef ref) async {
                   ),
                 ),
               ),
-              const SizedBox(height: AppSpacing.lg),
+              SizedBox(height: paddedBottomInset(context, AppSpacing.lg)),
             ],
           ),
         ),
@@ -549,7 +550,12 @@ Future<void> _showRandomConnectSheet(BuildContext context) async {
     ),
     builder: (context) {
       return Padding(
-        padding: const EdgeInsets.all(AppSpacing.lg),
+        padding: EdgeInsets.fromLTRB(
+          AppSpacing.lg,
+          AppSpacing.lg,
+          AppSpacing.lg,
+          paddedBottomInset(context, AppSpacing.lg),
+        ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [

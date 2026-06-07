@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import '../../../core/layout/system_insets.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/widgets/app_toast.dart';
@@ -59,7 +60,7 @@ class _QotdPostCommentSheetContentState
         left: AppSpacing.lg,
         right: AppSpacing.lg,
         top: AppSpacing.lg,
-        bottom: MediaQuery.viewInsetsOf(context).bottom + AppSpacing.lg,
+        bottom: sheetBottomPadding(context, base: AppSpacing.lg),
       ),
       child: Form(
         key: _formKey,
