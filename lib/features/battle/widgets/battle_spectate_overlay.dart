@@ -377,10 +377,20 @@ class _BattleSpectateSheetBody extends HookConsumerWidget {
       return t.cancel;
     }, [s?.sessionId]);
 
-    if (s == null) {
+    useEffect(() {
+      if (s != null) return null;
       WidgetsBinding.instance.addPostFrameCallback((_) {
-        if (sheetContext.mounted) Navigator.of(sheetContext).pop();
+        if (!sheetContext.mounted) return;
+        // Only dismiss this bottom sheet — never pop the route below it.
+        final route = ModalRoute.of(sheetContext);
+        if (route?.isCurrent ?? false) {
+          Navigator.of(sheetContext).pop();
+        }
       });
+      return null;
+    }, [s == null]);
+
+    if (s == null) {
       return const SizedBox.shrink();
     }
 
@@ -435,15 +445,7 @@ class _BattleSpectateSheetBody extends HookConsumerWidget {
                 BattleLiveScoreboard(sessionId: s.sessionId),
                 const SizedBox(height: AppSpacing.lg),
                 FilledButton.icon(
-                  onPressed: () async {
-                    final stopped = await tryStopBattleSpectate(
-                      sheetContext,
-                      ref,
-                    );
-                    if (stopped && sheetContext.mounted) {
-                      Navigator.of(sheetContext).pop();
-                    }
-                  },
+                  onPressed: () => tryStopBattleSpectate(sheetContext, ref),
                   icon: const Icon(Icons.visibility_off_outlined, size: 20),
                   label: const Text('Stop following'),
                 ),

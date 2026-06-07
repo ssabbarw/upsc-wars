@@ -749,7 +749,7 @@ class SessionQuestionsDao extends DatabaseAccessor<UserDatabase>
     final row = await customSelect(
       '''
       SELECT COUNT(*) AS c
-      FROM session_questions sq
+      FROM attempts sq
       INNER JOIN sessions s ON s.id = sq.session_id
       WHERE s.status = 'completed'
         AND sq.status IN ('correct', 'wrong')
