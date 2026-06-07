@@ -31,10 +31,14 @@ import 'package:upsc_wars/features/battle/domain/entities/battle_result_payload.
   );
 }
 
-String _shortName(String raw, {int max = 14}) {
-  final t = raw.trim();
-  if (t.length <= max) return ("\n\n$t\n");
-  return '\n\n${t.substring(0, max - 1)}…\n';
+String _firstName(String raw, {String fallback = 'Opponent'}) {
+  final parts = raw
+      .trim()
+      .split(RegExp(r'\s+'))
+      .where((e) => e.isNotEmpty)
+      .toList();
+  if (parts.isEmpty) return fallback;
+  return parts.first;
 }
 
 String _accuracyLine(({int correct, int wrong, int unanswered, int total}) c) {
@@ -52,7 +56,7 @@ String _calcSnippet(({int correct, int wrong, int unanswered, int total}) c) {
   return '+$pos / −$neg';
 }
 
-/// Head-to-head score summary: duel row + readable comparison (replaces two full cards).
+/// Head-to-head score summary card ("How you stacked up").
 class BattleResultScoreComparison extends StatelessWidget {
   const BattleResultScoreComparison({super.key, required this.payload});
 
@@ -70,49 +74,40 @@ class BattleResultScoreComparison extends StatelessWidget {
     final tie = delta.abs() < 0.005;
     final ahead = delta > 0;
 
-    final winnerAccent = AppColors.coachTrendEmerald;
-    final youEmph = tie || ahead;
-    final oppEmph = tie || !ahead;
-    final youAccent = tie
-        ? scheme.primary
-        : (ahead ? winnerAccent : scheme.outline);
-    final oppAccent = tie
-        ? scheme.primary
-        : (ahead ? scheme.outline : winnerAccent);
+    final youWon = tie || ahead;
+    final oppWon = tie || !ahead;
+    final playerName = _firstName(payload.playerName, fallback: 'You');
+    final opponentName = _firstName(payload.opponentName);
 
-    final cardBg = isDark ? AppColors.surfaceTertiaryDark : AppColors.gray100;
-    final borderCol = scheme.outline.withValues(alpha: isDark ? 0.4 : 0.28);
+    final cardBg = isDark ? AppColors.surfaceSecondaryDark : Colors.white;
+    final borderCol = scheme.outline.withValues(alpha: isDark ? 0.35 : 0.22);
 
-    return Center(
-      child: ConstrainedBox(
-        constraints: const BoxConstraints(maxWidth: 520),
-        child: Material(
-          color: cardBg,
-          elevation: 0,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(AppRadius.xl),
-            side: BorderSide(color: borderCol),
+    return Material(
+      color: cardBg,
+      elevation: 0,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(AppRadius.xl),
+        side: BorderSide(color: borderCol),
+      ),
+      clipBehavior: Clip.antiAlias,
+      child: Stack(
+        children: [
+          Positioned.fill(
+            child: CustomPaint(
+              painter: _ConfettiPainter(isDark: isDark),
+            ),
           ),
-          clipBehavior: Clip.antiAlias,
-          child: Padding(
+          Padding(
             padding: const EdgeInsets.fromLTRB(
-              AppSpacing.lg,
+              AppSpacing.sm,
               AppSpacing.md,
-              AppSpacing.lg,
+              AppSpacing.sm,
               AppSpacing.lg,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Text(
-                  'How you stacked up',
-                  textAlign: TextAlign.center,
-                  style: AppTextStyles.label().copyWith(
-                    letterSpacing: 1.15,
-                    fontWeight: FontWeight.w700,
-                    color: scheme.onSurfaceVariant,
-                  ),
-                ),
+                _StackedUpHeader(scheme: scheme),
                 const SizedBox(height: AppSpacing.md),
                 IntrinsicHeight(
                   child: Row(
@@ -121,118 +116,354 @@ class BattleResultScoreComparison extends StatelessWidget {
                       Expanded(
                         child: _ScorePillar(
                           scheme: scheme,
-                          emphasize: youEmph,
-                          accent: youAccent,
-                          label: 'You',
-                          name: _shortName(payload.playerName),
+                          isWinner: youWon && !tie,
+                          isLoser: oppWon && !tie,
+                          roleLabel: 'YOU',
+                          name: playerName,
                           score: mine,
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: AppSpacing.sm,
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Container(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: AppSpacing.sm,
-                                vertical: AppSpacing.xs,
-                              ),
-                              decoration: BoxDecoration(
-                                color: scheme.surfaceContainerHighest
-                                    .withValues(alpha: isDark ? 0.4 : 0.65),
-                                borderRadius: BorderRadius.circular(
-                                  AppRadius.pill,
-                                ),
-                              ),
-                              child: Text(
-                                'VS',
-                                style: AppTextStyles.caption().copyWith(
-                                  fontWeight: FontWeight.w800,
-                                  color: scheme.onSurfaceVariant,
-                                  letterSpacing: 1.2,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
+                      const SizedBox(width: AppSpacing.md),
+                      Align(
+                        alignment: Alignment.center,
+                        child: _VsBadge(scheme: scheme, isDark: isDark),
                       ),
+                      const SizedBox(width: AppSpacing.md),
                       Expanded(
                         child: _ScorePillar(
                           scheme: scheme,
-                          emphasize: oppEmph,
-                          accent: oppAccent,
-                          label: 'Opponent',
-                          name: _shortName(payload.opponentName),
+                          isWinner: oppWon && !tie,
+                          isLoser: youWon && !tie,
+                          roleLabel: null,
+                          name: opponentName,
                           score: theirs,
                         ),
                       ),
                     ],
                   ),
                 ),
-                const SizedBox(height: AppSpacing.md),
-                Divider(height: 1, color: borderCol.withValues(alpha: 0.65)),
-                const SizedBox(height: AppSpacing.md),
-                Text.rich(
-                  TextSpan(
-                    style: AppTextStyles.bodyMd().copyWith(
-                      color: scheme.onSurface,
-                      height: 1.5,
+                    const SizedBox(height: AppSpacing.md),
+                    Divider(height: 1, color: borderCol.withValues(alpha: 0.7)),
+                    const SizedBox(height: AppSpacing.md),
+                    IntrinsicHeight(
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Expanded(
+                            child: _PlayerStatColumn(
+                              scheme: scheme,
+                              isPositive: youWon,
+                              label: 'You',
+                              score: mine,
+                              calc: _calcSnippet(you),
+                              accuracy: _accuracyLine(you),
+                            ),
+                          ),
+                          Container(
+                            width: 1,
+                            color: borderCol.withValues(alpha: 0.7),
+                          ),
+                          Expanded(
+                            child: _PlayerStatColumn(
+                              scheme: scheme,
+                              isPositive: oppWon,
+                              label: opponentName,
+                              score: theirs,
+                              calc: _calcSnippet(opp),
+                              accuracy: _accuracyLine(opp),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                    children: [
-                      TextSpan(
-                        text: 'You',
-                        style: const TextStyle(fontWeight: FontWeight.w700),
-                      ),
-                      TextSpan(
-                        text:
-                            ' : ${mine.toStringAsFixed(2)}\n'
-                            '(${_calcSnippet(you)})\n→ ${_accuracyLine(you)}). ',
-                      ),
-                      TextSpan(
-                        text: _shortName(payload.opponentName, max: 22),
-                        style: const TextStyle(fontWeight: FontWeight.w700),
-                      ),
-                      TextSpan(
-                        text:
-                            ' ${theirs.toStringAsFixed(2)} '
-                            '(${_calcSnippet(opp)} → ${_accuracyLine(opp)}). ',
-                      ),
-                      if (tie)
-                        TextSpan(
-                          text: '\nThat is a draw on points.',
-                          style: TextStyle(
-                            color: scheme.primary,
-                            fontWeight: FontWeight.w700,
-                          ),
-                        )
-                      else if (ahead)
-                        TextSpan(
-                          text:
-                              '\nYou were ahead by ${delta.abs().toStringAsFixed(2)} points.',
-                          style: TextStyle(
-                            color: winnerAccent,
-                            fontWeight: FontWeight.w700,
-                          ),
-                        )
-                      else
-                        TextSpan(
-                          text:
-                              '\nThey led by ${delta.abs().toStringAsFixed(2)} points.',
-                          style: TextStyle(
-                            color: AppColors.wrong,
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
+                    const SizedBox(height: AppSpacing.md),
+                    _DeltaSummaryPill(
+                      tie: tie,
+                      ahead: ahead,
+                      delta: delta.abs(),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+    );
+  }
+}
+
+/// Victory / loss / tie banner below the score card.
+class BattleResultOutcomeBanner extends StatelessWidget {
+  const BattleResultOutcomeBanner({
+    super.key,
+    required this.playerScore,
+    required this.opponentScore,
+    this.spectateVerdict,
+  });
+
+  final double playerScore;
+  final double opponentScore;
+  final String? spectateVerdict;
+
+  @override
+  Widget build(BuildContext context) {
+    final diff = playerScore - opponentScore;
+    final tie = diff.abs() < 0.001;
+    final won = !tie && diff > 0;
+
+    if (won) {
+      return _VictoryBanner(spectateVerdict: spectateVerdict);
+    }
+
+    final scheme = Theme.of(context).colorScheme;
+    final (title, subtitle) = tie
+        ? ('Neck and neck!', 'It is a tie. That was intense.')
+        : ('So close!', 'You lost this one. Come back stronger.');
+
+    final statusLine = spectateVerdict ??
+        (tie
+            ? 'Scores are tied on points.'
+            : 'Your opponent is ahead on points (for now).');
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Text(
+          title,
+          style: AppTextStyles.h1().copyWith(color: scheme.onSurface),
+          textAlign: TextAlign.center,
+        ),
+        const SizedBox(height: AppSpacing.xs),
+        Text(
+          subtitle,
+          style: AppTextStyles.bodySm().copyWith(
+            color: scheme.onSurfaceVariant,
+          ),
+          textAlign: TextAlign.center,
+        ),
+        const SizedBox(height: AppSpacing.sm),
+        Text(
+          statusLine,
+          style: AppTextStyles.bodyMd().copyWith(
+            color: AppColors.coachTrendEmerald,
+            fontStyle: FontStyle.italic,
+          ),
+          textAlign: TextAlign.center,
+        ),
+      ],
+    );
+  }
+}
+
+class _VictoryBanner extends StatelessWidget {
+  const _VictoryBanner({this.spectateVerdict});
+
+  final String? spectateVerdict;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(AppRadius.xl),
+        gradient: const LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [
+            Color(0xFF0A4D3C),
+            Color(0xFF085041),
+            Color(0xFF063D32),
+          ],
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: AppColors.primaryDeep.withValues(alpha: 0.35),
+            blurRadius: 20,
+            offset: const Offset(0, 10),
+          ),
+        ],
+      ),
+      clipBehavior: Clip.antiAlias,
+      child: Stack(
+        children: [
+          Positioned.fill(
+            child: CustomPaint(
+              painter: _ConfettiPainter(
+                isDark: true,
+                dense: true,
+              ),
+            ),
+          ),
+          Positioned(
+            top: -28,
+            left: 0,
+            right: 0,
+            child: Center(
+              child: Container(
+                width: 220,
+                height: 90,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  gradient: RadialGradient(
+                    colors: [
+                      Colors.white.withValues(alpha: 0.14),
+                      Colors.transparent,
                     ],
                   ),
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(
+              AppSpacing.lg,
+              AppSpacing.xl,
+              AppSpacing.lg,
+              AppSpacing.lg,
+            ),
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.spa_outlined,
+                      size: 22,
+                      color: AppColors.onboardingScoreMutedGreen
+                          .withValues(alpha: 0.85),
+                    ),
+                    const SizedBox(width: AppSpacing.sm),
+                    Icon(
+                      Icons.emoji_events_rounded,
+                      size: 44,
+                      color: const Color(0xFFFFC857),
+                    ),
+                    const SizedBox(width: AppSpacing.sm),
+                    Icon(
+                      Icons.spa_outlined,
+                      size: 22,
+                      color: AppColors.onboardingScoreMutedGreen
+                          .withValues(alpha: 0.85),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: AppSpacing.sm),
+                Text(
+                  'Victory unlocked!',
+                  style: AppTextStyles.h1().copyWith(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w900,
+                  ),
                   textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: AppSpacing.xs),
+                Text(
+                  'You outplayed your opponent this round.',
+                  style: AppTextStyles.bodySm().copyWith(
+                    color: Colors.white.withValues(alpha: 0.88),
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: AppSpacing.md),
+                Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: AppSpacing.md,
+                    vertical: AppSpacing.sm,
+                  ),
+                  decoration: BoxDecoration(
+                    color: Colors.white.withValues(alpha: 0.1),
+                    borderRadius: BorderRadius.circular(AppRadius.pill),
+                    border: Border.all(
+                      color: Colors.white.withValues(alpha: 0.28),
+                    ),
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(
+                        Icons.star_rounded,
+                        size: 16,
+                        color: Colors.white.withValues(alpha: 0.92),
+                      ),
+                      const SizedBox(width: AppSpacing.xs),
+                      Text(
+                        spectateVerdict ??
+                            'You are ahead on points (for now).',
+                        style: AppTextStyles.bodySm().copyWith(
+                          color: Colors.white.withValues(alpha: 0.95),
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
           ),
+        ],
+      ),
+    );
+  }
+}
+
+class _StackedUpHeader extends StatelessWidget {
+  const _StackedUpHeader({required this.scheme});
+
+  final ColorScheme scheme;
+
+  @override
+  Widget build(BuildContext context) {
+    final accent = AppColors.coachTrendEmerald;
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Icon(Icons.spa_outlined, size: 18, color: accent.withValues(alpha: 0.8)),
+        const SizedBox(width: AppSpacing.sm),
+        Text(
+          'How you stacked up',
+          style: AppTextStyles.label().copyWith(
+            letterSpacing: 0.2,
+            fontWeight: FontWeight.w600,
+            color: scheme.onSurfaceVariant,
+          ),
+        ),
+        const SizedBox(width: AppSpacing.sm),
+        Icon(Icons.spa_outlined, size: 18, color: accent.withValues(alpha: 0.8)),
+      ],
+    );
+  }
+}
+
+class _VsBadge extends StatelessWidget {
+  const _VsBadge({required this.scheme, required this.isDark});
+
+  final ColorScheme scheme;
+  final bool isDark;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 30,
+      height: 30,
+      alignment: Alignment.center,
+      decoration: BoxDecoration(
+        color: isDark ? scheme.surface : Colors.white,
+        shape: BoxShape.circle,
+        border: Border.all(
+          color: scheme.outline.withValues(alpha: isDark ? 0.3 : 0.16),
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: isDark ? 0.2 : 0.06),
+            blurRadius: 4,
+            offset: const Offset(0, 1),
+          ),
+        ],
+      ),
+      child: Text(
+        'vs',
+        style: AppTextStyles.caption().copyWith(
+          fontWeight: FontWeight.w500,
+          color: scheme.onSurfaceVariant,
+          fontSize: 10,
         ),
       ),
     );
@@ -242,52 +473,73 @@ class BattleResultScoreComparison extends StatelessWidget {
 class _ScorePillar extends StatelessWidget {
   const _ScorePillar({
     required this.scheme,
-    required this.emphasize,
-    required this.accent,
-    required this.label,
+    required this.isWinner,
+    required this.isLoser,
+    required this.roleLabel,
     required this.name,
     required this.score,
   });
 
   final ColorScheme scheme;
-  final bool emphasize;
-  final Color accent;
-  final String label;
+  final bool isWinner;
+  final bool isLoser;
+  final String? roleLabel;
   final String name;
   final double score;
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final winAccent = AppColors.coachTrendEmerald;
+    final loseAccent = AppColors.wrong;
+
+    final accent = isWinner
+        ? winAccent
+        : isLoser
+        ? loseAccent
+        : scheme.primary;
+    final bg = isWinner
+        ? (isDark
+              ? winAccent.withValues(alpha: 0.14)
+              : AppColors.correctBg)
+        : isLoser
+        ? (isDark ? loseAccent.withValues(alpha: 0.12) : AppColors.wrongBg)
+        : scheme.surfaceContainerHighest.withValues(alpha: isDark ? 0.35 : 0.5);
+    final borderAlpha = isWinner || isLoser ? 0.5 : 0.2;
+
     return AnimatedContainer(
       duration: const Duration(milliseconds: 220),
       curve: Curves.easeOutCubic,
+      width: double.infinity,
+      height: double.infinity,
       padding: const EdgeInsets.symmetric(
+        horizontal: AppSpacing.md,
         vertical: AppSpacing.md,
-        horizontal: AppSpacing.sm,
       ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(AppRadius.lg),
         border: Border.all(
-          color: emphasize
-              ? accent.withValues(alpha: 0.55)
-              : scheme.outline.withValues(alpha: isDark ? 0.25 : 0.18),
-          width: emphasize ? 1.6 : 1,
+          color: accent.withValues(alpha: borderAlpha),
         ),
-        color: emphasize
-            ? accent.withValues(alpha: isDark ? 0.12 : 0.08)
-            : scheme.surface.withValues(alpha: isDark ? 0.2 : 0.55),
+        color: bg,
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(
-            label.toUpperCase(),
-            style: AppTextStyles.caption().copyWith(
-              fontWeight: FontWeight.w800,
-              letterSpacing: 1.1,
-              color: scheme.onSurfaceVariant,
-            ),
+          SizedBox(
+            height: 16,
+            child: roleLabel != null
+                ? Center(
+                    child: Text(
+                      roleLabel!,
+                      style: AppTextStyles.caption().copyWith(
+                        fontWeight: FontWeight.w500,
+                        letterSpacing: 0.8,
+                        color: scheme.onSurfaceVariant,
+                      ),
+                    ),
+                  )
+                : null,
           ),
           const SizedBox(height: 4),
           Text(
@@ -296,8 +548,8 @@ class _ScorePillar extends StatelessWidget {
             overflow: TextOverflow.ellipsis,
             textAlign: TextAlign.center,
             style: AppTextStyles.bodySm().copyWith(
-              color: scheme.onSurfaceVariant,
-              fontWeight: FontWeight.w500,
+              color: scheme.onSurface,
+              fontWeight: FontWeight.w600,
             ),
           ),
           const SizedBox(height: AppSpacing.sm),
@@ -305,23 +557,259 @@ class _ScorePillar extends StatelessWidget {
             score.toStringAsFixed(2),
             textAlign: TextAlign.center,
             style: AppTextStyles.h1().copyWith(
-              fontSize: 32,
-              fontWeight: FontWeight.w800,
+              fontSize: 28,
+              fontWeight: FontWeight.w700,
               height: 1.05,
-              color: emphasize ? accent : scheme.onSurface,
+              color: isWinner
+                  ? accent
+                  : isLoser
+                  ? accent
+                  : scheme.onSurface,
               fontFeatures: const [ui.FontFeature.tabularFigures()],
-            ),
-          ),
-          const SizedBox(height: 2),
-          Text(
-            'net',
-            style: AppTextStyles.caption().copyWith(
-              color: scheme.onSurfaceVariant,
-              fontStyle: FontStyle.italic,
             ),
           ),
         ],
       ),
     );
   }
+}
+
+class _PlayerStatColumn extends StatelessWidget {
+  const _PlayerStatColumn({
+    required this.scheme,
+    required this.isPositive,
+    required this.label,
+    required this.score,
+    required this.calc,
+    required this.accuracy,
+  });
+
+  final ColorScheme scheme;
+  final bool isPositive;
+  final String label;
+  final double score;
+  final String calc;
+  final String accuracy;
+
+  @override
+  Widget build(BuildContext context) {
+    final accent = isPositive ? AppColors.coachTrendEmerald : AppColors.wrong;
+    final icon = isPositive ? Icons.check_circle_rounded : Icons.cancel_rounded;
+
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: AppSpacing.sm),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(icon, size: 15, color: accent),
+              const SizedBox(width: 4),
+              Flexible(
+                child: Text(
+                  '$label: ${score.toStringAsFixed(2)}',
+                  style: AppTextStyles.bodySm().copyWith(
+                    color: accent,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 3),
+          Text(
+            '($calc)',
+            textAlign: TextAlign.center,
+            style: AppTextStyles.caption().copyWith(
+              color: scheme.onSurfaceVariant,
+            ),
+          ),
+          const SizedBox(height: 4),
+          Text(
+            accuracy,
+            textAlign: TextAlign.center,
+            style: AppTextStyles.caption().copyWith(
+              color: scheme.onSurfaceVariant,
+              height: 1.35,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _DeltaSummaryPill extends StatelessWidget {
+  const _DeltaSummaryPill({
+    required this.tie,
+    required this.ahead,
+    required this.delta,
+  });
+
+  final bool tie;
+  final bool ahead;
+  final double delta;
+
+  @override
+  Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final winAccent = AppColors.coachTrendEmerald;
+    final loseAccent = AppColors.wrong;
+
+    final Color accent;
+    final Color bg;
+    final IconData icon;
+    final String text;
+
+    if (tie) {
+      accent = AppColors.gray600;
+      bg = isDark
+          ? AppColors.gray800.withValues(alpha: 0.5)
+          : AppColors.gray50;
+      icon = Icons.horizontal_rule_rounded;
+      text = 'Tie on points';
+    } else if (ahead) {
+      accent = winAccent;
+      bg = isDark
+          ? winAccent.withValues(alpha: 0.14)
+          : winAccent.withValues(alpha: 0.1);
+      icon = Icons.north_rounded;
+      text = 'You were ahead by ${delta.toStringAsFixed(2)} points';
+    } else {
+      accent = loseAccent;
+      bg = isDark
+          ? loseAccent.withValues(alpha: 0.14)
+          : loseAccent.withValues(alpha: 0.08);
+      icon = Icons.south_rounded;
+      text = 'They led by ${delta.toStringAsFixed(2)} points';
+    }
+
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.symmetric(
+        horizontal: AppSpacing.lg,
+        vertical: AppSpacing.sm + 2,
+      ),
+      decoration: BoxDecoration(
+        color: bg,
+        borderRadius: BorderRadius.circular(AppRadius.pill),
+        border: Border.all(color: accent.withValues(alpha: 0.28)),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            width: 20,
+            height: 20,
+            decoration: BoxDecoration(
+              color: accent.withValues(alpha: 0.14),
+              shape: BoxShape.circle,
+            ),
+            child: Icon(icon, size: 13, color: accent),
+          ),
+          const SizedBox(width: AppSpacing.sm),
+          Flexible(
+            child: Text.rich(
+              TextSpan(
+                style: AppTextStyles.bodySm().copyWith(
+                  color: accent,
+                  fontWeight: FontWeight.w500,
+                ),
+                children: tie
+                    ? [TextSpan(text: text)]
+                    : [
+                        TextSpan(
+                          text: ahead
+                              ? 'You were ahead by '
+                              : 'They led by ',
+                        ),
+                        TextSpan(
+                          text: delta.toStringAsFixed(2),
+                          style: const TextStyle(fontWeight: FontWeight.w700),
+                        ),
+                        const TextSpan(text: ' points'),
+                      ],
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _ConfettiPainter extends CustomPainter {
+  _ConfettiPainter({required this.isDark, this.dense = false});
+
+  final bool isDark;
+  final bool dense;
+
+  static final _pieces = <_ConfettiPiece>[
+    _ConfettiPiece(0.08, 0.12, 5, 3, 0.4, AppColors.coachTrendEmerald),
+    _ConfettiPiece(0.18, 0.06, 4, 4, 0.9, const Color(0xFFFFC857)),
+    _ConfettiPiece(0.32, 0.14, 6, 2, 1.2, AppColors.wrong),
+    _ConfettiPiece(0.46, 0.08, 3, 5, 0.2, AppColors.coachTrendEmerald),
+    _ConfettiPiece(0.58, 0.16, 5, 3, 1.6, const Color(0xFFFFC857)),
+    _ConfettiPiece(0.72, 0.1, 4, 4, 0.7, AppColors.coachTrendEmerald),
+    _ConfettiPiece(0.84, 0.14, 3, 3, 1.1, AppColors.wrong),
+    _ConfettiPiece(0.92, 0.06, 5, 2, 0.5, const Color(0xFFFFC857)),
+    _ConfettiPiece(0.14, 0.22, 4, 3, 1.4, AppColors.coachTrendEmerald),
+    _ConfettiPiece(0.38, 0.24, 3, 4, 0.3, AppColors.wrong),
+    _ConfettiPiece(0.64, 0.2, 5, 3, 1.8, const Color(0xFFFFC857)),
+    _ConfettiPiece(0.78, 0.26, 4, 2, 0.6, AppColors.coachTrendEmerald),
+  ];
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final alpha = dense ? 0.55 : (isDark ? 0.35 : 0.45);
+    for (final piece in _pieces) {
+      final paint = Paint()
+        ..color = piece.color.withValues(alpha: alpha)
+        ..style = PaintingStyle.fill;
+
+      final center = Offset(
+        piece.x * size.width,
+        piece.y * size.height,
+      );
+      canvas.save();
+      canvas.translate(center.dx, center.dy);
+      canvas.rotate(piece.rotation);
+      final rect = Rect.fromCenter(
+        center: Offset.zero,
+        width: piece.w,
+        height: piece.h,
+      );
+      canvas.drawRRect(
+        RRect.fromRectAndRadius(rect, const Radius.circular(1.2)),
+        paint,
+      );
+      canvas.restore();
+    }
+  }
+
+  @override
+  bool shouldRepaint(covariant _ConfettiPainter oldDelegate) {
+    return oldDelegate.isDark != isDark || oldDelegate.dense != dense;
+  }
+}
+
+class _ConfettiPiece {
+  const _ConfettiPiece(
+    this.x,
+    this.y,
+    this.w,
+    this.h,
+    this.rotation,
+    this.color,
+  );
+
+  final double x;
+  final double y;
+  final double w;
+  final double h;
+  final double rotation;
+  final Color color;
 }

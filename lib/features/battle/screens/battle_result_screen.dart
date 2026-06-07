@@ -10,7 +10,6 @@ import 'package:upsc_wars/core/analytics/screen_flow_analytics.dart';
 import 'package:upsc_wars/core/responsive/app_breakpoints.dart';
 import 'package:upsc_wars/core/providers/catalog_providers.dart';
 import 'package:upsc_wars/core/theme/app_spacing.dart';
-import 'package:upsc_wars/core/theme/app_text_styles.dart';
 import 'package:upsc_wars/features/battle/battle_result_live_payload.dart';
 import 'package:upsc_wars/features/battle/data/battle_firestore_paths.dart';
 import 'package:upsc_wars/features/battle/domain/battle_opponent_policy.dart';
@@ -38,19 +37,6 @@ Future<void> _leaveBattleResultScreen(
   context.go('/');
 }
 
-(String, String) _battleResultHeadline({
-  required double mine,
-  required double other,
-}) {
-  if ((mine - other).abs() < 0.001) {
-    return ('Neck and neck!', 'It is a tie. That was intense.');
-  }
-  if (mine > other) {
-    return ('Victory unlocked!', 'You outplayed your opponent this round.');
-  }
-  return ('So close!', 'You lost this one. Come back stronger.');
-}
-
 class BattleResultScreen extends HookConsumerWidget {
   const BattleResultScreen({super.key, required this.payload});
 
@@ -58,7 +44,6 @@ class BattleResultScreen extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final scheme = Theme.of(context).colorScheme;
     final hPad = AppBreakpoints.fullScreenHPadding(MediaQuery.sizeOf(context).width);
     final spectate = ref.watch(battleSpectateProvider);
     final battleUi = ref.watch(battleSessionProvider(payload.sessionId));
@@ -187,10 +172,10 @@ class BattleResultScreen extends HookConsumerWidget {
         ? battleResultPayloadFromSpectate(spectate)
         : firestoreLive.value;
 
-    final message = _battleResultHeadline(
-      mine: displayPayload.playerScore,
-      other: displayPayload.opponentScore,
-    );
+    final spectateVerdict =
+        spectate != null && spectate.sessionId == payload.sessionId
+        ? battleSpectateVerdictLine(spectate)
+        : null;
 
     return PopScope(
       canPop: false,
@@ -207,75 +192,82 @@ class BattleResultScreen extends HookConsumerWidget {
           ),
         ),
         body: SingleChildScrollView(
-          padding: EdgeInsets.fromLTRB(
-            AppSpacing.lg + hPad.left,
-            AppSpacing.lg,
-            AppSpacing.lg + hPad.right,
-            AppSpacing.lg,
-          ),
+          padding: const EdgeInsets.symmetric(vertical: AppSpacing.lg),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              BattleLiveScoreboard(
-                sessionId: payload.sessionId,
-                fallbackPayload: displayPayload,
-                battleFinishedOverride:
-                    spectate != null &&
-                        spectate.sessionId == payload.sessionId
-                    ? null
-                    : opponentBattleOver.value,
+              Padding(
+                padding: EdgeInsets.fromLTRB(
+                  AppSpacing.lg + hPad.left,
+                  0,
+                  AppSpacing.lg + hPad.right,
+                  0,
+                ),
+                child: BattleLiveScoreboard(
+                  sessionId: payload.sessionId,
+                  fallbackPayload: displayPayload,
+                  battleFinishedOverride:
+                      spectate != null &&
+                          spectate.sessionId == payload.sessionId
+                      ? null
+                      : opponentBattleOver.value,
+                ),
               ),
               const SizedBox(height: AppSpacing.lg),
-              BattleResultScoreComparison(payload: displayPayload),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: AppSpacing.sm + hPad.left,
+                ),
+                child: BattleResultScoreComparison(payload: displayPayload),
+              ),
               const SizedBox(height: AppSpacing.lg),
-              Text(
-                message.$1,
-                style: AppTextStyles.h1().copyWith(
-                  color: scheme.onSurface,
+              Padding(
+                padding: EdgeInsets.fromLTRB(
+                  AppSpacing.lg + hPad.left,
+                  0,
+                  AppSpacing.lg + hPad.right,
+                  0,
                 ),
-                textAlign: TextAlign.center,
+                child: BattleResultOutcomeBanner(
+                  playerScore: displayPayload.playerScore,
+                  opponentScore: displayPayload.opponentScore,
+                  spectateVerdict: spectateVerdict,
+                ),
               ),
-              const SizedBox(height: AppSpacing.xs),
-              Text(
-                message.$2,
-                style: AppTextStyles.bodySm().copyWith(
-                  color: scheme.onSurfaceVariant,
-                ),
-                textAlign: TextAlign.center,
-              ),
-              if (spectate != null &&
-                  spectate.sessionId == payload.sessionId) ...[
-                const SizedBox(height: AppSpacing.sm),
-                Text(
-                  battleSpectateVerdictLine(spectate),
-                  style: AppTextStyles.bodyMd().copyWith(
-                    color: scheme.primary,
-                    fontStyle: FontStyle.italic,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ],
               const SizedBox(height: AppSpacing.lg),
-              ElevatedButton.icon(
-                onPressed: () async {
-                  ScreenFlow.logAction(
-                    ref,
-                    screenName: ScreenFlow.battleResults,
-                    actionId: 'review_explanations',
-                  );
-                  if (context.mounted) {
-                    context.push('/history/${payload.sessionId}');
-                  }
-                },
-                icon: const Icon(Icons.menu_book_outlined),
-                label: const Text('Review explanations'),
-              ),
-              const SizedBox(height: AppSpacing.sm),
-              OutlinedButton(
-                onPressed: () async {
-                  if (context.mounted) context.go('/');
-                },
-                child: const Text('Back to Home'),
+              Padding(
+                padding: EdgeInsets.fromLTRB(
+                  AppSpacing.lg + hPad.left,
+                  0,
+                  AppSpacing.lg + hPad.right,
+                  0,
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    ElevatedButton.icon(
+                      onPressed: () async {
+                        ScreenFlow.logAction(
+                          ref,
+                          screenName: ScreenFlow.battleResults,
+                          actionId: 'review_explanations',
+                        );
+                        if (context.mounted) {
+                          context.push('/history/${payload.sessionId}');
+                        }
+                      },
+                      icon: const Icon(Icons.menu_book_outlined),
+                      label: const Text('Review explanations'),
+                    ),
+                    const SizedBox(height: AppSpacing.sm),
+                    OutlinedButton(
+                      onPressed: () async {
+                        if (context.mounted) context.go('/');
+                      },
+                      child: const Text('Back to Home'),
+                    ),
+                  ],
+                ),
               ),
               const SizedBox(height: AppSpacing.lg),
             ],

@@ -516,20 +516,37 @@ class _BattleWaitBotCountdownState extends State<_BattleWaitBotCountdown>
                   AppSpacing.md,
                 ),
                 child: AnimatedBuilder(
-              animation: _pulse,
-              builder: (context, child) {
-                final o = 0.42 + _pulse.value * 0.48;
-                return Opacity(opacity: o, child: child);
-              },
-              child: Text(
-                'Please wait… battle is starting in a few seconds.',
-                style: AppTextStyles.caption().copyWith(
-                  color: scheme.onSurfaceVariant,
-                  fontSize: 12,
-                  height: 1.35,
-                ),
-                textAlign: TextAlign.center,
-              ),
+                  animation: _pulse,
+                  builder: (context, child) {
+                    final o = 0.42 + _pulse.value * 0.48;
+                    return Opacity(opacity: o, child: child);
+                  },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      SizedBox(
+                        width: 14,
+                        height: 14,
+                        child: CircularProgressIndicator(
+                          strokeWidth: 2,
+                          color: scheme.primary,
+                        ),
+                      ),
+                      const SizedBox(width: AppSpacing.sm),
+                      Flexible(
+                        child: Text(
+                          'Please wait… battle is starting in a few seconds.',
+                          style: AppTextStyles.caption().copyWith(
+                            color: scheme.onSurfaceVariant,
+                            fontSize: 12,
+                            height: 1.35,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               );
             },
