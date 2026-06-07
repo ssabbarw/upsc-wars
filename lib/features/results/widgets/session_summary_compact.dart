@@ -33,8 +33,7 @@ void _openSessionHistoryReview(
       ? '/history/$sessionId?focus=wrong'
       : '/history/$sessionId';
   final path = GoRouter.of(context).state.uri.path;
-  if (path.startsWith('/danger-zone/') ||
-      path.startsWith('/mistake-review')) {
+  if (path.startsWith('/danger-zone/') || path.startsWith('/mistake-review')) {
     context.pushReplacement(loc);
   } else {
     context.push(loc);
@@ -279,6 +278,13 @@ class _CompactScoreRow extends StatelessWidget {
     final netColor = net >= 0 ? AppColors.coachTrendEmerald : AppColors.wrong;
     final attempted = result.correct + result.wrong;
     final accLabel = attempted == 0 ? '—' : '${result.accuracy.round()}%';
+    final positiveMarks = result.correct * 2.0;
+    final negativeMarks = result.wrong * 0.66;
+    final accColor = attempted == 0
+        ? scheme.onSurfaceVariant
+        : result.accuracy >= 50
+        ? AppColors.coachTrendEmerald
+        : AppColors.wrong;
 
     Widget? trend;
     if (!metrics.compact && canScope) {
@@ -289,7 +295,7 @@ class _CompactScoreRow extends StatelessWidget {
           final rounded = d.round();
           final sign = rounded > 0 ? '+' : '';
           return Text(
-            '$sign$rounded% vs your last test',
+            '$sign$rounded% accuracy vs your last test',
             style: AppTextStyles.caption().copyWith(
               color: scheme.onSurfaceVariant,
             ),
@@ -300,13 +306,10 @@ class _CompactScoreRow extends StatelessWidget {
       );
     }
 
-    final positiveMarks = result.correct * 2.0;
-    final negativeMarks = result.wrong * 0.66;
-    final accColor = attempted == 0
-        ? scheme.onSurfaceVariant
-        : result.accuracy >= 50
-        ? AppColors.coachTrendEmerald
-        : AppColors.wrong;
+    final marksBreakdown = attempted == 0
+        ? 'Attempt questions to earn marks'
+        : '+${positiveMarks.toStringAsFixed(2)} earned · '
+              '${negativeMarks == 0 ? '0 lost' : '−${negativeMarks.toStringAsFixed(2)} lost'}';
 
     return _SummarySurfaceCard(
       scheme: scheme,
@@ -314,24 +317,23 @@ class _CompactScoreRow extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.all(metrics.cardPadding),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(
-              'Your Score',
-              style: AppTextStyles.caption().copyWith(
-                color: scheme.onSurfaceVariant,
-                fontWeight: FontWeight.w700,
-              ),
-            ),
-            const SizedBox(height: AppSpacing.xs),
             Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisSize: MainAxisSize.min,
                     children: [
+                      Text(
+                        'Net marks',
+                        style: AppTextStyles.caption().copyWith(
+                          color: scheme.onSurfaceVariant,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                      const SizedBox(height: AppSpacing.xs),
                       Text(
                         net.toStringAsFixed(2),
                         style: AppTextStyles.h2().copyWith(
@@ -342,13 +344,14 @@ class _CompactScoreRow extends StatelessWidget {
                           fontFeatures: const [ui.FontFeature.tabularFigures()],
                         ),
                       ),
+                      const SizedBox(height: 2),
                       Text(
-                        '${result.correct} of ${result.questionCount} correct',
+                        marksBreakdown,
                         style: AppTextStyles.caption().copyWith(
                           color: scheme.onSurfaceVariant,
+                          height: 1.35,
                         ),
                       ),
-                      if (trend != null) ...[const SizedBox(height: 2), trend],
                     ],
                   ),
                 ),
@@ -364,48 +367,20 @@ class _CompactScoreRow extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: AppSpacing.sm * metrics.factor),
-            Row(
-              children: [
-                Expanded(
-                  child: _ScoreStatPill(
-                    label: 'earned',
-                    value: '+${positiveMarks.toStringAsFixed(2)}',
-                    color: AppColors.coachTrendEmerald,
-                    background: isDark
-                        ? AppColors.correctBgDark.withValues(alpha: 0.35)
-                        : AppColors.correctBg,
-                    metrics: metrics,
-                  ),
-                ),
-                SizedBox(width: AppSpacing.xs * metrics.factor),
-                Expanded(
-                  child: _ScoreStatPill(
-                    label: 'deducted',
-                    value: negativeMarks == 0
-                        ? '0'
-                        : '−${negativeMarks.toStringAsFixed(2)}',
-                    color: AppColors.wrong,
-                    background: isDark
-                        ? AppColors.wrongBgDark.withValues(alpha: 0.35)
-                        : AppColors.wrongBg,
-                    metrics: metrics,
-                  ),
-                ),
-                SizedBox(width: AppSpacing.xs * metrics.factor),
-                Expanded(
-                  child: _ScoreStatPill(
-                    label: 'skipped',
-                    value: '${result.unattempted}',
-                    color: scheme.onSurfaceVariant,
-                    background: isDark
-                        ? AppColors.surfaceTertiaryDark
-                        : AppColors.surfaceTertiaryLight,
-                    metrics: metrics,
-                  ),
-                ),
-              ],
+            SizedBox(height: AppSpacing.md * metrics.factor),
+            _SessionAttemptBar(
+              correct: result.correct,
+              wrong: result.wrong,
+              skipped: result.unattempted,
+              total: result.questionCount,
+              scheme: scheme,
+              isDark: isDark,
+              metrics: metrics,
             ),
+            if (trend != null) ...[
+              SizedBox(height: AppSpacing.sm * metrics.factor),
+              trend,
+            ],
           ],
         ),
       ),
@@ -413,53 +388,113 @@ class _CompactScoreRow extends StatelessWidget {
   }
 }
 
-class _ScoreStatPill extends StatelessWidget {
-  const _ScoreStatPill({
-    required this.label,
-    required this.value,
-    required this.color,
-    required this.background,
+class _SessionAttemptBar extends StatelessWidget {
+  const _SessionAttemptBar({
+    required this.correct,
+    required this.wrong,
+    required this.skipped,
+    required this.total,
+    required this.scheme,
+    required this.isDark,
     required this.metrics,
   });
 
-  final String label;
-  final String value;
-  final Color color;
-  final Color background;
+  final int correct;
+  final int wrong;
+  final int skipped;
+  final int total;
+  final ColorScheme scheme;
+  final bool isDark;
   final _SummaryLayoutMetrics metrics;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(
-        horizontal: AppSpacing.xs * metrics.factor,
-        vertical: AppSpacing.xs * metrics.factor,
-      ),
-      decoration: BoxDecoration(
-        color: background,
-        borderRadius: BorderRadius.circular(AppRadius.md),
-      ),
-      child: Column(
-        children: [
-          Text(
-            value,
-            style: AppTextStyles.caption().copyWith(
-              fontWeight: FontWeight.w800,
-              color: color,
-              fontFeatures: const [ui.FontFeature.tabularFigures()],
+    if (total <= 0) return const SizedBox.shrink();
+
+    final attempted = correct + wrong;
+    final trackColor = isDark
+        ? AppColors.gray600.withValues(alpha: 0.35)
+        : AppColors.gray200;
+
+    Widget segment({required int flex, required Color color}) {
+      if (flex <= 0) return const SizedBox.shrink();
+      return Expanded(
+        flex: flex,
+        child: Container(height: 8, color: color),
+      );
+    }
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Row(
+          children: [
+            Text(
+              'All $total questions',
+              style: AppTextStyles.caption().copyWith(
+                fontWeight: FontWeight.w700,
+                color: scheme.onSurface,
+              ),
             ),
-            textAlign: TextAlign.center,
-          ),
-          Text(
-            label,
-            style: AppTextStyles.caption().copyWith(
-              fontSize: metrics.statSubFontSize,
-              color: color.withValues(alpha: 0.85),
+            const Spacer(),
+            Text(
+              attempted == 0
+                  ? 'None attempted'
+                  : '$attempted attempted · $skipped skipped',
+              style: AppTextStyles.caption().copyWith(
+                color: scheme.onSurfaceVariant,
+              ),
             ),
-            textAlign: TextAlign.center,
+          ],
+        ),
+        const SizedBox(height: AppSpacing.xs),
+        ClipRRect(
+          borderRadius: BorderRadius.circular(AppRadius.pill),
+          child: Row(
+            children: [
+              segment(flex: correct, color: AppColors.correct),
+              segment(flex: wrong, color: AppColors.wrong),
+              segment(flex: skipped, color: trackColor),
+            ],
           ),
-        ],
-      ),
+        ),
+        const SizedBox(height: AppSpacing.sm),
+        Wrap(
+          spacing: AppSpacing.md,
+          runSpacing: AppSpacing.xs,
+          children: [
+            _AttemptLegendItem(
+              color: AppColors.correct,
+              label: '$correct correct',
+            ),
+            _AttemptLegendItem(color: AppColors.wrong, label: '$wrong wrong'),
+            _AttemptLegendItem(color: trackColor, label: '$skipped skipped'),
+          ],
+        ),
+      ],
+    );
+  }
+}
+
+class _AttemptLegendItem extends StatelessWidget {
+  const _AttemptLegendItem({required this.color, required this.label});
+
+  final Color color;
+  final String label;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Container(
+          width: 8,
+          height: 8,
+          decoration: BoxDecoration(color: color, shape: BoxShape.circle),
+        ),
+        const SizedBox(width: 6),
+        Text(label, style: AppTextStyles.caption()),
+      ],
     );
   }
 }
@@ -492,66 +527,54 @@ class _SemiCircularAccuracyGauge extends StatelessWidget {
         : AppColors.gray200;
     final progress = attempted == 0 ? 0.0 : (accuracy / 100).clamp(0.0, 1.0);
     final attemptedLabel = attempted == 0
-        ? 'No attempts'
+        ? 'No attempts yet'
         : '$correct of $attempted correct';
 
-    return Row(
+    return Column(
       mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        SizedBox(
-          height: metrics.gaugeHeight,
-          child: Align(
-            alignment: Alignment.center,
-            child: Text(
-              'Accuracy',
-              style: AppTextStyles.caption().copyWith(
-                color: scheme.onSurfaceVariant,
-                fontWeight: FontWeight.w600,
-                fontSize: (12 * metrics.factor).clamp(10.0, 12.0),
-              ),
-            ),
+        Text(
+          'Attempt accuracy',
+          style: AppTextStyles.caption().copyWith(
+            color: scheme.onSurfaceVariant,
+            fontWeight: FontWeight.w600,
+            fontSize: (11 * metrics.factor).clamp(10.0, 11.0),
           ),
         ),
-        SizedBox(width: AppSpacing.xs * metrics.factor),
-        Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            SizedBox(
-              width: metrics.gaugeWidth,
-              height: metrics.gaugeHeight,
-              child: CustomPaint(
-                painter: _SemiArcPainter(
-                  progress: progress,
-                  progressColor: accColor,
-                  trackColor: trackColor,
-                  strokeWidth: metrics.gaugeStroke,
-                ),
-                child: Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Padding(
-                    padding: const EdgeInsets.only(bottom: 2),
-                    child: Text(
-                      accLabel,
-                      style: AppTextStyles.labelSm().copyWith(
-                        fontWeight: FontWeight.w800,
-                        color: accColor,
-                      ),
-                    ),
+        const SizedBox(height: 2),
+        SizedBox(
+          width: metrics.gaugeWidth,
+          height: metrics.gaugeHeight,
+          child: CustomPaint(
+            painter: _SemiArcPainter(
+              progress: progress,
+              progressColor: accColor,
+              trackColor: trackColor,
+              strokeWidth: metrics.gaugeStroke,
+            ),
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: Padding(
+                padding: const EdgeInsets.only(bottom: 2),
+                child: Text(
+                  accLabel,
+                  style: AppTextStyles.labelSm().copyWith(
+                    fontWeight: FontWeight.w800,
+                    color: accColor,
                   ),
                 ),
               ),
             ),
-            const SizedBox(height: 2),
-            Text(
-              attemptedLabel,
-              style: AppTextStyles.caption().copyWith(
-                color: scheme.onSurfaceVariant,
-                fontSize: (10 * metrics.factor).clamp(9.0, 10.0),
-              ),
-              textAlign: TextAlign.center,
-            ),
-          ],
+          ),
+        ),
+        Text(
+          attemptedLabel,
+          style: AppTextStyles.caption().copyWith(
+            color: scheme.onSurfaceVariant,
+            fontSize: (10 * metrics.factor).clamp(9.0, 10.0),
+          ),
+          textAlign: TextAlign.center,
         ),
       ],
     );
