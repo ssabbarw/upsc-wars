@@ -204,35 +204,6 @@ class _DangerZonePager extends HookConsumerWidget {
             confidenceBanner: 'You were $confLabel',
           ),
         ),
-        Builder(
-          builder: (context) {
-            final hPad = AppBreakpoints.fullScreenHPadding(
-              MediaQuery.sizeOf(context).width,
-            );
-            return Padding(
-              padding: EdgeInsets.fromLTRB(
-                16 + hPad.left,
-                0,
-                16 + hPad.right,
-                12,
-              ),
-              child: OutlinedButton(
-            onPressed: () {
-              ScreenFlow.logAction(
-                ref,
-                screenName: ScreenFlow.dangerZoneReview,
-                actionId: 'open_full_session_history',
-              );
-              context.pushReplacement('/history/$sessionId');
-            },
-            child: Text(
-              'Review full session in History',
-              style: AppTextStyles.label(),
-            ),
-          ),
-            );
-          },
-        ),
       ],
     );
   }

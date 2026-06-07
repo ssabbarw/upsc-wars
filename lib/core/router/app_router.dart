@@ -49,7 +49,8 @@ import '../../features/home/screens/progress_screen.dart';
 import '../../features/internal/screens/feature_health_screen.dart';
 import '../../features/home/providers/auth_providers.dart';
 import '../../features/results/screens/confidence_tier_review_screen.dart';
-import '../../features/results/screens/danger_zone_review_screen.dart';
+import '../../features/results/screens/mistake_review_intro_screen.dart';
+import '../../features/results/screens/mistake_review_screen.dart';
 import '../../features/results/screens/results_screen.dart';
 import '../../features/revision_queue/screens/revision_queue_screen.dart';
 import '../../features/revision_queue/screens/revision_mode_screen.dart';
@@ -532,7 +533,24 @@ GoRouter appRouter(Ref ref) {
         parentNavigatorKey: rootNavigatorKey,
         path: '/danger-zone/:sessionId',
         name: 'danger_zone_review',
-        builder: (context, state) => DangerZoneReviewScreen(
+        redirect: (context, state) {
+          final sessionId = state.pathParameters['sessionId']!;
+          return '/mistake-review-intro/$sessionId';
+        },
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/mistake-review-intro/:sessionId',
+        name: 'mistake_review_intro',
+        builder: (context, state) => MistakeReviewIntroScreen(
+          sessionId: state.pathParameters['sessionId']!,
+        ),
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/mistake-review/:sessionId',
+        name: 'mistake_review',
+        builder: (context, state) => MistakeReviewScreen(
           sessionId: state.pathParameters['sessionId']!,
         ),
       ),

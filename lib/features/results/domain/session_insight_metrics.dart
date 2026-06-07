@@ -74,6 +74,43 @@ List<TopicMarksLost> topTopicsForDisplay(
       .toList();
 }
 
+/// Topics with at least one attempt, highest accuracy first.
+List<({String topic, int correct, int attempted})> topicsSortedByAccuracyDesc(
+  List<({String topic, int correct, int attempted})> rows,
+) {
+  final filtered = rows.where((r) => r.attempted > 0).toList()
+    ..sort((a, b) {
+      final accA = a.correct / a.attempted;
+      final accB = b.correct / b.attempted;
+      final cmp = accB.compareTo(accA);
+      if (cmp != 0) return cmp;
+      return b.attempted.compareTo(a.attempted);
+    });
+  return filtered;
+}
+
+/// Topics with at least one attempt, lowest accuracy first.
+List<({String topic, int correct, int attempted})> topicsSortedByWorstAccuracy(
+  List<({String topic, int correct, int attempted})> rows,
+) {
+  final filtered = rows.where((r) => r.attempted > 0).toList()
+    ..sort((a, b) {
+      final accA = a.correct / a.attempted;
+      final accB = b.correct / b.attempted;
+      final cmp = accA.compareTo(accB);
+      if (cmp != 0) return cmp;
+      return b.attempted.compareTo(a.attempted);
+    });
+  return filtered;
+}
+
+double topicRowAccuracyPercent(
+  ({String topic, int correct, int attempted}) row,
+) {
+  if (row.attempted <= 0) return 0;
+  return (100 * row.correct / row.attempted).clamp(0.0, 100.0);
+}
+
 double topicAccuracyPercent(
   List<({String topic, int correct, int attempted})> rows,
   String topic,

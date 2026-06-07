@@ -7,7 +7,6 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/analytics/analytics.dart';
 import '../../../core/analytics/analytics_events.dart';
-import '../../../core/domain/entities/answer_confidence.dart';
 import '../../../core/domain/entities/session_result.dart';
 import '../../../core/providers/prefs_provider.dart';
 import '../../../core/theme/app_colors.dart';
@@ -16,6 +15,7 @@ import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../features/topic_test/providers/topic_test_ui_providers.dart';
 import '../domain/session_insight_case.dart';
+import 'questions_to_review_card.dart';
 
 /// Hero insight card for session summary (cases A–F).
 class SessionInsightHeroCard extends ConsumerWidget {
@@ -42,10 +42,21 @@ class SessionInsightHeroCard extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final scheme = Theme.of(context).colorScheme;
-    final isDark = Theme.of(context).brightness == Brightness.dark;
     final sureWrong = sessionSureWrongCount(result);
     final eduWrong = sessionEduWrongCount(result);
+
+    if (usesMistakeReviewFlow(insightCase)) {
+      return QuestionsToReviewCard(
+        sessionId: sessionId,
+        insightCase: insightCase,
+        sureWrong: sureWrong,
+        eduWrong: eduWrong,
+        compact: compact,
+      );
+    }
+
+    final scheme = Theme.of(context).colorScheme;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     final highRisk = sureWrong + eduWrong;
     final marks = sessionTierMarksLost(highRisk > 0 ? highRisk : result.wrong);
 
@@ -205,15 +216,9 @@ class SessionInsightHeroCard extends ConsumerWidget {
 
     switch (insightCase) {
       case SessionInsightCase.a:
-        context.push(
-          '/session-confidence-review/$sessionId/${AnswerConfidence.verySure}?outcome=wrong',
-        );
       case SessionInsightCase.b:
-        context.push(
-          '/session-confidence-review/$sessionId/${AnswerConfidence.somewhatSure}?outcome=wrong',
-        );
       case SessionInsightCase.c:
-        context.push('/danger-zone/$sessionId');
+        context.push('/mistake-review-intro/$sessionId');
       case SessionInsightCase.d:
         _openHistory(context, focusWrong: true);
       case SessionInsightCase.e:
@@ -248,7 +253,8 @@ class SessionInsightHeroCard extends ConsumerWidget {
         ? '/history/$sessionId?focus=wrong'
         : '/history/$sessionId';
     final path = GoRouter.of(context).state.uri.path;
-    if (path.startsWith('/danger-zone/')) {
+    if (path.startsWith('/danger-zone/') ||
+        path.startsWith('/mistake-review')) {
       context.pushReplacement(loc);
     } else {
       context.push(loc);
@@ -329,7 +335,7 @@ _CaseStyle _caseStyle(SessionInsightCase c, bool isDark) {
   switch (c) {
     case SessionInsightCase.a:
       return _CaseStyle(
-        eyebrow: 'BIGGEST INSIGHT',
+        eyebrow: '',
         subtitle: 'You were sure, but incorrect. These are rank killers.',
         background: isDark
             ? AppColors.wrongBgDark.withValues(alpha: 0.65)
@@ -350,7 +356,7 @@ _CaseStyle _caseStyle(SessionInsightCase c, bool isDark) {
       );
     case SessionInsightCase.b:
       return _CaseStyle(
-        eyebrow: 'BIGGEST INSIGHT',
+        eyebrow: '',
         subtitle:
             'Your elimination strategy failed more often than it worked.',
         background: isDark
@@ -372,19 +378,24 @@ _CaseStyle _caseStyle(SessionInsightCase c, bool isDark) {
       );
     case SessionInsightCase.c:
       return _CaseStyle(
-        eyebrow: 'BIGGEST INSIGHT',
+        eyebrow: '',
         subtitle:
             'You lost marks from both overconfidence and risky elimination.',
         background: isDark
-            ? AppColors.primaryDeep.withValues(alpha: 0.35)
-            : AppColors.primaryLight.withValues(alpha: 0.35),
-        border: AppColors.primary.withValues(alpha: 0.45),
-        accent: isDark ? AppColors.primary : AppColors.primaryDark,
-        ctaBackground: AppColors.primary,
+            ? AppColors.wrongBgDark.withValues(alpha: 0.65)
+            : AppColors.coachDangerSurfaceLight,
+        border: AppColors.coachDangerBorder,
+        accent: isDark ? AppColors.wrongTextDark : AppColors.coachDangerTitleText,
+        ctaBackground: AppColors.wrong,
         ctaForeground: AppColors.onPrimary,
         title: ({required sureWrong, required eduWrong, required wrong}) {
-          final n = sureWrong + eduWrong;
-          return '$n High-Risk Mistake${n == 1 ? '' : 's'}';
+          if (sureWrong > 0 && eduWrong > 0) {
+            return '$sureWrong Confident · $eduWrong Educated guess';
+          }
+          if (sureWrong > 0) {
+            return '$sureWrong Confident Mistake${sureWrong == 1 ? '' : 's'}';
+          }
+          return '$eduWrong Educated Guess Mistake${eduWrong == 1 ? '' : 's'}';
         },
         ctaLabel: ({
           required sureWrong,
@@ -393,14 +404,14 @@ _CaseStyle _caseStyle(SessionInsightCase c, bool isDark) {
           required weakestTopic,
         }) {
           final n = sureWrong + eduWrong;
-          return 'Review $n high-risk mistake${n == 1 ? '' : 's'}';
+          return 'Review $n confident mistake${n == 1 ? '' : 's'}';
         },
       );
     case SessionInsightCase.d:
       return _CaseStyle(
-        eyebrow: 'INSIGHT',
+        eyebrow: '',
         subtitle:
-            'No high-risk mistakes — wrong answers were pure guesses. '
+            'Wrong answers were pure guesses. '
             'You still lost marks worth reviewing.',
         background: isDark
             ? AppColors.infoBgDark.withValues(alpha: 0.45)
@@ -410,14 +421,14 @@ _CaseStyle _caseStyle(SessionInsightCase c, bool isDark) {
         ctaBackground: AppColors.info,
         ctaForeground: AppColors.onPrimary,
         title: ({required sureWrong, required eduWrong, required wrong}) =>
-            'No high-risk mistakes',
+            'No confident mistakes',
         ctaLabel: ({
           required sureWrong,
           required eduWrong,
           required wrong,
           required weakestTopic,
         }) =>
-            'Review $wrong wrong answer${wrong == 1 ? '' : 's'}',
+            'Review your mistakes',
       );
     case SessionInsightCase.e:
       return _CaseStyle(
@@ -432,7 +443,7 @@ _CaseStyle _caseStyle(SessionInsightCase c, bool isDark) {
         ctaBackground: AppColors.correct,
         ctaForeground: AppColors.onPrimary,
         title: ({required sureWrong, required eduWrong, required wrong}) =>
-            'No high-risk mistakes',
+            'Excellent session',
         ctaLabel: ({
           required sureWrong,
           required eduWrong,

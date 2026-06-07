@@ -516,6 +516,9 @@ class ReviewBody extends StatelessWidget {
     required this.onLanguageChanged,
     this.confidenceBanner,
     this.confidenceSessionId,
+    this.progressSummary,
+    this.segmentLabel,
+    this.segmentColor,
     this.onShare,
     this.shareLayerLink,
   });
@@ -526,6 +529,13 @@ class ReviewBody extends StatelessWidget {
   final TestQuestion question;
   final int current;
   final int total;
+
+  /// When set, shown instead of "Question X of Y" (e.g. "3 of 7 done").
+  final String? progressSummary;
+
+  /// Optional category chip above the progress bar (e.g. CONFIDENT · WRONG).
+  final String? segmentLabel;
+  final Color? segmentColor;
   final bool isBookmarked;
   final bool isQueued;
   final VoidCallback onToggleBookmark;
@@ -595,11 +605,41 @@ class ReviewBody extends StatelessWidget {
           padding: const EdgeInsets.fromLTRB(16, 10, 16, 0),
           child: Column(
             children: [
+              if (segmentLabel != null) ...[
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 10,
+                      vertical: 4,
+                    ),
+                    decoration: BoxDecoration(
+                      color: (segmentColor ?? scheme.error)
+                          .withValues(alpha: isDark ? 0.22 : 0.12),
+                      borderRadius: BorderRadius.circular(6),
+                      border: Border.all(
+                        color: (segmentColor ?? scheme.error)
+                            .withValues(alpha: 0.45),
+                      ),
+                    ),
+                    child: Text(
+                      segmentLabel!,
+                      style: TextStyle(
+                        fontSize: 11,
+                        fontWeight: FontWeight.w800,
+                        letterSpacing: 0.6,
+                        color: segmentColor ?? scheme.error,
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 6),
+              ],
               Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Text(
-                    'Question $current of $total',
+                    progressSummary ?? 'Question $current of $total',
                     softWrap: true,
                     style: TextStyle(
                       fontSize: 12,
@@ -865,15 +905,18 @@ class _TopBar extends HookConsumerWidget {
             ),
           ),
           const SizedBox(width: 8),
-          Text(
-            title,
-            style: TextStyle(
-              fontSize: 14,
-              fontWeight: FontWeight.w500,
-              color: scheme.onSurface,
+          Expanded(
+            child: Text(
+              title,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w500,
+                color: scheme.onSurface,
+              ),
             ),
           ),
-          const Spacer(),
           if (showRevisionBadge)
             Container(
               margin: const EdgeInsets.only(right: 10),

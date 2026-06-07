@@ -19,6 +19,8 @@ const Set<String> kScreenDwellTrackedNames = {
   'session_results',
   'battle_results',
   'danger_zone_review',
+  'mistake_review_intro',
+  'mistake_review',
   'revision_queue',
   'revision_queue_session',
   'qotd_post',

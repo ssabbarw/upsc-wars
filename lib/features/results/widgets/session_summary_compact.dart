@@ -34,7 +34,8 @@ void _openSessionHistoryReview(
       ? '/history/$sessionId?focus=wrong'
       : '/history/$sessionId';
   final path = GoRouter.of(context).state.uri.path;
-  if (path.startsWith('/danger-zone/')) {
+  if (path.startsWith('/danger-zone/') ||
+      path.startsWith('/mistake-review')) {
     context.pushReplacement(loc);
   } else {
     context.push(loc);
@@ -90,7 +91,8 @@ class SessionSummaryCompactView extends HookConsumerWidget {
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final metrics = _SummaryLayoutMetrics.fromViewportHeight(maxHeight);
-    final topicsExpanded = useState(maxHeight >= 700);
+    final bestTopicsExpanded = useState(maxHeight >= 700);
+    final worstTopicsExpanded = useState(maxHeight >= 700);
     final moreExpanded = useState(false);
     final insightCaseAsync = ref.watch(_insightCaseProvider(result));
     final topicRowsAsync = ref.watch(sessionTopicAccuracyProvider(sessionId));
@@ -129,10 +131,9 @@ class SessionSummaryCompactView extends HookConsumerWidget {
       return null;
     }, [insightCaseAsync]);
 
-    final topicDisplay = topicRowsAsync.maybeWhen(
-      data: (rows) => topTopicsForDisplay(marksRows, rows),
-      orElse: () => marksRows.take(3).toList(),
-    );
+    final accuracyRows = topicRowsAsync.asData?.value ?? const [];
+    final bestTopics = topicsSortedByAccuracyDesc(accuracyRows);
+    final worstTopics = topicsSortedByWorstAccuracy(accuracyRows);
     final attempted = result.correct + result.wrong;
     final showRevisionQueue = result.wrong > 0;
     final showMoreInsights = attempted > 0;
@@ -201,7 +202,6 @@ class SessionSummaryCompactView extends HookConsumerWidget {
           result: result,
           scheme: scheme,
           isDark: isDark,
-          timeAsync: timeAsync,
           metrics: metrics,
         ),
         if (showRevisionQueue) ...[
@@ -216,10 +216,14 @@ class SessionSummaryCompactView extends HookConsumerWidget {
         ],
         SizedBox(height: metrics.sectionGap),
         _TopTopicsSection(
-          topics: topicDisplay,
-          accuracyRows: topicRowsAsync.asData?.value ?? const [],
-          expanded: topicsExpanded.value,
-          onToggle: () => topicsExpanded.value = !topicsExpanded.value,
+          bestTopics: bestTopics,
+          worstTopics: worstTopics,
+          bestExpanded: bestTopicsExpanded.value,
+          worstExpanded: worstTopicsExpanded.value,
+          onToggleBest: () =>
+              bestTopicsExpanded.value = !bestTopicsExpanded.value,
+          onToggleWorst: () =>
+              worstTopicsExpanded.value = !worstTopicsExpanded.value,
           scheme: scheme,
           defaultVisibleCount: metrics.defaultTopicCount,
         ),
@@ -343,7 +347,7 @@ class _CompactScoreRow extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        '${result.correct} / ${result.questionCount} correct',
+                        '${result.correct} of ${result.questionCount} correct',
                         style: AppTextStyles.caption().copyWith(
                           color: scheme.onSurfaceVariant,
                         ),
@@ -357,16 +361,107 @@ class _CompactScoreRow extends StatelessWidget {
                   attempted: attempted,
                   accLabel: accLabel,
                   accColor: accColor,
-                  positiveMarks: positiveMarks,
-                  negativeMarks: negativeMarks,
                   scheme: scheme,
                   isDark: isDark,
                   metrics: metrics,
                 ),
               ],
             ),
+            SizedBox(height: AppSpacing.sm * metrics.factor),
+            Row(
+              children: [
+                Expanded(
+                  child: _ScoreStatPill(
+                    label: 'earned',
+                    value: '+${positiveMarks.toStringAsFixed(2)}',
+                    color: AppColors.coachTrendEmerald,
+                    background: isDark
+                        ? AppColors.correctBgDark.withValues(alpha: 0.35)
+                        : AppColors.correctBg,
+                    metrics: metrics,
+                  ),
+                ),
+                SizedBox(width: AppSpacing.xs * metrics.factor),
+                Expanded(
+                  child: _ScoreStatPill(
+                    label: 'deducted',
+                    value: negativeMarks == 0
+                        ? '0'
+                        : '−${negativeMarks.toStringAsFixed(2)}',
+                    color: AppColors.wrong,
+                    background: isDark
+                        ? AppColors.wrongBgDark.withValues(alpha: 0.35)
+                        : AppColors.wrongBg,
+                    metrics: metrics,
+                  ),
+                ),
+                SizedBox(width: AppSpacing.xs * metrics.factor),
+                Expanded(
+                  child: _ScoreStatPill(
+                    label: 'skipped',
+                    value: '${result.unattempted}',
+                    color: scheme.onSurfaceVariant,
+                    background: isDark
+                        ? AppColors.surfaceTertiaryDark
+                        : AppColors.surfaceTertiaryLight,
+                    metrics: metrics,
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class _ScoreStatPill extends StatelessWidget {
+  const _ScoreStatPill({
+    required this.label,
+    required this.value,
+    required this.color,
+    required this.background,
+    required this.metrics,
+  });
+
+  final String label;
+  final String value;
+  final Color color;
+  final Color background;
+  final _SummaryLayoutMetrics metrics;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.symmetric(
+        horizontal: AppSpacing.xs * metrics.factor,
+        vertical: AppSpacing.xs * metrics.factor,
+      ),
+      decoration: BoxDecoration(
+        color: background,
+        borderRadius: BorderRadius.circular(AppRadius.md),
+      ),
+      child: Column(
+        children: [
+          Text(
+            value,
+            style: AppTextStyles.caption().copyWith(
+              fontWeight: FontWeight.w800,
+              color: color,
+              fontFeatures: const [ui.FontFeature.tabularFigures()],
+            ),
+            textAlign: TextAlign.center,
+          ),
+          Text(
+            label,
+            style: AppTextStyles.caption().copyWith(
+              fontSize: metrics.statSubFontSize,
+              color: color.withValues(alpha: 0.85),
+            ),
+            textAlign: TextAlign.center,
+          ),
+        ],
       ),
     );
   }
@@ -378,8 +473,6 @@ class _SemiCircularAccuracyGauge extends StatelessWidget {
     required this.attempted,
     required this.accLabel,
     required this.accColor,
-    required this.positiveMarks,
-    required this.negativeMarks,
     required this.scheme,
     required this.isDark,
     required this.metrics,
@@ -389,8 +482,6 @@ class _SemiCircularAccuracyGauge extends StatelessWidget {
   final int attempted;
   final String accLabel;
   final Color accColor;
-  final double positiveMarks;
-  final double negativeMarks;
   final ColorScheme scheme;
   final bool isDark;
   final _SummaryLayoutMetrics metrics;
@@ -448,32 +539,6 @@ class _SemiCircularAccuracyGauge extends StatelessWidget {
                   ),
                 ),
               ),
-            ),
-            const SizedBox(height: 2),
-            Text.rich(
-              TextSpan(
-                style: AppTextStyles.caption().copyWith(
-                  fontWeight: FontWeight.w600,
-                  fontFeatures: const [ui.FontFeature.tabularFigures()],
-                ),
-                children: [
-                  TextSpan(
-                    text: '(+${positiveMarks.toStringAsFixed(2)}',
-                    style: const TextStyle(color: AppColors.coachTrendEmerald),
-                  ),
-                  const TextSpan(
-                    text: ' / ',
-                    style: TextStyle(color: AppColors.gray400),
-                  ),
-                  TextSpan(
-                    text: negativeMarks == 0
-                        ? '0)'
-                        : '−${negativeMarks.toStringAsFixed(2)})',
-                    style: const TextStyle(color: AppColors.wrong),
-                  ),
-                ],
-              ),
-              textAlign: TextAlign.center,
             ),
           ],
         ),
@@ -543,14 +608,12 @@ class _QuickStatsRow extends StatelessWidget {
     required this.result,
     required this.scheme,
     required this.isDark,
-    required this.timeAsync,
     required this.metrics,
   });
 
   final SessionResult result;
   final ColorScheme scheme;
   final bool isDark;
-  final AsyncValue<({int avgSecs, int minSecs, int maxSecs})> timeAsync;
   final _SummaryLayoutMetrics metrics;
 
   @override
@@ -561,11 +624,6 @@ class _QuickStatsRow extends StatelessWidget {
     final eduPct = result.confidenceIntelligentTotal == 0
         ? '—'
         : '${(100 * result.confidenceIntelligentCorrect / result.confidenceIntelligentTotal).round()}%';
-    final avgTime = result.avgTimeSpentSecs?.round() ?? 0;
-    final timeSub = timeAsync.maybeWhen(
-      data: (t) => 'Fastest ${t.minSecs}s / Slowest ${t.maxSecs}s',
-      orElse: () => null,
-    );
     final dividerColor = isDark ? AppColors.borderDark : AppColors.borderLight;
 
     return Column(
@@ -588,7 +646,7 @@ class _QuickStatsRow extends StatelessWidget {
               children: [
                 Expanded(
                   child: _StatTile(
-                    label: 'Confident',
+                    label: 'Sure accuracy',
                     value: surePct,
                     sub: result.confidenceSureTotal > 0
                         ? '(${result.confidenceSureCorrect} / ${result.confidenceSureTotal})'
@@ -602,7 +660,7 @@ class _QuickStatsRow extends StatelessWidget {
                 VerticalDivider(width: 1, thickness: 1, color: dividerColor),
                 Expanded(
                   child: _StatTile(
-                    label: 'Educated Guess',
+                    label: 'Educated guess accuracy',
                     value: eduPct,
                     sub: result.confidenceIntelligentTotal > 0
                         ? '(${result.confidenceIntelligentCorrect} / ${result.confidenceIntelligentTotal})'
@@ -610,30 +668,6 @@ class _QuickStatsRow extends StatelessWidget {
                     scheme: scheme,
                     icon: Icons.help_outline,
                     color: AppColors.warning,
-                    metrics: metrics,
-                  ),
-                ),
-                VerticalDivider(width: 1, thickness: 1, color: dividerColor),
-                Expanded(
-                  child: _StatTile(
-                    label: 'Avg. Time / Q',
-                    value: '${avgTime}s',
-                    sub: timeSub,
-                    scheme: scheme,
-                    icon: Icons.schedule_outlined,
-                    color: AppColors.info,
-                    metrics: metrics,
-                  ),
-                ),
-                VerticalDivider(width: 1, thickness: 1, color: dividerColor),
-                Expanded(
-                  child: _StatTile(
-                    label: 'Questions',
-                    value: '${result.questionCount}',
-                    sub: 'Completed',
-                    scheme: scheme,
-                    icon: Icons.emoji_events_outlined,
-                    color: AppColors.primary,
                     metrics: metrics,
                   ),
                 ),
@@ -757,11 +791,11 @@ class _RevisionQueueCard extends StatelessWidget {
               children: [
                 if (wrongInSession > 0)
                   Text(
-                    '+ $wrongInSession question${wrongInSession == 1 ? '' : 's'} '
-                    'from this test added (incorrect)',
-                    style: AppTextStyles.caption().copyWith(
-                      color: AppColors.coachTrendEmerald,
-                      fontWeight: FontWeight.w600,
+                    '$wrongInSession question${wrongInSession == 1 ? '' : 's'} '
+                    'added to revision queue',
+                    style: AppTextStyles.labelSm().copyWith(
+                      color: scheme.onSurface,
+                      fontWeight: FontWeight.w700,
                     ),
                   )
                 else
@@ -774,9 +808,9 @@ class _RevisionQueueCard extends StatelessWidget {
                 if (due > 0) ...[
                   const SizedBox(height: 4),
                   Text(
-                    '$due question${due == 1 ? '' : 's'} in your queue',
+                    '$due total in queue',
                     style: AppTextStyles.caption().copyWith(
-                      color: AppColors.summaryOrange,
+                      color: AppColors.coachTrendEmerald,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
@@ -811,7 +845,7 @@ class _RevisionQueueCard extends StatelessWidget {
               context.push('/revision-queue');
             },
             child: Text(
-              'Go to Queue',
+              'Go to queue',
               style: AppTextStyles.caption().copyWith(
                 fontWeight: FontWeight.w700,
               ),
@@ -851,16 +885,71 @@ class _SummarySurfaceCard extends StatelessWidget {
 
 class _TopTopicsSection extends StatelessWidget {
   const _TopTopicsSection({
-    required this.topics,
-    required this.accuracyRows,
-    required this.expanded,
-    required this.onToggle,
+    required this.bestTopics,
+    required this.worstTopics,
+    required this.bestExpanded,
+    required this.worstExpanded,
+    required this.onToggleBest,
+    required this.onToggleWorst,
     required this.scheme,
     this.defaultVisibleCount = 3,
   });
 
-  final List<TopicMarksLost> topics;
-  final List<({String topic, int correct, int attempted})> accuracyRows;
+  final List<({String topic, int correct, int attempted})> bestTopics;
+  final List<({String topic, int correct, int attempted})> worstTopics;
+  final bool bestExpanded;
+  final bool worstExpanded;
+  final VoidCallback onToggleBest;
+  final VoidCallback onToggleWorst;
+  final ColorScheme scheme;
+  final int defaultVisibleCount;
+
+  @override
+  Widget build(BuildContext context) {
+    if (bestTopics.isEmpty && worstTopics.isEmpty) {
+      return const SizedBox.shrink();
+    }
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        if (bestTopics.isNotEmpty) ...[
+          _TopicAccuracyList(
+            title: 'Top topic accuracy',
+            topics: bestTopics,
+            expanded: bestExpanded,
+            onToggle: onToggleBest,
+            scheme: scheme,
+            defaultVisibleCount: defaultVisibleCount,
+          ),
+          if (worstTopics.isNotEmpty) const SizedBox(height: AppSpacing.md),
+        ],
+        if (worstTopics.isNotEmpty)
+          _TopicAccuracyList(
+            title: 'Most inaccurate topics',
+            topics: worstTopics,
+            expanded: worstExpanded,
+            onToggle: onToggleWorst,
+            scheme: scheme,
+            defaultVisibleCount: defaultVisibleCount,
+          ),
+      ],
+    );
+  }
+}
+
+class _TopicAccuracyList extends StatelessWidget {
+  const _TopicAccuracyList({
+    required this.title,
+    required this.topics,
+    required this.expanded,
+    required this.onToggle,
+    required this.scheme,
+    required this.defaultVisibleCount,
+  });
+
+  final String title;
+  final List<({String topic, int correct, int attempted})> topics;
   final bool expanded;
   final VoidCallback onToggle;
   final ColorScheme scheme;
@@ -868,8 +957,6 @@ class _TopTopicsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (topics.isEmpty) return const SizedBox.shrink();
-
     final visible = expanded
         ? topics
         : topics.take(defaultVisibleCount).toList();
@@ -880,7 +967,7 @@ class _TopTopicsSection extends StatelessWidget {
         Row(
           children: [
             Text(
-              'Top topics (this test)',
+              title,
               style: AppTextStyles.labelSm().copyWith(
                 fontWeight: FontWeight.w700,
                 color: scheme.onSurface,
@@ -894,8 +981,8 @@ class _TopTopicsSection extends StatelessWidget {
               ),
           ],
         ),
-        ...visible.map((t) {
-          final pct = topicAccuracyPercent(accuracyRows, t.topic);
+        ...visible.map((row) {
+          final pct = topicRowAccuracyPercent(row);
           return Padding(
             padding: const EdgeInsets.only(bottom: AppSpacing.xs),
             child: Row(
@@ -903,7 +990,7 @@ class _TopTopicsSection extends StatelessWidget {
                 Expanded(
                   flex: 2,
                   child: Text(
-                    t.topic,
+                    row.topic,
                     style: AppTextStyles.caption(),
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
@@ -923,7 +1010,7 @@ class _TopTopicsSection extends StatelessWidget {
                 ),
                 const SizedBox(width: AppSpacing.xs),
                 Text(
-                  '${pct.round()}%',
+                  '${pct.round()}% (${row.correct}/${row.attempted})',
                   style: AppTextStyles.caption().copyWith(
                     fontWeight: FontWeight.w700,
                   ),

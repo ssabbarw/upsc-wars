@@ -1165,7 +1165,7 @@ class _QuickPracticeCard extends HookConsumerWidget {
             language: lang,
           ),
         );
-        if (context.mounted) context.push('/test/$id');
+        if (context.mounted) context.push('/test/$id'); 
       } finally {
         loading.value = false;
       }
