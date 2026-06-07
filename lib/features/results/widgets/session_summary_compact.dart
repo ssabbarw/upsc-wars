@@ -192,13 +192,6 @@ class SessionSummaryCompactView extends HookConsumerWidget {
           questionCount: result.questionCount,
           metrics: metrics,
         ),
-        SizedBox(height: metrics.sectionGap),
-        _QuickStatsRow(
-          result: result,
-          scheme: scheme,
-          isDark: isDark,
-          metrics: metrics,
-        ),
         if (showRevisionQueue) ...[
           SizedBox(height: metrics.sectionGap),
           _RevisionQueueCard(
@@ -637,149 +630,6 @@ class _SemiArcPainter extends CustomPainter {
       oldDelegate.trackColor != trackColor;
 }
 
-class _QuickStatsRow extends StatelessWidget {
-  const _QuickStatsRow({
-    required this.result,
-    required this.scheme,
-    required this.isDark,
-    required this.metrics,
-  });
-
-  final SessionResult result;
-  final ColorScheme scheme;
-  final bool isDark;
-  final _SummaryLayoutMetrics metrics;
-
-  @override
-  Widget build(BuildContext context) {
-    final surePct = result.confidenceSureTotal == 0
-        ? '—'
-        : '${(100 * result.confidenceSureCorrect / result.confidenceSureTotal).round()}%';
-    final eduPct = result.confidenceIntelligentTotal == 0
-        ? '—'
-        : '${(100 * result.confidenceIntelligentCorrect / result.confidenceIntelligentTotal).round()}%';
-    final dividerColor = isDark ? AppColors.borderDark : AppColors.borderLight;
-
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        Text(
-          'Quick Stats',
-          style: AppTextStyles.labelSm().copyWith(
-            fontWeight: FontWeight.w700,
-            color: scheme.onSurface,
-          ),
-        ),
-        const SizedBox(height: AppSpacing.xs),
-        _SummarySurfaceCard(
-          scheme: scheme,
-          isDark: isDark,
-          child: IntrinsicHeight(
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Expanded(
-                  child: _StatTile(
-                    label: 'Sure accuracy',
-                    value: surePct,
-                    sub: result.confidenceSureTotal > 0
-                        ? '(${result.confidenceSureCorrect} / ${result.confidenceSureTotal})'
-                        : null,
-                    scheme: scheme,
-                    icon: Icons.check_circle_outline,
-                    color: AppColors.correct,
-                    metrics: metrics,
-                  ),
-                ),
-                VerticalDivider(width: 1, thickness: 1, color: dividerColor),
-                Expanded(
-                  child: _StatTile(
-                    label: 'Educated guess accuracy',
-                    value: eduPct,
-                    sub: result.confidenceIntelligentTotal > 0
-                        ? '(${result.confidenceIntelligentCorrect} / ${result.confidenceIntelligentTotal})'
-                        : null,
-                    scheme: scheme,
-                    icon: Icons.help_outline,
-                    color: AppColors.warning,
-                    metrics: metrics,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-}
-
-class _StatTile extends StatelessWidget {
-  const _StatTile({
-    required this.label,
-    required this.value,
-    required this.sub,
-    required this.scheme,
-    required this.icon,
-    required this.color,
-    required this.metrics,
-  });
-
-  final String label;
-  final String value;
-  final String? sub;
-  final ColorScheme scheme;
-  final IconData icon;
-  final Color color;
-  final _SummaryLayoutMetrics metrics;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(
-        horizontal: AppSpacing.xs * metrics.factor,
-        vertical: AppSpacing.sm * metrics.factor,
-      ),
-      child: Column(
-        children: [
-          Icon(icon, size: metrics.statIconSize, color: color),
-          SizedBox(height: 2 * metrics.factor),
-          Text(
-            value,
-            style: AppTextStyles.labelSm().copyWith(
-              fontWeight: FontWeight.w800,
-              color: scheme.onSurface,
-              fontSize: (13 * metrics.factor).clamp(11.0, 13.0),
-            ),
-          ),
-          if (sub != null) ...[
-            SizedBox(height: 1 * metrics.factor),
-            Text(
-              sub!,
-              style: AppTextStyles.caption().copyWith(
-                fontSize: metrics.statSubFontSize,
-                color: scheme.onSurfaceVariant,
-              ),
-              textAlign: TextAlign.center,
-              maxLines: 2,
-            ),
-          ],
-          SizedBox(height: 2 * metrics.factor),
-          Text(
-            label,
-            style: AppTextStyles.caption().copyWith(
-              fontSize: metrics.statLabelFontSize,
-              color: scheme.onSurfaceVariant,
-            ),
-            textAlign: TextAlign.center,
-            maxLines: 2,
-          ),
-        ],
-      ),
-    );
-  }
-}
-
 class _RevisionQueueCard extends StatelessWidget {
   const _RevisionQueueCard({
     required this.wrongInSession,
@@ -947,23 +797,24 @@ class _TopTopicsSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        if (bestTopics.isNotEmpty) ...[
-          _TopicAccuracyList(
-            title: 'Top topic accuracy',
-            topics: bestTopics,
-            expanded: bestExpanded,
-            onToggle: onToggleBest,
-            scheme: scheme,
-            defaultVisibleCount: defaultVisibleCount,
-          ),
-          if (worstTopics.isNotEmpty) const SizedBox(height: AppSpacing.md),
-        ],
-        if (worstTopics.isNotEmpty)
+        if (worstTopics.isNotEmpty) ...[
           _TopicAccuracyList(
             title: 'Most inaccurate topics',
             topics: worstTopics,
             expanded: worstExpanded,
             onToggle: onToggleWorst,
+            scheme: scheme,
+            defaultVisibleCount: defaultVisibleCount,
+            showInaccuracy: true,
+          ),
+          if (bestTopics.isNotEmpty) const SizedBox(height: AppSpacing.md),
+        ],
+        if (bestTopics.isNotEmpty)
+          _TopicAccuracyList(
+            title: 'Top topic accuracy',
+            topics: bestTopics,
+            expanded: bestExpanded,
+            onToggle: onToggleBest,
             scheme: scheme,
             defaultVisibleCount: defaultVisibleCount,
           ),
@@ -980,6 +831,7 @@ class _TopicAccuracyList extends StatelessWidget {
     required this.onToggle,
     required this.scheme,
     required this.defaultVisibleCount,
+    this.showInaccuracy = false,
   });
 
   final String title;
@@ -988,6 +840,7 @@ class _TopicAccuracyList extends StatelessWidget {
   final VoidCallback onToggle;
   final ColorScheme scheme;
   final int defaultVisibleCount;
+  final bool showInaccuracy;
 
   @override
   Widget build(BuildContext context) {
@@ -1016,7 +869,17 @@ class _TopicAccuracyList extends StatelessWidget {
           ],
         ),
         ...visible.map((row) {
-          final pct = topicRowAccuracyPercent(row);
+          final accuracyPct = topicRowAccuracyPercent(row);
+          final wrongCount = row.attempted - row.correct;
+          final barFill = showInaccuracy
+              ? (wrongCount / row.attempted).clamp(0.0, 1.0)
+              : (accuracyPct / 100).clamp(0.0, 1.0);
+          final barColor = showInaccuracy
+              ? AppColors.wrong
+              : (accuracyPct >= 50 ? AppColors.correct : AppColors.wrong);
+          final statLabel = showInaccuracy
+              ? '${(100 - accuracyPct).round()}% wrong ($wrongCount/${row.attempted})'
+              : '${accuracyPct.round()}% (${row.correct}/${row.attempted})';
           return Padding(
             padding: const EdgeInsets.only(bottom: AppSpacing.sm),
             child: Column(
@@ -1035,18 +898,16 @@ class _TopicAccuracyList extends StatelessWidget {
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(AppRadius.pill),
                         child: LinearProgressIndicator(
-                          value: (pct / 100).clamp(0.0, 1.0),
+                          value: barFill,
                           minHeight: 6,
-                          color: pct >= 50
-                              ? AppColors.correct
-                              : AppColors.wrong,
+                          color: barColor,
                           backgroundColor: scheme.surfaceContainerHighest,
                         ),
                       ),
                     ),
                     const SizedBox(width: AppSpacing.xs),
                     Text(
-                      '${pct.round()}% (${row.correct}/${row.attempted})',
+                      statLabel,
                       style: AppTextStyles.caption().copyWith(
                         fontWeight: FontWeight.w700,
                       ),
