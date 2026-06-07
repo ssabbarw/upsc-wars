@@ -22,7 +22,6 @@ import '../domain/session_insight_case.dart';
 import '../domain/session_insight_metrics.dart';
 import '../providers/session_coach_providers.dart';
 import '../providers/session_topic_accuracy_provider.dart';
-import 'confidence_insights_section.dart';
 import 'session_insight_hero_card.dart';
 
 void _openSessionHistoryReview(
@@ -142,22 +141,13 @@ class SessionSummaryCompactView extends HookConsumerWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       mainAxisSize: MainAxisSize.min,
       children: [
-        _ReviewAllButton(
-          sessionId: sessionId,
-          questionCount: result.questionCount,
-          metrics: metrics,
-        ),
         if (showMoreInsights) ...[
-          SizedBox(height: metrics.sectionGap),
           _MoreInsightsTile(
             expanded: moreExpanded.value,
             onToggle: () => moreExpanded.value = !moreExpanded.value,
             scheme: scheme,
           ),
           if (moreExpanded.value) ...[
-            SizedBox(height: metrics.sectionGap),
-            if (ConfidenceInsightsSection.shouldShow(result))
-              ConfidenceInsightsSection(sessionId: sessionId, result: result),
             SizedBox(height: metrics.sectionGap),
             _TimeInline(timeAsync: timeAsync, scheme: scheme),
           ],
@@ -214,6 +204,12 @@ class SessionSummaryCompactView extends HookConsumerWidget {
             metrics: metrics,
           ),
         ],
+        SizedBox(height: metrics.sectionGap),
+        _ReviewAllButton(
+          sessionId: sessionId,
+          questionCount: result.questionCount,
+          metrics: metrics,
+        ),
         SizedBox(height: metrics.sectionGap),
         _TopTopicsSection(
           bestTopics: bestTopics,
@@ -358,6 +354,7 @@ class _CompactScoreRow extends StatelessWidget {
                 ),
                 _SemiCircularAccuracyGauge(
                   accuracy: result.accuracy,
+                  correct: result.correct,
                   attempted: attempted,
                   accLabel: accLabel,
                   accColor: accColor,
@@ -470,6 +467,7 @@ class _ScoreStatPill extends StatelessWidget {
 class _SemiCircularAccuracyGauge extends StatelessWidget {
   const _SemiCircularAccuracyGauge({
     required this.accuracy,
+    required this.correct,
     required this.attempted,
     required this.accLabel,
     required this.accColor,
@@ -479,6 +477,7 @@ class _SemiCircularAccuracyGauge extends StatelessWidget {
   });
 
   final double accuracy;
+  final int correct;
   final int attempted;
   final String accLabel;
   final Color accColor;
@@ -492,6 +491,9 @@ class _SemiCircularAccuracyGauge extends StatelessWidget {
         ? AppColors.gray600.withValues(alpha: 0.35)
         : AppColors.gray200;
     final progress = attempted == 0 ? 0.0 : (accuracy / 100).clamp(0.0, 1.0);
+    final attemptedLabel = attempted == 0
+        ? 'No attempts'
+        : '$correct of $attempted correct';
 
     return Row(
       mainAxisSize: MainAxisSize.min,
@@ -539,6 +541,15 @@ class _SemiCircularAccuracyGauge extends StatelessWidget {
                   ),
                 ),
               ),
+            ),
+            const SizedBox(height: 2),
+            Text(
+              attemptedLabel,
+              style: AppTextStyles.caption().copyWith(
+                color: scheme.onSurfaceVariant,
+                fontSize: (10 * metrics.factor).clamp(9.0, 10.0),
+              ),
+              textAlign: TextAlign.center,
             ),
           ],
         ),
@@ -984,36 +995,40 @@ class _TopicAccuracyList extends StatelessWidget {
         ...visible.map((row) {
           final pct = topicRowAccuracyPercent(row);
           return Padding(
-            padding: const EdgeInsets.only(bottom: AppSpacing.xs),
-            child: Row(
+            padding: const EdgeInsets.only(bottom: AppSpacing.sm),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Expanded(
-                  flex: 2,
-                  child: Text(
-                    row.topic,
-                    style: AppTextStyles.caption(),
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                ),
-                Expanded(
-                  flex: 3,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(AppRadius.pill),
-                    child: LinearProgressIndicator(
-                      value: (pct / 100).clamp(0.0, 1.0),
-                      minHeight: 6,
-                      color: pct >= 50 ? AppColors.correct : AppColors.wrong,
-                      backgroundColor: scheme.surfaceContainerHighest,
-                    ),
-                  ),
-                ),
-                const SizedBox(width: AppSpacing.xs),
                 Text(
-                  '${pct.round()}% (${row.correct}/${row.attempted})',
-                  style: AppTextStyles.caption().copyWith(
-                    fontWeight: FontWeight.w700,
-                  ),
+                  row.topic,
+                  style: AppTextStyles.caption(),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
+                const SizedBox(height: 4),
+                Row(
+                  children: [
+                    Expanded(
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(AppRadius.pill),
+                        child: LinearProgressIndicator(
+                          value: (pct / 100).clamp(0.0, 1.0),
+                          minHeight: 6,
+                          color: pct >= 50
+                              ? AppColors.correct
+                              : AppColors.wrong,
+                          backgroundColor: scheme.surfaceContainerHighest,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: AppSpacing.xs),
+                    Text(
+                      '${pct.round()}% (${row.correct}/${row.attempted})',
+                      style: AppTextStyles.caption().copyWith(
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),

@@ -519,6 +519,7 @@ class ReviewBody extends StatelessWidget {
     this.progressSummary,
     this.segmentLabel,
     this.segmentColor,
+    this.isLastPage,
     this.onShare,
     this.shareLayerLink,
   });
@@ -536,6 +537,9 @@ class ReviewBody extends StatelessWidget {
   /// Optional category chip above the progress bar (e.g. CONFIDENT · WRONG).
   final String? segmentLabel;
   final Color? segmentColor;
+
+  /// When set, overrides Done vs Next on the last item (`current == total`).
+  final bool? isLastPage;
   final bool isBookmarked;
   final bool isQueued;
   final VoidCallback onToggleBookmark;
@@ -564,6 +568,7 @@ class ReviewBody extends StatelessWidget {
     final progress = total == 0 ? 0.0 : current / total;
     final status = _statusFor(question.status, isRevisionMode, isDark);
     final parsed = _parseStatements(displayText);
+    final showDone = isLastPage ?? (current == total);
     return Column(
       children: [
         _TopBar(
@@ -817,7 +822,7 @@ class ReviewBody extends StatelessWidget {
                     foregroundColor: scheme.onPrimary,
                   ),
                   onPressed: onNext,
-                  child: Text(current == total ? 'Done' : 'Next →'),
+                  child: Text(showDone ? 'Done' : 'Next →'),
                 ),
               ),
             ],
