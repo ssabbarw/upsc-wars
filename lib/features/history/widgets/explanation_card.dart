@@ -94,80 +94,64 @@ class ExplanationCard extends HookConsumerWidget {
       return null;
     }, [tabs.join('|')]);
 
-    return Container(
-      decoration: BoxDecoration(
-        color: scheme.surface,
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(
-          color: scheme.outlineVariant.withValues(alpha: 0.7),
-          width: 0.5,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SelectableCopySearchText(
+          body,
+          style: TextStyle(
+            fontSize: 13,
+            height: 1.65,
+            color: scheme.onSurface,
+          ),
         ),
-      ),
-      child: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(14),
+        if (valueAdd.isNotEmpty) ...[
+          const SizedBox(height: 10),
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.fromLTRB(10, 8, 10, 8),
+            decoration: BoxDecoration(
+              color: scheme.surfaceContainerLow,
+              borderRadius: BorderRadius.circular(8),
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SelectableCopySearchText(
-                  body,
+                Text(
+                  'Value addition',
                   style: TextStyle(
-                    fontSize: 13,
-                    height: 1.65,
-                    color: scheme.onSurface,
+                    fontSize: 10,
+                    letterSpacing: 0.4,
+                    fontWeight: FontWeight.w500,
+                    color: scheme.onSurfaceVariant,
                   ),
                 ),
-                if (valueAdd.isNotEmpty) ...[
-                  const SizedBox(height: 12),
-                  Container(
-                    width: double.infinity,
-                    padding: const EdgeInsets.fromLTRB(12, 10, 12, 10),
-                    decoration: BoxDecoration(
-                      color: scheme.surfaceContainerLow,
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Value addition',
-                          style: TextStyle(
-                            fontSize: 10,
-                            letterSpacing: 0.4,
-                            fontWeight: FontWeight.w500,
-                            color: scheme.onSurfaceVariant,
-                          ),
-                        ),
-                        const SizedBox(height: 5),
-                        SelectableCopySearchText(
-                          valueAdd,
-                          style: TextStyle(
-                            fontSize: 12,
-                            height: 1.6,
-                            color: scheme.onSurfaceVariant,
-                          ),
-                        ),
-                      ],
-                    ),
+                const SizedBox(height: 4),
+                SelectableCopySearchText(
+                  valueAdd,
+                  style: TextStyle(
+                    fontSize: 12,
+                    height: 1.6,
+                    color: scheme.onSurfaceVariant,
                   ),
-                ],
+                ),
               ],
             ),
           ),
-          if (hasDeepDive) ...[
+        ],
+        if (hasDeepDive) ...[
+            const SizedBox(height: 10),
             InkWell(
               onTap: () {
                 deepDiveOpen.value = !deepDiveOpen.value;
                 if (!deepDiveOpen.value) activeTab.value = 0;
               },
               child: Container(
-                padding: const EdgeInsets.fromLTRB(14, 11, 14, 11),
+                padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
                 decoration: BoxDecoration(
-                  color: scheme.surfaceContainerLow,
                   border: Border(
                     top: BorderSide(
-                      color: scheme.outlineVariant.withValues(alpha: 0.7),
+                      color: scheme.outlineVariant.withValues(alpha: 0.5),
                       width: 0.5,
                     ),
                   ),
@@ -238,7 +222,7 @@ class ExplanationCard extends HookConsumerWidget {
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.all(14),
+                padding: const EdgeInsets.only(top: 10),
                 child: _TabBody(
                   tab: tabs[activeTab.value],
                   translation: translation,
@@ -249,7 +233,6 @@ class ExplanationCard extends HookConsumerWidget {
             ],
           ],
         ],
-      ),
     );
   }
 }

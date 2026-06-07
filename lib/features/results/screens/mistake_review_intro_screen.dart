@@ -24,11 +24,14 @@ class MistakeReviewIntroScreen extends HookConsumerWidget {
     final hPad = AppBreakpoints.fullScreenHPadding(
       MediaQuery.sizeOf(context).width,
     );
+    final contentPad = hPad.left == 0 && hPad.right == 0
+        ? const EdgeInsets.symmetric(horizontal: AppSpacing.lg)
+        : hPad;
 
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: hPad,
+          padding: contentPad,
           child: async.when(
             loading: () => const Center(child: CircularProgressIndicator()),
             error: (_, _) => _IntroError(

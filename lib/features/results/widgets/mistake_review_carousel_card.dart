@@ -77,6 +77,14 @@ class MistakeReviewCarouselCard extends StatelessWidget {
             ),
           ),
           const SizedBox(height: AppSpacing.md),
+          Text(
+            'Watch out for:',
+            style: AppTextStyles.label().copyWith(
+              fontWeight: FontWeight.w800,
+              color: style.accent,
+            ),
+          ),
+          const SizedBox(height: AppSpacing.sm),
           Container(
             width: double.infinity,
             decoration: BoxDecoration(
@@ -159,7 +167,7 @@ _CarouselCardStyle _sureStyle() {
     icon: Icons.psychology_outlined,
     eyebrow: 'CONFIDENT · WRONG',
     description:
-        'You were sure — and lost marks anyway. Go through these carefully '
+        'You were sure — and lost marks anyway. \n\nGo through these carefully '
         'and check whether you misread the question or your understanding has a gap.',
     bullets: [
       'Concepts that feel familiar but aren\'t fully clear',

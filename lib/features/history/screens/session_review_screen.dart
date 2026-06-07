@@ -573,6 +573,8 @@ class ReviewBody extends StatelessWidget {
           shareLayerLink: shareLayerLink,
           uiLanguage: uiLanguage,
           onLanguageChanged: onLanguageChanged,
+          segmentLabel: segmentLabel,
+          segmentColor: segmentColor,
         ),
         if (confidenceBanner != null)
           Padding(
@@ -605,61 +607,58 @@ class ReviewBody extends StatelessWidget {
           padding: const EdgeInsets.fromLTRB(16, 10, 16, 0),
           child: Column(
             children: [
-              if (segmentLabel != null) ...[
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 10,
-                      vertical: 4,
-                    ),
-                    decoration: BoxDecoration(
-                      color: (segmentColor ?? scheme.error)
-                          .withValues(alpha: isDark ? 0.22 : 0.12),
-                      borderRadius: BorderRadius.circular(6),
-                      border: Border.all(
-                        color: (segmentColor ?? scheme.error)
-                            .withValues(alpha: 0.45),
-                      ),
-                    ),
-                    child: Text(
-                      segmentLabel!,
+              if (progressSummary != null)
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Text(
+                      progressSummary!,
+                      softWrap: true,
                       style: TextStyle(
-                        fontSize: 11,
-                        fontWeight: FontWeight.w800,
-                        letterSpacing: 0.6,
-                        color: segmentColor ?? scheme.error,
+                        fontSize: 12,
+                        color: scheme.onSurfaceVariant,
                       ),
                     ),
-                  ),
+                    const SizedBox(height: 4),
+                    Text(
+                      progressRight,
+                      softWrap: true,
+                      style: TextStyle(
+                        fontSize: 12,
+                        height: 1.35,
+                        color: showRevisionBadge
+                            ? scheme.primary
+                            : scheme.onSurfaceVariant,
+                      ),
+                    ),
+                  ],
+                )
+              else
+                Row(
+                  children: [
+                    Expanded(
+                      child: Text(
+                        'Question $current of $total',
+                        softWrap: true,
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: scheme.onSurfaceVariant,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 8),
+                    Text(
+                      progressRight,
+                      softWrap: false,
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: showRevisionBadge
+                            ? scheme.primary
+                            : scheme.onSurfaceVariant,
+                      ),
+                    ),
+                  ],
                 ),
-                const SizedBox(height: 6),
-              ],
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Text(
-                    progressSummary ?? 'Question $current of $total',
-                    softWrap: true,
-                    style: TextStyle(
-                      fontSize: 12,
-                      color: scheme.onSurfaceVariant,
-                    ),
-                  ),
-                  const SizedBox(height: 4),
-                  Text(
-                    progressRight,
-                    softWrap: true,
-                    style: TextStyle(
-                      fontSize: 12,
-                      height: 1.35,
-                      color: showRevisionBadge
-                          ? scheme.primary
-                          : scheme.onSurfaceVariant,
-                    ),
-                  ),
-                ],
-              ),
               const SizedBox(height: 6),
               ClipRRect(
                 borderRadius: BorderRadius.circular(2),
@@ -740,7 +739,7 @@ class ReviewBody extends StatelessWidget {
                 uiLanguage: uiLanguage,
                 confidenceSessionId: confidenceSessionId,
               ),
-              const SizedBox(height: 14),
+              const SizedBox(height: 10),
               const Text(
                 'EXPLANATION',
                 style: TextStyle(
@@ -750,7 +749,7 @@ class ReviewBody extends StatelessWidget {
                   fontWeight: FontWeight.w500,
                 ),
               ),
-              const SizedBox(height: 8),
+              const SizedBox(height: 6),
               ExplanationCard(
                 translation: QuestionTranslation(
                   finalExplanation: isHindi
@@ -861,6 +860,8 @@ class _TopBar extends HookConsumerWidget {
     this.shareLayerLink,
     required this.uiLanguage,
     required this.onLanguageChanged,
+    this.segmentLabel,
+    this.segmentColor,
   });
   final String title;
   final bool showRevisionBadge;
@@ -868,10 +869,23 @@ class _TopBar extends HookConsumerWidget {
   final LayerLink? shareLayerLink;
   final String uiLanguage;
   final ValueChanged<String> onLanguageChanged;
+  final String? segmentLabel;
+  final Color? segmentColor;
+
+  Color _segmentTitleColor(ColorScheme scheme, bool isDark) {
+    if (segmentColor == null) return scheme.error;
+    if (!isDark) return segmentColor!;
+    if (segmentColor == AppColors.correctText) {
+      return AppColors.correctTextDark;
+    }
+    return AppColors.wrongTextDark;
+  }
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
     final isDark = context.isDarkMode;
+    final segmentTitleColor = _segmentTitleColor(scheme, isDark);
     return Container(
       padding: const EdgeInsets.fromLTRB(16, 14, 16, 10),
       decoration: BoxDecoration(
@@ -906,16 +920,27 @@ class _TopBar extends HookConsumerWidget {
           ),
           const SizedBox(width: 8),
           Expanded(
-            child: Text(
-              title,
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-              style: TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.w500,
-                color: scheme.onSurface,
-              ),
-            ),
+            child: segmentLabel != null
+                ? Text(
+                    segmentLabel!,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w700,
+                      color: segmentTitleColor,
+                    ),
+                  )
+                : Text(
+                    title,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500,
+                      color: scheme.onSurface,
+                    ),
+                  ),
           ),
           if (showRevisionBadge)
             Container(

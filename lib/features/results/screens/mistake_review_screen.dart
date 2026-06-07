@@ -7,7 +7,6 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/analytics/activation_milestones.dart';
 import '../../../core/analytics/screen_flow_analytics.dart';
-import '../../../core/domain/entities/answer_confidence.dart';
 import '../../../core/domain/entities/test_question.dart';
 import '../../../core/providers/app_language_helpers.dart';
 import '../../../core/providers/catalog_providers.dart';
@@ -168,16 +167,12 @@ class _MistakeReviewFlow extends HookConsumerWidget {
     };
 
     final isSurePhase = phase.value == _MistakeReviewPhase.sure;
-    final segmentLabel = isSurePhase
-        ? 'CONFIDENT · WRONG'
-        : 'EDUCATED GUESS · WRONG';
+    final segmentLabel =
+        isSurePhase ? 'Sure + wrong' : 'Edu guess + wrong';
     final segmentColor = isSurePhase
         ? AppColors.coachDangerTitleText
         : AppColors.correctText;
     final isBookmarked = bookmarks.value[q.uuid] ?? false;
-    final confLabel = q.confidence == null
-        ? 'Confident'
-        : AnswerConfidence.displayLabel(q.confidence!);
 
     return ReviewBody(
       title: 'Review',
@@ -235,7 +230,6 @@ class _MistakeReviewFlow extends HookConsumerWidget {
         uiLanguage.value = lang;
         unawaited(persistAppLanguage(ref, lang));
       },
-      confidenceBanner: 'You were $confLabel',
     );
   }
 }
