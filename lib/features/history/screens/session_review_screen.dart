@@ -880,6 +880,9 @@ class _TopBar extends HookConsumerWidget {
   Color _segmentTitleColor(ColorScheme scheme, bool isDark) {
     if (segmentColor == null) return scheme.error;
     if (!isDark) return segmentColor!;
+    if (segmentColor == AppColors.warningText) {
+      return AppColors.warningTextDark;
+    }
     if (segmentColor == AppColors.correctText) {
       return AppColors.correctTextDark;
     }

@@ -187,6 +187,12 @@ class SessionSummaryCompactView extends HookConsumerWidget {
           ),
         ),
         SizedBox(height: metrics.sectionGap),
+        _ReviewAllButton(
+          sessionId: sessionId,
+          questionCount: result.questionCount,
+          metrics: metrics,
+        ),
+        SizedBox(height: metrics.sectionGap),
         _QuickStatsRow(
           result: result,
           scheme: scheme,
@@ -203,12 +209,6 @@ class SessionSummaryCompactView extends HookConsumerWidget {
             metrics: metrics,
           ),
         ],
-        SizedBox(height: metrics.sectionGap),
-        _ReviewAllButton(
-          sessionId: sessionId,
-          questionCount: result.questionCount,
-          metrics: metrics,
-        ),
         SizedBox(height: metrics.sectionGap),
         _TopTopicsSection(
           bestTopics: bestTopics,

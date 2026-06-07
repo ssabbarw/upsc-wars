@@ -116,7 +116,7 @@ class _IntroBody extends HookWidget {
     Color dotColor(MistakeReviewCarouselKind kind) =>
         kind == MistakeReviewCarouselKind.sureWrong
         ? AppColors.coachDangerBorder
-        : AppColors.correct;
+        : AppColors.warning;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,

@@ -181,10 +181,10 @@ _CarouselCardStyle _sureStyle() {
 
 _CarouselCardStyle _eduStyle() {
   return const _CarouselCardStyle(
-    surface: Color(0xFFE8F8F0),
-    border: AppColors.correct,
-    accent: AppColors.correctText,
-    iconBg: Color(0xFFB8E8D4),
+    surface: AppColors.warningBg,
+    border: AppColors.warning,
+    accent: AppColors.warningText,
+    iconBg: Color(0xFFF5D495),
     icon: Icons.help_outline,
     eyebrow: 'EDUCATED GUESS · WRONG',
     description:

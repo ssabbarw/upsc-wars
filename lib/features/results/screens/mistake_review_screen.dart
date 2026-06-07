@@ -145,7 +145,7 @@ class _MistakeReviewFlow extends HookConsumerWidget {
     final segmentLabel = isSurePhase ? 'Sure + wrong' : 'Edu guess + wrong';
     final segmentColor = isSurePhase
         ? AppColors.coachDangerTitleText
-        : AppColors.correctText;
+        : AppColors.warningText;
     final isBookmarked = bookmarks.value[q.uuid] ?? false;
     final isLastPage =
         segmentCurrent == segmentTotal &&
