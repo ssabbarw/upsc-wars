@@ -13,6 +13,7 @@ class DailyCaMonthCalendar extends StatelessWidget {
     required this.month,
     required this.completedDates,
     required this.onDateTap,
+    required this.minDate,
     this.nowIst,
   });
 
@@ -20,6 +21,8 @@ class DailyCaMonthCalendar extends StatelessWidget {
   final int month;
   final Set<String> completedDates;
   final void Function(String isoDate) onDateTap;
+  /// Earliest selectable date (remote-config prelims date, date-only).
+  final DateTime minDate;
   final DateTime? nowIst;
 
   static const _weekdays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
@@ -77,11 +80,15 @@ class DailyCaMonthCalendar extends StatelessWidget {
               referenceIst: reference,
             );
             final isCompleted = completedDates.contains(iso);
-            final canTap = !isSunday && isPublished;
+            final isBeforeMin = !DailyCaSchedule.isOnOrAfterMinDate(
+              istDate,
+              minDate,
+            );
+            final canTap = !isSunday && !isBeforeMin && isPublished;
 
             Color? fill;
             Color textColor = scheme.onSurface;
-            if (isSunday) {
+            if (isSunday || isBeforeMin) {
               textColor = scheme.onSurfaceVariant.withValues(alpha: 0.45);
             } else if (!isPublished) {
               textColor = scheme.onSurfaceVariant.withValues(alpha: 0.55);

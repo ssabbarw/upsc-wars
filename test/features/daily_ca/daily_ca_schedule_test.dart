@@ -42,5 +42,17 @@ void main() {
         '00:02',
       );
     });
+
+    test('min date blocks earlier calendar days', () {
+      final min = DateTime(2026, 5, 24);
+      expect(
+        DailyCaSchedule.isOnOrAfterMinDate(DateTime(2026, 5, 23), min),
+        isFalse,
+      );
+      expect(
+        DailyCaSchedule.isOnOrAfterMinDate(DateTime(2026, 5, 24), min),
+        isTrue,
+      );
+    });
   });
 }

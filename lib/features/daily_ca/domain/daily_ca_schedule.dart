@@ -89,4 +89,21 @@ abstract final class DailyCaSchedule {
     final last = DateTime(year, month + 1, 0);
     return formatIsoDate(last);
   }
+
+  /// Whether [istDate] is on or after [minDateInclusive] (date-only compare).
+  static bool isOnOrAfterMinDate(
+    DateTime istDate,
+    DateTime minDateInclusive,
+  ) {
+    return !dateOnly(istDate).isBefore(dateOnly(minDateInclusive));
+  }
+
+  static DateTime minMonthForDate(DateTime minDate) =>
+      DateTime(minDate.year, minDate.month);
+
+  static bool isMonthBefore(int year, int month, DateTime minMonth) {
+    if (year < minMonth.year) return true;
+    if (year == minMonth.year && month < minMonth.month) return true;
+    return false;
+  }
 }

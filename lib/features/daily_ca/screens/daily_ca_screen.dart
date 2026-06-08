@@ -6,7 +6,9 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 
+import '../../../core/constants/prelims_countdown.dart';
 import '../../../core/constants/question_source_constants.dart';
+import '../../../core/providers/prelims_date_provider.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
@@ -36,7 +38,20 @@ class DailyCaScreen extends HookConsumerWidget {
 
     final ist = nowIst.value;
     final todayIso = DailyCaSchedule.formatIsoDate(ist);
-    final displayedMonth = useState(DateTime(ist.year, ist.month));
+    final prelimsAsync = ref.watch(prelimsDateProvider);
+    final minDate = prelimsAsync.maybeWhen(
+      data: (d) => DateTime(d.year, d.month, d.day),
+      orElse: () => DateTime(
+        PrelimsCountdown.prelimsDate.year,
+        PrelimsCountdown.prelimsDate.month,
+        PrelimsCountdown.prelimsDate.day,
+      ),
+    );
+    final minMonth = DailyCaSchedule.minMonthForDate(minDate);
+    final initialMonth = DateTime(ist.year, ist.month);
+    final displayedMonth = useState(
+      initialMonth.isBefore(minMonth) ? minMonth : initialMonth,
+    );
     final monthKey = DailyCaMonthKey(
       year: displayedMonth.value.year,
       month: displayedMonth.value.month,
@@ -46,6 +61,7 @@ class DailyCaScreen extends HookConsumerWidget {
 
     final todayPublished = DailyCaSchedule.isPublishedForDate(ist);
     final todayIsTestDay = DailyCaSchedule.isTestDay(ist);
+    final todayAllowed = DailyCaSchedule.isOnOrAfterMinDate(ist, minDate);
     final countdown = DailyCaSchedule.timeUntilNextPublish(referenceIst: ist);
     final countdownLabel = DailyCaSchedule.formatCountdown(countdown);
     final todayCompleted = completedAsync.maybeWhen(
@@ -117,8 +133,20 @@ class DailyCaScreen extends HookConsumerWidget {
 
     void shiftMonth(int delta) {
       final m = displayedMonth.value;
-      displayedMonth.value = DateTime(m.year, m.month + delta);
+      final next = DateTime(m.year, m.month + delta);
+      if (delta < 0 &&
+          DailyCaSchedule.isMonthBefore(next.year, next.month, minMonth)) {
+        return;
+      }
+      displayedMonth.value = next;
     }
+
+    final canGoToPreviousMonth = !DailyCaSchedule.isMonthBefore(
+      displayedMonth.value.year,
+      displayedMonth.value.month - 1,
+      minMonth,
+    );
+    final minDateLabel = DateFormat('d MMM yyyy').format(minDate);
 
     final monthTitle = DateFormat('MMMM yyyy').format(displayedMonth.value);
 
@@ -147,7 +175,14 @@ class DailyCaScreen extends HookConsumerWidget {
                   ),
                 ),
                 const SizedBox(height: AppSpacing.sm),
-                if (!todayIsTestDay)
+                if (!todayAllowed)
+                  Text(
+                    'Daily tests start from $minDateLabel (Prelims sprint).',
+                    style: AppTextStyles.bodySm().copyWith(
+                      color: scheme.onSurfaceVariant,
+                    ),
+                  )
+                else if (!todayIsTestDay)
                   Text(
                     'Sundays are rest days — no test today.',
                     style: AppTextStyles.bodySm().copyWith(
@@ -173,7 +208,8 @@ class DailyCaScreen extends HookConsumerWidget {
                   ),
                 const SizedBox(height: AppSpacing.md),
                 FilledButton.icon(
-                  onPressed: (!todayIsTestDay ||
+                  onPressed: (!todayAllowed ||
+                          !todayIsTestDay ||
                           !todayPublished ||
                           launching.value)
                       ? null
@@ -196,7 +232,9 @@ class DailyCaScreen extends HookConsumerWidget {
                               : Icons.play_arrow_rounded,
                         ),
                   label: Text(
-                    !todayIsTestDay
+                    !todayAllowed
+                        ? 'Not started yet'
+                        : !todayIsTestDay
                         ? 'No test today'
                         : !todayPublished
                         ? 'Opens at 9 PM'
@@ -205,7 +243,7 @@ class DailyCaScreen extends HookConsumerWidget {
                         : "Start today's test",
                   ),
                 ),
-                if (todayIsTestDay && !todayPublished) ...[
+                if (todayAllowed && todayIsTestDay && !todayPublished) ...[
                   const SizedBox(height: AppSpacing.sm),
                   Text(
                     'Next test in $countdownLabel',
@@ -222,7 +260,7 @@ class DailyCaScreen extends HookConsumerWidget {
           Row(
             children: [
               IconButton(
-                onPressed: () => shiftMonth(-1),
+                onPressed: canGoToPreviousMonth ? () => shiftMonth(-1) : null,
                 icon: const Icon(Icons.chevron_left_rounded),
               ),
               Expanded(
@@ -240,7 +278,7 @@ class DailyCaScreen extends HookConsumerWidget {
           ),
           const SizedBox(height: AppSpacing.sm),
           Text(
-            'Tap a date to open that day\'s test. Sundays are off.',
+            'Tap a date from $minDateLabel onward. Sundays are off.',
             style: AppTextStyles.bodySm().copyWith(
               color: scheme.onSurfaceVariant,
             ),
@@ -261,9 +299,13 @@ class DailyCaScreen extends HookConsumerWidget {
               year: displayedMonth.value.year,
               month: displayedMonth.value.month,
               completedDates: completed,
+              minDate: minDate,
               nowIst: ist,
               onDateTap: (iso) {
                 final date = DailyCaSchedule.parseIsoDate(iso);
+                if (!DailyCaSchedule.isOnOrAfterMinDate(date, minDate)) {
+                  return;
+                }
                 if (!DailyCaSchedule.isPublishedForDate(date, referenceIst: ist)) {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(

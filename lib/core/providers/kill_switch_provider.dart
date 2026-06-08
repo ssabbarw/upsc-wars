@@ -60,6 +60,8 @@ Future<KillSwitchSnapshot> killSwitch(Ref ref) async {
       killSwitchVersionRemoteConfigKey: '',
       communityTabEnabledRemoteConfigKey: true,
       qotdMaxPostsPerDayRemoteConfigKey: 3,
+      // YYYY-MM-DD (time defaults to 09:30 local)
+      'prelims_date': '2026-05-24',
       // JSON: { "video_link": "https://...", "message": "...", "version": 1 }
       'home_page_video': '',
     });
