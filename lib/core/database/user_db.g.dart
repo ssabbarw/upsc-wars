@@ -340,6 +340,52 @@ class $QuestionsTable extends Questions
     type: DriftSqlType.int,
     requiredDuringInsert: false,
   );
+  static const VerificationMeta _gsSubjectMeta = const VerificationMeta(
+    'gsSubject',
+  );
+  @override
+  late final GeneratedColumn<String> gsSubject = GeneratedColumn<String>(
+    'gs_subject',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(''),
+  );
+  static const VerificationMeta _sourceKindMeta = const VerificationMeta(
+    'sourceKind',
+  );
+  @override
+  late final GeneratedColumn<String> sourceKind = GeneratedColumn<String>(
+    'source_kind',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+    defaultValue: const Constant('static'),
+  );
+  static const VerificationMeta _sourceYearMeta = const VerificationMeta(
+    'sourceYear',
+  );
+  @override
+  late final GeneratedColumn<int> sourceYear = GeneratedColumn<int>(
+    'source_year',
+    aliasedName,
+    true,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _sourceDateMeta = const VerificationMeta(
+    'sourceDate',
+  );
+  @override
+  late final GeneratedColumn<String> sourceDate = GeneratedColumn<String>(
+    'source_date',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
   @override
   List<GeneratedColumn> get $columns => [
     uuid,
@@ -356,6 +402,10 @@ class $QuestionsTable extends Questions
     hasTable,
     negativeFraming,
     paperOrder,
+    gsSubject,
+    sourceKind,
+    sourceYear,
+    sourceDate,
   ];
   @override
   String get aliasedName => _alias ?? actualTableName;
@@ -490,6 +540,30 @@ class $QuestionsTable extends Questions
         paperOrder.isAcceptableOrUnknown(data['paper_order']!, _paperOrderMeta),
       );
     }
+    if (data.containsKey('gs_subject')) {
+      context.handle(
+        _gsSubjectMeta,
+        gsSubject.isAcceptableOrUnknown(data['gs_subject']!, _gsSubjectMeta),
+      );
+    }
+    if (data.containsKey('source_kind')) {
+      context.handle(
+        _sourceKindMeta,
+        sourceKind.isAcceptableOrUnknown(data['source_kind']!, _sourceKindMeta),
+      );
+    }
+    if (data.containsKey('source_year')) {
+      context.handle(
+        _sourceYearMeta,
+        sourceYear.isAcceptableOrUnknown(data['source_year']!, _sourceYearMeta),
+      );
+    }
+    if (data.containsKey('source_date')) {
+      context.handle(
+        _sourceDateMeta,
+        sourceDate.isAcceptableOrUnknown(data['source_date']!, _sourceDateMeta),
+      );
+    }
     return context;
   }
 
@@ -555,6 +629,22 @@ class $QuestionsTable extends Questions
         DriftSqlType.int,
         data['${effectivePrefix}paper_order'],
       ),
+      gsSubject: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}gs_subject'],
+      )!,
+      sourceKind: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}source_kind'],
+      )!,
+      sourceYear: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}source_year'],
+      ),
+      sourceDate: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}source_date'],
+      ),
     );
   }
 
@@ -581,6 +671,18 @@ class Question extends DataClass implements Insertable<Question> {
 
   /// 1-based position within a PYQ year paper; null for non-PYQ questions.
   final int? paperOrder;
+
+  /// Real UPSC GS subject (Geography, Economy, …) for all source kinds.
+  final String gsSubject;
+
+  /// `static` | `pyq` | `current_affairs`
+  final String sourceKind;
+
+  /// PYQ exam year when [sourceKind] is `pyq`.
+  final int? sourceYear;
+
+  /// Daily CA date (`YYYY-MM-DD`) when [sourceKind] is `current_affairs`.
+  final String? sourceDate;
   const Question({
     required this.uuid,
     required this.subject,
@@ -596,6 +698,10 @@ class Question extends DataClass implements Insertable<Question> {
     required this.hasTable,
     required this.negativeFraming,
     this.paperOrder,
+    required this.gsSubject,
+    required this.sourceKind,
+    this.sourceYear,
+    this.sourceDate,
   });
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
@@ -621,6 +727,14 @@ class Question extends DataClass implements Insertable<Question> {
     map['negative_framing'] = Variable<bool>(negativeFraming);
     if (!nullToAbsent || paperOrder != null) {
       map['paper_order'] = Variable<int>(paperOrder);
+    }
+    map['gs_subject'] = Variable<String>(gsSubject);
+    map['source_kind'] = Variable<String>(sourceKind);
+    if (!nullToAbsent || sourceYear != null) {
+      map['source_year'] = Variable<int>(sourceYear);
+    }
+    if (!nullToAbsent || sourceDate != null) {
+      map['source_date'] = Variable<String>(sourceDate);
     }
     return map;
   }
@@ -649,6 +763,14 @@ class Question extends DataClass implements Insertable<Question> {
       paperOrder: paperOrder == null && nullToAbsent
           ? const Value.absent()
           : Value(paperOrder),
+      gsSubject: Value(gsSubject),
+      sourceKind: Value(sourceKind),
+      sourceYear: sourceYear == null && nullToAbsent
+          ? const Value.absent()
+          : Value(sourceYear),
+      sourceDate: sourceDate == null && nullToAbsent
+          ? const Value.absent()
+          : Value(sourceDate),
     );
   }
 
@@ -672,6 +794,10 @@ class Question extends DataClass implements Insertable<Question> {
       hasTable: serializer.fromJson<bool>(json['hasTable']),
       negativeFraming: serializer.fromJson<bool>(json['negativeFraming']),
       paperOrder: serializer.fromJson<int?>(json['paperOrder']),
+      gsSubject: serializer.fromJson<String>(json['gsSubject']),
+      sourceKind: serializer.fromJson<String>(json['sourceKind']),
+      sourceYear: serializer.fromJson<int?>(json['sourceYear']),
+      sourceDate: serializer.fromJson<String?>(json['sourceDate']),
     );
   }
   @override
@@ -692,6 +818,10 @@ class Question extends DataClass implements Insertable<Question> {
       'hasTable': serializer.toJson<bool>(hasTable),
       'negativeFraming': serializer.toJson<bool>(negativeFraming),
       'paperOrder': serializer.toJson<int?>(paperOrder),
+      'gsSubject': serializer.toJson<String>(gsSubject),
+      'sourceKind': serializer.toJson<String>(sourceKind),
+      'sourceYear': serializer.toJson<int?>(sourceYear),
+      'sourceDate': serializer.toJson<String?>(sourceDate),
     };
   }
 
@@ -710,6 +840,10 @@ class Question extends DataClass implements Insertable<Question> {
     bool? hasTable,
     bool? negativeFraming,
     Value<int?> paperOrder = const Value.absent(),
+    String? gsSubject,
+    String? sourceKind,
+    Value<int?> sourceYear = const Value.absent(),
+    Value<String?> sourceDate = const Value.absent(),
   }) => Question(
     uuid: uuid ?? this.uuid,
     subject: subject ?? this.subject,
@@ -729,6 +863,10 @@ class Question extends DataClass implements Insertable<Question> {
     hasTable: hasTable ?? this.hasTable,
     negativeFraming: negativeFraming ?? this.negativeFraming,
     paperOrder: paperOrder.present ? paperOrder.value : this.paperOrder,
+    gsSubject: gsSubject ?? this.gsSubject,
+    sourceKind: sourceKind ?? this.sourceKind,
+    sourceYear: sourceYear.present ? sourceYear.value : this.sourceYear,
+    sourceDate: sourceDate.present ? sourceDate.value : this.sourceDate,
   );
   Question copyWithCompanion(QuestionsCompanion data) {
     return Question(
@@ -762,6 +900,16 @@ class Question extends DataClass implements Insertable<Question> {
       paperOrder: data.paperOrder.present
           ? data.paperOrder.value
           : this.paperOrder,
+      gsSubject: data.gsSubject.present ? data.gsSubject.value : this.gsSubject,
+      sourceKind: data.sourceKind.present
+          ? data.sourceKind.value
+          : this.sourceKind,
+      sourceYear: data.sourceYear.present
+          ? data.sourceYear.value
+          : this.sourceYear,
+      sourceDate: data.sourceDate.present
+          ? data.sourceDate.value
+          : this.sourceDate,
     );
   }
 
@@ -781,7 +929,11 @@ class Question extends DataClass implements Insertable<Question> {
           ..write('hiDisplayText: $hiDisplayText, ')
           ..write('hasTable: $hasTable, ')
           ..write('negativeFraming: $negativeFraming, ')
-          ..write('paperOrder: $paperOrder')
+          ..write('paperOrder: $paperOrder, ')
+          ..write('gsSubject: $gsSubject, ')
+          ..write('sourceKind: $sourceKind, ')
+          ..write('sourceYear: $sourceYear, ')
+          ..write('sourceDate: $sourceDate')
           ..write(')'))
         .toString();
   }
@@ -802,6 +954,10 @@ class Question extends DataClass implements Insertable<Question> {
     hasTable,
     negativeFraming,
     paperOrder,
+    gsSubject,
+    sourceKind,
+    sourceYear,
+    sourceDate,
   );
   @override
   bool operator ==(Object other) =>
@@ -820,7 +976,11 @@ class Question extends DataClass implements Insertable<Question> {
           other.hiDisplayText == this.hiDisplayText &&
           other.hasTable == this.hasTable &&
           other.negativeFraming == this.negativeFraming &&
-          other.paperOrder == this.paperOrder);
+          other.paperOrder == this.paperOrder &&
+          other.gsSubject == this.gsSubject &&
+          other.sourceKind == this.sourceKind &&
+          other.sourceYear == this.sourceYear &&
+          other.sourceDate == this.sourceDate);
 }
 
 class QuestionsCompanion extends UpdateCompanion<Question> {
@@ -838,6 +998,10 @@ class QuestionsCompanion extends UpdateCompanion<Question> {
   final Value<bool> hasTable;
   final Value<bool> negativeFraming;
   final Value<int?> paperOrder;
+  final Value<String> gsSubject;
+  final Value<String> sourceKind;
+  final Value<int?> sourceYear;
+  final Value<String?> sourceDate;
   final Value<int> rowid;
   const QuestionsCompanion({
     this.uuid = const Value.absent(),
@@ -854,6 +1018,10 @@ class QuestionsCompanion extends UpdateCompanion<Question> {
     this.hasTable = const Value.absent(),
     this.negativeFraming = const Value.absent(),
     this.paperOrder = const Value.absent(),
+    this.gsSubject = const Value.absent(),
+    this.sourceKind = const Value.absent(),
+    this.sourceYear = const Value.absent(),
+    this.sourceDate = const Value.absent(),
     this.rowid = const Value.absent(),
   });
   QuestionsCompanion.insert({
@@ -871,6 +1039,10 @@ class QuestionsCompanion extends UpdateCompanion<Question> {
     this.hasTable = const Value.absent(),
     this.negativeFraming = const Value.absent(),
     this.paperOrder = const Value.absent(),
+    this.gsSubject = const Value.absent(),
+    this.sourceKind = const Value.absent(),
+    this.sourceYear = const Value.absent(),
+    this.sourceDate = const Value.absent(),
     this.rowid = const Value.absent(),
   }) : uuid = Value(uuid),
        subject = Value(subject),
@@ -895,6 +1067,10 @@ class QuestionsCompanion extends UpdateCompanion<Question> {
     Expression<bool>? hasTable,
     Expression<bool>? negativeFraming,
     Expression<int>? paperOrder,
+    Expression<String>? gsSubject,
+    Expression<String>? sourceKind,
+    Expression<int>? sourceYear,
+    Expression<String>? sourceDate,
     Expression<int>? rowid,
   }) {
     return RawValuesInsertable({
@@ -912,6 +1088,10 @@ class QuestionsCompanion extends UpdateCompanion<Question> {
       if (hasTable != null) 'has_table': hasTable,
       if (negativeFraming != null) 'negative_framing': negativeFraming,
       if (paperOrder != null) 'paper_order': paperOrder,
+      if (gsSubject != null) 'gs_subject': gsSubject,
+      if (sourceKind != null) 'source_kind': sourceKind,
+      if (sourceYear != null) 'source_year': sourceYear,
+      if (sourceDate != null) 'source_date': sourceDate,
       if (rowid != null) 'rowid': rowid,
     });
   }
@@ -931,6 +1111,10 @@ class QuestionsCompanion extends UpdateCompanion<Question> {
     Value<bool>? hasTable,
     Value<bool>? negativeFraming,
     Value<int?>? paperOrder,
+    Value<String>? gsSubject,
+    Value<String>? sourceKind,
+    Value<int?>? sourceYear,
+    Value<String?>? sourceDate,
     Value<int>? rowid,
   }) {
     return QuestionsCompanion(
@@ -948,6 +1132,10 @@ class QuestionsCompanion extends UpdateCompanion<Question> {
       hasTable: hasTable ?? this.hasTable,
       negativeFraming: negativeFraming ?? this.negativeFraming,
       paperOrder: paperOrder ?? this.paperOrder,
+      gsSubject: gsSubject ?? this.gsSubject,
+      sourceKind: sourceKind ?? this.sourceKind,
+      sourceYear: sourceYear ?? this.sourceYear,
+      sourceDate: sourceDate ?? this.sourceDate,
       rowid: rowid ?? this.rowid,
     );
   }
@@ -997,6 +1185,18 @@ class QuestionsCompanion extends UpdateCompanion<Question> {
     if (paperOrder.present) {
       map['paper_order'] = Variable<int>(paperOrder.value);
     }
+    if (gsSubject.present) {
+      map['gs_subject'] = Variable<String>(gsSubject.value);
+    }
+    if (sourceKind.present) {
+      map['source_kind'] = Variable<String>(sourceKind.value);
+    }
+    if (sourceYear.present) {
+      map['source_year'] = Variable<int>(sourceYear.value);
+    }
+    if (sourceDate.present) {
+      map['source_date'] = Variable<String>(sourceDate.value);
+    }
     if (rowid.present) {
       map['rowid'] = Variable<int>(rowid.value);
     }
@@ -1020,6 +1220,10 @@ class QuestionsCompanion extends UpdateCompanion<Question> {
           ..write('hasTable: $hasTable, ')
           ..write('negativeFraming: $negativeFraming, ')
           ..write('paperOrder: $paperOrder, ')
+          ..write('gsSubject: $gsSubject, ')
+          ..write('sourceKind: $sourceKind, ')
+          ..write('sourceYear: $sourceYear, ')
+          ..write('sourceDate: $sourceDate, ')
           ..write('rowid: $rowid')
           ..write(')'))
         .toString();
@@ -6206,6 +6410,10 @@ typedef $$QuestionsTableCreateCompanionBuilder =
       Value<bool> hasTable,
       Value<bool> negativeFraming,
       Value<int?> paperOrder,
+      Value<String> gsSubject,
+      Value<String> sourceKind,
+      Value<int?> sourceYear,
+      Value<String?> sourceDate,
       Value<int> rowid,
     });
 typedef $$QuestionsTableUpdateCompanionBuilder =
@@ -6224,6 +6432,10 @@ typedef $$QuestionsTableUpdateCompanionBuilder =
       Value<bool> hasTable,
       Value<bool> negativeFraming,
       Value<int?> paperOrder,
+      Value<String> gsSubject,
+      Value<String> sourceKind,
+      Value<int?> sourceYear,
+      Value<String?> sourceDate,
       Value<int> rowid,
     });
 
@@ -6425,6 +6637,26 @@ class $$QuestionsTableFilterComposer
 
   ColumnFilters<int> get paperOrder => $composableBuilder(
     column: $table.paperOrder,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get gsSubject => $composableBuilder(
+    column: $table.gsSubject,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get sourceKind => $composableBuilder(
+    column: $table.sourceKind,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get sourceYear => $composableBuilder(
+    column: $table.sourceYear,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get sourceDate => $composableBuilder(
+    column: $table.sourceDate,
     builder: (column) => ColumnFilters(column),
   );
 
@@ -6632,6 +6864,26 @@ class $$QuestionsTableOrderingComposer
     column: $table.paperOrder,
     builder: (column) => ColumnOrderings(column),
   );
+
+  ColumnOrderings<String> get gsSubject => $composableBuilder(
+    column: $table.gsSubject,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get sourceKind => $composableBuilder(
+    column: $table.sourceKind,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get sourceYear => $composableBuilder(
+    column: $table.sourceYear,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get sourceDate => $composableBuilder(
+    column: $table.sourceDate,
+    builder: (column) => ColumnOrderings(column),
+  );
 }
 
 class $$QuestionsTableAnnotationComposer
@@ -6698,6 +6950,24 @@ class $$QuestionsTableAnnotationComposer
 
   GeneratedColumn<int> get paperOrder => $composableBuilder(
     column: $table.paperOrder,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get gsSubject =>
+      $composableBuilder(column: $table.gsSubject, builder: (column) => column);
+
+  GeneratedColumn<String> get sourceKind => $composableBuilder(
+    column: $table.sourceKind,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<int> get sourceYear => $composableBuilder(
+    column: $table.sourceYear,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get sourceDate => $composableBuilder(
+    column: $table.sourceDate,
     builder: (column) => column,
   );
 
@@ -6876,6 +7146,10 @@ class $$QuestionsTableTableManager
                 Value<bool> hasTable = const Value.absent(),
                 Value<bool> negativeFraming = const Value.absent(),
                 Value<int?> paperOrder = const Value.absent(),
+                Value<String> gsSubject = const Value.absent(),
+                Value<String> sourceKind = const Value.absent(),
+                Value<int?> sourceYear = const Value.absent(),
+                Value<String?> sourceDate = const Value.absent(),
                 Value<int> rowid = const Value.absent(),
               }) => QuestionsCompanion(
                 uuid: uuid,
@@ -6892,6 +7166,10 @@ class $$QuestionsTableTableManager
                 hasTable: hasTable,
                 negativeFraming: negativeFraming,
                 paperOrder: paperOrder,
+                gsSubject: gsSubject,
+                sourceKind: sourceKind,
+                sourceYear: sourceYear,
+                sourceDate: sourceDate,
                 rowid: rowid,
               ),
           createCompanionCallback:
@@ -6910,6 +7188,10 @@ class $$QuestionsTableTableManager
                 Value<bool> hasTable = const Value.absent(),
                 Value<bool> negativeFraming = const Value.absent(),
                 Value<int?> paperOrder = const Value.absent(),
+                Value<String> gsSubject = const Value.absent(),
+                Value<String> sourceKind = const Value.absent(),
+                Value<int?> sourceYear = const Value.absent(),
+                Value<String?> sourceDate = const Value.absent(),
                 Value<int> rowid = const Value.absent(),
               }) => QuestionsCompanion.insert(
                 uuid: uuid,
@@ -6926,6 +7208,10 @@ class $$QuestionsTableTableManager
                 hasTable: hasTable,
                 negativeFraming: negativeFraming,
                 paperOrder: paperOrder,
+                gsSubject: gsSubject,
+                sourceKind: sourceKind,
+                sourceYear: sourceYear,
+                sourceDate: sourceDate,
                 rowid: rowid,
               ),
           withReferenceMapper: (p0) => p0

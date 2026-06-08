@@ -55,7 +55,7 @@ abstract final class AppConstants {
   /// - To block **this** build, set `kill_switch_version` to a **higher** version than this
   ///   label. Example: if this is `v2.4`, set `kill_switch_version` to `2.5` (or `v2.5`).
   /// - To block **all 2.4.x** builds, set `kill_switch_version` to `2.5`.
-  static const String releaseVersionLabel = 'v2.4';
+  static const String releaseVersionLabel = 'v2.5';
 }
 
 /// Comparable version from `v2.1`, `2.1`, or `2.1.0`.

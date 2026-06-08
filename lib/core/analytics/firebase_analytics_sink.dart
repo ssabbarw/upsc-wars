@@ -36,6 +36,9 @@ import 'analytics_sink.dart';
 /// * `test_session_abandoned` — `feature_name`, `subject`, `topic?`, `source`
 /// * `activation_milestone` — `milestone_id` (one-time activation funnel, see
 ///   [ActivationMilestones] in [activation_milestones.dart])
+/// * `confidence_marked` — `confidence_level` (1–3), `session_mode`,
+///   `marking_source` (`pre_reveal_prompt` | `option_strip`), `feature_name`, `source`
+/// * `confidence_tracking_toggled` — `enabled` (0/1)
 /// * `usp_session_result` — session snapshot: `feature_key`, `subject`,
 ///   `question_count`, `correct`, `wrong`, `accuracy_hundredths`, `danger_zone_wrong`,
 ///   and confidence bucket totals (see [UspSessionResultSnapshotEvent])
@@ -304,6 +307,24 @@ class FirebaseAnalyticsSink implements AnalyticsSink {
           'confidence_intelligent_correct': intelligentCorrect,
           'confidence_pure_total': pureTotal,
           'confidence_pure_correct': pureCorrect,
+        });
+      case ConfidenceMarkedEvent(
+          :final confidenceLevel,
+          :final sessionMode,
+          :final markingSource,
+          :final featureName,
+          :final source,
+        ):
+        await _log('confidence_marked', {
+          'confidence_level': confidenceLevel,
+          'session_mode': sessionMode,
+          'marking_source': markingSource,
+          'feature_name': featureName,
+          'source': source,
+        });
+      case ConfidenceTrackingToggledEvent(:final enabled):
+        await _log('confidence_tracking_toggled', {
+          'enabled': enabled ? 1 : 0,
         });
       case UspSessionCoachCtaTappedEvent(:final action):
         await _log('usp_coach_cta', {'action': action});

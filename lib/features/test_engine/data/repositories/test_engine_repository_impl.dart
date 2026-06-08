@@ -328,6 +328,13 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
             source: labels.source,
           ),
         );
+        if (conf != null) {
+          await _trackConfidenceMarked(
+            sessionId: sessionId,
+            confidence: conf,
+            markingSource: 'pre_reveal_prompt',
+          );
+        }
       }
     }
     return isCorrect;
@@ -351,6 +358,37 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
     await _userDb.sessionQuestionsDao.updateSessionQuestionFields(
       sq.id,
       confidence: Value(conf),
+    );
+    if (conf != null) {
+      await _trackConfidenceMarked(
+        sessionId: sessionId,
+        confidence: conf,
+        markingSource: 'option_strip',
+      );
+    }
+  }
+
+  Future<void> _trackConfidenceMarked({
+    required String sessionId,
+    required String confidence,
+    required String markingSource,
+  }) async {
+    final level = AnswerConfidence.analyticsCode(confidence);
+    if (level == null) return;
+    final sess = await _userDb.sessionsDao.getSessionById(sessionId);
+    if (sess == null) return;
+    final labels = deriveSessionAnalyticsLabels(
+      analyticsFeatureKey: sess.analyticsFeatureKey,
+      subject: sess.subject,
+    );
+    await _analytics.track(
+      ConfidenceMarkedEvent(
+        confidenceLevel: level,
+        sessionMode: sess.mode,
+        markingSource: markingSource,
+        featureName: labels.featureName,
+        source: labels.source,
+      ),
     );
   }
 

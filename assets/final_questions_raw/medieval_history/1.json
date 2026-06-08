@@ -1,18 +1,14 @@
 [
   {
-    "uuid": "782fee2e-0132-46ae-b079-52b3672a1b27",
     "en": {
       "meta": {
-        "uuid": "782fee2e-0132-46ae-b079-52b3672a1b27",
         "language": "en",
         "subject": "Medieval History",
         "topic": "Bahmani and Deccan Sultanates",
         "sub_topic": "Bahmani Kingdom — rise and fall",
         "concepts_used": [
           "Foundation of the Bahmani Kingdom (1347): Circumstances and Significance"
-        ],
-        "subject_que_no": 1,
-        "overall_que_no": 21041
+        ]
       },
       "solution": {
         "correct_option": "b",
@@ -47,9 +43,7 @@
             "sub_topic": "Bahmani Kingdom — rise and fall",
             "concepts_used": [
               "Foundation of the Bahmani Kingdom (1347): Circumstances and Significance"
-            ],
-            "subject_que_no": 1,
-            "overall_que_no": 21041
+            ]
           },
           "solution": {
             "correct_option": "b",

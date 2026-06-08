@@ -40,6 +40,7 @@ import '../../features/chat/domain/entities/chat_thread_route_payload.dart';
 import '../../features/home/screens/home_screen.dart';
 import '../../features/onboarding/screens/onboarding_flow_screen.dart';
 import '../../features/notifications/screens/long_html_notification_screen.dart';
+import '../../features/daily_ca/screens/daily_ca_screen.dart';
 import '../../features/pyq/screens/pyq_year_packs_screen.dart';
 import '../../features/home/screens/complete_profile_screen.dart';
 import '../../features/home/screens/profile_screen.dart';
@@ -426,6 +427,12 @@ GoRouter appRouter(Ref ref) {
         builder: (context, state) => SubjectDetailScreen(
           subject: Uri.decodeComponent(state.pathParameters['name']!),
         ),
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/daily-ca',
+        name: 'daily_ca',
+        builder: (context, state) => const DailyCaScreen(),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,

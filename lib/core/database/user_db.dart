@@ -1,5 +1,6 @@
 import 'package:drift/drift.dart';
 
+import '../constants/question_source_constants.dart';
 import 'user_db_connection_io.dart'
     if (dart.library.html) 'user_db_connection_web.dart'
     as user_db_connection;
@@ -25,6 +26,20 @@ class Questions extends Table {
 
   /// 1-based position within a PYQ year paper; null for non-PYQ questions.
   IntColumn get paperOrder => integer().named('paper_order').nullable()();
+
+  /// Real UPSC GS subject (Geography, Economy, …) for all source kinds.
+  TextColumn get gsSubject =>
+      text().named('gs_subject').withDefault(const Constant(''))();
+
+  /// `static` | `pyq` | `current_affairs`
+  TextColumn get sourceKind =>
+      text().named('source_kind').withDefault(const Constant('static'))();
+
+  /// PYQ exam year when [sourceKind] is `pyq`.
+  IntColumn get sourceYear => integer().named('source_year').nullable()();
+
+  /// Daily CA date (`YYYY-MM-DD`) when [sourceKind] is `current_affairs`.
+  TextColumn get sourceDate => text().named('source_date').nullable()();
 
   @override
   Set<Column> get primaryKey => {uuid};
@@ -225,6 +240,78 @@ class QuestionsDao extends DatabaseAccessor<UserDatabase>
       readsFrom: {questions},
     ).get();
     return rows.map((r) => questions.map(r.data)).toList();
+  }
+
+  /// Subject-wise PYQ or current-affairs pool (optionally scoped by year/month).
+  Future<List<Question>> getByGsSubjectAndSourceKind({
+    required String gsSubject,
+    required String sourceKind,
+    int? sourceYear,
+    String? sourceDatePrefix,
+    int? limit,
+  }) async {
+    final clauses = <String>['gs_subject = ?', 'source_kind = ?'];
+    final variables = <Variable>[
+      Variable.withString(gsSubject),
+      Variable.withString(sourceKind),
+    ];
+    if (sourceYear != null) {
+      clauses.add('source_year = ?');
+      variables.add(Variable.withInt(sourceYear));
+    }
+    if (sourceDatePrefix != null && sourceDatePrefix.isNotEmpty) {
+      clauses.add('source_date LIKE ?');
+      variables.add(Variable.withString('$sourceDatePrefix%'));
+    }
+    var sql =
+        'SELECT * FROM questions WHERE ${clauses.join(' AND ')} '
+        'ORDER BY source_date ASC, paper_order IS NULL, paper_order ASC, uuid ASC';
+    if (limit != null && limit > 0) {
+      sql += ' LIMIT ?';
+      variables.add(Variable.withInt(limit));
+    }
+    final rows = await customSelect(
+      sql,
+      variables: variables,
+      readsFrom: {questions},
+    ).get();
+    return rows.map((r) => questions.map(r.data)).toList();
+  }
+
+  /// Full daily current-affairs set for [sourceDate] (`YYYY-MM-DD`).
+  Future<List<Question>> getCurrentAffairsByDate(String sourceDate) async {
+    final rows = await customSelect(
+      'SELECT * FROM questions WHERE source_kind = ? AND source_date = ? '
+      'ORDER BY paper_order IS NULL, paper_order ASC, uuid ASC',
+      variables: [
+        Variable.withString('current_affairs'),
+        Variable.withString(sourceDate),
+      ],
+      readsFrom: {questions},
+    ).get();
+    return rows.map((r) => questions.map(r.data)).toList();
+  }
+
+  Future<int> countByGsSubjectAndSourceKind({
+    required String gsSubject,
+    required String sourceKind,
+    int? sourceYear,
+  }) async {
+    final clauses = <String>['gs_subject = ?', 'source_kind = ?'];
+    final variables = <Variable>[
+      Variable.withString(gsSubject),
+      Variable.withString(sourceKind),
+    ];
+    if (sourceYear != null) {
+      clauses.add('source_year = ?');
+      variables.add(Variable.withInt(sourceYear));
+    }
+    final row = await customSelect(
+      'SELECT COUNT(*) AS c FROM questions WHERE ${clauses.join(' AND ')}',
+      variables: variables,
+      readsFrom: {questions},
+    ).getSingle();
+    return row.read<int>('c');
   }
 
   Future<List<Question>> getByTopic(String subject, String topic) =>
@@ -689,6 +776,48 @@ class SessionsDao extends DatabaseAccessor<UserDatabase>
     ).getSingle();
     return (row.read<int?>('c') ?? 0) > 0;
   }
+
+  /// Whether the user completed the daily CA test for [sourceDate] (`YYYY-MM-DD`).
+  Future<bool> hasCompletedDailyCa(String sourceDate) async {
+    final row = await customSelect(
+      "SELECT COUNT(*) AS c FROM sessions "
+      "WHERE subject = ? AND topic = ? AND status = 'completed'",
+      variables: [
+        Variable.withString(QuestionSourceConstants.dailyCaSessionSubject),
+        Variable.withString(sourceDate),
+      ],
+      readsFrom: {sessions},
+    ).getSingle();
+    return (row.read<int?>('c') ?? 0) > 0;
+  }
+
+  /// Completed daily CA dates in `[startInclusive, endInclusive]` (`YYYY-MM-DD`).
+  Future<Set<String>> getCompletedDailyCaDatesBetween({
+    required String startInclusive,
+    required String endInclusive,
+  }) async {
+    final rows = await customSelect(
+      "SELECT DISTINCT topic FROM sessions "
+      "WHERE subject = ? AND status = 'completed' "
+      "AND topic IS NOT NULL AND topic >= ? AND topic <= ?",
+      variables: [
+        Variable.withString(QuestionSourceConstants.dailyCaSessionSubject),
+        Variable.withString(startInclusive),
+        Variable.withString(endInclusive),
+      ],
+      readsFrom: {sessions},
+    ).get();
+    return {
+      for (final row in rows)
+        if (_isIsoDate(row.read<String?>('topic')))
+          row.read<String>('topic'),
+    };
+  }
+}
+
+bool _isIsoDate(String? value) {
+  if (value == null || value.length != 10) return false;
+  return RegExp(r'^\d{4}-\d{2}-\d{2}$').hasMatch(value);
 }
 
 @DriftAccessor(tables: [SessionQuestions])
@@ -1214,7 +1343,7 @@ class UserDatabase extends _$UserDatabase {
   UserDatabase([QueryExecutor? executor]) : super(executor ?? _openUnifiedDb());
 
   @override
-  int get schemaVersion => 5;
+  int get schemaVersion => 6;
 
   /// True when [column] already exists on [table] (handles prebuilt DBs whose
   /// `user_version` lags behind the actual schema).
@@ -1288,6 +1417,42 @@ class UserDatabase extends _$UserDatabase {
         if (!await _sqliteColumnExists('questions', 'paper_order')) {
           await m.addColumn(questions, questions.paperOrder);
         }
+      }
+      if (from < 6) {
+        if (!await _sqliteColumnExists('questions', 'gs_subject')) {
+          await m.addColumn(questions, questions.gsSubject);
+        }
+        if (!await _sqliteColumnExists('questions', 'source_kind')) {
+          await m.addColumn(questions, questions.sourceKind);
+        }
+        if (!await _sqliteColumnExists('questions', 'source_year')) {
+          await m.addColumn(questions, questions.sourceYear);
+        }
+        if (!await _sqliteColumnExists('questions', 'source_date')) {
+          await m.addColumn(questions, questions.sourceDate);
+        }
+        await customStatement(
+          "UPDATE questions SET gs_subject = subject, source_kind = 'static' "
+          "WHERE subject NOT LIKE 'upsc_pyq_%'",
+        );
+        await customStatement(
+          "UPDATE questions SET source_kind = 'pyq', "
+          "gs_subject = topic, "
+          "source_year = CAST(substr(subject, 10) AS INTEGER) "
+          "WHERE subject LIKE 'upsc_pyq_%'",
+        );
+        await customStatement(
+          'CREATE INDEX IF NOT EXISTS idx_questions_source_gs '
+          'ON questions(source_kind, gs_subject)',
+        );
+        await customStatement(
+          'CREATE INDEX IF NOT EXISTS idx_questions_source_date '
+          'ON questions(source_kind, source_date)',
+        );
+        await customStatement(
+          'CREATE INDEX IF NOT EXISTS idx_questions_source_year '
+          'ON questions(source_kind, source_year)',
+        );
       }
     },
   );

@@ -124,14 +124,8 @@
     "negative_framing": false
   },
   {
-    "uuid": "c6a03522-69e7-430b-bfd4-6e4b6df3c8b2",
     "meta": {
-      "subject": "Economy",
-      "topic": "Agriculture",
-      "sub_topic": "Agricultural credit — Kisan Credit Card",
-      "concepts_used": [
-        "KCC Validity Period and Renewal Mechanism"
-      ]
+      "subject": "Economy"
     },
     "shared": {
       "correct_option": "c",

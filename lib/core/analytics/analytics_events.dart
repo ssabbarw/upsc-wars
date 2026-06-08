@@ -499,6 +499,41 @@ final class ActivationMilestoneEvent extends AnalyticsEvent {
   final String milestoneId;
 }
 
+// ── Confidence marking ────────────────────────────────────────────────
+
+/// **User picked a confidence tier** (Sure / Educated guess / Pure guess).
+///
+/// Emitted once per tier selection (not when clearing). Use with
+/// [ConfidenceTrackingToggledEvent] to measure adoption vs opt-out.
+///
+/// **GA4:** `confidence_marked` with `confidence_level` (1–3), `session_mode`,
+/// `marking_source` (`pre_reveal_prompt` | `option_strip`), `feature_name`,
+/// `source`.
+final class ConfidenceMarkedEvent extends AnalyticsEvent {
+  const ConfidenceMarkedEvent({
+    required this.confidenceLevel,
+    required this.sessionMode,
+    required this.markingSource,
+    required this.featureName,
+    required this.source,
+  });
+
+  final int confidenceLevel;
+  final String sessionMode;
+  final String markingSource;
+  final String featureName;
+  final String source;
+}
+
+/// **User enabled or disabled confidence tracking** in Settings.
+///
+/// **GA4:** `confidence_tracking_toggled` with `enabled` (0/1).
+final class ConfidenceTrackingToggledEvent extends AnalyticsEvent {
+  const ConfidenceTrackingToggledEvent({required this.enabled});
+
+  final bool enabled;
+}
+
 // ── UPSC Wars “USP” — result snapshot & coach —──────────────────────
 
 /// **Confidence and Danger Zone aggregates** at session submit (one row per

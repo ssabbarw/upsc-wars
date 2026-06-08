@@ -157,7 +157,7 @@ def create_schema(conn: sqlite3.Connection) -> None:
     cur.execute("PRAGMA foreign_keys = ON;")
     # Match Drift [UserDatabase.schemaVersion] so bundled DBs skip redundant
     # onUpgrade steps that would duplicate existing columns.
-    cur.execute("PRAGMA user_version = 5;")
+    cur.execute("PRAGMA user_version = 6;")
 
     cur.executescript(
         """
@@ -183,13 +183,23 @@ def create_schema(conn: sqlite3.Connection) -> None:
             hi_display_text           TEXT,
             has_table                 INTEGER NOT NULL DEFAULT 0,
             negative_framing          INTEGER NOT NULL DEFAULT 0,
-            paper_order               INTEGER
+            paper_order               INTEGER,
+            gs_subject                TEXT NOT NULL DEFAULT '',
+            source_kind               TEXT NOT NULL DEFAULT 'static',
+            source_year               INTEGER,
+            source_date               TEXT
         );
 
         CREATE INDEX IF NOT EXISTS idx_questions_subject
             ON questions(subject);
         CREATE INDEX IF NOT EXISTS idx_questions_subject_topic
             ON questions(subject, topic);
+        CREATE INDEX IF NOT EXISTS idx_questions_source_gs
+            ON questions(source_kind, gs_subject);
+        CREATE INDEX IF NOT EXISTS idx_questions_source_date
+            ON questions(source_kind, source_date);
+        CREATE INDEX IF NOT EXISTS idx_questions_source_year
+            ON questions(source_kind, source_year);
 
         ------------------------------------------------------------------
         -- Optional table layouts for questions with tables
@@ -368,7 +378,9 @@ def insert_questions(
       question_type, trap_type, correct_option,
       concept_anchor, concepts_used (JSON string),
       en_display_text, hi_display_text, has_table (0/1),
-      negative_framing (0/1), paper_order (nullable int)
+      negative_framing (0/1), paper_order (nullable int),
+      gs_subject, source_kind, source_year (nullable int),
+      source_date (nullable str)
     """
     cur = conn.cursor()
     sql = """
@@ -386,7 +398,11 @@ def insert_questions(
           hi_display_text,
           has_table,
           negative_framing,
-          paper_order
+          paper_order,
+          gs_subject,
+          source_kind,
+          source_year,
+          source_date
         ) VALUES (
           :uuid,
           :subject,
@@ -401,7 +417,11 @@ def insert_questions(
           :hi_display_text,
           :has_table,
           :negative_framing,
-          :paper_order
+          :paper_order,
+          :gs_subject,
+          :source_kind,
+          :source_year,
+          :source_date
         );
         """
     rows_list = list(rows)
@@ -629,6 +649,10 @@ def populate_static_data(conn: sqlite3.Connection) -> None:
                         "has_table": 1 if shared.get("has_table") else 0,
                         "negative_framing": 1 if item.get("negative_framing") is True else 0,
                         "paper_order": None,
+                        "gs_subject": subject,
+                        "source_kind": "static",
+                        "source_year": None,
+                        "source_date": None,
                     }
                     subject_rows.append(row)
 
@@ -733,7 +757,8 @@ def populate_pyq_data(conn: sqlite3.Connection) -> None:
 
     Each question is stored with subject ``upsc_pyq_{year}`` so the app can
     start sessions via getUnseenFirstBySubject. Original GS paper subject
-    from meta (e.g. Polity) is kept in ``topic``; ``sub_topic`` is PYQ.
+    from meta (e.g. Polity) is stored in ``gs_subject``; ``topic`` holds the
+    syllabus topic when present.
     """
     project_root = Path(__file__).resolve().parents[1]
     pyq_dir = project_root / "assets" / "pyqs"
@@ -859,6 +884,10 @@ def populate_pyq_data(conn: sqlite3.Connection) -> None:
                     "has_table": 1 if shared.get("has_table") else 0,
                     "negative_framing": 1 if item.get("negative_framing") is True else 0,
                     "paper_order": per_file_count + 1,
+                    "gs_subject": paper_subject,
+                    "source_kind": "pyq",
+                    "source_year": int(year),
+                    "source_date": None,
                 }
                 subject_rows.append(row)
 

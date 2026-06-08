@@ -27,6 +27,7 @@ import '../providers/auth_providers.dart';
 import '../providers/home_activation_provider.dart';
 import '../widgets/get_started_card.dart';
 import '../widgets/recovery_plan_section.dart';
+import '../../daily_ca/widgets/daily_ca_home_card.dart';
 import '../../../shared/widgets/push_denied_banner.dart';
 import '../../../shared/theme/dark_mode_toggle.dart';
 import '../../../shared/widgets/app_update_kill_switch_overlay.dart';
@@ -435,6 +436,8 @@ class HomeScreen extends HookConsumerWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           HomePageVideoBanner(borderColor: borderColor),
+                          const SizedBox(height: AppSpacing.md),
+                          DailyCaHomeCard(borderColor: borderColor),
                           const SizedBox(height: AppSpacing.md),
                           _PyqYearCarousel(
                             borderColor: borderColor,

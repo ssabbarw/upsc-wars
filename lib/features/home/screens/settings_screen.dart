@@ -5,6 +5,8 @@ import 'package:flutter/services.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../../core/analytics/analytics.dart';
+import '../../../core/analytics/analytics_events.dart';
 import '../../../core/constants/prelims_countdown.dart';
 import '../../../core/constants/app_constants.dart';
 import '../../../core/providers/prefs_provider.dart';
@@ -493,6 +495,10 @@ class _ConfidenceTrackingTile extends ConsumerWidget {
                 final s = await ref.read(prefsServiceProvider.future);
                 s.confidenceTrackingEnabled = v;
                 ref.invalidate(prefsServiceProvider);
+                await Analytics.track(
+                  ref,
+                  ConfidenceTrackingToggledEvent(enabled: v),
+                );
               },
               secondary: const _LeadingIcon(
                 icon: Icons.psychology_alt_rounded,
