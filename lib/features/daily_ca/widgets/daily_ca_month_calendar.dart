@@ -21,7 +21,7 @@ class DailyCaMonthCalendar extends StatelessWidget {
   final int month;
   final Set<String> completedDates;
   final void Function(String isoDate) onDateTap;
-  /// Earliest selectable date (remote-config prelims date, date-only).
+  /// Earliest selectable date on the calendar (date-only).
   final DateTime minDate;
   final DateTime? nowIst;
 

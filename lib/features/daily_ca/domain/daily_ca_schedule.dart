@@ -5,6 +5,11 @@ abstract final class DailyCaSchedule {
   static const publishHourIst = 21;
   static const istOffset = Duration(hours: 5, minutes: 30);
 
+  /// Earliest date selectable on the daily CA calendar (IST, date-only).
+  static final DateTime calendarMinDate = DateTime(2026, 6, 8);
+
+  static String get calendarMinDateIso => formatIsoDate(calendarMinDate);
+
   static DateTime nowIst([DateTime? utcNow]) {
     final utc = (utcNow ?? DateTime.now()).toUtc();
     return utc.add(istOffset);

@@ -6,9 +6,7 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 
-import '../../../core/constants/prelims_countdown.dart';
 import '../../../core/constants/question_source_constants.dart';
-import '../../../core/providers/prelims_date_provider.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
@@ -38,15 +36,7 @@ class DailyCaScreen extends HookConsumerWidget {
 
     final ist = nowIst.value;
     final todayIso = DailyCaSchedule.formatIsoDate(ist);
-    final prelimsAsync = ref.watch(prelimsDateProvider);
-    final minDate = prelimsAsync.maybeWhen(
-      data: (d) => DateTime(d.year, d.month, d.day),
-      orElse: () => DateTime(
-        PrelimsCountdown.prelimsDate.year,
-        PrelimsCountdown.prelimsDate.month,
-        PrelimsCountdown.prelimsDate.day,
-      ),
-    );
+    final minDate = DailyCaSchedule.calendarMinDate;
     final minMonth = DailyCaSchedule.minMonthForDate(minDate);
     final initialMonth = DateTime(ist.year, ist.month);
     final displayedMonth = useState(
@@ -177,7 +167,7 @@ class DailyCaScreen extends HookConsumerWidget {
                 const SizedBox(height: AppSpacing.sm),
                 if (!todayAllowed)
                   Text(
-                    'Daily tests start from $minDateLabel (Prelims sprint).',
+                    'Daily tests start from $minDateLabel.',
                     style: AppTextStyles.bodySm().copyWith(
                       color: scheme.onSurfaceVariant,
                     ),
