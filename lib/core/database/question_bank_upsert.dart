@@ -118,23 +118,48 @@ class QuestionBankUpsert {
     required Map<String, dynamic> payload,
   }) async {
     final stmtAnalysis = payload['statement_analysis'];
-    await _db.into(_db.questionTranslations).insertOnConflictUpdate(
-      QuestionTranslationsCompanion.insert(
-        questionUuid: uuid,
-        language: language,
-        strongDistractor: _str(payload['strong_distractor']),
-        eliminationLogic: jsonEncode(
-          payload['elimination_logic'] is List
-              ? payload['elimination_logic']
-              : const <dynamic>[],
-        ),
-        upscTrapExplanation: _str(payload['upsc_trap_explanation']),
-        finalExplanation: _str(payload['final_explanation']),
-        statementAnalysis: Value(
-          stmtAnalysis == null
-              ? null
-              : jsonEncode(stmtAnalysis is List ? stmtAnalysis : const []),
-        ),
+    final strongDistractor = _str(payload['strong_distractor']);
+    final eliminationLogic = jsonEncode(
+      payload['elimination_logic'] is List
+          ? payload['elimination_logic']
+          : const <dynamic>[],
+    );
+    final upscTrapExplanation = _str(payload['upsc_trap_explanation']);
+    final finalExplanation = _str(payload['final_explanation']);
+    final statementAnalysis = stmtAnalysis == null
+        ? null
+        : jsonEncode(stmtAnalysis is List ? stmtAnalysis : const []);
+
+    final existing = await _db.questionTranslationsDao.getByQuestionAndLanguage(
+      uuid,
+      language,
+    );
+    final insertCompanion = QuestionTranslationsCompanion.insert(
+      questionUuid: uuid,
+      language: language,
+      strongDistractor: strongDistractor,
+      eliminationLogic: eliminationLogic,
+      upscTrapExplanation: upscTrapExplanation,
+      finalExplanation: finalExplanation,
+      statementAnalysis: Value(statementAnalysis),
+    );
+
+    if (existing == null) {
+      await _db.into(_db.questionTranslations).insert(insertCompanion);
+      return;
+    }
+
+    await (_db.update(_db.questionTranslations)
+          ..where(
+            (t) => t.questionUuid.equals(uuid) & t.language.equals(language),
+          ))
+        .write(
+      QuestionTranslationsCompanion(
+        strongDistractor: Value(strongDistractor),
+        eliminationLogic: Value(eliminationLogic),
+        upscTrapExplanation: Value(upscTrapExplanation),
+        finalExplanation: Value(finalExplanation),
+        statementAnalysis: Value(statementAnalysis),
       ),
     );
   }

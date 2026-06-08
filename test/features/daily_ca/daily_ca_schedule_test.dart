@@ -46,14 +46,14 @@ void main() {
     test('min date blocks earlier calendar days', () {
       final min = DailyCaSchedule.calendarMinDate;
       expect(
-        DailyCaSchedule.isOnOrAfterMinDate(DateTime(2026, 6, 7), min),
+        DailyCaSchedule.isOnOrAfterMinDate(DateTime(2026, 6, 4), min),
         isFalse,
       );
       expect(
-        DailyCaSchedule.isOnOrAfterMinDate(DateTime(2026, 6, 8), min),
+        DailyCaSchedule.isOnOrAfterMinDate(DateTime(2026, 6, 5), min),
         isTrue,
       );
-      expect(DailyCaSchedule.calendarMinDateIso, '2026-06-08');
+      expect(DailyCaSchedule.calendarMinDateIso, '2026-06-05');
     });
   });
 }

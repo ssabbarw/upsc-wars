@@ -1,5 +1,7 @@
 import 'dart:async';
+import 'dart:developer' as developer;
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
@@ -8,14 +10,16 @@ import 'package:intl/intl.dart';
 
 import '../../../core/constants/question_source_constants.dart';
 import '../../../core/theme/app_colors.dart';
-import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/widgets/test_config_bottom_sheet.dart';
+import '../data/daily_ca_firestore.dart';
+import '../data/daily_ca_load_error.dart';
 import '../data/daily_ca_repository.dart';
 import '../domain/daily_ca_schedule.dart';
 import '../providers/daily_ca_providers.dart';
 import '../widgets/daily_ca_month_calendar.dart';
+import '../widgets/daily_ca_today_section.dart';
 
 class DailyCaScreen extends HookConsumerWidget {
   const DailyCaScreen({super.key});
@@ -23,22 +27,11 @@ class DailyCaScreen extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    final border = isDark ? AppColors.borderDark : AppColors.borderLight;
-
-    final nowIst = useState(DailyCaSchedule.nowIst());
-    useEffect(() {
-      final timer = Timer.periodic(const Duration(seconds: 1), (_) {
-        nowIst.value = DailyCaSchedule.nowIst();
-      });
-      return timer.cancel;
-    }, const []);
-
-    final ist = nowIst.value;
-    final todayIso = DailyCaSchedule.formatIsoDate(ist);
     final minDate = DailyCaSchedule.calendarMinDate;
     final minMonth = DailyCaSchedule.minMonthForDate(minDate);
-    final initialMonth = DateTime(ist.year, ist.month);
+    final istNow = DailyCaSchedule.nowIst();
+    final todayIso = DailyCaSchedule.formatIsoDate(istNow);
+    final initialMonth = DateTime(istNow.year, istNow.month);
     final displayedMonth = useState(
       initialMonth.isBefore(minMonth) ? minMonth : initialMonth,
     );
@@ -49,11 +42,6 @@ class DailyCaScreen extends HookConsumerWidget {
     final completedAsync = ref.watch(dailyCaCompletedDatesProvider(monthKey));
     final launching = useState(false);
 
-    final todayPublished = DailyCaSchedule.isPublishedForDate(ist);
-    final todayIsTestDay = DailyCaSchedule.isTestDay(ist);
-    final todayAllowed = DailyCaSchedule.isOnOrAfterMinDate(ist, minDate);
-    final countdown = DailyCaSchedule.timeUntilNextPublish(referenceIst: ist);
-    final countdownLabel = DailyCaSchedule.formatCountdown(countdown);
     final todayCompleted = completedAsync.maybeWhen(
       data: (dates) => dates.contains(todayIso),
       orElse: () => false,
@@ -62,10 +50,16 @@ class DailyCaScreen extends HookConsumerWidget {
     Future<void> openDayTest(String isoDate, {required bool isRevise}) async {
       if (launching.value) return;
       launching.value = true;
+      final firestorePath = DailyCaFirestore.pathForDate(isoDate);
       try {
+        debugPrint('[DailyCaScreen] Loading $isoDate from $firestorePath');
         final repo = ref.read(dailyCaRepositoryProvider);
         final uuids = await repo.ensureCachedForDate(isoDate);
         if (!context.mounted) return;
+        if (uuids.isEmpty) {
+          throw DailyCaNotAvailableException(isoDate, firestorePath: firestorePath);
+        }
+
         final parsed = DailyCaSchedule.parseIsoDate(isoDate);
         final label = DateFormat('d MMM yyyy').format(parsed);
 
@@ -94,43 +88,42 @@ class DailyCaScreen extends HookConsumerWidget {
             },
           ),
         );
-      } on DailyCaNotAvailableException {
-        if (context.mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text(
-                'Questions for this date are not available yet.',
-                style: AppTextStyles.bodySm(),
-              ),
+      } catch (e, st) {
+        final message = dailyCaLoadErrorMessage(e);
+        developer.log(
+          'Daily CA load failed for $isoDate ($firestorePath): $message',
+          name: 'DailyCaScreen',
+          stackTrace: st,
+        );
+        debugPrint('[DailyCaScreen] $message');
+        debugPrintStack(stackTrace: st, label: 'DailyCaScreen');
+
+        if (!context.mounted) return;
+        final snackText = kDebugMode
+            ? message
+            : dailyCaErrorIsPermissionDenied(e)
+            ? 'Firestore access denied. Deploy latest firestore.rules, then retry.'
+            : dailyCaErrorIsNotAvailable(e)
+            ? 'Questions for this date are not available yet.'
+            : 'Could not load test. Check your connection and try again.';
+
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(
+              snackText,
+              style: AppTextStyles.bodySm(),
             ),
-          );
-        }
-      } on DailyCaPermissionDeniedException {
-        if (context.mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text(
-                'Firestore access denied. Deploy latest firestore.rules, then retry.',
-                style: AppTextStyles.bodySm(),
-              ),
-            ),
-          );
-        }
-      } catch (e) {
-        if (context.mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text(
-                'Could not load test. Check your connection and try again.',
-                style: AppTextStyles.bodySm(),
-              ),
-            ),
-          );
-        }
+          ),
+        );
       } finally {
         launching.value = false;
       }
     }
+
+    final openDayTestStable = useCallback(
+      openDayTest,
+      [monthKey, todayCompleted],
+    );
 
     void shiftMonth(int delta) {
       final m = displayedMonth.value;
@@ -148,7 +141,6 @@ class DailyCaScreen extends HookConsumerWidget {
       minMonth,
     );
     final minDateLabel = DateFormat('d MMM yyyy').format(minDate);
-
     final monthTitle = DateFormat('MMMM yyyy').format(displayedMonth.value);
 
     return Scaffold(
@@ -156,105 +148,12 @@ class DailyCaScreen extends HookConsumerWidget {
       body: ListView(
         padding: const EdgeInsets.all(AppSpacing.lg),
         children: [
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(AppSpacing.lg),
-            decoration: BoxDecoration(
-              color: isDark ? AppColors.infoBgDark : AppColors.infoBg,
-              borderRadius: BorderRadius.circular(AppRadius.lg),
-              border: Border.all(color: border, width: 0.5),
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Text(
-                  "TODAY'S TEST",
-                  style: AppTextStyles.caption().copyWith(
-                    color: isDark ? AppColors.infoTextDark : AppColors.infoText,
-                    letterSpacing: 0.8,
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-                const SizedBox(height: AppSpacing.sm),
-                if (!todayAllowed)
-                  Text(
-                    'Daily tests start from $minDateLabel.',
-                    style: AppTextStyles.bodySm().copyWith(
-                      color: scheme.onSurfaceVariant,
-                    ),
-                  )
-                else if (!todayIsTestDay)
-                  Text(
-                    'Sundays are rest days — no test today.',
-                    style: AppTextStyles.bodySm().copyWith(
-                      color: scheme.onSurfaceVariant,
-                    ),
-                  )
-                else if (!todayPublished)
-                  Text(
-                    'Available at 9:00 PM IST · $countdownLabel remaining',
-                    style: AppTextStyles.body().copyWith(
-                      color: scheme.onSurface,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  )
-                else
-                  Text(
-                    todayCompleted
-                        ? 'Completed · tap to revise'
-                        : "10 MCQs from today's news",
-                    style: AppTextStyles.bodySm().copyWith(
-                      color: scheme.onSurfaceVariant,
-                    ),
-                  ),
-                const SizedBox(height: AppSpacing.md),
-                FilledButton.icon(
-                  onPressed: (!todayAllowed ||
-                          !todayIsTestDay ||
-                          !todayPublished ||
-                          launching.value)
-                      ? null
-                      : () => openDayTest(
-                            todayIso,
-                            isRevise: todayCompleted,
-                          ),
-                  icon: launching.value
-                      ? SizedBox(
-                          width: 18,
-                          height: 18,
-                          child: CircularProgressIndicator(
-                            strokeWidth: 2,
-                            color: scheme.onPrimary,
-                          ),
-                        )
-                      : Icon(
-                          todayCompleted
-                              ? Icons.replay_rounded
-                              : Icons.play_arrow_rounded,
-                        ),
-                  label: Text(
-                    !todayAllowed
-                        ? 'Not started yet'
-                        : !todayIsTestDay
-                        ? 'No test today'
-                        : !todayPublished
-                        ? 'Opens at 9 PM'
-                        : todayCompleted
-                        ? "Revise today's test"
-                        : "Start today's test",
-                  ),
-                ),
-                if (todayAllowed && todayIsTestDay && !todayPublished) ...[
-                  const SizedBox(height: AppSpacing.sm),
-                  Text(
-                    'Next test in $countdownLabel',
-                    textAlign: TextAlign.center,
-                    style: AppTextStyles.caption().copyWith(
-                      color: scheme.onSurfaceVariant,
-                    ),
-                  ),
-                ],
-              ],
+          DailyCaTodaySection(
+            minDate: minDate,
+            todayCompleted: todayCompleted,
+            launching: launching.value,
+            onStartToday: () => unawaited(
+              openDayTestStable(todayIso, isRevise: todayCompleted),
             ),
           ),
           const SizedBox(height: AppSpacing.lg),
@@ -301,13 +200,17 @@ class DailyCaScreen extends HookConsumerWidget {
               month: displayedMonth.value.month,
               completedDates: completed,
               minDate: minDate,
-              nowIst: ist,
               onDateTap: (iso) {
+                if (launching.value) return;
                 final date = DailyCaSchedule.parseIsoDate(iso);
                 if (!DailyCaSchedule.isOnOrAfterMinDate(date, minDate)) {
                   return;
                 }
-                if (!DailyCaSchedule.isPublishedForDate(date, referenceIst: ist)) {
+                final now = DailyCaSchedule.nowIst();
+                if (!DailyCaSchedule.isPublishedForDate(
+                  date,
+                  referenceIst: now,
+                )) {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
                       content: Text(
@@ -319,7 +222,7 @@ class DailyCaScreen extends HookConsumerWidget {
                   return;
                 }
                 unawaited(
-                  openDayTest(iso, isRevise: completed.contains(iso)),
+                  openDayTestStable(iso, isRevise: completed.contains(iso)),
                 );
               },
             ),

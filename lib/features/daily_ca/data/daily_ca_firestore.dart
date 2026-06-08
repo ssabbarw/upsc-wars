@@ -4,10 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 ///
 ///     daily_mcqs / {YYYY} / {MM} / {DD}
 ///
-/// - `daily_mcqs` — root collection
-/// - `{YYYY}`     — document id (e.g. `2026`)
-/// - `{MM}`       — subcollection id, zero-padded (e.g. `06`)
-/// - `{DD}`       — document id, zero-padded (e.g. `08`)
+/// Month and day are always **zero-padded** (`06`, `05`), e.g. `daily_mcqs/2026/06/05`.
 abstract final class DailyCaFirestore {
   DailyCaFirestore._();
 
@@ -19,19 +16,20 @@ abstract final class DailyCaFirestore {
     if (match == null) {
       throw ArgumentError('Invalid ISO date (expected YYYY-MM-DD): $isoDate');
     }
-    final year = match.group(1)!;
-    final month = match.group(2)!.padLeft(2, '0');
-    final day = match.group(3)!.padLeft(2, '0');
-    return (year: year, month: month, day: day);
+    return (
+      year: match.group(1)!,
+      month: match.group(2)!.padLeft(2, '0'),
+      day: match.group(3)!.padLeft(2, '0'),
+    );
   }
 
-  /// Human-readable path, e.g. `daily_mcqs/2026/06/08`.
+  /// e.g. `daily_mcqs/2026/06/05`
   static String pathForDate(String isoDate) {
     final s = pathSegments(isoDate);
     return '$collectionName/${s.year}/${s.month}/${s.day}';
   }
 
-  /// Document reference: `daily_mcqs/{year}/{month}/{day}`.
+  /// Document at `daily_mcqs/{year}/{month}/{day}`.
   static DocumentReference<Map<String, dynamic>> dayDoc(String isoDate) {
     final s = pathSegments(isoDate);
     return FirebaseFirestore.instance
