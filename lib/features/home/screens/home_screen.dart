@@ -437,8 +437,23 @@ class HomeScreen extends HookConsumerWidget {
                         children: [
                           HomePageVideoBanner(borderColor: borderColor),
                           const SizedBox(height: AppSpacing.md),
-                          DailyCaHomeCard(borderColor: borderColor),
-                          const SizedBox(height: AppSpacing.md),
+                          Consumer(
+                            builder: (context, ref, _) {
+                              final dailyCaEnabled = ref
+                                  .watch(dailyCaRemoteEnabledProvider)
+                                  .maybeWhen(data: (v) => v, orElse: () => true);
+                              if (!dailyCaEnabled) {
+                                return const SizedBox.shrink();
+                              }
+                              return Column(
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                                children: [
+                                  DailyCaHomeCard(borderColor: borderColor),
+                                  const SizedBox(height: AppSpacing.md),
+                                ],
+                              );
+                            },
+                          ),
                           _PyqYearCarousel(
                             borderColor: borderColor,
                             years: pyqYears,

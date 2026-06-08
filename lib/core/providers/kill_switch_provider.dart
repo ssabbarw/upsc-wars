@@ -14,6 +14,9 @@ const killSwitchVersionRemoteConfigKey = 'kill_switch_version';
 /// Remote Config: when `false`, hide the Community shell tab (compile flag must still be on).
 const communityTabEnabledRemoteConfigKey = 'community_tab_enabled';
 
+/// Remote Config: when `false`, hide Daily Current Affairs on the home screen.
+const dailyCaEnabledRemoteConfigKey = 'daily_ca_enabled';
+
 /// Remote Config: max QOTD posts per device in a rolling 24h window (int, default 3; enforced locally).
 const qotdMaxPostsPerDayRemoteConfigKey = 'qotd_max_posts_per_day';
 
@@ -59,6 +62,7 @@ Future<KillSwitchSnapshot> killSwitch(Ref ref) async {
     await rc.setDefaults(<String, dynamic>{
       killSwitchVersionRemoteConfigKey: '',
       communityTabEnabledRemoteConfigKey: true,
+      dailyCaEnabledRemoteConfigKey: true,
       qotdMaxPostsPerDayRemoteConfigKey: 3,
       // YYYY-MM-DD (time defaults to 09:30 local)
       'prelims_date': '2027-05-23',
@@ -101,6 +105,24 @@ Future<bool> communityTabRemoteEnabled(Ref ref) async {
   try {
     return FirebaseRemoteConfig.instance.getBool(
       communityTabEnabledRemoteConfigKey,
+    );
+  } on Object catch (_) {
+    return true;
+  }
+}
+
+/// Whether the Daily Current Affairs home entry should be shown.
+///
+/// Fails open (`true`) while loading or on read errors. On web, defaults to `true`.
+@Riverpod(keepAlive: true)
+Future<bool> dailyCaRemoteEnabled(Ref ref) async {
+  if (kIsWeb) {
+    return true;
+  }
+  await ref.watch(killSwitchProvider.future);
+  try {
+    return FirebaseRemoteConfig.instance.getBool(
+      dailyCaEnabledRemoteConfigKey,
     );
   } on Object catch (_) {
     return true;

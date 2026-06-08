@@ -48,7 +48,7 @@ final class KillSwitchProvider
   }
 }
 
-String _$killSwitchHash() => r'f7db194972b349834fa3a1569153a9800de50802';
+String _$killSwitchHash() => r'b84d9de70fef8bf141b89bc8928c0fe836c8e12a';
 
 /// Whether the Community tab should be shown (after [killSwitchProvider] fetch).
 ///
@@ -97,3 +97,48 @@ final class CommunityTabRemoteEnabledProvider
 
 String _$communityTabRemoteEnabledHash() =>
     r'ed6ce0ddcb75b90a24cf3013c80fd3c4ce8b8b21';
+
+/// Whether the Daily Current Affairs home entry should be shown.
+///
+/// Fails open (`true`) while loading or on read errors. On web, defaults to `true`.
+
+@ProviderFor(dailyCaRemoteEnabled)
+final dailyCaRemoteEnabledProvider = DailyCaRemoteEnabledProvider._();
+
+/// Whether the Daily Current Affairs home entry should be shown.
+///
+/// Fails open (`true`) while loading or on read errors. On web, defaults to `true`.
+
+final class DailyCaRemoteEnabledProvider
+    extends $FunctionalProvider<AsyncValue<bool>, bool, FutureOr<bool>>
+    with $FutureModifier<bool>, $FutureProvider<bool> {
+  /// Whether the Daily Current Affairs home entry should be shown.
+  ///
+  /// Fails open (`true`) while loading or on read errors. On web, defaults to `true`.
+  DailyCaRemoteEnabledProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'dailyCaRemoteEnabledProvider',
+        isAutoDispose: false,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$dailyCaRemoteEnabledHash();
+
+  @$internal
+  @override
+  $FutureProviderElement<bool> $createElement($ProviderPointer pointer) =>
+      $FutureProviderElement(pointer);
+
+  @override
+  FutureOr<bool> create(Ref ref) {
+    return dailyCaRemoteEnabled(ref);
+  }
+}
+
+String _$dailyCaRemoteEnabledHash() =>
+    r'6a7e13e5a11b6fa77fd7fae2cedde607dad64e55';
