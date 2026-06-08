@@ -61,17 +61,14 @@ Future<KillSwitchSnapshot> killSwitch(Ref ref) async {
       communityTabEnabledRemoteConfigKey: true,
       qotdMaxPostsPerDayRemoteConfigKey: 3,
       // YYYY-MM-DD (time defaults to 09:30 local)
-      'prelims_date': '2026-05-24',
+      'prelims_date': '2027-05-23',
       // JSON: { "video_link": "https://...", "message": "...", "version": 1 }
       'home_page_video': '',
     });
     await rc.fetchAndActivate();
     final raw = rc.getString(killSwitchVersionRemoteConfigKey).trim();
     if (raw.isEmpty) {
-      return KillSwitchSnapshot(
-        isActive: false,
-        appVersion: app,
-      );
+      return KillSwitchSnapshot(isActive: false, appVersion: app);
     }
     final required = ReleaseVersion.parse(raw);
     if (required == null) {
@@ -102,8 +99,9 @@ Future<bool> communityTabRemoteEnabled(Ref ref) async {
   }
   await ref.watch(killSwitchProvider.future);
   try {
-    return FirebaseRemoteConfig.instance
-        .getBool(communityTabEnabledRemoteConfigKey);
+    return FirebaseRemoteConfig.instance.getBool(
+      communityTabEnabledRemoteConfigKey,
+    );
   } on Object catch (_) {
     return true;
   }
