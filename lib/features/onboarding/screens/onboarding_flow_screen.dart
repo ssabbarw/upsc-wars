@@ -12,14 +12,9 @@ import '../../../core/analytics/activation_milestones.dart';
 import '../../../core/analytics/analytics.dart';
 import '../../../core/analytics/analytics_events.dart';
 import '../../../core/analytics/screen_flow_analytics.dart';
-import '../../../core/domain/entities/answer_confidence.dart';
 import '../../../core/providers/prefs_provider.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
-import '../../../core/theme/app_spacing.dart';
-import '../../../core/theme/app_text_styles.dart';
-import '../../home/domain/create_get_started_session_use_case.dart';
-import '../../home/widgets/get_started_card.dart';
 
 /// Scale vs ~390dp shortest side (phone-first baseline); clamped for large/small devices.
 double _onbScale(BuildContext context) {
@@ -34,18 +29,16 @@ double _onb(BuildContext context, double designPx) =>
 String _onboardingStepIdForIndex(int i) {
   return switch (i) {
     0 => 'score_story',
-    1 => 'mechanism',
-    2 => 'diagnosis',
-    3 => 'loop',
+    1 => 'loop',
     _ => 'unknown',
   };
 }
 
-/// Four-step first-run onboarding (score story → mechanism → diagnosis → loop).
+/// Two-step first-run onboarding (score story → daily loop), then home + diagnostic sheet.
 class OnboardingFlowScreen extends HookConsumerWidget {
   const OnboardingFlowScreen({super.key});
 
-  static const int _pageCount = 4;
+  static const int _pageCount = 2;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -56,7 +49,6 @@ class OnboardingFlowScreen extends HookConsumerWidget {
     final onboardingFlowCompleted = useRef(false);
     final highestPageIndex = useRef(0);
     final lastPageIndex = useRef(0);
-    final launchingDiagnostic = useState(false);
     final bottom = MediaQuery.paddingOf(context).bottom;
     final isLast = page.value == _pageCount - 1;
     final hPad = _onb(context, 20);
@@ -148,8 +140,6 @@ class OnboardingFlowScreen extends HookConsumerWidget {
                               );
                             },
                           ),
-                          const _MechanismPage(),
-                          const _DiagnosisPage(),
                           const _LoopPage(),
                         ],
                       ),
@@ -172,30 +162,26 @@ class OnboardingFlowScreen extends HookConsumerWidget {
                           if (isLast) ...[
                             SizedBox(height: _onb(context, 10)),
                             FilledButton(
-                              onPressed: launchingDiagnostic.value
-                                  ? null
-                                  : () async {
-                                      launchingDiagnostic.value = true;
-                                      ScreenFlow.logAction(
-                                        ref,
-                                        screenName: ScreenFlow.onboarding,
-                                        actionId: 'get_started',
-                                      );
-                                      await _complete(
-                                        ref,
-                                        context,
-                                        markFlowCompleted: () {
-                                          onboardingFlowCompleted.value = true;
-                                        },
-                                        lastStepIndex: page.value,
-                                        lastStepStartedAt: pageEnteredAt.value,
-                                        onboardingFlowStartedAt:
-                                            onboardingFlowStartedAt.value,
-                                      );
-                                      if (context.mounted) {
-                                        launchingDiagnostic.value = false;
-                                      }
+                              onPressed: () {
+                                ScreenFlow.logAction(
+                                  ref,
+                                  screenName: ScreenFlow.onboarding,
+                                  actionId: 'get_started',
+                                );
+                                unawaited(
+                                  _complete(
+                                    ref,
+                                    context,
+                                    markFlowCompleted: () {
+                                      onboardingFlowCompleted.value = true;
                                     },
+                                    lastStepIndex: page.value,
+                                    lastStepStartedAt: pageEnteredAt.value,
+                                    onboardingFlowStartedAt:
+                                        onboardingFlowStartedAt.value,
+                                  ),
+                                );
+                              },
                               style: FilledButton.styleFrom(
                                 backgroundColor: AppColors.primary,
                                 foregroundColor: AppColors.onPrimary,
@@ -213,22 +199,13 @@ class OnboardingFlowScreen extends HookConsumerWidget {
                                   ),
                                 ),
                               ),
-                              child: launchingDiagnostic.value
-                                  ? SizedBox(
-                                      width: _onb(context, 22),
-                                      height: _onb(context, 22),
-                                      child: const CircularProgressIndicator(
-                                        strokeWidth: 2,
-                                        color: AppColors.onPrimary,
-                                      ),
-                                    )
-                                  : Text(
-                                      'Start your diagnostic',
-                                      style: GoogleFonts.dmSans(
-                                        fontSize: _onb(context, 16),
-                                        fontWeight: FontWeight.w700,
-                                      ),
-                                    ),
+                              child: Text(
+                                'Continue',
+                                style: GoogleFonts.dmSans(
+                                  fontSize: _onb(context, 16),
+                                  fontWeight: FontWeight.w700,
+                                ),
+                              ),
                             ),
                           ],
                         ],
@@ -287,18 +264,9 @@ Future<void> _complete(
   );
   final prefs = await ref.read(prefsServiceProvider.future);
   prefs.patternInterruptOnboardingSeen = true;
+  prefs.getStartedSheetPendingAfterOnboarding = true;
   ref.invalidate(prefsServiceProvider);
-  if (!context.mounted) return;
-
-  final launched = await launchGetStartedDiagnostic(
-    context,
-    ref,
-    subject: CreateGetStartedSessionUseCase.defaultSubject,
-    source: 'onboarding',
-    replaceRoute: true,
-  );
-  if (!context.mounted) return;
-  if (!launched) context.go('/');
+  if (context.mounted) context.go('/');
 }
 
 // ── Shared chrome ─────────────────────────────────────────────────────────
@@ -1374,648 +1342,6 @@ class _DiscoverChevronTile extends StatelessWidget {
 }
 
 // ── Page 2 ────────────────────────────────────────────────────────────────
-
-/// Pixels and typography match [TestEngineScreen] `_OptionRow` +
-/// [ExamOptionConfidenceStrip] (exam mode, after a scored pick).
-/// Fixed: **D** + **Sure** — read-only, single outer card.
-class _OnboardingQuestionConfidenceSample extends StatelessWidget {
-  const _OnboardingQuestionConfidenceSample();
-
-  static const _kQuestion =
-      "Which of the following is/are correctly matched?\n"
-      "1. Article 356 - President's Rule\n"
-      "2. Article 360 - Financial Emergency\n"
-      "3. Article 352 - National Emergency";
-  static const _kOptions = <String>[
-    '1 and 2 only',
-    '1 and 3 only',
-    '2 and 3 only',
-    '1, 2 and 3',
-  ];
-
-  static const int _kSelectedIndex = 3;
-  static const String _kConfidence = AnswerConfidence.verySure;
-
-  @override
-  Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    final divider = isDark
-        ? AppColors.borderDark.withValues(alpha: 0.5)
-        : AppColors.borderLight;
-    return Semantics(
-      label: 'Sample exam question with D and Sure confidence, read-only',
-      child: Container(
-        width: double.infinity,
-        clipBehavior: Clip.antiAlias,
-        decoration: BoxDecoration(
-          color: scheme.surface,
-          borderRadius: BorderRadius.circular(AppRadius.lg),
-          border: Border.all(
-            color: isDark ? AppColors.borderDark : AppColors.borderLight,
-            width: 1,
-          ),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Padding(
-              padding: const EdgeInsets.fromLTRB(
-                AppSpacing.lg,
-                AppSpacing.lg,
-                AppSpacing.lg,
-                AppSpacing.md,
-              ),
-              child: Text(
-                _kQuestion,
-                style: AppTextStyles.question().copyWith(
-                  color: scheme.onSurface,
-                ),
-              ),
-            ),
-            Divider(
-              height: 1,
-              thickness: 1,
-              color: divider,
-            ),
-            for (var i = 0; i < 4; i++)
-              _OnboardingExamOptionRow(
-                keyLabel: 'ABCD'[i],
-                optionText: _kOptions[i],
-                selected: i == _kSelectedIndex,
-                showConfidenceStrip: i == _kSelectedIndex,
-                confidence: _kConfidence,
-                isDark: isDark,
-                scheme: scheme,
-                embedInParentCard: true,
-                showRowBottomDivider: i < 3,
-                readOnly: true,
-                onOptionTap: null,
-                onToggleConfidence: null,
-              ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class _OnboardingExamOptionRow extends StatelessWidget {
-  const _OnboardingExamOptionRow({
-    required this.keyLabel,
-    required this.optionText,
-    required this.selected,
-    required this.showConfidenceStrip,
-    required this.confidence,
-    required this.isDark,
-    required this.scheme,
-    required this.onOptionTap,
-    required this.onToggleConfidence,
-    this.embedInParentCard = false,
-    this.showRowBottomDivider = true,
-    this.readOnly = false,
-  });
-
-  final String keyLabel;
-  final String optionText;
-  final bool selected;
-  final bool showConfidenceStrip;
-  final String? confidence;
-  final bool isDark;
-  final ColorScheme scheme;
-  final VoidCallback? onOptionTap;
-  final void Function(String tier)? onToggleConfidence;
-  final bool embedInParentCard;
-  final bool showRowBottomDivider;
-  final bool readOnly;
-
-  @override
-  Widget build(BuildContext context) {
-    late final Color bg;
-    late final Color fullBorderColor;
-    late final Color text;
-    late final Color badgeBg;
-    late final Color badgeText;
-    late final double fullBorderWidth;
-    if (selected) {
-      bg = isDark ? AppColors.primaryDeep : AppColors.primaryLight;
-      fullBorderColor = AppColors.primary;
-      text = isDark ? AppColors.onPrimary : AppColors.primaryDeep;
-      badgeBg = AppColors.primary;
-      badgeText = AppColors.onPrimary;
-      fullBorderWidth = 2;
-    } else {
-      bg = scheme.surface;
-      fullBorderColor = isDark ? AppColors.borderDark : AppColors.borderLight;
-      text = scheme.onSurface;
-      badgeBg = scheme.surfaceContainerLow;
-      badgeText = scheme.onSurfaceVariant;
-      fullBorderWidth = 0.5;
-    }
-
-    final outerRadius = embedInParentCard
-        ? BorderRadius.zero
-        : BorderRadius.circular(AppRadius.md);
-
-    final boxDecoration = embedInParentCard
-        ? BoxDecoration(
-            color: bg,
-            border: showRowBottomDivider
-                ? Border(
-                    bottom: BorderSide(
-                      color: isDark
-                          ? AppColors.borderDark.withValues(alpha: 0.55)
-                          : AppColors.gray200,
-                      width: 0.5,
-                    ),
-                  )
-                : null,
-          )
-        : BoxDecoration(
-            color: bg,
-            borderRadius: outerRadius,
-            border: Border.all(
-              color: fullBorderColor,
-              width: fullBorderWidth,
-            ),
-          );
-
-    final optionBody = Padding(
-      padding: const EdgeInsets.all(AppSpacing.md),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          SizedBox(
-            width: 40,
-            height: 40,
-            child: Center(
-              child: Container(
-                width: 24,
-                height: 24,
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  color: badgeBg,
-                  borderRadius: BorderRadius.circular(
-                    AppRadius.sm,
-                  ),
-                ),
-                child: Text(
-                  keyLabel,
-                  style: AppTextStyles.labelSm().copyWith(
-                    color: badgeText,
-                  ),
-                ),
-              ),
-            ),
-          ),
-          const SizedBox(width: AppSpacing.md),
-          Expanded(
-            child: Text(
-              optionText,
-              style: AppTextStyles.option().copyWith(color: text),
-            ),
-          ),
-        ],
-      ),
-    );
-
-    final stripDividerColor = fullBorderColor.withValues(
-      alpha: isDark ? 0.45 : 0.35,
-    );
-    final interactive = onOptionTap != null;
-
-    return ClipRRect(
-      borderRadius: outerRadius,
-      child: Material(
-        color: AppColors.transparent,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Container(
-              width: double.infinity,
-              decoration: boxDecoration,
-              child: !interactive
-                  ? optionBody
-                  : Material(
-                      color: AppColors.transparent,
-                      child: InkWell(
-                        onTap: onOptionTap,
-                        borderRadius: showConfidenceStrip
-                            ? const BorderRadius.vertical(
-                                top: Radius.circular(AppRadius.md),
-                              )
-                            : BorderRadius.circular(AppRadius.md),
-                        child: optionBody,
-                      ),
-                    ),
-            ),
-            if (showConfidenceStrip) ...[
-              Divider(
-                height: 1,
-                thickness: 1,
-                color: stripDividerColor,
-              ),
-              _OnboardingExamConfidenceStrip(
-                confidence: confidence,
-                isDark: isDark,
-                scheme: scheme,
-                readOnly: readOnly,
-                onToggle: onToggleConfidence ?? (_) {},
-              ),
-            ],
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-/// Local clone of [ExamOptionConfidenceStrip] (same copy and tier controls).
-class _OnboardingExamConfidenceStrip extends StatelessWidget {
-  const _OnboardingExamConfidenceStrip({
-    required this.confidence,
-    required this.isDark,
-    required this.scheme,
-    required this.onToggle,
-    this.readOnly = false,
-  });
-
-  final String? confidence;
-  final bool isDark;
-  final ColorScheme scheme;
-  final void Function(String tier) onToggle;
-  final bool readOnly;
-
-  @override
-  Widget build(BuildContext context) {
-    final confidenceLine = confidence == null
-        ? 'Confidence: __'
-        : 'Confidence: ${AnswerConfidence.examShortLabel(confidence!)}';
-
-    void tap(String tier) {
-      if (readOnly) return;
-      onToggle(tier);
-    }
-
-    final row = IntrinsicHeight(
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Expanded(
-            child: _OnboardingTierToggle(
-              label: 'Sure',
-              maxLines: 2,
-              selected: confidence == AnswerConfidence.verySure,
-              accent: AppColors.correct,
-              onSurface: AppColors.onPrimary,
-              labelUnselected: isDark
-                  ? AppColors.correctTextDark
-                  : AppColors.correctText,
-              isDark: isDark,
-              interactive: !readOnly,
-              onTap: () => tap(AnswerConfidence.verySure),
-            ),
-          ),
-          const SizedBox(width: AppSpacing.sm),
-          Expanded(
-            child: _OnboardingTierToggle(
-              label: 'Educated\nguess',
-              maxLines: 2,
-              selected: confidence == AnswerConfidence.somewhatSure,
-              accent: AppColors.warning,
-              onSurface: Colors.white,
-              labelUnselected: isDark
-                  ? AppColors.warningTextDark
-                  : AppColors.warningText,
-              isDark: isDark,
-              interactive: !readOnly,
-              onTap: () => tap(AnswerConfidence.somewhatSure),
-            ),
-          ),
-          const SizedBox(width: AppSpacing.sm),
-          Expanded(
-            child: _OnboardingTierToggle(
-              label: 'Pure guess',
-              maxLines: 2,
-              selected: confidence == AnswerConfidence.guessing,
-              accent: AppColors.info,
-              onSurface: AppColors.onPrimary,
-              labelUnselected: isDark
-                  ? AppColors.infoTextDark
-                  : AppColors.infoText,
-              isDark: isDark,
-              interactive: !readOnly,
-              onTap: () => tap(AnswerConfidence.guessing),
-            ),
-          ),
-        ],
-      ),
-    );
-
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(
-        AppSpacing.md,
-        AppSpacing.sm,
-        AppSpacing.md,
-        AppSpacing.md,
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            confidenceLine,
-            style: AppTextStyles.caption().copyWith(
-              color: confidence == null
-                  ? scheme.onSurfaceVariant
-                  : scheme.primary,
-              fontWeight: FontWeight.w700,
-              height: 1.25,
-            ),
-          ),
-          const SizedBox(height: AppSpacing.sm),
-          row,
-        ],
-      ),
-    );
-  }
-}
-
-/// Matches [ExamOptionConfidenceStrip]’s private [_TierToggle].
-class _OnboardingTierToggle extends StatelessWidget {
-  const _OnboardingTierToggle({
-    required this.label,
-    required this.maxLines,
-    required this.selected,
-    required this.accent,
-    required this.onSurface,
-    required this.labelUnselected,
-    required this.isDark,
-    required this.onTap,
-    this.interactive = true,
-  });
-
-  final String label;
-  final int maxLines;
-  final bool selected;
-  final Color accent;
-  final Color onSurface;
-  final Color labelUnselected;
-  final bool isDark;
-  final VoidCallback onTap;
-  final bool interactive;
-
-  @override
-  Widget build(BuildContext context) {
-    final borderColor = selected
-        ? accent
-        : accent.withValues(alpha: isDark ? 0.38 : 0.42);
-    final border = Border.all(color: borderColor, width: selected ? 2.5 : 1);
-    return Material(
-      color: AppColors.transparent,
-      child: InkWell(
-        onTap: interactive ? onTap : null,
-        borderRadius: BorderRadius.circular(AppRadius.sm),
-        child: AnimatedContainer(
-          duration: const Duration(milliseconds: 180),
-          curve: Curves.easeOutCubic,
-          width: double.infinity,
-          decoration: BoxDecoration(
-            color: selected
-                ? accent
-                : accent.withValues(alpha: isDark ? 0.07 : 0.06),
-            borderRadius: BorderRadius.circular(AppRadius.sm),
-            border: border,
-            boxShadow: selected
-                ? [
-                    BoxShadow(
-                      color: accent.withValues(alpha: isDark ? 0.42 : 0.35),
-                      blurRadius: 10,
-                      offset: const Offset(0, 3),
-                    ),
-                  ]
-                : null,
-          ),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(
-              vertical: AppSpacing.sm,
-              horizontal: AppSpacing.xs,
-            ),
-            child: Align(
-              alignment: Alignment.center,
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  if (selected)
-                    Padding(
-                      padding: const EdgeInsets.only(right: 6),
-                      child: Icon(
-                        Icons.check_rounded,
-                        size: 18,
-                        color: onSurface,
-                      ),
-                    ),
-                  Expanded(
-                    child: Text(
-                      label,
-                      textAlign: TextAlign.center,
-                      maxLines: maxLines,
-                      overflow: TextOverflow.ellipsis,
-                      style: AppTextStyles.labelSm().copyWith(
-                        color: selected ? onSurface : labelUnselected,
-                        fontWeight: selected
-                            ? FontWeight.w800
-                            : FontWeight.w500,
-                        height: 1.2,
-                        fontSize: 11,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class _MechanismPage extends StatelessWidget {
-  const _MechanismPage();
-
-  @override
-  Widget build(BuildContext context) {
-    return _onboardingFittedPage(
-      padding: EdgeInsets.fromLTRB(
-        _onb(context, 22),
-        _onb(context, 8),
-        _onb(context, 22),
-        _onb(context, 4),
-      ),
-      children: [
-        Text(
-          'HOW IT WORKS',
-          style: GoogleFonts.dmSans(
-            fontSize: _onb(context, 24),
-            fontWeight: FontWeight.w800,
-            letterSpacing: 0.4,
-            height: 1.15,
-            color: AppColors.primaryDark,
-          ),
-        ),
-        SizedBox(height: _onb(context, 6)),
-        Text(
-          'Pick an option, then how sure you are.',
-          style: GoogleFonts.dmSans(
-            fontSize: _onb(context, 15),
-            height: 1.3,
-            fontWeight: FontWeight.w600,
-            letterSpacing: -0.2,
-            color: AppColors.onSurfaceLight,
-          ),
-        ),
-        SizedBox(height: _onb(context, 6)),
-        Text(
-          'We layer that with your attempts to surface patterns: traps, overconfidence, weak areas.',
-          style: GoogleFonts.dmSans(
-            fontSize: _onb(context, 14),
-            height: 1.4,
-            fontWeight: FontWeight.w400,
-            color: AppColors.onSurfaceVariantLight,
-          ),
-        ),
-        SizedBox(height: _onb(context, 8)),
-        const _OnboardingQuestionConfidenceSample(),
-        SizedBox(height: _onb(context, 4)),
-        SizedBox(height: _onb(context, 6)),
-      ],
-    );
-  }
-}
-
-// ── Page 3 ────────────────────────────────────────────────────────────────
-
-class _DiagnosisPage extends StatelessWidget {
-  const _DiagnosisPage();
-
-  @override
-  Widget build(BuildContext context) {
-    return _onboardingFittedPage(
-      padding: EdgeInsets.fromLTRB(
-        _onb(context, 22),
-        _onb(context, 6),
-        _onb(context, 22),
-        _onb(context, 2),
-      ),
-      children: [
-        Text('DEEP DIAGNOSIS', style: _eyebrow(context, false)),
-        SizedBox(height: _onb(context, 8)),
-        Text(
-          'Not just answers. Real exam intelligence.',
-          style: _headline(context, false),
-        ),
-        SizedBox(height: _onb(context, 6)),
-        Text(
-          'Every question comes with:',
-          style: GoogleFonts.dmSans(
-            fontSize: _onb(context, 15),
-            height: 1.3,
-            fontWeight: FontWeight.w600,
-            color: AppColors.onSurfaceLight,
-          ),
-        ),
-        SizedBox(height: _onb(context, 4)),
-        const _FeatureLine(
-          icon: Icons.hub_outlined,
-          text: 'Strong distractor and trap-pattern summaries',
-        ),
-        Divider(height: 1, thickness: 0.5, color: AppColors.borderLight),
-        const _FeatureLine(
-          icon: Icons.analytics_outlined,
-          text: 'Confidence-tier review after every session',
-        ),
-        Divider(height: 1, thickness: 0.5, color: AppColors.borderLight),
-        const _FeatureLine(
-          icon: Icons.adjust_outlined,
-          text: 'Weak areas mapped to subtopics you keep missing',
-        ),
-        Divider(height: 1, thickness: 0.5, color: AppColors.borderLight),
-        const _FeatureLine(
-          icon: Icons.refresh_rounded,
-          text: 'Revision queue that prioritises real risk',
-        ),
-        SizedBox(height: _onb(context, 6)),
-        DecoratedBox(
-          decoration: BoxDecoration(
-            color: AppColors.primaryDeep,
-            borderRadius: BorderRadius.circular(AppRadius.xl),
-          ),
-          child: Padding(
-            padding: EdgeInsets.all(_onb(context, 10)),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Icon(
-                  Icons.school_outlined,
-                  color: AppColors.correctTextDark,
-                  size: _onb(context, 24),
-                ),
-                SizedBox(width: _onb(context, 10)),
-                Expanded(
-                  child: Text(
-                    'You don\'t just solve questions. You learn how UPSC traps aspirants.',
-                    style: GoogleFonts.dmSans(
-                      fontSize: _onb(context, 15),
-                      height: 1.4,
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.onSurfaceDark,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-}
-
-class _FeatureLine extends StatelessWidget {
-  const _FeatureLine({required this.icon, required this.text});
-
-  final IconData icon;
-  final String text;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(vertical: _onb(context, 12)),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Icon(icon, size: _onb(context, 22), color: AppColors.primary),
-          SizedBox(width: _onb(context, 12)),
-          Expanded(
-            child: Text(
-              text,
-              style: GoogleFonts.dmSans(
-                fontSize: _onb(context, 15),
-                height: 1.45,
-                fontWeight: FontWeight.w400,
-                color: AppColors.onSurfaceLight,
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-// ── Page 4 ────────────────────────────────────────────────────────────────
 
 class _LoopPage extends StatelessWidget {
   const _LoopPage();

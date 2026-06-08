@@ -36,6 +36,10 @@ abstract final class PrefKeys {
   static const patternInterruptOnboardingSeen =
       'pattern_interrupt_onboarding_seen_v1';
 
+  /// After onboarding, auto-open the Get Started subject sheet once on home.
+  static const getStartedSheetPendingAfterOnboarding =
+      'get_started_sheet_pending_after_onboarding_v1';
+
   /// Shown once: session review share button coach mark.
   static const sessionReviewShareCoachSeen =
       'session_review_share_coach_seen_v1';
@@ -166,6 +170,11 @@ class PrefsService {
       _p.getBool(PrefKeys.patternInterruptOnboardingSeen) ?? false;
   set patternInterruptOnboardingSeen(bool v) =>
       _p.setBool(PrefKeys.patternInterruptOnboardingSeen, v);
+
+  bool get getStartedSheetPendingAfterOnboarding =>
+      _p.getBool(PrefKeys.getStartedSheetPendingAfterOnboarding) ?? false;
+  set getStartedSheetPendingAfterOnboarding(bool v) =>
+      _p.setBool(PrefKeys.getStartedSheetPendingAfterOnboarding, v);
 
   bool get sessionReviewShareCoachSeen =>
       _p.getBool(PrefKeys.sessionReviewShareCoachSeen) ?? false;

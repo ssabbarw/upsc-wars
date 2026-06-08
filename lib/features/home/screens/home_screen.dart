@@ -14,6 +14,7 @@ import '../../../core/domain/entities/session_config.dart';
 import '../../../core/domain/entities/subject_info.dart';
 import '../../../core/providers/catalog_providers.dart';
 import '../../../core/providers/app_bootstrap.dart';
+import '../../../core/providers/prefs_provider.dart';
 import '../../../core/providers/kill_switch_provider.dart';
 import '../../../core/providers/quick_practice_providers.dart';
 import '../../../core/responsive/app_breakpoints.dart';
@@ -27,7 +28,6 @@ import '../providers/auth_providers.dart';
 import '../providers/home_activation_provider.dart';
 import '../widgets/get_started_card.dart';
 import '../widgets/recovery_plan_section.dart';
-import '../../daily_ca/widgets/daily_ca_home_card.dart';
 import '../../../shared/widgets/push_denied_banner.dart';
 import '../../../shared/theme/dark_mode_toggle.dart';
 import '../../../shared/widgets/app_update_kill_switch_overlay.dart';
@@ -71,6 +71,38 @@ class HomeScreen extends HookConsumerWidget {
         ref.invalidate(homeActivationProvider);
       });
       return null;
+    }, const []);
+
+    final getStartedSheetScheduled = useRef(false);
+    useEffect(() {
+      if (getStartedSheetScheduled.value) return null;
+      var cancelled = false;
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        unawaited(() async {
+          final prefs = await ref.read(prefsServiceProvider.future);
+          if (cancelled || !prefs.getStartedSheetPendingAfterOnboarding) {
+            return;
+          }
+          final activation = await ref.read(homeActivationProvider.future);
+          if (cancelled || activation.activationComplete) {
+            prefs.getStartedSheetPendingAfterOnboarding = false;
+            return;
+          }
+          if (!context.mounted || cancelled) return;
+          getStartedSheetScheduled.value = true;
+          prefs.getStartedSheetPendingAfterOnboarding = false;
+          ref.invalidate(prefsServiceProvider);
+          await Future<void>.delayed(const Duration(milliseconds: 700));
+          if (!context.mounted || cancelled) return;
+          await showGetStartedDiagnosticIntroSheet(
+            context,
+            postOnboarding: true,
+          );
+        }());
+      });
+      return () {
+        cancelled = true;
+      };
     }, const []);
 
     useEffect(() {
@@ -437,23 +469,6 @@ class HomeScreen extends HookConsumerWidget {
                         children: [
                           HomePageVideoBanner(borderColor: borderColor),
                           const SizedBox(height: AppSpacing.md),
-                          Consumer(
-                            builder: (context, ref, _) {
-                              final dailyCaEnabled = ref
-                                  .watch(dailyCaRemoteEnabledProvider)
-                                  .maybeWhen(data: (v) => v, orElse: () => true);
-                              if (!dailyCaEnabled) {
-                                return const SizedBox.shrink();
-                              }
-                              return Column(
-                                crossAxisAlignment: CrossAxisAlignment.stretch,
-                                children: [
-                                  DailyCaHomeCard(borderColor: borderColor),
-                                  const SizedBox(height: AppSpacing.md),
-                                ],
-                              );
-                            },
-                          ),
                           _PyqYearCarousel(
                             borderColor: borderColor,
                             years: pyqYears,
@@ -897,37 +912,37 @@ class _SubjectGrid extends ConsumerWidget {
           ),
           const SizedBox(height: AppSpacing.sm),
           subjectsAsync.when(
-          loading: () => _SubjectGridSkeleton(borderColor: borderColor),
-          error: (_, _) => const SizedBox.shrink(),
-          data: (subjects) => LayoutBuilder(
-            builder: (context, constraints) {
-              final cols = AppBreakpoints.gridColumns(constraints.maxWidth);
-              return GridView.builder(
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: cols,
-                  mainAxisSpacing: AppSpacing.sm,
-                  crossAxisSpacing: AppSpacing.sm,
-                  childAspectRatio: 1.55,
-                ),
-                itemCount: subjects.length,
-                itemBuilder: (context, i) {
-                  final s = subjects[i];
-                  final def = SubjectConstants.bySlug(s.subject);
-                  final accent = _accentColors[i % _accentColors.length];
-                  return _SubjectGridCard(
-                    info: s,
-                    icon: def?.materialIcon ?? Icons.school_outlined,
-                    accent: accent,
-                    borderColor: borderColor,
-                  );
-                },
-              );
-            },
+            loading: () => _SubjectGridSkeleton(borderColor: borderColor),
+            error: (_, _) => const SizedBox.shrink(),
+            data: (subjects) => LayoutBuilder(
+              builder: (context, constraints) {
+                final cols = AppBreakpoints.gridColumns(constraints.maxWidth);
+                return GridView.builder(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: cols,
+                    mainAxisSpacing: AppSpacing.sm,
+                    crossAxisSpacing: AppSpacing.sm,
+                    childAspectRatio: 1.55,
+                  ),
+                  itemCount: subjects.length,
+                  itemBuilder: (context, i) {
+                    final s = subjects[i];
+                    final def = SubjectConstants.bySlug(s.subject);
+                    final accent = _accentColors[i % _accentColors.length];
+                    return _SubjectGridCard(
+                      info: s,
+                      icon: def?.materialIcon ?? Icons.school_outlined,
+                      accent: accent,
+                      borderColor: borderColor,
+                    );
+                  },
+                );
+              },
+            ),
           ),
-        ),
-      ],
+        ],
       ),
     );
   }
@@ -1183,7 +1198,7 @@ class _QuickPracticeCard extends HookConsumerWidget {
             language: lang,
           ),
         );
-        if (context.mounted) context.push('/test/$id'); 
+        if (context.mounted) context.push('/test/$id');
       } finally {
         loading.value = false;
       }

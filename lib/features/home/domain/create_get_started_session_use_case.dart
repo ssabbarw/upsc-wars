@@ -23,7 +23,35 @@ class CreateGetStartedSessionUseCase {
 
   static const analyticsKey = 'get_started_diagnostic';
   static const defaultSubject = 'Polity';
+
+  /// Mixed-subject diagnostic (same bank as battles / open-challenge misc).
+  static const mixedSubject = 'misc';
   static const questionCount = 7;
+
+  Future<String> executeMixed() async {
+    final attempted = await userDb.sessionQuestionsDao
+        .getAllAttemptedQuestionUuids();
+    final picked = await userDb.questionsDao.getUnseenFirstRandomMixed(
+      limit: questionCount,
+      attemptedQuestionUuids: attempted,
+    );
+    if (picked.isEmpty) {
+      throw StateError('No questions available for diagnostic');
+    }
+
+    return createSession.execute(
+      SessionConfig(
+        subject: mixedSubject,
+        mode: 'exam',
+        questionCount: picked.length,
+        isTimed: true,
+        timeLimitSecs: picked.length * kDebugSecondsPerQuestion,
+        language: normalizeAppLanguage(prefsService.language),
+        specificQuestionUuids: picked.map((q) => q.uuid).toList(),
+        analyticsFeatureKey: analyticsKey,
+      ),
+    );
+  }
 
   Future<String> execute({required String subject}) async {
     final attempted = await userDb.sessionQuestionsDao

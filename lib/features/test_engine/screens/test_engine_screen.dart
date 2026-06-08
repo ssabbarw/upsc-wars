@@ -1074,7 +1074,6 @@ class _QuestionArea extends HookConsumerWidget {
           ),
           QuestionTableView(table: tableData),
         ],
-        DebugCorrectAnswerBanner(question: question),
       ],
     );
 
@@ -1136,6 +1135,10 @@ class _QuestionArea extends HookConsumerWidget {
               ? null
               : () => onSelectOption('d'),
         ),
+        if (!explanationVisible) ...[
+          const SizedBox(height: AppSpacing.sm),
+          DebugCorrectAnswerBanner(question: question),
+        ],
         if (mode == 'learning') ...[
           const SizedBox(height: AppSpacing.lg),
           AnimatedSwitcher(
