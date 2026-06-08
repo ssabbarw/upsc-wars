@@ -193,6 +193,15 @@ service cloud.firestore {
       }
     }
 
+    /// Daily current-affairs MCQs: `daily_mcqs/{year}/{month}/{day}` (read-only for clients).
+    /// Public read — same as share links; pipeline writes via Admin SDK.
+    match /daily_mcqs/{year} {
+      match /{month}/{day} {
+        allow read: if true;
+        allow write: if false;
+      }
+    }
+
     // Authenticated users: all other collections (tighten per collection before prod if needed).
     match /{document=**} {
       allow read, write: if signedIn() && !isUsersRootDoc(database);

@@ -18,6 +18,8 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../home/domain/create_get_started_session_use_case.dart';
+import '../../home/widgets/get_started_card.dart';
 
 /// Scale vs ~390dp shortest side (phone-first baseline); clamped for large/small devices.
 double _onbScale(BuildContext context) {
@@ -54,6 +56,7 @@ class OnboardingFlowScreen extends HookConsumerWidget {
     final onboardingFlowCompleted = useRef(false);
     final highestPageIndex = useRef(0);
     final lastPageIndex = useRef(0);
+    final launchingDiagnostic = useState(false);
     final bottom = MediaQuery.paddingOf(context).bottom;
     final isLast = page.value == _pageCount - 1;
     final hPad = _onb(context, 20);
@@ -169,26 +172,30 @@ class OnboardingFlowScreen extends HookConsumerWidget {
                           if (isLast) ...[
                             SizedBox(height: _onb(context, 10)),
                             FilledButton(
-                              onPressed: () {
-                                ScreenFlow.logAction(
-                                  ref,
-                                  screenName: ScreenFlow.onboarding,
-                                  actionId: 'get_started',
-                                );
-                                unawaited(
-                                  _complete(
-                                    ref,
-                                    context,
-                                    markFlowCompleted: () {
-                                      onboardingFlowCompleted.value = true;
+                              onPressed: launchingDiagnostic.value
+                                  ? null
+                                  : () async {
+                                      launchingDiagnostic.value = true;
+                                      ScreenFlow.logAction(
+                                        ref,
+                                        screenName: ScreenFlow.onboarding,
+                                        actionId: 'get_started',
+                                      );
+                                      await _complete(
+                                        ref,
+                                        context,
+                                        markFlowCompleted: () {
+                                          onboardingFlowCompleted.value = true;
+                                        },
+                                        lastStepIndex: page.value,
+                                        lastStepStartedAt: pageEnteredAt.value,
+                                        onboardingFlowStartedAt:
+                                            onboardingFlowStartedAt.value,
+                                      );
+                                      if (context.mounted) {
+                                        launchingDiagnostic.value = false;
+                                      }
                                     },
-                                    lastStepIndex: page.value,
-                                    lastStepStartedAt: pageEnteredAt.value,
-                                    onboardingFlowStartedAt:
-                                        onboardingFlowStartedAt.value,
-                                  ),
-                                );
-                              },
                               style: FilledButton.styleFrom(
                                 backgroundColor: AppColors.primary,
                                 foregroundColor: AppColors.onPrimary,
@@ -206,13 +213,22 @@ class OnboardingFlowScreen extends HookConsumerWidget {
                                   ),
                                 ),
                               ),
-                              child: Text(
-                                'Get started',
-                                style: GoogleFonts.dmSans(
-                                  fontSize: _onb(context, 16),
-                                  fontWeight: FontWeight.w700,
-                                ),
-                              ),
+                              child: launchingDiagnostic.value
+                                  ? SizedBox(
+                                      width: _onb(context, 22),
+                                      height: _onb(context, 22),
+                                      child: const CircularProgressIndicator(
+                                        strokeWidth: 2,
+                                        color: AppColors.onPrimary,
+                                      ),
+                                    )
+                                  : Text(
+                                      'Start your diagnostic',
+                                      style: GoogleFonts.dmSans(
+                                        fontSize: _onb(context, 16),
+                                        fontWeight: FontWeight.w700,
+                                      ),
+                                    ),
                             ),
                           ],
                         ],
@@ -272,7 +288,17 @@ Future<void> _complete(
   final prefs = await ref.read(prefsServiceProvider.future);
   prefs.patternInterruptOnboardingSeen = true;
   ref.invalidate(prefsServiceProvider);
-  if (context.mounted) context.go('/');
+  if (!context.mounted) return;
+
+  final launched = await launchGetStartedDiagnostic(
+    context,
+    ref,
+    subject: CreateGetStartedSessionUseCase.defaultSubject,
+    source: 'onboarding',
+    replaceRoute: true,
+  );
+  if (!context.mounted) return;
+  if (!launched) context.go('/');
 }
 
 // ── Shared chrome ─────────────────────────────────────────────────────────

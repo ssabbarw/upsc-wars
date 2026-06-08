@@ -651,11 +651,14 @@ final class GetStartedCardShownEvent extends AnalyticsEvent {
 
 /// **User tapped Get Started** on home.
 ///
-/// **GA4:** `get_started_card_tapped` with optional `subject` when picked.
+/// **GA4:** `get_started_card_tapped` with optional `subject`, `source`.
 final class GetStartedCardTappedEvent extends AnalyticsEvent {
-  const GetStartedCardTappedEvent({this.subject});
+  const GetStartedCardTappedEvent({this.subject, this.source});
 
   final String? subject;
+
+  /// e.g. `onboarding`, `home_card`, `subject_sheet`.
+  final String? source;
 }
 
 /// **Did You Know card shown** on home.

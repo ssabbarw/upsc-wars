@@ -105,6 +105,17 @@ class DailyCaScreen extends HookConsumerWidget {
             ),
           );
         }
+      } on DailyCaPermissionDeniedException {
+        if (context.mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(
+                'Firestore access denied. Deploy latest firestore.rules, then retry.',
+                style: AppTextStyles.bodySm(),
+              ),
+            ),
+          );
+        }
       } catch (e) {
         if (context.mounted) {
           ScaffoldMessenger.of(context).showSnackBar(

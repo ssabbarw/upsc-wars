@@ -15,6 +15,56 @@ import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../domain/create_get_started_session_use_case.dart';
 
+/// Creates the 7-question Get Started diagnostic (returns session id or null).
+Future<String?> createGetStartedDiagnosticSession(
+  WidgetRef ref, {
+  required String subject,
+  String source = 'home_card',
+}) async {
+  unawaited(
+    Analytics.track(
+      ref,
+      GetStartedCardTappedEvent(subject: subject, source: source),
+    ),
+  );
+  try {
+    final uc = await ref.read(createGetStartedSessionUseCaseProvider.future);
+    return await uc.execute(subject: subject);
+  } on Object {
+    return null;
+  }
+}
+
+/// Navigates into the Get Started diagnostic test. Returns false on failure.
+Future<bool> launchGetStartedDiagnostic(
+  BuildContext context,
+  WidgetRef ref, {
+  required String subject,
+  String source = 'home_card',
+  bool replaceRoute = false,
+}) async {
+  final sessionId = await createGetStartedDiagnosticSession(
+    ref,
+    subject: subject,
+    source: source,
+  );
+  if (!context.mounted) return false;
+  if (sessionId == null) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
+        content: Text('Something went wrong. Please try again.'),
+      ),
+    );
+    return false;
+  }
+  if (replaceRoute) {
+    context.go('/test/$sessionId');
+  } else {
+    context.push('/test/$sessionId');
+  }
+  return true;
+}
+
 Future<void> showGetStartedSubjectSheet(BuildContext context) {
   return showModalBottomSheet<void>(
     context: context,
@@ -151,25 +201,12 @@ class _GetStartedSubjectSheet extends ConsumerWidget {
     String subject,
   ) async {
     Navigator.pop(context);
-    unawaited(
-      Analytics.track(
-        ref,
-        GetStartedCardTappedEvent(subject: subject),
-      ),
+    await launchGetStartedDiagnostic(
+      context,
+      ref,
+      subject: subject,
+      source: 'subject_sheet',
     );
-    try {
-      final uc = await ref.read(createGetStartedSessionUseCaseProvider.future);
-      final id = await uc.execute(subject: subject);
-      if (context.mounted) context.push('/test/$id');
-    } catch (e) {
-      if (context.mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('Something went wrong. Please try again.'),
-          ),
-        );
-      }
-    }
   }
 
   @override
