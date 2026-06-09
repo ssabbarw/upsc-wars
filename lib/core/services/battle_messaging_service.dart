@@ -252,6 +252,44 @@ class BattleMessagingService {
       s == AuthorizationStatus.authorized ||
       s == AuthorizationStatus.provisional;
 
+  static final Set<VoidCallback> _notificationPermissionChangeListeners = {};
+
+  static void addNotificationPermissionChangeListener(VoidCallback listener) {
+    _notificationPermissionChangeListeners.add(listener);
+  }
+
+  static void removeNotificationPermissionChangeListener(VoidCallback listener) {
+    _notificationPermissionChangeListeners.remove(listener);
+  }
+
+  static void _notifyNotificationPermissionMayHaveChanged() {
+    for (final listener
+        in List<VoidCallback>.from(_notificationPermissionChangeListeners)) {
+      listener();
+    }
+  }
+
+  /// Whether the user can receive notifications (or no runtime prompt is needed).
+  static Future<bool> notificationsAreEnabled() async {
+    if (kIsWeb) return true;
+    if (defaultTargetPlatform == TargetPlatform.android) {
+      final sdkInt = (await DeviceInfoPlugin().androidInfo).version.sdkInt;
+      if (sdkInt < 33) return true;
+      return await AppLocalNotificationsService.androidNotificationsEnabled() ==
+          true;
+    }
+    final settings = await FirebaseMessaging.instance.getNotificationSettings();
+    return notificationAuthorizationAllowsPush(settings.authorizationStatus);
+  }
+
+  /// Community/home banner: only when permission was explicitly denied.
+  static Future<bool> shouldShowPushDeniedBanner() async {
+    if (kIsWeb) return false;
+    if (await notificationsAreEnabled()) return false;
+    final status = await notificationAuthorizationStatus();
+    return status == AuthorizationStatus.denied;
+  }
+
   /// Stable label for [AnalyticsEvent] payloads (not i18n).
   static String notificationAuthorizationStatusLabel(AuthorizationStatus s) {
     if (kIsWeb) return 'web_authorized';
@@ -263,9 +301,25 @@ class BattleMessagingService {
     };
   }
 
-  /// Prompts only when the user has not been asked yet ([AuthorizationStatus.notDetermined]).
+  /// Prompts when notifications are not yet allowed.
+  ///
+  /// iOS: only when [AuthorizationStatus.notDetermined].
+  /// Android 13+: when POST_NOTIFICATIONS is not granted (treats pre-prompt as
+  /// not-yet-asked, not denied — [notificationAuthorizationStatus] cannot distinguish).
   static Future<void> requestPushAuthorizationIfNotDetermined() async {
     if (kIsWeb) return;
+
+    if (defaultTargetPlatform == TargetPlatform.android) {
+      final sdkInt = (await DeviceInfoPlugin().androidInfo).version.sdkInt;
+      if (sdkInt >= 33) {
+        final enabled =
+            await AppLocalNotificationsService.androidNotificationsEnabled();
+        if (enabled == true) return;
+      }
+      await requestPushAuthorizationAndSync();
+      return;
+    }
+
     final status = await notificationAuthorizationStatus();
     if (status != AuthorizationStatus.notDetermined) return;
     await requestPushAuthorizationAndSync();
@@ -315,6 +369,7 @@ class BattleMessagingService {
         );
         // #endregion
         await FcmTokenSyncService.syncForCurrentUser();
+        _notifyNotificationPermissionMayHaveChanged();
         return settings.authorizationStatus;
       } finally {
         _pushPermissionRequestInFlight = null;

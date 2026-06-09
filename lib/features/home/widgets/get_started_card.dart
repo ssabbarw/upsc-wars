@@ -177,8 +177,9 @@ class GetStartedCard extends HookConsumerWidget {
                           borderRadius: BorderRadius.circular(AppRadius.md),
                         ),
                       ),
-                      onPressed: () =>
-                          showGetStartedDiagnosticIntroSheet(context),
+                      onPressed: () => unawaited(
+                        showGetStartedDiagnosticIntroSheet(context),
+                      ),
                       icon: const Icon(Icons.arrow_forward_rounded, size: 18),
                       label: const Text('Let\u2019s go'),
                     ),
