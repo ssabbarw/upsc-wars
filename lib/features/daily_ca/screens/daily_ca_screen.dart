@@ -27,7 +27,10 @@ class DailyCaScreen extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
-    final minDate = DailyCaSchedule.calendarMinDate;
+    final minDate = ref.watch(dailyCaCalendarMinDateProvider).maybeWhen(
+      data: (date) => date,
+      orElse: () => DailyCaSchedule.defaultCalendarMinDate,
+    );
     final minMonth = DailyCaSchedule.minMonthForDate(minDate);
     final istNow = DailyCaSchedule.nowIst();
     final todayIso = DailyCaSchedule.formatIsoDate(istNow);

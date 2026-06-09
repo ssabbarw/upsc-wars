@@ -6,6 +6,8 @@ import 'package:upsc_wars/features/results/domain/session_insight_case.dart';
 SessionResult _result({
   int correct = 0,
   int wrong = 0,
+  int? questionCount,
+  int unattempted = 0,
   int sureTotal = 0,
   int sureCorrect = 0,
   int eduTotal = 0,
@@ -14,6 +16,7 @@ SessionResult _result({
   int pureCorrect = 0,
   String mode = 'exam',
 }) {
+  final total = questionCount ?? (correct + wrong + unattempted);
   return SessionResult(
     sessionId: 's1',
     subject: 'polity',
@@ -23,10 +26,10 @@ SessionResult _result({
     createdAt: DateTime.utc(2026, 1, 1),
     completedAt: DateTime.utc(2026, 1, 1),
     timeLimitSecs: 600,
-    questionCount: correct + wrong,
+    questionCount: total,
     correct: correct,
     wrong: wrong,
-    unattempted: 0,
+    unattempted: unattempted,
     timedOut: 0,
     accuracy: 0,
     accuracyTier: 'low',
@@ -146,7 +149,7 @@ void main() {
       );
     });
 
-    test('E when no wrong answers', () {
+    test('E when no wrong answers and test substantially complete', () {
       final r = _result(
         correct: 5,
         sureTotal: 5,
@@ -160,6 +163,74 @@ void main() {
         ),
         SessionInsightCase.e,
       );
+    });
+
+    test('G when no wrong answers but mostly unattempted', () {
+      final r = _result(
+        correct: 1,
+        unattempted: 10,
+        sureTotal: 1,
+        sureCorrect: 1,
+      );
+      expect(
+        classifySessionInsight(
+          result: r,
+          confidenceTrackingEnabled: true,
+          confidenceCoverage: 1.0,
+        ),
+        SessionInsightCase.gIncomplete,
+      );
+    });
+
+    test('G when no wrong answers but below completion threshold', () {
+      final r = _result(
+        correct: 2,
+        unattempted: 8,
+        sureTotal: 2,
+        sureCorrect: 2,
+      );
+      expect(
+        classifySessionInsight(
+          result: r,
+          confidenceTrackingEnabled: true,
+          confidenceCoverage: 1.0,
+        ),
+        SessionInsightCase.gIncomplete,
+      );
+    });
+
+    test('E when no wrong answers and most questions attempted', () {
+      final r = _result(
+        correct: 6,
+        unattempted: 5,
+        sureTotal: 6,
+        sureCorrect: 6,
+      );
+      expect(
+        classifySessionInsight(
+          result: r,
+          confidenceTrackingEnabled: true,
+          confidenceCoverage: 1.0,
+        ),
+        SessionInsightCase.e,
+      );
+    });
+  });
+
+  group('sessionIsCompleteEnoughForExcellent', () {
+    test('false when only one of many attempted', () {
+      final r = _result(correct: 1, unattempted: 10);
+      expect(sessionIsCompleteEnoughForExcellent(r), isFalse);
+    });
+
+    test('true when every question attempted', () {
+      final r = _result(correct: 5);
+      expect(sessionIsCompleteEnoughForExcellent(r), isTrue);
+    });
+
+    test('true when at least half attempted on longer test', () {
+      final r = _result(correct: 6, unattempted: 5);
+      expect(sessionIsCompleteEnoughForExcellent(r), isTrue);
     });
   });
 

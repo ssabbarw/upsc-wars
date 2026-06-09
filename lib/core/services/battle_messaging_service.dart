@@ -78,6 +78,19 @@ class BattleMessagingService {
           r.go('/battle/join/$sessionId');
         });
       };
+      AppLocalNotificationsService.onNoTestReminderTap = () {
+        logGlobalAnalytics(
+          const AppNotificationOpenEvent(
+            channel: 'local',
+            kind: 'no_test_reminder',
+          ),
+        );
+        final r = _router;
+        if (r == null) return;
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          r.go('/');
+        });
+      };
       await AppLocalNotificationsService.ensureInitialized();
     }
 
@@ -248,6 +261,14 @@ class BattleMessagingService {
       AuthorizationStatus.notDetermined => 'not_determined',
       AuthorizationStatus.provisional => 'provisional',
     };
+  }
+
+  /// Prompts only when the user has not been asked yet ([AuthorizationStatus.notDetermined]).
+  static Future<void> requestPushAuthorizationIfNotDetermined() async {
+    if (kIsWeb) return;
+    final status = await notificationAuthorizationStatus();
+    if (status != AuthorizationStatus.notDetermined) return;
+    await requestPushAuthorizationAndSync();
   }
 
   /// System notification permission + token sync (call after user-facing prompt).

@@ -8,6 +8,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../../core/analytics/analytics.dart';
 import '../../../core/analytics/analytics_events.dart';
 import '../../../core/layout/system_insets.dart';
+import '../../../core/services/battle_messaging_service.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
@@ -63,11 +64,13 @@ Future<bool> launchGetStartedDiagnostic(
 }
 
 /// What to expect before the first mixed-subject diagnostic.
-Future<void> showGetStartedDiagnosticIntroSheet(
+///
+/// Returns `true` if the user started the diagnostic; `false` or `null` if dismissed.
+Future<bool?> showGetStartedDiagnosticIntroSheet(
   BuildContext context, {
   bool postOnboarding = false,
-}) {
-  return showModalBottomSheet<void>(
+}) async {
+  final started = await showModalBottomSheet<bool>(
     context: context,
     useRootNavigator: true,
     isScrollControlled: true,
@@ -81,6 +84,10 @@ Future<void> showGetStartedDiagnosticIntroSheet(
       child: _GetStartedDiagnosticIntroSheet(postOnboarding: postOnboarding),
     ),
   );
+  if (started != true) {
+    await BattleMessagingService.requestPushAuthorizationIfNotDetermined();
+  }
+  return started;
 }
 
 /// Temporary onboarding invitation — hidden after first diagnosis (State B).
@@ -215,8 +222,8 @@ class _GetStartedDiagnosticIntroSheet extends HookConsumerWidget {
         source: _analyticsSource,
       );
       if (!context.mounted) return;
-      Navigator.pop(context);
       if (sessionId == null) {
+        Navigator.pop(context, false);
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
             content: Text('Something went wrong. Please try again.'),
@@ -224,6 +231,7 @@ class _GetStartedDiagnosticIntroSheet extends HookConsumerWidget {
         );
         return;
       }
+      Navigator.pop(context, true);
       context.push('/test/$sessionId');
     }
 
@@ -361,6 +369,61 @@ class _GetStartedDiagnosticIntroSheet extends HookConsumerWidget {
                     ),
                   ),
                   Padding(
+                    padding: const EdgeInsets.fromLTRB(
+                      AppSpacing.lg,
+                      0,
+                      AppSpacing.lg,
+                      AppSpacing.md,
+                    ),
+                    child: Container(
+                      padding: const EdgeInsets.all(AppSpacing.md),
+                      decoration: BoxDecoration(
+                        color: isDark
+                            ? AppColors.infoBgDark
+                            : AppColors.infoBg,
+                        borderRadius: BorderRadius.circular(AppRadius.md),
+                        border: Border.all(
+                          color: borderColor.withValues(alpha: 0.4),
+                        ),
+                      ),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Icon(
+                            Icons.translate_rounded,
+                            size: 20,
+                            color: isDark
+                                ? AppColors.infoTextDark
+                                : AppColors.infoText,
+                          ),
+                          const SizedBox(width: AppSpacing.sm),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'All questions are available in Hindi too.',
+                                  style: AppTextStyles.bodySm().copyWith(
+                                    color: scheme.onSurfaceVariant,
+                                    height: 1.35,
+                                  ),
+                                ),
+                                const SizedBox(height: AppSpacing.xs),
+                                Text(
+                                  'सभी प्रश्न हिंदी में भी उपलब्ध हैं।',
+                                  style: AppTextStyles.bodySm().copyWith(
+                                    color: scheme.onSurfaceVariant,
+                                    height: 1.35,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Padding(
                     padding: EdgeInsets.fromLTRB(
                       AppSpacing.lg,
                       0,
@@ -405,7 +468,7 @@ class _GetStartedDiagnosticIntroSheet extends HookConsumerWidget {
                           TextButton(
                             onPressed: loading.value
                                 ? null
-                                : () => Navigator.pop(context),
+                                : () => Navigator.pop(context, false),
                             child: Text(
                               'Do it later',
                               style: AppTextStyles.labelSm().copyWith(

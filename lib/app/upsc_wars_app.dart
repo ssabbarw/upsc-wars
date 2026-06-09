@@ -19,21 +19,20 @@ import '../core/constants/prelims_debug_flags.dart';
 import '../core/crashlytics/firebase_crashlytics_bootstrap.dart';
 import '../core/providers/app_bootstrap.dart';
 import '../core/services/battle_messaging_service.dart';
+import '../core/services/no_test_reminder_service.dart';
 import '../core/services/share_deep_link_service.dart';
 import '../core/services/fcm_token_sync_service.dart';
 import '../features/community/services/community_bucket_presence_service.dart';
 import '../features/home/providers/auth_providers.dart';
-import '../features/home/providers/home_activation_provider.dart';
 import '../core/providers/prefs_provider.dart';
+import '../core/providers/user_database_provider.dart';
 import '../core/router/app_router.dart'
-    show appRouterProvider, rootNavigatorKey;
+    show appRouterProvider;
 import '../core/router/question_bank_loading_screen.dart';
 import '../core/services/prelims_surfaces_refresh.dart';
 import '../core/theme/app_theme.dart';
 import '../features/battle/widgets/battle_chat_fab.dart';
 import '../features/battle/widgets/battle_spectate_overlay.dart';
-import '../shared/widgets/first_launch_bilingual_welcome_sheet.dart';
-
 class UpscWarsApp extends HookConsumerWidget {
   const UpscWarsApp({super.key});
 
@@ -73,19 +72,6 @@ class _RootMaterialApp extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final welcomeScheduled = useRef(false);
-    final prefsAsync = ref.watch(prefsServiceProvider);
-    final prefsReady = prefsAsync.hasValue;
-    final patternInterruptDone =
-        prefsAsync.value?.patternInterruptOnboardingSeen ?? false;
-    final bilingualSeen =
-        prefsAsync.value?.bilingualQuestionWelcomeSeen ?? false;
-    final activationAsync = ref.watch(homeActivationProvider);
-    final activationComplete = activationAsync.maybeWhen(
-      data: (s) => s.activationComplete,
-      orElse: () => false,
-    );
-
     useEffect(() {
       var cancelled = false;
       unawaited(() async {
@@ -106,58 +92,6 @@ class _RootMaterialApp extends HookConsumerWidget {
         cancelled = true;
       };
     }, const []);
-
-    /// First launch only: [PrefsService.bilingualQuestionWelcomeSeen].
-    /// Deferred until [PrefsService.patternInterruptOnboardingSeen] and home activation.
-    useEffect(() {
-      if (!prefsReady) return null;
-      if (!patternInterruptDone) {
-        welcomeScheduled.value = false;
-        return null;
-      }
-      if (!activationComplete) {
-        welcomeScheduled.value = false;
-        return null;
-      }
-      if (bilingualSeen) return null;
-      var cancelled = false;
-      if (welcomeScheduled.value) return null;
-      welcomeScheduled.value = true;
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        unawaited(() async {
-          final navCtx = rootNavigatorKey.currentContext;
-          if (navCtx == null || !navCtx.mounted) {
-            welcomeScheduled.value = false;
-            return;
-          }
-          final svc = await ref.read(prefsServiceProvider.future);
-          if (cancelled ||
-              !navCtx.mounted ||
-              svc.bilingualQuestionWelcomeSeen ||
-              !svc.patternInterruptOnboardingSeen) {
-            welcomeScheduled.value = false;
-            return;
-          }
-          final activation =
-              await ref.read(homeActivationProvider.future);
-          if (cancelled ||
-              !navCtx.mounted ||
-              !activation.activationComplete) {
-            welcomeScheduled.value = false;
-            return;
-          }
-          await showFirstLaunchBilingualWelcomeSheet(navCtx);
-          if (cancelled || !navCtx.mounted) return;
-          (await ref.read(
-            prefsServiceProvider.future,
-          )).bilingualQuestionWelcomeSeen = true;
-          ref.invalidate(prefsServiceProvider);
-        }());
-      });
-      return () {
-        cancelled = true;
-      };
-    }, [prefsReady, patternInterruptDone, bilingualSeen, activationComplete]);
 
     useEffect(() {
       WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -195,11 +129,22 @@ class _RootMaterialApp extends HookConsumerWidget {
       }());
       unawaited(() async {
         final p = await ref.read(prefsServiceProvider.future);
+        NoTestReminderService.recordFirstInstallIfNeeded(p);
         await logActivationMilestoneForServices(
           ref.read(analyticsServiceProvider),
           p,
           id: ActivationMilestones.firstProcessLaunch,
         );
+        try {
+          final db = ref.read(userDatabaseProvider);
+          final completedCount = await db.sessionsDao.countCompletedSessions();
+          await NoTestReminderService.sync(
+            prefs: p,
+            completedSessionCount: completedCount,
+          );
+        } catch (e, st) {
+          upscWarsTrace('no_test_reminder_sync error', error: e, stackTrace: st);
+        }
       }());
       unawaited(trackPushNotificationStatusSnapshot(ref));
       final analyticsLifecycle = AnalyticsAppLifecycleObserver(ref);

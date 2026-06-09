@@ -28,6 +28,7 @@ import '../providers/auth_providers.dart';
 import '../providers/home_activation_provider.dart';
 import '../widgets/get_started_card.dart';
 import '../widgets/recovery_plan_section.dart';
+import '../../daily_ca/widgets/daily_ca_home_card.dart';
 import '../../../shared/widgets/push_denied_banner.dart';
 import '../../../shared/theme/dark_mode_toggle.dart';
 import '../../../shared/widgets/app_update_kill_switch_overlay.dart';
@@ -73,37 +74,61 @@ class HomeScreen extends HookConsumerWidget {
       return null;
     }, const []);
 
-    final getStartedSheetScheduled = useRef(false);
+    final getStartedSheetPending = useState(false);
+    final getStartedSheetTriggered = useRef(false);
+    final homeScrollController = useScrollController();
+
     useEffect(() {
-      if (getStartedSheetScheduled.value) return null;
       var cancelled = false;
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        unawaited(() async {
-          final prefs = await ref.read(prefsServiceProvider.future);
-          if (cancelled || !prefs.getStartedSheetPendingAfterOnboarding) {
-            return;
-          }
-          final activation = await ref.read(homeActivationProvider.future);
-          if (cancelled || activation.activationComplete) {
-            prefs.getStartedSheetPendingAfterOnboarding = false;
-            return;
-          }
-          if (!context.mounted || cancelled) return;
-          getStartedSheetScheduled.value = true;
+      unawaited(() async {
+        final prefs = await ref.read(prefsServiceProvider.future);
+        if (cancelled || !prefs.getStartedSheetPendingAfterOnboarding) return;
+        final activation = await ref.read(homeActivationProvider.future);
+        if (cancelled) return;
+        if (activation.activationComplete) {
           prefs.getStartedSheetPendingAfterOnboarding = false;
-          ref.invalidate(prefsServiceProvider);
-          await Future<void>.delayed(const Duration(milliseconds: 700));
-          if (!context.mounted || cancelled) return;
-          await showGetStartedDiagnosticIntroSheet(
-            context,
-            postOnboarding: true,
-          );
-        }());
-      });
+          return;
+        }
+        if (!cancelled) getStartedSheetPending.value = true;
+      }());
       return () {
         cancelled = true;
       };
     }, const []);
+
+    useEffect(() {
+      if (!getStartedSheetPending.value) return null;
+
+      Future<void> maybeShowOnHomeInteraction() async {
+        if (getStartedSheetTriggered.value) return;
+        if (!homeScrollController.hasClients) return;
+        if (homeScrollController.offset < 24) return;
+
+        getStartedSheetTriggered.value = true;
+        final prefs = await ref.read(prefsServiceProvider.future);
+        if (!prefs.getStartedSheetPendingAfterOnboarding) return;
+        final activation = await ref.read(homeActivationProvider.future);
+        if (activation.activationComplete) {
+          prefs.getStartedSheetPendingAfterOnboarding = false;
+          return;
+        }
+        if (!context.mounted) return;
+        prefs.getStartedSheetPendingAfterOnboarding = false;
+        ref.invalidate(prefsServiceProvider);
+        await showGetStartedDiagnosticIntroSheet(
+          context,
+          postOnboarding: true,
+        );
+      }
+
+      void onScroll() => unawaited(maybeShowOnHomeInteraction());
+      homeScrollController.addListener(onScroll);
+      if (homeScrollController.hasClients &&
+          homeScrollController.offset >= 24) {
+        unawaited(maybeShowOnHomeInteraction());
+      }
+      return () => homeScrollController.removeListener(onScroll);
+    }, [getStartedSheetPending.value, homeScrollController]);
 
     useEffect(() {
       home.whenData((h) {
@@ -166,6 +191,7 @@ class HomeScreen extends HookConsumerWidget {
           Scaffold(
             body: SafeArea(
               child: ListView(
+                controller: homeScrollController,
                 physics: killBlocked
                     ? const NeverScrollableScrollPhysics()
                     : const BouncingScrollPhysics(),
@@ -469,6 +495,26 @@ class HomeScreen extends HookConsumerWidget {
                         children: [
                           HomePageVideoBanner(borderColor: borderColor),
                           const SizedBox(height: AppSpacing.md),
+                          Consumer(
+                            builder: (context, ref, _) {
+                              final dailyCaEnabled = ref
+                                  .watch(dailyCaRemoteEnabledProvider)
+                                  .maybeWhen(
+                                    data: (enabled) => enabled,
+                                    orElse: () => false,
+                                  );
+                              if (!dailyCaEnabled) {
+                                return const SizedBox.shrink();
+                              }
+                              return Column(
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                                children: [
+                                  DailyCaHomeCard(borderColor: borderColor),
+                                  const SizedBox(height: AppSpacing.md),
+                                ],
+                              );
+                            },
+                          ),
                           _PyqYearCarousel(
                             borderColor: borderColor,
                             years: pyqYears,

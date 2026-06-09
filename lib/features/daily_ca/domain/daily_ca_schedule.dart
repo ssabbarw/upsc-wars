@@ -5,10 +5,28 @@ abstract final class DailyCaSchedule {
   static const publishHourIst = 21;
   static const istOffset = Duration(hours: 5, minutes: 30);
 
-  /// Earliest date selectable on the daily CA calendar (IST, date-only).
-  static final DateTime calendarMinDate = DateTime(2026, 6, 5);
+  /// Fallback when Remote Config is unavailable or invalid.
+  static final DateTime defaultCalendarMinDate = DateTime(2026, 6, 5);
 
-  static String get calendarMinDateIso => formatIsoDate(calendarMinDate);
+  static String get defaultCalendarMinDateIso =>
+      formatIsoDate(defaultCalendarMinDate);
+
+  static final _isoDatePattern = RegExp(r'^(\d{4})-(\d{1,2})-(\d{1,2})$');
+
+  /// Parses `YYYY-MM-DD` from Remote Config; falls back to [defaultCalendarMinDate].
+  static DateTime parseCalendarMinDate(String raw) {
+    final trimmed = raw.trim();
+    if (trimmed.isEmpty) return defaultCalendarMinDate;
+
+    final match = _isoDatePattern.firstMatch(trimmed);
+    if (match == null) return defaultCalendarMinDate;
+
+    return DateTime(
+      int.parse(match.group(1)!),
+      int.parse(match.group(2)!),
+      int.parse(match.group(3)!),
+    );
+  }
 
   static DateTime nowIst([DateTime? utcNow]) {
     final utc = (utcNow ?? DateTime.now()).toUtc();

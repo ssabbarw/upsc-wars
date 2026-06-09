@@ -17,6 +17,9 @@ const communityTabEnabledRemoteConfigKey = 'community_tab_enabled';
 /// Remote Config: when `false`, hide Daily Current Affairs on the home screen.
 const dailyCaEnabledRemoteConfigKey = 'daily_ca_enabled';
 
+/// Remote Config: earliest selectable daily CA calendar date (`YYYY-MM-DD`, IST).
+const dailyCaCalendarMinDateRemoteConfigKey = 'daily_ca_calendar_min_date';
+
 /// Remote Config: max QOTD posts per device in a rolling 24h window (int, default 3; enforced locally).
 const qotdMaxPostsPerDayRemoteConfigKey = 'qotd_max_posts_per_day';
 
@@ -62,7 +65,8 @@ Future<KillSwitchSnapshot> killSwitch(Ref ref) async {
     await rc.setDefaults(<String, dynamic>{
       killSwitchVersionRemoteConfigKey: '',
       communityTabEnabledRemoteConfigKey: true,
-      dailyCaEnabledRemoteConfigKey: true,
+      dailyCaEnabledRemoteConfigKey: false,
+      dailyCaCalendarMinDateRemoteConfigKey: '2026-06-05',
       qotdMaxPostsPerDayRemoteConfigKey: 3,
       // YYYY-MM-DD (time defaults to 09:30 local)
       'prelims_date': '2027-05-23',
@@ -113,11 +117,11 @@ Future<bool> communityTabRemoteEnabled(Ref ref) async {
 
 /// Whether the Daily Current Affairs home entry should be shown.
 ///
-/// Fails open (`true`) while loading or on read errors. On web, defaults to `true`.
+/// Fails closed (`false`) while loading or on read errors.
 @Riverpod(keepAlive: true)
 Future<bool> dailyCaRemoteEnabled(Ref ref) async {
   if (kIsWeb) {
-    return true;
+    return false;
   }
   await ref.watch(killSwitchProvider.future);
   try {
@@ -125,6 +129,6 @@ Future<bool> dailyCaRemoteEnabled(Ref ref) async {
       dailyCaEnabledRemoteConfigKey,
     );
   } on Object catch (_) {
-    return true;
+    return false;
   }
 }

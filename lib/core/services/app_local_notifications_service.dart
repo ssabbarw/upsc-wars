@@ -5,6 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:intl/intl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:timezone/timezone.dart' as tz;
 
 import '../constants/prelims_countdown.dart';
 import '../constants/prelims_debug_flags.dart';
@@ -23,6 +24,19 @@ class AppLocalNotificationsService {
   /// Set from [BattleMessagingService] before [ensureInitialized] so taps route correctly.
   static void Function(String sessionId)? onBattleInviteLocalTap;
 
+  /// Opens home when the no-test reminder notification is tapped.
+  static void Function()? onNoTestReminderTap;
+
+  static const _noTestReminderChannelId = 'no_test_reminder_v1';
+  static const _noTestReminderChannelName = 'Study reminders';
+  static const _noTestReminderChannelDescription =
+      'Reminders to take your first practice test';
+
+  static const _noTestReminderTitle =
+      'Find where UPSC Wars gives you an edge';
+  static const _noTestReminderBody =
+      'Take 7 quick MCQs. Get coached to eliminate better, spot weak areas, and see where you\u2019re strong.';
+
   static const _battleChannelId = 'battle_invites_foreground';
   static const _battleChannelName = 'Battle invites';
   static const _battleChannelDescription =
@@ -40,6 +54,9 @@ class AppLocalNotificationsService {
   static const foregroundBattleInviteNotificationId = 9001;
 
   static const prelimsPersistentNotificationId = 7001;
+
+  static const noTestReminderNotificationId = 8001;
+  static const noTestReminderPayload = 'no_test_reminder';
 
   static const _prelimsChannelId = 'prelims_countdown_channel';
   static const _prelimsChannelName = 'Prelims Countdown';
@@ -128,10 +145,16 @@ class AppLocalNotificationsService {
 
   static void _onNotificationResponse(NotificationResponse response) {
     final payload = response.payload;
-    if (payload == null || !payload.startsWith('battle_join:')) return;
-    final sessionId = payload.substring('battle_join:'.length).trim();
-    if (sessionId.isEmpty) return;
-    onBattleInviteLocalTap?.call(sessionId);
+    if (payload == null) return;
+    if (payload.startsWith('battle_join:')) {
+      final sessionId = payload.substring('battle_join:'.length).trim();
+      if (sessionId.isEmpty) return;
+      onBattleInviteLocalTap?.call(sessionId);
+      return;
+    }
+    if (payload == noTestReminderPayload) {
+      onNoTestReminderTap?.call();
+    }
   }
 
   /// Heads-up style local notification so the user can tap through to join while in-app.
@@ -226,5 +249,86 @@ class AppLocalNotificationsService {
       body: body,
       notificationDetails: const NotificationDetails(android: androidDetails),
     );
+  }
+
+  static NotificationDetails _noTestReminderDetails() {
+    return NotificationDetails(
+      android: AndroidNotificationDetails(
+        _noTestReminderChannelId,
+        _noTestReminderChannelName,
+        channelDescription: _noTestReminderChannelDescription,
+        importance: Importance.high,
+        priority: Priority.high,
+        icon: '@drawable/ic_notification',
+        color: const Color(0xFF085041),
+        largeIcon: const DrawableResourceAndroidBitmap('@mipmap/ic_launcher'),
+        category: AndroidNotificationCategory.reminder,
+        autoCancel: true,
+      ),
+      iOS: const DarwinNotificationDetails(
+        presentAlert: true,
+        presentBadge: true,
+        presentSound: true,
+      ),
+    );
+  }
+
+  static Future<void> _ensureNoTestReminderChannel() async {
+    if (kIsWeb || defaultTargetPlatform != TargetPlatform.android) return;
+    final androidImpl = _plugin.resolvePlatformSpecificImplementation<
+        AndroidFlutterLocalNotificationsPlugin>();
+    await androidImpl?.createNotificationChannel(
+      const AndroidNotificationChannel(
+        _noTestReminderChannelId,
+        _noTestReminderChannelName,
+        description: _noTestReminderChannelDescription,
+        importance: Importance.high,
+      ),
+    );
+  }
+
+  /// Schedules the day-after-install reminder. Returns false if scheduling failed.
+  static Future<bool> scheduleNoTestReminder({
+    required DateTime fireAtLocal,
+  }) async {
+    if (kIsWeb) return false;
+    await ensureInitialized();
+    await _ensureNoTestReminderChannel();
+
+    final scheduledDate = tz.TZDateTime.from(fireAtLocal, tz.local);
+    try {
+      await _plugin.zonedSchedule(
+        id: noTestReminderNotificationId,
+        title: _noTestReminderTitle,
+        body: _noTestReminderBody,
+        scheduledDate: scheduledDate,
+        notificationDetails: _noTestReminderDetails(),
+        androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
+        payload: noTestReminderPayload,
+      );
+      return true;
+    } catch (_) {
+      return false;
+    }
+  }
+
+  /// Immediate fallback when the scheduled time has already passed.
+  static Future<void> showNoTestReminder() async {
+    if (kIsWeb) return;
+    await ensureInitialized();
+    await _ensureNoTestReminderChannel();
+    await _plugin.show(
+      id: noTestReminderNotificationId,
+      title: _noTestReminderTitle,
+      body: _noTestReminderBody,
+      notificationDetails: _noTestReminderDetails(),
+      payload: noTestReminderPayload,
+    );
+  }
+
+  static Future<void> cancelNoTestReminder() async {
+    if (kIsWeb) return;
+    await ensureInitialized();
+    await _plugin.cancel(id: noTestReminderNotificationId);
   }
 }

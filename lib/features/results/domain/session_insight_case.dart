@@ -25,9 +25,18 @@ enum SessionInsightCase {
 
   /// Session submitted with zero questions attempted.
   fNoAttempts,
+
+  /// No wrong answers, but too many questions left unattempted for "excellent".
+  gIncomplete,
 }
 
 const kPrelimsWrongMarkPenalty = 0.66;
+
+/// Minimum share of questions attempted to qualify for "excellent session".
+const kMinCompletionRateForExcellent = 0.5;
+
+/// On longer tests, require at least this many attempts even if rate passes.
+const kMinAttemptedForExcellentWhenLargeTest = 3;
 
 int sessionAnsweredScored(SessionResult result) => result.correct + result.wrong;
 
@@ -53,7 +62,31 @@ int sessionPureWrongCount(SessionResult result) =>
 
 double sessionTierMarksLost(int wrongCount) => wrongCount * kPrelimsWrongMarkPenalty;
 
-/// Classifies which hero insight card to show (priority order A–F).
+int sessionRemainingCount(SessionResult result) =>
+    result.unattempted + result.timedOut;
+
+/// True when the user finished enough of the test to earn "excellent session".
+bool sessionIsCompleteEnoughForExcellent(SessionResult result) {
+  final total = result.questionCount;
+  if (total <= 0) return false;
+
+  final attempted = sessionAnsweredScored(result);
+  if (attempted <= 0) return false;
+
+  if (sessionRemainingCount(result) == 0) return true;
+
+  final rate = attempted / total;
+  if (rate < kMinCompletionRateForExcellent) return false;
+
+  if (total > kMinAttemptedForExcellentWhenLargeTest &&
+      attempted < kMinAttemptedForExcellentWhenLargeTest) {
+    return false;
+  }
+
+  return true;
+}
+
+/// Classifies which hero insight card to show (priority order A–G).
 SessionInsightCase classifySessionInsight({
   required SessionResult result,
   required bool confidenceTrackingEnabled,
@@ -94,6 +127,9 @@ SessionInsightCase classifySessionInsight({
   if (result.wrong > 0) {
     return SessionInsightCase.d;
   }
+  if (!sessionIsCompleteEnoughForExcellent(result)) {
+    return SessionInsightCase.gIncomplete;
+  }
   return SessionInsightCase.e;
 }
 
@@ -107,5 +143,6 @@ String sessionInsightCaseAnalyticsName(SessionInsightCase c) {
     SessionInsightCase.fLockedSettings => 'f_locked_settings',
     SessionInsightCase.fLockedSkipped => 'f_locked_skipped',
     SessionInsightCase.fNoAttempts => 'f_no_attempts',
+    SessionInsightCase.gIncomplete => 'g_incomplete',
   };
 }

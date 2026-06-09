@@ -44,7 +44,7 @@ void main() {
     });
 
     test('min date blocks earlier calendar days', () {
-      final min = DailyCaSchedule.calendarMinDate;
+      final min = DailyCaSchedule.defaultCalendarMinDate;
       expect(
         DailyCaSchedule.isOnOrAfterMinDate(DateTime(2026, 6, 4), min),
         isFalse,
@@ -53,7 +53,26 @@ void main() {
         DailyCaSchedule.isOnOrAfterMinDate(DateTime(2026, 6, 5), min),
         isTrue,
       );
-      expect(DailyCaSchedule.calendarMinDateIso, '2026-06-05');
+      expect(DailyCaSchedule.defaultCalendarMinDateIso, '2026-06-05');
+    });
+
+    test('parseCalendarMinDate accepts YYYY-MM-DD from Remote Config', () {
+      expect(
+        DailyCaSchedule.parseCalendarMinDate('2026-06-05'),
+        DateTime(2026, 6, 5),
+      );
+      expect(
+        DailyCaSchedule.parseCalendarMinDate('2026-6-5'),
+        DateTime(2026, 6, 5),
+      );
+      expect(
+        DailyCaSchedule.parseCalendarMinDate(''),
+        DailyCaSchedule.defaultCalendarMinDate,
+      );
+      expect(
+        DailyCaSchedule.parseCalendarMinDate('invalid'),
+        DailyCaSchedule.defaultCalendarMinDate,
+      );
     });
   });
 }

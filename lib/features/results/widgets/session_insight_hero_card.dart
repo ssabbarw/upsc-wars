@@ -13,11 +13,10 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
-import '../../../features/topic_test/providers/topic_test_ui_providers.dart';
 import '../domain/session_insight_case.dart';
 import 'questions_to_review_card.dart';
 
-/// Hero insight card for session summary (cases A–F).
+/// Hero insight card for session summary (cases A–G).
 class SessionInsightHeroCard extends ConsumerWidget {
   const SessionInsightHeroCard({
     super.key,
@@ -61,6 +60,16 @@ class SessionInsightHeroCard extends ConsumerWidget {
     final marks = sessionTierMarksLost(highRisk > 0 ? highRisk : result.wrong);
 
     final style = _caseStyle(insightCase, isDark);
+    final titleText = insightCase == SessionInsightCase.gIncomplete
+        ? _incompleteTitle(result)
+        : style.title(
+            sureWrong: sureWrong,
+            eduWrong: eduWrong,
+            wrong: result.wrong,
+          );
+    final subtitleText = insightCase == SessionInsightCase.gIncomplete
+        ? _incompleteSubtitle(result)
+        : style.subtitle;
     final footnote = result.analyticsFeatureKey == _getStartedKey
         ? 'Full 25-question tests unlock richer topic patterns.'
         : null;
@@ -87,11 +96,7 @@ class SessionInsightHeroCard extends ConsumerWidget {
             const SizedBox(height: AppSpacing.xs),
           ],
           Text(
-            style.title(
-              sureWrong: sureWrong,
-              eduWrong: eduWrong,
-              wrong: result.wrong,
-            ),
+            titleText,
             style: AppTextStyles.h2().copyWith(
               fontSize: compact ? 20 : 24,
               fontWeight: FontWeight.w900,
@@ -100,7 +105,7 @@ class SessionInsightHeroCard extends ConsumerWidget {
           ),
           const SizedBox(height: AppSpacing.xs),
           Text(
-            style.subtitle,
+            subtitleText,
             style: AppTextStyles.bodySm().copyWith(
               color: scheme.onSurface,
               height: 1.35,
@@ -127,6 +132,7 @@ class SessionInsightHeroCard extends ConsumerWidget {
           ],
           if (marks > 0 &&
               insightCase != SessionInsightCase.e &&
+              insightCase != SessionInsightCase.gIncomplete &&
               insightCase != SessionInsightCase.fLockedSettings &&
               insightCase != SessionInsightCase.fLockedSkipped &&
               insightCase != SessionInsightCase.fNoAttempts) ...[
@@ -222,15 +228,13 @@ class SessionInsightHeroCard extends ConsumerWidget {
       case SessionInsightCase.d:
         _openHistory(context, focusWrong: true);
       case SessionInsightCase.e:
-        if (weakestTopicName != null && result.subject.isNotEmpty) {
-          ref
-              .read(topicTestSelectedSubjectSlugProvider.notifier)
-              .setSlug(result.subject);
-          ref
-              .read(topicTestSearchQueryProvider.notifier)
-              .setQuery(weakestTopicName!);
+        context.go('/');
+      case SessionInsightCase.gIncomplete:
+        if (result.subject.isNotEmpty && result.subject != 'revision_quick') {
+          context.go('/subject/${Uri.encodeComponent(result.subject)}');
+        } else {
+          context.go('/');
         }
-        context.push('/topic-test');
       case SessionInsightCase.fLockedSettings:
         context.push('/settings');
       case SessionInsightCase.fLockedSkipped:
@@ -450,9 +454,27 @@ _CaseStyle _caseStyle(SessionInsightCase c, bool isDark) {
           required wrong,
           required weakestTopic,
         }) =>
-            weakestTopic != null
-                ? 'Practice $weakestTopic'
-                : 'Explore more topics',
+            'Practice more',
+      );
+    case SessionInsightCase.gIncomplete:
+      return _CaseStyle(
+        eyebrow: '',
+        subtitle:
+            'You left questions unanswered. Finish full tests for better insights.',
+        background: _schemeNeutralBg(isDark),
+        border: AppColors.borderLight,
+        accent: AppColors.primaryDark,
+        ctaBackground: AppColors.primary,
+        ctaForeground: AppColors.onPrimary,
+        title: ({required sureWrong, required eduWrong, required wrong}) =>
+            'Incomplete session',
+        ctaLabel: ({
+          required sureWrong,
+          required eduWrong,
+          required wrong,
+          required weakestTopic,
+        }) =>
+            'Practice more',
       );
     case SessionInsightCase.fLockedSettings:
       return _CaseStyle(
@@ -521,6 +543,20 @@ _CaseStyle _caseStyle(SessionInsightCase c, bool isDark) {
 Color _schemeNeutralBg(bool isDark) => isDark
     ? AppColors.surfaceSecondaryDark
     : AppColors.surfaceSecondaryLight;
+
+String _incompleteTitle(SessionResult result) {
+  final attempted = sessionAnsweredScored(result);
+  return '$attempted of ${result.questionCount} attempted';
+}
+
+String _incompleteSubtitle(SessionResult result) {
+  final remaining = sessionRemainingCount(result);
+  if (remaining > 0) {
+    return 'You left $remaining question${remaining == 1 ? '' : 's'} '
+        'unanswered. Finish full tests for better insights.';
+  }
+  return 'Finish more of the test before calling it a clean session.';
+}
 
 void logSessionInsightCaseShown(
   WidgetRef ref, {

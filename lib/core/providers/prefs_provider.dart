@@ -86,6 +86,12 @@ abstract final class PrefKeys {
 
   /// JSON list of yyyy-MM-dd days with at least one completed session.
   static const activationSessionDaysV1 = 'activation_session_days_v1';
+
+  /// Epoch ms when the app was first installed on this device (new installs only).
+  static const firstInstallAtMsV1 = 'first_install_at_ms_v1';
+
+  /// Local no-test reminder was scheduled or already delivered.
+  static const noTestReminderHandledV1 = 'no_test_reminder_handled_v1';
 }
 
 class PrefsService {
@@ -277,6 +283,23 @@ class PrefsService {
     final sorted = days.toList()..sort();
     _p.setString(PrefKeys.activationSessionDaysV1, jsonEncode(sorted));
   }
+
+  int? get firstInstallAtMs =>
+      _p.containsKey(PrefKeys.firstInstallAtMsV1)
+          ? _p.getInt(PrefKeys.firstInstallAtMsV1)
+          : null;
+  set firstInstallAtMs(int? v) {
+    if (v == null) {
+      _p.remove(PrefKeys.firstInstallAtMsV1);
+    } else {
+      _p.setInt(PrefKeys.firstInstallAtMsV1, v);
+    }
+  }
+
+  bool get noTestReminderHandled =>
+      _p.getBool(PrefKeys.noTestReminderHandledV1) ?? false;
+  set noTestReminderHandled(bool v) =>
+      _p.setBool(PrefKeys.noTestReminderHandledV1, v);
 }
 
 @Riverpod(keepAlive: true)

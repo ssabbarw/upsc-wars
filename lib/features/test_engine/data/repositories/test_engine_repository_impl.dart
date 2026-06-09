@@ -18,6 +18,8 @@ import 'package:upsc_wars/core/domain/entities/test_question.dart';
 import 'package:upsc_wars/core/domain/errors/app_errors.dart';
 import 'package:upsc_wars/core/parsers/question_display_text_parser.dart';
 import 'package:upsc_wars/core/providers/prefs_provider.dart';
+import 'package:upsc_wars/core/services/battle_messaging_service.dart';
+import 'package:upsc_wars/core/services/no_test_reminder_service.dart';
 import 'package:upsc_wars/features/test_engine/domain/repositories/test_engine_repository.dart';
 
 class TestEngineRepositoryImpl implements TestEngineRepository {
@@ -452,6 +454,8 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
         .countCompletedSessions();
     if (completedSessionCount == 1) {
       await _analytics.track(const FirstSessionCompletedEvent());
+      await NoTestReminderService.cancelAfterFirstTest();
+      await BattleMessagingService.requestPushAuthorizationIfNotDetermined();
     }
 
     await _recordHomeActivation(sessionId, sessionMeta?.analyticsFeatureKey);
