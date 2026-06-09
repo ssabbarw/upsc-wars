@@ -17,6 +17,8 @@ import '../../../core/domain/entities/test_question.dart';
 import '../../../core/domain/errors/app_errors.dart';
 import '../../../core/providers/app_language_helpers.dart';
 import '../../../core/providers/prefs_provider.dart';
+import '../../../core/providers/user_database_provider.dart';
+import '../../../core/services/battle_messaging_service.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
@@ -131,6 +133,24 @@ Future<void> _showConfidenceBottomSheet(
       false;
   if (stillOpen && context.mounted) {
     ref.read(testSessionProvider(sessionId).notifier).cancelConfidencePrompt();
+  }
+}
+
+/// After submit, prompt for notifications on first completion once overlays close.
+Future<void> _finishTestSubmitNavigation(
+  BuildContext context,
+  WidgetRef ref,
+  String resultsId,
+) async {
+  final db = ref.read(userDatabaseProvider);
+  final completedCount = await db.sessionsDao.countCompletedSessions();
+  if (completedCount == 1) {
+    await WidgetsBinding.instance.endOfFrame;
+    await WidgetsBinding.instance.endOfFrame;
+    await BattleMessagingService.requestPushAuthorizationIfNotDetermined();
+  }
+  if (context.mounted) {
+    context.go('/results/$resultsId');
   }
 }
 
@@ -317,7 +337,7 @@ class _TestEngineTimerTicker extends HookConsumerWidget {
                 upscWarsTrace(
                   'TestEngine timer submit -> go /results/$submitted',
                 );
-                context.go('/results/$submitted');
+                await _finishTestSubmitNavigation(context, ref, submitted);
               }
             } catch (e, st) {
               upscWarsTrace(
@@ -701,12 +721,15 @@ Future<void> _showTestPaletteSheet(
                             try {
                               final id = await notifier.submit();
                               if (ctx.mounted) Navigator.pop(ctx);
-                              if (context.mounted) {
-                                upscWarsTrace(
-                                  'TestEngine palette submit -> go /results/$id',
-                                );
-                                context.go('/results/$id');
-                              }
+                              if (!context.mounted) return;
+                              upscWarsTrace(
+                                'TestEngine palette submit -> go /results/$id',
+                              );
+                              await _finishTestSubmitNavigation(
+                                context,
+                                ref,
+                                id,
+                              );
                             } catch (e, st) {
                               upscWarsTrace(
                                 'TestEngine palette submit FAILED',
