@@ -13,6 +13,7 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../home/domain/demo_diagnostic_ephemeral_store.dart';
 import '../domain/session_insight_case.dart';
 import 'questions_to_review_card.dart';
 
@@ -71,7 +72,8 @@ class SessionInsightHeroCard extends ConsumerWidget {
         ? _incompleteSubtitle(result)
         : style.subtitle;
     final footnote = result.analyticsFeatureKey == _getStartedKey
-        ? 'Full 25-question tests unlock richer topic patterns.'
+        ? 'Demo only — not saved. Your real topic insights start with full '
+            'practice tests.'
         : null;
 
     return Container(
@@ -228,12 +230,12 @@ class SessionInsightHeroCard extends ConsumerWidget {
       case SessionInsightCase.d:
         _openHistory(context, focusWrong: true);
       case SessionInsightCase.e:
-        context.go('/');
+        _goHome(context);
       case SessionInsightCase.gIncomplete:
         if (result.subject.isNotEmpty && result.subject != 'revision_quick') {
           context.go('/subject/${Uri.encodeComponent(result.subject)}');
         } else {
-          context.go('/');
+          _goHome(context);
         }
       case SessionInsightCase.fLockedSettings:
         context.push('/settings');
@@ -241,15 +243,22 @@ class SessionInsightHeroCard extends ConsumerWidget {
         if (result.subject.isNotEmpty && result.subject != 'revision_quick') {
           context.go('/subject/${Uri.encodeComponent(result.subject)}');
         } else {
-          context.go('/');
+          _goHome(context);
         }
       case SessionInsightCase.fNoAttempts:
         if (result.subject.isNotEmpty && result.subject != 'revision_quick') {
           context.go('/subject/${Uri.encodeComponent(result.subject)}');
         } else {
-          context.go('/');
+          _goHome(context);
         }
     }
+  }
+
+  void _goHome(BuildContext context) {
+    if (result.analyticsFeatureKey == _getStartedKey) {
+      clearDemoDiagnosticEphemeral(sessionId);
+    }
+    context.go('/');
   }
 
   void _openHistory(BuildContext context, {bool focusWrong = false}) {

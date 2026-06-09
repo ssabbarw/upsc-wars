@@ -40,6 +40,10 @@ abstract final class PrefKeys {
   static const getStartedSheetPendingAfterOnboarding =
       'get_started_sheet_pending_after_onboarding_v1';
 
+  /// User submitted the 7-question Get Started demo (widget or intro sheet).
+  static const getStartedDiagnosticAttemptedV1 =
+      'get_started_diagnostic_attempted_v1';
+
   /// Shown once: session review share button coach mark.
   static const sessionReviewShareCoachSeen =
       'session_review_share_coach_seen_v1';
@@ -92,6 +96,10 @@ abstract final class PrefKeys {
 
   /// Local no-test reminder was scheduled or already delivered.
   static const noTestReminderHandledV1 = 'no_test_reminder_handled_v1';
+
+  /// Prompt for push permission once home loads after first-test results exit.
+  static const pushPermissionPromptPendingAfterFirstTestV1 =
+      'push_permission_prompt_pending_after_first_test_v1';
 }
 
 class PrefsService {
@@ -181,6 +189,11 @@ class PrefsService {
       _p.getBool(PrefKeys.getStartedSheetPendingAfterOnboarding) ?? false;
   set getStartedSheetPendingAfterOnboarding(bool v) =>
       _p.setBool(PrefKeys.getStartedSheetPendingAfterOnboarding, v);
+
+  bool get getStartedDiagnosticAttempted =>
+      _p.getBool(PrefKeys.getStartedDiagnosticAttemptedV1) ?? false;
+  set getStartedDiagnosticAttempted(bool v) =>
+      _p.setBool(PrefKeys.getStartedDiagnosticAttemptedV1, v);
 
   bool get sessionReviewShareCoachSeen =>
       _p.getBool(PrefKeys.sessionReviewShareCoachSeen) ?? false;
@@ -300,6 +313,13 @@ class PrefsService {
       _p.getBool(PrefKeys.noTestReminderHandledV1) ?? false;
   set noTestReminderHandled(bool v) =>
       _p.setBool(PrefKeys.noTestReminderHandledV1, v);
+
+  bool get pushPermissionPromptPendingAfterFirstTest =>
+      _p.getBool(PrefKeys.pushPermissionPromptPendingAfterFirstTestV1) ?? false;
+  set pushPermissionPromptPendingAfterFirstTest(bool v) => _p.setBool(
+        PrefKeys.pushPermissionPromptPendingAfterFirstTestV1,
+        v,
+      );
 }
 
 @Riverpod(keepAlive: true)

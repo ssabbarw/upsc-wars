@@ -506,7 +506,7 @@ class TestSessionNotifier extends _$TestSessionNotifier {
     if (current == null || s == null) return;
     try {
       final repo = await ref.read(testEngineRepositoryProvider.future);
-      await repo.discardSession(s.id);
+      await repo.discardSession(s.id, userInitiatedQuit: true);
     } catch (_) {
       _showStorageSnack();
     }

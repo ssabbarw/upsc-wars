@@ -8,6 +8,7 @@ import '../../features/subject_test/data/repositories/test_catalog_repository_im
 import '../../features/subject_test/domain/usecases/get_subject_list_use_case.dart';
 import '../../features/test_engine/data/repositories/create_session_repository_impl.dart';
 import '../../features/test_engine/domain/usecases/create_session_use_case.dart';
+import '../../features/home/domain/demo_diagnostic_ephemeral_store.dart';
 import '../../features/history/data/repositories/session_history_repository_impl.dart';
 import '../../features/history/domain/repositories/session_history_repository.dart';
 import '../../features/history/domain/usecases/get_daily_progress_use_case.dart';
@@ -176,6 +177,8 @@ GetDailyProgressUseCase getDailyProgressUseCase(Ref ref) {
 
 @riverpod
 Future<SessionResult> sessionResult(Ref ref, String sessionId) async {
+  final ephemeral = DemoDiagnosticEphemeralStore.instance.peek(sessionId);
+  if (ephemeral != null) return ephemeral.result;
   final uc = ref.watch(getSessionResultUseCaseProvider);
   return uc.execute(sessionId);
 }

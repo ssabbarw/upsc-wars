@@ -15,6 +15,7 @@ import '../../../core/domain/entities/subject_info.dart';
 import '../../../core/providers/catalog_providers.dart';
 import '../../../core/providers/app_bootstrap.dart';
 import '../../../core/providers/prefs_provider.dart';
+import '../../../core/services/battle_messaging_service.dart';
 import '../../../core/providers/kill_switch_provider.dart';
 import '../../../core/providers/quick_practice_providers.dart';
 import '../../../core/responsive/app_breakpoints.dart';
@@ -54,7 +55,12 @@ class HomeScreen extends HookConsumerWidget {
       data: (s) => s.isActive,
       orElse: () => false,
     );
+    final prefsAsync = ref.watch(prefsServiceProvider);
     final cachedStreakText = useState<String?>(null);
+    final pushPromptPending = prefsAsync.maybeWhen(
+      data: (p) => p.pushPermissionPromptPendingAfterFirstTest,
+      orElse: () => false,
+    );
 
     final past200ms = useState(false);
     useEffect(() {
@@ -85,7 +91,7 @@ class HomeScreen extends HookConsumerWidget {
         if (cancelled || !prefs.getStartedSheetPendingAfterOnboarding) return;
         final activation = await ref.read(homeActivationProvider.future);
         if (cancelled) return;
-        if (activation.activationComplete) {
+        if (!activation.shouldShowGetStartedCard) {
           prefs.getStartedSheetPendingAfterOnboarding = false;
           return;
         }
@@ -108,7 +114,7 @@ class HomeScreen extends HookConsumerWidget {
         final prefs = await ref.read(prefsServiceProvider.future);
         if (!prefs.getStartedSheetPendingAfterOnboarding) return;
         final activation = await ref.read(homeActivationProvider.future);
-        if (activation.activationComplete) {
+        if (!activation.shouldShowGetStartedCard) {
           prefs.getStartedSheetPendingAfterOnboarding = false;
           return;
         }
@@ -129,6 +135,27 @@ class HomeScreen extends HookConsumerWidget {
       }
       return () => homeScrollController.removeListener(onScroll);
     }, [getStartedSheetPending.value, homeScrollController]);
+
+    useEffect(() {
+      if (!pushPromptPending) return null;
+      var cancelled = false;
+      unawaited(() async {
+        final prefs = await ref.read(prefsServiceProvider.future);
+        if (cancelled || !prefs.pushPermissionPromptPendingAfterFirstTest) {
+          return;
+        }
+        prefs.pushPermissionPromptPendingAfterFirstTest = false;
+        ref.invalidate(prefsServiceProvider);
+        WidgetsBinding.instance.addPostFrameCallback((_) async {
+          if (cancelled || !context.mounted) return;
+          await WidgetsBinding.instance.endOfFrame;
+          await BattleMessagingService.requestPushAuthorizationIfNotDetermined();
+        });
+      }());
+      return () {
+        cancelled = true;
+      };
+    }, [pushPromptPending]);
 
     useEffect(() {
       home.whenData((h) {
@@ -423,7 +450,7 @@ class HomeScreen extends HookConsumerWidget {
                         loading: () => const SizedBox.shrink(),
                         error: (_, _) => const SizedBox.shrink(),
                         data: (state) {
-                          if (state.activationComplete) {
+                          if (!state.shouldShowGetStartedCard) {
                             return const SizedBox.shrink();
                           }
                           return const Column(

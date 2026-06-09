@@ -1,5 +1,6 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
+import '../../../core/analytics/activation_milestones.dart';
 import '../../../core/providers/prefs_provider.dart';
 import '../../../core/providers/user_database_provider.dart';
 
@@ -32,13 +33,21 @@ int consecutiveActivationSessionDays(List<String> sortedDays) {
 class HomeActivationState {
   const HomeActivationState({
     required this.activationComplete,
+    required this.getStartedDiagnosticAttempted,
     required this.completedSessionCount,
     required this.consecutiveSessionDays,
   });
 
   final bool activationComplete;
+
+  /// Submitted the Get Started demo (home card or post-onboarding sheet).
+  final bool getStartedDiagnosticAttempted;
+
   final int completedSessionCount;
   final int consecutiveSessionDays;
+
+  bool get shouldShowGetStartedCard =>
+      !activationComplete && !getStartedDiagnosticAttempted;
 }
 
 @Riverpod(keepAlive: true)
@@ -55,7 +64,7 @@ class HomeActivation extends _$HomeActivation {
       final hasConfidence =
           await db.sessionQuestionsDao.hasSureOrEducatedOnCompletedSessions();
       if (hasConfidence) {
-        prefs.homeActivationComplete = true;
+        markHomeActivationComplete(prefs);
         activationComplete = true;
       }
     }
@@ -65,6 +74,7 @@ class HomeActivation extends _$HomeActivation {
 
     return HomeActivationState(
       activationComplete: activationComplete,
+      getStartedDiagnosticAttempted: prefs.getStartedDiagnosticAttempted,
       completedSessionCount: completedCount,
       consecutiveSessionDays: consecutiveDays,
     );
@@ -78,7 +88,7 @@ class HomeActivation extends _$HomeActivation {
 
   Future<void> markActivationComplete() async {
     final prefs = await ref.read(prefsServiceProvider.future);
-    prefs.homeActivationComplete = true;
+    markHomeActivationComplete(prefs);
     ref.invalidateSelf();
   }
 }

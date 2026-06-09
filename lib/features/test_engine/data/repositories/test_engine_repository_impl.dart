@@ -12,6 +12,8 @@ import 'package:upsc_wars/core/analytics/question_attempt_analytics_input.dart';
 import 'package:upsc_wars/core/analytics/session_analytics_derive.dart';
 import 'package:upsc_wars/core/database/user_db.dart';
 import 'package:upsc_wars/features/history/data/repositories/session_history_repository_impl.dart';
+import 'package:upsc_wars/features/home/domain/create_get_started_session_use_case.dart';
+import 'package:upsc_wars/features/home/domain/demo_diagnostic_ephemeral_store.dart';
 import 'package:upsc_wars/core/domain/entities/active_session.dart';
 import 'package:upsc_wars/core/domain/entities/answer_confidence.dart';
 import 'package:upsc_wars/core/domain/entities/test_question.dart';
@@ -38,6 +40,9 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
 
   @override
   Future<ActiveSession> loadSession(String sessionId) async {
+    final ephemeral = DemoDiagnosticEphemeralStore.instance.peek(sessionId);
+    if (ephemeral != null) return ephemeral.session;
+
     final session = await _userDb.sessionsDao.getSessionById(sessionId);
     if (session == null) {
       throw const SessionNotFoundException();
@@ -427,6 +432,11 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
   @override
   Future<String> submitSession(String sessionId) async {
     final sessionMeta = await _userDb.sessionsDao.getSessionById(sessionId);
+    if (sessionMeta?.analyticsFeatureKey ==
+        CreateGetStartedSessionUseCase.analyticsKey) {
+      return _submitDemoDiagnosticSession(sessionId);
+    }
+
     final rows = await _userDb.sessionQuestionsDao.getSessionQuestionsOrdered(
       sessionId,
     );
@@ -455,6 +465,7 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
       await _analytics.track(const FirstSessionCompletedEvent());
       await NoTestReminderService.cancelAfterFirstTest();
     }
+    await logFirstTestDoneForServices(_analytics, _prefsService);
 
     await _recordHomeActivation(sessionId, sessionMeta?.analyticsFeatureKey);
 
@@ -525,6 +536,40 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
     return sessionId;
   }
 
+  /// Demo diagnostic: show results from memory, then discard — no stats or history.
+  Future<String> _submitDemoDiagnosticSession(String sessionId) async {
+    final active = await loadSession(sessionId);
+    final result = await SessionHistoryRepositoryImpl(
+      _userDb,
+    ).getSessionResult(sessionId);
+
+    final rows = await _userDb.sessionQuestionsDao.getSessionQuestionsOrdered(
+      sessionId,
+    );
+    final hasSureOrEdu = rows.any(
+      (r) =>
+          (r.status == 'correct' || r.status == 'wrong') &&
+          AnswerConfidence.isDangerouslyConfident(r.confidence),
+    );
+    _prefsService.getStartedDiagnosticAttempted = true;
+    if (hasSureOrEdu) {
+      markHomeActivationComplete(_prefsService);
+    }
+    await logFirstTestDoneForServices(_analytics, _prefsService);
+    await logActivationMilestoneForServices(
+      _analytics,
+      _prefsService,
+      id: ActivationMilestones.getStartedDiagnosticCompleted,
+    );
+
+    DemoDiagnosticEphemeralStore.instance.put(
+      sessionId,
+      DemoDiagnosticEphemeralSnapshot(result: result, session: active),
+    );
+    await discardSession(sessionId);
+    return sessionId;
+  }
+
   @override
   Future<void> handleTimedOutQuestion({
     required String sessionId,
@@ -544,6 +589,7 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
 
   @override
   Future<void> markSessionAbandoned(String sessionId) async {
+    await logFirstTestQuitInMidForServices(_analytics, _prefsService);
     final sessionMeta = await _userDb.sessionsDao.getSessionById(sessionId);
     await _userDb.sessionsDao.updateSessionStatus(sessionId, 'abandoned');
     if (sessionMeta != null) {
@@ -563,7 +609,13 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
   }
 
   @override
-  Future<void> discardSession(String sessionId) async {
+  Future<void> discardSession(
+    String sessionId, {
+    bool userInitiatedQuit = false,
+  }) async {
+    if (userInitiatedQuit) {
+      await logFirstTestQuitInMidForServices(_analytics, _prefsService);
+    }
     await _userDb.transaction(() async {
       await (_userDb.delete(_userDb.sessionQuestions)
             ..where((t) => t.sessionId.equals(sessionId)))
@@ -796,7 +848,7 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
           AnswerConfidence.isDangerouslyConfident(r.confidence),
     );
     if (hasSureOrEdu) {
-      _prefsService.homeActivationComplete = true;
+      markHomeActivationComplete(_prefsService);
     }
 
     if (analyticsFeatureKey == 'get_started_diagnostic') {

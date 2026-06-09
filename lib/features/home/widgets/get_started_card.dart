@@ -5,6 +5,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../core/analytics/activation_milestones.dart';
 import '../../../core/analytics/analytics.dart';
 import '../../../core/analytics/analytics_events.dart';
 import '../../../core/layout/system_insets.dart';
@@ -207,6 +208,20 @@ class _GetStartedDiagnosticIntroSheet extends HookConsumerWidget {
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final loading = useState(false);
+    final loggedOnboardingComplete = useRef(false);
+
+    useEffect(() {
+      if (!postOnboarding || loggedOnboardingComplete.value) return null;
+      loggedOnboardingComplete.value = true;
+      unawaited(
+        logActivationMilestoneOnce(
+          ref,
+          ActivationMilestones.onboardingComplete,
+        ),
+      );
+      return null;
+    }, const []);
+
     final bottom = MediaQuery.paddingOf(context).bottom;
     final borderColor = isDark ? AppColors.borderDark : AppColors.borderLight;
     final headerTop = Color.lerp(
@@ -318,7 +333,8 @@ class _GetStartedDiagnosticIntroSheet extends HookConsumerWidget {
                         ),
                         const SizedBox(height: AppSpacing.xs),
                         Text(
-                          'Take this demo test',
+                          'Take this demo test — answers aren\u2019t saved and '
+                          'won\u2019t affect your performance insights.',
                           style: AppTextStyles.bodySm().copyWith(
                             color: scheme.onSurfaceVariant,
                             height: 1.4,

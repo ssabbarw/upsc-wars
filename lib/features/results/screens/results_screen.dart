@@ -13,6 +13,7 @@ import '../../../core/domain/entities/session_result.dart';
 import '../../../core/domain/errors/app_errors.dart';
 import '../../../core/providers/catalog_providers.dart';
 import '../../../core/providers/prefs_provider.dart';
+import '../../../core/providers/user_database_provider.dart';
 import '../../../core/deep_link/shared_session_firestore.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
@@ -25,6 +26,7 @@ import '../../community/open_challenge/open_challenge_exam_registry.dart';
 import '../../community/open_challenge/open_challenge_post_results_submit.dart';
 import '../../community/widgets/open_challenge_post_from_results_card.dart';
 import '../../community/widgets/open_challenge_results_actions.dart';
+import '../../home/domain/demo_diagnostic_ephemeral_store.dart';
 import '../../home/providers/home_activation_provider.dart';
 import '../widgets/session_summary_coach.dart';
 import '../widgets/share_test_bottom_sheet.dart';
@@ -77,6 +79,7 @@ List<Widget> _resultsScrollChildren({
 Future<void> _confirmLeaveResultsAndGoHome(
   BuildContext context,
   WidgetRef ref, {
+  required String sessionId,
   required String actionId,
 }) async {
   final confirmed = await showDialog<bool>(
@@ -100,12 +103,21 @@ Future<void> _confirmLeaveResultsAndGoHome(
     ),
   );
   if (confirmed != true || !context.mounted) return;
+  clearDemoDiagnosticEphemeral(sessionId);
   ScreenFlow.logAction(
     ref,
     screenName: ScreenFlow.sessionResults,
     actionId: actionId,
     actionKind: 'back',
   );
+  final db = ref.read(userDatabaseProvider);
+  final completedCount = await db.sessionsDao.countCompletedSessions();
+  if (completedCount == 1) {
+    final prefs = await ref.read(prefsServiceProvider.future);
+    prefs.pushPermissionPromptPendingAfterFirstTest = true;
+    ref.invalidate(prefsServiceProvider);
+  }
+  if (!context.mounted) return;
   context.go('/');
 }
 
@@ -147,6 +159,7 @@ class ResultsScreen extends ConsumerWidget {
           _confirmLeaveResultsAndGoHome(
             context,
             ref,
+            sessionId: sessionId,
             actionId: 'system_back_pop',
           ),
         );
@@ -185,7 +198,10 @@ class ResultsScreen extends ConsumerWidget {
                       if (e is SessionNotFoundException) ...[
                         const SizedBox(height: AppSpacing.sm),
                         OutlinedButton(
-                          onPressed: () => context.go('/'),
+                          onPressed: () {
+                            clearDemoDiagnosticEphemeral(sessionId);
+                            context.go('/');
+                          },
                           child: Text('Home', style: AppTextStyles.label()),
                         ),
                       ],
@@ -230,6 +246,7 @@ class ResultsScreen extends ConsumerWidget {
                             _confirmLeaveResultsAndGoHome(
                               context,
                               ref,
+                              sessionId: sessionId,
                               actionId: 'app_bar_back',
                             ),
                           ),
