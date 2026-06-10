@@ -48,10 +48,14 @@ import '../../features/home/screens/settings_screen.dart';
 import '../../features/home/screens/about_us_screen.dart';
 import '../../features/home/screens/progress_screen.dart';
 import '../../features/internal/screens/feature_health_screen.dart';
+import '../../features/push_spot_test/screens/spot_test_composer_screen.dart';
 import '../../features/home/providers/auth_providers.dart';
 import '../../features/results/screens/confidence_tier_review_screen.dart';
 import '../../features/results/screens/mistake_review_intro_screen.dart';
 import '../../features/results/screens/mistake_review_screen.dart';
+import '../../features/push_spot_test/push_spot_test_launch_params.dart';
+import '../../features/push_spot_test/screens/push_spot_results_screen.dart';
+import '../../features/push_spot_test/screens/push_spot_test_launch_screen.dart';
 import '../../features/results/screens/results_screen.dart';
 import '../../features/revision_queue/screens/revision_queue_screen.dart';
 import '../../features/revision_queue/screens/revision_mode_screen.dart';
@@ -331,6 +335,19 @@ GoRouter appRouter(Ref ref) {
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
+        path: '/internal/spot-composer',
+        name: 'spot_composer',
+        builder: (context, state) {
+          if (!kDebugMode) {
+            return const Scaffold(
+              body: Center(child: Text('Not available')),
+            );
+          }
+          return const SpotTestComposerScreen();
+        },
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
         path: '/notification/long-html',
         name: 'long_html_notification',
         builder: (context, state) => const LongHtmlNotificationScreen(),
@@ -535,6 +552,24 @@ GoRouter appRouter(Ref ref) {
         name: 'session_results',
         builder: (context, state) =>
             ResultsScreen(sessionId: state.pathParameters['sessionId']!),
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/spot-results/:sessionId',
+        name: 'push_spot_results',
+        builder: (context, state) => PushSpotResultsScreen(
+          sessionId: state.pathParameters['sessionId']!,
+        ),
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/spot-test/launch',
+        name: 'push_spot_test_launch',
+        builder: (context, state) => PushSpotTestLaunchScreen(
+          params: PushSpotTestLaunchParams.fromQuery(
+            state.uri.queryParameters,
+          ),
+        ),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,

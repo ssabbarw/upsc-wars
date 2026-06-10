@@ -6,6 +6,41 @@ admin.initializeApp();
 
 const MAX_BODY_LEN = 180;
 
+/** FCM topic — must match Flutter [PushSpotTestConstants.broadcastFcmTopic]. */
+const SPOT_TEST_BROADCAST_TOPIC = "upsc_wars_spot_tests";
+
+function spotTestBroadcastAllowlist() {
+  const raw = process.env.SPOT_TEST_BROADCAST_EMAILS || "";
+  return new Set(
+    raw
+      .split(",")
+      .map((e) => e.trim().toLowerCase())
+      .filter(Boolean),
+  );
+}
+
+function buildSpotTestFcmData(data) {
+  const fcmData = { kind: "push_spot_test" };
+  const subjectRaw = data && data.subject;
+  const topicRaw = data && data.topic;
+  const subtopicRaw = data && data.subtopic;
+  const questionUuidRaw = data && data.question_uuid;
+
+  if (typeof subjectRaw === "string" && subjectRaw.trim()) {
+    fcmData.subject = subjectRaw.trim();
+  }
+  if (typeof topicRaw === "string" && topicRaw.trim()) {
+    fcmData.topic = topicRaw.trim();
+  }
+  if (typeof subtopicRaw === "string" && subtopicRaw.trim()) {
+    fcmData.subtopic = subtopicRaw.trim();
+  }
+  if (typeof questionUuidRaw === "string" && questionUuidRaw.trim()) {
+    fcmData.question_uuid = questionUuidRaw.trim();
+  }
+  return fcmData;
+}
+
 /**
  * HTTPS callable `sendBattleInvite` — invoked from Flutter
  * `BattleInviteCloudService` with:
@@ -241,6 +276,111 @@ exports.sendSelfTestNotification = functions.https.onCall(async (data, context) 
 
   functions.logger.info("sendSelfTestNotification: delivered", { email });
   return { ok: true };
+});
+
+/**
+ * HTTPS callable `sendSpotTestNotification` — spot-test FCM to the caller's
+ * device (`target: self`) or all subscribers on [SPOT_TEST_BROADCAST_TOPIC]
+ * (`target: broadcast`, allowlisted emails only).
+ */
+exports.sendSpotTestNotification = functions.https.onCall(async (data, context) => {
+  functions.logger.info("sendSpotTestNotification: invoked", {
+    uid: context.auth && context.auth.uid,
+    target: data && data.target,
+  });
+
+  if (!context.auth) {
+    throw new functions.https.HttpsError(
+      "unauthenticated",
+      "Sign in required.",
+    );
+  }
+
+  const tokenEmail = context.auth.token.email;
+  if (!tokenEmail || typeof tokenEmail !== "string") {
+    throw new functions.https.HttpsError(
+      "failed-precondition",
+      "Your account must have an email for this test.",
+    );
+  }
+
+  const titleRaw = data && data.title;
+  const bodyRaw = data && data.body;
+  const title =
+    typeof titleRaw === "string" && titleRaw.trim()
+      ? titleRaw.trim().slice(0, 120)
+      : "";
+  const body =
+    typeof bodyRaw === "string" && bodyRaw.trim()
+      ? bodyRaw.trim().slice(0, MAX_BODY_LEN)
+      : "";
+
+  if (!title || !body) {
+    return { ok: false, reason: "invalid_argument" };
+  }
+
+  const email = tokenEmail.toLowerCase().trim();
+  const targetRaw = data && data.target;
+  const target =
+    typeof targetRaw === "string" && targetRaw.trim() === "broadcast"
+      ? "broadcast"
+      : "self";
+  const fcmData = buildSpotTestFcmData(data);
+  const message = {
+    notification: { title, body },
+    data: fcmData,
+  };
+
+  if (target === "broadcast") {
+    const allowlist = spotTestBroadcastAllowlist();
+    if (!allowlist.has(email)) {
+      functions.logger.warn("sendSpotTestNotification: broadcast denied", {
+        email,
+      });
+      return { ok: false, reason: "not_authorized" };
+    }
+    try {
+      await admin.messaging().send({
+        ...message,
+        topic: SPOT_TEST_BROADCAST_TOPIC,
+      });
+    } catch (e) {
+      functions.logger.error("sendSpotTestNotification: broadcast failed", {
+        email,
+        error: e && e.message ? e.message : String(e),
+      });
+      return { ok: false, reason: "send_failed" };
+    }
+    functions.logger.info("sendSpotTestNotification: broadcast delivered", {
+      email,
+      topic: SPOT_TEST_BROADCAST_TOPIC,
+    });
+    return { ok: true, target: "broadcast" };
+  }
+
+  const userSnap = await admin.firestore().collection("users").doc(email).get();
+  const userData = userSnap.data() || {};
+  const fcmToken = userData.fcm_token || userData.fcmToken;
+  if (!fcmToken || typeof fcmToken !== "string") {
+    functions.logger.warn("sendSpotTestNotification: no token", { email });
+    return { ok: false, reason: "no_token" };
+  }
+
+  try {
+    await admin.messaging().send({
+      ...message,
+      token: fcmToken,
+    });
+  } catch (e) {
+    functions.logger.error("sendSpotTestNotification: FCM failed", {
+      email,
+      error: e && e.message ? e.message : String(e),
+    });
+    return { ok: false, reason: "send_failed" };
+  }
+
+  functions.logger.info("sendSpotTestNotification: delivered", { email });
+  return { ok: true, target: "self" };
 });
 
 /**

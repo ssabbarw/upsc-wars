@@ -6,6 +6,7 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
 
 import 'package:upsc_wars/core/debug/cursor_debug_log.dart';
+import 'package:upsc_wars/features/push_spot_test/push_spot_test_constants.dart';
 
 /// Persists FCM device token on `users/{lowercaseEmail}` for Cloud Function invite delivery.
 class FcmTokenSyncService {
@@ -48,6 +49,7 @@ class FcmTokenSyncService {
       // #endregion
       if (token == null || token.isEmpty) return;
       await _writeToken(email: email, token: token);
+      await _ensureSpotTestBroadcastTopicSubscription();
     } catch (e, st) {
       debugPrint('FcmTokenSyncService.syncForCurrentUser: $e');
       debugPrintStack(stackTrace: st);
@@ -74,6 +76,7 @@ class FcmTokenSyncService {
           );
           // #endregion
           await _writeToken(email: email, token: token);
+          await _ensureSpotTestBroadcastTopicSubscription();
         } catch (e, st) {
           debugPrint('FcmTokenSyncService.onTokenRefresh: $e');
           debugPrintStack(stackTrace: st);
@@ -93,5 +96,17 @@ class FcmTokenSyncService {
       },
       SetOptions(merge: true),
     );
+  }
+
+  static Future<void> _ensureSpotTestBroadcastTopicSubscription() async {
+    if (kIsWeb) return;
+    try {
+      await FirebaseMessaging.instance.subscribeToTopic(
+        PushSpotTestConstants.broadcastFcmTopic,
+      );
+    } catch (e, st) {
+      debugPrint('FcmTokenSyncService.subscribeToSpotTestTopic: $e');
+      debugPrintStack(stackTrace: st);
+    }
   }
 }

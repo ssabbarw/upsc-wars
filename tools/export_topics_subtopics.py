@@ -22,6 +22,7 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_INPUT_DIR = PROJECT_ROOT / "assets" / "final_cleaned_questions"
 DEFAULT_OUTPUT_DIR = PROJECT_ROOT / "tools" / "reports"
+ASSET_CATALOG_PATH = PROJECT_ROOT / "assets" / "data" / "topics_and_subtopics.json"
 
 
 def collect_topics_subtopics(input_dir: Path) -> dict[str, dict[str, list[str]]]:
@@ -147,6 +148,9 @@ def main() -> None:
 
     if args.format == "json":
         write_json(output_path, catalog)
+        if output_path != ASSET_CATALOG_PATH.resolve():
+            write_json(ASSET_CATALOG_PATH, catalog)
+            print(f"[DONE] Also wrote {ASSET_CATALOG_PATH}")
     else:
         write_txt(output_path, catalog)
 

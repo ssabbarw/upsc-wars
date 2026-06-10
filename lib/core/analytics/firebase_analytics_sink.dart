@@ -25,6 +25,7 @@ import 'analytics_sink.dart';
 /// * `battle_invite_outcome` — `kind`
 /// * `battle_invite_accepted` — (none)
 /// * `push_permission_snapshot` — `status`, `allows_push` (0/1); also sets user property `push_alerts`
+/// * `push_permission_prompt_result` — `status`, `allows_push` (0/1), `source`; also sets `push_alerts`
 /// * `onboarding_step_duration` — `step`, `duration_ms`
 /// * `onboarding_reveal_trial_swiped` — (none)
 /// * `onboarding_flow_opened` / `onboarding_flow_completed` — `total_duration_ms` on completed only
@@ -201,20 +202,21 @@ class FirebaseAnalyticsSink implements AnalyticsSink {
           :final status,
           :final allowsPush,
         ):
-        await _analytics.setUserProperty(
-          name: 'push_alerts',
-          value: switch (status) {
-            'authorized' => 'on',
-            'provisional' => 'on',
-            'not_determined' => 'not_determined',
-            'denied' => 'off',
-            'web_authorized' => 'on',
-            _ => 'unknown',
-          },
-        );
+        await _setPushAlertsUserProperty(status);
         await _log('push_permission_snapshot', {
           'status': status,
           'allows_push': allowsPush ? 1 : 0,
+        });
+      case PushPermissionPromptResultEvent(
+          :final status,
+          :final allowsPush,
+          :final source,
+        ):
+        await _setPushAlertsUserProperty(status);
+        await _log('push_permission_prompt_result', {
+          'status': status,
+          'allows_push': allowsPush ? 1 : 0,
+          'source': source,
         });
       case OnboardingStepDurationEvent(
           :final step,
@@ -372,6 +374,20 @@ class FirebaseAnalyticsSink implements AnalyticsSink {
           'edu_wrong': eduWrong,
         });
     }
+  }
+
+  Future<void> _setPushAlertsUserProperty(String status) async {
+    await _analytics.setUserProperty(
+      name: 'push_alerts',
+      value: switch (status) {
+        'authorized' => 'on',
+        'provisional' => 'on',
+        'not_determined' => 'not_determined',
+        'denied' => 'off',
+        'web_authorized' => 'on',
+        _ => 'unknown',
+      },
+    );
   }
 
   Future<void> _log(String name, Map<String, Object> params) async {

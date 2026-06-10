@@ -343,6 +343,25 @@ final class PushNotificationStatusSnapshotEvent extends AnalyticsEvent {
   final bool allowsPush;
 }
 
+/// **Direct outcome** after the OS notification permission dialog closes
+/// ([BattleMessagingService.requestPushAuthorizationAndSync]). One event per
+/// prompt attempt (not debounced like [PushNotificationStatusSnapshotEvent]).
+///
+/// **GA4:** `push_permission_prompt_result` with `status`, `allows_push` (0/1),
+/// and `source` (call site, e.g. `second_app_open`). Also updates user
+/// property `push_alerts` in [FirebaseAnalyticsSink].
+final class PushPermissionPromptResultEvent extends AnalyticsEvent {
+  const PushPermissionPromptResultEvent({
+    required this.status,
+    required this.allowsPush,
+    required this.source,
+  });
+
+  final String status;
+  final bool allowsPush;
+  final String source;
+}
+
 /// **Deferred “education” bottom sheet** (after a test or community sign-in)
 /// was closed. Tracks whether the user asked for the system prompt.
 ///

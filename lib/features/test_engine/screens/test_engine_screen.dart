@@ -29,6 +29,7 @@ import '../../../shared/widgets/selectable_copy_search_text.dart';
 import '../../../shared/widgets/top_snack_bar.dart';
 import '../../community/widgets/share_qotd_sheet.dart';
 import '../../history/widgets/explanation_card.dart';
+import '../../push_spot_test/push_spot_test_constants.dart';
 import '../providers/test_session_provider.dart';
 import '../providers/test_session_state.dart';
 import '../widgets/exam_option_confidence_strip.dart';
@@ -314,10 +315,19 @@ class _TestEngineTimerTicker extends HookConsumerWidget {
             try {
               final submitted = await notifier.submit();
               if (context.mounted) {
+                final featureKey = ref
+                    .read(testSessionProvider(sessionId))
+                    .asData
+                    ?.value
+                    .session
+                    ?.analyticsFeatureKey;
                 upscWarsTrace(
-                  'TestEngine timer submit -> go /results/$submitted',
+                  'TestEngine timer submit -> go '
+                  '${sessionResultsRouteForKey(submitted, featureKey)}',
                 );
-                context.go('/results/$submitted');
+                context.go(
+                  sessionResultsRouteForKey(submitted, featureKey),
+                );
               }
             } catch (e, st) {
               upscWarsTrace(
@@ -702,10 +712,19 @@ Future<void> _showTestPaletteSheet(
                               final id = await notifier.submit();
                               if (ctx.mounted) Navigator.pop(ctx);
                               if (!context.mounted) return;
+                              final featureKey = ref
+                                  .read(testSessionProvider(sessionId))
+                                  .asData
+                                  ?.value
+                                  .session
+                                  ?.analyticsFeatureKey;
                               upscWarsTrace(
-                                'TestEngine palette submit -> go /results/$id',
+                                'TestEngine palette submit -> go '
+                                '${sessionResultsRouteForKey(id, featureKey)}',
                               );
-                              context.go('/results/$id');
+                              context.go(
+                                sessionResultsRouteForKey(id, featureKey),
+                              );
                             } catch (e, st) {
                               upscWarsTrace(
                                 'TestEngine palette submit FAILED',

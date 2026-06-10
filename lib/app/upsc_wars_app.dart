@@ -119,7 +119,9 @@ class _RootMaterialApp extends HookConsumerWidget {
           if (p.appOpenCount != 2) return;
           await WidgetsBinding.instance.endOfFrame;
           upscWarsTrace('push_auto_prompt on 2nd open');
-          await BattleMessagingService.requestPushAuthorizationIfNotDetermined();
+          await BattleMessagingService.requestPushAuthorizationIfNotDetermined(
+            source: 'second_app_open',
+          );
         } catch (e, st) {
           upscWarsTrace('push_auto_prompt error', error: e, stackTrace: st);
         }

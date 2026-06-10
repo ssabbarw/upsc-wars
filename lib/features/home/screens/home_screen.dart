@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -29,6 +30,7 @@ import '../providers/auth_providers.dart';
 import '../providers/home_activation_provider.dart';
 import '../widgets/get_started_card.dart';
 import '../widgets/recovery_plan_section.dart';
+import '../../push_spot_test/widgets/push_spot_test_debug_card.dart';
 import '../../daily_ca/widgets/daily_ca_home_card.dart';
 import '../../../shared/widgets/push_denied_banner.dart';
 import '../../../shared/theme/dark_mode_toggle.dart';
@@ -150,7 +152,9 @@ class HomeScreen extends HookConsumerWidget {
         await WidgetsBinding.instance.endOfFrame;
         if (cancelled || !context.mounted) return;
 
-        await BattleMessagingService.requestPushAuthorizationIfNotDetermined();
+        await BattleMessagingService.requestPushAuthorizationIfNotDetermined(
+          source: 'post_first_test',
+        );
 
         if (cancelled) return;
         final p = await ref.read(prefsServiceProvider.future);
@@ -470,6 +474,10 @@ class HomeScreen extends HookConsumerWidget {
                       );
                     },
                   ),
+                  if (kDebugMode) ...[
+                    const PushSpotTestDebugCard(),
+                    const SizedBox(height: AppSpacing.md),
+                  ],
                   const RecoveryPlanSection(),
                   const SizedBox(height: AppSpacing.md),
                   Consumer(

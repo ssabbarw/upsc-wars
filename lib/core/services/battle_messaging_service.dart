@@ -13,6 +13,8 @@ import 'package:upsc_wars/core/router/app_router.dart';
 import 'package:upsc_wars/core/services/app_local_notifications_service.dart';
 import 'package:upsc_wars/core/services/fcm_token_sync_service.dart';
 import 'package:upsc_wars/features/community/open_challenge/open_challenge_fcm.dart';
+import 'package:upsc_wars/features/push_spot_test/push_spot_test_fcm.dart';
+import 'package:upsc_wars/features/push_spot_test/push_spot_test_launch_params.dart';
 import 'package:upsc_wars/features/notifications/long_html_notification_constants.dart';
 import 'package:upsc_wars/shared/widgets/app_toast.dart';
 
@@ -174,6 +176,9 @@ class BattleMessagingService {
     } else if (message.data['kind']?.toString().trim().toLowerCase() ==
         OpenChallengeFcm.kind) {
       kind = 'open_challenge';
+    } else if (message.data['kind']?.toString().trim().toLowerCase() ==
+        PushSpotTestFcm.kind) {
+      kind = PushSpotTestFcm.kind;
     } else {
       final sid = message.data['sessionId']?.toString().trim() ?? '';
       if (sid.isNotEmpty) {
@@ -219,6 +224,29 @@ class BattleMessagingService {
             .trim();
         if (id != null && id.isNotEmpty) {
           router.go('/community/open-challenges/$id');
+        }
+        return;
+      }
+      if (ocKind == PushSpotTestFcm.kind) {
+        final params = PushSpotTestLaunchParams(
+          subject:
+              message.data[PushSpotTestFcm.dataKeySubject]?.toString() ?? '',
+          topic: message.data[PushSpotTestFcm.dataKeyTopic]?.toString() ?? '',
+          subTopic: () {
+            final subRaw =
+                message.data[PushSpotTestFcm.dataKeySubtopic] ??
+                message.data[PushSpotTestFcm.dataKeySubTopicAlt];
+            final s = subRaw?.toString().trim();
+            return s != null && s.isNotEmpty ? s : null;
+          }(),
+          questionUuid: PushSpotTestFcm.questionUuidFromData(message.data),
+        );
+        if (params.isValid) {
+          final uri = Uri(
+            path: '/spot-test/launch',
+            queryParameters: params.toQueryParameters(),
+          );
+          router.go(uri.toString());
         }
         return;
       }
@@ -306,7 +334,9 @@ class BattleMessagingService {
   /// iOS: only when [AuthorizationStatus.notDetermined].
   /// Android 13+: when POST_NOTIFICATIONS is not granted (treats pre-prompt as
   /// not-yet-asked, not denied — [notificationAuthorizationStatus] cannot distinguish).
-  static Future<void> requestPushAuthorizationIfNotDetermined() async {
+  static Future<void> requestPushAuthorizationIfNotDetermined({
+    String source = 'unknown',
+  }) async {
     if (kIsWeb) return;
 
     if (defaultTargetPlatform == TargetPlatform.android) {
@@ -316,17 +346,19 @@ class BattleMessagingService {
             await AppLocalNotificationsService.androidNotificationsEnabled();
         if (enabled == true) return;
       }
-      await requestPushAuthorizationAndSync();
+      await requestPushAuthorizationAndSync(source: source);
       return;
     }
 
     final status = await notificationAuthorizationStatus();
     if (status != AuthorizationStatus.notDetermined) return;
-    await requestPushAuthorizationAndSync();
+    await requestPushAuthorizationAndSync(source: source);
   }
 
   /// System notification permission + token sync (call after user-facing prompt).
-  static Future<AuthorizationStatus?> requestPushAuthorizationAndSync() async {
+  static Future<AuthorizationStatus?> requestPushAuthorizationAndSync({
+    String source = 'unknown',
+  }) async {
     if (kIsWeb) return null;
     final inFlight = _pushPermissionRequestInFlight;
     if (inFlight != null) return inFlight;
@@ -338,6 +370,7 @@ class BattleMessagingService {
           final granted = await AppLocalNotificationsService
               .requestAndroidNotificationsPermissionIfNeeded();
           if (granted == false) {
+            _logPushPermissionPromptResult(AuthorizationStatus.denied, source);
             return AuthorizationStatus.denied;
           }
         }
@@ -368,6 +401,7 @@ class BattleMessagingService {
           ),
         );
         // #endregion
+        _logPushPermissionPromptResult(settings.authorizationStatus, source);
         await FcmTokenSyncService.syncForCurrentUser();
         _notifyNotificationPermissionMayHaveChanged();
         return settings.authorizationStatus;
@@ -378,6 +412,19 @@ class BattleMessagingService {
 
     _pushPermissionRequestInFlight = future;
     return future;
+  }
+
+  static void _logPushPermissionPromptResult(
+    AuthorizationStatus status,
+    String source,
+  ) {
+    logGlobalAnalytics(
+      PushPermissionPromptResultEvent(
+        status: notificationAuthorizationStatusLabel(status),
+        allowsPush: notificationAuthorizationAllowsPush(status),
+        source: source,
+      ),
+    );
   }
 
   /// Returns the device token for storing on `users/{email}` (server targets invites).

@@ -86,12 +86,14 @@ Future<bool?> showGetStartedDiagnosticIntroSheet(
     ),
   );
   if (started != true) {
-    await BattleMessagingService.requestPushAuthorizationIfNotDetermined();
+    await BattleMessagingService.requestPushAuthorizationIfNotDetermined(
+      source: 'get_started_sheet_dismiss',
+    );
   }
   return started;
 }
 
-/// Temporary onboarding invitation — hidden after first diagnosis (State B).
+/// Temporary onboarding invitation — hidden after the user's first finished test.
 class GetStartedCard extends HookConsumerWidget {
   const GetStartedCard({super.key});
 

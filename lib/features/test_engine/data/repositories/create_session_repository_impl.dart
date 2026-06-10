@@ -46,12 +46,33 @@ class CreateSessionRepositoryImpl implements CreateSessionRepository {
         attemptedQuestionUuids: attempted,
       );
     } else if (topic != null) {
-      picked = await _userDatabase.questionsDao.getUnseenFirstByTopic(
-        subject: config.subject,
-        topic: topic,
-        limit: want,
-        attemptedQuestionUuids: attempted,
-      );
+      final sub = config.subTopic?.trim();
+      if (sub != null && sub.isNotEmpty) {
+        var subPicked =
+            await _userDatabase.questionsDao.getUnseenFirstByTopicSubTopic(
+          subject: config.subject,
+          topic: topic,
+          subTopic: sub,
+          limit: want,
+          attemptedQuestionUuids: attempted,
+        );
+        if (subPicked.isEmpty) {
+          subPicked = await _userDatabase.questionsDao.getUnseenFirstByTopic(
+            subject: config.subject,
+            topic: topic,
+            limit: want,
+            attemptedQuestionUuids: attempted,
+          );
+        }
+        picked = subPicked;
+      } else {
+        picked = await _userDatabase.questionsDao.getUnseenFirstByTopic(
+          subject: config.subject,
+          topic: topic,
+          limit: want,
+          attemptedQuestionUuids: attempted,
+        );
+      }
     } else {
       picked = await _userDatabase.questionsDao.getUnseenFirstBySubject(
         subject: config.subject,

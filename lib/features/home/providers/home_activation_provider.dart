@@ -46,8 +46,11 @@ class HomeActivationState {
   final int completedSessionCount;
   final int consecutiveSessionDays;
 
+  /// Hide once the user has finished any first test — demo or a real session.
   bool get shouldShowGetStartedCard =>
-      !activationComplete && !getStartedDiagnosticAttempted;
+      !activationComplete &&
+      !getStartedDiagnosticAttempted &&
+      completedSessionCount == 0;
 }
 
 @Riverpod(keepAlive: true)

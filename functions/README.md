@@ -8,6 +8,17 @@ HTTPS callable used by Flutter (`BattleInviteCloudService`). It verifies the cal
 
 HTTPS callable used by Flutter (`BattleSelfTestPushCloudService`) from **Profile → Push test**. Sends one FCM to **`users/{yourEmail}.fcm_token`** with title **Upsc Wars** and body **Success — push notifications are working.** so you can verify FCM on a **single device** without a second player.
 
+## `sendSpotTestNotification`
+
+HTTPS callable used by Flutter (`SpotTestPushCloudService`) from **Settings → Internal → Spot test composer**.
+
+- `target: self` (default) — one FCM to **`users/{yourEmail}.fcm_token`**
+- `target: broadcast` — FCM to topic **`upsc_wars_spot_tests`** (all app clients subscribe on token sync). Caller email must be listed in env **`SPOT_TEST_BROADCAST_EMAILS`** (comma-separated, lowercase).
+
+Set in **Firebase Console → Functions → sendSpotTestNotification → Environment variables**:
+
+`SPOT_TEST_BROADCAST_EMAILS=you@example.com,other@example.com`
+
 ## Setup
 
 ```bash

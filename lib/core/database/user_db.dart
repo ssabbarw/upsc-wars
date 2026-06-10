@@ -423,6 +423,36 @@ class QuestionsDao extends DatabaseAccessor<UserDatabase>
     return getByUuidsInOrder([...unseenUuids, ...seenUuids]);
   }
 
+  Future<List<Question>> getUnseenFirstByTopicSubTopic({
+    required String subject,
+    required String topic,
+    required String subTopic,
+    required int limit,
+    required Set<String> attemptedQuestionUuids,
+  }) async {
+    if (limit <= 0) return const [];
+    final unseenUuids = await _randomQuestionUuids(
+      subject: subject,
+      topic: topic,
+      subTopic: subTopic,
+      limit: limit,
+      attemptedQuestionUuids: attemptedQuestionUuids,
+      preferUnseen: true,
+    );
+    if (unseenUuids.length >= limit) {
+      return getByUuidsInOrder(unseenUuids.take(limit).toList());
+    }
+    final seenUuids = await _randomQuestionUuids(
+      subject: subject,
+      topic: topic,
+      subTopic: subTopic,
+      limit: limit - unseenUuids.length,
+      attemptedQuestionUuids: attemptedQuestionUuids,
+      preferUnseen: false,
+    );
+    return getByUuidsInOrder([...unseenUuids, ...seenUuids]);
+  }
+
   /// Random MCQs from the whole bank (any subject), unseen-first then seen.
   Future<List<Question>> getUnseenFirstRandomMixed({
     required int limit,
@@ -489,6 +519,22 @@ class QuestionsDao extends DatabaseAccessor<UserDatabase>
     }).get();
   }
 
+  Future<List<String>> getDistinctSubTopicsForSubjectTopic(
+    String subject,
+    String topic,
+  ) async {
+    final rows = await customSelect(
+      'SELECT DISTINCT sub_topic FROM questions WHERE subject = ? AND topic = ? '
+      'ORDER BY sub_topic ASC',
+      variables: [
+        Variable.withString(subject),
+        Variable.withString(topic),
+      ],
+      readsFrom: {questions},
+    ).get();
+    return rows.map((row) => row.read<String>('sub_topic')).toList();
+  }
+
   Future<Map<String, QuestionSubjectTopic>> getSubjectTopicForUuids(
     List<String> uuids,
   ) async {
@@ -523,6 +569,7 @@ class QuestionsDao extends DatabaseAccessor<UserDatabase>
   Future<List<String>> _randomQuestionUuids({
     required String subject,
     String? topic,
+    String? subTopic,
     required int limit,
     required Set<String> attemptedQuestionUuids,
     required bool preferUnseen,
@@ -532,6 +579,10 @@ class QuestionsDao extends DatabaseAccessor<UserDatabase>
     if (topic != null) {
       whereParts.add('topic = ?');
       variables.add(Variable.withString(topic));
+    }
+    if (subTopic != null) {
+      whereParts.add('sub_topic = ?');
+      variables.add(Variable.withString(subTopic));
     }
 
     if (preferUnseen) {
