@@ -61,6 +61,7 @@ class HomeScreen extends HookConsumerWidget {
       data: (p) => p.pushPermissionPromptPendingAfterFirstTest,
       orElse: () => false,
     );
+    final pushPromptInFlight = useRef(false);
 
     final past200ms = useState(false);
     useEffect(() {
@@ -137,20 +138,25 @@ class HomeScreen extends HookConsumerWidget {
     }, [getStartedSheetPending.value, homeScrollController]);
 
     useEffect(() {
-      if (!pushPromptPending) return null;
+      if (!pushPromptPending || pushPromptInFlight.value) return null;
       var cancelled = false;
       unawaited(() async {
         final prefs = await ref.read(prefsServiceProvider.future);
         if (cancelled || !prefs.pushPermissionPromptPendingAfterFirstTest) {
           return;
         }
-        prefs.pushPermissionPromptPendingAfterFirstTest = false;
+        pushPromptInFlight.value = true;
+
+        await WidgetsBinding.instance.endOfFrame;
+        if (cancelled || !context.mounted) return;
+
+        await BattleMessagingService.requestPushAuthorizationIfNotDetermined();
+
+        if (cancelled) return;
+        final p = await ref.read(prefsServiceProvider.future);
+        p.pushPermissionPromptPendingAfterFirstTest = false;
         ref.invalidate(prefsServiceProvider);
-        WidgetsBinding.instance.addPostFrameCallback((_) async {
-          if (cancelled || !context.mounted) return;
-          await WidgetsBinding.instance.endOfFrame;
-          await BattleMessagingService.requestPushAuthorizationIfNotDetermined();
-        });
+        pushPromptInFlight.value = false;
       }());
       return () {
         cancelled = true;
