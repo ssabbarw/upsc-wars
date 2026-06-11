@@ -12,27 +12,38 @@ import '../../../core/providers/prefs_provider.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../data/memory_pair_sets_data.dart';
+import '../domain/memory_pair_catalog_grouping.dart';
 import '../domain/memory_pair_models.dart';
+import '../domain/memory_pair_subject_meta.dart';
 import '../providers/memory_pairs_providers.dart';
+import '../widgets/memory_pair_shared_widgets.dart';
 import '../widgets/memory_pair_game_view.dart';
 import '../widgets/memory_pair_result_view.dart';
 import '../widgets/memory_pair_revise_view.dart';
 import '../widgets/memory_pair_set_detail_view.dart';
 import '../widgets/memory_pairs_sets_view.dart';
+import '../widgets/memory_pairs_subject_view.dart';
 
-enum _MemoryPairsStep { list, detail, revise, game, result }
+enum _MemoryPairsStep { subjects, subject, setDetail, revise, game, result }
 
 class MemoryPairsScreen extends HookConsumerWidget {
-  const MemoryPairsScreen({super.key, this.initialSetId});
+  const MemoryPairsScreen({
+    super.key,
+    this.initialSetId,
+    this.autoplay = false,
+  });
 
   final String? initialSetId;
+
+  /// When true (push welcome → Start), opens the match board immediately.
+  final bool autoplay;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final lang = watchAppLanguage(ref);
-    final step = useState(_MemoryPairsStep.list);
+    final step = useState(_MemoryPairsStep.subjects);
+    final activeSubject = useState<MemoryPairSubjectGroup?>(null);
     final activeSet = useState<MemoryPairSetDefinition?>(null);
-    final difficulty = useState(MemoryPairDifficulty.medium);
     final lastResult = useState<MemoryPairGameResult?>(null);
     final isNewBest = useState(false);
     final retryPairs = useState<List<MemoryPair>?>(null);
@@ -42,12 +53,41 @@ class MemoryPairsScreen extends HookConsumerWidget {
       final id = initialSetId;
       if (id == null) return null;
       final set = memoryPairSetById(id);
-      if (set != null && set.hasPlayablePairs) {
+      if (set == null || !set.hasPlayablePairs) return null;
+
+      Future(() async {
+        final items = await ref.read(memoryPairSetListProvider.future);
+        final groups = groupMemoryPairSetsBySubject(items, lang: lang);
+        MemoryPairSubjectGroup? group;
+        for (final g in groups) {
+          if (g.sortedItems.any((i) => i.definition.id == id)) {
+            group = g;
+            break;
+          }
+        }
+        activeSubject.value = group;
         activeSet.value = set;
-        step.value = _MemoryPairsStep.detail;
-      }
+        step.value = autoplay
+            ? _MemoryPairsStep.game
+            : _MemoryPairsStep.setDetail;
+        if (autoplay) {
+          unawaited(() async {
+            final prefs = await ref.read(prefsServiceProvider.future);
+            if (prefs.memoryPairsGamePlayed) return;
+            prefs.memoryPairsGamePlayed = true;
+            ref.invalidate(prefsServiceProvider);
+            await Analytics.track(
+              ref,
+              MemoryPairsGamePlayedEvent(
+                setId: set.id,
+                difficulty: set.difficulty.id,
+              ),
+            );
+          }());
+        }
+      });
       return null;
-    }, [initialSetId]);
+    }, [initialSetId, lang, autoplay]);
 
     useEffect(() {
       Future(() async {
@@ -66,17 +106,22 @@ class MemoryPairsScreen extends HookConsumerWidget {
       final repo = await ref.read(memoryPairStatsRepositoryProvider.future);
       final wasBest = await repo.recordResult(
         setId: set.id,
-        difficulty: difficulty.value,
+        difficulty: set.difficulty,
         result: result,
       );
       ref.invalidate(memoryPairSetListProvider);
-      ref.invalidate(memoryPairSetStatsProvider((set.id, difficulty.value)));
+      ref.invalidate(memoryPairSetStatsProvider((set.id, set.difficulty)));
       return wasBest;
+    }
+
+    void openSubject(MemoryPairSubjectGroup group) {
+      activeSubject.value = group;
+      step.value = _MemoryPairsStep.subject;
     }
 
     void openSet(MemoryPairSetDefinition set) {
       activeSet.value = set;
-      step.value = _MemoryPairsStep.detail;
+      step.value = _MemoryPairsStep.setDetail;
     }
 
     void startGame({List<MemoryPair>? pairsOverride}) {
@@ -93,7 +138,7 @@ class MemoryPairsScreen extends HookConsumerWidget {
             ref,
             MemoryPairsGamePlayedEvent(
               setId: set.id,
-              difficulty: difficulty.value.id,
+              difficulty: set.difficulty.id,
             ),
           );
         }());
@@ -112,8 +157,10 @@ class MemoryPairsScreen extends HookConsumerWidget {
     }
 
     String title() => switch (step.value) {
-          _MemoryPairsStep.list => 'Revision Games',
-          _MemoryPairsStep.detail => 'Set detail',
+          _MemoryPairsStep.subjects => 'Memory Pairs',
+          _MemoryPairsStep.subject =>
+            activeSubject.value?.subjectLabel ?? 'Subject',
+          _MemoryPairsStep.setDetail => 'Set detail',
           _MemoryPairsStep.revise => 'Revise',
           _MemoryPairsStep.game =>
             activeSet.value?.nameForLang(lang) ?? 'Memory Pairs',
@@ -122,28 +169,36 @@ class MemoryPairsScreen extends HookConsumerWidget {
 
     void onBack() {
       switch (step.value) {
-        case _MemoryPairsStep.list:
+        case _MemoryPairsStep.subjects:
           context.pop();
-        case _MemoryPairsStep.detail:
-          step.value = _MemoryPairsStep.list;
+        case _MemoryPairsStep.subject:
+          step.value = _MemoryPairsStep.subjects;
+          activeSubject.value = null;
+        case _MemoryPairsStep.setDetail:
+          step.value = _MemoryPairsStep.subject;
+          activeSet.value = null;
         case _MemoryPairsStep.revise:
-          step.value = _MemoryPairsStep.detail;
+          step.value = _MemoryPairsStep.setDetail;
         case _MemoryPairsStep.game:
-          step.value = _MemoryPairsStep.detail;
+          step.value = _MemoryPairsStep.setDetail;
           retryPairs.value = null;
         case _MemoryPairsStep.result:
-          step.value = _MemoryPairsStep.list;
+          step.value = _MemoryPairsStep.subjects;
           activeSet.value = null;
+          activeSubject.value = null;
           retryPairs.value = null;
       }
     }
 
     final set = activeSet.value;
+    final subject = activeSubject.value;
     final pairsForGame = () {
       if (set == null) return <MemoryPair>[];
       if (retryPairs.value != null) return retryPairs.value!;
-      return set.pairs.take(difficulty.value.pairCount).toList();
+      return set.pairs.take(set.difficulty.pairCount).toList();
     }();
+
+    final showAppBarTitle = step.value != _MemoryPairsStep.subjects;
 
     return Scaffold(
       body: SafeArea(
@@ -162,37 +217,52 @@ class MemoryPairsScreen extends HookConsumerWidget {
                     onPressed: onBack,
                     icon: const Icon(Icons.chevron_left),
                   ),
-                  Expanded(
-                    child: Text(
-                      title(),
-                      style: AppTextStyles.h2().copyWith(
-                        color: Theme.of(context).colorScheme.onSurface,
+                  if (showAppBarTitle)
+                    Expanded(
+                      child: Text(
+                        title(),
+                        style: AppTextStyles.h2().copyWith(
+                          color: Theme.of(context).colorScheme.onSurface,
+                          fontWeight: step.value == _MemoryPairsStep.subject
+                              ? FontWeight.w800
+                              : FontWeight.w600,
+                        ),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
                       ),
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
+                    )
+                  else
+                    const Spacer(),
+                  if (step.value == _MemoryPairsStep.subject && subject != null)
+                    MemoryPairSubjectIcon(
+                      icon: memoryPairSubjectVisual(subject.subjectKey).icon,
+                      color: memoryPairSubjectVisual(subject.subjectKey).accent,
+                      size: 40,
                     ),
-                  ),
                 ],
               ),
             ),
             Expanded(
               child: switch (step.value) {
-                _MemoryPairsStep.list => MemoryPairsSetsView(onOpenSet: openSet),
-                _MemoryPairsStep.detail when set != null => MemoryPairSetDetailView(
+                _MemoryPairsStep.subjects => MemoryPairsSetsView(
+                    onOpenSubject: openSubject,
+                  ),
+                _MemoryPairsStep.subject when subject != null =>
+                  MemoryPairsSubjectView(
+                    group: subject,
+                    lang: lang,
+                    onOpenSet: openSet,
+                  ),
+                _MemoryPairsStep.setDetail when set != null =>
+                  MemoryPairSetDetailView(
                     set: set,
                     lang: lang,
-                    onRevise: (d) {
-                      difficulty.value = d;
-                      step.value = _MemoryPairsStep.revise;
-                    },
-                    onPlay: (d) {
-                      difficulty.value = d;
-                      startGame();
-                    },
+                    onRevise: () => step.value = _MemoryPairsStep.revise,
+                    onPlay: startGame,
                   ),
                 _MemoryPairsStep.revise when set != null => MemoryPairReviseView(
                     set: set,
-                    difficulty: difficulty.value,
+                    difficulty: set.difficulty,
                     lang: lang,
                     onPlay: () => startGame(),
                   ),
@@ -201,7 +271,7 @@ class MemoryPairsScreen extends HookConsumerWidget {
                     lang: lang,
                     onDone: onGameDone,
                     onQuit: () {
-                      step.value = _MemoryPairsStep.detail;
+                      step.value = _MemoryPairsStep.setDetail;
                       retryPairs.value = null;
                     },
                   ),
@@ -209,18 +279,20 @@ class MemoryPairsScreen extends HookConsumerWidget {
                     lastResult.value != null =>
                   MemoryPairResultView(
                     set: set,
-                    difficulty: difficulty.value,
+                    difficulty: set.difficulty,
                     lang: lang,
                     result: lastResult.value!,
                     isNewBest: isNewBest.value,
                     onTryAnotherSet: () {
-                      step.value = _MemoryPairsStep.list;
+                      step.value = _MemoryPairsStep.subjects;
                       activeSet.value = null;
+                      activeSubject.value = null;
                     },
                     onPlayAgain: () => startGame(),
                     onExit: () {
-                      step.value = _MemoryPairsStep.list;
+                      step.value = _MemoryPairsStep.subjects;
                       activeSet.value = null;
+                      activeSubject.value = null;
                     },
                   ),
                 _ => const SizedBox.shrink(),

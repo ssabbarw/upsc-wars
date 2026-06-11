@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../domain/memory_pair_models.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
@@ -59,6 +60,33 @@ class MemoryPairSubjectIcon extends StatelessWidget {
         borderRadius: BorderRadius.circular(size / 2),
       ),
       child: Icon(icon, color: color, size: size * 0.48),
+    );
+  }
+}
+
+class MemoryPairDifficultyChip extends StatelessWidget {
+  const MemoryPairDifficultyChip({super.key, required this.difficulty});
+
+  final MemoryPairDifficulty difficulty;
+
+  @override
+  Widget build(BuildContext context) {
+    final color = difficulty.chipColor(context);
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+      decoration: BoxDecoration(
+        color: difficulty.chipBackground(context),
+        borderRadius: BorderRadius.circular(AppRadius.pill),
+      ),
+      child: Text(
+        difficulty.label,
+        style: AppTextStyles.caption().copyWith(
+          color: color,
+          fontWeight: FontWeight.w700,
+          fontSize: 11,
+          letterSpacing: 0.3,
+        ),
+      ),
     );
   }
 }

@@ -34,6 +34,7 @@ import '../widgets/get_started_card.dart';
 import '../widgets/recovery_plan_section.dart';
 import '../../memory_pairs/widgets/memory_pairs_home_card.dart';
 import '../providers/daily_drill_provider.dart';
+import '../../memory_pairs/widgets/push_memory_pairs_debug_card.dart';
 import '../../push_spot_test/widgets/push_spot_test_debug_card.dart';
 import '../../daily_ca/widgets/daily_ca_home_card.dart';
 import '../../../shared/widgets/push_denied_banner.dart';
@@ -610,6 +611,8 @@ class HomeScreen extends HookConsumerWidget {
                   ),
                   if (kDebugMode) ...[
                     const SizedBox(height: AppSpacing.lg),
+                    const PushMemoryPairsDebugCard(),
+                    const SizedBox(height: AppSpacing.sm),
                     const PushSpotTestDebugCard(),
                   ],
                   const SizedBox(height: AppSpacing.sm),

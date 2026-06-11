@@ -43,8 +43,9 @@ final memoryPairSetListProvider =
       subjectUniqueQuestionsAttemptedProvider(def.unlockSubjectSlug).future,
     );
     final isUnlocked = progress >= def.unlockQuestionsRequired;
-    final bestSeconds = await repo.bestSecondsForSet(def.id);
-    final lastPlayedAt = await repo.lastPlayedForSet(def.id);
+    final stats = await repo.getStats(def.id, def.difficulty);
+    final bestSeconds = stats?.bestSeconds;
+    final lastPlayedAt = stats?.lastPlayedAt;
 
     items.add(
       MemoryPairSetListItem(

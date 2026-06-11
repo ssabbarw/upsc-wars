@@ -6,21 +6,27 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../domain/memory_pair_catalog_grouping.dart';
 import '../domain/memory_pair_models.dart';
-import '../domain/memory_pair_scoring.dart';
+import '../domain/memory_pair_subject_meta.dart';
 import '../providers/memory_pairs_providers.dart';
-import 'memory_pair_shared_widgets.dart';
+import 'memory_pairs_catalog_widgets.dart';
+import 'memory_pairs_help_sheet.dart';
 
 class MemoryPairsSetsView extends ConsumerWidget {
-  const MemoryPairsSetsView({super.key, required this.onOpenSet});
+  const MemoryPairsSetsView({
+    super.key,
+    required this.onOpenSubject,
+  });
 
-  final ValueChanged<MemoryPairSetDefinition> onOpenSet;
+  final ValueChanged<MemoryPairSubjectGroup> onOpenSubject;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final lang = watchAppLanguage(ref);
     final async = ref.watch(memoryPairSetListProvider);
     final scheme = Theme.of(context).colorScheme;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return async.when(
       loading: () => const Center(child: CircularProgressIndicator()),
@@ -31,46 +37,78 @@ class MemoryPairsSetsView extends ConsumerWidget {
         ),
       ),
       data: (items) {
-        final open = items.where((i) => i.isUnlocked).toList();
-        final locked = items.where((i) => !i.isUnlocked).toList();
+        final groups = groupMemoryPairSetsBySubject(items, lang: lang);
 
         return ListView(
           padding: const EdgeInsets.fromLTRB(
             AppSpacing.lg,
-            AppSpacing.sm,
+            0,
             AppSpacing.lg,
             AppSpacing.xxxl,
           ),
           children: [
-            Text(
-              'Match the pairs, lock in the recall. Finish fast — stars are earned on speed.',
-              style: AppTextStyles.bodySm().copyWith(
-                color: scheme.onSurfaceVariant,
-                height: 1.5,
-              ),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Memory Pairs',
+                        style: AppTextStyles.h2().copyWith(
+                          color: scheme.onSurface,
+                          fontWeight: FontWeight.w800,
+                          letterSpacing: -0.5,
+                        ),
+                      ),
+                      const SizedBox(height: 4),
+                      Text(
+                        'Learn. Recall. Master.',
+                        style: AppTextStyles.bodySm().copyWith(
+                          color: scheme.onSurfaceVariant,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                IconButton(
+                  onPressed: () => showMemoryPairsHelpSheet(context),
+                  icon: Icon(
+                    Icons.help_outline_rounded,
+                    color: scheme.onSurfaceVariant,
+                  ),
+                  style: IconButton.styleFrom(
+                    backgroundColor: isDark
+                        ? scheme.surfaceContainerHighest.withValues(alpha: 0.4)
+                        : scheme.surfaceContainerLowest,
+                  ),
+                ),
+              ],
             ),
             const SizedBox(height: AppSpacing.lg),
-            const MemoryPairSectionLabel(label: 'Ready to play'),
-            ...open.map(
-              (item) => Padding(
-                padding: const EdgeInsets.only(bottom: AppSpacing.sm),
-                child: _SetRow(
-                  item: item,
-                  lang: lang,
-                  onTap: () => onOpenSet(item.definition),
-                ),
+            Text(
+              'Browse by Subject',
+              style: AppTextStyles.labelSm().copyWith(
+                color: scheme.onSurfaceVariant,
+                fontWeight: FontWeight.w600,
               ),
             ),
-            if (locked.isNotEmpty) ...[
-              const SizedBox(height: AppSpacing.md),
-              const MemoryPairSectionLabel(label: 'Locked'),
-              ...locked.map(
-                (item) => Padding(
-                  padding: const EdgeInsets.only(bottom: AppSpacing.sm),
-                  child: _LockedRow(item: item, lang: lang),
+            const SizedBox(height: AppSpacing.md),
+            for (var i = 0; i < groups.length; i++)
+              Padding(
+                padding: EdgeInsets.only(
+                  bottom: i < groups.length - 1 ? AppSpacing.sm : 0,
+                ),
+                child: _SubjectCard(
+                  group: groups[i],
+                  onTap: () => onOpenSubject(groups[i]),
                 ),
               ),
-            ],
+            const SizedBox(height: AppSpacing.lg),
+            _HowItWorksCard(
+              onTap: () => showMemoryPairsHelpSheet(context),
+            ),
           ],
         );
       },
@@ -78,130 +116,39 @@ class MemoryPairsSetsView extends ConsumerWidget {
   }
 }
 
-class _SetRow extends StatelessWidget {
-  const _SetRow({
-    required this.item,
-    required this.lang,
-    required this.onTap,
-  });
+class _SubjectCard extends StatelessWidget {
+  const _SubjectCard({required this.group, required this.onTap});
 
-  final MemoryPairSetListItem item;
-  final String lang;
+  final MemoryPairSubjectGroup group;
   final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
-    final def = item.definition;
     final scheme = Theme.of(context).colorScheme;
-    final played = item.bestSeconds != null;
+    final visual = memoryPairSubjectVisual(group.subjectKey);
 
-    return MemoryPairSurfaceCard(
-      onTap: onTap,
-      child: Row(
-        children: [
-          MemoryPairSubjectIcon(icon: def.icon, color: def.accentColor),
-          const SizedBox(width: AppSpacing.md),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  def.nameForLang(lang),
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  style: AppTextStyles.label().copyWith(
-                    color: scheme.onSurface,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-                const SizedBox(height: 2),
-                Text(
-                  '${def.subjectLabelForLang(lang)} · ${def.pairs.length} pairs',
-                  style: AppTextStyles.caption().copyWith(
-                    color: scheme.onSurfaceVariant,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          if (played) ...[
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Icon(Icons.timer_outlined, size: 14, color: AppColors.primary),
-                    const SizedBox(width: 4),
-                    Text(
-                      formatMemoryPairTime(item.bestSeconds!),
-                      style: AppTextStyles.label().copyWith(
-                        fontWeight: FontWeight.w700,
-                        color: scheme.onSurface,
-                      ),
-                    ),
-                  ],
-                ),
-                Text(
-                  memoryPairRelativePlayed(item.lastPlayedAt),
-                  style: AppTextStyles.caption().copyWith(
-                    color: scheme.onSurfaceVariant,
-                  ),
-                ),
-              ],
-            ),
-          ] else
-            Container(
-              padding: const EdgeInsets.symmetric(
-                horizontal: AppSpacing.sm,
-                vertical: 3,
-              ),
-              decoration: BoxDecoration(
-                color: AppColors.primary.withValues(alpha: 0.1),
-                borderRadius: BorderRadius.circular(AppRadius.pill),
-              ),
-              child: Text(
-                'New',
-                style: AppTextStyles.caption().copyWith(
-                  color: AppColors.primary,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ),
-        ],
-      ),
-    );
-  }
-}
-
-class _LockedRow extends StatelessWidget {
-  const _LockedRow({required this.item, required this.lang});
-
-  final MemoryPairSetListItem item;
-  final String lang;
-
-  @override
-  Widget build(BuildContext context) {
-    final def = item.definition;
-    final scheme = Theme.of(context).colorScheme;
-    final pct = item.unlockRequired == 0
-        ? 100
-        : ((item.unlockProgress / item.unlockRequired) * 100).round().clamp(0, 100);
-
-    return MemoryPairSurfaceCard(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(AppRadius.lg),
+        child: Ink(
+          padding: const EdgeInsets.all(AppSpacing.md),
+          decoration: memoryPairCatalogCardDecoration(context),
+          child: Row(
             children: [
               Container(
-                width: 42,
-                height: 42,
+                width: 48,
+                height: 48,
                 decoration: BoxDecoration(
-                  color: scheme.surfaceContainerHighest,
-                  borderRadius: BorderRadius.circular(21),
+                  color: visual.accent.withValues(
+                    alpha: Theme.of(context).brightness == Brightness.dark
+                        ? 0.22
+                        : 0.14,
+                  ),
+                  shape: BoxShape.circle,
                 ),
-                child: Icon(Icons.lock_outline, color: scheme.onSurfaceVariant),
+                child: Icon(visual.icon, color: visual.accent, size: 24),
               ),
               const SizedBox(width: AppSpacing.md),
               Expanded(
@@ -209,18 +156,98 @@ class _LockedRow extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      def.nameForLang(lang),
+                      group.subjectLabel,
                       style: AppTextStyles.label().copyWith(
-                        color: scheme.onSurfaceVariant,
-                        fontWeight: FontWeight.w600,
+                        color: scheme.onSurface,
+                        fontWeight: FontWeight.w700,
                       ),
                     ),
                     const SizedBox(height: 2),
                     Text(
-                      'Attempt ${def.unlockQuestionsRequired} ${def.subjectLabelForLang(lang)} questions',
+                      '${group.totalSets} topics',
                       style: AppTextStyles.caption().copyWith(
                         color: scheme.onSurfaceVariant,
-                        height: 1.35,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              MemoryPairDifficultyCountStrip(
+                easy: group.countForDifficulty(MemoryPairDifficulty.easy),
+                medium: group.countForDifficulty(MemoryPairDifficulty.medium),
+                hard: group.countForDifficulty(MemoryPairDifficulty.hard),
+              ),
+              const SizedBox(width: AppSpacing.xs),
+              Icon(
+                Icons.chevron_right_rounded,
+                color: scheme.onSurfaceVariant.withValues(alpha: 0.65),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _HowItWorksCard extends StatelessWidget {
+  const _HowItWorksCard({required this.onTap});
+
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(AppRadius.lg),
+        child: Ink(
+          padding: const EdgeInsets.all(AppSpacing.md),
+          decoration: BoxDecoration(
+            color: AppColors.primary.withValues(alpha: isDark ? 0.12 : 0.08),
+            borderRadius: BorderRadius.circular(AppRadius.lg),
+            border: Border.all(
+              color: AppColors.primary.withValues(alpha: 0.2),
+            ),
+          ),
+          child: Row(
+            children: [
+              Container(
+                width: 44,
+                height: 44,
+                decoration: BoxDecoration(
+                  color: AppColors.primary.withValues(alpha: 0.15),
+                  shape: BoxShape.circle,
+                ),
+                child: const Icon(
+                  Icons.emoji_events_outlined,
+                  color: AppColors.primary,
+                  size: 24,
+                ),
+              ),
+              const SizedBox(width: AppSpacing.md),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'How it works?',
+                      style: AppTextStyles.label().copyWith(
+                        color: scheme.onSurface,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      'Topics are grouped by difficulty. Earn stars as you '
+                      'master harder topics!',
+                      style: AppTextStyles.caption().copyWith(
+                        color: scheme.onSurfaceVariant,
+                        height: 1.4,
                       ),
                     ),
                   ],
@@ -228,22 +255,7 @@ class _LockedRow extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height: AppSpacing.sm),
-          ClipRRect(
-            borderRadius: BorderRadius.circular(3),
-            child: LinearProgressIndicator(
-              value: item.unlockRequired == 0 ? 1 : item.unlockProgress / item.unlockRequired,
-              minHeight: 5,
-              backgroundColor: scheme.surfaceContainerHighest,
-              color: scheme.onSurfaceVariant,
-            ),
-          ),
-          const SizedBox(height: 4),
-          Text(
-            '${item.unlockProgress} / ${item.unlockRequired} done ($pct%)',
-            style: AppTextStyles.caption().copyWith(color: scheme.onSurfaceVariant),
-          ),
-        ],
+        ),
       ),
     );
   }

@@ -63,7 +63,9 @@ import '../../features/push_spot_test/push_spot_test_launch_params.dart';
 import '../../features/push_spot_test/screens/push_spot_results_screen.dart';
 import '../../features/push_spot_test/screens/push_spot_test_launch_screen.dart';
 import '../../features/results/screens/results_screen.dart';
+import '../../features/memory_pairs/push/push_memory_pairs_launch_params.dart';
 import '../../features/memory_pairs/screens/memory_pairs_screen.dart';
+import '../../features/memory_pairs/screens/push_memory_pairs_welcome_screen.dart';
 import '../../features/revision_queue/screens/revision_queue_screen.dart';
 import '../../features/revision_queue/screens/revision_mode_screen.dart';
 import '../../features/subject_detail/screens/subject_detail_screen.dart';
@@ -678,11 +680,25 @@ GoRouter appRouter(Ref ref) {
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
+        path: '/memory-pairs/welcome',
+        name: 'memory_pairs_push_welcome',
+        builder: (context, state) => PushMemoryPairsWelcomeScreen(
+          params: PushMemoryPairsLaunchParams.fromQuery(
+            state.uri.queryParameters,
+          ),
+        ),
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
         path: '/memory-pairs',
         name: 'memory_pairs',
-        builder: (context, state) => MemoryPairsScreen(
-          initialSetId: state.uri.queryParameters['set'],
-        ),
+        builder: (context, state) {
+          final q = state.uri.queryParameters;
+          return MemoryPairsScreen(
+            initialSetId: q['set'] ?? q['id'],
+            autoplay: q['autoplay'] == '1' || q['autoplay'] == 'true',
+          );
+        },
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,

@@ -16,6 +16,8 @@ import 'package:upsc_wars/core/router/app_router.dart';
 import 'package:upsc_wars/core/services/app_local_notifications_service.dart';
 import 'package:upsc_wars/core/services/fcm_token_sync_service.dart';
 import 'package:upsc_wars/features/community/open_challenge/open_challenge_fcm.dart';
+import 'package:upsc_wars/features/memory_pairs/push/push_memory_pairs_fcm.dart';
+import 'package:upsc_wars/features/memory_pairs/push/push_memory_pairs_launch_params.dart';
 import 'package:upsc_wars/features/push_spot_test/push_spot_test_fcm.dart';
 import 'package:upsc_wars/features/push_spot_test/push_spot_test_launch_params.dart';
 import 'package:upsc_wars/features/notifications/long_html_notification_constants.dart';
@@ -199,6 +201,9 @@ class BattleMessagingService {
     } else if (message.data['kind']?.toString().trim().toLowerCase() ==
         PushSpotTestFcm.kind) {
       kind = PushSpotTestFcm.kind;
+    } else if (message.data['kind']?.toString().trim().toLowerCase() ==
+        PushMemoryPairsFcm.kind) {
+      kind = PushMemoryPairsFcm.kind;
     } else {
       final sid = message.data['sessionId']?.toString().trim() ?? '';
       if (sid.isNotEmpty) {
@@ -267,6 +272,13 @@ class BattleMessagingService {
             queryParameters: params.toQueryParameters(),
           );
           router.go(uri.toString());
+        }
+        return;
+      }
+      if (ocKind == PushMemoryPairsFcm.kind) {
+        final params = PushMemoryPairsLaunchParams.fromRemoteMessage(message);
+        if (params.isValid) {
+          router.go(params.welcomeLocation);
         }
         return;
       }

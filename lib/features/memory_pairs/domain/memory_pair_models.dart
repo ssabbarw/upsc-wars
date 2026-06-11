@@ -29,6 +29,7 @@ class MemoryPairSetDefinition {
     required this.displaySubjectHi,
     required this.unlockSubjectSlug,
     required this.unlockQuestionsRequired,
+    required this.difficulty,
     required this.icon,
     required this.accentColor,
     required this.pairs,
@@ -43,6 +44,7 @@ class MemoryPairSetDefinition {
   /// [SubjectConstants] slug used for unlock progress.
   final String unlockSubjectSlug;
   final int unlockQuestionsRequired;
+  final MemoryPairDifficulty difficulty;
   final IconData icon;
   final Color accentColor;
   final List<MemoryPair> pairs;
@@ -71,6 +73,21 @@ extension MemoryPairDifficultyX on MemoryPairDifficulty {
         MemoryPairDifficulty.medium => 8,
         MemoryPairDifficulty.hard => 10,
       };
+
+  Color chipColor(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    return switch (this) {
+      MemoryPairDifficulty.easy =>
+        isDark ? const Color(0xFF3D9E6A) : const Color(0xFF1D9E75),
+      MemoryPairDifficulty.medium =>
+        isDark ? const Color(0xFFC98A2E) : const Color(0xFFB45309),
+      MemoryPairDifficulty.hard =>
+        isDark ? const Color(0xFFD45C5C) : const Color(0xFFDC2626),
+    };
+  }
+
+  Color chipBackground(BuildContext context) =>
+      chipColor(context).withValues(alpha: 0.12);
 }
 
 /// Outcome of one play session (single round).
