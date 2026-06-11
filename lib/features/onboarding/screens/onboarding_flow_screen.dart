@@ -15,6 +15,7 @@ import '../../../core/analytics/screen_flow_analytics.dart';
 import '../../../core/providers/prefs_provider.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
+import '../widgets/onboarding_memory_pairs_page.dart';
 
 /// Scale vs ~390dp shortest side (phone-first baseline); clamped for large/small devices.
 double _onbScale(BuildContext context) {
@@ -29,16 +30,17 @@ double _onb(BuildContext context, double designPx) =>
 String _onboardingStepIdForIndex(int i) {
   return switch (i) {
     0 => 'score_story',
-    1 => 'loop',
+    1 => 'memory_pairs_demo',
+    2 => 'loop',
     _ => 'unknown',
   };
 }
 
-/// Two-step first-run onboarding (score story → daily loop), then home + diagnostic sheet.
+/// First-run onboarding: score story → memory-pairs demo → daily loop, then home.
 class OnboardingFlowScreen extends HookConsumerWidget {
   const OnboardingFlowScreen({super.key});
 
-  static const int _pageCount = 2;
+  static const int _pageCount = 3;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -51,8 +53,17 @@ class OnboardingFlowScreen extends HookConsumerWidget {
     final lastPageIndex = useRef(0);
     final bottom = MediaQuery.paddingOf(context).bottom;
     final isLast = page.value == _pageCount - 1;
+    final onMemoryPairsDemo = page.value == 1;
     final hPad = _onb(context, 20);
     final vPadSm = _onb(context, 8);
+
+    void goToLoopPage() {
+      pageController.animateToPage(
+        _pageCount - 1,
+        duration: const Duration(milliseconds: 320),
+        curve: Curves.easeOutCubic,
+      );
+    }
 
     useEffect(() {
       unawaited(Analytics.track(ref, const OnboardingFlowOpenedEvent()));
@@ -105,7 +116,9 @@ class OnboardingFlowScreen extends HookConsumerWidget {
                     Expanded(
                       child: PageView(
                         controller: pageController,
-                        physics: const BouncingScrollPhysics(),
+                        physics: onMemoryPairsDemo
+                            ? const NeverScrollableScrollPhysics()
+                            : const BouncingScrollPhysics(),
                         onPageChanged: (i) {
                           final from = page.value;
                           final ms = DateTime.now()
@@ -138,6 +151,24 @@ class OnboardingFlowScreen extends HookConsumerWidget {
                                   const OnboardingRevealTrialSwipedEvent(),
                                 ),
                               );
+                            },
+                          ),
+                          OnboardingMemoryPairsPage(
+                            onSkip: () {
+                              ScreenFlow.logAction(
+                                ref,
+                                screenName: ScreenFlow.onboarding,
+                                actionId: 'memory_pairs_demo_skipped',
+                              );
+                              goToLoopPage();
+                            },
+                            onContinue: () {
+                              ScreenFlow.logAction(
+                                ref,
+                                screenName: ScreenFlow.onboarding,
+                                actionId: 'memory_pairs_demo_completed',
+                              );
+                              goToLoopPage();
                             },
                           ),
                           const _LoopPage(),
