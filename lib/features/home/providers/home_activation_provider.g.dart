@@ -33,7 +33,7 @@ final class HomeActivationProvider
   HomeActivation create() => HomeActivation();
 }
 
-String _$homeActivationHash() => r'06cc0b7241b5fb2558e509d469c6d6828ee7c077';
+String _$homeActivationHash() => r'e30936fb78c49ab4abc8a6ed789c8b90b69487ce';
 
 abstract class _$HomeActivation extends $AsyncNotifier<HomeActivationState> {
   FutureOr<HomeActivationState> build();

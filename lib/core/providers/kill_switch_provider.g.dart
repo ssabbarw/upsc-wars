@@ -48,7 +48,7 @@ final class KillSwitchProvider
   }
 }
 
-String _$killSwitchHash() => r'b84d9de70fef8bf141b89bc8928c0fe836c8e12a';
+String _$killSwitchHash() => r'de297051237a0639c4442dc4c6ae0774e52f029c';
 
 /// Whether the Community tab should be shown (after [killSwitchProvider] fetch).
 ///
@@ -100,21 +100,21 @@ String _$communityTabRemoteEnabledHash() =>
 
 /// Whether the Daily Current Affairs home entry should be shown.
 ///
-/// Fails open (`true`) while loading or on read errors. On web, defaults to `true`.
+/// Fails closed (`false`) while loading or on read errors.
 
 @ProviderFor(dailyCaRemoteEnabled)
 final dailyCaRemoteEnabledProvider = DailyCaRemoteEnabledProvider._();
 
 /// Whether the Daily Current Affairs home entry should be shown.
 ///
-/// Fails open (`true`) while loading or on read errors. On web, defaults to `true`.
+/// Fails closed (`false`) while loading or on read errors.
 
 final class DailyCaRemoteEnabledProvider
     extends $FunctionalProvider<AsyncValue<bool>, bool, FutureOr<bool>>
     with $FutureModifier<bool>, $FutureProvider<bool> {
   /// Whether the Daily Current Affairs home entry should be shown.
   ///
-  /// Fails open (`true`) while loading or on read errors. On web, defaults to `true`.
+  /// Fails closed (`false`) while loading or on read errors.
   DailyCaRemoteEnabledProvider._()
     : super(
         from: null,
@@ -141,4 +141,4 @@ final class DailyCaRemoteEnabledProvider
 }
 
 String _$dailyCaRemoteEnabledHash() =>
-    r'6a7e13e5a11b6fa77fd7fae2cedde607dad64e55';
+    r'656cc2f8b3d20f324a31a3181b605c5fcac9caef';

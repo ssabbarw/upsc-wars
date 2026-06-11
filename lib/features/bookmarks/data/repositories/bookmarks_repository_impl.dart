@@ -8,6 +8,7 @@ import 'package:upsc_wars/core/database/user_db.dart';
 import 'package:upsc_wars/core/domain/entities/bookmark_item.dart';
 import 'package:upsc_wars/core/parsers/question_display_text_parser.dart';
 import 'package:upsc_wars/core/providers/prefs_provider.dart';
+import 'package:upsc_wars/core/services/question_stats_sync_service.dart';
 import 'package:upsc_wars/features/bookmarks/domain/repositories/bookmarks_repository.dart';
 
 class BookmarksRepositoryImpl implements BookmarksRepository {
@@ -62,6 +63,9 @@ class BookmarksRepositoryImpl implements BookmarksRepository {
           _prefs,
           id: ActivationMilestones.firstBookmark,
         ),
+      );
+      unawaited(
+        QuestionStatsSyncService(userDb: _userDb).recordBookmark(questionUuid),
       );
     }
     await _userDb.revisionQueueDao.add(

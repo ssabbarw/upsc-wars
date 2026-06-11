@@ -111,6 +111,35 @@ class Sessions extends Table {
   TextColumn get analyticsFeatureKey =>
       text().named('analytics_feature_key').nullable()();
 
+  /// False until per-question attempt data has been aggregated to Firestore.
+  BoolColumn get synced =>
+      boolean().withDefault(const Constant(false))();
+
+  @override
+  Set<Column> get primaryKey => {id};
+}
+
+/// Immutable per-question attempt snapshot for analytics and future ML features.
+class QuestionAttemptRecords extends Table {
+  @override
+  String get tableName => 'question_attempt_records';
+
+  TextColumn get id => text()();
+  TextColumn get sessionId =>
+      text().named('session_id').references(Sessions, #id)();
+  TextColumn get questionId =>
+      text().named('question_id').references(Questions, #uuid)();
+  TextColumn get selectedOption =>
+      text().named('selected_option').nullable()();
+  BoolColumn get isCorrect => boolean().named('is_correct').nullable()();
+  IntColumn get timeTakenSeconds =>
+      integer().named('time_taken_seconds').nullable()();
+  BoolColumn get isSure =>
+      boolean().named('is_sure').withDefault(const Constant(false))();
+  BoolColumn get skipped =>
+      boolean().withDefault(const Constant(false))();
+  DateTimeColumn get attemptedAt => dateTime().named('attempted_at')();
+
   @override
   Set<Column> get primaryKey => {id};
 }
@@ -757,6 +786,40 @@ class SessionsDao extends DatabaseAccessor<UserDatabase>
         SessionsCompanion(examRemainingSecs: Value(examRemainingSecs)),
       );
 
+  Future<int> markSessionSynced(String id) =>
+      (update(sessions)..where((t) => t.id.equals(id))).write(
+        const SessionsCompanion(synced: Value(true)),
+      );
+
+  Future<int> markSessionUnsynced(String id) =>
+      (update(sessions)..where((t) => t.id.equals(id))).write(
+        const SessionsCompanion(synced: Value(false)),
+      );
+
+  /// Completed sessions pending Firestore aggregation, oldest first.
+  Future<List<Session>> getUnsyncedCompletedSessions({
+    Duration? minAge,
+  }) async {
+    if (minAge == null) {
+      return (select(sessions)
+            ..where(
+              (t) => t.status.equals('completed') & t.synced.equals(false),
+            )
+            ..orderBy([(t) => OrderingTerm.asc(t.completedAt)]))
+          .get();
+    }
+    final cutoff = DateTime.now().subtract(minAge);
+    return (select(sessions)
+          ..where(
+            (t) =>
+                t.status.equals('completed') &
+                t.synced.equals(false) &
+                t.completedAt.isSmallerOrEqualValue(cutoff),
+          )
+          ..orderBy([(t) => OrderingTerm.asc(t.completedAt)]))
+        .get();
+  }
+
   Future<List<Session>> getAllSessionsOrderedByCreatedAtDesc() => (select(
     sessions,
   )..orderBy([(t) => OrderingTerm.desc(t.createdAt)])).get();
@@ -869,6 +932,39 @@ class SessionsDao extends DatabaseAccessor<UserDatabase>
 bool _isIsoDate(String? value) {
   if (value == null || value.length != 10) return false;
   return RegExp(r'^\d{4}-\d{2}-\d{2}$').hasMatch(value);
+}
+
+@DriftAccessor(tables: [QuestionAttemptRecords, Sessions])
+class QuestionAttemptRecordsDao extends DatabaseAccessor<UserDatabase>
+    with _$QuestionAttemptRecordsDaoMixin {
+  QuestionAttemptRecordsDao(super.db);
+
+  Future<void> insertBatch(List<QuestionAttemptRecordsCompanion> rows) async {
+    if (rows.isEmpty) return;
+    await batch((batch) {
+      batch.insertAll(questionAttemptRecords, rows);
+    });
+  }
+
+  Future<List<QuestionAttemptRecord>> getBySessionId(String sessionId) =>
+      (select(questionAttemptRecords)
+            ..where((t) => t.sessionId.equals(sessionId))
+            ..orderBy([(t) => OrderingTerm.asc(t.attemptedAt)]))
+          .get();
+
+  /// Question IDs with at least one non-skipped attempt in already-synced sessions.
+  Future<Set<String>> getQuestionIdsWithPriorScoredAttempts() async {
+    final rows = await customSelect(
+      '''
+      SELECT DISTINCT qar.question_id AS question_id
+      FROM question_attempt_records qar
+      INNER JOIN sessions s ON s.id = qar.session_id
+      WHERE s.synced = 1 AND qar.skipped = 0
+      ''',
+      readsFrom: {questionAttemptRecords, sessions},
+    ).get();
+    return rows.map((r) => r.read<String>('question_id')).toSet();
+  }
 }
 
 @DriftAccessor(tables: [SessionQuestions])
@@ -1370,6 +1466,7 @@ class UserTopicStatsDao extends DatabaseAccessor<UserDatabase>
     TopicTranslations,
     Sessions,
     SessionQuestions,
+    QuestionAttemptRecords,
     Bookmarks,
     RevisionQueue,
     UserTopicStats,
@@ -1383,6 +1480,7 @@ class UserTopicStatsDao extends DatabaseAccessor<UserDatabase>
     TopicTranslationsDao,
     SessionsDao,
     SessionQuestionsDao,
+    QuestionAttemptRecordsDao,
     BookmarksDao,
     RevisionQueueDao,
     UserTopicStatsDao,
@@ -1394,7 +1492,7 @@ class UserDatabase extends _$UserDatabase {
   UserDatabase([QueryExecutor? executor]) : super(executor ?? _openUnifiedDb());
 
   @override
-  int get schemaVersion => 6;
+  int get schemaVersion => 7;
 
   /// True when [column] already exists on [table] (handles prebuilt DBs whose
   /// `user_version` lags behind the actual schema).
@@ -1503,6 +1601,22 @@ class UserDatabase extends _$UserDatabase {
         await customStatement(
           'CREATE INDEX IF NOT EXISTS idx_questions_source_year '
           'ON questions(source_kind, source_year)',
+        );
+      }
+      if (from < 7) {
+        if (!await _sqliteColumnExists('sessions', 'synced')) {
+          await m.addColumn(sessions, sessions.synced);
+        }
+        if (!await _sqliteTableExists('question_attempt_records')) {
+          await m.createTable(questionAttemptRecords);
+        }
+        await customStatement(
+          'CREATE INDEX IF NOT EXISTS idx_qar_session_id '
+          'ON question_attempt_records(session_id)',
+        );
+        await customStatement(
+          'CREATE INDEX IF NOT EXISTS idx_qar_question_id '
+          'ON question_attempt_records(question_id)',
         );
       }
     },

@@ -81,6 +81,29 @@ class SessionsDaoManager {
       $$SessionsTableTableManager(_db.attachedDatabase, _db.sessions);
 }
 
+mixin _$QuestionAttemptRecordsDaoMixin on DatabaseAccessor<UserDatabase> {
+  $SessionsTable get sessions => attachedDatabase.sessions;
+  $QuestionsTable get questions => attachedDatabase.questions;
+  $QuestionAttemptRecordsTable get questionAttemptRecords =>
+      attachedDatabase.questionAttemptRecords;
+  QuestionAttemptRecordsDaoManager get managers =>
+      QuestionAttemptRecordsDaoManager(this);
+}
+
+class QuestionAttemptRecordsDaoManager {
+  final _$QuestionAttemptRecordsDaoMixin _db;
+  QuestionAttemptRecordsDaoManager(this._db);
+  $$SessionsTableTableManager get sessions =>
+      $$SessionsTableTableManager(_db.attachedDatabase, _db.sessions);
+  $$QuestionsTableTableManager get questions =>
+      $$QuestionsTableTableManager(_db.attachedDatabase, _db.questions);
+  $$QuestionAttemptRecordsTableTableManager get questionAttemptRecords =>
+      $$QuestionAttemptRecordsTableTableManager(
+        _db.attachedDatabase,
+        _db.questionAttemptRecords,
+      );
+}
+
 mixin _$SessionQuestionsDaoMixin on DatabaseAccessor<UserDatabase> {
   $SessionsTable get sessions => attachedDatabase.sessions;
   $QuestionsTable get questions => attachedDatabase.questions;
@@ -2803,6 +2826,19 @@ class $SessionsTable extends Sessions with TableInfo<$SessionsTable, Session> {
         type: DriftSqlType.string,
         requiredDuringInsert: false,
       );
+  static const VerificationMeta _syncedMeta = const VerificationMeta('synced');
+  @override
+  late final GeneratedColumn<bool> synced = GeneratedColumn<bool>(
+    'synced',
+    aliasedName,
+    false,
+    type: DriftSqlType.bool,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'CHECK ("synced" IN (0, 1))',
+    ),
+    defaultValue: const Constant(false),
+  );
   @override
   List<GeneratedColumn> get $columns => [
     id,
@@ -2820,6 +2856,7 @@ class $SessionsTable extends Sessions with TableInfo<$SessionsTable, Session> {
     examRemainingSecs,
     language,
     analyticsFeatureKey,
+    synced,
   ];
   @override
   String get aliasedName => _alias ?? actualTableName;
@@ -2949,6 +2986,12 @@ class $SessionsTable extends Sessions with TableInfo<$SessionsTable, Session> {
         ),
       );
     }
+    if (data.containsKey('synced')) {
+      context.handle(
+        _syncedMeta,
+        synced.isAcceptableOrUnknown(data['synced']!, _syncedMeta),
+      );
+    }
     return context;
   }
 
@@ -3018,6 +3061,10 @@ class $SessionsTable extends Sessions with TableInfo<$SessionsTable, Session> {
         DriftSqlType.string,
         data['${effectivePrefix}analytics_feature_key'],
       ),
+      synced: attachedDatabase.typeMapping.read(
+        DriftSqlType.bool,
+        data['${effectivePrefix}synced'],
+      )!,
     );
   }
 
@@ -3043,6 +3090,9 @@ class Session extends DataClass implements Insertable<Session> {
   final int? examRemainingSecs;
   final String language;
   final String? analyticsFeatureKey;
+
+  /// False until per-question attempt data has been aggregated to Firestore.
+  final bool synced;
   const Session({
     required this.id,
     required this.createdAt,
@@ -3059,6 +3109,7 @@ class Session extends DataClass implements Insertable<Session> {
     this.examRemainingSecs,
     required this.language,
     this.analyticsFeatureKey,
+    required this.synced,
   });
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
@@ -3092,6 +3143,7 @@ class Session extends DataClass implements Insertable<Session> {
     if (!nullToAbsent || analyticsFeatureKey != null) {
       map['analytics_feature_key'] = Variable<String>(analyticsFeatureKey);
     }
+    map['synced'] = Variable<bool>(synced);
     return map;
   }
 
@@ -3126,6 +3178,7 @@ class Session extends DataClass implements Insertable<Session> {
       analyticsFeatureKey: analyticsFeatureKey == null && nullToAbsent
           ? const Value.absent()
           : Value(analyticsFeatureKey),
+      synced: Value(synced),
     );
   }
 
@@ -3152,6 +3205,7 @@ class Session extends DataClass implements Insertable<Session> {
       analyticsFeatureKey: serializer.fromJson<String?>(
         json['analyticsFeatureKey'],
       ),
+      synced: serializer.fromJson<bool>(json['synced']),
     );
   }
   @override
@@ -3173,6 +3227,7 @@ class Session extends DataClass implements Insertable<Session> {
       'examRemainingSecs': serializer.toJson<int?>(examRemainingSecs),
       'language': serializer.toJson<String>(language),
       'analyticsFeatureKey': serializer.toJson<String?>(analyticsFeatureKey),
+      'synced': serializer.toJson<bool>(synced),
     };
   }
 
@@ -3192,6 +3247,7 @@ class Session extends DataClass implements Insertable<Session> {
     Value<int?> examRemainingSecs = const Value.absent(),
     String? language,
     Value<String?> analyticsFeatureKey = const Value.absent(),
+    bool? synced,
   }) => Session(
     id: id ?? this.id,
     createdAt: createdAt ?? this.createdAt,
@@ -3214,6 +3270,7 @@ class Session extends DataClass implements Insertable<Session> {
     analyticsFeatureKey: analyticsFeatureKey.present
         ? analyticsFeatureKey.value
         : this.analyticsFeatureKey,
+    synced: synced ?? this.synced,
   );
   Session copyWithCompanion(SessionsCompanion data) {
     return Session(
@@ -3242,6 +3299,7 @@ class Session extends DataClass implements Insertable<Session> {
       analyticsFeatureKey: data.analyticsFeatureKey.present
           ? data.analyticsFeatureKey.value
           : this.analyticsFeatureKey,
+      synced: data.synced.present ? data.synced.value : this.synced,
     );
   }
 
@@ -3262,7 +3320,8 @@ class Session extends DataClass implements Insertable<Session> {
           ..write('timeLimitSecs: $timeLimitSecs, ')
           ..write('examRemainingSecs: $examRemainingSecs, ')
           ..write('language: $language, ')
-          ..write('analyticsFeatureKey: $analyticsFeatureKey')
+          ..write('analyticsFeatureKey: $analyticsFeatureKey, ')
+          ..write('synced: $synced')
           ..write(')'))
         .toString();
   }
@@ -3284,6 +3343,7 @@ class Session extends DataClass implements Insertable<Session> {
     examRemainingSecs,
     language,
     analyticsFeatureKey,
+    synced,
   );
   @override
   bool operator ==(Object other) =>
@@ -3303,7 +3363,8 @@ class Session extends DataClass implements Insertable<Session> {
           other.timeLimitSecs == this.timeLimitSecs &&
           other.examRemainingSecs == this.examRemainingSecs &&
           other.language == this.language &&
-          other.analyticsFeatureKey == this.analyticsFeatureKey);
+          other.analyticsFeatureKey == this.analyticsFeatureKey &&
+          other.synced == this.synced);
 }
 
 class SessionsCompanion extends UpdateCompanion<Session> {
@@ -3322,6 +3383,7 @@ class SessionsCompanion extends UpdateCompanion<Session> {
   final Value<int?> examRemainingSecs;
   final Value<String> language;
   final Value<String?> analyticsFeatureKey;
+  final Value<bool> synced;
   final Value<int> rowid;
   const SessionsCompanion({
     this.id = const Value.absent(),
@@ -3339,6 +3401,7 @@ class SessionsCompanion extends UpdateCompanion<Session> {
     this.examRemainingSecs = const Value.absent(),
     this.language = const Value.absent(),
     this.analyticsFeatureKey = const Value.absent(),
+    this.synced = const Value.absent(),
     this.rowid = const Value.absent(),
   });
   SessionsCompanion.insert({
@@ -3357,6 +3420,7 @@ class SessionsCompanion extends UpdateCompanion<Session> {
     this.examRemainingSecs = const Value.absent(),
     this.language = const Value.absent(),
     this.analyticsFeatureKey = const Value.absent(),
+    this.synced = const Value.absent(),
     this.rowid = const Value.absent(),
   }) : id = Value(id),
        createdAt = Value(createdAt),
@@ -3381,6 +3445,7 @@ class SessionsCompanion extends UpdateCompanion<Session> {
     Expression<int>? examRemainingSecs,
     Expression<String>? language,
     Expression<String>? analyticsFeatureKey,
+    Expression<bool>? synced,
     Expression<int>? rowid,
   }) {
     return RawValuesInsertable({
@@ -3400,6 +3465,7 @@ class SessionsCompanion extends UpdateCompanion<Session> {
       if (language != null) 'language': language,
       if (analyticsFeatureKey != null)
         'analytics_feature_key': analyticsFeatureKey,
+      if (synced != null) 'synced': synced,
       if (rowid != null) 'rowid': rowid,
     });
   }
@@ -3420,6 +3486,7 @@ class SessionsCompanion extends UpdateCompanion<Session> {
     Value<int?>? examRemainingSecs,
     Value<String>? language,
     Value<String?>? analyticsFeatureKey,
+    Value<bool>? synced,
     Value<int>? rowid,
   }) {
     return SessionsCompanion(
@@ -3438,6 +3505,7 @@ class SessionsCompanion extends UpdateCompanion<Session> {
       examRemainingSecs: examRemainingSecs ?? this.examRemainingSecs,
       language: language ?? this.language,
       analyticsFeatureKey: analyticsFeatureKey ?? this.analyticsFeatureKey,
+      synced: synced ?? this.synced,
       rowid: rowid ?? this.rowid,
     );
   }
@@ -3492,6 +3560,9 @@ class SessionsCompanion extends UpdateCompanion<Session> {
         analyticsFeatureKey.value,
       );
     }
+    if (synced.present) {
+      map['synced'] = Variable<bool>(synced.value);
+    }
     if (rowid.present) {
       map['rowid'] = Variable<int>(rowid.value);
     }
@@ -3516,6 +3587,7 @@ class SessionsCompanion extends UpdateCompanion<Session> {
           ..write('examRemainingSecs: $examRemainingSecs, ')
           ..write('language: $language, ')
           ..write('analyticsFeatureKey: $analyticsFeatureKey, ')
+          ..write('synced: $synced, ')
           ..write('rowid: $rowid')
           ..write(')'))
         .toString();
@@ -4211,6 +4283,603 @@ class SessionQuestionsCompanion extends UpdateCompanion<SessionQuestion> {
           ..write('flagged: $flagged, ')
           ..write('attemptedAt: $attemptedAt, ')
           ..write('confidence: $confidence, ')
+          ..write('rowid: $rowid')
+          ..write(')'))
+        .toString();
+  }
+}
+
+class $QuestionAttemptRecordsTable extends QuestionAttemptRecords
+    with TableInfo<$QuestionAttemptRecordsTable, QuestionAttemptRecord> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $QuestionAttemptRecordsTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _idMeta = const VerificationMeta('id');
+  @override
+  late final GeneratedColumn<String> id = GeneratedColumn<String>(
+    'id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _sessionIdMeta = const VerificationMeta(
+    'sessionId',
+  );
+  @override
+  late final GeneratedColumn<String> sessionId = GeneratedColumn<String>(
+    'session_id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'REFERENCES sessions (id)',
+    ),
+  );
+  static const VerificationMeta _questionIdMeta = const VerificationMeta(
+    'questionId',
+  );
+  @override
+  late final GeneratedColumn<String> questionId = GeneratedColumn<String>(
+    'question_id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'REFERENCES questions (uuid)',
+    ),
+  );
+  static const VerificationMeta _selectedOptionMeta = const VerificationMeta(
+    'selectedOption',
+  );
+  @override
+  late final GeneratedColumn<String> selectedOption = GeneratedColumn<String>(
+    'selected_option',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _isCorrectMeta = const VerificationMeta(
+    'isCorrect',
+  );
+  @override
+  late final GeneratedColumn<bool> isCorrect = GeneratedColumn<bool>(
+    'is_correct',
+    aliasedName,
+    true,
+    type: DriftSqlType.bool,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'CHECK ("is_correct" IN (0, 1))',
+    ),
+  );
+  static const VerificationMeta _timeTakenSecondsMeta = const VerificationMeta(
+    'timeTakenSeconds',
+  );
+  @override
+  late final GeneratedColumn<int> timeTakenSeconds = GeneratedColumn<int>(
+    'time_taken_seconds',
+    aliasedName,
+    true,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _isSureMeta = const VerificationMeta('isSure');
+  @override
+  late final GeneratedColumn<bool> isSure = GeneratedColumn<bool>(
+    'is_sure',
+    aliasedName,
+    false,
+    type: DriftSqlType.bool,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'CHECK ("is_sure" IN (0, 1))',
+    ),
+    defaultValue: const Constant(false),
+  );
+  static const VerificationMeta _skippedMeta = const VerificationMeta(
+    'skipped',
+  );
+  @override
+  late final GeneratedColumn<bool> skipped = GeneratedColumn<bool>(
+    'skipped',
+    aliasedName,
+    false,
+    type: DriftSqlType.bool,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'CHECK ("skipped" IN (0, 1))',
+    ),
+    defaultValue: const Constant(false),
+  );
+  static const VerificationMeta _attemptedAtMeta = const VerificationMeta(
+    'attemptedAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> attemptedAt = GeneratedColumn<DateTime>(
+    'attempted_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  @override
+  List<GeneratedColumn> get $columns => [
+    id,
+    sessionId,
+    questionId,
+    selectedOption,
+    isCorrect,
+    timeTakenSeconds,
+    isSure,
+    skipped,
+    attemptedAt,
+  ];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'question_attempt_records';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<QuestionAttemptRecord> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('id')) {
+      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
+    } else if (isInserting) {
+      context.missing(_idMeta);
+    }
+    if (data.containsKey('session_id')) {
+      context.handle(
+        _sessionIdMeta,
+        sessionId.isAcceptableOrUnknown(data['session_id']!, _sessionIdMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_sessionIdMeta);
+    }
+    if (data.containsKey('question_id')) {
+      context.handle(
+        _questionIdMeta,
+        questionId.isAcceptableOrUnknown(data['question_id']!, _questionIdMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_questionIdMeta);
+    }
+    if (data.containsKey('selected_option')) {
+      context.handle(
+        _selectedOptionMeta,
+        selectedOption.isAcceptableOrUnknown(
+          data['selected_option']!,
+          _selectedOptionMeta,
+        ),
+      );
+    }
+    if (data.containsKey('is_correct')) {
+      context.handle(
+        _isCorrectMeta,
+        isCorrect.isAcceptableOrUnknown(data['is_correct']!, _isCorrectMeta),
+      );
+    }
+    if (data.containsKey('time_taken_seconds')) {
+      context.handle(
+        _timeTakenSecondsMeta,
+        timeTakenSeconds.isAcceptableOrUnknown(
+          data['time_taken_seconds']!,
+          _timeTakenSecondsMeta,
+        ),
+      );
+    }
+    if (data.containsKey('is_sure')) {
+      context.handle(
+        _isSureMeta,
+        isSure.isAcceptableOrUnknown(data['is_sure']!, _isSureMeta),
+      );
+    }
+    if (data.containsKey('skipped')) {
+      context.handle(
+        _skippedMeta,
+        skipped.isAcceptableOrUnknown(data['skipped']!, _skippedMeta),
+      );
+    }
+    if (data.containsKey('attempted_at')) {
+      context.handle(
+        _attemptedAtMeta,
+        attemptedAt.isAcceptableOrUnknown(
+          data['attempted_at']!,
+          _attemptedAtMeta,
+        ),
+      );
+    } else if (isInserting) {
+      context.missing(_attemptedAtMeta);
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {id};
+  @override
+  QuestionAttemptRecord map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return QuestionAttemptRecord(
+      id: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}id'],
+      )!,
+      sessionId: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}session_id'],
+      )!,
+      questionId: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}question_id'],
+      )!,
+      selectedOption: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}selected_option'],
+      ),
+      isCorrect: attachedDatabase.typeMapping.read(
+        DriftSqlType.bool,
+        data['${effectivePrefix}is_correct'],
+      ),
+      timeTakenSeconds: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}time_taken_seconds'],
+      ),
+      isSure: attachedDatabase.typeMapping.read(
+        DriftSqlType.bool,
+        data['${effectivePrefix}is_sure'],
+      )!,
+      skipped: attachedDatabase.typeMapping.read(
+        DriftSqlType.bool,
+        data['${effectivePrefix}skipped'],
+      )!,
+      attemptedAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}attempted_at'],
+      )!,
+    );
+  }
+
+  @override
+  $QuestionAttemptRecordsTable createAlias(String alias) {
+    return $QuestionAttemptRecordsTable(attachedDatabase, alias);
+  }
+}
+
+class QuestionAttemptRecord extends DataClass
+    implements Insertable<QuestionAttemptRecord> {
+  final String id;
+  final String sessionId;
+  final String questionId;
+  final String? selectedOption;
+  final bool? isCorrect;
+  final int? timeTakenSeconds;
+  final bool isSure;
+  final bool skipped;
+  final DateTime attemptedAt;
+  const QuestionAttemptRecord({
+    required this.id,
+    required this.sessionId,
+    required this.questionId,
+    this.selectedOption,
+    this.isCorrect,
+    this.timeTakenSeconds,
+    required this.isSure,
+    required this.skipped,
+    required this.attemptedAt,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['id'] = Variable<String>(id);
+    map['session_id'] = Variable<String>(sessionId);
+    map['question_id'] = Variable<String>(questionId);
+    if (!nullToAbsent || selectedOption != null) {
+      map['selected_option'] = Variable<String>(selectedOption);
+    }
+    if (!nullToAbsent || isCorrect != null) {
+      map['is_correct'] = Variable<bool>(isCorrect);
+    }
+    if (!nullToAbsent || timeTakenSeconds != null) {
+      map['time_taken_seconds'] = Variable<int>(timeTakenSeconds);
+    }
+    map['is_sure'] = Variable<bool>(isSure);
+    map['skipped'] = Variable<bool>(skipped);
+    map['attempted_at'] = Variable<DateTime>(attemptedAt);
+    return map;
+  }
+
+  QuestionAttemptRecordsCompanion toCompanion(bool nullToAbsent) {
+    return QuestionAttemptRecordsCompanion(
+      id: Value(id),
+      sessionId: Value(sessionId),
+      questionId: Value(questionId),
+      selectedOption: selectedOption == null && nullToAbsent
+          ? const Value.absent()
+          : Value(selectedOption),
+      isCorrect: isCorrect == null && nullToAbsent
+          ? const Value.absent()
+          : Value(isCorrect),
+      timeTakenSeconds: timeTakenSeconds == null && nullToAbsent
+          ? const Value.absent()
+          : Value(timeTakenSeconds),
+      isSure: Value(isSure),
+      skipped: Value(skipped),
+      attemptedAt: Value(attemptedAt),
+    );
+  }
+
+  factory QuestionAttemptRecord.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return QuestionAttemptRecord(
+      id: serializer.fromJson<String>(json['id']),
+      sessionId: serializer.fromJson<String>(json['sessionId']),
+      questionId: serializer.fromJson<String>(json['questionId']),
+      selectedOption: serializer.fromJson<String?>(json['selectedOption']),
+      isCorrect: serializer.fromJson<bool?>(json['isCorrect']),
+      timeTakenSeconds: serializer.fromJson<int?>(json['timeTakenSeconds']),
+      isSure: serializer.fromJson<bool>(json['isSure']),
+      skipped: serializer.fromJson<bool>(json['skipped']),
+      attemptedAt: serializer.fromJson<DateTime>(json['attemptedAt']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'id': serializer.toJson<String>(id),
+      'sessionId': serializer.toJson<String>(sessionId),
+      'questionId': serializer.toJson<String>(questionId),
+      'selectedOption': serializer.toJson<String?>(selectedOption),
+      'isCorrect': serializer.toJson<bool?>(isCorrect),
+      'timeTakenSeconds': serializer.toJson<int?>(timeTakenSeconds),
+      'isSure': serializer.toJson<bool>(isSure),
+      'skipped': serializer.toJson<bool>(skipped),
+      'attemptedAt': serializer.toJson<DateTime>(attemptedAt),
+    };
+  }
+
+  QuestionAttemptRecord copyWith({
+    String? id,
+    String? sessionId,
+    String? questionId,
+    Value<String?> selectedOption = const Value.absent(),
+    Value<bool?> isCorrect = const Value.absent(),
+    Value<int?> timeTakenSeconds = const Value.absent(),
+    bool? isSure,
+    bool? skipped,
+    DateTime? attemptedAt,
+  }) => QuestionAttemptRecord(
+    id: id ?? this.id,
+    sessionId: sessionId ?? this.sessionId,
+    questionId: questionId ?? this.questionId,
+    selectedOption: selectedOption.present
+        ? selectedOption.value
+        : this.selectedOption,
+    isCorrect: isCorrect.present ? isCorrect.value : this.isCorrect,
+    timeTakenSeconds: timeTakenSeconds.present
+        ? timeTakenSeconds.value
+        : this.timeTakenSeconds,
+    isSure: isSure ?? this.isSure,
+    skipped: skipped ?? this.skipped,
+    attemptedAt: attemptedAt ?? this.attemptedAt,
+  );
+  QuestionAttemptRecord copyWithCompanion(
+    QuestionAttemptRecordsCompanion data,
+  ) {
+    return QuestionAttemptRecord(
+      id: data.id.present ? data.id.value : this.id,
+      sessionId: data.sessionId.present ? data.sessionId.value : this.sessionId,
+      questionId: data.questionId.present
+          ? data.questionId.value
+          : this.questionId,
+      selectedOption: data.selectedOption.present
+          ? data.selectedOption.value
+          : this.selectedOption,
+      isCorrect: data.isCorrect.present ? data.isCorrect.value : this.isCorrect,
+      timeTakenSeconds: data.timeTakenSeconds.present
+          ? data.timeTakenSeconds.value
+          : this.timeTakenSeconds,
+      isSure: data.isSure.present ? data.isSure.value : this.isSure,
+      skipped: data.skipped.present ? data.skipped.value : this.skipped,
+      attemptedAt: data.attemptedAt.present
+          ? data.attemptedAt.value
+          : this.attemptedAt,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('QuestionAttemptRecord(')
+          ..write('id: $id, ')
+          ..write('sessionId: $sessionId, ')
+          ..write('questionId: $questionId, ')
+          ..write('selectedOption: $selectedOption, ')
+          ..write('isCorrect: $isCorrect, ')
+          ..write('timeTakenSeconds: $timeTakenSeconds, ')
+          ..write('isSure: $isSure, ')
+          ..write('skipped: $skipped, ')
+          ..write('attemptedAt: $attemptedAt')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(
+    id,
+    sessionId,
+    questionId,
+    selectedOption,
+    isCorrect,
+    timeTakenSeconds,
+    isSure,
+    skipped,
+    attemptedAt,
+  );
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is QuestionAttemptRecord &&
+          other.id == this.id &&
+          other.sessionId == this.sessionId &&
+          other.questionId == this.questionId &&
+          other.selectedOption == this.selectedOption &&
+          other.isCorrect == this.isCorrect &&
+          other.timeTakenSeconds == this.timeTakenSeconds &&
+          other.isSure == this.isSure &&
+          other.skipped == this.skipped &&
+          other.attemptedAt == this.attemptedAt);
+}
+
+class QuestionAttemptRecordsCompanion
+    extends UpdateCompanion<QuestionAttemptRecord> {
+  final Value<String> id;
+  final Value<String> sessionId;
+  final Value<String> questionId;
+  final Value<String?> selectedOption;
+  final Value<bool?> isCorrect;
+  final Value<int?> timeTakenSeconds;
+  final Value<bool> isSure;
+  final Value<bool> skipped;
+  final Value<DateTime> attemptedAt;
+  final Value<int> rowid;
+  const QuestionAttemptRecordsCompanion({
+    this.id = const Value.absent(),
+    this.sessionId = const Value.absent(),
+    this.questionId = const Value.absent(),
+    this.selectedOption = const Value.absent(),
+    this.isCorrect = const Value.absent(),
+    this.timeTakenSeconds = const Value.absent(),
+    this.isSure = const Value.absent(),
+    this.skipped = const Value.absent(),
+    this.attemptedAt = const Value.absent(),
+    this.rowid = const Value.absent(),
+  });
+  QuestionAttemptRecordsCompanion.insert({
+    required String id,
+    required String sessionId,
+    required String questionId,
+    this.selectedOption = const Value.absent(),
+    this.isCorrect = const Value.absent(),
+    this.timeTakenSeconds = const Value.absent(),
+    this.isSure = const Value.absent(),
+    this.skipped = const Value.absent(),
+    required DateTime attemptedAt,
+    this.rowid = const Value.absent(),
+  }) : id = Value(id),
+       sessionId = Value(sessionId),
+       questionId = Value(questionId),
+       attemptedAt = Value(attemptedAt);
+  static Insertable<QuestionAttemptRecord> custom({
+    Expression<String>? id,
+    Expression<String>? sessionId,
+    Expression<String>? questionId,
+    Expression<String>? selectedOption,
+    Expression<bool>? isCorrect,
+    Expression<int>? timeTakenSeconds,
+    Expression<bool>? isSure,
+    Expression<bool>? skipped,
+    Expression<DateTime>? attemptedAt,
+    Expression<int>? rowid,
+  }) {
+    return RawValuesInsertable({
+      if (id != null) 'id': id,
+      if (sessionId != null) 'session_id': sessionId,
+      if (questionId != null) 'question_id': questionId,
+      if (selectedOption != null) 'selected_option': selectedOption,
+      if (isCorrect != null) 'is_correct': isCorrect,
+      if (timeTakenSeconds != null) 'time_taken_seconds': timeTakenSeconds,
+      if (isSure != null) 'is_sure': isSure,
+      if (skipped != null) 'skipped': skipped,
+      if (attemptedAt != null) 'attempted_at': attemptedAt,
+      if (rowid != null) 'rowid': rowid,
+    });
+  }
+
+  QuestionAttemptRecordsCompanion copyWith({
+    Value<String>? id,
+    Value<String>? sessionId,
+    Value<String>? questionId,
+    Value<String?>? selectedOption,
+    Value<bool?>? isCorrect,
+    Value<int?>? timeTakenSeconds,
+    Value<bool>? isSure,
+    Value<bool>? skipped,
+    Value<DateTime>? attemptedAt,
+    Value<int>? rowid,
+  }) {
+    return QuestionAttemptRecordsCompanion(
+      id: id ?? this.id,
+      sessionId: sessionId ?? this.sessionId,
+      questionId: questionId ?? this.questionId,
+      selectedOption: selectedOption ?? this.selectedOption,
+      isCorrect: isCorrect ?? this.isCorrect,
+      timeTakenSeconds: timeTakenSeconds ?? this.timeTakenSeconds,
+      isSure: isSure ?? this.isSure,
+      skipped: skipped ?? this.skipped,
+      attemptedAt: attemptedAt ?? this.attemptedAt,
+      rowid: rowid ?? this.rowid,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (id.present) {
+      map['id'] = Variable<String>(id.value);
+    }
+    if (sessionId.present) {
+      map['session_id'] = Variable<String>(sessionId.value);
+    }
+    if (questionId.present) {
+      map['question_id'] = Variable<String>(questionId.value);
+    }
+    if (selectedOption.present) {
+      map['selected_option'] = Variable<String>(selectedOption.value);
+    }
+    if (isCorrect.present) {
+      map['is_correct'] = Variable<bool>(isCorrect.value);
+    }
+    if (timeTakenSeconds.present) {
+      map['time_taken_seconds'] = Variable<int>(timeTakenSeconds.value);
+    }
+    if (isSure.present) {
+      map['is_sure'] = Variable<bool>(isSure.value);
+    }
+    if (skipped.present) {
+      map['skipped'] = Variable<bool>(skipped.value);
+    }
+    if (attemptedAt.present) {
+      map['attempted_at'] = Variable<DateTime>(attemptedAt.value);
+    }
+    if (rowid.present) {
+      map['rowid'] = Variable<int>(rowid.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('QuestionAttemptRecordsCompanion(')
+          ..write('id: $id, ')
+          ..write('sessionId: $sessionId, ')
+          ..write('questionId: $questionId, ')
+          ..write('selectedOption: $selectedOption, ')
+          ..write('isCorrect: $isCorrect, ')
+          ..write('timeTakenSeconds: $timeTakenSeconds, ')
+          ..write('isSure: $isSure, ')
+          ..write('skipped: $skipped, ')
+          ..write('attemptedAt: $attemptedAt, ')
           ..write('rowid: $rowid')
           ..write(')'))
         .toString();
@@ -6342,6 +7011,8 @@ abstract class _$UserDatabase extends GeneratedDatabase {
   late final $SessionQuestionsTable sessionQuestions = $SessionQuestionsTable(
     this,
   );
+  late final $QuestionAttemptRecordsTable questionAttemptRecords =
+      $QuestionAttemptRecordsTable(this);
   late final $BookmarksTable bookmarks = $BookmarksTable(this);
   late final $RevisionQueueTable revisionQueue = $RevisionQueueTable(this);
   late final $UserTopicStatsTable userTopicStats = $UserTopicStatsTable(this);
@@ -6362,6 +7033,8 @@ abstract class _$UserDatabase extends GeneratedDatabase {
   late final SessionQuestionsDao sessionQuestionsDao = SessionQuestionsDao(
     this as UserDatabase,
   );
+  late final QuestionAttemptRecordsDao questionAttemptRecordsDao =
+      QuestionAttemptRecordsDao(this as UserDatabase);
   late final BookmarksDao bookmarksDao = BookmarksDao(this as UserDatabase);
   late final RevisionQueueDao revisionQueueDao = RevisionQueueDao(
     this as UserDatabase,
@@ -6386,6 +7059,7 @@ abstract class _$UserDatabase extends GeneratedDatabase {
     topicTranslations,
     sessions,
     sessionQuestions,
+    questionAttemptRecords,
     bookmarks,
     revisionQueue,
     userTopicStats,
@@ -6513,6 +7187,34 @@ final class $$QuestionsTableReferences
 
     final cache = $_typedResult.readTableOrNull(
       _sessionQuestionsRefsTable($_db),
+    );
+    return ProcessedTableManager(
+      manager.$state.copyWith(prefetchedData: cache),
+    );
+  }
+
+  static MultiTypedResultKey<
+    $QuestionAttemptRecordsTable,
+    List<QuestionAttemptRecord>
+  >
+  _questionAttemptRecordsRefsTable(_$UserDatabase db) =>
+      MultiTypedResultKey.fromTable(
+        db.questionAttemptRecords,
+        aliasName: $_aliasNameGenerator(
+          db.questions.uuid,
+          db.questionAttemptRecords.questionId,
+        ),
+      );
+
+  $$QuestionAttemptRecordsTableProcessedTableManager
+  get questionAttemptRecordsRefs {
+    final manager = $$QuestionAttemptRecordsTableTableManager(
+      $_db,
+      $_db.questionAttemptRecords,
+    ).filter((f) => f.questionId.uuid.sqlEquals($_itemColumn<String>('uuid')!));
+
+    final cache = $_typedResult.readTableOrNull(
+      _questionAttemptRecordsRefsTable($_db),
     );
     return ProcessedTableManager(
       manager.$state.copyWith(prefetchedData: cache),
@@ -6732,6 +7434,32 @@ class $$QuestionsTableFilterComposer
                 $removeJoinBuilderFromRootComposer,
           ),
     );
+    return f(composer);
+  }
+
+  Expression<bool> questionAttemptRecordsRefs(
+    Expression<bool> Function($$QuestionAttemptRecordsTableFilterComposer f) f,
+  ) {
+    final $$QuestionAttemptRecordsTableFilterComposer composer =
+        $composerBuilder(
+          composer: this,
+          getCurrentColumn: (t) => t.uuid,
+          referencedTable: $db.questionAttemptRecords,
+          getReferencedColumn: (t) => t.questionId,
+          builder:
+              (
+                joinBuilder, {
+                $addJoinBuilderToRootComposer,
+                $removeJoinBuilderFromRootComposer,
+              }) => $$QuestionAttemptRecordsTableFilterComposer(
+                $db: $db,
+                $table: $db.questionAttemptRecords,
+                $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+                joinBuilder: joinBuilder,
+                $removeJoinBuilderFromRootComposer:
+                    $removeJoinBuilderFromRootComposer,
+              ),
+        );
     return f(composer);
   }
 
@@ -7047,6 +7775,32 @@ class $$QuestionsTableAnnotationComposer
     return f(composer);
   }
 
+  Expression<T> questionAttemptRecordsRefs<T extends Object>(
+    Expression<T> Function($$QuestionAttemptRecordsTableAnnotationComposer a) f,
+  ) {
+    final $$QuestionAttemptRecordsTableAnnotationComposer composer =
+        $composerBuilder(
+          composer: this,
+          getCurrentColumn: (t) => t.uuid,
+          referencedTable: $db.questionAttemptRecords,
+          getReferencedColumn: (t) => t.questionId,
+          builder:
+              (
+                joinBuilder, {
+                $addJoinBuilderToRootComposer,
+                $removeJoinBuilderFromRootComposer,
+              }) => $$QuestionAttemptRecordsTableAnnotationComposer(
+                $db: $db,
+                $table: $db.questionAttemptRecords,
+                $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+                joinBuilder: joinBuilder,
+                $removeJoinBuilderFromRootComposer:
+                    $removeJoinBuilderFromRootComposer,
+              ),
+        );
+    return f(composer);
+  }
+
   Expression<T> bookmarksRefs<T extends Object>(
     Expression<T> Function($$BookmarksTableAnnotationComposer a) f,
   ) {
@@ -7115,6 +7869,7 @@ class $$QuestionsTableTableManager
             bool questionTranslationsRefs,
             bool questionTablesRefs,
             bool sessionQuestionsRefs,
+            bool questionAttemptRecordsRefs,
             bool bookmarksRefs,
             bool revisionQueueRefs,
           })
@@ -7227,6 +7982,7 @@ class $$QuestionsTableTableManager
                 questionTranslationsRefs = false,
                 questionTablesRefs = false,
                 sessionQuestionsRefs = false,
+                questionAttemptRecordsRefs = false,
                 bookmarksRefs = false,
                 revisionQueueRefs = false,
               }) {
@@ -7236,6 +7992,7 @@ class $$QuestionsTableTableManager
                     if (questionTranslationsRefs) db.questionTranslations,
                     if (questionTablesRefs) db.questionTables,
                     if (sessionQuestionsRefs) db.sessionQuestions,
+                    if (questionAttemptRecordsRefs) db.questionAttemptRecords,
                     if (bookmarksRefs) db.bookmarks,
                     if (revisionQueueRefs) db.revisionQueue,
                   ],
@@ -7305,6 +8062,27 @@ class $$QuestionsTableTableManager
                               ),
                           typedResults: items,
                         ),
+                      if (questionAttemptRecordsRefs)
+                        await $_getPrefetchedData<
+                          Question,
+                          $QuestionsTable,
+                          QuestionAttemptRecord
+                        >(
+                          currentTable: table,
+                          referencedTable: $$QuestionsTableReferences
+                              ._questionAttemptRecordsRefsTable(db),
+                          managerFromTypedResult: (p0) =>
+                              $$QuestionsTableReferences(
+                                db,
+                                table,
+                                p0,
+                              ).questionAttemptRecordsRefs,
+                          referencedItemsForCurrentItem:
+                              (item, referencedItems) => referencedItems.where(
+                                (e) => e.questionId == item.uuid,
+                              ),
+                          typedResults: items,
+                        ),
                       if (bookmarksRefs)
                         await $_getPrefetchedData<
                           Question,
@@ -7371,6 +8149,7 @@ typedef $$QuestionsTableProcessedTableManager =
         bool questionTranslationsRefs,
         bool questionTablesRefs,
         bool sessionQuestionsRefs,
+        bool questionAttemptRecordsRefs,
         bool bookmarksRefs,
         bool revisionQueueRefs,
       })
@@ -8376,6 +9155,7 @@ typedef $$SessionsTableCreateCompanionBuilder =
       Value<int?> examRemainingSecs,
       Value<String> language,
       Value<String?> analyticsFeatureKey,
+      Value<bool> synced,
       Value<int> rowid,
     });
 typedef $$SessionsTableUpdateCompanionBuilder =
@@ -8395,6 +9175,7 @@ typedef $$SessionsTableUpdateCompanionBuilder =
       Value<int?> examRemainingSecs,
       Value<String> language,
       Value<String?> analyticsFeatureKey,
+      Value<bool> synced,
       Value<int> rowid,
     });
 
@@ -8420,6 +9201,34 @@ final class $$SessionsTableReferences
 
     final cache = $_typedResult.readTableOrNull(
       _sessionQuestionsRefsTable($_db),
+    );
+    return ProcessedTableManager(
+      manager.$state.copyWith(prefetchedData: cache),
+    );
+  }
+
+  static MultiTypedResultKey<
+    $QuestionAttemptRecordsTable,
+    List<QuestionAttemptRecord>
+  >
+  _questionAttemptRecordsRefsTable(_$UserDatabase db) =>
+      MultiTypedResultKey.fromTable(
+        db.questionAttemptRecords,
+        aliasName: $_aliasNameGenerator(
+          db.sessions.id,
+          db.questionAttemptRecords.sessionId,
+        ),
+      );
+
+  $$QuestionAttemptRecordsTableProcessedTableManager
+  get questionAttemptRecordsRefs {
+    final manager = $$QuestionAttemptRecordsTableTableManager(
+      $_db,
+      $_db.questionAttemptRecords,
+    ).filter((f) => f.sessionId.id.sqlEquals($_itemColumn<String>('id')!));
+
+    final cache = $_typedResult.readTableOrNull(
+      _questionAttemptRecordsRefsTable($_db),
     );
     return ProcessedTableManager(
       manager.$state.copyWith(prefetchedData: cache),
@@ -8511,6 +9320,11 @@ class $$SessionsTableFilterComposer
     builder: (column) => ColumnFilters(column),
   );
 
+  ColumnFilters<bool> get synced => $composableBuilder(
+    column: $table.synced,
+    builder: (column) => ColumnFilters(column),
+  );
+
   Expression<bool> sessionQuestionsRefs(
     Expression<bool> Function($$SessionQuestionsTableFilterComposer f) f,
   ) {
@@ -8533,6 +9347,32 @@ class $$SessionsTableFilterComposer
                 $removeJoinBuilderFromRootComposer,
           ),
     );
+    return f(composer);
+  }
+
+  Expression<bool> questionAttemptRecordsRefs(
+    Expression<bool> Function($$QuestionAttemptRecordsTableFilterComposer f) f,
+  ) {
+    final $$QuestionAttemptRecordsTableFilterComposer composer =
+        $composerBuilder(
+          composer: this,
+          getCurrentColumn: (t) => t.id,
+          referencedTable: $db.questionAttemptRecords,
+          getReferencedColumn: (t) => t.sessionId,
+          builder:
+              (
+                joinBuilder, {
+                $addJoinBuilderToRootComposer,
+                $removeJoinBuilderFromRootComposer,
+              }) => $$QuestionAttemptRecordsTableFilterComposer(
+                $db: $db,
+                $table: $db.questionAttemptRecords,
+                $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+                joinBuilder: joinBuilder,
+                $removeJoinBuilderFromRootComposer:
+                    $removeJoinBuilderFromRootComposer,
+              ),
+        );
     return f(composer);
   }
 }
@@ -8620,6 +9460,11 @@ class $$SessionsTableOrderingComposer
     column: $table.analyticsFeatureKey,
     builder: (column) => ColumnOrderings(column),
   );
+
+  ColumnOrderings<bool> get synced => $composableBuilder(
+    column: $table.synced,
+    builder: (column) => ColumnOrderings(column),
+  );
 }
 
 class $$SessionsTableAnnotationComposer
@@ -8686,6 +9531,9 @@ class $$SessionsTableAnnotationComposer
     builder: (column) => column,
   );
 
+  GeneratedColumn<bool> get synced =>
+      $composableBuilder(column: $table.synced, builder: (column) => column);
+
   Expression<T> sessionQuestionsRefs<T extends Object>(
     Expression<T> Function($$SessionQuestionsTableAnnotationComposer a) f,
   ) {
@@ -8710,6 +9558,32 @@ class $$SessionsTableAnnotationComposer
     );
     return f(composer);
   }
+
+  Expression<T> questionAttemptRecordsRefs<T extends Object>(
+    Expression<T> Function($$QuestionAttemptRecordsTableAnnotationComposer a) f,
+  ) {
+    final $$QuestionAttemptRecordsTableAnnotationComposer composer =
+        $composerBuilder(
+          composer: this,
+          getCurrentColumn: (t) => t.id,
+          referencedTable: $db.questionAttemptRecords,
+          getReferencedColumn: (t) => t.sessionId,
+          builder:
+              (
+                joinBuilder, {
+                $addJoinBuilderToRootComposer,
+                $removeJoinBuilderFromRootComposer,
+              }) => $$QuestionAttemptRecordsTableAnnotationComposer(
+                $db: $db,
+                $table: $db.questionAttemptRecords,
+                $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+                joinBuilder: joinBuilder,
+                $removeJoinBuilderFromRootComposer:
+                    $removeJoinBuilderFromRootComposer,
+              ),
+        );
+    return f(composer);
+  }
 }
 
 class $$SessionsTableTableManager
@@ -8725,7 +9599,10 @@ class $$SessionsTableTableManager
           $$SessionsTableUpdateCompanionBuilder,
           (Session, $$SessionsTableReferences),
           Session,
-          PrefetchHooks Function({bool sessionQuestionsRefs})
+          PrefetchHooks Function({
+            bool sessionQuestionsRefs,
+            bool questionAttemptRecordsRefs,
+          })
         > {
   $$SessionsTableTableManager(_$UserDatabase db, $SessionsTable table)
     : super(
@@ -8755,6 +9632,7 @@ class $$SessionsTableTableManager
                 Value<int?> examRemainingSecs = const Value.absent(),
                 Value<String> language = const Value.absent(),
                 Value<String?> analyticsFeatureKey = const Value.absent(),
+                Value<bool> synced = const Value.absent(),
                 Value<int> rowid = const Value.absent(),
               }) => SessionsCompanion(
                 id: id,
@@ -8772,6 +9650,7 @@ class $$SessionsTableTableManager
                 examRemainingSecs: examRemainingSecs,
                 language: language,
                 analyticsFeatureKey: analyticsFeatureKey,
+                synced: synced,
                 rowid: rowid,
               ),
           createCompanionCallback:
@@ -8791,6 +9670,7 @@ class $$SessionsTableTableManager
                 Value<int?> examRemainingSecs = const Value.absent(),
                 Value<String> language = const Value.absent(),
                 Value<String?> analyticsFeatureKey = const Value.absent(),
+                Value<bool> synced = const Value.absent(),
                 Value<int> rowid = const Value.absent(),
               }) => SessionsCompanion.insert(
                 id: id,
@@ -8808,6 +9688,7 @@ class $$SessionsTableTableManager
                 examRemainingSecs: examRemainingSecs,
                 language: language,
                 analyticsFeatureKey: analyticsFeatureKey,
+                synced: synced,
                 rowid: rowid,
               ),
           withReferenceMapper: (p0) => p0
@@ -8818,37 +9699,66 @@ class $$SessionsTableTableManager
                 ),
               )
               .toList(),
-          prefetchHooksCallback: ({sessionQuestionsRefs = false}) {
-            return PrefetchHooks(
-              db: db,
-              explicitlyWatchedTables: [
-                if (sessionQuestionsRefs) db.sessionQuestions,
-              ],
-              addJoins: null,
-              getPrefetchedDataCallback: (items) async {
-                return [
-                  if (sessionQuestionsRefs)
-                    await $_getPrefetchedData<
-                      Session,
-                      $SessionsTable,
-                      SessionQuestion
-                    >(
-                      currentTable: table,
-                      referencedTable: $$SessionsTableReferences
-                          ._sessionQuestionsRefsTable(db),
-                      managerFromTypedResult: (p0) => $$SessionsTableReferences(
-                        db,
-                        table,
-                        p0,
-                      ).sessionQuestionsRefs,
-                      referencedItemsForCurrentItem: (item, referencedItems) =>
-                          referencedItems.where((e) => e.sessionId == item.id),
-                      typedResults: items,
-                    ),
-                ];
+          prefetchHooksCallback:
+              ({
+                sessionQuestionsRefs = false,
+                questionAttemptRecordsRefs = false,
+              }) {
+                return PrefetchHooks(
+                  db: db,
+                  explicitlyWatchedTables: [
+                    if (sessionQuestionsRefs) db.sessionQuestions,
+                    if (questionAttemptRecordsRefs) db.questionAttemptRecords,
+                  ],
+                  addJoins: null,
+                  getPrefetchedDataCallback: (items) async {
+                    return [
+                      if (sessionQuestionsRefs)
+                        await $_getPrefetchedData<
+                          Session,
+                          $SessionsTable,
+                          SessionQuestion
+                        >(
+                          currentTable: table,
+                          referencedTable: $$SessionsTableReferences
+                              ._sessionQuestionsRefsTable(db),
+                          managerFromTypedResult: (p0) =>
+                              $$SessionsTableReferences(
+                                db,
+                                table,
+                                p0,
+                              ).sessionQuestionsRefs,
+                          referencedItemsForCurrentItem:
+                              (item, referencedItems) => referencedItems.where(
+                                (e) => e.sessionId == item.id,
+                              ),
+                          typedResults: items,
+                        ),
+                      if (questionAttemptRecordsRefs)
+                        await $_getPrefetchedData<
+                          Session,
+                          $SessionsTable,
+                          QuestionAttemptRecord
+                        >(
+                          currentTable: table,
+                          referencedTable: $$SessionsTableReferences
+                              ._questionAttemptRecordsRefsTable(db),
+                          managerFromTypedResult: (p0) =>
+                              $$SessionsTableReferences(
+                                db,
+                                table,
+                                p0,
+                              ).questionAttemptRecordsRefs,
+                          referencedItemsForCurrentItem:
+                              (item, referencedItems) => referencedItems.where(
+                                (e) => e.sessionId == item.id,
+                              ),
+                          typedResults: items,
+                        ),
+                    ];
+                  },
+                );
               },
-            );
-          },
         ),
       );
 }
@@ -8865,7 +9775,10 @@ typedef $$SessionsTableProcessedTableManager =
       $$SessionsTableUpdateCompanionBuilder,
       (Session, $$SessionsTableReferences),
       Session,
-      PrefetchHooks Function({bool sessionQuestionsRefs})
+      PrefetchHooks Function({
+        bool sessionQuestionsRefs,
+        bool questionAttemptRecordsRefs,
+      })
     >;
 typedef $$SessionQuestionsTableCreateCompanionBuilder =
     SessionQuestionsCompanion Function({
@@ -9413,6 +10326,525 @@ typedef $$SessionQuestionsTableProcessedTableManager =
       (SessionQuestion, $$SessionQuestionsTableReferences),
       SessionQuestion,
       PrefetchHooks Function({bool sessionId, bool questionUuid})
+    >;
+typedef $$QuestionAttemptRecordsTableCreateCompanionBuilder =
+    QuestionAttemptRecordsCompanion Function({
+      required String id,
+      required String sessionId,
+      required String questionId,
+      Value<String?> selectedOption,
+      Value<bool?> isCorrect,
+      Value<int?> timeTakenSeconds,
+      Value<bool> isSure,
+      Value<bool> skipped,
+      required DateTime attemptedAt,
+      Value<int> rowid,
+    });
+typedef $$QuestionAttemptRecordsTableUpdateCompanionBuilder =
+    QuestionAttemptRecordsCompanion Function({
+      Value<String> id,
+      Value<String> sessionId,
+      Value<String> questionId,
+      Value<String?> selectedOption,
+      Value<bool?> isCorrect,
+      Value<int?> timeTakenSeconds,
+      Value<bool> isSure,
+      Value<bool> skipped,
+      Value<DateTime> attemptedAt,
+      Value<int> rowid,
+    });
+
+final class $$QuestionAttemptRecordsTableReferences
+    extends
+        BaseReferences<
+          _$UserDatabase,
+          $QuestionAttemptRecordsTable,
+          QuestionAttemptRecord
+        > {
+  $$QuestionAttemptRecordsTableReferences(
+    super.$_db,
+    super.$_table,
+    super.$_typedResult,
+  );
+
+  static $SessionsTable _sessionIdTable(_$UserDatabase db) =>
+      db.sessions.createAlias(
+        $_aliasNameGenerator(
+          db.questionAttemptRecords.sessionId,
+          db.sessions.id,
+        ),
+      );
+
+  $$SessionsTableProcessedTableManager get sessionId {
+    final $_column = $_itemColumn<String>('session_id')!;
+
+    final manager = $$SessionsTableTableManager(
+      $_db,
+      $_db.sessions,
+    ).filter((f) => f.id.sqlEquals($_column));
+    final item = $_typedResult.readTableOrNull(_sessionIdTable($_db));
+    if (item == null) return manager;
+    return ProcessedTableManager(
+      manager.$state.copyWith(prefetchedData: [item]),
+    );
+  }
+
+  static $QuestionsTable _questionIdTable(_$UserDatabase db) =>
+      db.questions.createAlias(
+        $_aliasNameGenerator(
+          db.questionAttemptRecords.questionId,
+          db.questions.uuid,
+        ),
+      );
+
+  $$QuestionsTableProcessedTableManager get questionId {
+    final $_column = $_itemColumn<String>('question_id')!;
+
+    final manager = $$QuestionsTableTableManager(
+      $_db,
+      $_db.questions,
+    ).filter((f) => f.uuid.sqlEquals($_column));
+    final item = $_typedResult.readTableOrNull(_questionIdTable($_db));
+    if (item == null) return manager;
+    return ProcessedTableManager(
+      manager.$state.copyWith(prefetchedData: [item]),
+    );
+  }
+}
+
+class $$QuestionAttemptRecordsTableFilterComposer
+    extends Composer<_$UserDatabase, $QuestionAttemptRecordsTable> {
+  $$QuestionAttemptRecordsTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<String> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get selectedOption => $composableBuilder(
+    column: $table.selectedOption,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<bool> get isCorrect => $composableBuilder(
+    column: $table.isCorrect,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get timeTakenSeconds => $composableBuilder(
+    column: $table.timeTakenSeconds,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<bool> get isSure => $composableBuilder(
+    column: $table.isSure,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<bool> get skipped => $composableBuilder(
+    column: $table.skipped,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get attemptedAt => $composableBuilder(
+    column: $table.attemptedAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  $$SessionsTableFilterComposer get sessionId {
+    final $$SessionsTableFilterComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.sessionId,
+      referencedTable: $db.sessions,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$SessionsTableFilterComposer(
+            $db: $db,
+            $table: $db.sessions,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+
+  $$QuestionsTableFilterComposer get questionId {
+    final $$QuestionsTableFilterComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.questionId,
+      referencedTable: $db.questions,
+      getReferencedColumn: (t) => t.uuid,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$QuestionsTableFilterComposer(
+            $db: $db,
+            $table: $db.questions,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+}
+
+class $$QuestionAttemptRecordsTableOrderingComposer
+    extends Composer<_$UserDatabase, $QuestionAttemptRecordsTable> {
+  $$QuestionAttemptRecordsTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<String> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get selectedOption => $composableBuilder(
+    column: $table.selectedOption,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<bool> get isCorrect => $composableBuilder(
+    column: $table.isCorrect,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get timeTakenSeconds => $composableBuilder(
+    column: $table.timeTakenSeconds,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<bool> get isSure => $composableBuilder(
+    column: $table.isSure,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<bool> get skipped => $composableBuilder(
+    column: $table.skipped,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get attemptedAt => $composableBuilder(
+    column: $table.attemptedAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  $$SessionsTableOrderingComposer get sessionId {
+    final $$SessionsTableOrderingComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.sessionId,
+      referencedTable: $db.sessions,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$SessionsTableOrderingComposer(
+            $db: $db,
+            $table: $db.sessions,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+
+  $$QuestionsTableOrderingComposer get questionId {
+    final $$QuestionsTableOrderingComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.questionId,
+      referencedTable: $db.questions,
+      getReferencedColumn: (t) => t.uuid,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$QuestionsTableOrderingComposer(
+            $db: $db,
+            $table: $db.questions,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+}
+
+class $$QuestionAttemptRecordsTableAnnotationComposer
+    extends Composer<_$UserDatabase, $QuestionAttemptRecordsTable> {
+  $$QuestionAttemptRecordsTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<String> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  GeneratedColumn<String> get selectedOption => $composableBuilder(
+    column: $table.selectedOption,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<bool> get isCorrect =>
+      $composableBuilder(column: $table.isCorrect, builder: (column) => column);
+
+  GeneratedColumn<int> get timeTakenSeconds => $composableBuilder(
+    column: $table.timeTakenSeconds,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<bool> get isSure =>
+      $composableBuilder(column: $table.isSure, builder: (column) => column);
+
+  GeneratedColumn<bool> get skipped =>
+      $composableBuilder(column: $table.skipped, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get attemptedAt => $composableBuilder(
+    column: $table.attemptedAt,
+    builder: (column) => column,
+  );
+
+  $$SessionsTableAnnotationComposer get sessionId {
+    final $$SessionsTableAnnotationComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.sessionId,
+      referencedTable: $db.sessions,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$SessionsTableAnnotationComposer(
+            $db: $db,
+            $table: $db.sessions,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+
+  $$QuestionsTableAnnotationComposer get questionId {
+    final $$QuestionsTableAnnotationComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.questionId,
+      referencedTable: $db.questions,
+      getReferencedColumn: (t) => t.uuid,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$QuestionsTableAnnotationComposer(
+            $db: $db,
+            $table: $db.questions,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+}
+
+class $$QuestionAttemptRecordsTableTableManager
+    extends
+        RootTableManager<
+          _$UserDatabase,
+          $QuestionAttemptRecordsTable,
+          QuestionAttemptRecord,
+          $$QuestionAttemptRecordsTableFilterComposer,
+          $$QuestionAttemptRecordsTableOrderingComposer,
+          $$QuestionAttemptRecordsTableAnnotationComposer,
+          $$QuestionAttemptRecordsTableCreateCompanionBuilder,
+          $$QuestionAttemptRecordsTableUpdateCompanionBuilder,
+          (QuestionAttemptRecord, $$QuestionAttemptRecordsTableReferences),
+          QuestionAttemptRecord,
+          PrefetchHooks Function({bool sessionId, bool questionId})
+        > {
+  $$QuestionAttemptRecordsTableTableManager(
+    _$UserDatabase db,
+    $QuestionAttemptRecordsTable table,
+  ) : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$QuestionAttemptRecordsTableFilterComposer(
+                $db: db,
+                $table: table,
+              ),
+          createOrderingComposer: () =>
+              $$QuestionAttemptRecordsTableOrderingComposer(
+                $db: db,
+                $table: table,
+              ),
+          createComputedFieldComposer: () =>
+              $$QuestionAttemptRecordsTableAnnotationComposer(
+                $db: db,
+                $table: table,
+              ),
+          updateCompanionCallback:
+              ({
+                Value<String> id = const Value.absent(),
+                Value<String> sessionId = const Value.absent(),
+                Value<String> questionId = const Value.absent(),
+                Value<String?> selectedOption = const Value.absent(),
+                Value<bool?> isCorrect = const Value.absent(),
+                Value<int?> timeTakenSeconds = const Value.absent(),
+                Value<bool> isSure = const Value.absent(),
+                Value<bool> skipped = const Value.absent(),
+                Value<DateTime> attemptedAt = const Value.absent(),
+                Value<int> rowid = const Value.absent(),
+              }) => QuestionAttemptRecordsCompanion(
+                id: id,
+                sessionId: sessionId,
+                questionId: questionId,
+                selectedOption: selectedOption,
+                isCorrect: isCorrect,
+                timeTakenSeconds: timeTakenSeconds,
+                isSure: isSure,
+                skipped: skipped,
+                attemptedAt: attemptedAt,
+                rowid: rowid,
+              ),
+          createCompanionCallback:
+              ({
+                required String id,
+                required String sessionId,
+                required String questionId,
+                Value<String?> selectedOption = const Value.absent(),
+                Value<bool?> isCorrect = const Value.absent(),
+                Value<int?> timeTakenSeconds = const Value.absent(),
+                Value<bool> isSure = const Value.absent(),
+                Value<bool> skipped = const Value.absent(),
+                required DateTime attemptedAt,
+                Value<int> rowid = const Value.absent(),
+              }) => QuestionAttemptRecordsCompanion.insert(
+                id: id,
+                sessionId: sessionId,
+                questionId: questionId,
+                selectedOption: selectedOption,
+                isCorrect: isCorrect,
+                timeTakenSeconds: timeTakenSeconds,
+                isSure: isSure,
+                skipped: skipped,
+                attemptedAt: attemptedAt,
+                rowid: rowid,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map(
+                (e) => (
+                  e.readTable(table),
+                  $$QuestionAttemptRecordsTableReferences(db, table, e),
+                ),
+              )
+              .toList(),
+          prefetchHooksCallback: ({sessionId = false, questionId = false}) {
+            return PrefetchHooks(
+              db: db,
+              explicitlyWatchedTables: [],
+              addJoins:
+                  <
+                    T extends TableManagerState<
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic
+                    >
+                  >(state) {
+                    if (sessionId) {
+                      state =
+                          state.withJoin(
+                                currentTable: table,
+                                currentColumn: table.sessionId,
+                                referencedTable:
+                                    $$QuestionAttemptRecordsTableReferences
+                                        ._sessionIdTable(db),
+                                referencedColumn:
+                                    $$QuestionAttemptRecordsTableReferences
+                                        ._sessionIdTable(db)
+                                        .id,
+                              )
+                              as T;
+                    }
+                    if (questionId) {
+                      state =
+                          state.withJoin(
+                                currentTable: table,
+                                currentColumn: table.questionId,
+                                referencedTable:
+                                    $$QuestionAttemptRecordsTableReferences
+                                        ._questionIdTable(db),
+                                referencedColumn:
+                                    $$QuestionAttemptRecordsTableReferences
+                                        ._questionIdTable(db)
+                                        .uuid,
+                              )
+                              as T;
+                    }
+
+                    return state;
+                  },
+              getPrefetchedDataCallback: (items) async {
+                return [];
+              },
+            );
+          },
+        ),
+      );
+}
+
+typedef $$QuestionAttemptRecordsTableProcessedTableManager =
+    ProcessedTableManager<
+      _$UserDatabase,
+      $QuestionAttemptRecordsTable,
+      QuestionAttemptRecord,
+      $$QuestionAttemptRecordsTableFilterComposer,
+      $$QuestionAttemptRecordsTableOrderingComposer,
+      $$QuestionAttemptRecordsTableAnnotationComposer,
+      $$QuestionAttemptRecordsTableCreateCompanionBuilder,
+      $$QuestionAttemptRecordsTableUpdateCompanionBuilder,
+      (QuestionAttemptRecord, $$QuestionAttemptRecordsTableReferences),
+      QuestionAttemptRecord,
+      PrefetchHooks Function({bool sessionId, bool questionId})
     >;
 typedef $$BookmarksTableCreateCompanionBuilder =
     BookmarksCompanion Function({
@@ -10782,6 +12214,11 @@ class $UserDatabaseManager {
       $$SessionsTableTableManager(_db, _db.sessions);
   $$SessionQuestionsTableTableManager get sessionQuestions =>
       $$SessionQuestionsTableTableManager(_db, _db.sessionQuestions);
+  $$QuestionAttemptRecordsTableTableManager get questionAttemptRecords =>
+      $$QuestionAttemptRecordsTableTableManager(
+        _db,
+        _db.questionAttemptRecords,
+      );
   $$BookmarksTableTableManager get bookmarks =>
       $$BookmarksTableTableManager(_db, _db.bookmarks);
   $$RevisionQueueTableTableManager get revisionQueue =>

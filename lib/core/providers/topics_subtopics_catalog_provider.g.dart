@@ -53,4 +53,4 @@ final class TopicsSubtopicsCatalogProvider
 }
 
 String _$topicsSubtopicsCatalogHash() =>
-    r'a1b2c3d4e5f6789012345678topics_subtopics_catalog';
+    r'a4cfc628684e38d2ed3c70947be0e18f465d1225';

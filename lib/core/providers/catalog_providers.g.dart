@@ -954,7 +954,7 @@ final class SessionResultProvider
   }
 }
 
-String _$sessionResultHash() => r'0f4c6aef370e03c55e9b2e15b52a0c6f91a9cf7e';
+String _$sessionResultHash() => r'feeb14666ecaf79e18999d703dec10500001551e';
 
 final class SessionResultFamily extends $Family
     with $FunctionalFamilyOverride<FutureOr<SessionResult>, String> {

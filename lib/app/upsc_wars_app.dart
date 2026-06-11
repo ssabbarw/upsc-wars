@@ -21,6 +21,7 @@ import '../core/services/battle_messaging_service.dart';
 import '../core/services/no_test_reminder_service.dart';
 import '../core/services/share_deep_link_service.dart';
 import '../core/services/fcm_token_sync_service.dart';
+import '../core/services/question_stats_sync_service.dart';
 import '../features/community/services/community_bucket_presence_service.dart';
 import '../features/home/providers/auth_providers.dart';
 import '../core/providers/prefs_provider.dart';
@@ -146,6 +147,14 @@ class _RootMaterialApp extends HookConsumerWidget {
         }
       }());
       unawaited(trackPushNotificationStatusSnapshot(ref));
+      unawaited(() async {
+        try {
+          final db = ref.read(userDatabaseProvider);
+          await QuestionStatsSyncService(userDb: db).flushStaleSessions();
+        } catch (e, st) {
+          upscWarsTrace('question_stats_flush error', error: e, stackTrace: st);
+        }
+      }());
       final analyticsLifecycle = AnalyticsAppLifecycleObserver(ref);
       WidgetsBinding.instance.addObserver(analyticsLifecycle);
       return () {
@@ -169,6 +178,27 @@ class _RootMaterialApp extends HookConsumerWidget {
       final timer = Timer.periodic(const Duration(minutes: 1), (_) {
         unawaited(PrelimsSurfacesRefresh.refreshAllSurfaces());
       });
+      return timer.cancel;
+    }, const []);
+
+    useEffect(() {
+      final timer = Timer.periodic(
+        QuestionStatsSyncService.periodicScanInterval,
+        (_) {
+          unawaited(() async {
+            try {
+              final db = ref.read(userDatabaseProvider);
+              await QuestionStatsSyncService(userDb: db).flushStaleSessions();
+            } catch (e, st) {
+              upscWarsTrace(
+                'question_stats_periodic_flush error',
+                error: e,
+                stackTrace: st,
+              );
+            }
+          }());
+        },
+      );
       return timer.cancel;
     }, const []);
 

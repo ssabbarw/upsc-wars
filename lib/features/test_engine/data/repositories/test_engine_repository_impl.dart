@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 import 'dart:developer' as developer;
 
@@ -21,6 +22,7 @@ import 'package:upsc_wars/core/domain/errors/app_errors.dart';
 import 'package:upsc_wars/core/parsers/question_display_text_parser.dart';
 import 'package:upsc_wars/core/providers/prefs_provider.dart';
 import 'package:upsc_wars/core/services/no_test_reminder_service.dart';
+import 'package:upsc_wars/core/services/question_stats_sync_service.dart';
 import 'package:upsc_wars/features/test_engine/domain/repositories/test_engine_repository.dart';
 
 class TestEngineRepositoryImpl implements TestEngineRepository {
@@ -459,6 +461,9 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
       sessionId,
       DateTime.now(),
     );
+    await QuestionStatsSyncService(
+      userDb: _userDb,
+    ).persistAttemptsOnSessionComplete(sessionId);
     final completedSessionCount = await _userDb.sessionsDao
         .countCompletedSessions();
     if (completedSessionCount == 1) {
@@ -642,6 +647,9 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
           questionUuid: questionUuid,
           createdAt: DateTime.now(),
         ),
+      );
+      unawaited(
+        QuestionStatsSyncService(userDb: _userDb).recordBookmark(questionUuid),
       );
     }
     await _userDb.revisionQueueDao.add(
