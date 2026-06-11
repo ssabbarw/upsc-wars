@@ -9,7 +9,6 @@ import '../../../core/analytics/activation_milestones.dart';
 import '../../../core/analytics/analytics.dart';
 import '../../../core/analytics/analytics_events.dart';
 import '../../../core/layout/system_insets.dart';
-import '../../../core/services/battle_messaging_service.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
@@ -85,11 +84,6 @@ Future<bool?> showGetStartedDiagnosticIntroSheet(
       child: _GetStartedDiagnosticIntroSheet(postOnboarding: postOnboarding),
     ),
   );
-  if (started != true) {
-    await BattleMessagingService.requestPushAuthorizationIfNotDetermined(
-      source: 'get_started_sheet_dismiss',
-    );
-  }
   return started;
 }
 

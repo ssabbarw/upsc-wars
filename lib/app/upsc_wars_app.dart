@@ -115,7 +115,7 @@ class _RootMaterialApp extends HookConsumerWidget {
 
       bindGlobalAnalytics(dispatch);
       unawaited(Analytics.track(ref, const AppOpenedEvent()));
-      // Push permission: ask on 2nd app open only (no education sheet).
+      // Push permission: ask on 2nd app open (education sheet, then OS prompt).
       unawaited(() async {
         try {
           final p = await ref.read(prefsServiceProvider.future);

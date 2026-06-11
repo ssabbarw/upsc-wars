@@ -479,10 +479,6 @@ class HomeScreen extends HookConsumerWidget {
                       );
                     },
                   ),
-                  if (kDebugMode) ...[
-                    const PushSpotTestDebugCard(),
-                    const SizedBox(height: AppSpacing.md),
-                  ],
                   const DailyDrillCard(),
                   const SizedBox(height: AppSpacing.md),
                   const RecoveryPlanSection(),
@@ -609,6 +605,10 @@ class HomeScreen extends HookConsumerWidget {
                       },
                     ),
                   ),
+                  if (kDebugMode) ...[
+                    const SizedBox(height: AppSpacing.lg),
+                    const PushSpotTestDebugCard(),
+                  ],
                   const SizedBox(height: AppSpacing.sm),
                 ],
               ),
