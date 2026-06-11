@@ -93,6 +93,19 @@ class BattleMessagingService {
           r.go('/');
         });
       };
+      AppLocalNotificationsService.onDailyPracticeReminderTap = () {
+        logGlobalAnalytics(
+          const AppNotificationOpenEvent(
+            channel: 'local',
+            kind: 'daily_practice_reminder',
+          ),
+        );
+        final r = _router;
+        if (r == null) return;
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          r.go('/');
+        });
+      };
       await AppLocalNotificationsService.ensureInitialized();
     }
 

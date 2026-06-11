@@ -3,6 +3,8 @@ import 'dart:convert';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../constants/daily_drill_constants.dart';
+
 part 'prefs_provider.g.dart';
 
 abstract final class PrefKeys {
@@ -103,6 +105,12 @@ abstract final class PrefKeys {
 
   /// Local no-test reminder was scheduled or already delivered.
   static const noTestReminderHandledV1 = 'no_test_reminder_handled_v1';
+
+  /// Subject slug for the home daily practice drill (`misc` or a catalog subject).
+  static const dailyPracticeSubjectV1 = 'daily_practice_subject_v1';
+
+  /// Local hour (0–23) for the daily practice reminder notification.
+  static const dailyPracticeReminderHourV1 = 'daily_practice_reminder_hour_v1';
 
   /// Prompt for push permission once home loads after first-test results exit.
   static const pushPermissionPromptPendingAfterFirstTestV1 =
@@ -320,6 +328,18 @@ class PrefsService {
       _p.getBool(PrefKeys.noTestReminderHandledV1) ?? false;
   set noTestReminderHandled(bool v) =>
       _p.setBool(PrefKeys.noTestReminderHandledV1, v);
+
+  String get dailyPracticeSubject =>
+      _p.getString(PrefKeys.dailyPracticeSubjectV1) ??
+      DailyDrillConstants.defaultSubject;
+  set dailyPracticeSubject(String v) =>
+      _p.setString(PrefKeys.dailyPracticeSubjectV1, v);
+
+  int get dailyPracticeReminderHour =>
+      _p.getInt(PrefKeys.dailyPracticeReminderHourV1) ??
+      DailyDrillConstants.defaultReminderHour;
+  set dailyPracticeReminderHour(int v) =>
+      _p.setInt(PrefKeys.dailyPracticeReminderHourV1, v);
 
   bool get pushPermissionPromptPendingAfterFirstTest =>
       _p.getBool(PrefKeys.pushPermissionPromptPendingAfterFirstTestV1) ?? false;

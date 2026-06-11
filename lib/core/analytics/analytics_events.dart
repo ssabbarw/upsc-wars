@@ -707,6 +707,37 @@ final class DidYouKnowCtaTappedEvent extends AnalyticsEvent {
   final String cardId;
 }
 
+/// **Daily practice card shown** on home for activated users.
+///
+/// **GA4:** `daily_drill_card_shown` (no parameters).
+final class DailyDrillCardShownEvent extends AnalyticsEvent {
+  const DailyDrillCardShownEvent();
+}
+
+/// **User started the daily practice drill** from home.
+///
+/// **GA4:** `daily_drill_started` with `subject`, `source`, `completed_today`.
+final class DailyDrillStartedEvent extends AnalyticsEvent {
+  const DailyDrillStartedEvent({
+    required this.subject,
+    required this.source,
+    required this.completedToday,
+  });
+
+  final String subject;
+  final String source;
+  final bool completedToday;
+}
+
+/// **User changed daily practice subject** via the gear sheet.
+///
+/// **GA4:** `daily_drill_subject_changed` with `subject`.
+final class DailyDrillSubjectChangedEvent extends AnalyticsEvent {
+  const DailyDrillSubjectChangedEvent({required this.subject});
+
+  final String subject;
+}
+
 /// **Session summary hero insight case** rendered after a test.
 ///
 /// **GA4:** `session_insight_case_shown` with `case`, `sure_wrong`, `edu_wrong`.

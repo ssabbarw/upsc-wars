@@ -13,6 +13,7 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../domain/create_daily_drill_session_use_case.dart';
 import '../providers/recovery_plan_provider.dart';
 
 class RecoveryPlanSection extends ConsumerWidget {
@@ -101,7 +102,12 @@ class RecoveryPlanSection extends ConsumerWidget {
         if (context.mounted) context.push('/test/$id');
       case RecoveryPlanCardKind.weakArea:
         if (card.subject == null) return;
-        context.push('/subject/${Uri.encodeComponent(card.subject!)}');
+        final uc = await ref.read(createDailyDrillSessionUseCaseProvider.future);
+        final id = await uc.execute(
+          subject: card.subject!,
+          analyticsFeatureKey: 'recovery_weak_area',
+        );
+        if (context.mounted) context.push('/test/$id');
     }
   }
 }

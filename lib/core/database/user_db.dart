@@ -930,6 +930,26 @@ class SessionsDao extends DatabaseAccessor<UserDatabase>
     return (row.read<int?>('c') ?? 0) > 0;
   }
 
+  /// Whether a daily practice drill was completed between [startInclusive] and
+  /// [endExclusive] (local calendar day boundaries from the caller).
+  Future<bool> hasCompletedDailyDrillBetween({
+    required DateTime startInclusive,
+    required DateTime endExclusive,
+  }) async {
+    final row = await customSelect(
+      "SELECT COUNT(*) AS c FROM sessions "
+      "WHERE analytics_feature_key = ? AND status = 'completed' "
+      "AND completed_at >= ? AND completed_at < ?",
+      variables: [
+        Variable.withString('daily_drill'),
+        Variable.withDateTime(startInclusive),
+        Variable.withDateTime(endExclusive),
+      ],
+      readsFrom: {sessions},
+    ).getSingle();
+    return (row.read<int?>('c') ?? 0) > 0;
+  }
+
   /// Whether the user completed the daily CA test for [sourceDate] (`YYYY-MM-DD`).
   Future<bool> hasCompletedDailyCa(String sourceDate) async {
     final row = await customSelect(

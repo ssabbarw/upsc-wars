@@ -31,6 +31,12 @@ SessionAnalyticsLabels deriveSessionAnalyticsLabels({
       source: 'static_mcq',
     );
   }
+  if (analyticsFeatureKey == 'daily_drill') {
+    return const SessionAnalyticsLabels(
+      featureName: 'daily_drill',
+      source: 'static_mcq',
+    );
+  }
   switch (subject) {
     case 'revision':
     case 'revision_quick':

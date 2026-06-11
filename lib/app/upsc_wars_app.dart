@@ -20,6 +20,7 @@ import '../core/crashlytics/firebase_crashlytics_bootstrap.dart';
 import '../core/providers/app_bootstrap.dart';
 import '../core/providers/kill_switch_provider.dart';
 import '../core/services/battle_messaging_service.dart';
+import '../core/services/daily_practice_reminder_service.dart';
 import '../core/services/no_test_reminder_service.dart';
 import '../core/services/share_deep_link_service.dart';
 import '../core/services/fcm_token_sync_service.dart';
@@ -144,6 +145,18 @@ class _RootMaterialApp extends HookConsumerWidget {
           await NoTestReminderService.sync(
             prefs: p,
             completedSessionCount: completedCount,
+          );
+          final now = DateTime.now();
+          final dayStart = DateTime(now.year, now.month, now.day);
+          final completedDrillToday =
+              await db.sessionsDao.hasCompletedDailyDrillBetween(
+            startInclusive: dayStart,
+            endExclusive: dayStart.add(const Duration(days: 1)),
+          );
+          await DailyPracticeReminderService.sync(
+            prefs: p,
+            activationComplete: p.homeActivationComplete,
+            completedToday: completedDrillToday,
           );
         } catch (e, st) {
           upscWarsTrace('no_test_reminder_sync error', error: e, stackTrace: st);

@@ -7,6 +7,7 @@ import 'package:intl/intl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:timezone/timezone.dart' as tz;
 
+import '../constants/daily_drill_constants.dart';
 import '../constants/prelims_countdown.dart';
 import '../constants/prelims_debug_flags.dart';
 import '../providers/prefs_provider.dart';
@@ -26,6 +27,9 @@ class AppLocalNotificationsService {
 
   /// Opens home when the no-test reminder notification is tapped.
   static void Function()? onNoTestReminderTap;
+
+  /// Opens home when the daily practice reminder notification is tapped.
+  static void Function()? onDailyPracticeReminderTap;
 
   static const _noTestReminderChannelId = 'no_test_reminder_v1';
   static const _noTestReminderChannelName = 'Study reminders';
@@ -57,6 +61,9 @@ class AppLocalNotificationsService {
 
   static const noTestReminderNotificationId = 8001;
   static const noTestReminderPayload = 'no_test_reminder';
+
+  static const dailyPracticeReminderNotificationId = 8002;
+  static const dailyPracticeReminderPayload = 'daily_practice_reminder';
 
   static const _prelimsChannelId = 'prelims_countdown_channel';
   static const _prelimsChannelName = 'Prelims Countdown';
@@ -154,6 +161,10 @@ class AppLocalNotificationsService {
     }
     if (payload == noTestReminderPayload) {
       onNoTestReminderTap?.call();
+      return;
+    }
+    if (payload == dailyPracticeReminderPayload) {
+      onDailyPracticeReminderTap?.call();
     }
   }
 
@@ -330,5 +341,59 @@ class AppLocalNotificationsService {
     if (kIsWeb) return;
     await ensureInitialized();
     await _plugin.cancel(id: noTestReminderNotificationId);
+  }
+
+  static NotificationDetails _dailyPracticeReminderDetails() {
+    return NotificationDetails(
+      android: AndroidNotificationDetails(
+        _noTestReminderChannelId,
+        _noTestReminderChannelName,
+        channelDescription: _noTestReminderChannelDescription,
+        importance: Importance.high,
+        priority: Priority.high,
+        icon: '@drawable/ic_notification',
+        color: const Color(0xFF085041),
+        largeIcon: const DrawableResourceAndroidBitmap('@mipmap/ic_launcher'),
+        category: AndroidNotificationCategory.reminder,
+        autoCancel: true,
+      ),
+      iOS: const DarwinNotificationDetails(
+        presentAlert: true,
+        presentBadge: true,
+        presentSound: true,
+      ),
+    );
+  }
+
+  static Future<void> scheduleDailyPracticeReminder({
+    required DateTime fireAtLocal,
+    required String subjectDisplayName,
+  }) async {
+    if (kIsWeb) return;
+    await ensureInitialized();
+    await _ensureNoTestReminderChannel();
+
+    final scheduledDate = tz.TZDateTime.from(fireAtLocal, tz.local);
+    final body =
+        'Your $subjectDisplayName drill — ${DailyDrillConstants.questionCount} quick MCQs';
+    try {
+      await _plugin.zonedSchedule(
+        id: dailyPracticeReminderNotificationId,
+        title: 'Daily practice is ready',
+        body: body,
+        scheduledDate: scheduledDate,
+        notificationDetails: _dailyPracticeReminderDetails(),
+        androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
+        payload: dailyPracticeReminderPayload,
+      );
+    } catch (_) {
+      // Best-effort scheduling.
+    }
+  }
+
+  static Future<void> cancelDailyPracticeReminder() async {
+    if (kIsWeb) return;
+    await ensureInitialized();
+    await _plugin.cancel(id: dailyPracticeReminderNotificationId);
   }
 }

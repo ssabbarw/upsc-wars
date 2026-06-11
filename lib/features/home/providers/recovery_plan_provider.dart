@@ -100,8 +100,9 @@ final recoveryPlanProvider = FutureProvider.autoDispose<RecoveryPlanState>((
         subtitle: weakest.displayName,
         why:
             '${weakest.accuracyPercent!.round()}% accuracy — worth extra practice.',
-        ctaLabel: 'Open subject',
+        ctaLabel: 'Start 10 MCQs',
         subject: weakest.subject,
+        questionCount: 10,
       ),
     );
   }

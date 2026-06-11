@@ -29,8 +29,10 @@ import '../../../core/analytics/analytics.dart';
 import '../../../core/analytics/analytics_events.dart';
 import '../providers/auth_providers.dart';
 import '../providers/home_activation_provider.dart';
+import '../widgets/daily_drill_card.dart';
 import '../widgets/get_started_card.dart';
 import '../widgets/recovery_plan_section.dart';
+import '../providers/daily_drill_provider.dart';
 import '../../push_spot_test/widgets/push_spot_test_debug_card.dart';
 import '../../daily_ca/widgets/daily_ca_home_card.dart';
 import '../../../shared/widgets/push_denied_banner.dart';
@@ -80,6 +82,7 @@ class HomeScreen extends HookConsumerWidget {
         await uc.execute();
         ref.invalidate(homeStateProvider);
         ref.invalidate(homeActivationProvider);
+        ref.invalidate(dailyDrillProvider);
       });
       return null;
     }, const []);
@@ -480,6 +483,8 @@ class HomeScreen extends HookConsumerWidget {
                     const PushSpotTestDebugCard(),
                     const SizedBox(height: AppSpacing.md),
                   ],
+                  const DailyDrillCard(),
+                  const SizedBox(height: AppSpacing.md),
                   const RecoveryPlanSection(),
                   const SizedBox(height: AppSpacing.md),
                   Consumer(

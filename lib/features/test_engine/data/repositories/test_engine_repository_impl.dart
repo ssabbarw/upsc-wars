@@ -21,6 +21,7 @@ import 'package:upsc_wars/core/domain/entities/test_question.dart';
 import 'package:upsc_wars/core/domain/errors/app_errors.dart';
 import 'package:upsc_wars/core/parsers/question_display_text_parser.dart';
 import 'package:upsc_wars/core/providers/prefs_provider.dart';
+import 'package:upsc_wars/core/services/daily_practice_reminder_service.dart';
 import 'package:upsc_wars/core/services/no_test_reminder_service.dart';
 import 'package:upsc_wars/core/services/question_stats_sync_service.dart';
 import 'package:upsc_wars/features/test_engine/domain/repositories/test_engine_repository.dart';
@@ -474,6 +475,13 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
 
     await _recordHomeActivation(sessionId, sessionMeta?.analyticsFeatureKey);
 
+    unawaited(
+      DailyPracticeReminderService.syncAfterSessionSubmit(
+        prefs: _prefsService,
+        analyticsFeatureKey: sessionMeta?.analyticsFeatureKey,
+      ),
+    );
+
     await _updateTopicStatsForSession(sessionId);
 
     final prevStreak = _prefsService.currentStreak;
@@ -857,6 +865,13 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
     );
     if (hasSureOrEdu) {
       markHomeActivationComplete(_prefsService);
+      unawaited(
+        DailyPracticeReminderService.sync(
+          prefs: _prefsService,
+          activationComplete: true,
+          completedToday: false,
+        ),
+      );
     }
 
     if (analyticsFeatureKey == 'get_started_diagnostic') {
