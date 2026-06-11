@@ -14,6 +14,8 @@ import '../../../core/services/prelims_surfaces_refresh.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../core/constants/creator_contact.dart';
+import '../../../core/providers/super_user_provider.dart';
+import '../../question_editor/widgets/question_editor_access.dart';
 import '../../../shared/theme/dark_mode_toggle.dart';
 import '../../../shared/widgets/app_toast.dart';
 
@@ -25,6 +27,9 @@ class SettingsScreen extends ConsumerWidget {
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final bottomInset = MediaQuery.paddingOf(context).bottom;
+    final isSuperUser = ref.watch(isSuperUserProvider);
+    final showQuestionEditor =
+        canAccessQuestionEditor(isSuperUser: isSuperUser);
 
     return Scaffold(
       appBar: AppBar(
@@ -116,35 +121,38 @@ class SettingsScreen extends ConsumerWidget {
               ],
             ),
 
-            if (kDebugMode) ...[
+            if (kDebugMode || showQuestionEditor) ...[
               const SizedBox(height: AppSpacing.lg),
               _Section(
-                title: 'Internal',
+                title: isSuperUser && !kDebugMode ? 'Editor' : 'Internal',
                 children: [
-                  _NavTile(
-                    icon: Icons.analytics_outlined,
-                    iconBg: Color(0xFFEEF1F6),
-                    iconColor: Color(0xFF334155),
-                    title: 'Feature health',
-                    subtitle: 'Local usage aggregates (SQLite)',
-                    onTap: () => context.push('/internal/feature-health'),
-                  ),
-                  _NavTile(
-                    icon: Icons.notifications_active_outlined,
-                    iconBg: Color(0xFFFFF4E6),
-                    iconColor: Color(0xFFB25A00),
-                    title: 'Spot test composer',
-                    subtitle: 'Pick MCQ and send push to this device',
-                    onTap: () => context.push('/internal/spot-composer'),
-                  ),
-                  _NavTile(
-                    icon: Icons.edit_note_outlined,
-                    iconBg: Color(0xFFE8F7F0),
-                    iconColor: Color(0xFF0F8F5E),
-                    title: 'Question editor',
-                    subtitle: 'Search, fix, and publish corrections',
-                    onTap: () => context.push('/internal/question-editor'),
-                  ),
+                  if (kDebugMode)
+                    _NavTile(
+                      icon: Icons.analytics_outlined,
+                      iconBg: Color(0xFFEEF1F6),
+                      iconColor: Color(0xFF334155),
+                      title: 'Feature health',
+                      subtitle: 'Local usage aggregates (SQLite)',
+                      onTap: () => context.push('/internal/feature-health'),
+                    ),
+                  if (kDebugMode)
+                    _NavTile(
+                      icon: Icons.notifications_active_outlined,
+                      iconBg: Color(0xFFFFF4E6),
+                      iconColor: Color(0xFFB25A00),
+                      title: 'Spot test composer',
+                      subtitle: 'Pick MCQ and send push to this device',
+                      onTap: () => context.push('/internal/spot-composer'),
+                    ),
+                  if (showQuestionEditor)
+                    _NavTile(
+                      icon: Icons.edit_note_outlined,
+                      iconBg: Color(0xFFE8F7F0),
+                      iconColor: Color(0xFF0F8F5E),
+                      title: 'Question editor',
+                      subtitle: 'Search, fix, and publish corrections',
+                      onTap: () => context.push('/internal/question-editor'),
+                    ),
                 ],
               ),
             ],

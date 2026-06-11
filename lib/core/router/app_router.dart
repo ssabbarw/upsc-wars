@@ -53,6 +53,7 @@ import '../../features/question_editor/screens/question_editor_form_screen.dart'
 import '../../features/question_editor/screens/question_editor_preview_screen.dart';
 import '../../features/question_editor/screens/question_editor_search_screen.dart';
 import '../../features/question_editor/widgets/question_editor_access.dart';
+import '../providers/super_user_provider.dart';
 import '../../features/push_spot_test/screens/spot_test_composer_screen.dart';
 import '../../features/home/providers/auth_providers.dart';
 import '../../features/results/screens/confidence_tier_review_screen.dart';
@@ -85,8 +86,6 @@ import '../responsive/app_breakpoints.dart';
 
 part 'app_router.g.dart';
 
-bool get _questionEditorEnabled => isQuestionEditorEnabled;
-
 final GlobalKey<NavigatorState> rootNavigatorKey = GlobalKey<NavigatorState>(
   debugLabel: 'root',
 );
@@ -94,6 +93,9 @@ final GlobalKey<NavigatorState> rootNavigatorKey = GlobalKey<NavigatorState>(
 @Riverpod(keepAlive: true)
 GoRouter appRouter(Ref ref) {
   ref.watch(appBootstrapProvider).requireValue;
+  final isSuperUser = ref.watch(isSuperUserProvider);
+  final questionEditorAllowed = () =>
+      canAccessQuestionEditor(isSuperUser: isSuperUser);
   final shellHasCommunity = FeatureFlags.communityTab;
   final redirectRefresh = _CommunityTabRedirectRefresh();
   ref.onDispose(redirectRefresh.dispose);
@@ -358,7 +360,7 @@ GoRouter appRouter(Ref ref) {
         path: '/internal/question-editor',
         name: 'question_editor',
         builder: (context, state) {
-          if (!_questionEditorEnabled) {
+          if (!questionEditorAllowed()) {
             return const Scaffold(
               body: Center(child: Text('Not available')),
             );
@@ -371,7 +373,7 @@ GoRouter appRouter(Ref ref) {
             path: 'edit',
             name: 'question_editor_edit',
             builder: (context, state) {
-              if (!_questionEditorEnabled) {
+              if (!questionEditorAllowed()) {
                 return const Scaffold(
                   body: Center(child: Text('Not available')),
                 );
@@ -385,7 +387,7 @@ GoRouter appRouter(Ref ref) {
             path: 'preview',
             name: 'question_editor_preview',
             builder: (context, state) {
-              if (!_questionEditorEnabled) {
+              if (!questionEditorAllowed()) {
                 return const Scaffold(
                   body: Center(child: Text('Not available')),
                 );

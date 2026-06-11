@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import '../../../core/database/user_db.dart';
 import '../../../core/domain/entities/test_question.dart';
 import '../../../core/parsers/question_display_text_composer.dart';
@@ -199,8 +197,72 @@ class QuestionEditorDraft {
       QuestionCorrectionMapper.draftToCorrectionMap(this);
 
   bool isDirtyComparedTo(QuestionEditorDraft original) {
-    return jsonEncode(toCorrectionMap()) !=
-        jsonEncode(original.toCorrectionMap());
+    if (correctOption != original.correctOption) return true;
+    if (questionType != original.questionType) return true;
+    if (trapType != original.trapType) return true;
+    if (conceptAnchor != original.conceptAnchor) return true;
+    if (stemEn != original.stemEn) return true;
+    if (stemHi != original.stemHi) return true;
+    if (optionAEn != original.optionAEn) return true;
+    if (optionBEn != original.optionBEn) return true;
+    if (optionCEn != original.optionCEn) return true;
+    if (optionDEn != original.optionDEn) return true;
+    if (optionAHi != original.optionAHi) return true;
+    if (optionBHi != original.optionBHi) return true;
+    if (optionCHi != original.optionCHi) return true;
+    if (optionDHi != original.optionDHi) return true;
+    if (finalExplanationBodyEn != original.finalExplanationBodyEn) return true;
+    if (finalExplanationBodyHi != original.finalExplanationBodyHi) return true;
+    if (valueAdditionEn != original.valueAdditionEn) return true;
+    if (valueAdditionHi != original.valueAdditionHi) return true;
+    if (strongDistractorEn != original.strongDistractorEn) return true;
+    if (strongDistractorHi != original.strongDistractorHi) return true;
+    if (upscTrapExplanationEn != original.upscTrapExplanationEn) return true;
+    if (upscTrapExplanationHi != original.upscTrapExplanationHi) return true;
+    if (!_listEquals(eliminationLogicEn, original.eliminationLogicEn)) {
+      return true;
+    }
+    if (!_listEquals(eliminationLogicHi, original.eliminationLogicHi)) {
+      return true;
+    }
+    if (!_statementListEquals(
+      statementAnalysisEn,
+      original.statementAnalysisEn,
+    )) {
+      return true;
+    }
+    if (!_statementListEquals(
+      statementAnalysisHi,
+      original.statementAnalysisHi,
+    )) {
+      return true;
+    }
+    return false;
+  }
+
+  static bool _listEquals(List<String> a, List<String> b) {
+    if (a.length != b.length) return false;
+    for (var i = 0; i < a.length; i++) {
+      if (a[i] != b[i]) return false;
+    }
+    return true;
+  }
+
+  static bool _statementListEquals(
+    List<StatementAnalysisItem> a,
+    List<StatementAnalysisItem> b,
+  ) {
+    if (a.length != b.length) return false;
+    for (var i = 0; i < a.length; i++) {
+      final left = a[i];
+      final right = b[i];
+      if (left.label != right.label ||
+          left.isCorrect != right.isCorrect ||
+          left.reason != right.reason) {
+        return false;
+      }
+    }
+    return true;
   }
 }
 

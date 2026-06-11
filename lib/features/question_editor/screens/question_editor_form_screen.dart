@@ -69,19 +69,23 @@ class QuestionEditorFormScreen extends HookConsumerWidget {
     final orig = original.value!;
     final hasTable = d.hasTable;
 
-    void patch(QuestionEditorDraft next) => draft.value = next;
+    void patch(QuestionEditorDraft Function(QuestionEditorDraft current) update) {
+      draft.value = update(draft.value!);
+    }
+
+    final isDirty = draft.value!.isDirtyComparedTo(orig);
 
     return Scaffold(
       appBar: AppBar(
         title: Text('Edit ${d.uuid.substring(0, 8)}…'),
         actions: [
           TextButton(
-            onPressed: d.isDirtyComparedTo(orig)
+            onPressed: isDirty
                 ? () => context.push(
                     '/internal/question-editor/preview',
                     extra: QuestionEditorPreviewArgs(
                       original: orig,
-                      edited: d,
+                      edited: draft.value!,
                     ),
                   )
                 : null,
@@ -139,7 +143,9 @@ class QuestionEditorFormScreen extends HookConsumerWidget {
                     DropdownMenuItem(value: 'd', child: Text('D')),
                   ],
                   onChanged: (v) {
-                    if (v != null) patch(d.copyWith(correctOption: v));
+                    if (v != null) {
+                      patch((current) => current.copyWith(correctOption: v));
+                    }
                   },
                 ),
                 const SizedBox(height: AppSpacing.md),
@@ -147,7 +153,8 @@ class QuestionEditorFormScreen extends HookConsumerWidget {
                   key: ValueKey('trap-${d.uuid}'),
                   label: 'Trap type',
                   value: d.trapType,
-                  onChanged: (v) => patch(d.copyWith(trapType: v)),
+                  onChanged: (v) =>
+                      patch((current) => current.copyWith(trapType: v)),
                 ),
                 const SizedBox(height: AppSpacing.lg),
                 if (langTab.value == 0)
@@ -183,12 +190,13 @@ class _LangFields extends StatelessWidget {
 
   final QuestionEditorDraft draft;
   final bool isHindi;
-  final void Function(QuestionEditorDraft) onPatch;
+  final void Function(QuestionEditorDraft Function(QuestionEditorDraft) update)
+  onPatch;
 
   @override
   Widget build(BuildContext context) {
-    final d = draft;
-    QuestionEditorDraft patchLang({
+    QuestionEditorDraft patchLang(
+      QuestionEditorDraft current, {
       String? stem,
       String? a,
       String? b,
@@ -202,7 +210,7 @@ class _LangFields extends StatelessWidget {
       List<StatementAnalysisItem>? stmt,
     }) {
       if (isHindi) {
-        return d.copyWith(
+        return current.copyWith(
           stemHi: stem,
           optionAHi: a,
           optionBHi: b,
@@ -216,7 +224,7 @@ class _LangFields extends StatelessWidget {
           statementAnalysisHi: stmt,
         );
       }
-      return d.copyWith(
+      return current.copyWith(
         stemEn: stem,
         optionAEn: a,
         optionBEn: b,
@@ -231,65 +239,98 @@ class _LangFields extends StatelessWidget {
       );
     }
 
-    final stem = isHindi ? d.stemHi : d.stemEn;
-    final oa = isHindi ? d.optionAHi : d.optionAEn;
-    final ob = isHindi ? d.optionBHi : d.optionBEn;
-    final oc = isHindi ? d.optionCHi : d.optionCEn;
-    final od = isHindi ? d.optionDHi : d.optionDEn;
-    final body = isHindi ? d.finalExplanationBodyHi : d.finalExplanationBodyEn;
-    final valueAdd = isHindi ? d.valueAdditionHi : d.valueAdditionEn;
-    final elim = isHindi ? d.eliminationLogicHi : d.eliminationLogicEn;
-    final distractor = isHindi ? d.strongDistractorHi : d.strongDistractorEn;
-    final trap = isHindi ? d.upscTrapExplanationHi : d.upscTrapExplanationEn;
-    final stmt = isHindi ? d.statementAnalysisHi : d.statementAnalysisEn;
+    final stem = isHindi ? draft.stemHi : draft.stemEn;
+    final oa = isHindi ? draft.optionAHi : draft.optionAEn;
+    final ob = isHindi ? draft.optionBHi : draft.optionBEn;
+    final oc = isHindi ? draft.optionCHi : draft.optionCEn;
+    final od = isHindi ? draft.optionDHi : draft.optionDEn;
+    final body =
+        isHindi ? draft.finalExplanationBodyHi : draft.finalExplanationBodyEn;
+    final valueAdd = isHindi ? draft.valueAdditionHi : draft.valueAdditionEn;
+    final elim = isHindi ? draft.eliminationLogicHi : draft.eliminationLogicEn;
+    final distractor =
+        isHindi ? draft.strongDistractorHi : draft.strongDistractorEn;
+    final trap =
+        isHindi ? draft.upscTrapExplanationHi : draft.upscTrapExplanationEn;
+    final stmt =
+        isHindi ? draft.statementAnalysisHi : draft.statementAnalysisEn;
     final lang = isHindi ? 'HI' : 'EN';
 
     return Column(
       children: [
-        _field('Statement ($lang)', stem, (v) => onPatch(patchLang(stem: v))),
-        _field('Option A', oa, (v) => onPatch(patchLang(a: v))),
-        _field('Option B', ob, (v) => onPatch(patchLang(b: v))),
-        _field('Option C', oc, (v) => onPatch(patchLang(c: v))),
-        _field('Option D', od, (v) => onPatch(patchLang(optD: v))),
+        _field(
+          'Statement ($lang)',
+          stem,
+          (v) => onPatch((c) => patchLang(c, stem: v)),
+          lang: lang,
+        ),
+        _field(
+          'Option A',
+          oa,
+          (v) => onPatch((c) => patchLang(c, a: v)),
+          lang: lang,
+        ),
+        _field(
+          'Option B',
+          ob,
+          (v) => onPatch((c) => patchLang(c, b: v)),
+          lang: lang,
+        ),
+        _field(
+          'Option C',
+          oc,
+          (v) => onPatch((c) => patchLang(c, c: v)),
+          lang: lang,
+        ),
+        _field(
+          'Option D',
+          od,
+          (v) => onPatch((c) => patchLang(c, optD: v)),
+          lang: lang,
+        ),
         _field(
           'Final explanation',
           body,
-          (v) => onPatch(patchLang(body: v)),
+          (v) => onPatch((c) => patchLang(c, body: v)),
           minLines: 6,
+          lang: lang,
         ),
         _field(
           'Value addition',
           valueAdd,
-          (v) => onPatch(patchLang(valueAdd: v)),
+          (v) => onPatch((c) => patchLang(c, valueAdd: v)),
           minLines: 3,
+          lang: lang,
         ),
         _field(
           'Elimination (one step per line)',
           elim.join('\n'),
           (v) => onPatch(
-            patchLang(
-              elim: [
-                for (final line in v.split('\n'))
-                  if (line.trim().isNotEmpty) line.trim(),
-              ],
+            (current) => patchLang(
+              current,
+              elim: v.split('\n'),
             ),
           ),
-          minLines: 4,
+          minLines: 6,
+          lang: lang,
         ),
         _field(
           'Strong distractor',
           distractor,
-          (v) => onPatch(patchLang(distractor: v)),
+          (v) => onPatch((c) => patchLang(c, distractor: v)),
+          minLines: 2,
+          lang: lang,
         ),
         _field(
           'UPSC trap explanation',
           trap,
-          (v) => onPatch(patchLang(trap: v)),
+          (v) => onPatch((c) => patchLang(c, trap: v)),
           minLines: 3,
+          lang: lang,
         ),
         _StatementAnalysisEditor(
           items: stmt,
-          onChanged: (items) => onPatch(patchLang(stmt: items)),
+          onChanged: (items) => onPatch((c) => patchLang(c, stmt: items)),
         ),
       ],
     );
@@ -300,11 +341,12 @@ class _LangFields extends StatelessWidget {
     String value,
     ValueChanged<String> onChanged, {
     int minLines = 2,
+    required String lang,
   }) {
     return Padding(
       padding: const EdgeInsets.only(bottom: AppSpacing.md),
       child: _StableMultilineField(
-        key: ValueKey('field-$label'),
+        key: ValueKey('field-$lang-$label'),
         label: label,
         value: value,
         minLines: minLines,
@@ -370,7 +412,7 @@ class _StableMultilineFieldState extends State<_StableMultilineField> {
   }
 }
 
-class _StatementAnalysisEditor extends HookWidget {
+class _StatementAnalysisEditor extends StatelessWidget {
   const _StatementAnalysisEditor({
     required this.items,
     required this.onChanged,
@@ -388,7 +430,7 @@ class _StatementAnalysisEditor extends HookWidget {
         const SizedBox(height: AppSpacing.sm),
         ...items.asMap().entries.map((e) {
           return _StatementRow(
-            key: ValueKey('stmt-${e.key}-${e.value.label}'),
+            key: ValueKey('stmt-${e.key}'),
             item: e.value,
             onUpdate: (item) {
               final next = [...items];
@@ -421,7 +463,7 @@ class _StatementAnalysisEditor extends HookWidget {
   }
 }
 
-class _StatementRow extends HookWidget {
+class _StatementRow extends StatefulWidget {
   const _StatementRow({
     required super.key,
     required this.item,
@@ -434,11 +476,57 @@ class _StatementRow extends HookWidget {
   final VoidCallback onRemove;
 
   @override
-  Widget build(BuildContext context) {
-    final label = useTextEditingController(text: item.label);
-    final reason = useTextEditingController(text: item.reason);
-    final correct = useState(item.isCorrect);
+  State<_StatementRow> createState() => _StatementRowState();
+}
 
+class _StatementRowState extends State<_StatementRow> {
+  late final TextEditingController _labelController;
+  late final TextEditingController _reasonController;
+  late bool _isCorrect;
+
+  @override
+  void initState() {
+    super.initState();
+    _labelController = TextEditingController(text: widget.item.label);
+    _reasonController = TextEditingController(text: widget.item.reason);
+    _isCorrect = widget.item.isCorrect;
+  }
+
+  @override
+  void didUpdateWidget(covariant _StatementRow oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.item.label != widget.item.label &&
+        _labelController.text != widget.item.label) {
+      _labelController.text = widget.item.label;
+    }
+    if (oldWidget.item.reason != widget.item.reason &&
+        _reasonController.text != widget.item.reason) {
+      _reasonController.text = widget.item.reason;
+    }
+    if (oldWidget.item.isCorrect != widget.item.isCorrect) {
+      _isCorrect = widget.item.isCorrect;
+    }
+  }
+
+  @override
+  void dispose() {
+    _labelController.dispose();
+    _reasonController.dispose();
+    super.dispose();
+  }
+
+  void _emit() {
+    widget.onUpdate(
+      StatementAnalysisItem(
+        label: _labelController.text,
+        isCorrect: _isCorrect,
+        reason: _reasonController.text,
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Card(
       margin: const EdgeInsets.only(bottom: AppSpacing.sm),
       child: Padding(
@@ -446,51 +534,43 @@ class _StatementRow extends HookWidget {
         child: Column(
           children: [
             TextField(
-              controller: label,
+              controller: _labelController,
               decoration: const InputDecoration(
                 labelText: 'Statement label',
                 border: OutlineInputBorder(),
+                alignLabelWithHint: true,
               ),
-              onChanged: (v) => onUpdate(
-                StatementAnalysisItem(
-                  label: v,
-                  isCorrect: correct.value,
-                  reason: reason.text,
-                ),
-              ),
+              minLines: 2,
+              maxLines: null,
+              keyboardType: TextInputType.multiline,
+              textInputAction: TextInputAction.newline,
+              onChanged: (_) => _emit(),
             ),
             SwitchListTile(
               title: const Text('Correct'),
-              value: correct.value,
+              value: _isCorrect,
               onChanged: (v) {
-                correct.value = v;
-                onUpdate(
-                  StatementAnalysisItem(
-                    label: label.text,
-                    isCorrect: v,
-                    reason: reason.text,
-                  ),
-                );
+                setState(() => _isCorrect = v);
+                _emit();
               },
             ),
             TextField(
-              controller: reason,
+              controller: _reasonController,
               decoration: const InputDecoration(
                 labelText: 'Reason',
                 border: OutlineInputBorder(),
+                alignLabelWithHint: true,
               ),
-              onChanged: (v) => onUpdate(
-                StatementAnalysisItem(
-                  label: label.text,
-                  isCorrect: correct.value,
-                  reason: v,
-                ),
-              ),
+              minLines: 3,
+              maxLines: null,
+              keyboardType: TextInputType.multiline,
+              textInputAction: TextInputAction.newline,
+              onChanged: (_) => _emit(),
             ),
             Align(
               alignment: Alignment.centerRight,
               child: TextButton(
-                onPressed: onRemove,
+                onPressed: widget.onRemove,
                 child: const Text('Remove'),
               ),
             ),

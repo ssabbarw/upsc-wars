@@ -15,6 +15,8 @@ HTTPS callable used by Flutter (`QuestionCorrectionPublishService`) from **Setti
 Merges one canonical correction map (`{ uuid, meta, shared, en, hi }`) into Firestore **`question_corrections/active`**, keyed by `uuid`. Clients sync at most once per 24h and upsert locally.
 
 Caller email must be in env **`QUESTION_EDITOR_EMAILS`** (comma-separated, lowercase).
+Use the same addresses as `SuperUserEmails.emails` in
+`lib/core/constants/super_user_emails.dart`.
 
 `QUESTION_EDITOR_EMAILS=you@example.com`
 

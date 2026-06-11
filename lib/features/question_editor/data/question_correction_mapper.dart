@@ -73,7 +73,7 @@ abstract final class QuestionCorrectionMapper {
     return {
       'display_text': displayText,
       'strong_distractor': strongDistractor,
-      'elimination_logic': eliminationLogic,
+      'elimination_logic': _exportElimination(eliminationLogic),
       'upsc_trap_explanation': upscTrapExplanation,
       'final_explanation': FinalExplanationParts.join(
         body: body,
@@ -91,6 +91,11 @@ abstract final class QuestionCorrectionMapper {
             .toList(),
     };
   }
+
+  static List<String> _exportElimination(List<String> lines) => [
+    for (final line in lines)
+      if (line.trim().isNotEmpty) line,
+  ];
 
   static List<QuestionFieldDiff> diffDrafts(
     QuestionEditorDraft before,
