@@ -32,6 +32,7 @@ import '../providers/home_activation_provider.dart';
 import '../widgets/daily_drill_card.dart';
 import '../widgets/get_started_card.dart';
 import '../widgets/recovery_plan_section.dart';
+import '../../memory_pairs/widgets/memory_pairs_home_card.dart';
 import '../providers/daily_drill_provider.dart';
 import '../../push_spot_test/widgets/push_spot_test_debug_card.dart';
 import '../../daily_ca/widgets/daily_ca_home_card.dart';
@@ -496,6 +497,8 @@ class HomeScreen extends HookConsumerWidget {
                       );
                     },
                   ),
+                  const SizedBox(height: AppSpacing.md),
+                  MemoryPairsHomeCard(borderColor: borderColor),
                   const SizedBox(height: AppSpacing.md),
                   home.when(
                     loading: () {

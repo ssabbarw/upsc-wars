@@ -363,6 +363,13 @@ class FirebaseAnalyticsSink implements AnalyticsSink {
         await _log('did_you_know_dismissed', {'card_id': cardId});
       case DidYouKnowCtaTappedEvent(:final cardId):
         await _log('did_you_know_cta_tapped', {'card_id': cardId});
+      case MemoryPairsGameDiscoveredEvent():
+        await _log('memory_pairs_game_discovered', const {});
+      case MemoryPairsGamePlayedEvent(:final setId, :final difficulty):
+        await _log('memory_pairs_game_played', {
+          'set_id': setId,
+          'difficulty': difficulty,
+        });
       case DailyDrillCardShownEvent():
         await _log('daily_drill_card_shown', const {});
       case DailyDrillStartedEvent(

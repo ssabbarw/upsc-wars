@@ -1,0 +1,318 @@
+import 'package:flutter/material.dart';
+
+import '../domain/memory_pair_models.dart';
+
+/// Hardcoded catalog from the Memory Pairs HTML prototype.
+const List<MemoryPairSetDefinition> kMemoryPairSetCatalog = [
+  MemoryPairSetDefinition(
+    id: 'articles',
+    nameEn: 'Articles & Rights',
+    nameHi: 'अनुच्छेद और अधिकार',
+    displaySubjectEn: 'Polity',
+    displaySubjectHi: 'राज्यव्यवस्था',
+    unlockSubjectSlug: 'Polity',
+    unlockQuestionsRequired: 0,
+    icon: Icons.gavel_outlined,
+    accentColor: Color(0xFF1D9E75),
+    pairs: [
+      MemoryPair(
+        termEn: 'Article 14',
+        termHi: 'अनुच्छेद 14',
+        answerEn: 'Equality before law',
+        answerHi: 'विधि के समक्ष समता',
+      ),
+      MemoryPair(
+        termEn: 'Article 19',
+        termHi: 'अनुच्छेद 19',
+        answerEn: 'Freedom of speech',
+        answerHi: 'वाक् स्वतंत्रता',
+      ),
+      MemoryPair(
+        termEn: 'Article 21',
+        termHi: 'अनुच्छेद 21',
+        answerEn: 'Right to life',
+        answerHi: 'प्राण का अधिकार',
+      ),
+      MemoryPair(
+        termEn: 'Article 21A',
+        termHi: 'अनुच्छेद 21क',
+        answerEn: 'Right to education',
+        answerHi: 'शिक्षा का अधिकार',
+      ),
+      MemoryPair(
+        termEn: 'Article 32',
+        termHi: 'अनुच्छेद 32',
+        answerEn: 'Constitutional remedies',
+        answerHi: 'संवैधानिक उपचार',
+      ),
+      MemoryPair(
+        termEn: 'Article 25',
+        termHi: 'अनुच्छेद 25',
+        answerEn: 'Freedom of religion',
+        answerHi: 'धर्म की स्वतंत्रता',
+      ),
+      MemoryPair(
+        termEn: 'Article 17',
+        termHi: 'अनुच्छेद 17',
+        answerEn: 'Abolition of untouchability',
+        answerHi: 'अस्पृश्यता का अंत',
+      ),
+      MemoryPair(
+        termEn: 'Article 24',
+        termHi: 'अनुच्छेद 24',
+        answerEn: 'Ban on child labour',
+        answerHi: 'बाल श्रम पर रोक',
+      ),
+      MemoryPair(
+        termEn: 'Article 23',
+        termHi: 'अनुच्छेद 23',
+        answerEn: 'Ban on trafficking',
+        answerHi: 'दुर्व्यापार पर रोक',
+      ),
+      MemoryPair(
+        termEn: 'Article 300A',
+        termHi: 'अनुच्छेद 300क',
+        answerEn: 'Right to property',
+        answerHi: 'संपत्ति का अधिकार',
+      ),
+    ],
+  ),
+  MemoryPairSetDefinition(
+    id: 'rivers',
+    nameEn: 'Rivers & Origin',
+    nameHi: 'नदियाँ और उद्गम',
+    displaySubjectEn: 'Geography',
+    displaySubjectHi: 'भूगोल',
+    unlockSubjectSlug: 'Geography',
+    unlockQuestionsRequired: 0,
+    icon: Icons.water_outlined,
+    accentColor: Color(0xFF2563EB),
+    pairs: [
+      MemoryPair(
+        termEn: 'Godavari',
+        termHi: 'गोदावरी',
+        answerEn: 'Trimbak',
+        answerHi: 'त्र्यंबक',
+      ),
+      MemoryPair(
+        termEn: 'Krishna',
+        termHi: 'कृष्णा',
+        answerEn: 'Mahabaleshwar',
+        answerHi: 'महाबलेश्वर',
+      ),
+      MemoryPair(
+        termEn: 'Narmada',
+        termHi: 'नर्मदा',
+        answerEn: 'Amarkantak',
+        answerHi: 'अमरकंटक',
+      ),
+      MemoryPair(
+        termEn: 'Cauvery',
+        termHi: 'कावेरी',
+        answerEn: 'Talakaveri',
+        answerHi: 'तालाकावेरी',
+      ),
+      MemoryPair(
+        termEn: 'Yamuna',
+        termHi: 'यमुना',
+        answerEn: 'Yamunotri',
+        answerHi: 'यमुनोत्री',
+      ),
+      MemoryPair(
+        termEn: 'Tapi',
+        termHi: 'ताप्ती',
+        answerEn: 'Multai',
+        answerHi: 'मुलताई',
+      ),
+      MemoryPair(
+        termEn: 'Mahanadi',
+        termHi: 'महानदी',
+        answerEn: 'Sihawa',
+        answerHi: 'सिहावा',
+      ),
+      MemoryPair(
+        termEn: 'Chambal',
+        termHi: 'चंबल',
+        answerEn: 'Janapav',
+        answerHi: 'जनापाव',
+      ),
+      MemoryPair(
+        termEn: 'Beas',
+        termHi: 'ब्यास',
+        answerEn: 'Rohtang',
+        answerHi: 'रोहतांग',
+      ),
+      MemoryPair(
+        termEn: 'Sabarmati',
+        termHi: 'साबरमती',
+        answerEn: 'Aravalli',
+        answerHi: 'अरावली',
+      ),
+    ],
+  ),
+  MemoryPairSetDefinition(
+    id: 'viceroys',
+    nameEn: 'Viceroys & Events',
+    nameHi: 'वायसराय और घटनाएँ',
+    displaySubjectEn: 'Modern History',
+    displaySubjectHi: 'आधुनिक इतिहास',
+    unlockSubjectSlug: 'Modern History',
+    unlockQuestionsRequired: 0,
+    icon: Icons.history_edu_outlined,
+    accentColor: Color(0xFFD97B3A),
+    pairs: [
+      MemoryPair(
+        termEn: 'Lord Dalhousie',
+        termHi: 'लॉर्ड डलहौजी',
+        answerEn: 'Doctrine of Lapse',
+        answerHi: 'हड़प नीति',
+      ),
+      MemoryPair(
+        termEn: 'Lord Canning',
+        termHi: 'लॉर्ड कैनिंग',
+        answerEn: 'Revolt of 1857',
+        answerHi: '1857 का विद्रोह',
+      ),
+      MemoryPair(
+        termEn: 'Lord Curzon',
+        termHi: 'लॉर्ड कर्ज़न',
+        answerEn: 'Partition of Bengal',
+        answerHi: 'बंगाल विभाजन',
+      ),
+      MemoryPair(
+        termEn: 'Lord Ripon',
+        termHi: 'लॉर्ड रिपन',
+        answerEn: 'Local self-government',
+        answerHi: 'स्थानीय स्वशासन',
+      ),
+      MemoryPair(
+        termEn: 'Lord Minto',
+        termHi: 'लॉर्ड मिंटो',
+        answerEn: 'Morley–Minto Reforms',
+        answerHi: 'मॉर्ले-मिंटो सुधार',
+      ),
+      MemoryPair(
+        termEn: 'Lord Irwin',
+        termHi: 'लॉर्ड इरविन',
+        answerEn: 'Dandi March',
+        answerHi: 'दांडी यात्रा',
+      ),
+      MemoryPair(
+        termEn: 'Lord Chelmsford',
+        termHi: 'लॉर्ड चेम्सफोर्ड',
+        answerEn: 'Jallianwala Bagh',
+        answerHi: 'जलियाँवाला बाग',
+      ),
+      MemoryPair(
+        termEn: 'Lord Wavell',
+        termHi: 'लॉर्ड वेवेल',
+        answerEn: 'Cabinet Mission',
+        answerHi: 'कैबिनेट मिशन',
+      ),
+      MemoryPair(
+        termEn: 'Lord Mountbatten',
+        termHi: 'लॉर्ड माउंटबेटन',
+        answerEn: 'Partition of India',
+        answerHi: 'भारत विभाजन',
+      ),
+      MemoryPair(
+        termEn: 'Lord Lytton',
+        termHi: 'लॉर्ड लिटन',
+        answerEn: 'Vernacular Press Act',
+        answerHi: 'वर्नाक्युलर प्रेस अधि.',
+      ),
+    ],
+  ),
+  MemoryPairSetDefinition(
+    id: 'schemes',
+    nameEn: 'Schemes & Ministries',
+    nameHi: 'योजनाएँ और मंत्रालय',
+    displaySubjectEn: 'Current Affairs',
+    displaySubjectHi: 'समसामयिकी',
+    unlockSubjectSlug: 'Economy',
+    unlockQuestionsRequired: 0,
+    icon: Icons.campaign_outlined,
+    accentColor: Color(0xFF7C3AED),
+    pairs: [
+      MemoryPair(
+        termEn: 'PM-KISAN',
+        termHi: 'पीएम-किसान',
+        answerEn: 'Agriculture',
+        answerHi: 'कृषि',
+      ),
+      MemoryPair(
+        termEn: 'Ayushman Bharat',
+        termHi: 'आयुष्मान भारत',
+        answerEn: 'Health',
+        answerHi: 'स्वास्थ्य',
+      ),
+      MemoryPair(
+        termEn: 'Ujjwala',
+        termHi: 'उज्ज्वला',
+        answerEn: 'Petroleum',
+        answerHi: 'पेट्रोलियम',
+      ),
+      MemoryPair(
+        termEn: 'MGNREGA',
+        termHi: 'मनरेगा',
+        answerEn: 'Rural Development',
+        answerHi: 'ग्रामीण विकास',
+      ),
+      MemoryPair(
+        termEn: 'Saubhagya',
+        termHi: 'सौभाग्य',
+        answerEn: 'Power',
+        answerHi: 'ऊर्जा',
+      ),
+      MemoryPair(
+        termEn: 'Jal Jeevan',
+        termHi: 'जल जीवन',
+        answerEn: 'Jal Shakti',
+        answerHi: 'जल शक्ति',
+      ),
+      MemoryPair(
+        termEn: 'Skill India',
+        termHi: 'स्किल इंडिया',
+        answerEn: 'Skill Development',
+        answerHi: 'कौशल विकास',
+      ),
+      MemoryPair(
+        termEn: 'Beti Bachao',
+        termHi: 'बेटी बचाओ',
+        answerEn: 'Women & Child',
+        answerHi: 'महिला एवं बाल',
+      ),
+    ],
+  ),
+  MemoryPairSetDefinition(
+    id: 'tribal',
+    nameEn: 'Tribal Movements',
+    nameHi: 'जनजातीय आंदोलन',
+    displaySubjectEn: 'Modern History',
+    displaySubjectHi: 'आधुनिक इतिहास',
+    unlockSubjectSlug: 'Modern History',
+    unlockQuestionsRequired: 50,
+    icon: Icons.forest_outlined,
+    accentColor: Color(0xFFD97B3A),
+    pairs: [],
+  ),
+  MemoryPairSetDefinition(
+    id: 'bodies',
+    nameEn: 'Constitutional Bodies',
+    nameHi: 'संवैधानिक निकाय',
+    displaySubjectEn: 'Polity',
+    displaySubjectHi: 'राज्यव्यवस्था',
+    unlockSubjectSlug: 'Polity',
+    unlockQuestionsRequired: 70,
+    icon: Icons.account_balance_outlined,
+    accentColor: Color(0xFF1D9E75),
+    pairs: [],
+  ),
+];
+
+MemoryPairSetDefinition? memoryPairSetById(String id) {
+  for (final set in kMemoryPairSetCatalog) {
+    if (set.id == id) return set;
+  }
+  return null;
+}

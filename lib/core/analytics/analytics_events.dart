@@ -707,6 +707,28 @@ final class DidYouKnowCtaTappedEvent extends AnalyticsEvent {
   final String cardId;
 }
 
+// ── Memory Pairs (Revision Games) ────────────────────────────────────────────
+
+/// **First time the user opened Memory Pairs / Revision Games** (per device).
+///
+/// **GA4:** `memory_pairs_game_discovered` (no parameters).
+final class MemoryPairsGameDiscoveredEvent extends AnalyticsEvent {
+  const MemoryPairsGameDiscoveredEvent();
+}
+
+/// **First time the user started a Memory Pairs match game** (per device).
+///
+/// **GA4:** `memory_pairs_game_played` with `set_id`, `difficulty`.
+final class MemoryPairsGamePlayedEvent extends AnalyticsEvent {
+  const MemoryPairsGamePlayedEvent({
+    required this.setId,
+    required this.difficulty,
+  });
+
+  final String setId;
+  final String difficulty;
+}
+
 /// **Daily practice card shown** on home for activated users.
 ///
 /// **GA4:** `daily_drill_card_shown` (no parameters).

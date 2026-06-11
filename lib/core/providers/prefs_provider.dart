@@ -84,6 +84,12 @@ abstract final class PrefKeys {
   /// One-time: first time the user saw any Insights surface (per device).
   static const firstInsightSeenV1 = 'first_insight_seen_v1';
 
+  /// One-time: first time the user opened Memory Pairs / Revision Games.
+  static const memoryPairsGameDiscoveredV1 = 'memory_pairs_game_discovered_v1';
+
+  /// One-time: first time the user started a Memory Pairs match game.
+  static const memoryPairsGamePlayedV1 = 'memory_pairs_game_played_v1';
+
   /// One-time in-app rating/review prompt was already shown (never ask again).
   static const appReviewPromptShownV1 = 'app_review_prompt_shown_v1';
 
@@ -282,6 +288,16 @@ class PrefsService {
   bool get firstInsightSeen =>
       _p.getBool(PrefKeys.firstInsightSeenV1) ?? false;
   set firstInsightSeen(bool v) => _p.setBool(PrefKeys.firstInsightSeenV1, v);
+
+  bool get memoryPairsGameDiscovered =>
+      _p.getBool(PrefKeys.memoryPairsGameDiscoveredV1) ?? false;
+  set memoryPairsGameDiscovered(bool v) =>
+      _p.setBool(PrefKeys.memoryPairsGameDiscoveredV1, v);
+
+  bool get memoryPairsGamePlayed =>
+      _p.getBool(PrefKeys.memoryPairsGamePlayedV1) ?? false;
+  set memoryPairsGamePlayed(bool v) =>
+      _p.setBool(PrefKeys.memoryPairsGamePlayedV1, v);
 
   bool get appReviewPromptShown =>
       _p.getBool(PrefKeys.appReviewPromptShownV1) ?? false;
