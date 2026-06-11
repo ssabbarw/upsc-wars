@@ -19,22 +19,24 @@ void main() {
         : SuperUserEmails.emails.first;
 
     expect(
-      SuperUser.isSignedIn(_FakeUser(email: listed, anonymous: false)),
+      SuperUser.isSignedIn(_FakeUser(email: listed, isAnonymous: false)),
       SuperUserEmails.emails.isNotEmpty,
     );
     expect(
-      SuperUser.isSignedIn(_FakeUser(email: listed, anonymous: true)),
+      SuperUser.isSignedIn(_FakeUser(email: listed, isAnonymous: true)),
       isFalse,
     );
     expect(
-      SuperUser.isSignedIn(_FakeUser(email: 'other@example.com', anonymous: false)),
+      SuperUser.isSignedIn(
+        _FakeUser(email: 'other@example.com', isAnonymous: false),
+      ),
       isFalse,
     );
   });
 }
 
 class _FakeUser implements User {
-  _FakeUser({required this.email, required this.anonymous});
+  _FakeUser({required this.email, required this.isAnonymous});
 
   @override
   final String? email;
