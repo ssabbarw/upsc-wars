@@ -64,26 +64,18 @@ class _NotificationBenefit {
 const _notificationBenefits = [
   _NotificationBenefit(
     icon: Icons.newspaper_rounded,
-    title: 'Current Affairs spot test',
-    body:
-        'One question from today\'s news — tap the notification and answer in seconds.',
+    title: 'Daily current affairs question',
+    body: 'One quick question from today\'s news.',
   ),
   _NotificationBenefit(
-    icon: Icons.sports_martial_arts_rounded,
-    title: 'Battles & community',
-    body:
-        'Battle invites, open challenges, and updates when someone wants to play.',
+    icon: Icons.adjust_rounded,
+    title: 'Questions from your weak topics',
+    body: 'Personalised practice to help you improve.',
   ),
   _NotificationBenefit(
-    icon: Icons.live_tv_rounded,
-    title: 'Online events',
-    body:
-        'Invites and reminders for live sessions, webinars, and group tests.',
-  ),
-  _NotificationBenefit(
-    icon: Icons.local_fire_department_rounded,
-    title: 'Daily practice nudges',
-    body: 'A friendly tap so your prep streak doesn\'t quietly slip away.',
+    icon: Icons.groups_rounded,
+    title: 'Battle invites & important updates',
+    body: 'Challenges, community activity, and key notifications.',
   ),
 ];
 
@@ -195,24 +187,8 @@ class _DeferredPushPermissionPanel extends HookConsumerWidget {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Center(
-                  child: Container(
-                    width: 48,
-                    height: 48,
-                    decoration: BoxDecoration(
-                      color: scheme.primary.withValues(alpha: 0.12),
-                      shape: BoxShape.circle,
-                    ),
-                    child: Icon(
-                      Icons.notifications_active_rounded,
-                      color: scheme.primary,
-                      size: 26,
-                    ),
-                  ),
-                ),
-                const SizedBox(height: AppSpacing.md),
                 Text(
-                  'Stay plugged into your prep',
+                  'Stay on track with your prep',
                   textAlign: TextAlign.center,
                   style: AppTextStyles.h3().copyWith(
                     color: scheme.onSurface,
@@ -221,7 +197,8 @@ class _DeferredPushPermissionPanel extends HookConsumerWidget {
                 ),
                 const SizedBox(height: AppSpacing.sm),
                 Text(
-                  'We only ping you when it actually helps. Here\'s what you\'ll get:',
+                  'We\'ll only ping you when it actually helps. '
+                  'You can turn these off anytime.',
                   textAlign: TextAlign.center,
                   style: AppTextStyles.body().copyWith(
                     color: scheme.onSurfaceVariant,
@@ -276,14 +253,6 @@ class _DeferredPushPermissionPanel extends HookConsumerWidget {
                         ),
                       ],
                     ),
-                  ),
-                ),
-                Text(
-                  'You can turn these off anytime in Settings.',
-                  textAlign: TextAlign.center,
-                  style: AppTextStyles.caption().copyWith(
-                    color: scheme.onSurfaceVariant,
-                    height: 1.35,
                   ),
                 ),
                 const SizedBox(height: AppSpacing.lg),

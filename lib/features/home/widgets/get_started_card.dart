@@ -218,7 +218,6 @@ class _GetStartedDiagnosticIntroSheet extends HookConsumerWidget {
       return null;
     }, const []);
 
-    final bottom = MediaQuery.paddingOf(context).bottom;
     final borderColor = isDark ? AppColors.borderDark : AppColors.borderLight;
     final headerTop = Color.lerp(
       isDark ? AppColors.primaryDeep : AppColors.primaryLight,
@@ -252,7 +251,7 @@ class _GetStartedDiagnosticIntroSheet extends HookConsumerWidget {
         AppSpacing.sm,
         0,
         AppSpacing.sm,
-        bottom + AppSpacing.sm,
+        sheetBottomPadding(context, base: AppSpacing.sm),
       ),
       child: Align(
         alignment: Alignment.bottomCenter,
@@ -437,11 +436,11 @@ class _GetStartedDiagnosticIntroSheet extends HookConsumerWidget {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.fromLTRB(
+                    padding: const EdgeInsets.fromLTRB(
                       AppSpacing.lg,
                       0,
                       AppSpacing.lg,
-                      sheetBottomPadding(context),
+                      AppSpacing.md,
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
