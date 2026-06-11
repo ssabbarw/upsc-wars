@@ -8,6 +8,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 
 import '../../../../core/domain/repositories/auth_repository.dart';
+import '../../../../core/services/anonymous_auth_service.dart';
 
 class FirebaseAuthRepository implements AuthRepository {
   FirebaseAuthRepository({
@@ -55,6 +56,17 @@ class FirebaseAuthRepository implements AuthRepository {
       }
 
       final credential = GoogleAuthProvider.credential(idToken: auth.idToken);
+      final current = _firebaseAuth.currentUser;
+      if (current != null && current.isAnonymous) {
+        try {
+          return await current.linkWithCredential(credential);
+        } on FirebaseAuthException catch (linkError) {
+          if (linkError.code != 'credential-already-in-use' &&
+              linkError.code != 'email-already-in-use') {
+            rethrow;
+          }
+        }
+      }
       return _firebaseAuth.signInWithCredential(credential);
     } on GoogleSignInException catch (error, stackTrace) {
       debugPrint('Google signInWithGoogle failed: $error');
@@ -136,6 +148,17 @@ class FirebaseAuthRepository implements AuthRepository {
         rawNonce: rawNonce,
       );
 
+      final current = _firebaseAuth.currentUser;
+      if (current != null && current.isAnonymous) {
+        try {
+          return await current.linkWithCredential(credential);
+        } on FirebaseAuthException catch (linkError) {
+          if (linkError.code != 'credential-already-in-use' &&
+              linkError.code != 'email-already-in-use') {
+            rethrow;
+          }
+        }
+      }
       return _firebaseAuth.signInWithCredential(credential);
     } on SignInWithAppleAuthorizationException catch (error, stackTrace) {
       debugPrint('Apple signInWithApple failed: $error');
@@ -171,6 +194,7 @@ class FirebaseAuthRepository implements AuthRepository {
     try {
       await _googleSignIn.signOut();
       await _firebaseAuth.signOut();
+      await AnonymousAuthService.ensureSignedIn();
     } catch (error, stackTrace) {
       debugPrint('signOut failed: $error');
       debugPrintStack(stackTrace: stackTrace);

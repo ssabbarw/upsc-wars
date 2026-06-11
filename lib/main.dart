@@ -14,6 +14,7 @@ import 'core/debug/upsc_wars_trace.dart';
 import 'core/crashlytics/crashlytics_provider_observer.dart';
 import 'core/crashlytics/firebase_crashlytics_bootstrap.dart';
 import 'core/constants/prelims_debug_flags.dart';
+import 'core/services/anonymous_auth_service.dart';
 import 'core/services/firebase_in_app_messaging_service.dart';
 import 'core/services/battle_messaging_service.dart';
 import 'core/services/prelims_surfaces_refresh.dart';
@@ -41,6 +42,7 @@ Future<void> main() async {
 
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   await Firebase.initializeApp();
+  await AnonymousAuthService.ensureSignedIn();
   await setupFirebaseCrashlytics();
   await FirebaseInAppMessagingService.initializeAfterFirebase();
   // Capture tap-to-open payload before runApp. On Android, reading

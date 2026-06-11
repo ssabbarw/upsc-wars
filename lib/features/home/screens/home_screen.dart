@@ -8,6 +8,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../core/auth/auth_session.dart';
 import '../../../core/constants/app_constants.dart';
 import '../../../core/constants/subject_constants.dart';
 import '../../../core/constants/timed_exam_debug_constants.dart';
@@ -178,6 +179,7 @@ class HomeScreen extends HookConsumerWidget {
 
     final greeting = _greeting();
     final user = authState.asData?.value;
+    final accountSignedIn = AuthSession.isAccountSignedIn(user);
     final rawName = user?.displayName?.trim() ?? '';
     final safeName = rawName.toLowerCase() == 'you' ? '' : rawName;
     final userName = safeName.isNotEmpty
@@ -276,7 +278,7 @@ class HomeScreen extends HookConsumerWidget {
                             height: 36,
                             margin: const EdgeInsets.only(right: AppSpacing.sm),
                             decoration: BoxDecoration(
-                              color: user == null
+                              color: !accountSignedIn
                                   ? scheme.surfaceContainerLow
                                   : avatarBackgroundColor,
                               shape: BoxShape.circle,
@@ -285,7 +287,7 @@ class HomeScreen extends HookConsumerWidget {
                                 width: 0.5,
                               ),
                             ),
-                            child: user == null
+                            child: !accountSignedIn
                                 ? Icon(
                                     Icons.person_outline,
                                     size: 18,
@@ -295,7 +297,7 @@ class HomeScreen extends HookConsumerWidget {
                                     child: CachedNetworkImage(
                                       imageUrl:
                                           AppConstants.profileImageUrlOrDefault(
-                                            user.photoURL,
+                                            user!.photoURL,
                                           ),
                                       width: 36,
                                       height: 36,

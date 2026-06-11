@@ -19,6 +19,19 @@ function spotTestBroadcastAllowlist() {
   );
 }
 
+function questionEditorAllowlist() {
+  const raw = process.env.QUESTION_EDITOR_EMAILS || "";
+  return new Set(
+    raw
+      .split(",")
+      .map((e) => e.trim().toLowerCase())
+      .filter(Boolean),
+  );
+}
+
+const QUESTION_CORRECTIONS_ACTIVE_PATH = "question_corrections/active";
+const MAX_CORRECTIONS_PER_ACTIVE_DOC = 400;
+
 function buildSpotTestFcmData(data) {
   const fcmData = { kind: "push_spot_test" };
   const subjectRaw = data && data.subject;
@@ -46,6 +59,95 @@ function buildSpotTestFcmData(data) {
  * `BattleInviteCloudService` with:
  *   guestEmail, sessionId, hostDisplayName, subjectLabel
  */
+/**
+ * HTTPS callable `publishQuestionCorrection` — merges one canonical correction
+ * map into `question_corrections/active` (keyed by uuid).
+ *
+ * Env: QUESTION_EDITOR_EMAILS (comma-separated allowlist).
+ */
+exports.publishQuestionCorrection = functions.https.onCall(
+  async (data, context) => {
+    if (!context.auth) {
+      throw new functions.https.HttpsError(
+        "unauthenticated",
+        "Sign in required to publish corrections.",
+      );
+    }
+
+    const tokenEmail = context.auth.token.email;
+    if (!tokenEmail || typeof tokenEmail !== "string") {
+      throw new functions.https.HttpsError(
+        "failed-precondition",
+        "Your account must have an email to publish corrections.",
+      );
+    }
+
+    const callerEmail = tokenEmail.toLowerCase().trim();
+    const allowlist = questionEditorAllowlist();
+    if (!allowlist.has(callerEmail)) {
+      throw new functions.https.HttpsError(
+        "permission-denied",
+        "Your account is not allowed to publish corrections.",
+      );
+    }
+
+    const correction = data && data.correction;
+    if (!correction || typeof correction !== "object") {
+      throw new functions.https.HttpsError(
+        "invalid-argument",
+        "correction object is required.",
+      );
+    }
+
+    const uuid =
+      typeof correction.uuid === "string" ? correction.uuid.trim() : "";
+    if (!uuid) {
+      throw new functions.https.HttpsError(
+        "invalid-argument",
+        "correction.uuid is required.",
+      );
+    }
+
+    const db = admin.firestore();
+    const ref = db.doc(QUESTION_CORRECTIONS_ACTIVE_PATH);
+    const now = admin.firestore.FieldValue.serverTimestamp();
+
+    const revision = await db.runTransaction(async (tx) => {
+      const snap = await tx.get(ref);
+      const current = snap.exists ? snap.data() || {} : {};
+      const prevCorrections =
+        current.corrections && typeof current.corrections === "object"
+          ? current.corrections
+          : {};
+      const keys = Object.keys(prevCorrections);
+      if (keys.length >= MAX_CORRECTIONS_PER_ACTIVE_DOC && !prevCorrections[uuid]) {
+        throw new functions.https.HttpsError(
+          "resource-exhausted",
+          "Active corrections doc is full; archive required.",
+        );
+      }
+
+      const nextRevision = (current.revision || 0) + 1;
+      const nextCorrections = { ...prevCorrections, [uuid]: correction };
+      tx.set(ref, {
+        revision: nextRevision,
+        updated_at: now,
+        updated_by: callerEmail,
+        corrections: nextCorrections,
+      });
+      return nextRevision;
+    });
+
+    functions.logger.info("publishQuestionCorrection: ok", {
+      uuid,
+      revision,
+      editor: callerEmail,
+    });
+
+    return { revision, uuid };
+  },
+);
+
 exports.sendBattleInvite = functions.https.onCall(async (data, context) => {
   functions.logger.info("sendBattleInvite: invoked", {
     uid: context.auth && context.auth.uid,

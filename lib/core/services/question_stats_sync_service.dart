@@ -6,6 +6,7 @@ import 'package:flutter/foundation.dart';
 import 'package:uuid/uuid.dart';
 
 import '../analytics/question_stats_aggregator.dart';
+import 'anonymous_auth_service.dart';
 import '../analytics/question_stats_firestore.dart';
 import '../database/user_db.dart';
 import '../domain/entities/answer_confidence.dart';
@@ -24,10 +25,8 @@ class QuestionStatsSyncService {
       _firestoreOverride ?? FirebaseFirestore.instance;
   static const _uuid = Uuid();
 
-  static const flushMinAge = Duration(hours: 24);
+  /// Retries any sessions that failed to sync (e.g. offline at submit time).
   static const periodicScanInterval = Duration(hours: 1);
-
-  static bool _syncInProgress = false;
 
   /// Persists immutable attempt snapshots and marks the session unsynced.
   Future<void> persistAttemptsOnSessionComplete(String sessionId) async {
@@ -68,89 +67,107 @@ class QuestionStatsSyncService {
     await _userDb.sessionsDao.markSessionUnsynced(sessionId);
   }
 
-  /// Aggregates unsynced sessions and writes batched increments to Firestore.
-  ///
-  /// When [minAge] is set, only sessions completed at least that long ago are
-  /// included (used for scheduled auto-flush).
-  Future<int> syncUnsyncedSessions({Duration? minAge}) async {
-    if (_syncInProgress) return 0;
-    _syncInProgress = true;
+  /// Persists local attempt rows then uploads aggregates to Firestore.
+  Future<void> persistAndSyncSession(String sessionId) async {
+    await persistAttemptsOnSessionComplete(sessionId);
+    await syncSession(sessionId);
+  }
+
+  /// Uploads one completed session to Firestore (no-op if already synced).
+  Future<bool> syncSession(String sessionId) async {
     try {
-      final sessions = await _userDb.sessionsDao.getUnsyncedCompletedSessions(
-        minAge: minAge,
-      );
-      if (sessions.isEmpty) return 0;
-
-      final priorScored = await _userDb.questionAttemptRecordsDao
-          .getQuestionIdsWithPriorScoredAttempts();
-      final seenScored = {...priorScored};
-      var syncedCount = 0;
-
-      for (final session in sessions) {
-        final logRef = _firestore
-            .collection(QuestionStatsFirestore.syncLogCollectionName)
-            .doc(session.id);
-        if ((await logRef.get()).exists) {
-          await _userDb.sessionsDao.markSessionSynced(session.id);
-          syncedCount++;
-          continue;
-        }
-
-        var records = await _userDb.questionAttemptRecordsDao.getBySessionId(
-          session.id,
-        );
-        if (records.isEmpty) {
-          await persistAttemptsOnSessionComplete(session.id);
-          records = await _userDb.questionAttemptRecordsDao.getBySessionId(
-            session.id,
-          );
-        }
-        final deltas = <String, QuestionStatsDelta>{};
-        for (final record in records) {
-          final isFirstScored = !record.skipped &&
-              !seenScored.contains(record.questionId);
-          final delta = deltas.putIfAbsent(
-            record.questionId,
-            () => QuestionStatsDelta(questionId: record.questionId),
-          );
-          delta.absorbRecord(
-            record: record,
-            isFirstScoredAttempt: isFirstScored,
-          );
-          if (!record.skipped) {
-            seenScored.add(record.questionId);
-          }
-        }
-
-        await _commitSessionSync(
-          sessionId: session.id,
-          logRef: logRef,
-          deltas: deltas.values,
-        );
-        await _userDb.sessionsDao.markSessionSynced(session.id);
-        syncedCount++;
+      await AnonymousAuthService.ensureSignedIn();
+      final session = await _userDb.sessionsDao.getSessionById(sessionId);
+      if (session == null ||
+          session.status != 'completed' ||
+          session.synced) {
+        return false;
       }
+      return (await _syncSessions([session])) > 0;
+    } catch (e, st) {
+      debugPrint('QuestionStatsSyncService.syncSession: $e');
+      debugPrintStack(stackTrace: st);
+      return false;
+    }
+  }
 
-      return syncedCount;
+  /// Uploads all locally unsynced completed sessions (retry / catch-up).
+  Future<int> syncAllPending() => syncUnsyncedSessions();
+
+  /// Aggregates unsynced sessions and writes batched increments to Firestore.
+  Future<int> syncUnsyncedSessions() async {
+    try {
+      await AnonymousAuthService.ensureSignedIn();
+      final sessions =
+          await _userDb.sessionsDao.getUnsyncedCompletedSessions();
+      return _syncSessions(sessions);
     } catch (e, st) {
       debugPrint('QuestionStatsSyncService.syncUnsyncedSessions: $e');
       debugPrintStack(stackTrace: st);
       return 0;
-    } finally {
-      _syncInProgress = false;
     }
   }
 
-  /// Auto-flush hook: unsynced sessions older than [flushMinAge].
-  Future<int> flushStaleSessions() =>
-      syncUnsyncedSessions(minAge: flushMinAge);
+  Future<int> _syncSessions(List<Session> sessions) async {
+    if (sessions.isEmpty) return 0;
 
-  /// Immediate best-effort sync of all pending sessions (no age filter).
-  Future<int> syncAllPending() => syncUnsyncedSessions();
+    final priorScored = await _userDb.questionAttemptRecordsDao
+        .getQuestionIdsWithPriorScoredAttempts();
+    final seenScored = {...priorScored};
+    var syncedCount = 0;
+
+    for (final session in sessions) {
+      final logRef = _firestore
+          .collection(QuestionStatsFirestore.syncLogCollectionName)
+          .doc(session.id);
+      if ((await logRef.get()).exists) {
+        await _userDb.sessionsDao.markSessionSynced(session.id);
+        syncedCount++;
+        continue;
+      }
+
+      var records = await _userDb.questionAttemptRecordsDao.getBySessionId(
+        session.id,
+      );
+      if (records.isEmpty) {
+        await persistAttemptsOnSessionComplete(session.id);
+        records = await _userDb.questionAttemptRecordsDao.getBySessionId(
+          session.id,
+        );
+      }
+      final deltas = <String, QuestionStatsDelta>{};
+      for (final record in records) {
+        final isFirstScored =
+            !record.skipped && !seenScored.contains(record.questionId);
+        final delta = deltas.putIfAbsent(
+          record.questionId,
+          () => QuestionStatsDelta(questionId: record.questionId),
+        );
+        delta.absorbRecord(
+          record: record,
+          isFirstScoredAttempt: isFirstScored,
+        );
+        if (!record.skipped) {
+          seenScored.add(record.questionId);
+        }
+      }
+
+      await _commitSessionSync(
+        sessionId: session.id,
+        logRef: logRef,
+        deltas: deltas.values,
+      );
+      await _userDb.sessionsDao.markSessionSynced(session.id);
+      syncedCount++;
+    }
+
+    return syncedCount;
+  }
 
   /// Increments bookmark counter when a user bookmarks a question.
   Future<void> recordBookmark(String questionId) async {
     try {
+      await AnonymousAuthService.ensureSignedIn();
       await QuestionStatsFirestore.doc(questionId).set(
         {
           QuestionStatsFirestore.bookmarkedCount: FieldValue.increment(1),
@@ -167,6 +184,7 @@ class QuestionStatsSyncService {
   /// Increments report counter when a user reports a question error.
   Future<void> recordReport(String questionId) async {
     try {
+      await AnonymousAuthService.ensureSignedIn();
       await QuestionStatsFirestore.doc(questionId).set(
         {
           QuestionStatsFirestore.reportCount: FieldValue.increment(1),

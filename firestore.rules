@@ -200,6 +200,93 @@ service cloud.firestore {
       allow write: if false;
     }
 
+    /// Question corrections (`question_corrections/active`) — read-only on clients.
+    match /question_corrections/{docId} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    /// Global per-question analytics (`question_stats/{questionUuid}`).
+    /// Docs are created on first client write — no pre-seeding required.
+    /// Clients use silent anonymous Firebase Auth; rules require [signedIn] + validation.
+    function isUuid(id) {
+      return id.matches(
+        '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+      );
+    }
+
+    function questionStatsKeysOk() {
+      return request.resource.data.keys().hasOnly([
+        'total_attempts',
+        'correct_count',
+        'incorrect_count',
+        'option_a_count',
+        'option_b_count',
+        'option_c_count',
+        'option_d_count',
+        'total_time_seconds',
+        'sure_attempt_count',
+        'sure_wrong_count',
+        'skipped_count',
+        'first_attempt_correct_count',
+        'report_count',
+        'bookmarked_count',
+        'updated_at',
+      ]);
+    }
+
+    function questionStatsIntFieldOk(field, maxOnCreate, maxDelta) {
+      let after = request.resource.data.get(field, 0);
+      let before = resource == null ? 0 : resource.data.get(field, 0);
+      return after is int
+        && after >= 0
+        && (resource == null
+          ? after <= maxOnCreate
+          : after >= before && after - before <= maxDelta);
+    }
+
+    function questionStatsCountersOk() {
+      return questionStatsIntFieldOk('total_attempts', 100, 100)
+        && questionStatsIntFieldOk('correct_count', 100, 100)
+        && questionStatsIntFieldOk('incorrect_count', 100, 100)
+        && questionStatsIntFieldOk('option_a_count', 100, 100)
+        && questionStatsIntFieldOk('option_b_count', 100, 100)
+        && questionStatsIntFieldOk('option_c_count', 100, 100)
+        && questionStatsIntFieldOk('option_d_count', 100, 100)
+        && questionStatsIntFieldOk('total_time_seconds', 72000, 72000)
+        && questionStatsIntFieldOk('sure_attempt_count', 100, 100)
+        && questionStatsIntFieldOk('sure_wrong_count', 100, 100)
+        && questionStatsIntFieldOk('skipped_count', 100, 100)
+        && questionStatsIntFieldOk('first_attempt_correct_count', 100, 100)
+        && questionStatsIntFieldOk('report_count', 5, 5)
+        && questionStatsIntFieldOk('bookmarked_count', 5, 5);
+    }
+
+    function validQuestionStatsWrite() {
+      return questionStatsKeysOk()
+        && questionStatsCountersOk()
+        && request.resource.data.updated_at == request.time;
+    }
+
+    match /question_stats/{questionId} {
+      allow read: if signedIn();
+      allow create, update: if signedIn()
+        && isUuid(questionId)
+        && validQuestionStatsWrite();
+      allow delete: if false;
+    }
+
+    /// Per-session idempotency log (`question_stats_sync_log/{sessionId}`).
+    match /question_stats_sync_log/{sessionId} {
+      allow read: if signedIn();
+      allow create: if signedIn()
+        && isUuid(sessionId)
+        && request.resource.data.keys().hasOnly(['updated_at', 'session_id'])
+        && request.resource.data.session_id == sessionId
+        && request.resource.data.updated_at == request.time;
+      allow update, delete: if false;
+    }
+
     // Authenticated users: all other collections (tighten per collection before prod if needed).
     match /{document=**} {
       allow read, write: if signedIn() && !isUsersRootDoc(database);

@@ -25,6 +25,7 @@ import '../../../shared/extensions/context_extensions.dart';
 import '../../../shared/widgets/question_table_view.dart';
 import '../../../shared/theme/dark_mode_toggle.dart';
 import '../../../shared/widgets/debug_correct_answer_banner.dart';
+import '../../question_editor/widgets/question_editor_access.dart';
 import '../../../shared/widgets/selectable_copy_search_text.dart';
 import '../../../shared/widgets/top_snack_bar.dart';
 import '../../community/widgets/share_qotd_sheet.dart';
@@ -861,13 +862,14 @@ class _TopBar extends HookConsumerWidget {
           v.currentIndex,
           s.questions.length,
           q.flagged,
+          q.uuid,
         );
       }),
     );
 
     if (snap == null) return const SizedBox.shrink();
 
-    final (currentIndex, qLen, flagged) = snap;
+    final (currentIndex, qLen, flagged, questionUuid) = snap;
 
     return Padding(
       padding: const EdgeInsets.fromLTRB(
@@ -894,6 +896,12 @@ class _TopBar extends HookConsumerWidget {
             ),
           ),
           const Spacer(),
+          QuestionEditorIconButton(
+            questionUuid: questionUuid,
+            onReturned: () => ref
+                .read(testSessionProvider(sessionId).notifier)
+                .reload(),
+          ),
           ToggleButtons(
             isSelected: [uiLanguage == 'en', uiLanguage == 'hi'],
             onPressed: (index) =>

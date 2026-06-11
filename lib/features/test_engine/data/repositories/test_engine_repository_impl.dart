@@ -461,9 +461,9 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
       sessionId,
       DateTime.now(),
     );
-    await QuestionStatsSyncService(
-      userDb: _userDb,
-    ).persistAttemptsOnSessionComplete(sessionId);
+    unawaited(
+      QuestionStatsSyncService(userDb: _userDb).persistAndSyncSession(sessionId),
+    );
     final completedSessionCount = await _userDb.sessionsDao
         .countCompletedSessions();
     if (completedSessionCount == 1) {

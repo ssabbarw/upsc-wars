@@ -28,6 +28,26 @@ class QuestionBankUpsert {
 
   final UserDatabase _db;
 
+  /// Applies remote correction maps (canonical `{ uuid, meta, shared, en, hi }`).
+  Future<void> applyCorrections(Iterable<Map<String, dynamic>> maps) async {
+    final list = maps.toList();
+    if (list.isEmpty) return;
+    await _db.transaction(() async {
+      for (final map in list) {
+        final uuid = _str(map['uuid']);
+        if (uuid.isEmpty) continue;
+        final existing = await _db.questionsDao.getByUuid(uuid);
+        await _upsertOne(
+          map,
+          uuid: uuid,
+          sourceDate: existing?.sourceDate ?? '',
+          poolOrder: existing?.paperOrder ?? 1,
+          preserveSourceFrom: existing,
+        );
+      }
+    });
+  }
+
   /// Upserts all questions from a daily CA Firestore document.
   ///
   /// Returns ordered UUIDs (by [meta.pool_order] / list index).
@@ -53,6 +73,7 @@ class QuestionBankUpsert {
     required String uuid,
     required String sourceDate,
     required int poolOrder,
+    Question? preserveSourceFrom,
   }) async {
     final meta = _asMap(map['meta']);
     final shared = _asMap(map['shared']);
@@ -64,7 +85,7 @@ class QuestionBankUpsert {
     );
     final topic = _str(meta['topic']).isEmpty ? gsSubject : _str(meta['topic']);
     final subTopic = _str(meta['sub_topic'] ?? meta['subtopic']).isEmpty
-        ? 'Current Affairs'
+        ? (preserveSourceFrom?.subTopic ?? 'Current Affairs')
         : _str(meta['sub_topic'] ?? meta['subtopic']);
     final conceptsUsed = meta['concepts_used'];
     final conceptsJson = jsonEncode(
@@ -77,11 +98,21 @@ class QuestionBankUpsert {
     final correctOption = _str(shared['correct_option']).toLowerCase();
     final conceptAnchor = _str(shared['concept_anchor']);
     final hasTable = shared['has_table'] == true;
+    final preserved = preserveSourceFrom;
+    final subjectLabel = preserved != null && preserved.subject.isNotEmpty
+        ? preserved.subject
+        : gsSubject;
+    final sourceKind = preserved?.sourceKind ??
+        QuestionSourceConstants.kindCurrentAffairs;
+    final sourceYear = preserved?.sourceYear;
+    final resolvedSourceDate = preserved?.sourceDate ?? sourceDate;
+    final resolvedPaperOrder = preserved?.paperOrder ?? poolOrder;
+    final negativeFraming = preserved?.negativeFraming ?? false;
 
     await _db.into(_db.questions).insertOnConflictUpdate(
       QuestionsCompanion.insert(
         uuid: uuid,
-        subject: gsSubject,
+        subject: subjectLabel,
         topic: topic,
         subTopic: subTopic,
         questionType: qType,
@@ -91,13 +122,17 @@ class QuestionBankUpsert {
         conceptsUsed: conceptsJson,
         enDisplayText: Value(_nullableStr(en['display_text'])),
         hiDisplayText: Value(_nullableStr(hi['display_text'])),
-        hasTable: Value(hasTable),
-        negativeFraming: const Value(false),
-        paperOrder: Value(poolOrder),
-        gsSubject: Value(gsSubject),
-        sourceKind: Value(QuestionSourceConstants.kindCurrentAffairs),
-        sourceYear: const Value.absent(),
-        sourceDate: Value(sourceDate),
+        hasTable: Value(preserved?.hasTable ?? hasTable),
+        negativeFraming: Value(negativeFraming),
+        paperOrder: Value(resolvedPaperOrder),
+        gsSubject: Value(gsSubject.isEmpty ? subjectLabel : gsSubject),
+        sourceKind: Value(sourceKind),
+        sourceYear: sourceYear == null
+            ? const Value.absent()
+            : Value(sourceYear),
+        sourceDate: resolvedSourceDate.isEmpty
+            ? const Value.absent()
+            : Value(resolvedSourceDate),
       ),
     );
 

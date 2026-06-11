@@ -5,4 +5,10 @@ abstract final class FeatureFlags {
     'ENABLE_COMMUNITY_TAB',
     defaultValue: true,
   );
+
+  /// Internal question editor (search, edit, publish corrections).
+  static const questionEditor = bool.fromEnvironment(
+    'ENABLE_QUESTION_EDITOR',
+    defaultValue: false,
+  );
 }

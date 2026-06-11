@@ -8,6 +8,18 @@ HTTPS callable used by Flutter (`BattleInviteCloudService`). It verifies the cal
 
 HTTPS callable used by Flutter (`BattleSelfTestPushCloudService`) from **Profile → Push test**. Sends one FCM to **`users/{yourEmail}.fcm_token`** with title **Upsc Wars** and body **Success — push notifications are working.** so you can verify FCM on a **single device** without a second player.
 
+## `publishQuestionCorrection`
+
+HTTPS callable used by Flutter (`QuestionCorrectionPublishService`) from **Settings → Internal → Question editor**.
+
+Merges one canonical correction map (`{ uuid, meta, shared, en, hi }`) into Firestore **`question_corrections/active`**, keyed by `uuid`. Clients sync at most once per 24h and upsert locally.
+
+Caller email must be in env **`QUESTION_EDITOR_EMAILS`** (comma-separated, lowercase).
+
+`QUESTION_EDITOR_EMAILS=you@example.com`
+
+Optional Remote Config **`question_corrections_revision`** (int) mirrors `active.revision` for a zero-read fast path; clients still poll Firestore daily if RC is not bumped.
+
 ## `sendSpotTestNotification`
 
 HTTPS callable used by Flutter (`SpotTestPushCloudService`) from **Settings → Internal → Spot test composer**.

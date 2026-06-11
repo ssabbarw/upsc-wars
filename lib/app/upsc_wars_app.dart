@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../core/auth/auth_session.dart';
 import '../core/debug/upsc_wars_trace.dart';
 import '../core/analytics/analytics_app_lifecycle_observer.dart';
 import '../core/analytics/activation_milestones.dart';
@@ -17,11 +18,13 @@ import '../core/constants/app_constants.dart';
 import '../core/constants/prelims_debug_flags.dart';
 import '../core/crashlytics/firebase_crashlytics_bootstrap.dart';
 import '../core/providers/app_bootstrap.dart';
+import '../core/providers/kill_switch_provider.dart';
 import '../core/services/battle_messaging_service.dart';
 import '../core/services/no_test_reminder_service.dart';
 import '../core/services/share_deep_link_service.dart';
 import '../core/services/fcm_token_sync_service.dart';
 import '../core/services/question_stats_sync_service.dart';
+import '../features/question_editor/providers/question_editor_providers.dart';
 import '../features/community/services/community_bucket_presence_service.dart';
 import '../features/home/providers/auth_providers.dart';
 import '../core/providers/prefs_provider.dart';
@@ -150,9 +153,25 @@ class _RootMaterialApp extends HookConsumerWidget {
       unawaited(() async {
         try {
           final db = ref.read(userDatabaseProvider);
-          await QuestionStatsSyncService(userDb: db).flushStaleSessions();
+          await QuestionStatsSyncService(userDb: db).syncAllPending();
         } catch (e, st) {
           upscWarsTrace('question_stats_flush error', error: e, stackTrace: st);
+        }
+      }());
+      unawaited(() async {
+        try {
+          await ref.read(killSwitchProvider.future);
+          final sync = await ref.read(questionCorrectionsSyncServiceProvider.future);
+          final applied = await sync.syncIfNeeded();
+          if (applied > 0) {
+            upscWarsTrace('question_corrections_sync applied=$applied');
+          }
+        } catch (e, st) {
+          upscWarsTrace(
+            'question_corrections_sync error',
+            error: e,
+            stackTrace: st,
+          );
         }
       }());
       final analyticsLifecycle = AnalyticsAppLifecycleObserver(ref);
@@ -188,7 +207,7 @@ class _RootMaterialApp extends HookConsumerWidget {
           unawaited(() async {
             try {
               final db = ref.read(userDatabaseProvider);
-              await QuestionStatsSyncService(userDb: db).flushStaleSessions();
+              await QuestionStatsSyncService(userDb: db).syncAllPending();
             } catch (e, st) {
               upscWarsTrace(
                 'question_stats_periodic_flush error',
@@ -207,12 +226,12 @@ class _RootMaterialApp extends HookConsumerWidget {
       (prev, next) {
         if (!next.hasValue) return;
         final u = next.requireValue;
-        if (u == null) return;
+        if (!AuthSession.isAccountSignedIn(u)) return;
         unawaited(FcmTokenSyncService.syncForCurrentUser());
         unawaited(CommunityBucketPresenceService.syncForCurrentUser(ref));
         User? prevUser;
         if (prev is AsyncData<User?>) prevUser = prev.value;
-        if (prevUser == null) {
+        if (!AuthSession.isAccountSignedIn(prevUser)) {
           unawaited(
             logActivationMilestoneOnce(
               ref,

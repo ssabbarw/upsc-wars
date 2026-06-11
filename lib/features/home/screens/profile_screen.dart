@@ -8,6 +8,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../core/auth/auth_session.dart';
 import '../../../core/constants/app_constants.dart';
 import '../../../core/presentation/user_display_name.dart';
 import '../../community/services/community_bucket_presence_service.dart';
@@ -99,7 +100,7 @@ class ProfileScreen extends HookConsumerWidget {
       body: SafeArea(
         child: authState.when(
           data: (user) {
-            if (user == null) {
+            if (!AuthSession.isAccountSignedIn(user)) {
               return Padding(
                 padding: const EdgeInsets.all(20),
                 child: Center(
@@ -184,7 +185,7 @@ class ProfileScreen extends HookConsumerWidget {
               );
             }
 
-            return _SignedInProfileBody(user: user, isBusy: isBusy);
+            return _SignedInProfileBody(user: user!, isBusy: isBusy);
           },
           loading: () => const Center(child: CircularProgressIndicator()),
           error: (error, _) => Center(child: Text(error.toString())),

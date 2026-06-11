@@ -85,6 +85,13 @@ abstract final class PrefKeys {
   /// One-time in-app rating/review prompt was already shown (never ask again).
   static const appReviewPromptShownV1 = 'app_review_prompt_shown_v1';
 
+  /// Last applied `question_corrections/active.revision` from Firestore.
+  static const questionCorrectionsRevision = 'question_corrections_revision_v1';
+
+  /// Epoch ms of last successful question-corrections sync.
+  static const questionCorrectionsSyncedAtMs =
+      'question_corrections_synced_at_ms_v1';
+
   /// User completed activation (any session with Sure/Edu confidence logged).
   static const homeActivationCompleteV1 = 'home_activation_complete_v1';
 

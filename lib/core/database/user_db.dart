@@ -254,6 +254,61 @@ class QuestionsDao extends DatabaseAccessor<UserDatabase>
   Future<Question?> getByUuid(String uuid) =>
       (select(questions)..where((t) => t.uuid.equals(uuid))).getSingleOrNull();
 
+  /// Prefix search for the internal question editor (`uuid` LIKE `prefix%`).
+  Future<List<Question>> searchUuidsByPrefix(String prefix, {int limit = 20}) async {
+    final p = prefix.trim();
+    if (p.isEmpty) return const [];
+    final cap = limit.clamp(1, 50);
+    final rows = await customSelect(
+      'SELECT * FROM questions WHERE uuid LIKE ? '
+      'ORDER BY uuid ASC LIMIT ?',
+      variables: [
+        Variable.withString('$p%'),
+        Variable.withInt(cap),
+      ],
+      readsFrom: {questions},
+    ).get();
+    return rows.map((r) => questions.map(r.data)).toList();
+  }
+
+  /// First question whose EN/HI display text contains [snippet] (case-insensitive).
+  Future<Question?> findFirstByDisplayTextSnippet(String snippet) async {
+    final s = snippet.trim();
+    if (s.length < 8) return null;
+    final pattern = '%$s%';
+    final rows = await customSelect(
+      'SELECT * FROM questions '
+      'WHERE en_display_text LIKE ? COLLATE NOCASE '
+      '   OR hi_display_text LIKE ? COLLATE NOCASE '
+      'ORDER BY uuid ASC LIMIT 1',
+      variables: [
+        Variable.withString(pattern),
+        Variable.withString(pattern),
+      ],
+      readsFrom: {questions},
+    ).get();
+    if (rows.isEmpty) return null;
+    return questions.map(rows.first.data);
+  }
+
+  /// How many questions match a display-text snippet (for editor search UX).
+  Future<int> countByDisplayTextSnippet(String snippet) async {
+    final s = snippet.trim();
+    if (s.length < 8) return 0;
+    final pattern = '%$s%';
+    final row = await customSelect(
+      'SELECT COUNT(*) AS c FROM questions '
+      'WHERE en_display_text LIKE ? COLLATE NOCASE '
+      '   OR hi_display_text LIKE ? COLLATE NOCASE',
+      variables: [
+        Variable.withString(pattern),
+        Variable.withString(pattern),
+      ],
+      readsFrom: {questions},
+    ).getSingle();
+    return row.read<int?>('c') ?? 0;
+  }
+
   Future<List<Question>> getBySubject(String subject) =>
       (select(questions)
             ..where((t) => t.subject.equals(subject))
@@ -797,28 +852,12 @@ class SessionsDao extends DatabaseAccessor<UserDatabase>
       );
 
   /// Completed sessions pending Firestore aggregation, oldest first.
-  Future<List<Session>> getUnsyncedCompletedSessions({
-    Duration? minAge,
-  }) async {
-    if (minAge == null) {
-      return (select(sessions)
-            ..where(
-              (t) => t.status.equals('completed') & t.synced.equals(false),
-            )
-            ..orderBy([(t) => OrderingTerm.asc(t.completedAt)]))
-          .get();
-    }
-    final cutoff = DateTime.now().subtract(minAge);
-    return (select(sessions)
-          ..where(
-            (t) =>
-                t.status.equals('completed') &
-                t.synced.equals(false) &
-                t.completedAt.isSmallerOrEqualValue(cutoff),
-          )
-          ..orderBy([(t) => OrderingTerm.asc(t.completedAt)]))
-        .get();
-  }
+  Future<List<Session>> getUnsyncedCompletedSessions() => (select(sessions)
+        ..where(
+          (t) => t.status.equals('completed') & t.synced.equals(false),
+        )
+        ..orderBy([(t) => OrderingTerm.asc(t.completedAt)]))
+      .get();
 
   Future<List<Session>> getAllSessionsOrderedByCreatedAtDesc() => (select(
     sessions,

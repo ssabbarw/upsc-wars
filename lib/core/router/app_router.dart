@@ -7,6 +7,7 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
+import '../auth/auth_session.dart';
 import '../analytics/analytics_route_observer.dart';
 import '../analytics/screen_dwell_route_observer.dart';
 import '../analytics/screen_flow_analytics.dart';
@@ -48,6 +49,10 @@ import '../../features/home/screens/settings_screen.dart';
 import '../../features/home/screens/about_us_screen.dart';
 import '../../features/home/screens/progress_screen.dart';
 import '../../features/internal/screens/feature_health_screen.dart';
+import '../../features/question_editor/screens/question_editor_form_screen.dart';
+import '../../features/question_editor/screens/question_editor_preview_screen.dart';
+import '../../features/question_editor/screens/question_editor_search_screen.dart';
+import '../../features/question_editor/widgets/question_editor_access.dart';
 import '../../features/push_spot_test/screens/spot_test_composer_screen.dart';
 import '../../features/home/providers/auth_providers.dart';
 import '../../features/results/screens/confidence_tier_review_screen.dart';
@@ -79,6 +84,8 @@ import '../providers/kill_switch_provider.dart';
 import '../responsive/app_breakpoints.dart';
 
 part 'app_router.g.dart';
+
+bool get _questionEditorEnabled => isQuestionEditorEnabled;
 
 final GlobalKey<NavigatorState> rootNavigatorKey = GlobalKey<NavigatorState>(
   debugLabel: 'root',
@@ -345,6 +352,54 @@ GoRouter appRouter(Ref ref) {
           }
           return const SpotTestComposerScreen();
         },
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/internal/question-editor',
+        name: 'question_editor',
+        builder: (context, state) {
+          if (!_questionEditorEnabled) {
+            return const Scaffold(
+              body: Center(child: Text('Not available')),
+            );
+          }
+          return const QuestionEditorSearchScreen();
+        },
+        routes: [
+          GoRoute(
+            parentNavigatorKey: rootNavigatorKey,
+            path: 'edit',
+            name: 'question_editor_edit',
+            builder: (context, state) {
+              if (!_questionEditorEnabled) {
+                return const Scaffold(
+                  body: Center(child: Text('Not available')),
+                );
+              }
+              final uuid = state.extra as String? ?? '';
+              return QuestionEditorFormScreen(uuid: uuid);
+            },
+          ),
+          GoRoute(
+            parentNavigatorKey: rootNavigatorKey,
+            path: 'preview',
+            name: 'question_editor_preview',
+            builder: (context, state) {
+              if (!_questionEditorEnabled) {
+                return const Scaffold(
+                  body: Center(child: Text('Not available')),
+                );
+              }
+              final args = state.extra as QuestionEditorPreviewArgs?;
+              if (args == null) {
+                return const Scaffold(
+                  body: Center(child: Text('Missing preview data')),
+                );
+              }
+              return QuestionEditorPreviewScreen(args: args);
+            },
+          ),
+        ],
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
@@ -732,15 +787,16 @@ class _AppShell extends HookConsumerWidget {
 
     ref.listen(authStateChangesProvider, (previous, next) {
       final user = next.asData?.value;
-      if (user == null) {
+      if (!AuthSession.isAccountSignedIn(user)) {
         didPromptCompleteProfile.value = false;
         return;
       }
+      final signedInUser = user!;
 
-      final isAppleUser = user.providerData.any(
+      final isAppleUser = signedInUser.providerData.any(
         (p) => p.providerId == 'apple.com',
       );
-      final missingName = (user.displayName ?? '').trim().isEmpty;
+      final missingName = (signedInUser.displayName ?? '').trim().isEmpty;
       // Apple users can opt out of sharing name. In that case we must ask for it.
       // Profile photo is always optional, so we should not gate on it.
       // This flow must not appear for Google sign-in.
@@ -766,8 +822,9 @@ class _AppShell extends HookConsumerWidget {
       }
 
       if (previous == null) return;
-      final wasSignedOut = previous.asData?.value == null;
-      final nowSignedIn = next.asData?.value != null;
+      final wasSignedOut =
+          !AuthSession.isAccountSignedIn(previous.asData?.value);
+      final nowSignedIn = AuthSession.isAccountSignedIn(next.asData?.value);
       if (!wasSignedOut || !nowSignedIn) return;
       WidgetsBinding.instance.addPostFrameCallback((_) {
         if (!context.mounted) return;
@@ -871,7 +928,7 @@ class _AppShell extends HookConsumerWidget {
       if (showCommunityTab) {
         final communityTabIndex = navItems.length - 1;
         if (index == communityTabIndex) {
-          if (authState.asData?.value == null) {
+          if (!AuthSession.isAccountSignedIn(authState.asData?.value)) {
             await showGoogleLoginBottomSheet(
               context: context,
               isLoading: isAuthBusy,

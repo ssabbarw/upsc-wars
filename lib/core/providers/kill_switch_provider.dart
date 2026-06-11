@@ -23,6 +23,10 @@ const dailyCaCalendarMinDateRemoteConfigKey = 'daily_ca_calendar_min_date';
 /// Remote Config: max QOTD posts per device in a rolling 24h window (int, default 3; enforced locally).
 const qotdMaxPostsPerDayRemoteConfigKey = 'qotd_max_posts_per_day';
 
+/// Remote Config: mirrors Firestore `question_corrections/active.revision` (int).
+const questionCorrectionsRevisionRemoteConfigKey =
+    'question_corrections_revision';
+
 /// Result of comparing this build to Remote Config.
 class KillSwitchSnapshot {
   const KillSwitchSnapshot({
@@ -68,6 +72,7 @@ Future<KillSwitchSnapshot> killSwitch(Ref ref) async {
       dailyCaEnabledRemoteConfigKey: false,
       dailyCaCalendarMinDateRemoteConfigKey: '2026-06-05',
       qotdMaxPostsPerDayRemoteConfigKey: 3,
+      questionCorrectionsRevisionRemoteConfigKey: 0,
       // YYYY-MM-DD (time defaults to 09:30 local)
       'prelims_date': '2027-05-23',
       // JSON: { "video_link": "https://...", "message": "...", "version": 1 }
