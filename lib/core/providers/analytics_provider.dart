@@ -3,6 +3,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 import '../analytics/analytics_service.dart';
 import '../analytics/firebase_analytics_sink.dart';
 import '../analytics/local_analytics_sink.dart';
+import '../admin_dashboard/admin_dashboard_analytics_sink.dart';
 import 'user_database_provider.dart';
 
 part 'analytics_provider.g.dart';
@@ -15,5 +16,6 @@ AnalyticsService analyticsService(Ref ref) {
   return AnalyticsService([
     FirebaseAnalyticsSink(),
     LocalAnalyticsSink(db),
+    AdminDashboardAnalyticsSink(),
   ]);
 }

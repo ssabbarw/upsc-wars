@@ -27,6 +27,8 @@ import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../core/analytics/analytics.dart';
 import '../../../core/analytics/analytics_events.dart';
+import '../../../core/providers/super_user_provider.dart';
+import '../../admin_dashboard/admin_dashboard_access.dart';
 import '../providers/auth_providers.dart';
 import '../providers/home_activation_provider.dart';
 import '../widgets/daily_drill_card.dart';
@@ -69,6 +71,9 @@ class HomeScreen extends HookConsumerWidget {
       orElse: () => false,
     );
     final pushPromptInFlight = useRef(false);
+    final isSuperUser = ref.watch(isSuperUserProvider);
+    final showAdminDashboard =
+        canAccessAdminDashboard(isSuperUser: isSuperUser);
 
     final past200ms = useState(false);
     useEffect(() {
@@ -615,6 +620,10 @@ class HomeScreen extends HookConsumerWidget {
                     const SizedBox(height: AppSpacing.sm),
                     const PushSpotTestDebugCard(),
                   ],
+                  if (showAdminDashboard) ...[
+                    const SizedBox(height: AppSpacing.lg),
+                    _AdminDashboardHomeEntry(borderColor: borderColor),
+                  ],
                   const SizedBox(height: AppSpacing.sm),
                 ],
               ),
@@ -666,6 +675,75 @@ class HomeScreen extends HookConsumerWidget {
         ? defaultIndex
         : seed.hashCode.abs() % palette.length;
     return palette[index].bg.withValues(alpha: 0.9);
+  }
+}
+
+class _AdminDashboardHomeEntry extends StatelessWidget {
+  const _AdminDashboardHomeEntry({required this.borderColor});
+
+  final Color borderColor;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+
+    return Material(
+      color: AppColors.transparent,
+      child: InkWell(
+        onTap: () => context.push('/internal/admin-dashboard'),
+        borderRadius: BorderRadius.circular(AppRadius.lg),
+        child: Ink(
+          padding: const EdgeInsets.all(AppSpacing.md),
+          decoration: BoxDecoration(
+            color: scheme.surfaceContainerLow,
+            borderRadius: BorderRadius.circular(AppRadius.lg),
+            border: Border.all(color: borderColor, width: 0.5),
+          ),
+          child: Row(
+            children: [
+              Container(
+                width: 44,
+                height: 44,
+                decoration: BoxDecoration(
+                  color: const Color(0xFFE8F0FF),
+                  borderRadius: BorderRadius.circular(AppRadius.sm),
+                ),
+                child: const Icon(
+                  Icons.dashboard_outlined,
+                  color: Color(0xFF1D4ED8),
+                  size: 22,
+                ),
+              ),
+              const SizedBox(width: AppSpacing.md),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Admin dashboard',
+                      style: AppTextStyles.label().copyWith(
+                        color: scheme.onSurface,
+                      ),
+                    ),
+                    const SizedBox(height: AppSpacing.xs),
+                    Text(
+                      'Downloads, funnel, battles, push stats',
+                      style: AppTextStyles.caption().copyWith(
+                        color: scheme.onSurfaceVariant,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Icon(
+                Icons.chevron_right_rounded,
+                color: scheme.onSurfaceVariant,
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
 

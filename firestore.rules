@@ -287,9 +287,34 @@ service cloud.firestore {
       allow update, delete: if false;
     }
 
+    function isSuperUserEmail() {
+      return signedIn()
+        && request.auth.token.email != null
+        && request.auth.token.email.lower() in [
+          'sachinsabbarwal@gmail.com',
+          'upscwars@gmail.com',
+          'tinyminyapps@gmail.com',
+          'upscmcqpractice@gmail.com',
+        ];
+    }
+
+    function isAdminDashboardPath() {
+      return request.path.matches(
+        '/databases/' + database + '/documents/admin_dashboard(/.*)?'
+      );
+    }
+
+    /// In-app admin dashboard metrics — super users read; clients write aggregates.
+    match /admin_dashboard/{path=**} {
+      allow read: if isSuperUserEmail();
+      allow write: if signedIn();
+    }
+
     // Authenticated users: all other collections (tighten per collection before prod if needed).
     match /{document=**} {
-      allow read, write: if signedIn() && !isUsersRootDoc(database);
+      allow read, write: if signedIn()
+        && !isUsersRootDoc(database)
+        && !isAdminDashboardPath();
     }
 
     function isUsersRootDoc(database) {

@@ -2,6 +2,8 @@ import 'dart:async';
 
 import 'package:firebase_database/firebase_database.dart';
 
+import '../../../core/admin_dashboard/admin_dashboard_service.dart';
+
 import '../domain/chat_ids.dart';
 import '../domain/chat_service.dart';
 import '../domain/entities/chat_message.dart';
@@ -158,6 +160,7 @@ class RealtimeChatService implements ChatService {
       updates['chatThreads/$chatId/unread/$currentKey'] = 0;
     }
     await _db.ref().update(updates);
+    unawaited(AdminDashboardWriterService().recordChatEngagement());
   }
 
   @override

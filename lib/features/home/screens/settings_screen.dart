@@ -15,6 +15,7 @@ import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../core/constants/creator_contact.dart';
 import '../../../core/providers/super_user_provider.dart';
+import '../../admin_dashboard/admin_dashboard_access.dart';
 import '../../question_editor/widgets/question_editor_access.dart';
 import '../../../shared/theme/dark_mode_toggle.dart';
 import '../../../shared/widgets/app_toast.dart';
@@ -30,6 +31,8 @@ class SettingsScreen extends ConsumerWidget {
     final isSuperUser = ref.watch(isSuperUserProvider);
     final showQuestionEditor =
         canAccessQuestionEditor(isSuperUser: isSuperUser);
+    final showAdminDashboard =
+        canAccessAdminDashboard(isSuperUser: isSuperUser);
 
     return Scaffold(
       appBar: AppBar(
@@ -121,11 +124,20 @@ class SettingsScreen extends ConsumerWidget {
               ],
             ),
 
-            if (kDebugMode || showQuestionEditor) ...[
+            if (kDebugMode || showQuestionEditor || showAdminDashboard) ...[
               const SizedBox(height: AppSpacing.lg),
               _Section(
-                title: isSuperUser && !kDebugMode ? 'Editor' : 'Internal',
+                title: isSuperUser && !kDebugMode ? 'Admin tools' : 'Internal',
                 children: [
+                  if (showAdminDashboard)
+                    _NavTile(
+                      icon: Icons.dashboard_outlined,
+                      iconBg: Color(0xFFE8F0FF),
+                      iconColor: Color(0xFF1D4ED8),
+                      title: 'Admin dashboard',
+                      subtitle: 'Downloads, tests, battles, push stats',
+                      onTap: () => context.push('/internal/admin-dashboard'),
+                    ),
                   if (kDebugMode)
                     _NavTile(
                       icon: Icons.analytics_outlined,

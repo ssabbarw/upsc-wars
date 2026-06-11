@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../core/constants/subject_constants.dart';
+import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
@@ -36,25 +38,12 @@ class MemoryPairsSubjectView extends StatelessWidget {
         AppSpacing.xxxl,
       ),
       children: [
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Expanded(
-              child: Text(
-                visual.subtitleForLang(lang),
-                style: AppTextStyles.bodySm().copyWith(
-                  color: scheme.onSurfaceVariant,
-                  height: 1.45,
-                ),
-              ),
-            ),
-            const SizedBox(width: AppSpacing.sm),
-            MemoryPairSubjectIcon(
-              icon: visual.icon,
-              color: visual.accent,
-              size: 44,
-            ),
-          ],
+        Text(
+          visual.subtitleForLang(lang),
+          style: AppTextStyles.bodySm().copyWith(
+            color: scheme.onSurfaceVariant,
+            height: 1.45,
+          ),
         ),
         const SizedBox(height: AppSpacing.lg),
         for (var i = 0; i < items.length; i++)
@@ -109,6 +98,12 @@ class _TopicCard extends StatelessWidget {
         : ((item.unlockProgress / item.unlockRequired) * 100)
             .round()
             .clamp(0, 100);
+    final progress = item.unlockRequired == 0
+        ? 1.0
+        : (item.unlockProgress / item.unlockRequired).clamp(0.0, 1.0);
+    final unlockSubjectLabel =
+        SubjectConstants.bySlug(def.unlockSubjectSlug)?.displayName ??
+            def.unlockSubjectSlug;
 
     return Opacity(
       opacity: unlocked ? 1 : 0.7,
@@ -143,14 +138,16 @@ class _TopicCard extends StatelessWidget {
                               fontWeight: FontWeight.w700,
                             ),
                           ),
-                          const SizedBox(height: 4),
-                          Text(
-                            memoryPairSetBlurb(def, lang),
-                            style: AppTextStyles.caption().copyWith(
-                              color: scheme.onSurfaceVariant,
-                              height: 1.35,
+                          if (unlocked) ...[
+                            const SizedBox(height: 4),
+                            Text(
+                              memoryPairSetBlurb(def, lang),
+                              style: AppTextStyles.caption().copyWith(
+                                color: scheme.onSurfaceVariant,
+                                height: 1.35,
+                              ),
                             ),
-                          ),
+                          ],
                           const SizedBox(height: AppSpacing.sm),
                           MemoryPairDifficultyChip(difficulty: def.difficulty),
                         ],
@@ -163,45 +160,70 @@ class _TopicCard extends StatelessWidget {
                   ],
                 ),
                 if (!unlocked) ...[
-                  const SizedBox(height: AppSpacing.sm),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(2),
-                    child: LinearProgressIndicator(
-                      value: item.unlockRequired == 0
-                          ? 1
-                          : item.unlockProgress / item.unlockRequired,
-                      minHeight: 3,
-                      backgroundColor: scheme.surfaceContainerHighest,
-                      color: scheme.onSurfaceVariant.withValues(alpha: 0.5),
+                  const SizedBox(height: AppSpacing.md),
+                  Text(
+                    'To unlock, attempt ${item.unlockRequired} '
+                    '$unlockSubjectLabel questions',
+                    style: AppTextStyles.bodySm().copyWith(
+                      color: scheme.onSurfaceVariant,
+                      height: 1.35,
+                      fontWeight: FontWeight.w500,
                     ),
+                  ),
+                  const SizedBox(height: AppSpacing.sm),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(4),
+                          child: LinearProgressIndicator(
+                            value: progress,
+                            minHeight: 6,
+                            backgroundColor: scheme.surfaceContainerHighest,
+                            color: AppColors.primary.withValues(alpha: 0.85),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: AppSpacing.sm),
+                      Text(
+                        '$pct%',
+                        style: AppTextStyles.labelSm().copyWith(
+                          color: scheme.onSurface,
+                          fontWeight: FontWeight.w700,
+                          fontFeatures: const [FontFeature.tabularFigures()],
+                        ),
+                      ),
+                    ],
                   ),
                   const SizedBox(height: 4),
                   Text(
-                    '${item.unlockProgress}/${item.unlockRequired} questions · $pct%',
+                    '${item.unlockProgress} of ${item.unlockRequired} done',
                     style: AppTextStyles.caption().copyWith(
                       color: scheme.onSurfaceVariant,
                       fontSize: 11,
                     ),
                   ),
                 ],
-                const SizedBox(height: AppSpacing.sm),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    if (unlocked && item.bestSeconds != null) ...[
-                      Text(
-                        formatMemoryPairTime(item.bestSeconds!),
-                        style: AppTextStyles.caption().copyWith(
-                          color: scheme.onSurfaceVariant,
-                          fontWeight: FontWeight.w600,
-                          fontFeatures: const [FontFeature.tabularFigures()],
+                if (unlocked) ...[
+                  const SizedBox(height: AppSpacing.sm),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      if (item.bestSeconds != null) ...[
+                        Text(
+                          formatMemoryPairTime(item.bestSeconds!),
+                          style: AppTextStyles.caption().copyWith(
+                            color: scheme.onSurfaceVariant,
+                            fontWeight: FontWeight.w600,
+                            fontFeatures: const [FontFeature.tabularFigures()],
+                          ),
                         ),
-                      ),
-                      const SizedBox(width: AppSpacing.sm),
+                        const SizedBox(width: AppSpacing.sm),
+                      ],
+                      MemoryPairTierStars(filled: tierStars),
                     ],
-                    MemoryPairTierStars(filled: tierStars),
-                  ],
-                ),
+                  ),
+                ],
               ],
             ),
           ),

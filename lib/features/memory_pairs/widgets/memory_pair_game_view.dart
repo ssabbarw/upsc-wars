@@ -41,7 +41,7 @@ class MemoryPairGameView extends HookWidget {
     final weak = useState(<int>{});
     final paused = useState(false);
     final elapsed = useState(0);
-    final started = useState(false);
+    final started = useState(true);
     final celebrate = useState(false);
     final reported = useRef(false);
 
@@ -110,19 +110,13 @@ class MemoryPairGameView extends HookWidget {
       return t.cancel;
     }, [matched.value.length, pairs.length]);
 
-    void begin() {
-      if (!started.value) started.value = true;
-    }
-
     void tapKey(int pid) {
       if (lock.value || paused.value || matched.value.contains(pid)) return;
-      begin();
       selKey.value = selKey.value == pid ? null : pid;
     }
 
     void tapVal(int pid) {
       if (lock.value || paused.value || matched.value.contains(pid)) return;
-      begin();
       selVal.value = selVal.value == pid ? null : pid;
     }
 

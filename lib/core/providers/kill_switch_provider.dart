@@ -2,6 +2,7 @@ import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/foundation.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
+import '../admin_dashboard/admin_dashboard_collection_config.dart';
 import '../config/feature_flags.dart';
 import '../constants/app_constants.dart';
 
@@ -73,6 +74,7 @@ Future<KillSwitchSnapshot> killSwitch(Ref ref) async {
       dailyCaCalendarMinDateRemoteConfigKey: '2026-06-05',
       qotdMaxPostsPerDayRemoteConfigKey: 3,
       questionCorrectionsRevisionRemoteConfigKey: 0,
+      adminDashboardCollectionEnabledRemoteConfigKey: true,
       // YYYY-MM-DD (time defaults to 09:30 local)
       'prelims_date': '2027-05-23',
       // JSON: { "video_link": "https://...", "message": "...", "version": 1 }

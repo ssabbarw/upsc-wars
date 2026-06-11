@@ -8,6 +8,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../../core/analytics/analytics.dart';
 import '../../../core/analytics/analytics_events.dart';
 import '../../../core/providers/app_language_helpers.dart';
+import '../../../core/admin_dashboard/admin_dashboard_service.dart';
 import '../../../core/providers/prefs_provider.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
@@ -73,6 +74,12 @@ class MemoryPairsScreen extends HookConsumerWidget {
         if (autoplay) {
           unawaited(() async {
             final prefs = await ref.read(prefsServiceProvider.future);
+            final isFirstEver = !prefs.memoryPairsGamePlayed;
+            unawaited(
+              AdminDashboardWriterService().recordMemoryGamePlay(
+                isFirstEverOnDevice: isFirstEver,
+              ),
+            );
             if (prefs.memoryPairsGamePlayed) return;
             prefs.memoryPairsGamePlayed = true;
             ref.invalidate(prefsServiceProvider);
@@ -131,6 +138,12 @@ class MemoryPairsScreen extends HookConsumerWidget {
       if (set != null) {
         unawaited(() async {
           final prefs = await ref.read(prefsServiceProvider.future);
+          final isFirstEver = !prefs.memoryPairsGamePlayed;
+          unawaited(
+            AdminDashboardWriterService().recordMemoryGamePlay(
+              isFirstEverOnDevice: isFirstEver,
+            ),
+          );
           if (prefs.memoryPairsGamePlayed) return;
           prefs.memoryPairsGamePlayed = true;
           ref.invalidate(prefsServiceProvider);
@@ -167,26 +180,40 @@ class MemoryPairsScreen extends HookConsumerWidget {
           _MemoryPairsStep.result => 'Summary',
         };
 
+    void exitToHomeOrPop() {
+      if (context.canPop()) {
+        context.pop();
+      } else {
+        context.go('/');
+      }
+    }
+
     void onBack() {
       switch (step.value) {
-        case _MemoryPairsStep.subjects:
-          context.pop();
         case _MemoryPairsStep.subject:
           step.value = _MemoryPairsStep.subjects;
           activeSubject.value = null;
+          return;
         case _MemoryPairsStep.setDetail:
           step.value = _MemoryPairsStep.subject;
           activeSet.value = null;
+          return;
         case _MemoryPairsStep.revise:
           step.value = _MemoryPairsStep.setDetail;
+          return;
         case _MemoryPairsStep.game:
           step.value = _MemoryPairsStep.setDetail;
           retryPairs.value = null;
+          return;
         case _MemoryPairsStep.result:
           step.value = _MemoryPairsStep.subjects;
           activeSet.value = null;
           activeSubject.value = null;
           retryPairs.value = null;
+          return;
+        case _MemoryPairsStep.subjects:
+          exitToHomeOrPop();
+          return;
       }
     }
 
@@ -199,10 +226,18 @@ class MemoryPairsScreen extends HookConsumerWidget {
     }();
 
     final showAppBarTitle = step.value != _MemoryPairsStep.subjects;
+    final atCatalog = step.value == _MemoryPairsStep.subjects;
+    final canLeaveRoute = atCatalog && context.canPop();
 
-    return Scaffold(
-      body: SafeArea(
-        child: Column(
+    return PopScope(
+      canPop: canLeaveRoute,
+      onPopInvokedWithResult: (didPop, _) {
+        if (didPop) return;
+        onBack();
+      },
+      child: Scaffold(
+        body: SafeArea(
+          child: Column(
           children: [
             Padding(
               padding: const EdgeInsets.fromLTRB(
@@ -299,6 +334,7 @@ class MemoryPairsScreen extends HookConsumerWidget {
               },
             ),
           ],
+          ),
         ),
       ),
     );

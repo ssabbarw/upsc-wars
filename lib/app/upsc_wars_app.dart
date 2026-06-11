@@ -7,6 +7,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../core/auth/auth_session.dart';
 import '../core/debug/upsc_wars_trace.dart';
+import '../core/admin_dashboard/admin_dashboard_service.dart';
 import '../core/analytics/analytics_app_lifecycle_observer.dart';
 import '../core/analytics/activation_milestones.dart';
 import '../core/analytics/analytics.dart';
@@ -133,12 +134,18 @@ class _RootMaterialApp extends HookConsumerWidget {
       }());
       unawaited(() async {
         final p = await ref.read(prefsServiceProvider.future);
+        final wasFirstInstall =
+            !p.hasActivationMilestone(ActivationMilestones.firstProcessLaunch);
         NoTestReminderService.recordFirstInstallIfNeeded(p);
         await logActivationMilestoneForServices(
           ref.read(analyticsServiceProvider),
           p,
           id: ActivationMilestones.firstProcessLaunch,
         );
+        await ref.read(killSwitchProvider.future);
+        if (wasFirstInstall) {
+          unawaited(AdminDashboardWriterService().recordNewDownload());
+        }
         try {
           final db = ref.read(userDatabaseProvider);
           final completedCount = await db.sessionsDao.countCompletedSessions();

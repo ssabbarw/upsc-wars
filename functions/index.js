@@ -1,6 +1,7 @@
 const functions = require("firebase-functions");
 const { onDocumentWritten } = require("firebase-functions/v2/firestore");
 const admin = require("firebase-admin");
+const crypto = require("crypto");
 
 admin.initializeApp();
 
@@ -33,7 +34,11 @@ const QUESTION_CORRECTIONS_ACTIVE_PATH = "question_corrections/active";
 const MAX_CORRECTIONS_PER_ACTIVE_DOC = 400;
 
 function buildSpotTestFcmData(data) {
-  const fcmData = { kind: "push_spot_test" };
+  const notificationId = crypto.randomUUID();
+  const fcmData = {
+    kind: "push_spot_test",
+    notification_id: notificationId,
+  };
   const subjectRaw = data && data.subject;
   const topicRaw = data && data.topic;
   const subtopicRaw = data && data.subtopic;
@@ -51,7 +56,7 @@ function buildSpotTestFcmData(data) {
   if (typeof questionUuidRaw === "string" && questionUuidRaw.trim()) {
     fcmData.question_uuid = questionUuidRaw.trim();
   }
-  return fcmData;
+  return { fcmData, notificationId };
 }
 
 /**
@@ -302,6 +307,8 @@ exports.sendBattleInvite = functions.https.onCall(async (data, context) => {
       },
       data: {
         sessionId: String(sessionId),
+        notification_id: `battle__${String(sessionId)}`,
+        kind: "battle_join",
       },
     });
   } catch (e) {
@@ -427,11 +434,29 @@ exports.sendSpotTestNotification = functions.https.onCall(async (data, context) 
     typeof targetRaw === "string" && targetRaw.trim() === "broadcast"
       ? "broadcast"
       : "self";
-  const fcmData = buildSpotTestFcmData(data);
+  const { fcmData, notificationId } = buildSpotTestFcmData(data);
   const message = {
     notification: { title, body },
     data: fcmData,
   };
+
+  const notifRef = admin
+    .firestore()
+    .collection("admin_dashboard")
+    .doc("notifications")
+    .collection("items")
+    .doc(notificationId);
+  await notifRef.set(
+    {
+      kind: "push_spot_test",
+      title,
+      sent_at: admin.firestore.FieldValue.serverTimestamp(),
+      opens: 0,
+      conversions: 0,
+      updated_at: admin.firestore.FieldValue.serverTimestamp(),
+    },
+    { merge: true },
+  );
 
   if (target === "broadcast") {
     const allowlist = spotTestBroadcastAllowlist();
@@ -457,7 +482,7 @@ exports.sendSpotTestNotification = functions.https.onCall(async (data, context) 
       email,
       topic: SPOT_TEST_BROADCAST_TOPIC,
     });
-    return { ok: true, target: "broadcast" };
+    return { ok: true, target: "broadcast", notificationId };
   }
 
   const userSnap = await admin.firestore().collection("users").doc(email).get();
@@ -482,7 +507,7 @@ exports.sendSpotTestNotification = functions.https.onCall(async (data, context) 
   }
 
   functions.logger.info("sendSpotTestNotification: delivered", { email });
-  return { ok: true, target: "self" };
+  return { ok: true, target: "self", notificationId };
 });
 
 /**

@@ -23,7 +23,13 @@ class PushMemoryPairsWelcomeScreen extends StatelessWidget {
     final err = params.validationError;
 
     if (err != null) {
-      return Scaffold(
+      return PopScope(
+        canPop: false,
+        onPopInvokedWithResult: (didPop, _) {
+          if (didPop) return;
+          context.go('/');
+        },
+        child: Scaffold(
         body: SafeArea(
           child: Padding(
             padding: const EdgeInsets.all(AppSpacing.lg),
@@ -50,6 +56,7 @@ class PushMemoryPairsWelcomeScreen extends StatelessWidget {
             ),
           ),
         ),
+        ),
       );
     }
 
@@ -62,16 +69,22 @@ class PushMemoryPairsWelcomeScreen extends StatelessWidget {
         ? params.body!.trim()
         : 'Quick $playCount-pair recall drill — tap Start when you are ready.';
 
-    return Scaffold(
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(
-            AppSpacing.lg,
-            AppSpacing.md,
-            AppSpacing.lg,
-            AppSpacing.lg,
-          ),
-          child: Column(
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (didPop, _) {
+        if (didPop) return;
+        context.go('/');
+      },
+      child: Scaffold(
+        body: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(
+              AppSpacing.lg,
+              AppSpacing.md,
+              AppSpacing.lg,
+              AppSpacing.lg,
+            ),
+            child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Align(
@@ -199,6 +212,7 @@ class PushMemoryPairsWelcomeScreen extends StatelessWidget {
                 child: const Text('Browse all sets'),
               ),
             ],
+            ),
           ),
         ),
       ),

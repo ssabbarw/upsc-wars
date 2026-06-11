@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'package:upsc_wars/core/admin_dashboard/admin_dashboard_service.dart';
+import 'package:upsc_wars/core/admin_dashboard/pending_notification_conversion.dart';
 import 'package:upsc_wars/core/analytics/analytics_events.dart';
 import 'package:upsc_wars/core/analytics/analytics_global_dispatch.dart';
 import 'package:upsc_wars/core/debug/cursor_debug_log.dart';
@@ -80,6 +82,11 @@ class BattleMessagingService {
 
     if (!kIsWeb) {
       AppLocalNotificationsService.onBattleInviteLocalTap = (sessionId) {
+        PendingNotificationConversion.captureFromLocalKind('battle_join');
+        unawaited(_recordAdminNotificationOpen(
+          notificationId: 'battle__$sessionId',
+          kind: 'battle_join',
+        ));
         logGlobalAnalytics(
           const AppNotificationOpenEvent(channel: 'local', kind: 'battle_join'),
         );
@@ -90,6 +97,11 @@ class BattleMessagingService {
         });
       };
       AppLocalNotificationsService.onNoTestReminderTap = () {
+        PendingNotificationConversion.captureFromLocalKind('no_test_reminder');
+        unawaited(_recordAdminNotificationOpen(
+          notificationId: 'local__no_test_reminder',
+          kind: 'no_test_reminder',
+        ));
         logGlobalAnalytics(
           const AppNotificationOpenEvent(
             channel: 'local',
@@ -103,6 +115,11 @@ class BattleMessagingService {
         });
       };
       AppLocalNotificationsService.onDailyPracticeReminderTap = () {
+        PendingNotificationConversion.captureFromLocalKind('daily_practice_reminder');
+        unawaited(_recordAdminNotificationOpen(
+          notificationId: 'local__daily_practice_reminder',
+          kind: 'daily_practice_reminder',
+        ));
         logGlobalAnalytics(
           const AppNotificationOpenEvent(
             channel: 'local',
@@ -210,8 +227,33 @@ class BattleMessagingService {
         kind = 'battle_join';
       }
     }
+    PendingNotificationConversion.captureFromFcm(message);
+    final notifId = PendingNotificationConversion.notificationIdFromData(
+      message.data,
+    );
+    if (notifId != null) {
+      unawaited(
+        _recordAdminNotificationOpen(
+          notificationId: notifId,
+          kind: kind,
+          title: message.notification?.title,
+        ),
+      );
+    }
     logGlobalAnalytics(
       AppNotificationOpenEvent(channel: channel, kind: kind),
+    );
+  }
+
+  static Future<void> _recordAdminNotificationOpen({
+    required String notificationId,
+    required String kind,
+    String? title,
+  }) async {
+    await AdminDashboardWriterService().recordNotificationOpen(
+      notificationId: notificationId,
+      kind: kind,
+      title: title,
     );
   }
 
