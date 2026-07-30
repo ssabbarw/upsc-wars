@@ -1,5 +1,18 @@
 // Content models for all five mini-games. Field names match the JSON schemas.
 
+/// Difficulty tiers shared by all mini-game content.
+enum MiniGameDifficulty {
+  easy,
+  medium,
+  hard;
+
+  static MiniGameDifficulty parse(String? raw) => switch (raw) {
+        'easy' => MiniGameDifficulty.easy,
+        'hard' => MiniGameDifficulty.hard,
+        _ => MiniGameDifficulty.medium,
+      };
+}
+
 class TimelineItem {
   const TimelineItem({
     required this.label,
@@ -22,6 +35,7 @@ class TimelineSorterSet {
   const TimelineSorterSet({
     required this.id,
     required this.subject,
+    required this.difficulty,
     required this.theme,
     required this.items,
     required this.explanation,
@@ -29,6 +43,7 @@ class TimelineSorterSet {
 
   final String id;
   final String subject;
+  final MiniGameDifficulty difficulty;
   final String theme;
   final List<TimelineItem> items;
   final String explanation;
@@ -37,6 +52,7 @@ class TimelineSorterSet {
       TimelineSorterSet(
         id: json['id'] as String,
         subject: json['subject'] as String,
+        difficulty: MiniGameDifficulty.parse(json['difficulty'] as String?),
         theme: json['theme'] as String,
         items: (json['items'] as List<dynamic>)
             .cast<Map<String, dynamic>>()
@@ -50,6 +66,7 @@ class OddOneOutItem {
   const OddOneOutItem({
     required this.id,
     required this.subject,
+    required this.difficulty,
     required this.items,
     required this.oddIndex,
     required this.explanation,
@@ -57,6 +74,7 @@ class OddOneOutItem {
 
   final String id;
   final String subject;
+  final MiniGameDifficulty difficulty;
   final List<String> items;
   final int oddIndex;
   final String explanation;
@@ -64,6 +82,7 @@ class OddOneOutItem {
   factory OddOneOutItem.fromJson(Map<String, dynamic> json) => OddOneOutItem(
         id: json['id'] as String,
         subject: json['subject'] as String,
+        difficulty: MiniGameDifficulty.parse(json['difficulty'] as String?),
         items: (json['items'] as List<dynamic>).cast<String>(),
         oddIndex: json['odd_index'] as int,
         explanation: json['explanation'] as String,
@@ -74,6 +93,7 @@ class FactOrBluffItem {
   const FactOrBluffItem({
     required this.id,
     required this.subject,
+    required this.difficulty,
     required this.statement,
     required this.isFact,
     required this.explanation,
@@ -81,6 +101,7 @@ class FactOrBluffItem {
 
   final String id;
   final String subject;
+  final MiniGameDifficulty difficulty;
   final String statement;
   final bool isFact;
   final String explanation;
@@ -89,6 +110,7 @@ class FactOrBluffItem {
       FactOrBluffItem(
         id: json['id'] as String,
         subject: json['subject'] as String,
+        difficulty: MiniGameDifficulty.parse(json['difficulty'] as String?),
         statement: json['statement'] as String,
         isFact: json['is_fact'] as bool,
         explanation: json['explanation'] as String,
@@ -99,6 +121,7 @@ class ConnectTheDotsItem {
   const ConnectTheDotsItem({
     required this.id,
     required this.subject,
+    required this.difficulty,
     required this.dots,
     required this.options,
     required this.answerIndex,
@@ -107,6 +130,7 @@ class ConnectTheDotsItem {
 
   final String id;
   final String subject;
+  final MiniGameDifficulty difficulty;
   final List<String> dots;
   final List<String> options;
   final int answerIndex;
@@ -116,6 +140,7 @@ class ConnectTheDotsItem {
       ConnectTheDotsItem(
         id: json['id'] as String,
         subject: json['subject'] as String,
+        difficulty: MiniGameDifficulty.parse(json['difficulty'] as String?),
         dots: (json['dots'] as List<dynamic>).cast<String>(),
         options: (json['options'] as List<dynamic>).cast<String>(),
         answerIndex: json['answer_index'] as int,
@@ -127,6 +152,7 @@ class DuelQuestion {
   const DuelQuestion({
     required this.id,
     required this.subject,
+    required this.difficulty,
     required this.question,
     required this.options,
     required this.answerIndex,
@@ -134,6 +160,7 @@ class DuelQuestion {
 
   final String id;
   final String subject;
+  final MiniGameDifficulty difficulty;
   final String question;
   final List<String> options;
   final int answerIndex;
@@ -141,8 +168,55 @@ class DuelQuestion {
   factory DuelQuestion.fromJson(Map<String, dynamic> json) => DuelQuestion(
         id: json['id'] as String,
         subject: json['subject'] as String,
+        difficulty: MiniGameDifficulty.parse(json['difficulty'] as String?),
         question: json['question'] as String,
         options: (json['options'] as List<dynamic>).cast<String>(),
         answerIndex: json['answer_index'] as int,
       );
+}
+
+/// Content filter chosen before launching a game. Empty strings = no filter.
+/// Both fields are comma-separated lists (subject slugs / difficulty names).
+typedef MiniGameFilter = ({String subjects, String difficulties});
+
+const MiniGameFilter emptyMiniGameFilter = (subjects: '', difficulties: '');
+
+Set<String> _csvToSet(String csv) => csv
+    .split(',')
+    .map((s) => s.trim())
+    .where((s) => s.isNotEmpty)
+    .toSet();
+
+/// Draws a session from [pool]: filter by [filter] (subjects and/or
+/// difficulties; empty = all), shuffle, take [count], then order by rising
+/// difficulty (easy → medium → hard). Falls back to progressively wider
+/// pools if a filter combination matches nothing.
+List<T> drawMiniGameSession<T>({
+  required List<T> pool,
+  required MiniGameFilter filter,
+  required int count,
+  required String Function(T) subjectOf,
+  required MiniGameDifficulty Function(T) difficultyOf,
+}) {
+  final subjects = _csvToSet(filter.subjects);
+  final difficulties = _csvToSet(filter.difficulties);
+
+  final bySubject = subjects.isEmpty
+      ? List<T>.from(pool)
+      : pool.where((e) => subjects.contains(subjectOf(e))).toList();
+  final subjectPool = bySubject.isEmpty ? List<T>.from(pool) : bySubject;
+
+  final byDifficulty = difficulties.isEmpty
+      ? subjectPool
+      : subjectPool
+          .where((e) => difficulties.contains(difficultyOf(e).name))
+          .toList();
+  final source = byDifficulty.isEmpty ? subjectPool : byDifficulty;
+
+  source.shuffle();
+  final drawn = source.take(count).toList();
+  drawn.sort(
+    (a, b) => difficultyOf(a).index.compareTo(difficultyOf(b).index),
+  );
+  return drawn;
 }

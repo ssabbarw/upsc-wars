@@ -75,6 +75,10 @@ class DuelState {
 }
 
 class DuelController extends AsyncNotifier<DuelState> {
+  DuelController(this.filter);
+
+  final MiniGameFilter filter;
+
   @override
   Future<DuelState> build() async {
     final pool = await ref.read(duelRepositoryProvider).loadQuestions();
@@ -94,18 +98,22 @@ class DuelController extends AsyncNotifier<DuelState> {
   }
 
   List<DuelQuestion> _pickMatch(List<DuelQuestion> pool) {
-    final shuffled = List<DuelQuestion>.from(pool)..shuffle();
-    if (shuffled.length <= duelMatchLength) {
-      // Loop/reuse if the pool is smaller than match length.
-      final out = <DuelQuestion>[];
-      var i = 0;
-      while (out.length < duelMatchLength) {
-        out.add(shuffled[i % shuffled.length]);
-        i++;
-      }
-      return out;
+    final drawn = drawMiniGameSession(
+      pool: pool,
+      filter: filter,
+      count: duelMatchLength,
+      subjectOf: (q) => q.subject,
+      difficultyOf: (q) => q.difficulty,
+    );
+    if (drawn.length >= duelMatchLength) return drawn;
+    // Loop/reuse if the pool is smaller than match length.
+    final out = <DuelQuestion>[];
+    var i = 0;
+    while (out.length < duelMatchLength) {
+      out.add(drawn[i % drawn.length]);
+      i++;
     }
-    return shuffled.take(duelMatchLength).toList(growable: false);
+    return out;
   }
 
   void tap(DuelPlayer player, int optionIndex) {
@@ -201,7 +209,7 @@ class DuelController extends AsyncNotifier<DuelState> {
   }
 }
 
-final duelControllerProvider =
-    AsyncNotifierProvider.autoDispose<DuelController, DuelState>(
+final duelControllerProvider = AsyncNotifierProvider.autoDispose
+    .family<DuelController, DuelState, MiniGameFilter>(
   DuelController.new,
 );

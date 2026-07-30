@@ -7,78 +7,108 @@ import '../shared/mini_game_models.dart';
 
 const factOrBluffSeconds = 5;
 
+/// Statements played per session, drawn randomly from the filtered pool.
+const factOrBluffSessionSize = 10;
+
 enum FactOrBluffVerdict { none, correct, wrong, timeout }
 
 class FactOrBluffState {
   const FactOrBluffState({
-    required this.items,
+    required this.pool,
+    required this.session,
     required this.index,
     required this.secondsLeft,
     this.answeredIsFact,
     this.verdict = FactOrBluffVerdict.none,
     this.streak = 0,
+    this.correctCount = 0,
+    this.sessionComplete = false,
     this.error,
   });
 
-  final List<FactOrBluffItem> items;
+  final List<FactOrBluffItem> pool;
+  final List<FactOrBluffItem> session;
   final int index;
   final double secondsLeft;
   final bool? answeredIsFact;
   final FactOrBluffVerdict verdict;
   final int streak;
+  final int correctCount;
+  final bool sessionComplete;
   final String? error;
 
   FactOrBluffItem? get current =>
-      items.isEmpty ? null : items[index % items.length];
+      session.isEmpty || index >= session.length ? null : session[index];
 
   bool get isAwaitingAnswer => verdict == FactOrBluffVerdict.none;
 
   FactOrBluffState copyWith({
-    List<FactOrBluffItem>? items,
+    List<FactOrBluffItem>? pool,
+    List<FactOrBluffItem>? session,
     int? index,
     double? secondsLeft,
     bool? answeredIsFact,
     bool clearAnswer = false,
     FactOrBluffVerdict? verdict,
     int? streak,
+    int? correctCount,
+    bool? sessionComplete,
     String? error,
   }) {
     return FactOrBluffState(
-      items: items ?? this.items,
+      pool: pool ?? this.pool,
+      session: session ?? this.session,
       index: index ?? this.index,
       secondsLeft: secondsLeft ?? this.secondsLeft,
       answeredIsFact:
           clearAnswer ? null : (answeredIsFact ?? this.answeredIsFact),
       verdict: verdict ?? this.verdict,
       streak: streak ?? this.streak,
+      correctCount: correctCount ?? this.correctCount,
+      sessionComplete: sessionComplete ?? this.sessionComplete,
       error: error ?? this.error,
     );
   }
 }
 
 class FactOrBluffController extends AsyncNotifier<FactOrBluffState> {
+  FactOrBluffController(this.filter);
+
+  final MiniGameFilter filter;
+
   Timer? _timer;
 
   @override
   Future<FactOrBluffState> build() async {
     ref.onDispose(() => _timer?.cancel());
-    final items = await ref.read(factOrBluffRepositoryProvider).loadItems();
-    if (items.isEmpty) {
+    final pool = await ref.read(factOrBluffRepositoryProvider).loadItems();
+    if (pool.isEmpty) {
       return const FactOrBluffState(
-        items: [],
+        pool: [],
+        session: [],
         index: 0,
         secondsLeft: 0,
         error: 'No fact-or-bluff items found.',
       );
     }
-    final initial = FactOrBluffState(
-      items: items,
+    final initial = _newSession(pool);
+    Future.microtask(_startTimer);
+    return initial;
+  }
+
+  FactOrBluffState _newSession(List<FactOrBluffItem> pool) {
+    return FactOrBluffState(
+      pool: pool,
+      session: drawMiniGameSession(
+        pool: pool,
+        filter: filter,
+        count: factOrBluffSessionSize,
+        subjectOf: (i) => i.subject,
+        difficultyOf: (i) => i.difficulty,
+      ),
       index: 0,
       secondsLeft: factOrBluffSeconds.toDouble(),
     );
-    // Start timer after the first frame of state is available.
-    Future.microtask(_startTimer);
-    return initial;
   }
 
   void _startTimer() {
@@ -110,7 +140,9 @@ class FactOrBluffController extends AsyncNotifier<FactOrBluffState> {
 
   void answer(bool isFact) {
     final current = state.asData?.value;
-    if (current == null || !current.isAwaitingAnswer || current.current == null) {
+    if (current == null ||
+        !current.isAwaitingAnswer ||
+        current.current == null) {
       return;
     }
     _timer?.cancel();
@@ -118,17 +150,24 @@ class FactOrBluffController extends AsyncNotifier<FactOrBluffState> {
     state = AsyncData(
       current.copyWith(
         answeredIsFact: isFact,
-        verdict: correct ? FactOrBluffVerdict.correct : FactOrBluffVerdict.wrong,
+        verdict:
+            correct ? FactOrBluffVerdict.correct : FactOrBluffVerdict.wrong,
         streak: correct ? current.streak + 1 : 0,
+        correctCount:
+            correct ? current.correctCount + 1 : current.correctCount,
       ),
     );
   }
 
   void next() {
     final current = state.asData?.value;
-    if (current == null || current.items.isEmpty) return;
+    if (current == null || current.session.isEmpty) return;
     _timer?.cancel();
-    final nextIndex = (current.index + 1) % current.items.length;
+    final nextIndex = current.index + 1;
+    if (nextIndex >= current.session.length) {
+      state = AsyncData(current.copyWith(sessionComplete: true));
+      return;
+    }
     state = AsyncData(
       current.copyWith(
         index: nextIndex,
@@ -139,9 +178,17 @@ class FactOrBluffController extends AsyncNotifier<FactOrBluffState> {
     );
     _startTimer();
   }
+
+  void playAgain() {
+    final current = state.asData?.value;
+    if (current == null || current.pool.isEmpty) return;
+    _timer?.cancel();
+    state = AsyncData(_newSession(current.pool));
+    Future.microtask(_startTimer);
+  }
 }
 
-final factOrBluffControllerProvider =
-    AsyncNotifierProvider.autoDispose<FactOrBluffController, FactOrBluffState>(
+final factOrBluffControllerProvider = AsyncNotifierProvider.autoDispose
+    .family<FactOrBluffController, FactOrBluffState, MiniGameFilter>(
   FactOrBluffController.new,
 );

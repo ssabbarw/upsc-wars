@@ -9,14 +9,28 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../shared/mini_game_feedback.dart';
 import 'duel_controller.dart';
 
 class DuelScreen extends HookConsumerWidget {
-  const DuelScreen({super.key});
+  const DuelScreen({
+    super.key,
+    this.subjectsCsv = '',
+    this.difficultiesCsv = '',
+  });
+
+  /// Comma-separated subject slugs to filter content by; empty = all.
+  final String subjectsCsv;
+
+  /// Comma-separated difficulty names to filter content by; empty = all.
+  final String difficultiesCsv;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final async = ref.watch(duelControllerProvider);
+    final provider = duelControllerProvider(
+      (subjects: subjectsCsv, difficulties: difficultiesCsv),
+    );
+    final async = ref.watch(provider);
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
@@ -27,7 +41,7 @@ class DuelScreen extends HookConsumerWidget {
       if (state.phase == DuelPhase.matchOver) return null;
       if (!state.revealedAnswer) return null;
       final timer = Timer(const Duration(milliseconds: 900), () {
-        ref.read(duelControllerProvider.notifier).nextQuestion();
+        ref.read(provider.notifier).nextQuestion();
       });
       return timer.cancel;
     }, [
@@ -60,7 +74,7 @@ class DuelScreen extends HookConsumerWidget {
               p1Score: state.p1Score,
               p2Score: state.p2Score,
               onPlayAgain: () =>
-                  ref.read(duelControllerProvider.notifier).playAgain(),
+                  ref.read(provider.notifier).playAgain(),
               onExit: () =>
                   context.canPop() ? context.pop() : context.go('/games'),
             );
@@ -85,9 +99,8 @@ class DuelScreen extends HookConsumerWidget {
                     revealed: state.revealedAnswer,
                     answerIndex: q.answerIndex,
                     highlightWinner: state.roundWinner == DuelPlayer.two,
-                    onTap: (i) => ref
-                        .read(duelControllerProvider.notifier)
-                        .tap(DuelPlayer.two, i),
+                    onTap: (i) =>
+                        ref.read(provider.notifier).tap(DuelPlayer.two, i),
                   ),
                 ),
               ),
@@ -138,9 +151,8 @@ class DuelScreen extends HookConsumerWidget {
                   revealed: state.revealedAnswer,
                   answerIndex: q.answerIndex,
                   highlightWinner: state.roundWinner == DuelPlayer.one,
-                  onTap: (i) => ref
-                      .read(duelControllerProvider.notifier)
-                      .tap(DuelPlayer.one, i),
+                  onTap: (i) =>
+                      ref.read(provider.notifier).tap(DuelPlayer.one, i),
                 ),
               ),
             ],
@@ -214,15 +226,12 @@ class _PlayerHalf extends StatelessWidget {
               ),
             ),
             if (revealed && highlightWinner)
-              Padding(
-                padding: const EdgeInsets.only(bottom: AppSpacing.sm),
-                child: Text(
-                  'Point!',
-                  textAlign: TextAlign.center,
-                  style: AppTextStyles.label().copyWith(
-                    color: AppColors.correct,
-                    fontWeight: FontWeight.w700,
-                  ),
+              const Padding(
+                padding: EdgeInsets.only(bottom: AppSpacing.sm),
+                child: MiniGameResultBanner(
+                  correct: true,
+                  text: 'Point!',
+                  center: true,
                 ),
               ),
             if (revealed && !highlightWinner && locked)
@@ -335,44 +344,87 @@ class _MatchOverView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Expanded(
-          child: RotatedBox(
-            quarterTurns: 2,
-            child: _EndHalf(
-              title: 'Player 2',
-              ownScore: p2Score,
-              otherScore: p1Score,
-              onPlayAgain: onPlayAgain,
-              onExit: onExit,
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final scheme = Theme.of(context).colorScheme;
+
+    return ColoredBox(
+      color: isDark
+          ? AppColors.surfacePrimaryDark
+          : AppColors.surfacePrimaryLight,
+      child: Column(
+        children: [
+          // Player 2 half — content hugged to the center fold, rotated 180°.
+          Expanded(
+            child: RotatedBox(
+              quarterTurns: 2,
+              child: Align(
+                alignment: Alignment.bottomCenter,
+                child: _EndCard(
+                  playerLabel: 'Player 2',
+                  ownScore: p2Score,
+                  otherScore: p1Score,
+                  onPlayAgain: onPlayAgain,
+                  onExit: onExit,
+                ),
+              ),
             ),
           ),
-        ),
-        Expanded(
-          child: _EndHalf(
-            title: 'Player 1',
-            ownScore: p1Score,
-            otherScore: p2Score,
-            onPlayAgain: onPlayAgain,
-            onExit: onExit,
+          // Shared center ribbon — upright score both can glance at.
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.symmetric(
+              vertical: AppSpacing.md,
+              horizontal: AppSpacing.lg,
+            ),
+            decoration: BoxDecoration(
+              color: isDark
+                  ? AppColors.surfaceSecondaryDark
+                  : AppColors.surfaceSecondaryLight,
+              border: Border.symmetric(
+                horizontal: BorderSide(
+                  color: isDark ? AppColors.borderDark : AppColors.borderLight,
+                ),
+              ),
+            ),
+            child: Text(
+              'FINAL  ·  P2  $p2Score  —  $p1Score  P1',
+              textAlign: TextAlign.center,
+              style: AppTextStyles.label().copyWith(
+                color: scheme.onSurface,
+                fontWeight: FontWeight.w800,
+                letterSpacing: 0.6,
+              ),
+            ),
           ),
-        ),
-      ],
+          // Player 1 half — content hugged to the center fold, upright.
+          Expanded(
+            child: Align(
+              alignment: Alignment.topCenter,
+              child: _EndCard(
+                playerLabel: 'Player 1',
+                ownScore: p1Score,
+                otherScore: p2Score,
+                onPlayAgain: onPlayAgain,
+                onExit: onExit,
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
 
-class _EndHalf extends StatelessWidget {
-  const _EndHalf({
-    required this.title,
+class _EndCard extends StatelessWidget {
+  const _EndCard({
+    required this.playerLabel,
     required this.ownScore,
     required this.otherScore,
     required this.onPlayAgain,
     required this.onExit,
   });
 
-  final String title;
+  final String playerLabel;
   final int ownScore;
   final int otherScore;
   final VoidCallback onPlayAgain;
@@ -380,51 +432,120 @@ class _EndHalf extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     final scheme = Theme.of(context).colorScheme;
-    final result = ownScore > otherScore
-        ? 'You win'
-        : ownScore < otherScore
-            ? 'You lose'
-            : 'Draw';
+    final won = ownScore > otherScore;
+    final lost = ownScore < otherScore;
+    final draw = !won && !lost;
+
+    final Color accent;
+    final Color bg;
+    final String headline;
+    final IconData icon;
+    if (won) {
+      accent = AppColors.correct;
+      bg = isDark ? AppColors.correctBgDark : AppColors.correctBg;
+      headline = 'You win';
+      icon = Icons.emoji_events_rounded;
+    } else if (lost) {
+      accent = AppColors.wrong;
+      bg = isDark ? AppColors.wrongBgDark : AppColors.wrongBg;
+      headline = 'You lose';
+      icon = Icons.sentiment_dissatisfied_rounded;
+    } else {
+      accent = AppColors.warning;
+      bg = isDark ? AppColors.warningBgDark : AppColors.warningBg;
+      headline = 'Draw';
+      icon = Icons.handshake_rounded;
+    }
 
     return SafeArea(
+      top: false,
+      bottom: false,
       child: Padding(
-        padding: const EdgeInsets.all(AppSpacing.lg),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              title,
-              style: AppTextStyles.caption()
-                  .copyWith(color: scheme.onSurfaceVariant),
+        padding: const EdgeInsets.fromLTRB(
+          AppSpacing.lg,
+          AppSpacing.md,
+          AppSpacing.lg,
+          AppSpacing.md,
+        ),
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 360),
+          child: Container(
+            width: double.infinity,
+            padding: const EdgeInsets.fromLTRB(
+              AppSpacing.xl,
+              AppSpacing.xl,
+              AppSpacing.xl,
+              AppSpacing.lg,
             ),
-            const SizedBox(height: AppSpacing.sm),
-            Text(
-              '$ownScore – $otherScore',
-              style: AppTextStyles.h1().copyWith(
-                color: scheme.onSurface,
-                fontWeight: FontWeight.w700,
-              ),
+            decoration: BoxDecoration(
+              color: bg,
+              borderRadius: BorderRadius.circular(AppRadius.xl),
+              border: Border.all(color: accent.withValues(alpha: 0.45), width: 1.5),
             ),
-            const SizedBox(height: AppSpacing.xs),
-            Text(
-              result,
-              style: AppTextStyles.h3().copyWith(
-                color: ownScore >= otherScore
-                    ? AppColors.correct
-                    : AppColors.wrong,
-              ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  playerLabel.toUpperCase(),
+                  style: AppTextStyles.caption().copyWith(
+                    color: scheme.onSurfaceVariant,
+                    fontWeight: FontWeight.w700,
+                    letterSpacing: 1.2,
+                  ),
+                ),
+                const SizedBox(height: AppSpacing.md),
+                Icon(icon, size: 40, color: accent),
+                const SizedBox(height: AppSpacing.sm),
+                Text(
+                  headline,
+                  style: AppTextStyles.h1().copyWith(
+                    color: accent,
+                    fontWeight: FontWeight.w800,
+                  ),
+                ),
+                const SizedBox(height: AppSpacing.sm),
+                Text(
+                  '$ownScore  –  $otherScore',
+                  style: AppTextStyles.h2().copyWith(
+                    color: scheme.onSurface,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+                if (draw)
+                  Padding(
+                    padding: const EdgeInsets.only(top: AppSpacing.xs),
+                    child: Text(
+                      'Evenly matched',
+                      style: AppTextStyles.caption()
+                          .copyWith(color: scheme.onSurfaceVariant),
+                    ),
+                  ),
+                const SizedBox(height: AppSpacing.xl),
+                SizedBox(
+                  width: double.infinity,
+                  child: FilledButton(
+                    onPressed: onPlayAgain,
+                    style: FilledButton.styleFrom(
+                      backgroundColor: accent,
+                      foregroundColor: Colors.white,
+                      padding: const EdgeInsets.symmetric(
+                        vertical: AppSpacing.md,
+                      ),
+                    ),
+                    child: const Text('Rematch'),
+                  ),
+                ),
+                const SizedBox(height: AppSpacing.xs),
+                TextButton(
+                  onPressed: onExit,
+                  style: TextButton.styleFrom(foregroundColor: accent),
+                  child: const Text('Exit'),
+                ),
+              ],
             ),
-            const SizedBox(height: AppSpacing.xl),
-            FilledButton(
-              onPressed: onPlayAgain,
-              child: const Text('Play again'),
-            ),
-            TextButton(
-              onPressed: onExit,
-              child: const Text('Exit'),
-            ),
-          ],
+          ),
         ),
       ),
     );

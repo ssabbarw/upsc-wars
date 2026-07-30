@@ -3,127 +3,131 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../shared/mini_game_content_repository.dart';
 import '../shared/mini_game_models.dart';
 
-enum TimelinePhase { playing, revealed }
+/// Sets played per session, drawn randomly from the filtered pool.
+const timelineSessionSize = 10;
+
+enum TimelinePhase { playing, revealed, sessionComplete }
 
 class TimelineSorterState {
   const TimelineSorterState({
-    required this.sets,
+    required this.pool,
+    required this.session,
     required this.setIndex,
     required this.order,
-    this.selectedSlot,
     this.phase = TimelinePhase.playing,
-    this.isLoading = false,
+    this.correctCount = 0,
     this.error,
   });
 
-  final List<TimelineSorterSet> sets;
+  final List<TimelineSorterSet> pool;
+  final List<TimelineSorterSet> session;
   final int setIndex;
+
+  /// Permutation of item indices (display order).
   final List<int> order;
-  final int? selectedSlot;
   final TimelinePhase phase;
-  final bool isLoading;
+  final int correctCount;
   final String? error;
 
   TimelineSorterSet? get current =>
-      sets.isEmpty ? null : sets[setIndex % sets.length];
+      session.isEmpty || setIndex >= session.length
+          ? null
+          : session[setIndex];
 
   bool get isCorrect {
     final set = current;
     if (set == null) return false;
-    for (var i = 0; i < order.length; i++) {
-      if (i > 0) {
-        final prev = set.items[order[i - 1]].sortKey;
-        final curr = set.items[order[i]].sortKey;
-        if (prev > curr) return false;
+    for (var i = 1; i < order.length; i++) {
+      if (set.items[order[i - 1]].sortKey > set.items[order[i]].sortKey) {
+        return false;
       }
     }
     return true;
   }
 
   TimelineSorterState copyWith({
-    List<TimelineSorterSet>? sets,
+    List<TimelineSorterSet>? pool,
+    List<TimelineSorterSet>? session,
     int? setIndex,
     List<int>? order,
-    int? selectedSlot,
-    bool clearSelectedSlot = false,
     TimelinePhase? phase,
-    bool? isLoading,
+    int? correctCount,
     String? error,
-    bool clearError = false,
   }) {
     return TimelineSorterState(
-      sets: sets ?? this.sets,
+      pool: pool ?? this.pool,
+      session: session ?? this.session,
       setIndex: setIndex ?? this.setIndex,
       order: order ?? this.order,
-      selectedSlot:
-          clearSelectedSlot ? null : (selectedSlot ?? this.selectedSlot),
       phase: phase ?? this.phase,
-      isLoading: isLoading ?? this.isLoading,
-      error: clearError ? null : (error ?? this.error),
+      correctCount: correctCount ?? this.correctCount,
+      error: error ?? this.error,
     );
   }
 }
 
 class TimelineSorterController extends AsyncNotifier<TimelineSorterState> {
+  TimelineSorterController(this.filter);
+
+  final MiniGameFilter filter;
+
   @override
   Future<TimelineSorterState> build() async {
-    final sets = await ref.read(timelineSorterRepositoryProvider).loadSets();
-    if (sets.isEmpty) {
+    final pool = await ref.read(timelineSorterRepositoryProvider).loadSets();
+    if (pool.isEmpty) {
       return const TimelineSorterState(
-        sets: [],
+        pool: [],
+        session: [],
         setIndex: 0,
         order: [],
         error: 'No timeline sets found.',
       );
     }
+    return _newSession(pool);
+  }
+
+  TimelineSorterState _newSession(List<TimelineSorterSet> pool) {
+    final session = drawMiniGameSession(
+      pool: pool,
+      filter: filter,
+      count: timelineSessionSize,
+      subjectOf: (s) => s.subject,
+      difficultyOf: (s) => s.difficulty,
+    );
     return TimelineSorterState(
-      sets: sets,
+      pool: pool,
+      session: session,
       setIndex: 0,
-      order: _shuffledOrder(sets.first.items.length),
+      order: _shuffledOrder(session.first.items.length),
     );
   }
 
   List<int> _shuffledOrder(int length) {
     final order = List<int>.generate(length, (i) => i);
     order.shuffle();
-    // Avoid starting already sorted when possible.
-    if (length > 1 && _isSorted(order)) {
+    if (length > 1 && _isAscending(order)) {
       order.shuffle();
     }
     return order;
   }
 
-  bool _isSorted(List<int> order) {
+  bool _isAscending(List<int> order) {
     for (var i = 1; i < order.length; i++) {
       if (order[i - 1] > order[i]) return false;
     }
-    // order of indices ascending means original order — for sort_key we
-    // need the actual items. Caller uses item indices into set.items which
-    // are already in correct sort order in JSON, so ascending indices = correct.
     return true;
   }
 
-  void tapSlot(int slot) {
+  void reorder(int oldIndex, int newIndex) {
     final current = state.asData?.value;
     if (current == null || current.phase != TimelinePhase.playing) return;
-
-    final selected = current.selectedSlot;
-    if (selected == null) {
-      state = AsyncData(current.copyWith(selectedSlot: slot));
-      return;
-    }
-    if (selected == slot) {
-      state = AsyncData(current.copyWith(clearSelectedSlot: true));
-      return;
-    }
+    if (oldIndex < newIndex) newIndex -= 1;
+    if (oldIndex == newIndex) return;
 
     final order = List<int>.from(current.order);
-    final tmp = order[selected];
-    order[selected] = order[slot];
-    order[slot] = tmp;
-    state = AsyncData(
-      current.copyWith(order: order, clearSelectedSlot: true),
-    );
+    final item = order.removeAt(oldIndex);
+    order.insert(newIndex, item);
+    state = AsyncData(current.copyWith(order: order));
   }
 
   void check() {
@@ -132,27 +136,39 @@ class TimelineSorterController extends AsyncNotifier<TimelineSorterState> {
     state = AsyncData(
       current.copyWith(
         phase: TimelinePhase.revealed,
-        clearSelectedSlot: true,
+        correctCount:
+            current.isCorrect ? current.correctCount + 1 : current.correctCount,
       ),
     );
   }
 
   void nextSet() {
     final current = state.asData?.value;
-    if (current == null || current.sets.isEmpty) return;
-    final nextIndex = (current.setIndex + 1) % current.sets.length;
-    final next = current.sets[nextIndex];
+    if (current == null || current.session.isEmpty) return;
+    final nextIndex = current.setIndex + 1;
+    if (nextIndex >= current.session.length) {
+      state = AsyncData(
+        current.copyWith(phase: TimelinePhase.sessionComplete),
+      );
+      return;
+    }
     state = AsyncData(
       current.copyWith(
         setIndex: nextIndex,
-        order: _shuffledOrder(next.items.length),
-        clearSelectedSlot: true,
+        order: _shuffledOrder(current.session[nextIndex].items.length),
         phase: TimelinePhase.playing,
       ),
     );
   }
+
+  void playAgain() {
+    final current = state.asData?.value;
+    if (current == null || current.pool.isEmpty) return;
+    state = AsyncData(_newSession(current.pool));
+  }
 }
 
-final timelineSorterControllerProvider =
-    AsyncNotifierProvider.autoDispose<TimelineSorterController,
-        TimelineSorterState>(TimelineSorterController.new);
+final timelineSorterControllerProvider = AsyncNotifierProvider.autoDispose
+    .family<TimelineSorterController, TimelineSorterState, MiniGameFilter>(
+  TimelineSorterController.new,
+);

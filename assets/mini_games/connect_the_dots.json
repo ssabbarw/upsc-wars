@@ -2,131 +2,1345 @@
   {
     "id": "cd_001",
     "subject": "Ancient History",
+    "difficulty": "easy",
     "dots": ["Chandragupta Maurya", "Chanakya", "Arthashastra", "Megasthenes"],
     "options": [
-      "Founding and administration of the Mauryan Empire",
       "Spread of Buddhism under Ashoka",
       "Indo-Greek trade relations",
+      "Founding and administration of the Mauryan Empire",
       "Decline of the Nanda dynasty"
     ],
-    "answer_index": 0,
-    "explanation": "Chandragupta Maurya founded the Mauryan Empire with Chanakya (Kautilya) as his mentor and author of the Arthashastra. Megasthenes was the Greek ambassador at his court, whose account documented Mauryan administration."
+    "answer_index": 2,
+    "explanation": "Chandragupta Maurya founded the Mauryan Empire with Chanakya (Kautilya) as his mentor and author of the Arthashastra, the treatise on Mauryan statecraft. Megasthenes was the Greek ambassador at Chandragupta's court whose account, the Indica, documented Mauryan administration."
   },
   {
     "id": "cd_002",
-    "subject": "Medieval History",
-    "dots": ["Ibn Battuta", "Al-Biruni", "Abdur Razzaq", "Domingo Paes"],
+    "subject": "Ancient History",
+    "difficulty": "easy",
+    "dots": ["Harappa", "Mohenjo-daro", "Dholavira", "Lothal"],
     "options": [
-      "Foreign travellers whose writings describe medieval Indian courts",
-      "Sufi saints of the Bhakti movement",
-      "Founders of regional Sultanates",
-      "Mughal court historians"
+      "Major sites of the Indus Valley Civilisation",
+      "Capitals of the Mahajanapadas",
+      "Ashokan rock edict locations",
+      "Early Vedic settlements on the Saraswati"
     ],
     "answer_index": 0,
-    "explanation": "Ibn Battuta (Morocco) visited Delhi Sultanate India in the 14th century, and Al-Biruni accompanied Mahmud of Ghazni's raids in the 11th century. Abdur Razzaq (Persia) and Domingo Paes (Portugal) separately left detailed accounts of the Vijayanagara Empire."
+    "explanation": "All four are major Harappan sites: Harappa and Mohenjo-daro (both now in Pakistan) were the first excavated cities, Dholavira in Gujarat is known for water conservation and a signboard inscription, and Lothal in Gujarat had a dockyard."
   },
   {
     "id": "cd_003",
-    "subject": "Modern History",
-    "dots": ["Rowlatt Act", "Jallianwala Bagh", "Khilafat Movement", "Non-Cooperation Movement"],
+    "subject": "Ancient History",
+    "difficulty": "easy",
+    "dots": ["Rigveda", "Samaveda", "Yajurveda", "Atharvaveda"],
     "options": [
-      "Chain of events leading to the Non-Cooperation Movement",
-      "Causes of the Partition of Bengal",
-      "Formation of the Muslim League",
-      "Events of the Quit India Movement"
+      "The principal Upanishads",
+      "The four Vedas of the Vedic corpus",
+      "The Vedangas (limbs of the Vedas)",
+      "Texts of the Puranic tradition"
     ],
-    "answer_index": 0,
-    "explanation": "The Rowlatt Act (1919) triggered protests met with the Jallianwala Bagh massacre. That outrage, combined with Muslim anger over the Khilafat issue, gave Gandhi the platform to launch the Non-Cooperation Movement in 1920."
+    "answer_index": 1,
+    "explanation": "These are the four Vedas: the Rigveda contains hymns to deities, the Samaveda sets hymns to melody for chanting, the Yajurveda gives sacrificial formulae, and the Atharvaveda contains charms and spells of everyday life."
   },
   {
     "id": "cd_004",
-    "subject": "Art & Culture",
-    "dots": ["Sarnath", "Sanchi", "Amaravati", "Bharhut"],
+    "subject": "Ancient History",
+    "difficulty": "easy",
+    "dots": ["Lumbini", "Bodh Gaya", "Sarnath", "Kushinagar"],
     "options": [
-      "Ancient Buddhist stupa sites known for sculptural art",
-      "Sites of the Indus Valley Civilisation",
-      "Centres of Mughal miniature painting",
-      "UNESCO-listed hill forts of Rajasthan"
+      "Sites of the four Buddhist councils",
+      "Capitals of ancient Magadha",
+      "Jain tirthankara birthplaces",
+      "Sites of the four great events of Buddha's life"
     ],
-    "answer_index": 0,
-    "explanation": "Sarnath, Sanchi, Amaravati and Bharhut are all major Buddhist stupa sites, each known for the sculptural railings and gateways depicting Jataka tales that surround the stupas."
+    "answer_index": 3,
+    "explanation": "Each site marks a great event of the Buddha's life: birth at Lumbini, enlightenment at Bodh Gaya, the first sermon (Dhammachakkapavattana) at Sarnath, and death (Mahaparinirvana) at Kushinagar."
   },
   {
     "id": "cd_005",
-    "subject": "Geography",
-    "dots": ["Nanda Devi", "Kanchenjunga", "Nanga Parbat", "Annapurna"],
+    "subject": "Ancient History",
+    "difficulty": "medium",
+    "dots": ["Panini", "Patanjali", "Ashtadhyayi", "Mahabhashya"],
     "options": [
-      "Among the highest peaks of the Himalayan range",
-      "Volcanic peaks of the Deccan Plateau",
-      "Peaks of the Aravalli Range",
-      "Peaks along the Western Ghats"
+      "Compilers of the Vedas",
+      "Foundational figures and texts of Sanskrit grammar",
+      "Founders of Buddhist philosophy schools",
+      "Authors of the Puranas"
     ],
-    "answer_index": 0,
-    "explanation": "All four are major Himalayan peaks exceeding 7,800 metres, among the highest in the world — spanning India, Nepal and Pakistan-administered Kashmir."
+    "answer_index": 1,
+    "explanation": "Panini authored the Ashtadhyayi, the foundational text of Sanskrit grammar. Patanjali later wrote the Mahabhashya, the great commentary on Panini's work — together they form the backbone of classical Sanskrit grammar."
   },
   {
     "id": "cd_006",
-    "subject": "Economy",
-    "dots": ["NABARD", "RBI", "SEBI", "IRDAI"],
+    "subject": "Ancient History",
+    "difficulty": "medium",
+    "dots": ["Kalidasa", "Aryabhata", "Varahamihira", "Amarasimha"],
     "options": [
-      "Regulatory bodies overseeing India's financial sector",
-      "Public sector banks nationalised in 1969",
-      "Institutions created under the Five-Year Plans",
-      "Bodies responsible for implementing GST"
+      "Scholars of the Gupta age, India's classical era",
+      "Court poets of Harshavardhana",
+      "Astronomers of the Chola court",
+      "Authors of the Dharmashastras"
     ],
     "answer_index": 0,
-    "explanation": "NABARD (rural credit), RBI (banking and monetary policy), SEBI (securities markets) and IRDAI (insurance) are the key sectoral regulators of India's financial system."
+    "explanation": "All four flourished in the Gupta era: Kalidasa the dramatist-poet (Abhijnanashakuntalam), Aryabhata the mathematician-astronomer (Aryabhatiya), Varahamihira the polymath (Brihat Samhita), and Amarasimha the lexicographer (Amarakosha). Tradition counts several of them among the 'navaratnas' of Chandragupta II's court."
   },
   {
     "id": "cd_007",
-    "subject": "Environment",
-    "dots": ["Kaziranga", "Jim Corbett", "Sundarbans", "Gir"],
+    "subject": "Ancient History",
+    "difficulty": "medium",
+    "dots": ["Hathigumpha", "Junagadh", "Allahabad Pillar", "Aihole"],
     "options": [
-      "National Parks each associated with a distinct flagship species",
-      "Ramsar wetland sites of India",
-      "Biosphere Reserves in the Western Ghats",
-      "Mangrove forests along the eastern coast"
+      "Ashokan edicts on dhamma",
+      "Sites of prehistoric cave paintings",
+      "Inscriptions eulogising the deeds of kings",
+      "Copper-plate land grants to Brahmanas"
     ],
-    "answer_index": 0,
-    "explanation": "Kaziranga (one-horned rhinoceros), Jim Corbett (tiger, India's first tiger reserve), Sundarbans (Royal Bengal Tiger in mangroves) and Gir (Asiatic lion, its only wild habitat) are each defined by a signature species."
+    "answer_index": 2,
+    "explanation": "Each is a famous royal eulogy: Hathigumpha records Kharavela of Kalinga, the Junagadh rock inscription praises Rudradaman I (the first long Sanskrit inscription), the Allahabad Pillar carries Harishena's prashasti of Samudragupta, and the Aihole inscription by Ravikirti celebrates Pulakeshin II."
   },
   {
     "id": "cd_008",
-    "subject": "Polity",
-    "dots": ["Article 124", "Collegium System", "Article 217", "Judicial Appointments"],
+    "subject": "Ancient History",
+    "difficulty": "medium",
+    "dots": ["Tolkappiyam", "Silappadikaram", "Manimekalai", "Tirukkural"],
     "options": [
-      "Constitutional provisions and mechanism for appointing judges",
-      "Provisions related to the Election Commission",
-      "Procedure for impeachment of the President",
-      "Provisions governing Panchayati Raj institutions"
+      "Sanskrit kavya works of the Gupta period",
+      "Classical Tamil literature of the Sangam tradition",
+      "Pali canonical texts of Buddhism",
+      "Kannada works of the Rashtrakuta court"
     ],
-    "answer_index": 0,
-    "explanation": "Article 124 governs Supreme Court appointments and Article 217 governs High Court appointments. In practice, both are administered through the Collegium System, developed via Supreme Court judgments rather than the constitutional text itself."
+    "answer_index": 1,
+    "explanation": "All belong to classical Tamil literature: Tolkappiyam is the earliest Tamil grammar, Silappadikaram (by Ilango Adigal) and Manimekalai (by Sattanar) are the great twin epics, and Tirukkural by Thiruvalluvar is the celebrated ethical treatise."
   },
   {
     "id": "cd_009",
     "subject": "Ancient History",
-    "dots": ["Panini", "Patanjali", "Ashtadhyayi", "Sanskrit grammar"],
+    "difficulty": "hard",
+    "dots": ["Heliodorus", "Besnagar", "Garuda pillar", "Bhagabhadra"],
     "options": [
-      "Foundational figures and texts of Sanskrit grammar",
-      "Compilers of the Vedas",
-      "Founders of Buddhist philosophy schools",
-      "Authors of the Puranas"
+      "Greek accounts of Mauryan Pataliputra",
+      "Evidence of early Bhagavata (Vasudeva) worship and Indo-Greek contact",
+      "Spread of Buddhism to Central Asia",
+      "Shaka satraps ruling western India"
     ],
-    "answer_index": 0,
-    "explanation": "Panini authored the Ashtadhyayi, the foundational text of Sanskrit grammar. Patanjali later wrote the Mahabhashya, a major commentary on it — together forming the backbone of classical Sanskrit grammar."
+    "answer_index": 1,
+    "explanation": "Heliodorus, a Greek ambassador sent by Indo-Greek king Antialcidas of Taxila to the Shunga king Bhagabhadra, erected the Garuda pillar at Besnagar (near Vidisha) dedicated to Vasudeva — showing both Indo-Greek diplomatic contact and a foreigner adopting the early Bhagavata cult."
   },
   {
     "id": "cd_010",
+    "subject": "Ancient History",
+    "difficulty": "hard",
+    "dots": ["Kanishka", "Kundalvana", "Vasumitra", "Sarvastivada"],
+    "options": [
+      "The Third Buddhist Council at Pataliputra",
+      "Origins of the Gandhara school of sculpture",
+      "The Fourth Buddhist Council in Kashmir",
+      "Compilation of the Pali Tipitaka in Sri Lanka"
+    ],
+    "answer_index": 2,
+    "explanation": "The Fourth Buddhist Council was convened under Kushan emperor Kanishka at Kundalvana in Kashmir, presided over by Vasumitra (with Ashvaghosha as deputy, per tradition); it compiled commentaries of the Sarvastivada school and is linked to the rise of Mahayana Buddhism."
+  },
+  {
+    "id": "cd_011",
+    "subject": "Ancient History",
+    "difficulty": "hard",
+    "dots": ["Makkhali Gosala", "Niyati", "Barabar caves", "Ashoka's grant"],
+    "options": [
+      "The Ajivika sect of the sixth century BCE",
+      "The Lokayata (Charvaka) materialist school",
+      "Early Jain monastic retreats",
+      "Tantric sects of the early medieval period"
+    ],
+    "answer_index": 0,
+    "explanation": "Makkhali Gosala founded the Ajivika sect, whose core doctrine was Niyati (absolute determinism or fate). Ashoka granted the rock-cut Barabar caves in Bihar to Ajivika monks — the caves' dedicatory inscriptions record this royal patronage."
+  },
+  {
+    "id": "cd_012",
+    "subject": "Ancient History",
+    "difficulty": "hard",
+    "dots": ["Gautamiputra Satakarni", "Nanaghat inscription", "Pratishthana", "Gathasaptasati"],
+    "options": [
+      "The Shaka Kshatrapas of Ujjain",
+      "The Vakataka dynasty of Vidarbha",
+      "The Kushan empire's southern expansion",
+      "The Satavahana dynasty of the Deccan"
+    ],
+    "answer_index": 3,
+    "explanation": "All relate to the Satavahanas: Gautamiputra Satakarni was their greatest ruler who defeated the Shakas, the Nanaghat inscription of queen Naganika records early Satavahana history, Pratishthana (Paithan) was their capital, and the Gathasaptasati is a Prakrit anthology attributed to Satavahana king Hala."
+  },
+  {
+    "id": "cd_013",
+    "subject": "Medieval History",
+    "difficulty": "easy",
+    "dots": ["Qutb-ud-din Aibak", "Iltutmish", "Razia Sultan", "Balban"],
+    "options": [
+      "Rulers of the Khalji dynasty",
+      "Rulers of the Mamluk (Slave) dynasty of Delhi",
+      "Governors of the Mughal Deccan",
+      "Sultans of the Bahmani kingdom"
+    ],
+    "answer_index": 1,
+    "explanation": "All four ruled in the Mamluk or Slave dynasty (1206–1290), the first dynasty of the Delhi Sultanate: Aibak founded it, Iltutmish consolidated it, Razia was the only woman to sit on the Delhi throne, and Balban was its last great sultan."
+  },
+  {
+    "id": "cd_014",
+    "subject": "Medieval History",
+    "difficulty": "easy",
+    "dots": ["Babur", "Humayun", "Akbar", "Jahangir"],
+    "options": [
+      "The first four Mughal emperors in succession",
+      "Rulers of the Lodi dynasty",
+      "Sultans who fought the Battles of Panipat",
+      "Patrons of the Deccani Sultanates"
+    ],
+    "answer_index": 0,
+    "explanation": "Babur founded the Mughal Empire after the First Battle of Panipat (1526), was succeeded by his son Humayun, then Humayun's son Akbar, and then Akbar's son Jahangir — the first four Mughal emperors in direct succession."
+  },
+  {
+    "id": "cd_015",
+    "subject": "Medieval History",
+    "difficulty": "easy",
+    "dots": ["Kabir", "Guru Nanak", "Ravidas", "Mirabai"],
+    "options": [
+      "Sufi saints of the Chishti order",
+      "Court poets of the Delhi Sultans",
+      "Saints of the medieval Bhakti movement",
+      "Founders of Vedanta schools"
+    ],
+    "answer_index": 2,
+    "explanation": "All four were Bhakti saints who preached devotion over ritual: Kabir with his nirguna verses, Guru Nanak who founded Sikhism, Ravidas the saint-poet of the leather-worker community, and Mirabai the Rajput princess devoted to Krishna."
+  },
+  {
+    "id": "cd_016",
+    "subject": "Medieval History",
+    "difficulty": "easy",
+    "dots": ["Krishnadevaraya", "Hampi", "Tuluva dynasty", "Amuktamalyada"],
+    "options": [
+      "The Bahmani Sultanate",
+      "The Vijayanagara Empire at its peak",
+      "The Hoysala kingdom",
+      "The Nayaka states of Madurai"
+    ],
+    "answer_index": 1,
+    "explanation": "Krishnadevaraya, the greatest ruler of the Tuluva dynasty, ruled the Vijayanagara Empire from its capital Hampi and authored the Telugu work Amuktamalyada on statecraft."
+  },
+  {
+    "id": "cd_017",
+    "subject": "Medieval History",
+    "difficulty": "medium",
+    "dots": ["Ibn Battuta", "Al-Biruni", "Abdur Razzaq", "Domingo Paes"],
+    "options": [
+      "Sufi saints of the Bhakti movement",
+      "Founders of regional Sultanates",
+      "Mughal court historians",
+      "Foreign travellers whose writings describe medieval Indian courts"
+    ],
+    "answer_index": 3,
+    "explanation": "Ibn Battuta (Morocco) visited Delhi Sultanate India in the 14th century, and Al-Biruni accompanied Mahmud of Ghazni's raids in the 11th century. Abdur Razzaq (Persia) and Domingo Paes (Portugal) separately left detailed accounts of the Vijayanagara Empire."
+  },
+  {
+    "id": "cd_018",
+    "subject": "Medieval History",
+    "difficulty": "medium",
+    "dots": ["Alauddin Khalji", "Shahna-i-Mandi", "Diwan-i-Riyasat", "Price fixation"],
+    "options": [
+      "Market control and price regulation in the Delhi Sultanate",
+      "Mughal customs administration at ports",
+      "Land revenue settlement under Sher Shah",
+      "Trade guilds of the Chola period"
+    ],
+    "answer_index": 0,
+    "explanation": "Alauddin Khalji introduced strict market reforms to maintain a large army cheaply: prices of essentials were fixed by the state, the Shahna-i-Mandi superintended the grain market, and the Diwan-i-Riyasat oversaw the commerce ministry enforcing the regulations."
+  },
+  {
+    "id": "cd_019",
+    "subject": "Medieval History",
+    "difficulty": "medium",
+    "dots": ["Token currency", "Daulatabad", "Qarachil expedition", "Khurasan project"],
+    "options": [
+      "Achievements of Firoz Shah Tughlaq",
+      "Conquests of Alauddin Khalji",
+      "Ambitious but failed schemes of Muhammad bin Tughlaq",
+      "Reforms of Sher Shah Suri"
+    ],
+    "answer_index": 2,
+    "explanation": "All four were ambitious projects of Muhammad bin Tughlaq that failed: the bronze/copper token currency was widely forged, the capital transfer to Daulatabad caused immense suffering and was reversed, and the Qarachil (Himalayan) expedition and planned Khurasan invasion both collapsed at great cost."
+  },
+  {
+    "id": "cd_020",
+    "subject": "Medieval History",
+    "difficulty": "medium",
+    "dots": ["Mansab", "Zat", "Sawar", "Jagir"],
+    "options": [
+      "Iqta administration of the Delhi Sultanate",
+      "The Mughal mansabdari system of ranks and assignments",
+      "Maratha revenue collection rights",
+      "Vijayanagara's nayankara system"
+    ],
+    "answer_index": 1,
+    "explanation": "Under the Mughal mansabdari system institutionalised by Akbar, every officer held a mansab (rank) with a zat number (personal status and pay) and a sawar number (cavalry to be maintained), usually paid through the assignment of a jagir's land revenue."
+  },
+  {
+    "id": "cd_021",
+    "subject": "Medieval History",
+    "difficulty": "hard",
+    "dots": ["Uttaramerur", "Kudavolai", "Sabha", "Variyam"],
+    "options": [
+      "Trade regulations of the Chera ports",
+      "Temple administration under the Pallavas",
+      "Land grants to Vedic scholars in the Deccan",
+      "Village self-government under the Cholas"
+    ],
+    "answer_index": 3,
+    "explanation": "The Uttaramerur inscriptions (time of Parantaka I Chola) describe village self-government: the sabha was the assembly of the brahmadeya village, its executive committees were called variyams, and members were chosen by the kudavolai (pot-ticket) lottery system with strict eligibility rules."
+  },
+  {
+    "id": "cd_022",
+    "subject": "Medieval History",
+    "difficulty": "hard",
+    "dots": ["Iqta", "Muqti", "Kharaj", "Fawazil"],
+    "options": [
+      "Revenue assignment system of the Delhi Sultanate",
+      "Mughal ranking of nobles",
+      "Ottoman-inspired coinage reforms",
+      "Judicial offices under the Sultanate"
+    ],
+    "answer_index": 0,
+    "explanation": "In the Delhi Sultanate's iqta system, territories (iqtas) were assigned to officers called muqtis who collected the land revenue (kharaj), maintained troops from it, and remitted the surplus (fawazil) to the Sultan's treasury."
+  },
+  {
+    "id": "cd_023",
+    "subject": "Medieval History",
+    "difficulty": "hard",
+    "dots": ["Sijda", "Paibos", "Nauroz ceremony", "Zil-i-Ilahi"],
+    "options": [
+      "Akbar's syncretic court rituals",
+      "Balban's theory of kingship and court ceremonial",
+      "Sufi initiation practices",
+      "Coronation rites of the Vijayanagara rayas"
+    ],
+    "answer_index": 1,
+    "explanation": "Balban exalted the monarchy to overawe the nobility: he introduced sijda (prostration) and paibos (kissing the sultan's feet), celebrated the Persian Nauroz festival with pomp, and styled the sultan Zil-i-Ilahi, the 'Shadow of God' on earth."
+  },
+  {
+    "id": "cd_024",
+    "subject": "Medieval History",
+    "difficulty": "hard",
+    "dots": ["Rajendra I", "Gangaikonda Cholapuram", "Kadaram campaign", "Srivijaya"],
+    "options": [
+      "Pallava maritime trade with China",
+      "Pandya conquests in Sri Lanka",
+      "Chola naval expeditions across the Bay of Bengal",
+      "Arab trade settlements on the Malabar coast"
+    ],
+    "answer_index": 2,
+    "explanation": "Rajendra Chola I sent a famous naval expedition (c. 1025 CE) against the Srivijaya empire of Southeast Asia, capturing Kadaram (Kedah) — the 'Kadaram campaign'. He commemorated his victories by building a new capital, Gangaikonda Cholapuram."
+  },
+  {
+    "id": "cd_025",
+    "subject": "Modern History",
+    "difficulty": "easy",
+    "dots": ["Rowlatt Act", "Jallianwala Bagh", "Khilafat Movement", "Non-Cooperation Movement"],
+    "options": [
+      "Causes of the Partition of Bengal",
+      "Chain of events leading to the Non-Cooperation Movement",
+      "Formation of the Muslim League",
+      "Events of the Quit India Movement"
+    ],
+    "answer_index": 1,
+    "explanation": "The Rowlatt Act (1919) triggered protests met with the Jallianwala Bagh massacre. That outrage, combined with Muslim anger over the Khilafat issue, gave Gandhi the platform to launch the Non-Cooperation Movement in 1920."
+  },
+  {
+    "id": "cd_026",
+    "subject": "Modern History",
+    "difficulty": "easy",
+    "dots": ["Dandi March", "Salt Satyagraha", "Gandhi-Irwin Pact", "Second Round Table Conference"],
+    "options": [
+      "The Non-Cooperation Movement of 1920-22",
+      "The Quit India Movement of 1942",
+      "The Civil Disobedience Movement and its aftermath",
+      "The Swadeshi Movement of 1905"
+    ],
+    "answer_index": 2,
+    "explanation": "Gandhi launched the Civil Disobedience Movement with the Dandi March (March 1930), breaking the salt law in the Salt Satyagraha. The Gandhi-Irwin Pact (March 1931) suspended the movement, and Gandhi then attended the Second Round Table Conference in London."
+  },
+  {
+    "id": "cd_027",
+    "subject": "Modern History",
+    "difficulty": "easy",
+    "dots": ["Raja Ram Mohan Roy", "Brahmo Samaj", "Abolition of Sati", "Precepts of Jesus"],
+    "options": [
+      "Pioneering socio-religious reform in early 19th-century Bengal",
+      "The Arya Samaj's shuddhi movement",
+      "Christian missionary activity in Madras",
+      "The Theosophical Society's work in India"
+    ],
+    "answer_index": 0,
+    "explanation": "Raja Ram Mohan Roy founded the Brahmo Samaj (1828) to reform Hindu society, campaigned successfully for the abolition of Sati (Regulation of 1829 under Bentinck), and wrote 'The Precepts of Jesus' reflecting his rationalist engagement with Christianity."
+  },
+  {
+    "id": "cd_028",
+    "subject": "Modern History",
+    "difficulty": "easy",
+    "dots": ["Bhagat Singh", "Chandra Shekhar Azad", "HSRA", "Central Assembly bomb"],
+    "options": [
+      "The Ghadar movement in North America",
+      "The revolutionary movement of the late 1920s",
+      "The Indian National Army's campaigns",
+      "The Home Rule Leagues"
+    ],
+    "answer_index": 1,
+    "explanation": "Bhagat Singh and Chandra Shekhar Azad were leading members of the Hindustan Socialist Republican Association (HSRA). Bhagat Singh and Batukeshwar Dutt threw non-lethal bombs in the Central Legislative Assembly in April 1929 to 'make the deaf hear'."
+  },
+  {
+    "id": "cd_029",
+    "subject": "Modern History",
+    "difficulty": "medium",
+    "dots": ["Bengal Gazette", "James Augustus Hicky", "Vernacular Press Act", "Amrita Bazar Patrika"],
+    "options": [
+      "Growth of English education in Bengal",
+      "Christian missionary printing presses",
+      "The history of the press under colonial rule",
+      "Literary societies of the Bengal Renaissance"
+    ],
+    "answer_index": 2,
+    "explanation": "Hicky's Bengal Gazette (1780) was India's first newspaper. The Vernacular Press Act (1878, under Lytton) gagged Indian-language papers, and the Amrita Bazar Patrika famously converted overnight into an English paper to escape the Act — all landmarks in colonial press history."
+  },
+  {
+    "id": "cd_030",
+    "subject": "Modern History",
+    "difficulty": "medium",
+    "dots": ["Santhal Hul", "Birsa Munda", "Ulgulan", "Kol uprising"],
+    "options": [
+      "Peasant movements led by the Congress",
+      "Tribal revolts against colonial rule and outsiders",
+      "Sepoy mutinies before 1857",
+      "Forest satyagrahas of the 1930s"
+    ],
+    "answer_index": 1,
+    "explanation": "All were tribal uprisings in the Chotanagpur-Bengal belt: the Kol uprising (1831-32) and the Santhal Hul (1855-56) rose against moneylenders, landlords and colonial revenue demands, while Birsa Munda led the Munda Ulgulan ('Great Tumult') of 1899-1900."
+  },
+  {
+    "id": "cd_031",
+    "subject": "Modern History",
+    "difficulty": "medium",
+    "dots": ["August Offer", "Cripps Mission", "C. R. Formula", "Cabinet Mission"],
+    "options": [
+      "British reforms after the 1857 revolt",
+      "Schemes for provincial autonomy in the 1920s",
+      "Round Table Conference proposals",
+      "Constitutional proposals of the 1940s on India's future"
+    ],
+    "answer_index": 3,
+    "explanation": "All were 1940s attempts to settle India's constitutional future: the August Offer (1940) promised eventual Dominion status, the Cripps Mission (1942) offered post-war self-government, the C. R. (Rajagopalachari) Formula (1944) sought Congress-League agreement on Pakistan, and the Cabinet Mission (1946) proposed a three-tier union."
+  },
+  {
+    "id": "cd_032",
+    "subject": "Modern History",
+    "difficulty": "medium",
+    "dots": ["Surat Split", "Moderates", "Extremists", "Lucknow Session 1916"],
+    "options": [
+      "The split and reunion of the Indian National Congress",
+      "The birth of the Muslim League",
+      "Formation of the Swaraj Party",
+      "The rise of the Justice Party in Madras"
+    ],
+    "answer_index": 0,
+    "explanation": "The Congress split into Moderates and Extremists at its Surat session (1907) over methods and the goal of swaraj. The two wings reunited at the Lucknow session of 1916, the same session that produced the Congress-League Lucknow Pact."
+  },
+  {
+    "id": "cd_033",
+    "subject": "Modern History",
+    "difficulty": "hard",
+    "dots": ["Haji Shariatullah", "Dudu Mian", "Titu Mir", "Tariqah-i-Muhammadiya"],
+    "options": [
+      "Founders of the Aligarh movement",
+      "19th-century Islamic revivalist and peasant movements in Bengal",
+      "Leaders of the Khilafat agitation",
+      "Sufi reformers of the Deccan"
+    ],
+    "answer_index": 1,
+    "explanation": "Haji Shariatullah founded the Faraizi movement in East Bengal, continued militantly by his son Dudu Mian, mobilising peasants against zamindars and indigo planters. Titu Mir, linked to the Tariqah-i-Muhammadiya revivalist current, led a similar peasant resistance near Calcutta, famously building a bamboo fort at Narkelberia."
+  },
+  {
+    "id": "cd_034",
+    "subject": "Modern History",
+    "difficulty": "hard",
+    "dots": ["Vaikom Satyagraha", "Guruvayur Satyagraha", "K. Kelappan", "Temple Entry Proclamation"],
+    "options": [
+      "Anti-untouchability and temple entry movements in Kerala",
+      "The Self-Respect movement in Tamil Nadu",
+      "The Ezhava trade union movement",
+      "Land reform agitations in Travancore"
+    ],
+    "answer_index": 0,
+    "explanation": "The Vaikom Satyagraha (1924-25) demanded that avarnas use roads around the Vaikom temple; the Guruvayur Satyagraha (1931-32), led by K. Kelappan, demanded temple entry itself. The campaign culminated in the Travancore Temple Entry Proclamation of 1936, opening state temples to all Hindus."
+  },
+  {
+    "id": "cd_035",
+    "subject": "Modern History",
+    "difficulty": "hard",
+    "dots": ["Paramahansa Mandali", "Atmaram Pandurang", "Prarthana Samaj", "M. G. Ranade"],
+    "options": [
+      "The non-Brahmin movement of Jyotiba Phule",
+      "Reform of Indian universities",
+      "Religious and social reform in western India",
+      "The cooperative movement in Bombay Presidency"
+    ],
+    "answer_index": 2,
+    "explanation": "The secretive Paramahansa Mandali (1849) was an early rationalist reform body in Bombay. Atmaram Pandurang founded the Prarthana Samaj (1867) in the same tradition, and M. G. Ranade became its guiding force, channelling it into widow remarriage, women's education and anti-caste work in western India."
+  },
+  {
+    "id": "cd_036",
+    "subject": "Modern History",
+    "difficulty": "hard",
+    "dots": ["Baba Ramchandra", "Awadh Kisan Sabha", "Eka movement", "Madari Pasi"],
+    "options": [
+      "The Moplah uprising in Malabar",
+      "Peasant movements in Awadh in the early 1920s",
+      "The Bardoli Satyagraha",
+      "The Tebhaga movement in Bengal"
+    ],
+    "answer_index": 1,
+    "explanation": "Baba Ramchandra organised tenants against taluqdar oppression through the Awadh Kisan Sabha (1920). As that agitation was suppressed, the Eka ('unity') movement of 1921-22 arose in northern Awadh districts, with grassroots leaders like Madari Pasi carrying it beyond Congress control."
+  },
+  {
+    "id": "cd_037",
+    "subject": "Art and Culture",
+    "difficulty": "easy",
+    "dots": ["Sarnath", "Sanchi", "Amaravati", "Bharhut"],
+    "options": [
+      "Sites of the Indus Valley Civilisation",
+      "Centres of Mughal miniature painting",
+      "Ancient Buddhist stupa sites known for sculptural art",
+      "UNESCO-listed hill forts of Rajasthan"
+    ],
+    "answer_index": 2,
+    "explanation": "Sarnath, Sanchi, Amaravati and Bharhut are all major Buddhist stupa sites, each known for the sculptural railings and gateways depicting Jataka tales that surround the stupas."
+  },
+  {
+    "id": "cd_038",
+    "subject": "Art and Culture",
+    "difficulty": "easy",
+    "dots": ["Bharatanatyam", "Kathak", "Odissi", "Kathakali"],
+    "options": [
+      "Folk dances of central India",
+      "Classical dance forms recognised by the Sangeet Natak Akademi",
+      "Martial art traditions of India",
+      "Temple rituals of South India"
+    ],
+    "answer_index": 1,
+    "explanation": "All four are recognised classical dances of India: Bharatanatyam of Tamil Nadu, Kathak of North India, Odissi of Odisha, and Kathakali, the dance-drama of Kerala."
+  },
+  {
+    "id": "cd_039",
+    "subject": "Art and Culture",
+    "difficulty": "easy",
+    "dots": ["Ajanta", "Ellora", "Elephanta", "Badami"],
+    "options": [
+      "Rock-cut cave complexes of ancient and early medieval India",
+      "Mughal garden tombs",
+      "Megalithic burial sites",
+      "Colonial-era hill stations"
+    ],
+    "answer_index": 0,
+    "explanation": "All are famous rock-cut cave complexes: Ajanta's painted Buddhist caves, Ellora's Buddhist-Hindu-Jain caves including the Kailasa temple, Elephanta's Shaivite caves near Mumbai, and the Chalukyan cave temples of Badami."
+  },
+  {
+    "id": "cd_040",
+    "subject": "Art and Culture",
+    "difficulty": "easy",
+    "dots": ["Sitar", "Sarod", "Veena", "Santoor"],
+    "options": [
+      "Percussion instruments of folk music",
+      "Wind instruments used in temple music",
+      "Instruments invented by Amir Khusrau",
+      "Stringed instruments of Indian classical music"
+    ],
+    "answer_index": 3,
+    "explanation": "All four are stringed instruments of Indian classical music: the sitar and sarod are mainstays of Hindustani music, the veena is the classic instrument of the Carnatic tradition, and the santoor is a hammered string instrument from Kashmir brought to the classical stage."
+  },
+  {
+    "id": "cd_041",
+    "subject": "Art and Culture",
+    "difficulty": "medium",
+    "dots": ["Nagara", "Dravida", "Vesara", "Shikhara"],
+    "options": [
+      "Schools of classical Indian sculpture",
+      "Styles and elements of Hindu temple architecture",
+      "Types of Buddhist monastic buildings",
+      "Fort architecture of the Deccan sultanates"
+    ],
+    "answer_index": 1,
+    "explanation": "Nagara (northern), Dravida (southern) and Vesara (hybrid Deccan) are the three broad styles of Hindu temple architecture described in the shilpa texts, while the shikhara is the tower rising over the sanctum that visually defines these styles."
+  },
+  {
+    "id": "cd_042",
+    "subject": "Art and Culture",
+    "difficulty": "medium",
+    "dots": ["Madhubani", "Warli", "Pattachitra", "Kalamkari"],
+    "options": [
+      "Mughal miniature painting schools",
+      "Mural traditions of Kerala temples",
+      "Regional folk and traditional painting styles of India",
+      "Company School paintings for European patrons"
+    ],
+    "answer_index": 2,
+    "explanation": "Each is a regional folk or traditional painting style: Madhubani from Mithila (Bihar), Warli from tribal Maharashtra, Pattachitra the cloth-scroll painting of Odisha, and Kalamkari the pen-and-dye textile art of Andhra Pradesh."
+  },
+  {
+    "id": "cd_043",
+    "subject": "Art and Culture",
+    "difficulty": "medium",
+    "dots": ["Gwalior", "Kirana", "Agra", "Patiala"],
+    "options": [
+      "Centres of Mughal provincial architecture",
+      "Princely states that patronised miniature painting",
+      "Sites of famous medieval forts",
+      "Gharanas of Hindustani khayal music"
+    ],
+    "answer_index": 3,
+    "explanation": "All four are gharanas (stylistic lineages) of Hindustani khayal vocal music: Gwalior is the oldest, Kirana is famed for slow melodic elaboration (Bhimsen Joshi), Agra for its robust dhrupad-influenced style, and Patiala for ornamented virtuosity (Bade Ghulam Ali Khan)."
+  },
+  {
+    "id": "cd_044",
+    "subject": "Art and Culture",
+    "difficulty": "medium",
+    "dots": ["Kutiyattam", "Ramlila", "Vedic chanting", "Kalbelia"],
+    "options": [
+      "Elements on UNESCO's Intangible Cultural Heritage list from India",
+      "Performing arts patronised by the Vijayanagara court",
+      "Rituals of the Kumbh Mela",
+      "Dance forms of the Northeast"
+    ],
+    "answer_index": 0,
+    "explanation": "All are inscribed on UNESCO's Representative List of Intangible Cultural Heritage: Kutiyattam Sanskrit theatre of Kerala, the Ramlila performance tradition, the tradition of Vedic chanting, and the Kalbelia folk songs and dances of Rajasthan."
+  },
+  {
+    "id": "cd_045",
+    "subject": "Art and Culture",
+    "difficulty": "hard",
+    "dots": ["Grey schist", "Hellenistic drapery", "Kushan patronage", "Wavy-haired Buddha"],
+    "options": [
+      "The Mathura school of sculpture",
+      "The Gandhara school of art",
+      "The Amaravati school of the Deccan",
+      "Gupta-era terracotta art"
+    ],
+    "answer_index": 1,
+    "explanation": "The Gandhara school flourished under Kushan patronage in the northwest: its sculptors carved mainly in grey-blue schist, rendered robes with realistic Hellenistic (Greco-Roman) drapery folds, and gave the Buddha wavy hair and Apollo-like features — unlike the indigenous red-sandstone Mathura school."
+  },
+  {
+    "id": "cd_046",
+    "subject": "Art and Culture",
+    "difficulty": "hard",
+    "dots": ["Yakshagana", "Theyyam", "Bhaona", "Tamasha"],
+    "options": [
+      "Classical dance-dramas codified in the Natyashastra",
+      "Puppet theatre traditions",
+      "Traditional folk theatre and ritual performance forms of different states",
+      "Harvest festival dances of the Northeast"
+    ],
+    "answer_index": 2,
+    "explanation": "Each is a regional folk performance form: Yakshagana is Karnataka's costumed dance-drama, Theyyam is the ritual possession performance of north Kerala, Bhaona is the Assamese devotional theatre created by Srimanta Sankardeva, and Tamasha is Maharashtra's folk theatre with song and dance."
+  },
+  {
+    "id": "cd_047",
+    "subject": "Art and Culture",
+    "difficulty": "hard",
+    "dots": ["Bidriware", "Dhokra", "Thatheras of Jandiala Guru", "Pembarthi"],
+    "options": [
+      "Traditional metal craft traditions of India",
+      "Handloom weaving clusters",
+      "Stone-carving schools of the Deccan",
+      "Jewellery styles of royal courts"
+    ],
+    "answer_index": 0,
+    "explanation": "All are metal crafts: Bidriware of Bidar inlays silver on a blackened zinc-copper alloy, Dhokra is the tribal lost-wax brass casting of central-eastern India, the Thatheras of Jandiala Guru (Punjab) hand-beat brass and copper utensils (UNESCO-listed craft), and Pembarthi in Telangana is famed for brass sheet-metal work."
+  },
+  {
+    "id": "cd_048",
+    "subject": "Art and Culture",
+    "difficulty": "hard",
+    "dots": ["Lost-wax technique", "Panchaloha", "Nataraja", "Thanjavur region"],
+    "options": [
+      "Pallava rock-cut sculpture at Mahabalipuram",
+      "Hoysala temple carving in soapstone",
+      "Chola bronze casting tradition",
+      "Mauryan polished stone pillars"
+    ],
+    "answer_index": 2,
+    "explanation": "The Chola bronzes of the Thanjavur (Kaveri delta) region were cast by the lost-wax (cire perdue) technique, traditionally in panchaloha (five-metal alloy). Their most celebrated icon is the Nataraja — Shiva as cosmic dancer within a ring of flames."
+  },
+  {
+    "id": "cd_049",
     "subject": "Geography",
+    "difficulty": "easy",
+    "dots": ["Nanda Devi", "Kanchenjunga", "Nanga Parbat", "Annapurna"],
+    "options": [
+      "Volcanic peaks of the Deccan Plateau",
+      "Peaks of the Aravalli Range",
+      "Peaks along the Western Ghats",
+      "Among the highest peaks of the Himalayan range"
+    ],
+    "answer_index": 3,
+    "explanation": "All four are major Himalayan peaks exceeding 7,800 metres, among the highest in the world — spanning India, Nepal and Pakistan-administered Kashmir."
+  },
+  {
+    "id": "cd_050",
+    "subject": "Geography",
+    "difficulty": "easy",
+    "dots": ["Yamuna", "Ghaghara", "Gandak", "Kosi"],
+    "options": [
+      "Tributaries of the Ganga",
+      "Rivers of the Brahmaputra system",
+      "Peninsular rivers flowing west",
+      "Rivers rising in the Aravallis"
+    ],
+    "answer_index": 0,
+    "explanation": "All four are tributaries of the Ganga: the Yamuna joins it at Prayagraj from the right, while the Ghaghara, Gandak and Kosi descend from the Himalaya in Nepal and join from the left across the northern plains."
+  },
+  {
+    "id": "cd_051",
+    "subject": "Geography",
+    "difficulty": "easy",
+    "dots": ["Palk Strait", "Gulf of Mannar", "Adam's Bridge", "Rameswaram"],
+    "options": [
+      "Features of the Andaman Sea",
+      "Features of the sea between India and Sri Lanka",
+      "Lagoons of the Kerala coast",
+      "Coral atolls of Lakshadweep"
+    ],
+    "answer_index": 1,
+    "explanation": "All lie in the narrow seas separating India and Sri Lanka: the Palk Strait to the north and Gulf of Mannar to the south are linked by the chain of shoals called Adam's Bridge (Ram Setu), which begins near the Indian island town of Rameswaram."
+  },
+  {
+    "id": "cd_052",
+    "subject": "Geography",
+    "difficulty": "easy",
+    "dots": ["Visakhapatnam", "Paradip", "Kochi", "Mormugao"],
+    "options": [
+      "Cities on the Golden Quadrilateral",
+      "Naval command headquarters",
+      "State capitals on the coast",
+      "Major seaports of India"
+    ],
+    "answer_index": 3,
+    "explanation": "All four are major ports of India: Visakhapatnam (Andhra Pradesh) and Paradip (Odisha) on the east coast, and Kochi (Kerala) and Mormugao (Goa) on the west coast."
+  },
+  {
+    "id": "cd_053",
+    "subject": "Geography",
+    "difficulty": "medium",
     "dots": ["Bhakra Nangal", "Hirakud", "Damodar Valley Corporation", "Tungabhadra"],
     "options": [
-      "Major multipurpose river valley projects of independent India",
       "Coastal ports developed under British rule",
+      "Major multipurpose river valley projects of independent India",
       "Sites associated with the Green Revolution",
       "Offshore oil exploration projects"
     ],
-    "answer_index": 0,
+    "answer_index": 1,
     "explanation": "Bhakra Nangal (Sutlej), Hirakud (Mahanadi), the Damodar Valley Corporation (Damodar) and Tungabhadra Dam are flagship multipurpose river valley projects launched in the early decades after independence."
+  },
+  {
+    "id": "cd_054",
+    "subject": "Geography",
+    "difficulty": "medium",
+    "dots": ["Regur", "Deccan Trap basalt", "Cotton cultivation", "Self-ploughing cracks"],
+    "options": [
+      "Laterite soils of the Western Ghats",
+      "Alluvial soils of the northern plains",
+      "Black soils of the Deccan Plateau",
+      "Red soils of eastern India"
+    ],
+    "answer_index": 2,
+    "explanation": "Black soil, locally called regur, forms from the weathering of Deccan Trap basalt. It is ideal for cotton (hence 'black cotton soil') and develops deep cracks in summer that aerate it — the 'self-ploughing' character — while retaining moisture well."
+  },
+  {
+    "id": "cd_055",
+    "subject": "Geography",
+    "difficulty": "medium",
+    "dots": ["Jog Falls", "Dhuandhar", "Shivanasamudra", "Hundru"],
+    "options": [
+      "Waterfalls and the rivers that form them",
+      "Hot springs of peninsular India",
+      "Gorges of the Himalayan rivers",
+      "Hydel projects on the Godavari"
+    ],
+    "answer_index": 0,
+    "explanation": "Each is a famous waterfall on a peninsular river: Jog Falls on the Sharavathi (Karnataka), Dhuandhar on the Narmada at Bhedaghat (Madhya Pradesh), Shivanasamudra on the Kaveri (Karnataka), and Hundru on the Subarnarekha (Jharkhand)."
+  },
+  {
+    "id": "cd_056",
+    "subject": "Geography",
+    "difficulty": "medium",
+    "dots": ["Zoji La", "Shipki La", "Nathu La", "Jelep La"],
+    "options": [
+      "Glaciers of the Karakoram",
+      "Mountain passes of the Himalaya",
+      "Peaks of the Trans-Himalaya",
+      "River gorges of Arunachal Pradesh"
+    ],
+    "answer_index": 1,
+    "explanation": "All are Himalayan passes: Zoji La links Srinagar with Ladakh, Shipki La in Himachal Pradesh is where the Sutlej enters India from Tibet, and Nathu La and Jelep La in Sikkim connect India with Tibet on old trade routes."
+  },
+  {
+    "id": "cd_057",
+    "subject": "Geography",
+    "difficulty": "hard",
+    "dots": ["Ten Degree Channel", "Duncan Passage", "Coco Channel", "Barren Island"],
+    "options": [
+      "Features of the Lakshadweep archipelago",
+      "Straits of the Malacca region",
+      "Marine features of the Andaman and Nicobar Islands",
+      "Channels of the Sundarbans delta"
+    ],
+    "answer_index": 2,
+    "explanation": "All belong to the Andaman and Nicobar region: the Ten Degree Channel separates the Andamans from the Nicobars, the Duncan Passage lies between South Andaman and Little Andaman, the Coco Channel separates North Andaman from Myanmar's Coco Islands, and Barren Island is India's only active volcano."
+  },
+  {
+    "id": "cd_058",
+    "subject": "Geography",
+    "difficulty": "hard",
+    "dots": ["Karewa", "Lacustrine deposits", "Saffron cultivation", "Kashmir Valley"],
+    "options": [
+      "Terraced plateau deposits of an ancient lake bed",
+      "Glacial moraines of the Pir Panjal",
+      "Alluvial fans of the Jhelum",
+      "Loess deposits carried by wind"
+    ],
+    "answer_index": 0,
+    "explanation": "Karewas are flat-topped terraces of lacustrine (lake-bed) deposits in the Kashmir Valley, left behind by a Pleistocene lake between the Pir Panjal and the Greater Himalaya. Their fine soils are famous for saffron cultivation, especially around Pampore."
+  },
+  {
+    "id": "cd_059",
+    "subject": "Geography",
+    "difficulty": "hard",
+    "dots": ["Benguela", "Humboldt", "Canary", "California"],
+    "options": [
+      "Warm currents of the western ocean margins",
+      "Cold currents along the eastern margins of oceans",
+      "Currents of the Indian Ocean gyre",
+      "Currents responsible for El Nino"
+    ],
+    "answer_index": 1,
+    "explanation": "All four are cold currents flowing along the eastern boundaries of ocean basins: the Benguela off southwestern Africa, the Humboldt (Peru) off western South America, the Canary off northwestern Africa, and the California current off western North America. They cool coasts and create arid conditions and rich fisheries."
+  },
+  {
+    "id": "cd_060",
+    "subject": "Geography",
+    "difficulty": "hard",
+    "dots": ["Jaduguda", "Tummalapalle", "Domiasiat", "Gogi"],
+    "options": [
+      "Coalfields of the Damodar valley",
+      "Iron ore belts of Odisha",
+      "Bauxite plateaus of central India",
+      "Uranium deposits of India"
+    ],
+    "answer_index": 3,
+    "explanation": "All are uranium sites: Jaduguda in Jharkhand hosts India's oldest uranium mine, Tummalapalle in Andhra Pradesh holds one of the largest reserves, Domiasiat in Meghalaya has significant sandstone-hosted deposits, and Gogi in Karnataka is another identified uranium deposit."
+  },
+  {
+    "id": "cd_061",
+    "subject": "Economy",
+    "difficulty": "easy",
+    "dots": ["NABARD", "RBI", "SEBI", "IRDAI"],
+    "options": [
+      "Public sector banks nationalised in 1969",
+      "Institutions created under the Five-Year Plans",
+      "Regulatory bodies overseeing India's financial sector",
+      "Bodies responsible for implementing GST"
+    ],
+    "answer_index": 2,
+    "explanation": "NABARD (rural credit), RBI (banking and monetary policy), SEBI (securities markets) and IRDAI (insurance) are the key sectoral regulators of India's financial system."
+  },
+  {
+    "id": "cd_062",
+    "subject": "Economy",
+    "difficulty": "easy",
+    "dots": ["Repo rate", "Reverse repo rate", "CRR", "SLR"],
+    "options": [
+      "Instruments of monetary policy used by the RBI",
+      "Components of the Union Budget",
+      "Direct taxes levied by the Centre",
+      "Measures of the fiscal deficit"
+    ],
+    "answer_index": 0,
+    "explanation": "All are RBI monetary policy instruments: the repo rate is the rate at which banks borrow from the RBI, the reverse repo is the rate at which they park funds with it, while the Cash Reserve Ratio (CRR) and Statutory Liquidity Ratio (SLR) are reserve requirements banks must maintain."
+  },
+  {
+    "id": "cd_063",
+    "subject": "Economy",
+    "difficulty": "easy",
+    "dots": ["GDP", "GNP", "NDP", "NNP"],
+    "options": [
+      "Indices of stock market performance",
+      "Aggregate measures of national income",
+      "Indicators of human development",
+      "Measures of money supply"
+    ],
+    "answer_index": 1,
+    "explanation": "All are national income aggregates: GDP measures output within the country's borders, GNP adds net factor income from abroad, and NDP and NNP are the corresponding 'net' measures after subtracting depreciation of capital."
+  },
+  {
+    "id": "cd_064",
+    "subject": "Economy",
+    "difficulty": "easy",
+    "dots": ["Fiscal deficit", "Revenue deficit", "Primary deficit", "FRBM Act"],
+    "options": [
+      "Concepts of India's external debt",
+      "Instruments of trade policy",
+      "Government deficits and the framework for fiscal discipline",
+      "Components of the current account"
+    ],
+    "answer_index": 2,
+    "explanation": "Fiscal deficit is total borrowing requirement, revenue deficit is the gap on the revenue account, and primary deficit is the fiscal deficit minus interest payments. The FRBM Act, 2003 sets targets to keep these deficits within limits, anchoring fiscal discipline."
+  },
+  {
+    "id": "cd_065",
+    "subject": "Economy",
+    "difficulty": "medium",
+    "dots": ["MSP", "CACP", "FCI procurement", "Buffer stock"],
+    "options": [
+      "India's foodgrain price support and food security system",
+      "Regulation of agricultural exports",
+      "The crop insurance framework",
+      "Contract farming arrangements"
+    ],
+    "answer_index": 0,
+    "explanation": "The Commission for Agricultural Costs and Prices (CACP) recommends the Minimum Support Price (MSP), at which the Food Corporation of India (FCI) procures grain from farmers; the procured grain builds the buffer stock used for food security and price stabilisation."
+  },
+  {
+    "id": "cd_066",
+    "subject": "Economy",
+    "difficulty": "medium",
+    "dots": ["WPI", "CPI", "Headline inflation", "Core inflation"],
+    "options": [
+      "Measures of industrial output",
+      "Concepts and indices used to measure inflation",
+      "Indicators of rural wages",
+      "Components of the GDP deflator only"
+    ],
+    "answer_index": 1,
+    "explanation": "The Wholesale Price Index (WPI) and Consumer Price Index (CPI) are India's main inflation indices; headline inflation is the overall rate (RBI targets headline CPI), while core inflation strips out volatile food and fuel prices to show the underlying trend."
+  },
+  {
+    "id": "cd_067",
+    "subject": "Economy",
+    "difficulty": "medium",
+    "dots": ["Bretton Woods", "Quota system", "Special Drawing Rights", "Balance of payments support"],
+    "options": [
+      "The World Trade Organization",
+      "The Asian Development Bank",
+      "The World Bank's lending arms",
+      "The International Monetary Fund"
+    ],
+    "answer_index": 3,
+    "explanation": "The IMF was created at the Bretton Woods conference (1944); member countries' quotas determine their contributions and voting power, the SDR is the IMF's international reserve asset, and lending for balance of payments support is the IMF's core function."
+  },
+  {
+    "id": "cd_068",
+    "subject": "Economy",
+    "difficulty": "medium",
+    "dots": ["Basel III", "Capital adequacy ratio", "NPA", "Prompt Corrective Action"],
+    "options": [
+      "Regulation of banking sector health and stability",
+      "Rules governing stock exchanges",
+      "The insolvency process for companies",
+      "Norms for microfinance lending"
+    ],
+    "answer_index": 0,
+    "explanation": "All relate to keeping banks sound: Basel III is the international framework prescribing capital adequacy (CRAR) and liquidity norms, Non-Performing Assets (NPAs) measure bad loans, and the RBI's Prompt Corrective Action framework restricts weak banks whose capital or NPA levels breach thresholds."
+  },
+  {
+    "id": "cd_069",
+    "subject": "Economy",
+    "difficulty": "hard",
+    "dots": ["Phillips curve", "Okun's law", "Stagflation", "NAIRU"],
+    "options": [
+      "Theories of international trade",
+      "Relationships between inflation, unemployment and output",
+      "Models of exchange rate determination",
+      "Concepts in development economics"
+    ],
+    "answer_index": 1,
+    "explanation": "All concern the inflation-unemployment-output nexus: the Phillips curve posits an inverse inflation-unemployment trade-off, Okun's law links unemployment to output loss, stagflation is the breakdown case where high inflation and high unemployment coexist, and NAIRU is the unemployment rate at which inflation neither accelerates nor decelerates."
+  },
+  {
+    "id": "cd_070",
+    "subject": "Economy",
+    "difficulty": "hard",
+    "dots": ["Participatory notes", "FPI", "Round tripping", "Mauritius route"],
+    "options": [
+      "Mechanisms of external commercial borrowing",
+      "Instruments of the government securities market",
+      "Channels of foreign portfolio investment raising regulatory concerns",
+      "Methods of financing infrastructure projects"
+    ],
+    "answer_index": 2,
+    "explanation": "Participatory notes are offshore derivatives issued by registered Foreign Portfolio Investors (FPIs) to unregistered overseas investors, obscuring ownership. The Mauritius route exploited a favourable tax treaty, enabling 'round tripping' — Indian money going abroad and returning disguised as foreign investment — prompting SEBI and treaty reforms."
+  },
+  {
+    "id": "cd_071",
+    "subject": "Economy",
+    "difficulty": "hard",
+    "dots": ["Ways and Means Advances", "Open Market Operations", "Monetised deficit", "Government securities"],
+    "options": [
+      "The RBI's role in managing government borrowing and liquidity",
+      "SEBI's regulation of mutual funds",
+      "The working of payment banks",
+      "Instruments of priority sector lending"
+    ],
+    "answer_index": 0,
+    "explanation": "All involve the RBI as the government's debt manager: Ways and Means Advances are short-term RBI loans to bridge the government's cash mismatches, government securities are the instruments through which it borrows, Open Market Operations are RBI purchases/sales of those securities to manage liquidity, and the monetised deficit is the part of the deficit financed by RBI money creation."
+  },
+  {
+    "id": "cd_072",
+    "subject": "Economy",
+    "difficulty": "hard",
+    "dots": ["Gini coefficient", "Lorenz curve", "Palma ratio", "Kuznets curve"],
+    "options": [
+      "Measures of absolute poverty",
+      "Concepts used in the study of income inequality",
+      "Indices of financial inclusion",
+      "Tools for measuring unemployment"
+    ],
+    "answer_index": 1,
+    "explanation": "All are inequality concepts: the Lorenz curve plots cumulative income shares, the Gini coefficient summarises the Lorenz curve into a single 0-to-1 measure, the Palma ratio compares the top 10% share with the bottom 40%, and the Kuznets curve hypothesises how inequality first rises then falls with development."
+  },
+  {
+    "id": "cd_073",
+    "subject": "Environment",
+    "difficulty": "easy",
+    "dots": ["Kaziranga", "Jim Corbett", "Sundarbans", "Gir"],
+    "options": [
+      "Ramsar wetland sites of India",
+      "National Parks each associated with a distinct flagship species",
+      "Biosphere Reserves in the Western Ghats",
+      "Mangrove forests along the eastern coast"
+    ],
+    "answer_index": 1,
+    "explanation": "Kaziranga (one-horned rhinoceros), Jim Corbett (tiger, India's first tiger reserve), Sundarbans (Royal Bengal Tiger in mangroves) and Gir (Asiatic lion, its only wild habitat) are each defined by a signature species."
+  },
+  {
+    "id": "cd_074",
+    "subject": "Environment",
+    "difficulty": "easy",
+    "dots": ["Vienna Convention", "Montreal Protocol", "CFCs", "Ozone hole"],
+    "options": [
+      "The global framework for protecting the ozone layer",
+      "Agreements on transboundary air pollution",
+      "The climate change negotiation process",
+      "Regulation of persistent organic pollutants"
+    ],
+    "answer_index": 0,
+    "explanation": "The Vienna Convention (1985) created the framework for ozone protection, and its Montreal Protocol (1987) phased out ozone-depleting substances like CFCs — the chemicals responsible for the Antarctic ozone hole. It is considered the most successful environmental treaty."
+  },
+  {
+    "id": "cd_075",
+    "subject": "Environment",
+    "difficulty": "easy",
+    "dots": ["Chipko", "Appiko", "Silent Valley", "Narmada Bachao Andolan"],
+    "options": [
+      "Government afforestation programmes",
+      "International conservation NGOs",
+      "Wildlife census methodologies",
+      "Environmental movements in India"
+    ],
+    "answer_index": 3,
+    "explanation": "All are landmark Indian environmental movements: Chipko (Uttarakhand, 1973) saw villagers hugging trees to stop felling, Appiko was its southern echo in Karnataka, the Silent Valley movement saved a Kerala rainforest from a dam, and the Narmada Bachao Andolan opposed large dams on the Narmada."
+  },
+  {
+    "id": "cd_076",
+    "subject": "Environment",
+    "difficulty": "easy",
+    "dots": ["Project Tiger", "Project Elephant", "Project Snow Leopard", "Project Dolphin"],
+    "options": [
+      "Species-focused conservation programmes of the Government of India",
+      "Programmes under the Convention on Biological Diversity",
+      "Captive breeding programmes of Indian zoos",
+      "WWF global flagship campaigns"
+    ],
+    "answer_index": 0,
+    "explanation": "All are Government of India species conservation programmes: Project Tiger (1973), Project Elephant (1992), Project Snow Leopard (2009) for the high Himalaya, and Project Dolphin (2020) for river and marine dolphins, especially the Gangetic dolphin."
+  },
+  {
+    "id": "cd_077",
+    "subject": "Environment",
+    "difficulty": "medium",
+    "dots": ["Chilika", "Keoladeo", "Loktak", "Wular"],
+    "options": [
+      "Crater lakes of volcanic origin",
+      "Ramsar wetlands of international importance in India",
+      "Reservoirs of major dams",
+      "Glacial lakes of the Himalaya"
+    ],
+    "answer_index": 1,
+    "explanation": "All are Indian Ramsar sites: Chilika in Odisha (Asia's largest brackish lagoon), Keoladeo in Rajasthan (famous bird habitat), Loktak in Manipur (with its floating phumdis and Keibul Lamjao park), and Wular in Jammu & Kashmir, one of Asia's largest freshwater lakes."
+  },
+  {
+    "id": "cd_078",
+    "subject": "Environment",
+    "difficulty": "medium",
+    "dots": ["UNFCCC", "Kyoto Protocol", "Paris Agreement", "Nationally Determined Contributions"],
+    "options": [
+      "The international regime to combat climate change",
+      "Agreements governing the ozone layer",
+      "Frameworks for biodiversity conservation",
+      "Treaties on the law of the sea"
+    ],
+    "answer_index": 0,
+    "explanation": "The UNFCCC (1992) is the parent climate treaty; the Kyoto Protocol (1997) set binding emission targets for developed countries, while the Paris Agreement (2015) replaced that approach with Nationally Determined Contributions — voluntary climate pledges submitted by every country."
+  },
+  {
+    "id": "cd_079",
+    "subject": "Environment",
+    "difficulty": "medium",
+    "dots": ["Himalaya", "Indo-Burma", "Western Ghats and Sri Lanka", "Sundaland"],
+    "options": [
+      "Tiger landscape complexes of Asia",
+      "UNESCO World Heritage natural sites",
+      "Biodiversity hotspots that include parts of India",
+      "Zones of the Indian monsoon"
+    ],
+    "answer_index": 2,
+    "explanation": "These are the four global biodiversity hotspots covering Indian territory: the Himalaya, Indo-Burma (including the Northeast), the Western Ghats-Sri Lanka hotspot, and Sundaland, which includes India's Nicobar Islands."
+  },
+  {
+    "id": "cd_080",
+    "subject": "Environment",
+    "difficulty": "medium",
+    "dots": ["Nutrient runoff", "Algal bloom", "Oxygen depletion", "Dead zone"],
+    "options": [
+      "Stages of ocean acidification",
+      "The process of eutrophication in water bodies",
+      "Effects of thermal pollution",
+      "Consequences of oil spills"
+    ],
+    "answer_index": 1,
+    "explanation": "This is the eutrophication sequence: fertiliser and sewage runoff loads water with nitrogen and phosphorus, triggering algal blooms; when the algae die and decompose, oxygen is depleted (hypoxia), creating 'dead zones' where aquatic life cannot survive."
+  },
+  {
+    "id": "cd_081",
+    "subject": "Environment",
+    "difficulty": "hard",
+    "dots": ["Dugong", "Seagrass meadows", "Gulf of Mannar", "Schedule I protection"],
+    "options": [
+      "Conservation of the sea cow in Indian waters",
+      "Protection of the olive ridley turtle",
+      "The Gangetic dolphin recovery programme",
+      "Coral reef restoration projects"
+    ],
+    "answer_index": 0,
+    "explanation": "The dugong or sea cow, a herbivorous marine mammal that grazes on seagrass meadows, survives in India mainly in the Gulf of Mannar, Palk Bay and the Andamans. It has the highest legal protection under Schedule I of the Wildlife (Protection) Act, and India's first dugong conservation reserve was notified in Palk Bay, Tamil Nadu."
+  },
+  {
+    "id": "cd_082",
+    "subject": "Environment",
+    "difficulty": "hard",
+    "dots": ["Bonn Challenge", "Green India Mission", "CAMPA", "Miyawaki method"],
+    "options": [
+      "Schemes for wildlife corridor creation",
+      "Carbon trading mechanisms",
+      "Initiatives for afforestation and landscape restoration",
+      "Programmes for wetland conservation"
+    ],
+    "answer_index": 2,
+    "explanation": "All aim at restoring tree cover: under the Bonn Challenge India pledged to restore 26 million hectares of degraded land by 2030, the Green India Mission is the afforestation mission under the National Action Plan on Climate Change, CAMPA funds compensatory afforestation for diverted forest land, and the Miyawaki method creates dense native mini-forests, popular in urban India."
+  },
+  {
+    "id": "cd_083",
+    "subject": "Environment",
+    "difficulty": "hard",
+    "dots": ["Neelakurinji", "Shola grasslands", "Eravikulam", "Twelve-year bloom"],
+    "options": [
+      "The alpine meadows of the Himalaya",
+      "The montane ecosystem of the southern Western Ghats",
+      "Orchid diversity of the Northeast",
+      "The dry deciduous forests of the Deccan"
+    ],
+    "answer_index": 1,
+    "explanation": "Neelakurinji (Strobilanthes kunthiana) is a shrub of the high-altitude shola-grassland mosaic of the southern Western Ghats that flowers en masse only once every twelve years, turning hillsides blue. Eravikulam National Park in Kerala, also home to the Nilgiri tahr, is its most famous blooming ground."
+  },
+  {
+    "id": "cd_084",
+    "subject": "Environment",
+    "difficulty": "hard",
+    "dots": ["Basel Convention", "Rotterdam Convention", "Stockholm Convention", "Minamata Convention"],
+    "options": [
+      "Treaties on marine biodiversity",
+      "Agreements on desertification",
+      "Protocols under the climate convention",
+      "Global conventions on hazardous chemicals and wastes"
+    ],
+    "answer_index": 3,
+    "explanation": "All govern hazardous substances: Basel controls transboundary movement of hazardous wastes, Rotterdam requires prior informed consent for trade in hazardous chemicals, Stockholm targets persistent organic pollutants (POPs), and Minamata addresses mercury pollution."
+  },
+  {
+    "id": "cd_085",
+    "subject": "Polity",
+    "difficulty": "easy",
+    "dots": ["Article 14", "Article 19", "Article 21", "Article 32"],
+    "options": [
+      "Directive Principles of State Policy",
+      "Fundamental Rights under Part III of the Constitution",
+      "Provisions relating to citizenship",
+      "Fundamental Duties of citizens"
+    ],
+    "answer_index": 1,
+    "explanation": "All are Fundamental Rights in Part III: Article 14 guarantees equality before law, Article 19 protects the six freedoms including speech, Article 21 protects life and personal liberty, and Article 32 gives the right to move the Supreme Court for enforcement of these rights."
+  },
+  {
+    "id": "cd_086",
+    "subject": "Polity",
+    "difficulty": "easy",
+    "dots": ["President", "Lok Sabha", "Rajya Sabha", "Article 79"],
+    "options": [
+      "The composition of the Union Parliament",
+      "The Union executive",
+      "The electoral college for the Vice-President",
+      "Bodies involved in constitutional amendment only"
+    ],
+    "answer_index": 0,
+    "explanation": "Article 79 declares that the Parliament of India consists of the President and the two Houses — the Lok Sabha (House of the People) and the Rajya Sabha (Council of States). The President is thus an integral part of Parliament though not a member of either House."
+  },
+  {
+    "id": "cd_087",
+    "subject": "Polity",
+    "difficulty": "easy",
+    "dots": ["Socialist", "Secular", "Integrity", "42nd Amendment"],
+    "options": [
+      "Words in the original Preamble of 1950",
+      "Terms added to the Preamble in 1976",
+      "Values listed in the Fundamental Duties",
+      "Words inserted by the 44th Amendment"
+    ],
+    "answer_index": 1,
+    "explanation": "The 42nd Constitutional Amendment (1976), passed during the Emergency, added the words 'socialist' and 'secular' to the Preamble's description of the Republic and 'integrity' to the phrase 'unity and integrity of the Nation'."
+  },
+  {
+    "id": "cd_088",
+    "subject": "Polity",
+    "difficulty": "easy",
+    "dots": ["Habeas Corpus", "Mandamus", "Certiorari", "Prohibition"],
+    "options": [
+      "Kinds of emergency proclamations",
+      "Stages of a criminal trial",
+      "Writs issued by constitutional courts",
+      "Forms of parliamentary privilege"
+    ],
+    "answer_index": 2,
+    "explanation": "All are writs the Supreme Court (Article 32) and High Courts (Article 226) can issue: habeas corpus against unlawful detention, mandamus commanding a public authority to perform its duty, certiorari quashing an order of a lower court or tribunal, and prohibition stopping proceedings beyond jurisdiction."
+  },
+  {
+    "id": "cd_089",
+    "subject": "Polity",
+    "difficulty": "medium",
+    "dots": ["Article 124", "Collegium System", "Article 217", "Judicial Appointments"],
+    "options": [
+      "Provisions related to the Election Commission",
+      "Procedure for impeachment of the President",
+      "Provisions governing Panchayati Raj institutions",
+      "Constitutional provisions and mechanism for appointing judges"
+    ],
+    "answer_index": 3,
+    "explanation": "Article 124 governs Supreme Court appointments and Article 217 governs High Court appointments. In practice, both are administered through the Collegium System, developed via Supreme Court judgments rather than the constitutional text itself."
+  },
+  {
+    "id": "cd_090",
+    "subject": "Polity",
+    "difficulty": "medium",
+    "dots": ["Article 356", "President's Rule", "S. R. Bommai case", "Floor test"],
+    "options": [
+      "Imposition and judicial review of President's Rule in states",
+      "The procedure for a National Emergency",
+      "Dismissal of the Council of Ministers at the Centre",
+      "The Governor's power to reserve bills"
+    ],
+    "answer_index": 0,
+    "explanation": "Article 356 permits President's Rule when a state's constitutional machinery fails. In S. R. Bommai (1994), the Supreme Court made such proclamations judicially reviewable and held that a government's majority must be tested on the floor of the House — the floor test — rather than by the Governor's opinion."
+  },
+  {
+    "id": "cd_091",
+    "subject": "Polity",
+    "difficulty": "medium",
+    "dots": ["Tenth Schedule", "52nd Amendment", "Speaker's decision", "Kihoto Hollohan case"],
+    "options": [
+      "Reservation of seats in legislatures",
+      "The anti-defection law and its judicial review",
+      "Delimitation of constituencies",
+      "Disqualification for holding an office of profit"
+    ],
+    "answer_index": 1,
+    "explanation": "The 52nd Amendment (1985) added the Tenth Schedule, the anti-defection law under which the Speaker or Chairman decides disqualification of defecting members. In Kihoto Hollohan (1992), the Supreme Court upheld the law but made the presiding officer's decision subject to judicial review."
+  },
+  {
+    "id": "cd_092",
+    "subject": "Polity",
+    "difficulty": "medium",
+    "dots": ["Article 280", "Vertical devolution", "Horizontal devolution", "Grants-in-aid"],
+    "options": [
+      "The GST Council's functioning",
+      "The Planning Commission's role",
+      "The Finance Commission and fiscal federalism",
+      "Borrowing powers of state governments"
+    ],
+    "answer_index": 2,
+    "explanation": "Article 280 mandates a Finance Commission every five years. It recommends vertical devolution (the states' share in central taxes), horizontal devolution (the formula distributing that share among states), and grants-in-aid to states under Article 275 — the core machinery of India's fiscal federalism."
+  },
+  {
+    "id": "cd_093",
+    "subject": "Polity",
+    "difficulty": "hard",
+    "dots": ["Kesavananda Bharati", "Indira Nehru Gandhi case", "Minerva Mills", "Waman Rao"],
+    "options": [
+      "Cases on the right to property",
+      "Cases developing the basic structure doctrine",
+      "Cases on reservation in promotions",
+      "Cases defining the scope of Article 21"
+    ],
+    "answer_index": 1,
+    "explanation": "All are milestones of the basic structure doctrine: Kesavananda Bharati (1973) propounded it, the Indira Nehru Gandhi election case (1975) first applied it to strike down a constitutional amendment, Minerva Mills (1980) invalidated parts of the 42nd Amendment using it, and Waman Rao (1981) fixed 24 April 1973 as the cut-off for its application."
+  },
+  {
+    "id": "cd_094",
+    "subject": "Polity",
+    "difficulty": "hard",
+    "dots": ["First Amendment", "Article 31B", "Ninth Schedule", "I. R. Coelho case"],
+    "options": [
+      "Protection of laws from judicial review and its limits",
+      "Abolition of privy purses",
+      "The freedom of the press",
+      "Land ceiling legislation in the states"
+    ],
+    "answer_index": 0,
+    "explanation": "The First Amendment (1951) inserted Article 31B and the Ninth Schedule, immunising listed laws from challenge for violating Fundamental Rights. In I. R. Coelho (2007), the Supreme Court held that laws added to the Ninth Schedule after 24 April 1973 can still be reviewed if they damage the basic structure."
+  },
+  {
+    "id": "cd_095",
+    "subject": "Polity",
+    "difficulty": "hard",
+    "dots": ["Article 263", "Inter-State Council", "Zonal Councils", "Sarkaria Commission"],
+    "options": [
+      "Machinery for resolving inter-state river disputes",
+      "The framework of All-India Services",
+      "Institutions and recommendations for Centre-State coordination",
+      "Bodies overseeing local self-government"
+    ],
+    "answer_index": 2,
+    "explanation": "Article 263 empowers the President to establish an Inter-State Council for coordination, which was actually set up in 1990 on the recommendation of the Sarkaria Commission on Centre-State relations. The Zonal Councils, statutory bodies created by the States Reorganisation Act, 1956, serve the same coordination purpose regionally."
+  },
+  {
+    "id": "cd_096",
+    "subject": "Polity",
+    "difficulty": "hard",
+    "dots": ["Article 110", "Speaker's certification", "Rajya Sabha's limited role", "Aadhaar Act"],
+    "options": [
+      "The procedure for constitutional amendment bills",
+      "The passage and controversies of Money Bills",
+      "The annual budget process",
+      "Joint sittings of Parliament"
+    ],
+    "answer_index": 1,
+    "explanation": "Article 110 defines a Money Bill, which only the Speaker certifies — a decision long treated as final. The Rajya Sabha can only make recommendations on it, which the Lok Sabha may reject. The Aadhaar Act's passage as a Money Bill, bypassing the Rajya Sabha's normal role, made this route a major constitutional controversy."
   }
 ]

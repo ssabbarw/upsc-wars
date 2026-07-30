@@ -2,71 +2,769 @@
   {
     "id": "dl_001",
     "subject": "Ancient History",
+    "difficulty": "easy",
     "question": "Who commissioned the original Great Stupa at Sanchi?",
-    "options": ["Ashoka", "Akbar"],
+    "options": ["Ashoka", "Kanishka"],
     "answer_index": 0
   },
   {
     "id": "dl_002",
-    "subject": "Medieval History",
-    "question": "Which ruler founded the Vijayanagara Empire along with his brother?",
-    "options": ["Harihara", "Alauddin Khilji"],
-    "answer_index": 0
+    "subject": "Ancient History",
+    "difficulty": "easy",
+    "question": "Which ancient Indian script remains undeciphered?",
+    "options": ["Brahmi script", "Indus script"],
+    "answer_index": 1
   },
   {
     "id": "dl_003",
-    "subject": "Modern History",
-    "question": "Who founded the Indian National Congress in 1885?",
-    "options": ["A.O. Hume", "Bal Gangadhar Tilak"],
+    "subject": "Ancient History",
+    "difficulty": "easy",
+    "question": "Mohenjo-daro stands on the bank of which river?",
+    "options": ["Indus", "Ravi"],
     "answer_index": 0
   },
   {
     "id": "dl_004",
-    "subject": "Art & Culture",
-    "question": "Which classical dance form originated in Assam?",
-    "options": ["Sattriya", "Bharatanatyam"],
-    "answer_index": 0
+    "subject": "Ancient History",
+    "difficulty": "easy",
+    "question": "Who founded the Maurya Empire?",
+    "options": ["Bindusara", "Chandragupta Maurya"],
+    "answer_index": 1
   },
   {
     "id": "dl_005",
-    "subject": "Geography",
-    "question": "Hirakud Dam is built on which river?",
-    "options": ["Mahanadi", "Godavari"],
+    "subject": "Ancient History",
+    "difficulty": "medium",
+    "question": "Who wrote the Arthashastra?",
+    "options": ["Kautilya", "Banabhatta"],
     "answer_index": 0
   },
   {
     "id": "dl_006",
-    "subject": "Economy",
-    "question": "Which body regulates India's securities market?",
-    "options": ["SEBI", "RBI"],
-    "answer_index": 0
+    "subject": "Ancient History",
+    "difficulty": "medium",
+    "question": "Which Gupta ruler is called the 'Napoleon of India'?",
+    "options": ["Chandragupta II", "Samudragupta"],
+    "answer_index": 1
   },
   {
     "id": "dl_007",
-    "subject": "Environment",
-    "question": "Which national park is the only wild habitat of the Asiatic lion?",
-    "options": ["Gir", "Kaziranga"],
+    "subject": "Ancient History",
+    "difficulty": "medium",
+    "question": "The Third Buddhist Council was held at which place?",
+    "options": ["Pataliputra", "Rajagriha"],
     "answer_index": 0
   },
   {
     "id": "dl_008",
-    "subject": "Polity",
-    "question": "Which Article empowers the Supreme Court to issue writs for Fundamental Rights?",
-    "options": ["Article 32", "Article 40"],
-    "answer_index": 0
+    "subject": "Ancient History",
+    "difficulty": "medium",
+    "question": "Who founded Vikramashila University?",
+    "options": ["Devapala", "Dharmapala"],
+    "answer_index": 1
   },
   {
     "id": "dl_009",
     "subject": "Ancient History",
-    "question": "Which ancient Indian script remains undeciphered?",
-    "options": ["Indus script", "Brahmi script"],
+    "difficulty": "hard",
+    "question": "Which edict records Ashoka's remorse after the Kalinga War?",
+    "options": ["Rock Edict XIII", "Pillar Edict VII"],
     "answer_index": 0
   },
   {
     "id": "dl_010",
+    "subject": "Ancient History",
+    "difficulty": "hard",
+    "question": "Who composed the Allahabad Pillar inscription (Prayaga Prashasti)?",
+    "options": ["Ravikirti", "Harisena"],
+    "answer_index": 1
+  },
+  {
+    "id": "dl_011",
+    "subject": "Ancient History",
+    "difficulty": "hard",
+    "question": "Which Satavahana ruler defeated the Shaka king Nahapana?",
+    "options": ["Gautamiputra Satakarni", "Vashishthiputra Pulumavi"],
+    "answer_index": 0
+  },
+  {
+    "id": "dl_012",
+    "subject": "Ancient History",
+    "difficulty": "hard",
+    "question": "Who presided over the First Buddhist Council?",
+    "options": ["Moggaliputta Tissa", "Mahakassapa"],
+    "answer_index": 1
+  },
+  {
+    "id": "dl_013",
+    "subject": "Medieval History",
+    "difficulty": "easy",
+    "question": "Who founded the Vijayanagara Empire with his brother Bukka?",
+    "options": ["Harihara", "Krishnadevaraya"],
+    "answer_index": 0
+  },
+  {
+    "id": "dl_014",
+    "subject": "Medieval History",
+    "difficulty": "easy",
+    "question": "Who was the first Sultan of Delhi?",
+    "options": ["Iltutmish", "Qutbuddin Aibak"],
+    "answer_index": 1
+  },
+  {
+    "id": "dl_015",
+    "subject": "Medieval History",
+    "difficulty": "easy",
+    "question": "Babur defeated whom in the First Battle of Panipat (1526)?",
+    "options": ["Ibrahim Lodi", "Rana Sanga"],
+    "answer_index": 0
+  },
+  {
+    "id": "dl_016",
+    "subject": "Medieval History",
+    "difficulty": "easy",
+    "question": "Who propounded Din-i Ilahi?",
+    "options": ["Aurangzeb", "Akbar"],
+    "answer_index": 1
+  },
+  {
+    "id": "dl_017",
+    "subject": "Medieval History",
+    "difficulty": "medium",
+    "question": "Who introduced strict market control in the Delhi Sultanate?",
+    "options": ["Alauddin Khilji", "Muhammad bin Tughlaq"],
+    "answer_index": 0
+  },
+  {
+    "id": "dl_018",
+    "subject": "Medieval History",
+    "difficulty": "medium",
+    "question": "The Battle of Talikota (1565) led to the decline of which empire?",
+    "options": ["Bahmani", "Vijayanagara"],
+    "answer_index": 1
+  },
+  {
+    "id": "dl_019",
+    "subject": "Medieval History",
+    "difficulty": "medium",
+    "question": "Who completed the Qutub Minar?",
+    "options": ["Iltutmish", "Qutbuddin Aibak"],
+    "answer_index": 0
+  },
+  {
+    "id": "dl_020",
+    "subject": "Medieval History",
+    "difficulty": "medium",
+    "question": "Ibn Battuta visited India during whose reign?",
+    "options": ["Firoz Shah Tughlaq", "Muhammad bin Tughlaq"],
+    "answer_index": 1
+  },
+  {
+    "id": "dl_021",
+    "subject": "Medieval History",
+    "difficulty": "hard",
+    "question": "Who shifted the capital from Delhi to Daulatabad?",
+    "options": ["Muhammad bin Tughlaq", "Alauddin Khilji"],
+    "answer_index": 0
+  },
+  {
+    "id": "dl_022",
+    "subject": "Medieval History",
+    "difficulty": "hard",
+    "question": "Shivaji signed the Treaty of Purandar (1665) with whom?",
+    "options": ["Jaswant Singh", "Jai Singh I"],
+    "answer_index": 1
+  },
+  {
+    "id": "dl_023",
+    "subject": "Medieval History",
+    "difficulty": "hard",
+    "question": "Which Mughal emperor was called 'Zinda Pir'?",
+    "options": ["Aurangzeb", "Shah Jahan"],
+    "answer_index": 0
+  },
+  {
+    "id": "dl_024",
+    "subject": "Medieval History",
+    "difficulty": "hard",
+    "question": "Who introduced token copper currency in the Delhi Sultanate?",
+    "options": ["Firoz Shah Tughlaq", "Muhammad bin Tughlaq"],
+    "answer_index": 1
+  },
+  {
+    "id": "dl_025",
+    "subject": "Modern History",
+    "difficulty": "easy",
+    "question": "Who founded the Indian National Congress in 1885?",
+    "options": ["A.O. Hume", "W.C. Bonnerjee"],
+    "answer_index": 0
+  },
+  {
+    "id": "dl_026",
+    "subject": "Modern History",
+    "difficulty": "easy",
+    "question": "In which year did the Jallianwala Bagh massacre occur?",
+    "options": ["1921", "1919"],
+    "answer_index": 1
+  },
+  {
+    "id": "dl_027",
+    "subject": "Modern History",
+    "difficulty": "easy",
+    "question": "Who gave the slogan 'Do or Die'?",
+    "options": ["Mahatma Gandhi", "Subhas Chandra Bose"],
+    "answer_index": 0
+  },
+  {
+    "id": "dl_028",
+    "subject": "Modern History",
+    "difficulty": "easy",
+    "question": "In which year was the Dandi March launched?",
+    "options": ["1932", "1930"],
+    "answer_index": 1
+  },
+  {
+    "id": "dl_029",
+    "subject": "Modern History",
+    "difficulty": "medium",
+    "question": "Who founded the Brahmo Samaj?",
+    "options": ["Raja Ram Mohan Roy", "Dayananda Saraswati"],
+    "answer_index": 0
+  },
+  {
+    "id": "dl_030",
+    "subject": "Modern History",
+    "difficulty": "medium",
+    "question": "Which Viceroy carried out the Partition of Bengal in 1905?",
+    "options": ["Lord Minto", "Lord Curzon"],
+    "answer_index": 1
+  },
+  {
+    "id": "dl_031",
+    "subject": "Modern History",
+    "difficulty": "medium",
+    "question": "The Purna Swaraj resolution was passed at which session?",
+    "options": ["Lahore, 1929", "Karachi, 1931"],
+    "answer_index": 0
+  },
+  {
+    "id": "dl_032",
+    "subject": "Modern History",
+    "difficulty": "medium",
+    "question": "Who reorganized the Azad Hind Fauj in 1943?",
+    "options": ["Rash Behari Bose", "Subhas Chandra Bose"],
+    "answer_index": 1
+  },
+  {
+    "id": "dl_033",
+    "subject": "Modern History",
+    "difficulty": "hard",
+    "question": "In which year did the Surat Split of the Congress occur?",
+    "options": ["1907", "1905"],
+    "answer_index": 0
+  },
+  {
+    "id": "dl_034",
+    "subject": "Modern History",
+    "difficulty": "hard",
+    "question": "Who founded the Ghadar Party in 1913?",
+    "options": ["Lala Lajpat Rai", "Lala Har Dayal"],
+    "answer_index": 1
+  },
+  {
+    "id": "dl_035",
+    "subject": "Modern History",
+    "difficulty": "hard",
+    "question": "Which Viceroy made the 'August Offer' of 1940?",
+    "options": ["Lord Linlithgow", "Lord Wavell"],
+    "answer_index": 0
+  },
+  {
+    "id": "dl_036",
+    "subject": "Modern History",
+    "difficulty": "hard",
+    "question": "Gandhi's first satyagraha in India was launched at?",
+    "options": ["Kheda", "Champaran"],
+    "answer_index": 1
+  },
+  {
+    "id": "dl_037",
+    "subject": "Art and Culture",
+    "difficulty": "easy",
+    "question": "Which classical dance form originated in Assam?",
+    "options": ["Bharatanatyam", "Sattriya"],
+    "answer_index": 1
+  },
+  {
+    "id": "dl_038",
+    "subject": "Art and Culture",
+    "difficulty": "easy",
+    "question": "Kathakali is a classical dance of which state?",
+    "options": ["Kerala", "Karnataka"],
+    "answer_index": 0
+  },
+  {
+    "id": "dl_039",
+    "subject": "Art and Culture",
+    "difficulty": "easy",
+    "question": "The Konark Sun Temple is in which state?",
+    "options": ["West Bengal", "Odisha"],
+    "answer_index": 1
+  },
+  {
+    "id": "dl_040",
+    "subject": "Art and Culture",
+    "difficulty": "easy",
+    "question": "Bihu is a festival of which state?",
+    "options": ["Assam", "Odisha"],
+    "answer_index": 0
+  },
+  {
+    "id": "dl_041",
+    "subject": "Art and Culture",
+    "difficulty": "medium",
+    "question": "Ajanta cave paintings mainly depict scenes from?",
+    "options": ["Jataka tales", "Panchatantra"],
+    "answer_index": 0
+  },
+  {
+    "id": "dl_042",
+    "subject": "Art and Culture",
+    "difficulty": "medium",
+    "question": "Kuchipudi dance originated in which state?",
+    "options": ["Tamil Nadu", "Andhra Pradesh"],
+    "answer_index": 1
+  },
+  {
+    "id": "dl_043",
+    "subject": "Art and Culture",
+    "difficulty": "medium",
+    "question": "Who composed the Ramcharitmanas?",
+    "options": ["Tulsidas", "Surdas"],
+    "answer_index": 0
+  },
+  {
+    "id": "dl_044",
+    "subject": "Art and Culture",
+    "difficulty": "medium",
+    "question": "Tansen was a court musician of which emperor?",
+    "options": ["Shah Jahan", "Akbar"],
+    "answer_index": 1
+  },
+  {
+    "id": "dl_045",
+    "subject": "Art and Culture",
+    "difficulty": "hard",
+    "question": "Who built the Brihadeeswara Temple at Thanjavur?",
+    "options": ["Rajaraja I", "Rajendra I"],
+    "answer_index": 0
+  },
+  {
+    "id": "dl_046",
+    "subject": "Art and Culture",
+    "difficulty": "hard",
+    "question": "Kalamkari art is primarily associated with which state?",
+    "options": ["Gujarat", "Andhra Pradesh"],
+    "answer_index": 1
+  },
+  {
+    "id": "dl_047",
+    "subject": "Art and Culture",
+    "difficulty": "hard",
+    "question": "Dhrupad is a genre of which music tradition?",
+    "options": ["Carnatic", "Hindustani"],
+    "answer_index": 1
+  },
+  {
+    "id": "dl_048",
+    "subject": "Art and Culture",
+    "difficulty": "hard",
+    "question": "Which dynasty built the Kailasa temple at Ellora?",
+    "options": ["Rashtrakutas", "Chalukyas"],
+    "answer_index": 0
+  },
+  {
+    "id": "dl_049",
+    "subject": "Geography",
+    "difficulty": "easy",
+    "question": "Hirakud Dam is built on which river?",
+    "options": ["Godavari", "Mahanadi"],
+    "answer_index": 1
+  },
+  {
+    "id": "dl_050",
+    "subject": "Geography",
+    "difficulty": "easy",
+    "question": "Which is the longest river of India?",
+    "options": ["Ganga", "Brahmaputra"],
+    "answer_index": 0
+  },
+  {
+    "id": "dl_051",
+    "subject": "Geography",
+    "difficulty": "easy",
+    "question": "Kanchenjunga is located in which state?",
+    "options": ["Himachal Pradesh", "Sikkim"],
+    "answer_index": 1
+  },
+  {
+    "id": "dl_052",
+    "subject": "Geography",
+    "difficulty": "easy",
+    "question": "The Tropic of Cancer passes through which state?",
+    "options": ["Gujarat", "Punjab"],
+    "answer_index": 0
+  },
+  {
+    "id": "dl_053",
+    "subject": "Geography",
+    "difficulty": "medium",
+    "question": "The Palk Strait separates India from which country?",
+    "options": ["Sri Lanka", "Maldives"],
+    "answer_index": 0
+  },
+  {
+    "id": "dl_054",
+    "subject": "Geography",
+    "difficulty": "medium",
+    "question": "Loktak Lake is in which state?",
+    "options": ["Mizoram", "Manipur"],
+    "answer_index": 1
+  },
+  {
+    "id": "dl_055",
+    "subject": "Geography",
+    "difficulty": "medium",
+    "question": "Which river is known as the 'Dakshina Ganga'?",
+    "options": ["Godavari", "Krishna"],
+    "answer_index": 0
+  },
+  {
+    "id": "dl_056",
+    "subject": "Geography",
+    "difficulty": "medium",
+    "question": "Jog Falls is on which river?",
+    "options": ["Kaveri", "Sharavathi"],
+    "answer_index": 1
+  },
+  {
+    "id": "dl_057",
+    "subject": "Geography",
+    "difficulty": "hard",
+    "question": "Majuli, the largest river island, is on which river?",
+    "options": ["Brahmaputra", "Barak"],
+    "answer_index": 0
+  },
+  {
+    "id": "dl_058",
+    "subject": "Geography",
+    "difficulty": "hard",
+    "question": "Which channel separates the Andaman group from the Nicobar group?",
+    "options": ["Nine Degree Channel", "Ten Degree Channel"],
+    "answer_index": 1
+  },
+  {
+    "id": "dl_059",
+    "subject": "Geography",
+    "difficulty": "hard",
+    "question": "Duncan Passage lies between which two islands?",
+    "options": ["South and Little Andaman", "Little and Great Nicobar"],
+    "answer_index": 0
+  },
+  {
+    "id": "dl_060",
+    "subject": "Geography",
+    "difficulty": "hard",
+    "question": "Which pass connects Sikkim with Tibet?",
+    "options": ["Shipki La", "Nathu La"],
+    "answer_index": 1
+  },
+  {
+    "id": "dl_061",
+    "subject": "Economy",
+    "difficulty": "easy",
+    "question": "Which body regulates India's securities market?",
+    "options": ["RBI", "SEBI"],
+    "answer_index": 1
+  },
+  {
+    "id": "dl_062",
+    "subject": "Economy",
+    "difficulty": "easy",
+    "question": "The repo rate is set by which institution?",
+    "options": ["RBI", "SEBI"],
+    "answer_index": 0
+  },
+  {
+    "id": "dl_063",
+    "subject": "Economy",
+    "difficulty": "easy",
+    "question": "In which year was GST launched in India?",
+    "options": ["2017", "2016"],
+    "answer_index": 0
+  },
+  {
+    "id": "dl_064",
+    "subject": "Economy",
+    "difficulty": "easy",
+    "question": "NITI Aayog replaced which body?",
+    "options": ["Finance Commission", "Planning Commission"],
+    "answer_index": 1
+  },
+  {
+    "id": "dl_065",
+    "subject": "Economy",
+    "difficulty": "medium",
+    "question": "What is the base year of India's current GDP series?",
+    "options": ["2011-12", "2004-05"],
+    "answer_index": 0
+  },
+  {
+    "id": "dl_066",
+    "subject": "Economy",
+    "difficulty": "medium",
+    "question": "Which body recommends Minimum Support Prices?",
+    "options": ["FCI", "CACP"],
+    "answer_index": 1
+  },
+  {
+    "id": "dl_067",
+    "subject": "Economy",
+    "difficulty": "medium",
+    "question": "RBI's inflation target is based on which index?",
+    "options": ["CPI", "WPI"],
+    "answer_index": 0
+  },
+  {
+    "id": "dl_068",
+    "subject": "Economy",
+    "difficulty": "medium",
+    "question": "Devaluation of a currency makes exports?",
+    "options": ["Costlier", "Cheaper"],
+    "answer_index": 1
+  },
+  {
+    "id": "dl_069",
+    "subject": "Economy",
+    "difficulty": "hard",
+    "question": "Fiscal deficit minus interest payments equals?",
+    "options": ["Primary deficit", "Revenue deficit"],
+    "answer_index": 0
+  },
+  {
+    "id": "dl_070",
+    "subject": "Economy",
+    "difficulty": "hard",
+    "question": "Asia's first Export Processing Zone was set up at?",
+    "options": ["Santa Cruz", "Kandla"],
+    "answer_index": 1
+  },
+  {
+    "id": "dl_071",
+    "subject": "Economy",
+    "difficulty": "hard",
+    "question": "The Marginal Standing Facility rate is set ___ the repo rate.",
+    "options": ["Above", "Below"],
+    "answer_index": 0
+  },
+  {
+    "id": "dl_072",
+    "subject": "Economy",
+    "difficulty": "hard",
+    "question": "Who coined the term 'Hindu rate of growth'?",
+    "options": ["C. Rangarajan", "Raj Krishna"],
+    "answer_index": 1
+  },
+  {
+    "id": "dl_073",
+    "subject": "Environment",
+    "difficulty": "easy",
+    "question": "Which national park is the only wild habitat of the Asiatic lion?",
+    "options": ["Kaziranga", "Gir"],
+    "answer_index": 1
+  },
+  {
+    "id": "dl_074",
+    "subject": "Environment",
+    "difficulty": "easy",
+    "question": "Kaziranga National Park is famous for which animal?",
+    "options": ["One-horned rhino", "Tiger"],
+    "answer_index": 0
+  },
+  {
+    "id": "dl_075",
+    "subject": "Environment",
+    "difficulty": "easy",
+    "question": "In which year was Project Tiger launched?",
+    "options": ["1973", "1983"],
+    "answer_index": 0
+  },
+  {
+    "id": "dl_076",
+    "subject": "Environment",
+    "difficulty": "easy",
+    "question": "The ozone layer lies mainly in which atmospheric layer?",
+    "options": ["Troposphere", "Stratosphere"],
+    "answer_index": 1
+  },
+  {
+    "id": "dl_077",
+    "subject": "Environment",
+    "difficulty": "medium",
+    "question": "The Ramsar Convention relates to the conservation of?",
+    "options": ["Wetlands", "Forests"],
+    "answer_index": 0
+  },
+  {
+    "id": "dl_078",
+    "subject": "Environment",
+    "difficulty": "medium",
+    "question": "The Chipko movement was primarily against?",
+    "options": ["Dam construction", "Deforestation"],
+    "answer_index": 1
+  },
+  {
+    "id": "dl_079",
+    "subject": "Environment",
+    "difficulty": "medium",
+    "question": "Which gas has a higher global warming potential?",
+    "options": ["Methane", "Carbon dioxide"],
+    "answer_index": 0
+  },
+  {
+    "id": "dl_080",
+    "subject": "Environment",
+    "difficulty": "medium",
+    "question": "Which was India's first national park?",
+    "options": ["Kanha", "Jim Corbett"],
+    "answer_index": 1
+  },
+  {
+    "id": "dl_081",
+    "subject": "Environment",
+    "difficulty": "hard",
+    "question": "The Montreal Protocol deals with?",
+    "options": ["Ozone-depleting substances", "Greenhouse gases"],
+    "answer_index": 0
+  },
+  {
+    "id": "dl_082",
+    "subject": "Environment",
+    "difficulty": "hard",
+    "question": "The Red Data Book is published by?",
+    "options": ["UNEP", "IUCN"],
+    "answer_index": 1
+  },
+  {
+    "id": "dl_083",
+    "subject": "Environment",
+    "difficulty": "hard",
+    "question": "Keibul Lamjao, the floating national park, is in which state?",
+    "options": ["Manipur", "Assam"],
+    "answer_index": 0
+  },
+  {
+    "id": "dl_084",
+    "subject": "Environment",
+    "difficulty": "hard",
+    "question": "Which was India's first biosphere reserve?",
+    "options": ["Sundarbans", "Nilgiri"],
+    "answer_index": 1
+  },
+  {
+    "id": "dl_085",
     "subject": "Polity",
+    "difficulty": "easy",
+    "question": "Which Article empowers the Supreme Court to issue writs for Fundamental Rights?",
+    "options": ["Article 32", "Article 226"],
+    "answer_index": 0
+  },
+  {
+    "id": "dl_086",
+    "subject": "Polity",
+    "difficulty": "easy",
     "question": "Which amendment added Fundamental Duties to the Constitution?",
-    "options": ["42nd Amendment", "44th Amendment"],
+    "options": ["44th Amendment", "42nd Amendment"],
+    "answer_index": 1
+  },
+  {
+    "id": "dl_087",
+    "subject": "Polity",
+    "difficulty": "easy",
+    "question": "A Money Bill can be introduced only in?",
+    "options": ["Rajya Sabha", "Lok Sabha"],
+    "answer_index": 1
+  },
+  {
+    "id": "dl_088",
+    "subject": "Polity",
+    "difficulty": "easy",
+    "question": "What is the term of a Rajya Sabha member?",
+    "options": ["6 years", "5 years"],
+    "answer_index": 0
+  },
+  {
+    "id": "dl_089",
+    "subject": "Polity",
+    "difficulty": "medium",
+    "question": "Who administers the oath of office to the President?",
+    "options": ["Chief Justice of India", "Vice-President"],
+    "answer_index": 0
+  },
+  {
+    "id": "dl_090",
+    "subject": "Polity",
+    "difficulty": "medium",
+    "question": "The Directive Principles were borrowed from which country?",
+    "options": ["USA", "Ireland"],
+    "answer_index": 1
+  },
+  {
+    "id": "dl_091",
+    "subject": "Polity",
+    "difficulty": "medium",
+    "question": "Which Article abolishes untouchability?",
+    "options": ["Article 17", "Article 15"],
+    "answer_index": 0
+  },
+  {
+    "id": "dl_092",
+    "subject": "Polity",
+    "difficulty": "medium",
+    "question": "The Election Commission is established under which Article?",
+    "options": ["Article 356", "Article 324"],
+    "answer_index": 1
+  },
+  {
+    "id": "dl_093",
+    "subject": "Polity",
+    "difficulty": "hard",
+    "question": "Which case established the Basic Structure doctrine?",
+    "options": ["Kesavananda Bharati", "Golaknath"],
+    "answer_index": 0
+  },
+  {
+    "id": "dl_094",
+    "subject": "Polity",
+    "difficulty": "hard",
+    "question": "The anti-defection law is in which Schedule?",
+    "options": ["Ninth Schedule", "Tenth Schedule"],
+    "answer_index": 1
+  },
+  {
+    "id": "dl_095",
+    "subject": "Polity",
+    "difficulty": "hard",
+    "question": "Which amendment lowered the voting age to 18?",
+    "options": ["65th Amendment", "61st Amendment"],
+    "answer_index": 1
+  },
+  {
+    "id": "dl_096",
+    "subject": "Polity",
+    "difficulty": "hard",
+    "question": "Which Article provides for a Finance Commission?",
+    "options": ["Article 280", "Article 282"],
     "answer_index": 0
   }
 ]

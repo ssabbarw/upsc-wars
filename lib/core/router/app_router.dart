@@ -733,31 +733,46 @@ GoRouter appRouter(Ref ref) {
         parentNavigatorKey: rootNavigatorKey,
         path: '/games/timeline-sorter',
         name: 'timeline_sorter',
-        builder: (context, state) => const TimelineSorterScreen(),
+        builder: (context, state) => TimelineSorterScreen(
+          subjectsCsv: state.uri.queryParameters['subjects'] ?? '',
+          difficultiesCsv: state.uri.queryParameters['difficulty'] ?? '',
+        ),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/games/odd-one-out',
         name: 'odd_one_out',
-        builder: (context, state) => const OddOneOutScreen(),
+        builder: (context, state) => OddOneOutScreen(
+          subjectsCsv: state.uri.queryParameters['subjects'] ?? '',
+          difficultiesCsv: state.uri.queryParameters['difficulty'] ?? '',
+        ),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/games/fact-or-bluff',
         name: 'fact_or_bluff',
-        builder: (context, state) => const FactOrBluffScreen(),
+        builder: (context, state) => FactOrBluffScreen(
+          subjectsCsv: state.uri.queryParameters['subjects'] ?? '',
+          difficultiesCsv: state.uri.queryParameters['difficulty'] ?? '',
+        ),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/games/connect-the-dots',
         name: 'connect_the_dots',
-        builder: (context, state) => const ConnectTheDotsScreen(),
+        builder: (context, state) => ConnectTheDotsScreen(
+          subjectsCsv: state.uri.queryParameters['subjects'] ?? '',
+          difficultiesCsv: state.uri.queryParameters['difficulty'] ?? '',
+        ),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/games/duel',
         name: 'duel',
-        builder: (context, state) => const DuelScreen(),
+        builder: (context, state) => DuelScreen(
+          subjectsCsv: state.uri.queryParameters['subjects'] ?? '',
+          difficultiesCsv: state.uri.queryParameters['difficulty'] ?? '',
+        ),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,

@@ -2,71 +2,769 @@
   {
     "id": "fb_001",
     "subject": "Ancient History",
-    "statement": "The Indus Valley Civilisation had advanced drainage systems but its script has never been deciphered.",
+    "difficulty": "easy",
+    "statement": "The script of the Indus Valley Civilisation has never been deciphered.",
     "is_fact": true,
-    "explanation": "Fact. Despite thousands of recovered seals, the Indus script remains undeciphered — unlike Brahmi or Kharosthi, which scholars have successfully read."
+    "explanation": "Fact. Despite thousands of recovered seals, the Indus script remains undeciphered, unlike Brahmi or Kharosthi."
   },
   {
     "id": "fb_002",
-    "subject": "Medieval History",
-    "statement": "The Vijayanagara Empire was founded by the brothers Harihara and Bukka in the 14th century.",
-    "is_fact": true,
-    "explanation": "Fact. Harihara I and Bukka I founded Vijayanagara around 1336 CE, initially as vassals of the Delhi Sultanate before asserting full independence."
+    "subject": "Ancient History",
+    "difficulty": "easy",
+    "statement": "Ashoka's edicts were written primarily in Sanskrit using the Devanagari script.",
+    "is_fact": false,
+    "explanation": "Bluff. Most edicts were composed in Prakrit and written in Brahmi script, with Kharosthi in the northwest."
   },
   {
     "id": "fb_003",
-    "subject": "Modern History",
-    "statement": "The Indian National Congress was founded in 1885 by Bal Gangadhar Tilak.",
-    "is_fact": false,
-    "explanation": "Bluff. The Congress was founded in 1885 by Allan Octavian Hume, a retired British civil servant — not Tilak, who joined the party later."
+    "subject": "Ancient History",
+    "difficulty": "easy",
+    "statement": "The Rigveda is the oldest of the four Vedas.",
+    "is_fact": true,
+    "explanation": "Fact. The Rigveda is the earliest Veda, followed by the Sama, Yajur and Atharva Vedas."
   },
   {
     "id": "fb_004",
-    "subject": "Art & Culture",
+    "subject": "Ancient History",
+    "difficulty": "easy",
+    "statement": "Chandragupta Maurya was the founder of the Gupta Empire.",
+    "is_fact": false,
+    "explanation": "Bluff. Chandragupta Maurya founded the Maurya Empire; the Gupta line was founded by Sri Gupta centuries later."
+  },
+  {
+    "id": "fb_005",
+    "subject": "Ancient History",
+    "difficulty": "medium",
+    "statement": "The Greek ambassador Megasthenes wrote the Indica at the court of Chandragupta Maurya.",
+    "is_fact": true,
+    "explanation": "Fact. Megasthenes was Seleucus Nicator's envoy to Chandragupta Maurya and recorded his observations in the Indica."
+  },
+  {
+    "id": "fb_006",
+    "subject": "Ancient History",
+    "difficulty": "medium",
+    "statement": "The Harappan port site of Lothal is located in present-day Rajasthan.",
+    "is_fact": false,
+    "explanation": "Bluff. Lothal, with its famous dockyard, lies in Gujarat; Kalibangan is the well-known Harappan site in Rajasthan."
+  },
+  {
+    "id": "fb_007",
+    "subject": "Ancient History",
+    "difficulty": "medium",
+    "statement": "The Third Buddhist Council was held at Pataliputra under Ashoka's patronage.",
+    "is_fact": true,
+    "explanation": "Fact. The Third Council met at Pataliputra around 250 BCE under Ashoka, presided over by Moggaliputta Tissa."
+  },
+  {
+    "id": "fb_008",
+    "subject": "Ancient History",
+    "difficulty": "medium",
+    "statement": "The Arthashastra was written by Banabhatta.",
+    "is_fact": false,
+    "explanation": "Bluff. The Arthashastra is attributed to Kautilya (Chanakya); Banabhatta wrote the Harshacharita."
+  },
+  {
+    "id": "fb_009",
+    "subject": "Ancient History",
+    "difficulty": "hard",
+    "statement": "Xuanzang's 7th-century account describes Nalanda in a state of ruin.",
+    "is_fact": false,
+    "explanation": "Bluff. Xuanzang saw Nalanda at its peak; its ruined state was recorded much later, by Dharmasvamin in the 13th century."
+  },
+  {
+    "id": "fb_010",
+    "subject": "Ancient History",
+    "difficulty": "hard",
+    "statement": "The Junagadh inscription of Rudradaman is the earliest long inscription in chaste Sanskrit.",
+    "is_fact": true,
+    "explanation": "Fact. The 2nd-century CE Junagadh rock inscription of the Saka ruler Rudradaman I is the first major inscription in pure Sanskrit."
+  },
+  {
+    "id": "fb_011",
+    "subject": "Ancient History",
+    "difficulty": "hard",
+    "statement": "The iron pillar at Mehrauli was erected by Ashoka.",
+    "is_fact": false,
+    "explanation": "Bluff. The rust-resistant pillar names a king 'Chandra', widely identified as Gupta ruler Chandragupta II, not Ashoka."
+  },
+  {
+    "id": "fb_012",
+    "subject": "Ancient History",
+    "difficulty": "hard",
+    "statement": "Sangam-era Tamil texts refer to Roman and Greek traders as Yavanas.",
+    "is_fact": true,
+    "explanation": "Fact. Sangam literature uses 'Yavana' for Westerners, reflecting the thriving Indo-Roman trade in ports like Muziris."
+  },
+  {
+    "id": "fb_013",
+    "subject": "Medieval History",
+    "difficulty": "easy",
+    "statement": "The Vijayanagara Empire was founded by the brothers Harihara and Bukka in the 14th century.",
+    "is_fact": true,
+    "explanation": "Fact. Harihara I and Bukka I founded Vijayanagara around 1336 CE on the banks of the Tungabhadra."
+  },
+  {
+    "id": "fb_014",
+    "subject": "Medieval History",
+    "difficulty": "easy",
+    "statement": "The First Battle of Panipat in 1526 was fought between Babur and Sher Shah Suri.",
+    "is_fact": false,
+    "explanation": "Bluff. Babur defeated Ibrahim Lodi at Panipat in 1526; Sher Shah rose against Babur's son Humayun later."
+  },
+  {
+    "id": "fb_015",
+    "subject": "Medieval History",
+    "difficulty": "easy",
+    "statement": "Qutb-ud-din Aibak was the first Sultan of the Delhi Sultanate.",
+    "is_fact": true,
+    "explanation": "Fact. Aibak founded the Slave (Mamluk) dynasty in 1206, beginning the Delhi Sultanate."
+  },
+  {
+    "id": "fb_016",
+    "subject": "Medieval History",
+    "difficulty": "easy",
+    "statement": "Akbar built the Taj Mahal in memory of his wife.",
+    "is_fact": false,
+    "explanation": "Bluff. The Taj Mahal was built by Shah Jahan in memory of Mumtaz Mahal, not by Akbar."
+  },
+  {
+    "id": "fb_017",
+    "subject": "Medieval History",
+    "difficulty": "medium",
+    "statement": "Alauddin Khalji introduced strict market price controls in Delhi.",
+    "is_fact": true,
+    "explanation": "Fact. Alauddin fixed prices of grain and essentials and set up regulated markets to sustain his large army cheaply."
+  },
+  {
+    "id": "fb_018",
+    "subject": "Medieval History",
+    "difficulty": "medium",
+    "statement": "The Moroccan traveller Ibn Battuta visited India during the reign of Akbar.",
+    "is_fact": false,
+    "explanation": "Bluff. Ibn Battuta came in the 14th century under Muhammad bin Tughlaq, who made him qazi of Delhi."
+  },
+  {
+    "id": "fb_019",
+    "subject": "Medieval History",
+    "difficulty": "medium",
+    "statement": "Muhammad bin Tughlaq shifted his capital from Delhi to Daulatabad.",
+    "is_fact": true,
+    "explanation": "Fact. He moved the capital to Daulatabad (Devagiri) around 1327, an experiment he later reversed."
+  },
+  {
+    "id": "fb_020",
+    "subject": "Medieval History",
+    "difficulty": "medium",
+    "statement": "The Battle of Talikota in 1565 led to the destruction of the Bahmani kingdom.",
+    "is_fact": false,
+    "explanation": "Bluff. Talikota shattered the Vijayanagara Empire; the victors were the Deccan Sultanates that had emerged from the Bahmani kingdom."
+  },
+  {
+    "id": "fb_021",
+    "subject": "Medieval History",
+    "difficulty": "hard",
+    "statement": "Krishnadevaraya authored the Telugu work Amuktamalyada.",
+    "is_fact": true,
+    "explanation": "Fact. The Vijayanagara ruler Krishnadevaraya wrote Amuktamalyada, a Telugu classic on the saint Andal."
+  },
+  {
+    "id": "fb_022",
+    "subject": "Medieval History",
+    "difficulty": "hard",
+    "statement": "The Qutub Minar was completed by Qutb-ud-din Aibak.",
+    "is_fact": false,
+    "explanation": "Bluff. Aibak only began the minar; it was completed by his successor Iltutmish and later repaired by Firoz Shah Tughlaq."
+  },
+  {
+    "id": "fb_023",
+    "subject": "Medieval History",
+    "difficulty": "hard",
+    "statement": "Rajendra Chola I built a new capital at Gangaikonda Cholapuram after his Ganga expedition.",
+    "is_fact": true,
+    "explanation": "Fact. Rajendra I took the title Gangaikonda after his northern campaign and founded Gangaikonda Cholapuram as his capital."
+  },
+  {
+    "id": "fb_024",
+    "subject": "Medieval History",
+    "difficulty": "hard",
+    "statement": "Malik Kafur led Alauddin Khalji's military campaigns into Bengal.",
+    "is_fact": false,
+    "explanation": "Bluff. Malik Kafur's famous campaigns were into the Deccan and south — Devagiri, Warangal, Dwarasamudra and Madurai — not Bengal."
+  },
+  {
+    "id": "fb_025",
+    "subject": "Modern History",
+    "difficulty": "easy",
+    "statement": "The Indian National Congress was founded in 1885 by Bal Gangadhar Tilak.",
+    "is_fact": false,
+    "explanation": "Bluff. The Congress was founded in 1885 by Allan Octavian Hume, a retired British civil servant; Tilak joined later."
+  },
+  {
+    "id": "fb_026",
+    "subject": "Modern History",
+    "difficulty": "easy",
+    "statement": "The Revolt of 1857 began with the sepoys at Meerut.",
+    "is_fact": true,
+    "explanation": "Fact. The uprising broke out at Meerut on 10 May 1857 before the sepoys marched to Delhi."
+  },
+  {
+    "id": "fb_027",
+    "subject": "Modern History",
+    "difficulty": "easy",
+    "statement": "Mahatma Gandhi launched the Dandi March in 1930 against the salt tax.",
+    "is_fact": true,
+    "explanation": "Fact. Gandhi marched from Sabarmati to Dandi in March–April 1930, breaking the salt law to launch Civil Disobedience."
+  },
+  {
+    "id": "fb_028",
+    "subject": "Modern History",
+    "difficulty": "easy",
+    "statement": "The Quit India Movement was launched in 1922.",
+    "is_fact": false,
+    "explanation": "Bluff. Quit India was launched in August 1942; 1922 was when Gandhi withdrew Non-Cooperation after Chauri Chaura."
+  },
+  {
+    "id": "fb_029",
+    "subject": "Modern History",
+    "difficulty": "medium",
+    "statement": "The Partition of Bengal in 1905 was carried out by Lord Curzon.",
+    "is_fact": true,
+    "explanation": "Fact. Curzon partitioned Bengal in 1905, triggering the Swadeshi Movement; the partition was annulled in 1911."
+  },
+  {
+    "id": "fb_030",
+    "subject": "Modern History",
+    "difficulty": "medium",
+    "statement": "The Simon Commission was boycotted because it included no British members.",
+    "is_fact": false,
+    "explanation": "Bluff. It was an all-British commission; Indians boycotted it precisely because it had no Indian member."
+  },
+  {
+    "id": "fb_031",
+    "subject": "Modern History",
+    "difficulty": "medium",
+    "statement": "The Swaraj Party was founded by C.R. Das and Motilal Nehru.",
+    "is_fact": true,
+    "explanation": "Fact. Das and Motilal Nehru formed the Swaraj Party in 1923 to contest council elections after Non-Cooperation ended."
+  },
+  {
+    "id": "fb_032",
+    "subject": "Modern History",
+    "difficulty": "medium",
+    "statement": "The Poona Pact of 1932 was signed between Gandhi and Jinnah.",
+    "is_fact": false,
+    "explanation": "Bluff. The Poona Pact was between Gandhi and B.R. Ambedkar, replacing separate electorates for Depressed Classes with reserved seats."
+  },
+  {
+    "id": "fb_033",
+    "subject": "Modern History",
+    "difficulty": "hard",
+    "statement": "The Ghadar Party was founded in 1913 in San Francisco.",
+    "is_fact": true,
+    "explanation": "Fact. Indian emigrants on the US Pacific coast, led by figures like Lala Har Dayal, founded the Ghadar Party in 1913."
+  },
+  {
+    "id": "fb_034",
+    "subject": "Modern History",
+    "difficulty": "hard",
+    "statement": "The Indian National Army was originally founded by Subhas Chandra Bose.",
+    "is_fact": false,
+    "explanation": "Bluff. The INA was first raised in 1942 under Mohan Singh; Bose revived and led it from 1943."
+  },
+  {
+    "id": "fb_035",
+    "subject": "Modern History",
+    "difficulty": "hard",
+    "statement": "Lord Dalhousie annexed Awadh in 1856 on grounds of misgovernance, not the Doctrine of Lapse.",
+    "is_fact": true,
+    "explanation": "Fact. Awadh had heirs, so Lapse did not apply; it was annexed citing maladministration by Nawab Wajid Ali Shah."
+  },
+  {
+    "id": "fb_036",
+    "subject": "Modern History",
+    "difficulty": "hard",
+    "statement": "The Lucknow Pact of 1916 was an agreement between the Congress and the British government.",
+    "is_fact": false,
+    "explanation": "Bluff. The Lucknow Pact was between the Congress and the Muslim League, in which Congress accepted separate electorates."
+  },
+  {
+    "id": "fb_037",
+    "subject": "Art and Culture",
+    "difficulty": "easy",
+    "statement": "Bharatanatyam is a classical dance form of Tamil Nadu.",
+    "is_fact": true,
+    "explanation": "Fact. Bharatanatyam evolved in Tamil Nadu's temples and is among India's oldest recognised classical dances."
+  },
+  {
+    "id": "fb_038",
+    "subject": "Art and Culture",
+    "difficulty": "easy",
+    "statement": "Kathakali is a classical dance form of Odisha.",
+    "is_fact": false,
+    "explanation": "Bluff. Kathakali belongs to Kerala; Odisha's classical dance is Odissi."
+  },
+  {
+    "id": "fb_039",
+    "subject": "Art and Culture",
+    "difficulty": "easy",
+    "statement": "The Sun Temple at Konark is located in Odisha.",
+    "is_fact": true,
+    "explanation": "Fact. The 13th-century Konark Sun Temple, built by Narasimhadeva I, is a UNESCO World Heritage Site in Odisha."
+  },
+  {
+    "id": "fb_040",
+    "subject": "Art and Culture",
+    "difficulty": "easy",
+    "statement": "The Ajanta caves are famous mainly for their Jain sculptures.",
+    "is_fact": false,
+    "explanation": "Bluff. Ajanta is renowned for Buddhist murals and rock-cut monasteries, not Jain art."
+  },
+  {
+    "id": "fb_041",
+    "subject": "Art and Culture",
+    "difficulty": "medium",
     "statement": "Sattriya, the classical dance of Assam, was introduced by the Vaishnavite saint Sankaradeva.",
     "is_fact": true,
     "explanation": "Fact. Sattriya originated in the Vaishnavite monasteries (sattras) established by Srimanta Sankaradeva in the 15th–16th century."
   },
   {
-    "id": "fb_005",
+    "id": "fb_042",
+    "subject": "Art and Culture",
+    "difficulty": "medium",
+    "statement": "Hindustani vocalist Bhimsen Joshi belonged to the Gwalior gharana.",
+    "is_fact": false,
+    "explanation": "Bluff. Bhimsen Joshi, a Bharat Ratna awardee, was the towering voice of the Kirana gharana."
+  },
+  {
+    "id": "fb_043",
+    "subject": "Art and Culture",
+    "difficulty": "medium",
+    "statement": "The Khajuraho temples were built by the Chandela dynasty.",
+    "is_fact": true,
+    "explanation": "Fact. The Chandelas built the Khajuraho temple complex in Madhya Pradesh between the 10th and 12th centuries."
+  },
+  {
+    "id": "fb_044",
+    "subject": "Art and Culture",
+    "difficulty": "medium",
+    "statement": "Madhubani painting is a traditional folk art of West Bengal.",
+    "is_fact": false,
+    "explanation": "Bluff. Madhubani (Mithila) painting comes from Bihar; West Bengal is known for Kalighat and Patachitra scroll painting."
+  },
+  {
+    "id": "fb_045",
+    "subject": "Art and Culture",
+    "difficulty": "hard",
+    "statement": "The Chola bronze Nataraja depicts Shiva performing the Ananda Tandava.",
+    "is_fact": true,
+    "explanation": "Fact. The iconic Chola Nataraja shows Shiva in the Ananda Tandava, the cosmic dance of bliss, within a ring of fire."
+  },
+  {
+    "id": "fb_046",
+    "subject": "Art and Culture",
+    "difficulty": "hard",
+    "statement": "The Gandhara school of art primarily used white marble.",
+    "is_fact": false,
+    "explanation": "Bluff. Gandhara sculptors mainly used grey-blue schist and stucco; the Mathura school used spotted red sandstone."
+  },
+  {
+    "id": "fb_047",
+    "subject": "Art and Culture",
+    "difficulty": "hard",
+    "statement": "Sankirtana, the ritual singing of Manipur, is on UNESCO's Intangible Cultural Heritage list.",
+    "is_fact": true,
+    "explanation": "Fact. Manipuri Sankirtana, performed in temples and homes of Vaishnava communities, was inscribed by UNESCO in 2013."
+  },
+  {
+    "id": "fb_048",
+    "subject": "Art and Culture",
+    "difficulty": "hard",
+    "statement": "The Kailasa temple at Ellora was excavated under the patronage of the Cholas.",
+    "is_fact": false,
+    "explanation": "Bluff. The monolithic Kailasa temple was carved under Rashtrakuta king Krishna I in the 8th century."
+  },
+  {
+    "id": "fb_049",
     "subject": "Geography",
+    "difficulty": "easy",
+    "statement": "The Ganga is the longest river flowing within India.",
+    "is_fact": true,
+    "explanation": "Fact. The Ganga, at over 2,500 km, is the longest river within India's territory."
+  },
+  {
+    "id": "fb_050",
+    "subject": "Geography",
+    "difficulty": "easy",
+    "statement": "The Thar Desert is located mainly in Gujarat.",
+    "is_fact": false,
+    "explanation": "Bluff. The Thar lies mainly in Rajasthan, with smaller extensions into Gujarat, Punjab and Haryana."
+  },
+  {
+    "id": "fb_051",
+    "subject": "Geography",
+    "difficulty": "easy",
+    "statement": "India's southernmost point, Indira Point, lies in the Andaman and Nicobar Islands.",
+    "is_fact": true,
+    "explanation": "Fact. Indira Point sits at the southern tip of Great Nicobar Island, south of Kanyakumari on the mainland."
+  },
+  {
+    "id": "fb_052",
+    "subject": "Geography",
+    "difficulty": "easy",
+    "statement": "The Sundarbans delta is formed by the Godavari river.",
+    "is_fact": false,
+    "explanation": "Bluff. The Sundarbans is part of the Ganga–Brahmaputra delta, the largest delta in the world."
+  },
+  {
+    "id": "fb_053",
+    "subject": "Geography",
+    "difficulty": "medium",
     "statement": "The Tropic of Cancer passes through only two Indian states.",
     "is_fact": false,
-    "explanation": "Bluff. It actually passes through eight states: Gujarat, Rajasthan, Madhya Pradesh, Chhattisgarh, Jharkhand, West Bengal, Tripura and Mizoram."
+    "explanation": "Bluff. It passes through eight states: Gujarat, Rajasthan, Madhya Pradesh, Chhattisgarh, Jharkhand, West Bengal, Tripura and Mizoram."
   },
   {
-    "id": "fb_006",
+    "id": "fb_054",
+    "subject": "Geography",
+    "difficulty": "medium",
+    "statement": "The Narmada flows westward through a rift valley into the Arabian Sea.",
+    "is_fact": true,
+    "explanation": "Fact. The Narmada flows west between the Vindhya and Satpura ranges through a rift valley, forming an estuary, not a delta."
+  },
+  {
+    "id": "fb_055",
+    "subject": "Geography",
+    "difficulty": "medium",
+    "statement": "Kanchenjunga is the highest peak located entirely within India.",
+    "is_fact": false,
+    "explanation": "Bluff. Kanchenjunga straddles the India–Nepal border; Nanda Devi is the highest peak entirely within India."
+  },
+  {
+    "id": "fb_056",
+    "subject": "Geography",
+    "difficulty": "medium",
+    "statement": "Loktak Lake, famous for its floating phumdis, is located in Manipur.",
+    "is_fact": true,
+    "explanation": "Fact. Loktak in Manipur is the largest freshwater lake in northeast India, known for its floating vegetation islands."
+  },
+  {
+    "id": "fb_057",
+    "subject": "Geography",
+    "difficulty": "hard",
+    "statement": "The Ten Degree Channel separates the Andaman Islands from the Nicobar Islands.",
+    "is_fact": true,
+    "explanation": "Fact. The Ten Degree Channel, lying roughly along 10°N latitude, divides the Andamans from the Nicobars."
+  },
+  {
+    "id": "fb_058",
+    "subject": "Geography",
+    "difficulty": "hard",
+    "statement": "The Duncan Passage separates Little Andaman from Car Nicobar.",
+    "is_fact": false,
+    "explanation": "Bluff. The Duncan Passage lies between South Andaman and Little Andaman; the Ten Degree Channel separates Little Andaman from Car Nicobar."
+  },
+  {
+    "id": "fb_059",
+    "subject": "Geography",
+    "difficulty": "hard",
+    "statement": "The Godavari has the largest drainage basin among peninsular rivers.",
+    "is_fact": true,
+    "explanation": "Fact. The Godavari, called the Dakshina Ganga, has India's second-largest basin after the Ganga and the largest in the peninsula."
+  },
+  {
+    "id": "fb_060",
+    "subject": "Geography",
+    "difficulty": "hard",
+    "statement": "The Nine Degree Channel separates Minicoy from the Maldives.",
+    "is_fact": false,
+    "explanation": "Bluff. The Eight Degree Channel separates Minicoy from the Maldives; the Nine Degree Channel separates Minicoy from the rest of Lakshadweep."
+  },
+  {
+    "id": "fb_061",
     "subject": "Economy",
+    "difficulty": "easy",
     "statement": "India's GST applies a single unified tax rate to every good and service.",
     "is_fact": false,
-    "explanation": "Bluff. GST actually has multiple tax slabs (0%, 5%, 12%, 18%, 28%), and some products like petroleum and alcohol for human consumption remain outside it entirely."
+    "explanation": "Bluff. GST has multiple slabs, and items like petroleum and alcohol for human consumption remain outside it."
   },
   {
-    "id": "fb_007",
-    "subject": "Environment",
-    "statement": "The Chipko Movement of the 1970s saw villagers, many of them women, hug trees to stop deforestation in the Himalayan region.",
+    "id": "fb_062",
+    "subject": "Economy",
+    "difficulty": "easy",
+    "statement": "The Reserve Bank of India is the sole issuer of India's currency notes.",
     "is_fact": true,
-    "explanation": "Fact. Associated with figures like Gaura Devi in Reni village and later Sunderlal Bahuguna, the movement used tree-hugging as direct, nonviolent resistance to commercial logging."
+    "explanation": "Fact. The RBI issues all currency notes; the government mints coins and issues the one-rupee note."
   },
   {
-    "id": "fb_008",
+    "id": "fb_063",
+    "subject": "Economy",
+    "difficulty": "easy",
+    "statement": "Repo rate is the rate at which banks lend money to the RBI.",
+    "is_fact": false,
+    "explanation": "Bluff. Repo is the rate at which the RBI lends to banks; banks parking funds with the RBI earn the reverse repo rate."
+  },
+  {
+    "id": "fb_064",
+    "subject": "Economy",
+    "difficulty": "easy",
+    "statement": "GDP measures the total value of goods and services produced within a country.",
+    "is_fact": true,
+    "explanation": "Fact. Gross Domestic Product counts final goods and services produced within a country's borders in a given period."
+  },
+  {
+    "id": "fb_065",
+    "subject": "Economy",
+    "difficulty": "medium",
+    "statement": "The RBI's Monetary Policy Committee has six members.",
+    "is_fact": true,
+    "explanation": "Fact. The MPC has three RBI members, including the Governor, and three members appointed by the central government."
+  },
+  {
+    "id": "fb_066",
+    "subject": "Economy",
+    "difficulty": "medium",
+    "statement": "NITI Aayog was created in 2015 to replace the Finance Commission.",
+    "is_fact": false,
+    "explanation": "Bluff. NITI Aayog replaced the Planning Commission; the Finance Commission is a constitutional body that still exists."
+  },
+  {
+    "id": "fb_067",
+    "subject": "Economy",
+    "difficulty": "medium",
+    "statement": "India's inflation-targeting framework sets a CPI target of 4% with a tolerance band of 2%.",
+    "is_fact": true,
+    "explanation": "Fact. Under the amended RBI Act, the target is 4% CPI inflation with a band of plus or minus 2%."
+  },
+  {
+    "id": "fb_068",
+    "subject": "Economy",
+    "difficulty": "medium",
+    "statement": "Fiscal deficit refers to the gap between a country's exports and imports.",
+    "is_fact": false,
+    "explanation": "Bluff. That gap is the trade deficit; fiscal deficit is government expenditure exceeding receipts, excluding borrowings."
+  },
+  {
+    "id": "fb_069",
+    "subject": "Economy",
+    "difficulty": "hard",
+    "statement": "The Marginal Standing Facility lets banks borrow overnight from the RBI at a rate above the repo rate.",
+    "is_fact": true,
+    "explanation": "Fact. MSF is an emergency overnight window priced above the repo rate, forming the ceiling of the policy corridor."
+  },
+  {
+    "id": "fb_070",
+    "subject": "Economy",
+    "difficulty": "hard",
+    "statement": "Open Market Operations involve the RBI buying and selling corporate bonds.",
+    "is_fact": false,
+    "explanation": "Bluff. OMOs involve the purchase and sale of government securities to manage liquidity, not corporate bonds."
+  },
+  {
+    "id": "fb_071",
+    "subject": "Economy",
+    "difficulty": "hard",
+    "statement": "In the Union Budget, disinvestment proceeds are classified as capital receipts.",
+    "is_fact": true,
+    "explanation": "Fact. Sale of government equity is a non-debt capital receipt, since it reduces the government's assets."
+  },
+  {
+    "id": "fb_072",
+    "subject": "Economy",
+    "difficulty": "hard",
+    "statement": "India's Wholesale Price Index includes the prices of services.",
+    "is_fact": false,
+    "explanation": "Bluff. The WPI covers only goods; services are captured in the Consumer Price Index."
+  },
+  {
+    "id": "fb_073",
+    "subject": "Environment",
+    "difficulty": "easy",
+    "statement": "The Chipko Movement of the 1970s saw villagers hug trees to stop deforestation.",
+    "is_fact": true,
+    "explanation": "Fact. Villagers in the Himalayan region, many of them women like Gaura Devi, hugged trees to resist commercial logging."
+  },
+  {
+    "id": "fb_074",
+    "subject": "Environment",
+    "difficulty": "easy",
+    "statement": "Project Tiger was launched in the 1990s.",
+    "is_fact": false,
+    "explanation": "Bluff. Project Tiger was launched in 1973 with nine reserves, starting with Jim Corbett National Park."
+  },
+  {
+    "id": "fb_075",
+    "subject": "Environment",
+    "difficulty": "easy",
+    "statement": "The ozone layer protects the Earth from harmful ultraviolet radiation.",
+    "is_fact": true,
+    "explanation": "Fact. Stratospheric ozone absorbs most of the Sun's harmful UV-B radiation before it reaches the surface."
+  },
+  {
+    "id": "fb_076",
+    "subject": "Environment",
+    "difficulty": "easy",
+    "statement": "The Sundarbans are famous as the habitat of the Asiatic lion.",
+    "is_fact": false,
+    "explanation": "Bluff. The Sundarbans are home to the Royal Bengal tiger; Asiatic lions survive only in Gujarat's Gir forest."
+  },
+  {
+    "id": "fb_077",
+    "subject": "Environment",
+    "difficulty": "medium",
+    "statement": "The Ramsar Convention deals with the conservation of wetlands.",
+    "is_fact": true,
+    "explanation": "Fact. The 1971 Ramsar Convention promotes wise use of wetlands, and India has dozens of designated Ramsar sites."
+  },
+  {
+    "id": "fb_078",
+    "subject": "Environment",
+    "difficulty": "medium",
+    "statement": "The Montreal Protocol addresses climate change caused by greenhouse gases.",
+    "is_fact": false,
+    "explanation": "Bluff. The Montreal Protocol phases out ozone-depleting substances; greenhouse gases are covered by the Kyoto Protocol and Paris Agreement."
+  },
+  {
+    "id": "fb_079",
+    "subject": "Environment",
+    "difficulty": "medium",
+    "statement": "Keibul Lamjao, the world's only floating national park, is home to the sangai deer.",
+    "is_fact": true,
+    "explanation": "Fact. Keibul Lamjao on Loktak Lake in Manipur shelters the endangered sangai, or brow-antlered deer."
+  },
+  {
+    "id": "fb_080",
+    "subject": "Environment",
+    "difficulty": "medium",
+    "statement": "The Great Indian Bustard is found mainly in the forests of Kerala.",
+    "is_fact": false,
+    "explanation": "Bluff. The critically endangered bustard inhabits dry grasslands, chiefly in Rajasthan and Gujarat."
+  },
+  {
+    "id": "fb_081",
+    "subject": "Environment",
+    "difficulty": "hard",
+    "statement": "Eco-Sensitive Zones around protected areas are notified under the Environment (Protection) Act, 1986.",
+    "is_fact": true,
+    "explanation": "Fact. ESZs are declared by the central government under the Environment (Protection) Act, 1986 as buffers around parks and sanctuaries."
+  },
+  {
+    "id": "fb_082",
+    "subject": "Environment",
+    "difficulty": "hard",
+    "statement": "The National Green Tribunal was established under the Environment (Protection) Act, 1986.",
+    "is_fact": false,
+    "explanation": "Bluff. The NGT was created by its own statute, the National Green Tribunal Act of 2010."
+  },
+  {
+    "id": "fb_083",
+    "subject": "Environment",
+    "difficulty": "hard",
+    "statement": "The dugong, India's only herbivorous marine mammal, is found in the Gulf of Mannar.",
+    "is_fact": true,
+    "explanation": "Fact. Dugongs graze on seagrass beds in the Gulf of Mannar, Palk Bay, Gulf of Kutch and the Andamans."
+  },
+  {
+    "id": "fb_084",
+    "subject": "Environment",
+    "difficulty": "hard",
+    "statement": "Blue carbon refers to carbon captured by terrestrial forests.",
+    "is_fact": false,
+    "explanation": "Bluff. Blue carbon is carbon stored by coastal and marine ecosystems such as mangroves, seagrasses and salt marshes."
+  },
+  {
+    "id": "fb_085",
     "subject": "Polity",
+    "difficulty": "easy",
+    "statement": "Dr. B.R. Ambedkar chaired the Drafting Committee of the Constitution.",
+    "is_fact": true,
+    "explanation": "Fact. Ambedkar headed the seven-member Drafting Committee set up by the Constituent Assembly in 1947."
+  },
+  {
+    "id": "fb_086",
+    "subject": "Polity",
+    "difficulty": "easy",
+    "statement": "The President of India is directly elected by the people.",
+    "is_fact": false,
+    "explanation": "Bluff. The President is elected indirectly by an electoral college of MPs and elected MLAs."
+  },
+  {
+    "id": "fb_087",
+    "subject": "Polity",
+    "difficulty": "easy",
     "statement": "Fundamental Duties were not part of the original Constitution and were added later by an amendment.",
     "is_fact": true,
-    "explanation": "Fact. Fundamental Duties (Article 51A) were inserted by the 42nd Amendment in 1976, based on recommendations of the Swaran Singh Committee."
+    "explanation": "Fact. Fundamental Duties (Article 51A) were inserted by the 42nd Amendment in 1976, on the Swaran Singh Committee's recommendation."
   },
   {
-    "id": "fb_009",
-    "subject": "Ancient History",
-    "statement": "Ashoka's edicts were written primarily in Sanskrit using the Devanagari script.",
-    "is_fact": false,
-    "explanation": "Bluff. Most edicts were composed in Prakrit and written in Brahmi script (Kharosthi in the northwest). Sanskrit and Devanagari became prominent much later."
-  },
-  {
-    "id": "fb_010",
+    "id": "fb_088",
     "subject": "Polity",
+    "difficulty": "easy",
+    "statement": "The Rajya Sabha can be dissolved by the President.",
+    "is_fact": false,
+    "explanation": "Bluff. The Rajya Sabha is a permanent body; a third of its members retire every two years, but it is never dissolved."
+  },
+  {
+    "id": "fb_089",
+    "subject": "Polity",
+    "difficulty": "medium",
     "statement": "India's Election Commission currently functions as a multi-member body, not headed solely by the Chief Election Commissioner.",
     "is_fact": true,
-    "explanation": "Fact. The Commission currently comprises the Chief Election Commissioner and two Election Commissioners, all with equal decision-making power."
+    "explanation": "Fact. The Commission comprises the Chief Election Commissioner and two Election Commissioners with equal decision-making power."
+  },
+  {
+    "id": "fb_090",
+    "subject": "Polity",
+    "difficulty": "medium",
+    "statement": "A Money Bill can be introduced in either House of Parliament.",
+    "is_fact": false,
+    "explanation": "Bluff. A Money Bill can be introduced only in the Lok Sabha, and only on the President's recommendation."
+  },
+  {
+    "id": "fb_091",
+    "subject": "Polity",
+    "difficulty": "medium",
+    "statement": "The Directive Principles of State Policy were borrowed from the Irish Constitution.",
+    "is_fact": true,
+    "explanation": "Fact. The DPSP concept came from Ireland, which had itself adapted it from the Spanish Constitution."
+  },
+  {
+    "id": "fb_092",
+    "subject": "Polity",
+    "difficulty": "medium",
+    "statement": "The 73rd Constitutional Amendment gave constitutional status to urban local bodies.",
+    "is_fact": false,
+    "explanation": "Bluff. The 73rd Amendment covered rural panchayats; urban local bodies got constitutional status through the 74th Amendment."
+  },
+  {
+    "id": "fb_093",
+    "subject": "Polity",
+    "difficulty": "hard",
+    "statement": "The Ninth Schedule was added by the very first Constitutional Amendment in 1951.",
+    "is_fact": true,
+    "explanation": "Fact. The First Amendment of 1951 created the Ninth Schedule to shield land-reform laws from judicial review."
+  },
+  {
+    "id": "fb_094",
+    "subject": "Polity",
+    "difficulty": "hard",
+    "statement": "The Vice-President can be removed only through impeachment for violating the Constitution.",
+    "is_fact": false,
+    "explanation": "Bluff. Impeachment applies to the President; the Vice-President is removed by a Rajya Sabha resolution agreed to by the Lok Sabha, with no grounds specified."
+  },
+  {
+    "id": "fb_095",
+    "subject": "Polity",
+    "difficulty": "hard",
+    "statement": "The Speaker's decision on whether a bill is a Money Bill is final.",
+    "is_fact": true,
+    "explanation": "Fact. Article 110(3) makes the Lok Sabha Speaker's certification of a Money Bill final."
+  },
+  {
+    "id": "fb_096",
+    "subject": "Polity",
+    "difficulty": "hard",
+    "statement": "The Attorney General of India holds office for a fixed six-year term.",
+    "is_fact": false,
+    "explanation": "Bluff. The Attorney General has no fixed term and holds office during the pleasure of the President."
   }
 ]

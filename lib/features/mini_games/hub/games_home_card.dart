@@ -6,9 +6,9 @@ import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 
-/// Home entry for Memory Pairs (Revision Games).
-class MemoryPairsHomeCard extends StatelessWidget {
-  const MemoryPairsHomeCard({super.key, required this.borderColor});
+/// Home entry for the Games hub (Revision Games).
+class GamesHomeCard extends StatelessWidget {
+  const GamesHomeCard({super.key, required this.borderColor});
 
   final Color borderColor;
 
@@ -30,7 +30,7 @@ class MemoryPairsHomeCard extends StatelessWidget {
         Material(
           color: Colors.transparent,
           child: InkWell(
-            onTap: () => context.push('/memory-pairs'),
+            onTap: () => context.push('/games'),
             borderRadius: BorderRadius.circular(AppRadius.lg),
             child: Ink(
               padding: const EdgeInsets.all(AppSpacing.lg),
@@ -51,7 +51,7 @@ class MemoryPairsHomeCard extends StatelessWidget {
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: const Icon(
-                      Icons.grid_view_rounded,
+                      Icons.sports_esports_outlined,
                       color: AppColors.primary,
                     ),
                   ),
@@ -61,7 +61,7 @@ class MemoryPairsHomeCard extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Memory Pairs',
+                          'Games',
                           style: AppTextStyles.label().copyWith(
                             color: scheme.onSurface,
                             fontWeight: FontWeight.w700,
@@ -69,7 +69,7 @@ class MemoryPairsHomeCard extends StatelessWidget {
                         ),
                         const SizedBox(height: 2),
                         Text(
-                          'Match terms to answers — train recall',
+                          'Memory, timelines, duels, and more',
                           style: AppTextStyles.caption().copyWith(
                             color: scheme.onSurfaceVariant,
                           ),

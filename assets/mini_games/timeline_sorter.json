@@ -2,131 +2,3180 @@
   {
     "id": "tl_001",
     "subject": "Ancient History",
-    "theme": "Foreign Invasions of Ancient India",
-    "items": [
-      { "label": "Persian (Achaemenid) campaign into the Indus region", "year_display": "c. 518 BCE", "sort_key": -518 },
-      { "label": "Alexander's invasion of northwest India", "year_display": "326 BCE", "sort_key": -326 },
-      { "label": "Indo-Greek invasions begin", "year_display": "c. 180 BCE", "sort_key": -180 },
-      { "label": "Saka rule established in western India", "year_display": "c. 90 BCE", "sort_key": -90 },
-      { "label": "Kushan rule established under Kadphises", "year_display": "c. 30 CE", "sort_key": 30 }
-    ],
-    "explanation": "India saw a long sequence of overland invasions from the northwest, each leaving successors who eventually assimilated. The Persians came first, followed by Alexander, then Indo-Greek kings, Sakas, and finally the Kushans — who built one of ancient India's most extensive empires."
-  },
-  {
-    "id": "tl_002",
-    "subject": "Medieval History",
-    "theme": "Dynasties of the Delhi Sultanate",
-    "items": [
-      { "label": "Mamluk (Slave) dynasty founded by Qutb-ud-din Aibak", "year_display": "1206", "sort_key": 1206 },
-      { "label": "Khilji dynasty founded by Jalaluddin Khilji", "year_display": "1290", "sort_key": 1290 },
-      { "label": "Tughlaq dynasty founded by Ghiyasuddin Tughlaq", "year_display": "1320", "sort_key": 1320 },
-      { "label": "Sayyid dynasty founded by Khizr Khan", "year_display": "1414", "sort_key": 1414 },
-      { "label": "Lodi dynasty founded by Bahlul Lodi", "year_display": "1451", "sort_key": 1451 }
-    ],
-    "explanation": "Five dynasties ruled the Delhi Sultanate in unbroken sequence over roughly 250 years, ending when Babur defeated Ibrahim Lodi at Panipat in 1526 to found the Mughal Empire."
-  },
-  {
-    "id": "tl_003",
-    "subject": "Modern History",
-    "theme": "Road to the Non-Cooperation Movement",
-    "items": [
-      { "label": "Partition of Bengal announced by Curzon", "year_display": "1905", "sort_key": 1905 },
-      { "label": "All-India Muslim League founded in Dacca", "year_display": "1906", "sort_key": 1906 },
-      { "label": "Morley-Minto Reforms (Indian Councils Act)", "year_display": "1909", "sort_key": 1909 },
-      { "label": "Lucknow Pact between Congress and Muslim League", "year_display": "1916", "sort_key": 1916 },
-      { "label": "Montagu-Chelmsford Reforms (Government of India Act)", "year_display": "1919", "sort_key": 1919 }
-    ],
-    "explanation": "Partition of Bengal sharpened political mobilisation and helped trigger the Muslim League's founding a year later. Reform acts followed at either end of the Lucknow Pact, and the disappointment with the 1919 reforms — alongside the Rowlatt Act and Jallianwala Bagh the same year — set up the 1920 Non-Cooperation Movement."
-  },
-  {
-    "id": "tl_004",
-    "subject": "Art & Culture",
-    "theme": "Great Temple Construction Across Dynasties",
-    "items": [
-      { "label": "Kailasa Temple, Ellora, commissioned by Rashtrakuta king Krishna I", "year_display": "c. 760 CE", "sort_key": 760 },
-      { "label": "Brihadeeswarar Temple, Thanjavur, completed under Chola king Rajaraja I", "year_display": "c. 1010 CE", "sort_key": 1010 },
-      { "label": "Konark Sun Temple built under the Eastern Ganga king Narasimhadeva I", "year_display": "c. 1250 CE", "sort_key": 1250 },
-      { "label": "Harmandir Sahib (Golden Temple) completed, Adi Granth installed", "year_display": "1604", "sort_key": 1604 },
-      { "label": "Meenakshi Temple, Madurai, majorly expanded under Nayaka ruler Tirumalai Nayak", "year_display": "c. 1630", "sort_key": 1630 }
-    ],
-    "explanation": "Temple architecture spans nearly a millennium of dynastic patronage — Rashtrakuta rock-cut work at Ellora, Chola bronze-age engineering at Thanjavur, Eastern Ganga solar symbolism at Konark, Sikh Gurus at Amritsar, and Nayaka-era expansion at Madurai."
-  },
-  {
-    "id": "tl_005",
-    "subject": "Geography",
-    "theme": "Formation of Indian States (Reorganisation Timeline)",
-    "items": [
-      { "label": "Andhra Pradesh formed as India's first linguistic state", "year_display": "1953", "sort_key": 1953 },
-      { "label": "Bombay State bifurcated into Maharashtra and Gujarat", "year_display": "1960", "sort_key": 1960 },
-      { "label": "Nagaland becomes the 16th state", "year_display": "1963", "sort_key": 1963 },
-      { "label": "Sikkim becomes a full state", "year_display": "1975", "sort_key": 1975 },
-      { "label": "Telangana carved out of Andhra Pradesh", "year_display": "2014", "sort_key": 2014 }
-    ],
-    "explanation": "State boundaries in independent India were redrawn in waves — first along linguistic lines following the States Reorganisation Commission, then through later bifurcations driven by regional identity movements, right up to Telangana in 2014."
-  },
-  {
-    "id": "tl_006",
-    "subject": "Economy",
-    "theme": "Economic Milestones — Plans to GST",
-    "items": [
-      { "label": "First Five-Year Plan launched", "year_display": "1951", "sort_key": 1951 },
-      { "label": "Green Revolution begins with high-yield variety seeds", "year_display": "1966", "sort_key": 1966 },
-      { "label": "First round of bank nationalisation (14 banks)", "year_display": "1969", "sort_key": 1969 },
-      { "label": "LPG reforms — liberalisation, privatisation, globalisation", "year_display": "1991", "sort_key": 1991 },
-      { "label": "Goods and Services Tax (GST) implemented", "year_display": "2017", "sort_key": 2017 }
-    ],
-    "explanation": "India's economic story moves from planned self-sufficiency (Five-Year Plans, nationalised banks) through a productivity push (Green Revolution) to a decisive market opening in 1991, culminating decades later in a single unified indirect tax regime."
-  },
-  {
-    "id": "tl_007",
-    "subject": "Environment",
-    "theme": "Environmental Legislation and Events in India",
-    "items": [
-      { "label": "Wildlife (Protection) Act passed", "year_display": "1972", "sort_key": 1972 },
-      { "label": "Project Tiger launched", "year_display": "1973", "sort_key": 1973 },
-      { "label": "Forest (Conservation) Act passed", "year_display": "1980", "sort_key": 1980 },
-      { "label": "Bhopal Gas Tragedy", "year_display": "1984", "sort_key": 1984 },
-      { "label": "National Green Tribunal Act passed", "year_display": "2010", "sort_key": 2010 }
-    ],
-    "explanation": "India's environmental legal framework built up gradually — protection statutes in the 1970s and 80s, a industrial-disaster wake-up call in 1984, and eventually a dedicated judicial body (NGT) in 2010 to fast-track environmental cases."
-  },
-  {
-    "id": "tl_008",
-    "subject": "Polity",
-    "theme": "Constitutional Milestones",
-    "items": [
-      { "label": "Constitution of India adopted by the Constituent Assembly", "year_display": "26 Nov 1949", "sort_key": 1949 },
-      { "label": "Constitution comes into force", "year_display": "26 Jan 1950", "sort_key": 1950 },
-      { "label": "First Amendment Act", "year_display": "1951", "sort_key": 1951 },
-      { "label": "42nd Amendment ('Mini Constitution')", "year_display": "1976", "sort_key": 1976 },
-      { "label": "73rd and 74th Amendments (Panchayati Raj and Municipalities)", "year_display": "1992", "sort_key": 1992 }
-    ],
-    "explanation": "From adoption to enforcement took two months. The First Amendment quickly addressed land-reform and free-speech tensions; the 42nd Amendment during the Emergency reshaped the Preamble and Centre-State balance; and the 73rd/74th Amendments finally gave local self-government constitutional status."
-  },
-  {
-    "id": "tl_009",
-    "subject": "Ancient History",
+    "difficulty": "easy",
     "theme": "The Gupta Empire — Rise and Fall",
     "items": [
-      { "label": "Chandragupta I establishes the Gupta Empire", "year_display": "c. 320 CE", "sort_key": 320 },
-      { "label": "Samudragupta's conquests recorded in the Allahabad Prashasti", "year_display": "c. 350 CE", "sort_key": 350 },
-      { "label": "Chandragupta II (Vikramaditya) begins his reign", "year_display": "c. 380 CE", "sort_key": 380 },
-      { "label": "Huna invasions begin, resisted by Skandagupta", "year_display": "c. 455 CE", "sort_key": 455 },
-      { "label": "Gupta Empire effectively ends", "year_display": "c. 550 CE", "sort_key": 550 }
+      {
+        "label": "Chandragupta I establishes the Gupta Empire",
+        "year_display": "c. 320 CE",
+        "sort_key": 320
+      },
+      {
+        "label": "Samudragupta's conquests recorded in the Allahabad Prashasti",
+        "year_display": "c. 350 CE",
+        "sort_key": 350
+      },
+      {
+        "label": "Chandragupta II (Vikramaditya) begins his reign",
+        "year_display": "c. 380 CE",
+        "sort_key": 380
+      },
+      {
+        "label": "Huna invasions begin, resisted by Skandagupta",
+        "year_display": "c. 455 CE",
+        "sort_key": 455
+      },
+      {
+        "label": "Gupta Empire effectively ends",
+        "year_display": "c. 550 CE",
+        "sort_key": 550
+      }
     ],
     "explanation": "The Guptas rose through Chandragupta I's founding marriage alliance, Samudragupta's military expansion, and Chandragupta II's golden-age patronage of arts and science — before repeated Huna invasions from the mid-5th century wore the empire down over the following century."
   },
   {
+    "id": "tl_002",
+    "subject": "Ancient History",
+    "difficulty": "easy",
+    "theme": "Milestones of Early Indian Civilisation",
+    "items": [
+      {
+        "label": "Mature phase of the Harappan Civilisation begins",
+        "year_display": "c. 2600 BCE",
+        "sort_key": -2600
+      },
+      {
+        "label": "Composition of the Rigveda",
+        "year_display": "c. 1500 BCE",
+        "sort_key": -1500
+      },
+      {
+        "label": "Rise of the sixteen Mahajanapadas",
+        "year_display": "c. 600 BCE",
+        "sort_key": -600
+      },
+      {
+        "label": "Chandragupta Maurya founds the Mauryan Empire",
+        "year_display": "321 BCE",
+        "sort_key": -321
+      },
+      {
+        "label": "Chandragupta I founds the Gupta Empire",
+        "year_display": "c. 320 CE",
+        "sort_key": 320
+      }
+    ],
+    "explanation": "This is the backbone chronology of ancient India: urban Harappan cities, then the Vedic age, then territorial Mahajanapadas, and finally the two great pan-Indian empires — the Mauryas and, some six centuries later, the Guptas."
+  },
+  {
+    "id": "tl_003",
+    "subject": "Ancient History",
+    "difficulty": "easy",
+    "theme": "Rulers of the Mauryan Empire",
+    "items": [
+      {
+        "label": "Chandragupta Maurya seizes the Nanda throne",
+        "year_display": "321 BCE",
+        "sort_key": -321
+      },
+      {
+        "label": "Bindusara succeeds Chandragupta",
+        "year_display": "c. 297 BCE",
+        "sort_key": -297
+      },
+      {
+        "label": "Ashoka's accession to the throne",
+        "year_display": "c. 268 BCE",
+        "sort_key": -268
+      },
+      {
+        "label": "Last Mauryan king Brihadratha assassinated by Pushyamitra Shunga",
+        "year_display": "185 BCE",
+        "sort_key": -185
+      }
+    ],
+    "explanation": "The Mauryan Empire passed from its founder Chandragupta to his son Bindusara and then to Ashoka; about half a century after Ashoka's death, the dynasty ended when its commander-in-chief Pushyamitra Shunga killed the last king in 185 BCE."
+  },
+  {
+    "id": "tl_004",
+    "subject": "Ancient History",
+    "difficulty": "easy",
+    "theme": "The Four Buddhist Councils",
+    "items": [
+      {
+        "label": "First Buddhist Council at Rajagriha",
+        "year_display": "c. 483 BCE",
+        "sort_key": -483
+      },
+      {
+        "label": "Second Buddhist Council at Vaishali",
+        "year_display": "c. 383 BCE",
+        "sort_key": -383
+      },
+      {
+        "label": "Third Buddhist Council at Pataliputra under Ashoka",
+        "year_display": "c. 250 BCE",
+        "sort_key": -250
+      },
+      {
+        "label": "Fourth Buddhist Council in Kashmir under Kanishka",
+        "year_display": "c. 78 CE",
+        "sort_key": 78
+      }
+    ],
+    "explanation": "The councils track Buddhism's institutional evolution: the first compiled the Buddha's teachings just after his death, the second saw the Mahasanghika split, Ashoka's third council sent out missionaries, and Kanishka's fourth council is associated with the rise of Mahayana."
+  },
+  {
+    "id": "tl_005",
+    "subject": "Ancient History",
+    "difficulty": "medium",
+    "theme": "Foreign Invasions of Ancient India",
+    "items": [
+      {
+        "label": "Persian (Achaemenid) campaign into the Indus region",
+        "year_display": "c. 518 BCE",
+        "sort_key": -518
+      },
+      {
+        "label": "Alexander's invasion of northwest India",
+        "year_display": "326 BCE",
+        "sort_key": -326
+      },
+      {
+        "label": "Indo-Greek invasions begin",
+        "year_display": "c. 180 BCE",
+        "sort_key": -180
+      },
+      {
+        "label": "Saka rule established in western India",
+        "year_display": "c. 90 BCE",
+        "sort_key": -90
+      },
+      {
+        "label": "Kushan rule established under Kadphises",
+        "year_display": "c. 30 CE",
+        "sort_key": 30
+      }
+    ],
+    "explanation": "India saw a long sequence of overland invasions from the northwest, each leaving successors who eventually assimilated. The Persians came first, followed by Alexander, then Indo-Greek kings, Sakas, and finally the Kushans — who built one of ancient India's most extensive empires."
+  },
+  {
+    "id": "tl_006",
+    "subject": "Ancient History",
+    "difficulty": "medium",
+    "theme": "Foreign Travellers to Ancient India",
+    "items": [
+      {
+        "label": "Megasthenes arrives at Chandragupta Maurya's court",
+        "year_display": "c. 302 BCE",
+        "sort_key": -302
+      },
+      {
+        "label": "Fa-Hien travels through Gupta India",
+        "year_display": "c. 405 CE",
+        "sort_key": 405
+      },
+      {
+        "label": "Hiuen Tsang arrives in India during Harsha's reign",
+        "year_display": "c. 630 CE",
+        "sort_key": 630
+      },
+      {
+        "label": "I-tsing studies at Nalanda",
+        "year_display": "c. 675 CE",
+        "sort_key": 675
+      }
+    ],
+    "explanation": "Each traveller anchors a ruler: Megasthenes came as Seleucus's envoy to Chandragupta Maurya, Fa-Hien saw Chandragupta II's Gupta realm, Hiuen Tsang was welcomed by Harsha, and I-tsing documented monastic life at Nalanda a generation later."
+  },
+  {
+    "id": "tl_007",
+    "subject": "Ancient History",
+    "difficulty": "medium",
+    "theme": "Dynasties of Magadha",
+    "items": [
+      {
+        "label": "Bimbisara begins Haryanka rule",
+        "year_display": "c. 544 BCE",
+        "sort_key": -544
+      },
+      {
+        "label": "Shishunaga dynasty replaces the Haryankas",
+        "year_display": "c. 412 BCE",
+        "sort_key": -412
+      },
+      {
+        "label": "Mahapadma Nanda founds the Nanda dynasty",
+        "year_display": "c. 344 BCE",
+        "sort_key": -344
+      },
+      {
+        "label": "Chandragupta Maurya overthrows the Nandas",
+        "year_display": "321 BCE",
+        "sort_key": -321
+      },
+      {
+        "label": "Pushyamitra Shunga founds the Shunga dynasty",
+        "year_display": "185 BCE",
+        "sort_key": -185
+      }
+    ],
+    "explanation": "Magadha's throne passed through a fixed sequence — Haryanka, Shishunaga, Nanda, Maurya, Shunga — with each dynasty typically ending in a coup by its own minister or general."
+  },
+  {
+    "id": "tl_008",
+    "subject": "Ancient History",
+    "difficulty": "medium",
+    "theme": "Great Centres of Ancient Learning",
+    "items": [
+      {
+        "label": "Taxila flourishes as a centre of learning",
+        "year_display": "c. 500 BCE",
+        "sort_key": -500
+      },
+      {
+        "label": "Nalanda Mahavihara founded under Kumaragupta I",
+        "year_display": "c. 427 CE",
+        "sort_key": 427
+      },
+      {
+        "label": "Valabhi university flourishes under the Maitrakas",
+        "year_display": "c. 600 CE",
+        "sort_key": 600
+      },
+      {
+        "label": "Vikramashila founded by Pala king Dharmapala",
+        "year_display": "c. 800 CE",
+        "sort_key": 800
+      }
+    ],
+    "explanation": "India's ancient universities rose in sequence: Taxila in the far northwest during the late Vedic age, Nalanda under Gupta patronage, Valabhi in Gujarat under the Maitrakas, and Vikramashila as the Palas' great Buddhist foundation in the east."
+  },
+  {
+    "id": "tl_009",
+    "subject": "Ancient History",
+    "difficulty": "hard",
+    "theme": "Discovery of Harappan Sites",
+    "items": [
+      {
+        "label": "Harappa excavated by Daya Ram Sahni",
+        "year_display": "1921",
+        "sort_key": 1921
+      },
+      {
+        "label": "Mohenjo-daro excavated by R. D. Banerji",
+        "year_display": "1922",
+        "sort_key": 1922
+      },
+      {
+        "label": "Kalibangan identified by A. Ghosh",
+        "year_display": "1953",
+        "sort_key": 1953
+      },
+      {
+        "label": "Lothal discovered by S. R. Rao",
+        "year_display": "1954",
+        "sort_key": 1954
+      },
+      {
+        "label": "Dholavira discovered by J. P. Joshi",
+        "year_display": "1968",
+        "sort_key": 1968
+      }
+    ],
+    "explanation": "The civilisation itself was revealed in 1921-22 with the twin digs at Harappa and Mohenjo-daro; after Partition placed both in Pakistan, Indian archaeologists located major sites at home — Kalibangan, Lothal and finally Dholavira."
+  },
+  {
     "id": "tl_010",
+    "subject": "Ancient History",
+    "difficulty": "hard",
+    "theme": "Ashoka's Reign in Detail",
+    "items": [
+      {
+        "label": "Kalinga War transforms Ashoka",
+        "year_display": "c. 261 BCE",
+        "sort_key": -261
+      },
+      {
+        "label": "Major Rock Edicts issued",
+        "year_display": "c. 256 BCE",
+        "sort_key": -256
+      },
+      {
+        "label": "Third Buddhist Council at Pataliputra",
+        "year_display": "c. 250 BCE",
+        "sort_key": -250
+      },
+      {
+        "label": "Pillar Edicts inscribed",
+        "year_display": "c. 242 BCE",
+        "sort_key": -242
+      },
+      {
+        "label": "Death of Ashoka",
+        "year_display": "c. 232 BCE",
+        "sort_key": -232
+      }
+    ],
+    "explanation": "Everything follows from Kalinga: the remorseful emperor turned to dhamma, broadcast it first on rock edicts, convened the Third Council to purify the sangha, and issued the pillar edicts late in a reign that ended around 232 BCE."
+  },
+  {
+    "id": "tl_011",
+    "subject": "Ancient History",
+    "difficulty": "hard",
+    "theme": "Era Systems of Indian History",
+    "items": [
+      {
+        "label": "Vikram Samvat era begins",
+        "year_display": "57 BCE",
+        "sort_key": -57
+      },
+      {
+        "label": "Saka era begins (linked to Kanishka's accession)",
+        "year_display": "78 CE",
+        "sort_key": 78
+      },
+      {
+        "label": "Gupta era begins with Chandragupta I",
+        "year_display": "320 CE",
+        "sort_key": 320
+      },
+      {
+        "label": "Harsha era begins with Harshavardhana's accession",
+        "year_display": "606 CE",
+        "sort_key": 606
+      }
+    ],
+    "explanation": "Indian inscriptions date events by eras founded at royal accessions: Vikram Samvat (57 BCE), the Saka era (78 CE, later adopted as India's national calendar), the Gupta era (320 CE) and the Harsha era (606 CE)."
+  },
+  {
+    "id": "tl_012",
+    "subject": "Ancient History",
+    "difficulty": "hard",
+    "theme": "From Alexander to the Mauryas",
+    "items": [
+      {
+        "label": "Alexander invades northwest India, Battle of Hydaspes",
+        "year_display": "326 BCE",
+        "sort_key": -326
+      },
+      {
+        "label": "Alexander dies at Babylon",
+        "year_display": "323 BCE",
+        "sort_key": -323
+      },
+      {
+        "label": "Chandragupta Maurya founds his empire",
+        "year_display": "321 BCE",
+        "sort_key": -321
+      },
+      {
+        "label": "Seleucus cedes territory to Chandragupta by treaty",
+        "year_display": "c. 305 BCE",
+        "sort_key": -305
+      },
+      {
+        "label": "Bindusara succeeds Chandragupta",
+        "year_display": "c. 297 BCE",
+        "sort_key": -297
+      }
+    ],
+    "explanation": "Alexander's withdrawal and death created a power vacuum in the northwest that Chandragupta exploited within two years; his treaty with Seleucus around 305 BCE fixed the empire's western frontier before Bindusara inherited it."
+  },
+  {
+    "id": "tl_013",
+    "subject": "Medieval History",
+    "difficulty": "easy",
+    "theme": "Dynasties of the Delhi Sultanate",
+    "items": [
+      {
+        "label": "Mamluk (Slave) dynasty founded by Qutb-ud-din Aibak",
+        "year_display": "1206",
+        "sort_key": 1206
+      },
+      {
+        "label": "Khilji dynasty founded by Jalaluddin Khilji",
+        "year_display": "1290",
+        "sort_key": 1290
+      },
+      {
+        "label": "Tughlaq dynasty founded by Ghiyasuddin Tughlaq",
+        "year_display": "1320",
+        "sort_key": 1320
+      },
+      {
+        "label": "Sayyid dynasty founded by Khizr Khan",
+        "year_display": "1414",
+        "sort_key": 1414
+      },
+      {
+        "label": "Lodi dynasty founded by Bahlul Lodi",
+        "year_display": "1451",
+        "sort_key": 1451
+      }
+    ],
+    "explanation": "Five dynasties ruled the Delhi Sultanate in unbroken sequence over roughly 250 years, ending when Babur defeated Ibrahim Lodi at Panipat in 1526 to found the Mughal Empire."
+  },
+  {
+    "id": "tl_014",
+    "subject": "Medieval History",
+    "difficulty": "easy",
+    "theme": "The Great Mughal Emperors",
+    "items": [
+      {
+        "label": "Babur becomes the first Mughal emperor",
+        "year_display": "1526",
+        "sort_key": 1526
+      },
+      {
+        "label": "Humayun succeeds Babur",
+        "year_display": "1530",
+        "sort_key": 1530
+      },
+      {
+        "label": "Akbar's accession at Kalanaur",
+        "year_display": "1556",
+        "sort_key": 1556
+      },
+      {
+        "label": "Jahangir's accession",
+        "year_display": "1605",
+        "sort_key": 1605
+      },
+      {
+        "label": "Shah Jahan's accession",
+        "year_display": "1628",
+        "sort_key": 1628
+      }
+    ],
+    "explanation": "The succession of the first five Great Mughals runs Babur, Humayun, Akbar, Jahangir, Shah Jahan — with Akbar's fifty-year reign (1556-1605) forming the empire's consolidating core."
+  },
+  {
+    "id": "tl_015",
+    "subject": "Medieval History",
+    "difficulty": "easy",
+    "theme": "Decisive Battles of the Medieval Era",
+    "items": [
+      {
+        "label": "First Battle of Panipat — Babur defeats Ibrahim Lodi",
+        "year_display": "1526",
+        "sort_key": 1526
+      },
+      {
+        "label": "Battle of Khanwa — Babur defeats Rana Sanga",
+        "year_display": "1527",
+        "sort_key": 1527
+      },
+      {
+        "label": "Second Battle of Panipat — Akbar's forces defeat Hemu",
+        "year_display": "1556",
+        "sort_key": 1556
+      },
+      {
+        "label": "Battle of Haldighati — Akbar's forces against Maharana Pratap",
+        "year_display": "1576",
+        "sort_key": 1576
+      },
+      {
+        "label": "Third Battle of Panipat — Abdali defeats the Marathas",
+        "year_display": "1761",
+        "sort_key": 1761
+      }
+    ],
+    "explanation": "Panipat bookends the Mughal story: the first battle founded the empire, Khanwa secured it against the Rajputs, the second battle restored it for Akbar, and the third — fought between Afghans and Marathas — marked how completely Mughal power had hollowed out by 1761."
+  },
+  {
+    "id": "tl_016",
+    "subject": "Medieval History",
+    "difficulty": "easy",
+    "theme": "Vijayanagara and the Bahmani Kingdom",
+    "items": [
+      {
+        "label": "Vijayanagara Empire founded by Harihara and Bukka",
+        "year_display": "1336",
+        "sort_key": 1336
+      },
+      {
+        "label": "Bahmani Sultanate founded by Alauddin Bahman Shah",
+        "year_display": "1347",
+        "sort_key": 1347
+      },
+      {
+        "label": "Krishnadevaraya's accession",
+        "year_display": "1509",
+        "sort_key": 1509
+      },
+      {
+        "label": "Battle of Talikota shatters Vijayanagara",
+        "year_display": "1565",
+        "sort_key": 1565
+      }
+    ],
+    "explanation": "The two great Deccan rivals were founded a decade apart in the mid-14th century; Vijayanagara peaked under Krishnadevaraya before the combined Deccan sultanates — successors of the Bahmani kingdom — destroyed it at Talikota in 1565."
+  },
+  {
+    "id": "tl_017",
+    "subject": "Medieval History",
+    "difficulty": "medium",
+    "theme": "The Reign of Alauddin Khilji",
+    "items": [
+      {
+        "label": "Alauddin Khilji's accession after killing Jalaluddin",
+        "year_display": "1296",
+        "sort_key": 1296
+      },
+      {
+        "label": "Conquest of Gujarat",
+        "year_display": "1299",
+        "sort_key": 1299
+      },
+      {
+        "label": "Capture of Chittor",
+        "year_display": "1303",
+        "sort_key": 1303
+      },
+      {
+        "label": "Malik Kafur's campaign reaches Madurai",
+        "year_display": "1311",
+        "sort_key": 1311
+      }
+    ],
+    "explanation": "Alauddin expanded in two directions: he personally led conquests in the north and west (Gujarat, Chittor) while his general Malik Kafur raided deep into the peninsula, reaching the Pandyan capital Madurai by 1311."
+  },
+  {
+    "id": "tl_018",
+    "subject": "Medieval History",
+    "difficulty": "medium",
+    "theme": "Muhammad bin Tughlaq's Experiments",
+    "items": [
+      {
+        "label": "Muhammad bin Tughlaq's accession",
+        "year_display": "1325",
+        "sort_key": 1325
+      },
+      {
+        "label": "Capital transferred from Delhi to Daulatabad",
+        "year_display": "1327",
+        "sort_key": 1327
+      },
+      {
+        "label": "Token copper currency introduced",
+        "year_display": "1329",
+        "sort_key": 1329
+      },
+      {
+        "label": "Ibn Battuta arrives at his court",
+        "year_display": "1333",
+        "sort_key": 1333
+      },
+      {
+        "label": "Muhammad bin Tughlaq dies campaigning in Sindh",
+        "year_display": "1351",
+        "sort_key": 1351
+      }
+    ],
+    "explanation": "His two most famous experiments — the capital shift and the token currency — came in quick succession early in the reign, and both failed. Ibn Battuta arrived in time to record the aftermath, and the sultan died in 1351 still suppressing rebellions."
+  },
+  {
+    "id": "tl_019",
+    "subject": "Medieval History",
+    "difficulty": "medium",
+    "theme": "Humayun versus Sher Shah",
+    "items": [
+      {
+        "label": "Humayun's accession",
+        "year_display": "1530",
+        "sort_key": 1530
+      },
+      {
+        "label": "Battle of Chausa — Sher Khan defeats Humayun",
+        "year_display": "1539",
+        "sort_key": 1539
+      },
+      {
+        "label": "Battle of Kannauj — Humayun driven from India",
+        "year_display": "1540",
+        "sort_key": 1540
+      },
+      {
+        "label": "Sher Shah dies at Kalinjar",
+        "year_display": "1545",
+        "sort_key": 1545
+      },
+      {
+        "label": "Humayun recaptures Delhi",
+        "year_display": "1555",
+        "sort_key": 1555
+      }
+    ],
+    "explanation": "Sher Shah defeated Humayun twice in successive years (Chausa 1539, Kannauj 1540) and ruled an interregnum famous for administrative reform; only after Sher Shah's death and the Sur dynasty's decay could Humayun return in 1555 — dying months later."
+  },
+  {
+    "id": "tl_020",
+    "subject": "Medieval History",
+    "difficulty": "medium",
+    "theme": "The Career of Shivaji",
+    "items": [
+      {
+        "label": "Birth of Shivaji at Shivneri fort",
+        "year_display": "1630",
+        "sort_key": 1630
+      },
+      {
+        "label": "Treaty of Purandar with Jai Singh",
+        "year_display": "1665",
+        "sort_key": 1665
+      },
+      {
+        "label": "Shivaji escapes from Aurangzeb's detention at Agra",
+        "year_display": "1666",
+        "sort_key": 1666
+      },
+      {
+        "label": "Coronation at Raigad as Chhatrapati",
+        "year_display": "1674",
+        "sort_key": 1674
+      },
+      {
+        "label": "Death of Shivaji",
+        "year_display": "1680",
+        "sort_key": 1680
+      }
+    ],
+    "explanation": "The Purandar treaty and the Agra escape came back-to-back in 1665-66 — the low point of Shivaji's fortunes — after which he rebuilt his power, crowned himself Chhatrapati in 1674, and ruled a sovereign Maratha state until his death."
+  },
+  {
+    "id": "tl_021",
+    "subject": "Medieval History",
+    "difficulty": "hard",
+    "theme": "Bhakti Saints by Birth",
+    "items": [
+      {
+        "label": "Birth of Ramanuja",
+        "year_display": "1017",
+        "sort_key": 1017
+      },
+      {
+        "label": "Birth of Kabir (traditional date)",
+        "year_display": "c. 1440",
+        "sort_key": 1440
+      },
+      {
+        "label": "Birth of Guru Nanak",
+        "year_display": "1469",
+        "sort_key": 1469
+      },
+      {
+        "label": "Birth of Chaitanya Mahaprabhu",
+        "year_display": "1486",
+        "sort_key": 1486
+      },
+      {
+        "label": "Birth of Tulsidas (traditional date)",
+        "year_display": "c. 1532",
+        "sort_key": 1532
+      }
+    ],
+    "explanation": "Ramanuja's 11th-century Vishishtadvaita laid the philosophical ground; the popular north Indian wave came much later, with Kabir, Nanak, Chaitanya and Tulsidas all born within about a century of each other (c. 1440-1532)."
+  },
+  {
+    "id": "tl_022",
+    "subject": "Medieval History",
+    "difficulty": "hard",
+    "theme": "Decline of the Mughal Empire",
+    "items": [
+      {
+        "label": "Death of Aurangzeb at Ahmadnagar",
+        "year_display": "1707",
+        "sort_key": 1707
+      },
+      {
+        "label": "Death of Bahadur Shah I",
+        "year_display": "1712",
+        "sort_key": 1712
+      },
+      {
+        "label": "Farrukhsiyar's farman grants the East India Company trade privileges",
+        "year_display": "1717",
+        "sort_key": 1717
+      },
+      {
+        "label": "Nadir Shah sacks Delhi and takes the Peacock Throne",
+        "year_display": "1739",
+        "sort_key": 1739
+      },
+      {
+        "label": "Third Battle of Panipat",
+        "year_display": "1761",
+        "sort_key": 1761
+      }
+    ],
+    "explanation": "After Aurangzeb, weak successions came fast — Bahadur Shah I ruled only five years — while the 1717 farman quietly empowered the English Company; Nadir Shah's 1739 sack exposed imperial impotence long before Panipat III confirmed it."
+  },
+  {
+    "id": "tl_023",
+    "subject": "Medieval History",
+    "difficulty": "hard",
+    "theme": "Rise of the Peshwas",
+    "items": [
+      {
+        "label": "Balaji Vishwanath becomes Peshwa",
+        "year_display": "1713",
+        "sort_key": 1713
+      },
+      {
+        "label": "Baji Rao I becomes Peshwa",
+        "year_display": "1720",
+        "sort_key": 1720
+      },
+      {
+        "label": "Balaji Baji Rao (Nana Saheb) becomes Peshwa",
+        "year_display": "1740",
+        "sort_key": 1740
+      },
+      {
+        "label": "Maratha defeat at the Third Battle of Panipat",
+        "year_display": "1761",
+        "sort_key": 1761
+      }
+    ],
+    "explanation": "The Peshwaship became hereditary from Balaji Vishwanath; Baji Rao I's cavalry campaigns spread Maratha power across north India, and under Balaji Baji Rao the expansion peaked — then broke catastrophically at Panipat in 1761."
+  },
+  {
+    "id": "tl_024",
+    "subject": "Medieval History",
+    "difficulty": "hard",
+    "theme": "Foreign Travellers to Medieval India",
+    "items": [
+      {
+        "label": "Marco Polo visits south India",
+        "year_display": "c. 1292",
+        "sort_key": 1292
+      },
+      {
+        "label": "Ibn Battuta arrives at Muhammad bin Tughlaq's Delhi",
+        "year_display": "1333",
+        "sort_key": 1333
+      },
+      {
+        "label": "Abdur Razzaq visits Vijayanagara under Deva Raya II",
+        "year_display": "1443",
+        "sort_key": 1443
+      },
+      {
+        "label": "Athanasius Nikitin, the Russian, travels in the Bahmani Deccan",
+        "year_display": "c. 1470",
+        "sort_key": 1470
+      },
+      {
+        "label": "Domingo Paes describes Vijayanagara under Krishnadevaraya",
+        "year_display": "c. 1520",
+        "sort_key": 1520
+      }
+    ],
+    "explanation": "Match traveller to host kingdom: Marco Polo saw the Pandyan coast, Ibn Battuta served the Tughlaqs, Abdur Razzaq was Persia's envoy to Deva Raya II, Nikitin wandered the Bahmani Deccan, and Paes recorded Vijayanagara at its Krishnadevaraya-era peak."
+  },
+  {
+    "id": "tl_025",
     "subject": "Modern History",
+    "difficulty": "easy",
+    "theme": "Gandhi's Mass Movements",
+    "items": [
+      {
+        "label": "Champaran Satyagraha — Gandhi's first in India",
+        "year_display": "1917",
+        "sort_key": 1917
+      },
+      {
+        "label": "Kheda Satyagraha for peasants of Gujarat",
+        "year_display": "1918",
+        "sort_key": 1918
+      },
+      {
+        "label": "Non-Cooperation Movement launched",
+        "year_display": "1920",
+        "sort_key": 1920
+      },
+      {
+        "label": "Civil Disobedience Movement begins with the Dandi March",
+        "year_display": "1930",
+        "sort_key": 1930
+      },
+      {
+        "label": "Quit India Movement launched",
+        "year_display": "1942",
+        "sort_key": 1942
+      }
+    ],
+    "explanation": "Gandhi scaled up in stages — local satyagrahas at Champaran and Kheda proved the method, then three nationwide waves followed roughly a decade apart: Non-Cooperation (1920), Civil Disobedience (1930) and Quit India (1942)."
+  },
+  {
+    "id": "tl_026",
+    "subject": "Modern History",
+    "difficulty": "easy",
+    "theme": "British Conquest of India",
+    "items": [
+      {
+        "label": "Battle of Plassey",
+        "year_display": "1757",
+        "sort_key": 1757
+      },
+      {
+        "label": "Battle of Buxar",
+        "year_display": "1764",
+        "sort_key": 1764
+      },
+      {
+        "label": "Fall of Srirangapatna and death of Tipu Sultan",
+        "year_display": "1799",
+        "sort_key": 1799
+      },
+      {
+        "label": "Annexation of Punjab after the Second Anglo-Sikh War",
+        "year_display": "1849",
+        "sort_key": 1849
+      },
+      {
+        "label": "Revolt of 1857 begins at Meerut",
+        "year_display": "1857",
+        "sort_key": 1857
+      }
+    ],
+    "explanation": "Company power spread outward from Bengal: Plassey and Buxar secured the east, Tipu's fall in 1799 broke southern resistance, Punjab's annexation in 1849 completed the map — and eight years later the 1857 Revolt shook the whole edifice."
+  },
+  {
+    "id": "tl_027",
+    "subject": "Modern History",
+    "difficulty": "easy",
+    "theme": "Milestones of the Indian National Congress",
+    "items": [
+      {
+        "label": "Indian National Congress founded in Bombay",
+        "year_display": "1885",
+        "sort_key": 1885
+      },
+      {
+        "label": "Surat Split between Moderates and Extremists",
+        "year_display": "1907",
+        "sort_key": 1907
+      },
+      {
+        "label": "Lucknow session reunites the factions and seals the pact with the Muslim League",
+        "year_display": "1916",
+        "sort_key": 1916
+      },
+      {
+        "label": "Calcutta special session approves Non-Cooperation",
+        "year_display": "1920",
+        "sort_key": 1920
+      },
+      {
+        "label": "Lahore session adopts Purna Swaraj",
+        "year_display": "1929",
+        "sort_key": 1929
+      },
+      {
+        "label": "Karachi session resolution on Fundamental Rights",
+        "year_display": "1931",
+        "sort_key": 1931
+      }
+    ],
+    "explanation": "Congress evolved from a petitioning body into a mass movement: it split at Surat, healed at Lucknow, embraced Gandhian mass politics in 1920, declared complete independence at Lahore, and spelt out a rights-based vision at Karachi."
+  },
+  {
+    "id": "tl_028",
+    "subject": "Modern History",
+    "difficulty": "easy",
+    "theme": "The Endgame of British Rule",
+    "items": [
+      {
+        "label": "August Offer by Viceroy Linlithgow",
+        "year_display": "1940",
+        "sort_key": 1940
+      },
+      {
+        "label": "Cripps Mission",
+        "year_display": "1942",
+        "sort_key": 1942
+      },
+      {
+        "label": "Shimla Conference under Viceroy Wavell",
+        "year_display": "1945",
+        "sort_key": 1945
+      },
+      {
+        "label": "Cabinet Mission Plan",
+        "year_display": "1946",
+        "sort_key": 1946
+      },
+      {
+        "label": "Mountbatten Plan and Partition",
+        "year_display": "1947",
+        "sort_key": 1947
+      }
+    ],
+    "explanation": "Each wartime and post-war offer conceded more than the last: dominion-style promises in 1940 and 1942 failed, the Shimla and Cabinet Mission negotiations collapsed over communal representation, and Mountbatten's 1947 plan finally paired freedom with partition."
+  },
+  {
+    "id": "tl_029",
+    "subject": "Modern History",
+    "difficulty": "medium",
+    "theme": "Road to the Non-Cooperation Movement",
+    "items": [
+      {
+        "label": "Partition of Bengal announced by Curzon",
+        "year_display": "1905",
+        "sort_key": 1905
+      },
+      {
+        "label": "All-India Muslim League founded in Dacca",
+        "year_display": "1906",
+        "sort_key": 1906
+      },
+      {
+        "label": "Morley-Minto Reforms (Indian Councils Act)",
+        "year_display": "1909",
+        "sort_key": 1909
+      },
+      {
+        "label": "Lucknow Pact between Congress and Muslim League",
+        "year_display": "1916",
+        "sort_key": 1916
+      },
+      {
+        "label": "Montagu-Chelmsford Reforms (Government of India Act)",
+        "year_display": "1919",
+        "sort_key": 1919
+      }
+    ],
+    "explanation": "Partition of Bengal sharpened political mobilisation and helped trigger the Muslim League's founding a year later. Reform acts followed at either end of the Lucknow Pact, and the disappointment with the 1919 reforms — alongside the Rowlatt Act and Jallianwala Bagh the same year — set up the 1920 Non-Cooperation Movement."
+  },
+  {
+    "id": "tl_030",
+    "subject": "Modern History",
+    "difficulty": "medium",
     "theme": "Consolidation of Independent India",
     "items": [
-      { "label": "Integration of princely states begins", "year_display": "1947", "sort_key": 1947 },
-      { "label": "Operation Polo — Hyderabad annexed", "year_display": "1948", "sort_key": 1948 },
-      { "label": "States Reorganisation Act passed", "year_display": "1956", "sort_key": 1956 },
-      { "label": "Goa liberated from Portuguese rule (Operation Vijay)", "year_display": "1961", "sort_key": 1961 },
-      { "label": "Tashkent Agreement ends the Indo-Pak War", "year_display": "1966", "sort_key": 1966 }
+      {
+        "label": "Integration of princely states begins",
+        "year_display": "1947",
+        "sort_key": 1947
+      },
+      {
+        "label": "Operation Polo — Hyderabad annexed",
+        "year_display": "1948",
+        "sort_key": 1948
+      },
+      {
+        "label": "States Reorganisation Act passed",
+        "year_display": "1956",
+        "sort_key": 1956
+      },
+      {
+        "label": "Goa liberated from Portuguese rule (Operation Vijay)",
+        "year_display": "1961",
+        "sort_key": 1961
+      },
+      {
+        "label": "Tashkent Agreement ends the Indo-Pak War",
+        "year_display": "1966",
+        "sort_key": 1966
+      }
     ],
     "explanation": "Independence in 1947 was only the start of territorial consolidation — Hyderabad was absorbed by force in 1948, states were redrawn on linguistic lines in 1956, Goa was taken from Portugal in 1961, and by 1966 India had fought and settled its second war with Pakistan."
+  },
+  {
+    "id": "tl_031",
+    "subject": "Modern History",
+    "difficulty": "medium",
+    "theme": "Socio-Religious Reform Organisations",
+    "items": [
+      {
+        "label": "Brahmo Samaj founded by Raja Ram Mohan Roy",
+        "year_display": "1828",
+        "sort_key": 1828
+      },
+      {
+        "label": "Prarthana Samaj founded in Bombay",
+        "year_display": "1867",
+        "sort_key": 1867
+      },
+      {
+        "label": "Satyashodhak Samaj founded by Jyotiba Phule",
+        "year_display": "1873",
+        "sort_key": 1873
+      },
+      {
+        "label": "Arya Samaj founded by Swami Dayananda Saraswati",
+        "year_display": "1875",
+        "sort_key": 1875
+      },
+      {
+        "label": "Ramakrishna Mission founded by Swami Vivekananda",
+        "year_display": "1897",
+        "sort_key": 1897
+      }
+    ],
+    "explanation": "Reform began in Bengal with the Brahmo Samaj, then spread west — Prarthana Samaj in Bombay, Phule's anti-caste Satyashodhak Samaj in Pune, Dayananda's Arya Samaj in the same decade — before Vivekananda institutionalised Ramakrishna's legacy in 1897."
+  },
+  {
+    "id": "tl_032",
+    "subject": "Modern History",
+    "difficulty": "medium",
+    "theme": "Acts Regulating Company Rule",
+    "items": [
+      {
+        "label": "Regulating Act",
+        "year_display": "1773",
+        "sort_key": 1773
+      },
+      {
+        "label": "Pitt's India Act",
+        "year_display": "1784",
+        "sort_key": 1784
+      },
+      {
+        "label": "Charter Act ending the Company's India trade monopoly",
+        "year_display": "1813",
+        "sort_key": 1813
+      },
+      {
+        "label": "Charter Act making the Governor-General of Bengal the Governor-General of India",
+        "year_display": "1833",
+        "sort_key": 1833
+      },
+      {
+        "label": "Government of India Act transfers rule to the Crown",
+        "year_display": "1858",
+        "sort_key": 1858
+      }
+    ],
+    "explanation": "Parliament tightened its grip on the Company step by step — first oversight (1773), then dual control (1784), then stripping trade monopolies (1813, 1833) — until the 1857 Revolt prompted the Crown to take over entirely in 1858."
+  },
+  {
+    "id": "tl_033",
+    "subject": "Modern History",
+    "difficulty": "hard",
+    "theme": "The Revolutionary Movement",
+    "items": [
+      {
+        "label": "Chapekar brothers assassinate Rand in Pune",
+        "year_display": "1897",
+        "sort_key": 1897
+      },
+      {
+        "label": "Muzaffarpur bombing and the Alipore Bomb Case",
+        "year_display": "1908",
+        "sort_key": 1908
+      },
+      {
+        "label": "Ghadar Party founded in North America",
+        "year_display": "1913",
+        "sort_key": 1913
+      },
+      {
+        "label": "Kakori train action by the Hindustan Republican Association",
+        "year_display": "1925",
+        "sort_key": 1925
+      },
+      {
+        "label": "Chittagong armoury raid led by Surya Sen",
+        "year_display": "1930",
+        "sort_key": 1930
+      }
+    ],
+    "explanation": "Revolutionary violence came in waves: the Pune assassinations of 1897, the Bengal bomb cult around 1908, the diaspora-based Ghadar network from 1913, and the HRA/HSRA generation whose Kakori and Chittagong actions bracketed the late 1920s."
+  },
+  {
+    "id": "tl_034",
+    "subject": "Modern History",
+    "difficulty": "hard",
+    "theme": "Peasant and Tribal Uprisings",
+    "items": [
+      {
+        "label": "Sanyasi-Fakir rebellion in Bengal",
+        "year_display": "c. 1770",
+        "sort_key": 1770
+      },
+      {
+        "label": "Santhal rebellion (Hul) led by Sidhu and Kanhu",
+        "year_display": "1855",
+        "sort_key": 1855
+      },
+      {
+        "label": "Indigo revolt in Bengal",
+        "year_display": "1859",
+        "sort_key": 1859
+      },
+      {
+        "label": "Deccan riots against moneylenders",
+        "year_display": "1875",
+        "sort_key": 1875
+      },
+      {
+        "label": "Munda ulgulan led by Birsa Munda",
+        "year_display": "1899",
+        "sort_key": 1899
+      }
+    ],
+    "explanation": "Rural India resisted colonial extraction repeatedly: famine-era Sanyasi bands in the 1770s, the great Santhal Hul of 1855, indigo cultivators in 1859, indebted Deccan peasants in 1875, and Birsa Munda's millenarian ulgulan at the century's close."
+  },
+  {
+    "id": "tl_035",
+    "subject": "Modern History",
+    "difficulty": "hard",
+    "theme": "Civil Disobedience Years, Month by Month",
+    "items": [
+      {
+        "label": "Dandi March begins",
+        "year_display": "Mar 1930",
+        "sort_key": 193003
+      },
+      {
+        "label": "First Round Table Conference opens in London",
+        "year_display": "Nov 1930",
+        "sort_key": 193011
+      },
+      {
+        "label": "Gandhi-Irwin Pact signed",
+        "year_display": "Mar 1931",
+        "sort_key": 193103
+      },
+      {
+        "label": "Second Round Table Conference with Gandhi attending",
+        "year_display": "Sep 1931",
+        "sort_key": 193109
+      },
+      {
+        "label": "Poona Pact between Gandhi and Ambedkar",
+        "year_display": "Sep 1932",
+        "sort_key": 193209
+      }
+    ],
+    "explanation": "The sequence alternates agitation and negotiation: Dandi launched civil disobedience, Congress boycotted the first RTC, the Gandhi-Irwin Pact bought a truce so Gandhi could attend the second RTC, and after its failure the Communal Award crisis ended in the Poona Pact."
+  },
+  {
+    "id": "tl_036",
+    "subject": "Modern History",
+    "difficulty": "hard",
+    "theme": "History of the Indian Press",
+    "items": [
+      {
+        "label": "Hicky's Bengal Gazette, India's first newspaper",
+        "year_display": "1780",
+        "sort_key": 1780
+      },
+      {
+        "label": "Sambad Kaumudi started by Raja Ram Mohan Roy",
+        "year_display": "1821",
+        "sort_key": 1821
+      },
+      {
+        "label": "Amrita Bazar Patrika founded",
+        "year_display": "1868",
+        "sort_key": 1868
+      },
+      {
+        "label": "Kesari launched by Bal Gangadhar Tilak",
+        "year_display": "1881",
+        "sort_key": 1881
+      },
+      {
+        "label": "Gandhi takes over Young India",
+        "year_display": "1919",
+        "sort_key": 1919
+      }
+    ],
+    "explanation": "The press grew from Hicky's scandal sheet into a nationalist weapon: Ram Mohan Roy pioneered reformist journalism, Amrita Bazar Patrika and Tilak's Kesari carried the national movement, and Gandhi made Young India his own mouthpiece from 1919."
+  },
+  {
+    "id": "tl_037",
+    "subject": "Art and Culture",
+    "difficulty": "easy",
+    "theme": "Great Mughal Monuments",
+    "items": [
+      {
+        "label": "Akbar begins rebuilding Agra Fort",
+        "year_display": "1565",
+        "sort_key": 1565
+      },
+      {
+        "label": "Humayun's Tomb completed in Delhi",
+        "year_display": "c. 1570",
+        "sort_key": 1570
+      },
+      {
+        "label": "Fatehpur Sikri founded as Akbar's capital",
+        "year_display": "1571",
+        "sort_key": 1571
+      },
+      {
+        "label": "Red Fort of Shahjahanabad completed",
+        "year_display": "1648",
+        "sort_key": 1648
+      },
+      {
+        "label": "Taj Mahal complex completed",
+        "year_display": "1653",
+        "sort_key": 1653
+      }
+    ],
+    "explanation": "Akbar's building spree of the 1560s-70s (Agra Fort, Humayun's Tomb, Fatehpur Sikri) established the Mughal style in red sandstone; under Shah Jahan the idiom matured into white-marble grandeur at the Red Fort and the Taj."
+  },
+  {
+    "id": "tl_038",
+    "subject": "Art and Culture",
+    "difficulty": "easy",
+    "theme": "Landmarks of Buddhist Art",
+    "items": [
+      {
+        "label": "Great Stupa at Sanchi commissioned by Ashoka",
+        "year_display": "c. 260 BCE",
+        "sort_key": -260
+      },
+      {
+        "label": "Bharhut stupa railings carved under the Shungas",
+        "year_display": "c. 100 BCE",
+        "sort_key": -100
+      },
+      {
+        "label": "Great Chaitya at Karle excavated",
+        "year_display": "c. 120 CE",
+        "sort_key": 120
+      },
+      {
+        "label": "Ajanta murals painted under Vakataka patronage",
+        "year_display": "c. 460 CE",
+        "sort_key": 460
+      }
+    ],
+    "explanation": "Buddhist art moved from Ashoka's brick-and-stone stupas through Shunga-era narrative railings at Bharhut to the great western Ghats rock-cut chaityas like Karle, culminating in the painted splendour of Ajanta's Vakataka phase."
+  },
+  {
+    "id": "tl_039",
+    "subject": "Art and Culture",
+    "difficulty": "easy",
+    "theme": "Monuments of Sultanate and Mughal Delhi",
+    "items": [
+      {
+        "label": "Qutub Minar begun by Qutb-ud-din Aibak",
+        "year_display": "1199",
+        "sort_key": 1199
+      },
+      {
+        "label": "Alai Darwaza built by Alauddin Khilji",
+        "year_display": "1311",
+        "sort_key": 1311
+      },
+      {
+        "label": "Tughlaqabad fort city founded",
+        "year_display": "1321",
+        "sort_key": 1321
+      },
+      {
+        "label": "Bara Gumbad built in the Lodi Gardens complex",
+        "year_display": "1494",
+        "sort_key": 1494
+      },
+      {
+        "label": "Jama Masjid of Shahjahanabad completed",
+        "year_display": "1656",
+        "sort_key": 1656
+      }
+    ],
+    "explanation": "Delhi's skyline records its dynasties in order: the Slave dynasty's Qutub Minar, the Khilji Alai Darwaza with its true arch, the austere Tughlaq fortress city, Lodi-era tomb architecture, and finally Shah Jahan's imperial Jama Masjid."
+  },
+  {
+    "id": "tl_040",
+    "subject": "Art and Culture",
+    "difficulty": "easy",
+    "theme": "Institutions of Indian Culture",
+    "items": [
+      {
+        "label": "Asiatic Society founded by William Jones in Calcutta",
+        "year_display": "1784",
+        "sort_key": 1784
+      },
+      {
+        "label": "Indian Museum established in Calcutta",
+        "year_display": "1814",
+        "sort_key": 1814
+      },
+      {
+        "label": "Archaeological Survey of India founded under Alexander Cunningham",
+        "year_display": "1861",
+        "sort_key": 1861
+      },
+      {
+        "label": "Sangeet Natak Akademi set up",
+        "year_display": "1952",
+        "sort_key": 1952
+      },
+      {
+        "label": "Sahitya Akademi inaugurated",
+        "year_display": "1954",
+        "sort_key": 1954
+      }
+    ],
+    "explanation": "Colonial-era orientalist scholarship created the Asiatic Society, the Indian Museum and the ASI; after independence, the state built its own cultural apparatus, starting with the Akademis for performing arts (1952) and literature (1954)."
+  },
+  {
+    "id": "tl_041",
+    "subject": "Art and Culture",
+    "difficulty": "medium",
+    "theme": "Great Temple Construction Across Dynasties",
+    "items": [
+      {
+        "label": "Kailasa Temple, Ellora, commissioned by Rashtrakuta king Krishna I",
+        "year_display": "c. 760 CE",
+        "sort_key": 760
+      },
+      {
+        "label": "Brihadeeswarar Temple, Thanjavur, completed under Chola king Rajaraja I",
+        "year_display": "c. 1010 CE",
+        "sort_key": 1010
+      },
+      {
+        "label": "Konark Sun Temple built under the Eastern Ganga king Narasimhadeva I",
+        "year_display": "c. 1250 CE",
+        "sort_key": 1250
+      },
+      {
+        "label": "Harmandir Sahib (Golden Temple) completed, Adi Granth installed",
+        "year_display": "1604",
+        "sort_key": 1604
+      },
+      {
+        "label": "Meenakshi Temple, Madurai, majorly expanded under Nayaka ruler Tirumalai Nayak",
+        "year_display": "c. 1630",
+        "sort_key": 1630
+      }
+    ],
+    "explanation": "Temple architecture spans nearly a millennium of dynastic patronage — Rashtrakuta rock-cut work at Ellora, Chola engineering at Thanjavur, Eastern Ganga solar symbolism at Konark, Sikh Gurus at Amritsar, and Nayaka-era expansion at Madurai."
+  },
+  {
+    "id": "tl_042",
+    "subject": "Art and Culture",
+    "difficulty": "medium",
+    "theme": "Evolution of Temple Architecture",
+    "items": [
+      {
+        "label": "Dashavatara temple at Deogarh — early Gupta structural temple",
+        "year_display": "c. 500 CE",
+        "sort_key": 500
+      },
+      {
+        "label": "Shore Temple at Mamallapuram under Pallava Rajasimha",
+        "year_display": "c. 700 CE",
+        "sort_key": 700
+      },
+      {
+        "label": "Kandariya Mahadeva temple at Khajuraho under the Chandellas",
+        "year_display": "c. 1030",
+        "sort_key": 1030
+      },
+      {
+        "label": "Chennakesava temple at Belur begun by Hoysala king Vishnuvardhana",
+        "year_display": "1117",
+        "sort_key": 1117
+      },
+      {
+        "label": "Ramappa temple in Telangana begun under the Kakatiyas",
+        "year_display": "1213",
+        "sort_key": 1213
+      }
+    ],
+    "explanation": "From the simple flat-roofed Gupta shrine at Deogarh, temple building diverged into regional styles — Pallava structural Dravida at the Shore Temple, mature Nagara at Khajuraho, and the ornate star-plan idioms of the Hoysalas and Kakatiyas."
+  },
+  {
+    "id": "tl_043",
+    "subject": "Art and Culture",
+    "difficulty": "medium",
+    "theme": "Schools of Indian Painting",
+    "items": [
+      {
+        "label": "Ajanta cave murals painted",
+        "year_display": "c. 460 CE",
+        "sort_key": 460
+      },
+      {
+        "label": "Pala school of palm-leaf manuscript miniatures flourishes",
+        "year_display": "c. 1000",
+        "sort_key": 1000
+      },
+      {
+        "label": "Mughal atelier takes shape under Akbar",
+        "year_display": "c. 1560",
+        "sort_key": 1560
+      },
+      {
+        "label": "Kangra school of Pahari painting at its peak",
+        "year_display": "c. 1780",
+        "sort_key": 1780
+      },
+      {
+        "label": "Progressive Artists' Group formed in Bombay",
+        "year_display": "1947",
+        "sort_key": 1947
+      }
+    ],
+    "explanation": "Indian painting runs from classical wall murals at Ajanta through Pala manuscript illumination, the Persian-influenced Mughal atelier, and lyrical Kangra miniatures, to the modernist break made by the Progressive Artists' Group in 1947."
+  },
+  {
+    "id": "tl_044",
+    "subject": "Art and Culture",
+    "difficulty": "medium",
+    "theme": "Classics of Sanskrit Literature",
+    "items": [
+      {
+        "label": "Panini composes the Ashtadhyayi",
+        "year_display": "c. 400 BCE",
+        "sort_key": -400
+      },
+      {
+        "label": "Kautilya's Arthashastra (traditional date)",
+        "year_display": "c. 300 BCE",
+        "sort_key": -300
+      },
+      {
+        "label": "Kalidasa writes Abhijnanashakuntalam in the Gupta age",
+        "year_display": "c. 400 CE",
+        "sort_key": 400
+      },
+      {
+        "label": "Banabhatta writes the Harshacharita",
+        "year_display": "c. 640 CE",
+        "sort_key": 640
+      },
+      {
+        "label": "Jayadeva composes the Gita Govinda",
+        "year_display": "c. 1180",
+        "sort_key": 1180
+      }
+    ],
+    "explanation": "Sanskrit's landmarks track its patrons: Panini's grammar fixed the language, the Arthashastra served Mauryan statecraft, Kalidasa adorned the Gupta court, Bana chronicled Harsha, and Jayadeva's Gita Govinda flowered under the Gangas of Odisha."
+  },
+  {
+    "id": "tl_045",
+    "subject": "Art and Culture",
+    "difficulty": "hard",
+    "theme": "Evolution of Indian Coinage",
+    "items": [
+      {
+        "label": "Punch-marked silver coins in circulation",
+        "year_display": "c. 500 BCE",
+        "sort_key": -500
+      },
+      {
+        "label": "Indo-Greek kings issue portrait coins",
+        "year_display": "c. 180 BCE",
+        "sort_key": -180
+      },
+      {
+        "label": "Kushan gold coinage begins under Vima Kadphises",
+        "year_display": "c. 100 CE",
+        "sort_key": 100
+      },
+      {
+        "label": "Gupta dinaras depict kings as archers and musicians",
+        "year_display": "c. 350 CE",
+        "sort_key": 350
+      },
+      {
+        "label": "Sher Shah Suri standardises the silver rupiya",
+        "year_display": "c. 1540",
+        "sort_key": 1540
+      }
+    ],
+    "explanation": "Coinage evolved from anonymous punch-marked silver to Indo-Greek portraiture, then dynastic gold under the Kushans and artistic Gupta dinaras — and Sher Shah's 16th-century rupiya gave India the very name of its modern currency."
+  },
+  {
+    "id": "tl_046",
+    "subject": "Art and Culture",
+    "difficulty": "hard",
+    "theme": "Landmark Works of Bhakti Literature",
+    "items": [
+      {
+        "label": "Dnyaneshwari composed in Marathi by Dnyaneshwar",
+        "year_display": "1290",
+        "sort_key": 1290
+      },
+      {
+        "label": "Amuktamalyada composed in Telugu by Krishnadevaraya",
+        "year_display": "c. 1515",
+        "sort_key": 1515
+      },
+      {
+        "label": "Tulsidas begins the Ramcharitmanas in Awadhi",
+        "year_display": "1574",
+        "sort_key": 1574
+      },
+      {
+        "label": "Adi Granth compiled by Guru Arjan",
+        "year_display": "1604",
+        "sort_key": 1604
+      }
+    ],
+    "explanation": "Bhakti's great books are milestones of vernacular literature: Dnyaneshwar's Marathi Gita commentary in 1290, a Telugu masterpiece by an emperor around 1515, Tulsidas's Awadhi Ramayana from 1574, and the Adi Granth anthology of saint-poets in 1604."
+  },
+  {
+    "id": "tl_047",
+    "subject": "Art and Culture",
+    "difficulty": "hard",
+    "theme": "Rock Art and Cave Architecture",
+    "items": [
+      {
+        "label": "Mesolithic paintings at Bhimbetka rock shelters",
+        "year_display": "c. 8000 BCE",
+        "sort_key": -8000
+      },
+      {
+        "label": "Barabar caves cut under Mauryan patronage for the Ajivikas",
+        "year_display": "c. 250 BCE",
+        "sort_key": -250
+      },
+      {
+        "label": "Ajanta's great Vakataka-phase caves excavated",
+        "year_display": "c. 460 CE",
+        "sort_key": 460
+      },
+      {
+        "label": "Badami cave temple of Mangalesha dedicated",
+        "year_display": "578 CE",
+        "sort_key": 578
+      },
+      {
+        "label": "Kailasa temple carved at Ellora",
+        "year_display": "c. 760 CE",
+        "sort_key": 760
+      }
+    ],
+    "explanation": "India's rock-cut tradition begins with prehistoric painting at Bhimbetka, turns architectural with the polished Mauryan Barabar caves, and climaxes in the Deccan sequence Ajanta → Badami → Ellora, ending with a whole temple carved from a single cliff."
+  },
+  {
+    "id": "tl_048",
+    "subject": "Art and Culture",
+    "difficulty": "hard",
+    "theme": "Great Inscriptions of India",
+    "items": [
+      {
+        "label": "Ashokan Major Rock Edicts in Prakrit",
+        "year_display": "c. 250 BCE",
+        "sort_key": -250
+      },
+      {
+        "label": "Junagadh rock inscription of Rudradaman — early courtly Sanskrit",
+        "year_display": "c. 150 CE",
+        "sort_key": 150
+      },
+      {
+        "label": "Allahabad Pillar Prashasti of Samudragupta by Harishena",
+        "year_display": "c. 350 CE",
+        "sort_key": 350
+      },
+      {
+        "label": "Mehrauli iron pillar inscription of 'King Chandra'",
+        "year_display": "c. 400 CE",
+        "sort_key": 400
+      },
+      {
+        "label": "Aihole inscription of Pulakeshin II by Ravikirti",
+        "year_display": "634 CE",
+        "sort_key": 634
+      }
+    ],
+    "explanation": "Inscriptions trace the shift from Ashoka's Prakrit moral edicts to Sanskrit royal eulogy — Rudradaman's Junagadh record is the first great courtly Sanskrit text, followed by the Gupta prashastis and the Chalukyan showpiece at Aihole."
+  },
+  {
+    "id": "tl_049",
+    "subject": "Geography",
+    "difficulty": "easy",
+    "theme": "Journey of the Indian Plate",
+    "items": [
+      {
+        "label": "Gondwanaland begins to break apart",
+        "year_display": "c. 180 million years ago",
+        "sort_key": -180000000
+      },
+      {
+        "label": "Indian plate separates and drifts northward",
+        "year_display": "c. 130 million years ago",
+        "sort_key": -130000000
+      },
+      {
+        "label": "Deccan Trap volcanic eruptions",
+        "year_display": "c. 66 million years ago",
+        "sort_key": -66000000
+      },
+      {
+        "label": "Indian plate collides with the Eurasian plate",
+        "year_display": "c. 50 million years ago",
+        "sort_key": -50000000
+      },
+      {
+        "label": "Siwalik ranges form from Himalayan debris",
+        "year_display": "c. 10 million years ago",
+        "sort_key": -10000000
+      }
+    ],
+    "explanation": "India's physiography is a drift story: the subcontinent broke off Gondwana, erupted the Deccan lavas en route north, rammed into Eurasia to raise the Himalayas, and the youngest range — the Siwaliks — formed last from the mountains' own eroded debris."
+  },
+  {
+    "id": "tl_050",
+    "subject": "Geography",
+    "difficulty": "easy",
+    "theme": "History of the Indian Census",
+    "items": [
+      {
+        "label": "First (non-synchronous) census of India",
+        "year_display": "1872",
+        "sort_key": 1872
+      },
+      {
+        "label": "First synchronous decennial census",
+        "year_display": "1881",
+        "sort_key": 1881
+      },
+      {
+        "label": "'Year of the Great Divide' — population growth turns upward",
+        "year_display": "1921",
+        "sort_key": 1921
+      },
+      {
+        "label": "First census of independent India",
+        "year_display": "1951",
+        "sort_key": 1951
+      },
+      {
+        "label": "Latest completed census",
+        "year_display": "2011",
+        "sort_key": 2011
+      }
+    ],
+    "explanation": "The census began under Lord Mayo in 1872 and became a synchronised decennial exercise from 1881; 1921 is the demographic 'Great Divide' after which population rose continuously, and 2011 remains the last completed count."
+  },
+  {
+    "id": "tl_051",
+    "subject": "Geography",
+    "difficulty": "easy",
+    "theme": "India's Great River Valley Projects",
+    "items": [
+      {
+        "label": "Damodar Valley Corporation established",
+        "year_display": "1948",
+        "sort_key": 1948
+      },
+      {
+        "label": "Hirakud Dam on the Mahanadi completed",
+        "year_display": "1957",
+        "sort_key": 1957
+      },
+      {
+        "label": "Bhakra Dam on the Sutlej completed",
+        "year_display": "1963",
+        "sort_key": 1963
+      },
+      {
+        "label": "Tehri Dam on the Bhagirathi commissioned",
+        "year_display": "2006",
+        "sort_key": 2006
+      },
+      {
+        "label": "Sardar Sarovar Dam on the Narmada inaugurated at full height",
+        "year_display": "2017",
+        "sort_key": 2017
+      }
+    ],
+    "explanation": "The early multipurpose projects — DVC (modelled on the Tennessee Valley Authority), Hirakud and Bhakra — were Nehru-era 'temples of modern India'; Tehri and Sardar Sarovar took decades longer amid engineering and environmental controversy."
+  },
+  {
+    "id": "tl_052",
+    "subject": "Geography",
+    "difficulty": "easy",
+    "theme": "The Age of Exploration and Great Canals",
+    "items": [
+      {
+        "label": "Columbus reaches the Americas",
+        "year_display": "1492",
+        "sort_key": 1492
+      },
+      {
+        "label": "Vasco da Gama reaches Calicut via the Cape of Good Hope",
+        "year_display": "1498",
+        "sort_key": 1498
+      },
+      {
+        "label": "Magellan's expedition departs to circumnavigate the globe",
+        "year_display": "1519",
+        "sort_key": 1519
+      },
+      {
+        "label": "Suez Canal opens",
+        "year_display": "1869",
+        "sort_key": 1869
+      },
+      {
+        "label": "Panama Canal opens",
+        "year_display": "1914",
+        "sort_key": 1914
+      }
+    ],
+    "explanation": "The 1490s voyages of Columbus and da Gama opened the ocean world, Magellan's fleet proved it was one connected sea, and the two great 19th-20th century canals — Suez and Panama — rewired global shipping routes."
+  },
+  {
+    "id": "tl_053",
+    "subject": "Geography",
+    "difficulty": "medium",
+    "theme": "Formation of Indian States (Reorganisation Timeline)",
+    "items": [
+      {
+        "label": "Andhra Pradesh formed as India's first linguistic state",
+        "year_display": "1953",
+        "sort_key": 1953
+      },
+      {
+        "label": "Bombay State bifurcated into Maharashtra and Gujarat",
+        "year_display": "1960",
+        "sort_key": 1960
+      },
+      {
+        "label": "Nagaland becomes the 16th state",
+        "year_display": "1963",
+        "sort_key": 1963
+      },
+      {
+        "label": "Sikkim becomes a full state",
+        "year_display": "1975",
+        "sort_key": 1975
+      },
+      {
+        "label": "Telangana carved out of Andhra Pradesh",
+        "year_display": "2014",
+        "sort_key": 2014
+      }
+    ],
+    "explanation": "State boundaries in independent India were redrawn in waves — first along linguistic lines following the States Reorganisation Commission, then through later bifurcations driven by regional identity movements, right up to Telangana in 2014."
+  },
+  {
+    "id": "tl_054",
+    "subject": "Geography",
+    "difficulty": "medium",
+    "theme": "Mapping India and Measuring Everest",
+    "items": [
+      {
+        "label": "Survey of India established",
+        "year_display": "1767",
+        "sort_key": 1767
+      },
+      {
+        "label": "Great Trigonometrical Survey begins under Lambton",
+        "year_display": "1802",
+        "sort_key": 1802
+      },
+      {
+        "label": "Peak XV computed as the world's highest mountain",
+        "year_display": "1852",
+        "sort_key": 1852
+      },
+      {
+        "label": "Peak XV officially named Mount Everest",
+        "year_display": "1865",
+        "sort_key": 1865
+      },
+      {
+        "label": "Hillary and Tenzing make the first ascent of Everest",
+        "year_display": "1953",
+        "sort_key": 1953
+      }
+    ],
+    "explanation": "The Survey of India's Great Trigonometrical Survey, begun in 1802, methodically triangulated the subcontinent; its computers identified Peak XV as the world's highest in 1852, it was named for a former Surveyor-General in 1865, and was finally climbed in 1953."
+  },
+  {
+    "id": "tl_055",
+    "subject": "Geography",
+    "difficulty": "medium",
+    "theme": "Boundary Lines of the Subcontinent",
+    "items": [
+      {
+        "label": "Durand Line drawn between British India and Afghanistan",
+        "year_display": "1893",
+        "sort_key": 1893
+      },
+      {
+        "label": "McMahon Line drawn at the Simla Convention",
+        "year_display": "1914",
+        "sort_key": 1914
+      },
+      {
+        "label": "Radcliffe Line partitions India and Pakistan",
+        "year_display": "1947",
+        "sort_key": 1947
+      },
+      {
+        "label": "Line of Control established by the Simla Agreement",
+        "year_display": "1972",
+        "sort_key": 1972
+      }
+    ],
+    "explanation": "Each line marks a different negotiation: the colonial Durand and McMahon lines fixed frontiers with Afghanistan and Tibet, Radcliffe's hurried award drew the Partition boundary, and the 1972 Simla Agreement converted the Kashmir ceasefire line into the LoC."
+  },
+  {
+    "id": "tl_056",
+    "subject": "Geography",
+    "difficulty": "medium",
+    "theme": "India's River Water Agreements and Links",
+    "items": [
+      {
+        "label": "Indus Waters Treaty signed with Pakistan",
+        "year_display": "1960",
+        "sort_key": 1960
+      },
+      {
+        "label": "Farakka Barrage on the Ganga commissioned",
+        "year_display": "1975",
+        "sort_key": 1975
+      },
+      {
+        "label": "Ganga Water Sharing Treaty signed with Bangladesh",
+        "year_display": "1996",
+        "sort_key": 1996
+      },
+      {
+        "label": "Ken-Betwa river link project approved by the Union Cabinet",
+        "year_display": "2021",
+        "sort_key": 2021
+      }
+    ],
+    "explanation": "India's transboundary water diplomacy began with the World Bank-brokered Indus treaty; Farakka's commissioning created the Ganga dispute that the 1996 treaty with Bangladesh settled, while Ken-Betwa launched the domestic river-interlinking era."
+  },
+  {
+    "id": "tl_057",
+    "subject": "Geography",
+    "difficulty": "hard",
+    "theme": "India's Earth Observation Satellites",
+    "items": [
+      {
+        "label": "Aryabhata, India's first satellite, launched",
+        "year_display": "1975",
+        "sort_key": 1975
+      },
+      {
+        "label": "Bhaskara-I experimental earth observation satellite",
+        "year_display": "1979",
+        "sort_key": 1979
+      },
+      {
+        "label": "IRS-1A, first operational remote sensing satellite",
+        "year_display": "1988",
+        "sort_key": 1988
+      },
+      {
+        "label": "Oceansat-1 (IRS-P4) launched for ocean studies",
+        "year_display": "1999",
+        "sort_key": 1999
+      },
+      {
+        "label": "Cartosat-1 launched for high-resolution mapping",
+        "year_display": "2005",
+        "sort_key": 2005
+      }
+    ],
+    "explanation": "India's remote sensing programme matured in steps: the experimental Aryabhata and Bhaskara missions led to the operational IRS series from 1988, then specialised platforms — Oceansat for the seas and Cartosat for cartographic-grade imagery."
+  },
+  {
+    "id": "tl_058",
+    "subject": "Geography",
+    "difficulty": "hard",
+    "theme": "Major Natural Disasters in India",
+    "items": [
+      {
+        "label": "Bihar-Nepal earthquake",
+        "year_display": "1934",
+        "sort_key": 1934
+      },
+      {
+        "label": "Latur (Killari) earthquake in Maharashtra",
+        "year_display": "1993",
+        "sort_key": 1993
+      },
+      {
+        "label": "Bhuj earthquake in Gujarat",
+        "year_display": "2001",
+        "sort_key": 2001
+      },
+      {
+        "label": "Indian Ocean tsunami strikes India's east coast",
+        "year_display": "2004",
+        "sort_key": 2004
+      },
+      {
+        "label": "Kedarnath flash floods in Uttarakhand",
+        "year_display": "2013",
+        "sort_key": 2013
+      }
+    ],
+    "explanation": "These disasters reshaped Indian disaster policy: the Latur and Bhuj earthquakes exposed vulnerability outside the Himalayan belt, and the 2004 tsunami directly led to the Disaster Management Act of 2005 and India's tsunami warning system."
+  },
+  {
+    "id": "tl_059",
+    "subject": "Geography",
+    "difficulty": "hard",
+    "theme": "India in Antarctica",
+    "items": [
+      {
+        "label": "First Indian Antarctic expedition",
+        "year_display": "1981",
+        "sort_key": 1981
+      },
+      {
+        "label": "Dakshin Gangotri, first Indian Antarctic station",
+        "year_display": "1983",
+        "sort_key": 1983
+      },
+      {
+        "label": "Maitri station commissioned",
+        "year_display": "1989",
+        "sort_key": 1989
+      },
+      {
+        "label": "Bharati station commissioned",
+        "year_display": "2012",
+        "sort_key": 2012
+      },
+      {
+        "label": "Indian Antarctic Act enacted",
+        "year_display": "2022",
+        "sort_key": 2022
+      }
+    ],
+    "explanation": "India's polar presence grew from the pioneering 1981 expedition to three successive stations — Dakshin Gangotri (later buried in ice), Maitri and Bharati — and in 2022 Parliament gave the programme a domestic legal framework."
+  },
+  {
+    "id": "tl_060",
+    "subject": "Geography",
+    "difficulty": "hard",
+    "theme": "India's Planned Capital Cities",
+    "items": [
+      {
+        "label": "New Delhi inaugurated as the imperial capital",
+        "year_display": "1931",
+        "sort_key": 1931
+      },
+      {
+        "label": "Bhubaneswar planned as Odisha's new capital",
+        "year_display": "1948",
+        "sort_key": 1948
+      },
+      {
+        "label": "Chandigarh, designed by Le Corbusier, inaugurated",
+        "year_display": "1953",
+        "sort_key": 1953
+      },
+      {
+        "label": "Foundation stone laid for Amaravati, Andhra Pradesh",
+        "year_display": "2015",
+        "sort_key": 2015
+      }
+    ],
+    "explanation": "Purpose-built capitals bookend Indian planning history: Lutyens' imperial New Delhi, the early post-independence projects at Bhubaneswar and Chandigarh, and the still-unfinished 21st-century experiment at Amaravati."
+  },
+  {
+    "id": "tl_061",
+    "subject": "Economy",
+    "difficulty": "easy",
+    "theme": "Economic Milestones — Plans to GST",
+    "items": [
+      {
+        "label": "First Five-Year Plan launched",
+        "year_display": "1951",
+        "sort_key": 1951
+      },
+      {
+        "label": "Green Revolution begins with high-yield variety seeds",
+        "year_display": "1966",
+        "sort_key": 1966
+      },
+      {
+        "label": "First round of bank nationalisation (14 banks)",
+        "year_display": "1969",
+        "sort_key": 1969
+      },
+      {
+        "label": "LPG reforms — liberalisation, privatisation, globalisation",
+        "year_display": "1991",
+        "sort_key": 1991
+      },
+      {
+        "label": "Goods and Services Tax (GST) implemented",
+        "year_display": "2017",
+        "sort_key": 2017
+      }
+    ],
+    "explanation": "India's economic story moves from planned self-sufficiency (Five-Year Plans, nationalised banks) through a productivity push (Green Revolution) to a decisive market opening in 1991, culminating decades later in a single unified indirect tax regime."
+  },
+  {
+    "id": "tl_062",
+    "subject": "Economy",
+    "difficulty": "easy",
+    "theme": "Milestones of Indian Banking",
+    "items": [
+      {
+        "label": "Reserve Bank of India established",
+        "year_display": "1935",
+        "sort_key": 1935
+      },
+      {
+        "label": "RBI nationalised",
+        "year_display": "1949",
+        "sort_key": 1949
+      },
+      {
+        "label": "State Bank of India formed from the Imperial Bank",
+        "year_display": "1955",
+        "sort_key": 1955
+      },
+      {
+        "label": "Fourteen major banks nationalised",
+        "year_display": "1969",
+        "sort_key": 1969
+      },
+      {
+        "label": "Six more banks nationalised",
+        "year_display": "1980",
+        "sort_key": 1980
+      }
+    ],
+    "explanation": "Banking moved steadily into state hands: the RBI was created private in 1935 and nationalised in 1949, the Imperial Bank became SBI in 1955, and the big nationalisation waves of 1969 and 1980 brought most commercial banking under government ownership."
+  },
+  {
+    "id": "tl_063",
+    "subject": "Economy",
+    "difficulty": "easy",
+    "theme": "The Planning Era and Its End",
+    "items": [
+      {
+        "label": "First Five-Year Plan begins (Harrod-Domar based)",
+        "year_display": "1951",
+        "sort_key": 1951
+      },
+      {
+        "label": "Second Plan adopts the Mahalanobis heavy-industry model",
+        "year_display": "1956",
+        "sort_key": 1956
+      },
+      {
+        "label": "'Plan Holiday' begins after wars and drought",
+        "year_display": "1966",
+        "sort_key": 1966
+      },
+      {
+        "label": "Twelfth (and last) Five-Year Plan begins",
+        "year_display": "2012",
+        "sort_key": 2012
+      },
+      {
+        "label": "NITI Aayog replaces the Planning Commission",
+        "year_display": "2015",
+        "sort_key": 2015
+      }
+    ],
+    "explanation": "Five-Year Plans ran from 1951, with the Mahalanobis Second Plan setting the heavy-industry course and the 1966-69 Plan Holiday marking the first big break; the Twelfth Plan (2012-17) proved the last as NITI Aayog ended the era in 2015."
+  },
+  {
+    "id": "tl_064",
+    "subject": "Economy",
+    "difficulty": "easy",
+    "theme": "Reforms Since 1991",
+    "items": [
+      {
+        "label": "New Economic Policy launches LPG reforms",
+        "year_display": "1991",
+        "sort_key": 1991
+      },
+      {
+        "label": "SEBI given statutory powers",
+        "year_display": "1992",
+        "sort_key": 1992
+      },
+      {
+        "label": "FEMA replaces the draconian FERA",
+        "year_display": "1999",
+        "sort_key": 1999
+      },
+      {
+        "label": "Insolvency and Bankruptcy Code enacted",
+        "year_display": "2016",
+        "sort_key": 2016
+      },
+      {
+        "label": "GST rolled out nationwide",
+        "year_display": "2017",
+        "sort_key": 2017
+      }
+    ],
+    "explanation": "The 1991 crisis-driven opening was followed by institution building: a statutory market regulator in 1992, liberalised forex law in 1999, and the twin structural reforms of the 2010s — the bankruptcy code and the GST."
+  },
+  {
+    "id": "tl_065",
+    "subject": "Economy",
+    "difficulty": "medium",
+    "theme": "Evolution of Monetary Policy in India",
+    "items": [
+      {
+        "label": "RBI Act passed",
+        "year_display": "1934",
+        "sort_key": 1934
+      },
+      {
+        "label": "Fiscal Responsibility and Budget Management (FRBM) Act",
+        "year_display": "2003",
+        "sort_key": 2003
+      },
+      {
+        "label": "Monetary Policy Framework Agreement adopts inflation targeting",
+        "year_display": "2015",
+        "sort_key": 2015
+      },
+      {
+        "label": "Monetary Policy Committee holds its first meeting",
+        "year_display": "2016",
+        "sort_key": 2016
+      }
+    ],
+    "explanation": "The RBI Act of 1934 created the central bank, but the modern framework is recent: FRBM disciplined fiscal policy in 2003, the 2015 agreement fixed a 4% CPI inflation target, and the six-member MPC began setting rates in 2016."
+  },
+  {
+    "id": "tl_066",
+    "subject": "Economy",
+    "difficulty": "medium",
+    "theme": "Development Finance Institutions",
+    "items": [
+      {
+        "label": "IFCI, India's first development bank, established",
+        "year_display": "1948",
+        "sort_key": 1948
+      },
+      {
+        "label": "ICICI set up to finance private industry",
+        "year_display": "1955",
+        "sort_key": 1955
+      },
+      {
+        "label": "IDBI established as the apex industrial lender",
+        "year_display": "1964",
+        "sort_key": 1964
+      },
+      {
+        "label": "NABARD created for agriculture and rural development",
+        "year_display": "1982",
+        "sort_key": 1982
+      },
+      {
+        "label": "SIDBI created for small industries",
+        "year_display": "1990",
+        "sort_key": 1990
+      }
+    ],
+    "explanation": "India built specialised lenders one sector at a time: IFCI for industry in 1948, ICICI for private enterprise, IDBI as apex institution in 1964, then dedicated banks for agriculture (NABARD, 1982) and small industry (SIDBI, 1990)."
+  },
+  {
+    "id": "tl_067",
+    "subject": "Economy",
+    "difficulty": "medium",
+    "theme": "The Long Road of Indirect Tax Reform",
+    "items": [
+      {
+        "label": "Income Tax Act consolidates direct taxation",
+        "year_display": "1961",
+        "sort_key": 1961
+      },
+      {
+        "label": "MODVAT introduced to reduce cascading of excise duties",
+        "year_display": "1986",
+        "sort_key": 1986
+      },
+      {
+        "label": "Service tax introduced on three services",
+        "year_display": "1994",
+        "sort_key": 1994
+      },
+      {
+        "label": "State-level VAT replaces sales tax",
+        "year_display": "2005",
+        "sort_key": 2005
+      },
+      {
+        "label": "GST subsumes central and state indirect taxes",
+        "year_display": "2017",
+        "sort_key": 2017
+      }
+    ],
+    "explanation": "Every step chipped away at tax cascading: MODVAT gave credit for excise inputs, service tax broadened the base from 1994, state VAT rationalised sales taxes in 2005, and GST finally merged the chain into one destination-based tax in 2017."
+  },
+  {
+    "id": "tl_068",
+    "subject": "Economy",
+    "difficulty": "medium",
+    "theme": "Agricultural Policy Milestones",
+    "items": [
+      {
+        "label": "Green Revolution begins with HYV seeds",
+        "year_display": "1966",
+        "sort_key": 1966
+      },
+      {
+        "label": "Operation Flood launches the White Revolution",
+        "year_display": "1970",
+        "sort_key": 1970
+      },
+      {
+        "label": "Kisan Credit Card scheme introduced",
+        "year_display": "1998",
+        "sort_key": 1998
+      },
+      {
+        "label": "National Food Security Act enacted",
+        "year_display": "2013",
+        "sort_key": 2013
+      },
+      {
+        "label": "PM-KISAN direct income support launched",
+        "year_display": "2019",
+        "sort_key": 2019
+      }
+    ],
+    "explanation": "Farm policy shifted focus over the decades — first raising production (Green and White Revolutions), then easing credit (KCC), then guaranteeing food access as a legal right (NFSA 2013), and finally direct cash transfers to farmers (PM-KISAN)."
+  },
+  {
+    "id": "tl_069",
+    "subject": "Economy",
+    "difficulty": "hard",
+    "theme": "Committees that Shaped Indian Banking",
+    "items": [
+      {
+        "label": "Hilton Young Commission recommends creating the RBI",
+        "year_display": "1926",
+        "sort_key": 1926
+      },
+      {
+        "label": "Narasimham Committee I on financial sector reform",
+        "year_display": "1991",
+        "sort_key": 1991
+      },
+      {
+        "label": "Narasimham Committee II on banking sector reform",
+        "year_display": "1998",
+        "sort_key": 1998
+      },
+      {
+        "label": "Nachiket Mor Committee on financial inclusion set up",
+        "year_display": "2013",
+        "sort_key": 2013
+      },
+      {
+        "label": "P. J. Nayak Committee reports on bank board governance",
+        "year_display": "2014",
+        "sort_key": 2014
+      }
+    ],
+    "explanation": "The Hilton Young Commission fathered the RBI itself; the two Narasimham committees scripted post-1991 liberalisation of banking, while the Mor and Nayak committees of 2013-14 drove the payments-bank push and the governance debate in public sector banks."
+  },
+  {
+    "id": "tl_070",
+    "subject": "Economy",
+    "difficulty": "hard",
+    "theme": "The Rupee's Exchange Rate Journey",
+    "items": [
+      {
+        "label": "First post-independence devaluation of the rupee",
+        "year_display": "1949",
+        "sort_key": 1949
+      },
+      {
+        "label": "Major devaluation of 1966",
+        "year_display": "1966",
+        "sort_key": 1966
+      },
+      {
+        "label": "Two-step crisis devaluation of July 1991",
+        "year_display": "1991",
+        "sort_key": 1991
+      },
+      {
+        "label": "LERMS introduces partial convertibility",
+        "year_display": "1992",
+        "sort_key": 1992
+      },
+      {
+        "label": "Rupee made fully convertible on the current account",
+        "year_display": "1994",
+        "sort_key": 1994
+      }
+    ],
+    "explanation": "Three devaluations (1949, 1966, 1991) mark the fixed-rate era's crises; after 1991 the regime itself changed, moving through the dual-rate LERMS to a market-determined rate and full current account convertibility by 1994."
+  },
+  {
+    "id": "tl_071",
+    "subject": "Economy",
+    "difficulty": "hard",
+    "theme": "Building India's Capital Markets",
+    "items": [
+      {
+        "label": "Bombay Stock Exchange founded",
+        "year_display": "1875",
+        "sort_key": 1875
+      },
+      {
+        "label": "SEBI constituted as a non-statutory body",
+        "year_display": "1988",
+        "sort_key": 1988
+      },
+      {
+        "label": "SEBI Act gives the regulator statutory powers",
+        "year_display": "1992",
+        "sort_key": 1992
+      },
+      {
+        "label": "NSE begins equity trading with screen-based system",
+        "year_display": "1994",
+        "sort_key": 1994
+      },
+      {
+        "label": "NSDL launches dematerialised share holding",
+        "year_display": "1996",
+        "sort_key": 1996
+      }
+    ],
+    "explanation": "Asia's oldest exchange operated for over a century before modern regulation arrived: SEBI (statutory after the 1992 securities scam), the NSE's electronic trading from 1994, and NSDL's demat system in 1996 together transformed Indian markets."
+  },
+  {
+    "id": "tl_072",
+    "subject": "Economy",
+    "difficulty": "hard",
+    "theme": "Industrial Policy from Control to Liberalisation",
+    "items": [
+      {
+        "label": "Industrial Policy Resolution defines a mixed economy",
+        "year_display": "1948",
+        "sort_key": 1948
+      },
+      {
+        "label": "Industries (Development and Regulation) Act introduces licensing",
+        "year_display": "1951",
+        "sort_key": 1951
+      },
+      {
+        "label": "Industrial Policy Resolution reserves the commanding heights for the state",
+        "year_display": "1956",
+        "sort_key": 1956
+      },
+      {
+        "label": "MRTP Act restricts large business houses",
+        "year_display": "1969",
+        "sort_key": 1969
+      },
+      {
+        "label": "New Industrial Policy abolishes most licensing",
+        "year_display": "1991",
+        "sort_key": 1991
+      }
+    ],
+    "explanation": "Control tightened for four decades — licensing from 1951, state dominance from the 1956 resolution, and MRTP curbs from 1969 — before the 1991 policy dismantled the 'licence raj' almost overnight."
+  },
+  {
+    "id": "tl_073",
+    "subject": "Environment",
+    "difficulty": "easy",
+    "theme": "Environmental Legislation and Events in India",
+    "items": [
+      {
+        "label": "Wildlife (Protection) Act passed",
+        "year_display": "1972",
+        "sort_key": 1972
+      },
+      {
+        "label": "Project Tiger launched",
+        "year_display": "1973",
+        "sort_key": 1973
+      },
+      {
+        "label": "Forest (Conservation) Act passed",
+        "year_display": "1980",
+        "sort_key": 1980
+      },
+      {
+        "label": "Bhopal Gas Tragedy",
+        "year_display": "1984",
+        "sort_key": 1984
+      },
+      {
+        "label": "National Green Tribunal Act passed",
+        "year_display": "2010",
+        "sort_key": 2010
+      }
+    ],
+    "explanation": "India's environmental legal framework built up gradually — protection statutes in the 1970s and 80s, an industrial-disaster wake-up call in 1984, and eventually a dedicated judicial body (NGT) in 2010 to fast-track environmental cases."
+  },
+  {
+    "id": "tl_074",
+    "subject": "Environment",
+    "difficulty": "easy",
+    "theme": "Global Environmental Summits and Treaties",
+    "items": [
+      {
+        "label": "Stockholm Conference on the Human Environment",
+        "year_display": "1972",
+        "sort_key": 1972
+      },
+      {
+        "label": "Montreal Protocol on ozone-depleting substances",
+        "year_display": "1987",
+        "sort_key": 1987
+      },
+      {
+        "label": "Rio Earth Summit adopts the UNFCCC and CBD",
+        "year_display": "1992",
+        "sort_key": 1992
+      },
+      {
+        "label": "Kyoto Protocol sets binding emission targets",
+        "year_display": "1997",
+        "sort_key": 1997
+      },
+      {
+        "label": "Paris Agreement adopted",
+        "year_display": "2015",
+        "sort_key": 2015
+      }
+    ],
+    "explanation": "Stockholm put environment on the global agenda, Montreal proved treaties could work (on ozone), Rio created the climate and biodiversity conventions, and Kyoto's binding targets eventually gave way to the Paris Agreement's universal pledges."
+  },
+  {
+    "id": "tl_075",
+    "subject": "Environment",
+    "difficulty": "easy",
+    "theme": "India's Environmental Acts",
+    "items": [
+      {
+        "label": "Water (Prevention and Control of Pollution) Act",
+        "year_display": "1974",
+        "sort_key": 1974
+      },
+      {
+        "label": "Air (Prevention and Control of Pollution) Act",
+        "year_display": "1981",
+        "sort_key": 1981
+      },
+      {
+        "label": "Environment (Protection) Act — the umbrella law",
+        "year_display": "1986",
+        "sort_key": 1986
+      },
+      {
+        "label": "Biological Diversity Act",
+        "year_display": "2002",
+        "sort_key": 2002
+      },
+      {
+        "label": "Forest Rights Act recognises rights of forest dwellers",
+        "year_display": "2006",
+        "sort_key": 2006
+      }
+    ],
+    "explanation": "Pollution law came medium by medium — water in 1974, air in 1981 — until Bhopal prompted the umbrella Environment Protection Act of 1986; the 2000s added biodiversity governance and, in 2006, statutory rights for forest-dwelling communities."
+  },
+  {
+    "id": "tl_076",
+    "subject": "Environment",
+    "difficulty": "easy",
+    "theme": "India's Species Conservation Projects",
+    "items": [
+      {
+        "label": "Project Tiger launched",
+        "year_display": "1973",
+        "sort_key": 1973
+      },
+      {
+        "label": "Crocodile Conservation Project begins",
+        "year_display": "1975",
+        "sort_key": 1975
+      },
+      {
+        "label": "Project Elephant launched",
+        "year_display": "1992",
+        "sort_key": 1992
+      },
+      {
+        "label": "Project Snow Leopard launched",
+        "year_display": "2009",
+        "sort_key": 2009
+      },
+      {
+        "label": "Cheetahs reintroduced at Kuno National Park",
+        "year_display": "2022",
+        "sort_key": 2022
+      }
+    ],
+    "explanation": "Flagship-species programmes began with Project Tiger in 1973 and spread to crocodiles, elephants and snow leopards; the 2022 cheetah translocation from Africa was the world's first intercontinental reintroduction of a large carnivore."
+  },
+  {
+    "id": "tl_077",
+    "subject": "Environment",
+    "difficulty": "medium",
+    "theme": "Milestone COPs of the Climate Convention",
+    "items": [
+      {
+        "label": "COP1 held at Berlin",
+        "year_display": "1995",
+        "sort_key": 1995
+      },
+      {
+        "label": "COP3 at Kyoto adopts the Kyoto Protocol",
+        "year_display": "1997",
+        "sort_key": 1997
+      },
+      {
+        "label": "COP13 adopts the Bali Action Plan",
+        "year_display": "2007",
+        "sort_key": 2007
+      },
+      {
+        "label": "COP15 at Copenhagen ends without a binding deal",
+        "year_display": "2009",
+        "sort_key": 2009
+      },
+      {
+        "label": "COP21 adopts the Paris Agreement",
+        "year_display": "2015",
+        "sort_key": 2015
+      }
+    ],
+    "explanation": "The COP sequence tells the negotiation story: Kyoto's top-down binding targets, the Bali roadmap seeking a successor, Copenhagen's collapse — and the pivot to Paris's bottom-up nationally determined contributions in 2015."
+  },
+  {
+    "id": "tl_078",
+    "subject": "Environment",
+    "difficulty": "medium",
+    "theme": "Protected Areas and Wetlands in India",
+    "items": [
+      {
+        "label": "Hailey (now Corbett) National Park, India's first, created",
+        "year_display": "1936",
+        "sort_key": 1936
+      },
+      {
+        "label": "Ramsar Convention on Wetlands adopted",
+        "year_display": "1971",
+        "sort_key": 1971
+      },
+      {
+        "label": "Chilika and Keoladeo become India's first Ramsar sites",
+        "year_display": "1981",
+        "sort_key": 1981
+      },
+      {
+        "label": "Nilgiri becomes India's first biosphere reserve",
+        "year_display": "1986",
+        "sort_key": 1986
+      }
+    ],
+    "explanation": "India's protected-area toolkit expanded over half a century: the first national park under colonial rule in 1936, international wetland designations after India joined the Ramsar regime (first sites 1981), and UNESCO-style biosphere reserves from 1986."
+  },
+  {
+    "id": "tl_079",
+    "subject": "Environment",
+    "difficulty": "medium",
+    "theme": "Protecting the Ozone Layer",
+    "items": [
+      {
+        "label": "Vienna Convention for the Protection of the Ozone Layer",
+        "year_display": "1985",
+        "sort_key": 1985
+      },
+      {
+        "label": "Montreal Protocol adopted",
+        "year_display": "1987",
+        "sort_key": 1987
+      },
+      {
+        "label": "Montreal Protocol enters into force",
+        "year_display": "1989",
+        "sort_key": 1989
+      },
+      {
+        "label": "Kigali Amendment targets HFCs",
+        "year_display": "2016",
+        "sort_key": 2016
+      },
+      {
+        "label": "India ratifies the Kigali Amendment",
+        "year_display": "2021",
+        "sort_key": 2021
+      }
+    ],
+    "explanation": "The Vienna framework of 1985 led within two years to the Montreal Protocol's binding phase-outs of CFCs; decades later the Kigali Amendment extended the regime to HFCs — potent greenhouse gases — with India ratifying in 2021."
+  },
+  {
+    "id": "tl_080",
+    "subject": "Environment",
+    "difficulty": "medium",
+    "theme": "Global Biodiversity Agreements",
+    "items": [
+      {
+        "label": "CITES signed to regulate wildlife trade",
+        "year_display": "1973",
+        "sort_key": 1973
+      },
+      {
+        "label": "Convention on Biological Diversity opened at Rio",
+        "year_display": "1992",
+        "sort_key": 1992
+      },
+      {
+        "label": "Cartagena Protocol on Biosafety adopted",
+        "year_display": "2000",
+        "sort_key": 2000
+      },
+      {
+        "label": "Nagoya Protocol on access and benefit sharing",
+        "year_display": "2010",
+        "sort_key": 2010
+      },
+      {
+        "label": "Kunming-Montreal Global Biodiversity Framework adopted",
+        "year_display": "2022",
+        "sort_key": 2022
+      }
+    ],
+    "explanation": "Wildlife-trade control (CITES) came first; the CBD then anchored biodiversity law from 1992, gaining protocols on GMO trade (Cartagena) and genetic-resource benefit sharing (Nagoya) before the 2022 framework set the '30 by 30' targets."
+  },
+  {
+    "id": "tl_081",
+    "subject": "Environment",
+    "difficulty": "hard",
+    "theme": "India's Environmental Movements",
+    "items": [
+      {
+        "label": "Khejarli sacrifice — Bishnois die protecting trees",
+        "year_display": "1730",
+        "sort_key": 1730
+      },
+      {
+        "label": "Chipko movement begins in the Garhwal Himalaya",
+        "year_display": "1973",
+        "sort_key": 1973
+      },
+      {
+        "label": "Appiko movement in the Western Ghats of Karnataka",
+        "year_display": "1983",
+        "sort_key": 1983
+      },
+      {
+        "label": "Narmada Bachao Andolan takes shape",
+        "year_display": "1985",
+        "sort_key": 1985
+      }
+    ],
+    "explanation": "The Bishnoi sacrifice of 1730 is the movement tradition's origin story; Chipko revived tree-hugging protest in the 1970s Himalaya, Appiko carried it south to Karnataka, and the NBA turned the energy against large dams on the Narmada."
+  },
+  {
+    "id": "tl_082",
+    "subject": "Environment",
+    "difficulty": "hard",
+    "theme": "Fighting Air Pollution in India",
+    "items": [
+      {
+        "label": "Air (Prevention and Control of Pollution) Act",
+        "year_display": "1981",
+        "sort_key": 1981
+      },
+      {
+        "label": "National Ambient Air Quality Standards revised (12 pollutants)",
+        "year_display": "2009",
+        "sort_key": 2009
+      },
+      {
+        "label": "BS-IV fuel norms enforced nationwide",
+        "year_display": "2017",
+        "sort_key": 2017
+      },
+      {
+        "label": "National Clean Air Programme launched",
+        "year_display": "2019",
+        "sort_key": 2019
+      },
+      {
+        "label": "India leapfrogs to BS-VI fuel norms",
+        "year_display": "2020",
+        "sort_key": 2020
+      }
+    ],
+    "explanation": "Regulation accelerated sharply in the late 2010s: after decades under the 1981 Act and the 2009 standards, India rolled out BS-IV nationally in 2017, launched city-level NCAP targets in 2019, and skipped BS-V entirely to enforce BS-VI in 2020."
+  },
+  {
+    "id": "tl_083",
+    "subject": "Environment",
+    "difficulty": "hard",
+    "theme": "Regulating Coasts and Wetlands",
+    "items": [
+      {
+        "label": "First Coastal Regulation Zone (CRZ) Notification",
+        "year_display": "1991",
+        "sort_key": 1991
+      },
+      {
+        "label": "Wetlands (Conservation and Management) Rules notified",
+        "year_display": "2010",
+        "sort_key": 2010
+      },
+      {
+        "label": "CRZ Notification comprehensively revised",
+        "year_display": "2011",
+        "sort_key": 2011
+      },
+      {
+        "label": "Wetlands Rules replaced with a decentralised framework",
+        "year_display": "2017",
+        "sort_key": 2017
+      },
+      {
+        "label": "CRZ Notification eases norms with graded zones",
+        "year_display": "2019",
+        "sort_key": 2019
+      }
+    ],
+    "explanation": "Both regimes were born under the Environment Protection Act and repeatedly rewritten: CRZ rules issued in 1991 were overhauled in 2011 and relaxed in 2019, while wetland rules moved from central control (2010) to state-led management (2017)."
+  },
+  {
+    "id": "tl_084",
+    "subject": "Environment",
+    "difficulty": "hard",
+    "theme": "Institutions and Reports of Global Environmentalism",
+    "items": [
+      {
+        "label": "UNEP established after Stockholm",
+        "year_display": "1972",
+        "sort_key": 1972
+      },
+      {
+        "label": "Brundtland Report defines sustainable development",
+        "year_display": "1987",
+        "sort_key": 1987
+      },
+      {
+        "label": "IPCC established by UNEP and WMO",
+        "year_display": "1988",
+        "sort_key": 1988
+      },
+      {
+        "label": "IPCC releases its First Assessment Report",
+        "year_display": "1990",
+        "sort_key": 1990
+      },
+      {
+        "label": "UN adopts the Sustainable Development Goals",
+        "year_display": "2015",
+        "sort_key": 2015
+      }
+    ],
+    "explanation": "UNEP institutionalised the Stockholm agenda; the Brundtland Report's 'sustainable development' framing (1987) and the IPCC's first assessment (1990) built the scientific-political consensus that eventually produced the SDGs in 2015."
+  },
+  {
+    "id": "tl_085",
+    "subject": "Polity",
+    "difficulty": "easy",
+    "theme": "Constitutional Milestones",
+    "items": [
+      {
+        "label": "Constitution of India adopted by the Constituent Assembly",
+        "year_display": "26 Nov 1949",
+        "sort_key": 1949
+      },
+      {
+        "label": "Constitution comes into force",
+        "year_display": "26 Jan 1950",
+        "sort_key": 1950
+      },
+      {
+        "label": "First Amendment Act",
+        "year_display": "1951",
+        "sort_key": 1951
+      },
+      {
+        "label": "42nd Amendment ('Mini Constitution')",
+        "year_display": "1976",
+        "sort_key": 1976
+      },
+      {
+        "label": "73rd and 74th Amendments (Panchayati Raj and Municipalities)",
+        "year_display": "1992",
+        "sort_key": 1992
+      }
+    ],
+    "explanation": "From adoption to enforcement took two months. The First Amendment quickly addressed land-reform and free-speech tensions; the 42nd Amendment during the Emergency reshaped the Preamble and Centre-State balance; and the 73rd/74th Amendments finally gave local self-government constitutional status."
+  },
+  {
+    "id": "tl_086",
+    "subject": "Polity",
+    "difficulty": "easy",
+    "theme": "Making of the Constitution",
+    "items": [
+      {
+        "label": "Cabinet Mission arrives in India",
+        "year_display": "Mar 1946",
+        "sort_key": 194603
+      },
+      {
+        "label": "Constituent Assembly holds its first sitting",
+        "year_display": "Dec 1946",
+        "sort_key": 194612
+      },
+      {
+        "label": "Objectives Resolution adopted",
+        "year_display": "Jan 1947",
+        "sort_key": 194701
+      },
+      {
+        "label": "Constitution adopted",
+        "year_display": "Nov 1949",
+        "sort_key": 194911
+      },
+      {
+        "label": "Constitution comes into force",
+        "year_display": "Jan 1950",
+        "sort_key": 195001
+      }
+    ],
+    "explanation": "The Cabinet Mission's plan created the Constituent Assembly, which first met on 9 December 1946; Nehru's Objectives Resolution (adopted January 1947) became the Preamble's seed, and the finished Constitution was adopted in November 1949 and enforced on 26 January 1950."
+  },
+  {
+    "id": "tl_087",
+    "subject": "Polity",
+    "difficulty": "easy",
+    "theme": "Evolution of Indian Elections",
+    "items": [
+      {
+        "label": "First general elections begin",
+        "year_display": "1951",
+        "sort_key": 1951
+      },
+      {
+        "label": "EVMs first used in a Kerala by-election",
+        "year_display": "1982",
+        "sort_key": 1982
+      },
+      {
+        "label": "Voting age lowered from 21 to 18 (61st Amendment)",
+        "year_display": "1989",
+        "sort_key": 1989
+      },
+      {
+        "label": "NOTA option introduced after a Supreme Court ruling",
+        "year_display": "2013",
+        "sort_key": 2013
+      },
+      {
+        "label": "VVPAT deployed at every polling station",
+        "year_display": "2019",
+        "sort_key": 2019
+      }
+    ],
+    "explanation": "The world's largest electoral exercise has kept upgrading itself — universal adult franchise from the very first election of 1951-52, machines from 1982, a younger electorate from 1989, and voter-verification tools (NOTA, VVPAT) in the 2010s."
+  },
+  {
+    "id": "tl_088",
+    "subject": "Polity",
+    "difficulty": "easy",
+    "theme": "Journey of Panchayati Raj",
+    "items": [
+      {
+        "label": "Balwant Rai Mehta Committee recommends three-tier panchayats",
+        "year_display": "1957",
+        "sort_key": 1957
+      },
+      {
+        "label": "Ashok Mehta Committee reviews Panchayati Raj",
+        "year_display": "1977",
+        "sort_key": 1977
+      },
+      {
+        "label": "73rd Amendment gives panchayats constitutional status",
+        "year_display": "1992",
+        "sort_key": 1992
+      },
+      {
+        "label": "PESA extends panchayats to Scheduled Areas",
+        "year_display": "1996",
+        "sort_key": 1996
+      }
+    ],
+    "explanation": "Democratic decentralisation moved from committee reports (Balwant Rai Mehta 1957, Ashok Mehta 1977) to constitutional guarantee with the 73rd Amendment, and PESA then adapted the framework for tribal Scheduled Areas in 1996."
+  },
+  {
+    "id": "tl_089",
+    "subject": "Polity",
+    "difficulty": "medium",
+    "theme": "The Basic Structure Battle",
+    "items": [
+      {
+        "label": "Shankari Prasad case upholds Parliament's amending power",
+        "year_display": "1951",
+        "sort_key": 1951
+      },
+      {
+        "label": "Golaknath case bars amending Fundamental Rights",
+        "year_display": "1967",
+        "sort_key": 1967
+      },
+      {
+        "label": "Kesavananda Bharati case propounds the basic structure doctrine",
+        "year_display": "1973",
+        "sort_key": 1973
+      },
+      {
+        "label": "Minerva Mills case strikes down parts of the 42nd Amendment",
+        "year_display": "1980",
+        "sort_key": 1980
+      },
+      {
+        "label": "I. R. Coelho case applies basic structure review to the Ninth Schedule",
+        "year_display": "2007",
+        "sort_key": 2007
+      }
+    ],
+    "explanation": "The Court swung from deference (Shankari Prasad) to rigidity (Golaknath) before Kesavananda's 1973 compromise: Parliament may amend anything except the Constitution's basic structure — a doctrine reinforced in Minerva Mills and extended to the Ninth Schedule in 2007."
+  },
+  {
+    "id": "tl_090",
+    "subject": "Polity",
+    "difficulty": "medium",
+    "theme": "Building India's Watchdog Institutions",
+    "items": [
+      {
+        "label": "Central Public Service Commission set up",
+        "year_display": "1926",
+        "sort_key": 1926
+      },
+      {
+        "label": "Election Commission of India established",
+        "year_display": "1950",
+        "sort_key": 1950
+      },
+      {
+        "label": "First Finance Commission constituted",
+        "year_display": "1951",
+        "sort_key": 1951
+      },
+      {
+        "label": "National Human Rights Commission established",
+        "year_display": "1993",
+        "sort_key": 1993
+      },
+      {
+        "label": "Central Information Commission constituted under the RTI Act",
+        "year_display": "2005",
+        "sort_key": 2005
+      }
+    ],
+    "explanation": "The merit-based PSC predates independence; the Constitution then created the ECI (25 January 1950 — celebrated as National Voters' Day) and the Finance Commission, while statutory watchdogs for human rights (1993) and information (2005) came much later."
+  },
+  {
+    "id": "tl_091",
+    "subject": "Polity",
+    "difficulty": "medium",
+    "theme": "National Emergencies and Their Aftermath",
+    "items": [
+      {
+        "label": "First National Emergency proclaimed during the China war",
+        "year_display": "1962",
+        "sort_key": 1962
+      },
+      {
+        "label": "Second National Emergency during the Bangladesh war",
+        "year_display": "1971",
+        "sort_key": 1971
+      },
+      {
+        "label": "Internal Emergency proclaimed on grounds of 'internal disturbance'",
+        "year_display": "1975",
+        "sort_key": 1975
+      },
+      {
+        "label": "Emergency revoked; Janata government takes office",
+        "year_display": "1977",
+        "sort_key": 1977
+      },
+      {
+        "label": "44th Amendment makes Emergency proclamation harder",
+        "year_display": "1978",
+        "sort_key": 1978
+      }
+    ],
+    "explanation": "India's three national emergencies came in 1962, 1971 and 1975 — the last an internal one that triggered a democratic backlash; the Janata government's 44th Amendment then replaced 'internal disturbance' with 'armed rebellion' as a ground."
+  },
+  {
+    "id": "tl_092",
+    "subject": "Polity",
+    "difficulty": "medium",
+    "theme": "Constitutional Development under the Crown",
+    "items": [
+      {
+        "label": "Government of India Act transfers power to the Crown",
+        "year_display": "1858",
+        "sort_key": 1858
+      },
+      {
+        "label": "Indian Councils Act adds Indians to legislative councils",
+        "year_display": "1861",
+        "sort_key": 1861
+      },
+      {
+        "label": "Indian Councils Act introduces indirect elections",
+        "year_display": "1892",
+        "sort_key": 1892
+      },
+      {
+        "label": "Morley-Minto reforms introduce separate electorates",
+        "year_display": "1909",
+        "sort_key": 1909
+      },
+      {
+        "label": "Government of India Act provides provincial autonomy",
+        "year_display": "1935",
+        "sort_key": 1935
+      }
+    ],
+    "explanation": "Each act conceded slightly more representation: nominated Indians in 1861, indirect election in 1892, separate electorates in 1909, and finally the 1935 Act — whose federal and provincial machinery became the working draft for the Indian Constitution."
+  },
+  {
+    "id": "tl_093",
+    "subject": "Polity",
+    "difficulty": "hard",
+    "theme": "Landmark Constitutional Amendments",
+    "items": [
+      {
+        "label": "24th Amendment affirms Parliament's power to amend Fundamental Rights",
+        "year_display": "1971",
+        "sort_key": 1971
+      },
+      {
+        "label": "52nd Amendment introduces the anti-defection law",
+        "year_display": "1985",
+        "sort_key": 1985
+      },
+      {
+        "label": "86th Amendment makes education a fundamental right",
+        "year_display": "2002",
+        "sort_key": 2002
+      },
+      {
+        "label": "101st Amendment enables the GST",
+        "year_display": "2016",
+        "sort_key": 2016
+      },
+      {
+        "label": "103rd Amendment provides 10% EWS reservation",
+        "year_display": "2019",
+        "sort_key": 2019
+      }
+    ],
+    "explanation": "These amendments each rewired a different arena — Parliament versus judiciary (24th), party discipline (52nd), social rights (86th), fiscal federalism (101st) and reservation policy (103rd)."
+  },
+  {
+    "id": "tl_094",
+    "subject": "Polity",
+    "difficulty": "hard",
+    "theme": "Expanding Rights Through the Courts",
+    "items": [
+      {
+        "label": "Maneka Gandhi case widens Article 21's 'procedure established by law'",
+        "year_display": "1978",
+        "sort_key": 1978
+      },
+      {
+        "label": "Vishaka guidelines against workplace sexual harassment",
+        "year_display": "1997",
+        "sort_key": 1997
+      },
+      {
+        "label": "NALSA judgment recognises transgender identity",
+        "year_display": "2014",
+        "sort_key": 2014
+      },
+      {
+        "label": "Puttaswamy judgment declares privacy a fundamental right",
+        "year_display": "2017",
+        "sort_key": 2017
+      },
+      {
+        "label": "Navtej Singh Johar decriminalises consensual same-sex relations",
+        "year_display": "2018",
+        "sort_key": 2018
+      }
+    ],
+    "explanation": "Maneka Gandhi's expansive reading of Article 21 is the fountainhead: every later case here — Vishaka, NALSA, Puttaswamy, Navtej Johar — built dignity, equality and privacy protections on that foundation."
+  },
+  {
+    "id": "tl_095",
+    "subject": "Polity",
+    "difficulty": "hard",
+    "theme": "The Reservation Question",
+    "items": [
+      {
+        "label": "Mandal Commission constituted",
+        "year_display": "1979",
+        "sort_key": 1979
+      },
+      {
+        "label": "V. P. Singh government implements Mandal recommendations",
+        "year_display": "1990",
+        "sort_key": 1990
+      },
+      {
+        "label": "Indra Sawhney judgment caps reservation at 50%",
+        "year_display": "1992",
+        "sort_key": 1992
+      },
+      {
+        "label": "93rd Amendment enables OBC quotas in educational institutions",
+        "year_display": "2005",
+        "sort_key": 2005
+      },
+      {
+        "label": "103rd Amendment adds 10% EWS reservation",
+        "year_display": "2019",
+        "sort_key": 2019
+      }
+    ],
+    "explanation": "A decade separated the Mandal Commission's creation from its explosive implementation in 1990; Indra Sawhney then set the 50% ceiling and creamy-layer rule, while later amendments extended quotas to education (2005) and economic criteria (2019)."
+  },
+  {
+    "id": "tl_096",
+    "subject": "Polity",
+    "difficulty": "hard",
+    "theme": "Transparency and Accountability Laws",
+    "items": [
+      {
+        "label": "Right to Information Act enacted",
+        "year_display": "2005",
+        "sort_key": 2005
+      },
+      {
+        "label": "Lokpal and Lokayuktas Act passed",
+        "year_display": "2013",
+        "sort_key": 2013
+      },
+      {
+        "label": "Whistle Blowers Protection Act enacted",
+        "year_display": "2014",
+        "sort_key": 2014
+      },
+      {
+        "label": "First Lokpal of India appointed",
+        "year_display": "2019",
+        "sort_key": 2019
+      }
+    ],
+    "explanation": "RTI opened government records in 2005; the anti-corruption wave after 2011 produced the Lokpal Act (2013) and whistle-blower protection (2014), though the first Lokpal was appointed only in 2019 — six years after the law."
   }
 ]

@@ -6,14 +6,28 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../shared/mini_game_feedback.dart';
 import 'odd_one_out_controller.dart';
 
 class OddOneOutScreen extends HookConsumerWidget {
-  const OddOneOutScreen({super.key});
+  const OddOneOutScreen({
+    super.key,
+    this.subjectsCsv = '',
+    this.difficultiesCsv = '',
+  });
+
+  /// Comma-separated subject slugs to filter content by; empty = all.
+  final String subjectsCsv;
+
+  /// Comma-separated difficulty names to filter content by; empty = all.
+  final String difficultiesCsv;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final async = ref.watch(oddOneOutControllerProvider);
+    final provider = oddOneOutControllerProvider(
+      (subjects: subjectsCsv, difficulties: difficultiesCsv),
+    );
+    final async = ref.watch(provider);
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final border = isDark ? AppColors.borderDark : AppColors.borderLight;
@@ -28,6 +42,14 @@ class OddOneOutScreen extends HookConsumerWidget {
                 loading: () => const Center(child: CircularProgressIndicator()),
                 error: (e, _) => Center(child: Text('$e')),
                 data: (state) {
+                  if (state.sessionComplete) {
+                    return _SessionCompleteView(
+                      correct: state.correctCount,
+                      total: state.session.length,
+                      onPlayAgain: () =>
+                          ref.read(provider.notifier).playAgain(),
+                    );
+                  }
                   final item = state.current;
                   if (item == null) {
                     return Center(
@@ -47,7 +69,7 @@ class OddOneOutScreen extends HookConsumerWidget {
                     ),
                     children: [
                       Text(
-                        item.subject,
+                        '${item.subject}  ·  ${state.index + 1}/${state.session.length}',
                         style: AppTextStyles.caption()
                             .copyWith(color: scheme.onSurfaceVariant),
                       ),
@@ -97,11 +119,8 @@ class OddOneOutScreen extends HookConsumerWidget {
                             child: InkWell(
                               onTap: state.revealed
                                   ? null
-                                  : () => ref
-                                      .read(
-                                        oddOneOutControllerProvider.notifier,
-                                      )
-                                      .select(i),
+                                  : () =>
+                                      ref.read(provider.notifier).select(i),
                               borderRadius:
                                   BorderRadius.circular(AppRadius.md),
                               child: Ink(
@@ -134,16 +153,11 @@ class OddOneOutScreen extends HookConsumerWidget {
                       ),
                       if (state.revealed) ...[
                         const SizedBox(height: AppSpacing.xl),
-                        Text(
-                          state.selectedIndex == item.oddIndex
+                        MiniGameResultBanner(
+                          correct: state.selectedIndex == item.oddIndex,
+                          text: state.selectedIndex == item.oddIndex
                               ? 'Correct'
                               : 'Not quite',
-                          style: AppTextStyles.label().copyWith(
-                            color: state.selectedIndex == item.oddIndex
-                                ? AppColors.correct
-                                : AppColors.wrong,
-                            fontWeight: FontWeight.w700,
-                          ),
                         ),
                         const SizedBox(height: AppSpacing.sm),
                         Text(
@@ -153,9 +167,7 @@ class OddOneOutScreen extends HookConsumerWidget {
                         ),
                         const SizedBox(height: AppSpacing.xl),
                         FilledButton(
-                          onPressed: () => ref
-                              .read(oddOneOutControllerProvider.notifier)
-                              .next(),
+                          onPressed: () => ref.read(provider.notifier).next(),
                           child: const Text('Next'),
                         ),
                       ],
@@ -163,6 +175,57 @@ class OddOneOutScreen extends HookConsumerWidget {
                   );
                 },
               ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _SessionCompleteView extends StatelessWidget {
+  const _SessionCompleteView({
+    required this.correct,
+    required this.total,
+    required this.onPlayAgain,
+  });
+
+  final int correct;
+  final int total;
+  final VoidCallback onPlayAgain;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.all(AppSpacing.xl),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'Session complete',
+              style: AppTextStyles.h2().copyWith(color: scheme.onSurface),
+            ),
+            const SizedBox(height: AppSpacing.sm),
+            Text(
+              '$correct / $total correct',
+              style: AppTextStyles.h1().copyWith(
+                color: correct * 2 >= total
+                    ? AppColors.correct
+                    : AppColors.wrong,
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+            const SizedBox(height: AppSpacing.xl),
+            FilledButton(
+              onPressed: onPlayAgain,
+              child: const Text('Play again'),
+            ),
+            TextButton(
+              onPressed: () =>
+                  context.canPop() ? context.pop() : context.go('/games'),
+              child: const Text('Back to games'),
             ),
           ],
         ),

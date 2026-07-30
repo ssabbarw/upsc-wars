@@ -2,71 +2,769 @@
   {
     "id": "oo_001",
     "subject": "Ancient History",
-    "items": ["Nalanda", "Taxila", "Vikramashila", "Konark"],
-    "odd_index": 3,
+    "difficulty": "easy",
+    "items": ["Nalanda", "Konark", "Taxila", "Vikramashila"],
+    "odd_index": 1,
     "explanation": "Nalanda, Taxila and Vikramashila were ancient centres of learning and residential universities. Konark is a 13th-century Sun Temple in Odisha — a monument, not an educational institution."
   },
   {
     "id": "oo_002",
-    "subject": "Medieval History",
-    "items": ["Ibn Battuta", "Al-Biruni", "Marco Polo", "Chandragupta Maurya"],
-    "odd_index": 3,
-    "explanation": "Ibn Battuta, Al-Biruni and Marco Polo were foreign travellers who left written accounts of India. Chandragupta Maurya was an Indian ruler, not a visiting chronicler."
+    "subject": "Ancient History",
+    "difficulty": "easy",
+    "items": ["Fatehpur Sikri", "Harappa", "Mohenjo-daro", "Lothal"],
+    "odd_index": 0,
+    "explanation": "Harappa, Mohenjo-daro and Lothal are Indus Valley Civilisation sites. Fatehpur Sikri is a Mughal city built by Akbar, over three thousand years later."
   },
   {
     "id": "oo_003",
-    "subject": "Modern History",
-    "items": ["Lala Lajpat Rai", "Bal Gangadhar Tilak", "Bipin Chandra Pal", "Gopal Krishna Gokhale"],
-    "odd_index": 3,
-    "explanation": "Lajpat Rai, Tilak and Bipin Chandra Pal formed the 'Lal-Bal-Pal' trio associated with the assertive (Garam Dal) wing of the Congress. Gokhale led the moderate (Naram Dal) wing and was Gandhi's political mentor."
+    "subject": "Ancient History",
+    "difficulty": "easy",
+    "items": ["Rigveda", "Samaveda", "Arthashastra", "Yajurveda"],
+    "odd_index": 2,
+    "explanation": "Rigveda, Samaveda and Yajurveda are Vedic religious texts. The Arthashastra is Kautilya's treatise on statecraft and economy, not a Veda."
   },
   {
     "id": "oo_004",
-    "subject": "Art & Culture",
-    "items": ["Bharatanatyam", "Kathakali", "Manipuri", "Ghoomar"],
-    "odd_index": 3,
-    "explanation": "Bharatanatyam, Kathakali and Manipuri are classical dance forms recognised by the Sangeet Natak Akademi. Ghoomar is a folk dance of Rajasthan, not a classical form."
+    "subject": "Ancient History",
+    "difficulty": "easy",
+    "items": ["Ashoka", "Akbar", "Bindusara", "Chandragupta Maurya"],
+    "odd_index": 1,
+    "explanation": "Ashoka, Bindusara and Chandragupta were rulers of the Mauryan Empire. Akbar was a Mughal emperor who ruled nearly 1,800 years later."
   },
   {
     "id": "oo_005",
-    "subject": "Geography",
-    "items": ["Chilika Lake", "Pulicat Lake", "Vembanad Lake", "Sambhar Lake"],
-    "odd_index": 3,
-    "explanation": "Chilika, Pulicat and Vembanad are coastal brackish-water lagoons. Sambhar Lake in Rajasthan is India's largest inland saline lake, unconnected to the sea."
+    "subject": "Ancient History",
+    "difficulty": "medium",
+    "items": ["Sanchi", "Ellora", "Bharhut", "Amaravati"],
+    "odd_index": 1,
+    "explanation": "Sanchi, Bharhut and Amaravati are famous ancient stupa sites. Ellora is a rock-cut cave complex of Buddhist, Hindu and Jain shrines, not a stupa site."
   },
   {
     "id": "oo_006",
-    "subject": "Economy",
-    "items": ["Green Revolution", "White Revolution", "Blue Revolution", "Non-Cooperation Movement"],
-    "odd_index": 3,
-    "explanation": "Green, White and Blue Revolutions are agricultural production programmes covering foodgrain, dairy and fisheries respectively. The Non-Cooperation Movement is a political movement, not an economic programme."
+    "subject": "Ancient History",
+    "difficulty": "medium",
+    "items": ["Fa-Hien", "Hiuen Tsang", "Megasthenes", "I-Tsing"],
+    "odd_index": 2,
+    "explanation": "Fa-Hien, Hiuen Tsang and I-Tsing were Chinese Buddhist pilgrims who visited India. Megasthenes was a Greek ambassador at the Mauryan court of Chandragupta."
   },
   {
     "id": "oo_007",
-    "subject": "Environment",
-    "items": ["Ramsar Convention", "CITES", "Kyoto Protocol", "Government of India Act 1935"],
-    "odd_index": 3,
-    "explanation": "Ramsar, CITES and the Kyoto Protocol are international environmental treaties. The Government of India Act 1935 is a constitutional and administrative statute with no environmental subject matter."
+    "subject": "Ancient History",
+    "difficulty": "medium",
+    "items": ["Hathigumpha", "Allahabad Pillar", "Harshacharita", "Aihole Inscription"],
+    "odd_index": 2,
+    "explanation": "Hathigumpha (Kharavela), the Allahabad Pillar (Samudragupta) and Aihole (Pulakeshin II) are stone inscriptions. Harshacharita is a literary biography written by Banabhatta."
   },
   {
     "id": "oo_008",
-    "subject": "Polity",
-    "items": ["Habeas Corpus", "Mandamus", "Certiorari", "Article 356"],
+    "subject": "Ancient History",
+    "difficulty": "medium",
+    "items": ["Tamralipti", "Bharuch", "Arikamedu", "Pataliputra"],
     "odd_index": 3,
-    "explanation": "Habeas Corpus, Mandamus and Certiorari are types of writs issued by courts under Articles 32 and 226. Article 356 deals with President's Rule in a state and has nothing to do with writ jurisdiction."
+    "explanation": "Tamralipti, Bharuch and Arikamedu were ancient port towns of maritime trade. Pataliputra was an inland imperial capital on the Ganga, not a seaport."
   },
   {
     "id": "oo_009",
     "subject": "Ancient History",
-    "items": ["Harappa", "Mohenjo-daro", "Lothal", "Fatehpur Sikri"],
-    "odd_index": 3,
-    "explanation": "Harappa, Mohenjo-daro and Lothal are Indus Valley Civilisation sites. Fatehpur Sikri is a Mughal city built by Akbar, over three thousand years later."
+    "difficulty": "hard",
+    "items": ["Girnar", "Rummindei", "Dhauli", "Kalsi"],
+    "odd_index": 1,
+    "explanation": "Girnar, Dhauli and Kalsi are sites of Ashoka's Major Rock Edicts. Rummindei (Lumbini) has a pillar inscription commemorating Buddha's birthplace, not a rock edict."
   },
   {
     "id": "oo_010",
-    "subject": "Geography",
-    "items": ["Cotton", "Jute", "Sugarcane", "Coal"],
+    "subject": "Ancient History",
+    "difficulty": "hard",
+    "items": ["Lothal", "Kalibangan", "Chanhudaro", "Dholavira"],
+    "odd_index": 2,
+    "explanation": "Lothal, Kalibangan and Dholavira are Harappan sites located in present-day India. Chanhudaro lies in Sindh, present-day Pakistan."
+  },
+  {
+    "id": "oo_011",
+    "subject": "Ancient History",
+    "difficulty": "hard",
+    "items": ["Meghaduta", "Raghuvamsha", "Mrichchhakatika", "Shakuntalam"],
+    "odd_index": 2,
+    "explanation": "Meghaduta, Raghuvamsha and Abhijnanashakuntalam were composed by Kalidasa. Mrichchhakatika (The Little Clay Cart) was written by Shudraka."
+  },
+  {
+    "id": "oo_012",
+    "subject": "Ancient History",
+    "difficulty": "hard",
+    "items": ["Sanchi", "Ajanta", "Bagh", "Sittanavasal"],
+    "odd_index": 0,
+    "explanation": "Ajanta, Bagh and Sittanavasal are celebrated for ancient mural paintings. Sanchi is famous for its stupa and gateway sculptures, not murals."
+  },
+  {
+    "id": "oo_013",
+    "subject": "Medieval History",
+    "difficulty": "easy",
+    "items": ["Chandragupta Maurya", "Ibn Battuta", "Al-Biruni", "Marco Polo"],
+    "odd_index": 0,
+    "explanation": "Ibn Battuta, Al-Biruni and Marco Polo were foreign travellers who left written accounts of India. Chandragupta Maurya was an Indian ruler, not a visiting chronicler."
+  },
+  {
+    "id": "oo_014",
+    "subject": "Medieval History",
+    "difficulty": "easy",
+    "items": ["Babur", "Humayun", "Alauddin Khalji", "Akbar"],
+    "odd_index": 2,
+    "explanation": "Babur, Humayun and Akbar were Mughal emperors. Alauddin Khalji was a Sultan of the earlier Delhi Sultanate's Khalji dynasty."
+  },
+  {
+    "id": "oo_015",
+    "subject": "Medieval History",
+    "difficulty": "easy",
+    "items": ["Kabir", "Todar Mal", "Mirabai", "Ravidas"],
+    "odd_index": 1,
+    "explanation": "Kabir, Mirabai and Ravidas were saints of the Bhakti movement. Todar Mal was Akbar's revenue minister, famous for land-revenue reforms, not a Bhakti saint."
+  },
+  {
+    "id": "oo_016",
+    "subject": "Medieval History",
+    "difficulty": "easy",
+    "items": ["Harihara", "Bukka", "Krishnadevaraya", "Iltutmish"],
     "odd_index": 3,
+    "explanation": "Harihara, Bukka and Krishnadevaraya were rulers of the Vijayanagara Empire. Iltutmish was a Sultan of the Delhi Sultanate in the north."
+  },
+  {
+    "id": "oo_017",
+    "subject": "Medieval History",
+    "difficulty": "medium",
+    "items": ["Khalji", "Tughlaq", "Ahom", "Lodi"],
+    "odd_index": 2,
+    "explanation": "The Khalji, Tughlaq and Lodi dynasties ruled the Delhi Sultanate. The Ahoms ruled Assam in the north-east and were never part of the Sultanate."
+  },
+  {
+    "id": "oo_018",
+    "subject": "Medieval History",
+    "difficulty": "medium",
+    "items": ["Birbal", "Amir Khusrau", "Tansen", "Abul Fazl"],
+    "odd_index": 1,
+    "explanation": "Birbal, Tansen and Abul Fazl were celebrated members of Akbar's court (navaratnas). Amir Khusrau was a poet of the earlier Delhi Sultanate, associated with sultans from Balban to the Tughlaqs."
+  },
+  {
+    "id": "oo_019",
+    "subject": "Medieval History",
+    "difficulty": "medium",
+    "items": ["Qutub Minar", "Buland Darwaza", "Alai Darwaza", "Tughlaqabad Fort"],
+    "odd_index": 1,
+    "explanation": "Qutub Minar, Alai Darwaza and Tughlaqabad Fort are Delhi Sultanate constructions. Buland Darwaza at Fatehpur Sikri was built by the Mughal emperor Akbar."
+  },
+  {
+    "id": "oo_020",
+    "subject": "Medieval History",
+    "difficulty": "medium",
+    "items": ["Abdur Razzaq", "Nicolo Conti", "Domingo Paes", "Francois Bernier"],
+    "odd_index": 3,
+    "explanation": "Abdur Razzaq, Nicolo Conti and Domingo Paes visited and described the Vijayanagara Empire. Francois Bernier travelled in Mughal India during Aurangzeb's time."
+  },
+  {
+    "id": "oo_021",
+    "subject": "Medieval History",
+    "difficulty": "hard",
+    "items": ["Panipat 1526", "Khanwa 1527", "Chanderi 1528", "Panipat 1556"],
+    "odd_index": 3,
+    "explanation": "The battles of Panipat (1526), Khanwa and Chanderi were all fought and won by Babur. The Second Battle of Panipat (1556) was fought by Akbar's forces under Bairam Khan against Hemu."
+  },
+  {
+    "id": "oo_022",
+    "subject": "Medieval History",
+    "difficulty": "hard",
+    "items": ["Iqta", "Ur", "Sabha", "Nagaram"],
+    "odd_index": 0,
+    "explanation": "Ur, Sabha and Nagaram were local assemblies in Chola administration. Iqta was a revenue land assignment system of the Delhi Sultanate."
+  },
+  {
+    "id": "oo_023",
+    "subject": "Medieval History",
+    "difficulty": "hard",
+    "items": ["Akbarnama", "Tuzuk-i-Jahangiri", "Ain-i-Akbari", "Padshahnama"],
+    "odd_index": 1,
+    "explanation": "Akbarnama, Ain-i-Akbari (Abul Fazl) and Padshahnama (Abdul Hamid Lahori) were written by court historians. Tuzuk-i-Jahangiri is an autobiography written by Emperor Jahangir himself."
+  },
+  {
+    "id": "oo_024",
+    "subject": "Medieval History",
+    "difficulty": "hard",
+    "items": ["Sangama", "Saluva", "Hoysala", "Tuluva"],
+    "odd_index": 2,
+    "explanation": "Sangama, Saluva and Tuluva were ruling dynasties of the Vijayanagara Empire. The Hoysalas were an earlier, separate kingdom of Karnataka with capital at Dwarasamudra."
+  },
+  {
+    "id": "oo_025",
+    "subject": "Modern History",
+    "difficulty": "easy",
+    "items": ["Lala Lajpat Rai", "Gopal Krishna Gokhale", "Bal Gangadhar Tilak", "Bipin Chandra Pal"],
+    "odd_index": 1,
+    "explanation": "Lajpat Rai, Tilak and Bipin Chandra Pal formed the 'Lal-Bal-Pal' extremist trio in the Congress. Gokhale led the moderate wing and was Gandhi's political mentor."
+  },
+  {
+    "id": "oo_026",
+    "subject": "Modern History",
+    "difficulty": "easy",
+    "items": ["Non-Cooperation", "Revolt of 1857", "Civil Disobedience", "Quit India"],
+    "odd_index": 1,
+    "explanation": "Non-Cooperation, Civil Disobedience and Quit India were mass movements led by Gandhi. The Revolt of 1857 was an armed uprising decades before Gandhi's era."
+  },
+  {
+    "id": "oo_027",
+    "subject": "Modern History",
+    "difficulty": "easy",
+    "items": ["Dalhousie", "Curzon", "Subhas Bose", "Ripon"],
+    "odd_index": 2,
+    "explanation": "Dalhousie, Curzon and Ripon were British Governors-General/Viceroys of India. Subhas Chandra Bose was an Indian nationalist leader who founded the Azad Hind movement."
+  },
+  {
+    "id": "oo_028",
+    "subject": "Modern History",
+    "difficulty": "easy",
+    "items": ["Bhagat Singh", "Rajguru", "Chandrashekhar Azad", "Dadabhai Naoroji"],
+    "odd_index": 3,
+    "explanation": "Bhagat Singh, Rajguru and Chandrashekhar Azad were armed revolutionaries. Dadabhai Naoroji was an early moderate leader known for the 'Drain of Wealth' theory."
+  },
+  {
+    "id": "oo_029",
+    "subject": "Modern History",
+    "difficulty": "medium",
+    "items": ["Young India", "Kesari", "Harijan", "Navajivan"],
+    "odd_index": 1,
+    "explanation": "Young India, Harijan and Navajivan were journals edited by Mahatma Gandhi. Kesari was the Marathi newspaper founded by Bal Gangadhar Tilak."
+  },
+  {
+    "id": "oo_030",
+    "subject": "Modern History",
+    "difficulty": "medium",
+    "items": ["Morley-Minto Reforms", "Rowlatt Act", "Montford Reforms", "GoI Act 1935"],
+    "odd_index": 1,
+    "explanation": "The Morley-Minto Reforms, Montagu-Chelmsford Reforms and Government of India Act 1935 were constitutional reforms expanding Indian participation. The Rowlatt Act was a repressive law allowing detention without trial."
+  },
+  {
+    "id": "oo_031",
+    "subject": "Modern History",
+    "difficulty": "medium",
+    "items": ["Champaran", "Kheda", "Ahmedabad Mill Strike", "Bardoli"],
+    "odd_index": 2,
+    "explanation": "Champaran, Kheda and Bardoli were peasant/agrarian satyagrahas. The Ahmedabad Mill Strike of 1918 concerned industrial textile workers, not peasants."
+  },
+  {
+    "id": "oo_032",
+    "subject": "Modern History",
+    "difficulty": "medium",
+    "items": ["Brahmo Samaj", "Arya Samaj", "Prarthana Samaj", "Indian National Congress"],
+    "odd_index": 3,
+    "explanation": "Brahmo Samaj, Arya Samaj and Prarthana Samaj were socio-religious reform movements. The Indian National Congress was founded in 1885 as a political organisation."
+  },
+  {
+    "id": "oo_033",
+    "subject": "Modern History",
+    "difficulty": "hard",
+    "items": ["Amrita Bazar Patrika", "The Hindu", "The Statesman", "Kesari"],
+    "odd_index": 2,
+    "explanation": "Amrita Bazar Patrika, The Hindu and Kesari were founded and run by Indian nationalists. The Statesman was founded in Calcutta by the Englishman Robert Knight."
+  },
+  {
+    "id": "oo_034",
+    "subject": "Modern History",
+    "difficulty": "hard",
+    "items": ["Birsa Munda", "Nana Saheb", "Tatya Tope", "Kunwar Singh"],
+    "odd_index": 0,
+    "explanation": "Nana Saheb, Tatya Tope and Kunwar Singh were leaders of the Revolt of 1857. Birsa Munda led the tribal Munda Ulgulan (uprising) of 1899-1900, over four decades later."
+  },
+  {
+    "id": "oo_035",
+    "subject": "Modern History",
+    "difficulty": "hard",
+    "items": ["Awadh", "Satara", "Jhansi", "Nagpur"],
+    "odd_index": 0,
+    "explanation": "Satara, Jhansi and Nagpur were annexed by Dalhousie under the Doctrine of Lapse. Awadh was annexed in 1856 on the pretext of misgovernance, not lapse."
+  },
+  {
+    "id": "oo_036",
+    "subject": "Modern History",
+    "difficulty": "hard",
+    "items": ["Annie Besant", "Vijaya Lakshmi Pandit", "Sarojini Naidu", "Nellie Sengupta"],
+    "odd_index": 1,
+    "explanation": "Annie Besant (1917), Sarojini Naidu (1925) and Nellie Sengupta (1933) each presided over Indian National Congress sessions before independence. Vijaya Lakshmi Pandit never presided over the INC — she became the first woman President of the UN General Assembly."
+  },
+  {
+    "id": "oo_037",
+    "subject": "Art and Culture",
+    "difficulty": "easy",
+    "items": ["Bharatanatyam", "Ghoomar", "Kathakali", "Manipuri"],
+    "odd_index": 1,
+    "explanation": "Bharatanatyam, Kathakali and Manipuri are classical dance forms recognised by the Sangeet Natak Akademi. Ghoomar is a folk dance of Rajasthan, not a classical form."
+  },
+  {
+    "id": "oo_038",
+    "subject": "Art and Culture",
+    "difficulty": "easy",
+    "items": ["Sitar", "Sarod", "Veena", "Dholak"],
+    "odd_index": 3,
+    "explanation": "Sitar, sarod and veena are stringed instruments. The dholak is a percussion (drum) instrument."
+  },
+  {
+    "id": "oo_039",
+    "subject": "Art and Culture",
+    "difficulty": "easy",
+    "items": ["Jama Masjid", "Khajuraho", "Konark", "Meenakshi Temple"],
+    "odd_index": 0,
+    "explanation": "Khajuraho, Konark and the Meenakshi Temple are Hindu temple complexes. The Jama Masjid in Delhi is a mosque built by Shah Jahan."
+  },
+  {
+    "id": "oo_040",
+    "subject": "Art and Culture",
+    "difficulty": "easy",
+    "items": ["Bihu", "Onam", "Durga Puja", "Pongal"],
+    "odd_index": 2,
+    "explanation": "Bihu (Assam), Onam (Kerala) and Pongal (Tamil Nadu) are harvest festivals. Durga Puja celebrates the goddess Durga's victory over Mahishasura, not the harvest."
+  },
+  {
+    "id": "oo_041",
+    "subject": "Art and Culture",
+    "difficulty": "medium",
+    "items": ["Bhangra", "Garba", "Kuchipudi", "Lavani"],
+    "odd_index": 2,
+    "explanation": "Bhangra (Punjab), Garba (Gujarat) and Lavani (Maharashtra) are folk dances. Kuchipudi of Andhra Pradesh is a recognised classical dance form."
+  },
+  {
+    "id": "oo_042",
+    "subject": "Art and Culture",
+    "difficulty": "medium",
+    "items": ["Gandhara", "Madhubani", "Warli", "Pattachitra"],
+    "odd_index": 0,
+    "explanation": "Madhubani (Bihar), Warli (Maharashtra) and Pattachitra (Odisha) are folk painting traditions. Gandhara was an ancient school of sculpture with Greco-Buddhist influence."
+  },
+  {
+    "id": "oo_043",
+    "subject": "Art and Culture",
+    "difficulty": "medium",
+    "items": ["Mridangam", "Ghatam", "Tabla", "Kanjira"],
+    "odd_index": 2,
+    "explanation": "Mridangam, ghatam and kanjira are percussion instruments of Carnatic (South Indian) music. The tabla is the principal percussion instrument of Hindustani (North Indian) music."
+  },
+  {
+    "id": "oo_044",
+    "subject": "Art and Culture",
+    "difficulty": "medium",
+    "items": ["Kandariya Mahadeva", "Lingaraja", "Brihadisvara", "Konark Sun Temple"],
+    "odd_index": 2,
+    "explanation": "Kandariya Mahadeva (Khajuraho), Lingaraja (Bhubaneswar) and the Konark Sun Temple are built in the North Indian Nagara style. The Brihadisvara temple at Thanjavur is in the South Indian Dravida style."
+  },
+  {
+    "id": "oo_045",
+    "subject": "Art and Culture",
+    "difficulty": "hard",
+    "items": ["Bharatanatyam", "Kuchipudi", "Odissi", "Mohiniyattam"],
+    "odd_index": 2,
+    "explanation": "Bharatanatyam (Tamil Nadu), Kuchipudi (Andhra Pradesh) and Mohiniyattam (Kerala) are classical dances of South India. Odissi belongs to Odisha in eastern India."
+  },
+  {
+    "id": "oo_046",
+    "subject": "Art and Culture",
+    "difficulty": "hard",
+    "items": ["Kathputli", "Tholu Bommalata", "Ravanachhaya", "Togalu Gombeyaata"],
+    "odd_index": 0,
+    "explanation": "Tholu Bommalata (Andhra Pradesh), Ravanachhaya (Odisha) and Togalu Gombeyaata (Karnataka) are shadow puppetry traditions. Kathputli of Rajasthan is string puppetry."
+  },
+  {
+    "id": "oo_047",
+    "subject": "Art and Culture",
+    "difficulty": "hard",
+    "items": ["Kalaripayattu", "Yakshagana", "Silambam", "Thang-Ta"],
+    "odd_index": 1,
+    "explanation": "Kalaripayattu (Kerala), Silambam (Tamil Nadu) and Thang-Ta (Manipur) are traditional martial arts. Yakshagana of Karnataka is a dance-drama theatre form, not a martial art."
+  },
+  {
+    "id": "oo_048",
+    "subject": "Art and Culture",
+    "difficulty": "hard",
+    "items": ["Koodiyattam", "Kalbelia", "Chhau", "Bihu Dance"],
+    "odd_index": 3,
+    "explanation": "Koodiyattam, Kalbelia and Chhau are inscribed on UNESCO's Intangible Cultural Heritage list. The Bihu dance of Assam is not on the UNESCO list."
+  },
+  {
+    "id": "oo_049",
+    "subject": "Geography",
+    "difficulty": "easy",
+    "items": ["Cotton", "Coal", "Jute", "Sugarcane"],
+    "odd_index": 1,
     "explanation": "Cotton, jute and sugarcane are agricultural cash crops. Coal is a mineral resource extracted through mining, not grown."
+  },
+  {
+    "id": "oo_050",
+    "subject": "Geography",
+    "difficulty": "easy",
+    "items": ["Ganga", "Yamuna", "Himalaya", "Brahmaputra"],
+    "odd_index": 2,
+    "explanation": "Ganga, Yamuna and Brahmaputra are rivers. The Himalaya is a mountain range, not a river."
+  },
+  {
+    "id": "oo_051",
+    "subject": "Geography",
+    "difficulty": "easy",
+    "items": ["Kochi", "Shimla", "Ooty", "Darjeeling"],
+    "odd_index": 0,
+    "explanation": "Shimla, Ooty and Darjeeling are hill stations. Kochi is a coastal port city in Kerala at sea level."
+  },
+  {
+    "id": "oo_052",
+    "subject": "Geography",
+    "difficulty": "easy",
+    "items": ["Punjab", "Haryana", "Ladakh", "Kerala"],
+    "odd_index": 2,
+    "explanation": "Punjab, Haryana and Kerala are states of India. Ladakh is a Union Territory, administered directly by the central government."
+  },
+  {
+    "id": "oo_053",
+    "subject": "Geography",
+    "difficulty": "medium",
+    "items": ["Sambhar Lake", "Chilika Lake", "Pulicat Lake", "Vembanad Lake"],
+    "odd_index": 0,
+    "explanation": "Chilika, Pulicat and Vembanad are coastal brackish-water lagoons. Sambhar Lake in Rajasthan is India's largest inland saline lake, unconnected to the sea."
+  },
+  {
+    "id": "oo_054",
+    "subject": "Geography",
+    "difficulty": "medium",
+    "items": ["Narmada", "Subarnarekha", "Tapi", "Mahi"],
+    "odd_index": 1,
+    "explanation": "Narmada, Tapi and Mahi flow westward into the Arabian Sea. The Subarnarekha flows eastward into the Bay of Bengal."
+  },
+  {
+    "id": "oo_055",
+    "subject": "Geography",
+    "difficulty": "medium",
+    "items": ["Chambal", "Betwa", "Ken", "Son"],
+    "odd_index": 3,
+    "explanation": "Chambal, Betwa and Ken are tributaries of the Yamuna. The Son joins the Ganga directly, near Patna."
+  },
+  {
+    "id": "oo_056",
+    "subject": "Geography",
+    "difficulty": "medium",
+    "items": ["Nathu La", "Zoji La", "Palakkad Gap", "Shipki La"],
+    "odd_index": 2,
+    "explanation": "Nathu La (Sikkim), Zoji La (Ladakh) and Shipki La (Himachal) are high Himalayan passes. The Palakkad Gap is a low pass in the Western Ghats of South India."
+  },
+  {
+    "id": "oo_057",
+    "subject": "Geography",
+    "difficulty": "hard",
+    "items": ["Bailadila", "Jharia", "Raniganj", "Korba"],
+    "odd_index": 0,
+    "explanation": "Jharia, Raniganj and Korba are major coalfields. Bailadila in Chhattisgarh is famous for iron ore mining."
+  },
+  {
+    "id": "oo_058",
+    "subject": "Geography",
+    "difficulty": "hard",
+    "items": ["Godavari", "Krishna", "Mahanadi", "Kaveri"],
+    "odd_index": 2,
+    "explanation": "Godavari, Krishna and Kaveri rise in the Western Ghats. The Mahanadi rises in the highlands of Chhattisgarh, far from the Western Ghats."
+  },
+  {
+    "id": "oo_059",
+    "subject": "Geography",
+    "difficulty": "hard",
+    "items": ["Anamudi", "Kanchenjunga", "Nanda Devi", "Nanga Parbat"],
+    "odd_index": 0,
+    "explanation": "Kanchenjunga, Nanda Devi and Nanga Parbat are peaks of the Himalaya. Anamudi is the highest peak of the Western Ghats in peninsular India."
+  },
+  {
+    "id": "oo_060",
+    "subject": "Geography",
+    "difficulty": "hard",
+    "items": ["Ghaghara", "Gandak", "Kosi", "Yamuna"],
+    "odd_index": 3,
+    "explanation": "Ghaghara, Gandak and Kosi are left-bank tributaries of the Ganga coming from the Himalaya. The Yamuna joins the Ganga on its right bank."
+  },
+  {
+    "id": "oo_061",
+    "subject": "Economy",
+    "difficulty": "easy",
+    "items": ["Green Revolution", "Non-Cooperation", "White Revolution", "Blue Revolution"],
+    "odd_index": 1,
+    "explanation": "Green, White and Blue Revolutions are production programmes covering foodgrain, dairy and fisheries respectively. The Non-Cooperation Movement is a political movement, not an economic programme."
+  },
+  {
+    "id": "oo_062",
+    "subject": "Economy",
+    "difficulty": "easy",
+    "items": ["Excise Duty", "Income Tax", "Repo Rate", "Customs Duty"],
+    "odd_index": 2,
+    "explanation": "Excise duty, income tax and customs duty are taxes collected by the government. The repo rate is an interest rate set by the RBI for monetary policy, not a tax."
+  },
+  {
+    "id": "oo_063",
+    "subject": "Economy",
+    "difficulty": "easy",
+    "items": ["Agriculture", "Banking", "Fishing", "Forestry"],
+    "odd_index": 1,
+    "explanation": "Agriculture, fishing and forestry are primary sector activities that extract natural products. Banking is a service belonging to the tertiary sector."
+  },
+  {
+    "id": "oo_064",
+    "subject": "Economy",
+    "difficulty": "easy",
+    "items": ["LIC", "SBI", "PNB", "Bank of Baroda"],
+    "odd_index": 0,
+    "explanation": "SBI, PNB and Bank of Baroda are public sector banks. LIC is an insurance company, not a bank."
+  },
+  {
+    "id": "oo_065",
+    "subject": "Economy",
+    "difficulty": "medium",
+    "items": ["Income Tax", "Corporation Tax", "GST", "Capital Gains Tax"],
+    "odd_index": 2,
+    "explanation": "Income tax, corporation tax and capital gains tax are direct taxes paid by the person who bears them. GST is an indirect tax whose burden is passed on to the consumer."
+  },
+  {
+    "id": "oo_066",
+    "subject": "Economy",
+    "difficulty": "medium",
+    "items": ["Repo Rate", "CRR", "SLR", "Fiscal Deficit"],
+    "odd_index": 3,
+    "explanation": "Repo rate, CRR and SLR are monetary policy instruments of the RBI. The fiscal deficit is a government budget concept, part of fiscal policy."
+  },
+  {
+    "id": "oo_067",
+    "subject": "Economy",
+    "difficulty": "medium",
+    "items": ["IMF", "World Bank", "SEBI", "WTO"],
+    "odd_index": 2,
+    "explanation": "The IMF, World Bank and WTO are international economic organisations. SEBI is India's domestic securities market regulator."
+  },
+  {
+    "id": "oo_068",
+    "subject": "Economy",
+    "difficulty": "medium",
+    "items": ["Sensex", "CPI", "WPI", "IIP"],
+    "odd_index": 0,
+    "explanation": "CPI, WPI and IIP are official statistical indices compiled by government agencies. The Sensex is a stock market index of the privately run Bombay Stock Exchange."
+  },
+  {
+    "id": "oo_069",
+    "subject": "Economy",
+    "difficulty": "hard",
+    "items": ["Narasimham Committee", "Kelkar Committee", "Urjit Patel Committee", "Swaminathan Commission"],
+    "odd_index": 3,
+    "explanation": "The Narasimham (banking), Kelkar (tax) and Urjit Patel (monetary policy framework) committees dealt with financial-sector reforms. The Swaminathan Commission dealt with farmers and agriculture, recommending MSP reforms."
+  },
+  {
+    "id": "oo_070",
+    "subject": "Economy",
+    "difficulty": "hard",
+    "items": ["Remittances", "FDI", "FPI", "ECBs"],
+    "odd_index": 0,
+    "explanation": "FDI, FPI and External Commercial Borrowings are capital account items of the balance of payments. Remittances from workers abroad are recorded in the current account."
+  },
+  {
+    "id": "oo_071",
+    "subject": "Economy",
+    "difficulty": "hard",
+    "items": ["PM-KISAN", "PMFBY", "Kisan Credit Card", "PMJDY"],
+    "odd_index": 3,
+    "explanation": "PM-KISAN (income support), PMFBY (crop insurance) and Kisan Credit Card (farm credit) specifically target farmers. PMJDY (Jan Dhan Yojana) is a universal financial inclusion scheme for bank accounts."
+  },
+  {
+    "id": "oo_072",
+    "subject": "Economy",
+    "difficulty": "hard",
+    "items": ["Trade Deficit", "Revenue Deficit", "Fiscal Deficit", "Primary Deficit"],
+    "odd_index": 0,
+    "explanation": "Revenue, fiscal and primary deficits are measures of the government's budget shortfall. The trade deficit is an external-sector concept — the excess of imports over exports."
+  },
+  {
+    "id": "oo_073",
+    "subject": "Environment",
+    "difficulty": "easy",
+    "items": ["Ramsar Convention", "CITES", "GoI Act 1935", "Kyoto Protocol"],
+    "odd_index": 2,
+    "explanation": "Ramsar, CITES and the Kyoto Protocol are international environmental treaties. The Government of India Act 1935 is a constitutional statute with no environmental subject matter."
+  },
+  {
+    "id": "oo_074",
+    "subject": "Environment",
+    "difficulty": "easy",
+    "items": ["Oxygen", "Carbon Dioxide", "Methane", "Nitrous Oxide"],
+    "odd_index": 0,
+    "explanation": "Carbon dioxide, methane and nitrous oxide are greenhouse gases that trap heat. Oxygen is not a greenhouse gas."
+  },
+  {
+    "id": "oo_075",
+    "subject": "Environment",
+    "difficulty": "easy",
+    "items": ["Jim Corbett", "Kaziranga", "Gir", "Taj Mahal"],
+    "odd_index": 3,
+    "explanation": "Jim Corbett, Kaziranga and Gir are national parks protecting wildlife. The Taj Mahal is a historical monument, not a protected natural area."
+  },
+  {
+    "id": "oo_076",
+    "subject": "Environment",
+    "difficulty": "easy",
+    "items": ["Solar", "Wind", "Coal", "Hydropower"],
+    "odd_index": 2,
+    "explanation": "Solar, wind and hydropower are renewable energy sources. Coal is a non-renewable fossil fuel."
+  },
+  {
+    "id": "oo_077",
+    "subject": "Environment",
+    "difficulty": "medium",
+    "items": ["Keoladeo", "Bandipur", "Kanha", "Ranthambore"],
+    "odd_index": 0,
+    "explanation": "Bandipur, Kanha and Ranthambore are tiger reserves under Project Tiger. Keoladeo National Park in Rajasthan is a famous bird sanctuary, not a tiger reserve."
+  },
+  {
+    "id": "oo_078",
+    "subject": "Environment",
+    "difficulty": "medium",
+    "items": ["Nilgiri", "Nanda Devi", "Sundarbans", "Dachigam"],
+    "odd_index": 3,
+    "explanation": "Nilgiri, Nanda Devi and Sundarbans are designated biosphere reserves. Dachigam in Jammu & Kashmir is a national park, not a biosphere reserve."
+  },
+  {
+    "id": "oo_079",
+    "subject": "Environment",
+    "difficulty": "medium",
+    "items": ["UNFCCC", "Kyoto Protocol", "Montreal Protocol", "Paris Agreement"],
+    "odd_index": 2,
+    "explanation": "The UNFCCC, Kyoto Protocol and Paris Agreement address climate change. The Montreal Protocol deals with protecting the ozone layer from ozone-depleting substances."
+  },
+  {
+    "id": "oo_080",
+    "subject": "Environment",
+    "difficulty": "medium",
+    "items": ["Sulphur Dioxide", "Nitrogen Oxides", "PM2.5", "BOD"],
+    "odd_index": 3,
+    "explanation": "Sulphur dioxide, nitrogen oxides and PM2.5 are air pollutants. BOD (Biochemical Oxygen Demand) is a measure of water pollution."
+  },
+  {
+    "id": "oo_081",
+    "subject": "Environment",
+    "difficulty": "hard",
+    "items": ["Chilika Lake", "Loktak Lake", "Keoladeo NP", "Corbett NP"],
+    "odd_index": 3,
+    "explanation": "Chilika, Loktak and Keoladeo are wetlands designated as Ramsar sites. Corbett National Park is a tiger reserve and is not a Ramsar site."
+  },
+  {
+    "id": "oo_082",
+    "subject": "Environment",
+    "difficulty": "hard",
+    "items": ["Montreal Protocol", "Basel Convention", "Rotterdam Convention", "Stockholm Convention"],
+    "odd_index": 0,
+    "explanation": "The Basel, Rotterdam and Stockholm conventions regulate hazardous wastes and chemicals. The Montreal Protocol deals with ozone-depleting substances, not chemical waste."
+  },
+  {
+    "id": "oo_083",
+    "subject": "Environment",
+    "difficulty": "hard",
+    "items": ["Lantana", "Neem", "Water Hyacinth", "Prosopis Juliflora"],
+    "odd_index": 1,
+    "explanation": "Lantana, water hyacinth and Prosopis juliflora are invasive alien species that harm Indian ecosystems. Neem is a native Indian tree."
+  },
+  {
+    "id": "oo_084",
+    "subject": "Environment",
+    "difficulty": "hard",
+    "items": ["Kaziranga", "Gir Forest", "Sundarbans", "Western Ghats"],
+    "odd_index": 1,
+    "explanation": "Kaziranga, the Sundarbans and the Western Ghats are UNESCO natural World Heritage Sites. Gir Forest, home of the Asiatic lion, is not a World Heritage Site."
+  },
+  {
+    "id": "oo_085",
+    "subject": "Polity",
+    "difficulty": "easy",
+    "items": ["Habeas Corpus", "Article 356", "Mandamus", "Certiorari"],
+    "odd_index": 1,
+    "explanation": "Habeas Corpus, Mandamus and Certiorari are writs issued by courts under Articles 32 and 226. Article 356 deals with President's Rule in a state, not writ jurisdiction."
+  },
+  {
+    "id": "oo_086",
+    "subject": "Polity",
+    "difficulty": "easy",
+    "items": ["Right to Equality", "Uniform Civil Code", "Right to Freedom", "Freedom of Religion"],
+    "odd_index": 1,
+    "explanation": "Right to Equality, Right to Freedom and Freedom of Religion are Fundamental Rights in Part III. The Uniform Civil Code is a Directive Principle under Article 44, not enforceable in courts."
+  },
+  {
+    "id": "oo_087",
+    "subject": "Polity",
+    "difficulty": "easy",
+    "items": ["Lok Sabha", "Rajya Sabha", "Supreme Court", "President"],
+    "odd_index": 2,
+    "explanation": "Under Article 79, Parliament consists of the President, Lok Sabha and Rajya Sabha. The Supreme Court belongs to the judiciary, not Parliament."
+  },
+  {
+    "id": "oo_088",
+    "subject": "Polity",
+    "difficulty": "easy",
+    "items": ["Municipal Corporation", "Gram Panchayat", "Panchayat Samiti", "Zila Parishad"],
+    "odd_index": 0,
+    "explanation": "Gram Panchayat, Panchayat Samiti and Zila Parishad are the three tiers of rural Panchayati Raj. A Municipal Corporation is an urban local body."
+  },
+  {
+    "id": "oo_089",
+    "subject": "Polity",
+    "difficulty": "medium",
+    "items": ["Election Commission", "UPSC", "NITI Aayog", "Finance Commission"],
+    "odd_index": 2,
+    "explanation": "The Election Commission, UPSC and Finance Commission are constitutional bodies created by the Constitution. NITI Aayog was created by an executive resolution and has no constitutional status."
+  },
+  {
+    "id": "oo_090",
+    "subject": "Polity",
+    "difficulty": "medium",
+    "items": ["Article 352", "Article 356", "Article 360", "Article 368"],
+    "odd_index": 3,
+    "explanation": "Articles 352, 356 and 360 are emergency provisions (national, state and financial emergency). Article 368 deals with the power of Parliament to amend the Constitution."
+  },
+  {
+    "id": "oo_091",
+    "subject": "Polity",
+    "difficulty": "medium",
+    "items": ["Advocate General", "Governor", "CAG", "Attorney General"],
+    "odd_index": 0,
+    "explanation": "The Governor, CAG and Attorney General are appointed by the President. The Advocate General of a state is appointed by the Governor."
+  },
+  {
+    "id": "oo_092",
+    "subject": "Polity",
+    "difficulty": "medium",
+    "items": ["Judicial Review", "Fundamental Rights", "Parliamentary System", "Impeachment"],
+    "odd_index": 2,
+    "explanation": "Judicial review, fundamental rights and impeachment of the President were borrowed from the US Constitution. The parliamentary system of government was borrowed from Britain."
+  },
+  {
+    "id": "oo_093",
+    "subject": "Polity",
+    "difficulty": "hard",
+    "items": ["NHRC", "CVC", "Lokpal", "CBI"],
+    "odd_index": 3,
+    "explanation": "The NHRC, CVC and Lokpal are statutory bodies created by Acts of Parliament. The CBI was established by an executive resolution and is not a statutory body."
+  },
+  {
+    "id": "oo_094",
+    "subject": "Polity",
+    "difficulty": "hard",
+    "items": ["Sovereign", "Socialist", "Secular", "Integrity"],
+    "odd_index": 0,
+    "explanation": "'Socialist', 'secular' and 'integrity' were added to the Preamble by the 42nd Amendment in 1976. 'Sovereign' was part of the original Preamble of 1950."
+  },
+  {
+    "id": "oo_095",
+    "subject": "Polity",
+    "difficulty": "hard",
+    "items": ["B.R. Ambedkar", "K.M. Munshi", "Rajendra Prasad", "Alladi Ayyar"],
+    "odd_index": 2,
+    "explanation": "Ambedkar (chairman), K.M. Munshi and Alladi Krishnaswami Ayyar were members of the Constitution's Drafting Committee. Rajendra Prasad was President of the Constituent Assembly, not a Drafting Committee member."
+  },
+  {
+    "id": "oo_096",
+    "subject": "Polity",
+    "difficulty": "hard",
+    "items": ["Governor", "Supreme Court Judge", "CEC", "CAG"],
+    "odd_index": 0,
+    "explanation": "A Supreme Court judge, the Chief Election Commissioner and the CAG can be removed only through a special parliamentary process like impeachment. A Governor holds office at the pleasure of the President and can be removed at any time."
   }
 ]

@@ -1654,6 +1654,728 @@ const List<MemoryPairSetDefinition> kMemoryPairSetCatalog = [
       ),
     ],
   ),
+
+  // ═══════════════════ ANCIENT HISTORY (gap fill) ═══════════════════
+
+  // ── EASY ──
+  MemoryPairSetDefinition(
+    id: 'ancient_rulers',
+    nameEn: 'Rulers & Dynasties',
+    nameHi: 'शासक और राजवंश',
+    displaySubjectEn: 'Ancient History',
+    displaySubjectHi: 'प्राचीन इतिहास',
+    unlockSubjectSlug: 'Ancient History',
+    unlockQuestionsRequired: 0,
+    difficulty: MemoryPairDifficulty.easy,
+    icon: Icons.history_edu_outlined,
+    accentColor: Color(0xFFD85A30),
+    pairs: [
+      MemoryPair(
+        termEn: 'Ashoka',
+        termHi: 'अशोक',
+        answerEn: 'Maurya dynasty',
+        answerHi: 'मौर्य वंश',
+      ),
+      MemoryPair(
+        termEn: 'Kanishka',
+        termHi: 'कनिष्क',
+        answerEn: 'Kushana dynasty',
+        answerHi: 'कुषाण वंश',
+      ),
+      MemoryPair(
+        termEn: 'Samudragupta',
+        termHi: 'समुद्रगुप्त',
+        answerEn: 'Gupta dynasty',
+        answerHi: 'गुप्त वंश',
+      ),
+      MemoryPair(
+        termEn: 'Harshavardhana',
+        termHi: 'हर्षवर्धन',
+        answerEn: 'Vardhana dynasty',
+        answerHi: 'वर्धन वंश',
+      ),
+      MemoryPair(
+        termEn: 'Bimbisara',
+        termHi: 'बिम्बिसार',
+        answerEn: 'Haryanka dynasty',
+        answerHi: 'हर्यंक वंश',
+      ),
+      MemoryPair(
+        termEn: 'Mahapadma Nanda',
+        termHi: 'महापद्म नंद',
+        answerEn: 'Nanda dynasty',
+        answerHi: 'नंद वंश',
+      ),
+      MemoryPair(
+        termEn: 'Gautamiputra Satakarni',
+        termHi: 'गौतमीपुत्र शातकर्णि',
+        answerEn: 'Satavahana dynasty',
+        answerHi: 'सातवाहन वंश',
+      ),
+      MemoryPair(
+        termEn: 'Pulakeshin II',
+        termHi: 'पुलकेशिन द्वितीय',
+        answerEn: 'Chalukya dynasty',
+        answerHi: 'चालुक्य वंश',
+      ),
+    ],
+  ),
+
+  // ── HARD ──
+  MemoryPairSetDefinition(
+    id: 'inscriptions',
+    nameEn: 'Inscriptions & Rulers',
+    nameHi: 'अभिलेख और शासक',
+    displaySubjectEn: 'Ancient History',
+    displaySubjectHi: 'प्राचीन इतिहास',
+    unlockSubjectSlug: 'Ancient History',
+    unlockQuestionsRequired: 70,
+    difficulty: MemoryPairDifficulty.hard,
+    icon: Icons.article_outlined,
+    accentColor: Color(0xFF7F77DD),
+    pairs: [
+      MemoryPair(
+        termEn: 'Hathigumpha inscription',
+        termHi: 'हाथीगुम्फा अभिलेख',
+        answerEn: 'Kharavela',
+        answerHi: 'खारवेल',
+      ),
+      MemoryPair(
+        termEn: 'Allahabad Pillar inscription',
+        termHi: 'प्रयाग प्रशस्ति',
+        answerEn: 'Samudragupta',
+        answerHi: 'समुद्रगुप्त',
+      ),
+      MemoryPair(
+        termEn: 'Aihole inscription',
+        termHi: 'ऐहोल अभिलेख',
+        answerEn: 'Pulakeshin II',
+        answerHi: 'पुलकेशिन द्वितीय',
+      ),
+      MemoryPair(
+        termEn: 'Junagadh rock inscription',
+        termHi: 'जूनागढ़ अभिलेख',
+        answerEn: 'Rudradaman I',
+        answerHi: 'रुद्रदामन प्रथम',
+      ),
+      MemoryPair(
+        termEn: 'Nashik prashasti',
+        termHi: 'नासिक प्रशस्ति',
+        answerEn: 'Gautamiputra Satakarni',
+        answerHi: 'गौतमीपुत्र शातकर्णि',
+      ),
+      MemoryPair(
+        termEn: 'Mehrauli iron pillar',
+        termHi: 'महरौली लौह स्तंभ',
+        answerEn: 'Chandragupta II',
+        answerHi: 'चंद्रगुप्त द्वितीय',
+      ),
+      MemoryPair(
+        termEn: 'Besnagar pillar',
+        termHi: 'बेसनगर स्तंभ',
+        answerEn: 'Heliodorus',
+        answerHi: 'हेलियोडोरस',
+      ),
+      MemoryPair(
+        termEn: 'Rummindei pillar',
+        termHi: 'रुम्मिनदेई स्तंभ',
+        answerEn: 'Ashoka',
+        answerHi: 'अशोक',
+      ),
+      MemoryPair(
+        termEn: 'Gwalior prashasti',
+        termHi: 'ग्वालियर प्रशस्ति',
+        answerEn: 'Mihira Bhoja',
+        answerHi: 'मिहिर भोज',
+      ),
+      MemoryPair(
+        termEn: 'Uttaramerur inscription',
+        termHi: 'उत्तरमेरुर अभिलेख',
+        answerEn: 'Parantaka I (Chola)',
+        answerHi: 'परांतक प्रथम (चोल)',
+      ),
+    ],
+  ),
+
+  // ═══════════════════ MEDIEVAL HISTORY (new) ═══════════════════
+
+  // ── EASY ──
+  MemoryPairSetDefinition(
+    id: 'sultanate_founders',
+    nameEn: 'Dynasty Founders',
+    nameHi: 'राजवंश संस्थापक',
+    displaySubjectEn: 'Medieval History',
+    displaySubjectHi: 'मध्यकालीन इतिहास',
+    unlockSubjectSlug: 'Medieval History',
+    unlockQuestionsRequired: 0,
+    difficulty: MemoryPairDifficulty.easy,
+    icon: Icons.castle_outlined,
+    accentColor: Color(0xFFBA7517),
+    pairs: [
+      MemoryPair(
+        termEn: 'Mamluk (Slave) dynasty',
+        termHi: 'गुलाम वंश',
+        answerEn: 'Qutbuddin Aibak',
+        answerHi: 'कुतुबुद्दीन ऐबक',
+      ),
+      MemoryPair(
+        termEn: 'Khilji dynasty',
+        termHi: 'खिलजी वंश',
+        answerEn: 'Jalaluddin Khilji',
+        answerHi: 'जलालुद्दीन खिलजी',
+      ),
+      MemoryPair(
+        termEn: 'Tughlaq dynasty',
+        termHi: 'तुगलक वंश',
+        answerEn: 'Ghiyasuddin Tughlaq',
+        answerHi: 'गयासुद्दीन तुगलक',
+      ),
+      MemoryPair(
+        termEn: 'Sayyid dynasty',
+        termHi: 'सैयद वंश',
+        answerEn: 'Khizr Khan',
+        answerHi: 'खिज्र खान',
+      ),
+      MemoryPair(
+        termEn: 'Lodi dynasty',
+        termHi: 'लोदी वंश',
+        answerEn: 'Bahlul Lodi',
+        answerHi: 'बहलोल लोदी',
+      ),
+      MemoryPair(
+        termEn: 'Mughal dynasty',
+        termHi: 'मुगल वंश',
+        answerEn: 'Babur',
+        answerHi: 'बाबर',
+      ),
+      MemoryPair(
+        termEn: 'Vijayanagara empire',
+        termHi: 'विजयनगर साम्राज्य',
+        answerEn: 'Harihara & Bukka',
+        answerHi: 'हरिहर और बुक्का',
+      ),
+      MemoryPair(
+        termEn: 'Bahmani kingdom',
+        termHi: 'बहमनी राज्य',
+        answerEn: 'Alauddin Hasan Bahman Shah',
+        answerHi: 'अलाउद्दीन हसन बहमन शाह',
+      ),
+    ],
+  ),
+
+  // ── MEDIUM ──
+  MemoryPairSetDefinition(
+    id: 'medieval_travellers',
+    nameEn: 'Travellers & Courts',
+    nameHi: 'यात्री और दरबार',
+    displaySubjectEn: 'Medieval History',
+    displaySubjectHi: 'मध्यकालीन इतिहास',
+    unlockSubjectSlug: 'Medieval History',
+    unlockQuestionsRequired: 50,
+    difficulty: MemoryPairDifficulty.medium,
+    icon: Icons.explore_outlined,
+    accentColor: Color(0xFF378ADD),
+    pairs: [
+      MemoryPair(
+        termEn: 'Ibn Battuta',
+        termHi: 'इब्न बतूता',
+        answerEn: 'Muhammad bin Tughlaq',
+        answerHi: 'मुहम्मद बिन तुगलक',
+      ),
+      MemoryPair(
+        termEn: 'Marco Polo',
+        termHi: 'मार्को पोलो',
+        answerEn: 'Pandya kingdom',
+        answerHi: 'पांड्य राज्य',
+      ),
+      MemoryPair(
+        termEn: 'Abdur Razzaq',
+        termHi: 'अब्दुर रज्जाक',
+        answerEn: 'Devaraya II',
+        answerHi: 'देवराय द्वितीय',
+      ),
+      MemoryPair(
+        termEn: 'Nicolo Conti',
+        termHi: 'निकोलो कोंटी',
+        answerEn: 'Devaraya I',
+        answerHi: 'देवराय प्रथम',
+      ),
+      MemoryPair(
+        termEn: 'Domingo Paes',
+        termHi: 'डोमिंगो पायस',
+        answerEn: 'Krishnadevaraya',
+        answerHi: 'कृष्णदेव राय',
+      ),
+      MemoryPair(
+        termEn: 'Al-Biruni',
+        termHi: 'अल-बरूनी',
+        answerEn: 'Mahmud of Ghazni',
+        answerHi: 'महमूद गजनवी',
+      ),
+      MemoryPair(
+        termEn: 'Francois Bernier',
+        termHi: 'फ्रांस्वा बर्नियर',
+        answerEn: 'Aurangzeb',
+        answerHi: 'औरंगजेब',
+      ),
+      MemoryPair(
+        termEn: 'William Hawkins',
+        termHi: 'विलियम हॉकिन्स',
+        answerEn: 'Jahangir',
+        answerHi: 'जहांगीर',
+      ),
+    ],
+  ),
+
+  // ── HARD ──
+  MemoryPairSetDefinition(
+    id: 'sultanate_admin',
+    nameEn: 'Sultanate Administration',
+    nameHi: 'सल्तनत प्रशासन',
+    displaySubjectEn: 'Medieval History',
+    displaySubjectHi: 'मध्यकालीन इतिहास',
+    unlockSubjectSlug: 'Medieval History',
+    unlockQuestionsRequired: 70,
+    difficulty: MemoryPairDifficulty.hard,
+    icon: Icons.account_balance_outlined,
+    accentColor: Color(0xFF0F6E56),
+    pairs: [
+      MemoryPair(
+        termEn: 'Diwan-i-Arz',
+        termHi: 'दीवान-ए-अर्ज',
+        answerEn: 'Military department',
+        answerHi: 'सैन्य विभाग',
+      ),
+      MemoryPair(
+        termEn: 'Diwan-i-Insha',
+        termHi: 'दीवान-ए-इंशा',
+        answerEn: 'Royal correspondence',
+        answerHi: 'शाही पत्राचार',
+      ),
+      MemoryPair(
+        termEn: 'Diwan-i-Risalat',
+        termHi: 'दीवान-ए-रिसालत',
+        answerEn: 'Religious affairs',
+        answerHi: 'धार्मिक मामले',
+      ),
+      MemoryPair(
+        termEn: 'Diwan-i-Wizarat',
+        termHi: 'दीवान-ए-विजारत',
+        answerEn: 'Finance department',
+        answerHi: 'वित्त विभाग',
+      ),
+      MemoryPair(
+        termEn: 'Iqta',
+        termHi: 'इक्ता',
+        answerEn: 'Land revenue assignment',
+        answerHi: 'भू-राजस्व अनुदान',
+      ),
+      MemoryPair(
+        termEn: 'Muqti',
+        termHi: 'मुक्ती',
+        answerEn: 'Holder of an iqta',
+        answerHi: 'इक्ता धारक',
+      ),
+      MemoryPair(
+        termEn: 'Barid',
+        termHi: 'बरीद',
+        answerEn: 'Intelligence officer',
+        answerHi: 'गुप्तचर अधिकारी',
+      ),
+      MemoryPair(
+        termEn: 'Kharaj',
+        termHi: 'खराज',
+        answerEn: 'Land tax',
+        answerHi: 'भूमि कर',
+      ),
+      MemoryPair(
+        termEn: 'Zakat',
+        termHi: 'जकात',
+        answerEn: 'Islamic religious tax',
+        answerHi: 'धार्मिक कर',
+      ),
+      MemoryPair(
+        termEn: 'Sondhar',
+        termHi: 'सोंधर',
+        answerEn: 'Agricultural loans',
+        answerHi: 'कृषि ऋण',
+      ),
+    ],
+  ),
+
+  // ═══════════════════ ART & CULTURE (gap fill) ═══════════════════
+
+  // ── MEDIUM ──
+  MemoryPairSetDefinition(
+    id: 'temple_builders',
+    nameEn: 'Temples & Builders',
+    nameHi: 'मंदिर और निर्माता',
+    displaySubjectEn: 'Art & Culture',
+    displaySubjectHi: 'कला और संस्कृति',
+    unlockSubjectSlug: 'Art and Culture',
+    unlockQuestionsRequired: 50,
+    difficulty: MemoryPairDifficulty.medium,
+    icon: Icons.museum_outlined,
+    accentColor: Color(0xFFD4537E),
+    pairs: [
+      MemoryPair(
+        termEn: 'Brihadisvara Temple',
+        termHi: 'बृहदीश्वर मंदिर',
+        answerEn: 'Rajaraja I (Chola)',
+        answerHi: 'राजराज प्रथम (चोल)',
+      ),
+      MemoryPair(
+        termEn: 'Kailasa Temple, Ellora',
+        termHi: 'कैलाश मंदिर, एलोरा',
+        answerEn: 'Krishna I (Rashtrakuta)',
+        answerHi: 'कृष्ण प्रथम (राष्ट्रकूट)',
+      ),
+      MemoryPair(
+        termEn: 'Khajuraho temples',
+        termHi: 'खजुराहो मंदिर',
+        answerEn: 'Chandela dynasty',
+        answerHi: 'चंदेल वंश',
+      ),
+      MemoryPair(
+        termEn: 'Konark Sun Temple',
+        termHi: 'कोणार्क सूर्य मंदिर',
+        answerEn: 'Narasimhadeva I',
+        answerHi: 'नरसिंहदेव प्रथम',
+      ),
+      MemoryPair(
+        termEn: 'Hoysaleswara Temple',
+        termHi: 'होयसलेश्वर मंदिर',
+        answerEn: 'Hoysala dynasty',
+        answerHi: 'होयसल वंश',
+      ),
+      MemoryPair(
+        termEn: 'Virupaksha Temple, Pattadakal',
+        termHi: 'विरूपाक्ष मंदिर, पट्टदकल',
+        answerEn: 'Queen Lokamahadevi',
+        answerHi: 'रानी लोकमहादेवी',
+      ),
+      MemoryPair(
+        termEn: 'Lingaraja Temple',
+        termHi: 'लिंगराज मंदिर',
+        answerEn: 'Somavamshi dynasty',
+        answerHi: 'सोमवंशी राजवंश',
+      ),
+      MemoryPair(
+        termEn: 'Meenakshi Temple gopurams',
+        termHi: 'मीनाक्षी मंदिर गोपुरम',
+        answerEn: 'Nayaka rulers',
+        answerHi: 'नायक शासक',
+      ),
+    ],
+  ),
+
+  // ── HARD ──
+  MemoryPairSetDefinition(
+    id: 'instruments_maestros',
+    nameEn: 'Instruments & Maestros',
+    nameHi: 'वाद्य और उस्ताद',
+    displaySubjectEn: 'Art & Culture',
+    displaySubjectHi: 'कला और संस्कृति',
+    unlockSubjectSlug: 'Art and Culture',
+    unlockQuestionsRequired: 70,
+    difficulty: MemoryPairDifficulty.hard,
+    icon: Icons.music_note,
+    accentColor: Color(0xFF7C3AED),
+    pairs: [
+      MemoryPair(
+        termEn: 'Shehnai',
+        termHi: 'शहनाई',
+        answerEn: 'Bismillah Khan',
+        answerHi: 'बिस्मिल्लाह खान',
+      ),
+      MemoryPair(
+        termEn: 'Sitar',
+        termHi: 'सितार',
+        answerEn: 'Pt. Ravi Shankar',
+        answerHi: 'पं. रविशंकर',
+      ),
+      MemoryPair(
+        termEn: 'Sarod',
+        termHi: 'सरोद',
+        answerEn: 'Amjad Ali Khan',
+        answerHi: 'अमजद अली खान',
+      ),
+      MemoryPair(
+        termEn: 'Santoor',
+        termHi: 'संतूर',
+        answerEn: 'Shivkumar Sharma',
+        answerHi: 'शिवकुमार शर्मा',
+      ),
+      MemoryPair(
+        termEn: 'Tabla',
+        termHi: 'तबला',
+        answerEn: 'Zakir Hussain',
+        answerHi: 'जाकिर हुसैन',
+      ),
+      MemoryPair(
+        termEn: 'Bansuri (flute)',
+        termHi: 'बांसुरी',
+        answerEn: 'Hariprasad Chaurasia',
+        answerHi: 'हरिप्रसाद चौरसिया',
+      ),
+      MemoryPair(
+        termEn: 'Sarangi',
+        termHi: 'सारंगी',
+        answerEn: 'Ram Narayan',
+        answerHi: 'राम नारायण',
+      ),
+      MemoryPair(
+        termEn: 'Rudra Veena',
+        termHi: 'रुद्र वीणा',
+        answerEn: 'Asad Ali Khan',
+        answerHi: 'असद अली खान',
+      ),
+      MemoryPair(
+        termEn: 'Mridangam',
+        termHi: 'मृदंगम',
+        answerEn: 'Palghat Mani Iyer',
+        answerHi: 'पालघाट मणि अय्यर',
+      ),
+      MemoryPair(
+        termEn: 'Ghatam',
+        termHi: 'घटम',
+        answerEn: 'T.H. Vinayakram',
+        answerHi: 'टी.एच. विनायकराम',
+      ),
+    ],
+  ),
+
+  // ═══════════════════ ECONOMY (gap fill) ═══════════════════
+
+  // ── HARD ──
+  MemoryPairSetDefinition(
+    id: 'economy_committees',
+    nameEn: 'Committees & Mandates',
+    nameHi: 'समितियाँ और विषय',
+    displaySubjectEn: 'Economy',
+    displaySubjectHi: 'अर्थव्यवस्था',
+    unlockSubjectSlug: 'Economy',
+    unlockQuestionsRequired: 70,
+    difficulty: MemoryPairDifficulty.hard,
+    icon: Icons.groups_outlined,
+    accentColor: Color(0xFF0F6E56),
+    pairs: [
+      MemoryPair(
+        termEn: 'Narasimham Committee',
+        termHi: 'नरसिम्हम समिति',
+        answerEn: 'Banking sector reforms',
+        answerHi: 'बैंकिंग सुधार',
+      ),
+      MemoryPair(
+        termEn: 'Tendulkar Committee',
+        termHi: 'तेंदुलकर समिति',
+        answerEn: 'Poverty estimation',
+        answerHi: 'गरीबी आकलन',
+      ),
+      MemoryPair(
+        termEn: 'Raja Chelliah Committee',
+        termHi: 'राजा चेलैया समिति',
+        answerEn: 'Tax reforms',
+        answerHi: 'कर सुधार',
+      ),
+      MemoryPair(
+        termEn: 'Malhotra Committee',
+        termHi: 'मल्होत्रा समिति',
+        answerEn: 'Insurance sector reforms',
+        answerHi: 'बीमा क्षेत्र सुधार',
+      ),
+      MemoryPair(
+        termEn: 'Urjit Patel Committee',
+        termHi: 'उर्जित पटेल समिति',
+        answerEn: 'Monetary policy framework',
+        answerHi: 'मौद्रिक नीति ढांचा',
+      ),
+      MemoryPair(
+        termEn: 'Nachiket Mor Committee',
+        termHi: 'नचिकेत मोर समिति',
+        answerEn: 'Financial inclusion',
+        answerHi: 'वित्तीय समावेशन',
+      ),
+      MemoryPair(
+        termEn: 'Mahalanobis model',
+        termHi: 'महालनोबिस मॉडल',
+        answerEn: 'Second Five-Year Plan',
+        answerHi: 'द्वितीय पंचवर्षीय योजना',
+      ),
+      MemoryPair(
+        termEn: 'Bimal Jalan Committee',
+        termHi: 'बिमल जालान समिति',
+        answerEn: 'RBI economic capital framework',
+        answerHi: 'RBI आर्थिक पूंजी ढांचा',
+      ),
+      MemoryPair(
+        termEn: 'Shanta Kumar Committee',
+        termHi: 'शांता कुमार समिति',
+        answerEn: 'FCI restructuring',
+        answerHi: 'FCI पुनर्गठन',
+      ),
+      MemoryPair(
+        termEn: 'Fifteenth Finance Commission',
+        termHi: 'पंद्रहवां वित्त आयोग',
+        answerEn: 'N.K. Singh (chair)',
+        answerHi: 'एन.के. सिंह (अध्यक्ष)',
+      ),
+    ],
+  ),
+
+  // ═══════════════════ ENVIRONMENT (gap fill) ═══════════════════
+
+  // ── MEDIUM ──
+  MemoryPairSetDefinition(
+    id: 'ramsar_sites',
+    nameEn: 'Ramsar Wetlands & States',
+    nameHi: 'रामसर आर्द्रभूमि और राज्य',
+    displaySubjectEn: 'Environment',
+    displaySubjectHi: 'पर्यावरण',
+    unlockSubjectSlug: 'Environment',
+    unlockQuestionsRequired: 50,
+    difficulty: MemoryPairDifficulty.medium,
+    icon: Icons.water_drop_outlined,
+    accentColor: Color(0xFF378ADD),
+    pairs: [
+      MemoryPair(
+        termEn: 'Chilika Lake',
+        termHi: 'चिल्का झील',
+        answerEn: 'Odisha',
+        answerHi: 'ओडिशा',
+      ),
+      MemoryPair(
+        termEn: 'Keoladeo National Park',
+        termHi: 'केवलादेव राष्ट्रीय उद्यान',
+        answerEn: 'Rajasthan',
+        answerHi: 'राजस्थान',
+      ),
+      MemoryPair(
+        termEn: 'Loktak Lake',
+        termHi: 'लोकटक झील',
+        answerEn: 'Manipur',
+        answerHi: 'मणिपुर',
+      ),
+      MemoryPair(
+        termEn: 'Wular Lake',
+        termHi: 'वुलर झील',
+        answerEn: 'Jammu & Kashmir',
+        answerHi: 'जम्मू-कश्मीर',
+      ),
+      MemoryPair(
+        termEn: 'Deepor Beel',
+        termHi: 'दीपोर बील',
+        answerEn: 'Assam',
+        answerHi: 'असम',
+      ),
+      MemoryPair(
+        termEn: 'Ashtamudi Wetland',
+        termHi: 'अष्टमुडी आर्द्रभूमि',
+        answerEn: 'Kerala',
+        answerHi: 'केरल',
+      ),
+      MemoryPair(
+        termEn: 'Kolleru Lake',
+        termHi: 'कोलेरु झील',
+        answerEn: 'Andhra Pradesh',
+        answerHi: 'आंध्र प्रदेश',
+      ),
+      MemoryPair(
+        termEn: 'Harike Wetland',
+        termHi: 'हरिके आर्द्रभूमि',
+        answerEn: 'Punjab',
+        answerHi: 'पंजाब',
+      ),
+      MemoryPair(
+        termEn: 'Nalsarovar',
+        termHi: 'नलसरोवर',
+        answerEn: 'Gujarat',
+        answerHi: 'गुजरात',
+      ),
+      MemoryPair(
+        termEn: 'Bhoj Wetland',
+        termHi: 'भोज आर्द्रभूमि',
+        answerEn: 'Madhya Pradesh',
+        answerHi: 'मध्य प्रदेश',
+      ),
+    ],
+  ),
+
+  // ── HARD ──
+  MemoryPairSetDefinition(
+    id: 'env_conventions',
+    nameEn: 'Conventions & Subjects',
+    nameHi: 'अभिसमय और विषय',
+    displaySubjectEn: 'Environment',
+    displaySubjectHi: 'पर्यावरण',
+    unlockSubjectSlug: 'Environment',
+    unlockQuestionsRequired: 70,
+    difficulty: MemoryPairDifficulty.hard,
+    icon: Icons.public_outlined,
+    accentColor: Color(0xFF639922),
+    pairs: [
+      MemoryPair(
+        termEn: 'Montreal Protocol',
+        termHi: 'मॉन्ट्रियल प्रोटोकॉल',
+        answerEn: 'Ozone layer protection',
+        answerHi: 'ओजोन परत संरक्षण',
+      ),
+      MemoryPair(
+        termEn: 'Kyoto Protocol',
+        termHi: 'क्योटो प्रोटोकॉल',
+        answerEn: 'GHG emission targets',
+        answerHi: 'ग्रीनहाउस गैस लक्ष्य',
+      ),
+      MemoryPair(
+        termEn: 'Cartagena Protocol',
+        termHi: 'कार्टाजेना प्रोटोकॉल',
+        answerEn: 'Biosafety',
+        answerHi: 'जैव सुरक्षा',
+      ),
+      MemoryPair(
+        termEn: 'Nagoya Protocol',
+        termHi: 'नागोया प्रोटोकॉल',
+        answerEn: 'Access & benefit sharing',
+        answerHi: 'पहुंच एवं लाभ साझाकरण',
+      ),
+      MemoryPair(
+        termEn: 'Ramsar Convention',
+        termHi: 'रामसर अभिसमय',
+        answerEn: 'Wetlands',
+        answerHi: 'आर्द्रभूमि',
+      ),
+      MemoryPair(
+        termEn: 'CITES',
+        termHi: 'साइटीज',
+        answerEn: 'Wildlife trade regulation',
+        answerHi: 'वन्यजीव व्यापार नियमन',
+      ),
+      MemoryPair(
+        termEn: 'Basel Convention',
+        termHi: 'बेसल अभिसमय',
+        answerEn: 'Hazardous waste movement',
+        answerHi: 'खतरनाक अपशिष्ट',
+      ),
+      MemoryPair(
+        termEn: 'Stockholm Convention',
+        termHi: 'स्टॉकहोम अभिसमय',
+        answerEn: 'Persistent organic pollutants',
+        answerHi: 'स्थायी कार्बनिक प्रदूषक',
+      ),
+      MemoryPair(
+        termEn: 'Rotterdam Convention',
+        termHi: 'रॉटरडैम अभिसमय',
+        answerEn: 'Prior informed consent',
+        answerHi: 'पूर्व सूचित सहमति',
+      ),
+      MemoryPair(
+        termEn: 'Minamata Convention',
+        termHi: 'मिनामाता अभिसमय',
+        answerEn: 'Mercury',
+        answerHi: 'पारा',
+      ),
+    ],
+  ),
 ];
 
 MemoryPairSetDefinition? memoryPairSetById(String id) {
