@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../core/theme/app_colors.dart';
-import '../../../core/theme/app_radius.dart';
-import '../../../core/theme/app_spacing.dart';
-import '../../../core/theme/app_text_styles.dart';
-import '../shared/mini_game_feedback.dart';
+import '../shared/game_intro_view.dart';
+import '../shared/revision_games_theme.dart';
+import '../shared/revision_games_widgets.dart';
 import 'odd_one_out_controller.dart';
 
 class OddOneOutScreen extends HookConsumerWidget {
@@ -28,236 +25,193 @@ class OddOneOutScreen extends HookConsumerWidget {
       (subjects: subjectsCsv, difficulties: difficultiesCsv),
     );
     final async = ref.watch(provider);
-    final scheme = Theme.of(context).colorScheme;
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    final border = isDark ? AppColors.borderDark : AppColors.borderLight;
-
-    return Scaffold(
-      body: SafeArea(
-        child: Column(
-          children: [
-            const _GameAppBar(title: 'Odd One Out'),
-            Expanded(
-              child: async.when(
-                loading: () => const Center(child: CircularProgressIndicator()),
-                error: (e, _) => Center(child: Text('$e')),
-                data: (state) {
-                  if (state.sessionComplete) {
-                    return _SessionCompleteView(
-                      correct: state.correctCount,
-                      total: state.session.length,
-                      onPlayAgain: () =>
-                          ref.read(provider.notifier).playAgain(),
-                    );
-                  }
-                  final item = state.current;
-                  if (item == null) {
-                    return Center(
-                      child: Text(
-                        state.error ?? 'No content',
-                        style: AppTextStyles.body()
-                            .copyWith(color: scheme.onSurfaceVariant),
-                      ),
-                    );
-                  }
-                  return ListView(
-                    padding: const EdgeInsets.fromLTRB(
-                      AppSpacing.lg,
-                      AppSpacing.sm,
-                      AppSpacing.lg,
-                      AppSpacing.xl,
-                    ),
-                    children: [
-                      Text(
-                        '${item.subject}  ·  ${state.index + 1}/${state.session.length}',
-                        style: AppTextStyles.caption()
-                            .copyWith(color: scheme.onSurfaceVariant),
-                      ),
-                      const SizedBox(height: AppSpacing.sm),
-                      Text(
-                        'Which one doesn’t belong?',
-                        style: AppTextStyles.h3()
-                            .copyWith(color: scheme.onSurface),
-                      ),
-                      const SizedBox(height: AppSpacing.lg),
-                      GridView.builder(
-                        shrinkWrap: true,
-                        physics: const NeverScrollableScrollPhysics(),
-                        itemCount: item.items.length,
-                        gridDelegate:
-                            const SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2,
-                          mainAxisSpacing: AppSpacing.sm,
-                          crossAxisSpacing: AppSpacing.sm,
-                          childAspectRatio: 1.4,
-                        ),
-                        itemBuilder: (context, i) {
-                          final selected = state.selectedIndex == i;
-                          final isOdd = i == item.oddIndex;
-                          Color bg = isDark
-                              ? AppColors.surfaceSecondaryDark
-                              : AppColors.surfaceSecondaryLight;
-                          Color borderColor = border;
-                          if (state.revealed) {
-                            if (isOdd) {
-                              bg = isDark
-                                  ? AppColors.correctBgDark
-                                  : AppColors.correctBg;
-                              borderColor = AppColors.correct;
-                            } else if (selected) {
-                              bg = isDark
-                                  ? AppColors.wrongBgDark
-                                  : AppColors.wrongBg;
-                              borderColor = AppColors.wrong;
-                            }
-                          } else if (selected) {
-                            bg = AppColors.primary.withValues(alpha: 0.15);
-                            borderColor = AppColors.primary;
-                          }
-                          return Material(
-                            color: Colors.transparent,
-                            child: InkWell(
-                              onTap: state.revealed
-                                  ? null
-                                  : () =>
-                                      ref.read(provider.notifier).select(i),
-                              borderRadius:
-                                  BorderRadius.circular(AppRadius.md),
-                              child: Ink(
-                                padding: const EdgeInsets.all(AppSpacing.md),
-                                decoration: BoxDecoration(
-                                  color: bg,
-                                  borderRadius:
-                                      BorderRadius.circular(AppRadius.md),
-                                  border: Border.all(
-                                    color: borderColor,
-                                    width: state.revealed && (isOdd || selected)
-                                        ? 1.5
-                                        : 0.5,
-                                  ),
-                                ),
-                                child: Center(
-                                  child: Text(
-                                    item.items[i],
-                                    textAlign: TextAlign.center,
-                                    style: AppTextStyles.label().copyWith(
-                                      color: scheme.onSurface,
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          );
-                        },
-                      ),
-                      if (state.revealed) ...[
-                        const SizedBox(height: AppSpacing.xl),
-                        MiniGameResultBanner(
-                          correct: state.selectedIndex == item.oddIndex,
-                          text: state.selectedIndex == item.oddIndex
-                              ? 'Correct'
-                              : 'Not quite',
-                        ),
-                        const SizedBox(height: AppSpacing.sm),
-                        Text(
-                          item.explanation,
-                          style: AppTextStyles.body()
-                              .copyWith(color: scheme.onSurface),
-                        ),
-                        const SizedBox(height: AppSpacing.xl),
-                        FilledButton(
-                          onPressed: () => ref.read(provider.notifier).next(),
-                          child: const Text('Next'),
-                        ),
-                      ],
-                    ],
-                  );
-                },
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class _SessionCompleteView extends StatelessWidget {
-  const _SessionCompleteView({
-    required this.correct,
-    required this.total,
-    required this.onPlayAgain,
-  });
-
-  final int correct;
-  final int total;
-  final VoidCallback onPlayAgain;
-
-  @override
-  Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-    return Center(
-      child: Padding(
-        padding: const EdgeInsets.all(AppSpacing.xl),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Session complete',
-              style: AppTextStyles.h2().copyWith(color: scheme.onSurface),
-            ),
-            const SizedBox(height: AppSpacing.sm),
-            Text(
-              '$correct / $total correct',
-              style: AppTextStyles.h1().copyWith(
-                color: correct * 2 >= total
-                    ? AppColors.correct
-                    : AppColors.wrong,
-                fontWeight: FontWeight.w700,
-              ),
-            ),
-            const SizedBox(height: AppSpacing.xl),
-            FilledButton(
-              onPressed: onPlayAgain,
-              child: const Text('Play again'),
-            ),
-            TextButton(
-              onPressed: () =>
-                  context.canPop() ? context.pop() : context.go('/games'),
-              child: const Text('Back to games'),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class _GameAppBar extends StatelessWidget {
-  const _GameAppBar({required this.title});
-
-  final String title;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(
-        AppSpacing.sm,
-        AppSpacing.sm,
-        AppSpacing.lg,
-        AppSpacing.sm,
-      ),
-      child: Row(
-        children: [
-          IconButton(
-            onPressed: () =>
-                context.canPop() ? context.pop() : context.go('/games'),
-            icon: const Icon(Icons.chevron_left),
-          ),
-          Expanded(child: Text(title, style: AppTextStyles.h2())),
+    useGameHowToSheet(
+      context: context,
+      ref: ref,
+      config: GameHowToConfig(
+        prefKey: GameHowToPrefs.oddOneOut,
+        icon: Icons.rule_rounded,
+        accent: GameAccent.oddOneOut.accent,
+        badgeBg: GameAccent.oddOneOut.badgeBg,
+        title: 'Odd One Out',
+        steps: const [
+          'Look at all four options.',
+          "Tap the one that doesn't belong.",
+          'See the highlight and explanation instantly.',
         ],
       ),
     );
+
+    final snapshot = async.asData?.value;
+    final item = snapshot?.current;
+    final revealed = snapshot?.revealed ?? false;
+    final complete = snapshot?.sessionComplete ?? false;
+
+    return RgGameScaffold(
+      title: item == null || complete
+          ? 'Odd One Out'
+          : 'Odd One Out · ${item.subject}',
+      footer: revealed && !complete
+          ? RgPillButton(
+              label: 'Next →',
+              verticalPadding: 11,
+              onPressed: () => ref.read(provider.notifier).next(),
+            )
+          : null,
+      body: async.when(
+        loading: () => const Center(
+          child: CircularProgressIndicator(color: RgColors.teal),
+        ),
+        error: (e, _) => Center(
+          child: Text('$e', style: RgText.body(color: RgColors.muted)),
+        ),
+        data: (state) {
+          if (complete) {
+            return RgSessionCompleteView(
+              correct: state.correctCount,
+              total: state.session.length,
+              onPlayAgain: () => ref.read(provider.notifier).playAgain(),
+            );
+          }
+          if (item == null) {
+            return Center(
+              child: Text(
+                state.error ?? 'No content',
+                style: RgText.body(color: RgColors.muted),
+              ),
+            );
+          }
+
+          return RgCenteredBody(
+            padding: const EdgeInsets.fromLTRB(14, 18, 14, 18),
+            children: [
+              Center(
+                child: RgMonoLabel(
+                  '${state.index + 1} of ${state.session.length}',
+                ),
+              ),
+              const SizedBox(height: 10),
+              Text(
+                "Which one doesn't belong?",
+                textAlign: TextAlign.center,
+                style: RgText.display(size: 16),
+              ),
+              const SizedBox(height: 16),
+              GridView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: item.items.length,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  mainAxisSpacing: 10,
+                  crossAxisSpacing: 10,
+                ),
+                itemBuilder: (context, i) {
+                  final selected = state.selectedIndex == i;
+                  final isOdd = i == item.oddIndex;
+                  return _OddTile(
+                    label: item.items[i],
+                    revealed: revealed,
+                    isAnswer: isOdd,
+                    isWrongPick: selected && !isOdd,
+                    onTap: revealed
+                        ? null
+                        : () => ref.read(provider.notifier).select(i),
+                  );
+                },
+              ),
+              if (revealed) ...[
+                const SizedBox(height: 16),
+                RgExplanationChip(text: item.explanation),
+              ],
+            ],
+          );
+        },
+      ),
+    );
+  }
+}
+
+class _OddTile extends StatelessWidget {
+  const _OddTile({
+    required this.label,
+    required this.revealed,
+    required this.isAnswer,
+    required this.isWrongPick,
+    required this.onTap,
+  });
+
+  final String label;
+  final bool revealed;
+  final bool isAnswer;
+  final bool isWrongPick;
+  final VoidCallback? onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    var bg = RgColors.card;
+    var borderColor = RgColors.border12;
+    var textColor = RgColors.ink;
+    var borderWidth = 1.5;
+    IconData? corner;
+    var cornerColor = RgColors.tealDeep;
+
+    if (revealed && isAnswer) {
+      bg = RgColors.correctBg;
+      borderColor = RgColors.teal;
+      textColor = RgColors.tealDeep;
+      borderWidth = 2;
+      corner = Icons.check_circle_rounded;
+    } else if (revealed && isWrongPick) {
+      bg = RgColors.wrongBg;
+      borderColor = RgColors.wrong;
+      textColor = RgColors.wrongText;
+      corner = Icons.cancel_rounded;
+      cornerColor = RgColors.wrongText;
+    }
+
+    Widget tile = Material(
+      color: RgColors.transparent,
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(RgRadius.lg),
+        child: Ink(
+          decoration: BoxDecoration(
+            color: bg,
+            borderRadius: BorderRadius.circular(RgRadius.lg),
+            border: Border.all(color: borderColor, width: borderWidth),
+          ),
+          child: Stack(
+            children: [
+              Center(
+                child: Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: Text(
+                    label,
+                    textAlign: TextAlign.center,
+                    style: RgText.body(
+                      size: 14,
+                      weight: FontWeight.w700,
+                      color: textColor,
+                    ),
+                  ),
+                ),
+              ),
+              if (corner != null)
+                Positioned(
+                  top: 6,
+                  right: 8,
+                  child: Icon(corner, size: 14, color: cornerColor),
+                ),
+            ],
+          ),
+        ),
+      ),
+    );
+
+    if (revealed && !isAnswer && !isWrongPick) {
+      tile = Opacity(opacity: 0.5, child: tile);
+    }
+    return tile;
   }
 }

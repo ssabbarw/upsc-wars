@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../core/theme/app_colors.dart';
-import '../../../core/theme/app_radius.dart';
-import '../../../core/theme/app_spacing.dart';
-import '../../../core/theme/app_text_styles.dart';
-import '../shared/mini_game_feedback.dart';
+import '../shared/game_intro_view.dart';
+import '../shared/revision_games_theme.dart';
+import '../shared/revision_games_widgets.dart';
 import 'connect_the_dots_controller.dart';
 
 class ConnectTheDotsScreen extends HookConsumerWidget {
@@ -28,249 +25,221 @@ class ConnectTheDotsScreen extends HookConsumerWidget {
       (subjects: subjectsCsv, difficulties: difficultiesCsv),
     );
     final async = ref.watch(provider);
-    final scheme = Theme.of(context).colorScheme;
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    final border = isDark ? AppColors.borderDark : AppColors.borderLight;
+    useGameHowToSheet(
+      context: context,
+      ref: ref,
+      config: GameHowToConfig(
+        prefKey: GameHowToPrefs.connectTheDots,
+        icon: Icons.hub_rounded,
+        accent: GameAccent.connectTheDots.accent,
+        badgeBg: GameAccent.connectTheDots.badgeBg,
+        title: 'Connect the Dots',
+        steps: const [
+          'Read all three clues together.',
+          'Think about what links them.',
+          'Tap the option that ties them together.',
+        ],
+      ),
+    );
 
-    return Scaffold(
-      body: SafeArea(
-        child: Column(
-          children: [
-            const _GameAppBar(title: 'Connect the Dots'),
-            Expanded(
-              child: async.when(
-                loading: () => const Center(child: CircularProgressIndicator()),
-                error: (e, _) => Center(child: Text('$e')),
-                data: (state) {
-                  if (state.sessionComplete) {
-                    return _SessionCompleteView(
-                      correct: state.correctCount,
-                      total: state.session.length,
-                      onPlayAgain: () =>
-                          ref.read(provider.notifier).playAgain(),
-                    );
-                  }
-                  final item = state.current;
-                  if (item == null) {
-                    return Center(
-                      child: Text(
-                        state.error ?? 'No content',
-                        style: AppTextStyles.body()
-                            .copyWith(color: scheme.onSurfaceVariant),
-                      ),
-                    );
-                  }
-                  return ListView(
-                    padding: const EdgeInsets.fromLTRB(
-                      AppSpacing.lg,
-                      AppSpacing.sm,
-                      AppSpacing.lg,
-                      AppSpacing.xl,
-                    ),
-                    children: [
-                      Text(
-                        '${item.subject}  ·  ${state.index + 1}/${state.session.length}',
-                        style: AppTextStyles.caption()
-                            .copyWith(color: scheme.onSurfaceVariant),
-                      ),
-                      const SizedBox(height: AppSpacing.sm),
-                      Text(
-                        'What’s the hidden link?',
-                        style: AppTextStyles.h3()
-                            .copyWith(color: scheme.onSurface),
-                      ),
-                      const SizedBox(height: AppSpacing.lg),
-                      Wrap(
-                        spacing: AppSpacing.sm,
-                        runSpacing: AppSpacing.sm,
-                        children: item.dots.map((dot) {
-                          return Container(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: AppSpacing.md,
-                              vertical: AppSpacing.sm,
-                            ),
-                            decoration: BoxDecoration(
-                              color: AppColors.primary.withValues(alpha: 0.12),
-                              borderRadius:
-                                  BorderRadius.circular(AppRadius.md),
-                              border: Border.all(
-                                color: AppColors.primary.withValues(alpha: 0.4),
-                                width: 0.5,
-                              ),
-                            ),
-                            child: Text(
-                              dot,
-                              style: AppTextStyles.label().copyWith(
-                                color: scheme.onSurface,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                          );
-                        }).toList(),
-                      ),
-                      const SizedBox(height: AppSpacing.xxl),
-                      ...List.generate(item.options.length, (i) {
-                        final selected = state.selectedIndex == i;
-                        final isAnswer = i == item.answerIndex;
-                        Color bg = isDark
-                            ? AppColors.surfaceSecondaryDark
-                            : AppColors.surfaceSecondaryLight;
-                        Color borderColor = border;
-                        if (state.revealed) {
-                          if (isAnswer) {
-                            bg = isDark
-                                ? AppColors.correctBgDark
-                                : AppColors.correctBg;
-                            borderColor = AppColors.correct;
-                          } else if (selected) {
-                            bg = isDark
-                                ? AppColors.wrongBgDark
-                                : AppColors.wrongBg;
-                            borderColor = AppColors.wrong;
-                          }
-                        }
-                        return Padding(
-                          padding:
-                              const EdgeInsets.only(bottom: AppSpacing.sm),
-                          child: Material(
-                            color: Colors.transparent,
-                            child: InkWell(
-                              onTap: state.revealed
-                                  ? null
-                                  : () =>
-                                      ref.read(provider.notifier).select(i),
-                              borderRadius:
-                                  BorderRadius.circular(AppRadius.md),
-                              child: Ink(
-                                padding: const EdgeInsets.all(AppSpacing.md),
-                                decoration: BoxDecoration(
-                                  color: bg,
-                                  borderRadius:
-                                      BorderRadius.circular(AppRadius.md),
-                                  border: Border.all(
-                                    color: borderColor,
-                                    width: state.revealed &&
-                                            (isAnswer || selected)
-                                        ? 1.5
-                                        : 0.5,
-                                  ),
-                                ),
-                                child: Text(
-                                  item.options[i],
-                                  style: AppTextStyles.option()
-                                      .copyWith(color: scheme.onSurface),
-                                ),
-                              ),
-                            ),
-                          ),
-                        );
-                      }),
-                      if (state.revealed) ...[
-                        const SizedBox(height: AppSpacing.lg),
-                        MiniGameResultBanner(
-                          correct: state.selectedIndex == item.answerIndex,
-                          text: state.selectedIndex == item.answerIndex
-                              ? 'Correct'
-                              : 'Not quite',
-                        ),
-                        const SizedBox(height: AppSpacing.sm),
-                        Text(
-                          item.explanation,
-                          style: AppTextStyles.body()
-                              .copyWith(color: scheme.onSurface),
-                        ),
-                        const SizedBox(height: AppSpacing.xl),
-                        FilledButton(
-                          onPressed: () => ref.read(provider.notifier).next(),
-                          child: const Text('Next'),
-                        ),
-                      ],
-                    ],
-                  );
-                },
-              ),
-            ),
-          ],
+    final snapshot = async.asData?.value;
+    final item = snapshot?.current;
+    final revealed = snapshot?.revealed ?? false;
+    final complete = snapshot?.sessionComplete ?? false;
+
+    return RgGameScaffold(
+      title: 'Connect the Dots',
+      footer: revealed && !complete
+          ? RgPillButton(
+              label: 'Next →',
+              verticalPadding: 11,
+              onPressed: () => ref.read(provider.notifier).next(),
+            )
+          : null,
+      body: async.when(
+        loading: () => const Center(
+          child: CircularProgressIndicator(color: RgColors.teal),
         ),
+        error: (e, _) => Center(
+          child: Text('$e', style: RgText.body(color: RgColors.muted)),
+        ),
+        data: (state) {
+          if (complete) {
+            return RgSessionCompleteView(
+              correct: state.correctCount,
+              total: state.session.length,
+              onPlayAgain: () => ref.read(provider.notifier).playAgain(),
+            );
+          }
+          if (item == null) {
+            return Center(
+              child: Text(
+                state.error ?? 'No content',
+                style: RgText.body(color: RgColors.muted),
+              ),
+            );
+          }
+          final picked = state.selectedIndex;
+          final pickedWrong =
+              revealed && picked != null && picked != item.answerIndex;
+
+          return ListView(
+            padding: const EdgeInsets.fromLTRB(14, 14, 14, 20),
+            children: [
+              RgMonoLabel(
+                '${item.subject} · ${state.index + 1} of '
+                '${state.session.length}',
+              ),
+              const SizedBox(height: 10),
+              for (var i = 0; i < item.dots.length; i++) ...[
+                if (i > 0) _Connector(revealed: revealed),
+                _ClueCard(text: item.dots[i], revealed: revealed),
+              ],
+              const SizedBox(height: 12),
+              const RgMonoLabel("What's the hidden link?"),
+              const SizedBox(height: 8),
+              if (!revealed)
+                for (var i = 0; i < item.options.length; i++)
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 7),
+                    child: _OptionPill(
+                      label: item.options[i],
+                      onTap: () => ref.read(provider.notifier).select(i),
+                    ),
+                  )
+              else ...[
+                if (pickedWrong)
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 7),
+                    child: _OptionPill(
+                      label: item.options[picked],
+                      onTap: null,
+                      fill: RgColors.wrongBg,
+                      borderColor: RgColors.wrong,
+                      foreground: RgColors.wrongText,
+                      icon: Icons.cancel_rounded,
+                    ),
+                  ),
+                _OptionPill(
+                  label: item.options[item.answerIndex],
+                  onTap: null,
+                  fill: RgColors.correctBg,
+                  borderColor: RgColors.teal,
+                  foreground: RgColors.tealDeep,
+                  borderWidth: 2,
+                  icon: Icons.check_circle_rounded,
+                ),
+                const SizedBox(height: 10),
+                RgExplanationChip(text: item.explanation),
+              ],
+            ],
+          );
+        },
       ),
     );
   }
 }
 
-class _SessionCompleteView extends StatelessWidget {
-  const _SessionCompleteView({
-    required this.correct,
-    required this.total,
-    required this.onPlayAgain,
+class _ClueCard extends StatelessWidget {
+  const _ClueCard({required this.text, required this.revealed});
+
+  final String text;
+  final bool revealed;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+      decoration: BoxDecoration(
+        color: revealed ? RgColors.correctBg : RgColors.card,
+        borderRadius: BorderRadius.circular(RgRadius.md),
+        border: Border.all(
+          color: revealed ? RgColors.correctBorder : RgColors.border,
+        ),
+      ),
+      child: Text(
+        text,
+        style: RgText.body(size: 12, weight: FontWeight.w600),
+      ),
+    );
+  }
+}
+
+/// Short vertical tick that threads the clue cards together.
+class _Connector extends StatelessWidget {
+  const _Connector({required this.revealed});
+
+  final bool revealed;
+
+  @override
+  Widget build(BuildContext context) {
+    return Align(
+      alignment: Alignment.centerLeft,
+      child: Container(
+        margin: const EdgeInsets.only(left: 20),
+        width: 1.5,
+        height: 10,
+        color: revealed ? RgColors.teal : RgColors.border12,
+      ),
+    );
+  }
+}
+
+class _OptionPill extends StatelessWidget {
+  const _OptionPill({
+    required this.label,
+    required this.onTap,
+    this.fill = RgColors.card,
+    this.borderColor = RgColors.border12,
+    this.foreground = RgColors.ink,
+    this.borderWidth = 1.5,
+    this.icon,
   });
 
-  final int correct;
-  final int total;
-  final VoidCallback onPlayAgain;
+  final String label;
+  final VoidCallback? onTap;
+  final Color fill;
+  final Color borderColor;
+  final Color foreground;
+  final double borderWidth;
+  final IconData? icon;
 
   @override
   Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-    return Center(
-      child: Padding(
-        padding: const EdgeInsets.all(AppSpacing.xl),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Session complete',
-              style: AppTextStyles.h2().copyWith(color: scheme.onSurface),
-            ),
-            const SizedBox(height: AppSpacing.sm),
-            Text(
-              '$correct / $total correct',
-              style: AppTextStyles.h1().copyWith(
-                color: correct * 2 >= total
-                    ? AppColors.correct
-                    : AppColors.wrong,
-                fontWeight: FontWeight.w700,
-              ),
-            ),
-            const SizedBox(height: AppSpacing.xl),
-            FilledButton(
-              onPressed: onPlayAgain,
-              child: const Text('Play again'),
-            ),
-            TextButton(
-              onPressed: () =>
-                  context.canPop() ? context.pop() : context.go('/games'),
-              child: const Text('Back to games'),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class _GameAppBar extends StatelessWidget {
-  const _GameAppBar({required this.title});
-
-  final String title;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(
-        AppSpacing.sm,
-        AppSpacing.sm,
-        AppSpacing.lg,
-        AppSpacing.sm,
-      ),
-      child: Row(
-        children: [
-          IconButton(
-            onPressed: () =>
-                context.canPop() ? context.pop() : context.go('/games'),
-            icon: const Icon(Icons.chevron_left),
+    return Material(
+      color: RgColors.transparent,
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(RgRadius.pill),
+        child: Ink(
+          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+          decoration: BoxDecoration(
+            color: fill,
+            borderRadius: BorderRadius.circular(RgRadius.pill),
+            border: Border.all(color: borderColor, width: borderWidth),
           ),
-          Expanded(child: Text(title, style: AppTextStyles.h2())),
-        ],
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              if (icon != null) ...[
+                Icon(icon, size: 15, color: foreground),
+                const SizedBox(width: 6),
+              ],
+              Flexible(
+                child: Text(
+                  label,
+                  textAlign: TextAlign.center,
+                  style: RgText.body(
+                    size: 12.5,
+                    weight: icon == null ? FontWeight.w600 : FontWeight.w700,
+                    color: foreground,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

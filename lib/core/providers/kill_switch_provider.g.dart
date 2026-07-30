@@ -48,7 +48,7 @@ final class KillSwitchProvider
   }
 }
 
-String _$killSwitchHash() => r'de297051237a0639c4442dc4c6ae0774e52f029c';
+String _$killSwitchHash() => r'5c3f0e6dac57d8c6a0898827bed0981ef4dc26e2';
 
 /// Whether the Community tab should be shown (after [killSwitchProvider] fetch).
 ///
@@ -142,3 +142,51 @@ final class DailyCaRemoteEnabledProvider
 
 String _$dailyCaRemoteEnabledHash() =>
     r'656cc2f8b3d20f324a31a3181b605c5fcac9caef';
+
+/// Fact or Bluff countdown length from Remote Config (seconds).
+///
+/// Defaults to 10. Clamped to 3–60. Waits for [killSwitchProvider] so RC
+/// defaults / fetch have run on mobile.
+
+@ProviderFor(factOrBluffSecondsRemote)
+final factOrBluffSecondsRemoteProvider = FactOrBluffSecondsRemoteProvider._();
+
+/// Fact or Bluff countdown length from Remote Config (seconds).
+///
+/// Defaults to 10. Clamped to 3–60. Waits for [killSwitchProvider] so RC
+/// defaults / fetch have run on mobile.
+
+final class FactOrBluffSecondsRemoteProvider
+    extends $FunctionalProvider<AsyncValue<int>, int, FutureOr<int>>
+    with $FutureModifier<int>, $FutureProvider<int> {
+  /// Fact or Bluff countdown length from Remote Config (seconds).
+  ///
+  /// Defaults to 10. Clamped to 3–60. Waits for [killSwitchProvider] so RC
+  /// defaults / fetch have run on mobile.
+  FactOrBluffSecondsRemoteProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'factOrBluffSecondsRemoteProvider',
+        isAutoDispose: false,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$factOrBluffSecondsRemoteHash();
+
+  @$internal
+  @override
+  $FutureProviderElement<int> $createElement($ProviderPointer pointer) =>
+      $FutureProviderElement(pointer);
+
+  @override
+  FutureOr<int> create(Ref ref) {
+    return factOrBluffSecondsRemote(ref);
+  }
+}
+
+String _$factOrBluffSecondsRemoteHash() =>
+    r'69cff7bde3da51daadeeb847c3e2c46f1cf86e99';

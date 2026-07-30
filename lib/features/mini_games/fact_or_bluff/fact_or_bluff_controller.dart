@@ -2,10 +2,12 @@ import 'dart:async';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../core/providers/kill_switch_provider.dart';
 import '../shared/mini_game_content_repository.dart';
 import '../shared/mini_game_models.dart';
 
-const factOrBluffSeconds = 5;
+/// Fallback / Remote Config default when RC is unavailable.
+const factOrBluffDefaultSeconds = 10;
 
 /// Statements played per session, drawn randomly from the filtered pool.
 const factOrBluffSessionSize = 10;
@@ -17,6 +19,7 @@ class FactOrBluffState {
     required this.pool,
     required this.session,
     required this.index,
+    required this.durationSeconds,
     required this.secondsLeft,
     this.answeredIsFact,
     this.verdict = FactOrBluffVerdict.none,
@@ -29,6 +32,9 @@ class FactOrBluffState {
   final List<FactOrBluffItem> pool;
   final List<FactOrBluffItem> session;
   final int index;
+
+  /// Full countdown length for this session (from Remote Config).
+  final int durationSeconds;
   final double secondsLeft;
   final bool? answeredIsFact;
   final FactOrBluffVerdict verdict;
@@ -42,10 +48,14 @@ class FactOrBluffState {
 
   bool get isAwaitingAnswer => verdict == FactOrBluffVerdict.none;
 
+  double get progress =>
+      durationSeconds <= 0 ? 0 : (secondsLeft / durationSeconds).clamp(0.0, 1.0);
+
   FactOrBluffState copyWith({
     List<FactOrBluffItem>? pool,
     List<FactOrBluffItem>? session,
     int? index,
+    int? durationSeconds,
     double? secondsLeft,
     bool? answeredIsFact,
     bool clearAnswer = false,
@@ -59,6 +69,7 @@ class FactOrBluffState {
       pool: pool ?? this.pool,
       session: session ?? this.session,
       index: index ?? this.index,
+      durationSeconds: durationSeconds ?? this.durationSeconds,
       secondsLeft: secondsLeft ?? this.secondsLeft,
       answeredIsFact:
           clearAnswer ? null : (answeredIsFact ?? this.answeredIsFact),
@@ -81,22 +92,29 @@ class FactOrBluffController extends AsyncNotifier<FactOrBluffState> {
   @override
   Future<FactOrBluffState> build() async {
     ref.onDispose(() => _timer?.cancel());
+    final durationSeconds =
+        await ref.watch(factOrBluffSecondsRemoteProvider.future);
     final pool = await ref.read(factOrBluffRepositoryProvider).loadItems();
     if (pool.isEmpty) {
-      return const FactOrBluffState(
-        pool: [],
-        session: [],
+      return FactOrBluffState(
+        pool: const [],
+        session: const [],
         index: 0,
+        durationSeconds: durationSeconds,
         secondsLeft: 0,
         error: 'No fact-or-bluff items found.',
       );
     }
-    final initial = _newSession(pool);
-    Future.microtask(_startTimer);
-    return initial;
+    // Timer is armed only once the player leaves the "How to play" sheet and
+    // calls [start] — otherwise the countdown would run behind the sheet.
+    return _newSession(pool, durationSeconds);
   }
 
-  FactOrBluffState _newSession(List<FactOrBluffItem> pool) {
+  /// Begins the countdown for the current statement. Called by the screen when
+  /// the player dismisses the intro. Safe to call once content has loaded.
+  void start() => _startTimer();
+
+  FactOrBluffState _newSession(List<FactOrBluffItem> pool, int durationSeconds) {
     return FactOrBluffState(
       pool: pool,
       session: drawMiniGameSession(
@@ -107,7 +125,8 @@ class FactOrBluffController extends AsyncNotifier<FactOrBluffState> {
         difficultyOf: (i) => i.difficulty,
       ),
       index: 0,
-      secondsLeft: factOrBluffSeconds.toDouble(),
+      durationSeconds: durationSeconds,
+      secondsLeft: durationSeconds.toDouble(),
     );
   }
 
@@ -171,7 +190,7 @@ class FactOrBluffController extends AsyncNotifier<FactOrBluffState> {
     state = AsyncData(
       current.copyWith(
         index: nextIndex,
-        secondsLeft: factOrBluffSeconds.toDouble(),
+        secondsLeft: current.durationSeconds.toDouble(),
         clearAnswer: true,
         verdict: FactOrBluffVerdict.none,
       ),
@@ -183,7 +202,9 @@ class FactOrBluffController extends AsyncNotifier<FactOrBluffState> {
     final current = state.asData?.value;
     if (current == null || current.pool.isEmpty) return;
     _timer?.cancel();
-    state = AsyncData(_newSession(current.pool));
+    state = AsyncData(
+      _newSession(current.pool, current.durationSeconds),
+    );
     Future.microtask(_startTimer);
   }
 }

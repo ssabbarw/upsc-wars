@@ -45,6 +45,20 @@ class TimelineSorterState {
     return true;
   }
 
+  /// Whether each display slot holds a chronologically correct item, so the
+  /// reveal can score "4 of 5" instead of all-or-nothing.
+  List<bool> get slotCorrectness {
+    final set = current;
+    if (set == null || order.length != set.items.length) return const [];
+    final sortedKeys = set.items.map((i) => i.sortKey).toList()..sort();
+    return [
+      for (var i = 0; i < order.length; i++)
+        set.items[order[i]].sortKey == sortedKeys[i],
+    ];
+  }
+
+  int get slotCorrectCount => slotCorrectness.where((ok) => ok).length;
+
   TimelineSorterState copyWith({
     List<TimelineSorterSet>? pool,
     List<TimelineSorterSet>? session,

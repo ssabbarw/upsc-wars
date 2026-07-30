@@ -5,13 +5,16 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../core/theme/app_colors.dart';
-import '../../../core/theme/app_radius.dart';
-import '../../../core/theme/app_spacing.dart';
-import '../../../core/theme/app_text_styles.dart';
-import '../shared/mini_game_feedback.dart';
+import '../shared/game_intro_view.dart';
+import '../shared/revision_games_theme.dart';
+import '../shared/revision_games_widgets.dart';
 import 'duel_controller.dart';
 
+/// 1v1 Duel — Revision Games v2 "scoreboard-strip" treatment (option 1a).
+///
+/// Two mirrored halves (Player 2 rotated 180°) split by a solid teal seam that
+/// carries the running score. A wrong tap stamps the tapped option with a
+/// diagonal hazard lockout; the match ends on a stamped victory/defeat screen.
 class DuelScreen extends HookConsumerWidget {
   const DuelScreen({
     super.key,
@@ -31,13 +34,32 @@ class DuelScreen extends HookConsumerWidget {
       (subjects: subjectsCsv, difficulties: difficultiesCsv),
     );
     final async = ref.watch(provider);
-    final scheme = Theme.of(context).colorScheme;
-    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final howToReady = useGameHowToSheet(
+      context: context,
+      ref: ref,
+      config: GameHowToConfig(
+        prefKey: GameHowToPrefs.duel,
+        icon: Icons.military_tech_rounded,
+        accent: GameAccent.duel.accent,
+        badgeBg: GameAccent.duel.badgeBg,
+        stepAccent: GameAccent.duel.stepAccent,
+        title: '1v1 Duel',
+        startLabel: 'Start match',
+        steps: const [
+          'Lay the phone flat on the table between you.',
+          'Same question, 2 options each — mirrored top and bottom.',
+          'First correct tap wins the point — a wrong tap locks you '
+              'out for that round.',
+        ],
+      ),
+    );
+
+    void exit() => context.canPop() ? context.pop() : context.go('/games');
 
     // Auto-advance after a round resolves (winner or both wrong).
     useEffect(() {
       final state = async.asData?.value;
-      if (state == null) return null;
+      if (state == null || !howToReady) return null;
       if (state.phase == DuelPhase.matchOver) return null;
       if (!state.revealedAnswer) return null;
       final timer = Timer(const Duration(milliseconds: 900), () {
@@ -47,117 +69,98 @@ class DuelScreen extends HookConsumerWidget {
     }, [
       async.asData?.value.questionIndex,
       async.asData?.value.revealedAnswer,
+      howToReady,
     ]);
 
     return Scaffold(
-      backgroundColor: isDark
-          ? AppColors.surfacePrimaryDark
-          : AppColors.surfacePrimaryLight,
-      body: async.when(
-        loading: () => const Center(child: CircularProgressIndicator()),
-        error: (e, _) => Center(child: Text('$e')),
-        data: (state) {
-          if (state.error != null && state.matchQuestions.isEmpty) {
-            return SafeArea(
-              child: Center(
-                child: Text(
-                  state.error!,
-                  style: AppTextStyles.body()
-                      .copyWith(color: scheme.onSurfaceVariant),
-                ),
-              ),
-            );
-          }
-
-          if (state.phase == DuelPhase.matchOver) {
-            return _MatchOverView(
-              p1Score: state.p1Score,
-              p2Score: state.p2Score,
-              onPlayAgain: () =>
-                  ref.read(provider.notifier).playAgain(),
-              onExit: () =>
-                  context.canPop() ? context.pop() : context.go('/games'),
-            );
-          }
-
-          final q = state.current;
-          if (q == null) {
-            return const Center(child: Text('No question'));
-          }
-
-          return Column(
-            children: [
-              // Player 2 — top half, rotated 180°
-              Expanded(
-                child: RotatedBox(
-                  quarterTurns: 2,
-                  child: _PlayerHalf(
-                    label: 'Player 2',
-                    question: q.question,
-                    options: q.options,
-                    locked: state.p2Locked,
-                    revealed: state.revealedAnswer,
-                    answerIndex: q.answerIndex,
-                    highlightWinner: state.roundWinner == DuelPlayer.two,
-                    onTap: (i) =>
-                        ref.read(provider.notifier).tap(DuelPlayer.two, i),
+      backgroundColor: RgColors.pageBg,
+      body: SafeArea(
+        child: async.when(
+          loading: () => const Center(
+            child: CircularProgressIndicator(color: RgColors.teal),
+          ),
+          error: (e, _) => Center(
+            child: Text('$e', style: RgText.body(color: RgColors.muted)),
+          ),
+          data: (state) {
+            if (state.error != null && state.matchQuestions.isEmpty) {
+              return Center(
+                child: Padding(
+                  padding: const EdgeInsets.all(20),
+                  child: Text(
+                    state.error!,
+                    textAlign: TextAlign.center,
+                    style: RgText.body(size: 13, color: RgColors.muted),
                   ),
                 ),
-              ),
-              // Center score strip (readable upright for whoever glances)
-              Container(
-                width: double.infinity,
-                padding: const EdgeInsets.symmetric(
-                  vertical: AppSpacing.sm,
-                  horizontal: AppSpacing.lg,
+              );
+            }
+
+            if (state.phase == DuelPhase.matchOver) {
+              return _MatchOverView(
+                p1Score: state.p1Score,
+                p2Score: state.p2Score,
+                onRematch: () => ref.read(provider.notifier).playAgain(),
+                onExit: exit,
+              );
+            }
+
+            final q = state.current;
+            if (q == null) {
+              return Center(
+                child: Text(
+                  'No question',
+                  style: RgText.body(color: RgColors.muted),
                 ),
-                color: isDark
-                    ? AppColors.surfaceSecondaryDark
-                    : AppColors.surfaceSecondaryLight,
-                child: Row(
-                  children: [
-                    IconButton(
-                      visualDensity: VisualDensity.compact,
-                      onPressed: () => context.canPop()
-                          ? context.pop()
-                          : context.go('/games'),
-                      icon: Icon(
-                        Icons.close,
-                        size: 20,
-                        color: scheme.onSurfaceVariant,
-                      ),
+              );
+            }
+
+            return Column(
+              children: [
+                // Player 2 — top half, rotated 180°.
+                Expanded(
+                  child: RotatedBox(
+                    quarterTurns: 2,
+                    child: _PlayerHalf(
+                      subject: q.subject,
+                      questionNumber: state.questionNumber,
+                      question: q.question,
+                      options: q.options,
+                      answerIndex: q.answerIndex,
+                      locked: state.p2Locked,
+                      wrongIndex: state.p2WrongIndex,
+                      revealed: state.revealedAnswer,
+                      wonRound: state.roundWinner == DuelPlayer.two,
+                      onTap: (i) =>
+                          ref.read(provider.notifier).tap(DuelPlayer.two, i),
                     ),
-                    Expanded(
-                      child: Text(
-                        'P2  ${state.p2Score}  —  ${state.p1Score}  P1   ·  Q${state.questionNumber}/$duelMatchLength',
-                        textAlign: TextAlign.center,
-                        style: AppTextStyles.label().copyWith(
-                          color: scheme.onSurface,
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
-                    ),
-                    const SizedBox(width: 40),
-                  ],
+                  ),
                 ),
-              ),
-              // Player 1 — bottom half, upright
-              Expanded(
-                child: _PlayerHalf(
-                  label: 'Player 1',
-                  question: q.question,
-                  options: q.options,
-                  locked: state.p1Locked,
-                  revealed: state.revealedAnswer,
-                  answerIndex: q.answerIndex,
-                  highlightWinner: state.roundWinner == DuelPlayer.one,
-                  onTap: (i) =>
-                      ref.read(provider.notifier).tap(DuelPlayer.one, i),
+                _ScoreSeam(
+                  p1Score: state.p1Score,
+                  p2Score: state.p2Score,
+                  onExit: exit,
                 ),
-              ),
-            ],
-          );
-        },
+                // Player 1 — bottom half, upright.
+                Expanded(
+                  child: _PlayerHalf(
+                    subject: q.subject,
+                    questionNumber: state.questionNumber,
+                    question: q.question,
+                    options: q.options,
+                    answerIndex: q.answerIndex,
+                    locked: state.p1Locked,
+                    wrongIndex: state.p1WrongIndex,
+                    revealed: state.revealedAnswer,
+                    wonRound: state.roundWinner == DuelPlayer.one,
+                    onTap: (i) =>
+                        ref.read(provider.notifier).tap(DuelPlayer.one, i),
+                  ),
+                ),
+              ],
+            );
+          },
+        ),
       ),
     );
   }
@@ -165,166 +168,303 @@ class DuelScreen extends HookConsumerWidget {
 
 class _PlayerHalf extends StatelessWidget {
   const _PlayerHalf({
-    required this.label,
+    required this.subject,
+    required this.questionNumber,
     required this.question,
     required this.options,
-    required this.locked,
-    required this.revealed,
     required this.answerIndex,
-    required this.highlightWinner,
+    required this.locked,
+    required this.wrongIndex,
+    required this.revealed,
+    required this.wonRound,
     required this.onTap,
   });
 
-  final String label;
+  final String subject;
+  final int questionNumber;
   final String question;
   final List<String> options;
-  final bool locked;
-  final bool revealed;
   final int answerIndex;
-  final bool highlightWinner;
+  final bool locked;
+  final int? wrongIndex;
+  final bool revealed;
+
+  /// This half took the point — the correct option flashes green.
+  final bool wonRound;
   final ValueChanged<int> onTap;
 
   @override
   Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    final border = isDark ? AppColors.borderDark : AppColors.borderLight;
-
-    return SafeArea(
-      top: false,
-      bottom: false,
-      child: Padding(
-        padding: const EdgeInsets.fromLTRB(
-          AppSpacing.lg,
-          AppSpacing.md,
-          AppSpacing.lg,
-          AppSpacing.md,
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Text(
-              label,
-              style: AppTextStyles.caption().copyWith(
-                color: highlightWinner
-                    ? AppColors.correct
-                    : scheme.onSurfaceVariant,
-                fontWeight: FontWeight.w700,
-              ),
-            ),
-            const SizedBox(height: AppSpacing.sm),
-            Expanded(
-              child: Center(
-                child: Text(
-                  question,
-                  textAlign: TextAlign.center,
-                  style: AppTextStyles.h3().copyWith(
-                    color: scheme.onSurface,
-                    height: 1.35,
-                  ),
-                ),
-              ),
-            ),
-            if (revealed && highlightWinner)
-              const Padding(
-                padding: EdgeInsets.only(bottom: AppSpacing.sm),
-                child: MiniGameResultBanner(
-                  correct: true,
-                  text: 'Point!',
-                  center: true,
-                ),
-              ),
-            if (revealed && !highlightWinner && locked)
-              Padding(
-                padding: const EdgeInsets.only(bottom: AppSpacing.sm),
-                child: Text(
-                  'Locked out',
-                  textAlign: TextAlign.center,
-                  style: AppTextStyles.caption()
-                      .copyWith(color: scheme.onSurfaceVariant),
-                ),
-              ),
-            Row(
-              children: [
-                for (var i = 0; i < options.length; i++) ...[
-                  if (i > 0) const SizedBox(width: AppSpacing.sm),
-                  Expanded(
-                      child: _OptionButton(
-                      label: options[i],
-                      enabled: !locked && !revealed,
-                      border: border,
-                      isDark: isDark,
-                      showCorrect: revealed && i == answerIndex,
-                      onTap: () => onTap(i),
-                    ),
-                  ),
-                ],
-              ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          RgMonoLabel('Q$questionNumber · $subject'),
+          const SizedBox(height: 10),
+          Text(
+            question,
+            style: RgText.display(size: 15, height: 1.28),
+          ),
+          const SizedBox(height: 12),
+          for (var i = 0; i < options.length; i++) ...[
+            if (i > 0) const SizedBox(height: 8),
+            _DuelOption(
+              label: options[i],
+              enabled: !locked && !revealed,
+              isCorrect: revealed && wonRound && i == answerIndex,
+              isWrong: wrongIndex == i,
+              dimmed: (locked || revealed) &&
+                  wrongIndex != i &&
+                  !(revealed && wonRound && i == answerIndex),
+              onTap: () => onTap(i),
             ),
           ],
-        ),
+        ],
       ),
     );
   }
 }
 
-class _OptionButton extends StatelessWidget {
-  const _OptionButton({
+class _DuelOption extends StatelessWidget {
+  const _DuelOption({
     required this.label,
     required this.enabled,
-    required this.border,
-    required this.isDark,
-    required this.showCorrect,
+    required this.isCorrect,
+    required this.isWrong,
+    required this.dimmed,
     required this.onTap,
   });
 
   final String label;
   final bool enabled;
-  final Color border;
-  final bool isDark;
-  final bool showCorrect;
+  final bool isCorrect;
+  final bool isWrong;
+  final bool dimmed;
   final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-    Color bg = isDark
-        ? AppColors.surfaceSecondaryDark
-        : AppColors.surfaceSecondaryLight;
-    Color borderColor = border;
-    if (showCorrect) {
-      bg = isDark ? AppColors.correctBgDark : AppColors.correctBg;
-      borderColor = AppColors.correct;
+    var bg = RgColors.card;
+    var borderColor = RgColors.border14;
+    var textColor = RgColors.ink;
+
+    if (isWrong) {
+      bg = RgColors.wrongBg;
+      borderColor = RgColors.wrong;
+      textColor = RgColors.wrongText;
+    } else if (isCorrect) {
+      bg = RgColors.correctBg;
+      borderColor = RgColors.teal;
+      textColor = RgColors.tealDeep;
     }
 
-    return Material(
-      color: Colors.transparent,
-      child: InkWell(
-        onTap: enabled ? onTap : null,
-        borderRadius: BorderRadius.circular(AppRadius.md),
-        child: Ink(
-          padding: const EdgeInsets.symmetric(
-            vertical: AppSpacing.md,
-            horizontal: AppSpacing.sm,
-          ),
-          decoration: BoxDecoration(
-            color: bg,
-            borderRadius: BorderRadius.circular(AppRadius.md),
-            border: Border.all(
-              color: borderColor,
-              width: showCorrect ? 1.5 : 0.5,
+    Widget option = DecoratedBox(
+      decoration: BoxDecoration(
+        color: bg,
+        borderRadius: BorderRadius.circular(RgRadius.md),
+        border: Border.all(color: borderColor, width: 1.5),
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(RgRadius.md),
+        child: Stack(
+          children: [
+            if (isWrong)
+              const Positioned.fill(
+                child: CustomPaint(painter: _HazardStripePainter()),
+              ),
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 12,
+                vertical: 10,
+              ),
+              child: Row(
+                children: [
+                  if (isCorrect) ...[
+                    const Icon(
+                      Icons.check_circle_rounded,
+                      size: 15,
+                      color: RgColors.tealDeep,
+                    ),
+                    const SizedBox(width: 6),
+                  ],
+                  Expanded(
+                    child: Text(
+                      label,
+                      style: RgText.body(
+                        size: 13,
+                        weight: FontWeight.w600,
+                        color: textColor,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
-          ),
-          child: Text(
-            label,
-            textAlign: TextAlign.center,
-            style: AppTextStyles.label().copyWith(
-              color: scheme.onSurface,
-              fontWeight: FontWeight.w600,
-            ),
-          ),
+            if (isWrong)
+              Positioned(
+                top: -6,
+                right: -22,
+                child: Transform.rotate(
+                  angle: 0.489,
+                  child: Container(
+                    color: RgColors.wrong,
+                    padding: const EdgeInsets.fromLTRB(26, 8, 26, 3),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        const Icon(
+                          Icons.lock_rounded,
+                          size: 11,
+                          color: RgColors.onDark,
+                        ),
+                        const SizedBox(width: 3),
+                        Text(
+                          'LOCKED',
+                          style: RgText.mono(
+                            size: 9,
+                            letterSpacingEm: 0.06,
+                            color: RgColors.onDark,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+          ],
         ),
       ),
+    );
+
+    if (dimmed) option = Opacity(opacity: 0.55, child: option);
+
+    return Material(
+      color: RgColors.transparent,
+      child: InkWell(
+        onTap: enabled ? onTap : null,
+        borderRadius: BorderRadius.circular(RgRadius.md),
+        child: option,
+      ),
+    );
+  }
+}
+
+/// Diagonal hazard stripes painted across a locked-out option.
+class _HazardStripePainter extends CustomPainter {
+  const _HazardStripePainter();
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()
+      ..color = RgColors.wrong.withValues(alpha: 0.16)
+      ..strokeWidth = 6
+      ..style = PaintingStyle.stroke;
+    const gap = 12.0;
+    for (var x = -size.height; x < size.width; x += gap) {
+      canvas.drawLine(
+        Offset(x, size.height),
+        Offset(x + size.height, 0),
+        paint,
+      );
+    }
+  }
+
+  @override
+  bool shouldRepaint(covariant _HazardStripePainter oldDelegate) => false;
+}
+
+/// Solid teal seam carrying the running score, upright between the two halves.
+class _ScoreSeam extends StatelessWidget {
+  const _ScoreSeam({
+    required this.p1Score,
+    required this.p2Score,
+    required this.onExit,
+  });
+
+  final int p1Score;
+  final int p2Score;
+  final VoidCallback onExit;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 76,
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      color: RgColors.teal,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          _SeamScore(label: 'P2', score: p2Score, alignEnd: false),
+          Material(
+            color: RgColors.transparent,
+            shape: const CircleBorder(),
+            child: InkWell(
+              onTap: onExit,
+              customBorder: const CircleBorder(),
+              child: Container(
+                width: 44,
+                height: 44,
+                decoration: BoxDecoration(
+                  color: RgColors.tealDeep,
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                    color: RgColors.onDark.withValues(alpha: 0.35),
+                    width: 2,
+                  ),
+                ),
+                child: const Icon(
+                  Icons.close_rounded,
+                  size: 20,
+                  color: RgColors.pageBg,
+                ),
+              ),
+            ),
+          ),
+          _SeamScore(label: 'P1', score: p1Score, alignEnd: true),
+        ],
+      ),
+    );
+  }
+}
+
+class _SeamScore extends StatelessWidget {
+  const _SeamScore({
+    required this.label,
+    required this.score,
+    required this.alignEnd,
+  });
+
+  final String label;
+  final int score;
+  final bool alignEnd;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment:
+          alignEnd ? CrossAxisAlignment.end : CrossAxisAlignment.start,
+      children: [
+        Text(
+          label,
+          style: RgText.mono(
+            size: 8,
+            weight: FontWeight.w600,
+            letterSpacingEm: 0.1,
+            color: RgColors.onDark.withValues(alpha: 0.65),
+          ),
+        ),
+        Text(
+          '$score',
+          style: RgText.mono(
+            size: 26,
+            height: 1,
+            color: RgColors.onDark,
+          ),
+        ),
+      ],
     );
   }
 }
@@ -333,217 +473,231 @@ class _MatchOverView extends StatelessWidget {
   const _MatchOverView({
     required this.p1Score,
     required this.p2Score,
-    required this.onPlayAgain,
+    required this.onRematch,
     required this.onExit,
   });
 
   final int p1Score;
   final int p2Score;
-  final VoidCallback onPlayAgain;
+  final VoidCallback onRematch;
   final VoidCallback onExit;
 
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    final scheme = Theme.of(context).colorScheme;
-
-    return ColoredBox(
-      color: isDark
-          ? AppColors.surfacePrimaryDark
-          : AppColors.surfacePrimaryLight,
-      child: Column(
-        children: [
-          // Player 2 half — content hugged to the center fold, rotated 180°.
-          Expanded(
-            child: RotatedBox(
-              quarterTurns: 2,
-              child: Align(
-                alignment: Alignment.bottomCenter,
-                child: _EndCard(
-                  playerLabel: 'Player 2',
-                  ownScore: p2Score,
-                  otherScore: p1Score,
-                  onPlayAgain: onPlayAgain,
-                  onExit: onExit,
-                ),
-              ),
+    return Column(
+      children: [
+        Expanded(
+          child: RotatedBox(
+            quarterTurns: 2,
+            child: _EndHalf(
+              ownLabel: 'P2',
+              otherLabel: 'P1',
+              ownScore: p2Score,
+              otherScore: p1Score,
+              onExit: onExit,
             ),
           ),
-          // Shared center ribbon — upright score both can glance at.
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.symmetric(
-              vertical: AppSpacing.md,
-              horizontal: AppSpacing.lg,
-            ),
+        ),
+        _EndSeam(onRematch: onRematch),
+        Expanded(
+          child: _EndHalf(
+            ownLabel: 'P1',
+            otherLabel: 'P2',
+            ownScore: p1Score,
+            otherScore: p2Score,
+            onExit: onExit,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class _EndHalf extends StatelessWidget {
+  const _EndHalf({
+    required this.ownLabel,
+    required this.otherLabel,
+    required this.ownScore,
+    required this.otherScore,
+    required this.onExit,
+  });
+
+  final String ownLabel;
+  final String otherLabel;
+  final int ownScore;
+  final int otherScore;
+  final VoidCallback onExit;
+
+  @override
+  Widget build(BuildContext context) {
+    final won = ownScore > otherScore;
+    final lost = ownScore < otherScore;
+
+    final String stampText;
+    final Color stampBg;
+    final Color stampFg;
+    final Color scoreColor;
+    final String caption;
+    final double stampAngle;
+    if (won) {
+      stampText = 'VICTORY';
+      stampBg = RgColors.teal;
+      stampFg = RgColors.onDark;
+      scoreColor = RgColors.teal;
+      caption = 'You win, $ownLabel';
+      stampAngle = -0.052;
+    } else if (lost) {
+      stampText = 'DEFEAT';
+      stampBg = RgColors.stampNeutralBg;
+      stampFg = RgColors.muted;
+      scoreColor = RgColors.mutedSoft;
+      caption = '$otherLabel wins';
+      stampAngle = 0.052;
+    } else {
+      stampText = 'DRAW';
+      stampBg = RgColors.warningBg;
+      stampFg = RgColors.warningText;
+      scoreColor = RgColors.warning;
+      caption = 'Evenly matched';
+      stampAngle = -0.052;
+    }
+
+    final content = Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        if (won) ...[
+          const Icon(Icons.star_rounded, size: 28, color: RgColors.warning),
+          const SizedBox(height: 4),
+        ],
+        Transform.rotate(
+          angle: stampAngle,
+          child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 4),
             decoration: BoxDecoration(
-              color: isDark
-                  ? AppColors.surfaceSecondaryDark
-                  : AppColors.surfaceSecondaryLight,
-              border: Border.symmetric(
-                horizontal: BorderSide(
-                  color: isDark ? AppColors.borderDark : AppColors.borderLight,
-                ),
-              ),
+              color: stampBg,
+              borderRadius: BorderRadius.circular(3),
             ),
             child: Text(
-              'FINAL  ·  P2  $p2Score  —  $p1Score  P1',
-              textAlign: TextAlign.center,
-              style: AppTextStyles.label().copyWith(
-                color: scheme.onSurface,
-                fontWeight: FontWeight.w800,
-                letterSpacing: 0.6,
+              stampText,
+              style: RgText.mono(
+                size: 12,
+                letterSpacingEm: 0.1,
+                color: stampFg,
               ),
             ),
           ),
-          // Player 1 half — content hugged to the center fold, upright.
-          Expanded(
-            child: Align(
-              alignment: Alignment.topCenter,
-              child: _EndCard(
-                playerLabel: 'Player 1',
-                ownScore: p1Score,
-                otherScore: p2Score,
-                onPlayAgain: onPlayAgain,
-                onExit: onExit,
-              ),
-            ),
+        ),
+        const SizedBox(height: 10),
+        Text(
+          '$ownScore–$otherScore',
+          style: RgText.display(
+            size: 42,
+            weight: FontWeight.w800,
+            height: 1,
+            color: scoreColor,
           ),
-        ],
+        ),
+        const SizedBox(height: 6),
+        Text(
+          caption,
+          style: RgText.body(size: 13, weight: FontWeight.w600),
+        ),
+        TextButton(
+          onPressed: onExit,
+          style: TextButton.styleFrom(foregroundColor: RgColors.muted),
+          child: Text(
+            'Exit',
+            style: RgText.body(size: 12, color: RgColors.muted),
+          ),
+        ),
+      ],
+    );
+
+    if (!won) return Center(child: content);
+
+    // Winner half gets a scatter of confetti behind the stamp.
+    return Stack(
+      alignment: Alignment.center,
+      children: [
+        const Positioned(
+          top: 14,
+          left: 22,
+          child: _Confetti(RgColors.warning),
+        ),
+        const Positioned(
+          top: 34,
+          right: 26,
+          child: _Confetti(RgColors.info, round: true),
+        ),
+        const Positioned(top: 10, right: 70, child: _Confetti(RgColors.teal)),
+        const Positioned(
+          bottom: 16,
+          left: 40,
+          child: _Confetti(RgColors.wrong, round: true),
+        ),
+        const Positioned(
+          bottom: 26,
+          right: 20,
+          child: _Confetti(RgColors.warning),
+        ),
+        Center(child: content),
+      ],
+    );
+  }
+}
+
+class _Confetti extends StatelessWidget {
+  const _Confetti(this.color, {this.round = false});
+
+  final Color color;
+  final bool round;
+
+  @override
+  Widget build(BuildContext context) {
+    return Transform.rotate(
+      angle: round ? 0 : 0.35,
+      child: Container(
+        width: round ? 7 : 9,
+        height: round ? 7 : 9,
+        decoration: BoxDecoration(
+          color: color,
+          borderRadius: BorderRadius.circular(round ? 8 : 2),
+        ),
       ),
     );
   }
 }
 
-class _EndCard extends StatelessWidget {
-  const _EndCard({
-    required this.playerLabel,
-    required this.ownScore,
-    required this.otherScore,
-    required this.onPlayAgain,
-    required this.onExit,
-  });
+class _EndSeam extends StatelessWidget {
+  const _EndSeam({required this.onRematch});
 
-  final String playerLabel;
-  final int ownScore;
-  final int otherScore;
-  final VoidCallback onPlayAgain;
-  final VoidCallback onExit;
+  final VoidCallback onRematch;
 
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    final scheme = Theme.of(context).colorScheme;
-    final won = ownScore > otherScore;
-    final lost = ownScore < otherScore;
-    final draw = !won && !lost;
-
-    final Color accent;
-    final Color bg;
-    final String headline;
-    final IconData icon;
-    if (won) {
-      accent = AppColors.correct;
-      bg = isDark ? AppColors.correctBgDark : AppColors.correctBg;
-      headline = 'You win';
-      icon = Icons.emoji_events_rounded;
-    } else if (lost) {
-      accent = AppColors.wrong;
-      bg = isDark ? AppColors.wrongBgDark : AppColors.wrongBg;
-      headline = 'You lose';
-      icon = Icons.sentiment_dissatisfied_rounded;
-    } else {
-      accent = AppColors.warning;
-      bg = isDark ? AppColors.warningBgDark : AppColors.warningBg;
-      headline = 'Draw';
-      icon = Icons.handshake_rounded;
-    }
-
-    return SafeArea(
-      top: false,
-      bottom: false,
-      child: Padding(
-        padding: const EdgeInsets.fromLTRB(
-          AppSpacing.lg,
-          AppSpacing.md,
-          AppSpacing.lg,
-          AppSpacing.md,
-        ),
-        child: ConstrainedBox(
-          constraints: const BoxConstraints(maxWidth: 360),
+    return Container(
+      height: 76,
+      width: double.infinity,
+      color: RgColors.teal,
+      alignment: Alignment.center,
+      child: Material(
+        color: RgColors.transparent,
+        child: InkWell(
+          onTap: onRematch,
+          borderRadius: BorderRadius.circular(RgRadius.pill),
           child: Container(
-            width: double.infinity,
-            padding: const EdgeInsets.fromLTRB(
-              AppSpacing.xl,
-              AppSpacing.xl,
-              AppSpacing.xl,
-              AppSpacing.lg,
-            ),
+            padding: const EdgeInsets.symmetric(horizontal: 22, vertical: 10),
             decoration: BoxDecoration(
-              color: bg,
-              borderRadius: BorderRadius.circular(AppRadius.xl),
-              border: Border.all(color: accent.withValues(alpha: 0.45), width: 1.5),
+              color: RgColors.pageBg,
+              borderRadius: BorderRadius.circular(RgRadius.pill),
             ),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  playerLabel.toUpperCase(),
-                  style: AppTextStyles.caption().copyWith(
-                    color: scheme.onSurfaceVariant,
-                    fontWeight: FontWeight.w700,
-                    letterSpacing: 1.2,
-                  ),
-                ),
-                const SizedBox(height: AppSpacing.md),
-                Icon(icon, size: 40, color: accent),
-                const SizedBox(height: AppSpacing.sm),
-                Text(
-                  headline,
-                  style: AppTextStyles.h1().copyWith(
-                    color: accent,
-                    fontWeight: FontWeight.w800,
-                  ),
-                ),
-                const SizedBox(height: AppSpacing.sm),
-                Text(
-                  '$ownScore  –  $otherScore',
-                  style: AppTextStyles.h2().copyWith(
-                    color: scheme.onSurface,
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-                if (draw)
-                  Padding(
-                    padding: const EdgeInsets.only(top: AppSpacing.xs),
-                    child: Text(
-                      'Evenly matched',
-                      style: AppTextStyles.caption()
-                          .copyWith(color: scheme.onSurfaceVariant),
-                    ),
-                  ),
-                const SizedBox(height: AppSpacing.xl),
-                SizedBox(
-                  width: double.infinity,
-                  child: FilledButton(
-                    onPressed: onPlayAgain,
-                    style: FilledButton.styleFrom(
-                      backgroundColor: accent,
-                      foregroundColor: Colors.white,
-                      padding: const EdgeInsets.symmetric(
-                        vertical: AppSpacing.md,
-                      ),
-                    ),
-                    child: const Text('Rematch'),
-                  ),
-                ),
-                const SizedBox(height: AppSpacing.xs),
-                TextButton(
-                  onPressed: onExit,
-                  style: TextButton.styleFrom(foregroundColor: accent),
-                  child: const Text('Exit'),
-                ),
-              ],
+            child: Text(
+              'Rematch',
+              style: RgText.body(
+                size: 13,
+                weight: FontWeight.w700,
+                color: RgColors.teal,
+              ),
             ),
           ),
         ),

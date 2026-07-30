@@ -24,6 +24,9 @@ const dailyCaCalendarMinDateRemoteConfigKey = 'daily_ca_calendar_min_date';
 /// Remote Config: max QOTD posts per device in a rolling 24h window (int, default 3; enforced locally).
 const qotdMaxPostsPerDayRemoteConfigKey = 'qotd_max_posts_per_day';
 
+/// Remote Config: Fact or Bluff countdown seconds (int, default 10).
+const factOrBluffSecondsRemoteConfigKey = 'fact_or_bluff_seconds';
+
 /// Remote Config: mirrors Firestore `question_corrections/active.revision` (int).
 const questionCorrectionsRevisionRemoteConfigKey =
     'question_corrections_revision';
@@ -73,6 +76,7 @@ Future<KillSwitchSnapshot> killSwitch(Ref ref) async {
       dailyCaEnabledRemoteConfigKey: false,
       dailyCaCalendarMinDateRemoteConfigKey: '2026-06-05',
       qotdMaxPostsPerDayRemoteConfigKey: 3,
+      factOrBluffSecondsRemoteConfigKey: 10,
       questionCorrectionsRevisionRemoteConfigKey: 0,
       adminDashboardCollectionEnabledRemoteConfigKey: true,
       // YYYY-MM-DD (time defaults to 09:30 local)
@@ -137,5 +141,24 @@ Future<bool> dailyCaRemoteEnabled(Ref ref) async {
     );
   } on Object catch (_) {
     return false;
+  }
+}
+
+/// Fact or Bluff countdown length from Remote Config (seconds).
+///
+/// Defaults to 10. Clamped to 3–60. Waits for [killSwitchProvider] so RC
+/// defaults / fetch have run on mobile.
+@Riverpod(keepAlive: true)
+Future<int> factOrBluffSecondsRemote(Ref ref) async {
+  const fallback = 10;
+  if (kIsWeb) return fallback;
+  try {
+    await ref.watch(killSwitchProvider.future);
+    final n =
+        FirebaseRemoteConfig.instance.getInt(factOrBluffSecondsRemoteConfigKey);
+    if (n <= 0) return fallback;
+    return n.clamp(3, 60);
+  } on Object catch (_) {
+    return fallback;
   }
 }

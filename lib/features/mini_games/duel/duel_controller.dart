@@ -19,6 +19,8 @@ class DuelState {
     this.p2Score = 0,
     this.p1Locked = false,
     this.p2Locked = false,
+    this.p1WrongIndex,
+    this.p2WrongIndex,
     this.phase = DuelPhase.playing,
     this.roundWinner,
     this.revealedAnswer = false,
@@ -32,6 +34,10 @@ class DuelState {
   final int p2Score;
   final bool p1Locked;
   final bool p2Locked;
+
+  /// Option index each player tapped wrong this round (for the lockout stamp).
+  final int? p1WrongIndex;
+  final int? p2WrongIndex;
   final DuelPhase phase;
   final DuelPlayer? roundWinner;
   final bool revealedAnswer;
@@ -51,6 +57,9 @@ class DuelState {
     int? p2Score,
     bool? p1Locked,
     bool? p2Locked,
+    int? p1WrongIndex,
+    int? p2WrongIndex,
+    bool clearWrongIndices = false,
     DuelPhase? phase,
     DuelPlayer? roundWinner,
     bool clearRoundWinner = false,
@@ -65,6 +74,10 @@ class DuelState {
       p2Score: p2Score ?? this.p2Score,
       p1Locked: p1Locked ?? this.p1Locked,
       p2Locked: p2Locked ?? this.p2Locked,
+      p1WrongIndex:
+          clearWrongIndices ? null : (p1WrongIndex ?? this.p1WrongIndex),
+      p2WrongIndex:
+          clearWrongIndices ? null : (p2WrongIndex ?? this.p2WrongIndex),
       phase: phase ?? this.phase,
       roundWinner:
           clearRoundWinner ? null : (roundWinner ?? this.roundWinner),
@@ -148,14 +161,20 @@ class DuelController extends AsyncNotifier<DuelState> {
       return;
     }
 
-    // Wrong tap: lock that player out.
+    // Wrong tap: lock that player out and remember which option they hit.
     final p1Locked = player == DuelPlayer.one ? true : current.p1Locked;
     final p2Locked = player == DuelPlayer.two ? true : current.p2Locked;
+    final p1WrongIndex =
+        player == DuelPlayer.one ? optionIndex : current.p1WrongIndex;
+    final p2WrongIndex =
+        player == DuelPlayer.two ? optionIndex : current.p2WrongIndex;
     if (p1Locked && p2Locked) {
       state = AsyncData(
         current.copyWith(
           p1Locked: p1Locked,
           p2Locked: p2Locked,
+          p1WrongIndex: p1WrongIndex,
+          p2WrongIndex: p2WrongIndex,
           phase: DuelPhase.bothWrong,
           revealedAnswer: true,
           clearRoundWinner: true,
@@ -163,7 +182,12 @@ class DuelController extends AsyncNotifier<DuelState> {
       );
     } else {
       state = AsyncData(
-        current.copyWith(p1Locked: p1Locked, p2Locked: p2Locked),
+        current.copyWith(
+          p1Locked: p1Locked,
+          p2Locked: p2Locked,
+          p1WrongIndex: p1WrongIndex,
+          p2WrongIndex: p2WrongIndex,
+        ),
       );
     }
   }
@@ -189,6 +213,7 @@ class DuelController extends AsyncNotifier<DuelState> {
         questionIndex: nextIndex,
         p1Locked: false,
         p2Locked: false,
+        clearWrongIndices: true,
         phase: DuelPhase.playing,
         clearRoundWinner: true,
         revealedAnswer: false,
