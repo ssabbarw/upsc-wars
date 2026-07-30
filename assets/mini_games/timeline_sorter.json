@@ -8,30 +8,37 @@
       {
         "label": "Chandragupta I establishes the Gupta Empire",
         "year_display": "c. 320 CE",
-        "sort_key": 320
+        "sort_key": 320,
+        "label_hi": "चंद्रगुप्त प्रथम ने गुप्त साम्राज्य की स्थापना की"
       },
       {
         "label": "Samudragupta's conquests recorded in the Allahabad Prashasti",
         "year_display": "c. 350 CE",
-        "sort_key": 350
+        "sort_key": 350,
+        "label_hi": "समुद्रगुप्त की विजयों का इलाहाबाद प्रशस्ति में वर्णन"
       },
       {
         "label": "Chandragupta II (Vikramaditya) begins his reign",
         "year_display": "c. 380 CE",
-        "sort_key": 380
+        "sort_key": 380,
+        "label_hi": "चंद्रगुप्त द्वितीय (विक्रमादित्य) का शासनकाल आरंभ"
       },
       {
         "label": "Huna invasions begin, resisted by Skandagupta",
         "year_display": "c. 455 CE",
-        "sort_key": 455
+        "sort_key": 455,
+        "label_hi": "हूण आक्रमण आरंभ, स्कंदगुप्त द्वारा प्रतिरोध"
       },
       {
         "label": "Gupta Empire effectively ends",
         "year_display": "c. 550 CE",
-        "sort_key": 550
+        "sort_key": 550,
+        "label_hi": "गुप्त साम्राज्य का प्रभावी रूप से अंत"
       }
     ],
-    "explanation": "The Guptas rose through Chandragupta I's founding marriage alliance, Samudragupta's military expansion, and Chandragupta II's golden-age patronage of arts and science — before repeated Huna invasions from the mid-5th century wore the empire down over the following century."
+    "explanation": "The Guptas rose through Chandragupta I's founding marriage alliance, Samudragupta's military expansion, and Chandragupta II's golden-age patronage of arts and science — before repeated Huna invasions from the mid-5th century wore the empire down over the following century.",
+    "theme_hi": "गुप्त साम्राज्य — उदय और पतन",
+    "explanation_hi": "गुप्तों का उदय चंद्रगुप्त प्रथम के संस्थापक वैवाहिक गठबंधन, समुद्रगुप्त के सैन्य विस्तार, और चंद्रगुप्त द्वितीय के स्वर्णयुगीन कला व विज्ञान संरक्षण से हुआ — इसके बाद 5वीं शताब्दी के मध्य से बार-बार हुए हूण आक्रमणों ने अगली शताब्दी में साम्राज्य को धीरे-धीरे कमज़ोर कर दिया।"
   },
   {
     "id": "tl_002",
@@ -42,30 +49,37 @@
       {
         "label": "Mature phase of the Harappan Civilisation begins",
         "year_display": "c. 2600 BCE",
-        "sort_key": -2600
+        "sort_key": -2600,
+        "label_hi": "हड़प्पा सभ्यता का परिपक्व चरण आरंभ"
       },
       {
         "label": "Composition of the Rigveda",
         "year_display": "c. 1500 BCE",
-        "sort_key": -1500
+        "sort_key": -1500,
+        "label_hi": "ऋग्वेद की रचना"
       },
       {
         "label": "Rise of the sixteen Mahajanapadas",
         "year_display": "c. 600 BCE",
-        "sort_key": -600
+        "sort_key": -600,
+        "label_hi": "सोलह महाजनपदों का उदय"
       },
       {
         "label": "Chandragupta Maurya founds the Mauryan Empire",
         "year_display": "321 BCE",
-        "sort_key": -321
+        "sort_key": -321,
+        "label_hi": "चंद्रगुप्त मौर्य ने मौर्य साम्राज्य की स्थापना की"
       },
       {
         "label": "Chandragupta I founds the Gupta Empire",
         "year_display": "c. 320 CE",
-        "sort_key": 320
+        "sort_key": 320,
+        "label_hi": "चंद्रगुप्त प्रथम ने गुप्त साम्राज्य की स्थापना की"
       }
     ],
-    "explanation": "This is the backbone chronology of ancient India: urban Harappan cities, then the Vedic age, then territorial Mahajanapadas, and finally the two great pan-Indian empires — the Mauryas and, some six centuries later, the Guptas."
+    "explanation": "This is the backbone chronology of ancient India: urban Harappan cities, then the Vedic age, then territorial Mahajanapadas, and finally the two great pan-Indian empires — the Mauryas and, some six centuries later, the Guptas.",
+    "theme_hi": "प्रारंभिक भारतीय सभ्यता के महत्वपूर्ण पड़ाव",
+    "explanation_hi": "यह प्राचीन भारत की मूल कालक्रम रेखा है: पहले हड़प्पाई नगरीय सभ्यता, फिर वैदिक युग, फिर क्षेत्रीय महाजनपद, और अंततः दो महान अखिल-भारतीय साम्राज्य — मौर्य और, लगभग छह शताब्दी बाद, गुप्त।"
   },
   {
     "id": "tl_003",
@@ -76,25 +90,31 @@
       {
         "label": "Chandragupta Maurya seizes the Nanda throne",
         "year_display": "321 BCE",
-        "sort_key": -321
+        "sort_key": -321,
+        "label_hi": "चंद्रगुप्त मौर्य ने नंद सिंहासन पर अधिकार किया"
       },
       {
         "label": "Bindusara succeeds Chandragupta",
         "year_display": "c. 297 BCE",
-        "sort_key": -297
+        "sort_key": -297,
+        "label_hi": "बिंदुसार चंद्रगुप्त का उत्तराधिकारी बना"
       },
       {
         "label": "Ashoka's accession to the throne",
         "year_display": "c. 268 BCE",
-        "sort_key": -268
+        "sort_key": -268,
+        "label_hi": "अशोक का सिंहासनारोहण"
       },
       {
         "label": "Last Mauryan king Brihadratha assassinated by Pushyamitra Shunga",
         "year_display": "185 BCE",
-        "sort_key": -185
+        "sort_key": -185,
+        "label_hi": "अंतिम मौर्य राजा बृहद्रथ की पुष्यमित्र शुंग द्वारा हत्या"
       }
     ],
-    "explanation": "The Mauryan Empire passed from its founder Chandragupta to his son Bindusara and then to Ashoka; about half a century after Ashoka's death, the dynasty ended when its commander-in-chief Pushyamitra Shunga killed the last king in 185 BCE."
+    "explanation": "The Mauryan Empire passed from its founder Chandragupta to his son Bindusara and then to Ashoka; about half a century after Ashoka's death, the dynasty ended when its commander-in-chief Pushyamitra Shunga killed the last king in 185 BCE.",
+    "theme_hi": "मौर्य साम्राज्य के शासक",
+    "explanation_hi": "मौर्य साम्राज्य अपने संस्थापक चंद्रगुप्त से उनके पुत्र बिंदुसार को और फिर अशोक को हस्तांतरित हुआ; अशोक की मृत्यु के लगभग आधी शताब्दी बाद, इस वंश का अंत तब हुआ जब इसके सेनापति पुष्यमित्र शुंग ने 185 ईसा पूर्व में अंतिम राजा की हत्या कर दी।"
   },
   {
     "id": "tl_004",
@@ -105,25 +125,31 @@
       {
         "label": "First Buddhist Council at Rajagriha",
         "year_display": "c. 483 BCE",
-        "sort_key": -483
+        "sort_key": -483,
+        "label_hi": "राजगृह में प्रथम बौद्ध संगीति"
       },
       {
         "label": "Second Buddhist Council at Vaishali",
         "year_display": "c. 383 BCE",
-        "sort_key": -383
+        "sort_key": -383,
+        "label_hi": "वैशाली में द्वितीय बौद्ध संगीति"
       },
       {
         "label": "Third Buddhist Council at Pataliputra under Ashoka",
         "year_display": "c. 250 BCE",
-        "sort_key": -250
+        "sort_key": -250,
+        "label_hi": "अशोक के अधीन पाटलिपुत्र में तृतीय बौद्ध संगीति"
       },
       {
         "label": "Fourth Buddhist Council in Kashmir under Kanishka",
         "year_display": "c. 78 CE",
-        "sort_key": 78
+        "sort_key": 78,
+        "label_hi": "कनिष्क के अधीन कश्मीर में चतुर्थ बौद्ध संगीति"
       }
     ],
-    "explanation": "The councils track Buddhism's institutional evolution: the first compiled the Buddha's teachings just after his death, the second saw the Mahasanghika split, Ashoka's third council sent out missionaries, and Kanishka's fourth council is associated with the rise of Mahayana."
+    "explanation": "The councils track Buddhism's institutional evolution: the first compiled the Buddha's teachings just after his death, the second saw the Mahasanghika split, Ashoka's third council sent out missionaries, and Kanishka's fourth council is associated with the rise of Mahayana.",
+    "theme_hi": "चार बौद्ध संगीतियाँ",
+    "explanation_hi": "ये संगीतियाँ बौद्ध धर्म के संस्थागत विकास को दर्शाती हैं: प्रथम संगीति में बुद्ध की मृत्यु के तुरंत बाद उनकी शिक्षाओं का संकलन हुआ, द्वितीय संगीति में महासांघिक विभाजन हुआ, अशोक की तृतीय संगीति ने धर्मप्रचारक भेजे, और कनिष्क की चतुर्थ संगीति महायान के उदय से जुड़ी है।"
   },
   {
     "id": "tl_005",
@@ -134,30 +160,37 @@
       {
         "label": "Persian (Achaemenid) campaign into the Indus region",
         "year_display": "c. 518 BCE",
-        "sort_key": -518
+        "sort_key": -518,
+        "label_hi": "सिंधु क्षेत्र में फारसी (अखमेनिद) अभियान"
       },
       {
         "label": "Alexander's invasion of northwest India",
         "year_display": "326 BCE",
-        "sort_key": -326
+        "sort_key": -326,
+        "label_hi": "उत्तर-पश्चिमी भारत पर सिकंदर का आक्रमण"
       },
       {
         "label": "Indo-Greek invasions begin",
         "year_display": "c. 180 BCE",
-        "sort_key": -180
+        "sort_key": -180,
+        "label_hi": "भारत-यूनानी आक्रमण आरंभ"
       },
       {
         "label": "Saka rule established in western India",
         "year_display": "c. 90 BCE",
-        "sort_key": -90
+        "sort_key": -90,
+        "label_hi": "पश्चिमी भारत में शक शासन की स्थापना"
       },
       {
         "label": "Kushan rule established under Kadphises",
         "year_display": "c. 30 CE",
-        "sort_key": 30
+        "sort_key": 30,
+        "label_hi": "कदफिसस के अधीन कुषाण शासन की स्थापना"
       }
     ],
-    "explanation": "India saw a long sequence of overland invasions from the northwest, each leaving successors who eventually assimilated. The Persians came first, followed by Alexander, then Indo-Greek kings, Sakas, and finally the Kushans — who built one of ancient India's most extensive empires."
+    "explanation": "India saw a long sequence of overland invasions from the northwest, each leaving successors who eventually assimilated. The Persians came first, followed by Alexander, then Indo-Greek kings, Sakas, and finally the Kushans — who built one of ancient India's most extensive empires.",
+    "theme_hi": "प्राचीन भारत पर विदेशी आक्रमण",
+    "explanation_hi": "भारत ने उत्तर-पश्चिम से स्थल मार्ग द्वारा आक्रमणों की एक लंबी श्रृंखला देखी, जिनमें से प्रत्येक ने ऐसे उत्तराधिकारी छोड़े जो अंततः आत्मसात हो गए। सबसे पहले फारसी आए, फिर सिकंदर, फिर भारत-यूनानी राजा, शक, और अंततः कुषाण — जिन्होंने प्राचीन भारत के सबसे विस्तृत साम्राज्यों में से एक का निर्माण किया।"
   },
   {
     "id": "tl_006",
@@ -168,25 +201,31 @@
       {
         "label": "Megasthenes arrives at Chandragupta Maurya's court",
         "year_display": "c. 302 BCE",
-        "sort_key": -302
+        "sort_key": -302,
+        "label_hi": "मेगस्थनीज़ चंद्रगुप्त मौर्य के दरबार में आया"
       },
       {
         "label": "Fa-Hien travels through Gupta India",
         "year_display": "c. 405 CE",
-        "sort_key": 405
+        "sort_key": 405,
+        "label_hi": "फाह्यान गुप्तकालीन भारत में यात्रा करता है"
       },
       {
         "label": "Hiuen Tsang arrives in India during Harsha's reign",
         "year_display": "c. 630 CE",
-        "sort_key": 630
+        "sort_key": 630,
+        "label_hi": "ह्वेनसांग हर्ष के शासनकाल में भारत आया"
       },
       {
         "label": "I-tsing studies at Nalanda",
         "year_display": "c. 675 CE",
-        "sort_key": 675
+        "sort_key": 675,
+        "label_hi": "इत्सिंग नालंदा में अध्ययन करता है"
       }
     ],
-    "explanation": "Each traveller anchors a ruler: Megasthenes came as Seleucus's envoy to Chandragupta Maurya, Fa-Hien saw Chandragupta II's Gupta realm, Hiuen Tsang was welcomed by Harsha, and I-tsing documented monastic life at Nalanda a generation later."
+    "explanation": "Each traveller anchors a ruler: Megasthenes came as Seleucus's envoy to Chandragupta Maurya, Fa-Hien saw Chandragupta II's Gupta realm, Hiuen Tsang was welcomed by Harsha, and I-tsing documented monastic life at Nalanda a generation later.",
+    "theme_hi": "प्राचीन भारत की यात्रा करने वाले विदेशी यात्री",
+    "explanation_hi": "प्रत्येक यात्री किसी शासक से जुड़ा है: मेगस्थनीज़ सेल्यूकस के राजदूत के रूप में चंद्रगुप्त मौर्य के पास आया, फाह्यान ने चंद्रगुप्त द्वितीय के गुप्त राज्य को देखा, ह्वेनसांग का हर्ष ने स्वागत किया, और इत्सिंग ने एक पीढ़ी बाद नालंदा के मठवासी जीवन का दस्तावेज़ीकरण किया।"
   },
   {
     "id": "tl_007",
@@ -197,30 +236,37 @@
       {
         "label": "Bimbisara begins Haryanka rule",
         "year_display": "c. 544 BCE",
-        "sort_key": -544
+        "sort_key": -544,
+        "label_hi": "बिंबिसार ने हर्यंक शासन आरंभ किया"
       },
       {
         "label": "Shishunaga dynasty replaces the Haryankas",
         "year_display": "c. 412 BCE",
-        "sort_key": -412
+        "sort_key": -412,
+        "label_hi": "शिशुनाग वंश ने हर्यंकों का स्थान लिया"
       },
       {
         "label": "Mahapadma Nanda founds the Nanda dynasty",
         "year_display": "c. 344 BCE",
-        "sort_key": -344
+        "sort_key": -344,
+        "label_hi": "महापद्म नंद ने नंद वंश की स्थापना की"
       },
       {
         "label": "Chandragupta Maurya overthrows the Nandas",
         "year_display": "321 BCE",
-        "sort_key": -321
+        "sort_key": -321,
+        "label_hi": "चंद्रगुप्त मौर्य ने नंदों को अपदस्थ किया"
       },
       {
         "label": "Pushyamitra Shunga founds the Shunga dynasty",
         "year_display": "185 BCE",
-        "sort_key": -185
+        "sort_key": -185,
+        "label_hi": "पुष्यमित्र शुंग ने शुंग वंश की स्थापना की"
       }
     ],
-    "explanation": "Magadha's throne passed through a fixed sequence — Haryanka, Shishunaga, Nanda, Maurya, Shunga — with each dynasty typically ending in a coup by its own minister or general."
+    "explanation": "Magadha's throne passed through a fixed sequence — Haryanka, Shishunaga, Nanda, Maurya, Shunga — with each dynasty typically ending in a coup by its own minister or general.",
+    "theme_hi": "मगध के राजवंश",
+    "explanation_hi": "मगध का सिंहासन एक निश्चित क्रम से गुज़रा — हर्यंक, शिशुनाग, नंद, मौर्य, शुंग — जिसमें प्रत्येक वंश का अंत सामान्यतः उसके अपने मंत्री या सेनापति के तख्तापलट से हुआ।"
   },
   {
     "id": "tl_008",
@@ -231,25 +277,31 @@
       {
         "label": "Taxila flourishes as a centre of learning",
         "year_display": "c. 500 BCE",
-        "sort_key": -500
+        "sort_key": -500,
+        "label_hi": "तक्षशिला शिक्षा के केंद्र के रूप में फलता-फूलता है"
       },
       {
         "label": "Nalanda Mahavihara founded under Kumaragupta I",
         "year_display": "c. 427 CE",
-        "sort_key": 427
+        "sort_key": 427,
+        "label_hi": "कुमारगुप्त प्रथम के अधीन नालंदा महाविहार की स्थापना"
       },
       {
         "label": "Valabhi university flourishes under the Maitrakas",
         "year_display": "c. 600 CE",
-        "sort_key": 600
+        "sort_key": 600,
+        "label_hi": "मैत्रकों के अधीन वल्लभी विश्वविद्यालय फलता-फूलता है"
       },
       {
         "label": "Vikramashila founded by Pala king Dharmapala",
         "year_display": "c. 800 CE",
-        "sort_key": 800
+        "sort_key": 800,
+        "label_hi": "पाल राजा धर्मपाल द्वारा विक्रमशिला की स्थापना"
       }
     ],
-    "explanation": "India's ancient universities rose in sequence: Taxila in the far northwest during the late Vedic age, Nalanda under Gupta patronage, Valabhi in Gujarat under the Maitrakas, and Vikramashila as the Palas' great Buddhist foundation in the east."
+    "explanation": "India's ancient universities rose in sequence: Taxila in the far northwest during the late Vedic age, Nalanda under Gupta patronage, Valabhi in Gujarat under the Maitrakas, and Vikramashila as the Palas' great Buddhist foundation in the east.",
+    "theme_hi": "प्राचीन शिक्षा के महान केंद्र",
+    "explanation_hi": "भारत के प्राचीन विश्वविद्यालय क्रमवार उभरे: उत्तर-पश्चिम के सुदूर तक्षशिला में उत्तर-वैदिक युग में, गुप्त संरक्षण में नालंदा, गुजरात में मैत्रकों के अधीन वल्लभी, और पूर्व में पालों की महान बौद्ध स्थापना के रूप में विक्रमशिला।"
   },
   {
     "id": "tl_009",
@@ -260,30 +312,37 @@
       {
         "label": "Harappa excavated by Daya Ram Sahni",
         "year_display": "1921",
-        "sort_key": 1921
+        "sort_key": 1921,
+        "label_hi": "दया राम साहनी द्वारा हड़प्पा की खुदाई"
       },
       {
         "label": "Mohenjo-daro excavated by R. D. Banerji",
         "year_display": "1922",
-        "sort_key": 1922
+        "sort_key": 1922,
+        "label_hi": "आर. डी. बनर्जी द्वारा मोहनजोदड़ो की खुदाई"
       },
       {
         "label": "Kalibangan identified by A. Ghosh",
         "year_display": "1953",
-        "sort_key": 1953
+        "sort_key": 1953,
+        "label_hi": "ए. घोष द्वारा कालीबंगा की पहचान"
       },
       {
         "label": "Lothal discovered by S. R. Rao",
         "year_display": "1954",
-        "sort_key": 1954
+        "sort_key": 1954,
+        "label_hi": "एस. आर. राव द्वारा लोथल की खोज"
       },
       {
         "label": "Dholavira discovered by J. P. Joshi",
         "year_display": "1968",
-        "sort_key": 1968
+        "sort_key": 1968,
+        "label_hi": "जे. पी. जोशी द्वारा धौलावीरा की खोज"
       }
     ],
-    "explanation": "The civilisation itself was revealed in 1921-22 with the twin digs at Harappa and Mohenjo-daro; after Partition placed both in Pakistan, Indian archaeologists located major sites at home — Kalibangan, Lothal and finally Dholavira."
+    "explanation": "The civilisation itself was revealed in 1921-22 with the twin digs at Harappa and Mohenjo-daro; after Partition placed both in Pakistan, Indian archaeologists located major sites at home — Kalibangan, Lothal and finally Dholavira.",
+    "theme_hi": "हड़प्पा स्थलों की खोज",
+    "explanation_hi": "यह सभ्यता स्वयं 1921-22 में हड़प्पा और मोहनजोदड़ो की युगल खुदाइयों से प्रकाश में आई; विभाजन के बाद जब दोनों पाकिस्तान में चले गए, तो भारतीय पुरातत्वविदों ने देश में ही प्रमुख स्थलों — कालीबंगा, लोथल और अंततः धौलावीरा — का पता लगाया।"
   },
   {
     "id": "tl_010",
@@ -294,30 +353,37 @@
       {
         "label": "Kalinga War transforms Ashoka",
         "year_display": "c. 261 BCE",
-        "sort_key": -261
+        "sort_key": -261,
+        "label_hi": "कलिंग युद्ध ने अशोक को बदल दिया"
       },
       {
         "label": "Major Rock Edicts issued",
         "year_display": "c. 256 BCE",
-        "sort_key": -256
+        "sort_key": -256,
+        "label_hi": "प्रमुख शिलालेख जारी किए गए"
       },
       {
         "label": "Third Buddhist Council at Pataliputra",
         "year_display": "c. 250 BCE",
-        "sort_key": -250
+        "sort_key": -250,
+        "label_hi": "पाटलिपुत्र में तृतीय बौद्ध संगीति"
       },
       {
         "label": "Pillar Edicts inscribed",
         "year_display": "c. 242 BCE",
-        "sort_key": -242
+        "sort_key": -242,
+        "label_hi": "स्तंभ लेख अंकित किए गए"
       },
       {
         "label": "Death of Ashoka",
         "year_display": "c. 232 BCE",
-        "sort_key": -232
+        "sort_key": -232,
+        "label_hi": "अशोक की मृत्यु"
       }
     ],
-    "explanation": "Everything follows from Kalinga: the remorseful emperor turned to dhamma, broadcast it first on rock edicts, convened the Third Council to purify the sangha, and issued the pillar edicts late in a reign that ended around 232 BCE."
+    "explanation": "Everything follows from Kalinga: the remorseful emperor turned to dhamma, broadcast it first on rock edicts, convened the Third Council to purify the sangha, and issued the pillar edicts late in a reign that ended around 232 BCE.",
+    "theme_hi": "अशोक का शासनकाल विस्तार से",
+    "explanation_hi": "सब कुछ कलिंग से आरंभ होता है: पश्चातापी सम्राट धम्म की ओर मुड़ा, पहले उसे शिलालेखों पर प्रसारित किया, संघ को शुद्ध करने के लिए तृतीय संगीति बुलाई, और अपने शासनकाल के अंत में स्तंभ लेख जारी किए, जो लगभग 232 ईसा पूर्व में समाप्त हुआ।"
   },
   {
     "id": "tl_011",
@@ -328,25 +394,31 @@
       {
         "label": "Vikram Samvat era begins",
         "year_display": "57 BCE",
-        "sort_key": -57
+        "sort_key": -57,
+        "label_hi": "विक्रम संवत् का आरंभ"
       },
       {
         "label": "Saka era begins (linked to Kanishka's accession)",
         "year_display": "78 CE",
-        "sort_key": 78
+        "sort_key": 78,
+        "label_hi": "शक संवत् का आरंभ (कनिष्क के सिंहासनारोहण से संबद्ध)"
       },
       {
         "label": "Gupta era begins with Chandragupta I",
         "year_display": "320 CE",
-        "sort_key": 320
+        "sort_key": 320,
+        "label_hi": "चंद्रगुप्त प्रथम के साथ गुप्त संवत् का आरंभ"
       },
       {
         "label": "Harsha era begins with Harshavardhana's accession",
         "year_display": "606 CE",
-        "sort_key": 606
+        "sort_key": 606,
+        "label_hi": "हर्षवर्धन के सिंहासनारोहण के साथ हर्ष संवत् का आरंभ"
       }
     ],
-    "explanation": "Indian inscriptions date events by eras founded at royal accessions: Vikram Samvat (57 BCE), the Saka era (78 CE, later adopted as India's national calendar), the Gupta era (320 CE) and the Harsha era (606 CE)."
+    "explanation": "Indian inscriptions date events by eras founded at royal accessions: Vikram Samvat (57 BCE), the Saka era (78 CE, later adopted as India's national calendar), the Gupta era (320 CE) and the Harsha era (606 CE).",
+    "theme_hi": "भारतीय इतिहास की संवत् प्रणालियाँ",
+    "explanation_hi": "भारतीय अभिलेख घटनाओं की तिथि राजाओं के सिंहासनारोहण पर स्थापित संवतों के अनुसार देते हैं: विक्रम संवत् (57 ईसा पूर्व), शक संवत् (78 ई., बाद में भारत के राष्ट्रीय पंचांग के रूप में अपनाया गया), गुप्त संवत् (320 ई.) और हर्ष संवत् (606 ई.)।"
   },
   {
     "id": "tl_012",
@@ -357,30 +429,37 @@
       {
         "label": "Alexander invades northwest India, Battle of Hydaspes",
         "year_display": "326 BCE",
-        "sort_key": -326
+        "sort_key": -326,
+        "label_hi": "सिकंदर का उत्तर-पश्चिमी भारत पर आक्रमण, हाइडेस्पीज़ का युद्ध"
       },
       {
         "label": "Alexander dies at Babylon",
         "year_display": "323 BCE",
-        "sort_key": -323
+        "sort_key": -323,
+        "label_hi": "सिकंदर की बेबीलोन में मृत्यु"
       },
       {
         "label": "Chandragupta Maurya founds his empire",
         "year_display": "321 BCE",
-        "sort_key": -321
+        "sort_key": -321,
+        "label_hi": "चंद्रगुप्त मौर्य ने अपने साम्राज्य की स्थापना की"
       },
       {
         "label": "Seleucus cedes territory to Chandragupta by treaty",
         "year_display": "c. 305 BCE",
-        "sort_key": -305
+        "sort_key": -305,
+        "label_hi": "सेल्यूकस ने संधि द्वारा चंद्रगुप्त को क्षेत्र सौंपा"
       },
       {
         "label": "Bindusara succeeds Chandragupta",
         "year_display": "c. 297 BCE",
-        "sort_key": -297
+        "sort_key": -297,
+        "label_hi": "बिंदुसार चंद्रगुप्त का उत्तराधिकारी बना"
       }
     ],
-    "explanation": "Alexander's withdrawal and death created a power vacuum in the northwest that Chandragupta exploited within two years; his treaty with Seleucus around 305 BCE fixed the empire's western frontier before Bindusara inherited it."
+    "explanation": "Alexander's withdrawal and death created a power vacuum in the northwest that Chandragupta exploited within two years; his treaty with Seleucus around 305 BCE fixed the empire's western frontier before Bindusara inherited it.",
+    "theme_hi": "सिकंदर से मौर्यों तक",
+    "explanation_hi": "सिकंदर की वापसी और मृत्यु ने उत्तर-पश्चिम में एक सत्ता शून्य पैदा किया जिसका चंद्रगुप्त ने दो वर्षों के भीतर लाभ उठाया; लगभग 305 ईसा पूर्व सेल्यूकस के साथ उसकी संधि ने साम्राज्य की पश्चिमी सीमा तय की, इससे पहले कि बिंदुसार को यह विरासत में मिले।"
   },
   {
     "id": "tl_013",
@@ -391,30 +470,37 @@
       {
         "label": "Mamluk (Slave) dynasty founded by Qutb-ud-din Aibak",
         "year_display": "1206",
-        "sort_key": 1206
+        "sort_key": 1206,
+        "label_hi": "कुतुबुद्दीन ऐबक द्वारा मामलुक (गुलाम) वंश की स्थापना"
       },
       {
         "label": "Khilji dynasty founded by Jalaluddin Khilji",
         "year_display": "1290",
-        "sort_key": 1290
+        "sort_key": 1290,
+        "label_hi": "जलालुद्दीन खिलजी द्वारा खिलजी वंश की स्थापना"
       },
       {
         "label": "Tughlaq dynasty founded by Ghiyasuddin Tughlaq",
         "year_display": "1320",
-        "sort_key": 1320
+        "sort_key": 1320,
+        "label_hi": "गियासुद्दीन तुगलक द्वारा तुगलक वंश की स्थापना"
       },
       {
         "label": "Sayyid dynasty founded by Khizr Khan",
         "year_display": "1414",
-        "sort_key": 1414
+        "sort_key": 1414,
+        "label_hi": "खिज्र खान द्वारा सैयद वंश की स्थापना"
       },
       {
         "label": "Lodi dynasty founded by Bahlul Lodi",
         "year_display": "1451",
-        "sort_key": 1451
+        "sort_key": 1451,
+        "label_hi": "बहलोल लोदी द्वारा लोदी वंश की स्थापना"
       }
     ],
-    "explanation": "Five dynasties ruled the Delhi Sultanate in unbroken sequence over roughly 250 years, ending when Babur defeated Ibrahim Lodi at Panipat in 1526 to found the Mughal Empire."
+    "explanation": "Five dynasties ruled the Delhi Sultanate in unbroken sequence over roughly 250 years, ending when Babur defeated Ibrahim Lodi at Panipat in 1526 to found the Mughal Empire.",
+    "theme_hi": "दिल्ली सल्तनत के राजवंश",
+    "explanation_hi": "पाँच राजवंशों ने लगभग 250 वर्षों तक निरंतर क्रम में दिल्ली सल्तनत पर शासन किया, जिसका अंत तब हुआ जब बाबर ने 1526 में पानीपत में इब्राहीम लोदी को पराजित कर मुग़ल साम्राज्य की स्थापना की।"
   },
   {
     "id": "tl_014",
@@ -425,30 +511,37 @@
       {
         "label": "Babur becomes the first Mughal emperor",
         "year_display": "1526",
-        "sort_key": 1526
+        "sort_key": 1526,
+        "label_hi": "बाबर पहला मुग़ल सम्राट बना"
       },
       {
         "label": "Humayun succeeds Babur",
         "year_display": "1530",
-        "sort_key": 1530
+        "sort_key": 1530,
+        "label_hi": "हुमायूँ बाबर का उत्तराधिकारी बना"
       },
       {
         "label": "Akbar's accession at Kalanaur",
         "year_display": "1556",
-        "sort_key": 1556
+        "sort_key": 1556,
+        "label_hi": "कलानौर में अकबर का सिंहासनारोहण"
       },
       {
         "label": "Jahangir's accession",
         "year_display": "1605",
-        "sort_key": 1605
+        "sort_key": 1605,
+        "label_hi": "जहाँगीर का सिंहासनारोहण"
       },
       {
         "label": "Shah Jahan's accession",
         "year_display": "1628",
-        "sort_key": 1628
+        "sort_key": 1628,
+        "label_hi": "शाहजहाँ का सिंहासनारोहण"
       }
     ],
-    "explanation": "The succession of the first five Great Mughals runs Babur, Humayun, Akbar, Jahangir, Shah Jahan — with Akbar's fifty-year reign (1556-1605) forming the empire's consolidating core."
+    "explanation": "The succession of the first five Great Mughals runs Babur, Humayun, Akbar, Jahangir, Shah Jahan — with Akbar's fifty-year reign (1556-1605) forming the empire's consolidating core.",
+    "theme_hi": "महान मुग़ल सम्राट",
+    "explanation_hi": "पहले पाँच महान मुग़लों का उत्तराधिकार क्रम है — बाबर, हुमायूँ, अकबर, जहाँगीर, शाहजहाँ — जिसमें अकबर का पचास वर्षीय शासनकाल (1556-1605) साम्राज्य को सुदृढ़ करने वाला मूल आधार बना।"
   },
   {
     "id": "tl_015",
@@ -459,30 +552,37 @@
       {
         "label": "First Battle of Panipat — Babur defeats Ibrahim Lodi",
         "year_display": "1526",
-        "sort_key": 1526
+        "sort_key": 1526,
+        "label_hi": "पानीपत की प्रथम लड़ाई — बाबर ने इब्राहीम लोदी को पराजित किया"
       },
       {
         "label": "Battle of Khanwa — Babur defeats Rana Sanga",
         "year_display": "1527",
-        "sort_key": 1527
+        "sort_key": 1527,
+        "label_hi": "खानवा का युद्ध — बाबर ने राणा सांगा को पराजित किया"
       },
       {
         "label": "Second Battle of Panipat — Akbar's forces defeat Hemu",
         "year_display": "1556",
-        "sort_key": 1556
+        "sort_key": 1556,
+        "label_hi": "पानीपत की द्वितीय लड़ाई — अकबर की सेनाओं ने हेमू को पराजित किया"
       },
       {
         "label": "Battle of Haldighati — Akbar's forces against Maharana Pratap",
         "year_display": "1576",
-        "sort_key": 1576
+        "sort_key": 1576,
+        "label_hi": "हल्दीघाटी का युद्ध — अकबर की सेनाएँ महाराणा प्रताप के विरुद्ध"
       },
       {
         "label": "Third Battle of Panipat — Abdali defeats the Marathas",
         "year_display": "1761",
-        "sort_key": 1761
+        "sort_key": 1761,
+        "label_hi": "पानीपत की तृतीय लड़ाई — अब्दाली ने मराठों को पराजित किया"
       }
     ],
-    "explanation": "Panipat bookends the Mughal story: the first battle founded the empire, Khanwa secured it against the Rajputs, the second battle restored it for Akbar, and the third — fought between Afghans and Marathas — marked how completely Mughal power had hollowed out by 1761."
+    "explanation": "Panipat bookends the Mughal story: the first battle founded the empire, Khanwa secured it against the Rajputs, the second battle restored it for Akbar, and the third — fought between Afghans and Marathas — marked how completely Mughal power had hollowed out by 1761.",
+    "theme_hi": "मध्यकाल के निर्णायक युद्ध",
+    "explanation_hi": "पानीपत मुग़ल गाथा के आरंभ और अंत दोनों को चिह्नित करता है: पहली लड़ाई ने साम्राज्य की स्थापना की, खानवा ने इसे राजपूतों के विरुद्ध सुरक्षित किया, दूसरी लड़ाई ने इसे अकबर के लिए पुनर्स्थापित किया, और तीसरी — अफगानों व मराठों के बीच लड़ी गई — ने दर्शाया कि 1761 तक मुग़ल सत्ता कितनी पूर्णतः खोखली हो चुकी थी।"
   },
   {
     "id": "tl_016",
@@ -493,25 +593,31 @@
       {
         "label": "Vijayanagara Empire founded by Harihara and Bukka",
         "year_display": "1336",
-        "sort_key": 1336
+        "sort_key": 1336,
+        "label_hi": "हरिहर और बुक्का द्वारा विजयनगर साम्राज्य की स्थापना"
       },
       {
         "label": "Bahmani Sultanate founded by Alauddin Bahman Shah",
         "year_display": "1347",
-        "sort_key": 1347
+        "sort_key": 1347,
+        "label_hi": "अलाउद्दीन बहमन शाह द्वारा बहमनी सल्तनत की स्थापना"
       },
       {
         "label": "Krishnadevaraya's accession",
         "year_display": "1509",
-        "sort_key": 1509
+        "sort_key": 1509,
+        "label_hi": "कृष्णदेवराय का सिंहासनारोहण"
       },
       {
         "label": "Battle of Talikota shatters Vijayanagara",
         "year_display": "1565",
-        "sort_key": 1565
+        "sort_key": 1565,
+        "label_hi": "तालीकोटा के युद्ध ने विजयनगर को छिन्न-भिन्न कर दिया"
       }
     ],
-    "explanation": "The two great Deccan rivals were founded a decade apart in the mid-14th century; Vijayanagara peaked under Krishnadevaraya before the combined Deccan sultanates — successors of the Bahmani kingdom — destroyed it at Talikota in 1565."
+    "explanation": "The two great Deccan rivals were founded a decade apart in the mid-14th century; Vijayanagara peaked under Krishnadevaraya before the combined Deccan sultanates — successors of the Bahmani kingdom — destroyed it at Talikota in 1565.",
+    "theme_hi": "विजयनगर और बहमनी राज्य",
+    "explanation_hi": "ये दोनों महान दक्कनी प्रतिद्वंद्वी 14वीं शताब्दी के मध्य में एक दशक के अंतराल पर स्थापित हुए; विजयनगर कृष्णदेवराय के अधीन अपने चरमोत्कर्ष पर पहुँचा, इससे पहले कि संयुक्त दक्कनी सल्तनतों — बहमनी राज्य के उत्तराधिकारियों — ने 1565 में तालीकोटा में इसे नष्ट कर दिया।"
   },
   {
     "id": "tl_017",
@@ -522,25 +628,31 @@
       {
         "label": "Alauddin Khilji's accession after killing Jalaluddin",
         "year_display": "1296",
-        "sort_key": 1296
+        "sort_key": 1296,
+        "label_hi": "जलालुद्दीन की हत्या के बाद अलाउद्दीन खिलजी का सिंहासनारोहण"
       },
       {
         "label": "Conquest of Gujarat",
         "year_display": "1299",
-        "sort_key": 1299
+        "sort_key": 1299,
+        "label_hi": "गुजरात की विजय"
       },
       {
         "label": "Capture of Chittor",
         "year_display": "1303",
-        "sort_key": 1303
+        "sort_key": 1303,
+        "label_hi": "चित्तौड़ पर अधिकार"
       },
       {
         "label": "Malik Kafur's campaign reaches Madurai",
         "year_display": "1311",
-        "sort_key": 1311
+        "sort_key": 1311,
+        "label_hi": "मलिक काफ़ूर का अभियान मदुरई तक पहुँचा"
       }
     ],
-    "explanation": "Alauddin expanded in two directions: he personally led conquests in the north and west (Gujarat, Chittor) while his general Malik Kafur raided deep into the peninsula, reaching the Pandyan capital Madurai by 1311."
+    "explanation": "Alauddin expanded in two directions: he personally led conquests in the north and west (Gujarat, Chittor) while his general Malik Kafur raided deep into the peninsula, reaching the Pandyan capital Madurai by 1311.",
+    "theme_hi": "अलाउद्दीन खिलजी का शासनकाल",
+    "explanation_hi": "अलाउद्दीन ने दो दिशाओं में विस्तार किया: उसने स्वयं उत्तर और पश्चिम (गुजरात, चित्तौड़) में विजयों का नेतृत्व किया, जबकि उसके सेनापति मलिक काफ़ूर ने प्रायद्वीप में गहराई तक धावा बोला और 1311 तक पांड्य राजधानी मदुरई तक पहुँच गया।"
   },
   {
     "id": "tl_018",
@@ -551,30 +663,37 @@
       {
         "label": "Muhammad bin Tughlaq's accession",
         "year_display": "1325",
-        "sort_key": 1325
+        "sort_key": 1325,
+        "label_hi": "मुहम्मद बिन तुगलक का सिंहासनारोहण"
       },
       {
         "label": "Capital transferred from Delhi to Daulatabad",
         "year_display": "1327",
-        "sort_key": 1327
+        "sort_key": 1327,
+        "label_hi": "राजधानी का दिल्ली से देवगिरि (दौलताबाद) स्थानांतरण"
       },
       {
         "label": "Token copper currency introduced",
         "year_display": "1329",
-        "sort_key": 1329
+        "sort_key": 1329,
+        "label_hi": "सांकेतिक तांबे की मुद्रा की शुरुआत"
       },
       {
         "label": "Ibn Battuta arrives at his court",
         "year_display": "1333",
-        "sort_key": 1333
+        "sort_key": 1333,
+        "label_hi": "इब्न बतूता उसके दरबार में आया"
       },
       {
         "label": "Muhammad bin Tughlaq dies campaigning in Sindh",
         "year_display": "1351",
-        "sort_key": 1351
+        "sort_key": 1351,
+        "label_hi": "सिंध में अभियान के दौरान मुहम्मद बिन तुगलक की मृत्यु"
       }
     ],
-    "explanation": "His two most famous experiments — the capital shift and the token currency — came in quick succession early in the reign, and both failed. Ibn Battuta arrived in time to record the aftermath, and the sultan died in 1351 still suppressing rebellions."
+    "explanation": "His two most famous experiments — the capital shift and the token currency — came in quick succession early in the reign, and both failed. Ibn Battuta arrived in time to record the aftermath, and the sultan died in 1351 still suppressing rebellions.",
+    "theme_hi": "मुहम्मद बिन तुगलक के प्रयोग",
+    "explanation_hi": "उसके दो सबसे प्रसिद्ध प्रयोग — राजधानी परिवर्तन और सांकेतिक मुद्रा — शासनकाल के आरंभ में तेज़ी से एक के बाद एक हुए, और दोनों असफल रहे। इब्न बतूता समय रहते इसके परिणामों को दर्ज करने पहुँचा, और सुल्तान की मृत्यु 1351 में विद्रोहों को दबाते हुए हुई।"
   },
   {
     "id": "tl_019",
@@ -585,30 +704,37 @@
       {
         "label": "Humayun's accession",
         "year_display": "1530",
-        "sort_key": 1530
+        "sort_key": 1530,
+        "label_hi": "हुमायूँ का सिंहासनारोहण"
       },
       {
         "label": "Battle of Chausa — Sher Khan defeats Humayun",
         "year_display": "1539",
-        "sort_key": 1539
+        "sort_key": 1539,
+        "label_hi": "चौसा का युद्ध — शेर खान ने हुमायूँ को पराजित किया"
       },
       {
         "label": "Battle of Kannauj — Humayun driven from India",
         "year_display": "1540",
-        "sort_key": 1540
+        "sort_key": 1540,
+        "label_hi": "कन्नौज का युद्ध — हुमायूँ भारत से खदेड़ा गया"
       },
       {
         "label": "Sher Shah dies at Kalinjar",
         "year_display": "1545",
-        "sort_key": 1545
+        "sort_key": 1545,
+        "label_hi": "शेरशाह की कालिंजर में मृत्यु"
       },
       {
         "label": "Humayun recaptures Delhi",
         "year_display": "1555",
-        "sort_key": 1555
+        "sort_key": 1555,
+        "label_hi": "हुमायूँ ने दिल्ली पुनः प्राप्त की"
       }
     ],
-    "explanation": "Sher Shah defeated Humayun twice in successive years (Chausa 1539, Kannauj 1540) and ruled an interregnum famous for administrative reform; only after Sher Shah's death and the Sur dynasty's decay could Humayun return in 1555 — dying months later."
+    "explanation": "Sher Shah defeated Humayun twice in successive years (Chausa 1539, Kannauj 1540) and ruled an interregnum famous for administrative reform; only after Sher Shah's death and the Sur dynasty's decay could Humayun return in 1555 — dying months later.",
+    "theme_hi": "हुमायूँ बनाम शेरशाह",
+    "explanation_hi": "शेरशाह ने लगातार दो वर्षों में हुमायूँ को दो बार पराजित किया (चौसा 1539, कन्नौज 1540) और एक अंतराल-काल में शासन किया जो प्रशासनिक सुधारों के लिए प्रसिद्ध है; शेरशाह की मृत्यु और सूर वंश के पतन के बाद ही हुमायूँ 1555 में लौट सका — जिसकी कुछ महीनों बाद ही मृत्यु हो गई।"
   },
   {
     "id": "tl_020",
@@ -619,30 +745,37 @@
       {
         "label": "Birth of Shivaji at Shivneri fort",
         "year_display": "1630",
-        "sort_key": 1630
+        "sort_key": 1630,
+        "label_hi": "शिवनेरी किले में शिवाजी का जन्म"
       },
       {
         "label": "Treaty of Purandar with Jai Singh",
         "year_display": "1665",
-        "sort_key": 1665
+        "sort_key": 1665,
+        "label_hi": "जय सिंह के साथ पुरंदर की संधि"
       },
       {
         "label": "Shivaji escapes from Aurangzeb's detention at Agra",
         "year_display": "1666",
-        "sort_key": 1666
+        "sort_key": 1666,
+        "label_hi": "शिवाजी आगरा में औरंगज़ेब की नज़रबंदी से भाग निकले"
       },
       {
         "label": "Coronation at Raigad as Chhatrapati",
         "year_display": "1674",
-        "sort_key": 1674
+        "sort_key": 1674,
+        "label_hi": "रायगढ़ में छत्रपति के रूप में राज्याभिषेक"
       },
       {
         "label": "Death of Shivaji",
         "year_display": "1680",
-        "sort_key": 1680
+        "sort_key": 1680,
+        "label_hi": "शिवाजी की मृत्यु"
       }
     ],
-    "explanation": "The Purandar treaty and the Agra escape came back-to-back in 1665-66 — the low point of Shivaji's fortunes — after which he rebuilt his power, crowned himself Chhatrapati in 1674, and ruled a sovereign Maratha state until his death."
+    "explanation": "The Purandar treaty and the Agra escape came back-to-back in 1665-66 — the low point of Shivaji's fortunes — after which he rebuilt his power, crowned himself Chhatrapati in 1674, and ruled a sovereign Maratha state until his death.",
+    "theme_hi": "शिवाजी का जीवन-वृत्त",
+    "explanation_hi": "पुरंदर की संधि और आगरा से पलायन 1665-66 में एक के बाद एक हुए — यह शिवाजी के भाग्य का सबसे निम्न बिंदु था — इसके बाद उन्होंने अपनी शक्ति पुनः निर्मित की, 1674 में स्वयं को छत्रपति घोषित किया, और अपनी मृत्यु तक एक संप्रभु मराठा राज्य पर शासन किया।"
   },
   {
     "id": "tl_021",
@@ -653,30 +786,37 @@
       {
         "label": "Birth of Ramanuja",
         "year_display": "1017",
-        "sort_key": 1017
+        "sort_key": 1017,
+        "label_hi": "रामानुज का जन्म"
       },
       {
         "label": "Birth of Kabir (traditional date)",
         "year_display": "c. 1440",
-        "sort_key": 1440
+        "sort_key": 1440,
+        "label_hi": "कबीर का जन्म (परंपरागत तिथि)"
       },
       {
         "label": "Birth of Guru Nanak",
         "year_display": "1469",
-        "sort_key": 1469
+        "sort_key": 1469,
+        "label_hi": "गुरु नानक का जन्म"
       },
       {
         "label": "Birth of Chaitanya Mahaprabhu",
         "year_display": "1486",
-        "sort_key": 1486
+        "sort_key": 1486,
+        "label_hi": "चैतन्य महाप्रभु का जन्म"
       },
       {
         "label": "Birth of Tulsidas (traditional date)",
         "year_display": "c. 1532",
-        "sort_key": 1532
+        "sort_key": 1532,
+        "label_hi": "तुलसीदास का जन्म (परंपरागत तिथि)"
       }
     ],
-    "explanation": "Ramanuja's 11th-century Vishishtadvaita laid the philosophical ground; the popular north Indian wave came much later, with Kabir, Nanak, Chaitanya and Tulsidas all born within about a century of each other (c. 1440-1532)."
+    "explanation": "Ramanuja's 11th-century Vishishtadvaita laid the philosophical ground; the popular north Indian wave came much later, with Kabir, Nanak, Chaitanya and Tulsidas all born within about a century of each other (c. 1440-1532).",
+    "theme_hi": "जन्म के अनुसार भक्ति संत",
+    "explanation_hi": "रामानुज के 11वीं शताब्दी के विशिष्टाद्वैत ने दार्शनिक आधार तैयार किया; लोकप्रिय उत्तर भारतीय लहर बहुत बाद में आई, जिसमें कबीर, नानक, चैतन्य और तुलसीदास सभी लगभग एक शताब्दी (लगभग 1440-1532) के भीतर जन्मे।"
   },
   {
     "id": "tl_022",
@@ -687,30 +827,37 @@
       {
         "label": "Death of Aurangzeb at Ahmadnagar",
         "year_display": "1707",
-        "sort_key": 1707
+        "sort_key": 1707,
+        "label_hi": "अहमदनगर में औरंगज़ेब की मृत्यु"
       },
       {
         "label": "Death of Bahadur Shah I",
         "year_display": "1712",
-        "sort_key": 1712
+        "sort_key": 1712,
+        "label_hi": "बहादुर शाह प्रथम की मृत्यु"
       },
       {
         "label": "Farrukhsiyar's farman grants the East India Company trade privileges",
         "year_display": "1717",
-        "sort_key": 1717
+        "sort_key": 1717,
+        "label_hi": "फर्रुखसियर का फरमान ईस्ट इंडिया कंपनी को व्यापारिक विशेषाधिकार देता है"
       },
       {
         "label": "Nadir Shah sacks Delhi and takes the Peacock Throne",
         "year_display": "1739",
-        "sort_key": 1739
+        "sort_key": 1739,
+        "label_hi": "नादिर शाह ने दिल्ली लूटी और मयूर सिंहासन ले गया"
       },
       {
         "label": "Third Battle of Panipat",
         "year_display": "1761",
-        "sort_key": 1761
+        "sort_key": 1761,
+        "label_hi": "पानीपत की तृतीय लड़ाई"
       }
     ],
-    "explanation": "After Aurangzeb, weak successions came fast — Bahadur Shah I ruled only five years — while the 1717 farman quietly empowered the English Company; Nadir Shah's 1739 sack exposed imperial impotence long before Panipat III confirmed it."
+    "explanation": "After Aurangzeb, weak successions came fast — Bahadur Shah I ruled only five years — while the 1717 farman quietly empowered the English Company; Nadir Shah's 1739 sack exposed imperial impotence long before Panipat III confirmed it.",
+    "theme_hi": "मुग़ल साम्राज्य का पतन",
+    "explanation_hi": "औरंगज़ेब के बाद, कमज़ोर उत्तराधिकार तेज़ी से आए — बहादुर शाह प्रथम ने केवल पाँच वर्ष शासन किया — जबकि 1717 के फरमान ने चुपचाप अंग्रेज़ कंपनी को सशक्त बना दिया; नादिर शाह की 1739 की लूट ने साम्राज्य की शक्तिहीनता को पानीपत तृतीय से बहुत पहले ही उजागर कर दिया था।"
   },
   {
     "id": "tl_023",
@@ -721,25 +868,31 @@
       {
         "label": "Balaji Vishwanath becomes Peshwa",
         "year_display": "1713",
-        "sort_key": 1713
+        "sort_key": 1713,
+        "label_hi": "बालाजी विश्वनाथ पेशवा बने"
       },
       {
         "label": "Baji Rao I becomes Peshwa",
         "year_display": "1720",
-        "sort_key": 1720
+        "sort_key": 1720,
+        "label_hi": "बाजीराव प्रथम पेशवा बने"
       },
       {
         "label": "Balaji Baji Rao (Nana Saheb) becomes Peshwa",
         "year_display": "1740",
-        "sort_key": 1740
+        "sort_key": 1740,
+        "label_hi": "बालाजी बाजीराव (नाना साहेब) पेशवा बने"
       },
       {
         "label": "Maratha defeat at the Third Battle of Panipat",
         "year_display": "1761",
-        "sort_key": 1761
+        "sort_key": 1761,
+        "label_hi": "पानीपत की तृतीय लड़ाई में मराठों की पराजय"
       }
     ],
-    "explanation": "The Peshwaship became hereditary from Balaji Vishwanath; Baji Rao I's cavalry campaigns spread Maratha power across north India, and under Balaji Baji Rao the expansion peaked — then broke catastrophically at Panipat in 1761."
+    "explanation": "The Peshwaship became hereditary from Balaji Vishwanath; Baji Rao I's cavalry campaigns spread Maratha power across north India, and under Balaji Baji Rao the expansion peaked — then broke catastrophically at Panipat in 1761.",
+    "theme_hi": "पेशवाओं का उदय",
+    "explanation_hi": "पेशवा पद बालाजी विश्वनाथ से वंशानुगत हो गया; बाजीराव प्रथम के घुड़सवार सेना अभियानों ने मराठा शक्ति को उत्तर भारत भर में फैलाया, और बालाजी बाजीराव के अधीन यह विस्तार चरम पर पहुँचा — फिर 1761 में पानीपत में विनाशकारी रूप से टूट गया।"
   },
   {
     "id": "tl_024",
@@ -750,30 +903,37 @@
       {
         "label": "Marco Polo visits south India",
         "year_display": "c. 1292",
-        "sort_key": 1292
+        "sort_key": 1292,
+        "label_hi": "मार्को पोलो दक्षिण भारत की यात्रा करता है"
       },
       {
         "label": "Ibn Battuta arrives at Muhammad bin Tughlaq's Delhi",
         "year_display": "1333",
-        "sort_key": 1333
+        "sort_key": 1333,
+        "label_hi": "इब्न बतूता मुहम्मद बिन तुगलक की दिल्ली में आता है"
       },
       {
         "label": "Abdur Razzaq visits Vijayanagara under Deva Raya II",
         "year_display": "1443",
-        "sort_key": 1443
+        "sort_key": 1443,
+        "label_hi": "अब्दुर रज्जाक देव राय द्वितीय के अधीन विजयनगर की यात्रा करता है"
       },
       {
         "label": "Athanasius Nikitin, the Russian, travels in the Bahmani Deccan",
         "year_display": "c. 1470",
-        "sort_key": 1470
+        "sort_key": 1470,
+        "label_hi": "रूसी यात्री अफानासी निकितिन बहमनी दक्कन में यात्रा करता है"
       },
       {
         "label": "Domingo Paes describes Vijayanagara under Krishnadevaraya",
         "year_display": "c. 1520",
-        "sort_key": 1520
+        "sort_key": 1520,
+        "label_hi": "डोमिंगो पेस कृष्णदेवराय के अधीन विजयनगर का वर्णन करता है"
       }
     ],
-    "explanation": "Match traveller to host kingdom: Marco Polo saw the Pandyan coast, Ibn Battuta served the Tughlaqs, Abdur Razzaq was Persia's envoy to Deva Raya II, Nikitin wandered the Bahmani Deccan, and Paes recorded Vijayanagara at its Krishnadevaraya-era peak."
+    "explanation": "Match traveller to host kingdom: Marco Polo saw the Pandyan coast, Ibn Battuta served the Tughlaqs, Abdur Razzaq was Persia's envoy to Deva Raya II, Nikitin wandered the Bahmani Deccan, and Paes recorded Vijayanagara at its Krishnadevaraya-era peak.",
+    "theme_hi": "मध्यकालीन भारत की यात्रा करने वाले विदेशी यात्री",
+    "explanation_hi": "यात्री को मेज़बान राज्य से मिलाएँ: मार्को पोलो ने पांड्य तट देखा, इब्न बतूता ने तुगलकों की सेवा की, अब्दुर रज्जाक फारस का देव राय द्वितीय के पास राजदूत था, निकितिन ने बहमनी दक्कन में भ्रमण किया, और पेस ने कृष्णदेवराय-युगीन चरमोत्कर्ष पर विजयनगर का वर्णन दर्ज किया।"
   },
   {
     "id": "tl_025",
@@ -784,30 +944,37 @@
       {
         "label": "Champaran Satyagraha — Gandhi's first in India",
         "year_display": "1917",
-        "sort_key": 1917
+        "sort_key": 1917,
+        "label_hi": "चंपारण सत्याग्रह — भारत में गांधीजी का पहला सत्याग्रह"
       },
       {
         "label": "Kheda Satyagraha for peasants of Gujarat",
         "year_display": "1918",
-        "sort_key": 1918
+        "sort_key": 1918,
+        "label_hi": "गुजरात के किसानों के लिए खेड़ा सत्याग्रह"
       },
       {
         "label": "Non-Cooperation Movement launched",
         "year_display": "1920",
-        "sort_key": 1920
+        "sort_key": 1920,
+        "label_hi": "असहयोग आंदोलन का शुभारंभ"
       },
       {
         "label": "Civil Disobedience Movement begins with the Dandi March",
         "year_display": "1930",
-        "sort_key": 1930
+        "sort_key": 1930,
+        "label_hi": "दांडी मार्च के साथ सविनय अवज्ञा आंदोलन आरंभ"
       },
       {
         "label": "Quit India Movement launched",
         "year_display": "1942",
-        "sort_key": 1942
+        "sort_key": 1942,
+        "label_hi": "भारत छोड़ो आंदोलन का शुभारंभ"
       }
     ],
-    "explanation": "Gandhi scaled up in stages — local satyagrahas at Champaran and Kheda proved the method, then three nationwide waves followed roughly a decade apart: Non-Cooperation (1920), Civil Disobedience (1930) and Quit India (1942)."
+    "explanation": "Gandhi scaled up in stages — local satyagrahas at Champaran and Kheda proved the method, then three nationwide waves followed roughly a decade apart: Non-Cooperation (1920), Civil Disobedience (1930) and Quit India (1942).",
+    "theme_hi": "गांधीजी के जन आंदोलन",
+    "explanation_hi": "गांधीजी ने चरणों में विस्तार किया — चंपारण और खेड़ा के स्थानीय सत्याग्रहों ने इस पद्धति को सिद्ध किया, फिर लगभग एक-एक दशक के अंतराल पर तीन राष्ट्रव्यापी लहरें आईं: असहयोग (1920), सविनय अवज्ञा (1930) और भारत छोड़ो (1942)।"
   },
   {
     "id": "tl_026",
@@ -818,30 +985,37 @@
       {
         "label": "Battle of Plassey",
         "year_display": "1757",
-        "sort_key": 1757
+        "sort_key": 1757,
+        "label_hi": "प्लासी का युद्ध"
       },
       {
         "label": "Battle of Buxar",
         "year_display": "1764",
-        "sort_key": 1764
+        "sort_key": 1764,
+        "label_hi": "बक्सर का युद्ध"
       },
       {
         "label": "Fall of Srirangapatna and death of Tipu Sultan",
         "year_display": "1799",
-        "sort_key": 1799
+        "sort_key": 1799,
+        "label_hi": "श्रीरंगपट्टनम का पतन और टीपू सुल्तान की मृत्यु"
       },
       {
         "label": "Annexation of Punjab after the Second Anglo-Sikh War",
         "year_display": "1849",
-        "sort_key": 1849
+        "sort_key": 1849,
+        "label_hi": "द्वितीय आंग्ल-सिख युद्ध के बाद पंजाब का विलय"
       },
       {
         "label": "Revolt of 1857 begins at Meerut",
         "year_display": "1857",
-        "sort_key": 1857
+        "sort_key": 1857,
+        "label_hi": "1857 का विद्रोह मेरठ से आरंभ"
       }
     ],
-    "explanation": "Company power spread outward from Bengal: Plassey and Buxar secured the east, Tipu's fall in 1799 broke southern resistance, Punjab's annexation in 1849 completed the map — and eight years later the 1857 Revolt shook the whole edifice."
+    "explanation": "Company power spread outward from Bengal: Plassey and Buxar secured the east, Tipu's fall in 1799 broke southern resistance, Punjab's annexation in 1849 completed the map — and eight years later the 1857 Revolt shook the whole edifice.",
+    "theme_hi": "भारत पर ब्रिटिश विजय",
+    "explanation_hi": "कंपनी की शक्ति बंगाल से बाहर की ओर फैली: प्लासी और बक्सर ने पूर्व को सुरक्षित किया, 1799 में टीपू के पतन ने दक्षिणी प्रतिरोध को तोड़ा, 1849 में पंजाब के विलय ने मानचित्र को पूर्ण किया — और आठ वर्ष बाद 1857 के विद्रोह ने पूरी संरचना को हिला दिया।"
   },
   {
     "id": "tl_027",
@@ -852,35 +1026,43 @@
       {
         "label": "Indian National Congress founded in Bombay",
         "year_display": "1885",
-        "sort_key": 1885
+        "sort_key": 1885,
+        "label_hi": "बंबई में भारतीय राष्ट्रीय कांग्रेस की स्थापना"
       },
       {
         "label": "Surat Split between Moderates and Extremists",
         "year_display": "1907",
-        "sort_key": 1907
+        "sort_key": 1907,
+        "label_hi": "नरमपंथियों और गरमपंथियों के बीच सूरत विभाजन"
       },
       {
         "label": "Lucknow session reunites the factions and seals the pact with the Muslim League",
         "year_display": "1916",
-        "sort_key": 1916
+        "sort_key": 1916,
+        "label_hi": "लखनऊ अधिवेशन ने गुटों को पुनः एकजुट किया और मुस्लिम लीग के साथ समझौता किया"
       },
       {
         "label": "Calcutta special session approves Non-Cooperation",
         "year_display": "1920",
-        "sort_key": 1920
+        "sort_key": 1920,
+        "label_hi": "कलकत्ता विशेष अधिवेशन ने असहयोग को स्वीकृति दी"
       },
       {
         "label": "Lahore session adopts Purna Swaraj",
         "year_display": "1929",
-        "sort_key": 1929
+        "sort_key": 1929,
+        "label_hi": "लाहौर अधिवेशन ने पूर्ण स्वराज को अपनाया"
       },
       {
         "label": "Karachi session resolution on Fundamental Rights",
         "year_display": "1931",
-        "sort_key": 1931
+        "sort_key": 1931,
+        "label_hi": "कराची अधिवेशन का मौलिक अधिकारों पर प्रस्ताव"
       }
     ],
-    "explanation": "Congress evolved from a petitioning body into a mass movement: it split at Surat, healed at Lucknow, embraced Gandhian mass politics in 1920, declared complete independence at Lahore, and spelt out a rights-based vision at Karachi."
+    "explanation": "Congress evolved from a petitioning body into a mass movement: it split at Surat, healed at Lucknow, embraced Gandhian mass politics in 1920, declared complete independence at Lahore, and spelt out a rights-based vision at Karachi.",
+    "theme_hi": "भारतीय राष्ट्रीय कांग्रेस के महत्वपूर्ण पड़ाव",
+    "explanation_hi": "कांग्रेस एक याचिका-प्रस्तुत करने वाली संस्था से एक जन आंदोलन में विकसित हुई: यह सूरत में विभाजित हुई, लखनऊ में एकजुट हुई, 1920 में गांधीवादी जन राजनीति को अपनाया, लाहौर में पूर्ण स्वतंत्रता की घोषणा की, और कराची में अधिकार-आधारित दृष्टिकोण प्रस्तुत किया।"
   },
   {
     "id": "tl_028",
@@ -891,30 +1073,37 @@
       {
         "label": "August Offer by Viceroy Linlithgow",
         "year_display": "1940",
-        "sort_key": 1940
+        "sort_key": 1940,
+        "label_hi": "वायसराय लिनलिथगो का अगस्त प्रस्ताव"
       },
       {
         "label": "Cripps Mission",
         "year_display": "1942",
-        "sort_key": 1942
+        "sort_key": 1942,
+        "label_hi": "क्रिप्स मिशन"
       },
       {
         "label": "Shimla Conference under Viceroy Wavell",
         "year_display": "1945",
-        "sort_key": 1945
+        "sort_key": 1945,
+        "label_hi": "वायसराय वेवेल के अधीन शिमला सम्मेलन"
       },
       {
         "label": "Cabinet Mission Plan",
         "year_display": "1946",
-        "sort_key": 1946
+        "sort_key": 1946,
+        "label_hi": "कैबिनेट मिशन योजना"
       },
       {
         "label": "Mountbatten Plan and Partition",
         "year_display": "1947",
-        "sort_key": 1947
+        "sort_key": 1947,
+        "label_hi": "माउंटबेटन योजना और विभाजन"
       }
     ],
-    "explanation": "Each wartime and post-war offer conceded more than the last: dominion-style promises in 1940 and 1942 failed, the Shimla and Cabinet Mission negotiations collapsed over communal representation, and Mountbatten's 1947 plan finally paired freedom with partition."
+    "explanation": "Each wartime and post-war offer conceded more than the last: dominion-style promises in 1940 and 1942 failed, the Shimla and Cabinet Mission negotiations collapsed over communal representation, and Mountbatten's 1947 plan finally paired freedom with partition.",
+    "theme_hi": "ब्रिटिश शासन का अंतिम चरण",
+    "explanation_hi": "प्रत्येक युद्धकालीन और युद्धोपरांत प्रस्ताव पिछले से अधिक रियायत देता था: 1940 और 1942 के डोमिनियन-शैली के वादे असफल रहे, शिमला और कैबिनेट मिशन वार्ताएँ सांप्रदायिक प्रतिनिधित्व के मुद्दे पर टूट गईं, और अंततः माउंटबेटन की 1947 की योजना ने स्वतंत्रता को विभाजन के साथ जोड़ दिया।"
   },
   {
     "id": "tl_029",
@@ -925,30 +1114,37 @@
       {
         "label": "Partition of Bengal announced by Curzon",
         "year_display": "1905",
-        "sort_key": 1905
+        "sort_key": 1905,
+        "label_hi": "कर्ज़न द्वारा बंगाल विभाजन की घोषणा"
       },
       {
         "label": "All-India Muslim League founded in Dacca",
         "year_display": "1906",
-        "sort_key": 1906
+        "sort_key": 1906,
+        "label_hi": "ढाका में अखिल भारतीय मुस्लिम लीग की स्थापना"
       },
       {
         "label": "Morley-Minto Reforms (Indian Councils Act)",
         "year_display": "1909",
-        "sort_key": 1909
+        "sort_key": 1909,
+        "label_hi": "मॉर्ले-मिंटो सुधार (भारतीय परिषद अधिनियम)"
       },
       {
         "label": "Lucknow Pact between Congress and Muslim League",
         "year_display": "1916",
-        "sort_key": 1916
+        "sort_key": 1916,
+        "label_hi": "कांग्रेस और मुस्लिम लीग के बीच लखनऊ समझौता"
       },
       {
         "label": "Montagu-Chelmsford Reforms (Government of India Act)",
         "year_display": "1919",
-        "sort_key": 1919
+        "sort_key": 1919,
+        "label_hi": "मॉन्टेग्यू-चेम्सफोर्ड सुधार (भारत सरकार अधिनियम)"
       }
     ],
-    "explanation": "Partition of Bengal sharpened political mobilisation and helped trigger the Muslim League's founding a year later. Reform acts followed at either end of the Lucknow Pact, and the disappointment with the 1919 reforms — alongside the Rowlatt Act and Jallianwala Bagh the same year — set up the 1920 Non-Cooperation Movement."
+    "explanation": "Partition of Bengal sharpened political mobilisation and helped trigger the Muslim League's founding a year later. Reform acts followed at either end of the Lucknow Pact, and the disappointment with the 1919 reforms — alongside the Rowlatt Act and Jallianwala Bagh the same year — set up the 1920 Non-Cooperation Movement.",
+    "theme_hi": "असहयोग आंदोलन की ओर मार्ग",
+    "explanation_hi": "बंगाल विभाजन ने राजनीतिक लामबंदी को तीव्र किया और एक वर्ष बाद मुस्लिम लीग की स्थापना में सहायक बना। सुधार अधिनियम लखनऊ समझौते के दोनों ओर आए, और 1919 के सुधारों से मोहभंग — उसी वर्ष रॉलेट एक्ट और जलियाँवाला बाग के साथ — ने 1920 के असहयोग आंदोलन की नींव रखी।"
   },
   {
     "id": "tl_030",
@@ -959,30 +1155,37 @@
       {
         "label": "Integration of princely states begins",
         "year_display": "1947",
-        "sort_key": 1947
+        "sort_key": 1947,
+        "label_hi": "रियासतों का एकीकरण आरंभ"
       },
       {
         "label": "Operation Polo — Hyderabad annexed",
         "year_display": "1948",
-        "sort_key": 1948
+        "sort_key": 1948,
+        "label_hi": "ऑपरेशन पोलो — हैदराबाद का विलय"
       },
       {
         "label": "States Reorganisation Act passed",
         "year_display": "1956",
-        "sort_key": 1956
+        "sort_key": 1956,
+        "label_hi": "राज्य पुनर्गठन अधिनियम पारित"
       },
       {
         "label": "Goa liberated from Portuguese rule (Operation Vijay)",
         "year_display": "1961",
-        "sort_key": 1961
+        "sort_key": 1961,
+        "label_hi": "पुर्तगाली शासन से गोवा की मुक्ति (ऑपरेशन विजय)"
       },
       {
         "label": "Tashkent Agreement ends the Indo-Pak War",
         "year_display": "1966",
-        "sort_key": 1966
+        "sort_key": 1966,
+        "label_hi": "ताशकंद समझौते ने भारत-पाक युद्ध समाप्त किया"
       }
     ],
-    "explanation": "Independence in 1947 was only the start of territorial consolidation — Hyderabad was absorbed by force in 1948, states were redrawn on linguistic lines in 1956, Goa was taken from Portugal in 1961, and by 1966 India had fought and settled its second war with Pakistan."
+    "explanation": "Independence in 1947 was only the start of territorial consolidation — Hyderabad was absorbed by force in 1948, states were redrawn on linguistic lines in 1956, Goa was taken from Portugal in 1961, and by 1966 India had fought and settled its second war with Pakistan.",
+    "theme_hi": "स्वतंत्र भारत का सुदृढ़ीकरण",
+    "explanation_hi": "1947 में स्वतंत्रता केवल क्षेत्रीय सुदृढ़ीकरण की शुरुआत थी — हैदराबाद को 1948 में बलपूर्वक मिलाया गया, 1956 में भाषाई आधार पर राज्यों का पुनर्गठन हुआ, 1961 में गोवा को पुर्तगाल से लिया गया, और 1966 तक भारत पाकिस्तान के साथ अपना दूसरा युद्ध लड़ चुका और समाप्त कर चुका था।"
   },
   {
     "id": "tl_031",
@@ -993,30 +1196,37 @@
       {
         "label": "Brahmo Samaj founded by Raja Ram Mohan Roy",
         "year_display": "1828",
-        "sort_key": 1828
+        "sort_key": 1828,
+        "label_hi": "राजा राममोहन राय द्वारा ब्रह्म समाज की स्थापना"
       },
       {
         "label": "Prarthana Samaj founded in Bombay",
         "year_display": "1867",
-        "sort_key": 1867
+        "sort_key": 1867,
+        "label_hi": "बंबई में प्रार्थना समाज की स्थापना"
       },
       {
         "label": "Satyashodhak Samaj founded by Jyotiba Phule",
         "year_display": "1873",
-        "sort_key": 1873
+        "sort_key": 1873,
+        "label_hi": "ज्योतिबा फुले द्वारा सत्यशोधक समाज की स्थापना"
       },
       {
         "label": "Arya Samaj founded by Swami Dayananda Saraswati",
         "year_display": "1875",
-        "sort_key": 1875
+        "sort_key": 1875,
+        "label_hi": "स्वामी दयानंद सरस्वती द्वारा आर्य समाज की स्थापना"
       },
       {
         "label": "Ramakrishna Mission founded by Swami Vivekananda",
         "year_display": "1897",
-        "sort_key": 1897
+        "sort_key": 1897,
+        "label_hi": "स्वामी विवेकानंद द्वारा रामकृष्ण मिशन की स्थापना"
       }
     ],
-    "explanation": "Reform began in Bengal with the Brahmo Samaj, then spread west — Prarthana Samaj in Bombay, Phule's anti-caste Satyashodhak Samaj in Pune, Dayananda's Arya Samaj in the same decade — before Vivekananda institutionalised Ramakrishna's legacy in 1897."
+    "explanation": "Reform began in Bengal with the Brahmo Samaj, then spread west — Prarthana Samaj in Bombay, Phule's anti-caste Satyashodhak Samaj in Pune, Dayananda's Arya Samaj in the same decade — before Vivekananda institutionalised Ramakrishna's legacy in 1897.",
+    "theme_hi": "सामाजिक-धार्मिक सुधार संगठन",
+    "explanation_hi": "सुधार का आरंभ बंगाल में ब्रह्म समाज से हुआ, फिर यह पश्चिम की ओर फैला — बंबई में प्रार्थना समाज, पुणे में फुले का जाति-विरोधी सत्यशोधक समाज, उसी दशक में दयानंद का आर्य समाज — इसके बाद विवेकानंद ने 1897 में रामकृष्ण की विरासत को संस्थागत रूप दिया।"
   },
   {
     "id": "tl_032",
@@ -1027,30 +1237,37 @@
       {
         "label": "Regulating Act",
         "year_display": "1773",
-        "sort_key": 1773
+        "sort_key": 1773,
+        "label_hi": "रेगुलेटिंग एक्ट"
       },
       {
         "label": "Pitt's India Act",
         "year_display": "1784",
-        "sort_key": 1784
+        "sort_key": 1784,
+        "label_hi": "पिट्स इंडिया एक्ट"
       },
       {
         "label": "Charter Act ending the Company's India trade monopoly",
         "year_display": "1813",
-        "sort_key": 1813
+        "sort_key": 1813,
+        "label_hi": "कंपनी के भारत व्यापार एकाधिकार को समाप्त करने वाला चार्टर एक्ट"
       },
       {
         "label": "Charter Act making the Governor-General of Bengal the Governor-General of India",
         "year_display": "1833",
-        "sort_key": 1833
+        "sort_key": 1833,
+        "label_hi": "बंगाल के गवर्नर-जनरल को भारत का गवर्नर-जनरल बनाने वाला चार्टर एक्ट"
       },
       {
         "label": "Government of India Act transfers rule to the Crown",
         "year_display": "1858",
-        "sort_key": 1858
+        "sort_key": 1858,
+        "label_hi": "भारत सरकार अधिनियम ने शासन क्राउन को हस्तांतरित किया"
       }
     ],
-    "explanation": "Parliament tightened its grip on the Company step by step — first oversight (1773), then dual control (1784), then stripping trade monopolies (1813, 1833) — until the 1857 Revolt prompted the Crown to take over entirely in 1858."
+    "explanation": "Parliament tightened its grip on the Company step by step — first oversight (1773), then dual control (1784), then stripping trade monopolies (1813, 1833) — until the 1857 Revolt prompted the Crown to take over entirely in 1858.",
+    "theme_hi": "कंपनी शासन को विनियमित करने वाले अधिनियम",
+    "explanation_hi": "ब्रिटिश संसद ने चरण दर चरण कंपनी पर अपनी पकड़ मज़बूत की — पहले निगरानी (1773), फिर द्वैध नियंत्रण (1784), फिर व्यापार एकाधिकार समाप्त करना (1813, 1833) — जब तक 1857 के विद्रोह ने 1858 में क्राउन को पूर्ण नियंत्रण लेने के लिए प्रेरित नहीं किया।"
   },
   {
     "id": "tl_033",
@@ -1061,30 +1278,37 @@
       {
         "label": "Chapekar brothers assassinate Rand in Pune",
         "year_display": "1897",
-        "sort_key": 1897
+        "sort_key": 1897,
+        "label_hi": "चापेकर बंधुओं ने पुणे में रैंड की हत्या की"
       },
       {
         "label": "Muzaffarpur bombing and the Alipore Bomb Case",
         "year_display": "1908",
-        "sort_key": 1908
+        "sort_key": 1908,
+        "label_hi": "मुज़फ्फरपुर बम कांड और अलीपुर बम केस"
       },
       {
         "label": "Ghadar Party founded in North America",
         "year_display": "1913",
-        "sort_key": 1913
+        "sort_key": 1913,
+        "label_hi": "उत्तरी अमेरिका में ग़दर पार्टी की स्थापना"
       },
       {
         "label": "Kakori train action by the Hindustan Republican Association",
         "year_display": "1925",
-        "sort_key": 1925
+        "sort_key": 1925,
+        "label_hi": "हिंदुस्तान रिपब्लिकन एसोसिएशन द्वारा काकोरी ट्रेन कांड"
       },
       {
         "label": "Chittagong armoury raid led by Surya Sen",
         "year_display": "1930",
-        "sort_key": 1930
+        "sort_key": 1930,
+        "label_hi": "सूर्य सेन के नेतृत्व में चटगाँव शस्त्रागार छापा"
       }
     ],
-    "explanation": "Revolutionary violence came in waves: the Pune assassinations of 1897, the Bengal bomb cult around 1908, the diaspora-based Ghadar network from 1913, and the HRA/HSRA generation whose Kakori and Chittagong actions bracketed the late 1920s."
+    "explanation": "Revolutionary violence came in waves: the Pune assassinations of 1897, the Bengal bomb cult around 1908, the diaspora-based Ghadar network from 1913, and the HRA/HSRA generation whose Kakori and Chittagong actions bracketed the late 1920s.",
+    "theme_hi": "क्रांतिकारी आंदोलन",
+    "explanation_hi": "क्रांतिकारी हिंसा लहरों में आई: 1897 की पुणे हत्याएँ, लगभग 1908 का बंगाल बम पंथ, 1913 से प्रवासी-आधारित ग़दर नेटवर्क, और एचआरए/एचएसआरए की पीढ़ी जिनके काकोरी और चटगाँव कार्यों ने 1920 के दशक के अंत को घेरा।"
   },
   {
     "id": "tl_034",
@@ -1095,30 +1319,37 @@
       {
         "label": "Sanyasi-Fakir rebellion in Bengal",
         "year_display": "c. 1770",
-        "sort_key": 1770
+        "sort_key": 1770,
+        "label_hi": "बंगाल में संन्यासी-फकीर विद्रोह"
       },
       {
         "label": "Santhal rebellion (Hul) led by Sidhu and Kanhu",
         "year_display": "1855",
-        "sort_key": 1855
+        "sort_key": 1855,
+        "label_hi": "सिद्धू और कान्हू के नेतृत्व में संथाल विद्रोह (हूल)"
       },
       {
         "label": "Indigo revolt in Bengal",
         "year_display": "1859",
-        "sort_key": 1859
+        "sort_key": 1859,
+        "label_hi": "बंगाल में नील विद्रोह"
       },
       {
         "label": "Deccan riots against moneylenders",
         "year_display": "1875",
-        "sort_key": 1875
+        "sort_key": 1875,
+        "label_hi": "साहूकारों के विरुद्ध दक्कन दंगे"
       },
       {
         "label": "Munda ulgulan led by Birsa Munda",
         "year_display": "1899",
-        "sort_key": 1899
+        "sort_key": 1899,
+        "label_hi": "बिरसा मुंडा के नेतृत्व में मुंडा उलगुलान"
       }
     ],
-    "explanation": "Rural India resisted colonial extraction repeatedly: famine-era Sanyasi bands in the 1770s, the great Santhal Hul of 1855, indigo cultivators in 1859, indebted Deccan peasants in 1875, and Birsa Munda's millenarian ulgulan at the century's close."
+    "explanation": "Rural India resisted colonial extraction repeatedly: famine-era Sanyasi bands in the 1770s, the great Santhal Hul of 1855, indigo cultivators in 1859, indebted Deccan peasants in 1875, and Birsa Munda's millenarian ulgulan at the century's close.",
+    "theme_hi": "किसान और आदिवासी विद्रोह",
+    "explanation_hi": "ग्रामीण भारत ने बार-बार औपनिवेशिक शोषण का विरोध किया: 1770 के दशक के अकाल-युग के संन्यासी दल, 1855 का महान संथाल हूल, 1859 के नील किसान, 1875 के ऋणग्रस्त दक्कन किसान, और शताब्दी के अंत में बिरसा मुंडा का सहस्राब्दीवादी उलगुलान।"
   },
   {
     "id": "tl_035",
@@ -1129,30 +1360,37 @@
       {
         "label": "Dandi March begins",
         "year_display": "Mar 1930",
-        "sort_key": 193003
+        "sort_key": 193003,
+        "label_hi": "दांडी मार्च आरंभ"
       },
       {
         "label": "First Round Table Conference opens in London",
         "year_display": "Nov 1930",
-        "sort_key": 193011
+        "sort_key": 193011,
+        "label_hi": "लंदन में प्रथम गोलमेज़ सम्मेलन का उद्घाटन"
       },
       {
         "label": "Gandhi-Irwin Pact signed",
         "year_display": "Mar 1931",
-        "sort_key": 193103
+        "sort_key": 193103,
+        "label_hi": "गांधी-इरविन समझौते पर हस्ताक्षर"
       },
       {
         "label": "Second Round Table Conference with Gandhi attending",
         "year_display": "Sep 1931",
-        "sort_key": 193109
+        "sort_key": 193109,
+        "label_hi": "गांधीजी की उपस्थिति में द्वितीय गोलमेज़ सम्मेलन"
       },
       {
         "label": "Poona Pact between Gandhi and Ambedkar",
         "year_display": "Sep 1932",
-        "sort_key": 193209
+        "sort_key": 193209,
+        "label_hi": "गांधी और अंबेडकर के बीच पूना समझौता"
       }
     ],
-    "explanation": "The sequence alternates agitation and negotiation: Dandi launched civil disobedience, Congress boycotted the first RTC, the Gandhi-Irwin Pact bought a truce so Gandhi could attend the second RTC, and after its failure the Communal Award crisis ended in the Poona Pact."
+    "explanation": "The sequence alternates agitation and negotiation: Dandi launched civil disobedience, Congress boycotted the first RTC, the Gandhi-Irwin Pact bought a truce so Gandhi could attend the second RTC, and after its failure the Communal Award crisis ended in the Poona Pact.",
+    "theme_hi": "सविनय अवज्ञा के वर्ष, माह दर माह",
+    "explanation_hi": "यह क्रम आंदोलन और वार्ता के बीच बदलता है: दांडी ने सविनय अवज्ञा आरंभ की, कांग्रेस ने प्रथम गोलमेज़ सम्मेलन का बहिष्कार किया, गांधी-इरविन समझौते ने एक संघर्ष-विराम प्रदान किया ताकि गांधीजी द्वितीय सम्मेलन में भाग ले सकें, और इसकी विफलता के बाद सांप्रदायिक अधिनिर्णय संकट पूना समझौते में समाप्त हुआ।"
   },
   {
     "id": "tl_036",
@@ -1163,30 +1401,37 @@
       {
         "label": "Hicky's Bengal Gazette, India's first newspaper",
         "year_display": "1780",
-        "sort_key": 1780
+        "sort_key": 1780,
+        "label_hi": "हिकी का बंगाल गज़ट, भारत का पहला समाचार पत्र"
       },
       {
         "label": "Sambad Kaumudi started by Raja Ram Mohan Roy",
         "year_display": "1821",
-        "sort_key": 1821
+        "sort_key": 1821,
+        "label_hi": "राजा राममोहन राय द्वारा संबाद कौमुदी का शुभारंभ"
       },
       {
         "label": "Amrita Bazar Patrika founded",
         "year_display": "1868",
-        "sort_key": 1868
+        "sort_key": 1868,
+        "label_hi": "अमृत बाज़ार पत्रिका की स्थापना"
       },
       {
         "label": "Kesari launched by Bal Gangadhar Tilak",
         "year_display": "1881",
-        "sort_key": 1881
+        "sort_key": 1881,
+        "label_hi": "बाल गंगाधर तिलक द्वारा केसरी का शुभारंभ"
       },
       {
         "label": "Gandhi takes over Young India",
         "year_display": "1919",
-        "sort_key": 1919
+        "sort_key": 1919,
+        "label_hi": "गांधीजी ने यंग इंडिया की कमान संभाली"
       }
     ],
-    "explanation": "The press grew from Hicky's scandal sheet into a nationalist weapon: Ram Mohan Roy pioneered reformist journalism, Amrita Bazar Patrika and Tilak's Kesari carried the national movement, and Gandhi made Young India his own mouthpiece from 1919."
+    "explanation": "The press grew from Hicky's scandal sheet into a nationalist weapon: Ram Mohan Roy pioneered reformist journalism, Amrita Bazar Patrika and Tilak's Kesari carried the national movement, and Gandhi made Young India his own mouthpiece from 1919.",
+    "theme_hi": "भारतीय प्रेस का इतिहास",
+    "explanation_hi": "प्रेस हिकी की गपशप-पत्रिका से एक राष्ट्रवादी हथियार में विकसित हुआ: राममोहन राय ने सुधारवादी पत्रकारिता की शुरुआत की, अमृत बाज़ार पत्रिका और तिलक के केसरी ने राष्ट्रीय आंदोलन को आगे बढ़ाया, और गांधीजी ने 1919 से यंग इंडिया को अपना मुखपत्र बनाया।"
   },
   {
     "id": "tl_037",
@@ -1197,30 +1442,37 @@
       {
         "label": "Akbar begins rebuilding Agra Fort",
         "year_display": "1565",
-        "sort_key": 1565
+        "sort_key": 1565,
+        "label_hi": "अकबर ने आगरा किले का पुनर्निर्माण आरंभ किया"
       },
       {
         "label": "Humayun's Tomb completed in Delhi",
         "year_display": "c. 1570",
-        "sort_key": 1570
+        "sort_key": 1570,
+        "label_hi": "दिल्ली में हुमायूँ के मक़बरे का निर्माण पूर्ण"
       },
       {
         "label": "Fatehpur Sikri founded as Akbar's capital",
         "year_display": "1571",
-        "sort_key": 1571
+        "sort_key": 1571,
+        "label_hi": "अकबर की राजधानी के रूप में फतेहपुर सीकरी की स्थापना"
       },
       {
         "label": "Red Fort of Shahjahanabad completed",
         "year_display": "1648",
-        "sort_key": 1648
+        "sort_key": 1648,
+        "label_hi": "शाहजहानाबाद के लाल किले का निर्माण पूर्ण"
       },
       {
         "label": "Taj Mahal complex completed",
         "year_display": "1653",
-        "sort_key": 1653
+        "sort_key": 1653,
+        "label_hi": "ताजमहल परिसर का निर्माण पूर्ण"
       }
     ],
-    "explanation": "Akbar's building spree of the 1560s-70s (Agra Fort, Humayun's Tomb, Fatehpur Sikri) established the Mughal style in red sandstone; under Shah Jahan the idiom matured into white-marble grandeur at the Red Fort and the Taj."
+    "explanation": "Akbar's building spree of the 1560s-70s (Agra Fort, Humayun's Tomb, Fatehpur Sikri) established the Mughal style in red sandstone; under Shah Jahan the idiom matured into white-marble grandeur at the Red Fort and the Taj.",
+    "theme_hi": "महान मुग़ल स्मारक",
+    "explanation_hi": "अकबर के 1560-70 के दशक के निर्माण अभियान (आगरा किला, हुमायूँ का मक़बरा, फतेहपुर सीकरी) ने लाल बलुआ पत्थर में मुग़ल शैली स्थापित की; शाहजहाँ के अधीन यह शैली लाल किले और ताजमहल में श्वेत-संगमरमरी भव्यता में परिपक्व हुई।"
   },
   {
     "id": "tl_038",
@@ -1231,25 +1483,31 @@
       {
         "label": "Great Stupa at Sanchi commissioned by Ashoka",
         "year_display": "c. 260 BCE",
-        "sort_key": -260
+        "sort_key": -260,
+        "label_hi": "अशोक द्वारा सांची के महान स्तूप का निर्माण"
       },
       {
         "label": "Bharhut stupa railings carved under the Shungas",
         "year_display": "c. 100 BCE",
-        "sort_key": -100
+        "sort_key": -100,
+        "label_hi": "शुंगों के अधीन भरहुत स्तूप वेदिकाओं की नक्काशी"
       },
       {
         "label": "Great Chaitya at Karle excavated",
         "year_display": "c. 120 CE",
-        "sort_key": 120
+        "sort_key": 120,
+        "label_hi": "कार्ले की महान चैत्य गुफा की खुदाई"
       },
       {
         "label": "Ajanta murals painted under Vakataka patronage",
         "year_display": "c. 460 CE",
-        "sort_key": 460
+        "sort_key": 460,
+        "label_hi": "वाकाटक संरक्षण में अजंता भित्तिचित्रों की रचना"
       }
     ],
-    "explanation": "Buddhist art moved from Ashoka's brick-and-stone stupas through Shunga-era narrative railings at Bharhut to the great western Ghats rock-cut chaityas like Karle, culminating in the painted splendour of Ajanta's Vakataka phase."
+    "explanation": "Buddhist art moved from Ashoka's brick-and-stone stupas through Shunga-era narrative railings at Bharhut to the great western Ghats rock-cut chaityas like Karle, culminating in the painted splendour of Ajanta's Vakataka phase.",
+    "theme_hi": "बौद्ध कला के महत्वपूर्ण पड़ाव",
+    "explanation_hi": "बौद्ध कला अशोक के ईंट-पत्थर के स्तूपों से होते हुए भरहुत की शुंगकालीन कथात्मक वेदिकाओं से गुज़री और कार्ले जैसी पश्चिमी घाट की महान गुफा-चैत्यों तक पहुँची, तथा अंततः अजंता के वाकाटक चरण के चित्रित वैभव में परिणत हुई।"
   },
   {
     "id": "tl_039",
@@ -1260,30 +1518,37 @@
       {
         "label": "Qutub Minar begun by Qutb-ud-din Aibak",
         "year_display": "1199",
-        "sort_key": 1199
+        "sort_key": 1199,
+        "label_hi": "कुतुबुद्दीन ऐबक द्वारा कुतुब मीनार का निर्माण आरंभ"
       },
       {
         "label": "Alai Darwaza built by Alauddin Khilji",
         "year_display": "1311",
-        "sort_key": 1311
+        "sort_key": 1311,
+        "label_hi": "अलाउद्दीन खिलजी द्वारा अलाई दरवाज़े का निर्माण"
       },
       {
         "label": "Tughlaqabad fort city founded",
         "year_display": "1321",
-        "sort_key": 1321
+        "sort_key": 1321,
+        "label_hi": "तुगलकाबाद किला-नगर की स्थापना"
       },
       {
         "label": "Bara Gumbad built in the Lodi Gardens complex",
         "year_display": "1494",
-        "sort_key": 1494
+        "sort_key": 1494,
+        "label_hi": "लोदी गार्डन परिसर में बड़ा गुंबद का निर्माण"
       },
       {
         "label": "Jama Masjid of Shahjahanabad completed",
         "year_display": "1656",
-        "sort_key": 1656
+        "sort_key": 1656,
+        "label_hi": "शाहजहानाबाद की जामा मस्जिद का निर्माण पूर्ण"
       }
     ],
-    "explanation": "Delhi's skyline records its dynasties in order: the Slave dynasty's Qutub Minar, the Khilji Alai Darwaza with its true arch, the austere Tughlaq fortress city, Lodi-era tomb architecture, and finally Shah Jahan's imperial Jama Masjid."
+    "explanation": "Delhi's skyline records its dynasties in order: the Slave dynasty's Qutub Minar, the Khilji Alai Darwaza with its true arch, the austere Tughlaq fortress city, Lodi-era tomb architecture, and finally Shah Jahan's imperial Jama Masjid.",
+    "theme_hi": "सल्तनत और मुग़ल दिल्ली के स्मारक",
+    "explanation_hi": "दिल्ली का क्षितिज अपने राजवंशों को क्रमवार दर्ज करता है: गुलाम वंश की कुतुब मीनार, सच्चे मेहराब वाला खिलजी अलाई दरवाज़ा, तुगलकों का सादा किला-नगर, लोदी-युगीन मक़बरा स्थापत्य, और अंततः शाहजहाँ की शाही जामा मस्जिद।"
   },
   {
     "id": "tl_040",
@@ -1294,30 +1559,37 @@
       {
         "label": "Asiatic Society founded by William Jones in Calcutta",
         "year_display": "1784",
-        "sort_key": 1784
+        "sort_key": 1784,
+        "label_hi": "विलियम जोन्स द्वारा कलकत्ता में एशियाटिक सोसाइटी की स्थापना"
       },
       {
         "label": "Indian Museum established in Calcutta",
         "year_display": "1814",
-        "sort_key": 1814
+        "sort_key": 1814,
+        "label_hi": "कलकत्ता में इंडियन म्यूज़ियम की स्थापना"
       },
       {
         "label": "Archaeological Survey of India founded under Alexander Cunningham",
         "year_display": "1861",
-        "sort_key": 1861
+        "sort_key": 1861,
+        "label_hi": "अलेक्ज़ेंडर कनिंघम के अधीन भारतीय पुरातत्व सर्वेक्षण की स्थापना"
       },
       {
         "label": "Sangeet Natak Akademi set up",
         "year_display": "1952",
-        "sort_key": 1952
+        "sort_key": 1952,
+        "label_hi": "संगीत नाटक अकादमी की स्थापना"
       },
       {
         "label": "Sahitya Akademi inaugurated",
         "year_display": "1954",
-        "sort_key": 1954
+        "sort_key": 1954,
+        "label_hi": "साहित्य अकादमी का उद्घाटन"
       }
     ],
-    "explanation": "Colonial-era orientalist scholarship created the Asiatic Society, the Indian Museum and the ASI; after independence, the state built its own cultural apparatus, starting with the Akademis for performing arts (1952) and literature (1954)."
+    "explanation": "Colonial-era orientalist scholarship created the Asiatic Society, the Indian Museum and the ASI; after independence, the state built its own cultural apparatus, starting with the Akademis for performing arts (1952) and literature (1954).",
+    "theme_hi": "भारतीय संस्कृति की संस्थाएँ",
+    "explanation_hi": "औपनिवेशिक काल की प्राच्यविद्या ने एशियाटिक सोसाइटी, इंडियन म्यूज़ियम और एएसआई का निर्माण किया; स्वतंत्रता के बाद राज्य ने अपनी स्वयं की सांस्कृतिक संरचना बनाई, जिसकी शुरुआत प्रदर्शन कलाओं (1952) और साहित्य (1954) की अकादमियों से हुई।"
   },
   {
     "id": "tl_041",
@@ -1328,30 +1600,37 @@
       {
         "label": "Kailasa Temple, Ellora, commissioned by Rashtrakuta king Krishna I",
         "year_display": "c. 760 CE",
-        "sort_key": 760
+        "sort_key": 760,
+        "label_hi": "राष्ट्रकूट राजा कृष्ण प्रथम द्वारा एलोरा के कैलास मंदिर का निर्माण"
       },
       {
         "label": "Brihadeeswarar Temple, Thanjavur, completed under Chola king Rajaraja I",
         "year_display": "c. 1010 CE",
-        "sort_key": 1010
+        "sort_key": 1010,
+        "label_hi": "चोल राजा राजराजा प्रथम के अधीन तंजावुर के बृहदेश्वर मंदिर का निर्माण पूर्ण"
       },
       {
         "label": "Konark Sun Temple built under the Eastern Ganga king Narasimhadeva I",
         "year_display": "c. 1250 CE",
-        "sort_key": 1250
+        "sort_key": 1250,
+        "label_hi": "पूर्वी गंग राजा नरसिंहदेव प्रथम के अधीन कोणार्क सूर्य मंदिर का निर्माण"
       },
       {
         "label": "Harmandir Sahib (Golden Temple) completed, Adi Granth installed",
         "year_display": "1604",
-        "sort_key": 1604
+        "sort_key": 1604,
+        "label_hi": "हरमंदिर साहिब (स्वर्ण मंदिर) का निर्माण पूर्ण, आदि ग्रंथ की स्थापना"
       },
       {
         "label": "Meenakshi Temple, Madurai, majorly expanded under Nayaka ruler Tirumalai Nayak",
         "year_display": "c. 1630",
-        "sort_key": 1630
+        "sort_key": 1630,
+        "label_hi": "नायक शासक तिरुमलाई नायक के अधीन मदुरई के मीनाक्षी मंदिर का व्यापक विस्तार"
       }
     ],
-    "explanation": "Temple architecture spans nearly a millennium of dynastic patronage — Rashtrakuta rock-cut work at Ellora, Chola engineering at Thanjavur, Eastern Ganga solar symbolism at Konark, Sikh Gurus at Amritsar, and Nayaka-era expansion at Madurai."
+    "explanation": "Temple architecture spans nearly a millennium of dynastic patronage — Rashtrakuta rock-cut work at Ellora, Chola engineering at Thanjavur, Eastern Ganga solar symbolism at Konark, Sikh Gurus at Amritsar, and Nayaka-era expansion at Madurai.",
+    "theme_hi": "विभिन्न राजवंशों में महान मंदिर निर्माण",
+    "explanation_hi": "मंदिर स्थापत्य लगभग एक सहस्राब्दी के राजवंशीय संरक्षण तक फैला है — एलोरा में राष्ट्रकूट गुफा-शिल्प, तंजावुर में चोल इंजीनियरिंग, कोणार्क में पूर्वी गंग सौर प्रतीकवाद, अमृतसर में सिख गुरु, और मदुरई में नायक-युगीन विस्तार।"
   },
   {
     "id": "tl_042",
@@ -1362,30 +1641,37 @@
       {
         "label": "Dashavatara temple at Deogarh — early Gupta structural temple",
         "year_display": "c. 500 CE",
-        "sort_key": 500
+        "sort_key": 500,
+        "label_hi": "देवगढ़ का दशावतार मंदिर — प्रारंभिक गुप्तकालीन संरचनात्मक मंदिर"
       },
       {
         "label": "Shore Temple at Mamallapuram under Pallava Rajasimha",
         "year_display": "c. 700 CE",
-        "sort_key": 700
+        "sort_key": 700,
+        "label_hi": "पल्लव राजसिंह के अधीन ममल्लपुरम का शोर टेंपल"
       },
       {
         "label": "Kandariya Mahadeva temple at Khajuraho under the Chandellas",
         "year_display": "c. 1030",
-        "sort_key": 1030
+        "sort_key": 1030,
+        "label_hi": "चंदेलों के अधीन खजुराहो का कंदारिया महादेव मंदिर"
       },
       {
         "label": "Chennakesava temple at Belur begun by Hoysala king Vishnuvardhana",
         "year_display": "1117",
-        "sort_key": 1117
+        "sort_key": 1117,
+        "label_hi": "होयसल राजा विष्णुवर्धन द्वारा बेलूर के चेन्नाकेशव मंदिर का निर्माण आरंभ"
       },
       {
         "label": "Ramappa temple in Telangana begun under the Kakatiyas",
         "year_display": "1213",
-        "sort_key": 1213
+        "sort_key": 1213,
+        "label_hi": "काकतीयों के अधीन तेलंगाना के रामप्पा मंदिर का निर्माण आरंभ"
       }
     ],
-    "explanation": "From the simple flat-roofed Gupta shrine at Deogarh, temple building diverged into regional styles — Pallava structural Dravida at the Shore Temple, mature Nagara at Khajuraho, and the ornate star-plan idioms of the Hoysalas and Kakatiyas."
+    "explanation": "From the simple flat-roofed Gupta shrine at Deogarh, temple building diverged into regional styles — Pallava structural Dravida at the Shore Temple, mature Nagara at Khajuraho, and the ornate star-plan idioms of the Hoysalas and Kakatiyas.",
+    "theme_hi": "मंदिर स्थापत्य का विकास",
+    "explanation_hi": "देवगढ़ के साधारण समतल-छत वाले गुप्तकालीन मंदिर से, मंदिर निर्माण क्षेत्रीय शैलियों में विभाजित हुआ — शोर टेंपल में पल्लव संरचनात्मक द्रविड़ शैली, खजुराहो में परिपक्व नागर शैली, और होयसलों व काकतीयों की अलंकृत तारा-योजना शैलियाँ।"
   },
   {
     "id": "tl_043",
@@ -1396,30 +1682,37 @@
       {
         "label": "Ajanta cave murals painted",
         "year_display": "c. 460 CE",
-        "sort_key": 460
+        "sort_key": 460,
+        "label_hi": "अजंता गुफा भित्तिचित्रों की रचना"
       },
       {
         "label": "Pala school of palm-leaf manuscript miniatures flourishes",
         "year_display": "c. 1000",
-        "sort_key": 1000
+        "sort_key": 1000,
+        "label_hi": "ताड़पत्र पांडुलिपि लघुचित्रों की पाल शैली फलती-फूलती है"
       },
       {
         "label": "Mughal atelier takes shape under Akbar",
         "year_display": "c. 1560",
-        "sort_key": 1560
+        "sort_key": 1560,
+        "label_hi": "अकबर के अधीन मुग़ल चित्रशाला आकार लेती है"
       },
       {
         "label": "Kangra school of Pahari painting at its peak",
         "year_display": "c. 1780",
-        "sort_key": 1780
+        "sort_key": 1780,
+        "label_hi": "पहाड़ी चित्रकला की कांगड़ा शैली अपने चरमोत्कर्ष पर"
       },
       {
         "label": "Progressive Artists' Group formed in Bombay",
         "year_display": "1947",
-        "sort_key": 1947
+        "sort_key": 1947,
+        "label_hi": "बंबई में प्रोग्रेसिव आर्टिस्ट्स ग्रुप का गठन"
       }
     ],
-    "explanation": "Indian painting runs from classical wall murals at Ajanta through Pala manuscript illumination, the Persian-influenced Mughal atelier, and lyrical Kangra miniatures, to the modernist break made by the Progressive Artists' Group in 1947."
+    "explanation": "Indian painting runs from classical wall murals at Ajanta through Pala manuscript illumination, the Persian-influenced Mughal atelier, and lyrical Kangra miniatures, to the modernist break made by the Progressive Artists' Group in 1947.",
+    "theme_hi": "भारतीय चित्रकला की शैलियाँ",
+    "explanation_hi": "भारतीय चित्रकला अजंता की शास्त्रीय भित्ति-चित्रकारी से आरंभ होकर पाल पांडुलिपि अलंकरण, फारसी-प्रभावित मुग़ल चित्रशाला, और भावप्रवण कांगड़ा लघुचित्रों से गुज़रती हुई 1947 में प्रोग्रेसिव आर्टिस्ट्स ग्रुप द्वारा किए गए आधुनिकतावादी विच्छेद तक पहुँचती है।"
   },
   {
     "id": "tl_044",
@@ -1430,30 +1723,37 @@
       {
         "label": "Panini composes the Ashtadhyayi",
         "year_display": "c. 400 BCE",
-        "sort_key": -400
+        "sort_key": -400,
+        "label_hi": "पाणिनि ने अष्टाध्यायी की रचना की"
       },
       {
         "label": "Kautilya's Arthashastra (traditional date)",
         "year_display": "c. 300 BCE",
-        "sort_key": -300
+        "sort_key": -300,
+        "label_hi": "कौटिल्य का अर्थशास्त्र (परंपरागत तिथि)"
       },
       {
         "label": "Kalidasa writes Abhijnanashakuntalam in the Gupta age",
         "year_display": "c. 400 CE",
-        "sort_key": 400
+        "sort_key": 400,
+        "label_hi": "गुप्त काल में कालिदास ने अभिज्ञानशाकुंतलम् की रचना की"
       },
       {
         "label": "Banabhatta writes the Harshacharita",
         "year_display": "c. 640 CE",
-        "sort_key": 640
+        "sort_key": 640,
+        "label_hi": "बाणभट्ट ने हर्षचरित की रचना की"
       },
       {
         "label": "Jayadeva composes the Gita Govinda",
         "year_display": "c. 1180",
-        "sort_key": 1180
+        "sort_key": 1180,
+        "label_hi": "जयदेव ने गीत गोविंद की रचना की"
       }
     ],
-    "explanation": "Sanskrit's landmarks track its patrons: Panini's grammar fixed the language, the Arthashastra served Mauryan statecraft, Kalidasa adorned the Gupta court, Bana chronicled Harsha, and Jayadeva's Gita Govinda flowered under the Gangas of Odisha."
+    "explanation": "Sanskrit's landmarks track its patrons: Panini's grammar fixed the language, the Arthashastra served Mauryan statecraft, Kalidasa adorned the Gupta court, Bana chronicled Harsha, and Jayadeva's Gita Govinda flowered under the Gangas of Odisha.",
+    "theme_hi": "संस्कृत साहित्य के क्लासिक ग्रंथ",
+    "explanation_hi": "संस्कृत के महत्वपूर्ण पड़ाव उसके संरक्षकों को दर्शाते हैं: पाणिनि के व्याकरण ने भाषा को स्थिर किया, अर्थशास्त्र ने मौर्य राजव्यवस्था की सेवा की, कालिदास ने गुप्त दरबार को सुशोभित किया, बाण ने हर्ष का वृत्तांत लिखा, और जयदेव का गीत गोविंद ओडिशा के गंगों के अधीन विकसित हुआ।"
   },
   {
     "id": "tl_045",
@@ -1464,30 +1764,37 @@
       {
         "label": "Punch-marked silver coins in circulation",
         "year_display": "c. 500 BCE",
-        "sort_key": -500
+        "sort_key": -500,
+        "label_hi": "आहत (पंच-मार्क्ड) चाँदी के सिक्के प्रचलन में"
       },
       {
         "label": "Indo-Greek kings issue portrait coins",
         "year_display": "c. 180 BCE",
-        "sort_key": -180
+        "sort_key": -180,
+        "label_hi": "भारत-यूनानी राजाओं द्वारा चित्रयुक्त सिक्के जारी"
       },
       {
         "label": "Kushan gold coinage begins under Vima Kadphises",
         "year_display": "c. 100 CE",
-        "sort_key": 100
+        "sort_key": 100,
+        "label_hi": "विम कदफिसस के अधीन कुषाण स्वर्ण मुद्रा का आरंभ"
       },
       {
         "label": "Gupta dinaras depict kings as archers and musicians",
         "year_display": "c. 350 CE",
-        "sort_key": 350
+        "sort_key": 350,
+        "label_hi": "गुप्त दीनार सिक्कों में राजाओं को धनुर्धर और संगीतज्ञ के रूप में दर्शाया गया"
       },
       {
         "label": "Sher Shah Suri standardises the silver rupiya",
         "year_display": "c. 1540",
-        "sort_key": 1540
+        "sort_key": 1540,
+        "label_hi": "शेरशाह सूरी ने चाँदी की रुपिया को मानकीकृत किया"
       }
     ],
-    "explanation": "Coinage evolved from anonymous punch-marked silver to Indo-Greek portraiture, then dynastic gold under the Kushans and artistic Gupta dinaras — and Sher Shah's 16th-century rupiya gave India the very name of its modern currency."
+    "explanation": "Coinage evolved from anonymous punch-marked silver to Indo-Greek portraiture, then dynastic gold under the Kushans and artistic Gupta dinaras — and Sher Shah's 16th-century rupiya gave India the very name of its modern currency.",
+    "theme_hi": "भारतीय मुद्रा का विकास",
+    "explanation_hi": "मुद्रा अनाम आहत चाँदी के सिक्कों से भारत-यूनानी चित्रांकन तक, फिर कुषाणों के अधीन राजवंशीय स्वर्ण और कलात्मक गुप्त दीनारों तक विकसित हुई — और शेरशाह की 16वीं शताब्दी की रुपिया ने भारत को उसकी आधुनिक मुद्रा का नाम ही दे दिया।"
   },
   {
     "id": "tl_046",
@@ -1498,25 +1805,31 @@
       {
         "label": "Dnyaneshwari composed in Marathi by Dnyaneshwar",
         "year_display": "1290",
-        "sort_key": 1290
+        "sort_key": 1290,
+        "label_hi": "ज्ञानेश्वर द्वारा मराठी में ज्ञानेश्वरी की रचना"
       },
       {
         "label": "Amuktamalyada composed in Telugu by Krishnadevaraya",
         "year_display": "c. 1515",
-        "sort_key": 1515
+        "sort_key": 1515,
+        "label_hi": "कृष्णदेवराय द्वारा तेलुगु में आमुक्तमाल्यद की रचना"
       },
       {
         "label": "Tulsidas begins the Ramcharitmanas in Awadhi",
         "year_display": "1574",
-        "sort_key": 1574
+        "sort_key": 1574,
+        "label_hi": "तुलसीदास ने अवधी में रामचरितमानस की रचना आरंभ की"
       },
       {
         "label": "Adi Granth compiled by Guru Arjan",
         "year_display": "1604",
-        "sort_key": 1604
+        "sort_key": 1604,
+        "label_hi": "गुरु अर्जन द्वारा आदि ग्रंथ का संकलन"
       }
     ],
-    "explanation": "Bhakti's great books are milestones of vernacular literature: Dnyaneshwar's Marathi Gita commentary in 1290, a Telugu masterpiece by an emperor around 1515, Tulsidas's Awadhi Ramayana from 1574, and the Adi Granth anthology of saint-poets in 1604."
+    "explanation": "Bhakti's great books are milestones of vernacular literature: Dnyaneshwar's Marathi Gita commentary in 1290, a Telugu masterpiece by an emperor around 1515, Tulsidas's Awadhi Ramayana from 1574, and the Adi Granth anthology of saint-poets in 1604.",
+    "theme_hi": "भक्ति साहित्य की महत्वपूर्ण रचनाएँ",
+    "explanation_hi": "भक्ति के महान ग्रंथ लोकभाषा साहित्य के महत्वपूर्ण पड़ाव हैं: 1290 में ज्ञानेश्वर की मराठी गीता टीका, लगभग 1515 में एक सम्राट द्वारा रचित तेलुगु कृति, 1574 से तुलसीदास की अवधी रामायण, और 1604 में संत-कवियों का संकलन आदि ग्रंथ।"
   },
   {
     "id": "tl_047",
@@ -1527,30 +1840,37 @@
       {
         "label": "Mesolithic paintings at Bhimbetka rock shelters",
         "year_display": "c. 8000 BCE",
-        "sort_key": -8000
+        "sort_key": -8000,
+        "label_hi": "भीमबेटका शैलाश्रयों में मध्यपाषाणकालीन चित्र"
       },
       {
         "label": "Barabar caves cut under Mauryan patronage for the Ajivikas",
         "year_display": "c. 250 BCE",
-        "sort_key": -250
+        "sort_key": -250,
+        "label_hi": "आजीविकों के लिए मौर्य संरक्षण में बराबर गुफाओं की खुदाई"
       },
       {
         "label": "Ajanta's great Vakataka-phase caves excavated",
         "year_display": "c. 460 CE",
-        "sort_key": 460
+        "sort_key": 460,
+        "label_hi": "अजंता की महान वाकाटक-चरण गुफाओं की खुदाई"
       },
       {
         "label": "Badami cave temple of Mangalesha dedicated",
         "year_display": "578 CE",
-        "sort_key": 578
+        "sort_key": 578,
+        "label_hi": "मंगलेश की बादामी गुफा मंदिर का समर्पण"
       },
       {
         "label": "Kailasa temple carved at Ellora",
         "year_display": "c. 760 CE",
-        "sort_key": 760
+        "sort_key": 760,
+        "label_hi": "एलोरा में कैलास मंदिर की नक्काशी"
       }
     ],
-    "explanation": "India's rock-cut tradition begins with prehistoric painting at Bhimbetka, turns architectural with the polished Mauryan Barabar caves, and climaxes in the Deccan sequence Ajanta → Badami → Ellora, ending with a whole temple carved from a single cliff."
+    "explanation": "India's rock-cut tradition begins with prehistoric painting at Bhimbetka, turns architectural with the polished Mauryan Barabar caves, and climaxes in the Deccan sequence Ajanta → Badami → Ellora, ending with a whole temple carved from a single cliff.",
+    "theme_hi": "शैल कला और गुफा स्थापत्य",
+    "explanation_hi": "भारत की गुफा-शिल्प परंपरा भीमबेटका के प्रागैतिहासिक चित्रों से आरंभ होती है, पॉलिशदार मौर्यकालीन बराबर गुफाओं के साथ स्थापत्यात्मक रूप लेती है, और दक्कन के क्रम अजंता → बादामी → एलोरा में चरमोत्कर्ष पर पहुँचती है, जहाँ एक संपूर्ण मंदिर को एक ही चट्टान से तराशा गया।"
   },
   {
     "id": "tl_048",
@@ -1561,30 +1881,37 @@
       {
         "label": "Ashokan Major Rock Edicts in Prakrit",
         "year_display": "c. 250 BCE",
-        "sort_key": -250
+        "sort_key": -250,
+        "label_hi": "प्राकृत में अशोक के प्रमुख शिलालेख"
       },
       {
         "label": "Junagadh rock inscription of Rudradaman — early courtly Sanskrit",
         "year_display": "c. 150 CE",
-        "sort_key": 150
+        "sort_key": 150,
+        "label_hi": "रुद्रदामन का जूनागढ़ शिलालेख — प्रारंभिक दरबारी संस्कृत"
       },
       {
         "label": "Allahabad Pillar Prashasti of Samudragupta by Harishena",
         "year_display": "c. 350 CE",
-        "sort_key": 350
+        "sort_key": 350,
+        "label_hi": "हरिषेण द्वारा रचित समुद्रगुप्त की इलाहाबाद स्तंभ प्रशस्ति"
       },
       {
         "label": "Mehrauli iron pillar inscription of 'King Chandra'",
         "year_display": "c. 400 CE",
-        "sort_key": 400
+        "sort_key": 400,
+        "label_hi": "'राजा चंद्र' का मेहरौली लौह स्तंभ अभिलेख"
       },
       {
         "label": "Aihole inscription of Pulakeshin II by Ravikirti",
         "year_display": "634 CE",
-        "sort_key": 634
+        "sort_key": 634,
+        "label_hi": "रविकीर्ति द्वारा रचित पुलकेशिन द्वितीय का ऐहोल अभिलेख"
       }
     ],
-    "explanation": "Inscriptions trace the shift from Ashoka's Prakrit moral edicts to Sanskrit royal eulogy — Rudradaman's Junagadh record is the first great courtly Sanskrit text, followed by the Gupta prashastis and the Chalukyan showpiece at Aihole."
+    "explanation": "Inscriptions trace the shift from Ashoka's Prakrit moral edicts to Sanskrit royal eulogy — Rudradaman's Junagadh record is the first great courtly Sanskrit text, followed by the Gupta prashastis and the Chalukyan showpiece at Aihole.",
+    "theme_hi": "भारत के महान अभिलेख",
+    "explanation_hi": "अभिलेख अशोक के प्राकृत नैतिक शिलालेखों से संस्कृत राजप्रशस्ति की ओर बदलाव को दर्शाते हैं — रुद्रदामन का जूनागढ़ अभिलेख पहला महान दरबारी संस्कृत ग्रंथ है, इसके बाद गुप्त प्रशस्तियाँ और चालुक्यकालीन ऐहोल की उत्कृष्ट कृति आती है।"
   },
   {
     "id": "tl_049",
@@ -1595,30 +1922,37 @@
       {
         "label": "Gondwanaland begins to break apart",
         "year_display": "c. 180 million years ago",
-        "sort_key": -180000000
+        "sort_key": -180000000,
+        "label_hi": "गोंडवानालैंड का विखंडन आरंभ"
       },
       {
         "label": "Indian plate separates and drifts northward",
         "year_display": "c. 130 million years ago",
-        "sort_key": -130000000
+        "sort_key": -130000000,
+        "label_hi": "भारतीय प्लेट अलग होकर उत्तर की ओर खिसकती है"
       },
       {
         "label": "Deccan Trap volcanic eruptions",
         "year_display": "c. 66 million years ago",
-        "sort_key": -66000000
+        "sort_key": -66000000,
+        "label_hi": "दक्कन ट्रैप ज्वालामुखी विस्फोट"
       },
       {
         "label": "Indian plate collides with the Eurasian plate",
         "year_display": "c. 50 million years ago",
-        "sort_key": -50000000
+        "sort_key": -50000000,
+        "label_hi": "भारतीय प्लेट का यूरेशियाई प्लेट से टकराव"
       },
       {
         "label": "Siwalik ranges form from Himalayan debris",
         "year_display": "c. 10 million years ago",
-        "sort_key": -10000000
+        "sort_key": -10000000,
+        "label_hi": "हिमालयी अवसाद से शिवालिक पर्वतमाला का निर्माण"
       }
     ],
-    "explanation": "India's physiography is a drift story: the subcontinent broke off Gondwana, erupted the Deccan lavas en route north, rammed into Eurasia to raise the Himalayas, and the youngest range — the Siwaliks — formed last from the mountains' own eroded debris."
+    "explanation": "India's physiography is a drift story: the subcontinent broke off Gondwana, erupted the Deccan lavas en route north, rammed into Eurasia to raise the Himalayas, and the youngest range — the Siwaliks — formed last from the mountains' own eroded debris.",
+    "theme_hi": "भारतीय प्लेट की यात्रा",
+    "explanation_hi": "भारत की भू-आकृति एक विस्थापन गाथा है: उपमहाद्वीप गोंडवाना से अलग हुआ, उत्तर की ओर बढ़ते हुए दक्कन के लावा का विस्फोट हुआ, यूरेशिया से टकराकर हिमालय का उत्थान हुआ, और सबसे युवा पर्वतमाला — शिवालिक — पर्वतों के अपने ही अपरदित अवसाद से अंत में बनी।"
   },
   {
     "id": "tl_050",
@@ -1629,30 +1963,37 @@
       {
         "label": "First (non-synchronous) census of India",
         "year_display": "1872",
-        "sort_key": 1872
+        "sort_key": 1872,
+        "label_hi": "भारत की पहली (असमकालिक) जनगणना"
       },
       {
         "label": "First synchronous decennial census",
         "year_display": "1881",
-        "sort_key": 1881
+        "sort_key": 1881,
+        "label_hi": "पहली समकालिक दशकीय जनगणना"
       },
       {
         "label": "'Year of the Great Divide' — population growth turns upward",
         "year_display": "1921",
-        "sort_key": 1921
+        "sort_key": 1921,
+        "label_hi": "'महान विभाजन का वर्ष' — जनसंख्या वृद्धि ऊपर की ओर मुड़ती है"
       },
       {
         "label": "First census of independent India",
         "year_display": "1951",
-        "sort_key": 1951
+        "sort_key": 1951,
+        "label_hi": "स्वतंत्र भारत की पहली जनगणना"
       },
       {
         "label": "Latest completed census",
         "year_display": "2011",
-        "sort_key": 2011
+        "sort_key": 2011,
+        "label_hi": "नवीनतम पूर्ण जनगणना"
       }
     ],
-    "explanation": "The census began under Lord Mayo in 1872 and became a synchronised decennial exercise from 1881; 1921 is the demographic 'Great Divide' after which population rose continuously, and 2011 remains the last completed count."
+    "explanation": "The census began under Lord Mayo in 1872 and became a synchronised decennial exercise from 1881; 1921 is the demographic 'Great Divide' after which population rose continuously, and 2011 remains the last completed count.",
+    "theme_hi": "भारतीय जनगणना का इतिहास",
+    "explanation_hi": "जनगणना का आरंभ 1872 में लॉर्ड मेयो के अधीन हुआ और 1881 से यह एक समकालिक दशकीय अभ्यास बन गई; 1921 जनसांख्यिकीय 'महान विभाजन' का वर्ष है जिसके बाद जनसंख्या निरंतर बढ़ती रही, और 2011 अब तक की अंतिम पूर्ण गणना है।"
   },
   {
     "id": "tl_051",
@@ -1663,30 +2004,37 @@
       {
         "label": "Damodar Valley Corporation established",
         "year_display": "1948",
-        "sort_key": 1948
+        "sort_key": 1948,
+        "label_hi": "दामोदर घाटी निगम की स्थापना"
       },
       {
         "label": "Hirakud Dam on the Mahanadi completed",
         "year_display": "1957",
-        "sort_key": 1957
+        "sort_key": 1957,
+        "label_hi": "महानदी पर हीराकुंड बाँध का निर्माण पूर्ण"
       },
       {
         "label": "Bhakra Dam on the Sutlej completed",
         "year_display": "1963",
-        "sort_key": 1963
+        "sort_key": 1963,
+        "label_hi": "सतलुज पर भाखड़ा बाँध का निर्माण पूर्ण"
       },
       {
         "label": "Tehri Dam on the Bhagirathi commissioned",
         "year_display": "2006",
-        "sort_key": 2006
+        "sort_key": 2006,
+        "label_hi": "भागीरथी पर टिहरी बाँध का उद्घाटन"
       },
       {
         "label": "Sardar Sarovar Dam on the Narmada inaugurated at full height",
         "year_display": "2017",
-        "sort_key": 2017
+        "sort_key": 2017,
+        "label_hi": "नर्मदा पर सरदार सरोवर बाँध का पूर्ण ऊँचाई पर उद्घाटन"
       }
     ],
-    "explanation": "The early multipurpose projects — DVC (modelled on the Tennessee Valley Authority), Hirakud and Bhakra — were Nehru-era 'temples of modern India'; Tehri and Sardar Sarovar took decades longer amid engineering and environmental controversy."
+    "explanation": "The early multipurpose projects — DVC (modelled on the Tennessee Valley Authority), Hirakud and Bhakra — were Nehru-era 'temples of modern India'; Tehri and Sardar Sarovar took decades longer amid engineering and environmental controversy.",
+    "theme_hi": "भारत की महान नदी घाटी परियोजनाएँ",
+    "explanation_hi": "प्रारंभिक बहुउद्देशीय परियोजनाएँ — डीवीसी (टेनेसी वैली अथॉरिटी के आधार पर), हीराकुंड और भाखड़ा — नेहरू-युग के 'आधुनिक भारत के मंदिर' थीं; टिहरी और सरदार सरोवर को इंजीनियरिंग और पर्यावरणीय विवादों के बीच दशकों अधिक लगे।"
   },
   {
     "id": "tl_052",
@@ -1697,30 +2045,37 @@
       {
         "label": "Columbus reaches the Americas",
         "year_display": "1492",
-        "sort_key": 1492
+        "sort_key": 1492,
+        "label_hi": "कोलंबस अमेरिका पहुँचता है"
       },
       {
         "label": "Vasco da Gama reaches Calicut via the Cape of Good Hope",
         "year_display": "1498",
-        "sort_key": 1498
+        "sort_key": 1498,
+        "label_hi": "वास्को द गामा गुड होप अंतरीप के रास्ते कालीकट पहुँचता है"
       },
       {
         "label": "Magellan's expedition departs to circumnavigate the globe",
         "year_display": "1519",
-        "sort_key": 1519
+        "sort_key": 1519,
+        "label_hi": "मैगलन का अभियान पृथ्वी की परिक्रमा हेतु रवाना होता है"
       },
       {
         "label": "Suez Canal opens",
         "year_display": "1869",
-        "sort_key": 1869
+        "sort_key": 1869,
+        "label_hi": "स्वेज़ नहर खुलती है"
       },
       {
         "label": "Panama Canal opens",
         "year_display": "1914",
-        "sort_key": 1914
+        "sort_key": 1914,
+        "label_hi": "पनामा नहर खुलती है"
       }
     ],
-    "explanation": "The 1490s voyages of Columbus and da Gama opened the ocean world, Magellan's fleet proved it was one connected sea, and the two great 19th-20th century canals — Suez and Panama — rewired global shipping routes."
+    "explanation": "The 1490s voyages of Columbus and da Gama opened the ocean world, Magellan's fleet proved it was one connected sea, and the two great 19th-20th century canals — Suez and Panama — rewired global shipping routes.",
+    "theme_hi": "अन्वेषण का युग और महान नहरें",
+    "explanation_hi": "1490 के दशक की कोलंबस और दा गामा की यात्राओं ने समुद्री जगत को खोला, मैगलन के बेड़े ने सिद्ध किया कि यह एक जुड़ा हुआ समुद्र है, और 19वीं-20वीं शताब्दी की दो महान नहरों — स्वेज़ और पनामा — ने वैश्विक शिपिंग मार्गों को नया रूप दिया।"
   },
   {
     "id": "tl_053",
@@ -1731,30 +2086,37 @@
       {
         "label": "Andhra Pradesh formed as India's first linguistic state",
         "year_display": "1953",
-        "sort_key": 1953
+        "sort_key": 1953,
+        "label_hi": "भारत के पहले भाषाई राज्य के रूप में आंध्र प्रदेश का गठन"
       },
       {
         "label": "Bombay State bifurcated into Maharashtra and Gujarat",
         "year_display": "1960",
-        "sort_key": 1960
+        "sort_key": 1960,
+        "label_hi": "बॉम्बे राज्य का महाराष्ट्र और गुजरात में विभाजन"
       },
       {
         "label": "Nagaland becomes the 16th state",
         "year_display": "1963",
-        "sort_key": 1963
+        "sort_key": 1963,
+        "label_hi": "नागालैंड 16वाँ राज्य बना"
       },
       {
         "label": "Sikkim becomes a full state",
         "year_display": "1975",
-        "sort_key": 1975
+        "sort_key": 1975,
+        "label_hi": "सिक्किम पूर्ण राज्य बना"
       },
       {
         "label": "Telangana carved out of Andhra Pradesh",
         "year_display": "2014",
-        "sort_key": 2014
+        "sort_key": 2014,
+        "label_hi": "आंध्र प्रदेश से तेलंगाना का गठन"
       }
     ],
-    "explanation": "State boundaries in independent India were redrawn in waves — first along linguistic lines following the States Reorganisation Commission, then through later bifurcations driven by regional identity movements, right up to Telangana in 2014."
+    "explanation": "State boundaries in independent India were redrawn in waves — first along linguistic lines following the States Reorganisation Commission, then through later bifurcations driven by regional identity movements, right up to Telangana in 2014.",
+    "theme_hi": "भारतीय राज्यों का गठन (पुनर्गठन कालक्रम)",
+    "explanation_hi": "स्वतंत्र भारत में राज्यों की सीमाएँ लहरों में फिर से खींची गईं — पहले राज्य पुनर्गठन आयोग के अनुसार भाषाई आधार पर, फिर क्षेत्रीय पहचान आंदोलनों से प्रेरित बाद के विभाजनों के माध्यम से, 2014 में तेलंगाना तक।"
   },
   {
     "id": "tl_054",
@@ -1765,30 +2127,37 @@
       {
         "label": "Survey of India established",
         "year_display": "1767",
-        "sort_key": 1767
+        "sort_key": 1767,
+        "label_hi": "सर्वे ऑफ इंडिया की स्थापना"
       },
       {
         "label": "Great Trigonometrical Survey begins under Lambton",
         "year_display": "1802",
-        "sort_key": 1802
+        "sort_key": 1802,
+        "label_hi": "लैंबटन के अधीन ग्रेट ट्रिगोनोमेट्रिकल सर्वे आरंभ"
       },
       {
         "label": "Peak XV computed as the world's highest mountain",
         "year_display": "1852",
-        "sort_key": 1852
+        "sort_key": 1852,
+        "label_hi": "पीक XV को विश्व के सबसे ऊँचे पर्वत के रूप में परिकलित किया गया"
       },
       {
         "label": "Peak XV officially named Mount Everest",
         "year_display": "1865",
-        "sort_key": 1865
+        "sort_key": 1865,
+        "label_hi": "पीक XV का आधिकारिक नाम माउंट एवरेस्ट रखा गया"
       },
       {
         "label": "Hillary and Tenzing make the first ascent of Everest",
         "year_display": "1953",
-        "sort_key": 1953
+        "sort_key": 1953,
+        "label_hi": "हिलेरी और तेनज़िंग ने एवरेस्ट की पहली चढ़ाई की"
       }
     ],
-    "explanation": "The Survey of India's Great Trigonometrical Survey, begun in 1802, methodically triangulated the subcontinent; its computers identified Peak XV as the world's highest in 1852, it was named for a former Surveyor-General in 1865, and was finally climbed in 1953."
+    "explanation": "The Survey of India's Great Trigonometrical Survey, begun in 1802, methodically triangulated the subcontinent; its computers identified Peak XV as the world's highest in 1852, it was named for a former Surveyor-General in 1865, and was finally climbed in 1953.",
+    "theme_hi": "भारत का मानचित्रण और एवरेस्ट की माप",
+    "explanation_hi": "1802 में आरंभ हुए सर्वे ऑफ इंडिया के ग्रेट ट्रिगोनोमेट्रिकल सर्वे ने व्यवस्थित रूप से उपमहाद्वीप का त्रिकोणमितीय सर्वेक्षण किया; इसके परिकलकों ने 1852 में पीक XV को विश्व का सबसे ऊँचा पर्वत पहचाना, 1865 में इसका नाम एक पूर्व सर्वेक्षक-जनरल के नाम पर रखा गया, और अंततः 1953 में इस पर पहली चढ़ाई हुई।"
   },
   {
     "id": "tl_055",
@@ -1799,25 +2168,31 @@
       {
         "label": "Durand Line drawn between British India and Afghanistan",
         "year_display": "1893",
-        "sort_key": 1893
+        "sort_key": 1893,
+        "label_hi": "ब्रिटिश भारत और अफगानिस्तान के बीच डूरंड रेखा खींची गई"
       },
       {
         "label": "McMahon Line drawn at the Simla Convention",
         "year_display": "1914",
-        "sort_key": 1914
+        "sort_key": 1914,
+        "label_hi": "शिमला सम्मेलन में मैकमोहन रेखा खींची गई"
       },
       {
         "label": "Radcliffe Line partitions India and Pakistan",
         "year_display": "1947",
-        "sort_key": 1947
+        "sort_key": 1947,
+        "label_hi": "रैडक्लिफ रेखा ने भारत और पाकिस्तान को विभाजित किया"
       },
       {
         "label": "Line of Control established by the Simla Agreement",
         "year_display": "1972",
-        "sort_key": 1972
+        "sort_key": 1972,
+        "label_hi": "शिमला समझौते द्वारा नियंत्रण रेखा की स्थापना"
       }
     ],
-    "explanation": "Each line marks a different negotiation: the colonial Durand and McMahon lines fixed frontiers with Afghanistan and Tibet, Radcliffe's hurried award drew the Partition boundary, and the 1972 Simla Agreement converted the Kashmir ceasefire line into the LoC."
+    "explanation": "Each line marks a different negotiation: the colonial Durand and McMahon lines fixed frontiers with Afghanistan and Tibet, Radcliffe's hurried award drew the Partition boundary, and the 1972 Simla Agreement converted the Kashmir ceasefire line into the LoC.",
+    "theme_hi": "उपमहाद्वीप की सीमा रेखाएँ",
+    "explanation_hi": "प्रत्येक रेखा एक अलग वार्ता को दर्शाती है: औपनिवेशिक डूरंड और मैकमोहन रेखाओं ने अफगानिस्तान और तिब्बत के साथ सीमाएँ तय कीं, रैडक्लिफ के शीघ्रतापूर्ण निर्णय ने विभाजन सीमा खींची, और 1972 के शिमला समझौते ने कश्मीर युद्धविराम रेखा को नियंत्रण रेखा में बदल दिया।"
   },
   {
     "id": "tl_056",
@@ -1828,25 +2203,31 @@
       {
         "label": "Indus Waters Treaty signed with Pakistan",
         "year_display": "1960",
-        "sort_key": 1960
+        "sort_key": 1960,
+        "label_hi": "पाकिस्तान के साथ सिंधु जल संधि पर हस्ताक्षर"
       },
       {
         "label": "Farakka Barrage on the Ganga commissioned",
         "year_display": "1975",
-        "sort_key": 1975
+        "sort_key": 1975,
+        "label_hi": "गंगा पर फरक्का बैराज का उद्घाटन"
       },
       {
         "label": "Ganga Water Sharing Treaty signed with Bangladesh",
         "year_display": "1996",
-        "sort_key": 1996
+        "sort_key": 1996,
+        "label_hi": "बांग्लादेश के साथ गंगा जल बंटवारा संधि पर हस्ताक्षर"
       },
       {
         "label": "Ken-Betwa river link project approved by the Union Cabinet",
         "year_display": "2021",
-        "sort_key": 2021
+        "sort_key": 2021,
+        "label_hi": "केंद्रीय मंत्रिमंडल द्वारा केन-बेतवा नदी जोड़ परियोजना की स्वीकृति"
       }
     ],
-    "explanation": "India's transboundary water diplomacy began with the World Bank-brokered Indus treaty; Farakka's commissioning created the Ganga dispute that the 1996 treaty with Bangladesh settled, while Ken-Betwa launched the domestic river-interlinking era."
+    "explanation": "India's transboundary water diplomacy began with the World Bank-brokered Indus treaty; Farakka's commissioning created the Ganga dispute that the 1996 treaty with Bangladesh settled, while Ken-Betwa launched the domestic river-interlinking era.",
+    "theme_hi": "भारत के नदी जल समझौते और जोड़ परियोजनाएँ",
+    "explanation_hi": "भारत की सीमापार जल कूटनीति विश्व बैंक द्वारा मध्यस्थता की गई सिंधु संधि से आरंभ हुई; फरक्का के उद्घाटन ने गंगा विवाद उत्पन्न किया जिसे बांग्लादेश के साथ 1996 की संधि ने सुलझाया, जबकि केन-बेतवा ने घरेलू नदी-जोड़ युग का शुभारंभ किया।"
   },
   {
     "id": "tl_057",
@@ -1857,30 +2238,37 @@
       {
         "label": "Aryabhata, India's first satellite, launched",
         "year_display": "1975",
-        "sort_key": 1975
+        "sort_key": 1975,
+        "label_hi": "भारत का पहला उपग्रह आर्यभट्ट प्रक्षेपित"
       },
       {
         "label": "Bhaskara-I experimental earth observation satellite",
         "year_display": "1979",
-        "sort_key": 1979
+        "sort_key": 1979,
+        "label_hi": "प्रायोगिक पृथ्वी अवलोकन उपग्रह भास्कर-I"
       },
       {
         "label": "IRS-1A, first operational remote sensing satellite",
         "year_display": "1988",
-        "sort_key": 1988
+        "sort_key": 1988,
+        "label_hi": "आईआरएस-1ए, पहला परिचालन रिमोट सेंसिंग उपग्रह"
       },
       {
         "label": "Oceansat-1 (IRS-P4) launched for ocean studies",
         "year_display": "1999",
-        "sort_key": 1999
+        "sort_key": 1999,
+        "label_hi": "समुद्र अध्ययन हेतु ओशनसैट-1 (आईआरएस-पी4) प्रक्षेपित"
       },
       {
         "label": "Cartosat-1 launched for high-resolution mapping",
         "year_display": "2005",
-        "sort_key": 2005
+        "sort_key": 2005,
+        "label_hi": "उच्च-विभेदन मानचित्रण हेतु कार्टोसैट-1 प्रक्षेपित"
       }
     ],
-    "explanation": "India's remote sensing programme matured in steps: the experimental Aryabhata and Bhaskara missions led to the operational IRS series from 1988, then specialised platforms — Oceansat for the seas and Cartosat for cartographic-grade imagery."
+    "explanation": "India's remote sensing programme matured in steps: the experimental Aryabhata and Bhaskara missions led to the operational IRS series from 1988, then specialised platforms — Oceansat for the seas and Cartosat for cartographic-grade imagery.",
+    "theme_hi": "भारत के पृथ्वी अवलोकन उपग्रह",
+    "explanation_hi": "भारत का रिमोट सेंसिंग कार्यक्रम चरणों में परिपक्व हुआ: प्रायोगिक आर्यभट्ट और भास्कर मिशनों ने 1988 से परिचालन आईआरएस श्रृंखला को जन्म दिया, फिर विशिष्ट प्लेटफॉर्म — समुद्रों के लिए ओशनसैट और मानचित्रण-गुणवत्ता वाली छवियों के लिए कार्टोसैट।"
   },
   {
     "id": "tl_058",
@@ -1891,30 +2279,37 @@
       {
         "label": "Bihar-Nepal earthquake",
         "year_display": "1934",
-        "sort_key": 1934
+        "sort_key": 1934,
+        "label_hi": "बिहार-नेपाल भूकंप"
       },
       {
         "label": "Latur (Killari) earthquake in Maharashtra",
         "year_display": "1993",
-        "sort_key": 1993
+        "sort_key": 1993,
+        "label_hi": "महाराष्ट्र में लातूर (किल्लारी) भूकंप"
       },
       {
         "label": "Bhuj earthquake in Gujarat",
         "year_display": "2001",
-        "sort_key": 2001
+        "sort_key": 2001,
+        "label_hi": "गुजरात में भुज भूकंप"
       },
       {
         "label": "Indian Ocean tsunami strikes India's east coast",
         "year_display": "2004",
-        "sort_key": 2004
+        "sort_key": 2004,
+        "label_hi": "हिंद महासागर सुनामी ने भारत के पूर्वी तट पर प्रहार किया"
       },
       {
         "label": "Kedarnath flash floods in Uttarakhand",
         "year_display": "2013",
-        "sort_key": 2013
+        "sort_key": 2013,
+        "label_hi": "उत्तराखंड में केदारनाथ अचानक बाढ़"
       }
     ],
-    "explanation": "These disasters reshaped Indian disaster policy: the Latur and Bhuj earthquakes exposed vulnerability outside the Himalayan belt, and the 2004 tsunami directly led to the Disaster Management Act of 2005 and India's tsunami warning system."
+    "explanation": "These disasters reshaped Indian disaster policy: the Latur and Bhuj earthquakes exposed vulnerability outside the Himalayan belt, and the 2004 tsunami directly led to the Disaster Management Act of 2005 and India's tsunami warning system.",
+    "theme_hi": "भारत की प्रमुख प्राकृतिक आपदाएँ",
+    "explanation_hi": "इन आपदाओं ने भारतीय आपदा नीति को नया रूप दिया: लातूर और भुज भूकंपों ने हिमालयी पेटी के बाहर की भेद्यता को उजागर किया, और 2004 की सुनामी ने सीधे 2005 के आपदा प्रबंधन अधिनियम और भारत की सुनामी चेतावनी प्रणाली को जन्म दिया।"
   },
   {
     "id": "tl_059",
@@ -1925,30 +2320,37 @@
       {
         "label": "First Indian Antarctic expedition",
         "year_display": "1981",
-        "sort_key": 1981
+        "sort_key": 1981,
+        "label_hi": "पहला भारतीय अंटार्कटिक अभियान"
       },
       {
         "label": "Dakshin Gangotri, first Indian Antarctic station",
         "year_display": "1983",
-        "sort_key": 1983
+        "sort_key": 1983,
+        "label_hi": "दक्षिण गंगोत्री, पहला भारतीय अंटार्कटिक स्टेशन"
       },
       {
         "label": "Maitri station commissioned",
         "year_display": "1989",
-        "sort_key": 1989
+        "sort_key": 1989,
+        "label_hi": "मैत्री स्टेशन का उद्घाटन"
       },
       {
         "label": "Bharati station commissioned",
         "year_display": "2012",
-        "sort_key": 2012
+        "sort_key": 2012,
+        "label_hi": "भारती स्टेशन का उद्घाटन"
       },
       {
         "label": "Indian Antarctic Act enacted",
         "year_display": "2022",
-        "sort_key": 2022
+        "sort_key": 2022,
+        "label_hi": "भारतीय अंटार्कटिक अधिनियम अधिनियमित"
       }
     ],
-    "explanation": "India's polar presence grew from the pioneering 1981 expedition to three successive stations — Dakshin Gangotri (later buried in ice), Maitri and Bharati — and in 2022 Parliament gave the programme a domestic legal framework."
+    "explanation": "India's polar presence grew from the pioneering 1981 expedition to three successive stations — Dakshin Gangotri (later buried in ice), Maitri and Bharati — and in 2022 Parliament gave the programme a domestic legal framework.",
+    "theme_hi": "अंटार्कटिका में भारत",
+    "explanation_hi": "भारत की ध्रुवीय उपस्थिति 1981 के अग्रणी अभियान से बढ़कर तीन क्रमिक स्टेशनों — दक्षिण गंगोत्री (जो बाद में बर्फ में दब गया), मैत्री और भारती — तक पहुँची, और 2022 में संसद ने इस कार्यक्रम को एक घरेलू कानूनी ढाँचा दिया।"
   },
   {
     "id": "tl_060",
@@ -1959,25 +2361,31 @@
       {
         "label": "New Delhi inaugurated as the imperial capital",
         "year_display": "1931",
-        "sort_key": 1931
+        "sort_key": 1931,
+        "label_hi": "नई दिल्ली का साम्राज्ञी राजधानी के रूप में उद्घाटन"
       },
       {
         "label": "Bhubaneswar planned as Odisha's new capital",
         "year_display": "1948",
-        "sort_key": 1948
+        "sort_key": 1948,
+        "label_hi": "भुवनेश्वर को ओडिशा की नई राजधानी के रूप में नियोजित किया गया"
       },
       {
         "label": "Chandigarh, designed by Le Corbusier, inaugurated",
         "year_display": "1953",
-        "sort_key": 1953
+        "sort_key": 1953,
+        "label_hi": "ली कोर्बुज़िए द्वारा डिज़ाइन किए गए चंडीगढ़ का उद्घाटन"
       },
       {
         "label": "Foundation stone laid for Amaravati, Andhra Pradesh",
         "year_display": "2015",
-        "sort_key": 2015
+        "sort_key": 2015,
+        "label_hi": "आंध्र प्रदेश के अमरावती की आधारशिला रखी गई"
       }
     ],
-    "explanation": "Purpose-built capitals bookend Indian planning history: Lutyens' imperial New Delhi, the early post-independence projects at Bhubaneswar and Chandigarh, and the still-unfinished 21st-century experiment at Amaravati."
+    "explanation": "Purpose-built capitals bookend Indian planning history: Lutyens' imperial New Delhi, the early post-independence projects at Bhubaneswar and Chandigarh, and the still-unfinished 21st-century experiment at Amaravati.",
+    "theme_hi": "भारत के नियोजित राजधानी शहर",
+    "explanation_hi": "विशेष रूप से निर्मित राजधानियाँ भारतीय नियोजन इतिहास के आरंभ और वर्तमान दोनों को दर्शाती हैं: लुटियंस की साम्राज्ञी नई दिल्ली, भुवनेश्वर और चंडीगढ़ की प्रारंभिक स्वातंत्र्योत्तर परियोजनाएँ, और अमरावती में अभी तक अधूरा 21वीं सदी का प्रयोग।"
   },
   {
     "id": "tl_061",
@@ -1988,30 +2396,37 @@
       {
         "label": "First Five-Year Plan launched",
         "year_display": "1951",
-        "sort_key": 1951
+        "sort_key": 1951,
+        "label_hi": "प्रथम पंचवर्षीय योजना का शुभारंभ"
       },
       {
         "label": "Green Revolution begins with high-yield variety seeds",
         "year_display": "1966",
-        "sort_key": 1966
+        "sort_key": 1966,
+        "label_hi": "उच्च उपज किस्म के बीजों के साथ हरित क्रांति आरंभ"
       },
       {
         "label": "First round of bank nationalisation (14 banks)",
         "year_display": "1969",
-        "sort_key": 1969
+        "sort_key": 1969,
+        "label_hi": "बैंक राष्ट्रीयकरण का पहला दौर (14 बैंक)"
       },
       {
         "label": "LPG reforms — liberalisation, privatisation, globalisation",
         "year_display": "1991",
-        "sort_key": 1991
+        "sort_key": 1991,
+        "label_hi": "एलपीजी सुधार — उदारीकरण, निजीकरण, वैश्वीकरण"
       },
       {
         "label": "Goods and Services Tax (GST) implemented",
         "year_display": "2017",
-        "sort_key": 2017
+        "sort_key": 2017,
+        "label_hi": "वस्तु एवं सेवा कर (जीएसटी) लागू"
       }
     ],
-    "explanation": "India's economic story moves from planned self-sufficiency (Five-Year Plans, nationalised banks) through a productivity push (Green Revolution) to a decisive market opening in 1991, culminating decades later in a single unified indirect tax regime."
+    "explanation": "India's economic story moves from planned self-sufficiency (Five-Year Plans, nationalised banks) through a productivity push (Green Revolution) to a decisive market opening in 1991, culminating decades later in a single unified indirect tax regime.",
+    "theme_hi": "आर्थिक महत्वपूर्ण पड़ाव — योजनाओं से जीएसटी तक",
+    "explanation_hi": "भारत की आर्थिक गाथा नियोजित आत्मनिर्भरता (पंचवर्षीय योजनाएँ, राष्ट्रीयकृत बैंक) से उत्पादकता प्रोत्साहन (हरित क्रांति) से होते हुए 1991 में निर्णायक बाज़ार-उन्मुक्ति तक पहुँचती है, और दशकों बाद एक एकीकृत अप्रत्यक्ष कर व्यवस्था में परिणत होती है।"
   },
   {
     "id": "tl_062",
@@ -2022,30 +2437,37 @@
       {
         "label": "Reserve Bank of India established",
         "year_display": "1935",
-        "sort_key": 1935
+        "sort_key": 1935,
+        "label_hi": "भारतीय रिज़र्व बैंक की स्थापना"
       },
       {
         "label": "RBI nationalised",
         "year_display": "1949",
-        "sort_key": 1949
+        "sort_key": 1949,
+        "label_hi": "भारतीय रिज़र्व बैंक का राष्ट्रीयकरण"
       },
       {
         "label": "State Bank of India formed from the Imperial Bank",
         "year_display": "1955",
-        "sort_key": 1955
+        "sort_key": 1955,
+        "label_hi": "इंपीरियल बैंक से भारतीय स्टेट बैंक का गठन"
       },
       {
         "label": "Fourteen major banks nationalised",
         "year_display": "1969",
-        "sort_key": 1969
+        "sort_key": 1969,
+        "label_hi": "चौदह प्रमुख बैंकों का राष्ट्रीयकरण"
       },
       {
         "label": "Six more banks nationalised",
         "year_display": "1980",
-        "sort_key": 1980
+        "sort_key": 1980,
+        "label_hi": "छह और बैंकों का राष्ट्रीयकरण"
       }
     ],
-    "explanation": "Banking moved steadily into state hands: the RBI was created private in 1935 and nationalised in 1949, the Imperial Bank became SBI in 1955, and the big nationalisation waves of 1969 and 1980 brought most commercial banking under government ownership."
+    "explanation": "Banking moved steadily into state hands: the RBI was created private in 1935 and nationalised in 1949, the Imperial Bank became SBI in 1955, and the big nationalisation waves of 1969 and 1980 brought most commercial banking under government ownership.",
+    "theme_hi": "भारतीय बैंकिंग के महत्वपूर्ण पड़ाव",
+    "explanation_hi": "बैंकिंग धीरे-धीरे राज्य के हाथों में आती गई: भारतीय रिज़र्व बैंक को 1935 में निजी रूप में बनाया गया और 1949 में राष्ट्रीयकृत किया गया, इंपीरियल बैंक 1955 में एसबीआई बना, और 1969 व 1980 की बड़ी राष्ट्रीयकरण लहरों ने अधिकांश वाणिज्यिक बैंकिंग को सरकारी स्वामित्व में ला दिया।"
   },
   {
     "id": "tl_063",
@@ -2056,30 +2478,37 @@
       {
         "label": "First Five-Year Plan begins (Harrod-Domar based)",
         "year_display": "1951",
-        "sort_key": 1951
+        "sort_key": 1951,
+        "label_hi": "प्रथम पंचवर्षीय योजना आरंभ (हैरॉड-डोमर आधारित)"
       },
       {
         "label": "Second Plan adopts the Mahalanobis heavy-industry model",
         "year_display": "1956",
-        "sort_key": 1956
+        "sort_key": 1956,
+        "label_hi": "द्वितीय योजना ने महालनोबिस भारी-उद्योग मॉडल अपनाया"
       },
       {
         "label": "'Plan Holiday' begins after wars and drought",
         "year_display": "1966",
-        "sort_key": 1966
+        "sort_key": 1966,
+        "label_hi": "युद्धों और सूखे के बाद 'योजना अवकाश' आरंभ"
       },
       {
         "label": "Twelfth (and last) Five-Year Plan begins",
         "year_display": "2012",
-        "sort_key": 2012
+        "sort_key": 2012,
+        "label_hi": "बारहवीं (और अंतिम) पंचवर्षीय योजना आरंभ"
       },
       {
         "label": "NITI Aayog replaces the Planning Commission",
         "year_display": "2015",
-        "sort_key": 2015
+        "sort_key": 2015,
+        "label_hi": "नीति आयोग ने योजना आयोग का स्थान लिया"
       }
     ],
-    "explanation": "Five-Year Plans ran from 1951, with the Mahalanobis Second Plan setting the heavy-industry course and the 1966-69 Plan Holiday marking the first big break; the Twelfth Plan (2012-17) proved the last as NITI Aayog ended the era in 2015."
+    "explanation": "Five-Year Plans ran from 1951, with the Mahalanobis Second Plan setting the heavy-industry course and the 1966-69 Plan Holiday marking the first big break; the Twelfth Plan (2012-17) proved the last as NITI Aayog ended the era in 2015.",
+    "theme_hi": "योजना युग और उसका अंत",
+    "explanation_hi": "पंचवर्षीय योजनाएँ 1951 से चलीं, महालनोबिस की द्वितीय योजना ने भारी-उद्योग की दिशा तय की और 1966-69 का 'योजना अवकाश' पहला बड़ा विराम था; बारहवीं योजना (2012-17) अंतिम साबित हुई क्योंकि नीति आयोग ने 2015 में इस युग को समाप्त कर दिया।"
   },
   {
     "id": "tl_064",
@@ -2090,30 +2519,37 @@
       {
         "label": "New Economic Policy launches LPG reforms",
         "year_display": "1991",
-        "sort_key": 1991
+        "sort_key": 1991,
+        "label_hi": "नई आर्थिक नीति ने एलपीजी सुधार आरंभ किए"
       },
       {
         "label": "SEBI given statutory powers",
         "year_display": "1992",
-        "sort_key": 1992
+        "sort_key": 1992,
+        "label_hi": "सेबी को सांविधिक अधिकार दिए गए"
       },
       {
         "label": "FEMA replaces the draconian FERA",
         "year_display": "1999",
-        "sort_key": 1999
+        "sort_key": 1999,
+        "label_hi": "फेमा ने कठोर फेरा का स्थान लिया"
       },
       {
         "label": "Insolvency and Bankruptcy Code enacted",
         "year_display": "2016",
-        "sort_key": 2016
+        "sort_key": 2016,
+        "label_hi": "दिवाला और शोधन अक्षमता संहिता अधिनियमित"
       },
       {
         "label": "GST rolled out nationwide",
         "year_display": "2017",
-        "sort_key": 2017
+        "sort_key": 2017,
+        "label_hi": "जीएसटी देशभर में लागू"
       }
     ],
-    "explanation": "The 1991 crisis-driven opening was followed by institution building: a statutory market regulator in 1992, liberalised forex law in 1999, and the twin structural reforms of the 2010s — the bankruptcy code and the GST."
+    "explanation": "The 1991 crisis-driven opening was followed by institution building: a statutory market regulator in 1992, liberalised forex law in 1999, and the twin structural reforms of the 2010s — the bankruptcy code and the GST.",
+    "theme_hi": "1991 के बाद के सुधार",
+    "explanation_hi": "1991 के संकट-प्रेरित उन्मुक्ति के बाद संस्था-निर्माण हुआ: 1992 में एक सांविधिक बाज़ार नियामक, 1999 में उदारीकृत विदेशी मुद्रा कानून, और 2010 के दशक के दो संरचनात्मक सुधार — दिवाला संहिता और जीएसटी।"
   },
   {
     "id": "tl_065",
@@ -2124,25 +2560,31 @@
       {
         "label": "RBI Act passed",
         "year_display": "1934",
-        "sort_key": 1934
+        "sort_key": 1934,
+        "label_hi": "भारतीय रिज़र्व बैंक अधिनियम पारित"
       },
       {
         "label": "Fiscal Responsibility and Budget Management (FRBM) Act",
         "year_display": "2003",
-        "sort_key": 2003
+        "sort_key": 2003,
+        "label_hi": "राजकोषीय उत्तरदायित्व और बजट प्रबंधन (एफआरबीएम) अधिनियम"
       },
       {
         "label": "Monetary Policy Framework Agreement adopts inflation targeting",
         "year_display": "2015",
-        "sort_key": 2015
+        "sort_key": 2015,
+        "label_hi": "मौद्रिक नीति ढाँचा समझौते ने मुद्रास्फीति लक्ष्यीकरण अपनाया"
       },
       {
         "label": "Monetary Policy Committee holds its first meeting",
         "year_display": "2016",
-        "sort_key": 2016
+        "sort_key": 2016,
+        "label_hi": "मौद्रिक नीति समिति की पहली बैठक"
       }
     ],
-    "explanation": "The RBI Act of 1934 created the central bank, but the modern framework is recent: FRBM disciplined fiscal policy in 2003, the 2015 agreement fixed a 4% CPI inflation target, and the six-member MPC began setting rates in 2016."
+    "explanation": "The RBI Act of 1934 created the central bank, but the modern framework is recent: FRBM disciplined fiscal policy in 2003, the 2015 agreement fixed a 4% CPI inflation target, and the six-member MPC began setting rates in 2016.",
+    "theme_hi": "भारत में मौद्रिक नीति का विकास",
+    "explanation_hi": "1934 के रिज़र्व बैंक अधिनियम ने केंद्रीय बैंक का निर्माण किया, परंतु आधुनिक ढाँचा हाल का है: एफआरबीएम ने 2003 में राजकोषीय नीति को अनुशासित किया, 2015 के समझौते ने 4% सीपीआई मुद्रास्फीति लक्ष्य तय किया, और छह-सदस्यीय एमपीसी ने 2016 में दरें तय करना आरंभ किया।"
   },
   {
     "id": "tl_066",
@@ -2153,30 +2595,37 @@
       {
         "label": "IFCI, India's first development bank, established",
         "year_display": "1948",
-        "sort_key": 1948
+        "sort_key": 1948,
+        "label_hi": "भारत के पहले विकास बैंक आईएफसीआई की स्थापना"
       },
       {
         "label": "ICICI set up to finance private industry",
         "year_display": "1955",
-        "sort_key": 1955
+        "sort_key": 1955,
+        "label_hi": "निजी उद्योग के वित्तपोषण हेतु आईसीआईसीआई की स्थापना"
       },
       {
         "label": "IDBI established as the apex industrial lender",
         "year_display": "1964",
-        "sort_key": 1964
+        "sort_key": 1964,
+        "label_hi": "शीर्ष औद्योगिक ऋणदाता के रूप में आईडीबीआई की स्थापना"
       },
       {
         "label": "NABARD created for agriculture and rural development",
         "year_display": "1982",
-        "sort_key": 1982
+        "sort_key": 1982,
+        "label_hi": "कृषि और ग्रामीण विकास हेतु नाबार्ड का गठन"
       },
       {
         "label": "SIDBI created for small industries",
         "year_display": "1990",
-        "sort_key": 1990
+        "sort_key": 1990,
+        "label_hi": "लघु उद्योगों हेतु सिडबी का गठन"
       }
     ],
-    "explanation": "India built specialised lenders one sector at a time: IFCI for industry in 1948, ICICI for private enterprise, IDBI as apex institution in 1964, then dedicated banks for agriculture (NABARD, 1982) and small industry (SIDBI, 1990)."
+    "explanation": "India built specialised lenders one sector at a time: IFCI for industry in 1948, ICICI for private enterprise, IDBI as apex institution in 1964, then dedicated banks for agriculture (NABARD, 1982) and small industry (SIDBI, 1990).",
+    "theme_hi": "विकास वित्त संस्थाएँ",
+    "explanation_hi": "भारत ने एक-एक क्षेत्र के लिए विशेष ऋणदाता संस्थाएँ बनाईं: 1948 में उद्योग हेतु आईएफसीआई, निजी उद्यम हेतु आईसीआईसीआई, 1964 में शीर्ष संस्था के रूप में आईडीबीआई, फिर कृषि (नाबार्ड, 1982) और लघु उद्योग (सिडबी, 1990) हेतु समर्पित बैंक।"
   },
   {
     "id": "tl_067",
@@ -2187,30 +2636,37 @@
       {
         "label": "Income Tax Act consolidates direct taxation",
         "year_display": "1961",
-        "sort_key": 1961
+        "sort_key": 1961,
+        "label_hi": "आयकर अधिनियम ने प्रत्यक्ष कराधान को समेकित किया"
       },
       {
         "label": "MODVAT introduced to reduce cascading of excise duties",
         "year_display": "1986",
-        "sort_key": 1986
+        "sort_key": 1986,
+        "label_hi": "उत्पाद शुल्क के व्यापक प्रभाव को कम करने हेतु मॉडवैट की शुरुआत"
       },
       {
         "label": "Service tax introduced on three services",
         "year_display": "1994",
-        "sort_key": 1994
+        "sort_key": 1994,
+        "label_hi": "तीन सेवाओं पर सेवा कर की शुरुआत"
       },
       {
         "label": "State-level VAT replaces sales tax",
         "year_display": "2005",
-        "sort_key": 2005
+        "sort_key": 2005,
+        "label_hi": "राज्य-स्तरीय वैट ने बिक्री कर का स्थान लिया"
       },
       {
         "label": "GST subsumes central and state indirect taxes",
         "year_display": "2017",
-        "sort_key": 2017
+        "sort_key": 2017,
+        "label_hi": "जीएसटी ने केंद्रीय और राज्य अप्रत्यक्ष करों को समाहित किया"
       }
     ],
-    "explanation": "Every step chipped away at tax cascading: MODVAT gave credit for excise inputs, service tax broadened the base from 1994, state VAT rationalised sales taxes in 2005, and GST finally merged the chain into one destination-based tax in 2017."
+    "explanation": "Every step chipped away at tax cascading: MODVAT gave credit for excise inputs, service tax broadened the base from 1994, state VAT rationalised sales taxes in 2005, and GST finally merged the chain into one destination-based tax in 2017.",
+    "theme_hi": "अप्रत्यक्ष कर सुधार की लंबी राह",
+    "explanation_hi": "प्रत्येक कदम ने कर के व्यापक प्रभाव को कम किया: मॉडवैट ने उत्पाद शुल्क इनपुट पर क्रेडिट दिया, 1994 से सेवा कर ने आधार व्यापक किया, 2005 में राज्य वैट ने बिक्री करों को युक्तिसंगत बनाया, और अंततः 2017 में जीएसटी ने पूरी शृंखला को एक गंतव्य-आधारित कर में मिला दिया।"
   },
   {
     "id": "tl_068",
@@ -2221,30 +2677,37 @@
       {
         "label": "Green Revolution begins with HYV seeds",
         "year_display": "1966",
-        "sort_key": 1966
+        "sort_key": 1966,
+        "label_hi": "उच्च उपज किस्म के बीजों के साथ हरित क्रांति आरंभ"
       },
       {
         "label": "Operation Flood launches the White Revolution",
         "year_display": "1970",
-        "sort_key": 1970
+        "sort_key": 1970,
+        "label_hi": "ऑपरेशन फ्लड ने श्वेत क्रांति का शुभारंभ किया"
       },
       {
         "label": "Kisan Credit Card scheme introduced",
         "year_display": "1998",
-        "sort_key": 1998
+        "sort_key": 1998,
+        "label_hi": "किसान क्रेडिट कार्ड योजना की शुरुआत"
       },
       {
         "label": "National Food Security Act enacted",
         "year_display": "2013",
-        "sort_key": 2013
+        "sort_key": 2013,
+        "label_hi": "राष्ट्रीय खाद्य सुरक्षा अधिनियम अधिनियमित"
       },
       {
         "label": "PM-KISAN direct income support launched",
         "year_display": "2019",
-        "sort_key": 2019
+        "sort_key": 2019,
+        "label_hi": "पीएम-किसान प्रत्यक्ष आय सहायता का शुभारंभ"
       }
     ],
-    "explanation": "Farm policy shifted focus over the decades — first raising production (Green and White Revolutions), then easing credit (KCC), then guaranteeing food access as a legal right (NFSA 2013), and finally direct cash transfers to farmers (PM-KISAN)."
+    "explanation": "Farm policy shifted focus over the decades — first raising production (Green and White Revolutions), then easing credit (KCC), then guaranteeing food access as a legal right (NFSA 2013), and finally direct cash transfers to farmers (PM-KISAN).",
+    "theme_hi": "कृषि नीति के महत्वपूर्ण पड़ाव",
+    "explanation_hi": "कृषि नीति का ध्यान दशकों में बदलता गया — पहले उत्पादन बढ़ाना (हरित और श्वेत क्रांति), फिर ऋण को सुगम बनाना (केसीसी), फिर खाद्य पहुँच को कानूनी अधिकार के रूप में सुनिश्चित करना (एनएफएसए 2013), और अंततः किसानों को प्रत्यक्ष नकद हस्तांतरण (पीएम-किसान)।"
   },
   {
     "id": "tl_069",
@@ -2255,30 +2718,37 @@
       {
         "label": "Hilton Young Commission recommends creating the RBI",
         "year_display": "1926",
-        "sort_key": 1926
+        "sort_key": 1926,
+        "label_hi": "हिल्टन यंग आयोग ने भारतीय रिज़र्व बैंक बनाने की सिफारिश की"
       },
       {
         "label": "Narasimham Committee I on financial sector reform",
         "year_display": "1991",
-        "sort_key": 1991
+        "sort_key": 1991,
+        "label_hi": "वित्तीय क्षेत्र सुधार पर नरसिम्हम समिति प्रथम"
       },
       {
         "label": "Narasimham Committee II on banking sector reform",
         "year_display": "1998",
-        "sort_key": 1998
+        "sort_key": 1998,
+        "label_hi": "बैंकिंग क्षेत्र सुधार पर नरसिम्हम समिति द्वितीय"
       },
       {
         "label": "Nachiket Mor Committee on financial inclusion set up",
         "year_display": "2013",
-        "sort_key": 2013
+        "sort_key": 2013,
+        "label_hi": "वित्तीय समावेशन पर नचिकेत मोर समिति का गठन"
       },
       {
         "label": "P. J. Nayak Committee reports on bank board governance",
         "year_display": "2014",
-        "sort_key": 2014
+        "sort_key": 2014,
+        "label_hi": "बैंक बोर्ड शासन पर पी. जे. नायक समिति की रिपोर्ट"
       }
     ],
-    "explanation": "The Hilton Young Commission fathered the RBI itself; the two Narasimham committees scripted post-1991 liberalisation of banking, while the Mor and Nayak committees of 2013-14 drove the payments-bank push and the governance debate in public sector banks."
+    "explanation": "The Hilton Young Commission fathered the RBI itself; the two Narasimham committees scripted post-1991 liberalisation of banking, while the Mor and Nayak committees of 2013-14 drove the payments-bank push and the governance debate in public sector banks.",
+    "theme_hi": "भारतीय बैंकिंग को आकार देने वाली समितियाँ",
+    "explanation_hi": "हिल्टन यंग आयोग ने स्वयं भारतीय रिज़र्व बैंक की नींव रखी; दोनों नरसिम्हम समितियों ने 1991 के बाद बैंकिंग उदारीकरण की रूपरेखा तैयार की, जबकि 2013-14 की मोर और नायक समितियों ने भुगतान बैंकों की पहल और सार्वजनिक क्षेत्र के बैंकों में शासन संबंधी बहस को आगे बढ़ाया।"
   },
   {
     "id": "tl_070",
@@ -2289,30 +2759,37 @@
       {
         "label": "First post-independence devaluation of the rupee",
         "year_display": "1949",
-        "sort_key": 1949
+        "sort_key": 1949,
+        "label_hi": "स्वतंत्रता के बाद रुपये का पहला अवमूल्यन"
       },
       {
         "label": "Major devaluation of 1966",
         "year_display": "1966",
-        "sort_key": 1966
+        "sort_key": 1966,
+        "label_hi": "1966 का बड़ा अवमूल्यन"
       },
       {
         "label": "Two-step crisis devaluation of July 1991",
         "year_display": "1991",
-        "sort_key": 1991
+        "sort_key": 1991,
+        "label_hi": "जुलाई 1991 का दो-चरणीय संकटकालीन अवमूल्यन"
       },
       {
         "label": "LERMS introduces partial convertibility",
         "year_display": "1992",
-        "sort_key": 1992
+        "sort_key": 1992,
+        "label_hi": "लर्म्स (LERMS) ने आंशिक परिवर्तनीयता की शुरुआत की"
       },
       {
         "label": "Rupee made fully convertible on the current account",
         "year_display": "1994",
-        "sort_key": 1994
+        "sort_key": 1994,
+        "label_hi": "रुपये को चालू खाते पर पूर्णतः परिवर्तनीय बनाया गया"
       }
     ],
-    "explanation": "Three devaluations (1949, 1966, 1991) mark the fixed-rate era's crises; after 1991 the regime itself changed, moving through the dual-rate LERMS to a market-determined rate and full current account convertibility by 1994."
+    "explanation": "Three devaluations (1949, 1966, 1991) mark the fixed-rate era's crises; after 1991 the regime itself changed, moving through the dual-rate LERMS to a market-determined rate and full current account convertibility by 1994.",
+    "theme_hi": "रुपये की विनिमय दर यात्रा",
+    "explanation_hi": "तीन अवमूल्यन (1949, 1966, 1991) निश्चित-दर युग के संकटों को चिह्नित करते हैं; 1991 के बाद व्यवस्था स्वयं बदल गई, दोहरी-दर लर्म्स से होते हुए बाज़ार-निर्धारित दर और 1994 तक चालू खाते पर पूर्ण परिवर्तनीयता तक पहुँची।"
   },
   {
     "id": "tl_071",
@@ -2323,30 +2800,37 @@
       {
         "label": "Bombay Stock Exchange founded",
         "year_display": "1875",
-        "sort_key": 1875
+        "sort_key": 1875,
+        "label_hi": "बॉम्बे स्टॉक एक्सचेंज की स्थापना"
       },
       {
         "label": "SEBI constituted as a non-statutory body",
         "year_display": "1988",
-        "sort_key": 1988
+        "sort_key": 1988,
+        "label_hi": "सेबी का गैर-सांविधिक निकाय के रूप में गठन"
       },
       {
         "label": "SEBI Act gives the regulator statutory powers",
         "year_display": "1992",
-        "sort_key": 1992
+        "sort_key": 1992,
+        "label_hi": "सेबी अधिनियम ने नियामक को सांविधिक अधिकार दिए"
       },
       {
         "label": "NSE begins equity trading with screen-based system",
         "year_display": "1994",
-        "sort_key": 1994
+        "sort_key": 1994,
+        "label_hi": "एनएसई ने स्क्रीन-आधारित प्रणाली से इक्विटी ट्रेडिंग आरंभ की"
       },
       {
         "label": "NSDL launches dematerialised share holding",
         "year_display": "1996",
-        "sort_key": 1996
+        "sort_key": 1996,
+        "label_hi": "एनएसडीएल ने डीमैट शेयर होल्डिंग का शुभारंभ किया"
       }
     ],
-    "explanation": "Asia's oldest exchange operated for over a century before modern regulation arrived: SEBI (statutory after the 1992 securities scam), the NSE's electronic trading from 1994, and NSDL's demat system in 1996 together transformed Indian markets."
+    "explanation": "Asia's oldest exchange operated for over a century before modern regulation arrived: SEBI (statutory after the 1992 securities scam), the NSE's electronic trading from 1994, and NSDL's demat system in 1996 together transformed Indian markets.",
+    "theme_hi": "भारत के पूंजी बाज़ारों का निर्माण",
+    "explanation_hi": "एशिया का सबसे पुराना एक्सचेंज आधुनिक विनियमन आने से पहले एक शताब्दी से अधिक समय तक चला: सेबी (1992 के प्रतिभूति घोटाले के बाद सांविधिक बना), 1994 से एनएसई की इलेक्ट्रॉनिक ट्रेडिंग, और 1996 में एनएसडीएल की डीमैट प्रणाली — इन सबने मिलकर भारतीय बाज़ारों को बदल दिया।"
   },
   {
     "id": "tl_072",
@@ -2357,30 +2841,37 @@
       {
         "label": "Industrial Policy Resolution defines a mixed economy",
         "year_display": "1948",
-        "sort_key": 1948
+        "sort_key": 1948,
+        "label_hi": "औद्योगिक नीति प्रस्ताव ने मिश्रित अर्थव्यवस्था को परिभाषित किया"
       },
       {
         "label": "Industries (Development and Regulation) Act introduces licensing",
         "year_display": "1951",
-        "sort_key": 1951
+        "sort_key": 1951,
+        "label_hi": "उद्योग (विकास और विनियमन) अधिनियम ने लाइसेंसिंग की शुरुआत की"
       },
       {
         "label": "Industrial Policy Resolution reserves the commanding heights for the state",
         "year_display": "1956",
-        "sort_key": 1956
+        "sort_key": 1956,
+        "label_hi": "औद्योगिक नीति प्रस्ताव ने प्रमुख क्षेत्रों को राज्य के लिए आरक्षित किया"
       },
       {
         "label": "MRTP Act restricts large business houses",
         "year_display": "1969",
-        "sort_key": 1969
+        "sort_key": 1969,
+        "label_hi": "एमआरटीपी अधिनियम ने बड़े व्यावसायिक घरानों पर प्रतिबंध लगाए"
       },
       {
         "label": "New Industrial Policy abolishes most licensing",
         "year_display": "1991",
-        "sort_key": 1991
+        "sort_key": 1991,
+        "label_hi": "नई औद्योगिक नीति ने अधिकांश लाइसेंसिंग समाप्त की"
       }
     ],
-    "explanation": "Control tightened for four decades — licensing from 1951, state dominance from the 1956 resolution, and MRTP curbs from 1969 — before the 1991 policy dismantled the 'licence raj' almost overnight."
+    "explanation": "Control tightened for four decades — licensing from 1951, state dominance from the 1956 resolution, and MRTP curbs from 1969 — before the 1991 policy dismantled the 'licence raj' almost overnight.",
+    "theme_hi": "नियंत्रण से उदारीकरण तक औद्योगिक नीति",
+    "explanation_hi": "चार दशकों तक नियंत्रण कड़ा होता गया — 1951 से लाइसेंसिंग, 1956 के प्रस्ताव से राज्य का वर्चस्व, और 1969 से एमआरटीपी अंकुश — इससे पहले कि 1991 की नीति ने लगभग रातोंरात 'लाइसेंस राज' को समाप्त कर दिया।"
   },
   {
     "id": "tl_073",
@@ -2391,30 +2882,37 @@
       {
         "label": "Wildlife (Protection) Act passed",
         "year_display": "1972",
-        "sort_key": 1972
+        "sort_key": 1972,
+        "label_hi": "वन्यजीव (संरक्षण) अधिनियम पारित"
       },
       {
         "label": "Project Tiger launched",
         "year_display": "1973",
-        "sort_key": 1973
+        "sort_key": 1973,
+        "label_hi": "प्रोजेक्ट टाइगर का शुभारंभ"
       },
       {
         "label": "Forest (Conservation) Act passed",
         "year_display": "1980",
-        "sort_key": 1980
+        "sort_key": 1980,
+        "label_hi": "वन (संरक्षण) अधिनियम पारित"
       },
       {
         "label": "Bhopal Gas Tragedy",
         "year_display": "1984",
-        "sort_key": 1984
+        "sort_key": 1984,
+        "label_hi": "भोपाल गैस त्रासदी"
       },
       {
         "label": "National Green Tribunal Act passed",
         "year_display": "2010",
-        "sort_key": 2010
+        "sort_key": 2010,
+        "label_hi": "राष्ट्रीय हरित अधिकरण अधिनियम पारित"
       }
     ],
-    "explanation": "India's environmental legal framework built up gradually — protection statutes in the 1970s and 80s, an industrial-disaster wake-up call in 1984, and eventually a dedicated judicial body (NGT) in 2010 to fast-track environmental cases."
+    "explanation": "India's environmental legal framework built up gradually — protection statutes in the 1970s and 80s, an industrial-disaster wake-up call in 1984, and eventually a dedicated judicial body (NGT) in 2010 to fast-track environmental cases.",
+    "theme_hi": "भारत में पर्यावरणीय विधान और घटनाएँ",
+    "explanation_hi": "भारत का पर्यावरणीय कानूनी ढाँचा धीरे-धीरे बना — 1970 और 80 के दशक में संरक्षण कानून, 1984 में एक औद्योगिक-आपदा जागृति, और अंततः 2010 में पर्यावरणीय मामलों को तेज़ी से निपटाने के लिए एक समर्पित न्यायिक निकाय (एनजीटी)।"
   },
   {
     "id": "tl_074",
@@ -2425,30 +2923,37 @@
       {
         "label": "Stockholm Conference on the Human Environment",
         "year_display": "1972",
-        "sort_key": 1972
+        "sort_key": 1972,
+        "label_hi": "मानव पर्यावरण पर स्टॉकहोम सम्मेलन"
       },
       {
         "label": "Montreal Protocol on ozone-depleting substances",
         "year_display": "1987",
-        "sort_key": 1987
+        "sort_key": 1987,
+        "label_hi": "ओज़ोन-क्षयकारी पदार्थों पर मॉन्ट्रियल प्रोटोकॉल"
       },
       {
         "label": "Rio Earth Summit adopts the UNFCCC and CBD",
         "year_display": "1992",
-        "sort_key": 1992
+        "sort_key": 1992,
+        "label_hi": "रियो पृथ्वी सम्मेलन ने यूएनएफसीसीसी और सीबीडी को अपनाया"
       },
       {
         "label": "Kyoto Protocol sets binding emission targets",
         "year_display": "1997",
-        "sort_key": 1997
+        "sort_key": 1997,
+        "label_hi": "क्योटो प्रोटोकॉल ने बाध्यकारी उत्सर्जन लक्ष्य निर्धारित किए"
       },
       {
         "label": "Paris Agreement adopted",
         "year_display": "2015",
-        "sort_key": 2015
+        "sort_key": 2015,
+        "label_hi": "पेरिस समझौता अपनाया गया"
       }
     ],
-    "explanation": "Stockholm put environment on the global agenda, Montreal proved treaties could work (on ozone), Rio created the climate and biodiversity conventions, and Kyoto's binding targets eventually gave way to the Paris Agreement's universal pledges."
+    "explanation": "Stockholm put environment on the global agenda, Montreal proved treaties could work (on ozone), Rio created the climate and biodiversity conventions, and Kyoto's binding targets eventually gave way to the Paris Agreement's universal pledges.",
+    "theme_hi": "वैश्विक पर्यावरणीय शिखर सम्मेलन और संधियाँ",
+    "explanation_hi": "स्टॉकहोम ने पर्यावरण को वैश्विक एजेंडे पर रखा, मॉन्ट्रियल ने सिद्ध किया कि संधियाँ (ओज़ोन पर) काम कर सकती हैं, रियो ने जलवायु और जैव विविधता अभिसमय बनाए, और क्योटो के बाध्यकारी लक्ष्यों ने अंततः पेरिस समझौते की सार्वभौमिक प्रतिबद्धताओं को स्थान दिया।"
   },
   {
     "id": "tl_075",
@@ -2459,30 +2964,37 @@
       {
         "label": "Water (Prevention and Control of Pollution) Act",
         "year_display": "1974",
-        "sort_key": 1974
+        "sort_key": 1974,
+        "label_hi": "जल (प्रदूषण निवारण और नियंत्रण) अधिनियम"
       },
       {
         "label": "Air (Prevention and Control of Pollution) Act",
         "year_display": "1981",
-        "sort_key": 1981
+        "sort_key": 1981,
+        "label_hi": "वायु (प्रदूषण निवारण और नियंत्रण) अधिनियम"
       },
       {
         "label": "Environment (Protection) Act — the umbrella law",
         "year_display": "1986",
-        "sort_key": 1986
+        "sort_key": 1986,
+        "label_hi": "पर्यावरण (संरक्षण) अधिनियम — छत्र कानून"
       },
       {
         "label": "Biological Diversity Act",
         "year_display": "2002",
-        "sort_key": 2002
+        "sort_key": 2002,
+        "label_hi": "जैविक विविधता अधिनियम"
       },
       {
         "label": "Forest Rights Act recognises rights of forest dwellers",
         "year_display": "2006",
-        "sort_key": 2006
+        "sort_key": 2006,
+        "label_hi": "वन अधिकार अधिनियम ने वनवासियों के अधिकारों को मान्यता दी"
       }
     ],
-    "explanation": "Pollution law came medium by medium — water in 1974, air in 1981 — until Bhopal prompted the umbrella Environment Protection Act of 1986; the 2000s added biodiversity governance and, in 2006, statutory rights for forest-dwelling communities."
+    "explanation": "Pollution law came medium by medium — water in 1974, air in 1981 — until Bhopal prompted the umbrella Environment Protection Act of 1986; the 2000s added biodiversity governance and, in 2006, statutory rights for forest-dwelling communities.",
+    "theme_hi": "भारत के पर्यावरणीय अधिनियम",
+    "explanation_hi": "प्रदूषण कानून एक-एक माध्यम के लिए आया — 1974 में जल, 1981 में वायु — जब तक भोपाल त्रासदी ने 1986 के छत्र पर्यावरण संरक्षण अधिनियम को प्रेरित नहीं किया; 2000 के दशक में जैव विविधता शासन जुड़ा और 2006 में वनवासी समुदायों को सांविधिक अधिकार मिले।"
   },
   {
     "id": "tl_076",
@@ -2493,30 +3005,37 @@
       {
         "label": "Project Tiger launched",
         "year_display": "1973",
-        "sort_key": 1973
+        "sort_key": 1973,
+        "label_hi": "प्रोजेक्ट टाइगर का शुभारंभ"
       },
       {
         "label": "Crocodile Conservation Project begins",
         "year_display": "1975",
-        "sort_key": 1975
+        "sort_key": 1975,
+        "label_hi": "मगरमच्छ संरक्षण परियोजना आरंभ"
       },
       {
         "label": "Project Elephant launched",
         "year_display": "1992",
-        "sort_key": 1992
+        "sort_key": 1992,
+        "label_hi": "प्रोजेक्ट एलिफेंट का शुभारंभ"
       },
       {
         "label": "Project Snow Leopard launched",
         "year_display": "2009",
-        "sort_key": 2009
+        "sort_key": 2009,
+        "label_hi": "प्रोजेक्ट स्नो लेपर्ड का शुभारंभ"
       },
       {
         "label": "Cheetahs reintroduced at Kuno National Park",
         "year_display": "2022",
-        "sort_key": 2022
+        "sort_key": 2022,
+        "label_hi": "कूनो राष्ट्रीय उद्यान में चीतों का पुनर्स्थापन"
       }
     ],
-    "explanation": "Flagship-species programmes began with Project Tiger in 1973 and spread to crocodiles, elephants and snow leopards; the 2022 cheetah translocation from Africa was the world's first intercontinental reintroduction of a large carnivore."
+    "explanation": "Flagship-species programmes began with Project Tiger in 1973 and spread to crocodiles, elephants and snow leopards; the 2022 cheetah translocation from Africa was the world's first intercontinental reintroduction of a large carnivore.",
+    "theme_hi": "भारत की प्रजाति संरक्षण परियोजनाएँ",
+    "explanation_hi": "प्रमुख-प्रजाति कार्यक्रमों की शुरुआत 1973 में प्रोजेक्ट टाइगर से हुई और यह मगरमच्छों, हाथियों और हिम तेंदुओं तक फैला; 2022 में अफ्रीका से चीतों का स्थानांतरण किसी बड़े मांसाहारी के अंतरमहाद्वीपीय पुनर्स्थापन का विश्व का पहला उदाहरण था।"
   },
   {
     "id": "tl_077",
@@ -2527,30 +3046,37 @@
       {
         "label": "COP1 held at Berlin",
         "year_display": "1995",
-        "sort_key": 1995
+        "sort_key": 1995,
+        "label_hi": "बर्लिन में सीओपी1 का आयोजन"
       },
       {
         "label": "COP3 at Kyoto adopts the Kyoto Protocol",
         "year_display": "1997",
-        "sort_key": 1997
+        "sort_key": 1997,
+        "label_hi": "क्योटो में सीओपी3 ने क्योटो प्रोटोकॉल को अपनाया"
       },
       {
         "label": "COP13 adopts the Bali Action Plan",
         "year_display": "2007",
-        "sort_key": 2007
+        "sort_key": 2007,
+        "label_hi": "सीओपी13 ने बाली कार्य योजना को अपनाया"
       },
       {
         "label": "COP15 at Copenhagen ends without a binding deal",
         "year_display": "2009",
-        "sort_key": 2009
+        "sort_key": 2009,
+        "label_hi": "कोपेनहेगन में सीओपी15 बिना किसी बाध्यकारी समझौते के समाप्त"
       },
       {
         "label": "COP21 adopts the Paris Agreement",
         "year_display": "2015",
-        "sort_key": 2015
+        "sort_key": 2015,
+        "label_hi": "सीओपी21 ने पेरिस समझौते को अपनाया"
       }
     ],
-    "explanation": "The COP sequence tells the negotiation story: Kyoto's top-down binding targets, the Bali roadmap seeking a successor, Copenhagen's collapse — and the pivot to Paris's bottom-up nationally determined contributions in 2015."
+    "explanation": "The COP sequence tells the negotiation story: Kyoto's top-down binding targets, the Bali roadmap seeking a successor, Copenhagen's collapse — and the pivot to Paris's bottom-up nationally determined contributions in 2015.",
+    "theme_hi": "जलवायु अभिसमय के महत्वपूर्ण सीओपी सम्मेलन",
+    "explanation_hi": "सीओपी का क्रम वार्ता की गाथा बताता है: क्योटो के ऊपर-से-नीचे बाध्यकारी लक्ष्य, उत्तराधिकारी खोजती बाली रोडमैप, कोपेनहेगन का विफल होना — और 2015 में पेरिस के नीचे-से-ऊपर राष्ट्रीय स्तर पर निर्धारित योगदान की ओर बदलाव।"
   },
   {
     "id": "tl_078",
@@ -2561,25 +3087,31 @@
       {
         "label": "Hailey (now Corbett) National Park, India's first, created",
         "year_display": "1936",
-        "sort_key": 1936
+        "sort_key": 1936,
+        "label_hi": "हेली (अब कॉर्बेट) राष्ट्रीय उद्यान, भारत का पहला, स्थापित"
       },
       {
         "label": "Ramsar Convention on Wetlands adopted",
         "year_display": "1971",
-        "sort_key": 1971
+        "sort_key": 1971,
+        "label_hi": "आर्द्रभूमियों पर रामसर अभिसमय अपनाया गया"
       },
       {
         "label": "Chilika and Keoladeo become India's first Ramsar sites",
         "year_display": "1981",
-        "sort_key": 1981
+        "sort_key": 1981,
+        "label_hi": "चिल्का और केवलादेव भारत के पहले रामसर स्थल बने"
       },
       {
         "label": "Nilgiri becomes India's first biosphere reserve",
         "year_display": "1986",
-        "sort_key": 1986
+        "sort_key": 1986,
+        "label_hi": "नीलगिरि भारत का पहला जैवमंडल आरक्षित क्षेत्र बना"
       }
     ],
-    "explanation": "India's protected-area toolkit expanded over half a century: the first national park under colonial rule in 1936, international wetland designations after India joined the Ramsar regime (first sites 1981), and UNESCO-style biosphere reserves from 1986."
+    "explanation": "India's protected-area toolkit expanded over half a century: the first national park under colonial rule in 1936, international wetland designations after India joined the Ramsar regime (first sites 1981), and UNESCO-style biosphere reserves from 1986.",
+    "theme_hi": "भारत में संरक्षित क्षेत्र और आर्द्रभूमियाँ",
+    "explanation_hi": "भारत का संरक्षित-क्षेत्र ढाँचा आधी शताब्दी में विस्तृत हुआ: 1936 में औपनिवेशिक शासन के अधीन पहला राष्ट्रीय उद्यान, भारत के रामसर व्यवस्था में शामिल होने के बाद अंतरराष्ट्रीय आर्द्रभूमि नामांकन (पहले स्थल 1981), और 1986 से यूनेस्को-शैली के जैवमंडल आरक्षित क्षेत्र।"
   },
   {
     "id": "tl_079",
@@ -2590,30 +3122,37 @@
       {
         "label": "Vienna Convention for the Protection of the Ozone Layer",
         "year_display": "1985",
-        "sort_key": 1985
+        "sort_key": 1985,
+        "label_hi": "ओज़ोन परत के संरक्षण हेतु वियना अभिसमय"
       },
       {
         "label": "Montreal Protocol adopted",
         "year_display": "1987",
-        "sort_key": 1987
+        "sort_key": 1987,
+        "label_hi": "मॉन्ट्रियल प्रोटोकॉल अपनाया गया"
       },
       {
         "label": "Montreal Protocol enters into force",
         "year_display": "1989",
-        "sort_key": 1989
+        "sort_key": 1989,
+        "label_hi": "मॉन्ट्रियल प्रोटोकॉल प्रभाव में आया"
       },
       {
         "label": "Kigali Amendment targets HFCs",
         "year_display": "2016",
-        "sort_key": 2016
+        "sort_key": 2016,
+        "label_hi": "किगाली संशोधन ने एचएफसी को लक्षित किया"
       },
       {
         "label": "India ratifies the Kigali Amendment",
         "year_display": "2021",
-        "sort_key": 2021
+        "sort_key": 2021,
+        "label_hi": "भारत ने किगाली संशोधन का अनुसमर्थन किया"
       }
     ],
-    "explanation": "The Vienna framework of 1985 led within two years to the Montreal Protocol's binding phase-outs of CFCs; decades later the Kigali Amendment extended the regime to HFCs — potent greenhouse gases — with India ratifying in 2021."
+    "explanation": "The Vienna framework of 1985 led within two years to the Montreal Protocol's binding phase-outs of CFCs; decades later the Kigali Amendment extended the regime to HFCs — potent greenhouse gases — with India ratifying in 2021.",
+    "theme_hi": "ओज़ोन परत का संरक्षण",
+    "explanation_hi": "1985 के वियना ढाँचे ने दो वर्षों के भीतर मॉन्ट्रियल प्रोटोकॉल के सीएफसी के बाध्यकारी चरणबद्ध उन्मूलन को जन्म दिया; दशकों बाद किगाली संशोधन ने इस व्यवस्था को एचएफसी — शक्तिशाली ग्रीनहाउस गैसों — तक विस्तारित किया, जिसका भारत ने 2021 में अनुसमर्थन किया।"
   },
   {
     "id": "tl_080",
@@ -2624,30 +3163,37 @@
       {
         "label": "CITES signed to regulate wildlife trade",
         "year_display": "1973",
-        "sort_key": 1973
+        "sort_key": 1973,
+        "label_hi": "वन्यजीव व्यापार को विनियमित करने हेतु साइट्स (CITES) पर हस्ताक्षर"
       },
       {
         "label": "Convention on Biological Diversity opened at Rio",
         "year_display": "1992",
-        "sort_key": 1992
+        "sort_key": 1992,
+        "label_hi": "रियो में जैविक विविधता अभिसमय खुला"
       },
       {
         "label": "Cartagena Protocol on Biosafety adopted",
         "year_display": "2000",
-        "sort_key": 2000
+        "sort_key": 2000,
+        "label_hi": "जैवसुरक्षा पर कार्टाजेना प्रोटोकॉल अपनाया गया"
       },
       {
         "label": "Nagoya Protocol on access and benefit sharing",
         "year_display": "2010",
-        "sort_key": 2010
+        "sort_key": 2010,
+        "label_hi": "पहुँच और लाभ बंटवारे पर नागोया प्रोटोकॉल"
       },
       {
         "label": "Kunming-Montreal Global Biodiversity Framework adopted",
         "year_display": "2022",
-        "sort_key": 2022
+        "sort_key": 2022,
+        "label_hi": "कुनमिंग-मॉन्ट्रियल वैश्विक जैव विविधता ढाँचा अपनाया गया"
       }
     ],
-    "explanation": "Wildlife-trade control (CITES) came first; the CBD then anchored biodiversity law from 1992, gaining protocols on GMO trade (Cartagena) and genetic-resource benefit sharing (Nagoya) before the 2022 framework set the '30 by 30' targets."
+    "explanation": "Wildlife-trade control (CITES) came first; the CBD then anchored biodiversity law from 1992, gaining protocols on GMO trade (Cartagena) and genetic-resource benefit sharing (Nagoya) before the 2022 framework set the '30 by 30' targets.",
+    "theme_hi": "वैश्विक जैव विविधता समझौते",
+    "explanation_hi": "वन्यजीव-व्यापार नियंत्रण (साइट्स) सबसे पहले आया; फिर सीबीडी ने 1992 से जैव विविधता कानून को आधार दिया, जीएमओ व्यापार (कार्टाजेना) और आनुवंशिक-संसाधन लाभ बंटवारे (नागोया) पर प्रोटोकॉल प्राप्त किए, इससे पहले कि 2022 के ढाँचे ने '30 बाय 30' लक्ष्य तय किए।"
   },
   {
     "id": "tl_081",
@@ -2658,25 +3204,31 @@
       {
         "label": "Khejarli sacrifice — Bishnois die protecting trees",
         "year_display": "1730",
-        "sort_key": 1730
+        "sort_key": 1730,
+        "label_hi": "खेजड़ली बलिदान — पेड़ों की रक्षा करते हुए बिश्नोइयों की मृत्यु"
       },
       {
         "label": "Chipko movement begins in the Garhwal Himalaya",
         "year_display": "1973",
-        "sort_key": 1973
+        "sort_key": 1973,
+        "label_hi": "गढ़वाल हिमालय में चिपको आंदोलन आरंभ"
       },
       {
         "label": "Appiko movement in the Western Ghats of Karnataka",
         "year_display": "1983",
-        "sort_key": 1983
+        "sort_key": 1983,
+        "label_hi": "कर्नाटक के पश्चिमी घाट में अप्पिको आंदोलन"
       },
       {
         "label": "Narmada Bachao Andolan takes shape",
         "year_display": "1985",
-        "sort_key": 1985
+        "sort_key": 1985,
+        "label_hi": "नर्मदा बचाओ आंदोलन का स्वरूप उभरा"
       }
     ],
-    "explanation": "The Bishnoi sacrifice of 1730 is the movement tradition's origin story; Chipko revived tree-hugging protest in the 1970s Himalaya, Appiko carried it south to Karnataka, and the NBA turned the energy against large dams on the Narmada."
+    "explanation": "The Bishnoi sacrifice of 1730 is the movement tradition's origin story; Chipko revived tree-hugging protest in the 1970s Himalaya, Appiko carried it south to Karnataka, and the NBA turned the energy against large dams on the Narmada.",
+    "theme_hi": "भारत के पर्यावरण आंदोलन",
+    "explanation_hi": "1730 का बिश्नोई बलिदान इस आंदोलन परंपरा की उत्पत्ति गाथा है; चिपको ने 1970 के दशक के हिमालय में वृक्ष-आलिंगन विरोध को पुनर्जीवित किया, अप्पिको इसे दक्षिण में कर्नाटक तक ले गया, और नर्मदा बचाओ आंदोलन ने इस ऊर्जा को नर्मदा पर बड़े बाँधों के विरुद्ध मोड़ा।"
   },
   {
     "id": "tl_082",
@@ -2687,30 +3239,37 @@
       {
         "label": "Air (Prevention and Control of Pollution) Act",
         "year_display": "1981",
-        "sort_key": 1981
+        "sort_key": 1981,
+        "label_hi": "वायु (प्रदूषण निवारण और नियंत्रण) अधिनियम"
       },
       {
         "label": "National Ambient Air Quality Standards revised (12 pollutants)",
         "year_display": "2009",
-        "sort_key": 2009
+        "sort_key": 2009,
+        "label_hi": "राष्ट्रीय परिवेशी वायु गुणवत्ता मानक संशोधित (12 प्रदूषक)"
       },
       {
         "label": "BS-IV fuel norms enforced nationwide",
         "year_display": "2017",
-        "sort_key": 2017
+        "sort_key": 2017,
+        "label_hi": "बीएस-IV ईंधन मानदंड देशभर में लागू"
       },
       {
         "label": "National Clean Air Programme launched",
         "year_display": "2019",
-        "sort_key": 2019
+        "sort_key": 2019,
+        "label_hi": "राष्ट्रीय स्वच्छ वायु कार्यक्रम का शुभारंभ"
       },
       {
         "label": "India leapfrogs to BS-VI fuel norms",
         "year_display": "2020",
-        "sort_key": 2020
+        "sort_key": 2020,
+        "label_hi": "भारत ने सीधे बीएस-VI ईंधन मानदंडों को अपनाया"
       }
     ],
-    "explanation": "Regulation accelerated sharply in the late 2010s: after decades under the 1981 Act and the 2009 standards, India rolled out BS-IV nationally in 2017, launched city-level NCAP targets in 2019, and skipped BS-V entirely to enforce BS-VI in 2020."
+    "explanation": "Regulation accelerated sharply in the late 2010s: after decades under the 1981 Act and the 2009 standards, India rolled out BS-IV nationally in 2017, launched city-level NCAP targets in 2019, and skipped BS-V entirely to enforce BS-VI in 2020.",
+    "theme_hi": "भारत में वायु प्रदूषण से लड़ाई",
+    "explanation_hi": "2010 के दशक के अंत में विनियमन में तीव्र गति आई: 1981 के अधिनियम और 2009 के मानकों के दशकों बाद, भारत ने 2017 में राष्ट्रव्यापी बीएस-IV लागू किया, 2019 में शहर-स्तरीय एनसीएपी लक्ष्य शुरू किए, और बीएस-V को पूरी तरह छोड़कर 2020 में बीएस-VI लागू किया।"
   },
   {
     "id": "tl_083",
@@ -2721,30 +3280,37 @@
       {
         "label": "First Coastal Regulation Zone (CRZ) Notification",
         "year_display": "1991",
-        "sort_key": 1991
+        "sort_key": 1991,
+        "label_hi": "पहली तटीय विनियमन क्षेत्र (सीआरज़ेड) अधिसूचना"
       },
       {
         "label": "Wetlands (Conservation and Management) Rules notified",
         "year_display": "2010",
-        "sort_key": 2010
+        "sort_key": 2010,
+        "label_hi": "आर्द्रभूमि (संरक्षण और प्रबंधन) नियम अधिसूचित"
       },
       {
         "label": "CRZ Notification comprehensively revised",
         "year_display": "2011",
-        "sort_key": 2011
+        "sort_key": 2011,
+        "label_hi": "सीआरज़ेड अधिसूचना का व्यापक संशोधन"
       },
       {
         "label": "Wetlands Rules replaced with a decentralised framework",
         "year_display": "2017",
-        "sort_key": 2017
+        "sort_key": 2017,
+        "label_hi": "आर्द्रभूमि नियमों का स्थान एक विकेंद्रीकृत ढाँचे ने लिया"
       },
       {
         "label": "CRZ Notification eases norms with graded zones",
         "year_display": "2019",
-        "sort_key": 2019
+        "sort_key": 2019,
+        "label_hi": "सीआरज़ेड अधिसूचना ने श्रेणीबद्ध क्षेत्रों के साथ मानदंड सरल किए"
       }
     ],
-    "explanation": "Both regimes were born under the Environment Protection Act and repeatedly rewritten: CRZ rules issued in 1991 were overhauled in 2011 and relaxed in 2019, while wetland rules moved from central control (2010) to state-led management (2017)."
+    "explanation": "Both regimes were born under the Environment Protection Act and repeatedly rewritten: CRZ rules issued in 1991 were overhauled in 2011 and relaxed in 2019, while wetland rules moved from central control (2010) to state-led management (2017).",
+    "theme_hi": "तटों और आर्द्रभूमियों का विनियमन",
+    "explanation_hi": "दोनों व्यवस्थाएँ पर्यावरण संरक्षण अधिनियम के अंतर्गत जन्मीं और बार-बार पुनर्लिखित हुईं: 1991 में जारी सीआरज़ेड नियमों को 2011 में पूर्णतः बदला गया और 2019 में शिथिल किया गया, जबकि आर्द्रभूमि नियम केंद्रीय नियंत्रण (2010) से राज्य-नेतृत्व वाले प्रबंधन (2017) की ओर बढ़े।"
   },
   {
     "id": "tl_084",
@@ -2755,30 +3321,37 @@
       {
         "label": "UNEP established after Stockholm",
         "year_display": "1972",
-        "sort_key": 1972
+        "sort_key": 1972,
+        "label_hi": "स्टॉकहोम के बाद यूएनईपी की स्थापना"
       },
       {
         "label": "Brundtland Report defines sustainable development",
         "year_display": "1987",
-        "sort_key": 1987
+        "sort_key": 1987,
+        "label_hi": "ब्रंटलैंड रिपोर्ट ने सतत विकास को परिभाषित किया"
       },
       {
         "label": "IPCC established by UNEP and WMO",
         "year_display": "1988",
-        "sort_key": 1988
+        "sort_key": 1988,
+        "label_hi": "यूएनईपी और डब्ल्यूएमओ द्वारा आईपीसीसी की स्थापना"
       },
       {
         "label": "IPCC releases its First Assessment Report",
         "year_display": "1990",
-        "sort_key": 1990
+        "sort_key": 1990,
+        "label_hi": "आईपीसीसी ने अपनी पहली आकलन रिपोर्ट जारी की"
       },
       {
         "label": "UN adopts the Sustainable Development Goals",
         "year_display": "2015",
-        "sort_key": 2015
+        "sort_key": 2015,
+        "label_hi": "संयुक्त राष्ट्र ने सतत विकास लक्ष्य अपनाए"
       }
     ],
-    "explanation": "UNEP institutionalised the Stockholm agenda; the Brundtland Report's 'sustainable development' framing (1987) and the IPCC's first assessment (1990) built the scientific-political consensus that eventually produced the SDGs in 2015."
+    "explanation": "UNEP institutionalised the Stockholm agenda; the Brundtland Report's 'sustainable development' framing (1987) and the IPCC's first assessment (1990) built the scientific-political consensus that eventually produced the SDGs in 2015.",
+    "theme_hi": "वैश्विक पर्यावरणवाद की संस्थाएँ और रिपोर्टें",
+    "explanation_hi": "यूएनईपी ने स्टॉकहोम के एजेंडे को संस्थागत रूप दिया; ब्रंटलैंड रिपोर्ट की 'सतत विकास' अवधारणा (1987) और आईपीसीसी के पहले आकलन (1990) ने वह वैज्ञानिक-राजनीतिक सहमति बनाई जिसने अंततः 2015 में एसडीजी को जन्म दिया।"
   },
   {
     "id": "tl_085",
@@ -2789,30 +3362,37 @@
       {
         "label": "Constitution of India adopted by the Constituent Assembly",
         "year_display": "26 Nov 1949",
-        "sort_key": 1949
+        "sort_key": 1949,
+        "label_hi": "संविधान सभा द्वारा भारत के संविधान को अपनाया गया"
       },
       {
         "label": "Constitution comes into force",
         "year_display": "26 Jan 1950",
-        "sort_key": 1950
+        "sort_key": 1950,
+        "label_hi": "संविधान लागू हुआ"
       },
       {
         "label": "First Amendment Act",
         "year_display": "1951",
-        "sort_key": 1951
+        "sort_key": 1951,
+        "label_hi": "प्रथम संशोधन अधिनियम"
       },
       {
         "label": "42nd Amendment ('Mini Constitution')",
         "year_display": "1976",
-        "sort_key": 1976
+        "sort_key": 1976,
+        "label_hi": "42वाँ संशोधन ('लघु संविधान')"
       },
       {
         "label": "73rd and 74th Amendments (Panchayati Raj and Municipalities)",
         "year_display": "1992",
-        "sort_key": 1992
+        "sort_key": 1992,
+        "label_hi": "73वाँ और 74वाँ संशोधन (पंचायती राज और नगरपालिकाएँ)"
       }
     ],
-    "explanation": "From adoption to enforcement took two months. The First Amendment quickly addressed land-reform and free-speech tensions; the 42nd Amendment during the Emergency reshaped the Preamble and Centre-State balance; and the 73rd/74th Amendments finally gave local self-government constitutional status."
+    "explanation": "From adoption to enforcement took two months. The First Amendment quickly addressed land-reform and free-speech tensions; the 42nd Amendment during the Emergency reshaped the Preamble and Centre-State balance; and the 73rd/74th Amendments finally gave local self-government constitutional status.",
+    "theme_hi": "संवैधानिक महत्वपूर्ण पड़ाव",
+    "explanation_hi": "अपनाए जाने से लेकर लागू होने तक दो महीने लगे। प्रथम संशोधन ने शीघ्र ही भूमि-सुधार और अभिव्यक्ति-स्वतंत्रता के तनावों को संबोधित किया; आपातकाल के दौरान 42वें संशोधन ने प्रस्तावना और केंद्र-राज्य संतुलन को नया रूप दिया; और 73वें/74वें संशोधनों ने अंततः स्थानीय स्वशासन को संवैधानिक दर्जा दिया।"
   },
   {
     "id": "tl_086",
@@ -2823,30 +3403,37 @@
       {
         "label": "Cabinet Mission arrives in India",
         "year_display": "Mar 1946",
-        "sort_key": 194603
+        "sort_key": 194603,
+        "label_hi": "कैबिनेट मिशन भारत आया"
       },
       {
         "label": "Constituent Assembly holds its first sitting",
         "year_display": "Dec 1946",
-        "sort_key": 194612
+        "sort_key": 194612,
+        "label_hi": "संविधान सभा की पहली बैठक"
       },
       {
         "label": "Objectives Resolution adopted",
         "year_display": "Jan 1947",
-        "sort_key": 194701
+        "sort_key": 194701,
+        "label_hi": "उद्देश्य प्रस्ताव अपनाया गया"
       },
       {
         "label": "Constitution adopted",
         "year_display": "Nov 1949",
-        "sort_key": 194911
+        "sort_key": 194911,
+        "label_hi": "संविधान अपनाया गया"
       },
       {
         "label": "Constitution comes into force",
         "year_display": "Jan 1950",
-        "sort_key": 195001
+        "sort_key": 195001,
+        "label_hi": "संविधान लागू हुआ"
       }
     ],
-    "explanation": "The Cabinet Mission's plan created the Constituent Assembly, which first met on 9 December 1946; Nehru's Objectives Resolution (adopted January 1947) became the Preamble's seed, and the finished Constitution was adopted in November 1949 and enforced on 26 January 1950."
+    "explanation": "The Cabinet Mission's plan created the Constituent Assembly, which first met on 9 December 1946; Nehru's Objectives Resolution (adopted January 1947) became the Preamble's seed, and the finished Constitution was adopted in November 1949 and enforced on 26 January 1950.",
+    "theme_hi": "संविधान का निर्माण",
+    "explanation_hi": "कैबिनेट मिशन की योजना ने संविधान सभा का निर्माण किया, जिसकी पहली बैठक 9 दिसंबर 1946 को हुई; नेहरू का उद्देश्य प्रस्ताव (जनवरी 1947 में अपनाया गया) प्रस्तावना का बीज बना, और पूर्ण संविधान नवंबर 1949 में अपनाया गया तथा 26 जनवरी 1950 को लागू हुआ।"
   },
   {
     "id": "tl_087",
@@ -2857,30 +3444,37 @@
       {
         "label": "First general elections begin",
         "year_display": "1951",
-        "sort_key": 1951
+        "sort_key": 1951,
+        "label_hi": "प्रथम आम चुनाव आरंभ"
       },
       {
         "label": "EVMs first used in a Kerala by-election",
         "year_display": "1982",
-        "sort_key": 1982
+        "sort_key": 1982,
+        "label_hi": "केरल के उपचुनाव में पहली बार ईवीएम का उपयोग"
       },
       {
         "label": "Voting age lowered from 21 to 18 (61st Amendment)",
         "year_display": "1989",
-        "sort_key": 1989
+        "sort_key": 1989,
+        "label_hi": "मतदान आयु 21 से घटाकर 18 वर्ष की गई (61वाँ संशोधन)"
       },
       {
         "label": "NOTA option introduced after a Supreme Court ruling",
         "year_display": "2013",
-        "sort_key": 2013
+        "sort_key": 2013,
+        "label_hi": "सर्वोच्च न्यायालय के निर्णय के बाद नोटा विकल्प की शुरुआत"
       },
       {
         "label": "VVPAT deployed at every polling station",
         "year_display": "2019",
-        "sort_key": 2019
+        "sort_key": 2019,
+        "label_hi": "प्रत्येक मतदान केंद्र पर वीवीपैट की तैनाती"
       }
     ],
-    "explanation": "The world's largest electoral exercise has kept upgrading itself — universal adult franchise from the very first election of 1951-52, machines from 1982, a younger electorate from 1989, and voter-verification tools (NOTA, VVPAT) in the 2010s."
+    "explanation": "The world's largest electoral exercise has kept upgrading itself — universal adult franchise from the very first election of 1951-52, machines from 1982, a younger electorate from 1989, and voter-verification tools (NOTA, VVPAT) in the 2010s.",
+    "theme_hi": "भारतीय चुनावों का विकास",
+    "explanation_hi": "विश्व की सबसे बड़ी चुनावी प्रक्रिया लगातार स्वयं को अद्यतन करती रही है — 1951-52 के पहले ही चुनाव से सार्वभौमिक वयस्क मताधिकार, 1982 से मशीनें, 1989 से युवा मतदाता वर्ग, और 2010 के दशक में मतदाता-सत्यापन उपकरण (नोटा, वीवीपैट)।"
   },
   {
     "id": "tl_088",
@@ -2891,25 +3485,31 @@
       {
         "label": "Balwant Rai Mehta Committee recommends three-tier panchayats",
         "year_display": "1957",
-        "sort_key": 1957
+        "sort_key": 1957,
+        "label_hi": "बलवंत राय मेहता समिति ने त्रि-स्तरीय पंचायतों की सिफारिश की"
       },
       {
         "label": "Ashok Mehta Committee reviews Panchayati Raj",
         "year_display": "1977",
-        "sort_key": 1977
+        "sort_key": 1977,
+        "label_hi": "अशोक मेहता समिति ने पंचायती राज की समीक्षा की"
       },
       {
         "label": "73rd Amendment gives panchayats constitutional status",
         "year_display": "1992",
-        "sort_key": 1992
+        "sort_key": 1992,
+        "label_hi": "73वें संशोधन ने पंचायतों को संवैधानिक दर्जा दिया"
       },
       {
         "label": "PESA extends panchayats to Scheduled Areas",
         "year_display": "1996",
-        "sort_key": 1996
+        "sort_key": 1996,
+        "label_hi": "पेसा ने पंचायतों को अनुसूचित क्षेत्रों तक विस्तारित किया"
       }
     ],
-    "explanation": "Democratic decentralisation moved from committee reports (Balwant Rai Mehta 1957, Ashok Mehta 1977) to constitutional guarantee with the 73rd Amendment, and PESA then adapted the framework for tribal Scheduled Areas in 1996."
+    "explanation": "Democratic decentralisation moved from committee reports (Balwant Rai Mehta 1957, Ashok Mehta 1977) to constitutional guarantee with the 73rd Amendment, and PESA then adapted the framework for tribal Scheduled Areas in 1996.",
+    "theme_hi": "पंचायती राज की यात्रा",
+    "explanation_hi": "लोकतांत्रिक विकेंद्रीकरण समिति रिपोर्टों (बलवंत राय मेहता 1957, अशोक मेहता 1977) से 73वें संशोधन के साथ संवैधानिक गारंटी तक पहुँचा, और फिर पेसा ने 1996 में आदिवासी अनुसूचित क्षेत्रों के लिए इस ढाँचे को अनुकूलित किया।"
   },
   {
     "id": "tl_089",
@@ -2920,30 +3520,37 @@
       {
         "label": "Shankari Prasad case upholds Parliament's amending power",
         "year_display": "1951",
-        "sort_key": 1951
+        "sort_key": 1951,
+        "label_hi": "शंकरी प्रसाद मामले ने संसद की संशोधन शक्ति को बरकरार रखा"
       },
       {
         "label": "Golaknath case bars amending Fundamental Rights",
         "year_display": "1967",
-        "sort_key": 1967
+        "sort_key": 1967,
+        "label_hi": "गोलकनाथ मामले ने मौलिक अधिकारों में संशोधन को रोका"
       },
       {
         "label": "Kesavananda Bharati case propounds the basic structure doctrine",
         "year_display": "1973",
-        "sort_key": 1973
+        "sort_key": 1973,
+        "label_hi": "केशवानंद भारती मामले ने मूल ढाँचा सिद्धांत का प्रतिपादन किया"
       },
       {
         "label": "Minerva Mills case strikes down parts of the 42nd Amendment",
         "year_display": "1980",
-        "sort_key": 1980
+        "sort_key": 1980,
+        "label_hi": "मिनर्वा मिल्स मामले ने 42वें संशोधन के कुछ भागों को रद्द किया"
       },
       {
         "label": "I. R. Coelho case applies basic structure review to the Ninth Schedule",
         "year_display": "2007",
-        "sort_key": 2007
+        "sort_key": 2007,
+        "label_hi": "आई. आर. कोएल्हो मामले ने नौवीं अनुसूची पर मूल ढाँचा समीक्षा लागू की"
       }
     ],
-    "explanation": "The Court swung from deference (Shankari Prasad) to rigidity (Golaknath) before Kesavananda's 1973 compromise: Parliament may amend anything except the Constitution's basic structure — a doctrine reinforced in Minerva Mills and extended to the Ninth Schedule in 2007."
+    "explanation": "The Court swung from deference (Shankari Prasad) to rigidity (Golaknath) before Kesavananda's 1973 compromise: Parliament may amend anything except the Constitution's basic structure — a doctrine reinforced in Minerva Mills and extended to the Ninth Schedule in 2007.",
+    "theme_hi": "मूल ढाँचा संघर्ष",
+    "explanation_hi": "न्यायालय आदर (शंकरी प्रसाद) से कठोरता (गोलकनाथ) की ओर झूला, इससे पहले कि केशवानंद के 1973 के समझौते ने यह तय किया: संसद संविधान के मूल ढाँचे को छोड़कर कुछ भी संशोधित कर सकती है — यह सिद्धांत मिनर्वा मिल्स में सुदृढ़ हुआ और 2007 में नौवीं अनुसूची तक विस्तारित हुआ।"
   },
   {
     "id": "tl_090",
@@ -2954,30 +3561,37 @@
       {
         "label": "Central Public Service Commission set up",
         "year_display": "1926",
-        "sort_key": 1926
+        "sort_key": 1926,
+        "label_hi": "केंद्रीय लोक सेवा आयोग की स्थापना"
       },
       {
         "label": "Election Commission of India established",
         "year_display": "1950",
-        "sort_key": 1950
+        "sort_key": 1950,
+        "label_hi": "भारत निर्वाचन आयोग की स्थापना"
       },
       {
         "label": "First Finance Commission constituted",
         "year_display": "1951",
-        "sort_key": 1951
+        "sort_key": 1951,
+        "label_hi": "प्रथम वित्त आयोग का गठन"
       },
       {
         "label": "National Human Rights Commission established",
         "year_display": "1993",
-        "sort_key": 1993
+        "sort_key": 1993,
+        "label_hi": "राष्ट्रीय मानवाधिकार आयोग की स्थापना"
       },
       {
         "label": "Central Information Commission constituted under the RTI Act",
         "year_display": "2005",
-        "sort_key": 2005
+        "sort_key": 2005,
+        "label_hi": "आरटीआई अधिनियम के अंतर्गत केंद्रीय सूचना आयोग का गठन"
       }
     ],
-    "explanation": "The merit-based PSC predates independence; the Constitution then created the ECI (25 January 1950 — celebrated as National Voters' Day) and the Finance Commission, while statutory watchdogs for human rights (1993) and information (2005) came much later."
+    "explanation": "The merit-based PSC predates independence; the Constitution then created the ECI (25 January 1950 — celebrated as National Voters' Day) and the Finance Commission, while statutory watchdogs for human rights (1993) and information (2005) came much later.",
+    "theme_hi": "भारत की निगरानी संस्थाओं का निर्माण",
+    "explanation_hi": "योग्यता-आधारित लोक सेवा आयोग स्वतंत्रता से पहले का है; संविधान ने फिर निर्वाचन आयोग (25 जनवरी 1950 — राष्ट्रीय मतदाता दिवस के रूप में मनाया जाता है) और वित्त आयोग का निर्माण किया, जबकि मानवाधिकार (1993) और सूचना (2005) के लिए सांविधिक निगरानी संस्थाएँ बहुत बाद में आईं।"
   },
   {
     "id": "tl_091",
@@ -2988,30 +3602,37 @@
       {
         "label": "First National Emergency proclaimed during the China war",
         "year_display": "1962",
-        "sort_key": 1962
+        "sort_key": 1962,
+        "label_hi": "चीन युद्ध के दौरान प्रथम राष्ट्रीय आपातकाल की घोषणा"
       },
       {
         "label": "Second National Emergency during the Bangladesh war",
         "year_display": "1971",
-        "sort_key": 1971
+        "sort_key": 1971,
+        "label_hi": "बांग्लादेश युद्ध के दौरान द्वितीय राष्ट्रीय आपातकाल"
       },
       {
         "label": "Internal Emergency proclaimed on grounds of 'internal disturbance'",
         "year_display": "1975",
-        "sort_key": 1975
+        "sort_key": 1975,
+        "label_hi": "'आंतरिक अशांति' के आधार पर आंतरिक आपातकाल की घोषणा"
       },
       {
         "label": "Emergency revoked; Janata government takes office",
         "year_display": "1977",
-        "sort_key": 1977
+        "sort_key": 1977,
+        "label_hi": "आपातकाल वापस लिया गया; जनता सरकार सत्ता में आई"
       },
       {
         "label": "44th Amendment makes Emergency proclamation harder",
         "year_display": "1978",
-        "sort_key": 1978
+        "sort_key": 1978,
+        "label_hi": "44वें संशोधन ने आपातकाल घोषणा को कठिन बनाया"
       }
     ],
-    "explanation": "India's three national emergencies came in 1962, 1971 and 1975 — the last an internal one that triggered a democratic backlash; the Janata government's 44th Amendment then replaced 'internal disturbance' with 'armed rebellion' as a ground."
+    "explanation": "India's three national emergencies came in 1962, 1971 and 1975 — the last an internal one that triggered a democratic backlash; the Janata government's 44th Amendment then replaced 'internal disturbance' with 'armed rebellion' as a ground.",
+    "theme_hi": "राष्ट्रीय आपातकाल और उनके परिणाम",
+    "explanation_hi": "भारत के तीन राष्ट्रीय आपातकाल 1962, 1971 और 1975 में आए — अंतिम एक आंतरिक आपातकाल था जिसने लोकतांत्रिक प्रतिक्रिया को जन्म दिया; जनता सरकार के 44वें संशोधन ने फिर 'आंतरिक अशांति' के स्थान पर 'सशस्त्र विद्रोह' को आधार बनाया।"
   },
   {
     "id": "tl_092",
@@ -3022,30 +3643,37 @@
       {
         "label": "Government of India Act transfers power to the Crown",
         "year_display": "1858",
-        "sort_key": 1858
+        "sort_key": 1858,
+        "label_hi": "भारत सरकार अधिनियम ने सत्ता क्राउन को हस्तांतरित की"
       },
       {
         "label": "Indian Councils Act adds Indians to legislative councils",
         "year_display": "1861",
-        "sort_key": 1861
+        "sort_key": 1861,
+        "label_hi": "भारतीय परिषद अधिनियम ने विधान परिषदों में भारतीयों को शामिल किया"
       },
       {
         "label": "Indian Councils Act introduces indirect elections",
         "year_display": "1892",
-        "sort_key": 1892
+        "sort_key": 1892,
+        "label_hi": "भारतीय परिषद अधिनियम ने अप्रत्यक्ष चुनाव की शुरुआत की"
       },
       {
         "label": "Morley-Minto reforms introduce separate electorates",
         "year_display": "1909",
-        "sort_key": 1909
+        "sort_key": 1909,
+        "label_hi": "मॉर्ले-मिंटो सुधारों ने पृथक निर्वाचक मंडल की शुरुआत की"
       },
       {
         "label": "Government of India Act provides provincial autonomy",
         "year_display": "1935",
-        "sort_key": 1935
+        "sort_key": 1935,
+        "label_hi": "भारत सरकार अधिनियम ने प्रांतीय स्वायत्तता प्रदान की"
       }
     ],
-    "explanation": "Each act conceded slightly more representation: nominated Indians in 1861, indirect election in 1892, separate electorates in 1909, and finally the 1935 Act — whose federal and provincial machinery became the working draft for the Indian Constitution."
+    "explanation": "Each act conceded slightly more representation: nominated Indians in 1861, indirect election in 1892, separate electorates in 1909, and finally the 1935 Act — whose federal and provincial machinery became the working draft for the Indian Constitution.",
+    "theme_hi": "क्राउन के अधीन संवैधानिक विकास",
+    "explanation_hi": "प्रत्येक अधिनियम ने थोड़ा अधिक प्रतिनिधित्व दिया: 1861 में मनोनीत भारतीय, 1892 में अप्रत्यक्ष चुनाव, 1909 में पृथक निर्वाचक मंडल, और अंततः 1935 का अधिनियम — जिसकी संघीय और प्रांतीय संरचना भारतीय संविधान का कार्यरूप मसौदा बनी।"
   },
   {
     "id": "tl_093",
@@ -3056,30 +3684,37 @@
       {
         "label": "24th Amendment affirms Parliament's power to amend Fundamental Rights",
         "year_display": "1971",
-        "sort_key": 1971
+        "sort_key": 1971,
+        "label_hi": "24वें संशोधन ने मौलिक अधिकारों में संशोधन की संसद की शक्ति की पुष्टि की"
       },
       {
         "label": "52nd Amendment introduces the anti-defection law",
         "year_display": "1985",
-        "sort_key": 1985
+        "sort_key": 1985,
+        "label_hi": "52वें संशोधन ने दलबदल विरोधी कानून की शुरुआत की"
       },
       {
         "label": "86th Amendment makes education a fundamental right",
         "year_display": "2002",
-        "sort_key": 2002
+        "sort_key": 2002,
+        "label_hi": "86वें संशोधन ने शिक्षा को मौलिक अधिकार बनाया"
       },
       {
         "label": "101st Amendment enables the GST",
         "year_display": "2016",
-        "sort_key": 2016
+        "sort_key": 2016,
+        "label_hi": "101वें संशोधन ने जीएसटी को संभव बनाया"
       },
       {
         "label": "103rd Amendment provides 10% EWS reservation",
         "year_display": "2019",
-        "sort_key": 2019
+        "sort_key": 2019,
+        "label_hi": "103वें संशोधन ने 10% ईडब्ल्यूएस आरक्षण प्रदान किया"
       }
     ],
-    "explanation": "These amendments each rewired a different arena — Parliament versus judiciary (24th), party discipline (52nd), social rights (86th), fiscal federalism (101st) and reservation policy (103rd)."
+    "explanation": "These amendments each rewired a different arena — Parliament versus judiciary (24th), party discipline (52nd), social rights (86th), fiscal federalism (101st) and reservation policy (103rd).",
+    "theme_hi": "महत्वपूर्ण संवैधानिक संशोधन",
+    "explanation_hi": "इनमें से प्रत्येक संशोधन ने एक अलग क्षेत्र को नया रूप दिया — संसद बनाम न्यायपालिका (24वाँ), दलीय अनुशासन (52वाँ), सामाजिक अधिकार (86वाँ), राजकोषीय संघवाद (101वाँ) और आरक्षण नीति (103वाँ)।"
   },
   {
     "id": "tl_094",
@@ -3090,30 +3725,37 @@
       {
         "label": "Maneka Gandhi case widens Article 21's 'procedure established by law'",
         "year_display": "1978",
-        "sort_key": 1978
+        "sort_key": 1978,
+        "label_hi": "मेनका गांधी मामले ने अनुच्छेद 21 की 'विधि द्वारा स्थापित प्रक्रिया' का विस्तार किया"
       },
       {
         "label": "Vishaka guidelines against workplace sexual harassment",
         "year_display": "1997",
-        "sort_key": 1997
+        "sort_key": 1997,
+        "label_hi": "कार्यस्थल यौन उत्पीड़न के विरुद्ध विशाखा दिशानिर्देश"
       },
       {
         "label": "NALSA judgment recognises transgender identity",
         "year_display": "2014",
-        "sort_key": 2014
+        "sort_key": 2014,
+        "label_hi": "नाल्सा निर्णय ने ट्रांसजेंडर पहचान को मान्यता दी"
       },
       {
         "label": "Puttaswamy judgment declares privacy a fundamental right",
         "year_display": "2017",
-        "sort_key": 2017
+        "sort_key": 2017,
+        "label_hi": "पुट्टास्वामी निर्णय ने निजता को मौलिक अधिकार घोषित किया"
       },
       {
         "label": "Navtej Singh Johar decriminalises consensual same-sex relations",
         "year_display": "2018",
-        "sort_key": 2018
+        "sort_key": 2018,
+        "label_hi": "नवतेज सिंह जौहर मामले ने सहमति से समलैंगिक संबंधों को अपराधमुक्त किया"
       }
     ],
-    "explanation": "Maneka Gandhi's expansive reading of Article 21 is the fountainhead: every later case here — Vishaka, NALSA, Puttaswamy, Navtej Johar — built dignity, equality and privacy protections on that foundation."
+    "explanation": "Maneka Gandhi's expansive reading of Article 21 is the fountainhead: every later case here — Vishaka, NALSA, Puttaswamy, Navtej Johar — built dignity, equality and privacy protections on that foundation.",
+    "theme_hi": "न्यायालयों के माध्यम से अधिकारों का विस्तार",
+    "explanation_hi": "मेनका गांधी मामले में अनुच्छेद 21 की विस्तृत व्याख्या इसका मूल स्रोत है: यहाँ बाद के हर मामले — विशाखा, नाल्सा, पुट्टास्वामी, नवतेज जौहर — ने उसी आधार पर गरिमा, समानता और निजता की सुरक्षा का निर्माण किया।"
   },
   {
     "id": "tl_095",
@@ -3124,30 +3766,37 @@
       {
         "label": "Mandal Commission constituted",
         "year_display": "1979",
-        "sort_key": 1979
+        "sort_key": 1979,
+        "label_hi": "मंडल आयोग का गठन"
       },
       {
         "label": "V. P. Singh government implements Mandal recommendations",
         "year_display": "1990",
-        "sort_key": 1990
+        "sort_key": 1990,
+        "label_hi": "वी. पी. सिंह सरकार ने मंडल सिफारिशें लागू कीं"
       },
       {
         "label": "Indra Sawhney judgment caps reservation at 50%",
         "year_display": "1992",
-        "sort_key": 1992
+        "sort_key": 1992,
+        "label_hi": "इंद्रा साहनी निर्णय ने आरक्षण को 50% पर सीमित किया"
       },
       {
         "label": "93rd Amendment enables OBC quotas in educational institutions",
         "year_display": "2005",
-        "sort_key": 2005
+        "sort_key": 2005,
+        "label_hi": "93वें संशोधन ने शिक्षण संस्थानों में ओबीसी कोटा को संभव बनाया"
       },
       {
         "label": "103rd Amendment adds 10% EWS reservation",
         "year_display": "2019",
-        "sort_key": 2019
+        "sort_key": 2019,
+        "label_hi": "103वें संशोधन ने 10% ईडब्ल्यूएस आरक्षण जोड़ा"
       }
     ],
-    "explanation": "A decade separated the Mandal Commission's creation from its explosive implementation in 1990; Indra Sawhney then set the 50% ceiling and creamy-layer rule, while later amendments extended quotas to education (2005) and economic criteria (2019)."
+    "explanation": "A decade separated the Mandal Commission's creation from its explosive implementation in 1990; Indra Sawhney then set the 50% ceiling and creamy-layer rule, while later amendments extended quotas to education (2005) and economic criteria (2019).",
+    "theme_hi": "आरक्षण का प्रश्न",
+    "explanation_hi": "मंडल आयोग के गठन और 1990 में इसके विस्फोटक कार्यान्वयन के बीच एक दशक का अंतर था; इंद्रा साहनी ने फिर 50% की सीमा और क्रीमी लेयर नियम तय किया, जबकि बाद के संशोधनों ने कोटे को शिक्षा (2005) और आर्थिक मानदंडों (2019) तक विस्तारित किया।"
   },
   {
     "id": "tl_096",
@@ -3158,24 +3807,30 @@
       {
         "label": "Right to Information Act enacted",
         "year_display": "2005",
-        "sort_key": 2005
+        "sort_key": 2005,
+        "label_hi": "सूचना का अधिकार अधिनियम अधिनियमित"
       },
       {
         "label": "Lokpal and Lokayuktas Act passed",
         "year_display": "2013",
-        "sort_key": 2013
+        "sort_key": 2013,
+        "label_hi": "लोकपाल और लोकायुक्त अधिनियम पारित"
       },
       {
         "label": "Whistle Blowers Protection Act enacted",
         "year_display": "2014",
-        "sort_key": 2014
+        "sort_key": 2014,
+        "label_hi": "व्हिसल ब्लोअर संरक्षण अधिनियम अधिनियमित"
       },
       {
         "label": "First Lokpal of India appointed",
         "year_display": "2019",
-        "sort_key": 2019
+        "sort_key": 2019,
+        "label_hi": "भारत के पहले लोकपाल की नियुक्ति"
       }
     ],
-    "explanation": "RTI opened government records in 2005; the anti-corruption wave after 2011 produced the Lokpal Act (2013) and whistle-blower protection (2014), though the first Lokpal was appointed only in 2019 — six years after the law."
+    "explanation": "RTI opened government records in 2005; the anti-corruption wave after 2011 produced the Lokpal Act (2013) and whistle-blower protection (2014), though the first Lokpal was appointed only in 2019 — six years after the law.",
+    "theme_hi": "पारदर्शिता और जवाबदेही कानून",
+    "explanation_hi": "सूचना के अधिकार ने 2005 में सरकारी अभिलेख खोले; 2011 के बाद भ्रष्टाचार-विरोधी लहर ने लोकपाल अधिनियम (2013) और व्हिसल ब्लोअर संरक्षण (2014) को जन्म दिया, यद्यपि पहले लोकपाल की नियुक्ति कानून बनने के छह वर्ष बाद, 2019 में ही हुई।"
   }
 ]

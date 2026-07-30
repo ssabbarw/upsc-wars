@@ -30,9 +30,10 @@ class DuelScreen extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final provider = duelControllerProvider(
-      (subjects: subjectsCsv, difficulties: difficultiesCsv),
-    );
+    final provider = duelControllerProvider((
+      subjects: subjectsCsv,
+      difficulties: difficultiesCsv,
+    ));
     final async = ref.watch(provider);
     final howToReady = useGameHowToSheet(
       context: context,
@@ -57,20 +58,23 @@ class DuelScreen extends HookConsumerWidget {
     void exit() => context.canPop() ? context.pop() : context.go('/games');
 
     // Auto-advance after a round resolves (winner or both wrong).
-    useEffect(() {
-      final state = async.asData?.value;
-      if (state == null || !howToReady) return null;
-      if (state.phase == DuelPhase.matchOver) return null;
-      if (!state.revealedAnswer) return null;
-      final timer = Timer(const Duration(milliseconds: 900), () {
-        ref.read(provider.notifier).nextQuestion();
-      });
-      return timer.cancel;
-    }, [
-      async.asData?.value.questionIndex,
-      async.asData?.value.revealedAnswer,
-      howToReady,
-    ]);
+    useEffect(
+      () {
+        final state = async.asData?.value;
+        if (state == null || !howToReady) return null;
+        if (state.phase == DuelPhase.matchOver) return null;
+        if (!state.revealedAnswer) return null;
+        final timer = Timer(const Duration(milliseconds: 900), () {
+          ref.read(provider.notifier).nextQuestion();
+        });
+        return timer.cancel;
+      },
+      [
+        async.asData?.value.questionIndex,
+        async.asData?.value.revealedAnswer,
+        howToReady,
+      ],
+    );
 
     return Scaffold(
       backgroundColor: RgColors.pageBg,
@@ -203,10 +207,7 @@ class _PlayerHalf extends StatelessWidget {
         children: [
           RgMonoLabel('Q$questionNumber · $subject'),
           const SizedBox(height: 10),
-          Text(
-            question,
-            style: RgText.display(size: 15, height: 1.28),
-          ),
+          Text(question, style: RgText.display(size: 15, height: 1.28)),
           const SizedBox(height: 12),
           for (var i = 0; i < options.length; i++) ...[
             if (i > 0) const SizedBox(height: 8),
@@ -215,7 +216,8 @@ class _PlayerHalf extends StatelessWidget {
               enabled: !locked && !revealed,
               isCorrect: revealed && wonRound && i == answerIndex,
               isWrong: wrongIndex == i,
-              dimmed: (locked || revealed) &&
+              dimmed:
+                  (locked || revealed) &&
                   wrongIndex != i &&
                   !(revealed && wonRound && i == answerIndex),
               onTap: () => onTap(i),
@@ -275,10 +277,7 @@ class _DuelOption extends StatelessWidget {
                 child: CustomPaint(painter: _HazardStripePainter()),
               ),
             Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 12,
-                vertical: 10,
-              ),
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
               child: Row(
                 children: [
                   if (isCorrect) ...[
@@ -444,8 +443,9 @@ class _SeamScore extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment:
-          alignEnd ? CrossAxisAlignment.end : CrossAxisAlignment.start,
+      crossAxisAlignment: alignEnd
+          ? CrossAxisAlignment.end
+          : CrossAxisAlignment.start,
       children: [
         Text(
           label,
@@ -458,11 +458,7 @@ class _SeamScore extends StatelessWidget {
         ),
         Text(
           '$score',
-          style: RgText.mono(
-            size: 26,
-            height: 1,
-            color: RgColors.onDark,
-          ),
+          style: RgText.mono(size: 26, height: 1, color: RgColors.onDark),
         ),
       ],
     );
@@ -598,10 +594,7 @@ class _EndHalf extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 6),
-        Text(
-          caption,
-          style: RgText.body(size: 13, weight: FontWeight.w600),
-        ),
+        Text(caption, style: RgText.body(size: 13, weight: FontWeight.w600)),
         TextButton(
           onPressed: onExit,
           style: TextButton.styleFrom(foregroundColor: RgColors.muted),
@@ -619,11 +612,7 @@ class _EndHalf extends StatelessWidget {
     return Stack(
       alignment: Alignment.center,
       children: [
-        const Positioned(
-          top: 14,
-          left: 22,
-          child: _Confetti(RgColors.warning),
-        ),
+        const Positioned(top: 14, left: 22, child: _Confetti(RgColors.warning)),
         const Positioned(
           top: 34,
           right: 26,

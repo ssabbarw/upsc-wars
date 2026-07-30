@@ -25,9 +25,7 @@ void main() {
     });
   });
 
-  Widget wrap(Widget child) => ProviderScope(
-        child: MaterialApp(home: child),
-      );
+  Widget wrap(Widget child) => ProviderScope(child: MaterialApp(home: child));
 
   Future<void> pumpFrames(WidgetTester tester, {int count = 20}) async {
     for (var i = 0; i < count; i++) {
@@ -45,7 +43,9 @@ void main() {
     expect(find.text('1v1 Duel'), findsOneWidget);
   });
 
-  testWidgets('how-to bottom sheet shows checkbox and can start', (tester) async {
+  testWidgets('how-to bottom sheet shows checkbox and can start', (
+    tester,
+  ) async {
     SharedPreferences.setMockInitialValues({});
     await tester.binding.setSurfaceSize(const Size(390, 844));
 

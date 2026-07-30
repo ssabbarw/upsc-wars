@@ -3,7 +3,12 @@
     "id": "cd_001",
     "subject": "Ancient History",
     "difficulty": "easy",
-    "dots": ["Chandragupta Maurya", "Chanakya", "Arthashastra", "Megasthenes"],
+    "dots": [
+      "Chandragupta Maurya",
+      "Chanakya",
+      "Arthashastra",
+      "Megasthenes"
+    ],
     "options": [
       "Spread of Buddhism under Ashoka",
       "Indo-Greek trade relations",
@@ -17,7 +22,12 @@
     "id": "cd_002",
     "subject": "Ancient History",
     "difficulty": "easy",
-    "dots": ["Harappa", "Mohenjo-daro", "Dholavira", "Lothal"],
+    "dots": [
+      "Harappa",
+      "Mohenjo-daro",
+      "Dholavira",
+      "Lothal"
+    ],
     "options": [
       "Major sites of the Indus Valley Civilisation",
       "Capitals of the Mahajanapadas",
@@ -31,7 +41,12 @@
     "id": "cd_003",
     "subject": "Ancient History",
     "difficulty": "easy",
-    "dots": ["Rigveda", "Samaveda", "Yajurveda", "Atharvaveda"],
+    "dots": [
+      "Rigveda",
+      "Samaveda",
+      "Yajurveda",
+      "Atharvaveda"
+    ],
     "options": [
       "The principal Upanishads",
       "The four Vedas of the Vedic corpus",
@@ -45,7 +60,12 @@
     "id": "cd_004",
     "subject": "Ancient History",
     "difficulty": "easy",
-    "dots": ["Lumbini", "Bodh Gaya", "Sarnath", "Kushinagar"],
+    "dots": [
+      "Lumbini",
+      "Bodh Gaya",
+      "Sarnath",
+      "Kushinagar"
+    ],
     "options": [
       "Sites of the four Buddhist councils",
       "Capitals of ancient Magadha",
@@ -59,7 +79,12 @@
     "id": "cd_005",
     "subject": "Ancient History",
     "difficulty": "medium",
-    "dots": ["Panini", "Patanjali", "Ashtadhyayi", "Mahabhashya"],
+    "dots": [
+      "Panini",
+      "Patanjali",
+      "Ashtadhyayi",
+      "Mahabhashya"
+    ],
     "options": [
       "Compilers of the Vedas",
       "Foundational figures and texts of Sanskrit grammar",
@@ -73,7 +98,12 @@
     "id": "cd_006",
     "subject": "Ancient History",
     "difficulty": "medium",
-    "dots": ["Kalidasa", "Aryabhata", "Varahamihira", "Amarasimha"],
+    "dots": [
+      "Kalidasa",
+      "Aryabhata",
+      "Varahamihira",
+      "Amarasimha"
+    ],
     "options": [
       "Scholars of the Gupta age, India's classical era",
       "Court poets of Harshavardhana",
@@ -87,7 +117,12 @@
     "id": "cd_007",
     "subject": "Ancient History",
     "difficulty": "medium",
-    "dots": ["Hathigumpha", "Junagadh", "Allahabad Pillar", "Aihole"],
+    "dots": [
+      "Hathigumpha",
+      "Junagadh",
+      "Allahabad Pillar",
+      "Aihole"
+    ],
     "options": [
       "Ashokan edicts on dhamma",
       "Sites of prehistoric cave paintings",
@@ -101,7 +136,12 @@
     "id": "cd_008",
     "subject": "Ancient History",
     "difficulty": "medium",
-    "dots": ["Tolkappiyam", "Silappadikaram", "Manimekalai", "Tirukkural"],
+    "dots": [
+      "Tolkappiyam",
+      "Silappadikaram",
+      "Manimekalai",
+      "Tirukkural"
+    ],
     "options": [
       "Sanskrit kavya works of the Gupta period",
       "Classical Tamil literature of the Sangam tradition",
@@ -115,7 +155,12 @@
     "id": "cd_009",
     "subject": "Ancient History",
     "difficulty": "hard",
-    "dots": ["Heliodorus", "Besnagar", "Garuda pillar", "Bhagabhadra"],
+    "dots": [
+      "Heliodorus",
+      "Besnagar",
+      "Garuda pillar",
+      "Bhagabhadra"
+    ],
     "options": [
       "Greek accounts of Mauryan Pataliputra",
       "Evidence of early Bhagavata (Vasudeva) worship and Indo-Greek contact",
@@ -129,7 +174,12 @@
     "id": "cd_010",
     "subject": "Ancient History",
     "difficulty": "hard",
-    "dots": ["Kanishka", "Kundalvana", "Vasumitra", "Sarvastivada"],
+    "dots": [
+      "Kanishka",
+      "Kundalvana",
+      "Vasumitra",
+      "Sarvastivada"
+    ],
     "options": [
       "The Third Buddhist Council at Pataliputra",
       "Origins of the Gandhara school of sculpture",
@@ -143,7 +193,12 @@
     "id": "cd_011",
     "subject": "Ancient History",
     "difficulty": "hard",
-    "dots": ["Makkhali Gosala", "Niyati", "Barabar caves", "Ashoka's grant"],
+    "dots": [
+      "Makkhali Gosala",
+      "Niyati",
+      "Barabar caves",
+      "Ashoka's grant"
+    ],
     "options": [
       "The Ajivika sect of the sixth century BCE",
       "The Lokayata (Charvaka) materialist school",
@@ -157,7 +212,12 @@
     "id": "cd_012",
     "subject": "Ancient History",
     "difficulty": "hard",
-    "dots": ["Gautamiputra Satakarni", "Nanaghat inscription", "Pratishthana", "Gathasaptasati"],
+    "dots": [
+      "Gautamiputra Satakarni",
+      "Nanaghat inscription",
+      "Pratishthana",
+      "Gathasaptasati"
+    ],
     "options": [
       "The Shaka Kshatrapas of Ujjain",
       "The Vakataka dynasty of Vidarbha",
@@ -171,7 +231,12 @@
     "id": "cd_013",
     "subject": "Medieval History",
     "difficulty": "easy",
-    "dots": ["Qutb-ud-din Aibak", "Iltutmish", "Razia Sultan", "Balban"],
+    "dots": [
+      "Qutb-ud-din Aibak",
+      "Iltutmish",
+      "Razia Sultan",
+      "Balban"
+    ],
     "options": [
       "Rulers of the Khalji dynasty",
       "Rulers of the Mamluk (Slave) dynasty of Delhi",
@@ -185,7 +250,12 @@
     "id": "cd_014",
     "subject": "Medieval History",
     "difficulty": "easy",
-    "dots": ["Babur", "Humayun", "Akbar", "Jahangir"],
+    "dots": [
+      "Babur",
+      "Humayun",
+      "Akbar",
+      "Jahangir"
+    ],
     "options": [
       "The first four Mughal emperors in succession",
       "Rulers of the Lodi dynasty",
@@ -199,7 +269,12 @@
     "id": "cd_015",
     "subject": "Medieval History",
     "difficulty": "easy",
-    "dots": ["Kabir", "Guru Nanak", "Ravidas", "Mirabai"],
+    "dots": [
+      "Kabir",
+      "Guru Nanak",
+      "Ravidas",
+      "Mirabai"
+    ],
     "options": [
       "Sufi saints of the Chishti order",
       "Court poets of the Delhi Sultans",
@@ -213,7 +288,12 @@
     "id": "cd_016",
     "subject": "Medieval History",
     "difficulty": "easy",
-    "dots": ["Krishnadevaraya", "Hampi", "Tuluva dynasty", "Amuktamalyada"],
+    "dots": [
+      "Krishnadevaraya",
+      "Hampi",
+      "Tuluva dynasty",
+      "Amuktamalyada"
+    ],
     "options": [
       "The Bahmani Sultanate",
       "The Vijayanagara Empire at its peak",
@@ -227,7 +307,12 @@
     "id": "cd_017",
     "subject": "Medieval History",
     "difficulty": "medium",
-    "dots": ["Ibn Battuta", "Al-Biruni", "Abdur Razzaq", "Domingo Paes"],
+    "dots": [
+      "Ibn Battuta",
+      "Al-Biruni",
+      "Abdur Razzaq",
+      "Domingo Paes"
+    ],
     "options": [
       "Sufi saints of the Bhakti movement",
       "Founders of regional Sultanates",
@@ -241,7 +326,12 @@
     "id": "cd_018",
     "subject": "Medieval History",
     "difficulty": "medium",
-    "dots": ["Alauddin Khalji", "Shahna-i-Mandi", "Diwan-i-Riyasat", "Price fixation"],
+    "dots": [
+      "Alauddin Khalji",
+      "Shahna-i-Mandi",
+      "Diwan-i-Riyasat",
+      "Price fixation"
+    ],
     "options": [
       "Market control and price regulation in the Delhi Sultanate",
       "Mughal customs administration at ports",
@@ -255,7 +345,12 @@
     "id": "cd_019",
     "subject": "Medieval History",
     "difficulty": "medium",
-    "dots": ["Token currency", "Daulatabad", "Qarachil expedition", "Khurasan project"],
+    "dots": [
+      "Token currency",
+      "Daulatabad",
+      "Qarachil expedition",
+      "Khurasan project"
+    ],
     "options": [
       "Achievements of Firoz Shah Tughlaq",
       "Conquests of Alauddin Khalji",
@@ -269,7 +364,12 @@
     "id": "cd_020",
     "subject": "Medieval History",
     "difficulty": "medium",
-    "dots": ["Mansab", "Zat", "Sawar", "Jagir"],
+    "dots": [
+      "Mansab",
+      "Zat",
+      "Sawar",
+      "Jagir"
+    ],
     "options": [
       "Iqta administration of the Delhi Sultanate",
       "The Mughal mansabdari system of ranks and assignments",
@@ -283,7 +383,12 @@
     "id": "cd_021",
     "subject": "Medieval History",
     "difficulty": "hard",
-    "dots": ["Uttaramerur", "Kudavolai", "Sabha", "Variyam"],
+    "dots": [
+      "Uttaramerur",
+      "Kudavolai",
+      "Sabha",
+      "Variyam"
+    ],
     "options": [
       "Trade regulations of the Chera ports",
       "Temple administration under the Pallavas",
@@ -297,7 +402,12 @@
     "id": "cd_022",
     "subject": "Medieval History",
     "difficulty": "hard",
-    "dots": ["Iqta", "Muqti", "Kharaj", "Fawazil"],
+    "dots": [
+      "Iqta",
+      "Muqti",
+      "Kharaj",
+      "Fawazil"
+    ],
     "options": [
       "Revenue assignment system of the Delhi Sultanate",
       "Mughal ranking of nobles",
@@ -311,7 +421,12 @@
     "id": "cd_023",
     "subject": "Medieval History",
     "difficulty": "hard",
-    "dots": ["Sijda", "Paibos", "Nauroz ceremony", "Zil-i-Ilahi"],
+    "dots": [
+      "Sijda",
+      "Paibos",
+      "Nauroz ceremony",
+      "Zil-i-Ilahi"
+    ],
     "options": [
       "Akbar's syncretic court rituals",
       "Balban's theory of kingship and court ceremonial",
@@ -325,7 +440,12 @@
     "id": "cd_024",
     "subject": "Medieval History",
     "difficulty": "hard",
-    "dots": ["Rajendra I", "Gangaikonda Cholapuram", "Kadaram campaign", "Srivijaya"],
+    "dots": [
+      "Rajendra I",
+      "Gangaikonda Cholapuram",
+      "Kadaram campaign",
+      "Srivijaya"
+    ],
     "options": [
       "Pallava maritime trade with China",
       "Pandya conquests in Sri Lanka",
@@ -339,7 +459,12 @@
     "id": "cd_025",
     "subject": "Modern History",
     "difficulty": "easy",
-    "dots": ["Rowlatt Act", "Jallianwala Bagh", "Khilafat Movement", "Non-Cooperation Movement"],
+    "dots": [
+      "Rowlatt Act",
+      "Jallianwala Bagh",
+      "Khilafat Movement",
+      "Non-Cooperation Movement"
+    ],
     "options": [
       "Causes of the Partition of Bengal",
       "Chain of events leading to the Non-Cooperation Movement",
@@ -353,7 +478,12 @@
     "id": "cd_026",
     "subject": "Modern History",
     "difficulty": "easy",
-    "dots": ["Dandi March", "Salt Satyagraha", "Gandhi-Irwin Pact", "Second Round Table Conference"],
+    "dots": [
+      "Dandi March",
+      "Salt Satyagraha",
+      "Gandhi-Irwin Pact",
+      "Second Round Table Conference"
+    ],
     "options": [
       "The Non-Cooperation Movement of 1920-22",
       "The Quit India Movement of 1942",
@@ -367,7 +497,12 @@
     "id": "cd_027",
     "subject": "Modern History",
     "difficulty": "easy",
-    "dots": ["Raja Ram Mohan Roy", "Brahmo Samaj", "Abolition of Sati", "Precepts of Jesus"],
+    "dots": [
+      "Raja Ram Mohan Roy",
+      "Brahmo Samaj",
+      "Abolition of Sati",
+      "Precepts of Jesus"
+    ],
     "options": [
       "Pioneering socio-religious reform in early 19th-century Bengal",
       "The Arya Samaj's shuddhi movement",
@@ -381,7 +516,12 @@
     "id": "cd_028",
     "subject": "Modern History",
     "difficulty": "easy",
-    "dots": ["Bhagat Singh", "Chandra Shekhar Azad", "HSRA", "Central Assembly bomb"],
+    "dots": [
+      "Bhagat Singh",
+      "Chandra Shekhar Azad",
+      "HSRA",
+      "Central Assembly bomb"
+    ],
     "options": [
       "The Ghadar movement in North America",
       "The revolutionary movement of the late 1920s",
@@ -395,7 +535,12 @@
     "id": "cd_029",
     "subject": "Modern History",
     "difficulty": "medium",
-    "dots": ["Bengal Gazette", "James Augustus Hicky", "Vernacular Press Act", "Amrita Bazar Patrika"],
+    "dots": [
+      "Bengal Gazette",
+      "James Augustus Hicky",
+      "Vernacular Press Act",
+      "Amrita Bazar Patrika"
+    ],
     "options": [
       "Growth of English education in Bengal",
       "Christian missionary printing presses",
@@ -409,7 +554,12 @@
     "id": "cd_030",
     "subject": "Modern History",
     "difficulty": "medium",
-    "dots": ["Santhal Hul", "Birsa Munda", "Ulgulan", "Kol uprising"],
+    "dots": [
+      "Santhal Hul",
+      "Birsa Munda",
+      "Ulgulan",
+      "Kol uprising"
+    ],
     "options": [
       "Peasant movements led by the Congress",
       "Tribal revolts against colonial rule and outsiders",
@@ -423,7 +573,12 @@
     "id": "cd_031",
     "subject": "Modern History",
     "difficulty": "medium",
-    "dots": ["August Offer", "Cripps Mission", "C. R. Formula", "Cabinet Mission"],
+    "dots": [
+      "August Offer",
+      "Cripps Mission",
+      "C. R. Formula",
+      "Cabinet Mission"
+    ],
     "options": [
       "British reforms after the 1857 revolt",
       "Schemes for provincial autonomy in the 1920s",
@@ -437,7 +592,12 @@
     "id": "cd_032",
     "subject": "Modern History",
     "difficulty": "medium",
-    "dots": ["Surat Split", "Moderates", "Extremists", "Lucknow Session 1916"],
+    "dots": [
+      "Surat Split",
+      "Moderates",
+      "Extremists",
+      "Lucknow Session 1916"
+    ],
     "options": [
       "The split and reunion of the Indian National Congress",
       "The birth of the Muslim League",
@@ -451,7 +611,12 @@
     "id": "cd_033",
     "subject": "Modern History",
     "difficulty": "hard",
-    "dots": ["Haji Shariatullah", "Dudu Mian", "Titu Mir", "Tariqah-i-Muhammadiya"],
+    "dots": [
+      "Haji Shariatullah",
+      "Dudu Mian",
+      "Titu Mir",
+      "Tariqah-i-Muhammadiya"
+    ],
     "options": [
       "Founders of the Aligarh movement",
       "19th-century Islamic revivalist and peasant movements in Bengal",
@@ -465,7 +630,12 @@
     "id": "cd_034",
     "subject": "Modern History",
     "difficulty": "hard",
-    "dots": ["Vaikom Satyagraha", "Guruvayur Satyagraha", "K. Kelappan", "Temple Entry Proclamation"],
+    "dots": [
+      "Vaikom Satyagraha",
+      "Guruvayur Satyagraha",
+      "K. Kelappan",
+      "Temple Entry Proclamation"
+    ],
     "options": [
       "Anti-untouchability and temple entry movements in Kerala",
       "The Self-Respect movement in Tamil Nadu",
@@ -479,7 +649,12 @@
     "id": "cd_035",
     "subject": "Modern History",
     "difficulty": "hard",
-    "dots": ["Paramahansa Mandali", "Atmaram Pandurang", "Prarthana Samaj", "M. G. Ranade"],
+    "dots": [
+      "Paramahansa Mandali",
+      "Atmaram Pandurang",
+      "Prarthana Samaj",
+      "M. G. Ranade"
+    ],
     "options": [
       "The non-Brahmin movement of Jyotiba Phule",
       "Reform of Indian universities",
@@ -493,7 +668,12 @@
     "id": "cd_036",
     "subject": "Modern History",
     "difficulty": "hard",
-    "dots": ["Baba Ramchandra", "Awadh Kisan Sabha", "Eka movement", "Madari Pasi"],
+    "dots": [
+      "Baba Ramchandra",
+      "Awadh Kisan Sabha",
+      "Eka movement",
+      "Madari Pasi"
+    ],
     "options": [
       "The Moplah uprising in Malabar",
       "Peasant movements in Awadh in the early 1920s",
@@ -507,7 +687,12 @@
     "id": "cd_037",
     "subject": "Art and Culture",
     "difficulty": "easy",
-    "dots": ["Sarnath", "Sanchi", "Amaravati", "Bharhut"],
+    "dots": [
+      "Sarnath",
+      "Sanchi",
+      "Amaravati",
+      "Bharhut"
+    ],
     "options": [
       "Sites of the Indus Valley Civilisation",
       "Centres of Mughal miniature painting",
@@ -521,7 +706,12 @@
     "id": "cd_038",
     "subject": "Art and Culture",
     "difficulty": "easy",
-    "dots": ["Bharatanatyam", "Kathak", "Odissi", "Kathakali"],
+    "dots": [
+      "Bharatanatyam",
+      "Kathak",
+      "Odissi",
+      "Kathakali"
+    ],
     "options": [
       "Folk dances of central India",
       "Classical dance forms recognised by the Sangeet Natak Akademi",
@@ -535,7 +725,12 @@
     "id": "cd_039",
     "subject": "Art and Culture",
     "difficulty": "easy",
-    "dots": ["Ajanta", "Ellora", "Elephanta", "Badami"],
+    "dots": [
+      "Ajanta",
+      "Ellora",
+      "Elephanta",
+      "Badami"
+    ],
     "options": [
       "Rock-cut cave complexes of ancient and early medieval India",
       "Mughal garden tombs",
@@ -549,7 +744,12 @@
     "id": "cd_040",
     "subject": "Art and Culture",
     "difficulty": "easy",
-    "dots": ["Sitar", "Sarod", "Veena", "Santoor"],
+    "dots": [
+      "Sitar",
+      "Sarod",
+      "Veena",
+      "Santoor"
+    ],
     "options": [
       "Percussion instruments of folk music",
       "Wind instruments used in temple music",
@@ -563,7 +763,12 @@
     "id": "cd_041",
     "subject": "Art and Culture",
     "difficulty": "medium",
-    "dots": ["Nagara", "Dravida", "Vesara", "Shikhara"],
+    "dots": [
+      "Nagara",
+      "Dravida",
+      "Vesara",
+      "Shikhara"
+    ],
     "options": [
       "Schools of classical Indian sculpture",
       "Styles and elements of Hindu temple architecture",
@@ -577,7 +782,12 @@
     "id": "cd_042",
     "subject": "Art and Culture",
     "difficulty": "medium",
-    "dots": ["Madhubani", "Warli", "Pattachitra", "Kalamkari"],
+    "dots": [
+      "Madhubani",
+      "Warli",
+      "Pattachitra",
+      "Kalamkari"
+    ],
     "options": [
       "Mughal miniature painting schools",
       "Mural traditions of Kerala temples",
@@ -591,7 +801,12 @@
     "id": "cd_043",
     "subject": "Art and Culture",
     "difficulty": "medium",
-    "dots": ["Gwalior", "Kirana", "Agra", "Patiala"],
+    "dots": [
+      "Gwalior",
+      "Kirana",
+      "Agra",
+      "Patiala"
+    ],
     "options": [
       "Centres of Mughal provincial architecture",
       "Princely states that patronised miniature painting",
@@ -605,7 +820,12 @@
     "id": "cd_044",
     "subject": "Art and Culture",
     "difficulty": "medium",
-    "dots": ["Kutiyattam", "Ramlila", "Vedic chanting", "Kalbelia"],
+    "dots": [
+      "Kutiyattam",
+      "Ramlila",
+      "Vedic chanting",
+      "Kalbelia"
+    ],
     "options": [
       "Elements on UNESCO's Intangible Cultural Heritage list from India",
       "Performing arts patronised by the Vijayanagara court",
@@ -619,7 +839,12 @@
     "id": "cd_045",
     "subject": "Art and Culture",
     "difficulty": "hard",
-    "dots": ["Grey schist", "Hellenistic drapery", "Kushan patronage", "Wavy-haired Buddha"],
+    "dots": [
+      "Grey schist",
+      "Hellenistic drapery",
+      "Kushan patronage",
+      "Wavy-haired Buddha"
+    ],
     "options": [
       "The Mathura school of sculpture",
       "The Gandhara school of art",
@@ -633,7 +858,12 @@
     "id": "cd_046",
     "subject": "Art and Culture",
     "difficulty": "hard",
-    "dots": ["Yakshagana", "Theyyam", "Bhaona", "Tamasha"],
+    "dots": [
+      "Yakshagana",
+      "Theyyam",
+      "Bhaona",
+      "Tamasha"
+    ],
     "options": [
       "Classical dance-dramas codified in the Natyashastra",
       "Puppet theatre traditions",
@@ -647,7 +877,12 @@
     "id": "cd_047",
     "subject": "Art and Culture",
     "difficulty": "hard",
-    "dots": ["Bidriware", "Dhokra", "Thatheras of Jandiala Guru", "Pembarthi"],
+    "dots": [
+      "Bidriware",
+      "Dhokra",
+      "Thatheras of Jandiala Guru",
+      "Pembarthi"
+    ],
     "options": [
       "Traditional metal craft traditions of India",
       "Handloom weaving clusters",
@@ -661,7 +896,12 @@
     "id": "cd_048",
     "subject": "Art and Culture",
     "difficulty": "hard",
-    "dots": ["Lost-wax technique", "Panchaloha", "Nataraja", "Thanjavur region"],
+    "dots": [
+      "Lost-wax technique",
+      "Panchaloha",
+      "Nataraja",
+      "Thanjavur region"
+    ],
     "options": [
       "Pallava rock-cut sculpture at Mahabalipuram",
       "Hoysala temple carving in soapstone",
@@ -675,7 +915,12 @@
     "id": "cd_049",
     "subject": "Geography",
     "difficulty": "easy",
-    "dots": ["Nanda Devi", "Kanchenjunga", "Nanga Parbat", "Annapurna"],
+    "dots": [
+      "Nanda Devi",
+      "Kanchenjunga",
+      "Nanga Parbat",
+      "Annapurna"
+    ],
     "options": [
       "Volcanic peaks of the Deccan Plateau",
       "Peaks of the Aravalli Range",
@@ -689,7 +934,12 @@
     "id": "cd_050",
     "subject": "Geography",
     "difficulty": "easy",
-    "dots": ["Yamuna", "Ghaghara", "Gandak", "Kosi"],
+    "dots": [
+      "Yamuna",
+      "Ghaghara",
+      "Gandak",
+      "Kosi"
+    ],
     "options": [
       "Tributaries of the Ganga",
       "Rivers of the Brahmaputra system",
@@ -703,7 +953,12 @@
     "id": "cd_051",
     "subject": "Geography",
     "difficulty": "easy",
-    "dots": ["Palk Strait", "Gulf of Mannar", "Adam's Bridge", "Rameswaram"],
+    "dots": [
+      "Palk Strait",
+      "Gulf of Mannar",
+      "Adam's Bridge",
+      "Rameswaram"
+    ],
     "options": [
       "Features of the Andaman Sea",
       "Features of the sea between India and Sri Lanka",
@@ -717,7 +972,12 @@
     "id": "cd_052",
     "subject": "Geography",
     "difficulty": "easy",
-    "dots": ["Visakhapatnam", "Paradip", "Kochi", "Mormugao"],
+    "dots": [
+      "Visakhapatnam",
+      "Paradip",
+      "Kochi",
+      "Mormugao"
+    ],
     "options": [
       "Cities on the Golden Quadrilateral",
       "Naval command headquarters",
@@ -731,7 +991,12 @@
     "id": "cd_053",
     "subject": "Geography",
     "difficulty": "medium",
-    "dots": ["Bhakra Nangal", "Hirakud", "Damodar Valley Corporation", "Tungabhadra"],
+    "dots": [
+      "Bhakra Nangal",
+      "Hirakud",
+      "Damodar Valley Corporation",
+      "Tungabhadra"
+    ],
     "options": [
       "Coastal ports developed under British rule",
       "Major multipurpose river valley projects of independent India",
@@ -745,7 +1010,12 @@
     "id": "cd_054",
     "subject": "Geography",
     "difficulty": "medium",
-    "dots": ["Regur", "Deccan Trap basalt", "Cotton cultivation", "Self-ploughing cracks"],
+    "dots": [
+      "Regur",
+      "Deccan Trap basalt",
+      "Cotton cultivation",
+      "Self-ploughing cracks"
+    ],
     "options": [
       "Laterite soils of the Western Ghats",
       "Alluvial soils of the northern plains",
@@ -759,7 +1029,12 @@
     "id": "cd_055",
     "subject": "Geography",
     "difficulty": "medium",
-    "dots": ["Jog Falls", "Dhuandhar", "Shivanasamudra", "Hundru"],
+    "dots": [
+      "Jog Falls",
+      "Dhuandhar",
+      "Shivanasamudra",
+      "Hundru"
+    ],
     "options": [
       "Waterfalls and the rivers that form them",
       "Hot springs of peninsular India",
@@ -773,7 +1048,12 @@
     "id": "cd_056",
     "subject": "Geography",
     "difficulty": "medium",
-    "dots": ["Zoji La", "Shipki La", "Nathu La", "Jelep La"],
+    "dots": [
+      "Zoji La",
+      "Shipki La",
+      "Nathu La",
+      "Jelep La"
+    ],
     "options": [
       "Glaciers of the Karakoram",
       "Mountain passes of the Himalaya",
@@ -787,7 +1067,12 @@
     "id": "cd_057",
     "subject": "Geography",
     "difficulty": "hard",
-    "dots": ["Ten Degree Channel", "Duncan Passage", "Coco Channel", "Barren Island"],
+    "dots": [
+      "Ten Degree Channel",
+      "Duncan Passage",
+      "Coco Channel",
+      "Barren Island"
+    ],
     "options": [
       "Features of the Lakshadweep archipelago",
       "Straits of the Malacca region",
@@ -801,7 +1086,12 @@
     "id": "cd_058",
     "subject": "Geography",
     "difficulty": "hard",
-    "dots": ["Karewa", "Lacustrine deposits", "Saffron cultivation", "Kashmir Valley"],
+    "dots": [
+      "Karewa",
+      "Lacustrine deposits",
+      "Saffron cultivation",
+      "Kashmir Valley"
+    ],
     "options": [
       "Terraced plateau deposits of an ancient lake bed",
       "Glacial moraines of the Pir Panjal",
@@ -815,7 +1105,12 @@
     "id": "cd_059",
     "subject": "Geography",
     "difficulty": "hard",
-    "dots": ["Benguela", "Humboldt", "Canary", "California"],
+    "dots": [
+      "Benguela",
+      "Humboldt",
+      "Canary",
+      "California"
+    ],
     "options": [
       "Warm currents of the western ocean margins",
       "Cold currents along the eastern margins of oceans",
@@ -829,7 +1124,12 @@
     "id": "cd_060",
     "subject": "Geography",
     "difficulty": "hard",
-    "dots": ["Jaduguda", "Tummalapalle", "Domiasiat", "Gogi"],
+    "dots": [
+      "Jaduguda",
+      "Tummalapalle",
+      "Domiasiat",
+      "Gogi"
+    ],
     "options": [
       "Coalfields of the Damodar valley",
       "Iron ore belts of Odisha",
@@ -843,7 +1143,12 @@
     "id": "cd_061",
     "subject": "Economy",
     "difficulty": "easy",
-    "dots": ["NABARD", "RBI", "SEBI", "IRDAI"],
+    "dots": [
+      "NABARD",
+      "RBI",
+      "SEBI",
+      "IRDAI"
+    ],
     "options": [
       "Public sector banks nationalised in 1969",
       "Institutions created under the Five-Year Plans",
@@ -857,7 +1162,12 @@
     "id": "cd_062",
     "subject": "Economy",
     "difficulty": "easy",
-    "dots": ["Repo rate", "Reverse repo rate", "CRR", "SLR"],
+    "dots": [
+      "Repo rate",
+      "Reverse repo rate",
+      "CRR",
+      "SLR"
+    ],
     "options": [
       "Instruments of monetary policy used by the RBI",
       "Components of the Union Budget",
@@ -871,7 +1181,12 @@
     "id": "cd_063",
     "subject": "Economy",
     "difficulty": "easy",
-    "dots": ["GDP", "GNP", "NDP", "NNP"],
+    "dots": [
+      "GDP",
+      "GNP",
+      "NDP",
+      "NNP"
+    ],
     "options": [
       "Indices of stock market performance",
       "Aggregate measures of national income",
@@ -885,7 +1200,12 @@
     "id": "cd_064",
     "subject": "Economy",
     "difficulty": "easy",
-    "dots": ["Fiscal deficit", "Revenue deficit", "Primary deficit", "FRBM Act"],
+    "dots": [
+      "Fiscal deficit",
+      "Revenue deficit",
+      "Primary deficit",
+      "FRBM Act"
+    ],
     "options": [
       "Concepts of India's external debt",
       "Instruments of trade policy",
@@ -899,7 +1219,12 @@
     "id": "cd_065",
     "subject": "Economy",
     "difficulty": "medium",
-    "dots": ["MSP", "CACP", "FCI procurement", "Buffer stock"],
+    "dots": [
+      "MSP",
+      "CACP",
+      "FCI procurement",
+      "Buffer stock"
+    ],
     "options": [
       "India's foodgrain price support and food security system",
       "Regulation of agricultural exports",
@@ -913,7 +1238,12 @@
     "id": "cd_066",
     "subject": "Economy",
     "difficulty": "medium",
-    "dots": ["WPI", "CPI", "Headline inflation", "Core inflation"],
+    "dots": [
+      "WPI",
+      "CPI",
+      "Headline inflation",
+      "Core inflation"
+    ],
     "options": [
       "Measures of industrial output",
       "Concepts and indices used to measure inflation",
@@ -927,7 +1257,12 @@
     "id": "cd_067",
     "subject": "Economy",
     "difficulty": "medium",
-    "dots": ["Bretton Woods", "Quota system", "Special Drawing Rights", "Balance of payments support"],
+    "dots": [
+      "Bretton Woods",
+      "Quota system",
+      "Special Drawing Rights",
+      "Balance of payments support"
+    ],
     "options": [
       "The World Trade Organization",
       "The Asian Development Bank",
@@ -941,7 +1276,12 @@
     "id": "cd_068",
     "subject": "Economy",
     "difficulty": "medium",
-    "dots": ["Basel III", "Capital adequacy ratio", "NPA", "Prompt Corrective Action"],
+    "dots": [
+      "Basel III",
+      "Capital adequacy ratio",
+      "NPA",
+      "Prompt Corrective Action"
+    ],
     "options": [
       "Regulation of banking sector health and stability",
       "Rules governing stock exchanges",
@@ -955,7 +1295,12 @@
     "id": "cd_069",
     "subject": "Economy",
     "difficulty": "hard",
-    "dots": ["Phillips curve", "Okun's law", "Stagflation", "NAIRU"],
+    "dots": [
+      "Phillips curve",
+      "Okun's law",
+      "Stagflation",
+      "NAIRU"
+    ],
     "options": [
       "Theories of international trade",
       "Relationships between inflation, unemployment and output",
@@ -969,7 +1314,12 @@
     "id": "cd_070",
     "subject": "Economy",
     "difficulty": "hard",
-    "dots": ["Participatory notes", "FPI", "Round tripping", "Mauritius route"],
+    "dots": [
+      "Participatory notes",
+      "FPI",
+      "Round tripping",
+      "Mauritius route"
+    ],
     "options": [
       "Mechanisms of external commercial borrowing",
       "Instruments of the government securities market",
@@ -983,7 +1333,12 @@
     "id": "cd_071",
     "subject": "Economy",
     "difficulty": "hard",
-    "dots": ["Ways and Means Advances", "Open Market Operations", "Monetised deficit", "Government securities"],
+    "dots": [
+      "Ways and Means Advances",
+      "Open Market Operations",
+      "Monetised deficit",
+      "Government securities"
+    ],
     "options": [
       "The RBI's role in managing government borrowing and liquidity",
       "SEBI's regulation of mutual funds",
@@ -997,7 +1352,12 @@
     "id": "cd_072",
     "subject": "Economy",
     "difficulty": "hard",
-    "dots": ["Gini coefficient", "Lorenz curve", "Palma ratio", "Kuznets curve"],
+    "dots": [
+      "Gini coefficient",
+      "Lorenz curve",
+      "Palma ratio",
+      "Kuznets curve"
+    ],
     "options": [
       "Measures of absolute poverty",
       "Concepts used in the study of income inequality",
@@ -1011,7 +1371,12 @@
     "id": "cd_073",
     "subject": "Environment",
     "difficulty": "easy",
-    "dots": ["Kaziranga", "Jim Corbett", "Sundarbans", "Gir"],
+    "dots": [
+      "Kaziranga",
+      "Jim Corbett",
+      "Sundarbans",
+      "Gir"
+    ],
     "options": [
       "Ramsar wetland sites of India",
       "National Parks each associated with a distinct flagship species",
@@ -1025,7 +1390,12 @@
     "id": "cd_074",
     "subject": "Environment",
     "difficulty": "easy",
-    "dots": ["Vienna Convention", "Montreal Protocol", "CFCs", "Ozone hole"],
+    "dots": [
+      "Vienna Convention",
+      "Montreal Protocol",
+      "CFCs",
+      "Ozone hole"
+    ],
     "options": [
       "The global framework for protecting the ozone layer",
       "Agreements on transboundary air pollution",
@@ -1039,7 +1409,12 @@
     "id": "cd_075",
     "subject": "Environment",
     "difficulty": "easy",
-    "dots": ["Chipko", "Appiko", "Silent Valley", "Narmada Bachao Andolan"],
+    "dots": [
+      "Chipko",
+      "Appiko",
+      "Silent Valley",
+      "Narmada Bachao Andolan"
+    ],
     "options": [
       "Government afforestation programmes",
       "International conservation NGOs",
@@ -1053,7 +1428,12 @@
     "id": "cd_076",
     "subject": "Environment",
     "difficulty": "easy",
-    "dots": ["Project Tiger", "Project Elephant", "Project Snow Leopard", "Project Dolphin"],
+    "dots": [
+      "Project Tiger",
+      "Project Elephant",
+      "Project Snow Leopard",
+      "Project Dolphin"
+    ],
     "options": [
       "Species-focused conservation programmes of the Government of India",
       "Programmes under the Convention on Biological Diversity",
@@ -1067,7 +1447,12 @@
     "id": "cd_077",
     "subject": "Environment",
     "difficulty": "medium",
-    "dots": ["Chilika", "Keoladeo", "Loktak", "Wular"],
+    "dots": [
+      "Chilika",
+      "Keoladeo",
+      "Loktak",
+      "Wular"
+    ],
     "options": [
       "Crater lakes of volcanic origin",
       "Ramsar wetlands of international importance in India",
@@ -1081,7 +1466,12 @@
     "id": "cd_078",
     "subject": "Environment",
     "difficulty": "medium",
-    "dots": ["UNFCCC", "Kyoto Protocol", "Paris Agreement", "Nationally Determined Contributions"],
+    "dots": [
+      "UNFCCC",
+      "Kyoto Protocol",
+      "Paris Agreement",
+      "Nationally Determined Contributions"
+    ],
     "options": [
       "The international regime to combat climate change",
       "Agreements governing the ozone layer",
@@ -1095,7 +1485,12 @@
     "id": "cd_079",
     "subject": "Environment",
     "difficulty": "medium",
-    "dots": ["Himalaya", "Indo-Burma", "Western Ghats and Sri Lanka", "Sundaland"],
+    "dots": [
+      "Himalaya",
+      "Indo-Burma",
+      "Western Ghats and Sri Lanka",
+      "Sundaland"
+    ],
     "options": [
       "Tiger landscape complexes of Asia",
       "UNESCO World Heritage natural sites",
@@ -1109,7 +1504,12 @@
     "id": "cd_080",
     "subject": "Environment",
     "difficulty": "medium",
-    "dots": ["Nutrient runoff", "Algal bloom", "Oxygen depletion", "Dead zone"],
+    "dots": [
+      "Nutrient runoff",
+      "Algal bloom",
+      "Oxygen depletion",
+      "Dead zone"
+    ],
     "options": [
       "Stages of ocean acidification",
       "The process of eutrophication in water bodies",
@@ -1123,7 +1523,12 @@
     "id": "cd_081",
     "subject": "Environment",
     "difficulty": "hard",
-    "dots": ["Dugong", "Seagrass meadows", "Gulf of Mannar", "Schedule I protection"],
+    "dots": [
+      "Dugong",
+      "Seagrass meadows",
+      "Gulf of Mannar",
+      "Schedule I protection"
+    ],
     "options": [
       "Conservation of the sea cow in Indian waters",
       "Protection of the olive ridley turtle",
@@ -1137,7 +1542,12 @@
     "id": "cd_082",
     "subject": "Environment",
     "difficulty": "hard",
-    "dots": ["Bonn Challenge", "Green India Mission", "CAMPA", "Miyawaki method"],
+    "dots": [
+      "Bonn Challenge",
+      "Green India Mission",
+      "CAMPA",
+      "Miyawaki method"
+    ],
     "options": [
       "Schemes for wildlife corridor creation",
       "Carbon trading mechanisms",
@@ -1151,7 +1561,12 @@
     "id": "cd_083",
     "subject": "Environment",
     "difficulty": "hard",
-    "dots": ["Neelakurinji", "Shola grasslands", "Eravikulam", "Twelve-year bloom"],
+    "dots": [
+      "Neelakurinji",
+      "Shola grasslands",
+      "Eravikulam",
+      "Twelve-year bloom"
+    ],
     "options": [
       "The alpine meadows of the Himalaya",
       "The montane ecosystem of the southern Western Ghats",
@@ -1165,7 +1580,12 @@
     "id": "cd_084",
     "subject": "Environment",
     "difficulty": "hard",
-    "dots": ["Basel Convention", "Rotterdam Convention", "Stockholm Convention", "Minamata Convention"],
+    "dots": [
+      "Basel Convention",
+      "Rotterdam Convention",
+      "Stockholm Convention",
+      "Minamata Convention"
+    ],
     "options": [
       "Treaties on marine biodiversity",
       "Agreements on desertification",
@@ -1179,7 +1599,12 @@
     "id": "cd_085",
     "subject": "Polity",
     "difficulty": "easy",
-    "dots": ["Article 14", "Article 19", "Article 21", "Article 32"],
+    "dots": [
+      "Article 14",
+      "Article 19",
+      "Article 21",
+      "Article 32"
+    ],
     "options": [
       "Directive Principles of State Policy",
       "Fundamental Rights under Part III of the Constitution",
@@ -1193,7 +1618,12 @@
     "id": "cd_086",
     "subject": "Polity",
     "difficulty": "easy",
-    "dots": ["President", "Lok Sabha", "Rajya Sabha", "Article 79"],
+    "dots": [
+      "President",
+      "Lok Sabha",
+      "Rajya Sabha",
+      "Article 79"
+    ],
     "options": [
       "The composition of the Union Parliament",
       "The Union executive",
@@ -1207,7 +1637,12 @@
     "id": "cd_087",
     "subject": "Polity",
     "difficulty": "easy",
-    "dots": ["Socialist", "Secular", "Integrity", "42nd Amendment"],
+    "dots": [
+      "Socialist",
+      "Secular",
+      "Integrity",
+      "42nd Amendment"
+    ],
     "options": [
       "Words in the original Preamble of 1950",
       "Terms added to the Preamble in 1976",
@@ -1221,7 +1656,12 @@
     "id": "cd_088",
     "subject": "Polity",
     "difficulty": "easy",
-    "dots": ["Habeas Corpus", "Mandamus", "Certiorari", "Prohibition"],
+    "dots": [
+      "Habeas Corpus",
+      "Mandamus",
+      "Certiorari",
+      "Prohibition"
+    ],
     "options": [
       "Kinds of emergency proclamations",
       "Stages of a criminal trial",
@@ -1235,7 +1675,12 @@
     "id": "cd_089",
     "subject": "Polity",
     "difficulty": "medium",
-    "dots": ["Article 124", "Collegium System", "Article 217", "Judicial Appointments"],
+    "dots": [
+      "Article 124",
+      "Collegium System",
+      "Article 217",
+      "Judicial Appointments"
+    ],
     "options": [
       "Provisions related to the Election Commission",
       "Procedure for impeachment of the President",
@@ -1249,7 +1694,12 @@
     "id": "cd_090",
     "subject": "Polity",
     "difficulty": "medium",
-    "dots": ["Article 356", "President's Rule", "S. R. Bommai case", "Floor test"],
+    "dots": [
+      "Article 356",
+      "President's Rule",
+      "S. R. Bommai case",
+      "Floor test"
+    ],
     "options": [
       "Imposition and judicial review of President's Rule in states",
       "The procedure for a National Emergency",
@@ -1263,7 +1713,12 @@
     "id": "cd_091",
     "subject": "Polity",
     "difficulty": "medium",
-    "dots": ["Tenth Schedule", "52nd Amendment", "Speaker's decision", "Kihoto Hollohan case"],
+    "dots": [
+      "Tenth Schedule",
+      "52nd Amendment",
+      "Speaker's decision",
+      "Kihoto Hollohan case"
+    ],
     "options": [
       "Reservation of seats in legislatures",
       "The anti-defection law and its judicial review",
@@ -1277,7 +1732,12 @@
     "id": "cd_092",
     "subject": "Polity",
     "difficulty": "medium",
-    "dots": ["Article 280", "Vertical devolution", "Horizontal devolution", "Grants-in-aid"],
+    "dots": [
+      "Article 280",
+      "Vertical devolution",
+      "Horizontal devolution",
+      "Grants-in-aid"
+    ],
     "options": [
       "The GST Council's functioning",
       "The Planning Commission's role",
@@ -1291,7 +1751,12 @@
     "id": "cd_093",
     "subject": "Polity",
     "difficulty": "hard",
-    "dots": ["Kesavananda Bharati", "Indira Nehru Gandhi case", "Minerva Mills", "Waman Rao"],
+    "dots": [
+      "Kesavananda Bharati",
+      "Indira Nehru Gandhi case",
+      "Minerva Mills",
+      "Waman Rao"
+    ],
     "options": [
       "Cases on the right to property",
       "Cases developing the basic structure doctrine",
@@ -1305,7 +1770,12 @@
     "id": "cd_094",
     "subject": "Polity",
     "difficulty": "hard",
-    "dots": ["First Amendment", "Article 31B", "Ninth Schedule", "I. R. Coelho case"],
+    "dots": [
+      "First Amendment",
+      "Article 31B",
+      "Ninth Schedule",
+      "I. R. Coelho case"
+    ],
     "options": [
       "Protection of laws from judicial review and its limits",
       "Abolition of privy purses",
@@ -1319,7 +1789,12 @@
     "id": "cd_095",
     "subject": "Polity",
     "difficulty": "hard",
-    "dots": ["Article 263", "Inter-State Council", "Zonal Councils", "Sarkaria Commission"],
+    "dots": [
+      "Article 263",
+      "Inter-State Council",
+      "Zonal Councils",
+      "Sarkaria Commission"
+    ],
     "options": [
       "Machinery for resolving inter-state river disputes",
       "The framework of All-India Services",
@@ -1333,7 +1808,12 @@
     "id": "cd_096",
     "subject": "Polity",
     "difficulty": "hard",
-    "dots": ["Article 110", "Speaker's certification", "Rajya Sabha's limited role", "Aadhaar Act"],
+    "dots": [
+      "Article 110",
+      "Speaker's certification",
+      "Rajya Sabha's limited role",
+      "Aadhaar Act"
+    ],
     "options": [
       "The procedure for constitutional amendment bills",
       "The passage and controversies of Money Bills",

@@ -3,768 +3,1920 @@
     "id": "oo_001",
     "subject": "Ancient History",
     "difficulty": "easy",
-    "items": ["Nalanda", "Konark", "Taxila", "Vikramashila"],
+    "items": [
+      "Nalanda",
+      "Konark",
+      "Taxila",
+      "Vikramashila"
+    ],
     "odd_index": 1,
-    "explanation": "Nalanda, Taxila and Vikramashila were ancient centres of learning and residential universities. Konark is a 13th-century Sun Temple in Odisha — a monument, not an educational institution."
+    "explanation": "Nalanda, Taxila and Vikramashila were ancient centres of learning and residential universities. Konark is a 13th-century Sun Temple in Odisha — a monument, not an educational institution.",
+    "items_hi": [
+      "नालंदा",
+      "कोणार्क",
+      "तक्षशिला",
+      "विक्रमशिला"
+    ],
+    "explanation_hi": "नालंदा, तक्षशिला और विक्रमशिला प्राचीन शिक्षा केंद्र और आवासीय विश्वविद्यालय थे। कोणार्क ओडिशा का 13वीं शताब्दी का सूर्य मंदिर है — एक स्मारक, शिक्षण संस्थान नहीं।"
   },
   {
     "id": "oo_002",
     "subject": "Ancient History",
     "difficulty": "easy",
-    "items": ["Fatehpur Sikri", "Harappa", "Mohenjo-daro", "Lothal"],
+    "items": [
+      "Fatehpur Sikri",
+      "Harappa",
+      "Mohenjo-daro",
+      "Lothal"
+    ],
     "odd_index": 0,
-    "explanation": "Harappa, Mohenjo-daro and Lothal are Indus Valley Civilisation sites. Fatehpur Sikri is a Mughal city built by Akbar, over three thousand years later."
+    "explanation": "Harappa, Mohenjo-daro and Lothal are Indus Valley Civilisation sites. Fatehpur Sikri is a Mughal city built by Akbar, over three thousand years later.",
+    "items_hi": [
+      "फतेहपुर सीकरी",
+      "हड़प्पा",
+      "मोहनजोदड़ो",
+      "लोथल"
+    ],
+    "explanation_hi": "हड़प्पा, मोहनजोदड़ो और लोथल सिंधु घाटी सभ्यता के स्थल हैं। फतेहपुर सीकरी अकबर द्वारा निर्मित एक मुगल नगर है, जो तीन हज़ार वर्ष से भी अधिक बाद का है।"
   },
   {
     "id": "oo_003",
     "subject": "Ancient History",
     "difficulty": "easy",
-    "items": ["Rigveda", "Samaveda", "Arthashastra", "Yajurveda"],
+    "items": [
+      "Rigveda",
+      "Samaveda",
+      "Arthashastra",
+      "Yajurveda"
+    ],
     "odd_index": 2,
-    "explanation": "Rigveda, Samaveda and Yajurveda are Vedic religious texts. The Arthashastra is Kautilya's treatise on statecraft and economy, not a Veda."
+    "explanation": "Rigveda, Samaveda and Yajurveda are Vedic religious texts. The Arthashastra is Kautilya's treatise on statecraft and economy, not a Veda.",
+    "items_hi": [
+      "ऋग्वेद",
+      "सामवेद",
+      "अर्थशास्त्र",
+      "यजुर्वेद"
+    ],
+    "explanation_hi": "ऋग्वेद, सामवेद और यजुर्वेद वैदिक धार्मिक ग्रंथ हैं। अर्थशास्त्र कौटिल्य का राजनीति और अर्थव्यवस्था पर ग्रंथ है, कोई वेद नहीं।"
   },
   {
     "id": "oo_004",
     "subject": "Ancient History",
     "difficulty": "easy",
-    "items": ["Ashoka", "Akbar", "Bindusara", "Chandragupta Maurya"],
+    "items": [
+      "Ashoka",
+      "Akbar",
+      "Bindusara",
+      "Chandragupta Maurya"
+    ],
     "odd_index": 1,
-    "explanation": "Ashoka, Bindusara and Chandragupta were rulers of the Mauryan Empire. Akbar was a Mughal emperor who ruled nearly 1,800 years later."
+    "explanation": "Ashoka, Bindusara and Chandragupta were rulers of the Mauryan Empire. Akbar was a Mughal emperor who ruled nearly 1,800 years later.",
+    "items_hi": [
+      "अशोक",
+      "अकबर",
+      "बिंदुसार",
+      "चंद्रगुप्त मौर्य"
+    ],
+    "explanation_hi": "अशोक, बिंदुसार और चंद्रगुप्त मौर्य साम्राज्य के शासक थे। अकबर एक मुगल सम्राट था जिसने लगभग 1,800 वर्ष बाद शासन किया।"
   },
   {
     "id": "oo_005",
     "subject": "Ancient History",
     "difficulty": "medium",
-    "items": ["Sanchi", "Ellora", "Bharhut", "Amaravati"],
+    "items": [
+      "Sanchi",
+      "Ellora",
+      "Bharhut",
+      "Amaravati"
+    ],
     "odd_index": 1,
-    "explanation": "Sanchi, Bharhut and Amaravati are famous ancient stupa sites. Ellora is a rock-cut cave complex of Buddhist, Hindu and Jain shrines, not a stupa site."
+    "explanation": "Sanchi, Bharhut and Amaravati are famous ancient stupa sites. Ellora is a rock-cut cave complex of Buddhist, Hindu and Jain shrines, not a stupa site.",
+    "items_hi": [
+      "सांची",
+      "एलोरा",
+      "भरहुत",
+      "अमरावती"
+    ],
+    "explanation_hi": "सांची, भरहुत और अमरावती प्रसिद्ध प्राचीन स्तूप स्थल हैं। एलोरा बौद्ध, हिंदू और जैन तीर्थस्थलों वाला शैलकृत गुफा परिसर है, स्तूप स्थल नहीं।"
   },
   {
     "id": "oo_006",
     "subject": "Ancient History",
     "difficulty": "medium",
-    "items": ["Fa-Hien", "Hiuen Tsang", "Megasthenes", "I-Tsing"],
+    "items": [
+      "Fa-Hien",
+      "Hiuen Tsang",
+      "Megasthenes",
+      "I-Tsing"
+    ],
     "odd_index": 2,
-    "explanation": "Fa-Hien, Hiuen Tsang and I-Tsing were Chinese Buddhist pilgrims who visited India. Megasthenes was a Greek ambassador at the Mauryan court of Chandragupta."
+    "explanation": "Fa-Hien, Hiuen Tsang and I-Tsing were Chinese Buddhist pilgrims who visited India. Megasthenes was a Greek ambassador at the Mauryan court of Chandragupta.",
+    "items_hi": [
+      "फाह्यान",
+      "ह्वेनसांग",
+      "मेगस्थनीज",
+      "इत्सिंग"
+    ],
+    "explanation_hi": "फाह्यान, ह्वेनसांग और इत्सिंग चीनी बौद्ध यात्री थे जिन्होंने भारत की यात्रा की। मेगस्थनीज चंद्रगुप्त के मौर्य दरबार में एक यूनानी राजदूत था।"
   },
   {
     "id": "oo_007",
     "subject": "Ancient History",
     "difficulty": "medium",
-    "items": ["Hathigumpha", "Allahabad Pillar", "Harshacharita", "Aihole Inscription"],
+    "items": [
+      "Hathigumpha",
+      "Allahabad Pillar",
+      "Harshacharita",
+      "Aihole Inscription"
+    ],
     "odd_index": 2,
-    "explanation": "Hathigumpha (Kharavela), the Allahabad Pillar (Samudragupta) and Aihole (Pulakeshin II) are stone inscriptions. Harshacharita is a literary biography written by Banabhatta."
+    "explanation": "Hathigumpha (Kharavela), the Allahabad Pillar (Samudragupta) and Aihole (Pulakeshin II) are stone inscriptions. Harshacharita is a literary biography written by Banabhatta.",
+    "items_hi": [
+      "हाथीगुम्फा",
+      "इलाहाबाद स्तंभ",
+      "हर्षचरित",
+      "ऐहोल अभिलेख"
+    ],
+    "explanation_hi": "हाथीगुम्फा (खारवेल), इलाहाबाद स्तंभ (समुद्रगुप्त) और ऐहोल (पुलकेशी द्वितीय) पाषाण अभिलेख हैं। हर्षचरित बाणभट्ट द्वारा लिखी गई एक साहित्यिक जीवनी है।"
   },
   {
     "id": "oo_008",
     "subject": "Ancient History",
     "difficulty": "medium",
-    "items": ["Tamralipti", "Bharuch", "Arikamedu", "Pataliputra"],
+    "items": [
+      "Tamralipti",
+      "Bharuch",
+      "Arikamedu",
+      "Pataliputra"
+    ],
     "odd_index": 3,
-    "explanation": "Tamralipti, Bharuch and Arikamedu were ancient port towns of maritime trade. Pataliputra was an inland imperial capital on the Ganga, not a seaport."
+    "explanation": "Tamralipti, Bharuch and Arikamedu were ancient port towns of maritime trade. Pataliputra was an inland imperial capital on the Ganga, not a seaport.",
+    "items_hi": [
+      "ताम्रलिप्ति",
+      "भरूच",
+      "अरिकामेडु",
+      "पाटलिपुत्र"
+    ],
+    "explanation_hi": "ताम्रलिप्ति, भरूच और अरिकामेडु समुद्री व्यापार के प्राचीन बंदरगाह नगर थे। पाटलिपुत्र गंगा तट पर स्थित एक अंतर्देशीय शाही राजधानी थी, समुद्री बंदरगाह नहीं।"
   },
   {
     "id": "oo_009",
     "subject": "Ancient History",
     "difficulty": "hard",
-    "items": ["Girnar", "Rummindei", "Dhauli", "Kalsi"],
+    "items": [
+      "Girnar",
+      "Rummindei",
+      "Dhauli",
+      "Kalsi"
+    ],
     "odd_index": 1,
-    "explanation": "Girnar, Dhauli and Kalsi are sites of Ashoka's Major Rock Edicts. Rummindei (Lumbini) has a pillar inscription commemorating Buddha's birthplace, not a rock edict."
+    "explanation": "Girnar, Dhauli and Kalsi are sites of Ashoka's Major Rock Edicts. Rummindei (Lumbini) has a pillar inscription commemorating Buddha's birthplace, not a rock edict.",
+    "items_hi": [
+      "गिरनार",
+      "रुम्मिनदेई",
+      "धौली",
+      "कालसी"
+    ],
+    "explanation_hi": "गिरनार, धौली और कालसी अशोक के प्रमुख शैल अभिलेखों के स्थल हैं। रुम्मिनदेई (लुंबिनी) में बुद्ध के जन्मस्थान की स्मृति में एक स्तंभ अभिलेख है, कोई शैल अभिलेख नहीं।"
   },
   {
     "id": "oo_010",
     "subject": "Ancient History",
     "difficulty": "hard",
-    "items": ["Lothal", "Kalibangan", "Chanhudaro", "Dholavira"],
+    "items": [
+      "Lothal",
+      "Kalibangan",
+      "Chanhudaro",
+      "Dholavira"
+    ],
     "odd_index": 2,
-    "explanation": "Lothal, Kalibangan and Dholavira are Harappan sites located in present-day India. Chanhudaro lies in Sindh, present-day Pakistan."
+    "explanation": "Lothal, Kalibangan and Dholavira are Harappan sites located in present-day India. Chanhudaro lies in Sindh, present-day Pakistan.",
+    "items_hi": [
+      "लोथल",
+      "कालीबंगन",
+      "चन्हूदड़ो",
+      "धोलावीरा"
+    ],
+    "explanation_hi": "लोथल, कालीबंगन और धोलावीरा वर्तमान भारत में स्थित हड़प्पाई स्थल हैं। चन्हूदड़ो वर्तमान पाकिस्तान के सिंध प्रांत में स्थित है।"
   },
   {
     "id": "oo_011",
     "subject": "Ancient History",
     "difficulty": "hard",
-    "items": ["Meghaduta", "Raghuvamsha", "Mrichchhakatika", "Shakuntalam"],
+    "items": [
+      "Meghaduta",
+      "Raghuvamsha",
+      "Mrichchhakatika",
+      "Shakuntalam"
+    ],
     "odd_index": 2,
-    "explanation": "Meghaduta, Raghuvamsha and Abhijnanashakuntalam were composed by Kalidasa. Mrichchhakatika (The Little Clay Cart) was written by Shudraka."
+    "explanation": "Meghaduta, Raghuvamsha and Abhijnanashakuntalam were composed by Kalidasa. Mrichchhakatika (The Little Clay Cart) was written by Shudraka.",
+    "items_hi": [
+      "मेघदूत",
+      "रघुवंश",
+      "मृच्छकटिकम्",
+      "शाकुंतलम्"
+    ],
+    "explanation_hi": "मेघदूत, रघुवंश और अभिज्ञानशाकुंतलम् की रचना कालिदास ने की। मृच्छकटिकम् (छोटी मिट्टी की गाड़ी) शूद्रक द्वारा लिखी गई थी।"
   },
   {
     "id": "oo_012",
     "subject": "Ancient History",
     "difficulty": "hard",
-    "items": ["Sanchi", "Ajanta", "Bagh", "Sittanavasal"],
+    "items": [
+      "Sanchi",
+      "Ajanta",
+      "Bagh",
+      "Sittanavasal"
+    ],
     "odd_index": 0,
-    "explanation": "Ajanta, Bagh and Sittanavasal are celebrated for ancient mural paintings. Sanchi is famous for its stupa and gateway sculptures, not murals."
+    "explanation": "Ajanta, Bagh and Sittanavasal are celebrated for ancient mural paintings. Sanchi is famous for its stupa and gateway sculptures, not murals.",
+    "items_hi": [
+      "सांची",
+      "अजंता",
+      "बाघ",
+      "सित्तनवासल"
+    ],
+    "explanation_hi": "अजंता, बाघ और सित्तनवासल प्राचीन भित्तिचित्रों के लिए प्रसिद्ध हैं। सांची अपने स्तूप और तोरण-शिल्प के लिए प्रसिद्ध है, भित्तिचित्रों के लिए नहीं।"
   },
   {
     "id": "oo_013",
     "subject": "Medieval History",
     "difficulty": "easy",
-    "items": ["Chandragupta Maurya", "Ibn Battuta", "Al-Biruni", "Marco Polo"],
+    "items": [
+      "Chandragupta Maurya",
+      "Ibn Battuta",
+      "Al-Biruni",
+      "Marco Polo"
+    ],
     "odd_index": 0,
-    "explanation": "Ibn Battuta, Al-Biruni and Marco Polo were foreign travellers who left written accounts of India. Chandragupta Maurya was an Indian ruler, not a visiting chronicler."
+    "explanation": "Ibn Battuta, Al-Biruni and Marco Polo were foreign travellers who left written accounts of India. Chandragupta Maurya was an Indian ruler, not a visiting chronicler.",
+    "items_hi": [
+      "चंद्रगुप्त मौर्य",
+      "इब्न बतूता",
+      "अलबरूनी",
+      "मार्को पोलो"
+    ],
+    "explanation_hi": "इब्न बतूता, अलबरूनी और मार्को पोलो विदेशी यात्री थे जिन्होंने भारत का लिखित विवरण छोड़ा। चंद्रगुप्त मौर्य एक भारतीय शासक थे, आगंतुक इतिहासकार नहीं।"
   },
   {
     "id": "oo_014",
     "subject": "Medieval History",
     "difficulty": "easy",
-    "items": ["Babur", "Humayun", "Alauddin Khalji", "Akbar"],
+    "items": [
+      "Babur",
+      "Humayun",
+      "Alauddin Khalji",
+      "Akbar"
+    ],
     "odd_index": 2,
-    "explanation": "Babur, Humayun and Akbar were Mughal emperors. Alauddin Khalji was a Sultan of the earlier Delhi Sultanate's Khalji dynasty."
+    "explanation": "Babur, Humayun and Akbar were Mughal emperors. Alauddin Khalji was a Sultan of the earlier Delhi Sultanate's Khalji dynasty.",
+    "items_hi": [
+      "बाबर",
+      "हुमायूँ",
+      "अलाउद्दीन खिलजी",
+      "अकबर"
+    ],
+    "explanation_hi": "बाबर, हुमायूँ और अकबर मुगल सम्राट थे। अलाउद्दीन खिलजी पूर्ववर्ती दिल्ली सल्तनत के खिलजी वंश का सुल्तान था।"
   },
   {
     "id": "oo_015",
     "subject": "Medieval History",
     "difficulty": "easy",
-    "items": ["Kabir", "Todar Mal", "Mirabai", "Ravidas"],
+    "items": [
+      "Kabir",
+      "Todar Mal",
+      "Mirabai",
+      "Ravidas"
+    ],
     "odd_index": 1,
-    "explanation": "Kabir, Mirabai and Ravidas were saints of the Bhakti movement. Todar Mal was Akbar's revenue minister, famous for land-revenue reforms, not a Bhakti saint."
+    "explanation": "Kabir, Mirabai and Ravidas were saints of the Bhakti movement. Todar Mal was Akbar's revenue minister, famous for land-revenue reforms, not a Bhakti saint.",
+    "items_hi": [
+      "कबीर",
+      "टोडरमल",
+      "मीराबाई",
+      "रविदास"
+    ],
+    "explanation_hi": "कबीर, मीराबाई और रविदास भक्ति आंदोलन के संत थे। टोडरमल अकबर का राजस्व मंत्री था, जो भूमि-राजस्व सुधारों के लिए प्रसिद्ध है, कोई भक्ति संत नहीं।"
   },
   {
     "id": "oo_016",
     "subject": "Medieval History",
     "difficulty": "easy",
-    "items": ["Harihara", "Bukka", "Krishnadevaraya", "Iltutmish"],
+    "items": [
+      "Harihara",
+      "Bukka",
+      "Krishnadevaraya",
+      "Iltutmish"
+    ],
     "odd_index": 3,
-    "explanation": "Harihara, Bukka and Krishnadevaraya were rulers of the Vijayanagara Empire. Iltutmish was a Sultan of the Delhi Sultanate in the north."
+    "explanation": "Harihara, Bukka and Krishnadevaraya were rulers of the Vijayanagara Empire. Iltutmish was a Sultan of the Delhi Sultanate in the north.",
+    "items_hi": [
+      "हरिहर",
+      "बुक्का",
+      "कृष्णदेवराय",
+      "इल्तुतमिश"
+    ],
+    "explanation_hi": "हरिहर, बुक्का और कृष्णदेवराय विजयनगर साम्राज्य के शासक थे। इल्तुतमिश उत्तर में दिल्ली सल्तनत का सुल्तान था।"
   },
   {
     "id": "oo_017",
     "subject": "Medieval History",
     "difficulty": "medium",
-    "items": ["Khalji", "Tughlaq", "Ahom", "Lodi"],
+    "items": [
+      "Khalji",
+      "Tughlaq",
+      "Ahom",
+      "Lodi"
+    ],
     "odd_index": 2,
-    "explanation": "The Khalji, Tughlaq and Lodi dynasties ruled the Delhi Sultanate. The Ahoms ruled Assam in the north-east and were never part of the Sultanate."
+    "explanation": "The Khalji, Tughlaq and Lodi dynasties ruled the Delhi Sultanate. The Ahoms ruled Assam in the north-east and were never part of the Sultanate.",
+    "items_hi": [
+      "खिलजी",
+      "तुगलक",
+      "अहोम",
+      "लोदी"
+    ],
+    "explanation_hi": "खिलजी, तुगलक और लोदी वंशों ने दिल्ली सल्तनत पर शासन किया। अहोम वंश ने पूर्वोत्तर के असम पर शासन किया और यह कभी सल्तनत का हिस्सा नहीं रहा।"
   },
   {
     "id": "oo_018",
     "subject": "Medieval History",
     "difficulty": "medium",
-    "items": ["Birbal", "Amir Khusrau", "Tansen", "Abul Fazl"],
+    "items": [
+      "Birbal",
+      "Amir Khusrau",
+      "Tansen",
+      "Abul Fazl"
+    ],
     "odd_index": 1,
-    "explanation": "Birbal, Tansen and Abul Fazl were celebrated members of Akbar's court (navaratnas). Amir Khusrau was a poet of the earlier Delhi Sultanate, associated with sultans from Balban to the Tughlaqs."
+    "explanation": "Birbal, Tansen and Abul Fazl were celebrated members of Akbar's court (navaratnas). Amir Khusrau was a poet of the earlier Delhi Sultanate, associated with sultans from Balban to the Tughlaqs.",
+    "items_hi": [
+      "बीरबल",
+      "अमीर खुसरो",
+      "तानसेन",
+      "अबुल फ़ज़ल"
+    ],
+    "explanation_hi": "बीरबल, तानसेन और अबुल फ़ज़ल अकबर के दरबार के प्रसिद्ध सदस्य (नवरत्न) थे। अमीर खुसरो पूर्ववर्ती दिल्ली सल्तनत के कवि थे, जो बलबन से लेकर तुगलकों तक के सुल्तानों से जुड़े रहे।"
   },
   {
     "id": "oo_019",
     "subject": "Medieval History",
     "difficulty": "medium",
-    "items": ["Qutub Minar", "Buland Darwaza", "Alai Darwaza", "Tughlaqabad Fort"],
+    "items": [
+      "Qutub Minar",
+      "Buland Darwaza",
+      "Alai Darwaza",
+      "Tughlaqabad Fort"
+    ],
     "odd_index": 1,
-    "explanation": "Qutub Minar, Alai Darwaza and Tughlaqabad Fort are Delhi Sultanate constructions. Buland Darwaza at Fatehpur Sikri was built by the Mughal emperor Akbar."
+    "explanation": "Qutub Minar, Alai Darwaza and Tughlaqabad Fort are Delhi Sultanate constructions. Buland Darwaza at Fatehpur Sikri was built by the Mughal emperor Akbar.",
+    "items_hi": [
+      "कुतुब मीनार",
+      "बुलंद दरवाज़ा",
+      "अलाई दरवाज़ा",
+      "तुगलकाबाद किला"
+    ],
+    "explanation_hi": "कुतुब मीनार, अलाई दरवाज़ा और तुगलकाबाद किला दिल्ली सल्तनत के निर्माण हैं। फतेहपुर सीकरी का बुलंद दरवाज़ा मुगल सम्राट अकबर ने बनवाया था।"
   },
   {
     "id": "oo_020",
     "subject": "Medieval History",
     "difficulty": "medium",
-    "items": ["Abdur Razzaq", "Nicolo Conti", "Domingo Paes", "Francois Bernier"],
+    "items": [
+      "Abdur Razzaq",
+      "Nicolo Conti",
+      "Domingo Paes",
+      "Francois Bernier"
+    ],
     "odd_index": 3,
-    "explanation": "Abdur Razzaq, Nicolo Conti and Domingo Paes visited and described the Vijayanagara Empire. Francois Bernier travelled in Mughal India during Aurangzeb's time."
+    "explanation": "Abdur Razzaq, Nicolo Conti and Domingo Paes visited and described the Vijayanagara Empire. Francois Bernier travelled in Mughal India during Aurangzeb's time.",
+    "items_hi": [
+      "अब्दुर रज्जाक",
+      "निकोलो कोंटी",
+      "डोमिंगो पेस",
+      "फ्रांस्वा बर्नियर"
+    ],
+    "explanation_hi": "अब्दुर रज्जाक, निकोलो कोंटी और डोमिंगो पेस ने विजयनगर साम्राज्य का दौरा किया और उसका वर्णन किया। फ्रांस्वा बर्नियर ने औरंगज़ेब के समय मुगल भारत की यात्रा की।"
   },
   {
     "id": "oo_021",
     "subject": "Medieval History",
     "difficulty": "hard",
-    "items": ["Panipat 1526", "Khanwa 1527", "Chanderi 1528", "Panipat 1556"],
+    "items": [
+      "Panipat 1526",
+      "Khanwa 1527",
+      "Chanderi 1528",
+      "Panipat 1556"
+    ],
     "odd_index": 3,
-    "explanation": "The battles of Panipat (1526), Khanwa and Chanderi were all fought and won by Babur. The Second Battle of Panipat (1556) was fought by Akbar's forces under Bairam Khan against Hemu."
+    "explanation": "The battles of Panipat (1526), Khanwa and Chanderi were all fought and won by Babur. The Second Battle of Panipat (1556) was fought by Akbar's forces under Bairam Khan against Hemu.",
+    "items_hi": [
+      "पानीपत 1526",
+      "खानवा 1527",
+      "चंदेरी 1528",
+      "पानीपत 1556"
+    ],
+    "explanation_hi": "पानीपत (1526), खानवा और चंदेरी के युद्ध सभी बाबर द्वारा लड़े और जीते गए थे। द्वितीय पानीपत युद्ध (1556) अकबर की सेनाओं ने बैरम खान के नेतृत्व में हेमू के विरुद्ध लड़ा था।"
   },
   {
     "id": "oo_022",
     "subject": "Medieval History",
     "difficulty": "hard",
-    "items": ["Iqta", "Ur", "Sabha", "Nagaram"],
+    "items": [
+      "Iqta",
+      "Ur",
+      "Sabha",
+      "Nagaram"
+    ],
     "odd_index": 0,
-    "explanation": "Ur, Sabha and Nagaram were local assemblies in Chola administration. Iqta was a revenue land assignment system of the Delhi Sultanate."
+    "explanation": "Ur, Sabha and Nagaram were local assemblies in Chola administration. Iqta was a revenue land assignment system of the Delhi Sultanate.",
+    "items_hi": [
+      "इक्ता",
+      "उर",
+      "सभा",
+      "नगरम"
+    ],
+    "explanation_hi": "उर, सभा और नगरम चोल प्रशासन की स्थानीय सभाएँ थीं। इक्ता दिल्ली सल्तनत की भू-राजस्व नियुक्ति प्रणाली थी।"
   },
   {
     "id": "oo_023",
     "subject": "Medieval History",
     "difficulty": "hard",
-    "items": ["Akbarnama", "Tuzuk-i-Jahangiri", "Ain-i-Akbari", "Padshahnama"],
+    "items": [
+      "Akbarnama",
+      "Tuzuk-i-Jahangiri",
+      "Ain-i-Akbari",
+      "Padshahnama"
+    ],
     "odd_index": 1,
-    "explanation": "Akbarnama, Ain-i-Akbari (Abul Fazl) and Padshahnama (Abdul Hamid Lahori) were written by court historians. Tuzuk-i-Jahangiri is an autobiography written by Emperor Jahangir himself."
+    "explanation": "Akbarnama, Ain-i-Akbari (Abul Fazl) and Padshahnama (Abdul Hamid Lahori) were written by court historians. Tuzuk-i-Jahangiri is an autobiography written by Emperor Jahangir himself.",
+    "items_hi": [
+      "अकबरनामा",
+      "तुज़ुक-ए-जहाँगीरी",
+      "आइन-ए-अकबरी",
+      "पादशाहनामा"
+    ],
+    "explanation_hi": "अकबरनामा, आइन-ए-अकबरी (अबुल फ़ज़ल) और पादशाहनामा (अब्दुल हमीद लाहौरी) दरबारी इतिहासकारों द्वारा लिखे गए। तुज़ुक-ए-जहाँगीरी सम्राट जहाँगीर द्वारा स्वयं लिखी गई आत्मकथा है।"
   },
   {
     "id": "oo_024",
     "subject": "Medieval History",
     "difficulty": "hard",
-    "items": ["Sangama", "Saluva", "Hoysala", "Tuluva"],
+    "items": [
+      "Sangama",
+      "Saluva",
+      "Hoysala",
+      "Tuluva"
+    ],
     "odd_index": 2,
-    "explanation": "Sangama, Saluva and Tuluva were ruling dynasties of the Vijayanagara Empire. The Hoysalas were an earlier, separate kingdom of Karnataka with capital at Dwarasamudra."
+    "explanation": "Sangama, Saluva and Tuluva were ruling dynasties of the Vijayanagara Empire. The Hoysalas were an earlier, separate kingdom of Karnataka with capital at Dwarasamudra.",
+    "items_hi": [
+      "संगम",
+      "सालुव",
+      "होयसल",
+      "तुलुव"
+    ],
+    "explanation_hi": "संगम, सालुव और तुलुव विजयनगर साम्राज्य के शासक वंश थे। होयसल एक पूर्ववर्ती, अलग कर्नाटक राज्य था जिसकी राजधानी द्वारसमुद्र थी।"
   },
   {
     "id": "oo_025",
     "subject": "Modern History",
     "difficulty": "easy",
-    "items": ["Lala Lajpat Rai", "Gopal Krishna Gokhale", "Bal Gangadhar Tilak", "Bipin Chandra Pal"],
+    "items": [
+      "Lala Lajpat Rai",
+      "Gopal Krishna Gokhale",
+      "Bal Gangadhar Tilak",
+      "Bipin Chandra Pal"
+    ],
     "odd_index": 1,
-    "explanation": "Lajpat Rai, Tilak and Bipin Chandra Pal formed the 'Lal-Bal-Pal' extremist trio in the Congress. Gokhale led the moderate wing and was Gandhi's political mentor."
+    "explanation": "Lajpat Rai, Tilak and Bipin Chandra Pal formed the 'Lal-Bal-Pal' extremist trio in the Congress. Gokhale led the moderate wing and was Gandhi's political mentor.",
+    "items_hi": [
+      "लाला लाजपत राय",
+      "गोपाल कृष्ण गोखले",
+      "बाल गंगाधर तिलक",
+      "बिपिन चंद्र पाल"
+    ],
+    "explanation_hi": "लाजपत राय, तिलक और बिपिन चंद्र पाल ने कांग्रेस में उग्रवादी 'लाल-बाल-पाल' त्रिमूर्ति बनाई। गोखले नरमपंथी धड़े के नेता और गांधी के राजनीतिक गुरु थे।"
   },
   {
     "id": "oo_026",
     "subject": "Modern History",
     "difficulty": "easy",
-    "items": ["Non-Cooperation", "Revolt of 1857", "Civil Disobedience", "Quit India"],
+    "items": [
+      "Non-Cooperation",
+      "Revolt of 1857",
+      "Civil Disobedience",
+      "Quit India"
+    ],
     "odd_index": 1,
-    "explanation": "Non-Cooperation, Civil Disobedience and Quit India were mass movements led by Gandhi. The Revolt of 1857 was an armed uprising decades before Gandhi's era."
+    "explanation": "Non-Cooperation, Civil Disobedience and Quit India were mass movements led by Gandhi. The Revolt of 1857 was an armed uprising decades before Gandhi's era.",
+    "items_hi": [
+      "असहयोग आंदोलन",
+      "1857 का विद्रोह",
+      "सविनय अवज्ञा आंदोलन",
+      "भारत छोड़ो आंदोलन"
+    ],
+    "explanation_hi": "असहयोग, सविनय अवज्ञा और भारत छोड़ो आंदोलन गांधी के नेतृत्व में जन आंदोलन थे। 1857 का विद्रोह गांधी युग से दशकों पहले का एक सशस्त्र विद्रोह था।"
   },
   {
     "id": "oo_027",
     "subject": "Modern History",
     "difficulty": "easy",
-    "items": ["Dalhousie", "Curzon", "Subhas Bose", "Ripon"],
+    "items": [
+      "Dalhousie",
+      "Curzon",
+      "Subhas Bose",
+      "Ripon"
+    ],
     "odd_index": 2,
-    "explanation": "Dalhousie, Curzon and Ripon were British Governors-General/Viceroys of India. Subhas Chandra Bose was an Indian nationalist leader who founded the Azad Hind movement."
+    "explanation": "Dalhousie, Curzon and Ripon were British Governors-General/Viceroys of India. Subhas Chandra Bose was an Indian nationalist leader who founded the Azad Hind movement.",
+    "items_hi": [
+      "डलहौज़ी",
+      "कर्ज़न",
+      "सुभाष बोस",
+      "रिपन"
+    ],
+    "explanation_hi": "डलहौज़ी, कर्ज़न और रिपन भारत के ब्रिटिश गवर्नर-जनरल/वायसराय थे। सुभाष चंद्र बोस एक भारतीय राष्ट्रवादी नेता थे जिन्होंने आज़ाद हिंद आंदोलन की स्थापना की।"
   },
   {
     "id": "oo_028",
     "subject": "Modern History",
     "difficulty": "easy",
-    "items": ["Bhagat Singh", "Rajguru", "Chandrashekhar Azad", "Dadabhai Naoroji"],
+    "items": [
+      "Bhagat Singh",
+      "Rajguru",
+      "Chandrashekhar Azad",
+      "Dadabhai Naoroji"
+    ],
     "odd_index": 3,
-    "explanation": "Bhagat Singh, Rajguru and Chandrashekhar Azad were armed revolutionaries. Dadabhai Naoroji was an early moderate leader known for the 'Drain of Wealth' theory."
+    "explanation": "Bhagat Singh, Rajguru and Chandrashekhar Azad were armed revolutionaries. Dadabhai Naoroji was an early moderate leader known for the 'Drain of Wealth' theory.",
+    "items_hi": [
+      "भगत सिंह",
+      "राजगुरु",
+      "चंद्रशेखर आज़ाद",
+      "दादाभाई नौरोजी"
+    ],
+    "explanation_hi": "भगत सिंह, राजगुरु और चंद्रशेखर आज़ाद सशस्त्र क्रांतिकारी थे। दादाभाई नौरोजी 'धन के अपवाह' सिद्धांत के लिए प्रसिद्ध एक प्रारंभिक नरमपंथी नेता थे।"
   },
   {
     "id": "oo_029",
     "subject": "Modern History",
     "difficulty": "medium",
-    "items": ["Young India", "Kesari", "Harijan", "Navajivan"],
+    "items": [
+      "Young India",
+      "Kesari",
+      "Harijan",
+      "Navajivan"
+    ],
     "odd_index": 1,
-    "explanation": "Young India, Harijan and Navajivan were journals edited by Mahatma Gandhi. Kesari was the Marathi newspaper founded by Bal Gangadhar Tilak."
+    "explanation": "Young India, Harijan and Navajivan were journals edited by Mahatma Gandhi. Kesari was the Marathi newspaper founded by Bal Gangadhar Tilak.",
+    "items_hi": [
+      "यंग इंडिया",
+      "केसरी",
+      "हरिजन",
+      "नवजीवन"
+    ],
+    "explanation_hi": "यंग इंडिया, हरिजन और नवजीवन महात्मा गांधी द्वारा संपादित पत्रिकाएँ थीं। केसरी बाल गंगाधर तिलक द्वारा स्थापित मराठी समाचार पत्र था।"
   },
   {
     "id": "oo_030",
     "subject": "Modern History",
     "difficulty": "medium",
-    "items": ["Morley-Minto Reforms", "Rowlatt Act", "Montford Reforms", "GoI Act 1935"],
+    "items": [
+      "Morley-Minto Reforms",
+      "Rowlatt Act",
+      "Montford Reforms",
+      "GoI Act 1935"
+    ],
     "odd_index": 1,
-    "explanation": "The Morley-Minto Reforms, Montagu-Chelmsford Reforms and Government of India Act 1935 were constitutional reforms expanding Indian participation. The Rowlatt Act was a repressive law allowing detention without trial."
+    "explanation": "The Morley-Minto Reforms, Montagu-Chelmsford Reforms and Government of India Act 1935 were constitutional reforms expanding Indian participation. The Rowlatt Act was a repressive law allowing detention without trial.",
+    "items_hi": [
+      "मॉर्ले-मिंटो सुधार",
+      "रौलेट एक्ट",
+      "मॉन्टफोर्ड सुधार",
+      "भारत सरकार अधिनियम 1935"
+    ],
+    "explanation_hi": "मॉर्ले-मिंटो सुधार, मॉन्टेग्यू-चेम्सफोर्ड सुधार और भारत सरकार अधिनियम 1935 संवैधानिक सुधार थे जिन्होंने भारतीय भागीदारी बढ़ाई। रौलेट एक्ट बिना मुकदमे के नज़रबंदी की अनुमति देने वाला एक दमनकारी कानून था।"
   },
   {
     "id": "oo_031",
     "subject": "Modern History",
     "difficulty": "medium",
-    "items": ["Champaran", "Kheda", "Ahmedabad Mill Strike", "Bardoli"],
+    "items": [
+      "Champaran",
+      "Kheda",
+      "Ahmedabad Mill Strike",
+      "Bardoli"
+    ],
     "odd_index": 2,
-    "explanation": "Champaran, Kheda and Bardoli were peasant/agrarian satyagrahas. The Ahmedabad Mill Strike of 1918 concerned industrial textile workers, not peasants."
+    "explanation": "Champaran, Kheda and Bardoli were peasant/agrarian satyagrahas. The Ahmedabad Mill Strike of 1918 concerned industrial textile workers, not peasants.",
+    "items_hi": [
+      "चंपारण",
+      "खेड़ा",
+      "अहमदाबाद मिल हड़ताल",
+      "बारदोली"
+    ],
+    "explanation_hi": "चंपारण, खेड़ा और बारदोली किसान/कृषि सत्याग्रह थे। 1918 की अहमदाबाद मिल हड़ताल औद्योगिक वस्त्र मज़दूरों से संबंधित थी, किसानों से नहीं।"
   },
   {
     "id": "oo_032",
     "subject": "Modern History",
     "difficulty": "medium",
-    "items": ["Brahmo Samaj", "Arya Samaj", "Prarthana Samaj", "Indian National Congress"],
+    "items": [
+      "Brahmo Samaj",
+      "Arya Samaj",
+      "Prarthana Samaj",
+      "Indian National Congress"
+    ],
     "odd_index": 3,
-    "explanation": "Brahmo Samaj, Arya Samaj and Prarthana Samaj were socio-religious reform movements. The Indian National Congress was founded in 1885 as a political organisation."
+    "explanation": "Brahmo Samaj, Arya Samaj and Prarthana Samaj were socio-religious reform movements. The Indian National Congress was founded in 1885 as a political organisation.",
+    "items_hi": [
+      "ब्रह्म समाज",
+      "आर्य समाज",
+      "प्रार्थना समाज",
+      "भारतीय राष्ट्रीय कांग्रेस"
+    ],
+    "explanation_hi": "ब्रह्म समाज, आर्य समाज और प्रार्थना समाज सामाजिक-धार्मिक सुधार आंदोलन थे। भारतीय राष्ट्रीय कांग्रेस की स्थापना 1885 में एक राजनीतिक संगठन के रूप में हुई थी।"
   },
   {
     "id": "oo_033",
     "subject": "Modern History",
     "difficulty": "hard",
-    "items": ["Amrita Bazar Patrika", "The Hindu", "The Statesman", "Kesari"],
+    "items": [
+      "Amrita Bazar Patrika",
+      "The Hindu",
+      "The Statesman",
+      "Kesari"
+    ],
     "odd_index": 2,
-    "explanation": "Amrita Bazar Patrika, The Hindu and Kesari were founded and run by Indian nationalists. The Statesman was founded in Calcutta by the Englishman Robert Knight."
+    "explanation": "Amrita Bazar Patrika, The Hindu and Kesari were founded and run by Indian nationalists. The Statesman was founded in Calcutta by the Englishman Robert Knight.",
+    "items_hi": [
+      "अमृत बाज़ार पत्रिका",
+      "द हिंदू",
+      "द स्टेट्समैन",
+      "केसरी"
+    ],
+    "explanation_hi": "अमृत बाज़ार पत्रिका, द हिंदू और केसरी की स्थापना और संचालन भारतीय राष्ट्रवादियों ने किया। द स्टेट्समैन की स्थापना कलकत्ता में अंग्रेज़ रॉबर्ट नाइट ने की थी।"
   },
   {
     "id": "oo_034",
     "subject": "Modern History",
     "difficulty": "hard",
-    "items": ["Birsa Munda", "Nana Saheb", "Tatya Tope", "Kunwar Singh"],
+    "items": [
+      "Birsa Munda",
+      "Nana Saheb",
+      "Tatya Tope",
+      "Kunwar Singh"
+    ],
     "odd_index": 0,
-    "explanation": "Nana Saheb, Tatya Tope and Kunwar Singh were leaders of the Revolt of 1857. Birsa Munda led the tribal Munda Ulgulan (uprising) of 1899-1900, over four decades later."
+    "explanation": "Nana Saheb, Tatya Tope and Kunwar Singh were leaders of the Revolt of 1857. Birsa Munda led the tribal Munda Ulgulan (uprising) of 1899-1900, over four decades later.",
+    "items_hi": [
+      "बिरसा मुंडा",
+      "नाना साहेब",
+      "तात्या टोपे",
+      "कुँवर सिंह"
+    ],
+    "explanation_hi": "नाना साहेब, तात्या टोपे और कुँवर सिंह 1857 के विद्रोह के नेता थे। बिरसा मुंडा ने 1899-1900 के आदिवासी मुंडा उलगुलान (विद्रोह) का नेतृत्व किया, जो चार दशक से भी अधिक बाद हुआ था।"
   },
   {
     "id": "oo_035",
     "subject": "Modern History",
     "difficulty": "hard",
-    "items": ["Awadh", "Satara", "Jhansi", "Nagpur"],
+    "items": [
+      "Awadh",
+      "Satara",
+      "Jhansi",
+      "Nagpur"
+    ],
     "odd_index": 0,
-    "explanation": "Satara, Jhansi and Nagpur were annexed by Dalhousie under the Doctrine of Lapse. Awadh was annexed in 1856 on the pretext of misgovernance, not lapse."
+    "explanation": "Satara, Jhansi and Nagpur were annexed by Dalhousie under the Doctrine of Lapse. Awadh was annexed in 1856 on the pretext of misgovernance, not lapse.",
+    "items_hi": [
+      "अवध",
+      "सतारा",
+      "झाँसी",
+      "नागपुर"
+    ],
+    "explanation_hi": "सतारा, झाँसी और नागपुर को डलहौज़ी ने व्यपगत सिद्धांत के तहत अधिग्रहीत किया। अवध को 1856 में कुशासन के बहाने अधिग्रहीत किया गया, व्यपगत के आधार पर नहीं।"
   },
   {
     "id": "oo_036",
     "subject": "Modern History",
     "difficulty": "hard",
-    "items": ["Annie Besant", "Vijaya Lakshmi Pandit", "Sarojini Naidu", "Nellie Sengupta"],
+    "items": [
+      "Annie Besant",
+      "Vijaya Lakshmi Pandit",
+      "Sarojini Naidu",
+      "Nellie Sengupta"
+    ],
     "odd_index": 1,
-    "explanation": "Annie Besant (1917), Sarojini Naidu (1925) and Nellie Sengupta (1933) each presided over Indian National Congress sessions before independence. Vijaya Lakshmi Pandit never presided over the INC — she became the first woman President of the UN General Assembly."
+    "explanation": "Annie Besant (1917), Sarojini Naidu (1925) and Nellie Sengupta (1933) each presided over Indian National Congress sessions before independence. Vijaya Lakshmi Pandit never presided over the INC — she became the first woman President of the UN General Assembly.",
+    "items_hi": [
+      "एनी बेसेंट",
+      "विजयलक्ष्मी पंडित",
+      "सरोजिनी नायडू",
+      "नेली सेनगुप्ता"
+    ],
+    "explanation_hi": "एनी बेसेंट (1917), सरोजिनी नायडू (1925) और नेली सेनगुप्ता (1933) ने स्वतंत्रता-पूर्व भारतीय राष्ट्रीय कांग्रेस के अधिवेशनों की अध्यक्षता की। विजयलक्ष्मी पंडित ने कभी कांग्रेस अध्यक्षता नहीं की — वे संयुक्त राष्ट्र महासभा की पहली महिला अध्यक्ष बनीं।"
   },
   {
     "id": "oo_037",
     "subject": "Art and Culture",
     "difficulty": "easy",
-    "items": ["Bharatanatyam", "Ghoomar", "Kathakali", "Manipuri"],
+    "items": [
+      "Bharatanatyam",
+      "Ghoomar",
+      "Kathakali",
+      "Manipuri"
+    ],
     "odd_index": 1,
-    "explanation": "Bharatanatyam, Kathakali and Manipuri are classical dance forms recognised by the Sangeet Natak Akademi. Ghoomar is a folk dance of Rajasthan, not a classical form."
+    "explanation": "Bharatanatyam, Kathakali and Manipuri are classical dance forms recognised by the Sangeet Natak Akademi. Ghoomar is a folk dance of Rajasthan, not a classical form.",
+    "items_hi": [
+      "भरतनाट्यम",
+      "घूमर",
+      "कथकली",
+      "मणिपुरी"
+    ],
+    "explanation_hi": "भरतनाट्यम, कथकली और मणिपुरी संगीत नाटक अकादमी द्वारा मान्यता प्राप्त शास्त्रीय नृत्य रूप हैं। घूमर राजस्थान का एक लोक नृत्य है, शास्त्रीय रूप नहीं।"
   },
   {
     "id": "oo_038",
     "subject": "Art and Culture",
     "difficulty": "easy",
-    "items": ["Sitar", "Sarod", "Veena", "Dholak"],
+    "items": [
+      "Sitar",
+      "Sarod",
+      "Veena",
+      "Dholak"
+    ],
     "odd_index": 3,
-    "explanation": "Sitar, sarod and veena are stringed instruments. The dholak is a percussion (drum) instrument."
+    "explanation": "Sitar, sarod and veena are stringed instruments. The dholak is a percussion (drum) instrument.",
+    "items_hi": [
+      "सितार",
+      "सरोद",
+      "वीणा",
+      "ढोलक"
+    ],
+    "explanation_hi": "सितार, सरोद और वीणा तार वाद्य हैं। ढोलक एक ताल (ढोल) वाद्य है।"
   },
   {
     "id": "oo_039",
     "subject": "Art and Culture",
     "difficulty": "easy",
-    "items": ["Jama Masjid", "Khajuraho", "Konark", "Meenakshi Temple"],
+    "items": [
+      "Jama Masjid",
+      "Khajuraho",
+      "Konark",
+      "Meenakshi Temple"
+    ],
     "odd_index": 0,
-    "explanation": "Khajuraho, Konark and the Meenakshi Temple are Hindu temple complexes. The Jama Masjid in Delhi is a mosque built by Shah Jahan."
+    "explanation": "Khajuraho, Konark and the Meenakshi Temple are Hindu temple complexes. The Jama Masjid in Delhi is a mosque built by Shah Jahan.",
+    "items_hi": [
+      "जामा मस्जिद",
+      "खजुराहो",
+      "कोणार्क",
+      "मीनाक्षी मंदिर"
+    ],
+    "explanation_hi": "खजुराहो, कोणार्क और मीनाक्षी मंदिर हिंदू मंदिर परिसर हैं। दिल्ली की जामा मस्जिद शाहजहाँ द्वारा निर्मित एक मस्जिद है।"
   },
   {
     "id": "oo_040",
     "subject": "Art and Culture",
     "difficulty": "easy",
-    "items": ["Bihu", "Onam", "Durga Puja", "Pongal"],
+    "items": [
+      "Bihu",
+      "Onam",
+      "Durga Puja",
+      "Pongal"
+    ],
     "odd_index": 2,
-    "explanation": "Bihu (Assam), Onam (Kerala) and Pongal (Tamil Nadu) are harvest festivals. Durga Puja celebrates the goddess Durga's victory over Mahishasura, not the harvest."
+    "explanation": "Bihu (Assam), Onam (Kerala) and Pongal (Tamil Nadu) are harvest festivals. Durga Puja celebrates the goddess Durga's victory over Mahishasura, not the harvest.",
+    "items_hi": [
+      "बिहू",
+      "ओणम",
+      "दुर्गा पूजा",
+      "पोंगल"
+    ],
+    "explanation_hi": "बिहू (असम), ओणम (केरल) और पोंगल (तमिलनाडु) फसल-कटाई के त्योहार हैं। दुर्गा पूजा देवी दुर्गा की महिषासुर पर विजय का उत्सव मनाती है, फसल का नहीं।"
   },
   {
     "id": "oo_041",
     "subject": "Art and Culture",
     "difficulty": "medium",
-    "items": ["Bhangra", "Garba", "Kuchipudi", "Lavani"],
+    "items": [
+      "Bhangra",
+      "Garba",
+      "Kuchipudi",
+      "Lavani"
+    ],
     "odd_index": 2,
-    "explanation": "Bhangra (Punjab), Garba (Gujarat) and Lavani (Maharashtra) are folk dances. Kuchipudi of Andhra Pradesh is a recognised classical dance form."
+    "explanation": "Bhangra (Punjab), Garba (Gujarat) and Lavani (Maharashtra) are folk dances. Kuchipudi of Andhra Pradesh is a recognised classical dance form.",
+    "items_hi": [
+      "भांगड़ा",
+      "गरबा",
+      "कुचिपुड़ी",
+      "लावणी"
+    ],
+    "explanation_hi": "भांगड़ा (पंजाब), गरबा (गुजरात) और लावणी (महाराष्ट्र) लोक नृत्य हैं। आंध्र प्रदेश की कुचिपुड़ी एक मान्यता प्राप्त शास्त्रीय नृत्य रूप है।"
   },
   {
     "id": "oo_042",
     "subject": "Art and Culture",
     "difficulty": "medium",
-    "items": ["Gandhara", "Madhubani", "Warli", "Pattachitra"],
+    "items": [
+      "Gandhara",
+      "Madhubani",
+      "Warli",
+      "Pattachitra"
+    ],
     "odd_index": 0,
-    "explanation": "Madhubani (Bihar), Warli (Maharashtra) and Pattachitra (Odisha) are folk painting traditions. Gandhara was an ancient school of sculpture with Greco-Buddhist influence."
+    "explanation": "Madhubani (Bihar), Warli (Maharashtra) and Pattachitra (Odisha) are folk painting traditions. Gandhara was an ancient school of sculpture with Greco-Buddhist influence.",
+    "items_hi": [
+      "गांधार",
+      "मधुबनी",
+      "वर्ली",
+      "पट्टचित्र"
+    ],
+    "explanation_hi": "मधुबनी (बिहार), वर्ली (महाराष्ट्र) और पट्टचित्र (ओडिशा) लोक चित्रकला परंपराएँ हैं। गांधार यूनानी-बौद्ध प्रभाव वाली एक प्राचीन मूर्तिकला शैली थी।"
   },
   {
     "id": "oo_043",
     "subject": "Art and Culture",
     "difficulty": "medium",
-    "items": ["Mridangam", "Ghatam", "Tabla", "Kanjira"],
+    "items": [
+      "Mridangam",
+      "Ghatam",
+      "Tabla",
+      "Kanjira"
+    ],
     "odd_index": 2,
-    "explanation": "Mridangam, ghatam and kanjira are percussion instruments of Carnatic (South Indian) music. The tabla is the principal percussion instrument of Hindustani (North Indian) music."
+    "explanation": "Mridangam, ghatam and kanjira are percussion instruments of Carnatic (South Indian) music. The tabla is the principal percussion instrument of Hindustani (North Indian) music.",
+    "items_hi": [
+      "मृदंगम",
+      "घटम",
+      "तबला",
+      "कंजीरा"
+    ],
+    "explanation_hi": "मृदंगम, घटम और कंजीरा कर्नाटक (दक्षिण भारतीय) संगीत के ताल वाद्य हैं। तबला हिंदुस्तानी (उत्तर भारतीय) संगीत का प्रमुख ताल वाद्य है।"
   },
   {
     "id": "oo_044",
     "subject": "Art and Culture",
     "difficulty": "medium",
-    "items": ["Kandariya Mahadeva", "Lingaraja", "Brihadisvara", "Konark Sun Temple"],
+    "items": [
+      "Kandariya Mahadeva",
+      "Lingaraja",
+      "Brihadisvara",
+      "Konark Sun Temple"
+    ],
     "odd_index": 2,
-    "explanation": "Kandariya Mahadeva (Khajuraho), Lingaraja (Bhubaneswar) and the Konark Sun Temple are built in the North Indian Nagara style. The Brihadisvara temple at Thanjavur is in the South Indian Dravida style."
+    "explanation": "Kandariya Mahadeva (Khajuraho), Lingaraja (Bhubaneswar) and the Konark Sun Temple are built in the North Indian Nagara style. The Brihadisvara temple at Thanjavur is in the South Indian Dravida style.",
+    "items_hi": [
+      "कंदरिया महादेव",
+      "लिंगराज",
+      "बृहदीश्वर",
+      "कोणार्क सूर्य मंदिर"
+    ],
+    "explanation_hi": "कंदरिया महादेव (खजुराहो), लिंगराज (भुवनेश्वर) और कोणार्क सूर्य मंदिर उत्तर भारतीय नागर शैली में निर्मित हैं। तंजावुर का बृहदीश्वर मंदिर दक्षिण भारतीय द्रविड़ शैली में है।"
   },
   {
     "id": "oo_045",
     "subject": "Art and Culture",
     "difficulty": "hard",
-    "items": ["Bharatanatyam", "Kuchipudi", "Odissi", "Mohiniyattam"],
+    "items": [
+      "Bharatanatyam",
+      "Kuchipudi",
+      "Odissi",
+      "Mohiniyattam"
+    ],
     "odd_index": 2,
-    "explanation": "Bharatanatyam (Tamil Nadu), Kuchipudi (Andhra Pradesh) and Mohiniyattam (Kerala) are classical dances of South India. Odissi belongs to Odisha in eastern India."
+    "explanation": "Bharatanatyam (Tamil Nadu), Kuchipudi (Andhra Pradesh) and Mohiniyattam (Kerala) are classical dances of South India. Odissi belongs to Odisha in eastern India.",
+    "items_hi": [
+      "भरतनाट्यम",
+      "कुचिपुड़ी",
+      "ओडिसी",
+      "मोहिनीअट्टम"
+    ],
+    "explanation_hi": "भरतनाट्यम (तमिलनाडु), कुचिपुड़ी (आंध्र प्रदेश) और मोहिनीअट्टम (केरल) दक्षिण भारत के शास्त्रीय नृत्य हैं। ओडिसी पूर्वी भारत के ओडिशा से संबंधित है।"
   },
   {
     "id": "oo_046",
     "subject": "Art and Culture",
     "difficulty": "hard",
-    "items": ["Kathputli", "Tholu Bommalata", "Ravanachhaya", "Togalu Gombeyaata"],
+    "items": [
+      "Kathputli",
+      "Tholu Bommalata",
+      "Ravanachhaya",
+      "Togalu Gombeyaata"
+    ],
     "odd_index": 0,
-    "explanation": "Tholu Bommalata (Andhra Pradesh), Ravanachhaya (Odisha) and Togalu Gombeyaata (Karnataka) are shadow puppetry traditions. Kathputli of Rajasthan is string puppetry."
+    "explanation": "Tholu Bommalata (Andhra Pradesh), Ravanachhaya (Odisha) and Togalu Gombeyaata (Karnataka) are shadow puppetry traditions. Kathputli of Rajasthan is string puppetry.",
+    "items_hi": [
+      "कठपुतली",
+      "तोलु बोम्मालाटा",
+      "रावणछाया",
+      "तोगलु गोम्बेयाता"
+    ],
+    "explanation_hi": "तोलु बोम्मालाटा (आंध्र प्रदेश), रावणछाया (ओडिशा) और तोगलु गोम्बेयाता (कर्नाटक) छाया कठपुतली परंपराएँ हैं। राजस्थान की कठपुतली धागा कठपुतली है।"
   },
   {
     "id": "oo_047",
     "subject": "Art and Culture",
     "difficulty": "hard",
-    "items": ["Kalaripayattu", "Yakshagana", "Silambam", "Thang-Ta"],
+    "items": [
+      "Kalaripayattu",
+      "Yakshagana",
+      "Silambam",
+      "Thang-Ta"
+    ],
     "odd_index": 1,
-    "explanation": "Kalaripayattu (Kerala), Silambam (Tamil Nadu) and Thang-Ta (Manipur) are traditional martial arts. Yakshagana of Karnataka is a dance-drama theatre form, not a martial art."
+    "explanation": "Kalaripayattu (Kerala), Silambam (Tamil Nadu) and Thang-Ta (Manipur) are traditional martial arts. Yakshagana of Karnataka is a dance-drama theatre form, not a martial art.",
+    "items_hi": [
+      "कलारीपयट्टु",
+      "यक्षगान",
+      "सिलंबम",
+      "थांग-ता"
+    ],
+    "explanation_hi": "कलारीपयट्टु (केरल), सिलंबम (तमिलनाडु) और थांग-ता (मणिपुर) पारंपरिक युद्ध कलाएँ हैं। कर्नाटक का यक्षगान एक नृत्य-नाट्य रूप है, युद्ध कला नहीं।"
   },
   {
     "id": "oo_048",
     "subject": "Art and Culture",
     "difficulty": "hard",
-    "items": ["Koodiyattam", "Kalbelia", "Chhau", "Bihu Dance"],
+    "items": [
+      "Koodiyattam",
+      "Kalbelia",
+      "Chhau",
+      "Bihu Dance"
+    ],
     "odd_index": 3,
-    "explanation": "Koodiyattam, Kalbelia and Chhau are inscribed on UNESCO's Intangible Cultural Heritage list. The Bihu dance of Assam is not on the UNESCO list."
+    "explanation": "Koodiyattam, Kalbelia and Chhau are inscribed on UNESCO's Intangible Cultural Heritage list. The Bihu dance of Assam is not on the UNESCO list.",
+    "items_hi": [
+      "कूडियाट्टम",
+      "कालबेलिया",
+      "छऊ",
+      "बिहू नृत्य"
+    ],
+    "explanation_hi": "कूडियाट्टम, कालबेलिया और छऊ यूनेस्को की अमूर्त सांस्कृतिक विरासत सूची में शामिल हैं। असम का बिहू नृत्य यूनेस्को सूची में शामिल नहीं है।"
   },
   {
     "id": "oo_049",
     "subject": "Geography",
     "difficulty": "easy",
-    "items": ["Cotton", "Coal", "Jute", "Sugarcane"],
+    "items": [
+      "Cotton",
+      "Coal",
+      "Jute",
+      "Sugarcane"
+    ],
     "odd_index": 1,
-    "explanation": "Cotton, jute and sugarcane are agricultural cash crops. Coal is a mineral resource extracted through mining, not grown."
+    "explanation": "Cotton, jute and sugarcane are agricultural cash crops. Coal is a mineral resource extracted through mining, not grown.",
+    "items_hi": [
+      "कपास",
+      "कोयला",
+      "जूट",
+      "गन्ना"
+    ],
+    "explanation_hi": "कपास, जूट और गन्ना कृषि नकदी फसलें हैं। कोयला खनन से निकाला जाने वाला एक खनिज संसाधन है, उगाया नहीं जाता।"
   },
   {
     "id": "oo_050",
     "subject": "Geography",
     "difficulty": "easy",
-    "items": ["Ganga", "Yamuna", "Himalaya", "Brahmaputra"],
+    "items": [
+      "Ganga",
+      "Yamuna",
+      "Himalaya",
+      "Brahmaputra"
+    ],
     "odd_index": 2,
-    "explanation": "Ganga, Yamuna and Brahmaputra are rivers. The Himalaya is a mountain range, not a river."
+    "explanation": "Ganga, Yamuna and Brahmaputra are rivers. The Himalaya is a mountain range, not a river.",
+    "items_hi": [
+      "गंगा",
+      "यमुना",
+      "हिमालय",
+      "ब्रह्मपुत्र"
+    ],
+    "explanation_hi": "गंगा, यमुना और ब्रह्मपुत्र नदियाँ हैं। हिमालय एक पर्वत श्रृंखला है, नदी नहीं।"
   },
   {
     "id": "oo_051",
     "subject": "Geography",
     "difficulty": "easy",
-    "items": ["Kochi", "Shimla", "Ooty", "Darjeeling"],
+    "items": [
+      "Kochi",
+      "Shimla",
+      "Ooty",
+      "Darjeeling"
+    ],
     "odd_index": 0,
-    "explanation": "Shimla, Ooty and Darjeeling are hill stations. Kochi is a coastal port city in Kerala at sea level."
+    "explanation": "Shimla, Ooty and Darjeeling are hill stations. Kochi is a coastal port city in Kerala at sea level.",
+    "items_hi": [
+      "कोच्चि",
+      "शिमला",
+      "ऊटी",
+      "दार्जिलिंग"
+    ],
+    "explanation_hi": "शिमला, ऊटी और दार्जिलिंग पहाड़ी स्थल हैं। कोच्चि केरल का समुद्र-तल पर स्थित एक तटीय बंदरगाह शहर है।"
   },
   {
     "id": "oo_052",
     "subject": "Geography",
     "difficulty": "easy",
-    "items": ["Punjab", "Haryana", "Ladakh", "Kerala"],
+    "items": [
+      "Punjab",
+      "Haryana",
+      "Ladakh",
+      "Kerala"
+    ],
     "odd_index": 2,
-    "explanation": "Punjab, Haryana and Kerala are states of India. Ladakh is a Union Territory, administered directly by the central government."
+    "explanation": "Punjab, Haryana and Kerala are states of India. Ladakh is a Union Territory, administered directly by the central government.",
+    "items_hi": [
+      "पंजाब",
+      "हरियाणा",
+      "लद्दाख",
+      "केरल"
+    ],
+    "explanation_hi": "पंजाब, हरियाणा और केरल भारत के राज्य हैं। लद्दाख एक केंद्र शासित प्रदेश है, जिसे केंद्र सरकार सीधे प्रशासित करती है।"
   },
   {
     "id": "oo_053",
     "subject": "Geography",
     "difficulty": "medium",
-    "items": ["Sambhar Lake", "Chilika Lake", "Pulicat Lake", "Vembanad Lake"],
+    "items": [
+      "Sambhar Lake",
+      "Chilika Lake",
+      "Pulicat Lake",
+      "Vembanad Lake"
+    ],
     "odd_index": 0,
-    "explanation": "Chilika, Pulicat and Vembanad are coastal brackish-water lagoons. Sambhar Lake in Rajasthan is India's largest inland saline lake, unconnected to the sea."
+    "explanation": "Chilika, Pulicat and Vembanad are coastal brackish-water lagoons. Sambhar Lake in Rajasthan is India's largest inland saline lake, unconnected to the sea.",
+    "items_hi": [
+      "सांभर झील",
+      "चिल्का झील",
+      "पुलिकट झील",
+      "वेम्बनाड झील"
+    ],
+    "explanation_hi": "चिल्का, पुलिकट और वेम्बनाड तटीय खारे पानी के लैगून हैं। राजस्थान की सांभर झील भारत की सबसे बड़ी अंतर्देशीय लवणीय झील है, जो समुद्र से नहीं जुड़ी है।"
   },
   {
     "id": "oo_054",
     "subject": "Geography",
     "difficulty": "medium",
-    "items": ["Narmada", "Subarnarekha", "Tapi", "Mahi"],
+    "items": [
+      "Narmada",
+      "Subarnarekha",
+      "Tapi",
+      "Mahi"
+    ],
     "odd_index": 1,
-    "explanation": "Narmada, Tapi and Mahi flow westward into the Arabian Sea. The Subarnarekha flows eastward into the Bay of Bengal."
+    "explanation": "Narmada, Tapi and Mahi flow westward into the Arabian Sea. The Subarnarekha flows eastward into the Bay of Bengal.",
+    "items_hi": [
+      "नर्मदा",
+      "स्वर्णरेखा",
+      "ताप्ती",
+      "माही"
+    ],
+    "explanation_hi": "नर्मदा, ताप्ती और माही पश्चिम की ओर बहकर अरब सागर में गिरती हैं। स्वर्णरेखा पूर्व की ओर बहकर बंगाल की खाड़ी में गिरती है।"
   },
   {
     "id": "oo_055",
     "subject": "Geography",
     "difficulty": "medium",
-    "items": ["Chambal", "Betwa", "Ken", "Son"],
+    "items": [
+      "Chambal",
+      "Betwa",
+      "Ken",
+      "Son"
+    ],
     "odd_index": 3,
-    "explanation": "Chambal, Betwa and Ken are tributaries of the Yamuna. The Son joins the Ganga directly, near Patna."
+    "explanation": "Chambal, Betwa and Ken are tributaries of the Yamuna. The Son joins the Ganga directly, near Patna.",
+    "items_hi": [
+      "चंबल",
+      "बेतवा",
+      "केन",
+      "सोन"
+    ],
+    "explanation_hi": "चंबल, बेतवा और केन यमुना की सहायक नदियाँ हैं। सोन पटना के पास सीधे गंगा में मिलती है।"
   },
   {
     "id": "oo_056",
     "subject": "Geography",
     "difficulty": "medium",
-    "items": ["Nathu La", "Zoji La", "Palakkad Gap", "Shipki La"],
+    "items": [
+      "Nathu La",
+      "Zoji La",
+      "Palakkad Gap",
+      "Shipki La"
+    ],
     "odd_index": 2,
-    "explanation": "Nathu La (Sikkim), Zoji La (Ladakh) and Shipki La (Himachal) are high Himalayan passes. The Palakkad Gap is a low pass in the Western Ghats of South India."
+    "explanation": "Nathu La (Sikkim), Zoji La (Ladakh) and Shipki La (Himachal) are high Himalayan passes. The Palakkad Gap is a low pass in the Western Ghats of South India.",
+    "items_hi": [
+      "नाथू ला",
+      "ज़ोजी ला",
+      "पालघाट दर्रा",
+      "शिपकी ला"
+    ],
+    "explanation_hi": "नाथू ला (सिक्किम), ज़ोजी ला (लद्दाख) और शिपकी ला (हिमाचल) ऊँचे हिमालयी दर्रे हैं। पालघाट दर्रा दक्षिण भारत की पश्चिमी घाट में स्थित एक निचला दर्रा है।"
   },
   {
     "id": "oo_057",
     "subject": "Geography",
     "difficulty": "hard",
-    "items": ["Bailadila", "Jharia", "Raniganj", "Korba"],
+    "items": [
+      "Bailadila",
+      "Jharia",
+      "Raniganj",
+      "Korba"
+    ],
     "odd_index": 0,
-    "explanation": "Jharia, Raniganj and Korba are major coalfields. Bailadila in Chhattisgarh is famous for iron ore mining."
+    "explanation": "Jharia, Raniganj and Korba are major coalfields. Bailadila in Chhattisgarh is famous for iron ore mining.",
+    "items_hi": [
+      "बैलाडीला",
+      "झरिया",
+      "रानीगंज",
+      "कोरबा"
+    ],
+    "explanation_hi": "झरिया, रानीगंज और कोरबा प्रमुख कोयला क्षेत्र हैं। छत्तीसगढ़ का बैलाडीला लौह अयस्क खनन के लिए प्रसिद्ध है।"
   },
   {
     "id": "oo_058",
     "subject": "Geography",
     "difficulty": "hard",
-    "items": ["Godavari", "Krishna", "Mahanadi", "Kaveri"],
+    "items": [
+      "Godavari",
+      "Krishna",
+      "Mahanadi",
+      "Kaveri"
+    ],
     "odd_index": 2,
-    "explanation": "Godavari, Krishna and Kaveri rise in the Western Ghats. The Mahanadi rises in the highlands of Chhattisgarh, far from the Western Ghats."
+    "explanation": "Godavari, Krishna and Kaveri rise in the Western Ghats. The Mahanadi rises in the highlands of Chhattisgarh, far from the Western Ghats.",
+    "items_hi": [
+      "गोदावरी",
+      "कृष्णा",
+      "महानदी",
+      "कावेरी"
+    ],
+    "explanation_hi": "गोदावरी, कृष्णा और कावेरी पश्चिमी घाट से निकलती हैं। महानदी छत्तीसगढ़ के उच्च भूमि क्षेत्र से निकलती है, जो पश्चिमी घाट से दूर है।"
   },
   {
     "id": "oo_059",
     "subject": "Geography",
     "difficulty": "hard",
-    "items": ["Anamudi", "Kanchenjunga", "Nanda Devi", "Nanga Parbat"],
+    "items": [
+      "Anamudi",
+      "Kanchenjunga",
+      "Nanda Devi",
+      "Nanga Parbat"
+    ],
     "odd_index": 0,
-    "explanation": "Kanchenjunga, Nanda Devi and Nanga Parbat are peaks of the Himalaya. Anamudi is the highest peak of the Western Ghats in peninsular India."
+    "explanation": "Kanchenjunga, Nanda Devi and Nanga Parbat are peaks of the Himalaya. Anamudi is the highest peak of the Western Ghats in peninsular India.",
+    "items_hi": [
+      "आनामुडी",
+      "कंचनजंगा",
+      "नंदा देवी",
+      "नंगा पर्वत"
+    ],
+    "explanation_hi": "कंचनजंगा, नंदा देवी और नंगा पर्वत हिमालय की चोटियाँ हैं। आनामुडी प्रायद्वीपीय भारत में पश्चिमी घाट की सबसे ऊँची चोटी है।"
   },
   {
     "id": "oo_060",
     "subject": "Geography",
     "difficulty": "hard",
-    "items": ["Ghaghara", "Gandak", "Kosi", "Yamuna"],
+    "items": [
+      "Ghaghara",
+      "Gandak",
+      "Kosi",
+      "Yamuna"
+    ],
     "odd_index": 3,
-    "explanation": "Ghaghara, Gandak and Kosi are left-bank tributaries of the Ganga coming from the Himalaya. The Yamuna joins the Ganga on its right bank."
+    "explanation": "Ghaghara, Gandak and Kosi are left-bank tributaries of the Ganga coming from the Himalaya. The Yamuna joins the Ganga on its right bank.",
+    "items_hi": [
+      "घाघरा",
+      "गंडक",
+      "कोसी",
+      "यमुना"
+    ],
+    "explanation_hi": "घाघरा, गंडक और कोसी हिमालय से आने वाली गंगा की बाएँ तट की सहायक नदियाँ हैं। यमुना गंगा से दाएँ तट पर मिलती है।"
   },
   {
     "id": "oo_061",
     "subject": "Economy",
     "difficulty": "easy",
-    "items": ["Green Revolution", "Non-Cooperation", "White Revolution", "Blue Revolution"],
+    "items": [
+      "Green Revolution",
+      "Non-Cooperation",
+      "White Revolution",
+      "Blue Revolution"
+    ],
     "odd_index": 1,
-    "explanation": "Green, White and Blue Revolutions are production programmes covering foodgrain, dairy and fisheries respectively. The Non-Cooperation Movement is a political movement, not an economic programme."
+    "explanation": "Green, White and Blue Revolutions are production programmes covering foodgrain, dairy and fisheries respectively. The Non-Cooperation Movement is a political movement, not an economic programme.",
+    "items_hi": [
+      "हरित क्रांति",
+      "असहयोग आंदोलन",
+      "श्वेत क्रांति",
+      "नीली क्रांति"
+    ],
+    "explanation_hi": "हरित, श्वेत और नीली क्रांतियाँ क्रमशः खाद्यान्न, डेयरी और मत्स्य पालन से संबंधित उत्पादन कार्यक्रम हैं। असहयोग आंदोलन एक राजनीतिक आंदोलन है, आर्थिक कार्यक्रम नहीं।"
   },
   {
     "id": "oo_062",
     "subject": "Economy",
     "difficulty": "easy",
-    "items": ["Excise Duty", "Income Tax", "Repo Rate", "Customs Duty"],
+    "items": [
+      "Excise Duty",
+      "Income Tax",
+      "Repo Rate",
+      "Customs Duty"
+    ],
     "odd_index": 2,
-    "explanation": "Excise duty, income tax and customs duty are taxes collected by the government. The repo rate is an interest rate set by the RBI for monetary policy, not a tax."
+    "explanation": "Excise duty, income tax and customs duty are taxes collected by the government. The repo rate is an interest rate set by the RBI for monetary policy, not a tax.",
+    "items_hi": [
+      "उत्पाद शुल्क",
+      "आयकर",
+      "रेपो दर",
+      "सीमा शुल्क"
+    ],
+    "explanation_hi": "उत्पाद शुल्क, आयकर और सीमा शुल्क सरकार द्वारा वसूले जाने वाले कर हैं। रेपो दर मौद्रिक नीति के लिए आरबीआई द्वारा निर्धारित एक ब्याज दर है, कर नहीं।"
   },
   {
     "id": "oo_063",
     "subject": "Economy",
     "difficulty": "easy",
-    "items": ["Agriculture", "Banking", "Fishing", "Forestry"],
+    "items": [
+      "Agriculture",
+      "Banking",
+      "Fishing",
+      "Forestry"
+    ],
     "odd_index": 1,
-    "explanation": "Agriculture, fishing and forestry are primary sector activities that extract natural products. Banking is a service belonging to the tertiary sector."
+    "explanation": "Agriculture, fishing and forestry are primary sector activities that extract natural products. Banking is a service belonging to the tertiary sector.",
+    "items_hi": [
+      "कृषि",
+      "बैंकिंग",
+      "मत्स्य पालन",
+      "वानिकी"
+    ],
+    "explanation_hi": "कृषि, मत्स्य पालन और वानिकी प्राथमिक क्षेत्र की गतिविधियाँ हैं जो प्राकृतिक उत्पाद निकालती हैं। बैंकिंग तृतीयक क्षेत्र से संबंधित एक सेवा है।"
   },
   {
     "id": "oo_064",
     "subject": "Economy",
     "difficulty": "easy",
-    "items": ["LIC", "SBI", "PNB", "Bank of Baroda"],
+    "items": [
+      "LIC",
+      "SBI",
+      "PNB",
+      "Bank of Baroda"
+    ],
     "odd_index": 0,
-    "explanation": "SBI, PNB and Bank of Baroda are public sector banks. LIC is an insurance company, not a bank."
+    "explanation": "SBI, PNB and Bank of Baroda are public sector banks. LIC is an insurance company, not a bank.",
+    "items_hi": [
+      "एलआईसी",
+      "एसबीआई",
+      "पीएनबी",
+      "बैंक ऑफ बड़ौदा"
+    ],
+    "explanation_hi": "एसबीआई, पीएनबी और बैंक ऑफ बड़ौदा सार्वजनिक क्षेत्र के बैंक हैं। एलआईसी एक बीमा कंपनी है, बैंक नहीं।"
   },
   {
     "id": "oo_065",
     "subject": "Economy",
     "difficulty": "medium",
-    "items": ["Income Tax", "Corporation Tax", "GST", "Capital Gains Tax"],
+    "items": [
+      "Income Tax",
+      "Corporation Tax",
+      "GST",
+      "Capital Gains Tax"
+    ],
     "odd_index": 2,
-    "explanation": "Income tax, corporation tax and capital gains tax are direct taxes paid by the person who bears them. GST is an indirect tax whose burden is passed on to the consumer."
+    "explanation": "Income tax, corporation tax and capital gains tax are direct taxes paid by the person who bears them. GST is an indirect tax whose burden is passed on to the consumer.",
+    "items_hi": [
+      "आयकर",
+      "निगम कर",
+      "जीएसटी",
+      "पूंजीगत लाभ कर"
+    ],
+    "explanation_hi": "आयकर, निगम कर और पूंजीगत लाभ कर प्रत्यक्ष कर हैं जो उस व्यक्ति द्वारा वहन किए जाते हैं जिस पर वे लगते हैं। जीएसटी एक अप्रत्यक्ष कर है जिसका भार उपभोक्ता पर डाल दिया जाता है।"
   },
   {
     "id": "oo_066",
     "subject": "Economy",
     "difficulty": "medium",
-    "items": ["Repo Rate", "CRR", "SLR", "Fiscal Deficit"],
+    "items": [
+      "Repo Rate",
+      "CRR",
+      "SLR",
+      "Fiscal Deficit"
+    ],
     "odd_index": 3,
-    "explanation": "Repo rate, CRR and SLR are monetary policy instruments of the RBI. The fiscal deficit is a government budget concept, part of fiscal policy."
+    "explanation": "Repo rate, CRR and SLR are monetary policy instruments of the RBI. The fiscal deficit is a government budget concept, part of fiscal policy.",
+    "items_hi": [
+      "रेपो दर",
+      "सीआरआर",
+      "एसएलआर",
+      "राजकोषीय घाटा"
+    ],
+    "explanation_hi": "रेपो दर, सीआरआर और एसएलआर आरबीआई के मौद्रिक नीति उपकरण हैं। राजकोषीय घाटा एक सरकारी बजट अवधारणा है, जो राजकोषीय नीति का हिस्सा है।"
   },
   {
     "id": "oo_067",
     "subject": "Economy",
     "difficulty": "medium",
-    "items": ["IMF", "World Bank", "SEBI", "WTO"],
+    "items": [
+      "IMF",
+      "World Bank",
+      "SEBI",
+      "WTO"
+    ],
     "odd_index": 2,
-    "explanation": "The IMF, World Bank and WTO are international economic organisations. SEBI is India's domestic securities market regulator."
+    "explanation": "The IMF, World Bank and WTO are international economic organisations. SEBI is India's domestic securities market regulator.",
+    "items_hi": [
+      "आईएमएफ",
+      "विश्व बैंक",
+      "सेबी",
+      "डब्ल्यूटीओ"
+    ],
+    "explanation_hi": "आईएमएफ, विश्व बैंक और डब्ल्यूटीओ अंतरराष्ट्रीय आर्थिक संगठन हैं। सेबी भारत का घरेलू प्रतिभूति बाज़ार नियामक है।"
   },
   {
     "id": "oo_068",
     "subject": "Economy",
     "difficulty": "medium",
-    "items": ["Sensex", "CPI", "WPI", "IIP"],
+    "items": [
+      "Sensex",
+      "CPI",
+      "WPI",
+      "IIP"
+    ],
     "odd_index": 0,
-    "explanation": "CPI, WPI and IIP are official statistical indices compiled by government agencies. The Sensex is a stock market index of the privately run Bombay Stock Exchange."
+    "explanation": "CPI, WPI and IIP are official statistical indices compiled by government agencies. The Sensex is a stock market index of the privately run Bombay Stock Exchange.",
+    "items_hi": [
+      "सेंसेक्स",
+      "सीपीआई",
+      "डब्ल्यूपीआई",
+      "आईआईपी"
+    ],
+    "explanation_hi": "सीपीआई, डब्ल्यूपीआई और आईआईपी सरकारी एजेंसियों द्वारा संकलित आधिकारिक सांख्यिकीय सूचकांक हैं। सेंसेक्स निजी तौर पर संचालित बॉम्बे स्टॉक एक्सचेंज का एक शेयर बाज़ार सूचकांक है।"
   },
   {
     "id": "oo_069",
     "subject": "Economy",
     "difficulty": "hard",
-    "items": ["Narasimham Committee", "Kelkar Committee", "Urjit Patel Committee", "Swaminathan Commission"],
+    "items": [
+      "Narasimham Committee",
+      "Kelkar Committee",
+      "Urjit Patel Committee",
+      "Swaminathan Commission"
+    ],
     "odd_index": 3,
-    "explanation": "The Narasimham (banking), Kelkar (tax) and Urjit Patel (monetary policy framework) committees dealt with financial-sector reforms. The Swaminathan Commission dealt with farmers and agriculture, recommending MSP reforms."
+    "explanation": "The Narasimham (banking), Kelkar (tax) and Urjit Patel (monetary policy framework) committees dealt with financial-sector reforms. The Swaminathan Commission dealt with farmers and agriculture, recommending MSP reforms.",
+    "items_hi": [
+      "नरसिम्हम समिति",
+      "केलकर समिति",
+      "उर्जित पटेल समिति",
+      "स्वामीनाथन आयोग"
+    ],
+    "explanation_hi": "नरसिम्हम (बैंकिंग), केलकर (कर) और उर्जित पटेल (मौद्रिक नीति ढांचा) समितियाँ वित्तीय-क्षेत्र सुधारों से संबंधित थीं। स्वामीनाथन आयोग किसानों और कृषि से संबंधित था, जिसने एमएसपी सुधारों की सिफारिश की।"
   },
   {
     "id": "oo_070",
     "subject": "Economy",
     "difficulty": "hard",
-    "items": ["Remittances", "FDI", "FPI", "ECBs"],
+    "items": [
+      "Remittances",
+      "FDI",
+      "FPI",
+      "ECBs"
+    ],
     "odd_index": 0,
-    "explanation": "FDI, FPI and External Commercial Borrowings are capital account items of the balance of payments. Remittances from workers abroad are recorded in the current account."
+    "explanation": "FDI, FPI and External Commercial Borrowings are capital account items of the balance of payments. Remittances from workers abroad are recorded in the current account.",
+    "items_hi": [
+      "प्रेषण",
+      "एफडीआई",
+      "एफपीआई",
+      "विदेशी वाणिज्यिक उधार"
+    ],
+    "explanation_hi": "एफडीआई, एफपीआई और विदेशी वाणिज्यिक उधार भुगतान संतुलन के पूंजी खाते की मदें हैं। विदेश से श्रमिकों का प्रेषण चालू खाते में दर्ज होता है।"
   },
   {
     "id": "oo_071",
     "subject": "Economy",
     "difficulty": "hard",
-    "items": ["PM-KISAN", "PMFBY", "Kisan Credit Card", "PMJDY"],
+    "items": [
+      "PM-KISAN",
+      "PMFBY",
+      "Kisan Credit Card",
+      "PMJDY"
+    ],
     "odd_index": 3,
-    "explanation": "PM-KISAN (income support), PMFBY (crop insurance) and Kisan Credit Card (farm credit) specifically target farmers. PMJDY (Jan Dhan Yojana) is a universal financial inclusion scheme for bank accounts."
+    "explanation": "PM-KISAN (income support), PMFBY (crop insurance) and Kisan Credit Card (farm credit) specifically target farmers. PMJDY (Jan Dhan Yojana) is a universal financial inclusion scheme for bank accounts.",
+    "items_hi": [
+      "पीएम-किसान",
+      "पीएमएफबीवाई",
+      "किसान क्रेडिट कार्ड",
+      "पीएमजेडीवाई"
+    ],
+    "explanation_hi": "पीएम-किसान (आय सहायता), पीएमएफबीवाई (फसल बीमा) और किसान क्रेडिट कार्ड (कृषि ऋण) विशेष रूप से किसानों को लक्षित करते हैं। पीएमजेडीवाई (जन धन योजना) बैंक खातों हेतु एक सार्वभौमिक वित्तीय समावेशन योजना है।"
   },
   {
     "id": "oo_072",
     "subject": "Economy",
     "difficulty": "hard",
-    "items": ["Trade Deficit", "Revenue Deficit", "Fiscal Deficit", "Primary Deficit"],
+    "items": [
+      "Trade Deficit",
+      "Revenue Deficit",
+      "Fiscal Deficit",
+      "Primary Deficit"
+    ],
     "odd_index": 0,
-    "explanation": "Revenue, fiscal and primary deficits are measures of the government's budget shortfall. The trade deficit is an external-sector concept — the excess of imports over exports."
+    "explanation": "Revenue, fiscal and primary deficits are measures of the government's budget shortfall. The trade deficit is an external-sector concept — the excess of imports over exports.",
+    "items_hi": [
+      "व्यापार घाटा",
+      "राजस्व घाटा",
+      "राजकोषीय घाटा",
+      "प्राथमिक घाटा"
+    ],
+    "explanation_hi": "राजस्व, राजकोषीय और प्राथमिक घाटे सरकार की बजटीय कमी के मापदंड हैं। व्यापार घाटा एक बाह्य-क्षेत्र अवधारणा है — आयात का निर्यात से अधिक होना।"
   },
   {
     "id": "oo_073",
     "subject": "Environment",
     "difficulty": "easy",
-    "items": ["Ramsar Convention", "CITES", "GoI Act 1935", "Kyoto Protocol"],
+    "items": [
+      "Ramsar Convention",
+      "CITES",
+      "GoI Act 1935",
+      "Kyoto Protocol"
+    ],
     "odd_index": 2,
-    "explanation": "Ramsar, CITES and the Kyoto Protocol are international environmental treaties. The Government of India Act 1935 is a constitutional statute with no environmental subject matter."
+    "explanation": "Ramsar, CITES and the Kyoto Protocol are international environmental treaties. The Government of India Act 1935 is a constitutional statute with no environmental subject matter.",
+    "items_hi": [
+      "रामसर अभिसमय",
+      "साइट्स",
+      "भारत सरकार अधिनियम 1935",
+      "क्योटो प्रोटोकॉल"
+    ],
+    "explanation_hi": "रामसर, साइट्स और क्योटो प्रोटोकॉल अंतरराष्ट्रीय पर्यावरणीय संधियाँ हैं। भारत सरकार अधिनियम 1935 एक संवैधानिक अधिनियम है जिसका पर्यावरण से कोई संबंध नहीं है।"
   },
   {
     "id": "oo_074",
     "subject": "Environment",
     "difficulty": "easy",
-    "items": ["Oxygen", "Carbon Dioxide", "Methane", "Nitrous Oxide"],
+    "items": [
+      "Oxygen",
+      "Carbon Dioxide",
+      "Methane",
+      "Nitrous Oxide"
+    ],
     "odd_index": 0,
-    "explanation": "Carbon dioxide, methane and nitrous oxide are greenhouse gases that trap heat. Oxygen is not a greenhouse gas."
+    "explanation": "Carbon dioxide, methane and nitrous oxide are greenhouse gases that trap heat. Oxygen is not a greenhouse gas.",
+    "items_hi": [
+      "ऑक्सीजन",
+      "कार्बन डाइऑक्साइड",
+      "मीथेन",
+      "नाइट्रस ऑक्साइड"
+    ],
+    "explanation_hi": "कार्बन डाइऑक्साइड, मीथेन और नाइट्रस ऑक्साइड ग्रीनहाउस गैसें हैं जो ऊष्मा को रोकती हैं। ऑक्सीजन कोई ग्रीनहाउस गैस नहीं है।"
   },
   {
     "id": "oo_075",
     "subject": "Environment",
     "difficulty": "easy",
-    "items": ["Jim Corbett", "Kaziranga", "Gir", "Taj Mahal"],
+    "items": [
+      "Jim Corbett",
+      "Kaziranga",
+      "Gir",
+      "Taj Mahal"
+    ],
     "odd_index": 3,
-    "explanation": "Jim Corbett, Kaziranga and Gir are national parks protecting wildlife. The Taj Mahal is a historical monument, not a protected natural area."
+    "explanation": "Jim Corbett, Kaziranga and Gir are national parks protecting wildlife. The Taj Mahal is a historical monument, not a protected natural area.",
+    "items_hi": [
+      "जिम कॉर्बेट",
+      "काज़ीरंगा",
+      "गिर",
+      "ताजमहल"
+    ],
+    "explanation_hi": "जिम कॉर्बेट, काज़ीरंगा और गिर वन्यजीवों की रक्षा करने वाले राष्ट्रीय उद्यान हैं। ताजमहल एक ऐतिहासिक स्मारक है, संरक्षित प्राकृतिक क्षेत्र नहीं।"
   },
   {
     "id": "oo_076",
     "subject": "Environment",
     "difficulty": "easy",
-    "items": ["Solar", "Wind", "Coal", "Hydropower"],
+    "items": [
+      "Solar",
+      "Wind",
+      "Coal",
+      "Hydropower"
+    ],
     "odd_index": 2,
-    "explanation": "Solar, wind and hydropower are renewable energy sources. Coal is a non-renewable fossil fuel."
+    "explanation": "Solar, wind and hydropower are renewable energy sources. Coal is a non-renewable fossil fuel.",
+    "items_hi": [
+      "सौर",
+      "पवन",
+      "कोयला",
+      "जलविद्युत"
+    ],
+    "explanation_hi": "सौर, पवन और जलविद्युत नवीकरणीय ऊर्जा स्रोत हैं। कोयला एक अनवीकरणीय जीवाश्म ईंधन है।"
   },
   {
     "id": "oo_077",
     "subject": "Environment",
     "difficulty": "medium",
-    "items": ["Keoladeo", "Bandipur", "Kanha", "Ranthambore"],
+    "items": [
+      "Keoladeo",
+      "Bandipur",
+      "Kanha",
+      "Ranthambore"
+    ],
     "odd_index": 0,
-    "explanation": "Bandipur, Kanha and Ranthambore are tiger reserves under Project Tiger. Keoladeo National Park in Rajasthan is a famous bird sanctuary, not a tiger reserve."
+    "explanation": "Bandipur, Kanha and Ranthambore are tiger reserves under Project Tiger. Keoladeo National Park in Rajasthan is a famous bird sanctuary, not a tiger reserve.",
+    "items_hi": [
+      "केवलादेव",
+      "बांदीपुर",
+      "कान्हा",
+      "रणथंभौर"
+    ],
+    "explanation_hi": "बांदीपुर, कान्हा और रणथंभौर प्रोजेक्ट टाइगर के अंतर्गत बाघ अभयारण्य हैं। राजस्थान का केवलादेव राष्ट्रीय उद्यान एक प्रसिद्ध पक्षी अभयारण्य है, बाघ अभयारण्य नहीं।"
   },
   {
     "id": "oo_078",
     "subject": "Environment",
     "difficulty": "medium",
-    "items": ["Nilgiri", "Nanda Devi", "Sundarbans", "Dachigam"],
+    "items": [
+      "Nilgiri",
+      "Nanda Devi",
+      "Sundarbans",
+      "Dachigam"
+    ],
     "odd_index": 3,
-    "explanation": "Nilgiri, Nanda Devi and Sundarbans are designated biosphere reserves. Dachigam in Jammu & Kashmir is a national park, not a biosphere reserve."
+    "explanation": "Nilgiri, Nanda Devi and Sundarbans are designated biosphere reserves. Dachigam in Jammu & Kashmir is a national park, not a biosphere reserve.",
+    "items_hi": [
+      "नीलगिरि",
+      "नंदा देवी",
+      "सुंदरबन",
+      "दाचीगाम"
+    ],
+    "explanation_hi": "नीलगिरि, नंदा देवी और सुंदरबन निर्दिष्ट जैवमंडल रिज़र्व हैं। जम्मू-कश्मीर का दाचीगाम एक राष्ट्रीय उद्यान है, जैवमंडल रिज़र्व नहीं।"
   },
   {
     "id": "oo_079",
     "subject": "Environment",
     "difficulty": "medium",
-    "items": ["UNFCCC", "Kyoto Protocol", "Montreal Protocol", "Paris Agreement"],
+    "items": [
+      "UNFCCC",
+      "Kyoto Protocol",
+      "Montreal Protocol",
+      "Paris Agreement"
+    ],
     "odd_index": 2,
-    "explanation": "The UNFCCC, Kyoto Protocol and Paris Agreement address climate change. The Montreal Protocol deals with protecting the ozone layer from ozone-depleting substances."
+    "explanation": "The UNFCCC, Kyoto Protocol and Paris Agreement address climate change. The Montreal Protocol deals with protecting the ozone layer from ozone-depleting substances.",
+    "items_hi": [
+      "यूएनएफसीसीसी",
+      "क्योटो प्रोटोकॉल",
+      "मॉन्ट्रियल प्रोटोकॉल",
+      "पेरिस समझौता"
+    ],
+    "explanation_hi": "यूएनएफसीसीसी, क्योटो प्रोटोकॉल और पेरिस समझौता जलवायु परिवर्तन को संबोधित करते हैं। मॉन्ट्रियल प्रोटोकॉल ओज़ोन-क्षयकारी पदार्थों से ओज़ोन परत की रक्षा से संबंधित है।"
   },
   {
     "id": "oo_080",
     "subject": "Environment",
     "difficulty": "medium",
-    "items": ["Sulphur Dioxide", "Nitrogen Oxides", "PM2.5", "BOD"],
+    "items": [
+      "Sulphur Dioxide",
+      "Nitrogen Oxides",
+      "PM2.5",
+      "BOD"
+    ],
     "odd_index": 3,
-    "explanation": "Sulphur dioxide, nitrogen oxides and PM2.5 are air pollutants. BOD (Biochemical Oxygen Demand) is a measure of water pollution."
+    "explanation": "Sulphur dioxide, nitrogen oxides and PM2.5 are air pollutants. BOD (Biochemical Oxygen Demand) is a measure of water pollution.",
+    "items_hi": [
+      "सल्फर डाइऑक्साइड",
+      "नाइट्रोजन ऑक्साइड",
+      "पीएम2.5",
+      "बीओडी"
+    ],
+    "explanation_hi": "सल्फर डाइऑक्साइड, नाइट्रोजन ऑक्साइड और पीएम2.5 वायु प्रदूषक हैं। बीओडी (जैव-रासायनिक ऑक्सीजन मांग) जल प्रदूषण का माप है।"
   },
   {
     "id": "oo_081",
     "subject": "Environment",
     "difficulty": "hard",
-    "items": ["Chilika Lake", "Loktak Lake", "Keoladeo NP", "Corbett NP"],
+    "items": [
+      "Chilika Lake",
+      "Loktak Lake",
+      "Keoladeo NP",
+      "Corbett NP"
+    ],
     "odd_index": 3,
-    "explanation": "Chilika, Loktak and Keoladeo are wetlands designated as Ramsar sites. Corbett National Park is a tiger reserve and is not a Ramsar site."
+    "explanation": "Chilika, Loktak and Keoladeo are wetlands designated as Ramsar sites. Corbett National Park is a tiger reserve and is not a Ramsar site.",
+    "items_hi": [
+      "चिल्का झील",
+      "लोकटक झील",
+      "केवलादेव राष्ट्रीय उद्यान",
+      "कॉर्बेट राष्ट्रीय उद्यान"
+    ],
+    "explanation_hi": "चिल्का, लोकटक और केवलादेव रामसर स्थल के रूप में नामित आर्द्रभूमियाँ हैं। कॉर्बेट राष्ट्रीय उद्यान एक बाघ अभयारण्य है और रामसर स्थल नहीं है।"
   },
   {
     "id": "oo_082",
     "subject": "Environment",
     "difficulty": "hard",
-    "items": ["Montreal Protocol", "Basel Convention", "Rotterdam Convention", "Stockholm Convention"],
+    "items": [
+      "Montreal Protocol",
+      "Basel Convention",
+      "Rotterdam Convention",
+      "Stockholm Convention"
+    ],
     "odd_index": 0,
-    "explanation": "The Basel, Rotterdam and Stockholm conventions regulate hazardous wastes and chemicals. The Montreal Protocol deals with ozone-depleting substances, not chemical waste."
+    "explanation": "The Basel, Rotterdam and Stockholm conventions regulate hazardous wastes and chemicals. The Montreal Protocol deals with ozone-depleting substances, not chemical waste.",
+    "items_hi": [
+      "मॉन्ट्रियल प्रोटोकॉल",
+      "बेसल अभिसमय",
+      "रॉटरडैम अभिसमय",
+      "स्टॉकहोम अभिसमय"
+    ],
+    "explanation_hi": "बेसल, रॉटरडैम और स्टॉकहोम अभिसमय खतरनाक अपशिष्टों और रसायनों को विनियमित करते हैं। मॉन्ट्रियल प्रोटोकॉल ओज़ोन-क्षयकारी पदार्थों से संबंधित है, रासायनिक अपशिष्ट से नहीं।"
   },
   {
     "id": "oo_083",
     "subject": "Environment",
     "difficulty": "hard",
-    "items": ["Lantana", "Neem", "Water Hyacinth", "Prosopis Juliflora"],
+    "items": [
+      "Lantana",
+      "Neem",
+      "Water Hyacinth",
+      "Prosopis Juliflora"
+    ],
     "odd_index": 1,
-    "explanation": "Lantana, water hyacinth and Prosopis juliflora are invasive alien species that harm Indian ecosystems. Neem is a native Indian tree."
+    "explanation": "Lantana, water hyacinth and Prosopis juliflora are invasive alien species that harm Indian ecosystems. Neem is a native Indian tree.",
+    "items_hi": [
+      "लैंटाना",
+      "नीम",
+      "जलकुंभी",
+      "प्रोसोपिस जूलिफ्लोरा"
+    ],
+    "explanation_hi": "लैंटाना, जलकुंभी और प्रोसोपिस जूलिफ्लोरा आक्रामक विदेशी प्रजातियाँ हैं जो भारतीय पारिस्थितिकी तंत्र को नुकसान पहुँचाती हैं। नीम एक देशी भारतीय वृक्ष है।"
   },
   {
     "id": "oo_084",
     "subject": "Environment",
     "difficulty": "hard",
-    "items": ["Kaziranga", "Gir Forest", "Sundarbans", "Western Ghats"],
+    "items": [
+      "Kaziranga",
+      "Gir Forest",
+      "Sundarbans",
+      "Western Ghats"
+    ],
     "odd_index": 1,
-    "explanation": "Kaziranga, the Sundarbans and the Western Ghats are UNESCO natural World Heritage Sites. Gir Forest, home of the Asiatic lion, is not a World Heritage Site."
+    "explanation": "Kaziranga, the Sundarbans and the Western Ghats are UNESCO natural World Heritage Sites. Gir Forest, home of the Asiatic lion, is not a World Heritage Site.",
+    "items_hi": [
+      "काज़ीरंगा",
+      "गिर वन",
+      "सुंदरबन",
+      "पश्चिमी घाट"
+    ],
+    "explanation_hi": "काज़ीरंगा, सुंदरबन और पश्चिमी घाट यूनेस्को प्राकृतिक विश्व धरोहर स्थल हैं। एशियाई सिंह का घर गिर वन विश्व धरोहर स्थल नहीं है।"
   },
   {
     "id": "oo_085",
     "subject": "Polity",
     "difficulty": "easy",
-    "items": ["Habeas Corpus", "Article 356", "Mandamus", "Certiorari"],
+    "items": [
+      "Habeas Corpus",
+      "Article 356",
+      "Mandamus",
+      "Certiorari"
+    ],
     "odd_index": 1,
-    "explanation": "Habeas Corpus, Mandamus and Certiorari are writs issued by courts under Articles 32 and 226. Article 356 deals with President's Rule in a state, not writ jurisdiction."
+    "explanation": "Habeas Corpus, Mandamus and Certiorari are writs issued by courts under Articles 32 and 226. Article 356 deals with President's Rule in a state, not writ jurisdiction.",
+    "items_hi": [
+      "बंदी प्रत्यक्षीकरण",
+      "अनुच्छेद 356",
+      "परमादेश",
+      "उत्प्रेषण"
+    ],
+    "explanation_hi": "बंदी प्रत्यक्षीकरण, परमादेश और उत्प्रेषण अनुच्छेद 32 और 226 के तहत न्यायालयों द्वारा जारी की जाने वाली रिट हैं। अनुच्छेद 356 किसी राज्य में राष्ट्रपति शासन से संबंधित है, रिट क्षेत्राधिकार से नहीं।"
   },
   {
     "id": "oo_086",
     "subject": "Polity",
     "difficulty": "easy",
-    "items": ["Right to Equality", "Uniform Civil Code", "Right to Freedom", "Freedom of Religion"],
+    "items": [
+      "Right to Equality",
+      "Uniform Civil Code",
+      "Right to Freedom",
+      "Freedom of Religion"
+    ],
     "odd_index": 1,
-    "explanation": "Right to Equality, Right to Freedom and Freedom of Religion are Fundamental Rights in Part III. The Uniform Civil Code is a Directive Principle under Article 44, not enforceable in courts."
+    "explanation": "Right to Equality, Right to Freedom and Freedom of Religion are Fundamental Rights in Part III. The Uniform Civil Code is a Directive Principle under Article 44, not enforceable in courts.",
+    "items_hi": [
+      "समता का अधिकार",
+      "समान नागरिक संहिता",
+      "स्वतंत्रता का अधिकार",
+      "धार्मिक स्वतंत्रता"
+    ],
+    "explanation_hi": "समता का अधिकार, स्वतंत्रता का अधिकार और धार्मिक स्वतंत्रता भाग III में मूल अधिकार हैं। समान नागरिक संहिता अनुच्छेद 44 के तहत एक नीति निदेशक तत्व है, जो न्यायालयों में प्रवर्तनीय नहीं है।"
   },
   {
     "id": "oo_087",
     "subject": "Polity",
     "difficulty": "easy",
-    "items": ["Lok Sabha", "Rajya Sabha", "Supreme Court", "President"],
+    "items": [
+      "Lok Sabha",
+      "Rajya Sabha",
+      "Supreme Court",
+      "President"
+    ],
     "odd_index": 2,
-    "explanation": "Under Article 79, Parliament consists of the President, Lok Sabha and Rajya Sabha. The Supreme Court belongs to the judiciary, not Parliament."
+    "explanation": "Under Article 79, Parliament consists of the President, Lok Sabha and Rajya Sabha. The Supreme Court belongs to the judiciary, not Parliament.",
+    "items_hi": [
+      "लोकसभा",
+      "राज्यसभा",
+      "उच्चतम न्यायालय",
+      "राष्ट्रपति"
+    ],
+    "explanation_hi": "अनुच्छेद 79 के तहत, संसद में राष्ट्रपति, लोकसभा और राज्यसभा शामिल होते हैं। उच्चतम न्यायालय न्यायपालिका का हिस्सा है, संसद का नहीं।"
   },
   {
     "id": "oo_088",
     "subject": "Polity",
     "difficulty": "easy",
-    "items": ["Municipal Corporation", "Gram Panchayat", "Panchayat Samiti", "Zila Parishad"],
+    "items": [
+      "Municipal Corporation",
+      "Gram Panchayat",
+      "Panchayat Samiti",
+      "Zila Parishad"
+    ],
     "odd_index": 0,
-    "explanation": "Gram Panchayat, Panchayat Samiti and Zila Parishad are the three tiers of rural Panchayati Raj. A Municipal Corporation is an urban local body."
+    "explanation": "Gram Panchayat, Panchayat Samiti and Zila Parishad are the three tiers of rural Panchayati Raj. A Municipal Corporation is an urban local body.",
+    "items_hi": [
+      "नगर निगम",
+      "ग्राम पंचायत",
+      "पंचायत समिति",
+      "ज़िला परिषद"
+    ],
+    "explanation_hi": "ग्राम पंचायत, पंचायत समिति और ज़िला परिषद ग्रामीण पंचायती राज के तीन स्तर हैं। नगर निगम एक शहरी स्थानीय निकाय है।"
   },
   {
     "id": "oo_089",
     "subject": "Polity",
     "difficulty": "medium",
-    "items": ["Election Commission", "UPSC", "NITI Aayog", "Finance Commission"],
+    "items": [
+      "Election Commission",
+      "UPSC",
+      "NITI Aayog",
+      "Finance Commission"
+    ],
     "odd_index": 2,
-    "explanation": "The Election Commission, UPSC and Finance Commission are constitutional bodies created by the Constitution. NITI Aayog was created by an executive resolution and has no constitutional status."
+    "explanation": "The Election Commission, UPSC and Finance Commission are constitutional bodies created by the Constitution. NITI Aayog was created by an executive resolution and has no constitutional status.",
+    "items_hi": [
+      "चुनाव आयोग",
+      "संघ लोक सेवा आयोग",
+      "नीति आयोग",
+      "वित्त आयोग"
+    ],
+    "explanation_hi": "चुनाव आयोग, संघ लोक सेवा आयोग और वित्त आयोग संविधान द्वारा बनाए गए संवैधानिक निकाय हैं। नीति आयोग एक कार्यकारी संकल्प द्वारा बनाया गया था और इसकी कोई संवैधानिक स्थिति नहीं है।"
   },
   {
     "id": "oo_090",
     "subject": "Polity",
     "difficulty": "medium",
-    "items": ["Article 352", "Article 356", "Article 360", "Article 368"],
+    "items": [
+      "Article 352",
+      "Article 356",
+      "Article 360",
+      "Article 368"
+    ],
     "odd_index": 3,
-    "explanation": "Articles 352, 356 and 360 are emergency provisions (national, state and financial emergency). Article 368 deals with the power of Parliament to amend the Constitution."
+    "explanation": "Articles 352, 356 and 360 are emergency provisions (national, state and financial emergency). Article 368 deals with the power of Parliament to amend the Constitution.",
+    "items_hi": [
+      "अनुच्छेद 352",
+      "अनुच्छेद 356",
+      "अनुच्छेद 360",
+      "अनुच्छेद 368"
+    ],
+    "explanation_hi": "अनुच्छेद 352, 356 और 360 आपातकालीन प्रावधान हैं (राष्ट्रीय, राज्य और वित्तीय आपातकाल)। अनुच्छेद 368 संविधान में संशोधन करने की संसद की शक्ति से संबंधित है।"
   },
   {
     "id": "oo_091",
     "subject": "Polity",
     "difficulty": "medium",
-    "items": ["Advocate General", "Governor", "CAG", "Attorney General"],
+    "items": [
+      "Advocate General",
+      "Governor",
+      "CAG",
+      "Attorney General"
+    ],
     "odd_index": 0,
-    "explanation": "The Governor, CAG and Attorney General are appointed by the President. The Advocate General of a state is appointed by the Governor."
+    "explanation": "The Governor, CAG and Attorney General are appointed by the President. The Advocate General of a state is appointed by the Governor.",
+    "items_hi": [
+      "महाधिवक्ता",
+      "राज्यपाल",
+      "नियंत्रक एवं महालेखा परीक्षक",
+      "महान्यायवादी"
+    ],
+    "explanation_hi": "राज्यपाल, नियंत्रक एवं महालेखा परीक्षक (कैग) और महान्यायवादी की नियुक्ति राष्ट्रपति द्वारा की जाती है। किसी राज्य के महाधिवक्ता की नियुक्ति राज्यपाल द्वारा की जाती है।"
   },
   {
     "id": "oo_092",
     "subject": "Polity",
     "difficulty": "medium",
-    "items": ["Judicial Review", "Fundamental Rights", "Parliamentary System", "Impeachment"],
+    "items": [
+      "Judicial Review",
+      "Fundamental Rights",
+      "Parliamentary System",
+      "Impeachment"
+    ],
     "odd_index": 2,
-    "explanation": "Judicial review, fundamental rights and impeachment of the President were borrowed from the US Constitution. The parliamentary system of government was borrowed from Britain."
+    "explanation": "Judicial review, fundamental rights and impeachment of the President were borrowed from the US Constitution. The parliamentary system of government was borrowed from Britain.",
+    "items_hi": [
+      "न्यायिक समीक्षा",
+      "मूल अधिकार",
+      "संसदीय प्रणाली",
+      "महाभियोग"
+    ],
+    "explanation_hi": "न्यायिक समीक्षा, मूल अधिकार और राष्ट्रपति का महाभियोग अमेरिकी संविधान से लिए गए थे। सरकार की संसदीय प्रणाली ब्रिटेन से ली गई थी।"
   },
   {
     "id": "oo_093",
     "subject": "Polity",
     "difficulty": "hard",
-    "items": ["NHRC", "CVC", "Lokpal", "CBI"],
+    "items": [
+      "NHRC",
+      "CVC",
+      "Lokpal",
+      "CBI"
+    ],
     "odd_index": 3,
-    "explanation": "The NHRC, CVC and Lokpal are statutory bodies created by Acts of Parliament. The CBI was established by an executive resolution and is not a statutory body."
+    "explanation": "The NHRC, CVC and Lokpal are statutory bodies created by Acts of Parliament. The CBI was established by an executive resolution and is not a statutory body.",
+    "items_hi": [
+      "राष्ट्रीय मानवाधिकार आयोग",
+      "केंद्रीय सतर्कता आयोग",
+      "लोकपाल",
+      "सीबीआई"
+    ],
+    "explanation_hi": "राष्ट्रीय मानवाधिकार आयोग, केंद्रीय सतर्कता आयोग और लोकपाल संसद के अधिनियमों द्वारा बनाए गए सांविधिक निकाय हैं। सीबीआई की स्थापना एक कार्यकारी संकल्प द्वारा हुई थी और यह कोई सांविधिक निकाय नहीं है।"
   },
   {
     "id": "oo_094",
     "subject": "Polity",
     "difficulty": "hard",
-    "items": ["Sovereign", "Socialist", "Secular", "Integrity"],
+    "items": [
+      "Sovereign",
+      "Socialist",
+      "Secular",
+      "Integrity"
+    ],
     "odd_index": 0,
-    "explanation": "'Socialist', 'secular' and 'integrity' were added to the Preamble by the 42nd Amendment in 1976. 'Sovereign' was part of the original Preamble of 1950."
+    "explanation": "'Socialist', 'secular' and 'integrity' were added to the Preamble by the 42nd Amendment in 1976. 'Sovereign' was part of the original Preamble of 1950.",
+    "items_hi": [
+      "संपूर्ण प्रभुत्व-संपन्न",
+      "समाजवादी",
+      "पंथनिरपेक्ष",
+      "अखंडता"
+    ],
+    "explanation_hi": "'समाजवादी', 'पंथनिरपेक्ष' और 'अखंडता' शब्दों को 1976 में 42वें संशोधन द्वारा प्रस्तावना में जोड़ा गया। 'संपूर्ण प्रभुत्व-संपन्न' 1950 की मूल प्रस्तावना का हिस्सा था।"
   },
   {
     "id": "oo_095",
     "subject": "Polity",
     "difficulty": "hard",
-    "items": ["B.R. Ambedkar", "K.M. Munshi", "Rajendra Prasad", "Alladi Ayyar"],
+    "items": [
+      "B.R. Ambedkar",
+      "K.M. Munshi",
+      "Rajendra Prasad",
+      "Alladi Ayyar"
+    ],
     "odd_index": 2,
-    "explanation": "Ambedkar (chairman), K.M. Munshi and Alladi Krishnaswami Ayyar were members of the Constitution's Drafting Committee. Rajendra Prasad was President of the Constituent Assembly, not a Drafting Committee member."
+    "explanation": "Ambedkar (chairman), K.M. Munshi and Alladi Krishnaswami Ayyar were members of the Constitution's Drafting Committee. Rajendra Prasad was President of the Constituent Assembly, not a Drafting Committee member.",
+    "items_hi": [
+      "बी.आर. अंबेडकर",
+      "के.एम. मुंशी",
+      "राजेंद्र प्रसाद",
+      "अल्लादी अय्यर"
+    ],
+    "explanation_hi": "अंबेडकर (अध्यक्ष), के.एम. मुंशी और अल्लादी कृष्णस्वामी अय्यर संविधान की प्रारूप समिति के सदस्य थे। राजेंद्र प्रसाद संविधान सभा के अध्यक्ष थे, प्रारूप समिति के सदस्य नहीं।"
   },
   {
     "id": "oo_096",
     "subject": "Polity",
     "difficulty": "hard",
-    "items": ["Governor", "Supreme Court Judge", "CEC", "CAG"],
+    "items": [
+      "Governor",
+      "Supreme Court Judge",
+      "CEC",
+      "CAG"
+    ],
     "odd_index": 0,
-    "explanation": "A Supreme Court judge, the Chief Election Commissioner and the CAG can be removed only through a special parliamentary process like impeachment. A Governor holds office at the pleasure of the President and can be removed at any time."
+    "explanation": "A Supreme Court judge, the Chief Election Commissioner and the CAG can be removed only through a special parliamentary process like impeachment. A Governor holds office at the pleasure of the President and can be removed at any time.",
+    "items_hi": [
+      "राज्यपाल",
+      "उच्चतम न्यायालय के न्यायाधीश",
+      "मुख्य चुनाव आयुक्त",
+      "नियंत्रक एवं महालेखा परीक्षक"
+    ],
+    "explanation_hi": "उच्चतम न्यायालय के न्यायाधीश, मुख्य चुनाव आयुक्त और कैग को केवल महाभियोग जैसी विशेष संसदीय प्रक्रिया से ही हटाया जा सकता है। राज्यपाल राष्ट्रपति की इच्छा-पर्यंत पद धारण करते हैं और किसी भी समय हटाए जा सकते हैं।"
   }
 ]

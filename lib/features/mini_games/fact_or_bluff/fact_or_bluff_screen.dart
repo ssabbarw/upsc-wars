@@ -23,13 +23,13 @@ class FactOrBluffScreen extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final provider = factOrBluffControllerProvider(
-      (subjects: subjectsCsv, difficulties: difficultiesCsv),
-    );
+    final provider = factOrBluffControllerProvider((
+      subjects: subjectsCsv,
+      difficulties: difficultiesCsv,
+    ));
     final async = ref.watch(provider);
     final secondsAsync = ref.watch(factOrBluffSecondsRemoteProvider);
-    final seconds =
-        secondsAsync.asData?.value ?? factOrBluffDefaultSeconds;
+    final seconds = secondsAsync.asData?.value ?? factOrBluffDefaultSeconds;
     final howToReady = useGameHowToSheet(
       context: context,
       ref: ref,
@@ -74,14 +74,14 @@ class FactOrBluffScreen extends HookConsumerWidget {
       footer: item == null || complete
           ? null
           : awaiting
-              ? _AnswerButtons(
-                  onFact: () => ref.read(provider.notifier).answer(true),
-                  onBluff: () => ref.read(provider.notifier).answer(false),
-                )
-              : RgPillButton(
-                  label: 'Next →',
-                  onPressed: () => ref.read(provider.notifier).next(),
-                ),
+          ? _AnswerButtons(
+              onFact: () => ref.read(provider.notifier).answer(true),
+              onBluff: () => ref.read(provider.notifier).answer(false),
+            )
+          : RgPillButton(
+              label: 'Next →',
+              onPressed: () => ref.read(provider.notifier).next(),
+            ),
       body: async.when(
         loading: () => const Center(
           child: CircularProgressIndicator(color: RgColors.teal),
@@ -108,9 +108,11 @@ class FactOrBluffScreen extends HookConsumerWidget {
 
           final progress = state.progress;
           final urgent = progress < 0.3;
-          final secsLeft = state.secondsLeft.ceil().clamp(0, state.durationSeconds);
-          final clock =
-              '0:${secsLeft.toString().padLeft(2, '0')}';
+          final secsLeft = state.secondsLeft.ceil().clamp(
+            0,
+            state.durationSeconds,
+          );
+          final clock = '0:${secsLeft.toString().padLeft(2, '0')}';
 
           return RgCenteredBody(
             padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 20),
@@ -119,14 +121,12 @@ class FactOrBluffScreen extends HookConsumerWidget {
                 Center(child: _VerdictPill(isFact: item.isFact)),
                 const SizedBox(height: 6),
                 Center(
-                  child: RgMonoLabel(
-                    switch (state.verdict) {
-                      FactOrBluffVerdict.correct => 'You got it',
-                      FactOrBluffVerdict.wrong => 'Not this time',
-                      FactOrBluffVerdict.timeout => 'Too slow',
-                      FactOrBluffVerdict.none => '',
-                    },
-                  ),
+                  child: RgMonoLabel(switch (state.verdict) {
+                    FactOrBluffVerdict.correct => 'You got it',
+                    FactOrBluffVerdict.wrong => 'Not this time',
+                    FactOrBluffVerdict.timeout => 'Too slow',
+                    FactOrBluffVerdict.none => '',
+                  }),
                 ),
                 const SizedBox(height: 16),
               ],
@@ -135,15 +135,16 @@ class FactOrBluffScreen extends HookConsumerWidget {
                 child: Text(
                   '“${item.statement}”',
                   textAlign: TextAlign.center,
-                  style: RgText.display(
-                    size: 20,
-                    weight: FontWeight.w800,
-                    height: 1.3,
-                  ).copyWith(
-                    decoration: !awaiting && !item.isFact
-                        ? TextDecoration.lineThrough
-                        : null,
-                  ),
+                  style:
+                      RgText.display(
+                        size: 20,
+                        weight: FontWeight.w800,
+                        height: 1.3,
+                      ).copyWith(
+                        decoration: !awaiting && !item.isFact
+                            ? TextDecoration.lineThrough
+                            : null,
+                      ),
                 ),
               ),
               if (awaiting) ...[

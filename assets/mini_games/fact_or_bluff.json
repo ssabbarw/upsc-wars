@@ -5,7 +5,9 @@
     "difficulty": "easy",
     "statement": "The script of the Indus Valley Civilisation has never been deciphered.",
     "is_fact": true,
-    "explanation": "Fact. Despite thousands of recovered seals, the Indus script remains undeciphered, unlike Brahmi or Kharosthi."
+    "explanation": "Fact. Despite thousands of recovered seals, the Indus script remains undeciphered, unlike Brahmi or Kharosthi.",
+    "statement_hi": "सिंधु घाटी सभ्यता की लिपि को आज तक पढ़ा (व्याख्यायित) नहीं जा सका है।",
+    "explanation_hi": "सत्य। हज़ारों मुहरें मिलने के बावजूद सिंधु लिपि अब तक अनपठित है, जबकि ब्राह्मी और खरोष्ठी लिपियाँ पढ़ी जा चुकी हैं।"
   },
   {
     "id": "fb_002",
@@ -13,7 +15,9 @@
     "difficulty": "easy",
     "statement": "Ashoka's edicts were written primarily in Sanskrit using the Devanagari script.",
     "is_fact": false,
-    "explanation": "Bluff. Most edicts were composed in Prakrit and written in Brahmi script, with Kharosthi in the northwest."
+    "explanation": "Bluff. Most edicts were composed in Prakrit and written in Brahmi script, with Kharosthi in the northwest.",
+    "statement_hi": "अशोक के अभिलेख मुख्यतः देवनागरी लिपि में संस्कृत भाषा में लिखे गए थे।",
+    "explanation_hi": "असत्य। अधिकांश अभिलेख प्राकृत भाषा में ब्राह्मी लिपि में लिखे गए थे, तथा उत्तर-पश्चिम में खरोष्ठी लिपि का प्रयोग हुआ।"
   },
   {
     "id": "fb_003",
@@ -21,7 +25,9 @@
     "difficulty": "easy",
     "statement": "The Rigveda is the oldest of the four Vedas.",
     "is_fact": true,
-    "explanation": "Fact. The Rigveda is the earliest Veda, followed by the Sama, Yajur and Atharva Vedas."
+    "explanation": "Fact. The Rigveda is the earliest Veda, followed by the Sama, Yajur and Atharva Vedas.",
+    "statement_hi": "ऋग्वेद चारों वेदों में सबसे प्राचीन है।",
+    "explanation_hi": "सत्य। ऋग्वेद सबसे पुराना वेद है, इसके बाद सामवेद, यजुर्वेद और अथर्ववेद आते हैं।"
   },
   {
     "id": "fb_004",
@@ -29,7 +35,9 @@
     "difficulty": "easy",
     "statement": "Chandragupta Maurya was the founder of the Gupta Empire.",
     "is_fact": false,
-    "explanation": "Bluff. Chandragupta Maurya founded the Maurya Empire; the Gupta line was founded by Sri Gupta centuries later."
+    "explanation": "Bluff. Chandragupta Maurya founded the Maurya Empire; the Gupta line was founded by Sri Gupta centuries later.",
+    "statement_hi": "चंद्रगुप्त मौर्य गुप्त साम्राज्य के संस्थापक थे।",
+    "explanation_hi": "असत्य। चंद्रगुप्त मौर्य ने मौर्य साम्राज्य की स्थापना की थी; गुप्त वंश की स्थापना कई शताब्दियों बाद श्रीगुप्त ने की थी।"
   },
   {
     "id": "fb_005",
@@ -37,7 +45,9 @@
     "difficulty": "medium",
     "statement": "The Greek ambassador Megasthenes wrote the Indica at the court of Chandragupta Maurya.",
     "is_fact": true,
-    "explanation": "Fact. Megasthenes was Seleucus Nicator's envoy to Chandragupta Maurya and recorded his observations in the Indica."
+    "explanation": "Fact. Megasthenes was Seleucus Nicator's envoy to Chandragupta Maurya and recorded his observations in the Indica.",
+    "statement_hi": "यूनानी राजदूत मेगस्थनीज ने चंद्रगुप्त मौर्य के दरबार में रहते हुए 'इंडिका' की रचना की।",
+    "explanation_hi": "सत्य। मेगस्थनीज सेल्यूकस निकेटर का राजदूत था जो चंद्रगुप्त मौर्य के दरबार में आया और उसने अपने अनुभवों को 'इंडिका' में दर्ज किया।"
   },
   {
     "id": "fb_006",
@@ -45,7 +55,9 @@
     "difficulty": "medium",
     "statement": "The Harappan port site of Lothal is located in present-day Rajasthan.",
     "is_fact": false,
-    "explanation": "Bluff. Lothal, with its famous dockyard, lies in Gujarat; Kalibangan is the well-known Harappan site in Rajasthan."
+    "explanation": "Bluff. Lothal, with its famous dockyard, lies in Gujarat; Kalibangan is the well-known Harappan site in Rajasthan.",
+    "statement_hi": "हड़प्पाकालीन बंदरगाह स्थल लोथल वर्तमान राजस्थान में स्थित है।",
+    "explanation_hi": "असत्य। अपने प्रसिद्ध गोदी (डॉकयार्ड) के लिए विख्यात लोथल गुजरात में स्थित है; कालीबंगन राजस्थान का प्रसिद्ध हड़प्पाई स्थल है।"
   },
   {
     "id": "fb_007",
@@ -53,7 +65,9 @@
     "difficulty": "medium",
     "statement": "The Third Buddhist Council was held at Pataliputra under Ashoka's patronage.",
     "is_fact": true,
-    "explanation": "Fact. The Third Council met at Pataliputra around 250 BCE under Ashoka, presided over by Moggaliputta Tissa."
+    "explanation": "Fact. The Third Council met at Pataliputra around 250 BCE under Ashoka, presided over by Moggaliputta Tissa.",
+    "statement_hi": "तीसरी बौद्ध संगीति पाटलिपुत्र में अशोक के संरक्षण में आयोजित हुई थी।",
+    "explanation_hi": "सत्य। तीसरी संगीति लगभग 250 ईसा पूर्व पाटलिपुत्र में अशोक के संरक्षण में हुई थी, जिसकी अध्यक्षता मोग्गलिपुत्त तिस्स ने की थी।"
   },
   {
     "id": "fb_008",
@@ -61,7 +75,9 @@
     "difficulty": "medium",
     "statement": "The Arthashastra was written by Banabhatta.",
     "is_fact": false,
-    "explanation": "Bluff. The Arthashastra is attributed to Kautilya (Chanakya); Banabhatta wrote the Harshacharita."
+    "explanation": "Bluff. The Arthashastra is attributed to Kautilya (Chanakya); Banabhatta wrote the Harshacharita.",
+    "statement_hi": "अर्थशास्त्र की रचना बाणभट्ट ने की थी।",
+    "explanation_hi": "असत्य। अर्थशास्त्र का श्रेय कौटिल्य (चाणक्य) को दिया जाता है; बाणभट्ट ने हर्षचरित लिखा था।"
   },
   {
     "id": "fb_009",
@@ -69,7 +85,9 @@
     "difficulty": "hard",
     "statement": "Xuanzang's 7th-century account describes Nalanda in a state of ruin.",
     "is_fact": false,
-    "explanation": "Bluff. Xuanzang saw Nalanda at its peak; its ruined state was recorded much later, by Dharmasvamin in the 13th century."
+    "explanation": "Bluff. Xuanzang saw Nalanda at its peak; its ruined state was recorded much later, by Dharmasvamin in the 13th century.",
+    "statement_hi": "7वीं शताब्दी में ह्वेनसांग के विवरण में नालंदा को खंडहर अवस्था में बताया गया है।",
+    "explanation_hi": "असत्य। ह्वेनसांग ने नालंदा को अपने चरम पर देखा था; इसकी जर्जर अवस्था का वर्णन बहुत बाद में, 13वीं शताब्दी में धर्मस्वामिन ने किया।"
   },
   {
     "id": "fb_010",
@@ -77,7 +95,9 @@
     "difficulty": "hard",
     "statement": "The Junagadh inscription of Rudradaman is the earliest long inscription in chaste Sanskrit.",
     "is_fact": true,
-    "explanation": "Fact. The 2nd-century CE Junagadh rock inscription of the Saka ruler Rudradaman I is the first major inscription in pure Sanskrit."
+    "explanation": "Fact. The 2nd-century CE Junagadh rock inscription of the Saka ruler Rudradaman I is the first major inscription in pure Sanskrit.",
+    "statement_hi": "रुद्रदामन का जूनागढ़ अभिलेख शुद्ध संस्कृत में सबसे पहला दीर्घ अभिलेख है।",
+    "explanation_hi": "सत्य। शक शासक रुद्रदामन प्रथम का दूसरी शताब्दी ईस्वी का जूनागढ़ शैल अभिलेख शुद्ध संस्कृत में पहला बड़ा अभिलेख है।"
   },
   {
     "id": "fb_011",
@@ -85,7 +105,9 @@
     "difficulty": "hard",
     "statement": "The iron pillar at Mehrauli was erected by Ashoka.",
     "is_fact": false,
-    "explanation": "Bluff. The rust-resistant pillar names a king 'Chandra', widely identified as Gupta ruler Chandragupta II, not Ashoka."
+    "explanation": "Bluff. The rust-resistant pillar names a king 'Chandra', widely identified as Gupta ruler Chandragupta II, not Ashoka.",
+    "statement_hi": "मेहरौली का लौह स्तंभ अशोक द्वारा बनवाया गया था।",
+    "explanation_hi": "असत्य। इस जंग-रोधी स्तंभ पर 'चंद्र' नामक राजा का उल्लेख है, जिसे व्यापक रूप से गुप्त शासक चंद्रगुप्त द्वितीय माना जाता है, अशोक नहीं।"
   },
   {
     "id": "fb_012",
@@ -93,7 +115,9 @@
     "difficulty": "hard",
     "statement": "Sangam-era Tamil texts refer to Roman and Greek traders as Yavanas.",
     "is_fact": true,
-    "explanation": "Fact. Sangam literature uses 'Yavana' for Westerners, reflecting the thriving Indo-Roman trade in ports like Muziris."
+    "explanation": "Fact. Sangam literature uses 'Yavana' for Westerners, reflecting the thriving Indo-Roman trade in ports like Muziris.",
+    "statement_hi": "संगमकालीन तमिल ग्रंथों में रोमन और यूनानी व्यापारियों को 'यवन' कहा गया है।",
+    "explanation_hi": "सत्य। संगम साहित्य में पश्चिमी लोगों के लिए 'यवन' शब्द का प्रयोग हुआ है, जो मुज़िरिस जैसे बंदरगाहों में फल-फूल रहे भारत-रोम व्यापार को दर्शाता है।"
   },
   {
     "id": "fb_013",
@@ -101,7 +125,9 @@
     "difficulty": "easy",
     "statement": "The Vijayanagara Empire was founded by the brothers Harihara and Bukka in the 14th century.",
     "is_fact": true,
-    "explanation": "Fact. Harihara I and Bukka I founded Vijayanagara around 1336 CE on the banks of the Tungabhadra."
+    "explanation": "Fact. Harihara I and Bukka I founded Vijayanagara around 1336 CE on the banks of the Tungabhadra.",
+    "statement_hi": "विजयनगर साम्राज्य की स्थापना 14वीं शताब्दी में भाइयों हरिहर और बुक्का ने की थी।",
+    "explanation_hi": "सत्य। हरिहर प्रथम और बुक्का प्रथम ने लगभग 1336 ईस्वी में तुंगभद्रा नदी के तट पर विजयनगर की स्थापना की।"
   },
   {
     "id": "fb_014",
@@ -109,7 +135,9 @@
     "difficulty": "easy",
     "statement": "The First Battle of Panipat in 1526 was fought between Babur and Sher Shah Suri.",
     "is_fact": false,
-    "explanation": "Bluff. Babur defeated Ibrahim Lodi at Panipat in 1526; Sher Shah rose against Babur's son Humayun later."
+    "explanation": "Bluff. Babur defeated Ibrahim Lodi at Panipat in 1526; Sher Shah rose against Babur's son Humayun later.",
+    "statement_hi": "1526 का प्रथम पानीपत युद्ध बाबर और शेरशाह सूरी के बीच लड़ा गया था।",
+    "explanation_hi": "असत्य। बाबर ने 1526 में पानीपत में इब्राहिम लोदी को हराया था; शेरशाह बाद में बाबर के पुत्र हुमायूँ के विरुद्ध उभरा।"
   },
   {
     "id": "fb_015",
@@ -117,7 +145,9 @@
     "difficulty": "easy",
     "statement": "Qutb-ud-din Aibak was the first Sultan of the Delhi Sultanate.",
     "is_fact": true,
-    "explanation": "Fact. Aibak founded the Slave (Mamluk) dynasty in 1206, beginning the Delhi Sultanate."
+    "explanation": "Fact. Aibak founded the Slave (Mamluk) dynasty in 1206, beginning the Delhi Sultanate.",
+    "statement_hi": "कुतुबुद्दीन ऐबक दिल्ली सल्तनत का प्रथम सुल्तान था।",
+    "explanation_hi": "सत्य। ऐबक ने 1206 में गुलाम (मामलुक) वंश की स्थापना की, जिससे दिल्ली सल्तनत की शुरुआत हुई।"
   },
   {
     "id": "fb_016",
@@ -125,7 +155,9 @@
     "difficulty": "easy",
     "statement": "Akbar built the Taj Mahal in memory of his wife.",
     "is_fact": false,
-    "explanation": "Bluff. The Taj Mahal was built by Shah Jahan in memory of Mumtaz Mahal, not by Akbar."
+    "explanation": "Bluff. The Taj Mahal was built by Shah Jahan in memory of Mumtaz Mahal, not by Akbar.",
+    "statement_hi": "अकबर ने अपनी पत्नी की स्मृति में ताजमहल बनवाया था।",
+    "explanation_hi": "असत्य। ताजमहल शाहजहाँ ने मुमताज़ महल की स्मृति में बनवाया था, अकबर ने नहीं।"
   },
   {
     "id": "fb_017",
@@ -133,7 +165,9 @@
     "difficulty": "medium",
     "statement": "Alauddin Khalji introduced strict market price controls in Delhi.",
     "is_fact": true,
-    "explanation": "Fact. Alauddin fixed prices of grain and essentials and set up regulated markets to sustain his large army cheaply."
+    "explanation": "Fact. Alauddin fixed prices of grain and essentials and set up regulated markets to sustain his large army cheaply.",
+    "statement_hi": "अलाउद्दीन खिलजी ने दिल्ली में सख्त बाज़ार मूल्य नियंत्रण लागू किया था।",
+    "explanation_hi": "सत्य। अलाउद्दीन ने अपनी विशाल सेना को सस्ते में बनाए रखने हेतु अनाज व आवश्यक वस्तुओं के मूल्य निर्धारित किए और नियंत्रित बाज़ार स्थापित किए।"
   },
   {
     "id": "fb_018",
@@ -141,7 +175,9 @@
     "difficulty": "medium",
     "statement": "The Moroccan traveller Ibn Battuta visited India during the reign of Akbar.",
     "is_fact": false,
-    "explanation": "Bluff. Ibn Battuta came in the 14th century under Muhammad bin Tughlaq, who made him qazi of Delhi."
+    "explanation": "Bluff. Ibn Battuta came in the 14th century under Muhammad bin Tughlaq, who made him qazi of Delhi.",
+    "statement_hi": "मोरक्को के यात्री इब्न बतूता ने अकबर के शासनकाल में भारत की यात्रा की थी।",
+    "explanation_hi": "असत्य। इब्न बतूता 14वीं शताब्दी में मुहम्मद बिन तुगलक के शासनकाल में आया था, जिसने उसे दिल्ली का काज़ी बनाया।"
   },
   {
     "id": "fb_019",
@@ -149,7 +185,9 @@
     "difficulty": "medium",
     "statement": "Muhammad bin Tughlaq shifted his capital from Delhi to Daulatabad.",
     "is_fact": true,
-    "explanation": "Fact. He moved the capital to Daulatabad (Devagiri) around 1327, an experiment he later reversed."
+    "explanation": "Fact. He moved the capital to Daulatabad (Devagiri) around 1327, an experiment he later reversed.",
+    "statement_hi": "मुहम्मद बिन तुगलक ने अपनी राजधानी दिल्ली से दौलताबाद स्थानांतरित की थी।",
+    "explanation_hi": "सत्य। उसने लगभग 1327 में राजधानी दौलताबाद (देवगिरि) स्थानांतरित की थी, जो एक प्रयोग था जिसे उसने बाद में वापस पलट दिया।"
   },
   {
     "id": "fb_020",
@@ -157,7 +195,9 @@
     "difficulty": "medium",
     "statement": "The Battle of Talikota in 1565 led to the destruction of the Bahmani kingdom.",
     "is_fact": false,
-    "explanation": "Bluff. Talikota shattered the Vijayanagara Empire; the victors were the Deccan Sultanates that had emerged from the Bahmani kingdom."
+    "explanation": "Bluff. Talikota shattered the Vijayanagara Empire; the victors were the Deccan Sultanates that had emerged from the Bahmani kingdom.",
+    "statement_hi": "1565 के तालीकोटा युद्ध ने बहमनी राज्य के विनाश का कारण बना।",
+    "explanation_hi": "असत्य। तालीकोटा ने विजयनगर साम्राज्य को छिन्न-भिन्न कर दिया; विजेता वे दक्कन सल्तनतें थीं जो बहमनी राज्य से उभरी थीं।"
   },
   {
     "id": "fb_021",
@@ -165,7 +205,9 @@
     "difficulty": "hard",
     "statement": "Krishnadevaraya authored the Telugu work Amuktamalyada.",
     "is_fact": true,
-    "explanation": "Fact. The Vijayanagara ruler Krishnadevaraya wrote Amuktamalyada, a Telugu classic on the saint Andal."
+    "explanation": "Fact. The Vijayanagara ruler Krishnadevaraya wrote Amuktamalyada, a Telugu classic on the saint Andal.",
+    "statement_hi": "कृष्णदेवराय ने तेलुगु ग्रंथ 'आमुक्तमाल्यद' की रचना की थी।",
+    "explanation_hi": "सत्य। विजयनगर शासक कृष्णदेवराय ने आमुक्तमाल्यद लिखा, जो संत आंडाल पर आधारित एक तेलुगु क्लासिक है।"
   },
   {
     "id": "fb_022",
@@ -173,7 +215,9 @@
     "difficulty": "hard",
     "statement": "The Qutub Minar was completed by Qutb-ud-din Aibak.",
     "is_fact": false,
-    "explanation": "Bluff. Aibak only began the minar; it was completed by his successor Iltutmish and later repaired by Firoz Shah Tughlaq."
+    "explanation": "Bluff. Aibak only began the minar; it was completed by his successor Iltutmish and later repaired by Firoz Shah Tughlaq.",
+    "statement_hi": "कुतुब मीनार का निर्माण कुतुबुद्दीन ऐबक ने पूरा किया था।",
+    "explanation_hi": "असत्य। ऐबक ने केवल मीनार का निर्माण शुरू किया था; इसे उसके उत्तराधिकारी इल्तुतमिश ने पूरा किया और बाद में फिरोज़ शाह तुगलक ने इसकी मरम्मत करवाई।"
   },
   {
     "id": "fb_023",
@@ -181,7 +225,9 @@
     "difficulty": "hard",
     "statement": "Rajendra Chola I built a new capital at Gangaikonda Cholapuram after his Ganga expedition.",
     "is_fact": true,
-    "explanation": "Fact. Rajendra I took the title Gangaikonda after his northern campaign and founded Gangaikonda Cholapuram as his capital."
+    "explanation": "Fact. Rajendra I took the title Gangaikonda after his northern campaign and founded Gangaikonda Cholapuram as his capital.",
+    "statement_hi": "राजेंद्र चोल प्रथम ने अपने गंगा अभियान के बाद गंगईकोंडचोलपुरम में नई राजधानी बनाई।",
+    "explanation_hi": "सत्य। राजेंद्र प्रथम ने अपने उत्तरी अभियान के बाद 'गंगईकोंड' की उपाधि धारण की और गंगईकोंडचोलपुरम को अपनी राजधानी के रूप में स्थापित किया।"
   },
   {
     "id": "fb_024",
@@ -189,7 +235,9 @@
     "difficulty": "hard",
     "statement": "Malik Kafur led Alauddin Khalji's military campaigns into Bengal.",
     "is_fact": false,
-    "explanation": "Bluff. Malik Kafur's famous campaigns were into the Deccan and south — Devagiri, Warangal, Dwarasamudra and Madurai — not Bengal."
+    "explanation": "Bluff. Malik Kafur's famous campaigns were into the Deccan and south — Devagiri, Warangal, Dwarasamudra and Madurai — not Bengal.",
+    "statement_hi": "मलिक काफूर ने अलाउद्दीन खिलजी के सैन्य अभियानों का नेतृत्व बंगाल में किया था।",
+    "explanation_hi": "असत्य। मलिक काफूर के प्रसिद्ध अभियान दक्कन और दक्षिण की ओर थे — देवगिरि, वारंगल, द्वारसमुद्र और मदुरै — बंगाल की ओर नहीं।"
   },
   {
     "id": "fb_025",
@@ -197,7 +245,9 @@
     "difficulty": "easy",
     "statement": "The Indian National Congress was founded in 1885 by Bal Gangadhar Tilak.",
     "is_fact": false,
-    "explanation": "Bluff. The Congress was founded in 1885 by Allan Octavian Hume, a retired British civil servant; Tilak joined later."
+    "explanation": "Bluff. The Congress was founded in 1885 by Allan Octavian Hume, a retired British civil servant; Tilak joined later.",
+    "statement_hi": "भारतीय राष्ट्रीय कांग्रेस की स्थापना 1885 में बाल गंगाधर तिलक ने की थी।",
+    "explanation_hi": "असत्य। कांग्रेस की स्थापना 1885 में सेवानिवृत्त ब्रिटिश सिविल सेवक एलन ऑक्टेवियन ह्यूम ने की थी; तिलक बाद में इसमें शामिल हुए।"
   },
   {
     "id": "fb_026",
@@ -205,7 +255,9 @@
     "difficulty": "easy",
     "statement": "The Revolt of 1857 began with the sepoys at Meerut.",
     "is_fact": true,
-    "explanation": "Fact. The uprising broke out at Meerut on 10 May 1857 before the sepoys marched to Delhi."
+    "explanation": "Fact. The uprising broke out at Meerut on 10 May 1857 before the sepoys marched to Delhi.",
+    "statement_hi": "1857 का विद्रोह मेरठ के सिपाहियों से आरंभ हुआ था।",
+    "explanation_hi": "सत्य। यह विद्रोह 10 मई 1857 को मेरठ में भड़का, इसके बाद सिपाही दिल्ली की ओर बढ़े।"
   },
   {
     "id": "fb_027",
@@ -213,7 +265,9 @@
     "difficulty": "easy",
     "statement": "Mahatma Gandhi launched the Dandi March in 1930 against the salt tax.",
     "is_fact": true,
-    "explanation": "Fact. Gandhi marched from Sabarmati to Dandi in March–April 1930, breaking the salt law to launch Civil Disobedience."
+    "explanation": "Fact. Gandhi marched from Sabarmati to Dandi in March–April 1930, breaking the salt law to launch Civil Disobedience.",
+    "statement_hi": "महात्मा गांधी ने 1930 में नमक कर के विरुद्ध दांडी मार्च शुरू किया था।",
+    "explanation_hi": "सत्य। गांधीजी ने मार्च-अप्रैल 1930 में साबरमती से दांडी तक मार्च किया और नमक कानून तोड़कर सविनय अवज्ञा आंदोलन की शुरुआत की।"
   },
   {
     "id": "fb_028",
@@ -221,7 +275,9 @@
     "difficulty": "easy",
     "statement": "The Quit India Movement was launched in 1922.",
     "is_fact": false,
-    "explanation": "Bluff. Quit India was launched in August 1942; 1922 was when Gandhi withdrew Non-Cooperation after Chauri Chaura."
+    "explanation": "Bluff. Quit India was launched in August 1942; 1922 was when Gandhi withdrew Non-Cooperation after Chauri Chaura.",
+    "statement_hi": "भारत छोड़ो आंदोलन 1922 में शुरू किया गया था।",
+    "explanation_hi": "असत्य। भारत छोड़ो आंदोलन अगस्त 1942 में शुरू हुआ; 1922 में चौरी-चौरा कांड के बाद गांधीजी ने असहयोग आंदोलन वापस लिया था।"
   },
   {
     "id": "fb_029",
@@ -229,7 +285,9 @@
     "difficulty": "medium",
     "statement": "The Partition of Bengal in 1905 was carried out by Lord Curzon.",
     "is_fact": true,
-    "explanation": "Fact. Curzon partitioned Bengal in 1905, triggering the Swadeshi Movement; the partition was annulled in 1911."
+    "explanation": "Fact. Curzon partitioned Bengal in 1905, triggering the Swadeshi Movement; the partition was annulled in 1911.",
+    "statement_hi": "1905 में बंगाल का विभाजन लॉर्ड कर्ज़न द्वारा किया गया था।",
+    "explanation_hi": "सत्य। कर्ज़न ने 1905 में बंगाल का विभाजन किया, जिससे स्वदेशी आंदोलन शुरू हुआ; यह विभाजन 1911 में रद्द कर दिया गया।"
   },
   {
     "id": "fb_030",
@@ -237,7 +295,9 @@
     "difficulty": "medium",
     "statement": "The Simon Commission was boycotted because it included no British members.",
     "is_fact": false,
-    "explanation": "Bluff. It was an all-British commission; Indians boycotted it precisely because it had no Indian member."
+    "explanation": "Bluff. It was an all-British commission; Indians boycotted it precisely because it had no Indian member.",
+    "statement_hi": "साइमन कमीशन का बहिष्कार इसलिए किया गया क्योंकि इसमें कोई ब्रिटिश सदस्य नहीं था।",
+    "explanation_hi": "असत्य। यह पूर्णतः ब्रिटिश आयोग था; भारतीयों ने इसका बहिष्कार इसलिए किया क्योंकि इसमें कोई भारतीय सदस्य नहीं था।"
   },
   {
     "id": "fb_031",
@@ -245,7 +305,9 @@
     "difficulty": "medium",
     "statement": "The Swaraj Party was founded by C.R. Das and Motilal Nehru.",
     "is_fact": true,
-    "explanation": "Fact. Das and Motilal Nehru formed the Swaraj Party in 1923 to contest council elections after Non-Cooperation ended."
+    "explanation": "Fact. Das and Motilal Nehru formed the Swaraj Party in 1923 to contest council elections after Non-Cooperation ended.",
+    "statement_hi": "स्वराज पार्टी की स्थापना सी.आर. दास और मोतीलाल नेहरू ने की थी।",
+    "explanation_hi": "सत्य। दास और मोतीलाल नेहरू ने असहयोग आंदोलन समाप्त होने के बाद परिषद चुनाव लड़ने हेतु 1923 में स्वराज पार्टी बनाई।"
   },
   {
     "id": "fb_032",
@@ -253,7 +315,9 @@
     "difficulty": "medium",
     "statement": "The Poona Pact of 1932 was signed between Gandhi and Jinnah.",
     "is_fact": false,
-    "explanation": "Bluff. The Poona Pact was between Gandhi and B.R. Ambedkar, replacing separate electorates for Depressed Classes with reserved seats."
+    "explanation": "Bluff. The Poona Pact was between Gandhi and B.R. Ambedkar, replacing separate electorates for Depressed Classes with reserved seats.",
+    "statement_hi": "1932 के पूना पैक्ट पर गांधी और जिन्ना के बीच हस्ताक्षर हुए थे।",
+    "explanation_hi": "असत्य। पूना पैक्ट गांधी और बी.आर. अंबेडकर के बीच हुआ था, जिसमें दलित वर्गों हेतु पृथक निर्वाचिका के स्थान पर आरक्षित सीटें दी गईं।"
   },
   {
     "id": "fb_033",
@@ -261,7 +325,9 @@
     "difficulty": "hard",
     "statement": "The Ghadar Party was founded in 1913 in San Francisco.",
     "is_fact": true,
-    "explanation": "Fact. Indian emigrants on the US Pacific coast, led by figures like Lala Har Dayal, founded the Ghadar Party in 1913."
+    "explanation": "Fact. Indian emigrants on the US Pacific coast, led by figures like Lala Har Dayal, founded the Ghadar Party in 1913.",
+    "statement_hi": "ग़दर पार्टी की स्थापना 1913 में सैन फ्रांसिस्को में हुई थी।",
+    "explanation_hi": "सत्य। अमेरिका के प्रशांत तट पर भारतीय प्रवासियों ने लाला हरदयाल जैसे नेताओं के नेतृत्व में 1913 में ग़दर पार्टी की स्थापना की।"
   },
   {
     "id": "fb_034",
@@ -269,7 +335,9 @@
     "difficulty": "hard",
     "statement": "The Indian National Army was originally founded by Subhas Chandra Bose.",
     "is_fact": false,
-    "explanation": "Bluff. The INA was first raised in 1942 under Mohan Singh; Bose revived and led it from 1943."
+    "explanation": "Bluff. The INA was first raised in 1942 under Mohan Singh; Bose revived and led it from 1943.",
+    "statement_hi": "भारतीय राष्ट्रीय सेना की स्थापना मूल रूप से सुभाष चंद्र बोस ने की थी।",
+    "explanation_hi": "असत्य। आईएनए की स्थापना पहली बार 1942 में मोहन सिंह के अधीन हुई थी; बोस ने 1943 से इसे पुनर्जीवित कर इसका नेतृत्व किया।"
   },
   {
     "id": "fb_035",
@@ -277,7 +345,9 @@
     "difficulty": "hard",
     "statement": "Lord Dalhousie annexed Awadh in 1856 on grounds of misgovernance, not the Doctrine of Lapse.",
     "is_fact": true,
-    "explanation": "Fact. Awadh had heirs, so Lapse did not apply; it was annexed citing maladministration by Nawab Wajid Ali Shah."
+    "explanation": "Fact. Awadh had heirs, so Lapse did not apply; it was annexed citing maladministration by Nawab Wajid Ali Shah.",
+    "statement_hi": "लॉर्ड डलहौज़ी ने 1856 में अवध को कुशासन के आधार पर अधिग्रहीत किया, न कि व्यपगत सिद्धांत के तहत।",
+    "explanation_hi": "सत्य। अवध में उत्तराधिकारी थे, इसलिए व्यपगत सिद्धांत लागू नहीं होता था; इसे नवाब वाजिद अली शाह के कुप्रशासन के आरोप में अधिग्रहीत किया गया।"
   },
   {
     "id": "fb_036",
@@ -285,7 +355,9 @@
     "difficulty": "hard",
     "statement": "The Lucknow Pact of 1916 was an agreement between the Congress and the British government.",
     "is_fact": false,
-    "explanation": "Bluff. The Lucknow Pact was between the Congress and the Muslim League, in which Congress accepted separate electorates."
+    "explanation": "Bluff. The Lucknow Pact was between the Congress and the Muslim League, in which Congress accepted separate electorates.",
+    "statement_hi": "1916 का लखनऊ समझौता कांग्रेस और ब्रिटिश सरकार के बीच हुआ था।",
+    "explanation_hi": "असत्य। लखनऊ समझौता कांग्रेस और मुस्लिम लीग के बीच हुआ था, जिसमें कांग्रेस ने पृथक निर्वाचिका को स्वीकार किया।"
   },
   {
     "id": "fb_037",
@@ -293,7 +365,9 @@
     "difficulty": "easy",
     "statement": "Bharatanatyam is a classical dance form of Tamil Nadu.",
     "is_fact": true,
-    "explanation": "Fact. Bharatanatyam evolved in Tamil Nadu's temples and is among India's oldest recognised classical dances."
+    "explanation": "Fact. Bharatanatyam evolved in Tamil Nadu's temples and is among India's oldest recognised classical dances.",
+    "statement_hi": "भरतनाट्यम तमिलनाडु का एक शास्त्रीय नृत्य रूप है।",
+    "explanation_hi": "सत्य। भरतनाट्यम तमिलनाडु के मंदिरों में विकसित हुआ और भारत के सबसे प्राचीन मान्यता प्राप्त शास्त्रीय नृत्यों में से एक है।"
   },
   {
     "id": "fb_038",
@@ -301,7 +375,9 @@
     "difficulty": "easy",
     "statement": "Kathakali is a classical dance form of Odisha.",
     "is_fact": false,
-    "explanation": "Bluff. Kathakali belongs to Kerala; Odisha's classical dance is Odissi."
+    "explanation": "Bluff. Kathakali belongs to Kerala; Odisha's classical dance is Odissi.",
+    "statement_hi": "कथकली ओडिशा का एक शास्त्रीय नृत्य रूप है।",
+    "explanation_hi": "असत्य। कथकली केरल का नृत्य है; ओडिशा का शास्त्रीय नृत्य ओडिसी है।"
   },
   {
     "id": "fb_039",
@@ -309,7 +385,9 @@
     "difficulty": "easy",
     "statement": "The Sun Temple at Konark is located in Odisha.",
     "is_fact": true,
-    "explanation": "Fact. The 13th-century Konark Sun Temple, built by Narasimhadeva I, is a UNESCO World Heritage Site in Odisha."
+    "explanation": "Fact. The 13th-century Konark Sun Temple, built by Narasimhadeva I, is a UNESCO World Heritage Site in Odisha.",
+    "statement_hi": "कोणार्क का सूर्य मंदिर ओडिशा में स्थित है।",
+    "explanation_hi": "सत्य। नरसिंहदेव प्रथम द्वारा निर्मित 13वीं शताब्दी का कोणार्क सूर्य मंदिर ओडिशा में स्थित एक यूनेस्को विश्व धरोहर स्थल है।"
   },
   {
     "id": "fb_040",
@@ -317,7 +395,9 @@
     "difficulty": "easy",
     "statement": "The Ajanta caves are famous mainly for their Jain sculptures.",
     "is_fact": false,
-    "explanation": "Bluff. Ajanta is renowned for Buddhist murals and rock-cut monasteries, not Jain art."
+    "explanation": "Bluff. Ajanta is renowned for Buddhist murals and rock-cut monasteries, not Jain art.",
+    "statement_hi": "अजंता की गुफाएँ मुख्यतः अपनी जैन मूर्तियों के लिए प्रसिद्ध हैं।",
+    "explanation_hi": "असत्य। अजंता बौद्ध भित्तिचित्रों और शैलकृत विहारों के लिए प्रसिद्ध है, जैन कला के लिए नहीं।"
   },
   {
     "id": "fb_041",
@@ -325,7 +405,9 @@
     "difficulty": "medium",
     "statement": "Sattriya, the classical dance of Assam, was introduced by the Vaishnavite saint Sankaradeva.",
     "is_fact": true,
-    "explanation": "Fact. Sattriya originated in the Vaishnavite monasteries (sattras) established by Srimanta Sankaradeva in the 15th–16th century."
+    "explanation": "Fact. Sattriya originated in the Vaishnavite monasteries (sattras) established by Srimanta Sankaradeva in the 15th–16th century.",
+    "statement_hi": "असम के शास्त्रीय नृत्य सत्रीया की शुरुआत वैष्णव संत शंकरदेव ने की थी।",
+    "explanation_hi": "सत्य। सत्रीया की उत्पत्ति 15वीं-16वीं शताब्दी में श्रीमंत शंकरदेव द्वारा स्थापित वैष्णव मठों (सत्रों) में हुई।"
   },
   {
     "id": "fb_042",
@@ -333,7 +415,9 @@
     "difficulty": "medium",
     "statement": "Hindustani vocalist Bhimsen Joshi belonged to the Gwalior gharana.",
     "is_fact": false,
-    "explanation": "Bluff. Bhimsen Joshi, a Bharat Ratna awardee, was the towering voice of the Kirana gharana."
+    "explanation": "Bluff. Bhimsen Joshi, a Bharat Ratna awardee, was the towering voice of the Kirana gharana.",
+    "statement_hi": "हिंदुस्तानी गायक भीमसेन जोशी ग्वालियर घराने से संबंधित थे।",
+    "explanation_hi": "असत्य। भारत रत्न से सम्मानित भीमसेन जोशी किराना घराने की महान आवाज़ थे।"
   },
   {
     "id": "fb_043",
@@ -341,7 +425,9 @@
     "difficulty": "medium",
     "statement": "The Khajuraho temples were built by the Chandela dynasty.",
     "is_fact": true,
-    "explanation": "Fact. The Chandelas built the Khajuraho temple complex in Madhya Pradesh between the 10th and 12th centuries."
+    "explanation": "Fact. The Chandelas built the Khajuraho temple complex in Madhya Pradesh between the 10th and 12th centuries.",
+    "statement_hi": "खजुराहो के मंदिरों का निर्माण चंदेल वंश ने करवाया था।",
+    "explanation_hi": "सत्य। चंदेलों ने 10वीं से 12वीं शताब्दी के बीच मध्य प्रदेश में खजुराहो मंदिर परिसर का निर्माण करवाया।"
   },
   {
     "id": "fb_044",
@@ -349,7 +435,9 @@
     "difficulty": "medium",
     "statement": "Madhubani painting is a traditional folk art of West Bengal.",
     "is_fact": false,
-    "explanation": "Bluff. Madhubani (Mithila) painting comes from Bihar; West Bengal is known for Kalighat and Patachitra scroll painting."
+    "explanation": "Bluff. Madhubani (Mithila) painting comes from Bihar; West Bengal is known for Kalighat and Patachitra scroll painting.",
+    "statement_hi": "मधुबनी चित्रकला पश्चिम बंगाल की पारंपरिक लोक कला है।",
+    "explanation_hi": "असत्य। मधुबनी (मिथिला) चित्रकला बिहार से है; पश्चिम बंगाल कालीघाट और पटचित्र स्क्रॉल पेंटिंग के लिए जाना जाता है।"
   },
   {
     "id": "fb_045",
@@ -357,7 +445,9 @@
     "difficulty": "hard",
     "statement": "The Chola bronze Nataraja depicts Shiva performing the Ananda Tandava.",
     "is_fact": true,
-    "explanation": "Fact. The iconic Chola Nataraja shows Shiva in the Ananda Tandava, the cosmic dance of bliss, within a ring of fire."
+    "explanation": "Fact. The iconic Chola Nataraja shows Shiva in the Ananda Tandava, the cosmic dance of bliss, within a ring of fire.",
+    "statement_hi": "चोल कांस्य नटराज मूर्ति शिव के आनंद तांडव को दर्शाती है।",
+    "explanation_hi": "सत्य। प्रतिष्ठित चोल नटराज मूर्ति शिव को अग्नि-वलय के भीतर आनंद तांडव, यानी ब्रह्मांडीय आनंद-नृत्य करते हुए दर्शाती है।"
   },
   {
     "id": "fb_046",
@@ -365,7 +455,9 @@
     "difficulty": "hard",
     "statement": "The Gandhara school of art primarily used white marble.",
     "is_fact": false,
-    "explanation": "Bluff. Gandhara sculptors mainly used grey-blue schist and stucco; the Mathura school used spotted red sandstone."
+    "explanation": "Bluff. Gandhara sculptors mainly used grey-blue schist and stucco; the Mathura school used spotted red sandstone.",
+    "statement_hi": "गांधार कला शैली में मुख्यतः सफेद संगमरमर का प्रयोग हुआ।",
+    "explanation_hi": "असत्य। गांधार के मूर्तिकारों ने मुख्यतः स्लेटी-नीले शिस्ट पत्थर और स्टको का प्रयोग किया; मथुरा शैली में धब्बेदार लाल बलुआ पत्थर का प्रयोग हुआ।"
   },
   {
     "id": "fb_047",
@@ -373,7 +465,9 @@
     "difficulty": "hard",
     "statement": "Sankirtana, the ritual singing of Manipur, is on UNESCO's Intangible Cultural Heritage list.",
     "is_fact": true,
-    "explanation": "Fact. Manipuri Sankirtana, performed in temples and homes of Vaishnava communities, was inscribed by UNESCO in 2013."
+    "explanation": "Fact. Manipuri Sankirtana, performed in temples and homes of Vaishnava communities, was inscribed by UNESCO in 2013.",
+    "statement_hi": "मणिपुर का संकीर्तन, जो एक अनुष्ठानिक गायन है, यूनेस्को की अमूर्त सांस्कृतिक विरासत सूची में शामिल है।",
+    "explanation_hi": "सत्य। वैष्णव समुदायों के मंदिरों और घरों में प्रस्तुत मणिपुरी संकीर्तन को यूनेस्को ने 2013 में सूचीबद्ध किया।"
   },
   {
     "id": "fb_048",
@@ -381,7 +475,9 @@
     "difficulty": "hard",
     "statement": "The Kailasa temple at Ellora was excavated under the patronage of the Cholas.",
     "is_fact": false,
-    "explanation": "Bluff. The monolithic Kailasa temple was carved under Rashtrakuta king Krishna I in the 8th century."
+    "explanation": "Bluff. The monolithic Kailasa temple was carved under Rashtrakuta king Krishna I in the 8th century.",
+    "statement_hi": "एलोरा का कैलाश मंदिर चोलों के संरक्षण में उत्कीर्ण किया गया था।",
+    "explanation_hi": "असत्य। एकाश्म कैलाश मंदिर 8वीं शताब्दी में राष्ट्रकूट राजा कृष्ण प्रथम के संरक्षण में तराशा गया था।"
   },
   {
     "id": "fb_049",
@@ -389,7 +485,9 @@
     "difficulty": "easy",
     "statement": "The Ganga is the longest river flowing within India.",
     "is_fact": true,
-    "explanation": "Fact. The Ganga, at over 2,500 km, is the longest river within India's territory."
+    "explanation": "Fact. The Ganga, at over 2,500 km, is the longest river within India's territory.",
+    "statement_hi": "गंगा भारत के भीतर बहने वाली सबसे लंबी नदी है।",
+    "explanation_hi": "सत्य। गंगा, 2,500 किमी से अधिक लंबाई के साथ, भारतीय क्षेत्र के भीतर सबसे लंबी नदी है।"
   },
   {
     "id": "fb_050",
@@ -397,7 +495,9 @@
     "difficulty": "easy",
     "statement": "The Thar Desert is located mainly in Gujarat.",
     "is_fact": false,
-    "explanation": "Bluff. The Thar lies mainly in Rajasthan, with smaller extensions into Gujarat, Punjab and Haryana."
+    "explanation": "Bluff. The Thar lies mainly in Rajasthan, with smaller extensions into Gujarat, Punjab and Haryana.",
+    "statement_hi": "थार मरुस्थल मुख्यतः गुजरात में स्थित है।",
+    "explanation_hi": "असत्य। थार मुख्यतः राजस्थान में स्थित है, जिसका छोटा विस्तार गुजरात, पंजाब और हरियाणा में भी है।"
   },
   {
     "id": "fb_051",
@@ -405,7 +505,9 @@
     "difficulty": "easy",
     "statement": "India's southernmost point, Indira Point, lies in the Andaman and Nicobar Islands.",
     "is_fact": true,
-    "explanation": "Fact. Indira Point sits at the southern tip of Great Nicobar Island, south of Kanyakumari on the mainland."
+    "explanation": "Fact. Indira Point sits at the southern tip of Great Nicobar Island, south of Kanyakumari on the mainland.",
+    "statement_hi": "भारत का दक्षिणतम बिंदु, इंदिरा पॉइंट, अंडमान और निकोबार द्वीप समूह में स्थित है।",
+    "explanation_hi": "सत्य। इंदिरा पॉइंट ग्रेट निकोबार द्वीप के दक्षिणी छोर पर स्थित है, जो मुख्यभूमि पर कन्याकुमारी से दक्षिण में है।"
   },
   {
     "id": "fb_052",
@@ -413,7 +515,9 @@
     "difficulty": "easy",
     "statement": "The Sundarbans delta is formed by the Godavari river.",
     "is_fact": false,
-    "explanation": "Bluff. The Sundarbans is part of the Ganga–Brahmaputra delta, the largest delta in the world."
+    "explanation": "Bluff. The Sundarbans is part of the Ganga–Brahmaputra delta, the largest delta in the world.",
+    "statement_hi": "सुंदरबन डेल्टा का निर्माण गोदावरी नदी द्वारा हुआ है।",
+    "explanation_hi": "असत्य। सुंदरबन गंगा-ब्रह्मपुत्र डेल्टा का हिस्सा है, जो विश्व का सबसे बड़ा डेल्टा है।"
   },
   {
     "id": "fb_053",
@@ -421,7 +525,9 @@
     "difficulty": "medium",
     "statement": "The Tropic of Cancer passes through only two Indian states.",
     "is_fact": false,
-    "explanation": "Bluff. It passes through eight states: Gujarat, Rajasthan, Madhya Pradesh, Chhattisgarh, Jharkhand, West Bengal, Tripura and Mizoram."
+    "explanation": "Bluff. It passes through eight states: Gujarat, Rajasthan, Madhya Pradesh, Chhattisgarh, Jharkhand, West Bengal, Tripura and Mizoram.",
+    "statement_hi": "कर्क रेखा केवल दो भारतीय राज्यों से होकर गुजरती है।",
+    "explanation_hi": "असत्य। यह आठ राज्यों से होकर गुजरती है: गुजरात, राजस्थान, मध्य प्रदेश, छत्तीसगढ़, झारखंड, पश्चिम बंगाल, त्रिपुरा और मिज़ोरम।"
   },
   {
     "id": "fb_054",
@@ -429,7 +535,9 @@
     "difficulty": "medium",
     "statement": "The Narmada flows westward through a rift valley into the Arabian Sea.",
     "is_fact": true,
-    "explanation": "Fact. The Narmada flows west between the Vindhya and Satpura ranges through a rift valley, forming an estuary, not a delta."
+    "explanation": "Fact. The Narmada flows west between the Vindhya and Satpura ranges through a rift valley, forming an estuary, not a delta.",
+    "statement_hi": "नर्मदा एक भ्रंश घाटी से होते हुए पश्चिम दिशा में अरब सागर में गिरती है।",
+    "explanation_hi": "सत्य। नर्मदा विंध्य और सतपुड़ा पर्वतमालाओं के बीच एक भ्रंश घाटी से पश्चिम की ओर बहती है और डेल्टा के बजाय ज्वारनदमुख (एस्चुअरी) बनाती है।"
   },
   {
     "id": "fb_055",
@@ -437,7 +545,9 @@
     "difficulty": "medium",
     "statement": "Kanchenjunga is the highest peak located entirely within India.",
     "is_fact": false,
-    "explanation": "Bluff. Kanchenjunga straddles the India–Nepal border; Nanda Devi is the highest peak entirely within India."
+    "explanation": "Bluff. Kanchenjunga straddles the India–Nepal border; Nanda Devi is the highest peak entirely within India.",
+    "statement_hi": "कंचनजंगा पूर्णतः भारत के भीतर स्थित सबसे ऊँची चोटी है।",
+    "explanation_hi": "असत्य। कंचनजंगा भारत-नेपाल सीमा पर स्थित है; नंदा देवी भारत के भीतर पूर्णतः स्थित सबसे ऊँची चोटी है।"
   },
   {
     "id": "fb_056",
@@ -445,7 +555,9 @@
     "difficulty": "medium",
     "statement": "Loktak Lake, famous for its floating phumdis, is located in Manipur.",
     "is_fact": true,
-    "explanation": "Fact. Loktak in Manipur is the largest freshwater lake in northeast India, known for its floating vegetation islands."
+    "explanation": "Fact. Loktak in Manipur is the largest freshwater lake in northeast India, known for its floating vegetation islands.",
+    "statement_hi": "अपने तैरते हुए फुमदी के लिए प्रसिद्ध लोकटक झील मणिपुर में स्थित है।",
+    "explanation_hi": "सत्य। मणिपुर की लोकटक झील पूर्वोत्तर भारत की सबसे बड़ी मीठे पानी की झील है, जो अपने तैरते वनस्पति द्वीपों के लिए जानी जाती है।"
   },
   {
     "id": "fb_057",
@@ -453,7 +565,9 @@
     "difficulty": "hard",
     "statement": "The Ten Degree Channel separates the Andaman Islands from the Nicobar Islands.",
     "is_fact": true,
-    "explanation": "Fact. The Ten Degree Channel, lying roughly along 10°N latitude, divides the Andamans from the Nicobars."
+    "explanation": "Fact. The Ten Degree Channel, lying roughly along 10°N latitude, divides the Andamans from the Nicobars.",
+    "statement_hi": "टेन डिग्री चैनल अंडमान द्वीप समूह को निकोबार द्वीप समूह से अलग करता है।",
+    "explanation_hi": "सत्य। लगभग 10° उत्तरी अक्षांश पर स्थित टेन डिग्री चैनल अंडमान को निकोबार से विभाजित करता है।"
   },
   {
     "id": "fb_058",
@@ -461,7 +575,9 @@
     "difficulty": "hard",
     "statement": "The Duncan Passage separates Little Andaman from Car Nicobar.",
     "is_fact": false,
-    "explanation": "Bluff. The Duncan Passage lies between South Andaman and Little Andaman; the Ten Degree Channel separates Little Andaman from Car Nicobar."
+    "explanation": "Bluff. The Duncan Passage lies between South Andaman and Little Andaman; the Ten Degree Channel separates Little Andaman from Car Nicobar.",
+    "statement_hi": "डंकन पैसेज लघु अंडमान को कार निकोबार से अलग करता है।",
+    "explanation_hi": "असत्य। डंकन पैसेज दक्षिण अंडमान और लघु अंडमान के बीच स्थित है; टेन डिग्री चैनल लघु अंडमान को कार निकोबार से अलग करता है।"
   },
   {
     "id": "fb_059",
@@ -469,7 +585,9 @@
     "difficulty": "hard",
     "statement": "The Godavari has the largest drainage basin among peninsular rivers.",
     "is_fact": true,
-    "explanation": "Fact. The Godavari, called the Dakshina Ganga, has India's second-largest basin after the Ganga and the largest in the peninsula."
+    "explanation": "Fact. The Godavari, called the Dakshina Ganga, has India's second-largest basin after the Ganga and the largest in the peninsula.",
+    "statement_hi": "प्रायद्वीपीय नदियों में गोदावरी का जलनिकासी बेसिन सबसे बड़ा है।",
+    "explanation_hi": "सत्य। दक्षिण गंगा कहलाने वाली गोदावरी का बेसिन गंगा के बाद भारत का दूसरा सबसे बड़ा और प्रायद्वीप का सबसे बड़ा बेसिन है।"
   },
   {
     "id": "fb_060",
@@ -477,7 +595,9 @@
     "difficulty": "hard",
     "statement": "The Nine Degree Channel separates Minicoy from the Maldives.",
     "is_fact": false,
-    "explanation": "Bluff. The Eight Degree Channel separates Minicoy from the Maldives; the Nine Degree Channel separates Minicoy from the rest of Lakshadweep."
+    "explanation": "Bluff. The Eight Degree Channel separates Minicoy from the Maldives; the Nine Degree Channel separates Minicoy from the rest of Lakshadweep.",
+    "statement_hi": "नाइन डिग्री चैनल मिनिकॉय को मालदीव से अलग करता है।",
+    "explanation_hi": "असत्य। एट डिग्री चैनल मिनिकॉय को मालदीव से अलग करता है; नाइन डिग्री चैनल मिनिकॉय को शेष लक्षद्वीप से अलग करता है।"
   },
   {
     "id": "fb_061",
@@ -485,7 +605,9 @@
     "difficulty": "easy",
     "statement": "India's GST applies a single unified tax rate to every good and service.",
     "is_fact": false,
-    "explanation": "Bluff. GST has multiple slabs, and items like petroleum and alcohol for human consumption remain outside it."
+    "explanation": "Bluff. GST has multiple slabs, and items like petroleum and alcohol for human consumption remain outside it.",
+    "statement_hi": "भारत का जीएसटी सभी वस्तुओं और सेवाओं पर एक समान कर दर लागू करता है।",
+    "explanation_hi": "असत्य। जीएसटी में कई स्लैब हैं, और पेट्रोलियम तथा मानव उपभोग हेतु शराब जैसी वस्तुएँ अभी भी इसके दायरे से बाहर हैं।"
   },
   {
     "id": "fb_062",
@@ -493,7 +615,9 @@
     "difficulty": "easy",
     "statement": "The Reserve Bank of India is the sole issuer of India's currency notes.",
     "is_fact": true,
-    "explanation": "Fact. The RBI issues all currency notes; the government mints coins and issues the one-rupee note."
+    "explanation": "Fact. The RBI issues all currency notes; the government mints coins and issues the one-rupee note.",
+    "statement_hi": "भारतीय रिज़र्व बैंक भारत के करेंसी नोटों का एकमात्र निर्गमकर्ता है।",
+    "explanation_hi": "सत्य। आरबीआई सभी करेंसी नोट जारी करता है; सरकार सिक्के ढालती है और एक रुपये का नोट जारी करती है।"
   },
   {
     "id": "fb_063",
@@ -501,7 +625,9 @@
     "difficulty": "easy",
     "statement": "Repo rate is the rate at which banks lend money to the RBI.",
     "is_fact": false,
-    "explanation": "Bluff. Repo is the rate at which the RBI lends to banks; banks parking funds with the RBI earn the reverse repo rate."
+    "explanation": "Bluff. Repo is the rate at which the RBI lends to banks; banks parking funds with the RBI earn the reverse repo rate.",
+    "statement_hi": "रेपो दर वह दर है जिस पर बैंक आरबीआई को धन उधार देते हैं।",
+    "explanation_hi": "असत्य। रेपो वह दर है जिस पर आरबीआई बैंकों को उधार देता है; आरबीआई के पास धन जमा करने वाले बैंकों को रिवर्स रेपो दर मिलती है।"
   },
   {
     "id": "fb_064",
@@ -509,7 +635,9 @@
     "difficulty": "easy",
     "statement": "GDP measures the total value of goods and services produced within a country.",
     "is_fact": true,
-    "explanation": "Fact. Gross Domestic Product counts final goods and services produced within a country's borders in a given period."
+    "explanation": "Fact. Gross Domestic Product counts final goods and services produced within a country's borders in a given period.",
+    "statement_hi": "जीडीपी किसी देश के भीतर उत्पादित वस्तुओं और सेवाओं के कुल मूल्य को मापता है।",
+    "explanation_hi": "सत्य। सकल घरेलू उत्पाद किसी निश्चित अवधि में किसी देश की सीमाओं के भीतर उत्पादित अंतिम वस्तुओं और सेवाओं की गणना करता है।"
   },
   {
     "id": "fb_065",
@@ -517,7 +645,9 @@
     "difficulty": "medium",
     "statement": "The RBI's Monetary Policy Committee has six members.",
     "is_fact": true,
-    "explanation": "Fact. The MPC has three RBI members, including the Governor, and three members appointed by the central government."
+    "explanation": "Fact. The MPC has three RBI members, including the Governor, and three members appointed by the central government.",
+    "statement_hi": "आरबीआई की मौद्रिक नीति समिति में छह सदस्य होते हैं।",
+    "explanation_hi": "सत्य। मौद्रिक नीति समिति में गवर्नर सहित आरबीआई के तीन सदस्य और केंद्र सरकार द्वारा नियुक्त तीन सदस्य होते हैं।"
   },
   {
     "id": "fb_066",
@@ -525,7 +655,9 @@
     "difficulty": "medium",
     "statement": "NITI Aayog was created in 2015 to replace the Finance Commission.",
     "is_fact": false,
-    "explanation": "Bluff. NITI Aayog replaced the Planning Commission; the Finance Commission is a constitutional body that still exists."
+    "explanation": "Bluff. NITI Aayog replaced the Planning Commission; the Finance Commission is a constitutional body that still exists.",
+    "statement_hi": "नीति आयोग की स्थापना 2015 में वित्त आयोग के स्थान पर की गई थी।",
+    "explanation_hi": "असत्य। नीति आयोग ने योजना आयोग का स्थान लिया; वित्त आयोग एक संवैधानिक निकाय है जो अभी भी अस्तित्व में है।"
   },
   {
     "id": "fb_067",
@@ -533,7 +665,9 @@
     "difficulty": "medium",
     "statement": "India's inflation-targeting framework sets a CPI target of 4% with a tolerance band of 2%.",
     "is_fact": true,
-    "explanation": "Fact. Under the amended RBI Act, the target is 4% CPI inflation with a band of plus or minus 2%."
+    "explanation": "Fact. Under the amended RBI Act, the target is 4% CPI inflation with a band of plus or minus 2%.",
+    "statement_hi": "भारत के मुद्रास्फीति-लक्ष्यीकरण ढांचे में सीपीआई का लक्ष्य 4% और सहनशीलता बैंड 2% रखा गया है।",
+    "explanation_hi": "सत्य। संशोधित आरबीआई अधिनियम के तहत, लक्ष्य 4% सीपीआई मुद्रास्फीति है, जिसमें प्लस या माइनस 2% का बैंड है।"
   },
   {
     "id": "fb_068",
@@ -541,7 +675,9 @@
     "difficulty": "medium",
     "statement": "Fiscal deficit refers to the gap between a country's exports and imports.",
     "is_fact": false,
-    "explanation": "Bluff. That gap is the trade deficit; fiscal deficit is government expenditure exceeding receipts, excluding borrowings."
+    "explanation": "Bluff. That gap is the trade deficit; fiscal deficit is government expenditure exceeding receipts, excluding borrowings.",
+    "statement_hi": "राजकोषीय घाटा किसी देश के निर्यात और आयात के बीच के अंतर को दर्शाता है।",
+    "explanation_hi": "असत्य। यह अंतर व्यापार घाटा कहलाता है; राजकोषीय घाटा सरकार के व्यय का प्राप्तियों से अधिक होना है, उधारी को छोड़कर।"
   },
   {
     "id": "fb_069",
@@ -549,7 +685,9 @@
     "difficulty": "hard",
     "statement": "The Marginal Standing Facility lets banks borrow overnight from the RBI at a rate above the repo rate.",
     "is_fact": true,
-    "explanation": "Fact. MSF is an emergency overnight window priced above the repo rate, forming the ceiling of the policy corridor."
+    "explanation": "Fact. MSF is an emergency overnight window priced above the repo rate, forming the ceiling of the policy corridor.",
+    "statement_hi": "सीमांत स्थायी सुविधा (एमएसएफ) बैंकों को रेपो दर से ऊपर की दर पर आरबीआई से रातभर के लिए उधार लेने देती है।",
+    "explanation_hi": "सत्य। एमएसएफ एक आपातकालीन रातभर की खिड़की है जिसकी कीमत रेपो दर से ऊपर रखी जाती है, जो नीति गलियारे की ऊपरी सीमा बनाती है।"
   },
   {
     "id": "fb_070",
@@ -557,7 +695,9 @@
     "difficulty": "hard",
     "statement": "Open Market Operations involve the RBI buying and selling corporate bonds.",
     "is_fact": false,
-    "explanation": "Bluff. OMOs involve the purchase and sale of government securities to manage liquidity, not corporate bonds."
+    "explanation": "Bluff. OMOs involve the purchase and sale of government securities to manage liquidity, not corporate bonds.",
+    "statement_hi": "खुला बाज़ार परिचालन (ओएमओ) में आरबीआई कॉर्पोरेट बॉन्ड की खरीद-बिक्री करता है।",
+    "explanation_hi": "असत्य। ओएमओ में तरलता प्रबंधन हेतु सरकारी प्रतिभूतियों की खरीद-बिक्री होती है, कॉर्पोरेट बॉन्ड की नहीं।"
   },
   {
     "id": "fb_071",
@@ -565,7 +705,9 @@
     "difficulty": "hard",
     "statement": "In the Union Budget, disinvestment proceeds are classified as capital receipts.",
     "is_fact": true,
-    "explanation": "Fact. Sale of government equity is a non-debt capital receipt, since it reduces the government's assets."
+    "explanation": "Fact. Sale of government equity is a non-debt capital receipt, since it reduces the government's assets.",
+    "statement_hi": "केंद्रीय बजट में, विनिवेश से प्राप्त आय को पूंजीगत प्राप्ति के रूप में वर्गीकृत किया जाता है।",
+    "explanation_hi": "सत्य। सरकारी इक्विटी की बिक्री एक गैर-ऋण पूंजीगत प्राप्ति है, क्योंकि इससे सरकार की परिसंपत्तियाँ घटती हैं।"
   },
   {
     "id": "fb_072",
@@ -573,7 +715,9 @@
     "difficulty": "hard",
     "statement": "India's Wholesale Price Index includes the prices of services.",
     "is_fact": false,
-    "explanation": "Bluff. The WPI covers only goods; services are captured in the Consumer Price Index."
+    "explanation": "Bluff. The WPI covers only goods; services are captured in the Consumer Price Index.",
+    "statement_hi": "भारत के थोक मूल्य सूचकांक (डब्ल्यूपीआई) में सेवाओं की कीमतें भी शामिल हैं।",
+    "explanation_hi": "असत्य। डब्ल्यूपीआई केवल वस्तुओं को कवर करता है; सेवाएँ उपभोक्ता मूल्य सूचकांक में शामिल होती हैं।"
   },
   {
     "id": "fb_073",
@@ -581,7 +725,9 @@
     "difficulty": "easy",
     "statement": "The Chipko Movement of the 1970s saw villagers hug trees to stop deforestation.",
     "is_fact": true,
-    "explanation": "Fact. Villagers in the Himalayan region, many of them women like Gaura Devi, hugged trees to resist commercial logging."
+    "explanation": "Fact. Villagers in the Himalayan region, many of them women like Gaura Devi, hugged trees to resist commercial logging.",
+    "statement_hi": "1970 के दशक के चिपको आंदोलन में ग्रामीणों ने वनों की कटाई रोकने के लिए पेड़ों को गले लगाया था।",
+    "explanation_hi": "सत्य। हिमालयी क्षेत्र के ग्रामीणों, जिनमें गौरा देवी जैसी कई महिलाएँ शामिल थीं, ने व्यावसायिक कटाई का विरोध करने के लिए पेड़ों को गले लगाया।"
   },
   {
     "id": "fb_074",
@@ -589,7 +735,9 @@
     "difficulty": "easy",
     "statement": "Project Tiger was launched in the 1990s.",
     "is_fact": false,
-    "explanation": "Bluff. Project Tiger was launched in 1973 with nine reserves, starting with Jim Corbett National Park."
+    "explanation": "Bluff. Project Tiger was launched in 1973 with nine reserves, starting with Jim Corbett National Park.",
+    "statement_hi": "प्रोजेक्ट टाइगर 1990 के दशक में शुरू किया गया था।",
+    "explanation_hi": "असत्य। प्रोजेक्ट टाइगर 1973 में नौ रिज़र्वों के साथ शुरू किया गया था, जिसकी शुरुआत जिम कॉर्बेट राष्ट्रीय उद्यान से हुई।"
   },
   {
     "id": "fb_075",
@@ -597,7 +745,9 @@
     "difficulty": "easy",
     "statement": "The ozone layer protects the Earth from harmful ultraviolet radiation.",
     "is_fact": true,
-    "explanation": "Fact. Stratospheric ozone absorbs most of the Sun's harmful UV-B radiation before it reaches the surface."
+    "explanation": "Fact. Stratospheric ozone absorbs most of the Sun's harmful UV-B radiation before it reaches the surface.",
+    "statement_hi": "ओज़ोन परत पृथ्वी को हानिकारक पराबैंगनी विकिरण से बचाती है।",
+    "explanation_hi": "सत्य। समतापमंडलीय ओज़ोन सूर्य के अधिकांश हानिकारक यूवी-बी विकिरण को सतह तक पहुँचने से पहले सोख लेती है।"
   },
   {
     "id": "fb_076",
@@ -605,7 +755,9 @@
     "difficulty": "easy",
     "statement": "The Sundarbans are famous as the habitat of the Asiatic lion.",
     "is_fact": false,
-    "explanation": "Bluff. The Sundarbans are home to the Royal Bengal tiger; Asiatic lions survive only in Gujarat's Gir forest."
+    "explanation": "Bluff. The Sundarbans are home to the Royal Bengal tiger; Asiatic lions survive only in Gujarat's Gir forest.",
+    "statement_hi": "सुंदरबन एशियाई सिंह के आवास के रूप में प्रसिद्ध हैं।",
+    "explanation_hi": "असत्य। सुंदरबन रॉयल बंगाल टाइगर का आवास है; एशियाई सिंह केवल गुजरात के गिर वन में बचे हैं।"
   },
   {
     "id": "fb_077",
@@ -613,7 +765,9 @@
     "difficulty": "medium",
     "statement": "The Ramsar Convention deals with the conservation of wetlands.",
     "is_fact": true,
-    "explanation": "Fact. The 1971 Ramsar Convention promotes wise use of wetlands, and India has dozens of designated Ramsar sites."
+    "explanation": "Fact. The 1971 Ramsar Convention promotes wise use of wetlands, and India has dozens of designated Ramsar sites.",
+    "statement_hi": "रामसर अभिसमय आर्द्रभूमियों के संरक्षण से संबंधित है।",
+    "explanation_hi": "सत्य। 1971 का रामसर अभिसमय आर्द्रभूमियों के सुविवेकपूर्ण उपयोग को बढ़ावा देता है, और भारत में दर्जनों निर्दिष्ट रामसर स्थल हैं।"
   },
   {
     "id": "fb_078",
@@ -621,7 +775,9 @@
     "difficulty": "medium",
     "statement": "The Montreal Protocol addresses climate change caused by greenhouse gases.",
     "is_fact": false,
-    "explanation": "Bluff. The Montreal Protocol phases out ozone-depleting substances; greenhouse gases are covered by the Kyoto Protocol and Paris Agreement."
+    "explanation": "Bluff. The Montreal Protocol phases out ozone-depleting substances; greenhouse gases are covered by the Kyoto Protocol and Paris Agreement.",
+    "statement_hi": "मॉन्ट्रियल प्रोटोकॉल ग्रीनहाउस गैसों से होने वाले जलवायु परिवर्तन से संबंधित है।",
+    "explanation_hi": "असत्य। मॉन्ट्रियल प्रोटोकॉल ओज़ोन-क्षयकारी पदार्थों को चरणबद्ध रूप से समाप्त करता है; ग्रीनहाउस गैसें क्योटो प्रोटोकॉल और पेरिस समझौते के अंतर्गत आती हैं।"
   },
   {
     "id": "fb_079",
@@ -629,7 +785,9 @@
     "difficulty": "medium",
     "statement": "Keibul Lamjao, the world's only floating national park, is home to the sangai deer.",
     "is_fact": true,
-    "explanation": "Fact. Keibul Lamjao on Loktak Lake in Manipur shelters the endangered sangai, or brow-antlered deer."
+    "explanation": "Fact. Keibul Lamjao on Loktak Lake in Manipur shelters the endangered sangai, or brow-antlered deer.",
+    "statement_hi": "केइबुल लामजाओ, विश्व का एकमात्र तैरता हुआ राष्ट्रीय उद्यान, संगाई हिरण का घर है।",
+    "explanation_hi": "सत्य। मणिपुर की लोकटक झील पर स्थित केइबुल लामजाओ लुप्तप्राय संगाई, यानी दलदल मृग, को आश्रय देता है।"
   },
   {
     "id": "fb_080",
@@ -637,7 +795,9 @@
     "difficulty": "medium",
     "statement": "The Great Indian Bustard is found mainly in the forests of Kerala.",
     "is_fact": false,
-    "explanation": "Bluff. The critically endangered bustard inhabits dry grasslands, chiefly in Rajasthan and Gujarat."
+    "explanation": "Bluff. The critically endangered bustard inhabits dry grasslands, chiefly in Rajasthan and Gujarat.",
+    "statement_hi": "ग्रेट इंडियन बस्टर्ड मुख्यतः केरल के वनों में पाया जाता है।",
+    "explanation_hi": "असत्य। यह गंभीर रूप से संकटग्रस्त पक्षी शुष्क घास के मैदानों, मुख्यतः राजस्थान और गुजरात में रहता है।"
   },
   {
     "id": "fb_081",
@@ -645,7 +805,9 @@
     "difficulty": "hard",
     "statement": "Eco-Sensitive Zones around protected areas are notified under the Environment (Protection) Act, 1986.",
     "is_fact": true,
-    "explanation": "Fact. ESZs are declared by the central government under the Environment (Protection) Act, 1986 as buffers around parks and sanctuaries."
+    "explanation": "Fact. ESZs are declared by the central government under the Environment (Protection) Act, 1986 as buffers around parks and sanctuaries.",
+    "statement_hi": "संरक्षित क्षेत्रों के आसपास पारिस्थितिकी-संवेदी क्षेत्र (ईएसज़ेड) पर्यावरण (संरक्षण) अधिनियम, 1986 के तहत अधिसूचित किए जाते हैं।",
+    "explanation_hi": "सत्य। ईएसज़ेड को केंद्र सरकार द्वारा पर्यावरण (संरक्षण) अधिनियम, 1986 के तहत पार्कों और अभयारण्यों के बफर के रूप में घोषित किया जाता है।"
   },
   {
     "id": "fb_082",
@@ -653,7 +815,9 @@
     "difficulty": "hard",
     "statement": "The National Green Tribunal was established under the Environment (Protection) Act, 1986.",
     "is_fact": false,
-    "explanation": "Bluff. The NGT was created by its own statute, the National Green Tribunal Act of 2010."
+    "explanation": "Bluff. The NGT was created by its own statute, the National Green Tribunal Act of 2010.",
+    "statement_hi": "राष्ट्रीय हरित अधिकरण की स्थापना पर्यावरण (संरक्षण) अधिनियम, 1986 के तहत हुई थी।",
+    "explanation_hi": "असत्य। एनजीटी की स्थापना अपने स्वयं के अधिनियम, राष्ट्रीय हरित अधिकरण अधिनियम 2010 के तहत हुई थी।"
   },
   {
     "id": "fb_083",
@@ -661,7 +825,9 @@
     "difficulty": "hard",
     "statement": "The dugong, India's only herbivorous marine mammal, is found in the Gulf of Mannar.",
     "is_fact": true,
-    "explanation": "Fact. Dugongs graze on seagrass beds in the Gulf of Mannar, Palk Bay, Gulf of Kutch and the Andamans."
+    "explanation": "Fact. Dugongs graze on seagrass beds in the Gulf of Mannar, Palk Bay, Gulf of Kutch and the Andamans.",
+    "statement_hi": "डुगोंग, भारत का एकमात्र शाकाहारी समुद्री स्तनपायी, मन्नार की खाड़ी में पाया जाता है।",
+    "explanation_hi": "सत्य। डुगोंग मन्नार की खाड़ी, पाक खाड़ी, कच्छ की खाड़ी और अंडमान में समुद्री घास के मैदानों पर चरते हैं।"
   },
   {
     "id": "fb_084",
@@ -669,7 +835,9 @@
     "difficulty": "hard",
     "statement": "Blue carbon refers to carbon captured by terrestrial forests.",
     "is_fact": false,
-    "explanation": "Bluff. Blue carbon is carbon stored by coastal and marine ecosystems such as mangroves, seagrasses and salt marshes."
+    "explanation": "Bluff. Blue carbon is carbon stored by coastal and marine ecosystems such as mangroves, seagrasses and salt marshes.",
+    "statement_hi": "ब्लू कार्बन स्थलीय वनों द्वारा संग्रहीत कार्बन को संदर्भित करता है।",
+    "explanation_hi": "असत्य। ब्लू कार्बन तटीय और समुद्री पारिस्थितिकी तंत्रों जैसे मैंग्रोव, समुद्री घास और नमक दलदल द्वारा संग्रहीत कार्बन है।"
   },
   {
     "id": "fb_085",
@@ -677,7 +845,9 @@
     "difficulty": "easy",
     "statement": "Dr. B.R. Ambedkar chaired the Drafting Committee of the Constitution.",
     "is_fact": true,
-    "explanation": "Fact. Ambedkar headed the seven-member Drafting Committee set up by the Constituent Assembly in 1947."
+    "explanation": "Fact. Ambedkar headed the seven-member Drafting Committee set up by the Constituent Assembly in 1947.",
+    "statement_hi": "डॉ. बी.आर. अंबेडकर ने संविधान की प्रारूप समिति की अध्यक्षता की थी।",
+    "explanation_hi": "सत्य। अंबेडकर ने संविधान सभा द्वारा 1947 में गठित सात सदस्यीय प्रारूप समिति का नेतृत्व किया।"
   },
   {
     "id": "fb_086",
@@ -685,7 +855,9 @@
     "difficulty": "easy",
     "statement": "The President of India is directly elected by the people.",
     "is_fact": false,
-    "explanation": "Bluff. The President is elected indirectly by an electoral college of MPs and elected MLAs."
+    "explanation": "Bluff. The President is elected indirectly by an electoral college of MPs and elected MLAs.",
+    "statement_hi": "भारत के राष्ट्रपति का चुनाव जनता द्वारा प्रत्यक्ष रूप से किया जाता है।",
+    "explanation_hi": "असत्य। राष्ट्रपति का चुनाव सांसदों और निर्वाचित विधायकों के एक निर्वाचक मंडल द्वारा अप्रत्यक्ष रूप से किया जाता है।"
   },
   {
     "id": "fb_087",
@@ -693,7 +865,9 @@
     "difficulty": "easy",
     "statement": "Fundamental Duties were not part of the original Constitution and were added later by an amendment.",
     "is_fact": true,
-    "explanation": "Fact. Fundamental Duties (Article 51A) were inserted by the 42nd Amendment in 1976, on the Swaran Singh Committee's recommendation."
+    "explanation": "Fact. Fundamental Duties (Article 51A) were inserted by the 42nd Amendment in 1976, on the Swaran Singh Committee's recommendation.",
+    "statement_hi": "मूल कर्तव्य संविधान के मूल पाठ का हिस्सा नहीं थे और बाद में एक संशोधन द्वारा जोड़े गए।",
+    "explanation_hi": "सत्य। मूल कर्तव्य (अनुच्छेद 51ए) को 1976 में 42वें संशोधन द्वारा, स्वर्ण सिंह समिति की सिफारिश पर जोड़ा गया।"
   },
   {
     "id": "fb_088",
@@ -701,7 +875,9 @@
     "difficulty": "easy",
     "statement": "The Rajya Sabha can be dissolved by the President.",
     "is_fact": false,
-    "explanation": "Bluff. The Rajya Sabha is a permanent body; a third of its members retire every two years, but it is never dissolved."
+    "explanation": "Bluff. The Rajya Sabha is a permanent body; a third of its members retire every two years, but it is never dissolved.",
+    "statement_hi": "राज्यसभा को राष्ट्रपति द्वारा भंग किया जा सकता है।",
+    "explanation_hi": "असत्य। राज्यसभा एक स्थायी सदन है; इसके एक-तिहाई सदस्य हर दो वर्ष में सेवानिवृत्त होते हैं, लेकिन इसे कभी भंग नहीं किया जाता।"
   },
   {
     "id": "fb_089",
@@ -709,7 +885,9 @@
     "difficulty": "medium",
     "statement": "India's Election Commission currently functions as a multi-member body, not headed solely by the Chief Election Commissioner.",
     "is_fact": true,
-    "explanation": "Fact. The Commission comprises the Chief Election Commissioner and two Election Commissioners with equal decision-making power."
+    "explanation": "Fact. The Commission comprises the Chief Election Commissioner and two Election Commissioners with equal decision-making power.",
+    "statement_hi": "भारत का चुनाव आयोग वर्तमान में एक बहु-सदस्यीय निकाय के रूप में कार्य करता है, न कि केवल मुख्य चुनाव आयुक्त के नेतृत्व में।",
+    "explanation_hi": "सत्य। आयोग में मुख्य चुनाव आयुक्त और दो चुनाव आयुक्त होते हैं जिनके पास समान निर्णय लेने की शक्ति होती है।"
   },
   {
     "id": "fb_090",
@@ -717,7 +895,9 @@
     "difficulty": "medium",
     "statement": "A Money Bill can be introduced in either House of Parliament.",
     "is_fact": false,
-    "explanation": "Bluff. A Money Bill can be introduced only in the Lok Sabha, and only on the President's recommendation."
+    "explanation": "Bluff. A Money Bill can be introduced only in the Lok Sabha, and only on the President's recommendation.",
+    "statement_hi": "धन विधेयक संसद के किसी भी सदन में प्रस्तुत किया जा सकता है।",
+    "explanation_hi": "असत्य। धन विधेयक केवल लोकसभा में और केवल राष्ट्रपति की सिफारिश पर ही प्रस्तुत किया जा सकता है।"
   },
   {
     "id": "fb_091",
@@ -725,7 +905,9 @@
     "difficulty": "medium",
     "statement": "The Directive Principles of State Policy were borrowed from the Irish Constitution.",
     "is_fact": true,
-    "explanation": "Fact. The DPSP concept came from Ireland, which had itself adapted it from the Spanish Constitution."
+    "explanation": "Fact. The DPSP concept came from Ireland, which had itself adapted it from the Spanish Constitution.",
+    "statement_hi": "राज्य के नीति निदेशक तत्व आयरिश संविधान से लिए गए थे।",
+    "explanation_hi": "सत्य। नीति निदेशक तत्वों की अवधारणा आयरलैंड से ली गई, जिसने स्वयं इसे स्पेनिश संविधान से अपनाया था।"
   },
   {
     "id": "fb_092",
@@ -733,7 +915,9 @@
     "difficulty": "medium",
     "statement": "The 73rd Constitutional Amendment gave constitutional status to urban local bodies.",
     "is_fact": false,
-    "explanation": "Bluff. The 73rd Amendment covered rural panchayats; urban local bodies got constitutional status through the 74th Amendment."
+    "explanation": "Bluff. The 73rd Amendment covered rural panchayats; urban local bodies got constitutional status through the 74th Amendment.",
+    "statement_hi": "73वें संवैधानिक संशोधन ने शहरी स्थानीय निकायों को संवैधानिक दर्जा दिया।",
+    "explanation_hi": "असत्य। 73वाँ संशोधन ग्रामीण पंचायतों से संबंधित था; शहरी स्थानीय निकायों को संवैधानिक दर्जा 74वें संशोधन से मिला।"
   },
   {
     "id": "fb_093",
@@ -741,7 +925,9 @@
     "difficulty": "hard",
     "statement": "The Ninth Schedule was added by the very first Constitutional Amendment in 1951.",
     "is_fact": true,
-    "explanation": "Fact. The First Amendment of 1951 created the Ninth Schedule to shield land-reform laws from judicial review."
+    "explanation": "Fact. The First Amendment of 1951 created the Ninth Schedule to shield land-reform laws from judicial review.",
+    "statement_hi": "नौवीं अनुसूची को 1951 के पहले संवैधानिक संशोधन द्वारा जोड़ा गया था।",
+    "explanation_hi": "सत्य। 1951 के प्रथम संशोधन ने भूमि-सुधार कानूनों को न्यायिक समीक्षा से बचाने हेतु नौवीं अनुसूची बनाई।"
   },
   {
     "id": "fb_094",
@@ -749,7 +935,9 @@
     "difficulty": "hard",
     "statement": "The Vice-President can be removed only through impeachment for violating the Constitution.",
     "is_fact": false,
-    "explanation": "Bluff. Impeachment applies to the President; the Vice-President is removed by a Rajya Sabha resolution agreed to by the Lok Sabha, with no grounds specified."
+    "explanation": "Bluff. Impeachment applies to the President; the Vice-President is removed by a Rajya Sabha resolution agreed to by the Lok Sabha, with no grounds specified.",
+    "statement_hi": "उपराष्ट्रपति को केवल संविधान के उल्लंघन के लिए महाभियोग द्वारा हटाया जा सकता है।",
+    "explanation_hi": "असत्य। महाभियोग राष्ट्रपति पर लागू होता है; उपराष्ट्रपति को राज्यसभा के प्रस्ताव से हटाया जाता है जिसे लोकसभा सहमति दे, बिना किसी निर्दिष्ट आधार के।"
   },
   {
     "id": "fb_095",
@@ -757,7 +945,9 @@
     "difficulty": "hard",
     "statement": "The Speaker's decision on whether a bill is a Money Bill is final.",
     "is_fact": true,
-    "explanation": "Fact. Article 110(3) makes the Lok Sabha Speaker's certification of a Money Bill final."
+    "explanation": "Fact. Article 110(3) makes the Lok Sabha Speaker's certification of a Money Bill final.",
+    "statement_hi": "किसी विधेयक के धन विधेयक होने पर अध्यक्ष का निर्णय अंतिम होता है।",
+    "explanation_hi": "सत्य। अनुच्छेद 110(3) लोकसभा अध्यक्ष के धन विधेयक प्रमाणन को अंतिम बनाता है।"
   },
   {
     "id": "fb_096",
@@ -765,6 +955,8 @@
     "difficulty": "hard",
     "statement": "The Attorney General of India holds office for a fixed six-year term.",
     "is_fact": false,
-    "explanation": "Bluff. The Attorney General has no fixed term and holds office during the pleasure of the President."
+    "explanation": "Bluff. The Attorney General has no fixed term and holds office during the pleasure of the President.",
+    "statement_hi": "भारत के महान्यायवादी का कार्यकाल छह वर्ष निश्चित होता है।",
+    "explanation_hi": "असत्य। महान्यायवादी का कोई निश्चित कार्यकाल नहीं होता और वह राष्ट्रपति की इच्छा-पर्यंत पद पर बना रहता है।"
   }
 ]

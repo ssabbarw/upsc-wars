@@ -48,8 +48,9 @@ class FactOrBluffState {
 
   bool get isAwaitingAnswer => verdict == FactOrBluffVerdict.none;
 
-  double get progress =>
-      durationSeconds <= 0 ? 0 : (secondsLeft / durationSeconds).clamp(0.0, 1.0);
+  double get progress => durationSeconds <= 0
+      ? 0
+      : (secondsLeft / durationSeconds).clamp(0.0, 1.0);
 
   FactOrBluffState copyWith({
     List<FactOrBluffItem>? pool,
@@ -71,8 +72,9 @@ class FactOrBluffState {
       index: index ?? this.index,
       durationSeconds: durationSeconds ?? this.durationSeconds,
       secondsLeft: secondsLeft ?? this.secondsLeft,
-      answeredIsFact:
-          clearAnswer ? null : (answeredIsFact ?? this.answeredIsFact),
+      answeredIsFact: clearAnswer
+          ? null
+          : (answeredIsFact ?? this.answeredIsFact),
       verdict: verdict ?? this.verdict,
       streak: streak ?? this.streak,
       correctCount: correctCount ?? this.correctCount,
@@ -92,8 +94,9 @@ class FactOrBluffController extends AsyncNotifier<FactOrBluffState> {
   @override
   Future<FactOrBluffState> build() async {
     ref.onDispose(() => _timer?.cancel());
-    final durationSeconds =
-        await ref.watch(factOrBluffSecondsRemoteProvider.future);
+    final durationSeconds = await ref.watch(
+      factOrBluffSecondsRemoteProvider.future,
+    );
     final pool = await ref.read(factOrBluffRepositoryProvider).loadItems();
     if (pool.isEmpty) {
       return FactOrBluffState(
@@ -114,7 +117,10 @@ class FactOrBluffController extends AsyncNotifier<FactOrBluffState> {
   /// the player dismisses the intro. Safe to call once content has loaded.
   void start() => _startTimer();
 
-  FactOrBluffState _newSession(List<FactOrBluffItem> pool, int durationSeconds) {
+  FactOrBluffState _newSession(
+    List<FactOrBluffItem> pool,
+    int durationSeconds,
+  ) {
     return FactOrBluffState(
       pool: pool,
       session: drawMiniGameSession(
@@ -169,11 +175,11 @@ class FactOrBluffController extends AsyncNotifier<FactOrBluffState> {
     state = AsyncData(
       current.copyWith(
         answeredIsFact: isFact,
-        verdict:
-            correct ? FactOrBluffVerdict.correct : FactOrBluffVerdict.wrong,
+        verdict: correct
+            ? FactOrBluffVerdict.correct
+            : FactOrBluffVerdict.wrong,
         streak: correct ? current.streak + 1 : 0,
-        correctCount:
-            correct ? current.correctCount + 1 : current.correctCount,
+        correctCount: correct ? current.correctCount + 1 : current.correctCount,
       ),
     );
   }
@@ -202,14 +208,12 @@ class FactOrBluffController extends AsyncNotifier<FactOrBluffState> {
     final current = state.asData?.value;
     if (current == null || current.pool.isEmpty) return;
     _timer?.cancel();
-    state = AsyncData(
-      _newSession(current.pool, current.durationSeconds),
-    );
+    state = AsyncData(_newSession(current.pool, current.durationSeconds));
     Future.microtask(_startTimer);
   }
 }
 
 final factOrBluffControllerProvider = AsyncNotifierProvider.autoDispose
     .family<FactOrBluffController, FactOrBluffState, MiniGameFilter>(
-  FactOrBluffController.new,
-);
+      FactOrBluffController.new,
+    );

@@ -243,10 +243,7 @@ class _SubjectPickerSheetState extends State<_SubjectPickerSheet> {
           const SizedBox(height: 14),
           RgMonoLabel('${widget.gameTitle} · Config'),
           const SizedBox(height: 4),
-          Text(
-            'Set up your session',
-            style: RgText.display(size: 16),
-          ),
+          Text('Set up your session', style: RgText.display(size: 16)),
           const SizedBox(height: 12),
           const RgMonoLabel('Subjects'),
           const SizedBox(height: 6),
@@ -300,10 +297,7 @@ class _SubjectPickerSheetState extends State<_SubjectPickerSheet> {
             label: 'Start · ${widget.sessionSize} questions',
             verticalPadding: 13,
             onPressed: () => Navigator.of(context).pop(
-              _GameLaunchConfig(
-                subjects: _selected,
-                difficulty: _difficulty,
-              ),
+              _GameLaunchConfig(subjects: _selected, difficulty: _difficulty),
             ),
           ),
         ],

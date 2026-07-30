@@ -4,767 +4,1535 @@
     "subject": "Ancient History",
     "difficulty": "easy",
     "question": "Who commissioned the original Great Stupa at Sanchi?",
-    "options": ["Ashoka", "Kanishka"],
-    "answer_index": 0
+    "options": [
+      "Ashoka",
+      "Kanishka"
+    ],
+    "answer_index": 0,
+    "question_hi": "सांची के मूल महान स्तूप का निर्माण किसने करवाया था?",
+    "options_hi": [
+      "अशोक",
+      "कनिष्क"
+    ]
   },
   {
     "id": "dl_002",
     "subject": "Ancient History",
     "difficulty": "easy",
     "question": "Which ancient Indian script remains undeciphered?",
-    "options": ["Brahmi script", "Indus script"],
-    "answer_index": 1
+    "options": [
+      "Brahmi script",
+      "Indus script"
+    ],
+    "answer_index": 1,
+    "question_hi": "कौन-सी प्राचीन भारतीय लिपि अब तक अपठित है?",
+    "options_hi": [
+      "ब्राह्मी लिपि",
+      "सिंधु लिपि"
+    ]
   },
   {
     "id": "dl_003",
     "subject": "Ancient History",
     "difficulty": "easy",
     "question": "Mohenjo-daro stands on the bank of which river?",
-    "options": ["Indus", "Ravi"],
-    "answer_index": 0
+    "options": [
+      "Indus",
+      "Ravi"
+    ],
+    "answer_index": 0,
+    "question_hi": "मोहनजोदड़ो किस नदी के तट पर स्थित है?",
+    "options_hi": [
+      "सिंधु",
+      "रावी"
+    ]
   },
   {
     "id": "dl_004",
     "subject": "Ancient History",
     "difficulty": "easy",
     "question": "Who founded the Maurya Empire?",
-    "options": ["Bindusara", "Chandragupta Maurya"],
-    "answer_index": 1
+    "options": [
+      "Bindusara",
+      "Chandragupta Maurya"
+    ],
+    "answer_index": 1,
+    "question_hi": "मौर्य साम्राज्य की स्थापना किसने की?",
+    "options_hi": [
+      "बिंदुसार",
+      "चंद्रगुप्त मौर्य"
+    ]
   },
   {
     "id": "dl_005",
     "subject": "Ancient History",
     "difficulty": "medium",
     "question": "Who wrote the Arthashastra?",
-    "options": ["Kautilya", "Banabhatta"],
-    "answer_index": 0
+    "options": [
+      "Kautilya",
+      "Banabhatta"
+    ],
+    "answer_index": 0,
+    "question_hi": "अर्थशास्त्र की रचना किसने की?",
+    "options_hi": [
+      "कौटिल्य",
+      "बाणभट्ट"
+    ]
   },
   {
     "id": "dl_006",
     "subject": "Ancient History",
     "difficulty": "medium",
     "question": "Which Gupta ruler is called the 'Napoleon of India'?",
-    "options": ["Chandragupta II", "Samudragupta"],
-    "answer_index": 1
+    "options": [
+      "Chandragupta II",
+      "Samudragupta"
+    ],
+    "answer_index": 1,
+    "question_hi": "किस गुप्त शासक को 'भारत का नेपोलियन' कहा जाता है?",
+    "options_hi": [
+      "चंद्रगुप्त द्वितीय",
+      "समुद्रगुप्त"
+    ]
   },
   {
     "id": "dl_007",
     "subject": "Ancient History",
     "difficulty": "medium",
     "question": "The Third Buddhist Council was held at which place?",
-    "options": ["Pataliputra", "Rajagriha"],
-    "answer_index": 0
+    "options": [
+      "Pataliputra",
+      "Rajagriha"
+    ],
+    "answer_index": 0,
+    "question_hi": "तीसरी बौद्ध संगीति किस स्थान पर आयोजित हुई थी?",
+    "options_hi": [
+      "पाटलिपुत्र",
+      "राजगृह"
+    ]
   },
   {
     "id": "dl_008",
     "subject": "Ancient History",
     "difficulty": "medium",
     "question": "Who founded Vikramashila University?",
-    "options": ["Devapala", "Dharmapala"],
-    "answer_index": 1
+    "options": [
+      "Devapala",
+      "Dharmapala"
+    ],
+    "answer_index": 1,
+    "question_hi": "विक्रमशिला विश्वविद्यालय की स्थापना किसने की?",
+    "options_hi": [
+      "देवपाल",
+      "धर्मपाल"
+    ]
   },
   {
     "id": "dl_009",
     "subject": "Ancient History",
     "difficulty": "hard",
     "question": "Which edict records Ashoka's remorse after the Kalinga War?",
-    "options": ["Rock Edict XIII", "Pillar Edict VII"],
-    "answer_index": 0
+    "options": [
+      "Rock Edict XIII",
+      "Pillar Edict VII"
+    ],
+    "answer_index": 0,
+    "question_hi": "कलिंग युद्ध के बाद अशोक के पश्चाताप को कौन-सा अभिलेख दर्ज करता है?",
+    "options_hi": [
+      "शैल अभिलेख XIII",
+      "स्तंभ अभिलेख VII"
+    ]
   },
   {
     "id": "dl_010",
     "subject": "Ancient History",
     "difficulty": "hard",
     "question": "Who composed the Allahabad Pillar inscription (Prayaga Prashasti)?",
-    "options": ["Ravikirti", "Harisena"],
-    "answer_index": 1
+    "options": [
+      "Ravikirti",
+      "Harisena"
+    ],
+    "answer_index": 1,
+    "question_hi": "इलाहाबाद स्तंभ अभिलेख (प्रयाग प्रशस्ति) की रचना किसने की?",
+    "options_hi": [
+      "रविकीर्ति",
+      "हरिषेण"
+    ]
   },
   {
     "id": "dl_011",
     "subject": "Ancient History",
     "difficulty": "hard",
     "question": "Which Satavahana ruler defeated the Shaka king Nahapana?",
-    "options": ["Gautamiputra Satakarni", "Vashishthiputra Pulumavi"],
-    "answer_index": 0
+    "options": [
+      "Gautamiputra Satakarni",
+      "Vashishthiputra Pulumavi"
+    ],
+    "answer_index": 0,
+    "question_hi": "किस सातवाहन शासक ने शक राजा नहपान को पराजित किया था?",
+    "options_hi": [
+      "गौतमीपुत्र सातकर्णि",
+      "वशिष्ठीपुत्र पुलुमावी"
+    ]
   },
   {
     "id": "dl_012",
     "subject": "Ancient History",
     "difficulty": "hard",
     "question": "Who presided over the First Buddhist Council?",
-    "options": ["Moggaliputta Tissa", "Mahakassapa"],
-    "answer_index": 1
+    "options": [
+      "Moggaliputta Tissa",
+      "Mahakassapa"
+    ],
+    "answer_index": 1,
+    "question_hi": "पहली बौद्ध संगीति की अध्यक्षता किसने की थी?",
+    "options_hi": [
+      "मोग्गलिपुत्त तिस्स",
+      "महाकश्यप"
+    ]
   },
   {
     "id": "dl_013",
     "subject": "Medieval History",
     "difficulty": "easy",
     "question": "Who founded the Vijayanagara Empire with his brother Bukka?",
-    "options": ["Harihara", "Krishnadevaraya"],
-    "answer_index": 0
+    "options": [
+      "Harihara",
+      "Krishnadevaraya"
+    ],
+    "answer_index": 0,
+    "question_hi": "अपने भाई बुक्का के साथ विजयनगर साम्राज्य की स्थापना किसने की?",
+    "options_hi": [
+      "हरिहर",
+      "कृष्णदेवराय"
+    ]
   },
   {
     "id": "dl_014",
     "subject": "Medieval History",
     "difficulty": "easy",
     "question": "Who was the first Sultan of Delhi?",
-    "options": ["Iltutmish", "Qutbuddin Aibak"],
-    "answer_index": 1
+    "options": [
+      "Iltutmish",
+      "Qutbuddin Aibak"
+    ],
+    "answer_index": 1,
+    "question_hi": "दिल्ली का पहला सुल्तान कौन था?",
+    "options_hi": [
+      "इल्तुतमिश",
+      "कुतुबुद्दीन ऐबक"
+    ]
   },
   {
     "id": "dl_015",
     "subject": "Medieval History",
     "difficulty": "easy",
     "question": "Babur defeated whom in the First Battle of Panipat (1526)?",
-    "options": ["Ibrahim Lodi", "Rana Sanga"],
-    "answer_index": 0
+    "options": [
+      "Ibrahim Lodi",
+      "Rana Sanga"
+    ],
+    "answer_index": 0,
+    "question_hi": "प्रथम पानीपत युद्ध (1526) में बाबर ने किसे पराजित किया था?",
+    "options_hi": [
+      "इब्राहिम लोदी",
+      "राणा सांगा"
+    ]
   },
   {
     "id": "dl_016",
     "subject": "Medieval History",
     "difficulty": "easy",
     "question": "Who propounded Din-i Ilahi?",
-    "options": ["Aurangzeb", "Akbar"],
-    "answer_index": 1
+    "options": [
+      "Aurangzeb",
+      "Akbar"
+    ],
+    "answer_index": 1,
+    "question_hi": "दीन-ए-इलाही का प्रतिपादन किसने किया था?",
+    "options_hi": [
+      "औरंगज़ेब",
+      "अकबर"
+    ]
   },
   {
     "id": "dl_017",
     "subject": "Medieval History",
     "difficulty": "medium",
     "question": "Who introduced strict market control in the Delhi Sultanate?",
-    "options": ["Alauddin Khilji", "Muhammad bin Tughlaq"],
-    "answer_index": 0
+    "options": [
+      "Alauddin Khilji",
+      "Muhammad bin Tughlaq"
+    ],
+    "answer_index": 0,
+    "question_hi": "दिल्ली सल्तनत में सख्त बाज़ार नियंत्रण किसने लागू किया था?",
+    "options_hi": [
+      "अलाउद्दीन खिलजी",
+      "मुहम्मद बिन तुगलक"
+    ]
   },
   {
     "id": "dl_018",
     "subject": "Medieval History",
     "difficulty": "medium",
     "question": "The Battle of Talikota (1565) led to the decline of which empire?",
-    "options": ["Bahmani", "Vijayanagara"],
-    "answer_index": 1
+    "options": [
+      "Bahmani",
+      "Vijayanagara"
+    ],
+    "answer_index": 1,
+    "question_hi": "तालीकोटा युद्ध (1565) से किस साम्राज्य का पतन हुआ?",
+    "options_hi": [
+      "बहमनी",
+      "विजयनगर"
+    ]
   },
   {
     "id": "dl_019",
     "subject": "Medieval History",
     "difficulty": "medium",
     "question": "Who completed the Qutub Minar?",
-    "options": ["Iltutmish", "Qutbuddin Aibak"],
-    "answer_index": 0
+    "options": [
+      "Iltutmish",
+      "Qutbuddin Aibak"
+    ],
+    "answer_index": 0,
+    "question_hi": "कुतुब मीनार का निर्माण किसने पूरा किया?",
+    "options_hi": [
+      "इल्तुतमिश",
+      "कुतुबुद्दीन ऐबक"
+    ]
   },
   {
     "id": "dl_020",
     "subject": "Medieval History",
     "difficulty": "medium",
     "question": "Ibn Battuta visited India during whose reign?",
-    "options": ["Firoz Shah Tughlaq", "Muhammad bin Tughlaq"],
-    "answer_index": 1
+    "options": [
+      "Firoz Shah Tughlaq",
+      "Muhammad bin Tughlaq"
+    ],
+    "answer_index": 1,
+    "question_hi": "इब्न बतूता ने किसके शासनकाल में भारत की यात्रा की थी?",
+    "options_hi": [
+      "फिरोज़ शाह तुगलक",
+      "मुहम्मद बिन तुगलक"
+    ]
   },
   {
     "id": "dl_021",
     "subject": "Medieval History",
     "difficulty": "hard",
     "question": "Who shifted the capital from Delhi to Daulatabad?",
-    "options": ["Muhammad bin Tughlaq", "Alauddin Khilji"],
-    "answer_index": 0
+    "options": [
+      "Muhammad bin Tughlaq",
+      "Alauddin Khilji"
+    ],
+    "answer_index": 0,
+    "question_hi": "राजधानी को दिल्ली से दौलताबाद किसने स्थानांतरित किया?",
+    "options_hi": [
+      "मुहम्मद बिन तुगलक",
+      "अलाउद्दीन खिलजी"
+    ]
   },
   {
     "id": "dl_022",
     "subject": "Medieval History",
     "difficulty": "hard",
     "question": "Shivaji signed the Treaty of Purandar (1665) with whom?",
-    "options": ["Jaswant Singh", "Jai Singh I"],
-    "answer_index": 1
+    "options": [
+      "Jaswant Singh",
+      "Jai Singh I"
+    ],
+    "answer_index": 1,
+    "question_hi": "शिवाजी ने पुरंदर की संधि (1665) किसके साथ की थी?",
+    "options_hi": [
+      "जसवंत सिंह",
+      "जय सिंह प्रथम"
+    ]
   },
   {
     "id": "dl_023",
     "subject": "Medieval History",
     "difficulty": "hard",
     "question": "Which Mughal emperor was called 'Zinda Pir'?",
-    "options": ["Aurangzeb", "Shah Jahan"],
-    "answer_index": 0
+    "options": [
+      "Aurangzeb",
+      "Shah Jahan"
+    ],
+    "answer_index": 0,
+    "question_hi": "किस मुगल सम्राट को 'ज़िंदा पीर' कहा जाता था?",
+    "options_hi": [
+      "औरंगज़ेब",
+      "शाहजहाँ"
+    ]
   },
   {
     "id": "dl_024",
     "subject": "Medieval History",
     "difficulty": "hard",
     "question": "Who introduced token copper currency in the Delhi Sultanate?",
-    "options": ["Firoz Shah Tughlaq", "Muhammad bin Tughlaq"],
-    "answer_index": 1
+    "options": [
+      "Firoz Shah Tughlaq",
+      "Muhammad bin Tughlaq"
+    ],
+    "answer_index": 1,
+    "question_hi": "दिल्ली सल्तनत में सांकेतिक ताँबे की मुद्रा किसने शुरू की?",
+    "options_hi": [
+      "फिरोज़ शाह तुगलक",
+      "मुहम्मद बिन तुगलक"
+    ]
   },
   {
     "id": "dl_025",
     "subject": "Modern History",
     "difficulty": "easy",
     "question": "Who founded the Indian National Congress in 1885?",
-    "options": ["A.O. Hume", "W.C. Bonnerjee"],
-    "answer_index": 0
+    "options": [
+      "A.O. Hume",
+      "W.C. Bonnerjee"
+    ],
+    "answer_index": 0,
+    "question_hi": "1885 में भारतीय राष्ट्रीय कांग्रेस की स्थापना किसने की?",
+    "options_hi": [
+      "ए.ओ. ह्यूम",
+      "डब्ल्यू.सी. बनर्जी"
+    ]
   },
   {
     "id": "dl_026",
     "subject": "Modern History",
     "difficulty": "easy",
     "question": "In which year did the Jallianwala Bagh massacre occur?",
-    "options": ["1921", "1919"],
-    "answer_index": 1
+    "options": [
+      "1921",
+      "1919"
+    ],
+    "answer_index": 1,
+    "question_hi": "जलियाँवाला बाग हत्याकांड किस वर्ष हुआ था?",
+    "options_hi": [
+      "1921",
+      "1919"
+    ]
   },
   {
     "id": "dl_027",
     "subject": "Modern History",
     "difficulty": "easy",
     "question": "Who gave the slogan 'Do or Die'?",
-    "options": ["Mahatma Gandhi", "Subhas Chandra Bose"],
-    "answer_index": 0
+    "options": [
+      "Mahatma Gandhi",
+      "Subhas Chandra Bose"
+    ],
+    "answer_index": 0,
+    "question_hi": "'करो या मरो' का नारा किसने दिया था?",
+    "options_hi": [
+      "महात्मा गांधी",
+      "सुभाष चंद्र बोस"
+    ]
   },
   {
     "id": "dl_028",
     "subject": "Modern History",
     "difficulty": "easy",
     "question": "In which year was the Dandi March launched?",
-    "options": ["1932", "1930"],
-    "answer_index": 1
+    "options": [
+      "1932",
+      "1930"
+    ],
+    "answer_index": 1,
+    "question_hi": "दांडी मार्च किस वर्ष शुरू किया गया था?",
+    "options_hi": [
+      "1932",
+      "1930"
+    ]
   },
   {
     "id": "dl_029",
     "subject": "Modern History",
     "difficulty": "medium",
     "question": "Who founded the Brahmo Samaj?",
-    "options": ["Raja Ram Mohan Roy", "Dayananda Saraswati"],
-    "answer_index": 0
+    "options": [
+      "Raja Ram Mohan Roy",
+      "Dayananda Saraswati"
+    ],
+    "answer_index": 0,
+    "question_hi": "ब्रह्म समाज की स्थापना किसने की?",
+    "options_hi": [
+      "राजा राममोहन राय",
+      "दयानंद सरस्वती"
+    ]
   },
   {
     "id": "dl_030",
     "subject": "Modern History",
     "difficulty": "medium",
     "question": "Which Viceroy carried out the Partition of Bengal in 1905?",
-    "options": ["Lord Minto", "Lord Curzon"],
-    "answer_index": 1
+    "options": [
+      "Lord Minto",
+      "Lord Curzon"
+    ],
+    "answer_index": 1,
+    "question_hi": "1905 में बंगाल का विभाजन किस वायसराय ने किया था?",
+    "options_hi": [
+      "लॉर्ड मिंटो",
+      "लॉर्ड कर्ज़न"
+    ]
   },
   {
     "id": "dl_031",
     "subject": "Modern History",
     "difficulty": "medium",
     "question": "The Purna Swaraj resolution was passed at which session?",
-    "options": ["Lahore, 1929", "Karachi, 1931"],
-    "answer_index": 0
+    "options": [
+      "Lahore, 1929",
+      "Karachi, 1931"
+    ],
+    "answer_index": 0,
+    "question_hi": "पूर्ण स्वराज का प्रस्ताव किस अधिवेशन में पारित हुआ था?",
+    "options_hi": [
+      "लाहौर, 1929",
+      "कराची, 1931"
+    ]
   },
   {
     "id": "dl_032",
     "subject": "Modern History",
     "difficulty": "medium",
     "question": "Who reorganized the Azad Hind Fauj in 1943?",
-    "options": ["Rash Behari Bose", "Subhas Chandra Bose"],
-    "answer_index": 1
+    "options": [
+      "Rash Behari Bose",
+      "Subhas Chandra Bose"
+    ],
+    "answer_index": 1,
+    "question_hi": "1943 में आज़ाद हिंद फौज का पुनर्गठन किसने किया?",
+    "options_hi": [
+      "रास बिहारी बोस",
+      "सुभाष चंद्र बोस"
+    ]
   },
   {
     "id": "dl_033",
     "subject": "Modern History",
     "difficulty": "hard",
     "question": "In which year did the Surat Split of the Congress occur?",
-    "options": ["1907", "1905"],
-    "answer_index": 0
+    "options": [
+      "1907",
+      "1905"
+    ],
+    "answer_index": 0,
+    "question_hi": "कांग्रेस का सूरत विभाजन किस वर्ष हुआ था?",
+    "options_hi": [
+      "1907",
+      "1905"
+    ]
   },
   {
     "id": "dl_034",
     "subject": "Modern History",
     "difficulty": "hard",
     "question": "Who founded the Ghadar Party in 1913?",
-    "options": ["Lala Lajpat Rai", "Lala Har Dayal"],
-    "answer_index": 1
+    "options": [
+      "Lala Lajpat Rai",
+      "Lala Har Dayal"
+    ],
+    "answer_index": 1,
+    "question_hi": "1913 में ग़दर पार्टी की स्थापना किसने की?",
+    "options_hi": [
+      "लाला लाजपत राय",
+      "लाला हरदयाल"
+    ]
   },
   {
     "id": "dl_035",
     "subject": "Modern History",
     "difficulty": "hard",
     "question": "Which Viceroy made the 'August Offer' of 1940?",
-    "options": ["Lord Linlithgow", "Lord Wavell"],
-    "answer_index": 0
+    "options": [
+      "Lord Linlithgow",
+      "Lord Wavell"
+    ],
+    "answer_index": 0,
+    "question_hi": "1940 का 'अगस्त प्रस्ताव' किस वायसराय ने दिया था?",
+    "options_hi": [
+      "लॉर्ड लिनलिथगो",
+      "लॉर्ड वेवेल"
+    ]
   },
   {
     "id": "dl_036",
     "subject": "Modern History",
     "difficulty": "hard",
     "question": "Gandhi's first satyagraha in India was launched at?",
-    "options": ["Kheda", "Champaran"],
-    "answer_index": 1
+    "options": [
+      "Kheda",
+      "Champaran"
+    ],
+    "answer_index": 1,
+    "question_hi": "गांधीजी का भारत में पहला सत्याग्रह कहाँ शुरू हुआ था?",
+    "options_hi": [
+      "खेड़ा",
+      "चंपारण"
+    ]
   },
   {
     "id": "dl_037",
     "subject": "Art and Culture",
     "difficulty": "easy",
     "question": "Which classical dance form originated in Assam?",
-    "options": ["Bharatanatyam", "Sattriya"],
-    "answer_index": 1
+    "options": [
+      "Bharatanatyam",
+      "Sattriya"
+    ],
+    "answer_index": 1,
+    "question_hi": "असम में किस शास्त्रीय नृत्य रूप की उत्पत्ति हुई?",
+    "options_hi": [
+      "भरतनाट्यम",
+      "सत्रीया"
+    ]
   },
   {
     "id": "dl_038",
     "subject": "Art and Culture",
     "difficulty": "easy",
     "question": "Kathakali is a classical dance of which state?",
-    "options": ["Kerala", "Karnataka"],
-    "answer_index": 0
+    "options": [
+      "Kerala",
+      "Karnataka"
+    ],
+    "answer_index": 0,
+    "question_hi": "कथकली किस राज्य का शास्त्रीय नृत्य है?",
+    "options_hi": [
+      "केरल",
+      "कर्नाटक"
+    ]
   },
   {
     "id": "dl_039",
     "subject": "Art and Culture",
     "difficulty": "easy",
     "question": "The Konark Sun Temple is in which state?",
-    "options": ["West Bengal", "Odisha"],
-    "answer_index": 1
+    "options": [
+      "West Bengal",
+      "Odisha"
+    ],
+    "answer_index": 1,
+    "question_hi": "कोणार्क सूर्य मंदिर किस राज्य में स्थित है?",
+    "options_hi": [
+      "पश्चिम बंगाल",
+      "ओडिशा"
+    ]
   },
   {
     "id": "dl_040",
     "subject": "Art and Culture",
     "difficulty": "easy",
     "question": "Bihu is a festival of which state?",
-    "options": ["Assam", "Odisha"],
-    "answer_index": 0
+    "options": [
+      "Assam",
+      "Odisha"
+    ],
+    "answer_index": 0,
+    "question_hi": "बिहू किस राज्य का त्योहार है?",
+    "options_hi": [
+      "असम",
+      "ओडिशा"
+    ]
   },
   {
     "id": "dl_041",
     "subject": "Art and Culture",
     "difficulty": "medium",
     "question": "Ajanta cave paintings mainly depict scenes from?",
-    "options": ["Jataka tales", "Panchatantra"],
-    "answer_index": 0
+    "options": [
+      "Jataka tales",
+      "Panchatantra"
+    ],
+    "answer_index": 0,
+    "question_hi": "अजंता गुफा चित्रकला मुख्यतः किसके दृश्यों को दर्शाती है?",
+    "options_hi": [
+      "जातक कथाएँ",
+      "पंचतंत्र"
+    ]
   },
   {
     "id": "dl_042",
     "subject": "Art and Culture",
     "difficulty": "medium",
     "question": "Kuchipudi dance originated in which state?",
-    "options": ["Tamil Nadu", "Andhra Pradesh"],
-    "answer_index": 1
+    "options": [
+      "Tamil Nadu",
+      "Andhra Pradesh"
+    ],
+    "answer_index": 1,
+    "question_hi": "कुचिपुड़ी नृत्य की उत्पत्ति किस राज्य में हुई?",
+    "options_hi": [
+      "तमिलनाडु",
+      "आंध्र प्रदेश"
+    ]
   },
   {
     "id": "dl_043",
     "subject": "Art and Culture",
     "difficulty": "medium",
     "question": "Who composed the Ramcharitmanas?",
-    "options": ["Tulsidas", "Surdas"],
-    "answer_index": 0
+    "options": [
+      "Tulsidas",
+      "Surdas"
+    ],
+    "answer_index": 0,
+    "question_hi": "रामचरितमानस की रचना किसने की?",
+    "options_hi": [
+      "तुलसीदास",
+      "सूरदास"
+    ]
   },
   {
     "id": "dl_044",
     "subject": "Art and Culture",
     "difficulty": "medium",
     "question": "Tansen was a court musician of which emperor?",
-    "options": ["Shah Jahan", "Akbar"],
-    "answer_index": 1
+    "options": [
+      "Shah Jahan",
+      "Akbar"
+    ],
+    "answer_index": 1,
+    "question_hi": "तानसेन किस सम्राट के दरबारी संगीतकार थे?",
+    "options_hi": [
+      "शाहजहाँ",
+      "अकबर"
+    ]
   },
   {
     "id": "dl_045",
     "subject": "Art and Culture",
     "difficulty": "hard",
     "question": "Who built the Brihadeeswara Temple at Thanjavur?",
-    "options": ["Rajaraja I", "Rajendra I"],
-    "answer_index": 0
+    "options": [
+      "Rajaraja I",
+      "Rajendra I"
+    ],
+    "answer_index": 0,
+    "question_hi": "तंजावुर के बृहदीश्वर मंदिर का निर्माण किसने करवाया?",
+    "options_hi": [
+      "राजराज प्रथम",
+      "राजेंद्र प्रथम"
+    ]
   },
   {
     "id": "dl_046",
     "subject": "Art and Culture",
     "difficulty": "hard",
     "question": "Kalamkari art is primarily associated with which state?",
-    "options": ["Gujarat", "Andhra Pradesh"],
-    "answer_index": 1
+    "options": [
+      "Gujarat",
+      "Andhra Pradesh"
+    ],
+    "answer_index": 1,
+    "question_hi": "कलमकारी कला मुख्यतः किस राज्य से जुड़ी है?",
+    "options_hi": [
+      "गुजरात",
+      "आंध्र प्रदेश"
+    ]
   },
   {
     "id": "dl_047",
     "subject": "Art and Culture",
     "difficulty": "hard",
     "question": "Dhrupad is a genre of which music tradition?",
-    "options": ["Carnatic", "Hindustani"],
-    "answer_index": 1
+    "options": [
+      "Carnatic",
+      "Hindustani"
+    ],
+    "answer_index": 1,
+    "question_hi": "ध्रुपद किस संगीत परंपरा की एक विधा है?",
+    "options_hi": [
+      "कर्नाटक",
+      "हिंदुस्तानी"
+    ]
   },
   {
     "id": "dl_048",
     "subject": "Art and Culture",
     "difficulty": "hard",
     "question": "Which dynasty built the Kailasa temple at Ellora?",
-    "options": ["Rashtrakutas", "Chalukyas"],
-    "answer_index": 0
+    "options": [
+      "Rashtrakutas",
+      "Chalukyas"
+    ],
+    "answer_index": 0,
+    "question_hi": "एलोरा के कैलाश मंदिर का निर्माण किस वंश ने करवाया?",
+    "options_hi": [
+      "राष्ट्रकूट",
+      "चालुक्य"
+    ]
   },
   {
     "id": "dl_049",
     "subject": "Geography",
     "difficulty": "easy",
     "question": "Hirakud Dam is built on which river?",
-    "options": ["Godavari", "Mahanadi"],
-    "answer_index": 1
+    "options": [
+      "Godavari",
+      "Mahanadi"
+    ],
+    "answer_index": 1,
+    "question_hi": "हीराकुंड बांध किस नदी पर बना है?",
+    "options_hi": [
+      "गोदावरी",
+      "महानदी"
+    ]
   },
   {
     "id": "dl_050",
     "subject": "Geography",
     "difficulty": "easy",
     "question": "Which is the longest river of India?",
-    "options": ["Ganga", "Brahmaputra"],
-    "answer_index": 0
+    "options": [
+      "Ganga",
+      "Brahmaputra"
+    ],
+    "answer_index": 0,
+    "question_hi": "भारत की सबसे लंबी नदी कौन-सी है?",
+    "options_hi": [
+      "गंगा",
+      "ब्रह्मपुत्र"
+    ]
   },
   {
     "id": "dl_051",
     "subject": "Geography",
     "difficulty": "easy",
     "question": "Kanchenjunga is located in which state?",
-    "options": ["Himachal Pradesh", "Sikkim"],
-    "answer_index": 1
+    "options": [
+      "Himachal Pradesh",
+      "Sikkim"
+    ],
+    "answer_index": 1,
+    "question_hi": "कंचनजंगा किस राज्य में स्थित है?",
+    "options_hi": [
+      "हिमाचल प्रदेश",
+      "सिक्किम"
+    ]
   },
   {
     "id": "dl_052",
     "subject": "Geography",
     "difficulty": "easy",
     "question": "The Tropic of Cancer passes through which state?",
-    "options": ["Gujarat", "Punjab"],
-    "answer_index": 0
+    "options": [
+      "Gujarat",
+      "Punjab"
+    ],
+    "answer_index": 0,
+    "question_hi": "कर्क रेखा किस राज्य से होकर गुजरती है?",
+    "options_hi": [
+      "गुजरात",
+      "पंजाब"
+    ]
   },
   {
     "id": "dl_053",
     "subject": "Geography",
     "difficulty": "medium",
     "question": "The Palk Strait separates India from which country?",
-    "options": ["Sri Lanka", "Maldives"],
-    "answer_index": 0
+    "options": [
+      "Sri Lanka",
+      "Maldives"
+    ],
+    "answer_index": 0,
+    "question_hi": "पाक जलडमरूमध्य भारत को किस देश से अलग करता है?",
+    "options_hi": [
+      "श्रीलंका",
+      "मालदीव"
+    ]
   },
   {
     "id": "dl_054",
     "subject": "Geography",
     "difficulty": "medium",
     "question": "Loktak Lake is in which state?",
-    "options": ["Mizoram", "Manipur"],
-    "answer_index": 1
+    "options": [
+      "Mizoram",
+      "Manipur"
+    ],
+    "answer_index": 1,
+    "question_hi": "लोकटक झील किस राज्य में स्थित है?",
+    "options_hi": [
+      "मिज़ोरम",
+      "मणिपुर"
+    ]
   },
   {
     "id": "dl_055",
     "subject": "Geography",
     "difficulty": "medium",
     "question": "Which river is known as the 'Dakshina Ganga'?",
-    "options": ["Godavari", "Krishna"],
-    "answer_index": 0
+    "options": [
+      "Godavari",
+      "Krishna"
+    ],
+    "answer_index": 0,
+    "question_hi": "किस नदी को 'दक्षिण गंगा' कहा जाता है?",
+    "options_hi": [
+      "गोदावरी",
+      "कृष्णा"
+    ]
   },
   {
     "id": "dl_056",
     "subject": "Geography",
     "difficulty": "medium",
     "question": "Jog Falls is on which river?",
-    "options": ["Kaveri", "Sharavathi"],
-    "answer_index": 1
+    "options": [
+      "Kaveri",
+      "Sharavathi"
+    ],
+    "answer_index": 1,
+    "question_hi": "जोग जलप्रपात किस नदी पर स्थित है?",
+    "options_hi": [
+      "कावेरी",
+      "शरावती"
+    ]
   },
   {
     "id": "dl_057",
     "subject": "Geography",
     "difficulty": "hard",
     "question": "Majuli, the largest river island, is on which river?",
-    "options": ["Brahmaputra", "Barak"],
-    "answer_index": 0
+    "options": [
+      "Brahmaputra",
+      "Barak"
+    ],
+    "answer_index": 0,
+    "question_hi": "सबसे बड़ा नदी द्वीप माजुली किस नदी पर स्थित है?",
+    "options_hi": [
+      "ब्रह्मपुत्र",
+      "बराक"
+    ]
   },
   {
     "id": "dl_058",
     "subject": "Geography",
     "difficulty": "hard",
     "question": "Which channel separates the Andaman group from the Nicobar group?",
-    "options": ["Nine Degree Channel", "Ten Degree Channel"],
-    "answer_index": 1
+    "options": [
+      "Nine Degree Channel",
+      "Ten Degree Channel"
+    ],
+    "answer_index": 1,
+    "question_hi": "कौन-सा चैनल अंडमान समूह को निकोबार समूह से अलग करता है?",
+    "options_hi": [
+      "नाइन डिग्री चैनल",
+      "टेन डिग्री चैनल"
+    ]
   },
   {
     "id": "dl_059",
     "subject": "Geography",
     "difficulty": "hard",
     "question": "Duncan Passage lies between which two islands?",
-    "options": ["South and Little Andaman", "Little and Great Nicobar"],
-    "answer_index": 0
+    "options": [
+      "South and Little Andaman",
+      "Little and Great Nicobar"
+    ],
+    "answer_index": 0,
+    "question_hi": "डंकन पैसेज किन दो द्वीपों के बीच स्थित है?",
+    "options_hi": [
+      "दक्षिण और लघु अंडमान",
+      "लघु और ग्रेट निकोबार"
+    ]
   },
   {
     "id": "dl_060",
     "subject": "Geography",
     "difficulty": "hard",
     "question": "Which pass connects Sikkim with Tibet?",
-    "options": ["Shipki La", "Nathu La"],
-    "answer_index": 1
+    "options": [
+      "Shipki La",
+      "Nathu La"
+    ],
+    "answer_index": 1,
+    "question_hi": "कौन-सा दर्रा सिक्किम को तिब्बत से जोड़ता है?",
+    "options_hi": [
+      "शिपकी ला",
+      "नाथू ला"
+    ]
   },
   {
     "id": "dl_061",
     "subject": "Economy",
     "difficulty": "easy",
     "question": "Which body regulates India's securities market?",
-    "options": ["RBI", "SEBI"],
-    "answer_index": 1
+    "options": [
+      "RBI",
+      "SEBI"
+    ],
+    "answer_index": 1,
+    "question_hi": "भारत के प्रतिभूति बाज़ार को कौन-सा निकाय नियंत्रित करता है?",
+    "options_hi": [
+      "आरबीआई",
+      "सेबी"
+    ]
   },
   {
     "id": "dl_062",
     "subject": "Economy",
     "difficulty": "easy",
     "question": "The repo rate is set by which institution?",
-    "options": ["RBI", "SEBI"],
-    "answer_index": 0
+    "options": [
+      "RBI",
+      "SEBI"
+    ],
+    "answer_index": 0,
+    "question_hi": "रेपो दर किस संस्था द्वारा निर्धारित की जाती है?",
+    "options_hi": [
+      "आरबीआई",
+      "सेबी"
+    ]
   },
   {
     "id": "dl_063",
     "subject": "Economy",
     "difficulty": "easy",
     "question": "In which year was GST launched in India?",
-    "options": ["2017", "2016"],
-    "answer_index": 0
+    "options": [
+      "2017",
+      "2016"
+    ],
+    "answer_index": 0,
+    "question_hi": "भारत में जीएसटी किस वर्ष लागू किया गया था?",
+    "options_hi": [
+      "2017",
+      "2016"
+    ]
   },
   {
     "id": "dl_064",
     "subject": "Economy",
     "difficulty": "easy",
     "question": "NITI Aayog replaced which body?",
-    "options": ["Finance Commission", "Planning Commission"],
-    "answer_index": 1
+    "options": [
+      "Finance Commission",
+      "Planning Commission"
+    ],
+    "answer_index": 1,
+    "question_hi": "नीति आयोग ने किस निकाय का स्थान लिया?",
+    "options_hi": [
+      "वित्त आयोग",
+      "योजना आयोग"
+    ]
   },
   {
     "id": "dl_065",
     "subject": "Economy",
     "difficulty": "medium",
     "question": "What is the base year of India's current GDP series?",
-    "options": ["2011-12", "2004-05"],
-    "answer_index": 0
+    "options": [
+      "2011-12",
+      "2004-05"
+    ],
+    "answer_index": 0,
+    "question_hi": "भारत की वर्तमान जीडीपी शृंखला का आधार वर्ष क्या है?",
+    "options_hi": [
+      "2011-12",
+      "2004-05"
+    ]
   },
   {
     "id": "dl_066",
     "subject": "Economy",
     "difficulty": "medium",
     "question": "Which body recommends Minimum Support Prices?",
-    "options": ["FCI", "CACP"],
-    "answer_index": 1
+    "options": [
+      "FCI",
+      "CACP"
+    ],
+    "answer_index": 1,
+    "question_hi": "न्यूनतम समर्थन मूल्य की सिफारिश कौन-सा निकाय करता है?",
+    "options_hi": [
+      "एफसीआई",
+      "सीएसीपी"
+    ]
   },
   {
     "id": "dl_067",
     "subject": "Economy",
     "difficulty": "medium",
     "question": "RBI's inflation target is based on which index?",
-    "options": ["CPI", "WPI"],
-    "answer_index": 0
+    "options": [
+      "CPI",
+      "WPI"
+    ],
+    "answer_index": 0,
+    "question_hi": "आरबीआई का मुद्रास्फीति लक्ष्य किस सूचकांक पर आधारित है?",
+    "options_hi": [
+      "सीपीआई",
+      "डब्ल्यूपीआई"
+    ]
   },
   {
     "id": "dl_068",
     "subject": "Economy",
     "difficulty": "medium",
     "question": "Devaluation of a currency makes exports?",
-    "options": ["Costlier", "Cheaper"],
-    "answer_index": 1
+    "options": [
+      "Costlier",
+      "Cheaper"
+    ],
+    "answer_index": 1,
+    "question_hi": "मुद्रा के अवमूल्यन से निर्यात कैसा हो जाता है?",
+    "options_hi": [
+      "महँगा",
+      "सस्ता"
+    ]
   },
   {
     "id": "dl_069",
     "subject": "Economy",
     "difficulty": "hard",
     "question": "Fiscal deficit minus interest payments equals?",
-    "options": ["Primary deficit", "Revenue deficit"],
-    "answer_index": 0
+    "options": [
+      "Primary deficit",
+      "Revenue deficit"
+    ],
+    "answer_index": 0,
+    "question_hi": "राजकोषीय घाटे में से ब्याज भुगतान घटाने पर क्या प्राप्त होता है?",
+    "options_hi": [
+      "प्राथमिक घाटा",
+      "राजस्व घाटा"
+    ]
   },
   {
     "id": "dl_070",
     "subject": "Economy",
     "difficulty": "hard",
     "question": "Asia's first Export Processing Zone was set up at?",
-    "options": ["Santa Cruz", "Kandla"],
-    "answer_index": 1
+    "options": [
+      "Santa Cruz",
+      "Kandla"
+    ],
+    "answer_index": 1,
+    "question_hi": "एशिया का पहला निर्यात प्रसंस्करण क्षेत्र कहाँ स्थापित किया गया था?",
+    "options_hi": [
+      "सांता क्रूज़",
+      "कांडला"
+    ]
   },
   {
     "id": "dl_071",
     "subject": "Economy",
     "difficulty": "hard",
     "question": "The Marginal Standing Facility rate is set ___ the repo rate.",
-    "options": ["Above", "Below"],
-    "answer_index": 0
+    "options": [
+      "Above",
+      "Below"
+    ],
+    "answer_index": 0,
+    "question_hi": "सीमांत स्थायी सुविधा (एमएसएफ) दर रेपो दर से ___ रखी जाती है।",
+    "options_hi": [
+      "ऊपर",
+      "नीचे"
+    ]
   },
   {
     "id": "dl_072",
     "subject": "Economy",
     "difficulty": "hard",
     "question": "Who coined the term 'Hindu rate of growth'?",
-    "options": ["C. Rangarajan", "Raj Krishna"],
-    "answer_index": 1
+    "options": [
+      "C. Rangarajan",
+      "Raj Krishna"
+    ],
+    "answer_index": 1,
+    "question_hi": "'हिंदू विकास दर' शब्द किसने गढ़ा था?",
+    "options_hi": [
+      "सी. रंगराजन",
+      "राज कृष्ण"
+    ]
   },
   {
     "id": "dl_073",
     "subject": "Environment",
     "difficulty": "easy",
     "question": "Which national park is the only wild habitat of the Asiatic lion?",
-    "options": ["Kaziranga", "Gir"],
-    "answer_index": 1
+    "options": [
+      "Kaziranga",
+      "Gir"
+    ],
+    "answer_index": 1,
+    "question_hi": "एशियाई सिंह का एकमात्र प्राकृतिक आवास कौन-सा राष्ट्रीय उद्यान है?",
+    "options_hi": [
+      "काज़ीरंगा",
+      "गिर"
+    ]
   },
   {
     "id": "dl_074",
     "subject": "Environment",
     "difficulty": "easy",
     "question": "Kaziranga National Park is famous for which animal?",
-    "options": ["One-horned rhino", "Tiger"],
-    "answer_index": 0
+    "options": [
+      "One-horned rhino",
+      "Tiger"
+    ],
+    "answer_index": 0,
+    "question_hi": "काज़ीरंगा राष्ट्रीय उद्यान किस पशु के लिए प्रसिद्ध है?",
+    "options_hi": [
+      "एक सींग वाला गैंडा",
+      "बाघ"
+    ]
   },
   {
     "id": "dl_075",
     "subject": "Environment",
     "difficulty": "easy",
     "question": "In which year was Project Tiger launched?",
-    "options": ["1973", "1983"],
-    "answer_index": 0
+    "options": [
+      "1973",
+      "1983"
+    ],
+    "answer_index": 0,
+    "question_hi": "प्रोजेक्ट टाइगर किस वर्ष शुरू किया गया था?",
+    "options_hi": [
+      "1973",
+      "1983"
+    ]
   },
   {
     "id": "dl_076",
     "subject": "Environment",
     "difficulty": "easy",
     "question": "The ozone layer lies mainly in which atmospheric layer?",
-    "options": ["Troposphere", "Stratosphere"],
-    "answer_index": 1
+    "options": [
+      "Troposphere",
+      "Stratosphere"
+    ],
+    "answer_index": 1,
+    "question_hi": "ओज़ोन परत मुख्यतः वायुमंडल की किस परत में स्थित है?",
+    "options_hi": [
+      "क्षोभमंडल",
+      "समतापमंडल"
+    ]
   },
   {
     "id": "dl_077",
     "subject": "Environment",
     "difficulty": "medium",
     "question": "The Ramsar Convention relates to the conservation of?",
-    "options": ["Wetlands", "Forests"],
-    "answer_index": 0
+    "options": [
+      "Wetlands",
+      "Forests"
+    ],
+    "answer_index": 0,
+    "question_hi": "रामसर अभिसमय किसके संरक्षण से संबंधित है?",
+    "options_hi": [
+      "आर्द्रभूमि",
+      "वन"
+    ]
   },
   {
     "id": "dl_078",
     "subject": "Environment",
     "difficulty": "medium",
     "question": "The Chipko movement was primarily against?",
-    "options": ["Dam construction", "Deforestation"],
-    "answer_index": 1
+    "options": [
+      "Dam construction",
+      "Deforestation"
+    ],
+    "answer_index": 1,
+    "question_hi": "चिपको आंदोलन मुख्यतः किसके विरुद्ध था?",
+    "options_hi": [
+      "बांध निर्माण",
+      "वनों की कटाई"
+    ]
   },
   {
     "id": "dl_079",
     "subject": "Environment",
     "difficulty": "medium",
     "question": "Which gas has a higher global warming potential?",
-    "options": ["Methane", "Carbon dioxide"],
-    "answer_index": 0
+    "options": [
+      "Methane",
+      "Carbon dioxide"
+    ],
+    "answer_index": 0,
+    "question_hi": "किस गैस की वैश्विक तापन क्षमता अधिक है?",
+    "options_hi": [
+      "मीथेन",
+      "कार्बन डाइऑक्साइड"
+    ]
   },
   {
     "id": "dl_080",
     "subject": "Environment",
     "difficulty": "medium",
     "question": "Which was India's first national park?",
-    "options": ["Kanha", "Jim Corbett"],
-    "answer_index": 1
+    "options": [
+      "Kanha",
+      "Jim Corbett"
+    ],
+    "answer_index": 1,
+    "question_hi": "भारत का पहला राष्ट्रीय उद्यान कौन-सा था?",
+    "options_hi": [
+      "कान्हा",
+      "जिम कॉर्बेट"
+    ]
   },
   {
     "id": "dl_081",
     "subject": "Environment",
     "difficulty": "hard",
     "question": "The Montreal Protocol deals with?",
-    "options": ["Ozone-depleting substances", "Greenhouse gases"],
-    "answer_index": 0
+    "options": [
+      "Ozone-depleting substances",
+      "Greenhouse gases"
+    ],
+    "answer_index": 0,
+    "question_hi": "मॉन्ट्रियल प्रोटोकॉल किससे संबंधित है?",
+    "options_hi": [
+      "ओज़ोन-क्षयकारी पदार्थ",
+      "ग्रीनहाउस गैसें"
+    ]
   },
   {
     "id": "dl_082",
     "subject": "Environment",
     "difficulty": "hard",
     "question": "The Red Data Book is published by?",
-    "options": ["UNEP", "IUCN"],
-    "answer_index": 1
+    "options": [
+      "UNEP",
+      "IUCN"
+    ],
+    "answer_index": 1,
+    "question_hi": "रेड डाटा बुक किसके द्वारा प्रकाशित की जाती है?",
+    "options_hi": [
+      "यूएनईपी",
+      "आईयूसीएन"
+    ]
   },
   {
     "id": "dl_083",
     "subject": "Environment",
     "difficulty": "hard",
     "question": "Keibul Lamjao, the floating national park, is in which state?",
-    "options": ["Manipur", "Assam"],
-    "answer_index": 0
+    "options": [
+      "Manipur",
+      "Assam"
+    ],
+    "answer_index": 0,
+    "question_hi": "तैरता हुआ राष्ट्रीय उद्यान केइबुल लामजाओ किस राज्य में है?",
+    "options_hi": [
+      "मणिपुर",
+      "असम"
+    ]
   },
   {
     "id": "dl_084",
     "subject": "Environment",
     "difficulty": "hard",
     "question": "Which was India's first biosphere reserve?",
-    "options": ["Sundarbans", "Nilgiri"],
-    "answer_index": 1
+    "options": [
+      "Sundarbans",
+      "Nilgiri"
+    ],
+    "answer_index": 1,
+    "question_hi": "भारत का पहला जैवमंडल रिज़र्व कौन-सा था?",
+    "options_hi": [
+      "सुंदरबन",
+      "नीलगिरि"
+    ]
   },
   {
     "id": "dl_085",
     "subject": "Polity",
     "difficulty": "easy",
     "question": "Which Article empowers the Supreme Court to issue writs for Fundamental Rights?",
-    "options": ["Article 32", "Article 226"],
-    "answer_index": 0
+    "options": [
+      "Article 32",
+      "Article 226"
+    ],
+    "answer_index": 0,
+    "question_hi": "कौन-सा अनुच्छेद उच्चतम न्यायालय को मूल अधिकारों हेतु रिट जारी करने का अधिकार देता है?",
+    "options_hi": [
+      "अनुच्छेद 32",
+      "अनुच्छेद 226"
+    ]
   },
   {
     "id": "dl_086",
     "subject": "Polity",
     "difficulty": "easy",
     "question": "Which amendment added Fundamental Duties to the Constitution?",
-    "options": ["44th Amendment", "42nd Amendment"],
-    "answer_index": 1
+    "options": [
+      "44th Amendment",
+      "42nd Amendment"
+    ],
+    "answer_index": 1,
+    "question_hi": "किस संशोधन ने संविधान में मूल कर्तव्य जोड़े?",
+    "options_hi": [
+      "44वाँ संशोधन",
+      "42वाँ संशोधन"
+    ]
   },
   {
     "id": "dl_087",
     "subject": "Polity",
     "difficulty": "easy",
     "question": "A Money Bill can be introduced only in?",
-    "options": ["Rajya Sabha", "Lok Sabha"],
-    "answer_index": 1
+    "options": [
+      "Rajya Sabha",
+      "Lok Sabha"
+    ],
+    "answer_index": 1,
+    "question_hi": "धन विधेयक केवल किस सदन में प्रस्तुत किया जा सकता है?",
+    "options_hi": [
+      "राज्यसभा",
+      "लोकसभा"
+    ]
   },
   {
     "id": "dl_088",
     "subject": "Polity",
     "difficulty": "easy",
     "question": "What is the term of a Rajya Sabha member?",
-    "options": ["6 years", "5 years"],
-    "answer_index": 0
+    "options": [
+      "6 years",
+      "5 years"
+    ],
+    "answer_index": 0,
+    "question_hi": "राज्यसभा सदस्य का कार्यकाल कितना होता है?",
+    "options_hi": [
+      "6 वर्ष",
+      "5 वर्ष"
+    ]
   },
   {
     "id": "dl_089",
     "subject": "Polity",
     "difficulty": "medium",
     "question": "Who administers the oath of office to the President?",
-    "options": ["Chief Justice of India", "Vice-President"],
-    "answer_index": 0
+    "options": [
+      "Chief Justice of India",
+      "Vice-President"
+    ],
+    "answer_index": 0,
+    "question_hi": "राष्ट्रपति को पद की शपथ कौन दिलाता है?",
+    "options_hi": [
+      "भारत के मुख्य न्यायाधीश",
+      "उपराष्ट्रपति"
+    ]
   },
   {
     "id": "dl_090",
     "subject": "Polity",
     "difficulty": "medium",
     "question": "The Directive Principles were borrowed from which country?",
-    "options": ["USA", "Ireland"],
-    "answer_index": 1
+    "options": [
+      "USA",
+      "Ireland"
+    ],
+    "answer_index": 1,
+    "question_hi": "नीति निदेशक तत्व किस देश से लिए गए थे?",
+    "options_hi": [
+      "अमेरिका",
+      "आयरलैंड"
+    ]
   },
   {
     "id": "dl_091",
     "subject": "Polity",
     "difficulty": "medium",
     "question": "Which Article abolishes untouchability?",
-    "options": ["Article 17", "Article 15"],
-    "answer_index": 0
+    "options": [
+      "Article 17",
+      "Article 15"
+    ],
+    "answer_index": 0,
+    "question_hi": "कौन-सा अनुच्छेद अस्पृश्यता का उन्मूलन करता है?",
+    "options_hi": [
+      "अनुच्छेद 17",
+      "अनुच्छेद 15"
+    ]
   },
   {
     "id": "dl_092",
     "subject": "Polity",
     "difficulty": "medium",
     "question": "The Election Commission is established under which Article?",
-    "options": ["Article 356", "Article 324"],
-    "answer_index": 1
+    "options": [
+      "Article 356",
+      "Article 324"
+    ],
+    "answer_index": 1,
+    "question_hi": "चुनाव आयोग की स्थापना किस अनुच्छेद के तहत की गई है?",
+    "options_hi": [
+      "अनुच्छेद 356",
+      "अनुच्छेद 324"
+    ]
   },
   {
     "id": "dl_093",
     "subject": "Polity",
     "difficulty": "hard",
     "question": "Which case established the Basic Structure doctrine?",
-    "options": ["Kesavananda Bharati", "Golaknath"],
-    "answer_index": 0
+    "options": [
+      "Kesavananda Bharati",
+      "Golaknath"
+    ],
+    "answer_index": 0,
+    "question_hi": "किस मामले ने मूल ढांचे के सिद्धांत की स्थापना की?",
+    "options_hi": [
+      "केशवानंद भारती",
+      "गोलकनाथ"
+    ]
   },
   {
     "id": "dl_094",
     "subject": "Polity",
     "difficulty": "hard",
     "question": "The anti-defection law is in which Schedule?",
-    "options": ["Ninth Schedule", "Tenth Schedule"],
-    "answer_index": 1
+    "options": [
+      "Ninth Schedule",
+      "Tenth Schedule"
+    ],
+    "answer_index": 1,
+    "question_hi": "दल-बदल विरोधी कानून किस अनुसूची में है?",
+    "options_hi": [
+      "नौवीं अनुसूची",
+      "दसवीं अनुसूची"
+    ]
   },
   {
     "id": "dl_095",
     "subject": "Polity",
     "difficulty": "hard",
     "question": "Which amendment lowered the voting age to 18?",
-    "options": ["65th Amendment", "61st Amendment"],
-    "answer_index": 1
+    "options": [
+      "65th Amendment",
+      "61st Amendment"
+    ],
+    "answer_index": 1,
+    "question_hi": "किस संशोधन ने मतदान की आयु घटाकर 18 वर्ष की?",
+    "options_hi": [
+      "65वाँ संशोधन",
+      "61वाँ संशोधन"
+    ]
   },
   {
     "id": "dl_096",
     "subject": "Polity",
     "difficulty": "hard",
     "question": "Which Article provides for a Finance Commission?",
-    "options": ["Article 280", "Article 282"],
-    "answer_index": 0
+    "options": [
+      "Article 280",
+      "Article 282"
+    ],
+    "answer_index": 0,
+    "question_hi": "वित्त आयोग का प्रावधान किस अनुच्छेद में है?",
+    "options_hi": [
+      "अनुच्छेद 280",
+      "अनुच्छेद 282"
+    ]
   }
 ]

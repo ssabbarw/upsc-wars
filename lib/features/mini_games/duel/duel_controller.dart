@@ -74,13 +74,14 @@ class DuelState {
       p2Score: p2Score ?? this.p2Score,
       p1Locked: p1Locked ?? this.p1Locked,
       p2Locked: p2Locked ?? this.p2Locked,
-      p1WrongIndex:
-          clearWrongIndices ? null : (p1WrongIndex ?? this.p1WrongIndex),
-      p2WrongIndex:
-          clearWrongIndices ? null : (p2WrongIndex ?? this.p2WrongIndex),
+      p1WrongIndex: clearWrongIndices
+          ? null
+          : (p1WrongIndex ?? this.p1WrongIndex),
+      p2WrongIndex: clearWrongIndices
+          ? null
+          : (p2WrongIndex ?? this.p2WrongIndex),
       phase: phase ?? this.phase,
-      roundWinner:
-          clearRoundWinner ? null : (roundWinner ?? this.roundWinner),
+      roundWinner: clearRoundWinner ? null : (roundWinner ?? this.roundWinner),
       revealedAnswer: revealedAnswer ?? this.revealedAnswer,
       error: error ?? this.error,
     );
@@ -164,10 +165,12 @@ class DuelController extends AsyncNotifier<DuelState> {
     // Wrong tap: lock that player out and remember which option they hit.
     final p1Locked = player == DuelPlayer.one ? true : current.p1Locked;
     final p2Locked = player == DuelPlayer.two ? true : current.p2Locked;
-    final p1WrongIndex =
-        player == DuelPlayer.one ? optionIndex : current.p1WrongIndex;
-    final p2WrongIndex =
-        player == DuelPlayer.two ? optionIndex : current.p2WrongIndex;
+    final p1WrongIndex = player == DuelPlayer.one
+        ? optionIndex
+        : current.p1WrongIndex;
+    final p2WrongIndex = player == DuelPlayer.two
+        ? optionIndex
+        : current.p2WrongIndex;
     if (p1Locked && p2Locked) {
       state = AsyncData(
         current.copyWith(
@@ -235,6 +238,4 @@ class DuelController extends AsyncNotifier<DuelState> {
 }
 
 final duelControllerProvider = AsyncNotifierProvider.autoDispose
-    .family<DuelController, DuelState, MiniGameFilter>(
-  DuelController.new,
-);
+    .family<DuelController, DuelState, MiniGameFilter>(DuelController.new);

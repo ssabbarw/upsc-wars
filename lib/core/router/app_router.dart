@@ -355,9 +355,7 @@ GoRouter appRouter(Ref ref) {
         name: 'admin_dashboard',
         builder: (context, state) {
           if (!adminDashboardAllowed()) {
-            return const Scaffold(
-              body: Center(child: Text('Not available')),
-            );
+            return const Scaffold(body: Center(child: Text('Not available')));
           }
           return const AdminDashboardScreen();
         },
@@ -374,9 +372,7 @@ GoRouter appRouter(Ref ref) {
         name: 'spot_composer',
         builder: (context, state) {
           if (!kDebugMode) {
-            return const Scaffold(
-              body: Center(child: Text('Not available')),
-            );
+            return const Scaffold(body: Center(child: Text('Not available')));
           }
           return const SpotTestComposerScreen();
         },
@@ -387,9 +383,7 @@ GoRouter appRouter(Ref ref) {
         name: 'question_editor',
         builder: (context, state) {
           if (!questionEditorAllowed()) {
-            return const Scaffold(
-              body: Center(child: Text('Not available')),
-            );
+            return const Scaffold(body: Center(child: Text('Not available')));
           }
           return const QuestionEditorSearchScreen();
         },
@@ -649,9 +643,7 @@ GoRouter appRouter(Ref ref) {
         path: '/spot-test/launch',
         name: 'push_spot_test_launch',
         builder: (context, state) => PushSpotTestLaunchScreen(
-          params: PushSpotTestLaunchParams.fromQuery(
-            state.uri.queryParameters,
-          ),
+          params: PushSpotTestLaunchParams.fromQuery(state.uri.queryParameters),
         ),
       ),
       GoRoute(
@@ -675,9 +667,8 @@ GoRouter appRouter(Ref ref) {
         parentNavigatorKey: rootNavigatorKey,
         path: '/mistake-review/:sessionId',
         name: 'mistake_review',
-        builder: (context, state) => MistakeReviewScreen(
-          sessionId: state.pathParameters['sessionId']!,
-        ),
+        builder: (context, state) =>
+            MistakeReviewScreen(sessionId: state.pathParameters['sessionId']!),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
@@ -923,8 +914,9 @@ class _AppShell extends HookConsumerWidget {
       }
 
       if (previous == null) return;
-      final wasSignedOut =
-          !AuthSession.isAccountSignedIn(previous.asData?.value);
+      final wasSignedOut = !AuthSession.isAccountSignedIn(
+        previous.asData?.value,
+      );
       final nowSignedIn = AuthSession.isAccountSignedIn(next.asData?.value);
       if (!wasSignedOut || !nowSignedIn) return;
       WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -1142,23 +1134,23 @@ class _AppShell extends HookConsumerWidget {
       bottomNavigationBar: SafeArea(
         top: false,
         child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Container(height: 0.5, color: borderColor),
-          BottomNavigationBar(
-            currentIndex: currentNavIndex,
-            onTap: handleTab,
-            type: BottomNavigationBarType.fixed,
-            elevation: 0,
-            backgroundColor: scheme.surface,
-            selectedItemColor: AppColors.primary,
-            unselectedItemColor: scheme.onSurfaceVariant,
-            selectedLabelStyle: AppTextStyles.navLabel(),
-            unselectedLabelStyle: AppTextStyles.navLabel(),
-            showUnselectedLabels: true,
-            items: navItems,
-          ),
-        ],
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Container(height: 0.5, color: borderColor),
+            BottomNavigationBar(
+              currentIndex: currentNavIndex,
+              onTap: handleTab,
+              type: BottomNavigationBarType.fixed,
+              elevation: 0,
+              backgroundColor: scheme.surface,
+              selectedItemColor: AppColors.primary,
+              unselectedItemColor: scheme.onSurfaceVariant,
+              selectedLabelStyle: AppTextStyles.navLabel(),
+              unselectedLabelStyle: AppTextStyles.navLabel(),
+              showUnselectedLabels: true,
+              items: navItems,
+            ),
+          ],
         ),
       ),
     );
