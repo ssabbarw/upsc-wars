@@ -1,11 +1,1 @@
-{
-  "applinks": {
-    "apps": [],
-    "details": [
-      {
-        "appID": "PJFA69Q3GT.tinyminyapps.upsc.wars",
-        "paths": ["/share/*"]
-      }
-    ]
-  }
-}
+{"applinks":{"apps":[],"details":[{"appID":"PJFA69Q3GT.tinyminyapps.upsc.wars","paths":["NOT /__/auth/action/","NOT /__/auth/handler/","NOT /_/*","/*"]}]}}

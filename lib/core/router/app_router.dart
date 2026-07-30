@@ -68,6 +68,12 @@ import '../../features/results/screens/results_screen.dart';
 import '../../features/memory_pairs/push/push_memory_pairs_launch_params.dart';
 import '../../features/memory_pairs/screens/memory_pairs_screen.dart';
 import '../../features/memory_pairs/screens/push_memory_pairs_welcome_screen.dart';
+import '../../features/mini_games/hub/games_hub_screen.dart';
+import '../../features/mini_games/timeline_sorter/timeline_sorter_screen.dart';
+import '../../features/mini_games/odd_one_out/odd_one_out_screen.dart';
+import '../../features/mini_games/fact_or_bluff/fact_or_bluff_screen.dart';
+import '../../features/mini_games/connect_the_dots/connect_the_dots_screen.dart';
+import '../../features/mini_games/duel/duel_screen.dart';
 import '../../features/revision_queue/screens/revision_queue_screen.dart';
 import '../../features/revision_queue/screens/revision_mode_screen.dart';
 import '../../features/subject_detail/screens/subject_detail_screen.dart';
@@ -716,6 +722,42 @@ GoRouter appRouter(Ref ref) {
             autoplay: q['autoplay'] == '1' || q['autoplay'] == 'true',
           );
         },
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/games',
+        name: 'games_hub',
+        builder: (context, state) => const GamesHubScreen(),
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/games/timeline-sorter',
+        name: 'timeline_sorter',
+        builder: (context, state) => const TimelineSorterScreen(),
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/games/odd-one-out',
+        name: 'odd_one_out',
+        builder: (context, state) => const OddOneOutScreen(),
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/games/fact-or-bluff',
+        name: 'fact_or_bluff',
+        builder: (context, state) => const FactOrBluffScreen(),
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/games/connect-the-dots',
+        name: 'connect_the_dots',
+        builder: (context, state) => const ConnectTheDotsScreen(),
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/games/duel',
+        name: 'duel',
+        builder: (context, state) => const DuelScreen(),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,

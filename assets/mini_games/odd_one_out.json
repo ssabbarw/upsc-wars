@@ -1,0 +1,72 @@
+[
+  {
+    "id": "oo_001",
+    "subject": "Ancient History",
+    "items": ["Nalanda", "Taxila", "Vikramashila", "Konark"],
+    "odd_index": 3,
+    "explanation": "Nalanda, Taxila and Vikramashila were ancient centres of learning and residential universities. Konark is a 13th-century Sun Temple in Odisha — a monument, not an educational institution."
+  },
+  {
+    "id": "oo_002",
+    "subject": "Medieval History",
+    "items": ["Ibn Battuta", "Al-Biruni", "Marco Polo", "Chandragupta Maurya"],
+    "odd_index": 3,
+    "explanation": "Ibn Battuta, Al-Biruni and Marco Polo were foreign travellers who left written accounts of India. Chandragupta Maurya was an Indian ruler, not a visiting chronicler."
+  },
+  {
+    "id": "oo_003",
+    "subject": "Modern History",
+    "items": ["Lala Lajpat Rai", "Bal Gangadhar Tilak", "Bipin Chandra Pal", "Gopal Krishna Gokhale"],
+    "odd_index": 3,
+    "explanation": "Lajpat Rai, Tilak and Bipin Chandra Pal formed the 'Lal-Bal-Pal' trio associated with the assertive (Garam Dal) wing of the Congress. Gokhale led the moderate (Naram Dal) wing and was Gandhi's political mentor."
+  },
+  {
+    "id": "oo_004",
+    "subject": "Art & Culture",
+    "items": ["Bharatanatyam", "Kathakali", "Manipuri", "Ghoomar"],
+    "odd_index": 3,
+    "explanation": "Bharatanatyam, Kathakali and Manipuri are classical dance forms recognised by the Sangeet Natak Akademi. Ghoomar is a folk dance of Rajasthan, not a classical form."
+  },
+  {
+    "id": "oo_005",
+    "subject": "Geography",
+    "items": ["Chilika Lake", "Pulicat Lake", "Vembanad Lake", "Sambhar Lake"],
+    "odd_index": 3,
+    "explanation": "Chilika, Pulicat and Vembanad are coastal brackish-water lagoons. Sambhar Lake in Rajasthan is India's largest inland saline lake, unconnected to the sea."
+  },
+  {
+    "id": "oo_006",
+    "subject": "Economy",
+    "items": ["Green Revolution", "White Revolution", "Blue Revolution", "Non-Cooperation Movement"],
+    "odd_index": 3,
+    "explanation": "Green, White and Blue Revolutions are agricultural production programmes covering foodgrain, dairy and fisheries respectively. The Non-Cooperation Movement is a political movement, not an economic programme."
+  },
+  {
+    "id": "oo_007",
+    "subject": "Environment",
+    "items": ["Ramsar Convention", "CITES", "Kyoto Protocol", "Government of India Act 1935"],
+    "odd_index": 3,
+    "explanation": "Ramsar, CITES and the Kyoto Protocol are international environmental treaties. The Government of India Act 1935 is a constitutional and administrative statute with no environmental subject matter."
+  },
+  {
+    "id": "oo_008",
+    "subject": "Polity",
+    "items": ["Habeas Corpus", "Mandamus", "Certiorari", "Article 356"],
+    "odd_index": 3,
+    "explanation": "Habeas Corpus, Mandamus and Certiorari are types of writs issued by courts under Articles 32 and 226. Article 356 deals with President's Rule in a state and has nothing to do with writ jurisdiction."
+  },
+  {
+    "id": "oo_009",
+    "subject": "Ancient History",
+    "items": ["Harappa", "Mohenjo-daro", "Lothal", "Fatehpur Sikri"],
+    "odd_index": 3,
+    "explanation": "Harappa, Mohenjo-daro and Lothal are Indus Valley Civilisation sites. Fatehpur Sikri is a Mughal city built by Akbar, over three thousand years later."
+  },
+  {
+    "id": "oo_010",
+    "subject": "Geography",
+    "items": ["Cotton", "Jute", "Sugarcane", "Coal"],
+    "odd_index": 3,
+    "explanation": "Cotton, jute and sugarcane are agricultural cash crops. Coal is a mineral resource extracted through mining, not grown."
+  }
+]

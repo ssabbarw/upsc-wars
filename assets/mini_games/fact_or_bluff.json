@@ -1,0 +1,72 @@
+[
+  {
+    "id": "fb_001",
+    "subject": "Ancient History",
+    "statement": "The Indus Valley Civilisation had advanced drainage systems but its script has never been deciphered.",
+    "is_fact": true,
+    "explanation": "Fact. Despite thousands of recovered seals, the Indus script remains undeciphered — unlike Brahmi or Kharosthi, which scholars have successfully read."
+  },
+  {
+    "id": "fb_002",
+    "subject": "Medieval History",
+    "statement": "The Vijayanagara Empire was founded by the brothers Harihara and Bukka in the 14th century.",
+    "is_fact": true,
+    "explanation": "Fact. Harihara I and Bukka I founded Vijayanagara around 1336 CE, initially as vassals of the Delhi Sultanate before asserting full independence."
+  },
+  {
+    "id": "fb_003",
+    "subject": "Modern History",
+    "statement": "The Indian National Congress was founded in 1885 by Bal Gangadhar Tilak.",
+    "is_fact": false,
+    "explanation": "Bluff. The Congress was founded in 1885 by Allan Octavian Hume, a retired British civil servant — not Tilak, who joined the party later."
+  },
+  {
+    "id": "fb_004",
+    "subject": "Art & Culture",
+    "statement": "Sattriya, the classical dance of Assam, was introduced by the Vaishnavite saint Sankaradeva.",
+    "is_fact": true,
+    "explanation": "Fact. Sattriya originated in the Vaishnavite monasteries (sattras) established by Srimanta Sankaradeva in the 15th–16th century."
+  },
+  {
+    "id": "fb_005",
+    "subject": "Geography",
+    "statement": "The Tropic of Cancer passes through only two Indian states.",
+    "is_fact": false,
+    "explanation": "Bluff. It actually passes through eight states: Gujarat, Rajasthan, Madhya Pradesh, Chhattisgarh, Jharkhand, West Bengal, Tripura and Mizoram."
+  },
+  {
+    "id": "fb_006",
+    "subject": "Economy",
+    "statement": "India's GST applies a single unified tax rate to every good and service.",
+    "is_fact": false,
+    "explanation": "Bluff. GST actually has multiple tax slabs (0%, 5%, 12%, 18%, 28%), and some products like petroleum and alcohol for human consumption remain outside it entirely."
+  },
+  {
+    "id": "fb_007",
+    "subject": "Environment",
+    "statement": "The Chipko Movement of the 1970s saw villagers, many of them women, hug trees to stop deforestation in the Himalayan region.",
+    "is_fact": true,
+    "explanation": "Fact. Associated with figures like Gaura Devi in Reni village and later Sunderlal Bahuguna, the movement used tree-hugging as direct, nonviolent resistance to commercial logging."
+  },
+  {
+    "id": "fb_008",
+    "subject": "Polity",
+    "statement": "Fundamental Duties were not part of the original Constitution and were added later by an amendment.",
+    "is_fact": true,
+    "explanation": "Fact. Fundamental Duties (Article 51A) were inserted by the 42nd Amendment in 1976, based on recommendations of the Swaran Singh Committee."
+  },
+  {
+    "id": "fb_009",
+    "subject": "Ancient History",
+    "statement": "Ashoka's edicts were written primarily in Sanskrit using the Devanagari script.",
+    "is_fact": false,
+    "explanation": "Bluff. Most edicts were composed in Prakrit and written in Brahmi script (Kharosthi in the northwest). Sanskrit and Devanagari became prominent much later."
+  },
+  {
+    "id": "fb_010",
+    "subject": "Polity",
+    "statement": "India's Election Commission currently functions as a multi-member body, not headed solely by the Chief Election Commissioner.",
+    "is_fact": true,
+    "explanation": "Fact. The Commission currently comprises the Chief Election Commissioner and two Election Commissioners, all with equal decision-making power."
+  }
+]

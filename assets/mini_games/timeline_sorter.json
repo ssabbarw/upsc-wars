@@ -1,0 +1,132 @@
+[
+  {
+    "id": "tl_001",
+    "subject": "Ancient History",
+    "theme": "Foreign Invasions of Ancient India",
+    "items": [
+      { "label": "Persian (Achaemenid) campaign into the Indus region", "year_display": "c. 518 BCE", "sort_key": -518 },
+      { "label": "Alexander's invasion of northwest India", "year_display": "326 BCE", "sort_key": -326 },
+      { "label": "Indo-Greek invasions begin", "year_display": "c. 180 BCE", "sort_key": -180 },
+      { "label": "Saka rule established in western India", "year_display": "c. 90 BCE", "sort_key": -90 },
+      { "label": "Kushan rule established under Kadphises", "year_display": "c. 30 CE", "sort_key": 30 }
+    ],
+    "explanation": "India saw a long sequence of overland invasions from the northwest, each leaving successors who eventually assimilated. The Persians came first, followed by Alexander, then Indo-Greek kings, Sakas, and finally the Kushans — who built one of ancient India's most extensive empires."
+  },
+  {
+    "id": "tl_002",
+    "subject": "Medieval History",
+    "theme": "Dynasties of the Delhi Sultanate",
+    "items": [
+      { "label": "Mamluk (Slave) dynasty founded by Qutb-ud-din Aibak", "year_display": "1206", "sort_key": 1206 },
+      { "label": "Khilji dynasty founded by Jalaluddin Khilji", "year_display": "1290", "sort_key": 1290 },
+      { "label": "Tughlaq dynasty founded by Ghiyasuddin Tughlaq", "year_display": "1320", "sort_key": 1320 },
+      { "label": "Sayyid dynasty founded by Khizr Khan", "year_display": "1414", "sort_key": 1414 },
+      { "label": "Lodi dynasty founded by Bahlul Lodi", "year_display": "1451", "sort_key": 1451 }
+    ],
+    "explanation": "Five dynasties ruled the Delhi Sultanate in unbroken sequence over roughly 250 years, ending when Babur defeated Ibrahim Lodi at Panipat in 1526 to found the Mughal Empire."
+  },
+  {
+    "id": "tl_003",
+    "subject": "Modern History",
+    "theme": "Road to the Non-Cooperation Movement",
+    "items": [
+      { "label": "Partition of Bengal announced by Curzon", "year_display": "1905", "sort_key": 1905 },
+      { "label": "All-India Muslim League founded in Dacca", "year_display": "1906", "sort_key": 1906 },
+      { "label": "Morley-Minto Reforms (Indian Councils Act)", "year_display": "1909", "sort_key": 1909 },
+      { "label": "Lucknow Pact between Congress and Muslim League", "year_display": "1916", "sort_key": 1916 },
+      { "label": "Montagu-Chelmsford Reforms (Government of India Act)", "year_display": "1919", "sort_key": 1919 }
+    ],
+    "explanation": "Partition of Bengal sharpened political mobilisation and helped trigger the Muslim League's founding a year later. Reform acts followed at either end of the Lucknow Pact, and the disappointment with the 1919 reforms — alongside the Rowlatt Act and Jallianwala Bagh the same year — set up the 1920 Non-Cooperation Movement."
+  },
+  {
+    "id": "tl_004",
+    "subject": "Art & Culture",
+    "theme": "Great Temple Construction Across Dynasties",
+    "items": [
+      { "label": "Kailasa Temple, Ellora, commissioned by Rashtrakuta king Krishna I", "year_display": "c. 760 CE", "sort_key": 760 },
+      { "label": "Brihadeeswarar Temple, Thanjavur, completed under Chola king Rajaraja I", "year_display": "c. 1010 CE", "sort_key": 1010 },
+      { "label": "Konark Sun Temple built under the Eastern Ganga king Narasimhadeva I", "year_display": "c. 1250 CE", "sort_key": 1250 },
+      { "label": "Harmandir Sahib (Golden Temple) completed, Adi Granth installed", "year_display": "1604", "sort_key": 1604 },
+      { "label": "Meenakshi Temple, Madurai, majorly expanded under Nayaka ruler Tirumalai Nayak", "year_display": "c. 1630", "sort_key": 1630 }
+    ],
+    "explanation": "Temple architecture spans nearly a millennium of dynastic patronage — Rashtrakuta rock-cut work at Ellora, Chola bronze-age engineering at Thanjavur, Eastern Ganga solar symbolism at Konark, Sikh Gurus at Amritsar, and Nayaka-era expansion at Madurai."
+  },
+  {
+    "id": "tl_005",
+    "subject": "Geography",
+    "theme": "Formation of Indian States (Reorganisation Timeline)",
+    "items": [
+      { "label": "Andhra Pradesh formed as India's first linguistic state", "year_display": "1953", "sort_key": 1953 },
+      { "label": "Bombay State bifurcated into Maharashtra and Gujarat", "year_display": "1960", "sort_key": 1960 },
+      { "label": "Nagaland becomes the 16th state", "year_display": "1963", "sort_key": 1963 },
+      { "label": "Sikkim becomes a full state", "year_display": "1975", "sort_key": 1975 },
+      { "label": "Telangana carved out of Andhra Pradesh", "year_display": "2014", "sort_key": 2014 }
+    ],
+    "explanation": "State boundaries in independent India were redrawn in waves — first along linguistic lines following the States Reorganisation Commission, then through later bifurcations driven by regional identity movements, right up to Telangana in 2014."
+  },
+  {
+    "id": "tl_006",
+    "subject": "Economy",
+    "theme": "Economic Milestones — Plans to GST",
+    "items": [
+      { "label": "First Five-Year Plan launched", "year_display": "1951", "sort_key": 1951 },
+      { "label": "Green Revolution begins with high-yield variety seeds", "year_display": "1966", "sort_key": 1966 },
+      { "label": "First round of bank nationalisation (14 banks)", "year_display": "1969", "sort_key": 1969 },
+      { "label": "LPG reforms — liberalisation, privatisation, globalisation", "year_display": "1991", "sort_key": 1991 },
+      { "label": "Goods and Services Tax (GST) implemented", "year_display": "2017", "sort_key": 2017 }
+    ],
+    "explanation": "India's economic story moves from planned self-sufficiency (Five-Year Plans, nationalised banks) through a productivity push (Green Revolution) to a decisive market opening in 1991, culminating decades later in a single unified indirect tax regime."
+  },
+  {
+    "id": "tl_007",
+    "subject": "Environment",
+    "theme": "Environmental Legislation and Events in India",
+    "items": [
+      { "label": "Wildlife (Protection) Act passed", "year_display": "1972", "sort_key": 1972 },
+      { "label": "Project Tiger launched", "year_display": "1973", "sort_key": 1973 },
+      { "label": "Forest (Conservation) Act passed", "year_display": "1980", "sort_key": 1980 },
+      { "label": "Bhopal Gas Tragedy", "year_display": "1984", "sort_key": 1984 },
+      { "label": "National Green Tribunal Act passed", "year_display": "2010", "sort_key": 2010 }
+    ],
+    "explanation": "India's environmental legal framework built up gradually — protection statutes in the 1970s and 80s, a industrial-disaster wake-up call in 1984, and eventually a dedicated judicial body (NGT) in 2010 to fast-track environmental cases."
+  },
+  {
+    "id": "tl_008",
+    "subject": "Polity",
+    "theme": "Constitutional Milestones",
+    "items": [
+      { "label": "Constitution of India adopted by the Constituent Assembly", "year_display": "26 Nov 1949", "sort_key": 1949 },
+      { "label": "Constitution comes into force", "year_display": "26 Jan 1950", "sort_key": 1950 },
+      { "label": "First Amendment Act", "year_display": "1951", "sort_key": 1951 },
+      { "label": "42nd Amendment ('Mini Constitution')", "year_display": "1976", "sort_key": 1976 },
+      { "label": "73rd and 74th Amendments (Panchayati Raj and Municipalities)", "year_display": "1992", "sort_key": 1992 }
+    ],
+    "explanation": "From adoption to enforcement took two months. The First Amendment quickly addressed land-reform and free-speech tensions; the 42nd Amendment during the Emergency reshaped the Preamble and Centre-State balance; and the 73rd/74th Amendments finally gave local self-government constitutional status."
+  },
+  {
+    "id": "tl_009",
+    "subject": "Ancient History",
+    "theme": "The Gupta Empire — Rise and Fall",
+    "items": [
+      { "label": "Chandragupta I establishes the Gupta Empire", "year_display": "c. 320 CE", "sort_key": 320 },
+      { "label": "Samudragupta's conquests recorded in the Allahabad Prashasti", "year_display": "c. 350 CE", "sort_key": 350 },
+      { "label": "Chandragupta II (Vikramaditya) begins his reign", "year_display": "c. 380 CE", "sort_key": 380 },
+      { "label": "Huna invasions begin, resisted by Skandagupta", "year_display": "c. 455 CE", "sort_key": 455 },
+      { "label": "Gupta Empire effectively ends", "year_display": "c. 550 CE", "sort_key": 550 }
+    ],
+    "explanation": "The Guptas rose through Chandragupta I's founding marriage alliance, Samudragupta's military expansion, and Chandragupta II's golden-age patronage of arts and science — before repeated Huna invasions from the mid-5th century wore the empire down over the following century."
+  },
+  {
+    "id": "tl_010",
+    "subject": "Modern History",
+    "theme": "Consolidation of Independent India",
+    "items": [
+      { "label": "Integration of princely states begins", "year_display": "1947", "sort_key": 1947 },
+      { "label": "Operation Polo — Hyderabad annexed", "year_display": "1948", "sort_key": 1948 },
+      { "label": "States Reorganisation Act passed", "year_display": "1956", "sort_key": 1956 },
+      { "label": "Goa liberated from Portuguese rule (Operation Vijay)", "year_display": "1961", "sort_key": 1961 },
+      { "label": "Tashkent Agreement ends the Indo-Pak War", "year_display": "1966", "sort_key": 1966 }
+    ],
+    "explanation": "Independence in 1947 was only the start of territorial consolidation — Hyderabad was absorbed by force in 1948, states were redrawn on linguistic lines in 1956, Goa was taken from Portugal in 1961, and by 1966 India had fought and settled its second war with Pakistan."
+  }
+]

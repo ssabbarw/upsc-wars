@@ -2,7 +2,7 @@ name: upsc_wars
 description: "A new Flutter project."
 publish_to: 'none'
 
-version: 2000.0.0+1
+version: 2002.0.0+1
 
 environment:
   sdk: ^3.11.3
@@ -86,4 +86,5 @@ flutter:
     - assets/db/upsc_wars_questions.db
     - assets/data/
     - assets/images/
+    - assets/mini_games/
     - google_fonts/

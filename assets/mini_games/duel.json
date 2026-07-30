@@ -1,0 +1,72 @@
+[
+  {
+    "id": "dl_001",
+    "subject": "Ancient History",
+    "question": "Who commissioned the original Great Stupa at Sanchi?",
+    "options": ["Ashoka", "Akbar"],
+    "answer_index": 0
+  },
+  {
+    "id": "dl_002",
+    "subject": "Medieval History",
+    "question": "Which ruler founded the Vijayanagara Empire along with his brother?",
+    "options": ["Harihara", "Alauddin Khilji"],
+    "answer_index": 0
+  },
+  {
+    "id": "dl_003",
+    "subject": "Modern History",
+    "question": "Who founded the Indian National Congress in 1885?",
+    "options": ["A.O. Hume", "Bal Gangadhar Tilak"],
+    "answer_index": 0
+  },
+  {
+    "id": "dl_004",
+    "subject": "Art & Culture",
+    "question": "Which classical dance form originated in Assam?",
+    "options": ["Sattriya", "Bharatanatyam"],
+    "answer_index": 0
+  },
+  {
+    "id": "dl_005",
+    "subject": "Geography",
+    "question": "Hirakud Dam is built on which river?",
+    "options": ["Mahanadi", "Godavari"],
+    "answer_index": 0
+  },
+  {
+    "id": "dl_006",
+    "subject": "Economy",
+    "question": "Which body regulates India's securities market?",
+    "options": ["SEBI", "RBI"],
+    "answer_index": 0
+  },
+  {
+    "id": "dl_007",
+    "subject": "Environment",
+    "question": "Which national park is the only wild habitat of the Asiatic lion?",
+    "options": ["Gir", "Kaziranga"],
+    "answer_index": 0
+  },
+  {
+    "id": "dl_008",
+    "subject": "Polity",
+    "question": "Which Article empowers the Supreme Court to issue writs for Fundamental Rights?",
+    "options": ["Article 32", "Article 40"],
+    "answer_index": 0
+  },
+  {
+    "id": "dl_009",
+    "subject": "Ancient History",
+    "question": "Which ancient Indian script remains undeciphered?",
+    "options": ["Indus script", "Brahmi script"],
+    "answer_index": 0
+  },
+  {
+    "id": "dl_010",
+    "subject": "Polity",
+    "question": "Which amendment added Fundamental Duties to the Constitution?",
+    "options": ["42nd Amendment", "44th Amendment"],
+    "answer_index": 0
+  }
+]

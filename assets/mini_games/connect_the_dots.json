@@ -1,0 +1,132 @@
+[
+  {
+    "id": "cd_001",
+    "subject": "Ancient History",
+    "dots": ["Chandragupta Maurya", "Chanakya", "Arthashastra", "Megasthenes"],
+    "options": [
+      "Founding and administration of the Mauryan Empire",
+      "Spread of Buddhism under Ashoka",
+      "Indo-Greek trade relations",
+      "Decline of the Nanda dynasty"
+    ],
+    "answer_index": 0,
+    "explanation": "Chandragupta Maurya founded the Mauryan Empire with Chanakya (Kautilya) as his mentor and author of the Arthashastra. Megasthenes was the Greek ambassador at his court, whose account documented Mauryan administration."
+  },
+  {
+    "id": "cd_002",
+    "subject": "Medieval History",
+    "dots": ["Ibn Battuta", "Al-Biruni", "Abdur Razzaq", "Domingo Paes"],
+    "options": [
+      "Foreign travellers whose writings describe medieval Indian courts",
+      "Sufi saints of the Bhakti movement",
+      "Founders of regional Sultanates",
+      "Mughal court historians"
+    ],
+    "answer_index": 0,
+    "explanation": "Ibn Battuta (Morocco) visited Delhi Sultanate India in the 14th century, and Al-Biruni accompanied Mahmud of Ghazni's raids in the 11th century. Abdur Razzaq (Persia) and Domingo Paes (Portugal) separately left detailed accounts of the Vijayanagara Empire."
+  },
+  {
+    "id": "cd_003",
+    "subject": "Modern History",
+    "dots": ["Rowlatt Act", "Jallianwala Bagh", "Khilafat Movement", "Non-Cooperation Movement"],
+    "options": [
+      "Chain of events leading to the Non-Cooperation Movement",
+      "Causes of the Partition of Bengal",
+      "Formation of the Muslim League",
+      "Events of the Quit India Movement"
+    ],
+    "answer_index": 0,
+    "explanation": "The Rowlatt Act (1919) triggered protests met with the Jallianwala Bagh massacre. That outrage, combined with Muslim anger over the Khilafat issue, gave Gandhi the platform to launch the Non-Cooperation Movement in 1920."
+  },
+  {
+    "id": "cd_004",
+    "subject": "Art & Culture",
+    "dots": ["Sarnath", "Sanchi", "Amaravati", "Bharhut"],
+    "options": [
+      "Ancient Buddhist stupa sites known for sculptural art",
+      "Sites of the Indus Valley Civilisation",
+      "Centres of Mughal miniature painting",
+      "UNESCO-listed hill forts of Rajasthan"
+    ],
+    "answer_index": 0,
+    "explanation": "Sarnath, Sanchi, Amaravati and Bharhut are all major Buddhist stupa sites, each known for the sculptural railings and gateways depicting Jataka tales that surround the stupas."
+  },
+  {
+    "id": "cd_005",
+    "subject": "Geography",
+    "dots": ["Nanda Devi", "Kanchenjunga", "Nanga Parbat", "Annapurna"],
+    "options": [
+      "Among the highest peaks of the Himalayan range",
+      "Volcanic peaks of the Deccan Plateau",
+      "Peaks of the Aravalli Range",
+      "Peaks along the Western Ghats"
+    ],
+    "answer_index": 0,
+    "explanation": "All four are major Himalayan peaks exceeding 7,800 metres, among the highest in the world — spanning India, Nepal and Pakistan-administered Kashmir."
+  },
+  {
+    "id": "cd_006",
+    "subject": "Economy",
+    "dots": ["NABARD", "RBI", "SEBI", "IRDAI"],
+    "options": [
+      "Regulatory bodies overseeing India's financial sector",
+      "Public sector banks nationalised in 1969",
+      "Institutions created under the Five-Year Plans",
+      "Bodies responsible for implementing GST"
+    ],
+    "answer_index": 0,
+    "explanation": "NABARD (rural credit), RBI (banking and monetary policy), SEBI (securities markets) and IRDAI (insurance) are the key sectoral regulators of India's financial system."
+  },
+  {
+    "id": "cd_007",
+    "subject": "Environment",
+    "dots": ["Kaziranga", "Jim Corbett", "Sundarbans", "Gir"],
+    "options": [
+      "National Parks each associated with a distinct flagship species",
+      "Ramsar wetland sites of India",
+      "Biosphere Reserves in the Western Ghats",
+      "Mangrove forests along the eastern coast"
+    ],
+    "answer_index": 0,
+    "explanation": "Kaziranga (one-horned rhinoceros), Jim Corbett (tiger, India's first tiger reserve), Sundarbans (Royal Bengal Tiger in mangroves) and Gir (Asiatic lion, its only wild habitat) are each defined by a signature species."
+  },
+  {
+    "id": "cd_008",
+    "subject": "Polity",
+    "dots": ["Article 124", "Collegium System", "Article 217", "Judicial Appointments"],
+    "options": [
+      "Constitutional provisions and mechanism for appointing judges",
+      "Provisions related to the Election Commission",
+      "Procedure for impeachment of the President",
+      "Provisions governing Panchayati Raj institutions"
+    ],
+    "answer_index": 0,
+    "explanation": "Article 124 governs Supreme Court appointments and Article 217 governs High Court appointments. In practice, both are administered through the Collegium System, developed via Supreme Court judgments rather than the constitutional text itself."
+  },
+  {
+    "id": "cd_009",
+    "subject": "Ancient History",
+    "dots": ["Panini", "Patanjali", "Ashtadhyayi", "Sanskrit grammar"],
+    "options": [
+      "Foundational figures and texts of Sanskrit grammar",
+      "Compilers of the Vedas",
+      "Founders of Buddhist philosophy schools",
+      "Authors of the Puranas"
+    ],
+    "answer_index": 0,
+    "explanation": "Panini authored the Ashtadhyayi, the foundational text of Sanskrit grammar. Patanjali later wrote the Mahabhashya, a major commentary on it — together forming the backbone of classical Sanskrit grammar."
+  },
+  {
+    "id": "cd_010",
+    "subject": "Geography",
+    "dots": ["Bhakra Nangal", "Hirakud", "Damodar Valley Corporation", "Tungabhadra"],
+    "options": [
+      "Major multipurpose river valley projects of independent India",
+      "Coastal ports developed under British rule",
+      "Sites associated with the Green Revolution",
+      "Offshore oil exploration projects"
+    ],
+    "answer_index": 0,
+    "explanation": "Bhakra Nangal (Sutlej), Hirakud (Mahanadi), the Damodar Valley Corporation (Damodar) and Tungabhadra Dam are flagship multipurpose river valley projects launched in the early decades after independence."
+  }
+]

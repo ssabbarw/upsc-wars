@@ -1,482 +1,786 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>UPSC Wars - Stop Memorizing. Start Understanding.</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    :root {
-      --primary-teal: #2d9687;
-      --primary-teal-dark: #247568;
-      --bg-cream: #faf8f5;
-      --bg-white: #ffffff;
-      --text-dark: #1a1a1a;
-      --text-gray: #6b6b6b;
-      --text-light: #9b9b9b;
-      --border-light: #e8e5e0;
-    }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
-      background: var(--bg-cream);
-      color: var(--text-dark);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-    header {
-      background: var(--bg-white);
-      padding: 1rem 1.25rem;
-      border-bottom: 1px solid var(--border-light);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    .header-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 0.75rem;
-    }
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      text-decoration: none;
-      min-width: 0;
-    }
-    .logo-circle {
-      width: 42px;
-      height: 42px;
-      background: var(--primary-teal);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      font-size: 0.62rem;
-      color: white;
-      letter-spacing: -0.4px;
-      flex-shrink: 0;
-    }
-    .logo-text {
-      font-size: clamp(1.05rem, 2.7vw, 1.45rem);
-      font-weight: 700;
-      color: var(--text-dark);
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .lang-toggle {
-      display: flex;
-      gap: 0.35rem;
-      background: var(--bg-cream);
-      padding: 0.35rem;
-      border-radius: 8px;
-      flex-shrink: 0;
-    }
-    .lang-btn {
-      padding: 0.42rem 0.8rem;
-      border: none;
-      background: transparent;
-      cursor: pointer;
-      border-radius: 6px;
-      font-weight: 600;
-      transition: all 0.2s;
-      color: var(--text-gray);
-      font-size: 0.9rem;
-    }
-    .lang-btn.active {
-      background: var(--bg-white);
-      color: var(--primary-teal);
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-    }
-    .hero, .stats, .features, .reviews {
-      max-width: 1200px;
-      margin-inline: auto;
-      padding-inline: 1.25rem;
-    }
-    .hero { padding-top: 2.8rem; padding-bottom: 1.5rem; }
-    .hero-content { text-align: center; margin-bottom: 1.8rem; }
-    .hero-badge {
-      display: inline-block;
-      padding: 0.45rem 1rem;
-      background: var(--primary-teal);
-      color: white;
-      border-radius: 20px;
-      font-size: 0.82rem;
-      font-weight: 600;
-      margin-bottom: 1.3rem;
-      letter-spacing: 0.2px;
-    }
-    .hero-headline, .hero-headline-hi {
-      font-size: clamp(2rem, 6.2vw, 3.5rem);
-      font-weight: 700;
-      line-height: 1.15;
-      margin-bottom: 1rem;
-      color: var(--text-dark);
-      letter-spacing: -0.6px;
-      text-wrap: balance;
-    }
-    .hero-headline-hi { display: none; }
-    .hero-subheadline, .hero-subheadline-hi {
-      font-size: clamp(1rem, 3.6vw, 1.35rem);
-      color: var(--text-gray);
-      max-width: 720px;
-      margin: 0 auto 1.8rem;
-      line-height: 1.55;
-      text-wrap: pretty;
-    }
-    .hero-subheadline-hi { display: none; }
-    .cta-primary, .cta-secondary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.65rem;
-      padding: 0.95rem 1.5rem;
-      border: none;
-      border-radius: 10px;
-      font-size: 1rem;
-      font-weight: 600;
-      text-decoration: none;
-      min-height: 48px;
-    }
-    .cta-primary {
-      background: var(--primary-teal);
-      color: white;
-      box-shadow: 0 4px 12px rgba(45, 150, 135, 0.25);
-      transition: all 0.25s;
-    }
-    .cta-primary:hover { background: var(--primary-teal-dark); transform: translateY(-1px); }
-    .play-icon {
-      width: 24px;
-      height: 24px;
-      background: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--primary-teal);
-      font-size: 0.9rem;
-      flex-shrink: 0;
-    }
-    .video-container {
-      max-width: 900px;
-      margin: 0 auto;
-      background: var(--bg-white);
-      border-radius: 16px;
-      padding: 0.9rem;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-      border: 1px solid var(--border-light);
-    }
-    .video-wrapper {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      border-radius: 12px;
-      overflow: hidden;
-      background: #f0f0f0;
-    }
-    .video-placeholder {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, #2d9687 0%, #247568 100%);
-      color: white;
-      font-size: clamp(1rem, 3vw, 1.3rem);
-      font-weight: 600;
-      text-align: center;
-      padding: 1rem;
-    }
-    .video-placeholder-icon {
-      width: 68px;
-      height: 68px;
-      background: rgba(255, 255, 255, 0.2);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 0.8rem;
-    }
-    .stats { margin-top: 3rem; margin-bottom: 1rem; }
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 0.75rem;
-    }
-    .stat-card {
-      text-align: center;
-      padding: 1rem 0.7rem;
-      background: var(--bg-white);
-      border: 1px solid var(--border-light);
-      border-radius: 10px;
-    }
-    .stat-number {
-      font-size: clamp(1.5rem, 6vw, 2.6rem);
-      font-weight: 800;
-      color: var(--primary-teal);
-      margin-bottom: 0.2rem;
-    }
-    .stat-label, .stat-label-hi {
-      font-size: 0.92rem;
-      color: var(--text-gray);
-      font-weight: 500;
-      line-height: 1.35;
-    }
-    .stat-label-hi { display: none; }
-    .features, .reviews { margin-top: 4rem; }
-    .section-header { text-align: center; margin-bottom: 2rem; }
-    .section-title, .section-title-hi {
-      font-size: clamp(1.6rem, 6vw, 2.5rem);
-      font-weight: 700;
-      margin-bottom: 0.6rem;
-    }
-    .section-title-hi { display: none; }
-    .section-subtitle, .section-subtitle-hi {
-      font-size: clamp(0.98rem, 3.8vw, 1.2rem);
-      color: var(--text-gray);
-      max-width: 680px;
-      margin: 0 auto;
-    }
-    .section-subtitle-hi { display: none; }
-    .features-grid, .reviews-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1rem;
-    }
-    .feature-card, .review-card {
-      background: var(--bg-white);
-      padding: 1.2rem;
-      border-radius: 12px;
-      border: 1px solid var(--border-light);
-    }
-    .feature-icon {
-      width: 52px;
-      height: 52px;
-      background: var(--primary-teal);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
-    .feature-title, .feature-title-hi {
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin-bottom: 0.55rem;
-    }
-    .feature-title-hi { display: none; }
-    .feature-description, .feature-description-hi {
-      font-size: 0.96rem;
-      color: var(--text-gray);
-      line-height: 1.6;
-    }
-    .feature-description-hi { display: none; }
-    .review-stars { color: #fbbf24; font-size: 1.1rem; margin-bottom: 0.6rem; }
-    .review-text { font-size: 0.98rem; color: var(--text-dark); margin-bottom: 0.8rem; line-height: 1.6; }
-    .review-author { font-weight: 600; color: var(--text-gray); font-size: 0.86rem; }
-    .cta-section {
-      max-width: 900px;
-      margin: 4rem auto 1rem;
-      padding: 2rem 1.25rem;
-      background: var(--primary-teal);
-      border-radius: 16px;
-      text-align: center;
-    }
-    .cta-section-title, .cta-section-title-hi {
-      font-size: clamp(1.6rem, 6vw, 2.4rem);
-      font-weight: 700;
-      color: white;
-      margin-bottom: 0.6rem;
-    }
-    .cta-section-title-hi { display: none; }
-    .cta-section-subtitle, .cta-section-subtitle-hi {
-      font-size: clamp(1rem, 3.4vw, 1.2rem);
-      color: rgba(255, 255, 255, 0.92);
-      margin-bottom: 1.25rem;
-    }
-    .cta-section-subtitle-hi { display: none; }
-    .cta-secondary {
-      background: white;
-      color: var(--primary-teal);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-    }
-    footer {
-      background: var(--bg-white);
-      border-top: 1px solid var(--border-light);
-      padding: 2rem 1.25rem;
-      margin-top: 3rem;
-    }
-    .footer-content { max-width: 1200px; margin: 0 auto; text-align: center; }
-    .footer-logo {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.65rem;
-      margin-bottom: 0.8rem;
-    }
-    .footer-text { color: var(--text-gray); font-size: 0.85rem; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UPSC Wars — Find out where you're confidently wrong</title>
+<meta name="description" content="UPSC Wars is a Prelims practice app that diagnoses confident mistakes. 30,000+ explained MCQs, Danger Zone analysis, PYQs, revision queues. English + Hindi. 4.7★ on Google Play.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FBF8F1;
+  --card:#FFFFFF;
+  --ink:#10312E;
+  --ink-soft:#3E5A55;
+  --teal:#0E5A52;
+  --teal-deep:#0A3F3A;
+  --teal-soft:#E2EFE9;
+  --danger:#B23A2E;
+  --danger-soft:#F8E9E5;
+  --sand:#F2EBDB;
+  --line:#E4DECD;
+  --ok:#1E7A4F;
+  --ok-soft:#E4F1E8;
+  --radius:14px;
+  --disp:'Bricolage Grotesque','DM Sans',sans-serif;
+  --body:'DM Sans','Noto Sans Devanagari',sans-serif;
+  --mono:'IBM Plex Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--teal)}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:4px}
+button{font-family:inherit;cursor:pointer}
+.wrap{max-width:1160px;margin:0 auto;padding:0 clamp(18px,4vw,40px)}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);font-weight:600;display:inline-flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:22px;height:2px;background:var(--teal)}
+h1,h2,h3{font-family:var(--disp);line-height:1.08;letter-spacing:-.01em}
+h2{font-size:clamp(1.7rem,3.6vw,2.6rem);font-weight:700;margin:14px 0 12px}
+.lede{color:var(--ink-soft);max-width:52ch;font-size:clamp(1rem,1.5vw,1.1rem)}
 
-    @media (max-width: 980px) {
-      .features-grid, .reviews-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .hero { padding-top: 2.2rem; }
-    }
-    @media (max-width: 768px) {
-      .header-content { align-items: flex-start; }
-      .logo-circle { width: 38px; height: 38px; font-size: 0.58rem; }
-      .lang-btn { padding-inline: 0.65rem; font-size: 0.84rem; }
-      .stats-grid { grid-template-columns: 1fr; }
-      .features-grid, .reviews-grid { grid-template-columns: 1fr; }
-      .feature-card, .review-card { padding: 1rem; }
-      .cta-primary, .cta-secondary { width: 100%; max-width: 360px; }
-    }
-  </style>
+/* ---------- nav ---------- */
+.nav{position:sticky;top:0;z-index:50;background:rgba(251,248,241,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:var(--disp);font-weight:800;font-size:1.2rem;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:9px}
+.logo .dot{width:12px;height:12px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 4px var(--teal-soft)}
+.nav-links{display:flex;gap:26px;align-items:center}
+.nav-links a{color:var(--ink-soft);text-decoration:none;font-size:.92rem;font-weight:500}
+.nav-links a:hover{color:var(--ink)}
+.nav-links .btn,.nav-links .btn:hover{color:#fff}
+.btn{display:inline-flex;align-items:center;gap:9px;background:var(--teal);color:#fff;text-decoration:none;font-weight:600;font-size:.95rem;padding:12px 22px;border-radius:100px;border:none;transition:transform .15s ease, background .15s ease}
+.btn:hover{background:var(--teal-deep);transform:translateY(-1px)}
+.btn.small{padding:9px 18px;font-size:.88rem}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--paper)}
+@media(max-width:820px){.nav-links a:not(.btn){display:none}}
+
+/* ---------- hero ---------- */
+.hero{padding:clamp(44px,7vw,90px) 0 clamp(40px,6vw,80px)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,5vw,70px);align-items:start}
+@media(max-width:940px){.hero-grid{grid-template-columns:1fr}}
+.hero h1{font-size:clamp(2.15rem,4.8vw,3.7rem);font-weight:800;margin:18px 0 18px}
+.hero h1 .wrong{color:var(--danger);position:relative;white-space:nowrap}
+.hero h1 .wrong::after{content:"";position:absolute;left:0;right:0;bottom:.06em;height:.14em;background:var(--danger);opacity:.22;border-radius:3px}
+.hero .lede{margin-bottom:28px}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-bottom:34px}
+.trust{display:flex;gap:clamp(18px,3vw,38px);flex-wrap:wrap;border-top:1px solid var(--line);padding-top:22px}
+.trust div{min-width:100px}
+.trust b{font-family:var(--disp);font-size:1.5rem;font-weight:700;display:block}
+.trust span{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+.stars{color:#C8871A;letter-spacing:1px}
+
+/* ---------- quiz card (signature) ---------- */
+.quiz{background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:0 24px 60px -30px rgba(16,49,46,.28);overflow:hidden}
+.quiz-head{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-bottom:1px solid var(--line);background:var(--sand)}
+.quiz-head .tag{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+.quiz-head .live{display:flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11px;color:var(--teal);font-weight:600;letter-spacing:.08em}
+.quiz-head .live::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--teal);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.quiz-body{padding:clamp(18px,3vw,26px)}
+.quiz-q{font-weight:600;font-size:.98rem;line-height:1.55;margin-bottom:16px}
+.opt{display:flex;gap:12px;align-items:flex-start;width:100%;text-align:left;background:var(--paper);border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:10px;font-size:.92rem;line-height:1.5;color:var(--ink);transition:border-color .15s, background .15s}
+.opt:hover:not(:disabled){border-color:var(--teal);background:var(--teal-soft)}
+.opt:disabled{cursor:default}
+.opt .bubble{flex:none;width:24px;height:24px;border-radius:50%;border:1.8px solid var(--ink-soft);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:12px;font-weight:600;margin-top:1px}
+.opt.picked .bubble{background:var(--ink);border-color:var(--ink);color:#fff}
+.opt.right{border-color:var(--ok);background:var(--ok-soft)}
+.opt.right .bubble{background:var(--ok);border-color:var(--ok);color:#fff}
+.opt.wrongpick{border-color:var(--danger);background:var(--danger-soft)}
+.opt.wrongpick .bubble{background:var(--danger);border-color:var(--danger);color:#fff}
+.conf{display:none;margin-top:6px}
+.conf.show{display:block;animation:rise .35s ease}
+.conf p{font-size:.9rem;font-weight:600;margin-bottom:10px}
+.conf-row{display:flex;gap:8px;flex-wrap:wrap}
+.chip{border:1.5px solid var(--ink);background:transparent;border-radius:100px;padding:8px 16px;font-size:.85rem;font-weight:600;color:var(--ink);transition:background .15s}
+.chip:hover{background:var(--ink);color:var(--paper)}
+.verdict{display:none;margin-top:16px;border-radius:12px;padding:16px 18px;font-size:.9rem;line-height:1.55}
+.verdict.show{display:block;animation:rise .4s ease}
+.verdict.danger{background:var(--danger-soft);border:1.5px solid var(--danger)}
+.verdict.safe{background:var(--ok-soft);border:1.5px solid var(--ok)}
+.verdict .v-tag{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;display:block;margin-bottom:8px}
+.verdict.danger .v-tag{color:var(--danger)}
+.verdict.safe .v-tag{color:var(--ok)}
+.verdict .marks{font-family:var(--mono);font-weight:600}
+.verdict .marks.neg{color:var(--danger)}
+.quiz-foot{padding:0 clamp(18px,3vw,26px) 20px;font-family:var(--mono);font-size:11.5px;color:var(--ink-soft)}
+@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* ---------- sections ---------- */
+section{padding:clamp(56px,8vw,110px) 0}
+.section-sand{background:var(--sand)}
+.section-dark{background:var(--teal-deep);color:#F2F0E6}
+.section-dark .eyebrow{color:#8FD0BF}
+.section-dark .eyebrow::before{background:#8FD0BF}
+.section-dark .lede{color:#C9D8D0}
+
+/* ---------- danger zone: phone + ledger ---------- */
+.dz-grid{display:grid;grid-template-columns:1fr auto;gap:clamp(28px,5vw,80px);align-items:center}
+@media(max-width:880px){.dz-grid{grid-template-columns:1fr;justify-items:center}.dz-copy{text-align:center}.dz-copy .eyebrow{justify-content:center}}
+.dz-copy p{margin:14px 0;color:#C9D8D0;max-width:46ch}
+.dz-copy strong{color:#fff}
+.ledger{margin-top:26px;border:1px solid rgba(255,255,255,.15);border-radius:14px;padding:6px 20px;font-family:var(--mono);max-width:440px}
+.ledger-row{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px dashed rgba(255,255,255,.16);font-size:.9rem}
+.ledger-row:last-child{border-bottom:none}
+.ledger-row .lbl{color:#B9CFC7}
+.ledger-row .val{font-weight:600}
+.ledger-row .val.neg{color:#F4A79A}
+@media(max-width:880px){.ledger{margin-left:auto;margin-right:auto;text-align:left}}
+
+/* phone mockup */
+.phone{width:min(300px,82vw);background:#081F1C;border:6px solid #0F2F2B;border-radius:38px;box-shadow:0 40px 80px -30px rgba(0,0,0,.55), inset 0 0 0 1.5px rgba(255,255,255,.08);padding:14px;flex:none}
+.phone .notch{width:86px;height:6px;border-radius:6px;background:rgba(255,255,255,.18);margin:2px auto 16px}
+.scr{background:#0C2925;border-radius:22px;padding:18px 16px;font-size:.8rem}
+.scr .scr-eyebrow{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#8FD0BF}
+.scr h4{font-family:var(--disp);font-size:1.15rem;font-weight:700;color:#fff;margin:4px 0 14px}
+.dz-item{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:12px;padding:11px 12px;margin-bottom:9px}
+.dz-item .row{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:7px}
+.dz-item .topic{color:#EDEBE0;font-weight:600;font-size:.82rem}
+.dz-item .count{font-family:var(--mono);font-size:.72rem;color:#F4A79A;font-weight:600;white-space:nowrap}
+.dz-bar{height:6px;border-radius:6px;background:rgba(255,255,255,.1);overflow:hidden}
+.dz-bar i{display:block;height:100%;border-radius:6px;background:linear-gradient(90deg,#D96A54,#B23A2E)}
+.scr .cta-row{margin-top:14px;background:#8FD0BF;color:#08211D;border-radius:10px;text-align:center;font-weight:700;font-size:.8rem;padding:11px;font-family:var(--body)}
+
+/* ---------- anatomy ---------- */
+.anatomy-head{text-align:center;max-width:640px;margin:0 auto clamp(30px,4vw,50px)}
+.anatomy-head .eyebrow{justify-content:center}
+.anatomy-head .lede{margin:0 auto}
+.exam{max-width:820px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:clamp(22px,4vw,40px);position:relative;box-shadow:0 24px 60px -34px rgba(16,49,46,.3)}
+.exam .q{font-weight:600;font-size:1rem;line-height:1.6;max-width:56ch}
+.note{position:relative;margin-top:18px;padding:14px 16px 14px 46px;border-radius:12px;font-size:.9rem;line-height:1.5}
+.note::before{position:absolute;left:14px;top:13px;font-family:var(--mono);font-size:15px;font-weight:600}
+.note.trap{background:var(--danger-soft);color:#6E241B}
+.note.trap::before{content:"✕";color:var(--danger)}
+.note.logic{background:var(--teal-soft);color:#123F39}
+.note.logic::before{content:"→";color:var(--teal)}
+.note.win{background:var(--ok-soft);color:#14502F}
+.note.win::before{content:"✓";color:var(--ok)}
+.note .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;display:block;margin-bottom:3px;opacity:.75}
+
+/* ---------- features ---------- */
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+@media(max-width:980px){.feat-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.feat-grid{grid-template-columns:1fr}}
+.feat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px 22px;transition:transform .18s ease, box-shadow .18s ease}
+.feat:hover{transform:translateY(-3px);box-shadow:0 16px 34px -22px rgba(16,49,46,.3)}
+.feat .ic{width:42px;height:42px;border-radius:11px;background:var(--teal-soft);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.feat .ic svg{width:21px;height:21px;stroke:var(--teal);fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.feat h3{font-size:1.02rem;font-weight:700;margin-bottom:5px}
+.feat p{font-size:.88rem;color:var(--ink-soft)}
+
+/* ---------- memory pairs ---------- */
+.mem-head{text-align:center;max-width:640px;margin:0 auto 30px}
+.mem-head .eyebrow{justify-content:center}
+.mem-head .lede{margin:0 auto}
+.mem-game{position:relative;max-width:760px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:0 24px 60px -34px rgba(16,49,46,.3);overflow:hidden}
+.mem-game-head{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:15px clamp(16px,3vw,24px);background:var(--sand);border-bottom:1px solid var(--line)}
+.mem-set{display:flex;align-items:center;gap:11px;min-width:0}
+.mem-set-icon{display:grid;place-items:center;width:36px;height:36px;flex:none;border-radius:10px;background:var(--teal);color:#fff}
+.mem-set-icon svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.mem-set-copy{min-width:0}
+.mem-set-copy strong{display:block;font-family:var(--disp);font-size:.95rem;line-height:1.2}
+.mem-set-copy span,.mem-level{font-family:var(--mono);font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-soft)}
+.mem-level{flex:none;padding:5px 9px;border:1px solid var(--line);border-radius:100px;background:var(--card)}
+.mem-hud{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:14px clamp(16px,3vw,24px) 10px}
+.mem-time{display:flex;align-items:center;gap:7px;font-family:var(--mono);font-size:.88rem;font-weight:600;font-variant-numeric:tabular-nums}
+.mem-time svg{width:18px;height:18px;fill:none;stroke:var(--teal);stroke-width:1.8}
+.mem-errors{text-align:center;line-height:1}
+.mem-errors b{display:block;font-family:var(--disp);font-size:1.35rem}
+.mem-errors span{font-size:.68rem;font-weight:700;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.08em}
+.mem-errors.has-errors b,.mem-errors.has-errors span{color:var(--danger)}
+.mem-restart{justify-self:end;display:grid;place-items:center;width:38px;height:38px;border:1px solid var(--line);border-radius:50%;background:var(--card);color:var(--ink);transition:background .15s,border-color .15s}
+.mem-restart:hover{background:var(--teal-soft);border-color:var(--teal)}
+.mem-restart svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.mem-progress{padding:0 clamp(16px,3vw,24px) 12px}
+.mem-progress-label{display:flex;justify-content:space-between;gap:16px;margin-bottom:6px;font-size:.72rem;font-weight:600;color:var(--ink-soft)}
+.mem-progress-track{height:5px;border-radius:100px;background:var(--sand);overflow:hidden}
+.mem-progress-fill{display:block;width:0;height:100%;border-radius:inherit;background:var(--teal);transition:width .25s ease}
+.mem-instruction{min-height:21px;margin:0 16px 9px;text-align:center;font-size:.76rem;color:var(--ink-soft)}
+.mem-board{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px;padding:0 clamp(12px,3vw,24px) clamp(18px,3vw,24px)}
+.mem-col{display:grid;grid-template-rows:auto repeat(6,minmax(58px,auto));gap:8px;min-width:0}
+.mem-col-title{padding:0 2px 2px;font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+.mem-tile{display:flex;align-items:center;justify-content:center;gap:5px;width:100%;min-width:0;padding:10px 8px;border:1.5px solid var(--line);border-radius:14px;background:var(--card);color:var(--ink);font-size:clamp(.75rem,1.8vw,.88rem);font-weight:600;line-height:1.25;text-align:center;overflow-wrap:anywhere;transition:background .18s,color .18s,border-color .18s,transform .12s}
+.mem-tile:hover:not(:disabled){border-color:var(--teal);background:var(--teal-soft);transform:translateY(-1px)}
+.mem-tile.selected{background:var(--teal);border-color:var(--teal);color:#fff}
+.mem-tile.matched{background:var(--teal-soft);border-color:rgba(14,90,82,.45);color:var(--teal);cursor:default}
+.mem-tile.wrong{background:var(--danger-soft);border-color:var(--danger);color:var(--danger);animation:mem-shake .32s ease}
+.mem-tile svg{display:none;width:14px;height:14px;flex:none;fill:none;stroke:currentColor;stroke-width:2.4}
+.mem-tile.matched svg{display:block}
+.mem-complete{position:absolute;inset:0;z-index:3;display:none;place-items:center;padding:22px;background:rgba(16,49,46,.3);backdrop-filter:blur(2px)}
+.mem-complete.show{display:grid;animation:mem-fade .25s ease}
+.mem-complete-card{width:min(100%,330px);padding:26px 24px;text-align:center;background:var(--card);border-radius:18px;box-shadow:0 24px 60px -20px rgba(0,0,0,.35)}
+.mem-complete-icon{display:grid;place-items:center;width:48px;height:48px;margin:0 auto 12px;border-radius:50%;background:var(--teal-soft);color:var(--teal);font-size:1.5rem;font-weight:700}
+.mem-complete h3{font-size:1.25rem;margin-bottom:5px}
+.mem-complete p{font-family:var(--mono);font-size:.78rem;color:var(--ink-soft);margin-bottom:18px}
+.mem-play-again{border:0;border-radius:100px;padding:10px 20px;background:var(--teal);color:#fff;font-weight:700}
+.mem-play-again:hover{background:var(--teal-deep)}
+@keyframes mem-shake{25%{transform:translateX(-3px)}50%{transform:translateX(3px)}75%{transform:translateX(-2px)}}
+@keyframes mem-fade{from{opacity:0}to{opacity:1}}
+@media(max-width:520px){
+  .mem-head{margin-bottom:22px}
+  .mem-game{border-radius:16px}
+  .mem-game-head{padding:12px 14px}
+  .mem-level{display:none}
+  .mem-hud{padding:12px 14px 9px}
+  .mem-progress{padding:0 14px 10px}
+  .mem-board{padding:0 10px 16px;gap:7px}
+  .mem-col{grid-template-rows:auto repeat(6,minmax(62px,auto));gap:7px}
+  .mem-tile{padding:9px 5px;border-radius:11px;font-size:.72rem}
+}
+@media(prefers-reduced-motion:reduce){.mem-tile,.mem-progress-fill{transition:none}.mem-tile.wrong{animation:none}}
+
+/* ---------- bilingual ---------- */
+.bi-card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:clamp(22px,3vw,32px);max-width:720px;margin:30px auto 0;box-shadow:0 20px 50px -32px rgba(16,49,46,.25)}
+.bi-toggle{display:inline-flex;background:var(--sand);border-radius:100px;padding:4px;margin-bottom:18px}
+.bi-toggle button{border:none;background:transparent;border-radius:100px;padding:8px 20px;font-size:.88rem;font-weight:600;color:var(--ink-soft)}
+.bi-toggle button.on{background:var(--ink);color:var(--paper)}
+.bi-text{font-size:.98rem;line-height:1.7;font-weight:500}
+.bi-text[lang="hi"]{font-family:'Noto Sans Devanagari',var(--body)}
+
+/* ---------- reviews ---------- */
+.rev-grid{display:grid;grid-template-columns:280px 1fr;gap:clamp(28px,4vw,54px);align-items:start;margin-top:34px}
+@media(max-width:840px){.rev-grid{grid-template-columns:1fr}}
+.score-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px;text-align:center}
+.score-card .big{font-family:var(--disp);font-size:3.4rem;font-weight:800;line-height:1}
+.score-card .stars{font-size:1.15rem;margin:8px 0 4px}
+.score-card small{font-family:var(--mono);font-size:11.5px;color:var(--ink-soft);letter-spacing:.05em}
+.reviews{display:flex;flex-direction:column;gap:16px}
+.review{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px}
+.review p{font-size:.95rem;line-height:1.6}
+.review footer{margin-top:12px;font-family:var(--mono);font-size:11.5px;color:var(--ink-soft);display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.review footer .stars{font-size:.8rem}
+
+/* ---------- final cta ---------- */
+.final{text-align:center}
+.final .eyebrow{justify-content:center}
+.final h2{font-size:clamp(1.9rem,4.4vw,3.1rem);max-width:18ch;margin-left:auto;margin-right:auto}
+.final .lede{margin:14px auto 30px}
+.play-badge{display:inline-flex;align-items:center;gap:12px;background:#0F1311;color:#fff;text-decoration:none;border-radius:12px;padding:12px 22px;transition:transform .15s}
+.play-badge:hover{transform:translateY(-2px)}
+.play-badge svg{width:26px;height:26px}
+.play-badge .t{text-align:left}
+.play-badge .t small{display:block;font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;opacity:.8}
+.play-badge .t b{font-size:1.05rem;font-family:var(--disp)}
+
+/* ---------- footer ---------- */
+footer.site{border-top:1px solid var(--line);padding:34px 0;font-size:.88rem;color:var(--ink-soft)}
+footer.site .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+footer.site a{color:var(--ink-soft);text-decoration:none;margin-left:18px}
+footer.site a:hover{color:var(--ink)}
+@media(max-width:600px){footer.site a{margin-left:0;margin-right:18px}}
+
+/* ---------- reveal ---------- */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease, transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  *{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
 </head>
 <body>
-  <header>
-    <div class="header-content">
-      <a href="/" class="logo">
-        <div class="logo-circle"><div style="text-align:center;line-height:1.1;">UPSC<br>WARS</div></div>
-        <span class="logo-text">UPSC Wars</span>
-      </a>
-      <div class="lang-toggle">
-        <button class="lang-btn active" onclick="switchLang('en', this)">English</button>
-        <button class="lang-btn" onclick="switchLang('hi', this)">हिन्दी</button>
-      </div>
-    </div>
-  </header>
 
-  <main>
-    <section class="hero">
-      <div class="hero-content">
-        <div class="hero-badge">GS Paper 1 - 32,000+ Questions</div>
-        <h1 class="hero-headline lang-en">Stop Memorizing.<br />Start Understanding.</h1>
-        <h1 class="hero-headline-hi lang-hi">रटना बंद करें।<br />समझना शुरू करें।</h1>
-        <p class="hero-subheadline lang-en">Every question comes with trap breakdowns, elimination logic, and concept anchors. Built by UPSC aspirants, for aspirants.</p>
-        <p class="hero-subheadline-hi lang-hi">हर सवाल के साथ जाल विश्लेषण, elimination तर्क, और concept anchors। UPSC aspirants द्वारा, aspirants के लिए बनाया गया।</p>
-        <a href="#video" class="cta-primary">
-          <span class="play-icon">▶</span>
-          <span class="lang-en">Watch How It Works</span>
-          <span class="lang-hi" style="display:none;">देखें यह कैसे काम करता है</span>
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <a class="logo" href="#top" aria-label="UPSC Wars home"><span class="dot"></span>UPSC&nbsp;Wars</a>
+    <div class="nav-links">
+      <a href="#danger">Danger Zone</a>
+      <a href="#anatomy">Explanations</a>
+      <a href="#features">Features</a>
+      <a href="#reviews">Reviews</a>
+      <a class="btn small" href="https://play.google.com/store/apps/details?id=practice.upsc.indiaapps.com.upscmcqpractice" target="_blank" rel="noopener">Get the app</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">UPSC Prelims · GS Paper 1</span>
+      <h1>You don't fail Prelims by knowing less. You fail it by being <span class="wrong">confidently wrong</span>.</h1>
+      <p class="lede">30,000+ MCQs that track your confidence, catch your blind spots, and teach you the trap behind every question. English + Hindi.</p>
+      <div class="hero-ctas">
+        <a class="play-badge" href="https://play.google.com/store/apps/details?id=practice.upsc.indiaapps.com.upscmcqpractice" target="_blank" rel="noopener">
+          <svg viewBox="0 0 512 512" aria-hidden="true"><path fill="#00D9FF" d="M48 32l240 224L48 480c-9-5-16-15-16-28V60c0-13 7-23 16-28z"/><path fill="#FFCE00" d="M288 256l64-60 76 44c20 12 20 40 0 52l-76 44-64-60z"/><path fill="#FF3A44" d="M48 480l240-224 64 60-272 160c-11 6-23 6-32 4z"/><path fill="#00F076" d="M48 32c9-2 21-2 32 4l272 160-64 60L48 32z"/></svg>
+          <span class="t"><small>Get it on</small><b>Google Play</b></span>
+        </a>
+        <a class="play-badge" href="https://apps.apple.com/in/app/upsc-wars/id1550273627" target="_blank" rel="noopener">
+          <svg viewBox="0 0 384 512" aria-hidden="true"><path fill="#fff" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+          <span class="t"><small>Download on the</small><b>App Store</b></span>
         </a>
       </div>
+      <div class="trust" aria-label="App statistics from Google Play">
+        <div><b>4.7 <span class="stars" aria-hidden="true">★</span></b><span>1,800+ reviews</span></div>
+        <div><b>50K+</b><span>Downloads</span></div>
+        <div><b>30K+</b><span>Explained MCQs</span></div>
+        <div><b>EN + हिंदी</b><span>Both mediums</span></div>
+      </div>
+    </div>
 
-      <div class="video-container" id="video">
-        <div class="video-wrapper">
-          <div class="video-placeholder">
-            <div class="video-placeholder-icon"><span style="font-size:1.8rem;">▶</span></div>
-            <div class="lang-en">Demo Video Coming Soon</div>
-            <div class="lang-hi" style="display:none;">डेमो वीडियो जल्द आ रहा है</div>
+    <!-- signature: live trap question -->
+    <div class="quiz" id="quiz" aria-label="Try a real question from the app">
+      <div class="quiz-head">
+        <span class="tag">Real question · Ancient History</span>
+        <span class="live">Try it</span>
+      </div>
+      <div class="quiz-body">
+        <p class="quiz-q">Which of the following most accurately characterises the destruction of Nalanda University?</p>
+        <div id="opts">
+          <button class="opt" data-k="a"><span class="bubble">a</span><span>Destroyed solely by Bakhtiyar Khilji's raid in 1193 CE — the beginning and end of its decline.</span></button>
+          <button class="opt" data-k="b"><span class="bubble">b</span><span>Multi-phase destruction: earlier Huna and Gauda raids, with Khilji's 1193 CE attack the final blow.</span></button>
+          <button class="opt" data-k="c"><span class="bubble">c</span><span>Declined purely from internal stagnation — military attacks played no role.</span></button>
+          <button class="opt" data-k="d"><span class="bubble">d</span><span>Xuanzang's 7th-century account already describes it in ruins.</span></button>
+        </div>
+        <div class="conf" id="conf">
+          <p>Before we reveal — how confident are you?</p>
+          <div class="conf-row">
+            <button class="chip" data-c="sure">Sure</button>
+            <button class="chip" data-c="edu">Educated guess</button>
+            <button class="chip" data-c="pure">Pure guess</button>
           </div>
         </div>
+        <div class="verdict" id="verdict" role="status"></div>
       </div>
-    </section>
-
-    <section class="stats">
-      <div class="stats-grid">
-        <div class="stat-card">
-          <div class="stat-number">32,000+</div>
-          <div class="stat-label lang-en">Questions with Deep Explanations</div>
-          <div class="stat-label-hi lang-hi">गहन व्याख्या के साथ प्रश्न</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">100%</div>
-          <div class="stat-label lang-en">GS Paper 1 Coverage</div>
-          <div class="stat-label-hi lang-hi">GS Paper 1 कवरेज</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">2</div>
-          <div class="stat-label lang-en">Languages (English + Hindi)</div>
-          <div class="stat-label-hi lang-hi">भाषाएं (अंग्रेजी + हिंदी)</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="features">
-      <div class="section-header">
-        <h2 class="section-title lang-en">Why UPSC Wars is Different</h2>
-        <h2 class="section-title-hi lang-hi">UPSC Wars क्यों अलग है</h2>
-        <p class="section-subtitle lang-en">We don't just give you answers. We teach you how to think like the examiner.</p>
-        <p class="section-subtitle-hi lang-hi">हम केवल उत्तर नहीं देते। हम आपको परीक्षक की तरह सोचना सिखाते हैं।</p>
-      </div>
-      <div class="features-grid">
-        <div class="feature-card"><div class="feature-icon">🎯</div><h3 class="feature-title lang-en">Trap Breakdowns</h3><h3 class="feature-title-hi lang-hi">जाल विश्लेषण</h3><p class="feature-description lang-en">Every distractor is dissected. Learn exactly why wrong options are designed to trap you and how to spot them instantly.</p><p class="feature-description-hi lang-hi">हर distractor का विश्लेषण। जानें कि गलत विकल्प आपको फंसाने के लिए कैसे डिज़ाइन किए गए हैं और उन्हें तुरंत कैसे पहचानें।</p></div>
-        <div class="feature-card"><div class="feature-icon">📊</div><h3 class="feature-title lang-en">Elimination Logic</h3><h3 class="feature-title-hi lang-hi">Elimination तर्क</h3><p class="feature-description lang-en">Step-by-step elimination strategy for multi-statement questions. Master the art of arriving at the right answer methodically.</p><p class="feature-description-hi lang-hi">बहु-कथन प्रश्नों के लिए चरण-दर-चरण elimination रणनीति। सही उत्तर पर पद्धतिगत रूप से पहुंचने की कला में महारत हासिल करें।</p></div>
-        <div class="feature-card"><div class="feature-icon">🧠</div><h3 class="feature-title lang-en">Concept Anchors</h3><h3 class="feature-title-hi lang-hi">Concept Anchors</h3><p class="feature-description lang-en">Every question is linked to core concepts. Build deep, interconnected knowledge, not isolated facts.</p><p class="feature-description-hi lang-hi">हर प्रश्न मुख्य अवधारणाओं से जुड़ा है। गहरा, आपस में जुड़ा हुआ ज्ञान बनाएं, अलग-थलग तथ्य नहीं।</p></div>
-        <div class="feature-card"><div class="feature-icon">🔄</div><h3 class="feature-title lang-en">Smart Revision Queue</h3><h3 class="feature-title-hi lang-hi">Smart Revision Queue</h3><p class="feature-description lang-en">Questions automatically enter revision until you get them right 3 times on separate days. No manual tracking needed.</p><p class="feature-description-hi lang-hi">प्रश्न स्वचालित रूप से revision में आते हैं जब तक आप उन्हें अलग-अलग दिनों पर 3 बार सही नहीं करते। मैनुअल ट्रैकिंग की आवश्यकता नहीं।</p></div>
-        <div class="feature-card"><div class="feature-icon">📖</div><h3 class="feature-title lang-en">Learning Mode</h3><h3 class="feature-title-hi lang-hi">Learning Mode</h3><p class="feature-description lang-en">See explanations immediately as you practice. Tap to select, confirm your choice, then learn, all in one flow.</p><p class="feature-description-hi lang-hi">अभ्यास करते समय तुरंत व्याख्या देखें। चुनने के लिए tap करें, अपनी पसंद की पुष्टि करें, फिर सीखें, सब एक flow में।</p></div>
-        <div class="feature-card"><div class="feature-icon">🌐</div><h3 class="feature-title lang-en">Full Bilingual Support</h3><h3 class="feature-title-hi lang-hi">पूर्ण द्विभाषी समर्थन</h3><p class="feature-description lang-en">Every question, explanation, and trap breakdown available in both English and Hindi. Switch anytime.</p><p class="feature-description-hi lang-hi">हर प्रश्न, व्याख्या, और जाल विश्लेषण अंग्रेजी और हिंदी दोनों में उपलब्ध। कभी भी switch करें।</p></div>
-      </div>
-    </section>
-
-    <section class="reviews">
-      <div class="section-header">
-        <h2 class="section-title lang-en">What Aspirants Are Saying</h2>
-        <h2 class="section-title-hi lang-hi">Aspirants क्या कह रहे हैं</h2>
-      </div>
-      <div class="reviews-grid">
-        <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"The trap breakdowns are game-changing. I finally understand why I was getting questions wrong."</p><p class="review-author">- Play Store Reviewer</p></div>
-        <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Best explanation depth I've seen in any app. The elimination logic section alone is worth it."</p><p class="review-author">- Play Store Reviewer</p></div>
-        <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Finally an app that treats me like an aspirant, not just a test-taker. Learning mode is brilliant."</p><p class="review-author">- Play Store Reviewer</p></div>
-      </div>
-    </section>
-
-    <section class="cta-section">
-      <h2 class="cta-section-title lang-en">Ready to Transform Your Prep?</h2>
-      <h2 class="cta-section-title-hi lang-hi">अपनी तैयारी को बदलने के लिए तैयार हैं?</h2>
-      <p class="cta-section-subtitle lang-en">Join thousands of aspirants who stopped memorizing and started understanding.</p>
-      <p class="cta-section-subtitle-hi lang-hi">हजारों aspirants से जुड़ें जिन्होंने रटना बंद किया और समझना शुरू किया।</p>
-      <a href="#" class="cta-secondary">
-        <span class="lang-en">Download on Play Store</span>
-        <span class="lang-hi" style="display:none;">Play Store पर डाउनलोड करें</span>
-      </a>
-    </section>
-  </main>
-
-  <footer>
-    <div class="footer-content">
-      <div class="footer-logo">
-        <div class="logo-circle" style="width:38px;height:38px;font-size:0.58rem;"><div style="text-align:center;line-height:1.1;">UPSC<br>WARS</div></div>
-        <span style="font-weight:700;font-size:1.05rem;">UPSC Wars</span>
-      </div>
-      <p class="footer-text">
-        <span class="lang-en">Built by aspirants, for aspirants. © 2024 UPSC Wars</span>
-        <span class="lang-hi" style="display:none;">Aspirants द्वारा, aspirants के लिए बनाया गया। © 2024 UPSC Wars</span>
-      </p>
+      <p class="quiz-foot">Every question runs this way: answer → confidence → diagnosis.</p>
     </div>
-  </footer>
+  </div>
+</header>
 
-  <script>
-    function switchLang(lang, btn) {
-      document.querySelectorAll(".lang-btn").forEach(function (b) { b.classList.remove("active"); });
-      if (btn) btn.classList.add("active");
-      var showEn = lang === "en";
-      document.querySelectorAll(".lang-en").forEach(function (el) { el.style.display = showEn ? "" : "none"; });
-      document.querySelectorAll(".lang-hi").forEach(function (el) { el.style.display = showEn ? "none" : ""; });
-      document.querySelectorAll(".hero-headline").forEach(function (el) { el.style.display = showEn ? "" : "none"; });
-      document.querySelectorAll(".hero-subheadline").forEach(function (el) { el.style.display = showEn ? "" : "none"; });
-      document.querySelectorAll(".section-title").forEach(function (el) { el.style.display = showEn ? "" : "none"; });
-      document.querySelectorAll(".section-subtitle").forEach(function (el) { el.style.display = showEn ? "" : "none"; });
-      document.querySelectorAll(".stat-label").forEach(function (el) { el.style.display = showEn ? "" : "none"; });
-      document.querySelectorAll(".feature-title").forEach(function (el) { el.style.display = showEn ? "" : "none"; });
-      document.querySelectorAll(".feature-description").forEach(function (el) { el.style.display = showEn ? "" : "none"; });
-      document.querySelectorAll(".cta-section-title").forEach(function (el) { el.style.display = showEn ? "" : "none"; });
-      document.querySelectorAll(".cta-section-subtitle").forEach(function (el) { el.style.display = showEn ? "" : "none"; });
-      document.querySelectorAll(".hero-headline-hi").forEach(function (el) { el.style.display = showEn ? "none" : ""; });
-      document.querySelectorAll(".hero-subheadline-hi").forEach(function (el) { el.style.display = showEn ? "none" : ""; });
-      document.querySelectorAll(".section-title-hi").forEach(function (el) { el.style.display = showEn ? "none" : ""; });
-      document.querySelectorAll(".section-subtitle-hi").forEach(function (el) { el.style.display = showEn ? "none" : ""; });
-      document.querySelectorAll(".stat-label-hi").forEach(function (el) { el.style.display = showEn ? "none" : ""; });
-      document.querySelectorAll(".feature-title-hi").forEach(function (el) { el.style.display = showEn ? "none" : ""; });
-      document.querySelectorAll(".feature-description-hi").forEach(function (el) { el.style.display = showEn ? "none" : ""; });
-      document.querySelectorAll(".cta-section-title-hi").forEach(function (el) { el.style.display = showEn ? "none" : ""; });
-      document.querySelectorAll(".cta-section-subtitle-hi").forEach(function (el) { el.style.display = showEn ? "none" : ""; });
+<!-- ================= DANGER ZONE ================= -->
+<section class="section-dark" id="danger">
+  <div class="wrap dz-grid">
+    <div class="dz-copy reveal">
+      <span class="eyebrow">The Danger Zone</span>
+      <h2>A confident mistake costs more than a blank.</h2>
+      <p>Skip a question, lose nothing. Answer it <strong>sure and wrong</strong>, lose 0.66 — and repeat it on exam day, because you never doubted it.</p>
+      <p>UPSC Wars maps your Sure + Wrong answers topic by topic, so you revise exactly where certainty is bleeding your score.</p>
+      <div class="ledger" aria-label="Negative marking arithmetic">
+        <div class="ledger-row"><span class="lbl">Skipped</span><span class="val">0.00</span></div>
+        <div class="ledger-row"><span class="lbl">Sure · wrong × 12</span><span class="val neg">−7.92</span></div>
+        <div class="ledger-row"><span class="lbl">Typical cutoff margin</span><span class="val">&lt; 10 marks</span></div>
+      </div>
+    </div>
+    <div class="phone reveal" role="img" aria-label="Illustration of the Danger Zone screen in the app">
+      <div class="notch"></div>
+      <div class="scr">
+        <span class="scr-eyebrow">Your Danger Zone</span>
+        <h4>Sure + Wrong, by topic</h4>
+        <div class="dz-item">
+          <div class="row"><span class="topic">Modern History</span><span class="count">9 × sure+wrong</span></div>
+          <div class="dz-bar"><i style="width:86%"></i></div>
+        </div>
+        <div class="dz-item">
+          <div class="row"><span class="topic">Polity — Amendments</span><span class="count">6 × sure+wrong</span></div>
+          <div class="dz-bar"><i style="width:58%"></i></div>
+        </div>
+        <div class="dz-item">
+          <div class="row"><span class="topic">Environment</span><span class="count">4 × sure+wrong</span></div>
+          <div class="dz-bar"><i style="width:38%"></i></div>
+        </div>
+        <div class="dz-item">
+          <div class="row"><span class="topic">Geography</span><span class="count">2 × sure+wrong</span></div>
+          <div class="dz-bar"><i style="width:19%"></i></div>
+        </div>
+        <div class="cta-row">Revise these 21 questions →</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EXPLANATION ANATOMY ================= -->
+<section id="anatomy">
+  <div class="wrap">
+    <div class="anatomy-head reveal">
+      <span class="eyebrow">Explanation depth</span>
+      <h2>Every question teaches you the trap.</h2>
+      <p class="lede">Not a paragraph — a diagnosis. Here's a real one, on the decline of Taxila.</p>
+    </div>
+    <div class="exam reveal">
+      <p class="q">"Taxila's decline closely paralleled the decline of the Gupta Empire, with both occurring as a direct result of Bakhtiyar Khilji's campaigns." — Correct or incorrect?</p>
+      <div class="note trap">
+        <span class="k">The trap · Temporal swap</span>
+        Sounds plausible if you memorised "Gupta decline → educational decline." But Taxila fell nearly six centuries before Khilji.
+      </div>
+      <div class="note logic">
+        <span class="k">Elimination logic</span>
+        Khilji attacked Bihar — Nalanda, Odantapuri, Vikramashila. Never Taxila. Eliminate instantly.
+      </div>
+      <div class="note win">
+        <span class="k">Value addition</span>
+        The real blow: White Hun invasions, 5th–6th century CE. Unlike Nalanda, Taxila never saw a Pala-era revival.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FEATURES ================= -->
+<section class="section-sand" id="features">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">The full arsenal</span>
+      <h2>Built for the whole Prelims campaign.</h2>
+      <p class="lede">All eight GS Paper 1 subjects, end to end.</p>
+    </div>
+    <div class="feat-grid">
+      <div class="feat reveal">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4"/><circle cx="12" cy="12" r="4"/></svg></div>
+        <h3>Confidence tracking</h3>
+        <p>Sure, educated guess or pure guess — on every answer.</p>
+      </div>
+      <div class="feat reveal">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h16M8 15v-4M13 15V8M18 15v-7"/></svg></div>
+        <h3>PYQs, fully solved</h3>
+        <p>Previous year papers with the same trap-level analysis.</p>
+      </div>
+      <div class="feat reveal">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v8h8"/></svg></div>
+        <h3>Revision queue</h3>
+        <p>Take tests built purely from your own mistakes.</p>
+      </div>
+      <div class="feat reveal">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M8 21h8M12 17v4"/><path d="M6 3h12v6a6 6 0 0 1-12 0V3z"/><path d="M6 5H3v2a4 4 0 0 0 3 3.9M18 5h3v2a4 4 0 0 1-3 3.9"/></svg></div>
+        <h3>1v1 battles</h3>
+        <p>Challenge other aspirants and share open challenges.</p>
+      </div>
+      <div class="feat reveal">
+        <div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="13" width="8" height="8" rx="2"/><path d="M13 7h8M17 3v8M3 17h8M7 13v8"/></svg></div>
+        <h3>Memory Pairs</h3>
+        <p>Match terms to answers in timed rounds. <a href="#memory">Try a round below ↓</a></p>
+      </div>
+      <div class="feat reveal">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z"/></svg></div>
+        <h3>Works offline</h3>
+        <p>The full question bank ships inside the app.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MEMORY PAIRS ================= -->
+<section id="memory">
+  <div class="wrap">
+    <div class="mem-head reveal">
+      <span class="eyebrow">Memory Pairs · from the app</span>
+      <h2>Facts that stick without feeling like study.</h2>
+      <p class="lede">Pick a term, then find its answer. Try a real easy round from Polity.</p>
+    </div>
+    <div class="mem-game reveal" id="mem-game">
+      <div class="mem-game-head">
+        <div class="mem-set">
+          <span class="mem-set-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M5 6h14M7 6l-4 7h8L7 6zm10 0-4 7h8l-4-7zM8 21h8"/></svg></span>
+          <span class="mem-set-copy"><strong>Articles &amp; Rights</strong><span>Polity · 6 pairs</span></span>
+        </div>
+        <span class="mem-level">Easy round</span>
+      </div>
+      <div class="mem-hud">
+        <div class="mem-time" aria-label="Elapsed time"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6"/></svg><span id="mem-time">0:00</span></div>
+        <div class="mem-errors" id="mem-errors-wrap"><b id="mem-errors">0</b><span>Errors</span></div>
+        <button class="mem-restart" id="mem-restart" type="button" aria-label="Restart and shuffle game"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7v5h-5M4 17v-5h5"/><path d="M6.1 9a7 7 0 0 1 11.5-2L20 9M4 15l2.4 2A7 7 0 0 0 18 15"/></svg></button>
+      </div>
+      <div class="mem-progress">
+        <div class="mem-progress-label"><span>Progress</span><span id="mem-matched">0/6 matched</span></div>
+        <div class="mem-progress-track" role="progressbar" aria-label="Matched pairs" aria-valuemin="0" aria-valuemax="6" aria-valuenow="0"><span class="mem-progress-fill" id="mem-progress-fill"></span></div>
+      </div>
+      <p class="mem-instruction" id="mem-status" role="status" aria-live="polite">Choose one tile from each column</p>
+      <div class="mem-board" id="mem-board" aria-label="Memory Pairs game board">
+        <div class="mem-col" id="mem-terms"><div class="mem-col-title">Terms</div></div>
+        <div class="mem-col" id="mem-answers"><div class="mem-col-title">Answers</div></div>
+      </div>
+      <div class="mem-complete" id="mem-complete" role="dialog" aria-modal="true" aria-labelledby="mem-complete-title">
+        <div class="mem-complete-card">
+          <div class="mem-complete-icon" aria-hidden="true">✓</div>
+          <h3 id="mem-complete-title">All pairs matched</h3>
+          <p id="mem-result">0:00 · 0 errors</p>
+          <button class="mem-play-again" id="mem-play-again" type="button">Play again</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BILINGUAL ================= -->
+<section>
+  <div class="wrap" style="text-align:center">
+    <div class="reveal">
+      <span class="eyebrow" style="justify-content:center">दोनों माध्यम</span>
+      <h2>Hindi medium isn't an afterthought.</h2>
+    </div>
+    <div class="bi-card reveal">
+      <div class="bi-toggle" role="tablist" aria-label="भाषा / Language">
+        <button class="on" id="bi-hi" role="tab" aria-selected="true">हिंदी</button>
+        <button id="bi-en" role="tab" aria-selected="false">English</button>
+      </div>
+      <p class="bi-text" lang="hi" id="bi-text-hi">प्राचीन शिक्षण केंद्र के रूप में टैक्सिला (तक्षशिला) के पतन के संबंध में निम्नलिखित कथनों पर विचार करें: 1. टैक्सिला को मुख्य सैन्य आघात 5वीं-6वीं शताब्दी ईस्वी में श्वेत हून (हेफ्थलाइट) आक्रमणों से लगा…</p>
+      <p class="bi-text" lang="en" id="bi-text-en" hidden>Consider the following statements about the decline of Taxila (Takshashila) as an ancient centre of learning: 1. The primary military blow came from the White Hun (Hephthalite) invasions of the 5th–6th century CE…</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= REVIEWS ================= -->
+<section class="section-sand" id="reviews">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">From the Play Store</span>
+      <h2>Aspirants who found their blind spots.</h2>
+    </div>
+    <div class="rev-grid">
+      <div class="score-card reveal">
+        <div class="big">4.7</div>
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <small>1,800+ verified reviews<br>50K+ downloads on Google Play</small>
+      </div>
+      <div class="reviews">
+        <blockquote class="review reveal">
+          <p>"More helpful as it serves as one stop point for MCQs. Questions are of UPSC level, allows to review and gives feedback &amp; weak areas at free of cost."</p>
+          <footer><span class="stars" aria-hidden="true">★★★★★</span> Preethi Kamaraj · Google Play · June 2026</footer>
+        </blockquote>
+        <blockquote class="review reveal">
+          <p>"This is the only educational app that compelled me to review. This is how technology is leveling the playing field for all."</p>
+          <footer><span class="stars" aria-hidden="true">★★★★★</span> Google Play user</footer>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FINAL CTA ================= -->
+<section class="final">
+  <div class="wrap reveal">
+    <span class="eyebrow">Free to start</span>
+    <h2>Find your Danger Zone before the exam hall does.</h2>
+    <p class="lede">Prepare like someone who clears Prelims.</p>
+    <div class="hero-ctas" style="justify-content:center">
+      <a class="play-badge" href="https://play.google.com/store/apps/details?id=practice.upsc.indiaapps.com.upscmcqpractice" target="_blank" rel="noopener">
+        <svg viewBox="0 0 512 512" aria-hidden="true"><path fill="#00D9FF" d="M48 32l240 224L48 480c-9-5-16-15-16-28V60c0-13 7-23 16-28z"/><path fill="#FFCE00" d="M288 256l64-60 76 44c20 12 20 40 0 52l-76 44-64-60z"/><path fill="#FF3A44" d="M48 480l240-224 64 60-272 160c-11 6-23 6-32 4z"/><path fill="#00F076" d="M48 32c9-2 21-2 32 4l272 160-64 60L48 32z"/></svg>
+        <span class="t"><small>Get it on</small><b>Google Play</b></span>
+      </a>
+      <a class="play-badge" href="https://apps.apple.com/in/app/upsc-wars/id1550273627" target="_blank" rel="noopener">
+        <svg viewBox="0 0 384 512" aria-hidden="true"><path fill="#fff" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+        <span class="t"><small>Download on the</small><b>App Store</b></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <span>© 2026 UPSC Wars · Tiny Miny Apps</span>
+    <span>
+      <a href="mailto:upscwars@gmail.com">upscwars@gmail.com</a>
+      <a href="https://play.google.com/store/apps/details?id=practice.upsc.indiaapps.com.upscmcqpractice" target="_blank" rel="noopener">Google Play</a>
+      <a href="https://apps.apple.com/in/app/upsc-wars/id1550273627" target="_blank" rel="noopener">App Store</a>
+    </span>
+  </div>
+</footer>
+
+<script>
+/* ---- hero quiz ---- */
+(function(){
+  const CORRECT='b';
+  let picked=null;
+  const opts=document.querySelectorAll('#opts .opt');
+  const conf=document.getElementById('conf');
+  const verdict=document.getElementById('verdict');
+
+  opts.forEach(o=>o.addEventListener('click',()=>{
+    if(picked)return;
+    picked=o.dataset.k;
+    o.classList.add('picked');
+    opts.forEach(x=>x.disabled=true);
+    conf.classList.add('show');
+    conf.scrollIntoView({block:'nearest',behavior:'smooth'});
+  }));
+
+  conf.querySelectorAll('.chip').forEach(c=>c.addEventListener('click',()=>{
+    const level=c.dataset.c;
+    conf.classList.remove('show');
+    opts.forEach(o=>{
+      if(o.dataset.k===CORRECT)o.classList.add('right');
+      else if(o.dataset.k===picked)o.classList.add('wrongpick');
+    });
+    const right=picked===CORRECT;
+    verdict.className='verdict show '+(right?'safe':'danger');
+    if(right){
+      verdict.innerHTML='<span class="v-tag">✓ Correct · +2.00</span>'
+        +(level==='sure'
+          ?'Sure and right — exactly the certainty you want. Most aspirants pick (a) and collapse a multi-phase decline into one dramatic event. You didn\'t.'
+          :'Right — but not sure. In the app this becomes a <b>reinforce</b> flag: make it certain before exam day.');
+    }else{
+      if(level==='sure'){
+        verdict.innerHTML='<span class="v-tag">⚠ Danger Zone · Sure + Wrong · <span class="marks neg">−0.66</span></span>'
+          +'The most expensive mistake in Prelims — and the one no other app tracks. Khilji\'s attack was the <b>final</b> blow, not the only one. This topic just entered your Danger Zone map.';
+      }else{
+        verdict.innerHTML='<span class="v-tag">✗ Incorrect · <span class="marks neg">−0.66</span></span>'
+          +'The trap is <b>conflation</b>: Khilji\'s 1193 raid is the most-taught episode, so it swallows the earlier Huna and Gauda attacks. Correct: (b). Straight to your revision queue.';
+      }
     }
-  </script>
+  }));
+})();
+
+/* ---- memory pairs ---- */
+(function(){
+  const PAIRS=[
+    ['Article 14','Equality before law'],
+    ['Article 19','Freedom of speech'],
+    ['Article 21','Right to life'],
+    ['Article 21A','Right to education'],
+    ['Article 32','Constitutional remedies'],
+    ['Article 25','Freedom of religion']
+  ];
+  const terms=document.getElementById('mem-terms');
+  const answers=document.getElementById('mem-answers');
+  const timeEl=document.getElementById('mem-time');
+  const errorsEl=document.getElementById('mem-errors');
+  const errorsWrap=document.getElementById('mem-errors-wrap');
+  const matchedEl=document.getElementById('mem-matched');
+  const progress=document.querySelector('.mem-progress-track');
+  const progressFill=document.getElementById('mem-progress-fill');
+  const status=document.getElementById('mem-status');
+  const complete=document.getElementById('mem-complete');
+  const result=document.getElementById('mem-result');
+  let selectedTerm=null,selectedAnswer=null,lock=false,matched=new Set(),errors=0,seconds=0,timer=null,started=false;
+
+  function shuffle(items){
+    const a=items.slice();
+    for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}
+    return a;
+  }
+
+  function formatTime(value){
+    return Math.floor(value/60)+':'+String(value%60).padStart(2,'0');
+  }
+
+  function startTimer(){
+    if(started)return;
+    started=true;
+    timer=setInterval(()=>{seconds++;timeEl.textContent=formatTime(seconds)},1000);
+  }
+
+  function tile(pairId,text,side){
+    const b=document.createElement('button');
+    b.type='button';
+    b.className='mem-tile';
+    b.dataset.id=pairId;
+    b.dataset.side=side;
+    b.innerHTML='<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m4 10 4 4 8-8"/></svg><span></span>';
+    b.querySelector('span').textContent=text;
+    b.addEventListener('click',()=>select(b));
+    return b;
+  }
+
+  function build(){
+    clearInterval(timer);
+    terms.querySelectorAll('.mem-tile').forEach(x=>x.remove());
+    answers.querySelectorAll('.mem-tile').forEach(x=>x.remove());
+    selectedTerm=null;selectedAnswer=null;lock=false;matched=new Set();errors=0;seconds=0;timer=null;started=false;
+    timeEl.textContent='0:00';errorsEl.textContent='0';errorsWrap.classList.remove('has-errors');
+    matchedEl.textContent='0/'+PAIRS.length+' matched';
+    progress.setAttribute('aria-valuenow','0');
+    progressFill.style.width='0%';
+    status.textContent='Choose one tile from each column';
+    complete.classList.remove('show');
+    const ids=PAIRS.map((_,i)=>i);
+    shuffle(ids).forEach(i=>terms.appendChild(tile(i,PAIRS[i][0],'term')));
+    shuffle(ids).forEach(i=>answers.appendChild(tile(i,PAIRS[i][1],'answer')));
+  }
+
+  function select(button){
+    if(lock||button.classList.contains('matched'))return;
+    startTimer();
+    const side=button.dataset.side;
+    const previous=side==='term'?selectedTerm:selectedAnswer;
+    if(previous===button){
+      button.classList.remove('selected');
+      if(side==='term')selectedTerm=null;else selectedAnswer=null;
+      status.textContent='Choose one tile from each column';
+      return;
+    }
+    if(previous)previous.classList.remove('selected');
+    button.classList.add('selected');
+    if(side==='term')selectedTerm=button;else selectedAnswer=button;
+    status.textContent=side==='term'?'Now choose the matching answer':'Now choose the matching term';
+    if(selectedTerm&&selectedAnswer)resolve();
+  }
+
+  function resolve(){
+    lock=true;
+    const term=selectedTerm,answer=selectedAnswer;
+    const isMatch=term.dataset.id===answer.dataset.id;
+    if(isMatch){
+      status.textContent='Correct match';
+      setTimeout(()=>{
+        term.classList.remove('selected');answer.classList.remove('selected');
+        term.classList.add('matched');answer.classList.add('matched');
+        term.disabled=true;answer.disabled=true;
+        matched.add(term.dataset.id);
+        selectedTerm=null;selectedAnswer=null;lock=false;
+        matchedEl.textContent=matched.size+'/'+PAIRS.length+' matched';
+        progress.setAttribute('aria-valuenow',String(matched.size));
+        progressFill.style.width=(matched.size/PAIRS.length*100)+'%';
+        if(matched.size===PAIRS.length)finish();
+        else status.textContent='Great — find the next pair';
+      },240);
+    }else{
+      errors++;
+      errorsEl.textContent=errors;
+      errorsWrap.classList.add('has-errors');
+      term.classList.remove('selected');answer.classList.remove('selected');
+      term.classList.add('wrong');answer.classList.add('wrong');
+      status.textContent='Not a pair — try again';
+      setTimeout(()=>{
+        term.classList.remove('wrong');answer.classList.remove('wrong');
+        selectedTerm=null;selectedAnswer=null;lock=false;
+        status.textContent='Choose one tile from each column';
+      },620);
+    }
+  }
+
+  function finish(){
+    clearInterval(timer);
+    status.textContent='All pairs matched';
+    result.textContent=formatTime(seconds)+' · '+errors+' '+(errors===1?'error':'errors');
+    setTimeout(()=>{
+      complete.classList.add('show');
+      document.getElementById('mem-play-again').focus();
+    },500);
+  }
+
+  document.getElementById('mem-restart').addEventListener('click',build);
+  document.getElementById('mem-play-again').addEventListener('click',build);
+  complete.addEventListener('click',e=>{
+    if(e.target===complete)build();
+  });
+  document.addEventListener('keydown',e=>{
+    if(e.key==='Escape'&&complete.classList.contains('show'))build();
+  });
+  build();
+})();
+
+/* ---- bilingual toggle ---- */
+(function(){
+  const en=document.getElementById('bi-en'),hi=document.getElementById('bi-hi');
+  const ten=document.getElementById('bi-text-en'),thi=document.getElementById('bi-text-hi');
+  function set(l){
+    en.classList.toggle('on',l==='en');hi.classList.toggle('on',l==='hi');
+    en.setAttribute('aria-selected',l==='en');hi.setAttribute('aria-selected',l==='hi');
+    ten.hidden=l!=='en';thi.hidden=l!=='hi';
+  }
+  en.addEventListener('click',()=>set('en'));
+  hi.addEventListener('click',()=>set('hi'));
+})();
+
+/* ---- scroll reveal ---- */
+(function(){
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  const io=new IntersectionObserver(es=>es.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}
+  }),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+})();
+</script>
 </body>
 </html>

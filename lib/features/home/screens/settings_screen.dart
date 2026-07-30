@@ -140,6 +140,15 @@ class SettingsScreen extends ConsumerWidget {
                     ),
                   if (kDebugMode)
                     _NavTile(
+                      icon: Icons.sports_esports_outlined,
+                      iconBg: Color(0xFFE1F5EE),
+                      iconColor: Color(0xFF0F6E56),
+                      title: 'Games hub',
+                      subtitle: 'Mini-games (local placeholder content)',
+                      onTap: () => context.push('/games'),
+                    ),
+                  if (kDebugMode)
+                    _NavTile(
                       icon: Icons.analytics_outlined,
                       iconBg: Color(0xFFEEF1F6),
                       iconColor: Color(0xFF334155),
