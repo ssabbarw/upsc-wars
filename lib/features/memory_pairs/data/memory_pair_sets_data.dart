@@ -1,11 +1,21 @@
 import 'package:flutter/material.dart';
 
 import '../domain/memory_pair_models.dart';
+import 'sets/memory_pair_sets_ancient_extra.dart';
+import 'sets/memory_pair_sets_art_extra.dart';
+import 'sets/memory_pair_sets_ca_extra.dart';
+import 'sets/memory_pair_sets_economy_extra.dart';
+import 'sets/memory_pair_sets_environment_extra.dart';
+import 'sets/memory_pair_sets_geography_extra.dart';
+import 'sets/memory_pair_sets_ir_extra.dart';
+import 'sets/memory_pair_sets_medieval_extra.dart';
+import 'sets/memory_pair_sets_modern_extra.dart';
+import 'sets/memory_pair_sets_polity_extra.dart';
+import 'sets/memory_pair_sets_science_extra.dart';
 
 /// Memory Pairs catalog — reorganised by subject.
 /// Within each subject, sets are ordered: Easy → Medium → Hard.
-/// The duplicate 'rivers' and 'river_origins' sets from the old catalog
-/// have been merged into a single 'river_origins' set.
+/// Extra bilingual sets live under [sets/] and are spread in below.
 const List<MemoryPairSetDefinition> kMemoryPairSetCatalog = [
   // ═══════════════════════ POLITY ═══════════════════════
 
@@ -1086,13 +1096,31 @@ const List<MemoryPairSetDefinition> kMemoryPairSetCatalog = [
         answerEn: 'Tocopherol',
         answerHi: 'टोकोफेरॉल',
       ),
+      MemoryPair(
+        termEn: 'Vitamin B5',
+        termHi: 'विटामिन B5',
+        answerEn: 'Pantothenic acid',
+        answerHi: 'पैंटोथेनिक अम्ल',
+      ),
+      MemoryPair(
+        termEn: 'Vitamin B6',
+        termHi: 'विटामिन B6',
+        answerEn: 'Pyridoxine',
+        answerHi: 'पाइरिडॉक्सिन',
+      ),
+      MemoryPair(
+        termEn: 'Vitamin K',
+        termHi: 'विटामिन K',
+        answerEn: 'Phylloquinone',
+        answerHi: 'फिल्लोक्विनोन',
+      ),
     ],
   ),
 
   MemoryPairSetDefinition(
     id: 'deficiency_diseases',
-    nameEn: 'Deficiency Diseases',
-    nameHi: 'कमी से होने वाले रोग',
+    nameEn: 'Vitamins/Minerals & Diseases',
+    nameHi: 'विटामिन/खनिज और रोग',
     displaySubjectEn: 'Science',
     displaySubjectHi: 'विज्ञान',
     unlockSubjectSlug: 'Environment',
@@ -1160,6 +1188,36 @@ const List<MemoryPairSetDefinition> kMemoryPairSetCatalog = [
         termHi: 'प्रोटीन',
         answerEn: 'Kwashiorkor',
         answerHi: 'क्वाशियोरकर',
+      ),
+      MemoryPair(
+        termEn: 'Calcium',
+        termHi: 'कैल्शियम',
+        answerEn: 'Osteoporosis / rickets risk',
+        answerHi: 'अस्थिभंग / रिकेट्स जोखिम',
+      ),
+      MemoryPair(
+        termEn: 'Fluorine',
+        termHi: 'फ्लोरीन',
+        answerEn: 'Dental caries',
+        answerHi: 'दाँतों की सड़न',
+      ),
+      MemoryPair(
+        termEn: 'Zinc',
+        termHi: 'जिंक',
+        answerEn: 'Growth & immunity loss',
+        answerHi: 'वृद्धि व प्रतिरक्षा हानि',
+      ),
+      MemoryPair(
+        termEn: 'Sodium',
+        termHi: 'सोडियम',
+        answerEn: 'Muscle cramps / hyponatremia',
+        answerHi: 'मांसपेशी ऐंठन / हाइपोनैट्रीमिया',
+      ),
+      MemoryPair(
+        termEn: 'Vitamin B6',
+        termHi: 'विटामिन B6',
+        answerEn: 'Dermatitis / anaemia',
+        answerHi: 'त्वचाशोथ / रक्ताल्पता',
       ),
     ],
   ),
@@ -2376,6 +2434,19 @@ const List<MemoryPairSetDefinition> kMemoryPairSetCatalog = [
       ),
     ],
   ),
+
+  // ── Extra bilingual sets (batch expansion) ──
+  ...kMemoryPairSetsPolityExtra,
+  ...kMemoryPairSetsAncientExtra,
+  ...kMemoryPairSetsMedievalExtra,
+  ...kMemoryPairSetsModernExtra,
+  ...kMemoryPairSetsGeographyExtra,
+  ...kMemoryPairSetsEnvironmentExtra,
+  ...kMemoryPairSetsEconomyExtra,
+  ...kMemoryPairSetsScienceExtra,
+  ...kMemoryPairSetsArtExtra,
+  ...kMemoryPairSetsCaExtra,
+  ...kMemoryPairSetsIrExtra,
 ];
 
 MemoryPairSetDefinition? memoryPairSetById(String id) {

@@ -32,11 +32,23 @@ const _kSubjectVisuals = <String, MemoryPairSubjectVisual>{
     subtitleEn: 'Match dynasties, sites, and eras from ancient India',
     subtitleHi: 'प्राचीन भारत के राजवंश, स्थल और कालखंड मिलाएँ',
   ),
+  'Medieval History': MemoryPairSubjectVisual(
+    icon: Icons.castle_outlined,
+    accent: Color(0xFF9333EA),
+    subtitleEn: 'Match dynasties, travellers, and medieval facts',
+    subtitleHi: 'राजवंश, यात्री और मध्यकालीन तथ्य मिलाएँ',
+  ),
   'Modern History': MemoryPairSubjectVisual(
     icon: Icons.history_outlined,
     accent: Color(0xFFD97B3A),
     subtitleEn: 'Revise movements, viceroys, and modern-era facts',
     subtitleHi: 'आंदोलन, वायसराय और आधुनिक काल के तथ्य दोहराएँ',
+  ),
+  'International Relations': MemoryPairSubjectVisual(
+    icon: Icons.public_outlined,
+    accent: Color(0xFF2563EB),
+    subtitleEn: 'Organisations, groupings, and neighbour facts',
+    subtitleHi: 'संगठन, समूह और पड़ोसी देशों के तथ्य',
   ),
   'Geography': MemoryPairSubjectVisual(
     icon: Icons.public_outlined,
