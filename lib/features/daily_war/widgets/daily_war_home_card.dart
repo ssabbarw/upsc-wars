@@ -218,6 +218,9 @@ class _HeroBody extends StatelessWidget {
           writersShown: writersShown,
           isGrand: isGrand,
           qCount: qCount,
+          closeClock: DailyWarSchedule.formatClock(
+            DailyWarSchedule.liveEndsAt(warDate, questionCount: qCount),
+          ),
         );
       case DailyWarPhase.lobby:
         return _LobbyOpen(
@@ -578,6 +581,7 @@ class _LiveJoinable extends StatelessWidget {
     required this.writersShown,
     required this.isGrand,
     required this.qCount,
+    required this.closeClock,
   });
 
   final List<DailyWarTopicRef> topics;
@@ -585,6 +589,7 @@ class _LiveJoinable extends StatelessWidget {
   final String? writersShown;
   final bool isGrand;
   final int qCount;
+  final String closeClock;
 
   @override
   Widget build(BuildContext context) {
@@ -602,7 +607,7 @@ class _LiveJoinable extends StatelessWidget {
         Text('You can still join until 9:10', style: DwText.topicCompact()),
         const SizedBox(height: 6),
         Text(
-          'Your timer starts on entry — the 9:20 close does not move.',
+          'Your timer starts on entry — the $closeClock close does not move.',
           style: DwText.body(),
         ),
         if (writersShown != null) ...[

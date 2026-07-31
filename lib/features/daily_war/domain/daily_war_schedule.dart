@@ -1,7 +1,8 @@
 /// IST schedule for Daily War / Grand War.
 ///
-/// Weekday: 15 Q · 20 min live window starting 9:00 PM IST.
-/// Sunday: Grand War · 25 Q · same clock.
+/// Live window length is derived from tonight's question count
+/// ([secondsPerQuestion] each), not a fixed minute constant.
+/// Start remains 9:00 PM IST for every night.
 ///
 /// Use [nowIst] with an optional corrected UTC instant from the server-clock
 /// offset provider — never rely on device local timezone for phase gates.
@@ -22,17 +23,25 @@ abstract final class DailyWarSchedule {
   /// Late join allowed until this many minutes after start.
   static const lateJoinMinutes = 10;
 
-  /// Live window length (auto-submit at end).
-  static const liveWindowMinutes = 20;
+  /// Pace used to size the shared live window from question count.
+  /// 15 Q → 20 min · 25 Q → 34 min (ceil).
+  static const secondsPerQuestion = 80;
 
-  /// Target time to publish ranks after start (minutes).
-  static const rankPublishMinutes = 25;
+  /// Minutes after [liveEndsAt] when ranks are expected.
+  static const rankPublishBufferMinutes = 5;
 
   static const weekdayQuestionCount = 15;
   static const grandWarQuestionCount = 25;
 
   /// Minimum participants before UI shows raw lobby/count numbers.
   static const minVisibleParticipantCount = 200;
+
+  /// Shared live-window length for a paper of [questionCount] questions.
+  static int liveWindowMinutesFor(int questionCount) {
+    final q = questionCount < 1 ? weekdayQuestionCount : questionCount;
+    final minutes = (q * secondsPerQuestion / 60).ceil();
+    return minutes.clamp(1, 120);
+  }
 
   static DateTime nowIst([DateTime? utcNow]) {
     final utc = (utcNow ?? DateTime.now()).toUtc();
@@ -83,11 +92,26 @@ abstract final class DailyWarSchedule {
   static DateTime lateJoinClosesAt(DateTime istDate) =>
       startAtForDate(istDate).add(const Duration(minutes: lateJoinMinutes));
 
-  static DateTime liveEndsAt(DateTime istDate) =>
-      startAtForDate(istDate).add(const Duration(minutes: liveWindowMinutes));
+  static DateTime liveEndsAt(DateTime istDate, {int? questionCount}) {
+    final q = questionCount ?? questionCountForDate(istDate);
+    return startAtForDate(istDate).add(
+      Duration(minutes: liveWindowMinutesFor(q)),
+    );
+  }
 
-  static DateTime rankTargetAt(DateTime istDate) =>
-      startAtForDate(istDate).add(const Duration(minutes: rankPublishMinutes));
+  static DateTime rankTargetAt(DateTime istDate, {int? questionCount}) =>
+      liveEndsAt(istDate, questionCount: questionCount).add(
+        const Duration(minutes: rankPublishBufferMinutes),
+      );
+
+  /// e.g. `9:20 PM` for copy that previously hard-coded the close time.
+  static String formatClock(DateTime ist) {
+    final h24 = ist.hour;
+    final m = ist.minute.toString().padLeft(2, '0');
+    final suffix = h24 < 12 ? 'AM' : 'PM';
+    final h12 = h24 == 0 ? 12 : (h24 > 12 ? h24 - 12 : h24);
+    return '$h12:$m $suffix';
+  }
 
   /// War calendar day for [referenceIst] — always today's IST date.
   /// Results for tonight stay on today's dateId until midnight; tomorrow's

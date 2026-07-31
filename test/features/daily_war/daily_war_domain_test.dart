@@ -27,6 +27,19 @@ void main() {
         DateTime(2026, 7, 31, 20, 45),
       );
     });
+
+    test('live window scales with question count', () {
+      expect(DailyWarSchedule.liveWindowMinutesFor(15), 20);
+      expect(DailyWarSchedule.liveWindowMinutesFor(25), 34);
+      expect(
+        DailyWarSchedule.liveEndsAt(DateTime(2026, 7, 31), questionCount: 15),
+        DateTime(2026, 7, 31, 21, 20),
+      );
+      expect(
+        DailyWarSchedule.liveEndsAt(DateTime(2026, 8, 2), questionCount: 25),
+        DateTime(2026, 8, 2, 21, 34),
+      );
+    });
   });
 
   group('DailyWarPhaseResolver', () {

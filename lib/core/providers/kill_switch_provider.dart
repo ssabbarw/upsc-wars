@@ -5,6 +5,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 import '../admin_dashboard/admin_dashboard_collection_config.dart';
 import '../config/feature_flags.dart';
 import '../constants/app_constants.dart';
+import 'super_user_provider.dart';
 
 part 'kill_switch_provider.g.dart';
 
@@ -20,6 +21,10 @@ const dailyCaEnabledRemoteConfigKey = 'daily_ca_enabled';
 
 /// Remote Config: when `false`, hide Daily War on the home screen (fails closed).
 const dailyWarEnabledRemoteConfigKey = 'daily_war_enabled';
+
+/// Remote Config: when `true`, Daily War (UI + attempt + push) is admin-only.
+/// When `false` and [dailyWarEnabledRemoteConfigKey] is on, everyone gets it.
+const dailyWarAdminsOnlyRemoteConfigKey = 'daily_war_admins_only';
 
 /// Remote Config: when `false`, hide lobby / participant count numbers on War UI.
 const dailyWarLobbyCountEnabledRemoteConfigKey =
@@ -99,7 +104,9 @@ Future<KillSwitchSnapshot> killSwitch(Ref ref) async {
       killSwitchVersionRemoteConfigKey: '',
       communityTabEnabledRemoteConfigKey: true,
       dailyCaEnabledRemoteConfigKey: false,
-      dailyWarEnabledRemoteConfigKey: false,
+      // On by default for admin preview; set admins_only false to open to all.
+      dailyWarEnabledRemoteConfigKey: true,
+      dailyWarAdminsOnlyRemoteConfigKey: true,
       dailyWarLobbyCountEnabledRemoteConfigKey: true,
       dailyWarMinVisibleLobbyCountRemoteConfigKey: 200,
       dailyWarLiveCountPollSecondsRemoteConfigKey: 5,
@@ -174,8 +181,10 @@ Future<bool> dailyCaRemoteEnabled(Ref ref) async {
   }
 }
 
-/// Whether the Daily War home entry should be shown.
+/// Whether Daily War is available for the **signed-in user**.
 ///
+/// Requires [dailyWarEnabledRemoteConfigKey]. If
+/// [dailyWarAdminsOnlyRemoteConfigKey] is true, only super-users pass.
 /// Fails closed (`false`) while loading or on read errors.
 @Riverpod(keepAlive: true)
 Future<bool> dailyWarRemoteEnabled(Ref ref) async {
@@ -184,11 +193,29 @@ Future<bool> dailyWarRemoteEnabled(Ref ref) async {
   }
   await ref.watch(killSwitchProvider.future);
   try {
-    return FirebaseRemoteConfig.instance.getBool(
-      dailyWarEnabledRemoteConfigKey,
-    );
+    final rc = FirebaseRemoteConfig.instance;
+    if (!rc.getBool(dailyWarEnabledRemoteConfigKey)) {
+      return false;
+    }
+    final adminsOnly = rc.getBool(dailyWarAdminsOnlyRemoteConfigKey);
+    if (!adminsOnly) return true;
+    return ref.watch(isSuperUserProvider);
   } on Object catch (_) {
     return false;
+  }
+}
+
+/// Raw RC: Daily War limited to admin accounts (ignores who is signed in).
+@Riverpod(keepAlive: true)
+Future<bool> dailyWarAdminsOnlyRemote(Ref ref) async {
+  if (kIsWeb) return true;
+  await ref.watch(killSwitchProvider.future);
+  try {
+    return FirebaseRemoteConfig.instance.getBool(
+      dailyWarAdminsOnlyRemoteConfigKey,
+    );
+  } on Object catch (_) {
+    return true;
   }
 }
 

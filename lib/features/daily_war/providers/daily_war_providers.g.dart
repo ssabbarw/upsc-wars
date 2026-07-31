@@ -8,6 +8,49 @@ part of 'daily_war_providers.dart';
 
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, type=warning
+
+@ProviderFor(dailyWarLocalCache)
+final dailyWarLocalCacheProvider = DailyWarLocalCacheProvider._();
+
+final class DailyWarLocalCacheProvider
+    extends
+        $FunctionalProvider<
+          AsyncValue<DailyWarLocalCache>,
+          DailyWarLocalCache,
+          FutureOr<DailyWarLocalCache>
+        >
+    with
+        $FutureModifier<DailyWarLocalCache>,
+        $FutureProvider<DailyWarLocalCache> {
+  DailyWarLocalCacheProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'dailyWarLocalCacheProvider',
+        isAutoDispose: false,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$dailyWarLocalCacheHash();
+
+  @$internal
+  @override
+  $FutureProviderElement<DailyWarLocalCache> $createElement(
+    $ProviderPointer pointer,
+  ) => $FutureProviderElement(pointer);
+
+  @override
+  FutureOr<DailyWarLocalCache> create(Ref ref) {
+    return dailyWarLocalCache(ref);
+  }
+}
+
+String _$dailyWarLocalCacheHash() =>
+    r'9eef82da6fe1f7771f7fb635b9be582d97dbef29';
+
 /// Today's War dateId (IST) using server-corrected clock.
 
 @ProviderFor(dailyWarTodayDateId)
@@ -56,11 +99,13 @@ String _$dailyWarTodayDateIdHash() =>
     r'52f0be5e82ac693db9a9d32b5233067549162214';
 
 /// Live Firestore snapshot for today's War (null if missing).
+/// Writes through to [DailyWarLocalCache] whenever data arrives.
 
 @ProviderFor(dailyWarTodayDoc)
 final dailyWarTodayDocProvider = DailyWarTodayDocProvider._();
 
 /// Live Firestore snapshot for today's War (null if missing).
+/// Writes through to [DailyWarLocalCache] whenever data arrives.
 
 final class DailyWarTodayDocProvider
     extends
@@ -71,6 +116,7 @@ final class DailyWarTodayDocProvider
         >
     with $FutureModifier<DailyWarDoc?>, $StreamProvider<DailyWarDoc?> {
   /// Live Firestore snapshot for today's War (null if missing).
+  /// Writes through to [DailyWarLocalCache] whenever data arrives.
   DailyWarTodayDocProvider._()
     : super(
         from: null,
@@ -97,7 +143,7 @@ final class DailyWarTodayDocProvider
   }
 }
 
-String _$dailyWarTodayDocHash() => r'e8a69a106da1fffb3032da2903caf117728c45f5';
+String _$dailyWarTodayDocHash() => r'cab95aebbdc57c70606d10d29d825eae1c3418ff';
 
 /// Signed-in user's submission for today, if any.
 
@@ -144,7 +190,7 @@ final class DailyWarTodaySubmissionProvider
 }
 
 String _$dailyWarTodaySubmissionHash() =>
-    r'f99f0e3f70fdbb730a5d45932126bd60ae86e5d1';
+    r'e8c8b51a9a5eba47ac5183aa00ea49fc6f739365';
 
 @ProviderFor(dailyWarHomeSnapshot)
 final dailyWarHomeSnapshotProvider = DailyWarHomeSnapshotProvider._();
@@ -274,7 +320,7 @@ final class DailyWarYesterdayDocProvider
 }
 
 String _$dailyWarYesterdayDocHash() =>
-    r'2ec6d90baf0521eddd813e8cec6c7982af691e11';
+    r'36eef1e4879347e6608cbd102eb6d64435ef1287';
 
 @ProviderFor(dailyWarYesterdaySubmission)
 final dailyWarYesterdaySubmissionProvider =
@@ -317,7 +363,7 @@ final class DailyWarYesterdaySubmissionProvider
 }
 
 String _$dailyWarYesterdaySubmissionHash() =>
-    r'5e2f646d7909e6e41732b165d47ff8051ba8e4e5';
+    r'278d32980c46f7e9d9e5056c1ee88d5e763a198e';
 
 @ProviderFor(dailyWarYesterdaySnapshot)
 final dailyWarYesterdaySnapshotProvider = DailyWarYesterdaySnapshotProvider._();
@@ -367,12 +413,12 @@ final class DailyWarYesterdaySnapshotProvider
 String _$dailyWarYesterdaySnapshotHash() =>
     r'0334003d76594f9f94f1bedaaf5516196e6a8ce7';
 
-/// One-shot fetch of a War by dateId (History).
+/// One-shot fetch of a War by dateId (History / results) — prefers local cache.
 
 @ProviderFor(dailyWarDocById)
 final dailyWarDocByIdProvider = DailyWarDocByIdFamily._();
 
-/// One-shot fetch of a War by dateId (History).
+/// One-shot fetch of a War by dateId (History / results) — prefers local cache.
 
 final class DailyWarDocByIdProvider
     extends
@@ -382,7 +428,7 @@ final class DailyWarDocByIdProvider
           FutureOr<DailyWarDoc?>
         >
     with $FutureModifier<DailyWarDoc?>, $FutureProvider<DailyWarDoc?> {
-  /// One-shot fetch of a War by dateId (History).
+  /// One-shot fetch of a War by dateId (History / results) — prefers local cache.
   DailyWarDocByIdProvider._({
     required DailyWarDocByIdFamily super.from,
     required String super.argument,
@@ -427,9 +473,9 @@ final class DailyWarDocByIdProvider
   }
 }
 
-String _$dailyWarDocByIdHash() => r'0267dc5bc648dcfad40f3ed9f4e756e2e933fb31';
+String _$dailyWarDocByIdHash() => r'6fbd34c16b886b68b14131ac0fed047fc2aa896b';
 
-/// One-shot fetch of a War by dateId (History).
+/// One-shot fetch of a War by dateId (History / results) — prefers local cache.
 
 final class DailyWarDocByIdFamily extends $Family
     with $FunctionalFamilyOverride<FutureOr<DailyWarDoc?>, String> {
@@ -442,7 +488,7 @@ final class DailyWarDocByIdFamily extends $Family
         isAutoDispose: false,
       );
 
-  /// One-shot fetch of a War by dateId (History).
+  /// One-shot fetch of a War by dateId (History / results) — prefers local cache.
 
   DailyWarDocByIdProvider call(String dateId) =>
       DailyWarDocByIdProvider._(argument: dateId, from: this);
@@ -451,12 +497,233 @@ final class DailyWarDocByIdFamily extends $Family
   String toString() => r'dailyWarDocByIdProvider';
 }
 
-/// Recent wars for History (newest first). Limited query.
+/// Recent wars for History — cache-first, selective Firestore refresh.
+
+@ProviderFor(dailyWarHistoryBundle)
+final dailyWarHistoryBundleProvider = DailyWarHistoryBundleProvider._();
+
+/// Recent wars for History — cache-first, selective Firestore refresh.
+
+final class DailyWarHistoryBundleProvider
+    extends
+        $FunctionalProvider<
+          AsyncValue<DailyWarHistoryBundle>,
+          DailyWarHistoryBundle,
+          FutureOr<DailyWarHistoryBundle>
+        >
+    with
+        $FutureModifier<DailyWarHistoryBundle>,
+        $FutureProvider<DailyWarHistoryBundle> {
+  /// Recent wars for History — cache-first, selective Firestore refresh.
+  DailyWarHistoryBundleProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'dailyWarHistoryBundleProvider',
+        isAutoDispose: false,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$dailyWarHistoryBundleHash();
+
+  @$internal
+  @override
+  $FutureProviderElement<DailyWarHistoryBundle> $createElement(
+    $ProviderPointer pointer,
+  ) => $FutureProviderElement(pointer);
+
+  @override
+  FutureOr<DailyWarHistoryBundle> create(Ref ref) {
+    return dailyWarHistoryBundle(ref);
+  }
+}
+
+String _$dailyWarHistoryBundleHash() =>
+    r'628c3bee0b18700cddf6760b8ef129956871f210';
+
+/// Full archive for one War night (leaderboard + attempt). Local-only once ranked.
+
+@ProviderFor(dailyWarArchive)
+final dailyWarArchiveProvider = DailyWarArchiveFamily._();
+
+/// Full archive for one War night (leaderboard + attempt). Local-only once ranked.
+
+final class DailyWarArchiveProvider
+    extends
+        $FunctionalProvider<
+          AsyncValue<DailyWarArchiveBundle>,
+          DailyWarArchiveBundle,
+          FutureOr<DailyWarArchiveBundle>
+        >
+    with
+        $FutureModifier<DailyWarArchiveBundle>,
+        $FutureProvider<DailyWarArchiveBundle> {
+  /// Full archive for one War night (leaderboard + attempt). Local-only once ranked.
+  DailyWarArchiveProvider._({
+    required DailyWarArchiveFamily super.from,
+    required String super.argument,
+  }) : super(
+         retry: null,
+         name: r'dailyWarArchiveProvider',
+         isAutoDispose: true,
+         dependencies: null,
+         $allTransitiveDependencies: null,
+       );
+
+  @override
+  String debugGetCreateSourceHash() => _$dailyWarArchiveHash();
+
+  @override
+  String toString() {
+    return r'dailyWarArchiveProvider'
+        ''
+        '($argument)';
+  }
+
+  @$internal
+  @override
+  $FutureProviderElement<DailyWarArchiveBundle> $createElement(
+    $ProviderPointer pointer,
+  ) => $FutureProviderElement(pointer);
+
+  @override
+  FutureOr<DailyWarArchiveBundle> create(Ref ref) {
+    final argument = this.argument as String;
+    return dailyWarArchive(ref, argument);
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return other is DailyWarArchiveProvider && other.argument == argument;
+  }
+
+  @override
+  int get hashCode {
+    return argument.hashCode;
+  }
+}
+
+String _$dailyWarArchiveHash() => r'4deabc9c24e48077b2109590f9f3086cd3519d2c';
+
+/// Full archive for one War night (leaderboard + attempt). Local-only once ranked.
+
+final class DailyWarArchiveFamily extends $Family
+    with $FunctionalFamilyOverride<FutureOr<DailyWarArchiveBundle>, String> {
+  DailyWarArchiveFamily._()
+    : super(
+        retry: null,
+        name: r'dailyWarArchiveProvider',
+        dependencies: null,
+        $allTransitiveDependencies: null,
+        isAutoDispose: true,
+      );
+
+  /// Full archive for one War night (leaderboard + attempt). Local-only once ranked.
+
+  DailyWarArchiveProvider call(String dateId) =>
+      DailyWarArchiveProvider._(argument: dateId, from: this);
+
+  @override
+  String toString() => r'dailyWarArchiveProvider';
+}
+
+/// Questions for a War paper with the user's answers overlaid (local SQLite).
+
+@ProviderFor(dailyWarArchiveQuestions)
+final dailyWarArchiveQuestionsProvider = DailyWarArchiveQuestionsFamily._();
+
+/// Questions for a War paper with the user's answers overlaid (local SQLite).
+
+final class DailyWarArchiveQuestionsProvider
+    extends
+        $FunctionalProvider<
+          AsyncValue<List<TestQuestion>>,
+          List<TestQuestion>,
+          FutureOr<List<TestQuestion>>
+        >
+    with
+        $FutureModifier<List<TestQuestion>>,
+        $FutureProvider<List<TestQuestion>> {
+  /// Questions for a War paper with the user's answers overlaid (local SQLite).
+  DailyWarArchiveQuestionsProvider._({
+    required DailyWarArchiveQuestionsFamily super.from,
+    required String super.argument,
+  }) : super(
+         retry: null,
+         name: r'dailyWarArchiveQuestionsProvider',
+         isAutoDispose: true,
+         dependencies: null,
+         $allTransitiveDependencies: null,
+       );
+
+  @override
+  String debugGetCreateSourceHash() => _$dailyWarArchiveQuestionsHash();
+
+  @override
+  String toString() {
+    return r'dailyWarArchiveQuestionsProvider'
+        ''
+        '($argument)';
+  }
+
+  @$internal
+  @override
+  $FutureProviderElement<List<TestQuestion>> $createElement(
+    $ProviderPointer pointer,
+  ) => $FutureProviderElement(pointer);
+
+  @override
+  FutureOr<List<TestQuestion>> create(Ref ref) {
+    final argument = this.argument as String;
+    return dailyWarArchiveQuestions(ref, argument);
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return other is DailyWarArchiveQuestionsProvider &&
+        other.argument == argument;
+  }
+
+  @override
+  int get hashCode {
+    return argument.hashCode;
+  }
+}
+
+String _$dailyWarArchiveQuestionsHash() =>
+    r'f71afc7c043cea88bd11c8f803d912d999cb38d1';
+
+/// Questions for a War paper with the user's answers overlaid (local SQLite).
+
+final class DailyWarArchiveQuestionsFamily extends $Family
+    with $FunctionalFamilyOverride<FutureOr<List<TestQuestion>>, String> {
+  DailyWarArchiveQuestionsFamily._()
+    : super(
+        retry: null,
+        name: r'dailyWarArchiveQuestionsProvider',
+        dependencies: null,
+        $allTransitiveDependencies: null,
+        isAutoDispose: true,
+      );
+
+  /// Questions for a War paper with the user's answers overlaid (local SQLite).
+
+  DailyWarArchiveQuestionsProvider call(String dateId) =>
+      DailyWarArchiveQuestionsProvider._(argument: dateId, from: this);
+
+  @override
+  String toString() => r'dailyWarArchiveQuestionsProvider';
+}
+
+/// @deprecated Prefer [dailyWarHistoryBundleProvider] (includes submissions).
 
 @ProviderFor(dailyWarHistoryList)
 final dailyWarHistoryListProvider = DailyWarHistoryListProvider._();
 
-/// Recent wars for History (newest first). Limited query.
+/// @deprecated Prefer [dailyWarHistoryBundleProvider] (includes submissions).
 
 final class DailyWarHistoryListProvider
     extends
@@ -468,7 +735,7 @@ final class DailyWarHistoryListProvider
     with
         $FutureModifier<List<DailyWarDoc>>,
         $FutureProvider<List<DailyWarDoc>> {
-  /// Recent wars for History (newest first). Limited query.
+  /// @deprecated Prefer [dailyWarHistoryBundleProvider] (includes submissions).
   DailyWarHistoryListProvider._()
     : super(
         from: null,
@@ -496,7 +763,7 @@ final class DailyWarHistoryListProvider
 }
 
 String _$dailyWarHistoryListHash() =>
-    r'889415a59288b380c856cdddab6288b33a80dd42';
+    r'141be6ac3778f26970be490d9ffe4168df0fdbd0';
 
 @ProviderFor(dailyWarLiveCounts)
 final dailyWarLiveCountsProvider = DailyWarLiveCountsProvider._();

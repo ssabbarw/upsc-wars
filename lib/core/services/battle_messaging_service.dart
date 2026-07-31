@@ -18,6 +18,7 @@ import 'package:upsc_wars/core/router/app_router.dart';
 import 'package:upsc_wars/core/services/app_local_notifications_service.dart';
 import 'package:upsc_wars/core/services/fcm_token_sync_service.dart';
 import 'package:upsc_wars/features/community/open_challenge/open_challenge_fcm.dart';
+import 'package:upsc_wars/features/daily_war/daily_war_constants.dart';
 import 'package:upsc_wars/features/memory_pairs/push/push_memory_pairs_fcm.dart';
 import 'package:upsc_wars/features/memory_pairs/push/push_memory_pairs_launch_params.dart';
 import 'package:upsc_wars/features/push_spot_test/push_spot_test_fcm.dart';
@@ -322,6 +323,10 @@ class BattleMessagingService {
         if (params.isValid) {
           router.go(params.welcomeLocation);
         }
+        return;
+      }
+      if (ocKind == DailyWarConstants.fcmKind) {
+        router.go(dailyWarLobbyRoute());
         return;
       }
       final sessionId = message.data['sessionId'] as String?;

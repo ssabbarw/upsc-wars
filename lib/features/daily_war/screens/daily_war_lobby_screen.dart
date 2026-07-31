@@ -22,6 +22,41 @@ class DailyWarLobbyScreen extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final available = ref.watch(dailyWarRemoteEnabledProvider);
+    return available.when(
+      loading: () => const Scaffold(
+        body: Center(child: CircularProgressIndicator()),
+      ),
+      error: (_, _) => Scaffold(
+        appBar: AppBar(title: const Text('Daily War')),
+        body: const Center(child: Text('Daily War is not available.')),
+      ),
+      data: (on) {
+        if (!on) {
+          return Scaffold(
+            appBar: AppBar(title: const Text('Daily War')),
+            body: const Center(
+              child: Padding(
+                padding: EdgeInsets.all(24),
+                child: Text(
+                  'Daily War is not available on this account yet.',
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+          );
+        }
+        return const _DailyWarLobbyBody();
+      },
+    );
+  }
+}
+
+class _DailyWarLobbyBody extends HookConsumerWidget {
+  const _DailyWarLobbyBody();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
     final snap = ref.watch(dailyWarHomeSnapshotProvider);
     final launching = useState(false);
     final tick = useState(0);
@@ -64,17 +99,18 @@ class DailyWarLobbyScreen extends HookConsumerWidget {
     );
     final ist = DailyWarSchedule.nowIst(utc);
     final warDate = DailyWarSchedule.warDateFor(ist);
+    final qCount = snap.doc?.questionCount ??
+        DailyWarSchedule.questionCountForDate(warDate);
     final start = DailyWarSchedule.startAtForDate(warDate);
-    final liveEnd = DailyWarSchedule.liveEndsAt(warDate);
+    final liveEnd = DailyWarSchedule.liveEndsAt(warDate, questionCount: qCount);
     final lateClose = DailyWarSchedule.lateJoinClosesAt(warDate);
     final untilStart = start.difference(ist);
     final untilLate = lateClose.difference(ist);
+    final windowSecs = DailyWarSchedule.liveWindowMinutesFor(qCount) * 60;
     final canEnter = snap.phase == DailyWarPhase.lobby ||
         snap.phase == DailyWarPhase.liveJoinable;
     final alreadyDone = snap.submission != null;
     final isGrand = snap.doc?.isGrand == true;
-    final qCount = snap.doc?.questionCount ??
-        DailyWarSchedule.questionCountForDate(warDate);
     final topics = snap.doc?.topics ?? const [];
 
     final countShown = DailyWarCopy.formatVisibleCount(
@@ -112,8 +148,8 @@ class DailyWarLobbyScreen extends HookConsumerWidget {
         final create = await ref.read(createSessionUseCaseProvider.future);
         final lang = await ref.read(appLanguageProvider.future);
         final remainingSecs = unranked
-            ? DailyWarSchedule.liveWindowMinutes * 60
-            : liveEnd.difference(ist).inSeconds.clamp(60, 20 * 60);
+            ? windowSecs
+            : liveEnd.difference(ist).inSeconds.clamp(60, windowSecs);
 
         final sessionId = await create.execute(
           SessionConfig(
@@ -213,7 +249,10 @@ class DailyWarLobbyScreen extends HookConsumerWidget {
                       ? (snap.phase == DailyWarPhase.lobby
                           ? 'Starts in ${DailyWarSchedule.formatCountdown(untilStart)}'
                           : 'Join until 9:10 · ${mmSs(untilLate)} left')
-                      : _statusCopy(snap.phase),
+                      : _statusCopy(
+                          snap.phase,
+                          closeClock: DailyWarSchedule.formatClock(liveEnd),
+                        ),
                   style: DwText.dm(size: 14, weight: FontWeight.w600),
                 ),
                 const SizedBox(height: 8),
@@ -303,14 +342,14 @@ class DailyWarLobbyScreen extends HookConsumerWidget {
     }
   }
 
-  String _statusCopy(DailyWarPhase phase) {
+  String _statusCopy(DailyWarPhase phase, {required String closeClock}) {
     switch (phase) {
       case DailyWarPhase.preAnnounce:
       case DailyWarPhase.morning:
       case DailyWarPhase.countdown:
         return 'Prepare today · lobby opens 8:45 PM';
       case DailyWarPhase.liveLocked:
-        return 'Late join closed · results after 9:20';
+        return 'Late join closed · results after $closeClock';
       case DailyWarPhase.resultsPending:
         return 'Ranks calculating…';
       case DailyWarPhase.resultsReady:

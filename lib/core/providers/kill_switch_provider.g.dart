@@ -48,7 +48,7 @@ final class KillSwitchProvider
   }
 }
 
-String _$killSwitchHash() => r'defb7c003ec3edbc098d985fbe8d29915366ae7b';
+String _$killSwitchHash() => r'e8892d2640ab3060f7f2d394dd6c996fee01ca86';
 
 /// Whether the Community tab should be shown (after [killSwitchProvider] fetch).
 ///
@@ -143,22 +143,28 @@ final class DailyCaRemoteEnabledProvider
 String _$dailyCaRemoteEnabledHash() =>
     r'656cc2f8b3d20f324a31a3181b605c5fcac9caef';
 
-/// Whether the Daily War home entry should be shown.
+/// Whether Daily War is available for the **signed-in user**.
 ///
+/// Requires [dailyWarEnabledRemoteConfigKey]. If
+/// [dailyWarAdminsOnlyRemoteConfigKey] is true, only super-users pass.
 /// Fails closed (`false`) while loading or on read errors.
 
 @ProviderFor(dailyWarRemoteEnabled)
 final dailyWarRemoteEnabledProvider = DailyWarRemoteEnabledProvider._();
 
-/// Whether the Daily War home entry should be shown.
+/// Whether Daily War is available for the **signed-in user**.
 ///
+/// Requires [dailyWarEnabledRemoteConfigKey]. If
+/// [dailyWarAdminsOnlyRemoteConfigKey] is true, only super-users pass.
 /// Fails closed (`false`) while loading or on read errors.
 
 final class DailyWarRemoteEnabledProvider
     extends $FunctionalProvider<AsyncValue<bool>, bool, FutureOr<bool>>
     with $FutureModifier<bool>, $FutureProvider<bool> {
-  /// Whether the Daily War home entry should be shown.
+  /// Whether Daily War is available for the **signed-in user**.
   ///
+  /// Requires [dailyWarEnabledRemoteConfigKey]. If
+  /// [dailyWarAdminsOnlyRemoteConfigKey] is true, only super-users pass.
   /// Fails closed (`false`) while loading or on read errors.
   DailyWarRemoteEnabledProvider._()
     : super(
@@ -186,7 +192,46 @@ final class DailyWarRemoteEnabledProvider
 }
 
 String _$dailyWarRemoteEnabledHash() =>
-    r'4bc3276682ceb585973c0f1c4c329dffa212789c';
+    r'7f708e844592c1459d4ee853dc68d15fa6cd4f96';
+
+/// Raw RC: Daily War limited to admin accounts (ignores who is signed in).
+
+@ProviderFor(dailyWarAdminsOnlyRemote)
+final dailyWarAdminsOnlyRemoteProvider = DailyWarAdminsOnlyRemoteProvider._();
+
+/// Raw RC: Daily War limited to admin accounts (ignores who is signed in).
+
+final class DailyWarAdminsOnlyRemoteProvider
+    extends $FunctionalProvider<AsyncValue<bool>, bool, FutureOr<bool>>
+    with $FutureModifier<bool>, $FutureProvider<bool> {
+  /// Raw RC: Daily War limited to admin accounts (ignores who is signed in).
+  DailyWarAdminsOnlyRemoteProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'dailyWarAdminsOnlyRemoteProvider',
+        isAutoDispose: false,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$dailyWarAdminsOnlyRemoteHash();
+
+  @$internal
+  @override
+  $FutureProviderElement<bool> $createElement($ProviderPointer pointer) =>
+      $FutureProviderElement(pointer);
+
+  @override
+  FutureOr<bool> create(Ref ref) {
+    return dailyWarAdminsOnlyRemote(ref);
+  }
+}
+
+String _$dailyWarAdminsOnlyRemoteHash() =>
+    r'94e35951f8b5e1013d5d66bdea0f5e721aeea5b6';
 
 /// Whether lobby / participant count numbers should be shown on War surfaces.
 ///
@@ -320,7 +365,7 @@ final class DailyWarLiveCountPollSecondsRemoteProvider
 }
 
 String _$dailyWarLiveCountPollSecondsRemoteHash() =>
-    r'a1b2c3d4e5f60718293a4b5c6d7e8f901234abcd';
+    r'55ae44b1025ccbcd70866312eeb24594d98a5cd1';
 
 /// Which mini-game demo onboarding shows (A/B via Remote Config).
 ///

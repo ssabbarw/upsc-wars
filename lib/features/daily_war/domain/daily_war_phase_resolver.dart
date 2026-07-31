@@ -12,6 +12,7 @@ abstract final class DailyWarPhaseResolver {
     required DateTime referenceIst,
     String? firestoreStatus,
     bool ranksReady = false,
+    int? questionCount,
   }) {
     final warDate = DailyWarSchedule.warDateFor(referenceIst);
     final announceAt = DateTime(
@@ -23,7 +24,11 @@ abstract final class DailyWarPhaseResolver {
     final start = DailyWarSchedule.startAtForDate(warDate);
     final lobby = DailyWarSchedule.lobbyOpensAt(warDate);
     final lateJoin = DailyWarSchedule.lateJoinClosesAt(warDate);
-    final liveEnd = DailyWarSchedule.liveEndsAt(warDate);
+    final liveEnd = DailyWarSchedule.liveEndsAt(
+      warDate,
+      questionCount: questionCount ??
+          DailyWarSchedule.questionCountForDate(warDate),
+    );
 
     if (referenceIst.isBefore(announceAt)) {
       return DailyWarPhase.preAnnounce;

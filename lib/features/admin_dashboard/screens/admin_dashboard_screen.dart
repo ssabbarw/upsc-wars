@@ -405,6 +405,57 @@ class _DailyWarAdminSection extends HookWidget {
                       ),
               child: const Text('Publish now'),
             ),
+            OutlinedButton(
+              onPressed: busy.value
+                  ? null
+                  : () => unawaited(
+                        run(() async {
+                          const cloud = DailyWarCloudService();
+                          final ok = await cloud.adminNotify(
+                            dateId: todayId,
+                            phase: 'morning',
+                          );
+                          message.value = ok
+                              ? 'Sent morning topics push'
+                              : 'Morning push failed (generate first?)';
+                        }),
+                      ),
+              child: const Text('Push: morning'),
+            ),
+            OutlinedButton(
+              onPressed: busy.value
+                  ? null
+                  : () => unawaited(
+                        run(() async {
+                          const cloud = DailyWarCloudService();
+                          final ok = await cloud.adminNotify(
+                            dateId: todayId,
+                            phase: 'lobby',
+                          );
+                          message.value = ok
+                              ? 'Sent lobby push'
+                              : 'Lobby push failed';
+                        }),
+                      ),
+              child: const Text('Push: lobby'),
+            ),
+            OutlinedButton(
+              onPressed: busy.value
+                  ? null
+                  : () => unawaited(
+                        run(() async {
+                          const cloud = DailyWarCloudService();
+                          final ok = await cloud.adminNotify(
+                            dateId: todayId,
+                            phase: 'results',
+                          );
+                          message.value = ok
+                              ? 'Sent results push (also re-ranks)'
+                              : 'Results push failed';
+                        }),
+                      ),
+              child: const Text('Push: results'),
+            ),
           ],
         ),
         if (busy.value) ...[

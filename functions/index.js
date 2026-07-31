@@ -750,3 +750,4 @@ exports.joinDailyWarLobby = dailyWar.joinDailyWarLobby;
 exports.adminGenerateDailyWar = dailyWar.adminGenerateDailyWar;
 exports.adminPreviewDailyWar = dailyWar.adminPreviewDailyWar;
 exports.adminPublishDailyWar = dailyWar.adminPublishDailyWar;
+exports.adminNotifyDailyWar = dailyWar.adminNotifyDailyWar;

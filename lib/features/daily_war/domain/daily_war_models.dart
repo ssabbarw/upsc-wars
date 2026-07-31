@@ -74,6 +74,24 @@ class DailyWarDoc {
 
   bool get ranksReady => status == 'ranked';
 
+  /// True once the paper is final for archive purposes (safe to keep forever).
+  bool get isStableArchive =>
+      status == 'ranked' ||
+      (status == 'closed' && questionUuids.isNotEmpty);
+
+  Map<String, dynamic> toCacheMap() => {
+        'date_id': dateId,
+        'kind': kind,
+        'topics': topics.map((t) => t.toMap()).toList(),
+        'question_count': questionCount,
+        'status': status,
+        'question_uuids': questionUuids,
+        if (participantCount != null) 'participant_count': participantCount,
+        if (lobbyCount != null) 'lobby_count': lobbyCount,
+        'next_topics': nextTopics.map((t) => t.toMap()).toList(),
+        if (rankedAtMs != null) 'ranked_at_ms': rankedAtMs,
+      };
+
   factory DailyWarDoc.fromMap(String dateId, Map<String, dynamic> map) {
     List<DailyWarTopicRef> parseTopics(dynamic raw) {
       if (raw is! List) return const [];
@@ -118,6 +136,7 @@ class DailyWarSubmission {
     this.air,
     this.percentile,
     this.displayName,
+    this.answers = const {},
   });
 
   final String uid;
@@ -133,10 +152,37 @@ class DailyWarSubmission {
   final double? percentile;
   final String? displayName;
 
+  /// `questionUuid` → selected option letter (`a`/`b`/`c`/`d`).
+  final Map<String, String> answers;
+
   bool get isLive => mode == 'live';
   bool get hasOfficialRank => isLive && air != null;
 
+  Map<String, dynamic> toCacheMap() => {
+        'uid': uid,
+        'mode': mode,
+        'score': score,
+        'correct': correct,
+        'wrong': wrong,
+        'unanswered': unanswered,
+        'elapsed_ms': elapsedMs,
+        if (air != null) 'air': air,
+        if (percentile != null) 'percentile': percentile,
+        if (displayName != null) 'display_name': displayName,
+        'answers': answers,
+      };
+
   factory DailyWarSubmission.fromMap(String uid, Map<String, dynamic> map) {
+    final answersRaw = map['answers'];
+    final answers = <String, String>{};
+    if (answersRaw is Map) {
+      for (final e in answersRaw.entries) {
+        final k = '${e.key}'.trim();
+        final v = '${e.value}'.trim().toLowerCase();
+        if (k.isNotEmpty && v.isNotEmpty) answers[k] = v;
+      }
+    }
+
     return DailyWarSubmission(
       uid: uid,
       mode: (map['mode'] as String? ?? 'live').trim(),
@@ -148,6 +194,84 @@ class DailyWarSubmission {
       air: (map['air'] as num?)?.toInt(),
       percentile: (map['percentile'] as num?)?.toDouble(),
       displayName: map['display_name'] as String?,
+      answers: answers,
+    );
+  }
+}
+
+/// One row on `daily_wars/{dateId}/meta/leaderboard`.
+class DailyWarLeaderboardEntry {
+  const DailyWarLeaderboardEntry({
+    required this.uid,
+    required this.displayName,
+    required this.score,
+    required this.elapsedMs,
+    required this.air,
+    this.percentile,
+  });
+
+  final String uid;
+  final String displayName;
+  final double score;
+  final int elapsedMs;
+  final int air;
+  final double? percentile;
+
+  Map<String, dynamic> toMap() => {
+        'uid': uid,
+        'display_name': displayName,
+        'score': score,
+        'elapsed_ms': elapsedMs,
+        'air': air,
+        if (percentile != null) 'percentile': percentile,
+      };
+
+  factory DailyWarLeaderboardEntry.fromMap(Map<String, dynamic> map) {
+    return DailyWarLeaderboardEntry(
+      uid: '${map['uid'] ?? ''}',
+      displayName: (map['display_name'] as String? ?? '').trim(),
+      score: (map['score'] as num?)?.toDouble() ?? 0,
+      elapsedMs: (map['elapsed_ms'] as num?)?.toInt() ?? 0,
+      air: (map['air'] as num?)?.toInt() ?? 0,
+      percentile: (map['percentile'] as num?)?.toDouble(),
+    );
+  }
+}
+
+/// Cached leaderboard snapshot for a War night.
+class DailyWarLeaderboard {
+  const DailyWarLeaderboard({
+    required this.dateId,
+    required this.top,
+    required this.participantCount,
+  });
+
+  final String dateId;
+  final List<DailyWarLeaderboardEntry> top;
+  final int participantCount;
+
+  Map<String, dynamic> toCacheMap() => {
+        'date_id': dateId,
+        'top': top.map((e) => e.toMap()).toList(),
+        'participant_count': participantCount,
+      };
+
+  factory DailyWarLeaderboard.fromMap(String dateId, Map<String, dynamic> map) {
+    final topRaw = map['top'];
+    final top = <DailyWarLeaderboardEntry>[];
+    if (topRaw is List) {
+      for (final e in topRaw) {
+        if (e is Map) {
+          top.add(
+            DailyWarLeaderboardEntry.fromMap(Map<String, dynamic>.from(e)),
+          );
+        }
+      }
+    }
+    return DailyWarLeaderboard(
+      dateId: dateId,
+      top: top,
+      participantCount: (map['participant_count'] as num?)?.toInt() ?? top.length,
     );
   }
 }

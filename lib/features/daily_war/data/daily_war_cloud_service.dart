@@ -123,7 +123,26 @@ class DailyWarCloudService {
     }
   }
 
-  /// Idempotent lobby presence ping — increments `lobby_count` once per uid/day.
+  /// Force-send a Daily War FCM phase: morning | reminder_30 | lobby | results.
+  Future<bool> adminNotify({
+    required String dateId,
+    required String phase,
+  }) async {
+    try {
+      final callable = _functions.httpsCallable('adminNotifyDailyWar');
+      final result = await callable.call<Map<String, dynamic>>({
+        'dateId': dateId,
+        'phase': phase,
+      });
+      return result.data['ok'] == true;
+    } on Object catch (e, st) {
+      debugPrint('DailyWarCloudService.adminNotify: $e');
+      debugPrintStack(stackTrace: st);
+      return false;
+    }
+  }
+
+  /// Idempotent lobby presence ping — bumps RTDB lobby count once per uid/day.
   Future<int?> joinLobby({required String dateId}) async {
     try {
       final callable = _functions.httpsCallable('joinDailyWarLobby');

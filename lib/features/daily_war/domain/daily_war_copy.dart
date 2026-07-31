@@ -50,7 +50,7 @@ abstract final class DailyWarCopy {
     required int questionCount,
     required bool isGrand,
   }) {
-    final mins = isGrand ? 30 : DailyWarSchedule.liveWindowMinutes;
+    final mins = DailyWarSchedule.liveWindowMinutesFor(questionCount);
     return '$questionCount Q · $mins MIN · −1/3 NEGATIVE';
   }
 
@@ -58,7 +58,7 @@ abstract final class DailyWarCopy {
     required int questionCount,
     required bool isGrand,
   }) {
-    final mins = isGrand ? 30 : DailyWarSchedule.liveWindowMinutes;
+    final mins = DailyWarSchedule.liveWindowMinutesFor(questionCount);
     return '$questionCount Q · $mins MIN · −1/3 · ONE ATTEMPT';
   }
 

@@ -12,11 +12,20 @@ Nightly All-India MCQ event (9:00 PM IST). Product name: **Daily War** / Sunday 
 | 3 Home hero | done | phase-driven card gated by `daily_war_enabled` |
 | 4 Lobby → live → results | done (v1) | lobby start via fixed-UUID session → `/test` → `/daily-war/results` + Cloud submit |
 | 5 History | done (v1) | All / Attempted / Missed list |
-| 6 Push | pending | FCM topics + scheduled notification copy |
+| 6 Push | done | FCM topic `upsc_wars_daily_war` · morning 06:10 · reminder 20:30 · lobby 20:50 · ranks after 21:25 |
 
 ## Enable in app
 
-Firebase Remote Config: `daily_war_enabled` = `true` (defaults **false**).
+Firebase Remote Config:
+
+| Key | Type | Meaning |
+|-----|------|---------|
+| `daily_war_enabled` | Boolean | Master switch (app/server default **true**) |
+| `daily_war_admins_only` | Boolean | Default **true** — only super-users. Set **false** for everyone. |
+
+Admin emails match in-app super users (`sachinsabbarwal@…`, `upscwars@…`, etc.).
+
+FCM topics: `upsc_wars_daily_war` (everyone) · `upsc_wars_daily_war_admins` (admin preview). Clients subscribe to the matching topic after token sync.
 
 ## Deploy backend
 
@@ -28,29 +37,23 @@ firebase deploy --only \
   functions:generateDailyWar,\
   functions:publishDailyWarQuestions,\
   functions:rankDailyWar,\
+  functions:notifyDailyWarMorning,\
+  functions:notifyDailyWarReminder,\
+  functions:notifyDailyWarLobby,\
   functions:submitDailyWar,\
-  functions:adminGenerateDailyWar
+  functions:adminGenerateDailyWar,\
+  functions:adminNotifyDailyWar
 ```
 
-Schedules (`Asia/Kolkata`): **05:50** generate (private paper) · **20:59** copy UUIDs to public · **21:25** rank.
+Schedules (`Asia/Kolkata`):
 
-## Private vs public paper
+| Time | Job |
+|------|-----|
+| **05:50** | generate (private paper) |
+| **06:10** | morning topics push (N1 / Grand N7) |
+| **20:30** | “War in 30 minutes” push (N2) |
+| **20:50** | lobby open push (N3) |
+| **20:59** | copy UUIDs to public |
+| **21:40** | rank + results push (after live window sized from Q count) |
 
-| When | Where | Who can read |
-|------|--------|----------------|
-| From 05:50 | `daily_wars/{date}/private/answers` (UUIDs + keys) | Cloud Functions / admin callables only |
-| From 05:50 | Public war doc: topics + empty `question_uuids` | All signed-in (morning announcement) |
-| From 20:59 | Public `question_uuids` filled | All signed-in (clients load the test) |
-
-Admin dashboard → **Daily War**: Preview private paper · Generate · Force regenerate · Publish now.
-
-Callables: `adminPreviewDailyWar`, `adminGenerateDailyWar`, `adminPublishDailyWar`.
-
-## Still to harden (next passes)
-
-- Morning “Prepare these topics” → deep-link into practice drill on those topics
-- Lobby live participant counter (RTDB)
-- Richer results (answer review, share card, leaderboard screen)
-- History: start unranked from a missed row
-- Push notifications (Phase 6)
-- Streak integration for War participation
+Admin dashboard → **Push: morning / lobby / results** to test without waiting for cron.

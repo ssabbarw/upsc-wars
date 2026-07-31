@@ -22,6 +22,21 @@ const CURRICULUM_DOC = "curriculum";
 /** RTDB path for cheap lobby / writing social counts (polled by clients). */
 const RTDB_COUNTS = "daily_war_counts";
 
+/** Matches client DailyWarSchedule.secondsPerQuestion. */
+const SECONDS_PER_QUESTION = 80;
+const WEEKDAY_QUESTION_COUNT = 15;
+
+function liveWindowMinutesFor(questionCount) {
+  const q =
+    Number(questionCount) > 0 ? Number(questionCount) : WEEKDAY_QUESTION_COUNT;
+  return Math.min(120, Math.max(1, Math.ceil((q * SECONDS_PER_QUESTION) / 60)));
+}
+
+function liveEndMsFor(dateId, questionCount) {
+  const startMs = Date.parse(`${dateId}T21:00:00+05:30`);
+  return startMs + liveWindowMinutesFor(questionCount) * 60 * 1000;
+}
+
 function rtdbCountsRef(dateId) {
   return admin.database().ref(`${RTDB_COUNTS}/${dateId}`);
 }
@@ -432,6 +447,37 @@ async function rankWar(dateId) {
 
 const notif = require("./notifications");
 
+function assertDailyWarAdmin(request) {
+  if (!request.auth || !request.auth.token.email) {
+    throw new HttpsError("unauthenticated", "Sign in required.");
+  }
+  const email = String(request.auth.token.email).toLowerCase();
+  if (!notif.isDailyWarAdminEmail(email)) {
+    throw new HttpsError("permission-denied", "Not allowed.");
+  }
+  return email;
+}
+
+/** Blocks non-admins when RC `daily_war_admins_only` is on (or feature off). */
+async function assertDailyWarParticipant(request) {
+  if (!request.auth) {
+    throw new HttpsError("unauthenticated", "Sign in required.");
+  }
+  const rollout = await notif.readDailyWarRollout();
+  if (!rollout.enabled) {
+    throw new HttpsError("failed-precondition", "Daily War is disabled.");
+  }
+  if (rollout.adminsOnly) {
+    const email = (request.auth.token.email || "").toLowerCase().trim();
+    if (!notif.isDailyWarAdminEmail(email)) {
+      throw new HttpsError(
+        "permission-denied",
+        "Daily War is in admin preview.",
+      );
+    }
+  }
+}
+
 // --- Schedules (Asia/Kolkata) ---
 
 exports.generateDailyWar = onSchedule(
@@ -502,7 +548,8 @@ exports.publishDailyWarQuestions = onSchedule(
 
 exports.rankDailyWar = onSchedule(
   {
-    schedule: "25 21 * * *",
+    // After max live window (25 Q · 80s ≈ 34 min) + buffer.
+    schedule: "40 21 * * *",
     timeZone: "Asia/Kolkata",
     region: "asia-south1",
   },
@@ -526,9 +573,7 @@ exports.rankDailyWar = onSchedule(
 exports.submitDailyWar = onCall(
   { region: "asia-south1" },
   async (request) => {
-    if (!request.auth) {
-      throw new HttpsError("unauthenticated", "Sign in required.");
-    }
+    await assertDailyWarParticipant(request);
     const uid = request.auth.uid;
     const data = request.data || {};
     const dateId = typeof data.dateId === "string" ? data.dateId.trim() : "";
@@ -551,7 +596,10 @@ exports.submitDailyWar = onCall(
 
     const now = Date.now();
     const startMs = Date.parse(`${dateId}T21:00:00+05:30`);
-    const liveEndMs = startMs + 20 * 60 * 1000;
+    const qCount =
+      warSnap.data().question_count ||
+      (warSnap.data().kind === "grand" ? 25 : WEEKDAY_QUESTION_COUNT);
+    const liveEndMs = liveEndMsFor(dateId, qCount);
 
     if (mode === "live") {
       if (now < startMs || now > liveEndMs) {
@@ -620,29 +668,6 @@ exports.submitDailyWar = onCall(
     };
   },
 );
-
-function assertDailyWarAdmin(request) {
-  if (!request.auth || !request.auth.token.email) {
-    throw new HttpsError("unauthenticated", "Sign in required.");
-  }
-  const email = String(request.auth.token.email).toLowerCase();
-  const allow = new Set(
-    (process.env.QUESTION_EDITOR_EMAILS || "")
-      .split(",")
-      .map((e) => e.trim().toLowerCase())
-      .filter(Boolean),
-  );
-  [
-    "sachinsabbarwal@gmail.com",
-    "upscwars@gmail.com",
-    "tinyminyapps@gmail.com",
-    "upscmcqpractice@gmail.com",
-  ].forEach((e) => allow.add(e));
-  if (!allow.has(email)) {
-    throw new HttpsError("permission-denied", "Not allowed.");
-  }
-  return email;
-}
 
 /** Admin/debug callable to generate or republish for a date. */
 exports.adminGenerateDailyWar = onCall(
@@ -716,6 +741,34 @@ exports.adminPublishDailyWar = onCall(
 );
 
 /**
+ * Admin test / force-send Daily War FCM.
+ * data: { dateId?, phase: 'morning'|'reminder_30'|'lobby'|'results' }
+ */
+exports.adminNotifyDailyWar = onCall(
+  { region: "asia-south1" },
+  async (request) => {
+    assertDailyWarAdmin(request);
+    const dateId =
+      (request.data && request.data.dateId) || istParts().iso;
+    const phase =
+      (request.data && typeof request.data.phase === "string"
+        ? request.data.phase.trim()
+        : "morning") || "morning";
+    if (phase === "morning") return notif.notifyMorning(dateId);
+    if (phase === "reminder_30") return notif.notifyReminder30(dateId);
+    if (phase === "lobby") return notif.notifyLobbyOpen(dateId);
+    if (phase === "results") {
+      const ranked = await rankWar(dateId);
+      return notif.notifyResultsReady(dateId, ranked.rows || []);
+    }
+    throw new HttpsError(
+      "invalid-argument",
+      "phase must be morning|reminder_30|lobby|results",
+    );
+  },
+);
+
+/**
  * Callable: joinDailyWarLobby
  * Idempotent per uid/day — bumps RTDB lobby count once (not Firestore war doc).
  * data: { dateId? }
@@ -723,9 +776,7 @@ exports.adminPublishDailyWar = onCall(
 exports.joinDailyWarLobby = onCall(
   { region: "asia-south1" },
   async (request) => {
-    if (!request.auth) {
-      throw new HttpsError("unauthenticated", "Sign in required.");
-    }
+    await assertDailyWarParticipant(request);
     const uid = request.auth.uid;
     const dateId =
       (request.data && typeof request.data.dateId === "string"

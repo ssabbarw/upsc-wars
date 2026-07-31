@@ -71,7 +71,7 @@ class TestConfigBottomSheet extends HookConsumerWidget {
 
   final TestConfigSheetArgs args;
 
-  static const _presetCounts = [10, 25, 50];
+  static const _presetCounts = [10, 15, 25];
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -80,7 +80,7 @@ class TestConfigBottomSheet extends HookConsumerWidget {
     final borderColor = isDark ? AppColors.borderDark : AppColors.borderLight;
 
     final isExam = useState(args.forceExamMode ? true : true);
-    final selectedPreset = useState(args.lockedQuestionCount ?? 25);
+    final selectedPreset = useState(args.lockedQuestionCount ?? 10);
     final examTimed = useState(args.forceExamMode ? true : true);
     final learningSecs = useState(60);
     final isSubmitting = useState(false);
@@ -103,7 +103,9 @@ class TestConfigBottomSheet extends HookConsumerWidget {
         selectedPreset.value = maxQ;
       }
       if (!effectiveChoices.contains(selectedPreset.value)) {
-        selectedPreset.value = effectiveChoices.last;
+        selectedPreset.value = effectiveChoices.contains(10)
+            ? 10
+            : effectiveChoices.first;
       }
       return null;
     }, [maxQ]);
@@ -426,17 +428,6 @@ class TestConfigBottomSheet extends HookConsumerWidget {
                         ),
                       ),
                     ],
-                    const SizedBox(width: AppSpacing.sm),
-                    Expanded(
-                      child: _CountTile(
-                        label: 'Custom',
-                        selected: false,
-                        examMode: isExam.value,
-                        isDark: isDark,
-                        muted: true,
-                        onTap: null,
-                      ),
-                    ),
                   ],
                 ),
               if (isExam.value) ...[
@@ -578,7 +569,6 @@ class _CountTile extends HookConsumerWidget {
     required this.selected,
     required this.examMode,
     required this.isDark,
-    this.muted = false,
     this.onTap,
   });
 
@@ -586,32 +576,11 @@ class _CountTile extends HookConsumerWidget {
   final bool selected;
   final bool examMode;
   final bool isDark;
-  final bool muted;
   final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
-    if (muted) {
-      return Container(
-        alignment: Alignment.center,
-        padding: const EdgeInsets.symmetric(vertical: AppSpacing.md),
-        decoration: BoxDecoration(
-          color: scheme.surfaceContainerLow,
-          borderRadius: BorderRadius.circular(AppRadius.md),
-          border: Border.all(
-            color: isDark ? AppColors.borderDark : AppColors.borderLight,
-            width: 0.5,
-          ),
-        ),
-        child: Text(
-          label,
-          style: AppTextStyles.labelSm().copyWith(
-            color: scheme.onSurfaceVariant,
-          ),
-        ),
-      );
-    }
 
     Color bg;
     Color fg;
