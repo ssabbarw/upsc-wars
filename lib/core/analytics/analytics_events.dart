@@ -707,6 +707,52 @@ final class DidYouKnowCtaTappedEvent extends AnalyticsEvent {
   final String cardId;
 }
 
+// ── Revision Games (mini-games hub + Memory Pairs) ───────────────────────────
+
+/// **User opened a revision-game surface** (hub or a specific game screen).
+///
+/// **GA4:** `game_screen_opened` with `game_name`
+/// (e.g. `games_hub`, `timeline_sorter`, `odd_one_out`, `fact_or_bluff`,
+/// `connect_the_dots`, `duel`, `memory_pairs`).
+final class GameScreenOpenedEvent extends AnalyticsEvent {
+  const GameScreenOpenedEvent({required this.gameName});
+
+  final String gameName;
+}
+
+/// **User started a playable game session** (how-to dismissed / skipped and
+/// content ready, or Play again).
+///
+/// **GA4:** `game_started` with `game_name`, optional `total_rounds`.
+final class GameStartedEvent extends AnalyticsEvent {
+  const GameStartedEvent({
+    required this.gameName,
+    this.totalRounds,
+  });
+
+  final String gameName;
+  final int? totalRounds;
+}
+
+/// **User finished a full game session** (all rounds/questions done — the
+/// session “round of play”, not a single question).
+///
+/// Use with [GameStartedEvent] for start→finish conversion by `game_name`.
+///
+/// **GA4:** `game_round_finished` with `game_name`, `correct_count`,
+/// `total_rounds`.
+final class GameRoundFinishedEvent extends AnalyticsEvent {
+  const GameRoundFinishedEvent({
+    required this.gameName,
+    required this.correctCount,
+    required this.totalRounds,
+  });
+
+  final String gameName;
+  final int correctCount;
+  final int totalRounds;
+}
+
 // ── Memory Pairs (Revision Games) ────────────────────────────────────────────
 
 /// **First time the user opened Memory Pairs / Revision Games** (per device).

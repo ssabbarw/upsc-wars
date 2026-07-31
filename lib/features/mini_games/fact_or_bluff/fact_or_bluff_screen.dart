@@ -5,6 +5,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../../core/providers/app_language_helpers.dart';
 import '../shared/game_intro_view.dart';
 import '../shared/mini_game_models.dart';
+import '../shared/revision_game_analytics.dart';
 import '../shared/revision_games_theme.dart';
 import '../shared/revision_games_widgets.dart';
 import 'fact_or_bluff_controller.dart';
@@ -81,6 +82,17 @@ class FactOrBluffScreen extends HookConsumerWidget {
     final item = snapshot?.current;
     final complete = snapshot?.sessionComplete ?? false;
     final awaiting = snapshot?.isAwaitingAnswer ?? true;
+    final session = snapshot?.session ?? const [];
+    useGameScreenOpenedAnalytics(ref, RevisionGameNames.factOrBluff);
+    useGameSessionAnalytics(
+      ref: ref,
+      gameName: RevisionGameNames.factOrBluff,
+      readyToStart: howToReady && session.isNotEmpty,
+      sessionComplete: complete,
+      correctCount: snapshot?.correctCount ?? 0,
+      totalRounds: session.length,
+      sessionKey: session.isEmpty ? null : session.map((e) => e.id).join(','),
+    );
 
     return RgGameScaffold(
       title: 'Fact or Bluff',

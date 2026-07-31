@@ -9,6 +9,7 @@ import '../duel/duel_controller.dart';
 import '../fact_or_bluff/fact_or_bluff_controller.dart';
 import '../odd_one_out/odd_one_out_controller.dart';
 import '../shared/mini_game_models.dart';
+import '../shared/revision_game_analytics.dart';
 import '../shared/revision_games_theme.dart';
 import '../shared/revision_games_widgets.dart';
 import '../timeline_sorter/timeline_sorter_controller.dart';
@@ -340,6 +341,7 @@ class GamesHubScreen extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    useGameScreenOpenedAnalytics(ref, RevisionGameNames.gamesHub);
     final lang = watchAppLanguage(ref);
     return RgGameScaffold(
       title: 'Revision Games',

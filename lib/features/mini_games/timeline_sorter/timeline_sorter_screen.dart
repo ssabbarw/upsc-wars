@@ -6,6 +6,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../../core/providers/app_language_helpers.dart';
 import '../shared/game_intro_view.dart';
 import '../shared/mini_game_models.dart';
+import '../shared/revision_game_analytics.dart';
 import '../shared/revision_games_theme.dart';
 import '../shared/revision_games_widgets.dart';
 import 'timeline_sorter_controller.dart';
@@ -44,7 +45,7 @@ class TimelineSorterScreen extends HookConsumerWidget {
       (subjects: subjectsCsv, difficulties: difficultiesCsv),
     );
     final async = ref.watch(provider);
-    useGameHowToSheet(
+    final howToReady = useGameHowToSheet(
       context: context,
       ref: ref,
       config: GameHowToConfig(
@@ -65,6 +66,17 @@ class TimelineSorterScreen extends HookConsumerWidget {
     final set = snapshot?.current;
     final revealed = snapshot?.phase == TimelinePhase.revealed;
     final complete = snapshot?.phase == TimelinePhase.sessionComplete;
+    final session = snapshot?.session ?? const [];
+    useGameScreenOpenedAnalytics(ref, RevisionGameNames.timelineSorter);
+    useGameSessionAnalytics(
+      ref: ref,
+      gameName: RevisionGameNames.timelineSorter,
+      readyToStart: howToReady && session.isNotEmpty,
+      sessionComplete: complete,
+      correctCount: snapshot?.correctCount ?? 0,
+      totalRounds: session.length,
+      sessionKey: session.isEmpty ? null : session.map((e) => e.id).join(','),
+    );
 
     return RgGameScaffold(
       title: set == null || complete

@@ -8,6 +8,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../../core/providers/app_language_helpers.dart';
 import '../shared/game_intro_view.dart';
 import '../shared/mini_game_models.dart';
+import '../shared/revision_game_analytics.dart';
 import '../shared/revision_games_theme.dart';
 import '../shared/revision_games_widgets.dart';
 import 'duel_controller.dart';
@@ -72,6 +73,22 @@ class DuelScreen extends HookConsumerWidget {
     );
 
     void exit() => context.canPop() ? context.pop() : context.go('/games');
+
+    final duelState = async.asData?.value;
+    final matchQuestions = duelState?.matchQuestions ?? const [];
+    final matchOver = duelState?.phase == DuelPhase.matchOver;
+    useGameScreenOpenedAnalytics(ref, RevisionGameNames.duel);
+    useGameSessionAnalytics(
+      ref: ref,
+      gameName: RevisionGameNames.duel,
+      readyToStart: howToReady && matchQuestions.isNotEmpty,
+      sessionComplete: matchOver,
+      correctCount: (duelState?.p1Score ?? 0) + (duelState?.p2Score ?? 0),
+      totalRounds: matchQuestions.length,
+      sessionKey: matchQuestions.isEmpty
+          ? null
+          : matchQuestions.map((e) => e.id).join(','),
+    );
 
     // Auto-advance after a round resolves (winner or both wrong).
     useEffect(
@@ -262,72 +279,57 @@ class _PlayerHalf extends StatelessWidget {
           const SizedBox(height: 10),
           Text(question, style: RgText.display(size: 15, height: 1.28)),
           const SizedBox(height: 12),
-          // While waiting on the opponent, hide options so the other half
-          // can't read a locked choice upside-down on a shared phone.
-          if (waiting)
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 18),
-              decoration: BoxDecoration(
-                color: RgColors.neutralFill,
-                borderRadius: BorderRadius.circular(RgRadius.md),
-                border: Border.all(color: RgColors.border14),
-              ),
-              child: Text(
-                passed ? 'Passed — waiting…' : 'Locked in — waiting…',
-                textAlign: TextAlign.center,
-                style: RgText.body(
-                  size: 13,
-                  weight: FontWeight.w600,
-                  color: RgColors.muted,
+          for (var i = 0; i < options.length; i++) ...[
+            if (i > 0) const SizedBox(height: 8),
+            _DuelOption(
+              label: options[i],
+              enabled: !locked && !revealed,
+              isSelected: !revealed && selectedIndex == i,
+              isCorrect: revealed && i == answerIndex,
+              isWrong: revealed && wrongIndex == i,
+              dimmed: (waiting && selectedIndex != i) ||
+                  (revealed && i != answerIndex && wrongIndex != i),
+              onTap: () => onTap(i),
+            ),
+          ],
+          if (!locked && !revealed) ...[
+            const SizedBox(height: 10),
+            Align(
+              alignment: Alignment.centerRight,
+              child: TextButton(
+                onPressed: onPass,
+                style: TextButton.styleFrom(
+                  foregroundColor: RgColors.muted,
+                  visualDensity: VisualDensity.compact,
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                ),
+                child: Text(
+                  'Pass',
+                  style: RgText.mono(size: 11, color: RgColors.muted),
                 ),
               ),
-            )
-          else ...[
-            for (var i = 0; i < options.length; i++) ...[
-              if (i > 0) const SizedBox(height: 8),
-              _DuelOption(
-                label: options[i],
-                enabled: !locked && !revealed,
-                isSelected: !revealed && selectedIndex == i,
-                isCorrect: revealed && i == answerIndex,
-                isWrong: revealed && wrongIndex == i,
-                dimmed: revealed && i != answerIndex && wrongIndex != i,
-                onTap: () => onTap(i),
-              ),
-            ],
-            if (!locked && !revealed) ...[
-              const SizedBox(height: 10),
-              Align(
-                alignment: Alignment.centerRight,
-                child: TextButton(
-                  onPressed: onPass,
-                  style: TextButton.styleFrom(
-                    foregroundColor: RgColors.muted,
-                    visualDensity: VisualDensity.compact,
-                    padding: const EdgeInsets.symmetric(horizontal: 8),
-                  ),
-                  child: Text(
-                    'Pass',
-                    style: RgText.mono(size: 11, color: RgColors.muted),
-                  ),
-                ),
-              ),
-            ],
-            if (revealed && passed) ...[
-              const SizedBox(height: 10),
-              Text(
-                'Passed',
-                textAlign: TextAlign.center,
-                style: RgText.mono(size: 10, color: RgColors.muted),
-              ),
-            ] else if (revealed && gotItRight) ...[
-              const SizedBox(height: 10),
-              Text(
-                'Point!',
-                textAlign: TextAlign.center,
-                style: RgText.mono(size: 10, color: RgColors.tealDeep),
-              ),
-            ],
+            ),
+          ] else if (waiting && passed) ...[
+            const SizedBox(height: 10),
+            Text(
+              'Passed — waiting…',
+              textAlign: TextAlign.center,
+              style: RgText.mono(size: 10, color: RgColors.muted),
+            ),
+          ] else if (revealed && passed) ...[
+            const SizedBox(height: 10),
+            Text(
+              'Passed',
+              textAlign: TextAlign.center,
+              style: RgText.mono(size: 10, color: RgColors.muted),
+            ),
+          ] else if (revealed && gotItRight) ...[
+            const SizedBox(height: 10),
+            Text(
+              'Point!',
+              textAlign: TextAlign.center,
+              style: RgText.mono(size: 10, color: RgColors.tealDeep),
+            ),
           ],
         ],
       ),
@@ -413,14 +415,14 @@ class _DuelOption extends StatelessWidget {
                 ],
               ),
             ),
-            if (isWrong)
+            if (isWrong || isSelected)
               Positioned(
                 top: -6,
                 right: -22,
                 child: Transform.rotate(
                   angle: 0.489,
                   child: Container(
-                    color: RgColors.wrong,
+                    color: isWrong ? RgColors.wrong : RgColors.ink,
                     padding: const EdgeInsets.fromLTRB(26, 8, 26, 3),
                     child: Row(
                       mainAxisSize: MainAxisSize.min,

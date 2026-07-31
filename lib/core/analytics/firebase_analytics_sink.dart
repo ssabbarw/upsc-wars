@@ -45,6 +45,9 @@ import 'analytics_sink.dart';
 ///   and confidence bucket totals (see [UspSessionResultSnapshotEvent])
 /// * `usp_coach_cta` — `action` (result coach / Danger Zone CTA labels)
 /// * `app_notification_open` — `channel` (`fcm` / `local`), `kind` (e.g. battle)
+/// * `game_screen_opened` — `game_name`
+/// * `game_started` — `game_name`, `total_rounds?`
+/// * `game_round_finished` — `game_name`, `correct_count`, `total_rounds`
 ///
 /// All events also send `user_id` when the user is signed in to Firebase Auth.
 class FirebaseAnalyticsSink implements AnalyticsSink {
@@ -363,6 +366,23 @@ class FirebaseAnalyticsSink implements AnalyticsSink {
         await _log('did_you_know_dismissed', {'card_id': cardId});
       case DidYouKnowCtaTappedEvent(:final cardId):
         await _log('did_you_know_cta_tapped', {'card_id': cardId});
+      case GameScreenOpenedEvent(:final gameName):
+        await _log('game_screen_opened', {'game_name': gameName});
+      case GameStartedEvent(:final gameName, :final totalRounds):
+        await _log('game_started', {
+          'game_name': gameName,
+          if (totalRounds case final t?) 'total_rounds': t,
+        });
+      case GameRoundFinishedEvent(
+          :final gameName,
+          :final correctCount,
+          :final totalRounds,
+        ):
+        await _log('game_round_finished', {
+          'game_name': gameName,
+          'correct_count': correctCount,
+          'total_rounds': totalRounds,
+        });
       case MemoryPairsGameDiscoveredEvent():
         await _log('memory_pairs_game_discovered', const {});
       case MemoryPairsGamePlayedEvent(:final setId, :final difficulty):

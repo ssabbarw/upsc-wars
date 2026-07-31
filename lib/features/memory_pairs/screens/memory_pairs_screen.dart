@@ -12,6 +12,7 @@ import '../../../core/admin_dashboard/admin_dashboard_service.dart';
 import '../../../core/providers/prefs_provider.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../mini_games/shared/revision_game_analytics.dart';
 import '../data/memory_pair_sets_data.dart';
 import '../domain/memory_pair_catalog_grouping.dart';
 import '../domain/memory_pair_models.dart';
@@ -41,6 +42,7 @@ class MemoryPairsScreen extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    useGameScreenOpenedAnalytics(ref, RevisionGameNames.memoryPairs);
     final lang = watchAppLanguage(ref);
     final step = useState(_MemoryPairsStep.subjects);
     final activeSubject = useState<MemoryPairSubjectGroup?>(null);
@@ -136,6 +138,17 @@ class MemoryPairsScreen extends HookConsumerWidget {
       isWeakRetry.value = pairsOverride != null;
       final set = activeSet.value;
       if (set != null) {
+        final pairs = pairsOverride ??
+            set.pairs.take(set.difficulty.pairCount).toList();
+        unawaited(
+          Analytics.track(
+            ref,
+            GameStartedEvent(
+              gameName: RevisionGameNames.memoryPairs,
+              totalRounds: pairs.length,
+            ),
+          ),
+        );
         unawaited(() async {
           final prefs = await ref.read(prefsServiceProvider.future);
           final isFirstEver = !prefs.memoryPairsGamePlayed;
@@ -165,6 +178,17 @@ class MemoryPairsScreen extends HookConsumerWidget {
           ? false
           : await saveResult(result);
       isWeakRetry.value = false;
+      unawaited(
+        Analytics.track(
+          ref,
+          GameRoundFinishedEvent(
+            gameName: RevisionGameNames.memoryPairs,
+            // Match board is finished when all pairs are cleared.
+            correctCount: result.pairsCount,
+            totalRounds: result.pairsCount,
+          ),
+        ),
+      );
       if (!context.mounted) return;
       step.value = _MemoryPairsStep.result;
     }
