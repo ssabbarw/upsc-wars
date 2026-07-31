@@ -16,7 +16,7 @@ abstract final class AppBreakpoints {
   }
 
   /// Horizontal padding to center content on push-route screens (full-screen).
-  /// Shell-branch screens (Home, History, Progress) are already narrowed by the
+  /// Shell-branch screens (Home, Progress, Games) are already narrowed by the
   /// NavigationRail and should not use this.
   static EdgeInsets fullScreenHPadding(double screenWidth) {
     if (screenWidth >= 1100) {

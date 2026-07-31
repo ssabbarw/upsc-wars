@@ -39,7 +39,10 @@ import '../providers/daily_drill_provider.dart';
 import '../../memory_pairs/widgets/push_memory_pairs_debug_card.dart';
 import '../../push_spot_test/widgets/push_spot_test_debug_card.dart';
 import '../../daily_ca/widgets/daily_ca_home_card.dart';
+import '../../daily_war/providers/daily_war_providers.dart';
+import '../../daily_war/theme/daily_war_theme.dart';
 import '../../daily_war/widgets/daily_war_home_card.dart';
+import '../../daily_war/widgets/daily_war_prepare_dock.dart';
 import '../../../shared/widgets/push_denied_banner.dart';
 import '../../../shared/theme/dark_mode_toggle.dart';
 import '../../../shared/widgets/app_update_kill_switch_overlay.dart';
@@ -421,42 +424,76 @@ class HomeScreen extends HookConsumerWidget {
                           ),
                         ),
                       ),
-                      Container(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: AppSpacing.md,
-                          vertical: AppSpacing.sm,
-                        ),
-                        decoration: BoxDecoration(
-                          color: scheme.surfaceContainerLow,
-                          borderRadius: BorderRadius.circular(AppRadius.pill),
-                          border: Border.all(color: borderColor, width: 0.5),
-                        ),
-                        child: Row(
-                          children: [
-                            Icon(
-                              Icons.local_fire_department,
-                              color: AppColors.streak,
-                              size: 16,
+                      Consumer(
+                        builder: (context, ref, _) {
+                          final warOn = ref
+                                  .watch(dailyWarRemoteEnabledProvider)
+                                  .asData
+                                  ?.value ??
+                              false;
+                          final warUnplayed = warOn &&
+                              (ref
+                                      .watch(dailyWarHomeSnapshotProvider)
+                                      .warUnplayed);
+                          final streakAccent = warUnplayed
+                              ? DwColors.crimson
+                              : AppColors.streak;
+                          return Container(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: AppSpacing.md,
+                              vertical: AppSpacing.sm,
                             ),
-                            const SizedBox(width: AppSpacing.xs),
-                            Text(
-                              home.when(
-                                data: (h) => h.streakCount == 0
-                                    ? 'Start your streak'
-                                    : '${h.streakCount} days',
-                                loading: () =>
-                                    cachedStreakText.value ??
-                                    'Start your streak',
-                                error: (error, stackTrace) =>
-                                    cachedStreakText.value ??
-                                    'Start your streak',
-                              ),
-                              style: AppTextStyles.caption().copyWith(
-                                color: scheme.onSurface,
+                            decoration: BoxDecoration(
+                              color: scheme.surfaceContainerLow,
+                              borderRadius:
+                                  BorderRadius.circular(AppRadius.pill),
+                              border: Border.all(
+                                color: warUnplayed
+                                    ? DwColors.crimson
+                                        .withValues(alpha: 0.45)
+                                    : borderColor,
+                                width: warUnplayed ? 1 : 0.5,
                               ),
                             ),
-                          ],
-                        ),
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.local_fire_department,
+                                  color: streakAccent,
+                                  size: 16,
+                                ),
+                                const SizedBox(width: AppSpacing.xs),
+                                Text(
+                                  home.when(
+                                    data: (h) => h.streakCount == 0
+                                        ? 'Start your streak'
+                                        : '${h.streakCount} days',
+                                    loading: () =>
+                                        cachedStreakText.value ??
+                                        'Start your streak',
+                                    error: (error, stackTrace) =>
+                                        cachedStreakText.value ??
+                                        'Start your streak',
+                                  ),
+                                  style: AppTextStyles.caption().copyWith(
+                                    color: scheme.onSurface,
+                                  ),
+                                ),
+                                if (warUnplayed) ...[
+                                  const SizedBox(width: 6),
+                                  Container(
+                                    width: 6,
+                                    height: 6,
+                                    decoration: const BoxDecoration(
+                                      color: DwColors.crimson,
+                                      shape: BoxShape.circle,
+                                    ),
+                                  ),
+                                ],
+                              ],
+                            ),
+                          );
+                        },
                       ),
                     ],
                   ),
@@ -488,7 +525,21 @@ class HomeScreen extends HookConsumerWidget {
                     },
                   ),
                   const DailyWarHomeCard(),
-                  const DailyDrillCard(),
+                  const DailyWarPrepareDock(),
+                  Consumer(
+                    builder: (context, ref, _) {
+                      final warOn = ref
+                              .watch(dailyWarRemoteEnabledProvider)
+                              .asData
+                              ?.value ??
+                          false;
+                      if (warOn) return const SizedBox.shrink();
+                      return const Padding(
+                        padding: EdgeInsets.only(bottom: AppSpacing.md),
+                        child: DailyDrillCard(),
+                      );
+                    },
+                  ),
                   const SizedBox(height: AppSpacing.md),
                   const RecoveryPlanSection(),
                   const SizedBox(height: AppSpacing.md),

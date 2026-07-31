@@ -32,11 +32,19 @@ firebase deploy --only \
   functions:adminGenerateDailyWar
 ```
 
-Schedules (`Asia/Kolkata`): **05:50** generate · **20:59** publish UUIDs · **21:25** rank.
+Schedules (`Asia/Kolkata`): **05:50** generate (private paper) · **20:59** copy UUIDs to public · **21:25** rank.
 
-## Admin seed today
+## Private vs public paper
 
-Callable `adminGenerateDailyWar` `{ dateId: "YYYY-MM-DD", force: true }` as super-user email.
+| When | Where | Who can read |
+|------|--------|----------------|
+| From 05:50 | `daily_wars/{date}/private/answers` (UUIDs + keys) | Cloud Functions / admin callables only |
+| From 05:50 | Public war doc: topics + empty `question_uuids` | All signed-in (morning announcement) |
+| From 20:59 | Public `question_uuids` filled | All signed-in (clients load the test) |
+
+Admin dashboard → **Daily War**: Preview private paper · Generate · Force regenerate · Publish now.
+
+Callables: `adminPreviewDailyWar`, `adminGenerateDailyWar`, `adminPublishDailyWar`.
 
 ## Still to harden (next passes)
 

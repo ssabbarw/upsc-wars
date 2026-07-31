@@ -87,4 +87,107 @@ class DailyWarCloudService {
       return false;
     }
   }
+
+  /// Super-user preview of tonight's paper (private UUIDs before 20:59 publish).
+  Future<DailyWarAdminPreview?> adminPreview({
+    required String dateId,
+    bool includeAnswers = false,
+  }) async {
+    try {
+      final callable = _functions.httpsCallable('adminPreviewDailyWar');
+      final result = await callable.call<Map<String, dynamic>>({
+        'dateId': dateId,
+        'includeAnswers': includeAnswers,
+      });
+      final data = result.data;
+      if (data['ok'] != true) return null;
+      return DailyWarAdminPreview.fromMap(Map<String, dynamic>.from(data));
+    } on Object catch (e, st) {
+      debugPrint('DailyWarCloudService.adminPreview: $e');
+      debugPrintStack(stackTrace: st);
+      return null;
+    }
+  }
+
+  Future<bool> adminPublish({required String dateId}) async {
+    try {
+      final callable = _functions.httpsCallable('adminPublishDailyWar');
+      final result = await callable.call<Map<String, dynamic>>({
+        'dateId': dateId,
+      });
+      return result.data['ok'] == true;
+    } on Object catch (e, st) {
+      debugPrint('DailyWarCloudService.adminPublish: $e');
+      debugPrintStack(stackTrace: st);
+      return false;
+    }
+  }
+
+  /// Idempotent lobby presence ping — increments `lobby_count` once per uid/day.
+  Future<int?> joinLobby({required String dateId}) async {
+    try {
+      final callable = _functions.httpsCallable('joinDailyWarLobby');
+      final result = await callable.call<Map<String, dynamic>>({
+        'dateId': dateId,
+      });
+      final data = result.data;
+      if (data['ok'] != true) return null;
+      return (data['lobbyCount'] as num?)?.toInt();
+    } on Object catch (e, st) {
+      debugPrint('DailyWarCloudService.joinLobby: $e');
+      debugPrintStack(stackTrace: st);
+      return null;
+    }
+  }
+}
+
+class DailyWarAdminPreview {
+  const DailyWarAdminPreview({
+    required this.dateId,
+    required this.kind,
+    required this.status,
+    required this.topics,
+    required this.nextTopics,
+    required this.privateUuids,
+    required this.publicUuids,
+    required this.isPubliclyPublished,
+    required this.questionCount,
+  });
+
+  final String dateId;
+  final String kind;
+  final String status;
+  final List<Map<String, dynamic>> topics;
+  final List<Map<String, dynamic>> nextTopics;
+  final List<String> privateUuids;
+  final List<String> publicUuids;
+  final bool isPubliclyPublished;
+  final int questionCount;
+
+  factory DailyWarAdminPreview.fromMap(Map<String, dynamic> map) {
+    List<String> asStrings(dynamic raw) {
+      if (raw is! List) return const [];
+      return raw.map((e) => '$e').toList();
+    }
+
+    List<Map<String, dynamic>> asMaps(dynamic raw) {
+      if (raw is! List) return const [];
+      return raw
+          .whereType<Map>()
+          .map((e) => Map<String, dynamic>.from(e))
+          .toList();
+    }
+
+    return DailyWarAdminPreview(
+      dateId: '${map['dateId'] ?? ''}',
+      kind: '${map['kind'] ?? 'daily'}',
+      status: '${map['status'] ?? ''}',
+      topics: asMaps(map['topics']),
+      nextTopics: asMaps(map['next_topics']),
+      privateUuids: asStrings(map['private_uuids']),
+      publicUuids: asStrings(map['public_uuids']),
+      isPubliclyPublished: map['is_publicly_published'] == true,
+      questionCount: (map['question_count'] as num?)?.toInt() ?? 0,
+    );
+  }
 }

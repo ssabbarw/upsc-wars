@@ -48,7 +48,7 @@ final class KillSwitchProvider
   }
 }
 
-String _$killSwitchHash() => r'4f738aaf620a63d98699d64f5b833c1f9a46c300';
+String _$killSwitchHash() => r'defb7c003ec3edbc098d985fbe8d29915366ae7b';
 
 /// Whether the Community tab should be shown (after [killSwitchProvider] fetch).
 ///
@@ -187,6 +187,140 @@ final class DailyWarRemoteEnabledProvider
 
 String _$dailyWarRemoteEnabledHash() =>
     r'4bc3276682ceb585973c0f1c4c329dffa212789c';
+
+/// Whether lobby / participant count numbers should be shown on War surfaces.
+///
+/// Fails open (`true`) so counts stay visible unless RC explicitly disables them.
+
+@ProviderFor(dailyWarLobbyCountRemoteEnabled)
+final dailyWarLobbyCountRemoteEnabledProvider =
+    DailyWarLobbyCountRemoteEnabledProvider._();
+
+/// Whether lobby / participant count numbers should be shown on War surfaces.
+///
+/// Fails open (`true`) so counts stay visible unless RC explicitly disables them.
+
+final class DailyWarLobbyCountRemoteEnabledProvider
+    extends $FunctionalProvider<AsyncValue<bool>, bool, FutureOr<bool>>
+    with $FutureModifier<bool>, $FutureProvider<bool> {
+  /// Whether lobby / participant count numbers should be shown on War surfaces.
+  ///
+  /// Fails open (`true`) so counts stay visible unless RC explicitly disables them.
+  DailyWarLobbyCountRemoteEnabledProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'dailyWarLobbyCountRemoteEnabledProvider',
+        isAutoDispose: false,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$dailyWarLobbyCountRemoteEnabledHash();
+
+  @$internal
+  @override
+  $FutureProviderElement<bool> $createElement($ProviderPointer pointer) =>
+      $FutureProviderElement(pointer);
+
+  @override
+  FutureOr<bool> create(Ref ref) {
+    return dailyWarLobbyCountRemoteEnabled(ref);
+  }
+}
+
+String _$dailyWarLobbyCountRemoteEnabledHash() =>
+    r'5da6bcf525e46899d32baa76b00d051272750d93';
+
+/// Minimum lobby/participant count before showing the raw number.
+
+@ProviderFor(dailyWarMinVisibleLobbyCountRemote)
+final dailyWarMinVisibleLobbyCountRemoteProvider =
+    DailyWarMinVisibleLobbyCountRemoteProvider._();
+
+/// Minimum lobby/participant count before showing the raw number.
+
+final class DailyWarMinVisibleLobbyCountRemoteProvider
+    extends $FunctionalProvider<AsyncValue<int>, int, FutureOr<int>>
+    with $FutureModifier<int>, $FutureProvider<int> {
+  /// Minimum lobby/participant count before showing the raw number.
+  DailyWarMinVisibleLobbyCountRemoteProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'dailyWarMinVisibleLobbyCountRemoteProvider',
+        isAutoDispose: false,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() =>
+      _$dailyWarMinVisibleLobbyCountRemoteHash();
+
+  @$internal
+  @override
+  $FutureProviderElement<int> $createElement($ProviderPointer pointer) =>
+      $FutureProviderElement(pointer);
+
+  @override
+  FutureOr<int> create(Ref ref) {
+    return dailyWarMinVisibleLobbyCountRemote(ref);
+  }
+}
+
+String _$dailyWarMinVisibleLobbyCountRemoteHash() =>
+    r'0e5565bb50e7a2f4aeaed2cd2b9015ac486df170';
+
+/// How often clients poll RTDB live counts during lobby / live (seconds).
+///
+/// Defaults to 5. Clamped to 3–60.
+
+@ProviderFor(dailyWarLiveCountPollSecondsRemote)
+final dailyWarLiveCountPollSecondsRemoteProvider =
+    DailyWarLiveCountPollSecondsRemoteProvider._();
+
+/// How often clients poll RTDB live counts during lobby / live (seconds).
+///
+/// Defaults to 5. Clamped to 3–60.
+
+final class DailyWarLiveCountPollSecondsRemoteProvider
+    extends $FunctionalProvider<AsyncValue<int>, int, FutureOr<int>>
+    with $FutureModifier<int>, $FutureProvider<int> {
+  /// How often clients poll RTDB live counts during lobby / live (seconds).
+  ///
+  /// Defaults to 5. Clamped to 3–60.
+  DailyWarLiveCountPollSecondsRemoteProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'dailyWarLiveCountPollSecondsRemoteProvider',
+        isAutoDispose: false,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() =>
+      _$dailyWarLiveCountPollSecondsRemoteHash();
+
+  @$internal
+  @override
+  $FutureProviderElement<int> $createElement($ProviderPointer pointer) =>
+      $FutureProviderElement(pointer);
+
+  @override
+  FutureOr<int> create(Ref ref) {
+    return dailyWarLiveCountPollSecondsRemote(ref);
+  }
+}
+
+String _$dailyWarLiveCountPollSecondsRemoteHash() =>
+    r'a1b2c3d4e5f60718293a4b5c6d7e8f901234abcd';
 
 /// Which mini-game demo onboarding shows (A/B via Remote Config).
 ///

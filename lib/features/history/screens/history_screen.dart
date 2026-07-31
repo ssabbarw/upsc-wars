@@ -17,7 +17,10 @@ import '../../../shared/widgets/contact_us_entry.dart';
 import '../providers/history_filters_provider.dart';
 
 class HistoryScreen extends HookConsumerWidget {
-  const HistoryScreen({super.key});
+  const HistoryScreen({super.key, this.embedded = false});
+
+  /// When true, omit [Scaffold] / [PopToShellHomeScope] (used inside Progress hub).
+  final bool embedded;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -27,103 +30,137 @@ class HistoryScreen extends HookConsumerWidget {
     );
     final scheme = Theme.of(context).colorScheme;
 
-    return PopToShellHomeScope(
-      child: Scaffold(
-        body: SafeArea(
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.fromLTRB(AppSpacing.lg, AppSpacing.md, AppSpacing.lg, AppSpacing.sm),
-                child: async.when(
-                data: (list) => Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('History', style: AppTextStyles.h2().copyWith(color: scheme.onSurface)),
-                    Text('${list.length} sessions', style: AppTextStyles.bodySm().copyWith(color: scheme.onSurfaceVariant)),
-                  ],
-                ),
-                loading: () => Text('History', style: AppTextStyles.h2().copyWith(color: scheme.onSurface)),
-                error: (e, st) => Text('History', style: AppTextStyles.h2().copyWith(color: scheme.onSurface)),
-              ),
-            ),
-            _FilterStrip(filters: filters),
-            const SizedBox(height: AppSpacing.sm),
-            Expanded(
-              child: async.when(
-                loading: () => ListView.separated(
-                  physics: const BouncingScrollPhysics(),
-                  padding: const EdgeInsets.all(AppSpacing.lg),
-                  itemCount: 6,
-                  separatorBuilder: (c, i) =>
-                      const SizedBox(height: AppSpacing.cardListGap),
-                  itemBuilder: (c, i) => Container(
-                    height: 120,
-                    decoration: BoxDecoration(
-                      color: scheme.surfaceContainerLow,
-                      borderRadius: BorderRadius.circular(AppRadius.lg),
-                    ),
+    final body = Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.fromLTRB(
+            AppSpacing.lg,
+            AppSpacing.md,
+            AppSpacing.lg,
+            AppSpacing.sm,
+          ),
+          child: async.when(
+            data: (list) => Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                if (!embedded)
+                  Text(
+                    'History',
+                    style: AppTextStyles.h2().copyWith(color: scheme.onSurface),
+                  ),
+                Text(
+                  '${list.length} sessions',
+                  style: AppTextStyles.bodySm().copyWith(
+                    color: scheme.onSurfaceVariant,
                   ),
                 ),
-                error: (e, st) => Center(
+              ],
+            ),
+            loading: () => embedded
+                ? Text(
+                    'Sessions',
+                    style: AppTextStyles.bodySm().copyWith(
+                      color: scheme.onSurfaceVariant,
+                    ),
+                  )
+                : Text(
+                    'History',
+                    style: AppTextStyles.h2().copyWith(color: scheme.onSurface),
+                  ),
+            error: (e, st) => embedded
+                ? const SizedBox.shrink()
+                : Text(
+                    'History',
+                    style: AppTextStyles.h2().copyWith(color: scheme.onSurface),
+                  ),
+          ),
+        ),
+        _FilterStrip(filters: filters),
+        const SizedBox(height: AppSpacing.sm),
+        Expanded(
+          child: async.when(
+            loading: () => ListView.separated(
+              physics: const BouncingScrollPhysics(),
+              padding: const EdgeInsets.all(AppSpacing.lg),
+              itemCount: 6,
+              separatorBuilder: (c, i) =>
+                  const SizedBox(height: AppSpacing.cardListGap),
+              itemBuilder: (c, i) => Container(
+                height: 120,
+                decoration: BoxDecoration(
+                  color: scheme.surfaceContainerLow,
+                  borderRadius: BorderRadius.circular(AppRadius.lg),
+                ),
+              ),
+            ),
+            error: (e, st) => Center(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text('Failed to load history', style: AppTextStyles.body()),
+                  const SizedBox(height: AppSpacing.md),
+                  OutlinedButton(
+                    onPressed: () => ref.invalidate(
+                      sessionSummariesProvider(
+                        subject: filters.subject,
+                        mode: filters.mode,
+                      ),
+                    ),
+                    child: Text('Retry', style: AppTextStyles.label()),
+                  ),
+                ],
+              ),
+            ),
+            data: (list) {
+              if (list.isEmpty) {
+                return Center(
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Text('Failed to load history', style: AppTextStyles.body()),
-                      const SizedBox(height: AppSpacing.md),
-                      OutlinedButton(
-                        onPressed: () => ref.invalidate(
-                          sessionSummariesProvider(
-                            subject: filters.subject,
-                            mode: filters.mode,
-                          ),
+                      Text(
+                        filters.subject == null && filters.mode == null
+                            ? 'No sessions yet'
+                            : 'No sessions found',
+                        style: AppTextStyles.h3().copyWith(
+                          color: scheme.onSurface,
                         ),
-                        child: Text('Retry', style: AppTextStyles.label()),
+                      ),
+                      const SizedBox(height: AppSpacing.sm),
+                      Text(
+                        filters.subject == null && filters.mode == null
+                            ? 'Complete a test to see your history here'
+                            : 'Try changing your filters',
+                        style: AppTextStyles.bodySm().copyWith(
+                          color: scheme.onSurfaceVariant,
+                        ),
                       ),
                     ],
                   ),
-                ),
-                data: (list) {
-                  if (list.isEmpty) {
-                    return Center(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Text(
-                            filters.subject == null && filters.mode == null
-                                ? 'No sessions yet'
-                                : 'No sessions found',
-                            style: AppTextStyles.h3().copyWith(color: scheme.onSurface),
-                          ),
-                          const SizedBox(height: AppSpacing.sm),
-                          Text(
-                            filters.subject == null && filters.mode == null
-                                ? 'Complete a test to see your history here'
-                                : 'Try changing your filters',
-                            style: AppTextStyles.bodySm()
-                                .copyWith(color: scheme.onSurfaceVariant),
-                          ),
-                        ],
-                      ),
-                    );
-                  }
-                  return ListView.separated(
-                    physics: const BouncingScrollPhysics(),
-                    padding: const EdgeInsets.all(AppSpacing.lg),
-                    itemCount: list.length,
-                    separatorBuilder: (c, i) =>
-                      const SizedBox(height: AppSpacing.cardListGap),
-                    itemBuilder: (c, i) => _SessionCard(summary: list[i]),
-                  );
-                },
-              ),
-            ),
-            const SizedBox(height: AppSpacing.lg),
-            const Center(child: ContactUsTextButton()),
-            const SizedBox(height: AppSpacing.sm),
-          ],
+                );
+              }
+              return ListView.separated(
+                physics: const BouncingScrollPhysics(),
+                padding: const EdgeInsets.all(AppSpacing.lg),
+                itemCount: list.length,
+                separatorBuilder: (c, i) =>
+                    const SizedBox(height: AppSpacing.cardListGap),
+                itemBuilder: (c, i) => _SessionCard(summary: list[i]),
+              );
+            },
+          ),
         ),
+        const SizedBox(height: AppSpacing.lg),
+        const Center(child: ContactUsTextButton()),
+        const SizedBox(height: AppSpacing.sm),
+      ],
+    );
+
+    if (embedded) return body;
+
+    return PopToShellHomeScope(
+      child: Scaffold(
+        body: SafeArea(child: body),
       ),
-    ),
     );
   }
 }

@@ -26,8 +26,8 @@ abstract final class ScreenFlow {
   static const String battleResults = 'battle_results';
 
   static List<String> shellTabNames({required bool hasCommunity}) => hasCommunity
-      ? const ['home', 'history', 'progress', 'community']
-      : const ['home', 'history', 'progress'];
+      ? const ['home', 'progress', 'games', 'community']
+      : const ['home', 'progress', 'games'];
 
   static Future<void> logShellTabDwellEnded(
     WidgetRef ref, {

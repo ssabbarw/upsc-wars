@@ -19,6 +19,25 @@ const IST_OFFSET_MS = (5 * 60 + 30) * 60 * 1000;
 const WARS = "daily_wars";
 const STATE = "daily_war_state";
 const CURRICULUM_DOC = "curriculum";
+/** RTDB path for cheap lobby / writing social counts (polled by clients). */
+const RTDB_COUNTS = "daily_war_counts";
+
+function rtdbCountsRef(dateId) {
+  return admin.database().ref(`${RTDB_COUNTS}/${dateId}`);
+}
+
+/** Increment a count field without touching the Firestore war doc (avoids listener fan-out). */
+async function bumpLiveCount(dateId, field) {
+  await rtdbCountsRef(dateId)
+    .child(field)
+    .set(admin.database.ServerValue.increment(1));
+}
+
+async function readLiveCount(dateId, field) {
+  const snap = await rtdbCountsRef(dateId).child(field).get();
+  const v = snap.val();
+  return typeof v === "number" ? v : 0;
+}
 
 const SUBJECT_ROTATION = [
   "polity",
@@ -260,6 +279,7 @@ async function generateWarForDateId(dateId, { force = false } = {}) {
     status: "announced",
     question_uuids: [],
     participant_count: 0,
+    lobby_count: 0,
     created_at: admin.firestore.FieldValue.serverTimestamp(),
     updated_at: admin.firestore.FieldValue.serverTimestamp(),
   };
@@ -362,6 +382,8 @@ async function rankWar(dateId) {
       { air, percentile, ranked_at: admin.firestore.FieldValue.serverTimestamp() },
       { merge: true },
     );
+    row.air = air;
+    row.percentile = percentile;
     if (air <= 100) {
       top.push({
         uid: row.uid,
@@ -395,8 +417,20 @@ async function rankWar(dateId) {
     { merge: true },
   );
   await batch.commit();
-  return { ok: true, dateId, participants: n };
+  return {
+    ok: true,
+    dateId,
+    participants: n,
+    rows: rows.map((r) => ({
+      uid: r.uid,
+      air: r.air,
+      score: r.score,
+      percentile: r.percentile,
+    })),
+  };
 }
+
+const notif = require("./notifications");
 
 // --- Schedules (Asia/Kolkata) ---
 
@@ -409,6 +443,48 @@ exports.generateDailyWar = onSchedule(
   async () => {
     const parts = istParts();
     await generateWarForDateId(parts.iso);
+  },
+);
+
+/** N1/N7 — morning topics (war already generated at 05:50). */
+exports.notifyDailyWarMorning = onSchedule(
+  {
+    schedule: "10 6 * * *",
+    timeZone: "Asia/Kolkata",
+    region: "asia-south1",
+  },
+  async () => {
+    const parts = istParts();
+    const result = await notif.notifyMorning(parts.iso);
+    console.log("notifyDailyWarMorning", result);
+  },
+);
+
+/** N2 — 30 minutes before start. */
+exports.notifyDailyWarReminder = onSchedule(
+  {
+    schedule: "30 20 * * *",
+    timeZone: "Asia/Kolkata",
+    region: "asia-south1",
+  },
+  async () => {
+    const parts = istParts();
+    const result = await notif.notifyReminder30(parts.iso);
+    console.log("notifyDailyWarReminder", result);
+  },
+);
+
+/** N3 — lobby open (8:50; lobby itself opens 8:45). */
+exports.notifyDailyWarLobby = onSchedule(
+  {
+    schedule: "50 20 * * *",
+    timeZone: "Asia/Kolkata",
+    region: "asia-south1",
+  },
+  async () => {
+    const parts = istParts();
+    const result = await notif.notifyLobbyOpen(parts.iso);
+    console.log("notifyDailyWarLobby", result);
   },
 );
 
@@ -432,7 +508,14 @@ exports.rankDailyWar = onSchedule(
   },
   async () => {
     const parts = istParts();
-    await rankWar(parts.iso);
+    const ranked = await rankWar(parts.iso);
+    try {
+      const rows = ranked && ranked.rows ? ranked.rows : [];
+      const push = await notif.notifyResultsReady(parts.iso, rows);
+      console.log("notifyResultsReady", push);
+    } catch (e) {
+      console.error("notifyResultsReady failed", e);
+    }
   },
 );
 
@@ -519,13 +602,12 @@ exports.submitDailyWar = onCall(
     );
 
     if (mode === "live") {
-      await warRef.set(
-        {
-          participant_count: admin.firestore.FieldValue.increment(1),
-          updated_at: admin.firestore.FieldValue.serverTimestamp(),
-        },
-        { merge: true },
-      );
+      // RTDB only — do not increment Firestore war doc (home listeners).
+      try {
+        await bumpLiveCount(dateId, "writing");
+      } catch (e) {
+        console.warn("bumpLiveCount(writing) failed", e);
+      }
     }
 
     return {
@@ -539,33 +621,143 @@ exports.submitDailyWar = onCall(
   },
 );
 
+function assertDailyWarAdmin(request) {
+  if (!request.auth || !request.auth.token.email) {
+    throw new HttpsError("unauthenticated", "Sign in required.");
+  }
+  const email = String(request.auth.token.email).toLowerCase();
+  const allow = new Set(
+    (process.env.QUESTION_EDITOR_EMAILS || "")
+      .split(",")
+      .map((e) => e.trim().toLowerCase())
+      .filter(Boolean),
+  );
+  [
+    "sachinsabbarwal@gmail.com",
+    "upscwars@gmail.com",
+    "tinyminyapps@gmail.com",
+    "upscmcqpractice@gmail.com",
+  ].forEach((e) => allow.add(e));
+  if (!allow.has(email)) {
+    throw new HttpsError("permission-denied", "Not allowed.");
+  }
+  return email;
+}
+
 /** Admin/debug callable to generate or republish for a date. */
 exports.adminGenerateDailyWar = onCall(
   { region: "asia-south1" },
   async (request) => {
-    if (!request.auth || !request.auth.token.email) {
-      throw new HttpsError("unauthenticated", "Sign in required.");
-    }
-    const email = String(request.auth.token.email).toLowerCase();
-    const allow = new Set(
-      (process.env.QUESTION_EDITOR_EMAILS || "")
-        .split(",")
-        .map((e) => e.trim().toLowerCase())
-        .filter(Boolean),
-    );
-    // Fallback super users if env empty
-    [
-      "sachinsabbarwal@gmail.com",
-      "upscwars@gmail.com",
-      "tinyminyapps@gmail.com",
-    ].forEach((e) => allow.add(e));
-    if (!allow.has(email)) {
-      throw new HttpsError("permission-denied", "Not allowed.");
-    }
+    assertDailyWarAdmin(request);
     const dateId =
       (request.data && request.data.dateId) || istParts().iso;
     const force = !!(request.data && request.data.force);
     return generateWarForDateId(dateId, { force });
+  },
+);
+
+/**
+ * Admin preview — reads private UUID list before public publish (20:59).
+ * Does not expose correct answers by default (set includeAnswers: true to get keys).
+ */
+exports.adminPreviewDailyWar = onCall(
+  { region: "asia-south1" },
+  async (request) => {
+    assertDailyWarAdmin(request);
+    const dateId =
+      (request.data && request.data.dateId) || istParts().iso;
+    const includeAnswers = !!(request.data && request.data.includeAnswers);
+
+    const warRef = db().collection(WARS).doc(dateId);
+    const warSnap = await warRef.get();
+    if (!warSnap.exists) {
+      throw new HttpsError("not-found", `No war for ${dateId}. Generate first.`);
+    }
+    const war = warSnap.data() || {};
+    const answersSnap = await warRef.collection("private").doc("answers").get();
+    if (!answersSnap.exists) {
+      throw new HttpsError(
+        "failed-precondition",
+        "Private paper missing — generate the war first.",
+      );
+    }
+    const privateData = answersSnap.data() || {};
+    const uuids = privateData.uuids || [];
+    const publicUuids = war.question_uuids || [];
+
+    return {
+      ok: true,
+      dateId,
+      kind: war.kind || "daily",
+      status: war.status || "announced",
+      topics: war.topics || [],
+      next_topics: war.next_topics || [],
+      question_count: war.question_count || uuids.length,
+      /** Full paper UUIDs (private) — use to review in admin app before 20:59. */
+      private_uuids: uuids,
+      /** Empty until publish job / adminPublishDailyWar. */
+      public_uuids: publicUuids,
+      is_publicly_published:
+        Array.isArray(publicUuids) && publicUuids.length > 0,
+      ...(includeAnswers ? { answers: privateData.answers || {} } : {}),
+    };
+  },
+);
+
+/** Admin can force-publish private UUIDs to the public war doc (normally 20:59). */
+exports.adminPublishDailyWar = onCall(
+  { region: "asia-south1" },
+  async (request) => {
+    assertDailyWarAdmin(request);
+    const dateId =
+      (request.data && request.data.dateId) || istParts().iso;
+    return publishQuestions(dateId);
+  },
+);
+
+/**
+ * Callable: joinDailyWarLobby
+ * Idempotent per uid/day — bumps RTDB lobby count once (not Firestore war doc).
+ * data: { dateId? }
+ */
+exports.joinDailyWarLobby = onCall(
+  { region: "asia-south1" },
+  async (request) => {
+    if (!request.auth) {
+      throw new HttpsError("unauthenticated", "Sign in required.");
+    }
+    const uid = request.auth.uid;
+    const dateId =
+      (request.data && typeof request.data.dateId === "string"
+        ? request.data.dateId.trim()
+        : "") || istParts().iso;
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(dateId)) {
+      throw new HttpsError("invalid-argument", "Invalid dateId.");
+    }
+
+    const warRef = db().collection(WARS).doc(dateId);
+    const presenceRef = warRef.collection("lobby_presence").doc(uid);
+
+    const firstJoin = await db().runTransaction(async (tx) => {
+      const warSnap = await tx.get(warRef);
+      if (!warSnap.exists) {
+        throw new HttpsError("not-found", "War not found.");
+      }
+      const presenceSnap = await tx.get(presenceRef);
+      if (presenceSnap.exists) {
+        return false;
+      }
+      tx.set(presenceRef, {
+        joined_at: admin.firestore.FieldValue.serverTimestamp(),
+      });
+      return true;
+    });
+
+    if (firstJoin) {
+      await bumpLiveCount(dateId, "lobby");
+    }
+    const lobbyCount = await readLiveCount(dateId, "lobby");
+    return { ok: true, lobbyCount, already: !firstJoin };
   },
 );
 

@@ -25,7 +25,6 @@ import '../../features/battle/screens/battle_join_screen.dart';
 import '../../features/battle/screens/battle_result_screen.dart';
 import '../../features/battle/screens/battle_test_screen.dart';
 import '../../features/battle/screens/battle_waiting_screen.dart';
-import '../../features/history/screens/history_screen.dart';
 import '../../features/history/screens/session_review_screen.dart';
 import '../../features/community/screens/community_screen.dart';
 import '../../features/community/screens/post_qotd_flow_screen.dart';
@@ -50,7 +49,7 @@ import '../../features/home/screens/complete_profile_screen.dart';
 import '../../features/home/screens/profile_screen.dart';
 import '../../features/home/screens/settings_screen.dart';
 import '../../features/home/screens/about_us_screen.dart';
-import '../../features/home/screens/progress_screen.dart';
+import '../../features/home/screens/progress_hub_screen.dart';
 import '../../features/admin_dashboard/admin_dashboard_access.dart';
 import '../../features/admin_dashboard/screens/admin_dashboard_screen.dart';
 import '../../features/internal/screens/feature_health_screen.dart';
@@ -139,18 +138,74 @@ GoRouter appRouter(Ref ref) {
     StatefulShellBranch(
       routes: [
         GoRoute(
-          path: '/history',
-          name: 'history',
-          builder: (context, state) => const HistoryScreen(),
+          path: '/progress',
+          name: 'progress',
+          builder: (context, state) {
+            final tab = state.uri.queryParameters['tab'];
+            final history = tab == 'history';
+            return ProgressHubScreen(initialTabIndex: history ? 1 : 0);
+          },
         ),
       ],
     ),
     StatefulShellBranch(
       routes: [
         GoRoute(
-          path: '/progress',
-          name: 'progress',
-          builder: (context, state) => const ProgressScreen(),
+          path: '/games',
+          name: 'games_hub',
+          builder: (context, state) => const GamesHubScreen(asShellTab: true),
+          routes: [
+            GoRoute(
+              parentNavigatorKey: rootNavigatorKey,
+              path: 'timeline-sorter',
+              name: 'timeline_sorter',
+              builder: (context, state) => TimelineSorterScreen(
+                subjectsCsv: state.uri.queryParameters['subjects'] ?? '',
+                difficultiesCsv: state.uri.queryParameters['difficulty'] ?? '',
+                initialLang: state.uri.queryParameters['lang'] ?? '',
+              ),
+            ),
+            GoRoute(
+              parentNavigatorKey: rootNavigatorKey,
+              path: 'odd-one-out',
+              name: 'odd_one_out',
+              builder: (context, state) => OddOneOutScreen(
+                subjectsCsv: state.uri.queryParameters['subjects'] ?? '',
+                difficultiesCsv: state.uri.queryParameters['difficulty'] ?? '',
+                initialLang: state.uri.queryParameters['lang'] ?? '',
+              ),
+            ),
+            GoRoute(
+              parentNavigatorKey: rootNavigatorKey,
+              path: 'fact-or-bluff',
+              name: 'fact_or_bluff',
+              builder: (context, state) => FactOrBluffScreen(
+                subjectsCsv: state.uri.queryParameters['subjects'] ?? '',
+                difficultiesCsv: state.uri.queryParameters['difficulty'] ?? '',
+                initialLang: state.uri.queryParameters['lang'] ?? '',
+              ),
+            ),
+            GoRoute(
+              parentNavigatorKey: rootNavigatorKey,
+              path: 'connect-the-dots',
+              name: 'connect_the_dots',
+              builder: (context, state) => ConnectTheDotsScreen(
+                subjectsCsv: state.uri.queryParameters['subjects'] ?? '',
+                difficultiesCsv: state.uri.queryParameters['difficulty'] ?? '',
+                initialLang: state.uri.queryParameters['lang'] ?? '',
+              ),
+            ),
+            GoRoute(
+              parentNavigatorKey: rootNavigatorKey,
+              path: 'duel',
+              name: 'duel',
+              builder: (context, state) => DuelScreen(
+                subjectsCsv: state.uri.queryParameters['subjects'] ?? '',
+                difficultiesCsv: state.uri.queryParameters['difficulty'] ?? '',
+                initialLang: state.uri.queryParameters['lang'] ?? '',
+              ),
+            ),
+          ],
         ),
       ],
     ),
@@ -707,6 +762,10 @@ GoRouter appRouter(Ref ref) {
         },
       ),
       GoRoute(
+        path: '/history',
+        redirect: (context, state) => '/progress?tab=history',
+      ),
+      GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/history/:sessionId',
         name: 'session_history_review',
@@ -736,62 +795,6 @@ GoRouter appRouter(Ref ref) {
             autoplay: q['autoplay'] == '1' || q['autoplay'] == 'true',
           );
         },
-      ),
-      GoRoute(
-        parentNavigatorKey: rootNavigatorKey,
-        path: '/games',
-        name: 'games_hub',
-        builder: (context, state) => const GamesHubScreen(),
-      ),
-      GoRoute(
-        parentNavigatorKey: rootNavigatorKey,
-        path: '/games/timeline-sorter',
-        name: 'timeline_sorter',
-        builder: (context, state) => TimelineSorterScreen(
-          subjectsCsv: state.uri.queryParameters['subjects'] ?? '',
-          difficultiesCsv: state.uri.queryParameters['difficulty'] ?? '',
-          initialLang: state.uri.queryParameters['lang'] ?? '',
-        ),
-      ),
-      GoRoute(
-        parentNavigatorKey: rootNavigatorKey,
-        path: '/games/odd-one-out',
-        name: 'odd_one_out',
-        builder: (context, state) => OddOneOutScreen(
-          subjectsCsv: state.uri.queryParameters['subjects'] ?? '',
-          difficultiesCsv: state.uri.queryParameters['difficulty'] ?? '',
-          initialLang: state.uri.queryParameters['lang'] ?? '',
-        ),
-      ),
-      GoRoute(
-        parentNavigatorKey: rootNavigatorKey,
-        path: '/games/fact-or-bluff',
-        name: 'fact_or_bluff',
-        builder: (context, state) => FactOrBluffScreen(
-          subjectsCsv: state.uri.queryParameters['subjects'] ?? '',
-          difficultiesCsv: state.uri.queryParameters['difficulty'] ?? '',
-          initialLang: state.uri.queryParameters['lang'] ?? '',
-        ),
-      ),
-      GoRoute(
-        parentNavigatorKey: rootNavigatorKey,
-        path: '/games/connect-the-dots',
-        name: 'connect_the_dots',
-        builder: (context, state) => ConnectTheDotsScreen(
-          subjectsCsv: state.uri.queryParameters['subjects'] ?? '',
-          difficultiesCsv: state.uri.queryParameters['difficulty'] ?? '',
-          initialLang: state.uri.queryParameters['lang'] ?? '',
-        ),
-      ),
-      GoRoute(
-        parentNavigatorKey: rootNavigatorKey,
-        path: '/games/duel',
-        name: 'duel',
-        builder: (context, state) => DuelScreen(
-          subjectsCsv: state.uri.queryParameters['subjects'] ?? '',
-          difficultiesCsv: state.uri.queryParameters['difficulty'] ?? '',
-          initialLang: state.uri.queryParameters['lang'] ?? '',
-        ),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
@@ -1005,14 +1008,14 @@ class _AppShell extends HookConsumerWidget {
         label: 'Home',
       ),
       const BottomNavigationBarItem(
-        icon: Icon(Icons.access_time_outlined, size: 22),
-        activeIcon: Icon(Icons.access_time, size: 22),
-        label: 'History',
-      ),
-      const BottomNavigationBarItem(
         icon: Icon(Icons.bar_chart_outlined, size: 22),
         activeIcon: Icon(Icons.bar_chart, size: 22),
         label: 'Progress',
+      ),
+      const BottomNavigationBarItem(
+        icon: Icon(Icons.sports_esports_outlined, size: 22),
+        activeIcon: Icon(Icons.sports_esports, size: 22),
+        label: 'Games',
       ),
       if (showCommunityTab)
         BottomNavigationBarItem(
@@ -1101,14 +1104,14 @@ class _AppShell extends HookConsumerWidget {
           label: const Text('Home'),
         ),
         NavigationRailDestination(
-          icon: Icon(Icons.access_time_outlined, size: railIconSize),
-          selectedIcon: Icon(Icons.access_time, size: railIconSize),
-          label: const Text('History'),
-        ),
-        NavigationRailDestination(
           icon: Icon(Icons.bar_chart_outlined, size: railIconSize),
           selectedIcon: Icon(Icons.bar_chart, size: railIconSize),
           label: const Text('Progress'),
+        ),
+        NavigationRailDestination(
+          icon: Icon(Icons.sports_esports_outlined, size: railIconSize),
+          selectedIcon: Icon(Icons.sports_esports, size: railIconSize),
+          label: const Text('Games'),
         ),
         if (showCommunityTab)
           NavigationRailDestination(

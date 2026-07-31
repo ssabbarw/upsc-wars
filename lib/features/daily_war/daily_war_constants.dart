@@ -8,6 +8,12 @@ abstract final class DailyWarConstants {
 
   static const functionsRegion = 'asia-south1';
 
+  /// RTDB path: `daily_war_counts/{dateId}` → `{ lobby, writing }`.
+  static const rtdbCountsRoot = 'daily_war_counts';
+
+  /// How often clients poll RTDB live counts during lobby / live.
+  static const liveCountPollSeconds = 5;
+
   static bool isDailyWarFeatureKey(String? key) =>
       key == analyticsLive || key == analyticsUnranked;
 

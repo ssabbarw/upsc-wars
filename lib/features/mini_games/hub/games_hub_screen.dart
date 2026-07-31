@@ -4,6 +4,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/constants/subject_constants.dart';
 import '../../../core/providers/app_language_helpers.dart';
+import '../../../shared/widgets/pop_to_shell_home_scope.dart';
 import '../connect_the_dots/connect_the_dots_controller.dart';
 import '../duel/duel_controller.dart';
 import '../fact_or_bluff/fact_or_bluff_controller.dart';
@@ -337,15 +338,19 @@ class _SubjectPickerSheetState extends State<_SubjectPickerSheet> {
 }
 
 class GamesHubScreen extends HookConsumerWidget {
-  const GamesHubScreen({super.key});
+  const GamesHubScreen({super.key, this.asShellTab = false});
+
+  /// When true, hide back and wrap with [PopToShellHomeScope] (bottom-nav tab).
+  final bool asShellTab;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     useGameScreenOpenedAnalytics(ref, RevisionGameNames.gamesHub);
     final lang = watchAppLanguage(ref);
-    return RgGameScaffold(
+    final hub = RgGameScaffold(
       title: 'Revision Games',
       centerTitle: true,
+      showBack: !asShellTab,
       trailing: RgLangToggle(
         language: lang,
         onChanged: (v) => persistAppLanguage(ref, v),
@@ -360,6 +365,8 @@ class GamesHubScreen extends HookConsumerWidget {
         ),
       ),
     );
+    if (!asShellTab) return hub;
+    return PopToShellHomeScope(child: hub);
   }
 }
 

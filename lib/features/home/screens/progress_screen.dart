@@ -20,7 +20,10 @@ import '../../subject_detail/domain/subject_overview_row.dart';
 import '../../subject_detail/providers/all_subjects_overview_provider.dart';
 
 class ProgressScreen extends HookConsumerWidget {
-  const ProgressScreen({super.key});
+  const ProgressScreen({super.key, this.embedded = false});
+
+  /// When true, omit [Scaffold] / [PopToShellHomeScope] (used inside Progress hub).
+  final bool embedded;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -29,79 +32,79 @@ class ProgressScreen extends HookConsumerWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final borderColor = isDark ? AppColors.borderDark : AppColors.borderLight;
 
-    return PopToShellHomeScope(
-      child: Scaffold(
-        body: SafeArea(
-          child: overviewAsync.when(
-          loading: () => _ProgressSkeleton(borderColor: borderColor),
-          error: (e, _) => Center(
-            child: Text(
-              'Could not load overview.',
-              style: AppTextStyles.bodySm().copyWith(
-                color: Theme.of(context).colorScheme.onSurfaceVariant,
-              ),
-            ),
+    final body = overviewAsync.when(
+      loading: () => _ProgressSkeleton(borderColor: borderColor),
+      error: (e, _) => Center(
+        child: Text(
+          'Could not load overview.',
+          style: AppTextStyles.bodySm().copyWith(
+            color: Theme.of(context).colorScheme.onSurfaceVariant,
           ),
-          data: (rows) {
-            final sorted = _sortedRows(rows, sortMode.value);
-            final totalWrong = rows.fold(
-              0,
-              (sum, r) => sum + r.wrongAnswerCount,
-            );
-            final attemptedCount = rows.where((r) => r.hasAttempts).length;
-
-            return CustomScrollView(
-              slivers: [
-                // ── Header ────────────────────────────────────────────────
-                SliverToBoxAdapter(
-                  child: _Header(
-                    totalWrong: totalWrong,
-                    attemptedCount: attemptedCount,
-                    borderColor: borderColor,
-                  ),
-                ),
-                // ── Sort chips ────────────────────────────────────────────
-                SliverToBoxAdapter(
-                  child: _SortChips(
-                    sortMode: sortMode.value,
-                    onSortChanged: (m) => sortMode.value = m,
-                  ),
-                ),
-                // ── Subject rows ──────────────────────────────────────────
-                SliverPadding(
-                  padding: const EdgeInsets.fromLTRB(
-                    AppSpacing.lg,
-                    AppSpacing.sm,
-                    AppSpacing.lg,
-                    AppSpacing.xxl,
-                  ),
-                  sliver: SliverList.separated(
-                    itemCount: sorted.length,
-                    separatorBuilder: (_, _) =>
-                        const SizedBox(height: AppSpacing.cardListGap),
-                    itemBuilder: (context, i) => _SubjectRow(
-                      row: sorted[i],
-                      borderColor: borderColor,
-                    ),
-                  ),
-                ),
-                SliverToBoxAdapter(
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(
-                      AppSpacing.lg,
-                      AppSpacing.md,
-                      AppSpacing.lg,
-                      AppSpacing.xxxl,
-                    ),
-                    child: const Center(child: ContactUsTextButton()),
-                  ),
-                ),
-              ],
-            );
-          },
         ),
       ),
-    ),
+      data: (rows) {
+        final sorted = _sortedRows(rows, sortMode.value);
+        final totalWrong = rows.fold(
+          0,
+          (sum, r) => sum + r.wrongAnswerCount,
+        );
+        final attemptedCount = rows.where((r) => r.hasAttempts).length;
+
+        return CustomScrollView(
+          slivers: [
+            SliverToBoxAdapter(
+              child: _Header(
+                totalWrong: totalWrong,
+                attemptedCount: attemptedCount,
+                borderColor: borderColor,
+                showTitle: !embedded,
+              ),
+            ),
+            SliverToBoxAdapter(
+              child: _SortChips(
+                sortMode: sortMode.value,
+                onSortChanged: (m) => sortMode.value = m,
+              ),
+            ),
+            SliverPadding(
+              padding: const EdgeInsets.fromLTRB(
+                AppSpacing.lg,
+                AppSpacing.sm,
+                AppSpacing.lg,
+                AppSpacing.xxl,
+              ),
+              sliver: SliverList.separated(
+                itemCount: sorted.length,
+                separatorBuilder: (_, _) =>
+                    const SizedBox(height: AppSpacing.cardListGap),
+                itemBuilder: (context, i) => _SubjectRow(
+                  row: sorted[i],
+                  borderColor: borderColor,
+                ),
+              ),
+            ),
+            SliverToBoxAdapter(
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(
+                  AppSpacing.lg,
+                  AppSpacing.md,
+                  AppSpacing.lg,
+                  AppSpacing.xxxl,
+                ),
+                child: const Center(child: ContactUsTextButton()),
+              ),
+            ),
+          ],
+        );
+      },
+    );
+
+    if (embedded) return body;
+
+    return PopToShellHomeScope(
+      child: Scaffold(
+        body: SafeArea(child: body),
+      ),
     );
   }
 
@@ -145,11 +148,13 @@ class _Header extends StatelessWidget {
     required this.totalWrong,
     required this.attemptedCount,
     required this.borderColor,
+    this.showTitle = true,
   });
 
   final int totalWrong;
   final int attemptedCount;
   final Color borderColor;
+  final bool showTitle;
 
   @override
   Widget build(BuildContext context) {
@@ -157,17 +162,19 @@ class _Header extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return Padding(
-      padding: const EdgeInsets.fromLTRB(
+      padding: EdgeInsets.fromLTRB(
         AppSpacing.lg,
-        AppSpacing.lg,
+        showTitle ? AppSpacing.lg : AppSpacing.md,
         AppSpacing.lg,
         AppSpacing.md,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('Progress', style: AppTextStyles.h2()),
-          const SizedBox(height: AppSpacing.xs),
+          if (showTitle) ...[
+            Text('Progress', style: AppTextStyles.h2()),
+            const SizedBox(height: AppSpacing.xs),
+          ],
           Text(
             'Your performance across all subjects',
             style: AppTextStyles.bodySm().copyWith(

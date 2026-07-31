@@ -5,27 +5,35 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../core/constants/subject_constants.dart';
 import '../../../core/domain/entities/session_config.dart';
 import '../../../core/providers/catalog_providers.dart';
-import '../../../core/theme/app_radius.dart';
-import '../../../core/theme/app_spacing.dart';
-import '../../../core/theme/app_text_styles.dart';
+import '../../../core/providers/kill_switch_provider.dart';
 import '../daily_war_constants.dart';
+import '../data/daily_war_cloud_service.dart';
+import '../domain/daily_war_copy.dart';
 import '../domain/daily_war_phase.dart';
 import '../domain/daily_war_schedule.dart';
 import '../providers/daily_war_providers.dart';
 import '../providers/server_clock_provider.dart';
+import '../theme/daily_war_theme.dart';
 
 class DailyWarLobbyScreen extends HookConsumerWidget {
   const DailyWarLobbyScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final scheme = Theme.of(context).colorScheme;
     final snap = ref.watch(dailyWarHomeSnapshotProvider);
     final launching = useState(false);
     final tick = useState(0);
+    final countEnabled =
+        ref.watch(dailyWarLobbyCountRemoteEnabledProvider).asData?.value ??
+            true;
+    final minVisible =
+        ref.watch(dailyWarMinVisibleLobbyCountRemoteProvider).asData?.value ??
+            DailyWarSchedule.minVisibleParticipantCount;
+    final liveCounts =
+        ref.watch(dailyWarLiveCountsProvider).asData?.value ??
+            const DailyWarLiveCounts.empty();
 
     useEffect(() {
       final t = Timer.periodic(const Duration(seconds: 1), (_) {
@@ -34,6 +42,20 @@ class DailyWarLobbyScreen extends HookConsumerWidget {
       return t.cancel;
     }, const []);
     tick.value;
+
+    final joinedLobbyDate = useRef<String?>(null);
+    useEffect(() {
+      if (snap.phase != DailyWarPhase.lobby &&
+          snap.phase != DailyWarPhase.liveJoinable) {
+        return null;
+      }
+      if (joinedLobbyDate.value == snap.dateId) return null;
+      joinedLobbyDate.value = snap.dateId;
+      unawaited(
+        const DailyWarCloudService().joinLobby(dateId: snap.dateId),
+      );
+      return null;
+    }, [snap.dateId, snap.phase]);
 
     final offset = ref.watch(serverTimeOffsetMsProvider).asData?.value ?? 0;
     final utc = DateTime.fromMillisecondsSinceEpoch(
@@ -44,20 +66,24 @@ class DailyWarLobbyScreen extends HookConsumerWidget {
     final warDate = DailyWarSchedule.warDateFor(ist);
     final start = DailyWarSchedule.startAtForDate(warDate);
     final liveEnd = DailyWarSchedule.liveEndsAt(warDate);
+    final lateClose = DailyWarSchedule.lateJoinClosesAt(warDate);
     final untilStart = start.difference(ist);
+    final untilLate = lateClose.difference(ist);
     final canEnter = snap.phase == DailyWarPhase.lobby ||
         snap.phase == DailyWarPhase.liveJoinable;
     final alreadyDone = snap.submission != null;
-
+    final isGrand = snap.doc?.isGrand == true;
+    final qCount = snap.doc?.questionCount ??
+        DailyWarSchedule.questionCountForDate(warDate);
     final topics = snap.doc?.topics ?? const [];
-    final topicLines = topics
-        .map((t) {
-          final sub =
-              SubjectConstants.bySlug(t.subjectSlug)?.displayName ??
-              t.subjectSlug;
-          return '$sub · ${t.topic}';
-        })
-        .toList();
+
+    final countShown = DailyWarCopy.formatVisibleCount(
+      raw: snap.phase == DailyWarPhase.lobby
+          ? (liveCounts.lobby > 0 ? liveCounts.lobby : null)
+          : (liveCounts.writing > 0 ? liveCounts.writing : null),
+      enabled: countEnabled,
+      minVisible: minVisible,
+    );
 
     Future<void> enterWar({required bool unranked}) async {
       if (launching.value) return;
@@ -68,17 +94,15 @@ class DailyWarLobbyScreen extends HookConsumerWidget {
         );
         return;
       }
-      if (!unranked && doc.questionUuids.isEmpty) {
+      if (doc.questionUuids.isEmpty) {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('Questions publish just before 9 PM. Try again shortly.'),
+          SnackBar(
+            content: Text(
+              unranked
+                  ? 'Paper not available yet.'
+                  : 'Questions publish just before 9 PM. Try again shortly.',
+            ),
           ),
-        );
-        return;
-      }
-      if (unranked && doc.questionUuids.isEmpty) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Paper not available yet.')),
         );
         return;
       }
@@ -119,41 +143,67 @@ class DailyWarLobbyScreen extends HookConsumerWidget {
       }
     }
 
+    String mmSs(Duration d) {
+      final full = DailyWarSchedule.formatCountdown(d);
+      return full.length > 5 ? full.substring(3) : full;
+    }
+
     return Scaffold(
+      backgroundColor: DwColors.surface,
       appBar: AppBar(
+        backgroundColor: DwColors.surface,
+        foregroundColor: DwColors.onDark,
         title: Text(
-          snap.doc?.isGrand == true ? 'Grand War' : 'Daily War',
-          style: AppTextStyles.h3(),
+          isGrand ? 'Grand War' : 'Daily War',
+          style: DwText.dm(size: 18, weight: FontWeight.w700),
         ),
         actions: [
           TextButton(
             onPressed: () => context.push(dailyWarHistoryRoute()),
-            child: const Text('History'),
+            child: Text(
+              'History',
+              style: DwText.dm(
+                size: 13,
+                weight: FontWeight.w600,
+                color: DwColors.onDarkMuted,
+              ),
+            ),
           ),
         ],
       ),
       body: ListView(
-        padding: const EdgeInsets.all(AppSpacing.lg),
+        padding: const EdgeInsets.fromLTRB(20, 8, 20, 32),
         children: [
           Text(
-            snap.dateId,
-            style: AppTextStyles.caption().copyWith(
-              color: scheme.onSurfaceVariant,
-            ),
+            snap.phase == DailyWarPhase.lobby
+                ? 'LOBBY OPEN'
+                : snap.phase == DailyWarPhase.liveJoinable
+                    ? 'WAR IS LIVE'
+                    : _statusEyebrow(snap.phase),
+            style: DwText.eyebrow(),
           ),
-          const SizedBox(height: AppSpacing.sm),
-          ...topicLines.map(
-            (line) => Padding(
-              padding: const EdgeInsets.only(bottom: AppSpacing.xs),
-              child: Text(line, style: AppTextStyles.h3()),
+          const SizedBox(height: 8),
+          if (topics.isEmpty)
+            Text('Tonight\'s topics loading…', style: DwText.topic())
+          else ...[
+            Text(
+              DailyWarCopy.subjectsLine(topics).toUpperCase(),
+              style: DwText.subject(color: DwColors.crimsonBright),
             ),
-          ),
-          const SizedBox(height: AppSpacing.md),
+            const SizedBox(height: 6),
+            for (final t in topics)
+              Padding(
+                padding: const EdgeInsets.only(bottom: 4),
+                child: Text(t.topic, style: DwText.topic()),
+              ),
+          ],
+          const SizedBox(height: 16),
           Container(
-            padding: const EdgeInsets.all(AppSpacing.lg),
+            padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
-              color: scheme.surfaceContainerLow,
-              borderRadius: BorderRadius.circular(AppRadius.lg),
+              color: DwColors.surfaceRaised,
+              borderRadius: BorderRadius.circular(16),
+              border: Border.all(color: DwColors.borderOnDark),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -161,71 +211,96 @@ class DailyWarLobbyScreen extends HookConsumerWidget {
                 Text(
                   canEnter
                       ? (snap.phase == DailyWarPhase.lobby
-                            ? 'Lobby open · starts in ${DailyWarSchedule.formatCountdown(untilStart)}'
-                            : 'War is LIVE · join now')
+                          ? 'Starts in ${DailyWarSchedule.formatCountdown(untilStart)}'
+                          : 'Join until 9:10 · ${mmSs(untilLate)} left')
                       : _statusCopy(snap.phase),
-                  style: AppTextStyles.label(),
+                  style: DwText.dm(size: 14, weight: FontWeight.w600),
                 ),
-                const SizedBox(height: AppSpacing.sm),
+                const SizedBox(height: 8),
                 Text(
-                  '${snap.doc?.questionCount ?? 15} questions · 20 min · −1/3 wrong · one live attempt',
-                  style: AppTextStyles.bodySm().copyWith(
-                    color: scheme.onSurfaceVariant,
+                  DailyWarCopy.rulesLineLobby(
+                    questionCount: qCount,
+                    isGrand: isGrand,
                   ),
+                  style: DwText.body(),
                 ),
+                if (countShown != null &&
+                    (snap.phase == DailyWarPhase.lobby ||
+                        snap.phase == DailyWarPhase.liveJoinable)) ...[
+                  const SizedBox(height: 14),
+                  Text(countShown, style: DwText.heroNumber()),
+                  Text(
+                    snap.phase == DailyWarPhase.lobby
+                        ? 'aspirants in the lobby'
+                        : 'writing right now',
+                    style: DwText.body(),
+                  ),
+                ],
               ],
             ),
           ),
-          const SizedBox(height: AppSpacing.lg),
+          const SizedBox(height: 24),
           if (alreadyDone)
-            FilledButton(
+            _DwButton(
+              label: snap.submission?.hasOfficialRank == true
+                  ? 'See your AIR ${snap.submission!.air}'
+                  : 'Open History',
               onPressed: () => context.push(dailyWarHistoryRoute()),
-              child: Text(
-                snap.submission?.hasOfficialRank == true
-                    ? 'See your AIR ${snap.submission!.air}'
-                    : 'Open History',
-              ),
             )
           else if (canEnter)
-            FilledButton(
+            _DwButton(
+              label: launching.value
+                  ? 'Starting…'
+                  : (snap.phase == DailyWarPhase.lobby
+                      ? 'I\'m ready'
+                      : 'Join now'),
               onPressed: launching.value
                   ? null
                   : () => unawaited(enterWar(unranked: false)),
-              style: FilledButton.styleFrom(
-                backgroundColor: const Color(0xFFDC2626),
-                minimumSize: const Size.fromHeight(48),
-              ),
-              child: launching.value
-                  ? const SizedBox(
-                      width: 22,
-                      height: 22,
-                      child: CircularProgressIndicator(strokeWidth: 2),
-                    )
-                  : const Text('I\'m ready'),
+              loading: launching.value,
             )
           else if (snap.phase == DailyWarPhase.resultsReady ||
               snap.phase == DailyWarPhase.resultsPending)
-            OutlinedButton(
+            _DwButton(
+              label: 'Attempt unranked',
+              filled: false,
               onPressed: launching.value
                   ? null
                   : () => unawaited(enterWar(unranked: true)),
-              child: const Text('Attempt unranked'),
             )
           else
             Text(
               'Come back at 8:45 PM IST to enter the lobby.',
-              style: AppTextStyles.bodySm().copyWith(
-                color: scheme.onSurfaceVariant,
-              ),
+              style: DwText.body(),
             ),
-          const SizedBox(height: AppSpacing.md),
+          const SizedBox(height: 16),
           TextButton(
             onPressed: () => context.pop(),
-            child: const Text('Back to home'),
+            child: Text(
+              'Back to home',
+              style: DwText.dm(
+                size: 13,
+                weight: FontWeight.w600,
+                color: DwColors.onDarkMuted,
+              ),
+            ),
           ),
         ],
       ),
     );
+  }
+
+  String _statusEyebrow(DailyWarPhase phase) {
+    switch (phase) {
+      case DailyWarPhase.resultsReady:
+        return 'RESULTS READY';
+      case DailyWarPhase.resultsPending:
+        return 'RESULTS';
+      case DailyWarPhase.liveLocked:
+        return 'IN PROGRESS';
+      default:
+        return 'DAILY WAR';
+    }
   }
 
   String _statusCopy(DailyWarPhase phase) {
@@ -244,5 +319,62 @@ class DailyWarLobbyScreen extends HookConsumerWidget {
       case DailyWarPhase.liveJoinable:
         return 'Ready';
     }
+  }
+}
+
+class _DwButton extends StatelessWidget {
+  const _DwButton({
+    required this.label,
+    this.onPressed,
+    this.filled = true,
+    this.loading = false,
+  });
+
+  final String label;
+  final VoidCallback? onPressed;
+  final bool filled;
+  final bool loading;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: double.infinity,
+      height: 48,
+      child: filled
+          ? FilledButton(
+              onPressed: onPressed,
+              style: FilledButton.styleFrom(
+                backgroundColor: DwColors.crimson,
+                foregroundColor: DwColors.onDark,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+              ),
+              child: loading
+                  ? const SizedBox(
+                      width: 22,
+                      height: 22,
+                      child: CircularProgressIndicator(
+                        strokeWidth: 2,
+                        color: DwColors.onDark,
+                      ),
+                    )
+                  : Text(label, style: DwText.cta()),
+            )
+          : OutlinedButton(
+              onPressed: onPressed,
+              style: OutlinedButton.styleFrom(
+                foregroundColor: DwColors.onDark,
+                side: const BorderSide(color: DwColors.borderOnDark),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+              ),
+              child: Text(
+                label,
+                style: DwText.cta(color: DwColors.onDarkMuted),
+              ),
+            ),
+    );
   }
 }

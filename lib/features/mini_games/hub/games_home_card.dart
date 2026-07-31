@@ -30,7 +30,7 @@ class GamesHomeCard extends StatelessWidget {
         Material(
           color: Colors.transparent,
           child: InkWell(
-            onTap: () => context.push('/games'),
+            onTap: () => context.go('/games'),
             borderRadius: BorderRadius.circular(AppRadius.lg),
             child: Ink(
               padding: const EdgeInsets.all(AppSpacing.lg),

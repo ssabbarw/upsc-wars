@@ -194,6 +194,179 @@ final class DailyWarHomeSnapshotProvider
 String _$dailyWarHomeSnapshotHash() =>
     r'037e01e33fa35a17f853fafc6bbf8f69c0a17f7e';
 
+@ProviderFor(dailyWarYesterdayDateId)
+final dailyWarYesterdayDateIdProvider = DailyWarYesterdayDateIdProvider._();
+
+final class DailyWarYesterdayDateIdProvider
+    extends $FunctionalProvider<String, String, String>
+    with $Provider<String> {
+  DailyWarYesterdayDateIdProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'dailyWarYesterdayDateIdProvider',
+        isAutoDispose: false,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$dailyWarYesterdayDateIdHash();
+
+  @$internal
+  @override
+  $ProviderElement<String> $createElement($ProviderPointer pointer) =>
+      $ProviderElement(pointer);
+
+  @override
+  String create(Ref ref) {
+    return dailyWarYesterdayDateId(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(String value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<String>(value),
+    );
+  }
+}
+
+String _$dailyWarYesterdayDateIdHash() =>
+    r'5193e81a815266c28d250d19d692e0ec39e812df';
+
+@ProviderFor(dailyWarYesterdayDoc)
+final dailyWarYesterdayDocProvider = DailyWarYesterdayDocProvider._();
+
+final class DailyWarYesterdayDocProvider
+    extends
+        $FunctionalProvider<
+          AsyncValue<DailyWarDoc?>,
+          DailyWarDoc?,
+          Stream<DailyWarDoc?>
+        >
+    with $FutureModifier<DailyWarDoc?>, $StreamProvider<DailyWarDoc?> {
+  DailyWarYesterdayDocProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'dailyWarYesterdayDocProvider',
+        isAutoDispose: false,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$dailyWarYesterdayDocHash();
+
+  @$internal
+  @override
+  $StreamProviderElement<DailyWarDoc?> $createElement(
+    $ProviderPointer pointer,
+  ) => $StreamProviderElement(pointer);
+
+  @override
+  Stream<DailyWarDoc?> create(Ref ref) {
+    return dailyWarYesterdayDoc(ref);
+  }
+}
+
+String _$dailyWarYesterdayDocHash() =>
+    r'2ec6d90baf0521eddd813e8cec6c7982af691e11';
+
+@ProviderFor(dailyWarYesterdaySubmission)
+final dailyWarYesterdaySubmissionProvider =
+    DailyWarYesterdaySubmissionProvider._();
+
+final class DailyWarYesterdaySubmissionProvider
+    extends
+        $FunctionalProvider<
+          AsyncValue<DailyWarSubmission?>,
+          DailyWarSubmission?,
+          Stream<DailyWarSubmission?>
+        >
+    with
+        $FutureModifier<DailyWarSubmission?>,
+        $StreamProvider<DailyWarSubmission?> {
+  DailyWarYesterdaySubmissionProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'dailyWarYesterdaySubmissionProvider',
+        isAutoDispose: false,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$dailyWarYesterdaySubmissionHash();
+
+  @$internal
+  @override
+  $StreamProviderElement<DailyWarSubmission?> $createElement(
+    $ProviderPointer pointer,
+  ) => $StreamProviderElement(pointer);
+
+  @override
+  Stream<DailyWarSubmission?> create(Ref ref) {
+    return dailyWarYesterdaySubmission(ref);
+  }
+}
+
+String _$dailyWarYesterdaySubmissionHash() =>
+    r'5e2f646d7909e6e41732b165d47ff8051ba8e4e5';
+
+@ProviderFor(dailyWarYesterdaySnapshot)
+final dailyWarYesterdaySnapshotProvider = DailyWarYesterdaySnapshotProvider._();
+
+final class DailyWarYesterdaySnapshotProvider
+    extends
+        $FunctionalProvider<
+          DailyWarYesterdaySnapshot,
+          DailyWarYesterdaySnapshot,
+          DailyWarYesterdaySnapshot
+        >
+    with $Provider<DailyWarYesterdaySnapshot> {
+  DailyWarYesterdaySnapshotProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'dailyWarYesterdaySnapshotProvider',
+        isAutoDispose: false,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$dailyWarYesterdaySnapshotHash();
+
+  @$internal
+  @override
+  $ProviderElement<DailyWarYesterdaySnapshot> $createElement(
+    $ProviderPointer pointer,
+  ) => $ProviderElement(pointer);
+
+  @override
+  DailyWarYesterdaySnapshot create(Ref ref) {
+    return dailyWarYesterdaySnapshot(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(DailyWarYesterdaySnapshot value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<DailyWarYesterdaySnapshot>(value),
+    );
+  }
+}
+
+String _$dailyWarYesterdaySnapshotHash() =>
+    r'0334003d76594f9f94f1bedaaf5516196e6a8ce7';
+
 /// One-shot fetch of a War by dateId (History).
 
 @ProviderFor(dailyWarDocById)
@@ -324,3 +497,45 @@ final class DailyWarHistoryListProvider
 
 String _$dailyWarHistoryListHash() =>
     r'889415a59288b380c856cdddab6288b33a80dd42';
+
+@ProviderFor(dailyWarLiveCounts)
+final dailyWarLiveCountsProvider = DailyWarLiveCountsProvider._();
+
+final class DailyWarLiveCountsProvider
+    extends
+        $FunctionalProvider<
+          AsyncValue<DailyWarLiveCounts>,
+          DailyWarLiveCounts,
+          Stream<DailyWarLiveCounts>
+        >
+    with
+        $FutureModifier<DailyWarLiveCounts>,
+        $StreamProvider<DailyWarLiveCounts> {
+  DailyWarLiveCountsProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'dailyWarLiveCountsProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$dailyWarLiveCountsHash();
+
+  @$internal
+  @override
+  $StreamProviderElement<DailyWarLiveCounts> $createElement(
+    $ProviderPointer pointer,
+  ) => $StreamProviderElement(pointer);
+
+  @override
+  Stream<DailyWarLiveCounts> create(Ref ref) {
+    return dailyWarLiveCounts(ref);
+  }
+}
+
+String _$dailyWarLiveCountsHash() =>
+    r'b6f19a32a8c493ea540a59e76782f0dffab0fee1';

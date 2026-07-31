@@ -34,6 +34,7 @@ class DailyWarDoc {
     required this.status,
     this.questionUuids = const [],
     this.participantCount,
+    this.lobbyCount,
     this.nextTopics = const [],
     this.rankedAtMs,
   });
@@ -54,6 +55,9 @@ class DailyWarDoc {
   final List<String> questionUuids;
 
   final int? participantCount;
+
+  /// Live lobby presence (incremented when users enter lobby).
+  final int? lobbyCount;
 
   /// Tomorrow's teaser topics (written when tonight is generated / closed).
   final List<DailyWarTopicRef> nextTopics;
@@ -94,6 +98,7 @@ class DailyWarDoc {
       status: (map['status'] as String? ?? 'announced').trim(),
       questionUuids: uuids,
       participantCount: (map['participant_count'] as num?)?.toInt(),
+      lobbyCount: (map['lobby_count'] as num?)?.toInt(),
       nextTopics: parseTopics(map['next_topics']),
       rankedAtMs: (map['ranked_at_ms'] as num?)?.toInt(),
     );

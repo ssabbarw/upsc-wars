@@ -21,6 +21,18 @@ const dailyCaEnabledRemoteConfigKey = 'daily_ca_enabled';
 /// Remote Config: when `false`, hide Daily War on the home screen (fails closed).
 const dailyWarEnabledRemoteConfigKey = 'daily_war_enabled';
 
+/// Remote Config: when `false`, hide lobby / participant count numbers on War UI.
+const dailyWarLobbyCountEnabledRemoteConfigKey =
+    'daily_war_lobby_count_enabled';
+
+/// Remote Config: minimum count before showing raw numbers (int, default 200).
+const dailyWarMinVisibleLobbyCountRemoteConfigKey =
+    'daily_war_min_visible_lobby_count';
+
+/// Remote Config: RTDB live-count poll interval seconds (int, default 5).
+const dailyWarLiveCountPollSecondsRemoteConfigKey =
+    'daily_war_live_count_poll_seconds';
+
 /// Remote Config: earliest selectable daily CA calendar date (`YYYY-MM-DD`, IST).
 const dailyCaCalendarMinDateRemoteConfigKey = 'daily_ca_calendar_min_date';
 
@@ -88,6 +100,9 @@ Future<KillSwitchSnapshot> killSwitch(Ref ref) async {
       communityTabEnabledRemoteConfigKey: true,
       dailyCaEnabledRemoteConfigKey: false,
       dailyWarEnabledRemoteConfigKey: false,
+      dailyWarLobbyCountEnabledRemoteConfigKey: true,
+      dailyWarMinVisibleLobbyCountRemoteConfigKey: 200,
+      dailyWarLiveCountPollSecondsRemoteConfigKey: 5,
       dailyCaCalendarMinDateRemoteConfigKey: '2026-06-05',
       qotdMaxPostsPerDayRemoteConfigKey: 3,
       factOrBluffSecondsRemoteConfigKey: 10,
@@ -174,6 +189,58 @@ Future<bool> dailyWarRemoteEnabled(Ref ref) async {
     );
   } on Object catch (_) {
     return false;
+  }
+}
+
+/// Whether lobby / participant count numbers should be shown on War surfaces.
+///
+/// Fails open (`true`) so counts stay visible unless RC explicitly disables them.
+@Riverpod(keepAlive: true)
+Future<bool> dailyWarLobbyCountRemoteEnabled(Ref ref) async {
+  if (kIsWeb) return false;
+  await ref.watch(killSwitchProvider.future);
+  try {
+    return FirebaseRemoteConfig.instance.getBool(
+      dailyWarLobbyCountEnabledRemoteConfigKey,
+    );
+  } on Object catch (_) {
+    return true;
+  }
+}
+
+/// Minimum lobby/participant count before showing the raw number.
+@Riverpod(keepAlive: true)
+Future<int> dailyWarMinVisibleLobbyCountRemote(Ref ref) async {
+  const fallback = 200;
+  if (kIsWeb) return fallback;
+  await ref.watch(killSwitchProvider.future);
+  try {
+    final n = FirebaseRemoteConfig.instance.getInt(
+      dailyWarMinVisibleLobbyCountRemoteConfigKey,
+    );
+    if (n <= 0) return fallback;
+    return n.clamp(1, 1000000);
+  } on Object catch (_) {
+    return fallback;
+  }
+}
+
+/// How often clients poll RTDB live counts during lobby / live (seconds).
+///
+/// Defaults to 5. Clamped to 3–60.
+@Riverpod(keepAlive: true)
+Future<int> dailyWarLiveCountPollSecondsRemote(Ref ref) async {
+  const fallback = 5;
+  if (kIsWeb) return fallback;
+  await ref.watch(killSwitchProvider.future);
+  try {
+    final n = FirebaseRemoteConfig.instance.getInt(
+      dailyWarLiveCountPollSecondsRemoteConfigKey,
+    );
+    if (n <= 0) return fallback;
+    return n.clamp(3, 60);
+  } on Object catch (_) {
+    return fallback;
   }
 }
 

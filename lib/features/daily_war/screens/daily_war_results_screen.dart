@@ -7,14 +7,14 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/providers/catalog_providers.dart';
-import '../../../core/theme/app_colors.dart';
-import '../../../core/theme/app_spacing.dart';
-import '../../../core/theme/app_text_styles.dart';
+import '../../../core/providers/kill_switch_provider.dart';
 import '../daily_war_constants.dart';
 import '../data/daily_war_cloud_service.dart';
 import '../data/daily_war_firestore_paths.dart';
+import '../domain/daily_war_copy.dart';
 import '../domain/daily_war_models.dart';
 import '../providers/daily_war_providers.dart';
+import '../theme/daily_war_theme.dart';
 
 /// After the local test session completes, sync score to Cloud Functions and
 /// show AIR (live) or practice score (unranked).
@@ -25,11 +25,12 @@ class DailyWarResultsScreen extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final scheme = Theme.of(context).colorScheme;
     final syncState = useState<_SyncState>(_SyncState.loading);
     final score = useState<double?>(null);
     final submission = useState<DailyWarSubmission?>(null);
     final nextTopics = useState<List<DailyWarTopicRef>>(const []);
+    final participantCount = useState<int?>(null);
+    final questionCount = useState<int>(15);
     final error = useState<String?>(null);
 
     useEffect(() {
@@ -82,6 +83,8 @@ class DailyWarResultsScreen extends HookConsumerWidget {
 
           final warDoc = await ref.read(dailyWarDocByIdProvider(dateId).future);
           nextTopics.value = warDoc?.nextTopics ?? const [];
+          participantCount.value = warDoc?.participantCount;
+          questionCount.value = warDoc?.questionCount ?? 15;
 
           final uid = FirebaseAuth.instance.currentUser?.uid;
           if (uid != null) {
@@ -109,19 +112,28 @@ class DailyWarResultsScreen extends HookConsumerWidget {
     }, [sessionId]);
 
     return Scaffold(
+      backgroundColor: DwColors.surface,
       appBar: AppBar(
-        title: Text('War results', style: AppTextStyles.h3()),
+        backgroundColor: DwColors.surface,
+        foregroundColor: DwColors.onDark,
+        title: Text(
+          'War results',
+          style: DwText.dm(size: 18, weight: FontWeight.w700),
+        ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(AppSpacing.lg),
+        padding: const EdgeInsets.fromLTRB(20, 8, 20, 32),
         child: switch (syncState.value) {
-          _SyncState.loading => const Center(
+          _SyncState.loading => Center(
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                CircularProgressIndicator(),
-                SizedBox(height: AppSpacing.md),
-                Text('Calculating your All-India Rank…'),
+                const CircularProgressIndicator(color: DwColors.crimsonBright),
+                const SizedBox(height: 16),
+                Text(
+                  'Calculating your All-India Rank…',
+                  style: DwText.body(color: DwColors.onDark),
+                ),
               ],
             ),
           ),
@@ -130,73 +142,152 @@ class DailyWarResultsScreen extends HookConsumerWidget {
             children: [
               Text(
                 error.value ?? 'Something went wrong',
-                style: AppTextStyles.bodyMd().copyWith(color: AppColors.wrong),
+                style: DwText.body(color: DwColors.crimsonBright),
               ),
-              const SizedBox(height: AppSpacing.md),
+              const SizedBox(height: 16),
               FilledButton(
                 onPressed: () => context.go('/'),
-                child: const Text('Home'),
+                style: FilledButton.styleFrom(
+                  backgroundColor: DwColors.crimson,
+                ),
+                child: Text('Home', style: DwText.cta()),
               ),
             ],
           ),
-          _SyncState.ready => Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              if (submission.value?.hasOfficialRank == true) ...[
-                Text(
-                  'AIR ${submission.value!.air}',
-                  style: AppTextStyles.h1().copyWith(color: scheme.onSurface),
-                ),
-                Text(
-                  'Percentile ${submission.value!.percentile?.toStringAsFixed(1) ?? '—'}',
-                  style: AppTextStyles.bodyMd().copyWith(
-                    color: scheme.onSurfaceVariant,
-                  ),
-                ),
-              ] else ...[
-                Text(
-                  'Score',
-                  style: AppTextStyles.caption().copyWith(
-                    color: scheme.onSurfaceVariant,
-                  ),
-                ),
-                Text(
-                  score.value?.toStringAsFixed(2) ?? '—',
-                  style: AppTextStyles.h1(),
-                ),
-                if (submission.value?.mode == 'unranked' ||
-                    submission.value == null)
-                  Text(
-                    'Unranked · not an official AIR yet',
-                    style: AppTextStyles.bodySm().copyWith(
-                      color: scheme.onSurfaceVariant,
-                    ),
-                  ),
-              ],
-              const SizedBox(height: AppSpacing.lg),
-              if (nextTopics.value.isNotEmpty) ...[
-                Text('Tomorrow\'s War', style: AppTextStyles.label()),
-                const SizedBox(height: AppSpacing.xs),
-                Text(
-                  nextTopics.value.map((t) => t.topic).join(' + '),
-                  style: AppTextStyles.bodyMd().copyWith(
-                    color: scheme.onSurfaceVariant,
-                  ),
-                ),
-                const SizedBox(height: AppSpacing.lg),
-              ],
-              FilledButton(
-                onPressed: () => context.go('/'),
-                child: const Text('Done'),
-              ),
-              TextButton(
-                onPressed: () => context.push(dailyWarHistoryRoute()),
-                child: const Text('War History'),
-              ),
-            ],
+          _SyncState.ready => _ReadyBody(
+            submission: submission.value,
+            score: score.value,
+            nextTopics: nextTopics.value,
+            participantCount: participantCount.value,
+            questionCount: questionCount.value,
           ),
         },
       ),
+    );
+  }
+}
+
+class _ReadyBody extends ConsumerWidget {
+  const _ReadyBody({
+    required this.submission,
+    required this.score,
+    required this.nextTopics,
+    required this.participantCount,
+    required this.questionCount,
+  });
+
+  final DailyWarSubmission? submission;
+  final double? score;
+  final List<DailyWarTopicRef> nextTopics;
+  final int? participantCount;
+  final int questionCount;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final countEnabled =
+        ref.watch(dailyWarLobbyCountRemoteEnabledProvider).asData?.value ??
+            true;
+    final minVisible =
+        ref.watch(dailyWarMinVisibleLobbyCountRemoteProvider).asData?.value ??
+            200;
+    final ofN = DailyWarCopy.formatVisibleCount(
+      raw: participantCount,
+      enabled: countEnabled,
+      minVisible: minVisible,
+    );
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        if (submission?.hasOfficialRank == true) ...[
+          Text('ALL-INDIA RANK', style: DwText.meta()),
+          const SizedBox(height: 4),
+          Text('${submission!.air}', style: DwText.heroNumber()),
+          if (ofN != null)
+            Text('of $ofN', style: DwText.body()),
+          const SizedBox(height: 16),
+          Row(
+            children: [
+              Expanded(
+                child: _ResultStat(
+                  label: 'PERCENTILE',
+                  value: submission!.percentile?.toStringAsFixed(1) ?? '—',
+                ),
+              ),
+              Expanded(
+                child: _ResultStat(
+                  label: 'SCORE',
+                  value:
+                      '${submission!.score.toStringAsFixed(2)}/$questionCount',
+                ),
+              ),
+            ],
+          ),
+        ] else ...[
+          Text('SCORE', style: DwText.meta()),
+          const SizedBox(height: 4),
+          Text(
+            (score ?? submission?.score)?.toStringAsFixed(2) ?? '—',
+            style: DwText.heroNumber(),
+          ),
+          Text(
+            submission?.mode == 'unranked'
+                ? 'Unranked · not an official AIR'
+                : 'Submitted · waiting for rank',
+            style: DwText.body(),
+          ),
+        ],
+        if (nextTopics.isNotEmpty) ...[
+          const SizedBox(height: 28),
+          Text('Tomorrow\'s War', style: DwText.meta()),
+          const SizedBox(height: 6),
+          Text(
+            DailyWarCopy.compactTopics(nextTopics),
+            style: DwText.body(color: DwColors.onDark),
+          ),
+        ],
+        const Spacer(),
+        FilledButton(
+          onPressed: () => context.go('/'),
+          style: FilledButton.styleFrom(
+            backgroundColor: DwColors.crimson,
+            minimumSize: const Size.fromHeight(48),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12),
+            ),
+          ),
+          child: Text('Done', style: DwText.cta()),
+        ),
+        TextButton(
+          onPressed: () => context.push(dailyWarHistoryRoute()),
+          child: Text(
+            'War History',
+            style: DwText.dm(
+              size: 13,
+              weight: FontWeight.w600,
+              color: DwColors.onDarkMuted,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class _ResultStat extends StatelessWidget {
+  const _ResultStat({required this.label, required this.value});
+
+  final String label;
+  final String value;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(label, style: DwText.stamp()),
+        Text(value, style: DwText.dm(size: 20, weight: FontWeight.w700)),
+      ],
     );
   }
 }

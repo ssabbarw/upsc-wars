@@ -3,13 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../core/constants/subject_constants.dart';
-import '../../../core/theme/app_radius.dart';
-import '../../../core/theme/app_spacing.dart';
-import '../../../core/theme/app_text_styles.dart';
 import '../data/daily_war_firestore_paths.dart';
+import '../domain/daily_war_copy.dart';
 import '../domain/daily_war_models.dart';
 import '../providers/daily_war_providers.dart';
+import '../theme/daily_war_theme.dart';
 
 /// Shared archive of past Wars with personal attempt state.
 class DailyWarHistoryScreen extends HookConsumerWidget {
@@ -17,7 +15,6 @@ class DailyWarHistoryScreen extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final scheme = Theme.of(context).colorScheme;
     final tab = useState(0); // 0 all, 1 attempted, 2 missed
     final async = ref.watch(dailyWarHistoryListProvider);
     final uid = FirebaseAuth.instance.currentUser?.uid;
@@ -42,24 +39,41 @@ class DailyWarHistoryScreen extends HookConsumerWidget {
     }, [async, uid]);
 
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: AppBar(
-        title: Text('War History', style: AppTextStyles.h3()),
+        title: Text(
+          'War History',
+          style: DwText.dm(
+            size: 18,
+            weight: FontWeight.w700,
+            color: Theme.of(context).colorScheme.onSurface,
+          ),
+        ),
       ),
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
-            child: SegmentedButton<int>(
-              segments: const [
-                ButtonSegment(value: 0, label: Text('All')),
-                ButtonSegment(value: 1, label: Text('Attempted')),
-                ButtonSegment(value: 2, label: Text('Missed')),
+            padding: const EdgeInsets.fromLTRB(16, 4, 16, 8),
+            child: Row(
+              children: [
+                for (final entry in const [
+                  (0, 'All'),
+                  (1, 'Attempted'),
+                  (2, 'Missed'),
+                ])
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 4),
+                      child: _TabChip(
+                        label: entry.$2,
+                        selected: tab.value == entry.$1,
+                        onTap: () => tab.value = entry.$1,
+                      ),
+                    ),
+                  ),
               ],
-              selected: {tab.value},
-              onSelectionChanged: (s) => tab.value = s.first,
             ),
           ),
-          const SizedBox(height: AppSpacing.sm),
           Expanded(
             child: async.when(
               loading: () => const Center(child: CircularProgressIndicator()),
@@ -85,34 +99,28 @@ class DailyWarHistoryScreen extends HookConsumerWidget {
                           : tab.value == 2
                               ? 'You\'re caught up'
                               : 'No Wars yet',
-                      style: AppTextStyles.bodyMd().copyWith(
-                        color: scheme.onSurfaceVariant,
+                      style: DwText.dm(
+                        size: 14,
+                        color: DwColors.muted,
                       ),
                     ),
                   );
                 }
 
                 return ListView.separated(
-                  padding: const EdgeInsets.all(AppSpacing.lg),
+                  padding: const EdgeInsets.fromLTRB(16, 8, 16, 24),
                   itemCount: filtered.length,
-                  separatorBuilder: (_, _) =>
-                      const SizedBox(height: AppSpacing.sm),
+                  separatorBuilder: (_, _) => const SizedBox(height: 10),
                   itemBuilder: (context, i) {
                     final w = filtered[i];
                     final sub = subs.value[w.dateId];
-                    final subjects = w.topics
-                        .map(
-                          (t) =>
-                              SubjectConstants.bySlug(t.subjectSlug)
-                                  ?.displayName ??
-                              t.subjectSlug,
-                        )
-                        .toSet()
-                        .join(' + ');
-                    final topics = w.topics.map((t) => t.topic).join(' + ');
+                    final subjects = DailyWarCopy.subjectsLine(w.topics);
+                    final topics = DailyWarCopy.topicsLine(w.topics);
                     String meta;
+                    Color metaColor = DwColors.muted;
                     if (sub?.hasOfficialRank == true) {
                       meta = 'AIR ${sub!.air} · ${sub.score}';
+                      metaColor = DwColors.crimson;
                     } else if (sub?.mode == 'unranked') {
                       meta = 'Practiced · ${sub!.score}';
                     } else if (sub != null) {
@@ -121,21 +129,58 @@ class DailyWarHistoryScreen extends HookConsumerWidget {
                       meta = 'Missed';
                     }
 
-                    return Material(
-                      color: scheme.surfaceContainerLow,
-                      borderRadius: BorderRadius.circular(AppRadius.lg),
-                      child: ListTile(
-                        title: Text(
-                          '${w.isGrand ? 'Grand War' : 'Daily War'} · ${w.dateId}',
-                          style: AppTextStyles.label(),
-                        ),
-                        subtitle: Text(
-                          '$subjects\n$topics\n$meta',
-                          style: AppTextStyles.caption().copyWith(
-                            color: scheme.onSurfaceVariant,
+                    return Container(
+                      padding: const EdgeInsets.all(14),
+                      decoration: BoxDecoration(
+                        color: DwColors.surface,
+                        borderRadius: BorderRadius.circular(14),
+                        border: Border.all(color: DwColors.borderOnDark),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Text(
+                                w.isGrand ? 'GRAND WAR' : 'DAILY WAR',
+                                style: DwText.eyebrow(),
+                              ),
+                              const Spacer(),
+                              Text(
+                                w.dateId,
+                                style: DwText.stamp(),
+                              ),
+                            ],
                           ),
-                        ),
-                        isThreeLine: true,
+                          const SizedBox(height: 8),
+                          Text(
+                            subjects,
+                            style: DwText.dm(
+                              size: 12,
+                              weight: FontWeight.w600,
+                              color: DwColors.crimsonBright,
+                              letterSpacing: 0.8,
+                            ),
+                          ),
+                          const SizedBox(height: 2),
+                          Text(
+                            topics,
+                            style: DwText.dm(
+                              size: 15,
+                              weight: FontWeight.w700,
+                              color: DwColors.onDark,
+                            ),
+                          ),
+                          const SizedBox(height: 8),
+                          Text(
+                            meta,
+                            style: DwText.dm(
+                              size: 12,
+                              weight: FontWeight.w600,
+                              color: metaColor,
+                            ),
+                          ),
+                        ],
                       ),
                     );
                   },
@@ -144,6 +189,49 @@ class DailyWarHistoryScreen extends HookConsumerWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class _TabChip extends StatelessWidget {
+  const _TabChip({
+    required this.label,
+    required this.selected,
+    required this.onTap,
+  });
+
+  final String label;
+  final bool selected;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(100),
+        child: Ink(
+          padding: const EdgeInsets.symmetric(vertical: 10),
+          decoration: BoxDecoration(
+            color: selected ? DwColors.crimson : DwColors.cream,
+            borderRadius: BorderRadius.circular(100),
+            border: Border.all(
+              color: selected ? DwColors.crimson : const Color(0x1F000000),
+            ),
+          ),
+          child: Center(
+            child: Text(
+              label,
+              style: DwText.dm(
+                size: 12,
+                weight: FontWeight.w700,
+                color: selected ? DwColors.onDark : DwColors.ink,
+              ),
+            ),
+          ),
+        ),
       ),
     );
   }
