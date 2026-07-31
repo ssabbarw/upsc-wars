@@ -356,22 +356,28 @@ class _TopicBlock extends StatelessWidget {
         const SizedBox(height: 6),
         Text(subjects, style: DwText.subject(color: DwColors.crimsonBright)),
         const SizedBox(height: 4),
-        for (var i = 0; i < topics.length; i++) ...[
-          if (i > 0)
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 4),
-              child: Text(
-                '+',
-                style: DwText.dm(
-                  size: compact || topicSize != null ? 14 : 16,
-                  weight: FontWeight.w600,
-                  color: DwColors.onDarkDim,
-                  height: 1,
-                ),
-              ),
-            ),
-          Text(topics[i].topic, style: topicStyle),
-        ],
+        for (var i = 0; i < topics.length; i++)
+          Padding(
+            padding: const EdgeInsets.only(bottom: 2),
+            child: i == 0
+                ? Text(topics[i].topic, style: topicStyle)
+                : Text.rich(
+                    TextSpan(
+                      children: [
+                        TextSpan(
+                          text: '+ ',
+                          style: DwText.dm(
+                            size: 14,
+                            weight: FontWeight.w600,
+                            color: DwColors.onDarkDim,
+                            height: topicStyle.height ?? 1.2,
+                          ),
+                        ),
+                        TextSpan(text: topics[i].topic, style: topicStyle),
+                      ],
+                    ),
+                  ),
+          ),
       ],
     );
   }
