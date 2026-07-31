@@ -411,7 +411,8 @@ final class DeferredPushHomeNudgeDismissedEvent extends AnalyticsEvent {
 
 /// **Time the user spent on one horizontal step** of the first-run flow before
 /// swiping to the next, or the last step before “Get started.” [step] is
-/// `score_story`, `mechanism`, `diagnosis`, or `loop`.
+/// `score_story`, `memory_pairs_demo` or `fact_or_bluff_demo` (per the
+/// `onboarding_game` Remote Config choice), or `loop`.
 ///
 /// **GA4:** `onboarding_step_duration` with `step`, `duration_ms` (int).
 final class OnboardingStepDurationEvent extends AnalyticsEvent {

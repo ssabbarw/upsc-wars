@@ -736,3 +736,11 @@ exports.onOpenChallengeWritten = onDocumentWritten(
     return null;
   },
 );
+
+// --- Daily War (scheduled + callable) ---
+const dailyWar = require("./daily_war");
+exports.generateDailyWar = dailyWar.generateDailyWar;
+exports.publishDailyWarQuestions = dailyWar.publishDailyWarQuestions;
+exports.rankDailyWar = dailyWar.rankDailyWar;
+exports.submitDailyWar = dailyWar.submitDailyWar;
+exports.adminGenerateDailyWar = dailyWar.adminGenerateDailyWar;

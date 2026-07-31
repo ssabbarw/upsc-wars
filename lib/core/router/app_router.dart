@@ -42,6 +42,9 @@ import '../../features/home/screens/home_screen.dart';
 import '../../features/onboarding/screens/onboarding_flow_screen.dart';
 import '../../features/notifications/screens/long_html_notification_screen.dart';
 import '../../features/daily_ca/screens/daily_ca_screen.dart';
+import '../../features/daily_war/screens/daily_war_history_screen.dart';
+import '../../features/daily_war/screens/daily_war_lobby_screen.dart';
+import '../../features/daily_war/screens/daily_war_results_screen.dart';
 import '../../features/pyq/screens/pyq_year_packs_screen.dart';
 import '../../features/home/screens/complete_profile_screen.dart';
 import '../../features/home/screens/profile_screen.dart';
@@ -527,6 +530,26 @@ GoRouter appRouter(Ref ref) {
         path: '/daily-ca',
         name: 'daily_ca',
         builder: (context, state) => const DailyCaScreen(),
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/daily-war',
+        name: 'daily_war_lobby',
+        builder: (context, state) => const DailyWarLobbyScreen(),
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/daily-war/history',
+        name: 'daily_war_history',
+        builder: (context, state) => const DailyWarHistoryScreen(),
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/daily-war/results/:sessionId',
+        name: 'daily_war_results',
+        builder: (context, state) => DailyWarResultsScreen(
+          sessionId: state.pathParameters['sessionId']!,
+        ),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,

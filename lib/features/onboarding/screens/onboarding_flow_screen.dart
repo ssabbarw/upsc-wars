@@ -12,9 +12,11 @@ import '../../../core/analytics/activation_milestones.dart';
 import '../../../core/analytics/analytics.dart';
 import '../../../core/analytics/analytics_events.dart';
 import '../../../core/analytics/screen_flow_analytics.dart';
+import '../../../core/providers/kill_switch_provider.dart';
 import '../../../core/providers/prefs_provider.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
+import '../widgets/onboarding_fact_or_bluff_page.dart';
 import '../widgets/onboarding_memory_pairs_page.dart';
 
 /// Scale vs ~390dp shortest side (phone-first baseline); clamped for large/small devices.
@@ -26,11 +28,15 @@ double _onbScale(BuildContext context) {
 double _onb(BuildContext context, double designPx) =>
     designPx * _onbScale(context);
 
-/// Horizontal pager step id for [OnboardingStepDurationEvent].
-String _onboardingStepIdForIndex(int i) {
+/// Horizontal pager step id for [OnboardingStepDurationEvent]. The demo step
+/// id reflects which game Remote Config chose so funnels stay comparable.
+String _onboardingStepIdForIndex(int i, String demoGame) {
   return switch (i) {
     0 => 'score_story',
-    1 => 'memory_pairs_demo',
+    1 =>
+      demoGame == onboardingGameFactOrBluff
+          ? 'fact_or_bluff_demo'
+          : 'memory_pairs_demo',
     2 => 'loop',
     _ => 'unknown',
   };
@@ -53,9 +59,21 @@ class OnboardingFlowScreen extends HookConsumerWidget {
     final lastPageIndex = useRef(0);
     final bottom = MediaQuery.paddingOf(context).bottom;
     final isLast = page.value == _pageCount - 1;
-    final onMemoryPairsDemo = page.value == 1;
+    final onGameDemoPage = page.value == 1;
     final hPad = _onb(context, 20);
     final vPadSm = _onb(context, 8);
+
+    // Which game the demo step shows (Remote Config A/B). Falls back to
+    // memory pairs until RC resolves; frozen once the user reaches the demo
+    // page so a late RC fetch cannot swap the game mid-play.
+    final demoGameFrozen = useRef<String?>(null);
+    final demoGame =
+        demoGameFrozen.value ??
+        ref.watch(onboardingGameRemoteProvider).asData?.value ??
+        onboardingGameMemoryPairs;
+    if (page.value >= 1) demoGameFrozen.value ??= demoGame;
+    final demoGameRef = useRef(demoGame);
+    demoGameRef.value = demoGame;
 
     void goToLoopPage() {
       pageController.animateToPage(
@@ -83,8 +101,12 @@ class OnboardingFlowScreen extends HookConsumerWidget {
             OnboardingExitedIncompleteEvent(
               highestStep: _onboardingStepIdForIndex(
                 highestPageIndex.value,
+                demoGameRef.value,
               ),
-              lastStep: _onboardingStepIdForIndex(lastPageIndex.value),
+              lastStep: _onboardingStepIdForIndex(
+                lastPageIndex.value,
+                demoGameRef.value,
+              ),
               elapsedMs: ms,
               reachedLastStep: highestPageIndex.value == _pageCount - 1,
             ),
@@ -116,7 +138,7 @@ class OnboardingFlowScreen extends HookConsumerWidget {
                     Expanded(
                       child: PageView(
                         controller: pageController,
-                        physics: onMemoryPairsDemo
+                        physics: onGameDemoPage
                             ? const NeverScrollableScrollPhysics()
                             : const BouncingScrollPhysics(),
                         onPageChanged: (i) {
@@ -129,7 +151,10 @@ class OnboardingFlowScreen extends HookConsumerWidget {
                               Analytics.track(
                                 ref,
                                 OnboardingStepDurationEvent(
-                                  step: _onboardingStepIdForIndex(from),
+                                  step: _onboardingStepIdForIndex(
+                                    from,
+                                    demoGameRef.value,
+                                  ),
                                   durationMs: ms,
                                 ),
                               ),
@@ -153,24 +178,44 @@ class OnboardingFlowScreen extends HookConsumerWidget {
                               );
                             },
                           ),
-                          OnboardingMemoryPairsPage(
-                            onSkip: () {
-                              ScreenFlow.logAction(
-                                ref,
-                                screenName: ScreenFlow.onboarding,
-                                actionId: 'memory_pairs_demo_skipped',
-                              );
-                              goToLoopPage();
-                            },
-                            onContinue: () {
-                              ScreenFlow.logAction(
-                                ref,
-                                screenName: ScreenFlow.onboarding,
-                                actionId: 'memory_pairs_demo_completed',
-                              );
-                              goToLoopPage();
-                            },
-                          ),
+                          if (demoGame == onboardingGameFactOrBluff)
+                            OnboardingFactOrBluffPage(
+                              onSkip: () {
+                                ScreenFlow.logAction(
+                                  ref,
+                                  screenName: ScreenFlow.onboarding,
+                                  actionId: 'fact_or_bluff_demo_skipped',
+                                );
+                                goToLoopPage();
+                              },
+                              onContinue: () {
+                                ScreenFlow.logAction(
+                                  ref,
+                                  screenName: ScreenFlow.onboarding,
+                                  actionId: 'fact_or_bluff_demo_completed',
+                                );
+                                goToLoopPage();
+                              },
+                            )
+                          else
+                            OnboardingMemoryPairsPage(
+                              onSkip: () {
+                                ScreenFlow.logAction(
+                                  ref,
+                                  screenName: ScreenFlow.onboarding,
+                                  actionId: 'memory_pairs_demo_skipped',
+                                );
+                                goToLoopPage();
+                              },
+                              onContinue: () {
+                                ScreenFlow.logAction(
+                                  ref,
+                                  screenName: ScreenFlow.onboarding,
+                                  actionId: 'memory_pairs_demo_completed',
+                                );
+                                goToLoopPage();
+                              },
+                            ),
                           const _LoopPage(),
                         ],
                       ),
@@ -206,6 +251,7 @@ class OnboardingFlowScreen extends HookConsumerWidget {
                                     markFlowCompleted: () {
                                       onboardingFlowCompleted.value = true;
                                     },
+                                    demoGame: demoGameRef.value,
                                     lastStepIndex: page.value,
                                     lastStepStartedAt: pageEnteredAt.value,
                                     onboardingFlowStartedAt:
@@ -257,6 +303,7 @@ Future<void> _complete(
   WidgetRef ref,
   BuildContext context, {
   required void Function() markFlowCompleted,
+  required String demoGame,
   required int lastStepIndex,
   required DateTime lastStepStartedAt,
   required DateTime onboardingFlowStartedAt,
@@ -270,7 +317,7 @@ Future<void> _complete(
       Analytics.track(
         ref,
         OnboardingStepDurationEvent(
-          step: _onboardingStepIdForIndex(lastStepIndex),
+          step: _onboardingStepIdForIndex(lastStepIndex, demoGame),
           durationMs: ms,
         ),
       ),

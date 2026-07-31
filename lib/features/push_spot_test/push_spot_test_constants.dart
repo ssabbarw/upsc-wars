@@ -20,6 +20,10 @@ String sessionResultsRouteForKey(String sessionId, String? analyticsFeatureKey) 
   if (analyticsFeatureKey == PushSpotTestConstants.analyticsKey) {
     return pushSpotTestResultsRoute(sessionId);
   }
+  if (analyticsFeatureKey == 'daily_war' ||
+      analyticsFeatureKey == 'daily_war_unranked') {
+    return '/daily-war/results/$sessionId';
+  }
   return '/results/$sessionId';
 }
 

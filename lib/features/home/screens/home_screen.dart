@@ -39,6 +39,7 @@ import '../providers/daily_drill_provider.dart';
 import '../../memory_pairs/widgets/push_memory_pairs_debug_card.dart';
 import '../../push_spot_test/widgets/push_spot_test_debug_card.dart';
 import '../../daily_ca/widgets/daily_ca_home_card.dart';
+import '../../daily_war/widgets/daily_war_home_card.dart';
 import '../../../shared/widgets/push_denied_banner.dart';
 import '../../../shared/theme/dark_mode_toggle.dart';
 import '../../../shared/widgets/app_update_kill_switch_overlay.dart';
@@ -486,6 +487,7 @@ class HomeScreen extends HookConsumerWidget {
                       );
                     },
                   ),
+                  const DailyWarHomeCard(),
                   const DailyDrillCard(),
                   const SizedBox(height: AppSpacing.md),
                   const RecoveryPlanSection(),

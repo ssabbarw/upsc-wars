@@ -18,6 +18,9 @@ const communityTabEnabledRemoteConfigKey = 'community_tab_enabled';
 /// Remote Config: when `false`, hide Daily Current Affairs on the home screen.
 const dailyCaEnabledRemoteConfigKey = 'daily_ca_enabled';
 
+/// Remote Config: when `false`, hide Daily War on the home screen (fails closed).
+const dailyWarEnabledRemoteConfigKey = 'daily_war_enabled';
+
 /// Remote Config: earliest selectable daily CA calendar date (`YYYY-MM-DD`, IST).
 const dailyCaCalendarMinDateRemoteConfigKey = 'daily_ca_calendar_min_date';
 
@@ -26,6 +29,16 @@ const qotdMaxPostsPerDayRemoteConfigKey = 'qotd_max_posts_per_day';
 
 /// Remote Config: Fact or Bluff countdown seconds (int, default 10).
 const factOrBluffSecondsRemoteConfigKey = 'fact_or_bluff_seconds';
+
+/// Remote Config: which mini-game demo the onboarding flow shows on step 2.
+/// One of [onboardingGameMemoryPairs] (default) or [onboardingGameFactOrBluff].
+const onboardingGameRemoteConfigKey = 'onboarding_game';
+
+/// [onboardingGameRemoteConfigKey] value: memory-pairs matching demo.
+const onboardingGameMemoryPairs = 'memory_pairs';
+
+/// [onboardingGameRemoteConfigKey] value: fact-or-bluff demo.
+const onboardingGameFactOrBluff = 'fact_or_bluff';
 
 /// Remote Config: mirrors Firestore `question_corrections/active.revision` (int).
 const questionCorrectionsRevisionRemoteConfigKey =
@@ -74,9 +87,11 @@ Future<KillSwitchSnapshot> killSwitch(Ref ref) async {
       killSwitchVersionRemoteConfigKey: '',
       communityTabEnabledRemoteConfigKey: true,
       dailyCaEnabledRemoteConfigKey: false,
+      dailyWarEnabledRemoteConfigKey: false,
       dailyCaCalendarMinDateRemoteConfigKey: '2026-06-05',
       qotdMaxPostsPerDayRemoteConfigKey: 3,
       factOrBluffSecondsRemoteConfigKey: 10,
+      onboardingGameRemoteConfigKey: onboardingGameMemoryPairs,
       questionCorrectionsRevisionRemoteConfigKey: 0,
       adminDashboardCollectionEnabledRemoteConfigKey: true,
       // YYYY-MM-DD (time defaults to 09:30 local)
@@ -141,6 +156,46 @@ Future<bool> dailyCaRemoteEnabled(Ref ref) async {
     );
   } on Object catch (_) {
     return false;
+  }
+}
+
+/// Whether the Daily War home entry should be shown.
+///
+/// Fails closed (`false`) while loading or on read errors.
+@Riverpod(keepAlive: true)
+Future<bool> dailyWarRemoteEnabled(Ref ref) async {
+  if (kIsWeb) {
+    return false;
+  }
+  await ref.watch(killSwitchProvider.future);
+  try {
+    return FirebaseRemoteConfig.instance.getBool(
+      dailyWarEnabledRemoteConfigKey,
+    );
+  } on Object catch (_) {
+    return false;
+  }
+}
+
+/// Which mini-game demo onboarding shows (A/B via Remote Config).
+///
+/// Returns [onboardingGameFactOrBluff] only when RC explicitly says so;
+/// any other value, read error, or web falls back to
+/// [onboardingGameMemoryPairs]. Waits for [killSwitchProvider] so RC
+/// defaults / fetch have run on mobile.
+@Riverpod(keepAlive: true)
+Future<String> onboardingGameRemote(Ref ref) async {
+  if (kIsWeb) return onboardingGameMemoryPairs;
+  try {
+    await ref.watch(killSwitchProvider.future);
+    final v = FirebaseRemoteConfig.instance
+        .getString(onboardingGameRemoteConfigKey)
+        .trim();
+    return v == onboardingGameFactOrBluff
+        ? onboardingGameFactOrBluff
+        : onboardingGameMemoryPairs;
+  } on Object catch (_) {
+    return onboardingGameMemoryPairs;
   }
 }
 

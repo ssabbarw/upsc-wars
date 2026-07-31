@@ -48,7 +48,7 @@ final class KillSwitchProvider
   }
 }
 
-String _$killSwitchHash() => r'5c3f0e6dac57d8c6a0898827bed0981ef4dc26e2';
+String _$killSwitchHash() => r'4f738aaf620a63d98699d64f5b833c1f9a46c300';
 
 /// Whether the Community tab should be shown (after [killSwitchProvider] fetch).
 ///
@@ -142,6 +142,105 @@ final class DailyCaRemoteEnabledProvider
 
 String _$dailyCaRemoteEnabledHash() =>
     r'656cc2f8b3d20f324a31a3181b605c5fcac9caef';
+
+/// Whether the Daily War home entry should be shown.
+///
+/// Fails closed (`false`) while loading or on read errors.
+
+@ProviderFor(dailyWarRemoteEnabled)
+final dailyWarRemoteEnabledProvider = DailyWarRemoteEnabledProvider._();
+
+/// Whether the Daily War home entry should be shown.
+///
+/// Fails closed (`false`) while loading or on read errors.
+
+final class DailyWarRemoteEnabledProvider
+    extends $FunctionalProvider<AsyncValue<bool>, bool, FutureOr<bool>>
+    with $FutureModifier<bool>, $FutureProvider<bool> {
+  /// Whether the Daily War home entry should be shown.
+  ///
+  /// Fails closed (`false`) while loading or on read errors.
+  DailyWarRemoteEnabledProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'dailyWarRemoteEnabledProvider',
+        isAutoDispose: false,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$dailyWarRemoteEnabledHash();
+
+  @$internal
+  @override
+  $FutureProviderElement<bool> $createElement($ProviderPointer pointer) =>
+      $FutureProviderElement(pointer);
+
+  @override
+  FutureOr<bool> create(Ref ref) {
+    return dailyWarRemoteEnabled(ref);
+  }
+}
+
+String _$dailyWarRemoteEnabledHash() =>
+    r'4bc3276682ceb585973c0f1c4c329dffa212789c';
+
+/// Which mini-game demo onboarding shows (A/B via Remote Config).
+///
+/// Returns [onboardingGameFactOrBluff] only when RC explicitly says so;
+/// any other value, read error, or web falls back to
+/// [onboardingGameMemoryPairs]. Waits for [killSwitchProvider] so RC
+/// defaults / fetch have run on mobile.
+
+@ProviderFor(onboardingGameRemote)
+final onboardingGameRemoteProvider = OnboardingGameRemoteProvider._();
+
+/// Which mini-game demo onboarding shows (A/B via Remote Config).
+///
+/// Returns [onboardingGameFactOrBluff] only when RC explicitly says so;
+/// any other value, read error, or web falls back to
+/// [onboardingGameMemoryPairs]. Waits for [killSwitchProvider] so RC
+/// defaults / fetch have run on mobile.
+
+final class OnboardingGameRemoteProvider
+    extends $FunctionalProvider<AsyncValue<String>, String, FutureOr<String>>
+    with $FutureModifier<String>, $FutureProvider<String> {
+  /// Which mini-game demo onboarding shows (A/B via Remote Config).
+  ///
+  /// Returns [onboardingGameFactOrBluff] only when RC explicitly says so;
+  /// any other value, read error, or web falls back to
+  /// [onboardingGameMemoryPairs]. Waits for [killSwitchProvider] so RC
+  /// defaults / fetch have run on mobile.
+  OnboardingGameRemoteProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'onboardingGameRemoteProvider',
+        isAutoDispose: false,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$onboardingGameRemoteHash();
+
+  @$internal
+  @override
+  $FutureProviderElement<String> $createElement($ProviderPointer pointer) =>
+      $FutureProviderElement(pointer);
+
+  @override
+  FutureOr<String> create(Ref ref) {
+    return onboardingGameRemote(ref);
+  }
+}
+
+String _$onboardingGameRemoteHash() =>
+    r'8b8b908cff4bc338c86ca30a22d14e67d9e8e4c3';
 
 /// Fact or Bluff countdown length from Remote Config (seconds).
 ///

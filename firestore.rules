@@ -287,6 +287,31 @@ service cloud.firestore {
       allow update, delete: if false;
     }
 
+    /// Daily War — public meta readable; clients must not write papers,
+    /// answers, submissions, or leaderboards (Cloud Functions only).
+    match /daily_wars/{dateId} {
+      allow read: if signedIn();
+      allow write: if false;
+
+      match /private/{docId} {
+        allow read, write: if false;
+      }
+
+      match /submissions/{uid} {
+        allow read: if signedIn();
+        allow write: if false;
+      }
+
+      match /meta/{docId} {
+        allow read: if signedIn();
+        allow write: if false;
+      }
+    }
+
+    match /daily_war_state/{docId} {
+      allow read, write: if false;
+    }
+
     function isSuperUserEmail() {
       return signedIn()
         && request.auth.token.email != null
