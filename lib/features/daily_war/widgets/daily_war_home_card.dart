@@ -323,11 +323,13 @@ class _TopicBlock extends StatelessWidget {
     required this.topics,
     this.compact = false,
     this.eyebrow = 'Tonight\'s paper',
+    this.topicSize,
   });
 
   final List<DailyWarTopicRef> topics;
   final bool compact;
   final String eyebrow;
+  final double? topicSize;
 
   @override
   Widget build(BuildContext context) {
@@ -337,6 +339,13 @@ class _TopicBlock extends StatelessWidget {
     final subjects = DailyWarCopy.subjectsLine(topics).toUpperCase();
     final multiSubject =
         topics.map((t) => t.subjectSlug).toSet().length > 1;
+    final topicStyle = topicSize != null
+        ? DwText.dm(
+            size: topicSize!,
+            weight: FontWeight.w700,
+            height: 1.2,
+          )
+        : (compact ? DwText.topicCompact() : DwText.topic());
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -347,14 +356,22 @@ class _TopicBlock extends StatelessWidget {
         const SizedBox(height: 6),
         Text(subjects, style: DwText.subject(color: DwColors.crimsonBright)),
         const SizedBox(height: 4),
-        for (final t in topics)
-          Padding(
-            padding: const EdgeInsets.only(bottom: 2),
-            child: Text(
-              t.topic,
-              style: compact ? DwText.topicCompact() : DwText.topic(),
+        for (var i = 0; i < topics.length; i++) ...[
+          if (i > 0)
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 4),
+              child: Text(
+                '+',
+                style: DwText.dm(
+                  size: compact || topicSize != null ? 14 : 16,
+                  weight: FontWeight.w600,
+                  color: DwColors.onDarkDim,
+                  height: 1,
+                ),
+              ),
             ),
-          ),
+          Text(topics[i].topic, style: topicStyle),
+        ],
       ],
     );
   }
@@ -483,19 +500,22 @@ class _Countdown extends StatelessWidget {
           left: isGrand ? 'GRAND WAR' : 'DAILY WAR',
           right: '9:00 PM IST',
         ),
+        const SizedBox(height: 14),
+        _TopicBlock(topics: topics, topicSize: 26),
         const SizedBox(height: 12),
         Text('WAR BEGINS IN', style: DwText.meta()),
-        const SizedBox(height: 4),
+        const SizedBox(height: 2),
         Text(
           DailyWarSchedule.formatCountdown(untilStart),
-          style: DwText.heroNumber(color: DwColors.crimsonBright),
+          style: DwText.dm(
+            size: 22,
+            weight: FontWeight.w700,
+            color: DwColors.crimsonBright,
+            letterSpacing: -0.3,
+            height: 1.1,
+          ),
         ),
         const SizedBox(height: 10),
-        Text(
-          DailyWarCopy.compactTopics(topics),
-          style: DwText.body(color: DwColors.onDark),
-        ),
-        const SizedBox(height: 8),
         Text(
           DailyWarCopy.rulesLine(questionCount: qCount, isGrand: isGrand),
           style: DwText.meta(),
@@ -507,8 +527,6 @@ class _Countdown extends StatelessWidget {
             label: 'aspirants wrote last night\'s paper',
           ),
         ],
-        const SizedBox(height: 14),
-        const _PrimaryCta(label: 'Revise the topic', filled: false),
       ],
     );
   }

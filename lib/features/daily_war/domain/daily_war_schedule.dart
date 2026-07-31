@@ -43,9 +43,25 @@ abstract final class DailyWarSchedule {
     return minutes.clamp(1, 120);
   }
 
+  /// Current IST **wall clock** as a timezone-agnostic [DateTime].
+  ///
+  /// Returns a non-UTC calendar datetime whose y/M/d/H/m/s are IST. Schedule
+  /// anchors ([startAtForDate], etc.) use the same shape so [DateTime.isBefore]
+  /// compares IST wall times — not mixed UTC-vs-local epochs (which previously
+  /// made ~7:40 PM IST look like post–9:20 and show “War is over”).
   static DateTime nowIst([DateTime? utcNow]) {
     final utc = (utcNow ?? DateTime.now()).toUtc();
-    return utc.add(istOffset);
+    final shifted = utc.add(istOffset);
+    return DateTime(
+      shifted.year,
+      shifted.month,
+      shifted.day,
+      shifted.hour,
+      shifted.minute,
+      shifted.second,
+      shifted.millisecond,
+      shifted.microsecond,
+    );
   }
 
   static DateTime dateOnly(DateTime ist) =>

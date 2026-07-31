@@ -40,6 +40,23 @@ void main() {
         DateTime(2026, 8, 2, 21, 34),
       );
     });
+
+    test('nowIst wall clock matches schedule anchors before 9 PM', () {
+      // 19:39 IST = 14:09 UTC — must still be countdown, not “war over”.
+      final utc = DateTime.utc(2026, 7, 31, 14, 9);
+      final ist = DailyWarSchedule.nowIst(utc);
+      expect(ist.isUtc, isFalse);
+      expect(ist.hour, 19);
+      expect(ist.minute, 39);
+      expect(
+        ist.isBefore(DailyWarSchedule.startAtForDate(ist)),
+        isTrue,
+      );
+      expect(
+        DailyWarPhaseResolver.resolve(referenceIst: ist),
+        DailyWarPhase.countdown,
+      );
+    });
   });
 
   group('DailyWarPhaseResolver', () {
