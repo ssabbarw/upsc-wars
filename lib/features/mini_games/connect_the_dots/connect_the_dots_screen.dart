@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../core/providers/app_language_helpers.dart';
 import '../shared/game_intro_view.dart';
+import '../shared/mini_game_models.dart';
 import '../shared/revision_games_theme.dart';
 import '../shared/revision_games_widgets.dart';
 import 'connect_the_dots_controller.dart';
@@ -11,6 +14,7 @@ class ConnectTheDotsScreen extends HookConsumerWidget {
     super.key,
     this.subjectsCsv = '',
     this.difficultiesCsv = '',
+    this.initialLang = '',
   });
 
   /// Comma-separated subject slugs to filter content by; empty = all.
@@ -19,8 +23,22 @@ class ConnectTheDotsScreen extends HookConsumerWidget {
   /// Comma-separated difficulty names to filter content by; empty = all.
   final String difficultiesCsv;
 
+  /// Optional `lang` query param (`en` / `hi`); falls back to saved app language.
+  final String initialLang;
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final langState = useState(
+      normalizeMiniGameLang(
+        initialLang.isNotEmpty ? initialLang : watchAppLanguage(ref),
+      ),
+    );
+    final lang = langState.value;
+    void onLangChanged(String v) {
+      langState.value = v;
+      persistAppLanguage(ref, v);
+    }
+
     final provider = connectTheDotsControllerProvider(
       (subjects: subjectsCsv, difficulties: difficultiesCsv),
     );
@@ -49,6 +67,13 @@ class ConnectTheDotsScreen extends HookConsumerWidget {
 
     return RgGameScaffold(
       title: 'Connect the Dots',
+      trailing: item == null || complete
+          ? null
+          : RgLangToggle(
+              language: lang,
+              onChanged: onLangChanged,
+              minHeight: 28,
+            ),
       footer: revealed && !complete
           ? RgPillButton(
               label: 'Next →',
@@ -83,6 +108,9 @@ class ConnectTheDotsScreen extends HookConsumerWidget {
           final pickedWrong =
               revealed && picked != null && picked != item.answerIndex;
 
+          final dots = item.dotsForLang(lang);
+          final options = item.optionsForLang(lang);
+
           return ListView(
             padding: const EdgeInsets.fromLTRB(14, 14, 14, 20),
             children: [
@@ -91,19 +119,19 @@ class ConnectTheDotsScreen extends HookConsumerWidget {
                 '${state.session.length}',
               ),
               const SizedBox(height: 10),
-              for (var i = 0; i < item.dots.length; i++) ...[
+              for (var i = 0; i < dots.length; i++) ...[
                 if (i > 0) _Connector(revealed: revealed),
-                _ClueCard(text: item.dots[i], revealed: revealed),
+                _ClueCard(text: dots[i], revealed: revealed),
               ],
               const SizedBox(height: 12),
               const RgMonoLabel("What's the hidden link?"),
               const SizedBox(height: 8),
               if (!revealed)
-                for (var i = 0; i < item.options.length; i++)
+                for (var i = 0; i < options.length; i++)
                   Padding(
                     padding: const EdgeInsets.only(bottom: 7),
                     child: _OptionPill(
-                      label: item.options[i],
+                      label: options[i],
                       onTap: () => ref.read(provider.notifier).select(i),
                     ),
                   )
@@ -112,7 +140,7 @@ class ConnectTheDotsScreen extends HookConsumerWidget {
                   Padding(
                     padding: const EdgeInsets.only(bottom: 7),
                     child: _OptionPill(
-                      label: item.options[picked],
+                      label: options[picked],
                       onTap: null,
                       fill: RgColors.wrongBg,
                       borderColor: RgColors.wrong,
@@ -121,7 +149,7 @@ class ConnectTheDotsScreen extends HookConsumerWidget {
                     ),
                   ),
                 _OptionPill(
-                  label: item.options[item.answerIndex],
+                  label: options[item.answerIndex],
                   onTap: null,
                   fill: RgColors.correctBg,
                   borderColor: RgColors.teal,
@@ -130,7 +158,7 @@ class ConnectTheDotsScreen extends HookConsumerWidget {
                   icon: Icons.check_circle_rounded,
                 ),
                 const SizedBox(height: 10),
-                RgExplanationChip(text: item.explanation),
+                RgExplanationChip(text: item.explanationForLang(lang)),
               ],
             ],
           );

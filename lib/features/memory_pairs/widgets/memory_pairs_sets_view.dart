@@ -6,6 +6,7 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../shared/widgets/en_hi_language_toggle.dart';
 import '../domain/memory_pair_catalog_grouping.dart';
 import '../domain/memory_pair_models.dart';
 import '../domain/memory_pair_subject_meta.dart';
@@ -72,6 +73,12 @@ class MemoryPairsSetsView extends ConsumerWidget {
                     ],
                   ),
                 ),
+                EnHiLanguageToggle(
+                  language: lang,
+                  onChanged: (v) => persistAppLanguage(ref, v),
+                  minHeight: 32,
+                ),
+                const SizedBox(width: 4),
                 IconButton(
                   onPressed: () => showMemoryPairsHelpSheet(context),
                   icon: Icon(

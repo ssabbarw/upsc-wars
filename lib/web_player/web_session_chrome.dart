@@ -10,6 +10,7 @@ import 'package:upsc_wars/core/theme/app_spacing.dart';
 import 'package:upsc_wars/core/theme/app_text_styles.dart';
 import 'package:upsc_wars/web_player/web_player_ui_tokens.dart';
 import 'package:upsc_wars/shared/extensions/context_extensions.dart';
+import 'package:upsc_wars/shared/widgets/en_hi_language_toggle.dart';
 import 'package:upsc_wars/shared/widgets/selectable_copy_search_text.dart';
 
 /// Mirrors learning-mode option styling from [TestEngineScreen] `_OptionRow`.
@@ -139,28 +140,10 @@ class WebPlayerSessionChrome extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(width: AppSpacing.sm),
-                ToggleButtons(
-                  isSelected: [
-                    uiLanguage == 'en',
-                    uiLanguage == 'hi',
-                  ],
-                  onPressed: (index) =>
-                      onLanguageChanged(index == 0 ? 'en' : 'hi'),
-                  borderRadius: BorderRadius.circular(AppRadius.sm),
-                  constraints: const BoxConstraints(
-                    minHeight: 28,
-                    minWidth: 60,
-                  ),
-                  children: const [
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 8),
-                      child: Text('EN'),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 8),
-                      child: Text('हि'),
-                    ),
-                  ],
+                EnHiLanguageToggle(
+                  language: uiLanguage,
+                  onChanged: onLanguageChanged,
+                  minHeight: 28,
                 ),
                 const SizedBox(width: AppSpacing.sm),
                 InkWell(

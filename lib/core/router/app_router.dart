@@ -727,6 +727,7 @@ GoRouter appRouter(Ref ref) {
         builder: (context, state) => TimelineSorterScreen(
           subjectsCsv: state.uri.queryParameters['subjects'] ?? '',
           difficultiesCsv: state.uri.queryParameters['difficulty'] ?? '',
+          initialLang: state.uri.queryParameters['lang'] ?? '',
         ),
       ),
       GoRoute(
@@ -736,6 +737,7 @@ GoRouter appRouter(Ref ref) {
         builder: (context, state) => OddOneOutScreen(
           subjectsCsv: state.uri.queryParameters['subjects'] ?? '',
           difficultiesCsv: state.uri.queryParameters['difficulty'] ?? '',
+          initialLang: state.uri.queryParameters['lang'] ?? '',
         ),
       ),
       GoRoute(
@@ -745,6 +747,7 @@ GoRouter appRouter(Ref ref) {
         builder: (context, state) => FactOrBluffScreen(
           subjectsCsv: state.uri.queryParameters['subjects'] ?? '',
           difficultiesCsv: state.uri.queryParameters['difficulty'] ?? '',
+          initialLang: state.uri.queryParameters['lang'] ?? '',
         ),
       ),
       GoRoute(
@@ -754,6 +757,7 @@ GoRouter appRouter(Ref ref) {
         builder: (context, state) => ConnectTheDotsScreen(
           subjectsCsv: state.uri.queryParameters['subjects'] ?? '',
           difficultiesCsv: state.uri.queryParameters['difficulty'] ?? '',
+          initialLang: state.uri.queryParameters['lang'] ?? '',
         ),
       ),
       GoRoute(
@@ -763,6 +767,7 @@ GoRouter appRouter(Ref ref) {
         builder: (context, state) => DuelScreen(
           subjectsCsv: state.uri.queryParameters['subjects'] ?? '',
           difficultiesCsv: state.uri.queryParameters['difficulty'] ?? '',
+          initialLang: state.uri.queryParameters['lang'] ?? '',
         ),
       ),
       GoRoute(

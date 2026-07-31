@@ -3,6 +3,90 @@ import 'package:go_router/go_router.dart';
 
 import 'revision_games_theme.dart';
 
+/// Compact EN | हि control for cream games surfaces. Tap **anywhere** toggles
+/// (avoids tiny per-segment hit targets). Uses [RgColors], not app ColorScheme,
+/// so it stays visible on the fixed cream palette in light and dark app themes.
+class RgLangToggle extends StatelessWidget {
+  const RgLangToggle({
+    super.key,
+    required this.language,
+    required this.onChanged,
+    this.minHeight = 28,
+  });
+
+  final String language;
+  final ValueChanged<String> onChanged;
+  final double minHeight;
+
+  @override
+  Widget build(BuildContext context) {
+    final isHi = language == 'hi';
+    final radius = BorderRadius.circular(RgRadius.sm);
+
+    return Material(
+      color: RgColors.transparent,
+      child: InkWell(
+        onTap: () => onChanged(isHi ? 'en' : 'hi'),
+        borderRadius: radius,
+        child: Ink(
+          height: minHeight,
+          decoration: BoxDecoration(
+            color: RgColors.neutralFill,
+            borderRadius: radius,
+            border: Border.all(color: RgColors.border14),
+          ),
+          child: IntrinsicHeight(
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                _RgLangSeg(label: 'EN', selected: !isHi, left: true),
+                _RgLangSeg(label: 'हि', selected: isHi, left: false),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _RgLangSeg extends StatelessWidget {
+  const _RgLangSeg({
+    required this.label,
+    required this.selected,
+    required this.left,
+  });
+
+  final String label;
+  final bool selected;
+  final bool left;
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedContainer(
+      duration: const Duration(milliseconds: 160),
+      curve: Curves.easeOut,
+      alignment: Alignment.center,
+      padding: const EdgeInsets.symmetric(horizontal: 10),
+      decoration: BoxDecoration(
+        color: selected ? RgColors.ink : RgColors.transparent,
+        borderRadius: BorderRadius.horizontal(
+          left: left ? Radius.circular(RgRadius.sm - 1) : Radius.zero,
+          right: left ? Radius.zero : Radius.circular(RgRadius.sm - 1),
+        ),
+      ),
+      child: Text(
+        label,
+        style: RgText.mono(
+          size: 10,
+          color: selected ? RgColors.onDark : RgColors.muted,
+        ),
+      ),
+    );
+  }
+}
+
 /// Cream page shell with the design's 46px white header bar and an optional
 /// white footer that holds the pill CTA.
 class RgGameScaffold extends StatelessWidget {

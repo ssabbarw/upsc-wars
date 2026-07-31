@@ -19,6 +19,10 @@ class DuelState {
     this.p2Score = 0,
     this.p1Locked = false,
     this.p2Locked = false,
+    this.p1SelectedIndex,
+    this.p2SelectedIndex,
+    this.p1Passed = false,
+    this.p2Passed = false,
     this.p1WrongIndex,
     this.p2WrongIndex,
     this.phase = DuelPhase.playing,
@@ -32,13 +36,23 @@ class DuelState {
   final int questionIndex;
   final int p1Score;
   final int p2Score;
+
+  /// Player has locked in a choice or passed this round (choice still hidden).
   final bool p1Locked;
   final bool p2Locked;
 
-  /// Option index each player tapped wrong this round (for the lockout stamp).
+  /// Option index chosen this round; null if not chosen (or passed).
+  final int? p1SelectedIndex;
+  final int? p2SelectedIndex;
+  final bool p1Passed;
+  final bool p2Passed;
+
+  /// Option index each player got wrong — set only after reveal.
   final int? p1WrongIndex;
   final int? p2WrongIndex;
   final DuelPhase phase;
+
+  /// Sole scorer this round; null if neither or both scored.
   final DuelPlayer? roundWinner;
   final bool revealedAnswer;
   final String? error;
@@ -49,6 +63,14 @@ class DuelState {
 
   int get questionNumber => questionIndex + 1;
 
+  bool playerGotItRight(DuelPlayer player) {
+    if (!revealedAnswer || current == null) return false;
+    if (player == DuelPlayer.one) {
+      return !p1Passed && p1SelectedIndex == current!.answerIndex;
+    }
+    return !p2Passed && p2SelectedIndex == current!.answerIndex;
+  }
+
   DuelState copyWith({
     List<DuelQuestion>? pool,
     List<DuelQuestion>? matchQuestions,
@@ -57,8 +79,13 @@ class DuelState {
     int? p2Score,
     bool? p1Locked,
     bool? p2Locked,
+    int? p1SelectedIndex,
+    int? p2SelectedIndex,
+    bool? p1Passed,
+    bool? p2Passed,
     int? p1WrongIndex,
     int? p2WrongIndex,
+    bool clearSelections = false,
     bool clearWrongIndices = false,
     DuelPhase? phase,
     DuelPlayer? roundWinner,
@@ -72,8 +99,14 @@ class DuelState {
       questionIndex: questionIndex ?? this.questionIndex,
       p1Score: p1Score ?? this.p1Score,
       p2Score: p2Score ?? this.p2Score,
-      p1Locked: p1Locked ?? this.p1Locked,
-      p2Locked: p2Locked ?? this.p2Locked,
+      p1Locked: clearSelections ? false : (p1Locked ?? this.p1Locked),
+      p2Locked: clearSelections ? false : (p2Locked ?? this.p2Locked),
+      p1SelectedIndex:
+          clearSelections ? null : (p1SelectedIndex ?? this.p1SelectedIndex),
+      p2SelectedIndex:
+          clearSelections ? null : (p2SelectedIndex ?? this.p2SelectedIndex),
+      p1Passed: clearSelections ? false : (p1Passed ?? this.p1Passed),
+      p2Passed: clearSelections ? false : (p2Passed ?? this.p2Passed),
       p1WrongIndex: clearWrongIndices
           ? null
           : (p1WrongIndex ?? this.p1WrongIndex),
@@ -134,65 +167,87 @@ class DuelController extends AsyncNotifier<DuelState> {
     final current = state.asData?.value;
     if (current == null ||
         current.phase != DuelPhase.playing ||
+        current.revealedAnswer ||
         current.current == null) {
       return;
     }
     if (player == DuelPlayer.one && current.p1Locked) return;
     if (player == DuelPlayer.two && current.p2Locked) return;
 
-    final correct = optionIndex == current.current!.answerIndex;
-    if (correct) {
-      state = AsyncData(
-        current.copyWith(
-          p1Score: player == DuelPlayer.one
-              ? current.p1Score + 1
-              : current.p1Score,
-          p2Score: player == DuelPlayer.two
-              ? current.p2Score + 1
-              : current.p2Score,
-          phase: DuelPhase.playing,
-          roundWinner: player,
-          revealedAnswer: true,
-          p1Locked: true,
-          p2Locked: true,
-        ),
-      );
-      // Brief pause then advance — screens call next after showing winner,
-      // or we auto-advance here via microtask delay from the screen.
+    final next = current.copyWith(
+      p1Locked: player == DuelPlayer.one ? true : current.p1Locked,
+      p2Locked: player == DuelPlayer.two ? true : current.p2Locked,
+      p1SelectedIndex:
+          player == DuelPlayer.one ? optionIndex : current.p1SelectedIndex,
+      p2SelectedIndex:
+          player == DuelPlayer.two ? optionIndex : current.p2SelectedIndex,
+      p1Passed: player == DuelPlayer.one ? false : current.p1Passed,
+      p2Passed: player == DuelPlayer.two ? false : current.p2Passed,
+    );
+    state = AsyncData(_maybeResolve(next));
+  }
+
+  void pass(DuelPlayer player) {
+    final current = state.asData?.value;
+    if (current == null ||
+        current.phase != DuelPhase.playing ||
+        current.revealedAnswer ||
+        current.current == null) {
       return;
     }
+    if (player == DuelPlayer.one && current.p1Locked) return;
+    if (player == DuelPlayer.two && current.p2Locked) return;
 
-    // Wrong tap: lock that player out and remember which option they hit.
-    final p1Locked = player == DuelPlayer.one ? true : current.p1Locked;
-    final p2Locked = player == DuelPlayer.two ? true : current.p2Locked;
-    final p1WrongIndex = player == DuelPlayer.one
-        ? optionIndex
-        : current.p1WrongIndex;
-    final p2WrongIndex = player == DuelPlayer.two
-        ? optionIndex
-        : current.p2WrongIndex;
-    if (p1Locked && p2Locked) {
-      state = AsyncData(
-        current.copyWith(
-          p1Locked: p1Locked,
-          p2Locked: p2Locked,
-          p1WrongIndex: p1WrongIndex,
-          p2WrongIndex: p2WrongIndex,
-          phase: DuelPhase.bothWrong,
-          revealedAnswer: true,
-          clearRoundWinner: true,
-        ),
-      );
-    } else {
-      state = AsyncData(
-        current.copyWith(
-          p1Locked: p1Locked,
-          p2Locked: p2Locked,
-          p1WrongIndex: p1WrongIndex,
-          p2WrongIndex: p2WrongIndex,
-        ),
-      );
+    final next = current.copyWith(
+      p1Locked: player == DuelPlayer.one ? true : current.p1Locked,
+      p2Locked: player == DuelPlayer.two ? true : current.p2Locked,
+      p1Passed: player == DuelPlayer.one ? true : current.p1Passed,
+      p2Passed: player == DuelPlayer.two ? true : current.p2Passed,
+    );
+    state = AsyncData(_maybeResolve(next));
+  }
+
+  DuelState _maybeResolve(DuelState pending) {
+    if (!pending.p1Locked || !pending.p2Locked) return pending;
+    return _resolve(pending);
+  }
+
+  DuelState _resolve(DuelState pending) {
+    final answer = pending.current!.answerIndex;
+    final p1Correct =
+        !pending.p1Passed && pending.p1SelectedIndex == answer;
+    final p2Correct =
+        !pending.p2Passed && pending.p2SelectedIndex == answer;
+
+    final p1Wrong = !pending.p1Passed &&
+            pending.p1SelectedIndex != null &&
+            pending.p1SelectedIndex != answer
+        ? pending.p1SelectedIndex
+        : null;
+    final p2Wrong = !pending.p2Passed &&
+            pending.p2SelectedIndex != null &&
+            pending.p2SelectedIndex != answer
+        ? pending.p2SelectedIndex
+        : null;
+
+    DuelPlayer? winner;
+    if (p1Correct && !p2Correct) {
+      winner = DuelPlayer.one;
+    } else if (p2Correct && !p1Correct) {
+      winner = DuelPlayer.two;
     }
+
+    final neitherScored = !p1Correct && !p2Correct;
+    return pending.copyWith(
+      p1Score: p1Correct ? pending.p1Score + 1 : pending.p1Score,
+      p2Score: p2Correct ? pending.p2Score + 1 : pending.p2Score,
+      p1WrongIndex: p1Wrong,
+      p2WrongIndex: p2Wrong,
+      phase: neitherScored ? DuelPhase.bothWrong : DuelPhase.playing,
+      roundWinner: winner,
+      clearRoundWinner: winner == null,
+      revealedAnswer: true,
+    );
   }
 
   void nextQuestion() {
@@ -214,8 +269,7 @@ class DuelController extends AsyncNotifier<DuelState> {
     state = AsyncData(
       current.copyWith(
         questionIndex: nextIndex,
-        p1Locked: false,
-        p2Locked: false,
+        clearSelections: true,
         clearWrongIndices: true,
         phase: DuelPhase.playing,
         clearRoundWinner: true,

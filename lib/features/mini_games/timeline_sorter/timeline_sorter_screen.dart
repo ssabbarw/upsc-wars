@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../core/providers/app_language_helpers.dart';
 import '../shared/game_intro_view.dart';
+import '../shared/mini_game_models.dart';
 import '../shared/revision_games_theme.dart';
 import '../shared/revision_games_widgets.dart';
 import 'timeline_sorter_controller.dart';
@@ -12,6 +15,7 @@ class TimelineSorterScreen extends HookConsumerWidget {
     super.key,
     this.subjectsCsv = '',
     this.difficultiesCsv = '',
+    this.initialLang = '',
   });
 
   /// Comma-separated subject slugs to filter content by; empty = all.
@@ -20,8 +24,22 @@ class TimelineSorterScreen extends HookConsumerWidget {
   /// Comma-separated difficulty names to filter content by; empty = all.
   final String difficultiesCsv;
 
+  /// Optional `lang` query param (`en` / `hi`); falls back to saved app language.
+  final String initialLang;
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final langState = useState(
+      normalizeMiniGameLang(
+        initialLang.isNotEmpty ? initialLang : watchAppLanguage(ref),
+      ),
+    );
+    final lang = langState.value;
+    void onLangChanged(String v) {
+      langState.value = v;
+      persistAppLanguage(ref, v);
+    }
+
     final provider = timelineSorterControllerProvider(
       (subjects: subjectsCsv, difficulties: difficultiesCsv),
     );
@@ -53,6 +71,13 @@ class TimelineSorterScreen extends HookConsumerWidget {
           ? 'Timeline Sorter'
           : '${set.subject} · Set ${snapshot!.setIndex + 1}/'
               '${snapshot.session.length}',
+      trailing: set == null || complete
+          ? null
+          : RgLangToggle(
+              language: lang,
+              onChanged: onLangChanged,
+              minHeight: 28,
+            ),
       footer: set == null || complete
           ? null
           : RgPillButton(
@@ -100,7 +125,7 @@ class TimelineSorterScreen extends HookConsumerWidget {
                     : Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          RgMonoLabel(set.theme),
+                          RgMonoLabel(set.themeForLang(lang)),
                           const SizedBox(height: 4),
                           Text(
                             'Hold and drag to reorder, then check.',
@@ -187,7 +212,7 @@ class TimelineSorterScreen extends HookConsumerWidget {
                           const SizedBox(width: 10),
                           Expanded(
                             child: Text(
-                              item.label,
+                              item.labelForLang(lang),
                               style: RgText.body(
                                 size: 12.5,
                                 weight: FontWeight.w600,
@@ -226,7 +251,7 @@ class TimelineSorterScreen extends HookConsumerWidget {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(14, 0, 14, 12),
                   child: Text(
-                    set.explanation,
+                    set.explanationForLang(lang),
                     style: RgText.body(
                       size: 11,
                       height: 1.5,

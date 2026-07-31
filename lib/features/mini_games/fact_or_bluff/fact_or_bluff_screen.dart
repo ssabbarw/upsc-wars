@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../core/providers/kill_switch_provider.dart';
+import '../../../core/providers/app_language_helpers.dart';
 import '../shared/game_intro_view.dart';
+import '../shared/mini_game_models.dart';
 import '../shared/revision_games_theme.dart';
 import '../shared/revision_games_widgets.dart';
 import 'fact_or_bluff_controller.dart';
@@ -13,6 +14,7 @@ class FactOrBluffScreen extends HookConsumerWidget {
     super.key,
     this.subjectsCsv = '',
     this.difficultiesCsv = '',
+    this.initialLang = '',
   });
 
   /// Comma-separated subject slugs to filter content by; empty = all.
@@ -21,15 +23,29 @@ class FactOrBluffScreen extends HookConsumerWidget {
   /// Comma-separated difficulty names to filter content by; empty = all.
   final String difficultiesCsv;
 
+  /// Optional `lang` query param (`en` / `hi`); falls back to saved app language.
+  final String initialLang;
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final langState = useState(
+      normalizeMiniGameLang(
+        initialLang.isNotEmpty ? initialLang : watchAppLanguage(ref),
+      ),
+    );
+    final lang = langState.value;
+    void onLangChanged(String v) {
+      langState.value = v;
+      persistAppLanguage(ref, v);
+    }
+
     final provider = factOrBluffControllerProvider((
       subjects: subjectsCsv,
       difficulties: difficultiesCsv,
     ));
     final async = ref.watch(provider);
-    final secondsAsync = ref.watch(factOrBluffSecondsRemoteProvider);
-    final seconds = secondsAsync.asData?.value ?? factOrBluffDefaultSeconds;
+    final seconds =
+        async.asData?.value.durationSeconds ?? factOrBluffDefaultSeconds;
     final howToReady = useGameHowToSheet(
       context: context,
       ref: ref,
@@ -70,7 +86,18 @@ class FactOrBluffScreen extends HookConsumerWidget {
       title: 'Fact or Bluff',
       trailing: snapshot == null || complete
           ? null
-          : _StreakPill(streak: snapshot.streak),
+          : Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                RgLangToggle(
+                  language: lang,
+                  onChanged: onLangChanged,
+                  minHeight: 28,
+                ),
+                const SizedBox(width: 8),
+                _StreakPill(streak: snapshot.streak),
+              ],
+            ),
       footer: item == null || complete
           ? null
           : awaiting
@@ -133,7 +160,7 @@ class FactOrBluffScreen extends HookConsumerWidget {
               Opacity(
                 opacity: !awaiting && !item.isFact ? 0.55 : 1,
                 child: Text(
-                  '“${item.statement}”',
+                  '“${item.statementForLang(lang)}”',
                   textAlign: TextAlign.center,
                   style:
                       RgText.display(
@@ -169,7 +196,7 @@ class FactOrBluffScreen extends HookConsumerWidget {
                 ),
               ] else ...[
                 const SizedBox(height: 16),
-                RgExplanationChip(text: item.explanation, size: 12),
+                RgExplanationChip(text: item.explanationForLang(lang), size: 12),
               ],
             ],
           );

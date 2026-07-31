@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../core/providers/app_language_helpers.dart';
 import '../shared/game_intro_view.dart';
+import '../shared/mini_game_models.dart';
 import '../shared/revision_games_theme.dart';
 import '../shared/revision_games_widgets.dart';
 import 'odd_one_out_controller.dart';
@@ -11,6 +14,7 @@ class OddOneOutScreen extends HookConsumerWidget {
     super.key,
     this.subjectsCsv = '',
     this.difficultiesCsv = '',
+    this.initialLang = '',
   });
 
   /// Comma-separated subject slugs to filter content by; empty = all.
@@ -19,8 +23,22 @@ class OddOneOutScreen extends HookConsumerWidget {
   /// Comma-separated difficulty names to filter content by; empty = all.
   final String difficultiesCsv;
 
+  /// Optional `lang` query param (`en` / `hi`); falls back to saved app language.
+  final String initialLang;
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final langState = useState(
+      normalizeMiniGameLang(
+        initialLang.isNotEmpty ? initialLang : watchAppLanguage(ref),
+      ),
+    );
+    final lang = langState.value;
+    void onLangChanged(String v) {
+      langState.value = v;
+      persistAppLanguage(ref, v);
+    }
+
     final provider = oddOneOutControllerProvider(
       (subjects: subjectsCsv, difficulties: difficultiesCsv),
     );
@@ -36,7 +54,7 @@ class OddOneOutScreen extends HookConsumerWidget {
         title: 'Odd One Out',
         steps: const [
           'Look at all four options.',
-          "Tap the one that doesn't belong.",
+          'Pick the odd one out.',
           'See the highlight and explanation instantly.',
         ],
       ),
@@ -51,6 +69,20 @@ class OddOneOutScreen extends HookConsumerWidget {
       title: item == null || complete
           ? 'Odd One Out'
           : 'Odd One Out · ${item.subject}',
+      trailing: item == null || complete
+          ? null
+          : Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                RgLangToggle(
+                  language: lang,
+                  onChanged: onLangChanged,
+                  minHeight: 28,
+                ),
+                const SizedBox(width: 8),
+                _DifficultyPill(difficulty: item.difficulty),
+              ],
+            ),
       footer: revealed && !complete
           ? RgPillButton(
               label: 'Next →',
@@ -92,7 +124,7 @@ class OddOneOutScreen extends HookConsumerWidget {
               ),
               const SizedBox(height: 10),
               Text(
-                "Which one doesn't belong?",
+                lang == 'hi' ? 'विषम को चुनें' : 'Pick the odd one out',
                 textAlign: TextAlign.center,
                 style: RgText.display(size: 16),
               ),
@@ -100,7 +132,7 @@ class OddOneOutScreen extends HookConsumerWidget {
               GridView.builder(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
-                itemCount: item.items.length,
+                itemCount: item.itemsForLang(lang).length,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   mainAxisSpacing: 10,
@@ -110,7 +142,7 @@ class OddOneOutScreen extends HookConsumerWidget {
                   final selected = state.selectedIndex == i;
                   final isOdd = i == item.oddIndex;
                   return _OddTile(
-                    label: item.items[i],
+                    label: item.itemsForLang(lang)[i],
                     revealed: revealed,
                     isAnswer: isOdd,
                     isWrongPick: selected && !isOdd,
@@ -122,11 +154,49 @@ class OddOneOutScreen extends HookConsumerWidget {
               ),
               if (revealed) ...[
                 const SizedBox(height: 16),
-                RgExplanationChip(text: item.explanation),
+                RgExplanationChip(text: item.explanationForLang(lang)),
               ],
             ],
           );
         },
+      ),
+    );
+  }
+}
+
+class _DifficultyPill extends StatelessWidget {
+  const _DifficultyPill({required this.difficulty});
+
+  final MiniGameDifficulty difficulty;
+
+  @override
+  Widget build(BuildContext context) {
+    final (label, fg, bg) = switch (difficulty) {
+      MiniGameDifficulty.easy => (
+          'EASY',
+          RgColors.tealDeep,
+          RgColors.correctBg,
+        ),
+      MiniGameDifficulty.medium => (
+          'MEDIUM',
+          RgColors.warningText,
+          RgColors.warningBg,
+        ),
+      MiniGameDifficulty.hard => (
+          'HARD',
+          RgColors.wrongText,
+          RgColors.wrongBg,
+        ),
+    };
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
+      decoration: BoxDecoration(
+        color: bg,
+        borderRadius: BorderRadius.circular(RgRadius.pill),
+      ),
+      child: Text(
+        label,
+        style: RgText.mono(size: 10, color: fg),
       ),
     );
   }

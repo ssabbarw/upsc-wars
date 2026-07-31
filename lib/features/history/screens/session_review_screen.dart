@@ -14,6 +14,7 @@ import 'package:upsc_wars/core/providers/prefs_provider.dart';
 import 'package:upsc_wars/core/providers/user_database_provider.dart';
 import 'package:upsc_wars/shared/extensions/context_extensions.dart';
 import 'package:upsc_wars/shared/theme/dark_mode_toggle.dart';
+import 'package:upsc_wars/shared/widgets/en_hi_language_toggle.dart';
 import 'package:upsc_wars/shared/widgets/question_table_view.dart';
 import 'package:upsc_wars/shared/widgets/selectable_copy_search_text.dart';
 import 'package:upsc_wars/features/history/providers/review_session_provider.dart';
@@ -970,25 +971,10 @@ class _TopBar extends HookConsumerWidget {
               ),
             ),
           const SizedBox(width: 8),
-          ToggleButtons(
-            isSelected: [uiLanguage == 'en', uiLanguage == 'hi'],
-            onPressed: (index) => onLanguageChanged(index == 0 ? 'en' : 'hi'),
-            constraints: const BoxConstraints(minHeight: 24, minWidth: 34),
-            borderRadius: BorderRadius.circular(6),
-            textStyle: const TextStyle(
-              fontSize: 11,
-              fontWeight: FontWeight.w500,
-            ),
-            children: const [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 4),
-                child: Text('EN'),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 4),
-                child: Text('हि'),
-              ),
-            ],
+          EnHiLanguageToggle(
+            language: uiLanguage,
+            onChanged: onLanguageChanged,
+            minHeight: 24,
           ),
           const SizedBox(width: 8),
           InkWell(

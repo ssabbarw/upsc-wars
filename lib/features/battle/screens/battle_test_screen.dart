@@ -23,6 +23,7 @@ import 'package:upsc_wars/features/test_engine/providers/test_session_state.dart
 import 'package:upsc_wars/shared/extensions/context_extensions.dart';
 import 'package:upsc_wars/shared/theme/dark_mode_toggle.dart';
 import 'package:upsc_wars/shared/widgets/debug_correct_answer_banner.dart';
+import 'package:upsc_wars/shared/widgets/en_hi_language_toggle.dart';
 import 'package:upsc_wars/shared/widgets/question_table_view.dart';
 import 'package:upsc_wars/shared/widgets/selectable_copy_search_text.dart';
 import 'package:upsc_wars/shared/widgets/top_snack_bar.dart';
@@ -372,8 +373,7 @@ class _BattleTestSessionView extends HookConsumerWidget {
                 child: _BattleQuestionArea(
                   question: q,
                   uiLanguage: uiLanguage.value,
-                  onLanguageChanged: (i) {
-                    final value = i == 0 ? 'en' : 'hi';
+                  onLanguageChanged: (value) {
                     uiLanguage.value = value;
                     unawaited(persistAppLanguage(ref, value));
                   },
@@ -866,7 +866,7 @@ class _BattleQuestionArea extends StatelessWidget {
 
   final TestQuestion question;
   final String uiLanguage;
-  final ValueChanged<int> onLanguageChanged;
+  final ValueChanged<String> onLanguageChanged;
   final bool revealed;
   final String? selectedOption;
   final bool optionsLocked;
@@ -901,21 +901,10 @@ class _BattleQuestionArea extends StatelessWidget {
             ),
           ),
         ),
-        ToggleButtons(
-          isSelected: [uiLanguage == 'en', uiLanguage == 'hi'],
-          onPressed: onLanguageChanged,
-          borderRadius: BorderRadius.circular(AppRadius.sm),
-          constraints: const BoxConstraints(minHeight: 28, minWidth: 60),
-          children: const [
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 8),
-              child: Text('EN'),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 8),
-              child: Text('हि'),
-            ),
-          ],
+        EnHiLanguageToggle(
+          language: uiLanguage,
+          onChanged: onLanguageChanged,
+          minHeight: 28,
         ),
       ],
     );

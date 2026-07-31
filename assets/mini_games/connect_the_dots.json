@@ -16,7 +16,20 @@
       "Decline of the Nanda dynasty"
     ],
     "answer_index": 2,
-    "explanation": "Chandragupta Maurya founded the Mauryan Empire with Chanakya (Kautilya) as his mentor and author of the Arthashastra, the treatise on Mauryan statecraft. Megasthenes was the Greek ambassador at Chandragupta's court whose account, the Indica, documented Mauryan administration."
+    "explanation": "Chandragupta Maurya founded the Mauryan Empire with Chanakya (Kautilya) as his mentor and author of the Arthashastra, the treatise on Mauryan statecraft. Megasthenes was the Greek ambassador at Chandragupta's court whose account, the Indica, documented Mauryan administration.",
+    "dots_hi": [
+      "चंद्रगुप्त मौर्य",
+      "चाणक्य",
+      "अर्थशास्त्र",
+      "मेगस्थनीज"
+    ],
+    "options_hi": [
+      "अशोक के अधीन बौद्ध धर्म का प्रसार",
+      "भारतीय-यूनानी व्यापारिक संबंध",
+      "मौर्य साम्राज्य की स्थापना और प्रशासन",
+      "नंद वंश का पतन"
+    ],
+    "explanation_hi": "चंद्रगुप्त मौर्य ने चाणक्य (कौटिल्य) के मार्गदर्शन में मौर्य साम्राज्य की स्थापना की, जो मौर्यकालीन शासन-व्यवस्था पर ग्रंथ अर्थशास्त्र के रचयिता थे। मेगस्थनीज चंद्रगुप्त के दरबार में यूनानी राजदूत था, जिसके विवरण इंडिका में मौर्य प्रशासन का वर्णन मिलता है।"
   },
   {
     "id": "cd_002",
@@ -35,7 +48,20 @@
       "Early Vedic settlements on the Saraswati"
     ],
     "answer_index": 0,
-    "explanation": "All four are major Harappan sites: Harappa and Mohenjo-daro (both now in Pakistan) were the first excavated cities, Dholavira in Gujarat is known for water conservation and a signboard inscription, and Lothal in Gujarat had a dockyard."
+    "explanation": "All four are major Harappan sites: Harappa and Mohenjo-daro (both now in Pakistan) were the first excavated cities, Dholavira in Gujarat is known for water conservation and a signboard inscription, and Lothal in Gujarat had a dockyard.",
+    "dots_hi": [
+      "हड़प्पा",
+      "मोहनजोदड़ो",
+      "धोलावीरा",
+      "लोथल"
+    ],
+    "options_hi": [
+      "सिंधु घाटी सभ्यता के प्रमुख स्थल",
+      "महाजनपदों की राजधानियाँ",
+      "अशोक के शिलालेखों के स्थान",
+      "सरस्वती नदी के तट पर प्रारंभिक वैदिक बस्तियाँ"
+    ],
+    "explanation_hi": "ये चारों हड़प्पा सभ्यता के प्रमुख स्थल हैं: हड़प्पा और मोहनजोदड़ो (दोनों अब पाकिस्तान में) सबसे पहले उत्खनित नगर थे, गुजरात का धोलावीरा जल संरक्षण और साइनबोर्ड अभिलेख के लिए जाना जाता है, तथा गुजरात के लोथल में एक गोदी (डॉकयार्ड) थी।"
   },
   {
     "id": "cd_003",
@@ -54,7 +80,20 @@
       "Texts of the Puranic tradition"
     ],
     "answer_index": 1,
-    "explanation": "These are the four Vedas: the Rigveda contains hymns to deities, the Samaveda sets hymns to melody for chanting, the Yajurveda gives sacrificial formulae, and the Atharvaveda contains charms and spells of everyday life."
+    "explanation": "These are the four Vedas: the Rigveda contains hymns to deities, the Samaveda sets hymns to melody for chanting, the Yajurveda gives sacrificial formulae, and the Atharvaveda contains charms and spells of everyday life.",
+    "dots_hi": [
+      "ऋग्वेद",
+      "सामवेद",
+      "यजुर्वेद",
+      "अथर्ववेद"
+    ],
+    "options_hi": [
+      "प्रमुख उपनिषद",
+      "वैदिक साहित्य के चार वेद",
+      "वेदांग (वेदों के अंग)",
+      "पौराणिक परंपरा के ग्रंथ"
+    ],
+    "explanation_hi": "ये चार वेद हैं: ऋग्वेद में देवताओं की स्तुति में रचित ऋचाएँ हैं, सामवेद में मंत्रों को गायन के लिए स्वरबद्ध किया गया है, यजुर्वेद में यज्ञ संबंधी सूत्र हैं, और अथर्ववेद में दैनिक जीवन के टोने-टोटके व मंत्र सम्मिलित हैं।"
   },
   {
     "id": "cd_004",
@@ -73,7 +112,20 @@
       "Sites of the four great events of Buddha's life"
     ],
     "answer_index": 3,
-    "explanation": "Each site marks a great event of the Buddha's life: birth at Lumbini, enlightenment at Bodh Gaya, the first sermon (Dhammachakkapavattana) at Sarnath, and death (Mahaparinirvana) at Kushinagar."
+    "explanation": "Each site marks a great event of the Buddha's life: birth at Lumbini, enlightenment at Bodh Gaya, the first sermon (Dhammachakkapavattana) at Sarnath, and death (Mahaparinirvana) at Kushinagar.",
+    "dots_hi": [
+      "लुंबिनी",
+      "बोधगया",
+      "सारनाथ",
+      "कुशीनगर"
+    ],
+    "options_hi": [
+      "चार बौद्ध संगीतियों के स्थान",
+      "प्राचीन मगध की राजधानियाँ",
+      "जैन तीर्थंकरों के जन्मस्थान",
+      "बुद्ध के जीवन की चार महान घटनाओं के स्थल"
+    ],
+    "explanation_hi": "प्रत्येक स्थल बुद्ध के जीवन की एक महान घटना से जुड़ा है: लुंबिनी में जन्म, बोधगया में ज्ञान प्राप्ति, सारनाथ में प्रथम उपदेश (धर्मचक्र प्रवर्तन), और कुशीनगर में महापरिनिर्वाण (मृत्यु)।"
   },
   {
     "id": "cd_005",
@@ -92,7 +144,20 @@
       "Authors of the Puranas"
     ],
     "answer_index": 1,
-    "explanation": "Panini authored the Ashtadhyayi, the foundational text of Sanskrit grammar. Patanjali later wrote the Mahabhashya, the great commentary on Panini's work — together they form the backbone of classical Sanskrit grammar."
+    "explanation": "Panini authored the Ashtadhyayi, the foundational text of Sanskrit grammar. Patanjali later wrote the Mahabhashya, the great commentary on Panini's work — together they form the backbone of classical Sanskrit grammar.",
+    "dots_hi": [
+      "पाणिनि",
+      "पतंजलि",
+      "अष्टाध्यायी",
+      "महाभाष्य"
+    ],
+    "options_hi": [
+      "वेदों के संकलनकर्ता",
+      "संस्कृत व्याकरण की आधारभूत हस्तियाँ और ग्रंथ",
+      "बौद्ध दर्शन संप्रदायों के संस्थापक",
+      "पुराणों के रचयिता"
+    ],
+    "explanation_hi": "पाणिनि ने संस्कृत व्याकरण के आधारभूत ग्रंथ अष्टाध्यायी की रचना की। बाद में पतंजलि ने पाणिनि के कार्य पर महाभाष्य नामक महान टीका लिखी — दोनों मिलकर शास्त्रीय संस्कृत व्याकरण की रीढ़ हैं।"
   },
   {
     "id": "cd_006",
@@ -111,7 +176,20 @@
       "Authors of the Dharmashastras"
     ],
     "answer_index": 0,
-    "explanation": "All four flourished in the Gupta era: Kalidasa the dramatist-poet (Abhijnanashakuntalam), Aryabhata the mathematician-astronomer (Aryabhatiya), Varahamihira the polymath (Brihat Samhita), and Amarasimha the lexicographer (Amarakosha). Tradition counts several of them among the 'navaratnas' of Chandragupta II's court."
+    "explanation": "All four flourished in the Gupta era: Kalidasa the dramatist-poet (Abhijnanashakuntalam), Aryabhata the mathematician-astronomer (Aryabhatiya), Varahamihira the polymath (Brihat Samhita), and Amarasimha the lexicographer (Amarakosha). Tradition counts several of them among the 'navaratnas' of Chandragupta II's court.",
+    "dots_hi": [
+      "कालिदास",
+      "आर्यभट",
+      "वराहमिहिर",
+      "अमरसिंह"
+    ],
+    "options_hi": [
+      "गुप्तकाल, भारत के स्वर्ण युग के विद्वान",
+      "हर्षवर्धन के दरबारी कवि",
+      "चोल दरबार के खगोलशास्त्री",
+      "धर्मशास्त्रों के लेखक"
+    ],
+    "explanation_hi": "ये चारों गुप्त युग में हुए: नाटककार-कवि कालिदास (अभिज्ञानशाकुंतलम्), गणितज्ञ-खगोलशास्त्री आर्यभट (आर्यभटीय), बहुज्ञ वराहमिहिर (बृहत्संहिता), और कोशकार अमरसिंह (अमरकोश)। परंपरा इनमें से कई को चंद्रगुप्त द्वितीय के दरबार के 'नवरत्नों' में गिनती है।"
   },
   {
     "id": "cd_007",
@@ -130,7 +208,20 @@
       "Copper-plate land grants to Brahmanas"
     ],
     "answer_index": 2,
-    "explanation": "Each is a famous royal eulogy: Hathigumpha records Kharavela of Kalinga, the Junagadh rock inscription praises Rudradaman I (the first long Sanskrit inscription), the Allahabad Pillar carries Harishena's prashasti of Samudragupta, and the Aihole inscription by Ravikirti celebrates Pulakeshin II."
+    "explanation": "Each is a famous royal eulogy: Hathigumpha records Kharavela of Kalinga, the Junagadh rock inscription praises Rudradaman I (the first long Sanskrit inscription), the Allahabad Pillar carries Harishena's prashasti of Samudragupta, and the Aihole inscription by Ravikirti celebrates Pulakeshin II.",
+    "dots_hi": [
+      "हाथीगुम्फा",
+      "जूनागढ़",
+      "इलाहाबाद स्तंभ",
+      "ऐहोल"
+    ],
+    "options_hi": [
+      "धम्म संबंधी अशोक के शिलालेख",
+      "प्रागैतिहासिक गुफा चित्रों के स्थल",
+      "राजाओं के कार्यों की प्रशस्ति वाले अभिलेख",
+      "ब्राह्मणों को भूमि अनुदान के ताम्रपत्र"
+    ],
+    "explanation_hi": "प्रत्येक एक प्रसिद्ध राजप्रशस्ति है: हाथीगुम्फा अभिलेख में कलिंग के खारवेल का वर्णन है, जूनागढ़ शिलालेख रुद्रदामन प्रथम की प्रशंसा करता है (पहला दीर्घ संस्कृत अभिलेख), इलाहाबाद स्तंभ पर हरिषेण द्वारा रचित समुद्रगुप्त की प्रशस्ति है, और रविकीर्ति द्वारा रचित ऐहोल अभिलेख पुलकेशिन द्वितीय का गुणगान करता है।"
   },
   {
     "id": "cd_008",
@@ -149,7 +240,20 @@
       "Kannada works of the Rashtrakuta court"
     ],
     "answer_index": 1,
-    "explanation": "All belong to classical Tamil literature: Tolkappiyam is the earliest Tamil grammar, Silappadikaram (by Ilango Adigal) and Manimekalai (by Sattanar) are the great twin epics, and Tirukkural by Thiruvalluvar is the celebrated ethical treatise."
+    "explanation": "All belong to classical Tamil literature: Tolkappiyam is the earliest Tamil grammar, Silappadikaram (by Ilango Adigal) and Manimekalai (by Sattanar) are the great twin epics, and Tirukkural by Thiruvalluvar is the celebrated ethical treatise.",
+    "dots_hi": [
+      "तोलकाप्पियम",
+      "शिलप्पदिकारम",
+      "मणिमेकलै",
+      "तिरुक्कुरल"
+    ],
+    "options_hi": [
+      "गुप्तकाल की संस्कृत काव्य रचनाएँ",
+      "संगम परंपरा का शास्त्रीय तमिल साहित्य",
+      "बौद्ध धर्म के पालि प्रामाणिक ग्रंथ",
+      "राष्ट्रकूट दरबार की कन्नड़ रचनाएँ"
+    ],
+    "explanation_hi": "सभी शास्त्रीय तमिल साहित्य से संबंधित हैं: तोलकाप्पियम सबसे प्राचीन तमिल व्याकरण है, शिलप्पदिकारम (इलंगो अडिगल द्वारा) और मणिमेकलै (सत्तनार द्वारा) महान युग्म महाकाव्य हैं, और तिरुवल्लुवर रचित तिरुक्कुरल प्रसिद्ध नैतिक ग्रंथ है।"
   },
   {
     "id": "cd_009",
@@ -168,7 +272,20 @@
       "Shaka satraps ruling western India"
     ],
     "answer_index": 1,
-    "explanation": "Heliodorus, a Greek ambassador sent by Indo-Greek king Antialcidas of Taxila to the Shunga king Bhagabhadra, erected the Garuda pillar at Besnagar (near Vidisha) dedicated to Vasudeva — showing both Indo-Greek diplomatic contact and a foreigner adopting the early Bhagavata cult."
+    "explanation": "Heliodorus, a Greek ambassador sent by Indo-Greek king Antialcidas of Taxila to the Shunga king Bhagabhadra, erected the Garuda pillar at Besnagar (near Vidisha) dedicated to Vasudeva — showing both Indo-Greek diplomatic contact and a foreigner adopting the early Bhagavata cult.",
+    "dots_hi": [
+      "हेलियोडोरस",
+      "बेसनगर",
+      "गरुड़ स्तंभ",
+      "भागभद्र"
+    ],
+    "options_hi": [
+      "मौर्यकालीन पाटलिपुत्र के यूनानी विवरण",
+      "प्रारंभिक भागवत (वासुदेव) पूजा और भारतीय-यूनानी संपर्क के प्रमाण",
+      "मध्य एशिया में बौद्ध धर्म का प्रसार",
+      "पश्चिमी भारत पर शासन करने वाले शक क्षत्रप"
+    ],
+    "explanation_hi": "तक्षशिला के भारतीय-यूनानी राजा एंटियालसिडास द्वारा शुंग राजा भागभद्र के पास भेजे गए यूनानी राजदूत हेलियोडोरस ने बेसनगर (विदिशा के निकट) में वासुदेव को समर्पित गरुड़ स्तंभ बनवाया — जो भारतीय-यूनानी राजनयिक संपर्क और एक विदेशी द्वारा प्रारंभिक भागवत पंथ अपनाने, दोनों को दर्शाता है।"
   },
   {
     "id": "cd_010",
@@ -187,7 +304,20 @@
       "Compilation of the Pali Tipitaka in Sri Lanka"
     ],
     "answer_index": 2,
-    "explanation": "The Fourth Buddhist Council was convened under Kushan emperor Kanishka at Kundalvana in Kashmir, presided over by Vasumitra (with Ashvaghosha as deputy, per tradition); it compiled commentaries of the Sarvastivada school and is linked to the rise of Mahayana Buddhism."
+    "explanation": "The Fourth Buddhist Council was convened under Kushan emperor Kanishka at Kundalvana in Kashmir, presided over by Vasumitra (with Ashvaghosha as deputy, per tradition); it compiled commentaries of the Sarvastivada school and is linked to the rise of Mahayana Buddhism.",
+    "dots_hi": [
+      "कनिष्क",
+      "कुण्डलवन",
+      "वसुमित्र",
+      "सर्वास्तिवाद"
+    ],
+    "options_hi": [
+      "पाटलिपुत्र में तृतीय बौद्ध संगीति",
+      "गांधार शिल्प शैली की उत्पत्ति",
+      "कश्मीर में चतुर्थ बौद्ध संगीति",
+      "श्रीलंका में पालि त्रिपिटक का संकलन"
+    ],
+    "explanation_hi": "चतुर्थ बौद्ध संगीति कुषाण सम्राट कनिष्क के अधीन कश्मीर के कुण्डलवन में बुलाई गई थी, जिसकी अध्यक्षता वसुमित्र ने की (परंपरा अनुसार अश्वघोष उपाध्यक्ष थे); इसमें सर्वास्तिवाद संप्रदाय की टीकाओं का संकलन हुआ और यह महायान बौद्ध धर्म के उदय से जुड़ी है।"
   },
   {
     "id": "cd_011",
@@ -206,7 +336,20 @@
       "Tantric sects of the early medieval period"
     ],
     "answer_index": 0,
-    "explanation": "Makkhali Gosala founded the Ajivika sect, whose core doctrine was Niyati (absolute determinism or fate). Ashoka granted the rock-cut Barabar caves in Bihar to Ajivika monks — the caves' dedicatory inscriptions record this royal patronage."
+    "explanation": "Makkhali Gosala founded the Ajivika sect, whose core doctrine was Niyati (absolute determinism or fate). Ashoka granted the rock-cut Barabar caves in Bihar to Ajivika monks — the caves' dedicatory inscriptions record this royal patronage.",
+    "dots_hi": [
+      "मक्खलि गोशाल",
+      "नियति",
+      "बराबर गुफाएँ",
+      "अशोक का अनुदान"
+    ],
+    "options_hi": [
+      "छठी शताब्दी ईसा पूर्व का आजीवक संप्रदाय",
+      "लोकायत (चार्वाक) भौतिकवादी संप्रदाय",
+      "प्रारंभिक जैन मठीय आश्रयस्थल",
+      "प्रारंभिक मध्यकाल के तांत्रिक संप्रदाय"
+    ],
+    "explanation_hi": "मक्खलि गोशाल ने आजीवक संप्रदाय की स्थापना की, जिसका मूल सिद्धांत नियति (पूर्ण नियतिवाद अथवा भाग्य) था। अशोक ने बिहार की बराबर गुफाओं को आजीवक भिक्षुओं को अनुदान में दिया — गुफाओं के समर्पण अभिलेख इस राजकीय संरक्षण को दर्ज करते हैं।"
   },
   {
     "id": "cd_012",
@@ -225,7 +368,20 @@
       "The Satavahana dynasty of the Deccan"
     ],
     "answer_index": 3,
-    "explanation": "All relate to the Satavahanas: Gautamiputra Satakarni was their greatest ruler who defeated the Shakas, the Nanaghat inscription of queen Naganika records early Satavahana history, Pratishthana (Paithan) was their capital, and the Gathasaptasati is a Prakrit anthology attributed to Satavahana king Hala."
+    "explanation": "All relate to the Satavahanas: Gautamiputra Satakarni was their greatest ruler who defeated the Shakas, the Nanaghat inscription of queen Naganika records early Satavahana history, Pratishthana (Paithan) was their capital, and the Gathasaptasati is a Prakrit anthology attributed to Satavahana king Hala.",
+    "dots_hi": [
+      "गौतमीपुत्र सातकर्णि",
+      "नानाघाट अभिलेख",
+      "प्रतिष्ठान",
+      "गाथासप्तशती"
+    ],
+    "options_hi": [
+      "उज्जैन के शक क्षत्रप",
+      "विदर्भ का वाकाटक वंश",
+      "कुषाण साम्राज्य का दक्षिणी विस्तार",
+      "दक्कन का सातवाहन वंश"
+    ],
+    "explanation_hi": "सभी सातवाहनों से संबंधित हैं: गौतमीपुत्र सातकर्णि उनका सबसे महान शासक था जिसने शकों को पराजित किया, रानी नागनिका का नानाघाट अभिलेख सातवाहन के प्रारंभिक इतिहास को दर्ज करता है, प्रतिष्ठान (पैठण) उनकी राजधानी थी, और गाथासप्तशती सातवाहन राजा हाल को समर्पित प्राकृत काव्य संकलन है।"
   },
   {
     "id": "cd_013",
@@ -244,7 +400,20 @@
       "Sultans of the Bahmani kingdom"
     ],
     "answer_index": 1,
-    "explanation": "All four ruled in the Mamluk or Slave dynasty (1206–1290), the first dynasty of the Delhi Sultanate: Aibak founded it, Iltutmish consolidated it, Razia was the only woman to sit on the Delhi throne, and Balban was its last great sultan."
+    "explanation": "All four ruled in the Mamluk or Slave dynasty (1206–1290), the first dynasty of the Delhi Sultanate: Aibak founded it, Iltutmish consolidated it, Razia was the only woman to sit on the Delhi throne, and Balban was its last great sultan.",
+    "dots_hi": [
+      "कुतुबुद्दीन ऐबक",
+      "इल्तुतमिश",
+      "रज़िया सुल्तान",
+      "बलबन"
+    ],
+    "options_hi": [
+      "खिलजी वंश के शासक",
+      "दिल्ली के मामलुक (गुलाम) वंश के शासक",
+      "मुगल दक्कन के सूबेदार",
+      "बहमनी राज्य के सुल्तान"
+    ],
+    "explanation_hi": "ये चारों दिल्ली सल्तनत के पहले वंश, मामलुक या गुलाम वंश (1206-1290) में शासन करते थे: ऐबक ने इसकी स्थापना की, इल्तुतमिश ने इसे सुदृढ़ किया, रज़िया दिल्ली के सिंहासन पर बैठने वाली एकमात्र महिला थीं, और बलबन इसका अंतिम महान सुल्तान था।"
   },
   {
     "id": "cd_014",
@@ -263,7 +432,20 @@
       "Patrons of the Deccani Sultanates"
     ],
     "answer_index": 0,
-    "explanation": "Babur founded the Mughal Empire after the First Battle of Panipat (1526), was succeeded by his son Humayun, then Humayun's son Akbar, and then Akbar's son Jahangir — the first four Mughal emperors in direct succession."
+    "explanation": "Babur founded the Mughal Empire after the First Battle of Panipat (1526), was succeeded by his son Humayun, then Humayun's son Akbar, and then Akbar's son Jahangir — the first four Mughal emperors in direct succession.",
+    "dots_hi": [
+      "बाबर",
+      "हुमायूँ",
+      "अकबर",
+      "जहाँगीर"
+    ],
+    "options_hi": [
+      "क्रमवार पहले चार मुगल सम्राट",
+      "लोदी वंश के शासक",
+      "पानीपत की लड़ाइयाँ लड़ने वाले सुल्तान",
+      "दक्कनी सल्तनतों के संरक्षक"
+    ],
+    "explanation_hi": "बाबर ने प्रथम पानीपत युद्ध (1526) के बाद मुगल साम्राज्य की स्थापना की, उसका उत्तराधिकारी उसका पुत्र हुमायूँ बना, फिर हुमायूँ का पुत्र अकबर, और फिर अकबर का पुत्र जहाँगीर — प्रत्यक्ष क्रम में पहले चार मुगल सम्राट।"
   },
   {
     "id": "cd_015",
@@ -282,7 +464,20 @@
       "Founders of Vedanta schools"
     ],
     "answer_index": 2,
-    "explanation": "All four were Bhakti saints who preached devotion over ritual: Kabir with his nirguna verses, Guru Nanak who founded Sikhism, Ravidas the saint-poet of the leather-worker community, and Mirabai the Rajput princess devoted to Krishna."
+    "explanation": "All four were Bhakti saints who preached devotion over ritual: Kabir with his nirguna verses, Guru Nanak who founded Sikhism, Ravidas the saint-poet of the leather-worker community, and Mirabai the Rajput princess devoted to Krishna.",
+    "dots_hi": [
+      "कबीर",
+      "गुरु नानक",
+      "रैदास",
+      "मीराबाई"
+    ],
+    "options_hi": [
+      "चिश्ती सिलसिले के सूफी संत",
+      "दिल्ली सुल्तानों के दरबारी कवि",
+      "मध्यकालीन भक्ति आंदोलन के संत",
+      "वेदांत संप्रदायों के संस्थापक"
+    ],
+    "explanation_hi": "ये चारों भक्ति संत थे जिन्होंने कर्मकांड की जगह भक्ति का प्रचार किया: निर्गुण पदों के रचयिता कबीर, सिख धर्म के संस्थापक गुरु नानक, चर्मकार समुदाय के संत-कवि रैदास, और कृष्ण भक्त राजपूत राजकुमारी मीराबाई।"
   },
   {
     "id": "cd_016",
@@ -301,7 +496,20 @@
       "The Nayaka states of Madurai"
     ],
     "answer_index": 1,
-    "explanation": "Krishnadevaraya, the greatest ruler of the Tuluva dynasty, ruled the Vijayanagara Empire from its capital Hampi and authored the Telugu work Amuktamalyada on statecraft."
+    "explanation": "Krishnadevaraya, the greatest ruler of the Tuluva dynasty, ruled the Vijayanagara Empire from its capital Hampi and authored the Telugu work Amuktamalyada on statecraft.",
+    "dots_hi": [
+      "कृष्णदेवराय",
+      "हम्पी",
+      "तुलुव वंश",
+      "आमुक्तमाल्यद"
+    ],
+    "options_hi": [
+      "बहमनी सल्तनत",
+      "अपने चरम पर विजयनगर साम्राज्य",
+      "होयसल राज्य",
+      "मदुरै के नायक राज्य"
+    ],
+    "explanation_hi": "तुलुव वंश के सबसे महान शासक कृष्णदेवराय ने अपनी राजधानी हम्पी से विजयनगर साम्राज्य पर शासन किया और शासन-कला पर तेलुगु ग्रंथ आमुक्तमाल्यद की रचना की।"
   },
   {
     "id": "cd_017",
@@ -320,7 +528,20 @@
       "Foreign travellers whose writings describe medieval Indian courts"
     ],
     "answer_index": 3,
-    "explanation": "Ibn Battuta (Morocco) visited Delhi Sultanate India in the 14th century, and Al-Biruni accompanied Mahmud of Ghazni's raids in the 11th century. Abdur Razzaq (Persia) and Domingo Paes (Portugal) separately left detailed accounts of the Vijayanagara Empire."
+    "explanation": "Ibn Battuta (Morocco) visited Delhi Sultanate India in the 14th century, and Al-Biruni accompanied Mahmud of Ghazni's raids in the 11th century. Abdur Razzaq (Persia) and Domingo Paes (Portugal) separately left detailed accounts of the Vijayanagara Empire.",
+    "dots_hi": [
+      "इब्न बतूता",
+      "अल-बिरूनी",
+      "अब्दुर्रज़्ज़ाक",
+      "डोमिंगो पेस"
+    ],
+    "options_hi": [
+      "भक्ति आंदोलन के सूफी संत",
+      "क्षेत्रीय सल्तनतों के संस्थापक",
+      "मुगल दरबारी इतिहासकार",
+      "विदेशी यात्री जिनके लेखन मध्यकालीन भारतीय दरबारों का वर्णन करते हैं"
+    ],
+    "explanation_hi": "इब्न बतूता (मोरक्को) ने 14वीं शताब्दी में दिल्ली सल्तनत के भारत का भ्रमण किया, और अल-बिरूनी 11वीं शताब्दी में महमूद गजनवी के आक्रमणों के साथ आया था। अब्दुर्रज़्ज़ाक (फारस) और डोमिंगो पेस (पुर्तगाल) ने अलग-अलग विजयनगर साम्राज्य के विस्तृत विवरण छोड़े।"
   },
   {
     "id": "cd_018",
@@ -339,7 +560,20 @@
       "Trade guilds of the Chola period"
     ],
     "answer_index": 0,
-    "explanation": "Alauddin Khalji introduced strict market reforms to maintain a large army cheaply: prices of essentials were fixed by the state, the Shahna-i-Mandi superintended the grain market, and the Diwan-i-Riyasat oversaw the commerce ministry enforcing the regulations."
+    "explanation": "Alauddin Khalji introduced strict market reforms to maintain a large army cheaply: prices of essentials were fixed by the state, the Shahna-i-Mandi superintended the grain market, and the Diwan-i-Riyasat oversaw the commerce ministry enforcing the regulations.",
+    "dots_hi": [
+      "अलाउद्दीन खिलजी",
+      "शहना-ए-मंडी",
+      "दीवान-ए-रियासत",
+      "मूल्य नियंत्रण"
+    ],
+    "options_hi": [
+      "दिल्ली सल्तनत में बाज़ार नियंत्रण और मूल्य विनियमन",
+      "बंदरगाहों पर मुगल सीमा-शुल्क प्रशासन",
+      "शेरशाह के अधीन भूमि राजस्व बंदोबस्त",
+      "चोल काल की व्यापारिक श्रेणियाँ (गिल्ड)"
+    ],
+    "explanation_hi": "अलाउद्दीन खिलजी ने विशाल सेना को सस्ते में बनाए रखने के लिए कठोर बाज़ार सुधार लागू किए: आवश्यक वस्तुओं के मूल्य राज्य द्वारा तय किए जाते थे, शहना-ए-मंडी अनाज बाज़ार की देखरेख करता था, और दीवान-ए-रियासत वाणिज्य मंत्रालय की देखरेख करते हुए इन नियमों को लागू करता था।"
   },
   {
     "id": "cd_019",
@@ -358,7 +592,20 @@
       "Reforms of Sher Shah Suri"
     ],
     "answer_index": 2,
-    "explanation": "All four were ambitious projects of Muhammad bin Tughlaq that failed: the bronze/copper token currency was widely forged, the capital transfer to Daulatabad caused immense suffering and was reversed, and the Qarachil (Himalayan) expedition and planned Khurasan invasion both collapsed at great cost."
+    "explanation": "All four were ambitious projects of Muhammad bin Tughlaq that failed: the bronze/copper token currency was widely forged, the capital transfer to Daulatabad caused immense suffering and was reversed, and the Qarachil (Himalayan) expedition and planned Khurasan invasion both collapsed at great cost.",
+    "dots_hi": [
+      "सांकेतिक मुद्रा (टोकन करेंसी)",
+      "देवगिरि (दौलताबाद)",
+      "कराचिल अभियान",
+      "खुरासान परियोजना"
+    ],
+    "options_hi": [
+      "फिरोजशाह तुगलक की उपलब्धियाँ",
+      "अलाउद्दीन खिलजी की विजयें",
+      "मुहम्मद बिन तुगलक की महत्वाकांक्षी परंतु असफल योजनाएँ",
+      "शेरशाह सूरी के सुधार"
+    ],
+    "explanation_hi": "ये चारों मुहम्मद बिन तुगलक की महत्वाकांक्षी परियोजनाएँ थीं जो असफल रहीं: कांस्य/ताँबे की सांकेतिक मुद्रा की व्यापक जालसाजी हुई, दौलताबाद में राजधानी स्थानांतरण से भारी कष्ट हुआ और इसे वापस लेना पड़ा, तथा कराचिल (हिमालयी) अभियान और प्रस्तावित खुरासान आक्रमण दोनों भारी लागत के साथ विफल हुए।"
   },
   {
     "id": "cd_020",
@@ -377,7 +624,20 @@
       "Vijayanagara's nayankara system"
     ],
     "answer_index": 1,
-    "explanation": "Under the Mughal mansabdari system institutionalised by Akbar, every officer held a mansab (rank) with a zat number (personal status and pay) and a sawar number (cavalry to be maintained), usually paid through the assignment of a jagir's land revenue."
+    "explanation": "Under the Mughal mansabdari system institutionalised by Akbar, every officer held a mansab (rank) with a zat number (personal status and pay) and a sawar number (cavalry to be maintained), usually paid through the assignment of a jagir's land revenue.",
+    "dots_hi": [
+      "मनसब",
+      "ज़ात",
+      "सवार",
+      "जागीर"
+    ],
+    "options_hi": [
+      "दिल्ली सल्तनत की इक्ता प्रशासन व्यवस्था",
+      "मुगल मनसबदारी पदानुक्रम और नियुक्ति प्रणाली",
+      "मराठा राजस्व संग्रहण अधिकार",
+      "विजयनगर की नायणकर व्यवस्था"
+    ],
+    "explanation_hi": "अकबर द्वारा संस्थागत रूप दी गई मुगल मनसबदारी व्यवस्था के अंतर्गत, हर अधिकारी को एक मनसब (पद) दिया जाता था जिसमें ज़ात संख्या (व्यक्तिगत हैसियत और वेतन) और सवार संख्या (बनाए रखी जाने वाली घुड़सवार सेना) होती थी, जिसका भुगतान आमतौर पर जागीर की भूमि राजस्व के आबंटन से किया जाता था।"
   },
   {
     "id": "cd_021",
@@ -396,7 +656,20 @@
       "Village self-government under the Cholas"
     ],
     "answer_index": 3,
-    "explanation": "The Uttaramerur inscriptions (time of Parantaka I Chola) describe village self-government: the sabha was the assembly of the brahmadeya village, its executive committees were called variyams, and members were chosen by the kudavolai (pot-ticket) lottery system with strict eligibility rules."
+    "explanation": "The Uttaramerur inscriptions (time of Parantaka I Chola) describe village self-government: the sabha was the assembly of the brahmadeya village, its executive committees were called variyams, and members were chosen by the kudavolai (pot-ticket) lottery system with strict eligibility rules.",
+    "dots_hi": [
+      "उत्तरमेरूर",
+      "कुडवोलई",
+      "सभा",
+      "वारियम"
+    ],
+    "options_hi": [
+      "चेर बंदरगाहों के व्यापार विनियम",
+      "पल्लवों के अधीन मंदिर प्रशासन",
+      "दक्कन में वैदिक विद्वानों को भूमि अनुदान",
+      "चोलों के अधीन ग्राम स्वशासन"
+    ],
+    "explanation_hi": "उत्तरमेरूर अभिलेख (चोल राजा परांतक प्रथम के समय) ग्राम स्वशासन का वर्णन करते हैं: सभा ब्रह्मदेय गाँव की सभा थी, इसकी कार्यकारी समितियों को वारियम कहा जाता था, और सदस्य कठोर पात्रता नियमों के साथ कुडवोलई (मिट्टी के बर्तन से पर्ची निकालने की) लॉटरी पद्धति से चुने जाते थे।"
   },
   {
     "id": "cd_022",
@@ -415,7 +688,20 @@
       "Judicial offices under the Sultanate"
     ],
     "answer_index": 0,
-    "explanation": "In the Delhi Sultanate's iqta system, territories (iqtas) were assigned to officers called muqtis who collected the land revenue (kharaj), maintained troops from it, and remitted the surplus (fawazil) to the Sultan's treasury."
+    "explanation": "In the Delhi Sultanate's iqta system, territories (iqtas) were assigned to officers called muqtis who collected the land revenue (kharaj), maintained troops from it, and remitted the surplus (fawazil) to the Sultan's treasury.",
+    "dots_hi": [
+      "इक्ता",
+      "मुक्ती",
+      "खराज",
+      "फवाज़िल"
+    ],
+    "options_hi": [
+      "दिल्ली सल्तनत की राजस्व आबंटन व्यवस्था",
+      "कुलीनों का मुगल पदानुक्रम",
+      "तुर्क-प्रेरित सिक्का सुधार",
+      "सल्तनत के अधीन न्यायिक पद"
+    ],
+    "explanation_hi": "दिल्ली सल्तनत की इक्ता व्यवस्था में, भू-भाग (इक्ता) मुक्ती नामक अधिकारियों को सौंपे जाते थे, जो भूमि राजस्व (खराज) एकत्र करते, उससे सैनिकों का भरण-पोषण करते, और शेष अतिरिक्त राशि (फवाज़िल) सुल्तान के खजाने को भेजते थे।"
   },
   {
     "id": "cd_023",
@@ -434,7 +720,20 @@
       "Coronation rites of the Vijayanagara rayas"
     ],
     "answer_index": 1,
-    "explanation": "Balban exalted the monarchy to overawe the nobility: he introduced sijda (prostration) and paibos (kissing the sultan's feet), celebrated the Persian Nauroz festival with pomp, and styled the sultan Zil-i-Ilahi, the 'Shadow of God' on earth."
+    "explanation": "Balban exalted the monarchy to overawe the nobility: he introduced sijda (prostration) and paibos (kissing the sultan's feet), celebrated the Persian Nauroz festival with pomp, and styled the sultan Zil-i-Ilahi, the 'Shadow of God' on earth.",
+    "dots_hi": [
+      "सिज्दा",
+      "पैबोस",
+      "नौरोज़ उत्सव",
+      "ज़िल्ल-ए-इलाही"
+    ],
+    "options_hi": [
+      "अकबर की समन्वयवादी दरबारी रस्में",
+      "बलबन का राजसत्ता सिद्धांत और दरबारी शिष्टाचार",
+      "सूफी दीक्षा प्रथाएँ",
+      "विजयनगर के राजाओं के राज्याभिषेक संस्कार"
+    ],
+    "explanation_hi": "बलबन ने कुलीन वर्ग पर रौब जमाने के लिए राजसत्ता को गौरवान्वित किया: उसने सिज्दा (साष्टांग प्रणाम) और पैबोस (सुल्तान के चरण चूमना) की प्रथा शुरू की, फारसी नौरोज़ उत्सव को धूमधाम से मनाया, और सुल्तान को ज़िल्ल-ए-इलाही, अर्थात धरती पर 'ईश्वर की छाया' की उपाधि दी।"
   },
   {
     "id": "cd_024",
@@ -453,7 +752,20 @@
       "Arab trade settlements on the Malabar coast"
     ],
     "answer_index": 2,
-    "explanation": "Rajendra Chola I sent a famous naval expedition (c. 1025 CE) against the Srivijaya empire of Southeast Asia, capturing Kadaram (Kedah) — the 'Kadaram campaign'. He commemorated his victories by building a new capital, Gangaikonda Cholapuram."
+    "explanation": "Rajendra Chola I sent a famous naval expedition (c. 1025 CE) against the Srivijaya empire of Southeast Asia, capturing Kadaram (Kedah) — the 'Kadaram campaign'. He commemorated his victories by building a new capital, Gangaikonda Cholapuram.",
+    "dots_hi": [
+      "राजेंद्र प्रथम",
+      "गंगईकोंडचोलपुरम",
+      "कदारम अभियान",
+      "श्रीविजय"
+    ],
+    "options_hi": [
+      "चीन के साथ पल्लव समुद्री व्यापार",
+      "श्रीलंका में पांड्य विजयें",
+      "बंगाल की खाड़ी में चोल नौसैनिक अभियान",
+      "मालाबार तट पर अरब व्यापारिक बस्तियाँ"
+    ],
+    "explanation_hi": "राजेंद्र चोल प्रथम ने दक्षिण-पूर्व एशिया के श्रीविजय साम्राज्य के विरुद्ध एक प्रसिद्ध नौसैनिक अभियान (लगभग 1025 ईस्वी) भेजा, जिसमें कदारम (केदाह) पर विजय प्राप्त की गई — यह 'कदारम अभियान' कहलाता है। उसने अपनी विजयों की स्मृति में एक नई राजधानी, गंगईकोंडचोलपुरम, का निर्माण करवाया।"
   },
   {
     "id": "cd_025",
@@ -472,7 +784,20 @@
       "Events of the Quit India Movement"
     ],
     "answer_index": 1,
-    "explanation": "The Rowlatt Act (1919) triggered protests met with the Jallianwala Bagh massacre. That outrage, combined with Muslim anger over the Khilafat issue, gave Gandhi the platform to launch the Non-Cooperation Movement in 1920."
+    "explanation": "The Rowlatt Act (1919) triggered protests met with the Jallianwala Bagh massacre. That outrage, combined with Muslim anger over the Khilafat issue, gave Gandhi the platform to launch the Non-Cooperation Movement in 1920.",
+    "dots_hi": [
+      "रॉलेट एक्ट",
+      "जलियाँवाला बाग",
+      "खिलाफत आंदोलन",
+      "असहयोग आंदोलन"
+    ],
+    "options_hi": [
+      "बंगाल विभाजन के कारण",
+      "असहयोग आंदोलन तक ले जाने वाली घटनाओं की श्रृंखला",
+      "मुस्लिम लीग का गठन",
+      "भारत छोड़ो आंदोलन की घटनाएँ"
+    ],
+    "explanation_hi": "रॉलेट एक्ट (1919) ने विरोध प्रदर्शनों को जन्म दिया जिनका सामना जलियाँवाला बाग नरसंहार से हुआ। इस आक्रोश ने, खिलाफत मुद्दे पर मुसलमानों के गुस्से के साथ मिलकर, गांधी को 1920 में असहयोग आंदोलन शुरू करने का मंच दिया।"
   },
   {
     "id": "cd_026",
@@ -491,7 +816,20 @@
       "The Swadeshi Movement of 1905"
     ],
     "answer_index": 2,
-    "explanation": "Gandhi launched the Civil Disobedience Movement with the Dandi March (March 1930), breaking the salt law in the Salt Satyagraha. The Gandhi-Irwin Pact (March 1931) suspended the movement, and Gandhi then attended the Second Round Table Conference in London."
+    "explanation": "Gandhi launched the Civil Disobedience Movement with the Dandi March (March 1930), breaking the salt law in the Salt Satyagraha. The Gandhi-Irwin Pact (March 1931) suspended the movement, and Gandhi then attended the Second Round Table Conference in London.",
+    "dots_hi": [
+      "दांडी यात्रा",
+      "नमक सत्याग्रह",
+      "गांधी-इरविन समझौता",
+      "द्वितीय गोलमेज सम्मेलन"
+    ],
+    "options_hi": [
+      "1920-22 का असहयोग आंदोलन",
+      "1942 का भारत छोड़ो आंदोलन",
+      "सविनय अवज्ञा आंदोलन और उसका परिणाम",
+      "1905 का स्वदेशी आंदोलन"
+    ],
+    "explanation_hi": "गांधी ने दांडी यात्रा (मार्च 1930) से सविनय अवज्ञा आंदोलन शुरू किया और नमक सत्याग्रह में नमक कानून तोड़ा। गांधी-इरविन समझौते (मार्च 1931) से आंदोलन स्थगित हुआ, और फिर गांधी ने लंदन में द्वितीय गोलमेज सम्मेलन में भाग लिया।"
   },
   {
     "id": "cd_027",
@@ -510,7 +848,20 @@
       "The Theosophical Society's work in India"
     ],
     "answer_index": 0,
-    "explanation": "Raja Ram Mohan Roy founded the Brahmo Samaj (1828) to reform Hindu society, campaigned successfully for the abolition of Sati (Regulation of 1829 under Bentinck), and wrote 'The Precepts of Jesus' reflecting his rationalist engagement with Christianity."
+    "explanation": "Raja Ram Mohan Roy founded the Brahmo Samaj (1828) to reform Hindu society, campaigned successfully for the abolition of Sati (Regulation of 1829 under Bentinck), and wrote 'The Precepts of Jesus' reflecting his rationalist engagement with Christianity.",
+    "dots_hi": [
+      "राजा राममोहन राय",
+      "ब्रह्म समाज",
+      "सती प्रथा का उन्मूलन",
+      "प्रिसेप्ट्स ऑफ जीसस"
+    ],
+    "options_hi": [
+      "19वीं शताब्दी के प्रारंभिक बंगाल में अग्रणी सामाजिक-धार्मिक सुधार",
+      "आर्य समाज का शुद्धि आंदोलन",
+      "मद्रास में ईसाई मिशनरी गतिविधि",
+      "भारत में थियोसॉफिकल सोसाइटी का कार्य"
+    ],
+    "explanation_hi": "राजा राममोहन राय ने हिंदू समाज में सुधार हेतु ब्रह्म समाज (1828) की स्थापना की, सती प्रथा के उन्मूलन (बेंटिंक के अधीन 1829 का विनियमन) के लिए सफल अभियान चलाया, और 'प्रिसेप्ट्स ऑफ जीसस' लिखा, जो ईसाई धर्म के साथ उनके तर्कवादी संवाद को दर्शाता है।"
   },
   {
     "id": "cd_028",
@@ -529,7 +880,20 @@
       "The Home Rule Leagues"
     ],
     "answer_index": 1,
-    "explanation": "Bhagat Singh and Chandra Shekhar Azad were leading members of the Hindustan Socialist Republican Association (HSRA). Bhagat Singh and Batukeshwar Dutt threw non-lethal bombs in the Central Legislative Assembly in April 1929 to 'make the deaf hear'."
+    "explanation": "Bhagat Singh and Chandra Shekhar Azad were leading members of the Hindustan Socialist Republican Association (HSRA). Bhagat Singh and Batukeshwar Dutt threw non-lethal bombs in the Central Legislative Assembly in April 1929 to 'make the deaf hear'.",
+    "dots_hi": [
+      "भगत सिंह",
+      "चंद्रशेखर आज़ाद",
+      "एचएसआरए (हिंदुस्तान सोशलिस्ट रिपब्लिकन एसोसिएशन)",
+      "केंद्रीय विधानसभा में बम"
+    ],
+    "options_hi": [
+      "उत्तरी अमेरिका में गदर आंदोलन",
+      "1920 के दशक के अंत का क्रांतिकारी आंदोलन",
+      "आज़ाद हिंद फौज के अभियान",
+      "होम रूल लीगें"
+    ],
+    "explanation_hi": "भगत सिंह और चंद्रशेखर आज़ाद हिंदुस्तान सोशलिस्ट रिपब्लिकन एसोसिएशन (एचएसआरए) के प्रमुख सदस्य थे। भगत सिंह और बटुकेश्वर दत्त ने अप्रैल 1929 में 'बहरों को सुनाने के लिए' केंद्रीय विधान सभा में अहानिकर बम फेंके।"
   },
   {
     "id": "cd_029",
@@ -548,7 +912,20 @@
       "Literary societies of the Bengal Renaissance"
     ],
     "answer_index": 2,
-    "explanation": "Hicky's Bengal Gazette (1780) was India's first newspaper. The Vernacular Press Act (1878, under Lytton) gagged Indian-language papers, and the Amrita Bazar Patrika famously converted overnight into an English paper to escape the Act — all landmarks in colonial press history."
+    "explanation": "Hicky's Bengal Gazette (1780) was India's first newspaper. The Vernacular Press Act (1878, under Lytton) gagged Indian-language papers, and the Amrita Bazar Patrika famously converted overnight into an English paper to escape the Act — all landmarks in colonial press history.",
+    "dots_hi": [
+      "बंगाल गजट",
+      "जेम्स ऑगस्टस हिक्की",
+      "वर्नाक्युलर प्रेस एक्ट",
+      "अमृत बाज़ार पत्रिका"
+    ],
+    "options_hi": [
+      "बंगाल में अंग्रेजी शिक्षा का विकास",
+      "ईसाई मिशनरी छापेखाने",
+      "औपनिवेशिक शासन के अधीन प्रेस का इतिहास",
+      "बंगाल पुनर्जागरण की साहित्यिक सभाएँ"
+    ],
+    "explanation_hi": "हिक्की का बंगाल गजट (1780) भारत का पहला समाचार पत्र था। वर्नाक्युलर प्रेस एक्ट (1878, लिटन के अधीन) ने भारतीय भाषाओं के पत्रों का गला घोंटा, और अमृत बाज़ार पत्रिका ने इस एक्ट से बचने के लिए रातोंरात खुद को अंग्रेजी पत्र में बदल लिया — ये सभी औपनिवेशिक प्रेस इतिहास के महत्वपूर्ण पड़ाव हैं।"
   },
   {
     "id": "cd_030",
@@ -567,7 +944,20 @@
       "Forest satyagrahas of the 1930s"
     ],
     "answer_index": 1,
-    "explanation": "All were tribal uprisings in the Chotanagpur-Bengal belt: the Kol uprising (1831-32) and the Santhal Hul (1855-56) rose against moneylenders, landlords and colonial revenue demands, while Birsa Munda led the Munda Ulgulan ('Great Tumult') of 1899-1900."
+    "explanation": "All were tribal uprisings in the Chotanagpur-Bengal belt: the Kol uprising (1831-32) and the Santhal Hul (1855-56) rose against moneylenders, landlords and colonial revenue demands, while Birsa Munda led the Munda Ulgulan ('Great Tumult') of 1899-1900.",
+    "dots_hi": [
+      "संथाल हूल",
+      "बिरसा मुंडा",
+      "उलगुलान",
+      "कोल विद्रोह"
+    ],
+    "options_hi": [
+      "कांग्रेस द्वारा संचालित किसान आंदोलन",
+      "औपनिवेशिक शासन और बाहरी लोगों के विरुद्ध आदिवासी विद्रोह",
+      "1857 से पूर्व सिपाही विद्रोह",
+      "1930 के दशक के वन सत्याग्रह"
+    ],
+    "explanation_hi": "ये सभी छोटानागपुर-बंगाल क्षेत्र के आदिवासी विद्रोह थे: कोल विद्रोह (1831-32) और संथाल हूल (1855-56) साहूकारों, ज़मींदारों और औपनिवेशिक राजस्व मांगों के विरुद्ध उठे, जबकि बिरसा मुंडा ने 1899-1900 के मुंडा उलगुलान ('महाविद्रोह') का नेतृत्व किया।"
   },
   {
     "id": "cd_031",
@@ -586,7 +976,20 @@
       "Constitutional proposals of the 1940s on India's future"
     ],
     "answer_index": 3,
-    "explanation": "All were 1940s attempts to settle India's constitutional future: the August Offer (1940) promised eventual Dominion status, the Cripps Mission (1942) offered post-war self-government, the C. R. (Rajagopalachari) Formula (1944) sought Congress-League agreement on Pakistan, and the Cabinet Mission (1946) proposed a three-tier union."
+    "explanation": "All were 1940s attempts to settle India's constitutional future: the August Offer (1940) promised eventual Dominion status, the Cripps Mission (1942) offered post-war self-government, the C. R. (Rajagopalachari) Formula (1944) sought Congress-League agreement on Pakistan, and the Cabinet Mission (1946) proposed a three-tier union.",
+    "dots_hi": [
+      "अगस्त प्रस्ताव",
+      "क्रिप्स मिशन",
+      "सी.आर. फार्मूला",
+      "कैबिनेट मिशन"
+    ],
+    "options_hi": [
+      "1857 के विद्रोह के बाद अंग्रेजी सुधार",
+      "1920 के दशक में प्रांतीय स्वायत्तता की योजनाएँ",
+      "गोलमेज सम्मेलन के प्रस्ताव",
+      "1940 के दशक के भारत के भविष्य संबंधी संवैधानिक प्रस्ताव"
+    ],
+    "explanation_hi": "ये सभी 1940 के दशक के भारत के संवैधानिक भविष्य को तय करने के प्रयास थे: अगस्त प्रस्ताव (1940) ने अंततः डोमिनियन दर्जे का वादा किया, क्रिप्स मिशन (1942) ने युद्धोत्तर स्वशासन का प्रस्ताव दिया, सी.आर. (राजगोपालाचारी) फार्मूला (1944) ने पाकिस्तान पर कांग्रेस-लीग समझौता खोजने का प्रयास किया, और कैबिनेट मिशन (1946) ने त्रि-स्तरीय संघ का प्रस्ताव रखा।"
   },
   {
     "id": "cd_032",
@@ -605,7 +1008,20 @@
       "The rise of the Justice Party in Madras"
     ],
     "answer_index": 0,
-    "explanation": "The Congress split into Moderates and Extremists at its Surat session (1907) over methods and the goal of swaraj. The two wings reunited at the Lucknow session of 1916, the same session that produced the Congress-League Lucknow Pact."
+    "explanation": "The Congress split into Moderates and Extremists at its Surat session (1907) over methods and the goal of swaraj. The two wings reunited at the Lucknow session of 1916, the same session that produced the Congress-League Lucknow Pact.",
+    "dots_hi": [
+      "सूरत विभाजन",
+      "नरमपंथी",
+      "गरमपंथी",
+      "लखनऊ अधिवेशन 1916"
+    ],
+    "options_hi": [
+      "भारतीय राष्ट्रीय कांग्रेस का विभाजन और पुनर्मिलन",
+      "मुस्लिम लीग का जन्म",
+      "स्वराज पार्टी का गठन",
+      "मद्रास में जस्टिस पार्टी का उदय"
+    ],
+    "explanation_hi": "कांग्रेस अपने सूरत अधिवेशन (1907) में तरीकों और स्वराज के लक्ष्य को लेकर नरमपंथियों और गरमपंथियों में विभाजित हो गई। दोनों धड़े 1916 के लखनऊ अधिवेशन में पुनः मिले, जिसी अधिवेशन में कांग्रेस-लीग लखनऊ समझौता भी हुआ।"
   },
   {
     "id": "cd_033",
@@ -624,7 +1040,20 @@
       "Sufi reformers of the Deccan"
     ],
     "answer_index": 1,
-    "explanation": "Haji Shariatullah founded the Faraizi movement in East Bengal, continued militantly by his son Dudu Mian, mobilising peasants against zamindars and indigo planters. Titu Mir, linked to the Tariqah-i-Muhammadiya revivalist current, led a similar peasant resistance near Calcutta, famously building a bamboo fort at Narkelberia."
+    "explanation": "Haji Shariatullah founded the Faraizi movement in East Bengal, continued militantly by his son Dudu Mian, mobilising peasants against zamindars and indigo planters. Titu Mir, linked to the Tariqah-i-Muhammadiya revivalist current, led a similar peasant resistance near Calcutta, famously building a bamboo fort at Narkelberia.",
+    "dots_hi": [
+      "हाजी शरीयतुल्लाह",
+      "दूदू मियाँ",
+      "तीतू मीर",
+      "तरीका-ए-मुहम्मदिया"
+    ],
+    "options_hi": [
+      "अलीगढ़ आंदोलन के संस्थापक",
+      "बंगाल में 19वीं सदी के इस्लामी पुनरुत्थानवादी और किसान आंदोलन",
+      "खिलाफत आंदोलन के नेता",
+      "दक्कन के सूफी सुधारक"
+    ],
+    "explanation_hi": "हाजी शरीयतुल्लाह ने पूर्वी बंगाल में फराइजी आंदोलन की स्थापना की, जिसे उनके पुत्र दूदू मियाँ ने और अधिक उग्रता से आगे बढ़ाया, ज़मींदारों और नील बागान मालिकों के विरुद्ध किसानों को संगठित किया। तरीका-ए-मुहम्मदिया पुनरुत्थानवादी धारा से जुड़े तीतू मीर ने कलकत्ता के निकट इसी प्रकार का किसान प्रतिरोध चलाया, और नरकेलबेरिया में प्रसिद्ध बाँस का किला बनाया।"
   },
   {
     "id": "cd_034",
@@ -643,7 +1072,20 @@
       "Land reform agitations in Travancore"
     ],
     "answer_index": 0,
-    "explanation": "The Vaikom Satyagraha (1924-25) demanded that avarnas use roads around the Vaikom temple; the Guruvayur Satyagraha (1931-32), led by K. Kelappan, demanded temple entry itself. The campaign culminated in the Travancore Temple Entry Proclamation of 1936, opening state temples to all Hindus."
+    "explanation": "The Vaikom Satyagraha (1924-25) demanded that avarnas use roads around the Vaikom temple; the Guruvayur Satyagraha (1931-32), led by K. Kelappan, demanded temple entry itself. The campaign culminated in the Travancore Temple Entry Proclamation of 1936, opening state temples to all Hindus.",
+    "dots_hi": [
+      "वायकोम सत्याग्रह",
+      "गुरुवायूर सत्याग्रह",
+      "के. केलप्पन",
+      "मंदिर प्रवेश उद्घोषणा"
+    ],
+    "options_hi": [
+      "केरल में अस्पृश्यता-विरोधी और मंदिर प्रवेश आंदोलन",
+      "तमिलनाडु का आत्म-सम्मान आंदोलन",
+      "एझावा ट्रेड यूनियन आंदोलन",
+      "त्रावणकोर में भूमि सुधार आंदोलन"
+    ],
+    "explanation_hi": "वायकोम सत्याग्रह (1924-25) ने अवर्णों को वायकोम मंदिर के आसपास की सड़कों के उपयोग की मांग की; के. केलप्पन के नेतृत्व में गुरुवायूर सत्याग्रह (1931-32) ने स्वयं मंदिर प्रवेश की मांग की। यह आंदोलन 1936 की त्रावणकोर मंदिर प्रवेश उद्घोषणा में परिणत हुआ, जिसने राजकीय मंदिरों को सभी हिंदुओं के लिए खोल दिया।"
   },
   {
     "id": "cd_035",
@@ -662,7 +1104,20 @@
       "The cooperative movement in Bombay Presidency"
     ],
     "answer_index": 2,
-    "explanation": "The secretive Paramahansa Mandali (1849) was an early rationalist reform body in Bombay. Atmaram Pandurang founded the Prarthana Samaj (1867) in the same tradition, and M. G. Ranade became its guiding force, channelling it into widow remarriage, women's education and anti-caste work in western India."
+    "explanation": "The secretive Paramahansa Mandali (1849) was an early rationalist reform body in Bombay. Atmaram Pandurang founded the Prarthana Samaj (1867) in the same tradition, and M. G. Ranade became its guiding force, channelling it into widow remarriage, women's education and anti-caste work in western India.",
+    "dots_hi": [
+      "परमहंस मंडली",
+      "आत्माराम पांडुरंग",
+      "प्रार्थना समाज",
+      "एम. जी. रानाडे"
+    ],
+    "options_hi": [
+      "ज्योतिबा फुले का गैर-ब्राह्मण आंदोलन",
+      "भारतीय विश्वविद्यालयों का सुधार",
+      "पश्चिमी भारत में धार्मिक और सामाजिक सुधार",
+      "बॉम्बे प्रेसीडेंसी का सहकारी आंदोलन"
+    ],
+    "explanation_hi": "गुप्त परमहंस मंडली (1849) बॉम्बे में एक प्रारंभिक तर्कवादी सुधार संस्था थी। आत्माराम पांडुरंग ने उसी परंपरा में प्रार्थना समाज (1867) की स्थापना की, और एम. जी. रानाडे इसके मार्गदर्शक बल बने, जिन्होंने इसे विधवा पुनर्विवाह, स्त्री शिक्षा और पश्चिमी भारत में जाति-विरोधी कार्य की दिशा में प्रवाहित किया।"
   },
   {
     "id": "cd_036",
@@ -681,7 +1136,20 @@
       "The Tebhaga movement in Bengal"
     ],
     "answer_index": 1,
-    "explanation": "Baba Ramchandra organised tenants against taluqdar oppression through the Awadh Kisan Sabha (1920). As that agitation was suppressed, the Eka ('unity') movement of 1921-22 arose in northern Awadh districts, with grassroots leaders like Madari Pasi carrying it beyond Congress control."
+    "explanation": "Baba Ramchandra organised tenants against taluqdar oppression through the Awadh Kisan Sabha (1920). As that agitation was suppressed, the Eka ('unity') movement of 1921-22 arose in northern Awadh districts, with grassroots leaders like Madari Pasi carrying it beyond Congress control.",
+    "dots_hi": [
+      "बाबा रामचंद्र",
+      "अवध किसान सभा",
+      "एका आंदोलन",
+      "मदारी पासी"
+    ],
+    "options_hi": [
+      "मालाबार में मोपला विद्रोह",
+      "1920 के दशक के प्रारंभ में अवध के किसान आंदोलन",
+      "बारदोली सत्याग्रह",
+      "बंगाल का तेभागा आंदोलन"
+    ],
+    "explanation_hi": "बाबा रामचंद्र ने तालुकदारी उत्पीड़न के विरुद्ध किरायेदारों को अवध किसान सभा (1920) के माध्यम से संगठित किया। जब इस आंदोलन को दबा दिया गया, तो उत्तरी अवध जिलों में एका ('एकता') आंदोलन (1921-22) उभरा, जिसे मदारी पासी जैसे जमीनी नेताओं ने कांग्रेस के नियंत्रण से परे आगे बढ़ाया।"
   },
   {
     "id": "cd_037",
@@ -700,7 +1168,20 @@
       "UNESCO-listed hill forts of Rajasthan"
     ],
     "answer_index": 2,
-    "explanation": "Sarnath, Sanchi, Amaravati and Bharhut are all major Buddhist stupa sites, each known for the sculptural railings and gateways depicting Jataka tales that surround the stupas."
+    "explanation": "Sarnath, Sanchi, Amaravati and Bharhut are all major Buddhist stupa sites, each known for the sculptural railings and gateways depicting Jataka tales that surround the stupas.",
+    "dots_hi": [
+      "सारनाथ",
+      "सांची",
+      "अमरावती",
+      "भरहुत"
+    ],
+    "options_hi": [
+      "सिंधु घाटी सभ्यता के स्थल",
+      "मुगल लघुचित्रकला के केंद्र",
+      "शिल्पकला के लिए प्रसिद्ध प्राचीन बौद्ध स्तूप स्थल",
+      "राजस्थान के यूनेस्को सूचीबद्ध पहाड़ी दुर्ग"
+    ],
+    "explanation_hi": "सारनाथ, सांची, अमरावती और भरहुत सभी प्रमुख बौद्ध स्तूप स्थल हैं, जो स्तूपों को घेरने वाली वेदिकाओं और तोरणों पर उकेरी गई जातक कथाओं की शिल्पकला के लिए प्रसिद्ध हैं।"
   },
   {
     "id": "cd_038",
@@ -719,7 +1200,20 @@
       "Temple rituals of South India"
     ],
     "answer_index": 1,
-    "explanation": "All four are recognised classical dances of India: Bharatanatyam of Tamil Nadu, Kathak of North India, Odissi of Odisha, and Kathakali, the dance-drama of Kerala."
+    "explanation": "All four are recognised classical dances of India: Bharatanatyam of Tamil Nadu, Kathak of North India, Odissi of Odisha, and Kathakali, the dance-drama of Kerala.",
+    "dots_hi": [
+      "भरतनाट्यम",
+      "कथक",
+      "ओडिसी",
+      "कथकली"
+    ],
+    "options_hi": [
+      "मध्य भारत के लोक नृत्य",
+      "संगीत नाटक अकादमी द्वारा मान्यता प्राप्त शास्त्रीय नृत्य शैलियाँ",
+      "भारत की मार्शल आर्ट परंपराएँ",
+      "दक्षिण भारत के मंदिर अनुष्ठान"
+    ],
+    "explanation_hi": "ये चारों भारत के मान्यता प्राप्त शास्त्रीय नृत्य हैं: तमिलनाडु का भरतनाट्यम, उत्तर भारत का कथक, ओडिशा का ओडिसी, और केरल का नृत्य-नाटक कथकली।"
   },
   {
     "id": "cd_039",
@@ -738,7 +1232,20 @@
       "Colonial-era hill stations"
     ],
     "answer_index": 0,
-    "explanation": "All are famous rock-cut cave complexes: Ajanta's painted Buddhist caves, Ellora's Buddhist-Hindu-Jain caves including the Kailasa temple, Elephanta's Shaivite caves near Mumbai, and the Chalukyan cave temples of Badami."
+    "explanation": "All are famous rock-cut cave complexes: Ajanta's painted Buddhist caves, Ellora's Buddhist-Hindu-Jain caves including the Kailasa temple, Elephanta's Shaivite caves near Mumbai, and the Chalukyan cave temples of Badami.",
+    "dots_hi": [
+      "अजंता",
+      "एलोरा",
+      "एलिफेंटा",
+      "बादामी"
+    ],
+    "options_hi": [
+      "प्राचीन और प्रारंभिक मध्यकालीन भारत के शैलकृत गुफा परिसर",
+      "मुगल उद्यान मकबरे",
+      "मेगालिथिक समाधि स्थल",
+      "औपनिवेशिक काल के पहाड़ी स्थल"
+    ],
+    "explanation_hi": "ये सभी प्रसिद्ध शैलकृत गुफा परिसर हैं: अजंता की चित्रित बौद्ध गुफाएँ, कैलाश मंदिर सहित एलोरा की बौद्ध-हिंदू-जैन गुफाएँ, मुंबई के निकट एलिफेंटा की शैव गुफाएँ, और चालुक्यों का बादामी गुफा मंदिर।"
   },
   {
     "id": "cd_040",
@@ -757,7 +1264,20 @@
       "Stringed instruments of Indian classical music"
     ],
     "answer_index": 3,
-    "explanation": "All four are stringed instruments of Indian classical music: the sitar and sarod are mainstays of Hindustani music, the veena is the classic instrument of the Carnatic tradition, and the santoor is a hammered string instrument from Kashmir brought to the classical stage."
+    "explanation": "All four are stringed instruments of Indian classical music: the sitar and sarod are mainstays of Hindustani music, the veena is the classic instrument of the Carnatic tradition, and the santoor is a hammered string instrument from Kashmir brought to the classical stage.",
+    "dots_hi": [
+      "सितार",
+      "सरोद",
+      "वीणा",
+      "संतूर"
+    ],
+    "options_hi": [
+      "लोक संगीत के तालवाद्य",
+      "मंदिर संगीत में प्रयुक्त वाद्य",
+      "अमीर खुसरो द्वारा आविष्कृत वाद्य",
+      "भारतीय शास्त्रीय संगीत के तंतु वाद्य"
+    ],
+    "explanation_hi": "ये चारों भारतीय शास्त्रीय संगीत के तंतु वाद्य हैं: सितार और सरोद हिंदुस्तानी संगीत के मुख्य आधार हैं, वीणा कर्नाटक परंपरा का प्रमुख वाद्य है, और संतूर कश्मीर का हथौड़ी से बजाया जाने वाला तंतु वाद्य है जिसे शास्त्रीय मंच पर लाया गया।"
   },
   {
     "id": "cd_041",
@@ -776,7 +1296,20 @@
       "Fort architecture of the Deccan sultanates"
     ],
     "answer_index": 1,
-    "explanation": "Nagara (northern), Dravida (southern) and Vesara (hybrid Deccan) are the three broad styles of Hindu temple architecture described in the shilpa texts, while the shikhara is the tower rising over the sanctum that visually defines these styles."
+    "explanation": "Nagara (northern), Dravida (southern) and Vesara (hybrid Deccan) are the three broad styles of Hindu temple architecture described in the shilpa texts, while the shikhara is the tower rising over the sanctum that visually defines these styles.",
+    "dots_hi": [
+      "नागर",
+      "द्रविड़",
+      "वेसर",
+      "शिखर"
+    ],
+    "options_hi": [
+      "शास्त्रीय भारतीय मूर्तिकला की शैलियाँ",
+      "हिंदू मंदिर वास्तुकला की शैलियाँ और तत्व",
+      "बौद्ध मठीय भवनों के प्रकार",
+      "दक्कन सल्तनतों की दुर्ग वास्तुकला"
+    ],
+    "explanation_hi": "नागर (उत्तरी), द्रविड़ (दक्षिणी) और वेसर (दक्कन की मिश्रित शैली) हिंदू मंदिर वास्तुकला की तीन व्यापक शैलियाँ हैं जिनका वर्णन शिल्प ग्रंथों में मिलता है, जबकि शिखर वह मीनार है जो गर्भगृह के ऊपर उठती है और इन शैलियों को दृश्यतः परिभाषित करती है।"
   },
   {
     "id": "cd_042",
@@ -795,7 +1328,20 @@
       "Company School paintings for European patrons"
     ],
     "answer_index": 2,
-    "explanation": "Each is a regional folk or traditional painting style: Madhubani from Mithila (Bihar), Warli from tribal Maharashtra, Pattachitra the cloth-scroll painting of Odisha, and Kalamkari the pen-and-dye textile art of Andhra Pradesh."
+    "explanation": "Each is a regional folk or traditional painting style: Madhubani from Mithila (Bihar), Warli from tribal Maharashtra, Pattachitra the cloth-scroll painting of Odisha, and Kalamkari the pen-and-dye textile art of Andhra Pradesh.",
+    "dots_hi": [
+      "मधुबनी",
+      "वारली",
+      "पट्टचित्र",
+      "कलमकारी"
+    ],
+    "options_hi": [
+      "मुगल लघुचित्रकला की शैलियाँ",
+      "केरल के मंदिरों की भित्तिचित्र परंपराएँ",
+      "भारत की क्षेत्रीय लोक और पारंपरिक चित्रकला शैलियाँ",
+      "यूरोपीय संरक्षकों के लिए कंपनी शैली चित्रकला"
+    ],
+    "explanation_hi": "प्रत्येक एक क्षेत्रीय लोक या पारंपरिक चित्रकला शैली है: मिथिला (बिहार) की मधुबनी, आदिवासी महाराष्ट्र की वारली, ओडिशा की वस्त्र-स्क्रॉल पट्टचित्र, और आंध्र प्रदेश की कलम व रंगाई की कलमकारी कला।"
   },
   {
     "id": "cd_043",
@@ -814,7 +1360,20 @@
       "Gharanas of Hindustani khayal music"
     ],
     "answer_index": 3,
-    "explanation": "All four are gharanas (stylistic lineages) of Hindustani khayal vocal music: Gwalior is the oldest, Kirana is famed for slow melodic elaboration (Bhimsen Joshi), Agra for its robust dhrupad-influenced style, and Patiala for ornamented virtuosity (Bade Ghulam Ali Khan)."
+    "explanation": "All four are gharanas (stylistic lineages) of Hindustani khayal vocal music: Gwalior is the oldest, Kirana is famed for slow melodic elaboration (Bhimsen Joshi), Agra for its robust dhrupad-influenced style, and Patiala for ornamented virtuosity (Bade Ghulam Ali Khan).",
+    "dots_hi": [
+      "ग्वालियर",
+      "किराना",
+      "आगरा",
+      "पटियाला"
+    ],
+    "options_hi": [
+      "मुगल प्रांतीय वास्तुकला के केंद्र",
+      "लघुचित्रकला को संरक्षण देने वाली रियासतें",
+      "प्रसिद्ध मध्यकालीन दुर्गों के स्थल",
+      "हिंदुस्तानी ख्याल गायकी के घराने"
+    ],
+    "explanation_hi": "ये चारों हिंदुस्तानी ख्याल गायन के घराने (शैलीगत परंपराएँ) हैं: ग्वालियर सबसे पुराना है, किराना धीमी सुरीली विस्तार शैली के लिए प्रसिद्ध है (भीमसेन जोशी), आगरा अपनी सशक्त ध्रुपद-प्रभावित शैली के लिए, और पटियाला अलंकृत निपुणता के लिए (बड़े ग़ुलाम अली खान)।"
   },
   {
     "id": "cd_044",
@@ -833,7 +1392,20 @@
       "Dance forms of the Northeast"
     ],
     "answer_index": 0,
-    "explanation": "All are inscribed on UNESCO's Representative List of Intangible Cultural Heritage: Kutiyattam Sanskrit theatre of Kerala, the Ramlila performance tradition, the tradition of Vedic chanting, and the Kalbelia folk songs and dances of Rajasthan."
+    "explanation": "All are inscribed on UNESCO's Representative List of Intangible Cultural Heritage: Kutiyattam Sanskrit theatre of Kerala, the Ramlila performance tradition, the tradition of Vedic chanting, and the Kalbelia folk songs and dances of Rajasthan.",
+    "dots_hi": [
+      "कूडियाट्टम",
+      "रामलीला",
+      "वैदिक जप",
+      "कालबेलिया"
+    ],
+    "options_hi": [
+      "भारत से यूनेस्को की अमूर्त सांस्कृतिक विरासत सूची में शामिल तत्व",
+      "विजयनगर दरबार द्वारा संरक्षित प्रदर्शन कलाएँ",
+      "कुंभ मेले के अनुष्ठान",
+      "पूर्वोत्तर की नृत्य शैलियाँ"
+    ],
+    "explanation_hi": "ये सभी यूनेस्को की अमूर्त सांस्कृतिक विरासत की प्रतिनिधि सूची में सम्मिलित हैं: केरल का कूडियाट्टम संस्कृत रंगमंच, रामलीला प्रदर्शन परंपरा, वैदिक जप की परंपरा, और राजस्थान के कालबेलिया लोक गीत व नृत्य।"
   },
   {
     "id": "cd_045",
@@ -852,7 +1424,20 @@
       "Gupta-era terracotta art"
     ],
     "answer_index": 1,
-    "explanation": "The Gandhara school flourished under Kushan patronage in the northwest: its sculptors carved mainly in grey-blue schist, rendered robes with realistic Hellenistic (Greco-Roman) drapery folds, and gave the Buddha wavy hair and Apollo-like features — unlike the indigenous red-sandstone Mathura school."
+    "explanation": "The Gandhara school flourished under Kushan patronage in the northwest: its sculptors carved mainly in grey-blue schist, rendered robes with realistic Hellenistic (Greco-Roman) drapery folds, and gave the Buddha wavy hair and Apollo-like features — unlike the indigenous red-sandstone Mathura school.",
+    "dots_hi": [
+      "स्लेटी शिस्ट पत्थर",
+      "हेलेनिस्टिक वस्त्र-विन्यास",
+      "कुषाण संरक्षण",
+      "लहरदार बालों वाला बुद्ध"
+    ],
+    "options_hi": [
+      "मथुरा शिल्प शैली",
+      "गांधार शिल्प शैली",
+      "दक्कन की अमरावती शैली",
+      "गुप्तकालीन टेराकोटा कला"
+    ],
+    "explanation_hi": "गांधार शैली उत्तर-पश्चिम में कुषाण संरक्षण में फली-फूली: इसके शिल्पकारों ने मुख्यतः स्लेटी-नीले शिस्ट पत्थर में मूर्तियाँ गढ़ीं, वस्त्रों को यथार्थवादी हेलेनिस्टिक (ग्रीको-रोमन) वस्त्र-विन्यास की तहों में दर्शाया, और बुद्ध को लहरदार बाल तथा अपोलो जैसी आकृति दी — जबकि स्वदेशी लाल बलुआ पत्थर की मथुरा शैली इससे भिन्न थी।"
   },
   {
     "id": "cd_046",
@@ -871,7 +1456,20 @@
       "Harvest festival dances of the Northeast"
     ],
     "answer_index": 2,
-    "explanation": "Each is a regional folk performance form: Yakshagana is Karnataka's costumed dance-drama, Theyyam is the ritual possession performance of north Kerala, Bhaona is the Assamese devotional theatre created by Srimanta Sankardeva, and Tamasha is Maharashtra's folk theatre with song and dance."
+    "explanation": "Each is a regional folk performance form: Yakshagana is Karnataka's costumed dance-drama, Theyyam is the ritual possession performance of north Kerala, Bhaona is the Assamese devotional theatre created by Srimanta Sankardeva, and Tamasha is Maharashtra's folk theatre with song and dance.",
+    "dots_hi": [
+      "यक्षगान",
+      "थेय्यम",
+      "भाओना",
+      "तमाशा"
+    ],
+    "options_hi": [
+      "नाट्यशास्त्र में संहिताबद्ध शास्त्रीय नृत्य-नाटक",
+      "कठपुतली रंगमंच परंपराएँ",
+      "विभिन्न राज्यों के पारंपरिक लोक रंगमंच और अनुष्ठानिक प्रदर्शन रूप",
+      "पूर्वोत्तर के फसल उत्सव नृत्य"
+    ],
+    "explanation_hi": "प्रत्येक एक क्षेत्रीय लोक प्रदर्शन रूप है: यक्षगान कर्नाटक का वेशभूषायुक्त नृत्य-नाटक है, थेय्यम उत्तरी केरल का अनुष्ठानिक आवेश प्रदर्शन है, भाओना श्रीमंत शंकरदेव द्वारा रचित असमिया भक्ति रंगमंच है, और तमाशा गीत-नृत्य सहित महाराष्ट्र का लोक रंगमंच है।"
   },
   {
     "id": "cd_047",
@@ -890,7 +1488,20 @@
       "Jewellery styles of royal courts"
     ],
     "answer_index": 0,
-    "explanation": "All are metal crafts: Bidriware of Bidar inlays silver on a blackened zinc-copper alloy, Dhokra is the tribal lost-wax brass casting of central-eastern India, the Thatheras of Jandiala Guru (Punjab) hand-beat brass and copper utensils (UNESCO-listed craft), and Pembarthi in Telangana is famed for brass sheet-metal work."
+    "explanation": "All are metal crafts: Bidriware of Bidar inlays silver on a blackened zinc-copper alloy, Dhokra is the tribal lost-wax brass casting of central-eastern India, the Thatheras of Jandiala Guru (Punjab) hand-beat brass and copper utensils (UNESCO-listed craft), and Pembarthi in Telangana is famed for brass sheet-metal work.",
+    "dots_hi": [
+      "बिदरीवेयर",
+      "ढोकरा",
+      "जंडियाला गुरु के ठठेरे",
+      "पेम्बर्थी"
+    ],
+    "options_hi": [
+      "भारत की पारंपरिक धातु शिल्प परंपराएँ",
+      "हथकरघा बुनाई के केंद्र",
+      "दक्कन की पाषाण नक्काशी शैलियाँ",
+      "राजदरबारों की आभूषण शैलियाँ"
+    ],
+    "explanation_hi": "ये सभी धातु शिल्प हैं: बीदर का बिदरीवेयर काली की गई जस्ता-ताँबा मिश्र धातु पर चाँदी की जड़ाई करता है, ढोकरा मध्य-पूर्वी भारत की आदिवासी मोम-निष्कासन (लॉस्ट-वैक्स) पीतल ढलाई है, जंडियाला गुरु (पंजाब) के ठठेरे हाथ से पीतल और ताँबे के बर्तन गढ़ते हैं (यूनेस्को सूचीबद्ध शिल्प), और तेलंगाना का पेम्बर्थी पीतल की चादर पर धातु कारीगरी के लिए प्रसिद्ध है।"
   },
   {
     "id": "cd_048",
@@ -909,7 +1520,20 @@
       "Mauryan polished stone pillars"
     ],
     "answer_index": 2,
-    "explanation": "The Chola bronzes of the Thanjavur (Kaveri delta) region were cast by the lost-wax (cire perdue) technique, traditionally in panchaloha (five-metal alloy). Their most celebrated icon is the Nataraja — Shiva as cosmic dancer within a ring of flames."
+    "explanation": "The Chola bronzes of the Thanjavur (Kaveri delta) region were cast by the lost-wax (cire perdue) technique, traditionally in panchaloha (five-metal alloy). Their most celebrated icon is the Nataraja — Shiva as cosmic dancer within a ring of flames.",
+    "dots_hi": [
+      "मोम-निष्कासन (लॉस्ट-वैक्स) तकनीक",
+      "पंचलोहा",
+      "नटराज",
+      "तंजावुर क्षेत्र"
+    ],
+    "options_hi": [
+      "महाबलीपुरम की पल्लव शैलकृत मूर्तिकला",
+      "सोपस्टोन में होयसल मंदिर नक्काशी",
+      "चोल कांस्य प्रतिमा ढलाई परंपरा",
+      "मौर्य पॉलिशदार पाषाण स्तंभ"
+    ],
+    "explanation_hi": "तंजावुर (कावेरी डेल्टा) क्षेत्र की चोल कांस्य प्रतिमाएँ मोम-निष्कासन (सिरे पर्दु) तकनीक से, परंपरागत रूप से पंचलोहा (पाँच धातुओं की मिश्र धातु) में ढाली जाती थीं। इनका सबसे प्रसिद्ध प्रतीक नटराज है — अग्नि-वलय के भीतर लौकिक नर्तक के रूप में शिव।"
   },
   {
     "id": "cd_049",
@@ -928,7 +1552,20 @@
       "Among the highest peaks of the Himalayan range"
     ],
     "answer_index": 3,
-    "explanation": "All four are major Himalayan peaks exceeding 7,800 metres, among the highest in the world — spanning India, Nepal and Pakistan-administered Kashmir."
+    "explanation": "All four are major Himalayan peaks exceeding 7,800 metres, among the highest in the world — spanning India, Nepal and Pakistan-administered Kashmir.",
+    "dots_hi": [
+      "नंदा देवी",
+      "कंचनजंगा",
+      "नंगा पर्वत",
+      "अन्नपूर्णा"
+    ],
+    "options_hi": [
+      "दक्कन के पठार की ज्वालामुखीय चोटियाँ",
+      "अरावली श्रेणी की चोटियाँ",
+      "पश्चिमी घाट के साथ की चोटियाँ",
+      "हिमालय श्रेणी की सबसे ऊँची चोटियों में से"
+    ],
+    "explanation_hi": "ये चारों 7,800 मीटर से अधिक ऊँचाई वाली प्रमुख हिमालयी चोटियाँ हैं, जो विश्व की सबसे ऊँची चोटियों में गिनी जाती हैं — भारत, नेपाल और पाकिस्तान-प्रशासित कश्मीर में फैली हुई।"
   },
   {
     "id": "cd_050",
@@ -947,7 +1584,20 @@
       "Rivers rising in the Aravallis"
     ],
     "answer_index": 0,
-    "explanation": "All four are tributaries of the Ganga: the Yamuna joins it at Prayagraj from the right, while the Ghaghara, Gandak and Kosi descend from the Himalaya in Nepal and join from the left across the northern plains."
+    "explanation": "All four are tributaries of the Ganga: the Yamuna joins it at Prayagraj from the right, while the Ghaghara, Gandak and Kosi descend from the Himalaya in Nepal and join from the left across the northern plains.",
+    "dots_hi": [
+      "यमुना",
+      "घाघरा",
+      "गंडक",
+      "कोसी"
+    ],
+    "options_hi": [
+      "गंगा की सहायक नदियाँ",
+      "ब्रह्मपुत्र प्रणाली की नदियाँ",
+      "पश्चिम की ओर बहने वाली प्रायद्वीपीय नदियाँ",
+      "अरावली से निकलने वाली नदियाँ"
+    ],
+    "explanation_hi": "ये चारों गंगा की सहायक नदियाँ हैं: यमुना प्रयागराज में दाईं ओर से गंगा में मिलती है, जबकि घाघरा, गंडक और कोसी नेपाल में हिमालय से उतरकर उत्तरी मैदानों में बाईं ओर से मिलती हैं।"
   },
   {
     "id": "cd_051",
@@ -966,7 +1616,20 @@
       "Coral atolls of Lakshadweep"
     ],
     "answer_index": 1,
-    "explanation": "All lie in the narrow seas separating India and Sri Lanka: the Palk Strait to the north and Gulf of Mannar to the south are linked by the chain of shoals called Adam's Bridge (Ram Setu), which begins near the Indian island town of Rameswaram."
+    "explanation": "All lie in the narrow seas separating India and Sri Lanka: the Palk Strait to the north and Gulf of Mannar to the south are linked by the chain of shoals called Adam's Bridge (Ram Setu), which begins near the Indian island town of Rameswaram.",
+    "dots_hi": [
+      "पाक जलडमरूमध्य",
+      "मन्नार की खाड़ी",
+      "आदम का पुल (रामसेतु)",
+      "रामेश्वरम"
+    ],
+    "options_hi": [
+      "अंडमान सागर की विशेषताएँ",
+      "भारत और श्रीलंका के बीच के समुद्र की विशेषताएँ",
+      "केरल तट के लैगून",
+      "लक्षद्वीप के प्रवाल एटॉल"
+    ],
+    "explanation_hi": "ये सभी भारत और श्रीलंका को अलग करने वाले संकरे समुद्रों में स्थित हैं: उत्तर में पाक जलडमरूमध्य और दक्षिण में मन्नार की खाड़ी, आदम के पुल (रामसेतु) नामक उथले शोलों की श्रृंखला से जुड़े हैं, जो भारतीय द्वीप नगर रामेश्वरम के निकट से शुरू होता है।"
   },
   {
     "id": "cd_052",
@@ -985,7 +1648,20 @@
       "Major seaports of India"
     ],
     "answer_index": 3,
-    "explanation": "All four are major ports of India: Visakhapatnam (Andhra Pradesh) and Paradip (Odisha) on the east coast, and Kochi (Kerala) and Mormugao (Goa) on the west coast."
+    "explanation": "All four are major ports of India: Visakhapatnam (Andhra Pradesh) and Paradip (Odisha) on the east coast, and Kochi (Kerala) and Mormugao (Goa) on the west coast.",
+    "dots_hi": [
+      "विशाखापत्तनम",
+      "पारादीप",
+      "कोच्चि",
+      "मोरमुगाओ"
+    ],
+    "options_hi": [
+      "स्वर्णिम चतुर्भुज पर स्थित शहर",
+      "नौसेना कमान मुख्यालय",
+      "तट पर स्थित राज्य राजधानियाँ",
+      "भारत के प्रमुख समुद्री बंदरगाह"
+    ],
+    "explanation_hi": "ये चारों भारत के प्रमुख बंदरगाह हैं: पूर्वी तट पर विशाखापत्तनम (आंध्र प्रदेश) और पारादीप (ओडिशा), तथा पश्चिमी तट पर कोच्चि (केरल) और मोरमुगाओ (गोवा)।"
   },
   {
     "id": "cd_053",
@@ -1004,7 +1680,20 @@
       "Offshore oil exploration projects"
     ],
     "answer_index": 1,
-    "explanation": "Bhakra Nangal (Sutlej), Hirakud (Mahanadi), the Damodar Valley Corporation (Damodar) and Tungabhadra Dam are flagship multipurpose river valley projects launched in the early decades after independence."
+    "explanation": "Bhakra Nangal (Sutlej), Hirakud (Mahanadi), the Damodar Valley Corporation (Damodar) and Tungabhadra Dam are flagship multipurpose river valley projects launched in the early decades after independence.",
+    "dots_hi": [
+      "भाखड़ा नांगल",
+      "हीराकुंड",
+      "दामोदर घाटी निगम",
+      "तुंगभद्रा"
+    ],
+    "options_hi": [
+      "ब्रिटिश शासन के अधीन विकसित तटीय बंदरगाह",
+      "स्वतंत्र भारत की प्रमुख बहुउद्देशीय नदी घाटी परियोजनाएँ",
+      "हरित क्रांति से जुड़े स्थल",
+      "अपतटीय तेल अन्वेषण परियोजनाएँ"
+    ],
+    "explanation_hi": "भाखड़ा नांगल (सतलुज), हीराकुंड (महानदी), दामोदर घाटी निगम (दामोदर) और तुंगभद्रा बांध स्वतंत्रता के बाद के प्रारंभिक दशकों में शुरू की गई प्रमुख बहुउद्देशीय नदी घाटी परियोजनाएँ हैं।"
   },
   {
     "id": "cd_054",
@@ -1023,7 +1712,20 @@
       "Red soils of eastern India"
     ],
     "answer_index": 2,
-    "explanation": "Black soil, locally called regur, forms from the weathering of Deccan Trap basalt. It is ideal for cotton (hence 'black cotton soil') and develops deep cracks in summer that aerate it — the 'self-ploughing' character — while retaining moisture well."
+    "explanation": "Black soil, locally called regur, forms from the weathering of Deccan Trap basalt. It is ideal for cotton (hence 'black cotton soil') and develops deep cracks in summer that aerate it — the 'self-ploughing' character — while retaining moisture well.",
+    "dots_hi": [
+      "रेगुर",
+      "दक्कन ट्रैप बेसाल्ट",
+      "कपास की खेती",
+      "स्वतः जुताई करने वाली दरारें"
+    ],
+    "options_hi": [
+      "पश्चिमी घाट की लैटेराइट मिट्टी",
+      "उत्तरी मैदानों की जलोढ़ मिट्टी",
+      "दक्कन के पठार की काली मिट्टी",
+      "पूर्वी भारत की लाल मिट्टी"
+    ],
+    "explanation_hi": "काली मिट्टी, जिसे स्थानीय रूप से रेगुर कहा जाता है, दक्कन ट्रैप बेसाल्ट के अपक्षय से बनती है। यह कपास के लिए आदर्श है (इसीलिए 'काली कपास मिट्टी') और गर्मियों में गहरी दरारें बना लेती है जो इसे हवादार बनाती हैं — यह 'स्वतः जुताई' विशेषता है — साथ ही यह नमी को अच्छी तरह बनाए रखती है।"
   },
   {
     "id": "cd_055",
@@ -1042,7 +1744,20 @@
       "Hydel projects on the Godavari"
     ],
     "answer_index": 0,
-    "explanation": "Each is a famous waterfall on a peninsular river: Jog Falls on the Sharavathi (Karnataka), Dhuandhar on the Narmada at Bhedaghat (Madhya Pradesh), Shivanasamudra on the Kaveri (Karnataka), and Hundru on the Subarnarekha (Jharkhand)."
+    "explanation": "Each is a famous waterfall on a peninsular river: Jog Falls on the Sharavathi (Karnataka), Dhuandhar on the Narmada at Bhedaghat (Madhya Pradesh), Shivanasamudra on the Kaveri (Karnataka), and Hundru on the Subarnarekha (Jharkhand).",
+    "dots_hi": [
+      "जोग जलप्रपात",
+      "धुआँधार",
+      "शिवनासमुद्रम",
+      "हुंड्रू"
+    ],
+    "options_hi": [
+      "जलप्रपात और उन्हें बनाने वाली नदियाँ",
+      "प्रायद्वीपीय भारत के गर्म जल स्रोत",
+      "हिमालयी नदियों की घाटियाँ",
+      "गोदावरी पर जलविद्युत परियोजनाएँ"
+    ],
+    "explanation_hi": "प्रत्येक प्रायद्वीपीय नदी पर स्थित एक प्रसिद्ध जलप्रपात है: शरावती (कर्नाटक) पर जोग जलप्रपात, भेड़ाघाट (मध्य प्रदेश) में नर्मदा पर धुआँधार, कावेरी (कर्नाटक) पर शिवनासमुद्रम, और सुवर्णरेखा (झारखंड) पर हुंड्रू।"
   },
   {
     "id": "cd_056",
@@ -1061,7 +1776,20 @@
       "River gorges of Arunachal Pradesh"
     ],
     "answer_index": 1,
-    "explanation": "All are Himalayan passes: Zoji La links Srinagar with Ladakh, Shipki La in Himachal Pradesh is where the Sutlej enters India from Tibet, and Nathu La and Jelep La in Sikkim connect India with Tibet on old trade routes."
+    "explanation": "All are Himalayan passes: Zoji La links Srinagar with Ladakh, Shipki La in Himachal Pradesh is where the Sutlej enters India from Tibet, and Nathu La and Jelep La in Sikkim connect India with Tibet on old trade routes.",
+    "dots_hi": [
+      "ज़ोजी ला",
+      "शिपकी ला",
+      "नाथू ला",
+      "जेलेप ला"
+    ],
+    "options_hi": [
+      "काराकोरम के हिमनद",
+      "हिमालय के पर्वतीय दर्रे",
+      "ट्रांस-हिमालय की चोटियाँ",
+      "अरुणाचल प्रदेश की नदी घाटियाँ"
+    ],
+    "explanation_hi": "ये सभी हिमालयी दर्रे हैं: ज़ोजी ला श्रीनगर को लद्दाख से जोड़ता है, हिमाचल प्रदेश में शिपकी ला वह स्थान है जहाँ से सतलुज तिब्बत से भारत में प्रवेश करती है, और सिक्किम में नाथू ला व जेलेप ला पुराने व्यापार मार्गों पर भारत को तिब्बत से जोड़ते हैं।"
   },
   {
     "id": "cd_057",
@@ -1080,7 +1808,20 @@
       "Channels of the Sundarbans delta"
     ],
     "answer_index": 2,
-    "explanation": "All belong to the Andaman and Nicobar region: the Ten Degree Channel separates the Andamans from the Nicobars, the Duncan Passage lies between South Andaman and Little Andaman, the Coco Channel separates North Andaman from Myanmar's Coco Islands, and Barren Island is India's only active volcano."
+    "explanation": "All belong to the Andaman and Nicobar region: the Ten Degree Channel separates the Andamans from the Nicobars, the Duncan Passage lies between South Andaman and Little Andaman, the Coco Channel separates North Andaman from Myanmar's Coco Islands, and Barren Island is India's only active volcano.",
+    "dots_hi": [
+      "टेन डिग्री चैनल",
+      "डंकन दर्रा",
+      "कोको चैनल",
+      "बैरन द्वीप"
+    ],
+    "options_hi": [
+      "लक्षद्वीप द्वीपसमूह की विशेषताएँ",
+      "मलक्का क्षेत्र की जलडमरूमध्य",
+      "अंडमान और निकोबार द्वीप समूह की समुद्री विशेषताएँ",
+      "सुंदरबन डेल्टा की जलधाराएँ"
+    ],
+    "explanation_hi": "ये सभी अंडमान और निकोबार क्षेत्र से संबंधित हैं: टेन डिग्री चैनल अंडमान को निकोबार से अलग करता है, डंकन दर्रा दक्षिण अंडमान और लघु अंडमान के बीच स्थित है, कोको चैनल उत्तर अंडमान को म्यांमार के कोको द्वीपों से अलग करता है, और बैरन द्वीप भारत का एकमात्र सक्रिय ज्वालामुखी है।"
   },
   {
     "id": "cd_058",
@@ -1099,7 +1840,20 @@
       "Loess deposits carried by wind"
     ],
     "answer_index": 0,
-    "explanation": "Karewas are flat-topped terraces of lacustrine (lake-bed) deposits in the Kashmir Valley, left behind by a Pleistocene lake between the Pir Panjal and the Greater Himalaya. Their fine soils are famous for saffron cultivation, especially around Pampore."
+    "explanation": "Karewas are flat-topped terraces of lacustrine (lake-bed) deposits in the Kashmir Valley, left behind by a Pleistocene lake between the Pir Panjal and the Greater Himalaya. Their fine soils are famous for saffron cultivation, especially around Pampore.",
+    "dots_hi": [
+      "करेवा",
+      "झील निक्षेप (लैकस्ट्राइन डिपॉज़िट)",
+      "केसर की खेती",
+      "कश्मीर घाटी"
+    ],
+    "options_hi": [
+      "प्राचीन झील तल के सोपानी पठारी निक्षेप",
+      "पीर पंजाल के हिमनद-निर्मित मोरेन",
+      "झेलम के जलोढ़ पंख",
+      "हवा द्वारा लाई गई लोयस मिट्टी"
+    ],
+    "explanation_hi": "करेवा कश्मीर घाटी में झील निक्षेपों (झील तल) से बने समतल-शीर्ष सोपान हैं, जो पीर पंजाल और वृहत हिमालय के बीच प्लाइस्टोसीन युग की एक झील से बचे रह गए हैं। इनकी उपजाऊ मिट्टी, विशेषकर पंपोर के आसपास, केसर की खेती के लिए प्रसिद्ध है।"
   },
   {
     "id": "cd_059",
@@ -1118,7 +1872,20 @@
       "Currents responsible for El Nino"
     ],
     "answer_index": 1,
-    "explanation": "All four are cold currents flowing along the eastern boundaries of ocean basins: the Benguela off southwestern Africa, the Humboldt (Peru) off western South America, the Canary off northwestern Africa, and the California current off western North America. They cool coasts and create arid conditions and rich fisheries."
+    "explanation": "All four are cold currents flowing along the eastern boundaries of ocean basins: the Benguela off southwestern Africa, the Humboldt (Peru) off western South America, the Canary off northwestern Africa, and the California current off western North America. They cool coasts and create arid conditions and rich fisheries.",
+    "dots_hi": [
+      "बेंगुएला",
+      "हम्बोल्ट",
+      "कैनरी",
+      "कैलिफोर्निया"
+    ],
+    "options_hi": [
+      "पश्चिमी महासागरीय सीमा की गर्म धाराएँ",
+      "महासागरों की पूर्वी सीमाओं पर ठंडी धाराएँ",
+      "हिंद महासागर चक्र (गायर) की धाराएँ",
+      "अल नीनो के लिए उत्तरदायी धाराएँ"
+    ],
+    "explanation_hi": "ये चारों महासागरीय द्रोणियों की पूर्वी सीमाओं पर बहने वाली ठंडी धाराएँ हैं: दक्षिण-पश्चिमी अफ्रीका के पास बेंगुएला, दक्षिण अमेरिका के पश्चिम में हम्बोल्ट (पेरू), उत्तर-पश्चिमी अफ्रीका के पास कैनरी, और उत्तर अमेरिका के पश्चिम में कैलिफोर्निया धारा। ये तटों को ठंडा करती हैं तथा शुष्क परिस्थितियाँ व समृद्ध मत्स्य क्षेत्र बनाती हैं।"
   },
   {
     "id": "cd_060",
@@ -1137,7 +1904,20 @@
       "Uranium deposits of India"
     ],
     "answer_index": 3,
-    "explanation": "All are uranium sites: Jaduguda in Jharkhand hosts India's oldest uranium mine, Tummalapalle in Andhra Pradesh holds one of the largest reserves, Domiasiat in Meghalaya has significant sandstone-hosted deposits, and Gogi in Karnataka is another identified uranium deposit."
+    "explanation": "All are uranium sites: Jaduguda in Jharkhand hosts India's oldest uranium mine, Tummalapalle in Andhra Pradesh holds one of the largest reserves, Domiasiat in Meghalaya has significant sandstone-hosted deposits, and Gogi in Karnataka is another identified uranium deposit.",
+    "dots_hi": [
+      "जादूगोड़ा",
+      "तुम्मलपल्ले",
+      "डोमियासियाट",
+      "गोगी"
+    ],
+    "options_hi": [
+      "दामोदर घाटी के कोयला क्षेत्र",
+      "ओडिशा की लौह अयस्क पेटी",
+      "मध्य भारत के बॉक्साइट पठार",
+      "भारत के यूरेनियम निक्षेप"
+    ],
+    "explanation_hi": "ये सभी यूरेनियम स्थल हैं: झारखंड का जादूगोड़ा भारत की सबसे पुरानी यूरेनियम खान है, आंध्र प्रदेश का तुम्मलपल्ले सबसे बड़े भंडारों में से एक रखता है, मेघालय का डोमियासियाट महत्वपूर्ण बलुआ-पत्थर आधारित निक्षेप रखता है, और कर्नाटक का गोगी एक अन्य पहचाना गया यूरेनियम निक्षेप है।"
   },
   {
     "id": "cd_061",
@@ -1156,7 +1936,20 @@
       "Bodies responsible for implementing GST"
     ],
     "answer_index": 2,
-    "explanation": "NABARD (rural credit), RBI (banking and monetary policy), SEBI (securities markets) and IRDAI (insurance) are the key sectoral regulators of India's financial system."
+    "explanation": "NABARD (rural credit), RBI (banking and monetary policy), SEBI (securities markets) and IRDAI (insurance) are the key sectoral regulators of India's financial system.",
+    "dots_hi": [
+      "नाबार्ड",
+      "भारतीय रिज़र्व बैंक (आरबीआई)",
+      "सेबी",
+      "आईआरडीएआई"
+    ],
+    "options_hi": [
+      "1969 में राष्ट्रीयकृत सार्वजनिक क्षेत्र के बैंक",
+      "पंचवर्षीय योजनाओं के अधीन स्थापित संस्थाएँ",
+      "भारत के वित्तीय क्षेत्र की निगरानी करने वाले नियामक निकाय",
+      "जीएसटी लागू करने के लिए उत्तरदायी निकाय"
+    ],
+    "explanation_hi": "नाबार्ड (ग्रामीण ऋण), आरबीआई (बैंकिंग और मौद्रिक नीति), सेबी (प्रतिभूति बाज़ार) और आईआरडीएआई (बीमा) भारत की वित्तीय प्रणाली के प्रमुख क्षेत्रीय नियामक हैं।"
   },
   {
     "id": "cd_062",
@@ -1175,7 +1968,20 @@
       "Measures of the fiscal deficit"
     ],
     "answer_index": 0,
-    "explanation": "All are RBI monetary policy instruments: the repo rate is the rate at which banks borrow from the RBI, the reverse repo is the rate at which they park funds with it, while the Cash Reserve Ratio (CRR) and Statutory Liquidity Ratio (SLR) are reserve requirements banks must maintain."
+    "explanation": "All are RBI monetary policy instruments: the repo rate is the rate at which banks borrow from the RBI, the reverse repo is the rate at which they park funds with it, while the Cash Reserve Ratio (CRR) and Statutory Liquidity Ratio (SLR) are reserve requirements banks must maintain.",
+    "dots_hi": [
+      "रेपो दर",
+      "रिवर्स रेपो दर",
+      "सीआरआर (नकद आरक्षित अनुपात)",
+      "एसएलआर (सांविधिक तरलता अनुपात)"
+    ],
+    "options_hi": [
+      "आरबीआई द्वारा प्रयुक्त मौद्रिक नीति के साधन",
+      "केंद्रीय बजट के घटक",
+      "केंद्र द्वारा लगाए गए प्रत्यक्ष कर",
+      "राजकोषीय घाटे के मापदंड"
+    ],
+    "explanation_hi": "ये सभी आरबीआई के मौद्रिक नीति उपकरण हैं: रेपो दर वह दर है जिस पर बैंक आरबीआई से उधार लेते हैं, रिवर्स रेपो वह दर है जिस पर वे अपने कोष आरबीआई में जमा करते हैं, जबकि नकद आरक्षित अनुपात (सीआरआर) और सांविधिक तरलता अनुपात (एसएलआर) आरक्षित आवश्यकताएँ हैं जिन्हें बैंकों को बनाए रखना होता है।"
   },
   {
     "id": "cd_063",
@@ -1194,7 +2000,20 @@
       "Measures of money supply"
     ],
     "answer_index": 1,
-    "explanation": "All are national income aggregates: GDP measures output within the country's borders, GNP adds net factor income from abroad, and NDP and NNP are the corresponding 'net' measures after subtracting depreciation of capital."
+    "explanation": "All are national income aggregates: GDP measures output within the country's borders, GNP adds net factor income from abroad, and NDP and NNP are the corresponding 'net' measures after subtracting depreciation of capital.",
+    "dots_hi": [
+      "सकल घरेलू उत्पाद (जीडीपी)",
+      "सकल राष्ट्रीय उत्पाद (जीएनपी)",
+      "निवल घरेलू उत्पाद (एनडीपी)",
+      "निवल राष्ट्रीय उत्पाद (एनएनपी)"
+    ],
+    "options_hi": [
+      "शेयर बाज़ार प्रदर्शन के सूचकांक",
+      "राष्ट्रीय आय के समग्र मापदंड",
+      "मानव विकास के संकेतक",
+      "मुद्रा आपूर्ति के मापदंड"
+    ],
+    "explanation_hi": "ये सभी राष्ट्रीय आय के समग्र माप हैं: जीडीपी देश की सीमाओं के भीतर उत्पादन मापता है, जीएनपी में विदेश से प्राप्त निवल कारक आय जोड़ी जाती है, और एनडीपी व एनएनपी पूंजी के मूल्यह्रास को घटाने के बाद संबंधित 'निवल' माप हैं।"
   },
   {
     "id": "cd_064",
@@ -1213,7 +2032,20 @@
       "Components of the current account"
     ],
     "answer_index": 2,
-    "explanation": "Fiscal deficit is total borrowing requirement, revenue deficit is the gap on the revenue account, and primary deficit is the fiscal deficit minus interest payments. The FRBM Act, 2003 sets targets to keep these deficits within limits, anchoring fiscal discipline."
+    "explanation": "Fiscal deficit is total borrowing requirement, revenue deficit is the gap on the revenue account, and primary deficit is the fiscal deficit minus interest payments. The FRBM Act, 2003 sets targets to keep these deficits within limits, anchoring fiscal discipline.",
+    "dots_hi": [
+      "राजकोषीय घाटा",
+      "राजस्व घाटा",
+      "प्राथमिक घाटा",
+      "एफआरबीएम अधिनियम"
+    ],
+    "options_hi": [
+      "भारत के बाह्य ऋण की अवधारणाएँ",
+      "व्यापार नीति के साधन",
+      "सरकारी घाटे और राजकोषीय अनुशासन का ढाँचा",
+      "चालू खाते के घटक"
+    ],
+    "explanation_hi": "राजकोषीय घाटा कुल उधारी आवश्यकता है, राजस्व घाटा राजस्व खाते पर अंतर है, और प्राथमिक घाटा ब्याज भुगतान घटाने के बाद का राजकोषीय घाटा है। एफआरबीएम अधिनियम, 2003 इन घाटों को सीमा के भीतर रखने के लक्ष्य तय करता है, जिससे राजकोषीय अनुशासन स्थापित होता है।"
   },
   {
     "id": "cd_065",
@@ -1232,7 +2064,20 @@
       "Contract farming arrangements"
     ],
     "answer_index": 0,
-    "explanation": "The Commission for Agricultural Costs and Prices (CACP) recommends the Minimum Support Price (MSP), at which the Food Corporation of India (FCI) procures grain from farmers; the procured grain builds the buffer stock used for food security and price stabilisation."
+    "explanation": "The Commission for Agricultural Costs and Prices (CACP) recommends the Minimum Support Price (MSP), at which the Food Corporation of India (FCI) procures grain from farmers; the procured grain builds the buffer stock used for food security and price stabilisation.",
+    "dots_hi": [
+      "न्यूनतम समर्थन मूल्य (एमएसपी)",
+      "कृषि लागत एवं मूल्य आयोग (सीएसीपी)",
+      "एफसीआई खरीद",
+      "बफर स्टॉक"
+    ],
+    "options_hi": [
+      "भारत की खाद्यान्न मूल्य समर्थन और खाद्य सुरक्षा व्यवस्था",
+      "कृषि निर्यात का विनियमन",
+      "फसल बीमा ढाँचा",
+      "संविदा कृषि व्यवस्थाएँ"
+    ],
+    "explanation_hi": "कृषि लागत एवं मूल्य आयोग (सीएसीपी) न्यूनतम समर्थन मूल्य (एमएसपी) की सिफारिश करता है, जिस पर भारतीय खाद्य निगम (एफसीआई) किसानों से अनाज खरीदता है; खरीदे गए अनाज से खाद्य सुरक्षा और मूल्य स्थिरीकरण के लिए उपयोग होने वाला बफर स्टॉक बनता है।"
   },
   {
     "id": "cd_066",
@@ -1251,7 +2096,20 @@
       "Components of the GDP deflator only"
     ],
     "answer_index": 1,
-    "explanation": "The Wholesale Price Index (WPI) and Consumer Price Index (CPI) are India's main inflation indices; headline inflation is the overall rate (RBI targets headline CPI), while core inflation strips out volatile food and fuel prices to show the underlying trend."
+    "explanation": "The Wholesale Price Index (WPI) and Consumer Price Index (CPI) are India's main inflation indices; headline inflation is the overall rate (RBI targets headline CPI), while core inflation strips out volatile food and fuel prices to show the underlying trend.",
+    "dots_hi": [
+      "थोक मूल्य सूचकांक (डब्ल्यूपीआई)",
+      "उपभोक्ता मूल्य सूचकांक (सीपीआई)",
+      "शीर्षक मुद्रास्फीति (हेडलाइन)",
+      "कोर मुद्रास्फीति"
+    ],
+    "options_hi": [
+      "औद्योगिक उत्पादन के मापदंड",
+      "मुद्रास्फीति मापने की अवधारणाएँ और सूचकांक",
+      "ग्रामीण मज़दूरी के संकेतक",
+      "केवल जीडीपी डिफ्लेटर के घटक"
+    ],
+    "explanation_hi": "थोक मूल्य सूचकांक (डब्ल्यूपीआई) और उपभोक्ता मूल्य सूचकांक (सीपीआई) भारत के मुख्य मुद्रास्फीति सूचकांक हैं; हेडलाइन मुद्रास्फीति समग्र दर है (आरबीआई हेडलाइन सीपीआई को लक्ष्य बनाता है), जबकि कोर मुद्रास्फीति अस्थिर खाद्य और ईंधन कीमतों को हटाकर अंतर्निहित प्रवृत्ति दर्शाती है।"
   },
   {
     "id": "cd_067",
@@ -1270,7 +2128,20 @@
       "The International Monetary Fund"
     ],
     "answer_index": 3,
-    "explanation": "The IMF was created at the Bretton Woods conference (1944); member countries' quotas determine their contributions and voting power, the SDR is the IMF's international reserve asset, and lending for balance of payments support is the IMF's core function."
+    "explanation": "The IMF was created at the Bretton Woods conference (1944); member countries' quotas determine their contributions and voting power, the SDR is the IMF's international reserve asset, and lending for balance of payments support is the IMF's core function.",
+    "dots_hi": [
+      "ब्रेटन वुड्स",
+      "कोटा व्यवस्था",
+      "विशेष आहरण अधिकार (एसडीआर)",
+      "भुगतान संतुलन सहायता"
+    ],
+    "options_hi": [
+      "विश्व व्यापार संगठन",
+      "एशियाई विकास बैंक",
+      "विश्व बैंक की ऋणदाता शाखाएँ",
+      "अंतर्राष्ट्रीय मुद्रा कोष (आईएमएफ)"
+    ],
+    "explanation_hi": "आईएमएफ की स्थापना ब्रेटन वुड्स सम्मेलन (1944) में हुई थी; सदस्य देशों के कोटा उनके अंशदान और मतदान शक्ति तय करते हैं, एसडीआर आईएमएफ की अंतर्राष्ट्रीय आरक्षित परिसंपत्ति है, और भुगतान संतुलन सहायता के लिए ऋण देना आईएमएफ का मूल कार्य है।"
   },
   {
     "id": "cd_068",
@@ -1289,7 +2160,20 @@
       "Norms for microfinance lending"
     ],
     "answer_index": 0,
-    "explanation": "All relate to keeping banks sound: Basel III is the international framework prescribing capital adequacy (CRAR) and liquidity norms, Non-Performing Assets (NPAs) measure bad loans, and the RBI's Prompt Corrective Action framework restricts weak banks whose capital or NPA levels breach thresholds."
+    "explanation": "All relate to keeping banks sound: Basel III is the international framework prescribing capital adequacy (CRAR) and liquidity norms, Non-Performing Assets (NPAs) measure bad loans, and the RBI's Prompt Corrective Action framework restricts weak banks whose capital or NPA levels breach thresholds.",
+    "dots_hi": [
+      "बासेल III",
+      "पूंजी पर्याप्तता अनुपात",
+      "एनपीए (गैर-निष्पादित परिसंपत्ति)",
+      "त्वरित सुधारात्मक कार्रवाई (पीसीए)"
+    ],
+    "options_hi": [
+      "बैंकिंग क्षेत्र के स्वास्थ्य और स्थिरता का विनियमन",
+      "शेयर बाज़ारों को नियंत्रित करने वाले नियम",
+      "कंपनियों के लिए दिवालियापन प्रक्रिया",
+      "सूक्ष्म वित्त ऋण के मानदंड"
+    ],
+    "explanation_hi": "ये सभी बैंकों को सुदृढ़ बनाए रखने से संबंधित हैं: बासेल III पूंजी पर्याप्तता (सीआरएआर) और तरलता मानदंड निर्धारित करने वाला अंतर्राष्ट्रीय ढाँचा है, गैर-निष्पादित परिसंपत्तियाँ (एनपीए) खराब ऋणों को मापती हैं, और आरबीआई की त्वरित सुधारात्मक कार्रवाई व्यवस्था उन कमज़ोर बैंकों पर प्रतिबंध लगाती है जिनकी पूंजी या एनपीए स्तर सीमाओं का उल्लंघन करते हैं।"
   },
   {
     "id": "cd_069",
@@ -1308,7 +2192,20 @@
       "Concepts in development economics"
     ],
     "answer_index": 1,
-    "explanation": "All concern the inflation-unemployment-output nexus: the Phillips curve posits an inverse inflation-unemployment trade-off, Okun's law links unemployment to output loss, stagflation is the breakdown case where high inflation and high unemployment coexist, and NAIRU is the unemployment rate at which inflation neither accelerates nor decelerates."
+    "explanation": "All concern the inflation-unemployment-output nexus: the Phillips curve posits an inverse inflation-unemployment trade-off, Okun's law links unemployment to output loss, stagflation is the breakdown case where high inflation and high unemployment coexist, and NAIRU is the unemployment rate at which inflation neither accelerates nor decelerates.",
+    "dots_hi": [
+      "फिलिप्स वक्र",
+      "ओकुन का नियम",
+      "स्टैगफ्लेशन",
+      "नाइरू (NAIRU)"
+    ],
+    "options_hi": [
+      "अंतर्राष्ट्रीय व्यापार के सिद्धांत",
+      "मुद्रास्फीति, बेरोज़गारी और उत्पादन के बीच संबंध",
+      "विनिमय दर निर्धारण के मॉडल",
+      "विकास अर्थशास्त्र की अवधारणाएँ"
+    ],
+    "explanation_hi": "ये सभी मुद्रास्फीति-बेरोज़गारी-उत्पादन संबंध से जुड़े हैं: फिलिप्स वक्र मुद्रास्फीति-बेरोज़गारी के व्युत्क्रम व्यापार-संबंध को प्रस्तुत करता है, ओकुन का नियम बेरोज़गारी को उत्पादन हानि से जोड़ता है, स्टैगफ्लेशन वह विषम स्थिति है जहाँ उच्च मुद्रास्फीति और उच्च बेरोज़गारी साथ-साथ होते हैं, और नाइरू वह बेरोज़गारी दर है जिस पर मुद्रास्फीति न तो तेज़ होती है न धीमी।"
   },
   {
     "id": "cd_070",
@@ -1327,7 +2224,20 @@
       "Methods of financing infrastructure projects"
     ],
     "answer_index": 2,
-    "explanation": "Participatory notes are offshore derivatives issued by registered Foreign Portfolio Investors (FPIs) to unregistered overseas investors, obscuring ownership. The Mauritius route exploited a favourable tax treaty, enabling 'round tripping' — Indian money going abroad and returning disguised as foreign investment — prompting SEBI and treaty reforms."
+    "explanation": "Participatory notes are offshore derivatives issued by registered Foreign Portfolio Investors (FPIs) to unregistered overseas investors, obscuring ownership. The Mauritius route exploited a favourable tax treaty, enabling 'round tripping' — Indian money going abroad and returning disguised as foreign investment — prompting SEBI and treaty reforms.",
+    "dots_hi": [
+      "पार्टिसिपेटरी नोट्स",
+      "विदेशी पोर्टफोलियो निवेश (एफपीआई)",
+      "राउंड ट्रिपिंग",
+      "मॉरीशस मार्ग"
+    ],
+    "options_hi": [
+      "बाह्य वाणिज्यिक उधारी के तंत्र",
+      "सरकारी प्रतिभूति बाज़ार के साधन",
+      "विनियामक चिंता उत्पन्न करने वाले विदेशी पोर्टफोलियो निवेश के चैनल",
+      "अवसंरचना परियोजनाओं के वित्तपोषण के तरीके"
+    ],
+    "explanation_hi": "पार्टिसिपेटरी नोट्स पंजीकृत विदेशी पोर्टफोलियो निवेशकों (एफपीआई) द्वारा गैर-पंजीकृत विदेशी निवेशकों को जारी अपतटीय व्युत्पन्न (डेरिवेटिव) साधन हैं, जो स्वामित्व को अस्पष्ट करते हैं। मॉरीशस मार्ग ने अनुकूल कर संधि का लाभ उठाया, जिससे 'राउंड ट्रिपिंग' संभव हुई — भारतीय धन विदेश जाकर विदेशी निवेश के रूप में लौटता था — जिसके कारण सेबी और संधि सुधार हुए।"
   },
   {
     "id": "cd_071",
@@ -1346,7 +2256,20 @@
       "Instruments of priority sector lending"
     ],
     "answer_index": 0,
-    "explanation": "All involve the RBI as the government's debt manager: Ways and Means Advances are short-term RBI loans to bridge the government's cash mismatches, government securities are the instruments through which it borrows, Open Market Operations are RBI purchases/sales of those securities to manage liquidity, and the monetised deficit is the part of the deficit financed by RBI money creation."
+    "explanation": "All involve the RBI as the government's debt manager: Ways and Means Advances are short-term RBI loans to bridge the government's cash mismatches, government securities are the instruments through which it borrows, Open Market Operations are RBI purchases/sales of those securities to manage liquidity, and the monetised deficit is the part of the deficit financed by RBI money creation.",
+    "dots_hi": [
+      "वेज़ एंड मीन्स एडवांस",
+      "खुला बाज़ार परिचालन (ओएमओ)",
+      "मुद्रीकृत घाटा",
+      "सरकारी प्रतिभूतियाँ"
+    ],
+    "options_hi": [
+      "सरकारी उधारी और तरलता प्रबंधन में आरबीआई की भूमिका",
+      "म्यूचुअल फंडों का सेबी विनियमन",
+      "भुगतान बैंकों का कामकाज",
+      "प्राथमिकता क्षेत्र ऋण के साधन"
+    ],
+    "explanation_hi": "ये सभी सरकार के ऋण प्रबंधक के रूप में आरबीआई की भूमिका से जुड़े हैं: वेज़ एंड मीन्स एडवांस सरकार की नकदी असंगति को पाटने के लिए आरबीआई के अल्पकालिक ऋण हैं, सरकारी प्रतिभूतियाँ वे साधन हैं जिनके माध्यम से यह उधार लेती है, खुला बाज़ार परिचालन इन प्रतिभूतियों की आरबीआई द्वारा खरीद/बिक्री है जिससे तरलता प्रबंधित होती है, और मुद्रीकृत घाटा वह हिस्सा है जो आरबीआई की मुद्रा सृजन से वित्तपोषित होता है।"
   },
   {
     "id": "cd_072",
@@ -1365,7 +2288,20 @@
       "Tools for measuring unemployment"
     ],
     "answer_index": 1,
-    "explanation": "All are inequality concepts: the Lorenz curve plots cumulative income shares, the Gini coefficient summarises the Lorenz curve into a single 0-to-1 measure, the Palma ratio compares the top 10% share with the bottom 40%, and the Kuznets curve hypothesises how inequality first rises then falls with development."
+    "explanation": "All are inequality concepts: the Lorenz curve plots cumulative income shares, the Gini coefficient summarises the Lorenz curve into a single 0-to-1 measure, the Palma ratio compares the top 10% share with the bottom 40%, and the Kuznets curve hypothesises how inequality first rises then falls with development.",
+    "dots_hi": [
+      "गिनी गुणांक",
+      "लॉरेंज वक्र",
+      "पाल्मा अनुपात",
+      "कुज़नेट्स वक्र"
+    ],
+    "options_hi": [
+      "निरपेक्ष गरीबी के मापदंड",
+      "आय असमानता के अध्ययन में प्रयुक्त अवधारणाएँ",
+      "वित्तीय समावेशन के सूचकांक",
+      "बेरोज़गारी मापने के उपकरण"
+    ],
+    "explanation_hi": "ये सभी असमानता की अवधारणाएँ हैं: लॉरेंज वक्र संचयी आय हिस्सों को आलेखित करता है, गिनी गुणांक लॉरेंज वक्र को 0 से 1 के बीच एकल माप में संक्षेपित करता है, पाल्मा अनुपात शीर्ष 10% हिस्से की तुलना निचले 40% से करता है, और कुज़नेट्स वक्र यह परिकल्पना करता है कि विकास के साथ असमानता पहले बढ़ती है फिर घटती है।"
   },
   {
     "id": "cd_073",
@@ -1384,7 +2320,20 @@
       "Mangrove forests along the eastern coast"
     ],
     "answer_index": 1,
-    "explanation": "Kaziranga (one-horned rhinoceros), Jim Corbett (tiger, India's first tiger reserve), Sundarbans (Royal Bengal Tiger in mangroves) and Gir (Asiatic lion, its only wild habitat) are each defined by a signature species."
+    "explanation": "Kaziranga (one-horned rhinoceros), Jim Corbett (tiger, India's first tiger reserve), Sundarbans (Royal Bengal Tiger in mangroves) and Gir (Asiatic lion, its only wild habitat) are each defined by a signature species.",
+    "dots_hi": [
+      "काज़ीरंगा",
+      "जिम कॉर्बेट",
+      "सुंदरबन",
+      "गिर"
+    ],
+    "options_hi": [
+      "भारत के रामसर आर्द्रभूमि स्थल",
+      "एक विशिष्ट प्रमुख प्रजाति से जुड़े राष्ट्रीय उद्यान",
+      "पश्चिमी घाट के जैवमंडल आरक्षित क्षेत्र",
+      "पूर्वी तट के मैंग्रोव वन"
+    ],
+    "explanation_hi": "काज़ीरंगा (एकसिंगी गैंडा), जिम कॉर्बेट (बाघ, भारत का पहला बाघ आरक्षित क्षेत्र), सुंदरबन (मैंग्रोव में रॉयल बंगाल टाइगर) और गिर (एशियाई शेर, उसका एकमात्र प्राकृतिक आवास) प्रत्येक एक विशिष्ट प्रजाति से परिभाषित हैं।"
   },
   {
     "id": "cd_074",
@@ -1403,7 +2352,20 @@
       "Regulation of persistent organic pollutants"
     ],
     "answer_index": 0,
-    "explanation": "The Vienna Convention (1985) created the framework for ozone protection, and its Montreal Protocol (1987) phased out ozone-depleting substances like CFCs — the chemicals responsible for the Antarctic ozone hole. It is considered the most successful environmental treaty."
+    "explanation": "The Vienna Convention (1985) created the framework for ozone protection, and its Montreal Protocol (1987) phased out ozone-depleting substances like CFCs — the chemicals responsible for the Antarctic ozone hole. It is considered the most successful environmental treaty.",
+    "dots_hi": [
+      "वियना अभिसमय",
+      "मॉन्ट्रियल प्रोटोकॉल",
+      "सीएफसी (क्लोरोफ्लोरोकार्बन)",
+      "ओज़ोन छिद्र"
+    ],
+    "options_hi": [
+      "ओज़ोन परत की सुरक्षा हेतु वैश्विक ढाँचा",
+      "सीमापार वायु प्रदूषण पर समझौते",
+      "जलवायु परिवर्तन वार्ता प्रक्रिया",
+      "स्थायी कार्बनिक प्रदूषकों का विनियमन"
+    ],
+    "explanation_hi": "वियना अभिसमय (1985) ने ओज़ोन सुरक्षा का ढाँचा तैयार किया, और इसके मॉन्ट्रियल प्रोटोकॉल (1987) ने सीएफसी जैसे ओज़ोन-क्षयकारी पदार्थों को चरणबद्ध रूप से समाप्त किया — ये वे रसायन हैं जो अंटार्कटिक ओज़ोन छिद्र के लिए उत्तरदायी हैं। इसे सबसे सफल पर्यावरण संधि माना जाता है।"
   },
   {
     "id": "cd_075",
@@ -1422,7 +2384,20 @@
       "Environmental movements in India"
     ],
     "answer_index": 3,
-    "explanation": "All are landmark Indian environmental movements: Chipko (Uttarakhand, 1973) saw villagers hugging trees to stop felling, Appiko was its southern echo in Karnataka, the Silent Valley movement saved a Kerala rainforest from a dam, and the Narmada Bachao Andolan opposed large dams on the Narmada."
+    "explanation": "All are landmark Indian environmental movements: Chipko (Uttarakhand, 1973) saw villagers hugging trees to stop felling, Appiko was its southern echo in Karnataka, the Silent Valley movement saved a Kerala rainforest from a dam, and the Narmada Bachao Andolan opposed large dams on the Narmada.",
+    "dots_hi": [
+      "चिपको",
+      "अप्पिको",
+      "साइलेंट वैली",
+      "नर्मदा बचाओ आंदोलन"
+    ],
+    "options_hi": [
+      "सरकारी वनरोपण कार्यक्रम",
+      "अंतर्राष्ट्रीय संरक्षण गैर-सरकारी संगठन",
+      "वन्यजीव गणना पद्धतियाँ",
+      "भारत में पर्यावरण आंदोलन"
+    ],
+    "explanation_hi": "ये सभी भारत के ऐतिहासिक पर्यावरण आंदोलन हैं: चिपको (उत्तराखंड, 1973) में ग्रामीणों ने पेड़ों की कटाई रोकने के लिए उन्हें गले लगाया, अप्पिको कर्नाटक में उसकी दक्षिणी प्रतिध्वनि था, साइलेंट वैली आंदोलन ने केरल के एक वर्षावन को बांध से बचाया, और नर्मदा बचाओ आंदोलन ने नर्मदा पर बड़े बांधों का विरोध किया।"
   },
   {
     "id": "cd_076",
@@ -1441,7 +2416,20 @@
       "WWF global flagship campaigns"
     ],
     "answer_index": 0,
-    "explanation": "All are Government of India species conservation programmes: Project Tiger (1973), Project Elephant (1992), Project Snow Leopard (2009) for the high Himalaya, and Project Dolphin (2020) for river and marine dolphins, especially the Gangetic dolphin."
+    "explanation": "All are Government of India species conservation programmes: Project Tiger (1973), Project Elephant (1992), Project Snow Leopard (2009) for the high Himalaya, and Project Dolphin (2020) for river and marine dolphins, especially the Gangetic dolphin.",
+    "dots_hi": [
+      "प्रोजेक्ट टाइगर",
+      "प्रोजेक्ट एलिफेंट",
+      "प्रोजेक्ट स्नो लेपर्ड",
+      "प्रोजेक्ट डॉल्फिन"
+    ],
+    "options_hi": [
+      "भारत सरकार के प्रजाति-केंद्रित संरक्षण कार्यक्रम",
+      "जैविक विविधता अभिसमय के अधीन कार्यक्रम",
+      "भारतीय चिड़ियाघरों के कैद-प्रजनन कार्यक्रम",
+      "डब्ल्यूडब्ल्यूएफ के वैश्विक प्रमुख अभियान"
+    ],
+    "explanation_hi": "ये सभी भारत सरकार के प्रजाति संरक्षण कार्यक्रम हैं: प्रोजेक्ट टाइगर (1973), प्रोजेक्ट एलिफेंट (1992), उच्च हिमालय के लिए प्रोजेक्ट स्नो लेपर्ड (2009), और नदी व समुद्री डॉल्फिनों, विशेषकर गंगा डॉल्फिन, के लिए प्रोजेक्ट डॉल्फिन (2020)।"
   },
   {
     "id": "cd_077",
@@ -1460,7 +2448,20 @@
       "Glacial lakes of the Himalaya"
     ],
     "answer_index": 1,
-    "explanation": "All are Indian Ramsar sites: Chilika in Odisha (Asia's largest brackish lagoon), Keoladeo in Rajasthan (famous bird habitat), Loktak in Manipur (with its floating phumdis and Keibul Lamjao park), and Wular in Jammu & Kashmir, one of Asia's largest freshwater lakes."
+    "explanation": "All are Indian Ramsar sites: Chilika in Odisha (Asia's largest brackish lagoon), Keoladeo in Rajasthan (famous bird habitat), Loktak in Manipur (with its floating phumdis and Keibul Lamjao park), and Wular in Jammu & Kashmir, one of Asia's largest freshwater lakes.",
+    "dots_hi": [
+      "चिल्का",
+      "केवलादेव",
+      "लोकटक",
+      "वुलर"
+    ],
+    "options_hi": [
+      "ज्वालामुखीय मूल की क्रेटर झीलें",
+      "भारत के अंतर्राष्ट्रीय महत्व के रामसर आर्द्रभूमि",
+      "बड़े बांधों के जलाशय",
+      "हिमालय की हिमनदीय झीलें"
+    ],
+    "explanation_hi": "ये सभी भारतीय रामसर स्थल हैं: ओडिशा की चिल्का (एशिया की सबसे बड़ी खारे पानी की लैगून), राजस्थान का केवलादेव (प्रसिद्ध पक्षी आवास), मणिपुर की लोकटक (अपने तैरते फुमदी और केइबुल लामजाओ पार्क के साथ), और जम्मू-कश्मीर की वुलर, एशिया की सबसे बड़ी मीठे पानी की झीलों में से एक।"
   },
   {
     "id": "cd_078",
@@ -1479,7 +2480,20 @@
       "Treaties on the law of the sea"
     ],
     "answer_index": 0,
-    "explanation": "The UNFCCC (1992) is the parent climate treaty; the Kyoto Protocol (1997) set binding emission targets for developed countries, while the Paris Agreement (2015) replaced that approach with Nationally Determined Contributions — voluntary climate pledges submitted by every country."
+    "explanation": "The UNFCCC (1992) is the parent climate treaty; the Kyoto Protocol (1997) set binding emission targets for developed countries, while the Paris Agreement (2015) replaced that approach with Nationally Determined Contributions — voluntary climate pledges submitted by every country.",
+    "dots_hi": [
+      "यूएनएफसीसीसी",
+      "क्योटो प्रोटोकॉल",
+      "पेरिस समझौता",
+      "राष्ट्रीय निर्धारित योगदान (एनडीसी)"
+    ],
+    "options_hi": [
+      "जलवायु परिवर्तन से निपटने की अंतर्राष्ट्रीय व्यवस्था",
+      "ओज़ोन परत को नियंत्रित करने वाले समझौते",
+      "जैवविविधता संरक्षण के ढाँचे",
+      "समुद्री कानून पर संधियाँ"
+    ],
+    "explanation_hi": "यूएनएफसीसीसी (1992) मूल जलवायु संधि है; क्योटो प्रोटोकॉल (1997) ने विकसित देशों के लिए बाध्यकारी उत्सर्जन लक्ष्य निर्धारित किए, जबकि पेरिस समझौते (2015) ने इस दृष्टिकोण को राष्ट्रीय निर्धारित योगदान से बदल दिया — हर देश द्वारा प्रस्तुत स्वैच्छिक जलवायु प्रतिबद्धताएँ।"
   },
   {
     "id": "cd_079",
@@ -1498,7 +2512,20 @@
       "Zones of the Indian monsoon"
     ],
     "answer_index": 2,
-    "explanation": "These are the four global biodiversity hotspots covering Indian territory: the Himalaya, Indo-Burma (including the Northeast), the Western Ghats-Sri Lanka hotspot, and Sundaland, which includes India's Nicobar Islands."
+    "explanation": "These are the four global biodiversity hotspots covering Indian territory: the Himalaya, Indo-Burma (including the Northeast), the Western Ghats-Sri Lanka hotspot, and Sundaland, which includes India's Nicobar Islands.",
+    "dots_hi": [
+      "हिमालय",
+      "इंडो-बर्मा",
+      "पश्चिमी घाट और श्रीलंका",
+      "सुंडालैंड"
+    ],
+    "options_hi": [
+      "एशिया के बाघ भूदृश्य परिसर",
+      "यूनेस्को विश्व धरोहर प्राकृतिक स्थल",
+      "भारत में शामिल जैवविविधता हॉटस्पॉट",
+      "भारतीय मानसून के क्षेत्र"
+    ],
+    "explanation_hi": "ये भारतीय क्षेत्र को शामिल करने वाले चार वैश्विक जैवविविधता हॉटस्पॉट हैं: हिमालय, इंडो-बर्मा (पूर्वोत्तर सहित), पश्चिमी घाट-श्रीलंका हॉटस्पॉट, और सुंडालैंड, जिसमें भारत के निकोबार द्वीप समूह शामिल हैं।"
   },
   {
     "id": "cd_080",
@@ -1517,7 +2544,20 @@
       "Consequences of oil spills"
     ],
     "answer_index": 1,
-    "explanation": "This is the eutrophication sequence: fertiliser and sewage runoff loads water with nitrogen and phosphorus, triggering algal blooms; when the algae die and decompose, oxygen is depleted (hypoxia), creating 'dead zones' where aquatic life cannot survive."
+    "explanation": "This is the eutrophication sequence: fertiliser and sewage runoff loads water with nitrogen and phosphorus, triggering algal blooms; when the algae die and decompose, oxygen is depleted (hypoxia), creating 'dead zones' where aquatic life cannot survive.",
+    "dots_hi": [
+      "पोषक तत्वों का बहाव",
+      "शैवाल प्रस्फुटन (एल्गल ब्लूम)",
+      "ऑक्सीजन क्षय",
+      "मृत क्षेत्र (डेड ज़ोन)"
+    ],
+    "options_hi": [
+      "महासागर अम्लीकरण के चरण",
+      "जलाशयों में यूट्रोफिकेशन की प्रक्रिया",
+      "तापीय प्रदूषण के प्रभाव",
+      "तेल रिसाव के परिणाम"
+    ],
+    "explanation_hi": "यह यूट्रोफिकेशन का क्रम है: उर्वरक और सीवेज का बहाव जल में नाइट्रोजन और फॉस्फोरस भर देता है, जिससे शैवाल प्रस्फुटन होता है; जब शैवाल मरकर विघटित होते हैं, तो ऑक्सीजन का क्षय (हाइपोक्सिया) होता है, जिससे 'मृत क्षेत्र' बनते हैं जहाँ जलीय जीवन जीवित नहीं रह सकता।"
   },
   {
     "id": "cd_081",
@@ -1536,7 +2576,20 @@
       "Coral reef restoration projects"
     ],
     "answer_index": 0,
-    "explanation": "The dugong or sea cow, a herbivorous marine mammal that grazes on seagrass meadows, survives in India mainly in the Gulf of Mannar, Palk Bay and the Andamans. It has the highest legal protection under Schedule I of the Wildlife (Protection) Act, and India's first dugong conservation reserve was notified in Palk Bay, Tamil Nadu."
+    "explanation": "The dugong or sea cow, a herbivorous marine mammal that grazes on seagrass meadows, survives in India mainly in the Gulf of Mannar, Palk Bay and the Andamans. It has the highest legal protection under Schedule I of the Wildlife (Protection) Act, and India's first dugong conservation reserve was notified in Palk Bay, Tamil Nadu.",
+    "dots_hi": [
+      "डुगोंग",
+      "समुद्री घास के मैदान (सीग्रास मीडो)",
+      "मन्नार की खाड़ी",
+      "अनुसूची I संरक्षण"
+    ],
+    "options_hi": [
+      "भारतीय जलक्षेत्र में समुद्री गाय का संरक्षण",
+      "ऑलिव रिडले कछुए का संरक्षण",
+      "गंगा डॉल्फिन पुनर्प्राप्ति कार्यक्रम",
+      "प्रवाल भित्ति पुनर्स्थापन परियोजनाएँ"
+    ],
+    "explanation_hi": "डुगोंग या समुद्री गाय, एक शाकाहारी समुद्री स्तनपायी जो समुद्री घास के मैदानों पर चरता है, भारत में मुख्यतः मन्नार की खाड़ी, पाक खाड़ी और अंडमान में बचा है। इसे वन्यजीव (संरक्षण) अधिनियम की अनुसूची I के अंतर्गत सर्वोच्च कानूनी संरक्षण प्राप्त है, और भारत का पहला डुगोंग संरक्षण रिज़र्व तमिलनाडु की पाक खाड़ी में अधिसूचित किया गया था।"
   },
   {
     "id": "cd_082",
@@ -1555,7 +2608,20 @@
       "Programmes for wetland conservation"
     ],
     "answer_index": 2,
-    "explanation": "All aim at restoring tree cover: under the Bonn Challenge India pledged to restore 26 million hectares of degraded land by 2030, the Green India Mission is the afforestation mission under the National Action Plan on Climate Change, CAMPA funds compensatory afforestation for diverted forest land, and the Miyawaki method creates dense native mini-forests, popular in urban India."
+    "explanation": "All aim at restoring tree cover: under the Bonn Challenge India pledged to restore 26 million hectares of degraded land by 2030, the Green India Mission is the afforestation mission under the National Action Plan on Climate Change, CAMPA funds compensatory afforestation for diverted forest land, and the Miyawaki method creates dense native mini-forests, popular in urban India.",
+    "dots_hi": [
+      "बॉन चैलेंज",
+      "हरित भारत मिशन",
+      "कैम्पा (CAMPA)",
+      "मियावाकी पद्धति"
+    ],
+    "options_hi": [
+      "वन्यजीव गलियारा निर्माण की योजनाएँ",
+      "कार्बन व्यापार तंत्र",
+      "वनरोपण और भूदृश्य पुनर्स्थापन की पहलें",
+      "आर्द्रभूमि संरक्षण के कार्यक्रम"
+    ],
+    "explanation_hi": "ये सभी वृक्षावरण की पुनर्स्थापना का लक्ष्य रखते हैं: बॉन चैलेंज के अंतर्गत भारत ने 2030 तक 2.6 करोड़ हेक्टेयर क्षरित भूमि को पुनर्स्थापित करने का संकल्प लिया, हरित भारत मिशन जलवायु परिवर्तन पर राष्ट्रीय कार्य योजना के अंतर्गत वनरोपण मिशन है, कैम्पा (CAMPA) परिवर्तित वन भूमि के लिए प्रतिपूरक वनरोपण को वित्तपोषित करता है, और मियावाकी पद्धति सघन देशज लघु-वन बनाती है, जो शहरी भारत में लोकप्रिय है।"
   },
   {
     "id": "cd_083",
@@ -1574,7 +2640,20 @@
       "The dry deciduous forests of the Deccan"
     ],
     "answer_index": 1,
-    "explanation": "Neelakurinji (Strobilanthes kunthiana) is a shrub of the high-altitude shola-grassland mosaic of the southern Western Ghats that flowers en masse only once every twelve years, turning hillsides blue. Eravikulam National Park in Kerala, also home to the Nilgiri tahr, is its most famous blooming ground."
+    "explanation": "Neelakurinji (Strobilanthes kunthiana) is a shrub of the high-altitude shola-grassland mosaic of the southern Western Ghats that flowers en masse only once every twelve years, turning hillsides blue. Eravikulam National Park in Kerala, also home to the Nilgiri tahr, is its most famous blooming ground.",
+    "dots_hi": [
+      "नीलकुरिंजी",
+      "शोला घास के मैदान",
+      "इरविकुलम",
+      "बारह वर्षीय पुष्पन"
+    ],
+    "options_hi": [
+      "हिमालय के अल्पाइन घास के मैदान",
+      "दक्षिणी पश्चिमी घाट का पर्वतीय पारितंत्र",
+      "पूर्वोत्तर की ऑर्किड विविधता",
+      "दक्कन के शुष्क पर्णपाती वन"
+    ],
+    "explanation_hi": "नीलकुरिंजी (स्ट्रोबिलैंथस कुंथियाना) दक्षिणी पश्चिमी घाट के उच्च-ऊँचाई वाले शोला-घास मैदान मोज़ेक की एक झाड़ी है, जो केवल हर बारह वर्ष में सामूहिक रूप से खिलती है और पहाड़ियों को नीला कर देती है। केरल का इरविकुलम राष्ट्रीय उद्यान, जो नीलगिरि तहर का भी घर है, इसके पुष्पन के लिए सबसे प्रसिद्ध स्थल है।"
   },
   {
     "id": "cd_084",
@@ -1593,7 +2672,20 @@
       "Global conventions on hazardous chemicals and wastes"
     ],
     "answer_index": 3,
-    "explanation": "All govern hazardous substances: Basel controls transboundary movement of hazardous wastes, Rotterdam requires prior informed consent for trade in hazardous chemicals, Stockholm targets persistent organic pollutants (POPs), and Minamata addresses mercury pollution."
+    "explanation": "All govern hazardous substances: Basel controls transboundary movement of hazardous wastes, Rotterdam requires prior informed consent for trade in hazardous chemicals, Stockholm targets persistent organic pollutants (POPs), and Minamata addresses mercury pollution.",
+    "dots_hi": [
+      "बासेल अभिसमय",
+      "रॉटरडैम अभिसमय",
+      "स्टॉकहोम अभिसमय",
+      "मिनामाता अभिसमय"
+    ],
+    "options_hi": [
+      "समुद्री जैवविविधता पर संधियाँ",
+      "मरुस्थलीकरण पर समझौते",
+      "जलवायु अभिसमय के अंतर्गत प्रोटोकॉल",
+      "खतरनाक रसायनों और अपशिष्टों पर वैश्विक अभिसमय"
+    ],
+    "explanation_hi": "ये सभी खतरनाक पदार्थों को नियंत्रित करते हैं: बासेल खतरनाक अपशिष्टों की सीमापार आवाजाही को नियंत्रित करता है, रॉटरडैम खतरनाक रसायनों के व्यापार में पूर्व सूचित सहमति की आवश्यकता रखता है, स्टॉकहोम स्थायी कार्बनिक प्रदूषकों (पीओपी) को लक्षित करता है, और मिनामाता पारा प्रदूषण को संबोधित करता है।"
   },
   {
     "id": "cd_085",
@@ -1612,7 +2704,20 @@
       "Fundamental Duties of citizens"
     ],
     "answer_index": 1,
-    "explanation": "All are Fundamental Rights in Part III: Article 14 guarantees equality before law, Article 19 protects the six freedoms including speech, Article 21 protects life and personal liberty, and Article 32 gives the right to move the Supreme Court for enforcement of these rights."
+    "explanation": "All are Fundamental Rights in Part III: Article 14 guarantees equality before law, Article 19 protects the six freedoms including speech, Article 21 protects life and personal liberty, and Article 32 gives the right to move the Supreme Court for enforcement of these rights.",
+    "dots_hi": [
+      "अनुच्छेद 14",
+      "अनुच्छेद 19",
+      "अनुच्छेद 21",
+      "अनुच्छेद 32"
+    ],
+    "options_hi": [
+      "राज्य के नीति निदेशक तत्व",
+      "संविधान के भाग III के अंतर्गत मौलिक अधिकार",
+      "नागरिकता संबंधी प्रावधान",
+      "नागरिकों के मौलिक कर्तव्य"
+    ],
+    "explanation_hi": "ये सभी भाग III में मौलिक अधिकार हैं: अनुच्छेद 14 विधि के समक्ष समानता की गारंटी देता है, अनुच्छेद 19 भाषण सहित छह स्वतंत्रताओं की रक्षा करता है, अनुच्छेद 21 जीवन और व्यक्तिगत स्वतंत्रता की रक्षा करता है, और अनुच्छेद 32 इन अधिकारों के प्रवर्तन हेतु सर्वोच्च न्यायालय जाने का अधिकार देता है।"
   },
   {
     "id": "cd_086",
@@ -1631,7 +2736,20 @@
       "Bodies involved in constitutional amendment only"
     ],
     "answer_index": 0,
-    "explanation": "Article 79 declares that the Parliament of India consists of the President and the two Houses — the Lok Sabha (House of the People) and the Rajya Sabha (Council of States). The President is thus an integral part of Parliament though not a member of either House."
+    "explanation": "Article 79 declares that the Parliament of India consists of the President and the two Houses — the Lok Sabha (House of the People) and the Rajya Sabha (Council of States). The President is thus an integral part of Parliament though not a member of either House.",
+    "dots_hi": [
+      "राष्ट्रपति",
+      "लोक सभा",
+      "राज्य सभा",
+      "अनुच्छेद 79"
+    ],
+    "options_hi": [
+      "संघीय संसद की संरचना",
+      "संघ की कार्यपालिका",
+      "उपराष्ट्रपति के लिए निर्वाचक मंडल",
+      "केवल संवैधानिक संशोधन में शामिल निकाय"
+    ],
+    "explanation_hi": "अनुच्छेद 79 घोषित करता है कि भारत की संसद राष्ट्रपति और दो सदनों — लोक सभा (जनता का सदन) और राज्य सभा (राज्यों की परिषद) — से मिलकर बनती है। इस प्रकार राष्ट्रपति संसद का अभिन्न अंग है यद्यपि वह किसी भी सदन का सदस्य नहीं होता।"
   },
   {
     "id": "cd_087",
@@ -1650,7 +2768,20 @@
       "Words inserted by the 44th Amendment"
     ],
     "answer_index": 1,
-    "explanation": "The 42nd Constitutional Amendment (1976), passed during the Emergency, added the words 'socialist' and 'secular' to the Preamble's description of the Republic and 'integrity' to the phrase 'unity and integrity of the Nation'."
+    "explanation": "The 42nd Constitutional Amendment (1976), passed during the Emergency, added the words 'socialist' and 'secular' to the Preamble's description of the Republic and 'integrity' to the phrase 'unity and integrity of the Nation'.",
+    "dots_hi": [
+      "समाजवादी",
+      "पंथनिरपेक्ष",
+      "अखंडता",
+      "42वाँ संशोधन"
+    ],
+    "options_hi": [
+      "1950 की मूल प्रस्तावना के शब्द",
+      "1976 में प्रस्तावना में जोड़े गए शब्द",
+      "मौलिक कर्तव्यों में सूचीबद्ध मूल्य",
+      "44वें संशोधन द्वारा जोड़े गए शब्द"
+    ],
+    "explanation_hi": "आपातकाल के दौरान पारित 42वें संवैधानिक संशोधन (1976) ने गणराज्य के वर्णन में प्रस्तावना में 'समाजवादी' और 'पंथनिरपेक्ष' शब्द तथा 'राष्ट्र की एकता' वाक्यांश में 'अखंडता' शब्द जोड़ा।"
   },
   {
     "id": "cd_088",
@@ -1669,7 +2800,20 @@
       "Forms of parliamentary privilege"
     ],
     "answer_index": 2,
-    "explanation": "All are writs the Supreme Court (Article 32) and High Courts (Article 226) can issue: habeas corpus against unlawful detention, mandamus commanding a public authority to perform its duty, certiorari quashing an order of a lower court or tribunal, and prohibition stopping proceedings beyond jurisdiction."
+    "explanation": "All are writs the Supreme Court (Article 32) and High Courts (Article 226) can issue: habeas corpus against unlawful detention, mandamus commanding a public authority to perform its duty, certiorari quashing an order of a lower court or tribunal, and prohibition stopping proceedings beyond jurisdiction.",
+    "dots_hi": [
+      "बंदी प्रत्यक्षीकरण (हैबियस कॉर्पस)",
+      "परमादेश (मैंडेमस)",
+      "उत्प्रेषण (सर्शियोररी)",
+      "प्रतिषेध (प्रोहिबिशन)"
+    ],
+    "options_hi": [
+      "आपातकाल उद्घोषणा के प्रकार",
+      "आपराधिक मुकदमे के चरण",
+      "संवैधानिक न्यायालयों द्वारा जारी रिट",
+      "संसदीय विशेषाधिकार के रूप"
+    ],
+    "explanation_hi": "ये सभी रिट हैं जिन्हें सर्वोच्च न्यायालय (अनुच्छेद 32) और उच्च न्यायालय (अनुच्छेद 226) जारी कर सकते हैं: अवैध निरोध के विरुद्ध बंदी प्रत्यक्षीकरण, किसी लोक प्राधिकारी को अपना कर्तव्य निभाने का आदेश देने वाला परमादेश, निचली अदालत या न्यायाधिकरण के आदेश को रद्द करने वाला उत्प्रेषण, और अधिकारक्षेत्र से बाहर की कार्यवाही रोकने वाला प्रतिषेध।"
   },
   {
     "id": "cd_089",
@@ -1688,7 +2832,20 @@
       "Constitutional provisions and mechanism for appointing judges"
     ],
     "answer_index": 3,
-    "explanation": "Article 124 governs Supreme Court appointments and Article 217 governs High Court appointments. In practice, both are administered through the Collegium System, developed via Supreme Court judgments rather than the constitutional text itself."
+    "explanation": "Article 124 governs Supreme Court appointments and Article 217 governs High Court appointments. In practice, both are administered through the Collegium System, developed via Supreme Court judgments rather than the constitutional text itself.",
+    "dots_hi": [
+      "अनुच्छेद 124",
+      "कॉलेजियम व्यवस्था",
+      "अनुच्छेद 217",
+      "न्यायिक नियुक्तियाँ"
+    ],
+    "options_hi": [
+      "निर्वाचन आयोग से संबंधित प्रावधान",
+      "राष्ट्रपति के महाभियोग की प्रक्रिया",
+      "पंचायती राज संस्थाओं को नियंत्रित करने वाले प्रावधान",
+      "न्यायाधीशों की नियुक्ति के संवैधानिक प्रावधान और तंत्र"
+    ],
+    "explanation_hi": "अनुच्छेद 124 सर्वोच्च न्यायालय की नियुक्तियों को और अनुच्छेद 217 उच्च न्यायालय की नियुक्तियों को नियंत्रित करता है। व्यवहार में, दोनों को कॉलेजियम व्यवस्था के माध्यम से प्रशासित किया जाता है, जो स्वयं संवैधानिक पाठ के बजाय सर्वोच्च न्यायालय के निर्णयों से विकसित हुई है।"
   },
   {
     "id": "cd_090",
@@ -1707,7 +2864,20 @@
       "The Governor's power to reserve bills"
     ],
     "answer_index": 0,
-    "explanation": "Article 356 permits President's Rule when a state's constitutional machinery fails. In S. R. Bommai (1994), the Supreme Court made such proclamations judicially reviewable and held that a government's majority must be tested on the floor of the House — the floor test — rather than by the Governor's opinion."
+    "explanation": "Article 356 permits President's Rule when a state's constitutional machinery fails. In S. R. Bommai (1994), the Supreme Court made such proclamations judicially reviewable and held that a government's majority must be tested on the floor of the House — the floor test — rather than by the Governor's opinion.",
+    "dots_hi": [
+      "अनुच्छेद 356",
+      "राष्ट्रपति शासन",
+      "एस. आर. बोम्मई मामला",
+      "बहुमत परीक्षण (फ्लोर टेस्ट)"
+    ],
+    "options_hi": [
+      "राज्यों में राष्ट्रपति शासन का अधिरोपण और न्यायिक समीक्षा",
+      "राष्ट्रीय आपातकाल की प्रक्रिया",
+      "केंद्र में मंत्रिपरिषद की बर्खास्तगी",
+      "विधेयकों को आरक्षित करने की राज्यपाल की शक्ति"
+    ],
+    "explanation_hi": "अनुच्छेद 356 किसी राज्य की संवैधानिक तंत्र विफल होने पर राष्ट्रपति शासन की अनुमति देता है। एस. आर. बोम्मई (1994) मामले में, सर्वोच्च न्यायालय ने ऐसी उद्घोषणाओं को न्यायिक समीक्षा के अधीन बनाया और यह निर्णय दिया कि किसी सरकार का बहुमत सदन के पटल पर परखा जाना चाहिए — बहुमत परीक्षण — न कि राज्यपाल की राय से।"
   },
   {
     "id": "cd_091",
@@ -1726,7 +2896,20 @@
       "Disqualification for holding an office of profit"
     ],
     "answer_index": 1,
-    "explanation": "The 52nd Amendment (1985) added the Tenth Schedule, the anti-defection law under which the Speaker or Chairman decides disqualification of defecting members. In Kihoto Hollohan (1992), the Supreme Court upheld the law but made the presiding officer's decision subject to judicial review."
+    "explanation": "The 52nd Amendment (1985) added the Tenth Schedule, the anti-defection law under which the Speaker or Chairman decides disqualification of defecting members. In Kihoto Hollohan (1992), the Supreme Court upheld the law but made the presiding officer's decision subject to judicial review.",
+    "dots_hi": [
+      "दसवीं अनुसूची",
+      "52वाँ संशोधन",
+      "अध्यक्ष का निर्णय",
+      "किहोतो होलोहन मामला"
+    ],
+    "options_hi": [
+      "विधानमंडलों में सीटों का आरक्षण",
+      "दल-बदल विरोधी कानून और उसकी न्यायिक समीक्षा",
+      "निर्वाचन क्षेत्रों का परिसीमन",
+      "लाभ के पद पर होने के कारण अयोग्यता"
+    ],
+    "explanation_hi": "52वें संशोधन (1985) ने दसवीं अनुसूची जोड़ी, यह दल-बदल विरोधी कानून है जिसके अंतर्गत अध्यक्ष या सभापति दल-बदल करने वाले सदस्यों की अयोग्यता का निर्णय करते हैं। किहोतो होलोहन (1992) मामले में, सर्वोच्च न्यायालय ने कानून को बरकरार रखा परंतु पीठासीन अधिकारी के निर्णय को न्यायिक समीक्षा के अधीन बनाया।"
   },
   {
     "id": "cd_092",
@@ -1745,7 +2928,20 @@
       "Borrowing powers of state governments"
     ],
     "answer_index": 2,
-    "explanation": "Article 280 mandates a Finance Commission every five years. It recommends vertical devolution (the states' share in central taxes), horizontal devolution (the formula distributing that share among states), and grants-in-aid to states under Article 275 — the core machinery of India's fiscal federalism."
+    "explanation": "Article 280 mandates a Finance Commission every five years. It recommends vertical devolution (the states' share in central taxes), horizontal devolution (the formula distributing that share among states), and grants-in-aid to states under Article 275 — the core machinery of India's fiscal federalism.",
+    "dots_hi": [
+      "अनुच्छेद 280",
+      "लंबवत हस्तांतरण (वर्टिकल डिवोल्यूशन)",
+      "क्षैतिज हस्तांतरण (हॉरिज़ॉन्टल डिवोल्यूशन)",
+      "सहायता अनुदान (ग्रांट्स-इन-एड)"
+    ],
+    "options_hi": [
+      "जीएसटी परिषद का कामकाज",
+      "योजना आयोग की भूमिका",
+      "वित्त आयोग और राजकोषीय संघवाद",
+      "राज्य सरकारों की उधार लेने की शक्तियाँ"
+    ],
+    "explanation_hi": "अनुच्छेद 280 हर पाँच वर्ष में एक वित्त आयोग गठित करने का आदेश देता है। यह लंबवत हस्तांतरण (केंद्रीय करों में राज्यों की हिस्सेदारी), क्षैतिज हस्तांतरण (राज्यों के बीच उस हिस्से के वितरण का सूत्र), और अनुच्छेद 275 के अंतर्गत राज्यों को सहायता अनुदान की सिफारिश करता है — यह भारत के राजकोषीय संघवाद की मूल व्यवस्था है।"
   },
   {
     "id": "cd_093",
@@ -1764,7 +2960,20 @@
       "Cases defining the scope of Article 21"
     ],
     "answer_index": 1,
-    "explanation": "All are milestones of the basic structure doctrine: Kesavananda Bharati (1973) propounded it, the Indira Nehru Gandhi election case (1975) first applied it to strike down a constitutional amendment, Minerva Mills (1980) invalidated parts of the 42nd Amendment using it, and Waman Rao (1981) fixed 24 April 1973 as the cut-off for its application."
+    "explanation": "All are milestones of the basic structure doctrine: Kesavananda Bharati (1973) propounded it, the Indira Nehru Gandhi election case (1975) first applied it to strike down a constitutional amendment, Minerva Mills (1980) invalidated parts of the 42nd Amendment using it, and Waman Rao (1981) fixed 24 April 1973 as the cut-off for its application.",
+    "dots_hi": [
+      "केशवानंद भारती",
+      "इंदिरा नेहरू गांधी मामला",
+      "मिनर्वा मिल्स",
+      "वामन राव"
+    ],
+    "options_hi": [
+      "संपत्ति के अधिकार से संबंधित मामले",
+      "आधारभूत संरचना सिद्धांत विकसित करने वाले मामले",
+      "पदोन्नति में आरक्षण के मामले",
+      "अनुच्छेद 21 के दायरे को परिभाषित करने वाले मामले"
+    ],
+    "explanation_hi": "ये सभी आधारभूत संरचना सिद्धांत के मील के पत्थर हैं: केशवानंद भारती (1973) ने इसे प्रतिपादित किया, इंदिरा नेहरू गांधी निर्वाचन मामले (1975) ने पहली बार इसे लागू कर एक संवैधानिक संशोधन को रद्द किया, मिनर्वा मिल्स (1980) ने इसका उपयोग करते हुए 42वें संशोधन के कुछ हिस्सों को अमान्य किया, और वामन राव (1981) ने इसके प्रयोग के लिए 24 अप्रैल 1973 की कट-ऑफ तिथि तय की।"
   },
   {
     "id": "cd_094",
@@ -1783,7 +2992,20 @@
       "Land ceiling legislation in the states"
     ],
     "answer_index": 0,
-    "explanation": "The First Amendment (1951) inserted Article 31B and the Ninth Schedule, immunising listed laws from challenge for violating Fundamental Rights. In I. R. Coelho (2007), the Supreme Court held that laws added to the Ninth Schedule after 24 April 1973 can still be reviewed if they damage the basic structure."
+    "explanation": "The First Amendment (1951) inserted Article 31B and the Ninth Schedule, immunising listed laws from challenge for violating Fundamental Rights. In I. R. Coelho (2007), the Supreme Court held that laws added to the Ninth Schedule after 24 April 1973 can still be reviewed if they damage the basic structure.",
+    "dots_hi": [
+      "प्रथम संशोधन",
+      "अनुच्छेद 31बी",
+      "नौवीं अनुसूची",
+      "आई. आर. कोएल्हो मामला"
+    ],
+    "options_hi": [
+      "न्यायिक समीक्षा से कानूनों का संरक्षण और उसकी सीमाएँ",
+      "प्रिवी पर्स की समाप्ति",
+      "प्रेस की स्वतंत्रता",
+      "राज्यों में भूमि सीमा कानून"
+    ],
+    "explanation_hi": "प्रथम संशोधन (1951) ने अनुच्छेद 31बी और नौवीं अनुसूची जोड़ी, जिसने सूचीबद्ध कानूनों को मौलिक अधिकारों के उल्लंघन की चुनौती से प्रतिरक्षा दी। आई. आर. कोएल्हो (2007) मामले में, सर्वोच्च न्यायालय ने निर्णय दिया कि 24 अप्रैल 1973 के बाद नौवीं अनुसूची में जोड़े गए कानूनों की समीक्षा की जा सकती है यदि वे आधारभूत संरचना को क्षति पहुँचाते हैं।"
   },
   {
     "id": "cd_095",
@@ -1802,7 +3024,20 @@
       "Bodies overseeing local self-government"
     ],
     "answer_index": 2,
-    "explanation": "Article 263 empowers the President to establish an Inter-State Council for coordination, which was actually set up in 1990 on the recommendation of the Sarkaria Commission on Centre-State relations. The Zonal Councils, statutory bodies created by the States Reorganisation Act, 1956, serve the same coordination purpose regionally."
+    "explanation": "Article 263 empowers the President to establish an Inter-State Council for coordination, which was actually set up in 1990 on the recommendation of the Sarkaria Commission on Centre-State relations. The Zonal Councils, statutory bodies created by the States Reorganisation Act, 1956, serve the same coordination purpose regionally.",
+    "dots_hi": [
+      "अनुच्छेद 263",
+      "अंतर्राज्यीय परिषद",
+      "क्षेत्रीय परिषदें",
+      "सरकारिया आयोग"
+    ],
+    "options_hi": [
+      "अंतर्राज्यीय नदी विवादों को सुलझाने का तंत्र",
+      "अखिल भारतीय सेवाओं का ढाँचा",
+      "केंद्र-राज्य समन्वय के लिए संस्थाएँ और सिफारिशें",
+      "स्थानीय स्वशासन की देखरेख करने वाले निकाय"
+    ],
+    "explanation_hi": "अनुच्छेद 263 राष्ट्रपति को समन्वय हेतु एक अंतर्राज्यीय परिषद स्थापित करने का अधिकार देता है, जिसे वास्तव में 1990 में केंद्र-राज्य संबंधों पर सरकारिया आयोग की सिफारिश पर स्थापित किया गया था। राज्य पुनर्गठन अधिनियम, 1956 द्वारा बनाई गई सांविधिक क्षेत्रीय परिषदें क्षेत्रीय स्तर पर वही समन्वय कार्य करती हैं।"
   },
   {
     "id": "cd_096",
@@ -1821,6 +3056,19 @@
       "Joint sittings of Parliament"
     ],
     "answer_index": 1,
-    "explanation": "Article 110 defines a Money Bill, which only the Speaker certifies — a decision long treated as final. The Rajya Sabha can only make recommendations on it, which the Lok Sabha may reject. The Aadhaar Act's passage as a Money Bill, bypassing the Rajya Sabha's normal role, made this route a major constitutional controversy."
+    "explanation": "Article 110 defines a Money Bill, which only the Speaker certifies — a decision long treated as final. The Rajya Sabha can only make recommendations on it, which the Lok Sabha may reject. The Aadhaar Act's passage as a Money Bill, bypassing the Rajya Sabha's normal role, made this route a major constitutional controversy.",
+    "dots_hi": [
+      "अनुच्छेद 110",
+      "अध्यक्ष का प्रमाणन",
+      "राज्य सभा की सीमित भूमिका",
+      "आधार अधिनियम"
+    ],
+    "options_hi": [
+      "संवैधानिक संशोधन विधेयकों की प्रक्रिया",
+      "धन विधेयकों का पारण और विवाद",
+      "वार्षिक बजट प्रक्रिया",
+      "संसद की संयुक्त बैठकें"
+    ],
+    "explanation_hi": "अनुच्छेद 110 धन विधेयक को परिभाषित करता है, जिसे केवल अध्यक्ष प्रमाणित करता है — यह निर्णय लंबे समय से अंतिम माना जाता रहा है। राज्य सभा इस पर केवल सिफारिशें कर सकती है, जिन्हें लोक सभा अस्वीकार कर सकती है। आधार अधिनियम का धन विधेयक के रूप में पारण, जिसने राज्य सभा की सामान्य भूमिका को दरकिनार किया, इस मार्ग को एक बड़ा संवैधानिक विवाद बना दिया।"
   }
 ]

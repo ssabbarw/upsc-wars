@@ -4,9 +4,9 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/providers/prefs_provider.dart';
-import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../shared/widgets/en_hi_language_toggle.dart';
 import '../providers/qotd_providers.dart';
 import '../widgets/qotd_post_card.dart';
 
@@ -87,25 +87,9 @@ class CommunityQotdTab extends HookConsumerWidget {
                     child: const Text('✨ Create'),
                   ),
                   const SizedBox(height: AppSpacing.xs),
-                  ToggleButtons(
-                    isSelected: [uiLang == 'en', uiLang == 'hi'],
-                    onPressed: (i) =>
-                        tabLangOverride.value = i == 0 ? 'en' : 'hi',
-                    constraints: const BoxConstraints(
-                      minHeight: 32,
-                      minWidth: 60,
-                    ),
-                    borderRadius: BorderRadius.circular(AppRadius.sm),
-                    children: const [
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 6),
-                        child: Text('EN'),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 6),
-                        child: Text('हि'),
-                      ),
-                    ],
+                  EnHiLanguageToggle(
+                    language: uiLang,
+                    onChanged: (v) => tabLangOverride.value = v,
                   ),
                 ],
               ),

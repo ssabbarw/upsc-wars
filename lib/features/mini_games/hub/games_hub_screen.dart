@@ -3,10 +3,12 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/constants/subject_constants.dart';
+import '../../../core/providers/app_language_helpers.dart';
 import '../connect_the_dots/connect_the_dots_controller.dart';
 import '../duel/duel_controller.dart';
 import '../fact_or_bluff/fact_or_bluff_controller.dart';
 import '../odd_one_out/odd_one_out_controller.dart';
+import '../shared/mini_game_models.dart';
 import '../shared/revision_games_theme.dart';
 import '../shared/revision_games_widgets.dart';
 import '../timeline_sorter/timeline_sorter_controller.dart';
@@ -61,7 +63,7 @@ const _games = [
   ),
   _GameEntry(
     title: 'Odd One Out',
-    description: "Four items. One doesn't belong.",
+    description: 'Pick the odd one out.',
     route: '/games/odd-one-out',
     icon: Icons.rule_rounded,
     badgeColor: RgColors.wrong,
@@ -95,16 +97,27 @@ const _games = [
 ];
 
 class _GameLaunchConfig {
-  const _GameLaunchConfig({required this.subjects, required this.difficulty});
+  const _GameLaunchConfig({
+    required this.subjects,
+    required this.difficulty,
+    required this.lang,
+  });
 
   /// Selected subject slugs; empty = all subjects.
   final Set<String> subjects;
 
   /// Selected difficulty name ('easy'|'medium'|'hard'); empty = mixed.
   final String difficulty;
+
+  /// Content language: `en` or `hi`.
+  final String lang;
 }
 
-Future<void> _openGame(BuildContext context, _GameEntry game) async {
+Future<void> _openGame(
+  BuildContext context,
+  WidgetRef ref,
+  _GameEntry game,
+) async {
   if (!game.usesConfigPicker) {
     context.push(game.route);
     return;
@@ -121,27 +134,31 @@ Future<void> _openGame(BuildContext context, _GameEntry game) async {
     builder: (context) => _SubjectPickerSheet(
       gameTitle: game.title,
       sessionSize: game.sessionSize,
+      initialLang: watchAppLanguage(ref),
     ),
   );
   if (config == null || !context.mounted) return;
+  await persistAppLanguage(ref, config.lang);
+  if (!context.mounted) return;
   final params = <String>[
     if (config.subjects.isNotEmpty)
       'subjects=${Uri.encodeComponent(config.subjects.join(','))}',
     if (config.difficulty.isNotEmpty) 'difficulty=${config.difficulty}',
+    'lang=${config.lang}',
   ];
-  context.push(
-    params.isEmpty ? game.route : '${game.route}?${params.join('&')}',
-  );
+  context.push('${game.route}?${params.join('&')}');
 }
 
 class _SubjectPickerSheet extends StatefulWidget {
   const _SubjectPickerSheet({
     required this.gameTitle,
     required this.sessionSize,
+    required this.initialLang,
   });
 
   final String gameTitle;
   final int sessionSize;
+  final String initialLang;
 
   @override
   State<_SubjectPickerSheet> createState() => _SubjectPickerSheetState();
@@ -149,7 +166,8 @@ class _SubjectPickerSheet extends StatefulWidget {
 
 class _SubjectPickerSheetState extends State<_SubjectPickerSheet> {
   final Set<String> _selected = {};
-  String _difficulty = '';
+  String _difficulty = 'medium';
+  late String _lang = normalizeMiniGameLang(widget.initialLang);
 
   Widget _subjectChip({
     required String label,
@@ -245,6 +263,13 @@ class _SubjectPickerSheetState extends State<_SubjectPickerSheet> {
           const SizedBox(height: 4),
           Text('Set up your session', style: RgText.display(size: 16)),
           const SizedBox(height: 12),
+          const RgMonoLabel('Language'),
+          const SizedBox(height: 6),
+          RgLangToggle(
+            language: _lang,
+            onChanged: (v) => setState(() => _lang = v),
+          ),
+          const SizedBox(height: 12),
           const RgMonoLabel('Subjects'),
           const SizedBox(height: 6),
           Flexible(
@@ -297,7 +322,11 @@ class _SubjectPickerSheetState extends State<_SubjectPickerSheet> {
             label: 'Start · ${widget.sessionSize} questions',
             verticalPadding: 13,
             onPressed: () => Navigator.of(context).pop(
-              _GameLaunchConfig(subjects: _selected, difficulty: _difficulty),
+              _GameLaunchConfig(
+                subjects: _selected,
+                difficulty: _difficulty,
+                lang: _lang,
+              ),
             ),
           ),
         ],
@@ -311,23 +340,32 @@ class GamesHubScreen extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final lang = watchAppLanguage(ref);
     return RgGameScaffold(
       title: 'Revision Games',
       centerTitle: true,
+      trailing: RgLangToggle(
+        language: lang,
+        onChanged: (v) => persistAppLanguage(ref, v),
+      ),
       body: ListView.separated(
         padding: const EdgeInsets.fromLTRB(14, 14, 14, 24),
         itemCount: _games.length,
         separatorBuilder: (_, _) => const SizedBox(height: 8),
-        itemBuilder: (context, index) => _GameCard(game: _games[index]),
+        itemBuilder: (context, index) => _GameCard(
+          game: _games[index],
+          onTap: () => _openGame(context, ref, _games[index]),
+        ),
       ),
     );
   }
 }
 
 class _GameCard extends StatelessWidget {
-  const _GameCard({required this.game});
+  const _GameCard({required this.game, required this.onTap});
 
   final _GameEntry game;
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -335,7 +373,7 @@ class _GameCard extends StatelessWidget {
     return Material(
       color: RgColors.transparent,
       child: InkWell(
-        onTap: () => _openGame(context, game),
+        onTap: onTap,
         borderRadius: BorderRadius.circular(RgRadius.lg),
         child: Ink(
           padding: const EdgeInsets.all(12),

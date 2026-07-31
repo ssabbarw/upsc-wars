@@ -5,7 +5,9 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../core/providers/app_language_helpers.dart';
 import '../shared/game_intro_view.dart';
+import '../shared/mini_game_models.dart';
 import '../shared/revision_games_theme.dart';
 import '../shared/revision_games_widgets.dart';
 import 'duel_controller.dart';
@@ -13,13 +15,15 @@ import 'duel_controller.dart';
 /// 1v1 Duel — Revision Games v2 "scoreboard-strip" treatment (option 1a).
 ///
 /// Two mirrored halves (Player 2 rotated 180°) split by a solid teal seam that
-/// carries the running score. A wrong tap stamps the tapped option with a
-/// diagonal hazard lockout; the match ends on a stamped victory/defeat screen.
+/// carries the running score. Each player locks a choice (or passes) without
+/// revealing correctness; right/wrong colours appear only after both have
+/// answered. The match ends on a stamped victory/defeat screen.
 class DuelScreen extends HookConsumerWidget {
   const DuelScreen({
     super.key,
     this.subjectsCsv = '',
     this.difficultiesCsv = '',
+    this.initialLang = '',
   });
 
   /// Comma-separated subject slugs to filter content by; empty = all.
@@ -28,8 +32,20 @@ class DuelScreen extends HookConsumerWidget {
   /// Comma-separated difficulty names to filter content by; empty = all.
   final String difficultiesCsv;
 
+  /// Optional `lang` query param (`en` / `hi`); falls back to saved app language.
+  final String initialLang;
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final sharedInitial = normalizeMiniGameLang(
+      initialLang.isNotEmpty ? initialLang : watchAppLanguage(ref),
+    );
+    // Each player can pick EN/HI independently for their half.
+    final p1LangState = useState(sharedInitial);
+    final p2LangState = useState(sharedInitial);
+    final p1Lang = p1LangState.value;
+    final p2Lang = p2LangState.value;
+
     final provider = duelControllerProvider((
       subjects: subjectsCsv,
       difficulties: difficultiesCsv,
@@ -49,8 +65,8 @@ class DuelScreen extends HookConsumerWidget {
         steps: const [
           'Lay the phone flat on the table between you.',
           'Same question, 2 options each — mirrored top and bottom.',
-          'First correct tap wins the point — a wrong tap locks you '
-              'out for that round.',
+          'Both pick (or pass) first — correct answer reveals only '
+              'when both have locked in.',
         ],
       ),
     );
@@ -128,15 +144,21 @@ class DuelScreen extends HookConsumerWidget {
                     child: _PlayerHalf(
                       subject: q.subject,
                       questionNumber: state.questionNumber,
-                      question: q.question,
-                      options: q.options,
+                      question: q.questionForLang(p2Lang),
+                      options: q.optionsForLang(p2Lang),
                       answerIndex: q.answerIndex,
                       locked: state.p2Locked,
+                      selectedIndex: state.p2SelectedIndex,
+                      passed: state.p2Passed,
                       wrongIndex: state.p2WrongIndex,
                       revealed: state.revealedAnswer,
-                      wonRound: state.roundWinner == DuelPlayer.two,
+                      gotItRight: state.playerGotItRight(DuelPlayer.two),
+                      language: p2Lang,
+                      onLangChanged: (v) => p2LangState.value = v,
                       onTap: (i) =>
                           ref.read(provider.notifier).tap(DuelPlayer.two, i),
+                      onPass: () =>
+                          ref.read(provider.notifier).pass(DuelPlayer.two),
                     ),
                   ),
                 ),
@@ -150,15 +172,24 @@ class DuelScreen extends HookConsumerWidget {
                   child: _PlayerHalf(
                     subject: q.subject,
                     questionNumber: state.questionNumber,
-                    question: q.question,
-                    options: q.options,
+                    question: q.questionForLang(p1Lang),
+                    options: q.optionsForLang(p1Lang),
                     answerIndex: q.answerIndex,
                     locked: state.p1Locked,
+                    selectedIndex: state.p1SelectedIndex,
+                    passed: state.p1Passed,
                     wrongIndex: state.p1WrongIndex,
                     revealed: state.revealedAnswer,
-                    wonRound: state.roundWinner == DuelPlayer.one,
+                    gotItRight: state.playerGotItRight(DuelPlayer.one),
+                    language: p1Lang,
+                    onLangChanged: (v) {
+                      p1LangState.value = v;
+                      persistAppLanguage(ref, v);
+                    },
                     onTap: (i) =>
                         ref.read(provider.notifier).tap(DuelPlayer.one, i),
+                    onPass: () =>
+                        ref.read(provider.notifier).pass(DuelPlayer.one),
                   ),
                 ),
               ],
@@ -178,10 +209,15 @@ class _PlayerHalf extends StatelessWidget {
     required this.options,
     required this.answerIndex,
     required this.locked,
+    required this.selectedIndex,
+    required this.passed,
     required this.wrongIndex,
     required this.revealed,
-    required this.wonRound,
+    required this.gotItRight,
+    required this.language,
+    required this.onLangChanged,
     required this.onTap,
+    required this.onPass,
   });
 
   final String subject;
@@ -190,38 +226,108 @@ class _PlayerHalf extends StatelessWidget {
   final List<String> options;
   final int answerIndex;
   final bool locked;
+  final int? selectedIndex;
+  final bool passed;
   final int? wrongIndex;
   final bool revealed;
 
-  /// This half took the point — the correct option flashes green.
-  final bool wonRound;
+  /// This half scored the point (correct choice after reveal).
+  final bool gotItRight;
+  final String language;
+  final ValueChanged<String> onLangChanged;
   final ValueChanged<int> onTap;
+  final VoidCallback onPass;
 
   @override
   Widget build(BuildContext context) {
+    final waiting = locked && !revealed;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          RgMonoLabel('Q$questionNumber · $subject'),
+          Row(
+            children: [
+              Expanded(
+                child: RgMonoLabel('Q$questionNumber · $subject'),
+              ),
+              RgLangToggle(
+                language: language,
+                onChanged: onLangChanged,
+                minHeight: 28,
+              ),
+            ],
+          ),
           const SizedBox(height: 10),
           Text(question, style: RgText.display(size: 15, height: 1.28)),
           const SizedBox(height: 12),
-          for (var i = 0; i < options.length; i++) ...[
-            if (i > 0) const SizedBox(height: 8),
-            _DuelOption(
-              label: options[i],
-              enabled: !locked && !revealed,
-              isCorrect: revealed && wonRound && i == answerIndex,
-              isWrong: wrongIndex == i,
-              dimmed:
-                  (locked || revealed) &&
-                  wrongIndex != i &&
-                  !(revealed && wonRound && i == answerIndex),
-              onTap: () => onTap(i),
-            ),
+          // While waiting on the opponent, hide options so the other half
+          // can't read a locked choice upside-down on a shared phone.
+          if (waiting)
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 18),
+              decoration: BoxDecoration(
+                color: RgColors.neutralFill,
+                borderRadius: BorderRadius.circular(RgRadius.md),
+                border: Border.all(color: RgColors.border14),
+              ),
+              child: Text(
+                passed ? 'Passed — waiting…' : 'Locked in — waiting…',
+                textAlign: TextAlign.center,
+                style: RgText.body(
+                  size: 13,
+                  weight: FontWeight.w600,
+                  color: RgColors.muted,
+                ),
+              ),
+            )
+          else ...[
+            for (var i = 0; i < options.length; i++) ...[
+              if (i > 0) const SizedBox(height: 8),
+              _DuelOption(
+                label: options[i],
+                enabled: !locked && !revealed,
+                isSelected: !revealed && selectedIndex == i,
+                isCorrect: revealed && i == answerIndex,
+                isWrong: revealed && wrongIndex == i,
+                dimmed: revealed && i != answerIndex && wrongIndex != i,
+                onTap: () => onTap(i),
+              ),
+            ],
+            if (!locked && !revealed) ...[
+              const SizedBox(height: 10),
+              Align(
+                alignment: Alignment.centerRight,
+                child: TextButton(
+                  onPressed: onPass,
+                  style: TextButton.styleFrom(
+                    foregroundColor: RgColors.muted,
+                    visualDensity: VisualDensity.compact,
+                    padding: const EdgeInsets.symmetric(horizontal: 8),
+                  ),
+                  child: Text(
+                    'Pass',
+                    style: RgText.mono(size: 11, color: RgColors.muted),
+                  ),
+                ),
+              ),
+            ],
+            if (revealed && passed) ...[
+              const SizedBox(height: 10),
+              Text(
+                'Passed',
+                textAlign: TextAlign.center,
+                style: RgText.mono(size: 10, color: RgColors.muted),
+              ),
+            ] else if (revealed && gotItRight) ...[
+              const SizedBox(height: 10),
+              Text(
+                'Point!',
+                textAlign: TextAlign.center,
+                style: RgText.mono(size: 10, color: RgColors.tealDeep),
+              ),
+            ],
           ],
         ],
       ),
@@ -233,6 +339,7 @@ class _DuelOption extends StatelessWidget {
   const _DuelOption({
     required this.label,
     required this.enabled,
+    required this.isSelected,
     required this.isCorrect,
     required this.isWrong,
     required this.dimmed,
@@ -241,6 +348,7 @@ class _DuelOption extends StatelessWidget {
 
   final String label;
   final bool enabled;
+  final bool isSelected;
   final bool isCorrect;
   final bool isWrong;
   final bool dimmed;
@@ -260,6 +368,10 @@ class _DuelOption extends StatelessWidget {
       bg = RgColors.correctBg;
       borderColor = RgColors.teal;
       textColor = RgColors.tealDeep;
+    } else if (isSelected) {
+      bg = RgColors.neutralFill;
+      borderColor = RgColors.ink;
+      textColor = RgColors.ink;
     }
 
     Widget option = DecoratedBox(
