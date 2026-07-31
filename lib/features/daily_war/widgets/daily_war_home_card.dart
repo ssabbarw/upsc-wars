@@ -53,27 +53,24 @@ class _DailyWarHomeCardBody extends HookConsumerWidget {
     final yesterday = ref.watch(dailyWarYesterdaySnapshotProvider);
     final liveCounts =
         ref.watch(dailyWarLiveCountsProvider).asData?.value ??
-            const DailyWarLiveCounts.empty();
+        const DailyWarLiveCounts.empty();
     final countEnabled =
         ref.watch(dailyWarLobbyCountRemoteEnabledProvider).asData?.value ??
-            true;
+        true;
     final minVisible =
         ref.watch(dailyWarMinVisibleLobbyCountRemoteProvider).asData?.value ??
-            DailyWarSchedule.minVisibleParticipantCount;
+        DailyWarSchedule.minVisibleParticipantCount;
 
     // Count this device in the lobby once per war day (idempotent server-side).
     final joinedLobbyDate = useRef<String?>(null);
     useEffect(() {
       final phase = snap.phase;
-      if (phase != DailyWarPhase.lobby &&
-          phase != DailyWarPhase.liveJoinable) {
+      if (phase != DailyWarPhase.lobby && phase != DailyWarPhase.liveJoinable) {
         return null;
       }
       if (joinedLobbyDate.value == snap.dateId) return null;
       joinedLobbyDate.value = snap.dateId;
-      unawaited(
-        const DailyWarCloudService().joinLobby(dateId: snap.dateId),
-      );
+      unawaited(const DailyWarCloudService().joinLobby(dateId: snap.dateId));
       return null;
     }, [snap.dateId, snap.phase]);
 
@@ -90,9 +87,10 @@ class _DailyWarHomeCardBody extends HookConsumerWidget {
     final untilLateClose = lateClose.difference(ist);
 
     final doc = snap.doc;
-    final isGrand = doc?.isGrand == true || DailyWarSchedule.isGrandWarDay(warDate);
-    final qCount = doc?.questionCount ??
-        DailyWarSchedule.questionCountForDate(warDate);
+    final isGrand =
+        doc?.isGrand == true || DailyWarSchedule.isGrandWarDay(warDate);
+    final qCount =
+        doc?.questionCount ?? DailyWarSchedule.questionCountForDate(warDate);
     final topics = doc?.topics ?? const <DailyWarTopicRef>[];
 
     final lobbyShown = DailyWarCopy.formatVisibleCount(
@@ -113,7 +111,8 @@ class _DailyWarHomeCardBody extends HookConsumerWidget {
       minVisible: minVisible,
     );
 
-    final showMissedStrip = yesterday.shouldShowMissedStrip &&
+    final showMissedStrip =
+        yesterday.shouldShowMissedStrip &&
         snap.phase != DailyWarPhase.lobby &&
         snap.phase != DailyWarPhase.liveJoinable &&
         snap.phase != DailyWarPhase.liveLocked;
@@ -198,10 +197,7 @@ class _HeroBody extends StatelessWidget {
             writersShown: writersShown,
           );
         }
-        return _ResultSatOut(
-          snap: snap,
-          writersShown: writersShown,
-        );
+        return _ResultSatOut(snap: snap, writersShown: writersShown);
       case DailyWarPhase.resultsPending:
         return _ResultsPending(snap: snap, topics: topics);
       case DailyWarPhase.liveLocked:
@@ -243,11 +239,7 @@ class _HeroBody extends StatelessWidget {
         if (isGrand) {
           return _GrandMorning(topics: topics, qCount: qCount);
         }
-        return _Morning(
-          topics: topics,
-          isGrand: isGrand,
-          qCount: qCount,
-        );
+        return _Morning(topics: topics, isGrand: isGrand, qCount: qCount);
     }
   }
 }
@@ -255,11 +247,7 @@ class _HeroBody extends StatelessWidget {
 // ─── Shared chrome ───────────────────────────────────────────────────────────
 
 class _StatusRow extends StatelessWidget {
-  const _StatusRow({
-    required this.left,
-    this.right,
-    this.pulse = false,
-  });
+  const _StatusRow({required this.left, this.right, this.pulse = false});
 
   final String left;
   final String? right;
@@ -282,8 +270,7 @@ class _StatusRow extends StatelessWidget {
         ],
         Text(left, style: DwText.eyebrow()),
         const Spacer(),
-        if (right != null)
-          Text(right!, style: DwText.stamp()),
+        if (right != null) Text(right!, style: DwText.stamp()),
       ],
     );
   }
@@ -303,9 +290,7 @@ class _PrimaryCta extends StatelessWidget {
       decoration: BoxDecoration(
         color: filled ? DwColors.crimson : Colors.transparent,
         borderRadius: BorderRadius.circular(12),
-        border: filled
-            ? null
-            : Border.all(color: DwColors.borderOnDark),
+        border: filled ? null : Border.all(color: DwColors.borderOnDark),
       ),
       alignment: Alignment.center,
       child: Text(
@@ -337,14 +322,9 @@ class _TopicBlock extends StatelessWidget {
       return Text('Tonight\'s topics loading…', style: DwText.topicCompact());
     }
     final subjects = DailyWarCopy.subjectsLine(topics).toUpperCase();
-    final multiSubject =
-        topics.map((t) => t.subjectSlug).toSet().length > 1;
+    final multiSubject = topics.map((t) => t.subjectSlug).toSet().length > 1;
     final topicStyle = topicSize != null
-        ? DwText.dm(
-            size: topicSize!,
-            weight: FontWeight.w700,
-            height: 1.2,
-          )
+        ? DwText.dm(size: topicSize!, weight: FontWeight.w700, height: 1.2)
         : (compact ? DwText.topicCompact() : DwText.topic());
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -360,7 +340,12 @@ class _TopicBlock extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(bottom: 2),
             child: i == 0
-                ? Text(topics[i].topic, style: topicStyle)
+                ? Text(
+                    topics[i].topic,
+                    style: topicStyle,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                  )
                 : Text.rich(
                     TextSpan(
                       children: [
@@ -376,6 +361,8 @@ class _TopicBlock extends StatelessWidget {
                         TextSpan(text: topics[i].topic, style: topicStyle),
                       ],
                     ),
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
                   ),
           ),
       ],
@@ -384,10 +371,7 @@ class _TopicBlock extends StatelessWidget {
 }
 
 class _CountCallout extends StatelessWidget {
-  const _CountCallout({
-    required this.count,
-    required this.label,
-  });
+  const _CountCallout({required this.count, required this.label});
 
   final String count;
   final String label;
@@ -462,10 +446,7 @@ class _GrandMorning extends StatelessWidget {
           right: 'TONIGHT 9:00 PM IST',
         ),
         const SizedBox(height: 14),
-        Text(
-          'This week\'s topics, revised in one paper',
-          style: DwText.body(),
-        ),
+        Text('This week\'s topics, revised in one paper', style: DwText.body()),
         const SizedBox(height: 10),
         _TopicBlock(topics: topics, compact: true, eyebrow: 'Tonight\'s paper'),
         const SizedBox(height: 12),
@@ -507,7 +488,7 @@ class _Countdown extends StatelessWidget {
           right: '9:00 PM IST',
         ),
         const SizedBox(height: 14),
-        _TopicBlock(topics: topics, topicSize: 26),
+        _TopicBlock(topics: topics, topicSize: 22),
         const SizedBox(height: 12),
         Text('WAR BEGINS IN', style: DwText.meta()),
         const SizedBox(height: 2),
@@ -568,10 +549,7 @@ class _LobbyOpen extends StatelessWidget {
         ),
         const SizedBox(height: 14),
         if (lobbyShown != null)
-          _CountCallout(
-            count: lobbyShown!,
-            label: 'aspirants in the lobby',
-          )
+          _CountCallout(count: lobbyShown!, label: 'aspirants in the lobby')
         else
           Text('The lobby is filling up', style: DwText.topicCompact()),
         const SizedBox(height: 10),
@@ -636,16 +614,10 @@ class _LiveJoinable extends StatelessWidget {
         ),
         if (writersShown != null) ...[
           const SizedBox(height: 12),
-          _CountCallout(
-            count: writersShown!,
-            label: 'writing right now',
-          ),
+          _CountCallout(count: writersShown!, label: 'writing right now'),
         ],
         const SizedBox(height: 8),
-        Text(
-          DailyWarCopy.compactTopics(topics),
-          style: DwText.meta(),
-        ),
+        Text(DailyWarCopy.compactTopics(topics), style: DwText.meta()),
         const SizedBox(height: 14),
         const _PrimaryCta(label: 'Join now'),
         const SizedBox(height: 8),
@@ -698,10 +670,7 @@ class _LiveLocked extends StatelessWidget {
           ),
         ] else ...[
           const SizedBox(height: 10),
-          Text(
-            DailyWarCopy.compactTopics(topics),
-            style: DwText.meta(),
-          ),
+          Text(DailyWarCopy.compactTopics(topics), style: DwText.meta()),
         ],
         const SizedBox(height: 14),
         const _PrimaryCta(label: 'Read the topic notes', filled: false),
@@ -763,10 +732,7 @@ class _ResultPlayed extends StatelessWidget {
         Text('ALL-INDIA RANK', style: DwText.meta()),
         const SizedBox(height: 2),
         Text('${sub.air}', style: DwText.heroNumber()),
-        Text(
-          'of $ofN',
-          style: DwText.body(color: DwColors.onDarkMuted),
-        ),
+        Text('of $ofN', style: DwText.body(color: DwColors.onDarkMuted)),
         const SizedBox(height: 12),
         Row(
           children: [
@@ -817,10 +783,7 @@ class _StatChip extends StatelessWidget {
 // ─── H6 Result sat out ───────────────────────────────────────────────────────
 
 class _ResultSatOut extends StatelessWidget {
-  const _ResultSatOut({
-    required this.snap,
-    required this.writersShown,
-  });
+  const _ResultSatOut({required this.snap, required this.writersShown});
 
   final DailyWarHomeSnapshot snap;
   final String? writersShown;
@@ -852,10 +815,7 @@ class _ResultSatOut extends StatelessWidget {
         const _PrimaryCta(label: 'Unranked attempt'),
         if (next.isNotEmpty) ...[
           const SizedBox(height: 12),
-          Text(
-            'Tomorrow\'s War · 9:00 PM IST',
-            style: DwText.meta(),
-          ),
+          Text('Tomorrow\'s War · 9:00 PM IST', style: DwText.meta()),
           Text(
             DailyWarCopy.compactTopics(next),
             style: DwText.body(color: DwColors.onDark),
@@ -906,10 +866,7 @@ class _MissedYesterdayStrip extends StatelessWidget {
                     ),
                     Text(
                       'Attempt unranked · $q Q · see where you\'d have stood',
-                      style: DwText.dm(
-                        size: 11,
-                        color: DwColors.muted,
-                      ),
+                      style: DwText.dm(size: 11, color: DwColors.muted),
                     ),
                   ],
                 ),
