@@ -243,13 +243,22 @@ class HomeScreen extends HookConsumerWidget {
         children: [
           Scaffold(
             body: SafeArea(
-              child: ListView(
-                controller: homeScrollController,
-                physics: killBlocked
-                    ? const NeverScrollableScrollPhysics()
-                    : const BouncingScrollPhysics(),
-                padding: const EdgeInsets.all(AppSpacing.lg),
-                children: [
+              child: RefreshIndicator(
+                onRefresh: () async {
+                  ref.invalidate(homeStateProvider);
+                  ref.invalidate(homeActivationProvider);
+                  ref.invalidate(dailyDrillProvider);
+                  await refreshDailyWarHome(ref);
+                },
+                child: ListView(
+                  controller: homeScrollController,
+                  physics: killBlocked
+                      ? const NeverScrollableScrollPhysics()
+                      : const AlwaysScrollableScrollPhysics(
+                          parent: BouncingScrollPhysics(),
+                        ),
+                  padding: const EdgeInsets.all(AppSpacing.lg),
+                  children: [
                   if (bootstrap.hasError)
                     Padding(
                       padding: const EdgeInsets.only(bottom: AppSpacing.md),
@@ -681,6 +690,7 @@ class HomeScreen extends HookConsumerWidget {
                   ],
                   const SizedBox(height: AppSpacing.sm),
                 ],
+                ),
               ),
             ),
           ),

@@ -51,53 +51,6 @@ final class DailyWarLocalCacheProvider
 String _$dailyWarLocalCacheHash() =>
     r'9eef82da6fe1f7771f7fb635b9be582d97dbef29';
 
-/// Auth uid for Daily War listeners — rebuilds streams when sign-in changes.
-///
-/// Firestore rules require `signedIn()`; without watching auth, a keepAlive
-/// stream that errored before auth was ready stays empty forever.
-
-@ProviderFor(dailyWarAuthUid)
-final dailyWarAuthUidProvider = DailyWarAuthUidProvider._();
-
-/// Auth uid for Daily War listeners — rebuilds streams when sign-in changes.
-///
-/// Firestore rules require `signedIn()`; without watching auth, a keepAlive
-/// stream that errored before auth was ready stays empty forever.
-
-final class DailyWarAuthUidProvider
-    extends $FunctionalProvider<AsyncValue<String?>, String?, Stream<String?>>
-    with $FutureModifier<String?>, $StreamProvider<String?> {
-  /// Auth uid for Daily War listeners — rebuilds streams when sign-in changes.
-  ///
-  /// Firestore rules require `signedIn()`; without watching auth, a keepAlive
-  /// stream that errored before auth was ready stays empty forever.
-  DailyWarAuthUidProvider._()
-    : super(
-        from: null,
-        argument: null,
-        retry: null,
-        name: r'dailyWarAuthUidProvider',
-        isAutoDispose: false,
-        dependencies: null,
-        $allTransitiveDependencies: null,
-      );
-
-  @override
-  String debugGetCreateSourceHash() => _$dailyWarAuthUidHash();
-
-  @$internal
-  @override
-  $StreamProviderElement<String?> $createElement($ProviderPointer pointer) =>
-      $StreamProviderElement(pointer);
-
-  @override
-  Stream<String?> create(Ref ref) {
-    return dailyWarAuthUid(ref);
-  }
-}
-
-String _$dailyWarAuthUidHash() => r'1607f38b382c0888836194462dc7b14fa3b1348b';
-
 /// Today's War dateId (IST) using server-corrected clock.
 
 @ProviderFor(dailyWarTodayDateId)
@@ -145,25 +98,74 @@ final class DailyWarTodayDateIdProvider
 String _$dailyWarTodayDateIdHash() =>
     r'52f0be5e82ac693db9a9d32b5233067549162214';
 
-/// Live Firestore snapshot for today's War (null if missing).
-/// Writes through to [DailyWarLocalCache] whenever data arrives.
+/// Keys hydrated from Firestore once per app session (no snapshot listeners).
 
-@ProviderFor(dailyWarTodayDoc)
+@ProviderFor(DailyWarSessionHydrated)
+final dailyWarSessionHydratedProvider = DailyWarSessionHydratedProvider._();
+
+/// Keys hydrated from Firestore once per app session (no snapshot listeners).
+final class DailyWarSessionHydratedProvider
+    extends $NotifierProvider<DailyWarSessionHydrated, Set<String>> {
+  /// Keys hydrated from Firestore once per app session (no snapshot listeners).
+  DailyWarSessionHydratedProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'dailyWarSessionHydratedProvider',
+        isAutoDispose: false,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$dailyWarSessionHydratedHash();
+
+  @$internal
+  @override
+  DailyWarSessionHydrated create() => DailyWarSessionHydrated();
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(Set<String> value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<Set<String>>(value),
+    );
+  }
+}
+
+String _$dailyWarSessionHydratedHash() =>
+    r'be96878daf5ae4bd317e31b73d7c1f700ba3a269';
+
+/// Keys hydrated from Firestore once per app session (no snapshot listeners).
+
+abstract class _$DailyWarSessionHydrated extends $Notifier<Set<String>> {
+  Set<String> build();
+  @$mustCallSuper
+  @override
+  void runBuild() {
+    final ref = this.ref as $Ref<Set<String>, Set<String>>;
+    final element =
+        ref.element
+            as $ClassProviderElement<
+              AnyNotifier<Set<String>, Set<String>>,
+              Set<String>,
+              Object?,
+              Object?
+            >;
+    element.handleCreate(ref, build);
+  }
+}
+
+/// Today's War public doc — one server read per app open, then local only.
+
+@ProviderFor(DailyWarTodayDoc)
 final dailyWarTodayDocProvider = DailyWarTodayDocProvider._();
 
-/// Live Firestore snapshot for today's War (null if missing).
-/// Writes through to [DailyWarLocalCache] whenever data arrives.
-
+/// Today's War public doc — one server read per app open, then local only.
 final class DailyWarTodayDocProvider
-    extends
-        $FunctionalProvider<
-          AsyncValue<DailyWarDoc?>,
-          DailyWarDoc?,
-          Stream<DailyWarDoc?>
-        >
-    with $FutureModifier<DailyWarDoc?>, $StreamProvider<DailyWarDoc?> {
-  /// Live Firestore snapshot for today's War (null if missing).
-  /// Writes through to [DailyWarLocalCache] whenever data arrives.
+    extends $AsyncNotifierProvider<DailyWarTodayDoc, DailyWarDoc?> {
+  /// Today's War public doc — one server read per app open, then local only.
   DailyWarTodayDocProvider._()
     : super(
         from: null,
@@ -180,36 +182,41 @@ final class DailyWarTodayDocProvider
 
   @$internal
   @override
-  $StreamProviderElement<DailyWarDoc?> $createElement(
-    $ProviderPointer pointer,
-  ) => $StreamProviderElement(pointer);
+  DailyWarTodayDoc create() => DailyWarTodayDoc();
+}
 
+String _$dailyWarTodayDocHash() => r'2c69c218a427a377620aed763af02f8fee6ef5db';
+
+/// Today's War public doc — one server read per app open, then local only.
+
+abstract class _$DailyWarTodayDoc extends $AsyncNotifier<DailyWarDoc?> {
+  FutureOr<DailyWarDoc?> build();
+  @$mustCallSuper
   @override
-  Stream<DailyWarDoc?> create(Ref ref) {
-    return dailyWarTodayDoc(ref);
+  void runBuild() {
+    final ref = this.ref as $Ref<AsyncValue<DailyWarDoc?>, DailyWarDoc?>;
+    final element =
+        ref.element
+            as $ClassProviderElement<
+              AnyNotifier<AsyncValue<DailyWarDoc?>, DailyWarDoc?>,
+              AsyncValue<DailyWarDoc?>,
+              Object?,
+              Object?
+            >;
+    element.handleCreate(ref, build);
   }
 }
 
-String _$dailyWarTodayDocHash() => r'5b1bc2bffe0a207a9a62e59ec1f170f451f8b7b4';
+/// Signed-in user's submission for today — one server read per app open.
 
-/// Signed-in user's submission for today, if any.
-
-@ProviderFor(dailyWarTodaySubmission)
+@ProviderFor(DailyWarTodaySubmission)
 final dailyWarTodaySubmissionProvider = DailyWarTodaySubmissionProvider._();
 
-/// Signed-in user's submission for today, if any.
-
+/// Signed-in user's submission for today — one server read per app open.
 final class DailyWarTodaySubmissionProvider
     extends
-        $FunctionalProvider<
-          AsyncValue<DailyWarSubmission?>,
-          DailyWarSubmission?,
-          Stream<DailyWarSubmission?>
-        >
-    with
-        $FutureModifier<DailyWarSubmission?>,
-        $StreamProvider<DailyWarSubmission?> {
-  /// Signed-in user's submission for today, if any.
+        $AsyncNotifierProvider<DailyWarTodaySubmission, DailyWarSubmission?> {
+  /// Signed-in user's submission for today — one server read per app open.
   DailyWarTodaySubmissionProvider._()
     : super(
         from: null,
@@ -226,18 +233,33 @@ final class DailyWarTodaySubmissionProvider
 
   @$internal
   @override
-  $StreamProviderElement<DailyWarSubmission?> $createElement(
-    $ProviderPointer pointer,
-  ) => $StreamProviderElement(pointer);
-
-  @override
-  Stream<DailyWarSubmission?> create(Ref ref) {
-    return dailyWarTodaySubmission(ref);
-  }
+  DailyWarTodaySubmission create() => DailyWarTodaySubmission();
 }
 
 String _$dailyWarTodaySubmissionHash() =>
-    r'e843b256c897020d8cad3085dd37bddd51f2ae61';
+    r'db4593f97518e638ab0481c0c78c47978b698119';
+
+/// Signed-in user's submission for today — one server read per app open.
+
+abstract class _$DailyWarTodaySubmission
+    extends $AsyncNotifier<DailyWarSubmission?> {
+  FutureOr<DailyWarSubmission?> build();
+  @$mustCallSuper
+  @override
+  void runBuild() {
+    final ref =
+        this.ref as $Ref<AsyncValue<DailyWarSubmission?>, DailyWarSubmission?>;
+    final element =
+        ref.element
+            as $ClassProviderElement<
+              AnyNotifier<AsyncValue<DailyWarSubmission?>, DailyWarSubmission?>,
+              AsyncValue<DailyWarSubmission?>,
+              Object?,
+              Object?
+            >;
+    element.handleCreate(ref, build);
+  }
+}
 
 @ProviderFor(dailyWarHomeSnapshot)
 final dailyWarHomeSnapshotProvider = DailyWarHomeSnapshotProvider._();
@@ -329,17 +351,11 @@ final class DailyWarYesterdayDateIdProvider
 String _$dailyWarYesterdayDateIdHash() =>
     r'5193e81a815266c28d250d19d692e0ec39e812df';
 
-@ProviderFor(dailyWarYesterdayDoc)
+@ProviderFor(DailyWarYesterdayDoc)
 final dailyWarYesterdayDocProvider = DailyWarYesterdayDocProvider._();
 
 final class DailyWarYesterdayDocProvider
-    extends
-        $FunctionalProvider<
-          AsyncValue<DailyWarDoc?>,
-          DailyWarDoc?,
-          Stream<DailyWarDoc?>
-        >
-    with $FutureModifier<DailyWarDoc?>, $StreamProvider<DailyWarDoc?> {
+    extends $AsyncNotifierProvider<DailyWarYesterdayDoc, DailyWarDoc?> {
   DailyWarYesterdayDocProvider._()
     : super(
         from: null,
@@ -356,33 +372,40 @@ final class DailyWarYesterdayDocProvider
 
   @$internal
   @override
-  $StreamProviderElement<DailyWarDoc?> $createElement(
-    $ProviderPointer pointer,
-  ) => $StreamProviderElement(pointer);
-
-  @override
-  Stream<DailyWarDoc?> create(Ref ref) {
-    return dailyWarYesterdayDoc(ref);
-  }
+  DailyWarYesterdayDoc create() => DailyWarYesterdayDoc();
 }
 
 String _$dailyWarYesterdayDocHash() =>
-    r'b24eb845b8eb6ca50211325ce773b6a9ef267293';
+    r'8285f206cce8de32257082b1aefcb89271e63a46';
 
-@ProviderFor(dailyWarYesterdaySubmission)
+abstract class _$DailyWarYesterdayDoc extends $AsyncNotifier<DailyWarDoc?> {
+  FutureOr<DailyWarDoc?> build();
+  @$mustCallSuper
+  @override
+  void runBuild() {
+    final ref = this.ref as $Ref<AsyncValue<DailyWarDoc?>, DailyWarDoc?>;
+    final element =
+        ref.element
+            as $ClassProviderElement<
+              AnyNotifier<AsyncValue<DailyWarDoc?>, DailyWarDoc?>,
+              AsyncValue<DailyWarDoc?>,
+              Object?,
+              Object?
+            >;
+    element.handleCreate(ref, build);
+  }
+}
+
+@ProviderFor(DailyWarYesterdaySubmission)
 final dailyWarYesterdaySubmissionProvider =
     DailyWarYesterdaySubmissionProvider._();
 
 final class DailyWarYesterdaySubmissionProvider
     extends
-        $FunctionalProvider<
-          AsyncValue<DailyWarSubmission?>,
-          DailyWarSubmission?,
-          Stream<DailyWarSubmission?>
-        >
-    with
-        $FutureModifier<DailyWarSubmission?>,
-        $StreamProvider<DailyWarSubmission?> {
+        $AsyncNotifierProvider<
+          DailyWarYesterdaySubmission,
+          DailyWarSubmission?
+        > {
   DailyWarYesterdaySubmissionProvider._()
     : super(
         from: null,
@@ -399,18 +422,31 @@ final class DailyWarYesterdaySubmissionProvider
 
   @$internal
   @override
-  $StreamProviderElement<DailyWarSubmission?> $createElement(
-    $ProviderPointer pointer,
-  ) => $StreamProviderElement(pointer);
-
-  @override
-  Stream<DailyWarSubmission?> create(Ref ref) {
-    return dailyWarYesterdaySubmission(ref);
-  }
+  DailyWarYesterdaySubmission create() => DailyWarYesterdaySubmission();
 }
 
 String _$dailyWarYesterdaySubmissionHash() =>
-    r'b3f9d6b860ce9f3803cfbeae6c408f400deb177b';
+    r'f1acf7dd036b494169c8c0471319b22202392e0b';
+
+abstract class _$DailyWarYesterdaySubmission
+    extends $AsyncNotifier<DailyWarSubmission?> {
+  FutureOr<DailyWarSubmission?> build();
+  @$mustCallSuper
+  @override
+  void runBuild() {
+    final ref =
+        this.ref as $Ref<AsyncValue<DailyWarSubmission?>, DailyWarSubmission?>;
+    final element =
+        ref.element
+            as $ClassProviderElement<
+              AnyNotifier<AsyncValue<DailyWarSubmission?>, DailyWarSubmission?>,
+              AsyncValue<DailyWarSubmission?>,
+              Object?,
+              Object?
+            >;
+    element.handleCreate(ref, build);
+  }
+}
 
 @ProviderFor(dailyWarYesterdaySnapshot)
 final dailyWarYesterdaySnapshotProvider = DailyWarYesterdaySnapshotProvider._();

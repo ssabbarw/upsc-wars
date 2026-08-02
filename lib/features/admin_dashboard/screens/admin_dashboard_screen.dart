@@ -291,9 +291,8 @@ class _DailyWarAdminSection extends HookConsumerWidget {
     final message = useState<String?>(null);
     final todayId = DailyWarSchedule.formatIsoDate(DailyWarSchedule.nowIst());
 
-    void refreshHomeWar() {
-      ref.invalidate(dailyWarTodayDocProvider);
-      ref.invalidate(dailyWarTodayDateIdProvider);
+    Future<void> refreshHomeWar() async {
+      await ref.read(dailyWarTodayDocProvider.notifier).refresh();
     }
 
     Future<void> run(Future<void> Function() action) async {
@@ -340,7 +339,7 @@ class _DailyWarAdminSection extends HookConsumerWidget {
                           preview.value = await cloud.adminPreview(
                             dateId: todayId,
                           );
-                          refreshHomeWar();
+                          await refreshHomeWar();
                           final topics = preview.value?.topics.length ?? 0;
                           message.value = ok
                               ? 'Generate ok · $todayId · $topics topics'
@@ -362,7 +361,7 @@ class _DailyWarAdminSection extends HookConsumerWidget {
                           preview.value = await cloud.adminPreview(
                             dateId: todayId,
                           );
-                          refreshHomeWar();
+                          await refreshHomeWar();
                           final topics = preview.value?.topics.length ?? 0;
                           message.value = ok
                               ? 'Force regenerated · $topics topics'

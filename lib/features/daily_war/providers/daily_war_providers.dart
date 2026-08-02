@@ -132,7 +132,8 @@ Future<DailyWarDoc?> _buildWarDoc({
 
   final cached = cache.getWar(dateId);
   if (cached != null) {
-    // Instant local paint; one background hydrate per app session.
+    // Instant local paint; claim session + one background hydrate.
+    hydrated.mark(key);
     unawaited(() async {
       final doc = await _fetchWarDoc(
         ref: ref,
@@ -196,6 +197,7 @@ class DailyWarTodaySubmission extends _$DailyWarTodaySubmission {
     }
     final cached = cache.getSubmission(uid, dateId);
     if (cached != null || cache.hasKnownAbsence(uid, dateId)) {
+      hydrated.mark(key);
       unawaited(() async {
         final sub = await _fetchSubmission(
           ref: ref,
@@ -319,8 +321,15 @@ class DailyWarYesterdayDoc extends _$DailyWarYesterdayDoc {
   @override
   Future<DailyWarDoc?> build() async {
     final dateId = ref.watch(dailyWarYesterdayDateIdProvider);
-    final cache = await ref.watch(dailyWarLocalCacheProvider.future);
-    return _fetchWarDoc(ref: ref, cache: cache, dateId: dateId, force: false);
+    return _buildWarDoc(
+      ref: ref,
+      dateId: dateId,
+      setState: (doc) {
+        if (ref.read(dailyWarYesterdayDateIdProvider) == dateId) {
+          state = AsyncValue.data(doc);
+        }
+      },
+    );
   }
 
   Future<DailyWarDoc?> refresh() async {
@@ -345,6 +354,29 @@ class DailyWarYesterdaySubmission extends _$DailyWarYesterdaySubmission {
     final uid = FirebaseAuth.instance.currentUser?.uid;
     if (uid == null || uid.isEmpty) return null;
     final cache = await ref.watch(dailyWarLocalCacheProvider.future);
+    final key = 'sub:$uid:$dateId';
+    final hydrated = ref.read(dailyWarSessionHydratedProvider.notifier);
+    if (hydrated.hasKey(key)) {
+      if (cache.hasKnownAbsence(uid, dateId)) return null;
+      return cache.getSubmission(uid, dateId);
+    }
+    final cached = cache.getSubmission(uid, dateId);
+    if (cached != null || cache.hasKnownAbsence(uid, dateId)) {
+      hydrated.mark(key);
+      unawaited(() async {
+        final sub = await _fetchSubmission(
+          ref: ref,
+          cache: cache,
+          uid: uid,
+          dateId: dateId,
+          force: true,
+        );
+        if (ref.read(dailyWarYesterdayDateIdProvider) == dateId) {
+          state = AsyncValue.data(sub);
+        }
+      }());
+      return cache.hasKnownAbsence(uid, dateId) ? null : cached;
+    }
     return _fetchSubmission(
       ref: ref,
       cache: cache,
