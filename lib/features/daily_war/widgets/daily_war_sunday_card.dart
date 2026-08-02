@@ -164,7 +164,7 @@ class DailyWarSundayCard extends ConsumerWidget {
         _WeekOrbit(days: summary.days),
         const SizedBox(height: 14),
         _WeekSummaryPreview(summary: summary),
-        const SizedBox(height: 12),
+        const SizedBox(height: 16),
         _MondayDock(
           summary: summary,
           mondayTopics: mondayTopics,
@@ -198,7 +198,7 @@ class DailyWarSundayCard extends ConsumerWidget {
   }
 }
 
-/// Compact tappable preview of week stats → full progress sheet.
+/// Primary Sunday action — week stats + full progress sheet.
 class _WeekSummaryPreview extends ConsumerWidget {
   const _WeekSummaryPreview({required this.summary});
 
@@ -224,18 +224,34 @@ class _WeekSummaryPreview extends ConsumerWidget {
         ? '—'
         : '${summary.accuracyPct!.round()}%';
 
+    void openSummary() {
+      unawaited(
+        showDailyWarWeekProgressSheet(
+          context: context,
+          summary: summary,
+        ),
+      );
+    }
+
     return Material(
       color: Colors.transparent,
       child: InkWell(
-        borderRadius: BorderRadius.circular(14),
-        onTap: () => unawaited(
-          showDailyWarWeekProgressSheet(
-            context: context,
-            summary: summary,
-          ),
-        ),
+        borderRadius: BorderRadius.circular(16),
+        onTap: openSummary,
         child: Ink(
-          padding: const EdgeInsets.fromLTRB(2, 2, 2, 0),
+          padding: const EdgeInsets.fromLTRB(14, 14, 14, 12),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(16),
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+                const Color(0xFFA8B4FF).withValues(alpha: 0.14),
+                Colors.white.withValues(alpha: 0.03),
+              ],
+            ),
+            border: Border.all(color: const Color(0x33A8B4FF)),
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
@@ -257,23 +273,28 @@ class _WeekSummaryPreview extends ConsumerWidget {
                   _Stat(value: '$badgeCount', label: 'badges'),
                 ],
               ),
-              const SizedBox(height: 10),
-              Row(
-                children: [
-                  Text(
-                    'Full week summary',
-                    style: DwText.dm(
-                      size: 12,
-                      weight: FontWeight.w700,
-                      color: const Color(0xFFC5CDFF),
+              const SizedBox(height: 12),
+              SizedBox(
+                width: double.infinity,
+                child: FilledButton(
+                  onPressed: openSummary,
+                  style: FilledButton.styleFrom(
+                    backgroundColor: const Color(0xFFC5CDFF),
+                    foregroundColor: DwColors.ink,
+                    padding: const EdgeInsets.symmetric(vertical: 12),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
                     ),
                   ),
-                  const Icon(
-                    Icons.arrow_forward_rounded,
-                    size: 14,
-                    color: Color(0xFFC5CDFF),
+                  child: Text(
+                    'Full week summary',
+                    style: DwText.dm(
+                      size: 13,
+                      weight: FontWeight.w800,
+                      color: DwColors.ink,
+                    ),
                   ),
-                ],
+                ),
               ),
             ],
           ),
@@ -433,7 +454,7 @@ class _OrbitNode extends StatelessWidget {
   }
 }
 
-/// Monday topics + one CTA — soft accent rail, not a nested card stack.
+/// Secondary Sunday dock — quiet “up next” for Monday, below week summary.
 class _MondayDock extends StatelessWidget {
   const _MondayDock({
     required this.summary,
@@ -479,98 +500,80 @@ class _MondayDock extends StatelessWidget {
     return Material(
       color: Colors.transparent,
       child: InkWell(
-        borderRadius: BorderRadius.circular(14),
+        borderRadius: BorderRadius.circular(12),
         onTap: openPractice,
         child: Ink(
+          padding: const EdgeInsets.fromLTRB(12, 10, 10, 10),
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(14),
-            gradient: LinearGradient(
-              begin: Alignment.centerLeft,
-              end: Alignment.centerRight,
-              colors: [
-                DwColors.teal.withValues(alpha: 0.14),
-                Colors.white.withValues(alpha: 0.03),
-              ],
+            borderRadius: BorderRadius.circular(12),
+            color: Colors.white.withValues(alpha: 0.03),
+            border: Border.all(
+              color: DwColors.onDark.withValues(alpha: 0.08),
             ),
-            border: Border.all(color: DwColors.teal.withValues(alpha: 0.28)),
           ),
-          child: IntrinsicHeight(
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Container(
-                  width: 3,
-                  decoration: BoxDecoration(
-                    color: DwColors.teal.withValues(alpha: 0.85),
-                    borderRadius: const BorderRadius.horizontal(
-                      left: Radius.circular(14),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Row(
+                children: [
+                  Text(
+                    'UP NEXT',
+                    style: DwText.dm(
+                      size: 10,
+                      weight: FontWeight.w700,
+                      color: DwColors.onDarkFaint,
+                      letterSpacing: 0.8,
                     ),
                   ),
-                ),
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(12, 11, 10, 11),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        Row(
-                          children: [
-                            Expanded(
-                              child: Text(
-                                'MONDAY · 9 PM',
-                                style: DwText.dm(
-                                  size: 10,
-                                  weight: FontWeight.w800,
-                                  color: DwColors.onDarkMuted,
-                                  letterSpacing: 0.7,
-                                ),
-                              ),
-                            ),
-                            Text(
-                              cta,
-                              style: DwText.dm(
-                                size: 11,
-                                weight: FontWeight.w700,
-                                color: DwColors.teal,
-                              ),
-                            ),
-                            const Icon(
-                              Icons.chevron_right_rounded,
-                              size: 18,
-                              color: DwColors.teal,
-                            ),
-                          ],
-                        ),
-                        if (subjects.isNotEmpty) ...[
-                          const SizedBox(height: 5),
-                          Text(
-                            subjects.toUpperCase(),
-                            style: DwText.dm(
-                              size: 11,
-                              weight: FontWeight.w700,
-                              color: DwColors.crimsonBright,
-                              letterSpacing: 0.3,
-                            ),
-                          ),
-                        ],
-                        const SizedBox(height: 3),
-                        Text(
-                          topicLine,
-                          maxLines: 2,
-                          overflow: TextOverflow.ellipsis,
-                          style: DwText.dm(
-                            size: 14,
-                            weight: FontWeight.w700,
-                            color: DwColors.onDark,
-                            height: 1.25,
-                          ),
-                        ),
-                      ],
+                  const SizedBox(width: 8),
+                  Text(
+                    'Monday · 9 PM',
+                    style: DwText.dm(
+                      size: 11,
+                      weight: FontWeight.w600,
+                      color: DwColors.onDarkMuted,
                     ),
+                  ),
+                  const Spacer(),
+                  Text(
+                    cta,
+                    style: DwText.dm(
+                      size: 11,
+                      weight: FontWeight.w600,
+                      color: DwColors.onDarkMuted,
+                    ),
+                  ),
+                  const Icon(
+                    Icons.chevron_right_rounded,
+                    size: 16,
+                    color: DwColors.onDarkFaint,
+                  ),
+                ],
+              ),
+              if (subjects.isNotEmpty) ...[
+                const SizedBox(height: 6),
+                Text(
+                  subjects,
+                  style: DwText.dm(
+                    size: 11,
+                    weight: FontWeight.w600,
+                    color: DwColors.onDarkMuted,
                   ),
                 ),
               ],
-            ),
+              const SizedBox(height: 2),
+              Text(
+                topicLine,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                style: DwText.dm(
+                  size: 13,
+                  weight: FontWeight.w600,
+                  color: DwColors.onDarkMuted,
+                  height: 1.3,
+                ),
+              ),
+            ],
           ),
         ),
       ),

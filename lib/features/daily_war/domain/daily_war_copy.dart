@@ -1,3 +1,5 @@
+import 'package:intl/intl.dart';
+
 import '../../../core/constants/subject_constants.dart';
 import '../domain/daily_war_models.dart';
 import '../domain/daily_war_schedule.dart';
@@ -37,6 +39,16 @@ abstract final class DailyWarCopy {
   static String topicsLine(List<DailyWarTopicRef> topics, {String sep = ' + '}) {
     if (topics.isEmpty) return '';
     return topics.map((t) => t.topic).join(sep);
+  }
+
+  /// e.g. `Sat · 2 Aug` from `YYYY-MM-DD`.
+  static String formatWarDate(String dateId) {
+    try {
+      final d = DailyWarSchedule.parseIsoDate(dateId);
+      return DateFormat('EEE · d MMM').format(d);
+    } on Object {
+      return dateId;
+    }
   }
 
   static String compactTopics(

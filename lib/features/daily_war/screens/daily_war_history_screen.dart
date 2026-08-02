@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../daily_war_constants.dart';
 import '../domain/daily_war_copy.dart';
+import '../domain/daily_war_models.dart';
 import '../providers/daily_war_providers.dart';
 import '../theme/daily_war_theme.dart';
 
@@ -12,7 +12,7 @@ import '../theme/daily_war_theme.dart';
 ///
 /// Backed by [dailyWarHistoryBundleProvider] which serves ranked wars from
 /// local cache and only hits Firestore for a short recent window.
-class DailyWarHistoryScreen extends HookConsumerWidget {
+class DailyWarHistoryScreen extends ConsumerWidget {
   const DailyWarHistoryScreen({super.key, this.embedded = false});
 
   /// When true, omit [Scaffold] / [AppBar] (used inside Progress hub).
@@ -20,49 +20,31 @@ class DailyWarHistoryScreen extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final tab = useState(0); // 0 all, 1 attempted, 2 missed
     final async = ref.watch(dailyWarHistoryBundleProvider);
     final scheme = Theme.of(context).colorScheme;
 
     final body = Column(
       children: [
         Padding(
-          padding: const EdgeInsets.fromLTRB(16, 4, 16, 8),
-          child: Row(
-            children: [
-              for (final entry in const [
-                (0, 'All'),
-                (1, 'Attempted'),
-                (2, 'Missed'),
-              ])
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 4),
-                    child: _TabChip(
-                      label: entry.$2,
-                      selected: tab.value == entry.$1,
-                      onTap: () => tab.value = entry.$1,
-                    ),
-                  ),
-                ),
-              const SizedBox(width: 4),
-              TextButton(
-                onPressed: () => context.push(dailyWarBadgesRoute()),
-                style: TextButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(horizontal: 8),
-                  minimumSize: Size.zero,
-                  tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                ),
-                child: Text(
-                  'Badges',
-                  style: DwText.dm(
-                    size: 12,
-                    weight: FontWeight.w700,
-                    color: DwColors.teal,
-                  ),
+          padding: const EdgeInsets.fromLTRB(16, 4, 16, 4),
+          child: Align(
+            alignment: Alignment.centerRight,
+            child: TextButton(
+              onPressed: () => context.push(dailyWarBadgesRoute()),
+              style: TextButton.styleFrom(
+                padding: const EdgeInsets.symmetric(horizontal: 8),
+                minimumSize: Size.zero,
+                tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+              ),
+              child: Text(
+                'Your Earned badges',
+                style: DwText.dm(
+                  size: 12,
+                  weight: FontWeight.w700,
+                  color: DwColors.teal,
                 ),
               ),
-            ],
+            ),
           ),
         ),
         Expanded(
@@ -72,26 +54,11 @@ class DailyWarHistoryScreen extends HookConsumerWidget {
               data: (bundle) {
                 final wars = bundle.wars;
                 final subs = bundle.submissions;
-                final filtered = wars.where((w) {
-                  final sub = subs[w.dateId];
-                  switch (tab.value) {
-                    case 1:
-                      return sub != null;
-                    case 2:
-                      return sub == null;
-                    default:
-                      return true;
-                  }
-                }).toList();
 
-                if (filtered.isEmpty) {
+                if (wars.isEmpty) {
                   return Center(
                     child: Text(
-                      tab.value == 1
-                          ? 'No Wars attempted yet'
-                          : tab.value == 2
-                              ? 'You\'re caught up'
-                              : 'No Wars yet',
+                      'No Wars yet',
                       style: DwText.dm(
                         size: 14,
                         color: DwColors.muted,
@@ -102,26 +69,18 @@ class DailyWarHistoryScreen extends HookConsumerWidget {
 
                 return ListView.separated(
                   padding: const EdgeInsets.fromLTRB(16, 8, 16, 24),
-                  itemCount: filtered.length,
+                  itemCount: wars.length,
                   separatorBuilder: (_, _) => const SizedBox(height: 10),
                   itemBuilder: (context, i) {
-                    final w = filtered[i];
+                    final w = wars[i];
                     final sub = subs[w.dateId];
                     final subjects = DailyWarCopy.subjectsLine(w.topics);
                     final topics = DailyWarCopy.topicsLine(w.topics);
-                    String meta;
-                    Color metaColor = DwColors.muted;
-                    if (sub?.hasOfficialRank == true) {
-                      meta = 'AIR ${sub!.air} · ${sub.score}';
-                      metaColor = DwColors.crimson;
-                    } else if (sub?.mode == 'unranked') {
-                      meta = 'Practiced · ${sub!.score}';
-                    } else if (sub != null) {
-                      meta = 'Submitted · waiting for rank';
-                    } else {
-                      meta = 'Missed';
-                    }
+                    final status = _WarStatus.fromSubmission(sub);
 
+                    final isGrand = w.isGrand;
+                    final kindColor =
+                        isGrand ? DwColors.gold : DwColors.crimsonBright;
                     return Material(
                       color: Colors.transparent,
                       child: InkWell(
@@ -134,37 +93,69 @@ class DailyWarHistoryScreen extends HookConsumerWidget {
                           decoration: BoxDecoration(
                             color: DwColors.surface,
                             borderRadius: BorderRadius.circular(14),
-                            border: Border.all(color: DwColors.borderOnDark),
+                            border: Border.all(
+                              color: status.borderColor,
+                            ),
                           ),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Row(
                                 children: [
-                                  Text(
-                                    w.isGrand ? 'GRAND WAR' : 'DAILY WAR',
-                                    style: DwText.eyebrow(),
+                                  Container(
+                                    padding: const EdgeInsets.symmetric(
+                                      horizontal: 8,
+                                      vertical: 3,
+                                    ),
+                                    decoration: BoxDecoration(
+                                      color: kindColor.withValues(alpha: 0.14),
+                                      borderRadius: BorderRadius.circular(6),
+                                      border: Border.all(
+                                        color: kindColor.withValues(
+                                          alpha: 0.35,
+                                        ),
+                                      ),
+                                    ),
+                                    child: Text(
+                                      isGrand ? 'GRAND WAR' : 'DAILY WAR',
+                                      style: DwText.dm(
+                                        size: 10,
+                                        weight: FontWeight.w800,
+                                        color: kindColor,
+                                        letterSpacing: 0.8,
+                                      ),
+                                    ),
                                   ),
+                                  const SizedBox(width: 8),
+                                  _StatusBadge(status: status),
                                   const Spacer(),
                                   Text(
-                                    w.dateId,
-                                    style: DwText.stamp(),
+                                    DailyWarCopy.formatWarDate(w.dateId),
+                                    style: DwText.dm(
+                                      size: 12,
+                                      weight: FontWeight.w600,
+                                      color: DwColors.onDarkMuted,
+                                    ),
                                   ),
                                 ],
                               ),
-                              const SizedBox(height: 8),
-                              Text(
-                                subjects,
-                                style: DwText.dm(
-                                  size: 12,
-                                  weight: FontWeight.w600,
-                                  color: DwColors.crimsonBright,
-                                  letterSpacing: 0.8,
+                              const SizedBox(height: 10),
+                              if (subjects.isNotEmpty) ...[
+                                Text(
+                                  subjects,
+                                  style: DwText.dm(
+                                    size: 12,
+                                    weight: FontWeight.w600,
+                                    color: DwColors.crimsonBright,
+                                    letterSpacing: 0.6,
+                                  ),
                                 ),
-                              ),
-                              const SizedBox(height: 2),
+                                const SizedBox(height: 2),
+                              ],
                               Text(
                                 topics,
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
                                 style: DwText.dm(
                                   size: 15,
                                   weight: FontWeight.w700,
@@ -174,16 +165,19 @@ class DailyWarHistoryScreen extends HookConsumerWidget {
                               const SizedBox(height: 8),
                               Row(
                                 children: [
-                                  Expanded(
-                                    child: Text(
-                                      meta,
-                                      style: DwText.dm(
-                                        size: 12,
-                                        weight: FontWeight.w600,
-                                        color: metaColor,
+                                  if (status.detail != null)
+                                    Expanded(
+                                      child: Text(
+                                        status.detail!,
+                                        style: DwText.dm(
+                                          size: 12,
+                                          weight: FontWeight.w600,
+                                          color: status.color,
+                                        ),
                                       ),
-                                    ),
-                                  ),
+                                    )
+                                  else
+                                    const Spacer(),
                                   Text(
                                     'Open',
                                     style: DwText.dm(
@@ -231,45 +225,72 @@ class DailyWarHistoryScreen extends HookConsumerWidget {
   }
 }
 
-class _TabChip extends StatelessWidget {
-  const _TabChip({
+class _WarStatus {
+  const _WarStatus({
     required this.label,
-    required this.selected,
-    required this.onTap,
+    required this.color,
+    this.detail,
   });
 
   final String label;
-  final bool selected;
-  final VoidCallback onTap;
+  final Color color;
+  final String? detail;
+
+  Color get borderColor => color.withValues(alpha: 0.35);
+
+  static _WarStatus fromSubmission(DailyWarSubmission? sub) {
+    if (sub == null) {
+      return const _WarStatus(
+        label: 'Missed',
+        color: DwColors.onDarkMuted,
+      );
+    }
+    if (sub.hasOfficialRank) {
+      return _WarStatus(
+        label: 'Attempted',
+        color: DwColors.teal,
+        detail: 'AIR ${sub.air} · ${sub.score}',
+      );
+    }
+    if (sub.mode == 'unranked') {
+      return _WarStatus(
+        label: 'Practiced',
+        color: const Color(0xFFAEB8FF),
+        detail: '${sub.score}',
+      );
+    }
+    return const _WarStatus(
+      label: 'Submitted',
+      color: DwColors.gold,
+      detail: 'Waiting for rank',
+    );
+  }
+}
+
+class _StatusBadge extends StatelessWidget {
+  const _StatusBadge({required this.status});
+
+  final _WarStatus status;
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      color: Colors.transparent,
-      child: InkWell(
-        onTap: onTap,
-        borderRadius: BorderRadius.circular(100),
-        child: Ink(
-          padding: const EdgeInsets.symmetric(vertical: 10),
-          decoration: BoxDecoration(
-            color: selected ? DwColors.crimson : DwColors.cream,
-            borderRadius: BorderRadius.circular(100),
-            border: Border.all(
-              color: selected ? DwColors.crimson : const Color(0x1F000000),
-            ),
-          ),
-          child: Center(
-            child: Text(
-              label,
-              style: DwText.dm(
-                size: 12,
-                weight: FontWeight.w700,
-                color: selected ? DwColors.onDark : DwColors.ink,
-              ),
-            ),
-          ),
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+      decoration: BoxDecoration(
+        color: status.color.withValues(alpha: 0.16),
+        borderRadius: BorderRadius.circular(6),
+        border: Border.all(color: status.color.withValues(alpha: 0.4)),
+      ),
+      child: Text(
+        status.label.toUpperCase(),
+        style: DwText.dm(
+          size: 10,
+          weight: FontWeight.w800,
+          color: status.color,
+          letterSpacing: 0.7,
         ),
       ),
     );
   }
 }
+
