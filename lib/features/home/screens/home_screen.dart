@@ -248,7 +248,10 @@ class HomeScreen extends HookConsumerWidget {
                   ref.invalidate(homeStateProvider);
                   ref.invalidate(homeActivationProvider);
                   ref.invalidate(dailyDrillProvider);
-                  await refreshDailyWarHome(ref);
+                  final warOn = await ref.read(
+                    dailyWarRemoteEnabledProvider.future,
+                  );
+                  if (warOn) await refreshDailyWarHome(ref);
                 },
                 child: ListView(
                   controller: homeScrollController,
@@ -536,7 +539,10 @@ class HomeScreen extends HookConsumerWidget {
                             return const SizedBox.shrink();
                           }
                           return const Padding(
-                            padding: EdgeInsets.only(bottom: AppSpacing.md),
+                            padding: EdgeInsets.only(
+                              top: AppSpacing.sm,
+                              bottom: AppSpacing.md,
+                            ),
                             child: GetStartedCard(),
                           );
                         },

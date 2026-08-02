@@ -130,7 +130,9 @@ class DailyWarResultsScreen extends HookConsumerWidget {
 
           final uid = FirebaseAuth.instance.currentUser?.uid;
           if (uid != null) {
-            for (var i = 0; i < 15; i++) {
+            // Backoff: fewer reads while waiting for the rank job (was 15×2s).
+            var delaySecs = 2;
+            for (var i = 0; i < 8; i++) {
               if (cancelled) return;
               final snap =
                   await DailyWarFirestorePaths.submissionDoc(dateId, uid).get();
@@ -139,7 +141,8 @@ class DailyWarResultsScreen extends HookConsumerWidget {
                 submission.value = sub;
                 if (mode == 'unranked' || sub.hasOfficialRank) break;
               }
-              await Future<void>.delayed(const Duration(seconds: 2));
+              await Future<void>.delayed(Duration(seconds: delaySecs));
+              delaySecs = (delaySecs * 2).clamp(2, 16);
             }
           }
 

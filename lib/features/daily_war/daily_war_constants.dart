@@ -21,7 +21,8 @@ abstract final class DailyWarConstants {
   static const fcmKind = 'daily_war';
 
   /// How often clients poll RTDB live counts during lobby / live.
-  static const liveCountPollSeconds = 5;
+  /// Default RTDB lobby/writing poll interval (overridable via Remote Config).
+  static const liveCountPollSeconds = 15;
 
   static bool isDailyWarFeatureKey(String? key) =>
       key == analyticsLive || key == analyticsUnranked;

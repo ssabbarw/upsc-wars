@@ -507,6 +507,13 @@ Stream<DailyWarLiveCounts> dailyWarLiveCounts(Ref ref) async* {
     return;
   }
 
+  final countsUiOn =
+      ref.watch(dailyWarLobbyCountRemoteEnabledProvider).asData?.value ?? true;
+  if (!countsUiOn) {
+    yield const DailyWarLiveCounts.empty();
+    return;
+  }
+
   final snap = ref.watch(dailyWarHomeSnapshotProvider);
   final pollSeconds =
       ref.watch(dailyWarLiveCountPollSecondsRemoteProvider).asData?.value ??

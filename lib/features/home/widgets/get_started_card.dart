@@ -111,7 +111,7 @@ class GetStartedCard extends HookConsumerWidget {
         onTap: () => unawaited(showGetStartedDiagnosticIntroSheet(context)),
         borderRadius: BorderRadius.circular(AppRadius.md),
         child: Ink(
-          padding: const EdgeInsets.fromLTRB(12, 10, 4, 10),
+          padding: const EdgeInsets.fromLTRB(14, 14, 6, 14),
           decoration: BoxDecoration(
             color: isDark
                 ? AppColors.primaryDeep.withValues(alpha: 0.18)

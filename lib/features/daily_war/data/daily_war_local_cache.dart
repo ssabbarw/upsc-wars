@@ -28,6 +28,9 @@ class DailyWarLocalCache {
 
   static const historyLimit = 60;
 
+  /// Skip the recent wars query if we refreshed within this window.
+  static const historyRefreshTtl = Duration(hours: 6);
+
   Map<String, dynamic> _readWarsRaw() {
     final raw = _prefs.getString(_warsKey);
     if (raw == null || raw.isEmpty) return {};
@@ -275,6 +278,20 @@ class DailyWarLocalCache {
     return out;
   }
 
+  int? _historyUpdatedAtMs() {
+    final raw = _prefs.getString(_historyMetaKey);
+    if (raw == null || raw.isEmpty) return null;
+    try {
+      final decoded = jsonDecode(raw);
+      if (decoded is Map) {
+        return (decoded['updated_at_ms'] as num?)?.toInt();
+      }
+    } on Object {
+      // ignore
+    }
+    return null;
+  }
+
   /// History with cache-first + selective network refresh.
   Future<DailyWarHistoryBundle> loadHistory({required String uid}) async {
     final cached = cachedWarsNewestFirst();
@@ -282,50 +299,56 @@ class DailyWarLocalCache {
       for (final w in cached) w.dateId: w,
     };
 
-    // Always pull a small newest page so brand-new wars appear without a full 60-read.
-    QuerySnapshot<Map<String, dynamic>>? recentSnap;
-    try {
-      recentSnap = await FirebaseFirestore.instance
-          .collection(DailyWarFirestorePaths.warsCollection)
-          .orderBy(FieldPath.documentId, descending: true)
-          .limit(recentRefreshDays + 2)
-          .get();
-    } on Object {
-      // Offline — serve cache only.
-      return _bundleFromMaps(byId, uid, limit: historyLimit);
-    }
+    final updatedAtMs = _historyUpdatedAtMs();
+    final fresh = updatedAtMs != null &&
+        byId.isNotEmpty &&
+        DateTime.now().millisecondsSinceEpoch - updatedAtMs <
+            historyRefreshTtl.inMilliseconds;
 
-    for (final d in recentSnap.docs) {
-      final doc = DailyWarDoc.fromMap(d.id, d.data());
-      byId[doc.dateId] = doc;
-      await putWar(doc);
-    }
-
-    // If cache is thin, do one fuller query once, then rely on disk.
-    if (byId.length < 20) {
+    if (!fresh) {
+      // Pull a small newest page so brand-new wars appear without a full 60-read.
       try {
-        final full = await FirebaseFirestore.instance
+        final recentSnap = await FirebaseFirestore.instance
             .collection(DailyWarFirestorePaths.warsCollection)
             .orderBy(FieldPath.documentId, descending: true)
-            .limit(historyLimit)
+            .limit(recentRefreshDays + 2)
             .get();
-        for (final d in full.docs) {
+        for (final d in recentSnap.docs) {
           final doc = DailyWarDoc.fromMap(d.id, d.data());
           byId[doc.dateId] = doc;
           await putWar(doc);
         }
       } on Object {
-        // keep partial
+        // Offline — serve cache only.
+        return _bundleFromMaps(byId, uid, limit: historyLimit);
       }
-    }
 
-    await _prefs.setString(
-      _historyMetaKey,
-      jsonEncode({
-        'updated_at_ms': DateTime.now().millisecondsSinceEpoch,
-        'count': byId.length,
-      }),
-    );
+      // If cache is thin, do one fuller query once, then rely on disk.
+      if (byId.length < 20) {
+        try {
+          final full = await FirebaseFirestore.instance
+              .collection(DailyWarFirestorePaths.warsCollection)
+              .orderBy(FieldPath.documentId, descending: true)
+              .limit(historyLimit)
+              .get();
+          for (final d in full.docs) {
+            final doc = DailyWarDoc.fromMap(d.id, d.data());
+            byId[doc.dateId] = doc;
+            await putWar(doc);
+          }
+        } on Object {
+          // keep partial
+        }
+      }
+
+      await _prefs.setString(
+        _historyMetaKey,
+        jsonEncode({
+          'updated_at_ms': DateTime.now().millisecondsSinceEpoch,
+          'count': byId.length,
+        }),
+      );
+    }
 
     return _bundleFromMaps(byId, uid, limit: historyLimit);
   }

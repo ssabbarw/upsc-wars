@@ -11,7 +11,6 @@ import '../../../core/analytics/analytics_events.dart';
 import '../../../core/providers/kill_switch_provider.dart';
 import '../../../core/providers/prefs_provider.dart';
 import '../daily_war_constants.dart';
-import '../data/daily_war_cloud_service.dart';
 import '../domain/daily_war_copy.dart';
 import '../domain/daily_war_coverage.dart';
 import '../domain/daily_war_models.dart';
@@ -60,9 +59,6 @@ class _DailyWarHomeCardBody extends HookConsumerWidget {
     final snap = ref.watch(dailyWarHomeSnapshotProvider);
     final todayDocAsync = ref.watch(dailyWarTodayDocProvider);
     final yesterday = ref.watch(dailyWarYesterdaySnapshotProvider);
-    final liveCounts =
-        ref.watch(dailyWarLiveCountsProvider).asData?.value ??
-        const DailyWarLiveCounts.empty();
     final countEnabled =
         ref.watch(dailyWarLobbyCountRemoteEnabledProvider).asData?.value ??
         true;
@@ -70,18 +66,36 @@ class _DailyWarHomeCardBody extends HookConsumerWidget {
         ref.watch(dailyWarMinVisibleLobbyCountRemoteProvider).asData?.value ??
         DailyWarSchedule.minVisibleParticipantCount;
 
-    // Count this device in the lobby once per war day (idempotent server-side).
-    final joinedLobbyDate = useRef<String?>(null);
+    final prefs = ref.watch(prefsServiceProvider).asData?.value;
+    final storedCollapse = prefs?.dailyWarHomeCollapsedOrNull;
+    final collapsed = useState<bool?>(null);
+    // Sticky: once set (user or first Sunday seed), never auto-flip.
+    final isCollapsed = collapsed.value ?? storedCollapse ?? false;
+    final isRest = snap.phase == DailyWarPhase.restDay;
+
+    void setCollapsed(bool value) {
+      collapsed.value = value;
+      prefs?.dailyWarHomeCollapsed = value;
+    }
+
     useEffect(() {
-      final phase = snap.phase;
-      if (phase != DailyWarPhase.lobby && phase != DailyWarPhase.liveJoinable) {
-        return null;
-      }
-      if (joinedLobbyDate.value == snap.dateId) return null;
-      joinedLobbyDate.value = snap.dateId;
-      unawaited(const DailyWarCloudService().joinLobby(dateId: snap.dateId));
+      if (prefs == null || storedCollapse != null) return null;
+      // First Sunday with no preference: start collapsed (no history fetch needed).
+      if (isRest) setCollapsed(true);
       return null;
-    }, [snap.dateId, snap.phase]);
+    }, [prefs == null, storedCollapse, isRest]);
+
+    // Lobby presence is counted when the user opens the lobby screen — not from
+    // home (collapsed or expanded). Avoids a callable+tx per DAU on home.
+
+    // Heavy Firebase traffic only when expanded.
+    final liveCounts = (!isCollapsed && countEnabled)
+        ? (ref.watch(dailyWarLiveCountsProvider).asData?.value ??
+            const DailyWarLiveCounts.empty())
+        : const DailyWarLiveCounts.empty();
+    final historyBundle = !isCollapsed
+        ? ref.watch(dailyWarHistoryBundleProvider).asData?.value
+        : null;
 
     final offset = ref.watch(serverTimeOffsetMsProvider).asData?.value ?? 0;
     final utc = DateTime.fromMillisecondsSinceEpoch(
@@ -140,8 +154,6 @@ class _DailyWarHomeCardBody extends HookConsumerWidget {
         snap.phase != DailyWarPhase.liveLocked &&
         snap.phase != DailyWarPhase.restDay;
 
-    final historyBundle =
-        ref.watch(dailyWarHistoryBundleProvider).asData?.value;
     final historyWars = historyBundle?.wars ?? const <DailyWarDoc>[];
     final coverage = DailyWarCoverage.compute(
       historyWars: historyWars,
@@ -149,9 +161,8 @@ class _DailyWarHomeCardBody extends HookConsumerWidget {
       tonightDoc: doc,
     );
 
-    final isRest = snap.phase == DailyWarPhase.restDay;
     DailyWarWeekSummary? sundaySummary;
-    if (isRest) {
+    if (!isCollapsed && isRest) {
       final restCoverage = DailyWarCoverage.compute(
         historyWars: historyWars,
         tonightTopics: const [],
@@ -163,28 +174,6 @@ class _DailyWarHomeCardBody extends HookConsumerWidget {
         syllabusTopicsCovered: restCoverage.covered,
       );
     }
-
-    final prefs = ref.watch(prefsServiceProvider).asData?.value;
-    final storedCollapse = prefs?.dailyWarHomeCollapsedOrNull;
-    final collapsed = useState<bool?>(null);
-    // Sticky: once set (user or first quiet-Sunday seed), never auto-flip.
-    // Only [setCollapsed] expands/collapses after that.
-    final isCollapsed = collapsed.value ?? storedCollapse ?? false;
-
-    void setCollapsed(bool value) {
-      collapsed.value = value;
-      prefs?.dailyWarHomeCollapsed = value;
-    }
-
-    useEffect(() {
-      if (prefs == null || storedCollapse != null) return null;
-      // First quiet Sunday: start collapsed and persist so Mon+ stay collapsed
-      // until the user expands.
-      if (isRest && (sundaySummary?.attemptedNone ?? true)) {
-        setCollapsed(true);
-      }
-      return null;
-    }, [prefs == null, storedCollapse, isRest, sundaySummary?.attemptedNone]);
 
     final eyebrow = _collapsedEyebrow(
       phase: snap.phase,
@@ -201,7 +190,7 @@ class _DailyWarHomeCardBody extends HookConsumerWidget {
     );
 
     return Padding(
-      padding: const EdgeInsets.only(bottom: 0),
+      padding: const EdgeInsets.only(bottom: 12),
       child: Material(
         color: Colors.transparent,
         child: InkWell(
@@ -231,7 +220,7 @@ class _DailyWarHomeCardBody extends HookConsumerWidget {
               ),
             ),
             child: Padding(
-              padding: EdgeInsets.fromLTRB(16, 14, 16, isCollapsed ? 14 : 16),
+              padding: EdgeInsets.fromLTRB(16, 16, 12, isCollapsed ? 16 : 16),
               child: isCollapsed
                   ? _CollapsedWarHeader(
                       eyebrow: eyebrow,

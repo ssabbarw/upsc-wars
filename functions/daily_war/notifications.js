@@ -247,61 +247,77 @@ async function notifyResultsReady(dateId, rankedRows) {
       return { ...topicResult, personalSent, personalSkipped };
     }
 
-    const messages = [];
+    // Batch Auth + Firestore lookups (was N× getUser + N× users/{email}.get).
+    const byUid = new Map();
     for (const row of rankedRows) {
+      if (row && row.uid) byUid.set(String(row.uid), row);
+    }
+    const uids = [...byUid.keys()];
+    const emailByUid = new Map();
+    for (let i = 0; i < uids.length; i += 100) {
+      const chunk = uids.slice(i, i + 100);
       try {
-        const user = await admin.auth().getUser(row.uid);
-        const email = (user.email || "").toLowerCase().trim();
-        if (!email) {
-          personalSkipped++;
-          continue;
+        const res = await admin.auth().getUsers(chunk.map((uid) => ({ uid })));
+        for (const u of res.users || []) {
+          const email = (u.email || "").toLowerCase().trim();
+          if (email) emailByUid.set(u.uid, email);
         }
-        if (rollout.adminsOnly && !isDailyWarAdminEmail(email)) {
-          personalSkipped++;
-          continue;
-        }
-        const userSnap = await admin
-          .firestore()
-          .collection("users")
-          .doc(email)
-          .get();
-        const token =
-          (userSnap.data() &&
-            (userSnap.data().fcm_token || userSnap.data().fcmToken)) ||
-          null;
-        if (!token || typeof token !== "string") {
-          personalSkipped++;
-          continue;
-        }
-        const air = row.air;
-        const score = row.score;
-        const pct = row.percentile;
-        messages.push({
-          token,
-          notification: {
-            title: `Your All-India Rank is ${air}`,
-            body:
-              pct != null
-                ? `AIR ${air} of ${n} · ${Number(score).toFixed(2)} · percentile ${pct}. Review before you sleep.`
-                : `AIR ${air} of ${n} · score ${Number(score).toFixed(2)}. Review before you sleep.`,
-          },
-          data: {
-            kind: "daily_war",
-            phase: "results_personal",
-            dateId: String(dateId),
-            air: String(air),
-            notification_id: `daily_war_air_${dateId}_${row.uid}`,
-          },
-          android: { priority: "high" },
-          apns: {
-            payload: { aps: { sound: "default" } },
-          },
-        });
       } catch (e) {
-        personalSkipped++;
-        console.warn("notifyResultsReady: skip uid", row.uid, e.message || e);
+        console.warn("notifyResultsReady: getUsers chunk failed", e.message || e);
       }
     }
+
+    const db = admin.firestore();
+    const emailEntries = [...emailByUid.entries()];
+    const tokenByUid = new Map();
+    for (let i = 0; i < emailEntries.length; i += 100) {
+      const chunk = emailEntries.slice(i, i + 100);
+      const refs = chunk.map(([, email]) => db.collection("users").doc(email));
+      try {
+        const snaps = await db.getAll(...refs);
+        for (let j = 0; j < snaps.length; j++) {
+          const [uid, email] = chunk[j];
+          if (rollout.adminsOnly && !isDailyWarAdminEmail(email)) continue;
+          const data = snaps[j].exists ? snaps[j].data() : null;
+          const token = (data && (data.fcm_token || data.fcmToken)) || null;
+          if (!token || typeof token !== "string") continue;
+          tokenByUid.set(uid, token);
+        }
+      } catch (e) {
+        console.warn("notifyResultsReady: users getAll failed", e.message || e);
+      }
+    }
+
+    const messages = [];
+    for (const [uid, row] of byUid) {
+      const token = tokenByUid.get(uid);
+      if (!token) continue;
+      const air = row.air;
+      const score = row.score;
+      const pct = row.percentile;
+      messages.push({
+        token,
+        notification: {
+          title: `Your All-India Rank is ${air}`,
+          body:
+            pct != null
+              ? `AIR ${air} of ${n} · ${Number(score).toFixed(2)} · percentile ${pct}. Review before you sleep.`
+              : `AIR ${air} of ${n} · score ${Number(score).toFixed(2)}. Review before you sleep.`,
+        },
+        data: {
+          kind: "daily_war",
+          phase: "results_personal",
+          dateId: String(dateId),
+          air: String(air),
+          notification_id: `daily_war_air_${dateId}_${uid}`,
+        },
+        android: { priority: "high" },
+        apns: {
+          payload: { aps: { sound: "default" } },
+        },
+      });
+    }
+    personalSkipped = Math.max(0, n - messages.length);
 
     for (let i = 0; i < messages.length; i += 500) {
       const chunk = messages.slice(i, i + 500);

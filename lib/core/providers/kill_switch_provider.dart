@@ -113,7 +113,7 @@ Future<KillSwitchSnapshot> killSwitch(Ref ref) async {
       dailyWarAdminsOnlyRemoteConfigKey: true,
       dailyWarLobbyCountEnabledRemoteConfigKey: true,
       dailyWarMinVisibleLobbyCountRemoteConfigKey: 200,
-      dailyWarLiveCountPollSecondsRemoteConfigKey: 5,
+      dailyWarLiveCountPollSecondsRemoteConfigKey: 15,
       dailyCaCalendarMinDateRemoteConfigKey: '2026-06-05',
       qotdMaxPostsPerDayRemoteConfigKey: 3,
       factOrBluffSecondsRemoteConfigKey: 10,
@@ -258,10 +258,10 @@ Future<int> dailyWarMinVisibleLobbyCountRemote(Ref ref) async {
 
 /// How often clients poll RTDB live counts during lobby / live (seconds).
 ///
-/// Defaults to 5. Clamped to 3–60.
+/// Defaults to 15. Clamped to 3–60.
 @Riverpod(keepAlive: true)
 Future<int> dailyWarLiveCountPollSecondsRemote(Ref ref) async {
-  const fallback = 5;
+  const fallback = 15;
   if (kIsWeb) return fallback;
   await ref.watch(killSwitchProvider.future);
   try {
