@@ -5,8 +5,10 @@
 //
 // ## Platform & analytics console (not emitted from this app)
 // * **Install counts, DAU / WAU / MAU, stickiness, retention (D1/D7/…), session
-//   time, user paths** — use **Google Analytics 4** + (optional) **BigQuery**
-//   export; `first_open` and engagement are often automatic.
+//   time, user paths** — use **Google Analytics 4** Active users + (optional)
+//   **BigQuery** export; `first_open` and engagement are often automatic.
+//   Custom app opens: [AppOpenedEvent] (`app_opened`). Daily War attempters:
+//   [DailyWarAttemptedEvent] (`daily_war_attempted`).
 // * **Play Store install conversion, organic vs paid source, CPI, campaign
 //   UTM** — use **Play Console** + **Google Play Install Referrer** (or
 //   Campaign URL on first launch) when you run ads; this codebase does not
@@ -827,4 +829,65 @@ final class SessionInsightCaseShownEvent extends AnalyticsEvent {
   final String caseName;
   final int sureWrong;
   final int eduWrong;
+}
+
+// ── Daily War ────────────────────────────────────────────────────────────────
+
+/// **Daily War home card was shown** (feature enabled + card mounted).
+///
+/// Pair with [AppOpenedEvent] / GA4 Active users for “app users who saw War”,
+/// and with [DailyWarAttemptedEvent] for saw → attempt conversion.
+///
+/// **GA4:** `daily_war_home_shown` with `date_id`, `phase`, `is_grand` (0/1).
+final class DailyWarHomeShownEvent extends AnalyticsEvent {
+  const DailyWarHomeShownEvent({
+    required this.dateId,
+    required this.phase,
+    required this.isGrand,
+  });
+
+  final String dateId;
+  final String phase;
+  final bool isGrand;
+}
+
+/// **User started a Daily War paper** (live lobby join or unranked attempt).
+///
+/// Use unique users on this event for “how many are attempting Daily War”.
+/// App-wide users remain [AppOpenedEvent] / GA4 Active users.
+///
+/// **GA4:** `daily_war_attempted` with `date_id`, `mode` (`live`|`unranked`),
+/// `is_grand` (0/1). Also sets user property `daily_war_player` = `yes`.
+final class DailyWarAttemptedEvent extends AnalyticsEvent {
+  const DailyWarAttemptedEvent({
+    required this.dateId,
+    required this.mode,
+    required this.isGrand,
+  });
+
+  final String dateId;
+
+  /// `live` or `unranked`.
+  final String mode;
+  final bool isGrand;
+}
+
+/// **Daily War answers were accepted by Cloud Functions** after a paper.
+///
+/// Pair with [DailyWarAttemptedEvent] for start → submit conversion.
+///
+/// **GA4:** `daily_war_submitted` with `date_id`, `mode` (`live`|`unranked`),
+/// `is_grand` (0/1), `score_hundredths` (score × 100, int).
+final class DailyWarSubmittedEvent extends AnalyticsEvent {
+  const DailyWarSubmittedEvent({
+    required this.dateId,
+    required this.mode,
+    required this.isGrand,
+    required this.score,
+  });
+
+  final String dateId;
+  final String mode;
+  final bool isGrand;
+  final double score;
 }

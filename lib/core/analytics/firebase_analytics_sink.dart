@@ -48,6 +48,13 @@ import 'analytics_sink.dart';
 /// * `game_screen_opened` — `game_name`
 /// * `game_started` — `game_name`, `total_rounds?`
 /// * `game_round_finished` — `game_name`, `correct_count`, `total_rounds`
+/// * `daily_war_home_shown` — `date_id`, `phase`, `is_grand`
+/// * `daily_war_attempted` — `date_id`, `mode`, `is_grand`; sets user
+///   property `daily_war_player` = `yes`
+/// * `daily_war_submitted` — `date_id`, `mode`, `is_grand`, `score_hundredths`
+///
+/// **App users vs Daily War attempters:** count unique users on `app_opened`
+/// (or GA4 Active users) vs unique users on `daily_war_attempted`.
 ///
 /// All events also send `user_id` when the user is signed in to Firebase Auth.
 class FirebaseAnalyticsSink implements AnalyticsSink {
@@ -415,6 +422,34 @@ class FirebaseAnalyticsSink implements AnalyticsSink {
           'case': caseName,
           'sure_wrong': sureWrong,
           'edu_wrong': eduWrong,
+        });
+      case DailyWarHomeShownEvent(:final dateId, :final phase, :final isGrand):
+        await _log('daily_war_home_shown', {
+          'date_id': dateId,
+          'phase': phase,
+          'is_grand': isGrand ? 1 : 0,
+        });
+      case DailyWarAttemptedEvent(:final dateId, :final mode, :final isGrand):
+        await _analytics.setUserProperty(
+          name: 'daily_war_player',
+          value: 'yes',
+        );
+        await _log('daily_war_attempted', {
+          'date_id': dateId,
+          'mode': mode,
+          'is_grand': isGrand ? 1 : 0,
+        });
+      case DailyWarSubmittedEvent(
+          :final dateId,
+          :final mode,
+          :final isGrand,
+          :final score,
+        ):
+        await _log('daily_war_submitted', {
+          'date_id': dateId,
+          'mode': mode,
+          'is_grand': isGrand ? 1 : 0,
+          'score_hundredths': (score * 100).round(),
         });
     }
   }

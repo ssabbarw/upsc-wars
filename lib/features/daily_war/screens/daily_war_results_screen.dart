@@ -6,6 +6,8 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../core/analytics/analytics.dart';
+import '../../../core/analytics/analytics_events.dart';
 import '../../../core/providers/catalog_providers.dart';
 import '../../../core/providers/kill_switch_provider.dart';
 import '../../../core/providers/prefs_provider.dart';
@@ -15,6 +17,7 @@ import '../data/daily_war_firestore_paths.dart';
 import '../domain/daily_war_badges.dart';
 import '../domain/daily_war_copy.dart';
 import '../domain/daily_war_models.dart';
+import '../domain/daily_war_schedule.dart';
 import '../domain/daily_war_streak.dart';
 import '../providers/daily_war_providers.dart';
 import '../theme/daily_war_theme.dart';
@@ -100,6 +103,19 @@ class DailyWarResultsScreen extends HookConsumerWidget {
             return;
           }
           score.value = result.score;
+
+          final warDate = DailyWarSchedule.parseIsoDate(dateId);
+          unawaited(
+            Analytics.track(
+              ref,
+              DailyWarSubmittedEvent(
+                dateId: dateId,
+                mode: mode,
+                isGrand: DailyWarSchedule.isGrandWarDay(warDate),
+                score: result.score ?? 0,
+              ),
+            ),
+          );
 
           if (mode == 'live') {
             final prefs = await ref.read(prefsServiceProvider.future);

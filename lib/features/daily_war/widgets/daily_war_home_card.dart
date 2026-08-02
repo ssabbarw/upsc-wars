@@ -6,6 +6,8 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 
+import '../../../core/analytics/analytics.dart';
+import '../../../core/analytics/analytics_events.dart';
 import '../../../core/providers/kill_switch_provider.dart';
 import '../../../core/providers/prefs_provider.dart';
 import '../daily_war_constants.dart';
@@ -102,6 +104,23 @@ class _DailyWarHomeCardBody extends HookConsumerWidget {
     final topics = doc?.topics ?? const <DailyWarTopicRef>[];
     final topicsLoadFailed = todayDocAsync.hasError && topics.isEmpty;
 
+    final homeShownDate = useRef<String?>(null);
+    useEffect(() {
+      if (homeShownDate.value == snap.dateId) return null;
+      homeShownDate.value = snap.dateId;
+      unawaited(
+        Analytics.track(
+          ref,
+          DailyWarHomeShownEvent(
+            dateId: snap.dateId,
+            phase: snap.phase.name,
+            isGrand: isGrand,
+          ),
+        ),
+      );
+      return null;
+    }, [snap.dateId, snap.phase, isGrand]);
+
     final lobbyShown = DailyWarCopy.formatVisibleCount(
       raw: liveCounts.lobby > 0 ? liveCounts.lobby : null,
       enabled: countEnabled,
@@ -147,15 +166,25 @@ class _DailyWarHomeCardBody extends HookConsumerWidget {
 
     final prefs = ref.watch(prefsServiceProvider).asData?.value;
     final storedCollapse = prefs?.dailyWarHomeCollapsedOrNull;
-    final smartDefault =
-        isRest && (sundaySummary?.attemptedNone ?? true);
     final collapsed = useState<bool?>(null);
-    final isCollapsed = collapsed.value ?? storedCollapse ?? smartDefault;
+    // Sticky: once set (user or first quiet-Sunday seed), never auto-flip.
+    // Only [setCollapsed] expands/collapses after that.
+    final isCollapsed = collapsed.value ?? storedCollapse ?? false;
 
     void setCollapsed(bool value) {
       collapsed.value = value;
       prefs?.dailyWarHomeCollapsed = value;
     }
+
+    useEffect(() {
+      if (prefs == null || storedCollapse != null) return null;
+      // First quiet Sunday: start collapsed and persist so Mon+ stay collapsed
+      // until the user expands.
+      if (isRest && (sundaySummary?.attemptedNone ?? true)) {
+        setCollapsed(true);
+      }
+      return null;
+    }, [prefs == null, storedCollapse, isRest, sundaySummary?.attemptedNone]);
 
     final eyebrow = _collapsedEyebrow(
       phase: snap.phase,
@@ -310,7 +339,7 @@ String _collapsedSubtitle({
     case DailyWarPhase.resultsReady:
       final sub = snap.submission;
       if (sub?.hasOfficialRank == true) {
-        final air = sub!.allIndiaRank;
+        final air = sub!.air;
         return air != null ? 'AIR #$air · tap for details' : 'Results ready';
       }
       return 'You sat out · see who fought';
@@ -1045,11 +1074,13 @@ class _ResultPlayed extends StatelessWidget {
     required this.snap,
     required this.warDate,
     required this.writersShown,
+    required this.onCollapse,
   });
 
   final DailyWarHomeSnapshot snap;
   final DateTime warDate;
   final String? writersShown;
+  final VoidCallback onCollapse;
 
   @override
   Widget build(BuildContext context) {
@@ -1060,7 +1091,10 @@ class _ResultPlayed extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        _StatusRow(left: 'TONIGHT\'S RESULT · $dateLabel'),
+        _StatusRow(
+          left: 'TONIGHT\'S RESULT · $dateLabel',
+          onCollapse: onCollapse,
+        ),
         const SizedBox(height: 12),
         Text('ALL-INDIA RANK', style: DwText.meta()),
         const SizedBox(height: 2),
@@ -1116,10 +1150,15 @@ class _StatChip extends StatelessWidget {
 // ─── H6 Result sat out ───────────────────────────────────────────────────────
 
 class _ResultSatOut extends StatelessWidget {
-  const _ResultSatOut({required this.snap, required this.writersShown});
+  const _ResultSatOut({
+    required this.snap,
+    required this.writersShown,
+    required this.onCollapse,
+  });
 
   final DailyWarHomeSnapshot snap;
   final String? writersShown;
+  final VoidCallback onCollapse;
 
   @override
   Widget build(BuildContext context) {
@@ -1128,7 +1167,10 @@ class _ResultSatOut extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const _StatusRow(left: 'TONIGHT\'S WAR IS OVER'),
+        _StatusRow(
+          left: 'TONIGHT\'S WAR IS OVER',
+          onCollapse: onCollapse,
+        ),
         const SizedBox(height: 12),
         if (writersShown != null)
           Text(

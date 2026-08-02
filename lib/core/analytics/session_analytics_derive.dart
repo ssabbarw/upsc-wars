@@ -37,7 +37,24 @@ SessionAnalyticsLabels deriveSessionAnalyticsLabels({
       source: 'static_mcq',
     );
   }
+  if (analyticsFeatureKey == 'daily_war') {
+    return const SessionAnalyticsLabels(
+      featureName: 'daily_war',
+      source: 'daily_war',
+    );
+  }
+  if (analyticsFeatureKey == 'daily_war_unranked') {
+    return const SessionAnalyticsLabels(
+      featureName: 'daily_war_unranked',
+      source: 'daily_war',
+    );
+  }
   switch (subject) {
+    case 'daily_war':
+      return const SessionAnalyticsLabels(
+        featureName: 'daily_war',
+        source: 'daily_war',
+      );
     case 'revision':
     case 'revision_quick':
       return const SessionAnalyticsLabels(

@@ -5,6 +5,8 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../core/analytics/analytics.dart';
+import '../../../core/analytics/analytics_events.dart';
 import '../../../core/domain/entities/session_config.dart';
 import '../../../core/providers/catalog_providers.dart';
 import '../../../core/providers/kill_switch_provider.dart';
@@ -167,6 +169,16 @@ class _DailyWarLobbyBody extends HookConsumerWidget {
             analyticsFeatureKey: unranked
                 ? DailyWarConstants.analyticsUnranked
                 : DailyWarConstants.analyticsLive,
+          ),
+        );
+        unawaited(
+          Analytics.track(
+            ref,
+            DailyWarAttemptedEvent(
+              dateId: snap.dateId,
+              mode: unranked ? 'unranked' : 'live',
+              isGrand: isGrand,
+            ),
           ),
         );
         if (!context.mounted) return;
