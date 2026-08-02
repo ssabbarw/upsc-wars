@@ -7,6 +7,7 @@
  *   daily_wars/{dateId}/submissions/{uid}
  *   daily_wars/{dateId}/meta/leaderboard
  *   daily_war_state/curriculum
+ *   daily_war_profiles/{uid} — lifetime badge_counts
  */
 
 const { onSchedule } = require("firebase-functions/v2/scheduler");
@@ -18,6 +19,7 @@ const path = require("path");
 const IST_OFFSET_MS = (5 * 60 + 30) * 60 * 1000;
 const WARS = "daily_wars";
 const STATE = "daily_war_state";
+const PROFILES = "daily_war_profiles";
 const CURRICULUM_DOC = "curriculum";
 /** RTDB path for cheap lobby / writing social counts (polled by clients). */
 const RTDB_COUNTS = "daily_war_counts";
@@ -424,6 +426,90 @@ async function previousWarDateId(dateId) {
   return null;
 }
 
+/** Mon–Sat ISO dates for the IST week containing [dateId]. */
+function warWeekDateIds(dateId) {
+  const [y, m, d] = dateId.split("-").map(Number);
+  const utcNoon = Date.parse(
+    `${y}-${String(m).padStart(2, "0")}-${String(d).padStart(2, "0")}T06:30:00.000Z`,
+  );
+  const parts = istParts(new Date(utcNoon));
+  // JS: Sun=0 … Sat=6. Monday-based offset for IST calendar day.
+  const dow = new Date(Date.UTC(parts.year, parts.month - 1, parts.day)).getUTCDay();
+  const fromMonday = dow === 0 ? 6 : dow - 1;
+  const mondayUtc = Date.UTC(parts.year, parts.month - 1, parts.day - fromMonday);
+  const out = [];
+  for (let i = 0; i < 6; i++) {
+    const dt = new Date(mondayUtc + i * 86400000);
+    out.push(
+      `${dt.getUTCFullYear()}-${String(dt.getUTCMonth() + 1).padStart(2, "0")}-${String(dt.getUTCDate()).padStart(2, "0")}`,
+    );
+  }
+  return out;
+}
+
+async function bumpBadgeCounts(uid, badgeIds) {
+  if (!uid || !badgeIds || !badgeIds.length) return;
+  const ref = db().collection(PROFILES).doc(uid);
+  const patch = {
+    updated_at: admin.firestore.FieldValue.serverTimestamp(),
+  };
+  for (const id of badgeIds) {
+    if (!id || typeof id !== "string") continue;
+    patch[`badge_counts.${id}`] = admin.firestore.FieldValue.increment(1);
+  }
+  await ref.set(patch, { merge: true });
+}
+
+/**
+ * Effort awards at submit time.
+ * Week = Mon–Sat; attempted = correct + wrong (blanks don't count).
+ */
+async function computeEffortBadges(uid, dateId, breakdown) {
+  const tonightAttempted = (breakdown.correct || 0) + (breakdown.wrong || 0);
+  const weekIds = warWeekDateIds(dateId);
+  const idx = weekIds.indexOf(dateId);
+  const priorIds = idx > 0 ? weekIds.slice(0, idx) : [];
+
+  let priorWeekAttempted = 0;
+  let priorWeekNights = 0;
+  await Promise.all(
+    priorIds.map(async (id) => {
+      const snap = await db()
+        .collection(WARS)
+        .doc(id)
+        .collection("submissions")
+        .doc(uid)
+        .get();
+      if (!snap.exists) return;
+      priorWeekNights += 1;
+      const d = snap.data() || {};
+      priorWeekAttempted += (d.correct || 0) + (d.wrong || 0);
+    }),
+  );
+
+  let missedPrevious = false;
+  const prevId = await previousWarDateId(dateId);
+  if (prevId) {
+    const prevSnap = await db()
+      .collection(WARS)
+      .doc(prevId)
+      .collection("submissions")
+      .doc(uid)
+      .get();
+    missedPrevious = !prevSnap.exists;
+  }
+
+  const badges = [];
+  if (tonightAttempted >= 1) badges.push("effort_finisher");
+  if (priorWeekNights === 0) badges.push("effort_first_war");
+  if (missedPrevious) badges.push("effort_back_in");
+  if (priorWeekNights + 1 >= 6) badges.push("effort_full_week");
+  const weekQ = priorWeekAttempted + tonightAttempted;
+  if (weekQ >= 50) badges.push("effort_half_century");
+  if (weekQ >= 100) badges.push("effort_century");
+  return badges;
+}
+
 async function rankWar(dateId) {
   const warRef = db().collection(WARS).doc(dateId);
   const warSnap = await warRef.get();
@@ -452,6 +538,7 @@ async function rankWar(dateId) {
       streak_days: d.streak_days || 0,
       tier_id: d.tier_id || tierIdForDays(d.streak_days || 0),
       submitted_at_ms: d.submitted_at_ms || 0,
+      prior_badges: Array.isArray(d.badges) ? d.badges : [],
       ref: doc.ref,
     });
   });
@@ -495,17 +582,22 @@ async function rankWar(dateId) {
   const n = rows.length;
   const batch = db().batch();
   const top = [];
+  const newlyByUid = new Map();
   rows.forEach((row, i) => {
     const air = i + 1;
     const percentile = n <= 1 ? 100 : Number((((n - air) / (n - 1)) * 100).toFixed(2));
     row.air = air;
     row.percentile = percentile;
-    const badges = nightAwardsForRow(row, {
+    const priorBadges = Array.isArray(row.prior_badges) ? row.prior_badges : [];
+    const night = nightAwardsForRow(row, {
       questionCount,
       warStartMs,
       fastestUid,
       climberUids,
     });
+    const badges = [...new Set([...priorBadges, ...night])];
+    const newly = night.filter((b) => !priorBadges.includes(b));
+    if (newly.length) newlyByUid.set(row.uid, newly);
     batch.set(
       row.ref,
       {
@@ -553,6 +645,12 @@ async function rankWar(dateId) {
     { merge: true },
   );
   await batch.commit();
+
+  // Lifetime tallies for newly earned night awards (effort already counted at submit).
+  await Promise.all(
+    [...newlyByUid.entries()].map(([uid, ids]) => bumpBadgeCounts(uid, ids)),
+  );
+
   return {
     ok: true,
     dateId,
@@ -785,6 +883,7 @@ exports.submitDailyWar = onCall(
     }
     const correctByUuid = answersSnap.data().answers || {};
     const breakdown = scoreAnswers(answers, correctByUuid);
+    const effortBadges = await computeEffortBadges(uid, dateId, breakdown);
 
     await subRef.set(
       {
@@ -798,11 +897,18 @@ exports.submitDailyWar = onCall(
         display_name: displayName,
         streak_days: warStreakDays,
         tier_id: tierId,
+        badges: effortBadges,
         submitted_at: admin.firestore.FieldValue.serverTimestamp(),
         submitted_at_ms: now,
       },
       { merge: false },
     );
+
+    try {
+      await bumpBadgeCounts(uid, effortBadges);
+    } catch (e) {
+      console.warn("bumpBadgeCounts failed", e);
+    }
 
     if (mode === "live") {
       // RTDB only — do not increment Firestore war doc (home listeners).
@@ -820,6 +926,7 @@ exports.submitDailyWar = onCall(
       correct: breakdown.correct,
       wrong: breakdown.wrong,
       unanswered: breakdown.unanswered,
+      badges: effortBadges,
     };
   },
 );

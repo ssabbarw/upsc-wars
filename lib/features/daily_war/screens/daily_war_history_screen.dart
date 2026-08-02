@@ -31,6 +31,19 @@ class DailyWarHistoryScreen extends HookConsumerWidget {
             color: Theme.of(context).colorScheme.onSurface,
           ),
         ),
+        actions: [
+          TextButton(
+            onPressed: () => context.push(dailyWarBadgesRoute()),
+            child: Text(
+              'Badges',
+              style: DwText.dm(
+                size: 13,
+                weight: FontWeight.w700,
+                color: DwColors.teal,
+              ),
+            ),
+          ),
+        ],
       ),
       body: Column(
         children: [

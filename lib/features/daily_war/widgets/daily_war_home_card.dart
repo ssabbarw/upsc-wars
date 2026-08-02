@@ -69,31 +69,33 @@ class _DailyWarHomeCardBody extends HookConsumerWidget {
     final prefs = ref.watch(prefsServiceProvider).asData?.value;
     final storedCollapse = prefs?.dailyWarHomeCollapsedOrNull;
     final collapsed = useState<bool?>(null);
-    // Sticky: once set (user or first Sunday seed), never auto-flip.
-    final isCollapsed = collapsed.value ?? storedCollapse ?? false;
     final isRest = snap.phase == DailyWarPhase.restDay;
+    // Sunday always starts collapsed; weekday sticky prefs don't open it.
+    final isCollapsed = isRest
+        ? (collapsed.value ?? true)
+        : (collapsed.value ?? storedCollapse ?? false);
 
     void setCollapsed(bool value) {
       collapsed.value = value;
-      prefs?.dailyWarHomeCollapsed = value;
+      // Don't let a Sunday expand stick into Mon–Sat.
+      if (!isRest) prefs?.dailyWarHomeCollapsed = value;
     }
 
     useEffect(() {
-      if (prefs == null || storedCollapse != null) return null;
-      // First Sunday with no preference: start collapsed (no history fetch needed).
-      if (isRest) setCollapsed(true);
+      if (isRest) collapsed.value = true;
       return null;
-    }, [prefs == null, storedCollapse, isRest]);
+    }, [isRest]);
 
     // Lobby presence is counted when the user opens the lobby screen — not from
     // home (collapsed or expanded). Avoids a callable+tx per DAU on home.
 
-    // Heavy Firebase traffic only when expanded.
+    // RTDB counts only when expanded. History also when Sunday (week summary
+    // on the collapsed card).
     final liveCounts = (!isCollapsed && countEnabled)
         ? (ref.watch(dailyWarLiveCountsProvider).asData?.value ??
             const DailyWarLiveCounts.empty())
         : const DailyWarLiveCounts.empty();
-    final historyBundle = !isCollapsed
+    final historyBundle = (!isCollapsed || isRest)
         ? ref.watch(dailyWarHistoryBundleProvider).asData?.value
         : null;
 
@@ -162,7 +164,7 @@ class _DailyWarHomeCardBody extends HookConsumerWidget {
     );
 
     DailyWarWeekSummary? sundaySummary;
-    if (!isCollapsed && isRest) {
+    if (isRest) {
       final restCoverage = DailyWarCoverage.compute(
         historyWars: historyWars,
         tonightTopics: const [],
@@ -185,7 +187,6 @@ class _DailyWarHomeCardBody extends HookConsumerWidget {
       untilStart: untilStart,
       untilLateClose: untilLateClose,
       topics: topics,
-      sundaySummary: sundaySummary,
       writersShown: writersShown,
     );
 
@@ -222,17 +223,22 @@ class _DailyWarHomeCardBody extends HookConsumerWidget {
             child: Padding(
               padding: EdgeInsets.fromLTRB(16, 16, 12, isCollapsed ? 16 : 16),
               child: isCollapsed
-                  ? _CollapsedWarHeader(
-                      eyebrow: eyebrow,
-                      subtitle: collapsedLine,
-                      pulse: snap.phase == DailyWarPhase.lobby ||
-                          snap.phase == DailyWarPhase.liveJoinable ||
-                          snap.phase == DailyWarPhase.liveLocked ||
-                          snap.phase == DailyWarPhase.morning ||
-                          snap.phase == DailyWarPhase.countdown ||
-                          snap.phase == DailyWarPhase.preAnnounce,
-                      onExpand: () => setCollapsed(false),
-                    )
+                  ? (isRest && sundaySummary != null
+                      ? _CollapsedSundayWeek(
+                          summary: sundaySummary,
+                          onExpand: () => setCollapsed(false),
+                        )
+                      : _CollapsedWarHeader(
+                          eyebrow: eyebrow,
+                          subtitle: collapsedLine,
+                          pulse: snap.phase == DailyWarPhase.lobby ||
+                              snap.phase == DailyWarPhase.liveJoinable ||
+                              snap.phase == DailyWarPhase.liveLocked ||
+                              snap.phase == DailyWarPhase.morning ||
+                              snap.phase == DailyWarPhase.countdown ||
+                              snap.phase == DailyWarPhase.preAnnounce,
+                          onExpand: () => setCollapsed(false),
+                        ))
                   : Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
@@ -298,21 +304,11 @@ String _collapsedSubtitle({
   required Duration untilStart,
   required Duration untilLateClose,
   required List<DailyWarTopicRef> topics,
-  required DailyWarWeekSummary? sundaySummary,
   required String? writersShown,
 }) {
   switch (snap.phase) {
     case DailyWarPhase.restDay:
-      final s = sundaySummary;
-      if (s == null) return 'No War tonight · tap to expand';
-      if (s.attemptedNone) {
-        final n = s.missedTopics.length;
-        return n > 0
-            ? 'Quiet week · $n topics went by'
-            : 'Quiet week · rest today';
-      }
-      if (s.attemptedAll) return 'Week ${s.weekNumber} done · streak safe';
-      return '${s.attemptedNights}/${s.warNights} nights · tap for summary';
+      return 'Week summary';
     case DailyWarPhase.lobby:
       return 'Starts in ${DailyWarSchedule.formatCountdown(untilStart)}';
     case DailyWarPhase.liveJoinable:
@@ -329,9 +325,9 @@ String _collapsedSubtitle({
       final sub = snap.submission;
       if (sub?.hasOfficialRank == true) {
         final air = sub!.air;
-        return air != null ? 'AIR #$air · tap for details' : 'Results ready';
+        return air != null ? 'AIR #$air' : 'Results ready';
       }
-      return 'You sat out · see who fought';
+      return 'You sat out';
     case DailyWarPhase.countdown:
     case DailyWarPhase.preAnnounce:
     case DailyWarPhase.morning:
@@ -340,6 +336,194 @@ String _collapsedSubtitle({
           ? (isGrand ? 'Week revision' : 'Topics loading…')
           : topics.first.topic;
       return '$cd · $tip';
+  }
+}
+
+String _sundayWeekHeadline(DailyWarWeekSummary s) {
+  if (s.attemptedNone) {
+    final n = s.missedTopics.length;
+    return n > 0 ? '$n topics waited' : 'A quiet front';
+  }
+  if (s.attemptedAll) {
+    return s.playedGrand ? 'Full week · Grand included' : 'Clean sweep';
+  }
+  if (s.bestAir != null) {
+    return 'Best AIR #${s.bestAir}';
+  }
+  return '${s.attemptedNights} nights fought';
+}
+
+String _sundayWeekMeta(DailyWarWeekSummary s) {
+  if (s.attemptedNone) {
+    return '0/${s.warNights} nights · Monday opens fresh';
+  }
+  final parts = <String>[
+    '${s.attemptedNights}/${s.warNights} nights',
+  ];
+  if (s.accuracyPct != null) {
+    parts.add('${s.accuracyPct!.round()}%');
+  }
+  if (s.playedGrand) {
+    parts.add('Grand ✓');
+  } else if (s.attemptedPartial) {
+    parts.add('${s.missedTopics.length} topics open');
+  }
+  if (s.peakStreakDays > 0) {
+    parts.add('${s.peakStreakDays}-night streak');
+  }
+  return parts.join(' · ');
+}
+
+/// Collapsed Sunday — week orbit + one creative rollup (no “rest / tap” copy).
+class _CollapsedSundayWeek extends StatelessWidget {
+  const _CollapsedSundayWeek({
+    required this.summary,
+    required this.onExpand,
+  });
+
+  final DailyWarWeekSummary summary;
+  final VoidCallback onExpand;
+
+  @override
+  Widget build(BuildContext context) {
+    final warDays = summary.days.where((d) => !d.isRest).toList();
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Row(
+          children: [
+            Expanded(
+              child: Text(
+                'THIS WEEK IN DAILY WARS',
+                style: DwText.eyebrow(color: const Color(0x99C5CDFF)),
+              ),
+            ),
+            GestureDetector(
+              behavior: HitTestBehavior.opaque,
+              onTap: () => unawaited(showDailyWarHelpSheet(context)),
+              child: const Padding(
+                padding: EdgeInsets.all(4),
+                child: Icon(
+                  Icons.help_outline_rounded,
+                  size: 16,
+                  color: DwColors.onDarkMuted,
+                ),
+              ),
+            ),
+            GestureDetector(
+              behavior: HitTestBehavior.opaque,
+              onTap: onExpand,
+              child: const Padding(
+                padding: EdgeInsets.all(4),
+                child: Icon(
+                  Icons.expand_more_rounded,
+                  size: 20,
+                  color: DwColors.onDarkMuted,
+                ),
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(height: 10),
+        Row(
+          children: [
+            for (var i = 0; i < warDays.length; i++) ...[
+              if (i > 0)
+                Expanded(
+                  child: Container(
+                    height: 1,
+                    margin: const EdgeInsets.only(bottom: 14),
+                    color: DwColors.onDark.withValues(alpha: 0.08),
+                  ),
+                ),
+              _CollapsedDayDot(day: warDays[i]),
+            ],
+          ],
+        ),
+        const SizedBox(height: 12),
+        Text(
+          _sundayWeekHeadline(summary),
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+          style: DwText.dm(
+            size: 16,
+            weight: FontWeight.w700,
+            height: 1.2,
+            letterSpacing: -0.2,
+          ),
+        ),
+        const SizedBox(height: 3),
+        Text(
+          _sundayWeekMeta(summary),
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+          style: DwText.dm(
+            size: 12,
+            weight: FontWeight.w500,
+            color: DwColors.onDarkMuted,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class _CollapsedDayDot extends StatelessWidget {
+  const _CollapsedDayDot({required this.day});
+
+  final DailyWarWeekDayCell day;
+
+  @override
+  Widget build(BuildContext context) {
+    final attempted = day.attempted;
+    final Color ring;
+    final Color fill;
+    final Color label;
+    if (attempted) {
+      ring = day.isGrand
+          ? DwColors.gold.withValues(alpha: 0.75)
+          : DwColors.teal.withValues(alpha: 0.75);
+      fill = day.isGrand
+          ? DwColors.gold.withValues(alpha: 0.22)
+          : DwColors.teal.withValues(alpha: 0.22);
+      label = day.isGrand ? DwColors.gold : DwColors.teal;
+    } else {
+      ring = DwColors.onDark.withValues(alpha: 0.16);
+      fill = Colors.transparent;
+      label = DwColors.onDarkFaint;
+    }
+
+    return Column(
+      children: [
+        Container(
+          width: 26,
+          height: 26,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            color: fill,
+            border: Border.all(color: ring, width: 1.3),
+          ),
+          alignment: Alignment.center,
+          child: Text(
+            day.label,
+            style: DwText.dm(
+              size: 10,
+              weight: FontWeight.w800,
+              color: label,
+            ),
+          ),
+        ),
+        const SizedBox(height: 3),
+        Text(
+          attempted ? (day.scoreLabel ?? '✓') : '·',
+          style: DwText.dm(
+            size: 9,
+            weight: FontWeight.w600,
+            color: attempted ? DwColors.onDarkMuted : DwColors.onDarkFaint,
+          ),
+        ),
+      ],
+    );
   }
 }
 
@@ -547,7 +731,7 @@ class _StatusRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    final row = Row(
       children: [
         if (pulse) ...[
           Container(
@@ -586,20 +770,22 @@ class _StatusRow extends StatelessWidget {
         ],
         if (onCollapse != null) ...[
           const SizedBox(width: 2),
-          GestureDetector(
-            behavior: HitTestBehavior.opaque,
-            onTap: onCollapse,
-            child: const Padding(
-              padding: EdgeInsets.all(4),
-              child: Icon(
-                Icons.expand_less_rounded,
-                size: 20,
-                color: DwColors.onDarkMuted,
-              ),
+          const Padding(
+            padding: EdgeInsets.all(4),
+            child: Icon(
+              Icons.expand_less_rounded,
+              size: 20,
+              color: DwColors.onDarkMuted,
             ),
           ),
         ],
       ],
+    );
+    if (onCollapse == null) return row;
+    return GestureDetector(
+      behavior: HitTestBehavior.opaque,
+      onTap: onCollapse,
+      child: row,
     );
   }
 }

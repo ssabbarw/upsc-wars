@@ -48,7 +48,7 @@ final class KillSwitchProvider
   }
 }
 
-String _$killSwitchHash() => r'e8892d2640ab3060f7f2d394dd6c996fee01ca86';
+String _$killSwitchHash() => r'238fc19e75858708acbf136d38ed6738a581e549';
 
 /// Whether the Community tab should be shown (after [killSwitchProvider] fetch).
 ///
@@ -322,7 +322,7 @@ String _$dailyWarMinVisibleLobbyCountRemoteHash() =>
 
 /// How often clients poll RTDB live counts during lobby / live (seconds).
 ///
-/// Defaults to 5. Clamped to 3–60.
+/// Defaults to 15. Clamped to 3–60.
 
 @ProviderFor(dailyWarLiveCountPollSecondsRemote)
 final dailyWarLiveCountPollSecondsRemoteProvider =
@@ -330,14 +330,14 @@ final dailyWarLiveCountPollSecondsRemoteProvider =
 
 /// How often clients poll RTDB live counts during lobby / live (seconds).
 ///
-/// Defaults to 5. Clamped to 3–60.
+/// Defaults to 15. Clamped to 3–60.
 
 final class DailyWarLiveCountPollSecondsRemoteProvider
     extends $FunctionalProvider<AsyncValue<int>, int, FutureOr<int>>
     with $FutureModifier<int>, $FutureProvider<int> {
   /// How often clients poll RTDB live counts during lobby / live (seconds).
   ///
-  /// Defaults to 5. Clamped to 3–60.
+  /// Defaults to 15. Clamped to 3–60.
   DailyWarLiveCountPollSecondsRemoteProvider._()
     : super(
         from: null,
@@ -365,34 +365,34 @@ final class DailyWarLiveCountPollSecondsRemoteProvider
 }
 
 String _$dailyWarLiveCountPollSecondsRemoteHash() =>
-    r'55ae44b1025ccbcd70866312eeb24594d98a5cd1';
+    r'b27b16069ff788ec83b0c2b3e228e7ae224858ec';
 
-/// Which mini-game demo onboarding shows (A/B via Remote Config).
+/// Which mini-game step onboarding shows (A/B via Remote Config).
 ///
-/// Returns [onboardingGameFactOrBluff] only when RC explicitly says so;
-/// any other value, read error, or web falls back to
-/// [onboardingGameMemoryPairs]. Waits for [killSwitchProvider] so RC
-/// defaults / fetch have run on mobile.
+/// Defaults to [onboardingGamePeekOnly]. Recognizes
+/// [onboardingGameFactOrBluff] and [onboardingGameMemoryPairs] when RC sets
+/// them explicitly; any other value, read error, or web keeps the peek.
+/// Waits for [killSwitchProvider] so RC defaults / fetch have run on mobile.
 
 @ProviderFor(onboardingGameRemote)
 final onboardingGameRemoteProvider = OnboardingGameRemoteProvider._();
 
-/// Which mini-game demo onboarding shows (A/B via Remote Config).
+/// Which mini-game step onboarding shows (A/B via Remote Config).
 ///
-/// Returns [onboardingGameFactOrBluff] only when RC explicitly says so;
-/// any other value, read error, or web falls back to
-/// [onboardingGameMemoryPairs]. Waits for [killSwitchProvider] so RC
-/// defaults / fetch have run on mobile.
+/// Defaults to [onboardingGamePeekOnly]. Recognizes
+/// [onboardingGameFactOrBluff] and [onboardingGameMemoryPairs] when RC sets
+/// them explicitly; any other value, read error, or web keeps the peek.
+/// Waits for [killSwitchProvider] so RC defaults / fetch have run on mobile.
 
 final class OnboardingGameRemoteProvider
     extends $FunctionalProvider<AsyncValue<String>, String, FutureOr<String>>
     with $FutureModifier<String>, $FutureProvider<String> {
-  /// Which mini-game demo onboarding shows (A/B via Remote Config).
+  /// Which mini-game step onboarding shows (A/B via Remote Config).
   ///
-  /// Returns [onboardingGameFactOrBluff] only when RC explicitly says so;
-  /// any other value, read error, or web falls back to
-  /// [onboardingGameMemoryPairs]. Waits for [killSwitchProvider] so RC
-  /// defaults / fetch have run on mobile.
+  /// Defaults to [onboardingGamePeekOnly]. Recognizes
+  /// [onboardingGameFactOrBluff] and [onboardingGameMemoryPairs] when RC sets
+  /// them explicitly; any other value, read error, or web keeps the peek.
+  /// Waits for [killSwitchProvider] so RC defaults / fetch have run on mobile.
   OnboardingGameRemoteProvider._()
     : super(
         from: null,
@@ -419,7 +419,7 @@ final class OnboardingGameRemoteProvider
 }
 
 String _$onboardingGameRemoteHash() =>
-    r'8b8b908cff4bc338c86ca30a22d14e67d9e8e4c3';
+    r'bb18c36ea63600afe10fb8cf5f0192afc28d8ffb';
 
 /// Fact or Bluff countdown length from Remote Config (seconds).
 ///

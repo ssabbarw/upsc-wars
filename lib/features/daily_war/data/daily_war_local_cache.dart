@@ -22,6 +22,7 @@ class DailyWarLocalCache {
   static const _lbKey = 'daily_war_cache_lb_v1';
   static const _archiveReadyKey = 'daily_war_cache_archive_ready_v1';
   static const _historyMetaKey = 'daily_war_cache_history_meta_v1';
+  static const _badgeCountsKey = 'daily_war_cache_badge_counts_v1';
 
   /// How many newest calendar days to always reconcile with Firestore.
   static const recentRefreshDays = 14;
@@ -399,6 +400,66 @@ class DailyWarLocalCache {
     }
 
     return DailyWarHistoryBundle(wars: trimmed, submissions: subs);
+  }
+
+  Map<String, int> badgeCounts() {
+    final raw = _prefs.getString(_badgeCountsKey);
+    if (raw == null || raw.isEmpty) return {};
+    try {
+      final decoded = jsonDecode(raw);
+      if (decoded is! Map) return {};
+      final out = <String, int>{};
+      for (final e in decoded.entries) {
+        final n = (e.value as num?)?.toInt() ?? 0;
+        if (n > 0) out['${e.key}'] = n;
+      }
+      return out;
+    } on Object {
+      return {};
+    }
+  }
+
+  Future<void> saveBadgeCounts(Map<String, int> counts) async {
+    await _prefs.setString(_badgeCountsKey, jsonEncode(counts));
+  }
+
+  /// Take the max count per badge across maps (local vs server / history).
+  Future<Map<String, int>> mergeBadgeCounts(Map<String, int> other) async {
+    final merged = Map<String, int>.from(badgeCounts());
+    for (final e in other.entries) {
+      final cur = merged[e.key] ?? 0;
+      if (e.value > cur) merged[e.key] = e.value;
+    }
+    await saveBadgeCounts(merged);
+    return merged;
+  }
+
+  Future<void> incrementBadgeCounts(Iterable<String> badgeIds) async {
+    if (badgeIds.isEmpty) return;
+    final merged = Map<String, int>.from(badgeCounts());
+    for (final id in badgeIds) {
+      if (id.isEmpty) continue;
+      merged[id] = (merged[id] ?? 0) + 1;
+    }
+    await saveBadgeCounts(merged);
+  }
+
+  /// Aggregate counts from cached submissions (best-effort offline cabinet).
+  Map<String, int> badgeCountsFromSubmissions(
+    Map<String, DailyWarSubmission> submissions,
+  ) {
+    final out = <String, int>{};
+    for (final sub in submissions.values) {
+      for (final id in sub.badges) {
+        if (id.isEmpty) continue;
+        out[id] = (out[id] ?? 0) + 1;
+      }
+      final tier = sub.tierId?.trim();
+      if (tier != null && tier.isNotEmpty) {
+        out[tier] = (out[tier] ?? 0) + 1;
+      }
+    }
+    return out;
   }
 
   /// One-shot war fetch with cache for stable archives.

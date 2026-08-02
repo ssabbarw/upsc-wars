@@ -42,5 +42,35 @@ void main() {
       expect(awards, contains('clean_sweep'));
       expect(awards, contains('streak_7_nights'));
     });
+
+    test('effort awards cover week opener, finisher, century', () {
+      final first = DailyWarBadges.effortAwards(
+        tonightAttempted: 10,
+        priorWeekAttempted: 0,
+        priorWeekNights: 0,
+        isFirstOfWeek: true,
+        missedPreviousWarNight: false,
+      );
+      expect(first, containsAll(['effort_finisher', 'effort_first_war']));
+      expect(first, isNot(contains('effort_back_in')));
+
+      final century = DailyWarBadges.effortAwards(
+        tonightAttempted: 25,
+        priorWeekAttempted: 75,
+        priorWeekNights: 5,
+        isFirstOfWeek: false,
+        missedPreviousWarNight: true,
+      );
+      expect(
+        century,
+        containsAll([
+          'effort_finisher',
+          'effort_back_in',
+          'effort_full_week',
+          'effort_half_century',
+          'effort_century',
+        ]),
+      );
+    });
   });
 }

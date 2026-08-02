@@ -41,6 +41,7 @@ import '../../features/home/screens/home_screen.dart';
 import '../../features/onboarding/screens/onboarding_flow_screen.dart';
 import '../../features/notifications/screens/long_html_notification_screen.dart';
 import '../../features/daily_ca/screens/daily_ca_screen.dart';
+import '../../features/daily_war/screens/daily_war_badges_screen.dart';
 import '../../features/daily_war/screens/daily_war_history_detail_screen.dart';
 import '../../features/daily_war/screens/daily_war_history_revise_screen.dart';
 import '../../features/daily_war/screens/daily_war_history_screen.dart';
@@ -600,6 +601,12 @@ GoRouter appRouter(Ref ref) {
         path: '/daily-war/history',
         name: 'daily_war_history',
         builder: (context, state) => const DailyWarHistoryScreen(),
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/daily-war/history/badges',
+        name: 'daily_war_badges',
+        builder: (context, state) => const DailyWarBadgesScreen(),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,

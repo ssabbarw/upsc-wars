@@ -34,6 +34,8 @@ String dailyWarLobbyRoute() => '/daily-war';
 
 String dailyWarHistoryRoute() => '/daily-war/history';
 
+String dailyWarBadgesRoute() => '/daily-war/history/badges';
+
 String dailyWarHistoryDetailRoute(String dateId) =>
     '/daily-war/history/$dateId';
 

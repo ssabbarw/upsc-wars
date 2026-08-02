@@ -312,6 +312,12 @@ service cloud.firestore {
       allow read, write: if false;
     }
 
+    /// Lifetime Daily War badge tallies — owner read; Cloud Functions write.
+    match /daily_war_profiles/{uid} {
+      allow read: if signedIn() && request.auth.uid == uid;
+      allow write: if false;
+    }
+
     function isSuperUserEmail() {
       return signedIn()
         && request.auth.token.email != null

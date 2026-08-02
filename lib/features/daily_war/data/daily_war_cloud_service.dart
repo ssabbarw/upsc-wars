@@ -11,6 +11,7 @@ class DailyWarSubmitResult {
     this.wrong,
     this.unanswered,
     this.mode,
+    this.badges = const [],
     this.errorMessage,
   });
 
@@ -20,6 +21,7 @@ class DailyWarSubmitResult {
   final int? wrong;
   final int? unanswered;
   final String? mode;
+  final List<String> badges;
   final String? errorMessage;
 }
 
@@ -52,6 +54,10 @@ class DailyWarCloudService {
         if (tierId != null && tierId.isNotEmpty) 'tierId': tierId,
       });
       final data = result.data;
+      final badgesRaw = data['badges'];
+      final badges = badgesRaw is List
+          ? badgesRaw.map((e) => '$e').where((s) => s.isNotEmpty).toList()
+          : const <String>[];
       return DailyWarSubmitResult(
         ok: data['ok'] == true,
         score: (data['score'] as num?)?.toDouble(),
@@ -59,6 +65,7 @@ class DailyWarCloudService {
         wrong: (data['wrong'] as num?)?.toInt(),
         unanswered: (data['unanswered'] as num?)?.toInt(),
         mode: data['mode']?.toString(),
+        badges: badges,
       );
     } on FirebaseFunctionsException catch (e, st) {
       debugPrint('DailyWarCloudService.submit: ${e.code} ${e.message}');

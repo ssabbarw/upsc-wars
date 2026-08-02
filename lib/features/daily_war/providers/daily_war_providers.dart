@@ -448,6 +448,37 @@ Future<DailyWarHistoryBundle> dailyWarHistoryBundle(Ref ref) async {
   return cache.loadHistory(uid: uid);
 }
 
+/// Lifetime badge tallies — local cache merged with Firestore profile + history.
+@Riverpod()
+Future<Map<String, int>> dailyWarBadgeTallies(Ref ref) async {
+  final cache = await ref.watch(dailyWarLocalCacheProvider.future);
+  final uid = FirebaseAuth.instance.currentUser?.uid ?? '';
+  var tallies = Map<String, int>.from(cache.badgeCounts());
+
+  final bundle = await ref.watch(dailyWarHistoryBundleProvider.future);
+  tallies = await cache.mergeBadgeCounts(
+    cache.badgeCountsFromSubmissions(bundle.submissions),
+  );
+
+  if (uid.isNotEmpty) {
+    try {
+      final snap = await DailyWarFirestorePaths.profileDoc(uid).get();
+      final raw = snap.data()?['badge_counts'];
+      if (raw is Map) {
+        final remote = <String, int>{};
+        for (final e in raw.entries) {
+          final n = (e.value as num?)?.toInt() ?? 0;
+          if (n > 0) remote['${e.key}'] = n;
+        }
+        tallies = await cache.mergeBadgeCounts(remote);
+      }
+    } on Object {
+      // Offline — keep local.
+    }
+  }
+  return tallies;
+}
+
 /// Full archive for one War night (leaderboard + attempt). Local-only once ranked.
 @Riverpod()
 Future<DailyWarArchiveBundle> dailyWarArchive(Ref ref, String dateId) async {

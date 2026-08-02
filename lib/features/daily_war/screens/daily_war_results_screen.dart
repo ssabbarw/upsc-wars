@@ -104,6 +104,12 @@ class DailyWarResultsScreen extends HookConsumerWidget {
           }
           score.value = result.score;
 
+          if (result.badges.isNotEmpty) {
+            final cache = await ref.read(dailyWarLocalCacheProvider.future);
+            await cache.incrementBadgeCounts(result.badges);
+            ref.invalidate(dailyWarBadgeTalliesProvider);
+          }
+
           final warDate = DailyWarSchedule.parseIsoDate(dateId);
           unawaited(
             Analytics.track(

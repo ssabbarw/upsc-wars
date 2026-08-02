@@ -349,7 +349,7 @@ final class DailyWarYesterdayDateIdProvider
 }
 
 String _$dailyWarYesterdayDateIdHash() =>
-    r'5193e81a815266c28d250d19d692e0ec39e812df';
+    r'fbd2c03a0c144691da837548cdc3c743edb599dc';
 
 @ProviderFor(DailyWarYesterdayDoc)
 final dailyWarYesterdayDocProvider = DailyWarYesterdayDocProvider._();
@@ -627,6 +627,51 @@ final class DailyWarHistoryBundleProvider
 String _$dailyWarHistoryBundleHash() =>
     r'628c3bee0b18700cddf6760b8ef129956871f210';
 
+/// Lifetime badge tallies — local cache merged with Firestore profile + history.
+
+@ProviderFor(dailyWarBadgeTallies)
+final dailyWarBadgeTalliesProvider = DailyWarBadgeTalliesProvider._();
+
+/// Lifetime badge tallies — local cache merged with Firestore profile + history.
+
+final class DailyWarBadgeTalliesProvider
+    extends
+        $FunctionalProvider<
+          AsyncValue<Map<String, int>>,
+          Map<String, int>,
+          FutureOr<Map<String, int>>
+        >
+    with $FutureModifier<Map<String, int>>, $FutureProvider<Map<String, int>> {
+  /// Lifetime badge tallies — local cache merged with Firestore profile + history.
+  DailyWarBadgeTalliesProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'dailyWarBadgeTalliesProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$dailyWarBadgeTalliesHash();
+
+  @$internal
+  @override
+  $FutureProviderElement<Map<String, int>> $createElement(
+    $ProviderPointer pointer,
+  ) => $FutureProviderElement(pointer);
+
+  @override
+  FutureOr<Map<String, int>> create(Ref ref) {
+    return dailyWarBadgeTallies(ref);
+  }
+}
+
+String _$dailyWarBadgeTalliesHash() =>
+    r'4fcc439fd0d543b2792fbe0a54307606403072a7';
+
 /// Full archive for one War night (leaderboard + attempt). Local-only once ranked.
 
 @ProviderFor(dailyWarArchive)
@@ -888,4 +933,4 @@ final class DailyWarLiveCountsProvider
 }
 
 String _$dailyWarLiveCountsHash() =>
-    r'b6f19a32a8c493ea540a59e76782f0dffab0fee1';
+    r'b97fb6fabfa77760a509a61e80c889dd7e764961';

@@ -63,78 +63,83 @@ class DailyWarSundayCard extends ConsumerWidget {
       syllabusTopicsCovered: coverage.covered,
     );
 
+    final header = Row(
+      children: [
+        Container(
+          width: 28,
+          height: 28,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            gradient: RadialGradient(
+              colors: [
+                const Color(0xFFAEB8FF).withValues(alpha: 0.35),
+                const Color(0xFFAEB8FF).withValues(alpha: 0.05),
+              ],
+            ),
+          ),
+          alignment: Alignment.center,
+          child: const Icon(
+            Icons.nightlight_round,
+            size: 15,
+            color: Color(0xFFC5CDFF),
+          ),
+        ),
+        const SizedBox(width: 10),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'SUNDAY · NO WAR TONIGHT',
+                style: DwText.eyebrow(color: const Color(0x99C5CDFF)),
+              ),
+              const SizedBox(height: 2),
+              Text(
+                'Rest day · War returns Monday 9 PM',
+                style: DwText.dm(
+                  size: 11,
+                  weight: FontWeight.w500,
+                  color: DwColors.onDarkFaint,
+                ),
+              ),
+            ],
+          ),
+        ),
+        GestureDetector(
+          behavior: HitTestBehavior.opaque,
+          onTap: () => unawaited(showDailyWarHelpSheet(context)),
+          child: const Padding(
+            padding: EdgeInsets.all(4),
+            child: Icon(
+              Icons.help_outline_rounded,
+              size: 16,
+              color: DwColors.onDarkMuted,
+            ),
+          ),
+        ),
+        if (onCollapse != null)
+          const Padding(
+            padding: EdgeInsets.all(4),
+            child: Icon(
+              Icons.expand_less_rounded,
+              size: 20,
+              color: DwColors.onDarkMuted,
+            ),
+          ),
+      ],
+    );
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Row(
-          children: [
-            Container(
-              width: 28,
-              height: 28,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                gradient: RadialGradient(
-                  colors: [
-                    const Color(0xFFAEB8FF).withValues(alpha: 0.35),
-                    const Color(0xFFAEB8FF).withValues(alpha: 0.05),
-                  ],
-                ),
-              ),
-              alignment: Alignment.center,
-              child: const Icon(
-                Icons.nightlight_round,
-                size: 15,
-                color: Color(0xFFC5CDFF),
-              ),
-            ),
-            const SizedBox(width: 10),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'SUNDAY · NO WAR TONIGHT',
-                    style: DwText.eyebrow(color: const Color(0x99C5CDFF)),
-                  ),
-                  const SizedBox(height: 2),
-                  Text(
-                    'Rest day · War returns Monday 9 PM',
-                    style: DwText.dm(
-                      size: 11,
-                      weight: FontWeight.w500,
-                      color: DwColors.onDarkFaint,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            GestureDetector(
-              behavior: HitTestBehavior.opaque,
-              onTap: () => unawaited(showDailyWarHelpSheet(context)),
-              child: const Padding(
-                padding: EdgeInsets.all(4),
-                child: Icon(
-                  Icons.help_outline_rounded,
-                  size: 16,
-                  color: DwColors.onDarkMuted,
-                ),
-              ),
-            ),
-            if (onCollapse != null)
-              GestureDetector(
-                behavior: HitTestBehavior.opaque,
-                onTap: onCollapse,
-                child: const Padding(
-                  padding: EdgeInsets.all(4),
-                  child: Icon(
-                    Icons.expand_less_rounded,
-                    size: 20,
-                    color: DwColors.onDarkMuted,
-                  ),
-                ),
-              ),
-          ],
-        ),
+        if (onCollapse != null)
+          GestureDetector(
+            behavior: HitTestBehavior.opaque,
+            onTap: onCollapse,
+            child: header,
+          )
+        else
+          header,
         const SizedBox(height: 16),
         Text(
           _headline(summary),

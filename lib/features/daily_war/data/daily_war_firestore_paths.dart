@@ -7,11 +7,13 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 ///     daily_wars/{dateId}/submissions/{uid}        — scored attempts (Functions write)
 ///     daily_wars/{dateId}/meta/leaderboard         — top 100 + histogram
 ///     daily_war_state/curriculum                   — topic pointers (Functions only)
+///     daily_war_profiles/{uid}                     — lifetime badge_counts
 abstract final class DailyWarFirestorePaths {
   DailyWarFirestorePaths._();
 
   static const warsCollection = 'daily_wars';
   static const stateCollection = 'daily_war_state';
+  static const profilesCollection = 'daily_war_profiles';
   static const curriculumDocId = 'curriculum';
 
   static String dateIdFromIst(DateTime istDate) {
@@ -52,5 +54,9 @@ abstract final class DailyWarFirestorePaths {
     return FirebaseFirestore.instance
         .collection(stateCollection)
         .doc(curriculumDocId);
+  }
+
+  static DocumentReference<Map<String, dynamic>> profileDoc(String uid) {
+    return FirebaseFirestore.instance.collection(profilesCollection).doc(uid);
   }
 }
