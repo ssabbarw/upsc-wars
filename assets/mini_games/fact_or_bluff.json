@@ -6,8 +6,8 @@
     "statement": "The script of the Indus Valley Civilisation has never been deciphered.",
     "is_fact": true,
     "explanation": "Fact. Despite thousands of recovered seals, the Indus script remains undeciphered, unlike Brahmi or Kharosthi.",
-    "statement_hi": "सिंधु घाटी सभ्यता की लिपि को आज तक पढ़ा (व्याख्यायित) नहीं जा सका है।",
-    "explanation_hi": "सत्य। हज़ारों मुहरें मिलने के बावजूद सिंधु लिपि अब तक अनपठित है, जबकि ब्राह्मी और खरोष्ठी लिपियाँ पढ़ी जा चुकी हैं।"
+    "statement_hi": "सिंधु घाटी सभ्यता की लिपि को आज तक पढ़ा नहीं जा सका है।",
+    "explanation_hi": "सत्य। हज़ारों मुहरें मिलने के बावजूद सिंधु लिपि अब तक पढ़ी नहीं जा सकी है, जबकि ब्राह्मी और खरोष्ठी लिपियाँ पढ़ी जा चुकी हैं।"
   },
   {
     "id": "fb_002",
@@ -66,8 +66,8 @@
     "statement": "The Third Buddhist Council was held at Pataliputra under Ashoka's patronage.",
     "is_fact": true,
     "explanation": "Fact. The Third Council met at Pataliputra around 250 BCE under Ashoka, presided over by Moggaliputta Tissa.",
-    "statement_hi": "तीसरी बौद्ध संगीति पाटलिपुत्र में अशोक के संरक्षण में आयोजित हुई थी।",
-    "explanation_hi": "सत्य। तीसरी संगीति लगभग 250 ईसा पूर्व पाटलिपुत्र में अशोक के संरक्षण में हुई थी, जिसकी अध्यक्षता मोग्गलिपुत्त तिस्स ने की थी।"
+    "statement_hi": "तृतीय बौद्ध संगीति पाटलिपुत्र में अशोक के संरक्षण में आयोजित हुई थी।",
+    "explanation_hi": "सत्य। तृतीय संगीति लगभग 250 ईसा पूर्व पाटलिपुत्र में अशोक के संरक्षण में हुई थी, जिसकी अध्यक्षता मोग्गलिपुत्त तिस्स ने की थी।"
   },
   {
     "id": "fb_008",
@@ -136,7 +136,7 @@
     "statement": "The First Battle of Panipat in 1526 was fought between Babur and Sher Shah Suri.",
     "is_fact": false,
     "explanation": "Bluff. Babur defeated Ibrahim Lodi at Panipat in 1526; Sher Shah rose against Babur's son Humayun later.",
-    "statement_hi": "1526 का प्रथम पानीपत युद्ध बाबर और शेरशाह सूरी के बीच लड़ा गया था।",
+    "statement_hi": "पानीपत का प्रथम युद्ध (1526) बाबर और शेरशाह सूरी के बीच लड़ा गया था।",
     "explanation_hi": "असत्य। बाबर ने 1526 में पानीपत में इब्राहिम लोदी को हराया था; शेरशाह बाद में बाबर के पुत्र हुमायूँ के विरुद्ध उभरा।"
   },
   {
@@ -187,7 +187,7 @@
     "is_fact": true,
     "explanation": "Fact. He moved the capital to Daulatabad (Devagiri) around 1327, an experiment he later reversed.",
     "statement_hi": "मुहम्मद बिन तुगलक ने अपनी राजधानी दिल्ली से दौलताबाद स्थानांतरित की थी।",
-    "explanation_hi": "सत्य। उसने लगभग 1327 में राजधानी दौलताबाद (देवगिरि) स्थानांतरित की थी, जो एक प्रयोग था जिसे उसने बाद में वापस पलट दिया।"
+    "explanation_hi": "सत्य। उसने लगभग 1327 में राजधानी दौलताबाद (देवगिरि) स्थानांतरित की थी, यह एक प्रयोग था जिसे उसने बाद में वापस ले लिया।"
   },
   {
     "id": "fb_020",
@@ -196,7 +196,7 @@
     "statement": "The Battle of Talikota in 1565 led to the destruction of the Bahmani kingdom.",
     "is_fact": false,
     "explanation": "Bluff. Talikota shattered the Vijayanagara Empire; the victors were the Deccan Sultanates that had emerged from the Bahmani kingdom.",
-    "statement_hi": "1565 के तालीकोटा युद्ध ने बहमनी राज्य के विनाश का कारण बना।",
+    "statement_hi": "1565 का तालीकोटा युद्ध बहमनी राज्य के विनाश का कारण बना।",
     "explanation_hi": "असत्य। तालीकोटा ने विजयनगर साम्राज्य को छिन्न-भिन्न कर दिया; विजेता वे दक्कन सल्तनतें थीं जो बहमनी राज्य से उभरी थीं।"
   },
   {
@@ -207,7 +207,7 @@
     "is_fact": true,
     "explanation": "Fact. The Vijayanagara ruler Krishnadevaraya wrote Amuktamalyada, a Telugu classic on the saint Andal.",
     "statement_hi": "कृष्णदेवराय ने तेलुगु ग्रंथ 'आमुक्तमाल्यद' की रचना की थी।",
-    "explanation_hi": "सत्य। विजयनगर शासक कृष्णदेवराय ने आमुक्तमाल्यद लिखा, जो संत आंडाल पर आधारित एक तेलुगु क्लासिक है।"
+    "explanation_hi": "सत्य। विजयनगर शासक कृष्णदेवराय ने आमुक्तमाल्यद लिखा, जो संत आंडाल पर आधारित तेलुगु की एक उत्कृष्ट कृति है।"
   },
   {
     "id": "fb_022",
@@ -337,7 +337,7 @@
     "is_fact": false,
     "explanation": "Bluff. The INA was first raised in 1942 under Mohan Singh; Bose revived and led it from 1943.",
     "statement_hi": "भारतीय राष्ट्रीय सेना की स्थापना मूल रूप से सुभाष चंद्र बोस ने की थी।",
-    "explanation_hi": "असत्य। आईएनए की स्थापना पहली बार 1942 में मोहन सिंह के अधीन हुई थी; बोस ने 1943 से इसे पुनर्जीवित कर इसका नेतृत्व किया।"
+    "explanation_hi": "असत्य। INA का गठन पहली बार 1942 में मोहन सिंह के नेतृत्व में हुआ था; बोस ने 1943 से इसे पुनर्जीवित कर इसका नेतृत्व किया।"
   },
   {
     "id": "fb_035",
@@ -366,7 +366,7 @@
     "statement": "Bharatanatyam is a classical dance form of Tamil Nadu.",
     "is_fact": true,
     "explanation": "Fact. Bharatanatyam evolved in Tamil Nadu's temples and is among India's oldest recognised classical dances.",
-    "statement_hi": "भरतनाट्यम तमिलनाडु का एक शास्त्रीय नृत्य रूप है।",
+    "statement_hi": "भरतनाट्यम तमिलनाडु का शास्त्रीय नृत्य है।",
     "explanation_hi": "सत्य। भरतनाट्यम तमिलनाडु के मंदिरों में विकसित हुआ और भारत के सबसे प्राचीन मान्यता प्राप्त शास्त्रीय नृत्यों में से एक है।"
   },
   {
@@ -376,7 +376,7 @@
     "statement": "Kathakali is a classical dance form of Odisha.",
     "is_fact": false,
     "explanation": "Bluff. Kathakali belongs to Kerala; Odisha's classical dance is Odissi.",
-    "statement_hi": "कथकली ओडिशा का एक शास्त्रीय नृत्य रूप है।",
+    "statement_hi": "कथकली ओडिशा का शास्त्रीय नृत्य है।",
     "explanation_hi": "असत्य। कथकली केरल का नृत्य है; ओडिशा का शास्त्रीय नृत्य ओडिसी है।"
   },
   {
@@ -387,7 +387,7 @@
     "is_fact": true,
     "explanation": "Fact. The 13th-century Konark Sun Temple, built by Narasimhadeva I, is a UNESCO World Heritage Site in Odisha.",
     "statement_hi": "कोणार्क का सूर्य मंदिर ओडिशा में स्थित है।",
-    "explanation_hi": "सत्य। नरसिंहदेव प्रथम द्वारा निर्मित 13वीं शताब्दी का कोणार्क सूर्य मंदिर ओडिशा में स्थित एक यूनेस्को विश्व धरोहर स्थल है।"
+    "explanation_hi": "सत्य। नरसिंहदेव प्रथम द्वारा निर्मित 13वीं शताब्दी का कोणार्क सूर्य मंदिर ओडिशा में स्थित एक UNESCO विश्व धरोहर स्थल है।"
   },
   {
     "id": "fb_040",
@@ -466,8 +466,8 @@
     "statement": "Sankirtana, the ritual singing of Manipur, is on UNESCO's Intangible Cultural Heritage list.",
     "is_fact": true,
     "explanation": "Fact. Manipuri Sankirtana, performed in temples and homes of Vaishnava communities, was inscribed by UNESCO in 2013.",
-    "statement_hi": "मणिपुर का संकीर्तन, जो एक अनुष्ठानिक गायन है, यूनेस्को की अमूर्त सांस्कृतिक विरासत सूची में शामिल है।",
-    "explanation_hi": "सत्य। वैष्णव समुदायों के मंदिरों और घरों में प्रस्तुत मणिपुरी संकीर्तन को यूनेस्को ने 2013 में सूचीबद्ध किया।"
+    "statement_hi": "मणिपुर का संकीर्तन, जो एक अनुष्ठानिक गायन है, UNESCO की अमूर्त सांस्कृतिक विरासत सूची में शामिल है।",
+    "explanation_hi": "सत्य। वैष्णव समुदायों के मंदिरों और घरों में प्रस्तुत मणिपुरी संकीर्तन को UNESCO ने 2013 में सूचीबद्ध किया।"
   },
   {
     "id": "fb_048",
@@ -566,8 +566,8 @@
     "statement": "The Ten Degree Channel separates the Andaman Islands from the Nicobar Islands.",
     "is_fact": true,
     "explanation": "Fact. The Ten Degree Channel, lying roughly along 10°N latitude, divides the Andamans from the Nicobars.",
-    "statement_hi": "टेन डिग्री चैनल अंडमान द्वीप समूह को निकोबार द्वीप समूह से अलग करता है।",
-    "explanation_hi": "सत्य। लगभग 10° उत्तरी अक्षांश पर स्थित टेन डिग्री चैनल अंडमान को निकोबार से विभाजित करता है।"
+    "statement_hi": "10 डिग्री चैनल अंडमान द्वीप समूह को निकोबार द्वीप समूह से अलग करता है।",
+    "explanation_hi": "सत्य। लगभग 10° उत्तरी अक्षांश पर स्थित 10 डिग्री चैनल अंडमान को निकोबार से विभाजित करता है।"
   },
   {
     "id": "fb_058",
@@ -576,8 +576,8 @@
     "statement": "The Duncan Passage separates Little Andaman from Car Nicobar.",
     "is_fact": false,
     "explanation": "Bluff. The Duncan Passage lies between South Andaman and Little Andaman; the Ten Degree Channel separates Little Andaman from Car Nicobar.",
-    "statement_hi": "डंकन पैसेज लघु अंडमान को कार निकोबार से अलग करता है।",
-    "explanation_hi": "असत्य। डंकन पैसेज दक्षिण अंडमान और लघु अंडमान के बीच स्थित है; टेन डिग्री चैनल लघु अंडमान को कार निकोबार से अलग करता है।"
+    "statement_hi": "डंकन पैसेज लिटिल अंडमान को कार निकोबार से अलग करता है।",
+    "explanation_hi": "असत्य। डंकन पैसेज दक्षिण अंडमान और लिटिल अंडमान के बीच स्थित है; 10 डिग्री चैनल लिटिल अंडमान को कार निकोबार से अलग करता है।"
   },
   {
     "id": "fb_059",
@@ -586,7 +586,7 @@
     "statement": "The Godavari has the largest drainage basin among peninsular rivers.",
     "is_fact": true,
     "explanation": "Fact. The Godavari, called the Dakshina Ganga, has India's second-largest basin after the Ganga and the largest in the peninsula.",
-    "statement_hi": "प्रायद्वीपीय नदियों में गोदावरी का जलनिकासी बेसिन सबसे बड़ा है।",
+    "statement_hi": "प्रायद्वीपीय नदियों में गोदावरी का अपवाह क्षेत्र (बेसिन) सबसे बड़ा है।",
     "explanation_hi": "सत्य। दक्षिण गंगा कहलाने वाली गोदावरी का बेसिन गंगा के बाद भारत का दूसरा सबसे बड़ा और प्रायद्वीप का सबसे बड़ा बेसिन है।"
   },
   {
@@ -596,8 +596,8 @@
     "statement": "The Nine Degree Channel separates Minicoy from the Maldives.",
     "is_fact": false,
     "explanation": "Bluff. The Eight Degree Channel separates Minicoy from the Maldives; the Nine Degree Channel separates Minicoy from the rest of Lakshadweep.",
-    "statement_hi": "नाइन डिग्री चैनल मिनिकॉय को मालदीव से अलग करता है।",
-    "explanation_hi": "असत्य। एट डिग्री चैनल मिनिकॉय को मालदीव से अलग करता है; नाइन डिग्री चैनल मिनिकॉय को शेष लक्षद्वीप से अलग करता है।"
+    "statement_hi": "9 डिग्री चैनल मिनिकॉय को मालदीव से अलग करता है।",
+    "explanation_hi": "असत्य। 8 डिग्री चैनल मिनिकॉय को मालदीव से अलग करता है; 9 डिग्री चैनल मिनिकॉय को शेष लक्षद्वीप से अलग करता है।"
   },
   {
     "id": "fb_061",
@@ -606,8 +606,8 @@
     "statement": "India's GST applies a single unified tax rate to every good and service.",
     "is_fact": false,
     "explanation": "Bluff. GST has multiple slabs, and items like petroleum and alcohol for human consumption remain outside it.",
-    "statement_hi": "भारत का जीएसटी सभी वस्तुओं और सेवाओं पर एक समान कर दर लागू करता है।",
-    "explanation_hi": "असत्य। जीएसटी में कई स्लैब हैं, और पेट्रोलियम तथा मानव उपभोग हेतु शराब जैसी वस्तुएँ अभी भी इसके दायरे से बाहर हैं।"
+    "statement_hi": "भारत का GST सभी वस्तुओं और सेवाओं पर एक समान कर दर लागू करता है।",
+    "explanation_hi": "असत्य। GST में कई स्लैब हैं, और पेट्रोलियम तथा मानव उपभोग हेतु शराब जैसी वस्तुएँ अभी भी इसके दायरे से बाहर हैं।"
   },
   {
     "id": "fb_062",
@@ -617,7 +617,7 @@
     "is_fact": true,
     "explanation": "Fact. The RBI issues all currency notes; the government mints coins and issues the one-rupee note.",
     "statement_hi": "भारतीय रिज़र्व बैंक भारत के करेंसी नोटों का एकमात्र निर्गमकर्ता है।",
-    "explanation_hi": "सत्य। आरबीआई सभी करेंसी नोट जारी करता है; सरकार सिक्के ढालती है और एक रुपये का नोट जारी करती है।"
+    "explanation_hi": "सत्य। RBI सभी करेंसी नोट जारी करता है; सरकार सिक्के ढालती है और एक रुपये का नोट जारी करती है।"
   },
   {
     "id": "fb_063",
@@ -626,8 +626,8 @@
     "statement": "Repo rate is the rate at which banks lend money to the RBI.",
     "is_fact": false,
     "explanation": "Bluff. Repo is the rate at which the RBI lends to banks; banks parking funds with the RBI earn the reverse repo rate.",
-    "statement_hi": "रेपो दर वह दर है जिस पर बैंक आरबीआई को धन उधार देते हैं।",
-    "explanation_hi": "असत्य। रेपो वह दर है जिस पर आरबीआई बैंकों को उधार देता है; आरबीआई के पास धन जमा करने वाले बैंकों को रिवर्स रेपो दर मिलती है।"
+    "statement_hi": "रेपो दर वह दर है जिस पर बैंक RBI को धन उधार देते हैं।",
+    "explanation_hi": "असत्य। रेपो वह दर है जिस पर RBI बैंकों को उधार देता है; RBI के पास धन जमा करने वाले बैंकों को रिवर्स रेपो दर मिलती है।"
   },
   {
     "id": "fb_064",
@@ -636,7 +636,7 @@
     "statement": "GDP measures the total value of goods and services produced within a country.",
     "is_fact": true,
     "explanation": "Fact. Gross Domestic Product counts final goods and services produced within a country's borders in a given period.",
-    "statement_hi": "जीडीपी किसी देश के भीतर उत्पादित वस्तुओं और सेवाओं के कुल मूल्य को मापता है।",
+    "statement_hi": "GDP किसी देश के भीतर उत्पादित वस्तुओं और सेवाओं के कुल मूल्य को मापता है।",
     "explanation_hi": "सत्य। सकल घरेलू उत्पाद किसी निश्चित अवधि में किसी देश की सीमाओं के भीतर उत्पादित अंतिम वस्तुओं और सेवाओं की गणना करता है।"
   },
   {
@@ -646,8 +646,8 @@
     "statement": "The RBI's Monetary Policy Committee has six members.",
     "is_fact": true,
     "explanation": "Fact. The MPC has three RBI members, including the Governor, and three members appointed by the central government.",
-    "statement_hi": "आरबीआई की मौद्रिक नीति समिति में छह सदस्य होते हैं।",
-    "explanation_hi": "सत्य। मौद्रिक नीति समिति में गवर्नर सहित आरबीआई के तीन सदस्य और केंद्र सरकार द्वारा नियुक्त तीन सदस्य होते हैं।"
+    "statement_hi": "RBI की मौद्रिक नीति समिति में छह सदस्य होते हैं।",
+    "explanation_hi": "सत्य। मौद्रिक नीति समिति में गवर्नर सहित RBI के तीन सदस्य और केंद्र सरकार द्वारा नियुक्त तीन सदस्य होते हैं।"
   },
   {
     "id": "fb_066",
@@ -666,8 +666,8 @@
     "statement": "India's inflation-targeting framework sets a CPI target of 4% with a tolerance band of 2%.",
     "is_fact": true,
     "explanation": "Fact. Under the amended RBI Act, the target is 4% CPI inflation with a band of plus or minus 2%.",
-    "statement_hi": "भारत के मुद्रास्फीति-लक्ष्यीकरण ढांचे में सीपीआई का लक्ष्य 4% और सहनशीलता बैंड 2% रखा गया है।",
-    "explanation_hi": "सत्य। संशोधित आरबीआई अधिनियम के तहत, लक्ष्य 4% सीपीआई मुद्रास्फीति है, जिसमें प्लस या माइनस 2% का बैंड है।"
+    "statement_hi": "भारत के मुद्रास्फीति-लक्ष्यीकरण ढांचे में CPI मुद्रास्फीति का लक्ष्य 4% और सहन-सीमा (बैंड) 2% रखी गई है।",
+    "explanation_hi": "सत्य। संशोधित RBI अधिनियम के तहत लक्ष्य 4% CPI मुद्रास्फीति है, जिसमें ±2% का बैंड है।"
   },
   {
     "id": "fb_068",
@@ -686,8 +686,8 @@
     "statement": "The Marginal Standing Facility lets banks borrow overnight from the RBI at a rate above the repo rate.",
     "is_fact": true,
     "explanation": "Fact. MSF is an emergency overnight window priced above the repo rate, forming the ceiling of the policy corridor.",
-    "statement_hi": "सीमांत स्थायी सुविधा (एमएसएफ) बैंकों को रेपो दर से ऊपर की दर पर आरबीआई से रातभर के लिए उधार लेने देती है।",
-    "explanation_hi": "सत्य। एमएसएफ एक आपातकालीन रातभर की खिड़की है जिसकी कीमत रेपो दर से ऊपर रखी जाती है, जो नीति गलियारे की ऊपरी सीमा बनाती है।"
+    "statement_hi": "सीमांत स्थायी सुविधा (MSF) के तहत बैंक RBI से रेपो दर से ऊँची दर पर ओवरनाइट उधार ले सकते हैं।",
+    "explanation_hi": "सत्य। MSF एक आपातकालीन ओवरनाइट सुविधा है जिसकी दर रेपो दर से ऊपर रखी जाती है और यह नीतिगत कॉरिडोर की ऊपरी सीमा बनाती है।"
   },
   {
     "id": "fb_070",
@@ -696,8 +696,8 @@
     "statement": "Open Market Operations involve the RBI buying and selling corporate bonds.",
     "is_fact": false,
     "explanation": "Bluff. OMOs involve the purchase and sale of government securities to manage liquidity, not corporate bonds.",
-    "statement_hi": "खुला बाज़ार परिचालन (ओएमओ) में आरबीआई कॉर्पोरेट बॉन्ड की खरीद-बिक्री करता है।",
-    "explanation_hi": "असत्य। ओएमओ में तरलता प्रबंधन हेतु सरकारी प्रतिभूतियों की खरीद-बिक्री होती है, कॉर्पोरेट बॉन्ड की नहीं।"
+    "statement_hi": "खुले बाज़ार परिचालन (OMO) में RBI कॉर्पोरेट बॉन्ड की खरीद-बिक्री करता है।",
+    "explanation_hi": "असत्य। OMO में तरलता प्रबंधन हेतु सरकारी प्रतिभूतियों की खरीद-बिक्री होती है, कॉर्पोरेट बॉन्ड की नहीं।"
   },
   {
     "id": "fb_071",
@@ -716,8 +716,8 @@
     "statement": "India's Wholesale Price Index includes the prices of services.",
     "is_fact": false,
     "explanation": "Bluff. The WPI covers only goods; services are captured in the Consumer Price Index.",
-    "statement_hi": "भारत के थोक मूल्य सूचकांक (डब्ल्यूपीआई) में सेवाओं की कीमतें भी शामिल हैं।",
-    "explanation_hi": "असत्य। डब्ल्यूपीआई केवल वस्तुओं को कवर करता है; सेवाएँ उपभोक्ता मूल्य सूचकांक में शामिल होती हैं।"
+    "statement_hi": "भारत के थोक मूल्य सूचकांक (WPI) में सेवाओं की कीमतें भी शामिल हैं।",
+    "explanation_hi": "असत्य। WPI केवल वस्तुओं को कवर करता है; सेवाएँ उपभोक्ता मूल्य सूचकांक (CPI) में शामिल होती हैं।"
   },
   {
     "id": "fb_073",
@@ -766,8 +766,8 @@
     "statement": "The Ramsar Convention deals with the conservation of wetlands.",
     "is_fact": true,
     "explanation": "Fact. The 1971 Ramsar Convention promotes wise use of wetlands, and India has dozens of designated Ramsar sites.",
-    "statement_hi": "रामसर अभिसमय आर्द्रभूमियों के संरक्षण से संबंधित है।",
-    "explanation_hi": "सत्य। 1971 का रामसर अभिसमय आर्द्रभूमियों के सुविवेकपूर्ण उपयोग को बढ़ावा देता है, और भारत में दर्जनों निर्दिष्ट रामसर स्थल हैं।"
+    "statement_hi": "रामसर कन्वेंशन आर्द्रभूमियों के संरक्षण से संबंधित है।",
+    "explanation_hi": "सत्य। 1971 का रामसर कन्वेंशन आर्द्रभूमियों के सुविवेकपूर्ण उपयोग को बढ़ावा देता है, और भारत में दर्जनों निर्दिष्ट रामसर स्थल हैं।"
   },
   {
     "id": "fb_078",
@@ -787,7 +787,7 @@
     "is_fact": true,
     "explanation": "Fact. Keibul Lamjao on Loktak Lake in Manipur shelters the endangered sangai, or brow-antlered deer.",
     "statement_hi": "केइबुल लामजाओ, विश्व का एकमात्र तैरता हुआ राष्ट्रीय उद्यान, संगाई हिरण का घर है।",
-    "explanation_hi": "सत्य। मणिपुर की लोकटक झील पर स्थित केइबुल लामजाओ लुप्तप्राय संगाई, यानी दलदल मृग, को आश्रय देता है।"
+    "explanation_hi": "सत्य। मणिपुर की लोकटक झील पर स्थित केइबुल लामजाओ लुप्तप्राय संगाई हिरण को आश्रय देता है।"
   },
   {
     "id": "fb_080",
@@ -806,8 +806,8 @@
     "statement": "Eco-Sensitive Zones around protected areas are notified under the Environment (Protection) Act, 1986.",
     "is_fact": true,
     "explanation": "Fact. ESZs are declared by the central government under the Environment (Protection) Act, 1986 as buffers around parks and sanctuaries.",
-    "statement_hi": "संरक्षित क्षेत्रों के आसपास पारिस्थितिकी-संवेदी क्षेत्र (ईएसज़ेड) पर्यावरण (संरक्षण) अधिनियम, 1986 के तहत अधिसूचित किए जाते हैं।",
-    "explanation_hi": "सत्य। ईएसज़ेड को केंद्र सरकार द्वारा पर्यावरण (संरक्षण) अधिनियम, 1986 के तहत पार्कों और अभयारण्यों के बफर के रूप में घोषित किया जाता है।"
+    "statement_hi": "संरक्षित क्षेत्रों के आसपास पर्यावरण-संवेदनशील क्षेत्र (ESZ) पर्यावरण (संरक्षण) अधिनियम, 1986 के तहत अधिसूचित किए जाते हैं।",
+    "explanation_hi": "सत्य। ESZ को केंद्र सरकार द्वारा पर्यावरण (संरक्षण) अधिनियम, 1986 के तहत राष्ट्रीय उद्यानों और अभयारण्यों के बफर के रूप में घोषित किया जाता है।"
   },
   {
     "id": "fb_082",
@@ -817,7 +817,7 @@
     "is_fact": false,
     "explanation": "Bluff. The NGT was created by its own statute, the National Green Tribunal Act of 2010.",
     "statement_hi": "राष्ट्रीय हरित अधिकरण की स्थापना पर्यावरण (संरक्षण) अधिनियम, 1986 के तहत हुई थी।",
-    "explanation_hi": "असत्य। एनजीटी की स्थापना अपने स्वयं के अधिनियम, राष्ट्रीय हरित अधिकरण अधिनियम 2010 के तहत हुई थी।"
+    "explanation_hi": "असत्य। NGT की स्थापना अपने स्वयं के अधिनियम, राष्ट्रीय हरित अधिकरण अधिनियम, 2010 के तहत हुई थी।"
   },
   {
     "id": "fb_083",
@@ -837,7 +837,7 @@
     "is_fact": false,
     "explanation": "Bluff. Blue carbon is carbon stored by coastal and marine ecosystems such as mangroves, seagrasses and salt marshes.",
     "statement_hi": "ब्लू कार्बन स्थलीय वनों द्वारा संग्रहीत कार्बन को संदर्भित करता है।",
-    "explanation_hi": "असत्य। ब्लू कार्बन तटीय और समुद्री पारिस्थितिकी तंत्रों जैसे मैंग्रोव, समुद्री घास और नमक दलदल द्वारा संग्रहीत कार्बन है।"
+    "explanation_hi": "असत्य। ब्लू कार्बन तटीय और समुद्री पारिस्थितिकी तंत्रों जैसे मैंग्रोव, समुद्री घास और लवणीय दलदल द्वारा संग्रहीत कार्बन है।"
   },
   {
     "id": "fb_085",
@@ -867,7 +867,7 @@
     "is_fact": true,
     "explanation": "Fact. Fundamental Duties (Article 51A) were inserted by the 42nd Amendment in 1976, on the Swaran Singh Committee's recommendation.",
     "statement_hi": "मूल कर्तव्य संविधान के मूल पाठ का हिस्सा नहीं थे और बाद में एक संशोधन द्वारा जोड़े गए।",
-    "explanation_hi": "सत्य। मूल कर्तव्य (अनुच्छेद 51ए) को 1976 में 42वें संशोधन द्वारा, स्वर्ण सिंह समिति की सिफारिश पर जोड़ा गया।"
+    "explanation_hi": "सत्य। मूल कर्तव्य (अनुच्छेद 51क) 1976 में 42वें संशोधन द्वारा, स्वर्ण सिंह समिति की सिफारिश पर जोड़े गए।"
   },
   {
     "id": "fb_088",
@@ -886,8 +886,8 @@
     "statement": "India's Election Commission currently functions as a multi-member body, not headed solely by the Chief Election Commissioner.",
     "is_fact": true,
     "explanation": "Fact. The Commission comprises the Chief Election Commissioner and two Election Commissioners with equal decision-making power.",
-    "statement_hi": "भारत का चुनाव आयोग वर्तमान में एक बहु-सदस्यीय निकाय के रूप में कार्य करता है, न कि केवल मुख्य चुनाव आयुक्त के नेतृत्व में।",
-    "explanation_hi": "सत्य। आयोग में मुख्य चुनाव आयुक्त और दो चुनाव आयुक्त होते हैं जिनके पास समान निर्णय लेने की शक्ति होती है।"
+    "statement_hi": "भारत का निर्वाचन आयोग वर्तमान में एक बहु-सदस्यीय निकाय के रूप में कार्य करता है, न कि केवल मुख्य निर्वाचन आयुक्त के नेतृत्व में।",
+    "explanation_hi": "सत्य। आयोग में मुख्य निर्वाचन आयुक्त और दो निर्वाचन आयुक्त होते हैं, जिनके पास निर्णय लेने की समान शक्ति होती है।"
   },
   {
     "id": "fb_090",
@@ -937,7 +937,7 @@
     "is_fact": false,
     "explanation": "Bluff. Impeachment applies to the President; the Vice-President is removed by a Rajya Sabha resolution agreed to by the Lok Sabha, with no grounds specified.",
     "statement_hi": "उपराष्ट्रपति को केवल संविधान के उल्लंघन के लिए महाभियोग द्वारा हटाया जा सकता है।",
-    "explanation_hi": "असत्य। महाभियोग राष्ट्रपति पर लागू होता है; उपराष्ट्रपति को राज्यसभा के प्रस्ताव से हटाया जाता है जिसे लोकसभा सहमति दे, बिना किसी निर्दिष्ट आधार के।"
+    "explanation_hi": "असत्य। महाभियोग राष्ट्रपति पर लागू होता है; उपराष्ट्रपति को राज्यसभा के ऐसे प्रस्ताव से हटाया जाता है जिस पर लोकसभा की सहमति हो, और इसके लिए संविधान में कोई आधार निर्दिष्ट नहीं है।"
   },
   {
     "id": "fb_095",
@@ -946,8 +946,8 @@
     "statement": "The Speaker's decision on whether a bill is a Money Bill is final.",
     "is_fact": true,
     "explanation": "Fact. Article 110(3) makes the Lok Sabha Speaker's certification of a Money Bill final.",
-    "statement_hi": "किसी विधेयक के धन विधेयक होने पर अध्यक्ष का निर्णय अंतिम होता है।",
-    "explanation_hi": "सत्य। अनुच्छेद 110(3) लोकसभा अध्यक्ष के धन विधेयक प्रमाणन को अंतिम बनाता है।"
+    "statement_hi": "कोई विधेयक धन विधेयक है या नहीं, इस पर लोकसभा अध्यक्ष का निर्णय अंतिम होता है।",
+    "explanation_hi": "सत्य। अनुच्छेद 110(3) के अनुसार धन विधेयक के संबंध में लोकसभा अध्यक्ष का प्रमाणन अंतिम होता है।"
   },
   {
     "id": "fb_096",
@@ -957,6 +957,6 @@
     "is_fact": false,
     "explanation": "Bluff. The Attorney General has no fixed term and holds office during the pleasure of the President.",
     "statement_hi": "भारत के महान्यायवादी का कार्यकाल छह वर्ष निश्चित होता है।",
-    "explanation_hi": "असत्य। महान्यायवादी का कोई निश्चित कार्यकाल नहीं होता और वह राष्ट्रपति की इच्छा-पर्यंत पद पर बना रहता है।"
+    "explanation_hi": "असत्य। महान्यायवादी का कोई निश्चित कार्यकाल नहीं होता और वह राष्ट्रपति के प्रसादपर्यंत पद पर बना रहता है।"
   }
 ]

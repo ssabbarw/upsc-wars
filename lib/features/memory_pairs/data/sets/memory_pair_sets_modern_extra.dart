@@ -44,13 +44,13 @@ const List<MemoryPairSetDefinition> kMemoryPairSetsModernExtra = [
         termEn: 'Charter Act 1853',
         termHi: 'Charter Act 1853',
         answerEn: 'Open civil service competition',
-        answerHi: 'सिविल सेवा प्रतियोगिता खुली',
+        answerHi: 'सिविल सेवा हेतु खुली प्रतियोगिता',
       ),
       MemoryPair(
         termEn: 'GOI Act 1858',
         termHi: 'GOI Act 1858',
         answerEn: 'Crown rule; Secretary of State',
-        answerHi: 'क्राउन शासन; राज्य सचिव',
+        answerHi: 'क्राउन का शासन; भारत सचिव',
       ),
       MemoryPair(
         termEn: 'Indian Councils Act 1909',
@@ -62,7 +62,7 @@ const List<MemoryPairSetDefinition> kMemoryPairSetsModernExtra = [
         termEn: 'GOI Act 1919',
         termHi: 'GOI Act 1919',
         answerEn: 'Montagu–Chelmsford; dyarchy',
-        answerHi: 'मॉन्टेग्यू-चेम्सफोर्ड; द्वि-शासन',
+        answerHi: 'मॉन्टेग्यू-चेम्सफोर्ड; द्वैध शासन',
       ),
       MemoryPair(
         termEn: 'GOI Act 1935',
@@ -99,7 +99,7 @@ const List<MemoryPairSetDefinition> kMemoryPairSetsModernExtra = [
       ),
       MemoryPair(
         termEn: 'Syed Ahmed Khan',
-        termHi: 'सैय्यद अहमद खान',
+        termHi: 'सैयद अहमद खान',
         answerEn: 'Aligarh Movement',
         answerHi: 'अलीगढ़ आंदोलन',
       ),
@@ -401,7 +401,7 @@ const List<MemoryPairSetDefinition> kMemoryPairSetsModernExtra = [
       ),
       MemoryPair(
         termEn: 'Ghadar Party',
-        termHi: 'गदर पार्टी',
+        termHi: 'ग़दर पार्टी',
         answerEn: 'Lala Hardayal',
         answerHi: 'लाला हरदयाल',
       ),
@@ -419,7 +419,7 @@ const List<MemoryPairSetDefinition> kMemoryPairSetsModernExtra = [
       ),
       MemoryPair(
         termEn: 'Jugantar',
-        termHi: 'जुगंतर',
+        termHi: 'युगांतर',
         answerEn: 'Barindra Kumar Ghosh',
         answerHi: 'बारिन्द्र कुमार घोष',
       ),
@@ -437,7 +437,7 @@ const List<MemoryPairSetDefinition> kMemoryPairSetsModernExtra = [
       ),
       MemoryPair(
         termEn: 'Chittagong Armoury Raid',
-        termHi: 'चटगाँव शस्त्रागार धावा',
+        termHi: 'चटगाँव शस्त्रागार छापा',
         answerEn: 'Surya Sen',
         answerHi: 'सूर्य सेन',
       ),
@@ -500,7 +500,7 @@ const List<MemoryPairSetDefinition> kMemoryPairSetsModernExtra = [
       ),
       MemoryPair(
         termEn: 'Tebhaga Movement',
-        termHi: 'तिभागा आंदोलन',
+        termHi: 'तेभागा आंदोलन',
         answerEn: 'Bengal, 1946',
         answerHi: 'बंगाल, 1946',
       ),

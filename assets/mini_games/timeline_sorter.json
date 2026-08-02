@@ -553,7 +553,7 @@
         "label": "First Battle of Panipat — Babur defeats Ibrahim Lodi",
         "year_display": "1526",
         "sort_key": 1526,
-        "label_hi": "पानीपत की प्रथम लड़ाई — बाबर ने इब्राहीम लोदी को पराजित किया"
+        "label_hi": "पानीपत का प्रथम युद्ध — बाबर ने इब्राहीम लोदी को पराजित किया"
       },
       {
         "label": "Battle of Khanwa — Babur defeats Rana Sanga",
@@ -565,7 +565,7 @@
         "label": "Second Battle of Panipat — Akbar's forces defeat Hemu",
         "year_display": "1556",
         "sort_key": 1556,
-        "label_hi": "पानीपत की द्वितीय लड़ाई — अकबर की सेनाओं ने हेमू को पराजित किया"
+        "label_hi": "पानीपत का द्वितीय युद्ध — अकबर की सेनाओं ने हेमू को पराजित किया"
       },
       {
         "label": "Battle of Haldighati — Akbar's forces against Maharana Pratap",
@@ -577,12 +577,12 @@
         "label": "Third Battle of Panipat — Abdali defeats the Marathas",
         "year_display": "1761",
         "sort_key": 1761,
-        "label_hi": "पानीपत की तृतीय लड़ाई — अब्दाली ने मराठों को पराजित किया"
+        "label_hi": "पानीपत का तृतीय युद्ध — अब्दाली ने मराठों को पराजित किया"
       }
     ],
     "explanation": "Panipat bookends the Mughal story: the first battle founded the empire, Khanwa secured it against the Rajputs, the second battle restored it for Akbar, and the third — fought between Afghans and Marathas — marked how completely Mughal power had hollowed out by 1761.",
     "theme_hi": "मध्यकाल के निर्णायक युद्ध",
-    "explanation_hi": "पानीपत मुग़ल गाथा के आरंभ और अंत दोनों को चिह्नित करता है: पहली लड़ाई ने साम्राज्य की स्थापना की, खानवा ने इसे राजपूतों के विरुद्ध सुरक्षित किया, दूसरी लड़ाई ने इसे अकबर के लिए पुनर्स्थापित किया, और तीसरी — अफगानों व मराठों के बीच लड़ी गई — ने दर्शाया कि 1761 तक मुग़ल सत्ता कितनी पूर्णतः खोखली हो चुकी थी।"
+    "explanation_hi": "पानीपत मुग़ल गाथा के आरंभ और अंत दोनों को चिह्नित करता है: पहले युद्ध ने साम्राज्य की स्थापना की, खानवा ने इसे राजपूतों के विरुद्ध सुरक्षित किया, दूसरे युद्ध ने इसे अकबर के लिए पुनर्स्थापित किया, और तीसरा — अफगानों व मराठों के बीच लड़ा गया — ने दर्शाया कि 1761 तक मुग़ल सत्ता कितनी पूर्णतः खोखली हो चुकी थी।"
   },
   {
     "id": "tl_016",
@@ -852,12 +852,12 @@
         "label": "Third Battle of Panipat",
         "year_display": "1761",
         "sort_key": 1761,
-        "label_hi": "पानीपत की तृतीय लड़ाई"
+        "label_hi": "पानीपत का तृतीय युद्ध"
       }
     ],
     "explanation": "After Aurangzeb, weak successions came fast — Bahadur Shah I ruled only five years — while the 1717 farman quietly empowered the English Company; Nadir Shah's 1739 sack exposed imperial impotence long before Panipat III confirmed it.",
     "theme_hi": "मुग़ल साम्राज्य का पतन",
-    "explanation_hi": "औरंगज़ेब के बाद, कमज़ोर उत्तराधिकार तेज़ी से आए — बहादुर शाह प्रथम ने केवल पाँच वर्ष शासन किया — जबकि 1717 के फरमान ने चुपचाप अंग्रेज़ कंपनी को सशक्त बना दिया; नादिर शाह की 1739 की लूट ने साम्राज्य की शक्तिहीनता को पानीपत तृतीय से बहुत पहले ही उजागर कर दिया था।"
+    "explanation_hi": "औरंगज़ेब के बाद, कमज़ोर उत्तराधिकार तेज़ी से आए — बहादुर शाह प्रथम ने केवल पाँच वर्ष शासन किया — जबकि 1717 के फरमान ने चुपचाप अंग्रेज़ कंपनी को सशक्त बना दिया; नादिर शाह की 1739 की लूट ने साम्राज्य की शक्तिहीनता को पानीपत के तृतीय युद्ध से बहुत पहले ही उजागर कर दिया था।"
   },
   {
     "id": "tl_023",
@@ -887,7 +887,7 @@
         "label": "Maratha defeat at the Third Battle of Panipat",
         "year_display": "1761",
         "sort_key": 1761,
-        "label_hi": "पानीपत की तृतीय लड़ाई में मराठों की पराजय"
+        "label_hi": "पानीपत के तृतीय युद्ध में मराठों की पराजय"
       }
     ],
     "explanation": "The Peshwaship became hereditary from Balaji Vishwanath; Baji Rao I's cavalry campaigns spread Maratha power across north India, and under Balaji Baji Rao the expansion peaked — then broke catastrophically at Panipat in 1761.",
@@ -1308,7 +1308,7 @@
     ],
     "explanation": "Revolutionary violence came in waves: the Pune assassinations of 1897, the Bengal bomb cult around 1908, the diaspora-based Ghadar network from 1913, and the HRA/HSRA generation whose Kakori and Chittagong actions bracketed the late 1920s.",
     "theme_hi": "क्रांतिकारी आंदोलन",
-    "explanation_hi": "क्रांतिकारी हिंसा लहरों में आई: 1897 की पुणे हत्याएँ, लगभग 1908 का बंगाल बम पंथ, 1913 से प्रवासी-आधारित ग़दर नेटवर्क, और एचआरए/एचएसआरए की पीढ़ी जिनके काकोरी और चटगाँव कार्यों ने 1920 के दशक के अंत को घेरा।"
+    "explanation_hi": "क्रांतिकारी गतिविधियाँ लहरों में आईं: 1897 की पुणे हत्याएँ, 1908 के आसपास बंगाल की बम-क्रांतिकारी गतिविधियाँ, 1913 से प्रवासी भारतीयों की ग़दर पार्टी, और HRA/HSRA की पीढ़ी, जिसकी काकोरी और चटगाँव की कार्रवाइयाँ 1920 के दशक के उत्तरार्ध में हुईं।"
   },
   {
     "id": "tl_034",
@@ -1589,7 +1589,7 @@
     ],
     "explanation": "Colonial-era orientalist scholarship created the Asiatic Society, the Indian Museum and the ASI; after independence, the state built its own cultural apparatus, starting with the Akademis for performing arts (1952) and literature (1954).",
     "theme_hi": "भारतीय संस्कृति की संस्थाएँ",
-    "explanation_hi": "औपनिवेशिक काल की प्राच्यविद्या ने एशियाटिक सोसाइटी, इंडियन म्यूज़ियम और एएसआई का निर्माण किया; स्वतंत्रता के बाद राज्य ने अपनी स्वयं की सांस्कृतिक संरचना बनाई, जिसकी शुरुआत प्रदर्शन कलाओं (1952) और साहित्य (1954) की अकादमियों से हुई।"
+    "explanation_hi": "औपनिवेशिक काल की प्राच्यविद्या ने एशियाटिक सोसाइटी, इंडियन म्यूज़ियम और ASI का निर्माण किया; स्वतंत्रता के बाद राज्य ने अपनी स्वयं की सांस्कृतिक संरचना बनाई, जिसकी शुरुआत प्रदर्शन कलाओं (1952) और साहित्य (1954) की अकादमियों से हुई।"
   },
   {
     "id": "tl_041",
@@ -1648,7 +1648,7 @@
         "label": "Shore Temple at Mamallapuram under Pallava Rajasimha",
         "year_display": "c. 700 CE",
         "sort_key": 700,
-        "label_hi": "पल्लव राजसिंह के अधीन ममल्लपुरम का शोर टेंपल"
+        "label_hi": "पल्लव राजसिंह के अधीन ममल्लपुरम का तट मंदिर (शोर टेंपल)"
       },
       {
         "label": "Kandariya Mahadeva temple at Khajuraho under the Chandellas",
@@ -1671,7 +1671,7 @@
     ],
     "explanation": "From the simple flat-roofed Gupta shrine at Deogarh, temple building diverged into regional styles — Pallava structural Dravida at the Shore Temple, mature Nagara at Khajuraho, and the ornate star-plan idioms of the Hoysalas and Kakatiyas.",
     "theme_hi": "मंदिर स्थापत्य का विकास",
-    "explanation_hi": "देवगढ़ के साधारण समतल-छत वाले गुप्तकालीन मंदिर से, मंदिर निर्माण क्षेत्रीय शैलियों में विभाजित हुआ — शोर टेंपल में पल्लव संरचनात्मक द्रविड़ शैली, खजुराहो में परिपक्व नागर शैली, और होयसलों व काकतीयों की अलंकृत तारा-योजना शैलियाँ।"
+    "explanation_hi": "देवगढ़ के साधारण समतल-छत वाले गुप्तकालीन मंदिर से, मंदिर निर्माण क्षेत्रीय शैलियों में विभाजित हुआ — तट मंदिर में पल्लव संरचनात्मक द्रविड़ शैली, खजुराहो में परिपक्व नागर शैली, और होयसलों व काकतीयों की अलंकृत तारा-योजना शैलियाँ।"
   },
   {
     "id": "tl_043",
@@ -2034,7 +2034,7 @@
     ],
     "explanation": "The early multipurpose projects — DVC (modelled on the Tennessee Valley Authority), Hirakud and Bhakra — were Nehru-era 'temples of modern India'; Tehri and Sardar Sarovar took decades longer amid engineering and environmental controversy.",
     "theme_hi": "भारत की महान नदी घाटी परियोजनाएँ",
-    "explanation_hi": "प्रारंभिक बहुउद्देशीय परियोजनाएँ — डीवीसी (टेनेसी वैली अथॉरिटी के आधार पर), हीराकुंड और भाखड़ा — नेहरू-युग के 'आधुनिक भारत के मंदिर' थीं; टिहरी और सरदार सरोवर को इंजीनियरिंग और पर्यावरणीय विवादों के बीच दशकों अधिक लगे।"
+    "explanation_hi": "प्रारंभिक बहुउद्देशीय परियोजनाएँ — DVC (टेनेसी वैली अथॉरिटी के आधार पर), हीराकुंड और भाखड़ा — नेहरू-युग के 'आधुनिक भारत के मंदिर' थीं; टिहरी और सरदार सरोवर को इंजीनियरिंग और पर्यावरणीय विवादों के बीच दशकों अधिक लगे।"
   },
   {
     "id": "tl_052",
@@ -2052,7 +2052,7 @@
         "label": "Vasco da Gama reaches Calicut via the Cape of Good Hope",
         "year_display": "1498",
         "sort_key": 1498,
-        "label_hi": "वास्को द गामा गुड होप अंतरीप के रास्ते कालीकट पहुँचता है"
+        "label_hi": "वास्को द गामा केप ऑफ गुड होप (उत्तमाशा अंतरीप) के रास्ते कालीकट पहुँचता है"
       },
       {
         "label": "Magellan's expedition departs to circumnavigate the globe",
@@ -2157,7 +2157,7 @@
     ],
     "explanation": "The Survey of India's Great Trigonometrical Survey, begun in 1802, methodically triangulated the subcontinent; its computers identified Peak XV as the world's highest in 1852, it was named for a former Surveyor-General in 1865, and was finally climbed in 1953.",
     "theme_hi": "भारत का मानचित्रण और एवरेस्ट की माप",
-    "explanation_hi": "1802 में आरंभ हुए सर्वे ऑफ इंडिया के ग्रेट ट्रिगोनोमेट्रिकल सर्वे ने व्यवस्थित रूप से उपमहाद्वीप का त्रिकोणमितीय सर्वेक्षण किया; इसके परिकलकों ने 1852 में पीक XV को विश्व का सबसे ऊँचा पर्वत पहचाना, 1865 में इसका नाम एक पूर्व सर्वेक्षक-जनरल के नाम पर रखा गया, और अंततः 1953 में इस पर पहली चढ़ाई हुई।"
+    "explanation_hi": "1802 में आरंभ हुए सर्वे ऑफ इंडिया के ग्रेट ट्रिगोनोमेट्रिकल सर्वे ने व्यवस्थित रूप से उपमहाद्वीप का त्रिकोणमितीय सर्वेक्षण किया; इसके गणकों ने 1852 में पीक XV को विश्व के सबसे ऊँचे पर्वत के रूप में पहचाना, 1865 में इसका नाम एक पूर्व सर्वेयर-जनरल के नाम पर रखा गया, और अंततः 1953 में इस पर पहली चढ़ाई हुई।"
   },
   {
     "id": "tl_055",
@@ -2251,13 +2251,13 @@
         "label": "IRS-1A, first operational remote sensing satellite",
         "year_display": "1988",
         "sort_key": 1988,
-        "label_hi": "आईआरएस-1ए, पहला परिचालन रिमोट सेंसिंग उपग्रह"
+        "label_hi": "IRS-1A, पहला परिचालन रिमोट सेंसिंग उपग्रह"
       },
       {
         "label": "Oceansat-1 (IRS-P4) launched for ocean studies",
         "year_display": "1999",
         "sort_key": 1999,
-        "label_hi": "समुद्र अध्ययन हेतु ओशनसैट-1 (आईआरएस-पी4) प्रक्षेपित"
+        "label_hi": "समुद्र अध्ययन हेतु ओशनसैट-1 (IRS-P4) प्रक्षेपित"
       },
       {
         "label": "Cartosat-1 launched for high-resolution mapping",
@@ -2268,7 +2268,7 @@
     ],
     "explanation": "India's remote sensing programme matured in steps: the experimental Aryabhata and Bhaskara missions led to the operational IRS series from 1988, then specialised platforms — Oceansat for the seas and Cartosat for cartographic-grade imagery.",
     "theme_hi": "भारत के पृथ्वी अवलोकन उपग्रह",
-    "explanation_hi": "भारत का रिमोट सेंसिंग कार्यक्रम चरणों में परिपक्व हुआ: प्रायोगिक आर्यभट्ट और भास्कर मिशनों ने 1988 से परिचालन आईआरएस श्रृंखला को जन्म दिया, फिर विशिष्ट प्लेटफॉर्म — समुद्रों के लिए ओशनसैट और मानचित्रण-गुणवत्ता वाली छवियों के लिए कार्टोसैट।"
+    "explanation_hi": "भारत का रिमोट सेंसिंग कार्यक्रम चरणों में परिपक्व हुआ: प्रायोगिक आर्यभट्ट और भास्कर मिशनों ने 1988 से परिचालन IRS श्रृंखला को जन्म दिया, फिर विशिष्ट प्लेटफॉर्म — समुद्रों के लिए ओशनसैट और मानचित्रण-गुणवत्ता वाली छवियों के लिए कार्टोसैट।"
   },
   {
     "id": "tl_058",
@@ -2362,7 +2362,7 @@
         "label": "New Delhi inaugurated as the imperial capital",
         "year_display": "1931",
         "sort_key": 1931,
-        "label_hi": "नई दिल्ली का साम्राज्ञी राजधानी के रूप में उद्घाटन"
+        "label_hi": "नई दिल्ली का शाही राजधानी के रूप में उद्घाटन"
       },
       {
         "label": "Bhubaneswar planned as Odisha's new capital",
@@ -2385,7 +2385,7 @@
     ],
     "explanation": "Purpose-built capitals bookend Indian planning history: Lutyens' imperial New Delhi, the early post-independence projects at Bhubaneswar and Chandigarh, and the still-unfinished 21st-century experiment at Amaravati.",
     "theme_hi": "भारत के नियोजित राजधानी शहर",
-    "explanation_hi": "विशेष रूप से निर्मित राजधानियाँ भारतीय नियोजन इतिहास के आरंभ और वर्तमान दोनों को दर्शाती हैं: लुटियंस की साम्राज्ञी नई दिल्ली, भुवनेश्वर और चंडीगढ़ की प्रारंभिक स्वातंत्र्योत्तर परियोजनाएँ, और अमरावती में अभी तक अधूरा 21वीं सदी का प्रयोग।"
+    "explanation_hi": "विशेष रूप से निर्मित राजधानियाँ भारतीय नियोजन इतिहास के आरंभ और वर्तमान दोनों को दर्शाती हैं: लुटियंस की शाही नई दिल्ली, भुवनेश्वर और चंडीगढ़ की प्रारंभिक स्वातंत्र्योत्तर परियोजनाएँ, और अमरावती में अभी तक अधूरा 21वीं सदी का प्रयोग।"
   },
   {
     "id": "tl_061",
@@ -2415,17 +2415,17 @@
         "label": "LPG reforms — liberalisation, privatisation, globalisation",
         "year_display": "1991",
         "sort_key": 1991,
-        "label_hi": "एलपीजी सुधार — उदारीकरण, निजीकरण, वैश्वीकरण"
+        "label_hi": "LPG सुधार — उदारीकरण, निजीकरण, वैश्वीकरण"
       },
       {
         "label": "Goods and Services Tax (GST) implemented",
         "year_display": "2017",
         "sort_key": 2017,
-        "label_hi": "वस्तु एवं सेवा कर (जीएसटी) लागू"
+        "label_hi": "वस्तु एवं सेवा कर (GST) लागू"
       }
     ],
     "explanation": "India's economic story moves from planned self-sufficiency (Five-Year Plans, nationalised banks) through a productivity push (Green Revolution) to a decisive market opening in 1991, culminating decades later in a single unified indirect tax regime.",
-    "theme_hi": "आर्थिक महत्वपूर्ण पड़ाव — योजनाओं से जीएसटी तक",
+    "theme_hi": "आर्थिक महत्वपूर्ण पड़ाव — योजनाओं से GST तक",
     "explanation_hi": "भारत की आर्थिक गाथा नियोजित आत्मनिर्भरता (पंचवर्षीय योजनाएँ, राष्ट्रीयकृत बैंक) से उत्पादकता प्रोत्साहन (हरित क्रांति) से होते हुए 1991 में निर्णायक बाज़ार-उन्मुक्ति तक पहुँचती है, और दशकों बाद एक एकीकृत अप्रत्यक्ष कर व्यवस्था में परिणत होती है।"
   },
   {
@@ -2467,7 +2467,7 @@
     ],
     "explanation": "Banking moved steadily into state hands: the RBI was created private in 1935 and nationalised in 1949, the Imperial Bank became SBI in 1955, and the big nationalisation waves of 1969 and 1980 brought most commercial banking under government ownership.",
     "theme_hi": "भारतीय बैंकिंग के महत्वपूर्ण पड़ाव",
-    "explanation_hi": "बैंकिंग धीरे-धीरे राज्य के हाथों में आती गई: भारतीय रिज़र्व बैंक को 1935 में निजी रूप में बनाया गया और 1949 में राष्ट्रीयकृत किया गया, इंपीरियल बैंक 1955 में एसबीआई बना, और 1969 व 1980 की बड़ी राष्ट्रीयकरण लहरों ने अधिकांश वाणिज्यिक बैंकिंग को सरकारी स्वामित्व में ला दिया।"
+    "explanation_hi": "बैंकिंग धीरे-धीरे राज्य के हाथों में आती गई: भारतीय रिज़र्व बैंक को 1935 में निजी रूप में बनाया गया और 1949 में राष्ट्रीयकृत किया गया, इंपीरियल बैंक 1955 में SBI बना, और 1969 व 1980 की बड़ी राष्ट्रीयकरण लहरों ने अधिकांश वाणिज्यिक बैंकिंग को सरकारी स्वामित्व में ला दिया।"
   },
   {
     "id": "tl_063",
@@ -2520,13 +2520,13 @@
         "label": "New Economic Policy launches LPG reforms",
         "year_display": "1991",
         "sort_key": 1991,
-        "label_hi": "नई आर्थिक नीति ने एलपीजी सुधार आरंभ किए"
+        "label_hi": "नई आर्थिक नीति ने LPG सुधार आरंभ किए"
       },
       {
         "label": "SEBI given statutory powers",
         "year_display": "1992",
         "sort_key": 1992,
-        "label_hi": "सेबी को सांविधिक अधिकार दिए गए"
+        "label_hi": "SEBI को सांविधिक अधिकार दिए गए"
       },
       {
         "label": "FEMA replaces the draconian FERA",
@@ -2544,12 +2544,12 @@
         "label": "GST rolled out nationwide",
         "year_display": "2017",
         "sort_key": 2017,
-        "label_hi": "जीएसटी देशभर में लागू"
+        "label_hi": "GST देशभर में लागू"
       }
     ],
     "explanation": "The 1991 crisis-driven opening was followed by institution building: a statutory market regulator in 1992, liberalised forex law in 1999, and the twin structural reforms of the 2010s — the bankruptcy code and the GST.",
     "theme_hi": "1991 के बाद के सुधार",
-    "explanation_hi": "1991 के संकट-प्रेरित उन्मुक्ति के बाद संस्था-निर्माण हुआ: 1992 में एक सांविधिक बाज़ार नियामक, 1999 में उदारीकृत विदेशी मुद्रा कानून, और 2010 के दशक के दो संरचनात्मक सुधार — दिवाला संहिता और जीएसटी।"
+    "explanation_hi": "1991 के संकट-प्रेरित उन्मुक्ति के बाद संस्था-निर्माण हुआ: 1992 में एक सांविधिक बाज़ार नियामक, 1999 में उदारीकृत विदेशी मुद्रा कानून, और 2010 के दशक के दो संरचनात्मक सुधार — दिवाला संहिता और GST।"
   },
   {
     "id": "tl_065",
@@ -2567,7 +2567,7 @@
         "label": "Fiscal Responsibility and Budget Management (FRBM) Act",
         "year_display": "2003",
         "sort_key": 2003,
-        "label_hi": "राजकोषीय उत्तरदायित्व और बजट प्रबंधन (एफआरबीएम) अधिनियम"
+        "label_hi": "राजकोषीय उत्तरदायित्व और बजट प्रबंधन (FRBM) अधिनियम"
       },
       {
         "label": "Monetary Policy Framework Agreement adopts inflation targeting",
@@ -2584,7 +2584,7 @@
     ],
     "explanation": "The RBI Act of 1934 created the central bank, but the modern framework is recent: FRBM disciplined fiscal policy in 2003, the 2015 agreement fixed a 4% CPI inflation target, and the six-member MPC began setting rates in 2016.",
     "theme_hi": "भारत में मौद्रिक नीति का विकास",
-    "explanation_hi": "1934 के रिज़र्व बैंक अधिनियम ने केंद्रीय बैंक का निर्माण किया, परंतु आधुनिक ढाँचा हाल का है: एफआरबीएम ने 2003 में राजकोषीय नीति को अनुशासित किया, 2015 के समझौते ने 4% सीपीआई मुद्रास्फीति लक्ष्य तय किया, और छह-सदस्यीय एमपीसी ने 2016 में दरें तय करना आरंभ किया।"
+    "explanation_hi": "1934 के रिज़र्व बैंक अधिनियम ने केंद्रीय बैंक का निर्माण किया, परंतु आधुनिक ढाँचा हाल का है: FRBM ने 2003 में राजकोषीय नीति को अनुशासित किया, 2015 के समझौते ने 4% CPI मुद्रास्फीति लक्ष्य तय किया, और छह-सदस्यीय MPC ने 2016 में दरें तय करना आरंभ किया।"
   },
   {
     "id": "tl_066",
@@ -2596,36 +2596,36 @@
         "label": "IFCI, India's first development bank, established",
         "year_display": "1948",
         "sort_key": 1948,
-        "label_hi": "भारत के पहले विकास बैंक आईएफसीआई की स्थापना"
+        "label_hi": "भारत के पहले विकास बैंक IFCI की स्थापना"
       },
       {
         "label": "ICICI set up to finance private industry",
         "year_display": "1955",
         "sort_key": 1955,
-        "label_hi": "निजी उद्योग के वित्तपोषण हेतु आईसीआईसीआई की स्थापना"
+        "label_hi": "निजी उद्योग के वित्तपोषण हेतु ICICI की स्थापना"
       },
       {
         "label": "IDBI established as the apex industrial lender",
         "year_display": "1964",
         "sort_key": 1964,
-        "label_hi": "शीर्ष औद्योगिक ऋणदाता के रूप में आईडीबीआई की स्थापना"
+        "label_hi": "शीर्ष औद्योगिक ऋणदाता के रूप में IDBI की स्थापना"
       },
       {
         "label": "NABARD created for agriculture and rural development",
         "year_display": "1982",
         "sort_key": 1982,
-        "label_hi": "कृषि और ग्रामीण विकास हेतु नाबार्ड का गठन"
+        "label_hi": "कृषि और ग्रामीण विकास हेतु NABARD का गठन"
       },
       {
         "label": "SIDBI created for small industries",
         "year_display": "1990",
         "sort_key": 1990,
-        "label_hi": "लघु उद्योगों हेतु सिडबी का गठन"
+        "label_hi": "लघु उद्योगों हेतु SIDBI का गठन"
       }
     ],
     "explanation": "India built specialised lenders one sector at a time: IFCI for industry in 1948, ICICI for private enterprise, IDBI as apex institution in 1964, then dedicated banks for agriculture (NABARD, 1982) and small industry (SIDBI, 1990).",
     "theme_hi": "विकास वित्त संस्थाएँ",
-    "explanation_hi": "भारत ने एक-एक क्षेत्र के लिए विशेष ऋणदाता संस्थाएँ बनाईं: 1948 में उद्योग हेतु आईएफसीआई, निजी उद्यम हेतु आईसीआईसीआई, 1964 में शीर्ष संस्था के रूप में आईडीबीआई, फिर कृषि (नाबार्ड, 1982) और लघु उद्योग (सिडबी, 1990) हेतु समर्पित बैंक।"
+    "explanation_hi": "भारत ने एक-एक क्षेत्र के लिए विशेष ऋणदाता संस्थाएँ बनाईं: 1948 में उद्योग हेतु IFCI, निजी उद्यम हेतु ICICI, 1964 में शीर्ष संस्था के रूप में IDBI, फिर कृषि (NABARD, 1982) और लघु उद्योग (SIDBI, 1990) हेतु समर्पित बैंक।"
   },
   {
     "id": "tl_067",
@@ -2643,7 +2643,7 @@
         "label": "MODVAT introduced to reduce cascading of excise duties",
         "year_display": "1986",
         "sort_key": 1986,
-        "label_hi": "उत्पाद शुल्क के व्यापक प्रभाव को कम करने हेतु मॉडवैट की शुरुआत"
+        "label_hi": "उत्पाद शुल्क के व्यापक प्रभाव को कम करने हेतु MODVAT की शुरुआत"
       },
       {
         "label": "Service tax introduced on three services",
@@ -2655,18 +2655,18 @@
         "label": "State-level VAT replaces sales tax",
         "year_display": "2005",
         "sort_key": 2005,
-        "label_hi": "राज्य-स्तरीय वैट ने बिक्री कर का स्थान लिया"
+        "label_hi": "राज्य-स्तरीय VAT ने बिक्री कर का स्थान लिया"
       },
       {
         "label": "GST subsumes central and state indirect taxes",
         "year_display": "2017",
         "sort_key": 2017,
-        "label_hi": "जीएसटी ने केंद्रीय और राज्य अप्रत्यक्ष करों को समाहित किया"
+        "label_hi": "GST ने केंद्रीय और राज्य अप्रत्यक्ष करों को समाहित किया"
       }
     ],
     "explanation": "Every step chipped away at tax cascading: MODVAT gave credit for excise inputs, service tax broadened the base from 1994, state VAT rationalised sales taxes in 2005, and GST finally merged the chain into one destination-based tax in 2017.",
     "theme_hi": "अप्रत्यक्ष कर सुधार की लंबी राह",
-    "explanation_hi": "प्रत्येक कदम ने कर के व्यापक प्रभाव को कम किया: मॉडवैट ने उत्पाद शुल्क इनपुट पर क्रेडिट दिया, 1994 से सेवा कर ने आधार व्यापक किया, 2005 में राज्य वैट ने बिक्री करों को युक्तिसंगत बनाया, और अंततः 2017 में जीएसटी ने पूरी शृंखला को एक गंतव्य-आधारित कर में मिला दिया।"
+    "explanation_hi": "प्रत्येक कदम ने कर के व्यापक प्रभाव को कम किया: MODVAT ने उत्पाद शुल्क इनपुट पर क्रेडिट दिया, 1994 से सेवा कर ने आधार व्यापक किया, 2005 में राज्य VAT ने बिक्री करों को युक्तिसंगत बनाया, और अंततः 2017 में GST ने पूरी शृंखला को एक गंतव्य-आधारित कर में मिला दिया।"
   },
   {
     "id": "tl_068",
@@ -2702,12 +2702,12 @@
         "label": "PM-KISAN direct income support launched",
         "year_display": "2019",
         "sort_key": 2019,
-        "label_hi": "पीएम-किसान प्रत्यक्ष आय सहायता का शुभारंभ"
+        "label_hi": "PM-KISAN प्रत्यक्ष आय सहायता का शुभारंभ"
       }
     ],
     "explanation": "Farm policy shifted focus over the decades — first raising production (Green and White Revolutions), then easing credit (KCC), then guaranteeing food access as a legal right (NFSA 2013), and finally direct cash transfers to farmers (PM-KISAN).",
     "theme_hi": "कृषि नीति के महत्वपूर्ण पड़ाव",
-    "explanation_hi": "कृषि नीति का ध्यान दशकों में बदलता गया — पहले उत्पादन बढ़ाना (हरित और श्वेत क्रांति), फिर ऋण को सुगम बनाना (केसीसी), फिर खाद्य पहुँच को कानूनी अधिकार के रूप में सुनिश्चित करना (एनएफएसए 2013), और अंततः किसानों को प्रत्यक्ष नकद हस्तांतरण (पीएम-किसान)।"
+    "explanation_hi": "कृषि नीति का ध्यान दशकों में बदलता गया — पहले उत्पादन बढ़ाना (हरित और श्वेत क्रांति), फिर ऋण को सुगम बनाना (KCC), फिर खाद्य पहुँच को कानूनी अधिकार के रूप में सुनिश्चित करना (NFSA 2013), और अंततः किसानों को प्रत्यक्ष नकद हस्तांतरण (PM-KISAN)।"
   },
   {
     "id": "tl_069",
@@ -2778,7 +2778,7 @@
         "label": "LERMS introduces partial convertibility",
         "year_display": "1992",
         "sort_key": 1992,
-        "label_hi": "लर्म्स (LERMS) ने आंशिक परिवर्तनीयता की शुरुआत की"
+        "label_hi": "LERMS ने आंशिक परिवर्तनीयता की शुरुआत की"
       },
       {
         "label": "Rupee made fully convertible on the current account",
@@ -2789,7 +2789,7 @@
     ],
     "explanation": "Three devaluations (1949, 1966, 1991) mark the fixed-rate era's crises; after 1991 the regime itself changed, moving through the dual-rate LERMS to a market-determined rate and full current account convertibility by 1994.",
     "theme_hi": "रुपये की विनिमय दर यात्रा",
-    "explanation_hi": "तीन अवमूल्यन (1949, 1966, 1991) निश्चित-दर युग के संकटों को चिह्नित करते हैं; 1991 के बाद व्यवस्था स्वयं बदल गई, दोहरी-दर लर्म्स से होते हुए बाज़ार-निर्धारित दर और 1994 तक चालू खाते पर पूर्ण परिवर्तनीयता तक पहुँची।"
+    "explanation_hi": "तीन अवमूल्यन (1949, 1966, 1991) निश्चित-दर युग के संकटों को चिह्नित करते हैं; 1991 के बाद व्यवस्था स्वयं बदल गई, दोहरी-दर LERMS से होते हुए बाज़ार-निर्धारित दर और 1994 तक चालू खाते पर पूर्ण परिवर्तनीयता तक पहुँची।"
   },
   {
     "id": "tl_071",
@@ -2807,30 +2807,30 @@
         "label": "SEBI constituted as a non-statutory body",
         "year_display": "1988",
         "sort_key": 1988,
-        "label_hi": "सेबी का गैर-सांविधिक निकाय के रूप में गठन"
+        "label_hi": "SEBI का गैर-सांविधिक निकाय के रूप में गठन"
       },
       {
         "label": "SEBI Act gives the regulator statutory powers",
         "year_display": "1992",
         "sort_key": 1992,
-        "label_hi": "सेबी अधिनियम ने नियामक को सांविधिक अधिकार दिए"
+        "label_hi": "SEBI अधिनियम ने नियामक को सांविधिक अधिकार दिए"
       },
       {
         "label": "NSE begins equity trading with screen-based system",
         "year_display": "1994",
         "sort_key": 1994,
-        "label_hi": "एनएसई ने स्क्रीन-आधारित प्रणाली से इक्विटी ट्रेडिंग आरंभ की"
+        "label_hi": "NSE ने स्क्रीन-आधारित प्रणाली से इक्विटी ट्रेडिंग आरंभ की"
       },
       {
         "label": "NSDL launches dematerialised share holding",
         "year_display": "1996",
         "sort_key": 1996,
-        "label_hi": "एनएसडीएल ने डीमैट शेयर होल्डिंग का शुभारंभ किया"
+        "label_hi": "NSDL ने डीमैट शेयर होल्डिंग का शुभारंभ किया"
       }
     ],
     "explanation": "Asia's oldest exchange operated for over a century before modern regulation arrived: SEBI (statutory after the 1992 securities scam), the NSE's electronic trading from 1994, and NSDL's demat system in 1996 together transformed Indian markets.",
     "theme_hi": "भारत के पूंजी बाज़ारों का निर्माण",
-    "explanation_hi": "एशिया का सबसे पुराना एक्सचेंज आधुनिक विनियमन आने से पहले एक शताब्दी से अधिक समय तक चला: सेबी (1992 के प्रतिभूति घोटाले के बाद सांविधिक बना), 1994 से एनएसई की इलेक्ट्रॉनिक ट्रेडिंग, और 1996 में एनएसडीएल की डीमैट प्रणाली — इन सबने मिलकर भारतीय बाज़ारों को बदल दिया।"
+    "explanation_hi": "एशिया का सबसे पुराना एक्सचेंज आधुनिक विनियमन आने से पहले एक शताब्दी से अधिक समय तक चला: SEBI (1992 के प्रतिभूति घोटाले के बाद सांविधिक बना), 1994 से NSE की इलेक्ट्रॉनिक ट्रेडिंग, और 1996 में NSDL की डीमैट प्रणाली — इन सबने मिलकर भारतीय बाज़ारों को बदल दिया।"
   },
   {
     "id": "tl_072",
@@ -2860,7 +2860,7 @@
         "label": "MRTP Act restricts large business houses",
         "year_display": "1969",
         "sort_key": 1969,
-        "label_hi": "एमआरटीपी अधिनियम ने बड़े व्यावसायिक घरानों पर प्रतिबंध लगाए"
+        "label_hi": "MRTP अधिनियम ने बड़े व्यावसायिक घरानों पर प्रतिबंध लगाए"
       },
       {
         "label": "New Industrial Policy abolishes most licensing",
@@ -2871,7 +2871,7 @@
     ],
     "explanation": "Control tightened for four decades — licensing from 1951, state dominance from the 1956 resolution, and MRTP curbs from 1969 — before the 1991 policy dismantled the 'licence raj' almost overnight.",
     "theme_hi": "नियंत्रण से उदारीकरण तक औद्योगिक नीति",
-    "explanation_hi": "चार दशकों तक नियंत्रण कड़ा होता गया — 1951 से लाइसेंसिंग, 1956 के प्रस्ताव से राज्य का वर्चस्व, और 1969 से एमआरटीपी अंकुश — इससे पहले कि 1991 की नीति ने लगभग रातोंरात 'लाइसेंस राज' को समाप्त कर दिया।"
+    "explanation_hi": "चार दशकों तक नियंत्रण कड़ा होता गया — 1951 से लाइसेंसिंग, 1956 के प्रस्ताव से राज्य का वर्चस्व, और 1969 से MRTP अंकुश — इससे पहले कि 1991 की नीति ने लगभग रातोंरात 'लाइसेंस राज' को समाप्त कर दिया।"
   },
   {
     "id": "tl_073",
@@ -2912,7 +2912,7 @@
     ],
     "explanation": "India's environmental legal framework built up gradually — protection statutes in the 1970s and 80s, an industrial-disaster wake-up call in 1984, and eventually a dedicated judicial body (NGT) in 2010 to fast-track environmental cases.",
     "theme_hi": "भारत में पर्यावरणीय विधान और घटनाएँ",
-    "explanation_hi": "भारत का पर्यावरणीय कानूनी ढाँचा धीरे-धीरे बना — 1970 और 80 के दशक में संरक्षण कानून, 1984 में एक औद्योगिक-आपदा जागृति, और अंततः 2010 में पर्यावरणीय मामलों को तेज़ी से निपटाने के लिए एक समर्पित न्यायिक निकाय (एनजीटी)।"
+    "explanation_hi": "भारत का पर्यावरणीय कानूनी ढाँचा धीरे-धीरे बना — 1970 और 80 के दशक में संरक्षण कानून, 1984 में एक औद्योगिक-आपदा जागृति, और अंततः 2010 में पर्यावरणीय मामलों को तेज़ी से निपटाने के लिए एक समर्पित न्यायिक निकाय (NGT)।"
   },
   {
     "id": "tl_074",
@@ -2936,7 +2936,7 @@
         "label": "Rio Earth Summit adopts the UNFCCC and CBD",
         "year_display": "1992",
         "sort_key": 1992,
-        "label_hi": "रियो पृथ्वी सम्मेलन ने यूएनएफसीसीसी और सीबीडी को अपनाया"
+        "label_hi": "रियो पृथ्वी सम्मेलन ने UNFCCC और CBD को अपनाया"
       },
       {
         "label": "Kyoto Protocol sets binding emission targets",
@@ -3047,36 +3047,36 @@
         "label": "COP1 held at Berlin",
         "year_display": "1995",
         "sort_key": 1995,
-        "label_hi": "बर्लिन में सीओपी1 का आयोजन"
+        "label_hi": "बर्लिन में COP1 का आयोजन"
       },
       {
         "label": "COP3 at Kyoto adopts the Kyoto Protocol",
         "year_display": "1997",
         "sort_key": 1997,
-        "label_hi": "क्योटो में सीओपी3 ने क्योटो प्रोटोकॉल को अपनाया"
+        "label_hi": "क्योटो में COP3 ने क्योटो प्रोटोकॉल को अपनाया"
       },
       {
         "label": "COP13 adopts the Bali Action Plan",
         "year_display": "2007",
         "sort_key": 2007,
-        "label_hi": "सीओपी13 ने बाली कार्य योजना को अपनाया"
+        "label_hi": "COP13 ने बाली कार्य योजना को अपनाया"
       },
       {
         "label": "COP15 at Copenhagen ends without a binding deal",
         "year_display": "2009",
         "sort_key": 2009,
-        "label_hi": "कोपेनहेगन में सीओपी15 बिना किसी बाध्यकारी समझौते के समाप्त"
+        "label_hi": "कोपेनहेगन में COP15 बिना किसी बाध्यकारी समझौते के समाप्त"
       },
       {
         "label": "COP21 adopts the Paris Agreement",
         "year_display": "2015",
         "sort_key": 2015,
-        "label_hi": "सीओपी21 ने पेरिस समझौते को अपनाया"
+        "label_hi": "COP21 ने पेरिस समझौते को अपनाया"
       }
     ],
     "explanation": "The COP sequence tells the negotiation story: Kyoto's top-down binding targets, the Bali roadmap seeking a successor, Copenhagen's collapse — and the pivot to Paris's bottom-up nationally determined contributions in 2015.",
-    "theme_hi": "जलवायु अभिसमय के महत्वपूर्ण सीओपी सम्मेलन",
-    "explanation_hi": "सीओपी का क्रम वार्ता की गाथा बताता है: क्योटो के ऊपर-से-नीचे बाध्यकारी लक्ष्य, उत्तराधिकारी खोजती बाली रोडमैप, कोपेनहेगन का विफल होना — और 2015 में पेरिस के नीचे-से-ऊपर राष्ट्रीय स्तर पर निर्धारित योगदान की ओर बदलाव।"
+    "theme_hi": "जलवायु अभिसमय के महत्वपूर्ण COP सम्मेलन",
+    "explanation_hi": "COP का क्रम वार्ता की गाथा बताता है: क्योटो के ऊपर-से-नीचे बाध्यकारी लक्ष्य, उत्तराधिकारी खोजती बाली रोडमैप, कोपेनहेगन का विफल होना — और 2015 में पेरिस के नीचे-से-ऊपर राष्ट्रीय स्तर पर निर्धारित योगदान की ओर बदलाव।"
   },
   {
     "id": "tl_078",
@@ -3094,7 +3094,7 @@
         "label": "Ramsar Convention on Wetlands adopted",
         "year_display": "1971",
         "sort_key": 1971,
-        "label_hi": "आर्द्रभूमियों पर रामसर अभिसमय अपनाया गया"
+        "label_hi": "आर्द्रभूमियों पर रामसर कन्वेंशन अपनाया गया"
       },
       {
         "label": "Chilika and Keoladeo become India's first Ramsar sites",
@@ -3106,12 +3106,12 @@
         "label": "Nilgiri becomes India's first biosphere reserve",
         "year_display": "1986",
         "sort_key": 1986,
-        "label_hi": "नीलगिरि भारत का पहला जैवमंडल आरक्षित क्षेत्र बना"
+        "label_hi": "नीलगिरि भारत का पहला बायोस्फीयर रिज़र्व बना"
       }
     ],
     "explanation": "India's protected-area toolkit expanded over half a century: the first national park under colonial rule in 1936, international wetland designations after India joined the Ramsar regime (first sites 1981), and UNESCO-style biosphere reserves from 1986.",
     "theme_hi": "भारत में संरक्षित क्षेत्र और आर्द्रभूमियाँ",
-    "explanation_hi": "भारत का संरक्षित-क्षेत्र ढाँचा आधी शताब्दी में विस्तृत हुआ: 1936 में औपनिवेशिक शासन के अधीन पहला राष्ट्रीय उद्यान, भारत के रामसर व्यवस्था में शामिल होने के बाद अंतरराष्ट्रीय आर्द्रभूमि नामांकन (पहले स्थल 1981), और 1986 से यूनेस्को-शैली के जैवमंडल आरक्षित क्षेत्र।"
+    "explanation_hi": "भारत का संरक्षित-क्षेत्र ढाँचा आधी शताब्दी में विस्तृत हुआ: 1936 में औपनिवेशिक शासन के अधीन पहला राष्ट्रीय उद्यान, भारत के रामसर व्यवस्था में शामिल होने के बाद अंतरराष्ट्रीय आर्द्रभूमि नामांकन (पहले स्थल 1981), और 1986 से UNESCO-शैली के बायोस्फीयर रिज़र्व।"
   },
   {
     "id": "tl_079",
@@ -3141,7 +3141,7 @@
         "label": "Kigali Amendment targets HFCs",
         "year_display": "2016",
         "sort_key": 2016,
-        "label_hi": "किगाली संशोधन ने एचएफसी को लक्षित किया"
+        "label_hi": "किगाली संशोधन ने HFC को लक्षित किया"
       },
       {
         "label": "India ratifies the Kigali Amendment",
@@ -3152,7 +3152,7 @@
     ],
     "explanation": "The Vienna framework of 1985 led within two years to the Montreal Protocol's binding phase-outs of CFCs; decades later the Kigali Amendment extended the regime to HFCs — potent greenhouse gases — with India ratifying in 2021.",
     "theme_hi": "ओज़ोन परत का संरक्षण",
-    "explanation_hi": "1985 के वियना ढाँचे ने दो वर्षों के भीतर मॉन्ट्रियल प्रोटोकॉल के सीएफसी के बाध्यकारी चरणबद्ध उन्मूलन को जन्म दिया; दशकों बाद किगाली संशोधन ने इस व्यवस्था को एचएफसी — शक्तिशाली ग्रीनहाउस गैसों — तक विस्तारित किया, जिसका भारत ने 2021 में अनुसमर्थन किया।"
+    "explanation_hi": "1985 के वियना ढाँचे ने दो वर्षों के भीतर मॉन्ट्रियल प्रोटोकॉल के CFC के बाध्यकारी चरणबद्ध उन्मूलन को जन्म दिया; दशकों बाद किगाली संशोधन ने इस व्यवस्था को HFC — शक्तिशाली ग्रीनहाउस गैसों — तक विस्तारित किया, जिसका भारत ने 2021 में अनुसमर्थन किया।"
   },
   {
     "id": "tl_080",
@@ -3164,7 +3164,7 @@
         "label": "CITES signed to regulate wildlife trade",
         "year_display": "1973",
         "sort_key": 1973,
-        "label_hi": "वन्यजीव व्यापार को विनियमित करने हेतु साइट्स (CITES) पर हस्ताक्षर"
+        "label_hi": "वन्यजीव व्यापार को विनियमित करने हेतु CITES पर हस्ताक्षर"
       },
       {
         "label": "Convention on Biological Diversity opened at Rio",
@@ -3193,7 +3193,7 @@
     ],
     "explanation": "Wildlife-trade control (CITES) came first; the CBD then anchored biodiversity law from 1992, gaining protocols on GMO trade (Cartagena) and genetic-resource benefit sharing (Nagoya) before the 2022 framework set the '30 by 30' targets.",
     "theme_hi": "वैश्विक जैव विविधता समझौते",
-    "explanation_hi": "वन्यजीव-व्यापार नियंत्रण (साइट्स) सबसे पहले आया; फिर सीबीडी ने 1992 से जैव विविधता कानून को आधार दिया, जीएमओ व्यापार (कार्टाजेना) और आनुवंशिक-संसाधन लाभ बंटवारे (नागोया) पर प्रोटोकॉल प्राप्त किए, इससे पहले कि 2022 के ढाँचे ने '30 बाय 30' लक्ष्य तय किए।"
+    "explanation_hi": "वन्यजीव-व्यापार नियंत्रण (CITES) सबसे पहले आया; फिर CBD ने 1992 से जैव विविधता कानून को आधार दिया, GMO व्यापार (कार्टाजेना) और आनुवंशिक-संसाधन लाभ बंटवारे (नागोया) पर प्रोटोकॉल प्राप्त किए, इससे पहले कि 2022 के ढाँचे ने '30 बाय 30' लक्ष्य तय किए।"
   },
   {
     "id": "tl_081",
@@ -3252,7 +3252,7 @@
         "label": "BS-IV fuel norms enforced nationwide",
         "year_display": "2017",
         "sort_key": 2017,
-        "label_hi": "बीएस-IV ईंधन मानदंड देशभर में लागू"
+        "label_hi": "BS-IV ईंधन मानदंड देशभर में लागू"
       },
       {
         "label": "National Clean Air Programme launched",
@@ -3264,12 +3264,12 @@
         "label": "India leapfrogs to BS-VI fuel norms",
         "year_display": "2020",
         "sort_key": 2020,
-        "label_hi": "भारत ने सीधे बीएस-VI ईंधन मानदंडों को अपनाया"
+        "label_hi": "भारत ने सीधे BS-VI ईंधन मानदंडों को अपनाया"
       }
     ],
     "explanation": "Regulation accelerated sharply in the late 2010s: after decades under the 1981 Act and the 2009 standards, India rolled out BS-IV nationally in 2017, launched city-level NCAP targets in 2019, and skipped BS-V entirely to enforce BS-VI in 2020.",
     "theme_hi": "भारत में वायु प्रदूषण से लड़ाई",
-    "explanation_hi": "2010 के दशक के अंत में विनियमन में तीव्र गति आई: 1981 के अधिनियम और 2009 के मानकों के दशकों बाद, भारत ने 2017 में राष्ट्रव्यापी बीएस-IV लागू किया, 2019 में शहर-स्तरीय एनसीएपी लक्ष्य शुरू किए, और बीएस-V को पूरी तरह छोड़कर 2020 में बीएस-VI लागू किया।"
+    "explanation_hi": "2010 के दशक के अंत में विनियमन में तीव्र गति आई: 1981 के अधिनियम और 2009 के मानकों के दशकों बाद, भारत ने 2017 में राष्ट्रव्यापी BS-IV लागू किया, 2019 में शहर-स्तरीय NCAP लक्ष्य शुरू किए, और BS-V को पूरी तरह छोड़कर 2020 में BS-VI लागू किया।"
   },
   {
     "id": "tl_083",
@@ -3281,7 +3281,7 @@
         "label": "First Coastal Regulation Zone (CRZ) Notification",
         "year_display": "1991",
         "sort_key": 1991,
-        "label_hi": "पहली तटीय विनियमन क्षेत्र (सीआरज़ेड) अधिसूचना"
+        "label_hi": "पहली तटीय विनियमन क्षेत्र (CRZ) अधिसूचना"
       },
       {
         "label": "Wetlands (Conservation and Management) Rules notified",
@@ -3293,7 +3293,7 @@
         "label": "CRZ Notification comprehensively revised",
         "year_display": "2011",
         "sort_key": 2011,
-        "label_hi": "सीआरज़ेड अधिसूचना का व्यापक संशोधन"
+        "label_hi": "CRZ अधिसूचना का व्यापक संशोधन"
       },
       {
         "label": "Wetlands Rules replaced with a decentralised framework",
@@ -3305,12 +3305,12 @@
         "label": "CRZ Notification eases norms with graded zones",
         "year_display": "2019",
         "sort_key": 2019,
-        "label_hi": "सीआरज़ेड अधिसूचना ने श्रेणीबद्ध क्षेत्रों के साथ मानदंड सरल किए"
+        "label_hi": "CRZ अधिसूचना ने श्रेणीबद्ध क्षेत्रों के साथ मानदंड सरल किए"
       }
     ],
     "explanation": "Both regimes were born under the Environment Protection Act and repeatedly rewritten: CRZ rules issued in 1991 were overhauled in 2011 and relaxed in 2019, while wetland rules moved from central control (2010) to state-led management (2017).",
     "theme_hi": "तटों और आर्द्रभूमियों का विनियमन",
-    "explanation_hi": "दोनों व्यवस्थाएँ पर्यावरण संरक्षण अधिनियम के अंतर्गत जन्मीं और बार-बार पुनर्लिखित हुईं: 1991 में जारी सीआरज़ेड नियमों को 2011 में पूर्णतः बदला गया और 2019 में शिथिल किया गया, जबकि आर्द्रभूमि नियम केंद्रीय नियंत्रण (2010) से राज्य-नेतृत्व वाले प्रबंधन (2017) की ओर बढ़े।"
+    "explanation_hi": "दोनों व्यवस्थाएँ पर्यावरण संरक्षण अधिनियम के अंतर्गत जन्मीं और बार-बार पुनर्लिखित हुईं: 1991 में जारी CRZ नियमों को 2011 में पूर्णतः बदला गया और 2019 में शिथिल किया गया, जबकि आर्द्रभूमि नियम केंद्रीय नियंत्रण (2010) से राज्य-नेतृत्व वाले प्रबंधन (2017) की ओर बढ़े।"
   },
   {
     "id": "tl_084",
@@ -3322,7 +3322,7 @@
         "label": "UNEP established after Stockholm",
         "year_display": "1972",
         "sort_key": 1972,
-        "label_hi": "स्टॉकहोम के बाद यूएनईपी की स्थापना"
+        "label_hi": "स्टॉकहोम के बाद UNEP की स्थापना"
       },
       {
         "label": "Brundtland Report defines sustainable development",
@@ -3334,13 +3334,13 @@
         "label": "IPCC established by UNEP and WMO",
         "year_display": "1988",
         "sort_key": 1988,
-        "label_hi": "यूएनईपी और डब्ल्यूएमओ द्वारा आईपीसीसी की स्थापना"
+        "label_hi": "UNEP और WMO द्वारा IPCC की स्थापना"
       },
       {
         "label": "IPCC releases its First Assessment Report",
         "year_display": "1990",
         "sort_key": 1990,
-        "label_hi": "आईपीसीसी ने अपनी पहली आकलन रिपोर्ट जारी की"
+        "label_hi": "IPCC ने अपनी पहली आकलन रिपोर्ट जारी की"
       },
       {
         "label": "UN adopts the Sustainable Development Goals",
@@ -3351,7 +3351,7 @@
     ],
     "explanation": "UNEP institutionalised the Stockholm agenda; the Brundtland Report's 'sustainable development' framing (1987) and the IPCC's first assessment (1990) built the scientific-political consensus that eventually produced the SDGs in 2015.",
     "theme_hi": "वैश्विक पर्यावरणवाद की संस्थाएँ और रिपोर्टें",
-    "explanation_hi": "यूएनईपी ने स्टॉकहोम के एजेंडे को संस्थागत रूप दिया; ब्रंटलैंड रिपोर्ट की 'सतत विकास' अवधारणा (1987) और आईपीसीसी के पहले आकलन (1990) ने वह वैज्ञानिक-राजनीतिक सहमति बनाई जिसने अंततः 2015 में एसडीजी को जन्म दिया।"
+    "explanation_hi": "UNEP ने स्टॉकहोम के एजेंडे को संस्थागत रूप दिया; ब्रंटलैंड रिपोर्ट की 'सतत विकास' अवधारणा (1987) और IPCC के पहले आकलन (1990) ने वह वैज्ञानिक-राजनीतिक सहमति बनाई जिसने अंततः 2015 में SDG को जन्म दिया।"
   },
   {
     "id": "tl_085",
@@ -3451,7 +3451,7 @@
         "label": "EVMs first used in a Kerala by-election",
         "year_display": "1982",
         "sort_key": 1982,
-        "label_hi": "केरल के उपचुनाव में पहली बार ईवीएम का उपयोग"
+        "label_hi": "केरल के उपचुनाव में पहली बार EVM का उपयोग"
       },
       {
         "label": "Voting age lowered from 21 to 18 (61st Amendment)",
@@ -3463,18 +3463,18 @@
         "label": "NOTA option introduced after a Supreme Court ruling",
         "year_display": "2013",
         "sort_key": 2013,
-        "label_hi": "सर्वोच्च न्यायालय के निर्णय के बाद नोटा विकल्प की शुरुआत"
+        "label_hi": "सर्वोच्च न्यायालय के निर्णय के बाद NOTA विकल्प की शुरुआत"
       },
       {
         "label": "VVPAT deployed at every polling station",
         "year_display": "2019",
         "sort_key": 2019,
-        "label_hi": "प्रत्येक मतदान केंद्र पर वीवीपैट की तैनाती"
+        "label_hi": "प्रत्येक मतदान केंद्र पर VVPAT की तैनाती"
       }
     ],
     "explanation": "The world's largest electoral exercise has kept upgrading itself — universal adult franchise from the very first election of 1951-52, machines from 1982, a younger electorate from 1989, and voter-verification tools (NOTA, VVPAT) in the 2010s.",
     "theme_hi": "भारतीय चुनावों का विकास",
-    "explanation_hi": "विश्व की सबसे बड़ी चुनावी प्रक्रिया लगातार स्वयं को अद्यतन करती रही है — 1951-52 के पहले ही चुनाव से सार्वभौमिक वयस्क मताधिकार, 1982 से मशीनें, 1989 से युवा मतदाता वर्ग, और 2010 के दशक में मतदाता-सत्यापन उपकरण (नोटा, वीवीपैट)।"
+    "explanation_hi": "विश्व की सबसे बड़ी चुनावी प्रक्रिया लगातार स्वयं को अद्यतन करती रही है — 1951-52 के पहले ही चुनाव से सार्वभौमिक वयस्क मताधिकार, 1982 से मशीनें, 1989 से युवा मतदाता वर्ग, और 2010 के दशक में मतदाता-सत्यापन उपकरण (NOTA, VVPAT)।"
   },
   {
     "id": "tl_088",
@@ -3504,12 +3504,12 @@
         "label": "PESA extends panchayats to Scheduled Areas",
         "year_display": "1996",
         "sort_key": 1996,
-        "label_hi": "पेसा ने पंचायतों को अनुसूचित क्षेत्रों तक विस्तारित किया"
+        "label_hi": "PESA ने पंचायतों को अनुसूचित क्षेत्रों तक विस्तारित किया"
       }
     ],
     "explanation": "Democratic decentralisation moved from committee reports (Balwant Rai Mehta 1957, Ashok Mehta 1977) to constitutional guarantee with the 73rd Amendment, and PESA then adapted the framework for tribal Scheduled Areas in 1996.",
     "theme_hi": "पंचायती राज की यात्रा",
-    "explanation_hi": "लोकतांत्रिक विकेंद्रीकरण समिति रिपोर्टों (बलवंत राय मेहता 1957, अशोक मेहता 1977) से 73वें संशोधन के साथ संवैधानिक गारंटी तक पहुँचा, और फिर पेसा ने 1996 में आदिवासी अनुसूचित क्षेत्रों के लिए इस ढाँचे को अनुकूलित किया।"
+    "explanation_hi": "लोकतांत्रिक विकेंद्रीकरण समिति रिपोर्टों (बलवंत राय मेहता 1957, अशोक मेहता 1977) से 73वें संशोधन के साथ संवैधानिक गारंटी तक पहुँचा, और फिर PESA ने 1996 में आदिवासी अनुसूचित क्षेत्रों के लिए इस ढाँचे को अनुकूलित किया।"
   },
   {
     "id": "tl_089",
@@ -3533,7 +3533,7 @@
         "label": "Kesavananda Bharati case propounds the basic structure doctrine",
         "year_display": "1973",
         "sort_key": 1973,
-        "label_hi": "केशवानंद भारती मामले ने मूल ढाँचा सिद्धांत का प्रतिपादन किया"
+        "label_hi": "केशवानंद भारती मामले ने मूल संरचना के सिद्धांत का प्रतिपादन किया"
       },
       {
         "label": "Minerva Mills case strikes down parts of the 42nd Amendment",
@@ -3545,12 +3545,12 @@
         "label": "I. R. Coelho case applies basic structure review to the Ninth Schedule",
         "year_display": "2007",
         "sort_key": 2007,
-        "label_hi": "आई. आर. कोएल्हो मामले ने नौवीं अनुसूची पर मूल ढाँचा समीक्षा लागू की"
+        "label_hi": "आई. आर. कोएल्हो मामले ने नौवीं अनुसूची पर मूल संरचना की समीक्षा लागू की"
       }
     ],
     "explanation": "The Court swung from deference (Shankari Prasad) to rigidity (Golaknath) before Kesavananda's 1973 compromise: Parliament may amend anything except the Constitution's basic structure — a doctrine reinforced in Minerva Mills and extended to the Ninth Schedule in 2007.",
-    "theme_hi": "मूल ढाँचा संघर्ष",
-    "explanation_hi": "न्यायालय आदर (शंकरी प्रसाद) से कठोरता (गोलकनाथ) की ओर झूला, इससे पहले कि केशवानंद के 1973 के समझौते ने यह तय किया: संसद संविधान के मूल ढाँचे को छोड़कर कुछ भी संशोधित कर सकती है — यह सिद्धांत मिनर्वा मिल्स में सुदृढ़ हुआ और 2007 में नौवीं अनुसूची तक विस्तारित हुआ।"
+    "theme_hi": "मूल संरचना का संघर्ष",
+    "explanation_hi": "न्यायालय आदर (शंकरी प्रसाद) से कठोरता (गोलकनाथ) की ओर झूला, इससे पहले कि केशवानंद के 1973 के समझौते ने यह तय किया: संसद संविधान की मूल संरचना को छोड़कर कुछ भी संशोधित कर सकती है — यह सिद्धांत मिनर्वा मिल्स में सुदृढ़ हुआ और 2007 में नौवीं अनुसूची तक विस्तारित हुआ।"
   },
   {
     "id": "tl_090",
@@ -3586,7 +3586,7 @@
         "label": "Central Information Commission constituted under the RTI Act",
         "year_display": "2005",
         "sort_key": 2005,
-        "label_hi": "आरटीआई अधिनियम के अंतर्गत केंद्रीय सूचना आयोग का गठन"
+        "label_hi": "RTI अधिनियम के अंतर्गत केंद्रीय सूचना आयोग का गठन"
       }
     ],
     "explanation": "The merit-based PSC predates independence; the Constitution then created the ECI (25 January 1950 — celebrated as National Voters' Day) and the Finance Commission, while statutory watchdogs for human rights (1993) and information (2005) came much later.",
@@ -3703,13 +3703,13 @@
         "label": "101st Amendment enables the GST",
         "year_display": "2016",
         "sort_key": 2016,
-        "label_hi": "101वें संशोधन ने जीएसटी को संभव बनाया"
+        "label_hi": "101वें संशोधन ने GST को संभव बनाया"
       },
       {
         "label": "103rd Amendment provides 10% EWS reservation",
         "year_display": "2019",
         "sort_key": 2019,
-        "label_hi": "103वें संशोधन ने 10% ईडब्ल्यूएस आरक्षण प्रदान किया"
+        "label_hi": "103वें संशोधन ने 10% EWS आरक्षण प्रदान किया"
       }
     ],
     "explanation": "These amendments each rewired a different arena — Parliament versus judiciary (24th), party discipline (52nd), social rights (86th), fiscal federalism (101st) and reservation policy (103rd).",
@@ -3738,7 +3738,7 @@
         "label": "NALSA judgment recognises transgender identity",
         "year_display": "2014",
         "sort_key": 2014,
-        "label_hi": "नाल्सा निर्णय ने ट्रांसजेंडर पहचान को मान्यता दी"
+        "label_hi": "NALSA निर्णय ने ट्रांसजेंडर पहचान को मान्यता दी"
       },
       {
         "label": "Puttaswamy judgment declares privacy a fundamental right",
@@ -3755,7 +3755,7 @@
     ],
     "explanation": "Maneka Gandhi's expansive reading of Article 21 is the fountainhead: every later case here — Vishaka, NALSA, Puttaswamy, Navtej Johar — built dignity, equality and privacy protections on that foundation.",
     "theme_hi": "न्यायालयों के माध्यम से अधिकारों का विस्तार",
-    "explanation_hi": "मेनका गांधी मामले में अनुच्छेद 21 की विस्तृत व्याख्या इसका मूल स्रोत है: यहाँ बाद के हर मामले — विशाखा, नाल्सा, पुट्टास्वामी, नवतेज जौहर — ने उसी आधार पर गरिमा, समानता और निजता की सुरक्षा का निर्माण किया।"
+    "explanation_hi": "मेनका गांधी मामले में अनुच्छेद 21 की विस्तृत व्याख्या इसका मूल स्रोत है: यहाँ बाद के हर मामले — विशाखा, NALSA, पुट्टास्वामी, नवतेज जौहर — ने उसी आधार पर गरिमा, समानता और निजता की सुरक्षा का निर्माण किया।"
   },
   {
     "id": "tl_095",
@@ -3785,13 +3785,13 @@
         "label": "93rd Amendment enables OBC quotas in educational institutions",
         "year_display": "2005",
         "sort_key": 2005,
-        "label_hi": "93वें संशोधन ने शिक्षण संस्थानों में ओबीसी कोटा को संभव बनाया"
+        "label_hi": "93वें संशोधन ने शिक्षण संस्थानों में OBC कोटा को संभव बनाया"
       },
       {
         "label": "103rd Amendment adds 10% EWS reservation",
         "year_display": "2019",
         "sort_key": 2019,
-        "label_hi": "103वें संशोधन ने 10% ईडब्ल्यूएस आरक्षण जोड़ा"
+        "label_hi": "103वें संशोधन ने 10% EWS आरक्षण जोड़ा"
       }
     ],
     "explanation": "A decade separated the Mandal Commission's creation from its explosive implementation in 1990; Indra Sawhney then set the 50% ceiling and creamy-layer rule, while later amendments extended quotas to education (2005) and economic criteria (2019).",

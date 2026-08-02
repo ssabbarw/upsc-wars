@@ -6,7 +6,7 @@ const List<MemoryPairSetDefinition> kMemoryPairSetsCaExtra = [
   MemoryPairSetDefinition(
     id: 'schemes_years',
     nameEn: 'Schemes & Launch Years',
-    nameHi: 'योजनाएँ और शुरुआत वर्ष',
+    nameHi: 'योजनाएँ और उनके शुभारंभ वर्ष',
     displaySubjectEn: 'Current Affairs',
     displaySubjectHi: 'समसामयिकी',
     unlockSubjectSlug: 'Economy',
@@ -17,9 +17,9 @@ const List<MemoryPairSetDefinition> kMemoryPairSetsCaExtra = [
     pairs: [
       MemoryPair(
         termEn: 'PMJDY',
-        termHi: 'पीएमजेडीवाई',
+        termHi: 'PMJDY (जन धन योजना)',
         answerEn: '2014 — PMJDY',
-        answerHi: '2014 — पीएमजेडीवाई',
+        answerHi: '2014 — PMJDY',
       ),
       MemoryPair(
         termEn: 'Ayushman Bharat',
@@ -65,7 +65,7 @@ const List<MemoryPairSetDefinition> kMemoryPairSetsCaExtra = [
       ),
       MemoryPair(
         termEn: 'PM-KISAN',
-        termHi: 'पीएम-किसान',
+        termHi: 'PM-KISAN',
         answerEn: '2019',
         answerHi: '2019',
       ),
@@ -80,7 +80,7 @@ const List<MemoryPairSetDefinition> kMemoryPairSetsCaExtra = [
   MemoryPairSetDefinition(
     id: 'reports_agencies',
     nameEn: 'Reports & Publishing Agencies',
-    nameHi: 'रिपोर्ट और प्रकाशक संस्था',
+    nameHi: 'रिपोर्ट और जारी करने वाली संस्था',
     displaySubjectEn: 'Current Affairs',
     displaySubjectHi: 'समसामयिकी',
     unlockSubjectSlug: 'Economy',
@@ -91,19 +91,19 @@ const List<MemoryPairSetDefinition> kMemoryPairSetsCaExtra = [
     pairs: [
       MemoryPair(
         termEn: 'Economic Survey',
-        termHi: 'आर्थिक सर्वेख्षण',
+        termHi: 'आर्थिक सर्वेक्षण',
         answerEn: 'Ministry of Finance',
         answerHi: 'वित्त मंत्रालय',
       ),
       MemoryPair(
         termEn: 'India State of Forest Report',
-        termHi: 'भारत का वन स्थिति वार्षिक रिपोर्ट',
+        termHi: 'भारत वन स्थिति रिपोर्ट (ISFR)',
         answerEn: 'Forest Survey of India',
-        answerHi: 'भारतीय वन सर्वेख्षण',
+        answerHi: 'भारतीय वन सर्वेक्षण (FSI)',
       ),
       MemoryPair(
         termEn: 'World Happiness Report',
-        termHi: 'वैश्विक खुशहाली रिपोर्ट',
+        termHi: 'विश्व खुशहाली रिपोर्ट',
         answerEn: 'UN SDSN',
         answerHi: 'UN SDSN',
       ),
@@ -111,7 +111,7 @@ const List<MemoryPairSetDefinition> kMemoryPairSetsCaExtra = [
         termEn: 'Global Hunger Index',
         termHi: 'वैश्विक भूख सूचकांक',
         answerEn: 'Concern & Welthungerhilfe',
-        answerHi: 'कंसर्न और वेल्थहंगरहिल्फे',
+        answerHi: 'Concern Worldwide और Welthungerhilfe',
       ),
       MemoryPair(
         termEn: 'Human Development Report',
@@ -123,7 +123,7 @@ const List<MemoryPairSetDefinition> kMemoryPairSetsCaExtra = [
         termEn: 'Global Competitiveness Report',
         termHi: 'वैश्विक प्रतिस्पर्धात्मकता रिपोर्ट',
         answerEn: 'World Economic Forum',
-        answerHi: 'विश्व आर्थिक मंच',
+        answerHi: 'विश्व आर्थिक मंच (WEF)',
       ),
       MemoryPair(
         termEn: 'World Development Report',
@@ -139,13 +139,13 @@ const List<MemoryPairSetDefinition> kMemoryPairSetsCaExtra = [
       ),
       MemoryPair(
         termEn: 'Periodic Labour Force Survey',
-        termHi: 'आवधि श्रम बल सर्वेख्षण',
+        termHi: 'आवधिक श्रम बल सर्वेक्षण (PLFS)',
         answerEn: 'MoSPI',
         answerHi: 'MoSPI',
       ),
       MemoryPair(
         termEn: 'National Family Health Survey',
-        termHi: 'राष्ट्रीय परिवार स्वास्थ्य सर्वेख्षण',
+        termHi: 'राष्ट्रीय परिवार स्वास्थ्य सर्वेक्षण (NFHS)',
         answerEn: 'MoHFW',
         answerHi: 'MoHFW',
       ),
@@ -167,31 +167,31 @@ const List<MemoryPairSetDefinition> kMemoryPairSetsCaExtra = [
         termEn: 'PM Gati Shakti',
         termHi: 'पीएम गति शक्ति',
         answerEn: 'Multimodal connectivity',
-        answerHi: 'बहु-मोडल कनेक्टिविटी',
+        answerHi: 'मल्टीमॉडल कनेक्टिविटी',
       ),
       MemoryPair(
         termEn: 'National Green Hydrogen Mission',
-        termHi: 'राष्ट्रीय हरित हाइड्रजन मिशन',
+        termHi: 'राष्ट्रीय हरित हाइड्रोजन मिशन',
         answerEn: 'Clean hydrogen production',
-        answerHi: 'स्वच्छ हाइड्रजन उत्पादन',
+        answerHi: 'स्वच्छ हाइड्रोजन उत्पादन',
       ),
       MemoryPair(
         termEn: 'Semicon India',
         termHi: 'सेमिकन इंडिया',
         answerEn: 'Chip manufacturing ecosystem',
-        answerHi: 'चिप निर्माण परिसंध',
+        answerHi: 'सेमीकंडक्टर चिप विनिर्माण पारितंत्र',
       ),
       MemoryPair(
         termEn: 'Skill India',
         termHi: 'स्किल इंडिया',
         answerEn: 'Workforce skilling',
-        answerHi: 'कार्यबल कौशल',
+        answerHi: 'कार्यबल का कौशल विकास',
       ),
       MemoryPair(
         termEn: 'Smart Cities Mission',
         termHi: 'स्मार्ट सिटीज मिशन',
         answerEn: 'Urban renewal',
-        answerHi: 'शहरी नवीनीकरण',
+        answerHi: 'शहरी कायाकल्प',
       ),
       MemoryPair(
         termEn: 'AMRUT',
@@ -203,19 +203,19 @@ const List<MemoryPairSetDefinition> kMemoryPairSetsCaExtra = [
         termEn: 'Jal Jeevan Mission',
         termHi: 'जल जीवन मिशन',
         answerEn: 'Tap water to all households',
-        answerHi: 'सभी घरों को नल जल',
+        answerHi: 'हर घर तक नल से जल',
       ),
       MemoryPair(
         termEn: 'Digital India',
         termHi: 'डिजिटल इंडिया',
         answerEn: 'Digital infrastructure',
-        answerHi: 'डिजिटल बनियाद',
+        answerHi: 'डिजिटल अवसंरचना',
       ),
       MemoryPair(
         termEn: 'Mission LiFE',
         termHi: 'मिशन लाइफ',
         answerEn: 'Lifestyle for environment',
-        answerHi: 'पर्यावरण के लिए जीवनशैली',
+        answerHi: 'पर्यावरण के अनुकूल जीवनशैली',
       ),
       MemoryPair(
         termEn: 'National Education Policy 2020',

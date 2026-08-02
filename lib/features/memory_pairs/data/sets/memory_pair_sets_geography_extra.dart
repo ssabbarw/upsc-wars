@@ -24,13 +24,13 @@ const List<MemoryPairSetDefinition> kMemoryPairSetsGeographyExtra = [
       ),
       MemoryPair(
         termEn: 'Bomdi La',
-        termHi: 'बोमडि ला',
+        termHi: 'बोमडी ला',
         answerEn: 'Arunachal Pradesh',
         answerHi: 'अरुणाचल प्रदेश',
       ),
       MemoryPair(
         termEn: 'Zoji La',
-        termHi: 'जोजि ला',
+        termHi: 'जोजी ला',
         answerEn: 'Srinagar to Leh',
         answerHi: 'श्रीनगर से लेह',
       ),
@@ -60,7 +60,7 @@ const List<MemoryPairSetDefinition> kMemoryPairSetsGeographyExtra = [
       ),
       MemoryPair(
         termEn: 'Palghat Gap',
-        termHi: 'पालघाट गैप',
+        termHi: 'पालघाट दर्रा (गैप)',
         answerEn: 'Kerala–Tamil Nadu corridor',
         answerHi: 'केरल-तमिलनाडु गलियारा',
       ),
@@ -253,7 +253,7 @@ const List<MemoryPairSetDefinition> kMemoryPairSetsGeographyExtra = [
         termEn: 'Kosi',
         termHi: 'कोसी',
         answerEn: 'Sorrow of Bihar; joins Ganga',
-        answerHi: 'बिहार की शोक; गंगा से मिलती है',
+        answerHi: 'बिहार का शोक; गंगा से मिलती है',
       ),
       MemoryPair(
         termEn: 'Tungabhadra',
@@ -296,9 +296,9 @@ const List<MemoryPairSetDefinition> kMemoryPairSetsGeographyExtra = [
     pairs: [
       MemoryPair(
         termEn: 'Alluvial soil',
-        termHi: 'जलोड्म्रदा',
+        termHi: 'जलोढ़ मृदा',
         answerEn: 'Rice & wheat (Indo-Gangetic)',
-        answerHi: 'चावल और गेहूं (इंदो-गांगेटिक)',
+        answerHi: 'चावल और गेहूँ (सिंधु-गंगा मैदान)',
       ),
       MemoryPair(
         termEn: 'Black soil (Regur)',
@@ -326,9 +326,9 @@ const List<MemoryPairSetDefinition> kMemoryPairSetsGeographyExtra = [
       ),
       MemoryPair(
         termEn: 'Peaty soil',
-        termHi: 'पीटी मृदा',
+        termHi: 'पीटमय मृदा',
         answerEn: 'Paddy (Kerala backwaters)',
-        answerHi: 'धान (केरल गुफ्तों के पीछे)',
+        answerHi: 'धान (केरल के बैकवाटर क्षेत्र)',
       ),
       MemoryPair(
         termEn: 'Mountain soil',
@@ -340,13 +340,13 @@ const List<MemoryPairSetDefinition> kMemoryPairSetsGeographyExtra = [
         termEn: 'Saline soil',
         termHi: 'खारी मृदा',
         answerEn: 'Needs reclamation; poor crops',
-        answerHi: 'पुनर्वस्ती की आवश्यकता',
+        answerHi: 'भूमि सुधार आवश्यक; कम उपज',
       ),
       MemoryPair(
         termEn: 'Red & yellow soil',
         termHi: 'लाल-पीली मृदा',
         answerEn: 'Coffee (Eastern Ghats)',
-        answerHi: 'कॉफी (पूर्वी घाटी)',
+        answerHi: 'कॉफी (पूर्वी घाट)',
       ),
       MemoryPair(
         termEn: 'Alluvial delta soil',
@@ -447,7 +447,7 @@ const List<MemoryPairSetDefinition> kMemoryPairSetsGeographyExtra = [
     pairs: [
       MemoryPair(
         termEn: 'Nilgiri',
-        termHi: 'नीलगिरी',
+        termHi: 'नीलगिरि',
         answerEn: 'Tamil Nadu, Kerala, Karnataka',
         answerHi: 'तमिलनाडु, केरल, कर्नाटक',
       ),
@@ -483,7 +483,7 @@ const List<MemoryPairSetDefinition> kMemoryPairSetsGeographyExtra = [
       ),
       MemoryPair(
         termEn: 'Pachmarhi',
-        termHi: 'पचमड़ी',
+        termHi: 'पचमढ़ी',
         answerEn: 'Madhya Pradesh',
         answerHi: 'मध्य प्रदेश',
       ),
@@ -495,13 +495,13 @@ const List<MemoryPairSetDefinition> kMemoryPairSetsGeographyExtra = [
       ),
       MemoryPair(
         termEn: 'Great Nicobar',
-        termHi: 'महानिकोबर',
+        termHi: 'ग्रेट निकोबार',
         answerEn: 'Andaman & Nicobar Islands',
         answerHi: 'अंडमान और निकोबार द्वीप',
       ),
       MemoryPair(
         termEn: 'Cold Desert',
-        termHi: 'शीतल मरुस्थल',
+        termHi: 'शीत मरुस्थल',
         answerEn: 'Himachal Pradesh',
         answerHi: 'हिमाचल प्रदेश',
       ),
@@ -548,13 +548,13 @@ const List<MemoryPairSetDefinition> kMemoryPairSetsGeographyExtra = [
         termEn: 'Anamudi',
         termHi: 'अनामुडी',
         answerEn: 'Western Ghats (Kerala)',
-        answerHi: 'पश्चिमी घाटी (केरल)',
+        answerHi: 'पश्चिमी घाट (केरल)',
       ),
       MemoryPair(
         termEn: 'Doddabetta',
         termHi: 'डोड्डाबेट्टा',
         answerEn: 'Nilgiri Hills',
-        answerHi: 'नीलगिरी पहाड़ियाँ',
+        answerHi: 'नीलगिरि पहाड़ियाँ',
       ),
       MemoryPair(
         termEn: 'Guru Shikhar',
@@ -566,19 +566,19 @@ const List<MemoryPairSetDefinition> kMemoryPairSetsGeographyExtra = [
         termEn: 'Mahendragiri',
         termHi: 'महेन्द्रगिरी',
         answerEn: 'Eastern Ghats (Odisha)',
-        answerHi: 'पूर्वी घाटी (ओडिशा)',
+        answerHi: 'पूर्वी घाट (ओडिशा)',
       ),
       MemoryPair(
         termEn: 'Kamet',
         termHi: 'कामेट',
         answerEn: 'Garhwal Himalayas (UT)',
-        answerHi: 'गढ़वाल हिमालय (केंद्रशासित)',
+        answerHi: 'गढ़वाल हिमालय (उत्तराखंड)',
       ),
       MemoryPair(
         termEn: 'Saltoro Kangri',
         termHi: 'सल्टोरो कंगरी',
         answerEn: 'Karakoram (Siachin region)',
-        answerHi: 'कराकोरम (सियाचीन क्षेत्र)',
+        answerHi: 'कराकोरम (सियाचिन क्षेत्र)',
       ),
     ],
   ),

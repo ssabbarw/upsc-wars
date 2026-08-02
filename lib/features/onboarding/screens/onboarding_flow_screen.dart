@@ -1,7 +1,5 @@
 import 'dart:async';
 
-import 'dart:math' as math;
-
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
@@ -17,6 +15,7 @@ import '../../../core/providers/prefs_provider.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../widgets/onboarding_fact_or_bluff_page.dart';
+import '../widgets/onboarding_games_peek_page.dart';
 import '../widgets/onboarding_memory_pairs_page.dart';
 
 /// Scale vs ~390dp shortest side (phone-first baseline); clamped for large/small devices.
@@ -28,21 +27,22 @@ double _onbScale(BuildContext context) {
 double _onb(BuildContext context, double designPx) =>
     designPx * _onbScale(context);
 
-/// Horizontal pager step id for [OnboardingStepDurationEvent]. The demo step
-/// id reflects which game Remote Config chose so funnels stay comparable.
+/// Horizontal pager step id for [OnboardingStepDurationEvent]. The middle
+/// step id reflects which [onboarding_game] Remote Config chose.
 String _onboardingStepIdForIndex(int i, String demoGame) {
   return switch (i) {
     0 => 'score_story',
-    1 =>
-      demoGame == onboardingGameFactOrBluff
-          ? 'fact_or_bluff_demo'
-          : 'memory_pairs_demo',
+    1 => switch (demoGame) {
+      onboardingGameFactOrBluff => 'fact_or_bluff_demo',
+      onboardingGameMemoryPairs => 'memory_pairs_demo',
+      _ => 'games_peek',
+    },
     2 => 'loop',
     _ => 'unknown',
   };
 }
 
-/// First-run onboarding: score story → memory-pairs demo → daily loop, then home.
+/// First-run onboarding: score story → games step (RC A/B) → daily loop.
 class OnboardingFlowScreen extends HookConsumerWidget {
   const OnboardingFlowScreen({super.key});
 
@@ -63,17 +63,19 @@ class OnboardingFlowScreen extends HookConsumerWidget {
     final hPad = _onb(context, 20);
     final vPadSm = _onb(context, 8);
 
-    // Which game the demo step shows (Remote Config A/B). Falls back to
-    // memory pairs until RC resolves; frozen once the user reaches the demo
-    // page so a late RC fetch cannot swap the game mid-play.
+    // Which middle-step variant Remote Config chose. Frozen once the user
+    // reaches page 1 so a late RC fetch cannot swap the content mid-view.
     final demoGameFrozen = useRef<String?>(null);
     final demoGame =
         demoGameFrozen.value ??
         ref.watch(onboardingGameRemoteProvider).asData?.value ??
-        onboardingGameMemoryPairs;
+        onboardingGamePeekOnly;
     if (page.value >= 1) demoGameFrozen.value ??= demoGame;
     final demoGameRef = useRef(demoGame);
     demoGameRef.value = demoGame;
+    // Interactive demos lock swipe so taps aren't stolen; peek allows swipe.
+    final lockDemoSwipe =
+        onGameDemoPage && demoGame != onboardingGamePeekOnly;
 
     void goToLoopPage() {
       pageController.animateToPage(
@@ -138,7 +140,7 @@ class OnboardingFlowScreen extends HookConsumerWidget {
                     Expanded(
                       child: PageView(
                         controller: pageController,
-                        physics: onGameDemoPage
+                        physics: lockDemoSwipe
                             ? const NeverScrollableScrollPhysics()
                             : const BouncingScrollPhysics(),
                         onPageChanged: (i) {
@@ -178,44 +180,56 @@ class OnboardingFlowScreen extends HookConsumerWidget {
                               );
                             },
                           ),
-                          if (demoGame == onboardingGameFactOrBluff)
-                            OnboardingFactOrBluffPage(
-                              onSkip: () {
-                                ScreenFlow.logAction(
-                                  ref,
-                                  screenName: ScreenFlow.onboarding,
-                                  actionId: 'fact_or_bluff_demo_skipped',
-                                );
-                                goToLoopPage();
-                              },
+                          switch (demoGame) {
+                            onboardingGameFactOrBluff =>
+                              OnboardingFactOrBluffPage(
+                                onSkip: () {
+                                  ScreenFlow.logAction(
+                                    ref,
+                                    screenName: ScreenFlow.onboarding,
+                                    actionId: 'fact_or_bluff_demo_skipped',
+                                  );
+                                  goToLoopPage();
+                                },
+                                onContinue: () {
+                                  ScreenFlow.logAction(
+                                    ref,
+                                    screenName: ScreenFlow.onboarding,
+                                    actionId: 'fact_or_bluff_demo_completed',
+                                  );
+                                  goToLoopPage();
+                                },
+                              ),
+                            onboardingGameMemoryPairs =>
+                              OnboardingMemoryPairsPage(
+                                onSkip: () {
+                                  ScreenFlow.logAction(
+                                    ref,
+                                    screenName: ScreenFlow.onboarding,
+                                    actionId: 'memory_pairs_demo_skipped',
+                                  );
+                                  goToLoopPage();
+                                },
+                                onContinue: () {
+                                  ScreenFlow.logAction(
+                                    ref,
+                                    screenName: ScreenFlow.onboarding,
+                                    actionId: 'memory_pairs_demo_completed',
+                                  );
+                                  goToLoopPage();
+                                },
+                              ),
+                            _ => OnboardingGamesPeekPage(
                               onContinue: () {
                                 ScreenFlow.logAction(
                                   ref,
                                   screenName: ScreenFlow.onboarding,
-                                  actionId: 'fact_or_bluff_demo_completed',
-                                );
-                                goToLoopPage();
-                              },
-                            )
-                          else
-                            OnboardingMemoryPairsPage(
-                              onSkip: () {
-                                ScreenFlow.logAction(
-                                  ref,
-                                  screenName: ScreenFlow.onboarding,
-                                  actionId: 'memory_pairs_demo_skipped',
-                                );
-                                goToLoopPage();
-                              },
-                              onContinue: () {
-                                ScreenFlow.logAction(
-                                  ref,
-                                  screenName: ScreenFlow.onboarding,
-                                  actionId: 'memory_pairs_demo_completed',
+                                  actionId: 'games_peek_continued',
                                 );
                                 goToLoopPage();
                               },
                             ),
+                          },
                           const _LoopPage(),
                         ],
                       ),
@@ -235,10 +249,27 @@ class OnboardingFlowScreen extends HookConsumerWidget {
                             count: _pageCount,
                             dark: isLast,
                           ),
-                          if (isLast) ...[
+                          // Pages 0 and 2 get a bottom CTA; the games step
+                          // (page 1) has its own Continue / Skip controls.
+                          if (page.value == 0 || isLast) ...[
                             SizedBox(height: _onb(context, 10)),
                             FilledButton(
                               onPressed: () {
+                                if (!isLast) {
+                                  ScreenFlow.logAction(
+                                    ref,
+                                    screenName: ScreenFlow.onboarding,
+                                    actionId: 'score_story_continued',
+                                  );
+                                  pageController.animateToPage(
+                                    1,
+                                    duration: const Duration(
+                                      milliseconds: 320,
+                                    ),
+                                    curve: Curves.easeOutCubic,
+                                  );
+                                  return;
+                                }
                                 ScreenFlow.logAction(
                                   ref,
                                   screenName: ScreenFlow.onboarding,
@@ -277,7 +308,7 @@ class OnboardingFlowScreen extends HookConsumerWidget {
                                 ),
                               ),
                               child: Text(
-                                'Continue',
+                                isLast ? 'Get started' : 'Continue',
                                 style: GoogleFonts.dmSans(
                                   fontSize: _onb(context, 16),
                                   fontWeight: FontWeight.w700,
@@ -444,359 +475,6 @@ Widget _onboardingFittedPage({
   );
 }
 
-/// Split score card: drag the center arrow at most half the card width to reveal
-/// the right “hidden risk” column (ends at 50 / 50).
-class _DraggableSplitScoreCard extends StatefulWidget {
-  const _DraggableSplitScoreCard({required this.splitDragLocksPage});
-
-  /// When true, parent [PageView] uses [NeverScrollableScrollPhysics] so this
-  /// handle’s horizontal drag is not stolen by the page scroller.
-  final ValueNotifier<bool> splitDragLocksPage;
-
-  @override
-  State<_DraggableSplitScoreCard> createState() =>
-      _DraggableSplitScoreCardState();
-}
-
-class _DraggableSplitScoreCardState extends State<_DraggableSplitScoreCard> {
-  /// Left column width as a fraction of total width. In [0.5, 1.0]: 1 = right
-  /// hidden; 0.5 = half left / half right.
-  double _leftFraction = 1;
-
-  @override
-  Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        final w = constraints.maxWidth;
-        final handleSize = _onb(context, 36);
-        final cardH = _onb(context, 220);
-        final leftFrac = _leftFraction.clamp(0.5, 1.0);
-        final splitX = w * leftFrac;
-        final rightW = math.max(0.0, w - splitX);
-        final handleLeft = (splitX - handleSize / 2).clamp(0.0, w - handleSize);
-
-        Widget leftColumn() {
-          return ColoredBox(
-            color: AppColors.surfacePrimaryDark,
-            child: Padding(
-              padding: EdgeInsets.fromLTRB(
-                _onb(context, 12),
-                _onb(context, 10),
-                _onb(context, 12),
-                _onb(context, 10),
-              ),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'YOUR LATEST TEST',
-                    style: GoogleFonts.dmSans(
-                      fontSize: _onb(context, 9),
-                      fontWeight: FontWeight.w700,
-                      letterSpacing: 1.2,
-                      color: AppColors.onSurfaceVariantDark,
-                    ),
-                  ),
-                  SizedBox(height: _onb(context, 4)),
-                  Text.rich(
-                    TextSpan(
-                      children: [
-                        TextSpan(
-                          text: '82',
-                          style: GoogleFonts.dmSans(
-                            fontSize: _onb(context, 38),
-                            fontWeight: FontWeight.w800,
-                            height: 1,
-                            color: AppColors.primary,
-                          ),
-                        ),
-                        TextSpan(
-                          text: ' / 100',
-                          style: GoogleFonts.dmSans(
-                            fontSize: _onb(context, 14),
-                            fontWeight: FontWeight.w600,
-                            color: AppColors.onSurfaceVariantDark,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(height: _onb(context, 8)),
-                  Row(
-                    children: [
-                      Text(
-                        'Accuracy',
-                        style: GoogleFonts.dmSans(
-                          fontSize: _onb(context, 11),
-                          color: AppColors.onSurfaceVariantDark,
-                        ),
-                      ),
-                      SizedBox(width: _onb(context, 6)),
-                      Text(
-                        '82%',
-                        style: GoogleFonts.dmSans(
-                          fontSize: _onb(context, 13),
-                          fontWeight: FontWeight.w700,
-                          color: AppColors.correctTextDark,
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: _onb(context, 6)),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Rank',
-                        style: GoogleFonts.dmSans(
-                          fontSize: _onb(context, 11),
-                          color: AppColors.onSurfaceVariantDark,
-                        ),
-                      ),
-                      SizedBox(width: _onb(context, 6)),
-                      Container(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: _onb(context, 7),
-                          vertical: _onb(context, 3),
-                        ),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(_onb(context, 6)),
-                          border: Border.all(
-                            color: AppColors.primary.withValues(alpha: 0.65),
-                          ),
-                        ),
-                        child: Text(
-                          'High',
-                          style: GoogleFonts.dmSans(
-                            fontSize: _onb(context, 10),
-                            fontWeight: FontWeight.w700,
-                            color: AppColors.correctTextDark,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: _onb(context, 8)),
-                  SizedBox(
-                    width: double.infinity,
-                    child: Container(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: _onb(context, 10),
-                        vertical: _onb(context, 6),
-                      ),
-                      decoration: BoxDecoration(
-                        color: AppColors.primary.withValues(alpha: 0.22),
-                        borderRadius: BorderRadius.circular(_onb(context, 8)),
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Text(
-                            'Strong attempt',
-                            style: GoogleFonts.dmSans(
-                              fontSize: _onb(context, 11),
-                              fontWeight: FontWeight.w700,
-                              color: AppColors.correctTextDark,
-                            ),
-                          ),
-                          SizedBox(width: _onb(context, 4)),
-                          Icon(
-                            Icons.check_rounded,
-                            size: _onb(context, 14),
-                            color: AppColors.correctTextDark,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          );
-        }
-
-        Widget rightColumn() {
-          return ColoredBox(
-            color: AppColors.wrongBgDark,
-            child: Padding(
-              padding: EdgeInsets.fromLTRB(
-                _onb(context, 14),
-                _onb(context, 10),
-                _onb(context, 12),
-                _onb(context, 10),
-              ),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [
-                      Icon(
-                        Icons.warning_amber_rounded,
-                        size: _onb(context, 16),
-                        color: AppColors.wrongTextDark,
-                      ),
-                      SizedBox(width: _onb(context, 6)),
-                      Expanded(
-                        child: Text(
-                          'HIDDEN RISK DETECTED',
-                          style: GoogleFonts.dmSans(
-                            fontSize: _onb(context, 9),
-                            fontWeight: FontWeight.w800,
-                            letterSpacing: 0.6,
-                            color: AppColors.wrongTextDark,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: _onb(context, 6)),
-                  Text.rich(
-                    TextSpan(
-                      children: [
-                        TextSpan(
-                          text: '8',
-                          style: GoogleFonts.dmSans(
-                            fontSize: _onb(context, 40),
-                            fontWeight: FontWeight.w800,
-                            height: 1,
-                            color: AppColors.wrongTextDark,
-                          ),
-                        ),
-                        TextSpan(
-                          text: ' confident mistakes',
-                          style: GoogleFonts.dmSans(
-                            fontSize: _onb(context, 13),
-                            fontWeight: FontWeight.w600,
-                            height: 1.2,
-                            color: AppColors.onSurfaceDark,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(height: _onb(context, 6)),
-                  Divider(
-                    height: 1,
-                    thickness: 0.5,
-                    color: AppColors.onSurfaceDark.withValues(alpha: 0.2),
-                  ),
-                  SizedBox(height: _onb(context, 6)),
-                  Text(
-                    'Real exam cost',
-                    style: GoogleFonts.dmSans(
-                      fontSize: _onb(context, 11),
-                      color: AppColors.onSurfaceVariantDark,
-                    ),
-                  ),
-                  SizedBox(height: _onb(context, 2)),
-                  Text(
-                    '−5.28 marks',
-                    style: GoogleFonts.dmSans(
-                      fontSize: _onb(context, 22),
-                      fontWeight: FontWeight.w800,
-                      height: 1.1,
-                      color: AppColors.wrongTextDark,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          );
-        }
-
-        return ClipRRect(
-          borderRadius: BorderRadius.circular(AppRadius.xl),
-          child: SizedBox(
-            height: cardH,
-            child: Stack(
-              clipBehavior: Clip.hardEdge,
-              children: [
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    SizedBox(width: splitX, child: leftColumn()),
-                    SizedBox(
-                      width: rightW,
-                      child: rightW > 0.5
-                          ? rightColumn()
-                          : const SizedBox.shrink(),
-                    ),
-                  ],
-                ),
-                Positioned(
-                  left: splitX - 0.5,
-                  top: 0,
-                  bottom: 0,
-                  child: IgnorePointer(
-                    child: Container(
-                      width: 1,
-                      color: AppColors.onSurfaceDark.withValues(alpha: 0.15),
-                    ),
-                  ),
-                ),
-                Positioned(
-                  left: handleLeft,
-                  top: 0,
-                  bottom: 0,
-                  width: handleSize,
-                  child: Center(
-                    child: GestureDetector(
-                      behavior: HitTestBehavior.opaque,
-                      onHorizontalDragStart: (_) {
-                        widget.splitDragLocksPage.value = true;
-                      },
-                      onHorizontalDragUpdate: (details) {
-                        setState(() {
-                          _leftFraction += details.delta.dx / w;
-                          _leftFraction = _leftFraction.clamp(0.5, 1.0);
-                        });
-                      },
-                      onHorizontalDragEnd: (_) {
-                        widget.splitDragLocksPage.value = false;
-                      },
-                      onHorizontalDragCancel: () {
-                        widget.splitDragLocksPage.value = false;
-                      },
-                      child: Listener(
-                        behavior: HitTestBehavior.opaque,
-                        onPointerDown: (_) {
-                          widget.splitDragLocksPage.value = true;
-                        },
-                        onPointerUp: (_) {
-                          widget.splitDragLocksPage.value = false;
-                        },
-                        onPointerCancel: (_) {
-                          widget.splitDragLocksPage.value = false;
-                        },
-                        child: Material(
-                          elevation: 3,
-                          color: AppColors.surfacePrimaryLight,
-                          shape: const CircleBorder(),
-                          child: Padding(
-                            padding: EdgeInsets.all(_onb(context, 7)),
-                            child: Icon(
-                              Icons.arrow_forward_rounded,
-                              size: _onb(context, 20),
-                              color: AppColors.primaryDark,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        );
-      },
-    );
-  }
-}
-
 /// First step: split “latest test vs hidden risk” story (reference layout).
 class _ScoreStoryPage extends StatefulWidget {
   const _ScoreStoryPage({this.onFirstRevealCardSwipe});
@@ -875,15 +553,15 @@ class _ScoreStoryPageState extends State<_ScoreStoryPage> {
         ),
         SizedBox(height: _onb(context, 6)),
         _DiscoverChevronTile(
-          icon: Icons.trending_down_rounded,
-          iconColor: AppColors.wrong,
-          text: 'Find topics where  your educated guesses are most accurate',
+          icon: Icons.trending_up_rounded,
+          iconColor: AppColors.primary,
+          text: 'Find topics where your educated guesses are most accurate',
         ),
         SizedBox(height: _onb(context, 6)),
         _DiscoverChevronTile(
           icon: Icons.lightbulb_outline_rounded,
-          iconColor: AppColors.primary,
-          text: 'Trap types where you have most tendency of falling.',
+          iconColor: AppColors.info,
+          text: 'Trap types you fall for most often',
         ),
       ],
     );
@@ -1439,7 +1117,8 @@ class _LoopPage extends StatelessWidget {
         Text('Consistency clears prelims.', style: _headline(context, true)),
         SizedBox(height: _onb(context, 4)),
         Text(
-          'Short, focused reps — history, progress, and community — so preparation feels structured, not random.',
+          'Short daily reps — drill weak topics, review what hurt, and '
+          'compete — so confident mistakes stop repeating.',
           style: _body(context, true),
         ),
         SizedBox(height: _onb(context, 8)),
@@ -1469,28 +1148,20 @@ class _LoopPage extends StatelessWidget {
           title: '1 on 1 MCQ battles & community',
           subtitle: 'Engage with other aspirants and feel the competition',
         ),
-        SizedBox(height: _onb(context, 4)),
-        _LoopMiniCard(
-          color: AppColors.wrongBgDark.withValues(alpha: 0.65),
-          border: AppColors.wrong.withValues(alpha: 0.35),
-          icon: Icons.flag_outlined,
-          iconColor: AppColors.wrongTextDark,
-          title: 'Prelims countdown',
-          subtitle: 'Daily loop tuned to the calendar, not vibes.',
-        ),
         SizedBox(height: _onb(context, 6)),
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Icon(
-              Icons.emoji_events_outlined,
+              Icons.flag_outlined,
               color: AppColors.primary,
               size: _onb(context, 22),
             ),
             SizedBox(width: _onb(context, 8)),
             Expanded(
               child: Text(
-                'Preparation should feel like progress, not randomness.',
+                'A loop tuned to the prelims calendar — progress, '
+                'not randomness.',
                 style: GoogleFonts.dmSans(
                   fontSize: _onb(context, 14),
                   height: 1.35,

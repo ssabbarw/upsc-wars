@@ -6,7 +6,7 @@ const List<MemoryPairSetDefinition> kMemoryPairSetsArtExtra = [
   MemoryPairSetDefinition(
     id: 'painting_schools',
     nameEn: 'Painting Schools & Region',
-    nameHi: 'चित्रकला शैली और क्षेत्र',
+    nameHi: 'चित्रकला शैलियाँ और क्षेत्र',
     displaySubjectEn: 'Art & Culture',
     displaySubjectHi: 'कला और संस्कृति',
     unlockSubjectSlug: 'Art and Culture',
@@ -35,7 +35,7 @@ const List<MemoryPairSetDefinition> kMemoryPairSetsArtExtra = [
       ),
       MemoryPair(
         termEn: 'Tanjore',
-        termHi: 'तंजावुर',
+        termHi: 'तंजौर (तंजावुर)',
         answerEn: 'Tamil Nadu',
         answerHi: 'तमिलनाडु',
       ),
@@ -105,7 +105,7 @@ const List<MemoryPairSetDefinition> kMemoryPairSetsArtExtra = [
         termEn: 'Hornbill Festival',
         termHi: 'हॉर्नबिल उत्सव',
         answerEn: 'Nagaland',
-        answerHi: 'नागालेंड',
+        answerHi: 'नागालैंड',
       ),
       MemoryPair(
         termEn: 'Losar',
@@ -130,7 +130,7 @@ const List<MemoryPairSetDefinition> kMemoryPairSetsArtExtra = [
   MemoryPairSetDefinition(
     id: 'gi_tags',
     nameEn: 'GI Tags & States',
-    nameHi: 'जीआई टैग और राज्य',
+    nameHi: 'GI टैग और राज्य',
     displaySubjectEn: 'Art & Culture',
     displaySubjectHi: 'कला और संस्कृति',
     unlockSubjectSlug: 'Art and Culture',
@@ -167,7 +167,7 @@ const List<MemoryPairSetDefinition> kMemoryPairSetsArtExtra = [
         termEn: 'Basmati Rice',
         termHi: 'बासमती चावल',
         answerEn: 'Haryana, UP & Punjab',
-        answerHi: 'हरियाणा, UP और पंजाब',
+        answerHi: 'हरियाणा, उत्तर प्रदेश और पंजाब',
       ),
       MemoryPair(
         termEn: 'Kanchipuram Silk',
@@ -204,7 +204,7 @@ const List<MemoryPairSetDefinition> kMemoryPairSetsArtExtra = [
   MemoryPairSetDefinition(
     id: 'unesco_sites',
     nameEn: 'UNESCO Sites & States',
-    nameHi: 'यूनेस्को स्थल और राज्य',
+    nameHi: 'UNESCO विश्व धरोहर स्थल और राज्य',
     displaySubjectEn: 'Art & Culture',
     displaySubjectHi: 'कला और संस्कृति',
     unlockSubjectSlug: 'Art and Culture',
@@ -215,7 +215,7 @@ const List<MemoryPairSetDefinition> kMemoryPairSetsArtExtra = [
     pairs: [
       MemoryPair(
         termEn: 'Taj Mahal',
-        termHi: 'ताज महल',
+        termHi: 'ताजमहल',
         answerEn: 'Uttar Pradesh — Agra',
         answerHi: 'उत्तर प्रदेश — आगरा',
       ),
@@ -233,19 +233,19 @@ const List<MemoryPairSetDefinition> kMemoryPairSetsArtExtra = [
       ),
       MemoryPair(
         termEn: 'Qutb Minar',
-        termHi: 'कुतुब मीनार',
+        termHi: 'कुतुब मीनार परिसर',
         answerEn: 'Delhi',
         answerHi: 'दिल्ली',
       ),
       MemoryPair(
         termEn: 'Ajanta Caves',
-        termHi: 'अजंता गुफ़ाँ',
+        termHi: 'अजंता गुफाएँ',
         answerEn: 'Maharashtra — Ajanta',
         answerHi: 'महाराष्ट्र — अजंता',
       ),
       MemoryPair(
         termEn: 'Ellora Caves',
-        termHi: 'एलोरा गुफ़ाँ',
+        termHi: 'एलोरा गुफाएँ',
         answerEn: 'Maharashtra — Ellora',
         answerHi: 'महाराष्ट्र — एलोरा',
       ),
@@ -257,7 +257,7 @@ const List<MemoryPairSetDefinition> kMemoryPairSetsArtExtra = [
       ),
       MemoryPair(
         termEn: 'Mahabalipuram',
-        termHi: 'महाबलीपुरम',
+        termHi: 'महाबलीपुरम (मामल्लपुरम)',
         answerEn: 'Tamil Nadu',
         answerHi: 'तमिलनाडु',
       ),
@@ -295,9 +295,9 @@ const List<MemoryPairSetDefinition> kMemoryPairSetsArtExtra = [
       ),
       MemoryPair(
         termEn: 'Abhijnanashakuntalam',
-        termHi: 'अभिज्ञानशकुंतलम',
+        termHi: 'अभिज्ञानशाकुंतलम्',
         answerEn: 'Kalidasa (play)',
-        answerHi: 'कालिदास (नाटक)',
+        answerHi: 'कालिदास (संस्कृत नाटक)',
       ),
       MemoryPair(
         termEn: 'Arthashastra',
@@ -307,15 +307,15 @@ const List<MemoryPairSetDefinition> kMemoryPairSetsArtExtra = [
       ),
       MemoryPair(
         termEn: 'Silappadikaram',
-        termHi: 'सिलप्पडिकारम',
+        termHi: 'शिलप्पादिकारम्',
         answerEn: 'Ilango Adigal',
         answerHi: 'इलंगो अडिगल',
       ),
       MemoryPair(
         termEn: 'Manimekalai',
-        termHi: 'मणिमेकलै',
+        termHi: 'मणिमेखलै',
         answerEn: 'Sattanar',
-        answerHi: 'शी अट्टनार',
+        answerHi: 'सीतलै सत्तनार',
       ),
       MemoryPair(
         termEn: 'Ramcharitmanas',
@@ -325,13 +325,13 @@ const List<MemoryPairSetDefinition> kMemoryPairSetsArtExtra = [
       ),
       MemoryPair(
         termEn: 'Mudrarakshasa',
-        termHi: 'मुद्रराक्षस',
+        termHi: 'मुद्राराक्षस',
         answerEn: 'Vishakhadatta',
         answerHi: 'विशाखदत्त',
       ),
       MemoryPair(
         termEn: 'Panchatantra',
-        termHi: 'पंचतन्त्र',
+        termHi: 'पंचतंत्र',
         answerEn: 'Vishnu Sharma',
         answerHi: 'विष्णु शर्मा',
       ),

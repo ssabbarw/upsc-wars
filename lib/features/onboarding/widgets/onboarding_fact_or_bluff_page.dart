@@ -136,8 +136,8 @@ class OnboardingFactOrBluffPage extends HookWidget {
             ),
             SizedBox(height: _onb(context, 6)),
             Text(
-              'Trust your gut — would you stake marks on this? '
-              'This is just a taste, not a test.',
+              'A 30-second taste of how revision feels here — '
+              'not a test, just a peek.',
               style: GoogleFonts.dmSans(
                 fontSize: _onb(context, 14),
                 height: 1.45,
@@ -364,8 +364,7 @@ class _VerdictBanner extends StatelessWidget {
               Text(
                 wasCorrect
                     ? 'You got it — it\'s a ${isFact ? 'FACT' : 'BLUFF'}'
-                    : 'It\'s a ${isFact ? 'FACT' : 'BLUFF'} — felt sure, '
-                          'though?',
+                    : 'Not this time — it\'s a ${isFact ? 'FACT' : 'BLUFF'}',
                 style: GoogleFonts.dmSans(
                   fontSize: _onb(context, 13),
                   fontWeight: FontWeight.w800,
@@ -415,16 +414,14 @@ class _OnboardingFactOrBluffResult extends StatelessWidget {
             shape: BoxShape.circle,
           ),
           child: Icon(
-            perfect ? Icons.emoji_events_rounded : Icons.psychology_rounded,
+            Icons.sports_esports_rounded,
             size: _onb(context, 30),
             color: AppColors.primary,
           ),
         ),
         SizedBox(height: _onb(context, 16)),
         Text(
-          perfect
-              ? 'Sharp — no bluff got past you.'
-              : 'Felt that? That\'s a confident mistake.',
+          perfect ? 'Nice instincts.' : 'Quick reps beat long mocks.',
           textAlign: TextAlign.center,
           style: GoogleFonts.dmSans(
             fontSize: _onb(context, 24),
@@ -435,12 +432,8 @@ class _OnboardingFactOrBluffResult extends StatelessWidget {
         ),
         SizedBox(height: _onb(context, 8)),
         Text(
-          perfect
-              ? 'In a real test, bluffs like these are where marks quietly '
-                    'leak. UPSC Wars tracks exactly which ones fool you.'
-              : 'In a real test that costs marks twice — the wrong answer '
-                    'and the negative marking. UPSC Wars finds these before '
-                    'the exam does.',
+          'Games like this train recall in under a minute — and Fact or '
+          'Bluff is just one of six revision games waiting inside.',
           textAlign: TextAlign.center,
           style: GoogleFonts.dmSans(
             fontSize: _onb(context, 14),

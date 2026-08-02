@@ -22,15 +22,15 @@ const List<MemoryPairSetDefinition> kMemoryPairSetsAncientExtra = [
       ),
       MemoryPair(
         termEn: 'Dholavira',
-        termHi: 'धोलावीरा',
+        termHi: 'धौलावीरा',
         answerEn: 'Advanced water management',
         answerHi: 'उन्नत जल प्रबंधन',
       ),
       MemoryPair(
         termEn: 'Kalibangan',
-        termHi: 'कालीबंगन',
+        termHi: 'कालीबंगा',
         answerEn: 'Fire altars & ploughed field',
-        answerHi: 'अग्नि वेदी और हल चलित खेत',
+        answerHi: 'अग्नि वेदिकाएँ और जुता हुआ खेत',
       ),
       MemoryPair(
         termEn: 'Mohenjo-daro',
@@ -42,7 +42,7 @@ const List<MemoryPairSetDefinition> kMemoryPairSetsAncientExtra = [
         termEn: 'Harappa',
         termHi: 'हड़प्पा',
         answerEn: 'Granaries & six granaries',
-        answerHi: 'अन्नागार और छः अन्नागार',
+        answerHi: 'छह अन्नागारों की पंक्ति',
       ),
       MemoryPair(
         termEn: 'Rakhigarhi',
@@ -58,7 +58,7 @@ const List<MemoryPairSetDefinition> kMemoryPairSetsAncientExtra = [
       ),
       MemoryPair(
         termEn: 'Chanhudaro',
-        termHi: 'चाहुंदड़ो',
+        termHi: 'चन्हुदड़ो',
         answerEn: 'Bead making, no citadel',
         answerHi: 'मनके निर्माण, कोई किला नहीं',
       ),
@@ -244,13 +244,13 @@ const List<MemoryPairSetDefinition> kMemoryPairSetsAncientExtra = [
       ),
       MemoryPair(
         termEn: 'Hiuen Tsang',
-        termHi: 'ह्वेन त्सांग',
+        termHi: 'ह्वेनसांग',
         answerEn: 'Visited Harsha\'s court',
         answerHi: 'हर्ष के दरबार में आए',
       ),
       MemoryPair(
         termEn: 'I-Tsing',
-        termHi: 'ई-त्सिंग',
+        termHi: 'इत्सिंग',
         answerEn: 'Studied at Nalanda',
         answerHi: 'नालंदा में अध्ययन',
       ),
@@ -268,7 +268,7 @@ const List<MemoryPairSetDefinition> kMemoryPairSetsAncientExtra = [
       ),
       MemoryPair(
         termEn: 'Periplus of Erythraean Sea',
-        termHi: 'एरिथ्रियन सागर का पेरिप्लस',
+        termHi: 'पेरिप्लस ऑफ़ द एरिथ्रियन सी',
         answerEn: 'Indo-Roman maritime trade',
         answerHi: 'भारत-रोम समुद्री व्यापार',
       ),
@@ -338,7 +338,7 @@ const List<MemoryPairSetDefinition> kMemoryPairSetsAncientExtra = [
         termEn: 'Agamas',
         termHi: 'आगम',
         answerEn: 'Jain canonical scriptures',
-        answerHi: 'जैन मूल ग्रंथ',
+        answerHi: 'जैन धर्मग्रंथ',
       ),
       MemoryPair(
         termEn: 'Triratna',
@@ -382,7 +382,7 @@ const List<MemoryPairSetDefinition> kMemoryPairSetsAncientExtra = [
         termEn: 'Samaharta',
         termHi: 'समाहर्ता',
         answerEn: 'Collector general of revenue',
-        answerHi: 'राजस्व संग्रह महानियंत्रक',
+        answerHi: 'मुख्य राजस्व संग्राहक',
       ),
       MemoryPair(
         termEn: 'Sannidhata',
