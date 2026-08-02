@@ -46,6 +46,14 @@ abstract final class PrefKeys {
   static const getStartedDiagnosticAttemptedV1 =
       'get_started_diagnostic_attempted_v1';
 
+  /// User dismissed the Get Started home card via the explain sheet.
+  /// Legacy — ignored; prefer [getStartedCardSnoozedUntilV1].
+  static const getStartedCardDismissedV1 = 'get_started_card_dismissed_v1';
+
+  /// YYYY-MM-DD: first local calendar day the Get Started card may show again.
+  static const getStartedCardSnoozedUntilV1 =
+      'get_started_card_snoozed_until_v1';
+
   /// Shown once: session review share button coach mark.
   static const sessionReviewShareCoachSeen =
       'session_review_share_coach_seen_v1';
@@ -215,6 +223,17 @@ class PrefsService {
       _p.getBool(PrefKeys.getStartedDiagnosticAttemptedV1) ?? false;
   set getStartedDiagnosticAttempted(bool v) =>
       _p.setBool(PrefKeys.getStartedDiagnosticAttemptedV1, v);
+
+  bool get getStartedCardDismissed =>
+      _p.getBool(PrefKeys.getStartedCardDismissedV1) ?? false;
+  set getStartedCardDismissed(bool v) =>
+      _p.setBool(PrefKeys.getStartedCardDismissedV1, v);
+
+  /// Empty = not snoozed. Otherwise YYYY-MM-DD when the card may show again.
+  String get getStartedCardSnoozedUntil =>
+      (_p.getString(PrefKeys.getStartedCardSnoozedUntilV1) ?? '').trim();
+  set getStartedCardSnoozedUntil(String v) =>
+      _p.setString(PrefKeys.getStartedCardSnoozedUntilV1, v.trim());
 
   bool get sessionReviewShareCoachSeen =>
       _p.getBool(PrefKeys.sessionReviewShareCoachSeen) ?? false;

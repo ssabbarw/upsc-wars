@@ -13,6 +13,13 @@ String _todayYyyyMmDd() {
       '${now.day.toString().padLeft(2, '0')}';
 }
 
+String _tomorrowYyyyMmDd() {
+  final t = DateTime.now().add(const Duration(days: 1));
+  return '${t.year.toString().padLeft(4, '0')}-'
+      '${t.month.toString().padLeft(2, '0')}-'
+      '${t.day.toString().padLeft(2, '0')}';
+}
+
 /// Trailing consecutive calendar days with sessions (most recent run).
 int consecutiveActivationSessionDays(List<String> sortedDays) {
   if (sortedDays.isEmpty) return 0;
@@ -34,6 +41,7 @@ class HomeActivationState {
   const HomeActivationState({
     required this.activationComplete,
     required this.getStartedDiagnosticAttempted,
+    required this.getStartedCardSnoozedToday,
     required this.completedSessionCount,
     required this.consecutiveSessionDays,
   });
@@ -43,13 +51,18 @@ class HomeActivationState {
   /// Submitted the Get Started demo (home card or post-onboarding sheet).
   final bool getStartedDiagnosticAttempted;
 
+  /// User chose "remind me tomorrow" — hidden until the next local calendar day.
+  final bool getStartedCardSnoozedToday;
+
   final int completedSessionCount;
   final int consecutiveSessionDays;
 
-  /// Hide once the user has finished any first test — demo or a real session.
+  /// Show daily until the user finishes any first test (or the demo).
+  /// Snooze only hides for the rest of today.
   bool get shouldShowGetStartedCard =>
       !activationComplete &&
       !getStartedDiagnosticAttempted &&
+      !getStartedCardSnoozedToday &&
       completedSessionCount == 0;
 }
 
@@ -74,10 +87,14 @@ class HomeActivation extends _$HomeActivation {
 
     final sessionDays = prefs.activationSessionDays;
     final consecutiveDays = consecutiveActivationSessionDays(sessionDays);
+    final snoozedUntil = prefs.getStartedCardSnoozedUntil;
+    final snoozedToday =
+        snoozedUntil.isNotEmpty && _todayYyyyMmDd().compareTo(snoozedUntil) < 0;
 
     return HomeActivationState(
       activationComplete: activationComplete,
       getStartedDiagnosticAttempted: prefs.getStartedDiagnosticAttempted,
+      getStartedCardSnoozedToday: snoozedToday,
       completedSessionCount: completedCount,
       consecutiveSessionDays: consecutiveDays,
     );
@@ -92,6 +109,18 @@ class HomeActivation extends _$HomeActivation {
   Future<void> markActivationComplete() async {
     final prefs = await ref.read(prefsServiceProvider.future);
     markHomeActivationComplete(prefs);
+    ref.invalidateSelf();
+  }
+
+  /// Hide Get Started until tomorrow; returns daily until the user finishes a test.
+  Future<void> snoozeGetStartedCardUntilTomorrow() async {
+    final prefs = await ref.read(prefsServiceProvider.future);
+    prefs.getStartedCardSnoozedUntil = _tomorrowYyyyMmDd();
+    prefs.getStartedSheetPendingAfterOnboarding = false;
+    // Clear legacy permanent-dismiss so the daily reminder can return.
+    if (prefs.getStartedCardDismissed) {
+      prefs.getStartedCardDismissed = false;
+    }
     ref.invalidateSelf();
   }
 }

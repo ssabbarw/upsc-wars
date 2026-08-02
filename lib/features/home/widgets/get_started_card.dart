@@ -14,6 +14,7 @@ import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../domain/create_get_started_session_use_case.dart';
+import '../providers/home_activation_provider.dart';
 
 /// Creates the 7-question mixed Get Started diagnostic (returns session id or null).
 Future<String?> createGetStartedDiagnosticSession(
@@ -87,7 +88,7 @@ Future<bool?> showGetStartedDiagnosticIntroSheet(
   return started;
 }
 
-/// Temporary onboarding invitation — hidden after the user's first finished test.
+/// Compact home invite — hidden after first test, demo, or dismiss.
 class GetStartedCard extends HookConsumerWidget {
   const GetStartedCard({super.key});
 
@@ -104,85 +105,200 @@ class GetStartedCard extends HookConsumerWidget {
       return null;
     }, const []);
 
-    return IntrinsicHeight(
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Container(
-            width: 3,
-            decoration: BoxDecoration(
-              color: AppColors.primary,
-              borderRadius: const BorderRadius.horizontal(
-                left: Radius.circular(AppRadius.lg),
-              ),
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: () => unawaited(showGetStartedDiagnosticIntroSheet(context)),
+        borderRadius: BorderRadius.circular(AppRadius.md),
+        child: Ink(
+          padding: const EdgeInsets.fromLTRB(12, 10, 4, 10),
+          decoration: BoxDecoration(
+            color: isDark
+                ? AppColors.primaryDeep.withValues(alpha: 0.18)
+                : AppColors.primaryLight.withValues(alpha: 0.45),
+            borderRadius: BorderRadius.circular(AppRadius.md),
+            border: Border.all(
+              color: AppColors.primary.withValues(alpha: isDark ? 0.35 : 0.25),
             ),
           ),
-          Expanded(
-            child: Container(
-              padding: const EdgeInsets.fromLTRB(
-                AppSpacing.md,
-                AppSpacing.md,
-                AppSpacing.lg,
-                AppSpacing.md,
-              ),
-              decoration: BoxDecoration(
-                color: isDark
-                    ? AppColors.primaryDeep.withValues(alpha: 0.18)
-                    : AppColors.primaryLight.withValues(alpha: 0.45),
-                borderRadius: const BorderRadius.horizontal(
-                  right: Radius.circular(AppRadius.lg),
-                ),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Text(
-                    '5 min · 7 MCQs',
-                    style: AppTextStyles.caption().copyWith(
-                      color: AppColors.primaryDark,
-                      fontWeight: FontWeight.w600,
-                      letterSpacing: 0.15,
-                    ),
-                  ),
-                  const SizedBox(height: AppSpacing.xs),
-                  Text(
-                    'Find where UPSC Wars gives you an edge',
-                    style: AppTextStyles.h3().copyWith(
-                      color: scheme.onSurface,
-                      fontWeight: FontWeight.w700,
-                      height: 1.2,
-                    ),
-                  ),
-                  const SizedBox(height: AppSpacing.xs),
-                  Text(
-                    'Most aspirants know weak topics. Few know where they\u2019re '
-                    'confidently wrong.',
-                    style: AppTextStyles.bodySm().copyWith(
-                      color: scheme.onSurfaceVariant,
-                      height: 1.35,
-                    ),
-                  ),
-                  const SizedBox(height: AppSpacing.sm),
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: GestureDetector(
-                      onTap: () => unawaited(
-                        showGetStartedDiagnosticIntroSheet(context),
-                      ),
-                      child: Text(
-                        'Let\u2019s go →',
-                        style: AppTextStyles.label().copyWith(
+          child: Row(
+            children: [
+              Expanded(
+                child: Text.rich(
+                  TextSpan(
+                    children: [
+                      TextSpan(
+                        text: 'Try a demo test',
+                        style: AppTextStyles.labelSm().copyWith(
                           color: AppColors.primaryDark,
-                          fontWeight: FontWeight.w700,
+                          fontWeight: FontWeight.w800,
                         ),
                       ),
+                      TextSpan(
+                        text:
+                            ' — see the edge UPSC Wars gives you',
+                        style: AppTextStyles.bodySm().copyWith(
+                          color: scheme.onSurfaceVariant,
+                          height: 1.25,
+                        ),
+                      ),
+                    ],
+                  ),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+              IconButton(
+                onPressed: () => unawaited(
+                  showGetStartedSnoozeSheet(context, ref),
+                ),
+                visualDensity: VisualDensity.compact,
+                padding: EdgeInsets.zero,
+                constraints: const BoxConstraints(
+                  minWidth: 32,
+                  minHeight: 32,
+                ),
+                tooltip: 'Remind me tomorrow',
+                icon: Icon(
+                  Icons.close_rounded,
+                  size: 16,
+                  color: scheme.onSurfaceVariant,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+/// Explains the diagnostic, then snoozes the card until tomorrow.
+Future<void> showGetStartedSnoozeSheet(
+  BuildContext context,
+  WidgetRef ref,
+) async {
+  await showModalBottomSheet<void>(
+    context: context,
+    useRootNavigator: true,
+    isScrollControlled: true,
+    backgroundColor: Colors.transparent,
+    builder: (ctx) => const _GetStartedSnoozeSheet(),
+  );
+}
+
+class _GetStartedSnoozeSheet extends ConsumerWidget {
+  const _GetStartedSnoozeSheet();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final scheme = Theme.of(context).colorScheme;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final borderColor = isDark ? AppColors.borderDark : AppColors.borderLight;
+
+    Future<void> snooze() async {
+      await Analytics.track(ref, const GetStartedCardSnoozedEvent());
+      await ref
+          .read(homeActivationProvider.notifier)
+          .snoozeGetStartedCardUntilTomorrow();
+      if (context.mounted) Navigator.pop(context);
+    }
+
+    return Padding(
+      padding: EdgeInsets.fromLTRB(
+        AppSpacing.sm,
+        0,
+        AppSpacing.sm,
+        sheetBottomPadding(context, base: AppSpacing.sm),
+      ),
+      child: Align(
+        alignment: Alignment.bottomCenter,
+        child: Material(
+          color: scheme.surface,
+          borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
+          child: Container(
+            padding: const EdgeInsets.fromLTRB(
+              AppSpacing.lg,
+              AppSpacing.md,
+              AppSpacing.lg,
+              AppSpacing.lg,
+            ),
+            decoration: BoxDecoration(
+              borderRadius: const BorderRadius.vertical(
+                top: Radius.circular(24),
+              ),
+              border: Border.all(color: borderColor.withValues(alpha: 0.45)),
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Center(
+                  child: Container(
+                    width: 40,
+                    height: 4,
+                    margin: const EdgeInsets.only(bottom: AppSpacing.md),
+                    decoration: BoxDecoration(
+                      color: scheme.onSurfaceVariant.withValues(alpha: 0.35),
+                      borderRadius: BorderRadius.circular(2),
                     ),
                   ),
-                ],
-              ),
+                ),
+                Text(
+                  'Not now?',
+                  style: AppTextStyles.h3().copyWith(
+                    fontWeight: FontWeight.w800,
+                    color: scheme.onSurface,
+                  ),
+                ),
+                const SizedBox(height: AppSpacing.sm),
+                Text(
+                  'This 5-minute demo finds questions you feel sure about but '
+                  'get wrong — the edge UPSC Wars is built around. We\u2019ll '
+                  'nudge you again tomorrow until you finish one test.',
+                  style: AppTextStyles.bodySm().copyWith(
+                    color: scheme.onSurfaceVariant,
+                    height: 1.4,
+                  ),
+                ),
+                const SizedBox(height: AppSpacing.lg),
+                SizedBox(
+                  height: 48,
+                  child: FilledButton(
+                    onPressed: () => unawaited(snooze()),
+                    style: FilledButton.styleFrom(
+                      backgroundColor: AppColors.primary,
+                      foregroundColor: AppColors.onPrimary,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(AppRadius.lg),
+                      ),
+                    ),
+                    child: Text(
+                      'Remind me tomorrow',
+                      style: AppTextStyles.label().copyWith(
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: AppSpacing.xs),
+                TextButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                    unawaited(showGetStartedDiagnosticIntroSheet(context));
+                  },
+                  child: Text(
+                    'Try the diagnostic instead',
+                    style: AppTextStyles.labelSm().copyWith(
+                      color: AppColors.primaryDark,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
-        ],
+        ),
       ),
     );
   }

@@ -514,6 +514,8 @@ class HomeScreen extends HookConsumerWidget {
                     ],
                   ),
                   const SizedBox(height: AppSpacing.md),
+                  const DailyWarHomeCard(),
+                  const DailyWarPrepareDock(),
                   Consumer(
                     builder: (context, ref, _) {
                       final activation = ref.watch(homeActivationProvider);
@@ -524,19 +526,14 @@ class HomeScreen extends HookConsumerWidget {
                           if (!state.shouldShowGetStartedCard) {
                             return const SizedBox.shrink();
                           }
-                          return const Column(
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: [
-                              GetStartedCard(),
-                              SizedBox(height: AppSpacing.md),
-                            ],
+                          return const Padding(
+                            padding: EdgeInsets.only(bottom: AppSpacing.md),
+                            child: GetStartedCard(),
                           );
                         },
                       );
                     },
                   ),
-                  const DailyWarHomeCard(),
-                  const DailyWarPrepareDock(),
                   Consumer(
                     builder: (context, ref, _) {
                       final warOn = ref

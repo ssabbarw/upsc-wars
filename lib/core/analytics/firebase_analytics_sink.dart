@@ -360,6 +360,8 @@ class FirebaseAnalyticsSink implements AnalyticsSink {
           if (subject case final s?) 'subject': s,
           if (source case final src?) 'source': src,
         });
+      case GetStartedCardSnoozedEvent():
+        await _log('get_started_card_snoozed', const {});
       case DidYouKnowShownEvent(:final cardId):
         await _log('did_you_know_shown', {'card_id': cardId});
       case DidYouKnowDismissedEvent(:final cardId):

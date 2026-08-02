@@ -681,6 +681,13 @@ final class GetStartedCardTappedEvent extends AnalyticsEvent {
   final String? source;
 }
 
+/// **User snoozed the Get Started home card** until tomorrow.
+///
+/// **GA4:** `get_started_card_snoozed` (no parameters).
+final class GetStartedCardSnoozedEvent extends AnalyticsEvent {
+  const GetStartedCardSnoozedEvent();
+}
+
 /// **Did You Know card shown** on home.
 ///
 /// **GA4:** `did_you_know_shown` with `card_id`.
