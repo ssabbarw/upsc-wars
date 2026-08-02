@@ -36,6 +36,8 @@ class DailyWarCloudService {
     required int elapsedMs,
     required String mode,
     String? displayName,
+    int? warStreakDays,
+    String? tierId,
   }) async {
     try {
       final callable = _functions.httpsCallable('submitDailyWar');
@@ -46,6 +48,8 @@ class DailyWarCloudService {
         'mode': mode,
         if (displayName != null && displayName.isNotEmpty)
           'displayName': displayName,
+        if (warStreakDays != null) 'warStreakDays': warStreakDays,
+        if (tierId != null && tierId.isNotEmpty) 'tierId': tierId,
       });
       final data = result.data;
       return DailyWarSubmitResult(

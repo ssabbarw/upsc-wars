@@ -8,11 +8,14 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/providers/catalog_providers.dart';
 import '../../../core/providers/kill_switch_provider.dart';
+import '../../../core/providers/prefs_provider.dart';
 import '../daily_war_constants.dart';
 import '../data/daily_war_cloud_service.dart';
 import '../data/daily_war_firestore_paths.dart';
+import '../domain/daily_war_badges.dart';
 import '../domain/daily_war_copy.dart';
 import '../domain/daily_war_models.dart';
+import '../domain/daily_war_streak.dart';
 import '../providers/daily_war_providers.dart';
 import '../theme/daily_war_theme.dart';
 
@@ -31,6 +34,7 @@ class DailyWarResultsScreen extends HookConsumerWidget {
     final nextTopics = useState<List<DailyWarTopicRef>>(const []);
     final participantCount = useState<int?>(null);
     final questionCount = useState<int>(15);
+    final warDateId = useState<String>('');
     final error = useState<String?>(null);
 
     useEffect(() {
@@ -43,6 +47,7 @@ class DailyWarResultsScreen extends HookConsumerWidget {
           if (dateId.isEmpty) {
             throw StateError('Missing War date on session');
           }
+          warDateId.value = dateId;
           final mode = DailyWarConstants.isUnrankedFeatureKey(
                 session.analyticsFeatureKey,
               )
@@ -65,6 +70,19 @@ class DailyWarResultsScreen extends HookConsumerWidget {
           final displayName =
               FirebaseAuth.instance.currentUser?.displayName?.trim();
 
+          int? streakDays;
+          String? tierId;
+          if (mode == 'live') {
+            final prefs = await ref.read(prefsServiceProvider.future);
+            DailyWarStreak.reconcile(
+              prefs: prefs,
+              istNow: DateTime.now(), // offset applied on home; fine for submit
+            );
+            streakDays =
+                DailyWarStreak.peekNextDays(prefs: prefs, dateId: dateId);
+            tierId = DailyWarBadges.tierIdForDays(streakDays);
+          }
+
           const cloud = DailyWarCloudService();
           final result = await cloud.submit(
             dateId: dateId,
@@ -72,6 +90,8 @@ class DailyWarResultsScreen extends HookConsumerWidget {
             elapsedMs: elapsedMs,
             mode: mode,
             displayName: displayName,
+            warStreakDays: streakDays,
+            tierId: tierId,
           );
           if (cancelled) return;
           if (!result.ok) {
@@ -80,6 +100,12 @@ class DailyWarResultsScreen extends HookConsumerWidget {
             return;
           }
           score.value = result.score;
+
+          if (mode == 'live') {
+            final prefs = await ref.read(prefsServiceProvider.future);
+            DailyWarStreak.recordLivePlay(prefs: prefs, dateId: dateId);
+            ref.invalidate(dailyWarStreakCountProvider);
+          }
 
           final warDoc = await ref.read(dailyWarDocByIdProvider(dateId).future);
           nextTopics.value = warDoc?.nextTopics ?? const [];
@@ -155,6 +181,7 @@ class DailyWarResultsScreen extends HookConsumerWidget {
             ],
           ),
           _SyncState.ready => _ReadyBody(
+            dateId: warDateId.value,
             submission: submission.value,
             score: score.value,
             nextTopics: nextTopics.value,
@@ -169,6 +196,7 @@ class DailyWarResultsScreen extends HookConsumerWidget {
 
 class _ReadyBody extends ConsumerWidget {
   const _ReadyBody({
+    required this.dateId,
     required this.submission,
     required this.score,
     required this.nextTopics,
@@ -176,6 +204,7 @@ class _ReadyBody extends ConsumerWidget {
     required this.questionCount,
   });
 
+  final String dateId;
   final DailyWarSubmission? submission;
   final double? score;
   final List<DailyWarTopicRef> nextTopics;
@@ -247,6 +276,20 @@ class _ReadyBody extends ConsumerWidget {
           ),
         ],
         const Spacer(),
+        if (submission?.hasOfficialRank == true && dateId.isNotEmpty) ...[
+          FilledButton(
+            onPressed: () => context.push(dailyWarLeaderboardRoute(dateId)),
+            style: FilledButton.styleFrom(
+              backgroundColor: DwColors.teal,
+              minimumSize: const Size.fromHeight(48),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+            ),
+            child: Text('Tonight\'s leaderboard', style: DwText.cta()),
+          ),
+          const SizedBox(height: 10),
+        ],
         FilledButton(
           onPressed: () => context.go('/'),
           style: FilledButton.styleFrom(

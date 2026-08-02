@@ -16,7 +16,9 @@ import '../domain/daily_war_schedule.dart';
 import '../providers/daily_war_providers.dart';
 import '../providers/server_clock_provider.dart';
 import '../theme/daily_war_theme.dart';
+import '../widgets/daily_war_help_sheet.dart';
 import '../widgets/daily_war_topics_sheet.dart';
+import '../widgets/daily_war_week_strip.dart';
 
 class DailyWarLobbyScreen extends HookConsumerWidget {
   const DailyWarLobbyScreen({super.key});
@@ -195,6 +197,15 @@ class _DailyWarLobbyBody extends HookConsumerWidget {
           style: DwText.dm(size: 18, weight: FontWeight.w700),
         ),
         actions: [
+          IconButton(
+            tooltip: 'How Daily War works',
+            onPressed: () => unawaited(showDailyWarHelpSheet(context)),
+            icon: const Icon(
+              Icons.help_outline_rounded,
+              color: DwColors.onDarkMuted,
+              size: 22,
+            ),
+          ),
           TextButton(
             onPressed: () => context.push(dailyWarHistoryRoute()),
             child: Text(
@@ -219,8 +230,17 @@ class _DailyWarLobbyBody extends HookConsumerWidget {
                     : _statusEyebrow(snap.phase),
             style: DwText.eyebrow(),
           ),
-          const SizedBox(height: 8),
-          if (topics.isEmpty)
+          const SizedBox(height: 12),
+          DailyWarWeekStrip(referenceIst: ist),
+          const SizedBox(height: 16),
+          if (snap.phase == DailyWarPhase.restDay) ...[
+            Text('Sunday off', style: DwText.topic()),
+            const SizedBox(height: 8),
+            Text(
+              'No live paper today. Next War is Monday at 9:00 PM IST.',
+              style: DwText.body(),
+            ),
+          ] else if (topics.isEmpty)
             Text('Tonight\'s topics loading…', style: DwText.topic())
           else ...[
             Text(
@@ -262,85 +282,87 @@ class _DailyWarLobbyBody extends HookConsumerWidget {
               ),
             ),
           ],
-          const SizedBox(height: 16),
-          Container(
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: DwColors.surfaceRaised,
-              borderRadius: BorderRadius.circular(16),
-              border: Border.all(color: DwColors.borderOnDark),
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  canEnter
-                      ? (snap.phase == DailyWarPhase.lobby
-                          ? 'Starts in ${DailyWarSchedule.formatCountdown(untilStart)}'
-                          : 'Join until 9:10 · ${mmSs(untilLate)} left')
-                      : _statusCopy(
-                          snap.phase,
-                          closeClock: DailyWarSchedule.formatClock(liveEnd),
-                        ),
-                  style: DwText.dm(size: 14, weight: FontWeight.w600),
-                ),
-                const SizedBox(height: 8),
-                Text(
-                  DailyWarCopy.rulesLineLobby(
-                    questionCount: qCount,
-                    isGrand: isGrand,
-                  ),
-                  style: DwText.body(),
-                ),
-                if (countShown != null &&
-                    (snap.phase == DailyWarPhase.lobby ||
-                        snap.phase == DailyWarPhase.liveJoinable)) ...[
-                  const SizedBox(height: 14),
-                  Text(countShown, style: DwText.heroNumber()),
+          if (snap.phase != DailyWarPhase.restDay) ...[
+            const SizedBox(height: 16),
+            Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: DwColors.surfaceRaised,
+                borderRadius: BorderRadius.circular(16),
+                border: Border.all(color: DwColors.borderOnDark),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
                   Text(
-                    snap.phase == DailyWarPhase.lobby
-                        ? 'aspirants in the lobby'
-                        : 'writing right now',
+                    canEnter
+                        ? (snap.phase == DailyWarPhase.lobby
+                            ? 'Starts in ${DailyWarSchedule.formatCountdown(untilStart)}'
+                            : 'Join until 9:10 · ${mmSs(untilLate)} left')
+                        : _statusCopy(
+                            snap.phase,
+                            closeClock: DailyWarSchedule.formatClock(liveEnd),
+                          ),
+                    style: DwText.dm(size: 14, weight: FontWeight.w600),
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    DailyWarCopy.rulesLineLobby(
+                      questionCount: qCount,
+                      isGrand: isGrand,
+                    ),
                     style: DwText.body(),
                   ),
+                  if (countShown != null &&
+                      (snap.phase == DailyWarPhase.lobby ||
+                          snap.phase == DailyWarPhase.liveJoinable)) ...[
+                    const SizedBox(height: 14),
+                    Text(countShown, style: DwText.heroNumber()),
+                    Text(
+                      snap.phase == DailyWarPhase.lobby
+                          ? 'aspirants in the lobby'
+                          : 'writing right now',
+                      style: DwText.body(),
+                    ),
+                  ],
                 ],
-              ],
+              ),
             ),
-          ),
-          const SizedBox(height: 24),
-          if (alreadyDone)
-            _DwButton(
-              label: snap.submission?.hasOfficialRank == true
-                  ? 'See your AIR ${snap.submission!.air}'
-                  : 'Open History',
-              onPressed: () => context.push(dailyWarHistoryRoute()),
-            )
-          else if (canEnter)
-            _DwButton(
-              label: launching.value
-                  ? 'Starting…'
-                  : (snap.phase == DailyWarPhase.lobby
-                      ? 'I\'m ready'
-                      : 'Join now'),
-              onPressed: launching.value
-                  ? null
-                  : () => unawaited(enterWar(unranked: false)),
-              loading: launching.value,
-            )
-          else if (snap.phase == DailyWarPhase.resultsReady ||
-              snap.phase == DailyWarPhase.resultsPending)
-            _DwButton(
-              label: 'Attempt unranked',
-              filled: false,
-              onPressed: launching.value
-                  ? null
-                  : () => unawaited(enterWar(unranked: true)),
-            )
-          else
-            Text(
-              'Come back at 8:45 PM IST to enter the lobby.',
-              style: DwText.body(),
-            ),
+            const SizedBox(height: 24),
+            if (alreadyDone)
+              _DwButton(
+                label: snap.submission?.hasOfficialRank == true
+                    ? 'See your AIR ${snap.submission!.air}'
+                    : 'Open History',
+                onPressed: () => context.push(dailyWarHistoryRoute()),
+              )
+            else if (canEnter)
+              _DwButton(
+                label: launching.value
+                    ? 'Starting…'
+                    : (snap.phase == DailyWarPhase.lobby
+                        ? 'I\'m ready'
+                        : 'Join now'),
+                onPressed: launching.value
+                    ? null
+                    : () => unawaited(enterWar(unranked: false)),
+                loading: launching.value,
+              )
+            else if (snap.phase == DailyWarPhase.resultsReady ||
+                snap.phase == DailyWarPhase.resultsPending)
+              _DwButton(
+                label: 'Attempt unranked',
+                filled: false,
+                onPressed: launching.value
+                    ? null
+                    : () => unawaited(enterWar(unranked: true)),
+              )
+            else
+              Text(
+                'Come back at 8:45 PM IST to enter the lobby.',
+                style: DwText.body(),
+              ),
+          ],
           const SizedBox(height: 16),
           TextButton(
             onPressed: () => context.pop(),
@@ -366,6 +388,8 @@ class _DailyWarLobbyBody extends HookConsumerWidget {
         return 'RESULTS';
       case DailyWarPhase.liveLocked:
         return 'IN PROGRESS';
+      case DailyWarPhase.restDay:
+        return 'SUNDAY OFF';
       default:
         return 'DAILY WAR';
     }
@@ -373,6 +397,8 @@ class _DailyWarLobbyBody extends HookConsumerWidget {
 
   String _statusCopy(DailyWarPhase phase, {required String closeClock}) {
     switch (phase) {
+      case DailyWarPhase.restDay:
+        return 'No paper today · next War Monday 9:00 PM';
       case DailyWarPhase.preAnnounce:
       case DailyWarPhase.morning:
       case DailyWarPhase.countdown:

@@ -39,5 +39,8 @@ String dailyWarHistoryDetailRoute(String dateId) =>
 String dailyWarHistoryReviseRoute(String dateId) =>
     '/daily-war/history/$dateId/revise';
 
+String dailyWarLeaderboardRoute(String dateId) =>
+    '/daily-war/history/$dateId/leaderboard';
+
 String dailyWarResultsRoute(String sessionId) =>
     '/daily-war/results/$sessionId';

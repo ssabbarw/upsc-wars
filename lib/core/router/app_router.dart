@@ -44,6 +44,7 @@ import '../../features/daily_ca/screens/daily_ca_screen.dart';
 import '../../features/daily_war/screens/daily_war_history_detail_screen.dart';
 import '../../features/daily_war/screens/daily_war_history_revise_screen.dart';
 import '../../features/daily_war/screens/daily_war_history_screen.dart';
+import '../../features/daily_war/screens/daily_war_leaderboard_screen.dart';
 import '../../features/daily_war/screens/daily_war_lobby_screen.dart';
 import '../../features/daily_war/screens/daily_war_results_screen.dart';
 import '../../features/pyq/screens/pyq_year_packs_screen.dart';
@@ -619,6 +620,14 @@ GoRouter appRouter(Ref ref) {
             initialIndex: i,
           );
         },
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/daily-war/history/:dateId/leaderboard',
+        name: 'daily_war_leaderboard',
+        builder: (context, state) => DailyWarLeaderboardScreen(
+          dateId: state.pathParameters['dateId']!,
+        ),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,

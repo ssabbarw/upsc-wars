@@ -1,8 +1,10 @@
 /// IST schedule for Daily War / Grand War.
 ///
+/// Rhythm: **Mon–Fri** Daily War (2 topics) · **Saturday** Grand War (week
+/// revision) · **Sunday** off.
+///
 /// Live window length is derived from tonight's question count
-/// ([secondsPerQuestion] each), not a fixed minute constant.
-/// Start remains 9:00 PM IST for every night.
+/// ([secondsPerQuestion] each). Start remains 9:00 PM IST on War nights.
 ///
 /// Use [nowIst] with an optional corrected UTC instant from the server-clock
 /// offset provider — never rely on device local timezone for phase gates.
@@ -44,11 +46,6 @@ abstract final class DailyWarSchedule {
   }
 
   /// Current IST **wall clock** as a timezone-agnostic [DateTime].
-  ///
-  /// Returns a non-UTC calendar datetime whose y/M/d/H/m/s are IST. Schedule
-  /// anchors ([startAtForDate], etc.) use the same shape so [DateTime.isBefore]
-  /// compares IST wall times — not mixed UTC-vs-local epochs (which previously
-  /// made ~7:40 PM IST look like post–9:20 and show “War is over”).
   static DateTime nowIst([DateTime? utcNow]) {
     final utc = (utcNow ?? DateTime.now()).toUtc();
     final shifted = utc.add(istOffset);
@@ -69,11 +66,30 @@ abstract final class DailyWarSchedule {
 
   static bool isSunday(DateTime istDate) => istDate.weekday == DateTime.sunday;
 
-  /// Grand War runs on Sundays; Daily War Mon–Sat.
-  static bool isGrandWarDay(DateTime istDate) => isSunday(istDate);
+  static bool isSaturday(DateTime istDate) =>
+      istDate.weekday == DateTime.saturday;
 
-  static int questionCountForDate(DateTime istDate) =>
-      isGrandWarDay(istDate) ? grandWarQuestionCount : weekdayQuestionCount;
+  /// No War on Sundays.
+  static bool isWarOffDay(DateTime istDate) => isSunday(istDate);
+
+  /// Grand War runs on Saturdays (revises Mon–Fri).
+  static bool isGrandWarDay(DateTime istDate) => isSaturday(istDate);
+
+  /// Mon–Fri Daily War nights.
+  static bool isWeekdayWarDay(DateTime istDate) =>
+      istDate.weekday >= DateTime.monday &&
+      istDate.weekday <= DateTime.friday;
+
+  /// Any night that has a live paper (Mon–Sat).
+  static bool isWarDay(DateTime istDate) =>
+      isWeekdayWarDay(istDate) || isGrandWarDay(istDate);
+
+  static int questionCountForDate(DateTime istDate) {
+    if (!isWarDay(istDate)) return weekdayQuestionCount;
+    return isGrandWarDay(istDate)
+        ? grandWarQuestionCount
+        : weekdayQuestionCount;
+  }
 
   static String formatIsoDate(DateTime istDate) {
     final y = istDate.year.toString().padLeft(4, '0');
@@ -129,13 +145,26 @@ abstract final class DailyWarSchedule {
     return '$h12:$m $suffix';
   }
 
-  /// War calendar day for [referenceIst] — always today's IST date.
-  /// Results for tonight stay on today's dateId until midnight; tomorrow's
-  /// announcement uses [nextWarDate] after midnight (or explicit next_topics).
+  /// War calendar day for [referenceIst] — today's IST date.
   static DateTime warDateFor(DateTime referenceIst) => dateOnly(referenceIst);
 
-  static DateTime nextWarDate(DateTime referenceIst) =>
-      dateOnly(referenceIst).add(const Duration(days: 1));
+  /// Next calendar day that has a War (skips Sunday).
+  static DateTime nextWarDate(DateTime referenceIst) {
+    var d = dateOnly(referenceIst).add(const Duration(days: 1));
+    while (isWarOffDay(d)) {
+      d = d.add(const Duration(days: 1));
+    }
+    return d;
+  }
+
+  /// Previous calendar day that had a War (skips Sunday).
+  static DateTime previousWarDate(DateTime referenceIst) {
+    var d = dateOnly(referenceIst).subtract(const Duration(days: 1));
+    while (isWarOffDay(d)) {
+      d = d.subtract(const Duration(days: 1));
+    }
+    return d;
+  }
 
   static String formatCountdown(Duration remaining) {
     if (remaining.inSeconds <= 0) return '00:00:00';

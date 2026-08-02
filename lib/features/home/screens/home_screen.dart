@@ -450,9 +450,28 @@ class HomeScreen extends HookConsumerWidget {
                               (ref
                                       .watch(dailyWarHomeSnapshotProvider)
                                       .warUnplayed);
-                          final streakAccent = warUnplayed
-                              ? DwColors.crimson
+                          final warStreak =
+                              ref.watch(dailyWarStreakCountProvider);
+                          final streakAccent = warOn
+                              ? (warUnplayed
+                                  ? DwColors.crimson
+                                  : AppColors.streak)
                               : AppColors.streak;
+                          final streakLabel = warOn
+                              ? (warStreak == 0
+                                  ? 'Start War streak'
+                                  : '$warStreak War')
+                              : home.when(
+                                  data: (h) => h.streakCount == 0
+                                      ? 'Start your streak'
+                                      : '${h.streakCount} days',
+                                  loading: () =>
+                                      cachedStreakText.value ??
+                                      'Start your streak',
+                                  error: (error, stackTrace) =>
+                                      cachedStreakText.value ??
+                                      'Start your streak',
+                                );
                           return Container(
                             padding: const EdgeInsets.symmetric(
                               horizontal: AppSpacing.md,
@@ -480,17 +499,7 @@ class HomeScreen extends HookConsumerWidget {
                                 ),
                                 const SizedBox(width: AppSpacing.xs),
                                 Text(
-                                  home.when(
-                                    data: (h) => h.streakCount == 0
-                                        ? 'Start your streak'
-                                        : '${h.streakCount} days',
-                                    loading: () =>
-                                        cachedStreakText.value ??
-                                        'Start your streak',
-                                    error: (error, stackTrace) =>
-                                        cachedStreakText.value ??
-                                        'Start your streak',
-                                  ),
+                                  streakLabel,
                                   style: AppTextStyles.caption().copyWith(
                                     color: scheme.onSurface,
                                   ),

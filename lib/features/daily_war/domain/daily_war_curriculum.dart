@@ -162,4 +162,8 @@ abstract final class DailyWarCurriculum {
 
   static const minQuestionsPerTopic = 60;
   static const topicsPerWar = 2;
+
+  /// Total mapped syllabus topics across all subjects.
+  static int get totalTopicCount =>
+      topicsBySubject.values.fold<int>(0, (sum, list) => sum + list.length);
 }

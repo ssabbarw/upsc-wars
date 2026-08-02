@@ -11,6 +11,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../../../core/domain/entities/test_question.dart';
 import '../../../core/providers/catalog_providers.dart';
 import '../../../core/providers/kill_switch_provider.dart';
+import '../../../core/providers/prefs_provider.dart';
 import '../daily_war_constants.dart';
 import '../data/daily_war_firestore_paths.dart';
 import '../data/daily_war_local_cache.dart';
@@ -18,6 +19,7 @@ import '../domain/daily_war_models.dart';
 import '../domain/daily_war_phase.dart';
 import '../domain/daily_war_phase_resolver.dart';
 import '../domain/daily_war_schedule.dart';
+import '../domain/daily_war_streak.dart';
 import 'server_clock_provider.dart';
 
 part 'daily_war_providers.g.dart';
@@ -310,10 +312,11 @@ DailyWarHomeSnapshot dailyWarHomeSnapshot(Ref ref) {
 String dailyWarYesterdayDateId(Ref ref) {
   final utc = ref.watch(serverNowUtcProvider);
   final ist = DailyWarSchedule.nowIst(utc);
-  final yesterday = DailyWarSchedule.warDateFor(ist).subtract(
-    const Duration(days: 1),
+  // Skip Sunday — previous War night (Sat when today is Mon/Sun).
+  final previous = DailyWarSchedule.previousWarDate(
+    DailyWarSchedule.warDateFor(ist),
   );
-  return DailyWarSchedule.formatIsoDate(yesterday);
+  return DailyWarSchedule.formatIsoDate(previous);
 }
 
 @Riverpod(keepAlive: true)
@@ -545,3 +548,15 @@ Stream<DailyWarLiveCounts> dailyWarLiveCounts(Ref ref) async* {
     await Future<void>.delayed(Duration(seconds: secs));
   }
 }
+
+/// Local War streak — increments on live play, breaks after a missed War night.
+final dailyWarStreakCountProvider = Provider<int>((ref) {
+  final prefs = ref.watch(prefsServiceProvider).asData?.value;
+  if (prefs == null) return 0;
+  final utc = ref.watch(serverNowUtcProvider);
+  DailyWarStreak.reconcile(
+    prefs: prefs,
+    istNow: DailyWarSchedule.nowIst(utc),
+  );
+  return prefs.dailyWarStreak;
+});

@@ -129,6 +129,22 @@ abstract final class PrefKeys {
   /// Prompt for push permission once home loads after first-test results exit.
   static const pushPermissionPromptPendingAfterFirstTestV1 =
       'push_permission_prompt_pending_after_first_test_v1';
+
+  /// Consecutive War nights with a live (ranked) attempt on this device.
+  static const dailyWarStreakV1 = 'daily_war_streak_v1';
+
+  /// Longest War streak recorded on this device.
+  static const dailyWarLongestStreakV1 = 'daily_war_longest_streak_v1';
+
+  /// YYYY-MM-DD of last live War attempt used for streak continuity.
+  static const dailyWarLastPlayedDateIdV1 =
+      'daily_war_last_played_date_id_v1';
+
+  /// Consecutive War nights missed since last play (0 or 1 grace).
+  static const dailyWarPendingMissesV1 = 'daily_war_pending_misses_v1';
+
+  /// User collapsed the Daily War home card (null = smart default).
+  static const dailyWarHomeCollapsedV1 = 'daily_war_home_collapsed_v1';
 }
 
 class PrefsService {
@@ -382,6 +398,38 @@ class PrefsService {
         PrefKeys.pushPermissionPromptPendingAfterFirstTestV1,
         v,
       );
+
+  int get dailyWarStreak => _p.getInt(PrefKeys.dailyWarStreakV1) ?? 0;
+  set dailyWarStreak(int v) => _p.setInt(PrefKeys.dailyWarStreakV1, v);
+
+  int get dailyWarLongestStreak =>
+      _p.getInt(PrefKeys.dailyWarLongestStreakV1) ?? 0;
+  set dailyWarLongestStreak(int v) =>
+      _p.setInt(PrefKeys.dailyWarLongestStreakV1, v);
+
+  String? get dailyWarLastPlayedDateId =>
+      _p.getString(PrefKeys.dailyWarLastPlayedDateIdV1);
+  set dailyWarLastPlayedDateId(String? v) {
+    if (v == null || v.isEmpty) {
+      _p.remove(PrefKeys.dailyWarLastPlayedDateIdV1);
+    } else {
+      _p.setString(PrefKeys.dailyWarLastPlayedDateIdV1, v);
+    }
+  }
+
+  int get dailyWarPendingMisses =>
+      _p.getInt(PrefKeys.dailyWarPendingMissesV1) ?? 0;
+  set dailyWarPendingMisses(int v) =>
+      _p.setInt(PrefKeys.dailyWarPendingMissesV1, v);
+
+  /// `null` when the user has never toggled collapse on the home War card.
+  bool? get dailyWarHomeCollapsedOrNull =>
+      _p.containsKey(PrefKeys.dailyWarHomeCollapsedV1)
+          ? _p.getBool(PrefKeys.dailyWarHomeCollapsedV1)
+          : null;
+
+  set dailyWarHomeCollapsed(bool v) =>
+      _p.setBool(PrefKeys.dailyWarHomeCollapsedV1, v);
 }
 
 @Riverpod(keepAlive: true)

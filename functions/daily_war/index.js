@@ -105,8 +105,14 @@ function istParts(utcDate = new Date()) {
   };
 }
 
-function isSunday(parts) {
+/** Sunday — no paper. */
+function isWarOffDay(parts) {
   return parts.weekday === 0;
+}
+
+/** Saturday Grand War (revises Mon–Fri). */
+function isGrandWarDay(parts) {
+  return parts.weekday === 6;
 }
 
 function shuffleInPlace(arr) {
@@ -212,11 +218,11 @@ async function pickWeekdayTopics(curriculum) {
 }
 
 async function pickGrandTopics(curriculum, dateId) {
-  // Prefer topics from the last 6 weekday wars (revision of the week).
+  // Prefer topics from Mon–Fri wars earlier this week (revision).
   const topics = [];
   const seen = new Set();
   const [y, m, d] = dateId.split("-").map(Number);
-  for (let i = 1; i <= 6; i++) {
+  for (let i = 1; i <= 5; i++) {
     const dt = new Date(Date.UTC(y, m - 1, d - i));
     const iso = `${dt.getUTCFullYear()}-${String(dt.getUTCMonth() + 1).padStart(2, "0")}-${String(dt.getUTCDate()).padStart(2, "0")}`;
     const snap = await db().collection(WARS).doc(iso).get();
@@ -261,6 +267,12 @@ async function peekNextTopics(curriculum, afterPatch) {
 }
 
 async function generateWarForDateId(dateId, { force = false } = {}) {
+  const noonUtc = new Date(`${dateId}T06:30:00.000Z`); // 12:00 IST
+  const parts = istParts(noonUtc);
+  if (isWarOffDay(parts)) {
+    return { ok: true, skipped: true, reason: "sunday_off", dateId };
+  }
+
   const warRef = db().collection(WARS).doc(dateId);
   const existing = await warRef.get();
   if (existing.exists && !force) {
@@ -268,8 +280,7 @@ async function generateWarForDateId(dateId, { force = false } = {}) {
   }
 
   const curriculum = await loadCurriculum();
-  const noonUtc = new Date(`${dateId}T06:30:00.000Z`); // 12:00 IST
-  const isGrand = istParts(noonUtc).weekday === 0;
+  const isGrand = isGrandWarDay(parts);
 
   const picked = isGrand
     ? await pickGrandTopics(curriculum, dateId)
@@ -362,8 +373,66 @@ function scoreAnswers(selectedByUuid, correctByUuid) {
   return { correct, wrong, unanswered, score: points };
 }
 
+function tierIdForDays(streakDays) {
+  if (!streakDays || streakDays <= 0) return null;
+  const clamped = Math.min(30, streakDays);
+  const index = Math.min(4, Math.floor((clamped - 1) / 6));
+  return ["recruit", "cadet", "officer", "commander", "marshal"][index];
+}
+
+function nightAwardsForRow(row, { questionCount, warStartMs, fastestUid, climberUids }) {
+  const badges = [];
+  if (row.air === 1) badges.push("rank_1_champion");
+  if (row.air === 2) badges.push("rank_2_silver");
+  if (row.air === 3) badges.push("rank_3_bronze");
+  const correct = row.correct || 0;
+  const wrong = row.wrong || 0;
+  const unanswered = row.unanswered || 0;
+  if (
+    questionCount > 0 &&
+    correct === questionCount &&
+    wrong === 0 &&
+    unanswered === 0
+  ) {
+    badges.push("clean_sweep");
+  } else if (unanswered === 0 && correct + wrong >= questionCount) {
+    badges.push("no_blind_spots");
+  }
+  if (fastestUid && row.uid === fastestUid) badges.push("fastest_finger");
+  if (
+    row.submitted_at_ms &&
+    warStartMs &&
+    row.submitted_at_ms >= warStartMs &&
+    row.submitted_at_ms - warStartMs <= 3 * 60 * 1000
+  ) {
+    badges.push("nine_pm_sharp");
+  }
+  if (climberUids && climberUids.has(row.uid)) badges.push("climber");
+  if ((row.streak_days || 0) >= 7) badges.push("streak_7_nights");
+  return badges;
+}
+
+async function previousWarDateId(dateId) {
+  const [y, m, d] = dateId.split("-").map(Number);
+  // Walk back up to 3 calendar days to skip Sunday off.
+  for (let i = 1; i <= 3; i++) {
+    const dt = new Date(Date.UTC(y, m - 1, d - i));
+    const iso = `${dt.getUTCFullYear()}-${String(dt.getUTCMonth() + 1).padStart(2, "0")}-${String(dt.getUTCDate()).padStart(2, "0")}`;
+    const parts = istParts(new Date(`${iso}T06:30:00.000Z`));
+    if (!isWarOffDay(parts)) return iso;
+  }
+  return null;
+}
+
 async function rankWar(dateId) {
   const warRef = db().collection(WARS).doc(dateId);
+  const warSnap = await warRef.get();
+  const warData = warSnap.exists ? warSnap.data() || {} : {};
+  const questionCount =
+    warData.question_count ||
+    (warData.kind === "grand" ? 25 : WEEKDAY_QUESTION_COUNT);
+  const warStartMs = Date.parse(`${dateId}T21:00:00+05:30`);
+
   const subsSnap = await warRef
     .collection("submissions")
     .where("mode", "==", "live")
@@ -377,6 +446,12 @@ async function rankWar(dateId) {
       score: d.score || 0,
       elapsed_ms: d.elapsed_ms || 0,
       display_name: d.display_name || "",
+      correct: d.correct || 0,
+      wrong: d.wrong || 0,
+      unanswered: d.unanswered || 0,
+      streak_days: d.streak_days || 0,
+      tier_id: d.tier_id || tierIdForDays(d.streak_days || 0),
+      submitted_at_ms: d.submitted_at_ms || 0,
       ref: doc.ref,
     });
   });
@@ -386,19 +461,62 @@ async function rankWar(dateId) {
     return a.elapsed_ms - b.elapsed_ms;
   });
 
+  let fastestUid = null;
+  let fastestMs = Infinity;
+  for (const row of rows) {
+    if (row.elapsed_ms > 0 && row.elapsed_ms < fastestMs) {
+      fastestMs = row.elapsed_ms;
+      fastestUid = row.uid;
+    }
+  }
+
+  // Climber: AIR improved by ≥10 vs previous War night.
+  const climberUids = new Set();
+  const prevDateId = await previousWarDateId(dateId);
+  if (prevDateId && rows.length) {
+    const prevSnap = await db()
+      .collection(WARS)
+      .doc(prevDateId)
+      .collection("submissions")
+      .where("mode", "==", "live")
+      .get();
+    const prevAir = new Map();
+    prevSnap.forEach((doc) => {
+      const air = doc.data().air;
+      if (typeof air === "number") prevAir.set(doc.id, air);
+    });
+    rows.forEach((row, i) => {
+      const air = i + 1;
+      const prev = prevAir.get(row.uid);
+      if (prev != null && prev - air >= 10) climberUids.add(row.uid);
+    });
+  }
+
   const n = rows.length;
   const batch = db().batch();
   const top = [];
   rows.forEach((row, i) => {
     const air = i + 1;
     const percentile = n <= 1 ? 100 : Number((((n - air) / (n - 1)) * 100).toFixed(2));
-    batch.set(
-      row.ref,
-      { air, percentile, ranked_at: admin.firestore.FieldValue.serverTimestamp() },
-      { merge: true },
-    );
     row.air = air;
     row.percentile = percentile;
+    const badges = nightAwardsForRow(row, {
+      questionCount,
+      warStartMs,
+      fastestUid,
+      climberUids,
+    });
+    batch.set(
+      row.ref,
+      {
+        air,
+        percentile,
+        badges,
+        tier_id: row.tier_id || null,
+        ranked_at: admin.firestore.FieldValue.serverTimestamp(),
+      },
+      { merge: true },
+    );
     if (air <= 100) {
       top.push({
         uid: row.uid,
@@ -407,6 +525,9 @@ async function rankWar(dateId) {
         elapsed_ms: row.elapsed_ms,
         air,
         percentile,
+        streak_days: row.streak_days || 0,
+        tier_id: row.tier_id || null,
+        badges,
       });
     }
   });
@@ -488,6 +609,10 @@ exports.generateDailyWar = onSchedule(
   },
   async () => {
     const parts = istParts();
+    if (isWarOffDay(parts)) {
+      console.log("generateDailyWar: Sunday off — skip", parts.iso);
+      return;
+    }
     await generateWarForDateId(parts.iso);
   },
 );
@@ -501,6 +626,10 @@ exports.notifyDailyWarMorning = onSchedule(
   },
   async () => {
     const parts = istParts();
+    if (isWarOffDay(parts)) {
+      console.log("notifyDailyWarMorning: Sunday off — skip", parts.iso);
+      return;
+    }
     const result = await notif.notifyMorning(parts.iso);
     console.log("notifyDailyWarMorning", result);
   },
@@ -515,6 +644,10 @@ exports.notifyDailyWarReminder = onSchedule(
   },
   async () => {
     const parts = istParts();
+    if (isWarOffDay(parts)) {
+      console.log("notifyDailyWarReminder: Sunday off — skip", parts.iso);
+      return;
+    }
     const result = await notif.notifyReminder30(parts.iso);
     console.log("notifyDailyWarReminder", result);
   },
@@ -529,6 +662,10 @@ exports.notifyDailyWarLobby = onSchedule(
   },
   async () => {
     const parts = istParts();
+    if (isWarOffDay(parts)) {
+      console.log("notifyDailyWarLobby: Sunday off — skip", parts.iso);
+      return;
+    }
     const result = await notif.notifyLobbyOpen(parts.iso);
     console.log("notifyDailyWarLobby", result);
   },
@@ -542,6 +679,10 @@ exports.publishDailyWarQuestions = onSchedule(
   },
   async () => {
     const parts = istParts();
+    if (isWarOffDay(parts)) {
+      console.log("publishDailyWarQuestions: Sunday off — skip", parts.iso);
+      return;
+    }
     await publishQuestions(parts.iso);
   },
 );
@@ -555,6 +696,10 @@ exports.rankDailyWar = onSchedule(
   },
   async () => {
     const parts = istParts();
+    if (isWarOffDay(parts)) {
+      console.log("rankDailyWar: Sunday off — skip", parts.iso);
+      return;
+    }
     const ranked = await rankWar(parts.iso);
     try {
       const rows = ranked && ranked.rows ? ranked.rows : [];
@@ -583,6 +728,14 @@ exports.submitDailyWar = onCall(
       data.answers && typeof data.answers === "object" ? data.answers : null;
     const displayName =
       typeof data.displayName === "string" ? data.displayName.trim().slice(0, 60) : "";
+    const warStreakDays = Math.max(
+      0,
+      Math.min(365, Number(data.warStreakDays) || 0),
+    );
+    const tierId =
+      typeof data.tierId === "string" && data.tierId.trim()
+        ? data.tierId.trim().slice(0, 32)
+        : tierIdForDays(warStreakDays);
 
     if (!/^\d{4}-\d{2}-\d{2}$/.test(dateId) || !answers) {
       throw new HttpsError("invalid-argument", "dateId and answers required.");
@@ -643,6 +796,8 @@ exports.submitDailyWar = onCall(
         elapsed_ms: Math.max(0, Math.min(elapsedMs, 30 * 60 * 1000)),
         answers,
         display_name: displayName,
+        streak_days: warStreakDays,
+        tier_id: tierId,
         submitted_at: admin.firestore.FieldValue.serverTimestamp(),
         submitted_at_ms: now,
       },

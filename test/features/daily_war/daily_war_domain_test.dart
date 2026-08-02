@@ -1,4 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:upsc_wars/features/daily_war/domain/daily_war_curriculum.dart';
 import 'package:upsc_wars/features/daily_war/domain/daily_war_curriculum_picker.dart';
 import 'package:upsc_wars/features/daily_war/domain/daily_war_phase.dart';
 import 'package:upsc_wars/features/daily_war/domain/daily_war_phase_resolver.dart';
@@ -14,10 +15,27 @@ void main() {
       );
     });
 
-    test('Sunday is Grand War with 25 questions', () {
+    test('Saturday is Grand War with 25 questions', () {
+      final saturday = DateTime(2026, 8, 1); // Saturday
+      expect(DailyWarSchedule.isGrandWarDay(saturday), isTrue);
+      expect(DailyWarSchedule.isWarDay(saturday), isTrue);
+      expect(DailyWarSchedule.questionCountForDate(saturday), 25);
+    });
+
+    test('Sunday is off', () {
       final sunday = DateTime(2026, 8, 2); // Sunday
-      expect(DailyWarSchedule.isGrandWarDay(sunday), isTrue);
-      expect(DailyWarSchedule.questionCountForDate(sunday), 25);
+      expect(DailyWarSchedule.isWarOffDay(sunday), isTrue);
+      expect(DailyWarSchedule.isGrandWarDay(sunday), isFalse);
+      expect(DailyWarSchedule.isWarDay(sunday), isFalse);
+    });
+
+    test('next/previous War date skips Sunday', () {
+      final saturday = DateTime(2026, 8, 1);
+      final sunday = DateTime(2026, 8, 2);
+      final monday = DateTime(2026, 8, 3);
+      expect(DailyWarSchedule.nextWarDate(saturday), monday);
+      expect(DailyWarSchedule.previousWarDate(monday), saturday);
+      expect(DailyWarSchedule.previousWarDate(sunday), saturday);
     });
 
     test('lobby opens 15 minutes before 9 PM', () {
@@ -36,8 +54,8 @@ void main() {
         DateTime(2026, 7, 31, 21, 20),
       );
       expect(
-        DailyWarSchedule.liveEndsAt(DateTime(2026, 8, 2), questionCount: 25),
-        DateTime(2026, 8, 2, 21, 34),
+        DailyWarSchedule.liveEndsAt(DateTime(2026, 8, 1), questionCount: 25),
+        DateTime(2026, 8, 1, 21, 34),
       );
     });
 
@@ -61,6 +79,15 @@ void main() {
 
   group('DailyWarPhaseResolver', () {
     final day = DateTime(2026, 7, 31);
+
+    test('rest day on Sunday', () {
+      expect(
+        DailyWarPhaseResolver.resolve(
+          referenceIst: DateTime(2026, 8, 2, 12),
+        ),
+        DailyWarPhase.restDay,
+      );
+    });
 
     test('morning at 10 AM', () {
       expect(
@@ -139,6 +166,10 @@ void main() {
       expect(picked.topics[1].topic, 'Judiciary');
       expect(picked.nextSubjectRotationIndex, 1);
       expect(picked.nextTopicIndexForSubject, 2);
+    });
+
+    test('curriculum maps 125 topics', () {
+      expect(DailyWarCurriculum.totalTopicCount, 125);
     });
   });
 

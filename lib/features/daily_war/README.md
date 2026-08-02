@@ -1,6 +1,7 @@
 # Daily War — build notes
 
-Nightly All-India MCQ event (9:00 PM IST). Product name: **Daily War** / Sunday **Grand War**.
+Nightly All-India MCQ event (9:00 PM IST). Product name: **Daily War** /
+Saturday **Grand War** · **Sunday off**.
 
 ## Phases
 

@@ -137,6 +137,10 @@ class DailyWarSubmission {
     this.percentile,
     this.displayName,
     this.answers = const {},
+    this.streakDays = 0,
+    this.tierId,
+    this.badges = const [],
+    this.submittedAtMs,
   });
 
   final String uid;
@@ -155,6 +159,11 @@ class DailyWarSubmission {
   /// `questionUuid` → selected option letter (`a`/`b`/`c`/`d`).
   final Map<String, String> answers;
 
+  final int streakDays;
+  final String? tierId;
+  final List<String> badges;
+  final int? submittedAtMs;
+
   bool get isLive => mode == 'live';
   bool get hasOfficialRank => isLive && air != null;
 
@@ -170,6 +179,10 @@ class DailyWarSubmission {
         if (percentile != null) 'percentile': percentile,
         if (displayName != null) 'display_name': displayName,
         'answers': answers,
+        'streak_days': streakDays,
+        if (tierId != null) 'tier_id': tierId,
+        'badges': badges,
+        if (submittedAtMs != null) 'submitted_at_ms': submittedAtMs,
       };
 
   factory DailyWarSubmission.fromMap(String uid, Map<String, dynamic> map) {
@@ -182,6 +195,10 @@ class DailyWarSubmission {
         if (k.isNotEmpty && v.isNotEmpty) answers[k] = v;
       }
     }
+    final badgesRaw = map['badges'];
+    final badges = badgesRaw is List
+        ? badgesRaw.map((e) => '$e').where((s) => s.isNotEmpty).toList()
+        : const <String>[];
 
     return DailyWarSubmission(
       uid: uid,
@@ -195,6 +212,10 @@ class DailyWarSubmission {
       percentile: (map['percentile'] as num?)?.toDouble(),
       displayName: map['display_name'] as String?,
       answers: answers,
+      streakDays: (map['streak_days'] as num?)?.toInt() ?? 0,
+      tierId: (map['tier_id'] as String?)?.trim(),
+      badges: badges,
+      submittedAtMs: (map['submitted_at_ms'] as num?)?.toInt(),
     );
   }
 }
@@ -208,6 +229,9 @@ class DailyWarLeaderboardEntry {
     required this.elapsedMs,
     required this.air,
     this.percentile,
+    this.streakDays = 0,
+    this.tierId,
+    this.badges = const [],
   });
 
   final String uid;
@@ -217,6 +241,15 @@ class DailyWarLeaderboardEntry {
   final int air;
   final double? percentile;
 
+  /// Consistency days at submit time (badge ladder).
+  final int streakDays;
+
+  /// `recruit` … `marshal`, or null.
+  final String? tierId;
+
+  /// Night award ids + optionally the tier id for icon chips.
+  final List<String> badges;
+
   Map<String, dynamic> toMap() => {
         'uid': uid,
         'display_name': displayName,
@@ -224,9 +257,16 @@ class DailyWarLeaderboardEntry {
         'elapsed_ms': elapsedMs,
         'air': air,
         if (percentile != null) 'percentile': percentile,
+        'streak_days': streakDays,
+        if (tierId != null) 'tier_id': tierId,
+        'badges': badges,
       };
 
   factory DailyWarLeaderboardEntry.fromMap(Map<String, dynamic> map) {
+    final badgesRaw = map['badges'];
+    final badges = badgesRaw is List
+        ? badgesRaw.map((e) => '$e').where((s) => s.isNotEmpty).toList()
+        : const <String>[];
     return DailyWarLeaderboardEntry(
       uid: '${map['uid'] ?? ''}',
       displayName: (map['display_name'] as String? ?? '').trim(),
@@ -234,6 +274,9 @@ class DailyWarLeaderboardEntry {
       elapsedMs: (map['elapsed_ms'] as num?)?.toInt() ?? 0,
       air: (map['air'] as num?)?.toInt() ?? 0,
       percentile: (map['percentile'] as num?)?.toDouble(),
+      streakDays: (map['streak_days'] as num?)?.toInt() ?? 0,
+      tierId: (map['tier_id'] as String?)?.trim(),
+      badges: badges,
     );
   }
 }

@@ -1,22 +1,27 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../core/domain/entities/test_question.dart';
+import '../../core/providers/super_user_provider.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_radius.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_text_styles.dart';
 
-/// In [kDebugMode] only: shows the keyed correct answer and question UUID for verifying DB / stats.
-class DebugCorrectAnswerBanner extends StatelessWidget {
+/// Shows the keyed correct answer and question UUID for verifying DB / stats.
+/// Visible in [kDebugMode] and to signed-in super users (admins).
+class DebugCorrectAnswerBanner extends ConsumerWidget {
   const DebugCorrectAnswerBanner({super.key, required this.question});
 
   final TestQuestion question;
 
   @override
-  Widget build(BuildContext context) {
-    if (!kDebugMode) return const SizedBox.shrink();
+  Widget build(BuildContext context, WidgetRef ref) {
+    final isAdmin = ref.watch(isSuperUserProvider);
+    if (!kDebugMode && !isAdmin) return const SizedBox.shrink();
     final letter = question.correctOption.trim().toUpperCase();
+    final label = kDebugMode ? 'Debug' : 'Admin';
     return Padding(
       padding: const EdgeInsets.only(bottom: AppSpacing.sm),
       child: Container(
@@ -34,7 +39,7 @@ class DebugCorrectAnswerBanner extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Debug — correct option: $letter',
+              '$label — correct option: $letter',
               style: AppTextStyles.labelSm().copyWith(
                 color: AppColors.warningText,
                 fontWeight: FontWeight.w700,

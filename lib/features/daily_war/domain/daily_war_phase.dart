@@ -1,5 +1,8 @@
 /// Lifecycle phase of tonight's Daily War for UI (derived from server-corrected IST).
 enum DailyWarPhase {
+  /// Sunday — no paper; show rest / tomorrow tease.
+  restDay,
+
   /// Before announce hour (rare overnight edge) — show tomorrow tease lightly.
   preAnnounce,
 

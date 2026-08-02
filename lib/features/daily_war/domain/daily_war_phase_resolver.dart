@@ -15,6 +15,11 @@ abstract final class DailyWarPhaseResolver {
     int? questionCount,
   }) {
     final warDate = DailyWarSchedule.warDateFor(referenceIst);
+
+    if (DailyWarSchedule.isWarOffDay(warDate)) {
+      return DailyWarPhase.restDay;
+    }
+
     final announceAt = DateTime(
       warDate.year,
       warDate.month,

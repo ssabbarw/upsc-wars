@@ -139,8 +139,9 @@ class DailyWarHistoryDetailScreen extends ConsumerWidget {
                           style: DwText.body(),
                         )
                       else
-                        _LeaderboardBlock(
+                        _LeaderboardTeaser(
                           lb: lb,
+                          dateId: dateId,
                           myUid: myUid,
                           myAir: sub?.air,
                         ),
@@ -375,123 +376,112 @@ class _StatPill extends StatelessWidget {
   }
 }
 
-class _LeaderboardBlock extends StatelessWidget {
-  const _LeaderboardBlock({
+class _LeaderboardTeaser extends StatelessWidget {
+  const _LeaderboardTeaser({
     required this.lb,
+    required this.dateId,
     required this.myUid,
     required this.myAir,
   });
 
   final DailyWarLeaderboard lb;
+  final String dateId;
   final String myUid;
   final int? myAir;
 
   @override
   Widget build(BuildContext context) {
-    final meInTop = lb.top.any((e) => e.uid == myUid);
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          'Top ${lb.top.length} of ${lb.participantCount}',
-          style: DwText.meta(),
-        ),
-        const SizedBox(height: 10),
-        Container(
+    final preview = lb.top.take(3).toList();
+    return Material(
+      color: DwColors.surfaceRaised,
+      borderRadius: BorderRadius.circular(14),
+      child: InkWell(
+        borderRadius: BorderRadius.circular(14),
+        onTap: () => context.push(dailyWarLeaderboardRoute(dateId)),
+        child: Container(
+          padding: const EdgeInsets.fromLTRB(14, 14, 14, 14),
           decoration: BoxDecoration(
-            color: DwColors.surfaceRaised,
             borderRadius: BorderRadius.circular(14),
             border: Border.all(color: DwColors.borderOnDark),
           ),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              for (var i = 0; i < lb.top.length; i++) ...[
-                if (i > 0)
-                  const Divider(height: 1, color: DwColors.borderOnDark),
-                _LbRow(entry: lb.top[i], isMe: lb.top[i].uid == myUid),
+              Row(
+                children: [
+                  Expanded(
+                    child: Text(
+                      'Top ${lb.top.length} of ${lb.participantCount}',
+                      style: DwText.meta(),
+                    ),
+                  ),
+                  Text(
+                    'Open board →',
+                    style: DwText.dm(
+                      size: 13,
+                      weight: FontWeight.w700,
+                      color: DwColors.crimsonBright,
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 10),
+              for (final e in preview) ...[
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 6),
+                  child: Row(
+                    children: [
+                      SizedBox(
+                        width: 28,
+                        child: Text(
+                          '#${e.air}',
+                          style: DwText.dm(
+                            size: 13,
+                            weight: FontWeight.w700,
+                            color: e.air <= 3
+                                ? DwColors.gold
+                                : DwColors.onDarkMuted,
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: Text(
+                          e.uid == myUid
+                              ? '${e.displayName.isEmpty ? 'Warrior' : e.displayName} (you)'
+                              : (e.displayName.isEmpty
+                                  ? 'Warrior'
+                                  : e.displayName),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: DwText.dm(size: 14, weight: FontWeight.w600),
+                        ),
+                      ),
+                      Text(
+                        _MyResultCard._fmtScore(e.score),
+                        style: DwText.dm(
+                          size: 14,
+                          weight: FontWeight.w700,
+                          color: DwColors.crimsonBright,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+              if (myAir != null && !lb.top.any((e) => e.uid == myUid)) ...[
+                const SizedBox(height: 4),
+                Text(
+                  'You · AIR $myAir',
+                  style: DwText.dm(
+                    size: 12,
+                    weight: FontWeight.w700,
+                    color: DwColors.crimsonBright,
+                  ),
+                ),
               ],
             ],
           ),
         ),
-        if (!meInTop && myAir != null) ...[
-          const SizedBox(height: 10),
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
-            decoration: BoxDecoration(
-              color: DwColors.crimson.withValues(alpha: 0.12),
-              borderRadius: BorderRadius.circular(12),
-              border: Border.all(
-                color: DwColors.crimson.withValues(alpha: 0.4),
-              ),
-            ),
-            child: Text(
-              'You · AIR $myAir',
-              style: DwText.dm(
-                size: 13,
-                weight: FontWeight.w700,
-                color: DwColors.crimsonBright,
-              ),
-            ),
-          ),
-        ],
-      ],
-    );
-  }
-}
-
-class _LbRow extends StatelessWidget {
-  const _LbRow({required this.entry, required this.isMe});
-
-  final DailyWarLeaderboardEntry entry;
-  final bool isMe;
-
-  @override
-  Widget build(BuildContext context) {
-    final name = entry.displayName.isEmpty ? 'Warrior' : entry.displayName;
-    final medal = switch (entry.air) {
-      1 => DwColors.gold,
-      2 => const Color(0xFFB8B8B8),
-      3 => const Color(0xFFCD7F32),
-      _ => DwColors.onDarkMuted,
-    };
-
-    return Container(
-      color: isMe ? DwColors.crimson.withValues(alpha: 0.1) : null,
-      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
-      child: Row(
-        children: [
-          SizedBox(
-            width: 36,
-            child: Text(
-              '#${entry.air}',
-              style: DwText.dm(
-                size: 13,
-                weight: FontWeight.w700,
-                color: medal,
-              ),
-            ),
-          ),
-          Expanded(
-            child: Text(
-              isMe ? '$name (you)' : name,
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-              style: DwText.dm(
-                size: 14,
-                weight: isMe ? FontWeight.w700 : FontWeight.w500,
-              ),
-            ),
-          ),
-          Text(
-            _MyResultCard._fmtScore(entry.score),
-            style: DwText.dm(
-              size: 14,
-              weight: FontWeight.w700,
-              color: DwColors.crimsonBright,
-            ),
-          ),
-        ],
       ),
     );
   }

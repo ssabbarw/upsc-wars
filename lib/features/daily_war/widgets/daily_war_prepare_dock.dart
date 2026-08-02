@@ -44,7 +44,8 @@ class _PrepareDockBody extends HookConsumerWidget {
     final loading = useState(false);
 
     // Hide dock once live / results take over the hero's primary job.
-    final hide = snap.phase == DailyWarPhase.lobby ||
+    final hide = snap.phase == DailyWarPhase.restDay ||
+        snap.phase == DailyWarPhase.lobby ||
         snap.phase == DailyWarPhase.liveJoinable ||
         snap.phase == DailyWarPhase.liveLocked ||
         snap.phase == DailyWarPhase.resultsPending ||
