@@ -39,8 +39,15 @@ abstract final class DailyWarCopy {
     return topics.map((t) => t.topic).join(sep);
   }
 
-  static String compactTopics(List<DailyWarTopicRef> topics) {
-    if (topics.isEmpty) return 'Tonight\'s topics loading…';
+  static String compactTopics(
+    List<DailyWarTopicRef> topics, {
+    bool loadFailed = false,
+  }) {
+    if (topics.isEmpty) {
+      return loadFailed
+          ? 'Couldn\'t load tonight\'s topics'
+          : 'Tonight\'s topics loading…';
+    }
     final subjects = subjectsLine(topics);
     final names = topicsLine(topics);
     return '$subjects · $names';
@@ -51,7 +58,7 @@ abstract final class DailyWarCopy {
     required bool isGrand,
   }) {
     final mins = DailyWarSchedule.liveWindowMinutesFor(questionCount);
-    return '$questionCount Q · $mins MIN · −1/3 NEGATIVE';
+    return '$questionCount Q · $mins MIN';
   }
 
   static String rulesLineLobby({
@@ -59,7 +66,7 @@ abstract final class DailyWarCopy {
     required bool isGrand,
   }) {
     final mins = DailyWarSchedule.liveWindowMinutesFor(questionCount);
-    return '$questionCount Q · $mins MIN · −1/3 · ONE ATTEMPT';
+    return '$questionCount Q · $mins MIN · ONE ATTEMPT';
   }
 
   /// Formats a count for display, or `null` when RC / threshold hide it.

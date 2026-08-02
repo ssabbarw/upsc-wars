@@ -163,22 +163,19 @@ class GetStartedCard extends HookConsumerWidget {
                     ),
                   ),
                   const SizedBox(height: AppSpacing.sm),
-                  SizedBox(
-                    height: 42,
-                    child: FilledButton.icon(
-                      style: FilledButton.styleFrom(
-                        elevation: 0,
-                        backgroundColor: AppColors.primary,
-                        foregroundColor: AppColors.onPrimary,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(AppRadius.md),
-                        ),
-                      ),
-                      onPressed: () => unawaited(
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: GestureDetector(
+                      onTap: () => unawaited(
                         showGetStartedDiagnosticIntroSheet(context),
                       ),
-                      icon: const Icon(Icons.arrow_forward_rounded, size: 18),
-                      label: const Text('Let\u2019s go'),
+                      child: Text(
+                        'Let\u2019s go →',
+                        style: AppTextStyles.label().copyWith(
+                          color: AppColors.primaryDark,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
                     ),
                   ),
                 ],

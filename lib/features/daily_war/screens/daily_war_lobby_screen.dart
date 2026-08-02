@@ -16,6 +16,7 @@ import '../domain/daily_war_schedule.dart';
 import '../providers/daily_war_providers.dart';
 import '../providers/server_clock_provider.dart';
 import '../theme/daily_war_theme.dart';
+import '../widgets/daily_war_topics_sheet.dart';
 
 class DailyWarLobbyScreen extends HookConsumerWidget {
   const DailyWarLobbyScreen({super.key});
@@ -227,11 +228,39 @@ class _DailyWarLobbyBody extends HookConsumerWidget {
               style: DwText.subject(color: DwColors.crimsonBright),
             ),
             const SizedBox(height: 6),
-            for (final t in topics)
+            for (final t in topics.take(2))
               Padding(
                 padding: const EdgeInsets.only(bottom: 4),
                 child: Text(t.topic, style: DwText.topic()),
               ),
+            if (topics.length > 2)
+              Padding(
+                padding: const EdgeInsets.only(bottom: 4),
+                child: Text(
+                  '+ ${topics.length - 2} more',
+                  style: DwText.dm(
+                    size: 13,
+                    weight: FontWeight.w600,
+                    color: DwColors.onDarkDim,
+                  ),
+                ),
+              ),
+            GestureDetector(
+              onTap: () => showDailyWarTopicsSheet(
+                context: context,
+                topics: topics,
+              ),
+              child: Text(
+                topics.length > 2
+                    ? 'See all ${topics.length} topics →'
+                    : 'Practice these topics →',
+                style: DwText.dm(
+                  size: 13,
+                  weight: FontWeight.w700,
+                  color: DwColors.crimsonBright,
+                ),
+              ),
+            ),
           ],
           const SizedBox(height: 16),
           Container(

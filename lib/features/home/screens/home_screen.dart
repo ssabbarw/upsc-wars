@@ -407,7 +407,6 @@ class HomeScreen extends HookConsumerWidget {
                           borderRadius: BorderRadius.circular(AppRadius.md),
                           child: Container(
                             padding: const EdgeInsets.all(AppSpacing.sm),
-                            margin: const EdgeInsets.only(right: AppSpacing.sm),
                             decoration: BoxDecoration(
                               color: scheme.surfaceContainerLow,
                               borderRadius: BorderRadius.circular(AppRadius.md),
@@ -424,6 +423,13 @@ class HomeScreen extends HookConsumerWidget {
                           ),
                         ),
                       ),
+                    ],
+                  ),
+                  const SizedBox(height: AppSpacing.sm),
+                  Row(
+                    children: [
+                      const PrelimsDaysInfo(),
+                      const Spacer(),
                       Consumer(
                         builder: (context, ref, _) {
                           final warOn = ref
@@ -456,6 +462,7 @@ class HomeScreen extends HookConsumerWidget {
                               ),
                             ),
                             child: Row(
+                              mainAxisSize: MainAxisSize.min,
                               children: [
                                 Icon(
                                   Icons.local_fire_department,
@@ -496,11 +503,6 @@ class HomeScreen extends HookConsumerWidget {
                         },
                       ),
                     ],
-                  ),
-                  const SizedBox(height: AppSpacing.sm),
-                  const Align(
-                    alignment: Alignment.centerLeft,
-                    child: PrelimsDaysInfo(),
                   ),
                   const SizedBox(height: AppSpacing.md),
                   Consumer(

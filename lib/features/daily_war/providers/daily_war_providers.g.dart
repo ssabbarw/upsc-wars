@@ -51,6 +51,53 @@ final class DailyWarLocalCacheProvider
 String _$dailyWarLocalCacheHash() =>
     r'9eef82da6fe1f7771f7fb635b9be582d97dbef29';
 
+/// Auth uid for Daily War listeners — rebuilds streams when sign-in changes.
+///
+/// Firestore rules require `signedIn()`; without watching auth, a keepAlive
+/// stream that errored before auth was ready stays empty forever.
+
+@ProviderFor(dailyWarAuthUid)
+final dailyWarAuthUidProvider = DailyWarAuthUidProvider._();
+
+/// Auth uid for Daily War listeners — rebuilds streams when sign-in changes.
+///
+/// Firestore rules require `signedIn()`; without watching auth, a keepAlive
+/// stream that errored before auth was ready stays empty forever.
+
+final class DailyWarAuthUidProvider
+    extends $FunctionalProvider<AsyncValue<String?>, String?, Stream<String?>>
+    with $FutureModifier<String?>, $StreamProvider<String?> {
+  /// Auth uid for Daily War listeners — rebuilds streams when sign-in changes.
+  ///
+  /// Firestore rules require `signedIn()`; without watching auth, a keepAlive
+  /// stream that errored before auth was ready stays empty forever.
+  DailyWarAuthUidProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'dailyWarAuthUidProvider',
+        isAutoDispose: false,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$dailyWarAuthUidHash();
+
+  @$internal
+  @override
+  $StreamProviderElement<String?> $createElement($ProviderPointer pointer) =>
+      $StreamProviderElement(pointer);
+
+  @override
+  Stream<String?> create(Ref ref) {
+    return dailyWarAuthUid(ref);
+  }
+}
+
+String _$dailyWarAuthUidHash() => r'1607f38b382c0888836194462dc7b14fa3b1348b';
+
 /// Today's War dateId (IST) using server-corrected clock.
 
 @ProviderFor(dailyWarTodayDateId)
@@ -143,7 +190,7 @@ final class DailyWarTodayDocProvider
   }
 }
 
-String _$dailyWarTodayDocHash() => r'cab95aebbdc57c70606d10d29d825eae1c3418ff';
+String _$dailyWarTodayDocHash() => r'5b1bc2bffe0a207a9a62e59ec1f170f451f8b7b4';
 
 /// Signed-in user's submission for today, if any.
 
@@ -190,7 +237,7 @@ final class DailyWarTodaySubmissionProvider
 }
 
 String _$dailyWarTodaySubmissionHash() =>
-    r'e8c8b51a9a5eba47ac5183aa00ea49fc6f739365';
+    r'e843b256c897020d8cad3085dd37bddd51f2ae61';
 
 @ProviderFor(dailyWarHomeSnapshot)
 final dailyWarHomeSnapshotProvider = DailyWarHomeSnapshotProvider._();
@@ -238,7 +285,7 @@ final class DailyWarHomeSnapshotProvider
 }
 
 String _$dailyWarHomeSnapshotHash() =>
-    r'037e01e33fa35a17f853fafc6bbf8f69c0a17f7e';
+    r'd09c6761bf18c69a4970a02e161bd42d1b8bf905';
 
 @ProviderFor(dailyWarYesterdayDateId)
 final dailyWarYesterdayDateIdProvider = DailyWarYesterdayDateIdProvider._();
@@ -320,7 +367,7 @@ final class DailyWarYesterdayDocProvider
 }
 
 String _$dailyWarYesterdayDocHash() =>
-    r'36eef1e4879347e6608cbd102eb6d64435ef1287';
+    r'b24eb845b8eb6ca50211325ce773b6a9ef267293';
 
 @ProviderFor(dailyWarYesterdaySubmission)
 final dailyWarYesterdaySubmissionProvider =
@@ -363,7 +410,7 @@ final class DailyWarYesterdaySubmissionProvider
 }
 
 String _$dailyWarYesterdaySubmissionHash() =>
-    r'278d32980c46f7e9d9e5056c1ee88d5e763a198e';
+    r'b3f9d6b860ce9f3803cfbeae6c408f400deb177b';
 
 @ProviderFor(dailyWarYesterdaySnapshot)
 final dailyWarYesterdaySnapshotProvider = DailyWarYesterdaySnapshotProvider._();

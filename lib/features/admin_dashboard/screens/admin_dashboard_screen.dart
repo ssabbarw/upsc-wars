@@ -12,6 +12,7 @@ import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../daily_war/data/daily_war_cloud_service.dart';
 import '../../daily_war/domain/daily_war_schedule.dart';
+import '../../daily_war/providers/daily_war_providers.dart';
 import '../../daily_war/screens/daily_war_admin_preview_screen.dart';
 import '../providers/admin_dashboard_providers.dart';
 
@@ -279,16 +280,21 @@ class _NotificationsTable extends StatelessWidget {
   }
 }
 
-class _DailyWarAdminSection extends HookWidget {
+class _DailyWarAdminSection extends HookConsumerWidget {
   const _DailyWarAdminSection();
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
     final busy = useState(false);
     final preview = useState<DailyWarAdminPreview?>(null);
     final message = useState<String?>(null);
     final todayId = DailyWarSchedule.formatIsoDate(DailyWarSchedule.nowIst());
+
+    void refreshHomeWar() {
+      ref.invalidate(dailyWarTodayDocProvider);
+      ref.invalidate(dailyWarTodayDateIdProvider);
+    }
 
     Future<void> run(Future<void> Function() action) async {
       if (busy.value) return;
@@ -331,12 +337,14 @@ class _DailyWarAdminSection extends HookWidget {
                             dateId: todayId,
                             force: false,
                           );
-                          message.value = ok
-                              ? 'Generate ok (or already existed)'
-                              : 'Generate failed';
                           preview.value = await cloud.adminPreview(
                             dateId: todayId,
                           );
+                          refreshHomeWar();
+                          final topics = preview.value?.topics.length ?? 0;
+                          message.value = ok
+                              ? 'Generate ok · $todayId · $topics topics'
+                              : 'Generate failed';
                         }),
                       ),
               child: const Text('Generate today'),
@@ -351,11 +359,14 @@ class _DailyWarAdminSection extends HookWidget {
                             dateId: todayId,
                             force: true,
                           );
-                          message.value =
-                              ok ? 'Force regenerated' : 'Regenerate failed';
                           preview.value = await cloud.adminPreview(
                             dateId: todayId,
                           );
+                          refreshHomeWar();
+                          final topics = preview.value?.topics.length ?? 0;
+                          message.value = ok
+                              ? 'Force regenerated · $topics topics'
+                              : 'Regenerate failed';
                         }),
                       ),
               child: const Text('Force regenerate'),

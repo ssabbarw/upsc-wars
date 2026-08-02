@@ -1,8 +1,10 @@
 import 'dart:async';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -34,48 +36,206 @@ String dailyWarTodayDateId(Ref ref) {
   return DailyWarSchedule.formatIsoDate(DailyWarSchedule.warDateFor(ist));
 }
 
-/// Live Firestore snapshot for today's War (null if missing).
-/// Writes through to [DailyWarLocalCache] whenever data arrives.
-@Riverpod(keepAlive: true)
-Stream<DailyWarDoc?> dailyWarTodayDoc(Ref ref) async* {
-  final dateId = ref.watch(dailyWarTodayDateIdProvider);
-  final cache = await ref.watch(dailyWarLocalCacheProvider.future);
-  final cached = cache.getWar(dateId);
-  if (cached != null) yield cached;
+DailyWarDoc? _warDocFromSnap(
+  String dateId,
+  DocumentSnapshot<Map<String, dynamic>> snap,
+) {
+  if (!snap.exists || snap.data() == null) return null;
+  return DailyWarDoc.fromMap(dateId, snap.data()!);
+}
 
-  await for (final snap in DailyWarFirestorePaths.warDoc(dateId).snapshots()) {
-    if (!snap.exists || snap.data() == null) {
-      yield null;
-      continue;
-    }
-    final doc = DailyWarDoc.fromMap(dateId, snap.data()!);
-    unawaited(cache.putWar(doc));
-    yield doc;
+/// Keys hydrated from Firestore once per app session (no snapshot listeners).
+@Riverpod(keepAlive: true)
+class DailyWarSessionHydrated extends _$DailyWarSessionHydrated {
+  @override
+  Set<String> build() => <String>{};
+
+  bool hasKey(String key) => state.contains(key);
+
+  void mark(String key) {
+    if (state.contains(key)) return;
+    state = {...state, key};
   }
 }
 
-/// Signed-in user's submission for today, if any.
-@Riverpod(keepAlive: true)
-Stream<DailyWarSubmission?> dailyWarTodaySubmission(Ref ref) async* {
-  final dateId = ref.watch(dailyWarTodayDateIdProvider);
-  final uid = FirebaseAuth.instance.currentUser?.uid;
-  if (uid == null || uid.isEmpty) {
-    yield null;
-    return;
-  }
-  final cache = await ref.watch(dailyWarLocalCacheProvider.future);
-  final cached = cache.getSubmission(uid, dateId);
-  if (cached != null) yield cached;
+/// Firestore once per session (or [force]); otherwise SharedPreferences cache.
+Future<DailyWarDoc?> _fetchWarDoc({
+  required Ref ref,
+  required DailyWarLocalCache cache,
+  required String dateId,
+  required bool force,
+}) async {
+  final key = 'war:$dateId';
+  final hydrated = ref.read(dailyWarSessionHydratedProvider.notifier);
+  final cached = cache.getWar(dateId);
+  if (!force && hydrated.hasKey(key)) return cached;
 
-  await for (final snap
-      in DailyWarFirestorePaths.submissionDoc(dateId, uid).snapshots()) {
+  // Claim the session slot before awaiting so we don't double-fetch.
+  hydrated.mark(key);
+  try {
+    final snap = await DailyWarFirestorePaths.warDoc(dateId).get(
+      const GetOptions(source: Source.server),
+    );
+    final doc = _warDocFromSnap(dateId, snap);
+    if (doc != null) await cache.putWar(doc);
+    return doc ?? cached;
+  } on Object catch (e, st) {
+    debugPrint('dailyWar fetch war $dateId failed: $e');
+    debugPrintStack(stackTrace: st);
+    return cached;
+  }
+}
+
+/// Firestore once per session (or [force]); otherwise local cache / absence.
+Future<DailyWarSubmission?> _fetchSubmission({
+  required Ref ref,
+  required DailyWarLocalCache cache,
+  required String uid,
+  required String dateId,
+  required bool force,
+}) async {
+  final key = 'sub:$uid:$dateId';
+  final hydrated = ref.read(dailyWarSessionHydratedProvider.notifier);
+  if (!force && hydrated.hasKey(key)) {
+    if (cache.hasKnownAbsence(uid, dateId)) return null;
+    return cache.getSubmission(uid, dateId);
+  }
+
+  hydrated.mark(key);
+  try {
+    final snap = await DailyWarFirestorePaths.submissionDoc(dateId, uid).get(
+      const GetOptions(source: Source.server),
+    );
     if (!snap.exists || snap.data() == null) {
-      yield null;
-      continue;
+      await cache.putSubmissionAbsent(uid, dateId);
+      return null;
     }
     final sub = DailyWarSubmission.fromMap(uid, snap.data()!);
-    unawaited(cache.putSubmission(uid, sub, dateId));
-    yield sub;
+    await cache.putSubmission(uid, sub, dateId);
+    return sub;
+  } on Object catch (e, st) {
+    debugPrint('dailyWar fetch submission $dateId failed: $e');
+    debugPrintStack(stackTrace: st);
+    return cache.getSubmission(uid, dateId);
+  }
+}
+
+Future<DailyWarDoc?> _buildWarDoc({
+  required Ref ref,
+  required String dateId,
+  required void Function(DailyWarDoc? doc) setState,
+}) async {
+  final cache = await ref.watch(dailyWarLocalCacheProvider.future);
+  final key = 'war:$dateId';
+  final hydrated = ref.read(dailyWarSessionHydratedProvider.notifier);
+  if (hydrated.hasKey(key)) return cache.getWar(dateId);
+
+  final cached = cache.getWar(dateId);
+  if (cached != null) {
+    // Instant local paint; one background hydrate per app session.
+    unawaited(() async {
+      final doc = await _fetchWarDoc(
+        ref: ref,
+        cache: cache,
+        dateId: dateId,
+        force: true,
+      );
+      setState(doc);
+    }());
+    return cached;
+  }
+  return _fetchWarDoc(ref: ref, cache: cache, dateId: dateId, force: false);
+}
+
+/// Today's War public doc — one server read per app open, then local only.
+@Riverpod(keepAlive: true)
+class DailyWarTodayDoc extends _$DailyWarTodayDoc {
+  @override
+  Future<DailyWarDoc?> build() async {
+    final dateId = ref.watch(dailyWarTodayDateIdProvider);
+    return _buildWarDoc(
+      ref: ref,
+      dateId: dateId,
+      setState: (doc) {
+        if (ref.read(dailyWarTodayDateIdProvider) == dateId) {
+          state = AsyncValue.data(doc);
+        }
+      },
+    );
+  }
+
+  /// Pull-to-refresh / admin regenerate — hits Firestore and updates cache.
+  Future<DailyWarDoc?> refresh() async {
+    final dateId = ref.read(dailyWarTodayDateIdProvider);
+    final cache = await ref.read(dailyWarLocalCacheProvider.future);
+    final doc = await _fetchWarDoc(
+      ref: ref,
+      cache: cache,
+      dateId: dateId,
+      force: true,
+    );
+    state = AsyncValue.data(doc);
+    return doc;
+  }
+}
+
+/// Signed-in user's submission for today — one server read per app open.
+@Riverpod(keepAlive: true)
+class DailyWarTodaySubmission extends _$DailyWarTodaySubmission {
+  @override
+  Future<DailyWarSubmission?> build() async {
+    final dateId = ref.watch(dailyWarTodayDateIdProvider);
+    final uid = FirebaseAuth.instance.currentUser?.uid;
+    if (uid == null || uid.isEmpty) return null;
+    final cache = await ref.watch(dailyWarLocalCacheProvider.future);
+    final key = 'sub:$uid:$dateId';
+    final hydrated = ref.read(dailyWarSessionHydratedProvider.notifier);
+    if (hydrated.hasKey(key)) {
+      if (cache.hasKnownAbsence(uid, dateId)) return null;
+      return cache.getSubmission(uid, dateId);
+    }
+    final cached = cache.getSubmission(uid, dateId);
+    if (cached != null || cache.hasKnownAbsence(uid, dateId)) {
+      unawaited(() async {
+        final sub = await _fetchSubmission(
+          ref: ref,
+          cache: cache,
+          uid: uid,
+          dateId: dateId,
+          force: true,
+        );
+        if (ref.read(dailyWarTodayDateIdProvider) == dateId) {
+          state = AsyncValue.data(sub);
+        }
+      }());
+      return cache.hasKnownAbsence(uid, dateId) ? null : cached;
+    }
+    return _fetchSubmission(
+      ref: ref,
+      cache: cache,
+      uid: uid,
+      dateId: dateId,
+      force: false,
+    );
+  }
+
+  Future<DailyWarSubmission?> refresh() async {
+    final dateId = ref.read(dailyWarTodayDateIdProvider);
+    final uid = FirebaseAuth.instance.currentUser?.uid;
+    if (uid == null || uid.isEmpty) {
+      state = const AsyncValue.data(null);
+      return null;
+    }
+    final cache = await ref.read(dailyWarLocalCacheProvider.future);
+    final sub = await _fetchSubmission(
+      ref: ref,
+      cache: cache,
+      uid: uid,
+      dateId: dateId,
+      force: true,
+    );
+    state = AsyncValue.data(sub);
+    return sub;
   }
 }
 
@@ -155,45 +315,73 @@ String dailyWarYesterdayDateId(Ref ref) {
 }
 
 @Riverpod(keepAlive: true)
-Stream<DailyWarDoc?> dailyWarYesterdayDoc(Ref ref) async* {
-  final dateId = ref.watch(dailyWarYesterdayDateIdProvider);
-  final cache = await ref.watch(dailyWarLocalCacheProvider.future);
-  final cached = cache.getWar(dateId);
-  if (cached != null) yield cached;
+class DailyWarYesterdayDoc extends _$DailyWarYesterdayDoc {
+  @override
+  Future<DailyWarDoc?> build() async {
+    final dateId = ref.watch(dailyWarYesterdayDateIdProvider);
+    final cache = await ref.watch(dailyWarLocalCacheProvider.future);
+    return _fetchWarDoc(ref: ref, cache: cache, dateId: dateId, force: false);
+  }
 
-  await for (final snap in DailyWarFirestorePaths.warDoc(dateId).snapshots()) {
-    if (!snap.exists || snap.data() == null) {
-      yield null;
-      continue;
-    }
-    final doc = DailyWarDoc.fromMap(dateId, snap.data()!);
-    unawaited(cache.putWar(doc));
-    yield doc;
+  Future<DailyWarDoc?> refresh() async {
+    final dateId = ref.read(dailyWarYesterdayDateIdProvider);
+    final cache = await ref.read(dailyWarLocalCacheProvider.future);
+    final doc = await _fetchWarDoc(
+      ref: ref,
+      cache: cache,
+      dateId: dateId,
+      force: true,
+    );
+    state = AsyncValue.data(doc);
+    return doc;
   }
 }
 
 @Riverpod(keepAlive: true)
-Stream<DailyWarSubmission?> dailyWarYesterdaySubmission(Ref ref) async* {
-  final dateId = ref.watch(dailyWarYesterdayDateIdProvider);
-  final uid = FirebaseAuth.instance.currentUser?.uid;
-  if (uid == null || uid.isEmpty) {
-    yield null;
-    return;
+class DailyWarYesterdaySubmission extends _$DailyWarYesterdaySubmission {
+  @override
+  Future<DailyWarSubmission?> build() async {
+    final dateId = ref.watch(dailyWarYesterdayDateIdProvider);
+    final uid = FirebaseAuth.instance.currentUser?.uid;
+    if (uid == null || uid.isEmpty) return null;
+    final cache = await ref.watch(dailyWarLocalCacheProvider.future);
+    return _fetchSubmission(
+      ref: ref,
+      cache: cache,
+      uid: uid,
+      dateId: dateId,
+      force: false,
+    );
   }
-  final cache = await ref.watch(dailyWarLocalCacheProvider.future);
-  final cached = cache.getSubmission(uid, dateId);
-  if (cached != null) yield cached;
 
-  await for (final snap
-      in DailyWarFirestorePaths.submissionDoc(dateId, uid).snapshots()) {
-    if (!snap.exists || snap.data() == null) {
-      yield null;
-      continue;
+  Future<DailyWarSubmission?> refresh() async {
+    final dateId = ref.read(dailyWarYesterdayDateIdProvider);
+    final uid = FirebaseAuth.instance.currentUser?.uid;
+    if (uid == null || uid.isEmpty) {
+      state = const AsyncValue.data(null);
+      return null;
     }
-    final sub = DailyWarSubmission.fromMap(uid, snap.data()!);
-    unawaited(cache.putSubmission(uid, sub, dateId));
-    yield sub;
+    final cache = await ref.read(dailyWarLocalCacheProvider.future);
+    final sub = await _fetchSubmission(
+      ref: ref,
+      cache: cache,
+      uid: uid,
+      dateId: dateId,
+      force: true,
+    );
+    state = AsyncValue.data(sub);
+    return sub;
   }
+}
+
+/// Pull-to-refresh on home — re-reads today/yesterday war + submissions from Firestore.
+Future<void> refreshDailyWarHome(WidgetRef ref) async {
+  await Future.wait([
+    ref.read(dailyWarTodayDocProvider.notifier).refresh(),
+    ref.read(dailyWarTodaySubmissionProvider.notifier).refresh(),
+    ref.read(dailyWarYesterdayDocProvider.notifier).refresh(),
+    ref.read(dailyWarYesterdaySubmissionProvider.notifier).refresh(),
+  ]);
 }
 
 @Riverpod(keepAlive: true)

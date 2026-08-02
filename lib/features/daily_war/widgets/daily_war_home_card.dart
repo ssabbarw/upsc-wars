@@ -16,6 +16,7 @@ import '../domain/daily_war_schedule.dart';
 import '../providers/daily_war_providers.dart';
 import '../providers/server_clock_provider.dart';
 import '../theme/daily_war_theme.dart';
+import 'daily_war_topics_sheet.dart';
 
 /// Home hero for Daily War — three-band near-black card (design H1–H9).
 class DailyWarHomeCard extends HookConsumerWidget {
@@ -50,6 +51,7 @@ class _DailyWarHomeCardBody extends HookConsumerWidget {
     tick.value;
 
     final snap = ref.watch(dailyWarHomeSnapshotProvider);
+    final todayDocAsync = ref.watch(dailyWarTodayDocProvider);
     final yesterday = ref.watch(dailyWarYesterdaySnapshotProvider);
     final liveCounts =
         ref.watch(dailyWarLiveCountsProvider).asData?.value ??
@@ -86,12 +88,14 @@ class _DailyWarHomeCardBody extends HookConsumerWidget {
     final untilStart = start.difference(ist);
     final untilLateClose = lateClose.difference(ist);
 
-    final doc = snap.doc;
+    // Prefer the live AsyncValue so a stream error isn't mistaken for "still loading".
+    final doc = todayDocAsync.asData?.value ?? snap.doc;
     final isGrand =
         doc?.isGrand == true || DailyWarSchedule.isGrandWarDay(warDate);
     final qCount =
         doc?.questionCount ?? DailyWarSchedule.questionCountForDate(warDate);
     final topics = doc?.topics ?? const <DailyWarTopicRef>[];
+    final topicsLoadFailed = todayDocAsync.hasError && topics.isEmpty;
 
     final lobbyShown = DailyWarCopy.formatVisibleCount(
       raw: liveCounts.lobby > 0 ? liveCounts.lobby : null,
@@ -111,7 +115,7 @@ class _DailyWarHomeCardBody extends HookConsumerWidget {
       minVisible: minVisible,
     );
 
-    final showMissedStrip =
+    final yesterdayOpen =
         yesterday.shouldShowMissedStrip &&
         snap.phase != DailyWarPhase.lobby &&
         snap.phase != DailyWarPhase.liveJoinable &&
@@ -119,27 +123,28 @@ class _DailyWarHomeCardBody extends HookConsumerWidget {
 
     return Padding(
       padding: const EdgeInsets.only(bottom: 0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Material(
-            color: Colors.transparent,
-            child: InkWell(
-              onTap: () => context.push(dailyWarLobbyRoute()),
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          onTap: () => context.push(dailyWarLobbyRoute()),
+          borderRadius: BorderRadius.circular(20),
+          child: Ink(
+            decoration: BoxDecoration(
+              color: DwColors.surface,
               borderRadius: BorderRadius.circular(20),
-              child: Ink(
-                decoration: BoxDecoration(
-                  color: DwColors.surface,
-                  borderRadius: BorderRadius.circular(20),
-                  border: Border.all(color: DwColors.borderOnDark),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(16, 14, 16, 16),
-                  child: _HeroBody(
+              border: Border.all(color: DwColors.borderOnDark),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(16, 14, 16, 16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  _HeroBody(
                     snap: snap,
                     isGrand: isGrand,
                     qCount: qCount,
                     topics: topics,
+                    topicsLoadFailed: topicsLoadFailed,
                     untilStart: untilStart,
                     untilLateClose: untilLateClose,
                     lobbyShown: lobbyShown,
@@ -147,15 +152,13 @@ class _DailyWarHomeCardBody extends HookConsumerWidget {
                     lastNightShown: lastNightShown,
                     warDate: warDate,
                   ),
-                ),
+                  const SizedBox(height: 12),
+                  _WarHistoryLink(yesterdayOpen: yesterdayOpen),
+                ],
               ),
             ),
           ),
-          if (showMissedStrip) ...[
-            const SizedBox(height: 8),
-            _MissedYesterdayStrip(yesterday: yesterday),
-          ],
-        ],
+        ),
       ),
     );
   }
@@ -167,6 +170,7 @@ class _HeroBody extends StatelessWidget {
     required this.isGrand,
     required this.qCount,
     required this.topics,
+    required this.topicsLoadFailed,
     required this.untilStart,
     required this.untilLateClose,
     required this.lobbyShown,
@@ -179,6 +183,7 @@ class _HeroBody extends StatelessWidget {
   final bool isGrand;
   final int qCount;
   final List<DailyWarTopicRef> topics;
+  final bool topicsLoadFailed;
   final Duration untilStart;
   final Duration untilLateClose;
   final String? lobbyShown;
@@ -229,6 +234,7 @@ class _HeroBody extends StatelessWidget {
       case DailyWarPhase.countdown:
         return _Countdown(
           topics: topics,
+          topicsLoadFailed: topicsLoadFailed,
           untilStart: untilStart,
           lastNightShown: lastNightShown,
           isGrand: isGrand,
@@ -237,9 +243,18 @@ class _HeroBody extends StatelessWidget {
       case DailyWarPhase.preAnnounce:
       case DailyWarPhase.morning:
         if (isGrand) {
-          return _GrandMorning(topics: topics, qCount: qCount);
+          return _GrandMorning(
+            topics: topics,
+            topicsLoadFailed: topicsLoadFailed,
+            qCount: qCount,
+          );
         }
-        return _Morning(topics: topics, isGrand: isGrand, qCount: qCount);
+        return _Morning(
+          topics: topics,
+          topicsLoadFailed: topicsLoadFailed,
+          isGrand: isGrand,
+          qCount: qCount,
+        );
     }
   }
 }
@@ -306,12 +321,16 @@ class _PrimaryCta extends StatelessWidget {
 class _TopicBlock extends StatelessWidget {
   const _TopicBlock({
     required this.topics,
+    this.topicsLoadFailed = false,
     this.compact = false,
     this.eyebrow = 'Tonight\'s paper',
     this.topicSize,
   });
 
+  static const _previewCount = 2;
+
   final List<DailyWarTopicRef> topics;
+  final bool topicsLoadFailed;
   final bool compact;
   final String eyebrow;
   final double? topicSize;
@@ -319,13 +338,24 @@ class _TopicBlock extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (topics.isEmpty) {
-      return Text('Tonight\'s topics loading…', style: DwText.topicCompact());
+      return Text(
+        topicsLoadFailed
+            ? 'Couldn\'t load tonight\'s topics — pull to refresh'
+            : 'Tonight\'s topics loading…',
+        style: DwText.topicCompact(),
+      );
     }
     final subjects = DailyWarCopy.subjectsLine(topics).toUpperCase();
     final multiSubject = topics.map((t) => t.subjectSlug).toSet().length > 1;
     final topicStyle = topicSize != null
         ? DwText.dm(size: topicSize!, weight: FontWeight.w700, height: 1.2)
         : (compact ? DwText.topicCompact() : DwText.topic());
+    final preview = topics.take(_previewCount).toList();
+    final hidden = topics.length - preview.length;
+    final seeAllLabel = hidden > 0
+        ? 'See all ${topics.length} topics →'
+        : 'Practice these topics →';
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -336,12 +366,12 @@ class _TopicBlock extends StatelessWidget {
         const SizedBox(height: 6),
         Text(subjects, style: DwText.subject(color: DwColors.crimsonBright)),
         const SizedBox(height: 4),
-        for (var i = 0; i < topics.length; i++)
+        for (var i = 0; i < preview.length; i++)
           Padding(
             padding: const EdgeInsets.only(bottom: 2),
             child: i == 0
                 ? Text(
-                    topics[i].topic,
+                    preview[i].topic,
                     style: topicStyle,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
@@ -358,13 +388,38 @@ class _TopicBlock extends StatelessWidget {
                             height: topicStyle.height ?? 1.2,
                           ),
                         ),
-                        TextSpan(text: topics[i].topic, style: topicStyle),
+                        TextSpan(text: preview[i].topic, style: topicStyle),
                       ],
                     ),
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                   ),
           ),
+        if (hidden > 0)
+          Padding(
+            padding: const EdgeInsets.only(top: 2, bottom: 2),
+            child: Text(
+              '+ $hidden more',
+              style: DwText.dm(
+                size: 13,
+                weight: FontWeight.w600,
+                color: DwColors.onDarkDim,
+              ),
+            ),
+          ),
+        const SizedBox(height: 8),
+        GestureDetector(
+          behavior: HitTestBehavior.opaque,
+          onTap: () => showDailyWarTopicsSheet(context: context, topics: topics),
+          child: Text(
+            seeAllLabel,
+            style: DwText.dm(
+              size: 13,
+              weight: FontWeight.w700,
+              color: DwColors.crimsonBright,
+            ),
+          ),
+        ),
       ],
     );
   }
@@ -399,11 +454,13 @@ class _CountCallout extends StatelessWidget {
 class _Morning extends StatelessWidget {
   const _Morning({
     required this.topics,
+    required this.topicsLoadFailed,
     required this.isGrand,
     required this.qCount,
   });
 
   final List<DailyWarTopicRef> topics;
+  final bool topicsLoadFailed;
   final bool isGrand;
   final int qCount;
 
@@ -417,7 +474,7 @@ class _Morning extends StatelessWidget {
           right: 'TONIGHT 9:00 PM IST',
         ),
         const SizedBox(height: 14),
-        _TopicBlock(topics: topics),
+        _TopicBlock(topics: topics, topicsLoadFailed: topicsLoadFailed),
         const SizedBox(height: 12),
         Text(
           DailyWarCopy.rulesLine(questionCount: qCount, isGrand: isGrand),
@@ -431,9 +488,14 @@ class _Morning extends StatelessWidget {
 }
 
 class _GrandMorning extends StatelessWidget {
-  const _GrandMorning({required this.topics, required this.qCount});
+  const _GrandMorning({
+    required this.topics,
+    required this.topicsLoadFailed,
+    required this.qCount,
+  });
 
   final List<DailyWarTopicRef> topics;
+  final bool topicsLoadFailed;
   final int qCount;
 
   @override
@@ -448,7 +510,12 @@ class _GrandMorning extends StatelessWidget {
         const SizedBox(height: 14),
         Text('This week\'s topics, revised in one paper', style: DwText.body()),
         const SizedBox(height: 10),
-        _TopicBlock(topics: topics, compact: true, eyebrow: 'Tonight\'s paper'),
+        _TopicBlock(
+          topics: topics,
+          topicsLoadFailed: topicsLoadFailed,
+          compact: true,
+          eyebrow: 'Tonight\'s paper',
+        ),
         const SizedBox(height: 12),
         Text(
           DailyWarCopy.rulesLine(questionCount: qCount, isGrand: true),
@@ -466,6 +533,7 @@ class _GrandMorning extends StatelessWidget {
 class _Countdown extends StatelessWidget {
   const _Countdown({
     required this.topics,
+    required this.topicsLoadFailed,
     required this.untilStart,
     required this.lastNightShown,
     required this.isGrand,
@@ -473,6 +541,7 @@ class _Countdown extends StatelessWidget {
   });
 
   final List<DailyWarTopicRef> topics;
+  final bool topicsLoadFailed;
   final Duration untilStart;
   final String? lastNightShown;
   final bool isGrand;
@@ -488,7 +557,11 @@ class _Countdown extends StatelessWidget {
           right: '9:00 PM IST',
         ),
         const SizedBox(height: 14),
-        _TopicBlock(topics: topics, topicSize: 22),
+        _TopicBlock(
+          topics: topics,
+          topicsLoadFailed: topicsLoadFailed,
+          topicSize: 22,
+        ),
         const SizedBox(height: 12),
         Text('WAR BEGINS IN', style: DwText.meta()),
         const SizedBox(height: 2),
@@ -826,54 +899,27 @@ class _ResultSatOut extends StatelessWidget {
   }
 }
 
-// ─── H7 Missed yesterday ─────────────────────────────────────────────────────
+// ─── History link (inside War card) ──────────────────────────────────────────
 
-class _MissedYesterdayStrip extends StatelessWidget {
-  const _MissedYesterdayStrip({required this.yesterday});
+class _WarHistoryLink extends StatelessWidget {
+  const _WarHistoryLink({required this.yesterdayOpen});
 
-  final DailyWarYesterdaySnapshot yesterday;
+  final bool yesterdayOpen;
 
   @override
   Widget build(BuildContext context) {
-    final q = yesterday.doc?.questionCount ?? 15;
-    return Material(
-      color: Colors.transparent,
-      child: InkWell(
-        onTap: () => context.push(dailyWarHistoryRoute()),
-        borderRadius: BorderRadius.circular(14),
-        child: Ink(
-          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
-          decoration: BoxDecoration(
-            color: DwColors.cream,
-            borderRadius: BorderRadius.circular(14),
-            border: Border.all(color: const Color(0x1F000000)),
-          ),
-          child: Row(
-            children: [
-              Icon(Icons.history_toggle_off, size: 20, color: DwColors.muted),
-              const SizedBox(width: 10),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Yesterday\'s paper is open',
-                      style: DwText.dm(
-                        size: 13,
-                        weight: FontWeight.w700,
-                        color: DwColors.ink,
-                      ),
-                    ),
-                    Text(
-                      'Attempt unranked · $q Q · see where you\'d have stood',
-                      style: DwText.dm(size: 11, color: DwColors.muted),
-                    ),
-                  ],
-                ),
-              ),
-              Icon(Icons.chevron_right, color: DwColors.muted),
-            ],
-          ),
+    final label = yesterdayOpen
+        ? 'Yesterday\'s paper is open · History →'
+        : 'War history →';
+    return GestureDetector(
+      behavior: HitTestBehavior.opaque,
+      onTap: () => context.push(dailyWarHistoryRoute()),
+      child: Text(
+        label,
+        style: DwText.dm(
+          size: 12,
+          weight: FontWeight.w600,
+          color: yesterdayOpen ? DwColors.crimsonBright : DwColors.onDarkMuted,
         ),
       ),
     );
