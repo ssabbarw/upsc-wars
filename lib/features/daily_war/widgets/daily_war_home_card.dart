@@ -68,23 +68,24 @@ class _DailyWarHomeCardBody extends HookConsumerWidget {
 
     final prefs = ref.watch(prefsServiceProvider).asData?.value;
     final storedCollapse = prefs?.dailyWarHomeCollapsedOrNull;
-    final collapsed = useState<bool?>(null);
     final isRest = snap.phase == DailyWarPhase.restDay;
-    // Sunday always starts collapsed; weekday sticky prefs don't open it.
-    final isCollapsed = isRest
-        ? (collapsed.value ?? true)
-        : (collapsed.value ?? storedCollapse ?? false);
+    final collapseUi = ref.watch(dailyWarHomeCollapseProvider);
+    final sessionCollapse = collapseUi?.dateId == snap.dateId
+        ? collapseUi!.collapsed
+        : null;
+    // Sunday defaults collapsed; weekday uses sticky prefs. Session override
+    // survives ListView scroll dispose (keepAlive provider).
+    final isCollapsed = sessionCollapse ??
+        (isRest ? true : (storedCollapse ?? false));
 
     void setCollapsed(bool value) {
-      collapsed.value = value;
-      // Don't let a Sunday expand stick into Mon–Sat.
+      ref.read(dailyWarHomeCollapseProvider.notifier).setCollapsed(
+            dateId: snap.dateId,
+            collapsed: value,
+          );
+      // Don't let a Sunday expand stick into Mon–Sat prefs.
       if (!isRest) prefs?.dailyWarHomeCollapsed = value;
     }
-
-    useEffect(() {
-      if (isRest) collapsed.value = true;
-      return null;
-    }, [isRest]);
 
     // Lobby presence is counted when the user opens the lobby screen — not from
     // home (collapsed or expanded). Avoids a callable+tx per DAU on home.

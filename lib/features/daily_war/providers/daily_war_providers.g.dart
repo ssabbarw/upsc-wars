@@ -934,3 +934,58 @@ final class DailyWarLiveCountsProvider
 
 String _$dailyWarLiveCountsHash() =>
     r'b97fb6fabfa77760a509a61e80c889dd7e764961';
+
+@ProviderFor(DailyWarHomeCollapse)
+final dailyWarHomeCollapseProvider = DailyWarHomeCollapseProvider._();
+
+final class DailyWarHomeCollapseProvider
+    extends $NotifierProvider<DailyWarHomeCollapse, DailyWarHomeCollapseUi?> {
+  DailyWarHomeCollapseProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'dailyWarHomeCollapseProvider',
+        isAutoDispose: false,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$dailyWarHomeCollapseHash();
+
+  @$internal
+  @override
+  DailyWarHomeCollapse create() => DailyWarHomeCollapse();
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(DailyWarHomeCollapseUi? value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<DailyWarHomeCollapseUi?>(value),
+    );
+  }
+}
+
+String _$dailyWarHomeCollapseHash() =>
+    r'fe8e9c9fb9e4a727200b757367d1a814db31e67a';
+
+abstract class _$DailyWarHomeCollapse
+    extends $Notifier<DailyWarHomeCollapseUi?> {
+  DailyWarHomeCollapseUi? build();
+  @$mustCallSuper
+  @override
+  void runBuild() {
+    final ref =
+        this.ref as $Ref<DailyWarHomeCollapseUi?, DailyWarHomeCollapseUi?>;
+    final element =
+        ref.element
+            as $ClassProviderElement<
+              AnyNotifier<DailyWarHomeCollapseUi?, DailyWarHomeCollapseUi?>,
+              DailyWarHomeCollapseUi?,
+              Object?,
+              Object?
+            >;
+    element.handleCreate(ref, build);
+  }
+}

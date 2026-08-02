@@ -13,64 +13,60 @@ import '../theme/daily_war_theme.dart';
 /// Backed by [dailyWarHistoryBundleProvider] which serves ranked wars from
 /// local cache and only hits Firestore for a short recent window.
 class DailyWarHistoryScreen extends HookConsumerWidget {
-  const DailyWarHistoryScreen({super.key});
+  const DailyWarHistoryScreen({super.key, this.embedded = false});
+
+  /// When true, omit [Scaffold] / [AppBar] (used inside Progress hub).
+  final bool embedded;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final tab = useState(0); // 0 all, 1 attempted, 2 missed
     final async = ref.watch(dailyWarHistoryBundleProvider);
+    final scheme = Theme.of(context).colorScheme;
 
-    return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.surface,
-      appBar: AppBar(
-        title: Text(
-          'War History',
-          style: DwText.dm(
-            size: 18,
-            weight: FontWeight.w700,
-            color: Theme.of(context).colorScheme.onSurface,
-          ),
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => context.push(dailyWarBadgesRoute()),
-            child: Text(
-              'Badges',
-              style: DwText.dm(
-                size: 13,
-                weight: FontWeight.w700,
-                color: DwColors.teal,
-              ),
-            ),
-          ),
-        ],
-      ),
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.fromLTRB(16, 4, 16, 8),
-            child: Row(
-              children: [
-                for (final entry in const [
-                  (0, 'All'),
-                  (1, 'Attempted'),
-                  (2, 'Missed'),
-                ])
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 4),
-                      child: _TabChip(
-                        label: entry.$2,
-                        selected: tab.value == entry.$1,
-                        onTap: () => tab.value = entry.$1,
-                      ),
+    final body = Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.fromLTRB(16, 4, 16, 8),
+          child: Row(
+            children: [
+              for (final entry in const [
+                (0, 'All'),
+                (1, 'Attempted'),
+                (2, 'Missed'),
+              ])
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 4),
+                    child: _TabChip(
+                      label: entry.$2,
+                      selected: tab.value == entry.$1,
+                      onTap: () => tab.value = entry.$1,
                     ),
                   ),
-              ],
-            ),
+                ),
+              const SizedBox(width: 4),
+              TextButton(
+                onPressed: () => context.push(dailyWarBadgesRoute()),
+                style: TextButton.styleFrom(
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                  minimumSize: Size.zero,
+                  tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                ),
+                child: Text(
+                  'Badges',
+                  style: DwText.dm(
+                    size: 12,
+                    weight: FontWeight.w700,
+                    color: DwColors.teal,
+                  ),
+                ),
+              ),
+            ],
           ),
-          Expanded(
-            child: async.when(
+        ),
+        Expanded(
+          child: async.when(
               loading: () => const Center(child: CircularProgressIndicator()),
               error: (e, _) => Center(child: Text('$e')),
               data: (bundle) {
@@ -214,7 +210,23 @@ class DailyWarHistoryScreen extends HookConsumerWidget {
             ),
           ),
         ],
+    );
+
+    if (embedded) return body;
+
+    return Scaffold(
+      backgroundColor: scheme.surface,
+      appBar: AppBar(
+        title: Text(
+          'War History',
+          style: DwText.dm(
+            size: 18,
+            weight: FontWeight.w700,
+            color: scheme.onSurface,
+          ),
+        ),
       ),
+      body: body,
     );
   }
 }

@@ -587,6 +587,26 @@ Stream<DailyWarLiveCounts> dailyWarLiveCounts(Ref ref) async* {
   }
 }
 
+/// Home card expand/collapse for the current War [dateId].
+///
+/// Kept alive so ListView dispose/remount on scroll does not reset the UI.
+class DailyWarHomeCollapseUi {
+  const DailyWarHomeCollapseUi({required this.dateId, required this.collapsed});
+
+  final String dateId;
+  final bool collapsed;
+}
+
+@Riverpod(keepAlive: true)
+class DailyWarHomeCollapse extends _$DailyWarHomeCollapse {
+  @override
+  DailyWarHomeCollapseUi? build() => null;
+
+  void setCollapsed({required String dateId, required bool collapsed}) {
+    state = DailyWarHomeCollapseUi(dateId: dateId, collapsed: collapsed);
+  }
+}
+
 /// Local War streak — increments on live play, breaks after a missed War night.
 final dailyWarStreakCountProvider = Provider<int>((ref) {
   final prefs = ref.watch(prefsServiceProvider).asData?.value;
