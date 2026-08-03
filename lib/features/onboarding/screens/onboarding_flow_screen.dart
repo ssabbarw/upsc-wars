@@ -11,29 +11,26 @@ import '../../../core/analytics/analytics_events.dart';
 import '../../../core/analytics/screen_flow_analytics.dart';
 import '../../../core/providers/prefs_provider.dart';
 import '../../mini_games/shared/revision_games_theme.dart';
-import '../data/onboarding_mcq_data.dart';
 import '../widgets/onboarding_games_page.dart';
-import '../widgets/onboarding_mcq_page.dart';
+import '../widgets/onboarding_question_depth_page.dart';
 import '../widgets/onboarding_scale.dart';
 import '../widgets/onboarding_thesis_page.dart';
-import '../widgets/onboarding_trap_page.dart';
 
 /// Horizontal pager step id for [OnboardingStepDurationEvent].
 String _onboardingStepIdForIndex(int i) {
   return switch (i) {
     0 => 'thesis',
-    1 => 'trap',
-    2 => 'mcq',
-    3 => 'games',
+    1 => 'depth',
+    2 => 'games',
     _ => 'unknown',
   };
 }
 
-/// First-run onboarding: thesis → trap → markable MCQ → animated games list.
+/// First-run onboarding: thesis → question depth → animated games list.
 class OnboardingFlowScreen extends HookConsumerWidget {
   const OnboardingFlowScreen({super.key});
 
-  static const int _pageCount = 4;
+  static const int _pageCount = 3;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -45,40 +42,9 @@ class OnboardingFlowScreen extends HookConsumerWidget {
     final highestPageIndex = useRef(0);
     final lastPageIndex = useRef(0);
 
-    final mcqSelected = useState<int?>(null);
-    final mcqConfidence = useState<OnboardingMcqConfidence?>(null);
-    final mcqOutcome = useState<OnboardingMcqOutcome?>(null);
-    final mcqOutcomeResolved = useRef(false);
-
     final bottom = MediaQuery.paddingOf(context).bottom;
     final hPad = onb(context, 16);
     final showSkip = page.value < _pageCount - 1;
-
-    OnboardingMcqOutcome resolveOutcome() {
-      final selected = mcqSelected.value;
-      if (selected == null) return OnboardingMcqOutcome.skipped;
-      final option = kOnboardingMcq.options[selected];
-      return option.isCorrect
-          ? OnboardingMcqOutcome.correct
-          : OnboardingMcqOutcome.wrong;
-    }
-
-    void showMcqOutcome() {
-      if (mcqOutcome.value != null) return;
-      // Answered without picking a confidence level reads as a guess.
-      if (mcqSelected.value != null && mcqConfidence.value == null) {
-        mcqConfidence.value = OnboardingMcqConfidence.guessing;
-      }
-      mcqOutcome.value = resolveOutcome();
-      final confidenceSuffix = mcqConfidence.value == null
-          ? ''
-          : '_${mcqConfidence.value!.name}';
-      ScreenFlow.logAction(
-        ref,
-        screenName: ScreenFlow.onboarding,
-        actionId: 'mcq_outcome_${mcqOutcome.value!.name}$confidenceSuffix',
-      );
-    }
 
     Future<void> completeFlow({required String actionId}) async {
       ScreenFlow.logAction(
@@ -163,19 +129,6 @@ class OnboardingFlowScreen extends HookConsumerWidget {
                     onPageChanged: (i) {
                       final from = page.value;
 
-                      // Swiping past an unrevealed MCQ shows its outcome
-                      // first; once the outcome is on screen, a second
-                      // forward swipe moves on.
-                      if (i == 3 && !mcqOutcomeResolved.value) {
-                        if (mcqOutcome.value == null) {
-                          showMcqOutcome();
-                          pageController.jumpToPage(2);
-                          page.value = 2;
-                          return;
-                        }
-                        mcqOutcomeResolved.value = true;
-                      }
-
                       final ms = DateTime.now()
                           .difference(pageEnteredAt.value)
                           .inMilliseconds;
@@ -208,43 +161,18 @@ class OnboardingFlowScreen extends HookConsumerWidget {
                           goToPage(1);
                         },
                       ),
-                      OnboardingTrapPage(
+                      OnboardingQuestionDepthPage(
                         onContinue: () {
                           ScreenFlow.logAction(
                             ref,
                             screenName: ScreenFlow.onboarding,
-                            actionId: 'trap_continued',
+                            actionId: 'depth_continued',
                           );
                           goToPage(2);
                         },
                       ),
-                      OnboardingMcqPage(
-                        selectedIndex: mcqSelected.value,
-                        confidence: mcqConfidence.value,
-                        outcome: mcqOutcome.value,
-                        onSelect: (i) {
-                          if (mcqOutcome.value != null) return;
-                          mcqSelected.value = i;
-                          mcqConfidence.value = null;
-                        },
-                        onConfidenceSelect: (c) {
-                          if (mcqOutcome.value != null) return;
-                          mcqConfidence.value = c;
-                          showMcqOutcome();
-                        },
-                        onContinue: showMcqOutcome,
-                        onGotIt: () {
-                          mcqOutcomeResolved.value = true;
-                          ScreenFlow.logAction(
-                            ref,
-                            screenName: ScreenFlow.onboarding,
-                            actionId: 'mcq_got_it',
-                          );
-                          goToPage(3);
-                        },
-                      ),
                       OnboardingGamesPage(
-                        isActive: page.value == 3,
+                        isActive: page.value == 2,
                         onGetStarted: () {
                           unawaited(
                             completeFlow(actionId: 'games_get_started'),

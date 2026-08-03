@@ -26,7 +26,7 @@ import 'analytics_sink.dart';
 /// * `battle_invite_accepted` — (none)
 /// * `push_permission_snapshot` — `status`, `allows_push` (0/1); also sets user property `push_alerts`
 /// * `push_permission_prompt_result` — `status`, `allows_push` (0/1), `source`; also sets `push_alerts`
-/// * `onboarding_step_duration` — `step` (`thesis` / `trap` / `mcq` / `games`), `duration_ms`
+/// * `onboarding_step_duration` — `step` (`thesis` / `depth` / `games`), `duration_ms`
 /// * `onboarding_flow_opened` / `onboarding_flow_completed` — `total_duration_ms` on completed only
 /// * `onboarding_exited_incomplete` — `highest_step`, `last_step`, `elapsed_ms`, `reached_last_step` (0/1)
 /// * `deferred_push_education_outcome` — `source`, `modal_index`, `tapped_enable` (0/1)

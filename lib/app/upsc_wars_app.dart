@@ -116,22 +116,6 @@ class _RootMaterialApp extends HookConsumerWidget {
 
       bindGlobalAnalytics(dispatch);
       unawaited(Analytics.track(ref, const AppOpenedEvent()));
-      // Push permission: ask on 2nd app open (education sheet, then OS prompt).
-      unawaited(() async {
-        try {
-          final p = await ref.read(prefsServiceProvider.future);
-          p.appOpenCount = p.appOpenCount + 1;
-          upscWarsTrace('app_open_count=${p.appOpenCount}');
-          if (p.appOpenCount != 2) return;
-          await WidgetsBinding.instance.endOfFrame;
-          upscWarsTrace('push_auto_prompt on 2nd open');
-          await BattleMessagingService.requestPushAuthorizationIfNotDetermined(
-            source: 'second_app_open',
-          );
-        } catch (e, st) {
-          upscWarsTrace('push_auto_prompt error', error: e, stackTrace: st);
-        }
-      }());
       unawaited(() async {
         final p = await ref.read(prefsServiceProvider.future);
         final wasFirstInstall =

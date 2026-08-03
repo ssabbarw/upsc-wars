@@ -13,7 +13,6 @@ import '../../../core/domain/entities/session_result.dart';
 import '../../../core/domain/errors/app_errors.dart';
 import '../../../core/providers/catalog_providers.dart';
 import '../../../core/providers/prefs_provider.dart';
-import '../../../core/providers/user_database_provider.dart';
 import '../../../core/deep_link/shared_session_firestore.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
@@ -111,13 +110,6 @@ Future<void> _confirmLeaveResultsAndGoHome(
     actionId: actionId,
     actionKind: 'back',
   );
-  final db = ref.read(userDatabaseProvider);
-  final completedCount = await db.sessionsDao.countCompletedSessions();
-  if (completedCount == 1) {
-    final prefs = await ref.read(prefsServiceProvider.future);
-    prefs.pushPermissionPromptPendingAfterFirstTest = true;
-    ref.invalidate(prefsServiceProvider);
-  }
   if (!context.mounted) return;
   context.go('/');
 }

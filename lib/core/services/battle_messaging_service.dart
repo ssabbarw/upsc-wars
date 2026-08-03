@@ -5,15 +5,12 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:upsc_wars/core/admin_dashboard/admin_dashboard_service.dart';
 import 'package:upsc_wars/core/admin_dashboard/pending_notification_conversion.dart';
 import 'package:upsc_wars/core/analytics/analytics_events.dart';
 import 'package:upsc_wars/core/analytics/analytics_global_dispatch.dart';
 import 'package:upsc_wars/core/debug/cursor_debug_log.dart';
-import 'package:upsc_wars/core/debug/upsc_wars_trace.dart';
-import 'package:upsc_wars/core/providers/prefs_provider.dart';
 import 'package:upsc_wars/core/router/app_router.dart';
 import 'package:upsc_wars/core/services/app_local_notifications_service.dart';
 import 'package:upsc_wars/core/services/fcm_token_sync_service.dart';
@@ -21,6 +18,8 @@ import 'package:upsc_wars/features/community/open_challenge/open_challenge_fcm.d
 import 'package:upsc_wars/features/daily_war/daily_war_constants.dart';
 import 'package:upsc_wars/features/memory_pairs/push/push_memory_pairs_fcm.dart';
 import 'package:upsc_wars/features/memory_pairs/push/push_memory_pairs_launch_params.dart';
+import 'package:upsc_wars/features/mini_games/push/push_revision_game_fcm.dart';
+import 'package:upsc_wars/features/mini_games/push/push_revision_game_launch_params.dart';
 import 'package:upsc_wars/features/push_spot_test/push_spot_test_fcm.dart';
 import 'package:upsc_wars/features/push_spot_test/push_spot_test_launch_params.dart';
 import 'package:upsc_wars/features/notifications/long_html_notification_constants.dart';
@@ -30,9 +29,6 @@ import 'package:upsc_wars/shared/widgets/deferred_push_permission_sheet.dart';
 /// FCM setup for battle invites, long HTML announcements, and deep links.
 class BattleMessagingService {
   BattleMessagingService._();
-
-  /// Max in-app education sheets per device (then rely on home nudge / settings).
-  static const maxDeferredPushEducationSheets = 2;
 
   /// Set from [main] after [FirebaseMessaging.instance.getInitialMessage] so
   /// the launch intent is not lost before the router exists.
@@ -222,6 +218,9 @@ class BattleMessagingService {
     } else if (message.data['kind']?.toString().trim().toLowerCase() ==
         PushMemoryPairsFcm.kind) {
       kind = PushMemoryPairsFcm.kind;
+    } else if (message.data['kind']?.toString().trim().toLowerCase() ==
+        PushRevisionGameFcm.kind) {
+      kind = PushRevisionGameFcm.kind;
     } else {
       final sid = message.data['sessionId']?.toString().trim() ?? '';
       if (sid.isNotEmpty) {
@@ -325,6 +324,13 @@ class BattleMessagingService {
         }
         return;
       }
+      if (ocKind == PushRevisionGameFcm.kind) {
+        final params = PushRevisionGameLaunchParams.fromRemoteMessage(message);
+        if (params.isValid) {
+          router.go(params.hubLocation);
+        }
+        return;
+      }
       if (ocKind == DailyWarConstants.fcmKind) {
         router.go(dailyWarLobbyRoute());
         return;
@@ -408,21 +414,11 @@ class BattleMessagingService {
     };
   }
 
-  static Future<bool> shouldShowDeferredPushEducationSheet() async {
-    final prefs = await SharedPreferences.getInstance();
-    if (prefs.getBool(PrefKeys.deferredPushPermissionSheetCompletedV1) ??
-        false) {
-      return false;
-    }
-    final shown = prefs.getInt(PrefKeys.deferredPushModalShownCountV2) ?? 0;
-    return shown < maxDeferredPushEducationSheets;
-  }
-
   /// Prompts when notifications are not yet allowed.
   ///
-  /// Shows the in-app education sheet first (at most
-  /// [maxDeferredPushEducationSheets] times per device); the OS dialog runs only
-  /// if the user taps "Turn on alerts".
+  /// Always shows the in-app education sheet first; the OS dialog runs only
+  /// if the user taps "Turn on alerts". Intended for explicit user actions
+  /// (e.g. START HERE → Turn on daily reminders) — not auto-prompts.
   ///
   /// iOS: only when [AuthorizationStatus.notDetermined].
   /// Android 13+: when POST_NOTIFICATIONS is not granted (treats pre-prompt as
@@ -442,13 +438,6 @@ class BattleMessagingService {
     } else {
       final status = await notificationAuthorizationStatus();
       if (status != AuthorizationStatus.notDetermined) return;
-    }
-
-    if (!await shouldShowDeferredPushEducationSheet()) {
-      upscWarsTrace(
-        'push_education_sheet skipped source=$source (cap or completed)',
-      );
-      return;
     }
 
     final ctx = rootNavigatorKey.currentContext;

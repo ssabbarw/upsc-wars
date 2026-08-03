@@ -409,11 +409,11 @@ final class DeferredPushHomeNudgeDismissedEvent extends AnalyticsEvent {
   const DeferredPushHomeNudgeDismissedEvent();
 }
 
-// ── First-run onboarding (thesis → trap → MCQ → games list) ──────────
+// ── First-run onboarding (thesis → depth → games list) ──────────
 
 /// **Time the user spent on one horizontal step** of the first-run flow before
 /// swiping to the next, or the last step before “Let’s go.” [step] is
-/// `thesis`, `trap`, `mcq`, or `games`.
+/// `thesis`, `depth`, or `games`.
 ///
 /// **GA4:** `onboarding_step_duration` with `step`, `duration_ms` (int).
 final class OnboardingStepDurationEvent extends AnalyticsEvent {
@@ -448,8 +448,7 @@ final class OnboardingFlowCompletedEvent extends AnalyticsEvent {
 /// drop-out signal.
 ///
 /// **GA4:** `onboarding_exited_incomplete` with:
-/// * `highest_step` — furthest step id reached (`thesis` / `trap` / `mcq` /
-///   `games`);
+/// * `highest_step` — furthest step id reached (`thesis` / `depth` / `games`);
 /// * `last_step` — page index at exit mapped the same way;
 /// * `elapsed_ms` — time from flow open;
 /// * `reached_last_step` — 1 if the user ever reached the final horizontal page.

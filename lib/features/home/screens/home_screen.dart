@@ -17,7 +17,6 @@ import '../../../core/domain/entities/subject_info.dart';
 import '../../../core/providers/catalog_providers.dart';
 import '../../../core/providers/app_bootstrap.dart';
 import '../../../core/providers/prefs_provider.dart';
-import '../../../core/services/battle_messaging_service.dart';
 import '../../../core/providers/kill_switch_provider.dart';
 import '../../../core/providers/quick_practice_providers.dart';
 import '../../../core/responsive/app_breakpoints.dart';
@@ -37,6 +36,7 @@ import '../widgets/get_started_card.dart';
 import '../widgets/recovery_plan_section.dart';
 import '../providers/daily_drill_provider.dart';
 import '../../memory_pairs/widgets/push_memory_pairs_debug_card.dart';
+import '../../mini_games/widgets/push_revision_game_debug_card.dart';
 import '../../push_spot_test/widgets/push_spot_test_debug_card.dart';
 import '../../daily_ca/widgets/daily_ca_home_card.dart';
 import '../../daily_war/providers/daily_war_providers.dart';
@@ -67,13 +67,7 @@ class HomeScreen extends HookConsumerWidget {
       data: (s) => s.isActive,
       orElse: () => false,
     );
-    final prefsAsync = ref.watch(prefsServiceProvider);
     final cachedStreakText = useState<String?>(null);
-    final pushPromptPending = prefsAsync.maybeWhen(
-      data: (p) => p.pushPermissionPromptPendingAfterFirstTest,
-      orElse: () => false,
-    );
-    final pushPromptInFlight = useRef(false);
     final isSuperUser = ref.watch(isSuperUserProvider);
     final showAdminDashboard = canAccessAdminDashboard(
       isSuperUser: isSuperUser,
@@ -151,34 +145,6 @@ class HomeScreen extends HookConsumerWidget {
       }
       return () => homeScrollController.removeListener(onScroll);
     }, [getStartedSheetPending.value, homeScrollController]);
-
-    useEffect(() {
-      if (!pushPromptPending || pushPromptInFlight.value) return null;
-      var cancelled = false;
-      unawaited(() async {
-        final prefs = await ref.read(prefsServiceProvider.future);
-        if (cancelled || !prefs.pushPermissionPromptPendingAfterFirstTest) {
-          return;
-        }
-        pushPromptInFlight.value = true;
-
-        await WidgetsBinding.instance.endOfFrame;
-        if (cancelled || !context.mounted) return;
-
-        await BattleMessagingService.requestPushAuthorizationIfNotDetermined(
-          source: 'post_first_test',
-        );
-
-        if (cancelled) return;
-        final p = await ref.read(prefsServiceProvider.future);
-        p.pushPermissionPromptPendingAfterFirstTest = false;
-        ref.invalidate(prefsServiceProvider);
-        pushPromptInFlight.value = false;
-      }());
-      return () {
-        cancelled = true;
-      };
-    }, [pushPromptPending]);
 
     useEffect(() {
       home.whenData((h) {
@@ -717,6 +683,8 @@ class HomeScreen extends HookConsumerWidget {
                     if (kDebugMode) ...[
                       const SizedBox(height: AppSpacing.lg),
                       const PushMemoryPairsDebugCard(),
+                      const SizedBox(height: AppSpacing.sm),
+                      const PushRevisionGameDebugCard(),
                       const SizedBox(height: AppSpacing.sm),
                       const PushSpotTestDebugCard(),
                     ],

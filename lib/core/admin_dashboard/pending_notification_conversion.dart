@@ -3,6 +3,7 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import '../services/battle_messaging_service.dart';
 import '../../features/community/open_challenge/open_challenge_fcm.dart';
 import '../../features/memory_pairs/push/push_memory_pairs_fcm.dart';
+import '../../features/mini_games/push/push_revision_game_fcm.dart';
 import '../../features/notifications/long_html_notification_constants.dart';
 import '../../features/push_spot_test/push_spot_test_fcm.dart';
 
@@ -58,6 +59,10 @@ abstract final class PendingNotificationConversion {
     if (kind == PushMemoryPairsFcm.kind) {
       final setId = PushMemoryPairsFcm.setIdFromData(data) ?? '';
       return 'memory__$setId';
+    }
+    if (kind == PushRevisionGameFcm.kind) {
+      final gameId = PushRevisionGameFcm.gameIdFromData(data) ?? '';
+      return 'revision_game__$gameId';
     }
     if (kind == OpenChallengeFcm.kind) {
       final id = data[OpenChallengeFcm.challengeId]?.toString().trim() ?? '';

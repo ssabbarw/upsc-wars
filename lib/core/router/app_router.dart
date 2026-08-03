@@ -75,6 +75,7 @@ import '../../features/memory_pairs/push/push_memory_pairs_launch_params.dart';
 import '../../features/memory_pairs/screens/memory_pairs_screen.dart';
 import '../../features/memory_pairs/screens/push_memory_pairs_welcome_screen.dart';
 import '../../features/mini_games/hub/games_hub_screen.dart';
+import '../../features/mini_games/push/push_revision_game_fcm.dart';
 import '../../features/mini_games/timeline_sorter/timeline_sorter_screen.dart';
 import '../../features/mini_games/odd_one_out/odd_one_out_screen.dart';
 import '../../features/mini_games/fact_or_bluff/fact_or_bluff_screen.dart';
@@ -157,7 +158,13 @@ GoRouter appRouter(Ref ref) {
         GoRoute(
           path: '/games',
           name: 'games_hub',
-          builder: (context, state) => const GamesHubScreen(asShellTab: true),
+          builder: (context, state) => GamesHubScreen(
+            asShellTab: true,
+            openConfigGame: state.uri
+                .queryParameters[PushRevisionGameFcm.queryKeyConfig],
+            openConfigNonce: state.uri
+                .queryParameters[PushRevisionGameFcm.queryKeyNonce],
+          ),
           routes: [
             GoRoute(
               parentNavigatorKey: rootNavigatorKey,

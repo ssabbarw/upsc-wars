@@ -257,17 +257,9 @@ class _RemindersStep extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final done = state.todo2Done;
-    final unlocked = state.todo2Unlocked;
 
     if (done) {
       return const _CollapsedDoneRow(title: 'Reminders on');
-    }
-
-    if (!unlocked) {
-      return const _LockedRow(
-        title: 'Turn on daily reminders',
-        trailing: 'After step 1',
-      );
     }
 
     return _ActiveCompactStep(
@@ -532,42 +524,6 @@ class _ActiveCompactStep extends StatelessWidget {
                 ],
               ],
             ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class _LockedRow extends StatelessWidget {
-  const _LockedRow({required this.title, required this.trailing});
-
-  final String title;
-  final String trailing;
-
-  @override
-  Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-    final muted = scheme.onSurfaceVariant.withValues(alpha: 0.7);
-
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 14),
-      child: Row(
-        children: [
-          Icon(Icons.lock_outline_rounded, size: 18, color: muted),
-          const SizedBox(width: 12),
-          Expanded(
-            child: Text(
-              title,
-              style: AppTextStyles.label().copyWith(
-                color: muted,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-          ),
-          Text(
-            trailing,
-            style: AppTextStyles.caption().copyWith(color: muted),
           ),
         ],
       ),

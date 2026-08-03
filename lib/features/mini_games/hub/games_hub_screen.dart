@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -9,6 +10,7 @@ import '../connect_the_dots/connect_the_dots_controller.dart';
 import '../duel/duel_controller.dart';
 import '../fact_or_bluff/fact_or_bluff_controller.dart';
 import '../odd_one_out/odd_one_out_controller.dart';
+import '../push/push_revision_game_fcm.dart';
 import '../shared/mini_game_models.dart';
 import '../shared/revision_game_analytics.dart';
 import '../shared/revision_games_theme.dart';
@@ -17,6 +19,7 @@ import '../timeline_sorter/timeline_sorter_controller.dart';
 
 class _GameEntry {
   const _GameEntry({
+    required this.id,
     required this.title,
     required this.description,
     required this.route,
@@ -27,6 +30,8 @@ class _GameEntry {
     this.highlighted = false,
   });
 
+  /// Stable id matching [RevisionGameNames] / FCM `game` payload.
+  final String id;
   final String title;
   final String description;
   final String route;
@@ -47,6 +52,7 @@ class _GameEntry {
 
 const _games = [
   _GameEntry(
+    id: RevisionGameNames.memoryPairs,
     title: 'Memory Pairs',
     description: 'Match terms to answers — train recall.',
     route: '/memory-pairs',
@@ -56,6 +62,7 @@ const _games = [
     usesConfigPicker: false,
   ),
   _GameEntry(
+    id: RevisionGameNames.timelineSorter,
     title: 'Timeline Sorter',
     description: 'Put events in the right order.',
     route: '/games/timeline-sorter',
@@ -64,6 +71,7 @@ const _games = [
     sessionSize: timelineSessionSize,
   ),
   _GameEntry(
+    id: RevisionGameNames.oddOneOut,
     title: 'Odd One Out',
     description: 'Pick the odd one out.',
     route: '/games/odd-one-out',
@@ -72,6 +80,7 @@ const _games = [
     sessionSize: oddOneOutSessionSize,
   ),
   _GameEntry(
+    id: RevisionGameNames.factOrBluff,
     title: 'Fact or Bluff',
     description: 'Ten seconds. Trust your gut.',
     route: '/games/fact-or-bluff',
@@ -80,6 +89,7 @@ const _games = [
     sessionSize: factOrBluffSessionSize,
   ),
   _GameEntry(
+    id: RevisionGameNames.connectTheDots,
     title: 'Connect the Dots',
     description: 'Find the hidden link.',
     route: '/games/connect-the-dots',
@@ -88,6 +98,7 @@ const _games = [
     sessionSize: connectTheDotsSessionSize,
   ),
   _GameEntry(
+    id: RevisionGameNames.duel,
     title: '1v1 Duel',
     description: 'One phone, two players, fastest wins.',
     route: '/games/duel',
@@ -98,6 +109,14 @@ const _games = [
   ),
 ];
 
+_GameEntry? _gameEntryById(String? rawId) {
+  final id = PushRevisionGameFcm.normalizeGameId(rawId ?? '');
+  if (id == null) return null;
+  for (final game in _games) {
+    if (game.id == id) return game;
+  }
+  return null;
+}
 class _GameLaunchConfig {
   const _GameLaunchConfig({
     required this.subjects,
@@ -261,9 +280,14 @@ class _SubjectPickerSheetState extends State<_SubjectPickerSheet> {
             ),
           ),
           const SizedBox(height: 14),
-          RgMonoLabel('${widget.gameTitle} · Config'),
+          const RgMonoLabel('Config'),
           const SizedBox(height: 4),
-          Text('Set up your session', style: RgText.display(size: 16)),
+          Text(widget.gameTitle, style: RgText.display(size: 20)),
+          const SizedBox(height: 4),
+          Text(
+            'Set up your session',
+            style: RgText.body(size: 13, color: RgColors.muted),
+          ),
           const SizedBox(height: 12),
           const RgMonoLabel('Language'),
           const SizedBox(height: 6),
@@ -338,15 +362,43 @@ class _SubjectPickerSheetState extends State<_SubjectPickerSheet> {
 }
 
 class GamesHubScreen extends HookConsumerWidget {
-  const GamesHubScreen({super.key, this.asShellTab = false});
+  const GamesHubScreen({
+    super.key,
+    this.asShellTab = false,
+    this.openConfigGame,
+    this.openConfigNonce,
+  });
 
   /// When true, hide back and wrap with [PopToShellHomeScope] (bottom-nav tab).
   final bool asShellTab;
+
+  /// When set (e.g. from FCM `/games?config=timeline_sorter`), auto-opens that
+  /// game's config bottom sheet after the hub mounts.
+  final String? openConfigGame;
+
+  /// Changes on each push so the same [openConfigGame] can re-trigger.
+  final String? openConfigNonce;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     useGameScreenOpenedAnalytics(ref, RevisionGameNames.gamesHub);
     final lang = watchAppLanguage(ref);
+    final openedKey = useRef<String?>(null);
+
+    useEffect(() {
+      final game = _gameEntryById(openConfigGame);
+      if (game == null) return null;
+      final key = '${game.id}|${openConfigNonce ?? ''}';
+      if (openedKey.value == key) return null;
+      openedKey.value = key;
+      var cancelled = false;
+      WidgetsBinding.instance.addPostFrameCallback((_) async {
+        if (cancelled || !context.mounted) return;
+        await _openGame(context, ref, game);
+      });
+      return () => cancelled = true;
+    }, [openConfigGame, openConfigNonce]);
+
     final hub = RgGameScaffold(
       title: 'Revision Games',
       centerTitle: true,
@@ -369,7 +421,6 @@ class GamesHubScreen extends HookConsumerWidget {
     return PopToShellHomeScope(child: hub);
   }
 }
-
 class _GameCard extends StatelessWidget {
   const _GameCard({required this.game, required this.onTap});
 

@@ -7,8 +7,9 @@ import '../domain/activation_journey_constants.dart';
 
 /// State for the 3-step home activation checklist (START HERE).
 ///
-/// Order: (1) demo test → (2) turn on daily reminders (enables the 2nd-day
-/// return) → (3) Danger Zone (previews early at 20 attempts, full map at 50).
+/// Steps: (1) demo test, (2) turn on daily reminders (independent of step 1;
+/// enables the 2nd-day return), (3) Danger Zone (previews early at 20 attempts,
+/// full map at 50).
 class HomeActivationJourneyState {
   const HomeActivationJourneyState({
     required this.demoOrFirstTestDone,
@@ -44,9 +45,6 @@ class HomeActivationJourneyState {
       ActivationJourneyConstants.confidenceMapUnlockAttempts;
 
   bool get todo1Done => demoOrFirstTestDone;
-
-  /// Reminders unlock after the demo / first test.
-  bool get todo2Unlocked => todo1Done;
 
   bool get todo2Done => remindersEnabled;
 
