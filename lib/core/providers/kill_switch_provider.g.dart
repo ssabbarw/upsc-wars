@@ -48,7 +48,7 @@ final class KillSwitchProvider
   }
 }
 
-String _$killSwitchHash() => r'238fc19e75858708acbf136d38ed6738a581e549';
+String _$killSwitchHash() => r'68de48e42c5afd1777011c975a261e6b97b6c7d6';
 
 /// Whether the Community tab should be shown (after [killSwitchProvider] fetch).
 ///
@@ -366,60 +366,6 @@ final class DailyWarLiveCountPollSecondsRemoteProvider
 
 String _$dailyWarLiveCountPollSecondsRemoteHash() =>
     r'b27b16069ff788ec83b0c2b3e228e7ae224858ec';
-
-/// Which mini-game step onboarding shows (A/B via Remote Config).
-///
-/// Defaults to [onboardingGamePeekOnly]. Recognizes
-/// [onboardingGameFactOrBluff] and [onboardingGameMemoryPairs] when RC sets
-/// them explicitly; any other value, read error, or web keeps the peek.
-/// Waits for [killSwitchProvider] so RC defaults / fetch have run on mobile.
-
-@ProviderFor(onboardingGameRemote)
-final onboardingGameRemoteProvider = OnboardingGameRemoteProvider._();
-
-/// Which mini-game step onboarding shows (A/B via Remote Config).
-///
-/// Defaults to [onboardingGamePeekOnly]. Recognizes
-/// [onboardingGameFactOrBluff] and [onboardingGameMemoryPairs] when RC sets
-/// them explicitly; any other value, read error, or web keeps the peek.
-/// Waits for [killSwitchProvider] so RC defaults / fetch have run on mobile.
-
-final class OnboardingGameRemoteProvider
-    extends $FunctionalProvider<AsyncValue<String>, String, FutureOr<String>>
-    with $FutureModifier<String>, $FutureProvider<String> {
-  /// Which mini-game step onboarding shows (A/B via Remote Config).
-  ///
-  /// Defaults to [onboardingGamePeekOnly]. Recognizes
-  /// [onboardingGameFactOrBluff] and [onboardingGameMemoryPairs] when RC sets
-  /// them explicitly; any other value, read error, or web keeps the peek.
-  /// Waits for [killSwitchProvider] so RC defaults / fetch have run on mobile.
-  OnboardingGameRemoteProvider._()
-    : super(
-        from: null,
-        argument: null,
-        retry: null,
-        name: r'onboardingGameRemoteProvider',
-        isAutoDispose: false,
-        dependencies: null,
-        $allTransitiveDependencies: null,
-      );
-
-  @override
-  String debugGetCreateSourceHash() => _$onboardingGameRemoteHash();
-
-  @$internal
-  @override
-  $FutureProviderElement<String> $createElement($ProviderPointer pointer) =>
-      $FutureProviderElement(pointer);
-
-  @override
-  FutureOr<String> create(Ref ref) {
-    return onboardingGameRemote(ref);
-  }
-}
-
-String _$onboardingGameRemoteHash() =>
-    r'bb18c36ea63600afe10fb8cf5f0192afc28d8ffb';
 
 /// Fact or Bluff countdown length from Remote Config (seconds).
 ///

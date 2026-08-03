@@ -47,20 +47,6 @@ const qotdMaxPostsPerDayRemoteConfigKey = 'qotd_max_posts_per_day';
 /// Remote Config: Fact or Bluff countdown seconds (int, default 10).
 const factOrBluffSecondsRemoteConfigKey = 'fact_or_bluff_seconds';
 
-/// Remote Config: which mini-game step the onboarding flow shows on page 2.
-/// One of [onboardingGamePeekOnly] (default), [onboardingGameFactOrBluff],
-/// or [onboardingGameMemoryPairs].
-const onboardingGameRemoteConfigKey = 'onboarding_game';
-
-/// [onboardingGameRemoteConfigKey] value: memory-pairs matching demo.
-const onboardingGameMemoryPairs = 'memory_pairs';
-
-/// [onboardingGameRemoteConfigKey] value: fact-or-bluff demo.
-const onboardingGameFactOrBluff = 'fact_or_bluff';
-
-/// [onboardingGameRemoteConfigKey] value: non-interactive peek (app default).
-const onboardingGamePeekOnly = 'peek_only';
-
 /// Remote Config: mirrors Firestore `question_corrections/active.revision` (int).
 const questionCorrectionsRevisionRemoteConfigKey =
     'question_corrections_revision';
@@ -117,7 +103,6 @@ Future<KillSwitchSnapshot> killSwitch(Ref ref) async {
       dailyCaCalendarMinDateRemoteConfigKey: '2026-06-05',
       qotdMaxPostsPerDayRemoteConfigKey: 3,
       factOrBluffSecondsRemoteConfigKey: 10,
-      onboardingGameRemoteConfigKey: onboardingGamePeekOnly,
       questionCorrectionsRevisionRemoteConfigKey: 0,
       adminDashboardCollectionEnabledRemoteConfigKey: true,
       // YYYY-MM-DD (time defaults to 09:30 local)
@@ -272,30 +257,6 @@ Future<int> dailyWarLiveCountPollSecondsRemote(Ref ref) async {
     return n.clamp(3, 60);
   } on Object catch (_) {
     return fallback;
-  }
-}
-
-/// Which mini-game step onboarding shows (A/B via Remote Config).
-///
-/// Defaults to [onboardingGamePeekOnly]. Recognizes
-/// [onboardingGameFactOrBluff] and [onboardingGameMemoryPairs] when RC sets
-/// them explicitly; any other value, read error, or web keeps the peek.
-/// Waits for [killSwitchProvider] so RC defaults / fetch have run on mobile.
-@Riverpod(keepAlive: true)
-Future<String> onboardingGameRemote(Ref ref) async {
-  if (kIsWeb) return onboardingGamePeekOnly;
-  try {
-    await ref.watch(killSwitchProvider.future);
-    final v = FirebaseRemoteConfig.instance
-        .getString(onboardingGameRemoteConfigKey)
-        .trim();
-    return switch (v) {
-      onboardingGameMemoryPairs => onboardingGameMemoryPairs,
-      onboardingGameFactOrBluff => onboardingGameFactOrBluff,
-      _ => onboardingGamePeekOnly,
-    };
-  } on Object catch (_) {
-    return onboardingGamePeekOnly;
   }
 }
 

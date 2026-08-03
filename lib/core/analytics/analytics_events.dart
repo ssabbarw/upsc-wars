@@ -409,12 +409,11 @@ final class DeferredPushHomeNudgeDismissedEvent extends AnalyticsEvent {
   const DeferredPushHomeNudgeDismissedEvent();
 }
 
-// ── First-run onboarding (horizontal + vertical trial card) ──────────
+// ── First-run onboarding (thesis → trap → MCQ → confidence map) ──────
 
 /// **Time the user spent on one horizontal step** of the first-run flow before
-/// swiping to the next, or the last step before “Get started.” [step] is
-/// `score_story`, then one of `fact_or_bluff_demo` / `memory_pairs_demo` /
-/// `games_peek` (per the `onboarding_game` Remote Config choice), or `loop`.
+/// swiping to the next, or the last step before “Let’s go.” [step] is
+/// `thesis`, `trap`, `mcq`, or `promise`.
 ///
 /// **GA4:** `onboarding_step_duration` with `step`, `duration_ms` (int).
 final class OnboardingStepDurationEvent extends AnalyticsEvent {
@@ -427,23 +426,14 @@ final class OnboardingStepDurationEvent extends AnalyticsEvent {
   final int durationMs;
 }
 
-/// **On the first horizontal page, the user swiped the vertical “Typical test
-/// series / swipe up” card** to the hidden “UPSC Wars advantage” page (first
-/// time only in that visit).
-///
-/// **GA4:** `onboarding_reveal_trial_swiped` (no parameters).
-final class OnboardingRevealTrialSwipedEvent extends AnalyticsEvent {
-  const OnboardingRevealTrialSwipedEvent();
-}
-
-/// **The four-page onboarding flow screen opened** (funnel start).
+/// **The three-page onboarding flow screen opened** (funnel start).
 ///
 /// **GA4:** `onboarding_flow_opened` (no parameters).
 final class OnboardingFlowOpenedEvent extends AnalyticsEvent {
   const OnboardingFlowOpenedEvent();
 }
 
-/// **User tapped “Get started” on the last page**; [totalDurationMs] is
+/// **User finished onboarding** (last-page CTA or Skip); [totalDurationMs] is
 /// time since [OnboardingFlowOpenedEvent] for the same visit.
 ///
 /// **GA4:** `onboarding_flow_completed` with `total_duration_ms` (int).
@@ -458,7 +448,8 @@ final class OnboardingFlowCompletedEvent extends AnalyticsEvent {
 /// drop-out signal.
 ///
 /// **GA4:** `onboarding_exited_incomplete` with:
-/// * `highest_step` — furthest step id reached (`score_story` …);
+/// * `highest_step` — furthest step id reached (`thesis` / `trap` / `mcq` /
+///   `promise`);
 /// * `last_step` — page index at exit mapped the same way;
 /// * `elapsed_ms` — time from flow open;
 /// * `reached_last_step` — 1 if the user ever reached the final horizontal page.

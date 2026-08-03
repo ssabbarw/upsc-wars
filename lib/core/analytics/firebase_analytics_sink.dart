@@ -26,8 +26,7 @@ import 'analytics_sink.dart';
 /// * `battle_invite_accepted` — (none)
 /// * `push_permission_snapshot` — `status`, `allows_push` (0/1); also sets user property `push_alerts`
 /// * `push_permission_prompt_result` — `status`, `allows_push` (0/1), `source`; also sets `push_alerts`
-/// * `onboarding_step_duration` — `step`, `duration_ms`
-/// * `onboarding_reveal_trial_swiped` — (none)
+/// * `onboarding_step_duration` — `step` (`thesis` / `mcq` / `promise`), `duration_ms`
 /// * `onboarding_flow_opened` / `onboarding_flow_completed` — `total_duration_ms` on completed only
 /// * `onboarding_exited_incomplete` — `highest_step`, `last_step`, `elapsed_ms`, `reached_last_step` (0/1)
 /// * `deferred_push_education_outcome` — `source`, `modal_index`, `tapped_enable` (0/1)
@@ -236,8 +235,6 @@ class FirebaseAnalyticsSink implements AnalyticsSink {
           'step': step,
           'duration_ms': durationMs,
         });
-      case OnboardingRevealTrialSwipedEvent():
-        await _log('onboarding_reveal_trial_swiped', const {});
       case OnboardingFlowOpenedEvent():
         await _log('onboarding_flow_opened', const {});
       case OnboardingFlowCompletedEvent(:final totalDurationMs):

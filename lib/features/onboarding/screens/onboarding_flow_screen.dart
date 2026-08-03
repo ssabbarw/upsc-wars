@@ -3,50 +3,37 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/analytics/activation_milestones.dart';
 import '../../../core/analytics/analytics.dart';
 import '../../../core/analytics/analytics_events.dart';
 import '../../../core/analytics/screen_flow_analytics.dart';
-import '../../../core/providers/kill_switch_provider.dart';
 import '../../../core/providers/prefs_provider.dart';
-import '../../../core/theme/app_colors.dart';
-import '../../../core/theme/app_radius.dart';
-import '../widgets/onboarding_fact_or_bluff_page.dart';
-import '../widgets/onboarding_games_peek_page.dart';
-import '../widgets/onboarding_memory_pairs_page.dart';
+import '../../mini_games/shared/revision_games_theme.dart';
+import '../data/onboarding_mcq_data.dart';
+import '../widgets/onboarding_promise_page.dart';
+import '../widgets/onboarding_mcq_page.dart';
+import '../widgets/onboarding_scale.dart';
+import '../widgets/onboarding_thesis_page.dart';
+import '../widgets/onboarding_trap_page.dart';
 
-/// Scale vs ~390dp shortest side (phone-first baseline); clamped for large/small devices.
-double _onbScale(BuildContext context) {
-  final shortest = MediaQuery.sizeOf(context).shortestSide;
-  return (shortest / 390).clamp(0.78, 1.22);
-}
-
-double _onb(BuildContext context, double designPx) =>
-    designPx * _onbScale(context);
-
-/// Horizontal pager step id for [OnboardingStepDurationEvent]. The middle
-/// step id reflects which [onboarding_game] Remote Config chose.
-String _onboardingStepIdForIndex(int i, String demoGame) {
+/// Horizontal pager step id for [OnboardingStepDurationEvent].
+String _onboardingStepIdForIndex(int i) {
   return switch (i) {
-    0 => 'score_story',
-    1 => switch (demoGame) {
-      onboardingGameFactOrBluff => 'fact_or_bluff_demo',
-      onboardingGameMemoryPairs => 'memory_pairs_demo',
-      _ => 'games_peek',
-    },
-    2 => 'loop',
+    0 => 'thesis',
+    1 => 'trap',
+    2 => 'mcq',
+    3 => 'promise',
     _ => 'unknown',
   };
 }
 
-/// First-run onboarding: score story → games step (RC A/B) → daily loop.
+/// First-run onboarding: thesis → trap → markable MCQ → animated promise.
 class OnboardingFlowScreen extends HookConsumerWidget {
   const OnboardingFlowScreen({super.key});
 
-  static const int _pageCount = 3;
+  static const int _pageCount = 4;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -57,29 +44,63 @@ class OnboardingFlowScreen extends HookConsumerWidget {
     final onboardingFlowCompleted = useRef(false);
     final highestPageIndex = useRef(0);
     final lastPageIndex = useRef(0);
+
+    final mcqSelected = useState<int?>(null);
+    final mcqConfidence = useState<OnboardingMcqConfidence?>(null);
+    final mcqOutcome = useState<OnboardingMcqOutcome?>(null);
+    final mcqOutcomeResolved = useRef(false);
+
     final bottom = MediaQuery.paddingOf(context).bottom;
-    final isLast = page.value == _pageCount - 1;
-    final onGameDemoPage = page.value == 1;
-    final hPad = _onb(context, 20);
-    final vPadSm = _onb(context, 8);
+    final hPad = onb(context, 20);
+    final showSkip = page.value < _pageCount - 1;
 
-    // Which middle-step variant Remote Config chose. Frozen once the user
-    // reaches page 1 so a late RC fetch cannot swap the content mid-view.
-    final demoGameFrozen = useRef<String?>(null);
-    final demoGame =
-        demoGameFrozen.value ??
-        ref.watch(onboardingGameRemoteProvider).asData?.value ??
-        onboardingGamePeekOnly;
-    if (page.value >= 1) demoGameFrozen.value ??= demoGame;
-    final demoGameRef = useRef(demoGame);
-    demoGameRef.value = demoGame;
-    // Interactive demos lock swipe so taps aren't stolen; peek allows swipe.
-    final lockDemoSwipe =
-        onGameDemoPage && demoGame != onboardingGamePeekOnly;
+    OnboardingMcqOutcome resolveOutcome() {
+      final selected = mcqSelected.value;
+      if (selected == null) return OnboardingMcqOutcome.skipped;
+      final option = kOnboardingMcq.options[selected];
+      return option.isCorrect
+          ? OnboardingMcqOutcome.correct
+          : OnboardingMcqOutcome.wrong;
+    }
 
-    void goToLoopPage() {
+    void showMcqOutcome() {
+      if (mcqOutcome.value != null) return;
+      // Answered without picking a confidence level reads as a guess.
+      if (mcqSelected.value != null && mcqConfidence.value == null) {
+        mcqConfidence.value = OnboardingMcqConfidence.guessing;
+      }
+      mcqOutcome.value = resolveOutcome();
+      final confidenceSuffix = mcqConfidence.value == null
+          ? ''
+          : '_${mcqConfidence.value!.name}';
+      ScreenFlow.logAction(
+        ref,
+        screenName: ScreenFlow.onboarding,
+        actionId: 'mcq_outcome_${mcqOutcome.value!.name}$confidenceSuffix',
+      );
+    }
+
+    Future<void> completeFlow({required String actionId}) async {
+      ScreenFlow.logAction(
+        ref,
+        screenName: ScreenFlow.onboarding,
+        actionId: actionId,
+      );
+      await _complete(
+        ref,
+        context,
+        markFlowCompleted: () {
+          onboardingFlowCompleted.value = true;
+        },
+        lastStepIndex: page.value,
+        lastStepStartedAt: pageEnteredAt.value,
+        onboardingFlowStartedAt: onboardingFlowStartedAt.value,
+      );
+    }
+
+    void goToPage(int i) {
       pageController.animateToPage(
-        _pageCount - 1,
+        i,
         duration: const Duration(milliseconds: 320),
         curve: Curves.easeOutCubic,
       );
@@ -101,14 +122,8 @@ class OnboardingFlowScreen extends HookConsumerWidget {
           Analytics.track(
             ref,
             OnboardingExitedIncompleteEvent(
-              highestStep: _onboardingStepIdForIndex(
-                highestPageIndex.value,
-                demoGameRef.value,
-              ),
-              lastStep: _onboardingStepIdForIndex(
-                lastPageIndex.value,
-                demoGameRef.value,
-              ),
+              highestStep: _onboardingStepIdForIndex(highestPageIndex.value),
+              lastStep: _onboardingStepIdForIndex(lastPageIndex.value),
               elapsedMs: ms,
               reachedLastStep: highestPageIndex.value == _pageCount - 1,
             ),
@@ -119,209 +134,122 @@ class OnboardingFlowScreen extends HookConsumerWidget {
 
     return PopScope(
       canPop: false,
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 220),
-        curve: Curves.easeOutCubic,
-        color: isLast ? AppColors.primaryDeep : AppColors.surfacePrimaryLight,
-        child: Scaffold(
-          backgroundColor: Colors.transparent,
-          body: SafeArea(
-            child: LayoutBuilder(
-              builder: (context, constraints) {
-                final h = constraints.maxHeight;
-                if (h <= 0) {
-                  return const SizedBox.shrink();
-                }
-                final topInset = h * 0.1;
-                return Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    SizedBox(height: topInset),
-                    Expanded(
-                      child: PageView(
-                        controller: pageController,
-                        physics: lockDemoSwipe
-                            ? const NeverScrollableScrollPhysics()
-                            : const BouncingScrollPhysics(),
-                        onPageChanged: (i) {
-                          final from = page.value;
-                          final ms = DateTime.now()
-                              .difference(pageEnteredAt.value)
-                              .inMilliseconds;
-                          if (ms >= 0) {
-                            unawaited(
-                              Analytics.track(
-                                ref,
-                                OnboardingStepDurationEvent(
-                                  step: _onboardingStepIdForIndex(
-                                    from,
-                                    demoGameRef.value,
-                                  ),
-                                  durationMs: ms,
-                                ),
-                              ),
-                            );
-                          }
-                          pageEnteredAt.value = DateTime.now();
-                          page.value = i;
-                          lastPageIndex.value = i;
-                          if (i > highestPageIndex.value) {
-                            highestPageIndex.value = i;
-                          }
+      child: Scaffold(
+        backgroundColor: RgColors.pageBg,
+        body: SafeArea(
+          child: Padding(
+            padding: EdgeInsets.fromLTRB(
+              hPad,
+              onb(context, 10),
+              hPad,
+              bottom + onb(context, 10),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                _TopChrome(
+                  index: page.value,
+                  count: _pageCount,
+                  showSkip: showSkip,
+                  onSkip: () {
+                    unawaited(completeFlow(actionId: 'onboarding_skipped'));
+                  },
+                ),
+                SizedBox(height: onb(context, 14)),
+                Expanded(
+                  child: PageView(
+                    controller: pageController,
+                    // Forward = buttons only; swipe only goes back.
+                    physics: const _OnboardingBackOnlyPhysics(
+                      parent: BouncingScrollPhysics(),
+                    ),
+                    onPageChanged: (i) {
+                      final from = page.value;
+
+                      // Safety: never land on promise until Got it (buttons).
+                      if (i == 3 && !mcqOutcomeResolved.value) {
+                        showMcqOutcome();
+                        pageController.jumpToPage(2);
+                        page.value = 2;
+                        return;
+                      }
+
+                      final ms = DateTime.now()
+                          .difference(pageEnteredAt.value)
+                          .inMilliseconds;
+                      if (ms >= 0) {
+                        unawaited(
+                          Analytics.track(
+                            ref,
+                            OnboardingStepDurationEvent(
+                              step: _onboardingStepIdForIndex(from),
+                              durationMs: ms,
+                            ),
+                          ),
+                        );
+                      }
+                      pageEnteredAt.value = DateTime.now();
+                      page.value = i;
+                      lastPageIndex.value = i;
+                      if (i > highestPageIndex.value) {
+                        highestPageIndex.value = i;
+                      }
+                    },
+                    children: [
+                      OnboardingThesisPage(
+                        onContinue: () {
+                          ScreenFlow.logAction(
+                            ref,
+                            screenName: ScreenFlow.onboarding,
+                            actionId: 'thesis_continued',
+                          );
+                          goToPage(1);
                         },
-                        children: [
-                          _ScoreStoryPage(
-                            onFirstRevealCardSwipe: () {
-                              unawaited(
-                                Analytics.track(
-                                  ref,
-                                  const OnboardingRevealTrialSwipedEvent(),
-                                ),
-                              );
-                            },
-                          ),
-                          switch (demoGame) {
-                            onboardingGameFactOrBluff =>
-                              OnboardingFactOrBluffPage(
-                                onSkip: () {
-                                  ScreenFlow.logAction(
-                                    ref,
-                                    screenName: ScreenFlow.onboarding,
-                                    actionId: 'fact_or_bluff_demo_skipped',
-                                  );
-                                  goToLoopPage();
-                                },
-                                onContinue: () {
-                                  ScreenFlow.logAction(
-                                    ref,
-                                    screenName: ScreenFlow.onboarding,
-                                    actionId: 'fact_or_bluff_demo_completed',
-                                  );
-                                  goToLoopPage();
-                                },
-                              ),
-                            onboardingGameMemoryPairs =>
-                              OnboardingMemoryPairsPage(
-                                onSkip: () {
-                                  ScreenFlow.logAction(
-                                    ref,
-                                    screenName: ScreenFlow.onboarding,
-                                    actionId: 'memory_pairs_demo_skipped',
-                                  );
-                                  goToLoopPage();
-                                },
-                                onContinue: () {
-                                  ScreenFlow.logAction(
-                                    ref,
-                                    screenName: ScreenFlow.onboarding,
-                                    actionId: 'memory_pairs_demo_completed',
-                                  );
-                                  goToLoopPage();
-                                },
-                              ),
-                            _ => OnboardingGamesPeekPage(
-                              onContinue: () {
-                                ScreenFlow.logAction(
-                                  ref,
-                                  screenName: ScreenFlow.onboarding,
-                                  actionId: 'games_peek_continued',
-                                );
-                                goToLoopPage();
-                              },
-                            ),
-                          },
-                          const _LoopPage(),
-                        ],
                       ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.fromLTRB(
-                        hPad,
-                        vPadSm,
-                        hPad,
-                        bottom + _onb(context, 4),
+                      OnboardingTrapPage(
+                        onContinue: () {
+                          ScreenFlow.logAction(
+                            ref,
+                            screenName: ScreenFlow.onboarding,
+                            actionId: 'trap_continued',
+                          );
+                          goToPage(2);
+                        },
                       ),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          _DotRow(
-                            index: page.value,
-                            count: _pageCount,
-                            dark: isLast,
-                          ),
-                          // Pages 0 and 2 get a bottom CTA; the games step
-                          // (page 1) has its own Continue / Skip controls.
-                          if (page.value == 0 || isLast) ...[
-                            SizedBox(height: _onb(context, 10)),
-                            FilledButton(
-                              onPressed: () {
-                                if (!isLast) {
-                                  ScreenFlow.logAction(
-                                    ref,
-                                    screenName: ScreenFlow.onboarding,
-                                    actionId: 'score_story_continued',
-                                  );
-                                  pageController.animateToPage(
-                                    1,
-                                    duration: const Duration(
-                                      milliseconds: 320,
-                                    ),
-                                    curve: Curves.easeOutCubic,
-                                  );
-                                  return;
-                                }
-                                ScreenFlow.logAction(
-                                  ref,
-                                  screenName: ScreenFlow.onboarding,
-                                  actionId: 'get_started',
-                                );
-                                unawaited(
-                                  _complete(
-                                    ref,
-                                    context,
-                                    markFlowCompleted: () {
-                                      onboardingFlowCompleted.value = true;
-                                    },
-                                    demoGame: demoGameRef.value,
-                                    lastStepIndex: page.value,
-                                    lastStepStartedAt: pageEnteredAt.value,
-                                    onboardingFlowStartedAt:
-                                        onboardingFlowStartedAt.value,
-                                  ),
-                                );
-                              },
-                              style: FilledButton.styleFrom(
-                                backgroundColor: AppColors.primary,
-                                foregroundColor: AppColors.onPrimary,
-                                elevation: 0,
-                                padding: EdgeInsets.symmetric(
-                                  vertical: _onb(context, 15),
-                                ),
-                                minimumSize: Size(
-                                  double.infinity,
-                                  _onb(context, 50),
-                                ),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(
-                                    AppRadius.lg,
-                                  ),
-                                ),
-                              ),
-                              child: Text(
-                                isLast ? 'Get started' : 'Continue',
-                                style: GoogleFonts.dmSans(
-                                  fontSize: _onb(context, 16),
-                                  fontWeight: FontWeight.w700,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ],
+                      OnboardingMcqPage(
+                        selectedIndex: mcqSelected.value,
+                        confidence: mcqConfidence.value,
+                        outcome: mcqOutcome.value,
+                        onSelect: (i) => mcqSelected.value = i,
+                        onConfidenceSelect: (c) => mcqConfidence.value = c,
+                        onContinue: showMcqOutcome,
+                        onGotIt: () {
+                          mcqOutcomeResolved.value = true;
+                          ScreenFlow.logAction(
+                            ref,
+                            screenName: ScreenFlow.onboarding,
+                            actionId: 'mcq_got_it',
+                          );
+                          goToPage(3);
+                        },
                       ),
-                    ),
-                  ],
-                );
-              },
+                      OnboardingPromisePage(
+                        isActive: page.value == 3,
+                        onGetStarted: () {
+                          unawaited(
+                            completeFlow(actionId: 'promise_get_started'),
+                          );
+                        },
+                        onSkip: () {
+                          unawaited(
+                            completeFlow(actionId: 'promise_skipped'),
+                          );
+                        },
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
           ),
         ),
@@ -334,29 +262,25 @@ Future<void> _complete(
   WidgetRef ref,
   BuildContext context, {
   required void Function() markFlowCompleted,
-  required String demoGame,
   required int lastStepIndex,
   required DateTime lastStepStartedAt,
   required DateTime onboardingFlowStartedAt,
 }) async {
   markFlowCompleted();
-  final ms = DateTime.now()
-      .difference(lastStepStartedAt)
-      .inMilliseconds;
+  final ms = DateTime.now().difference(lastStepStartedAt).inMilliseconds;
   if (ms >= 0) {
     unawaited(
       Analytics.track(
         ref,
         OnboardingStepDurationEvent(
-          step: _onboardingStepIdForIndex(lastStepIndex, demoGame),
+          step: _onboardingStepIdForIndex(lastStepIndex),
           durationMs: ms,
         ),
       ),
     );
   }
-  final totalMs = DateTime.now()
-      .difference(onboardingFlowStartedAt)
-      .inMilliseconds;
+  final totalMs =
+      DateTime.now().difference(onboardingFlowStartedAt).inMilliseconds;
   if (totalMs >= 0) {
     unawaited(
       Analytics.track(
@@ -378,871 +302,97 @@ Future<void> _complete(
   if (context.mounted) context.go('/');
 }
 
-// ── Shared chrome ─────────────────────────────────────────────────────────
-
-class _DotRow extends StatelessWidget {
-  const _DotRow({required this.index, required this.count, required this.dark});
+class _TopChrome extends StatelessWidget {
+  const _TopChrome({
+    required this.index,
+    required this.count,
+    required this.showSkip,
+    required this.onSkip,
+  });
 
   final int index;
   final int count;
-  final bool dark;
+  final bool showSkip;
+  final VoidCallback onSkip;
 
   @override
   Widget build(BuildContext context) {
-    final dotH = _onb(context, 7);
-    final dotOnW = _onb(context, 18);
-    final dotOffW = _onb(context, 7);
     return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: List.generate(count, (i) {
-        final on = i == index;
-        return Padding(
-          padding: EdgeInsets.symmetric(horizontal: _onb(context, 4)),
-          child: AnimatedContainer(
-            duration: const Duration(milliseconds: 200),
-            width: on ? dotOnW : dotOffW,
-            height: dotH,
-            decoration: BoxDecoration(
-              color: on
-                  ? AppColors.primary
-                  : (dark
-                        ? AppColors.onSurfaceDark.withValues(alpha: 0.25)
-                        : AppColors.gray200),
-              borderRadius: BorderRadius.circular(100),
-            ),
-          ),
-        );
-      }),
-    );
-  }
-}
-
-TextStyle _eyebrow(BuildContext context, bool onDark) => GoogleFonts.dmSans(
-  fontSize: _onb(context, 11),
-  fontWeight: FontWeight.w700,
-  letterSpacing: 1.6,
-  color: onDark ? AppColors.correctTextDark : AppColors.primaryDark,
-);
-
-TextStyle _headline(BuildContext context, bool onDark) => GoogleFonts.dmSans(
-  fontSize: _onb(context, 26),
-  height: 1.15,
-  fontWeight: FontWeight.w700,
-  letterSpacing: -0.5,
-  color: onDark ? AppColors.onSurfaceDark : AppColors.onSurfaceLight,
-);
-
-TextStyle _body(BuildContext context, bool onDark) => GoogleFonts.dmSans(
-  fontSize: _onb(context, 15),
-  height: 1.5,
-  fontWeight: FontWeight.w400,
-  color: onDark
-      ? AppColors.onSurfaceVariantDark
-      : AppColors.onSurfaceVariantLight,
-);
-
-/// Scales [children] to the page viewport; no scroll. Avoid vertical
-/// [Expanded] under this path (see [_hiddenSlide]).
-Widget _onboardingFittedPage({
-  required EdgeInsets padding,
-  required List<Widget> children,
-}) {
-  return LayoutBuilder(
-    builder: (context, constraints) {
-      var maxW = constraints.maxWidth;
-      if (!maxW.isFinite || maxW <= 0) {
-        maxW = MediaQuery.sizeOf(context).width;
-      }
-      return RepaintBoundary(
-        child: FittedBox(
-          fit: BoxFit.scaleDown,
-          alignment: Alignment.topCenter,
-          clipBehavior: Clip.hardEdge,
-          child: ConstrainedBox(
-            constraints: BoxConstraints(maxWidth: maxW),
-            child: Padding(
-              padding: padding,
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: children,
-              ),
-            ),
-          ),
-        ),
-      );
-    },
-  );
-}
-
-/// First step: split “latest test vs hidden risk” story (reference layout).
-class _ScoreStoryPage extends StatefulWidget {
-  const _ScoreStoryPage({this.onFirstRevealCardSwipe});
-
-  final VoidCallback? onFirstRevealCardSwipe;
-
-  @override
-  State<_ScoreStoryPage> createState() => _ScoreStoryPageState();
-}
-
-class _ScoreStoryPageState extends State<_ScoreStoryPage> {
-  late final PageController _revealScroll = PageController();
-
-  @override
-  void dispose() {
-    _revealScroll.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return _onboardingFittedPage(
-      padding: EdgeInsets.fromLTRB(
-        _onb(context, 22),
-        _onb(context, 8),
-        _onb(context, 22),
-        _onb(context, 4),
-      ),
       children: [
-        SizedBox(height: _onb(context, 6)),
-        Text.rich(
-          TextSpan(
-            style: GoogleFonts.dmSans(
-              fontSize: _onb(context, 24),
-              height: 1.18,
-              fontWeight: FontWeight.w700,
-              letterSpacing: -0.4,
-              color: AppColors.onSurfaceLight,
-            ),
-            children: [
-              const TextSpan(text: 'You may be losing marks because of '),
-              TextSpan(
-                text: 'confident mistakes.',
-                style: GoogleFonts.dmSans(
-                  fontSize: _onb(context, 24),
-                  height: 1.18,
-                  fontWeight: FontWeight.w800,
-                  letterSpacing: -0.4,
-                  color: AppColors.primaryDark,
-                ),
-              ),
-            ],
-          ),
-        ),
-        SizedBox(height: _onb(context, 10)),
-        _RevealTrialCard(
-          pageController: _revealScroll,
-          onFirstVerticalReveal: widget.onFirstRevealCardSwipe,
-        ),
-        SizedBox(height: _onb(context, 10)),
-        Text(
-          'DISCOVER INSIGHTS LIKE',
-          style: GoogleFonts.dmSans(
-            fontSize: _onb(context, 11),
-            fontWeight: FontWeight.w800,
-            letterSpacing: 1.2,
-            color: AppColors.primaryDark,
-          ),
-        ),
-        SizedBox(height: _onb(context, 6)),
-        _DiscoverChevronTile(
-          icon: Icons.warning_amber_rounded,
-          iconColor: AppColors.summaryOrange,
-          text:
-              'Find topics and subjects where your \'confident\' or \'educated guess\' answers are usually wrong',
-        ),
-        SizedBox(height: _onb(context, 6)),
-        _DiscoverChevronTile(
-          icon: Icons.trending_up_rounded,
-          iconColor: AppColors.primary,
-          text: 'Find topics where your educated guesses are most accurate',
-        ),
-        SizedBox(height: _onb(context, 6)),
-        _DiscoverChevronTile(
-          icon: Icons.lightbulb_outline_rounded,
-          iconColor: AppColors.info,
-          text: 'Trap types you fall for most often',
-        ),
-      ],
-    );
-  }
-}
-
-/// Trial: vertical [PageView] (typical stats vs UPSC Wars); pager dots sit
-/// on top of the slides (semi-transparent pill, trailing side).
-class _RevealTrialCard extends StatefulWidget {
-  const _RevealTrialCard({
-    required this.pageController,
-    this.onFirstVerticalReveal,
-  });
-
-  final PageController pageController;
-  final VoidCallback? onFirstVerticalReveal;
-
-  @override
-  State<_RevealTrialCard> createState() => _RevealTrialCardState();
-}
-
-class _RevealTrialCardState extends State<_RevealTrialCard> {
-  /// Card viewport height (matches design ~220 at baseline scale).
-  double _cardHeight(BuildContext context) => _onb(context, 220);
-
-  /// Scroll offset for peek: almost 50% of the next slide visible; kept a
-  /// hair under half the viewport so [PageView] does not snap to page 1.
-  double _peekScrollOffset(BuildContext context) =>
-      _cardHeight(context) * 0.5 - 1;
-
-  PageController get _pageController => widget.pageController;
-
-  int _pageIndex = 0;
-  bool _firedFirstRevealAnalytics = false;
-
-  Future<void> _playSwipeUpHint() async {
-    if (!mounted || _pageIndex != 0) return;
-    for (var w = 0; w < 12 && mounted && !_pageController.hasClients; w++) {
-      await Future<void>.delayed(const Duration(milliseconds: 40));
-    }
-    if (!mounted || !_pageController.hasClients || _pageIndex != 0) return;
-    final ph = _cardHeight(context);
-    final target = _peekScrollOffset(context).clamp(0.0, ph * 0.499);
-    for (var n = 0; n < 2; n++) {
-      if (!mounted || _pageIndex != 0 || !_pageController.hasClients) return;
-      try {
-        await _pageController.animateTo(
-          target,
-          duration: const Duration(milliseconds: 720),
-          curve: Curves.easeInOutCubic,
-        );
-      } catch (_) {
-        return;
-      }
-      if (!mounted || _pageIndex != 0 || !_pageController.hasClients) return;
-      try {
-        await _pageController.animateTo(
-          0,
-          duration: const Duration(milliseconds: 680),
-          curve: Curves.easeInOutCubic,
-        );
-      } catch (_) {
-        return;
-      }
-      if (n == 0 && mounted && _pageIndex == 0) {
-        await Future<void>.delayed(const Duration(milliseconds: 200));
-      }
-    }
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (!mounted) return;
-      Future<void>.delayed(const Duration(milliseconds: 850), () {
-        if (mounted && _pageIndex == 0) unawaited(_playSwipeUpHint());
-      });
-    });
-  }
-
-  TextStyle _leakMeta(BuildContext context) {
-    return GoogleFonts.dmSans(
-      fontSize: _onb(context, 12),
-      height: 1.35,
-      fontWeight: FontWeight.w600,
-      color: AppColors.onSurfaceDark.withValues(alpha: 0.88),
-    );
-  }
-
-  Widget _surfaceSlide(BuildContext context) {
-    return DecoratedBox(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.centerLeft,
-          end: Alignment.centerRight,
-          colors: [
-            AppColors.primaryDeep,
-            Color.lerp(AppColors.primaryDeep, AppColors.primary, 0.22)!,
-          ],
-        ),
-      ),
-      child: Stack(
-        fit: StackFit.expand,
-        children: [
-          Positioned(
-            left: 0,
-            top: 0,
-            bottom: 0,
-            width: _onb(context, 3),
-            child: DecoratedBox(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.centerLeft,
-                  end: Alignment.centerRight,
-                  colors: [
-                    AppColors.primary,
-                    AppColors.primary.withValues(alpha: 0),
-                  ],
-                ),
-              ),
-            ),
-          ),
-          Positioned(
-            left: 0,
-            top: 0,
-            bottom: 0,
-            width: 1,
-            child: ColoredBox(
-              color: AppColors.correctTextDark.withValues(alpha: 0.5),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.fromLTRB(
-              _onb(context, 16),
-              _onb(context, 12),
-              _onb(context, 14),
-              _onb(context, 12),
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'Typical test series stats:',
-                  style: GoogleFonts.dmSans(
-                    fontSize: _onb(context, 13),
-                    fontWeight: FontWeight.w800,
-                    height: 1.2,
-                    letterSpacing: 0.1,
-                    color: AppColors.correctTextDark.withValues(alpha: 0.92),
+        Expanded(
+          child: Row(
+            children: List.generate(count, (i) {
+              final on = i == index;
+              final passed = i < index;
+              return Padding(
+                padding: EdgeInsets.only(right: onb(context, 5)),
+                child: AnimatedContainer(
+                  duration: const Duration(milliseconds: 200),
+                  height: onb(context, 6),
+                  width: on
+                      ? onb(context, 18)
+                      : passed
+                      ? onb(context, 10)
+                      : onb(context, 6),
+                  decoration: BoxDecoration(
+                    color: on
+                        ? RgColors.ink
+                        : passed
+                        ? RgColors.ink.withValues(alpha: 0.35)
+                        : RgColors.border,
+                    borderRadius: BorderRadius.circular(onb(context, 4)),
                   ),
                 ),
-                SizedBox(height: _onb(context, 8)),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Text.rich(
-                      TextSpan(
-                        children: [
-                          TextSpan(
-                            text: '70',
-                            style: GoogleFonts.dmSans(
-                              fontSize: _onb(context, 36),
-                              fontWeight: FontWeight.w800,
-                              height: 1,
-                              letterSpacing: -1,
-                              color: AppColors.correctTextDark,
-                            ),
-                          ),
-                          TextSpan(
-                            text: ' / 100',
-                            style: GoogleFonts.dmSans(
-                              fontSize: _onb(context, 15),
-                              fontWeight: FontWeight.w600,
-                              height: 1.05,
-                              color: AppColors.onSurfaceDark,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    const Spacer(),
-                    Padding(
-                      padding: EdgeInsets.only(right: _onb(context, 40)),
-                      child: DecoratedBox(
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: [
-                              AppColors.primary.withValues(alpha: 0.4),
-                              AppColors.primary.withValues(alpha: 0.18),
-                            ],
-                          ),
-                          borderRadius: BorderRadius.circular(_onb(context, 9)),
-                          border: Border.all(
-                            color: AppColors.correctTextDark.withValues(
-                              alpha: 0.5,
-                            ),
-                          ),
-                        ),
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: _onb(context, 10),
-                            vertical: _onb(context, 7),
-                          ),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Icon(
-                                Icons.verified_rounded,
-                                size: _onb(context, 15),
-                                color: AppColors.correctTextDark,
-                              ),
-                              SizedBox(width: _onb(context, 5)),
-                              Text(
-                                'Strong attempt',
-                                style: GoogleFonts.dmSans(
-                                  fontSize: _onb(context, 11),
-                                  fontWeight: FontWeight.w800,
-                                  letterSpacing: 0.2,
-                                  color: AppColors.correctTextDark,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(height: _onb(context, 8)),
-                Text(
-                  'Swipe up for how UPSC Wars reads the same attempt.',
-                  style: GoogleFonts.dmSans(
-                    fontSize: _onb(context, 12),
-                    height: 1.35,
-                    fontWeight: FontWeight.w500,
-                    color: AppColors.onSurfaceDark.withValues(alpha: 0.82),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _hiddenSlide(BuildContext context) {
-    final leakMeta = _leakMeta(context);
-    return DecoratedBox(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: [
-            AppColors.wrongBgDark,
-            Color.lerp(AppColors.wrongBgDark, AppColors.gray900, 0.42)!,
-          ],
-        ),
-      ),
-      child: Padding(
-        padding: EdgeInsets.fromLTRB(
-          _onb(context, 14),
-          _onb(context, 10),
-          _onb(context, 14),
-          _onb(context, 10),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'UPSC Wars advantage:',
-              style: GoogleFonts.dmSans(
-                fontSize: _onb(context, 13),
-                fontWeight: FontWeight.w800,
-                height: 1.2,
-                letterSpacing: 0.1,
-                color: AppColors.wrongTextDark.withValues(alpha: 0.92),
-              ),
-            ),
-            SizedBox(height: _onb(context, 8)),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Icon(
-                  Icons.gpp_bad_rounded,
-                  size: _onb(context, 22),
-                  color: AppColors.wrongTextDark,
-                ),
-                SizedBox(width: _onb(context, 10)),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        '8 high-confidence misses',
-                        style: GoogleFonts.dmSans(
-                          fontSize: _onb(context, 15),
-                          fontWeight: FontWeight.w800,
-                          height: 1.2,
-                          color: AppColors.wrongTextDark,
-                        ),
-                      ),
-                      SizedBox(height: _onb(context, 4)),
-                      Text(
-                        'Answers you were sure about — wrong anyway.',
-                        style: leakMeta,
-                      ),
-                      SizedBox(height: _onb(context, 2)),
-                      Text(
-                        '≈ −5.28 marks after negative marking',
-                        style: GoogleFonts.dmSans(
-                          fontSize: _onb(context, 11),
-                          fontWeight: FontWeight.w700,
-                          color: AppColors.wrongTextDark.withValues(alpha: 0.9),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: _onb(context, 8)),
-              child: Divider(
-                height: 1,
-                thickness: 0.5,
-                color: AppColors.onSurfaceDark.withValues(alpha: 0.14),
-              ),
-            ),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Icon(
-                  Icons.psychology_alt_rounded,
-                  size: _onb(context, 22),
-                  color: AppColors.summaryOrange,
-                ),
-                SizedBox(width: _onb(context, 10)),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        '5 educated guesses — wrong',
-                        style: GoogleFonts.dmSans(
-                          fontSize: _onb(context, 15),
-                          fontWeight: FontWeight.w800,
-                          height: 1.2,
-                          color: AppColors.summaryOrange,
-                        ),
-                      ),
-                      SizedBox(height: _onb(context, 4)),
-                      Text(
-                        'Smart elimination still burns the same penalty.',
-                        style: leakMeta,
-                      ),
-                      SizedBox(height: _onb(context, 2)),
-                      Text(
-                        'Same marking hit, different story',
-                        style: GoogleFonts.dmSans(
-                          fontSize: _onb(context, 11),
-                          fontWeight: FontWeight.w700,
-                          color: AppColors.onSurfaceVariantDark,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  /// Vertical pager dots drawn on top of the slides (not in a side gutter).
-  Widget _overlayVerticalDots(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: List.generate(2, (i) {
-        final active = i == _pageIndex;
-        return Padding(
-          padding: EdgeInsets.symmetric(vertical: _onb(context, 4)),
-          child: GestureDetector(
-            onTap: () {
-              _pageController.animateToPage(
-                i,
-                duration: const Duration(milliseconds: 280),
-                curve: Curves.easeOutCubic,
               );
-            },
-            child: AnimatedContainer(
-              duration: const Duration(milliseconds: 220),
-              curve: Curves.easeOutCubic,
-              width: _onb(context, 6),
-              height: active ? _onb(context, 20) : _onb(context, 7),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(_onb(context, 3)),
-                color: active
-                    ? AppColors.surfacePrimaryLight.withValues(alpha: 0.95)
-                    : AppColors.surfacePrimaryLight.withValues(alpha: 0.48),
-                border: Border.all(
-                  color: active
-                      ? AppColors.surfacePrimaryLight.withValues(alpha: 0.75)
-                      : AppColors.surfacePrimaryLight.withValues(alpha: 0.62),
-                ),
-              ),
-            ),
-          ),
-        );
-      }),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final pageH = _cardHeight(context);
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        SizedBox(
-          height: pageH,
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(AppRadius.lg),
-            child: Stack(
-              fit: StackFit.expand,
-              children: [
-                PageView(
-                  scrollDirection: Axis.vertical,
-                  controller: _pageController,
-                  physics: const BouncingScrollPhysics(),
-                  onPageChanged: (i) {
-                    if (i == 1 &&
-                        _pageIndex == 0 &&
-                        !_firedFirstRevealAnalytics) {
-                      _firedFirstRevealAnalytics = true;
-                      widget.onFirstVerticalReveal?.call();
-                    }
-                    setState(() => _pageIndex = i);
-                  },
-                  children: [_surfaceSlide(context), _hiddenSlide(context)],
-                ),
-                Positioned(
-                  right: _onb(context, 10),
-                  top: 0,
-                  bottom: 0,
-                  child: Center(
-                    child: DecoratedBox(
-                      decoration: BoxDecoration(
-                        color: AppColors.surfacePrimaryLight.withValues(
-                          alpha: 0.38,
-                        ),
-                        borderRadius: BorderRadius.circular(_onb(context, 12)),
-                        border: Border.all(
-                          color: AppColors.gray200.withValues(alpha: 0.45),
-                        ),
-                        boxShadow: [
-                          BoxShadow(
-                            color: AppColors.gray900.withValues(alpha: 0.06),
-                            blurRadius: _onb(context, 8),
-                            offset: Offset(0, _onb(context, 1)),
-                          ),
-                        ],
-                      ),
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: _onb(context, 7),
-                          vertical: _onb(context, 10),
-                        ),
-                        child: _overlayVerticalDots(context),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
+            }),
           ),
         ),
-      ],
-    );
-  }
-}
-
-class _DiscoverChevronTile extends StatelessWidget {
-  const _DiscoverChevronTile({
-    required this.icon,
-    required this.iconColor,
-    required this.text,
-  });
-
-  final IconData icon;
-  final Color iconColor;
-  final String text;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(
-        horizontal: _onb(context, 12),
-        vertical: _onb(context, 12),
-      ),
-      decoration: BoxDecoration(
-        color: AppColors.surfaceSecondaryLight,
-        borderRadius: BorderRadius.circular(AppRadius.md),
-        border: Border.all(color: AppColors.borderLight),
-      ),
-      child: Row(
-        children: [
-          Icon(icon, size: _onb(context, 22), color: iconColor),
-          SizedBox(width: _onb(context, 10)),
-          Expanded(
+        if (showSkip)
+          TextButton(
+            onPressed: onSkip,
+            style: TextButton.styleFrom(
+              foregroundColor: RgColors.muted,
+              padding: EdgeInsets.symmetric(horizontal: onb(context, 8)),
+              minimumSize: Size(onb(context, 44), onb(context, 32)),
+              tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+            ),
             child: Text(
-              text,
-              style: GoogleFonts.dmSans(
-                fontSize: _onb(context, 14),
-                height: 1.4,
-                fontWeight: FontWeight.w500,
-                color: AppColors.onSurfaceLight,
+              'SKIP',
+              style: RgText.mono(
+                size: onb(context, 10),
+                letterSpacingEm: 0.05,
+                color: RgColors.muted,
               ),
             ),
           ),
-          Icon(
-            Icons.chevron_right_rounded,
-            color: AppColors.gray400,
-            size: _onb(context, 22),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-// ── Page 2 ────────────────────────────────────────────────────────────────
-
-class _LoopPage extends StatelessWidget {
-  const _LoopPage();
-
-  @override
-  Widget build(BuildContext context) {
-    return _onboardingFittedPage(
-      padding: EdgeInsets.fromLTRB(
-        _onb(context, 22),
-        _onb(context, 4),
-        _onb(context, 22),
-        _onb(context, 0),
-      ),
-      children: [
-        Text('DAILY COMPETITIVE LOOP', style: _eyebrow(context, true)),
-        SizedBox(height: _onb(context, 6)),
-        Text('Consistency clears prelims.', style: _headline(context, true)),
-        SizedBox(height: _onb(context, 4)),
-        Text(
-          'Short daily reps — drill weak topics, review what hurt, and '
-          'compete — so confident mistakes stop repeating.',
-          style: _body(context, true),
-        ),
-        SizedBox(height: _onb(context, 8)),
-        _LoopMiniCard(
-          color: AppColors.correctBgDark,
-          border: AppColors.primary.withValues(alpha: 0.45),
-          icon: Icons.topic_outlined,
-          iconColor: AppColors.correctTextDark,
-          title: 'Topic-wise mastery',
-          subtitle: 'Drills tied to the syllabus, not loose MCQs.',
-        ),
-        SizedBox(height: _onb(context, 4)),
-        _LoopMiniCard(
-          color: AppColors.warningBgDark,
-          border: AppColors.warning.withValues(alpha: 0.4),
-          icon: Icons.history_rounded,
-          iconColor: AppColors.warningTextDark,
-          title: 'Session history',
-          subtitle: 'See what you attempted and where it hurt.',
-        ),
-        SizedBox(height: _onb(context, 4)),
-        _LoopMiniCard(
-          color: AppColors.infoBgDark,
-          border: AppColors.info.withValues(alpha: 0.45),
-          icon: Icons.groups_outlined,
-          iconColor: AppColors.infoTextDark,
-          title: '1 on 1 MCQ battles & community',
-          subtitle: 'Engage with other aspirants and feel the competition',
-        ),
-        SizedBox(height: _onb(context, 6)),
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Icon(
-              Icons.flag_outlined,
-              color: AppColors.primary,
-              size: _onb(context, 22),
-            ),
-            SizedBox(width: _onb(context, 8)),
-            Expanded(
-              child: Text(
-                'A loop tuned to the prelims calendar — progress, '
-                'not randomness.',
-                style: GoogleFonts.dmSans(
-                  fontSize: _onb(context, 14),
-                  height: 1.35,
-                  fontWeight: FontWeight.w600,
-                  color: AppColors.onSurfaceDark,
-                ),
-              ),
-            ),
-          ],
-        ),
       ],
     );
   }
 }
 
-class _LoopMiniCard extends StatelessWidget {
-  const _LoopMiniCard({
-    required this.color,
-    required this.border,
-    required this.icon,
-    required this.iconColor,
-    required this.title,
-    required this.subtitle,
-  });
-
-  final Color color;
-  final Color border;
-  final IconData icon;
-  final Color iconColor;
-  final String title;
-  final String subtitle;
+/// Allows swipe/drag only toward previous pages. Forward advances via buttons.
+class _OnboardingBackOnlyPhysics extends PageScrollPhysics {
+  const _OnboardingBackOnlyPhysics({super.parent});
 
   @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      padding: EdgeInsets.all(_onb(context, 14)),
-      decoration: BoxDecoration(
-        color: color,
-        borderRadius: BorderRadius.circular(AppRadius.md),
-        border: Border.all(color: border),
-      ),
-      child: Row(
-        children: [
-          Container(
-            width: _onb(context, 40),
-            height: _onb(context, 40),
-            decoration: BoxDecoration(
-              color: AppColors.surfacePrimaryDark.withValues(alpha: 0.35),
-              borderRadius: BorderRadius.circular(_onb(context, 10)),
-            ),
-            child: Icon(icon, color: iconColor, size: _onb(context, 22)),
-          ),
-          SizedBox(width: _onb(context, 12)),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: GoogleFonts.dmSans(
-                    fontSize: _onb(context, 14),
-                    fontWeight: FontWeight.w700,
-                    color: AppColors.onSurfaceDark,
-                  ),
-                ),
-                SizedBox(height: _onb(context, 2)),
-                Text(
-                  subtitle,
-                  style: GoogleFonts.dmSans(
-                    fontSize: _onb(context, 12),
-                    height: 1.35,
-                    fontWeight: FontWeight.w400,
-                    color: AppColors.onSurfaceVariantDark,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
+  _OnboardingBackOnlyPhysics applyTo(ScrollPhysics? ancestor) {
+    return _OnboardingBackOnlyPhysics(parent: buildParent(ancestor));
+  }
+
+  @override
+  double applyPhysicsToUserOffset(ScrollMetrics position, double offset) {
+    // LTR PageView: positive offset moves toward the next page.
+    if (offset > 0) return 0;
+    return offset;
+  }
+
+  @override
+  Simulation? createBallisticSimulation(
+    ScrollMetrics position,
+    double velocity,
+  ) {
+    // Kill flings that would advance to the next page.
+    final v = velocity > 0 ? 0.0 : velocity;
+    return super.createBallisticSimulation(position, v);
   }
 }
