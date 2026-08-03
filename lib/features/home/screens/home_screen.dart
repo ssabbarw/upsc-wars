@@ -76,8 +76,9 @@ class HomeScreen extends HookConsumerWidget {
     );
     final pushPromptInFlight = useRef(false);
     final isSuperUser = ref.watch(isSuperUserProvider);
-    final showAdminDashboard =
-        canAccessAdminDashboard(isSuperUser: isSuperUser);
+    final showAdminDashboard = canAccessAdminDashboard(
+      isSuperUser: isSuperUser,
+    );
 
     final past200ms = useState(false);
     useEffect(() {
@@ -140,10 +141,7 @@ class HomeScreen extends HookConsumerWidget {
         if (!context.mounted) return;
         prefs.getStartedSheetPendingAfterOnboarding = false;
         ref.invalidate(prefsServiceProvider);
-        await showGetStartedDiagnosticIntroSheet(
-          context,
-          postOnboarding: true,
-        );
+        await showGetStartedDiagnosticIntroSheet(context, postOnboarding: true);
       }
 
       void onScroll() => unawaited(maybeShowOnHomeInteraction());
@@ -264,467 +262,509 @@ class HomeScreen extends HookConsumerWidget {
                         ),
                   padding: const EdgeInsets.all(AppSpacing.lg),
                   children: [
-                  if (bootstrap.hasError)
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: AppSpacing.md),
-                      child: Material(
-                        color: scheme.surfaceContainerLow,
-                        borderRadius: BorderRadius.circular(AppRadius.md),
-                        child: Padding(
-                          padding: const EdgeInsets.all(AppSpacing.lg),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Question bank unavailable',
-                                style: AppTextStyles.label().copyWith(
-                                  color: scheme.onSurface,
-                                ),
-                              ),
-                              const SizedBox(height: AppSpacing.xs),
-                              Text(
-                                'The question database could not be opened. Reinstall the app or ensure storage is available, then restart.',
-                                style: AppTextStyles.bodySm().copyWith(
-                                  color: scheme.onSurfaceVariant,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Material(
-                        color: AppColors.transparent,
-                        child: InkWell(
-                          onTap: openProfile,
-                          borderRadius: BorderRadius.circular(AppRadius.pill),
-                          child: Container(
-                            width: 36,
-                            height: 36,
-                            margin: const EdgeInsets.only(right: AppSpacing.sm),
-                            decoration: BoxDecoration(
-                              color: !accountSignedIn
-                                  ? scheme.surfaceContainerLow
-                                  : avatarBackgroundColor,
-                              shape: BoxShape.circle,
-                              border: Border.all(
-                                color: borderColor,
-                                width: 0.5,
-                              ),
-                            ),
-                            child: !accountSignedIn
-                                ? Icon(
-                                    Icons.person_outline,
-                                    size: 18,
-                                    color: scheme.onSurfaceVariant,
-                                  )
-                                : ClipOval(
-                                    child: CachedNetworkImage(
-                                      imageUrl:
-                                          AppConstants.profileImageUrlOrDefault(
-                                            user!.photoURL,
-                                          ),
-                                      width: 36,
-                                      height: 36,
-                                      fit: BoxFit.cover,
-                                      memCacheWidth:
-                                          (36 *
-                                                  MediaQuery.devicePixelRatioOf(
-                                                    context,
-                                                  ))
-                                              .round(),
-                                      fadeInDuration: Duration.zero,
-                                      fadeOutDuration: Duration.zero,
-                                      errorWidget: (context, url, error) =>
-                                          Center(
-                                            child: Text(
-                                              avatarInitials,
-                                              style: AppTextStyles.label()
-                                                  .copyWith(
-                                                    color: scheme
-                                                        .onPrimaryContainer,
-                                                  ),
-                                            ),
-                                          ),
-                                    ),
-                                  ),
-                          ),
-                        ),
-                      ),
-                      Expanded(
+                    if (bootstrap.hasError)
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: AppSpacing.md),
                         child: Material(
-                          color: AppColors.transparent,
-                          child: InkWell(
-                            onTap: openProfile,
-                            borderRadius: BorderRadius.circular(AppRadius.md),
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                vertical: AppSpacing.xs,
-                              ),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    greeting,
-                                    style: AppTextStyles.h2().copyWith(
-                                      color: scheme.onSurface,
-                                    ),
-                                  ),
-                                  Text(
-                                    userName,
-                                    style: AppTextStyles.bodySm().copyWith(
-                                      color: scheme.onSurfaceVariant,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      Material(
-                        color: AppColors.transparent,
-                        child: InkWell(
-                          onTap: () async {
-                            await setDarkModeEnabled(
-                              ref: ref,
-                              darkModeEnabled: !isDark,
-                            );
-                          },
+                          color: scheme.surfaceContainerLow,
                           borderRadius: BorderRadius.circular(AppRadius.md),
-                          child: Container(
-                            padding: const EdgeInsets.all(AppSpacing.sm),
-                            margin: const EdgeInsets.only(right: AppSpacing.sm),
-                            decoration: BoxDecoration(
-                              color: scheme.surfaceContainerLow,
-                              borderRadius: BorderRadius.circular(AppRadius.md),
-                              border: Border.all(
-                                color: borderColor,
-                                width: 0.5,
-                              ),
-                            ),
-                            child: Icon(
-                              isDark ? Icons.dark_mode : Icons.light_mode,
-                              size: 18,
-                              color: scheme.onSurfaceVariant,
-                            ),
-                          ),
-                        ),
-                      ),
-                      Material(
-                        color: AppColors.transparent,
-                        child: InkWell(
-                          onTap: () => context.push('/settings'),
-                          borderRadius: BorderRadius.circular(AppRadius.md),
-                          child: Container(
-                            padding: const EdgeInsets.all(AppSpacing.sm),
-                            decoration: BoxDecoration(
-                              color: scheme.surfaceContainerLow,
-                              borderRadius: BorderRadius.circular(AppRadius.md),
-                              border: Border.all(
-                                color: borderColor,
-                                width: 0.5,
-                              ),
-                            ),
-                            child: Icon(
-                              Icons.settings_outlined,
-                              size: 18,
-                              color: scheme.onSurfaceVariant,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: AppSpacing.sm),
-                  Row(
-                    children: [
-                      const PrelimsDaysInfo(),
-                      const Spacer(),
-                      Consumer(
-                        builder: (context, ref, _) {
-                          final warOn = ref
-                                  .watch(dailyWarRemoteEnabledProvider)
-                                  .asData
-                                  ?.value ??
-                              false;
-                          final warUnplayed = warOn &&
-                              (ref
-                                      .watch(dailyWarHomeSnapshotProvider)
-                                      .warUnplayed);
-                          final warStreak =
-                              ref.watch(dailyWarStreakCountProvider);
-                          final streakAccent = warOn
-                              ? (warUnplayed
-                                  ? DwColors.crimson
-                                  : AppColors.streak)
-                              : AppColors.streak;
-                          final streakLabel = warOn
-                              ? (warStreak == 0
-                                  ? 'Start War streak'
-                                  : '$warStreak War')
-                              : home.when(
-                                  data: (h) => h.streakCount == 0
-                                      ? 'Start your streak'
-                                      : '${h.streakCount} days',
-                                  loading: () =>
-                                      cachedStreakText.value ??
-                                      'Start your streak',
-                                  error: (error, stackTrace) =>
-                                      cachedStreakText.value ??
-                                      'Start your streak',
-                                );
-                          return Container(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: AppSpacing.md,
-                              vertical: AppSpacing.sm,
-                            ),
-                            decoration: BoxDecoration(
-                              color: scheme.surfaceContainerLow,
-                              borderRadius:
-                                  BorderRadius.circular(AppRadius.pill),
-                              border: Border.all(
-                                color: warUnplayed
-                                    ? DwColors.crimson
-                                        .withValues(alpha: 0.45)
-                                    : borderColor,
-                                width: warUnplayed ? 1 : 0.5,
-                              ),
-                            ),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
+                          child: Padding(
+                            padding: const EdgeInsets.all(AppSpacing.lg),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Icon(
-                                  Icons.local_fire_department,
-                                  color: streakAccent,
-                                  size: 16,
-                                ),
-                                const SizedBox(width: AppSpacing.xs),
                                 Text(
-                                  streakLabel,
-                                  style: AppTextStyles.caption().copyWith(
+                                  'Question bank unavailable',
+                                  style: AppTextStyles.label().copyWith(
                                     color: scheme.onSurface,
                                   ),
                                 ),
-                                if (warUnplayed) ...[
-                                  const SizedBox(width: 6),
-                                  Container(
-                                    width: 6,
-                                    height: 6,
-                                    decoration: const BoxDecoration(
-                                      color: DwColors.crimson,
-                                      shape: BoxShape.circle,
+                                const SizedBox(height: AppSpacing.xs),
+                                Text(
+                                  'The question database could not be opened. Reinstall the app or ensure storage is available, then restart.',
+                                  style: AppTextStyles.bodySm().copyWith(
+                                    color: scheme.onSurfaceVariant,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Material(
+                          color: AppColors.transparent,
+                          child: InkWell(
+                            onTap: openProfile,
+                            borderRadius: BorderRadius.circular(AppRadius.pill),
+                            child: Container(
+                              width: 36,
+                              height: 36,
+                              margin: const EdgeInsets.only(
+                                right: AppSpacing.sm,
+                              ),
+                              decoration: BoxDecoration(
+                                color: !accountSignedIn
+                                    ? scheme.surfaceContainerLow
+                                    : avatarBackgroundColor,
+                                shape: BoxShape.circle,
+                                border: Border.all(
+                                  color: borderColor,
+                                  width: 0.5,
+                                ),
+                              ),
+                              child: !accountSignedIn
+                                  ? Icon(
+                                      Icons.person_outline,
+                                      size: 18,
+                                      color: scheme.onSurfaceVariant,
+                                    )
+                                  : ClipOval(
+                                      child: CachedNetworkImage(
+                                        imageUrl:
+                                            AppConstants.profileImageUrlOrDefault(
+                                              user!.photoURL,
+                                            ),
+                                        width: 36,
+                                        height: 36,
+                                        fit: BoxFit.cover,
+                                        memCacheWidth:
+                                            (36 *
+                                                    MediaQuery.devicePixelRatioOf(
+                                                      context,
+                                                    ))
+                                                .round(),
+                                        fadeInDuration: Duration.zero,
+                                        fadeOutDuration: Duration.zero,
+                                        errorWidget: (context, url, error) =>
+                                            Center(
+                                              child: Text(
+                                                avatarInitials,
+                                                style: AppTextStyles.label()
+                                                    .copyWith(
+                                                      color: scheme
+                                                          .onPrimaryContainer,
+                                                    ),
+                                              ),
+                                            ),
+                                      ),
+                                    ),
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          child: Material(
+                            color: AppColors.transparent,
+                            child: InkWell(
+                              onTap: openProfile,
+                              borderRadius: BorderRadius.circular(AppRadius.md),
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(
+                                  vertical: AppSpacing.xs,
+                                ),
+                                child: Consumer(
+                                  builder: (context, ref, _) {
+                                    final journeyActive = ref
+                                        .watch(homeActivationJourneyProvider)
+                                        .maybeWhen(
+                                          data: (s) => s.shouldShowChecklist,
+                                          orElse: () => false,
+                                        );
+                                    final firstName = userName.split(' ').first;
+                                    final title = journeyActive
+                                        ? (firstName.toLowerCase() == 'aspirant'
+                                              ? 'Hey there'
+                                              : 'Hey, $firstName')
+                                        : greeting;
+                                    final subtitle = journeyActive
+                                        ? 'Three things worth doing first'
+                                        : userName;
+                                    return Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          title,
+                                          style: AppTextStyles.h2().copyWith(
+                                            color: scheme.onSurface,
+                                          ),
+                                        ),
+                                        Text(
+                                          subtitle,
+                                          style: AppTextStyles.bodySm()
+                                              .copyWith(
+                                                color: scheme.onSurfaceVariant,
+                                              ),
+                                        ),
+                                      ],
+                                    );
+                                  },
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Material(
+                          color: AppColors.transparent,
+                          child: InkWell(
+                            onTap: () async {
+                              await setDarkModeEnabled(
+                                ref: ref,
+                                darkModeEnabled: !isDark,
+                              );
+                            },
+                            borderRadius: BorderRadius.circular(AppRadius.md),
+                            child: Container(
+                              padding: const EdgeInsets.all(AppSpacing.sm),
+                              margin: const EdgeInsets.only(
+                                right: AppSpacing.sm,
+                              ),
+                              decoration: BoxDecoration(
+                                color: scheme.surfaceContainerLow,
+                                borderRadius: BorderRadius.circular(
+                                  AppRadius.md,
+                                ),
+                                border: Border.all(
+                                  color: borderColor,
+                                  width: 0.5,
+                                ),
+                              ),
+                              child: Icon(
+                                isDark ? Icons.dark_mode : Icons.light_mode,
+                                size: 18,
+                                color: scheme.onSurfaceVariant,
+                              ),
+                            ),
+                          ),
+                        ),
+                        Material(
+                          color: AppColors.transparent,
+                          child: InkWell(
+                            onTap: () => context.push('/settings'),
+                            borderRadius: BorderRadius.circular(AppRadius.md),
+                            child: Container(
+                              padding: const EdgeInsets.all(AppSpacing.sm),
+                              decoration: BoxDecoration(
+                                color: scheme.surfaceContainerLow,
+                                borderRadius: BorderRadius.circular(
+                                  AppRadius.md,
+                                ),
+                                border: Border.all(
+                                  color: borderColor,
+                                  width: 0.5,
+                                ),
+                              ),
+                              child: Icon(
+                                Icons.settings_outlined,
+                                size: 18,
+                                color: scheme.onSurfaceVariant,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: AppSpacing.sm),
+                    Row(
+                      children: [
+                        const PrelimsDaysInfo(),
+                        const Spacer(),
+                        Consumer(
+                          builder: (context, ref, _) {
+                            final warOn =
+                                ref
+                                    .watch(dailyWarRemoteEnabledProvider)
+                                    .asData
+                                    ?.value ??
+                                false;
+                            final warUnplayed =
+                                warOn &&
+                                (ref
+                                    .watch(dailyWarHomeSnapshotProvider)
+                                    .warUnplayed);
+                            final warStreak = ref.watch(
+                              dailyWarStreakCountProvider,
+                            );
+                            final streakAccent = warOn
+                                ? (warUnplayed
+                                      ? DwColors.crimson
+                                      : AppColors.streak)
+                                : AppColors.streak;
+                            final streakLabel = warOn
+                                ? (warStreak == 0
+                                      ? 'Start War streak'
+                                      : '$warStreak War')
+                                : home.when(
+                                    data: (h) => h.streakCount == 0
+                                        ? 'Start your streak'
+                                        : '${h.streakCount} days',
+                                    loading: () =>
+                                        cachedStreakText.value ??
+                                        'Start your streak',
+                                    error: (error, stackTrace) =>
+                                        cachedStreakText.value ??
+                                        'Start your streak',
+                                  );
+                            return Container(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: AppSpacing.md,
+                                vertical: AppSpacing.sm,
+                              ),
+                              decoration: BoxDecoration(
+                                color: scheme.surfaceContainerLow,
+                                borderRadius: BorderRadius.circular(
+                                  AppRadius.pill,
+                                ),
+                                border: Border.all(
+                                  color: warUnplayed
+                                      ? DwColors.crimson.withValues(alpha: 0.45)
+                                      : borderColor,
+                                  width: warUnplayed ? 1 : 0.5,
+                                ),
+                              ),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Icon(
+                                    Icons.local_fire_department,
+                                    color: streakAccent,
+                                    size: 16,
+                                  ),
+                                  const SizedBox(width: AppSpacing.xs),
+                                  Text(
+                                    streakLabel,
+                                    style: AppTextStyles.caption().copyWith(
+                                      color: scheme.onSurface,
                                     ),
                                   ),
+                                  if (warUnplayed) ...[
+                                    const SizedBox(width: 6),
+                                    Container(
+                                      width: 6,
+                                      height: 6,
+                                      decoration: const BoxDecoration(
+                                        color: DwColors.crimson,
+                                        shape: BoxShape.circle,
+                                      ),
+                                    ),
+                                  ],
                                 ],
-                              ],
+                              ),
+                            );
+                          },
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: AppSpacing.md),
+                    Consumer(
+                      builder: (context, ref, _) {
+                        final journey = ref.watch(
+                          homeActivationJourneyProvider,
+                        );
+                        final muteWar = journey.maybeWhen(
+                          data: (s) => s.shouldMuteDailyWar,
+                          orElse: () => false,
+                        );
+                        final warOn =
+                            ref
+                                .watch(dailyWarRemoteEnabledProvider)
+                                .asData
+                                ?.value ??
+                            false;
+
+                        if (muteWar) {
+                          return warOn
+                              ? const DailyWarMutedStrip()
+                              : const SizedBox.shrink();
+                        }
+
+                        // Daily drill / STEP 2 prepare dock intentionally omitted —
+                        // activation checklist + subjects own the practice CTA.
+                        return const DailyWarHomeCard();
+                      },
+                    ),
+                    Consumer(
+                      builder: (context, ref, _) {
+                        final journey = ref.watch(
+                          homeActivationJourneyProvider,
+                        );
+                        return journey.when(
+                          loading: () => const SizedBox.shrink(),
+                          error: (_, _) => const SizedBox.shrink(),
+                          data: (state) {
+                            if (!state.shouldShowChecklist) {
+                              return const SizedBox.shrink();
+                            }
+                            return Padding(
+                              padding: const EdgeInsets.only(
+                                bottom: AppSpacing.md,
+                              ),
+                              child: ActivationJourneyCard(state: state),
+                            );
+                          },
+                        );
+                      },
+                    ),
+                    const SizedBox(height: AppSpacing.md),
+                    const RecoveryPlanSection(),
+                    const SizedBox(height: AppSpacing.md),
+                    Consumer(
+                      builder: (context, ref, _) {
+                        final journey = ref.watch(
+                          homeActivationJourneyProvider,
+                        );
+                        final secondary = journey.maybeWhen(
+                          data: (s) => s.shouldShowChecklist,
+                          orElse: () => false,
+                        );
+                        return _SubjectGrid(
+                          borderColor: borderColor,
+                          secondary: secondary,
+                        );
+                      },
+                    ),
+                    const SizedBox(height: AppSpacing.md),
+                    Consumer(
+                      builder: (context, ref, _) {
+                        final journey = ref.watch(
+                          homeActivationJourneyProvider,
+                        );
+                        final hideGames = journey.maybeWhen(
+                          data: (s) => s.shouldShowChecklist,
+                          orElse: () => false,
+                        );
+                        if (hideGames) return const SizedBox.shrink();
+                        return Column(
+                          children: [
+                            GamesHomeCard(borderColor: borderColor),
+                            const SizedBox(height: AppSpacing.md),
+                          ],
+                        );
+                      },
+                    ),
+                    home.when(
+                      loading: () {
+                        if (!past200ms.value) {
+                          return SizedBox(
+                            height: 120,
+                            child: Center(
+                              child: SizedBox(
+                                width: 24,
+                                height: 24,
+                                child: CircularProgressIndicator(
+                                  strokeWidth: 2,
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                            ),
+                          );
+                        }
+                        return _HeaderLoading(borderColor: borderColor);
+                      },
+                      error: (e, st) => Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          OutlinedButton(
+                            onPressed: () => ref.invalidate(homeStateProvider),
+                            child: Text('Retry', style: AppTextStyles.label()),
+                          ),
+                        ],
+                      ),
+                      data: (h) {
+                        const pyqYears = [
+                          '2025',
+                          '2024',
+                          '2023',
+                          '2022',
+                          '2021',
+                          '2020',
+                        ];
+                        return Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            HomePageVideoBanner(borderColor: borderColor),
+                            const SizedBox(height: AppSpacing.md),
+                            Consumer(
+                              builder: (context, ref, _) {
+                                final dailyCaEnabled = ref
+                                    .watch(dailyCaRemoteEnabledProvider)
+                                    .maybeWhen(
+                                      data: (enabled) => enabled,
+                                      orElse: () => false,
+                                    );
+                                if (!dailyCaEnabled) {
+                                  return const SizedBox.shrink();
+                                }
+                                return Column(
+                                  crossAxisAlignment:
+                                      CrossAxisAlignment.stretch,
+                                  children: [
+                                    DailyCaHomeCard(borderColor: borderColor),
+                                    const SizedBox(height: AppSpacing.md),
+                                  ],
+                                );
+                              },
+                            ),
+                            _PyqYearCarousel(
+                              borderColor: borderColor,
+                              years: pyqYears,
+                            ),
+                            const SizedBox(height: AppSpacing.md),
+                            const PushDeniedBanner(),
+                            _QuickPracticeSection(borderColor: borderColor),
+                            if (h.revisionTrapCount > 0) ...[
+                              const SizedBox(height: AppSpacing.md),
+                              _TrapPatternsCard(
+                                trapCount: h.revisionTrapCount,
+                                borderColor: borderColor,
+                              ),
+                            ],
+                          ],
+                        );
+                      },
+                    ),
+                    const SizedBox(height: AppSpacing.lg),
+                    const Center(
+                      child: ContactUsTextButton(showRateReviewCta: false),
+                    ),
+                    Center(
+                      child: Consumer(
+                        builder: (context, ref, child) {
+                          return TextButton(
+                            style: TextButton.styleFrom(
+                              visualDensity: VisualDensity.compact,
+                              tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                              foregroundColor: Theme.of(
+                                context,
+                              ).colorScheme.primary,
+                            ),
+                            onPressed: () =>
+                                unawaited(showRateReviewSheet(context, ref)),
+                            child: Text(
+                              'Rate & review',
+                              style: AppTextStyles.labelSm().copyWith(
+                                fontWeight: FontWeight.w700,
+                                decoration: TextDecoration.underline,
+                              ),
                             ),
                           );
                         },
                       ),
+                    ),
+                    if (kDebugMode) ...[
+                      const SizedBox(height: AppSpacing.lg),
+                      const PushMemoryPairsDebugCard(),
+                      const SizedBox(height: AppSpacing.sm),
+                      const PushSpotTestDebugCard(),
                     ],
-                  ),
-                  const SizedBox(height: AppSpacing.md),
-                  Consumer(
-                    builder: (context, ref, _) {
-                      final journey = ref.watch(homeActivationJourneyProvider);
-                      final muteWar = journey.maybeWhen(
-                        data: (s) => s.shouldMuteDailyWar,
-                        orElse: () => false,
-                      );
-                      final warOn = ref
-                              .watch(dailyWarRemoteEnabledProvider)
-                              .asData
-                              ?.value ??
-                          false;
-
-                      if (muteWar) {
-                        return warOn
-                            ? const DailyWarMutedStrip()
-                            : const SizedBox.shrink();
-                      }
-
-                      // Daily drill / STEP 2 prepare dock intentionally omitted —
-                      // activation checklist + subjects own the practice CTA.
-                      return const DailyWarHomeCard();
-                    },
-                  ),
-                  Consumer(
-                    builder: (context, ref, _) {
-                      final journey = ref.watch(homeActivationJourneyProvider);
-                      return journey.when(
-                        loading: () => const SizedBox.shrink(),
-                        error: (_, _) => const SizedBox.shrink(),
-                        data: (state) {
-                          if (!state.shouldShowChecklist) {
-                            return const SizedBox.shrink();
-                          }
-                          return Padding(
-                            padding: const EdgeInsets.only(
-                              bottom: AppSpacing.md,
-                            ),
-                            child: ActivationJourneyCard(state: state),
-                          );
-                        },
-                      );
-                    },
-                  ),
-                  const SizedBox(height: AppSpacing.md),
-                  const RecoveryPlanSection(),
-                  const SizedBox(height: AppSpacing.md),
-                  Consumer(
-                    builder: (context, ref, _) {
-                      final journey = ref.watch(homeActivationJourneyProvider);
-                      final secondary = journey.maybeWhen(
-                        data: (s) => s.shouldShowChecklist,
-                        orElse: () => false,
-                      );
-                      return _SubjectGrid(
-                        borderColor: borderColor,
-                        secondary: secondary,
-                      );
-                    },
-                  ),
-                  const SizedBox(height: AppSpacing.md),
-                  Consumer(
-                    builder: (context, ref, _) {
-                      final journey = ref.watch(homeActivationJourneyProvider);
-                      final hideGames = journey.maybeWhen(
-                        data: (s) => s.shouldShowChecklist,
-                        orElse: () => false,
-                      );
-                      if (hideGames) return const SizedBox.shrink();
-                      return Column(
-                        children: [
-                          GamesHomeCard(borderColor: borderColor),
-                          const SizedBox(height: AppSpacing.md),
-                        ],
-                      );
-                    },
-                  ),
-                  home.when(
-                    loading: () {
-                      if (!past200ms.value) {
-                        return SizedBox(
-                          height: 120,
-                          child: Center(
-                            child: SizedBox(
-                              width: 24,
-                              height: 24,
-                              child: CircularProgressIndicator(
-                                strokeWidth: 2,
-                                color: AppColors.primary,
-                              ),
-                            ),
-                          ),
-                        );
-                      }
-                      return _HeaderLoading(borderColor: borderColor);
-                    },
-                    error: (e, st) => Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        OutlinedButton(
-                          onPressed: () => ref.invalidate(homeStateProvider),
-                          child: Text('Retry', style: AppTextStyles.label()),
-                        ),
-                      ],
-                    ),
-                    data: (h) {
-                      const pyqYears = [
-                        '2025',
-                        '2024',
-                        '2023',
-                        '2022',
-                        '2021',
-                        '2020',
-                      ];
-                      return Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          HomePageVideoBanner(borderColor: borderColor),
-                          const SizedBox(height: AppSpacing.md),
-                          Consumer(
-                            builder: (context, ref, _) {
-                              final dailyCaEnabled = ref
-                                  .watch(dailyCaRemoteEnabledProvider)
-                                  .maybeWhen(
-                                    data: (enabled) => enabled,
-                                    orElse: () => false,
-                                  );
-                              if (!dailyCaEnabled) {
-                                return const SizedBox.shrink();
-                              }
-                              return Column(
-                                crossAxisAlignment: CrossAxisAlignment.stretch,
-                                children: [
-                                  DailyCaHomeCard(borderColor: borderColor),
-                                  const SizedBox(height: AppSpacing.md),
-                                ],
-                              );
-                            },
-                          ),
-                          _PyqYearCarousel(
-                            borderColor: borderColor,
-                            years: pyqYears,
-                          ),
-                          const SizedBox(height: AppSpacing.md),
-                          const PushDeniedBanner(),
-                          _QuickPracticeSection(borderColor: borderColor),
-                          if (h.revisionTrapCount > 0) ...[
-                            const SizedBox(height: AppSpacing.md),
-                            _TrapPatternsCard(
-                              trapCount: h.revisionTrapCount,
-                              borderColor: borderColor,
-                            ),
-                          ],
-                        ],
-                      );
-                    },
-                  ),
-                  const SizedBox(height: AppSpacing.lg),
-                  const Center(
-                    child: ContactUsTextButton(showRateReviewCta: false),
-                  ),
-                  Center(
-                    child: Consumer(
-                      builder: (context, ref, child) {
-                        return TextButton(
-                          style: TextButton.styleFrom(
-                            visualDensity: VisualDensity.compact,
-                            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                            foregroundColor: Theme.of(
-                              context,
-                            ).colorScheme.primary,
-                          ),
-                          onPressed: () =>
-                              unawaited(showRateReviewSheet(context, ref)),
-                          child: Text(
-                            'Rate & review',
-                            style: AppTextStyles.labelSm().copyWith(
-                              fontWeight: FontWeight.w700,
-                              decoration: TextDecoration.underline,
-                            ),
-                          ),
-                        );
-                      },
-                    ),
-                  ),
-                  if (kDebugMode) ...[
-                    const SizedBox(height: AppSpacing.lg),
-                    const PushMemoryPairsDebugCard(),
+                    if (showAdminDashboard) ...[
+                      const SizedBox(height: AppSpacing.lg),
+                      _AdminDashboardHomeEntry(borderColor: borderColor),
+                    ],
                     const SizedBox(height: AppSpacing.sm),
-                    const PushSpotTestDebugCard(),
                   ],
-                  if (showAdminDashboard) ...[
-                    const SizedBox(height: AppSpacing.lg),
-                    _AdminDashboardHomeEntry(borderColor: borderColor),
-                  ],
-                  const SizedBox(height: AppSpacing.sm),
-                ],
                 ),
               ),
             ),
@@ -835,10 +875,7 @@ class _AdminDashboardHomeEntry extends StatelessWidget {
                   ],
                 ),
               ),
-              Icon(
-                Icons.chevron_right_rounded,
-                color: scheme.onSurfaceVariant,
-              ),
+              Icon(Icons.chevron_right_rounded, color: scheme.onSurfaceVariant),
             ],
           ),
         ),
@@ -1181,7 +1218,7 @@ class _SubjectGrid extends ConsumerWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            secondary ? 'OR PICK ANY SUBJECT' : 'SUBJECTS',
+            secondary ? 'PICK ANY SUBJECT' : 'SUBJECTS',
             style: AppTextStyles.caption().copyWith(
               color: scheme.onSurfaceVariant,
               letterSpacing: secondary ? 0.8 : 0.6,

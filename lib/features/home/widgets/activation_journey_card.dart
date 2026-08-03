@@ -15,7 +15,7 @@ import '../../../core/theme/app_text_styles.dart';
 import '../providers/home_activation_journey_provider.dart';
 import 'get_started_card.dart';
 
-/// Three-step activation checklist shown on home until the confidence map opens.
+/// START HERE activation card — matches the home onboarding mock.
 class ActivationJourneyCard extends HookConsumerWidget {
   const ActivationJourneyCard({super.key, required this.state});
 
@@ -23,7 +23,7 @@ class ActivationJourneyCard extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final scheme = Theme.of(context).colorScheme;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     final loggedShown = useRef(false);
 
     useEffect(() {
@@ -35,126 +35,157 @@ class ActivationJourneyCard extends HookConsumerWidget {
           ActivationJourneyShownEvent(
             todo1Done: state.todo1Done,
             scoredAttempts: state.scoredAttempts,
-            todo2Unlocked: state.todo2Unlocked,
+            todo2Unlocked: state.todo3Unlocked,
           ),
         ),
       );
       return null;
     }, const []);
 
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
+    final cardFill = isDark
+        ? AppColors.primaryDeep.withValues(alpha: 0.28)
+        : AppColors.primaryLight;
+    final divider = isDark
+        ? Colors.white.withValues(alpha: 0.08)
+        : AppColors.primary.withValues(alpha: 0.12);
+
+    return Container(
+      decoration: BoxDecoration(
+        color: cardFill,
+        borderRadius: BorderRadius.circular(20),
+      ),
+      padding: EdgeInsets.fromLTRB(
+        16,
+        14,
+        16,
+        state.completedCount > 0 ? 6 : 8,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          _Header(completedCount: state.completedCount),
+          SizedBox(height: state.todo1Done ? 8 : 14),
+          _DemoStep(state: state),
+          if (!state.todo1Done || !state.todo2Done)
+            Divider(height: 1, thickness: 1, color: divider),
+          _GamesStep(state: state),
+          if (!state.todo2Done || !state.todo3Done)
+            Divider(height: 1, thickness: 1, color: divider),
+          _DangerZoneStep(state: state),
+        ],
+      ),
+    );
+  }
+}
+
+class _Header extends StatelessWidget {
+  const _Header({required this.completedCount});
+
+  final int completedCount;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
       children: [
         Text(
-          'YOUR FIRST STEPS',
+          'START HERE',
           style: AppTextStyles.caption().copyWith(
+            color: AppColors.primaryDark,
             fontWeight: FontWeight.w800,
-            letterSpacing: 1.1,
-            color: scheme.onSurfaceVariant,
+            letterSpacing: 1.2,
           ),
         ),
-        const SizedBox(height: AppSpacing.sm),
-        if (!state.todo1Done)
-          const _Todo1Expanded()
-        else
-          _ChecklistRow(
-            index: 1,
-            done: true,
-            title: 'Demo test done',
-            subtitle: 'You saw traps, analysis, and rich explanations.',
-            onTap: null,
+        const Spacer(),
+        Text(
+          '$completedCount of 3',
+          style: AppTextStyles.caption().copyWith(
+            color: AppColors.primaryDark.withValues(alpha: 0.7),
+            fontWeight: FontWeight.w600,
           ),
-        const SizedBox(height: AppSpacing.sm),
-        _Todo2Row(state: state),
-        const SizedBox(height: AppSpacing.sm),
-        _Todo3Row(state: state),
+        ),
+        const SizedBox(width: 8),
+        Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            for (var i = 0; i < 3; i++) ...[
+              if (i > 0) const SizedBox(width: 3),
+              Container(
+                width: 14,
+                height: 4,
+                decoration: BoxDecoration(
+                  color: i < completedCount
+                      ? AppColors.primary
+                      : AppColors.primary.withValues(alpha: 0.22),
+                  borderRadius: BorderRadius.circular(2),
+                ),
+              ),
+            ],
+          ],
+        ),
       ],
     );
   }
 }
 
-class _Todo1Expanded extends ConsumerWidget {
-  const _Todo1Expanded();
+class _DemoStep extends ConsumerWidget {
+  const _DemoStep({required this.state});
+
+  final HomeActivationJourneyState state;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    final borderColor = isDark ? AppColors.borderDark : AppColors.borderLight;
+    final done = state.todo1Done;
 
-    return IntrinsicHeight(
+    if (done) {
+      return const _CollapsedDoneRow(title: 'Demo test done');
+    }
+
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 14),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            width: 3,
-            decoration: BoxDecoration(
-              color: AppColors.primary,
-              borderRadius: const BorderRadius.horizontal(
-                left: Radius.circular(AppRadius.lg),
-              ),
-            ),
-          ),
+          const _ActiveBadge(index: 1),
+          const SizedBox(width: 12),
           Expanded(
-            child: Container(
-              padding: const EdgeInsets.fromLTRB(
-                AppSpacing.md,
-                AppSpacing.md,
-                AppSpacing.lg,
-                AppSpacing.md,
-              ),
-              decoration: BoxDecoration(
-                color: isDark
-                    ? AppColors.primaryDeep.withValues(alpha: 0.18)
-                    : AppColors.primaryLight.withValues(alpha: 0.45),
-                borderRadius: const BorderRadius.horizontal(
-                  right: Radius.circular(AppRadius.lg),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Take a demo test',
+                  style: AppTextStyles.label().copyWith(
+                    color: scheme.onSurface,
+                    fontWeight: FontWeight.w800,
+                    fontSize: 16,
+                    height: 1.2,
+                  ),
                 ),
-                border: Border(
-                  top: BorderSide(color: borderColor.withValues(alpha: 0.4)),
-                  right: BorderSide(color: borderColor.withValues(alpha: 0.4)),
-                  bottom: BorderSide(color: borderColor.withValues(alpha: 0.4)),
+                const SizedBox(height: 4),
+                Text(
+                  'Get a hang of detailed explanations, statement analysis, '
+                  'traps, and elimination techniques.',
+                  style: AppTextStyles.bodySm().copyWith(
+                    color: scheme.onSurfaceVariant,
+                    height: 1.35,
+                  ),
                 ),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Text(
-                    'STEP 1 · 5 MIN · 7 MCQs',
-                    style: AppTextStyles.caption().copyWith(
-                      color: AppColors.primaryDark,
-                      fontWeight: FontWeight.w700,
-                      letterSpacing: 0.4,
-                    ),
-                  ),
-                  const SizedBox(height: AppSpacing.xs),
-                  Text(
-                    'Try a demo test',
-                    style: AppTextStyles.h3().copyWith(
-                      color: scheme.onSurface,
-                      fontWeight: FontWeight.w800,
-                      height: 1.2,
-                    ),
-                  ),
-                  const SizedBox(height: AppSpacing.xs),
-                  Text(
-                    'See traps, statement analysis, and explanations that '
-                    'actually teach — not just right or wrong.',
-                    style: AppTextStyles.bodySm().copyWith(
-                      color: scheme.onSurfaceVariant,
-                      height: 1.35,
-                    ),
-                  ),
-                  const SizedBox(height: AppSpacing.sm),
-                  SizedBox(
-                    height: 44,
-                    child: FilledButton.icon(
+                const SizedBox(height: 12),
+                Row(
+                  children: [
+                    FilledButton(
                       style: FilledButton.styleFrom(
                         elevation: 0,
                         backgroundColor: AppColors.primary,
                         foregroundColor: AppColors.onPrimary,
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 18,
+                          vertical: 12,
+                        ),
+                        minimumSize: Size.zero,
+                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(AppRadius.md),
+                          borderRadius: BorderRadius.circular(AppRadius.pill),
                         ),
                       ),
                       onPressed: () {
@@ -170,16 +201,323 @@ class _Todo1Expanded extends ConsumerWidget {
                           showGetStartedDiagnosticIntroSheet(context),
                         );
                       },
-                      icon: const Icon(Icons.arrow_forward_rounded, size: 18),
-                      label: Text(
+                      child: Text(
                         'Let\u2019s go',
                         style: AppTextStyles.label().copyWith(
                           fontWeight: FontWeight.w700,
+                          color: AppColors.onPrimary,
                         ),
                       ),
                     ),
+                    const SizedBox(width: 12),
+                    Text(
+                      'About 5 min',
+                      style: AppTextStyles.caption().copyWith(
+                        color: scheme.onSurfaceVariant,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _GamesStep extends ConsumerWidget {
+  const _GamesStep({required this.state});
+
+  final HomeActivationJourneyState state;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final done = state.todo2Done;
+    final unlocked = state.todo2Unlocked;
+
+    if (done) {
+      return const _CollapsedDoneRow(title: 'Games checked out');
+    }
+
+    if (!unlocked) {
+      return const _LockedRow(
+        title: 'Check out the games',
+        trailing: 'After step 1',
+      );
+    }
+
+    return _ActiveCompactStep(
+      index: 2,
+      title: 'Check out the games',
+      subtitle: 'Memory, timelines, duels — lighter practice when you want it.',
+      ctaLabel: 'Open games',
+      onCta: () async {
+        await Analytics.track(
+          ref,
+          const ActivationJourneyTodoTappedEvent(todoIndex: 2),
+        );
+        await markActivationGamesOpened(ref);
+        if (context.mounted) context.go('/games');
+      },
+    );
+  }
+}
+
+class _DangerZoneStep extends ConsumerWidget {
+  const _DangerZoneStep({required this.state});
+
+  final HomeActivationJourneyState state;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final scheme = Theme.of(context).colorScheme;
+    final done = state.todo3Done;
+    final unlocked = state.todo3Unlocked;
+
+    if (done) {
+      return const _CollapsedDoneRow(title: 'Danger zone opened');
+    }
+
+    if (unlocked) {
+      return _ActiveCompactStep(
+        index: 3,
+        title: 'See your danger zone',
+        subtitle:
+            'Topics where you\u2019re confidently wrong — and guesses that land right.',
+        ctaLabel: 'Open map',
+        onCta: () => unawaited(_openDangerZone(context, ref, state)),
+      );
+    }
+
+    final remaining = state.attemptsRemaining;
+
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: () => unawaited(_showDangerZoneLockedSheet(context, state)),
+        borderRadius: BorderRadius.circular(12),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 14),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Icon(
+                Icons.lock_outline_rounded,
+                size: 18,
+                color: scheme.onSurfaceVariant.withValues(alpha: 0.55),
+              ),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Text(
+                            'See your danger zone',
+                            style: AppTextStyles.label().copyWith(
+                              color: scheme.onSurfaceVariant
+                                  .withValues(alpha: 0.75),
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ),
+                        Text(
+                          '${state.attemptsTowardUnlock}/${state.unlockThreshold}',
+                          style: AppTextStyles.caption().copyWith(
+                            color: scheme.onSurfaceVariant
+                                .withValues(alpha: 0.7),
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 8),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(AppRadius.pill),
+                      child: LinearProgressIndicator(
+                        value: state.unlockProgress,
+                        minHeight: 3,
+                        backgroundColor:
+                            scheme.onSurfaceVariant.withValues(alpha: 0.12),
+                        color: AppColors.primary.withValues(alpha: 0.45),
+                      ),
+                    ),
+                    const SizedBox(height: 8),
+                    Text(
+                      remaining == 0
+                          ? 'Almost there — confident mistakes need volume to be real'
+                          : '$remaining to go — confident mistakes need volume to be real',
+                      style: AppTextStyles.caption().copyWith(
+                        color: scheme.onSurfaceVariant.withValues(alpha: 0.65),
+                        height: 1.3,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _ActiveCompactStep extends StatelessWidget {
+  const _ActiveCompactStep({
+    required this.index,
+    required this.title,
+    required this.subtitle,
+    required this.ctaLabel,
+    required this.onCta,
+  });
+
+  final int index;
+  final String title;
+  final String subtitle;
+  final String ctaLabel;
+  final VoidCallback onCta;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 14),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          _ActiveBadge(index: index),
+          const SizedBox(width: 12),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: AppTextStyles.label().copyWith(
+                    color: scheme.onSurface,
+                    fontWeight: FontWeight.w800,
+                    fontSize: 15,
+                    height: 1.2,
                   ),
-                ],
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  subtitle,
+                  style: AppTextStyles.bodySm().copyWith(
+                    color: scheme.onSurfaceVariant,
+                    height: 1.35,
+                  ),
+                ),
+                const SizedBox(height: 10),
+                FilledButton(
+                  style: FilledButton.styleFrom(
+                    elevation: 0,
+                    backgroundColor: AppColors.primary,
+                    foregroundColor: AppColors.onPrimary,
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 18,
+                      vertical: 10,
+                    ),
+                    minimumSize: Size.zero,
+                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(AppRadius.pill),
+                    ),
+                  ),
+                  onPressed: onCta,
+                  child: Text(
+                    ctaLabel,
+                    style: AppTextStyles.label().copyWith(
+                      fontWeight: FontWeight.w700,
+                      color: AppColors.onPrimary,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _LockedRow extends StatelessWidget {
+  const _LockedRow({required this.title, required this.trailing});
+
+  final String title;
+  final String trailing;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    final muted = scheme.onSurfaceVariant.withValues(alpha: 0.7);
+
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 14),
+      child: Row(
+        children: [
+          Icon(Icons.lock_outline_rounded, size: 18, color: muted),
+          const SizedBox(width: 12),
+          Expanded(
+            child: Text(
+              title,
+              style: AppTextStyles.label().copyWith(
+                color: muted,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ),
+          Text(
+            trailing,
+            style: AppTextStyles.caption().copyWith(color: muted),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _CollapsedDoneRow extends StatelessWidget {
+  const _CollapsedDoneRow({required this.title});
+
+  final String title;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 6),
+      child: Row(
+        children: [
+          Container(
+            width: 14,
+            height: 14,
+            decoration: BoxDecoration(
+              color: AppColors.primary.withValues(alpha: 0.85),
+              shape: BoxShape.circle,
+            ),
+            child: const Icon(
+              Icons.check_rounded,
+              size: 10,
+              color: Colors.white,
+            ),
+          ),
+          const SizedBox(width: 10),
+          Expanded(
+            child: Text(
+              title,
+              style: AppTextStyles.caption().copyWith(
+                color: scheme.onSurfaceVariant.withValues(alpha: 0.75),
+                fontWeight: FontWeight.w600,
+                height: 1.1,
               ),
             ),
           ),
@@ -189,239 +527,25 @@ class _Todo1Expanded extends ConsumerWidget {
   }
 }
 
-class _Todo2Row extends ConsumerWidget {
-  const _Todo2Row({required this.state});
-
-  final HomeActivationJourneyState state;
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final unlocked = state.todo2Unlocked;
-    final done = state.todo2Done;
-
-    final subtitle = done
-        ? 'Your confident-wrong and guess-right topics are ready.'
-        : unlocked
-            ? 'See where you\u2019re confidently wrong — and where guesses land right.'
-            : '${state.attemptsTowardUnlock} / ${state.unlockThreshold} questions '
-                'toward your confidence map';
-
-    return _ChecklistRow(
-      index: 2,
-      done: done,
-      locked: !unlocked && !done,
-      title: done
-          ? 'Confidence map unlocked'
-          : unlocked
-              ? 'Open your confidence map'
-              : 'Unlock your confidence map',
-      subtitle: subtitle,
-      progress: unlocked || done ? null : state.unlockProgress,
-      onTap: () {
-        if (!unlocked) {
-          unawaited(() async {
-            await Analytics.track(
-              ref,
-              const ActivationJourneyTodoTappedEvent(todoIndex: 2),
-            );
-            if (context.mounted) await _showLockedSheet(context, state);
-          }());
-          return;
-        }
-        unawaited(_openConfidenceMap(context, ref, state));
-      },
-    );
-  }
-}
-
-class _Todo3Row extends ConsumerWidget {
-  const _Todo3Row({required this.state});
-
-  final HomeActivationJourneyState state;
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    return _ChecklistRow(
-      index: 3,
-      done: state.todo3Done,
-      muted: true,
-      title: state.todo3Done ? 'Games tried' : 'Try a fun revision game',
-      subtitle: 'Memory, timelines, duels — lighter practice when you want it.',
-      onTap: state.todo3Done
-          ? null
-          : () async {
-              await Analytics.track(
-                ref,
-                const ActivationJourneyTodoTappedEvent(todoIndex: 3),
-              );
-              await markActivationGamesOpened(ref);
-              if (context.mounted) context.go('/games');
-            },
-    );
-  }
-}
-
-class _ChecklistRow extends StatelessWidget {
-  const _ChecklistRow({
-    required this.index,
-    required this.done,
-    required this.title,
-    required this.subtitle,
-    this.onTap,
-    this.locked = false,
-    this.muted = false,
-    this.progress,
-  });
+class _ActiveBadge extends StatelessWidget {
+  const _ActiveBadge({required this.index});
 
   final int index;
-  final bool done;
-  final bool locked;
-  final bool muted;
-  final String title;
-  final String subtitle;
-  final VoidCallback? onTap;
-  final double? progress;
 
   @override
   Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    final borderColor = isDark ? AppColors.borderDark : AppColors.borderLight;
-    final opacity = muted && !done ? 0.85 : 1.0;
-
-    return Opacity(
-      opacity: opacity,
-      child: Material(
-        color: Colors.transparent,
-        child: InkWell(
-          onTap: onTap,
-          borderRadius: BorderRadius.circular(AppRadius.lg),
-          child: Ink(
-            padding: const EdgeInsets.all(AppSpacing.md),
-            decoration: BoxDecoration(
-              color: scheme.surfaceContainerLow,
-              borderRadius: BorderRadius.circular(AppRadius.lg),
-              border: Border.all(color: borderColor, width: 0.5),
-            ),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                _StepBadge(
-                  index: index,
-                  done: done,
-                  locked: locked,
-                ),
-                const SizedBox(width: AppSpacing.md),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        title,
-                        style: AppTextStyles.label().copyWith(
-                          color: scheme.onSurface,
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
-                      const SizedBox(height: 2),
-                      Text(
-                        subtitle,
-                        style: AppTextStyles.caption().copyWith(
-                          color: scheme.onSurfaceVariant,
-                          height: 1.35,
-                        ),
-                      ),
-                      if (progress != null) ...[
-                        const SizedBox(height: AppSpacing.sm),
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(AppRadius.pill),
-                          child: LinearProgressIndicator(
-                            value: progress,
-                            minHeight: 4,
-                            backgroundColor: scheme.onSurfaceVariant
-                                .withValues(alpha: 0.12),
-                            color: AppColors.primary,
-                          ),
-                        ),
-                      ],
-                    ],
-                  ),
-                ),
-                if (onTap != null) ...[
-                  const SizedBox(width: AppSpacing.xs),
-                  Icon(
-                    locked
-                        ? Icons.lock_outline_rounded
-                        : Icons.chevron_right_rounded,
-                    size: 20,
-                    color: scheme.onSurfaceVariant,
-                  ),
-                ],
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class _StepBadge extends StatelessWidget {
-  const _StepBadge({
-    required this.index,
-    required this.done,
-    required this.locked,
-  });
-
-  final int index;
-  final bool done;
-  final bool locked;
-
-  @override
-  Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-
-    if (done) {
-      return Container(
-        width: 28,
-        height: 28,
-        decoration: const BoxDecoration(
-          color: AppColors.correct,
-          shape: BoxShape.circle,
-        ),
-        child: const Icon(Icons.check_rounded, size: 16, color: Colors.white),
-      );
-    }
-
-    if (locked) {
-      return Container(
-        width: 28,
-        height: 28,
-        decoration: BoxDecoration(
-          color: scheme.onSurfaceVariant.withValues(alpha: 0.12),
-          shape: BoxShape.circle,
-        ),
-        child: Icon(
-          Icons.lock_outline_rounded,
-          size: 14,
-          color: scheme.onSurfaceVariant,
-        ),
-      );
-    }
-
     return Container(
-      width: 28,
-      height: 28,
+      width: 26,
+      height: 26,
       alignment: Alignment.center,
-      decoration: BoxDecoration(
-        color: AppColors.primary.withValues(alpha: 0.15),
+      decoration: const BoxDecoration(
+        color: AppColors.primary,
         shape: BoxShape.circle,
-        border: Border.all(color: AppColors.primary.withValues(alpha: 0.45)),
       ),
       child: Text(
         '$index',
         style: AppTextStyles.caption().copyWith(
-          color: AppColors.primaryDark,
+          color: Colors.white,
           fontWeight: FontWeight.w800,
         ),
       ),
@@ -429,14 +553,14 @@ class _StepBadge extends StatelessWidget {
   }
 }
 
-Future<void> _openConfidenceMap(
+Future<void> _openDangerZone(
   BuildContext context,
   WidgetRef ref,
   HomeActivationJourneyState state,
 ) async {
   await Analytics.track(
     ref,
-    const ActivationJourneyTodoTappedEvent(todoIndex: 2),
+    const ActivationJourneyTodoTappedEvent(todoIndex: 3),
   );
   await markActivationConfidenceMapOpened(ref);
   if (!context.mounted) return;
@@ -448,12 +572,11 @@ Future<void> _openConfidenceMap(
   }
 }
 
-Future<void> _showLockedSheet(
+Future<void> _showDangerZoneLockedSheet(
   BuildContext context,
   HomeActivationJourneyState state,
 ) async {
-  final remaining =
-      (state.unlockThreshold - state.scoredAttempts).clamp(0, state.unlockThreshold);
+  final remaining = state.attemptsRemaining;
 
   await showModalBottomSheet<void>(
     context: context,
@@ -506,7 +629,7 @@ Future<void> _showLockedSheet(
                     ),
                   ),
                   Text(
-                    'Your confidence map needs more signal',
+                    'Danger zone needs more signal',
                     style: AppTextStyles.h3().copyWith(
                       fontWeight: FontWeight.w800,
                       color: scheme.onSurface,
@@ -514,9 +637,9 @@ Future<void> _showLockedSheet(
                   ),
                   const SizedBox(height: AppSpacing.sm),
                   Text(
-                    'After about ${state.unlockThreshold} attempted questions '
-                    'with confidence marked, we can show topics where you\u2019re '
-                    'confidently wrong — and where your guesses land right.\n\n'
+                    'After about ${state.unlockThreshold} attempted questions, '
+                    'we can show topics where you\u2019re confidently wrong — '
+                    'and where your guesses land right.\n\n'
                     'You\u2019re at ${state.scoredAttempts}. '
                     '${remaining == 0 ? 'Almost there.' : '$remaining more to go.'} '
                     'Pick any subject below and keep practicing.',
@@ -587,7 +710,7 @@ class DailyWarMutedStrip extends StatelessWidget {
             const SizedBox(width: AppSpacing.sm),
             Expanded(
               child: Text(
-                'Daily War unlocks with your confidence map',
+                'Daily War unlocks with your danger zone',
                 style: AppTextStyles.caption().copyWith(
                   color: scheme.onSurfaceVariant,
                   fontWeight: FontWeight.w600,

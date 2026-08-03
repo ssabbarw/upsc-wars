@@ -4,7 +4,9 @@ import '../../../core/providers/prefs_provider.dart';
 import '../../../core/providers/user_database_provider.dart';
 import '../domain/activation_journey_constants.dart';
 
-/// State for the 3-step home activation checklist.
+/// State for the 3-step home activation checklist (START HERE).
+///
+/// Order: (1) demo test → (2) games after step 1 → (3) danger zone at ~50 Q.
 class HomeActivationJourneyState {
   const HomeActivationJourneyState({
     required this.demoOrFirstTestDone,
@@ -16,7 +18,7 @@ class HomeActivationJourneyState {
     required this.shouldMuteDailyWar,
   });
 
-  /// Todo 1: demo diagnostic submitted, or any completed session.
+  /// Step 1: demo diagnostic submitted, or any completed session.
   final bool demoOrFirstTestDone;
 
   /// Scored answers (correct + wrong). Demo is ephemeral, so excluded.
@@ -25,13 +27,13 @@ class HomeActivationJourneyState {
   final bool confidenceMapOpened;
   final bool gamesOpened;
 
-  /// Best subject to open for Todo 2 (most attempts), or null.
+  /// Best subject to open for the danger-zone step (most attempts), or null.
   final String? topSubjectSlug;
 
-  /// Show the checklist block on home.
+  /// Show the START HERE card on home.
   final bool shouldShowChecklist;
 
-  /// Collapse Daily War / hide prepare dock + daily drill on home.
+  /// Collapse Daily War on home until the danger zone unlocks.
   final bool shouldMuteDailyWar;
 
   int get unlockThreshold =>
@@ -39,14 +41,24 @@ class HomeActivationJourneyState {
 
   bool get todo1Done => demoOrFirstTestDone;
 
-  bool get todo2Unlocked => scoredAttempts >= unlockThreshold;
+  /// Games unlock after the demo / first test.
+  bool get todo2Unlocked => todo1Done;
 
-  bool get todo2Done => confidenceMapOpened;
+  bool get todo2Done => gamesOpened;
 
-  bool get todo3Done => gamesOpened;
+  bool get todo3Unlocked => scoredAttempts >= unlockThreshold;
 
-  int get attemptsTowardUnlock =>
-      scoredAttempts.clamp(0, unlockThreshold);
+  bool get todo3Done => confidenceMapOpened;
+
+  bool get allDone => todo1Done && todo2Done && todo3Done;
+
+  int get completedCount =>
+      (todo1Done ? 1 : 0) + (todo2Done ? 1 : 0) + (todo3Done ? 1 : 0);
+
+  int get attemptsTowardUnlock => scoredAttempts.clamp(0, unlockThreshold);
+
+  int get attemptsRemaining =>
+      (unlockThreshold - scoredAttempts).clamp(0, unlockThreshold);
 
   double get unlockProgress =>
       unlockThreshold == 0 ? 1 : attemptsTowardUnlock / unlockThreshold;
@@ -82,8 +94,13 @@ final homeActivationJourneyProvider =
   final unlocked = scoredAttempts >=
       ActivationJourneyConstants.confidenceMapUnlockAttempts;
 
-  final shouldShowChecklist = !dismissed &&
-      (!unlocked || !confidenceMapOpened);
+  final allDone = demoOrFirstTestDone && gamesOpened && confidenceMapOpened;
+  if (allDone && !dismissed) {
+    prefs.activationJourneyDismissed = true;
+  }
+
+  // Stay visible until every step is complete, then disappear.
+  final shouldShowChecklist = !allDone && !prefs.activationJourneyDismissed;
 
   final shouldMuteDailyWar = shouldShowChecklist && !unlocked;
 
@@ -115,16 +132,15 @@ final homeActivationJourneyProvider =
   );
 });
 
-/// Marks Todo 2 opened and dismisses the journey once unlocked.
+/// Marks the danger-zone step opened. Journey hides only when all 3 are done.
 Future<void> markActivationConfidenceMapOpened(WidgetRef ref) async {
   final prefs = await ref.read(prefsServiceProvider.future);
   prefs.activationConfidenceMapOpened = true;
-  prefs.activationJourneyDismissed = true;
   ref.invalidate(prefsServiceProvider);
   ref.invalidate(homeActivationJourneyProvider);
 }
 
-/// Marks Todo 3 (games) as done — checklist may still show until Todo 2.
+/// Marks step 2 (games) done. Journey hides only when all 3 are done.
 Future<void> markActivationGamesOpened(WidgetRef ref) async {
   final prefs = await ref.read(prefsServiceProvider.future);
   if (prefs.activationGamesOpened) return;
