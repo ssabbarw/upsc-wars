@@ -342,24 +342,10 @@ class _DemoStep extends ConsumerWidget {
                     height: 1.3,
                   ),
                 ),
-                const SizedBox(height: 8),
+                const SizedBox(height: 6),
                 Row(
                   children: [
-                    FilledButton(
-                      style: FilledButton.styleFrom(
-                        elevation: 0,
-                        backgroundColor: AppColors.primary,
-                        foregroundColor: AppColors.onPrimary,
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 14,
-                          vertical: 8,
-                        ),
-                        minimumSize: Size.zero,
-                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(AppRadius.pill),
-                        ),
-                      ),
+                    TextButton(
                       onPressed: () {
                         unawaited(
                           Analytics.track(
@@ -371,13 +357,34 @@ class _DemoStep extends ConsumerWidget {
                         );
                         unawaited(showGetStartedDiagnosticIntroSheet(context));
                       },
-                      child: Text(
-                        'Let\u2019s go',
-                        style: AppTextStyles.label().copyWith(
-                          fontWeight: FontWeight.w700,
-                          color: AppColors.onPrimary,
-                          fontSize: 13,
+                      style: TextButton.styleFrom(
+                        foregroundColor: AppColors.primaryDark,
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 0,
+                          vertical: 4,
                         ),
+                        minimumSize: Size.zero,
+                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        visualDensity: VisualDensity.compact,
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(
+                            'Let\u2019s go',
+                            style: AppTextStyles.label().copyWith(
+                              fontWeight: FontWeight.w700,
+                              color: AppColors.primaryDark,
+                              fontSize: 13,
+                            ),
+                          ),
+                          const SizedBox(width: 2),
+                          const Icon(
+                            Icons.arrow_forward_rounded,
+                            size: 14,
+                            color: AppColors.primaryDark,
+                          ),
+                        ],
                       ),
                     ),
                     const SizedBox(width: 10),
@@ -684,30 +691,37 @@ class _ActiveCompactStep extends StatelessWidget {
                   ),
                 ),
                 if (ctaLabel != null && onCta != null) ...[
-                  const SizedBox(height: 8),
-                  FilledButton(
-                    style: FilledButton.styleFrom(
-                      elevation: 0,
-                      backgroundColor: AppColors.primary,
-                      foregroundColor: AppColors.onPrimary,
+                  const SizedBox(height: 6),
+                  TextButton(
+                    onPressed: onCta,
+                    style: TextButton.styleFrom(
+                      foregroundColor: AppColors.primaryDark,
                       padding: const EdgeInsets.symmetric(
-                        horizontal: 14,
-                        vertical: 8,
+                        horizontal: 0,
+                        vertical: 4,
                       ),
                       minimumSize: Size.zero,
                       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(AppRadius.pill),
-                      ),
+                      visualDensity: VisualDensity.compact,
                     ),
-                    onPressed: onCta,
-                    child: Text(
-                      ctaLabel!,
-                      style: AppTextStyles.label().copyWith(
-                        fontWeight: FontWeight.w700,
-                        color: AppColors.onPrimary,
-                        fontSize: 13,
-                      ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          ctaLabel!,
+                          style: AppTextStyles.label().copyWith(
+                            fontWeight: FontWeight.w700,
+                            color: AppColors.primaryDark,
+                            fontSize: 13,
+                          ),
+                        ),
+                        const SizedBox(width: 2),
+                        const Icon(
+                          Icons.arrow_forward_rounded,
+                          size: 14,
+                          color: AppColors.primaryDark,
+                        ),
+                      ],
                     ),
                   ),
                 ],

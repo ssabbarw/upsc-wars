@@ -753,15 +753,17 @@ class _StatusRow extends StatelessWidget {
           ),
           const SizedBox(width: 6),
         ],
-        Flexible(
+        Expanded(
           child: Text(
             left,
             style: DwText.eyebrow(color: DwColors.onDarkMuted),
             overflow: TextOverflow.ellipsis,
           ),
         ),
-        const Spacer(),
-        if (right != null) Text(right!, style: DwText.stamp()),
+        if (right != null) ...[
+          const SizedBox(width: 8),
+          Text(right!, style: DwText.stamp()),
+        ],
         if (showHelp) ...[
           const SizedBox(width: 4),
           GestureDetector(
