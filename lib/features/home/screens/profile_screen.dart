@@ -219,7 +219,7 @@ class _SignedInProfileBody extends HookConsumerWidget {
           AppToast.showText(context, err);
         }
       } finally {
-        uploadingPhoto.value = false;
+        if (context.mounted) uploadingPhoto.value = false;
       }
     }
 
@@ -418,6 +418,7 @@ class _CommunityProfileCard extends HookConsumerWidget {
           .collection('users')
           .doc(userEmail.toLowerCase())
           .get();
+      if (!context.mounted) return;
       final data = snap.data();
       if (data != null) {
         statusController.text = (data['my_status'] as String?) ?? '';
@@ -467,7 +468,7 @@ class _CommunityProfileCard extends HookConsumerWidget {
           AppToast.showText(context, 'Community profile updated');
         }
       } finally {
-        saving.value = false;
+        if (context.mounted) saving.value = false;
       }
     }
 

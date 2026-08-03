@@ -76,13 +76,13 @@ class ActivationJourneyCard extends HookConsumerWidget {
     return Container(
       decoration: BoxDecoration(
         color: cardFill,
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(16),
       ),
       padding: EdgeInsets.fromLTRB(
-        16,
         14,
-        16,
-        state.checklistCompletedCount > 0 ? 6 : 8,
+        10,
+        14,
+        state.checklistCompletedCount > 0 ? 4 : 6,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -95,7 +95,7 @@ class ActivationJourneyCard extends HookConsumerWidget {
                     )
                 : null,
           ),
-          SizedBox(height: state.todo1Done ? 8 : 14),
+          SizedBox(height: state.todo1Done ? 6 : 8),
           _DemoStep(state: state),
           Divider(height: 1, thickness: 1, color: divider),
           _RemindersStep(state: state),
@@ -315,12 +315,12 @@ class _DemoStep extends ConsumerWidget {
     }
 
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 14),
+      padding: const EdgeInsets.symmetric(vertical: 10),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const _ActiveBadge(index: 1),
-          const SizedBox(width: 12),
+          const SizedBox(width: 10),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -330,19 +330,19 @@ class _DemoStep extends ConsumerWidget {
                   style: AppTextStyles.label().copyWith(
                     color: scheme.onSurface,
                     fontWeight: FontWeight.w800,
-                    fontSize: 16,
-                    height: 1.2,
+                    fontSize: 15,
+                    height: 1.15,
                   ),
                 ),
-                const SizedBox(height: 4),
+                const SizedBox(height: 2),
                 Text(
                   'Explanations, traps & elimination — see how it works.',
                   style: AppTextStyles.bodySm().copyWith(
                     color: scheme.onSurfaceVariant,
-                    height: 1.35,
+                    height: 1.3,
                   ),
                 ),
-                const SizedBox(height: 12),
+                const SizedBox(height: 8),
                 Row(
                   children: [
                     FilledButton(
@@ -351,8 +351,8 @@ class _DemoStep extends ConsumerWidget {
                         backgroundColor: AppColors.primary,
                         foregroundColor: AppColors.onPrimary,
                         padding: const EdgeInsets.symmetric(
-                          horizontal: 18,
-                          vertical: 12,
+                          horizontal: 14,
+                          vertical: 8,
                         ),
                         minimumSize: Size.zero,
                         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
@@ -376,10 +376,11 @@ class _DemoStep extends ConsumerWidget {
                         style: AppTextStyles.label().copyWith(
                           fontWeight: FontWeight.w700,
                           color: AppColors.onPrimary,
+                          fontSize: 13,
                         ),
                       ),
                     ),
-                    const SizedBox(width: 12),
+                    const SizedBox(width: 10),
                     Text(
                       'About 5 min',
                       style: AppTextStyles.caption().copyWith(
@@ -655,12 +656,12 @@ class _ActiveCompactStep extends StatelessWidget {
     final scheme = Theme.of(context).colorScheme;
 
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 14),
+      padding: const EdgeInsets.symmetric(vertical: 10),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           _ActiveBadge(index: index),
-          const SizedBox(width: 12),
+          const SizedBox(width: 10),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -671,27 +672,27 @@ class _ActiveCompactStep extends StatelessWidget {
                     color: scheme.onSurface,
                     fontWeight: FontWeight.w800,
                     fontSize: 15,
-                    height: 1.2,
+                    height: 1.15,
                   ),
                 ),
-                const SizedBox(height: 4),
+                const SizedBox(height: 2),
                 Text(
                   subtitle,
                   style: AppTextStyles.bodySm().copyWith(
                     color: scheme.onSurfaceVariant,
-                    height: 1.35,
+                    height: 1.3,
                   ),
                 ),
                 if (ctaLabel != null && onCta != null) ...[
-                  const SizedBox(height: 10),
+                  const SizedBox(height: 8),
                   FilledButton(
                     style: FilledButton.styleFrom(
                       elevation: 0,
                       backgroundColor: AppColors.primary,
                       foregroundColor: AppColors.onPrimary,
                       padding: const EdgeInsets.symmetric(
-                        horizontal: 18,
-                        vertical: 10,
+                        horizontal: 14,
+                        vertical: 8,
                       ),
                       minimumSize: Size.zero,
                       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
@@ -705,6 +706,7 @@ class _ActiveCompactStep extends StatelessWidget {
                       style: AppTextStyles.label().copyWith(
                         fontWeight: FontWeight.w700,
                         color: AppColors.onPrimary,
+                        fontSize: 13,
                       ),
                     ),
                   ),
@@ -728,7 +730,7 @@ class _CollapsedDoneRow extends StatelessWidget {
     final scheme = Theme.of(context).colorScheme;
 
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 6),
+      padding: const EdgeInsets.symmetric(vertical: 4),
       child: Row(
         children: [
           Container(
@@ -769,8 +771,8 @@ class _ActiveBadge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 26,
-      height: 26,
+      width: 22,
+      height: 22,
       alignment: Alignment.center,
       decoration: const BoxDecoration(
         color: AppColors.primary,
@@ -781,6 +783,8 @@ class _ActiveBadge extends StatelessWidget {
         style: AppTextStyles.caption().copyWith(
           color: Colors.white,
           fontWeight: FontWeight.w800,
+          fontSize: 11,
+          height: 1,
         ),
       ),
     );

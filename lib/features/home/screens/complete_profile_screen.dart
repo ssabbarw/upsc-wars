@@ -54,7 +54,7 @@ class CompleteProfileScreen extends HookConsumerWidget {
           AppToast.showText(context, err);
         }
       } finally {
-        uploadingPhoto.value = false;
+        if (context.mounted) uploadingPhoto.value = false;
       }
     }
 
@@ -93,7 +93,7 @@ class CompleteProfileScreen extends HookConsumerWidget {
           AppToast.showText(context, 'Could not update profile: $e');
         }
       } finally {
-        saving.value = false;
+        if (context.mounted) saving.value = false;
       }
     }
 
