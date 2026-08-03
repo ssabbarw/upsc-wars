@@ -63,19 +63,19 @@ class _NotificationBenefit {
 
 const _notificationBenefits = [
   _NotificationBenefit(
-    icon: Icons.newspaper_rounded,
-    title: 'Daily current affairs question',
-    body: 'One quick question from today\'s news.',
+    icon: Icons.military_tech_rounded,
+    title: 'Daily War',
+    body: '9pm nudge so you don’t miss it.',
   ),
   _NotificationBenefit(
     icon: Icons.adjust_rounded,
-    title: 'Questions from your weak topics',
-    body: 'Personalised practice to help you improve.',
+    title: 'Weak topics',
+    body: 'Practice where you’re slipping.',
   ),
   _NotificationBenefit(
     icon: Icons.groups_rounded,
-    title: 'Battle invites & important updates',
-    body: 'Challenges, community activity, and key notifications.',
+    title: 'Battles & updates',
+    body: 'Invites and key alerts.',
   ),
 ];
 
@@ -188,29 +188,27 @@ class _DeferredPushPermissionPanel extends HookConsumerWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Text(
-                  'Stay on track with your prep',
+                  'Stay on track',
                   textAlign: TextAlign.center,
                   style: AppTextStyles.h3().copyWith(
                     color: scheme.onSurface,
                     letterSpacing: -0.3,
                   ),
                 ),
-                const SizedBox(height: AppSpacing.sm),
+                const SizedBox(height: AppSpacing.xs),
                 Text(
-                  'We\'ll only ping you when it actually helps. '
-                  'You can turn these off anytime.',
+                  'Useful pings only — turn off anytime.',
                   textAlign: TextAlign.center,
-                  style: AppTextStyles.body().copyWith(
+                  style: AppTextStyles.bodySm().copyWith(
                     color: scheme.onSurfaceVariant,
-                    height: 1.4,
+                    height: 1.35,
                   ),
                 ),
-                const SizedBox(height: AppSpacing.lg),
+                const SizedBox(height: AppSpacing.md),
                 ..._notificationBenefits.map(
                   (benefit) => Padding(
-                    padding: const EdgeInsets.only(bottom: AppSpacing.md),
+                    padding: const EdgeInsets.only(bottom: AppSpacing.sm),
                     child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Container(
                           width: 36,
@@ -237,15 +235,14 @@ class _DeferredPushPermissionPanel extends HookConsumerWidget {
                                 style: AppTextStyles.body().copyWith(
                                   color: scheme.onSurface,
                                   fontWeight: FontWeight.w600,
-                                  height: 1.3,
+                                  height: 1.2,
                                 ),
                               ),
-                              const SizedBox(height: 2),
                               Text(
                                 benefit.body,
                                 style: AppTextStyles.bodySm().copyWith(
                                   color: scheme.onSurfaceVariant,
-                                  height: 1.35,
+                                  height: 1.3,
                                 ),
                               ),
                             ],
@@ -255,7 +252,7 @@ class _DeferredPushPermissionPanel extends HookConsumerWidget {
                     ),
                   ),
                 ),
-                const SizedBox(height: AppSpacing.lg),
+                const SizedBox(height: AppSpacing.md),
                 FilledButton(
                   onPressed: () {
                     upscWarsTrace('showDeferredPushPermissionSheet: tap_enable');

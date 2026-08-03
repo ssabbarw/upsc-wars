@@ -69,21 +69,19 @@ const _kGames = [
   ),
 ];
 
-/// Last screen — six revision games revealed one by one; CTAs unlock when done.
+/// Last screen — six revision games revealed one by one; CTA unlocks when done.
 class OnboardingGamesPage extends HookWidget {
   const OnboardingGamesPage({
     super.key,
     required this.isActive,
     required this.onGetStarted,
-    required this.onSkip,
   });
 
   final bool isActive;
   final VoidCallback onGetStarted;
-  final VoidCallback onSkip;
 
-  static const _firstDelayMs = 260;
-  static const _staggerMs = 240;
+  static const _firstDelayMs = 120;
+  static const _staggerMs = 120;
 
   @override
   Widget build(BuildContext context) {
@@ -106,7 +104,7 @@ class OnboardingGamesPage extends HookWidget {
       timers.add(
         Timer(
           Duration(
-            milliseconds: _firstDelayMs + _staggerMs * _kGames.length + 200,
+            milliseconds: _firstDelayMs + _staggerMs * _kGames.length + 100,
           ),
           () => ready.value = true,
         ),
@@ -159,54 +157,33 @@ class OnboardingGamesPage extends HookWidget {
         SizedBox(height: onb(context, 14)),
         AnimatedOpacity(
           opacity: ready.value ? 1 : 0,
-          duration: const Duration(milliseconds: 420),
+          duration: const Duration(milliseconds: 250),
           curve: Curves.easeOutCubic,
           child: IgnorePointer(
             ignoring: !ready.value,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                FilledButton(
-                  onPressed: onGetStarted,
-                  style: RgText.pillButton(
-                    fill: RgColors.tealDeep,
-                    verticalPadding: onb(context, 16),
-                  ).copyWith(
-                    minimumSize: WidgetStatePropertyAll(
-                      Size(double.infinity, onb(context, 56)),
-                    ),
-                    shape: WidgetStatePropertyAll(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(onb(context, 14)),
-                      ),
-                    ),
-                  ),
-                  child: Text(
-                    'Get started',
-                    style: RgText.body(
-                      size: onb(context, 17),
-                      weight: FontWeight.w700,
-                      color: RgColors.onDark,
-                    ),
+            child: FilledButton(
+              onPressed: onGetStarted,
+              style: RgText.pillButton(
+                fill: RgColors.tealDeep,
+                verticalPadding: onb(context, 16),
+              ).copyWith(
+                minimumSize: WidgetStatePropertyAll(
+                  Size(double.infinity, onb(context, 56)),
+                ),
+                shape: WidgetStatePropertyAll(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(onb(context, 14)),
                   ),
                 ),
-                SizedBox(height: onb(context, 6)),
-                TextButton(
-                  onPressed: onSkip,
-                  style: TextButton.styleFrom(
-                    foregroundColor: RgColors.muted,
-                    padding: EdgeInsets.symmetric(vertical: onb(context, 12)),
-                  ),
-                  child: Text(
-                    'Skip',
-                    style: RgText.mono(
-                      size: onb(context, 12),
-                      letterSpacingEm: 0.06,
-                      color: RgColors.muted,
-                    ),
-                  ),
+              ),
+              child: Text(
+                'Get started',
+                style: RgText.body(
+                  size: onb(context, 17),
+                  weight: FontWeight.w700,
+                  color: RgColors.onDark,
                 ),
-              ],
+              ),
             ),
           ),
         ),
@@ -224,11 +201,11 @@ class _GameRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnimatedSlide(
-      duration: const Duration(milliseconds: 480),
+      duration: const Duration(milliseconds: 280),
       curve: Curves.easeOutCubic,
       offset: visible ? Offset.zero : const Offset(0.12, 0),
       child: AnimatedOpacity(
-        duration: const Duration(milliseconds: 380),
+        duration: const Duration(milliseconds: 220),
         curve: Curves.easeOut,
         opacity: visible ? 1 : 0,
         child: Container(
@@ -244,7 +221,7 @@ class _GameRow extends StatelessWidget {
           child: Row(
             children: [
               AnimatedScale(
-                duration: const Duration(milliseconds: 480),
+                duration: const Duration(milliseconds: 280),
                 curve: Curves.easeOutBack,
                 scale: visible ? 1 : 0.4,
                 child: Container(

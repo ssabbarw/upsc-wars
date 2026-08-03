@@ -70,6 +70,14 @@ abstract final class PrefKeys {
   static const activationJourneyDismissedV1 =
       'activation_journey_dismissed_v1';
 
+  /// YYYY-MM-DD: first local calendar day the START HERE checklist may show again.
+  static const activationJourneySnoozedUntilV1 =
+      'activation_journey_snoozed_until_v1';
+
+  /// YYYY-MM-DD: first local calendar day START HERE was shown (gates snooze).
+  static const activationJourneyFirstShownOnV1 =
+      'activation_journey_first_shown_on_v1';
+
   /// Shown once: session review share button coach mark.
   static const sessionReviewShareCoachSeen =
       'session_review_share_coach_seen_v1';
@@ -286,6 +294,18 @@ class PrefsService {
       _p.getBool(PrefKeys.activationJourneyDismissedV1) ?? false;
   set activationJourneyDismissed(bool v) =>
       _p.setBool(PrefKeys.activationJourneyDismissedV1, v);
+
+  /// Empty = not snoozed. Otherwise YYYY-MM-DD when the checklist may show again.
+  String get activationJourneySnoozedUntil =>
+      (_p.getString(PrefKeys.activationJourneySnoozedUntilV1) ?? '').trim();
+  set activationJourneySnoozedUntil(String v) =>
+      _p.setString(PrefKeys.activationJourneySnoozedUntilV1, v.trim());
+
+  /// Empty = never shown. Otherwise YYYY-MM-DD of first START HERE appearance.
+  String get activationJourneyFirstShownOn =>
+      (_p.getString(PrefKeys.activationJourneyFirstShownOnV1) ?? '').trim();
+  set activationJourneyFirstShownOn(String v) =>
+      _p.setString(PrefKeys.activationJourneyFirstShownOnV1, v.trim());
 
   bool get sessionReviewShareCoachSeen =>
       _p.getBool(PrefKeys.sessionReviewShareCoachSeen) ?? false;

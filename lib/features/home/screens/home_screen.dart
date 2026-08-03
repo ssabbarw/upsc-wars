@@ -16,7 +16,6 @@ import '../../../core/domain/entities/session_config.dart';
 import '../../../core/domain/entities/subject_info.dart';
 import '../../../core/providers/catalog_providers.dart';
 import '../../../core/providers/app_bootstrap.dart';
-import '../../../core/providers/prefs_provider.dart';
 import '../../../core/providers/kill_switch_provider.dart';
 import '../../../core/providers/quick_practice_providers.dart';
 import '../../../core/responsive/app_breakpoints.dart';
@@ -32,7 +31,6 @@ import '../providers/auth_providers.dart';
 import '../providers/home_activation_provider.dart';
 import '../providers/home_activation_journey_provider.dart';
 import '../widgets/activation_journey_card.dart';
-import '../widgets/get_started_card.dart';
 import '../widgets/recovery_plan_section.dart';
 import '../providers/daily_drill_provider.dart';
 import '../../memory_pairs/widgets/push_memory_pairs_debug_card.dart';
@@ -92,59 +90,6 @@ class HomeScreen extends HookConsumerWidget {
       });
       return null;
     }, const []);
-
-    final getStartedSheetPending = useState(false);
-    final getStartedSheetTriggered = useRef(false);
-    final homeScrollController = useScrollController();
-
-    useEffect(() {
-      var cancelled = false;
-      unawaited(() async {
-        final prefs = await ref.read(prefsServiceProvider.future);
-        if (cancelled || !prefs.getStartedSheetPendingAfterOnboarding) return;
-        final activation = await ref.read(homeActivationProvider.future);
-        if (cancelled) return;
-        if (!activation.shouldShowGetStartedCard) {
-          prefs.getStartedSheetPendingAfterOnboarding = false;
-          return;
-        }
-        if (!cancelled) getStartedSheetPending.value = true;
-      }());
-      return () {
-        cancelled = true;
-      };
-    }, const []);
-
-    useEffect(() {
-      if (!getStartedSheetPending.value) return null;
-
-      Future<void> maybeShowOnHomeInteraction() async {
-        if (getStartedSheetTriggered.value) return;
-        if (!homeScrollController.hasClients) return;
-        if (homeScrollController.offset < 24) return;
-
-        getStartedSheetTriggered.value = true;
-        final prefs = await ref.read(prefsServiceProvider.future);
-        if (!prefs.getStartedSheetPendingAfterOnboarding) return;
-        final activation = await ref.read(homeActivationProvider.future);
-        if (!activation.shouldShowGetStartedCard) {
-          prefs.getStartedSheetPendingAfterOnboarding = false;
-          return;
-        }
-        if (!context.mounted) return;
-        prefs.getStartedSheetPendingAfterOnboarding = false;
-        ref.invalidate(prefsServiceProvider);
-        await showGetStartedDiagnosticIntroSheet(context, postOnboarding: true);
-      }
-
-      void onScroll() => unawaited(maybeShowOnHomeInteraction());
-      homeScrollController.addListener(onScroll);
-      if (homeScrollController.hasClients &&
-          homeScrollController.offset >= 24) {
-        unawaited(maybeShowOnHomeInteraction());
-      }
-      return () => homeScrollController.removeListener(onScroll);
-    }, [getStartedSheetPending.value, homeScrollController]);
 
     useEffect(() {
       home.whenData((h) {
@@ -219,7 +164,6 @@ class HomeScreen extends HookConsumerWidget {
                   if (warOn) await refreshDailyWarHome(ref);
                 },
                 child: ListView(
-                  controller: homeScrollController,
                   physics: killBlocked
                       ? const NeverScrollableScrollPhysics()
                       : const AlwaysScrollableScrollPhysics(
@@ -331,21 +275,24 @@ class HomeScreen extends HookConsumerWidget {
                                 ),
                                 child: Consumer(
                                   builder: (context, ref, _) {
-                                    final journeyActive = ref
+                                    final journey = ref
                                         .watch(homeActivationJourneyProvider)
-                                        .maybeWhen(
-                                          data: (s) => s.shouldShowChecklist,
-                                          orElse: () => false,
-                                        );
+                                        .asData
+                                        ?.value;
+                                    final journeyActive =
+                                        journey?.shouldShowActivationSurface ??
+                                            false;
                                     final firstName = userName.split(' ').first;
                                     final title = journeyActive
                                         ? (firstName.toLowerCase() == 'aspirant'
                                               ? 'Hey there'
                                               : 'Hey, $firstName')
                                         : greeting;
-                                    final subtitle = journeyActive
-                                        ? 'Three things worth doing first'
-                                        : userName;
+                                    final subtitle = !journeyActive
+                                        ? userName
+                                        : (journey!.shouldShowChecklist
+                                              ? 'Two things worth doing first'
+                                              : 'Your Danger Zone is building');
                                     return Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
@@ -523,9 +470,21 @@ class HomeScreen extends HookConsumerWidget {
                       ],
                     ),
                     const SizedBox(height: AppSpacing.md),
-                    // Daily War is the returning-habit engine and step 2 of the
-                    // activation checklist — keep it expanded, never force-collapsed.
-                    const DailyWarHomeCard(),
+                    // While START HERE is up, keep Daily War collapsed so the
+                    // checklist stays the hero. User can still expand War.
+                    Consumer(
+                      builder: (context, ref, _) {
+                        final forceCollapsed = ref
+                            .watch(homeActivationJourneyProvider)
+                            .maybeWhen(
+                              data: (s) => s.shouldShowChecklist,
+                              orElse: () => false,
+                            );
+                        return DailyWarHomeCard(
+                          forceCollapsed: forceCollapsed,
+                        );
+                      },
+                    ),
                     Consumer(
                       builder: (context, ref, _) {
                         final journey = ref.watch(
@@ -535,14 +494,19 @@ class HomeScreen extends HookConsumerWidget {
                           loading: () => const SizedBox.shrink(),
                           error: (_, _) => const SizedBox.shrink(),
                           data: (state) {
-                            if (!state.shouldShowChecklist) {
+                            final Widget child;
+                            if (state.shouldShowChecklist) {
+                              child = ActivationJourneyCard(state: state);
+                            } else if (state.shouldShowDangerZoneNudge) {
+                              child = DangerZoneHomeNudge(state: state);
+                            } else {
                               return const SizedBox.shrink();
                             }
                             return Padding(
                               padding: const EdgeInsets.only(
                                 bottom: AppSpacing.md,
                               ),
-                              child: ActivationJourneyCard(state: state),
+                              child: child,
                             );
                           },
                         );
@@ -557,7 +521,7 @@ class HomeScreen extends HookConsumerWidget {
                           homeActivationJourneyProvider,
                         );
                         final secondary = journey.maybeWhen(
-                          data: (s) => s.shouldShowChecklist,
+                          data: (s) => s.shouldShowActivationSurface,
                           orElse: () => false,
                         );
                         return _SubjectGrid(

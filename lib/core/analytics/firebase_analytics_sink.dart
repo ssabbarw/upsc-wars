@@ -53,6 +53,7 @@ import 'analytics_sink.dart';
 /// * `daily_war_submitted` — `date_id`, `mode`, `is_grand`, `score_hundredths`
 /// * `activation_journey_shown` — `todo1_done`, `scored_attempts`, `todo2_unlocked`
 /// * `activation_journey_todo_tapped` — `todo_index`
+/// * `activation_journey_snoozed` — no parameters
 ///
 /// **App users vs Daily War attempters:** count unique users on `app_opened`
 /// (or GA4 Active users) vs unique users on `daily_war_attempted`.
@@ -382,6 +383,8 @@ class FirebaseAnalyticsSink implements AnalyticsSink {
         await _log('activation_journey_todo_tapped', {
           'todo_index': todoIndex,
         });
+      case ActivationJourneySnoozedEvent():
+        await _log('activation_journey_snoozed', const {});
       case DidYouKnowShownEvent(:final cardId):
         await _log('did_you_know_shown', {'card_id': cardId});
       case DidYouKnowDismissedEvent(:final cardId):

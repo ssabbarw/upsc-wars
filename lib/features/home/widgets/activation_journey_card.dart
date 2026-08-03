@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:app_settings/app_settings.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
@@ -16,10 +15,13 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../shared/widgets/deferred_push_permission_sheet.dart';
 import '../providers/home_activation_journey_provider.dart';
 import 'get_started_card.dart';
 
-/// START HERE activation card — matches the home onboarding mock.
+/// START HERE — cold-start checklist for demo test + daily reminders only.
+///
+/// After both are done, home switches to [DangerZoneHomeNudge] instead.
 class ActivationJourneyCard extends HookConsumerWidget {
   const ActivationJourneyCard({super.key, required this.state});
 
@@ -48,8 +50,11 @@ class ActivationJourneyCard extends HookConsumerWidget {
 
     // Keep the reminders step reactive: re-check when notification permission
     // changes or the app resumes (e.g. user returns from system Settings).
+    // Resolve the container in build — useEffect runs during initHook and
+    // cannot dependOnInheritedWidget (ProviderScope.containerOf).
+    final container = ProviderScope.containerOf(context);
     useEffect(() {
-      void refresh() => ref.invalidate(homeActivationJourneyProvider);
+      void refresh() => container.invalidate(homeActivationJourneyProvider);
       BattleMessagingService.addNotificationPermissionChangeListener(refresh);
       final observer = _ReminderLifecycleObserver(onResumed: refresh);
       WidgetsBinding.instance.addObserver(observer);
@@ -59,7 +64,7 @@ class ActivationJourneyCard extends HookConsumerWidget {
         );
         WidgetsBinding.instance.removeObserver(observer);
       };
-    }, const []);
+    }, [container]);
 
     final cardFill = isDark
         ? AppColors.primaryDeep.withValues(alpha: 0.28)
@@ -77,36 +82,167 @@ class ActivationJourneyCard extends HookConsumerWidget {
         16,
         14,
         16,
-        state.completedCount > 0 ? 6 : 8,
+        state.checklistCompletedCount > 0 ? 6 : 8,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          _Header(completedCount: state.completedCount),
+          _Header(
+            completedCount: state.checklistCompletedCount,
+            onSnooze: state.canSnoozeChecklist
+                ? () => unawaited(
+                      showActivationJourneySnoozeSheet(context, ref),
+                    )
+                : null,
+          ),
           SizedBox(height: state.todo1Done ? 8 : 14),
           _DemoStep(state: state),
-          if (!state.todo1Done || !state.todo2Done)
-            Divider(height: 1, thickness: 1, color: divider),
+          Divider(height: 1, thickness: 1, color: divider),
           _RemindersStep(state: state),
-          if (!state.todo2Done || !state.todo3Done)
-            Divider(height: 1, thickness: 1, color: divider),
-          _DangerZoneStep(state: state),
         ],
       ),
     );
   }
 }
 
+/// Confirm before snoozing START HERE until tomorrow.
+Future<void> showActivationJourneySnoozeSheet(
+  BuildContext context,
+  WidgetRef ref,
+) async {
+  await showModalBottomSheet<void>(
+    context: context,
+    useRootNavigator: true,
+    isScrollControlled: true,
+    backgroundColor: Colors.transparent,
+    builder: (ctx) => const _ActivationJourneySnoozeSheet(),
+  );
+}
+
+class _ActivationJourneySnoozeSheet extends ConsumerWidget {
+  const _ActivationJourneySnoozeSheet();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final scheme = Theme.of(context).colorScheme;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final borderColor = isDark ? AppColors.borderDark : AppColors.borderLight;
+
+    Future<void> hide() async {
+      await Analytics.track(ref, const ActivationJourneySnoozedEvent());
+      await snoozeActivationJourneyUntilTomorrow(ref);
+      if (context.mounted) Navigator.pop(context);
+    }
+
+    return Padding(
+      padding: EdgeInsets.fromLTRB(
+        AppSpacing.sm,
+        0,
+        AppSpacing.sm,
+        sheetBottomPadding(context, base: AppSpacing.sm),
+      ),
+      child: Align(
+        alignment: Alignment.bottomCenter,
+        child: Material(
+          color: scheme.surface,
+          borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
+          child: Container(
+            padding: const EdgeInsets.fromLTRB(
+              AppSpacing.lg,
+              AppSpacing.md,
+              AppSpacing.lg,
+              AppSpacing.lg,
+            ),
+            decoration: BoxDecoration(
+              borderRadius: const BorderRadius.vertical(
+                top: Radius.circular(24),
+              ),
+              border: Border.all(color: borderColor.withValues(alpha: 0.45)),
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Center(
+                  child: Container(
+                    width: 40,
+                    height: 4,
+                    margin: const EdgeInsets.only(bottom: AppSpacing.md),
+                    decoration: BoxDecoration(
+                      color: scheme.onSurfaceVariant.withValues(alpha: 0.35),
+                      borderRadius: BorderRadius.circular(2),
+                    ),
+                  ),
+                ),
+                Text(
+                  'Hide for now?',
+                  style: AppTextStyles.h3().copyWith(
+                    fontWeight: FontWeight.w800,
+                    color: scheme.onSurface,
+                  ),
+                ),
+                const SizedBox(height: AppSpacing.sm),
+                Text(
+                  'We\u2019ll bring this back tomorrow.',
+                  style: AppTextStyles.bodySm().copyWith(
+                    color: scheme.onSurfaceVariant,
+                    height: 1.4,
+                  ),
+                ),
+                const SizedBox(height: AppSpacing.lg),
+                SizedBox(
+                  height: 48,
+                  child: FilledButton(
+                    onPressed: () => unawaited(hide()),
+                    style: FilledButton.styleFrom(
+                      backgroundColor: AppColors.primary,
+                      foregroundColor: AppColors.onPrimary,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(AppRadius.lg),
+                      ),
+                    ),
+                    child: Text(
+                      'Hide for now',
+                      style: AppTextStyles.label().copyWith(
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: AppSpacing.xs),
+                TextButton(
+                  onPressed: () => Navigator.pop(context),
+                  child: Text(
+                    'Keep going',
+                    style: AppTextStyles.labelSm().copyWith(
+                      color: AppColors.primaryDark,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 class _Header extends StatelessWidget {
-  const _Header({required this.completedCount});
+  const _Header({
+    required this.completedCount,
+    this.onSnooze,
+  });
 
   final int completedCount;
+  final VoidCallback? onSnooze;
 
   @override
   Widget build(BuildContext context) {
-    // "START HERE" only for the cold start; once step 1 is done, the user is
-    // past the beginning, so switch to a progress-oriented label.
+    final scheme = Theme.of(context).colorScheme;
     final label = completedCount == 0 ? 'START HERE' : 'KEEP GOING';
+    const total = HomeActivationJourneyState.checklistStepCount;
     return Row(
       children: [
         Text(
@@ -119,7 +255,7 @@ class _Header extends StatelessWidget {
         ),
         const Spacer(),
         Text(
-          '$completedCount of 3',
+          '$completedCount of $total',
           style: AppTextStyles.caption().copyWith(
             color: AppColors.primaryDark.withValues(alpha: 0.7),
             fontWeight: FontWeight.w600,
@@ -129,7 +265,7 @@ class _Header extends StatelessWidget {
         Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            for (var i = 0; i < 3; i++) ...[
+            for (var i = 0; i < total; i++) ...[
               if (i > 0) const SizedBox(width: 3),
               Container(
                 width: 14,
@@ -144,6 +280,21 @@ class _Header extends StatelessWidget {
             ],
           ],
         ),
+        if (onSnooze != null) ...[
+          const SizedBox(width: 4),
+          IconButton(
+            onPressed: onSnooze,
+            visualDensity: VisualDensity.compact,
+            padding: EdgeInsets.zero,
+            constraints: const BoxConstraints(minWidth: 32, minHeight: 32),
+            tooltip: 'Hide for now',
+            icon: Icon(
+              Icons.close_rounded,
+              size: 18,
+              color: scheme.onSurfaceVariant.withValues(alpha: 0.7),
+            ),
+          ),
+        ],
       ],
     );
   }
@@ -185,8 +336,7 @@ class _DemoStep extends ConsumerWidget {
                 ),
                 const SizedBox(height: 4),
                 Text(
-                  'Get a hang of detailed explanations, statement analysis, '
-                  'traps, and elimination techniques.',
+                  'Explanations, traps & elimination — see how it works.',
                   style: AppTextStyles.bodySm().copyWith(
                     color: scheme.onSurfaceVariant,
                     height: 1.35,
@@ -219,9 +369,7 @@ class _DemoStep extends ConsumerWidget {
                             ),
                           ),
                         );
-                        unawaited(
-                          showGetStartedDiagnosticIntroSheet(context),
-                        );
+                        unawaited(showGetStartedDiagnosticIntroSheet(context));
                       },
                       child: Text(
                         'Let\u2019s go',
@@ -265,34 +413,57 @@ class _RemindersStep extends ConsumerWidget {
     return _ActiveCompactStep(
       index: 2,
       title: 'Turn on daily reminders',
-      subtitle:
-          'A nudge for the 9pm War and your daily practice — so you keep '
-          'your streak and don’t drop off.',
-      ctaLabel: 'Turn on reminders',
-      onCta: () => unawaited(_enableReminders(ref)),
+      subtitle: 'Stay on track for the 9pm War and daily practice.',
+      ctaLabel: 'Turn on notifications',
+      onCta: () => unawaited(_enableReminders(context, ref)),
     );
   }
 }
 
-Future<void> _enableReminders(WidgetRef ref) async {
+Future<void> _enableReminders(BuildContext context, WidgetRef ref) async {
+  // Capture before awaits — OS permission dialog can dispose the widget/ref.
+  final container = ProviderScope.containerOf(context);
+
   await Analytics.track(
     ref,
     const ActivationJourneyTodoTappedEvent(todoIndex: 2),
   );
-  final status = await BattleMessagingService.notificationAuthorizationStatus();
-  if (BattleMessagingService.notificationAuthorizationAllowsPush(status)) {
-    ref.invalidate(homeActivationJourneyProvider);
+
+  if (await BattleMessagingService.notificationsAreEnabled()) {
+    container.invalidate(homeActivationJourneyProvider);
     return;
   }
-  if (status == AuthorizationStatus.denied) {
-    // Already-denied can't be re-prompted — deep-link to system Settings.
-    await AppSettings.openAppSettings(type: AppSettingsType.notification);
-  } else {
-    await BattleMessagingService.requestPushAuthorizationIfNotDetermined(
+
+  // Same education sheet that used to auto-show on 2nd app open.
+  if (!context.mounted) return;
+  final accepted = await showDeferredPushPermissionSheet(
+    context,
+    source: 'activation_reminders',
+  );
+  if (accepted != true) {
+    container.invalidate(homeActivationJourneyProvider);
+    return;
+  }
+
+  try {
+    final status = await BattleMessagingService.requestPushAuthorizationAndSync(
       source: 'activation_reminders',
     );
+    final grantedByOs =
+        status != null &&
+        BattleMessagingService.notificationAuthorizationAllowsPush(status);
+    final enabled = await BattleMessagingService.notificationsAreEnabled();
+
+    // Only open Settings when still blocked after an explicit denial.
+    // Avoid a race right after grant where the OS briefly reports disabled.
+    if (!enabled && !grantedByOs) {
+      await AppSettings.openAppSettings(type: AppSettingsType.notification);
+    }
+  } catch (_) {
+    // Permission / FCM sync failures shouldn't crash home — refresh UI anyway.
   }
-  ref.invalidate(homeActivationJourneyProvider);
+
+  container.invalidate(homeActivationJourneyProvider);
 }
 
 class _ReminderLifecycleObserver with WidgetsBindingObserver {
@@ -306,111 +477,152 @@ class _ReminderLifecycleObserver with WidgetsBindingObserver {
   }
 }
 
-class _DangerZoneStep extends ConsumerWidget {
-  const _DangerZoneStep({required this.state});
+/// Quiet Danger Zone surface after START HERE graduates.
+///
+/// Locked → thin progress. Unlocked → single CTA. Opened → not shown.
+class DangerZoneHomeNudge extends ConsumerWidget {
+  const DangerZoneHomeNudge({super.key, required this.state});
 
   final HomeActivationJourneyState state;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
-    final done = state.todo3Done;
-    final unlocked = state.todo3Unlocked;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final fill = isDark
+        ? scheme.surfaceContainerHighest.withValues(alpha: 0.45)
+        : scheme.surfaceContainerHighest.withValues(alpha: 0.55);
 
-    if (done) {
-      return const _CollapsedDoneRow(title: 'Danger zone opened');
-    }
-
-    if (unlocked) {
+    if (state.todo3Unlocked) {
       final preview = state.todo3IsPreview;
-      return _ActiveCompactStep(
-        index: 3,
-        title: preview ? 'Peek at your danger zone' : 'See your danger zone',
-        subtitle: preview
-            ? 'An early read on where you’re confidently wrong. It '
-                  'sharpens as you cross ${state.fullThreshold} attempts.'
-            :
-            'Topics where you\u2019re confidently wrong — and guesses that land right.',
-        ctaLabel: preview ? 'Open early read' : 'Open map',
-        showHelp: true,
-        onHelp: () => unawaited(_showDangerZoneHelpSheet(context, state)),
-        onCta: () => unawaited(_openDangerZone(context, ref, state)),
-      );
-    }
-
-    final remaining = state.attemptsRemaining;
-
-    return Material(
-      color: Colors.transparent,
-      child: InkWell(
-        onTap: () => unawaited(_showDangerZoneHelpSheet(context, state)),
-        borderRadius: BorderRadius.circular(12),
+      return Material(
+        color: fill,
+        borderRadius: BorderRadius.circular(16),
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 14),
+          padding: const EdgeInsets.fromLTRB(16, 14, 16, 14),
           child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Icon(
-                Icons.lock_outline_rounded,
-                size: 18,
-                color: scheme.onSurfaceVariant.withValues(alpha: 0.55),
-              ),
-              const SizedBox(width: 12),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Row(
-                      children: [
-                        Flexible(
-                          child: Text(
-                            'See your danger zone',
-                            style: AppTextStyles.label().copyWith(
-                              color: scheme.onSurfaceVariant
-                                  .withValues(alpha: 0.75),
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                        ),
-                        const SizedBox(width: 4),
-                        Icon(
-                          Icons.help_outline_rounded,
-                          size: 16,
-                          color: scheme.onSurfaceVariant.withValues(alpha: 0.55),
-                        ),
-                        const SizedBox(width: 8),
-                        Text(
-                          '${state.attemptsTowardNext}/${state.nextThreshold}',
-                          style: AppTextStyles.caption().copyWith(
-                            color: scheme.onSurfaceVariant
-                                .withValues(alpha: 0.7),
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 8),
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(AppRadius.pill),
-                      child: LinearProgressIndicator(
-                        value: state.unlockProgress,
-                        minHeight: 3,
-                        backgroundColor:
-                            scheme.onSurfaceVariant.withValues(alpha: 0.12),
-                        color: AppColors.primary.withValues(alpha: 0.45),
+                    Text(
+                      'Danger Zone ready',
+                      style: AppTextStyles.label().copyWith(
+                        color: scheme.onSurface,
+                        fontWeight: FontWeight.w800,
+                        fontSize: 15,
                       ),
                     ),
-                    const SizedBox(height: 8),
+                    const SizedBox(height: 2),
                     Text(
-                      remaining == 0
-                          ? 'Almost there — confident mistakes need volume to be real'
-                          : '$remaining to go — confident mistakes need volume to be real',
+                      preview
+                          ? 'Early read on where you’re confidently wrong.'
+                          : 'Topics where you’re confidently wrong.',
                       style: AppTextStyles.caption().copyWith(
-                        color: scheme.onSurfaceVariant.withValues(alpha: 0.65),
+                        color: scheme.onSurfaceVariant,
                         height: 1.3,
                       ),
                     ),
                   ],
+                ),
+              ),
+              const SizedBox(width: 12),
+              FilledButton(
+                style: FilledButton.styleFrom(
+                  elevation: 0,
+                  backgroundColor: AppColors.primary,
+                  foregroundColor: AppColors.onPrimary,
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 16,
+                    vertical: 10,
+                  ),
+                  minimumSize: Size.zero,
+                  tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(AppRadius.pill),
+                  ),
+                ),
+                onPressed: () =>
+                    unawaited(_openDangerZone(context, ref, state)),
+                child: Text(
+                  preview ? 'Peek' : 'Open',
+                  style: AppTextStyles.label().copyWith(
+                    fontWeight: FontWeight.w700,
+                    color: AppColors.onPrimary,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      );
+    }
+
+    final remaining = state.attemptsRemainingToPreview;
+
+    return Material(
+      color: fill,
+      borderRadius: BorderRadius.circular(16),
+      child: InkWell(
+        onTap: () => unawaited(_showDangerZoneHelpSheet(context, state)),
+        borderRadius: BorderRadius.circular(16),
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(16, 12, 16, 12),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Row(
+                children: [
+                  Icon(
+                    Icons.lock_outline_rounded,
+                    size: 16,
+                    color: scheme.onSurfaceVariant.withValues(alpha: 0.55),
+                  ),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: Text(
+                      'Danger Zone',
+                      style: AppTextStyles.label().copyWith(
+                        color: scheme.onSurfaceVariant.withValues(alpha: 0.85),
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                  ),
+                  Text(
+                    '${state.attemptsTowardPreview}/${state.previewThreshold}',
+                    style: AppTextStyles.caption().copyWith(
+                      color: scheme.onSurfaceVariant.withValues(alpha: 0.7),
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  const SizedBox(width: 4),
+                  Icon(
+                    Icons.help_outline_rounded,
+                    size: 15,
+                    color: scheme.onSurfaceVariant.withValues(alpha: 0.5),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 8),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(AppRadius.pill),
+                child: LinearProgressIndicator(
+                  value: state.previewUnlockProgress,
+                  minHeight: 3,
+                  backgroundColor: scheme.onSurfaceVariant.withValues(
+                    alpha: 0.12,
+                  ),
+                  color: AppColors.primary.withValues(alpha: 0.45),
+                ),
+              ),
+              const SizedBox(height: 6),
+              Text(
+                remaining == 0
+                    ? 'Almost there'
+                    : '$remaining to go · keep practicing',
+                style: AppTextStyles.caption().copyWith(
+                  color: scheme.onSurfaceVariant.withValues(alpha: 0.65),
                 ),
               ),
             ],
@@ -428,8 +640,6 @@ class _ActiveCompactStep extends StatelessWidget {
     required this.subtitle,
     this.ctaLabel,
     this.onCta,
-    this.showHelp = false,
-    this.onHelp,
   });
 
   final int index;
@@ -439,8 +649,6 @@ class _ActiveCompactStep extends StatelessWidget {
   /// When null, the step renders without a button (passive / self-completing).
   final String? ctaLabel;
   final VoidCallback? onCta;
-  final bool showHelp;
-  final VoidCallback? onHelp;
 
   @override
   Widget build(BuildContext context) {
@@ -457,35 +665,14 @@ class _ActiveCompactStep extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
-                  children: [
-                    Expanded(
-                      child: Text(
-                        title,
-                        style: AppTextStyles.label().copyWith(
-                          color: scheme.onSurface,
-                          fontWeight: FontWeight.w800,
-                          fontSize: 15,
-                          height: 1.2,
-                        ),
-                      ),
-                    ),
-                    if (showHelp && onHelp != null)
-                      IconButton(
-                        onPressed: onHelp,
-                        visualDensity: VisualDensity.compact,
-                        padding: EdgeInsets.zero,
-                        constraints: const BoxConstraints(
-                          minWidth: 28,
-                          minHeight: 28,
-                        ),
-                        icon: Icon(
-                          Icons.help_outline_rounded,
-                          size: 18,
-                          color: scheme.onSurfaceVariant,
-                        ),
-                      ),
-                  ],
+                Text(
+                  title,
+                  style: AppTextStyles.label().copyWith(
+                    color: scheme.onSurface,
+                    fontWeight: FontWeight.w800,
+                    fontSize: 15,
+                    height: 1.2,
+                  ),
                 ),
                 const SizedBox(height: 4),
                 Text(
@@ -627,7 +814,7 @@ Future<void> _showDangerZoneHelpSheet(
   BuildContext context,
   HomeActivationJourneyState state,
 ) async {
-  final remaining = state.attemptsRemaining;
+  final remaining = state.attemptsRemainingToPreview;
   final unlocked = state.todo3Unlocked;
 
   await showModalBottomSheet<void>(
@@ -687,13 +874,12 @@ Future<void> _showDangerZoneHelpSheet(
                       color: scheme.onSurface,
                     ),
                   ),
-                  const SizedBox(height: AppSpacing.sm),
+                  const SizedBox(height: AppSpacing.xs),
                   Text(
-                    'Most aspirants know weak subjects. Few know where they feel '
-                    'sure — and still get it wrong.',
+                    'Where you feel sure — and still get it wrong.',
                     style: AppTextStyles.bodySm().copyWith(
                       color: scheme.onSurfaceVariant,
-                      height: 1.4,
+                      height: 1.35,
                     ),
                   ),
                   const SizedBox(height: AppSpacing.md),
@@ -701,18 +887,14 @@ Future<void> _showDangerZoneHelpSheet(
                     icon: Icons.warning_amber_rounded,
                     iconColor: AppColors.wrong,
                     title: 'Confident & wrong',
-                    body:
-                        'Topics where you marked Sure / Educated guess but the '
-                        'answer was incorrect — costly Prelims mistakes.',
+                    body: 'Sure / Educated guess → incorrect',
                   ),
                   const SizedBox(height: AppSpacing.sm),
                   _DangerZoneHelpBullet(
                     icon: Icons.lightbulb_outline_rounded,
                     iconColor: AppColors.primary,
                     title: 'Guess & right',
-                    body:
-                        'Topics where your guesses land right more often — '
-                        'signal you may know more than you think.',
+                    body: 'Pure guess → correct',
                   ),
                   const SizedBox(height: AppSpacing.md),
                   Container(
@@ -723,22 +905,62 @@ Future<void> _showDangerZoneHelpSheet(
                           : AppColors.primaryLight.withValues(alpha: 0.65),
                       borderRadius: BorderRadius.circular(AppRadius.md),
                     ),
-                    child: Text(
-                      unlocked
-                          ? 'You\u2019ve logged enough attempts — open your map '
-                              'to see these topics by subject.'
-                          : 'We need about ${state.previewThreshold} attempted '
-                              'questions with confidence marked for an early '
-                              'read — the full map sharpens at '
-                              '${state.fullThreshold}.\n\n'
-                              'You\u2019re at ${state.scoredAttempts}'
-                              '${remaining == 0 ? '.' : ' · $remaining to go.'} '
-                              'Pick any subject below and keep practicing.',
-                      style: AppTextStyles.bodySm().copyWith(
-                        color: scheme.onSurface,
-                        height: 1.4,
-                      ),
-                    ),
+                    child: unlocked
+                        ? Text(
+                            'Map unlocked — open it to see these by subject.',
+                            style: AppTextStyles.bodySm().copyWith(
+                              color: scheme.onSurface,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          )
+                        : Column(
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: [
+                              Row(
+                                children: [
+                                  Expanded(
+                                    child: Text(
+                                      'Early read',
+                                      style: AppTextStyles.label().copyWith(
+                                        fontWeight: FontWeight.w700,
+                                        color: scheme.onSurface,
+                                      ),
+                                    ),
+                                  ),
+                                  Text(
+                                    '${state.attemptsTowardPreview} / '
+                                    '${state.previewThreshold}',
+                                    style: AppTextStyles.label().copyWith(
+                                      fontWeight: FontWeight.w700,
+                                      color: AppColors.primary,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(height: AppSpacing.sm),
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(4),
+                                child: LinearProgressIndicator(
+                                  value: state.previewUnlockProgress,
+                                  minHeight: 6,
+                                  backgroundColor: scheme.onSurface.withValues(
+                                    alpha: 0.08,
+                                  ),
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                              const SizedBox(height: AppSpacing.sm),
+                              Text(
+                                remaining == 0
+                                    ? 'Full map at ${state.fullThreshold}'
+                                    : '$remaining to go · full map at '
+                                          '${state.fullThreshold}',
+                                style: AppTextStyles.caption().copyWith(
+                                  color: scheme.onSurfaceVariant,
+                                ),
+                              ),
+                            ],
+                          ),
                   ),
                   const SizedBox(height: AppSpacing.lg),
                   SizedBox(
@@ -788,30 +1010,28 @@ class _DangerZoneHelpBullet extends StatelessWidget {
     final scheme = Theme.of(context).colorScheme;
 
     return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Icon(icon, size: 20, color: iconColor),
         const SizedBox(width: AppSpacing.sm),
         Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                title,
-                style: AppTextStyles.label().copyWith(
-                  fontWeight: FontWeight.w700,
-                  color: scheme.onSurface,
+          child: Text.rich(
+            TextSpan(
+              children: [
+                TextSpan(
+                  text: '$title  ',
+                  style: AppTextStyles.label().copyWith(
+                    fontWeight: FontWeight.w700,
+                    color: scheme.onSurface,
+                  ),
                 ),
-              ),
-              const SizedBox(height: 2),
-              Text(
-                body,
-                style: AppTextStyles.bodySm().copyWith(
-                  color: scheme.onSurfaceVariant,
-                  height: 1.35,
+                TextSpan(
+                  text: body,
+                  style: AppTextStyles.bodySm().copyWith(
+                    color: scheme.onSurfaceVariant,
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ],

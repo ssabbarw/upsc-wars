@@ -230,7 +230,7 @@ class _DailyWarHomeCardBody extends HookConsumerWidget {
               ),
             ),
             child: Padding(
-              padding: EdgeInsets.fromLTRB(16, 16, 12, isCollapsed ? 16 : 16),
+              padding: const EdgeInsets.fromLTRB(16, 16, 8, 16),
               child: isCollapsed
                   ? (isRest && sundaySummary != null
                       ? _CollapsedSundayWeek(
@@ -423,7 +423,7 @@ class _CollapsedSundayWeek extends StatelessWidget {
               behavior: HitTestBehavior.opaque,
               onTap: onExpand,
               child: const Padding(
-                padding: EdgeInsets.all(4),
+                padding: EdgeInsets.fromLTRB(4, 4, 0, 4),
                 child: Icon(
                   Icons.expand_more_rounded,
                   size: 20,
@@ -608,7 +608,7 @@ class _CollapsedWarHeader extends StatelessWidget {
           behavior: HitTestBehavior.opaque,
           onTap: onExpand,
           child: const Padding(
-            padding: EdgeInsets.all(4),
+            padding: EdgeInsets.fromLTRB(4, 4, 0, 4),
             child: Icon(
               Icons.expand_more_rounded,
               size: 20,
@@ -780,7 +780,7 @@ class _StatusRow extends StatelessWidget {
         if (onCollapse != null) ...[
           const SizedBox(width: 2),
           const Padding(
-            padding: EdgeInsets.all(4),
+            padding: EdgeInsets.fromLTRB(4, 4, 0, 4),
             child: Icon(
               Icons.expand_less_rounded,
               size: 20,

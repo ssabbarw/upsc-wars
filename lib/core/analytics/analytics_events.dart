@@ -705,6 +705,13 @@ final class ActivationJourneyTodoTappedEvent extends AnalyticsEvent {
   final int todoIndex;
 }
 
+/// **User snoozed the START HERE checklist** until tomorrow.
+///
+/// **GA4:** `activation_journey_snoozed` (no parameters).
+final class ActivationJourneySnoozedEvent extends AnalyticsEvent {
+  const ActivationJourneySnoozedEvent();
+}
+
 /// **Did You Know card shown** on home.
 ///
 /// **GA4:** `did_you_know_shown` with `card_id`.

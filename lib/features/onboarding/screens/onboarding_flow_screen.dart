@@ -178,11 +178,6 @@ class OnboardingFlowScreen extends HookConsumerWidget {
                             completeFlow(actionId: 'games_get_started'),
                           );
                         },
-                        onSkip: () {
-                          unawaited(
-                            completeFlow(actionId: 'games_skipped'),
-                          );
-                        },
                       ),
                     ],
                   ),
@@ -235,7 +230,6 @@ Future<void> _complete(
   );
   final prefs = await ref.read(prefsServiceProvider.future);
   prefs.patternInterruptOnboardingSeen = true;
-  prefs.getStartedSheetPendingAfterOnboarding = true;
   ref.invalidate(prefsServiceProvider);
   if (context.mounted) context.go('/');
 }

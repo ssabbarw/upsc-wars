@@ -77,6 +77,8 @@ class OnboardingQuestionDepthPage extends HookWidget {
       };
     }, const []);
 
+    final allChecked = checked.value >= _kFeatures.length;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -115,27 +117,35 @@ class OnboardingQuestionDepthPage extends HookWidget {
           ),
         ),
         SizedBox(height: onb(context, 12)),
-        FilledButton(
-          onPressed: onContinue,
-          style: RgText.pillButton(
-            fill: RgColors.tealDeep,
-            verticalPadding: onb(context, 15),
-          ).copyWith(
-            minimumSize: WidgetStatePropertyAll(
-              Size(double.infinity, onb(context, 54)),
-            ),
-            shape: WidgetStatePropertyAll(
-              RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(onb(context, 14)),
+        AnimatedOpacity(
+          opacity: allChecked ? 1 : 0,
+          duration: const Duration(milliseconds: 350),
+          curve: Curves.easeOutCubic,
+          child: IgnorePointer(
+            ignoring: !allChecked,
+            child: FilledButton(
+              onPressed: onContinue,
+              style: RgText.pillButton(
+                fill: RgColors.tealDeep,
+                verticalPadding: onb(context, 15),
+              ).copyWith(
+                minimumSize: WidgetStatePropertyAll(
+                  Size(double.infinity, onb(context, 54)),
+                ),
+                shape: WidgetStatePropertyAll(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(onb(context, 14)),
+                  ),
+                ),
               ),
-            ),
-          ),
-          child: Text(
-            'Next  →',
-            style: RgText.body(
-              size: onb(context, 16),
-              weight: FontWeight.w700,
-              color: RgColors.onDark,
+              child: Text(
+                'Next  →',
+                style: RgText.body(
+                  size: onb(context, 16),
+                  weight: FontWeight.w700,
+                  color: RgColors.onDark,
+                ),
+              ),
             ),
           ),
         ),

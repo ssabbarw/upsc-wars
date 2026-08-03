@@ -116,7 +116,6 @@ class HomeActivation extends _$HomeActivation {
   Future<void> snoozeGetStartedCardUntilTomorrow() async {
     final prefs = await ref.read(prefsServiceProvider.future);
     prefs.getStartedCardSnoozedUntil = _tomorrowYyyyMmDd();
-    prefs.getStartedSheetPendingAfterOnboarding = false;
     // Clear legacy permanent-dismiss so the daily reminder can return.
     if (prefs.getStartedCardDismissed) {
       prefs.getStartedCardDismissed = false;

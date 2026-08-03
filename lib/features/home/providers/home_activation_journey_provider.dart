@@ -5,11 +5,26 @@ import '../../../core/providers/user_database_provider.dart';
 import '../../../core/services/battle_messaging_service.dart';
 import '../domain/activation_journey_constants.dart';
 
-/// State for the 3-step home activation checklist (START HERE).
+String _todayYyyyMmDd() {
+  final now = DateTime.now();
+  return '${now.year.toString().padLeft(4, '0')}-'
+      '${now.month.toString().padLeft(2, '0')}-'
+      '${now.day.toString().padLeft(2, '0')}';
+}
+
+String _tomorrowYyyyMmDd() {
+  final t = DateTime.now().add(const Duration(days: 1));
+  return '${t.year.toString().padLeft(4, '0')}-'
+      '${t.month.toString().padLeft(2, '0')}-'
+      '${t.day.toString().padLeft(2, '0')}';
+}
+
+/// Home activation surfaces after onboarding.
 ///
-/// Steps: (1) demo test, (2) turn on daily reminders (independent of step 1;
-/// enables the 2nd-day return), (3) Danger Zone (previews early at 20 attempts,
-/// full map at 50).
+/// Phase A — [shouldShowChecklist]: START HERE with demo + reminders.
+/// Phase B — [shouldShowDangerZoneNudge]: quiet Danger Zone progress / CTA
+/// after early steps are done (checklist is gone).
+/// Dismissed once Danger Zone is opened (or grandfathered).
 class HomeActivationJourneyState {
   const HomeActivationJourneyState({
     required this.demoOrFirstTestDone,
@@ -18,6 +33,8 @@ class HomeActivationJourneyState {
     required this.remindersEnabled,
     required this.topSubjectSlug,
     required this.shouldShowChecklist,
+    required this.shouldShowDangerZoneNudge,
+    required this.canSnoozeChecklist,
   });
 
   /// Step 1: demo diagnostic submitted, or any completed session.
@@ -26,7 +43,7 @@ class HomeActivationJourneyState {
   /// Scored answers (correct + wrong). Demo is ephemeral, so excluded.
   final int scoredAttempts;
 
-  /// Step 3 done: user opened their Danger Zone (preview or full).
+  /// Danger Zone opened (preview or full) — journey graduate.
   final bool confidenceMapOpened;
 
   /// Step 2 done: notifications / daily reminders are enabled.
@@ -35,8 +52,14 @@ class HomeActivationJourneyState {
   /// Best subject to open for the danger-zone step (most attempts), or null.
   final String? topSubjectSlug;
 
-  /// Show the START HERE card on home.
+  /// Loud START HERE checklist (demo + reminders still open).
   final bool shouldShowChecklist;
+
+  /// Quiet Danger Zone nudge after checklist graduates.
+  final bool shouldShowDangerZoneNudge;
+
+  /// Snooze (X) only from the calendar day after START HERE first appeared.
+  final bool canSnoozeChecklist;
 
   int get previewThreshold =>
       ActivationJourneyConstants.confidenceMapPreviewAttempts;
@@ -47,6 +70,14 @@ class HomeActivationJourneyState {
   bool get todo1Done => demoOrFirstTestDone;
 
   bool get todo2Done => remindersEnabled;
+
+  bool get earlyStepsDone => todo1Done && todo2Done;
+
+  /// Checklist progress: demo + reminders only.
+  int get checklistCompletedCount =>
+      (todo1Done ? 1 : 0) + (todo2Done ? 1 : 0);
+
+  static const checklistStepCount = 2;
 
   /// Step 3 becomes actionable at the *preview* threshold (early signal).
   bool get todo3Unlocked => scoredAttempts >= previewThreshold;
@@ -59,24 +90,18 @@ class HomeActivationJourneyState {
 
   bool get todo3Done => confidenceMapOpened;
 
-  bool get allDone => todo1Done && todo2Done && todo3Done;
+  bool get shouldShowActivationSurface =>
+      shouldShowChecklist || shouldShowDangerZoneNudge;
 
-  int get completedCount =>
-      (todo1Done ? 1 : 0) + (todo2Done ? 1 : 0) + (todo3Done ? 1 : 0);
+  // ── Progress toward Danger Zone preview (nudge) ────────────────────────────
 
-  // ── Progress toward the next Danger Zone gate ──────────────────────────────
-  // While locked, the next gate is the preview (20). In the preview band, the
-  // next gate is the full map (50).
+  int get attemptsTowardPreview => scoredAttempts.clamp(0, previewThreshold);
 
-  int get nextThreshold => todo3Unlocked ? fullThreshold : previewThreshold;
+  int get attemptsRemainingToPreview =>
+      (previewThreshold - scoredAttempts).clamp(0, previewThreshold);
 
-  int get attemptsTowardNext => scoredAttempts.clamp(0, nextThreshold);
-
-  int get attemptsRemaining =>
-      (nextThreshold - scoredAttempts).clamp(0, nextThreshold);
-
-  double get unlockProgress =>
-      nextThreshold == 0 ? 1 : attemptsTowardNext / nextThreshold;
+  double get previewUnlockProgress =>
+      previewThreshold == 0 ? 1 : attemptsTowardPreview / previewThreshold;
 }
 
 final homeActivationJourneyProvider =
@@ -102,21 +127,36 @@ final homeActivationJourneyProvider =
   }
 
   final confidenceMapOpened = prefs.activationConfidenceMapOpened;
-  // Checked once notifications are allowed — the lever for the 2nd-day return.
-  final pushStatus =
-      await BattleMessagingService.notificationAuthorizationStatus();
   final remindersEnabled =
-      BattleMessagingService.notificationAuthorizationAllowsPush(pushStatus);
+      await BattleMessagingService.notificationsAreEnabled();
   final dismissed = prefs.activationJourneyDismissed;
 
-  final allDone =
-      demoOrFirstTestDone && remindersEnabled && confidenceMapOpened;
-  if (allDone && !dismissed) {
+  final earlyStepsDone = demoOrFirstTestDone && remindersEnabled;
+
+  // Graduate the whole journey once Danger Zone has been opened.
+  if (earlyStepsDone && confidenceMapOpened && !dismissed) {
     prefs.activationJourneyDismissed = true;
   }
 
-  // Stay visible until every step is complete, then disappear.
-  final shouldShowChecklist = !allDone && !prefs.activationJourneyDismissed;
+  final snoozedUntil = prefs.activationJourneySnoozedUntil;
+  final checklistSnoozed = snoozedUntil.isNotEmpty &&
+      _todayYyyyMmDd().compareTo(snoozedUntil) < 0;
+
+  final stillActive = !prefs.activationJourneyDismissed;
+  final shouldShowChecklist =
+      stillActive && !earlyStepsDone && !checklistSnoozed;
+  final shouldShowDangerZoneNudge =
+      stillActive && earlyStepsDone && !confidenceMapOpened;
+
+  // Stamp first-shown day so snooze appears only from day 2 onward.
+  var firstShownOn = prefs.activationJourneyFirstShownOn;
+  if (shouldShowChecklist && firstShownOn.isEmpty) {
+    firstShownOn = _todayYyyyMmDd();
+    prefs.activationJourneyFirstShownOn = firstShownOn;
+  }
+  final canSnoozeChecklist = shouldShowChecklist &&
+      firstShownOn.isNotEmpty &&
+      _todayYyyyMmDd().compareTo(firstShownOn) > 0;
 
   String? topSubjectSlug;
   if (scoredAttempts > 0) {
@@ -142,13 +182,24 @@ final homeActivationJourneyProvider =
     remindersEnabled: remindersEnabled,
     topSubjectSlug: topSubjectSlug,
     shouldShowChecklist: shouldShowChecklist,
+    shouldShowDangerZoneNudge: shouldShowDangerZoneNudge,
+    canSnoozeChecklist: canSnoozeChecklist,
   );
 });
 
-/// Marks the danger-zone step opened. Journey hides only when all 3 are done.
+/// Marks Danger Zone opened — dismisses the home nudge.
 Future<void> markActivationConfidenceMapOpened(WidgetRef ref) async {
   final prefs = await ref.read(prefsServiceProvider.future);
   prefs.activationConfidenceMapOpened = true;
+  prefs.activationJourneyDismissed = true;
+  ref.invalidate(prefsServiceProvider);
+  ref.invalidate(homeActivationJourneyProvider);
+}
+
+/// Hide START HERE until tomorrow; returns daily until early steps are done.
+Future<void> snoozeActivationJourneyUntilTomorrow(WidgetRef ref) async {
+  final prefs = await ref.read(prefsServiceProvider.future);
+  prefs.activationJourneySnoozedUntil = _tomorrowYyyyMmDd();
   ref.invalidate(prefsServiceProvider);
   ref.invalidate(homeActivationJourneyProvider);
 }
