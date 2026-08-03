@@ -36,6 +36,7 @@ class OnboardingMcqContent {
     required this.skippedHeadline,
     required this.eliminations,
     required this.promiseSkipped,
+    required this.richerNote,
   });
 
   final String eyebrow;
@@ -56,6 +57,7 @@ class OnboardingMcqContent {
   final String skippedHeadline;
   final List<({bool keep, String text})> eliminations;
   final String promiseSkipped;
+  final String richerNote;
 }
 
 const kOnboardingMcq = OnboardingMcqContent(
@@ -125,4 +127,6 @@ const kOnboardingMcq = OnboardingMcqContent(
   promiseSkipped:
       'This is elimination logic. Every question has it — so you always '
       'know why, not just what.',
+  richerNote:
+      'Real questions have much richer explanations and statement analysis.',
 );

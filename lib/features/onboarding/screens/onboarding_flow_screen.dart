@@ -222,8 +222,16 @@ class OnboardingFlowScreen extends HookConsumerWidget {
                         selectedIndex: mcqSelected.value,
                         confidence: mcqConfidence.value,
                         outcome: mcqOutcome.value,
-                        onSelect: (i) => mcqSelected.value = i,
-                        onConfidenceSelect: (c) => mcqConfidence.value = c,
+                        onSelect: (i) {
+                          if (mcqOutcome.value != null) return;
+                          mcqSelected.value = i;
+                          mcqConfidence.value = null;
+                        },
+                        onConfidenceSelect: (c) {
+                          if (mcqOutcome.value != null) return;
+                          mcqConfidence.value = c;
+                          showMcqOutcome();
+                        },
                         onContinue: showMcqOutcome,
                         onGotIt: () {
                           mcqOutcomeResolved.value = true;

@@ -26,7 +26,11 @@ import 'daily_war_topics_sheet.dart';
 
 /// Home hero for Daily War — three-band near-black card (design H1–H9).
 class DailyWarHomeCard extends HookConsumerWidget {
-  const DailyWarHomeCard({super.key});
+  const DailyWarHomeCard({super.key, this.forceCollapsed = false});
+
+  /// When true (e.g. activation journey), start collapsed so START HERE stays
+  /// the hero. User can still expand for the session.
+  final bool forceCollapsed;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -36,15 +40,16 @@ class DailyWarHomeCard extends HookConsumerWidget {
       error: (_, _) => const SizedBox.shrink(),
       data: (on) {
         if (!on) return const SizedBox.shrink();
-        return const _DailyWarHomeCardBody();
+        return _DailyWarHomeCardBody(forceCollapsed: forceCollapsed);
       },
     );
   }
 }
 
 class _DailyWarHomeCardBody extends HookConsumerWidget {
-  const _DailyWarHomeCardBody();
+  const _DailyWarHomeCardBody({this.forceCollapsed = false});
 
+  final bool forceCollapsed;
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final tick = useState(0);
@@ -75,8 +80,11 @@ class _DailyWarHomeCardBody extends HookConsumerWidget {
         : null;
     // Sunday defaults collapsed; weekday uses sticky prefs. Session override
     // survives ListView scroll dispose (keepAlive provider).
+    // [forceCollapsed] keeps War quiet while START HERE is on screen.
     final isCollapsed = sessionCollapse ??
-        (isRest ? true : (storedCollapse ?? false));
+        (forceCollapsed
+            ? true
+            : (isRest ? true : (storedCollapse ?? false)));
 
     void setCollapsed(bool value) {
       ref.read(dailyWarHomeCollapseProvider.notifier).setCollapsed(

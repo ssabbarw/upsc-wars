@@ -7,6 +7,9 @@ import 'onboarding_scale.dart';
 
 /// Screen 3 — markable demo MCQ with a confidence selector, plus
 /// confidence-aware correct / wrong / skipped outcome states.
+///
+/// Picking confidence immediately reveals the answer. The question stays
+/// on screen and the explanation scrolls in below it.
 class OnboardingMcqPage extends StatelessWidget {
   const OnboardingMcqPage({
     super.key,
@@ -29,108 +32,241 @@ class OnboardingMcqPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (outcome != null) {
-      return _OutcomeView(
-        outcome: outcome!,
-        confidence: confidence,
-        selectedIndex: selectedIndex,
-        onGotIt: onGotIt,
-      );
-    }
+    final revealed = outcome != null;
+    // Awaiting confidence: no bottom CTA — reveal happens on chip tap.
+    // No selection yet: Continue skips into the elimination outcome.
+    final showBottomCta = revealed || selectedIndex == null;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Expanded(
-          child: OnboardingFit(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Text(
-                  kOnboardingMcq.eyebrow.toUpperCase(),
-                  style: RgText.mono(
-                    size: onb(context, 12),
-                    letterSpacingEm: 0.13,
-                    color: RgColors.wrong,
-                  ),
-                ),
-                SizedBox(height: onb(context, 10)),
-                Text(
-                  kOnboardingMcq.prompt,
-                  style: RgText.display(
-                    size: onb(context, 24),
-                    weight: FontWeight.w800,
-                    height: 1.2,
-                  ),
-                ),
-                SizedBox(height: onb(context, 18)),
-                Container(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: onb(context, 16),
-                    vertical: onb(context, 16),
-                  ),
-                  decoration: BoxDecoration(
-                    color: RgColors.card,
-                    borderRadius: BorderRadius.circular(onb(context, 16)),
-                    border: Border.all(color: RgColors.border),
-                  ),
-                  child: Text(
-                    kOnboardingMcq.question,
-                    style: RgText.body(
-                      size: onb(context, 16),
-                      weight: FontWeight.w600,
-                      height: 1.4,
-                    ),
-                  ),
-                ),
-                SizedBox(height: onb(context, 14)),
-                for (var i = 0; i < kOnboardingMcq.options.length; i++) ...[
-                  _OptionRow(
-                    option: kOnboardingMcq.options[i],
-                    selected: selectedIndex == i,
-                    onTap: () => onSelect(i),
-                  ),
-                  if (i < kOnboardingMcq.options.length - 1)
-                    SizedBox(height: onb(context, 10)),
-                ],
-                if (selectedIndex != null) ...[
-                  SizedBox(height: onb(context, 16)),
-                  _ConfidenceSelector(
+          child: revealed
+              ? SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  child: _McqBody(
+                    selectedIndex: selectedIndex,
                     confidence: confidence,
-                    onSelect: onConfidenceSelect,
+                    outcome: outcome,
+                    onSelect: onSelect,
+                    onConfidenceSelect: onConfidenceSelect,
                   ),
-                ],
-              ],
+                )
+              : OnboardingFit(
+                  child: _McqBody(
+                    selectedIndex: selectedIndex,
+                    confidence: confidence,
+                    outcome: outcome,
+                    onSelect: onSelect,
+                    onConfidenceSelect: onConfidenceSelect,
+                  ),
+                ),
+        ),
+        if (showBottomCta) ...[
+          SizedBox(height: onb(context, 14)),
+          FilledButton(
+            onPressed: revealed ? onGotIt : onContinue,
+            style: RgText.pillButton(
+              fill: RgColors.ink,
+              verticalPadding: onb(context, 16),
+            ).copyWith(
+              minimumSize: WidgetStatePropertyAll(
+                Size(double.infinity, onb(context, 56)),
+              ),
+              shape: WidgetStatePropertyAll(
+                RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(onb(context, 14)),
+                ),
+              ),
+            ),
+            child: Text(
+              revealed ? 'Got it' : 'Continue',
+              style: RgText.body(
+                size: onb(context, 17),
+                weight: FontWeight.w700,
+                color: RgColors.onDark,
+              ),
+            ),
+          ),
+        ],
+      ],
+    );
+  }
+}
+
+class _McqBody extends StatelessWidget {
+  const _McqBody({
+    required this.selectedIndex,
+    required this.confidence,
+    required this.outcome,
+    required this.onSelect,
+    required this.onConfidenceSelect,
+  });
+
+  final int? selectedIndex;
+  final OnboardingMcqConfidence? confidence;
+  final OnboardingMcqOutcome? outcome;
+  final ValueChanged<int> onSelect;
+  final ValueChanged<OnboardingMcqConfidence> onConfidenceSelect;
+
+  @override
+  Widget build(BuildContext context) {
+    final revealed = outcome != null;
+    // Answered without picking a confidence level reads as a guess.
+    final conf = confidence ?? OnboardingMcqConfidence.guessing;
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Text(
+          kOnboardingMcq.eyebrow.toUpperCase(),
+          style: RgText.mono(
+            size: onb(context, 12),
+            letterSpacingEm: 0.13,
+            color: RgColors.wrong,
+          ),
+        ),
+        SizedBox(height: onb(context, 10)),
+        Text(
+          revealed && outcome == OnboardingMcqOutcome.skipped
+              ? kOnboardingMcq.skippedHeadline
+              : kOnboardingMcq.prompt,
+          style: RgText.display(
+            size: onb(context, 24),
+            weight: FontWeight.w800,
+            height: 1.2,
+          ),
+        ),
+        SizedBox(height: onb(context, 18)),
+        Container(
+          padding: EdgeInsets.symmetric(
+            horizontal: onb(context, 16),
+            vertical: onb(context, 16),
+          ),
+          decoration: BoxDecoration(
+            color: RgColors.card,
+            borderRadius: BorderRadius.circular(onb(context, 16)),
+            border: Border.all(color: RgColors.border),
+          ),
+          child: Text(
+            kOnboardingMcq.question,
+            style: RgText.body(
+              size: onb(context, 16),
+              weight: FontWeight.w600,
+              height: 1.4,
             ),
           ),
         ),
         SizedBox(height: onb(context, 14)),
-        FilledButton(
-          onPressed: onContinue,
-          style: RgText.pillButton(
-            fill: RgColors.ink,
-            verticalPadding: onb(context, 16),
-          ).copyWith(
-            minimumSize: WidgetStatePropertyAll(
-              Size(double.infinity, onb(context, 56)),
+        for (var i = 0; i < kOnboardingMcq.options.length; i++) ...[
+          if (revealed)
+            _RevealedOption(
+              option: kOnboardingMcq.options[i],
+              kind: _revealKindFor(
+                index: i,
+                outcome: outcome!,
+                selectedIndex: selectedIndex,
+              ),
+              confidence: selectedIndex == i ? conf : null,
+            )
+          else ...[
+            _OptionRow(
+              option: kOnboardingMcq.options[i],
+              selected: selectedIndex == i,
+              onTap: () => onSelect(i),
             ),
-            shape: WidgetStatePropertyAll(
-              RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(onb(context, 14)),
+            if (selectedIndex == i) ...[
+              SizedBox(height: onb(context, 10)),
+              _ConfidenceSelector(
+                confidence: confidence,
+                onSelect: onConfidenceSelect,
+              ),
+            ],
+            if (i < kOnboardingMcq.options.length - 1)
+              SizedBox(height: onb(context, 10)),
+          ],
+        ],
+        if (revealed) ...[
+          SizedBox(height: onb(context, 10)),
+          if (outcome != OnboardingMcqOutcome.skipped) ...[
+            Text(
+              _outcomeHeadline(outcome!, conf),
+              style: RgText.display(
+                size: onb(context, 18),
+                weight: FontWeight.w800,
+                height: 1.25,
               ),
             ),
-          ),
-          child: Text(
-            'Continue',
+            SizedBox(height: onb(context, 12)),
+          ],
+          switch (outcome!) {
+            OnboardingMcqOutcome.skipped => const _SkippedExplanation(),
+            OnboardingMcqOutcome.correct => _TrapAndPromise(
+              trapBody: kOnboardingMcq.trapBodyCorrect,
+              promiseBody: conf == OnboardingMcqConfidence.confident
+                  ? kOnboardingMcq.promiseCorrectConfident
+                  : kOnboardingMcq.promiseCorrectGuess,
+            ),
+            OnboardingMcqOutcome.wrong => _TrapAndPromise(
+              trapBody: kOnboardingMcq.trapBodyWrong,
+              promiseBody: conf == OnboardingMcqConfidence.confident
+                  ? kOnboardingMcq.promiseWrongConfident
+                  : kOnboardingMcq.promiseWrongGuess,
+            ),
+          },
+          SizedBox(height: onb(context, 12)),
+          Text(
+            kOnboardingMcq.richerNote,
             style: RgText.body(
-              size: onb(context, 17),
-              weight: FontWeight.w700,
-              color: RgColors.onDark,
+              size: onb(context, 13),
+              height: 1.45,
+              color: RgColors.muted,
+              weight: FontWeight.w500,
             ),
           ),
-        ),
+          // Extra bottom padding so the last line clears the sticky CTA.
+          SizedBox(height: onb(context, 8)),
+        ],
       ],
     );
   }
+}
+
+String _outcomeHeadline(
+  OnboardingMcqOutcome outcome,
+  OnboardingMcqConfidence conf,
+) {
+  final confident = conf == OnboardingMcqConfidence.confident;
+  return switch (outcome) {
+    OnboardingMcqOutcome.skipped => kOnboardingMcq.skippedHeadline,
+    OnboardingMcqOutcome.correct => confident
+        ? kOnboardingMcq.headlineCorrectConfident
+        : kOnboardingMcq.headlineCorrectGuess,
+    OnboardingMcqOutcome.wrong => confident
+        ? kOnboardingMcq.headlineWrongConfident
+        : kOnboardingMcq.headlineWrongGuess,
+  };
+}
+
+_RevealKind _revealKindFor({
+  required int index,
+  required OnboardingMcqOutcome outcome,
+  required int? selectedIndex,
+}) {
+  final option = kOnboardingMcq.options[index];
+  if (option.isCorrect) return _RevealKind.correct;
+  if (outcome == OnboardingMcqOutcome.wrong && selectedIndex == index) {
+    return _RevealKind.wrongPick;
+  }
+  if (outcome == OnboardingMcqOutcome.skipped) {
+    final elimination = index < kOnboardingMcq.eliminations.length
+        ? kOnboardingMcq.eliminations[index]
+        : null;
+    if (elimination != null && !elimination.keep) {
+      return _RevealKind.eliminated;
+    }
+  }
+  return _RevealKind.neutral;
 }
 
 class _OptionRow extends StatelessWidget {
@@ -308,94 +444,24 @@ class _ConfidenceChip extends StatelessWidget {
   }
 }
 
-class _OutcomeView extends StatelessWidget {
-  const _OutcomeView({
-    required this.outcome,
-    required this.confidence,
-    required this.selectedIndex,
-    required this.onGotIt,
+class _TrapAndPromise extends StatelessWidget {
+  const _TrapAndPromise({
+    required this.trapBody,
+    required this.promiseBody,
   });
 
-  final OnboardingMcqOutcome outcome;
-  final OnboardingMcqConfidence? confidence;
-  final int? selectedIndex;
-  final VoidCallback onGotIt;
+  final String trapBody;
+  final String promiseBody;
 
   @override
   Widget build(BuildContext context) {
-    // Answered without picking a confidence level reads as a guess.
-    final conf = confidence ?? OnboardingMcqConfidence.guessing;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Expanded(
-          child: OnboardingFit(
-            child: switch (outcome) {
-              OnboardingMcqOutcome.skipped => const _SkippedBody(),
-              OnboardingMcqOutcome.correct => _CorrectBody(confidence: conf),
-              OnboardingMcqOutcome.wrong => _WrongBody(
-                selectedIndex: selectedIndex ?? 0,
-                confidence: conf,
-              ),
-            },
-          ),
-        ),
-        SizedBox(height: onb(context, 14)),
-        FilledButton(
-          onPressed: onGotIt,
-          style: RgText.pillButton(
-            fill: RgColors.ink,
-            verticalPadding: onb(context, 16),
-          ).copyWith(
-            minimumSize: WidgetStatePropertyAll(
-              Size(double.infinity, onb(context, 56)),
-            ),
-            shape: WidgetStatePropertyAll(
-              RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(onb(context, 14)),
-              ),
-            ),
-          ),
-          child: Text(
-            'Got it',
-            style: RgText.body(
-              size: onb(context, 17),
-              weight: FontWeight.w700,
-              color: RgColors.onDark,
-            ),
-          ),
-        ),
+        _TrapCard(body: trapBody),
+        SizedBox(height: onb(context, 10)),
+        _PromiseCard(body: promiseBody),
       ],
-    );
-  }
-}
-
-class _Chip extends StatelessWidget {
-  const _Chip({required this.label, required this.bg, required this.fg});
-
-  final String label;
-  final Color bg;
-  final Color fg;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(
-        horizontal: onb(context, 11),
-        vertical: onb(context, 6),
-      ),
-      decoration: BoxDecoration(
-        color: bg,
-        borderRadius: BorderRadius.circular(onb(context, 20)),
-      ),
-      child: Text(
-        label.toUpperCase(),
-        style: RgText.mono(
-          size: onb(context, 11),
-          letterSpacingEm: 0.06,
-          color: fg,
-        ),
-      ),
     );
   }
 }
@@ -470,15 +536,21 @@ class _RevealedOption extends StatelessWidget {
   const _RevealedOption({
     required this.option,
     required this.kind,
+    this.confidence,
   });
 
   final OnboardingMcqOption option;
   final _RevealKind kind;
+  final OnboardingMcqConfidence? confidence;
 
   @override
   Widget build(BuildContext context) {
     final wrong = kind == _RevealKind.wrongPick;
     final right = kind == _RevealKind.correct;
+    final eliminated = kind == _RevealKind.eliminated;
+    final isPick = confidence != null;
+    final confident = confidence == OnboardingMcqConfidence.confident;
+
     return Container(
       margin: EdgeInsets.only(bottom: onb(context, 8)),
       padding: EdgeInsets.symmetric(
@@ -537,16 +609,36 @@ class _RevealedOption extends StatelessWidget {
               style: RgText.body(
                 size: onb(context, 15),
                 weight: FontWeight.w500,
+                color: eliminated ? RgColors.muted : RgColors.ink,
+                decoration: eliminated ? TextDecoration.lineThrough : null,
               ),
             ),
           ),
-          if (wrong || right)
-            Text(
-              wrong ? 'YOUR PICK' : 'CORRECT',
-              style: RgText.mono(
-                size: onb(context, 10),
-                color: wrong ? RgColors.wrong : RgColors.tealDeep,
-              ),
+          if (isPick || wrong || right)
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                if (isPick)
+                  Text(
+                    confident ? 'CONFIDENT' : 'GUESSING',
+                    style: RgText.mono(
+                      size: onb(context, 10),
+                      color: confident
+                          ? RgColors.tealDeep
+                          : RgColors.warningText,
+                    ),
+                  ),
+                if (wrong || right) ...[
+                  if (isPick) SizedBox(height: onb(context, 2)),
+                  Text(
+                    wrong ? 'YOUR PICK' : 'CORRECT',
+                    style: RgText.mono(
+                      size: onb(context, 10),
+                      color: wrong ? RgColors.wrong : RgColors.tealDeep,
+                    ),
+                  ),
+                ],
+              ],
             ),
         ],
       ),
@@ -554,123 +646,16 @@ class _RevealedOption extends StatelessWidget {
   }
 }
 
-enum _RevealKind { wrongPick, correct }
+enum _RevealKind { wrongPick, correct, eliminated, neutral }
 
-class _WrongBody extends StatelessWidget {
-  const _WrongBody({required this.selectedIndex, required this.confidence});
-
-  final int selectedIndex;
-  final OnboardingMcqConfidence confidence;
-
-  @override
-  Widget build(BuildContext context) {
-    final confident = confidence == OnboardingMcqConfidence.confident;
-    final pick = kOnboardingMcq.options[selectedIndex.clamp(
-      0,
-      kOnboardingMcq.options.length - 1,
-    )];
-    final correct = kOnboardingMcq.options.firstWhere((o) => o.isCorrect);
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        _Chip(
-          label: confident ? 'Confident & Wrong' : 'Wrong',
-          bg: AppColors.wrongBg,
-          fg: RgColors.wrong,
-        ),
-        SizedBox(height: onb(context, 10)),
-        Text(
-          confident
-              ? kOnboardingMcq.headlineWrongConfident
-              : kOnboardingMcq.headlineWrongGuess,
-          style: RgText.display(
-            size: onb(context, 20),
-            weight: FontWeight.w800,
-            height: 1.22,
-          ),
-        ),
-        SizedBox(height: onb(context, 14)),
-        _RevealedOption(option: pick, kind: _RevealKind.wrongPick),
-        _RevealedOption(option: correct, kind: _RevealKind.correct),
-        SizedBox(height: onb(context, 10)),
-        _TrapCard(body: kOnboardingMcq.trapBodyWrong),
-        SizedBox(height: onb(context, 10)),
-        _PromiseCard(
-          body: confident
-              ? kOnboardingMcq.promiseWrongConfident
-              : kOnboardingMcq.promiseWrongGuess,
-        ),
-      ],
-    );
-  }
-}
-
-class _CorrectBody extends StatelessWidget {
-  const _CorrectBody({required this.confidence});
-
-  final OnboardingMcqConfidence confidence;
-
-  @override
-  Widget build(BuildContext context) {
-    final confident = confidence == OnboardingMcqConfidence.confident;
-    final correct = kOnboardingMcq.options.firstWhere((o) => o.isCorrect);
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        _Chip(
-          label: confident ? 'Confident & Right' : 'Guess & Right',
-          bg: AppColors.correctBg,
-          fg: RgColors.tealDeep,
-        ),
-        SizedBox(height: onb(context, 10)),
-        Text(
-          confident
-              ? kOnboardingMcq.headlineCorrectConfident
-              : kOnboardingMcq.headlineCorrectGuess,
-          style: RgText.display(
-            size: onb(context, 20),
-            weight: FontWeight.w800,
-            height: 1.22,
-          ),
-        ),
-        SizedBox(height: onb(context, 14)),
-        _RevealedOption(option: correct, kind: _RevealKind.correct),
-        SizedBox(height: onb(context, 10)),
-        _TrapCard(body: kOnboardingMcq.trapBodyCorrect),
-        SizedBox(height: onb(context, 10)),
-        _PromiseCard(
-          body: confident
-              ? kOnboardingMcq.promiseCorrectConfident
-              : kOnboardingMcq.promiseCorrectGuess,
-        ),
-      ],
-    );
-  }
-}
-
-class _SkippedBody extends StatelessWidget {
-  const _SkippedBody();
+class _SkippedExplanation extends StatelessWidget {
+  const _SkippedExplanation();
 
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        _Chip(
-          label: 'Skipped',
-          bg: AppColors.warningBg,
-          fg: RgColors.warningText,
-        ),
-        SizedBox(height: onb(context, 10)),
-        Text(
-          kOnboardingMcq.skippedHeadline,
-          style: RgText.display(
-            size: onb(context, 20),
-            weight: FontWeight.w800,
-            height: 1.22,
-          ),
-        ),
-        SizedBox(height: onb(context, 14)),
         for (final e in kOnboardingMcq.eliminations) ...[
           Padding(
             padding: EdgeInsets.only(bottom: onb(context, 10)),

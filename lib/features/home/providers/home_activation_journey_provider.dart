@@ -15,7 +15,7 @@ class HomeActivationJourneyState {
     required this.gamesOpened,
     required this.topSubjectSlug,
     required this.shouldShowChecklist,
-    required this.shouldMuteDailyWar,
+    required this.shouldCollapseDailyWar,
   });
 
   /// Step 1: demo diagnostic submitted, or any completed session.
@@ -33,8 +33,8 @@ class HomeActivationJourneyState {
   /// Show the START HERE card on home.
   final bool shouldShowChecklist;
 
-  /// Collapse Daily War on home until the danger zone unlocks.
-  final bool shouldMuteDailyWar;
+  /// Prefer collapsed Daily War while START HERE is visible.
+  final bool shouldCollapseDailyWar;
 
   int get unlockThreshold =>
       ActivationJourneyConstants.confidenceMapUnlockAttempts;
@@ -91,9 +91,6 @@ final homeActivationJourneyProvider =
       prefs.activationGamesOpened || prefs.memoryPairsGameDiscovered;
   final dismissed = prefs.activationJourneyDismissed;
 
-  final unlocked = scoredAttempts >=
-      ActivationJourneyConstants.confidenceMapUnlockAttempts;
-
   final allDone = demoOrFirstTestDone && gamesOpened && confidenceMapOpened;
   if (allDone && !dismissed) {
     prefs.activationJourneyDismissed = true;
@@ -102,7 +99,8 @@ final homeActivationJourneyProvider =
   // Stay visible until every step is complete, then disappear.
   final shouldShowChecklist = !allDone && !prefs.activationJourneyDismissed;
 
-  final shouldMuteDailyWar = shouldShowChecklist && !unlocked;
+  // Available but collapsed so START HERE stays the hero.
+  final shouldCollapseDailyWar = shouldShowChecklist;
 
   String? topSubjectSlug;
   if (scoredAttempts > 0) {
@@ -128,7 +126,7 @@ final homeActivationJourneyProvider =
     gamesOpened: gamesOpened,
     topSubjectSlug: topSubjectSlug,
     shouldShowChecklist: shouldShowChecklist,
-    shouldMuteDailyWar: shouldMuteDailyWar,
+    shouldCollapseDailyWar: shouldCollapseDailyWar,
   );
 });
 

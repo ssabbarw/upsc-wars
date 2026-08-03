@@ -563,26 +563,14 @@ class HomeScreen extends HookConsumerWidget {
                         final journey = ref.watch(
                           homeActivationJourneyProvider,
                         );
-                        final muteWar = journey.maybeWhen(
-                          data: (s) => s.shouldMuteDailyWar,
+                        final collapseWar = journey.maybeWhen(
+                          data: (s) => s.shouldCollapseDailyWar,
                           orElse: () => false,
                         );
-                        final warOn =
-                            ref
-                                .watch(dailyWarRemoteEnabledProvider)
-                                .asData
-                                ?.value ??
-                            false;
-
-                        if (muteWar) {
-                          return warOn
-                              ? const DailyWarMutedStrip()
-                              : const SizedBox.shrink();
-                        }
 
                         // Daily drill / STEP 2 prepare dock intentionally omitted —
                         // activation checklist + subjects own the practice CTA.
-                        return const DailyWarHomeCard();
+                        return DailyWarHomeCard(forceCollapsed: collapseWar);
                       },
                     ),
                     Consumer(
