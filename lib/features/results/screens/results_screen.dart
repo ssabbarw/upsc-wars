@@ -28,6 +28,7 @@ import '../../community/widgets/open_challenge_post_from_results_card.dart';
 import '../../community/widgets/open_challenge_results_actions.dart';
 import '../../home/domain/demo_diagnostic_ephemeral_store.dart';
 import '../../home/providers/home_activation_provider.dart';
+import '../../home/providers/home_activation_journey_provider.dart';
 import '../widgets/session_summary_coach.dart';
 import '../widgets/share_test_bottom_sheet.dart';
 
@@ -136,6 +137,7 @@ class ResultsScreen extends ConsumerWidget {
       );
       if (next.hasValue && prev?.hasValue != true) {
         ref.invalidate(homeActivationProvider);
+        ref.invalidate(homeActivationJourneyProvider);
       }
       if (next.hasError) {
         upscWarsTrace(

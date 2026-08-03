@@ -26,7 +26,7 @@ import 'analytics_sink.dart';
 /// * `battle_invite_accepted` — (none)
 /// * `push_permission_snapshot` — `status`, `allows_push` (0/1); also sets user property `push_alerts`
 /// * `push_permission_prompt_result` — `status`, `allows_push` (0/1), `source`; also sets `push_alerts`
-/// * `onboarding_step_duration` — `step` (`thesis` / `mcq` / `promise`), `duration_ms`
+/// * `onboarding_step_duration` — `step` (`thesis` / `trap` / `mcq` / `games`), `duration_ms`
 /// * `onboarding_flow_opened` / `onboarding_flow_completed` — `total_duration_ms` on completed only
 /// * `onboarding_exited_incomplete` — `highest_step`, `last_step`, `elapsed_ms`, `reached_last_step` (0/1)
 /// * `deferred_push_education_outcome` — `source`, `modal_index`, `tapped_enable` (0/1)
@@ -51,6 +51,8 @@ import 'analytics_sink.dart';
 /// * `daily_war_attempted` — `date_id`, `mode`, `is_grand`; sets user
 ///   property `daily_war_player` = `yes`
 /// * `daily_war_submitted` — `date_id`, `mode`, `is_grand`, `score_hundredths`
+/// * `activation_journey_shown` — `todo1_done`, `scored_attempts`, `todo2_unlocked`
+/// * `activation_journey_todo_tapped` — `todo_index`
 ///
 /// **App users vs Daily War attempters:** count unique users on `app_opened`
 /// (or GA4 Active users) vs unique users on `daily_war_attempted`.
@@ -366,6 +368,20 @@ class FirebaseAnalyticsSink implements AnalyticsSink {
         });
       case GetStartedCardSnoozedEvent():
         await _log('get_started_card_snoozed', const {});
+      case ActivationJourneyShownEvent(
+          :final todo1Done,
+          :final scoredAttempts,
+          :final todo2Unlocked,
+        ):
+        await _log('activation_journey_shown', {
+          'todo1_done': todo1Done ? 1 : 0,
+          'scored_attempts': scoredAttempts,
+          'todo2_unlocked': todo2Unlocked ? 1 : 0,
+        });
+      case ActivationJourneyTodoTappedEvent(:final todoIndex):
+        await _log('activation_journey_todo_tapped', {
+          'todo_index': todoIndex,
+        });
       case DidYouKnowShownEvent(:final cardId):
         await _log('did_you_know_shown', {'card_id': cardId});
       case DidYouKnowDismissedEvent(:final cardId):

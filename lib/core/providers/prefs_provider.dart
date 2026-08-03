@@ -54,6 +54,21 @@ abstract final class PrefKeys {
   static const getStartedCardSnoozedUntilV1 =
       'get_started_card_snoozed_until_v1';
 
+  /// One-time init for the home activation journey checklist.
+  static const activationJourneyInitializedV1 =
+      'activation_journey_initialized_v1';
+
+  /// User opened the confidence map (Todo 2) after unlock — journey can end.
+  static const activationConfidenceMapOpenedV1 =
+      'activation_confidence_map_opened_v1';
+
+  /// User opened Games from the activation checklist (Todo 3).
+  static const activationGamesOpenedV1 = 'activation_games_opened_v1';
+
+  /// Journey fully dismissed (grandfathered or completed).
+  static const activationJourneyDismissedV1 =
+      'activation_journey_dismissed_v1';
+
   /// Shown once: session review share button coach mark.
   static const sessionReviewShareCoachSeen =
       'session_review_share_coach_seen_v1';
@@ -250,6 +265,26 @@ class PrefsService {
       (_p.getString(PrefKeys.getStartedCardSnoozedUntilV1) ?? '').trim();
   set getStartedCardSnoozedUntil(String v) =>
       _p.setString(PrefKeys.getStartedCardSnoozedUntilV1, v.trim());
+
+  bool get activationJourneyInitialized =>
+      _p.getBool(PrefKeys.activationJourneyInitializedV1) ?? false;
+  set activationJourneyInitialized(bool v) =>
+      _p.setBool(PrefKeys.activationJourneyInitializedV1, v);
+
+  bool get activationConfidenceMapOpened =>
+      _p.getBool(PrefKeys.activationConfidenceMapOpenedV1) ?? false;
+  set activationConfidenceMapOpened(bool v) =>
+      _p.setBool(PrefKeys.activationConfidenceMapOpenedV1, v);
+
+  bool get activationGamesOpened =>
+      _p.getBool(PrefKeys.activationGamesOpenedV1) ?? false;
+  set activationGamesOpened(bool v) =>
+      _p.setBool(PrefKeys.activationGamesOpenedV1, v);
+
+  bool get activationJourneyDismissed =>
+      _p.getBool(PrefKeys.activationJourneyDismissedV1) ?? false;
+  set activationJourneyDismissed(bool v) =>
+      _p.setBool(PrefKeys.activationJourneyDismissedV1, v);
 
   bool get sessionReviewShareCoachSeen =>
       _p.getBool(PrefKeys.sessionReviewShareCoachSeen) ?? false;

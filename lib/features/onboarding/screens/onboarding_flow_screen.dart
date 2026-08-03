@@ -12,7 +12,7 @@ import '../../../core/analytics/screen_flow_analytics.dart';
 import '../../../core/providers/prefs_provider.dart';
 import '../../mini_games/shared/revision_games_theme.dart';
 import '../data/onboarding_mcq_data.dart';
-import '../widgets/onboarding_promise_page.dart';
+import '../widgets/onboarding_games_page.dart';
 import '../widgets/onboarding_mcq_page.dart';
 import '../widgets/onboarding_scale.dart';
 import '../widgets/onboarding_thesis_page.dart';
@@ -24,12 +24,12 @@ String _onboardingStepIdForIndex(int i) {
     0 => 'thesis',
     1 => 'trap',
     2 => 'mcq',
-    3 => 'promise',
+    3 => 'games',
     _ => 'unknown',
   };
 }
 
-/// First-run onboarding: thesis → trap → markable MCQ → animated promise.
+/// First-run onboarding: thesis → trap → markable MCQ → animated games list.
 class OnboardingFlowScreen extends HookConsumerWidget {
   const OnboardingFlowScreen({super.key});
 
@@ -51,7 +51,7 @@ class OnboardingFlowScreen extends HookConsumerWidget {
     final mcqOutcomeResolved = useRef(false);
 
     final bottom = MediaQuery.paddingOf(context).bottom;
-    final hPad = onb(context, 20);
+    final hPad = onb(context, 16);
     final showSkip = page.value < _pageCount - 1;
 
     OnboardingMcqOutcome resolveOutcome() {
@@ -159,19 +159,21 @@ class OnboardingFlowScreen extends HookConsumerWidget {
                 Expanded(
                   child: PageView(
                     controller: pageController,
-                    // Forward = buttons only; swipe only goes back.
-                    physics: const _OnboardingBackOnlyPhysics(
-                      parent: BouncingScrollPhysics(),
-                    ),
+                    physics: const BouncingScrollPhysics(),
                     onPageChanged: (i) {
                       final from = page.value;
 
-                      // Safety: never land on promise until Got it (buttons).
+                      // Swiping past an unrevealed MCQ shows its outcome
+                      // first; once the outcome is on screen, a second
+                      // forward swipe moves on.
                       if (i == 3 && !mcqOutcomeResolved.value) {
-                        showMcqOutcome();
-                        pageController.jumpToPage(2);
-                        page.value = 2;
-                        return;
+                        if (mcqOutcome.value == null) {
+                          showMcqOutcome();
+                          pageController.jumpToPage(2);
+                          page.value = 2;
+                          return;
+                        }
+                        mcqOutcomeResolved.value = true;
                       }
 
                       final ms = DateTime.now()
@@ -233,16 +235,16 @@ class OnboardingFlowScreen extends HookConsumerWidget {
                           goToPage(3);
                         },
                       ),
-                      OnboardingPromisePage(
+                      OnboardingGamesPage(
                         isActive: page.value == 3,
                         onGetStarted: () {
                           unawaited(
-                            completeFlow(actionId: 'promise_get_started'),
+                            completeFlow(actionId: 'games_get_started'),
                           );
                         },
                         onSkip: () {
                           unawaited(
-                            completeFlow(actionId: 'promise_skipped'),
+                            completeFlow(actionId: 'games_skipped'),
                           );
                         },
                       ),
@@ -367,32 +369,5 @@ class _TopChrome extends StatelessWidget {
           ),
       ],
     );
-  }
-}
-
-/// Allows swipe/drag only toward previous pages. Forward advances via buttons.
-class _OnboardingBackOnlyPhysics extends PageScrollPhysics {
-  const _OnboardingBackOnlyPhysics({super.parent});
-
-  @override
-  _OnboardingBackOnlyPhysics applyTo(ScrollPhysics? ancestor) {
-    return _OnboardingBackOnlyPhysics(parent: buildParent(ancestor));
-  }
-
-  @override
-  double applyPhysicsToUserOffset(ScrollMetrics position, double offset) {
-    // LTR PageView: positive offset moves toward the next page.
-    if (offset > 0) return 0;
-    return offset;
-  }
-
-  @override
-  Simulation? createBallisticSimulation(
-    ScrollMetrics position,
-    double velocity,
-  ) {
-    // Kill flings that would advance to the next page.
-    final v = velocity > 0 ? 0.0 : velocity;
-    return super.createBallisticSimulation(position, v);
   }
 }

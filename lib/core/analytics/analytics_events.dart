@@ -409,11 +409,11 @@ final class DeferredPushHomeNudgeDismissedEvent extends AnalyticsEvent {
   const DeferredPushHomeNudgeDismissedEvent();
 }
 
-// ── First-run onboarding (thesis → trap → MCQ → confidence map) ──────
+// ── First-run onboarding (thesis → trap → MCQ → games list) ──────────
 
 /// **Time the user spent on one horizontal step** of the first-run flow before
 /// swiping to the next, or the last step before “Let’s go.” [step] is
-/// `thesis`, `trap`, `mcq`, or `promise`.
+/// `thesis`, `trap`, `mcq`, or `games`.
 ///
 /// **GA4:** `onboarding_step_duration` with `step`, `duration_ms` (int).
 final class OnboardingStepDurationEvent extends AnalyticsEvent {
@@ -449,7 +449,7 @@ final class OnboardingFlowCompletedEvent extends AnalyticsEvent {
 ///
 /// **GA4:** `onboarding_exited_incomplete` with:
 /// * `highest_step` — furthest step id reached (`thesis` / `trap` / `mcq` /
-///   `promise`);
+///   `games`);
 /// * `last_step` — page index at exit mapped the same way;
 /// * `elapsed_ms` — time from flow open;
 /// * `reached_last_step` — 1 if the user ever reached the final horizontal page.
@@ -679,6 +679,31 @@ final class GetStartedCardTappedEvent extends AnalyticsEvent {
 /// **GA4:** `get_started_card_snoozed` (no parameters).
 final class GetStartedCardSnoozedEvent extends AnalyticsEvent {
   const GetStartedCardSnoozedEvent();
+}
+
+/// **Activation journey checklist shown** on home.
+///
+/// **GA4:** `activation_journey_shown` with `todo1_done`, `scored_attempts`,
+/// `todo2_unlocked` (0/1).
+final class ActivationJourneyShownEvent extends AnalyticsEvent {
+  const ActivationJourneyShownEvent({
+    required this.todo1Done,
+    required this.scoredAttempts,
+    required this.todo2Unlocked,
+  });
+
+  final bool todo1Done;
+  final int scoredAttempts;
+  final bool todo2Unlocked;
+}
+
+/// **User tapped a step** on the activation journey checklist.
+///
+/// **GA4:** `activation_journey_todo_tapped` with `todo_index` (1–3).
+final class ActivationJourneyTodoTappedEvent extends AnalyticsEvent {
+  const ActivationJourneyTodoTappedEvent({required this.todoIndex});
+
+  final int todoIndex;
 }
 
 /// **Did You Know card shown** on home.

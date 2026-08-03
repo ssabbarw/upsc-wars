@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
-/// Scale vs ~390dp shortest side. Biased slightly large so onboarding
-/// matches the concept mock proportions on typical phones.
+/// Scale vs ~390dp shortest side.
+///
+/// No upward bias: oversizing makes content taller than the viewport, which
+/// forces [OnboardingFit] to shrink the whole layout and waste side margins.
 double onboardingScale(BuildContext context) {
   final shortest = MediaQuery.sizeOf(context).shortestSide;
-  return ((shortest / 390) * 1.18).clamp(1.0, 1.4);
+  return (shortest / 390).clamp(0.9, 1.3);
 }
 
 double onb(BuildContext context, double designPx) =>

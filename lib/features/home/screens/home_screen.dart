@@ -31,7 +31,8 @@ import '../../../core/providers/super_user_provider.dart';
 import '../../admin_dashboard/admin_dashboard_access.dart';
 import '../providers/auth_providers.dart';
 import '../providers/home_activation_provider.dart';
-import '../widgets/daily_drill_card.dart';
+import '../providers/home_activation_journey_provider.dart';
+import '../widgets/activation_journey_card.dart';
 import '../widgets/get_started_card.dart';
 import '../widgets/recovery_plan_section.dart';
 import '../../mini_games/hub/games_home_card.dart';
@@ -42,7 +43,6 @@ import '../../daily_ca/widgets/daily_ca_home_card.dart';
 import '../../daily_war/providers/daily_war_providers.dart';
 import '../../daily_war/theme/daily_war_theme.dart';
 import '../../daily_war/widgets/daily_war_home_card.dart';
-import '../../daily_war/widgets/daily_war_prepare_dock.dart';
 import '../../../shared/widgets/push_denied_banner.dart';
 import '../../../shared/theme/dark_mode_toggle.dart';
 import '../../../shared/widgets/app_update_kill_switch_overlay.dart';
@@ -93,6 +93,7 @@ class HomeScreen extends HookConsumerWidget {
         await uc.execute();
         ref.invalidate(homeStateProvider);
         ref.invalidate(homeActivationProvider);
+        ref.invalidate(homeActivationJourneyProvider);
         ref.invalidate(dailyDrillProvider);
       });
       return null;
@@ -247,6 +248,7 @@ class HomeScreen extends HookConsumerWidget {
                 onRefresh: () async {
                   ref.invalidate(homeStateProvider);
                   ref.invalidate(homeActivationProvider);
+                  ref.invalidate(homeActivationJourneyProvider);
                   ref.invalidate(dailyDrillProvider);
                   final warOn = await ref.read(
                     dailyWarRemoteEnabledProvider.future,
@@ -526,40 +528,47 @@ class HomeScreen extends HookConsumerWidget {
                     ],
                   ),
                   const SizedBox(height: AppSpacing.md),
-                  const DailyWarHomeCard(),
-                  const DailyWarPrepareDock(),
                   Consumer(
                     builder: (context, ref, _) {
-                      final activation = ref.watch(homeActivationProvider);
-                      return activation.when(
-                        loading: () => const SizedBox.shrink(),
-                        error: (_, _) => const SizedBox.shrink(),
-                        data: (state) {
-                          if (!state.shouldShowGetStartedCard) {
-                            return const SizedBox.shrink();
-                          }
-                          return const Padding(
-                            padding: EdgeInsets.only(
-                              top: AppSpacing.sm,
-                              bottom: AppSpacing.md,
-                            ),
-                            child: GetStartedCard(),
-                          );
-                        },
+                      final journey = ref.watch(homeActivationJourneyProvider);
+                      final muteWar = journey.maybeWhen(
+                        data: (s) => s.shouldMuteDailyWar,
+                        orElse: () => false,
                       );
-                    },
-                  ),
-                  Consumer(
-                    builder: (context, ref, _) {
                       final warOn = ref
                               .watch(dailyWarRemoteEnabledProvider)
                               .asData
                               ?.value ??
                           false;
-                      if (warOn) return const SizedBox.shrink();
-                      return const Padding(
-                        padding: EdgeInsets.only(bottom: AppSpacing.md),
-                        child: DailyDrillCard(),
+
+                      if (muteWar) {
+                        return warOn
+                            ? const DailyWarMutedStrip()
+                            : const SizedBox.shrink();
+                      }
+
+                      // Daily drill / STEP 2 prepare dock intentionally omitted —
+                      // activation checklist + subjects own the practice CTA.
+                      return const DailyWarHomeCard();
+                    },
+                  ),
+                  Consumer(
+                    builder: (context, ref, _) {
+                      final journey = ref.watch(homeActivationJourneyProvider);
+                      return journey.when(
+                        loading: () => const SizedBox.shrink(),
+                        error: (_, _) => const SizedBox.shrink(),
+                        data: (state) {
+                          if (!state.shouldShowChecklist) {
+                            return const SizedBox.shrink();
+                          }
+                          return Padding(
+                            padding: const EdgeInsets.only(
+                              bottom: AppSpacing.md,
+                            ),
+                            child: ActivationJourneyCard(state: state),
+                          );
+                        },
                       );
                     },
                   ),
@@ -568,9 +577,9 @@ class HomeScreen extends HookConsumerWidget {
                   const SizedBox(height: AppSpacing.md),
                   Consumer(
                     builder: (context, ref, _) {
-                      final activation = ref.watch(homeActivationProvider);
-                      final secondary = activation.maybeWhen(
-                        data: (s) => !s.activationComplete,
+                      final journey = ref.watch(homeActivationJourneyProvider);
+                      final secondary = journey.maybeWhen(
+                        data: (s) => s.shouldShowChecklist,
                         orElse: () => false,
                       );
                       return _SubjectGrid(
@@ -580,8 +589,22 @@ class HomeScreen extends HookConsumerWidget {
                     },
                   ),
                   const SizedBox(height: AppSpacing.md),
-                  GamesHomeCard(borderColor: borderColor),
-                  const SizedBox(height: AppSpacing.md),
+                  Consumer(
+                    builder: (context, ref, _) {
+                      final journey = ref.watch(homeActivationJourneyProvider);
+                      final hideGames = journey.maybeWhen(
+                        data: (s) => s.shouldShowChecklist,
+                        orElse: () => false,
+                      );
+                      if (hideGames) return const SizedBox.shrink();
+                      return Column(
+                        children: [
+                          GamesHomeCard(borderColor: borderColor),
+                          const SizedBox(height: AppSpacing.md),
+                        ],
+                      );
+                    },
+                  ),
                   home.when(
                     loading: () {
                       if (!past200ms.value) {
