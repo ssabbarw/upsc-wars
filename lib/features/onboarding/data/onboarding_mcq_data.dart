@@ -95,25 +95,26 @@ const kOnboardingMcq = OnboardingMcqContent(
       'Hastings was first GG of Bengal (1773). Bentinck was first GG of '
       'India (1833). Each option here is the “first” of something real — '
       'UPSC changed one word.',
-  headlineCorrectConfident: 'Confident and right — you own this topic.',
+  headlineCorrectConfident: 'Confident and right — a strong signal.',
   headlineCorrectGuess: 'A guess — and it landed.',
-  headlineWrongConfident: 'Confident and wrong — this is a weak zone.',
-  headlineWrongGuess: 'You got this one wrong.',
+  headlineWrongConfident: 'Confident and wrong — the costliest miss.',
+  headlineWrongGuess: 'Missed — and that’s useful data.',
   promiseCorrectConfident:
-      'Viceroys & Governor-Generals looks like a strength. We confirm your '
-      'strong zones so you stop over-revising what you already know.',
+      'One right answer isn’t a verdict. Across practice, UPSC Wars gathers '
+      'topics you keep getting right — so you stop over-revising strengths '
+      'and focus where it matters.',
   promiseCorrectGuess:
-      'You’re likely to make correct guesses from Viceroys & '
-      'Governor-Generals. We spot topics where your instincts are right — '
-      'so you take smarter chances in the exam.',
+      'Lucky once doesn’t mean mastered. Across questions, we spot topics '
+      'where your instincts hold up — so you take smarter chances in the '
+      'exam.',
   promiseWrongConfident:
-      'You should revise the chapter on Viceroys & Governor-Generals. '
-      'Confident-wrong answers cost the most marks — we flag every one '
-      'of them for revision.',
+      'We don’t call a topic weak from one miss. Across practice, confident '
+      'wrongs pile up by topic — UPSC Wars gathers those weak areas so you '
+      'can revise them deliberately.',
   promiseWrongGuess:
-      'You should probably revise the chapter on Viceroys & '
-      'Governor-Generals. We track these misses topic-by-topic so your '
-      'revision targets itself.',
+      'One miss isn’t a weak topic. Across practice, UPSC Wars gathers which '
+      'topics keep slipping — then you revise that list instead of guessing '
+      'what to study.',
   skippedHeadline: 'No idea? Here’s how to eliminate without knowing.',
   eliminations: [
     (keep: false, text: '(a) Hastings — first GG of Bengal, not India.'),
@@ -125,8 +126,9 @@ const kOnboardingMcq = OnboardingMcqContent(
     (keep: false, text: '(d) Canning — first Viceroy, not GG.'),
   ],
   promiseSkipped:
-      'This is elimination logic. Every question has it — so you always '
-      'know why, not just what.',
+      'Elimination is the method. Across practice, UPSC Wars gathers the '
+      'topics where you struggle to eliminate — so your revision list builds '
+      'itself.',
   richerNote:
       'Real questions have much richer explanations and statement analysis.',
 );

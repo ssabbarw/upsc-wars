@@ -33,6 +33,12 @@ abstract final class ActivationMilestones {
   /// First test finished on device (demo diagnostic or any persisted session).
   static const firstTestDone = 'first_test_done';
 
+  /// Studied on a 2nd distinct calendar day — the activation north-star.
+  static const activatedSecondDay = 'activated_second_active_day';
+
+  /// Studied on a 3rd distinct calendar day — early habit / retention.
+  static const habituatedThreeDays = 'habituated_three_active_days';
+
   /// User left their first test before submitting (demo or any session).
   static const firstTestQuitInMid = 'first_test_quit_in_mid';
 }

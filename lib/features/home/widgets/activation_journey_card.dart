@@ -1,12 +1,16 @@
 import 'dart:async';
 
+import 'package:app_settings/app_settings.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../core/analytics/activation_milestones.dart';
 import '../../../core/analytics/analytics.dart';
 import '../../../core/analytics/analytics_events.dart';
+import '../../../core/services/battle_messaging_service.dart';
 import '../../../core/layout/system_insets.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
@@ -42,6 +46,21 @@ class ActivationJourneyCard extends HookConsumerWidget {
       return null;
     }, const []);
 
+    // Keep the reminders step reactive: re-check when notification permission
+    // changes or the app resumes (e.g. user returns from system Settings).
+    useEffect(() {
+      void refresh() => ref.invalidate(homeActivationJourneyProvider);
+      BattleMessagingService.addNotificationPermissionChangeListener(refresh);
+      final observer = _ReminderLifecycleObserver(onResumed: refresh);
+      WidgetsBinding.instance.addObserver(observer);
+      return () {
+        BattleMessagingService.removeNotificationPermissionChangeListener(
+          refresh,
+        );
+        WidgetsBinding.instance.removeObserver(observer);
+      };
+    }, const []);
+
     final cardFill = isDark
         ? AppColors.primaryDeep.withValues(alpha: 0.28)
         : AppColors.primaryLight;
@@ -68,7 +87,7 @@ class ActivationJourneyCard extends HookConsumerWidget {
           _DemoStep(state: state),
           if (!state.todo1Done || !state.todo2Done)
             Divider(height: 1, thickness: 1, color: divider),
-          _GamesStep(state: state),
+          _RemindersStep(state: state),
           if (!state.todo2Done || !state.todo3Done)
             Divider(height: 1, thickness: 1, color: divider),
           _DangerZoneStep(state: state),
@@ -85,10 +104,13 @@ class _Header extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // "START HERE" only for the cold start; once step 1 is done, the user is
+    // past the beginning, so switch to a progress-oriented label.
+    final label = completedCount == 0 ? 'START HERE' : 'KEEP GOING';
     return Row(
       children: [
         Text(
-          'START HERE',
+          label,
           style: AppTextStyles.caption().copyWith(
             color: AppColors.primaryDark,
             fontWeight: FontWeight.w800,
@@ -227,8 +249,8 @@ class _DemoStep extends ConsumerWidget {
   }
 }
 
-class _GamesStep extends ConsumerWidget {
-  const _GamesStep({required this.state});
+class _RemindersStep extends ConsumerWidget {
+  const _RemindersStep({required this.state});
 
   final HomeActivationJourneyState state;
 
@@ -238,30 +260,57 @@ class _GamesStep extends ConsumerWidget {
     final unlocked = state.todo2Unlocked;
 
     if (done) {
-      return const _CollapsedDoneRow(title: 'Games checked out');
+      return const _CollapsedDoneRow(title: 'Reminders on');
     }
 
     if (!unlocked) {
       return const _LockedRow(
-        title: 'Check out the games',
+        title: 'Turn on daily reminders',
         trailing: 'After step 1',
       );
     }
 
     return _ActiveCompactStep(
       index: 2,
-      title: 'Check out the games',
-      subtitle: 'Memory, timelines, duels — lighter practice when you want it.',
-      ctaLabel: 'Open games',
-      onCta: () async {
-        await Analytics.track(
-          ref,
-          const ActivationJourneyTodoTappedEvent(todoIndex: 2),
-        );
-        await markActivationGamesOpened(ref);
-        if (context.mounted) context.go('/games');
-      },
+      title: 'Turn on daily reminders',
+      subtitle:
+          'A nudge for the 9pm War and your daily practice — so you keep '
+          'your streak and don’t drop off.',
+      ctaLabel: 'Turn on reminders',
+      onCta: () => unawaited(_enableReminders(ref)),
     );
+  }
+}
+
+Future<void> _enableReminders(WidgetRef ref) async {
+  await Analytics.track(
+    ref,
+    const ActivationJourneyTodoTappedEvent(todoIndex: 2),
+  );
+  final status = await BattleMessagingService.notificationAuthorizationStatus();
+  if (BattleMessagingService.notificationAuthorizationAllowsPush(status)) {
+    ref.invalidate(homeActivationJourneyProvider);
+    return;
+  }
+  if (status == AuthorizationStatus.denied) {
+    // Already-denied can't be re-prompted — deep-link to system Settings.
+    await AppSettings.openAppSettings(type: AppSettingsType.notification);
+  } else {
+    await BattleMessagingService.requestPushAuthorizationIfNotDetermined(
+      source: 'activation_reminders',
+    );
+  }
+  ref.invalidate(homeActivationJourneyProvider);
+}
+
+class _ReminderLifecycleObserver with WidgetsBindingObserver {
+  _ReminderLifecycleObserver({required this.onResumed});
+
+  final VoidCallback onResumed;
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.resumed) onResumed();
   }
 }
 
@@ -281,12 +330,16 @@ class _DangerZoneStep extends ConsumerWidget {
     }
 
     if (unlocked) {
+      final preview = state.todo3IsPreview;
       return _ActiveCompactStep(
         index: 3,
-        title: 'See your danger zone',
-        subtitle:
+        title: preview ? 'Peek at your danger zone' : 'See your danger zone',
+        subtitle: preview
+            ? 'An early read on where you’re confidently wrong. It '
+                  'sharpens as you cross ${state.fullThreshold} attempts.'
+            :
             'Topics where you\u2019re confidently wrong — and guesses that land right.',
-        ctaLabel: 'Open map',
+        ctaLabel: preview ? 'Open early read' : 'Open map',
         showHelp: true,
         onHelp: () => unawaited(_showDangerZoneHelpSheet(context, state)),
         onCta: () => unawaited(_openDangerZone(context, ref, state)),
@@ -335,7 +388,7 @@ class _DangerZoneStep extends ConsumerWidget {
                         ),
                         const SizedBox(width: 8),
                         Text(
-                          '${state.attemptsTowardUnlock}/${state.unlockThreshold}',
+                          '${state.attemptsTowardNext}/${state.nextThreshold}',
                           style: AppTextStyles.caption().copyWith(
                             color: scheme.onSurfaceVariant
                                 .withValues(alpha: 0.7),
@@ -381,8 +434,8 @@ class _ActiveCompactStep extends StatelessWidget {
     required this.index,
     required this.title,
     required this.subtitle,
-    required this.ctaLabel,
-    required this.onCta,
+    this.ctaLabel,
+    this.onCta,
     this.showHelp = false,
     this.onHelp,
   });
@@ -390,8 +443,10 @@ class _ActiveCompactStep extends StatelessWidget {
   final int index;
   final String title;
   final String subtitle;
-  final String ctaLabel;
-  final VoidCallback onCta;
+
+  /// When null, the step renders without a button (passive / self-completing).
+  final String? ctaLabel;
+  final VoidCallback? onCta;
   final bool showHelp;
   final VoidCallback? onHelp;
 
@@ -448,31 +503,33 @@ class _ActiveCompactStep extends StatelessWidget {
                     height: 1.35,
                   ),
                 ),
-                const SizedBox(height: 10),
-                FilledButton(
-                  style: FilledButton.styleFrom(
-                    elevation: 0,
-                    backgroundColor: AppColors.primary,
-                    foregroundColor: AppColors.onPrimary,
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 18,
-                      vertical: 10,
+                if (ctaLabel != null && onCta != null) ...[
+                  const SizedBox(height: 10),
+                  FilledButton(
+                    style: FilledButton.styleFrom(
+                      elevation: 0,
+                      backgroundColor: AppColors.primary,
+                      foregroundColor: AppColors.onPrimary,
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 18,
+                        vertical: 10,
+                      ),
+                      minimumSize: Size.zero,
+                      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(AppRadius.pill),
+                      ),
                     ),
-                    minimumSize: Size.zero,
-                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(AppRadius.pill),
+                    onPressed: onCta,
+                    child: Text(
+                      ctaLabel!,
+                      style: AppTextStyles.label().copyWith(
+                        fontWeight: FontWeight.w700,
+                        color: AppColors.onPrimary,
+                      ),
                     ),
                   ),
-                  onPressed: onCta,
-                  child: Text(
-                    ctaLabel,
-                    style: AppTextStyles.label().copyWith(
-                      fontWeight: FontWeight.w700,
-                      color: AppColors.onPrimary,
-                    ),
-                  ),
-                ),
+                ],
               ],
             ),
           ),
@@ -596,6 +653,10 @@ Future<void> _openDangerZone(
     ref,
     const ActivationJourneyTodoTappedEvent(todoIndex: 3),
   );
+  await logActivationMilestoneOnce(
+    ref,
+    ActivationMilestones.firstDangerZoneReview,
+  );
   await markActivationConfidenceMapOpened(ref);
   if (!context.mounted) return;
   final slug = state.topSubjectSlug;
@@ -710,9 +771,10 @@ Future<void> _showDangerZoneHelpSheet(
                       unlocked
                           ? 'You\u2019ve logged enough attempts — open your map '
                               'to see these topics by subject.'
-                          : 'We need about ${state.unlockThreshold} attempted '
-                              'questions with confidence marked so the map is '
-                              'real — not noise.\n\n'
+                          : 'We need about ${state.previewThreshold} attempted '
+                              'questions with confidence marked for an early '
+                              'read — the full map sharpens at '
+                              '${state.fullThreshold}.\n\n'
                               'You\u2019re at ${state.scoredAttempts}'
                               '${remaining == 0 ? '.' : ' · $remaining to go.'} '
                               'Pick any subject below and keep practicing.',

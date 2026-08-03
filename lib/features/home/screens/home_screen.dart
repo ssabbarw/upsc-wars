@@ -35,7 +35,6 @@ import '../providers/home_activation_journey_provider.dart';
 import '../widgets/activation_journey_card.dart';
 import '../widgets/get_started_card.dart';
 import '../widgets/recovery_plan_section.dart';
-import '../../mini_games/hub/games_home_card.dart';
 import '../providers/daily_drill_provider.dart';
 import '../../memory_pairs/widgets/push_memory_pairs_debug_card.dart';
 import '../../push_spot_test/widgets/push_spot_test_debug_card.dart';
@@ -558,21 +557,9 @@ class HomeScreen extends HookConsumerWidget {
                       ],
                     ),
                     const SizedBox(height: AppSpacing.md),
-                    Consumer(
-                      builder: (context, ref, _) {
-                        final journey = ref.watch(
-                          homeActivationJourneyProvider,
-                        );
-                        final collapseWar = journey.maybeWhen(
-                          data: (s) => s.shouldCollapseDailyWar,
-                          orElse: () => false,
-                        );
-
-                        // Daily drill / STEP 2 prepare dock intentionally omitted —
-                        // activation checklist + subjects own the practice CTA.
-                        return DailyWarHomeCard(forceCollapsed: collapseWar);
-                      },
-                    ),
+                    // Daily War is the returning-habit engine and step 2 of the
+                    // activation checklist — keep it expanded, never force-collapsed.
+                    const DailyWarHomeCard(),
                     Consumer(
                       builder: (context, ref, _) {
                         final journey = ref.watch(
@@ -614,24 +601,10 @@ class HomeScreen extends HookConsumerWidget {
                       },
                     ),
                     const SizedBox(height: AppSpacing.md),
-                    Consumer(
-                      builder: (context, ref, _) {
-                        final journey = ref.watch(
-                          homeActivationJourneyProvider,
-                        );
-                        final hideGames = journey.maybeWhen(
-                          data: (s) => s.shouldShowChecklist,
-                          orElse: () => false,
-                        );
-                        if (hideGames) return const SizedBox.shrink();
-                        return Column(
-                          children: [
-                            GamesHomeCard(borderColor: borderColor),
-                            const SizedBox(height: AppSpacing.md),
-                          ],
-                        );
-                      },
-                    ),
+                    // Breadth (games, battles, community) lives here — always
+                    // discoverable, never gated behind the activation checklist.
+                    _ExploreCard(borderColor: borderColor),
+                    const SizedBox(height: AppSpacing.md),
                     home.when(
                       loading: () {
                         if (!past200ms.value) {
@@ -864,6 +837,142 @@ class _AdminDashboardHomeEntry extends StatelessWidget {
                 ),
               ),
               Icon(Icons.chevron_right_rounded, color: scheme.onSurfaceVariant),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+/// "More ways to practice" — persistent breadth discovery (games, battles,
+/// community). Shown regardless of activation-checklist state.
+class _ExploreCard extends ConsumerWidget {
+  const _ExploreCard({required this.borderColor});
+
+  final Color borderColor;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final scheme = Theme.of(context).colorScheme;
+    final communityOn = ref
+        .watch(communityTabRemoteEnabledProvider)
+        .maybeWhen(data: (e) => e, orElse: () => false);
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'MORE WAYS TO PRACTICE',
+          style: AppTextStyles.caption().copyWith(
+            color: scheme.onSurfaceVariant,
+          ),
+        ),
+        const SizedBox(height: AppSpacing.sm),
+        _ExploreRow(
+          icon: Icons.sports_esports_outlined,
+          title: 'Revision games',
+          subtitle: 'Memory pairs, timelines, duels & more',
+          accent: AppColors.primary,
+          borderColor: borderColor,
+          onTap: () => context.go('/games'),
+        ),
+        const SizedBox(height: AppSpacing.sm),
+        _ExploreRow(
+          icon: Icons.bolt_outlined,
+          title: 'Battles & challenges',
+          subtitle: '10-question duels and open challenges',
+          accent: AppColors.warning,
+          borderColor: borderColor,
+          onTap: () => context.push('/battle/config'),
+        ),
+        if (communityOn) ...[
+          const SizedBox(height: AppSpacing.sm),
+          _ExploreRow(
+            icon: Icons.forum_outlined,
+            title: 'Community',
+            subtitle: 'Question of the day & discussions',
+            accent: AppColors.info,
+            borderColor: borderColor,
+            onTap: () => context.go('/community'),
+          ),
+        ],
+      ],
+    );
+  }
+}
+
+class _ExploreRow extends StatelessWidget {
+  const _ExploreRow({
+    required this.icon,
+    required this.title,
+    required this.subtitle,
+    required this.accent,
+    required this.borderColor,
+    required this.onTap,
+  });
+
+  final IconData icon;
+  final String title;
+  final String subtitle;
+  final Color accent;
+  final Color borderColor;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final iconBg = isDark
+        ? accent.withValues(alpha: 0.25)
+        : accent.withValues(alpha: 0.12);
+
+    return Material(
+      color: AppColors.transparent,
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(AppRadius.lg),
+        child: Ink(
+          padding: const EdgeInsets.all(AppSpacing.lg),
+          decoration: BoxDecoration(
+            color: scheme.surface,
+            borderRadius: BorderRadius.circular(AppRadius.lg),
+            border: Border.all(color: borderColor, width: 0.5),
+          ),
+          child: Row(
+            children: [
+              Container(
+                width: 40,
+                height: 40,
+                decoration: BoxDecoration(
+                  color: iconBg,
+                  borderRadius: BorderRadius.circular(AppRadius.sm),
+                ),
+                child: Icon(icon, color: accent, size: 20),
+              ),
+              const SizedBox(width: AppSpacing.md),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      title,
+                      style: AppTextStyles.label().copyWith(
+                        color: scheme.onSurface,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                    const SizedBox(height: 2),
+                    Text(
+                      subtitle,
+                      style: AppTextStyles.caption().copyWith(
+                        color: scheme.onSurfaceVariant,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Icon(Icons.chevron_right, color: scheme.onSurfaceVariant),
             ],
           ),
         ),

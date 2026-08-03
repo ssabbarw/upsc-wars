@@ -855,6 +855,23 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
     final dayKey = DateFormat('yyyy-MM-dd').format(now);
     _prefsService.appendActivationSessionDay(dayKey);
 
+    // Activation funnel: distinct active study days. north-star = 2nd day.
+    final distinctDays = _prefsService.activationSessionDays.length;
+    if (distinctDays >= 2) {
+      await logActivationMilestoneForServices(
+        _analytics,
+        _prefsService,
+        id: ActivationMilestones.activatedSecondDay,
+      );
+    }
+    if (distinctDays >= 3) {
+      await logActivationMilestoneForServices(
+        _analytics,
+        _prefsService,
+        id: ActivationMilestones.habituatedThreeDays,
+      );
+    }
+
     final rows = await _userDb.sessionQuestionsDao.getSessionQuestionsOrdered(
       sessionId,
     );

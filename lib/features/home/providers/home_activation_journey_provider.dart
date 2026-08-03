@@ -2,20 +2,21 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/providers/prefs_provider.dart';
 import '../../../core/providers/user_database_provider.dart';
+import '../../../core/services/battle_messaging_service.dart';
 import '../domain/activation_journey_constants.dart';
 
 /// State for the 3-step home activation checklist (START HERE).
 ///
-/// Order: (1) demo test → (2) games after step 1 → (3) danger zone at ~50 Q.
+/// Order: (1) demo test → (2) turn on daily reminders (enables the 2nd-day
+/// return) → (3) Danger Zone (previews early at 20 attempts, full map at 50).
 class HomeActivationJourneyState {
   const HomeActivationJourneyState({
     required this.demoOrFirstTestDone,
     required this.scoredAttempts,
     required this.confidenceMapOpened,
-    required this.gamesOpened,
+    required this.remindersEnabled,
     required this.topSubjectSlug,
     required this.shouldShowChecklist,
-    required this.shouldCollapseDailyWar,
   });
 
   /// Step 1: demo diagnostic submitted, or any completed session.
@@ -24,8 +25,11 @@ class HomeActivationJourneyState {
   /// Scored answers (correct + wrong). Demo is ephemeral, so excluded.
   final int scoredAttempts;
 
+  /// Step 3 done: user opened their Danger Zone (preview or full).
   final bool confidenceMapOpened;
-  final bool gamesOpened;
+
+  /// Step 2 done: notifications / daily reminders are enabled.
+  final bool remindersEnabled;
 
   /// Best subject to open for the danger-zone step (most attempts), or null.
   final String? topSubjectSlug;
@@ -33,20 +37,27 @@ class HomeActivationJourneyState {
   /// Show the START HERE card on home.
   final bool shouldShowChecklist;
 
-  /// Prefer collapsed Daily War while START HERE is visible.
-  final bool shouldCollapseDailyWar;
+  int get previewThreshold =>
+      ActivationJourneyConstants.confidenceMapPreviewAttempts;
 
-  int get unlockThreshold =>
+  int get fullThreshold =>
       ActivationJourneyConstants.confidenceMapUnlockAttempts;
 
   bool get todo1Done => demoOrFirstTestDone;
 
-  /// Games unlock after the demo / first test.
+  /// Reminders unlock after the demo / first test.
   bool get todo2Unlocked => todo1Done;
 
-  bool get todo2Done => gamesOpened;
+  bool get todo2Done => remindersEnabled;
 
-  bool get todo3Unlocked => scoredAttempts >= unlockThreshold;
+  /// Step 3 becomes actionable at the *preview* threshold (early signal).
+  bool get todo3Unlocked => scoredAttempts >= previewThreshold;
+
+  /// The full, trustworthy Danger Zone map.
+  bool get todo3FullUnlocked => scoredAttempts >= fullThreshold;
+
+  /// In the preview band: enough for an early read, not yet the full map.
+  bool get todo3IsPreview => todo3Unlocked && !todo3FullUnlocked;
 
   bool get todo3Done => confidenceMapOpened;
 
@@ -55,13 +66,19 @@ class HomeActivationJourneyState {
   int get completedCount =>
       (todo1Done ? 1 : 0) + (todo2Done ? 1 : 0) + (todo3Done ? 1 : 0);
 
-  int get attemptsTowardUnlock => scoredAttempts.clamp(0, unlockThreshold);
+  // ── Progress toward the next Danger Zone gate ──────────────────────────────
+  // While locked, the next gate is the preview (20). In the preview band, the
+  // next gate is the full map (50).
+
+  int get nextThreshold => todo3Unlocked ? fullThreshold : previewThreshold;
+
+  int get attemptsTowardNext => scoredAttempts.clamp(0, nextThreshold);
 
   int get attemptsRemaining =>
-      (unlockThreshold - scoredAttempts).clamp(0, unlockThreshold);
+      (nextThreshold - scoredAttempts).clamp(0, nextThreshold);
 
   double get unlockProgress =>
-      unlockThreshold == 0 ? 1 : attemptsTowardUnlock / unlockThreshold;
+      nextThreshold == 0 ? 1 : attemptsTowardNext / nextThreshold;
 }
 
 final homeActivationJourneyProvider =
@@ -75,7 +92,7 @@ final homeActivationJourneyProvider =
   final demoDone = prefs.getStartedDiagnosticAttempted;
   final demoOrFirstTestDone = demoDone || completedSessions > 0;
 
-  // Grandfather existing active users so we don't re-gate Daily War.
+  // Grandfather existing active users so we don't re-gate the checklist.
   if (!prefs.activationJourneyInitialized) {
     prefs.activationJourneyInitialized = true;
     if (scoredAttempts >=
@@ -87,20 +104,21 @@ final homeActivationJourneyProvider =
   }
 
   final confidenceMapOpened = prefs.activationConfidenceMapOpened;
-  final gamesOpened =
-      prefs.activationGamesOpened || prefs.memoryPairsGameDiscovered;
+  // Checked once notifications are allowed — the lever for the 2nd-day return.
+  final pushStatus =
+      await BattleMessagingService.notificationAuthorizationStatus();
+  final remindersEnabled =
+      BattleMessagingService.notificationAuthorizationAllowsPush(pushStatus);
   final dismissed = prefs.activationJourneyDismissed;
 
-  final allDone = demoOrFirstTestDone && gamesOpened && confidenceMapOpened;
+  final allDone =
+      demoOrFirstTestDone && remindersEnabled && confidenceMapOpened;
   if (allDone && !dismissed) {
     prefs.activationJourneyDismissed = true;
   }
 
   // Stay visible until every step is complete, then disappear.
   final shouldShowChecklist = !allDone && !prefs.activationJourneyDismissed;
-
-  // Available but collapsed so START HERE stays the hero.
-  final shouldCollapseDailyWar = shouldShowChecklist;
 
   String? topSubjectSlug;
   if (scoredAttempts > 0) {
@@ -123,10 +141,9 @@ final homeActivationJourneyProvider =
     demoOrFirstTestDone: demoOrFirstTestDone,
     scoredAttempts: scoredAttempts,
     confidenceMapOpened: confidenceMapOpened,
-    gamesOpened: gamesOpened,
+    remindersEnabled: remindersEnabled,
     topSubjectSlug: topSubjectSlug,
     shouldShowChecklist: shouldShowChecklist,
-    shouldCollapseDailyWar: shouldCollapseDailyWar,
   );
 });
 
@@ -134,15 +151,6 @@ final homeActivationJourneyProvider =
 Future<void> markActivationConfidenceMapOpened(WidgetRef ref) async {
   final prefs = await ref.read(prefsServiceProvider.future);
   prefs.activationConfidenceMapOpened = true;
-  ref.invalidate(prefsServiceProvider);
-  ref.invalidate(homeActivationJourneyProvider);
-}
-
-/// Marks step 2 (games) done. Journey hides only when all 3 are done.
-Future<void> markActivationGamesOpened(WidgetRef ref) async {
-  final prefs = await ref.read(prefsServiceProvider.future);
-  if (prefs.activationGamesOpened) return;
-  prefs.activationGamesOpened = true;
   ref.invalidate(prefsServiceProvider);
   ref.invalidate(homeActivationJourneyProvider);
 }

@@ -62,7 +62,8 @@ abstract final class PrefKeys {
   static const activationConfidenceMapOpenedV1 =
       'activation_confidence_map_opened_v1';
 
-  /// User opened Games from the activation checklist (Todo 3).
+  /// User opened Games from the activation checklist (legacy Todo — games left
+  /// the activation path; kept for back-compat / existing users).
   static const activationGamesOpenedV1 = 'activation_games_opened_v1';
 
   /// Journey fully dismissed (grandfathered or completed).
