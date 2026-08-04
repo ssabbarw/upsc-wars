@@ -57,6 +57,7 @@ import '../../features/home/screens/progress_hub_screen.dart';
 import '../../features/admin_dashboard/admin_dashboard_access.dart';
 import '../../features/admin_dashboard/screens/admin_dashboard_screen.dart';
 import '../../features/internal/screens/feature_health_screen.dart';
+import '../../features/internal/play_store_demo/play_store_demo_screen.dart';
 import '../../features/question_editor/screens/question_editor_form_screen.dart';
 import '../../features/question_editor/screens/question_editor_preview_screen.dart';
 import '../../features/question_editor/screens/question_editor_search_screen.dart';
@@ -444,6 +445,17 @@ GoRouter appRouter(Ref ref) {
             return const Scaffold(body: Center(child: Text('Not available')));
           }
           return const SpotTestComposerScreen();
+        },
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/internal/play-store-demo',
+        name: 'play_store_demo',
+        builder: (context, state) {
+          if (!kDebugMode) {
+            return const Scaffold(body: Center(child: Text('Not available')));
+          }
+          return const PlayStoreDemoScreen();
         },
       ),
       GoRoute(

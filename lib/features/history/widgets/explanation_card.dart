@@ -56,17 +56,25 @@ class ExplanationCard extends HookConsumerWidget {
   const ExplanationCard({
     required this.translation,
     required this.showStatements,
+    this.demoForceDeepDive,
+    this.demoForceTab,
     super.key,
   });
 
   final QuestionTranslation translation;
   final bool showStatements;
 
+  /// When non-null (Play Store demo), forces the deep-dive section open/closed.
+  final bool? demoForceDeepDive;
+
+  /// When non-null (Play Store demo), forces the active deep-dive tab index.
+  final int? demoForceTab;
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final deepDiveOpen = useState(false);
+    final deepDiveOpen = useState(demoForceDeepDive ?? false);
     final hasStatements =
         showStatements && translation.statementAnalysis.isNotEmpty;
     final explanation = (translation.finalExplanation ?? '').trim();
@@ -84,8 +92,16 @@ class ExplanationCard extends HookConsumerWidget {
       if (hasTrap) 'Trap',
     ];
     final hasDeepDive = tabs.isNotEmpty;
-    final activeTab = useState(0);
+    final activeTab = useState(demoForceTab ?? 0);
     final primary = const Color(0xFF1D9E75);
+
+    useEffect(() {
+      final forceOpen = demoForceDeepDive;
+      if (forceOpen != null) deepDiveOpen.value = forceOpen;
+      final forceTab = demoForceTab;
+      if (forceTab != null) activeTab.value = forceTab;
+      return null;
+    }, [demoForceDeepDive, demoForceTab]);
 
     useEffect(() {
       if (activeTab.value >= tabs.length) {

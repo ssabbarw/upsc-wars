@@ -9,9 +9,16 @@ import 'onboarding_scale.dart';
 
 /// Screen 1 — thesis: Confident & Wrong vs Guess & Right.
 class OnboardingThesisPage extends HookWidget {
-  const OnboardingThesisPage({super.key, required this.onContinue});
+  const OnboardingThesisPage({
+    super.key,
+    required this.onContinue,
+    this.showContinueButton = true,
+  });
 
   final VoidCallback onContinue;
+
+  /// When false (e.g. Play Store demo), the bottom CTA stays hidden.
+  final bool showContinueButton;
 
   static const _assetPrefix = 'assets/images/onboarding';
 
@@ -89,40 +96,42 @@ class OnboardingThesisPage extends HookWidget {
             ),
           ),
         ),
-        SizedBox(height: onb(context, 12)),
-        AnimatedOpacity(
-          opacity: showCta.value ? 1 : 0,
-          duration: const Duration(milliseconds: 350),
-          curve: Curves.easeOutCubic,
-          child: IgnorePointer(
-            ignoring: !showCta.value,
-            child: FilledButton(
-              onPressed: onContinue,
-              style:
-                  RgText.pillButton(
-                    fill: RgColors.tealDeep,
-                    verticalPadding: onb(context, 15),
-                  ).copyWith(
-                    minimumSize: WidgetStatePropertyAll(
-                      Size(double.infinity, onb(context, 54)),
-                    ),
-                    shape: WidgetStatePropertyAll(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(onb(context, 14)),
+        if (showContinueButton) ...[
+          SizedBox(height: onb(context, 12)),
+          AnimatedOpacity(
+            opacity: showCta.value ? 1 : 0,
+            duration: const Duration(milliseconds: 350),
+            curve: Curves.easeOutCubic,
+            child: IgnorePointer(
+              ignoring: !showCta.value,
+              child: FilledButton(
+                onPressed: onContinue,
+                style:
+                    RgText.pillButton(
+                      fill: RgColors.tealDeep,
+                      verticalPadding: onb(context, 15),
+                    ).copyWith(
+                      minimumSize: WidgetStatePropertyAll(
+                        Size(double.infinity, onb(context, 54)),
+                      ),
+                      shape: WidgetStatePropertyAll(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(onb(context, 14)),
+                        ),
                       ),
                     ),
+                child: Text(
+                  'Next  →',
+                  style: RgText.body(
+                    size: onb(context, 16),
+                    weight: FontWeight.w700,
+                    color: RgColors.onDark,
                   ),
-              child: Text(
-                'Next  →',
-                style: RgText.body(
-                  size: onb(context, 16),
-                  weight: FontWeight.w700,
-                  color: RgColors.onDark,
                 ),
               ),
             ),
           ),
-        ),
+        ],
       ],
     );
   }

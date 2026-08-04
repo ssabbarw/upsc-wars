@@ -156,6 +156,15 @@ class SettingsScreen extends ConsumerWidget {
                       subtitle: 'Pick MCQ and send push to this device',
                       onTap: () => context.push('/internal/spot-composer'),
                     ),
+                  if (kDebugMode)
+                    _NavTile(
+                      icon: Icons.movie_creation_outlined,
+                      iconBg: Color(0xFFFFE8EC),
+                      iconColor: Color(0xFFC2103A),
+                      title: 'Play Store demo',
+                      subtitle: 'Auto-play promo for screen recording',
+                      onTap: () => context.push('/internal/play-store-demo'),
+                    ),
                   if (showQuestionEditor)
                     _NavTile(
                       icon: Icons.edit_note_outlined,
