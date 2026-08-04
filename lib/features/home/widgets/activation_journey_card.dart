@@ -45,6 +45,16 @@ class ActivationJourneyCard extends HookConsumerWidget {
           ),
         ),
       );
+      unawaited(
+        Analytics.track(
+          ref,
+          const FeatureViewedEvent(
+            featureName: 'activation_journey',
+            subject: 'home',
+            source: 'home',
+          ),
+        ),
+      );
       return null;
     }, const []);
 

@@ -10,6 +10,7 @@ import 'package:upsc_wars/core/admin_dashboard/admin_dashboard_service.dart';
 import 'package:upsc_wars/core/admin_dashboard/pending_notification_conversion.dart';
 import 'package:upsc_wars/core/analytics/analytics_events.dart';
 import 'package:upsc_wars/core/analytics/analytics_global_dispatch.dart';
+import 'package:upsc_wars/core/analytics/session_entry_source.dart';
 import 'package:upsc_wars/core/debug/cursor_debug_log.dart';
 import 'package:upsc_wars/core/router/app_router.dart';
 import 'package:upsc_wars/core/services/app_local_notifications_service.dart';
@@ -79,6 +80,10 @@ class BattleMessagingService {
 
     if (!kIsWeb) {
       AppLocalNotificationsService.onBattleInviteLocalTap = (sessionId) {
+        SessionEntrySource.capture(
+          SessionEntrySource.push,
+          detail: 'battle_join',
+        );
         PendingNotificationConversion.captureFromLocalKind('battle_join');
         unawaited(_recordAdminNotificationOpen(
           notificationId: 'battle__$sessionId',
@@ -94,6 +99,10 @@ class BattleMessagingService {
         });
       };
       AppLocalNotificationsService.onNoTestReminderTap = () {
+        SessionEntrySource.capture(
+          SessionEntrySource.push,
+          detail: 'no_test_reminder',
+        );
         PendingNotificationConversion.captureFromLocalKind('no_test_reminder');
         unawaited(_recordAdminNotificationOpen(
           notificationId: 'local__no_test_reminder',
@@ -112,6 +121,10 @@ class BattleMessagingService {
         });
       };
       AppLocalNotificationsService.onDailyPracticeReminderTap = () {
+        SessionEntrySource.capture(
+          SessionEntrySource.push,
+          detail: 'daily_practice_reminder',
+        );
         PendingNotificationConversion.captureFromLocalKind('daily_practice_reminder');
         unawaited(_recordAdminNotificationOpen(
           notificationId: 'local__daily_practice_reminder',
@@ -205,28 +218,21 @@ class BattleMessagingService {
     _scheduleNavigateFromOpenedNotification(router, message, channel: 'fcm');
   }
 
+  static String _notificationOpenKind(RemoteMessage message) {
+    if (messageOpensLongHtmlScreen(message)) return 'long_html';
+    final raw = message.data['kind']?.toString().trim().toLowerCase();
+    if (raw == OpenChallengeFcm.kind) return 'open_challenge';
+    if (raw == PushSpotTestFcm.kind) return PushSpotTestFcm.kind;
+    if (raw == PushMemoryPairsFcm.kind) return PushMemoryPairsFcm.kind;
+    if (raw == PushRevisionGameFcm.kind) return PushRevisionGameFcm.kind;
+    final sid = message.data['sessionId']?.toString().trim() ?? '';
+    if (sid.isNotEmpty) return 'battle_join';
+    return raw != null && raw.isNotEmpty ? raw : 'unknown';
+  }
+
   static void _logNotificationOpen(RemoteMessage message, String channel) {
-    var kind = 'unknown';
-    if (messageOpensLongHtmlScreen(message)) {
-      kind = 'long_html';
-    } else if (message.data['kind']?.toString().trim().toLowerCase() ==
-        OpenChallengeFcm.kind) {
-      kind = 'open_challenge';
-    } else if (message.data['kind']?.toString().trim().toLowerCase() ==
-        PushSpotTestFcm.kind) {
-      kind = PushSpotTestFcm.kind;
-    } else if (message.data['kind']?.toString().trim().toLowerCase() ==
-        PushMemoryPairsFcm.kind) {
-      kind = PushMemoryPairsFcm.kind;
-    } else if (message.data['kind']?.toString().trim().toLowerCase() ==
-        PushRevisionGameFcm.kind) {
-      kind = PushRevisionGameFcm.kind;
-    } else {
-      final sid = message.data['sessionId']?.toString().trim() ?? '';
-      if (sid.isNotEmpty) {
-        kind = 'battle_join';
-      }
-    }
+    final kind = _notificationOpenKind(message);
+    SessionEntrySource.capture(SessionEntrySource.push, detail: kind);
     PendingNotificationConversion.captureFromFcm(message);
     final notifId = PendingNotificationConversion.notificationIdFromData(
       message.data,
@@ -273,6 +279,12 @@ class BattleMessagingService {
     RemoteMessage message, {
     required String channel,
   }) {
+    // Capture before post-frame navigation so cold-start `app_opened` can
+    // attribute push before [SessionEntrySource.consume].
+    SessionEntrySource.capture(
+      SessionEntrySource.push,
+      detail: _notificationOpenKind(message),
+    );
     void go() {
       if (kDebugMode) {
         debugPrint(

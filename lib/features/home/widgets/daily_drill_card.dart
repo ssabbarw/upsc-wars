@@ -36,6 +36,16 @@ class DailyDrillCard extends HookConsumerWidget {
       if (state == null) return null;
       loggedShown.value = true;
       unawaited(Analytics.track(ref, const DailyDrillCardShownEvent()));
+      unawaited(
+        Analytics.track(
+          ref,
+          FeatureViewedEvent(
+            featureName: 'daily_drill',
+            subject: state.subject,
+            source: 'home',
+          ),
+        ),
+      );
       return null;
     }, [async]);
 

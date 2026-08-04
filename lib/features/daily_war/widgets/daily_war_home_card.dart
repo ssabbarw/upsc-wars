@@ -143,6 +143,16 @@ class _DailyWarHomeCardBody extends HookConsumerWidget {
           ),
         ),
       );
+      unawaited(
+        Analytics.track(
+          ref,
+          const FeatureViewedEvent(
+            featureName: 'daily_war',
+            subject: 'daily_war',
+            source: 'home',
+          ),
+        ),
+      );
       return null;
     }, [snap.dateId, snap.phase, isGrand]);
 

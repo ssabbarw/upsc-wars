@@ -10,15 +10,14 @@ import 'analytics_sink.dart';
 /// file only maps **Dart type → GA4 event `name` and parameter keys**.
 ///
 /// **Event name quick reference (GA4 `name` = left, parameters = right):**
-/// * `app_opened` — (none)
-/// * `session_started` / `session_ended` — (none) — custom app foreground/background
-/// * `screen_viewed` — `screen_name`
+/// * `app_opened` — `entry_source`, `entry_detail?`
+/// * `session_started` — `entry_source`, `entry_detail?` / `session_ended` — (none)
+/// * `screen_viewed` — `screen_name` (growth-critical routes only)
 /// * `screen_dwell_ended` — `screen_name`, `duration_ms`, `end_kind` (see
 ///   [ScreenDwellRouteObserver], [ScreenFlow] for shell + modals)
 /// * `screen_flow_action` — `screen_name`, `action_id`, `action_kind`
 /// * `feature_viewed` / `feature_started` / `feature_completed` — `feature_name`, `subject`, `topic?`, `difficulty?`, `source`
 /// * `question_attempted` — per-question fields (see [QuestionAttemptedEvent])
-/// * `paywall_viewed` / `subscription_started` / `subscription_completed` — `source_feature`, `plan_type?`
 /// * `streak_continued` — `streak_length`
 /// * `revision_completed` — `questions_count`, `subject`
 /// * `mcq_test_session_started` — `subject`, `topic?`, `analytics_feature_key?`
@@ -44,6 +43,7 @@ import 'analytics_sink.dart';
 ///   and confidence bucket totals (see [UspSessionResultSnapshotEvent])
 /// * `usp_coach_cta` — `action` (result coach / Danger Zone CTA labels)
 /// * `app_notification_open` — `channel` (`fcm` / `local`), `kind` (e.g. battle)
+/// * `account_signed_in` — `method?`
 /// * `game_screen_opened` — `game_name`
 /// * `game_started` — `game_name`, `total_rounds?`
 /// * `game_round_finished` — `game_name`, `correct_count`, `total_rounds`
@@ -74,10 +74,16 @@ class FirebaseAnalyticsSink implements AnalyticsSink {
   @override
   Future<void> send(AnalyticsEvent event) async {
     switch (event) {
-      case AppOpenedEvent():
-        await _log('app_opened', const {});
-      case SessionStartedEvent():
-        await _log('session_started', const {});
+      case AppOpenedEvent(:final entrySource, :final entryDetail):
+        await _log('app_opened', {
+          'entry_source': entrySource,
+          if (entryDetail case final d?) 'entry_detail': d,
+        });
+      case SessionStartedEvent(:final entrySource, :final entryDetail):
+        await _log('session_started', {
+          'entry_source': entrySource,
+          if (entryDetail case final d?) 'entry_detail': d,
+        });
       case SessionEndedEvent():
         await _log('session_ended', const {});
       case ScreenViewedEvent(:final screenName):
@@ -171,21 +177,6 @@ class FirebaseAnalyticsSink implements AnalyticsSink {
           if (confidenceLevel case final c?) 'confidence_level': c,
           'feature_name': featureName,
           'source': source,
-        });
-      case PaywallViewedEvent(:final sourceFeature, :final planType):
-        await _log('paywall_viewed', {
-          'source_feature': sourceFeature,
-          if (planType case final p?) 'plan_type': p,
-        });
-      case SubscriptionStartedEvent(:final sourceFeature, :final planType):
-        await _log('subscription_started', {
-          'source_feature': sourceFeature,
-          if (planType case final p?) 'plan_type': p,
-        });
-      case SubscriptionCompletedEvent(:final sourceFeature, :final planType):
-        await _log('subscription_completed', {
-          'source_feature': sourceFeature,
-          if (planType case final p?) 'plan_type': p,
         });
       case StreakContinuedEvent(:final streakLength):
         await _log('streak_continued', {
@@ -345,6 +336,10 @@ class FirebaseAnalyticsSink implements AnalyticsSink {
           'channel': channel,
           'kind': kind,
         });
+      case AccountSignedInEvent(:final method):
+        await _log('account_signed_in', {
+          if (method case final m?) 'method': m,
+        });
       case FirstInsightSeenEvent():
         await _log('first_insight_seen', const {});
       case InsightsDashboardOpenedEvent():
@@ -385,12 +380,6 @@ class FirebaseAnalyticsSink implements AnalyticsSink {
         });
       case ActivationJourneySnoozedEvent():
         await _log('activation_journey_snoozed', const {});
-      case DidYouKnowShownEvent(:final cardId):
-        await _log('did_you_know_shown', {'card_id': cardId});
-      case DidYouKnowDismissedEvent(:final cardId):
-        await _log('did_you_know_dismissed', {'card_id': cardId});
-      case DidYouKnowCtaTappedEvent(:final cardId):
-        await _log('did_you_know_cta_tapped', {'card_id': cardId});
       case GameScreenOpenedEvent(:final gameName):
         await _log('game_screen_opened', {'game_name': gameName});
       case GameStartedEvent(:final gameName, :final totalRounds):

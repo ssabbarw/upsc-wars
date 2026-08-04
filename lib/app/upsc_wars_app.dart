@@ -14,6 +14,7 @@ import '../core/analytics/analytics.dart';
 import '../core/analytics/analytics_events.dart';
 import '../core/analytics/analytics_global_dispatch.dart';
 import '../core/analytics/push_notification_status_snapshot.dart';
+import '../core/analytics/session_entry_source.dart';
 import '../core/providers/analytics_provider.dart';
 import '../core/constants/app_constants.dart';
 import '../core/constants/prelims_debug_flags.dart';
@@ -99,24 +100,24 @@ class _RootMaterialApp extends HookConsumerWidget {
     }, const []);
 
     useEffect(() {
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        final router = ref.read(appRouterProvider);
-        unawaited(BattleMessagingService.initialize(router));
-        unawaited(ShareDeepLinkService.initialize(ref, router));
-      });
-      return () {
-        unawaited(ShareDeepLinkService.dispose());
-      };
-    }, const []);
-
-    useEffect(() {
       void dispatch(AnalyticsEvent e) {
         unawaited(ref.read(analyticsServiceProvider).track(e));
       }
 
       bindGlobalAnalytics(dispatch);
-      unawaited(Analytics.track(ref, const AppOpenedEvent()));
       unawaited(() async {
+        final router = ref.read(appRouterProvider);
+        // Resolve cold-start push / deep-link attribution before app_opened.
+        await BattleMessagingService.initialize(router);
+        await ShareDeepLinkService.initialize(ref, router);
+        final entry = SessionEntrySource.consume();
+        await Analytics.track(
+          ref,
+          AppOpenedEvent(
+            entrySource: entry.source,
+            entryDetail: entry.detail,
+          ),
+        );
         final p = await ref.read(prefsServiceProvider.future);
         final wasFirstInstall =
             !p.hasActivationMilestone(ActivationMilestones.firstProcessLaunch);
@@ -183,6 +184,7 @@ class _RootMaterialApp extends HookConsumerWidget {
       return () {
         bindGlobalAnalytics(null);
         WidgetsBinding.instance.removeObserver(analyticsLifecycle);
+        unawaited(ShareDeepLinkService.dispose());
       };
     }, const []);
 
@@ -236,6 +238,12 @@ class _RootMaterialApp extends HookConsumerWidget {
         User? prevUser;
         if (prev is AsyncData<User?>) prevUser = prev.value;
         if (!AuthSession.isAccountSignedIn(prevUser)) {
+          final method = (u != null && u.providerData.isNotEmpty)
+              ? u.providerData.first.providerId
+              : null;
+          unawaited(
+            Analytics.track(ref, AccountSignedInEvent(method: method)),
+          );
           unawaited(
             logActivationMilestoneOnce(
               ref,

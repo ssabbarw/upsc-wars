@@ -4,6 +4,7 @@ import 'package:app_links/app_links.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import 'package:upsc_wars/core/analytics/session_entry_source.dart';
 import 'package:upsc_wars/core/deep_link/share_session_opener.dart';
 
 /// Subscribes to platform share / universal links after app bootstrap.
@@ -34,11 +35,19 @@ class ShareDeepLinkService {
     final appLinks = AppLinks();
     final initial = await appLinks.getInitialLink();
     if (initial != null && _shouldHandle(initial)) {
+      SessionEntrySource.capture(
+        SessionEntrySource.deepLink,
+        detail: 'share',
+      );
       await openShareUriIfApplicable(ref: ref, router: router, uri: initial);
     }
 
     _subscription = appLinks.uriLinkStream.listen((uri) async {
       if (!_shouldHandle(uri)) return;
+      SessionEntrySource.capture(
+        SessionEntrySource.deepLink,
+        detail: 'share',
+      );
       await openShareUriIfApplicable(ref: ref, router: router, uri: uri);
     });
   }

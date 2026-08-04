@@ -102,6 +102,16 @@ class GetStartedCard extends HookConsumerWidget {
       if (loggedShown.value) return null;
       loggedShown.value = true;
       unawaited(Analytics.track(ref, const GetStartedCardShownEvent()));
+      unawaited(
+        Analytics.track(
+          ref,
+          const FeatureViewedEvent(
+            featureName: 'get_started_diagnostic',
+            subject: CreateGetStartedSessionUseCase.mixedSubject,
+            source: 'home',
+          ),
+        ),
+      );
       return null;
     }, const []);
 

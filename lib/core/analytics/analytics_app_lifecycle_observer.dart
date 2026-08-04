@@ -6,6 +6,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'analytics.dart';
 import 'analytics_events.dart';
 import 'push_notification_status_snapshot.dart';
+import 'session_entry_source.dart';
 
 /// Maps app foreground/background to coarse session boundaries.
 class AnalyticsAppLifecycleObserver extends WidgetsBindingObserver {
@@ -16,7 +17,19 @@ class AnalyticsAppLifecycleObserver extends WidgetsBindingObserver {
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
     if (state == AppLifecycleState.resumed) {
-      unawaited(Analytics.track(_ref, const SessionStartedEvent()));
+      // Brief delay so push / deep-link handlers can set [SessionEntrySource]
+      // before we attribute this foreground session.
+      unawaited(() async {
+        await Future<void>.delayed(const Duration(milliseconds: 350));
+        final entry = SessionEntrySource.consume();
+        await Analytics.track(
+          _ref,
+          SessionStartedEvent(
+            entrySource: entry.source,
+            entryDetail: entry.detail,
+          ),
+        );
+      }());
       unawaited(trackPushNotificationStatusSnapshot(_ref));
     } else if (state == AppLifecycleState.paused ||
         state == AppLifecycleState.detached) {

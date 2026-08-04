@@ -20,9 +20,6 @@
 // Naming: [AnalyticsEvent] is the Dart name; the GA4 `logEvent` `name` is
 // always snake_case, defined next to the matching `case` in
 // [FirebaseAnalyticsSink.send]. User id is added in the sink when logged in.
-//
-// Not implemented in UI yet: [PaywallViewedEvent], [SubscriptionStartedEvent],
-// [SubscriptionCompletedEvent] — wire when subscription/paywall exists.
 
 /// Top-level [AnalyticsEvent] for type-safe [AnalyticsService.track] calls.
 sealed class AnalyticsEvent {
@@ -35,19 +32,33 @@ sealed class AnalyticsEvent {
 /// mounts, not on every return from the background. Use with session events
 /// to reason about restarts.
 ///
-/// **GA4:** `app_opened` (no custom parameters; Firebase may attach defaults).
+/// **GA4:** `app_opened` with `entry_source` (`organic` | `push` | `deep_link`)
+/// and optional `entry_detail` (e.g. notification kind).
 final class AppOpenedEvent extends AnalyticsEvent {
-  const AppOpenedEvent();
+  const AppOpenedEvent({
+    this.entrySource = 'organic',
+    this.entryDetail,
+  });
+
+  final String entrySource;
+  final String? entryDetail;
 }
 
 /// **User brought the app to the foreground** (e.g. resumed from home screen or
 /// after unlocking the phone). Pairs with [SessionEndedEvent] for rough
 /// in-app session length.
 ///
-/// **GA4:** `session_started` (no custom parameters).
+/// **GA4:** `session_started` with `entry_source` (`organic` | `push` |
+/// `deep_link`) and optional `entry_detail`.
 /// **Note:** Distinct from GA4’s automatic “session”; this is a custom event name.
 final class SessionStartedEvent extends AnalyticsEvent {
-  const SessionStartedEvent();
+  const SessionStartedEvent({
+    this.entrySource = 'organic',
+    this.entryDetail,
+  });
+
+  final String entrySource;
+  final String? entryDetail;
 }
 
 /// **User left the app** (switched app or backgrounded). Emitted on pause/detach.
@@ -217,50 +228,6 @@ final class QuestionAttemptedEvent extends AnalyticsEvent {
   final int? confidenceLevel;
   final String featureName;
   final String source;
-}
-
-// ── Subscription / paywall (wire when product exists) ───────────────────
-
-/// **User was shown a paywall or upgrade screen.** (Not yet emitted from any
-/// screen — add when the paywall widget appears.)
-///
-/// **GA4:** `paywall_viewed` with `source_feature` (entry point) and optional
-/// `plan_type` (e.g. monthly, yearly).
-final class PaywallViewedEvent extends AnalyticsEvent {
-  const PaywallViewedEvent({
-    required this.sourceFeature,
-    this.planType,
-  });
-
-  final String sourceFeature;
-  final String? planType;
-}
-
-/// **User started checkout or tapped subscribe** (before store confirmation).
-///
-/// **GA4:** `subscription_started` with `source_feature`, optional `plan_type`.
-final class SubscriptionStartedEvent extends AnalyticsEvent {
-  const SubscriptionStartedEvent({
-    required this.sourceFeature,
-    this.planType,
-  });
-
-  final String sourceFeature;
-  final String? planType;
-}
-
-/// **Subscription purchase succeeded** (or restore completed — align with
-/// your billing layer when implemented).
-///
-/// **GA4:** `subscription_completed` with `source_feature`, optional `plan_type`.
-final class SubscriptionCompletedEvent extends AnalyticsEvent {
-  const SubscriptionCompletedEvent({
-    required this.sourceFeature,
-    this.planType,
-  });
-
-  final String sourceFeature;
-  final String? planType;
 }
 
 // ── Streaks & revision ────────────────────────────────────────────────
@@ -604,6 +571,16 @@ final class AppNotificationOpenEvent extends AnalyticsEvent {
   final String kind;
 }
 
+/// **User signed in to a real account** (not anonymous). Fired on each
+/// anonymous → account transition so retention can be segmented by identity.
+///
+/// **GA4:** `account_signed_in` with optional `method` (provider id hint).
+final class AccountSignedInEvent extends AnalyticsEvent {
+  const AccountSignedInEvent({this.method});
+
+  final String? method;
+}
+
 // ── Insights & recommendations ─────────────────────────────────────────────
 
 /// **First time the user saw any Insights surface** (per device).
@@ -652,7 +629,7 @@ final class RiskCardClickedEvent extends AnalyticsEvent {
   final String riskTier;
 }
 
-// ── Home activation & Did You Know ─────────────────────────────────────────
+// ── Home activation ─────────────────────────────────────────────────────────
 
 /// **Get Started card shown** on home for pre-activation users.
 ///
@@ -710,33 +687,6 @@ final class ActivationJourneyTodoTappedEvent extends AnalyticsEvent {
 /// **GA4:** `activation_journey_snoozed` (no parameters).
 final class ActivationJourneySnoozedEvent extends AnalyticsEvent {
   const ActivationJourneySnoozedEvent();
-}
-
-/// **Did You Know card shown** on home.
-///
-/// **GA4:** `did_you_know_shown` with `card_id`.
-final class DidYouKnowShownEvent extends AnalyticsEvent {
-  const DidYouKnowShownEvent({required this.cardId});
-
-  final String cardId;
-}
-
-/// **User dismissed Did You Know** without tapping CTA.
-///
-/// **GA4:** `did_you_know_dismissed` with `card_id`.
-final class DidYouKnowDismissedEvent extends AnalyticsEvent {
-  const DidYouKnowDismissedEvent({required this.cardId});
-
-  final String cardId;
-}
-
-/// **User tapped Did You Know CTA.**
-///
-/// **GA4:** `did_you_know_cta_tapped` with `card_id`.
-final class DidYouKnowCtaTappedEvent extends AnalyticsEvent {
-  const DidYouKnowCtaTappedEvent({required this.cardId});
-
-  final String cardId;
 }
 
 // ── Revision Games (mini-games hub + Memory Pairs) ───────────────────────────
