@@ -111,6 +111,22 @@ class _CaptionBubble extends StatelessWidget {
       _ => CrossAxisAlignment.center,
     };
 
+    // Slightly lighter tint of the beat accent for readable fills.
+    final hsl = HSLColor.fromColor(accent);
+    final wash = hsl
+        .withSaturation((hsl.saturation * 0.85).clamp(0.0, 1.0))
+        .withLightness(0.22)
+        .toColor();
+    final washDeep = hsl
+        .withSaturation((hsl.saturation * 0.9).clamp(0.0, 1.0))
+        .withLightness(0.12)
+        .toColor();
+    final glow = accent.withValues(alpha: 0.55);
+    final subTone = hsl
+        .withSaturation((hsl.saturation * 0.55).clamp(0.0, 1.0))
+        .withLightness(0.82)
+        .toColor();
+
     return TweenAnimationBuilder<double>(
       tween: Tween(begin: 0, end: 1),
       duration: const Duration(milliseconds: 420),
@@ -129,25 +145,43 @@ class _CaptionBubble extends StatelessWidget {
         crossAxisAlignment: cross,
         children: [
           Container(
-            width: 36,
-            height: 4,
+            width: 44,
+            height: 5,
             decoration: BoxDecoration(
-              color: accent,
+              gradient: LinearGradient(
+                colors: [accent, accent.withValues(alpha: 0.35)],
+              ),
               borderRadius: BorderRadius.circular(4),
+              boxShadow: [
+                BoxShadow(color: glow, blurRadius: 10, spreadRadius: 1),
+              ],
             ),
           ),
           const SizedBox(height: 10),
           Container(
-            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+            padding: const EdgeInsets.fromLTRB(16, 14, 16, 14),
             decoration: BoxDecoration(
-              color: Colors.black.withValues(alpha: 0.62),
-              borderRadius: BorderRadius.circular(16),
-              border: Border.all(color: accent.withValues(alpha: 0.55), width: 1.5),
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  wash.withValues(alpha: 0.94),
+                  washDeep.withValues(alpha: 0.96),
+                ],
+              ),
+              borderRadius: BorderRadius.circular(18),
+              border: Border.all(color: accent, width: 2),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.28),
-                  blurRadius: 18,
+                  color: accent.withValues(alpha: 0.42),
+                  blurRadius: 22,
+                  spreadRadius: 0,
                   offset: const Offset(0, 8),
+                ),
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: 0.35),
+                  blurRadius: 16,
+                  offset: const Offset(0, 6),
                 ),
               ],
             ),
@@ -162,20 +196,44 @@ class _CaptionBubble extends StatelessWidget {
                     fontSize: 28,
                     height: 1.12,
                     fontWeight: FontWeight.w800,
-                    color: Colors.white,
+                    color: const Color(0xFFFFF8F0),
                     letterSpacing: -0.4,
+                    shadows: [
+                      Shadow(
+                        color: accent.withValues(alpha: 0.9),
+                        blurRadius: 14,
+                      ),
+                      Shadow(
+                        color: Colors.black.withValues(alpha: 0.55),
+                        blurRadius: 2,
+                        offset: const Offset(0, 1),
+                      ),
+                    ],
                   ),
                 ),
                 if (subCaption != null) ...[
-                  const SizedBox(height: 6),
-                  Text(
-                    subCaption!,
-                    textAlign: align,
-                    style: GoogleFonts.dmSans(
-                      fontSize: subCaption!.length > 42 ? 13 : 14,
-                      height: 1.3,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white.withValues(alpha: 0.88),
+                  const SizedBox(height: 8),
+                  Container(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 10,
+                      vertical: 5,
+                    ),
+                    decoration: BoxDecoration(
+                      color: accent.withValues(alpha: 0.22),
+                      borderRadius: BorderRadius.circular(8),
+                      border: Border.all(
+                        color: accent.withValues(alpha: 0.45),
+                      ),
+                    ),
+                    child: Text(
+                      subCaption!,
+                      textAlign: align,
+                      style: GoogleFonts.dmSans(
+                        fontSize: subCaption!.length > 42 ? 13 : 14,
+                        height: 1.3,
+                        fontWeight: FontWeight.w700,
+                        color: subTone,
+                      ),
                     ),
                   ),
                 ],

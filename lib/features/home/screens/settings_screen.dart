@@ -162,7 +162,7 @@ class SettingsScreen extends ConsumerWidget {
                       iconBg: Color(0xFFFFE8EC),
                       iconColor: Color(0xFFC2103A),
                       title: 'Play Store demo',
-                      subtitle: 'Auto-play promo for screen recording',
+                      subtitle: 'Swipe-through promo for screen recording',
                       onTap: () => context.push('/internal/play-store-demo'),
                     ),
                   if (showQuestionEditor)

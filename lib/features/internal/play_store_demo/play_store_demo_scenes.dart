@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 
 import '../../../core/domain/entities/answer_confidence.dart';
 import '../../../core/theme/app_colors.dart';
@@ -11,42 +14,66 @@ import '../../mini_games/shared/revision_games_theme.dart';
 import '../../onboarding/widgets/onboarding_thesis_page.dart';
 import 'play_store_demo_script.dart';
 
-/// Sample explanation rich enough to show all deep-dive tabs.
+/// Real Modern History MCQ — facts verified (Charter Act 1833 / Regulating Act 1773).
 const playStoreDemoExplanation = QuestionTranslation(
   finalExplanation:
-      'The Basic Structure doctrine limits Parliament\'s power to amend '
-      'the Constitution. Fundamental features — supremacy of the Constitution, '
-      'separation of powers, and judicial review — cannot be abrogated.\n\n'
-      'Value Addition: Kesavananda Bharati (1973) is the landmark; later cases '
-      'refined which features fall inside the Basic Structure.',
+      'Warren Hastings feels right because he was the first Governor-General — '
+      'and he was. But of Bengal, not India. The Charter Act of 1833 reorganized '
+      'British territories and created the post of Governor-General of India for '
+      'the first time. Bentinck was appointed to that new, broader post.\n\n'
+      'Most aspirants have memorised "Hastings = first Governor-General" without '
+      'attaching the word "Bengal" to it. UPSC counts on exactly that.\n\n'
+      'Value Addition: Hastings → first GG of Bengal (Regulating Act, 1773); '
+      'Bentinck → first GG of India (Charter Act, 1833); '
+      'Mountbatten → first GG of independent India (1947); '
+      'Canning → first Viceroy (1858).',
   statementAnalysis: [
     StatementAnalysisVm(
-      statement: 'Parliament can amend any part of the Constitution.',
+      statement: '(a) Warren Hastings',
       isCorrect: false,
-      reason: 'Amending power is wide but not absolute under Basic Structure.',
+      reason:
+          'First Governor-General of Bengal (Regulating Act, 1773) — not India.',
     ),
     StatementAnalysisVm(
-      statement: 'Judicial review is part of the Basic Structure.',
+      statement: '(b) Lord William Bentinck',
       isCorrect: true,
-      reason: 'Courts protect constitutional supremacy via judicial review.',
+      reason: 'First Governor-General of India (Charter Act, 1833).',
     ),
     StatementAnalysisVm(
-      statement: 'Fundamental rights can never be amended.',
+      statement: '(c) Lord Mountbatten',
       isCorrect: false,
-      reason: 'Rights can be amended, but not destroyed in substance.',
+      reason: 'First Governor-General of independent India (1947).',
+    ),
+    StatementAnalysisVm(
+      statement: '(d) Lord Canning',
+      isCorrect: false,
+      reason: 'First Viceroy of India (1858) — a different title after 1857.',
     ),
   ],
   eliminationLogic: [
-    'Drop options that treat amending power as unlimited.',
-    'Keep options that preserve judicial review / constitutional supremacy.',
-    'Eliminate absolute wording like "never" unless the text supports it.',
+    'Eliminate (a) — Hastings held the Bengal post, not the all-India one created in 1833.',
+    'Eliminate (c) — Mountbatten is post-independence, a full century later.',
+    'Eliminate (d) — Canning was the first Viceroy, a different title entirely, created after 1857.',
+    'Retain (b) — Bentinck is the only option tied to the Charter Act of 1833 and the all-India post.',
   ],
   strongDistractor:
-      'Unlimited amending power|Sounds close to Article 368 but ignores Basic Structure limits.',
+      'Warren Hastings — Feels right because he was the first GG, '
+      'but of Bengal — not India.',
   upscTrapExplanation:
-      'UPSC often mixes "Parliament is supreme in amendment" with "no limits". '
-      'The trap is treating amending power as absolute.',
-  conceptsUsed: ['Basic Structure', 'Judicial review', 'Article 368'],
+      'Entity-Swap trap: every option is the "first" of something real. '
+      'UPSC changed one word — Governor-General of Bengal vs of India — '
+      'and that one word decides everything. '
+      'Related: Geographic Swap moves a fact to the wrong place; '
+      'Entity-Swap moves it to the wrong person or post. '
+      'Hastings / Bentinck / Mountbatten / Canning each held a real "first" title; '
+      'only Bentinck matches "first Governor-General of India".',
+  conceptsUsed: [
+    'Entity-Swap',
+    'Geographic Swap',
+    'Charter Act 1833',
+    'Regulating Act 1773',
+    'Governor-General vs Viceroy',
+  ],
 );
 
 class PlayStoreDemoScene extends StatelessWidget {
@@ -60,29 +87,40 @@ class PlayStoreDemoScene extends StatelessWidget {
       PlayStoreDemoBeat.ready => const _ReadyScene(),
       PlayStoreDemoBeat.thesis => const _ThesisScene(),
       PlayStoreDemoBeat.confidence => const _ConfidenceScene(),
-      PlayStoreDemoBeat.dangerZoneIntro => const _DangerZoneIntroScene(),
       PlayStoreDemoBeat.explanationBody => const _ExplanationScene(
         forceDeepDive: false,
         forceTab: 0,
+        scrollMode: _ExplanationScrollMode.none,
+        highlightWatchOut: false,
+        highlightTrap: false,
       ),
-      PlayStoreDemoBeat.explanationStatements => const _ExplanationScene(
-        forceDeepDive: true,
-        forceTab: 0,
-      ),
+      // First deep-dive swipe: Elimination (skip Statements), scroll + Watch out glow.
       PlayStoreDemoBeat.explanationElimination => const _ExplanationScene(
         forceDeepDive: true,
         forceTab: 1,
+        scrollMode: _ExplanationScrollMode.animate,
+        highlightWatchOut: true,
+        highlightTrap: false,
       ),
+      // Stay at bottom — jump with no animation (already there after Elimination).
       PlayStoreDemoBeat.explanationTrap => const _ExplanationScene(
         forceDeepDive: true,
         forceTab: 2,
+        scrollMode: _ExplanationScrollMode.jump,
+        highlightWatchOut: false,
+        highlightTrap: true,
       ),
-      PlayStoreDemoBeat.dangerZoneMap => const _DangerZoneMapScene(),
+      PlayStoreDemoBeat.dangerZoneMap => const _DangerZoneMapScene(
+        initialTab: 0,
+        autoSwitchToStrong: true,
+      ),
+      PlayStoreDemoBeat.dangerZoneStrong => const _DangerZoneMapScene(
+        initialTab: 1,
+        autoSwitchToStrong: false,
+      ),
       PlayStoreDemoBeat.gamesHub => const _GamesHubScene(),
-      PlayStoreDemoBeat.gameMemoryPairs => const _MemoryPairsScene(),
+      PlayStoreDemoBeat.gameTimelineSorter => const _TimelineSorterTrailerScene(),
       PlayStoreDemoBeat.gameFactOrBluff => const _FactOrBluffScene(),
-      PlayStoreDemoBeat.warLive => const _WarLiveScene(),
-      PlayStoreDemoBeat.warAir => const _WarAirScene(),
       PlayStoreDemoBeat.endCard => const _EndCardScene(),
     };
   }
@@ -118,7 +156,7 @@ class _ReadyScene extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             Text(
-              'Demo starting…',
+              'Recording starts…',
               style: DwText.body(color: Colors.white70),
             ),
           ],
@@ -154,104 +192,199 @@ class _ConfidenceScene extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
-    final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return ColoredBox(
       color: scheme.surface,
       child: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+        child: ListView(
+          padding: const EdgeInsets.fromLTRB(16, 16, 16, 24),
+          children: [
+            Text(
+              'Q. 12  ·  Modern History',
+              style: AppTextStyles.caption().copyWith(
+                color: scheme.onSurfaceVariant,
+                letterSpacing: 0.4,
+              ),
+            ),
+            const SizedBox(height: 10),
+            Text(
+              'Who was the first Governor-General of India?',
+              style: AppTextStyles.h3().copyWith(
+                color: scheme.onSurface,
+                height: 1.35,
+              ),
+            ),
+            const SizedBox(height: 16),
+            // Trap pick: Hastings feels right — but it's Bengal, not India.
+            const _FakeOption(
+              label: 'A',
+              text: 'Warren Hastings',
+              selected: true,
+            ),
+            // Exam-mode inline strip under the selected option.
+            const _DemoExamConfidenceStrip(
+              selectedTier: AnswerConfidence.verySure,
+            ),
+            const SizedBox(height: 8),
+            const _FakeOption(label: 'B', text: 'Lord William Bentinck'),
+            const SizedBox(height: 8),
+            const _FakeOption(label: 'C', text: 'Lord Mountbatten'),
+            const SizedBox(height: 8),
+            const _FakeOption(label: 'D', text: 'Lord Canning'),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+/// Visual twin of [ExamOptionConfidenceStrip] for the promo demo (no session).
+class _DemoExamConfidenceStrip extends StatelessWidget {
+  const _DemoExamConfidenceStrip({required this.selectedTier});
+
+  final String selectedTier;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(
+        AppSpacing.md,
+        AppSpacing.sm,
+        AppSpacing.md,
+        AppSpacing.md,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Confidence: ${AnswerConfidence.examShortLabel(selectedTier)}',
+            style: AppTextStyles.caption().copyWith(
+              color: scheme.primary,
+              fontWeight: FontWeight.w700,
+              height: 1.25,
+            ),
+          ),
+          const SizedBox(height: AppSpacing.sm),
+          IntrinsicHeight(
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Expanded(
+                  child: _DemoTierToggle(
+                    label: 'Sure',
+                    selected: selectedTier == AnswerConfidence.verySure,
+                    accent: AppColors.correct,
+                    onSurface: AppColors.onPrimary,
+                    labelUnselected: isDark
+                        ? AppColors.correctTextDark
+                        : AppColors.correctText,
+                    isDark: isDark,
+                  ),
+                ),
+                const SizedBox(width: AppSpacing.sm),
+                Expanded(
+                  child: _DemoTierToggle(
+                    label: 'Educated\nguess',
+                    selected: selectedTier == AnswerConfidence.somewhatSure,
+                    accent: AppColors.warning,
+                    onSurface: Colors.white,
+                    labelUnselected: isDark
+                        ? AppColors.warningTextDark
+                        : AppColors.warningText,
+                    isDark: isDark,
+                  ),
+                ),
+                const SizedBox(width: AppSpacing.sm),
+                Expanded(
+                  child: _DemoTierToggle(
+                    label: 'Pure guess',
+                    selected: selectedTier == AnswerConfidence.guessing,
+                    accent: AppColors.info,
+                    onSurface: AppColors.onPrimary,
+                    labelUnselected: isDark
+                        ? AppColors.infoTextDark
+                        : AppColors.infoText,
+                    isDark: isDark,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _DemoTierToggle extends StatelessWidget {
+  const _DemoTierToggle({
+    required this.label,
+    required this.selected,
+    required this.accent,
+    required this.onSurface,
+    required this.labelUnselected,
+    required this.isDark,
+  });
+
+  final String label;
+  final bool selected;
+  final Color accent;
+  final Color onSurface;
+  final Color labelUnselected;
+  final bool isDark;
+
+  @override
+  Widget build(BuildContext context) {
+    final borderColor = selected
+        ? accent
+        : accent.withValues(alpha: isDark ? 0.38 : 0.42);
+    return Container(
+      width: double.infinity,
+      decoration: BoxDecoration(
+        color: selected
+            ? accent
+            : accent.withValues(alpha: isDark ? 0.07 : 0.06),
+        borderRadius: BorderRadius.circular(AppRadius.sm),
+        border: Border.all(color: borderColor, width: selected ? 2.5 : 1),
+        boxShadow: selected
+            ? [
+                BoxShadow(
+                  color: accent.withValues(alpha: isDark ? 0.42 : 0.35),
+                  blurRadius: 10,
+                  offset: const Offset(0, 3),
+                ),
+              ]
+            : null,
+      ),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(
+          vertical: AppSpacing.sm,
+          horizontal: AppSpacing.xs,
+        ),
+        child: Align(
+          alignment: Alignment.center,
+          child: Row(
             children: [
-              Text(
-                'Q. 12  ·  Polity',
-                style: AppTextStyles.caption().copyWith(
-                  color: scheme.onSurfaceVariant,
-                  letterSpacing: 0.4,
+              if (selected)
+                Padding(
+                  padding: const EdgeInsets.only(right: 6),
+                  child: Icon(Icons.check_rounded, size: 18, color: onSurface),
                 ),
-              ),
-              const SizedBox(height: 12),
-              Text(
-                'Which of the following is part of the Basic Structure '
-                'of the Constitution?',
-                style: AppTextStyles.h3().copyWith(
-                  color: scheme.onSurface,
-                  height: 1.35,
-                ),
-              ),
-              const SizedBox(height: 20),
-              _FakeOption(label: 'A', text: 'Judicial review', selected: true),
-              const SizedBox(height: 10),
-              const _FakeOption(label: 'B', text: 'Unlimited amending power'),
-              const Spacer(),
-              Container(
-                padding: const EdgeInsets.fromLTRB(18, 18, 18, 16),
-                decoration: BoxDecoration(
-                  color: isDark
-                      ? scheme.surfaceContainerHigh
-                      : scheme.surface,
-                  borderRadius: const BorderRadius.vertical(
-                    top: Radius.circular(20),
+              Expanded(
+                child: Text(
+                  label,
+                  textAlign: TextAlign.center,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style: AppTextStyles.labelSm().copyWith(
+                    color: selected ? onSurface : labelUnselected,
+                    fontWeight: selected ? FontWeight.w800 : FontWeight.w500,
+                    height: 1.2,
+                    fontSize: 11,
                   ),
-                  border: Border.all(
-                    color: isDark
-                        ? AppColors.borderDark
-                        : AppColors.borderLight,
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withValues(alpha: 0.08),
-                      blurRadius: 16,
-                      offset: const Offset(0, -4),
-                    ),
-                  ],
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Text(
-                      'How sure are you?',
-                      style: AppTextStyles.h3().copyWith(
-                        color: scheme.onSurface,
-                      ),
-                    ),
-                    const SizedBox(height: AppSpacing.xs),
-                    Text(
-                      'Pick before you see the answer — this builds your '
-                      'Danger Zone map.',
-                      style: AppTextStyles.caption().copyWith(
-                        color: scheme.onSurfaceVariant,
-                      ),
-                    ),
-                    const SizedBox(height: AppSpacing.lg),
-                    FilledButton(
-                      onPressed: () {},
-                      child: Text(
-                        AnswerConfidence.examShortLabel(
-                          AnswerConfidence.verySure,
-                        ),
-                      ),
-                    ),
-                    const SizedBox(height: AppSpacing.sm),
-                    OutlinedButton(
-                      onPressed: () {},
-                      child: Text(
-                        AnswerConfidence.examShortLabel(
-                          AnswerConfidence.somewhatSure,
-                        ),
-                      ),
-                    ),
-                    const SizedBox(height: AppSpacing.sm),
-                    TextButton(
-                      onPressed: () {},
-                      child: Text(
-                        AnswerConfidence.examShortLabel(
-                          AnswerConfidence.guessing,
-                        ),
-                      ),
-                    ),
-                  ],
                 ),
               ),
             ],
@@ -312,158 +445,61 @@ class _FakeOption extends StatelessWidget {
   }
 }
 
-class _DangerZoneIntroScene extends StatelessWidget {
-  const _DangerZoneIntroScene();
+enum _ExplanationScrollMode { none, animate, jump }
 
-  @override
-  Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    final borderColor = isDark ? AppColors.wrongTextDark : AppColors.wrong;
-
-    return ColoredBox(
-      color: scheme.surface,
-      child: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              const Spacer(),
-              Container(
-                padding: const EdgeInsets.all(AppSpacing.lg),
-                decoration: BoxDecoration(
-                  color: scheme.surface,
-                  borderRadius: BorderRadius.circular(AppRadius.lg),
-                  border: Border.all(
-                    color: borderColor.withValues(alpha: 0.45),
-                  ),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Text(
-                      'What is Danger Zone?',
-                      style: AppTextStyles.h3().copyWith(
-                        fontWeight: FontWeight.w800,
-                        color: scheme.onSurface,
-                      ),
-                    ),
-                    const SizedBox(height: AppSpacing.xs),
-                    Text(
-                      'Where you feel sure — and still get it wrong.',
-                      style: AppTextStyles.bodySm().copyWith(
-                        color: scheme.onSurfaceVariant,
-                        height: 1.35,
-                      ),
-                    ),
-                    const SizedBox(height: AppSpacing.md),
-                    _DzBullet(
-                      icon: Icons.warning_amber_rounded,
-                      iconColor: AppColors.wrong,
-                      title: 'Confident & wrong',
-                      body: 'Sure / Educated guess → incorrect',
-                    ),
-                    const SizedBox(height: AppSpacing.sm),
-                    _DzBullet(
-                      icon: Icons.lightbulb_outline_rounded,
-                      iconColor: AppColors.primary,
-                      title: 'Guess & right',
-                      body: 'Pure guess → correct',
-                    ),
-                    const SizedBox(height: AppSpacing.md),
-                    Container(
-                      padding: const EdgeInsets.all(AppSpacing.md),
-                      decoration: BoxDecoration(
-                        color: isDark
-                            ? AppColors.primaryDeep.withValues(alpha: 0.25)
-                            : AppColors.primaryLight.withValues(alpha: 0.65),
-                        borderRadius: BorderRadius.circular(AppRadius.md),
-                      ),
-                      child: Text(
-                        'Map unlocked — open it to see these by subject.',
-                        style: AppTextStyles.bodySm().copyWith(
-                          color: scheme.onSurface,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              const Spacer(),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class _DzBullet extends StatelessWidget {
-  const _DzBullet({
-    required this.icon,
-    required this.iconColor,
-    required this.title,
-    required this.body,
-  });
-
-  final IconData icon;
-  final Color iconColor;
-  final String title;
-  final String body;
-
-  @override
-  Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Icon(icon, size: 22, color: iconColor),
-        const SizedBox(width: 10),
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                title,
-                style: AppTextStyles.label().copyWith(
-                  fontWeight: FontWeight.w700,
-                  color: scheme.onSurface,
-                ),
-              ),
-              Text(
-                body,
-                style: AppTextStyles.caption().copyWith(
-                  color: scheme.onSurfaceVariant,
-                ),
-              ),
-            ],
-          ),
-        ),
-      ],
-    );
-  }
-}
-
-class _ExplanationScene extends StatelessWidget {
+class _ExplanationScene extends HookWidget {
   const _ExplanationScene({
     required this.forceDeepDive,
     required this.forceTab,
+    required this.scrollMode,
+    required this.highlightWatchOut,
+    required this.highlightTrap,
   });
 
   final bool forceDeepDive;
   final int forceTab;
+  final _ExplanationScrollMode scrollMode;
+  final bool highlightWatchOut;
+  final bool highlightTrap;
 
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
+    final scrollController = useScrollController();
+
+    useEffect(() {
+      if (scrollMode == _ExplanationScrollMode.none) return null;
+      WidgetsBinding.instance.addPostFrameCallback((_) async {
+        if (scrollMode == _ExplanationScrollMode.animate) {
+          await Future<void>.delayed(const Duration(milliseconds: 120));
+        }
+        if (!scrollController.hasClients) return;
+        final max = scrollController.position.maxScrollExtent;
+        if (scrollMode == _ExplanationScrollMode.jump) {
+          scrollController.jumpTo(max);
+          return;
+        }
+        await scrollController.animateTo(
+          max,
+          duration: const Duration(milliseconds: 520),
+          curve: Curves.easeOutCubic,
+        );
+      });
+      return null;
+    }, [
+      scrollMode,
+      forceTab,
+      forceDeepDive,
+      highlightWatchOut,
+      highlightTrap,
+    ]);
 
     return ColoredBox(
       color: scheme.surface,
       child: SafeArea(
         child: ListView(
-          padding: const EdgeInsets.fromLTRB(16, 12, 16, 24),
+          controller: scrollController,
+          padding: const EdgeInsets.fromLTRB(16, 12, 16, 100),
           children: [
             Text(
               'Explanation',
@@ -474,12 +510,21 @@ class _ExplanationScene extends StatelessWidget {
             ),
             const SizedBox(height: 4),
             Text(
-              'Polity · Basic Structure',
+              'Modern History · Governor-General',
               style: AppTextStyles.caption().copyWith(
                 color: scheme.onSurfaceVariant,
               ),
             ),
-            const SizedBox(height: 14),
+            const SizedBox(height: 6),
+            Text(
+              'Who was the first Governor-General of India?',
+              style: AppTextStyles.bodySm().copyWith(
+                color: scheme.onSurface,
+                fontWeight: FontWeight.w600,
+                height: 1.35,
+              ),
+            ),
+            const SizedBox(height: 12),
             Container(
               padding: const EdgeInsets.all(14),
               decoration: BoxDecoration(
@@ -499,7 +544,7 @@ class _ExplanationScene extends StatelessWidget {
                   const SizedBox(width: 8),
                   Expanded(
                     child: Text(
-                      'Marked Sure · Incorrect — Danger Zone',
+                      'Picked (a) Hastings · Sure · Wrong — Danger Zone',
                       style: AppTextStyles.label().copyWith(
                         fontWeight: FontWeight.w700,
                         color: scheme.onSurface,
@@ -515,6 +560,8 @@ class _ExplanationScene extends StatelessWidget {
               showStatements: true,
               demoForceDeepDive: forceDeepDive,
               demoForceTab: forceTab,
+              demoHighlightWatchOut: highlightWatchOut,
+              demoHighlightTrap: highlightTrap,
             ),
           ],
         ),
@@ -523,25 +570,62 @@ class _ExplanationScene extends StatelessWidget {
   }
 }
 
-class _DangerZoneMapScene extends StatelessWidget {
-  const _DangerZoneMapScene();
+class _DangerZoneMapScene extends HookWidget {
+  const _DangerZoneMapScene({
+    this.initialTab = 0,
+    this.autoSwitchToStrong = false,
+  });
+
+  final int initialTab;
+  final bool autoSwitchToStrong;
+
+  static const _dangerTopics = <(String, String)>[
+    ('Governor-General & Viceroy', '38%'),
+    ('Charter Acts', '41%'),
+    ('Company Rule', '44%'),
+    ('Revolt of 1857', '47%'),
+    ('Land Revenue Systems', '49%'),
+    ('Early Nationalism 1885–1905', '52%'),
+    ('Peasant Movements', '48%'),
+    ('British Education Policy', '51%'),
+  ];
+
+  static const _strongTopics = <(String, String)>[
+    ('Socio-religious Reform', '82%'),
+    ('Freedom Struggle 1919–47', '79%'),
+    ('Gandhian Movements', '85%'),
+    ('Indian National Congress', '81%'),
+  ];
 
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final accent = isDark ? AppColors.wrongTextDark : AppColors.wrongText;
+    final tab = useState(initialTab.clamp(0, 1));
+    final dangerAccent = isDark ? AppColors.wrongTextDark : AppColors.wrongText;
+    final strongAccent = isDark
+        ? AppColors.correctTextDark
+        : AppColors.correctText;
+
+    useEffect(() {
+      tab.value = initialTab.clamp(0, 1);
+      if (!autoSwitchToStrong || initialTab != 0) return null;
+      final t = Timer(const Duration(milliseconds: 2200), () {
+        tab.value = 1;
+      });
+      return t.cancel;
+    }, [initialTab, autoSwitchToStrong]);
 
     return ColoredBox(
       color: scheme.surface,
       child: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.fromLTRB(20, 16, 20, 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Text(
-                'Polity',
+                'Modern History',
                 style: AppTextStyles.h2().copyWith(
                   fontWeight: FontWeight.w800,
                   color: scheme.onSurface,
@@ -549,102 +633,32 @@ class _DangerZoneMapScene extends StatelessWidget {
               ),
               const SizedBox(height: 4),
               Text(
-                'Danger zone of Polity',
+                'Mapped from your attempts',
                 style: AppTextStyles.caption().copyWith(
                   color: scheme.onSurfaceVariant,
                 ),
               ),
-              const SizedBox(height: 20),
-              Container(
-                padding: const EdgeInsets.all(18),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(AppRadius.lg),
-                  border: Border.all(color: accent.withValues(alpha: 0.4)),
-                  color: isDark
-                      ? AppColors.wrong.withValues(alpha: 0.08)
-                      : AppColors.wrongBg,
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Row(
-                      children: [
-                        Icon(
-                          Icons.warning_amber_rounded,
-                          color: accent,
-                          size: 22,
-                        ),
-                        const SizedBox(width: 8),
-                        Text(
-                          'Danger Zone',
-                          style: AppTextStyles.h3().copyWith(
-                            fontWeight: FontWeight.w800,
-                            color: scheme.onSurface,
-                          ),
-                        ),
-                        const Spacer(),
-                        Text(
-                          '18',
-                          style: AppTextStyles.h2().copyWith(
-                            fontWeight: FontWeight.w800,
-                            color: accent,
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 8),
-                    Text(
-                      'Confident mistakes to revise first',
-                      style: AppTextStyles.bodySm().copyWith(
-                        color: scheme.onSurfaceVariant,
-                      ),
-                    ),
-                    const SizedBox(height: 16),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: _DzStat(
-                            label: 'Sure wrong',
-                            value: '11',
-                            marks: '7.26',
-                          ),
-                        ),
-                        const SizedBox(width: 10),
-                        Expanded(
-                          child: _DzStat(
-                            label: 'Educated guess',
-                            value: '7',
-                            marks: '4.62',
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 16),
-                    FilledButton.icon(
-                      onPressed: () {},
-                      icon: const Icon(Icons.replay_rounded, size: 18),
-                      label: const Text('Revise Sure wrongs'),
-                      style: FilledButton.styleFrom(
-                        backgroundColor: accent,
-                        foregroundColor: Colors.white,
-                        minimumSize: const Size.fromHeight(46),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
               const SizedBox(height: 16),
-              Text(
-                'Top topics',
-                style: AppTextStyles.label().copyWith(
-                  fontWeight: FontWeight.w700,
-                  color: scheme.onSurface,
+              _DzTabBar(index: tab.value, onChanged: (i) => tab.value = i),
+              const SizedBox(height: 14),
+              Expanded(
+                child: AnimatedSwitcher(
+                  duration: const Duration(milliseconds: 280),
+                  child: tab.value == 0
+                      ? _DzDangerTab(
+                          key: const ValueKey('dz-danger'),
+                          accent: dangerAccent,
+                          isDark: isDark,
+                          topics: _dangerTopics,
+                        )
+                      : _DzStrongTab(
+                          key: const ValueKey('dz-strong'),
+                          accent: strongAccent,
+                          isDark: isDark,
+                          topics: _strongTopics,
+                        ),
                 ),
               ),
-              const SizedBox(height: 8),
-              const _TopicRow(name: 'Basic Structure', count: 5),
-              const _TopicRow(name: 'Fundamental Rights', count: 4),
-              const _TopicRow(name: 'Parliament', count: 3),
             ],
           ),
         ),
@@ -653,47 +667,37 @@ class _DangerZoneMapScene extends StatelessWidget {
   }
 }
 
-class _DzStat extends StatelessWidget {
-  const _DzStat({
-    required this.label,
-    required this.value,
-    required this.marks,
-  });
+class _DzTabBar extends StatelessWidget {
+  const _DzTabBar({required this.index, required this.onChanged});
 
-  final String label;
-  final String value;
-  final String marks;
+  final int index;
+  final ValueChanged<int> onChanged;
 
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
     return Container(
-      padding: const EdgeInsets.all(12),
+      padding: const EdgeInsets.all(4),
       decoration: BoxDecoration(
-        color: scheme.surface,
+        color: scheme.surfaceContainerLow,
         borderRadius: BorderRadius.circular(AppRadius.md),
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: Row(
         children: [
-          Text(
-            label,
-            style: AppTextStyles.caption().copyWith(
-              color: scheme.onSurfaceVariant,
+          Expanded(
+            child: _DzTabChip(
+              label: 'Danger Zone',
+              selected: index == 0,
+              selectedColor: AppColors.wrong,
+              onTap: () => onChanged(0),
             ),
           ),
-          const SizedBox(height: 4),
-          Text(
-            value,
-            style: AppTextStyles.h3().copyWith(
-              fontWeight: FontWeight.w800,
-              color: scheme.onSurface,
-            ),
-          ),
-          Text(
-            '~$marks marks',
-            style: AppTextStyles.caption().copyWith(
-              color: scheme.onSurfaceVariant,
+          Expanded(
+            child: _DzTabChip(
+              label: 'Strong topics',
+              selected: index == 1,
+              selectedColor: AppColors.correct,
+              onTap: () => onChanged(1),
             ),
           ),
         ],
@@ -702,31 +706,244 @@ class _DzStat extends StatelessWidget {
   }
 }
 
-class _TopicRow extends StatelessWidget {
-  const _TopicRow({required this.name, required this.count});
+class _DzTabChip extends StatelessWidget {
+  const _DzTabChip({
+    required this.label,
+    required this.selected,
+    required this.selectedColor,
+    required this.onTap,
+  });
+
+  final String label;
+  final bool selected;
+  final Color selectedColor;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return Material(
+      color: selected ? selectedColor : Colors.transparent,
+      borderRadius: BorderRadius.circular(AppRadius.sm),
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(AppRadius.sm),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 10),
+          child: Text(
+            label,
+            textAlign: TextAlign.center,
+            style: AppTextStyles.label().copyWith(
+              fontWeight: FontWeight.w800,
+              color: selected ? Colors.white : scheme.onSurfaceVariant,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _DzDangerTab extends StatelessWidget {
+  const _DzDangerTab({
+    super.key,
+    required this.accent,
+    required this.isDark,
+    required this.topics,
+  });
+
+  final Color accent;
+  final bool isDark;
+  final List<(String, String)> topics;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(AppRadius.lg),
+        border: Border.all(color: accent.withValues(alpha: 0.4)),
+        color: isDark
+            ? AppColors.wrong.withValues(alpha: 0.08)
+            : AppColors.wrongBg,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Row(
+            children: [
+              Icon(Icons.warning_amber_rounded, color: accent, size: 22),
+              const SizedBox(width: 8),
+              Expanded(
+                child: Text(
+                  'In the Danger Zone?',
+                  style: AppTextStyles.h3().copyWith(
+                    fontWeight: FontWeight.w800,
+                    color: scheme.onSurface,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 8),
+          Text(
+            'You are often confidently wrong in these topics. '
+            'Revise to improve your score.',
+            style: AppTextStyles.bodySm().copyWith(
+              color: scheme.onSurfaceVariant,
+              height: 1.35,
+            ),
+          ),
+          const SizedBox(height: 14),
+          Expanded(
+            child: ListView(
+              padding: EdgeInsets.zero,
+              children: [
+                for (final t in topics)
+                  _AccuracyTopicRow(
+                    name: t.$1,
+                    accuracy: t.$2,
+                    accent: accent,
+                  ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 10),
+          FilledButton.icon(
+            onPressed: () {},
+            icon: const Icon(Icons.replay_rounded, size: 18),
+            label: const Text('Revise Danger Zone'),
+            style: FilledButton.styleFrom(
+              backgroundColor: accent,
+              foregroundColor: Colors.white,
+              minimumSize: const Size.fromHeight(46),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _DzStrongTab extends StatelessWidget {
+  const _DzStrongTab({
+    super.key,
+    required this.accent,
+    required this.isDark,
+    required this.topics,
+  });
+
+  final Color accent;
+  final bool isDark;
+  final List<(String, String)> topics;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(AppRadius.lg),
+        border: Border.all(color: accent.withValues(alpha: 0.4)),
+        color: isDark
+            ? AppColors.correct.withValues(alpha: 0.10)
+            : AppColors.correctBg,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Row(
+            children: [
+              Icon(Icons.bolt_rounded, color: accent, size: 22),
+              const SizedBox(width: 8),
+              Expanded(
+                child: Text(
+                  'Your strong topics',
+                  style: AppTextStyles.h3().copyWith(
+                    fontWeight: FontWeight.w800,
+                    color: scheme.onSurface,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 8),
+          Text(
+            'Educated guesses land here. Take smarter risks.',
+            style: AppTextStyles.bodySm().copyWith(
+              color: scheme.onSurfaceVariant,
+              height: 1.35,
+            ),
+          ),
+          const SizedBox(height: 14),
+          for (final t in topics)
+            _AccuracyTopicRow(name: t.$1, accuracy: t.$2, accent: accent),
+          const Spacer(),
+          OutlinedButton.icon(
+            onPressed: () {},
+            icon: Icon(Icons.casino_outlined, size: 18, color: accent),
+            label: Text(
+              'Practice with more risk',
+              style: TextStyle(color: accent, fontWeight: FontWeight.w700),
+            ),
+            style: OutlinedButton.styleFrom(
+              side: BorderSide(color: accent.withValues(alpha: 0.55)),
+              minimumSize: const Size.fromHeight(46),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _AccuracyTopicRow extends StatelessWidget {
+  const _AccuracyTopicRow({
+    required this.name,
+    required this.accuracy,
+    required this.accent,
+  });
 
   final String name;
-  final int count;
+  final String accuracy;
+  final Color accent;
 
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
     return Padding(
-      padding: const EdgeInsets.only(bottom: 8),
+      padding: const EdgeInsets.only(bottom: 10),
       child: Row(
         children: [
           Expanded(
             child: Text(
               name,
-              style: AppTextStyles.body().copyWith(color: scheme.onSurface),
+              style: AppTextStyles.body().copyWith(
+                color: scheme.onSurface,
+                fontWeight: FontWeight.w600,
+              ),
             ),
           ),
-          Text(
-            '$count',
-            style: AppTextStyles.label().copyWith(
-              fontWeight: FontWeight.w700,
-              color: AppColors.wrong,
-            ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              Text(
+                'Accuracy',
+                style: AppTextStyles.caption().copyWith(
+                  color: scheme.onSurfaceVariant,
+                  fontSize: 10,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              Text(
+                accuracy,
+                style: AppTextStyles.label().copyWith(
+                  fontWeight: FontWeight.w800,
+                  color: accent,
+                ),
+              ),
+            ],
           ),
         ],
       ),
@@ -892,96 +1109,231 @@ class _GameTile extends StatelessWidget {
   }
 }
 
-class _MemoryPairsScene extends StatelessWidget {
-  const _MemoryPairsScene();
+class _TimelineEvent {
+  const _TimelineEvent({required this.label, required this.year});
+  final String label;
+  final String year;
+}
+
+/// Animated Timeline Sorter trailer (dummy board — auto-plays in the demo).
+class _TimelineSorterTrailerScene extends HookWidget {
+  const _TimelineSorterTrailerScene();
+
+  static const _events = <_TimelineEvent>[
+    _TimelineEvent(label: 'Regulating Act', year: '1773'),
+    _TimelineEvent(label: 'Charter Act (GG of India)', year: '1833'),
+    _TimelineEvent(label: 'Revolt of 1857', year: '1857'),
+    _TimelineEvent(label: 'Government of India Act', year: '1919'),
+    _TimelineEvent(label: 'Indian Independence', year: '1947'),
+  ];
+
+  static const _shuffled = [2, 0, 4, 1, 3];
+  static const _sorted = [0, 1, 2, 3, 4];
 
   @override
   Widget build(BuildContext context) {
-    final cards = [
-      ('Basic Structure', true, false),
-      ('??', false, true),
-      ('Kesavananda', false, false),
-      ('??', false, false),
-      ('Art. 368', true, false),
-      ('??', false, false),
-    ];
+    final sorted = useState(false);
+    final revealed = useState(false);
+
+    useEffect(() {
+      var cancelled = false;
+      Future<void>(() async {
+        await Future<void>.delayed(const Duration(milliseconds: 350));
+        if (cancelled) return;
+        sorted.value = true; // all cards slide in parallel
+        await Future<void>.delayed(const Duration(milliseconds: 480));
+        if (cancelled) return;
+        revealed.value = true;
+      });
+      return () => cancelled = true;
+    }, const []);
+
+    final order = sorted.value ? _sorted : _shuffled;
 
     return ColoredBox(
       color: RgColors.pageBg,
-      child: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Text(
-                'Memory Pairs',
-                style: RgText.display(size: 24, weight: FontWeight.w800),
-              ),
-              const SizedBox(height: 6),
-              Text(
-                'Match terms to answers',
-                style: RgText.body(color: RgColors.muted),
-              ),
-              const SizedBox(height: 20),
-              Expanded(
-                child: GridView.count(
-                  crossAxisCount: 2,
-                  mainAxisSpacing: 12,
-                  crossAxisSpacing: 12,
-                  childAspectRatio: 1.35,
-                  physics: const NeverScrollableScrollPhysics(),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Material(
+            color: RgColors.pageBg,
+            child: SafeArea(
+              bottom: false,
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(8, 4, 16, 8),
+                child: Row(
                   children: [
-                    for (final c in cards)
-                      _FlipCard(
-                        label: c.$1,
-                        matched: c.$2,
-                        faceUp: c.$3 || c.$2,
+                    IconButton(
+                      onPressed: () {},
+                      icon: const Icon(Icons.arrow_back_rounded),
+                      color: RgColors.ink,
+                    ),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Timeline Sorter',
+                            style: RgText.display(
+                              size: 18,
+                              weight: FontWeight.w800,
+                            ),
+                          ),
+                          Text(
+                            'Modern History · Set 1/10',
+                            style: RgText.body(
+                              size: 12,
+                              color: RgColors.muted,
+                            ),
+                          ),
+                        ],
                       ),
+                    ),
                   ],
                 ),
               ),
-            ],
+            ),
           ),
-        ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(16, 4, 16, 0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'FREEDOM & COMPANY RULE',
+                  style: RgText.mono(
+                    size: 10,
+                    letterSpacingEm: 0.08,
+                    color: RgColors.mutedSoft,
+                  ),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  revealed.value
+                      ? '5 of 5 in order — nice.'
+                      : 'Sort the following from earliest to latest.',
+                  style: RgText.body(size: 11, color: RgColors.mutedSoft),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 10),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 14),
+              child: LayoutBuilder(
+                builder: (context, constraints) {
+                  const rowPitch = 52.0;
+                  return Stack(
+                    clipBehavior: Clip.none,
+                    children: [
+                      for (var eventIndex = 0;
+                          eventIndex < _events.length;
+                          eventIndex++)
+                        AnimatedPositioned(
+                          key: ValueKey(eventIndex),
+                          duration: const Duration(milliseconds: 420),
+                          curve: Curves.easeOutCubic,
+                          top: order.indexOf(eventIndex) * rowPitch,
+                          left: 0,
+                          right: 0,
+                          height: rowPitch - 7,
+                          child: _TimelineTrailerRow(
+                            event: _events[eventIndex],
+                            revealed: revealed.value,
+                            lifted: false,
+                          ),
+                        ),
+                    ],
+                  );
+                },
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(16, 0, 16, 20),
+            child: AnimatedOpacity(
+              opacity: revealed.value ? 1 : 0.55,
+              duration: const Duration(milliseconds: 280),
+              child: Container(
+                width: double.infinity,
+                padding: const EdgeInsets.symmetric(vertical: 13),
+                decoration: BoxDecoration(
+                  color: RgColors.teal,
+                  borderRadius: BorderRadius.circular(RgRadius.pill),
+                ),
+                alignment: Alignment.center,
+                child: Text(
+                  revealed.value ? 'Next set →' : 'Check',
+                  style: RgText.body(
+                    size: 14,
+                    weight: FontWeight.w700,
+                    color: RgColors.onDark,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
 }
 
-class _FlipCard extends StatelessWidget {
-  const _FlipCard({
-    required this.label,
-    required this.matched,
-    required this.faceUp,
+class _TimelineTrailerRow extends StatelessWidget {
+  const _TimelineTrailerRow({
+    super.key,
+    required this.event,
+    required this.revealed,
+    required this.lifted,
   });
 
-  final String label;
-  final bool matched;
-  final bool faceUp;
+  final _TimelineEvent event;
+  final bool revealed;
+  final bool lifted;
 
   @override
   Widget build(BuildContext context) {
-    final bg = matched
-        ? RgColors.correctBg
-        : faceUp
-        ? RgColors.card
-        : RgColors.ink;
-    final fg = matched || faceUp ? RgColors.ink : RgColors.onDark;
-
-    return Container(
-      alignment: Alignment.center,
+    return AnimatedContainer(
+      duration: const Duration(milliseconds: 280),
+      curve: Curves.easeOutCubic,
+      padding: EdgeInsets.symmetric(horizontal: 12, vertical: revealed ? 10 : 11),
       decoration: BoxDecoration(
-        color: bg,
-        borderRadius: BorderRadius.circular(RgRadius.lg),
+        color: revealed ? RgColors.correctBg : RgColors.card,
+        borderRadius: BorderRadius.circular(RgRadius.md),
         border: Border.all(
-          color: matched ? RgColors.correctBorder : RgColors.border,
+          color: revealed ? RgColors.correctBorder : RgColors.border,
         ),
+        boxShadow: lifted
+            ? [
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: 0.12),
+                  blurRadius: 12,
+                  offset: const Offset(0, 4),
+                ),
+              ]
+            : null,
       ),
-      child: Text(
-        faceUp || matched ? label : '●',
-        textAlign: TextAlign.center,
-        style: RgText.display(size: 14, weight: FontWeight.w700, color: fg),
+      child: Row(
+        children: [
+          Icon(
+            revealed ? Icons.check_circle_rounded : Icons.drag_handle_rounded,
+            size: 16,
+            color: revealed ? RgColors.tealDeep : RgColors.dragHandle,
+          ),
+          const SizedBox(width: 10),
+          Expanded(
+            child: Text(
+              event.label,
+              style: RgText.body(size: 12.5, weight: FontWeight.w600),
+            ),
+          ),
+          if (revealed)
+            Text(
+              event.year,
+              style: RgText.mono(size: 11, color: RgColors.tealDeep),
+            ),
+        ],
       ),
     );
   }
@@ -1018,10 +1370,7 @@ class _FactOrBluffScene extends StatelessWidget {
                     ),
                     child: Text(
                       '8s',
-                      style: RgText.mono(
-                        size: 13,
-                        color: RgColors.warningText,
-                      ),
+                      style: RgText.mono(size: 13, color: RgColors.warningText),
                     ),
                   ),
                 ],
@@ -1035,8 +1384,8 @@ class _FactOrBluffScene extends StatelessWidget {
                   border: Border.all(color: RgColors.border),
                 ),
                 child: Text(
-                  'The Basic Structure doctrine was first laid down '
-                  'in Kesavananda Bharati v. State of Kerala (1973).',
+                  'Lord William Bentinck was the first '
+                  'Governor-General of India under the Charter Act of 1833.',
                   textAlign: TextAlign.center,
                   style: RgText.display(
                     size: 18,
@@ -1071,7 +1420,10 @@ class _FactOrBluffScene extends StatelessWidget {
                       onPressed: () {},
                       style: OutlinedButton.styleFrom(
                         foregroundColor: RgColors.wrong,
-                        side: const BorderSide(color: RgColors.wrong, width: 1.5),
+                        side: const BorderSide(
+                          color: RgColors.wrong,
+                          width: 1.5,
+                        ),
                         minimumSize: const Size.fromHeight(52),
                       ),
                       child: Text(
@@ -1095,136 +1447,82 @@ class _FactOrBluffScene extends StatelessWidget {
   }
 }
 
-class _WarLiveScene extends StatelessWidget {
-  const _WarLiveScene();
+class _EndCardScene extends StatelessWidget {
+  const _EndCardScene();
+
+  /// Most important first; rendered as two columns of small text.
+  static const _features = <String>[
+    'Danger Zone',
+    'Detailed Explanations',
+    'Elimination Techniques',
+    'Trap Analysis',
+    'Statement Analysis',
+    'Daily War',
+    'Revision Games',
+    'Online Battles',
+    'Open Challenge',
+    'Highlight Important Lines',
+  ];
 
   @override
   Widget build(BuildContext context) {
+    final mid = (_features.length + 1) ~/ 2;
+    final left = _features.sublist(0, mid);
+    final right = _features.sublist(mid);
+
     return ColoredBox(
       color: DwColors.surface,
       child: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              const Spacer(),
-              Container(
-                padding: const EdgeInsets.all(20),
-                decoration: BoxDecoration(
-                  color: DwColors.surfaceRaised,
-                  borderRadius: BorderRadius.circular(18),
-                  border: Border.all(color: DwColors.borderOnDark),
+        child: Center(
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 20),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(22),
+                  child: Image.asset(
+                    'assets/app_icon.png',
+                    width: 80,
+                    height: 80,
+                    fit: BoxFit.cover,
+                  ),
                 ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                const SizedBox(height: 14),
+                Text(
+                  'Find your Danger Zone.\nRevise smarter.',
+                  textAlign: TextAlign.center,
+                  style: DwText.body(color: DwColors.onDarkMuted),
+                ),
+                const SizedBox(height: 18),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Row(
-                      children: [
-                        Container(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 10,
-                            vertical: 4,
-                          ),
-                          decoration: BoxDecoration(
-                            color: DwColors.crimson,
-                            borderRadius: BorderRadius.circular(6),
-                          ),
-                          child: Text(
-                            'LIVE',
-                            style: DwText.dm(
-                              size: 11,
-                              weight: FontWeight.w800,
-                              letterSpacing: 1.2,
-                            ),
-                          ),
-                        ),
-                        const Spacer(),
-                        Text(
-                          '9:00 PM IST',
-                          style: DwText.meta(),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 16),
-                    Text(
-                      'DAILY WAR',
-                      style: DwText.eyebrow(),
-                    ),
-                    const SizedBox(height: 6),
-                    Text(
-                      'All-India Prelims night',
-                      style: DwText.dm(
-                        size: 22,
-                        weight: FontWeight.w800,
-                      ),
-                    ),
-                    const SizedBox(height: 10),
-                    Text(
-                      'Polity · Economy · Environment',
-                      style: DwText.body(),
-                    ),
-                    const SizedBox(height: 20),
-                    FilledButton(
-                      onPressed: () {},
-                      style: FilledButton.styleFrom(
-                        backgroundColor: DwColors.crimson,
-                        minimumSize: const Size.fromHeight(48),
-                      ),
-                      child: Text('Enter War', style: DwText.cta()),
-                    ),
+                    Expanded(child: _FeatureColumn(items: left)),
+                    const SizedBox(width: 12),
+                    Expanded(child: _FeatureColumn(items: right)),
                   ],
                 ),
-              ),
-              const Spacer(),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class _WarAirScene extends StatelessWidget {
-  const _WarAirScene();
-
-  @override
-  Widget build(BuildContext context) {
-    return ColoredBox(
-      color: DwColors.surface,
-      child: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(20, 24, 20, 32),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Text('War results', style: DwText.dm(size: 18, weight: FontWeight.w700)),
-              const SizedBox(height: 28),
-              Text('ALL-INDIA RANK', style: DwText.meta()),
-              const SizedBox(height: 4),
-              Text('142', style: DwText.heroNumber()),
-              Text('of 12,480', style: DwText.body()),
-              const SizedBox(height: 20),
-              Row(
-                children: [
-                  Expanded(
-                    child: _AirStat(label: 'PERCENTILE', value: '98.9'),
-                  ),
-                  Expanded(
-                    child: _AirStat(label: 'SCORE', value: '16.66/20'),
-                  ),
-                ],
-              ),
-              const Spacer(),
-              FilledButton(
-                onPressed: () {},
-                style: FilledButton.styleFrom(
-                  backgroundColor: DwColors.teal,
-                  minimumSize: const Size.fromHeight(48),
+                const SizedBox(height: 22),
+                const _StoreBadge(
+                  background: Color(0xFF01875F),
+                  icon: _PlayStoreMark(size: 28),
+                  eyebrow: 'GET IT ON',
+                  title: 'Google Play',
                 ),
-                child: Text('View leaderboard', style: DwText.cta()),
-              ),
-            ],
+                const SizedBox(height: 12),
+                const _StoreBadge(
+                  background: Color(0xFF000000),
+                  icon: Icon(
+                    Icons.apple,
+                    size: 30,
+                    color: Colors.white,
+                  ),
+                  eyebrow: 'Download on the',
+                  title: 'App Store',
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -1232,67 +1530,167 @@ class _WarAirScene extends StatelessWidget {
   }
 }
 
-class _AirStat extends StatelessWidget {
-  const _AirStat({required this.label, required this.value});
+class _FeatureColumn extends StatelessWidget {
+  const _FeatureColumn({required this.items});
 
-  final String label;
-  final String value;
+  final List<String> items;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(label, style: DwText.meta()),
-        const SizedBox(height: 4),
-        Text(
-          value,
-          style: DwText.dm(size: 20, weight: FontWeight.w700),
-        ),
+        for (final item in items)
+          Padding(
+            padding: const EdgeInsets.only(bottom: 6),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  '·  ',
+                  style: DwText.dm(
+                    size: 11,
+                    weight: FontWeight.w700,
+                    color: DwColors.teal,
+                  ),
+                ),
+                Expanded(
+                  child: Text(
+                    item,
+                    style: DwText.dm(
+                      size: 11,
+                      weight: FontWeight.w500,
+                      color: Colors.white.withValues(alpha: 0.78),
+                      height: 1.25,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
       ],
     );
   }
 }
 
-class _EndCardScene extends StatelessWidget {
-  const _EndCardScene();
+class _StoreBadge extends StatelessWidget {
+  const _StoreBadge({
+    required this.background,
+    required this.icon,
+    required this.eyebrow,
+    required this.title,
+  });
+
+  final Color background;
+  final Widget icon;
+  final String eyebrow;
+  final String title;
 
   @override
   Widget build(BuildContext context) {
-    return ColoredBox(
-      color: DwColors.surface,
-      child: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(
-              'UPSC Wars',
-              style: DwText.dm(
-                size: 34,
-                weight: FontWeight.w800,
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.fromLTRB(16, 11, 16, 11),
+      decoration: BoxDecoration(
+        color: background,
+        borderRadius: BorderRadius.circular(10),
+        border: background == Colors.black
+            ? Border.all(color: Colors.white.withValues(alpha: 0.22))
+            : null,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.35),
+            blurRadius: 16,
+            offset: const Offset(0, 6),
+          ),
+        ],
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          icon,
+          const SizedBox(width: 12),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                eyebrow,
+                style: DwText.dm(
+                  size: 9,
+                  weight: FontWeight.w600,
+                  letterSpacing: 0.8,
+                  color: Colors.white.withValues(alpha: 0.9),
+                ),
               ),
-            ),
-            const SizedBox(height: 10),
-            Text(
-              'Find your Danger Zone.\nProve it in Daily War.',
-              textAlign: TextAlign.center,
-              style: DwText.body(color: DwColors.onDarkMuted),
-            ),
-            const SizedBox(height: 28),
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 10),
-              decoration: BoxDecoration(
-                color: DwColors.crimson,
-                borderRadius: BorderRadius.circular(10),
+              Text(
+                title,
+                style: DwText.dm(
+                  size: 18,
+                  weight: FontWeight.w800,
+                  height: 1.1,
+                ),
               ),
-              child: Text(
-                'Get it on Google Play',
-                style: DwText.cta(),
-              ),
-            ),
-          ],
-        ),
+            ],
+          ),
+        ],
       ),
     );
   }
+}
+
+class _PlayStoreMark extends StatelessWidget {
+  const _PlayStoreMark({required this.size});
+
+  final double size;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: size,
+      height: size,
+      child: CustomPaint(painter: _PlayStoreMarkPainter()),
+    );
+  }
+}
+
+class _PlayStoreMarkPainter extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    final w = size.width;
+    final h = size.height;
+    final midY = h / 2;
+
+    Path tri(Offset a, Offset b, Offset c) => Path()
+      ..moveTo(a.dx, a.dy)
+      ..lineTo(b.dx, b.dy)
+      ..lineTo(c.dx, c.dy)
+      ..close();
+
+    final tip = Offset(w * 0.08, midY);
+    final top = Offset(w * 0.92, h * 0.08);
+    final bottom = Offset(w * 0.92, h * 0.92);
+    final midRight = Offset(w * 0.55, midY);
+
+    // Google Play–ish triangle segments.
+    canvas.drawPath(
+      tri(tip, top, midRight),
+      Paint()..color = const Color(0xFF00A0FF),
+    );
+    canvas.drawPath(
+      tri(tip, midRight, bottom),
+      Paint()..color = const Color(0xFFFFD500),
+    );
+    canvas.drawPath(
+      tri(midRight, top, Offset(w * 0.92, midY)),
+      Paint()..color = const Color(0xFFFF3A44),
+    );
+    canvas.drawPath(
+      tri(midRight, Offset(w * 0.92, midY), bottom),
+      Paint()..color = const Color(0xFF00D46A),
+    );
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }
