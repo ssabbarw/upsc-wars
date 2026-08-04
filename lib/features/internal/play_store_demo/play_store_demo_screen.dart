@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
 import '../../../core/theme/app_text_styles.dart';
+import 'play_store_demo_caption.dart';
 import 'play_store_demo_scenes.dart';
 import 'play_store_demo_script.dart';
 
@@ -113,6 +114,8 @@ class PlayStoreDemoScreen extends HookWidget {
                   child: PlayStoreDemoScene(beat: step.beat),
                 ),
               ),
+              // Beat-specific captions while recording (chrome hidden).
+              if (!showChrome.value) PlayStoreDemoCaptionOverlay(step: step),
               if (showChrome.value)
                 Positioned(
                   left: 0,
@@ -124,7 +127,7 @@ class PlayStoreDemoScreen extends HookWidget {
                       child: GestureDetector(
                         onTap: () {}, // absorb — don't toggle via parent
                         child: _DemoChrome(
-                          caption: step.caption,
+                          caption: step.caption.replaceAll('\n', ' '),
                           progress: progress,
                           playing: playing.value,
                           finished: finished.value,
@@ -136,38 +139,6 @@ class PlayStoreDemoScreen extends HookWidget {
                               startOrResume();
                             }
                           },
-                        ),
-                      ),
-                    ),
-                  ),
-                )
-              else
-                Positioned(
-                  left: 16,
-                  right: 16,
-                  top: MediaQuery.paddingOf(context).top + 8,
-                  child: IgnorePointer(
-                    child: Align(
-                      alignment: Alignment.topCenter,
-                      child: AnimatedOpacity(
-                        opacity: 0.85,
-                        duration: const Duration(milliseconds: 200),
-                        child: Container(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 12,
-                            vertical: 6,
-                          ),
-                          decoration: BoxDecoration(
-                            color: Colors.black.withValues(alpha: 0.45),
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          child: Text(
-                            step.caption,
-                            style: AppTextStyles.caption().copyWith(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
                         ),
                       ),
                     ),
