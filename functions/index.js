@@ -5,6 +5,8 @@ const crypto = require("crypto");
 
 admin.initializeApp();
 
+const bots = require("./bots");
+
 const MAX_BODY_LEN = 180;
 
 /** FCM topic — must match Flutter [PushSpotTestConstants.broadcastFcmTopic]. */
@@ -277,6 +279,19 @@ exports.sendBattleInvite = functions.https.onCall(async (data, context) => {
 
   const userSnap = await db.collection("users").doc(guestEmail).get();
   const userData = userSnap.data() || {};
+  const botHandled = await bots.handleIncomingInviteIfBot({
+    sessionId,
+    hostEmail,
+    guestEmail,
+  });
+  if (botHandled) {
+    functions.logger.info("sendBattleInvite: bot guest handled", {
+      sessionId,
+      guestEmail,
+      reason: botHandled.reason || "ok",
+    });
+    return { ok: true };
+  }
   const fcmToken = userData.fcm_token || userData.fcmToken;
   if (!fcmToken || typeof fcmToken !== "string") {
     functions.logger.warn("sendBattleInvite: no FCM token on users doc", {
@@ -751,3 +766,8 @@ exports.adminGenerateDailyWar = dailyWar.adminGenerateDailyWar;
 exports.adminPreviewDailyWar = dailyWar.adminPreviewDailyWar;
 exports.adminPublishDailyWar = dailyWar.adminPublishDailyWar;
 exports.adminNotifyDailyWar = dailyWar.adminNotifyDailyWar;
+
+exports.tickBots = bots.tickBots;
+exports.onBotBattleMatchWritten = bots.onBotBattleMatchWritten;
+exports.adminRunBotTick = bots.adminRunBotTick;
+exports.adminPlanBotDay = bots.adminPlanBotDay;

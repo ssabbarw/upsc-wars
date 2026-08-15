@@ -71,3 +71,51 @@ After changing `index.js`, redeploy so **structured logs** appear in **Firebase 
 Default region for 1st gen callables is **us-central1**, matching Flutter `FirebaseFunctions.instance`.
 
 Functions use **Node.js 22** (`functions/package.json` → `engines.node`). Redeploy after changing the engine line.
+
+## Community traffic bots
+
+Server-only. No app release. Recents, battle accept/send, blank QOTD, sparse Open Challenge, and Daily War participation.
+
+Growth is gradual so Recents does not jump overnight:
+
+- Day 1: **5** unique bots appear across the day (first-seen staggered, not all at once).
+- Day 2: **8**. Then **+3 per day**, capped at **100 unique bots per IST day**.
+- Each night **15–30%** of yesterday’s faces skip today (last-seen ages off naturally).
+- The same share of **new or returning** faces trickle in during waking hours (7:20–22:40 IST), at least a few minutes apart.
+- Only **12–20%** of today’s already-seen bots look “just now” in any hour (cap 12).
+
+To **retract** when real traffic shows up, set Remote Config `bots_appear_per_day_target` lower (e.g. `20` or `0`). Each IST day the unique-bot count falls by at most `bots_retract_per_day` (default **8**), with **no new names** during the wind-down. From 100 → 20 takes about 10 days; 100 → 0 about 13. Takes effect on the **next IST day plan** (or the next `tickBots` after midnight). Emergency off: `bots_enabled = false`.
+
+Deploy (from repo root):
+
+```bash
+firebase deploy --only functions:tickBots,functions:onBotBattleMatchWritten,functions:adminRunBotTick,functions:adminPlanBotDay,functions:sendBattleInvite,firestore:rules
+```
+
+Or deploy all functions. After the first deploy, wait up to 5 minutes for `tickBots`, or call **`adminRunBotTick`** (admin email).
+
+Optional Remote Config keys (code defaults apply if missing):
+
+| Key | Default | Meaning |
+|-----|---------|---------|
+| `bots_enabled` | true | Master switch |
+| `bots_day1_count` | 5 | Unique bots on day 1 |
+| `bots_day2_count` | 8 | Unique bots on day 2 |
+| `bots_growth_per_day` | 3 | Added each day after day 2 |
+| `bots_appear_per_day_max` | 100 | Daily unique-appear cap |
+| `bots_appear_per_day_target` | 100 | Desired unique bots/day; lower this to retract |
+| `bots_retract_per_day` | 8 | Max unique-bot drop per IST day |
+| `bots_daily_drop_min` / `max` | 0.15 / 0.30 | Skip yesterday’s faces |
+| `bots_online_fraction_min` / `max` | 0.12 / 0.20 | Share “just now” this hour |
+| `bots_online_per_hour_cap` | 12 | Max concurrent fresh last-seen |
+| `bots_tick_minutes` | 5 | Presence refresh floor |
+| `bots_battles_per_day_max` | 3 | Per bot, incoming + outgoing |
+| `bots_accept_rate` | 0.55 | Chance a bot accepts an invite |
+| `bots_outgoing_invites_per_day` | 3 | Pool total per day |
+| `bots_qotd_per_day` | 1 | Blank-comment QOTD posts |
+| `bots_open_challenge_every_n_days` | 4 | Open Challenge cadence |
+| `bots_daily_war_fraction` | 0.4 | Share of today’s bots in the War |
+| `bots_same_user_cooldown_days` | 2 | Same human vs same bot |
+
+Bots have no photo, Telegram, or Instagram. They never reply to chat. Profiles live in `users/` with `isBot: true`; roster/jobs are Admin-only (`bot_roster`, `bot_jobs`, `bot_state`).
+

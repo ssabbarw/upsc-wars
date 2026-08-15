@@ -335,6 +335,27 @@ service cloud.firestore {
       );
     }
 
+    function isBotInternalPath() {
+      return request.path.matches(
+        '/databases/' + database + '/documents/bot_roster(/.*)?'
+      ) || request.path.matches(
+        '/databases/' + database + '/documents/bot_jobs(/.*)?'
+      ) || request.path.matches(
+        '/databases/' + database + '/documents/bot_state(/.*)?'
+      );
+    }
+
+    /// Server-only bot traffic (Admin SDK). Clients cannot read or write.
+    match /bot_roster/{id} {
+      allow read, write: if false;
+    }
+    match /bot_jobs/{id} {
+      allow read, write: if false;
+    }
+    match /bot_state/{id} {
+      allow read, write: if false;
+    }
+
     /// In-app admin dashboard metrics — super users read; clients write aggregates.
     match /admin_dashboard/{path=**} {
       allow read: if isSuperUserEmail();
@@ -345,7 +366,8 @@ service cloud.firestore {
     match /{document=**} {
       allow read, write: if signedIn()
         && !isUsersRootDoc(database)
-        && !isAdminDashboardPath();
+        && !isAdminDashboardPath()
+        && !isBotInternalPath();
     }
 
     function isUsersRootDoc(database) {
