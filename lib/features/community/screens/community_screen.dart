@@ -165,6 +165,8 @@ class _RecentTab extends HookConsumerWidget {
         ?.email
         ?.toLowerCase();
     return recent.when(
+      skipLoadingOnRefresh: false,
+      skipLoadingOnReload: false,
       loading: () => Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
