@@ -15,6 +15,7 @@ import '../../home/providers/auth_providers.dart';
 import '../domain/open_challenge_models.dart';
 import '../open_challenge/open_challenge_launch_exam.dart';
 import '../providers/open_challenge_providers.dart';
+import '../widgets/admin_bot_label.dart';
 
 class OpenChallengeDetailScreen extends ConsumerStatefulWidget {
   const OpenChallengeDetailScreen({
@@ -145,9 +146,17 @@ class _OpenChallengeDetailScreenState
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
-                              'Created by ${displayNameForViewer(name: creator.profile.name, viewerEmail: me, subjectEmail: creator.profile.email)}',
-                              style: AppTextStyles.label(),
+                            Row(
+                              children: [
+                                Flexible(
+                                  child: Text(
+                                    'Created by ${displayNameForViewer(name: creator.profile.name, viewerEmail: me, subjectEmail: creator.profile.email)}',
+                                    style: AppTextStyles.label(),
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                ),
+                                AdminBotLabel(email: creator.profile.email),
+                              ],
                             ),
                             Text(
                               _relativeCreated(detail.createdAt),
@@ -357,7 +366,18 @@ class _LeaderTile extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(nameLabel, style: AppTextStyles.label()),
+                  Row(
+                    children: [
+                      Flexible(
+                        child: Text(
+                          nameLabel,
+                          style: AppTextStyles.label(),
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                      AdminBotLabel(email: row.profile.email),
+                    ],
+                  ),
                   Text(
                     _attemptedLabel(row.attemptedAt),
                     style: AppTextStyles.caption().copyWith(

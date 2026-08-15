@@ -23,6 +23,7 @@ import '../providers/open_challenge_providers.dart';
 import 'community_qotd_tab.dart';
 import '../widgets/community_user_profile_sheet.dart';
 import '../widgets/open_challenge_community_section.dart';
+import '../widgets/admin_bot_label.dart';
 
 export '../widgets/community_user_profile_sheet.dart'
     show showCommunityUserProfileSheet;
@@ -398,7 +399,18 @@ class _UserTile extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(nameLabel, style: AppTextStyles.label()),
+                    Row(
+                      children: [
+                        Flexible(
+                          child: Text(
+                            nameLabel,
+                            style: AppTextStyles.label(),
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                        AdminBotLabel(email: user.email),
+                      ],
+                    ),
                     const SizedBox(height: AppSpacing.xs),
                     Text(
                       '${formatCommunityProfileLastOnline(user.lastOnlineTime)} · $statusText',

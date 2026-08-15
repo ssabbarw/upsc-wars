@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../core/layout/system_insets.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../community/widgets/admin_bot_label.dart';
 import '../domain/daily_war_badges.dart';
 import '../domain/daily_war_models.dart';
 import '../theme/daily_war_theme.dart';
@@ -98,12 +99,20 @@ class _WarriorSheet extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            name,
-                            style: AppTextStyles.h3().copyWith(
-                              fontWeight: FontWeight.w800,
-                              color: scheme.onSurface,
-                            ),
+                          Row(
+                            children: [
+                              Flexible(
+                                child: Text(
+                                  name,
+                                  style: AppTextStyles.h3().copyWith(
+                                    fontWeight: FontWeight.w800,
+                                    color: scheme.onSurface,
+                                  ),
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ),
+                              AdminBotLabel(uid: entry.uid),
+                            ],
                           ),
                           if (title.isNotEmpty) ...[
                             const SizedBox(height: 4),

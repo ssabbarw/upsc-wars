@@ -24,6 +24,7 @@ import '../providers/qotd_providers.dart';
 import 'qotd_option_letters_row.dart';
 import 'qotd_post_answerers_section.dart';
 import '../../history/screens/session_review_screen.dart';
+import 'admin_bot_label.dart';
 
 String _qotdLiveUntilFormatted(DateTime at) {
   return DateFormat('d MMM, h:mm a').format(at.toLocal());
@@ -395,7 +396,18 @@ class _QotdPostCardState extends ConsumerState<QotdPostCard> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(authorLabel, style: AppTextStyles.label()),
+                      Row(
+                        children: [
+                          Flexible(
+                            child: Text(
+                              authorLabel,
+                              style: AppTextStyles.label(),
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                          AdminBotLabel(email: widget.post.authorEmail),
+                        ],
+                      ),
                       const SizedBox(height: AppSpacing.xs),
                       Text(
                         widget.post.comment.trim().isEmpty

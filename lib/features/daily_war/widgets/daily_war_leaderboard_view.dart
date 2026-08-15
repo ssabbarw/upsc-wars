@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
+import '../../community/widgets/admin_bot_label.dart';
 import '../domain/daily_war_badges.dart';
 import '../domain/daily_war_models.dart';
 import '../theme/daily_war_theme.dart';
@@ -302,6 +303,7 @@ class _PodiumSlot extends StatelessWidget {
             overflow: TextOverflow.ellipsis,
             style: DwText.dm(size: 12, weight: FontWeight.w700),
           ),
+          AdminBotLabel(uid: e.uid),
           Text(
             '${_fmt(e.score)} / $maxPts',
             style: DwText.dm(
@@ -402,11 +404,18 @@ class _LbCard extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      isMe ? '$name (you)' : name,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      style: DwText.dm(size: 14, weight: FontWeight.w700),
+                    Row(
+                      children: [
+                        Flexible(
+                          child: Text(
+                            isMe ? '$name (you)' : name,
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: DwText.dm(size: 14, weight: FontWeight.w700),
+                          ),
+                        ),
+                        AdminBotLabel(uid: entry.uid),
+                      ],
                     ),
                     if (subtitle.isNotEmpty) ...[
                       const SizedBox(height: 2),

@@ -17,6 +17,7 @@ import '../domain/entities/community_user.dart';
 import '../domain/qotd_models.dart';
 import '../providers/community_providers.dart';
 import '../providers/qotd_providers.dart';
+import 'admin_bot_label.dart';
 import 'community_user_profile_sheet.dart';
 
 Future<void> showQotdAnswerersBottomSheet(
@@ -204,13 +205,23 @@ class _QotdAnswererRow extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      name,
-                      style: AppTextStyles.label().copyWith(
-                        color: scheme.onSurface,
-                      ),
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
+                    Row(
+                      children: [
+                        Flexible(
+                          child: Text(
+                            name,
+                            style: AppTextStyles.label().copyWith(
+                              color: scheme.onSurface,
+                            ),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                        AdminBotLabel(
+                          email: entry.authorEmail,
+                          uid: entry.uid,
+                        ),
+                      ],
                     ),
                     Text(
                       entry.isCorrect ? 'Correct' : 'Wrong',

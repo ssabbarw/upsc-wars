@@ -7,6 +7,7 @@ import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/widgets/pop_to_shell_home_scope.dart';
 import '../../../shared/widgets/tappable_circular_avatar.dart';
+import '../../community/widgets/admin_bot_label.dart';
 import '../domain/entities/chat_thread_route_payload.dart';
 import '../providers/chat_providers.dart';
 
@@ -79,7 +80,18 @@ class ChatListScreen extends HookConsumerWidget {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(peerName, style: AppTextStyles.label()),
+                                Row(
+                                  children: [
+                                    Flexible(
+                                      child: Text(
+                                        peerName,
+                                        style: AppTextStyles.label(),
+                                        overflow: TextOverflow.ellipsis,
+                                      ),
+                                    ),
+                                    AdminBotLabel(email: peerEmail),
+                                  ],
+                                ),
                                 const SizedBox(height: 2),
                                 Text(
                                   subtitle,

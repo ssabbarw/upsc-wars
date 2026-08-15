@@ -18,6 +18,7 @@ import '../../chat/domain/entities/chat_thread_route_payload.dart';
 import '../domain/entities/community_user.dart';
 import '../providers/community_providers.dart';
 import '../providers/user_block_providers.dart';
+import '../widgets/admin_bot_label.dart';
 
 Future<void> openCommunityExternalUrl(BuildContext context, String url) async {
   final uri = Uri.parse(url);
@@ -99,7 +100,18 @@ Future<void> showCommunityUserProfileSheet(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(displayLabel, style: AppTextStyles.h3()),
+                          Row(
+                            children: [
+                              Flexible(
+                                child: Text(
+                                  displayLabel,
+                                  style: AppTextStyles.h3(),
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ),
+                              AdminBotLabel(email: user.email),
+                            ],
+                          ),
                           const SizedBox(height: AppSpacing.xs),
                           Text(
                             user.isInBattle ? 'fighting a battle' : 'available',

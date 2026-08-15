@@ -17,6 +17,7 @@ import '../../community/domain/entities/community_user.dart';
 import '../../community/providers/community_providers.dart';
 import '../../community/providers/user_block_providers.dart';
 import '../../community/screens/community_screen.dart';
+import '../../community/widgets/admin_bot_label.dart';
 import '../domain/entities/chat_runtime_config.dart';
 import '../providers/chat_providers.dart';
 
@@ -187,7 +188,18 @@ class ChatThreadScreen extends HookConsumerWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(peerDisplayName, style: AppTextStyles.label()),
+                    Row(
+                      children: [
+                        Flexible(
+                          child: Text(
+                            peerDisplayName,
+                            style: AppTextStyles.label(),
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                        AdminBotLabel(email: peerEmail),
+                      ],
+                    ),
                     if (showTyping && typingAsync.value == true)
                       Text(
                         'typing...',

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../community/widgets/admin_bot_label.dart';
 import '../daily_war_constants.dart';
 import '../domain/daily_war_copy.dart';
 import '../domain/daily_war_models.dart';
@@ -560,15 +561,25 @@ class _LeaderboardTeaser extends StatelessWidget {
                         ),
                       ),
                       Expanded(
-                        child: Text(
-                          e.uid == myUid
-                              ? '${e.displayName.isEmpty ? 'Warrior' : e.displayName} (you)'
-                              : (e.displayName.isEmpty
-                                  ? 'Warrior'
-                                  : e.displayName),
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                          style: DwText.dm(size: 14, weight: FontWeight.w600),
+                        child: Row(
+                          children: [
+                            Flexible(
+                              child: Text(
+                                e.uid == myUid
+                                    ? '${e.displayName.isEmpty ? 'Warrior' : e.displayName} (you)'
+                                    : (e.displayName.isEmpty
+                                        ? 'Warrior'
+                                        : e.displayName),
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                                style: DwText.dm(
+                                  size: 14,
+                                  weight: FontWeight.w600,
+                                ),
+                              ),
+                            ),
+                            AdminBotLabel(uid: e.uid),
+                          ],
                         ),
                       ),
                       Text(

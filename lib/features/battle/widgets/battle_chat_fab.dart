@@ -15,6 +15,7 @@ import '../../../shared/widgets/tappable_circular_avatar.dart';
 import '../../chat/domain/chat_ids.dart';
 import '../../chat/domain/entities/chat_runtime_config.dart';
 import '../../chat/providers/chat_providers.dart';
+import '../../community/widgets/admin_bot_label.dart';
 
 // ---------------------------------------------------------------------------
 // Overlay state — activated by BattleResultScreen, cleared on dispose.
@@ -454,7 +455,18 @@ class _BattleChatSheet extends HookConsumerWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(opponentName, style: AppTextStyles.label()),
+                          Row(
+                            children: [
+                              Flexible(
+                                child: Text(
+                                  opponentName,
+                                  style: AppTextStyles.label(),
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ),
+                              AdminBotLabel(email: opponentEmail),
+                            ],
+                          ),
                           if (showTyping && typingAsync.value == true)
                             Text(
                               'typing...',

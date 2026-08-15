@@ -16,6 +16,7 @@ import 'package:upsc_wars/core/theme/app_text_styles.dart';
 import 'package:upsc_wars/features/battle/data/battle_firestore_paths.dart';
 import 'package:upsc_wars/features/battle/data/battle_match_firestore_service.dart';
 import 'package:upsc_wars/features/battle/domain/battle_monogram_palette.dart';
+import 'package:upsc_wars/features/community/widgets/admin_bot_label.dart';
 import 'package:upsc_wars/features/home/providers/auth_providers.dart';
 import 'package:upsc_wars/shared/widgets/app_toast.dart';
 
@@ -607,7 +608,9 @@ class _HumanLobbyBody extends StatelessWidget {
     final idColor = isDark ? AppColors.warningTextDark : AppColors.warning;
 
     final hostEmail = (match['host_email'] as String?)?.toLowerCase() ?? '';
+    final guestEmail = (match['guest_email'] as String?)?.toLowerCase() ?? '';
     final isHost = authEmail.isNotEmpty && authEmail == hostEmail;
+    final opponentEmail = isHost ? guestEmail : hostEmail;
     final guestReady =
         match[BattleMatchFirestoreService.fieldGuestReady] == true;
     final letsStart = match['lets_start_game'] == true;
@@ -756,6 +759,7 @@ class _HumanLobbyBody extends StatelessWidget {
                               monogramForeground: oppFg,
                               greyed: opponentGreyed,
                               avatar: opponentAvatar,
+                              botEmail: opponentEmail,
                             ),
                             _JoinedParticipant(
                               letter: initialLetter(playerName),
@@ -958,6 +962,7 @@ class _JoinedParticipant extends StatelessWidget {
     required this.monogramBackground,
     required this.monogramForeground,
     this.greyed = false,
+    this.botEmail,
   });
 
   final String letter;
@@ -967,6 +972,7 @@ class _JoinedParticipant extends StatelessWidget {
   final Color monogramBackground;
   final Color monogramForeground;
   final bool greyed;
+  final String? botEmail;
 
   static const _greyscale = <double>[
     0.2126,
@@ -1027,6 +1033,7 @@ class _JoinedParticipant extends StatelessWidget {
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
           ),
+          if (botEmail != null) AdminBotLabel(email: botEmail),
         ],
       ),
     );

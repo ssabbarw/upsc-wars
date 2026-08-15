@@ -14,6 +14,7 @@ import '../../../shared/widgets/tappable_circular_avatar.dart';
 import '../domain/open_challenge_models.dart';
 import '../open_challenge/open_challenge_create_availability.dart';
 import '../providers/open_challenge_providers.dart';
+import 'admin_bot_label.dart';
 
 class OpenChallengeCommunitySection extends ConsumerWidget {
   const OpenChallengeCommunitySection({super.key});
@@ -318,6 +319,9 @@ class _ChallengeTile extends StatelessWidget {
                                 icon: Icons.person_rounded,
                                 text: 'by $postedLabel',
                                 scheme: scheme,
+                                trailing: AdminBotLabel(
+                                  email: model.postedByEmail,
+                                ),
                               ),
                               const SizedBox(height: AppSpacing.xs),
                               _MetaRow(
@@ -400,11 +404,13 @@ class _MetaRow extends StatelessWidget {
     required this.icon,
     required this.text,
     required this.scheme,
+    this.trailing,
   });
 
   final IconData icon;
   final String text;
   final ColorScheme scheme;
+  final Widget? trailing;
 
   @override
   Widget build(BuildContext context) {
@@ -422,6 +428,7 @@ class _MetaRow extends StatelessWidget {
             overflow: TextOverflow.ellipsis,
           ),
         ),
+        ?trailing,
       ],
     );
   }
