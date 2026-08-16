@@ -15,4 +15,9 @@ abstract final class ChatIds {
       '',
     );
   }
+
+  /// RTDB key rules can recompute from `auth.token.email` (`.` is not allowed in keys).
+  static String rulesEmailKey(String email) {
+    return email.trim().toLowerCase().replaceAll('.', ',');
+  }
 }

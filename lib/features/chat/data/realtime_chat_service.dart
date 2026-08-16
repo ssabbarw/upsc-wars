@@ -51,42 +51,27 @@ class RealtimeChatService implements ChatService {
 
   @override
   Stream<List<ChatThread>> watchThreads({required String currentUserEmail}) {
-    final userKey = ChatIds.emailKey(currentUserEmail);
-    final query = _db
-        .ref('chatThreads')
-        .orderByChild('participants/$userKey')
-        .equalTo(true);
+    final inboxKey = ChatIds.rulesEmailKey(currentUserEmail);
+    final ref = _db.ref('userChats/$inboxKey');
     return (() async* {
       yield const <ChatThread>[];
-      yield* query.onValue.map((event) {
+      yield* ref.onValue.map((event) {
         final raw = event.snapshot.value;
         if (raw is! Map) return const <ChatThread>[];
         final threads = <ChatThread>[];
         raw.forEach((key, value) {
           if (value is! Map) return;
           final map = Map<Object?, Object?>.from(value);
-          final participants = <String>[];
-          final participantsRaw = map['participantEmails'];
-          if (participantsRaw is List) {
-            for (final item in participantsRaw) {
-              final email = item?.toString() ?? '';
-              if (email.isNotEmpty) participants.add(email);
-            }
-          }
-          final unreadMap = map['unread'];
-          final unread = unreadMap is Map
-              ? (unreadMap[userKey] as num?)?.toInt() ?? 0
-              : 0;
+          final participants = _emailsFrom(map['participantEmails']);
+          final text = (map['lastMessageText'] ?? '').toString();
           threads.add(
             ChatThread(
               chatId: key.toString(),
               participantEmails: participants,
-              lastMessageText: (map['lastMessageText'] ?? '').toString().isEmpty
-                  ? null
-                  : (map['lastMessageText'] ?? '').toString(),
+              lastMessageText: text.isEmpty ? null : text,
               lastMessageAt: (map['lastMessageAt'] as num?)?.toInt(),
               updatedAt: (map['updatedAt'] as num?)?.toInt() ?? 0,
-              unreadCount: unread,
+              unreadCount: (map['unread'] as num?)?.toInt() ?? 0,
             ),
           );
         });
@@ -105,9 +90,9 @@ class RealtimeChatService implements ChatService {
     if (!config.enableTypingIndicator) {
       return Stream<bool>.value(false);
     }
-    final key = ChatIds.emailKey(peerEmail);
+    final key = ChatIds.rulesEmailKey(peerEmail);
     final ref = _db.ref('chatTyping/$chatId/$key');
-    return ref.onValue.map((event) => event.snapshot.value == true);
+    return _watchBool(ref);
   }
 
   @override
@@ -118,9 +103,9 @@ class RealtimeChatService implements ChatService {
     if (!config.enableOnlineIndicator) {
       return Stream<bool>.value(false);
     }
-    final key = ChatIds.emailKey(peerEmail);
+    final key = ChatIds.rulesEmailKey(peerEmail);
     final ref = _db.ref('presence/$key/isOnline');
-    return ref.onValue.map((event) => event.snapshot.value == true);
+    return _watchBool(ref);
   }
 
   @override
@@ -138,16 +123,13 @@ class RealtimeChatService implements ChatService {
     final peer = peerEmail.trim().toLowerCase();
     final currentKey = ChatIds.emailKey(current);
     final peerKey = ChatIds.emailKey(peer);
+    final currentInbox = ChatIds.rulesEmailKey(current);
+    final peerInbox = ChatIds.rulesEmailKey(peer);
+    final participants = [current, peer]..sort();
 
-    final messageRef = _db.ref('chatMessages/$chatId').push();
-    await messageRef.set({
-      'senderEmail': current,
-      'text': trimmed,
-      'createdAt': now,
-    });
-
-    final updates = <String, Object?>{
-      'chatThreads/$chatId/participantEmails': [current, peer]..sort(),
+    // Thread must exist before messages so RTDB rules can check membership.
+    final threadUpdates = <String, Object?>{
+      'chatThreads/$chatId/participantEmails': participants,
       'chatThreads/$chatId/participants/$currentKey': true,
       'chatThreads/$chatId/participants/$peerKey': true,
       'chatThreads/$chatId/lastMessageText': trimmed,
@@ -156,10 +138,34 @@ class RealtimeChatService implements ChatService {
       'chatThreads/$chatId/updatedAt': now,
     };
     if (config.enableUnreadCount) {
-      updates['chatThreads/$chatId/unread/$peerKey'] = ServerValue.increment(1);
-      updates['chatThreads/$chatId/unread/$currentKey'] = 0;
+      threadUpdates['chatThreads/$chatId/unread/$peerKey'] =
+          ServerValue.increment(1);
+      threadUpdates['chatThreads/$chatId/unread/$currentKey'] = 0;
     }
-    await _db.ref().update(updates);
+    await _db.ref().update(threadUpdates);
+
+    final messageRef = _db.ref('chatMessages/$chatId').push();
+    final inbox = <String, Object?>{
+      'participantEmails': participants,
+      'lastMessageText': trimmed,
+      'lastMessageAt': now,
+      'updatedAt': now,
+    };
+    await _db.ref().update({
+      'chatMessages/$chatId/${messageRef.key}': {
+        'senderEmail': current,
+        'text': trimmed,
+        'createdAt': now,
+      },
+      'userChats/$currentInbox/$chatId': {
+        ...inbox,
+        'unread': 0,
+      },
+      'userChats/$peerInbox/$chatId': {
+        ...inbox,
+        'unread': config.enableUnreadCount ? ServerValue.increment(1) : 0,
+      },
+    });
     unawaited(AdminDashboardWriterService().recordChatEngagement());
   }
 
@@ -171,7 +177,7 @@ class RealtimeChatService implements ChatService {
     required ChatRuntimeConfig config,
   }) async {
     if (!config.enableTypingIndicator) return;
-    final key = ChatIds.emailKey(currentUserEmail);
+    final key = ChatIds.rulesEmailKey(currentUserEmail);
     final ref = _db.ref('chatTyping/$chatId/$key');
     if (isTyping) {
       await ref.set(true);
@@ -189,7 +195,9 @@ class RealtimeChatService implements ChatService {
   }) async {
     if (!config.enableUnreadCount) return;
     final key = ChatIds.emailKey(currentUserEmail);
+    final inboxKey = ChatIds.rulesEmailKey(currentUserEmail);
     await _db.ref('chatThreads/$chatId/unread/$key').set(0);
+    await _db.ref('userChats/$inboxKey/$chatId/unread').set(0);
   }
 
   @override
@@ -199,7 +207,7 @@ class RealtimeChatService implements ChatService {
     required ChatRuntimeConfig config,
   }) async {
     if (!config.enableOnlineIndicator) return;
-    final key = ChatIds.emailKey(currentUserEmail);
+    final key = ChatIds.rulesEmailKey(currentUserEmail);
     final ref = _db.ref('presence/$key');
     if (isOnline) {
       await ref.update({
@@ -219,4 +227,33 @@ class RealtimeChatService implements ChatService {
       'lastSeenAt': ServerValue.timestamp,
     });
   }
+}
+
+Stream<bool> _watchBool(DatabaseReference ref) {
+  return ref.onValue
+      .map((event) => event.snapshot.value == true)
+      .transform(
+        StreamTransformer<bool, bool>.fromHandlers(
+          handleError: (error, stack, sink) {
+            sink.add(false);
+          },
+        ),
+      );
+}
+
+List<String> _emailsFrom(Object? raw) {
+  final emails = <String>[];
+  if (raw is List) {
+    for (final item in raw) {
+      final email = item?.toString().trim() ?? '';
+      if (email.isNotEmpty) emails.add(email);
+    }
+  } else if (raw is Map) {
+    final keys = raw.keys.map((k) => k.toString()).toList()..sort();
+    for (final key in keys) {
+      final email = raw[key]?.toString().trim() ?? '';
+      if (email.isNotEmpty) emails.add(email);
+    }
+  }
+  return emails;
 }

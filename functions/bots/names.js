@@ -911,11 +911,21 @@ const APP_VERSION = "3.1";
 /** Legacy public emails. New bots never use this domain. */
 const LEGACY_BOT_EMAIL_DOMAIN = "upscwars.bot";
 
-const PUBLIC_EMAIL_DOMAINS = [
+/**
+ * Reserved mailbox domain. Must not be a Google/Apple sign-in domain
+ * (`gmail.com`, `icloud.com`, …) so a real user cannot share the `users/{email}` doc.
+ */
+const RESERVED_BOT_EMAIL_DOMAIN = "community.upscwars.in";
+
+const CONSUMER_EMAIL_DOMAINS = [
   "gmail.com",
+  "googlemail.com",
   "yahoo.com",
+  "yahoo.co.in",
   "rediffmail.com",
   "outlook.com",
+  "hotmail.com",
+  "icloud.com",
 ];
 
 function slugFirst(name) {
@@ -934,10 +944,27 @@ function slugLast(name) {
     .slice(0, 14);
 }
 
+function emailDomain(email) {
+  const e = String(email || "").toLowerCase();
+  const at = e.lastIndexOf("@");
+  return at >= 0 ? e.slice(at + 1) : "";
+}
+
 function isLegacyBotEmail(email) {
-  return String(email || "")
-    .toLowerCase()
-    .endsWith(`@${LEGACY_BOT_EMAIL_DOMAIN}`);
+  return emailDomain(email) === LEGACY_BOT_EMAIL_DOMAIN;
+}
+
+function isReservedBotEmail(email) {
+  return emailDomain(email) === RESERVED_BOT_EMAIL_DOMAIN;
+}
+
+function isConsumerEmail(email) {
+  return CONSUMER_EMAIL_DOMAINS.includes(emailDomain(email));
+}
+
+/** True when this mailbox must be rewritten (legacy, consumer, or unknown). */
+function needsReservedBotEmail(email) {
+  return !isReservedBotEmail(email);
 }
 
 module.exports = {
@@ -948,8 +975,12 @@ module.exports = {
   PHONE_MODELS,
   APP_VERSION,
   LEGACY_BOT_EMAIL_DOMAIN,
-  PUBLIC_EMAIL_DOMAINS,
+  RESERVED_BOT_EMAIL_DOMAIN,
+  CONSUMER_EMAIL_DOMAINS,
   slugFirst,
   slugLast,
   isLegacyBotEmail,
+  isReservedBotEmail,
+  isConsumerEmail,
+  needsReservedBotEmail,
 };

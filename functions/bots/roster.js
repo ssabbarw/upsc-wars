@@ -7,10 +7,11 @@ const {
   OPTIONALS,
   PHONE_MODELS,
   APP_VERSION,
-  PUBLIC_EMAIL_DOMAINS,
+  RESERVED_BOT_EMAIL_DOMAIN,
   slugFirst,
   slugLast,
-  isLegacyBotEmail,
+  needsReservedBotEmail,
+  isConsumerEmail,
 } = require("./names");
 const { hashString, mulberry32, randInt, presenceBucketPath } = require("./time");
 
@@ -95,11 +96,10 @@ function allocatePublicUid() {
   return out;
 }
 
-function buildPublicEmail(firstName, lastName, lastInitial, n, rng) {
+function buildPublicEmail(firstName, lastName, lastInitial, n) {
   const first = slugFirst(firstName);
   const last = slugLast(lastName) || String(lastInitial || "k").toLowerCase();
-  const domain = PUBLIC_EMAIL_DOMAINS[Math.floor(rng() * PUBLIC_EMAIL_DOMAINS.length)];
-  return `${first}.${last}${n}@${domain}`;
+  return `${first}.${last}${n}@${RESERVED_BOT_EMAIL_DOMAIN}`;
 }
 
 function usedEmails(roster) {
@@ -122,7 +122,7 @@ function buildBotIdentity(roster, seed) {
     const n = randInt(rng, 11, 98);
     const picked = pickDisplayName(firstName, rng, takenDisplay);
     if (takenDisplay.has(picked.name.toLowerCase())) continue;
-    const email = buildPublicEmail(firstName, picked.lastName, lastInitial, n, rng);
+    const email = buildPublicEmail(firstName, picked.lastName, lastInitial, n);
     if (emails.has(email)) continue;
     const optional = OPTIONALS[Math.floor(rng() * OPTIONALS.length)];
     const phoneModel = PHONE_MODELS[Math.floor(rng() * PHONE_MODELS.length)];
@@ -418,6 +418,24 @@ async function rewriteEmailInRecentBuckets(oldEmail, newEmail, bot) {
   }
 }
 
+/** Drop a bot mailbox only when it does not look like a real signed-in user. */
+async function releaseOldUserDoc(oldEmail) {
+  const ref = db().collection("users").doc(oldEmail);
+  const snap = await ref.get();
+  if (!snap.exists) return;
+  const data = snap.data() || {};
+  const hasToken = Boolean(data.fcm_token || data.fcmToken);
+  const hasInsta = Boolean(data.insta_user_id || data.insta);
+  if (hasToken || hasInsta) {
+    console.warn("bots.releaseOldUserDoc: skip delete, looks like a real user", {
+      email: oldEmail,
+      consumer: isConsumerEmail(oldEmail),
+    });
+    return;
+  }
+  await ref.delete();
+}
+
 async function ensurePublicIdentities(roster) {
   const takenEmails = collectBotEmails(roster);
   const takenUids = new Set(
@@ -426,7 +444,7 @@ async function ensurePublicIdentities(roster) {
   let updated = 0;
   for (const b of roster) {
     const currentEmail = String(b.email || "").toLowerCase();
-    const needsEmail = !currentEmail || isLegacyBotEmail(currentEmail);
+    const needsEmail = !currentEmail || needsReservedBotEmail(currentEmail);
     const needsUid = !String(b.publicUid || "").trim();
     if (!needsEmail && !needsUid) {
       if (currentEmail) {
@@ -460,7 +478,6 @@ async function ensurePublicIdentities(roster) {
           b.lastName,
           b.lastInitial,
           n + i,
-          rng,
         );
         if (takenEmails.has(candidate)) continue;
         const existing = await db().collection("users").doc(candidate).get();
@@ -469,7 +486,7 @@ async function ensurePublicIdentities(roster) {
         break;
       }
       if (!next) {
-        next = `${slugFirst(b.firstName || "warrior")}.${allocatePublicUid().slice(0, 8).toLowerCase()}@${PUBLIC_EMAIL_DOMAINS[0]}`;
+        next = `${slugFirst(b.firstName || "warrior")}.${allocatePublicUid().slice(0, 8).toLowerCase()}@${RESERVED_BOT_EMAIL_DOMAIN}`;
       }
       const previous = [...emailsOf(b)];
       if (currentEmail && currentEmail !== next) {
@@ -482,11 +499,7 @@ async function ensurePublicIdentities(roster) {
       await writeUserDoc(b);
       for (const oldEmail of previous) {
         if (oldEmail === next) continue;
-        try {
-          await db().collection("users").doc(oldEmail).delete();
-        } catch (_) {
-          // Alias doc may already be gone.
-        }
+        await releaseOldUserDoc(oldEmail);
         await rewriteEmailInRecentBuckets(oldEmail, next, b);
       }
     } else {
