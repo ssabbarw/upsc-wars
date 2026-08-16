@@ -25,7 +25,7 @@ class TappableCircularAvatar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final url = _enhanceGooglePhotoUrl(
-      AppConstants.profileImageUrlOrDefault(imageUrl),
+      AppConstants.customProfilePhotoUrl(imageUrl),
     );
     final hasImage = url.trim().isNotEmpty;
     final monogram = _monogramFrom(displayName);

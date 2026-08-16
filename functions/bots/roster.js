@@ -2,6 +2,7 @@ const admin = require("firebase-admin");
 const {
   FIRST_NAMES,
   LAST_INITIALS,
+  LAST_NAMES,
   OPTIONALS,
   PHONE_MODELS,
   APP_VERSION,
@@ -27,6 +28,38 @@ function activeBots(roster) {
   return roster.filter((b) => b.status === "active");
 }
 
+function usedDisplayNames(roster) {
+  return new Set(
+    roster
+      .map((b) => String(b.name || "").trim().toLowerCase())
+      .filter(Boolean),
+  );
+}
+
+function isInitialStyleName(name) {
+  return /^\S+\s[A-Z]$/.test(String(name || "").trim());
+}
+
+function pickDisplayName(firstName, rng, takenDisplay) {
+  const wantFirstOnly = rng() < 0.55;
+  const firstKey = firstName.toLowerCase();
+  if (wantFirstOnly && !takenDisplay.has(firstKey)) {
+    return { name: firstName, lastName: null };
+  }
+  for (let i = 0; i < 80; i++) {
+    const lastName = LAST_NAMES[Math.floor(rng() * LAST_NAMES.length)];
+    const full = `${firstName} ${lastName}`;
+    if (!takenDisplay.has(full.toLowerCase())) {
+      return { name: full, lastName };
+    }
+  }
+  if (!takenDisplay.has(firstKey)) {
+    return { name: firstName, lastName: null };
+  }
+  const lastName = LAST_NAMES[Math.floor(rng() * LAST_NAMES.length)];
+  return { name: `${firstName} ${lastName}`, lastName };
+}
+
 function usedNames(roster) {
   return new Set(roster.map((b) => `${b.firstName}|${b.lastInitial}`));
 }
@@ -39,6 +72,7 @@ function buildBotIdentity(roster, seed) {
   const rng = mulberry32(hashString(seed));
   const taken = usedNames(roster);
   const emails = usedEmails(roster);
+  const takenDisplay = usedDisplayNames(roster);
   for (let i = 0; i < 400; i++) {
     const firstName = FIRST_NAMES[Math.floor(rng() * FIRST_NAMES.length)];
     const lastInitial = LAST_INITIALS[Math.floor(rng() * LAST_INITIALS.length)];
@@ -47,6 +81,8 @@ function buildBotIdentity(roster, seed) {
     const n = randInt(rng, 11, 98);
     const email = `${slugFirst(firstName)}.${lastInitial.toLowerCase()}${n}@${BOT_EMAIL_DOMAIN}`;
     if (emails.has(email)) continue;
+    const picked = pickDisplayName(firstName, rng, takenDisplay);
+    if (takenDisplay.has(picked.name.toLowerCase())) continue;
     const optional = OPTIONALS[Math.floor(rng() * OPTIONALS.length)];
     const phoneModel = PHONE_MODELS[Math.floor(rng() * PHONE_MODELS.length)];
     const skill = 0.38 + rng() * 0.28;
@@ -56,7 +92,8 @@ function buildBotIdentity(roster, seed) {
       email,
       firstName,
       lastInitial,
-      name: `${firstName} ${lastInitial}`,
+      lastName: picked.lastName,
+      name: picked.name,
       optional: optional || null,
       phoneModel,
       appVersion: APP_VERSION,
@@ -67,6 +104,60 @@ function buildBotIdentity(roster, seed) {
     };
   }
   throw new Error("Could not allocate a unique bot identity");
+}
+
+async function ensureFriendlyNames(roster) {
+  const taken = new Set();
+  for (const b of roster) {
+    const n = String(b.name || "").trim();
+    if (n && !isInitialStyleName(n)) taken.add(n.toLowerCase());
+  }
+  let updated = 0;
+  for (const b of roster) {
+    if (!isInitialStyleName(b.name)) continue;
+    const rng = mulberry32(hashString(`displayname:${b.id}`));
+    const first = b.firstName || String(b.name).split(/\s+/)[0];
+    const picked = pickDisplayName(first, rng, taken);
+    taken.add(picked.name.toLowerCase());
+    b.name = picked.name;
+    b.lastName = picked.lastName;
+    b.firstName = first;
+    await rosterCol()
+      .doc(b.id)
+      .set(
+        {
+          name: picked.name,
+          lastName: picked.lastName,
+          firstName: first,
+        },
+        { merge: true },
+      );
+    await writeUserDoc(b);
+    await patchBotNameInRecentBuckets(b.email, picked.name);
+    updated += 1;
+  }
+  return updated;
+}
+
+async function patchBotNameInRecentBuckets(email, name) {
+  if (!email || !name) return;
+  const seen = new Set();
+  for (let i = 0; i < 12; i++) {
+    const path = presenceBucketPath(new Date(Date.now() - i * 3 * 60 * 60 * 1000));
+    const key = `${path.yearMonth}/${path.day}/${path.bucketId}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    const ref = db()
+      .collection("buckets")
+      .doc(path.yearMonth)
+      .collection(path.day)
+      .doc(path.bucketId);
+    const snap = await ref.get();
+    if (!snap.exists) continue;
+    const entry = (snap.data() || {})[email];
+    if (!entry) continue;
+    await ref.set({ [email]: { ...entry, name } }, { merge: true });
+  }
 }
 
 function usersDoc(bot, extra = {}) {
@@ -275,6 +366,7 @@ module.exports = {
   isBotLiveToday,
   createBot,
   restBot,
+  ensureFriendlyNames,
   writeUserDoc,
   usersDoc,
   dayStats,

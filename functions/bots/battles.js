@@ -21,7 +21,7 @@ const {
   optionToResponseInt,
   skillForBot,
 } = require("./questions");
-const { DEFAULT_PHOTO_URL, BOT_EMAIL_DOMAIN } = require("./names");
+const { BOT_EMAIL_DOMAIN } = require("./names");
 
 const MAX_BODY_LEN = 180;
 
@@ -258,7 +258,7 @@ async function primeHumanMatch({
   await over.doc(hostEmail).set({ game_progress_status: "Active" });
   await joined.doc(guestEmail).set({
     display_name: guestDisplayName,
-    profile_pic: DEFAULT_PHOTO_URL,
+    profile_pic: "no_image",
     game_progress_status: "Active",
     responses: emptyResponses,
   });

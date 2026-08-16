@@ -20,18 +20,22 @@ abstract final class AppConstants {
   static const String developerTelegramUrl = 'https://t.me/upsc_wars_sachin';
   static const String groupTelegramUrl = 'https://t.me/upsc_wars_group';
 
-  /// Shown when a user has no profile photo (local UI + community fallback).
+  /// Legacy placeholder image. Treated as “no photo” so initials are shown.
   static const String defaultProfilePhotoUrl =
       'https://firebasestorage.googleapis.com/v0/b/questionmaker-a821f.appspot.com/o/default_dp.jpg?alt=media&token=6857cccc-5149-4949-a1de-4255dc06dd53';
 
-  /// Returns [photoUrl] when non-empty; otherwise [defaultProfilePhotoUrl].
-  static String profileImageUrlOrDefault(String? photoUrl) {
-    final t = photoUrl?.trim();
-    if (t != null && t.isNotEmpty) {
-      return t;
-    }
-    return defaultProfilePhotoUrl;
+  /// Custom uploaded photo, or empty when missing / placeholder / `no_image`.
+  static String customProfilePhotoUrl(String? photoUrl) {
+    final t = photoUrl?.trim() ?? '';
+    if (t.isEmpty || t == 'no_image') return '';
+    if (t == defaultProfilePhotoUrl) return '';
+    if (t.contains('/o/default_dp.jpg')) return '';
+    return t;
   }
+
+  /// Same as [customProfilePhotoUrl]. Empty means show initials, not a default DP.
+  static String profileImageUrlOrDefault(String? photoUrl) =>
+      customProfilePhotoUrl(photoUrl);
 
   // ── Email ─────────────────────────────────────────────────────────────────
   static const String supportEmail = 'upscwars@gmail.com';

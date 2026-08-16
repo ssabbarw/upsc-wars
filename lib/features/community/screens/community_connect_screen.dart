@@ -51,7 +51,7 @@ class CommunityConnectScreen extends StatelessWidget {
                       : BattleInviteTarget(
                           email: user.email.toLowerCase(),
                           displayName: targetLabel!,
-                          photoUrl: AppConstants.profileImageUrlOrDefault(
+                          photoUrl: AppConstants.customProfilePhotoUrl(
                             user.photoUrl,
                           ),
                         ),

@@ -37,9 +37,7 @@ CommunityUser communityUserFromLegacyMap(
   return CommunityUser(
     email: email.toLowerCase(),
     name: rawName?.isNotEmpty == true ? rawName! : 'UPSC Warrior',
-    photoUrl: photo?.isNotEmpty == true
-        ? photo!
-        : AppConstants.defaultProfilePhotoUrl,
+    photoUrl: AppConstants.customProfilePhotoUrl(photo),
     lastOnlineTime:
         (map[CommunityLegacyContract.lastOnlineTime] as num?)?.toInt() ?? 0,
     acceptingBattleInvites:

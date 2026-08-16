@@ -376,9 +376,17 @@ class _PlayerAvatarStrip extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
-    final url = AppConstants.profileImageUrlOrDefault(photoUrl);
+    final url = AppConstants.customProfilePhotoUrl(photoUrl);
     final cachePx =
         (36 * MediaQuery.devicePixelRatioOf(context)).round();
+    if (url.isEmpty) {
+      return _MonogramAvatar(
+        letter: initial,
+        onPrimaryStrip: onPrimaryStrip,
+        backgroundColor: monogramBackground,
+        foregroundColor: monogramForeground,
+      );
+    }
     return CircleAvatar(
       radius: 18,
       backgroundColor: scheme.surfaceContainerHighest,

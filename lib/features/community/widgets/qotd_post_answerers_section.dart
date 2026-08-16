@@ -194,9 +194,7 @@ class _QotdAnswererRow extends StatelessWidget {
           child: Row(
             children: [
               TappableCircularAvatar(
-                imageUrl: AppConstants.profileImageUrlOrDefault(
-                  entry.authorPhotoUrl,
-                ),
+                imageUrl: entry.authorPhotoUrl,
                 displayName: name,
                 size: 40,
               ),
@@ -276,7 +274,7 @@ CommunityUser _fallbackUser(QotdAttemptEntry e) {
     name: (e.authorName ?? '').trim().isEmpty
         ? 'UPSC Warrior'
         : e.authorName!.trim(),
-    photoUrl: AppConstants.profileImageUrlOrDefault(e.authorPhotoUrl),
+    photoUrl: AppConstants.customProfilePhotoUrl(e.authorPhotoUrl),
     lastOnlineTime: 0,
     acceptingBattleInvites: true,
     isInBattleTill: null,

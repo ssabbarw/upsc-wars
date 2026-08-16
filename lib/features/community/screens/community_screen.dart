@@ -157,68 +157,46 @@ class _RecentTab extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final recent = ref.watch(communityRecentUsersProvider);
     final notifier = ref.read(communityRecentUsersProvider.notifier);
-    final lastRefreshedAt = notifier.lastRefreshedAt;
     final currentUserEmail = ref
         .watch(authStateChangesProvider)
         .asData
         ?.value
         ?.email
         ?.toLowerCase();
+    final scroll = useScrollController();
+
+    useEffect(() {
+      void onScroll() {
+        if (!scroll.hasClients) return;
+        final pos = scroll.position;
+        if (pos.pixels >= pos.maxScrollExtent - 280) {
+          notifier.loadMore();
+        }
+      }
+
+      scroll.addListener(onScroll);
+      return () => scroll.removeListener(onScroll);
+    }, [scroll]);
+
+    useEffect(() {
+      final page = recent.asData?.value;
+      if (page == null || !page.hasMore || page.isLoadingMore) return null;
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (!scroll.hasClients) return;
+        if (scroll.position.extentAfter < 280) {
+          notifier.loadMore();
+        }
+      });
+      return null;
+    }, [recent]);
+
+    if (recent.isLoading) {
+      return _RecentOnlineLoading(scheme: scheme);
+    }
     return recent.when(
       skipLoadingOnRefresh: false,
       skipLoadingOnReload: false,
-      loading: () => Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Padding(
-            padding: const EdgeInsets.fromLTRB(
-              AppSpacing.lg,
-              AppSpacing.md,
-              AppSpacing.lg,
-              AppSpacing.xs,
-            ),
-            child: Text(
-              'Recent online',
-              style: AppTextStyles.label().copyWith(color: scheme.onSurface),
-            ),
-          ),
-          Expanded(
-            child: Center(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  const CircularProgressIndicator(),
-                  const SizedBox(height: AppSpacing.md),
-                  Text(
-                    'Loading recent users…',
-                    style: AppTextStyles.bodySm().copyWith(
-                      color: scheme.onSurfaceVariant,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          SafeArea(
-            top: false,
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(
-                AppSpacing.lg,
-                AppSpacing.sm,
-                AppSpacing.lg,
-                AppSpacing.lg,
-              ),
-              child: SizedBox(
-                width: double.infinity,
-                child: FilledButton(
-                  onPressed: null,
-                  child: Text(notifier.hasMore ? 'Load More' : 'No More Users'),
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
+      loading: () => _RecentOnlineLoading(scheme: scheme),
       error: (error, _) => ListView(
         physics: const AlwaysScrollableScrollPhysics(),
         padding: const EdgeInsets.only(bottom: AppSpacing.lg),
@@ -254,9 +232,11 @@ class _RecentTab extends HookConsumerWidget {
           ),
         ],
       ),
-      data: (users) {
-        final sortedUsers = [...users]
+      data: (page) {
+        final sortedUsers = [...page.users]
           ..sort((a, b) => b.lastOnlineTime.compareTo(a.lastOnlineTime));
+        final lastRefreshedAt = page.lastRefreshedAt;
+
         return Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -280,6 +260,7 @@ class _RecentTab extends HookConsumerWidget {
                       .refresh();
                 },
                 child: ListView(
+                  controller: scroll,
                   physics: const AlwaysScrollableScrollPhysics(),
                   padding: const EdgeInsets.fromLTRB(
                     AppSpacing.lg,
@@ -311,7 +292,7 @@ class _RecentTab extends HookConsumerWidget {
                       ),
                       const SizedBox(height: AppSpacing.xs),
                       Text(
-                        'Pull down to refresh or tap Load More for older active users.',
+                        'Pull down to refresh.',
                         style: AppTextStyles.caption().copyWith(
                           color: scheme.onSurfaceVariant,
                         ),
@@ -330,33 +311,88 @@ class _RecentTab extends HookConsumerWidget {
                       ),
                       const SizedBox(height: AppSpacing.sm),
                     ],
+                    const SizedBox(height: AppSpacing.md),
+                    if (page.isLoadingMore)
+                      const Padding(
+                        padding: EdgeInsets.symmetric(vertical: AppSpacing.lg),
+                        child: Center(child: CircularProgressIndicator()),
+                      )
+                    else if (!page.hasMore)
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          top: AppSpacing.sm,
+                          bottom: AppSpacing.lg,
+                        ),
+                        child: Center(
+                          child: Text(
+                            "That's all",
+                            style: AppTextStyles.caption().copyWith(
+                              color: scheme.onSurfaceVariant,
+                            ),
+                          ),
+                        ),
+                      ),
                   ],
-                ),
-              ),
-            ),
-            SafeArea(
-              top: false,
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(
-                  AppSpacing.lg,
-                  AppSpacing.sm,
-                  AppSpacing.lg,
-                  AppSpacing.lg,
-                ),
-                child: SizedBox(
-                  width: double.infinity,
-                  child: FilledButton(
-                    onPressed: notifier.hasMore ? notifier.loadMore : null,
-                    child: Text(
-                      notifier.hasMore ? 'Load More' : 'No More Users',
-                    ),
-                  ),
                 ),
               ),
             ),
           ],
         );
       },
+    );
+  }
+}
+
+class _RecentOnlineLoading extends StatelessWidget {
+  const _RecentOnlineLoading({required this.scheme});
+
+  final ColorScheme scheme;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Padding(
+          padding: const EdgeInsets.fromLTRB(
+            AppSpacing.lg,
+            AppSpacing.md,
+            AppSpacing.lg,
+            AppSpacing.xs,
+          ),
+          child: Text(
+            'Recent online',
+            style: AppTextStyles.label().copyWith(color: scheme.onSurface),
+          ),
+        ),
+        const Expanded(
+          child: Center(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                CircularProgressIndicator(),
+                SizedBox(height: AppSpacing.md),
+                _RecentLoadingCaption(),
+              ],
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class _RecentLoadingCaption extends StatelessWidget {
+  const _RecentLoadingCaption();
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return Text(
+      'Loading recent users…',
+      style: AppTextStyles.bodySm().copyWith(
+        color: scheme.onSurfaceVariant,
+      ),
     );
   }
 }

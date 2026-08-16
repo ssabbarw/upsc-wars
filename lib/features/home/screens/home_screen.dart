@@ -230,35 +230,52 @@ class HomeScreen extends HookConsumerWidget {
                                       size: 18,
                                       color: scheme.onSurfaceVariant,
                                     )
-                                  : ClipOval(
-                                      child: CachedNetworkImage(
-                                        imageUrl:
-                                            AppConstants.profileImageUrlOrDefault(
+                                  : Builder(
+                                      builder: (context) {
+                                        final photo =
+                                            AppConstants.customProfilePhotoUrl(
                                               user!.photoURL,
+                                            );
+                                        if (photo.isEmpty) {
+                                          return Center(
+                                            child: Text(
+                                              avatarInitials,
+                                              style: AppTextStyles.label()
+                                                  .copyWith(
+                                                    color: scheme
+                                                        .onPrimaryContainer,
+                                                  ),
                                             ),
-                                        width: 36,
-                                        height: 36,
-                                        fit: BoxFit.cover,
-                                        memCacheWidth:
-                                            (36 *
-                                                    MediaQuery.devicePixelRatioOf(
-                                                      context,
-                                                    ))
-                                                .round(),
-                                        fadeInDuration: Duration.zero,
-                                        fadeOutDuration: Duration.zero,
-                                        errorWidget: (context, url, error) =>
-                                            Center(
-                                              child: Text(
-                                                avatarInitials,
-                                                style: AppTextStyles.label()
-                                                    .copyWith(
-                                                      color: scheme
-                                                          .onPrimaryContainer,
-                                                    ),
-                                              ),
-                                            ),
-                                      ),
+                                          );
+                                        }
+                                        return ClipOval(
+                                          child: CachedNetworkImage(
+                                            imageUrl: photo,
+                                            width: 36,
+                                            height: 36,
+                                            fit: BoxFit.cover,
+                                            memCacheWidth:
+                                                (36 *
+                                                        MediaQuery.devicePixelRatioOf(
+                                                          context,
+                                                        ))
+                                                    .round(),
+                                            fadeInDuration: Duration.zero,
+                                            fadeOutDuration: Duration.zero,
+                                            errorWidget: (context, url, error) =>
+                                                Center(
+                                                  child: Text(
+                                                    avatarInitials,
+                                                    style: AppTextStyles.label()
+                                                        .copyWith(
+                                                          color: scheme
+                                                              .onPrimaryContainer,
+                                                        ),
+                                                  ),
+                                                ),
+                                          ),
+                                        );
+                                      },
                                     ),
                             ),
                           ),

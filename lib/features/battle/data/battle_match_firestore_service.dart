@@ -1,11 +1,17 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
+import 'package:upsc_wars/core/constants/app_constants.dart';
 import 'package:upsc_wars/features/battle/data/battle_firestore_paths.dart';
 
 /// Host-side Firestore setup before the battle screen loads.
 class BattleMatchFirestoreService {
   const BattleMatchFirestoreService();
+
+  static String _profilePicField(String? photoUrl) {
+    final custom = AppConstants.customProfilePhotoUrl(photoUrl);
+    return custom.isEmpty ? 'no_image' : custom;
+  }
 
   static Future<void> _ensureSignedInForFirestore() async {
     final user = FirebaseAuth.instance.currentUser;
@@ -54,7 +60,7 @@ class BattleMatchFirestoreService {
 
     await BattleFirestorePaths.joinedUsersCol(sessionId).doc(host).set({
       'display_name': hostDisplayName,
-      'profile_pic': hostPhotoUrl,
+      'profile_pic': _profilePicField(hostPhotoUrl),
       'game_progress_status': 'Active',
       'responses': emptyResponses,
     }).timeout(const Duration(seconds: 12));
@@ -107,7 +113,7 @@ class BattleMatchFirestoreService {
 
     await BattleFirestorePaths.joinedUsersCol(sessionId).doc(host).set({
       'display_name': hostDisplayName,
-      'profile_pic': hostPhotoUrl,
+      'profile_pic': _profilePicField(hostPhotoUrl),
       'game_progress_status': 'Active',
       'responses': emptyResponses,
     }).timeout(const Duration(seconds: 12));
@@ -140,9 +146,7 @@ class BattleMatchFirestoreService {
     await BattleFirestorePaths.joinedUsersCol(sessionId).doc(guest).set(
       {
         'display_name': displayName,
-        'profile_pic': (photoUrl != null && photoUrl.isNotEmpty)
-            ? photoUrl
-            : 'no_image',
+        'profile_pic': _profilePicField(photoUrl),
       },
       SetOptions(merge: true),
     ).timeout(const Duration(seconds: 12));

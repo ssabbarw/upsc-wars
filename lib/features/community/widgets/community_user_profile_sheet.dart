@@ -220,7 +220,7 @@ Future<void> showCommunityUserProfileSheet(
                                     email: user.email.toLowerCase(),
                                     displayName: user.name,
                                     photoUrl:
-                                        AppConstants.profileImageUrlOrDefault(
+                                        AppConstants.customProfilePhotoUrl(
                                           user.photoUrl,
                                         ),
                                   ),
@@ -253,7 +253,7 @@ Future<void> showCommunityUserProfileSheet(
                                   peerEmail: user.email.toLowerCase(),
                                   peerDisplayName: user.name,
                                   peerPhotoUrl:
-                                      AppConstants.profileImageUrlOrDefault(
+                                      AppConstants.customProfilePhotoUrl(
                                         user.photoUrl,
                                       ),
                                 ),

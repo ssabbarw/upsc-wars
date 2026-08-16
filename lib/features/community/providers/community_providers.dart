@@ -12,32 +12,83 @@ final communityRepositoryProvider = Provider<CommunityRepository>((ref) {
 });
 
 final communityRecentUsersProvider =
-    AsyncNotifierProvider<CommunityRecentUsersNotifier, List<CommunityUser>>(
+    AsyncNotifierProvider<CommunityRecentUsersNotifier, CommunityRecentsView>(
       CommunityRecentUsersNotifier.new,
     );
 
-class CommunityRecentUsersNotifier extends AsyncNotifier<List<CommunityUser>> {
-  int _bucketOffset = 0;
+class CommunityRecentsView {
+  const CommunityRecentsView({
+    required this.users,
+    this.isLoadingMore = false,
+    this.hasMore = true,
+    this.lastRefreshedAt,
+  });
+
+  final List<CommunityUser> users;
+  final bool isLoadingMore;
+  final bool hasMore;
+  final DateTime? lastRefreshedAt;
+
+  CommunityRecentsView copyWith({
+    List<CommunityUser>? users,
+    bool? isLoadingMore,
+    bool? hasMore,
+    DateTime? lastRefreshedAt,
+  }) {
+    return CommunityRecentsView(
+      users: users ?? this.users,
+      isLoadingMore: isLoadingMore ?? this.isLoadingMore,
+      hasMore: hasMore ?? this.hasMore,
+      lastRefreshedAt: lastRefreshedAt ?? this.lastRefreshedAt,
+    );
+  }
+}
+
+class CommunityRecentUsersNotifier extends AsyncNotifier<CommunityRecentsView> {
+  int _bucketOffset = -1;
   bool _hasMore = true;
   bool _loadMoreInFlight = false;
-  DateTime? _lastRefreshedAt;
 
   bool get hasMore => _hasMore;
-  DateTime? get lastRefreshedAt => _lastRefreshedAt;
+  DateTime? get lastRefreshedAt => state.value?.lastRefreshedAt;
 
   @override
-  Future<List<CommunityUser>> build() async {
+  Future<CommunityRecentsView> build() async {
     return _fetchFirstPage();
   }
 
-  Future<List<CommunityUser>> _fetchFirstPage() async {
-    _bucketOffset = 0;
-    _hasMore = true;
-    final repo = ref.read(communityRepositoryProvider);
-    final users = await repo.fetchRecentUsers(bucketOffset: _bucketOffset);
+  List<CommunityUser> _merge(
+    List<CommunityUser> current,
+    List<CommunityUser> next,
+  ) {
+    return dedupeCommunityUsersByLatest([...current, ...next]);
+  }
+
+  Future<List<CommunityUser>> _readNextBucket() async {
+    final next = _bucketOffset + 1;
+    if (next >= CommunityBucketUtils.maxBucketLookback) {
+      _hasMore = false;
+      return const [];
+    }
+    _bucketOffset = next;
     _hasMore = _bucketOffset < CommunityBucketUtils.maxBucketLookback - 1;
-    _lastRefreshedAt = DateTime.now();
-    return users;
+    final repo = ref.read(communityRepositoryProvider);
+    return repo.fetchRecentUsers(bucketOffset: _bucketOffset);
+  }
+
+  Future<CommunityRecentsView> _fetchFirstPage() async {
+    _bucketOffset = -1;
+    _hasMore = true;
+    var users = <CommunityUser>[];
+    while (users.isEmpty && _hasMore) {
+      final batch = await _readNextBucket();
+      users = _merge(users, batch);
+    }
+    return CommunityRecentsView(
+      users: users,
+      hasMore: _hasMore,
+      lastRefreshedAt: DateTime.now(),
+    );
   }
 
   Future<void> refresh() async {
@@ -47,34 +98,32 @@ class CommunityRecentUsersNotifier extends AsyncNotifier<List<CommunityUser>> {
 
   Future<void> loadMore() async {
     if (!_hasMore || state.isLoading || _loadMoreInFlight) return;
-    final nextOffset = _bucketOffset + 1;
-    if (nextOffset >= CommunityBucketUtils.maxBucketLookback) {
-      _hasMore = false;
-      state = AsyncData(state.value ?? const <CommunityUser>[]);
-      return;
-    }
+    final current =
+        state.value ?? const CommunityRecentsView(users: <CommunityUser>[]);
+    if (current.isLoadingMore) return;
 
     _loadMoreInFlight = true;
-    final current = state.value ?? const <CommunityUser>[];
-    state = AsyncData(current);
+    state = AsyncData(current.copyWith(isLoadingMore: true));
     try {
-      final repo = ref.read(communityRepositoryProvider);
-      final nextBatch = await repo.fetchRecentUsers(bucketOffset: nextOffset);
-      _bucketOffset = nextOffset;
-      _hasMore = _bucketOffset < CommunityBucketUtils.maxBucketLookback - 1;
-      final merged = <String, CommunityUser>{for (final u in current) u.email: u};
-      for (final u in nextBatch) {
-        final existing = merged[u.email];
-        if (existing == null || u.lastOnlineTime > existing.lastOnlineTime) {
-          merged[u.email] = u;
-        }
+      var users = current.users;
+      var foundNewPeople = false;
+      while (!foundNewPeople && _hasMore) {
+        final batch = await _readNextBucket();
+        if (batch.isEmpty) continue;
+        final seen = {for (final u in users) u.email};
+        final hasNew = batch.any((u) => !seen.contains(u.email));
+        users = _merge(users, batch);
+        if (hasNew) foundNewPeople = true;
       }
-      final list = merged.values.toList()
-        ..sort((a, b) => b.lastOnlineTime.compareTo(a.lastOnlineTime));
-      state = AsyncData(list);
+      state = AsyncData(
+        CommunityRecentsView(
+          users: users,
+          hasMore: _hasMore,
+          lastRefreshedAt: DateTime.now(),
+        ),
+      );
     } catch (_) {
-      // Keep current list and bucket cursor so the user can retry the same bucket.
-      state = AsyncData(current);
+      state = AsyncData(current.copyWith(isLoadingMore: false));
     } finally {
       _loadMoreInFlight = false;
     }

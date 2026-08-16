@@ -42,6 +42,16 @@ function rcValue(params, key) {
   return p.defaultValue.value;
 }
 
+/** Ungrouped keys plus parameter-group folders (Console "v2", etc.). */
+function flattenRcParams(template) {
+  const out = { ...(template.parameters || {}) };
+  const groups = template.parameterGroups || {};
+  for (const group of Object.values(groups)) {
+    Object.assign(out, (group && group.parameters) || {});
+  }
+  return out;
+}
+
 function clamp(n, lo, hi) {
   return Math.max(lo, Math.min(hi, n));
 }
@@ -50,7 +60,7 @@ async function readBotConfig() {
   let params = {};
   try {
     const template = await admin.remoteConfig().getTemplate();
-    params = template.parameters || {};
+    params = flattenRcParams(template);
   } catch (e) {
     console.warn("readBotConfig: remote config failed, using defaults", e);
   }

@@ -390,13 +390,10 @@ CommunityUser _fallbackPeerCommunityUser({
   required String peerDisplayName,
   String? peerPhotoUrl,
 }) {
-  final photo = peerPhotoUrl?.trim() ?? '';
   return CommunityUser(
     email: peerEmail.toLowerCase().trim(),
     name: peerDisplayName,
-    photoUrl: photo.isNotEmpty
-        ? photo
-        : AppConstants.defaultProfilePhotoUrl,
+    photoUrl: AppConstants.customProfilePhotoUrl(peerPhotoUrl),
     lastOnlineTime: 0,
     acceptingBattleInvites: true,
     isInBattleTill: null,

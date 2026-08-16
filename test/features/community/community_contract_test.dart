@@ -1,4 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:upsc_wars/core/constants/app_constants.dart';
 import 'package:upsc_wars/features/community/data/community_repository.dart';
 import 'package:upsc_wars/features/community/domain/community_bucket_utils.dart';
 import 'package:upsc_wars/features/community/domain/community_legacy_contract.dart';
@@ -25,10 +26,32 @@ void main() {
       expect(user.email, 'bar@example.com');
       expect(user.name, 'UPSC Warrior');
       expect(user.lastOnlineTime, 0);
+      expect(user.photoUrl, '');
+    });
+
+    test('treats missing and placeholder DPs as no photo', () {
+      expect(communityUserFromLegacyMap('a@x.com', {}).photoUrl, '');
+      expect(
+        communityUserFromLegacyMap('a@x.com', {
+          CommunityLegacyContract.photoUrl: AppConstants.defaultProfilePhotoUrl,
+        }).photoUrl,
+        '',
+      );
+      expect(
+        communityUserFromLegacyMap('a@x.com', {
+          CommunityLegacyContract.photoUrl: 'no_image',
+        }).photoUrl,
+        '',
+      );
     });
   });
 
   group('CommunityBucketUtils', () {
+    test('looks back 36 hours of 3-hour buckets', () {
+      expect(CommunityBucketUtils.lookbackHours, 36);
+      expect(CommunityBucketUtils.maxBucketLookback, 12);
+    });
+
     test('returns expected bucket for hour ranges', () {
       expect(_bucketAtHour(1), '0');
       expect(_bucketAtHour(4), '3');

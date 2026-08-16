@@ -1,6 +1,9 @@
 abstract final class CommunityBucketUtils {
   static const bucketWindowHours = 3;
-  static const maxBucketLookback = 8;
+
+  /// Recents walks 3-hour buckets this far back, then shows “That's all”.
+  static const lookbackHours = 36;
+  static const maxBucketLookback = lookbackHours ~/ bucketWindowHours;
 
   static String bucketForTimestamp(int timestampMillis) {
     final hour = DateTime.fromMillisecondsSinceEpoch(timestampMillis).hour;

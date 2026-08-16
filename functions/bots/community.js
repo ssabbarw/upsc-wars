@@ -2,7 +2,6 @@ const admin = require("firebase-admin");
 const { istParts, hashString, mulberry32, randInt } = require("./time");
 const { surfacedToday, getBot } = require("./roster");
 const { pickQuestions, pickSubject, plannedAnswer, skillForBot } = require("./questions");
-const { DEFAULT_PHOTO_URL } = require("./names");
 const { enqueueJob } = require("./battles");
 
 function db() {
@@ -49,7 +48,7 @@ async function processQotd(job) {
     correct_option: q.correct,
     author_email: bot.email,
     author_name: bot.name,
-    author_photo_url: DEFAULT_PHOTO_URL,
+    author_photo_url: null,
     created_at: admin.firestore.FieldValue.serverTimestamp(),
     correct_count: 0,
     wrong_count: 0,
@@ -121,7 +120,7 @@ async function processOpenChallenge(job) {
     profile: {
       email: bot.email,
       name: bot.name,
-      photoURL: DEFAULT_PHOTO_URL,
+      photoURL: null,
     },
     attempts,
     score,

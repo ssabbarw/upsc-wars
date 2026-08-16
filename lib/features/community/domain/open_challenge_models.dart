@@ -42,7 +42,7 @@ class OpenChallengeProfileSnapshot {
       return OpenChallengeProfileSnapshot(
         email: keyFallback,
         name: _displayNameFromEmailKey(keyFallback),
-        photoUrl: AppConstants.profileImageUrlOrDefault(null),
+        photoUrl: '',
         telegram: null,
         instagram: null,
         status: null,
@@ -62,7 +62,7 @@ class OpenChallengeProfileSnapshot {
     return OpenChallengeProfileSnapshot(
       email: email,
       name: name,
-      photoUrl: AppConstants.profileImageUrlOrDefault(photo),
+      photoUrl: AppConstants.customProfilePhotoUrl(photo),
       telegram: _nonEmptyString(m['telegram']),
       instagram: _nonEmptyString(m['insta']) ?? _nonEmptyString(m['instagram']),
       status: _nonEmptyString(m['my_status']) ?? _nonEmptyString(m['status']),

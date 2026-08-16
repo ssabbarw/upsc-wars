@@ -632,14 +632,15 @@ class _HumanLobbyBody extends StatelessWidget {
               ? 'Starting battle…'
               : 'Waiting for the host to start the battle.');
 
+    final opponentPhoto = AppConstants.customProfilePhotoUrl(opponentPhotoUrl);
     final opponentAvatar =
-        (opponentPhotoUrl != null && opponentPhotoUrl!.trim().isNotEmpty)
+        opponentPhoto.isNotEmpty
         ? CircleAvatar(
             radius: 22,
             backgroundColor: scheme.primaryContainer,
             child: ClipOval(
               child: CachedNetworkImage(
-                imageUrl: opponentPhotoUrl!.trim(),
+                imageUrl: opponentPhoto,
                 width: 44,
                 height: 44,
                 fit: BoxFit.cover,
@@ -919,9 +920,17 @@ class _HostAvatar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
-    final url = AppConstants.profileImageUrlOrDefault(photoUrl);
+    final url = AppConstants.customProfilePhotoUrl(photoUrl);
     final side = radius * 2;
     final cachePx = (side * MediaQuery.devicePixelRatioOf(context)).round();
+    if (url.isEmpty) {
+      return CircleAvatar(
+        radius: radius,
+        backgroundColor: monogramBackground,
+        foregroundColor: monogramForeground,
+        child: _fallbackLetter(letter: fallbackLetter),
+      );
+    }
     return CircleAvatar(
       radius: radius,
       backgroundColor: scheme.primaryContainer,

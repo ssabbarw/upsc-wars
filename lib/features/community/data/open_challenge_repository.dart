@@ -53,7 +53,7 @@ class OpenChallengeRepository {
       final postedName = creator?.profile.name ?? 'Warrior';
       final postedPhoto =
           creator?.profile.photoUrl ??
-          AppConstants.profileImageUrlOrDefault(null);
+          '';
       out.add(
         OpenChallengeListTileModel(
           id: detail.id,
@@ -303,7 +303,7 @@ OpenChallengeProfileSnapshot profileFromFirebaseUser({
   return OpenChallengeProfileSnapshot(
     email: emailLower,
     name: displayName.trim().isEmpty ? 'UPSC Warrior' : displayName.trim(),
-    photoUrl: AppConstants.profileImageUrlOrDefault(photoUrl),
+    photoUrl: AppConstants.customProfilePhotoUrl(photoUrl),
     telegram: telegram,
     instagram: instagram,
     status: status,
