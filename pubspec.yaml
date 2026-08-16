@@ -2,9 +2,9 @@ name: upsc_wars
 description: "A new Flutter project."
 publish_to: 'none'
 
-version: 2005.0.0+2
+version: 2005.0.1+2
 
-environm  ent:
+environment:
   sdk: ^3.11.3
 
 flutter_launcher_icons:
