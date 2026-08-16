@@ -1,6 +1,12 @@
 const admin = require("firebase-admin");
 const { istParts } = require("./time");
-const { listRoster, releaseBotBattle, ensureFriendlyNames } = require("./roster");
+const {
+  listRoster,
+  releaseBotBattle,
+  ensureFriendlyNames,
+  ensurePublicIdentities,
+  publishTrafficBotIndex,
+} = require("./roster");
 const { planToday } = require("./growth");
 const { tickPresence } = require("./presence");
 const {
@@ -105,8 +111,11 @@ async function runBotTick() {
   const growth = await planToday(cfg);
   let roster = await listRoster();
   const renamed = await ensureFriendlyNames(roster);
+  roster = await listRoster();
+  const identities = await ensurePublicIdentities(roster);
   await releaseStaleBattles(roster);
   roster = await listRoster();
+  await publishTrafficBotIndex(roster);
 
   const metaSnap = await db().collection("bot_state").doc("meta").get();
   const lastPresence = Number((metaSnap.data() || {}).lastPresenceAtMs) || 0;
@@ -145,6 +154,7 @@ async function runBotTick() {
     ok: true,
     growth,
     renamed,
+    identities,
     presence,
     planned,
     jobs: jobs.length,

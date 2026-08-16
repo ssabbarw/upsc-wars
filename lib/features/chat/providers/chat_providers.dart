@@ -86,7 +86,7 @@ final chatThreadsProvider = StreamProvider<List<ChatThread>>((ref) {
   return service.watchThreads(currentUserEmail: email);
 });
 
-String _peerEmailForThread(ChatThread thread, String? me) {
+String peerEmailForThread(ChatThread thread, String? me) {
   final mine = (me ?? '').trim().toLowerCase();
   for (final email in thread.participantEmails) {
     final n = email.trim().toLowerCase();
@@ -97,6 +97,37 @@ String _peerEmailForThread(ChatThread thread, String? me) {
       : thread.participantEmails.first.trim().toLowerCase();
 }
 
+/// Stored profile names for inbox rows. Never derived from the email local-part.
+final chatPeerDisplayNamesProvider = FutureProvider<Map<String, String>>((
+  ref,
+) async {
+  final threads = ref.watch(filteredChatThreadsProvider).value ?? const [];
+  final me = ref.watch(currentUserEmailProvider);
+  final emails = <String>{
+    for (final thread in threads)
+      peerEmailForThread(thread, me),
+  }..removeWhere((e) => e.isEmpty);
+  if (emails.isEmpty) return const {};
+
+  final names = <String, String>{};
+  final recents =
+      ref.watch(communityRecentUsersProvider).value?.users ?? const [];
+  for (final user in recents) {
+    final email = user.email.toLowerCase();
+    final name = user.name.trim();
+    if (emails.contains(email) && name.isNotEmpty) {
+      names[email] = name;
+    }
+  }
+  final missing = emails.where((e) => !names.containsKey(e)).toSet();
+  if (missing.isEmpty) return names;
+  final fetched = await ref
+      .read(communityRepositoryProvider)
+      .fetchDisplayNamesByEmails(missing);
+  names.addAll(fetched);
+  return names;
+});
+
 List<ChatThread> _threadsHidingBlocked(
   List<ChatThread> threads,
   String? me,
@@ -104,7 +135,7 @@ List<ChatThread> _threadsHidingBlocked(
 ) {
   if (me == null || me.isEmpty) return threads;
   return threads.where((t) {
-    final peer = _peerEmailForThread(t, me);
+    final peer = peerEmailForThread(t, me);
     if (peer.isEmpty) return true;
     return !blocked.contains(peer);
   }).toList();

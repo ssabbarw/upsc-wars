@@ -41,7 +41,7 @@ class OpenChallengeProfileSnapshot {
       if (keyFallback == null || keyFallback.isEmpty) return null;
       return OpenChallengeProfileSnapshot(
         email: keyFallback,
-        name: _displayNameFromEmailKey(keyFallback),
+        name: 'UPSC Warrior',
         photoUrl: '',
         telegram: null,
         instagram: null,
@@ -55,7 +55,7 @@ class OpenChallengeProfileSnapshot {
     final nameRaw = _nonEmptyString(m['name']);
     final name = (nameRaw != null && nameRaw.isNotEmpty)
         ? nameRaw
-        : _displayNameFromEmailKey(email);
+        : 'UPSC Warrior';
 
     final photo =
         _nonEmptyString(m['photoURL']) ?? _nonEmptyString(m['photoUrl']);
@@ -434,14 +434,6 @@ String? _nonEmptyString(Object? value) {
   return t.isEmpty ? null : t;
 }
 
-String _displayNameFromEmailKey(String emailLower) {
-  final at = emailLower.indexOf('@');
-  if (at > 0) {
-    final local = emailLower.substring(0, at).trim();
-    if (local.isNotEmpty) return local;
-  }
-  return 'UPSC Warrior';
-}
 
 int? _scoreFromFirestoreAttempt(Map<String, dynamic> map) {
   final s = map['score'];

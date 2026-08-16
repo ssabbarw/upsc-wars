@@ -908,7 +908,15 @@ const PHONE_MODELS = [
 
 const APP_VERSION = "3.1";
 
-const BOT_EMAIL_DOMAIN = "upscwars.bot";
+/** Legacy public emails. New bots never use this domain. */
+const LEGACY_BOT_EMAIL_DOMAIN = "upscwars.bot";
+
+const PUBLIC_EMAIL_DOMAINS = [
+  "gmail.com",
+  "yahoo.com",
+  "rediffmail.com",
+  "outlook.com",
+];
 
 function slugFirst(name) {
   return String(name || "warrior")
@@ -918,6 +926,20 @@ function slugFirst(name) {
     .slice(0, 12) || "warrior";
 }
 
+function slugLast(name) {
+  return String(name || "")
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z]/g, "")
+    .slice(0, 14);
+}
+
+function isLegacyBotEmail(email) {
+  return String(email || "")
+    .toLowerCase()
+    .endsWith(`@${LEGACY_BOT_EMAIL_DOMAIN}`);
+}
+
 module.exports = {
   FIRST_NAMES,
   LAST_INITIALS,
@@ -925,6 +947,9 @@ module.exports = {
   OPTIONALS,
   PHONE_MODELS,
   APP_VERSION,
-  BOT_EMAIL_DOMAIN,
+  LEGACY_BOT_EMAIL_DOMAIN,
+  PUBLIC_EMAIL_DOMAINS,
   slugFirst,
+  slugLast,
+  isLegacyBotEmail,
 };

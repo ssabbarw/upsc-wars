@@ -31,7 +31,7 @@ class ChatListScreen extends HookConsumerWidget {
               child: const Text('Retry'),
             ),
           ),
-          data: (threads) {
+            data: (threads) {
             if (threads.isEmpty) {
               return Center(
                 child: Text(
@@ -42,14 +42,16 @@ class ChatListScreen extends HookConsumerWidget {
                 ),
               );
             }
+            final peerNames =
+                ref.watch(chatPeerDisplayNamesProvider).value ?? const {};
             return ListView.separated(
               padding: const EdgeInsets.all(AppSpacing.md),
               itemCount: threads.length,
               separatorBuilder: (_, __) => const SizedBox(height: AppSpacing.sm),
               itemBuilder: (context, index) {
                 final thread = threads[index];
-                final peerEmail = _peerEmail(thread.participantEmails, me);
-                final peerName = _displayNameFromEmail(peerEmail);
+                final peerEmail = peerEmailForThread(thread, me);
+                final peerName = peerNames[peerEmail] ?? 'UPSC Warrior';
                 final subtitle = thread.lastMessageText ?? 'Start the conversation';
                 final unread = thread.unreadCount;
                 return Material(
@@ -152,28 +154,6 @@ class ChatListScreen extends HookConsumerWidget {
       ),
     );
   }
-}
-
-String _peerEmail(List<String> participants, String? me) {
-  final mine = (me ?? '').trim().toLowerCase();
-  for (final email in participants) {
-    final normalized = email.trim().toLowerCase();
-    if (normalized.isNotEmpty && normalized != mine) return normalized;
-  }
-  return participants.isEmpty ? '' : participants.first.trim().toLowerCase();
-}
-
-String _displayNameFromEmail(String email) {
-  final trimmed = email.trim();
-  if (trimmed.isEmpty) return 'Unknown user';
-  final localPart = trimmed.split('@').first.trim();
-  if (localPart.isEmpty) return trimmed;
-  final normalized = localPart.replaceAll(RegExp(r'[._-]+'), ' ');
-  return normalized
-      .split(RegExp(r'\s+'))
-      .where((part) => part.isNotEmpty)
-      .map((part) => '${part[0].toUpperCase()}${part.substring(1)}')
-      .join(' ');
 }
 
 String _formatTime(int millis) {

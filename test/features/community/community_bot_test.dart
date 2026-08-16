@@ -2,24 +2,35 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:upsc_wars/features/community/domain/community_bot.dart';
 
 void main() {
-  group('isTrafficBotEmail', () {
-    test('matches reserved bot domain', () {
-      expect(isTrafficBotEmail('priya.k11@upscwars.bot'), isTrue);
-      expect(isTrafficBotEmail('Priya.K11@UPSCWARS.BOT'), isTrue);
+  group('TrafficBotIndex', () {
+    test('matches listed emails case-insensitively', () {
+      const index = TrafficBotIndex(emails: {'priya.sharma24@gmail.com'});
+      expect(index.matches(email: 'Priya.Sharma24@Gmail.com'), isTrue);
+      expect(index.matches(email: 'priya@gmail.com'), isFalse);
+      expect(index.matches(email: ''), isFalse);
+      expect(index.matches(), isFalse);
     });
 
-    test('rejects real users', () {
-      expect(isTrafficBotEmail('priya@gmail.com'), isFalse);
-      expect(isTrafficBotEmail(''), isFalse);
-      expect(isTrafficBotEmail(null), isFalse);
+    test('matches listed uids', () {
+      const index = TrafficBotIndex(uids: {'abc123xyz'});
+      expect(index.matches(uid: 'abc123xyz'), isTrue);
+      expect(index.matches(uid: 'other'), isFalse);
+      expect(index.matches(uid: ''), isFalse);
     });
-  });
 
-  group('isTrafficBotUid', () {
-    test('matches roster ids', () {
-      expect(isTrafficBotUid('bot_priya_k11'), isTrue);
-      expect(isTrafficBotUid('abc123'), isFalse);
-      expect(isTrafficBotUid(null), isFalse);
+    test('parses Firestore payload and ignores empty values', () {
+      final index = TrafficBotIndex.fromMap({
+        'emails': ['Aarav.Kumar11@Gmail.com', '', null],
+        'uids': ['UidOne', '  '],
+      });
+      expect(index.matches(email: 'aarav.kumar11@gmail.com'), isTrue);
+      expect(index.matches(uid: 'UidOne'), isTrue);
+      expect(index.matches(uid: 'uidone'), isFalse);
+    });
+
+    test('empty map is a no-op', () {
+      expect(TrafficBotIndex.fromMap(null).matches(email: 'a@b.com'), isFalse);
+      expect(TrafficBotIndex.empty.matches(uid: 'x'), isFalse);
     });
   });
 }

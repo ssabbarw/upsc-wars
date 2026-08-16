@@ -573,7 +573,7 @@ exports.onChatMessageCreated = functions.database
     }
 
     const senderSnap = await admin.firestore().collection("users").doc(senderEmail).get();
-    const senderName = ((senderSnap.data() || {}).name || senderEmail).toString();
+    const senderName = ((senderSnap.data() || {}).name || "UPSC Warrior").toString();
     const body = text.length > MAX_BODY_LEN ? `${text.slice(0, MAX_BODY_LEN - 1)}…` : text;
 
     try {

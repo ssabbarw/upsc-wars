@@ -356,10 +356,22 @@ service cloud.firestore {
       allow read, write: if false;
     }
 
+    function isTrafficBotsDoc() {
+      return request.path.matches(
+        '/databases/' + database + '/documents/admin_dashboard/traffic_bots'
+      );
+    }
+
+    /// Super-user bot index — Cloud Functions only. Clients must not overwrite.
+    match /admin_dashboard/traffic_bots {
+      allow read: if isSuperUserEmail();
+      allow write: if false;
+    }
+
     /// In-app admin dashboard metrics — super users read; clients write aggregates.
     match /admin_dashboard/{path=**} {
       allow read: if isSuperUserEmail();
-      allow write: if signedIn();
+      allow write: if signedIn() && !isTrafficBotsDoc();
     }
 
     // Authenticated users: all other collections (tighten per collection before prod if needed).

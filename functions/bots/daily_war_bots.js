@@ -1,6 +1,6 @@
 const admin = require("firebase-admin");
 const { istParts, hashString, mulberry32, randInt } = require("./time");
-const { surfacedToday, getBot } = require("./roster");
+const { surfacedToday, getBot, warUidFor } = require("./roster");
 const { plannedAnswer, skillForBot } = require("./questions");
 const { enqueueJob } = require("./battles");
 
@@ -95,7 +95,7 @@ async function processDailyWarLobby(job) {
   const bot = await getBot(job.botId);
   if (!bot || bot.status !== "active") return { skipped: "retired" };
   const warRef = db().collection(WARS).doc(dateId);
-  const presenceRef = warRef.collection("lobby_presence").doc(bot.id);
+  const presenceRef = warRef.collection("lobby_presence").doc(warUidFor(bot));
   const firstJoin = await db().runTransaction(async (tx) => {
     const warSnap = await tx.get(warRef);
     if (!warSnap.exists) return null;
@@ -103,7 +103,6 @@ async function processDailyWarLobby(job) {
     if (presenceSnap.exists) return false;
     tx.set(presenceRef, {
       joined_at: admin.firestore.FieldValue.serverTimestamp(),
-      is_bot: true,
     });
     return true;
   });
@@ -130,7 +129,7 @@ async function processDailyWarSubmit(job) {
     startMs + Math.min(120, Math.max(1, Math.ceil((qCount * 80) / 60))) * 60 * 1000;
   if (now < startMs || now > liveEndMs) return { skipped: "outside_window" };
 
-  const subRef = warRef.collection("submissions").doc(bot.id);
+  const subRef = warRef.collection("submissions").doc(warUidFor(bot));
   const existing = await subRef.get();
   if (existing.exists) return { skipped: "already" };
 
@@ -158,7 +157,6 @@ async function processDailyWarSubmit(job) {
     streak_days: 0,
     tier_id: null,
     badges: [],
-    is_bot: true,
     submitted_at: admin.firestore.FieldValue.serverTimestamp(),
     submitted_at_ms: now,
   });

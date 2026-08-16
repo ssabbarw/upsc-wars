@@ -145,6 +145,39 @@ class CommunityRepository {
     return communityUserFromLegacyMap(normalized, data);
   }
 
+  /// Display names for chat list rows. Never derived from the email local-part.
+  Future<Map<String, String>> fetchDisplayNamesByEmails(
+    Iterable<String> emails,
+  ) async {
+    final names = <String, String>{};
+    final ids = emails
+        .map((e) => e.toLowerCase().trim())
+        .where((e) => e.isNotEmpty)
+        .toSet()
+        .toList();
+    if (ids.isEmpty) return names;
+    const chunkSize = 20;
+    for (var i = 0; i < ids.length; i += chunkSize) {
+      final chunk = ids.sublist(i, i + chunkSize > ids.length ? ids.length : i + chunkSize);
+      final snaps = await Future.wait(
+        chunk.map(
+          (id) => _firestore
+              .collection(CommunityLegacyContract.usersCollection)
+              .doc(id)
+              .get(),
+        ),
+      );
+      for (var j = 0; j < snaps.length; j++) {
+        final data = snaps[j].data();
+        if (data == null) continue;
+        final user = communityUserFromLegacyMap(chunk[j], data);
+        final name = user.name.trim();
+        if (name.isNotEmpty) names[chunk[j]] = name;
+      }
+    }
+    return names;
+  }
+
   Future<List<CommunityUser>> fetchChallengers() async {
     final minTs = DateTime.now()
         .subtract(const Duration(hours: 24))

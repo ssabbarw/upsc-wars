@@ -10,6 +10,8 @@ const {
   surfacedToday,
   isBotLiveToday,
   dayStats,
+  collectBotEmails,
+  listRoster,
 } = require("./roster");
 const { upsertPresence } = require("./presence");
 const {
@@ -21,18 +23,11 @@ const {
   optionToResponseInt,
   skillForBot,
 } = require("./questions");
-const { BOT_EMAIL_DOMAIN } = require("./names");
 
 const MAX_BODY_LEN = 180;
 
 function db() {
   return admin.firestore();
-}
-
-function isBotEmail(email) {
-  return String(email || "")
-    .toLowerCase()
-    .endsWith(`@${BOT_EMAIL_DOMAIN}`);
 }
 
 function acceptDelayMs(rng) {
@@ -196,9 +191,10 @@ async function pickOutgoingTarget(bot, dateId, cfg) {
     .doc(path.bucketId);
   const snap = await bucketRef.get();
   const data = snap.data() || {};
+  const botEmails = collectBotEmails(await listRoster());
   const emails = Object.keys(data)
     .map((e) => e.toLowerCase())
-    .filter((e) => e.includes("@") && !isBotEmail(e) && e !== bot.email);
+    .filter((e) => e.includes("@") && !botEmails.has(e) && e !== bot.email);
   const rng = mulberry32(hashString(`out:${dateId}:${bot.id}:${Date.now()}`));
   const shuffled = [...emails];
   for (let i = shuffled.length - 1; i > 0; i--) {
@@ -208,7 +204,6 @@ async function pickOutgoingTarget(bot, dateId, cfg) {
   for (const email of shuffled.slice(0, 12)) {
     const userSnap = await db().collection("users").doc(email).get();
     const user = userSnap.data() || {};
-    if (user.isBot === true) continue;
     if (user.acceptingBattleInvites === false) continue;
     if (!user.fcm_token && !user.fcmToken) continue;
     if (await relationBlocked(bot.email, email)) continue;
@@ -245,7 +240,6 @@ async function primeHumanMatch({
     guest_ready: false,
     num_of_players_joined: 1,
     fcm_token: null,
-    bot_host: true,
   });
   const joined = matchRef.collection("joined_users");
   const over = matchRef.collection("joined_users_game_over_statuses");
@@ -330,8 +324,10 @@ async function claimPlayLock(sessionId) {
     const snap = await tx.get(matchRef);
     if (!snap.exists) return false;
     const data = snap.data() || {};
-    if (data.bot_play_started === true) return false;
-    tx.update(matchRef, { bot_play_started: true });
+    if (data.auto_play_started === true || data.bot_play_started === true) {
+      return false;
+    }
+    tx.update(matchRef, { auto_play_started: true });
     return true;
   });
 }
@@ -368,12 +364,14 @@ async function playAsParticipant(sessionId, participantEmail, skill) {
 
 async function onBattleMatchWritten(sessionId, after) {
   if (!after || after.battle_mode !== "human") return null;
-  if (after.bot_play_started === true) return null;
+  if (after.auto_play_started === true || after.bot_play_started === true) {
+    return null;
+  }
 
   const hostEmail = String(after.host_email || "").toLowerCase();
   const guestEmail = String(after.guest_email || "").toLowerCase();
-  const hostBot = isBotEmail(hostEmail) ? await getBotByEmail(hostEmail) : null;
-  const guestBot = isBotEmail(guestEmail) ? await getBotByEmail(guestEmail) : null;
+  const hostBot = await getBotByEmail(hostEmail);
+  const guestBot = await getBotByEmail(guestEmail);
   if (!hostBot && !guestBot) return null;
 
   if (hostBot && after.guest_ready === true && after.lets_start_game !== true) {
@@ -445,7 +443,6 @@ async function maybeQueueOutgoingInvites(cfg, roster, dailyRef) {
 }
 
 module.exports = {
-  isBotEmail,
   handleIncomingInvite,
   processIncomingAccept,
   processOutgoingInvite,

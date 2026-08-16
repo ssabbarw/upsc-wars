@@ -1,11 +1,26 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../core/admin_dashboard/admin_dashboard_service.dart';
 import '../../../core/providers/prefs_provider.dart';
+import '../../../core/providers/super_user_provider.dart';
 import '../../home/providers/auth_providers.dart';
 import '../data/community_repository.dart';
+import '../domain/community_bot.dart';
 import '../domain/community_bucket_utils.dart';
 import '../domain/entities/community_user.dart';
+
+/// Super users only. Regular clients get an empty index (rules deny the doc).
+final trafficBotIndexProvider = StreamProvider<TrafficBotIndex>((ref) {
+  if (!ref.watch(isSuperUserProvider)) {
+    return Stream.value(TrafficBotIndex.empty);
+  }
+  return FirebaseFirestore.instance
+      .collection(AdminDashboardWriterService.collectionName)
+      .doc('traffic_bots')
+      .snapshots()
+      .map((snap) => TrafficBotIndex.fromMap(snap.data()));
+});
 
 final communityRepositoryProvider = Provider<CommunityRepository>((ref) {
   return CommunityRepository(FirebaseFirestore.instance);

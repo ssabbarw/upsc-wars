@@ -6,6 +6,7 @@ import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../domain/community_bot.dart';
+import '../providers/community_providers.dart';
 
 /// "Bot" chip for super-users only. Invisible to everyone else.
 class AdminBotLabel extends ConsumerWidget {
@@ -19,7 +20,9 @@ class AdminBotLabel extends ConsumerWidget {
     if (!ref.watch(isSuperUserProvider)) {
       return const SizedBox.shrink();
     }
-    if (!isTrafficBot(email: email, uid: uid)) {
+    final index =
+        ref.watch(trafficBotIndexProvider).asData?.value ?? TrafficBotIndex.empty;
+    if (!index.matches(email: email, uid: uid)) {
       return const SizedBox.shrink();
     }
     final scheme = Theme.of(context).colorScheme;

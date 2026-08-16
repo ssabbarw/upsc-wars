@@ -1,4 +1,5 @@
 const admin = require("firebase-admin");
+const crypto = require("crypto");
 const {
   FIRST_NAMES,
   LAST_INITIALS,
@@ -6,8 +7,10 @@ const {
   OPTIONALS,
   PHONE_MODELS,
   APP_VERSION,
-  BOT_EMAIL_DOMAIN,
+  PUBLIC_EMAIL_DOMAINS,
   slugFirst,
+  slugLast,
+  isLegacyBotEmail,
 } = require("./names");
 const { hashString, mulberry32, randInt, presenceBucketPath } = require("./time");
 
@@ -64,8 +67,43 @@ function usedNames(roster) {
   return new Set(roster.map((b) => `${b.firstName}|${b.lastInitial}`));
 }
 
+function emailsOf(bot) {
+  const set = new Set();
+  const current = String(bot.email || "").toLowerCase();
+  if (current) set.add(current);
+  const prev = Array.isArray(bot.previousEmails) ? bot.previousEmails : [];
+  for (const e of prev) {
+    const n = String(e || "").toLowerCase();
+    if (n) set.add(n);
+  }
+  return set;
+}
+
+function collectBotEmails(roster) {
+  const set = new Set();
+  for (const b of roster) {
+    for (const e of emailsOf(b)) set.add(e);
+  }
+  return set;
+}
+
+function allocatePublicUid() {
+  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  const bytes = crypto.randomBytes(28);
+  let out = "";
+  for (let i = 0; i < 28; i++) out += chars[bytes[i] % chars.length];
+  return out;
+}
+
+function buildPublicEmail(firstName, lastName, lastInitial, n, rng) {
+  const first = slugFirst(firstName);
+  const last = slugLast(lastName) || String(lastInitial || "k").toLowerCase();
+  const domain = PUBLIC_EMAIL_DOMAINS[Math.floor(rng() * PUBLIC_EMAIL_DOMAINS.length)];
+  return `${first}.${last}${n}@${domain}`;
+}
+
 function usedEmails(roster) {
-  return new Set(roster.map((b) => String(b.email || "").toLowerCase()));
+  return collectBotEmails(roster);
 }
 
 function buildBotIdentity(roster, seed) {
@@ -73,22 +111,28 @@ function buildBotIdentity(roster, seed) {
   const taken = usedNames(roster);
   const emails = usedEmails(roster);
   const takenDisplay = usedDisplayNames(roster);
+  const takenUids = new Set(
+    roster.map((b) => String(b.publicUid || "")).filter(Boolean),
+  );
   for (let i = 0; i < 400; i++) {
     const firstName = FIRST_NAMES[Math.floor(rng() * FIRST_NAMES.length)];
     const lastInitial = LAST_INITIALS[Math.floor(rng() * LAST_INITIALS.length)];
     const key = `${firstName}|${lastInitial}`;
     if (taken.has(key)) continue;
     const n = randInt(rng, 11, 98);
-    const email = `${slugFirst(firstName)}.${lastInitial.toLowerCase()}${n}@${BOT_EMAIL_DOMAIN}`;
-    if (emails.has(email)) continue;
     const picked = pickDisplayName(firstName, rng, takenDisplay);
     if (takenDisplay.has(picked.name.toLowerCase())) continue;
+    const email = buildPublicEmail(firstName, picked.lastName, lastInitial, n, rng);
+    if (emails.has(email)) continue;
     const optional = OPTIONALS[Math.floor(rng() * OPTIONALS.length)];
     const phoneModel = PHONE_MODELS[Math.floor(rng() * PHONE_MODELS.length)];
     const skill = 0.38 + rng() * 0.28;
     const id = `bot_${slugFirst(firstName)}_${lastInitial.toLowerCase()}${n}`;
+    let publicUid = allocatePublicUid();
+    while (takenUids.has(publicUid)) publicUid = allocatePublicUid();
     return {
       id,
+      publicUid,
       email,
       firstName,
       lastInitial,
@@ -167,7 +211,6 @@ function usersDoc(bot, extra = {}) {
     photoURL: null,
     acceptingBattleInvites: bot.acceptingBattleInvites !== false,
     lastOnlineTime: extra.lastOnlineTime || 0,
-    isBot: true,
     appVersion: bot.appVersion || APP_VERSION,
     phoneModel: bot.phoneModel || null,
   };
@@ -336,7 +379,140 @@ async function getBotByEmail(email) {
   const want = String(email || "").toLowerCase();
   if (!want) return null;
   const roster = await listRoster();
-  return roster.find((b) => String(b.email || "").toLowerCase() === want) || null;
+  return roster.find((b) => emailsOf(b).has(want)) || null;
+}
+
+function warUidFor(bot) {
+  return String(bot.publicUid || "").trim() || bot.id;
+}
+
+async function rewriteEmailInRecentBuckets(oldEmail, newEmail, bot) {
+  if (!oldEmail || !newEmail || oldEmail === newEmail) return;
+  const seen = new Set();
+  for (let i = 0; i < 12; i++) {
+    const path = presenceBucketPath(new Date(Date.now() - i * 3 * 60 * 60 * 1000));
+    const key = `${path.yearMonth}/${path.day}/${path.bucketId}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    const ref = db()
+      .collection("buckets")
+      .doc(path.yearMonth)
+      .collection(path.day)
+      .doc(path.bucketId);
+    const snap = await ref.get();
+    if (!snap.exists) continue;
+    const entry = (snap.data() || {})[oldEmail];
+    if (!entry) continue;
+    const next = {
+      ...(typeof entry === "object" && entry ? entry : {}),
+      email: newEmail,
+      name: bot.name,
+    };
+    await ref.set(
+      {
+        [newEmail]: next,
+        [oldEmail]: admin.firestore.FieldValue.delete(),
+      },
+      { merge: true },
+    );
+  }
+}
+
+async function ensurePublicIdentities(roster) {
+  const takenEmails = collectBotEmails(roster);
+  const takenUids = new Set(
+    roster.map((b) => String(b.publicUid || "")).filter(Boolean),
+  );
+  let updated = 0;
+  for (const b of roster) {
+    const currentEmail = String(b.email || "").toLowerCase();
+    const needsEmail = !currentEmail || isLegacyBotEmail(currentEmail);
+    const needsUid = !String(b.publicUid || "").trim();
+    if (!needsEmail && !needsUid) {
+      if (currentEmail) {
+        const userRef = db().collection("users").doc(currentEmail);
+        const userSnap = await userRef.get();
+        if (userSnap.exists && userSnap.data().isBot === true) {
+          await userRef.set(
+            { isBot: admin.firestore.FieldValue.delete() },
+            { merge: true },
+          );
+        }
+      }
+      continue;
+    }
+
+    const patch = {};
+    if (needsUid) {
+      let publicUid = allocatePublicUid();
+      while (takenUids.has(publicUid)) publicUid = allocatePublicUid();
+      b.publicUid = publicUid;
+      takenUids.add(publicUid);
+      patch.publicUid = publicUid;
+    }
+    if (needsEmail) {
+      const rng = mulberry32(hashString(`publicemail:${b.id}`));
+      let next = null;
+      for (let i = 0; i < 80; i++) {
+        const n = randInt(rng, 11, 98);
+        const candidate = buildPublicEmail(
+          b.firstName || b.name,
+          b.lastName,
+          b.lastInitial,
+          n + i,
+          rng,
+        );
+        if (takenEmails.has(candidate)) continue;
+        const existing = await db().collection("users").doc(candidate).get();
+        if (existing.exists) continue;
+        next = candidate;
+        break;
+      }
+      if (!next) {
+        next = `${slugFirst(b.firstName || "warrior")}.${allocatePublicUid().slice(0, 8).toLowerCase()}@${PUBLIC_EMAIL_DOMAINS[0]}`;
+      }
+      const previous = [...emailsOf(b)];
+      if (currentEmail && currentEmail !== next) {
+        b.previousEmails = [...new Set([...(b.previousEmails || []), currentEmail])];
+        patch.previousEmails = b.previousEmails;
+      }
+      b.email = next;
+      takenEmails.add(next);
+      patch.email = next;
+      await writeUserDoc(b);
+      for (const oldEmail of previous) {
+        if (oldEmail === next) continue;
+        try {
+          await db().collection("users").doc(oldEmail).delete();
+        } catch (_) {
+          // Alias doc may already be gone.
+        }
+        await rewriteEmailInRecentBuckets(oldEmail, next, b);
+      }
+    } else {
+      await writeUserDoc(b);
+    }
+    await rosterCol().doc(b.id).set(patch, { merge: true });
+    updated += 1;
+  }
+  return updated;
+}
+
+async function publishTrafficBotIndex(roster) {
+  const emails = [...collectBotEmails(roster)];
+  const uids = [];
+  for (const b of roster) {
+    if (b.publicUid) uids.push(String(b.publicUid));
+    if (b.id) uids.push(String(b.id));
+  }
+  await db()
+    .collection("admin_dashboard")
+    .doc("traffic_bots")
+    .set({
+      emails,
+      uids: [...new Set(uids)],
+      updatedAtMs: Date.now(),
+    });
 }
 
 async function getBot(botId) {
@@ -367,6 +543,8 @@ module.exports = {
   createBot,
   restBot,
   ensureFriendlyNames,
+  ensurePublicIdentities,
+  publishTrafficBotIndex,
   writeUserDoc,
   usersDoc,
   dayStats,
@@ -375,5 +553,8 @@ module.exports = {
   releaseBotBattle,
   getBotByEmail,
   getBot,
+  emailsOf,
+  collectBotEmails,
+  warUidFor,
   rosterCol,
 };

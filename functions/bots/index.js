@@ -1,11 +1,11 @@
 const { onSchedule } = require("firebase-functions/v2/scheduler");
 const { onCall, HttpsError } = require("firebase-functions/v2/https");
 const { onDocumentWritten } = require("firebase-functions/v2/firestore");
-const admin = require("firebase-admin");
 const { readBotConfig } = require("./config");
 const { planToday } = require("./growth");
 const { runBotTick } = require("./jobs");
-const { handleIncomingInvite, onBattleMatchWritten, isBotEmail } = require("./battles");
+const { handleIncomingInvite, onBattleMatchWritten } = require("./battles");
+const { getBotByEmail } = require("./roster");
 
 const REGION = "asia-south1";
 
@@ -34,17 +34,14 @@ function assertAdmin(request) {
 
 async function handleIncomingInviteIfBot({ sessionId, hostEmail, guestEmail }) {
   const email = String(guestEmail || "").toLowerCase();
-  if (!isBotEmail(email)) {
-    const userSnap = await admin.firestore().collection("users").doc(email).get();
-    if ((userSnap.data() || {}).isBot !== true) return null;
-  }
+  const bot = await getBotByEmail(email);
+  if (!bot) return null;
   const cfg = await readBotConfig();
   if (!cfg.enabled) return { ok: true, reason: "bots_disabled" };
   return handleIncomingInvite({ sessionId, hostEmail, guestEmail: email, cfg });
 }
 
 exports.handleIncomingInviteIfBot = handleIncomingInviteIfBot;
-exports.isBotEmail = isBotEmail;
 
 exports.tickBots = onSchedule(
   {
