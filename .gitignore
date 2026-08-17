@@ -51,5 +51,6 @@ android/key.properties
 
 # Daily CA pipeline secrets (nested folder; never commit)
 daily-current-mcqs/.env
+daily-current-mcqs/.env.local
 daily-current-mcqs/firebase_credentials.json
 daily-current-mcqs/venv/

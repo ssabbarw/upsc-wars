@@ -5,9 +5,13 @@ Single document per day — one read per user in the app.
 
 Structure:
     daily_mcqs/{YYYY}/{MM}/{DD}
+
+Local runs use firebase_credentials.json. Cloud Functions use ADC.
 """
 
 import logging
+import os
+
 import firebase_admin
 
 from datetime import date
@@ -27,8 +31,14 @@ def get_db():
     """Initialise Firebase once and return Firestore client."""
     global _db
     if _db is None:
-        cred = credentials.Certificate(FIREBASE_CREDS_PATH)
-        firebase_admin.initialize_app(cred, {"projectId": FIREBASE_PROJECT_ID})
+        if not firebase_admin._apps:
+            creds_path = FIREBASE_CREDS_PATH
+            options = {"projectId": FIREBASE_PROJECT_ID} if FIREBASE_PROJECT_ID else None
+            if creds_path and os.path.isfile(creds_path):
+                cred = credentials.Certificate(creds_path)
+                firebase_admin.initialize_app(cred, options)
+            else:
+                firebase_admin.initialize_app(options=options)
         _db = firestore.client()
         log.info("Firestore initialised")
     return _db

@@ -1,5 +1,7 @@
 venv/
+venv-py39-local/
 .env
+.env.local
 firebase_credentials.json
 logs/
 preview/latest.json

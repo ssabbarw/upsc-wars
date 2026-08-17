@@ -31,6 +31,27 @@
         "*.local"
       ],
       "predeploy": []
+    },
+    {
+      "source": "daily-current-mcqs",
+      "codebase": "ca-generate",
+      "runtime": "python312",
+      "ignore": [
+        "venv",
+        "venv/**",
+        "venv-py39-local",
+        "venv-py39-local/**",
+        ".env",
+        ".env.*",
+        "*.local",
+        "firebase_credentials.json",
+        "logs",
+        "preview/*.json",
+        "__pycache__",
+        ".git",
+        "*.pyc",
+        ".DS_Store"
+      ]
     }
   ]
 }

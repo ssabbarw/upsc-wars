@@ -13,7 +13,7 @@ Steps:
 
 Saturday is skipped. Hindi runs later when the admin publishes 5–10 items.
 
-Cron (GitHub Actions): 8pm IST Mon–Fri and Sunday (14:30 UTC).
+Cron: Cloud Function `generateDailyCa` at 8:00 PM IST daily (pipeline no-ops on Saturday).
 
 Run:
     python pipeline.py

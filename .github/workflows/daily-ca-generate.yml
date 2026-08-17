@@ -11,10 +11,8 @@ on:
         description: 'Override question count (empty = 15 weekday / 20 Sunday)'
         required: false
         default: ''
-  schedule:
-    # 8:00 PM IST = 14:30 UTC. Saturday omitted.
-    - cron: '30 14 * * 1-5'
-    - cron: '30 14 * * 0'
+  # Nightly generate is Cloud Function generateDailyCa (8:00 PM IST).
+  # Keep this workflow only as a manual backup.
 
 jobs:
   generate:
@@ -49,8 +47,8 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           MCQ_MODEL: claude-sonnet-4-6
-          FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
-          FIREBASE_CREDENTIALS_PATH: ./firebase_credentials.json
+          CA_FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
+          CA_FIREBASE_CREDENTIALS_PATH: ./firebase_credentials.json
           GMAIL_SENDER: ${{ secrets.GMAIL_SENDER }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           GMAIL_RECIPIENT: ${{ secrets.GMAIL_RECIPIENT }}

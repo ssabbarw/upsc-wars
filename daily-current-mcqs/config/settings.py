@@ -8,6 +8,7 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
+load_dotenv(".env.local", override=True)
 
 # ── Anthropic ──────────────────────────────────────────────────────────────────
 ANTHROPIC_API_KEY   = os.getenv("ANTHROPIC_API_KEY")
@@ -22,8 +23,17 @@ MCQ_MAX_TOKENS      = int(os.getenv("MCQ_MAX_TOKENS", 32000))
 TRANSLATE_MAX_TOKENS = int(os.getenv("TRANSLATE_MAX_TOKENS", 16000))
 
 # ── Firebase ───────────────────────────────────────────────────────────────────
-FIREBASE_CREDS_PATH = os.getenv("FIREBASE_CREDENTIALS_PATH", "./firebase_credentials.json")
-FIREBASE_PROJECT_ID = os.getenv("FIREBASE_PROJECT_ID")
+# Do not use FIREBASE_* env names — Cloud Functions reserves that prefix.
+FIREBASE_CREDS_PATH = (
+    os.getenv("CA_FIREBASE_CREDENTIALS_PATH")
+    or os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
+    or "./firebase_credentials.json"
+)
+FIREBASE_PROJECT_ID = (
+    os.getenv("CA_FIREBASE_PROJECT_ID")
+    or os.getenv("GOOGLE_CLOUD_PROJECT")
+    or os.getenv("GCLOUD_PROJECT")
+)
 
 # ── Email ──────────────────────────────────────────────────────────────────────
 GMAIL_SENDER        = os.getenv("GMAIL_SENDER")

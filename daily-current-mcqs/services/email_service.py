@@ -31,6 +31,9 @@ def _format_timestamp(dt: datetime) -> str:
 
 def send_email(subject: str, body: str):
     """Send email via Gmail SMTP App Password."""
+    if not GMAIL_SENDER or not GMAIL_APP_PASSWORD or not GMAIL_RECIPIENT:
+        log.warning("Gmail not configured — skip summary email")
+        return
     try:
         msg            = MIMEMultipart()
         msg["From"]    = GMAIL_SENDER
