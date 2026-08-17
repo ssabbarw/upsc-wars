@@ -3,7 +3,7 @@ pipeline.py
 Entry point. Orchestrates the full daily MCQ pipeline.
 
 Steps:
-    1. Build and validate source URLs (Sunday = Sat + Sun pages)
+    1. Build and validate source URLs
     2. Harvest distinct news topics (one search call)
     3. Generate 1 English MCQ per topic, 2–3 topics per call
     4. Transform → draft schema (GS subject + CA tags)
@@ -11,9 +11,9 @@ Steps:
     6. Write daily_ca_drafts/{YYYY-MM-DD} (no Hindi)
     7. Email + FCM the admin
 
-Saturday is skipped. Hindi runs later when the admin publishes 5–10 items.
+Sunday is skipped. Hindi runs later when the admin publishes 5–10 items.
 
-Cron: Cloud Function `generateDailyCa` at 8:00 PM IST daily (pipeline no-ops on Saturday).
+Cron: Cloud Function `generateDailyCa` at 8:00 PM IST daily (pipeline no-ops on Sunday).
 
 Run:
     python pipeline.py
@@ -34,7 +34,6 @@ from pathlib import Path
 from datetime import date, datetime, timedelta
 from config.settings import (
     QUESTIONS_TARGET,
-    WEEKEND_QUESTIONS_TARGET,
     QUESTIONS_MIN,
     QUESTIONS_MAX,
     MIN_QUESTIONS_TO_WRITE,
@@ -98,16 +97,14 @@ def run(today: date = None, questions_target: int = None, local: bool = False):
     if today is None:
         today = date.today()
 
-    # Saturday: no generation. Sunday: Sat+Sun news, 20 questions.
-    if today.weekday() == 5:
-        log.info(f"Saturday {today.isoformat()} — skip generation")
+    # Sunday: no generation. Saturday is a normal weekday pack.
+    if today.weekday() == 6:
+        log.info(f"Sunday {today.isoformat()} — skip generation")
         return
 
-    is_weekend_pack = today.weekday() == 6
+    is_weekend_pack = False
     if questions_target is None:
-        questions_target = (
-            WEEKEND_QUESTIONS_TARGET if is_weekend_pack else QUESTIONS_TARGET
-        )
+        questions_target = QUESTIONS_TARGET
 
     date_str  = today.strftime("%Y-%m-%d")
     start     = datetime.now()

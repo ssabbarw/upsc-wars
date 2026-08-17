@@ -167,10 +167,11 @@ class TodayHubSection extends HookConsumerWidget {
                 ),
             completed: data.paperCompleted,
             questionCount: DailyDrillConstants.questionCount,
-            loading: launchingPaper.value,
+            loading: launchingPaper.value || data.paperChecking,
+            questionsReady: data.paperLive,
             emphasized: isHero && !pick.caughtUp,
             layout: layout,
-            onStart: openPaper,
+            onStart: data.paperLive ? openPaper : null,
           );
         case TodaySlotId.practice:
           if (sundayHub) {

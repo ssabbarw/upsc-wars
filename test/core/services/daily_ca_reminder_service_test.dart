@@ -22,22 +22,22 @@ void main() {
       );
     });
 
-    test('Sunday evening books Monday morning for the weekend pack', () {
-      // Sunday 16 Aug 2026, 9 PM → Monday 7 AM (Sunday's Sat+Sun paper).
+    test('Sunday evening skips Monday morning and books Tuesday', () {
+      // Sunday 16 Aug 2026, 9 PM → Tuesday 7 AM (no Sunday paper).
       expect(
         DailyCaReminderService.nextReminderLocalTime(
           reference: DateTime(2026, 8, 16, 21),
         ),
-        DateTime(2026, 8, 17, 7),
+        DateTime(2026, 8, 18, 7),
       );
     });
 
-    test('Saturday evening skips Sunday morning and books Monday', () {
+    test('Saturday evening books Sunday morning for Saturday\'s paper', () {
       expect(
         DailyCaReminderService.nextReminderLocalTime(
           reference: DateTime(2026, 8, 15, 20),
         ),
-        DateTime(2026, 8, 17, 7),
+        DateTime(2026, 8, 16, 7),
       );
     });
   });

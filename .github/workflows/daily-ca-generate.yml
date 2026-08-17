@@ -8,7 +8,7 @@ on:
         required: false
         default: ''
       questions:
-        description: 'Override question count (empty = 15 weekday / 20 Sunday)'
+        description: 'Override question count (empty = 15)'
         required: false
         default: ''
   # Nightly generate is Cloud Function generateDailyCa (8:00 PM IST).

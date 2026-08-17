@@ -15,7 +15,7 @@ String dailyCaReviewDateForNow({
   var target = nowMins >= generateMins
       ? day
       : day.subtract(const Duration(days: 1));
-  if (DailyCaSchedule.isSaturday(target)) {
+  if (DailyCaSchedule.isSunday(target)) {
     target = target.subtract(const Duration(days: 1));
   }
   return DailyCaSchedule.formatIsoDate(target);

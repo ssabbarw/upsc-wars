@@ -77,8 +77,8 @@ def main():
     else:
         target = date.today()
 
-    if target.weekday() == 5:
-        print("Saturday has no CA pack. Pass --date for Friday or Sunday.")
+    if target.weekday() == 6:
+        print("Sunday has no CA pack. Pass --date for a Monday–Saturday.")
         sys.exit(1)
 
     if not args.serve_only:

@@ -8,6 +8,7 @@ import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../domain/daily_ca_schedule.dart';
+import 'daily_ca_unavailable_sheet.dart';
 
 /// The paper quiz to attempt now, with a local 1s timer so the rest of the
 /// screen stays stable while the countdown ticks.
@@ -19,6 +20,7 @@ class DailyCaTodaySection extends StatefulWidget {
     required this.paperCompleted,
     required this.launching,
     required this.onStartPaper,
+    this.questionsReady = true,
   });
 
   final DateTime minDate;
@@ -27,6 +29,9 @@ class DailyCaTodaySection extends StatefulWidget {
   final DateTime? paperDate;
   final bool paperCompleted;
   final bool launching;
+
+  /// False when the scheduled paper has no live questions yet.
+  final bool questionsReady;
   final VoidCallback? onStartPaper;
 
   @override
@@ -72,6 +77,8 @@ class _DailyCaTodaySectionState extends State<DailyCaTodaySection> {
     if (!allowed) {
       headline = 'Daily tests start from '
           '${DateFormat('d MMM yyyy').format(widget.minDate)}.';
+    } else if (!widget.questionsReady) {
+      headline = 'Questions aren\'t up yet. Tomorrow\'s paper opens at 6 AM.';
     } else if (isTodaysPaper) {
       headline = "10 MCQs from today's newspaper";
     } else {
@@ -107,9 +114,21 @@ class _DailyCaTodaySectionState extends State<DailyCaTodaySection> {
           ),
           const SizedBox(height: AppSpacing.md),
           FilledButton.icon(
-            onPressed: (!allowed || widget.launching)
+            onPressed: widget.launching
                 ? null
-                : widget.onStartPaper,
+                : !allowed
+                ? null
+                : widget.questionsReady
+                ? widget.onStartPaper
+                : () {
+                    showDailyCaUnavailableSheet(
+                      context: context,
+                      availableFrom: DailyCaSchedule.nextOpensAt(
+                        referenceIst: _ist,
+                      ),
+                      onSeeHistory: () {},
+                    );
+                  },
             icon: widget.launching
                 ? SizedBox(
                     width: 18,
@@ -127,6 +146,8 @@ class _DailyCaTodaySectionState extends State<DailyCaTodaySection> {
             label: Text(
               !allowed
                   ? 'Not started yet'
+                  : !widget.questionsReady
+                  ? 'Coming soon'
                   : widget.paperCompleted
                   ? 'Revise this paper'
                   : 'Start the quiz',

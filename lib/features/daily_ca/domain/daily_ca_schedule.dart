@@ -4,9 +4,8 @@
 /// read on the 17th carries the 16th's news, so the 16th's paper is what an
 /// aspirant can be quizzed on over their morning tea on the 17th.
 ///
-/// Content days are Sun–Fri ([isTestDay]). **Saturday has no paper.**
-/// Sunday's pack is Sat+Sun news, generated Sunday evening, and opens
-/// Monday morning — see [paperQuizContentDate].
+/// Content days are Mon–Sat ([isTestDay]). **Sunday has no paper.**
+/// Saturday's paper opens Sunday morning — see [paperQuizContentDate].
 abstract final class DailyCaSchedule {
   DailyCaSchedule._();
 
@@ -38,9 +37,23 @@ abstract final class DailyCaSchedule {
     );
   }
 
+  /// Current IST wall clock as a timezone-agnostic [DateTime].
+  ///
+  /// Do not return a UTC-tagged value: [nextOpensAt] is a local civil time,
+  /// and mixing the two shortens countdowns by the IST offset (~5h).
   static DateTime nowIst([DateTime? utcNow]) {
     final utc = (utcNow ?? DateTime.now()).toUtc();
-    return utc.add(istOffset);
+    final shifted = utc.add(istOffset);
+    return DateTime(
+      shifted.year,
+      shifted.month,
+      shifted.day,
+      shifted.hour,
+      shifted.minute,
+      shifted.second,
+      shifted.millisecond,
+      shifted.microsecond,
+    );
   }
 
   static DateTime dateOnly(DateTime ist) =>
@@ -51,8 +64,8 @@ abstract final class DailyCaSchedule {
   static bool isSaturday(DateTime istDate) =>
       istDate.weekday == DateTime.saturday;
 
-  /// Saturday has no newspaper pack. Sunday holds the weekend (Sat+Sun) pack.
-  static bool isTestDay(DateTime istDate) => !isSaturday(istDate);
+  /// Sunday has no newspaper pack. Saturday is a normal test day.
+  static bool isTestDay(DateTime istDate) => !isSunday(istDate);
 
   static String formatIsoDate(DateTime istDate) {
     final y = istDate.year.toString().padLeft(4, '0');
@@ -85,7 +98,7 @@ abstract final class DailyCaSchedule {
 
   /// Newest content day whose quiz is open — the "paper" to serve right now.
   ///
-  /// Skips Saturdays, so Monday morning serves Sunday's weekend pack rather
+  /// Skips Sundays, so Monday morning still serves Saturday's paper rather
   /// than showing nothing. Returns null only when no content day has opened yet.
   static DateTime? paperQuizContentDate({DateTime? referenceIst}) {
     final now = referenceIst ?? nowIst();
@@ -105,7 +118,7 @@ abstract final class DailyCaSchedule {
     return dateOnly(now).difference(dateOnly(contentDate)).inDays == 1;
   }
 
-  /// Next moment a fresh paper quiz opens (skips the Sunday-morning gap).
+  /// Next moment a fresh paper quiz opens (skips the Monday-morning gap).
   static DateTime nextOpensAt({DateTime? referenceIst}) {
     final now = referenceIst ?? nowIst();
     var day = dateOnly(now);

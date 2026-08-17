@@ -113,6 +113,7 @@ class TodayLoopCard extends StatelessWidget {
                   TodayLoopLayout.tile => _TileBody(
                       eyebrow: eyebrow,
                       title: title,
+                      subtitle: subtitle,
                       cta: cta,
                       icon: icon,
                       accent: accent,
@@ -323,6 +324,7 @@ class _TileBody extends StatelessWidget {
   const _TileBody({
     required this.eyebrow,
     required this.title,
+    required this.subtitle,
     required this.cta,
     required this.icon,
     required this.accent,
@@ -334,6 +336,7 @@ class _TileBody extends StatelessWidget {
 
   final String eyebrow;
   final String title;
+  final String subtitle;
   final String cta;
   final IconData icon;
   final Color accent;
@@ -371,14 +374,24 @@ class _TileBody extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 4),
+          Text(
+            title,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: AppTextStyles.bodyMd().copyWith(
+              fontWeight: FontWeight.w700,
+              color: fg,
+              height: 1.3,
+            ),
+          ),
+          const SizedBox(height: 2),
           Expanded(
             child: Text(
-              title,
+              subtitle,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
-              style: AppTextStyles.bodyMd().copyWith(
-                fontWeight: FontWeight.w700,
-                color: fg,
+              style: AppTextStyles.caption().copyWith(
+                color: muted,
                 height: 1.3,
               ),
             ),

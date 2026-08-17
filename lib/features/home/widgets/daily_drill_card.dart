@@ -95,11 +95,16 @@ class DailyDrillCard extends HookConsumerWidget {
           }
         }
 
-        final counts = DailyRevision.countsLine(
-          missed: state.wrongCount,
-          saved: state.bookmarkCount,
-        );
         final isHero = layout == TodayLoopLayout.hero;
+        final counts = layout == TodayLoopLayout.tile
+            ? DailyRevision.countsStacked(
+                missed: state.wrongCount,
+                saved: state.bookmarkCount,
+              )
+            : DailyRevision.countsLine(
+                missed: state.wrongCount,
+                saved: state.bookmarkCount,
+              );
 
         return TodayLoopCard(
           layout: layout,
@@ -175,8 +180,8 @@ class _RevisionDoors extends StatelessWidget {
       children: [
         Expanded(
           child: _Door(
-            label: DailyRevision.incorrectLabel,
-            count: DailyRevision.poolCountLabel(wrongCount),
+            label: 'incorrects',
+            count: '$wrongCount',
             enabled: hasWrongs && !loading,
             accent: accent,
             onTap: onIncorrect,
@@ -185,8 +190,8 @@ class _RevisionDoors extends StatelessWidget {
         const SizedBox(width: AppSpacing.sm),
         Expanded(
           child: _Door(
-            label: DailyRevision.bookmarkedLabel,
-            count: DailyRevision.poolCountLabel(bookmarkCount),
+            label: 'bookmarks',
+            count: '$bookmarkCount',
             enabled: hasBookmarks && !loading,
             accent: accent,
             onTap: onBookmarked,
@@ -235,6 +240,19 @@ class _Door extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
+                count,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: AppTextStyles.h2().copyWith(
+                  color: enabled
+                      ? AppColors.onPrimary
+                      : scheme.onSurfaceVariant,
+                  fontWeight: FontWeight.w800,
+                  height: 1.1,
+                ),
+              ),
+              const SizedBox(height: 2),
+              Text(
                 label,
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
@@ -243,18 +261,6 @@ class _Door extends StatelessWidget {
                       ? AppColors.onPrimary.withValues(alpha: 0.85)
                       : scheme.onSurfaceVariant,
                   fontWeight: FontWeight.w700,
-                ),
-              ),
-              const SizedBox(height: 2),
-              Text(
-                count,
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-                style: AppTextStyles.label().copyWith(
-                  color: enabled
-                      ? AppColors.onPrimary
-                      : scheme.onSurfaceVariant,
-                  fontWeight: FontWeight.w800,
                 ),
               ),
             ],

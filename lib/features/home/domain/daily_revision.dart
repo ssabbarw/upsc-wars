@@ -17,11 +17,24 @@ abstract final class DailyRevision {
   static const bookmarkedLabel = 'Bookmarked MCQs';
   static const emptyQueueLine = 'Nothing in the queue yet';
 
+  static String _countBit(int n, String singular, String plural) =>
+      '$n\u00a0${n == 1 ? singular : plural}';
+
   static String countsLine({required int missed, required int saved}) {
     if (missed <= 0 && saved <= 0) return emptyQueueLine;
-    if (missed <= 0) return '$saved bookmarked';
-    if (saved <= 0) return '$missed incorrect';
-    return '$missed incorrect · $saved bookmarked';
+    if (missed <= 0) return _countBit(saved, 'bookmark', 'bookmarks');
+    if (saved <= 0) return _countBit(missed, 'incorrect', 'incorrects');
+    return '${_countBit(missed, 'incorrect', 'incorrects')}'
+        ' · ${_countBit(saved, 'bookmark', 'bookmarks')}';
+  }
+
+  /// Two lines for the narrow home tile so "bookmarks" never orphans.
+  static String countsStacked({required int missed, required int saved}) {
+    if (missed <= 0 && saved <= 0) return emptyQueueLine;
+    if (missed <= 0) return _countBit(saved, 'bookmark', 'bookmarks');
+    if (saved <= 0) return _countBit(missed, 'incorrect', 'incorrects');
+    return '${_countBit(missed, 'incorrect', 'incorrects')}\n'
+        '${_countBit(saved, 'bookmark', 'bookmarks')}';
   }
 
   static String poolCountLabel(int available) =>

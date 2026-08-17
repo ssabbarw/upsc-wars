@@ -50,7 +50,11 @@ class DailyCaMonthCalendar extends StatelessWidget {
                   child: Text(
                     label,
                     style: AppTextStyles.caption().copyWith(
-                      color: scheme.onSurfaceVariant,
+                      color: label == 'Sun'
+                          ? (isDark
+                              ? AppColors.warningTextDark
+                              : AppColors.warningText)
+                          : scheme.onSurfaceVariant,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
@@ -73,7 +77,7 @@ class DailyCaMonthCalendar extends StatelessWidget {
             final day = index - leadingBlanks + 1;
             final istDate = DateTime(year, month, day);
             final iso = DailyCaSchedule.formatIsoDate(istDate);
-            final isOffDay = DailyCaSchedule.isSaturday(istDate);
+            final isOffDay = DailyCaSchedule.isSunday(istDate);
             final isToday = iso == todayIso;
             final isPublished = DailyCaSchedule.isPublishedForDate(
               istDate,
@@ -88,13 +92,20 @@ class DailyCaMonthCalendar extends StatelessWidget {
 
             Color? fill;
             Color textColor = scheme.onSurface;
-            if (isOffDay || isBeforeMin) {
+            if (isOffDay) {
+              fill = isDark ? AppColors.warningBgDark : AppColors.warningBg;
+              textColor = isDark
+                  ? AppColors.warningTextDark
+                  : AppColors.warningText;
+            } else if (isBeforeMin) {
               textColor = scheme.onSurfaceVariant.withValues(alpha: 0.45);
             } else if (!isPublished) {
               textColor = scheme.onSurfaceVariant.withValues(alpha: 0.55);
             } else if (isCompleted) {
               fill = isDark ? AppColors.correctBgDark : AppColors.correctBg;
-              textColor = isDark ? AppColors.correctTextDark : AppColors.correctText;
+              textColor = isDark
+                  ? AppColors.correctTextDark
+                  : AppColors.correctText;
             }
 
             return Material(

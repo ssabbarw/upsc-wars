@@ -23,6 +23,8 @@ Future<void> showDailyRevisionChoiceSheet({
     context: context,
     useRootNavigator: true,
     isScrollControlled: true,
+    isDismissible: true,
+    enableDrag: true,
     backgroundColor: Colors.transparent,
     builder: (ctx) => _DailyRevisionChoiceSheet(state: drill),
   );
@@ -48,7 +50,10 @@ class _DailyRevisionChoiceSheet extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final borderColor = isDark ? AppColors.borderDark : AppColors.borderLight;
 
-    return Padding(
+    return GestureDetector(
+      onTap: () => Navigator.of(context).pop(),
+      behavior: HitTestBehavior.opaque,
+      child: Padding(
       padding: EdgeInsets.fromLTRB(
         AppSpacing.sm,
         0,
@@ -57,7 +62,9 @@ class _DailyRevisionChoiceSheet extends StatelessWidget {
       ),
       child: Align(
         alignment: Alignment.bottomCenter,
-        child: Material(
+        child: GestureDetector(
+          onTap: () {},
+          child: Material(
           color: scheme.surface,
           borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
           child: Padding(
@@ -92,17 +99,23 @@ class _DailyRevisionChoiceSheet extends StatelessWidget {
                 const SizedBox(height: AppSpacing.xs),
                 Text(
                   state.hasAnyPool
-                      ? 'Incorrect MCQs or bookmarked MCQs.'
-                      : 'Questions you get wrong or bookmark will appear here.',
+                      ? 'Pick a pool. You\'ll get a short random test from '
+                          'those questions — up to ${DailyRevision.questionCount} '
+                          'at a time.'
+                      : 'Questions you get wrong or bookmark will appear here. '
+                          'Then you can take a short random test from either pool.',
                   style: AppTextStyles.bodySm().copyWith(
                     color: scheme.onSurfaceVariant,
+                    height: 1.45,
                   ),
                 ),
                 const SizedBox(height: AppSpacing.md),
                 _PoolTile(
                   icon: Icons.close_rounded,
                   title: DailyRevision.incorrectLabel,
-                  count: DailyRevision.poolCountLabel(state.wrongCount),
+                  subtitle:
+                      'A random test from questions you answered incorrectly.',
+                  count: '${state.wrongCount}',
                   enabled: state.hasWrongs,
                   borderColor: borderColor,
                   onTap: () =>
@@ -112,7 +125,9 @@ class _DailyRevisionChoiceSheet extends StatelessWidget {
                 _PoolTile(
                   icon: Icons.bookmark_rounded,
                   title: DailyRevision.bookmarkedLabel,
-                  count: DailyRevision.poolCountLabel(state.bookmarkCount),
+                  subtitle:
+                      'A random test from questions you have bookmarked.',
+                  count: '${state.bookmarkCount}',
                   enabled: state.hasBookmarks,
                   borderColor: borderColor,
                   onTap: () =>
@@ -122,6 +137,8 @@ class _DailyRevisionChoiceSheet extends StatelessWidget {
             ),
           ),
         ),
+        ),
+      ),
       ),
     );
   }
@@ -131,6 +148,7 @@ class _PoolTile extends StatelessWidget {
   const _PoolTile({
     required this.icon,
     required this.title,
+    required this.subtitle,
     required this.count,
     required this.enabled,
     required this.borderColor,
@@ -139,6 +157,7 @@ class _PoolTile extends StatelessWidget {
 
   final IconData icon;
   final String title;
+  final String subtitle;
   final String count;
   final bool enabled;
   final Color borderColor;
@@ -169,32 +188,55 @@ class _PoolTile extends StatelessWidget {
           ),
           padding: const EdgeInsets.all(AppSpacing.md),
           child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Icon(
-                icon,
-                color: enabled
-                    ? AppColors.primaryDark
-                    : scheme.onSurfaceVariant,
-              ),
-              const SizedBox(width: AppSpacing.md),
-              Expanded(
-                child: Text(
-                  title,
-                  style: AppTextStyles.label().copyWith(
-                    fontWeight: FontWeight.w700,
-                    color: enabled
-                        ? scheme.onSurface
-                        : scheme.onSurfaceVariant,
-                  ),
-                ),
-              ),
-              Text(
-                count,
-                style: AppTextStyles.labelSm().copyWith(
+              Padding(
+                padding: const EdgeInsets.only(top: 2),
+                child: Icon(
+                  icon,
                   color: enabled
                       ? AppColors.primaryDark
                       : scheme.onSurfaceVariant,
-                  fontWeight: FontWeight.w700,
+                ),
+              ),
+              const SizedBox(width: AppSpacing.md),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Text(
+                            title,
+                            style: AppTextStyles.label().copyWith(
+                              fontWeight: FontWeight.w700,
+                              color: enabled
+                                  ? scheme.onSurface
+                                  : scheme.onSurfaceVariant,
+                            ),
+                          ),
+                        ),
+                        Text(
+                          count,
+                          style: AppTextStyles.h2().copyWith(
+                            color: enabled
+                                ? AppColors.primaryDark
+                                : scheme.onSurfaceVariant,
+                            fontWeight: FontWeight.w800,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: AppSpacing.xs),
+                    Text(
+                      subtitle,
+                      style: AppTextStyles.bodySm().copyWith(
+                        color: scheme.onSurfaceVariant,
+                        height: 1.4,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],

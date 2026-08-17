@@ -27,6 +27,26 @@ final dailyCaRepositoryProvider = Provider<DailyCaRepository>((ref) {
   return DailyCaRepository(db: ref.watch(userDatabaseProvider));
 });
 
+/// Whether the clock-open paper actually has a live `daily_mcqs` document.
+///
+/// The home widget used the schedule alone, so a tap could claim "today's
+/// paper" for a date that was never published.
+final dailyCaScheduledPaperIsLiveProvider =
+    FutureProvider.autoDispose<bool>((ref) async {
+  final minDate = await ref.watch(dailyCaCalendarMinDateProvider.future);
+  final scheduled = DailyCaSchedule.paperQuizContentDate();
+  if (scheduled == null) return false;
+  if (!DailyCaSchedule.isOnOrAfterMinDate(scheduled, minDate)) return false;
+
+  try {
+    final iso = DailyCaSchedule.formatIsoDate(scheduled);
+    final doc = await ref.read(dailyCaRepositoryProvider).fetchDay(iso);
+    return doc != null && doc.questions.isNotEmpty;
+  } on Object {
+    return false;
+  }
+});
+
 class DailyCaMonthKey {
   const DailyCaMonthKey({required this.year, required this.month});
 

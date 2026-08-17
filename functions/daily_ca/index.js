@@ -88,9 +88,9 @@ function yesterdayIso(parts) {
   return addDaysIso(parts.iso, -1);
 }
 
-function isSaturdayIso(iso) {
+function isSundayIso(iso) {
   const [y, m, d] = iso.split("-").map(Number);
-  return new Date(Date.UTC(y, m - 1, d)).getUTCDay() === 6;
+  return new Date(Date.UTC(y, m - 1, d)).getUTCDay() === 0;
 }
 
 /** True once the paper quiz is open (next morning 6:00 AM IST). */
@@ -504,8 +504,8 @@ exports.publishDailyCaDay = onCall(publishOpts, async (request) => {
 });
 
 async function autoPublishForIso(iso) {
-  if (isSaturdayIso(iso)) {
-    return { skipped: true, reason: "saturday" };
+  if (isSundayIso(iso)) {
+    return { skipped: true, reason: "sunday" };
   }
   const snap = await draftRef(iso).get();
   if (!snap.exists) {

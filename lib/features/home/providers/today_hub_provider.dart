@@ -25,6 +25,8 @@ class TodayHubData {
     required this.yesterdayWarSubmitted,
     required this.caEnabled,
     required this.paperDate,
+    required this.paperLive,
+    required this.paperChecking,
     required this.paperCompleted,
     required this.staticAvailable,
     required this.staticSubject,
@@ -47,6 +49,12 @@ class TodayHubData {
 
   /// News date of the paper quiz to serve now, or null when none is open.
   final DateTime? paperDate;
+
+  /// True when [paperDate] has a live `daily_mcqs` document with questions.
+  final bool paperLive;
+
+  /// True while the live-document check is in flight.
+  final bool paperChecking;
   final bool paperCompleted;
 
   /// False until home activation completes — the drill stays out of the way.
@@ -98,6 +106,12 @@ final todayHubProvider = Provider.autoDispose<TodayHubData>((ref) {
       !DailyCaSchedule.isOnOrAfterMinDate(paperDate, minDate)) {
     paperDate = null;
   }
+  final liveAsync = caEnabled
+      ? ref.watch(dailyCaScheduledPaperIsLiveProvider)
+      : const AsyncValue<bool>.data(false);
+  final paperLive =
+      paperDate != null && (liveAsync.asData?.value ?? false);
+  final paperChecking = paperDate != null && liveAsync.isLoading;
   final paperIso =
       paperDate == null ? null : DailyCaSchedule.formatIsoDate(paperDate);
   final paperCompleted = paperIso == null
@@ -117,6 +131,8 @@ final todayHubProvider = Provider.autoDispose<TodayHubData>((ref) {
     yesterdayWarSubmitted: yesterdaySubmission != null,
     caEnabled: caEnabled,
     paperDate: paperDate,
+    paperLive: paperLive,
+    paperChecking: paperChecking,
     paperCompleted: paperCompleted,
     staticAvailable: drill != null,
     staticSubject: drill?.subject ?? '',

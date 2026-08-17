@@ -32,6 +32,9 @@ class DailyCaScreen extends HookConsumerWidget {
     final paperDate = DailyCaSchedule.paperQuizContentDate(referenceIst: istNow);
     final paperIso =
         paperDate == null ? null : DailyCaSchedule.formatIsoDate(paperDate);
+    final paperLiveAsync = ref.watch(dailyCaScheduledPaperIsLiveProvider);
+    final paperLive = paperLiveAsync.asData?.value ?? false;
+    final paperChecking = paperLiveAsync.isLoading;
     final initialMonth = DateTime(istNow.year, istNow.month);
     final displayedMonth = useState(
       initialMonth.isBefore(minMonth) ? minMonth : initialMonth,
@@ -74,12 +77,14 @@ class DailyCaScreen extends HookConsumerWidget {
     final autoStarted = useRef(false);
     useEffect(() {
       if (!autoStartPaper || autoStarted.value || paperIso == null) return null;
+      if (paperChecking) return null;
       autoStarted.value = true;
+      if (!paperLive) return null;
       WidgetsBinding.instance.addPostFrameCallback((_) {
         unawaited(openDayTestStable(paperIso, isRevise: paperCompleted));
       });
       return null;
-    }, [autoStartPaper, paperIso]);
+    }, [autoStartPaper, paperIso, paperLive, paperChecking]);
 
     void shiftMonth(int delta) {
       final m = displayedMonth.value;
@@ -96,7 +101,6 @@ class DailyCaScreen extends HookConsumerWidget {
       displayedMonth.value.month - 1,
       minMonth,
     );
-    final minDateLabel = DateFormat('d MMM yyyy').format(minDate);
     final monthTitle = DateFormat('MMMM yyyy').format(displayedMonth.value);
 
     return Scaffold(
@@ -108,8 +112,9 @@ class DailyCaScreen extends HookConsumerWidget {
             minDate: minDate,
             paperDate: paperDate,
             paperCompleted: paperCompleted,
-            launching: launching.value,
-            onStartPaper: paperIso == null
+            launching: launching.value || paperChecking,
+            questionsReady: paperLive,
+            onStartPaper: paperIso == null || !paperLive
                 ? null
                 : () => unawaited(
                       openDayTestStable(paperIso, isRevise: paperCompleted),
@@ -134,13 +139,6 @@ class DailyCaScreen extends HookConsumerWidget {
                 icon: const Icon(Icons.chevron_right_rounded),
               ),
             ],
-          ),
-          const SizedBox(height: AppSpacing.sm),
-          Text(
-            'Tap a date from $minDateLabel onward. Saturdays are off.',
-            style: AppTextStyles.bodySm().copyWith(
-              color: scheme.onSurfaceVariant,
-            ),
           ),
           const SizedBox(height: AppSpacing.md),
           completedAsync.when(

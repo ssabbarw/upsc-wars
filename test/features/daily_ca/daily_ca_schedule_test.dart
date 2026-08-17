@@ -3,17 +3,27 @@ import 'package:upsc_wars/features/daily_ca/domain/daily_ca_schedule.dart';
 
 void main() {
   group('DailyCaSchedule', () {
-    test('Saturday is not a test day', () {
-      // 2026-06-06 is a Saturday
-      final saturday = DateTime(2026, 6, 6, 12);
-      expect(DailyCaSchedule.isTestDay(saturday), isFalse);
-      expect(DailyCaSchedule.isSaturday(saturday), isTrue);
+    test('nowIst is a civil IST clock so 6 AM countdowns are not short by ~5h', () {
+      // 19:23 IST = 13:53 UTC. Next open Tuesday 6:00 IST is ~10h 37m later.
+      final ist = DailyCaSchedule.nowIst(DateTime.utc(2026, 8, 17, 13, 53));
+      expect(ist.isUtc, isFalse);
+      expect(ist.hour, 19);
+      expect(ist.minute, 23);
+      final opens = DateTime(2026, 8, 18, 6);
+      expect(opens.difference(ist).inHours, 10);
     });
 
-    test('Sunday is a test day (weekend pack)', () {
+    test('Sunday is not a test day', () {
+      // 2026-06-07 is a Sunday
       final sunday = DateTime(2026, 6, 7, 12);
-      expect(DailyCaSchedule.isTestDay(sunday), isTrue);
+      expect(DailyCaSchedule.isTestDay(sunday), isFalse);
       expect(DailyCaSchedule.isSunday(sunday), isTrue);
+    });
+
+    test('Saturday is a test day', () {
+      final saturday = DateTime(2026, 6, 6, 12);
+      expect(DailyCaSchedule.isTestDay(saturday), isTrue);
+      expect(DailyCaSchedule.isSaturday(saturday), isTrue);
     });
 
     test("a day's news opens the next morning, not the same night", () {
@@ -41,26 +51,37 @@ void main() {
       );
     });
 
-    test('Sunday pack is hidden until Monday 6 AM', () {
+    test('Sunday is never published', () {
       final sunday = DateTime(2026, 6, 7);
       expect(
         DailyCaSchedule.isPublishedForDate(
           sunday,
-          referenceIst: DateTime(2026, 6, 7, 21),
+          referenceIst: DateTime(2026, 6, 8, 10),
+        ),
+        isFalse,
+      );
+    });
+
+    test('Saturday paper opens Sunday 6 AM', () {
+      final saturday = DateTime(2026, 6, 6);
+      expect(
+        DailyCaSchedule.isPublishedForDate(
+          saturday,
+          referenceIst: DateTime(2026, 6, 6, 21),
         ),
         isFalse,
       );
       expect(
         DailyCaSchedule.isPublishedForDate(
-          sunday,
-          referenceIst: DateTime(2026, 6, 8, 5, 59),
+          saturday,
+          referenceIst: DateTime(2026, 6, 7, 5, 59),
         ),
         isFalse,
       );
       expect(
         DailyCaSchedule.isPublishedForDate(
-          sunday,
-          referenceIst: DateTime(2026, 6, 8, 6),
+          saturday,
+          referenceIst: DateTime(2026, 6, 7, 6),
         ),
         isTrue,
       );
@@ -91,38 +112,44 @@ void main() {
     });
 
     test('before 6 AM the previous morning\'s paper is still current', () {
-      // Tuesday 3 AM — Monday's news has not opened yet, so Sunday stands.
+      // Tuesday 3 AM — Monday's news has not opened yet, so Saturday stands.
       final date = DailyCaSchedule.paperQuizContentDate(
         referenceIst: DateTime(2026, 6, 9, 3),
       );
-      expect(date, DateTime(2026, 6, 7));
+      expect(date, DateTime(2026, 6, 6));
     });
 
-    test('Monday serves Sunday\'s weekend pack', () {
-      // Monday 8 June 2026, 8 AM → Sunday 7 June (Saturday 6th is off).
+    test('Monday morning still serves Saturday\'s paper', () {
+      // Monday 8 June 2026, 8 AM → Saturday 6 June (Sunday is off).
       final ref = DateTime(2026, 6, 8, 8);
       final date = DailyCaSchedule.paperQuizContentDate(referenceIst: ref);
-      expect(date, DateTime(2026, 6, 7));
-      expect(DailyCaSchedule.isTodaysPaper(date!, referenceIst: ref), isTrue);
+      expect(date, DateTime(2026, 6, 6));
     });
 
-    test('Sunday morning falls back to Friday\'s paper', () {
+    test('Sunday morning serves Saturday\'s paper', () {
       final date = DailyCaSchedule.paperQuizContentDate(
         referenceIst: DateTime(2026, 6, 7, 9),
       );
-      expect(date, DateTime(2026, 6, 5));
+      expect(date, DateTime(2026, 6, 6));
+      expect(
+        DailyCaSchedule.isTodaysPaper(
+          date!,
+          referenceIst: DateTime(2026, 6, 7, 9),
+        ),
+        isTrue,
+      );
     });
 
-    test('next open skips the Sunday-morning gap', () {
-      // Saturday 10 AM: next fresh pack is Monday 6 AM (Sunday's news).
+    test('next open skips the Monday-morning gap', () {
+      // Saturday 10 AM: next fresh pack is Sunday 6 AM (Saturday's news).
       expect(
         DailyCaSchedule.nextOpensAt(referenceIst: DateTime(2026, 6, 6, 10)),
-        DateTime(2026, 6, 8, 6),
+        DateTime(2026, 6, 7, 6),
       );
-      // Sunday 10 AM: weekend pack opens Monday 6 AM.
+      // Sunday 10 AM: Monday has no Sunday paper, so Tuesday 6 AM.
       expect(
         DailyCaSchedule.nextOpensAt(referenceIst: DateTime(2026, 6, 7, 10)),
-        DateTime(2026, 6, 8, 6),
+        DateTime(2026, 6, 9, 6),
       );
       // Tuesday 3 AM: Monday's news opens in three hours.
       expect(

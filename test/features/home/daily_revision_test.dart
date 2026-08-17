@@ -11,17 +11,31 @@ void main() {
     });
 
     test('only incorrect', () {
-      expect(DailyRevision.countsLine(missed: 12, saved: 0), '12 incorrect');
+      expect(DailyRevision.countsLine(missed: 12, saved: 0), '12\u00a0incorrects');
     });
 
     test('only bookmarked', () {
-      expect(DailyRevision.countsLine(missed: 0, saved: 4), '4 bookmarked');
+      expect(DailyRevision.countsLine(missed: 0, saved: 4), '4\u00a0bookmarks');
+    });
+
+    test('singular bookmark stays with its count', () {
+      expect(
+        DailyRevision.countsLine(missed: 5, saved: 1),
+        '5\u00a0incorrects · 1\u00a0bookmark',
+      );
     });
 
     test('both', () {
       expect(
         DailyRevision.countsLine(missed: 12, saved: 4),
-        '12 incorrect · 4 bookmarked',
+        '12\u00a0incorrects · 4\u00a0bookmarks',
+      );
+    });
+
+    test('stacked keeps each pool on its own line', () {
+      expect(
+        DailyRevision.countsStacked(missed: 5, saved: 1),
+        '5\u00a0incorrects\n1\u00a0bookmark',
       );
     });
   });

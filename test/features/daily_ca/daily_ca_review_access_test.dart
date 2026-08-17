@@ -4,25 +4,25 @@ import 'package:upsc_wars/features/daily_ca/widgets/daily_ca_review_access.dart'
 
 void main() {
   group('dailyCaReviewDateForNow', () {
-    test('before 8 PM IST reviews yesterday, skipping Saturday', () {
+    test('before 8 PM IST reviews yesterday, skipping Sunday', () {
       expect(
         dailyCaReviewDateForNow(referenceIst: DateTime(2026, 6, 9, 10)),
         '2026-06-08',
       );
       expect(
-        dailyCaReviewDateForNow(referenceIst: DateTime(2026, 6, 7, 10)),
-        '2026-06-05',
+        dailyCaReviewDateForNow(referenceIst: DateTime(2026, 6, 8, 10)),
+        '2026-06-06',
       );
     });
 
-    test('from 8 PM IST reviews today, skipping Saturday', () {
+    test('from 8 PM IST reviews today, skipping Sunday', () {
       expect(
         dailyCaReviewDateForNow(referenceIst: DateTime(2026, 6, 8, 20)),
         '2026-06-08',
       );
       expect(
-        dailyCaReviewDateForNow(referenceIst: DateTime(2026, 6, 6, 21)),
-        '2026-06-05',
+        dailyCaReviewDateForNow(referenceIst: DateTime(2026, 6, 7, 21)),
+        '2026-06-06',
       );
     });
 
@@ -33,7 +33,7 @@ void main() {
           generateHourIst: 21,
           generateMinuteIst: 0,
         ),
-        '2026-06-07',
+        '2026-06-06',
       );
       expect(
         dailyCaReviewDateForNow(

@@ -5,6 +5,8 @@ import 'package:intl/intl.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../home/widgets/today_loop_card.dart';
+import '../domain/daily_ca_schedule.dart';
+import 'daily_ca_unavailable_sheet.dart';
 
 /// Newspaper quiz on home — hero, tile, or banner depending on the Today hub.
 class DailyCaHomeCard extends StatelessWidget {
@@ -15,6 +17,7 @@ class DailyCaHomeCard extends StatelessWidget {
     required this.completed,
     required this.questionCount,
     required this.onStart,
+    this.questionsReady = true,
     this.loading = false,
     this.emphasized = false,
     this.layout = TodayLoopLayout.hero,
@@ -25,6 +28,9 @@ class DailyCaHomeCard extends StatelessWidget {
   final bool completed;
   final int questionCount;
   final VoidCallback? onStart;
+
+  /// False when the clock says a paper is open but Firestore has no questions.
+  final bool questionsReady;
   final bool loading;
 
   /// Time-of-day hero — kept for call sites; [layout] owns the paint.
@@ -44,6 +50,14 @@ class DailyCaHomeCard extends StatelessWidget {
     if (date == null) {
       title = 'Paper quiz';
       subtitle = 'Opens at 6 AM — yesterday\'s news, today\'s questions.';
+      cta = 'Soon';
+    } else if (!questionsReady) {
+      title = isTodaysPaper
+          ? "Today's paper"
+          : '${DateFormat('d MMM').format(date)} paper';
+      subtitle = layout == TodayLoopLayout.tile
+          ? 'Not up yet'
+          : 'Questions aren\'t up yet. Tomorrow\'s paper opens at 6 AM.';
       cta = 'Soon';
     } else if (completed) {
       title = isTodaysPaper
@@ -72,7 +86,17 @@ class DailyCaHomeCard extends StatelessWidget {
       icon: Icons.newspaper_rounded,
       accent: accent,
       background: background,
-      onTap: onStart,
+      onTap: questionsReady
+          ? onStart
+          : () {
+              showDailyCaUnavailableSheet(
+                context: context,
+                availableFrom: DailyCaSchedule.nextOpensAt(),
+                onSeeHistory: () {
+                  if (context.mounted) context.push('/daily-ca');
+                },
+              );
+            },
       done: completed,
       loading: loading,
       showNow: emphasized && layout == TodayLoopLayout.hero,
