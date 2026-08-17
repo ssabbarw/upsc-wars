@@ -16,10 +16,6 @@ final dailyCaGenerateConfigProvider =
       );
     });
 
-final dailyCaAdminCloudServiceProvider = Provider<DailyCaAdminCloudService>(
-  (ref) => DailyCaAdminCloudService(),
-);
-
 final dailyCaDraftProvider = FutureProvider.autoDispose
     .family<DailyCaDraft?, String>((ref, isoDate) async {
       final snap = await DailyCaFirestore.draftDoc(isoDate).get();
