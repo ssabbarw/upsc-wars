@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/analytics/analytics.dart';
@@ -13,13 +12,16 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
-import '../domain/create_daily_drill_session_use_case.dart';
+import '../domain/start_daily_drill.dart';
 import '../providers/daily_drill_provider.dart';
 import 'daily_drill_subject_sheet.dart';
 
 /// Pinned daily practice card — visible after home activation.
 class DailyDrillCard extends HookConsumerWidget {
-  const DailyDrillCard({super.key});
+  const DailyDrillCard({super.key, this.emphasized = false});
+
+  /// Time-of-day hero — thicker border so it reads as the one to tap.
+  final bool emphasized;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -58,33 +60,14 @@ class DailyDrillCard extends HookConsumerWidget {
         Future<void> startDrill({required String source}) async {
           if (loading.value) return;
           loading.value = true;
-          unawaited(
-            Analytics.track(
-              ref,
-              DailyDrillStartedEvent(
-                subject: state.subject,
-                source: source,
-                completedToday: state.completedToday,
-              ),
-            ),
-          );
           try {
-            final uc =
-                await ref.read(createDailyDrillSessionUseCaseProvider.future);
-            final sessionId = await uc.execute(subject: state.subject);
-            if (!context.mounted) return;
-            await context.push('/test/$sessionId');
-            if (context.mounted) {
-              ref.invalidate(dailyDrillProvider);
-            }
-          } on Object {
-            if (context.mounted) {
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(
-                  content: Text('Something went wrong. Please try again.'),
-                ),
-              );
-            }
+            await startDailyDrill(
+              context: context,
+              ref: ref,
+              subject: state.subject,
+              source: source,
+              completedToday: state.completedToday,
+            );
           } finally {
             loading.value = false;
           }
@@ -131,10 +114,14 @@ class DailyDrillCard extends HookConsumerWidget {
                     : AppColors.primaryLight.withValues(alpha: 0.4),
                 borderRadius: BorderRadius.circular(AppRadius.lg),
                 border: Border.all(
-                  color: state.completedToday
+                  color: emphasized
+                      ? AppColors.primary
+                      : state.completedToday
                       ? AppColors.primary.withValues(alpha: 0.35)
                       : borderColor,
-                  width: state.completedToday ? 1.5 : 0.5,
+                  width: emphasized
+                      ? 2
+                      : (state.completedToday ? 1.5 : 0.5),
                 ),
               ),
               child: Row(
@@ -160,7 +147,7 @@ class DailyDrillCard extends HookConsumerWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'DAILY PRACTICE',
+                          'STATIC PRACTICE',
                           style: AppTextStyles.caption().copyWith(
                             color: AppColors.primaryDark,
                             fontWeight: FontWeight.w800,

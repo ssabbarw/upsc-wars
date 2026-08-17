@@ -14,6 +14,7 @@ import 'package:upsc_wars/core/analytics/session_analytics_derive.dart';
 import 'package:upsc_wars/core/database/user_db.dart';
 import 'package:upsc_wars/features/history/data/repositories/session_history_repository_impl.dart';
 import 'package:upsc_wars/features/home/domain/create_get_started_session_use_case.dart';
+import 'package:upsc_wars/features/home/domain/daily_streak_service.dart';
 import 'package:upsc_wars/features/home/domain/demo_diagnostic_ephemeral_store.dart';
 import 'package:upsc_wars/core/domain/entities/active_session.dart';
 import 'package:upsc_wars/core/domain/entities/answer_confidence.dart';
@@ -684,26 +685,7 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
   }
 
   void _updateStreak() {
-    final now = DateTime.now();
-    final today = DateFormat('yyyy-MM-dd').format(now);
-    final yesterday = DateFormat(
-      'yyyy-MM-dd',
-    ).format(now.subtract(const Duration(days: 1)));
-    final last = _prefsService.lastActiveDate;
-    final current = _prefsService.currentStreak;
-
-    var next = 1;
-    if (last == today) {
-      next = current == 0 ? 1 : current;
-    } else if (last == yesterday) {
-      next = current + 1;
-    }
-
-    _prefsService.currentStreak = next;
-    _prefsService.lastActiveDate = today;
-    if (next > _prefsService.longestStreak) {
-      _prefsService.longestStreak = next;
-    }
+    DailyStreakService.recordRingClosed(prefs: _prefsService);
   }
 
   Future<void> _updateTopicStatsForSession(String sessionId) async {

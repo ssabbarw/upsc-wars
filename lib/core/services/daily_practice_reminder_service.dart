@@ -3,7 +3,6 @@ import 'package:flutter_timezone/flutter_timezone.dart';
 import 'package:timezone/data/latest.dart' as tz_data;
 import 'package:timezone/timezone.dart' as tz;
 
-import '../constants/daily_drill_constants.dart';
 import '../presentation/session_subject_label.dart';
 import '../providers/prefs_provider.dart';
 import 'app_local_notifications_service.dart';
@@ -13,7 +12,6 @@ class DailyPracticeReminderService {
   DailyPracticeReminderService._();
 
   /// Next local [hour]:00 on or after [reference], rolling to tomorrow when needed.
-  @visibleForTesting
   static DateTime nextReminderLocalTime({
     required DateTime reference,
     required int hour,
@@ -42,7 +40,7 @@ class DailyPracticeReminderService {
       return;
     }
 
-    await _ensureTimezonesReady();
+    await ensureTimezonesReady();
 
     final hour = prefs.dailyPracticeReminderHour;
     final subjectLabel =
@@ -60,11 +58,13 @@ class DailyPracticeReminderService {
     );
   }
 
+  /// The drill reminder is a recovery nudge, so **any** finished session pushes
+  /// it to tomorrow — not just a drill. A day with a paper quiz or a War in it
+  /// does not need to be nagged about practice.
   static Future<void> syncAfterSessionSubmit({
     required PrefsService prefs,
     required String? analyticsFeatureKey,
   }) async {
-    if (analyticsFeatureKey != DailyDrillConstants.analyticsKey) return;
     await sync(
       prefs: prefs,
       activationComplete: prefs.homeActivationComplete,
@@ -72,7 +72,7 @@ class DailyPracticeReminderService {
     );
   }
 
-  static Future<void> _ensureTimezonesReady() async {
+  static Future<void> ensureTimezonesReady() async {
     if (_timezonesReady) return;
     tz_data.initializeTimeZones();
     try {

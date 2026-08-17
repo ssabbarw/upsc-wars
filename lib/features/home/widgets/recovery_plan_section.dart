@@ -13,6 +13,7 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../daily_war/domain/daily_war_schedule.dart';
 import '../domain/create_daily_drill_session_use_case.dart';
 import '../providers/recovery_plan_provider.dart';
 
@@ -31,12 +32,16 @@ class RecoveryPlanSection extends ConsumerWidget {
       error: (_, _) => const SizedBox.shrink(),
       data: (state) {
         if (state.cards.isEmpty) return const SizedBox.shrink();
+        // Sunday's Today hub already has the week-review card.
+        if (DailyWarSchedule.isSunday(DailyWarSchedule.nowIst())) {
+          return const SizedBox.shrink();
+        }
 
         return Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text(
-              "TODAY'S PLAN",
+              'FIX YOUR WEAK AREAS',
               style: AppTextStyles.caption().copyWith(
                 fontWeight: FontWeight.w800,
                 letterSpacing: 1.1,

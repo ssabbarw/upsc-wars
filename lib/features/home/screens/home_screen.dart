@@ -33,13 +33,12 @@ import '../providers/home_activation_journey_provider.dart';
 import '../widgets/activation_journey_card.dart';
 import '../widgets/recovery_plan_section.dart';
 import '../providers/daily_drill_provider.dart';
+import '../widgets/today_hub_section.dart';
 import '../../memory_pairs/widgets/push_memory_pairs_debug_card.dart';
 import '../../mini_games/widgets/push_revision_game_debug_card.dart';
 import '../../push_spot_test/widgets/push_spot_test_debug_card.dart';
-import '../../daily_ca/widgets/daily_ca_home_card.dart';
 import '../../daily_war/providers/daily_war_providers.dart';
 import '../../daily_war/theme/daily_war_theme.dart';
-import '../../daily_war/widgets/daily_war_home_card.dart';
 import '../../../shared/widgets/push_denied_banner.dart';
 import '../../../shared/theme/dark_mode_toggle.dart';
 import '../../../shared/widgets/app_update_kill_switch_overlay.dart';
@@ -79,10 +78,10 @@ class HomeScreen extends HookConsumerWidget {
       return t.cancel;
     }, const []);
 
+    // The streak is earned by closing a Today ring, not by opening the app, so
+    // this only refreshes what home shows.
     useEffect(() {
       Future(() async {
-        final uc = await ref.read(updateStreakUseCaseProvider.future);
-        await uc.execute();
         ref.invalidate(homeStateProvider);
         ref.invalidate(homeActivationProvider);
         ref.invalidate(homeActivationJourneyProvider);
@@ -413,29 +412,22 @@ class HomeScreen extends HookConsumerWidget {
                                 (ref
                                     .watch(dailyWarHomeSnapshotProvider)
                                     .warUnplayed);
-                            final warStreak = ref.watch(
-                              dailyWarStreakCountProvider,
-                            );
-                            final streakAccent = warOn
-                                ? (warUnplayed
-                                      ? DwColors.crimson
-                                      : AppColors.streak)
+                            final streakAccent = warUnplayed
+                                ? DwColors.crimson
                                 : AppColors.streak;
-                            final streakLabel = warOn
-                                ? (warStreak == 0
-                                      ? 'Start War streak'
-                                      : '$warStreak War')
-                                : home.when(
-                                    data: (h) => h.streakCount == 0
-                                        ? 'Start your streak'
-                                        : '${h.streakCount} days',
-                                    loading: () =>
-                                        cachedStreakText.value ??
-                                        'Start your streak',
-                                    error: (error, stackTrace) =>
-                                        cachedStreakText.value ??
-                                        'Start your streak',
-                                  );
+                            // One streak, fed by any Today ring — War no longer
+                            // replaces it, so a missed 9 PM is not a broken day.
+                            final streakLabel = home.when(
+                              data: (h) => h.streakCount == 0
+                                  ? 'Start your streak'
+                                  : '${h.streakCount} days',
+                              loading: () =>
+                                  cachedStreakText.value ??
+                                  'Start your streak',
+                              error: (error, stackTrace) =>
+                                  cachedStreakText.value ??
+                                  'Start your streak',
+                            );
                             return Container(
                               padding: const EdgeInsets.symmetric(
                                 horizontal: AppSpacing.md,
@@ -497,11 +489,12 @@ class HomeScreen extends HookConsumerWidget {
                               data: (s) => s.shouldShowChecklist,
                               orElse: () => false,
                             );
-                        return DailyWarHomeCard(
-                          forceCollapsed: forceCollapsed,
+                        return TodayHubSection(
+                          forceWarCollapsed: forceCollapsed,
                         );
                       },
                     ),
+                    const SizedBox(height: AppSpacing.md),
                     Consumer(
                       builder: (context, ref, _) {
                         final journey = ref.watch(
@@ -590,27 +583,6 @@ class HomeScreen extends HookConsumerWidget {
                           children: [
                             HomePageVideoBanner(borderColor: borderColor),
                             const SizedBox(height: AppSpacing.md),
-                            Consumer(
-                              builder: (context, ref, _) {
-                                final dailyCaEnabled = ref
-                                    .watch(dailyCaRemoteEnabledProvider)
-                                    .maybeWhen(
-                                      data: (enabled) => enabled,
-                                      orElse: () => false,
-                                    );
-                                if (!dailyCaEnabled) {
-                                  return const SizedBox.shrink();
-                                }
-                                return Column(
-                                  crossAxisAlignment:
-                                      CrossAxisAlignment.stretch,
-                                  children: [
-                                    DailyCaHomeCard(borderColor: borderColor),
-                                    const SizedBox(height: AppSpacing.md),
-                                  ],
-                                );
-                              },
-                            ),
                             _PyqYearCarousel(
                               borderColor: borderColor,
                               years: pyqYears,

@@ -1,8 +1,17 @@
 /// IST scheduling rules for daily current-affairs tests.
+///
+/// A day's questions open the **next** morning at [openHourIst]: the newspaper
+/// read on the 17th carries the 16th's news, so the 16th's paper is what an
+/// aspirant can be quizzed on over their morning tea on the 17th.
+///
+/// Content days are Mon–Sat ([isTestDay]), so Sunday has no paper and Monday
+/// morning re-serves Saturday's — see [paperQuizContentDate].
 abstract final class DailyCaSchedule {
   DailyCaSchedule._();
 
-  static const publishHourIst = 21;
+  /// Hour (IST) when the previous day's paper quiz opens.
+  static const openHourIst = 6;
+
   static const istOffset = Duration(hours: 5, minutes: 30);
 
   /// Fallback when Remote Config is unavailable or invalid.
@@ -56,43 +65,59 @@ abstract final class DailyCaSchedule {
     );
   }
 
-  static DateTime publishAtForDate(DateTime istDate) {
-    final day = dateOnly(istDate);
-    return DateTime(day.year, day.month, day.day, publishHourIst);
+  /// When [contentDate]'s questions open — the morning after, at [openHourIst].
+  static DateTime opensAtForDate(DateTime contentDate) {
+    final next = dateOnly(contentDate).add(const Duration(days: 1));
+    return DateTime(next.year, next.month, next.day, openHourIst);
   }
 
-  /// Whether the test for [istDate] is live (Mon–Sat, on/after 9 PM IST that day).
+  /// Whether the quiz for news dated [istDate] is attemptable at [referenceIst].
   static bool isPublishedForDate(DateTime istDate, {DateTime? referenceIst}) {
     if (!isTestDay(istDate)) return false;
     final now = referenceIst ?? nowIst();
-    final target = dateOnly(istDate);
-    final today = dateOnly(now);
-    if (target.isBefore(today)) return true;
-    if (target.isAfter(today)) return false;
-    return !now.isBefore(publishAtForDate(istDate));
+    return !now.isBefore(opensAtForDate(istDate));
   }
 
-  /// Next Mon–Sat 9 PM IST at or after [referenceIst].
-  static DateTime nextPublishAt({DateTime? referenceIst}) {
-    var cursor = referenceIst ?? nowIst();
-    for (var i = 0; i < 14; i++) {
-      if (isTestDay(cursor)) {
-        final publishAt = publishAtForDate(cursor);
-        if (!cursor.isBefore(publishAt)) {
-          cursor = dateOnly(cursor).add(const Duration(days: 1));
-          continue;
-        }
-        return publishAt;
-      }
-      cursor = dateOnly(cursor).add(const Duration(days: 1));
-    }
-    return publishAtForDate(cursor);
-  }
-
-  static Duration timeUntilNextPublish({DateTime? referenceIst}) {
+  /// Newest content day whose quiz is open — the "paper" to serve right now.
+  ///
+  /// Skips Sundays, so Monday morning still serves Saturday's paper rather than
+  /// showing nothing. Returns null only when no content day has opened yet.
+  static DateTime? paperQuizContentDate({DateTime? referenceIst}) {
     final now = referenceIst ?? nowIst();
-    final next = nextPublishAt(referenceIst: now);
-    final diff = next.difference(now);
+    var cursor = dateOnly(now).subtract(const Duration(days: 1));
+    for (var i = 0; i < 9; i++) {
+      if (isTestDay(cursor) && isPublishedForDate(cursor, referenceIst: now)) {
+        return cursor;
+      }
+      cursor = cursor.subtract(const Duration(days: 1));
+    }
+    return null;
+  }
+
+  /// True when [contentDate] is the paper an aspirant reads on [referenceIst].
+  static bool isTodaysPaper(DateTime contentDate, {DateTime? referenceIst}) {
+    final now = referenceIst ?? nowIst();
+    return dateOnly(now).difference(dateOnly(contentDate)).inDays == 1;
+  }
+
+  /// Next moment a fresh paper quiz opens (skips the Monday gap).
+  static DateTime nextOpensAt({DateTime? referenceIst}) {
+    final now = referenceIst ?? nowIst();
+    var day = dateOnly(now);
+    for (var i = 0; i < 9; i++) {
+      final at = DateTime(day.year, day.month, day.day, openHourIst);
+      if (now.isBefore(at) &&
+          isTestDay(day.subtract(const Duration(days: 1)))) {
+        return at;
+      }
+      day = day.add(const Duration(days: 1));
+    }
+    return DateTime(day.year, day.month, day.day, openHourIst);
+  }
+
+  static Duration timeUntilNextOpen({DateTime? referenceIst}) {
+    final now = referenceIst ?? nowIst();
+    final diff = nextOpensAt(referenceIst: now).difference(now);
     return diff.isNegative ? Duration.zero : diff;
   }
 

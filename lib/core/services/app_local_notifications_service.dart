@@ -28,8 +28,11 @@ class AppLocalNotificationsService {
   /// Opens home when the no-test reminder notification is tapped.
   static void Function()? onNoTestReminderTap;
 
-  /// Opens home when the daily practice reminder notification is tapped.
+  /// Starts the static drill when the daily practice reminder is tapped.
   static void Function()? onDailyPracticeReminderTap;
+
+  /// Opens today's paper quiz when the morning CA reminder is tapped.
+  static void Function()? onDailyCaPaperReminderTap;
 
   static const _noTestReminderChannelId = 'no_test_reminder_v1';
   static const _noTestReminderChannelName = 'Study reminders';
@@ -64,6 +67,9 @@ class AppLocalNotificationsService {
 
   static const dailyPracticeReminderNotificationId = 8002;
   static const dailyPracticeReminderPayload = 'daily_practice_reminder';
+
+  static const dailyCaPaperReminderNotificationId = 8003;
+  static const dailyCaPaperReminderPayload = 'daily_ca_paper_reminder';
 
   static const _prelimsChannelId = 'prelims_countdown_channel';
   static const _prelimsChannelName = 'Prelims Countdown';
@@ -165,6 +171,10 @@ class AppLocalNotificationsService {
     }
     if (payload == dailyPracticeReminderPayload) {
       onDailyPracticeReminderTap?.call();
+      return;
+    }
+    if (payload == dailyCaPaperReminderPayload) {
+      onDailyCaPaperReminderTap?.call();
     }
   }
 
@@ -395,5 +405,40 @@ class AppLocalNotificationsService {
     if (kIsWeb) return;
     await ensureInitialized();
     await _plugin.cancel(id: dailyPracticeReminderNotificationId);
+  }
+
+  /// The one morning push: the paper quiz, plus tonight's War topics when known.
+  static Future<void> scheduleDailyCaPaperReminder({
+    required DateTime fireAtLocal,
+    required int questionCount,
+    String? warTopicsLine,
+  }) async {
+    if (kIsWeb) return;
+    await ensureInitialized();
+    await _ensureNoTestReminderChannel();
+
+    final scheduledDate = tz.TZDateTime.from(fireAtLocal, tz.local);
+    final body = warTopicsLine == null || warTopicsLine.isEmpty
+        ? '$questionCount MCQs from the news you just read'
+        : '$questionCount MCQs from the news · Tonight: $warTopicsLine';
+    try {
+      await _plugin.zonedSchedule(
+        id: dailyCaPaperReminderNotificationId,
+        title: "Today's paper quiz is live",
+        body: body,
+        scheduledDate: scheduledDate,
+        notificationDetails: _dailyPracticeReminderDetails(),
+        androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
+        payload: dailyCaPaperReminderPayload,
+      );
+    } catch (_) {
+      // Best-effort scheduling.
+    }
+  }
+
+  static Future<void> cancelDailyCaPaperReminder() async {
+    if (kIsWeb) return;
+    await ensureInitialized();
+    await _plugin.cancel(id: dailyCaPaperReminderNotificationId);
   }
 }

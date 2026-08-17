@@ -1,28 +1,33 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../domain/daily_ca_schedule.dart';
-import 'package:intl/intl.dart';
 
-/// Today's test card with a local 1s timer so the rest of the screen stays stable.
+/// The paper quiz to attempt now, with a local 1s timer so the rest of the
+/// screen stays stable while the countdown ticks.
 class DailyCaTodaySection extends StatefulWidget {
   const DailyCaTodaySection({
     super.key,
     required this.minDate,
-    required this.todayCompleted,
+    required this.paperDate,
+    required this.paperCompleted,
     required this.launching,
-    required this.onStartToday,
+    required this.onStartPaper,
   });
 
   final DateTime minDate;
-  final bool todayCompleted;
+
+  /// News date of the open paper quiz, or null when nothing has opened.
+  final DateTime? paperDate;
+  final bool paperCompleted;
   final bool launching;
-  final VoidCallback onStartToday;
+  final VoidCallback? onStartPaper;
 
   @override
   State<DailyCaTodaySection> createState() => _DailyCaTodaySectionState();
@@ -54,13 +59,25 @@ class _DailyCaTodaySectionState extends State<DailyCaTodaySection> {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final border = isDark ? AppColors.borderDark : AppColors.borderLight;
 
-    final minDate = widget.minDate;
-    final minDateLabel = DateFormat('d MMM yyyy').format(minDate);
-    final todayAllowed = DailyCaSchedule.isOnOrAfterMinDate(_ist, minDate);
-    final todayIsTestDay = DailyCaSchedule.isTestDay(_ist);
-    final todayPublished = DailyCaSchedule.isPublishedForDate(_ist);
-    final countdown = DailyCaSchedule.timeUntilNextPublish(referenceIst: _ist);
-    final countdownLabel = DailyCaSchedule.formatCountdown(countdown);
+    final paperDate = widget.paperDate;
+    final allowed = paperDate != null &&
+        DailyCaSchedule.isOnOrAfterMinDate(paperDate, widget.minDate);
+    final isTodaysPaper = paperDate != null &&
+        DailyCaSchedule.isTodaysPaper(paperDate, referenceIst: _ist);
+    final countdownLabel = DailyCaSchedule.formatCountdown(
+      DailyCaSchedule.timeUntilNextOpen(referenceIst: _ist),
+    );
+
+    final String headline;
+    if (!allowed) {
+      headline = 'Daily tests start from '
+          '${DateFormat('d MMM yyyy').format(widget.minDate)}.';
+    } else if (isTodaysPaper) {
+      headline = "10 MCQs from today's newspaper";
+    } else {
+      headline = '10 MCQs from the '
+          '${DateFormat('d MMM').format(paperDate)} paper';
+    }
 
     return Container(
       width: double.infinity,
@@ -74,7 +91,7 @@ class _DailyCaTodaySectionState extends State<DailyCaTodaySection> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text(
-            "TODAY'S TEST",
+            "TODAY'S PAPER",
             style: AppTextStyles.caption().copyWith(
               color: isDark ? AppColors.infoTextDark : AppColors.infoText,
               letterSpacing: 0.8,
@@ -82,45 +99,17 @@ class _DailyCaTodaySectionState extends State<DailyCaTodaySection> {
             ),
           ),
           const SizedBox(height: AppSpacing.sm),
-          if (!todayAllowed)
-            Text(
-              'Daily tests start from $minDateLabel.',
-              style: AppTextStyles.bodySm().copyWith(
-                color: scheme.onSurfaceVariant,
-              ),
-            )
-          else if (!todayIsTestDay)
-            Text(
-              'Sundays are rest days — no test today.',
-              style: AppTextStyles.bodySm().copyWith(
-                color: scheme.onSurfaceVariant,
-              ),
-            )
-          else if (!todayPublished)
-            Text(
-              'Available at 9:00 PM IST · $countdownLabel remaining',
-              style: AppTextStyles.body().copyWith(
-                color: scheme.onSurface,
-                fontWeight: FontWeight.w600,
-              ),
-            )
-          else
-            Text(
-              widget.todayCompleted
-                  ? 'Completed · tap to revise'
-                  : "10 MCQs from today's news",
-              style: AppTextStyles.bodySm().copyWith(
-                color: scheme.onSurfaceVariant,
-              ),
+          Text(
+            widget.paperCompleted ? 'Completed · tap to revise' : headline,
+            style: AppTextStyles.bodySm().copyWith(
+              color: scheme.onSurfaceVariant,
             ),
+          ),
           const SizedBox(height: AppSpacing.md),
           FilledButton.icon(
-            onPressed: (!todayAllowed ||
-                    !todayIsTestDay ||
-                    !todayPublished ||
-                    widget.launching)
+            onPressed: (!allowed || widget.launching)
                 ? null
-                : widget.onStartToday,
+                : widget.onStartPaper,
             icon: widget.launching
                 ? SizedBox(
                     width: 18,
@@ -131,32 +120,26 @@ class _DailyCaTodaySectionState extends State<DailyCaTodaySection> {
                     ),
                   )
                 : Icon(
-                    widget.todayCompleted
+                    widget.paperCompleted
                         ? Icons.replay_rounded
                         : Icons.play_arrow_rounded,
                   ),
             label: Text(
-              !todayAllowed
+              !allowed
                   ? 'Not started yet'
-                  : !todayIsTestDay
-                  ? 'No test today'
-                  : !todayPublished
-                  ? 'Opens at 9 PM'
-                  : widget.todayCompleted
-                  ? "Revise today's test"
-                  : "Start today's test",
+                  : widget.paperCompleted
+                  ? 'Revise this paper'
+                  : 'Start the quiz',
             ),
           ),
-          if (todayAllowed && todayIsTestDay && !todayPublished) ...[
-            const SizedBox(height: AppSpacing.sm),
-            Text(
-              'Next test in $countdownLabel',
-              textAlign: TextAlign.center,
-              style: AppTextStyles.caption().copyWith(
-                color: scheme.onSurfaceVariant,
-              ),
+          const SizedBox(height: AppSpacing.sm),
+          Text(
+            'Next paper opens in $countdownLabel',
+            textAlign: TextAlign.center,
+            style: AppTextStyles.caption().copyWith(
+              color: scheme.onSurfaceVariant,
             ),
-          ],
+          ),
         ],
       ),
     );

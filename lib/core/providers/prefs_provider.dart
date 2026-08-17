@@ -169,6 +169,9 @@ abstract final class PrefKeys {
 
   /// User collapsed the Daily War home card (null = smart default).
   static const dailyWarHomeCollapsedV1 = 'daily_war_home_collapsed_v1';
+
+  /// yyyy-MM-dd days where every available Today ring was closed (recent only).
+  static const todayFullDayDatesV1 = 'today_full_day_dates_v1';
 }
 
 class PrefsService {
@@ -486,6 +489,11 @@ class PrefsService {
 
   set dailyWarHomeCollapsed(bool v) =>
       _p.setBool(PrefKeys.dailyWarHomeCollapsedV1, v);
+
+  List<String> get todayFullDayDates =>
+      _p.getStringList(PrefKeys.todayFullDayDatesV1) ?? const [];
+  set todayFullDayDates(List<String> v) =>
+      _p.setStringList(PrefKeys.todayFullDayDatesV1, v);
 }
 
 @Riverpod(keepAlive: true)

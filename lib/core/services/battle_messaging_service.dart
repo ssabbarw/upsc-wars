@@ -139,7 +139,31 @@ class BattleMessagingService {
         final r = _router;
         if (r == null) return;
         WidgetsBinding.instance.addPostFrameCallback((_) {
-          r.go('/');
+          r.go('/daily-drill/start');
+        });
+      };
+      AppLocalNotificationsService.onDailyCaPaperReminderTap = () {
+        SessionEntrySource.capture(
+          SessionEntrySource.push,
+          detail: 'daily_ca_paper_reminder',
+        );
+        PendingNotificationConversion.captureFromLocalKind(
+          'daily_ca_paper_reminder',
+        );
+        unawaited(_recordAdminNotificationOpen(
+          notificationId: 'local__daily_ca_paper_reminder',
+          kind: 'daily_ca_paper_reminder',
+        ));
+        logGlobalAnalytics(
+          const AppNotificationOpenEvent(
+            channel: 'local',
+            kind: 'daily_ca_paper_reminder',
+          ),
+        );
+        final r = _router;
+        if (r == null) return;
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          r.go('/daily-ca?start=1');
         });
       };
       await AppLocalNotificationsService.ensureInitialized();

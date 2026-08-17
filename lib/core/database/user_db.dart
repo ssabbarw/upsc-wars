@@ -950,6 +950,25 @@ class SessionsDao extends DatabaseAccessor<UserDatabase>
     return (row.read<int?>('c') ?? 0) > 0;
   }
 
+  /// Whether a Sunday week-review session was completed in [startInclusive, endExclusive).
+  Future<bool> hasCompletedSundayWeekReviewBetween({
+    required DateTime startInclusive,
+    required DateTime endExclusive,
+  }) async {
+    final row = await customSelect(
+      "SELECT COUNT(*) AS c FROM sessions "
+      "WHERE analytics_feature_key = ? AND status = 'completed' "
+      "AND completed_at >= ? AND completed_at < ?",
+      variables: [
+        Variable.withString('sunday_week_review'),
+        Variable.withDateTime(startInclusive),
+        Variable.withDateTime(endExclusive),
+      ],
+      readsFrom: {sessions},
+    ).getSingle();
+    return (row.read<int?>('c') ?? 0) > 0;
+  }
+
   /// Whether the user completed the daily CA test for [sourceDate] (`YYYY-MM-DD`).
   Future<bool> hasCompletedDailyCa(String sourceDate) async {
     final row = await customSelect(

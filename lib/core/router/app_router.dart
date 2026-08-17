@@ -37,6 +37,7 @@ import '../../features/chat/providers/chat_providers.dart';
 import '../../features/chat/screens/chat_list_screen.dart';
 import '../../features/chat/screens/chat_thread_screen.dart';
 import '../../features/chat/domain/entities/chat_thread_route_payload.dart';
+import '../../features/home/screens/daily_drill_launch_screen.dart';
 import '../../features/home/screens/home_screen.dart';
 import '../../features/onboarding/screens/onboarding_flow_screen.dart';
 import '../../features/notifications/screens/long_html_notification_screen.dart';
@@ -607,7 +608,15 @@ GoRouter appRouter(Ref ref) {
         parentNavigatorKey: rootNavigatorKey,
         path: '/daily-ca',
         name: 'daily_ca',
-        builder: (context, state) => const DailyCaScreen(),
+        builder: (context, state) => DailyCaScreen(
+          autoStartPaper: state.uri.queryParameters['start'] == '1',
+        ),
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/daily-drill/start',
+        name: 'daily_drill_start',
+        builder: (context, state) => const DailyDrillLaunchScreen(),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,

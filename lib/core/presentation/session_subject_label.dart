@@ -7,6 +7,7 @@ String displayNameForSessionSubject(String subject) {
   if (subject == QuestionSourceConstants.dailyCaSessionSubject) {
     return 'Daily Current Affairs';
   }
+  if (subject == 'sunday_review') return 'Week review';
   final def = SubjectConstants.bySlug(subject);
   if (def != null) return def.displayName;
   final pyq = RegExp(r'^upsc_pyq_(\d{4})$').firstMatch(subject.trim());

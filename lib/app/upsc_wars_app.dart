@@ -22,7 +22,9 @@ import '../core/crashlytics/firebase_crashlytics_bootstrap.dart';
 import '../core/providers/app_bootstrap.dart';
 import '../core/providers/kill_switch_provider.dart';
 import '../core/services/battle_messaging_service.dart';
+import '../core/services/daily_ca_reminder_service.dart';
 import '../core/services/daily_practice_reminder_service.dart';
+import '../features/home/domain/daily_streak_service.dart';
 import '../core/services/no_test_reminder_service.dart';
 import '../core/services/share_deep_link_service.dart';
 import '../core/services/fcm_token_sync_service.dart';
@@ -138,17 +140,14 @@ class _RootMaterialApp extends HookConsumerWidget {
             prefs: p,
             completedSessionCount: completedCount,
           );
-          final now = DateTime.now();
-          final dayStart = DateTime(now.year, now.month, now.day);
-          final completedDrillToday =
-              await db.sessionsDao.hasCompletedDailyDrillBetween(
-            startInclusive: dayStart,
-            endExclusive: dayStart.add(const Duration(days: 1)),
-          );
+          // Recovery nudge: anything finished today is enough to skip it.
           await DailyPracticeReminderService.sync(
             prefs: p,
             activationComplete: p.homeActivationComplete,
-            completedToday: completedDrillToday,
+            completedToday: DailyStreakService.closedToday(prefs: p),
+          );
+          await DailyCaReminderService.sync(
+            enabled: await ref.read(dailyCaRemoteEnabledProvider.future),
           );
         } catch (e, st) {
           upscWarsTrace('no_test_reminder_sync error', error: e, stackTrace: st);

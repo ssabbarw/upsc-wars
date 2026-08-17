@@ -1,28 +1,24 @@
 import 'dart:async';
-import 'dart:developer' as developer;
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 
-import '../../../core/constants/question_source_constants.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
-import '../../../shared/widgets/test_config_bottom_sheet.dart';
-import '../data/daily_ca_firestore.dart';
-import '../data/daily_ca_load_error.dart';
-import '../data/daily_ca_repository.dart';
 import '../domain/daily_ca_schedule.dart';
+import '../domain/open_daily_ca_test.dart';
 import '../providers/daily_ca_providers.dart';
 import '../widgets/daily_ca_month_calendar.dart';
 import '../widgets/daily_ca_today_section.dart';
 
 class DailyCaScreen extends HookConsumerWidget {
-  const DailyCaScreen({super.key});
+  const DailyCaScreen({super.key, this.autoStartPaper = false});
+
+  /// Set from the morning notification tap so it lands on the quiz itself.
+  final bool autoStartPaper;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -33,7 +29,9 @@ class DailyCaScreen extends HookConsumerWidget {
     );
     final minMonth = DailyCaSchedule.minMonthForDate(minDate);
     final istNow = DailyCaSchedule.nowIst();
-    final todayIso = DailyCaSchedule.formatIsoDate(istNow);
+    final paperDate = DailyCaSchedule.paperQuizContentDate(referenceIst: istNow);
+    final paperIso =
+        paperDate == null ? null : DailyCaSchedule.formatIsoDate(paperDate);
     final initialMonth = DateTime(istNow.year, istNow.month);
     final displayedMonth = useState(
       initialMonth.isBefore(minMonth) ? minMonth : initialMonth,
@@ -45,78 +43,23 @@ class DailyCaScreen extends HookConsumerWidget {
     final completedAsync = ref.watch(dailyCaCompletedDatesProvider(monthKey));
     final launching = useState(false);
 
-    final todayCompleted = completedAsync.maybeWhen(
-      data: (dates) => dates.contains(todayIso),
-      orElse: () => false,
-    );
+    final paperCompleted = paperIso != null &&
+        completedAsync.maybeWhen(
+          data: (dates) => dates.contains(paperIso),
+          orElse: () => false,
+        );
 
     Future<void> openDayTest(String isoDate, {required bool isRevise}) async {
       if (launching.value) return;
       launching.value = true;
-      final firestorePath = DailyCaFirestore.pathForDate(isoDate);
       try {
-        debugPrint('[DailyCaScreen] Loading $isoDate from $firestorePath');
-        final repo = ref.read(dailyCaRepositoryProvider);
-        final uuids = await repo.ensureCachedForDate(isoDate);
-        if (!context.mounted) return;
-        if (uuids.isEmpty) {
-          throw DailyCaNotAvailableException(isoDate, firestorePath: firestorePath);
-        }
-
-        final parsed = DailyCaSchedule.parseIsoDate(isoDate);
-        final label = DateFormat('d MMM yyyy').format(parsed);
-
-        await showTestConfigBottomSheet(
+        await openDailyCaTest(
           context: context,
-          args: TestConfigSheetArgs(
-            subject: QuestionSourceConstants.dailyCaSessionSubject,
-            topic: isoDate,
-            subjectDisplayName: 'Daily Current Affairs',
-            topicDisplayName: label,
-            availableQuestionCount: uuids.length,
-            topicCountWhenSubjectOnly: 1,
-            lockedQuestionCount: uuids.length,
-            specificQuestionUuids: uuids,
-            fixedQuestionSetLabel: '${uuids.length} questions · $label',
-            startButtonLabel: isRevise ? 'Revise' : 'Start test',
-            analyticsFeatureKey: isRevise
-                ? '${QuestionSourceConstants.analyticsDailyCurrentAffairs}_revise'
-                : QuestionSourceConstants.analyticsDailyCurrentAffairs,
-            onSessionCreated: (sessionId) async {
-              await context.push('/test/$sessionId');
-              if (context.mounted) {
-                ref.invalidate(dailyCaCompletedDatesProvider(monthKey));
-                ref.invalidate(dailyCaDayCompletedProvider(isoDate));
-              }
-            },
-          ),
-        );
-      } catch (e, st) {
-        final message = dailyCaLoadErrorMessage(e);
-        developer.log(
-          'Daily CA load failed for $isoDate ($firestorePath): $message',
-          name: 'DailyCaScreen',
-          stackTrace: st,
-        );
-        debugPrint('[DailyCaScreen] $message');
-        debugPrintStack(stackTrace: st, label: 'DailyCaScreen');
-
-        if (!context.mounted) return;
-        final snackText = kDebugMode
-            ? message
-            : dailyCaErrorIsPermissionDenied(e)
-            ? 'Firestore access denied. Deploy latest firestore.rules, then retry.'
-            : dailyCaErrorIsNotAvailable(e)
-            ? 'Questions for this date are not available yet.'
-            : 'Could not load test. Check your connection and try again.';
-
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(
-              snackText,
-              style: AppTextStyles.bodySm(),
-            ),
-          ),
+          ref: ref,
+          isoDate: isoDate,
+          isRevise: isRevise,
+          onFinished: () =>
+              ref.invalidate(dailyCaCompletedDatesProvider(monthKey)),
         );
       } finally {
         launching.value = false;
@@ -125,8 +68,18 @@ class DailyCaScreen extends HookConsumerWidget {
 
     final openDayTestStable = useCallback(
       openDayTest,
-      [monthKey, todayCompleted],
+      [monthKey, paperCompleted],
     );
+
+    final autoStarted = useRef(false);
+    useEffect(() {
+      if (!autoStartPaper || autoStarted.value || paperIso == null) return null;
+      autoStarted.value = true;
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        unawaited(openDayTestStable(paperIso, isRevise: paperCompleted));
+      });
+      return null;
+    }, [autoStartPaper, paperIso]);
 
     void shiftMonth(int delta) {
       final m = displayedMonth.value;
@@ -153,11 +106,14 @@ class DailyCaScreen extends HookConsumerWidget {
         children: [
           DailyCaTodaySection(
             minDate: minDate,
-            todayCompleted: todayCompleted,
+            paperDate: paperDate,
+            paperCompleted: paperCompleted,
             launching: launching.value,
-            onStartToday: () => unawaited(
-              openDayTestStable(todayIso, isRevise: todayCompleted),
-            ),
+            onStartPaper: paperIso == null
+                ? null
+                : () => unawaited(
+                      openDayTestStable(paperIso, isRevise: paperCompleted),
+                    ),
           ),
           const SizedBox(height: AppSpacing.lg),
           Row(

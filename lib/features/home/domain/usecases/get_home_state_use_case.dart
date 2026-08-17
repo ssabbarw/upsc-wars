@@ -5,6 +5,7 @@ import 'package:upsc_wars/features/history/domain/usecases/get_daily_progress_us
 import 'package:upsc_wars/features/history/domain/usecases/get_session_list_use_case.dart';
 import 'package:upsc_wars/features/revision_queue/domain/usecases/get_revision_queue_use_case.dart';
 import '../../../../core/providers/prefs_provider.dart';
+import '../daily_streak_service.dart';
 
 class GetHomeStateUseCase {
   const GetHomeStateUseCase({
@@ -41,7 +42,7 @@ class GetHomeStateUseCase {
         sessionList.where((e) => e.status == 'completed').firstOrNull;
     final lastSession = inProgress ?? lastCompleted;
     return HomeState(
-      streakCount: _prefs.currentStreak,
+      streakCount: DailyStreakService.visibleStreak(prefs: _prefs),
       longestStreak: _prefs.longestStreak,
       dailyGoalTarget: _prefs.dailyGoal,
       dailyGoalProgress: futures[0] as int,

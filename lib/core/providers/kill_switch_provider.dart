@@ -93,7 +93,7 @@ Future<KillSwitchSnapshot> killSwitch(Ref ref) async {
     await rc.setDefaults(<String, dynamic>{
       killSwitchVersionRemoteConfigKey: '',
       communityTabEnabledRemoteConfigKey: true,
-      dailyCaEnabledRemoteConfigKey: false,
+      dailyCaEnabledRemoteConfigKey: true,
       // On by default for admin preview; set admins_only false to open to all.
       dailyWarEnabledRemoteConfigKey: true,
       dailyWarAdminsOnlyRemoteConfigKey: true,
@@ -157,17 +157,9 @@ Future<bool> communityTabRemoteEnabled(Ref ref) async {
 /// Fails closed (`false`) while loading or on read errors.
 @Riverpod(keepAlive: true)
 Future<bool> dailyCaRemoteEnabled(Ref ref) async {
-  if (kIsWeb) {
-    return false;
-  }
-  await ref.watch(killSwitchProvider.future);
-  try {
-    return FirebaseRemoteConfig.instance.getBool(
-      dailyCaEnabledRemoteConfigKey,
-    );
-  } on Object catch (_) {
-    return false;
-  }
+  // TEMP: force CA on so a fresh install can see the Today hub paper card.
+  // Revert before shipping — respect [dailyCaEnabledRemoteConfigKey] again.
+  return true;
 }
 
 /// Whether Daily War is available for the **signed-in user**.
