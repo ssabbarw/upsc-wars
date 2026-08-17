@@ -55,6 +55,8 @@ jobs:
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           GMAIL_RECIPIENT: ${{ secrets.GMAIL_RECIPIENT }}
           ADMIN_NOTIFY_EMAIL: sachinsabbarwal@gmail.com
+          MAX_RETRIES: "3"
+          PROMPT_VERSION: "1.4"
         run: |
           ARGS=()
           if [ -n "${{ github.event.inputs.date }}" ]; then

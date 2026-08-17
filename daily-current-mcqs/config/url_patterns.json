@@ -1,0 +1,17 @@
+[
+    {
+        "name": "InsightsIAS",
+        "pattern": "https://www.insightsonindia.com/{year}/{month:02d}/{day:02d}/upsc-current-affairs-{day}-{month_name}-{year}/",
+        "active": true
+    },
+    {
+        "name": "PWOnlyIAS",
+        "pattern": "https://pwonlyias.com/news-headline/news-of-the-day-{day_ordinal}-{month_name}-{year}/",
+        "active": true
+    },
+    {
+        "name": "ForumIAS",
+        "pattern": "https://forumias.com/blog/must-read-news-daily-current-affairs-articles-{day}-{month_name}-{year}/",
+        "active": true
+    }
+]

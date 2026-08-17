@@ -428,6 +428,11 @@ const callableOpts = {
   memory: "512MiB",
 };
 
+const publishOpts = {
+  ...callableOpts,
+  secrets: ["ANTHROPIC_API_KEY"],
+};
+
 exports.updateDailyCaDraft = onCall(callableOpts, async (request) => {
   const email = requireAdmin(request);
   const iso = String((request.data && request.data.date) || "").trim();
@@ -460,7 +465,7 @@ exports.updateDailyCaDraft = onCall(callableOpts, async (request) => {
   return { ok: true, chosen: chosenIds.length };
 });
 
-exports.publishDailyCaDay = onCall(callableOpts, async (request) => {
+exports.publishDailyCaDay = onCall(publishOpts, async (request) => {
   requireAdmin(request);
   const iso = String((request.data && request.data.date) || "").trim();
   if (!/^\d{4}-\d{2}-\d{2}$/.test(iso)) {
@@ -545,6 +550,7 @@ exports.autoPublishDailyCa = onSchedule(
     region: "asia-south1",
     timeoutSeconds: 300,
     memory: "512MiB",
+    secrets: ["ANTHROPIC_API_KEY"],
   },
   async () => {
     const iso = yesterdayIso(istParts());
@@ -554,7 +560,7 @@ exports.autoPublishDailyCa = onSchedule(
   },
 );
 
-exports.adminAutoPublishDailyCa = onCall(callableOpts, async (request) => {
+exports.adminAutoPublishDailyCa = onCall(publishOpts, async (request) => {
   requireAdmin(request);
   const iso =
     String((request.data && request.data.date) || "").trim() ||

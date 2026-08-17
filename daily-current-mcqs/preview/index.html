@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Daily CA preview</title>
+  <style>
+    :root {
+      --bg: #f4f1ea;
+      --paper: #fffdf8;
+      --ink: #1c1917;
+      --muted: #57534e;
+      --line: #e7e0d4;
+      --accent: #1d4ed8;
+      --ok: #166534;
+      --bad: #991b1b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font: 16px/1.5 "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      color: var(--ink);
+      background: var(--bg);
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+      padding: 16px 20px;
+    }
+    header h1 { margin: 0 0 4px; font-size: 20px; }
+    header p { margin: 0; color: var(--muted); font-size: 14px; }
+    main { max-width: 820px; margin: 0 auto; padding: 20px; }
+    .meta, .card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 16px 18px;
+      margin-bottom: 14px;
+    }
+    .chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
+    .chip {
+      font: 12px/1.2 system-ui, sans-serif;
+      background: #eef2ff;
+      color: #1e3a8a;
+      padding: 4px 8px;
+      border-radius: 999px;
+    }
+    .stem { white-space: pre-wrap; font-size: 17px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0;
+      font-size: 14px;
+    }
+    th, td { border: 1px solid var(--line); padding: 8px; vertical-align: top; }
+    th { background: #faf6ee; text-align: left; }
+    button {
+      font: 13px/1.2 system-ui, sans-serif;
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 8px;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+    button:hover { border-color: var(--accent); color: var(--accent); }
+    .answer { margin-top: 12px; padding-top: 12px; border-top: 1px dashed var(--line); display: none; }
+    .card.open .answer { display: block; }
+    .correct { color: var(--ok); font-weight: 700; }
+    .err { color: var(--bad); }
+    ol.analysis { padding-left: 18px; }
+    ul { margin: 8px 0 12px; padding-left: 20px; }
+    ul li { margin: 4px 0; }
+    .prose p { margin: 0 0 10px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Daily CA preview</h1>
+    <p id="status">Loading preview/latest.json…</p>
+  </header>
+  <main id="app"></main>
+  <script>
+    const $ = (id) => document.getElementById(id);
+
+    function esc(s) {
+      return String(s ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    function chips(list) {
+      return (list || []).filter(Boolean).map(
+        (t) => `<span class="chip">${esc(t)}</span>`
+      ).join("");
+    }
+
+    function renderTable(table) {
+      if (!table) return "";
+      const cols = Array.isArray(table.columns) && table.columns.length
+        ? table.columns
+        : ["List I", "List II"];
+      const rows = Array.isArray(table.rows) ? table.rows : [];
+      const body = rows.map((row) => {
+        if (Array.isArray(row)) {
+          return `<tr>${row.map((c) => `<td>${esc(c)}</td>`).join("")}</tr>`;
+        }
+        const cells = cols.map((col, i) => {
+          const v = (row && typeof row === "object")
+            ? (row[col] ?? row["col_" + i] ?? (i === 0 ? row.list_i : i === 1 ? row.list_ii : "") ?? "")
+            : "";
+          return `<td>${esc(v)}</td>`;
+        });
+        return `<tr>${cells.join("")}</tr>`;
+      }).join("");
+      return `
+        <p class="stem">${esc(table.header_text || "")}</p>
+        <table>
+          <thead><tr>${cols.map((c) => `<th>${esc(c)}</th>`).join("")}</tr></thead>
+          <tbody>${body}</tbody>
+        </table>
+        <p class="stem">${esc(table.footer_text || "")}</p>
+      `;
+    }
+
+    function formatProse(text) {
+      const raw = String(text || "").trim();
+      if (!raw) return "";
+      const blocks = raw.split(/\n\s*\n/);
+      return blocks.map((block) => {
+        const lines = block.split("\n").map((l) => l.trim()).filter(Boolean);
+        const bullets = lines.filter((l) => /^[•\-\*]\s+/.test(l));
+        if (bullets.length && bullets.length === lines.length) {
+          const items = bullets.map((l) => `<li>${esc(l.replace(/^[•\-\*]\s+/, ""))}</li>`).join("");
+          return `<ul>${items}</ul>`;
+        }
+        return `<p class="stem">${esc(block)}</p>`;
+      }).join("");
+    }
+
+    function renderQuestion(q, i) {
+      const meta = q.meta || {};
+      const shared = q.shared || {};
+      const en = q.en || {};
+      const type = shared.question_type || "";
+      const correct = (shared.correct_option || "").toUpperCase();
+      const analysis = Array.isArray(en.statement_analysis) ? en.statement_analysis : [];
+      return `
+        <article class="card" id="q${i}">
+          <div class="chips">
+            <span class="chip">Q${i + 1}</span>
+            ${chips([meta.gs_subject, type, meta.topic])}
+            ${chips(meta.ca_tags)}
+          </div>
+          ${en.display_text ? `<p class="stem">${esc(en.display_text)}</p>` : ""}
+          ${renderTable(en.table_data)}
+          <button type="button" data-toggle="${i}">Show answer &amp; explanation</button>
+          <div class="answer">
+            <p class="correct">Correct: (${esc(correct)})</p>
+            ${analysis.length ? `<ol class="analysis">${analysis.map((a) =>
+              `<li><strong>${a.is_correct ? "Correct" : "Incorrect"}.</strong> ${esc(a.statement)}<br><span class="footer">${esc(a.reason)}</span></li>`
+            ).join("")}</ol>` : ""}
+            <p><strong>Explanation</strong></p>
+            <div class="prose">${formatProse(en.final_explanation)}</div>
+            ${Array.isArray(en.elimination_logic) && en.elimination_logic.length
+              ? `<p><strong>Elimination</strong></p><ol class="analysis">${en.elimination_logic.map((s) => `<li>${esc(s)}</li>`).join("")}</ol>`
+              : ""}
+            <p><strong>Trap</strong> — ${esc(shared.trap_type)} · ${esc(en.upsc_trap_explanation)}</p>
+            <p><strong>News</strong> — ${esc(meta.news_trigger)} · ${esc(meta.source_name)}</p>
+            ${meta.source_url ? `<p class="footer"><a href="${esc(meta.source_url)}" target="_blank" rel="noreferrer">${esc(meta.source_url)}</a></p>` : ""}
+          </div>
+        </article>
+      `;
+    }
+
+    function render(doc) {
+      const questions = doc.questions || [];
+      const meta = doc.metadata || {};
+      const topics = doc.selected_topics || [];
+      $("status").textContent =
+        `${doc.content_date || meta.date || "unknown date"} · ${questions.length} questions · ${meta.model_en || ""}`;
+      $("app").innerHTML = `
+        <section class="meta">
+          <p><strong>Harvested topics used</strong></p>
+          <div class="chips">${chips(topics.map((t) => t.title || t.topic).filter(Boolean))}</div>
+          <p class="footer">${esc((meta.reachable_urls || []).join(", "))}</p>
+        </section>
+        ${questions.map(renderQuestion).join("")}
+      `;
+      $("app").querySelectorAll("[data-toggle]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const card = btn.closest(".card");
+          card.classList.toggle("open");
+          btn.textContent = card.classList.contains("open")
+            ? "Hide answer"
+            : "Show answer & explanation";
+        });
+      });
+    }
+
+    fetch("./latest.json?ts=" + Date.now())
+      .then((r) => {
+        if (!r.ok) throw new Error("No latest.json yet. Run: python preview.py --questions 6");
+        return r.json();
+      })
+      .then(render)
+      .catch((e) => {
+        $("status").innerHTML = `<span class="err">${esc(e.message)}</span>`;
+      });
+  </script>
+</body>
+</html>
