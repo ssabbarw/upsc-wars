@@ -88,9 +88,11 @@ class QuestionBankUpsert {
         ? (preserveSourceFrom?.subTopic ?? 'Current Affairs')
         : _str(meta['sub_topic'] ?? meta['subtopic']);
     final conceptsUsed = meta['concepts_used'];
-    final conceptsJson = jsonEncode(
-      conceptsUsed is List ? conceptsUsed : const <dynamic>[],
-    );
+    final caTags = meta['ca_tags'];
+    final conceptsList = conceptsUsed is List && conceptsUsed.isNotEmpty
+        ? conceptsUsed
+        : (caTags is List ? caTags : const <dynamic>[]);
+    final conceptsJson = jsonEncode(conceptsList);
 
     final qType = QuestionSourceConstants.normalizeQuestionType(
       _str(shared['question_type']),
@@ -163,7 +165,7 @@ class QuestionBankUpsert {
     final finalExplanation = _str(payload['final_explanation']);
     final statementAnalysis = stmtAnalysis == null
         ? null
-        : jsonEncode(stmtAnalysis is List ? stmtAnalysis : const []);
+        : jsonEncode(_normalizeStatementAnalysis(stmtAnalysis));
 
     final existing = await _db.questionTranslationsDao.getByQuestionAndLanguage(
       uuid,
@@ -284,5 +286,28 @@ class QuestionBankUpsert {
   String? _nullableStr(Object? value) {
     final s = _str(value);
     return s.isEmpty ? null : s;
+  }
+
+  static List<Map<String, dynamic>> _normalizeStatementAnalysis(Object? raw) {
+    if (raw is! List) return const [];
+    final out = <Map<String, dynamic>>[];
+    for (final item in raw) {
+      if (item is! Map) continue;
+      final map = Map<String, dynamic>.from(item);
+      final verdict = map['is_correct'] ?? map['correct'] ?? map['verdict'];
+      var isCorrect = false;
+      if (verdict is bool) {
+        isCorrect = verdict;
+      } else if (verdict != null) {
+        final s = verdict.toString().trim().toLowerCase();
+        isCorrect = s == 'true' || s == 'correct' || s == 'yes';
+      }
+      out.add({
+        'statement': (map['statement'] ?? map['label'] ?? '').toString(),
+        'is_correct': isCorrect,
+        'reason': (map['reason'] ?? '').toString(),
+      });
+    }
+    return out;
   }
 }

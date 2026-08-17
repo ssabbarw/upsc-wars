@@ -4,8 +4,9 @@
 /// read on the 17th carries the 16th's news, so the 16th's paper is what an
 /// aspirant can be quizzed on over their morning tea on the 17th.
 ///
-/// Content days are Mon–Sat ([isTestDay]), so Sunday has no paper and Monday
-/// morning re-serves Saturday's — see [paperQuizContentDate].
+/// Content days are Sun–Fri ([isTestDay]). **Saturday has no paper.**
+/// Sunday's pack is Sat+Sun news, generated Sunday evening, and opens
+/// Monday morning — see [paperQuizContentDate].
 abstract final class DailyCaSchedule {
   DailyCaSchedule._();
 
@@ -47,7 +48,11 @@ abstract final class DailyCaSchedule {
 
   static bool isSunday(DateTime istDate) => istDate.weekday == DateTime.sunday;
 
-  static bool isTestDay(DateTime istDate) => !isSunday(istDate);
+  static bool isSaturday(DateTime istDate) =>
+      istDate.weekday == DateTime.saturday;
+
+  /// Saturday has no newspaper pack. Sunday holds the weekend (Sat+Sun) pack.
+  static bool isTestDay(DateTime istDate) => !isSaturday(istDate);
 
   static String formatIsoDate(DateTime istDate) {
     final y = istDate.year.toString().padLeft(4, '0');
@@ -80,8 +85,8 @@ abstract final class DailyCaSchedule {
 
   /// Newest content day whose quiz is open — the "paper" to serve right now.
   ///
-  /// Skips Sundays, so Monday morning still serves Saturday's paper rather than
-  /// showing nothing. Returns null only when no content day has opened yet.
+  /// Skips Saturdays, so Monday morning serves Sunday's weekend pack rather
+  /// than showing nothing. Returns null only when no content day has opened yet.
   static DateTime? paperQuizContentDate({DateTime? referenceIst}) {
     final now = referenceIst ?? nowIst();
     var cursor = dateOnly(now).subtract(const Duration(days: 1));
@@ -100,7 +105,7 @@ abstract final class DailyCaSchedule {
     return dateOnly(now).difference(dateOnly(contentDate)).inDays == 1;
   }
 
-  /// Next moment a fresh paper quiz opens (skips the Monday gap).
+  /// Next moment a fresh paper quiz opens (skips the Sunday-morning gap).
   static DateTime nextOpensAt({DateTime? referenceIst}) {
     final now = referenceIst ?? nowIst();
     var day = dateOnly(now);

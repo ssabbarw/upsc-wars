@@ -22,6 +22,25 @@ Use the same addresses as `SuperUserEmails.emails` in
 
 Optional Remote Config **`question_corrections_revision`** (int) mirrors `active.revision` for a zero-read fast path; clients still poll Firestore daily if RC is not bumped.
 
+## Daily CA drafts (`asia-south1`)
+
+Python pipeline (GitHub Action at 8 PM IST Mon–Fri + Sunday) writes English drafts to **`daily_ca_drafts/{YYYY-MM-DD}`**.
+
+| Function | Trigger | Role |
+|---|---|---|
+| `updateDailyCaDraft` | callable | Super-user saves edits + chosen ids |
+| `publishDailyCaDay` | callable | Translates chosen 5–10 to Hindi, writes `daily_mcqs/{Y}/{M}/{D}` |
+| `autoPublishDailyCa` | 5:50 AM IST | If unpublished: chosen ≥5, else first 10, skip if &lt;5 |
+| `adminAutoPublishDailyCa` | callable | Manual auto-publish |
+
+Set Functions env **`ANTHROPIC_API_KEY`** (Hindi on publish), optional **`GMAIL_SENDER` / `GMAIL_APP_PASSWORD` / `GMAIL_RECIPIENT`**.
+
+```bash
+firebase deploy --only functions:updateDailyCaDraft,functions:publishDailyCaDay,functions:autoPublishDailyCa,functions:adminAutoPublishDailyCa,firestore:rules
+```
+
+GitHub secrets for generate: `ANTHROPIC_API_KEY`, `FIREBASE_CREDENTIALS_JSON`, `FIREBASE_PROJECT_ID`, plus Gmail SMTP secrets if you want the summary email.
+
 ## `sendSpotTestNotification`
 
 HTTPS callable used by Flutter (`SpotTestPushCloudService`) from **Settings → Internal → Spot test composer**.

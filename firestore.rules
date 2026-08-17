@@ -330,6 +330,12 @@ service cloud.firestore {
         ];
     }
 
+    /// Admin-only English drafts. Students never read this collection.
+    match /daily_ca_drafts/{dateId} {
+      allow read: if isSuperUserEmail();
+      allow write: if false;
+    }
+
     function isAdminDashboardPath() {
       return request.path.matches(
         '/databases/' + database + '/documents/admin_dashboard(/.*)?'

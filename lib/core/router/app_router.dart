@@ -42,6 +42,8 @@ import '../../features/home/screens/home_screen.dart';
 import '../../features/onboarding/screens/onboarding_flow_screen.dart';
 import '../../features/notifications/screens/long_html_notification_screen.dart';
 import '../../features/daily_ca/screens/daily_ca_screen.dart';
+import '../../features/daily_ca/screens/daily_ca_review_screen.dart';
+import '../../features/daily_ca/screens/daily_ca_review_edit_screen.dart';
 import '../../features/daily_war/screens/daily_war_badges_screen.dart';
 import '../../features/daily_war/screens/daily_war_history_detail_screen.dart';
 import '../../features/daily_war/screens/daily_war_history_revise_screen.dart';
@@ -501,6 +503,36 @@ GoRouter appRouter(Ref ref) {
                 );
               }
               return QuestionEditorPreviewScreen(args: args);
+            },
+          ),
+        ],
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/internal/daily-ca-review/:date',
+        name: 'daily_ca_review',
+        builder: (context, state) {
+          if (!isSuperUser) {
+            return const Scaffold(body: Center(child: Text('Not available')));
+          }
+          final date = state.pathParameters['date'] ?? '';
+          return DailyCaReviewScreen(isoDate: date);
+        },
+        routes: [
+          GoRoute(
+            parentNavigatorKey: rootNavigatorKey,
+            path: 'edit',
+            name: 'daily_ca_review_edit',
+            builder: (context, state) {
+              if (!isSuperUser) {
+                return const Scaffold(
+                  body: Center(child: Text('Not available')),
+                );
+              }
+              final raw = state.extra is Map
+                  ? Map<String, dynamic>.from(state.extra as Map)
+                  : <String, dynamic>{};
+              return DailyCaReviewEditScreen(raw: raw);
             },
           ),
         ],

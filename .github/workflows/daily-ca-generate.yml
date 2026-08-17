@@ -1,0 +1,66 @@
+name: Daily CA generate
+
+on:
+  workflow_dispatch:
+    inputs:
+      date:
+        description: 'Target date YYYY-MM-DD (empty = today IST)'
+        required: false
+        default: ''
+      questions:
+        description: 'Override question count (empty = 15 weekday / 20 Sunday)'
+        required: false
+        default: ''
+  schedule:
+    # 8:00 PM IST = 14:30 UTC. Saturday omitted.
+    - cron: '30 14 * * 1-5'
+    - cron: '30 14 * * 0'
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: daily-current-mcqs
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check pipeline is in the repo
+        run: |
+          if [ ! -f pipeline.py ]; then
+            echo "daily-current-mcqs/ is missing from the checkout."
+            echo "If that folder has its own .git, remove it so the files can be committed to this repo."
+            exit 1
+          fi
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install deps
+        run: pip install -r requirements.txt
+      - name: Write Firebase credentials
+        env:
+          FIREBASE_CREDENTIALS_JSON: ${{ secrets.FIREBASE_CREDENTIALS_JSON }}
+        run: |
+          if [ -z "$FIREBASE_CREDENTIALS_JSON" ]; then
+            echo "FIREBASE_CREDENTIALS_JSON secret is required"
+            exit 1
+          fi
+          printf '%s' "$FIREBASE_CREDENTIALS_JSON" > firebase_credentials.json
+      - name: Run pipeline
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          MCQ_MODEL: claude-sonnet-4-6
+          FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
+          FIREBASE_CREDENTIALS_PATH: ./firebase_credentials.json
+          GMAIL_SENDER: ${{ secrets.GMAIL_SENDER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          GMAIL_RECIPIENT: ${{ secrets.GMAIL_RECIPIENT }}
+          ADMIN_NOTIFY_EMAIL: sachinsabbarwal@gmail.com
+        run: |
+          ARGS=()
+          if [ -n "${{ github.event.inputs.date }}" ]; then
+            ARGS+=(--date "${{ github.event.inputs.date }}")
+          fi
+          if [ -n "${{ github.event.inputs.questions }}" ]; then
+            ARGS+=(--questions "${{ github.event.inputs.questions }}")
+          fi
+          python pipeline.py "${ARGS[@]}"

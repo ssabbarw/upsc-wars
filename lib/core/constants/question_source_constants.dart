@@ -37,6 +37,7 @@ abstract final class QuestionSourceConstants {
     'Art & Culture': 'Art and Culture',
     'Art and Culture': 'Art and Culture',
     'Social Issues': 'Social Issues',
+    'Internal Security': 'Internal Security',
     'Current affairs': 'Current affairs',
     'Current Affairs': 'Current affairs',
   };

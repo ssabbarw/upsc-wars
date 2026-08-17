@@ -6,10 +6,7 @@ import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../widgets/daily_revision_choice_sheet.dart';
 
-/// Notification / cold-start entry that lands on the revision choice.
-///
-/// The reminder promises "your drill is ready", so the tap has to land on the
-/// drill rather than dropping the user on home to find it.
+/// Notification / cold-start entry that lands on the revision queue.
 class DailyDrillLaunchScreen extends ConsumerStatefulWidget {
   const DailyDrillLaunchScreen({super.key});
 
@@ -37,7 +34,6 @@ class _DailyDrillLaunchScreenState
         context: context,
         ref: ref,
         source: 'daily_practice_reminder',
-        allowMixedFallback: true,
       );
       if (!mounted) return;
       if (context.mounted) context.go('/');
@@ -60,7 +56,7 @@ class _DailyDrillLaunchScreenState
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Text(
-                  'Could not start your drill',
+                  'Could not open revision queue',
                   style: AppTextStyles.h3().copyWith(color: scheme.onSurface),
                 ),
                 const SizedBox(height: AppSpacing.sm),

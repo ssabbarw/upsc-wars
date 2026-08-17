@@ -767,6 +767,12 @@ exports.adminPreviewDailyWar = dailyWar.adminPreviewDailyWar;
 exports.adminPublishDailyWar = dailyWar.adminPublishDailyWar;
 exports.adminNotifyDailyWar = dailyWar.adminNotifyDailyWar;
 
+const dailyCa = require("./daily_ca");
+exports.updateDailyCaDraft = dailyCa.updateDailyCaDraft;
+exports.publishDailyCaDay = dailyCa.publishDailyCaDay;
+exports.autoPublishDailyCa = dailyCa.autoPublishDailyCa;
+exports.adminAutoPublishDailyCa = dailyCa.adminAutoPublishDailyCa;
+
 exports.tickBots = bots.tickBots;
 exports.onBotBattleMatchWritten = bots.onBotBattleMatchWritten;
 exports.adminRunBotTick = bots.adminRunBotTick;

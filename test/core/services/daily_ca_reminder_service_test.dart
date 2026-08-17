@@ -22,23 +22,22 @@ void main() {
       );
     });
 
-    test('skips Monday morning because Sunday has no newspaper', () {
-      // Sunday 16 Aug 2026, 9 AM → next fresh paper is Tuesday's 7 AM slot,
-      // since Monday morning would only re-serve Saturday's paper.
+    test('Sunday evening books Monday morning for the weekend pack', () {
+      // Sunday 16 Aug 2026, 9 PM → Monday 7 AM (Sunday's Sat+Sun paper).
       expect(
         DailyCaReminderService.nextReminderLocalTime(
-          reference: DateTime(2026, 8, 16, 9),
+          reference: DateTime(2026, 8, 16, 21),
         ),
-        DateTime(2026, 8, 18, 7),
+        DateTime(2026, 8, 17, 7),
       );
     });
 
-    test('Saturday evening books Sunday morning for Saturday\'s paper', () {
+    test('Saturday evening skips Sunday morning and books Monday', () {
       expect(
         DailyCaReminderService.nextReminderLocalTime(
           reference: DateTime(2026, 8, 15, 20),
         ),
-        DateTime(2026, 8, 16, 7),
+        DateTime(2026, 8, 17, 7),
       );
     });
   });

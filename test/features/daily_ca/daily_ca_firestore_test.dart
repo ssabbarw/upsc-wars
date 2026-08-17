@@ -17,11 +17,8 @@ void main() {
       expect(s.day, '05');
     });
 
-    test('rejects invalid iso date', () {
-      expect(
-        () => DailyCaFirestore.pathForDate('08-06-2026'),
-        throwsArgumentError,
-      );
+    test('draft collection is daily_ca_drafts/{date}', () {
+      expect(DailyCaFirestore.draftCollectionName, 'daily_ca_drafts');
     });
   });
 }

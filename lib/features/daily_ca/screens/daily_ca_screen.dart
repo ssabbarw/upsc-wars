@@ -137,7 +137,7 @@ class DailyCaScreen extends HookConsumerWidget {
           ),
           const SizedBox(height: AppSpacing.sm),
           Text(
-            'Tap a date from $minDateLabel onward. Sundays are off.',
+            'Tap a date from $minDateLabel onward. Saturdays are off.',
             style: AppTextStyles.bodySm().copyWith(
               color: scheme.onSurfaceVariant,
             ),

@@ -9,6 +9,7 @@ abstract final class DailyCaFirestore {
   DailyCaFirestore._();
 
   static const collectionName = 'daily_mcqs';
+  static const draftCollectionName = 'daily_ca_drafts';
 
   /// Parses `YYYY-MM-DD` into zero-padded `(year, month, day)` path segments.
   static ({String year, String month, String day}) pathSegments(String isoDate) {
@@ -37,5 +38,12 @@ abstract final class DailyCaFirestore {
         .doc(s.year)
         .collection(s.month)
         .doc(s.day);
+  }
+
+  /// Admin review draft at `daily_ca_drafts/{YYYY-MM-DD}`.
+  static DocumentReference<Map<String, dynamic>> draftDoc(String isoDate) {
+    return FirebaseFirestore.instance
+        .collection(draftCollectionName)
+        .doc(isoDate.trim());
   }
 }

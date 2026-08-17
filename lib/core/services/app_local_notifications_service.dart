@@ -385,8 +385,8 @@ class AppLocalNotificationsService {
     try {
       await _plugin.zonedSchedule(
         id: dailyPracticeReminderNotificationId,
-        title: 'Revision is ready',
-        body: 'The ones you missed, or the ones you saved.',
+        title: 'Revision queue',
+        body: 'Incorrect MCQs or bookmarked MCQs.',
         scheduledDate: scheduledDate,
         notificationDetails: _dailyPracticeReminderDetails(),
         androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,

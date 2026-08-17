@@ -16,7 +16,7 @@ import '../providers/daily_drill_provider.dart';
 import 'daily_revision_choice_sheet.dart';
 import 'today_loop_card.dart';
 
-/// Afternoon revision on home — missed questions or bookmarks.
+/// Afternoon revision queue on home — incorrect MCQs or bookmarked MCQs.
 class DailyDrillCard extends HookConsumerWidget {
   const DailyDrillCard({
     super.key,
@@ -100,53 +100,27 @@ class DailyDrillCard extends HookConsumerWidget {
           saved: state.bookmarkCount,
         );
         final isHero = layout == TodayLoopLayout.hero;
-        final showDoors = isHero && state.hasAnyPool;
-
-        final String title;
-        final String subtitle;
-        final String cta;
-        if (!state.hasAnyPool) {
-          title = layout == TodayLoopLayout.tile
-              ? 'Nothing yet'
-              : 'The ones that got away';
-          subtitle = layout == TodayLoopLayout.tile
-              ? 'After you write'
-              : 'Misses and bookmarks land here after you write.';
-          cta = 'Later';
-        } else if (state.completedToday) {
-          title = layout == TodayLoopLayout.tile ? counts : 'The ones that got away';
-          subtitle = layout == TodayLoopLayout.tile
-              ? 'Done'
-              : counts;
-          cta = isHero ? 'Another set' : 'Done';
-        } else {
-          title = layout == TodayLoopLayout.tile
-              ? counts
-              : 'The ones that got away';
-          subtitle = layout == TodayLoopLayout.tile
-              ? 'Missed or saved'
-              : counts;
-          cta = isHero ? 'Choose a set' : 'Choose';
-        }
 
         return TodayLoopCard(
           layout: layout,
-          eyebrow: 'REVISION',
-          title: title,
-          subtitle: subtitle,
-          cta: cta,
+          eyebrow: 'REVISION QUEUE',
+          title: 'Revision queue',
+          subtitle: counts,
+          cta: state.hasAnyPool
+              ? (state.completedToday ? 'Done' : 'Open')
+              : 'Empty',
           icon: Icons.replay_rounded,
           accent: AppColors.primaryDark,
           background: isDark
               ? AppColors.primaryDeep.withValues(alpha: 0.28)
               : AppColors.primaryLight,
-          onTap: state.hasAnyPool && !showDoors
-              ? () => unawaited(openChoice(source: 'card'))
-              : null,
+          onTap: isHero
+              ? null
+              : () => unawaited(openChoice(source: 'card')),
           done: state.completedToday,
           loading: loading.value,
           showNow: emphasized && isHero,
-          actions: showDoors
+          actions: isHero
               ? _RevisionDoors(
                   wrongCount: state.wrongCount,
                   bookmarkCount: state.bookmarkCount,
@@ -154,16 +128,16 @@ class DailyDrillCard extends HookConsumerWidget {
                   hasBookmarks: state.hasBookmarks,
                   loading: loading.value,
                   accent: AppColors.primaryDark,
-                  onMissed: () => unawaited(
+                  onIncorrect: () => unawaited(
                     startPool(
                       pool: DailyRevisionPool.missed,
-                      source: 'card_missed',
+                      source: 'card_incorrect',
                     ),
                   ),
-                  onSaved: () => unawaited(
+                  onBookmarked: () => unawaited(
                     startPool(
                       pool: DailyRevisionPool.saved,
-                      source: 'card_saved',
+                      source: 'card_bookmarked',
                     ),
                   ),
                 )
@@ -182,8 +156,8 @@ class _RevisionDoors extends StatelessWidget {
     required this.hasBookmarks,
     required this.loading,
     required this.accent,
-    required this.onMissed,
-    required this.onSaved,
+    required this.onIncorrect,
+    required this.onBookmarked,
   });
 
   final int wrongCount;
@@ -192,8 +166,8 @@ class _RevisionDoors extends StatelessWidget {
   final bool hasBookmarks;
   final bool loading;
   final Color accent;
-  final VoidCallback onMissed;
-  final VoidCallback onSaved;
+  final VoidCallback onIncorrect;
+  final VoidCallback onBookmarked;
 
   @override
   Widget build(BuildContext context) {
@@ -201,19 +175,21 @@ class _RevisionDoors extends StatelessWidget {
       children: [
         Expanded(
           child: _Door(
-            label: wrongCount == 1 ? '1 missed' : '$wrongCount missed',
+            label: DailyRevision.incorrectLabel,
+            count: DailyRevision.poolCountLabel(wrongCount),
             enabled: hasWrongs && !loading,
             accent: accent,
-            onTap: onMissed,
+            onTap: onIncorrect,
           ),
         ),
         const SizedBox(width: AppSpacing.sm),
         Expanded(
           child: _Door(
-            label: bookmarkCount == 1 ? '1 saved' : '$bookmarkCount saved',
+            label: DailyRevision.bookmarkedLabel,
+            count: DailyRevision.poolCountLabel(bookmarkCount),
             enabled: hasBookmarks && !loading,
             accent: accent,
-            onTap: onSaved,
+            onTap: onBookmarked,
           ),
         ),
       ],
@@ -224,12 +200,14 @@ class _RevisionDoors extends StatelessWidget {
 class _Door extends StatelessWidget {
   const _Door({
     required this.label,
+    required this.count,
     required this.enabled,
     required this.accent,
     required this.onTap,
   });
 
   final String label;
+  final String count;
   final bool enabled;
   final Color accent;
   final VoidCallback onTap;
@@ -237,26 +215,49 @@ class _Door extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Material(
-      color: enabled ? accent : scheme.surface,
-      borderRadius: BorderRadius.circular(AppRadius.pill),
+      color: enabled
+          ? accent
+          : (isDark
+                ? scheme.surface.withValues(alpha: 0.4)
+                : scheme.surface),
+      borderRadius: BorderRadius.circular(AppRadius.md),
       child: InkWell(
         onTap: enabled ? onTap : null,
-        borderRadius: BorderRadius.circular(AppRadius.pill),
+        borderRadius: BorderRadius.circular(AppRadius.md),
         child: Padding(
           padding: const EdgeInsets.symmetric(
-            horizontal: AppSpacing.md,
+            horizontal: AppSpacing.sm,
             vertical: 10,
           ),
-          child: Text(
-            label,
-            textAlign: TextAlign.center,
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
-            style: AppTextStyles.labelSm().copyWith(
-              color: enabled ? AppColors.onPrimary : scheme.onSurfaceVariant,
-              fontWeight: FontWeight.w700,
-            ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                label,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                style: AppTextStyles.caption().copyWith(
+                  color: enabled
+                      ? AppColors.onPrimary.withValues(alpha: 0.85)
+                      : scheme.onSurfaceVariant,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+              const SizedBox(height: 2),
+              Text(
+                count,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: AppTextStyles.label().copyWith(
+                  color: enabled
+                      ? AppColors.onPrimary
+                      : scheme.onSurfaceVariant,
+                  fontWeight: FontWeight.w800,
+                ),
+              ),
+            ],
           ),
         ),
       ),

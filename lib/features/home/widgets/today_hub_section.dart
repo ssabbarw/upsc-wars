@@ -189,7 +189,6 @@ class TodayHubSection extends HookConsumerWidget {
                           context: context,
                           ref: ref,
                           source: 'sunday_week_review_empty',
-                          allowMixedFallback: true,
                         ),
                       );
                     }

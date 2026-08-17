@@ -14,6 +14,8 @@ const Set<String> kScreenViewIgnoredNames = {
   'question_editor',
   'question_editor_edit',
   'question_editor_preview',
+  'daily_ca_review',
+  'daily_ca_review_edit',
   'about_us',
 };
 

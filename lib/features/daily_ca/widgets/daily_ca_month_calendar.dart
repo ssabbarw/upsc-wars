@@ -73,7 +73,7 @@ class DailyCaMonthCalendar extends StatelessWidget {
             final day = index - leadingBlanks + 1;
             final istDate = DateTime(year, month, day);
             final iso = DailyCaSchedule.formatIsoDate(istDate);
-            final isSunday = DailyCaSchedule.isSunday(istDate);
+            final isOffDay = DailyCaSchedule.isSaturday(istDate);
             final isToday = iso == todayIso;
             final isPublished = DailyCaSchedule.isPublishedForDate(
               istDate,
@@ -84,11 +84,11 @@ class DailyCaMonthCalendar extends StatelessWidget {
               istDate,
               minDate,
             );
-            final canTap = !isSunday && !isBeforeMin && isPublished;
+            final canTap = !isOffDay && !isBeforeMin && isPublished;
 
             Color? fill;
             Color textColor = scheme.onSurface;
-            if (isSunday || isBeforeMin) {
+            if (isOffDay || isBeforeMin) {
               textColor = scheme.onSurfaceVariant.withValues(alpha: 0.45);
             } else if (!isPublished) {
               textColor = scheme.onSurfaceVariant.withValues(alpha: 0.55);

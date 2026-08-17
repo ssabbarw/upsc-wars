@@ -17,6 +17,7 @@ import 'package:upsc_wars/core/services/app_local_notifications_service.dart';
 import 'package:upsc_wars/core/services/fcm_token_sync_service.dart';
 import 'package:upsc_wars/features/community/open_challenge/open_challenge_fcm.dart';
 import 'package:upsc_wars/features/daily_war/daily_war_constants.dart';
+import 'package:upsc_wars/features/daily_ca/daily_ca_admin_constants.dart';
 import 'package:upsc_wars/features/memory_pairs/push/push_memory_pairs_fcm.dart';
 import 'package:upsc_wars/features/memory_pairs/push/push_memory_pairs_launch_params.dart';
 import 'package:upsc_wars/features/mini_games/push/push_revision_game_fcm.dart';
@@ -249,6 +250,7 @@ class BattleMessagingService {
     if (raw == PushSpotTestFcm.kind) return PushSpotTestFcm.kind;
     if (raw == PushMemoryPairsFcm.kind) return PushMemoryPairsFcm.kind;
     if (raw == PushRevisionGameFcm.kind) return PushRevisionGameFcm.kind;
+    if (raw == DailyCaAdminConstants.fcmKind) return DailyCaAdminConstants.fcmKind;
     final sid = message.data['sessionId']?.toString().trim() ?? '';
     if (sid.isNotEmpty) return 'battle_join';
     return raw != null && raw.isNotEmpty ? raw : 'unknown';
@@ -369,6 +371,13 @@ class BattleMessagingService {
       }
       if (ocKind == DailyWarConstants.fcmKind) {
         router.go(dailyWarLobbyRoute());
+        return;
+      }
+      if (ocKind == DailyCaAdminConstants.fcmKind) {
+        final date = message.data['date']?.toString().trim() ?? '';
+        if (date.isNotEmpty) {
+          router.go(DailyCaAdminConstants.reviewPath(date));
+        }
         return;
       }
       final sessionId = message.data['sessionId'] as String?;

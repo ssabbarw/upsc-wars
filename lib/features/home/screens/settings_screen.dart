@@ -17,6 +17,8 @@ import '../../../core/constants/creator_contact.dart';
 import '../../../core/providers/super_user_provider.dart';
 import '../../admin_dashboard/admin_dashboard_access.dart';
 import '../../question_editor/widgets/question_editor_access.dart';
+import '../../daily_ca/daily_ca_admin_constants.dart';
+import '../../daily_ca/widgets/daily_ca_review_access.dart';
 import '../../../shared/theme/dark_mode_toggle.dart';
 import '../../../shared/widgets/app_toast.dart';
 
@@ -124,11 +126,27 @@ class SettingsScreen extends ConsumerWidget {
               ],
             ),
 
-            if (kDebugMode || showQuestionEditor || showAdminDashboard) ...[
+            if (kDebugMode ||
+                showQuestionEditor ||
+                showAdminDashboard ||
+                isSuperUser) ...[
               const SizedBox(height: AppSpacing.lg),
               _Section(
                 title: isSuperUser && !kDebugMode ? 'Admin tools' : 'Internal',
                 children: [
+                  if (canAccessDailyCaReview(isSuperUser: isSuperUser))
+                    _NavTile(
+                      icon: Icons.newspaper_outlined,
+                      iconBg: Color(0xFFE7F0FF),
+                      iconColor: Color(0xFF1D4ED8),
+                      title: 'Daily CA review',
+                      subtitle: 'Pick 5–10 questions and publish',
+                      onTap: () => context.push(
+                        DailyCaAdminConstants.reviewPath(
+                          dailyCaReviewDateForNow(),
+                        ),
+                      ),
+                    ),
                   if (showAdminDashboard)
                     _NavTile(
                       icon: Icons.dashboard_outlined,

@@ -8,7 +8,7 @@ import 'daily_practice_reminder_service.dart';
 /// Schedules the morning "your paper quiz is live" reminder.
 ///
 /// One-shot rather than repeating, so each app open books the next valid
-/// morning. Mornings where no fresh paper opens (Monday, since Sunday has no
+/// morning. Mornings where no fresh paper opens (Sunday, since Saturday has no
 /// newspaper) are skipped instead of promising a quiz that isn't new.
 class DailyCaReminderService {
   DailyCaReminderService._();

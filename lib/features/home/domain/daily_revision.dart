@@ -3,29 +3,29 @@ import 'package:drift/drift.dart';
 import '../../../core/constants/daily_drill_constants.dart';
 import '../../../core/database/user_db.dart';
 
-/// Afternoon drill pool: questions the user got wrong, or ones they saved.
+/// Afternoon drill pool: incorrect MCQs, or bookmarked MCQs.
 enum DailyRevisionPool { missed, saved }
 
-/// 12 PM–6 PM daily drill: a short set from misses or bookmarks.
+/// 12 PM–6 PM daily drill: a short set from the revision queue.
 abstract final class DailyRevision {
   DailyRevision._();
 
   static const sessionSubject = 'daily_revision';
   static const questionCount = DailyDrillConstants.questionCount;
 
+  static const incorrectLabel = 'Incorrect MCQs';
+  static const bookmarkedLabel = 'Bookmarked MCQs';
+  static const emptyQueueLine = 'Nothing in the queue yet';
+
   static String countsLine({required int missed, required int saved}) {
-    if (missed <= 0 && saved <= 0) return '';
-    if (missed <= 0) return '$saved saved';
-    if (saved <= 0) return '$missed missed';
-    return '$missed missed · $saved saved';
+    if (missed <= 0 && saved <= 0) return emptyQueueLine;
+    if (missed <= 0) return '$saved bookmarked';
+    if (saved <= 0) return '$missed incorrect';
+    return '$missed incorrect · $saved bookmarked';
   }
 
-  static String tryCta(int available) {
-    if (available <= 0) return 'None yet';
-    if (available == 1) return 'Try this one';
-    if (available < questionCount) return 'Try these $available';
-    return 'Try $questionCount of these';
-  }
+  static String poolCountLabel(int available) =>
+      available <= 0 ? 'None' : '$available';
 
   static String analyticsSubject(DailyRevisionPool pool) => switch (pool) {
     DailyRevisionPool.missed => 'revision_missed',

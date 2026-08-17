@@ -10,26 +10,14 @@ import '../domain/daily_revision.dart';
 import '../domain/start_daily_drill.dart';
 import '../providers/daily_drill_provider.dart';
 
-/// Missed vs saved. Returns after the session closes, or immediately on dismiss.
+/// Incorrect vs bookmarked. Returns after the session closes, or on dismiss.
 Future<void> showDailyRevisionChoiceSheet({
   required BuildContext context,
   required WidgetRef ref,
   required String source,
-  bool allowMixedFallback = false,
 }) async {
   final drill = await ref.read(dailyDrillProvider.future);
   if (!context.mounted || drill == null) return;
-
-  if (!drill.hasAnyPool && allowMixedFallback) {
-    await startDailyDrill(
-      context: context,
-      ref: ref,
-      subject: drill.subject,
-      source: source,
-      completedToday: drill.completedToday,
-    );
-    return;
-  }
 
   final pool = await showModalBottomSheet<DailyRevisionPool>(
     context: context,
@@ -95,7 +83,7 @@ class _DailyRevisionChoiceSheet extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  'What do you want back?',
+                  'Revision queue',
                   style: AppTextStyles.h3().copyWith(
                     fontWeight: FontWeight.w800,
                     color: scheme.onSurface,
@@ -104,20 +92,17 @@ class _DailyRevisionChoiceSheet extends StatelessWidget {
                 const SizedBox(height: AppSpacing.xs),
                 Text(
                   state.hasAnyPool
-                      ? 'The ones that got away, or the ones you marked.'
-                      : 'Misses and bookmarks land here after you write.',
+                      ? 'Incorrect MCQs or bookmarked MCQs.'
+                      : 'Questions you get wrong or bookmark will appear here.',
                   style: AppTextStyles.bodySm().copyWith(
                     color: scheme.onSurfaceVariant,
                   ),
                 ),
                 const SizedBox(height: AppSpacing.md),
                 _PoolTile(
-                  icon: Icons.replay_rounded,
-                  title: 'Missed',
-                  subtitle: state.hasWrongs
-                      ? '${state.wrongCount} you got wrong'
-                      : 'None yet',
-                  cta: DailyRevision.tryCta(state.wrongCount),
+                  icon: Icons.close_rounded,
+                  title: DailyRevision.incorrectLabel,
+                  count: DailyRevision.poolCountLabel(state.wrongCount),
                   enabled: state.hasWrongs,
                   borderColor: borderColor,
                   onTap: () =>
@@ -126,11 +111,8 @@ class _DailyRevisionChoiceSheet extends StatelessWidget {
                 const SizedBox(height: AppSpacing.sm),
                 _PoolTile(
                   icon: Icons.bookmark_rounded,
-                  title: 'Saved',
-                  subtitle: state.hasBookmarks
-                      ? '${state.bookmarkCount} you bookmarked'
-                      : 'None yet',
-                  cta: DailyRevision.tryCta(state.bookmarkCount),
+                  title: DailyRevision.bookmarkedLabel,
+                  count: DailyRevision.poolCountLabel(state.bookmarkCount),
                   enabled: state.hasBookmarks,
                   borderColor: borderColor,
                   onTap: () =>
@@ -149,8 +131,7 @@ class _PoolTile extends StatelessWidget {
   const _PoolTile({
     required this.icon,
     required this.title,
-    required this.subtitle,
-    required this.cta,
+    required this.count,
     required this.enabled,
     required this.borderColor,
     required this.onTap,
@@ -158,8 +139,7 @@ class _PoolTile extends StatelessWidget {
 
   final IconData icon;
   final String title;
-  final String subtitle;
-  final String cta;
+  final String count;
   final bool enabled;
   final Color borderColor;
   final VoidCallback onTap;
@@ -198,29 +178,18 @@ class _PoolTile extends StatelessWidget {
               ),
               const SizedBox(width: AppSpacing.md),
               Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      title,
-                      style: AppTextStyles.label().copyWith(
-                        fontWeight: FontWeight.w700,
-                        color: enabled
-                            ? scheme.onSurface
-                            : scheme.onSurfaceVariant,
-                      ),
-                    ),
-                    Text(
-                      subtitle,
-                      style: AppTextStyles.caption().copyWith(
-                        color: scheme.onSurfaceVariant,
-                      ),
-                    ),
-                  ],
+                child: Text(
+                  title,
+                  style: AppTextStyles.label().copyWith(
+                    fontWeight: FontWeight.w700,
+                    color: enabled
+                        ? scheme.onSurface
+                        : scheme.onSurfaceVariant,
+                  ),
                 ),
               ),
               Text(
-                cta,
+                count,
                 style: AppTextStyles.labelSm().copyWith(
                   color: enabled
                       ? AppColors.primaryDark
