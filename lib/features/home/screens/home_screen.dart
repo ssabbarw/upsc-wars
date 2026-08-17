@@ -31,7 +31,6 @@ import '../providers/auth_providers.dart';
 import '../providers/home_activation_provider.dart';
 import '../providers/home_activation_journey_provider.dart';
 import '../widgets/activation_journey_card.dart';
-import '../widgets/recovery_plan_section.dart';
 import '../providers/daily_drill_provider.dart';
 import '../widgets/today_hub_section.dart';
 import '../../memory_pairs/widgets/push_memory_pairs_debug_card.dart';
@@ -522,8 +521,6 @@ class HomeScreen extends HookConsumerWidget {
                         );
                       },
                     ),
-                    const SizedBox(height: AppSpacing.md),
-                    const RecoveryPlanSection(),
                     const SizedBox(height: AppSpacing.md),
                     Consumer(
                       builder: (context, ref, _) {
