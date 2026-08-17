@@ -54,11 +54,12 @@ abstract final class DailyWarCopy {
   static String compactTopics(
     List<DailyWarTopicRef> topics, {
     bool loadFailed = false,
+    bool isLoading = false,
   }) {
     if (topics.isEmpty) {
-      return loadFailed
-          ? 'Couldn\'t load tonight\'s topics'
-          : 'Tonight\'s topics loading…';
+      if (loadFailed) return 'Couldn\'t load tonight\'s topics';
+      if (isLoading) return 'Finding tonight\'s topics…';
+      return 'Two topics a night';
     }
     final subjects = subjectsLine(topics);
     final names = topicsLine(topics);

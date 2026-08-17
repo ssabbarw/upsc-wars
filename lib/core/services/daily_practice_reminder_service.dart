@@ -3,7 +3,6 @@ import 'package:flutter_timezone/flutter_timezone.dart';
 import 'package:timezone/data/latest.dart' as tz_data;
 import 'package:timezone/timezone.dart' as tz;
 
-import '../presentation/session_subject_label.dart';
 import '../providers/prefs_provider.dart';
 import 'app_local_notifications_service.dart';
 
@@ -43,8 +42,6 @@ class DailyPracticeReminderService {
     await ensureTimezonesReady();
 
     final hour = prefs.dailyPracticeReminderHour;
-    final subjectLabel =
-        displayNameForSessionSubject(prefs.dailyPracticeSubject);
     final fireAt = completedToday
         ? nextReminderLocalTime(
             reference: DateTime.now().add(const Duration(days: 1)),
@@ -54,7 +51,6 @@ class DailyPracticeReminderService {
 
     await AppLocalNotificationsService.scheduleDailyPracticeReminder(
       fireAtLocal: fireAt,
-      subjectDisplayName: subjectLabel,
     );
   }
 

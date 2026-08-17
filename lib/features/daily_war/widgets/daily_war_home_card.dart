@@ -20,6 +20,7 @@ import '../domain/daily_war_week_summary.dart';
 import '../providers/daily_war_providers.dart';
 import '../providers/server_clock_provider.dart';
 import '../theme/daily_war_theme.dart';
+import 'daily_war_explainer_sheet.dart';
 import 'daily_war_help_sheet.dart';
 import 'daily_war_sunday_card.dart';
 import 'daily_war_topics_sheet.dart';
@@ -128,6 +129,7 @@ class _DailyWarHomeCardBody extends HookConsumerWidget {
         doc?.questionCount ?? DailyWarSchedule.questionCountForDate(warDate);
     final topics = doc?.topics ?? const <DailyWarTopicRef>[];
     final topicsLoadFailed = todayDocAsync.hasError && topics.isEmpty;
+    final topicsLoading = todayDocAsync.isLoading && topics.isEmpty;
 
     final homeShownDate = useRef<String?>(null);
     useEffect(() {
@@ -216,7 +218,19 @@ class _DailyWarHomeCardBody extends HookConsumerWidget {
         child: InkWell(
           onTap: isCollapsed
               ? () => setCollapsed(false)
-              : (isRest ? null : () => context.push(dailyWarLobbyRoute())),
+              : isRest
+              ? null
+              : snap.phase == DailyWarPhase.morning ||
+                    snap.phase == DailyWarPhase.countdown ||
+                    snap.phase == DailyWarPhase.preAnnounce
+              ? () => unawaited(
+                    showDailyWarExplainerSheet(
+                      context: context,
+                      topics: topics,
+                      isGrand: isGrand,
+                    ),
+                  )
+              : () => context.push(dailyWarLobbyRoute()),
           borderRadius: BorderRadius.circular(20),
           child: Ink(
             decoration: BoxDecoration(
@@ -272,6 +286,7 @@ class _DailyWarHomeCardBody extends HookConsumerWidget {
                             qCount: qCount,
                             topics: topics,
                             topicsLoadFailed: topicsLoadFailed,
+                            topicsLoading: topicsLoading,
                             untilStart: untilStart,
                             untilLateClose: untilLateClose,
                             lobbyShown: lobbyShown,
@@ -352,7 +367,7 @@ String _collapsedSubtitle({
     case DailyWarPhase.morning:
       final cd = DailyWarSchedule.formatCountdown(untilStart);
       final tip = topics.isEmpty
-          ? (isGrand ? 'Week revision' : 'Topics loading…')
+          ? (isGrand ? 'Week revision' : 'Two topics a night')
           : topics.first.topic;
       return '$cd · $tip';
   }
@@ -638,6 +653,7 @@ class _HeroBody extends StatelessWidget {
     required this.qCount,
     required this.topics,
     required this.topicsLoadFailed,
+    required this.topicsLoading,
     required this.untilStart,
     required this.untilLateClose,
     required this.lobbyShown,
@@ -652,6 +668,7 @@ class _HeroBody extends StatelessWidget {
   final int qCount;
   final List<DailyWarTopicRef> topics;
   final bool topicsLoadFailed;
+  final bool topicsLoading;
   final Duration untilStart;
   final Duration untilLateClose;
   final String? lobbyShown;
@@ -721,6 +738,7 @@ class _HeroBody extends StatelessWidget {
         return _PrepareCompact(
           topics: topics,
           topicsLoadFailed: topicsLoadFailed,
+          topicsLoading: topicsLoading,
           untilStart: untilStart,
           isGrand: isGrand,
           qCount: qCount,
@@ -739,6 +757,7 @@ class _StatusRow extends StatelessWidget {
     this.right,
     this.pulse = false,
     this.showHelp = false,
+    this.onHelp,
     this.onCollapse,
   });
 
@@ -746,6 +765,7 @@ class _StatusRow extends StatelessWidget {
   final String? right;
   final bool pulse;
   final bool showHelp;
+  final VoidCallback? onHelp;
   final VoidCallback? onCollapse;
 
   @override
@@ -778,7 +798,13 @@ class _StatusRow extends StatelessWidget {
           const SizedBox(width: 4),
           GestureDetector(
             behavior: HitTestBehavior.opaque,
-            onTap: () => unawaited(showDailyWarHelpSheet(context)),
+            onTap: () {
+              if (onHelp != null) {
+                onHelp!();
+                return;
+              }
+              unawaited(showDailyWarHelpSheet(context));
+            },
             child: const Padding(
               padding: EdgeInsets.all(4),
               child: Icon(
@@ -868,6 +894,7 @@ class _PrepareCompact extends StatelessWidget {
   const _PrepareCompact({
     required this.topics,
     required this.topicsLoadFailed,
+    required this.topicsLoading,
     required this.untilStart,
     required this.isGrand,
     required this.qCount,
@@ -877,6 +904,7 @@ class _PrepareCompact extends StatelessWidget {
 
   final List<DailyWarTopicRef> topics;
   final bool topicsLoadFailed;
+  final bool topicsLoading;
   final Duration untilStart;
   final bool isGrand;
   final int qCount;
@@ -894,11 +922,11 @@ class _PrepareCompact extends StatelessWidget {
         : isGrand
             ? '$topicCount topics · week revision'
             : '$topicCount new topics';
-    final topicsLine = topicsLoadFailed
-        ? 'Couldn\'t load tonight\'s topics'
-        : topics.isEmpty
-            ? 'Tonight\'s topics loading…'
-            : topics.map((t) => t.topic).take(2).join(' · ');
+    final topicsLine = DailyWarCopy.compactTopics(
+      topics,
+      loadFailed: topicsLoadFailed,
+      isLoading: topicsLoading,
+    );
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -908,6 +936,13 @@ class _PrepareCompact extends StatelessWidget {
           right: '9:00 PM',
           pulse: true,
           showHelp: true,
+          onHelp: () => unawaited(
+            showDailyWarExplainerSheet(
+              context: context,
+              topics: topics,
+              isGrand: isGrand,
+            ),
+          ),
           onCollapse: onCollapse,
         ),
         const SizedBox(height: 12),
@@ -964,16 +999,17 @@ class _PrepareCompact extends StatelessWidget {
         const SizedBox(height: 14),
         GestureDetector(
           behavior: HitTestBehavior.opaque,
-          onTap: () {
-            if (topics.isEmpty) return;
-            unawaited(
-              showDailyWarTopicsSheet(context: context, topics: topics),
-            );
-          },
+          onTap: () => unawaited(
+            showDailyWarExplainerSheet(
+              context: context,
+              topics: topics,
+              isGrand: isGrand,
+            ),
+          ),
           child: _PrimaryCta(
             label: isGrand
-                ? 'Revise this week\'s topics'
-                : 'Revise tonight\'s topics',
+                ? 'How Grand War works'
+                : 'What is Daily War?',
             filled: true,
           ),
         ),

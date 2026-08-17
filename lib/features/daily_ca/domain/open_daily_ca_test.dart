@@ -1,6 +1,5 @@
 import 'dart:developer' as developer;
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -71,16 +70,13 @@ Future<void> openDailyCaTest({
     );
 
     if (!context.mounted) return;
-    final snackText = kDebugMode
-        ? message
-        : dailyCaErrorIsPermissionDenied(e)
-        ? 'Firestore access denied. Deploy latest firestore.rules, then retry.'
-        : dailyCaErrorIsNotAvailable(e)
-        ? 'Questions for this date are not available yet.'
-        : 'Could not load test. Check your connection and try again.';
-
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text(snackText, style: AppTextStyles.bodySm())),
+      SnackBar(
+        content: Text(
+          dailyCaUserFacingErrorMessage(e),
+          style: AppTextStyles.bodySm(),
+        ),
+      ),
     );
   }
 }

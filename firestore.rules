@@ -287,10 +287,11 @@ service cloud.firestore {
       allow update, delete: if false;
     }
 
-    /// Daily War — public meta readable; clients must not write papers,
-    /// answers, submissions, or leaderboards (Cloud Functions only).
+    /// Daily War — tonight's paper/topics are public (home can show them
+    /// before Google/Apple sign-in). Answers, submissions, and ranks stay
+    /// signed-in. Clients must not write papers (Cloud Functions only).
     match /daily_wars/{dateId} {
-      allow read: if signedIn();
+      allow read: if true;
       allow write: if false;
 
       match /private/{docId} {

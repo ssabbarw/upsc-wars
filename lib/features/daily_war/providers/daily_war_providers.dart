@@ -12,6 +12,7 @@ import '../../../core/domain/entities/test_question.dart';
 import '../../../core/providers/catalog_providers.dart';
 import '../../../core/providers/kill_switch_provider.dart';
 import '../../../core/providers/prefs_provider.dart';
+import '../../home/providers/auth_providers.dart';
 import '../daily_war_constants.dart';
 import '../data/daily_war_firestore_paths.dart';
 import '../data/daily_war_local_cache.dart';
@@ -60,6 +61,11 @@ class DailyWarSessionHydrated extends _$DailyWarSessionHydrated {
   }
 }
 
+String _warHydrateKey(Ref ref, String dateId) {
+  final uid = ref.read(authStateChangesProvider).asData?.value?.uid ?? 'out';
+  return 'war:$dateId:$uid';
+}
+
 /// Firestore once per session (or [force]); otherwise SharedPreferences cache.
 Future<DailyWarDoc?> _fetchWarDoc({
   required Ref ref,
@@ -67,7 +73,7 @@ Future<DailyWarDoc?> _fetchWarDoc({
   required String dateId,
   required bool force,
 }) async {
-  final key = 'war:$dateId';
+  final key = _warHydrateKey(ref, dateId);
   final hydrated = ref.read(dailyWarSessionHydratedProvider.notifier);
   final cached = cache.getWar(dateId);
   if (!force && hydrated.hasKey(key)) return cached;
@@ -128,7 +134,7 @@ Future<DailyWarDoc?> _buildWarDoc({
   required void Function(DailyWarDoc? doc) setState,
 }) async {
   final cache = await ref.watch(dailyWarLocalCacheProvider.future);
-  final key = 'war:$dateId';
+  final key = _warHydrateKey(ref, dateId);
   final hydrated = ref.read(dailyWarSessionHydratedProvider.notifier);
   if (hydrated.hasKey(key)) return cache.getWar(dateId);
 
@@ -156,6 +162,7 @@ class DailyWarTodayDoc extends _$DailyWarTodayDoc {
   @override
   Future<DailyWarDoc?> build() async {
     final dateId = ref.watch(dailyWarTodayDateIdProvider);
+    ref.watch(authStateChangesProvider);
     return _buildWarDoc(
       ref: ref,
       dateId: dateId,
@@ -324,6 +331,7 @@ class DailyWarYesterdayDoc extends _$DailyWarYesterdayDoc {
   @override
   Future<DailyWarDoc?> build() async {
     final dateId = ref.watch(dailyWarYesterdayDateIdProvider);
+    ref.watch(authStateChangesProvider);
     return _buildWarDoc(
       ref: ref,
       dateId: dateId,

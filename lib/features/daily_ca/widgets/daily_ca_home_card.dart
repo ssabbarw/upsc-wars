@@ -3,17 +3,13 @@ import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
 
 import '../../../core/theme/app_colors.dart';
-import '../../../core/theme/app_radius.dart';
-import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../home/widgets/today_loop_card.dart';
 
-/// Home hero for the newspaper quiz: read the paper, then answer its MCQs.
-///
-/// State is passed in so the Today hub owns the single ticking clock.
+/// Newspaper quiz on home — hero, tile, or banner depending on the Today hub.
 class DailyCaHomeCard extends StatelessWidget {
   const DailyCaHomeCard({
     super.key,
-    required this.borderColor,
     required this.paperDate,
     required this.isTodaysPaper,
     required this.completed,
@@ -21,11 +17,9 @@ class DailyCaHomeCard extends StatelessWidget {
     required this.onStart,
     this.loading = false,
     this.emphasized = false,
+    this.layout = TodayLoopLayout.hero,
   });
 
-  final Color borderColor;
-
-  /// News date of the open quiz, or null when nothing is open yet.
   final DateTime? paperDate;
   final bool isTodaysPaper;
   final bool completed;
@@ -33,145 +27,67 @@ class DailyCaHomeCard extends StatelessWidget {
   final VoidCallback? onStart;
   final bool loading;
 
-  /// Time-of-day hero — thicker border so it reads as the one to tap.
+  /// Time-of-day hero — kept for call sites; [layout] owns the paint.
   final bool emphasized;
+  final TodayLoopLayout layout;
 
   @override
   Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final accent = isDark ? AppColors.infoTextDark : AppColors.infoText;
-
+    final background = isDark ? AppColors.infoBgDark : AppColors.infoBg;
     final date = paperDate;
-    final String headline;
-    final String detail;
+
+    final String title;
+    final String subtitle;
+    final String cta;
     if (date == null) {
-      headline = 'No paper quiz open yet';
-      detail = 'The next one opens at 6 AM';
+      title = 'Paper quiz';
+      subtitle = 'Opens at 6 AM — yesterday\'s news, today\'s questions.';
+      cta = 'Soon';
     } else if (completed) {
-      headline = isTodaysPaper
-          ? "Today's paper — done"
-          : '${DateFormat('d MMM').format(date)} paper — done';
-      detail = 'Tap to revise the explanations';
-    } else {
-      headline = isTodaysPaper
+      title = isTodaysPaper
           ? "Today's paper"
           : '${DateFormat('d MMM').format(date)} paper';
-      detail = '$questionCount MCQs from the news you read';
+      subtitle = layout == TodayLoopLayout.tile
+          ? 'Locked in'
+          : 'Locked in. Open the explanations if a line still nags.';
+      cta = layout == TodayLoopLayout.hero ? 'Open answers' : 'Answers';
+    } else {
+      title = isTodaysPaper
+          ? "Today's paper"
+          : '${DateFormat('d MMM').format(date)} paper';
+            subtitle = layout == TodayLoopLayout.tile
+          ? 'From this morning\'s news'
+          : 'You already read it. $questionCount questions make it stay.';
+      cta = layout == TodayLoopLayout.hero ? 'Lock it in' : 'Open';
     }
 
-    return Material(
-      color: Colors.transparent,
-      child: InkWell(
-        onTap: loading ? null : onStart,
-        borderRadius: BorderRadius.circular(AppRadius.lg),
-        child: Ink(
-          padding: const EdgeInsets.all(AppSpacing.lg),
-          decoration: BoxDecoration(
-            color: isDark ? AppColors.infoBgDark : AppColors.infoBg,
-            borderRadius: BorderRadius.circular(AppRadius.lg),
-            border: Border.all(
-              color: emphasized
-                  ? accent
-                  : completed
-                  ? accent.withValues(alpha: 0.35)
-                  : borderColor,
-              width: emphasized ? 2 : (completed ? 1.5 : 0.5),
-            ),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  Container(
-                    width: 44,
-                    height: 44,
-                    decoration: BoxDecoration(
-                      color: scheme.surface.withValues(alpha: 0.65),
-                      borderRadius: BorderRadius.circular(AppRadius.md),
-                    ),
-                    child: Icon(
-                      completed
-                          ? Icons.check_circle_outline_rounded
-                          : Icons.newspaper_rounded,
-                      color: accent,
-                    ),
-                  ),
-                  const SizedBox(width: AppSpacing.md),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'CURRENT AFFAIRS',
-                          style: AppTextStyles.caption().copyWith(
-                            color: accent,
-                            fontWeight: FontWeight.w800,
-                            letterSpacing: 0.9,
-                          ),
-                        ),
-                        const SizedBox(height: AppSpacing.xs),
-                        Text(
-                          headline,
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                          style: AppTextStyles.bodyMd().copyWith(
-                            fontWeight: FontWeight.w700,
-                            color: scheme.onSurface,
-                          ),
-                        ),
-                        const SizedBox(height: 2),
-                        Text(
-                          detail,
-                          style: AppTextStyles.bodySm().copyWith(
-                            color: scheme.onSurfaceVariant,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  if (loading)
-                    const Padding(
-                      padding: EdgeInsets.only(left: AppSpacing.xs),
-                      child: SizedBox(
-                        width: 20,
-                        height: 20,
-                        child: CircularProgressIndicator(strokeWidth: 2),
-                      ),
-                    ),
-                ],
+    return TodayLoopCard(
+      layout: layout,
+      eyebrow: 'CURRENT',
+      title: title,
+      subtitle: subtitle,
+      cta: cta,
+      icon: Icons.newspaper_rounded,
+      accent: accent,
+      background: background,
+      onTap: onStart,
+      done: completed,
+      loading: loading,
+      showNow: emphasized && layout == TodayLoopLayout.hero,
+      footer: layout == TodayLoopLayout.hero
+          ? GestureDetector(
+              onTap: () => context.push('/daily-ca'),
+              child: Text(
+                'All papers',
+                style: AppTextStyles.labelSm().copyWith(
+                  color: Theme.of(context).colorScheme.onSurfaceVariant,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
-              const SizedBox(height: AppSpacing.sm),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    date == null
-                        ? 'Opens 6 AM'
-                        : completed
-                        ? 'Revise'
-                        : 'Start the quiz',
-                    style: AppTextStyles.labelSm().copyWith(
-                      color: accent,
-                      fontWeight: FontWeight.w700,
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () => context.push('/daily-ca'),
-                    child: Text(
-                      'All papers →',
-                      style: AppTextStyles.labelSm().copyWith(
-                        color: scheme.onSurfaceVariant,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ),
-      ),
+            )
+          : null,
     );
   }
 }

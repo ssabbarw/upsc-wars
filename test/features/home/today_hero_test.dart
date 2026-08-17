@@ -21,18 +21,38 @@ List<TodaySlot> _slots({
 }
 
 void main() {
+  group('TodayHero.hubDate', () {
+    test('before 6 AM belongs to yesterday', () {
+      expect(
+        TodayHero.hubDate(DateTime(2026, 8, 18, 1)),
+        DateTime(2026, 8, 17),
+      );
+    });
+
+    test('from 6 AM is today', () {
+      expect(
+        TodayHero.hubDate(DateTime(2026, 8, 17, 6)),
+        DateTime(2026, 8, 17),
+      );
+    });
+
+    test('hub window is 6 AM to next 6 AM', () {
+      expect(
+        TodayHero.hubWindowStart(DateTime(2026, 8, 18, 1)),
+        DateTime(2026, 8, 17, 6),
+      );
+      expect(
+        TodayHero.hubWindowEnd(DateTime(2026, 8, 18, 1)),
+        DateTime(2026, 8, 18, 6),
+      );
+    });
+  });
+
   group('TodayHero.scheduledHero', () {
-    test('6 AM – noon is the paper', () {
+    test('6 AM – noon is the paper when it is still open', () {
       expect(
         TodayHero.scheduledHero(
           istNow: DateTime(2026, 8, 17, 6),
-          warUrgency: TodayWarUrgency.none,
-        ),
-        TodaySlotId.current,
-      );
-      expect(
-        TodayHero.scheduledHero(
-          istNow: DateTime(2026, 8, 17, 11, 59),
           warUrgency: TodayWarUrgency.none,
         ),
         TodaySlotId.current,
@@ -47,13 +67,6 @@ void main() {
         ),
         TodaySlotId.practice,
       );
-      expect(
-        TodayHero.scheduledHero(
-          istNow: DateTime(2026, 8, 17, 17, 59),
-          warUrgency: TodayWarUrgency.none,
-        ),
-        TodaySlotId.practice,
-      );
     });
 
     test('6 PM – 9 PM is War', () {
@@ -61,30 +74,6 @@ void main() {
         TodayHero.scheduledHero(
           istNow: DateTime(2026, 8, 17, 18),
           warUrgency: TodayWarUrgency.none,
-        ),
-        TodaySlotId.war,
-      );
-      expect(
-        TodayHero.scheduledHero(
-          istNow: DateTime(2026, 8, 17, 20, 59),
-          warUrgency: TodayWarUrgency.none,
-        ),
-        TodaySlotId.war,
-      );
-    });
-
-    test('after 9 PM War stays hero while live or results are in', () {
-      expect(
-        TodayHero.scheduledHero(
-          istNow: DateTime(2026, 8, 17, 21, 10),
-          warUrgency: TodayWarUrgency.live,
-        ),
-        TodaySlotId.war,
-      );
-      expect(
-        TodayHero.scheduledHero(
-          istNow: DateTime(2026, 8, 17, 22),
-          warUrgency: TodayWarUrgency.results,
         ),
         TodaySlotId.war,
       );
@@ -101,65 +90,133 @@ void main() {
     });
   });
 
-  group('TodayHero.heroFor', () {
-    test('stays on the paper in the morning even after it is done', () {
-      final hero = TodayHero.heroFor(
+  group('TodayHero.pick', () {
+    test('morning paper done promotes the drill', () {
+      final pick = TodayHero.pick(
         istNow: DateTime(2026, 8, 17, 8),
         warUrgency: TodayWarUrgency.none,
         slots: _slots(currentDone: true),
       );
-      expect(hero, TodaySlotId.current);
+      expect(pick.hero, TodaySlotId.practice);
+      expect(pick.caughtUp, isFalse);
     });
 
-    test('Sunday evening skips War rest and uses week review', () {
-      final hero = TodayHero.heroFor(
-        istNow: DateTime(2026, 8, 16, 19),
+    test('6 PM – 9 PM is War even if the paper is still open', () {
+      final pick = TodayHero.pick(
+        istNow: DateTime(2026, 8, 17, 19),
         warUrgency: TodayWarUrgency.none,
-        slots: _slots(warAvailable: false),
-        isSunday: true,
+        slots: _slots(),
       );
-      expect(hero, TodaySlotId.practice);
+      expect(pick.hero, TodaySlotId.war);
+      expect(
+        TodayHero.displayOrder(
+          pick.hero,
+          warEvening: true,
+        ),
+        [
+          TodaySlotId.war,
+          TodaySlotId.practice,
+          TodaySlotId.current,
+        ],
+      );
     });
 
-    test('Sunday morning still belongs to the paper', () {
+    test('overnight all-done is caught up', () {
+      final pick = TodayHero.pick(
+        istNow: DateTime(2026, 8, 17, 22),
+        warUrgency: TodayWarUrgency.results,
+        slots: _slots(
+          currentDone: true,
+          practiceDone: true,
+          warDone: true,
+        ),
+      );
+      expect(pick.caughtUp, isTrue);
+    });
+
+    test('overnight missing paper shows current affairs', () {
+      final pick = TodayHero.pick(
+        istNow: DateTime(2026, 8, 17, 22),
+        warUrgency: TodayWarUrgency.results,
+        slots: _slots(practiceDone: true, warDone: true),
+      );
+      expect(pick.hero, TodaySlotId.current);
+      expect(pick.caughtUp, isFalse);
+    });
+
+    test('overnight missing drill shows tonight\'s topics, not tomorrow', () {
+      final pick = TodayHero.pick(
+        istNow: DateTime(2026, 8, 18, 1),
+        warUrgency: TodayWarUrgency.none,
+        slots: _slots(currentDone: true, warDone: true),
+      );
+      expect(pick.hero, TodaySlotId.practice);
+      expect(pick.caughtUp, isFalse);
+    });
+
+    test('uses last night\'s War before 6 AM, not tomorrow\'s paper', () {
+      expect(TodayHero.usesYesterdayWar(DateTime(2026, 8, 18, 1)), isTrue);
+      expect(TodayHero.usesYesterdayWar(DateTime(2026, 8, 17, 22)), isFalse);
+      expect(TodayHero.usesYesterdayWar(DateTime(2026, 8, 17, 6)), isFalse);
+    });
+
+    test('Sunday morning paper, then week review', () {
       expect(
-        TodayHero.scheduledHero(
+        TodayHero.pick(
           istNow: DateTime(2026, 8, 16, 8),
           warUrgency: TodayWarUrgency.none,
+          slots: _slots(warAvailable: false),
           isSunday: true,
-        ),
+        ).hero,
         TodaySlotId.current,
       );
-    });
-
-    test('Sunday from noon is week review, not War', () {
       expect(
-        TodayHero.scheduledHero(
-          istNow: DateTime(2026, 8, 16, 18, 30),
+        TodayHero.pick(
+          istNow: DateTime(2026, 8, 16, 8),
           warUrgency: TodayWarUrgency.none,
+          slots: _slots(currentDone: true, warAvailable: false),
           isSunday: true,
-        ),
+        ).hero,
         TodaySlotId.practice,
       );
     });
 
-    test('hero is first, then paper → drill → War', () {
-      expect(
-        TodayHero.displayOrder(TodaySlotId.practice),
-        [TodaySlotId.practice, TodaySlotId.current, TodaySlotId.war],
+    test('evening with War off falls through to the drill', () {
+      final pick = TodayHero.pick(
+        istNow: DateTime(2026, 8, 17, 19),
+        warUrgency: TodayWarUrgency.none,
+        slots: _slots(warAvailable: false),
       );
+      expect(pick.hero, TodaySlotId.practice);
+    });
+
+    test('paper off in the morning promotes the drill', () {
+      final pick = TodayHero.pick(
+        istNow: DateTime(2026, 8, 17, 8),
+        warUrgency: TodayWarUrgency.none,
+        slots: _slots(currentAvailable: false),
+      );
+      expect(pick.hero, TodaySlotId.practice);
+    });
+
+    test('companions sit beside the hero, not under a stack', () {
+      expect(
+        TodayHero.companions(TodaySlotId.war, warEvening: true),
+        [TodaySlotId.practice, TodaySlotId.current],
+      );
+    });
+
+    test('Monday before 6 AM is still Sunday\'s hub', () {
+      expect(TodayHero.isSundayHub(DateTime(2026, 8, 17, 1)), isTrue);
     });
   });
 
   group('TodayHero.warUrgencyFor', () {
     test('lobby through live is the strongest claim', () {
-      for (final p in [
-        DailyWarPhase.lobby,
-        DailyWarPhase.liveJoinable,
-        DailyWarPhase.liveLocked,
-      ]) {
-        expect(TodayHero.warUrgencyFor(p), TodayWarUrgency.live);
-      }
+      expect(
+        TodayHero.warUrgencyFor(DailyWarPhase.liveJoinable),
+        TodayWarUrgency.live,
+      );
     });
   });
 }

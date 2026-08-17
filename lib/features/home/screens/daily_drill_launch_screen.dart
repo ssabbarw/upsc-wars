@@ -2,13 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../core/providers/prefs_provider.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
-import '../domain/start_daily_drill.dart';
-import '../providers/daily_drill_provider.dart';
+import '../widgets/daily_revision_choice_sheet.dart';
 
-/// Notification / cold-start entry that starts the static drill straight away.
+/// Notification / cold-start entry that lands on the revision choice.
 ///
 /// The reminder promises "your drill is ready", so the tap has to land on the
 /// drill rather than dropping the user on home to find it.
@@ -35,18 +33,13 @@ class _DailyDrillLaunchScreenState
 
   Future<void> _launch() async {
     try {
-      final prefs = await ref.read(prefsServiceProvider.future);
-      final drill = await ref.read(dailyDrillProvider.future);
-      if (!mounted) return;
-      await startDailyDrill(
+      await showDailyRevisionChoiceSheet(
         context: context,
         ref: ref,
-        subject: drill?.subject ?? prefs.dailyPracticeSubject,
         source: 'daily_practice_reminder',
-        completedToday: drill?.completedToday ?? false,
+        allowMixedFallback: true,
       );
       if (!mounted) return;
-      // The drill replaced this screen's job; fall back to home when it closes.
       if (context.mounted) context.go('/');
     } catch (e) {
       if (!mounted) return;

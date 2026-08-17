@@ -253,7 +253,10 @@ class _DailyWarLobbyBody extends HookConsumerWidget {
               style: DwText.body(),
             ),
           ] else if (topics.isEmpty)
-            Text('Tonight\'s topics loading…', style: DwText.topic())
+            Text(
+              DailyWarCopy.compactTopics(topics),
+              style: DwText.topic(),
+            )
           else ...[
             Text(
               DailyWarCopy.subjectsLine(topics).toUpperCase(),

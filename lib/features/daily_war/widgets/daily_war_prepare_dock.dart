@@ -78,7 +78,10 @@ class _PrepareDockBody extends HookConsumerWidget {
       try {
         final uc =
             await ref.read(createDailyDrillSessionUseCaseProvider.future);
-        final sessionId = await uc.execute(subject: sessionSubject);
+        final sessionId = await uc.execute(
+          subject: sessionSubject,
+          warTopics: topics,
+        );
         if (!context.mounted) return;
         await context.push('/test/$sessionId');
       } on Object {

@@ -17,8 +17,12 @@ import 'daily_drill_provider.dart';
 class TodayHubData {
   const TodayHubData({
     required this.warEnabled,
+    required this.warDateId,
     required this.warDoc,
     required this.warSubmitted,
+    required this.yesterdayWarDateId,
+    required this.yesterdayWarDoc,
+    required this.yesterdayWarSubmitted,
     required this.caEnabled,
     required this.paperDate,
     required this.paperCompleted,
@@ -31,8 +35,13 @@ class TodayHubData {
   });
 
   final bool warEnabled;
+  final String warDateId;
   final DailyWarDoc? warDoc;
   final bool warSubmitted;
+
+  final String yesterdayWarDateId;
+  final DailyWarDoc? yesterdayWarDoc;
+  final bool yesterdayWarSubmitted;
 
   final bool caEnabled;
 
@@ -51,6 +60,19 @@ class TodayHubData {
 
   String? get paperDateIso =>
       paperDate == null ? null : DailyCaSchedule.formatIsoDate(paperDate!);
+
+  /// Last night's War before 6 AM; tonight's War the rest of the hub day.
+  DailyWarDoc? hubWarDoc(DateTime istNow) =>
+      istNow.hour < 6 ? yesterdayWarDoc : warDoc;
+
+  bool hubWarSubmitted(DateTime istNow) =>
+      istNow.hour < 6 ? yesterdayWarSubmitted : warSubmitted;
+
+  String hubWarDateId(DateTime istNow) =>
+      istNow.hour < 6 ? yesterdayWarDateId : warDateId;
+
+  List<DailyWarTopicRef> hubWarTopics(DateTime istNow) =>
+      hubWarDoc(istNow)?.topics ?? const [];
 }
 
 /// Composes the three daily loops into one home surface.
@@ -60,6 +82,11 @@ final todayHubProvider = Provider.autoDispose<TodayHubData>((ref) {
   final warDoc = ref.watch(dailyWarTodayDocProvider).asData?.value;
   final warSubmission =
       ref.watch(dailyWarTodaySubmissionProvider).asData?.value;
+  final yesterdayDoc = ref.watch(dailyWarYesterdayDocProvider).asData?.value;
+  final yesterdaySubmission =
+      ref.watch(dailyWarYesterdaySubmissionProvider).asData?.value;
+  final warDateId = ref.watch(dailyWarTodayDateIdProvider);
+  final yesterdayWarDateId = ref.watch(dailyWarYesterdayDateIdProvider);
 
   final caEnabled =
       ref.watch(dailyCaRemoteEnabledProvider).asData?.value ?? false;
@@ -82,8 +109,12 @@ final todayHubProvider = Provider.autoDispose<TodayHubData>((ref) {
 
   return TodayHubData(
     warEnabled: warEnabled,
+    warDateId: warDateId,
     warDoc: warDoc,
     warSubmitted: warSubmission != null,
+    yesterdayWarDateId: yesterdayWarDateId,
+    yesterdayWarDoc: yesterdayDoc,
+    yesterdayWarSubmitted: yesterdaySubmission != null,
     caEnabled: caEnabled,
     paperDate: paperDate,
     paperCompleted: paperCompleted,

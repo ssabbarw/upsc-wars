@@ -15,6 +15,7 @@ import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../daily_war/domain/daily_war_schedule.dart';
 import '../domain/create_daily_drill_session_use_case.dart';
+import '../domain/today_hero.dart';
 import '../providers/recovery_plan_provider.dart';
 
 class RecoveryPlanSection extends ConsumerWidget {
@@ -33,7 +34,7 @@ class RecoveryPlanSection extends ConsumerWidget {
       data: (state) {
         if (state.cards.isEmpty) return const SizedBox.shrink();
         // Sunday's Today hub already has the week-review card.
-        if (DailyWarSchedule.isSunday(DailyWarSchedule.nowIst())) {
+        if (TodayHero.isSundayHub(DailyWarSchedule.nowIst())) {
           return const SizedBox.shrink();
         }
 

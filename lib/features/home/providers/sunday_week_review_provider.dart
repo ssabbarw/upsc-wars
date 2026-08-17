@@ -3,7 +3,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../../core/providers/user_database_provider.dart';
 import '../../daily_war/domain/daily_war_schedule.dart';
 import '../domain/sunday_week_review.dart';
-import 'daily_drill_provider.dart';
+import '../domain/today_hero.dart';
 import 'home_activation_provider.dart';
 
 class SundayWeekReviewState {
@@ -25,12 +25,12 @@ final sundayWeekReviewProvider =
   if (!activation.activationComplete) return null;
 
   final ist = DailyWarSchedule.nowIst();
-  if (!DailyWarSchedule.isSunday(ist)) return null;
+  if (!TodayHero.isSundayHub(ist)) return null;
 
   final db = ref.watch(userDatabaseProvider);
-  final start = SundayWeekReview.weekStartMonday(ist);
-  final end = SundayWeekReview.weekEndExclusive(ist);
-  final dayStart = localDayStart(DateTime.now());
+  final hub = TodayHero.hubDate(ist);
+  final start = SundayWeekReview.weekStartMonday(hub);
+  final end = SundayWeekReview.weekEndExclusive(hub);
 
   final uuids = await SundayWeekReview.queryWrongUuids(
     db,
@@ -39,8 +39,8 @@ final sundayWeekReviewProvider =
   );
   final completedToday =
       await db.sessionsDao.hasCompletedSundayWeekReviewBetween(
-    startInclusive: dayStart,
-    endExclusive: dayStart.add(const Duration(days: 1)),
+    startInclusive: TodayHero.hubWindowStart(ist),
+    endExclusive: TodayHero.hubWindowEnd(ist),
   );
 
   return SundayWeekReviewState(

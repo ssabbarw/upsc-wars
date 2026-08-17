@@ -7,7 +7,6 @@ import 'package:intl/intl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:timezone/timezone.dart' as tz;
 
-import '../constants/daily_drill_constants.dart';
 import '../constants/prelims_countdown.dart';
 import '../constants/prelims_debug_flags.dart';
 import '../providers/prefs_provider.dart';
@@ -377,20 +376,17 @@ class AppLocalNotificationsService {
 
   static Future<void> scheduleDailyPracticeReminder({
     required DateTime fireAtLocal,
-    required String subjectDisplayName,
   }) async {
     if (kIsWeb) return;
     await ensureInitialized();
     await _ensureNoTestReminderChannel();
 
     final scheduledDate = tz.TZDateTime.from(fireAtLocal, tz.local);
-    final body =
-        'Your $subjectDisplayName drill — ${DailyDrillConstants.questionCount} quick MCQs';
     try {
       await _plugin.zonedSchedule(
         id: dailyPracticeReminderNotificationId,
-        title: 'Daily practice is ready',
-        body: body,
+        title: 'Revision is ready',
+        body: 'The ones you missed, or the ones you saved.',
         scheduledDate: scheduledDate,
         notificationDetails: _dailyPracticeReminderDetails(),
         androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,

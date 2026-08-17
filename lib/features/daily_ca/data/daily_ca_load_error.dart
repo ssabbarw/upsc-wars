@@ -2,7 +2,20 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'daily_ca_repository.dart';
 
-/// User-visible + log-friendly message for daily CA load failures.
+const _notAvailableCopy = 'Questions for this date are not available yet.';
+const _genericLoadCopy =
+    'Could not load test. Check your connection and try again.';
+
+/// Snackbar copy. Never includes Firebase, Firestore, or collection names.
+String dailyCaUserFacingErrorMessage(Object error) {
+  if (dailyCaErrorIsNotAvailable(error) ||
+      dailyCaErrorIsPermissionDenied(error)) {
+    return _notAvailableCopy;
+  }
+  return _genericLoadCopy;
+}
+
+/// Log-only message. May include Firestore paths and codes — do not show in UI.
 String dailyCaLoadErrorMessage(Object error) {
   if (error is DailyCaNotAvailableException) {
     return error.toString();

@@ -6,29 +6,31 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/analytics/analytics.dart';
 import '../../../core/analytics/analytics_events.dart';
-import '../../../core/providers/prefs_provider.dart';
-import '../../../core/services/daily_practice_reminder_service.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../domain/daily_revision.dart';
 import '../domain/start_daily_drill.dart';
 import '../providers/daily_drill_provider.dart';
-import 'daily_drill_subject_sheet.dart';
+import 'daily_revision_choice_sheet.dart';
+import 'today_loop_card.dart';
 
-/// Pinned daily practice card — visible after home activation.
+/// Afternoon revision on home — missed questions or bookmarks.
 class DailyDrillCard extends HookConsumerWidget {
-  const DailyDrillCard({super.key, this.emphasized = false});
+  const DailyDrillCard({
+    super.key,
+    this.emphasized = false,
+    this.layout = TodayLoopLayout.hero,
+  });
 
-  /// Time-of-day hero — thicker border so it reads as the one to tap.
   final bool emphasized;
+  final TodayLoopLayout layout;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final async = ref.watch(dailyDrillProvider);
-    final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final borderColor = isDark ? AppColors.borderDark : AppColors.borderLight;
     final loading = useState(false);
     final loggedShown = useRef(false);
 
@@ -41,9 +43,9 @@ class DailyDrillCard extends HookConsumerWidget {
       unawaited(
         Analytics.track(
           ref,
-          FeatureViewedEvent(
+          const FeatureViewedEvent(
             featureName: 'daily_drill',
-            subject: state.subject,
+            subject: DailyRevision.sessionSubject,
             source: 'home',
           ),
         ),
@@ -57,14 +59,20 @@ class DailyDrillCard extends HookConsumerWidget {
       data: (state) {
         if (state == null) return const SizedBox.shrink();
 
-        Future<void> startDrill({required String source}) async {
+        Future<void> startPool({
+          required DailyRevisionPool pool,
+          required String source,
+        }) async {
           if (loading.value) return;
+          final uuids = state.uuidsFor(pool);
+          if (uuids.isEmpty) return;
           loading.value = true;
           try {
-            await startDailyDrill(
+            await startRevisionDrill(
               context: context,
               ref: ref,
-              subject: state.subject,
+              pool: pool,
+              uuids: uuids,
               source: source,
               completedToday: state.completedToday,
             );
@@ -73,141 +81,185 @@ class DailyDrillCard extends HookConsumerWidget {
           }
         }
 
-        Future<void> openSubjectSheet() async {
-          final picked = await showDailyDrillSubjectSheet(
-            context,
-            selectedSubject: state.subject,
-          );
-          if (picked == null || picked == state.subject) return;
-          final prefs = await ref.read(prefsServiceProvider.future);
-          prefs.dailyPracticeSubject = picked;
-          unawaited(
-            Analytics.track(
-              ref,
-              DailyDrillSubjectChangedEvent(subject: picked),
-            ),
-          );
-          ref.invalidate(dailyDrillProvider);
-          unawaited(
-            DailyPracticeReminderService.sync(
-              prefs: prefs,
-              activationComplete: true,
-              completedToday: state.completedToday,
-            ),
-          );
+        Future<void> openChoice({required String source}) async {
+          if (loading.value) return;
+          loading.value = true;
+          try {
+            await showDailyRevisionChoiceSheet(
+              context: context,
+              ref: ref,
+              source: source,
+            );
+          } finally {
+            loading.value = false;
+          }
         }
 
-        final subtitle = state.completedToday
-            ? 'Done today · tap to practice more'
-            : '10 quick MCQs · about 5 minutes';
+        final counts = DailyRevision.countsLine(
+          missed: state.wrongCount,
+          saved: state.bookmarkCount,
+        );
+        final isHero = layout == TodayLoopLayout.hero;
+        final showDoors = isHero && state.hasAnyPool;
 
-        return Material(
-          color: Colors.transparent,
-          child: InkWell(
-            onTap: loading.value ? null : () => startDrill(source: 'card'),
-            borderRadius: BorderRadius.circular(AppRadius.lg),
-            child: Ink(
-              padding: const EdgeInsets.all(AppSpacing.lg),
-              decoration: BoxDecoration(
-                color: isDark
-                    ? AppColors.primaryDeep.withValues(alpha: 0.2)
-                    : AppColors.primaryLight.withValues(alpha: 0.4),
-                borderRadius: BorderRadius.circular(AppRadius.lg),
-                border: Border.all(
-                  color: emphasized
-                      ? AppColors.primary
-                      : state.completedToday
-                      ? AppColors.primary.withValues(alpha: 0.35)
-                      : borderColor,
-                  width: emphasized
-                      ? 2
-                      : (state.completedToday ? 1.5 : 0.5),
-                ),
-              ),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    width: 44,
-                    height: 44,
-                    decoration: BoxDecoration(
-                      color: scheme.surface.withValues(alpha: 0.7),
-                      borderRadius: BorderRadius.circular(AppRadius.md),
-                    ),
-                    child: Icon(
-                      state.completedToday
-                          ? Icons.check_circle_outline_rounded
-                          : Icons.bolt_rounded,
-                      color: AppColors.primaryDark,
-                    ),
-                  ),
-                  const SizedBox(width: AppSpacing.md),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'STATIC PRACTICE',
-                          style: AppTextStyles.caption().copyWith(
-                            color: AppColors.primaryDark,
-                            fontWeight: FontWeight.w800,
-                            letterSpacing: 0.9,
-                          ),
-                        ),
-                        const SizedBox(height: AppSpacing.xs),
-                        Text(
-                          state.subjectDisplayName,
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                          style: AppTextStyles.bodyMd().copyWith(
-                            fontWeight: FontWeight.w700,
-                            color: scheme.onSurface,
-                          ),
-                        ),
-                        const SizedBox(height: 2),
-                        Text(
-                          subtitle,
-                          style: AppTextStyles.bodySm().copyWith(
-                            color: scheme.onSurfaceVariant,
-                          ),
-                        ),
-                        const SizedBox(height: AppSpacing.sm),
-                        Text(
-                          state.completedToday ? 'Practice more' : 'Start drill',
-                          style: AppTextStyles.labelSm().copyWith(
-                            color: AppColors.primary,
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                      ],
+        final String title;
+        final String subtitle;
+        final String cta;
+        if (!state.hasAnyPool) {
+          title = layout == TodayLoopLayout.tile
+              ? 'Nothing yet'
+              : 'The ones that got away';
+          subtitle = layout == TodayLoopLayout.tile
+              ? 'After you write'
+              : 'Misses and bookmarks land here after you write.';
+          cta = 'Later';
+        } else if (state.completedToday) {
+          title = layout == TodayLoopLayout.tile ? counts : 'The ones that got away';
+          subtitle = layout == TodayLoopLayout.tile
+              ? 'Done'
+              : counts;
+          cta = isHero ? 'Another set' : 'Done';
+        } else {
+          title = layout == TodayLoopLayout.tile
+              ? counts
+              : 'The ones that got away';
+          subtitle = layout == TodayLoopLayout.tile
+              ? 'Missed or saved'
+              : counts;
+          cta = isHero ? 'Choose a set' : 'Choose';
+        }
+
+        return TodayLoopCard(
+          layout: layout,
+          eyebrow: 'REVISION',
+          title: title,
+          subtitle: subtitle,
+          cta: cta,
+          icon: Icons.replay_rounded,
+          accent: AppColors.primaryDark,
+          background: isDark
+              ? AppColors.primaryDeep.withValues(alpha: 0.28)
+              : AppColors.primaryLight,
+          onTap: state.hasAnyPool && !showDoors
+              ? () => unawaited(openChoice(source: 'card'))
+              : null,
+          done: state.completedToday,
+          loading: loading.value,
+          showNow: emphasized && isHero,
+          actions: showDoors
+              ? _RevisionDoors(
+                  wrongCount: state.wrongCount,
+                  bookmarkCount: state.bookmarkCount,
+                  hasWrongs: state.hasWrongs,
+                  hasBookmarks: state.hasBookmarks,
+                  loading: loading.value,
+                  accent: AppColors.primaryDark,
+                  onMissed: () => unawaited(
+                    startPool(
+                      pool: DailyRevisionPool.missed,
+                      source: 'card_missed',
                     ),
                   ),
-                  const SizedBox(width: AppSpacing.xs),
-                  IconButton(
-                    tooltip: 'Change subject',
-                    visualDensity: VisualDensity.compact,
-                    onPressed: loading.value ? null : openSubjectSheet,
-                    icon: Icon(
-                      Icons.settings_outlined,
-                      size: 20,
-                      color: scheme.onSurfaceVariant,
+                  onSaved: () => unawaited(
+                    startPool(
+                      pool: DailyRevisionPool.saved,
+                      source: 'card_saved',
                     ),
                   ),
-                  if (loading.value)
-                    const Padding(
-                      padding: EdgeInsets.only(left: AppSpacing.xs),
-                      child: SizedBox(
-                        width: 20,
-                        height: 20,
-                        child: CircularProgressIndicator(strokeWidth: 2),
-                      ),
-                    ),
-                ],
-              ),
-            ),
-          ),
+                )
+              : null,
         );
       },
+    );
+  }
+}
+
+class _RevisionDoors extends StatelessWidget {
+  const _RevisionDoors({
+    required this.wrongCount,
+    required this.bookmarkCount,
+    required this.hasWrongs,
+    required this.hasBookmarks,
+    required this.loading,
+    required this.accent,
+    required this.onMissed,
+    required this.onSaved,
+  });
+
+  final int wrongCount;
+  final int bookmarkCount;
+  final bool hasWrongs;
+  final bool hasBookmarks;
+  final bool loading;
+  final Color accent;
+  final VoidCallback onMissed;
+  final VoidCallback onSaved;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Expanded(
+          child: _Door(
+            label: wrongCount == 1 ? '1 missed' : '$wrongCount missed',
+            enabled: hasWrongs && !loading,
+            accent: accent,
+            onTap: onMissed,
+          ),
+        ),
+        const SizedBox(width: AppSpacing.sm),
+        Expanded(
+          child: _Door(
+            label: bookmarkCount == 1 ? '1 saved' : '$bookmarkCount saved',
+            enabled: hasBookmarks && !loading,
+            accent: accent,
+            onTap: onSaved,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class _Door extends StatelessWidget {
+  const _Door({
+    required this.label,
+    required this.enabled,
+    required this.accent,
+    required this.onTap,
+  });
+
+  final String label;
+  final bool enabled;
+  final Color accent;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return Material(
+      color: enabled ? accent : scheme.surface,
+      borderRadius: BorderRadius.circular(AppRadius.pill),
+      child: InkWell(
+        onTap: enabled ? onTap : null,
+        borderRadius: BorderRadius.circular(AppRadius.pill),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: AppSpacing.md,
+            vertical: 10,
+          ),
+          child: Text(
+            label,
+            textAlign: TextAlign.center,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: AppTextStyles.labelSm().copyWith(
+              color: enabled ? AppColors.onPrimary : scheme.onSurfaceVariant,
+              fontWeight: FontWeight.w700,
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
