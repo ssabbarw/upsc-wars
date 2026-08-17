@@ -16,8 +16,8 @@ abstract final class DailyWarSchedule {
   /// Topic announcement is considered "morning" from this hour IST.
   static const announceHourIst = 6;
 
-  /// Lobby opens this many minutes before [startHourIst].
-  static const lobbyLeadMinutes = 15;
+  /// Lobby opens one minute before the synchronized start.
+  static const lobbyLeadMinutes = 1;
 
   static const startHourIst = 21;
   static const startMinuteIst = 0;
@@ -29,8 +29,9 @@ abstract final class DailyWarSchedule {
   /// 15 Q → 20 min · 25 Q → 34 min (ceil).
   static const secondsPerQuestion = 80;
 
-  /// Minutes after [liveEndsAt] when ranks are expected.
-  static const rankPublishBufferMinutes = 5;
+  /// The batch rank job publishes AIR after every possible live window closes.
+  static const rankPublishHourIst = 21;
+  static const rankPublishMinuteIst = 40;
 
   static const weekdayQuestionCount = 15;
   static const grandWarQuestionCount = 25;
@@ -77,8 +78,7 @@ abstract final class DailyWarSchedule {
 
   /// Mon–Fri Daily War nights.
   static bool isWeekdayWarDay(DateTime istDate) =>
-      istDate.weekday >= DateTime.monday &&
-      istDate.weekday <= DateTime.friday;
+      istDate.weekday >= DateTime.monday && istDate.weekday <= DateTime.friday;
 
   /// Any night that has a live paper (Mon–Sat).
   static bool isWarDay(DateTime istDate) =>
@@ -109,32 +109,33 @@ abstract final class DailyWarSchedule {
 
   static DateTime startAtForDate(DateTime istDate) {
     final day = dateOnly(istDate);
-    return DateTime(
-      day.year,
-      day.month,
-      day.day,
-      startHourIst,
-      startMinuteIst,
-    );
+    return DateTime(day.year, day.month, day.day, startHourIst, startMinuteIst);
   }
 
-  static DateTime lobbyOpensAt(DateTime istDate) =>
-      startAtForDate(istDate).subtract(const Duration(minutes: lobbyLeadMinutes));
+  static DateTime lobbyOpensAt(DateTime istDate) => startAtForDate(
+    istDate,
+  ).subtract(const Duration(minutes: lobbyLeadMinutes));
 
   static DateTime lateJoinClosesAt(DateTime istDate) =>
       startAtForDate(istDate).add(const Duration(minutes: lateJoinMinutes));
 
   static DateTime liveEndsAt(DateTime istDate, {int? questionCount}) {
     final q = questionCount ?? questionCountForDate(istDate);
-    return startAtForDate(istDate).add(
-      Duration(minutes: liveWindowMinutesFor(q)),
-    );
+    return startAtForDate(
+      istDate,
+    ).add(Duration(minutes: liveWindowMinutesFor(q)));
   }
 
-  static DateTime rankTargetAt(DateTime istDate, {int? questionCount}) =>
-      liveEndsAt(istDate, questionCount: questionCount).add(
-        const Duration(minutes: rankPublishBufferMinutes),
-      );
+  static DateTime rankTargetAt(DateTime istDate, {int? questionCount}) {
+    final day = dateOnly(istDate);
+    return DateTime(
+      day.year,
+      day.month,
+      day.day,
+      rankPublishHourIst,
+      rankPublishMinuteIst,
+    );
+  }
 
   /// e.g. `9:20 PM` for copy that previously hard-coded the close time.
   static String formatClock(DateTime ist) {

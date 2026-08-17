@@ -51,7 +51,8 @@ class DailyWarResultsScreen extends HookConsumerWidget {
             throw StateError('Missing War date on session');
           }
           warDateId.value = dateId;
-          final mode = DailyWarConstants.isUnrankedFeatureKey(
+          final mode =
+              DailyWarConstants.isUnrankedFeatureKey(
                 session.analyticsFeatureKey,
               )
               ? 'unranked'
@@ -70,8 +71,8 @@ class DailyWarResultsScreen extends HookConsumerWidget {
           final elapsedMs =
               ((limit - remaining).clamp(0, limit > 0 ? limit : 0) * 1000);
 
-          final displayName =
-              FirebaseAuth.instance.currentUser?.displayName?.trim();
+          final displayName = FirebaseAuth.instance.currentUser?.displayName
+              ?.trim();
 
           int? streakDays;
           String? tierId;
@@ -81,8 +82,10 @@ class DailyWarResultsScreen extends HookConsumerWidget {
               prefs: prefs,
               istNow: DateTime.now(), // offset applied on home; fine for submit
             );
-            streakDays =
-                DailyWarStreak.peekNextDays(prefs: prefs, dateId: dateId);
+            streakDays = DailyWarStreak.peekNextDays(
+              prefs: prefs,
+              dateId: dateId,
+            );
             tierId = DailyWarBadges.tierIdForDays(streakDays);
           }
 
@@ -136,19 +139,12 @@ class DailyWarResultsScreen extends HookConsumerWidget {
 
           final uid = FirebaseAuth.instance.currentUser?.uid;
           if (uid != null) {
-            // Backoff: fewer reads while waiting for the rank job (was 15×2s).
-            var delaySecs = 2;
-            for (var i = 0; i < 8; i++) {
-              if (cancelled) return;
-              final snap =
-                  await DailyWarFirestorePaths.submissionDoc(dateId, uid).get();
-              if (snap.exists && snap.data() != null) {
-                final sub = DailyWarSubmission.fromMap(uid, snap.data()!);
-                submission.value = sub;
-                if (mode == 'unranked' || sub.hasOfficialRank) break;
-              }
-              await Future<void>.delayed(Duration(seconds: delaySecs));
-              delaySecs = (delaySecs * 2).clamp(2, 16);
+            final snap = await DailyWarFirestorePaths.submissionDoc(
+              dateId,
+              uid,
+            ).get();
+            if (snap.exists && snap.data() != null) {
+              submission.value = DailyWarSubmission.fromMap(uid, snap.data()!);
             }
           }
 
@@ -182,7 +178,7 @@ class DailyWarResultsScreen extends HookConsumerWidget {
                 const CircularProgressIndicator(color: DwColors.crimsonBright),
                 const SizedBox(height: 16),
                 Text(
-                  'Calculating your All-India Rank…',
+                  'Submitting your answers…',
                   style: DwText.body(color: DwColors.onDark),
                 ),
               ],
@@ -240,10 +236,10 @@ class _ReadyBody extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final countEnabled =
         ref.watch(dailyWarLobbyCountRemoteEnabledProvider).asData?.value ??
-            true;
+        true;
     final minVisible =
         ref.watch(dailyWarMinVisibleLobbyCountRemoteProvider).asData?.value ??
-            200;
+        200;
     final ofN = DailyWarCopy.formatVisibleCount(
       raw: participantCount,
       enabled: countEnabled,
@@ -257,8 +253,7 @@ class _ReadyBody extends ConsumerWidget {
           Text('ALL-INDIA RANK', style: DwText.meta()),
           const SizedBox(height: 4),
           Text('${submission!.air}', style: DwText.heroNumber()),
-          if (ofN != null)
-            Text('of $ofN', style: DwText.body()),
+          if (ofN != null) Text('of $ofN', style: DwText.body()),
           const SizedBox(height: 16),
           Row(
             children: [
@@ -281,13 +276,15 @@ class _ReadyBody extends ConsumerWidget {
           Text('SCORE', style: DwText.meta()),
           const SizedBox(height: 4),
           Text(
-            (score ?? submission?.score)?.toStringAsFixed(2) ?? '—',
+            '${(score ?? submission?.score)?.toStringAsFixed(2) ?? '—'}'
+            '/$questionCount',
             style: DwText.heroNumber(),
           ),
           Text(
             submission?.mode == 'unranked'
                 ? 'Unranked · not an official AIR'
-                : 'Submitted · waiting for rank',
+                : 'Submitted · AIR will be ready at 9:40 PM IST. '
+                      'We\'ll notify you.',
             style: DwText.body(),
           ),
         ],

@@ -13,7 +13,7 @@ Saturday **Grand War** · **Sunday off**.
 | 3 Home hero | done | phase-driven card gated by `daily_war_enabled` |
 | 4 Lobby → live → results | done (v1) | lobby start via fixed-UUID session → `/test` → `/daily-war/results` + Cloud submit |
 | 5 History | done (v1) | All / Attempted / Missed list |
-| 6 Push | done | FCM topic `upsc_wars_daily_war` · morning 06:10 · reminder 20:30 · lobby 20:50 · ranks after 21:25 |
+| 6 Push | done | FCM topic `upsc_wars_daily_war` · morning 06:10 · reminder 20:30 · lobby 20:59 · ranks 21:40 |
 
 ## Enable in app
 
@@ -53,8 +53,7 @@ Schedules (`Asia/Kolkata`):
 | **05:50** | generate (private paper) |
 | **06:10** | morning topics push (N1 / Grand N7) |
 | **20:30** | “War in 30 minutes” push (N2) |
-| **20:50** | lobby open push (N3) |
-| **20:59** | copy UUIDs to public |
+| **20:59** | lobby open push (N3) + copy UUIDs to public |
 | **21:40** | rank + results push (after live window sized from Q count) |
 
 Admin dashboard → **Push: morning / lobby / results** to test without waiting for cron.

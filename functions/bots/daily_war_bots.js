@@ -59,13 +59,16 @@ async function maybeQueueDailyWar(cfg, roster, dailyRef) {
   const bots = pickWarBots(roster, parts.iso, cfg.dailyWarFraction);
   const out = { lobby: 0, submit: 0 };
 
-  if (parts.hour === 20 && parts.minute >= 45 && !daily.warLobbyQueued) {
+  const lobbyWindow =
+    (parts.hour === 20 && parts.minute >= 59) ||
+    (parts.hour === 21 && parts.minute < 15);
+  if (lobbyWindow && !daily.warLobbyQueued) {
     const rng = mulberry32(hashString(`warlobby:${parts.iso}`));
     for (const bot of bots) {
       await enqueueJob({
         type: "daily_war_lobby",
         botId: bot.id,
-        runAtMs: Date.now() + randInt(rng, 0, 12 * 60 * 1000),
+        runAtMs: Date.now() + randInt(rng, 0, 45 * 1000),
         payload: { dateId: parts.iso },
       });
       out.lobby += 1;

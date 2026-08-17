@@ -27,12 +27,8 @@ class _DailyWarHelpSheet extends StatelessWidget {
     final grandMins = DailyWarSchedule.liveWindowMinutesFor(
       DailyWarSchedule.grandWarQuestionCount,
     );
-    // Any Mon–Fri date — clock for weekday live close (9:20 PM).
-    final liveEndClock = DailyWarSchedule.formatClock(
-      DailyWarSchedule.liveEndsAt(
-        DateTime(2026, 8, 3),
-        questionCount: DailyWarSchedule.weekdayQuestionCount,
-      ),
+    final rankClock = DailyWarSchedule.formatClock(
+      DailyWarSchedule.rankTargetAt(DateTime(2026, 8, 3)),
     );
 
     return Padding(
@@ -81,8 +77,10 @@ class _DailyWarHelpSheet extends StatelessWidget {
                 _HelpRow(
                   icon: Icons.leaderboard_rounded,
                   iconColor: const Color(0xFF3B82F6),
-                  title: 'Ranks after $liveEndClock',
-                  body: 'You vs everyone who wrote it · score, then time',
+                  title: 'AIR at $rankClock',
+                  body:
+                      'See your score on submission · we\'ll notify you '
+                      'when ranks are ready',
                 ),
                 _HelpRow(
                   icon: Icons.calendar_month_rounded,

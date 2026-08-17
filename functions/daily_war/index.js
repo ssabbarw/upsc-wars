@@ -751,10 +751,10 @@ exports.notifyDailyWarReminder = onSchedule(
   },
 );
 
-/** N3 — lobby open (8:50; lobby itself opens 8:45). */
+/** N3 — lobby open, alongside paper publication at 8:59. */
 exports.notifyDailyWarLobby = onSchedule(
   {
-    schedule: "50 20 * * *",
+    schedule: "59 20 * * *",
     timeZone: "Asia/Kolkata",
     region: "asia-south1",
   },

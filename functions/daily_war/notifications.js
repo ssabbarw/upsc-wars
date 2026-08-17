@@ -187,8 +187,8 @@ async function notifyReminder30(dateId) {
     const phrase = topicsPhrase(war.topics);
     const title = "War in 30 minutes";
     const body = phrase
-      ? `${phrase}. Lobby opens 8:45 · starts 9:00 PM IST.`
-      : "Lobby opens 8:45 · starts 9:00 PM IST.";
+      ? `${phrase}. Lobby opens 8:59 · starts 9:00 PM IST.`
+      : "Lobby opens 8:59 · starts 9:00 PM IST.";
     return sendDailyWarTopic({
       title,
       body,
@@ -199,7 +199,7 @@ async function notifyReminder30(dateId) {
   });
 }
 
-/** N3 · 8:50 PM — lobby open. */
+/** N3 · 8:59 PM — lobby and paper open; synchronized start at 9:00. */
 async function notifyLobbyOpen(dateId) {
   return withRolloutGate(async (topic) => {
     const war = await loadWarPublic(dateId);
@@ -207,8 +207,8 @@ async function notifyLobbyOpen(dateId) {
     const phrase = topicsPhrase(war.topics);
     const title = "Lobby is open";
     const body = phrase
-      ? `${phrase}. Doors close at 9:00 PM IST.`
-      : "Daily War lobby is open. Doors close at 9:00 PM IST.";
+      ? `${phrase}. War starts at 9:00 PM IST.`
+      : "Daily War lobby is open. War starts at 9:00 PM IST.";
     return sendDailyWarTopic({
       title,
       body,

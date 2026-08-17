@@ -38,12 +38,14 @@ void main() {
       expect(DailyWarSchedule.previousWarDate(sunday), saturday);
     });
 
-    test('lobby opens 15 minutes before 9 PM', () {
+    test('lobby opens one minute before 9 PM', () {
       final day = DateTime(2026, 7, 31);
-      expect(
-        DailyWarSchedule.lobbyOpensAt(day),
-        DateTime(2026, 7, 31, 20, 45),
-      );
+      expect(DailyWarSchedule.lobbyOpensAt(day), DateTime(2026, 7, 31, 20, 59));
+    });
+
+    test('AIR target is 9:40 PM', () {
+      final day = DateTime(2026, 7, 31);
+      expect(DailyWarSchedule.rankTargetAt(day), DateTime(2026, 7, 31, 21, 40));
     });
 
     test('live window scales with question count', () {
@@ -66,10 +68,7 @@ void main() {
       expect(ist.isUtc, isFalse);
       expect(ist.hour, 19);
       expect(ist.minute, 39);
-      expect(
-        ist.isBefore(DailyWarSchedule.startAtForDate(ist)),
-        isTrue,
-      );
+      expect(ist.isBefore(DailyWarSchedule.startAtForDate(ist)), isTrue);
       expect(
         DailyWarPhaseResolver.resolve(referenceIst: ist),
         DailyWarPhase.countdown,
@@ -82,9 +81,7 @@ void main() {
 
     test('rest day on Sunday', () {
       expect(
-        DailyWarPhaseResolver.resolve(
-          referenceIst: DateTime(2026, 8, 2, 12),
-        ),
+        DailyWarPhaseResolver.resolve(referenceIst: DateTime(2026, 8, 2, 12)),
         DailyWarPhase.restDay,
       );
     });
@@ -107,10 +104,19 @@ void main() {
       );
     });
 
-    test('lobby at 8:50 PM', () {
+    test('countdown immediately before lobby opens', () {
       expect(
         DailyWarPhaseResolver.resolve(
-          referenceIst: DateTime(day.year, day.month, day.day, 20, 50),
+          referenceIst: DateTime(day.year, day.month, day.day, 20, 58, 59),
+        ),
+        DailyWarPhase.countdown,
+      );
+    });
+
+    test('lobby at 8:59 PM', () {
+      expect(
+        DailyWarPhaseResolver.resolve(
+          referenceIst: DateTime(day.year, day.month, day.day, 20, 59),
         ),
         DailyWarPhase.lobby,
       );
@@ -176,16 +182,8 @@ void main() {
   group('DailyWarScoring', () {
     test('UPSC +2 / -2/3', () {
       final result = DailyWarScoring.score(
-        selectedByUuid: {
-          'a': 'b',
-          'b': 'c',
-          'c': '',
-        },
-        correctByUuid: {
-          'a': 'b',
-          'b': 'a',
-          'c': 'd',
-        },
+        selectedByUuid: {'a': 'b', 'b': 'c', 'c': ''},
+        correctByUuid: {'a': 'b', 'b': 'a', 'c': 'd'},
       );
       expect(result.correct, 1);
       expect(result.wrong, 1);

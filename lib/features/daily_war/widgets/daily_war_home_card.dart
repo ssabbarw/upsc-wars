@@ -82,16 +82,14 @@ class _DailyWarHomeCardBody extends HookConsumerWidget {
     // Sunday defaults collapsed; weekday uses sticky prefs. Session override
     // survives ListView scroll dispose (keepAlive provider).
     // [forceCollapsed] keeps War quiet while START HERE is on screen.
-    final isCollapsed = sessionCollapse ??
-        (forceCollapsed
-            ? true
-            : (isRest ? true : (storedCollapse ?? false)));
+    final isCollapsed =
+        sessionCollapse ??
+        (forceCollapsed ? true : (isRest ? true : (storedCollapse ?? false)));
 
     void setCollapsed(bool value) {
-      ref.read(dailyWarHomeCollapseProvider.notifier).setCollapsed(
-            dateId: snap.dateId,
-            collapsed: value,
-          );
+      ref
+          .read(dailyWarHomeCollapseProvider.notifier)
+          .setCollapsed(dateId: snap.dateId, collapsed: value);
       // Don't let a Sunday expand stick into Mon–Sat prefs.
       if (!isRest) prefs?.dailyWarHomeCollapsed = value;
     }
@@ -103,7 +101,7 @@ class _DailyWarHomeCardBody extends HookConsumerWidget {
     // on the collapsed card).
     final liveCounts = (!isCollapsed && countEnabled)
         ? (ref.watch(dailyWarLiveCountsProvider).asData?.value ??
-            const DailyWarLiveCounts.empty())
+              const DailyWarLiveCounts.empty())
         : const DailyWarLiveCounts.empty();
     final historyBundle = (!isCollapsed || isRest)
         ? ref.watch(dailyWarHistoryBundleProvider).asData?.value
@@ -198,10 +196,7 @@ class _DailyWarHomeCardBody extends HookConsumerWidget {
       );
     }
 
-    final eyebrow = _collapsedEyebrow(
-      phase: snap.phase,
-      isGrand: isGrand,
-    );
+    final eyebrow = _collapsedEyebrow(phase: snap.phase, isGrand: isGrand);
     final collapsedLine = _collapsedSubtitle(
       snap: snap,
       isGrand: isGrand,
@@ -224,12 +219,12 @@ class _DailyWarHomeCardBody extends HookConsumerWidget {
                     snap.phase == DailyWarPhase.countdown ||
                     snap.phase == DailyWarPhase.preAnnounce
               ? () => unawaited(
-                    showDailyWarExplainerSheet(
-                      context: context,
-                      topics: topics,
-                      isGrand: isGrand,
-                    ),
-                  )
+                  showDailyWarExplainerSheet(
+                    context: context,
+                    topics: topics,
+                    isGrand: isGrand,
+                  ),
+                )
               : () => context.push(dailyWarLobbyRoute()),
           borderRadius: BorderRadius.circular(20),
           child: Ink(
@@ -248,30 +243,29 @@ class _DailyWarHomeCardBody extends HookConsumerWidget {
               color: isRest ? null : DwColors.surface,
               borderRadius: BorderRadius.circular(20),
               border: Border.all(
-                color: isRest
-                    ? const Color(0x22A8B4FF)
-                    : DwColors.borderOnDark,
+                color: isRest ? const Color(0x22A8B4FF) : DwColors.borderOnDark,
               ),
             ),
             child: Padding(
               padding: const EdgeInsets.fromLTRB(16, 16, 8, 16),
               child: isCollapsed
                   ? (isRest && sundaySummary != null
-                      ? _CollapsedSundayWeek(
-                          summary: sundaySummary,
-                          onExpand: () => setCollapsed(false),
-                        )
-                      : _CollapsedWarHeader(
-                          eyebrow: eyebrow,
-                          subtitle: collapsedLine,
-                          pulse: snap.phase == DailyWarPhase.lobby ||
-                              snap.phase == DailyWarPhase.liveJoinable ||
-                              snap.phase == DailyWarPhase.liveLocked ||
-                              snap.phase == DailyWarPhase.morning ||
-                              snap.phase == DailyWarPhase.countdown ||
-                              snap.phase == DailyWarPhase.preAnnounce,
-                          onExpand: () => setCollapsed(false),
-                        ))
+                        ? _CollapsedSundayWeek(
+                            summary: sundaySummary,
+                            onExpand: () => setCollapsed(false),
+                          )
+                        : _CollapsedWarHeader(
+                            eyebrow: eyebrow,
+                            subtitle: collapsedLine,
+                            pulse:
+                                snap.phase == DailyWarPhase.lobby ||
+                                snap.phase == DailyWarPhase.liveJoinable ||
+                                snap.phase == DailyWarPhase.liveLocked ||
+                                snap.phase == DailyWarPhase.morning ||
+                                snap.phase == DailyWarPhase.countdown ||
+                                snap.phase == DailyWarPhase.preAnnounce,
+                            onExpand: () => setCollapsed(false),
+                          ))
                   : Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
@@ -349,12 +343,12 @@ String _collapsedSubtitle({
       return 'Join until ${DailyWarSchedule.formatCountdown(untilLateClose)}';
     case DailyWarPhase.liveLocked:
       return writersShown != null
-          ? '$writersShown writing · results at 9:25'
-          : 'Paper closed · results at 9:25';
+          ? '$writersShown writing · AIR at 9:40'
+          : 'Paper closed · AIR at 9:40';
     case DailyWarPhase.resultsPending:
       return snap.submission != null
-          ? 'Calculating your All-India Rank…'
-          : 'Ranks shortly';
+          ? 'Score submitted · AIR at 9:40'
+          : 'AIR at 9:40';
     case DailyWarPhase.resultsReady:
       final sub = snap.submission;
       if (sub?.hasOfficialRank == true) {
@@ -391,9 +385,7 @@ String _sundayWeekMeta(DailyWarWeekSummary s) {
   if (s.attemptedNone) {
     return '0/${s.warNights} nights · Monday opens fresh';
   }
-  final parts = <String>[
-    '${s.attemptedNights}/${s.warNights} nights',
-  ];
+  final parts = <String>['${s.attemptedNights}/${s.warNights} nights'];
   if (s.accuracyPct != null) {
     parts.add('${s.accuracyPct!.round()}%');
   }
@@ -410,10 +402,7 @@ String _sundayWeekMeta(DailyWarWeekSummary s) {
 
 /// Collapsed Sunday — week orbit + one creative rollup (no “rest / tap” copy).
 class _CollapsedSundayWeek extends StatelessWidget {
-  const _CollapsedSundayWeek({
-    required this.summary,
-    required this.onExpand,
-  });
+  const _CollapsedSundayWeek({required this.summary, required this.onExpand});
 
   final DailyWarWeekSummary summary;
   final VoidCallback onExpand;
@@ -540,11 +529,7 @@ class _CollapsedDayDot extends StatelessWidget {
           alignment: Alignment.center,
           child: Text(
             day.label,
-            style: DwText.dm(
-              size: 10,
-              weight: FontWeight.w800,
-              color: label,
-            ),
+            style: DwText.dm(size: 10, weight: FontWeight.w800, color: label),
           ),
         ),
         const SizedBox(height: 3),
@@ -597,10 +582,7 @@ class _CollapsedWarHeader extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                eyebrow,
-                style: DwText.eyebrow(color: DwColors.onDarkMuted),
-              ),
+              Text(eyebrow, style: DwText.eyebrow(color: DwColors.onDarkMuted)),
               const SizedBox(height: 6),
               Text(
                 subtitle,
@@ -914,14 +896,12 @@ class _PrepareCompact extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final mins = DailyWarSchedule.liveWindowMinutesFor(qCount);
-    final topicCount = topics.isEmpty
-        ? (isGrand ? null : 2)
-        : topics.length;
+    final topicCount = topics.isEmpty ? (isGrand ? null : 2) : topics.length;
     final topicMeta = topicCount == null
         ? (isGrand ? 'Week revision' : '2 new topics')
         : isGrand
-            ? '$topicCount topics · week revision'
-            : '$topicCount new topics';
+        ? '$topicCount topics · week revision'
+        : '$topicCount new topics';
     final topicsLine = DailyWarCopy.compactTopics(
       topics,
       loadFailed: topicsLoadFailed,
@@ -1007,9 +987,7 @@ class _PrepareCompact extends StatelessWidget {
             ),
           ),
           child: _PrimaryCta(
-            label: isGrand
-                ? 'How Grand War works'
-                : 'What is Daily War?',
+            label: isGrand ? 'How Grand War works' : 'What is Daily War?',
             filled: true,
           ),
         ),
@@ -1116,7 +1094,7 @@ class _LobbyOpen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final doors = DailyWarSchedule.formatCountdown(untilStart);
+    final startsIn = DailyWarSchedule.formatCountdown(untilStart);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -1145,7 +1123,8 @@ class _LobbyOpen extends StatelessWidget {
         const _PrimaryCta(label: 'Enter lobby'),
         const SizedBox(height: 8),
         Text(
-          'DOORS CLOSE IN ${doors.length > 5 ? doors.substring(3) : doors}',
+          'WAR STARTS IN '
+          '${startsIn.length > 5 ? startsIn.substring(3) : startsIn}',
           style: DwText.stamp(color: DwColors.crimsonBright),
         ),
       ],
@@ -1244,7 +1223,7 @@ class _LiveLocked extends StatelessWidget {
         Text('Tonight\'s paper is being written', style: DwText.topicCompact()),
         const SizedBox(height: 6),
         Text(
-          'Results and All-India Rank at 9:25 PM IST.',
+          'Score on submission · All-India Rank at 9:40 PM IST.',
           style: DwText.body(),
         ),
         if (writersShown != null) ...[
@@ -1282,14 +1261,14 @@ class _ResultsPending extends StatelessWidget {
       children: [
         _StatusRow(
           left: 'RESULTS',
-          right: 'CALCULATING…',
+          right: 'AIR AT 9:40 PM',
           onCollapse: onCollapse,
         ),
         const SizedBox(height: 12),
         Text(
           snap.submission != null
-              ? 'Calculating your All-India Rank…'
-              : 'Tonight\'s War is over · ranks shortly',
+              ? 'Your score is in · we\'ll notify you when AIR is ready'
+              : 'Tonight\'s War is over · AIR at 9:40 PM',
           style: DwText.topicCompact(),
         ),
         const SizedBox(height: 8),
@@ -1399,10 +1378,7 @@ class _ResultSatOut extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        _StatusRow(
-          left: 'TONIGHT\'S WAR IS OVER',
-          onCollapse: onCollapse,
-        ),
+        _StatusRow(left: 'TONIGHT\'S WAR IS OVER', onCollapse: onCollapse),
         const SizedBox(height: 12),
         if (writersShown != null)
           Text(

@@ -29,9 +29,8 @@ class DailyWarLobbyScreen extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final available = ref.watch(dailyWarRemoteEnabledProvider);
     return available.when(
-      loading: () => const Scaffold(
-        body: Center(child: CircularProgressIndicator()),
-      ),
+      loading: () =>
+          const Scaffold(body: Center(child: CircularProgressIndicator())),
       error: (_, _) => Scaffold(
         appBar: AppBar(title: const Text('Daily War')),
         body: const Center(child: Text('Daily War is not available.')),
@@ -67,13 +66,13 @@ class _DailyWarLobbyBody extends HookConsumerWidget {
     final tick = useState(0);
     final countEnabled =
         ref.watch(dailyWarLobbyCountRemoteEnabledProvider).asData?.value ??
-            true;
+        true;
     final minVisible =
         ref.watch(dailyWarMinVisibleLobbyCountRemoteProvider).asData?.value ??
-            DailyWarSchedule.minVisibleParticipantCount;
+        DailyWarSchedule.minVisibleParticipantCount;
     final liveCounts =
         ref.watch(dailyWarLiveCountsProvider).asData?.value ??
-            const DailyWarLiveCounts.empty();
+        const DailyWarLiveCounts.empty();
 
     useEffect(() {
       final t = Timer.periodic(const Duration(seconds: 1), (_) {
@@ -91,9 +90,7 @@ class _DailyWarLobbyBody extends HookConsumerWidget {
       }
       if (joinedLobbyDate.value == snap.dateId) return null;
       joinedLobbyDate.value = snap.dateId;
-      unawaited(
-        const DailyWarCloudService().joinLobby(dateId: snap.dateId),
-      );
+      unawaited(const DailyWarCloudService().joinLobby(dateId: snap.dateId));
       return null;
     }, [snap.dateId, snap.phase]);
 
@@ -104,16 +101,17 @@ class _DailyWarLobbyBody extends HookConsumerWidget {
     );
     final ist = DailyWarSchedule.nowIst(utc);
     final warDate = DailyWarSchedule.warDateFor(ist);
-    final qCount = snap.doc?.questionCount ??
+    final qCount =
+        snap.doc?.questionCount ??
         DailyWarSchedule.questionCountForDate(warDate);
     final start = DailyWarSchedule.startAtForDate(warDate);
     final liveEnd = DailyWarSchedule.liveEndsAt(warDate, questionCount: qCount);
+    final rankTarget = DailyWarSchedule.rankTargetAt(warDate);
     final lateClose = DailyWarSchedule.lateJoinClosesAt(warDate);
     final untilStart = start.difference(ist);
     final untilLate = lateClose.difference(ist);
     final windowSecs = DailyWarSchedule.liveWindowMinutesFor(qCount) * 60;
-    final canEnter = snap.phase == DailyWarPhase.lobby ||
-        snap.phase == DailyWarPhase.liveJoinable;
+    final canEnter = snap.phase == DailyWarPhase.liveJoinable;
     final alreadyDone = snap.submission != null;
     final isGrand = snap.doc?.isGrand == true;
     final topics = snap.doc?.topics ?? const [];
@@ -185,9 +183,9 @@ class _DailyWarLobbyBody extends HookConsumerWidget {
         context.go('/test/$sessionId');
       } on Object catch (e) {
         if (context.mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('Could not start War: $e')),
-          );
+          ScaffoldMessenger.of(
+            context,
+          ).showSnackBar(SnackBar(content: Text('Could not start War: $e')));
         }
       } finally {
         launching.value = false;
@@ -238,8 +236,8 @@ class _DailyWarLobbyBody extends HookConsumerWidget {
             snap.phase == DailyWarPhase.lobby
                 ? 'LOBBY OPEN'
                 : snap.phase == DailyWarPhase.liveJoinable
-                    ? 'WAR IS LIVE'
-                    : _statusEyebrow(snap.phase),
+                ? 'WAR IS LIVE'
+                : _statusEyebrow(snap.phase),
             style: DwText.eyebrow(),
           ),
           const SizedBox(height: 12),
@@ -253,10 +251,7 @@ class _DailyWarLobbyBody extends HookConsumerWidget {
               style: DwText.body(),
             ),
           ] else if (topics.isEmpty)
-            Text(
-              DailyWarCopy.compactTopics(topics),
-              style: DwText.topic(),
-            )
+            Text(DailyWarCopy.compactTopics(topics), style: DwText.topic())
           else ...[
             Text(
               DailyWarCopy.subjectsLine(topics).toUpperCase(),
@@ -281,10 +276,8 @@ class _DailyWarLobbyBody extends HookConsumerWidget {
                 ),
               ),
             GestureDetector(
-              onTap: () => showDailyWarTopicsSheet(
-                context: context,
-                topics: topics,
-              ),
+              onTap: () =>
+                  showDailyWarTopicsSheet(context: context, topics: topics),
               child: Text(
                 topics.length > 2
                     ? 'See all ${topics.length} topics →'
@@ -310,13 +303,13 @@ class _DailyWarLobbyBody extends HookConsumerWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    canEnter
-                        ? (snap.phase == DailyWarPhase.lobby
-                            ? 'Starts in ${DailyWarSchedule.formatCountdown(untilStart)}'
-                            : 'Join until 9:10 · ${mmSs(untilLate)} left')
+                    snap.phase == DailyWarPhase.lobby
+                        ? 'Starts in ${DailyWarSchedule.formatCountdown(untilStart)}'
+                        : canEnter
+                        ? 'Join until 9:10 · ${mmSs(untilLate)} left'
                         : _statusCopy(
                             snap.phase,
-                            closeClock: DailyWarSchedule.formatClock(liveEnd),
+                            rankClock: DailyWarSchedule.formatClock(rankTarget),
                           ),
                     style: DwText.dm(size: 14, weight: FontWeight.w600),
                   ),
@@ -353,16 +346,14 @@ class _DailyWarLobbyBody extends HookConsumerWidget {
               )
             else if (canEnter)
               _DwButton(
-                label: launching.value
-                    ? 'Starting…'
-                    : (snap.phase == DailyWarPhase.lobby
-                        ? 'I\'m ready'
-                        : 'Join now'),
+                label: launching.value ? 'Starting…' : 'Join now',
                 onPressed: launching.value
                     ? null
                     : () => unawaited(enterWar(unranked: false)),
                 loading: launching.value,
               )
+            else if (snap.phase == DailyWarPhase.lobby)
+              const _DwButton(label: 'Starts at 9:00 PM')
             else if (snap.phase == DailyWarPhase.resultsReady ||
                 snap.phase == DailyWarPhase.resultsPending)
               _DwButton(
@@ -374,7 +365,7 @@ class _DailyWarLobbyBody extends HookConsumerWidget {
               )
             else
               Text(
-                'Come back at 8:45 PM IST to enter the lobby.',
+                'Come back at 8:59 PM IST to enter the lobby.',
                 style: DwText.body(),
               ),
           ],
@@ -410,16 +401,16 @@ class _DailyWarLobbyBody extends HookConsumerWidget {
     }
   }
 
-  String _statusCopy(DailyWarPhase phase, {required String closeClock}) {
+  String _statusCopy(DailyWarPhase phase, {required String rankClock}) {
     switch (phase) {
       case DailyWarPhase.restDay:
         return 'No paper today · next War Monday 9:00 PM';
       case DailyWarPhase.preAnnounce:
       case DailyWarPhase.morning:
       case DailyWarPhase.countdown:
-        return 'Prepare today · lobby opens 8:45 PM';
+        return 'Prepare today · lobby opens 8:59 PM';
       case DailyWarPhase.liveLocked:
-        return 'Late join closed · results after $closeClock';
+        return 'Late join closed · AIR at $rankClock';
       case DailyWarPhase.resultsPending:
         return 'Ranks calculating…';
       case DailyWarPhase.resultsReady:
