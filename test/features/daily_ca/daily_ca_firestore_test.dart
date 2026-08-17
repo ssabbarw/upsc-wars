@@ -20,5 +20,12 @@ void main() {
     test('draft collection is daily_ca_drafts/{date}', () {
       expect(DailyCaFirestore.draftCollectionName, 'daily_ca_drafts');
     });
+
+    test('generate config path is admin_dashboard/daily_ca', () {
+      expect(
+        DailyCaFirestore.generateConfigPath,
+        'admin_dashboard/daily_ca',
+      );
+    });
   });
 }

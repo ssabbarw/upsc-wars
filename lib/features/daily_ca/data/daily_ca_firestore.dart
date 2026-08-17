@@ -10,6 +10,26 @@ abstract final class DailyCaFirestore {
 
   static const collectionName = 'daily_mcqs';
   static const draftCollectionName = 'daily_ca_drafts';
+  static const generateConfigPath = 'admin_dashboard/daily_ca';
+
+  static DocumentReference<Map<String, dynamic>> generateConfigDoc() {
+    return FirebaseFirestore.instance
+        .collection('admin_dashboard')
+        .doc('daily_ca');
+  }
+
+  static Future<void> saveGenerateClock({
+    required int hourIst,
+    required int minuteIst,
+  }) {
+    return generateConfigDoc().set(
+      {
+        'generate_hour_ist': hourIst.clamp(0, 23),
+        'generate_minute_ist': minuteIst.clamp(0, 59),
+      },
+      SetOptions(merge: true),
+    );
+  }
 
   /// Parses `YYYY-MM-DD` into zero-padded `(year, month, day)` path segments.
   static ({String year, String month, String day}) pathSegments(String isoDate) {

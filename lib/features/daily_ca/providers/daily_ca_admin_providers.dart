@@ -3,6 +3,18 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../data/daily_ca_admin_cloud_service.dart';
 import '../data/daily_ca_firestore.dart';
 import '../domain/daily_ca_draft.dart';
+import '../domain/daily_ca_generate_config.dart';
+
+final dailyCaAdminCloudServiceProvider = Provider<DailyCaAdminCloudService>(
+  (ref) => DailyCaAdminCloudService(),
+);
+
+final dailyCaGenerateConfigProvider =
+    StreamProvider<DailyCaGenerateConfig>((ref) {
+      return DailyCaFirestore.generateConfigDoc().snapshots().map(
+        (snap) => DailyCaGenerateConfig.fromMap(snap.data()),
+      );
+    });
 
 final dailyCaAdminCloudServiceProvider = Provider<DailyCaAdminCloudService>(
   (ref) => DailyCaAdminCloudService(),

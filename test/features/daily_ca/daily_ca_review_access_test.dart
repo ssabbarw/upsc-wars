@@ -25,6 +25,25 @@ void main() {
         '2026-06-05',
       );
     });
+
+    test('uses the configured generate time, not a hard-coded 8 PM', () {
+      expect(
+        dailyCaReviewDateForNow(
+          referenceIst: DateTime(2026, 6, 8, 19, 30),
+          generateHourIst: 21,
+          generateMinuteIst: 0,
+        ),
+        '2026-06-07',
+      );
+      expect(
+        dailyCaReviewDateForNow(
+          referenceIst: DateTime(2026, 6, 8, 21, 0),
+          generateHourIst: 21,
+          generateMinuteIst: 0,
+        ),
+        '2026-06-08',
+      );
+    });
   });
 
   group('DailyCaDraft.isFrozen', () {

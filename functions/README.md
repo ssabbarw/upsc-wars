@@ -24,11 +24,11 @@ Optional Remote Config **`question_corrections_revision`** (int) mirrors `active
 
 ## Daily CA drafts (`asia-south1`)
 
-Python pipeline (Cloud Function `generateDailyCa`, 8:00 PM IST) writes English drafts to **`daily_ca_drafts/{YYYY-MM-DD}`**.
+Python pipeline (Cloud Function `generateDailyCa`, every 15 min; runs at `admin_dashboard/daily_ca` generate_hour_ist / generate_minute_ist, default 8:00 PM IST) writes English drafts to **`daily_ca_drafts/{YYYY-MM-DD}`**.
 
 | Function | Trigger | Role |
 |---|---|---|
-| `generateDailyCa` | 8:00 PM IST | Python harvest + 15/20 English drafts |
+| `generateDailyCa` | every 15 min; runs at configured IST clock (default 8:00 PM) | Python harvest + 15/20 English drafts |
 | `updateDailyCaDraft` | callable | Super-user saves edits + chosen ids |
 | `publishDailyCaDay` | callable | Translates chosen 5–10 to Hindi, writes `daily_mcqs/{Y}/{M}/{D}` |
 | `autoPublishDailyCa` | 5:50 AM IST | If unpublished: chosen ≥5, else first 10, skip if &lt;5 |

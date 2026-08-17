@@ -369,6 +369,11 @@ service cloud.firestore {
       );
     }
 
+    /// Super-user CA generate clock (hour/minute IST). Functions also write here.
+    match /admin_dashboard/daily_ca {
+      allow read, write: if isSuperUserEmail();
+    }
+
     /// Super-user bot index — Cloud Functions only. Clients must not overwrite.
     match /admin_dashboard/traffic_bots {
       allow read: if isSuperUserEmail();

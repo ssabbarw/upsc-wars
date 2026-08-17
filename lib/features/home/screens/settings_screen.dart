@@ -18,6 +18,9 @@ import '../../../core/providers/super_user_provider.dart';
 import '../../admin_dashboard/admin_dashboard_access.dart';
 import '../../question_editor/widgets/question_editor_access.dart';
 import '../../daily_ca/daily_ca_admin_constants.dart';
+import '../../daily_ca/data/daily_ca_firestore.dart';
+import '../../daily_ca/domain/daily_ca_generate_config.dart';
+import '../../daily_ca/providers/daily_ca_admin_providers.dart';
 import '../../daily_ca/widgets/daily_ca_review_access.dart';
 import '../../../shared/theme/dark_mode_toggle.dart';
 import '../../../shared/widgets/app_toast.dart';
@@ -31,6 +34,9 @@ class SettingsScreen extends ConsumerWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final bottomInset = MediaQuery.paddingOf(context).bottom;
     final isSuperUser = ref.watch(isSuperUserProvider);
+    final generateConfig =
+        ref.watch(dailyCaGenerateConfigProvider).asData?.value ??
+        DailyCaGenerateConfig.fromMap(null);
     final showQuestionEditor =
         canAccessQuestionEditor(isSuperUser: isSuperUser);
     final showAdminDashboard =
@@ -134,7 +140,7 @@ class SettingsScreen extends ConsumerWidget {
               _Section(
                 title: isSuperUser && !kDebugMode ? 'Admin tools' : 'Internal',
                 children: [
-                  if (canAccessDailyCaReview(isSuperUser: isSuperUser))
+                  if (canAccessDailyCaReview(isSuperUser: isSuperUser)) ...[
                     _NavTile(
                       icon: Icons.newspaper_outlined,
                       iconBg: Color(0xFFE7F0FF),
@@ -143,10 +149,41 @@ class SettingsScreen extends ConsumerWidget {
                       subtitle: 'Pick 5–10 questions and publish',
                       onTap: () => context.push(
                         DailyCaAdminConstants.reviewPath(
-                          dailyCaReviewDateForNow(),
+                          dailyCaReviewDateForNow(
+                            generateHourIst: generateConfig.hourIst,
+                            generateMinuteIst: generateConfig.minuteIst,
+                          ),
                         ),
                       ),
                     ),
+                    _NavTile(
+                      icon: Icons.schedule_outlined,
+                      iconBg: Color(0xFFE7F0FF),
+                      iconColor: Color(0xFF1D4ED8),
+                      title: 'CA generate time',
+                      subtitle: generateConfig.labelIst,
+                      onTap: () async {
+                        final picked = await showTimePicker(
+                          context: context,
+                          initialTime: TimeOfDay(
+                            hour: generateConfig.hourIst,
+                            minute: generateConfig.minuteIst,
+                          ),
+                        );
+                        if (picked == null) return;
+                        await DailyCaFirestore.saveGenerateClock(
+                          hourIst: picked.hour,
+                          minuteIst: picked.minute,
+                        );
+                        if (context.mounted) {
+                          AppToast.showText(
+                            context,
+                            'Generates at ${DailyCaGenerateConfig(hourIst: picked.hour, minuteIst: picked.minute).labelIst}',
+                          );
+                        }
+                      },
+                    ),
+                  ],
                   if (showAdminDashboard)
                     _NavTile(
                       icon: Icons.dashboard_outlined,
