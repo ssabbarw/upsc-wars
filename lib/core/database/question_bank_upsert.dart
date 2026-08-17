@@ -4,6 +4,7 @@ import 'package:drift/drift.dart';
 import 'package:uuid/uuid.dart';
 
 import '../constants/question_source_constants.dart';
+import '../domain/entities/test_question.dart';
 import 'user_db.dart';
 
 const _uuid = Uuid();
@@ -219,7 +220,12 @@ class QuestionBankUpsert {
         enTable['columns'] is List ? enTable['columns'] : const [],
       ),
       enRows: jsonEncode(
-        enTable['rows'] is List ? enTable['rows'] : const [],
+        questionTableRowsAsCells(
+          enTable['rows'],
+          enTable['columns'] is List
+              ? (enTable['columns'] as List).map((e) => e.toString()).toList()
+              : const [],
+        ),
       ),
       hiHeaderText: Value(_nullableStr(hiTable['header_text'])),
       hiFooterText: Value(_nullableStr(hiTable['footer_text'])),
@@ -227,7 +233,12 @@ class QuestionBankUpsert {
         hiTable['columns'] is List ? hiTable['columns'] : const [],
       ),
       hiRows: jsonEncode(
-        hiTable['rows'] is List ? hiTable['rows'] : const [],
+        questionTableRowsAsCells(
+          hiTable['rows'],
+          hiTable['columns'] is List
+              ? (hiTable['columns'] as List).map((e) => e.toString()).toList()
+              : const [],
+        ),
       ),
     );
 

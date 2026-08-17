@@ -15,6 +15,49 @@ class QuestionTableData {
   final List<List<String>> rows;
 }
 
+/// Cell from a Firestore table row (array, or map with column / col_i / list_i keys).
+String questionTableCell(Map<Object?, Object?> row, String column, int index) {
+  final byCol = row[column];
+  if (byCol != null && byCol.toString().isNotEmpty) return byCol.toString();
+  final byIndex = row['col_$index'];
+  if (byIndex != null && byIndex.toString().isNotEmpty) return byIndex.toString();
+  if (index == 0) {
+    final v = row['list_i'];
+    if (v != null && v.toString().isNotEmpty) return v.toString();
+  }
+  if (index == 1) {
+    final v = row['list_ii'];
+    if (v != null && v.toString().isNotEmpty) return v.toString();
+  }
+  return '';
+}
+
+/// Normalizes table `rows` to lists of cells so exam UI can render map-shaped CA rows.
+List<List<String>> questionTableRowsAsCells(
+  Object? rowsRaw,
+  List<String> columns,
+) {
+  if (rowsRaw is! List) return const [];
+  final out = <List<String>>[];
+  for (final row in rowsRaw) {
+    if (row is List) {
+      out.add(row.map((e) => e?.toString() ?? '').toList());
+    } else if (row is Map) {
+      final cells = row['cells'];
+      if (cells is List) {
+        out.add(cells.map((e) => e?.toString() ?? '').toList());
+        continue;
+      }
+      if (columns.isEmpty) continue;
+      out.add([
+        for (var i = 0; i < columns.length; i++)
+          questionTableCell(row, columns[i], i),
+      ]);
+    }
+  }
+  return out;
+}
+
 class TestQuestion {
   const TestQuestion({
     required this.uuid,

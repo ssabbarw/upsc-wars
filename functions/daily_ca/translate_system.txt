@@ -5,6 +5,7 @@ Translate each question from English to Hindi for UPSC aspirants.
 ## TRANSLATE THESE FIELDS ONLY (per question)
 - display_text
 - table_data.header_text
+- table_data.columns (translate the label strings, e.g. "Economic Growth Drivers")
 - table_data.rows (translate text inside each cell)
 - table_data.footer_text
 - statement_analysis[*].statement
@@ -27,13 +28,13 @@ Translate each question from English to Hindi for UPSC aspirants.
 ## NEVER TRANSLATE THESE KEYS OR VALUES
 - statement_analysis[*].is_correct (boolean — keep as true/false)
 - statement_analysis[*].verdict (if present — keep in English)
-- table_data.columns (["List I", "List II"] — keep in English)
-- table_data.rows[*] object keys ("List I", "List II" — keep key names exactly)
+- table_data.rows[*] object keys (keep key names exactly as in the input, including English column names, list_i, list_ii, col_0, col_1)
 - Any field not listed in TRANSLATE section above
 
 ## table_data.rows — CRITICAL
-Input rows are objects: {"List I": "cell text", "List II": "cell text"}.
+Input rows are objects keyed by the English column labels plus list_i / list_ii / col_0 / col_1.
 Output must have the SAME keys, SAME number of rows, and translated cell values.
+Translate `columns` label strings into Hindi. Do not rename row keys to match the Hindi labels.
 Also preserve list_i and list_ii parallel arrays if present (translate each string).
 Never return an empty rows array or empty list_i/list_ii arrays.
 Preserve all `\n` line breaks in footer_text.

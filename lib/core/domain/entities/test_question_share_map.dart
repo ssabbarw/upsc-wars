@@ -81,22 +81,11 @@ QuestionTableData? _questionTableFromShare(Object? raw) {
   final m = Map<dynamic, dynamic>.from(raw);
   final cols = _shareStringList(m['columns']);
   if (cols.isEmpty) return null;
-  final rowsRaw = m['rows'];
-  final rows = <List<String>>[];
-  if (rowsRaw is List) {
-    for (final e in rowsRaw) {
-      if (e is Map && e['cells'] is List) {
-        rows.add(_shareStringList(e['cells']));
-      } else if (e is List) {
-        rows.add(e.map((x) => x.toString()).toList());
-      }
-    }
-  }
   return QuestionTableData(
     header: m['header'] as String?,
     footer: m['footer'] as String?,
     columns: cols,
-    rows: rows,
+    rows: questionTableRowsAsCells(m['rows'], cols),
   );
 }
 

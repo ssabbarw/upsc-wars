@@ -745,12 +745,7 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
     final columns = _parseStringList(columnsRaw);
     final rowsDecoded = _safeJsonDecode(rowsRaw);
     if (columns.isEmpty || rowsDecoded is! List) return null;
-    final rows = <List<String>>[];
-    for (final row in rowsDecoded) {
-      if (row is List) {
-        rows.add(row.map((e) => e?.toString() ?? '').toList());
-      }
-    }
+    final rows = questionTableRowsAsCells(rowsDecoded, columns);
     return QuestionTableData(
       header: header,
       footer: footer,
