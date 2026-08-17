@@ -180,6 +180,12 @@ def _chunk(items: list, size: int) -> list[list]:
     return [items[i : i + size] for i in range(0, len(items), size)]
 
 
+def _messages_create(**kwargs):
+    """Anthropic messages call — streaming required for long web-search runs."""
+    with client.messages.stream(**kwargs) as stream:
+        return stream.get_final_message()
+
+
 def _anthropic_json(
     system_prompt: str,
     user_message: str,
@@ -211,7 +217,7 @@ def _anthropic_json(
             turn += 1
             log.info(f"  API turn {turn}...")
             kwargs["messages"] = messages
-            response = client.messages.create(**kwargs)
+            response = _messages_create(**kwargs)
 
             block_types = [b.type for b in response.content]
             log.info(f"  Stop reason: {response.stop_reason} | Blocks: {block_types}")
