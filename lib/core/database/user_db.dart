@@ -930,18 +930,21 @@ class SessionsDao extends DatabaseAccessor<UserDatabase>
     return (row.read<int?>('c') ?? 0) > 0;
   }
 
-  /// Whether a daily practice drill was completed between [startInclusive] and
-  /// [endExclusive] (local calendar day boundaries from the caller).
+  /// Whether a home revision-queue session was completed in the hub window.
+  ///
+  /// Subject is required so a War warm-up (also tagged `daily_drill`) does not
+  /// count as the afternoon revision loop.
   Future<bool> hasCompletedDailyDrillBetween({
     required DateTime startInclusive,
     required DateTime endExclusive,
   }) async {
     final row = await customSelect(
       "SELECT COUNT(*) AS c FROM sessions "
-      "WHERE analytics_feature_key = ? AND status = 'completed' "
+      "WHERE analytics_feature_key = ? AND subject = ? AND status = 'completed' "
       "AND completed_at >= ? AND completed_at < ?",
       variables: [
         Variable.withString('daily_drill'),
+        Variable.withString('daily_revision'),
         Variable.withDateTime(startInclusive),
         Variable.withDateTime(endExclusive),
       ],

@@ -22,6 +22,8 @@ Future<void> showDailyWarExplainerSheet({
   return showModalBottomSheet<void>(
     context: context,
     isScrollControlled: true,
+    isDismissible: true,
+    enableDrag: true,
     backgroundColor: Colors.transparent,
     builder: (ctx) => _DailyWarExplainerSheet(
       hostContext: context,
@@ -70,20 +72,25 @@ class _DailyWarExplainerSheet extends HookConsumerWidget {
       }
     }
 
-    return Padding(
-      padding: EdgeInsets.only(bottom: sheetBottomPadding(context)),
-      child: Align(
-        alignment: Alignment.bottomCenter,
-        child: Material(
-          color: DwColors.surface,
-          borderRadius: const BorderRadius.vertical(top: Radius.circular(22)),
-          clipBehavior: Clip.antiAlias,
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(20, 10, 20, 20),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
+    return GestureDetector(
+      onTap: () => Navigator.of(context).pop(),
+      behavior: HitTestBehavior.opaque,
+      child: Padding(
+        padding: EdgeInsets.only(bottom: sheetBottomPadding(context)),
+        child: Align(
+          alignment: Alignment.bottomCenter,
+          child: GestureDetector(
+            onTap: () {},
+            child: Material(
+              color: DwColors.surface,
+              borderRadius: const BorderRadius.vertical(top: Radius.circular(22)),
+              clipBehavior: Clip.antiAlias,
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(20, 10, 20, 20),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
                 Center(
                   child: Container(
                     width: 40,
@@ -180,7 +187,9 @@ class _DailyWarExplainerSheet extends HookConsumerWidget {
                           ),
                   ),
                 ),
-              ],
+                  ],
+                ),
+              ),
             ),
           ),
         ),

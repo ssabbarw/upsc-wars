@@ -111,9 +111,7 @@ class DailyDrillCard extends HookConsumerWidget {
           eyebrow: 'REVISION QUEUE',
           title: 'Revision queue',
           subtitle: counts,
-          cta: state.hasAnyPool
-              ? (state.completedToday ? 'Done' : 'Open')
-              : 'Empty',
+          cta: state.hasAnyPool ? 'Open' : 'Empty',
           icon: Icons.replay_rounded,
           accent: AppColors.primaryDark,
           background: isDark
@@ -122,7 +120,7 @@ class DailyDrillCard extends HookConsumerWidget {
           onTap: isHero
               ? null
               : () => unawaited(openChoice(source: 'card')),
-          done: state.completedToday,
+          done: false,
           loading: loading.value,
           showNow: emphasized && isHero,
           actions: isHero
