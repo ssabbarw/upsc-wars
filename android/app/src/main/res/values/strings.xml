@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Upsc Wars</string>
+    <string name="make_pulse_share">Make Pulse</string>
     <!-- Must match the channel created in Dart for FCM background notifications. -->
     <string name="default_notification_channel_id">general_v2</string>
 </resources>

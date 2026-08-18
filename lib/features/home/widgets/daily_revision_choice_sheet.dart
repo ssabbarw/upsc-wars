@@ -6,6 +6,7 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../shared/widgets/dismissible_modal_sheet.dart';
 import '../domain/daily_revision.dart';
 import '../domain/start_daily_drill.dart';
 import '../providers/daily_drill_provider.dart';
@@ -50,95 +51,90 @@ class _DailyRevisionChoiceSheet extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final borderColor = isDark ? AppColors.borderDark : AppColors.borderLight;
 
-    return GestureDetector(
-      onTap: () => Navigator.of(context).pop(),
-      behavior: HitTestBehavior.opaque,
+    return DismissOnScrimTap(
       child: Padding(
-      padding: EdgeInsets.fromLTRB(
-        AppSpacing.sm,
-        0,
-        AppSpacing.sm,
-        sheetBottomPadding(context),
-      ),
-      child: Align(
-        alignment: Alignment.bottomCenter,
-        child: GestureDetector(
-          onTap: () {},
+        padding: EdgeInsets.fromLTRB(
+          AppSpacing.sm,
+          0,
+          AppSpacing.sm,
+          sheetBottomPadding(context),
+        ),
+        child: Align(
+          alignment: Alignment.bottomCenter,
           child: Material(
-          color: scheme.surface,
-          borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(
-              AppSpacing.lg,
-              AppSpacing.md,
-              AppSpacing.lg,
-              AppSpacing.lg,
-            ),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Center(
-                  child: Container(
-                    width: 40,
-                    height: 4,
-                    margin: const EdgeInsets.only(bottom: AppSpacing.md),
-                    decoration: BoxDecoration(
-                      color: scheme.onSurfaceVariant.withValues(alpha: 0.35),
-                      borderRadius: BorderRadius.circular(2),
+            color: scheme.surface,
+            borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(
+                AppSpacing.lg,
+                AppSpacing.md,
+                AppSpacing.lg,
+                AppSpacing.lg,
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Center(
+                    child: Container(
+                      width: 40,
+                      height: 4,
+                      margin: const EdgeInsets.only(bottom: AppSpacing.md),
+                      decoration: BoxDecoration(
+                        color: scheme.onSurfaceVariant.withValues(alpha: 0.35),
+                        borderRadius: BorderRadius.circular(2),
+                      ),
                     ),
                   ),
-                ),
-                Text(
-                  'Revision queue',
-                  style: AppTextStyles.h3().copyWith(
-                    fontWeight: FontWeight.w800,
-                    color: scheme.onSurface,
+                  Text(
+                    'Revision queue',
+                    style: AppTextStyles.h3().copyWith(
+                      fontWeight: FontWeight.w800,
+                      color: scheme.onSurface,
+                    ),
                   ),
-                ),
-                const SizedBox(height: AppSpacing.xs),
-                Text(
-                  state.hasAnyPool
-                      ? 'Pick a pool. You\'ll get a short random test from '
-                          'those questions — up to ${DailyRevision.questionCount} '
-                          'at a time.'
-                      : 'Questions you get wrong or bookmark will appear here. '
-                          'Then you can take a short random test from either pool.',
-                  style: AppTextStyles.bodySm().copyWith(
-                    color: scheme.onSurfaceVariant,
-                    height: 1.45,
+                  const SizedBox(height: AppSpacing.xs),
+                  Text(
+                    state.hasAnyPool
+                        ? 'Pick a pool. You\'ll get a short random test from '
+                              'those questions — up to ${DailyRevision.questionCount} '
+                              'at a time.'
+                        : 'Questions you get wrong or bookmark will appear here. '
+                              'Then you can take a short random test from either pool.',
+                    style: AppTextStyles.bodySm().copyWith(
+                      color: scheme.onSurfaceVariant,
+                      height: 1.45,
+                    ),
                   ),
-                ),
-                const SizedBox(height: AppSpacing.md),
-                _PoolTile(
-                  icon: Icons.close_rounded,
-                  title: DailyRevision.incorrectLabel,
-                  subtitle:
-                      'A random test from questions you answered incorrectly.',
-                  count: '${state.wrongCount}',
-                  enabled: state.hasWrongs,
-                  borderColor: borderColor,
-                  onTap: () =>
-                      Navigator.pop(context, DailyRevisionPool.missed),
-                ),
-                const SizedBox(height: AppSpacing.sm),
-                _PoolTile(
-                  icon: Icons.bookmark_rounded,
-                  title: DailyRevision.bookmarkedLabel,
-                  subtitle:
-                      'A random test from questions you have bookmarked.',
-                  count: '${state.bookmarkCount}',
-                  enabled: state.hasBookmarks,
-                  borderColor: borderColor,
-                  onTap: () =>
-                      Navigator.pop(context, DailyRevisionPool.saved),
-                ),
-              ],
+                  const SizedBox(height: AppSpacing.md),
+                  _PoolTile(
+                    icon: Icons.close_rounded,
+                    title: DailyRevision.incorrectLabel,
+                    subtitle:
+                        'A random test from questions you answered incorrectly.',
+                    count: '${state.wrongCount}',
+                    enabled: state.hasWrongs,
+                    borderColor: borderColor,
+                    onTap: () =>
+                        Navigator.pop(context, DailyRevisionPool.missed),
+                  ),
+                  const SizedBox(height: AppSpacing.sm),
+                  _PoolTile(
+                    icon: Icons.bookmark_rounded,
+                    title: DailyRevision.bookmarkedLabel,
+                    subtitle:
+                        'A random test from questions you have bookmarked.',
+                    count: '${state.bookmarkCount}',
+                    enabled: state.hasBookmarks,
+                    borderColor: borderColor,
+                    onTap: () =>
+                        Navigator.pop(context, DailyRevisionPool.saved),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
-        ),
-      ),
       ),
     );
   }

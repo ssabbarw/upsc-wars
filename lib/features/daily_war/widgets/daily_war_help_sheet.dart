@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../core/layout/system_insets.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../shared/widgets/dismissible_modal_sheet.dart';
 import '../domain/daily_war_schedule.dart';
 import '../theme/daily_war_theme.dart';
 
@@ -10,8 +11,10 @@ Future<void> showDailyWarHelpSheet(BuildContext context) {
   return showModalBottomSheet<void>(
     context: context,
     isScrollControlled: true,
+    isDismissible: true,
+    enableDrag: true,
     backgroundColor: Colors.transparent,
-    builder: (ctx) => const _DailyWarHelpSheet(),
+    builder: (ctx) => const DismissOnScrimTap(child: _DailyWarHelpSheet()),
   );
 }
 

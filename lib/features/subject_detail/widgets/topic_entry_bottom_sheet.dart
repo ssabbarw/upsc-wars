@@ -6,6 +6,7 @@ import '../../../core/layout/system_insets.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../shared/widgets/dismissible_modal_sheet.dart';
 import '../../../shared/widgets/test_config_bottom_sheet.dart';
 import '../providers/topic_insights_provider.dart';
 import 'danger_zone_summary_card.dart';
@@ -27,40 +28,44 @@ Future<void> showTopicEntryBottomSheet({
   return showModalBottomSheet<void>(
     context: context,
     isScrollControlled: true,
+    isDismissible: true,
+    enableDrag: true,
     backgroundColor: AppColors.transparent,
     builder: (modalContext) {
-      return Padding(
-        padding: EdgeInsets.only(
-          bottom: sheetBottomPadding(modalContext),
-        ),
-        child: Align(
-          alignment: Alignment.bottomCenter,
-          child: Container(
-            constraints: BoxConstraints(
-              maxHeight: MediaQuery.sizeOf(modalContext).height * 0.92,
-            ),
-            decoration: BoxDecoration(
-              color: Theme.of(modalContext).colorScheme.surface,
-              borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
-            ),
-            child: SingleChildScrollView(
-              physics: const BouncingScrollPhysics(),
-              padding: EdgeInsets.fromLTRB(
-                AppSpacing.xxl,
-                AppSpacing.sm,
-                AppSpacing.xxl,
-                AppSpacing.xxl,
+      return DismissOnScrimTap(
+        child: Padding(
+          padding: EdgeInsets.only(bottom: sheetBottomPadding(modalContext)),
+          child: Align(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+              constraints: BoxConstraints(
+                maxHeight: MediaQuery.sizeOf(modalContext).height * 0.92,
               ),
-              child: _TopicEntryBottomSheetBody(
-                parentContext: parentContext,
-                modalContext: modalContext,
-                subject: subject,
-                topic: topic,
-                subjectDisplayName: subjectDisplayName,
-                topicDisplayName: topicDisplayName,
-                availableQuestionCount: availableQuestionCount,
-                borderColor: borderColor,
-                onTestSessionCreated: onTestSessionCreated,
+              decoration: BoxDecoration(
+                color: Theme.of(modalContext).colorScheme.surface,
+                borderRadius: const BorderRadius.vertical(
+                  top: Radius.circular(20),
+                ),
+              ),
+              child: SingleChildScrollView(
+                physics: const BouncingScrollPhysics(),
+                padding: EdgeInsets.fromLTRB(
+                  AppSpacing.xxl,
+                  AppSpacing.sm,
+                  AppSpacing.xxl,
+                  AppSpacing.xxl,
+                ),
+                child: _TopicEntryBottomSheetBody(
+                  parentContext: parentContext,
+                  modalContext: modalContext,
+                  subject: subject,
+                  topic: topic,
+                  subjectDisplayName: subjectDisplayName,
+                  topicDisplayName: topicDisplayName,
+                  availableQuestionCount: availableQuestionCount,
+                  borderColor: borderColor,
+                  onTestSessionCreated: onTestSessionCreated,
+                ),
               ),
             ),
           ),
@@ -144,10 +149,7 @@ class _TopicEntryBottomSheetBody extends ConsumerWidget {
                     ),
                   );
                 },
-          child: Text(
-            'Start a test',
-            style: AppTextStyles.label(),
-          ),
+          child: Text('Start a test', style: AppTextStyles.label()),
         ),
         if (availableQuestionCount <= 0) ...[
           const SizedBox(height: AppSpacing.sm),

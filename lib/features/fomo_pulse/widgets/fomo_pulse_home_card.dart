@@ -35,7 +35,7 @@ class FomoPulseHomeCard extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      'Breaking news MCQs — tap to see history',
+                      'Breaking CA — brief, then 1 MCQ',
                       style: AppTextStyles.caption().copyWith(
                         color: scheme.onSurfaceVariant,
                       ),

@@ -8,6 +8,7 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../shared/widgets/dismissible_modal_sheet.dart';
 
 /// Returns the selected subject slug, or `null` if dismissed.
 Future<String?> showDailyDrillSubjectSheet(
@@ -18,8 +19,12 @@ Future<String?> showDailyDrillSubjectSheet(
     context: context,
     useRootNavigator: true,
     isScrollControlled: true,
+    isDismissible: true,
+    enableDrag: true,
     backgroundColor: Colors.transparent,
-    builder: (ctx) => _DailyDrillSubjectSheet(selectedSubject: selectedSubject),
+    builder: (ctx) => DismissOnScrimTap(
+      child: _DailyDrillSubjectSheet(selectedSubject: selectedSubject),
+    ),
   );
 }
 
@@ -66,7 +71,9 @@ class _DailyDrillSubjectSheet extends StatelessWidget {
               maxHeight: MediaQuery.sizeOf(context).height * 0.72,
             ),
             decoration: BoxDecoration(
-              borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
+              borderRadius: const BorderRadius.vertical(
+                top: Radius.circular(24),
+              ),
               border: Border.all(color: borderColor.withValues(alpha: 0.45)),
             ),
             child: Column(
@@ -139,7 +146,9 @@ class _DailyDrillSubjectSheet extends StatelessWidget {
                         ),
                         tileColor: selected
                             ? (isDark
-                                  ? AppColors.primaryDeep.withValues(alpha: 0.22)
+                                  ? AppColors.primaryDeep.withValues(
+                                      alpha: 0.22,
+                                    )
                                   : AppColors.primaryLight.withValues(
                                       alpha: 0.45,
                                     ))
@@ -153,8 +162,9 @@ class _DailyDrillSubjectSheet extends StatelessWidget {
                         title: Text(
                           option.label,
                           style: AppTextStyles.label().copyWith(
-                            fontWeight:
-                                selected ? FontWeight.w700 : FontWeight.w500,
+                            fontWeight: selected
+                                ? FontWeight.w700
+                                : FontWeight.w500,
                             color: scheme.onSurface,
                           ),
                         ),

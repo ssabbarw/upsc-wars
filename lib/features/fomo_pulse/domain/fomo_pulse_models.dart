@@ -5,6 +5,20 @@ typedef FomoPulseHistoryData = ({
   Map<String, FomoPulseAttemptState> attempts,
 });
 
+class FomoPulseArticlePreview {
+  const FomoPulseArticlePreview({
+    required this.imageUrl,
+    required this.imageSource,
+    required this.ogTitle,
+    required this.ogDescription,
+  });
+
+  final String imageUrl;
+  final String imageSource;
+  final String ogTitle;
+  final String ogDescription;
+}
+
 class FomoPulseHarvestCandidate {
   const FomoPulseHarvestCandidate({
     required this.draftId,
@@ -14,6 +28,7 @@ class FomoPulseHarvestCandidate {
     required this.sourceUrl,
     required this.newsImportance,
     required this.newsSummary,
+    this.upscPoints = const [],
   });
 
   final String draftId;
@@ -23,8 +38,10 @@ class FomoPulseHarvestCandidate {
   final String sourceUrl;
   final int newsImportance;
   final String newsSummary;
+  final List<String> upscPoints;
 
   factory FomoPulseHarvestCandidate.fromMap(Map<String, dynamic> map) {
+    final pointsRaw = map['upsc_points'];
     return FomoPulseHarvestCandidate(
       draftId: (map['draft_id'] ?? '').toString(),
       title: (map['title'] ?? '').toString(),
@@ -33,8 +50,39 @@ class FomoPulseHarvestCandidate {
       sourceUrl: (map['source_url'] ?? '').toString(),
       newsImportance: (map['news_importance'] as num?)?.toInt() ?? 3,
       newsSummary: (map['news_summary'] ?? '').toString(),
+      upscPoints: pointsRaw is List
+          ? [
+              for (final p in pointsRaw)
+                if (p.toString().trim().isNotEmpty) p.toString().trim(),
+            ]
+          : const [],
     );
   }
+}
+
+class FomoPulseArticleArgs {
+  const FomoPulseArticleArgs.harvest({
+    required this.draftDate,
+    required this.candidate,
+  }) : url = null;
+
+  const FomoPulseArticleArgs.url({required this.url})
+      : draftDate = null,
+        candidate = null;
+
+  final String? draftDate;
+  final FomoPulseHarvestCandidate? candidate;
+  final String? url;
+
+  bool get isHarvest => candidate != null && draftDate != null;
+
+  String get sourceUrl =>
+      (candidate?.sourceUrl ?? url ?? '').trim();
+
+  String get heading =>
+      (candidate?.title ?? '').trim();
+
+  String get summary => (candidate?.newsSummary ?? '').trim();
 }
 
 class FomoPulseQuestion {
@@ -49,6 +97,12 @@ class FomoPulseQuestion {
     required this.gsSubject,
     required this.topic,
     required this.newsTrigger,
+    this.displayTextHi = '',
+    this.optionAHi = '',
+    this.optionBHi = '',
+    this.optionCHi = '',
+    this.optionDHi = '',
+    this.finalExplanationHi = '',
   });
 
   final String displayText;
@@ -61,6 +115,28 @@ class FomoPulseQuestion {
   final String gsSubject;
   final String topic;
   final String newsTrigger;
+  final String displayTextHi;
+  final String optionAHi;
+  final String optionBHi;
+  final String optionCHi;
+  final String optionDHi;
+  final String finalExplanationHi;
+
+  bool get hasHindi => displayTextHi.trim().isNotEmpty;
+
+  FomoPulseQuestion localized(bool hindi) {
+    if (!hindi || !hasHindi) return this;
+    return copyWith(
+      displayText: displayTextHi,
+      optionA: optionAHi.isNotEmpty ? optionAHi : optionA,
+      optionB: optionBHi.isNotEmpty ? optionBHi : optionB,
+      optionC: optionCHi.isNotEmpty ? optionCHi : optionC,
+      optionD: optionDHi.isNotEmpty ? optionDHi : optionD,
+      finalExplanation: finalExplanationHi.isNotEmpty
+          ? finalExplanationHi
+          : finalExplanation,
+    );
+  }
 
   FomoPulseQuestion copyWith({
     String? displayText,
@@ -73,6 +149,12 @@ class FomoPulseQuestion {
     String? gsSubject,
     String? topic,
     String? newsTrigger,
+    String? displayTextHi,
+    String? optionAHi,
+    String? optionBHi,
+    String? optionCHi,
+    String? optionDHi,
+    String? finalExplanationHi,
   }) {
     return FomoPulseQuestion(
       displayText: displayText ?? this.displayText,
@@ -85,6 +167,12 @@ class FomoPulseQuestion {
       gsSubject: gsSubject ?? this.gsSubject,
       topic: topic ?? this.topic,
       newsTrigger: newsTrigger ?? this.newsTrigger,
+      displayTextHi: displayTextHi ?? this.displayTextHi,
+      optionAHi: optionAHi ?? this.optionAHi,
+      optionBHi: optionBHi ?? this.optionBHi,
+      optionCHi: optionCHi ?? this.optionCHi,
+      optionDHi: optionDHi ?? this.optionDHi,
+      finalExplanationHi: finalExplanationHi ?? this.finalExplanationHi,
     );
   }
 
@@ -99,6 +187,9 @@ class FomoPulseQuestion {
     final meta = q['meta'] is Map
         ? Map<String, dynamic>.from(q['meta'] as Map)
         : <String, dynamic>{};
+    final hi = q['hi'] is Map
+        ? Map<String, dynamic>.from(q['hi'] as Map)
+        : <String, dynamic>{};
     return FomoPulseQuestion(
       displayText: (en['display_text'] ?? '').toString(),
       optionA: (en['option_a'] ?? '').toString(),
@@ -110,6 +201,12 @@ class FomoPulseQuestion {
       gsSubject: (meta['gs_subject'] ?? '').toString(),
       topic: (meta['topic'] ?? '').toString(),
       newsTrigger: (meta['news_trigger'] ?? '').toString(),
+      displayTextHi: (hi['display_text'] ?? '').toString(),
+      optionAHi: (hi['option_a'] ?? '').toString(),
+      optionBHi: (hi['option_b'] ?? '').toString(),
+      optionCHi: (hi['option_c'] ?? '').toString(),
+      optionDHi: (hi['option_d'] ?? '').toString(),
+      finalExplanationHi: (hi['final_explanation'] ?? '').toString(),
     );
   }
 
@@ -134,6 +231,15 @@ class FomoPulseQuestion {
         'topic': topic,
         'news_trigger': newsTrigger,
       },
+      if (hasHindi)
+        'hi': {
+          'display_text': displayTextHi,
+          'option_a': optionAHi,
+          'option_b': optionBHi,
+          'option_c': optionCHi,
+          'option_d': optionDHi,
+          'final_explanation': finalExplanationHi,
+        },
     };
   }
 
@@ -162,6 +268,11 @@ class FomoPulseDraft {
     required this.question,
     this.harvestDraftDate,
     this.harvestDraftId,
+    this.imageUrl = '',
+    this.imageSource = '',
+    this.upscPoints = const [],
+    this.newsSummaryHi = '',
+    this.upscPointsHi = const [],
   });
 
   final String notificationTitle;
@@ -171,11 +282,44 @@ class FomoPulseDraft {
   final FomoPulseQuestion question;
   final String? harvestDraftDate;
   final String? harvestDraftId;
+  final String imageUrl;
+  final String imageSource;
+  final List<String> upscPoints;
+  final String newsSummaryHi;
+  final List<String> upscPointsHi;
+
+  FomoPulseDraft copyWith({
+    String? notificationTitle,
+    String? notificationBody,
+    String? newsSummary,
+    FomoPulseQuestion? question,
+    String? imageUrl,
+    String? imageSource,
+    List<String>? upscPoints,
+    String? newsSummaryHi,
+    List<String>? upscPointsHi,
+  }) {
+    return FomoPulseDraft(
+      notificationTitle: notificationTitle ?? this.notificationTitle,
+      notificationBody: notificationBody ?? this.notificationBody,
+      newsSummary: newsSummary ?? this.newsSummary,
+      sourceUrl: sourceUrl,
+      question: question ?? this.question,
+      harvestDraftDate: harvestDraftDate,
+      harvestDraftId: harvestDraftId,
+      imageUrl: imageUrl ?? this.imageUrl,
+      imageSource: imageSource ?? this.imageSource,
+      upscPoints: upscPoints ?? this.upscPoints,
+      newsSummaryHi: newsSummaryHi ?? this.newsSummaryHi,
+      upscPointsHi: upscPointsHi ?? this.upscPointsHi,
+    );
+  }
 
   factory FomoPulseDraft.fromServerMap(Map<String, dynamic> map) {
     final harvest = map['harvest'] is Map
         ? Map<String, dynamic>.from(map['harvest'] as Map)
         : null;
+    final points = map['upsc_points'];
     return FomoPulseDraft(
       notificationTitle: (map['notification_title'] ?? '').toString(),
       notificationBody: (map['notification_body'] ?? '').toString(),
@@ -188,6 +332,14 @@ class FomoPulseDraft {
       ),
       harvestDraftDate: harvest?['draft_date']?.toString(),
       harvestDraftId: harvest?['draft_id']?.toString(),
+      imageUrl: (map['image_url'] ?? '').toString(),
+      imageSource: (map['image_source'] ?? '').toString(),
+      upscPoints: points is List
+          ? [
+              for (final p in points)
+                if (p.toString().trim().isNotEmpty) p.toString().trim(),
+            ]
+          : const [],
     );
   }
 }
@@ -233,7 +385,12 @@ class FomoPulseCommunityStats {
   final int attemptCount;
   final int correctPct;
 
-  String get line => '$correctPct% got it right · $attemptCount attempted';
+  int get fellPct => (100 - correctPct).clamp(0, 100);
+
+  String get trapLine =>
+      '$attemptCount attempted · $fellPct% fell for it';
+
+  String get challengeLine => '$trapLine. Can you?';
 }
 
 class FomoPulse {
@@ -248,6 +405,11 @@ class FomoPulse {
     required this.expiresAt,
     required this.attemptCount,
     required this.correctCount,
+    this.imageUrl = '',
+    this.imageSource = '',
+    this.upscPoints = const [],
+    this.newsSummaryHi = '',
+    this.upscPointsHi = const [],
   });
 
   final String pulseId;
@@ -260,6 +422,11 @@ class FomoPulse {
   final DateTime? expiresAt;
   final int attemptCount;
   final int correctCount;
+  final String imageUrl;
+  final String imageSource;
+  final List<String> upscPoints;
+  final String newsSummaryHi;
+  final List<String> upscPointsHi;
 
   FomoPulse copyWith({
     String? title,
@@ -271,6 +438,11 @@ class FomoPulse {
     DateTime? expiresAt,
     int? attemptCount,
     int? correctCount,
+    String? imageUrl,
+    String? imageSource,
+    List<String>? upscPoints,
+    String? newsSummaryHi,
+    List<String>? upscPointsHi,
   }) {
     return FomoPulse(
       pulseId: pulseId,
@@ -283,6 +455,11 @@ class FomoPulse {
       expiresAt: expiresAt ?? this.expiresAt,
       attemptCount: attemptCount ?? this.attemptCount,
       correctCount: correctCount ?? this.correctCount,
+      imageUrl: imageUrl ?? this.imageUrl,
+      imageSource: imageSource ?? this.imageSource,
+      upscPoints: upscPoints ?? this.upscPoints,
+      newsSummaryHi: newsSummaryHi ?? this.newsSummaryHi,
+      upscPointsHi: upscPointsHi ?? this.upscPointsHi,
     );
   }
 
@@ -319,6 +496,11 @@ class FomoPulse {
       expiresAt: _ts(data['expires_at']),
       attemptCount: (data['attempt_count'] as num?)?.toInt() ?? 0,
       correctCount: (data['correct_count'] as num?)?.toInt() ?? 0,
+      imageUrl: (data['image_url'] ?? '').toString(),
+      imageSource: (data['image_source'] ?? '').toString(),
+      upscPoints: _stringList(data['upsc_points']),
+      newsSummaryHi: (data['news_summary_hi'] ?? '').toString(),
+      upscPointsHi: _stringList(data['upsc_points_hi']),
     );
   }
 
@@ -334,6 +516,11 @@ class FomoPulse {
       'expires_at_ms': expiresAt?.millisecondsSinceEpoch,
       'attempt_count': attemptCount,
       'correct_count': correctCount,
+      'image_url': imageUrl,
+      'image_source': imageSource,
+      'upsc_points': upscPoints,
+      'news_summary_hi': newsSummaryHi,
+      'upsc_points_hi': upscPointsHi,
     };
   }
 
@@ -353,7 +540,20 @@ class FomoPulse {
       expiresAt: _ms(data['expires_at_ms']),
       attemptCount: (data['attempt_count'] as num?)?.toInt() ?? 0,
       correctCount: (data['correct_count'] as num?)?.toInt() ?? 0,
+      imageUrl: (data['image_url'] ?? '').toString(),
+      imageSource: (data['image_source'] ?? '').toString(),
+      upscPoints: _stringList(data['upsc_points']),
+      newsSummaryHi: (data['news_summary_hi'] ?? '').toString(),
+      upscPointsHi: _stringList(data['upsc_points_hi']),
     );
+  }
+
+  static List<String> _stringList(dynamic raw) {
+    if (raw is! List) return const [];
+    return [
+      for (final p in raw)
+        if (p.toString().trim().isNotEmpty) p.toString().trim(),
+    ];
   }
 
   static DateTime? _ts(dynamic v) {

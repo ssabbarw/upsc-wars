@@ -9,6 +9,7 @@ import '../../../core/providers/catalog_providers.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../shared/widgets/dismissible_modal_sheet.dart';
 import '../../../shared/widgets/test_config_bottom_sheet.dart';
 import '../../../shared/widgets/top_snack_bar.dart';
 import '../domain/daily_war_copy.dart';
@@ -42,109 +43,101 @@ class _DailyWarTopicsSheet extends ConsumerWidget {
     final subjects = DailyWarCopy.subjectsLine(topics);
 
     // Transparent modal fills the screen; tap above the card to dismiss.
-    return Stack(
-      children: [
-        Positioned.fill(
-          child: GestureDetector(
-            behavior: HitTestBehavior.opaque,
-            onTap: () => Navigator.of(context).maybePop(),
-          ),
-        ),
-        Padding(
-          padding: EdgeInsets.only(bottom: sheetBottomPadding(context)),
-          child: Align(
-            alignment: Alignment.bottomCenter,
-            child: Material(
-              color: scheme.surface,
-              borderRadius:
-                  const BorderRadius.vertical(top: Radius.circular(20)),
-              clipBehavior: Clip.antiAlias,
-              child: ConstrainedBox(
-                constraints: BoxConstraints(
-                  maxHeight: MediaQuery.sizeOf(context).height * 0.85,
-                ),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(20, 10, 20, 0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Center(
-                            child: Container(
-                              width: 40,
-                              height: 4,
-                              margin: const EdgeInsets.only(bottom: 14),
-                              decoration: BoxDecoration(
-                                color: scheme.onSurfaceVariant
-                                    .withValues(alpha: 0.35),
-                                borderRadius: BorderRadius.circular(2),
+    return DismissOnScrimTap(
+      child: Padding(
+        padding: EdgeInsets.only(bottom: sheetBottomPadding(context)),
+        child: Align(
+          alignment: Alignment.bottomCenter,
+          child: Material(
+            color: scheme.surface,
+            borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
+            clipBehavior: Clip.antiAlias,
+            child: ConstrainedBox(
+              constraints: BoxConstraints(
+                maxHeight: MediaQuery.sizeOf(context).height * 0.85,
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(20, 10, 20, 0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Center(
+                          child: Container(
+                            width: 40,
+                            height: 4,
+                            margin: const EdgeInsets.only(bottom: 14),
+                            decoration: BoxDecoration(
+                              color: scheme.onSurfaceVariant.withValues(
+                                alpha: 0.35,
                               ),
+                              borderRadius: BorderRadius.circular(2),
                             ),
                           ),
-                          Text(
-                            'Revise before 9 PM',
-                            style: AppTextStyles.h3().copyWith(
-                              color: scheme.onSurface,
-                              fontWeight: FontWeight.w800,
-                            ),
-                          ),
-                          const SizedBox(height: 4),
-                          Text(
-                            topics.length == 1
-                                ? 'Tonight\'s war draws from this topic. Run the PYQs now so you walk in warm.'
-                                : 'Tonight\'s war draws from these ${topics.length} topics. Run the PYQs now so you walk in warm.',
-                            style: AppTextStyles.bodySm().copyWith(
-                              color: scheme.onSurfaceVariant,
-                              height: 1.35,
-                            ),
-                          ),
-                          if (subjects.isNotEmpty) ...[
-                            const SizedBox(height: 8),
-                            Text(
-                              subjects.toUpperCase(),
-                              style: AppTextStyles.caption().copyWith(
-                                color: DwColors.crimson,
-                                fontWeight: FontWeight.w800,
-                                letterSpacing: 1.1,
-                              ),
-                            ),
-                          ],
-                          const SizedBox(height: 12),
-                        ],
-                      ),
-                    ),
-                    Flexible(
-                      child: ListView.separated(
-                        shrinkWrap: true,
-                        padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
-                        itemCount: topics.length,
-                        separatorBuilder: (_, _) => const SizedBox(height: 8),
-                        itemBuilder: (context, i) {
-                          final t = topics[i];
-                          return _TopicPracticeRow(topic: t);
-                        },
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(20, 0, 20, 16),
-                      child: Text(
-                        'Revision here does not count towards your war rank.',
-                        style: AppTextStyles.caption().copyWith(
-                          color: scheme.onSurfaceVariant,
                         ),
-                        textAlign: TextAlign.center,
-                      ),
+                        Text(
+                          'Revise before 9 PM',
+                          style: AppTextStyles.h3().copyWith(
+                            color: scheme.onSurface,
+                            fontWeight: FontWeight.w800,
+                          ),
+                        ),
+                        const SizedBox(height: 4),
+                        Text(
+                          topics.length == 1
+                              ? 'Tonight\'s war draws from this topic. Run the PYQs now so you walk in warm.'
+                              : 'Tonight\'s war draws from these ${topics.length} topics. Run the PYQs now so you walk in warm.',
+                          style: AppTextStyles.bodySm().copyWith(
+                            color: scheme.onSurfaceVariant,
+                            height: 1.35,
+                          ),
+                        ),
+                        if (subjects.isNotEmpty) ...[
+                          const SizedBox(height: 8),
+                          Text(
+                            subjects.toUpperCase(),
+                            style: AppTextStyles.caption().copyWith(
+                              color: DwColors.crimson,
+                              fontWeight: FontWeight.w800,
+                              letterSpacing: 1.1,
+                            ),
+                          ),
+                        ],
+                        const SizedBox(height: 12),
+                      ],
                     ),
-                  ],
-                ),
+                  ),
+                  Flexible(
+                    child: ListView.separated(
+                      shrinkWrap: true,
+                      padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
+                      itemCount: topics.length,
+                      separatorBuilder: (_, _) => const SizedBox(height: 8),
+                      itemBuilder: (context, i) {
+                        final t = topics[i];
+                        return _TopicPracticeRow(topic: t);
+                      },
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(20, 0, 20, 16),
+                    child: Text(
+                      'Revision here does not count towards your war rank.',
+                      style: AppTextStyles.caption().copyWith(
+                        color: scheme.onSurfaceVariant,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                ],
               ),
             ),
           ),
         ),
-      ],
+      ),
     );
   }
 }
@@ -186,7 +179,8 @@ class _TopicPracticeRow extends ConsumerWidget {
         subject: subject,
         topic: topic.topic,
         subjectDisplayName:
-            subjDef?.displayName ?? DailyWarCopy.subjectDisplay(topic.subjectSlug),
+            subjDef?.displayName ??
+            DailyWarCopy.subjectDisplay(topic.subjectSlug),
         topicDisplayName: match.displayName,
         availableQuestionCount: match.questionCount,
         topicCountWhenSubjectOnly: 0,

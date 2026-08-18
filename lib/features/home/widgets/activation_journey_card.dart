@@ -16,6 +16,7 @@ import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/widgets/deferred_push_permission_sheet.dart';
+import '../../../shared/widgets/dismissible_modal_sheet.dart';
 import '../providers/home_activation_journey_provider.dart';
 import 'get_started_card.dart';
 
@@ -100,9 +101,8 @@ class ActivationJourneyCard extends HookConsumerWidget {
           _Header(
             completedCount: state.checklistCompletedCount,
             onSnooze: state.canSnoozeChecklist
-                ? () => unawaited(
-                      showActivationJourneySnoozeSheet(context, ref),
-                    )
+                ? () =>
+                      unawaited(showActivationJourneySnoozeSheet(context, ref))
                 : null,
           ),
           SizedBox(height: state.todo1Done ? 6 : 8),
@@ -124,8 +124,11 @@ Future<void> showActivationJourneySnoozeSheet(
     context: context,
     useRootNavigator: true,
     isScrollControlled: true,
+    isDismissible: true,
+    enableDrag: true,
     backgroundColor: Colors.transparent,
-    builder: (ctx) => const _ActivationJourneySnoozeSheet(),
+    builder: (ctx) =>
+        const DismissOnScrimTap(child: _ActivationJourneySnoozeSheet()),
   );
 }
 
@@ -240,10 +243,7 @@ class _ActivationJourneySnoozeSheet extends ConsumerWidget {
 }
 
 class _Header extends StatelessWidget {
-  const _Header({
-    required this.completedCount,
-    this.onSnooze,
-  });
+  const _Header({required this.completedCount, this.onSnooze});
 
   final int completedCount;
   final VoidCallback? onSnooze;
@@ -849,168 +849,177 @@ Future<void> _showDangerZoneHelpSheet(
     context: context,
     useRootNavigator: true,
     isScrollControlled: true,
+    isDismissible: true,
+    enableDrag: true,
     backgroundColor: Colors.transparent,
     builder: (ctx) {
       final scheme = Theme.of(ctx).colorScheme;
       final isDark = Theme.of(ctx).brightness == Brightness.dark;
       final borderColor = isDark ? AppColors.borderDark : AppColors.borderLight;
 
-      return Padding(
-        padding: EdgeInsets.fromLTRB(
-          AppSpacing.sm,
-          0,
-          AppSpacing.sm,
-          sheetBottomPadding(ctx, base: AppSpacing.sm),
-        ),
-        child: Align(
-          alignment: Alignment.bottomCenter,
-          child: Material(
-            color: scheme.surface,
-            borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
-            child: Container(
-              padding: const EdgeInsets.fromLTRB(
-                AppSpacing.lg,
-                AppSpacing.md,
-                AppSpacing.lg,
-                AppSpacing.lg,
+      return DismissOnScrimTap(
+        child: Padding(
+          padding: EdgeInsets.fromLTRB(
+            AppSpacing.sm,
+            0,
+            AppSpacing.sm,
+            sheetBottomPadding(ctx, base: AppSpacing.sm),
+          ),
+          child: Align(
+            alignment: Alignment.bottomCenter,
+            child: Material(
+              color: scheme.surface,
+              borderRadius: const BorderRadius.vertical(
+                top: Radius.circular(24),
               ),
-              decoration: BoxDecoration(
-                borderRadius: const BorderRadius.vertical(
-                  top: Radius.circular(24),
+              child: Container(
+                padding: const EdgeInsets.fromLTRB(
+                  AppSpacing.lg,
+                  AppSpacing.md,
+                  AppSpacing.lg,
+                  AppSpacing.lg,
                 ),
-                border: Border.all(color: borderColor.withValues(alpha: 0.45)),
-              ),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Center(
-                    child: Container(
-                      width: 40,
-                      height: 4,
-                      margin: const EdgeInsets.only(bottom: AppSpacing.md),
-                      decoration: BoxDecoration(
-                        color: scheme.onSurfaceVariant.withValues(alpha: 0.35),
-                        borderRadius: BorderRadius.circular(2),
+                decoration: BoxDecoration(
+                  borderRadius: const BorderRadius.vertical(
+                    top: Radius.circular(24),
+                  ),
+                  border: Border.all(
+                    color: borderColor.withValues(alpha: 0.45),
+                  ),
+                ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Center(
+                      child: Container(
+                        width: 40,
+                        height: 4,
+                        margin: const EdgeInsets.only(bottom: AppSpacing.md),
+                        decoration: BoxDecoration(
+                          color: scheme.onSurfaceVariant.withValues(
+                            alpha: 0.35,
+                          ),
+                          borderRadius: BorderRadius.circular(2),
+                        ),
                       ),
                     ),
-                  ),
-                  Text(
-                    'What is Danger Zone?',
-                    style: AppTextStyles.h3().copyWith(
-                      fontWeight: FontWeight.w800,
-                      color: scheme.onSurface,
+                    Text(
+                      'What is Danger Zone?',
+                      style: AppTextStyles.h3().copyWith(
+                        fontWeight: FontWeight.w800,
+                        color: scheme.onSurface,
+                      ),
                     ),
-                  ),
-                  const SizedBox(height: AppSpacing.xs),
-                  Text(
-                    'Where you feel sure — and still get it wrong.',
-                    style: AppTextStyles.bodySm().copyWith(
-                      color: scheme.onSurfaceVariant,
-                      height: 1.35,
+                    const SizedBox(height: AppSpacing.xs),
+                    Text(
+                      'Where you feel sure — and still get it wrong.',
+                      style: AppTextStyles.bodySm().copyWith(
+                        color: scheme.onSurfaceVariant,
+                        height: 1.35,
+                      ),
                     ),
-                  ),
-                  const SizedBox(height: AppSpacing.md),
-                  _DangerZoneHelpBullet(
-                    icon: Icons.warning_amber_rounded,
-                    iconColor: AppColors.wrong,
-                    title: 'Confident & wrong',
-                    body: 'Sure / Educated guess → incorrect',
-                  ),
-                  const SizedBox(height: AppSpacing.sm),
-                  _DangerZoneHelpBullet(
-                    icon: Icons.lightbulb_outline_rounded,
-                    iconColor: AppColors.primary,
-                    title: 'Guess & right',
-                    body: 'Pure guess → correct',
-                  ),
-                  const SizedBox(height: AppSpacing.md),
-                  Container(
-                    padding: const EdgeInsets.all(AppSpacing.md),
-                    decoration: BoxDecoration(
-                      color: isDark
-                          ? AppColors.primaryDeep.withValues(alpha: 0.25)
-                          : AppColors.primaryLight.withValues(alpha: 0.65),
-                      borderRadius: BorderRadius.circular(AppRadius.md),
+                    const SizedBox(height: AppSpacing.md),
+                    _DangerZoneHelpBullet(
+                      icon: Icons.warning_amber_rounded,
+                      iconColor: AppColors.wrong,
+                      title: 'Confident & wrong',
+                      body: 'Sure / Educated guess → incorrect',
                     ),
-                    child: unlocked
-                        ? Text(
-                            'Map unlocked — open it to see these by subject.',
-                            style: AppTextStyles.bodySm().copyWith(
-                              color: scheme.onSurface,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          )
-                        : Column(
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: [
-                              Row(
-                                children: [
-                                  Expanded(
-                                    child: Text(
-                                      'Early read',
-                                      style: AppTextStyles.label().copyWith(
-                                        fontWeight: FontWeight.w700,
-                                        color: scheme.onSurface,
+                    const SizedBox(height: AppSpacing.sm),
+                    _DangerZoneHelpBullet(
+                      icon: Icons.lightbulb_outline_rounded,
+                      iconColor: AppColors.primary,
+                      title: 'Guess & right',
+                      body: 'Pure guess → correct',
+                    ),
+                    const SizedBox(height: AppSpacing.md),
+                    Container(
+                      padding: const EdgeInsets.all(AppSpacing.md),
+                      decoration: BoxDecoration(
+                        color: isDark
+                            ? AppColors.primaryDeep.withValues(alpha: 0.25)
+                            : AppColors.primaryLight.withValues(alpha: 0.65),
+                        borderRadius: BorderRadius.circular(AppRadius.md),
+                      ),
+                      child: unlocked
+                          ? Text(
+                              'Map unlocked — open it to see these by subject.',
+                              style: AppTextStyles.bodySm().copyWith(
+                                color: scheme.onSurface,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            )
+                          : Column(
+                              crossAxisAlignment: CrossAxisAlignment.stretch,
+                              children: [
+                                Row(
+                                  children: [
+                                    Expanded(
+                                      child: Text(
+                                        'Early read',
+                                        style: AppTextStyles.label().copyWith(
+                                          fontWeight: FontWeight.w700,
+                                          color: scheme.onSurface,
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                  Text(
-                                    '${state.attemptsTowardPreview} / '
-                                    '${state.previewThreshold}',
-                                    style: AppTextStyles.label().copyWith(
-                                      fontWeight: FontWeight.w700,
-                                      color: AppColors.primary,
+                                    Text(
+                                      '${state.attemptsTowardPreview} / '
+                                      '${state.previewThreshold}',
+                                      style: AppTextStyles.label().copyWith(
+                                        fontWeight: FontWeight.w700,
+                                        color: AppColors.primary,
+                                      ),
                                     ),
-                                  ),
-                                ],
-                              ),
-                              const SizedBox(height: AppSpacing.sm),
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(4),
-                                child: LinearProgressIndicator(
-                                  value: state.previewUnlockProgress,
-                                  minHeight: 6,
-                                  backgroundColor: scheme.onSurface.withValues(
-                                    alpha: 0.08,
-                                  ),
-                                  color: AppColors.primary,
+                                  ],
                                 ),
-                              ),
-                              const SizedBox(height: AppSpacing.sm),
-                              Text(
-                                remaining == 0
-                                    ? 'Full map at ${state.fullThreshold}'
-                                    : '$remaining to go · full map at '
-                                          '${state.fullThreshold}',
-                                style: AppTextStyles.caption().copyWith(
-                                  color: scheme.onSurfaceVariant,
+                                const SizedBox(height: AppSpacing.sm),
+                                ClipRRect(
+                                  borderRadius: BorderRadius.circular(4),
+                                  child: LinearProgressIndicator(
+                                    value: state.previewUnlockProgress,
+                                    minHeight: 6,
+                                    backgroundColor: scheme.onSurface
+                                        .withValues(alpha: 0.08),
+                                    color: AppColors.primary,
+                                  ),
                                 ),
-                              ),
-                            ],
+                                const SizedBox(height: AppSpacing.sm),
+                                Text(
+                                  remaining == 0
+                                      ? 'Full map at ${state.fullThreshold}'
+                                      : '$remaining to go · full map at '
+                                            '${state.fullThreshold}',
+                                  style: AppTextStyles.caption().copyWith(
+                                    color: scheme.onSurfaceVariant,
+                                  ),
+                                ),
+                              ],
+                            ),
+                    ),
+                    const SizedBox(height: AppSpacing.lg),
+                    SizedBox(
+                      height: 48,
+                      child: FilledButton(
+                        onPressed: () => Navigator.pop(ctx),
+                        style: FilledButton.styleFrom(
+                          backgroundColor: AppColors.primary,
+                          foregroundColor: AppColors.onPrimary,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(AppRadius.lg),
                           ),
-                  ),
-                  const SizedBox(height: AppSpacing.lg),
-                  SizedBox(
-                    height: 48,
-                    child: FilledButton(
-                      onPressed: () => Navigator.pop(ctx),
-                      style: FilledButton.styleFrom(
-                        backgroundColor: AppColors.primary,
-                        foregroundColor: AppColors.onPrimary,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(AppRadius.lg),
                         ),
-                      ),
-                      child: Text(
-                        'Got it',
-                        style: AppTextStyles.label().copyWith(
-                          fontWeight: FontWeight.w700,
+                        child: Text(
+                          'Got it',
+                          style: AppTextStyles.label().copyWith(
+                            fontWeight: FontWeight.w700,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),

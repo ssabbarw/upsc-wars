@@ -156,32 +156,158 @@ function stripHtml(html) {
     .trim();
 }
 
-async function fetchUrlText(url) {
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), 12000);
+function metaContent(html, keys) {
+  const raw = String(html || "");
+  for (const key of keys) {
+    const escaped = key.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const patterns = [
+      new RegExp(
+        `<meta[^>]+(?:property|name)=["']${escaped}["'][^>]*content=["']([^"']+)["']`,
+        "i",
+      ),
+      new RegExp(
+        `<meta[^>]+content=["']([^"']+)["'][^>]*(?:property|name)=["']${escaped}["']`,
+        "i",
+      ),
+    ];
+    for (const re of patterns) {
+      const m = raw.match(re);
+      if (m && m[1]) return m[1].trim();
+    }
+  }
+  return "";
+}
+
+function resolveUrl(maybeRelative, pageUrl) {
+  const value = String(maybeRelative || "").trim();
+  if (!value) return "";
   try {
-    const res = await fetch(url, {
+    return new URL(value, pageUrl).toString();
+  } catch (_) {
+    return "";
+  }
+}
+
+function siteNameFromUrl(pageUrl) {
+  try {
+    const host = new URL(pageUrl).hostname.replace(/^www\./i, "");
+    return host;
+  } catch (_) {
+    return "";
+  }
+}
+
+function extractPageMeta(html, pageUrl) {
+  const imageRaw = metaContent(html, [
+    "og:image",
+    "og:image:url",
+    "twitter:image",
+    "twitter:image:src",
+  ]);
+  const site =
+    metaContent(html, ["og:site_name"]) || siteNameFromUrl(pageUrl);
+  return {
+    image_url: resolveUrl(imageRaw, pageUrl),
+    image_source: site,
+    og_title: metaContent(html, ["og:title", "twitter:title"]),
+    og_description: metaContent(html, [
+      "og:description",
+      "twitter:description",
+      "description",
+    ]),
+  };
+}
+
+const BROWSER_UAS = [
+  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36",
+  "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15",
+];
+
+async function fetchWithUa(url, userAgent, timeoutMs = 12000) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    return await fetch(url, {
       signal: controller.signal,
       headers: {
-        "user-agent":
-          "Mozilla/5.0 (compatible; UPSCWarsPulse/1.0; +https://upscwars.com)",
-        accept: "text/html,application/xhtml+xml,text/plain;q=0.9,*/*;q=0.8",
+        "user-agent": userAgent,
+        accept:
+          "text/html,application/xhtml+xml,application/xml;q=0.9,text/plain;q=0.8,*/*;q=0.7",
+        "accept-language": "en-IN,en;q=0.9",
+        "cache-control": "no-cache",
       },
       redirect: "follow",
     });
-    if (!res.ok) {
-      throw new Error(`HTTP ${res.status}`);
-    }
-    const ct = (res.headers.get("content-type") || "").toLowerCase();
-    const body = await res.text();
-    if (ct.includes("html")) {
-      const text = stripHtml(body);
-      return text.slice(0, 12000);
-    }
-    return body.slice(0, 12000);
   } finally {
     clearTimeout(timer);
   }
+}
+
+async function fetchViaJinaReader(url) {
+  const readerUrl = `https://r.jina.ai/http://${url.replace(/^https?:\/\//i, "")}`;
+  const res = await fetchWithUa(readerUrl, BROWSER_UAS[0], 20000);
+  if (!res.ok) {
+    throw new Error(`Jina reader HTTP ${res.status}`);
+  }
+  const body = await res.text();
+  return {
+    text: stripHtml(body).slice(0, 12000),
+    image_url: "",
+    image_source: siteNameFromUrl(url),
+    og_title: "",
+    og_description: "",
+  };
+}
+
+async function fetchUrlPage(url) {
+  let lastErr = null;
+  for (const ua of BROWSER_UAS) {
+    try {
+      const res = await fetchWithUa(url, ua);
+      if (res.status === 429 || res.status === 403) {
+        lastErr = new Error(`HTTP ${res.status}`);
+        continue;
+      }
+      if (!res.ok) {
+        throw new Error(`HTTP ${res.status}`);
+      }
+      const ct = (res.headers.get("content-type") || "").toLowerCase();
+      const body = await res.text();
+      const meta = extractPageMeta(body, url);
+      if (ct.includes("html")) {
+        return {
+          text: stripHtml(body).slice(0, 12000),
+          ...meta,
+        };
+      }
+      return { text: body.slice(0, 12000), ...meta };
+    } catch (e) {
+      lastErr = e;
+    }
+  }
+  if (String(lastErr && lastErr.message).includes("HTTP 429")) {
+    try {
+      return await fetchViaJinaReader(url);
+    } catch (readerErr) {
+      throw new Error(
+        `HTTP 429 (site blocked fetch); fallback failed: ${readerErr.message || readerErr}`,
+      );
+    }
+  }
+  throw lastErr || new Error("Could not fetch URL");
+}
+
+async function fetchUrlText(url) {
+  const page = await fetchUrlPage(url);
+  return page.text;
+}
+
+function normalizePoints(raw) {
+  if (!Array.isArray(raw)) return [];
+  return raw
+    .map((p) => String(p || "").trim())
+    .filter(Boolean)
+    .slice(0, 3);
 }
 
 function questionPreview(en) {
@@ -199,6 +325,9 @@ function harvestCandidateFromQuestion(q, index) {
   const trigger = (meta.news_trigger || meta.topic || "").toString().trim();
   const summary = (meta.news_summary || "").toString().trim();
   const draftId = (q.draft_id || q.uuid || `d${index + 1}`).toString();
+  const points = normalizePoints(
+    meta.key_facts || meta.upsc_points || (meta.concept_to_test ? [meta.concept_to_test] : []),
+  );
   return {
     draft_id: draftId,
     title: trigger || questionPreview(en).slice(0, 80),
@@ -207,14 +336,22 @@ function harvestCandidateFromQuestion(q, index) {
     source_url: sourceUrl,
     news_importance: importance,
     news_summary: summary,
+    upsc_points: points,
   };
 }
 
 function normalizeQuestion(raw, fallbackUrl) {
   const q = raw && typeof raw === "object" ? raw : {};
-  const en = q.en && typeof q.en === "object" ? q.en : {};
-  const shared = q.shared && typeof q.shared === "object" ? q.shared : {};
-  const meta = q.meta && typeof q.meta === "object" ? q.meta : {};
+  const en =
+    q.en && typeof q.en === "object" ? q.en : q;
+  const shared =
+    q.shared && typeof q.shared === "object"
+      ? q.shared
+      : {
+          correct_option: q.correct_option,
+          question_type: q.question_type,
+        };
+  const meta = q.meta && typeof q.meta === "object" ? { ...q.meta } : {};
   const correct = String(shared.correct_option || "a")
     .trim()
     .toLowerCase()
@@ -222,16 +359,20 @@ function normalizeQuestion(raw, fallbackUrl) {
   if (!["a", "b", "c", "d"].includes(correct)) {
     throw new HttpsError("invalid-argument", "Invalid correct_option.");
   }
-  const display = (en.display_text || "").toString().trim();
+  const display = (en.display_text || en.stem || "").toString().trim();
   const opts = ["a", "b", "c", "d"].map((k) =>
     (en[`option_${k}`] || "").toString().trim(),
   );
   if (!display && opts.every((o) => !o)) {
-    throw new HttpsError("invalid-argument", "Question text is required.");
+    throw new HttpsError(
+      "invalid-argument",
+      "Question text is required (display_text or stem + options).",
+    );
   }
   if (fallbackUrl && !meta.source_url) {
     meta.source_url = fallbackUrl;
   }
+  const hi = q.hi && typeof q.hi === "object" ? q.hi : null;
   return {
     en: {
       display_text: display,
@@ -246,7 +387,14 @@ function normalizeQuestion(raw, fallbackUrl) {
       question_type: (shared.question_type || "direct").toString(),
     },
     meta,
+    ...(hi ? { hi } : {}),
   };
+}
+
+function toHttpsError(e, fallback = "Pulse generation failed.") {
+  if (e instanceof HttpsError) return e;
+  const message = String(e && e.message ? e.message : e).slice(0, 500);
+  return new HttpsError("failed-precondition", message || fallback);
 }
 
 const callableOpts = {
@@ -286,10 +434,42 @@ exports.listFomoPulseHarvestCandidates = onCall(callableOpts, async (request) =>
   return { ok: true, draft_date: null, candidates: [] };
 });
 
+const previewOpts = {
+  region: REGION,
+  timeoutSeconds: 30,
+  memory: "256MiB",
+};
+
 /**
- * Admin: generate pulse draft from URL or harvest item.
- * Cost: 0 Firestore writes (draft returned to client only).
+ * Admin: og:image + title from article URL. No LLM.
  */
+exports.previewFomoPulseArticle = onCall(previewOpts, async (request) => {
+  requireAdmin(request);
+  const url = String((request.data && request.data.url) || "").trim();
+  if (!url || !/^https?:\/\//i.test(url)) {
+    throw new HttpsError("invalid-argument", "Valid http(s) URL required.");
+  }
+  try {
+    const page = await fetchUrlPage(url);
+    return {
+      ok: true,
+      image_url: page.image_url || "",
+      image_source: page.image_source || "",
+      og_title: page.og_title || "",
+      og_description: page.og_description || "",
+    };
+  } catch (e) {
+    return {
+      ok: false,
+      reason: String(e.message || e),
+      image_url: "",
+      image_source: "",
+      og_title: "",
+      og_description: "",
+    };
+  }
+});
+
 exports.generateFomoPulseDraft = onCall(generateOpts, async (request) => {
   requireAdmin(request);
   const data = request.data || {};
@@ -331,14 +511,38 @@ exports.generateFomoPulseDraft = onCall(generateOpts, async (request) => {
     if (hooks.error) {
       throw new HttpsError("failed-precondition", String(hooks.error));
     }
+    const sourceUrl = (meta.source_url || "").toString();
+    let imageUrl = String(data.image_url || "").trim();
+    let imageSource = String(data.image_source || "").trim();
+    if ((!imageUrl || !imageSource) && sourceUrl && /^https?:\/\//i.test(sourceUrl)) {
+      try {
+        const page = await fetchUrlPage(sourceUrl);
+        imageUrl = imageUrl || page.image_url || "";
+        imageSource = imageSource || page.image_source || "";
+      } catch (_) {
+        // Preview image is optional.
+      }
+    }
+    const points = normalizePoints(
+      meta.key_facts ||
+        meta.upsc_points ||
+        hooks.upsc_points ||
+        (meta.concept_to_test ? [meta.concept_to_test] : []),
+    );
+    const newsSummary =
+      String(hooks.news_summary || "").trim() ||
+      String(meta.news_summary || "").trim();
     return {
       ok: true,
       draft: {
         notification_title: (hooks.notification_title || "").slice(0, MAX_TITLE),
         notification_body: (hooks.notification_body || "").slice(0, MAX_BODY),
-        news_summary: (meta.news_summary || "").toString(),
-        source_url: (meta.source_url || "").toString(),
-        question: normalizeQuestion(q, meta.source_url),
+        news_summary: newsSummary,
+        source_url: sourceUrl,
+        image_url: imageUrl,
+        image_source: imageSource,
+        upsc_points: points,
+        question: normalizeQuestion(q, sourceUrl),
         harvest: { draft_date: draftDate, draft_id: draftId },
       },
     };
@@ -349,48 +553,98 @@ exports.generateFomoPulseDraft = onCall(generateOpts, async (request) => {
     if (!url || !/^https?:\/\//i.test(url)) {
       throw new HttpsError("invalid-argument", "Valid http(s) URL required.");
     }
-    let articleText = "";
     try {
-      articleText = await fetchUrlText(url);
+      let page;
+      try {
+        page = await fetchUrlPage(url);
+      } catch (e) {
+        throw new HttpsError(
+          "failed-precondition",
+          `Could not fetch URL: ${e.message || e}`,
+        );
+      }
+      const articleText = page.text || "";
+      if (!articleText || articleText.length < 100) {
+        throw new HttpsError(
+          "failed-precondition",
+          "URL returned too little text. Try a different source or use harvest.",
+        );
+      }
+      const generated = await anthropicJson(
+        loadPrompt("pulse_generate_system.txt"),
+        JSON.stringify({ url, article_text: articleText.slice(0, 10000) }),
+      );
+      if (generated.error) {
+        throw new HttpsError("failed-precondition", String(generated.error));
+      }
+      const questionRaw =
+        generated.question && typeof generated.question === "object"
+          ? generated.question
+          : generated;
+      return {
+        ok: true,
+        draft: {
+          notification_title: (generated.notification_title || "").slice(
+            0,
+            MAX_TITLE,
+          ),
+          notification_body: (generated.notification_body || "").slice(
+            0,
+            MAX_BODY,
+          ),
+          news_summary: (generated.news_summary || "").toString(),
+          source_url: url,
+          image_url: String(data.image_url || "").trim() || page.image_url || "",
+          image_source:
+            String(data.image_source || "").trim() || page.image_source || "",
+          upsc_points: normalizePoints(generated.upsc_points),
+          question: normalizeQuestion(questionRaw, url),
+          harvest: null,
+        },
+      };
     } catch (e) {
-      throw new HttpsError(
-        "failed-precondition",
-        `Could not fetch URL: ${e.message || e}`,
-      );
+      console.error("generateFomoPulseDraft(url) failed:", e);
+      throw toHttpsError(e);
     }
-    if (!articleText || articleText.length < 100) {
-      throw new HttpsError(
-        "failed-precondition",
-        "URL returned too little text. Try a different source or use harvest.",
-      );
-    }
-    const generated = await anthropicJson(
-      loadPrompt("pulse_generate_system.txt"),
-      JSON.stringify({ url, article_text: articleText.slice(0, 10000) }),
-    );
-    if (generated.error) {
-      throw new HttpsError("failed-precondition", String(generated.error));
-    }
-    return {
-      ok: true,
-      draft: {
-        notification_title: (generated.notification_title || "").slice(
-          0,
-          MAX_TITLE,
-        ),
-        notification_body: (generated.notification_body || "").slice(
-          0,
-          MAX_BODY,
-        ),
-        news_summary: (generated.news_summary || "").toString(),
-        source_url: url,
-        question: normalizeQuestion(generated.question, url),
-        harvest: null,
-      },
-    };
   }
 
   throw new HttpsError("invalid-argument", 'source must be "url" or "harvest".');
+});
+
+/**
+ * Admin: Hindi for an already-generated Pulse MCQ. No Firestore write.
+ */
+exports.translateFomoPulseDraft = onCall(generateOpts, async (request) => {
+  requireAdmin(request);
+  const data = request.data || {};
+  const question = data.question;
+  if (!question || typeof question !== "object") {
+    throw new HttpsError("invalid-argument", "question required.");
+  }
+  const normalized = normalizeQuestion(question, data.source_url);
+  const payload = {
+    ...(normalized.en || {}),
+    news_summary: String(data.news_summary || "").trim(),
+    upsc_points: normalizePoints(data.upsc_points),
+  };
+  const hi = await anthropicJson(
+    loadPrompt("pulse_translate_system.txt"),
+    JSON.stringify(payload),
+  );
+  normalized.hi = {
+    display_text: String(hi.display_text || "").trim(),
+    option_a: String(hi.option_a || "").trim(),
+    option_b: String(hi.option_b || "").trim(),
+    option_c: String(hi.option_c || "").trim(),
+    option_d: String(hi.option_d || "").trim(),
+    final_explanation: String(hi.final_explanation || "").trim(),
+  };
+  return {
+    ok: true,
+    question: normalized,
+    news_summary_hi: String(hi.news_summary || "").trim(),
+    upsc_points_hi: normalizePoints(hi.upsc_points),
+  };
 });
 
 /**
@@ -430,7 +684,13 @@ exports.sendFomoPulseNotification = onCall(callableOpts, async (request) => {
     title,
     body,
     news_summary: String(data.news_summary || "").trim(),
+    news_summary_hi: String(data.news_summary_hi || "").trim(),
     source_url: String(data.source_url || question.meta.source_url || "").trim(),
+    image_url: String(data.image_url || "").trim(),
+    image_source: String(data.image_source || "").trim(),
+    upsc_points: normalizePoints(data.upsc_points),
+    upsc_points_hi: normalizePoints(data.upsc_points_hi),
+    hindi_available: !!(question.hi && question.hi.display_text),
     question,
     sent_at: now,
     expires_at: expiresAt,

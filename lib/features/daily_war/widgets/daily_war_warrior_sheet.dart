@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../core/layout/system_insets.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../shared/widgets/dismissible_modal_sheet.dart';
 import '../../community/widgets/admin_bot_label.dart';
 import '../domain/daily_war_badges.dart';
 import '../domain/daily_war_models.dart';
@@ -18,11 +19,15 @@ Future<void> showDailyWarWarriorSheet({
   return showModalBottomSheet<void>(
     context: context,
     isScrollControlled: true,
+    isDismissible: true,
+    enableDrag: true,
     backgroundColor: Colors.transparent,
-    builder: (ctx) => _WarriorSheet(
-      entry: entry,
-      questionCount: questionCount,
-      isMe: isMe,
+    builder: (ctx) => DismissOnScrimTap(
+      child: _WarriorSheet(
+        entry: entry,
+        questionCount: questionCount,
+        isMe: isMe,
+      ),
     ),
   );
 }
@@ -44,19 +49,19 @@ class _WarriorSheet extends StatelessWidget {
     final name = entry.displayName.isEmpty
         ? (isMe ? 'You' : 'Warrior')
         : (isMe ? '${entry.displayName} (you)' : entry.displayName);
-    final initials = _initials(entry.displayName.isEmpty ? 'YO' : entry.displayName);
+    final initials = _initials(
+      entry.displayName.isEmpty ? 'YO' : entry.displayName,
+    );
     final title = entry.streakDays > 0
         ? DailyWarBadges.titleForDays(entry.streakDays)
         : '';
-    final tierId = entry.tierId ?? DailyWarBadges.tierIdForDays(entry.streakDays);
+    final tierId =
+        entry.tierId ?? DailyWarBadges.tierIdForDays(entry.streakDays);
     final awardIds = entry.badges
         .where((id) => !DailyWarBadges.tierIds.contains(id))
         .toList();
     // Prefer explicit awards; if empty and AIR ≤ 3, still show podium badge.
-    final displayAwards = [
-      if (tierId != null) tierId,
-      ...awardIds,
-    ];
+    final displayAwards = [if (tierId != null) tierId, ...awardIds];
 
     final elapsed = _fmtElapsed(entry.elapsedMs);
     final scoreLabel = questionCount > 0

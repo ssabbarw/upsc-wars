@@ -6,6 +6,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'package:upsc_wars/core/analytics/session_entry_source.dart';
 import 'package:upsc_wars/core/deep_link/share_session_opener.dart';
+import 'package:upsc_wars/features/fomo_pulse/data/fomo_pulse_incoming_share.dart';
 
 /// Subscribes to platform share / universal links after app bootstrap.
 ///
@@ -35,21 +36,31 @@ class ShareDeepLinkService {
     final appLinks = AppLinks();
     final initial = await appLinks.getInitialLink();
     if (initial != null && _shouldHandle(initial)) {
-      SessionEntrySource.capture(
-        SessionEntrySource.deepLink,
-        detail: 'share',
-      );
-      await openShareUriIfApplicable(ref: ref, router: router, uri: initial);
+      await _handleIncoming(ref: ref, router: router, uri: initial);
     }
 
     _subscription = appLinks.uriLinkStream.listen((uri) async {
       if (!_shouldHandle(uri)) return;
-      SessionEntrySource.capture(
-        SessionEntrySource.deepLink,
-        detail: 'share',
-      );
-      await openShareUriIfApplicable(ref: ref, router: router, uri: uri);
+      await _handleIncoming(ref: ref, router: router, uri: uri);
     });
+  }
+
+  static Future<void> _handleIncoming({
+    required WidgetRef ref,
+    required GoRouter router,
+    required Uri uri,
+  }) async {
+    final openedPulse = await openPulseArticleFromIncomingShare(
+      ref: ref,
+      router: router,
+      uri: uri,
+    );
+    if (openedPulse) return;
+    SessionEntrySource.capture(
+      SessionEntrySource.deepLink,
+      detail: 'share',
+    );
+    await openShareUriIfApplicable(ref: ref, router: router, uri: uri);
   }
 
   static Future<void> dispose() async {

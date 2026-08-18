@@ -15,4 +15,8 @@ abstract final class FomoPulseConstants {
   static const cachePulsesKey = 'fomo_pulse_cache_pulses_v1';
   static const cacheAttemptsKey = 'fomo_pulse_cache_attempts_v1';
   static const cacheListSyncedAtMsKey = 'fomo_pulse_cache_list_synced_at_ms_v1';
+
+  /// Custom scheme used when Chrome/Safari share an article into the app.
+  static const incomingShareScheme = 'upscwars';
+  static const incomingShareHost = 'pulse-article';
 }

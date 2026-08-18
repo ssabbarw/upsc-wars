@@ -25,6 +25,7 @@ import '../../../shared/extensions/context_extensions.dart';
 import '../../../shared/widgets/question_table_view.dart';
 import '../../../shared/theme/dark_mode_toggle.dart';
 import '../../../shared/widgets/debug_correct_answer_banner.dart';
+import '../../../shared/widgets/dismissible_modal_sheet.dart';
 import '../../../shared/widgets/en_hi_language_toggle.dart';
 import '../../question_editor/widgets/question_editor_access.dart';
 import '../../../shared/widgets/selectable_copy_search_text.dart';
@@ -146,7 +147,9 @@ class TestEngineScreen extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final notifier = ref.read(testSessionProvider(sessionId).notifier);
     final mode = ref.watch(
-      testSessionProvider(sessionId).select((a) => a.asData?.value.session?.mode),
+      testSessionProvider(
+        sessionId,
+      ).select((a) => a.asData?.value.session?.mode),
     );
 
     return PopScope(
@@ -327,9 +330,7 @@ class _TestEngineTimerTicker extends HookConsumerWidget {
                   'TestEngine timer submit -> go '
                   '${sessionResultsRouteForKey(submitted, featureKey)}',
                 );
-                context.go(
-                  sessionResultsRouteForKey(submitted, featureKey),
-                );
+                context.go(sessionResultsRouteForKey(submitted, featureKey));
               }
             } catch (e, st) {
               upscWarsTrace(
@@ -455,80 +456,80 @@ class _TestEngineLoaded extends HookConsumerWidget {
     return Padding(
       padding: hPadding,
       child: Column(
-      children: [
-        _TestEngineTimerTicker(sessionId: sessionId),
-        if (showBanner)
-          Material(
-            color: AppColors.transparent,
-            child: Container(
-              width: double.infinity,
-              padding: const EdgeInsets.symmetric(
-                horizontal: AppSpacing.lg,
-                vertical: AppSpacing.sm,
-              ),
-              color: scheme.surfaceContainerLow,
-              child: Text(
-                'Timer paused while app was closed. Remaining time may not be accurate.',
-                style: AppTextStyles.caption().copyWith(
-                  color: scheme.onSurfaceVariant,
+        children: [
+          _TestEngineTimerTicker(sessionId: sessionId),
+          if (showBanner)
+            Material(
+              color: AppColors.transparent,
+              child: Container(
+                width: double.infinity,
+                padding: const EdgeInsets.symmetric(
+                  horizontal: AppSpacing.lg,
+                  vertical: AppSpacing.sm,
+                ),
+                color: scheme.surfaceContainerLow,
+                child: Text(
+                  'Timer paused while app was closed. Remaining time may not be accurate.',
+                  style: AppTextStyles.caption().copyWith(
+                    color: scheme.onSurfaceVariant,
+                  ),
                 ),
               ),
             ),
-          ),
-        Material(
-          color: scheme.surface,
-          elevation: isDark ? 0 : 1,
-          shadowColor: scheme.shadow.withValues(alpha: isDark ? 0.5 : 0.12),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              _TopBar(
-                sessionId: sessionId,
-                uiLanguage: uiLanguage.value,
-                onLanguageChanged: (value) {
-                  uiLanguage.value = value;
-                  unawaited(persistAppLanguage(ref, value));
-                },
-                onBack: () => Navigator.of(context).maybePop(),
-              ),
-              if (!isSingleQuestionTutorial)
-                _ExamActionRow(
+          Material(
+            color: scheme.surface,
+            elevation: isDark ? 0 : 1,
+            shadowColor: scheme.shadow.withValues(alpha: isDark ? 0.5 : 0.12),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                _TopBar(
                   sessionId: sessionId,
-                  onPalette: () =>
-                      _showTestPaletteSheet(context, ref, sessionId),
-                  onSubmit: () =>
-                      _showTestPaletteSheet(context, ref, sessionId),
+                  uiLanguage: uiLanguage.value,
+                  onLanguageChanged: (value) {
+                    uiLanguage.value = value;
+                    unawaited(persistAppLanguage(ref, value));
+                  },
+                  onBack: () => Navigator.of(context).maybePop(),
                 ),
-            ],
-          ),
-        ),
-        Expanded(
-          child: _QuestionArea(
-            sessionId: sessionId,
-            uiLanguage: uiLanguage.value,
-            onSelectOption: notifier.selectOption,
-          ),
-        ),
-        if (!isSingleQuestionTutorial)
-          _BottomBar(
-            sessionId: sessionId,
-            onPrev: notifier.movePrev,
-            onNext: notifier.moveNext,
-            onBookmark: () async {
-              final marked = await notifier.toggleBookmark();
-              if (!context.mounted) return;
-              showTopSnackBar(
-                context,
-                content: Text(
-                  marked ? 'Bookmarked' : 'Bookmark removed',
-                  style: AppTextStyles.bodyMd().copyWith(
-                    color: Theme.of(context).colorScheme.onSurface,
+                if (!isSingleQuestionTutorial)
+                  _ExamActionRow(
+                    sessionId: sessionId,
+                    onPalette: () =>
+                        _showTestPaletteSheet(context, ref, sessionId),
+                    onSubmit: () =>
+                        _showTestPaletteSheet(context, ref, sessionId),
                   ),
-                ),
-              );
-            },
+              ],
+            ),
           ),
-      ],
+          Expanded(
+            child: _QuestionArea(
+              sessionId: sessionId,
+              uiLanguage: uiLanguage.value,
+              onSelectOption: notifier.selectOption,
+            ),
+          ),
+          if (!isSingleQuestionTutorial)
+            _BottomBar(
+              sessionId: sessionId,
+              onPrev: notifier.movePrev,
+              onNext: notifier.moveNext,
+              onBookmark: () async {
+                final marked = await notifier.toggleBookmark();
+                if (!context.mounted) return;
+                showTopSnackBar(
+                  context,
+                  content: Text(
+                    marked ? 'Bookmarked' : 'Bookmark removed',
+                    style: AppTextStyles.bodyMd().copyWith(
+                      color: Theme.of(context).colorScheme.onSurface,
+                    ),
+                  ),
+                );
+              },
+            ),
+        ],
       ),
     );
   }
@@ -556,204 +557,225 @@ Future<void> _showTestPaletteSheet(
   await showModalBottomSheet<void>(
     context: context,
     isScrollControlled: true,
+    isDismissible: true,
+    enableDrag: true,
     backgroundColor: AppColors.transparent,
     builder: (ctx) {
       final bottomInset = MediaQuery.of(ctx).viewInsets.bottom;
       final screenH = MediaQuery.of(ctx).size.height;
-      return SafeArea(
-        top: false,
-        child: Padding(
-          padding: EdgeInsets.only(bottom: bottomInset),
-          child: Align(
-            alignment: Alignment.bottomCenter,
-            child: ConstrainedBox(
-              constraints: BoxConstraints(maxHeight: screenH * 0.9),
-              child: Container(
-              decoration: BoxDecoration(
-                color: isDark ? scheme.surfaceContainerHigh : scheme.surface,
-                borderRadius:
-                    const BorderRadius.vertical(top: Radius.circular(20)),
-                border: Border.all(
-                  color: isDark ? AppColors.borderDark : AppColors.borderLight,
-                  width: 0.8,
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: AppColors.gray900.withValues(
-                      alpha: isDark ? 0.45 : 0.14,
+      return DismissOnScrimTap(
+        child: SafeArea(
+          top: false,
+          child: Padding(
+            padding: EdgeInsets.only(bottom: bottomInset),
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: ConstrainedBox(
+                constraints: BoxConstraints(maxHeight: screenH * 0.9),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: isDark
+                        ? scheme.surfaceContainerHigh
+                        : scheme.surface,
+                    borderRadius: const BorderRadius.vertical(
+                      top: Radius.circular(20),
                     ),
-                    blurRadius: 16,
-                    offset: const Offset(0, -4),
-                  ),
-                ],
-              ),
-              padding: const EdgeInsets.all(AppSpacing.lg),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      'Question Grid',
-                      style: AppTextStyles.h3().copyWith(color: scheme.onSurface),
+                    border: Border.all(
+                      color: isDark
+                          ? AppColors.borderDark
+                          : AppColors.borderLight,
+                      width: 0.8,
                     ),
-                  ),
-                  const SizedBox(height: AppSpacing.xs),
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      'Tap any number to jump to that question',
-                      style: AppTextStyles.caption().copyWith(
-                        color: scheme.onSurfaceVariant,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: AppSpacing.md),
-                  Wrap(
-                    spacing: AppSpacing.md,
-                    runSpacing: AppSpacing.xs,
-                    children: [
-                      _LegendItem(
-                        label: 'Current',
-                        bg: AppColors.primary,
-                        fg: AppColors.onPrimary,
-                      ),
-                      _LegendItem(
-                        label: 'Attempted',
-                        bg:
-                            isDark ? AppColors.correctBgDark : AppColors.correctBg,
-                        fg: isDark
-                            ? AppColors.correctTextDark
-                            : AppColors.correctText,
-                      ),
-                      _LegendItem(
-                        label: 'Flagged',
-                        bg:
-                            isDark ? AppColors.warningBgDark : AppColors.warningBg,
-                        fg: isDark
-                            ? AppColors.warningTextDark
-                            : AppColors.warningText,
-                      ),
-                      _LegendItem(
-                        label: 'Not visited',
-                        bg: scheme.surfaceContainerLow,
-                        fg: scheme.onSurfaceVariant,
+                    boxShadow: [
+                      BoxShadow(
+                        color: AppColors.gray900.withValues(
+                          alpha: isDark ? 0.45 : 0.14,
+                        ),
+                        blurRadius: 16,
+                        offset: const Offset(0, -4),
                       ),
                     ],
                   ),
-                  const SizedBox(height: AppSpacing.md),
-                  Flexible(
-                    fit: FlexFit.loose,
-                    child: SingleChildScrollView(
-                      child: Wrap(
-                        spacing: AppSpacing.sm,
-                        runSpacing: AppSpacing.sm,
+                  padding: const EdgeInsets.all(AppSpacing.lg),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          'Question Grid',
+                          style: AppTextStyles.h3().copyWith(
+                            color: scheme.onSurface,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: AppSpacing.xs),
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          'Tap any number to jump to that question',
+                          style: AppTextStyles.caption().copyWith(
+                            color: scheme.onSurfaceVariant,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: AppSpacing.md),
+                      Wrap(
+                        spacing: AppSpacing.md,
+                        runSpacing: AppSpacing.xs,
                         children: [
-                          for (var i = 0; i < session.questions.length; i++)
-                            GestureDetector(
-                              onTap: () {
-                                Navigator.of(ctx).pop();
-                                notifier.jumpToIndex(i);
-                              },
-                              child: _PaletteCell(
-                                index: i,
-                                currentIndex: state.currentIndex,
-                                q: session.questions[i],
-                                isDark: isDark,
-                              ),
-                            ),
+                          _LegendItem(
+                            label: 'Current',
+                            bg: AppColors.primary,
+                            fg: AppColors.onPrimary,
+                          ),
+                          _LegendItem(
+                            label: 'Attempted',
+                            bg: isDark
+                                ? AppColors.correctBgDark
+                                : AppColors.correctBg,
+                            fg: isDark
+                                ? AppColors.correctTextDark
+                                : AppColors.correctText,
+                          ),
+                          _LegendItem(
+                            label: 'Flagged',
+                            bg: isDark
+                                ? AppColors.warningBgDark
+                                : AppColors.warningBg,
+                            fg: isDark
+                                ? AppColors.warningTextDark
+                                : AppColors.warningText,
+                          ),
+                          _LegendItem(
+                            label: 'Not visited',
+                            bg: scheme.surfaceContainerLow,
+                            fg: scheme.onSurfaceVariant,
+                          ),
                         ],
                       ),
-                    ),
-                  ),
-                  const SizedBox(height: AppSpacing.lg),
-                  Container(
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: scheme.surfaceContainerLow,
-                      borderRadius: BorderRadius.circular(AppRadius.md),
-                      border: Border.all(
-                        color: isDark ? AppColors.borderDark : AppColors.borderLight,
-                        width: 0.6,
-                      ),
-                    ),
-                    child: Table(
-                      border: TableBorder.symmetric(
-                        inside: BorderSide(
-                          color: isDark
-                              ? AppColors.borderDark
-                              : AppColors.borderLight,
-                          width: 0.6,
+                      const SizedBox(height: AppSpacing.md),
+                      Flexible(
+                        fit: FlexFit.loose,
+                        child: SingleChildScrollView(
+                          child: Wrap(
+                            spacing: AppSpacing.sm,
+                            runSpacing: AppSpacing.sm,
+                            children: [
+                              for (var i = 0; i < session.questions.length; i++)
+                                GestureDetector(
+                                  onTap: () {
+                                    Navigator.of(ctx).pop();
+                                    notifier.jumpToIndex(i);
+                                  },
+                                  child: _PaletteCell(
+                                    index: i,
+                                    currentIndex: state.currentIndex,
+                                    q: session.questions[i],
+                                    isDark: isDark,
+                                  ),
+                                ),
+                            ],
+                          ),
                         ),
                       ),
-                      children: [
-                        TableRow(
+                      const SizedBox(height: AppSpacing.lg),
+                      Container(
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: scheme.surfaceContainerLow,
+                          borderRadius: BorderRadius.circular(AppRadius.md),
+                          border: Border.all(
+                            color: isDark
+                                ? AppColors.borderDark
+                                : AppColors.borderLight,
+                            width: 0.6,
+                          ),
+                        ),
+                        child: Table(
+                          border: TableBorder.symmetric(
+                            inside: BorderSide(
+                              color: isDark
+                                  ? AppColors.borderDark
+                                  : AppColors.borderLight,
+                              width: 0.6,
+                            ),
+                          ),
                           children: [
-                            _CountCell(label: 'Attempted', value: '$attempted'),
-                            _CountCell(label: 'Skipped', value: '$skipped'),
-                            _CountCell(label: 'Flagged', value: '$flagged'),
+                            TableRow(
+                              children: [
+                                _CountCell(
+                                  label: 'Attempted',
+                                  value: '$attempted',
+                                ),
+                                _CountCell(label: 'Skipped', value: '$skipped'),
+                                _CountCell(label: 'Flagged', value: '$flagged'),
+                              ],
+                            ),
                           ],
                         ),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(height: AppSpacing.lg),
-                  Row(
-                    children: [
-                      Expanded(
-                        child: OutlinedButton(
-                          onPressed: () => Navigator.of(ctx).pop(),
-                          child: const Text('Go back'),
-                        ),
                       ),
-                      const SizedBox(width: AppSpacing.sm),
-                      Expanded(
-                        child: ElevatedButton(
-                          onPressed: () async {
-                            try {
-                              final id = await notifier.submit();
-                              if (ctx.mounted) Navigator.pop(ctx);
-                              if (!context.mounted) return;
-                              final featureKey = ref
-                                  .read(testSessionProvider(sessionId))
-                                  .asData
-                                  ?.value
-                                  .session
-                                  ?.analyticsFeatureKey;
-                              upscWarsTrace(
-                                'TestEngine palette submit -> go '
-                                '${sessionResultsRouteForKey(id, featureKey)}',
-                              );
-                              context.go(
-                                sessionResultsRouteForKey(id, featureKey),
-                              );
-                            } catch (e, st) {
-                              upscWarsTrace(
-                                'TestEngine palette submit FAILED',
-                                error: e,
-                                stackTrace: st,
-                              );
-                            }
-                          },
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: isDark
-                                ? scheme.errorContainer
-                                : AppColors.wrong,
-                            foregroundColor:
-                                isDark ? scheme.onErrorContainer : null,
+                      const SizedBox(height: AppSpacing.lg),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: OutlinedButton(
+                              onPressed: () => Navigator.of(ctx).pop(),
+                              child: const Text('Go back'),
+                            ),
                           ),
-                          child: Text(
-                            session.mode == 'exam' ? 'Submit Test' : 'Submit',
+                          const SizedBox(width: AppSpacing.sm),
+                          Expanded(
+                            child: ElevatedButton(
+                              onPressed: () async {
+                                try {
+                                  final id = await notifier.submit();
+                                  if (ctx.mounted) Navigator.pop(ctx);
+                                  if (!context.mounted) return;
+                                  final featureKey = ref
+                                      .read(testSessionProvider(sessionId))
+                                      .asData
+                                      ?.value
+                                      .session
+                                      ?.analyticsFeatureKey;
+                                  upscWarsTrace(
+                                    'TestEngine palette submit -> go '
+                                    '${sessionResultsRouteForKey(id, featureKey)}',
+                                  );
+                                  context.go(
+                                    sessionResultsRouteForKey(id, featureKey),
+                                  );
+                                } catch (e, st) {
+                                  upscWarsTrace(
+                                    'TestEngine palette submit FAILED',
+                                    error: e,
+                                    stackTrace: st,
+                                  );
+                                }
+                              },
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: isDark
+                                    ? scheme.errorContainer
+                                    : AppColors.wrong,
+                                foregroundColor: isDark
+                                    ? scheme.onErrorContainer
+                                    : null,
+                              ),
+                              child: Text(
+                                session.mode == 'exam'
+                                    ? 'Submit Test'
+                                    : 'Submit',
+                              ),
+                            ),
                           ),
-                        ),
+                        ],
                       ),
                     ],
                   ),
-                ],
+                ),
               ),
             ),
           ),
-        ),
         ),
       );
     },
@@ -859,12 +881,7 @@ class _TopBar extends HookConsumerWidget {
         final i = v.currentIndex;
         if (i < 0 || i >= s.questions.length) return null;
         final q = s.questions[i];
-        return (
-          v.currentIndex,
-          s.questions.length,
-          q.flagged,
-          q.uuid,
-        );
+        return (v.currentIndex, s.questions.length, q.flagged, q.uuid);
       }),
     );
 
@@ -892,16 +909,13 @@ class _TopBar extends HookConsumerWidget {
           const SizedBox(width: AppSpacing.xs),
           Text(
             'Q${currentIndex + 1} of $qLen',
-            style: AppTextStyles.label().copyWith(
-              color: scheme.onSurface,
-            ),
+            style: AppTextStyles.label().copyWith(color: scheme.onSurface),
           ),
           const Spacer(),
           QuestionEditorIconButton(
             questionUuid: questionUuid,
-            onReturned: () => ref
-                .read(testSessionProvider(sessionId).notifier)
-                .reload(),
+            onReturned: () =>
+                ref.read(testSessionProvider(sessionId).notifier).reload(),
           ),
           EnHiLanguageToggle(
             language: uiLanguage,
@@ -910,9 +924,8 @@ class _TopBar extends HookConsumerWidget {
           ),
           const SizedBox(width: AppSpacing.sm),
           InkWell(
-            onTap: () => ref
-                .read(testSessionProvider(sessionId).notifier)
-                .toggleFlag(),
+            onTap: () =>
+                ref.read(testSessionProvider(sessionId).notifier).toggleFlag(),
             borderRadius: BorderRadius.circular(AppRadius.md),
             child: Container(
               padding: const EdgeInsets.all(AppSpacing.sm),
@@ -1084,8 +1097,9 @@ class _QuestionArea extends HookConsumerWidget {
           ),
         if (question.hasTable && tableData != null) ...[
           SizedBox(
-            height:
-                trimmedDisplayText.isNotEmpty ? AppSpacing.sm : AppSpacing.xs,
+            height: trimmedDisplayText.isNotEmpty
+                ? AppSpacing.sm
+                : AppSpacing.xs,
           ),
           QuestionTableView(table: tableData),
         ],
@@ -1636,7 +1650,9 @@ class _ExamActionRow extends HookConsumerWidget {
     final scheme = Theme.of(context).colorScheme;
     final isDark = context.isDarkMode;
     final topic = ref.watch(
-      testSessionProvider(sessionId).select((a) => a.asData?.value.session?.topic),
+      testSessionProvider(
+        sessionId,
+      ).select((a) => a.asData?.value.session?.topic),
     );
     return Padding(
       padding: const EdgeInsets.fromLTRB(
@@ -1654,7 +1670,9 @@ class _ExamActionRow extends HookConsumerWidget {
                 onPressed: onPalette,
                 style: OutlinedButton.styleFrom(
                   minimumSize: const Size(44, 44),
-                  padding: const EdgeInsets.symmetric(horizontal: AppSpacing.sm),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: AppSpacing.sm,
+                  ),
                 ),
                 child: const Icon(Icons.grid_view_outlined, size: 18),
               ),

@@ -13,6 +13,7 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../shared/widgets/dismissible_modal_sheet.dart';
 import '../domain/create_get_started_session_use_case.dart';
 import '../providers/home_activation_provider.dart';
 
@@ -75,14 +76,18 @@ Future<bool?> showGetStartedDiagnosticIntroSheet(
     context: context,
     useRootNavigator: true,
     isScrollControlled: true,
+    isDismissible: true,
+    enableDrag: true,
     backgroundColor: Colors.transparent,
     transitionAnimationController: AnimationController(
       vsync: Navigator.of(context, rootNavigator: true),
       duration: const Duration(milliseconds: 420),
       reverseDuration: const Duration(milliseconds: 280),
     ),
-    builder: (ctx) => _AnimatedSheetEntrance(
-      child: _GetStartedDiagnosticIntroSheet(postOnboarding: postOnboarding),
+    builder: (ctx) => DismissOnScrimTap(
+      child: _AnimatedSheetEntrance(
+        child: _GetStartedDiagnosticIntroSheet(postOnboarding: postOnboarding),
+      ),
     ),
   );
   return started;
@@ -145,8 +150,7 @@ class GetStartedCard extends HookConsumerWidget {
                         ),
                       ),
                       TextSpan(
-                        text:
-                            ' — see the edge UPSC Wars gives you',
+                        text: ' — see the edge UPSC Wars gives you',
                         style: AppTextStyles.bodySm().copyWith(
                           color: scheme.onSurfaceVariant,
                           height: 1.25,
@@ -159,15 +163,11 @@ class GetStartedCard extends HookConsumerWidget {
                 ),
               ),
               IconButton(
-                onPressed: () => unawaited(
-                  showGetStartedSnoozeSheet(context, ref),
-                ),
+                onPressed: () =>
+                    unawaited(showGetStartedSnoozeSheet(context, ref)),
                 visualDensity: VisualDensity.compact,
                 padding: EdgeInsets.zero,
-                constraints: const BoxConstraints(
-                  minWidth: 32,
-                  minHeight: 32,
-                ),
+                constraints: const BoxConstraints(minWidth: 32, minHeight: 32),
                 tooltip: 'Remind me tomorrow',
                 icon: Icon(
                   Icons.close_rounded,
@@ -192,8 +192,10 @@ Future<void> showGetStartedSnoozeSheet(
     context: context,
     useRootNavigator: true,
     isScrollControlled: true,
+    isDismissible: true,
+    enableDrag: true,
     backgroundColor: Colors.transparent,
-    builder: (ctx) => const _GetStartedSnoozeSheet(),
+    builder: (ctx) => const DismissOnScrimTap(child: _GetStartedSnoozeSheet()),
   );
 }
 
@@ -513,9 +515,7 @@ class _GetStartedDiagnosticIntroSheet extends HookConsumerWidget {
                     child: Container(
                       padding: const EdgeInsets.all(AppSpacing.md),
                       decoration: BoxDecoration(
-                        color: isDark
-                            ? AppColors.infoBgDark
-                            : AppColors.infoBg,
+                        color: isDark ? AppColors.infoBgDark : AppColors.infoBg,
                         borderRadius: BorderRadius.circular(AppRadius.md),
                         border: Border.all(
                           color: borderColor.withValues(alpha: 0.4),

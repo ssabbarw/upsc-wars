@@ -29,7 +29,7 @@ class FomoPulseHistoryScreen extends ConsumerWidget {
               child: Padding(
                 padding: const EdgeInsets.all(AppSpacing.lg),
                 child: Text(
-                  'No Pulses yet. Breaking-news quizzes will show up here.',
+                  'No Pulses yet. Breaking CA briefings will show up here.',
                   textAlign: TextAlign.center,
                   style: AppTextStyles.bodySm().copyWith(
                     color: scheme.onSurfaceVariant,

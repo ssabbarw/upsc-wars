@@ -17,6 +17,38 @@ class FomoPulseCloudService {
 
   final FirebaseFunctions _functions;
 
+  static const _generateTimeout = Duration(minutes: 3);
+
+  HttpsCallable _generateDraftCallable() {
+    return _functions.httpsCallable(
+      'generateFomoPulseDraft',
+      options: HttpsCallableOptions(timeout: _generateTimeout),
+    );
+  }
+
+  static String describeCallableError(Object error) {
+    if (error is FirebaseFunctionsException) {
+      final details = error.details;
+      final detailText = details == null ? '' : ' details=$details';
+      return '${error.code}: ${error.message ?? error.toString()}$detailText';
+    }
+    return error.toString();
+  }
+
+  static void logCallableError(String label, Object error, StackTrace stack) {
+    if (error is FirebaseFunctionsException) {
+      debugPrint(
+        '$label FirebaseFunctionsException: ${error.code} ${error.message}',
+      );
+      if (error.details != null) {
+        debugPrint('$label details: ${error.details}');
+      }
+    } else {
+      debugPrint('$label: $error');
+    }
+    debugPrintStack(stackTrace: stack);
+  }
+
   Future<({String? draftDate, List<FomoPulseHarvestCandidate> candidates})>
       listHarvestCandidates() async {
     final callable = _functions.httpsCallable('listFomoPulseHarvestCandidates');
@@ -38,34 +70,98 @@ class FomoPulseCloudService {
     );
   }
 
-  Future<FomoPulseDraft> generateFromUrl(String url) async {
-    final callable = _functions.httpsCallable('generateFomoPulseDraft');
+  Future<FomoPulseArticlePreview> previewArticle(String url) async {
+    final callable = _functions.httpsCallable('previewFomoPulseArticle');
     final result = await callable.call<Map<String, dynamic>>({
-      'source': 'url',
       'url': url.trim(),
     });
-    final draftRaw = result.data['draft'];
-    if (draftRaw is! Map) {
-      throw StateError('Invalid draft response');
+    final data = result.data;
+    return FomoPulseArticlePreview(
+      imageUrl: (data['image_url'] ?? '').toString(),
+      imageSource: (data['image_source'] ?? '').toString(),
+      ogTitle: (data['og_title'] ?? '').toString(),
+      ogDescription: (data['og_description'] ?? '').toString(),
+    );
+  }
+
+  Future<FomoPulseDraft> generateFromUrl(
+    String url, {
+    String? imageUrl,
+    String? imageSource,
+  }) async {
+    try {
+      final callable = _generateDraftCallable();
+      final result = await callable.call<Map<String, dynamic>>({
+        'source': 'url',
+        'url': url.trim(),
+        if (imageUrl != null && imageUrl.isNotEmpty) 'image_url': imageUrl,
+        if (imageSource != null && imageSource.isNotEmpty)
+          'image_source': imageSource,
+      });
+      final draftRaw = result.data['draft'];
+      if (draftRaw is! Map) {
+        throw StateError('Invalid draft response (missing draft)');
+      }
+      return FomoPulseDraft.fromServerMap(Map<String, dynamic>.from(draftRaw));
+    } catch (e, st) {
+      logCallableError('generateFomoPulseDraft(url)', e, st);
+      rethrow;
     }
-    return FomoPulseDraft.fromServerMap(Map<String, dynamic>.from(draftRaw));
   }
 
   Future<FomoPulseDraft> generateFromHarvest({
     required String draftDate,
     required String draftId,
+    String? imageUrl,
+    String? imageSource,
   }) async {
-    final callable = _functions.httpsCallable('generateFomoPulseDraft');
-    final result = await callable.call<Map<String, dynamic>>({
-      'source': 'harvest',
-      'draft_date': draftDate,
-      'draft_id': draftId,
-    });
-    final draftRaw = result.data['draft'];
-    if (draftRaw is! Map) {
-      throw StateError('Invalid draft response');
+    try {
+      final callable = _generateDraftCallable();
+      final result = await callable.call<Map<String, dynamic>>({
+        'source': 'harvest',
+        'draft_date': draftDate,
+        'draft_id': draftId,
+        if (imageUrl != null && imageUrl.isNotEmpty) 'image_url': imageUrl,
+        if (imageSource != null && imageSource.isNotEmpty)
+          'image_source': imageSource,
+      });
+      final draftRaw = result.data['draft'];
+      if (draftRaw is! Map) {
+        throw StateError('Invalid draft response (missing draft)');
+      }
+      return FomoPulseDraft.fromServerMap(Map<String, dynamic>.from(draftRaw));
+    } catch (e, st) {
+      logCallableError('generateFomoPulseDraft(harvest)', e, st);
+      rethrow;
     }
-    return FomoPulseDraft.fromServerMap(Map<String, dynamic>.from(draftRaw));
+  }
+
+  Future<FomoPulseDraft> translateDraft(FomoPulseDraft draft) async {
+    final callable = _functions.httpsCallable('translateFomoPulseDraft');
+    final result = await callable.call<Map<String, dynamic>>({
+      'question': draft.question.toServerMap(),
+      'news_summary': draft.newsSummary,
+      'upsc_points': draft.upscPoints,
+      'source_url': draft.sourceUrl,
+    });
+    final data = result.data;
+    final questionRaw = data['question'];
+    if (questionRaw is! Map) {
+      throw StateError('Invalid translate response');
+    }
+    final hiPoints = data['upsc_points_hi'];
+    return draft.copyWith(
+      question: FomoPulseQuestion.fromMap(
+        Map<String, dynamic>.from(questionRaw),
+      ),
+      newsSummaryHi: (data['news_summary_hi'] ?? '').toString(),
+      upscPointsHi: hiPoints is List
+          ? [
+              for (final p in hiPoints)
+                if (p.toString().trim().isNotEmpty) p.toString().trim(),
+            ]
+          : const [],
+    );
   }
 
   Future<({bool ok, String? pulseId, String? reason, String? target})>
@@ -78,13 +174,23 @@ class FomoPulseCloudService {
     required FomoPulseSendTarget target,
     String? harvestDraftDate,
     String? harvestDraftId,
+    String imageUrl = '',
+    String imageSource = '',
+    List<String> upscPoints = const [],
+    String newsSummaryHi = '',
+    List<String> upscPointsHi = const [],
   }) async {
     final callable = _functions.httpsCallable('sendFomoPulseNotification');
     final result = await callable.call<Map<String, dynamic>>({
       'title': title.trim(),
       'body': body.trim(),
       'news_summary': newsSummary.trim(),
+      'news_summary_hi': newsSummaryHi.trim(),
       'source_url': sourceUrl.trim(),
+      'image_url': imageUrl.trim(),
+      'image_source': imageSource.trim(),
+      'upsc_points': upscPoints,
+      'upsc_points_hi': upscPointsHi,
       'question': question.toServerMap(),
       'target': target == FomoPulseSendTarget.broadcast ? 'broadcast' : 'self',
       if (harvestDraftDate != null && harvestDraftId != null)
@@ -282,6 +388,11 @@ class FomoPulsePushService {
         target: target,
         harvestDraftDate: draft.harvestDraftDate,
         harvestDraftId: draft.harvestDraftId,
+        imageUrl: draft.imageUrl,
+        imageSource: draft.imageSource,
+        upscPoints: draft.upscPoints,
+        newsSummaryHi: draft.newsSummaryHi,
+        upscPointsHi: draft.upscPointsHi,
       );
       return FomoPulsePushOutcome._(
         sent: outcome.ok,

@@ -775,7 +775,9 @@ exports.adminAutoPublishDailyCa = dailyCa.adminAutoPublishDailyCa;
 
 const fomoPulse = require("./fomo_pulse");
 exports.listFomoPulseHarvestCandidates = fomoPulse.listFomoPulseHarvestCandidates;
+exports.previewFomoPulseArticle = fomoPulse.previewFomoPulseArticle;
 exports.generateFomoPulseDraft = fomoPulse.generateFomoPulseDraft;
+exports.translateFomoPulseDraft = fomoPulse.translateFomoPulseDraft;
 exports.sendFomoPulseNotification = fomoPulse.sendFomoPulseNotification;
 exports.submitFomoPulseAttempt = fomoPulse.submitFomoPulseAttempt;
 

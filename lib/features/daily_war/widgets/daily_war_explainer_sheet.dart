@@ -8,6 +8,7 @@ import '../../../core/layout/system_insets.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../shared/widgets/dismissible_modal_sheet.dart';
 import '../../home/domain/start_daily_drill.dart';
 import '../domain/daily_war_copy.dart';
 import '../domain/daily_war_models.dart';
@@ -72,123 +73,120 @@ class _DailyWarExplainerSheet extends HookConsumerWidget {
       }
     }
 
-    return GestureDetector(
-      onTap: () => Navigator.of(context).pop(),
-      behavior: HitTestBehavior.opaque,
+    return DismissOnScrimTap(
       child: Padding(
         padding: EdgeInsets.only(bottom: sheetBottomPadding(context)),
         child: Align(
           alignment: Alignment.bottomCenter,
-          child: GestureDetector(
-            onTap: () {},
-            child: Material(
-              color: DwColors.surface,
-              borderRadius: const BorderRadius.vertical(top: Radius.circular(22)),
-              clipBehavior: Clip.antiAlias,
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(20, 10, 20, 20),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                Center(
-                  child: Container(
-                    width: 40,
-                    height: 4,
-                    margin: const EdgeInsets.only(bottom: 14),
-                    decoration: BoxDecoration(
-                      color: DwColors.onDarkFaint,
-                      borderRadius: BorderRadius.circular(2),
+          child: Material(
+            color: DwColors.surface,
+            borderRadius: const BorderRadius.vertical(top: Radius.circular(22)),
+            clipBehavior: Clip.antiAlias,
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(20, 10, 20, 20),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Center(
+                    child: Container(
+                      width: 40,
+                      height: 4,
+                      margin: const EdgeInsets.only(bottom: 14),
+                      decoration: BoxDecoration(
+                        color: DwColors.onDarkFaint,
+                        borderRadius: BorderRadius.circular(2),
+                      ),
                     ),
                   ),
-                ),
-                Text(
-                  'Full syllabus.\nTwo topics at a time.',
-                  style: DwText.dm(
-                    size: 24,
-                    weight: FontWeight.w800,
-                    color: DwColors.onDark,
-                    height: 1.15,
-                    letterSpacing: -0.5,
-                  ),
-                ),
-                const SizedBox(height: 8),
-                Text(
-                  '9 PM live paper. Same questions. Then you see the leaderboard.',
-                  style: DwText.dm(
-                    size: 14,
-                    weight: FontWeight.w500,
-                    color: DwColors.onDarkMuted,
-                    height: 1.35,
-                  ),
-                ),
-                const SizedBox(height: AppSpacing.md),
-                if (topics.isNotEmpty) ...[
                   Text(
-                    isGrand
-                        ? 'Saturday\'s paper is these:'
-                        : 'Tonight\'s paper is these two:',
-                    style: AppTextStyles.bodySm().copyWith(
+                    'Full syllabus.\nTwo topics at a time.',
+                    style: DwText.dm(
+                      size: 24,
+                      weight: FontWeight.w800,
                       color: DwColors.onDark,
-                      fontWeight: FontWeight.w700,
+                      height: 1.15,
+                      letterSpacing: -0.5,
                     ),
                   ),
                   const SizedBox(height: 8),
-                  Wrap(
-                    spacing: 8,
-                    runSpacing: 8,
-                    children: [
-                      for (final t in topics)
-                        _TopicChip(
-                          subject: DailyWarCopy.subjectDisplay(t.subjectSlug),
-                          topic: t.topic,
-                        ),
-                    ],
-                  ),
-                ] else
                   Text(
-                    isGrand
-                        ? 'This week\'s two topics land here.'
-                        : 'Tonight\'s two topics land here.',
-                    style: AppTextStyles.bodySm().copyWith(
+                    '9 PM live paper. Same questions. Then you see the leaderboard.',
+                    style: DwText.dm(
+                      size: 14,
+                      weight: FontWeight.w500,
                       color: DwColors.onDarkMuted,
+                      height: 1.35,
                     ),
                   ),
-                const SizedBox(height: AppSpacing.lg),
-                SizedBox(
-                  height: 48,
-                  child: FilledButton(
-                    onPressed:
-                        launching.value ? null : () => unawaited(revise()),
-                    style: FilledButton.styleFrom(
-                      backgroundColor: DwColors.crimson,
-                      foregroundColor: DwColors.onDark,
-                      disabledBackgroundColor:
-                          DwColors.crimson.withValues(alpha: 0.4),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(14),
+                  const SizedBox(height: AppSpacing.md),
+                  if (topics.isNotEmpty) ...[
+                    Text(
+                      isGrand
+                          ? 'Saturday\'s paper is these:'
+                          : 'Tonight\'s paper is these two:',
+                      style: AppTextStyles.bodySm().copyWith(
+                        color: DwColors.onDark,
+                        fontWeight: FontWeight.w700,
                       ),
                     ),
-                    child: launching.value
-                        ? const SizedBox(
-                            width: 20,
-                            height: 20,
-                            child: CircularProgressIndicator(
-                              strokeWidth: 2,
-                              color: DwColors.onDark,
-                            ),
-                          )
-                        : Text(
-                            'Try 10 questions on these',
-                            style: AppTextStyles.label().copyWith(
-                              color: DwColors.onDark,
-                              fontWeight: FontWeight.w800,
-                            ),
+                    const SizedBox(height: 8),
+                    Wrap(
+                      spacing: 8,
+                      runSpacing: 8,
+                      children: [
+                        for (final t in topics)
+                          _TopicChip(
+                            subject: DailyWarCopy.subjectDisplay(t.subjectSlug),
+                            topic: t.topic,
                           ),
+                      ],
+                    ),
+                  ] else
+                    Text(
+                      isGrand
+                          ? 'This week\'s two topics land here.'
+                          : 'Tonight\'s two topics land here.',
+                      style: AppTextStyles.bodySm().copyWith(
+                        color: DwColors.onDarkMuted,
+                      ),
+                    ),
+                  const SizedBox(height: AppSpacing.lg),
+                  SizedBox(
+                    height: 48,
+                    child: FilledButton(
+                      onPressed: launching.value
+                          ? null
+                          : () => unawaited(revise()),
+                      style: FilledButton.styleFrom(
+                        backgroundColor: DwColors.crimson,
+                        foregroundColor: DwColors.onDark,
+                        disabledBackgroundColor: DwColors.crimson.withValues(
+                          alpha: 0.4,
+                        ),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(14),
+                        ),
+                      ),
+                      child: launching.value
+                          ? const SizedBox(
+                              width: 20,
+                              height: 20,
+                              child: CircularProgressIndicator(
+                                strokeWidth: 2,
+                                color: DwColors.onDark,
+                              ),
+                            )
+                          : Text(
+                              'Try 10 questions on these',
+                              style: AppTextStyles.label().copyWith(
+                                color: DwColors.onDark,
+                                fontWeight: FontWeight.w800,
+                              ),
+                            ),
+                    ),
                   ),
-                ),
-                  ],
-                ),
+                ],
               ),
             ),
           ),

@@ -6,6 +6,7 @@ Given a news article URL or news item context, return JSON only (no markdown fen
   "notification_title": "≤50 chars curiosity hook — not clickbait lies",
   "notification_body": "≤120 chars stakes/subtext",
   "news_summary": "2-3 sentences: what happened + why it matters for UPSC",
+  "upsc_points": ["1-2 short syllabus facts a Prelims aspirant must lock"],
   "question": {
     "en": {
       "display_text": "UPSC-style MCQ stem with (a)(b)(c)(d) options inline OR stem + separate options",

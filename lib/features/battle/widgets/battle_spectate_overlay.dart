@@ -13,6 +13,7 @@ import 'package:upsc_wars/core/theme/app_colors.dart';
 import 'package:upsc_wars/core/theme/app_radius.dart';
 import 'package:upsc_wars/core/theme/app_spacing.dart';
 import 'package:upsc_wars/core/theme/app_text_styles.dart';
+import 'package:upsc_wars/shared/widgets/dismissible_modal_sheet.dart';
 import 'package:upsc_wars/features/battle/providers/battle_spectate_provider.dart';
 import 'package:upsc_wars/features/battle/widgets/battle_live_scoreboard.dart';
 
@@ -105,10 +106,7 @@ Offset _clampFabTopLeft(Offset o, Size canvas, MediaQueryData mq, Size fab) {
     minTop,
     canvas.height - fab.height - pad.bottom - margin,
   );
-  return Offset(
-    o.dx.clamp(minLeft, maxLeft),
-    o.dy.clamp(minTop, maxTop),
-  );
+  return Offset(o.dx.clamp(minLeft, maxLeft), o.dy.clamp(minTop, maxTop));
 }
 
 /// FAB close (X): confirm before stopping while the opponent is still playing.
@@ -132,25 +130,24 @@ Future<void> promptStopLiveDuelFromFab(WidgetRef ref) async {
   final ok = await showDialog<bool>(
     context: dialogContext,
     useRootNavigator: true,
-    builder:
-        (ctx) => AlertDialog(
-          title: Text('Close live duel?', style: AppTextStyles.h3()),
-          content: Text(
-            '${_opponentShortName(s.opponentName)} is still answering. '
-            'Stop the live duel anyway?',
-            style: AppTextStyles.bodyMd(),
-          ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(ctx, false),
-              child: const Text('Cancel'),
-            ),
-            FilledButton(
-              onPressed: () => Navigator.pop(ctx, true),
-              child: const Text('Stop'),
-            ),
-          ],
+    builder: (ctx) => AlertDialog(
+      title: Text('Close live duel?', style: AppTextStyles.h3()),
+      content: Text(
+        '${_opponentShortName(s.opponentName)} is still answering. '
+        'Stop the live duel anyway?',
+        style: AppTextStyles.bodyMd(),
+      ),
+      actions: [
+        TextButton(
+          onPressed: () => Navigator.pop(ctx, false),
+          child: const Text('Cancel'),
         ),
+        FilledButton(
+          onPressed: () => Navigator.pop(ctx, true),
+          child: const Text('Stop'),
+        ),
+      ],
+    ),
   );
   if (ok == true) {
     ref.read(battleSpectateProvider.notifier).stop();
@@ -172,25 +169,24 @@ Future<bool> tryStopBattleSpectate(BuildContext context, WidgetRef ref) async {
   final ok = await showDialog<bool>(
     context: context,
     useRootNavigator: true,
-    builder:
-        (ctx) => AlertDialog(
-          title: Text('Leave the live board?', style: AppTextStyles.h3()),
-          content: Text(
-            '${_opponentShortName(s.opponentName)} is still answering. '
-            'Do you want to stop watching?',
-            style: AppTextStyles.bodyMd(),
-          ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(ctx, false),
-              child: const Text('Keep watching'),
-            ),
-            FilledButton(
-              onPressed: () => Navigator.pop(ctx, true),
-              child: const Text('Stop'),
-            ),
-          ],
+    builder: (ctx) => AlertDialog(
+      title: Text('Leave the live board?', style: AppTextStyles.h3()),
+      content: Text(
+        '${_opponentShortName(s.opponentName)} is still answering. '
+        'Do you want to stop watching?',
+        style: AppTextStyles.bodyMd(),
+      ),
+      actions: [
+        TextButton(
+          onPressed: () => Navigator.pop(ctx, false),
+          child: const Text('Keep watching'),
         ),
+        FilledButton(
+          onPressed: () => Navigator.pop(ctx, true),
+          child: const Text('Stop'),
+        ),
+      ],
+    ),
   );
   if (ok == true) {
     ref.read(battleSpectateProvider.notifier).stop();
@@ -240,8 +236,7 @@ class BattleSpectateFabHost extends HookConsumerWidget {
 
     final settled = s.battleSettled;
     final accent = settled ? AppColors.info : AppColors.primary;
-    final duelIcon =
-        settled ? Icons.flag_rounded : Icons.sensors_rounded;
+    final duelIcon = settled ? Icons.flag_rounded : Icons.sensors_rounded;
     final duelLabel = settled ? 'Battle over' : 'Live duel';
 
     void schedulePersistFab(Offset topLeft) {
@@ -273,12 +268,7 @@ class BattleSpectateFabHost extends HookConsumerWidget {
       child: GestureDetector(
         onPanUpdate: (details) {
           final base = fabTopLeft.value ?? defaultPos;
-          final next = _clampFabTopLeft(
-            base + details.delta,
-            canvas,
-            mq,
-            sz,
-          );
+          final next = _clampFabTopLeft(base + details.delta, canvas, mq, sz);
           fabTopLeft.value = next;
           schedulePersistFab(next);
         },
@@ -473,12 +463,16 @@ Future<void> openBattleSpectateSheet(WidgetRef ref) async {
       context: anchor,
       useRootNavigator: true,
       isScrollControlled: true,
+      isDismissible: true,
+      enableDrag: true,
       backgroundColor: Colors.transparent,
       builder: (sheetContext) {
         final maxH = MediaQuery.sizeOf(sheetContext).height * 0.92;
-        return _BattleSpectateSheetBody(
-          sheetContext: sheetContext,
-          maxH: maxH,
+        return DismissOnScrimTap(
+          child: _BattleSpectateSheetBody(
+            sheetContext: sheetContext,
+            maxH: maxH,
+          ),
         );
       },
     );

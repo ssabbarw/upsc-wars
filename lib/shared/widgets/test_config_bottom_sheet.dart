@@ -12,6 +12,7 @@ import '../../core/theme/app_radius.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_text_styles.dart';
 import 'top_snack_bar.dart';
+import 'dismissible_modal_sheet.dart';
 import 'test_config_sheet_widgets.dart';
 import '../extensions/count_formatting.dart';
 
@@ -44,8 +45,10 @@ class TestConfigSheetArgs {
   final int? lockedQuestionCount;
   final bool forceExamMode;
   final String? startButtonLabel;
+
   /// When set, the session is built from exactly these UUIDs in order.
   final List<String>? specificQuestionUuids;
+
   /// Shown in the locked-count panel when [specificQuestionUuids] is set.
   final String? fixedQuestionSetLabel;
   final String? analyticsFeatureKey;
@@ -58,10 +61,14 @@ Future<void> showTestConfigBottomSheet({
   return showModalBottomSheet<void>(
     context: context,
     isScrollControlled: true,
+    isDismissible: true,
+    enableDrag: true,
     backgroundColor: AppColors.transparent,
-    builder: (ctx) => Padding(
-      padding: EdgeInsets.only(bottom: MediaQuery.viewInsetsOf(ctx).bottom),
-      child: TestConfigBottomSheet(args: args),
+    builder: (ctx) => DismissOnScrimTap(
+      child: Padding(
+        padding: EdgeInsets.only(bottom: MediaQuery.viewInsetsOf(ctx).bottom),
+        child: TestConfigBottomSheet(args: args),
+      ),
     ),
   );
 }
@@ -182,8 +189,9 @@ class TestConfigBottomSheet extends HookConsumerWidget {
                   color: scheme.surfaceContainerLow,
                   borderRadius: BorderRadius.circular(AppRadius.lg),
                   border: Border.all(
-                    color: (isDark ? AppColors.borderDark : AppColors.borderLight)
-                        .withValues(alpha: 0.9),
+                    color:
+                        (isDark ? AppColors.borderDark : AppColors.borderLight)
+                            .withValues(alpha: 0.9),
                     width: 0.5,
                   ),
                 ),
@@ -237,321 +245,329 @@ class TestConfigBottomSheet extends HookConsumerWidget {
     return Align(
       alignment: Alignment.bottomCenter,
       child: Container(
-          decoration: BoxDecoration(
-            color: scheme.surface,
-            borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
-          ),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              SizedBox(
-                height: 40,
-                child: Stack(
-                  alignment: Alignment.center,
-                  clipBehavior: Clip.none,
-                  children: [
-                    Center(
-                      child: Container(
-                        width: 36,
-                        height: 4,
-                        decoration: BoxDecoration(
-                          color: borderColor,
-                          borderRadius: BorderRadius.circular(2),
-                        ),
+        decoration: BoxDecoration(
+          color: scheme.surface,
+          borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            SizedBox(
+              height: 40,
+              child: Stack(
+                alignment: Alignment.center,
+                clipBehavior: Clip.none,
+                children: [
+                  Center(
+                    child: Container(
+                      width: 36,
+                      height: 4,
+                      decoration: BoxDecoration(
+                        color: borderColor,
+                        borderRadius: BorderRadius.circular(2),
                       ),
                     ),
-                    Positioned(
-                      right: AppSpacing.sm,
-                      top: AppSpacing.xs,
-                      child: IconButton(
-                        visualDensity: VisualDensity.compact,
-                        padding: EdgeInsets.zero,
-                        constraints: const BoxConstraints(
-                          minWidth: 44,
-                          minHeight: 40,
+                  ),
+                  Positioned(
+                    right: AppSpacing.sm,
+                    top: AppSpacing.xs,
+                    child: IconButton(
+                      visualDensity: VisualDensity.compact,
+                      padding: EdgeInsets.zero,
+                      constraints: const BoxConstraints(
+                        minWidth: 44,
+                        minHeight: 40,
+                      ),
+                      onPressed: () => Navigator.of(context).pop(),
+                      icon: Icon(
+                        Icons.close_rounded,
+                        color: scheme.onSurfaceVariant,
+                      ),
+                      tooltip: MaterialLocalizations.of(
+                        context,
+                      ).closeButtonTooltip,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Flexible(
+              fit: FlexFit.loose,
+              child: SingleChildScrollView(
+                physics: const BouncingScrollPhysics(),
+                padding: EdgeInsets.fromLTRB(
+                  AppSpacing.xxl,
+                  AppSpacing.sm,
+                  AppSpacing.xxl,
+                  AppSpacing.xxl + MediaQuery.paddingOf(context).bottom,
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const SizedBox(height: AppSpacing.sm),
+                    Text(
+                      args.subjectDisplayName,
+                      style: AppTextStyles.h2().copyWith(
+                        color: scheme.onSurface,
+                      ),
+                    ),
+                    const SizedBox(height: AppSpacing.sm),
+                    if (args.fixedQuestionSetLabel != null) ...[
+                      Text(
+                        args.fixedQuestionSetLabel!,
+                        style: AppTextStyles.bodyMd().copyWith(
+                          color: scheme.onSurfaceVariant,
+                          height: 1.3,
                         ),
-                        onPressed: () => Navigator.of(context).pop(),
-                        icon: Icon(
-                          Icons.close_rounded,
+                      ),
+                      const SizedBox(height: AppSpacing.sm),
+                    ],
+                    if (args.topicDisplayName != null) ...[
+                      Text(
+                        args.topicDisplayName!,
+                        style: AppTextStyles.bodyMd().copyWith(
                           color: scheme.onSurfaceVariant,
                         ),
-                        tooltip:
-                            MaterialLocalizations.of(context).closeButtonTooltip,
                       ),
-                    ),
-                  ],
-                ),
-              ),
-              Flexible(
-                fit: FlexFit.loose,
-                child: SingleChildScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  padding: EdgeInsets.fromLTRB(
-                    AppSpacing.xxl,
-                    AppSpacing.sm,
-                    AppSpacing.xxl,
-                    AppSpacing.xxl + MediaQuery.paddingOf(context).bottom,
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      const SizedBox(height: AppSpacing.sm),
+                      const SizedBox(height: AppSpacing.xs),
                       Text(
-                        args.subjectDisplayName,
-                        style: AppTextStyles.h2().copyWith(color: scheme.onSurface),
-                      ),
-                      const SizedBox(height: AppSpacing.sm),
-                      if (args.fixedQuestionSetLabel != null) ...[
-                        Text(
-                          args.fixedQuestionSetLabel!,
-                          style: AppTextStyles.bodyMd().copyWith(
-                            color: scheme.onSurfaceVariant,
-                            height: 1.3,
-                          ),
-                        ),
-                        const SizedBox(height: AppSpacing.sm),
-                      ],
-              if (args.topicDisplayName != null) ...[
-                Text(
-                  args.topicDisplayName!,
-                  style: AppTextStyles.bodyMd().copyWith(
-                    color: scheme.onSurfaceVariant,
-                  ),
-                ),
-                const SizedBox(height: AppSpacing.xs),
-                Text(
-                  '${formatIntCount(maxQ)} questions available',
-                  style: AppTextStyles.bodySm().copyWith(
-                    color: scheme.onSurfaceVariant,
-                  ),
-                ),
-              ] else
-                Text(
-                  '${formatIntCount(maxQ)} questions · ${args.topicCountWhenSubjectOnly} topics',
-                  style: AppTextStyles.bodyMd().copyWith(
-                    color: scheme.onSurfaceVariant,
-                  ),
-                ),
-              const SizedBox(height: AppSpacing.xxl),
-              if (!args.forceExamMode) ...[
-                Text(
-                  'Mode',
-                  style: AppTextStyles.label().copyWith(
-                    color: scheme.onSurface,
-                  ),
-                ),
-                const SizedBox(height: AppSpacing.md),
-                Row(
-                  children: [
-                    Expanded(
-                      child: TestConfigModeOptionCard(
-                        title: 'Exam',
-                        description:
-                            'Simulate real conditions. Explanation after test ends.',
-                        icon: Icons.timer_outlined,
-                        selected: isExam.value,
-                        examStyle: true,
-                        borderColor: borderColor,
-                        onTap: () => isExam.value = true,
-                      ),
-                    ),
-                    const SizedBox(width: AppSpacing.md),
-                    Expanded(
-                      child: TestConfigModeOptionCard(
-                        title: 'Learning',
-                        description: 'See explanation after each question.',
-                        icon: Icons.lightbulb_outline,
-                        selected: !isExam.value,
-                        examStyle: false,
-                        borderColor: borderColor,
-                        onTap: () => isExam.value = false,
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-              const SizedBox(height: AppSpacing.xxl),
-              Text(
-                'Number of questions',
-                style: AppTextStyles.label().copyWith(color: scheme.onSurface),
-              ),
-              if (capped) ...[
-                const SizedBox(height: AppSpacing.sm),
-                Text(
-                  'Only ${formatIntCount(maxQ)} questions available for this topic.',
-                  style: AppTextStyles.caption().copyWith(
-                    color: AppColors.warning,
-                  ),
-                ),
-              ],
-              const SizedBox(height: AppSpacing.md),
-              if (maxQ == 0) ...[
-                Text(
-                  'No questions available for this topic.',
-                  style: AppTextStyles.bodySm().copyWith(
-                    color: scheme.onSurfaceVariant,
-                  ),
-                ),
-              ] else if (args.lockedQuestionCount != null) ...[
-                Container(
-                  width: double.infinity,
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: AppSpacing.md,
-                    vertical: AppSpacing.sm,
-                  ),
-                  decoration: BoxDecoration(
-                    color: scheme.surfaceContainerLow,
-                    borderRadius: BorderRadius.circular(AppRadius.md),
-                    border: Border.all(color: borderColor, width: 0.5),
-                  ),
-                  child: Text(
-                    '${args.lockedQuestionCount} questions (fixed set)',
-                    style: AppTextStyles.bodySm().copyWith(
-                      color: scheme.onSurfaceVariant,
-                    ),
-                  ),
-                ),
-              ] else
-                Row(
-                  children: [
-                    for (var i = 0; i < countChoices.length; i++) ...[
-                      if (i > 0) const SizedBox(width: AppSpacing.sm),
-                      Expanded(
-                        child: _CountTile(
-                          label: '${countChoices[i]}',
-                          selected: selectedPreset.value == countChoices[i],
-                          examMode: isExam.value,
-                          isDark: isDark,
-                          onTap: () => selectedPreset.value = countChoices[i],
+                        '${formatIntCount(maxQ)} questions available',
+                        style: AppTextStyles.bodySm().copyWith(
+                          color: scheme.onSurfaceVariant,
                         ),
                       ),
-                    ],
-                  ],
-                ),
-              if (isExam.value) ...[
-                const SizedBox(height: AppSpacing.xxl),
-                confidenceReminder(),
-                const SizedBox(height: AppSpacing.sm),
-                if (!args.forceExamMode)
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
+                    ] else
                       Text(
-                        'Timed test',
+                        '${formatIntCount(maxQ)} questions · ${args.topicCountWhenSubjectOnly} topics',
+                        style: AppTextStyles.bodyMd().copyWith(
+                          color: scheme.onSurfaceVariant,
+                        ),
+                      ),
+                    const SizedBox(height: AppSpacing.xxl),
+                    if (!args.forceExamMode) ...[
+                      Text(
+                        'Mode',
                         style: AppTextStyles.label().copyWith(
                           color: scheme.onSurface,
                         ),
                       ),
-                      Switch(
-                        value: examTimed.value,
-                        onChanged: (v) => examTimed.value = v,
-                        activeThumbColor: AppColors.onPrimary,
-                        activeTrackColor: AppColors.info,
+                      const SizedBox(height: AppSpacing.md),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: TestConfigModeOptionCard(
+                              title: 'Exam',
+                              description:
+                                  'Simulate real conditions. Explanation after test ends.',
+                              icon: Icons.timer_outlined,
+                              selected: isExam.value,
+                              examStyle: true,
+                              borderColor: borderColor,
+                              onTap: () => isExam.value = true,
+                            ),
+                          ),
+                          const SizedBox(width: AppSpacing.md),
+                          Expanded(
+                            child: TestConfigModeOptionCard(
+                              title: 'Learning',
+                              description:
+                                  'See explanation after each question.',
+                              icon: Icons.lightbulb_outline,
+                              selected: !isExam.value,
+                              examStyle: false,
+                              borderColor: borderColor,
+                              onTap: () => isExam.value = false,
+                            ),
+                          ),
+                        ],
                       ),
                     ],
-                  ),
-                if (args.forceExamMode)
-                  Text(
-                    'Timed test',
-                    style: AppTextStyles.label().copyWith(
-                      color: scheme.onSurface,
-                    ),
-                  ),
-                if (examTimed.value) ...[
-                  const SizedBox(height: AppSpacing.sm),
-                  Text(
-                    _formatExamDuration(effectiveCount),
-                    style: AppTextStyles.bodySm().copyWith(
-                      color: scheme.onSurfaceVariant,
-                    ),
-                  ),
-                ],
-              ] else ...[
-                const SizedBox(height: AppSpacing.xxl),
-                Text(
-                  'Time per question',
-                  style: AppTextStyles.label().copyWith(
-                    color: scheme.onSurface,
-                  ),
-                ),
-                const SizedBox(height: AppSpacing.md),
-                Row(
-                  children: [
-                    Expanded(
-                      child: TestConfigLearningTimeTile(
-                        label: '45s',
-                        selected: learningSecs.value == 45,
-                        isDark: isDark,
-                        onTap: () => learningSecs.value = 45,
+                    const SizedBox(height: AppSpacing.xxl),
+                    Text(
+                      'Number of questions',
+                      style: AppTextStyles.label().copyWith(
+                        color: scheme.onSurface,
                       ),
                     ),
-                    const SizedBox(width: AppSpacing.sm),
-                    Expanded(
-                      child: TestConfigLearningTimeTile(
-                        label: '1 min',
-                        selected: learningSecs.value == 60,
-                        isDark: isDark,
-                        onTap: () => learningSecs.value = 60,
+                    if (capped) ...[
+                      const SizedBox(height: AppSpacing.sm),
+                      Text(
+                        'Only ${formatIntCount(maxQ)} questions available for this topic.',
+                        style: AppTextStyles.caption().copyWith(
+                          color: AppColors.warning,
+                        ),
                       ),
-                    ),
-                    const SizedBox(width: AppSpacing.sm),
-                    Expanded(
-                      child: TestConfigLearningTimeTile(
-                        label: '2 min',
-                        selected: learningSecs.value == 120,
-                        isDark: isDark,
-                        onTap: () => learningSecs.value = 120,
+                    ],
+                    const SizedBox(height: AppSpacing.md),
+                    if (maxQ == 0) ...[
+                      Text(
+                        'No questions available for this topic.',
+                        style: AppTextStyles.bodySm().copyWith(
+                          color: scheme.onSurfaceVariant,
+                        ),
+                      ),
+                    ] else if (args.lockedQuestionCount != null) ...[
+                      Container(
+                        width: double.infinity,
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: AppSpacing.md,
+                          vertical: AppSpacing.sm,
+                        ),
+                        decoration: BoxDecoration(
+                          color: scheme.surfaceContainerLow,
+                          borderRadius: BorderRadius.circular(AppRadius.md),
+                          border: Border.all(color: borderColor, width: 0.5),
+                        ),
+                        child: Text(
+                          '${args.lockedQuestionCount} questions (fixed set)',
+                          style: AppTextStyles.bodySm().copyWith(
+                            color: scheme.onSurfaceVariant,
+                          ),
+                        ),
+                      ),
+                    ] else
+                      Row(
+                        children: [
+                          for (var i = 0; i < countChoices.length; i++) ...[
+                            if (i > 0) const SizedBox(width: AppSpacing.sm),
+                            Expanded(
+                              child: _CountTile(
+                                label: '${countChoices[i]}',
+                                selected:
+                                    selectedPreset.value == countChoices[i],
+                                examMode: isExam.value,
+                                isDark: isDark,
+                                onTap: () =>
+                                    selectedPreset.value = countChoices[i],
+                              ),
+                            ),
+                          ],
+                        ],
+                      ),
+                    if (isExam.value) ...[
+                      const SizedBox(height: AppSpacing.xxl),
+                      confidenceReminder(),
+                      const SizedBox(height: AppSpacing.sm),
+                      if (!args.forceExamMode)
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Timed test',
+                              style: AppTextStyles.label().copyWith(
+                                color: scheme.onSurface,
+                              ),
+                            ),
+                            Switch(
+                              value: examTimed.value,
+                              onChanged: (v) => examTimed.value = v,
+                              activeThumbColor: AppColors.onPrimary,
+                              activeTrackColor: AppColors.info,
+                            ),
+                          ],
+                        ),
+                      if (args.forceExamMode)
+                        Text(
+                          'Timed test',
+                          style: AppTextStyles.label().copyWith(
+                            color: scheme.onSurface,
+                          ),
+                        ),
+                      if (examTimed.value) ...[
+                        const SizedBox(height: AppSpacing.sm),
+                        Text(
+                          _formatExamDuration(effectiveCount),
+                          style: AppTextStyles.bodySm().copyWith(
+                            color: scheme.onSurfaceVariant,
+                          ),
+                        ),
+                      ],
+                    ] else ...[
+                      const SizedBox(height: AppSpacing.xxl),
+                      Text(
+                        'Time per question',
+                        style: AppTextStyles.label().copyWith(
+                          color: scheme.onSurface,
+                        ),
+                      ),
+                      const SizedBox(height: AppSpacing.md),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: TestConfigLearningTimeTile(
+                              label: '45s',
+                              selected: learningSecs.value == 45,
+                              isDark: isDark,
+                              onTap: () => learningSecs.value = 45,
+                            ),
+                          ),
+                          const SizedBox(width: AppSpacing.sm),
+                          Expanded(
+                            child: TestConfigLearningTimeTile(
+                              label: '1 min',
+                              selected: learningSecs.value == 60,
+                              isDark: isDark,
+                              onTap: () => learningSecs.value = 60,
+                            ),
+                          ),
+                          const SizedBox(width: AppSpacing.sm),
+                          Expanded(
+                            child: TestConfigLearningTimeTile(
+                              label: '2 min',
+                              selected: learningSecs.value == 120,
+                              isDark: isDark,
+                              onTap: () => learningSecs.value = 120,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                    const SizedBox(height: AppSpacing.xxl),
+                    SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        onPressed: isSubmitting.value || effectiveCount <= 0
+                            ? null
+                            : onStart,
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: isExam.value
+                              ? AppColors.info
+                              : AppColors.primary,
+                          foregroundColor: AppColors.onPrimary,
+                          disabledBackgroundColor: scheme.surfaceContainerLow,
+                          disabledForegroundColor: scheme.onSurfaceVariant,
+                          padding: const EdgeInsets.symmetric(vertical: 15),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(AppRadius.md),
+                          ),
+                          elevation: 0,
+                        ),
+                        child: isSubmitting.value
+                            ? SizedBox(
+                                height: 22,
+                                width: 22,
+                                child: CircularProgressIndicator(
+                                  strokeWidth: 2,
+                                  color: AppColors.onPrimary,
+                                ),
+                              )
+                            : Text(
+                                args.startButtonLabel ??
+                                    (isExam.value
+                                        ? 'Start exam'
+                                        : 'Start learning session'),
+                                style: AppTextStyles.label(),
+                              ),
                       ),
                     ),
                   ],
                 ),
-              ],
-              const SizedBox(height: AppSpacing.xxl),
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: isSubmitting.value || effectiveCount <= 0
-                      ? null
-                      : onStart,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: isExam.value
-                        ? AppColors.info
-                        : AppColors.primary,
-                    foregroundColor: AppColors.onPrimary,
-                    disabledBackgroundColor: scheme.surfaceContainerLow,
-                    disabledForegroundColor: scheme.onSurfaceVariant,
-                    padding: const EdgeInsets.symmetric(vertical: 15),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(AppRadius.md),
-                    ),
-                    elevation: 0,
-                  ),
-                  child: isSubmitting.value
-                      ? SizedBox(
-                          height: 22,
-                          width: 22,
-                          child: CircularProgressIndicator(
-                            strokeWidth: 2,
-                            color: AppColors.onPrimary,
-                          ),
-                        )
-                      : Text(
-                          args.startButtonLabel ??
-                              (isExam.value
-                                  ? 'Start exam'
-                                  : 'Start learning session'),
-                          style: AppTextStyles.label(),
-                        ),
-                ),
               ),
-                    ],
-                  ),
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -74,6 +74,8 @@ import '../../features/results/screens/mistake_review_screen.dart';
 import '../../features/push_spot_test/push_spot_test_launch_params.dart';
 import '../../features/push_spot_test/screens/push_spot_results_screen.dart';
 import '../../features/push_spot_test/screens/push_spot_test_launch_screen.dart';
+import '../../features/fomo_pulse/domain/fomo_pulse_models.dart';
+import '../../features/fomo_pulse/screens/fomo_pulse_article_screen.dart';
 import '../../features/fomo_pulse/screens/fomo_pulse_composer_screen.dart';
 import '../../features/fomo_pulse/screens/fomo_pulse_detail_screen.dart';
 import '../../features/fomo_pulse/screens/fomo_pulse_history_screen.dart';
@@ -371,6 +373,37 @@ GoRouter appRouter(Ref ref) {
             return '/share-launch/$shareId';
           }
         }
+
+        if (host == 'upscwars.in' &&
+            segs.length >= 2 &&
+            segs[0] == 'fomo-pulse') {
+          final pulseId = segs[1].trim();
+          final uuid = RegExp(
+            r'^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$',
+          );
+          if (uuid.hasMatch(pulseId) &&
+              !state.matchedLocation.startsWith('/fomo-pulse/')) {
+            return '/fomo-pulse/$pulseId';
+          }
+        }
+      }
+
+      if (u.scheme == 'upscwars' &&
+          u.host.toLowerCase() == 'pulse-article') {
+        // Handled by ShareDeepLinkService → Pulse article screen.
+        return '/';
+      }
+
+      if (u.scheme == 'upscwars' &&
+          u.host.toLowerCase() == 'fomo-pulse' &&
+          u.pathSegments.isNotEmpty) {
+        final pulseId = u.pathSegments.first.trim();
+        final uuid = RegExp(
+          r'^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$',
+        );
+        if (uuid.hasMatch(pulseId)) {
+          return '/fomo-pulse/$pulseId';
+        }
       }
 
       if (!communityTabVisibleForRedirect() &&
@@ -463,6 +496,33 @@ GoRouter appRouter(Ref ref) {
           }
           return const FomoPulseComposerScreen();
         },
+        routes: [
+          GoRoute(
+            parentNavigatorKey: rootNavigatorKey,
+            path: 'article',
+            name: 'fomo_pulse_article',
+            builder: (context, state) {
+              if (!isSuperUser) {
+                return const Scaffold(
+                  body: Center(child: Text('Not available')),
+                );
+              }
+              final extra = state.extra;
+              if (extra is FomoPulseArticleArgs) {
+                return FomoPulseArticleScreen(args: extra);
+              }
+              final url = state.uri.queryParameters['url']?.trim() ?? '';
+              if (url.startsWith('http://') || url.startsWith('https://')) {
+                return FomoPulseArticleScreen(
+                  args: FomoPulseArticleArgs.url(url: url),
+                );
+              }
+              return const Scaffold(
+                body: Center(child: Text('Pick an article first')),
+              );
+            },
+          ),
+        ],
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
