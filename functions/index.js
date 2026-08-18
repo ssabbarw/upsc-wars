@@ -773,6 +773,12 @@ exports.publishDailyCaDay = dailyCa.publishDailyCaDay;
 exports.autoPublishDailyCa = dailyCa.autoPublishDailyCa;
 exports.adminAutoPublishDailyCa = dailyCa.adminAutoPublishDailyCa;
 
+const fomoPulse = require("./fomo_pulse");
+exports.listFomoPulseHarvestCandidates = fomoPulse.listFomoPulseHarvestCandidates;
+exports.generateFomoPulseDraft = fomoPulse.generateFomoPulseDraft;
+exports.sendFomoPulseNotification = fomoPulse.sendFomoPulseNotification;
+exports.submitFomoPulseAttempt = fomoPulse.submitFomoPulseAttempt;
+
 exports.tickBots = bots.tickBots;
 exports.onBotBattleMatchWritten = bots.onBotBattleMatchWritten;
 exports.adminRunBotTick = bots.adminRunBotTick;

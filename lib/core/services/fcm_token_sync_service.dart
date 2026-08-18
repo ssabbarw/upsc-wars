@@ -10,6 +10,7 @@ import 'package:upsc_wars/core/constants/super_user_emails.dart';
 import 'package:upsc_wars/core/debug/cursor_debug_log.dart';
 import 'package:upsc_wars/core/providers/kill_switch_provider.dart';
 import 'package:upsc_wars/features/daily_war/daily_war_constants.dart';
+import 'package:upsc_wars/features/fomo_pulse/fomo_pulse_constants.dart';
 import 'package:upsc_wars/features/push_spot_test/push_spot_test_constants.dart';
 
 /// Persists FCM device token on `users/{lowercaseEmail}` for Cloud Function invite delivery.
@@ -54,6 +55,7 @@ class FcmTokenSyncService {
       if (token == null || token.isEmpty) return;
       await _writeToken(email: email, token: token);
       await _ensureSpotTestBroadcastTopicSubscription();
+      await _ensureFomoPulseTopicSubscription();
       await _ensureDailyWarTopicSubscription(email: email);
     } catch (e, st) {
       debugPrint('FcmTokenSyncService.syncForCurrentUser: $e');
@@ -82,6 +84,7 @@ class FcmTokenSyncService {
           // #endregion
           await _writeToken(email: email, token: token);
           await _ensureSpotTestBroadcastTopicSubscription();
+          await _ensureFomoPulseTopicSubscription();
           await _ensureDailyWarTopicSubscription(email: email);
         } catch (e, st) {
           debugPrint('FcmTokenSyncService.onTokenRefresh: $e');
@@ -112,6 +115,18 @@ class FcmTokenSyncService {
       );
     } catch (e, st) {
       debugPrint('FcmTokenSyncService.subscribeToSpotTestTopic: $e');
+      debugPrintStack(stackTrace: st);
+    }
+  }
+
+  static Future<void> _ensureFomoPulseTopicSubscription() async {
+    if (kIsWeb) return;
+    try {
+      await FirebaseMessaging.instance.subscribeToTopic(
+        FomoPulseConstants.broadcastFcmTopic,
+      );
+    } catch (e, st) {
+      debugPrint('FcmTokenSyncService.subscribeToFomoPulseTopic: $e');
       debugPrintStack(stackTrace: st);
     }
   }

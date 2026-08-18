@@ -5,6 +5,7 @@ import '../../features/community/open_challenge/open_challenge_fcm.dart';
 import '../../features/memory_pairs/push/push_memory_pairs_fcm.dart';
 import '../../features/mini_games/push/push_revision_game_fcm.dart';
 import '../../features/notifications/long_html_notification_constants.dart';
+import '../../features/fomo_pulse/fomo_pulse_fcm.dart';
 import '../../features/push_spot_test/push_spot_test_fcm.dart';
 
 /// Holds the most recently opened notification so a follow-up action (test,
@@ -55,6 +56,10 @@ abstract final class PendingNotificationConversion {
       final topic = data[PushSpotTestFcm.dataKeyTopic]?.toString() ?? '';
       final uuid = data[PushSpotTestFcm.dataKeyQuestionUuid]?.toString() ?? '';
       return 'spot__${subject}__${topic}__${uuid}';
+    }
+    if (kind == FomoPulseFcm.kind) {
+      final pulseId = FomoPulseFcm.pulseIdFromData(data) ?? '';
+      return pulseId.isNotEmpty ? 'pulse__$pulseId' : null;
     }
     if (kind == PushMemoryPairsFcm.kind) {
       final setId = PushMemoryPairsFcm.setIdFromData(data) ?? '';

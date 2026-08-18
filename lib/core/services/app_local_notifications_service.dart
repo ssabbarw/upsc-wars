@@ -155,6 +155,20 @@ class AppLocalNotificationsService {
     return future;
   }
 
+  /// Re-dispatch a cold-start local notification tap after tap handlers are wired.
+  ///
+  /// [main] may call [ensureInitialized] for prelims before
+  /// [BattleMessagingService.initialize] registers payloads — without this, daily
+  /// drill / CA reminder taps can be dropped on process launch.
+  static Future<void> dispatchLaunchNotificationIfNeeded() async {
+    if (kIsWeb || !_initialized) return;
+    final details = await _plugin.getNotificationAppLaunchDetails();
+    if (details?.didNotificationLaunchApp != true) return;
+    final response = details!.notificationResponse;
+    if (response == null) return;
+    _onNotificationResponse(response);
+  }
+
   static void _onNotificationResponse(NotificationResponse response) {
     final payload = response.payload;
     if (payload == null) return;

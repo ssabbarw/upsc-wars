@@ -21,6 +21,7 @@ import '../../daily_war/providers/server_clock_provider.dart';
 import '../../daily_war/theme/daily_war_theme.dart';
 import '../../daily_war/widgets/daily_war_explainer_sheet.dart';
 import '../../daily_war/widgets/daily_war_home_card.dart';
+import '../../fomo_pulse/widgets/fomo_pulse_home_card.dart';
 import '../domain/daily_streak_service.dart';
 import '../domain/start_sunday_week_review.dart';
 import '../domain/today_hero.dart';
@@ -292,6 +293,8 @@ class TodayHubSection extends HookConsumerWidget {
               ),
             ),
         ],
+        const SizedBox(height: AppSpacing.md),
+        const FomoPulseHomeCard(),
       ],
     );
   }

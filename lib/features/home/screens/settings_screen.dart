@@ -142,6 +142,14 @@ class SettingsScreen extends ConsumerWidget {
                 children: [
                   if (canAccessDailyCaReview(isSuperUser: isSuperUser)) ...[
                     _NavTile(
+                      icon: Icons.bolt_rounded,
+                      iconBg: Color(0xFFFFF4E6),
+                      iconColor: Color(0xFFB25A00),
+                      title: 'Pulse composer',
+                      subtitle: 'Breaking news push MCQs',
+                      onTap: () => context.push('/internal/fomo-pulse-composer'),
+                    ),
+                    _NavTile(
                       icon: Icons.newspaper_outlined,
                       iconBg: Color(0xFFE7F0FF),
                       iconColor: Color(0xFF1D4ED8),

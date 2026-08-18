@@ -22,9 +22,7 @@ import '../core/crashlytics/firebase_crashlytics_bootstrap.dart';
 import '../core/providers/app_bootstrap.dart';
 import '../core/providers/kill_switch_provider.dart';
 import '../core/services/battle_messaging_service.dart';
-import '../core/services/daily_ca_reminder_service.dart';
-import '../core/services/daily_practice_reminder_service.dart';
-import '../features/home/domain/daily_streak_service.dart';
+import '../core/services/local_daily_reminders_sync.dart';
 import '../core/services/no_test_reminder_service.dart';
 import '../core/services/share_deep_link_service.dart';
 import '../core/services/fcm_token_sync_service.dart';
@@ -141,18 +139,39 @@ class _RootMaterialApp extends HookConsumerWidget {
             completedSessionCount: completedCount,
           );
           // Recovery nudge: anything finished today is enough to skip it.
-          await DailyPracticeReminderService.sync(
+          await LocalDailyRemindersSync.sync(
             prefs: p,
-            activationComplete: p.homeActivationComplete,
-            completedToday: DailyStreakService.closedToday(prefs: p),
-          );
-          await DailyCaReminderService.sync(
-            enabled: await ref.read(dailyCaRemoteEnabledProvider.future),
+            dailyCaEnabled:
+                await ref.read(dailyCaRemoteEnabledProvider.future),
           );
         } catch (e, st) {
           upscWarsTrace('no_test_reminder_sync error', error: e, stackTrace: st);
         }
       }());
+      Future<void> syncLocalDailyReminders() async {
+        try {
+          final p = await ref.read(prefsServiceProvider.future);
+          await LocalDailyRemindersSync.sync(
+            prefs: p,
+            dailyCaEnabled:
+                await ref.read(dailyCaRemoteEnabledProvider.future),
+          );
+        } catch (e, st) {
+          upscWarsTrace('local_daily_reminders_sync error', error: e, stackTrace: st);
+        }
+      }
+
+      void onNotificationPermissionMayHaveChanged() {
+        unawaited(syncLocalDailyReminders());
+      }
+
+      BattleMessagingService.addNotificationPermissionChangeListener(
+        onNotificationPermissionMayHaveChanged,
+      );
+      final localRemindersLifecycle = _PrelimsNotificationResumeObserver(
+        onResumed: onNotificationPermissionMayHaveChanged,
+      );
+      WidgetsBinding.instance.addObserver(localRemindersLifecycle);
       unawaited(trackPushNotificationStatusSnapshot(ref));
       unawaited(() async {
         try {
@@ -182,6 +201,10 @@ class _RootMaterialApp extends HookConsumerWidget {
       WidgetsBinding.instance.addObserver(analyticsLifecycle);
       return () {
         bindGlobalAnalytics(null);
+        BattleMessagingService.removeNotificationPermissionChangeListener(
+          onNotificationPermissionMayHaveChanged,
+        );
+        WidgetsBinding.instance.removeObserver(localRemindersLifecycle);
         WidgetsBinding.instance.removeObserver(analyticsLifecycle);
         unawaited(ShareDeepLinkService.dispose());
       };

@@ -22,6 +22,7 @@ import 'package:upsc_wars/features/memory_pairs/push/push_memory_pairs_fcm.dart'
 import 'package:upsc_wars/features/memory_pairs/push/push_memory_pairs_launch_params.dart';
 import 'package:upsc_wars/features/mini_games/push/push_revision_game_fcm.dart';
 import 'package:upsc_wars/features/mini_games/push/push_revision_game_launch_params.dart';
+import 'package:upsc_wars/features/fomo_pulse/fomo_pulse_fcm.dart';
 import 'package:upsc_wars/features/push_spot_test/push_spot_test_fcm.dart';
 import 'package:upsc_wars/features/push_spot_test/push_spot_test_launch_params.dart';
 import 'package:upsc_wars/features/notifications/long_html_notification_constants.dart';
@@ -168,6 +169,7 @@ class BattleMessagingService {
         });
       };
       await AppLocalNotificationsService.ensureInitialized();
+      await AppLocalNotificationsService.dispatchLaunchNotificationIfNeeded();
     }
 
     FcmTokenSyncService.ensureTokenRefreshSubscription();
@@ -248,6 +250,7 @@ class BattleMessagingService {
     final raw = message.data['kind']?.toString().trim().toLowerCase();
     if (raw == OpenChallengeFcm.kind) return 'open_challenge';
     if (raw == PushSpotTestFcm.kind) return PushSpotTestFcm.kind;
+    if (raw == FomoPulseFcm.kind) return FomoPulseFcm.kind;
     if (raw == PushMemoryPairsFcm.kind) return PushMemoryPairsFcm.kind;
     if (raw == PushRevisionGameFcm.kind) return PushRevisionGameFcm.kind;
     if (raw == DailyCaAdminConstants.fcmKind) return DailyCaAdminConstants.fcmKind;
@@ -352,6 +355,13 @@ class BattleMessagingService {
             queryParameters: params.toQueryParameters(),
           );
           router.go(uri.toString());
+        }
+        return;
+      }
+      if (ocKind == FomoPulseFcm.kind) {
+        final pulseId = FomoPulseFcm.pulseIdFromData(message.data);
+        if (pulseId != null && pulseId.isNotEmpty) {
+          router.go('/fomo-pulse/$pulseId');
         }
         return;
       }

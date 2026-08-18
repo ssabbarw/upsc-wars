@@ -336,6 +336,18 @@ service cloud.firestore {
       allow write: if false;
     }
 
+    /// Breaking-news Pulse MCQs — public read for signed-in users; server writes only.
+    match /fomo_pulses/{pulseId} {
+      allow read: if signedIn();
+      allow write: if false;
+    }
+
+    /// Per-user Pulse attempt index (one doc per uid). Server writes via callable.
+    match /fomo_pulse_user_state/{uid} {
+      allow read: if signedIn() && request.auth.uid == uid;
+      allow write: if false;
+    }
+
     function isAdminDashboardPath() {
       return request.path.matches(
         '/databases/' + database + '/documents/admin_dashboard(/.*)?'

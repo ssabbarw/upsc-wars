@@ -230,6 +230,12 @@ class AdminDashboardWriterService {
     }
   }
 
+  /// Pulse attempt after opening a push counts as notification conversion.
+  Future<void> recordFomoPulseEngagement() async {
+    if (!_collectionEnabled) return;
+    await _maybeRecordNotificationConversion(isTestConversion: true);
+  }
+
   Future<void> recordNotificationOpen({
     required String notificationId,
     required String kind,
@@ -272,7 +278,7 @@ class AdminDashboardWriterService {
     if (pending == null) return;
     final kind = pending.kind ?? '';
     final converts = switch (kind) {
-      'push_spot_test' || 'no_test_reminder' || 'daily_practice_reminder' =>
+      'push_spot_test' || 'fomo_pulse' || 'no_test_reminder' || 'daily_practice_reminder' =>
         isTestConversion,
       'memory_pairs' => isMemoryGameConversion,
       'battle_join' => isBattleConversion || isTestConversion,

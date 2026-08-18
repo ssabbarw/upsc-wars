@@ -74,6 +74,9 @@ import '../../features/results/screens/mistake_review_screen.dart';
 import '../../features/push_spot_test/push_spot_test_launch_params.dart';
 import '../../features/push_spot_test/screens/push_spot_results_screen.dart';
 import '../../features/push_spot_test/screens/push_spot_test_launch_screen.dart';
+import '../../features/fomo_pulse/screens/fomo_pulse_composer_screen.dart';
+import '../../features/fomo_pulse/screens/fomo_pulse_detail_screen.dart';
+import '../../features/fomo_pulse/screens/fomo_pulse_history_screen.dart';
 import '../../features/results/screens/results_screen.dart';
 import '../../features/memory_pairs/push/push_memory_pairs_launch_params.dart';
 import '../../features/memory_pairs/screens/memory_pairs_screen.dart';
@@ -452,6 +455,17 @@ GoRouter appRouter(Ref ref) {
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
+        path: '/internal/fomo-pulse-composer',
+        name: 'fomo_pulse_composer',
+        builder: (context, state) {
+          if (!isSuperUser) {
+            return const Scaffold(body: Center(child: Text('Not available')));
+          }
+          return const FomoPulseComposerScreen();
+        },
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
         path: '/internal/play-store-demo',
         name: 'play_store_demo',
         builder: (context, state) {
@@ -821,6 +835,22 @@ GoRouter appRouter(Ref ref) {
         builder: (context, state) => PushSpotTestLaunchScreen(
           params: PushSpotTestLaunchParams.fromQuery(state.uri.queryParameters),
         ),
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/fomo-pulse',
+        name: 'fomo_pulse_history',
+        builder: (context, state) => const FomoPulseHistoryScreen(),
+        routes: [
+          GoRoute(
+            parentNavigatorKey: rootNavigatorKey,
+            path: ':pulseId',
+            name: 'fomo_pulse_detail',
+            builder: (context, state) => FomoPulseDetailScreen(
+              pulseId: state.pathParameters['pulseId']!,
+            ),
+          ),
+        ],
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
