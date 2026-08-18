@@ -222,9 +222,14 @@ class FomoPulseArticleScreen extends HookConsumerWidget {
       sending.value = true;
       try {
         await FcmTokenSyncService.syncForCurrentUser();
+        // The draft can carry no image of its own (preview resolved after
+        // generation, or a saved draft predates it). Send the image the
+        // composer is actually showing.
         final updated = d.copyWith(
           notificationTitle: title,
           notificationBody: body,
+          imageUrl: imageUrl,
+          imageSource: imageSource,
         );
         final outcome = await ref.read(fomoPulsePushServiceProvider).send(
               updated,
@@ -247,6 +252,7 @@ class FomoPulseArticleScreen extends HookConsumerWidget {
             draftStore.updateStatus(
               AdminPulseDraft.idFromUrl(updated.sourceUrl),
               sentStatus,
+              draft: updated,
             ),
           );
           // Pre-cache the pulse so tapping the notification works offline.

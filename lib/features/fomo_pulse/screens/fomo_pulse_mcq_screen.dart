@@ -18,10 +18,9 @@ import '../widgets/fomo_pulse_question_block.dart';
 
 /// Full-screen MCQ experience for a Fomo Pulse.
 ///
-/// Flow:
-///   1. Question + options shown.
-///   2. User taps an option → confidence bottom sheet slides up.
-///   3. User picks confidence → attempt submitted → verdict + explanation revealed.
+/// The pulse carries its own answer key and explanation, so tapping an option
+/// reveals the verdict straight away and the attempt is reported in the
+/// background.
 class FomoPulseMcqScreen extends HookConsumerWidget {
   const FomoPulseMcqScreen({super.key, required this.pulseId});
 
@@ -88,73 +87,73 @@ class _McqBody extends HookConsumerWidget {
     final isHi = watchAppLanguage(ref) == 'hi';
     final question = pulse.question.localized(isHi);
 
-    final alreadyAttempted = existingAttempt?.attempted == true;
+    // Captured once: refreshing after a submit flips [existingAttempt] to
+    // attempted, which must not turn a fresh verdict into a review banner.
+    final attemptedOnOpen = useRef(existingAttempt?.attempted == true).value;
+    final openedAt = useMemoized(DateTime.now);
 
-    // If already attempted, skip straight to revealed state.
     final picked = useState<String?>(existingAttempt?.selectedOption);
-    final confidence = useState<String?>(null);
-    final submitting = useState(false);
-    final submitResult = useState<FomoPulseSubmitResult?>(null);
-    final startedAt = useState<DateTime?>(
-      alreadyAttempted ? DateTime.now() : null,
-    );
+    final serverStats = useState<FomoPulseCommunityStats?>(null);
 
-    final revealed = alreadyAttempted || submitResult.value != null;
-    final isCorrect =
-        submitResult.value?.isCorrect ?? existingAttempt?.isCorrect ?? false;
-    final stats = submitResult.value?.stats ??
+    final revealed = attemptedOnOpen || picked.value != null;
+    final selected = picked.value ?? '';
+    final isCorrect = selected.isEmpty
+        ? existingAttempt?.isCorrect ?? false
+        : selected.toLowerCase() == question.correctOption.toLowerCase();
+    final stats =
+        serverStats.value ??
         pulse.communityStats(minAttempts: FomoPulseConstants.minStatsAttempts);
 
-    Future<void> submit(String option, String conf) async {
-      if (submitting.value || revealed) return;
-      picked.value = option;
-      confidence.value = conf;
-      submitting.value = true;
-      final start = startedAt.value ?? DateTime.now();
-      final secs = DateTime.now().difference(start).inSeconds.clamp(1, 600);
+    /// Reports the attempt after the verdict is already on screen. Only the
+    /// community counters depend on the response, so a failure is silent.
+    Future<void> report(String option, bool wasCorrect) async {
+      final secs = DateTime.now().difference(openedAt).inSeconds.clamp(1, 600);
+      // Resolved up front: [ref] is unusable once this screen is popped.
+      final repo = ref.read(fomoPulseRepositoryProvider);
+      final cloud = ref.read(fomoPulseCloudServiceProvider);
+      final local = FomoPulseSubmitResult(
+        isCorrect: wasCorrect,
+        selectedOption: option,
+        correctOption: question.correctOption,
+        alreadyAttempted: false,
+        timeSpentSecs: secs,
+      );
+      // Persist first so the attempt survives with no connectivity.
+      await repo.recordLocalAttempt(
+        pulseId: pulse.pulseId,
+        result: local,
+        updateCommunityCounts: false,
+      );
       try {
-        final cloud = ref.read(fomoPulseCloudServiceProvider);
         final result = await cloud.submitAttempt(
           pulseId: pulse.pulseId,
           selectedOption: option,
           timeSpentSecs: secs,
         );
-        submitResult.value = result;
-        await ref.read(fomoPulseRepositoryProvider).recordLocalAttempt(
-              pulseId: pulse.pulseId,
-              result: result,
-            );
+        await repo.recordLocalAttempt(pulseId: pulse.pulseId, result: result);
         if (!result.alreadyAttempted) {
           unawaited(AdminDashboardWriterService().recordFomoPulseEngagement());
         }
+        if (!context.mounted) return;
+        if (result.stats != null) serverStats.value = result.stats;
         onSubmitted();
-      } catch (e) {
-        picked.value = null;
-        confidence.value = null;
-        if (context.mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('Submit failed: $e')),
-          );
-        }
-      } finally {
-        submitting.value = false;
+      } catch (_) {
+        // Verdict came from local data; community stats stay as cached.
       }
     }
 
-    Future<void> onOptionTapped(String option) async {
-      if (revealed || submitting.value) return;
-      // Start the timer on first tap.
-      startedAt.value ??= DateTime.now();
-
-      // Show confidence sheet; wait for result.
-      final conf = await showModalBottomSheet<String>(
-        context: context,
-        isDismissible: false,
-        enableDrag: false,
-        builder: (ctx) => _ConfidenceSheet(selectedOption: option),
+    void onOptionTapped(String option) {
+      // `picked.value` rather than `revealed` so a second tap arriving before
+      // the rebuild is still rejected.
+      if (revealed || picked.value != null) return;
+      // Grading only needs the pulse we already hold, so reveal immediately.
+      picked.value = option;
+      unawaited(
+        report(
+          option,
+          option.toLowerCase() == question.correctOption.toLowerCase(),
+        ),
       );
-      if (conf == null || !context.mounted) return;
-      await submit(option, conf);
     }
 
     return ListView(
@@ -169,26 +168,24 @@ class _McqBody extends HookConsumerWidget {
         FomoPulseQuestionBlock(
           question: question,
           picked: picked.value,
-          onPick: revealed ? (_) {} : (o) => unawaited(onOptionTapped(o)),
-          busy: submitting.value,
+          onPick: revealed ? (_) {} : onOptionTapped,
           revealCorrect: revealed,
         ),
 
         // ── Already attempted banner ──────────────────────────────────────
-        if (alreadyAttempted && submitResult.value == null) ...[
+        if (attemptedOnOpen) ...[
           const SizedBox(height: AppSpacing.lg),
-          _AlreadyAttemptedBanner(isCorrect: existingAttempt!.isCorrect),
+          _AlreadyAttemptedBanner(isCorrect: isCorrect),
         ],
 
-        // ── Verdict + explanation (after submit) ──────────────────────────
+        // ── Verdict + explanation ─────────────────────────────────────────
         if (revealed) ...[
           const SizedBox(height: AppSpacing.lg),
           _VerdictCard(
             isCorrect: isCorrect,
-            selectedOption: picked.value ?? existingAttempt?.selectedOption ?? '',
+            selectedOption: selected,
             correctOption: question.correctOption,
             question: question,
-            confidence: confidence.value,
           ),
           if (stats != null) ...[
             const SizedBox(height: AppSpacing.md),
@@ -208,10 +205,9 @@ class _McqBody extends HookConsumerWidget {
             Container(
               padding: const EdgeInsets.all(AppSpacing.md),
               decoration: BoxDecoration(
-                color: Theme.of(context)
-                    .colorScheme
-                    .surfaceContainerHighest
-                    .withValues(alpha: 0.5),
+                color: Theme.of(
+                  context,
+                ).colorScheme.surfaceContainerHighest.withValues(alpha: 0.5),
                 borderRadius: BorderRadius.circular(AppRadius.md),
               ),
               child: Text(
@@ -237,138 +233,6 @@ class _McqBody extends HookConsumerWidget {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Confidence bottom sheet
-// ─────────────────────────────────────────────────────────────────────────────
-
-class _ConfidenceSheet extends StatelessWidget {
-  const _ConfidenceSheet({required this.selectedOption});
-
-  final String selectedOption;
-
-  @override
-  Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-
-    return SafeArea(
-      child: Padding(
-        padding: const EdgeInsets.fromLTRB(
-          AppSpacing.lg,
-          AppSpacing.xl,
-          AppSpacing.lg,
-          AppSpacing.xxl,
-        ),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Text(
-              'How confident are you?',
-              style: AppTextStyles.h3().copyWith(fontWeight: FontWeight.w800),
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: AppSpacing.xs),
-            Text(
-              'You picked option ${selectedOption.toUpperCase()}',
-              style: AppTextStyles.bodySm().copyWith(
-                color: scheme.onSurfaceVariant,
-              ),
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: AppSpacing.xl),
-            _ConfidenceButton(
-              label: '✅  Sure — I know this',
-              sublabel: 'Confident in my answer',
-              accent: AppColors.correct,
-              textColor: isDark ? AppColors.correctTextDark : AppColors.correctText,
-              bgColor: isDark ? AppColors.correctBgDark : AppColors.correctBg,
-              onTap: () => Navigator.of(context).pop('very_sure'),
-            ),
-            const SizedBox(height: AppSpacing.md),
-            _ConfidenceButton(
-              label: '🤔  Educated guess',
-              sublabel: 'Mostly sure, not 100%',
-              accent: AppColors.warning,
-              textColor: isDark ? AppColors.warningTextDark : AppColors.warningText,
-              bgColor: isDark ? AppColors.warningBgDark : AppColors.warningBg,
-              onTap: () => Navigator.of(context).pop('somewhat_sure'),
-            ),
-            const SizedBox(height: AppSpacing.md),
-            _ConfidenceButton(
-              label: '🎲  Pure guess',
-              sublabel: 'Just taking a shot',
-              accent: AppColors.info,
-              textColor: isDark ? AppColors.infoTextDark : AppColors.infoText,
-              bgColor: isDark ? AppColors.infoBg : AppColors.infoBg,
-              onTap: () => Navigator.of(context).pop('guessing'),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class _ConfidenceButton extends StatelessWidget {
-  const _ConfidenceButton({
-    required this.label,
-    required this.sublabel,
-    required this.accent,
-    required this.textColor,
-    required this.bgColor,
-    required this.onTap,
-  });
-
-  final String label;
-  final String sublabel;
-  final Color accent;
-  final Color textColor;
-  final Color bgColor;
-  final VoidCallback onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    return Material(
-      color: bgColor,
-      borderRadius: BorderRadius.circular(AppRadius.md),
-      child: InkWell(
-        borderRadius: BorderRadius.circular(AppRadius.md),
-        onTap: onTap,
-        child: Container(
-          padding: const EdgeInsets.symmetric(
-            vertical: AppSpacing.md,
-            horizontal: AppSpacing.lg,
-          ),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(AppRadius.md),
-            border: Border.all(color: accent.withValues(alpha: 0.4)),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                label,
-                style: AppTextStyles.body().copyWith(
-                  color: textColor,
-                  fontWeight: FontWeight.w700,
-                ),
-              ),
-              const SizedBox(height: 2),
-              Text(
-                sublabel,
-                style: AppTextStyles.caption().copyWith(
-                  color: textColor.withValues(alpha: 0.8),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
 // Verdict card
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -378,21 +242,12 @@ class _VerdictCard extends StatelessWidget {
     required this.selectedOption,
     required this.correctOption,
     required this.question,
-    this.confidence,
   });
 
   final bool isCorrect;
   final String selectedOption;
   final String correctOption;
   final FomoPulseQuestion question;
-  final String? confidence;
-
-  String _confidenceLabel(String c) => switch (c) {
-        'very_sure' => 'Sure',
-        'somewhat_sure' => 'Educated guess',
-        'guessing' => 'Pure guess',
-        _ => c,
-      };
 
   @override
   Widget build(BuildContext context) {
@@ -437,32 +292,16 @@ class _VerdictCard extends StatelessWidget {
                   ),
                 ),
               ),
-              if (confidence != null)
-                Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: AppSpacing.sm,
-                    vertical: 2,
-                  ),
-                  decoration: BoxDecoration(
-                    color: accent.withValues(alpha: 0.15),
-                    borderRadius: BorderRadius.circular(AppRadius.sm),
-                  ),
-                  child: Text(
-                    _confidenceLabel(confidence!),
-                    style: AppTextStyles.caption().copyWith(
-                      color: accent,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ),
             ],
           ),
-          const SizedBox(height: AppSpacing.sm),
-          Text(
-            'Your answer: (${selectedOption.toUpperCase()}) '
-            '${question.optionText(selectedOption)}',
-            style: AppTextStyles.bodySm(),
-          ),
+          if (selectedOption.isNotEmpty) ...[
+            const SizedBox(height: AppSpacing.sm),
+            Text(
+              'Your answer: (${selectedOption.toUpperCase()}) '
+              '${question.optionText(selectedOption)}',
+              style: AppTextStyles.bodySm(),
+            ),
+          ],
           if (!isCorrect) ...[
             const SizedBox(height: AppSpacing.xs),
             Text(
@@ -504,11 +343,8 @@ class _AlreadyAttemptedBanner extends StatelessWidget {
         isCorrect
             ? '✅ You got this right previously.'
             : '❌ You attempted this before — review below.',
-        style: AppTextStyles.caption().copyWith(
-          color: scheme.onSurfaceVariant,
-        ),
+        style: AppTextStyles.caption().copyWith(color: scheme.onSurfaceVariant),
       ),
     );
   }
 }
-

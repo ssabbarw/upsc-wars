@@ -282,9 +282,13 @@ class FomoPulseRepository {
     return (pulse: pulse, attempt: cached.attempts[pulseId]);
   }
 
+  /// Set [updateCommunityCounts] to false for an optimistic write made before
+  /// the server round trip — the counters on [result] are locally guessed and
+  /// would overwrite the real ones.
   Future<void> recordLocalAttempt({
     required String pulseId,
     required FomoPulseSubmitResult result,
+    bool updateCommunityCounts = true,
   }) {
     return _cache.saveAttempt(
       pulseId: pulseId,
@@ -294,8 +298,8 @@ class FomoPulseRepository {
         selectedOption: result.selectedOption,
         timeSpentSecs: result.timeSpentSecs,
       ),
-      attemptCount: result.attemptCount,
-      correctCount: result.correctCount,
+      attemptCount: updateCommunityCounts ? result.attemptCount : null,
+      correctCount: updateCommunityCounts ? result.correctCount : null,
     );
   }
 

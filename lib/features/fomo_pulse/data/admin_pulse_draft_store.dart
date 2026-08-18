@@ -155,12 +155,17 @@ class AdminPulseDraftStore {
     );
   }
 
-  /// Update only the status of an existing draft.
-  Future<void> updateStatus(String id, AdminPulseDraftStatus status) async {
+  /// Update the status of an existing draft, optionally replacing its contents
+  /// with [draft] (e.g. edits made in the composer before sending).
+  Future<void> updateStatus(
+    String id,
+    AdminPulseDraftStatus status, {
+    FomoPulseDraft? draft,
+  }) async {
     final all = await loadAll();
     final idx = all.indexWhere((d) => d.id == id);
     if (idx < 0) return;
-    final updated = all[idx].copyWith(status: status);
+    final updated = all[idx].copyWith(status: status, draft: draft);
     await save(updated);
   }
 
