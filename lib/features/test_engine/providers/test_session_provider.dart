@@ -9,10 +9,9 @@ import 'package:upsc_wars/core/domain/entities/answer_confidence.dart';
 import 'package:upsc_wars/core/domain/entities/test_question.dart';
 import 'package:upsc_wars/core/providers/catalog_providers.dart';
 import 'package:upsc_wars/core/providers/prefs_provider.dart';
-import 'package:upsc_wars/features/test_engine/domain/confidence_prompt_policy.dart';
 import 'package:upsc_wars/core/router/app_router.dart';
 import 'package:upsc_wars/core/theme/app_text_styles.dart';
-import 'package:upsc_wars/features/fomo_pulse/data/fomo_pulse_test_session_launcher.dart';
+import 'package:upsc_wars/features/test_engine/domain/confidence_prompt_policy.dart';
 import 'package:upsc_wars/shared/widgets/top_snack_bar.dart';
 
 import 'test_session_state.dart';
@@ -174,12 +173,6 @@ class TestSessionNotifier extends _$TestSessionNotifier {
 
     // Learning: optional global toggle; then adaptive sheet or direct commit.
     if (!prefs.confidenceTrackingEnabled) {
-      await _commitSelectedOption(option, confidence: null);
-      return;
-    }
-
-    // FOMO pulse reuses learning-mode TestEngine UI but must reveal immediately.
-    if (s.analyticsFeatureKey == fomoPulseLearningAnalyticsKey) {
       await _commitSelectedOption(option, confidence: null);
       return;
     }

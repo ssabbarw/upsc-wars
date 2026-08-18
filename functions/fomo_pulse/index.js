@@ -310,6 +310,40 @@ function normalizePoints(raw) {
     .slice(0, 3);
 }
 
+function normalizeStringArray(raw, max = 6) {
+  if (!Array.isArray(raw)) return [];
+  return raw
+    .map((v) => String(v || "").trim())
+    .filter(Boolean)
+    .slice(0, max);
+}
+
+function normalizeStatementAnalysis(raw) {
+  if (!Array.isArray(raw)) return [];
+  const out = [];
+  for (const item of raw) {
+    if (!item || typeof item !== "object") continue;
+    const statement = String(item.statement || item.label || "").trim();
+    const reason = String(item.reason || "").trim();
+    const verdict = item.is_correct ?? item.correct ?? item.verdict;
+    const isCorrect =
+      verdict === true ||
+      String(verdict || "")
+        .trim()
+        .toLowerCase() === "true" ||
+      String(verdict || "")
+        .trim()
+        .toLowerCase() === "correct";
+    if (!statement && !reason) continue;
+    out.push({
+      statement,
+      is_correct: isCorrect,
+      reason,
+    });
+  }
+  return out.slice(0, 8);
+}
+
 function questionPreview(en) {
   const display = (en.display_text || "").toString().trim();
   if (display) return display.slice(0, 200);
@@ -373,6 +407,10 @@ function normalizeQuestion(raw, fallbackUrl) {
     meta.source_url = fallbackUrl;
   }
   const hi = q.hi && typeof q.hi === "object" ? q.hi : null;
+  const strongDistractor = String(en.strong_distractor || "").trim();
+  const eliminationLogic = normalizeStringArray(en.elimination_logic, 6);
+  const trapExplanation = String(en.upsc_trap_explanation || "").trim();
+  const statementAnalysis = normalizeStatementAnalysis(en.statement_analysis);
   return {
     en: {
       display_text: display,
@@ -380,14 +418,28 @@ function normalizeQuestion(raw, fallbackUrl) {
       option_b: opts[1],
       option_c: opts[2],
       option_d: opts[3],
+      strong_distractor: strongDistractor,
+      elimination_logic: eliminationLogic,
+      upsc_trap_explanation: trapExplanation,
+      statement_analysis: statementAnalysis,
       final_explanation: (en.final_explanation || "").toString().trim(),
     },
     shared: {
       correct_option: correct,
-      question_type: (shared.question_type || "direct").toString(),
+      question_type: (shared.question_type || "direct").toString().trim() || "direct",
     },
     meta,
-    ...(hi ? { hi } : {}),
+    ...(hi
+      ? {
+          hi: {
+            ...hi,
+            strong_distractor: String(hi.strong_distractor || "").trim(),
+            elimination_logic: normalizeStringArray(hi.elimination_logic, 6),
+            upsc_trap_explanation: String(hi.upsc_trap_explanation || "").trim(),
+            statement_analysis: normalizeStatementAnalysis(hi.statement_analysis),
+          },
+        }
+      : {}),
   };
 }
 
@@ -653,6 +705,10 @@ exports.translateFomoPulseDraft = onCall(generateOpts, async (request) => {
     option_b: String(hi.option_b || "").trim(),
     option_c: String(hi.option_c || "").trim(),
     option_d: String(hi.option_d || "").trim(),
+    strong_distractor: String(hi.strong_distractor || "").trim(),
+    elimination_logic: normalizeStringArray(hi.elimination_logic, 6),
+    upsc_trap_explanation: String(hi.upsc_trap_explanation || "").trim(),
+    statement_analysis: normalizeStatementAnalysis(hi.statement_analysis),
     final_explanation: String(hi.final_explanation || "").trim(),
   };
   return {

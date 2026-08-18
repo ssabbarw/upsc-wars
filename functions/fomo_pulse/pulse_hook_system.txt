@@ -5,8 +5,8 @@ Given an existing MCQ and its news context, return JSON only (no markdown fences
 {
   "notification_title": "≤50 chars curiosity hook",
   "notification_body": "≤120 chars stakes/subtext",
-  "news_summary": "2-3 sentences: what happened + why it matters for UPSC. Reuse provided news_summary if it already does this.",
-  "upsc_points": ["1-2 short syllabus facts a Prelims aspirant must lock"]
+  "news_summary": "Structured short briefing with: (1) what happened, (2) UPSC relevance, (3) topics to learn from this news.",
+  "upsc_points": ["2-3 likely UPSC question angles from this news topic"]
 }
 
 Rules:
@@ -14,4 +14,5 @@ Rules:
 - Body creates urgency to tap — no fake stats or lies.
 - Match the tone of serious UPSC aspirants, not tabloid clickbait.
 - Never invent facts. If context is too thin, set "error" instead.
-- upsc_points must be syllabus facts, not the MCQ answer.
+- news_summary must explicitly mention UPSC relevance and include learnable topics.
+- upsc_points must be probable question areas (2-3), not the MCQ answer.

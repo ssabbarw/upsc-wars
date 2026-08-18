@@ -64,12 +64,12 @@ class FomoPulseArticleArgs {
   const FomoPulseArticleArgs.harvest({
     required this.draftDate,
     required this.candidate,
-  })  : url = null,
-        savedDraft = null;
+  }) : url = null,
+       savedDraft = null;
 
   const FomoPulseArticleArgs.url({required this.url, this.savedDraft})
-      : draftDate = null,
-        candidate = null;
+    : draftDate = null,
+      candidate = null;
 
   final String? draftDate;
   final FomoPulseHarvestCandidate? candidate;
@@ -95,6 +95,11 @@ class FomoPulseQuestion {
     required this.optionC,
     required this.optionD,
     required this.correctOption,
+    this.questionType = 'direct',
+    this.strongDistractor = '',
+    this.eliminationLogic = const [],
+    this.upscTrapExplanation = '',
+    this.statementAnalysis = const [],
     required this.finalExplanation,
     required this.gsSubject,
     required this.topic,
@@ -104,6 +109,10 @@ class FomoPulseQuestion {
     this.optionBHi = '',
     this.optionCHi = '',
     this.optionDHi = '',
+    this.strongDistractorHi = '',
+    this.eliminationLogicHi = const [],
+    this.upscTrapExplanationHi = '',
+    this.statementAnalysisHi = const [],
     this.finalExplanationHi = '',
   });
 
@@ -113,6 +122,11 @@ class FomoPulseQuestion {
   final String optionC;
   final String optionD;
   final String correctOption;
+  final String questionType;
+  final String strongDistractor;
+  final List<String> eliminationLogic;
+  final String upscTrapExplanation;
+  final List<FomoPulseStatementAnalysisItem> statementAnalysis;
   final String finalExplanation;
   final String gsSubject;
   final String topic;
@@ -122,6 +136,10 @@ class FomoPulseQuestion {
   final String optionBHi;
   final String optionCHi;
   final String optionDHi;
+  final String strongDistractorHi;
+  final List<String> eliminationLogicHi;
+  final String upscTrapExplanationHi;
+  final List<FomoPulseStatementAnalysisItem> statementAnalysisHi;
   final String finalExplanationHi;
 
   bool get hasHindi => displayTextHi.trim().isNotEmpty;
@@ -134,6 +152,18 @@ class FomoPulseQuestion {
       optionB: optionBHi.isNotEmpty ? optionBHi : optionB,
       optionC: optionCHi.isNotEmpty ? optionCHi : optionC,
       optionD: optionDHi.isNotEmpty ? optionDHi : optionD,
+      strongDistractor: strongDistractorHi.isNotEmpty
+          ? strongDistractorHi
+          : strongDistractor,
+      eliminationLogic: eliminationLogicHi.isNotEmpty
+          ? eliminationLogicHi
+          : eliminationLogic,
+      upscTrapExplanation: upscTrapExplanationHi.isNotEmpty
+          ? upscTrapExplanationHi
+          : upscTrapExplanation,
+      statementAnalysis: statementAnalysisHi.isNotEmpty
+          ? statementAnalysisHi
+          : statementAnalysis,
       finalExplanation: finalExplanationHi.isNotEmpty
           ? finalExplanationHi
           : finalExplanation,
@@ -147,6 +177,11 @@ class FomoPulseQuestion {
     String? optionC,
     String? optionD,
     String? correctOption,
+    String? questionType,
+    String? strongDistractor,
+    List<String>? eliminationLogic,
+    String? upscTrapExplanation,
+    List<FomoPulseStatementAnalysisItem>? statementAnalysis,
     String? finalExplanation,
     String? gsSubject,
     String? topic,
@@ -156,6 +191,10 @@ class FomoPulseQuestion {
     String? optionBHi,
     String? optionCHi,
     String? optionDHi,
+    String? strongDistractorHi,
+    List<String>? eliminationLogicHi,
+    String? upscTrapExplanationHi,
+    List<FomoPulseStatementAnalysisItem>? statementAnalysisHi,
     String? finalExplanationHi,
   }) {
     return FomoPulseQuestion(
@@ -165,6 +204,11 @@ class FomoPulseQuestion {
       optionC: optionC ?? this.optionC,
       optionD: optionD ?? this.optionD,
       correctOption: correctOption ?? this.correctOption,
+      questionType: questionType ?? this.questionType,
+      strongDistractor: strongDistractor ?? this.strongDistractor,
+      eliminationLogic: eliminationLogic ?? this.eliminationLogic,
+      upscTrapExplanation: upscTrapExplanation ?? this.upscTrapExplanation,
+      statementAnalysis: statementAnalysis ?? this.statementAnalysis,
       finalExplanation: finalExplanation ?? this.finalExplanation,
       gsSubject: gsSubject ?? this.gsSubject,
       topic: topic ?? this.topic,
@@ -174,6 +218,11 @@ class FomoPulseQuestion {
       optionBHi: optionBHi ?? this.optionBHi,
       optionCHi: optionCHi ?? this.optionCHi,
       optionDHi: optionDHi ?? this.optionDHi,
+      strongDistractorHi: strongDistractorHi ?? this.strongDistractorHi,
+      eliminationLogicHi: eliminationLogicHi ?? this.eliminationLogicHi,
+      upscTrapExplanationHi:
+          upscTrapExplanationHi ?? this.upscTrapExplanationHi,
+      statementAnalysisHi: statementAnalysisHi ?? this.statementAnalysisHi,
       finalExplanationHi: finalExplanationHi ?? this.finalExplanationHi,
     );
   }
@@ -199,6 +248,11 @@ class FomoPulseQuestion {
       optionC: (en['option_c'] ?? '').toString(),
       optionD: (en['option_d'] ?? '').toString(),
       correctOption: (shared['correct_option'] ?? 'a').toString(),
+      questionType: (shared['question_type'] ?? 'direct').toString(),
+      strongDistractor: (en['strong_distractor'] ?? '').toString(),
+      eliminationLogic: _stringList(en['elimination_logic']),
+      upscTrapExplanation: (en['upsc_trap_explanation'] ?? '').toString(),
+      statementAnalysis: _analysisList(en['statement_analysis']),
       finalExplanation: (en['final_explanation'] ?? '').toString(),
       gsSubject: (meta['gs_subject'] ?? '').toString(),
       topic: (meta['topic'] ?? '').toString(),
@@ -208,6 +262,10 @@ class FomoPulseQuestion {
       optionBHi: (hi['option_b'] ?? '').toString(),
       optionCHi: (hi['option_c'] ?? '').toString(),
       optionDHi: (hi['option_d'] ?? '').toString(),
+      strongDistractorHi: (hi['strong_distractor'] ?? '').toString(),
+      eliminationLogicHi: _stringList(hi['elimination_logic']),
+      upscTrapExplanationHi: (hi['upsc_trap_explanation'] ?? '').toString(),
+      statementAnalysisHi: _analysisList(hi['statement_analysis']),
       finalExplanationHi: (hi['final_explanation'] ?? '').toString(),
     );
   }
@@ -220,13 +278,17 @@ class FomoPulseQuestion {
         'option_b': optionB,
         'option_c': optionC,
         'option_d': optionD,
+        'strong_distractor': strongDistractor,
+        'elimination_logic': eliminationLogic,
+        'upsc_trap_explanation': upscTrapExplanation,
+        'statement_analysis': [for (final s in statementAnalysis) s.toMap()],
         'final_explanation': finalExplanation,
       },
       'shared': {
         'correct_option': correctOption.toLowerCase().trim().isEmpty
             ? 'a'
             : correctOption.toLowerCase().trim().substring(0, 1),
-        'question_type': 'direct',
+        'question_type': questionType.trim().isEmpty ? 'direct' : questionType,
       },
       'meta': {
         'gs_subject': gsSubject,
@@ -240,9 +302,34 @@ class FomoPulseQuestion {
           'option_b': optionBHi,
           'option_c': optionCHi,
           'option_d': optionDHi,
+          'strong_distractor': strongDistractorHi,
+          'elimination_logic': eliminationLogicHi,
+          'upsc_trap_explanation': upscTrapExplanationHi,
+          'statement_analysis': [
+            for (final s in statementAnalysisHi) s.toMap(),
+          ],
           'final_explanation': finalExplanationHi,
         },
     };
+  }
+
+  static List<String> _stringList(dynamic raw) {
+    if (raw is! List) return const [];
+    return [
+      for (final v in raw)
+        if (v.toString().trim().isNotEmpty) v.toString().trim(),
+    ];
+  }
+
+  static List<FomoPulseStatementAnalysisItem> _analysisList(dynamic raw) {
+    if (raw is! List) return const [];
+    return [
+      for (final item in raw)
+        if (item is Map)
+          FomoPulseStatementAnalysisItem.fromMap(
+            Map<String, dynamic>.from(item),
+          ),
+    ];
   }
 
   String optionText(String letter) {
@@ -259,6 +346,37 @@ class FomoPulseQuestion {
         return '';
     }
   }
+}
+
+class FomoPulseStatementAnalysisItem {
+  const FomoPulseStatementAnalysisItem({
+    required this.statement,
+    required this.isCorrect,
+    required this.reason,
+  });
+
+  final String statement;
+  final bool isCorrect;
+  final String reason;
+
+  factory FomoPulseStatementAnalysisItem.fromMap(Map<String, dynamic> map) {
+    final verdict = map['is_correct'] ?? map['correct'] ?? map['verdict'];
+    final normalized =
+        verdict == true ||
+        verdict.toString().trim().toLowerCase() == 'true' ||
+        verdict.toString().trim().toLowerCase() == 'correct';
+    return FomoPulseStatementAnalysisItem(
+      statement: (map['statement'] ?? map['label'] ?? '').toString(),
+      isCorrect: normalized,
+      reason: (map['reason'] ?? '').toString(),
+    );
+  }
+
+  Map<String, dynamic> toMap() => {
+    'statement': statement,
+    'is_correct': isCorrect,
+    'reason': reason,
+  };
 }
 
 class FomoPulseDraft {
@@ -360,10 +478,10 @@ class FomoPulseAttemptState {
   final int? timeSpentSecs;
 
   Map<String, dynamic> toCompactMap() => {
-        'c': isCorrect,
-        'o': selectedOption,
-        't': timeSpentSecs,
-      };
+    'c': isCorrect,
+    'o': selectedOption,
+    't': timeSpentSecs,
+  };
 
   factory FomoPulseAttemptState.fromCompactMap(Map<String, dynamic>? map) {
     if (map == null || map.isEmpty) {
@@ -389,8 +507,7 @@ class FomoPulseCommunityStats {
 
   int get fellPct => (100 - correctPct).clamp(0, 100);
 
-  String get trapLine =>
-      '$attemptCount attempted · $fellPct% fell for it';
+  String get trapLine => '$attemptCount attempted · $fellPct% fell for it';
 
   String get challengeLine => '$trapLine. Can you?';
 }
@@ -476,10 +593,7 @@ class FomoPulse {
     final pct = attemptCount == 0
         ? 0
         : ((correctCount / attemptCount) * 100).round();
-    return FomoPulseCommunityStats(
-      attemptCount: attemptCount,
-      correctPct: pct,
-    );
+    return FomoPulseCommunityStats(attemptCount: attemptCount, correctPct: pct);
   }
 
   factory FomoPulse.fromFirestore(String id, Map<String, dynamic> data) {

@@ -5,6 +5,11 @@ Translate into Hindi for UPSC aspirants.
 ## TRANSLATE
 - display_text
 - option_a, option_b, option_c, option_d
+- strong_distractor
+- elimination_logic (each array item)
+- upsc_trap_explanation
+- statement_analysis[*].statement
+- statement_analysis[*].reason
 - final_explanation
 - news_summary (if present)
 - upsc_points (array of strings, if present)
@@ -22,9 +27,16 @@ A single JSON object. No markdown fences.
   "option_b": "...",
   "option_c": "...",
   "option_d": "...",
+  "strong_distractor": "...",
+  "elimination_logic": ["..."],
+  "upsc_trap_explanation": "...",
+  "statement_analysis": [
+    { "statement": "...", "is_correct": true, "reason": "..." }
+  ],
   "final_explanation": "...",
   "news_summary": "...",
   "upsc_points": ["..."]
 }
 
 If news_summary or upsc_points were missing in input, omit them.
+Keep statement_analysis[*].is_correct as boolean values (do not translate true/false).

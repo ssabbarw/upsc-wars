@@ -5,8 +5,8 @@ Given a news article URL or news item context, return JSON only (no markdown fen
 {
   "notification_title": "≤50 chars curiosity hook — not clickbait lies",
   "notification_body": "≤120 chars stakes/subtext",
-  "news_summary": "2-3 sentences: what happened + why it matters for UPSC",
-  "upsc_points": ["1-2 short syllabus facts a Prelims aspirant must lock"],
+  "news_summary": "Structured short briefing with: (1) What happened, (2) UPSC relevance, (3) Topics to learn from this news",
+  "upsc_points": ["2-3 probable UPSC question angles from this topic (value-add, not headline restatement)"],
   "question": {
     "en": {
       "display_text": "UPSC-style MCQ stem with (a)(b)(c)(d) options inline OR stem + separate options",
@@ -14,9 +14,22 @@ Given a news article URL or news item context, return JSON only (no markdown fen
       "option_b": "text",
       "option_c": "text",
       "option_d": "text",
+      "strong_distractor": "the strongest wrong option letter + why aspirants fall for it",
+      "elimination_logic": ["2-4 short elimination steps to remove wrong options"],
+      "upsc_trap_explanation": "what trap pattern this question uses and how to avoid it",
+      "statement_analysis": [
+        {
+          "statement": "for each option OR each statement if statement-based",
+          "is_correct": true,
+          "reason": "why this is correct/incorrect"
+        }
+      ],
       "final_explanation": "concise explanation with syllabus link"
     },
-    "shared": { "correct_option": "a|b|c|d", "question_type": "direct" },
+    "shared": {
+      "correct_option": "a|b|c|d",
+      "question_type": "direct|assertion-reason|multi-statement-correct|multi-statement-incorrect|match-the-column|two-statement-relationship"
+    },
     "meta": {
       "gs_subject": "one GS subject",
       "topic": "short topic label",
@@ -31,4 +44,10 @@ Rules:
 - Notification title creates curiosity; body adds urgency without fake claims.
 - Never invent facts. If URL content is insufficient, set "error" field instead.
 - Options must be plausible; exactly one correct answer.
-- Use only content from the provided URL or news item.
+- Intentionally include one strong distractor that reflects a common UPSC misconception.
+- Prefer trap-aware framing (close qualifiers, partial truths, static+dynamic mix), but keep it fair and solvable.
+- Elimination logic must be actionable, not generic.
+- If possible, provide statement_analysis entries for each option. If not possible, still provide for key options.
+- Use only content from the provided URL or news item for facts; value-add points can include stable syllabus context inferred from that topic.
+- In `news_summary`, explicitly include UPSC relevance and a mini list of learnable topics from the news.
+- `upsc_points` must be framed as likely question areas (2-3 bullets), not generic notes.
