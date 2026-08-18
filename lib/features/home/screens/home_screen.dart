@@ -23,8 +23,6 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
-import '../../../core/analytics/analytics.dart';
-import '../../../core/analytics/analytics_events.dart';
 import '../../../core/providers/super_user_provider.dart';
 import '../../admin_dashboard/admin_dashboard_access.dart';
 import '../providers/auth_providers.dart';
@@ -1268,16 +1266,10 @@ class _QuickPracticeSection extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final revisionCount = ref.watch(activeRevisionQueueCountProvider);
     final bookmarkCount = ref.watch(bookmarkCountStreamProvider);
-
-    final revN = revisionCount.asData?.value ?? 0;
     final bmN = bookmarkCount.asData?.value ?? 0;
 
-    final showRevision = revN >= 3;
-    final showBookmarks = bmN >= 3;
-
-    if (!showRevision && !showBookmarks) return const SizedBox.shrink();
+    if (bmN < 3) return const SizedBox.shrink();
 
     final scheme = Theme.of(context).colorScheme;
 
@@ -1291,30 +1283,15 @@ class _QuickPracticeSection extends HookConsumerWidget {
           ),
         ),
         const SizedBox(height: AppSpacing.sm),
-        if (showRevision) ...[
-          _QuickPracticeCard(
-            title: 'Revise Incorrects',
-            subtitle: 'Unmastered questions',
-            count: revN,
-            icon: Icons.replay_outlined,
-            color: AppColors.wrong,
-            borderColor: borderColor,
-            subject: 'revision_quick',
-          ),
-        ],
-        if (showRevision && showBookmarks)
-          const SizedBox(height: AppSpacing.sm),
-        if (showBookmarks) ...[
-          _QuickPracticeCard(
-            title: 'Bookmarked Questions',
-            subtitle: 'Questions you saved',
-            count: bmN,
-            icon: Icons.bookmark_outline,
-            color: AppColors.info,
-            borderColor: borderColor,
-            subject: 'bookmarks',
-          ),
-        ],
+        _QuickPracticeCard(
+          title: 'Bookmarked Questions',
+          subtitle: 'Questions you saved',
+          count: bmN,
+          icon: Icons.bookmark_outline,
+          color: AppColors.info,
+          borderColor: borderColor,
+          subject: 'bookmarks',
+        ),
       ],
     );
   }
@@ -1355,17 +1332,6 @@ class _QuickPracticeCard extends HookConsumerWidget {
     Future<void> startSession() async {
       if (loading.value) return;
       if (!context.mounted) return;
-
-      if (subject == 'revision_quick' || subject == 'revision') {
-        unawaited(
-          Analytics.track(
-            ref,
-            const RevisionRecommendationClickedEvent(
-              source: 'home_quick_practice',
-            ),
-          ),
-        );
-      }
 
       final mode = await showQuickPracticeModeSheet(context);
       if (mode == null) return;
