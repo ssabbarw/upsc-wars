@@ -12,6 +12,7 @@ import 'package:upsc_wars/core/analytics/analytics_events.dart';
 import 'package:upsc_wars/core/analytics/analytics_global_dispatch.dart';
 import 'package:upsc_wars/core/analytics/session_entry_source.dart';
 import 'package:upsc_wars/core/debug/cursor_debug_log.dart';
+import 'package:upsc_wars/core/debug/upsc_wars_trace.dart';
 import 'package:upsc_wars/core/router/app_router.dart';
 import 'package:upsc_wars/core/services/app_local_notifications_service.dart';
 import 'package:upsc_wars/core/services/fcm_token_sync_service.dart';
@@ -144,6 +145,18 @@ class BattleMessagingService {
           r.go('/daily-drill/start');
         });
       };
+      AppLocalNotificationsService.onFomoPulseLocalTap = (pulseId) {
+        SessionEntrySource.capture(
+          SessionEntrySource.push,
+          detail: FomoPulseFcm.kind,
+        );
+        PendingNotificationConversion.captureFromLocalKind(FomoPulseFcm.kind);
+        logGlobalAnalytics(
+          const AppNotificationOpenEvent(channel: 'local', kind: 'fomo_pulse'),
+        );
+        _navigateToPulse(pulseId);
+      };
+      AppLocalNotificationsService.consumePendingFomoPulseTap();
       AppLocalNotificationsService.onDailyCaPaperReminderTap = () {
         SessionEntrySource.capture(
           SessionEntrySource.push,
@@ -185,6 +198,9 @@ class BattleMessagingService {
     if (initial != null) {
       _scheduleNavigateFromOpenedNotification(router, initial, channel: 'fcm');
     }
+
+    // A local-notification tap can land before the router was assigned.
+    _consumePendingPulseNavigation();
   }
 
   static void _onForegroundMessage(RemoteMessage message) {
@@ -230,6 +246,23 @@ class BattleMessagingService {
       return;
     }
 
+    // Fomo Pulse: always show a real system notification so it appears in the
+    // tray even when the app is in the foreground (easier to test & more natural).
+    if (kind == FomoPulseFcm.kind) {
+      final pulseId = FomoPulseFcm.pulseIdFromData(message.data);
+      upscWarsTrace('FomoPulse foreground message pulseId=$pulseId');
+      if (pulseId != null && pulseId.isNotEmpty) {
+        unawaited(
+          AppLocalNotificationsService.showForegroundFomoPulse(
+            title: resolvedTitle,
+            body: resolvedBody,
+            pulseId: pulseId,
+          ),
+        );
+        return;
+      }
+    }
+
     final ctx = rootNavigatorKey.currentContext;
     if (ctx == null || !ctx.mounted) return;
     AppToast.showText(
@@ -237,6 +270,32 @@ class BattleMessagingService {
       '$resolvedTitle\n$resolvedBody',
       duration: const Duration(seconds: 6),
     );
+  }
+
+  /// Pulse tap that arrived before [_router] was available (cold start).
+  static String? _pendingPulseId;
+
+  /// Navigate to a Fomo Pulse detail screen. Works whether called from a
+  /// local notification tap (foreground) or an FCM background tap.
+  ///
+  /// Callers may already be inside a post-frame callback, so navigate directly
+  /// rather than deferring another frame (an idle engine may never render one).
+  static void _navigateToPulse(String pulseId) {
+    final r = _router;
+    if (r == null) {
+      upscWarsTrace('FomoPulse nav deferred: router not ready id=$pulseId');
+      _pendingPulseId = pulseId;
+      return;
+    }
+    upscWarsTrace('FomoPulse nav -> /fomo-pulse/$pulseId');
+    r.go('/fomo-pulse/$pulseId');
+  }
+
+  static void _consumePendingPulseNavigation() {
+    final id = _pendingPulseId;
+    if (id == null) return;
+    _pendingPulseId = null;
+    _navigateToPulse(id);
   }
 
   static void _handleDataMessage(RemoteMessage message) {
@@ -361,7 +420,7 @@ class BattleMessagingService {
       if (ocKind == FomoPulseFcm.kind) {
         final pulseId = FomoPulseFcm.pulseIdFromData(message.data);
         if (pulseId != null && pulseId.isNotEmpty) {
-          router.go('/fomo-pulse/$pulseId');
+          _navigateToPulse(pulseId);
         }
         return;
       }

@@ -79,6 +79,7 @@ import '../../features/fomo_pulse/screens/fomo_pulse_article_screen.dart';
 import '../../features/fomo_pulse/screens/fomo_pulse_composer_screen.dart';
 import '../../features/fomo_pulse/screens/fomo_pulse_detail_screen.dart';
 import '../../features/fomo_pulse/screens/fomo_pulse_history_screen.dart';
+import '../../features/fomo_pulse/screens/fomo_pulse_mcq_screen.dart';
 import '../../features/results/screens/results_screen.dart';
 import '../../features/memory_pairs/push/push_memory_pairs_launch_params.dart';
 import '../../features/memory_pairs/screens/memory_pairs_screen.dart';
@@ -916,6 +917,16 @@ GoRouter appRouter(Ref ref) {
             builder: (context, state) => FomoPulseDetailScreen(
               pulseId: state.pathParameters['pulseId']!,
             ),
+            routes: [
+              GoRoute(
+                parentNavigatorKey: rootNavigatorKey,
+                path: 'mcq',
+                name: 'fomo_pulse_mcq',
+                builder: (context, state) => FomoPulseMcqScreen(
+                  pulseId: state.pathParameters['pulseId']!,
+                ),
+              ),
+            ],
           ),
         ],
       ),

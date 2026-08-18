@@ -1,15 +1,11 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../../core/admin_dashboard/admin_dashboard_service.dart';
 import '../../../core/providers/app_language_helpers.dart';
-import '../../../core/theme/app_colors.dart';
-import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../data/fomo_pulse_share.dart';
@@ -17,7 +13,6 @@ import '../domain/fomo_pulse_models.dart';
 import '../fomo_pulse_constants.dart';
 import '../providers/fomo_pulse_providers.dart';
 import '../widgets/fomo_pulse_hero_image.dart';
-import '../widgets/fomo_pulse_question_block.dart';
 
 class FomoPulseDetailScreen extends HookConsumerWidget {
   const FomoPulseDetailScreen({super.key, required this.pulseId});
@@ -84,10 +79,6 @@ class FomoPulseDetailScreen extends HookConsumerWidget {
         data: (data) => _PulseBody(
           pulse: data.pulse,
           attempt: data.attempt,
-          onSubmitted: () {
-            ref.invalidate(fomoPulseDetailProvider(pulseId));
-            ref.invalidate(fomoPulseHistoryProvider);
-          },
         ),
       ),
     );
@@ -98,25 +89,17 @@ class _PulseBody extends HookConsumerWidget {
   const _PulseBody({
     required this.pulse,
     required this.attempt,
-    required this.onSubmitted,
   });
 
   final FomoPulse pulse;
   final FomoPulseAttemptState? attempt;
-  final VoidCallback onSubmitted;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
-    final picked = useState<String?>(attempt?.selectedOption);
-    final submitting = useState(false);
-    final submitResult = useState<FomoPulseSubmitResult?>(null);
-    final showMcq = useState(attempt?.attempted == true);
-    final mcqStartedAt = useState<DateTime?>(null);
     final alreadyAttempted = attempt?.attempted == true;
 
     final isHi = watchAppLanguage(ref) == 'hi';
-    final question = pulse.question.localized(isHi);
     final summary = isHi && pulse.newsSummaryHi.trim().isNotEmpty
         ? pulse.newsSummaryHi
         : pulse.newsSummary;
@@ -124,45 +107,9 @@ class _PulseBody extends HookConsumerWidget {
         ? pulse.upscPointsHi
         : pulse.upscPoints;
 
-    final revealed = alreadyAttempted || submitResult.value != null;
-    final isCorrect =
-        submitResult.value?.isCorrect ?? attempt?.isCorrect ?? false;
-    final stats = submitResult.value?.stats ??
-        pulse.communityStats(minAttempts: FomoPulseConstants.minStatsAttempts);
-
-    Future<void> submit(String option) async {
-      if (submitting.value || revealed) return;
-      picked.value = option;
-      submitting.value = true;
-      final start = mcqStartedAt.value ?? DateTime.now();
-      final secs = DateTime.now().difference(start).inSeconds.clamp(1, 600);
-      try {
-        final cloud = ref.read(fomoPulseCloudServiceProvider);
-        final result = await cloud.submitAttempt(
-          pulseId: pulse.pulseId,
-          selectedOption: option,
-          timeSpentSecs: secs,
-        );
-        submitResult.value = result;
-        await ref.read(fomoPulseRepositoryProvider).recordLocalAttempt(
-              pulseId: pulse.pulseId,
-              result: result,
-            );
-        if (!result.alreadyAttempted) {
-          unawaited(AdminDashboardWriterService().recordFomoPulseEngagement());
-        }
-        onSubmitted();
-      } catch (e) {
-        picked.value = null;
-        if (context.mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('Submit failed: $e')),
-          );
-        }
-      } finally {
-        submitting.value = false;
-      }
-    }
+    final stats = pulse.communityStats(
+      minAttempts: FomoPulseConstants.minStatsAttempts,
+    );
 
     return ListView(
       padding: const EdgeInsets.all(AppSpacing.lg),
@@ -204,7 +151,7 @@ class _PulseBody extends HookConsumerWidget {
             ),
           ),
         ],
-        if (stats != null && !revealed) ...[
+        if (stats != null && !alreadyAttempted) ...[
           const SizedBox(height: AppSpacing.md),
           Text(
             stats.challengeLine,
@@ -212,83 +159,33 @@ class _PulseBody extends HookConsumerWidget {
           ),
         ],
         const SizedBox(height: AppSpacing.lg),
-        if (pulse.isExpired && !revealed)
+        if (pulse.isExpired && !alreadyAttempted)
           Text(
             'This Pulse has expired.',
             style: AppTextStyles.label().copyWith(color: scheme.error),
           )
-        else if (!showMcq.value) ...[
+        else ...[
           FilledButton(
-            onPressed: () {
-              showMcq.value = true;
-              mcqStartedAt.value = DateTime.now();
-            },
-            child: const Text('Attempt the MCQ'),
+            onPressed: () => context.push('/fomo-pulse/${pulse.pulseId}/mcq'),
+            child: Text(
+              alreadyAttempted ? 'Review your answer' : 'Attempt the MCQ',
+            ),
           ),
           const SizedBox(height: AppSpacing.sm),
           Text(
-            '1 question · about 30 seconds',
+            alreadyAttempted
+                ? 'See your result and explanation'
+                : '1 question · about 30 seconds',
             textAlign: TextAlign.center,
             style: AppTextStyles.caption().copyWith(
               color: scheme.onSurfaceVariant,
             ),
           ),
-        ] else ...[
-          FomoPulseQuestionBlock(
-            question: question,
-            picked: picked.value,
-            onPick: revealed ? (_) {} : (o) => unawaited(submit(o)),
-            busy: submitting.value,
-            revealCorrect: revealed,
-          ),
-        ],
-        if (revealed) ...[
-          const SizedBox(height: AppSpacing.lg),
-          _VerdictCard(
-            isCorrect: isCorrect,
-            selectedOption: picked.value ?? attempt?.selectedOption ?? '',
-            correctOption: question.correctOption,
-            question: question,
-          ),
-          if (stats != null) ...[
-            const SizedBox(height: AppSpacing.md),
-            Center(
-              child: Text(
-                stats.trapLine,
-                style: AppTextStyles.caption().copyWith(
-                  color: scheme.onSurfaceVariant,
-                ),
-              ),
-            ),
-          ],
-          if (question.finalExplanation.isNotEmpty) ...[
-            const SizedBox(height: AppSpacing.lg),
-            Text('Explanation', style: AppTextStyles.label()),
-            const SizedBox(height: AppSpacing.sm),
-            Text(
-              question.finalExplanation,
-              style: AppTextStyles.bodySm().copyWith(height: 1.4),
-            ),
-          ],
-          if (isCorrect) ...[
-            const SizedBox(height: AppSpacing.md),
-            FilledButton.tonalIcon(
-              onPressed: () => unawaited(
-                shareFomoPulse(
-                  pulse,
-                  bragCorrect: true,
-                  stats: stats,
-                ),
-              ),
-              icon: const Icon(Icons.share_outlined),
-              label: const Text("I didn't fall for it — share"),
-            ),
-          ],
         ],
         const SizedBox(height: AppSpacing.md),
         _ShareAndSourceRow(
           pulse: pulse,
-          stats: revealed ? null : stats,
+          stats: alreadyAttempted ? null : stats,
         ),
         const SizedBox(height: AppSpacing.lg),
         TextButton(
@@ -345,78 +242,3 @@ class _ShareAndSourceRow extends StatelessWidget {
   }
 }
 
-class _VerdictCard extends StatelessWidget {
-  const _VerdictCard({
-    required this.isCorrect,
-    required this.selectedOption,
-    required this.correctOption,
-    required this.question,
-  });
-
-  final bool isCorrect;
-  final String selectedOption;
-  final String correctOption;
-  final FomoPulseQuestion question;
-
-  @override
-  Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    final (bg, accent, label, icon) = isCorrect
-        ? (
-            isDark ? AppColors.correctBgDark : AppColors.correctBg,
-            isDark ? AppColors.correctTextDark : AppColors.correctText,
-            'Correct',
-            Icons.check_circle_rounded,
-          )
-        : (
-            isDark ? AppColors.wrongBgDark : AppColors.wrongBg,
-            isDark ? AppColors.wrongTextDark : AppColors.wrongText,
-            'Incorrect',
-            Icons.cancel_rounded,
-          );
-
-    return Container(
-      padding: const EdgeInsets.all(AppSpacing.md),
-      decoration: BoxDecoration(
-        color: bg,
-        borderRadius: BorderRadius.circular(AppRadius.lg),
-        border: Border.all(color: accent.withValues(alpha: 0.35)),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Row(
-            children: [
-              Icon(icon, color: accent),
-              const SizedBox(width: AppSpacing.sm),
-              Text(
-                label,
-                style: AppTextStyles.label().copyWith(
-                  color: accent,
-                  fontWeight: FontWeight.w800,
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: AppSpacing.sm),
-          Text(
-            'Your answer: (${selectedOption.toUpperCase()}) '
-            '${question.optionText(selectedOption)}',
-            style: AppTextStyles.bodySm(),
-          ),
-          if (!isCorrect) ...[
-            const SizedBox(height: AppSpacing.xs),
-            Text(
-              'Correct: (${correctOption.toUpperCase()}) '
-              '${question.optionText(correctOption)}',
-              style: AppTextStyles.bodySm().copyWith(
-                color: scheme.onSurfaceVariant,
-              ),
-            ),
-          ],
-        ],
-      ),
-    );
-  }
-}

@@ -28,7 +28,7 @@ class MainActivity : FlutterActivity() {
         val channel = NotificationChannel(
             channelId,
             "UPSC Wars Alerts",
-            NotificationManager.IMPORTANCE_HIGH,
+            NotificationManager.IMPORTANCE_MAX,
         ).apply {
             description = "Breaking news quizzes and battle invites"
             enableVibration(true)

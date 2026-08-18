@@ -9,6 +9,7 @@ import 'package:timezone/timezone.dart' as tz;
 
 import '../constants/prelims_countdown.dart';
 import '../constants/prelims_debug_flags.dart';
+import '../debug/upsc_wars_trace.dart';
 import '../providers/prefs_provider.dart';
 
 /// Single [FlutterLocalNotificationsPlugin] for prelims + foreground FCM targets.
@@ -33,6 +34,12 @@ class AppLocalNotificationsService {
   /// Opens today's paper quiz when the morning CA reminder is tapped.
   static void Function()? onDailyCaPaperReminderTap;
 
+  /// Opens the Fomo Pulse detail screen when a foreground pulse tap fires.
+  static void Function(String pulseId)? onFomoPulseLocalTap;
+
+  /// Holds a pulse ID that arrived before [onFomoPulseLocalTap] was wired.
+  static String? _pendingFomoPulseId;
+
   static const _noTestReminderChannelId = 'no_test_reminder_v1';
   static const _noTestReminderChannelName = 'Study reminders';
   static const _noTestReminderChannelDescription =
@@ -47,6 +54,13 @@ class AppLocalNotificationsService {
   static const _battleChannelName = 'Battle invites';
   static const _battleChannelDescription =
       'Battle invites while you are in the app (tap to join)';
+
+  static const _fomoPulseChannelId = 'fomo_pulse_v1';
+  static const _fomoPulseChannelName = 'Breaking Pulse';
+  static const _fomoPulseChannelDescription =
+      'Breaking news quizzes from UPSC Wars';
+
+  static const foregroundFomoPulseNotificationId = 9002;
 
   // IMPORTANT: Android channels are sticky. We versioned this channel so existing
   // installs that previously had a silent/low-importance default channel will
@@ -141,7 +155,7 @@ class AppLocalNotificationsService {
             _generalChannelIdV2,
             _generalChannelName,
             description: _generalChannelDescription,
-            importance: Importance.high,
+            importance: Importance.max,
           ),
         );
 
@@ -171,6 +185,7 @@ class AppLocalNotificationsService {
 
   static void _onNotificationResponse(NotificationResponse response) {
     final payload = response.payload;
+    upscWarsTrace('LocalNotification tap payload=$payload');
     if (payload == null) return;
     if (payload.startsWith('battle_join:')) {
       final sessionId = payload.substring('battle_join:'.length).trim();
@@ -188,7 +203,28 @@ class AppLocalNotificationsService {
     }
     if (payload == dailyCaPaperReminderPayload) {
       onDailyCaPaperReminderTap?.call();
+      return;
     }
+    if (payload.startsWith('fomo_pulse:')) {
+      final pulseId = payload.substring('fomo_pulse:'.length).trim();
+      if (pulseId.isNotEmpty) {
+        final handler = onFomoPulseLocalTap;
+        if (handler != null) {
+          handler(pulseId);
+        } else {
+          _pendingFomoPulseId = pulseId;
+        }
+      }
+    }
+  }
+
+  /// Called by [BattleMessagingService] after wiring [onFomoPulseLocalTap].
+  /// Flushes any tap that arrived before the handler was ready.
+  static void consumePendingFomoPulseTap() {
+    final id = _pendingFomoPulseId;
+    if (id == null) return;
+    _pendingFomoPulseId = null;
+    onFomoPulseLocalTap?.call(id);
   }
 
   /// Heads-up style local notification so the user can tap through to join while in-app.
@@ -234,6 +270,54 @@ class AppLocalNotificationsService {
         ),
       ),
       payload: 'battle_join:$sessionId',
+    );
+  }
+
+  /// Shows a heads-up system notification for a Fomo Pulse received in foreground.
+  /// Tapping routes to the pulse detail screen via [onFomoPulseLocalTap].
+  static Future<void> showForegroundFomoPulse({
+    required String title,
+    required String body,
+    required String pulseId,
+  }) async {
+    if (kIsWeb) return;
+    await ensureInitialized();
+
+    final androidImpl = _plugin.resolvePlatformSpecificImplementation<
+        AndroidFlutterLocalNotificationsPlugin>();
+    await androidImpl?.createNotificationChannel(
+      const AndroidNotificationChannel(
+        _fomoPulseChannelId,
+        _fomoPulseChannelName,
+        description: _fomoPulseChannelDescription,
+        importance: Importance.max,
+      ),
+    );
+
+    await _plugin.show(
+      id: foregroundFomoPulseNotificationId,
+      title: title.isNotEmpty ? title : 'Breaking Pulse',
+      body: body.isNotEmpty ? body : 'Tap to read & attempt',
+      notificationDetails: NotificationDetails(
+        android: AndroidNotificationDetails(
+          _fomoPulseChannelId,
+          _fomoPulseChannelName,
+          channelDescription: _fomoPulseChannelDescription,
+          importance: Importance.max,
+          priority: Priority.high,
+          icon: '@drawable/ic_notification',
+          color: const Color(0xFF085041),
+          largeIcon: const DrawableResourceAndroidBitmap('@mipmap/ic_launcher'),
+          category: AndroidNotificationCategory.recommendation,
+          autoCancel: true,
+        ),
+        iOS: const DarwinNotificationDetails(
+          presentAlert: true,
+          presentBadge: true,
+          presentSound: true,
+        ),
+      ),
+      payload: 'fomo_pulse:$pulseId',
     );
   }
 
