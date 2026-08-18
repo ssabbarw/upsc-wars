@@ -5,22 +5,18 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/admin_dashboard/admin_dashboard_service.dart';
-import '../../../core/providers/app_language_helpers.dart';
-import '../../../core/theme/app_colors.dart';
-import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
-import '../data/fomo_pulse_share.dart';
+import '../../test_engine/providers/test_session_provider.dart';
+import '../../test_engine/screens/test_engine_screen.dart';
+import '../data/fomo_pulse_test_session_launcher.dart';
 import '../domain/fomo_pulse_models.dart';
-import '../fomo_pulse_constants.dart';
 import '../providers/fomo_pulse_providers.dart';
-import '../widgets/fomo_pulse_question_block.dart';
 
 /// Full-screen MCQ experience for a Fomo Pulse.
 ///
-/// The pulse carries its own answer key and explanation, so tapping an option
-/// reveals the verdict straight away and the attempt is reported in the
-/// background.
+/// This host launches a one-question learning session in the existing
+/// TestEngine flow, then syncs the first attempt to FOMO pulse backend.
 class FomoPulseMcqScreen extends HookConsumerWidget {
   const FomoPulseMcqScreen({super.key, required this.pulseId});
 
@@ -58,293 +54,169 @@ class FomoPulseMcqScreen extends HookConsumerWidget {
             ),
           ),
         ),
-        data: (data) => _McqBody(
+        data: (data) => _FomoPulseLearningEngineHost(
           pulse: data.pulse,
           existingAttempt: data.attempt,
-          onSubmitted: () {
-            ref.invalidate(fomoPulseDetailProvider(pulseId));
-            ref.invalidate(fomoPulseHistoryProvider);
-          },
+          pulseId: pulseId,
         ),
       ),
     );
   }
 }
 
-class _McqBody extends HookConsumerWidget {
-  const _McqBody({
+class _FomoPulseLearningEngineHost extends HookConsumerWidget {
+  const _FomoPulseLearningEngineHost({
     required this.pulse,
     required this.existingAttempt,
-    required this.onSubmitted,
+    required this.pulseId,
   });
 
   final FomoPulse pulse;
   final FomoPulseAttemptState? existingAttempt;
-  final VoidCallback onSubmitted;
+  final String pulseId;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final isHi = watchAppLanguage(ref) == 'hi';
-    final question = pulse.question.localized(isHi);
+    final launch = ref.watch(fomoPulseTestSessionLauncherProvider);
+    final createdSessionId = useState<String?>(null);
+    final launchError = useState<Object?>(null);
+    final launching = useRef(false);
 
-    // Captured once: refreshing after a submit flips [existingAttempt] to
-    // attempted, which must not turn a fresh verdict into a review banner.
-    final attemptedOnOpen = useRef(existingAttempt?.attempted == true).value;
-    final openedAt = useMemoized(DateTime.now);
+    useEffect(() {
+      if (createdSessionId.value != null || launching.value) return null;
+      final launcher = launch.asData?.value;
+      if (launcher == null) return null;
+      launching.value = true;
+      unawaited(() async {
+        try {
+          final sessionId = await launcher.createLearningSession(pulse);
+          if (!context.mounted) return;
+          createdSessionId.value = sessionId;
+          launchError.value = null;
+        } catch (e) {
+          if (!context.mounted) return;
+          launchError.value = e;
+        } finally {
+          launching.value = false;
+        }
+      }());
+      return null;
+    }, [launch, pulse.pulseId]);
 
-    final picked = useState<String?>(existingAttempt?.selectedOption);
-    final serverStats = useState<FomoPulseCommunityStats?>(null);
+    if (launch.isLoading || createdSessionId.value == null) {
+      final err = launchError.value ?? launch.error;
+      if (err != null) {
+        return Center(
+          child: Padding(
+            padding: const EdgeInsets.all(AppSpacing.xl),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  'Could not open the test.',
+                  style: AppTextStyles.label(),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: AppSpacing.sm),
+                Text(
+                  '$err',
+                  style: AppTextStyles.caption(),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: AppSpacing.md),
+                FilledButton.icon(
+                  onPressed: () {
+                    launchError.value = null;
+                    launching.value = false;
+                    ref.invalidate(fomoPulseTestSessionLauncherProvider);
+                  },
+                  icon: const Icon(Icons.refresh),
+                  label: const Text('Retry'),
+                ),
+              ],
+            ),
+          ),
+        );
+      }
+      return const Center(child: CircularProgressIndicator());
+    }
 
-    final revealed = attemptedOnOpen || picked.value != null;
-    final selected = picked.value ?? '';
-    final isCorrect = selected.isEmpty
-        ? existingAttempt?.isCorrect ?? false
-        : selected.toLowerCase() == question.correctOption.toLowerCase();
-    final stats =
-        serverStats.value ??
-        pulse.communityStats(minAttempts: FomoPulseConstants.minStatsAttempts);
+    return _FomoPulseAttemptSyncBridge(
+      sessionId: createdSessionId.value!,
+      pulseId: pulseId,
+      pulse: pulse,
+      alreadyAttempted: existingAttempt?.attempted == true,
+    );
+  }
+}
 
-    /// Reports the attempt after the verdict is already on screen. Only the
-    /// community counters depend on the response, so a failure is silent.
-    Future<void> report(String option, bool wasCorrect) async {
-      final secs = DateTime.now().difference(openedAt).inSeconds.clamp(1, 600);
-      // Resolved up front: [ref] is unusable once this screen is popped.
+class _FomoPulseAttemptSyncBridge extends HookConsumerWidget {
+  const _FomoPulseAttemptSyncBridge({
+    required this.sessionId,
+    required this.pulseId,
+    required this.pulse,
+    required this.alreadyAttempted,
+  });
+
+  final String sessionId;
+  final String pulseId;
+  final FomoPulse pulse;
+  final bool alreadyAttempted;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final async = ref.watch(testSessionProvider(sessionId));
+    final didSync = useRef(alreadyAttempted);
+
+    Future<void> syncAttempt({
+      required String selectedOption,
+      required int timeSpentSecs,
+    }) async {
       final repo = ref.read(fomoPulseRepositoryProvider);
       final cloud = ref.read(fomoPulseCloudServiceProvider);
       final local = FomoPulseSubmitResult(
-        isCorrect: wasCorrect,
-        selectedOption: option,
-        correctOption: question.correctOption,
+        isCorrect:
+            selectedOption.toLowerCase() ==
+            pulse.question.correctOption.toLowerCase(),
+        selectedOption: selectedOption,
+        correctOption: pulse.question.correctOption,
         alreadyAttempted: false,
-        timeSpentSecs: secs,
+        timeSpentSecs: timeSpentSecs,
       );
-      // Persist first so the attempt survives with no connectivity.
       await repo.recordLocalAttempt(
-        pulseId: pulse.pulseId,
+        pulseId: pulseId,
         result: local,
         updateCommunityCounts: false,
       );
       try {
-        final result = await cloud.submitAttempt(
-          pulseId: pulse.pulseId,
-          selectedOption: option,
-          timeSpentSecs: secs,
+        final remote = await cloud.submitAttempt(
+          pulseId: pulseId,
+          selectedOption: selectedOption,
+          timeSpentSecs: timeSpentSecs,
         );
-        await repo.recordLocalAttempt(pulseId: pulse.pulseId, result: result);
-        if (!result.alreadyAttempted) {
+        await repo.recordLocalAttempt(pulseId: pulseId, result: remote);
+        if (!remote.alreadyAttempted) {
           unawaited(AdminDashboardWriterService().recordFomoPulseEngagement());
         }
-        if (!context.mounted) return;
-        if (result.stats != null) serverStats.value = result.stats;
-        onSubmitted();
-      } catch (_) {
-        // Verdict came from local data; community stats stay as cached.
-      }
+      } catch (_) {}
+      ref.invalidate(fomoPulseDetailProvider(pulseId));
+      ref.invalidate(fomoPulseHistoryProvider);
     }
 
-    void onOptionTapped(String option) {
-      // `picked.value` rather than `revealed` so a second tap arriving before
-      // the rebuild is still rejected.
-      if (revealed || picked.value != null) return;
-      // Grading only needs the pulse we already hold, so reveal immediately.
-      picked.value = option;
-      unawaited(
-        report(
-          option,
-          option.toLowerCase() == question.correctOption.toLowerCase(),
-        ),
-      );
-    }
+    useEffect(() {
+      if (didSync.value) return null;
+      final session = async.asData?.value.session;
+      if (session == null || session.questions.isEmpty) return null;
+      final q = session.questions.first;
+      final done = q.status == 'correct' || q.status == 'wrong';
+      final selected = q.selectedOption?.trim() ?? '';
+      if (!done || selected.isEmpty) return null;
+      didSync.value = true;
+      final secs = (q.timeSpentSecs ?? 0).clamp(1, 600);
+      unawaited(syncAttempt(selectedOption: selected, timeSpentSecs: secs));
+      return null;
+    }, [async]);
 
-    return ListView(
-      padding: const EdgeInsets.fromLTRB(
-        AppSpacing.lg,
-        AppSpacing.lg,
-        AppSpacing.lg,
-        AppSpacing.xxxl,
-      ),
-      children: [
-        // ── Question ──────────────────────────────────────────────────────
-        FomoPulseQuestionBlock(
-          question: question,
-          picked: picked.value,
-          onPick: revealed ? (_) {} : onOptionTapped,
-          revealCorrect: revealed,
-        ),
-
-        // ── Already attempted banner ──────────────────────────────────────
-        if (attemptedOnOpen) ...[
-          const SizedBox(height: AppSpacing.lg),
-          _AlreadyAttemptedBanner(isCorrect: isCorrect),
-        ],
-
-        // ── Verdict + explanation ─────────────────────────────────────────
-        if (revealed) ...[
-          const SizedBox(height: AppSpacing.lg),
-          _VerdictCard(
-            isCorrect: isCorrect,
-            selectedOption: selected,
-            correctOption: question.correctOption,
-            question: question,
-          ),
-          if (stats != null) ...[
-            const SizedBox(height: AppSpacing.md),
-            Center(
-              child: Text(
-                stats.trapLine,
-                style: AppTextStyles.caption().copyWith(
-                  color: Theme.of(context).colorScheme.onSurfaceVariant,
-                ),
-              ),
-            ),
-          ],
-          if (question.finalExplanation.isNotEmpty) ...[
-            const SizedBox(height: AppSpacing.xl),
-            Text('Explanation', style: AppTextStyles.label()),
-            const SizedBox(height: AppSpacing.sm),
-            Container(
-              padding: const EdgeInsets.all(AppSpacing.md),
-              decoration: BoxDecoration(
-                color: Theme.of(
-                  context,
-                ).colorScheme.surfaceContainerHighest.withValues(alpha: 0.5),
-                borderRadius: BorderRadius.circular(AppRadius.md),
-              ),
-              child: Text(
-                question.finalExplanation,
-                style: AppTextStyles.bodySm().copyWith(height: 1.5),
-              ),
-            ),
-          ],
-          if (isCorrect) ...[
-            const SizedBox(height: AppSpacing.xl),
-            FilledButton.tonalIcon(
-              onPressed: () => unawaited(
-                shareFomoPulse(pulse, bragCorrect: true, stats: stats),
-              ),
-              icon: const Icon(Icons.share_outlined),
-              label: const Text("I didn't fall for it — share"),
-            ),
-          ],
-        ],
-      ],
-    );
-  }
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
-// Verdict card
-// ─────────────────────────────────────────────────────────────────────────────
-
-class _VerdictCard extends StatelessWidget {
-  const _VerdictCard({
-    required this.isCorrect,
-    required this.selectedOption,
-    required this.correctOption,
-    required this.question,
-  });
-
-  final bool isCorrect;
-  final String selectedOption;
-  final String correctOption;
-  final FomoPulseQuestion question;
-
-  @override
-  Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    final (bg, accent, label, icon) = isCorrect
-        ? (
-            isDark ? AppColors.correctBgDark : AppColors.correctBg,
-            isDark ? AppColors.correctTextDark : AppColors.correctText,
-            'Correct!',
-            Icons.check_circle_rounded,
-          )
-        : (
-            isDark ? AppColors.wrongBgDark : AppColors.wrongBg,
-            isDark ? AppColors.wrongTextDark : AppColors.wrongText,
-            'Incorrect',
-            Icons.cancel_rounded,
-          );
-
-    return AnimatedContainer(
-      duration: const Duration(milliseconds: 350),
-      curve: Curves.easeOutCubic,
-      padding: const EdgeInsets.all(AppSpacing.md),
-      decoration: BoxDecoration(
-        color: bg,
-        borderRadius: BorderRadius.circular(AppRadius.lg),
-        border: Border.all(color: accent.withValues(alpha: 0.35)),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Row(
-            children: [
-              Icon(icon, color: accent, size: 22),
-              const SizedBox(width: AppSpacing.sm),
-              Expanded(
-                child: Text(
-                  label,
-                  style: AppTextStyles.label().copyWith(
-                    color: accent,
-                    fontWeight: FontWeight.w800,
-                  ),
-                ),
-              ),
-            ],
-          ),
-          if (selectedOption.isNotEmpty) ...[
-            const SizedBox(height: AppSpacing.sm),
-            Text(
-              'Your answer: (${selectedOption.toUpperCase()}) '
-              '${question.optionText(selectedOption)}',
-              style: AppTextStyles.bodySm(),
-            ),
-          ],
-          if (!isCorrect) ...[
-            const SizedBox(height: AppSpacing.xs),
-            Text(
-              'Correct: (${correctOption.toUpperCase()}) '
-              '${question.optionText(correctOption)}',
-              style: AppTextStyles.bodySm().copyWith(
-                color: scheme.onSurfaceVariant,
-              ),
-            ),
-          ],
-        ],
-      ),
-    );
-  }
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
-// Already attempted banner
-// ─────────────────────────────────────────────────────────────────────────────
-
-class _AlreadyAttemptedBanner extends StatelessWidget {
-  const _AlreadyAttemptedBanner({required this.isCorrect});
-
-  final bool isCorrect;
-
-  @override
-  Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-    return Container(
-      padding: const EdgeInsets.symmetric(
-        horizontal: AppSpacing.md,
-        vertical: AppSpacing.sm,
-      ),
-      decoration: BoxDecoration(
-        color: scheme.surfaceContainerHighest,
-        borderRadius: BorderRadius.circular(AppRadius.md),
-      ),
-      child: Text(
-        isCorrect
-            ? '✅ You got this right previously.'
-            : '❌ You attempted this before — review below.',
-        style: AppTextStyles.caption().copyWith(color: scheme.onSurfaceVariant),
-      ),
-    );
+    return TestEngineScreen(sessionId: sessionId);
   }
 }

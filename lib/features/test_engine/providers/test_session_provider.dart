@@ -12,6 +12,7 @@ import 'package:upsc_wars/core/providers/prefs_provider.dart';
 import 'package:upsc_wars/features/test_engine/domain/confidence_prompt_policy.dart';
 import 'package:upsc_wars/core/router/app_router.dart';
 import 'package:upsc_wars/core/theme/app_text_styles.dart';
+import 'package:upsc_wars/features/fomo_pulse/data/fomo_pulse_test_session_launcher.dart';
 import 'package:upsc_wars/shared/widgets/top_snack_bar.dart';
 
 import 'test_session_state.dart';
@@ -39,8 +40,9 @@ class TestSessionNotifier extends _$TestSessionNotifier {
       bm[q.uuid] = await repo.isBookmarked(q.uuid);
     }
     final lifetime = await repo.countScoredAttempts();
-    final pairs =
-        active.questions.map((q) => (subject: q.subject, topic: q.topic)).toList();
+    final pairs = active.questions
+        .map((q) => (subject: q.subject, topic: q.topic))
+        .toList();
     final weak = await repo.fetchWeakTopicKeys(pairs);
     return _stateForLoadedSession(
       active,
@@ -96,8 +98,7 @@ class TestSessionNotifier extends _$TestSessionNotifier {
     final startQ = active.questions[startIndex];
     final learningStartExplanation =
         active.mode == 'learning' &&
-        (startQ.selectedOption != null ||
-            startQ.status == 'timed_out');
+        (startQ.selectedOption != null || startQ.status == 'timed_out');
 
     var totalElapsed = 0;
     var showBanner = false;
@@ -177,6 +178,12 @@ class TestSessionNotifier extends _$TestSessionNotifier {
       return;
     }
 
+    // FOMO pulse reuses learning-mode TestEngine UI but must reveal immediately.
+    if (s.analyticsFeatureKey == fomoPulseLearningAnalyticsKey) {
+      await _commitSelectedOption(option, confidence: null);
+      return;
+    }
+
     final prompt = ConfidencePromptPolicy.shouldPrompt(
       prefs: prefs,
       question: q,
@@ -248,10 +255,7 @@ class TestSessionNotifier extends _$TestSessionNotifier {
     final after = state.asData?.value;
     if (after == null) return;
     state = AsyncData(
-      after.copyWith(
-        clearPendingOption: true,
-        confidencePromptVisible: false,
-      ),
+      after.copyWith(clearPendingOption: true, confidencePromptVisible: false),
     );
   }
 
@@ -286,7 +290,8 @@ class TestSessionNotifier extends _$TestSessionNotifier {
     final s = current.session!;
     final q = s.questions[current.currentIndex];
     final wasFresh =
-        q.status == 'unattempted' && (q.selectedOption == null || q.selectedOption!.isEmpty);
+        q.status == 'unattempted' &&
+        (q.selectedOption == null || q.selectedOption!.isEmpty);
 
     try {
       final uc = await ref.read(updateQuestionAttemptUseCaseProvider.future);
@@ -303,7 +308,8 @@ class TestSessionNotifier extends _$TestSessionNotifier {
         ),
       );
 
-      if (isCorrect && (s.subject == 'revision' || s.subject == 'revision_quick')) {
+      if (isCorrect &&
+          (s.subject == 'revision' || s.subject == 'revision_quick')) {
         final rev = await ref.read(
           updateRevisionQueueProgressUseCaseProvider.future,
         );
@@ -321,12 +327,13 @@ class TestSessionNotifier extends _$TestSessionNotifier {
         current.copyWith(
           session: s.copyWith(questions: updatedQuestions),
           explanationVisible: s.mode == 'learning',
-          learningVerdict:
-              isCorrect ? LearningVerdict.correct : LearningVerdict.incorrect,
+          learningVerdict: isCorrect
+              ? LearningVerdict.correct
+              : LearningVerdict.incorrect,
           furthestAnsweredIndex:
               current.currentIndex > current.furthestAnsweredIndex
-                  ? current.currentIndex
-                  : current.furthestAnsweredIndex,
+              ? current.currentIndex
+              : current.furthestAnsweredIndex,
           lifetimeScoredAttempts: wasFresh
               ? current.lifetimeScoredAttempts + 1
               : current.lifetimeScoredAttempts,
@@ -368,8 +375,8 @@ class TestSessionNotifier extends _$TestSessionNotifier {
           learningVerdict: LearningVerdict.timedOut,
           furthestAnsweredIndex:
               current.currentIndex > current.furthestAnsweredIndex
-                  ? current.currentIndex
-                  : current.furthestAnsweredIndex,
+              ? current.currentIndex
+              : current.furthestAnsweredIndex,
         ),
       );
     } catch (_) {
@@ -426,12 +433,11 @@ class TestSessionNotifier extends _$TestSessionNotifier {
       explanationVisible: s.mode == 'learning' ? nextAnswered : false,
       learningVerdict: s.mode == 'learning' ? nextVerdict : null,
       clearLearningVerdict: s.mode == 'learning' ? false : true,
-      learningRemainingSecs:
-          s.mode == 'learning'
-              ? (nextAnswered
-                  ? current.learningRemainingSecs
-                  : (!s.isTimed ? -1 : (s.timeLimitSecs ?? 60)))
-              : current.learningRemainingSecs,
+      learningRemainingSecs: s.mode == 'learning'
+          ? (nextAnswered
+                ? current.learningRemainingSecs
+                : (!s.isTimed ? -1 : (s.timeLimitSecs ?? 60)))
+          : current.learningRemainingSecs,
     );
     state = AsyncData(nextState);
   }
@@ -454,10 +460,12 @@ class TestSessionNotifier extends _$TestSessionNotifier {
       current.copyWith(
         currentIndex: prevIndex,
         currentQuestionElapsedSecs: 0,
-        explanationVisible:
-            s.mode == 'learning' ? prevAnswered : current.explanationVisible,
-        learningVerdict:
-            s.mode == 'learning' ? prevVerdict : current.learningVerdict,
+        explanationVisible: s.mode == 'learning'
+            ? prevAnswered
+            : current.explanationVisible,
+        learningVerdict: s.mode == 'learning'
+            ? prevVerdict
+            : current.learningVerdict,
         clearLearningVerdict: s.mode == 'learning' ? false : true,
       ),
     );
