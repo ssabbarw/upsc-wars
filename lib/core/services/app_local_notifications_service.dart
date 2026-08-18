@@ -177,6 +177,11 @@ class AppLocalNotificationsService {
   static Future<void> dispatchLaunchNotificationIfNeeded() async {
     if (kIsWeb || !_initialized) return;
     final details = await _plugin.getNotificationAppLaunchDetails();
+    upscWarsTrace(
+      'LocalNotification launchDetails didLaunch='
+      '${details?.didNotificationLaunchApp} '
+      'payload=${details?.notificationResponse?.payload}',
+    );
     if (details?.didNotificationLaunchApp != true) return;
     final response = details!.notificationResponse;
     if (response == null) return;
@@ -207,13 +212,15 @@ class AppLocalNotificationsService {
     }
     if (payload.startsWith('fomo_pulse:')) {
       final pulseId = payload.substring('fomo_pulse:'.length).trim();
-      if (pulseId.isNotEmpty) {
-        final handler = onFomoPulseLocalTap;
-        if (handler != null) {
-          handler(pulseId);
-        } else {
-          _pendingFomoPulseId = pulseId;
-        }
+      if (pulseId.isEmpty) return;
+      final handler = onFomoPulseLocalTap;
+      upscWarsTrace(
+        'LocalNotification fomo_pulse id=$pulseId handlerReady=${handler != null}',
+      );
+      if (handler != null) {
+        handler(pulseId);
+      } else {
+        _pendingFomoPulseId = pulseId;
       }
     }
   }
@@ -319,6 +326,7 @@ class AppLocalNotificationsService {
       ),
       payload: 'fomo_pulse:$pulseId',
     );
+    upscWarsTrace('LocalNotification posted fomo_pulse:$pulseId');
   }
 
   /// Android prelims persistent notification (same behaviour as before consolidation).

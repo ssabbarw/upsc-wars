@@ -40,6 +40,25 @@ class BattleMessagingService {
 
   static GoRouter? _router;
 
+  /// The [GoRouter] currently attached to the widget tree.
+  ///
+  /// [appRouterProvider] watches auth state, so it rebuilds and yields a new
+  /// [GoRouter] whenever sign-in state changes. Navigating on a stale instance
+  /// silently does nothing — it has no [Router] widget listening — so always
+  /// resolve through the root navigator and only fall back to the instance
+  /// captured at [initialize].
+  static GoRouter? get _activeRouter {
+    final ctx = rootNavigatorKey.currentContext;
+    if (ctx != null) {
+      try {
+        return GoRouter.of(ctx);
+      } catch (_) {
+        // No InheritedGoRouter above this context yet.
+      }
+    }
+    return _router;
+  }
+
   /// iOS throws `permissionRequestInProgress` if `requestPermission()` is called
   /// concurrently. Keep a single in-flight request and share it across callers.
   static Future<AuthorizationStatus?>? _pushPermissionRequestInFlight;
@@ -50,6 +69,7 @@ class BattleMessagingService {
 
   static Future<void> initialize(GoRouter router) async {
     _router = router;
+    upscWarsTrace('BattleMessagingService.initialize: router assigned');
     final messaging = FirebaseMessaging.instance;
     await messaging.setAutoInitEnabled(true);
     if (!kIsWeb && defaultTargetPlatform == TargetPlatform.iOS) {
@@ -61,24 +81,22 @@ class BattleMessagingService {
       );
     }
     // #region agent log
-    unawaited(
-      () async {
-        final settings = await messaging.getNotificationSettings();
-        final apns = await messaging.getAPNSToken();
-        final fcm = await messaging.getToken();
-        await CursorDebugLog.write(
-          hypothesisId: 'A',
-          location: 'battle_messaging_service.dart:initialize',
-          message: 'Push bootstrap snapshot',
-          data: {
-            'platform': defaultTargetPlatform.toString(),
-            'authStatus': settings.authorizationStatus.toString(),
-            'apnsTokenPresent': apns != null && apns.trim().isNotEmpty,
-            'fcmTokenPresent': fcm != null && fcm.trim().isNotEmpty,
-          },
-        );
-      }(),
-    );
+    unawaited(() async {
+      final settings = await messaging.getNotificationSettings();
+      final apns = await messaging.getAPNSToken();
+      final fcm = await messaging.getToken();
+      await CursorDebugLog.write(
+        hypothesisId: 'A',
+        location: 'battle_messaging_service.dart:initialize',
+        message: 'Push bootstrap snapshot',
+        data: {
+          'platform': defaultTargetPlatform.toString(),
+          'authStatus': settings.authorizationStatus.toString(),
+          'apnsTokenPresent': apns != null && apns.trim().isNotEmpty,
+          'fcmTokenPresent': fcm != null && fcm.trim().isNotEmpty,
+        },
+      );
+    }());
     // #endregion
 
     if (!kIsWeb) {
@@ -88,14 +106,16 @@ class BattleMessagingService {
           detail: 'battle_join',
         );
         PendingNotificationConversion.captureFromLocalKind('battle_join');
-        unawaited(_recordAdminNotificationOpen(
-          notificationId: 'battle__$sessionId',
-          kind: 'battle_join',
-        ));
+        unawaited(
+          _recordAdminNotificationOpen(
+            notificationId: 'battle__$sessionId',
+            kind: 'battle_join',
+          ),
+        );
         logGlobalAnalytics(
           const AppNotificationOpenEvent(channel: 'local', kind: 'battle_join'),
         );
-        final r = _router;
+        final r = _activeRouter;
         if (r == null) return;
         WidgetsBinding.instance.addPostFrameCallback((_) {
           r.go('/battle/join/$sessionId');
@@ -107,17 +127,19 @@ class BattleMessagingService {
           detail: 'no_test_reminder',
         );
         PendingNotificationConversion.captureFromLocalKind('no_test_reminder');
-        unawaited(_recordAdminNotificationOpen(
-          notificationId: 'local__no_test_reminder',
-          kind: 'no_test_reminder',
-        ));
+        unawaited(
+          _recordAdminNotificationOpen(
+            notificationId: 'local__no_test_reminder',
+            kind: 'no_test_reminder',
+          ),
+        );
         logGlobalAnalytics(
           const AppNotificationOpenEvent(
             channel: 'local',
             kind: 'no_test_reminder',
           ),
         );
-        final r = _router;
+        final r = _activeRouter;
         if (r == null) return;
         WidgetsBinding.instance.addPostFrameCallback((_) {
           r.go('/');
@@ -128,18 +150,22 @@ class BattleMessagingService {
           SessionEntrySource.push,
           detail: 'daily_practice_reminder',
         );
-        PendingNotificationConversion.captureFromLocalKind('daily_practice_reminder');
-        unawaited(_recordAdminNotificationOpen(
-          notificationId: 'local__daily_practice_reminder',
-          kind: 'daily_practice_reminder',
-        ));
+        PendingNotificationConversion.captureFromLocalKind(
+          'daily_practice_reminder',
+        );
+        unawaited(
+          _recordAdminNotificationOpen(
+            notificationId: 'local__daily_practice_reminder',
+            kind: 'daily_practice_reminder',
+          ),
+        );
         logGlobalAnalytics(
           const AppNotificationOpenEvent(
             channel: 'local',
             kind: 'daily_practice_reminder',
           ),
         );
-        final r = _router;
+        final r = _activeRouter;
         if (r == null) return;
         WidgetsBinding.instance.addPostFrameCallback((_) {
           r.go('/daily-drill/start');
@@ -165,17 +191,19 @@ class BattleMessagingService {
         PendingNotificationConversion.captureFromLocalKind(
           'daily_ca_paper_reminder',
         );
-        unawaited(_recordAdminNotificationOpen(
-          notificationId: 'local__daily_ca_paper_reminder',
-          kind: 'daily_ca_paper_reminder',
-        ));
+        unawaited(
+          _recordAdminNotificationOpen(
+            notificationId: 'local__daily_ca_paper_reminder',
+            kind: 'daily_ca_paper_reminder',
+          ),
+        );
         logGlobalAnalytics(
           const AppNotificationOpenEvent(
             channel: 'local',
             kind: 'daily_ca_paper_reminder',
           ),
         );
-        final r = _router;
+        final r = _activeRouter;
         if (r == null) return;
         WidgetsBinding.instance.addPostFrameCallback((_) {
           r.go('/daily-ca?start=1');
@@ -195,12 +223,17 @@ class BattleMessagingService {
     final initial =
         _pendingOpenedNotification ?? await messaging.getInitialMessage();
     _pendingOpenedNotification = null;
+    upscWarsTrace(
+      'BattleMessagingService.initialize: initialMessage='
+      '${initial == null ? 'null' : initial.data.toString()}',
+    );
     if (initial != null) {
       _scheduleNavigateFromOpenedNotification(router, initial, channel: 'fcm');
     }
 
     // A local-notification tap can land before the router was assigned.
     _consumePendingPulseNavigation();
+    upscWarsTrace('BattleMessagingService.initialize: done');
   }
 
   static void _onForegroundMessage(RemoteMessage message) {
@@ -281,7 +314,7 @@ class BattleMessagingService {
   /// Callers may already be inside a post-frame callback, so navigate directly
   /// rather than deferring another frame (an idle engine may never render one).
   static void _navigateToPulse(String pulseId) {
-    final r = _router;
+    final r = _activeRouter;
     if (r == null) {
       upscWarsTrace('FomoPulse nav deferred: router not ready id=$pulseId');
       _pendingPulseId = pulseId;
@@ -299,7 +332,10 @@ class BattleMessagingService {
   }
 
   static void _handleDataMessage(RemoteMessage message) {
-    final router = _router;
+    final router = _activeRouter;
+    upscWarsTrace(
+      'onMessageOpenedApp data=${message.data} routerReady=${router != null}',
+    );
     if (router == null) return;
     _scheduleNavigateFromOpenedNotification(router, message, channel: 'fcm');
   }
@@ -312,7 +348,9 @@ class BattleMessagingService {
     if (raw == FomoPulseFcm.kind) return FomoPulseFcm.kind;
     if (raw == PushMemoryPairsFcm.kind) return PushMemoryPairsFcm.kind;
     if (raw == PushRevisionGameFcm.kind) return PushRevisionGameFcm.kind;
-    if (raw == DailyCaAdminConstants.fcmKind) return DailyCaAdminConstants.fcmKind;
+    if (raw == DailyCaAdminConstants.fcmKind) {
+      return DailyCaAdminConstants.fcmKind;
+    }
     final sid = message.data['sessionId']?.toString().trim() ?? '';
     if (sid.isNotEmpty) return 'battle_join';
     return raw != null && raw.isNotEmpty ? raw : 'unknown';
@@ -334,9 +372,7 @@ class BattleMessagingService {
         ),
       );
     }
-    logGlobalAnalytics(
-      AppNotificationOpenEvent(channel: channel, kind: kind),
-    );
+    logGlobalAnalytics(AppNotificationOpenEvent(channel: channel, kind: kind));
   }
 
   static Future<void> _recordAdminNotificationOpen({
@@ -363,7 +399,7 @@ class BattleMessagingService {
 
   /// Routes after notification open (background / terminated).
   static void _scheduleNavigateFromOpenedNotification(
-    GoRouter router,
+    GoRouter fallbackRouter,
     RemoteMessage message, {
     required String channel,
   }) {
@@ -374,6 +410,9 @@ class BattleMessagingService {
       detail: _notificationOpenKind(message),
     );
     void go() {
+      // Resolve at execution time: navigation is deferred a frame, and the
+      // router instance can be replaced in between (see [_activeRouter]).
+      final router = _activeRouter ?? fallbackRouter;
       if (kDebugMode) {
         debugPrint(
           'BattleMessagingService: notification opened, data=${message.data}',
@@ -457,7 +496,15 @@ class BattleMessagingService {
 
     // Defer one frame so the shell route is committed before [push] (cold
     // start from notification tap).
-    WidgetsBinding.instance.addPostFrameCallback((_) => go());
+    upscWarsTrace(
+      'notificationOpen scheduling nav kind=${_notificationOpenKind(message)} '
+      'channel=$channel',
+    );
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      upscWarsTrace('notificationOpen postFrame fired');
+      go();
+    });
+    WidgetsBinding.instance.scheduleFrame();
   }
 
   /// Current OS notification authorization (does not prompt).
@@ -466,7 +513,8 @@ class BattleMessagingService {
     if (defaultTargetPlatform == TargetPlatform.android) {
       final sdkInt = (await DeviceInfoPlugin().androidInfo).version.sdkInt;
       if (sdkInt >= 33) {
-        final enabled = await AppLocalNotificationsService.androidNotificationsEnabled();
+        final enabled =
+            await AppLocalNotificationsService.androidNotificationsEnabled();
         if (enabled == true) return AuthorizationStatus.authorized;
         if (enabled == false) return AuthorizationStatus.denied;
       }
@@ -485,13 +533,16 @@ class BattleMessagingService {
     _notificationPermissionChangeListeners.add(listener);
   }
 
-  static void removeNotificationPermissionChangeListener(VoidCallback listener) {
+  static void removeNotificationPermissionChangeListener(
+    VoidCallback listener,
+  ) {
     _notificationPermissionChangeListeners.remove(listener);
   }
 
   static void _notifyNotificationPermissionMayHaveChanged() {
-    for (final listener
-        in List<VoidCallback>.from(_notificationPermissionChangeListeners)) {
+    for (final listener in List<VoidCallback>.from(
+      _notificationPermissionChangeListeners,
+    )) {
       listener();
     }
   }
@@ -557,10 +608,7 @@ class BattleMessagingService {
     final ctx = rootNavigatorKey.currentContext;
     if (ctx == null || !ctx.mounted) return;
 
-    final accepted = await showDeferredPushPermissionSheet(
-      ctx,
-      source: source,
-    );
+    final accepted = await showDeferredPushPermissionSheet(ctx, source: source);
     if (accepted != true) return;
 
     await requestPushAuthorizationAndSync(source: source);
@@ -578,8 +626,8 @@ class BattleMessagingService {
       try {
         // Android 13+: explicitly request POST_NOTIFICATIONS runtime permission.
         if (defaultTargetPlatform == TargetPlatform.android) {
-          final granted = await AppLocalNotificationsService
-              .requestAndroidNotificationsPermissionIfNeeded();
+          final granted =
+              await AppLocalNotificationsService.requestAndroidNotificationsPermissionIfNeeded();
           if (granted == false) {
             _logPushPermissionPromptResult(AuthorizationStatus.denied, source);
             return AuthorizationStatus.denied;
@@ -594,10 +642,10 @@ class BattleMessagingService {
           // If the user just granted permission, ensure foreground delivery is visible.
           await FirebaseMessaging.instance
               .setForegroundNotificationPresentationOptions(
-            alert: true,
-            badge: true,
-            sound: true,
-          );
+                alert: true,
+                badge: true,
+                sound: true,
+              );
         }
         // #region agent log
         unawaited(
@@ -606,9 +654,7 @@ class BattleMessagingService {
             location:
                 'battle_messaging_service.dart:requestPushAuthorizationAndSync',
             message: 'requestPermission result',
-            data: {
-              'authStatus': settings.authorizationStatus.toString(),
-            },
+            data: {'authStatus': settings.authorizationStatus.toString()},
           ),
         );
         // #endregion
@@ -648,9 +694,7 @@ class BattleMessagingService {
           hypothesisId: 'B',
           location: 'battle_messaging_service.dart:refreshFcmToken',
           message: 'FirebaseMessaging.getToken result',
-          data: {
-            'fcmTokenPresent': t != null && t.trim().isNotEmpty,
-          },
+          data: {'fcmTokenPresent': t != null && t.trim().isNotEmpty},
         ),
       );
       // #endregion

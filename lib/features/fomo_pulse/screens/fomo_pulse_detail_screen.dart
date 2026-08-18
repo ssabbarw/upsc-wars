@@ -22,63 +22,74 @@ class FomoPulseDetailScreen extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final async = ref.watch(fomoPulseDetailProvider(pulseId));
+    // Opened straight from a notification there is nothing beneath this route,
+    // so back should land on home rather than close the app.
+    final canPop = context.canPop();
 
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Pulse'),
-        actions: [
-          async.maybeWhen(
-            data: (data) => IconButton(
-              tooltip: 'Share',
-              onPressed: () => unawaited(
-                shareFomoPulse(
-                  data.pulse,
-                  stats: data.pulse.communityStats(
-                    minAttempts: FomoPulseConstants.minStatsAttempts,
+    return PopScope(
+      canPop: canPop,
+      onPopInvokedWithResult: (didPop, _) {
+        if (didPop) return;
+        context.go('/');
+      },
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text('Pulse'),
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back),
+            onPressed: () => canPop ? context.pop() : context.go('/'),
+          ),
+          actions: [
+            async.maybeWhen(
+              data: (data) => IconButton(
+                tooltip: 'Share',
+                onPressed: () => unawaited(
+                  shareFomoPulse(
+                    data.pulse,
+                    stats: data.pulse.communityStats(
+                      minAttempts: FomoPulseConstants.minStatsAttempts,
+                    ),
                   ),
                 ),
+                icon: const Icon(Icons.share_outlined),
               ),
-              icon: const Icon(Icons.share_outlined),
+              orElse: () => const SizedBox.shrink(),
             ),
-            orElse: () => const SizedBox.shrink(),
-          ),
-        ],
-      ),
-      body: async.when(
-        loading: () => const Center(child: CircularProgressIndicator()),
-        error: (e, _) => Center(
-          child: Padding(
-            padding: const EdgeInsets.all(24),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                const Icon(Icons.wifi_off_rounded, size: 48),
-                const SizedBox(height: 16),
-                const Text(
-                  'Could not load this Pulse.',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-                const SizedBox(height: 8),
-                Text(
-                  'Check your internet connection and try again.',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(color: Colors.grey[600]),
-                ),
-                const SizedBox(height: 20),
-                FilledButton.icon(
-                  onPressed: () =>
-                      ref.invalidate(fomoPulseDetailProvider(pulseId)),
-                  icon: const Icon(Icons.refresh),
-                  label: const Text('Retry'),
-                ),
-              ],
-            ),
-          ),
+          ],
         ),
-        data: (data) => _PulseBody(
-          pulse: data.pulse,
-          attempt: data.attempt,
+        body: async.when(
+          loading: () => const Center(child: CircularProgressIndicator()),
+          error: (e, _) => Center(
+            child: Padding(
+              padding: const EdgeInsets.all(24),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const Icon(Icons.wifi_off_rounded, size: 48),
+                  const SizedBox(height: 16),
+                  const Text(
+                    'Could not load this Pulse.',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    'Check your internet connection and try again.',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(color: Colors.grey[600]),
+                  ),
+                  const SizedBox(height: 20),
+                  FilledButton.icon(
+                    onPressed: () =>
+                        ref.invalidate(fomoPulseDetailProvider(pulseId)),
+                    icon: const Icon(Icons.refresh),
+                    label: const Text('Retry'),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          data: (data) => _PulseBody(pulse: data.pulse, attempt: data.attempt),
         ),
       ),
     );
@@ -86,10 +97,7 @@ class FomoPulseDetailScreen extends HookConsumerWidget {
 }
 
 class _PulseBody extends HookConsumerWidget {
-  const _PulseBody({
-    required this.pulse,
-    required this.attempt,
-  });
+  const _PulseBody({required this.pulse, required this.attempt});
 
   final FomoPulse pulse;
   final FomoPulseAttemptState? attempt;
@@ -126,10 +134,7 @@ class _PulseBody extends HookConsumerWidget {
         ),
         if (summary.isNotEmpty) ...[
           const SizedBox(height: AppSpacing.md),
-          Text(
-            summary,
-            style: AppTextStyles.body().copyWith(height: 1.4),
-          ),
+          Text(summary, style: AppTextStyles.body().copyWith(height: 1.4)),
         ] else if (pulse.body.isNotEmpty) ...[
           const SizedBox(height: AppSpacing.sm),
           Text(
@@ -198,10 +203,7 @@ class _PulseBody extends HookConsumerWidget {
 }
 
 class _ShareAndSourceRow extends StatelessWidget {
-  const _ShareAndSourceRow({
-    required this.pulse,
-    this.stats,
-  });
+  const _ShareAndSourceRow({required this.pulse, this.stats});
 
   final FomoPulse pulse;
   final FomoPulseCommunityStats? stats;
@@ -212,9 +214,7 @@ class _ShareAndSourceRow extends StatelessWidget {
       children: [
         Expanded(
           child: OutlinedButton.icon(
-            onPressed: () => unawaited(
-              shareFomoPulse(pulse, stats: stats),
-            ),
+            onPressed: () => unawaited(shareFomoPulse(pulse, stats: stats)),
             icon: const Icon(Icons.ios_share, size: 18),
             label: const Text('Share'),
           ),
@@ -226,10 +226,7 @@ class _ShareAndSourceRow extends StatelessWidget {
               onPressed: () async {
                 final uri = Uri.tryParse(pulse.sourceUrl);
                 if (uri != null) {
-                  await launchUrl(
-                    uri,
-                    mode: LaunchMode.externalApplication,
-                  );
+                  await launchUrl(uri, mode: LaunchMode.externalApplication);
                 }
               },
               icon: const Icon(Icons.open_in_new, size: 18),
@@ -241,4 +238,3 @@ class _ShareAndSourceRow extends StatelessWidget {
     );
   }
 }
-

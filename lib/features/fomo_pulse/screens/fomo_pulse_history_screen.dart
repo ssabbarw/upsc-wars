@@ -19,7 +19,13 @@ class FomoPulseHistoryScreen extends ConsumerWidget {
     final scheme = Theme.of(context).colorScheme;
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Pulse')),
+      appBar: AppBar(
+        title: const Text('Pulse'),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () => context.canPop() ? context.pop() : context.go('/'),
+        ),
+      ),
       body: async.when(
         loading: () => const Center(child: CircularProgressIndicator()),
         error: (e, _) => Center(child: Text('$e')),
@@ -40,9 +46,9 @@ class FomoPulseHistoryScreen extends ConsumerWidget {
           }
           return RefreshIndicator(
             onRefresh: () async {
-              await ref.read(fomoPulseRepositoryProvider).loadHistory(
-                    forceRefresh: true,
-                  );
+              await ref
+                  .read(fomoPulseRepositoryProvider)
+                  .loadHistory(forceRefresh: true);
               ref.invalidate(fomoPulseHistoryProvider);
             },
             child: ListView.separated(
@@ -89,11 +95,7 @@ class _PulseHistoryTile extends StatelessWidget {
         : '';
 
     final (badgeBg, badgeFg, badgeLabel) = !attempted
-        ? (
-            scheme.surfaceContainerHighest,
-            scheme.onSurfaceVariant,
-            'Not done',
-          )
+        ? (scheme.surfaceContainerHighest, scheme.onSurfaceVariant, 'Not done')
         : attempt!.isCorrect
         ? (
             isDark ? AppColors.correctBgDark : AppColors.correctBg,

@@ -49,6 +49,10 @@ Future<void> main() async {
   // getInitialMessage too late can leave data unavailable for routing.
   final openedFromNotification = await FirebaseMessaging.instance
       .getInitialMessage();
+  upscWarsTrace(
+    'main: getInitialMessage data='
+    '${openedFromNotification == null ? 'null' : openedFromNotification.data.toString()}',
+  );
   if (openedFromNotification != null) {
     BattleMessagingService.setPendingOpenedNotification(openedFromNotification);
   }

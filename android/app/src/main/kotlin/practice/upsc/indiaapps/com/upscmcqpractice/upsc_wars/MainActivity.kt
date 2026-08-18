@@ -6,13 +6,36 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import io.flutter.embedding.android.FlutterActivity
 
 class MainActivity : FlutterActivity() {
+    companion object {
+        private const val TAG = "UpscWarsIntent"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
+        logIntent("onCreate", intent)
         rewriteShareIntent(intent)
         super.onCreate(savedInstanceState)
         ensureNotificationChannel()
+    }
+
+    /** Dumps action/data/extras so notification-tap delivery can be traced. */
+    private fun logIntent(where: String, intent: Intent?) {
+        if (intent == null) {
+            Log.i(TAG, "$where intent=null")
+            return
+        }
+        val extras = intent.extras
+        val keys = extras?.keySet()?.joinToString(",") ?: "none"
+        val payload = extras?.getString("payload")
+        Log.i(
+            TAG,
+            "$where action=${intent.action} data=${intent.data} " +
+                "flags=0x${Integer.toHexString(intent.flags)} " +
+                "extraKeys=[$keys] payload=$payload",
+        )
     }
 
     /**
@@ -37,6 +60,7 @@ class MainActivity : FlutterActivity() {
     }
 
     override fun onNewIntent(intent: Intent) {
+        logIntent("onNewIntent", intent)
         rewriteShareIntent(intent)
         setIntent(intent)
         super.onNewIntent(intent)

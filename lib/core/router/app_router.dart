@@ -173,10 +173,10 @@ GoRouter appRouter(Ref ref) {
           name: 'games_hub',
           builder: (context, state) => GamesHubScreen(
             asShellTab: true,
-            openConfigGame: state.uri
-                .queryParameters[PushRevisionGameFcm.queryKeyConfig],
-            openConfigNonce: state.uri
-                .queryParameters[PushRevisionGameFcm.queryKeyNonce],
+            openConfigGame:
+                state.uri.queryParameters[PushRevisionGameFcm.queryKeyConfig],
+            openConfigNonce:
+                state.uri.queryParameters[PushRevisionGameFcm.queryKeyNonce],
           ),
           routes: [
             GoRoute(
@@ -252,6 +252,10 @@ GoRouter appRouter(Ref ref) {
   return GoRouter(
     navigatorKey: rootNavigatorKey,
     initialLocation: '/',
+    // The engine remembers the last reported route, so a restart would resume
+    // wherever the user was. Cold-start deep links arrive through
+    // ShareDeepLinkService, not the platform default location.
+    overridePlatformDefaultLocation: true,
     refreshListenable: redirectRefresh,
     debugLogDiagnostics: kDebugMode,
     errorBuilder: (context, state) {
@@ -356,6 +360,11 @@ GoRouter appRouter(Ref ref) {
       // Cold-start deep links can arrive as a full https URL "location" on mobile.
       // Normalize `https://upscwars.in/share/<kind>/<uuid>` to our internal route.
       final u = state.uri;
+      if (u.toString().contains('fomo-pulse')) {
+        upscWarsTrace(
+          'GoRouter redirect check uri=$u matched=${state.matchedLocation}',
+        );
+      }
       if (u.scheme == 'https' || u.scheme == 'http') {
         var host = u.host.toLowerCase();
         var segs = u.pathSegments.where((s) => s.isNotEmpty).toList();
@@ -392,12 +401,12 @@ GoRouter appRouter(Ref ref) {
         }
       }
 
-      if (u.scheme == 'upscwars' &&
-          u.host.toLowerCase() == 'pulse-article') {
+      if (u.scheme == 'upscwars' && u.host.toLowerCase() == 'pulse-article') {
         final articleUrl = articleUrlFromIncomingShareUri(u);
         if (articleUrl != null &&
-            !state.matchedLocation
-                .startsWith('/internal/fomo-pulse-composer/article')) {
+            !state.matchedLocation.startsWith(
+              '/internal/fomo-pulse-composer/article',
+            )) {
           return pulseArticleRouteForUrl(articleUrl);
         }
         return null;
@@ -774,9 +783,8 @@ GoRouter appRouter(Ref ref) {
         parentNavigatorKey: rootNavigatorKey,
         path: '/daily-war/history/:dateId/leaderboard',
         name: 'daily_war_leaderboard',
-        builder: (context, state) => DailyWarLeaderboardScreen(
-          dateId: state.pathParameters['dateId']!,
-        ),
+        builder: (context, state) =>
+            DailyWarLeaderboardScreen(dateId: state.pathParameters['dateId']!),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
@@ -909,24 +917,26 @@ GoRouter appRouter(Ref ref) {
         path: '/fomo-pulse',
         name: 'fomo_pulse_history',
         builder: (context, state) => const FomoPulseHistoryScreen(),
+      ),
+      // Detail is a sibling of the history route, not a child: notification and
+      // share-link taps use `go`, which would otherwise rebuild the stack with
+      // history sitting underneath the Pulse.
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/fomo-pulse/:pulseId',
+        name: 'fomo_pulse_detail',
+        builder: (context, state) {
+          final id = state.pathParameters['pulseId']!;
+          upscWarsTrace('FomoPulseDetailScreen build pulseId=$id');
+          return FomoPulseDetailScreen(pulseId: id);
+        },
         routes: [
           GoRoute(
             parentNavigatorKey: rootNavigatorKey,
-            path: ':pulseId',
-            name: 'fomo_pulse_detail',
-            builder: (context, state) => FomoPulseDetailScreen(
-              pulseId: state.pathParameters['pulseId']!,
-            ),
-            routes: [
-              GoRoute(
-                parentNavigatorKey: rootNavigatorKey,
-                path: 'mcq',
-                name: 'fomo_pulse_mcq',
-                builder: (context, state) => FomoPulseMcqScreen(
-                  pulseId: state.pathParameters['pulseId']!,
-                ),
-              ),
-            ],
+            path: 'mcq',
+            name: 'fomo_pulse_mcq',
+            builder: (context, state) =>
+                FomoPulseMcqScreen(pulseId: state.pathParameters['pulseId']!),
           ),
         ],
       ),
