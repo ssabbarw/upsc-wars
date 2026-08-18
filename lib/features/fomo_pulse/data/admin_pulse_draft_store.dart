@@ -53,6 +53,7 @@ class AdminPulseDraft {
       'draft': {
         'notificationTitle': draft.notificationTitle,
         'notificationBody': draft.notificationBody,
+        'sendRecommended': draft.sendRecommended,
         'newsSummary': draft.newsSummary,
         'sourceUrl': draft.sourceUrl,
         'harvestDraftDate': draft.harvestDraftDate,
@@ -82,6 +83,7 @@ class AdminPulseDraft {
       ),
       status: status,
       draft: FomoPulseDraft(
+        sendRecommended: d['sendRecommended'] != false,
         notificationTitle: d['notificationTitle']?.toString() ?? '',
         notificationBody: d['notificationBody']?.toString() ?? '',
         newsSummary: d['newsSummary']?.toString() ?? '',
@@ -128,8 +130,9 @@ class AdminPulseDraftStore {
       for (final item in decoded) {
         if (item is Map) {
           try {
-            drafts
-                .add(AdminPulseDraft.fromJson(Map<String, dynamic>.from(item)));
+            drafts.add(
+              AdminPulseDraft.fromJson(Map<String, dynamic>.from(item)),
+            );
           } catch (_) {}
         }
       }
@@ -143,10 +146,8 @@ class AdminPulseDraftStore {
   /// Upsert a draft (insert or update by id), newest first.
   Future<void> save(AdminPulseDraft entry) async {
     final all = await loadAll();
-    final next = [
-      entry,
-      ...all.where((d) => d.id != entry.id),
-    ]..sort((a, b) => b.savedAt.compareTo(a.savedAt));
+    final next = [entry, ...all.where((d) => d.id != entry.id)]
+      ..sort((a, b) => b.savedAt.compareTo(a.savedAt));
     final trimmed = next.take(_maxDrafts).toList();
     final prefs = await _ensurePrefs();
     await prefs.setString(
@@ -173,9 +174,6 @@ class AdminPulseDraftStore {
     final all = await loadAll();
     final next = all.where((d) => d.id != id).toList();
     final prefs = await _ensurePrefs();
-    await prefs.setString(
-      _key,
-      jsonEncode([for (final d in next) d.toJson()]),
-    );
+    await prefs.setString(_key, jsonEncode([for (final d in next) d.toJson()]));
   }
 }

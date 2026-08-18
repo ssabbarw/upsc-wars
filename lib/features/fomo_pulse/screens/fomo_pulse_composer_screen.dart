@@ -12,16 +12,16 @@ import '../domain/fomo_pulse_models.dart';
 import '../providers/fomo_pulse_providers.dart';
 
 String _statusLabel(AdminPulseDraftStatus s) => switch (s) {
-      AdminPulseDraftStatus.draft => 'Draft',
-      AdminPulseDraftStatus.sentSelf => 'Sent to me',
-      AdminPulseDraftStatus.sentBroadcast => 'Broadcast',
-    };
+  AdminPulseDraftStatus.draft => 'Draft',
+  AdminPulseDraftStatus.sentSelf => 'Sent to me',
+  AdminPulseDraftStatus.sentBroadcast => 'Broadcast',
+};
 
 Color _statusColor(AdminPulseDraftStatus s, ColorScheme cs) => switch (s) {
-      AdminPulseDraftStatus.draft => cs.onSurfaceVariant,
-      AdminPulseDraftStatus.sentSelf => cs.primary,
-      AdminPulseDraftStatus.sentBroadcast => cs.tertiary,
-    };
+  AdminPulseDraftStatus.draft => cs.onSurfaceVariant,
+  AdminPulseDraftStatus.sentSelf => cs.primary,
+  AdminPulseDraftStatus.sentBroadcast => cs.tertiary,
+};
 
 List<Widget> _buildSavedDraftTiles(
   BuildContext context,
@@ -71,7 +71,7 @@ List<Widget> _buildSavedDraftTiles(
               saved.draft.notificationTitle.isNotEmpty
                   ? saved.draft.notificationTitle
                   : Uri.tryParse(saved.draft.sourceUrl)?.host ??
-                      saved.draft.sourceUrl,
+                        saved.draft.sourceUrl,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
             ),
@@ -147,7 +147,7 @@ class FomoPulseComposerScreen extends HookConsumerWidget {
     }, []);
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Pulse composer')),
+      appBar: AppBar(title: const Text('CA Shot composer')),
       body: ListView(
         padding: const EdgeInsets.all(AppSpacing.lg),
         children: [

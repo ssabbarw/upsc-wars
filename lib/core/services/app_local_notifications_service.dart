@@ -45,8 +45,7 @@ class AppLocalNotificationsService {
   static const _noTestReminderChannelDescription =
       'Reminders to take your first practice test';
 
-  static const _noTestReminderTitle =
-      'Find where UPSC Wars gives you an edge';
+  static const _noTestReminderTitle = 'Find where UPSC Wars gives you an edge';
   static const _noTestReminderBody =
       'Take 7 quick MCQs. Get coached to eliminate better, spot weak areas, and see where you\u2019re strong.';
 
@@ -56,7 +55,7 @@ class AppLocalNotificationsService {
       'Battle invites while you are in the app (tap to join)';
 
   static const _fomoPulseChannelId = 'fomo_pulse_v1';
-  static const _fomoPulseChannelName = 'Breaking Pulse';
+  static const _fomoPulseChannelName = 'CA Shots';
   static const _fomoPulseChannelDescription =
       'Breaking news quizzes from UPSC Wars';
 
@@ -101,16 +100,20 @@ class AppLocalNotificationsService {
     final sdkInt = await _androidSdkInt();
     if (sdkInt == null || sdkInt < 33) return true;
     await ensureInitialized();
-    final androidImpl = _plugin.resolvePlatformSpecificImplementation<
-        AndroidFlutterLocalNotificationsPlugin>();
+    final androidImpl = _plugin
+        .resolvePlatformSpecificImplementation<
+          AndroidFlutterLocalNotificationsPlugin
+        >();
     return androidImpl?.requestNotificationsPermission();
   }
 
   static Future<bool?> androidNotificationsEnabled() async {
     if (kIsWeb || defaultTargetPlatform != TargetPlatform.android) return null;
     await ensureInitialized();
-    final androidImpl = _plugin.resolvePlatformSpecificImplementation<
-        AndroidFlutterLocalNotificationsPlugin>();
+    final androidImpl = _plugin
+        .resolvePlatformSpecificImplementation<
+          AndroidFlutterLocalNotificationsPlugin
+        >();
     return androidImpl?.areNotificationsEnabled();
   }
 
@@ -138,8 +141,10 @@ class AppLocalNotificationsService {
 
         // Create a loud default channel for FCM background notifications.
         // Android 8+ channels are sticky; ensure this exists early.
-        final androidImpl = _plugin.resolvePlatformSpecificImplementation<
-            AndroidFlutterLocalNotificationsPlugin>();
+        final androidImpl = _plugin
+            .resolvePlatformSpecificImplementation<
+              AndroidFlutterLocalNotificationsPlugin
+            >();
         // Keep v1 around (older builds may have referenced it), but default new
         // FCM deliveries to v2 via AndroidManifest meta-data.
         await androidImpl?.createNotificationChannel(
@@ -249,8 +254,10 @@ class AppLocalNotificationsService {
       description: _battleChannelDescription,
       importance: Importance.high,
     );
-    final androidImpl = _plugin.resolvePlatformSpecificImplementation<
-        AndroidFlutterLocalNotificationsPlugin>();
+    final androidImpl = _plugin
+        .resolvePlatformSpecificImplementation<
+          AndroidFlutterLocalNotificationsPlugin
+        >();
     await androidImpl?.createNotificationChannel(androidChannel);
 
     await _plugin.show(
@@ -290,8 +297,10 @@ class AppLocalNotificationsService {
     if (kIsWeb) return;
     await ensureInitialized();
 
-    final androidImpl = _plugin.resolvePlatformSpecificImplementation<
-        AndroidFlutterLocalNotificationsPlugin>();
+    final androidImpl = _plugin
+        .resolvePlatformSpecificImplementation<
+          AndroidFlutterLocalNotificationsPlugin
+        >();
     await androidImpl?.createNotificationChannel(
       const AndroidNotificationChannel(
         _fomoPulseChannelId,
@@ -303,7 +312,7 @@ class AppLocalNotificationsService {
 
     await _plugin.show(
       id: foregroundFomoPulseNotificationId,
-      title: title.isNotEmpty ? title : 'Breaking Pulse',
+      title: title.isNotEmpty ? title : 'CA Shot',
       body: body.isNotEmpty ? body : 'Tap to read & attempt',
       notificationDetails: NotificationDetails(
         android: AndroidNotificationDetails(
@@ -401,8 +410,10 @@ class AppLocalNotificationsService {
 
   static Future<void> _ensureNoTestReminderChannel() async {
     if (kIsWeb || defaultTargetPlatform != TargetPlatform.android) return;
-    final androidImpl = _plugin.resolvePlatformSpecificImplementation<
-        AndroidFlutterLocalNotificationsPlugin>();
+    final androidImpl = _plugin
+        .resolvePlatformSpecificImplementation<
+          AndroidFlutterLocalNotificationsPlugin
+        >();
     await androidImpl?.createNotificationChannel(
       const AndroidNotificationChannel(
         _noTestReminderChannelId,

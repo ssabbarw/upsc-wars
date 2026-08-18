@@ -310,6 +310,31 @@ function normalizePoints(raw) {
     .slice(0, 3);
 }
 
+function normalizeSendFlag(raw, fallback = true) {
+  if (raw === undefined || raw === null) return fallback;
+  if (typeof raw === "boolean") return raw;
+  const s = String(raw).trim().toLowerCase();
+  if (["false", "0", "no"].includes(s)) return false;
+  if (["true", "1", "yes"].includes(s)) return true;
+  return fallback;
+}
+
+function formatNewsSummary(raw) {
+  if (!raw) return "";
+  if (typeof raw === "string") return raw.trim();
+  if (typeof raw !== "object") return String(raw).trim();
+  const what = String(raw.what_happened || raw.what || "").trim();
+  const relevance = String(raw.upsc_relevance || raw.relevance || "").trim();
+  const learn = normalizeStringArray(raw.learn || raw.topics_to_learn || [], 4);
+  const parts = [];
+  if (what) parts.push(`What happened: ${what}`);
+  if (relevance) parts.push(`UPSC relevance: ${relevance}`);
+  if (learn.length > 0) {
+    parts.push(`Topics to learn:\n${learn.map((x) => `• ${x}`).join("\n")}`);
+  }
+  return parts.join("\n\n").trim();
+}
+
 function normalizeStringArray(raw, max = 6) {
   if (!Array.isArray(raw)) return [];
   return raw
@@ -575,6 +600,7 @@ exports.generateFomoPulseDraft = onCall(generateOpts, async (request) => {
         // Preview image is optional.
       }
     }
+    const shouldSend = normalizeSendFlag(hooks.send, true);
     const points = normalizePoints(
       meta.key_facts ||
         meta.upsc_points ||
@@ -582,13 +608,19 @@ exports.generateFomoPulseDraft = onCall(generateOpts, async (request) => {
         (meta.concept_to_test ? [meta.concept_to_test] : []),
     );
     const newsSummary =
-      String(hooks.news_summary || "").trim() ||
+      formatNewsSummary(hooks.news_summary) ||
+      formatNewsSummary(meta.news_summary) ||
       String(meta.news_summary || "").trim();
     return {
       ok: true,
       draft: {
-        notification_title: (hooks.notification_title || "").slice(0, MAX_TITLE),
-        notification_body: (hooks.notification_body || "").slice(0, MAX_BODY),
+        send: shouldSend,
+        notification_title: shouldSend
+          ? (hooks.notification_title || "").slice(0, MAX_TITLE)
+          : "",
+        notification_body: shouldSend
+          ? (hooks.notification_body || "").slice(0, MAX_BODY)
+          : "",
         news_summary: newsSummary,
         source_url: sourceUrl,
         image_url: imageUrl,
@@ -649,18 +681,26 @@ exports.generateFomoPulseDraft = onCall(generateOpts, async (request) => {
         generated.question && typeof generated.question === "object"
           ? generated.question
           : generated;
+      const shouldSend = normalizeSendFlag(generated.send, true);
       return {
         ok: true,
         draft: {
-          notification_title: (generated.notification_title || "").slice(
-            0,
-            MAX_TITLE,
-          ),
-          notification_body: (generated.notification_body || "").slice(
-            0,
-            MAX_BODY,
-          ),
-          news_summary: (generated.news_summary || "").toString(),
+          send: shouldSend,
+          notification_title: shouldSend
+            ? (generated.notification_title || "").slice(
+                0,
+                MAX_TITLE,
+              )
+            : "",
+          notification_body: shouldSend
+            ? (generated.notification_body || "").slice(
+                0,
+                MAX_BODY,
+              )
+            : "",
+          news_summary:
+            formatNewsSummary(generated.news_summary) ||
+            String(generated.news_summary || "").trim(),
           source_url: url,
           image_url: String(data.image_url || "").trim() || page.image_url || "",
           image_source:

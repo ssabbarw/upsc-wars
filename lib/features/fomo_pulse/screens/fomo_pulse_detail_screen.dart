@@ -6,6 +6,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../core/providers/app_language_helpers.dart';
+import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../data/fomo_pulse_share.dart';
@@ -34,7 +35,7 @@ class FomoPulseDetailScreen extends HookConsumerWidget {
       },
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Pulse'),
+          title: const Text('CA Shot'),
           leading: IconButton(
             icon: const Icon(Icons.arrow_back),
             onPressed: () => canPop ? context.pop() : context.go('/'),
@@ -68,7 +69,7 @@ class FomoPulseDetailScreen extends HookConsumerWidget {
                   const Icon(Icons.wifi_off_rounded, size: 48),
                   const SizedBox(height: 16),
                   const Text(
-                    'Could not load this Pulse.',
+                    'Could not load this CA Shot.',
                     textAlign: TextAlign.center,
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
@@ -132,41 +133,44 @@ class _PulseBody extends HookConsumerWidget {
           pulse.title,
           style: AppTextStyles.h3().copyWith(fontWeight: FontWeight.w800),
         ),
-        if (summary.isNotEmpty) ...[
-          const SizedBox(height: AppSpacing.md),
-          Text(summary, style: AppTextStyles.body().copyWith(height: 1.4)),
-        ] else if (pulse.body.isNotEmpty) ...[
-          const SizedBox(height: AppSpacing.sm),
-          Text(
-            pulse.body,
-            style: AppTextStyles.bodySm().copyWith(
-              color: scheme.onSurfaceVariant,
-              height: 1.35,
-            ),
+        const SizedBox(height: AppSpacing.md),
+        _PulseSectionCard(
+          title: 'News Brief + UPSC Relevance',
+          child: Text(
+            summary.isNotEmpty ? summary : pulse.body,
+            style: AppTextStyles.body().copyWith(height: 1.45),
           ),
-        ],
+        ),
         if (points.isNotEmpty) ...[
           const SizedBox(height: AppSpacing.md),
-          Text('For UPSC', style: AppTextStyles.label()),
-          const SizedBox(height: AppSpacing.xs),
-          ...points.map(
-            (p) => Padding(
-              padding: const EdgeInsets.only(bottom: AppSpacing.xs),
-              child: Text('• $p', style: AppTextStyles.bodySm()),
+          _PulseSectionCard(
+            title: 'Likely UPSC Question Areas',
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                for (final p in points)
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: AppSpacing.xs),
+                    child: Text('• $p', style: AppTextStyles.bodySm()),
+                  ),
+              ],
             ),
           ),
         ],
         if (stats != null && !alreadyAttempted) ...[
           const SizedBox(height: AppSpacing.md),
-          Text(
-            stats.challengeLine,
-            style: AppTextStyles.label().copyWith(color: scheme.primary),
+          _PulseSectionCard(
+            title: 'Challenge',
+            child: Text(
+              stats.challengeLine,
+              style: AppTextStyles.label().copyWith(color: scheme.primary),
+            ),
           ),
         ],
         const SizedBox(height: AppSpacing.lg),
         if (pulse.isExpired && !alreadyAttempted)
           Text(
-            'This Pulse has expired.',
+            'This CA Shot has expired.',
             style: AppTextStyles.label().copyWith(color: scheme.error),
           )
         else ...[
@@ -195,7 +199,7 @@ class _PulseBody extends HookConsumerWidget {
         const SizedBox(height: AppSpacing.lg),
         TextButton(
           onPressed: () => context.go('/fomo-pulse'),
-          child: const Text('All Pulses'),
+          child: const Text('All CA Shots'),
         ),
       ],
     );
@@ -235,6 +239,38 @@ class _ShareAndSourceRow extends StatelessWidget {
           ),
         ],
       ],
+    );
+  }
+}
+
+class _PulseSectionCard extends StatelessWidget {
+  const _PulseSectionCard({required this.title, required this.child});
+
+  final String title;
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(AppSpacing.md),
+      decoration: BoxDecoration(
+        color: scheme.surfaceContainerLowest,
+        borderRadius: BorderRadius.circular(AppRadius.md),
+        border: Border.all(color: scheme.outlineVariant.withValues(alpha: 0.5)),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            title,
+            style: AppTextStyles.label().copyWith(fontWeight: FontWeight.w700),
+          ),
+          const SizedBox(height: AppSpacing.sm),
+          child,
+        ],
+      ),
     );
   }
 }

@@ -40,7 +40,7 @@ class FomoPulseMcqScreen extends HookConsumerWidget {
                 const Icon(Icons.wifi_off_rounded, size: 48),
                 const SizedBox(height: AppSpacing.lg),
                 const Text(
-                  'Could not load this Pulse.',
+                  'Could not load this CA Shot.',
                   textAlign: TextAlign.center,
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
@@ -298,7 +298,7 @@ class _FomoPulseTutorBody extends HookConsumerWidget {
           const SizedBox(height: AppSpacing.sm),
           TextButton(
             onPressed: () => context.pop(),
-            child: const Text('Back to Pulse'),
+            child: const Text('Back to CA Shot'),
           ),
         ],
       ],

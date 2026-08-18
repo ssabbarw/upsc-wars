@@ -10,10 +10,9 @@ import 'fomo_pulse_local_cache.dart';
 enum FomoPulseSendTarget { self, broadcast }
 
 class FomoPulseCloudService {
-  FomoPulseCloudService({
-    FirebaseFunctions? functions,
-  }) : _functions =
-            functions ?? FirebaseFunctions.instanceFor(region: 'asia-south1');
+  FomoPulseCloudService({FirebaseFunctions? functions})
+    : _functions =
+          functions ?? FirebaseFunctions.instanceFor(region: 'asia-south1');
 
   final FirebaseFunctions _functions;
 
@@ -50,7 +49,7 @@ class FomoPulseCloudService {
   }
 
   Future<({String? draftDate, List<FomoPulseHarvestCandidate> candidates})>
-      listHarvestCandidates() async {
+  listHarvestCandidates() async {
     final callable = _functions.httpsCallable('listFomoPulseHarvestCandidates');
     final result = await callable.call<Map<String, dynamic>>({});
     final data = result.data;
@@ -64,10 +63,7 @@ class FomoPulseCloudService {
                 ),
           ]
         : <FomoPulseHarvestCandidate>[];
-    return (
-      draftDate: data['draft_date']?.toString(),
-      candidates: list,
-    );
+    return (draftDate: data['draft_date']?.toString(), candidates: list);
   }
 
   Future<FomoPulseArticlePreview> previewArticle(String url) async {
@@ -168,7 +164,7 @@ class FomoPulseCloudService {
   }
 
   Future<({bool ok, String? pulseId, String? reason, String? target})>
-      sendPulse({
+  sendPulse({
     required String title,
     required String body,
     required String newsSummary,
@@ -197,10 +193,7 @@ class FomoPulseCloudService {
       'question': question.toServerMap(),
       'target': target == FomoPulseSendTarget.broadcast ? 'broadcast' : 'self',
       if (harvestDraftDate != null && harvestDraftId != null)
-        'harvest': {
-          'draft_date': harvestDraftDate,
-          'draft_id': harvestDraftId,
-        },
+        'harvest': {'draft_date': harvestDraftDate, 'draft_id': harvestDraftId},
     });
     final data = result.data;
     return (
@@ -230,8 +223,8 @@ class FomoPulseRepository {
   FomoPulseRepository({
     FirebaseFirestore? firestore,
     FomoPulseLocalCache? cache,
-  })  : _firestore = firestore ?? FirebaseFirestore.instance,
-        _cache = cache ?? FomoPulseLocalCache();
+  }) : _firestore = firestore ?? FirebaseFirestore.instance,
+       _cache = cache ?? FomoPulseLocalCache();
 
   final FirebaseFirestore _firestore;
   final FomoPulseLocalCache _cache;
@@ -248,10 +241,7 @@ class FomoPulseRepository {
     try {
       final pulses = await fetchRecentPulses();
       final remoteAttempts = await fetchUserAttemptIndex();
-      final attempts = {
-        ...cached.attempts,
-        ...remoteAttempts,
-      };
+      final attempts = {...cached.attempts, ...remoteAttempts};
       await _cache.writeList(pulses: pulses, attempts: attempts);
       return (pulses: pulses, attempts: attempts);
     } catch (_) {
@@ -313,8 +303,7 @@ class FomoPulseRepository {
         .limit(limit)
         .get();
     return [
-      for (final doc in snap.docs)
-        FomoPulse.fromFirestore(doc.id, doc.data()),
+      for (final doc in snap.docs) FomoPulse.fromFirestore(doc.id, doc.data()),
     ];
   }
 
@@ -363,8 +352,8 @@ class FomoPulsePushOutcome {
     if (error != null) return error.toString();
     if (sent) {
       return target == 'broadcast'
-          ? 'Pulse broadcast sent.'
-          : 'Pulse sent to your device.';
+          ? 'CA Shot broadcast sent.'
+          : 'CA Shot sent to your device.';
     }
     return switch (reason) {
       'no_token' => 'No push token on your user doc.',
@@ -377,7 +366,7 @@ class FomoPulsePushOutcome {
 
 class FomoPulsePushService {
   FomoPulsePushService({FomoPulseCloudService? cloud})
-      : cloud = cloud ?? FomoPulseCloudService();
+    : cloud = cloud ?? FomoPulseCloudService();
 
   final FomoPulseCloudService cloud;
 

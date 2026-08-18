@@ -171,14 +171,14 @@ class FomoPulseArticleScreen extends HookConsumerWidget {
             .translateDraft(current);
         if (context.mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Hindi added to this Pulse.')),
+            const SnackBar(content: Text('Hindi added to this CA Shot.')),
           );
         }
       } catch (e) {
         if (context.mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('Translate failed: $e')),
-          );
+          ScaffoldMessenger.of(
+            context,
+          ).showSnackBar(SnackBar(content: Text('Translate failed: $e')));
         }
       } finally {
         translating.value = false;
@@ -200,7 +200,7 @@ class FomoPulseArticleScreen extends HookConsumerWidget {
         final ok = await showDialog<bool>(
           context: context,
           builder: (ctx) => AlertDialog(
-            title: const Text('Broadcast Pulse?'),
+            title: const Text('Broadcast CA Shot?'),
             content: Text(
               'Sends to all devices on '
               '"${FomoPulseConstants.broadcastFcmTopic}".',
@@ -231,19 +231,18 @@ class FomoPulseArticleScreen extends HookConsumerWidget {
           imageUrl: imageUrl,
           imageSource: imageSource,
         );
-        final outcome = await ref.read(fomoPulsePushServiceProvider).send(
-              updated,
-              sendTarget.value,
-            );
+        final outcome = await ref
+            .read(fomoPulsePushServiceProvider)
+            .send(updated, sendTarget.value);
         debugPrint(
           'FomoPulseArticle.send: sent=${outcome.sent} '
           'reason=${outcome.reason} target=${outcome.target} '
           'pulseId=${outcome.pulseId} error=${outcome.error}',
         );
         if (!context.mounted) return;
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(outcome.userMessage)),
-        );
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text(outcome.userMessage)));
         if (outcome.sent) {
           final sentStatus = sendTarget.value == FomoPulseSendTarget.broadcast
               ? AdminPulseDraftStatus.sentBroadcast
@@ -279,10 +278,12 @@ class FomoPulseArticleScreen extends HookConsumerWidget {
         : (args.candidate?.upscPoints ?? const <String>[]);
 
     final hasPreviewData =
-        preview.value != null || args.heading.isNotEmpty || args.summary.isNotEmpty;
+        preview.value != null ||
+        args.heading.isNotEmpty ||
+        args.summary.isNotEmpty;
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Pulse article')),
+      appBar: AppBar(title: const Text('CA Shot article')),
       body: ListView(
         padding: const EdgeInsets.all(AppSpacing.lg),
         children: [
@@ -300,12 +301,8 @@ class FomoPulseArticleScreen extends HookConsumerWidget {
             ),
             const SizedBox(height: AppSpacing.xl),
           ] else ...[
-            if (previewLoading.value)
-              const LinearProgressIndicator(),
-            FomoPulseHeroImage(
-              imageUrl: imageUrl,
-              imageSource: imageSource,
-            ),
+            if (previewLoading.value) const LinearProgressIndicator(),
+            FomoPulseHeroImage(imageUrl: imageUrl, imageSource: imageSource),
             if (imageUrl.isNotEmpty) const SizedBox(height: AppSpacing.md),
             if (heading.isNotEmpty)
               Text(
@@ -359,7 +356,8 @@ class FomoPulseArticleScreen extends HookConsumerWidget {
           const SizedBox(height: AppSpacing.lg),
           if (current == null)
             FilledButton.icon(
-              onPressed: generating.value ||
+              onPressed:
+                  generating.value ||
                       previewLoading.value ||
                       (!args.isHarvest && sourceUrl.isEmpty)
                   ? null
@@ -376,6 +374,40 @@ class FomoPulseArticleScreen extends HookConsumerWidget {
               ),
             )
           else ...[
+            if (!current.sendRecommended) ...[
+              Container(
+                padding: const EdgeInsets.all(AppSpacing.md),
+                decoration: BoxDecoration(
+                  color: scheme.errorContainer.withValues(alpha: 0.45),
+                  borderRadius: BorderRadius.circular(AppRadius.md),
+                  border: Border.all(
+                    color: scheme.error.withValues(alpha: 0.35),
+                  ),
+                ),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Icon(
+                      Icons.warning_amber_rounded,
+                      color: scheme.error,
+                      size: 20,
+                    ),
+                    const SizedBox(width: AppSpacing.sm),
+                    Expanded(
+                      child: Text(
+                        'Model marked this as not notification-worthy '
+                        '(send=false). Review heading/subheading and send only '
+                        'if you are confident it is worth an interrupt.',
+                        style: AppTextStyles.caption().copyWith(
+                          color: scheme.onErrorContainer,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: AppSpacing.md),
+            ],
             Text('Notification', style: AppTextStyles.label()),
             const SizedBox(height: AppSpacing.sm),
             TextField(
@@ -418,7 +450,7 @@ class FomoPulseArticleScreen extends HookConsumerWidget {
             if (current.question.hasHindi) ...[
               const SizedBox(height: AppSpacing.sm),
               Text(
-                'Hindi translation is attached and will be stored on this Pulse.',
+                'Hindi translation is attached and will be stored on this CA Shot.',
                 style: AppTextStyles.caption().copyWith(
                   color: scheme.onSurfaceVariant,
                 ),
@@ -440,8 +472,8 @@ class FomoPulseArticleScreen extends HookConsumerWidget {
                 current.question.hasHindi
                     ? 'Hindi added'
                     : translating.value
-                        ? 'Translating…'
-                        : 'Translate to Hindi',
+                    ? 'Translating…'
+                    : 'Translate to Hindi',
               ),
             ),
             const SizedBox(height: AppSpacing.lg),

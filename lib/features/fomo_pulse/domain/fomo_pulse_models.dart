@@ -381,6 +381,7 @@ class FomoPulseStatementAnalysisItem {
 
 class FomoPulseDraft {
   const FomoPulseDraft({
+    this.sendRecommended = true,
     required this.notificationTitle,
     required this.notificationBody,
     required this.newsSummary,
@@ -395,6 +396,7 @@ class FomoPulseDraft {
     this.upscPointsHi = const [],
   });
 
+  final bool sendRecommended;
   final String notificationTitle;
   final String notificationBody;
   final String newsSummary;
@@ -409,6 +411,7 @@ class FomoPulseDraft {
   final List<String> upscPointsHi;
 
   FomoPulseDraft copyWith({
+    bool? sendRecommended,
     String? notificationTitle,
     String? notificationBody,
     String? newsSummary,
@@ -420,6 +423,7 @@ class FomoPulseDraft {
     List<String>? upscPointsHi,
   }) {
     return FomoPulseDraft(
+      sendRecommended: sendRecommended ?? this.sendRecommended,
       notificationTitle: notificationTitle ?? this.notificationTitle,
       notificationBody: notificationBody ?? this.notificationBody,
       newsSummary: newsSummary ?? this.newsSummary,
@@ -441,6 +445,7 @@ class FomoPulseDraft {
         : null;
     final points = map['upsc_points'];
     return FomoPulseDraft(
+      sendRecommended: map['send'] != false,
       notificationTitle: (map['notification_title'] ?? '').toString(),
       notificationBody: (map['notification_body'] ?? '').toString(),
       newsSummary: (map['news_summary'] ?? '').toString(),

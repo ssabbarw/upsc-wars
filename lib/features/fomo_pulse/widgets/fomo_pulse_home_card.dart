@@ -5,7 +5,7 @@ import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 
-/// Home entry for Pulse history.
+/// Home entry for CA Shots history.
 class FomoPulseHomeCard extends StatelessWidget {
   const FomoPulseHomeCard({super.key});
 
@@ -29,13 +29,13 @@ class FomoPulseHomeCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Pulse',
+                      'Current affairs shots',
                       style: AppTextStyles.label().copyWith(
                         fontWeight: FontWeight.w800,
                       ),
                     ),
                     Text(
-                      'Breaking CA — brief, then 1 MCQ',
+                      'Breaking CA brief, then 1 MCQ shot',
                       style: AppTextStyles.caption().copyWith(
                         color: scheme.onSurfaceVariant,
                       ),
