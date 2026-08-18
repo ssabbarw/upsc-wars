@@ -99,7 +99,7 @@ class FomoPulseCloudService {
         if (imageUrl != null && imageUrl.isNotEmpty) 'image_url': imageUrl,
         if (imageSource != null && imageSource.isNotEmpty)
           'image_source': imageSource,
-        if (trimmedText.length >= 100) 'article_text': trimmedText,
+        if (trimmedText.length >= 40) 'article_text': trimmedText,
       });
       final draftRaw = result.data['draft'];
       if (draftRaw is! Map) {

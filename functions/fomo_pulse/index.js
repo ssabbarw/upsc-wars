@@ -554,7 +554,7 @@ exports.generateFomoPulseDraft = onCall(generateOpts, async (request) => {
       throw new HttpsError("invalid-argument", "Valid http(s) URL required.");
     }
     try {
-      const minClientText = 100;
+      const minClientText = 40;
       const maxClientText = 12000;
       const clientText = String(data.article_text || "").trim().slice(
         0,

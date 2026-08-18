@@ -96,11 +96,16 @@ class FomoPulseArticleScreen extends HookConsumerWidget {
           );
         } else {
           var articleText = await fetchArticleTextFromUrl(sourceUrl);
-          if ((articleText == null || articleText.length < 100) &&
+          if ((articleText == null || articleText.length < 40) &&
               summary.isNotEmpty) {
             articleText = summary;
           }
-          if (articleText != null && articleText.length >= 100) {
+          if ((articleText == null || articleText.length < 40) &&
+              heading.isNotEmpty &&
+              summary.isNotEmpty) {
+            articleText = '$heading\n$summary';
+          }
+          if (articleText != null && articleText.length >= 40) {
             debugPrint(
               'FomoPulseArticleScreen: using on-device article text '
               '(${articleText.length} chars)',
