@@ -1,12 +1,14 @@
 import 'dart:async';
 
 import 'package:app_links/app_links.dart';
+import 'package:flutter/foundation.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'package:upsc_wars/core/analytics/session_entry_source.dart';
 import 'package:upsc_wars/core/deep_link/share_session_opener.dart';
 import 'package:upsc_wars/features/fomo_pulse/data/fomo_pulse_incoming_share.dart';
+import 'package:upsc_wars/features/fomo_pulse/data/fomo_pulse_native_share.dart';
 
 /// Subscribes to platform share / universal links after app bootstrap.
 ///
@@ -16,17 +18,18 @@ class ShareDeepLinkService {
   ShareDeepLinkService._();
 
   static StreamSubscription<Uri>? _subscription;
+  static StreamSubscription<String>? _nativeShareSubscription;
   static String? _lastFingerprint;
   static DateTime _lastHandledAt = DateTime.fromMillisecondsSinceEpoch(0);
 
   static bool _shouldHandle(Uri uri) {
-    final fp = uri.toString();
+    final article = articleUrlFromIncomingUri(uri) ?? uri.toString();
     final now = DateTime.now();
-    if (_lastFingerprint == fp &&
-        now.difference(_lastHandledAt) < const Duration(milliseconds: 1200)) {
+    if (_lastFingerprint == article &&
+        now.difference(_lastHandledAt) < const Duration(milliseconds: 1500)) {
       return false;
     }
-    _lastFingerprint = fp;
+    _lastFingerprint = article;
     _lastHandledAt = now;
     return true;
   }
@@ -44,10 +47,40 @@ class ShareDeepLinkService {
       );
     }
 
+    final nativeUrl = await FomoPulseNativeShare.consumePendingUrl();
+    if (nativeUrl != null) {
+      final uri = pulseArticleDeepLinkForUrl(nativeUrl);
+      if (_shouldHandle(uri)) {
+        await _handleIncoming(
+          ref: ref,
+          router: router,
+          uri: uri,
+          replaceStack: true,
+        );
+      }
+    }
+
     _subscription = appLinks.uriLinkStream.listen((uri) async {
       if (!_shouldHandle(uri)) return;
       await _handleIncoming(ref: ref, router: router, uri: uri);
     });
+    _nativeShareSubscription = FomoPulseNativeShare.urlStream().listen((
+      url,
+    ) async {
+      final uri = pulseArticleDeepLinkForUrl(url);
+      if (!_shouldHandle(uri)) return;
+      await _handleIncoming(ref: ref, router: router, uri: uri);
+    });
+  }
+
+  /// Chrome/Safari can deliver the URL after Flutter is already running
+  /// (share sheet while backgrounded). Re-check native pending on resume.
+  static Future<void> handleResume(WidgetRef ref, GoRouter router) async {
+    final nativeUrl = await FomoPulseNativeShare.consumePendingUrl();
+    if (nativeUrl == null) return;
+    final uri = pulseArticleDeepLinkForUrl(nativeUrl);
+    if (!_shouldHandle(uri)) return;
+    await _handleIncoming(ref: ref, router: router, uri: uri);
   }
 
   static Future<void> _handleIncoming({
@@ -56,6 +89,7 @@ class ShareDeepLinkService {
     required Uri uri,
     bool replaceStack = false,
   }) async {
+    debugPrint('[share-link] incoming uri=$uri');
     final openedPulse = await openPulseArticleFromIncomingShare(
       ref: ref,
       router: router,
@@ -79,5 +113,7 @@ class ShareDeepLinkService {
   static Future<void> dispose() async {
     await _subscription?.cancel();
     _subscription = null;
+    await _nativeShareSubscription?.cancel();
+    _nativeShareSubscription = null;
   }
 }

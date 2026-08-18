@@ -128,6 +128,29 @@ FomoPulseArticleArgs? pulseArticleArgsFromRoute(GoRouterState state) {
   return null;
 }
 
+Uri pulseArticleDeepLinkForUrl(String articleUrl) {
+  return Uri(
+    scheme: FomoPulseConstants.incomingShareScheme,
+    host: FomoPulseConstants.incomingShareHost,
+    queryParameters: {'url': articleUrl.trim()},
+  );
+}
+
+/// News URL from a custom-scheme share or a plain http(s) article URI.
+String? articleUrlFromIncomingUri(Uri uri) {
+  final fromCustom = articleUrlFromIncomingShareUri(uri);
+  if (fromCustom != null) return fromCustom;
+  if (uri.scheme != 'http' && uri.scheme != 'https') return null;
+  var host = uri.host.toLowerCase();
+  var segs = uri.pathSegments.where((s) => s.isNotEmpty).toList();
+  if (host == 'upscwars' && segs.isNotEmpty && segs.first == 'in') {
+    host = 'upscwars.in';
+    segs = segs.skip(1).toList();
+  }
+  if (host == 'upscwars.in' || host == 'www.upscwars.in') return null;
+  return uri.toString();
+}
+
 /// Opens the Pulse article screen when a signed-in admin shares a news URL.
 Future<bool> openPulseArticleFromIncomingShare({
   required WidgetRef ref,
@@ -135,8 +158,22 @@ Future<bool> openPulseArticleFromIncomingShare({
   required Uri uri,
   bool replaceStack = false,
 }) async {
-  final url = articleUrlFromIncomingShareUri(uri);
+  final url = articleUrlFromIncomingUri(uri);
   if (url == null) return false;
+  return openPulseComposerForArticleUrl(
+    ref: ref,
+    router: router,
+    url: url,
+    replaceStack: replaceStack,
+  );
+}
+
+Future<bool> openPulseComposerForArticleUrl({
+  required WidgetRef ref,
+  required GoRouter router,
+  required String url,
+  bool replaceStack = false,
+}) async {
   if (_isOwnProductUrl(url)) return false;
 
   final auth = ref.read(authStateChangesProvider);

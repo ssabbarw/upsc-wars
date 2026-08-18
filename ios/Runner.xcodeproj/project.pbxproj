@@ -14,11 +14,13 @@
 		74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74858FAE1ED2DC5600515810 /* AppDelegate.swift */; };
 		77E44C6F2F001A0100A1B2C3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 77E44C6E2F001A0100A1B2C3 /* GoogleService-Info.plist */; };
 		7884E8682EC3CC0700C636F2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7884E8672EC3CC0400C636F2 /* SceneDelegate.swift */; };
+		A8SHARE01BUILDSWIFT00001 /* ShareBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8SHARE01FILESWIFT000001 /* ShareBridge.swift */; };
 		97C146FC1CF9000F007C117D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FA1CF9000F007C117D /* Main.storyboard */; };
 		97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FD1CF9000F007C117D /* Assets.xcassets */; };
 		97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */; };
 		BE95370BEDA6066851B7D61C /* Pods_RunnerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5EAF5AF64CFDEF43FE6D1D9 /* Pods_RunnerTests.framework */; };
 		A8PULSE01BUILDSWIFT00001 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8PULSE01FILESWIFT000001 /* ShareViewController.swift */; };
+		A8PULSE01BUILDJS000000001 /* GetURL.js in Resources */ = {isa = PBXBuildFile; fileRef = A8PULSE01FILEJS000000001 /* GetURL.js */; };
 		A8PULSE01EMBEDFILE000001 /* ShareExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A8PULSE01PRODUCTAPEX0001 /* ShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
@@ -91,6 +93,8 @@
 		D5EAF5AF64CFDEF43FE6D1D9 /* Pods_RunnerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RunnerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8122CD5FC2F667721F5B252 /* Pods_Runner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Runner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8PULSE01FILESWIFT000001 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		A8PULSE01FILEJS000000001 /* GetURL.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = GetURL.js; sourceTree = "<group>"; };
+		A8SHARE01FILESWIFT000001 /* ShareBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareBridge.swift; sourceTree = "<group>"; };
 		A8PULSE01FILEPLIST000001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A8PULSE01PRODUCTAPEX0001 /* ShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -158,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				A8PULSE01FILESWIFT000001 /* ShareViewController.swift */,
+				A8PULSE01FILEJS000000001 /* GetURL.js */,
 				A8PULSE01FILEPLIST000001 /* Info.plist */,
 			);
 			path = ShareExtension;
@@ -199,6 +204,7 @@
 				74858FAE1ED2DC5600515810 /* AppDelegate.swift */,
 				7884E8672EC3CC0400C636F2 /* SceneDelegate.swift */,
 				74858FAD1ED2DC5600515810 /* Runner-Bridging-Header.h */,
+				A8SHARE01FILESWIFT000001 /* ShareBridge.swift */,
 			);
 			path = Runner;
 			sourceTree = "<group>";
@@ -344,6 +350,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8PULSE01BUILDJS000000001 /* GetURL.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +484,7 @@
 				74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */,
 				1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */,
 				7884E8682EC3CC0700C636F2 /* SceneDelegate.swift in Sources */,
+				A8SHARE01BUILDSWIFT00001 /* ShareBridge.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

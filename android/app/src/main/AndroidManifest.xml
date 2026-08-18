@@ -59,6 +59,16 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <data android:mimeType="text/uri-list" />
             </intent-filter>
+            <intent-filter android:label="@string/make_pulse_share">
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/html" />
+            </intent-filter>
+            <intent-filter android:label="@string/make_pulse_share">
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/*" />
+            </intent-filter>
             <intent-filter android:autoVerify="true">
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />

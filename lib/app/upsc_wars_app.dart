@@ -216,6 +216,12 @@ class _RootMaterialApp extends HookConsumerWidget {
       final observer = _PrelimsNotificationResumeObserver(
         onResumed: () {
           unawaited(PrelimsSurfacesRefresh.refreshAllSurfaces());
+          unawaited(
+            ShareDeepLinkService.handleResume(
+              ref,
+              ref.read(appRouterProvider),
+            ),
+          );
         },
       );
       WidgetsBinding.instance.addObserver(observer);
