@@ -63,6 +63,12 @@ class ShareDeepLinkService {
       replaceStack: replaceStack,
     );
     if (openedPulse) return;
+    final openedCaShot = await openFomoPulseFromIncomingLink(
+      router: router,
+      uri: uri,
+      replaceStack: replaceStack,
+    );
+    if (openedCaShot) return;
     SessionEntrySource.capture(
       SessionEntrySource.deepLink,
       detail: 'share',

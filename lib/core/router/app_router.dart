@@ -387,7 +387,7 @@ GoRouter appRouter(Ref ref) {
           }
         }
 
-        if (host == 'upscwars.in' &&
+        if ((host == 'upscwars.in' || host == 'www.upscwars.in') &&
             segs.length >= 2 &&
             segs[0] == 'fomo-pulse') {
           final pulseId = segs[1].trim();

@@ -30,5 +30,10 @@ Future<void> shareFomoPulse(
     if (body.isNotEmpty) buf.writeln(body);
   }
   buf.write(uri.toString());
-  await SharePlus.instance.share(ShareParams(text: buf.toString()));
+  await SharePlus.instance.share(
+    ShareParams(
+      text: buf.toString().trim(),
+      uri: uri,
+    ),
+  );
 }

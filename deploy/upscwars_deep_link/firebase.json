@@ -18,6 +18,10 @@
     ],
     "rewrites": [
       {
+        "source": "/fomo-pulse/**",
+        "destination": "/fomo-pulse/index.html"
+      },
+      {
         "source": "/share/**",
         "destination": "/share/index.html"
       }

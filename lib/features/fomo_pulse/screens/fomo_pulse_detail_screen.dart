@@ -15,6 +15,7 @@ import '../data/fomo_pulse_share.dart';
 import '../domain/fomo_pulse_models.dart';
 import '../fomo_pulse_constants.dart';
 import '../providers/fomo_pulse_providers.dart';
+import '../widgets/fomo_pulse_mcq_panel.dart';
 
 class FomoPulseDetailScreen extends HookConsumerWidget {
   const FomoPulseDetailScreen({super.key, required this.pulseId});
@@ -127,7 +128,6 @@ class _PulseBody extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
     final alreadyAttempted = attempt?.attempted == true;
-    final isLaunchingMcq = useState(false);
     final showFullSummary = useState(false);
     final tabController = useTabController(initialLength: 2);
 
@@ -143,21 +143,6 @@ class _PulseBody extends HookConsumerWidget {
     final stats = pulse.communityStats(
       minAttempts: FomoPulseConstants.minStatsAttempts,
     );
-    final question = pulse.question.localized(isHi);
-
-    Future<void> openMcq(String? selectedOption) async {
-      if (isLaunchingMcq.value) return;
-      isLaunchingMcq.value = true;
-      await Future<void>.delayed(const Duration(milliseconds: 200));
-      if (!context.mounted) return;
-      await context.push(
-        '/fomo-pulse/${pulse.pulseId}/mcq',
-        extra: selectedOption?.toLowerCase(),
-      );
-      if (context.mounted) {
-        isLaunchingMcq.value = false;
-      }
-    }
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -248,6 +233,23 @@ class _PulseBody extends HookConsumerWidget {
                       child: _BulletPoints(lines: points),
                     ),
                   ],
+                  if (!pulse.isExpired || alreadyAttempted) ...[
+                    const _SectionDivider(),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: AppSpacing.lg,
+                      ),
+                      child: FilledButton.icon(
+                        onPressed: () => tabController.animateTo(1),
+                        icon: const Icon(Icons.quiz_outlined),
+                        label: Text(
+                          alreadyAttempted
+                              ? 'Review your MCQ Attempt'
+                              : 'Attempt the MCQ',
+                        ),
+                      ),
+                    ),
+                  ],
                 ],
               ),
               ListView(
@@ -284,58 +286,9 @@ class _PulseBody extends HookConsumerWidget {
                       icon: Icons.quiz_outlined,
                       headerColor: AppColors.primaryLight,
                       titleColor: AppColors.primaryDark,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            question.stemText,
-                            style: AppTextStyles.body().copyWith(
-                              fontWeight: FontWeight.w700,
-                            ),
-                          ),
-                          const SizedBox(height: AppSpacing.md),
-                          _PreviewOptionTile(
-                            option: 'a',
-                            text: question.optionA,
-                            busy: isLaunchingMcq.value,
-                            onTap: () => unawaited(openMcq('a')),
-                          ),
-                          _PreviewOptionTile(
-                            option: 'b',
-                            text: question.optionB,
-                            busy: isLaunchingMcq.value,
-                            onTap: () => unawaited(openMcq('b')),
-                          ),
-                          _PreviewOptionTile(
-                            option: 'c',
-                            text: question.optionC,
-                            busy: isLaunchingMcq.value,
-                            onTap: () => unawaited(openMcq('c')),
-                          ),
-                          _PreviewOptionTile(
-                            option: 'd',
-                            text: question.optionD,
-                            busy: isLaunchingMcq.value,
-                            onTap: () => unawaited(openMcq('d')),
-                          ),
-                          if (isLaunchingMcq.value) ...[
-                            const SizedBox(height: AppSpacing.sm),
-                            Text(
-                              'Opening question...',
-                              style: AppTextStyles.caption().copyWith(
-                                color: scheme.onSurfaceVariant,
-                              ),
-                            ),
-                          ] else if (alreadyAttempted) ...[
-                            const SizedBox(height: AppSpacing.sm),
-                            Text(
-                              'Tap any option to review your attempt',
-                              style: AppTextStyles.caption().copyWith(
-                                color: scheme.onSurfaceVariant,
-                              ),
-                            ),
-                          ],
-                        ],
+                      child: FomoPulseMcqPanel(
+                        pulse: pulse,
+                        existingAttempt: attempt,
                       ),
                     ),
                 ],
@@ -517,67 +470,6 @@ class _BulletPoints extends StatelessWidget {
               child: Text('• $line', style: AppTextStyles.bodySm()),
             ),
       ],
-    );
-  }
-}
-
-class _PreviewOptionTile extends StatelessWidget {
-  const _PreviewOptionTile({
-    required this.option,
-    required this.text,
-    required this.busy,
-    this.onTap,
-  });
-
-  final String option;
-  final String text;
-  final bool busy;
-  final VoidCallback? onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-    return Padding(
-      padding: const EdgeInsets.only(bottom: AppSpacing.sm),
-      child: Material(
-        color: scheme.surfaceContainerHighest.withValues(alpha: 0.45),
-        borderRadius: BorderRadius.circular(AppRadius.md),
-        child: InkWell(
-          borderRadius: BorderRadius.circular(AppRadius.md),
-          onTap: busy ? null : onTap,
-          child: Padding(
-            padding: const EdgeInsets.all(AppSpacing.md),
-            child: Row(
-              children: [
-                Container(
-                  width: 28,
-                  height: 28,
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                    color: AppColors.primaryLight,
-                    borderRadius: BorderRadius.circular(AppRadius.sm),
-                  ),
-                  child: Text(
-                    option.toUpperCase(),
-                    style: AppTextStyles.labelSm().copyWith(
-                      color: AppColors.primaryDark,
-                      fontWeight: FontWeight.w700,
-                    ),
-                  ),
-                ),
-                const SizedBox(width: AppSpacing.md),
-                Expanded(child: Text(text, style: AppTextStyles.option())),
-                if (busy)
-                  const SizedBox(
-                    width: 16,
-                    height: 16,
-                    child: CircularProgressIndicator(strokeWidth: 2),
-                  ),
-              ],
-            ),
-          ),
-        ),
-      ),
     );
   }
 }

@@ -19,4 +19,7 @@ abstract final class FomoPulseConstants {
   /// Custom scheme used when Chrome/Safari share an article into the app.
   static const incomingShareScheme = 'upscwars';
   static const incomingShareHost = 'pulse-article';
+
+  /// Opens a published CA Shot: upscwars://fomo-pulse/{pulseId}
+  static const deepLinkHost = 'fomo-pulse';
 }
