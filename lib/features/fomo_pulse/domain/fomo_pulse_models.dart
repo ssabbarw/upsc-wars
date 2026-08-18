@@ -64,9 +64,10 @@ class FomoPulseArticleArgs {
   const FomoPulseArticleArgs.harvest({
     required this.draftDate,
     required this.candidate,
-  }) : url = null;
+  })  : url = null,
+        savedDraft = null;
 
-  const FomoPulseArticleArgs.url({required this.url})
+  const FomoPulseArticleArgs.url({required this.url, this.savedDraft})
       : draftDate = null,
         candidate = null;
 
@@ -74,13 +75,14 @@ class FomoPulseArticleArgs {
   final FomoPulseHarvestCandidate? candidate;
   final String? url;
 
+  /// Pre-filled draft from local storage (admin reuse flow).
+  final FomoPulseDraft? savedDraft;
+
   bool get isHarvest => candidate != null && draftDate != null;
 
-  String get sourceUrl =>
-      (candidate?.sourceUrl ?? url ?? '').trim();
+  String get sourceUrl => (candidate?.sourceUrl ?? url ?? '').trim();
 
-  String get heading =>
-      (candidate?.title ?? '').trim();
+  String get heading => (candidate?.title ?? '').trim();
 
   String get summary => (candidate?.newsSummary ?? '').trim();
 }

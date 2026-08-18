@@ -51,7 +51,36 @@ class FomoPulseDetailScreen extends HookConsumerWidget {
       ),
       body: async.when(
         loading: () => const Center(child: CircularProgressIndicator()),
-        error: (e, _) => Center(child: Text('$e')),
+        error: (e, _) => Center(
+          child: Padding(
+            padding: const EdgeInsets.all(24),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const Icon(Icons.wifi_off_rounded, size: 48),
+                const SizedBox(height: 16),
+                const Text(
+                  'Could not load this Pulse.',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  'Check your internet connection and try again.',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(color: Colors.grey[600]),
+                ),
+                const SizedBox(height: 20),
+                FilledButton.icon(
+                  onPressed: () =>
+                      ref.invalidate(fomoPulseDetailProvider(pulseId)),
+                  icon: const Icon(Icons.refresh),
+                  label: const Text('Retry'),
+                ),
+              ],
+            ),
+          ),
+        ),
         data: (data) => _PulseBody(
           pulse: data.pulse,
           attempt: data.attempt,

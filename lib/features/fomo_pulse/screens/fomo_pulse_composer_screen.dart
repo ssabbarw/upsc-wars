@@ -7,8 +7,95 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../data/admin_pulse_draft_store.dart';
 import '../domain/fomo_pulse_models.dart';
 import '../providers/fomo_pulse_providers.dart';
+
+String _statusLabel(AdminPulseDraftStatus s) => switch (s) {
+      AdminPulseDraftStatus.draft => 'Draft',
+      AdminPulseDraftStatus.sentSelf => 'Sent to me',
+      AdminPulseDraftStatus.sentBroadcast => 'Broadcast',
+    };
+
+Color _statusColor(AdminPulseDraftStatus s, ColorScheme cs) => switch (s) {
+      AdminPulseDraftStatus.draft => cs.onSurfaceVariant,
+      AdminPulseDraftStatus.sentSelf => cs.primary,
+      AdminPulseDraftStatus.sentBroadcast => cs.tertiary,
+    };
+
+List<Widget> _buildSavedDraftTiles(
+  BuildContext context,
+  List<AdminPulseDraft> drafts,
+  AdminPulseDraftStore store, {
+  required VoidCallback onDeleted,
+}) {
+  final cs = Theme.of(context).colorScheme;
+  return [
+    for (final saved in drafts)
+      Dismissible(
+        key: ValueKey(saved.id),
+        direction: DismissDirection.endToStart,
+        background: Container(
+          alignment: Alignment.centerRight,
+          padding: const EdgeInsets.only(right: 16),
+          color: cs.error,
+          child: Icon(Icons.delete, color: cs.onError),
+        ),
+        confirmDismiss: (_) async {
+          final ok = await showDialog<bool>(
+            context: context,
+            builder: (ctx) => AlertDialog(
+              title: const Text('Delete saved draft?'),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(ctx, false),
+                  child: const Text('Cancel'),
+                ),
+                FilledButton(
+                  onPressed: () => Navigator.pop(ctx, true),
+                  child: const Text('Delete'),
+                ),
+              ],
+            ),
+          );
+          return ok == true;
+        },
+        onDismissed: (_) {
+          store.delete(saved.id);
+          onDeleted();
+        },
+        child: Card(
+          margin: const EdgeInsets.only(bottom: AppSpacing.sm),
+          child: ListTile(
+            title: Text(
+              saved.draft.notificationTitle.isNotEmpty
+                  ? saved.draft.notificationTitle
+                  : Uri.tryParse(saved.draft.sourceUrl)?.host ??
+                      saved.draft.sourceUrl,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+            ),
+            subtitle: Text(
+              [
+                _statusLabel(saved.status),
+                if (saved.draft.sourceUrl.isNotEmpty)
+                  Uri.tryParse(saved.draft.sourceUrl)?.host ?? '',
+              ].join(' · '),
+              style: TextStyle(color: _statusColor(saved.status, cs)),
+            ),
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () => context.push(
+              '/internal/fomo-pulse-composer/article',
+              extra: FomoPulseArticleArgs.url(
+                url: saved.draft.sourceUrl,
+                savedDraft: saved.draft,
+              ),
+            ),
+          ),
+        ),
+      ),
+  ];
+}
 
 /// Lists today's Daily CA harvest. Tapping opens a preview — no LLM yet.
 class FomoPulseComposerScreen extends HookConsumerWidget {
@@ -21,7 +108,21 @@ class FomoPulseComposerScreen extends HookConsumerWidget {
     final harvestLoading = useState(true);
     final harvestDate = useState<String?>(null);
     final candidates = useState<List<FomoPulseHarvestCandidate>>([]);
+    final savedDrafts = useState<List<AdminPulseDraft>>([]);
+    final savedLoading = useState(false);
     final scheme = Theme.of(context).colorScheme;
+    final draftStore = useMemoized(AdminPulseDraftStore.new);
+
+    void reloadSaved() {
+      unawaited(() async {
+        savedLoading.value = true;
+        try {
+          savedDrafts.value = await draftStore.loadAll();
+        } finally {
+          savedLoading.value = false;
+        }
+      }());
+    }
 
     useEffect(() {
       unawaited(() async {
@@ -41,6 +142,7 @@ class FomoPulseComposerScreen extends HookConsumerWidget {
           harvestLoading.value = false;
         }
       }());
+      reloadSaved();
       return null;
     }, []);
 
@@ -61,12 +163,23 @@ class FomoPulseComposerScreen extends HookConsumerWidget {
           ),
           const SizedBox(height: AppSpacing.lg),
           SegmentedButton<int>(
-            segments: const [
-              ButtonSegment(value: 0, label: Text("Today's news")),
-              ButtonSegment(value: 1, label: Text('URL')),
+            segments: [
+              const ButtonSegment(value: 0, label: Text("Today's news")),
+              const ButtonSegment(value: 1, label: Text('URL')),
+              ButtonSegment(
+                value: 2,
+                label: Text(
+                  savedDrafts.value.isEmpty
+                      ? 'Saved'
+                      : 'Saved (${savedDrafts.value.length})',
+                ),
+              ),
             ],
             selected: {tab.value},
-            onSelectionChanged: (s) => tab.value = s.first,
+            onSelectionChanged: (s) {
+              tab.value = s.first;
+              if (s.first == 2) reloadSaved();
+            },
           ),
           const SizedBox(height: AppSpacing.lg),
           if (tab.value == 0) ...[
@@ -123,7 +236,7 @@ class FomoPulseComposerScreen extends HookConsumerWidget {
                 );
               }),
             ],
-          ] else ...[
+          ] else if (tab.value == 1) ...[
             TextField(
               controller: urlCtrl,
               decoration: const InputDecoration(
@@ -151,6 +264,23 @@ class FomoPulseComposerScreen extends HookConsumerWidget {
               },
               child: const Text('Open article'),
             ),
+          ] else ...[
+            if (savedLoading.value)
+              const Center(child: CircularProgressIndicator())
+            else if (savedDrafts.value.isEmpty)
+              Text(
+                'No saved drafts yet. Generate a question from a URL or harvest story to save it here.',
+                style: AppTextStyles.bodySm().copyWith(
+                  color: scheme.onSurfaceVariant,
+                ),
+              )
+            else
+              ..._buildSavedDraftTiles(
+                context,
+                savedDrafts.value,
+                draftStore,
+                onDeleted: reloadSaved,
+              ),
           ],
         ],
       ),

@@ -10,6 +10,7 @@ import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../push_spot_test/widgets/push_notification_preview_card.dart';
+import '../data/admin_pulse_draft_store.dart';
 import '../data/fomo_pulse_article_fetch.dart';
 import '../data/fomo_pulse_cloud_service.dart';
 import '../domain/fomo_pulse_models.dart';
@@ -32,14 +33,23 @@ class FomoPulseArticleScreen extends HookConsumerWidget {
 
     final preview = useState<FomoPulseArticlePreview?>(null);
     final previewLoading = useState(false);
-    final draft = useState<FomoPulseDraft?>(null);
+    final draft = useState<FomoPulseDraft?>(args.savedDraft);
     final generating = useState(false);
     final translating = useState(false);
     final sending = useState(false);
     final sendTarget = useState(FomoPulseSendTarget.self);
     final scheme = Theme.of(context).colorScheme;
+    final draftStore = useMemoized(AdminPulseDraftStore.new);
 
     final sourceUrl = args.sourceUrl;
+
+    useEffect(() {
+      if (args.savedDraft != null) {
+        titleCtrl.text = args.savedDraft!.notificationTitle;
+        bodyCtrl.text = args.savedDraft!.notificationBody;
+      }
+      return null;
+    }, const []);
 
     useEffect(() {
       if (sourceUrl.isEmpty) return null;
@@ -125,6 +135,18 @@ class FomoPulseArticleScreen extends HookConsumerWidget {
         draft.value = next;
         titleCtrl.text = next.notificationTitle;
         bodyCtrl.text = next.notificationBody;
+        // Auto-save so LLM isn't called again for the same URL.
+        final draftId = AdminPulseDraft.idFromUrl(next.sourceUrl);
+        unawaited(
+          draftStore.save(
+            AdminPulseDraft(
+              id: draftId,
+              savedAt: DateTime.now(),
+              status: AdminPulseDraftStatus.draft,
+              draft: next,
+            ),
+          ),
+        );
       } catch (e, st) {
         final message = FomoPulseCloudService.describeCallableError(e);
         debugPrint('FomoPulseArticleScreen.makeQuestion failed: $message');
@@ -208,11 +230,38 @@ class FomoPulseArticleScreen extends HookConsumerWidget {
               updated,
               sendTarget.value,
             );
+        debugPrint(
+          'FomoPulseArticle.send: sent=${outcome.sent} '
+          'reason=${outcome.reason} target=${outcome.target} '
+          'pulseId=${outcome.pulseId} error=${outcome.error}',
+        );
         if (!context.mounted) return;
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text(outcome.userMessage)),
         );
-        if (outcome.sent) Navigator.of(context).pop();
+        if (outcome.sent) {
+          final sentStatus = sendTarget.value == FomoPulseSendTarget.broadcast
+              ? AdminPulseDraftStatus.sentBroadcast
+              : AdminPulseDraftStatus.sentSelf;
+          unawaited(
+            draftStore.updateStatus(
+              AdminPulseDraft.idFromUrl(updated.sourceUrl),
+              sentStatus,
+            ),
+          );
+          // Pre-cache the pulse so tapping the notification works offline.
+          final pid = outcome.pulseId;
+          if (pid != null) {
+            unawaited(
+              ref
+                  .read(fomoPulseRepositoryProvider)
+                  .loadPulse(pid)
+                  .then((_) {})
+                  .catchError((_) {}),
+            );
+          }
+          Navigator.of(context).pop();
+        }
       } finally {
         sending.value = false;
       }
