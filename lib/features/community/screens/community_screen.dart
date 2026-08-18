@@ -4,9 +4,11 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 
+import '../../../core/analytics/analytics_audience.dart';
 import '../../../core/constants/app_constants.dart';
 import '../../../core/layout/system_insets.dart';
 import '../../../core/presentation/user_display_name.dart';
+import '../../../core/providers/super_user_provider.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
@@ -284,6 +286,7 @@ class _RecentTab extends HookConsumerWidget {
                         ),
                       ),
                     ],
+                    _AdminRecentsSummary(users: sortedUsers),
                     const SizedBox(height: AppSpacing.md),
                     if (sortedUsers.isEmpty) ...[
                       Text(
@@ -382,6 +385,43 @@ class _RecentOnlineLoading extends StatelessWidget {
   }
 }
 
+class _AdminRecentsSummary extends ConsumerWidget {
+  const _AdminRecentsSummary({required this.users});
+
+  final List<CommunityUser> users;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    if (!ref.watch(isSuperUserProvider)) {
+      return const SizedBox.shrink();
+    }
+    var real = 0;
+    var bots = 0;
+    for (final user in users) {
+      if (AnalyticsAudience.isReservedBotEmail(user.email)) {
+        bots += 1;
+      } else {
+        real += 1;
+      }
+    }
+    final vsBots =
+        ref.watch(trafficBotIndexProvider).asData?.value.warPeopleLast24h ?? 0;
+    final realLabel = real == 1 ? '1 real user' : '$real real users';
+    final botLabel = bots == 1 ? '1 bot' : '$bots bots';
+    final warLabel = vsBots == 1
+        ? '1 person vs bots (24h)'
+        : '$vsBots people vs bots (24h)';
+    final scheme = Theme.of(context).colorScheme;
+    return Padding(
+      padding: const EdgeInsets.only(top: AppSpacing.xs),
+      child: Text(
+        '$realLabel · $botLabel · $warLabel',
+        style: AppTextStyles.bodySm().copyWith(color: scheme.onSurfaceVariant),
+      ),
+    );
+  }
+}
+
 class _RecentLoadingCaption extends StatelessWidget {
   const _RecentLoadingCaption();
 
@@ -416,7 +456,6 @@ class _UserTile extends StatelessWidget {
       viewerEmail: currentUserEmail,
       subjectEmail: user.email,
     );
-    final statusText = user.isInBattle ? 'fighting a battle' : 'available';
     return Material(
       color: scheme.surfaceContainerLow,
       borderRadius: BorderRadius.circular(AppRadius.md),
@@ -451,7 +490,7 @@ class _UserTile extends StatelessWidget {
                     ),
                     const SizedBox(height: AppSpacing.xs),
                     Text(
-                      '${formatCommunityProfileLastOnline(user.lastOnlineTime)} · $statusText',
+                      formatCommunityProfileLastOnline(user.lastOnlineTime),
                       style: AppTextStyles.caption().copyWith(
                         color: scheme.onSurfaceVariant,
                       ),

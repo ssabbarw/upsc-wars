@@ -521,11 +521,14 @@ async function publishTrafficBotIndex(roster) {
   await db()
     .collection("admin_dashboard")
     .doc("traffic_bots")
-    .set({
-      emails,
-      uids: [...new Set(uids)],
-      updatedAtMs: Date.now(),
-    });
+    .set(
+      {
+        emails,
+        uids: [...new Set(uids)],
+        updatedAtMs: Date.now(),
+      },
+      { merge: true },
+    );
 }
 
 async function getBot(botId) {

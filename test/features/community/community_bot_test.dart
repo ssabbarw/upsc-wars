@@ -22,15 +22,29 @@ void main() {
       final index = TrafficBotIndex.fromMap({
         'emails': ['Aarav.Kumar11@Gmail.com', '', null],
         'uids': ['UidOne', '  '],
+        'warPeopleLast24h': 4,
       });
       expect(index.matches(email: 'aarav.kumar11@gmail.com'), isTrue);
       expect(index.matches(uid: 'UidOne'), isTrue);
       expect(index.matches(uid: 'uidone'), isFalse);
+      expect(index.warPeopleLast24h, 4);
     });
 
     test('empty map is a no-op', () {
       expect(TrafficBotIndex.fromMap(null).matches(email: 'a@b.com'), isFalse);
       expect(TrafficBotIndex.empty.matches(uid: 'x'), isFalse);
+      expect(TrafficBotIndex.fromMap(null).warPeopleLast24h, 0);
+    });
+
+    test('parses warPeopleLast24h from num', () {
+      expect(
+        TrafficBotIndex.fromMap({'warPeopleLast24h': 2.0}).warPeopleLast24h,
+        2,
+      );
+      expect(
+        TrafficBotIndex.fromMap({'warPeopleLast24h': 'nope'}).warPeopleLast24h,
+        0,
+      );
     });
   });
 }

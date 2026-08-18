@@ -4,10 +4,15 @@ class TrafficBotIndex {
   const TrafficBotIndex({
     this.emails = const {},
     this.uids = const {},
+    this.warPeopleLast24h = 0,
   });
 
   final Set<String> emails;
   final Set<String> uids;
+
+  /// Unique real users who started a 1v1 war with a traffic bot in the last 24h.
+  /// Written by Cloud Functions; 0 when the field is missing.
+  final int warPeopleLast24h;
 
   static const empty = TrafficBotIndex();
 
@@ -16,6 +21,7 @@ class TrafficBotIndex {
     return TrafficBotIndex(
       emails: _stringSet(map['emails'], lower: true),
       uids: _stringSet(map['uids'], lower: false),
+      warPeopleLast24h: _asInt(map['warPeopleLast24h']),
     );
   }
 
@@ -34,4 +40,10 @@ Set<String> _stringSet(Object? raw, {required bool lower}) {
       if (item != null && '$item'.trim().isNotEmpty)
         lower ? '$item'.trim().toLowerCase() : '$item'.trim(),
   };
+}
+
+int _asInt(Object? value) {
+  if (value is int) return value;
+  if (value is num) return value.toInt();
+  return 0;
 }

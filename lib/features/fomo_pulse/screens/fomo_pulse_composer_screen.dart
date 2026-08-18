@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -8,6 +9,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../data/admin_pulse_draft_store.dart';
+import '../data/fomo_pulse_incoming_share.dart';
 import '../domain/fomo_pulse_models.dart';
 import '../providers/fomo_pulse_providers.dart';
 
@@ -105,6 +107,7 @@ class FomoPulseComposerScreen extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final tab = useState(0);
     final urlCtrl = useTextEditingController();
+    useListenable(urlCtrl);
     final harvestLoading = useState(true);
     final harvestDate = useState<String?>(null);
     final candidates = useState<List<FomoPulseHarvestCandidate>>([]);
@@ -247,6 +250,28 @@ class FomoPulseComposerScreen extends HookConsumerWidget {
               ),
               keyboardType: TextInputType.url,
             ),
+            const SizedBox(height: AppSpacing.sm),
+            Row(
+              children: [
+                Expanded(
+                  child: OutlinedButton.icon(
+                    onPressed: () => unawaited(_pasteUrlInto(context, urlCtrl)),
+                    icon: const Icon(Icons.content_paste_rounded),
+                    label: const Text('Paste URL'),
+                  ),
+                ),
+                const SizedBox(width: AppSpacing.sm),
+                Expanded(
+                  child: OutlinedButton.icon(
+                    onPressed: urlCtrl.text.isEmpty
+                        ? null
+                        : urlCtrl.clear,
+                    icon: const Icon(Icons.clear_rounded),
+                    label: const Text('Clear'),
+                  ),
+                ),
+              ],
+            ),
             const SizedBox(height: AppSpacing.md),
             FilledButton(
               onPressed: () {
@@ -286,4 +311,21 @@ class FomoPulseComposerScreen extends HookConsumerWidget {
       ),
     );
   }
+}
+
+Future<void> _pasteUrlInto(
+  BuildContext context,
+  TextEditingController urlCtrl,
+) async {
+  final data = await Clipboard.getData(Clipboard.kTextPlain);
+  final url = extractHttpUrlFromSharedText(data?.text ?? '');
+  if (!context.mounted) return;
+  if (url == null) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(content: Text('No http(s) URL on the clipboard.')),
+    );
+    return;
+  }
+  urlCtrl.text = url;
+  urlCtrl.selection = TextSelection.collapsed(offset: url.length);
 }

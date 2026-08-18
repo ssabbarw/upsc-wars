@@ -23,6 +23,7 @@ const {
   optionToResponseInt,
   skillForBot,
 } = require("./questions");
+const { recordBotWarConnection } = require("./war_stats");
 
 const MAX_BODY_LEN = 180;
 
@@ -377,6 +378,17 @@ async function onBattleMatchWritten(sessionId, after) {
   if (hostBot && after.guest_ready === true && after.lets_start_game !== true) {
     const locked = await claimPlayLock(sessionId);
     if (!locked) return null;
+    if (!guestBot) {
+      try {
+        await recordBotWarConnection({
+          sessionId,
+          humanEmail: guestEmail,
+          botEmail: hostEmail,
+        });
+      } catch (e) {
+        console.error("recordBotWarConnection", sessionId, e);
+      }
+    }
     await sleep(randInt(mulberry32(hashString(`start:${sessionId}`)), 4000, 9000));
     await db().collection("battle_matches").doc(sessionId).update({
       lets_start_game: true,
@@ -393,6 +405,17 @@ async function onBattleMatchWritten(sessionId, after) {
   if (guestBot && after.guest_ready === true && after.lets_start_game === true) {
     const locked = await claimPlayLock(sessionId);
     if (!locked) return null;
+    if (!hostBot) {
+      try {
+        await recordBotWarConnection({
+          sessionId,
+          humanEmail: hostEmail,
+          botEmail: guestEmail,
+        });
+      } catch (e) {
+        console.error("recordBotWarConnection", sessionId, e);
+      }
+    }
     try {
       await playAsParticipant(sessionId, guestEmail, skillForBot(guestBot));
     } finally {
