@@ -388,13 +388,7 @@ class _HeaderCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
-    final sentAt = pulse.sentAt;
-    final dateLabel = sentAt == null
-        ? 'Today'
-        : '${sentAt.day} ${_monthName(sentAt.month)} ${sentAt.year}';
-    final readMins = (summary.split(RegExp(r'\s+')).where((e) => e.isNotEmpty).length / 130)
-        .ceil()
-        .clamp(1, 6);
+    final metaLine = _headerMetaLine(pulse, summary);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -405,7 +399,7 @@ class _HeaderCard extends StatelessWidget {
         ),
         const SizedBox(height: AppSpacing.sm),
         Text(
-          '$dateLabel  ·  $readMins min read  ·  High Relevance',
+          metaLine,
           style: AppTextStyles.caption().copyWith(
             color: scheme.onSurfaceVariant,
           ),
@@ -472,6 +466,36 @@ class _BulletPoints extends StatelessWidget {
       ],
     );
   }
+}
+
+String _headerMetaLine(FomoPulse pulse, String summary) {
+  final q = pulse.question;
+  final parts = <String>[
+    if (q.gsSubject.trim().isNotEmpty) q.gsSubject.trim(),
+    if (q.topic.trim().isNotEmpty) q.topic.trim(),
+    if (_prettyQuestionType(q.questionType).isNotEmpty)
+      _prettyQuestionType(q.questionType),
+  ];
+  if (parts.isNotEmpty) return parts.join('  ·  ');
+
+  final sentAt = pulse.sentAt;
+  final dateLabel = sentAt == null
+      ? 'Today'
+      : '${sentAt.day} ${_monthName(sentAt.month)} ${sentAt.year}';
+  final readMins = (summary
+          .split(RegExp(r'\s+'))
+          .where((e) => e.isNotEmpty)
+          .length /
+      130)
+      .ceil()
+      .clamp(1, 6);
+  return '$dateLabel  ·  $readMins min read  ·  High Relevance';
+}
+
+String _prettyQuestionType(String raw) {
+  final t = raw.trim();
+  if (t.isEmpty || t.toLowerCase() == 'direct') return '';
+  return t.replaceAll('-', ' ');
 }
 
 String _monthName(int month) {
