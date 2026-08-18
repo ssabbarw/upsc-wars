@@ -23,6 +23,7 @@ import 'package:upsc_wars/features/memory_pairs/push/push_memory_pairs_fcm.dart'
 import 'package:upsc_wars/features/memory_pairs/push/push_memory_pairs_launch_params.dart';
 import 'package:upsc_wars/features/mini_games/push/push_revision_game_fcm.dart';
 import 'package:upsc_wars/features/mini_games/push/push_revision_game_launch_params.dart';
+import 'package:upsc_wars/features/fomo_pulse/fomo_pulse_constants.dart';
 import 'package:upsc_wars/features/fomo_pulse/fomo_pulse_fcm.dart';
 import 'package:upsc_wars/features/push_spot_test/push_spot_test_fcm.dart';
 import 'package:upsc_wars/features/push_spot_test/push_spot_test_launch_params.dart';
@@ -180,6 +181,9 @@ class BattleMessagingService {
         logGlobalAnalytics(
           const AppNotificationOpenEvent(channel: 'local', kind: 'fomo_pulse'),
         );
+        logGlobalAnalytics(
+          CaShotNotifOpenedEvent(pulseId: pulseId, channel: 'local'),
+        );
         _navigateToPulse(pulseId);
       };
       AppLocalNotificationsService.consumePendingFomoPulseTap();
@@ -320,8 +324,12 @@ class BattleMessagingService {
       _pendingPulseId = pulseId;
       return;
     }
-    upscWarsTrace('FomoPulse nav -> /fomo-pulse/$pulseId');
-    r.go('/fomo-pulse/$pulseId');
+    final target = FomoPulseConstants.detailLocation(
+      pulseId,
+      source: FomoPulseConstants.entryPush,
+    );
+    upscWarsTrace('FomoPulse nav -> $target');
+    r.go(target);
   }
 
   static void _consumePendingPulseNavigation() {
@@ -373,6 +381,14 @@ class BattleMessagingService {
       );
     }
     logGlobalAnalytics(AppNotificationOpenEvent(channel: channel, kind: kind));
+    if (kind == FomoPulseFcm.kind) {
+      final pulseId = FomoPulseFcm.pulseIdFromData(message.data) ?? '';
+      if (pulseId.isNotEmpty) {
+        logGlobalAnalytics(
+          CaShotNotifOpenedEvent(pulseId: pulseId, channel: channel),
+        );
+      }
+    }
   }
 
   static Future<void> _recordAdminNotificationOpen({

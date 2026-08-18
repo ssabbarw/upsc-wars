@@ -8,6 +8,7 @@ import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../domain/fomo_pulse_models.dart';
+import '../fomo_pulse_constants.dart';
 import '../providers/fomo_pulse_providers.dart';
 
 class FomoPulseHistoryScreen extends ConsumerWidget {
@@ -88,7 +89,10 @@ class FomoPulseHistoryScreen extends ConsumerWidget {
                           pulse: section.pulses[i],
                           attempt: data.attempts[section.pulses[i].pulseId],
                           onTap: () => context.push(
-                            '/fomo-pulse/${section.pulses[i].pulseId}',
+                            FomoPulseConstants.detailLocation(
+                              section.pulses[i].pulseId,
+                              source: FomoPulseConstants.entryHistory,
+                            ),
                           ),
                         ),
                         if (i != section.pulses.length - 1)

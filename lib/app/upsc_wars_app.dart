@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:firebase_auth/firebase_auth.dart' show User;
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -13,6 +13,7 @@ import '../core/analytics/activation_milestones.dart';
 import '../core/analytics/analytics.dart';
 import '../core/analytics/analytics_events.dart';
 import '../core/analytics/analytics_global_dispatch.dart';
+import '../core/analytics/firebase_analytics_sink.dart';
 import '../core/analytics/push_notification_status_snapshot.dart';
 import '../core/analytics/session_entry_source.dart';
 import '../core/providers/analytics_provider.dart';
@@ -112,6 +113,9 @@ class _RootMaterialApp extends HookConsumerWidget {
         // Resolve cold-start push / deep-link attribution before app_opened.
         await BattleMessagingService.initialize(router);
         await ShareDeepLinkService.initialize(ref, router);
+        await FirebaseAnalyticsSink.syncCollectionForUser(
+          FirebaseAuth.instance.currentUser,
+        );
         final entry = SessionEntrySource.consume();
         await Analytics.track(
           ref,
@@ -260,8 +264,9 @@ class _RootMaterialApp extends HookConsumerWidget {
     ref.listen<AsyncValue<User?>>(
       authStateChangesProvider,
       (prev, next) {
+        final u = next.asData?.value;
+        unawaited(FirebaseAnalyticsSink.syncCollectionForUser(u));
         if (!next.hasValue) return;
-        final u = next.requireValue;
         if (!AuthSession.isAccountSignedIn(u)) return;
         unawaited(FcmTokenSyncService.syncForCurrentUser());
         unawaited(CommunityBucketPresenceService.syncForCurrentUser(ref));

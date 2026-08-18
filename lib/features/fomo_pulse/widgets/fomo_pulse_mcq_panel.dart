@@ -6,6 +6,8 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/admin_dashboard/admin_dashboard_service.dart';
+import '../../../core/analytics/analytics.dart';
+import '../../../core/analytics/analytics_events.dart';
 import '../../../core/parsers/question_display_text_composer.dart';
 import '../../../core/providers/app_language_helpers.dart';
 import '../../../core/theme/app_colors.dart';
@@ -25,12 +27,14 @@ class FomoPulseMcqPanel extends HookConsumerWidget {
     required this.existingAttempt,
     this.initialSelectedOption,
     this.showNavigationCtas = false,
+    this.entrySource = FomoPulseConstants.entryInApp,
   });
 
   final FomoPulse pulse;
   final FomoPulseAttemptState? existingAttempt;
   final String? initialSelectedOption;
   final bool showNavigationCtas;
+  final String entrySource;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -91,6 +95,17 @@ class FomoPulseMcqPanel extends HookConsumerWidget {
       picked.value = option;
       if (!attemptedOnOpen) {
         unawaited(syncAttempt(option));
+        unawaited(
+          Analytics.track(
+            ref,
+            CaShotAttemptedEvent(
+              pulseId: pulse.pulseId,
+              source: entrySource,
+              correct:
+                  option.toLowerCase() == question.correctOption.toLowerCase(),
+            ),
+          ),
+        );
       }
     }
 

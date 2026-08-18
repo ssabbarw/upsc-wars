@@ -6,6 +6,8 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../../core/analytics/analytics.dart';
+import '../../../core/analytics/analytics_events.dart';
 import '../../../core/providers/app_language_helpers.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
@@ -18,9 +20,14 @@ import '../providers/fomo_pulse_providers.dart';
 import '../widgets/fomo_pulse_mcq_panel.dart';
 
 class FomoPulseDetailScreen extends HookConsumerWidget {
-  const FomoPulseDetailScreen({super.key, required this.pulseId});
+  const FomoPulseDetailScreen({
+    super.key,
+    required this.pulseId,
+    this.entrySource = FomoPulseConstants.entryInApp,
+  });
 
   final String pulseId;
+  final String entrySource;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -111,7 +118,11 @@ class FomoPulseDetailScreen extends HookConsumerWidget {
               ),
             ),
           ),
-          data: (data) => _PulseBody(pulse: data.pulse, attempt: data.attempt),
+          data: (data) => _PulseBody(
+            pulse: data.pulse,
+            attempt: data.attempt,
+            entrySource: entrySource,
+          ),
         ),
       ),
     );
@@ -119,10 +130,15 @@ class FomoPulseDetailScreen extends HookConsumerWidget {
 }
 
 class _PulseBody extends HookConsumerWidget {
-  const _PulseBody({required this.pulse, required this.attempt});
+  const _PulseBody({
+    required this.pulse,
+    required this.attempt,
+    required this.entrySource,
+  });
 
   final FomoPulse pulse;
   final FomoPulseAttemptState? attempt;
+  final String entrySource;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -143,6 +159,36 @@ class _PulseBody extends HookConsumerWidget {
     final stats = pulse.communityStats(
       minAttempts: FomoPulseConstants.minStatsAttempts,
     );
+
+    useEffect(() {
+      unawaited(
+        Analytics.track(
+          ref,
+          CaShotSummaryViewedEvent(
+            pulseId: pulse.pulseId,
+            source: entrySource,
+          ),
+        ),
+      );
+      var mcqLogged = false;
+      void onTab() {
+        if (tabController.index != 1 || mcqLogged) return;
+        mcqLogged = true;
+        unawaited(
+          Analytics.track(
+            ref,
+            CaShotMcqOpenedEvent(
+              pulseId: pulse.pulseId,
+              source: entrySource,
+              alreadyAttempted: alreadyAttempted,
+            ),
+          ),
+        );
+      }
+
+      tabController.addListener(onTab);
+      return () => tabController.removeListener(onTab);
+    }, [pulse.pulseId, entrySource]);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -289,6 +335,7 @@ class _PulseBody extends HookConsumerWidget {
                       child: FomoPulseMcqPanel(
                         pulse: pulse,
                         existingAttempt: attempt,
+                        entrySource: entrySource,
                       ),
                     ),
                 ],

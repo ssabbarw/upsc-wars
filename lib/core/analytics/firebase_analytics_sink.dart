@@ -1,6 +1,7 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
+import 'analytics_audience.dart';
 import 'analytics_events.dart';
 import 'analytics_sink.dart';
 
@@ -51,6 +52,10 @@ import 'analytics_sink.dart';
 /// * `daily_war_attempted` — `date_id`, `mode`, `is_grand`; sets user
 ///   property `daily_war_player` = `yes`
 /// * `daily_war_submitted` — `date_id`, `mode`, `is_grand`, `score_hundredths`
+/// * `ca_shot_notif_opened` — `pulse_id`, `channel`
+/// * `ca_shot_summary_viewed` — `pulse_id`, `source`
+/// * `ca_shot_mcq_opened` — `pulse_id`, `source`, `already_attempted`
+/// * `ca_shot_attempted` — `pulse_id`, `source`, `correct`
 /// * `activation_journey_shown` — `todo1_done`, `scored_attempts`, `todo2_unlocked`
 /// * `activation_journey_todo_tapped` — `todo_index`
 /// * `activation_journey_snoozed` — no parameters
@@ -70,6 +75,13 @@ class FirebaseAnalyticsSink implements AnalyticsSink {
   final FirebaseAuth _auth;
 
   String? get _userId => _auth.currentUser?.uid;
+
+  /// Turns GA4 collection off in debug and for admins/bots so automatic
+  /// events (`first_open`, `session_start`, …) are not recorded either.
+  static Future<void> syncCollectionForUser(User? user) {
+    final enabled = !AnalyticsAudience.isExcludedUser(user);
+    return FirebaseAnalytics.instance.setAnalyticsCollectionEnabled(enabled);
+  }
 
   @override
   Future<void> send(AnalyticsEvent event) async {
@@ -455,6 +467,36 @@ class FirebaseAnalyticsSink implements AnalyticsSink {
           'mode': mode,
           'is_grand': isGrand ? 1 : 0,
           'score_hundredths': (score * 100).round(),
+        });
+      case CaShotNotifOpenedEvent(:final pulseId, :final channel):
+        await _log('ca_shot_notif_opened', {
+          'pulse_id': pulseId,
+          'channel': channel,
+        });
+      case CaShotSummaryViewedEvent(:final pulseId, :final source):
+        await _log('ca_shot_summary_viewed', {
+          'pulse_id': pulseId,
+          'source': source,
+        });
+      case CaShotMcqOpenedEvent(
+          :final pulseId,
+          :final source,
+          :final alreadyAttempted,
+        ):
+        await _log('ca_shot_mcq_opened', {
+          'pulse_id': pulseId,
+          'source': source,
+          'already_attempted': alreadyAttempted ? 1 : 0,
+        });
+      case CaShotAttemptedEvent(
+          :final pulseId,
+          :final source,
+          :final correct,
+        ):
+        await _log('ca_shot_attempted', {
+          'pulse_id': pulseId,
+          'source': source,
+          'correct': correct ? 1 : 0,
         });
     }
   }

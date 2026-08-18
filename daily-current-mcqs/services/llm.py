@@ -12,11 +12,9 @@ from typing import Optional
 
 import anthropic
 
+import config.settings as settings
 from config.settings import (
-    ANTHROPIC_API_KEY,
-    SONNET_MODEL,
     HAIKU_MODEL,
-    MCQ_MODEL,
     MCQ_MAX_TOKENS,
     TRANSLATE_MAX_TOKENS,
     PROMPTS_DIR,
@@ -29,7 +27,50 @@ from config.settings import (
 )
 
 log = logging.getLogger(__name__)
-client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
+_client = None
+_client_key = None
+_override_at = 0.0
+_OVERRIDE_TTL_SEC = 15.0
+
+
+def apply_firestore_llm_overrides(*, force: bool = False) -> None:
+    """Prefer admin-saved CA key/model from Firestore over env."""
+    global _override_at
+    now = time.time()
+    if not force and _override_at and now - _override_at < _OVERRIDE_TTL_SEC:
+        return
+    try:
+        from services.firestore import get_db
+
+        snap = get_db().collection("admin_secrets").document("llm").get()
+        _override_at = now
+        if not snap.exists:
+            return
+        data = snap.to_dict() or {}
+        key = str(data.get("ca_api_key") or "").strip()
+        model = str(data.get("ca_model") or "").strip()
+        if key:
+            settings.ANTHROPIC_API_KEY = key
+        if model:
+            settings.MCQ_MODEL = model
+    except Exception as e:
+        log.warning("LLM Firestore override skipped: %s", e)
+
+
+def get_client():
+    """Anthropic client using the current CA key (env or Firestore)."""
+    global _client, _client_key
+    apply_firestore_llm_overrides()
+    key = settings.ANTHROPIC_API_KEY
+    if not key:
+        raise RuntimeError(
+            "CA Anthropic API key is not set. Add ANTHROPIC_API_KEY_CA "
+            "or save it in Settings → LLM & API keys."
+        )
+    if _client is None or _client_key != key:
+        _client = anthropic.Anthropic(api_key=key)
+        _client_key = key
+    return _client
 
 
 # ── Prompt loader ──────────────────────────────────────────────────────────────
@@ -182,7 +223,7 @@ def _chunk(items: list, size: int) -> list[list]:
 
 def _messages_create(**kwargs):
     """Anthropic messages call — streaming required for long web-search runs."""
-    with client.messages.stream(**kwargs) as stream:
+    with get_client().messages.stream(**kwargs) as stream:
         return stream.get_final_message()
 
 
@@ -205,7 +246,7 @@ def _anthropic_json(
         turn = 0
         accumulated_text = ""
         kwargs = dict(
-            model=MCQ_MODEL,
+            model=settings.MCQ_MODEL,
             max_tokens=token_budget,
             system=system_prompt,
             messages=messages,
@@ -454,7 +495,7 @@ def generate_mcqs(
 
     chunks = _chunk(topics, TOPICS_PER_GENERATE_CALL)
     log.info(
-        f"Calling {MCQ_MODEL} for {len(topics)} topics "
+        f"Calling {settings.MCQ_MODEL} for {len(topics)} topics "
         f"in {len(chunks)} batch(es) of up to {TOPICS_PER_GENERATE_CALL}"
     )
 
@@ -576,7 +617,7 @@ def classify_subtopic(question: dict, taxonomy: dict) -> str:
     )
 
     def fn():
-        response = client.messages.create(
+        response = get_client().messages.create(
             model=HAIKU_MODEL,
             max_tokens=100,
             system=system_prompt,
@@ -625,7 +666,7 @@ def translate_to_hindi(transformed_questions: list[dict]) -> list[dict]:
     en_only = [q["en"] for q in transformed_questions]
 
     def fn():
-        with client.messages.stream(
+        with get_client().messages.stream(
             model=HAIKU_MODEL,
             max_tokens=TRANSLATE_MAX_TOKENS,
             system=system_prompt,

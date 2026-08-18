@@ -22,4 +22,27 @@ abstract final class FomoPulseConstants {
 
   /// Opens a published CA Shot: upscwars://fomo-pulse/{pulseId}
   static const deepLinkHost = 'fomo-pulse';
+
+  static const entryPush = 'push';
+  static const entryHistory = 'history';
+  static const entryShare = 'share';
+  static const entryInApp = 'in_app';
+
+  static String normalizeEntrySource(String? raw) {
+    switch (raw?.trim().toLowerCase()) {
+      case entryPush:
+      case entryHistory:
+      case entryShare:
+        return raw!.trim().toLowerCase();
+      default:
+        return entryInApp;
+    }
+  }
+
+  static String detailLocation(String pulseId, {String? source}) {
+    final id = pulseId.trim();
+    final src = normalizeEntrySource(source);
+    if (src == entryInApp) return '/fomo-pulse/$id';
+    return '/fomo-pulse/$id?src=$src';
+  }
 }

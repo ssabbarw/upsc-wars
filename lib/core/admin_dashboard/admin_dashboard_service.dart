@@ -3,6 +3,7 @@ import 'dart:developer' as developer;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
+import '../analytics/analytics_audience.dart';
 import '../services/anonymous_auth_service.dart';
 import 'admin_dashboard_collection_config.dart';
 import 'admin_dashboard_metrics.dart';
@@ -36,7 +37,9 @@ class AdminDashboardWriterService {
 
   Future<String?> _uid() async {
     await AnonymousAuthService.ensureSignedIn();
-    return FirebaseAuth.instance.currentUser?.uid;
+    final user = FirebaseAuth.instance.currentUser;
+    if (AnalyticsAudience.isExcludedUser(user)) return null;
+    return user?.uid;
   }
 
   Future<void> recordNewDownload() async {

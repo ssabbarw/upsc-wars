@@ -16,6 +16,9 @@ const Set<String> kScreenViewIgnoredNames = {
   'question_editor_preview',
   'daily_ca_review',
   'daily_ca_review_edit',
+  'fomo_pulse_composer',
+  'fomo_pulse_article',
+  'llm_admin_settings',
   'about_us',
 };
 

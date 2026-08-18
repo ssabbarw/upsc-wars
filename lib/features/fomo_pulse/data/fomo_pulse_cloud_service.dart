@@ -85,6 +85,7 @@ class FomoPulseCloudService {
     String? imageUrl,
     String? imageSource,
     String? articleText,
+    String? model,
   }) async {
     try {
       final callable = _generateDraftCallable();
@@ -96,6 +97,7 @@ class FomoPulseCloudService {
         if (imageSource != null && imageSource.isNotEmpty)
           'image_source': imageSource,
         if (trimmedText.length >= 40) 'article_text': trimmedText,
+        if (model != null && model.trim().isNotEmpty) 'model': model.trim(),
       });
       final draftRaw = result.data['draft'];
       if (draftRaw is! Map) {
@@ -113,6 +115,7 @@ class FomoPulseCloudService {
     required String draftId,
     String? imageUrl,
     String? imageSource,
+    String? model,
   }) async {
     try {
       final callable = _generateDraftCallable();
@@ -123,6 +126,7 @@ class FomoPulseCloudService {
         if (imageUrl != null && imageUrl.isNotEmpty) 'image_url': imageUrl,
         if (imageSource != null && imageSource.isNotEmpty)
           'image_source': imageSource,
+        if (model != null && model.trim().isNotEmpty) 'model': model.trim(),
       });
       final draftRaw = result.data['draft'];
       if (draftRaw is! Map) {

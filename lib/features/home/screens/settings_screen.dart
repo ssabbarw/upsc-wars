@@ -149,6 +149,16 @@ class SettingsScreen extends ConsumerWidget {
                       subtitle: 'Breaking news push MCQs',
                       onTap: () => context.push('/internal/fomo-pulse-composer'),
                     ),
+                    if (isSuperUser)
+                      _NavTile(
+                        icon: Icons.smart_toy_outlined,
+                        iconBg: Color(0xFFF3E8FF),
+                        iconColor: Color(0xFF7C3AED),
+                        title: 'LLM & API keys',
+                        subtitle:
+                            'Models and Anthropic keys for Shots and Daily CA',
+                        onTap: () => context.push('/internal/llm-settings'),
+                      ),
                     _NavTile(
                       icon: Icons.newspaper_outlined,
                       iconBg: Color(0xFFE7F0FF),

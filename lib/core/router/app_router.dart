@@ -75,11 +75,13 @@ import '../../features/push_spot_test/push_spot_test_launch_params.dart';
 import '../../features/push_spot_test/screens/push_spot_results_screen.dart';
 import '../../features/push_spot_test/screens/push_spot_test_launch_screen.dart';
 import '../../features/fomo_pulse/data/fomo_pulse_incoming_share.dart';
+import '../../features/fomo_pulse/fomo_pulse_constants.dart';
 import '../../features/fomo_pulse/screens/fomo_pulse_article_screen.dart';
 import '../../features/fomo_pulse/screens/fomo_pulse_composer_screen.dart';
 import '../../features/fomo_pulse/screens/fomo_pulse_detail_screen.dart';
 import '../../features/fomo_pulse/screens/fomo_pulse_history_screen.dart';
 import '../../features/fomo_pulse/screens/fomo_pulse_mcq_screen.dart';
+import '../../features/llm_admin/screens/llm_admin_settings_screen.dart';
 import '../../features/results/screens/results_screen.dart';
 import '../../features/memory_pairs/push/push_memory_pairs_launch_params.dart';
 import '../../features/memory_pairs/screens/memory_pairs_screen.dart';
@@ -396,7 +398,10 @@ GoRouter appRouter(Ref ref) {
           );
           if (uuid.hasMatch(pulseId) &&
               !state.matchedLocation.startsWith('/fomo-pulse/')) {
-            return '/fomo-pulse/$pulseId';
+            return FomoPulseConstants.detailLocation(
+              pulseId,
+              source: FomoPulseConstants.entryShare,
+            );
           }
         }
       }
@@ -420,7 +425,10 @@ GoRouter appRouter(Ref ref) {
           r'^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$',
         );
         if (uuid.hasMatch(pulseId)) {
-          return '/fomo-pulse/$pulseId';
+          return FomoPulseConstants.detailLocation(
+            pulseId,
+            source: FomoPulseConstants.entryShare,
+          );
         }
       }
 
@@ -540,6 +548,17 @@ GoRouter appRouter(Ref ref) {
             },
           ),
         ],
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/internal/llm-settings',
+        name: 'llm_admin_settings',
+        builder: (context, state) {
+          if (!isSuperUser) {
+            return const Scaffold(body: Center(child: Text('Not available')));
+          }
+          return const LlmAdminSettingsScreen();
+        },
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
@@ -928,7 +947,12 @@ GoRouter appRouter(Ref ref) {
         builder: (context, state) {
           final id = state.pathParameters['pulseId']!;
           upscWarsTrace('FomoPulseDetailScreen build pulseId=$id');
-          return FomoPulseDetailScreen(pulseId: id);
+          return FomoPulseDetailScreen(
+            pulseId: id,
+            entrySource: FomoPulseConstants.normalizeEntrySource(
+              state.uri.queryParameters['src'],
+            ),
+          );
         },
         routes: [
           GoRoute(
@@ -938,6 +962,9 @@ GoRouter appRouter(Ref ref) {
             builder: (context, state) => FomoPulseMcqScreen(
               pulseId: state.pathParameters['pulseId']!,
               initialSelectedOption: (state.extra as String?)?.toLowerCase(),
+              entrySource: FomoPulseConstants.normalizeEntrySource(
+                state.uri.queryParameters['src'],
+              ),
             ),
           ),
         ],

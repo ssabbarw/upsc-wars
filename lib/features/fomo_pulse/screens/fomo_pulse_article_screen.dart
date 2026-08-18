@@ -9,6 +9,9 @@ import '../../../core/services/fcm_token_sync_service.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../llm_admin/domain/llm_admin_settings.dart';
+import '../../llm_admin/providers/llm_admin_providers.dart';
+import '../../llm_admin/widgets/llm_model_dropdown.dart';
 import '../../push_spot_test/widgets/push_notification_preview_card.dart';
 import '../data/admin_pulse_draft_store.dart';
 import '../data/fomo_pulse_article_fetch.dart';
@@ -38,6 +41,8 @@ class FomoPulseArticleScreen extends HookConsumerWidget {
     final translating = useState(false);
     final sending = useState(false);
     final sendTarget = useState(FomoPulseSendTarget.self);
+    final llmModels = useState<List<LlmModelOption>>(kFallbackLlmModels);
+    final shotsModel = useState<String>(kDefaultShotsModel);
     final scheme = Theme.of(context).colorScheme;
     final draftStore = useMemoized(AdminPulseDraftStore.new);
 
@@ -48,6 +53,20 @@ class FomoPulseArticleScreen extends HookConsumerWidget {
         titleCtrl.text = args.savedDraft!.notificationTitle;
         bodyCtrl.text = args.savedDraft!.notificationBody;
       }
+      return null;
+    }, const []);
+
+    useEffect(() {
+      unawaited(() async {
+        try {
+          final llm = await ref.read(llmAdminCloudServiceProvider).getSettings();
+          llmModels.value = llm.models;
+          shotsModel.value = llm.shotsModel;
+        } catch (e, st) {
+          debugPrint('FomoPulseArticleScreen.getLlmAdminSettings failed: $e');
+          debugPrintStack(stackTrace: st);
+        }
+      }());
       return null;
     }, const []);
 
@@ -103,6 +122,7 @@ class FomoPulseArticleScreen extends HookConsumerWidget {
             draftId: args.candidate!.draftId,
             imageUrl: imageUrl,
             imageSource: imageSource,
+            model: shotsModel.value,
           );
         } else {
           var articleText = await fetchArticleTextFromUrl(sourceUrl);
@@ -130,6 +150,7 @@ class FomoPulseArticleScreen extends HookConsumerWidget {
             imageUrl: imageUrl,
             imageSource: imageSource,
             articleText: articleText,
+            model: shotsModel.value,
           );
         }
         draft.value = next;
@@ -354,7 +375,29 @@ class FomoPulseArticleScreen extends HookConsumerWidget {
             ],
           ],
           const SizedBox(height: AppSpacing.lg),
-          if (current == null)
+          if (current == null) ...[
+            LlmModelDropdown(
+              label: 'Shots model',
+              models: llmModels.value,
+              value: shotsModel.value,
+              enabled: !generating.value,
+              onChanged: (id) {
+                shotsModel.value = id;
+                unawaited(() async {
+                  try {
+                    await ref
+                        .read(llmAdminCloudServiceProvider)
+                        .setSettings(shotsModel: id);
+                  } catch (e, st) {
+                    debugPrint(
+                      'FomoPulseArticleScreen.setShotsModel failed: $e',
+                    );
+                    debugPrintStack(stackTrace: st);
+                  }
+                }());
+              },
+            ),
+            const SizedBox(height: AppSpacing.md),
             FilledButton.icon(
               onPressed:
                   generating.value ||
@@ -372,8 +415,8 @@ class FomoPulseArticleScreen extends HookConsumerWidget {
               label: Text(
                 generating.value ? 'Making question…' : 'Make question',
               ),
-            )
-          else ...[
+            ),
+          ] else ...[
             if (!current.sendRecommended) ...[
               Container(
                 padding: const EdgeInsets.all(AppSpacing.md),

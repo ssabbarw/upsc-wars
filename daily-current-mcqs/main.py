@@ -18,6 +18,7 @@ from firebase_functions.options import MemoryOption, SupportedRegion
 
 from pipeline import run
 from services.firestore import get_db
+from services.llm import apply_firestore_llm_overrides
 
 _IST = timezone(timedelta(hours=5, minutes=30))
 _CONFIG_COL = "admin_dashboard"
@@ -96,6 +97,7 @@ def generateDailyCa(event: scheduler_fn.ScheduledEvent) -> None:
         merge=True,
     )
     print("generateDailyCa start", slot)
+    apply_firestore_llm_overrides(force=True)
     run(now.date(), local=False)
     ref.set(
         {

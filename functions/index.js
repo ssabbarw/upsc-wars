@@ -781,6 +781,10 @@ exports.translateFomoPulseDraft = fomoPulse.translateFomoPulseDraft;
 exports.sendFomoPulseNotification = fomoPulse.sendFomoPulseNotification;
 exports.submitFomoPulseAttempt = fomoPulse.submitFomoPulseAttempt;
 
+const llmAdmin = require("./llm_admin");
+exports.getLlmAdminSettings = llmAdmin.getLlmAdminSettings;
+exports.setLlmAdminSettings = llmAdmin.setLlmAdminSettings;
+
 exports.tickBots = bots.tickBots;
 exports.onBotBattleMatchWritten = bots.onBotBattleMatchWritten;
 exports.adminRunBotTick = bots.adminRunBotTick;

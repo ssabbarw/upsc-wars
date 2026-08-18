@@ -32,6 +32,7 @@ import argparse
 from pathlib import Path
 
 from datetime import date, datetime, timedelta
+import config.settings as settings
 from config.settings import (
     QUESTIONS_TARGET,
     QUESTIONS_MIN,
@@ -39,7 +40,6 @@ from config.settings import (
     MIN_QUESTIONS_TO_WRITE,
     PROMPT_VERSION,
     ADMIN_NOTIFY_EMAIL,
-    MCQ_MODEL,
 )
 from services.url_builder   import build_urls, validate_urls
 from services.llm           import generate_mcqs
@@ -202,7 +202,7 @@ def run(today: date = None, questions_target: int = None, local: bool = False):
             failed_urls           = failed,
             target_date           = today,
             prompt_version        = PROMPT_VERSION,
-            sonnet_model          = MCQ_MODEL,
+            sonnet_model          = settings.MCQ_MODEL,
             is_weekend_pack       = is_weekend_pack,
         )
         document["selected_topics"] = raw_data.get("selected_topics") or []

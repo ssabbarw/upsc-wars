@@ -863,3 +863,73 @@ final class DailyWarSubmittedEvent extends AnalyticsEvent {
   final bool isGrand;
   final double score;
 }
+
+// ── CA Shots (FOMO Pulse) ────────────────────────────────────────────────────
+
+/// **User tapped a CA Shot push notification.**
+///
+/// Funnel step 1. Pair unique users with [CaShotSummaryViewedEvent],
+/// [CaShotMcqOpenedEvent], and [CaShotAttemptedEvent].
+///
+/// **GA4:** `ca_shot_notif_opened` with `pulse_id`, `channel` (`fcm`|`local`).
+final class CaShotNotifOpenedEvent extends AnalyticsEvent {
+  const CaShotNotifOpenedEvent({
+    required this.pulseId,
+    required this.channel,
+  });
+
+  final String pulseId;
+  final String channel;
+}
+
+/// **CA Shot news summary was shown** (News tab on the detail screen).
+///
+/// Funnel step 2 — they opened the shot and saw the briefing.
+/// [source] is `push` | `history` | `share` | `in_app`.
+///
+/// **GA4:** `ca_shot_summary_viewed` with `pulse_id`, `source`.
+final class CaShotSummaryViewedEvent extends AnalyticsEvent {
+  const CaShotSummaryViewedEvent({
+    required this.pulseId,
+    required this.source,
+  });
+
+  final String pulseId;
+  final String source;
+}
+
+/// **User switched to the MCQ tab** (or opened the standalone MCQ screen).
+///
+/// Funnel step 3. Does not mean they answered.
+///
+/// **GA4:** `ca_shot_mcq_opened` with `pulse_id`, `source`,
+/// `already_attempted` (0/1).
+final class CaShotMcqOpenedEvent extends AnalyticsEvent {
+  const CaShotMcqOpenedEvent({
+    required this.pulseId,
+    required this.source,
+    required this.alreadyAttempted,
+  });
+
+  final String pulseId;
+  final String source;
+  final bool alreadyAttempted;
+}
+
+/// **User submitted an answer on a CA Shot MCQ** (first attempt this visit).
+///
+/// Funnel step 4. Use unique users vs [CaShotSummaryViewedEvent] for
+/// open → attempt conversion; vs [CaShotNotifOpenedEvent] for push → attempt.
+///
+/// **GA4:** `ca_shot_attempted` with `pulse_id`, `source`, `correct` (0/1).
+final class CaShotAttemptedEvent extends AnalyticsEvent {
+  const CaShotAttemptedEvent({
+    required this.pulseId,
+    required this.source,
+    required this.correct,
+  });
+
+  final String pulseId;
+  final String source;
+  final bool correct;
+}

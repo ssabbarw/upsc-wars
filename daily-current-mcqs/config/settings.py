@@ -11,7 +11,10 @@ load_dotenv()
 load_dotenv(".env.local", override=True)
 
 # ── Anthropic ──────────────────────────────────────────────────────────────────
-ANTHROPIC_API_KEY   = os.getenv("ANTHROPIC_API_KEY")
+ANTHROPIC_API_KEY   = (
+    os.getenv("ANTHROPIC_API_KEY_CA")
+    or os.getenv("ANTHROPIC_API_KEY")
+)
 SONNET_MODEL        = "claude-sonnet-4-6"
 HAIKU_MODEL         = "claude-haiku-4-5-20251001"
 

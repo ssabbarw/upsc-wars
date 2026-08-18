@@ -13,6 +13,7 @@ const fs = require("fs");
 const path = require("path");
 const tls = require("tls");
 
+const llmAdmin = require("../llm_admin");
 const IST_OFFSET_MS = (5 * 60 + 30) * 60 * 1000;
 const DRAFTS = "daily_ca_drafts";
 const LIVE = "daily_mcqs";
@@ -23,7 +24,6 @@ const ADMIN_EMAIL = (
 )
   .trim()
   .toLowerCase();
-const HAIKU_MODEL = process.env.HAIKU_MODEL || "claude-haiku-4-5-20251001";
 
 const ADMIN_EMAILS = new Set(
   [
@@ -157,38 +157,14 @@ function loadTranslatePrompt() {
 }
 
 async function translateEnList(enList) {
-  const key = process.env.ANTHROPIC_API_KEY;
-  if (!key) {
-    throw new HttpsError(
-      "failed-precondition",
-      "ANTHROPIC_API_KEY is not set on Cloud Functions.",
-    );
-  }
-  const res = await fetch("https://api.anthropic.com/v1/messages", {
-    method: "POST",
-    headers: {
-      "content-type": "application/json",
-      "x-api-key": key,
-      "anthropic-version": "2023-06-01",
-    },
-    body: JSON.stringify({
-      model: HAIKU_MODEL,
-      max_tokens: 16000,
-      system: loadTranslatePrompt(),
-      messages: [
-        { role: "user", content: JSON.stringify(enList) },
-      ],
-    }),
+  const cfg = await llmAdmin.loadLlmConfig();
+  const { text } = await llmAdmin.anthropicJson({
+    system: loadTranslatePrompt(),
+    userContent: JSON.stringify(enList),
+    model: cfg.caModel,
+    apiKey: cfg.caApiKey,
+    maxTokens: 16000,
   });
-  if (!res.ok) {
-    const body = await res.text();
-    throw new Error(`Anthropic ${res.status}: ${body.slice(0, 400)}`);
-  }
-  const json = await res.json();
-  const text = (json.content || [])
-    .filter((b) => b.type === "text")
-    .map((b) => b.text)
-    .join("");
   const parsed = parseJsonFromText(text);
   if (!Array.isArray(parsed) || parsed.length !== enList.length) {
     throw new Error(

@@ -80,7 +80,10 @@ Future<bool> openFomoPulseFromIncomingLink({
     detail: FomoPulseConstants.analyticsKey,
   );
 
-  final target = '/fomo-pulse/$pulseId';
+  final target = FomoPulseConstants.detailLocation(
+    pulseId,
+    source: FomoPulseConstants.entryShare,
+  );
   WidgetsBinding.instance.addPostFrameCallback((_) {
     debugPrint('[ca-shot-link] navigating to $target (replace=$replaceStack)');
     if (replaceStack) {

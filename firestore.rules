@@ -348,6 +348,11 @@ service cloud.firestore {
       allow write: if false;
     }
 
+    /// LLM API keys — Cloud Functions only. Never expose to clients.
+    match /admin_secrets/{id} {
+      allow read, write: if false;
+    }
+
     function isAdminDashboardPath() {
       return request.path.matches(
         '/databases/' + database + '/documents/admin_dashboard(/.*)?'
@@ -361,6 +366,12 @@ service cloud.firestore {
         '/databases/' + database + '/documents/bot_jobs(/.*)?'
       ) || request.path.matches(
         '/databases/' + database + '/documents/bot_state(/.*)?'
+      );
+    }
+
+    function isAdminSecretsPath() {
+      return request.path.matches(
+        '/databases/' + database + '/documents/admin_secrets(/.*)?'
       );
     }
 
@@ -403,7 +414,8 @@ service cloud.firestore {
       allow read, write: if signedIn()
         && !isUsersRootDoc(database)
         && !isAdminDashboardPath()
-        && !isBotInternalPath();
+        && !isBotInternalPath()
+        && !isAdminSecretsPath();
     }
 
     function isUsersRootDoc(database) {

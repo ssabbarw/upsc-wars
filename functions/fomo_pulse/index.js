@@ -19,6 +19,7 @@ const crypto = require("crypto");
 const fs = require("fs");
 const path = require("path");
 
+const llmAdmin = require("../llm_admin");
 const REGION = "asia-south1";
 const PULSES = "fomo_pulses";
 const USER_STATE = "fomo_pulse_user_state";
@@ -28,7 +29,6 @@ const MAX_BODY = 180;
 const MIN_STATS_ATTEMPTS = 20;
 const PULSE_TTL_MS = 48 * 60 * 60 * 1000;
 const HISTORY_LIMIT = 20;
-const HAIKU_MODEL = process.env.HAIKU_MODEL || "claude-haiku-4-5-20251001";
 const IST_OFFSET_MS = (5 * 60 + 30) * 60 * 1000;
 
 /** Must match Flutter [FomoPulseConstants.broadcastFcmTopic]. */
@@ -113,37 +113,18 @@ function parseJsonFromText(text) {
   return JSON.parse(payload.slice(start));
 }
 
-async function anthropicJson(system, userContent) {
-  const key = process.env.ANTHROPIC_API_KEY;
-  if (!key) {
-    throw new HttpsError(
-      "failed-precondition",
-      "ANTHROPIC_API_KEY is not set on Cloud Functions.",
-    );
-  }
-  const res = await fetch("https://api.anthropic.com/v1/messages", {
-    method: "POST",
-    headers: {
-      "content-type": "application/json",
-      "x-api-key": key,
-      "anthropic-version": "2023-06-01",
-    },
-    body: JSON.stringify({
-      model: HAIKU_MODEL,
-      max_tokens: 4096,
-      system,
-      messages: [{ role: "user", content: userContent }],
-    }),
+async function anthropicJson(system, userContent, requestedModel) {
+  const cfg = await llmAdmin.loadLlmConfig();
+  const model = llmAdmin.normalizeModel(
+    requestedModel || cfg.shotsModel,
+    llmAdmin.DEFAULT_SHOTS_MODEL,
+  );
+  const { text } = await llmAdmin.anthropicJson({
+    system,
+    userContent,
+    model,
+    apiKey: cfg.shotsApiKey,
   });
-  if (!res.ok) {
-    const body = await res.text();
-    throw new Error(`Anthropic ${res.status}: ${body.slice(0, 400)}`);
-  }
-  const json = await res.json();
-  const text = (json.content || [])
-    .filter((b) => b.type === "text")
-    .map((b) => b.text)
-    .join("");
   return parseJsonFromText(text);
 }
 
@@ -602,6 +583,7 @@ exports.generateFomoPulseDraft = onCall(generateOpts, async (request) => {
   requireAdmin(request);
   const data = request.data || {};
   const source = String(data.source || "").trim().toLowerCase();
+  const requestedModel = String(data.model || "").trim();
 
   if (source === "harvest") {
     const draftDate = String(data.draft_date || "").trim();
@@ -635,6 +617,7 @@ exports.generateFomoPulseDraft = onCall(generateOpts, async (request) => {
     const hooks = await anthropicJson(
       loadPrompt("pulse_hook_system.txt"),
       JSON.stringify(hookInput),
+      requestedModel,
     );
     if (hooks.error) {
       throw new HttpsError("failed-precondition", String(hooks.error));
@@ -724,6 +707,7 @@ exports.generateFomoPulseDraft = onCall(generateOpts, async (request) => {
       const generated = await anthropicJson(
         loadPrompt("pulse_generate_system.txt"),
         JSON.stringify({ url, article_text: articleText.slice(0, 10000) }),
+        requestedModel,
       );
       if (generated.error) {
         throw new HttpsError("failed-precondition", String(generated.error));
