@@ -70,4 +70,22 @@ abstract final class QuestionDisplayTextParser {
     );
   }
 
+  /// Returns only the question stem when [hasSeparateOptions] is true and
+  /// inline `(a)…(d)` markers are present in [raw].
+  static String stemOnly(String raw, {required bool hasSeparateOptions}) {
+    final text = raw.trim();
+    if (text.isEmpty || !hasSeparateOptions) return text;
+
+    final parsed = parse(text);
+    if (parsed.stem.isNotEmpty && parsed.stem != text) {
+      return parsed.stem;
+    }
+
+    final inline = RegExp(r'\s*[\(\[]([aA])[\)\]]\s+');
+    final match = inline.firstMatch(text);
+    if (match != null) {
+      return text.substring(0, match.start).trim();
+    }
+    return text;
+  }
 }

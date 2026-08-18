@@ -447,6 +447,85 @@ class FomoPulseArticleScreen extends HookConsumerWidget {
                 busy: true,
               ),
             ),
+            if (current.question.strongDistractor.trim().isNotEmpty) ...[
+              const SizedBox(height: AppSpacing.md),
+              _MetaCard(
+                title: 'Strong distractor',
+                child: Text(
+                  current.question.strongDistractor,
+                  style: AppTextStyles.bodySm().copyWith(height: 1.4),
+                ),
+              ),
+            ],
+            if (current.question.eliminationLogic.isNotEmpty) ...[
+              const SizedBox(height: AppSpacing.md),
+              _MetaCard(
+                title: 'Elimination logic',
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    for (final step in current.question.eliminationLogic)
+                      if (step.trim().isNotEmpty)
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: AppSpacing.xs),
+                          child: Text(
+                            '• $step',
+                            style: AppTextStyles.bodySm().copyWith(
+                              height: 1.35,
+                            ),
+                          ),
+                        ),
+                  ],
+                ),
+              ),
+            ],
+            if (current.question.statementAnalysis.isNotEmpty) ...[
+              const SizedBox(height: AppSpacing.md),
+              _MetaCard(
+                title: 'Statement analysis',
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    for (final item in current.question.statementAnalysis)
+                      if (item.statement.trim().isNotEmpty ||
+                          item.reason.trim().isNotEmpty)
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: AppSpacing.sm),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                '${item.isCorrect ? '[Correct]' : '[Wrong]'} ${item.statement}',
+                                style: AppTextStyles.bodySm().copyWith(
+                                  fontWeight: FontWeight.w700,
+                                ),
+                              ),
+                              if (item.reason.trim().isNotEmpty) ...[
+                                const SizedBox(height: 2),
+                                Text(
+                                  item.reason,
+                                  style: AppTextStyles.caption().copyWith(
+                                    color: scheme.onSurfaceVariant,
+                                  ),
+                                ),
+                              ],
+                            ],
+                          ),
+                        ),
+                  ],
+                ),
+              ),
+            ],
+            if (current.question.upscTrapExplanation.trim().isNotEmpty) ...[
+              const SizedBox(height: AppSpacing.md),
+              _MetaCard(
+                title: 'Trap explanation',
+                child: Text(
+                  current.question.upscTrapExplanation,
+                  style: AppTextStyles.bodySm().copyWith(height: 1.4),
+                ),
+              ),
+            ],
             if (current.question.hasHindi) ...[
               const SizedBox(height: AppSpacing.sm),
               Text(
@@ -510,6 +589,38 @@ class FomoPulseArticleScreen extends HookConsumerWidget {
               ),
             ),
           ],
+        ],
+      ),
+    );
+  }
+}
+
+class _MetaCard extends StatelessWidget {
+  const _MetaCard({required this.title, required this.child});
+
+  final String title;
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(AppSpacing.md),
+      decoration: BoxDecoration(
+        color: scheme.surfaceContainerLowest,
+        borderRadius: BorderRadius.circular(AppRadius.lg),
+        border: Border.all(color: scheme.outlineVariant),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            title,
+            style: AppTextStyles.label().copyWith(fontWeight: FontWeight.w700),
+          ),
+          const SizedBox(height: AppSpacing.sm),
+          child,
         ],
       ),
     );

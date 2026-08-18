@@ -935,8 +935,10 @@ GoRouter appRouter(Ref ref) {
             parentNavigatorKey: rootNavigatorKey,
             path: 'mcq',
             name: 'fomo_pulse_mcq',
-            builder: (context, state) =>
-                FomoPulseMcqScreen(pulseId: state.pathParameters['pulseId']!),
+            builder: (context, state) => FomoPulseMcqScreen(
+              pulseId: state.pathParameters['pulseId']!,
+              initialSelectedOption: (state.extra as String?)?.toLowerCase(),
+            ),
           ),
         ],
       ),

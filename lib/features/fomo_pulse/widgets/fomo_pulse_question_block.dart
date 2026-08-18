@@ -24,9 +24,8 @@ class FomoPulseQuestionBlock extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
-    final display = question.displayText.trim();
-    final prompt = display.isNotEmpty
-        ? display
+    final prompt = question.stemText.trim().isNotEmpty
+        ? question.stemText.trim()
         : (question.newsTrigger.isNotEmpty
               ? question.newsTrigger
               : 'Answer this Pulse');

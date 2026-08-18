@@ -399,6 +399,24 @@ function harvestCandidateFromQuestion(q, index) {
   };
 }
 
+function stripInlineOptionsFromDisplay(display, opts) {
+  const text = (display || "").toString().trim();
+  if (!text || opts.every((o) => !o)) return text;
+
+  const marker = /^\s*[\(\[]([a-dA-D])[\)\]]\s+/gm;
+  const matches = [...text.matchAll(marker)];
+  if (matches.length >= 4 && matches[0].index != null) {
+    const stem = text.substring(0, matches[0].index).trim();
+    if (stem) return stem;
+  }
+
+  const inline = text.match(/\s*[\(\[]([aA])[\)\]]\s+/);
+  if (inline && inline.index != null) {
+    return text.substring(0, inline.index).trim();
+  }
+  return text;
+}
+
 function normalizeQuestion(raw, fallbackUrl) {
   const q = raw && typeof raw === "object" ? raw : {};
   const en =
@@ -418,10 +436,11 @@ function normalizeQuestion(raw, fallbackUrl) {
   if (!["a", "b", "c", "d"].includes(correct)) {
     throw new HttpsError("invalid-argument", "Invalid correct_option.");
   }
-  const display = (en.display_text || en.stem || "").toString().trim();
+  const displayRaw = (en.display_text || en.stem || "").toString().trim();
   const opts = ["a", "b", "c", "d"].map((k) =>
     (en[`option_${k}`] || "").toString().trim(),
   );
+  const display = stripInlineOptionsFromDisplay(displayRaw, opts);
   if (!display && opts.every((o) => !o)) {
     throw new HttpsError(
       "invalid-argument",
@@ -432,10 +451,33 @@ function normalizeQuestion(raw, fallbackUrl) {
     meta.source_url = fallbackUrl;
   }
   const hi = q.hi && typeof q.hi === "object" ? q.hi : null;
-  const strongDistractor = String(en.strong_distractor || "").trim();
-  const eliminationLogic = normalizeStringArray(en.elimination_logic, 6);
-  const trapExplanation = String(en.upsc_trap_explanation || "").trim();
-  const statementAnalysis = normalizeStatementAnalysis(en.statement_analysis);
+  const strongDistractor = String(
+    en.strong_distractor ||
+      en.strongDistractor ||
+      q.strong_distractor ||
+      q.strongDistractor ||
+      "",
+  ).trim();
+  const eliminationLogic = normalizeStringArray(
+    en.elimination_logic ||
+      en.eliminationLogic ||
+      q.elimination_logic ||
+      q.eliminationLogic,
+    6,
+  );
+  const trapExplanation = String(
+    en.upsc_trap_explanation ||
+      en.upscTrapExplanation ||
+      q.upsc_trap_explanation ||
+      q.upscTrapExplanation ||
+      "",
+  ).trim();
+  const statementAnalysis = normalizeStatementAnalysis(
+    en.statement_analysis ||
+      en.statementAnalysis ||
+      q.statement_analysis ||
+      q.statementAnalysis,
+  );
   return {
     en: {
       display_text: display,
@@ -458,10 +500,19 @@ function normalizeQuestion(raw, fallbackUrl) {
       ? {
           hi: {
             ...hi,
-            strong_distractor: String(hi.strong_distractor || "").trim(),
-            elimination_logic: normalizeStringArray(hi.elimination_logic, 6),
-            upsc_trap_explanation: String(hi.upsc_trap_explanation || "").trim(),
-            statement_analysis: normalizeStatementAnalysis(hi.statement_analysis),
+            strong_distractor: String(
+              hi.strong_distractor || hi.strongDistractor || "",
+            ).trim(),
+            elimination_logic: normalizeStringArray(
+              hi.elimination_logic || hi.eliminationLogic,
+              6,
+            ),
+            upsc_trap_explanation: String(
+              hi.upsc_trap_explanation || hi.upscTrapExplanation || "",
+            ).trim(),
+            statement_analysis: normalizeStatementAnalysis(
+              hi.statement_analysis || hi.statementAnalysis,
+            ),
           },
         }
       : {}),

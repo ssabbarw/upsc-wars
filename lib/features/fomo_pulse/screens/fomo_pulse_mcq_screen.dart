@@ -19,9 +19,14 @@ import '../providers/fomo_pulse_providers.dart';
 ///
 /// Tutor-like flow: tap option, see verdict + explanation instantly, then CTA.
 class FomoPulseMcqScreen extends HookConsumerWidget {
-  const FomoPulseMcqScreen({super.key, required this.pulseId});
+  const FomoPulseMcqScreen({
+    super.key,
+    required this.pulseId,
+    this.initialSelectedOption,
+  });
 
   final String pulseId;
+  final String? initialSelectedOption;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -58,6 +63,7 @@ class FomoPulseMcqScreen extends HookConsumerWidget {
         data: (data) => _FomoPulseTutorBody(
           pulse: data.pulse,
           existingAttempt: data.attempt,
+          initialSelectedOption: initialSelectedOption,
         ),
       ),
     );
@@ -68,10 +74,12 @@ class _FomoPulseTutorBody extends HookConsumerWidget {
   const _FomoPulseTutorBody({
     required this.pulse,
     required this.existingAttempt,
+    required this.initialSelectedOption,
   });
 
   final FomoPulse pulse;
   final FomoPulseAttemptState? existingAttempt;
+  final String? initialSelectedOption;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -80,6 +88,7 @@ class _FomoPulseTutorBody extends HookConsumerWidget {
     final openedAt = useMemoized(DateTime.now);
     final attemptedOnOpen = existingAttempt?.attempted == true;
     final picked = useState<String?>(existingAttempt?.selectedOption);
+    final isAutoSubmitting = useState(false);
 
     final selected = picked.value ?? '';
     final revealed = selected.isNotEmpty;
@@ -123,13 +132,28 @@ class _FomoPulseTutorBody extends HookConsumerWidget {
       ref.invalidate(fomoPulseHistoryProvider);
     }
 
-    void onPick(String option) {
+    Future<void> onPick(String option) async {
       if (revealed) return;
       picked.value = option;
       if (!attemptedOnOpen) {
-        unawaited(syncAttempt(option));
+        await syncAttempt(option);
       }
     }
+
+    useEffect(() {
+      final option = initialSelectedOption?.trim().toLowerCase();
+      if (attemptedOnOpen || option == null || option.isEmpty || revealed) {
+        return null;
+      }
+      Future<void>(() async {
+        isAutoSubmitting.value = true;
+        await onPick(option);
+        if (context.mounted) {
+          isAutoSubmitting.value = false;
+        }
+      });
+      return null;
+    }, [initialSelectedOption, attemptedOnOpen]);
 
     Widget optionTile(String key, String text) {
       final k = key.toLowerCase();
@@ -165,7 +189,7 @@ class _FomoPulseTutorBody extends HookConsumerWidget {
           borderRadius: BorderRadius.circular(AppRadius.md),
           child: InkWell(
             borderRadius: BorderRadius.circular(AppRadius.md),
-            onTap: revealed ? null : () => onPick(k),
+            onTap: revealed ? null : () => unawaited(onPick(k)),
             child: Container(
               padding: const EdgeInsets.all(AppSpacing.md),
               decoration: BoxDecoration(
@@ -206,8 +230,12 @@ class _FomoPulseTutorBody extends HookConsumerWidget {
     return ListView(
       padding: const EdgeInsets.all(AppSpacing.lg),
       children: [
+        if (isAutoSubmitting.value) ...[
+          const LinearProgressIndicator(),
+          const SizedBox(height: AppSpacing.md),
+        ],
         Text(
-          question.displayText,
+          question.stemText,
           style: AppTextStyles.body().copyWith(height: 1.35),
         ),
         const SizedBox(height: AppSpacing.md),

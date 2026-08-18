@@ -9,7 +9,7 @@ Given a news article URL or news item context, return JSON only (no markdown fen
   "upsc_points": ["2-3 probable UPSC question angles from this topic (value-add, not headline restatement)"],
   "question": {
     "en": {
-      "display_text": "UPSC-style MCQ stem with (a)(b)(c)(d) options inline OR stem + separate options",
+      "display_text": "UPSC-style MCQ stem ONLY — do not include (a)(b)(c)(d) options here",
       "option_a": "text",
       "option_b": "text",
       "option_c": "text",
@@ -44,6 +44,7 @@ Rules:
 - Notification title creates curiosity; body adds urgency without fake claims.
 - Never invent facts. If URL content is insufficient, set "error" field instead.
 - Options must be plausible; exactly one correct answer.
+- Put options only in option_a..option_d. Never duplicate them inside display_text.
 - Intentionally include one strong distractor that reflects a common UPSC misconception.
 - Prefer trap-aware framing (close qualifiers, partial truths, static+dynamic mix), but keep it fair and solvable.
 - Elimination logic must be actionable, not generic.

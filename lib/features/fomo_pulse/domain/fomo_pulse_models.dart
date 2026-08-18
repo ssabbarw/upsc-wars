@@ -1,5 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
+import '../../../core/parsers/question_display_text_parser.dart';
+
 typedef FomoPulseHistoryData = ({
   List<FomoPulse> pulses,
   Map<String, FomoPulseAttemptState> attempts,
@@ -143,6 +145,17 @@ class FomoPulseQuestion {
   final String finalExplanationHi;
 
   bool get hasHindi => displayTextHi.trim().isNotEmpty;
+
+  bool get hasSeparateOptions =>
+      optionA.trim().isNotEmpty &&
+      optionB.trim().isNotEmpty &&
+      optionC.trim().isNotEmpty &&
+      optionD.trim().isNotEmpty;
+
+  String get stemText => QuestionDisplayTextParser.stemOnly(
+        displayText,
+        hasSeparateOptions: hasSeparateOptions,
+      );
 
   FomoPulseQuestion localized(bool hindi) {
     if (!hindi || !hasHindi) return this;

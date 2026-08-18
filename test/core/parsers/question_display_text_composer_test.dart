@@ -3,6 +3,25 @@ import 'package:upsc_wars/core/parsers/question_display_text_composer.dart';
 import 'package:upsc_wars/core/parsers/question_display_text_parser.dart';
 
 void main() {
+  test('stemOnly strips inline options when separate options exist', () {
+    const raw =
+        'According to Iran, which condition must the U.S. meet? (a) Withdraw troops (b) Lift sanctions (c) Recognize nuclear program (d) Close ports';
+    final stem = QuestionDisplayTextParser.stemOnly(
+      raw,
+      hasSeparateOptions: true,
+    );
+    expect(stem, 'According to Iran, which condition must the U.S. meet?');
+  });
+
+  test('stemOnly keeps full text when options are not separate', () {
+    const raw = 'Simple stem with (a) inline marker';
+    final stem = QuestionDisplayTextParser.stemOnly(
+      raw,
+      hasSeparateOptions: false,
+    );
+    expect(stem, raw);
+  });
+
   test('compose round-trips with parser', () {
     const raw =
         'What is 2+2?\n\n(a) 3\n(b) 4\n(c) 5\n(d) 6';
