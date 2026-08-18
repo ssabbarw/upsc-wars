@@ -25,23 +25,24 @@ class FomoPulseQuestionBlock extends StatelessWidget {
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
     final display = question.displayText.trim();
-    final hasInlineOptions = display.isNotEmpty;
+    final prompt = display.isNotEmpty
+        ? display
+        : (question.newsTrigger.isNotEmpty
+              ? question.newsTrigger
+              : 'Answer this Pulse');
+    final hasOptionText = question.optionA.trim().isNotEmpty ||
+        question.optionB.trim().isNotEmpty ||
+        question.optionC.trim().isNotEmpty ||
+        question.optionD.trim().isNotEmpty;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        if (hasInlineOptions)
-          Text(
-            display,
-            style: AppTextStyles.body().copyWith(height: 1.4),
-          )
-        else ...[
-          Text(
-            question.newsTrigger.isNotEmpty
-                ? question.newsTrigger
-                : 'Answer this Pulse',
-            style: AppTextStyles.body().copyWith(height: 1.4),
-          ),
+        Text(
+          prompt,
+          style: AppTextStyles.body().copyWith(height: 1.4),
+        ),
+        if (hasOptionText) ...[
           const SizedBox(height: AppSpacing.md),
           _OptionLine(label: 'A', text: question.optionA),
           _OptionLine(label: 'B', text: question.optionB),
