@@ -206,6 +206,13 @@ service cloud.firestore {
       allow write: if false;
     }
 
+    /// In-app HTML announcement (`Long_Html_Message/message`).
+    /// Public read so a push can open it before sign-in. Writes via Console / Admin SDK.
+    match /Long_Html_Message/{docId} {
+      allow read: if true;
+      allow write: if false;
+    }
+
     /// Global per-question analytics (`question_stats/{questionUuid}`).
     /// Docs are created on first client write — no pre-seeding required.
     /// Clients use silent anonymous Firebase Auth; rules require [signedIn] + validation.

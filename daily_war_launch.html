@@ -1,264 +1,82 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <title>Daily War is live</title>
-  <!--
-    Paste this whole file into Firestore:
-      Long_Html_Message / message / field `message`
-    Then send FCM with data: type = long_html_message
+<!-- Paste this fragment into Firestore Long_Html_Message / message / field `message`.
+     No <html>, <head>, or <title> — the in-app renderer prints those as text. -->
 
-    Built for the in-app HTML notification screen (no JS).
-    Open in a phone browser to preview.
-  -->
-  <style>
-    html, body { margin: 0; padding: 0; }
-    body {
-      background: #0c0d0f;
-      color: #f5f5f3;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      -webkit-font-smoothing: antialiased;
-    }
-  </style>
-</head>
-<body>
+<div style="color:#1c1c1e;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;line-height:1.45;">
 
-<div style="background:#0c0d0f;color:#f5f5f3;padding:4px 2px 28px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;line-height:1.45;">
-
-  <!-- Hero -->
-  <div style="background:#131417;border:1px solid #2a2b2e;border-radius:20px;padding:22px 20px 24px;margin-bottom:14px;">
-    <p style="margin:0 0 14px;font-size:11px;letter-spacing:1.6px;font-weight:800;color:#ff3b5c;">NOW LIVE · ON HOME</p>
-    <h1 style="margin:0 0 10px;font-size:34px;line-height:1.05;letter-spacing:-0.8px;font-weight:800;color:#ffffff;">Daily War</h1>
-    <p style="margin:0 0 18px;font-size:16px;line-height:1.4;color:#c8c8c4;font-weight:500;">
-      Same static paper. Same 9 PM clock. Then you see the All-India rank.
+  <div style="background:#ffffff;border:1px solid #e6e6e2;border-radius:16px;padding:16px;margin:0 0 12px 0;">
+    <p style="margin:0 0 10px 0;font-size:11px;letter-spacing:1.2px;font-weight:800;color:#c2103a;">NOW LIVE · DAILY WAR</p>
+    <p style="margin:0 0 10px 0;font-size:26px;line-height:1.15;font-weight:800;color:#1c1c1e;">Entire syllabus.<br />Two topics a day.</p>
+    <p style="margin:0 0 14px 0;font-size:15px;line-height:1.4;color:#6b6b6b;">
+      We walk the full static GS map — two topics every War night — until nothing is left. Same paper at 9 PM. Then the All-India rank.
     </p>
-
-    <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
-      <tr>
-        <td style="background:#1c1c1e;border-radius:14px;padding:14px 12px;text-align:center;width:33%;">
-          <div style="font-size:20px;font-weight:800;color:#ffffff;letter-spacing:-0.4px;">9:00</div>
-          <div style="font-size:11px;color:#8e8e8a;font-weight:700;margin-top:2px;">PM IST</div>
-        </td>
-        <td style="width:8px;"></td>
-        <td style="background:#1c1c1e;border-radius:14px;padding:14px 12px;text-align:center;width:33%;">
-          <div style="font-size:20px;font-weight:800;color:#ffffff;letter-spacing:-0.4px;">15 Q</div>
-          <div style="font-size:11px;color:#8e8e8a;font-weight:700;margin-top:2px;">20 MIN</div>
-        </td>
-        <td style="width:8px;"></td>
-        <td style="background:#1c1c1e;border-radius:14px;padding:14px 12px;text-align:center;width:33%;">
-          <div style="font-size:20px;font-weight:800;color:#c9a227;letter-spacing:-0.4px;">AIR</div>
-          <div style="font-size:11px;color:#8e8e8a;font-weight:700;margin-top:2px;">AT 9:40</div>
-        </td>
-      </tr>
-    </table>
+    <p style="margin:0 0 8px 0;background:#f5f5f3;border-radius:12px;padding:12px 14px;font-size:14px;color:#1c1c1e;"><strong>2 topics</strong> every night</p>
+    <p style="margin:0 0 8px 0;background:#f5f5f3;border-radius:12px;padding:12px 14px;font-size:14px;color:#1c1c1e;"><strong>Full GS static</strong> syllabus</p>
+    <p style="margin:0;background:#f5f5f3;border-radius:12px;padding:12px 14px;font-size:14px;color:#1c1c1e;"><strong>9:00 PM IST</strong> · AIR at 9:40</p>
   </div>
 
-  <!-- What it is -->
-  <div style="background:#131417;border:1px solid #2a2b2e;border-radius:20px;padding:20px;margin-bottom:14px;">
-    <p style="margin:0 0 8px;font-size:11px;letter-spacing:1.4px;font-weight:800;color:#1d9e75;">WHAT THIS IS</p>
-    <p style="margin:0 0 12px;font-size:17px;line-height:1.35;font-weight:800;color:#ffffff;">
-      A nightly GS paper from the static syllabus. Everyone writes the same questions.
+  <div style="background:#ffffff;border:1px solid #e6e6e2;border-radius:16px;padding:16px;margin:0 0 12px 0;">
+    <p style="margin:0 0 8px 0;font-size:11px;letter-spacing:1.2px;font-weight:800;color:#1d9e75;">THE PLAN</p>
+    <p style="margin:0 0 10px 0;font-size:17px;line-height:1.3;font-weight:800;color:#1c1c1e;">Not random practice. A path through every static topic.</p>
+    <p style="margin:0 0 12px 0;font-size:14px;line-height:1.5;color:#6b6b6b;">
+      Each War night is <strong style="color:#1c1c1e;">exactly two topics</strong>. Show up night after night and we cover the <strong style="color:#1c1c1e;">entire GS Paper 1 syllabus</strong> — in order. Saturday revises the week. Sunday rests. Then the next two topics.
     </p>
-    <p style="margin:0;font-size:14px;line-height:1.55;color:#b8b8b4;">
-      Not current affairs. Not a random quiz. Two topics a night, pulled from Polity, Economy, History, Geography, Environment, Art &amp; Culture — until the map is covered. One attempt. Then the board.
-    </p>
-  </div>
-
-  <!-- How a night works -->
-  <div style="background:#131417;border:1px solid #2a2b2e;border-radius:20px;padding:20px;margin-bottom:14px;">
-    <p style="margin:0 0 14px;font-size:11px;letter-spacing:1.4px;font-weight:800;color:#ff3b5c;">HOW A NIGHT WORKS</p>
-
-    <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;margin-bottom:12px;">
-      <tr>
-        <td valign="top" style="width:36px;">
-          <div style="width:28px;height:28px;background:#c2103a;border-radius:14px;text-align:center;line-height:28px;font-size:13px;font-weight:800;color:#ffffff;">1</div>
-        </td>
-        <td valign="top">
-          <div style="font-size:15px;font-weight:800;color:#ffffff;">Morning — topics drop</div>
-          <div style="font-size:13px;color:#9a9a96;margin-top:2px;">Tonight’s two topics land on Home. Warm up anytime.</div>
-        </td>
-      </tr>
-    </table>
-
-    <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;margin-bottom:12px;">
-      <tr>
-        <td valign="top" style="width:36px;">
-          <div style="width:28px;height:28px;background:#c2103a;border-radius:14px;text-align:center;line-height:28px;font-size:13px;font-weight:800;color:#ffffff;">2</div>
-        </td>
-        <td valign="top">
-          <div style="font-size:15px;font-weight:800;color:#ffffff;">9:00 PM — paper starts</div>
-          <div style="font-size:13px;color:#9a9a96;margin-top:2px;">Lobby opens at 8:59. Late join until 9:10. Then the gate closes.</div>
-        </td>
-      </tr>
-    </table>
-
-    <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;margin-bottom:12px;">
-      <tr>
-        <td valign="top" style="width:36px;">
-          <div style="width:28px;height:28px;background:#c2103a;border-radius:14px;text-align:center;line-height:28px;font-size:13px;font-weight:800;color:#ffffff;">3</div>
-        </td>
-        <td valign="top">
-          <div style="font-size:15px;font-weight:800;color:#ffffff;">Write it once</div>
-          <div style="font-size:13px;color:#9a9a96;margin-top:2px;">15 questions · 20 minutes on weeknights. Saturday is Grand War: 25 Q · 34 min.</div>
-        </td>
-      </tr>
-    </table>
-
-    <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
-      <tr>
-        <td valign="top" style="width:36px;">
-          <div style="width:28px;height:28px;background:#c9a227;border-radius:14px;text-align:center;line-height:28px;font-size:13px;font-weight:800;color:#0c0d0f;">4</div>
-        </td>
-        <td valign="top">
-          <div style="font-size:15px;font-weight:800;color:#ffffff;">9:40 PM — AIR drops</div>
-          <div style="font-size:13px;color:#9a9a96;margin-top:2px;">Score on submit. All-India rank when the board is ready. We’ll ping you.</div>
-        </td>
-      </tr>
-    </table>
-  </div>
-
-  <!-- Leaderboard teaser -->
-  <div style="background:#131417;border:1px solid #2a2b2e;border-radius:20px;padding:20px;margin-bottom:14px;">
-    <p style="margin:0 0 6px;font-size:11px;letter-spacing:1.4px;font-weight:800;color:#c9a227;">THE BOARD</p>
-    <p style="margin:0 0 14px;font-size:15px;font-weight:800;color:#ffffff;">Same paper. Honest rank.</p>
-
-    <div style="background:#1c1c1e;border-radius:14px;padding:4px 12px 8px;">
-      <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
-        <tr>
-          <td style="padding:12px 0;border-bottom:1px solid #2a2b2e;width:28px;font-size:16px;">🥇</td>
-          <td style="padding:12px 0;border-bottom:1px solid #2a2b2e;">
-            <div style="font-size:14px;font-weight:800;color:#ffffff;">AIR 1</div>
-            <div style="font-size:12px;color:#8e8e8a;">Champion of the night</div>
-          </td>
-          <td style="padding:12px 0;border-bottom:1px solid #2a2b2e;text-align:right;font-size:13px;font-weight:800;color:#c9a227;">#1</td>
-        </tr>
-        <tr>
-          <td style="padding:12px 0;border-bottom:1px solid #2a2b2e;width:28px;font-size:16px;">🥈</td>
-          <td style="padding:12px 0;border-bottom:1px solid #2a2b2e;">
-            <div style="font-size:14px;font-weight:800;color:#ffffff;">AIR 2</div>
-            <div style="font-size:12px;color:#8e8e8a;">Silver</div>
-          </td>
-          <td style="padding:12px 0;border-bottom:1px solid #2a2b2e;text-align:right;font-size:13px;font-weight:800;color:#c8c8c4;">#2</td>
-        </tr>
-        <tr>
-          <td style="padding:12px 0;border-bottom:1px solid #2a2b2e;width:28px;font-size:16px;">🥉</td>
-          <td style="padding:12px 0;border-bottom:1px solid #2a2b2e;">
-            <div style="font-size:14px;font-weight:800;color:#ffffff;">AIR 3</div>
-            <div style="font-size:12px;color:#8e8e8a;">Bronze</div>
-          </td>
-          <td style="padding:12px 0;border-bottom:1px solid #2a2b2e;text-align:right;font-size:13px;font-weight:800;color:#c8c8c4;">#3</td>
-        </tr>
-        <tr>
-          <td style="padding:12px 0;width:28px;font-size:16px;">🔥</td>
-          <td style="padding:12px 0;">
-            <div style="font-size:14px;font-weight:800;color:#ff3b5c;">You</div>
-            <div style="font-size:12px;color:#8e8e8a;">Show up. Write it. Climb.</div>
-          </td>
-          <td style="padding:12px 0;text-align:right;font-size:13px;font-weight:800;color:#ff3b5c;">tonight</td>
-        </tr>
-      </table>
+    <div style="background:#f5f5f3;border-radius:12px;padding:12px 14px;">
+      <p style="margin:0 0 8px 0;font-size:11px;letter-spacing:0.8px;font-weight:800;color:#888780;">THE MAP</p>
+      <p style="margin:0 0 6px 0;font-size:14px;font-weight:700;color:#1c1c1e;">Polity · Economy · Geography</p>
+      <p style="margin:0 0 6px 0;font-size:14px;font-weight:700;color:#1c1c1e;">Environment · Art &amp; Culture</p>
+      <p style="margin:0;font-size:14px;font-weight:700;color:#1c1c1e;">Ancient · Medieval · Modern History</p>
     </div>
-
-    <p style="margin:12px 0 0;font-size:13px;line-height:1.5;color:#9a9a96;">
-      Night awards for a clean sweep, fastest finish, 9 PM sharp, a 10-rank climb. The board is the point — not a participation sticker.
-    </p>
   </div>
 
-  <!-- Week rhythm -->
-  <div style="background:#131417;border:1px solid #2a2b2e;border-radius:20px;padding:20px;margin-bottom:14px;">
-    <p style="margin:0 0 12px;font-size:11px;letter-spacing:1.4px;font-weight:800;color:#8eb4ff;">WEEK RHYTHM</p>
-
-    <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;margin-bottom:14px;">
-      <tr>
-        <td style="background:#1c1c1e;border-radius:10px;padding:10px 4px;text-align:center;width:14%;">
-          <div style="font-size:11px;font-weight:800;color:#ffffff;">M</div>
-          <div style="font-size:9px;color:#1d9e75;font-weight:700;margin-top:2px;">WAR</div>
-        </td>
-        <td style="width:4px;"></td>
-        <td style="background:#1c1c1e;border-radius:10px;padding:10px 4px;text-align:center;width:14%;">
-          <div style="font-size:11px;font-weight:800;color:#ffffff;">T</div>
-          <div style="font-size:9px;color:#1d9e75;font-weight:700;margin-top:2px;">WAR</div>
-        </td>
-        <td style="width:4px;"></td>
-        <td style="background:#1c1c1e;border-radius:10px;padding:10px 4px;text-align:center;width:14%;">
-          <div style="font-size:11px;font-weight:800;color:#ffffff;">W</div>
-          <div style="font-size:9px;color:#1d9e75;font-weight:700;margin-top:2px;">WAR</div>
-        </td>
-        <td style="width:4px;"></td>
-        <td style="background:#1c1c1e;border-radius:10px;padding:10px 4px;text-align:center;width:14%;">
-          <div style="font-size:11px;font-weight:800;color:#ffffff;">T</div>
-          <div style="font-size:9px;color:#1d9e75;font-weight:700;margin-top:2px;">WAR</div>
-        </td>
-        <td style="width:4px;"></td>
-        <td style="background:#1c1c1e;border-radius:10px;padding:10px 4px;text-align:center;width:14%;">
-          <div style="font-size:11px;font-weight:800;color:#ffffff;">F</div>
-          <div style="font-size:9px;color:#1d9e75;font-weight:700;margin-top:2px;">WAR</div>
-        </td>
-        <td style="width:4px;"></td>
-        <td style="background:#3a2a12;border-radius:10px;padding:10px 4px;text-align:center;width:14%;">
-          <div style="font-size:11px;font-weight:800;color:#c9a227;">S</div>
-          <div style="font-size:9px;color:#c9a227;font-weight:700;margin-top:2px;">GRAND</div>
-        </td>
-        <td style="width:4px;"></td>
-        <td style="background:#161618;border-radius:10px;padding:10px 4px;text-align:center;width:14%;">
-          <div style="font-size:11px;font-weight:800;color:#6b6b63;">S</div>
-          <div style="font-size:9px;color:#6b6b63;font-weight:700;margin-top:2px;">OFF</div>
-        </td>
-      </tr>
-    </table>
-
-    <p style="margin:0;font-size:14px;line-height:1.55;color:#b8b8b4;">
-      <strong style="color:#ffffff;">Mon–Fri</strong> — two topics, 15 questions.<br />
-      <strong style="color:#c9a227;">Saturday Grand War</strong> — the week, revised. 25 questions.<br />
-      <strong style="color:#8e8e8a;">Sunday</strong> — rest. Week summary on Home.
-    </p>
+  <div style="background:#ffffff;border:1px solid #e6e6e2;border-radius:16px;padding:16px;margin:0 0 12px 0;">
+    <p style="margin:0 0 12px 0;font-size:11px;letter-spacing:1.2px;font-weight:800;color:#c2103a;">HOW A NIGHT WORKS</p>
+    <p style="margin:0 0 12px 0;font-size:14px;line-height:1.45;color:#1c1c1e;"><strong>1. Morning</strong><br /><span style="color:#6b6b6b;">Today’s two topics land on Home. Warm up anytime.</span></p>
+    <p style="margin:0 0 12px 0;font-size:14px;line-height:1.45;color:#1c1c1e;"><strong>2. 9:00 PM</strong><br /><span style="color:#6b6b6b;">Lobby at 8:59. Late join until 9:10. Then the gate closes.</span></p>
+    <p style="margin:0 0 12px 0;font-size:14px;line-height:1.45;color:#1c1c1e;"><strong>3. One attempt</strong><br /><span style="color:#6b6b6b;">15 Q · 20 min weeknights. Saturday Grand: 25 Q · 34 min.</span></p>
+    <p style="margin:0;font-size:14px;line-height:1.45;color:#1c1c1e;"><strong>4. 9:40 PM · AIR</strong><br /><span style="color:#6b6b6b;">Score on submit. Rank when the board is ready. We’ll ping you.</span></p>
   </div>
 
-  <!-- Streaks -->
-  <div style="background:#131417;border:1px solid #2a2b2e;border-radius:20px;padding:20px;margin-bottom:14px;">
-    <p style="margin:0 0 8px;font-size:11px;letter-spacing:1.4px;font-weight:800;color:#e24b4a;">STREAKS &amp; RANKS</p>
-    <p style="margin:0 0 14px;font-size:17px;line-height:1.35;font-weight:800;color:#ffffff;">Show up six nights. Climb the ladder.</p>
-
-    <div style="background:#1c1c1e;border-radius:14px;padding:14px 14px 6px;margin-bottom:12px;">
-      <p style="margin:0 0 10px;font-size:13px;color:#c8c8c4;"><span style="color:#ff3b5c;font-weight:800;">Recruit</span> · 1–6 nights</p>
-      <p style="margin:0 0 10px;font-size:13px;color:#c8c8c4;"><span style="color:#f59e0b;font-weight:800;">Cadet</span> · 7–12 nights</p>
-      <p style="margin:0 0 10px;font-size:13px;color:#c8c8c4;"><span style="color:#3b82f6;font-weight:800;">Officer</span> · 13–18 nights</p>
-      <p style="margin:0 0 10px;font-size:13px;color:#c8c8c4;"><span style="color:#a78bfa;font-weight:800;">Commander</span> · 19–24 nights</p>
-      <p style="margin:0 0 8px;font-size:13px;color:#c8c8c4;"><span style="color:#c9a227;font-weight:800;">Marshal</span> · 25+ nights</p>
-    </div>
-
-    <p style="margin:0;font-size:13px;line-height:1.55;color:#9a9a96;">
-      One missed War night is a freeze. Two nights in a row and you drop a tier. Practice later if you miss — no rank that night, and the streak is on the line.
-    </p>
+  <div style="background:#ffffff;border:1px solid #e6e6e2;border-radius:16px;padding:16px;margin:0 0 12px 0;">
+    <p style="margin:0 0 6px 0;font-size:11px;letter-spacing:1.2px;font-weight:800;color:#a3841c;">THE BOARD</p>
+    <p style="margin:0 0 12px 0;font-size:16px;font-weight:800;color:#1c1c1e;">Same paper. Honest rank.</p>
+    <p style="margin:0 0 8px 0;background:#f5f5f3;border-radius:12px;padding:12px 14px;font-size:14px;color:#1c1c1e;">🥇 AIR 1 · Champion of the night</p>
+    <p style="margin:0 0 8px 0;background:#f5f5f3;border-radius:12px;padding:12px 14px;font-size:14px;color:#1c1c1e;">🥈 AIR 2 · Silver</p>
+    <p style="margin:0 0 8px 0;background:#f5f5f3;border-radius:12px;padding:12px 14px;font-size:14px;color:#1c1c1e;">🥉 AIR 3 · Bronze</p>
+    <p style="margin:0 0 12px 0;background:#f5f5f3;border-radius:12px;padding:12px 14px;font-size:14px;color:#c2103a;"><strong>🔥 You · tonight</strong></p>
+    <p style="margin:0;font-size:13px;line-height:1.5;color:#6b6b6b;">Night awards for a clean sweep, fastest finish, 9 PM sharp, a 10-rank climb.</p>
   </div>
 
-  <!-- How to join -->
-  <div style="background:#131417;border:1px solid #2a2b2e;border-radius:20px;padding:20px;margin-bottom:14px;">
-    <p style="margin:0 0 8px;font-size:11px;letter-spacing:1.4px;font-weight:800;color:#1d9e75;">WHERE TO FIND IT</p>
-    <p style="margin:0 0 12px;font-size:17px;line-height:1.35;font-weight:800;color:#ffffff;">Home → the dark Daily War card</p>
-    <p style="margin:0 0 12px;font-size:14px;line-height:1.55;color:#b8b8b4;">
-      Open Upsc Wars. It’s on Home, in Today — the near-black card. Tap it. If topics are up, try 10 warm-up questions on them during the day. At 9, enter the lobby and write the live paper.
-    </p>
-    <p style="margin:0;font-size:13px;line-height:1.5;color:#9a9a96;">
-      Update the app if you don’t see it yet.
-    </p>
+  <div style="background:#ffffff;border:1px solid #e6e6e2;border-radius:16px;padding:16px;margin:0 0 12px 0;">
+    <p style="margin:0 0 10px 0;font-size:11px;letter-spacing:1.2px;font-weight:800;color:#185fa5;">WEEK RHYTHM</p>
+    <p style="margin:0 0 8px 0;background:#f5f5f3;border-radius:12px;padding:12px 14px;font-size:14px;color:#1c1c1e;"><strong>Mon–Fri</strong> · 2 new topics · 15 Q</p>
+    <p style="margin:0 0 8px 0;background:#faeeda;border-radius:12px;padding:12px 14px;font-size:14px;color:#1c1c1e;"><strong>Saturday Grand</strong> · week revised · 25 Q</p>
+    <p style="margin:0;background:#eeeeeb;border-radius:12px;padding:12px 14px;font-size:14px;color:#6b6b6b;"><strong>Sunday</strong> · rest. Monday, the next two topics.</p>
   </div>
 
-  <!-- Close -->
-  <div style="background:#c2103a;border-radius:20px;padding:22px 20px;text-align:center;">
-    <p style="margin:0 0 6px;font-size:11px;letter-spacing:1.6px;font-weight:800;color:#ffd0d8;">TONIGHT</p>
-    <p style="margin:0 0 8px;font-size:24px;line-height:1.15;font-weight:800;color:#ffffff;letter-spacing:-0.4px;">Be on the paper at 9.</p>
-    <p style="margin:0;font-size:14px;line-height:1.45;color:#ffd0d8;">
-      Full syllabus. Two topics at a time. The board is waiting.
-    </p>
+  <div style="background:#ffffff;border:1px solid #e6e6e2;border-radius:16px;padding:16px;margin:0 0 12px 0;">
+    <p style="margin:0 0 8px 0;font-size:11px;letter-spacing:1.2px;font-weight:800;color:#e24b4a;">STREAKS &amp; RANKS</p>
+    <p style="margin:0 0 12px 0;font-size:16px;line-height:1.3;font-weight:800;color:#1c1c1e;">Show up six nights. Climb the ladder.</p>
+    <p style="margin:0 0 6px 0;font-size:14px;color:#444441;"><span style="color:#c2103a;font-weight:800;">Recruit</span> · 1–6 nights</p>
+    <p style="margin:0 0 6px 0;font-size:14px;color:#444441;"><span style="color:#ba7517;font-weight:800;">Cadet</span> · 7–12 nights</p>
+    <p style="margin:0 0 6px 0;font-size:14px;color:#444441;"><span style="color:#185fa5;font-weight:800;">Officer</span> · 13–18 nights</p>
+    <p style="margin:0 0 6px 0;font-size:14px;color:#444441;"><span style="color:#6d28d9;font-weight:800;">Commander</span> · 19–24 nights</p>
+    <p style="margin:0 0 12px 0;font-size:14px;color:#444441;"><span style="color:#a3841c;font-weight:800;">Marshal</span> · 25+ nights</p>
+    <p style="margin:0;font-size:13px;line-height:1.5;color:#6b6b6b;">One missed night is a freeze. Two in a row and you drop a tier. Practice later if you miss — no rank that night.</p>
   </div>
 
-  <p style="margin:18px 8px 0;text-align:center;font-size:12px;color:#6b6b63;">
-    Upsc Wars · Daily War · Mon–Sat 9:00 PM IST
-  </p>
+  <div style="background:#ffffff;border:1px solid #e6e6e2;border-radius:16px;padding:16px;margin:0 0 12px 0;">
+    <p style="margin:0 0 8px 0;font-size:11px;letter-spacing:1.2px;font-weight:800;color:#1d9e75;">WHERE TO FIND IT</p>
+    <p style="margin:0 0 8px 0;font-size:16px;line-height:1.3;font-weight:800;color:#1c1c1e;">Home → the dark Daily War card</p>
+    <p style="margin:0 0 8px 0;font-size:14px;line-height:1.5;color:#6b6b6b;">Open Upsc Wars. It’s on Home, in Today. Tap it. Warm up on tonight’s topics during the day. At 9, enter the lobby and write the paper.</p>
+    <p style="margin:0;font-size:13px;color:#6b6b6b;">Update the app if you don’t see it yet.</p>
+  </div>
+
+  <div style="background:#c2103a;border-radius:16px;padding:18px 16px;text-align:center;">
+    <p style="margin:0 0 6px 0;font-size:11px;letter-spacing:1.4px;font-weight:800;color:#ffd0d8;">TONIGHT</p>
+    <p style="margin:0 0 8px 0;font-size:20px;line-height:1.2;font-weight:800;color:#ffffff;">Two topics tonight. Whole syllabus if you stay.</p>
+    <p style="margin:0;font-size:14px;line-height:1.4;color:#ffd0d8;">Be on the paper at 9. The board is waiting.</p>
+  </div>
+
+  <p style="margin:16px 0 8px 0;text-align:center;font-size:12px;color:#888780;">Upsc Wars · Daily War · Mon–Sat 9:00 PM IST</p>
 
 </div>
-
-</body>
-</html>

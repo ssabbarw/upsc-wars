@@ -4,6 +4,9 @@
 /// [fcmDataKeyType] = [fcmDataValueLongHtmlMessage] (e.g. `type` = `long_html_message`).
 /// Tapping the notification opens [LongHtmlNotificationScreen], which loads HTML
 /// from Firestore document [documentId] in [collection].
+///
+/// Paste a **full HTML document** (`<!DOCTYPE html>…`) or a fragment. The viewer
+/// is a WebView on iOS/Android, so CSS and layout work as in a mobile browser.
 class LongHtmlNotificationConstants {
   LongHtmlNotificationConstants._();
 
