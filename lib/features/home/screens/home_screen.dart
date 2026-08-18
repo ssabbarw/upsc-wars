@@ -260,8 +260,8 @@ class HomeScreen extends HookConsumerWidget {
                                                     .round(),
                                             fadeInDuration: Duration.zero,
                                             fadeOutDuration: Duration.zero,
-                                            errorWidget: (context, url, error) =>
-                                                Center(
+                                            errorWidget:
+                                                (context, url, error) => Center(
                                                   child: Text(
                                                     avatarInitials,
                                                     style: AppTextStyles.label()
@@ -296,7 +296,7 @@ class HomeScreen extends HookConsumerWidget {
                                         ?.value;
                                     final journeyActive =
                                         journey?.shouldShowActivationSurface ??
-                                            false;
+                                        false;
                                     final firstName = userName.split(' ').first;
                                     final title = journeyActive
                                         ? (firstName.toLowerCase() == 'aspirant'
@@ -421,11 +421,9 @@ class HomeScreen extends HookConsumerWidget {
                                   ? 'Start your streak'
                                   : '${h.streakCount} days',
                               loading: () =>
-                                  cachedStreakText.value ??
-                                  'Start your streak',
+                                  cachedStreakText.value ?? 'Start your streak',
                               error: (error, stackTrace) =>
-                                  cachedStreakText.value ??
-                                  'Start your streak',
+                                  cachedStreakText.value ?? 'Start your streak',
                             );
                             return Container(
                               padding: const EdgeInsets.symmetric(

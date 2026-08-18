@@ -42,17 +42,36 @@ class FomoPulseDetailScreen extends HookConsumerWidget {
           ),
           actions: [
             async.maybeWhen(
-              data: (data) => IconButton(
-                tooltip: 'Share',
-                onPressed: () => unawaited(
-                  shareFomoPulse(
-                    data.pulse,
-                    stats: data.pulse.communityStats(
-                      minAttempts: FomoPulseConstants.minStatsAttempts,
+              data: (data) => Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  if (data.pulse.sourceUrl.isNotEmpty)
+                    IconButton(
+                      tooltip: 'Read source',
+                      onPressed: () async {
+                        final uri = Uri.tryParse(data.pulse.sourceUrl);
+                        if (uri != null) {
+                          await launchUrl(
+                            uri,
+                            mode: LaunchMode.externalApplication,
+                          );
+                        }
+                      },
+                      icon: const Icon(Icons.open_in_new),
                     ),
+                  IconButton(
+                    tooltip: 'Share',
+                    onPressed: () => unawaited(
+                      shareFomoPulse(
+                        data.pulse,
+                        stats: data.pulse.communityStats(
+                          minAttempts: FomoPulseConstants.minStatsAttempts,
+                        ),
+                      ),
+                    ),
+                    icon: const Icon(Icons.share_outlined),
                   ),
-                ),
-                icon: const Icon(Icons.share_outlined),
+                ],
               ),
               orElse: () => const SizedBox.shrink(),
             ),
@@ -177,7 +196,7 @@ class _PulseBody extends HookConsumerWidget {
           FilledButton(
             onPressed: () => context.push('/fomo-pulse/${pulse.pulseId}/mcq'),
             child: Text(
-              alreadyAttempted ? 'Review your answer' : 'Attempt the MCQ',
+              alreadyAttempted ? 'Review your MCQ Attempt' : 'Attempt the MCQ',
             ),
           ),
           const SizedBox(height: AppSpacing.sm),
@@ -192,52 +211,10 @@ class _PulseBody extends HookConsumerWidget {
           ),
         ],
         const SizedBox(height: AppSpacing.md),
-        _ShareAndSourceRow(
-          pulse: pulse,
-          stats: alreadyAttempted ? null : stats,
-        ),
-        const SizedBox(height: AppSpacing.lg),
         TextButton(
           onPressed: () => context.go('/fomo-pulse'),
           child: const Text('All CA Shots'),
         ),
-      ],
-    );
-  }
-}
-
-class _ShareAndSourceRow extends StatelessWidget {
-  const _ShareAndSourceRow({required this.pulse, this.stats});
-
-  final FomoPulse pulse;
-  final FomoPulseCommunityStats? stats;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Expanded(
-          child: OutlinedButton.icon(
-            onPressed: () => unawaited(shareFomoPulse(pulse, stats: stats)),
-            icon: const Icon(Icons.ios_share, size: 18),
-            label: const Text('Share'),
-          ),
-        ),
-        if (pulse.sourceUrl.isNotEmpty) ...[
-          const SizedBox(width: AppSpacing.sm),
-          Expanded(
-            child: OutlinedButton.icon(
-              onPressed: () async {
-                final uri = Uri.tryParse(pulse.sourceUrl);
-                if (uri != null) {
-                  await launchUrl(uri, mode: LaunchMode.externalApplication);
-                }
-              },
-              icon: const Icon(Icons.open_in_new, size: 18),
-              label: const Text('Read source'),
-            ),
-          ),
-        ],
       ],
     );
   }

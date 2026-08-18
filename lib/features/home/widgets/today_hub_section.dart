@@ -49,10 +49,7 @@ class TodayHubSection extends HookConsumerWidget {
     final offset = ref.watch(serverTimeOffsetMsProvider).asData?.value ?? 0;
     final tick = useState(0);
     useEffect(() {
-      final t = Timer.periodic(
-        const Duration(seconds: 1),
-        (_) => tick.value++,
-      );
+      final t = Timer.periodic(const Duration(seconds: 1), (_) => tick.value++);
       return t.cancel;
     }, const []);
     tick.value;
@@ -75,7 +72,8 @@ class TodayHubSection extends HookConsumerWidget {
       referenceIst: ist,
       firestoreStatus: hubWarDoc?.status,
       ranksReady: hubWarDoc?.ranksReady ?? false,
-      questionCount: hubWarDoc?.questionCount ??
+      questionCount:
+          hubWarDoc?.questionCount ??
           DailyWarSchedule.questionCountForDate(TodayHero.hubDate(ist)),
     );
     final weekReview = sundayHub
@@ -108,8 +106,8 @@ class TodayHubSection extends HookConsumerWidget {
     final hero = pick.hero;
     final fullDay = TodayHero.isFullDay(slots);
     final hour = ist.hour;
-    final warEvening = hour >= TodayHero.warHourIst &&
-        hour < TodayHero.warWindowEndHourIst;
+    final warEvening =
+        hour >= TodayHero.warHourIst && hour < TodayHero.warWindowEndHourIst;
 
     useEffect(() {
       if (!fullDay) return null;
@@ -161,7 +159,8 @@ class TodayHubSection extends HookConsumerWidget {
           if (!data.caEnabled) return null;
           return DailyCaHomeCard(
             paperDate: data.paperDate,
-            isTodaysPaper: data.paperDate != null &&
+            isTodaysPaper:
+                data.paperDate != null &&
                 DailyCaSchedule.isTodaysPaper(
                   data.paperDate!,
                   referenceIst: ist,
@@ -240,8 +239,7 @@ class TodayHubSection extends HookConsumerWidget {
 
     final kicker = pick.caughtUp
         ? 'DAY SEALED'
-        : hour < TodayHero.paperHourIst ||
-              hour >= TodayHero.warWindowEndHourIst
+        : hour < TodayHero.paperHourIst || hour >= TodayHero.warWindowEndHourIst
         ? 'STILL OPEN'
         : hour < TodayHero.practiceHourIst
         ? 'THIS MORNING'
@@ -324,7 +322,8 @@ class _HubWarCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final live = phase == DailyWarPhase.lobby ||
+    final live =
+        phase == DailyWarPhase.lobby ||
         phase == DailyWarPhase.liveJoinable ||
         phase == DailyWarPhase.liveLocked;
     final topicsLine = DailyWarCopy.topicsLine(topics);
