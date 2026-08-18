@@ -554,20 +554,36 @@ exports.generateFomoPulseDraft = onCall(generateOpts, async (request) => {
       throw new HttpsError("invalid-argument", "Valid http(s) URL required.");
     }
     try {
-      let page;
-      try {
-        page = await fetchUrlPage(url);
-      } catch (e) {
-        throw new HttpsError(
-          "failed-precondition",
-          `Could not fetch URL: ${e.message || e}`,
-        );
+      const minClientText = 100;
+      const maxClientText = 12000;
+      const clientText = String(data.article_text || "").trim().slice(
+        0,
+        maxClientText,
+      );
+      let page = {
+        text: "",
+        image_url: String(data.image_url || "").trim(),
+        image_source: String(data.image_source || "").trim(),
+        og_title: "",
+        og_description: "",
+      };
+      if (clientText.length >= minClientText) {
+        page.text = clientText;
+      } else {
+        try {
+          page = await fetchUrlPage(url);
+        } catch (e) {
+          throw new HttpsError(
+            "failed-precondition",
+            `Could not fetch URL: ${e.message || e}`,
+          );
+        }
       }
       const articleText = page.text || "";
-      if (!articleText || articleText.length < 100) {
+      if (!articleText || articleText.length < minClientText) {
         throw new HttpsError(
           "failed-precondition",
-          "URL returned too little text. Try a different source or use harvest.",
+          "URL returned too little text. Open the article in browser, share again, or use harvest.",
         );
       }
       const generated = await anthropicJson(

@@ -88,15 +88,18 @@ class FomoPulseCloudService {
     String url, {
     String? imageUrl,
     String? imageSource,
+    String? articleText,
   }) async {
     try {
       final callable = _generateDraftCallable();
+      final trimmedText = articleText?.trim() ?? '';
       final result = await callable.call<Map<String, dynamic>>({
         'source': 'url',
         'url': url.trim(),
         if (imageUrl != null && imageUrl.isNotEmpty) 'image_url': imageUrl,
         if (imageSource != null && imageSource.isNotEmpty)
           'image_source': imageSource,
+        if (trimmedText.length >= 100) 'article_text': trimmedText,
       });
       final draftRaw = result.data['draft'];
       if (draftRaw is! Map) {

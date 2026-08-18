@@ -87,14 +87,24 @@ class TodayHubData {
 final todayHubProvider = Provider.autoDispose<TodayHubData>((ref) {
   final warEnabled =
       ref.watch(dailyWarRemoteEnabledProvider).asData?.value ?? false;
-  final warDoc = ref.watch(dailyWarTodayDocProvider).asData?.value;
+  final warDocAsync = ref.watch(dailyWarTodayDocProvider);
+  final yesterdayDocAsync = ref.watch(dailyWarYesterdayDocProvider);
   final warSubmission =
       ref.watch(dailyWarTodaySubmissionProvider).asData?.value;
-  final yesterdayDoc = ref.watch(dailyWarYesterdayDocProvider).asData?.value;
   final yesterdaySubmission =
       ref.watch(dailyWarYesterdaySubmissionProvider).asData?.value;
   final warDateId = ref.watch(dailyWarTodayDateIdProvider);
   final yesterdayWarDateId = ref.watch(dailyWarYesterdayDateIdProvider);
+  final cache = ref.watch(dailyWarLocalCacheProvider).asData?.value;
+
+  var warDoc = warDocAsync.asData?.value;
+  if (warDoc == null && cache != null) {
+    warDoc = cache.getWar(warDateId);
+  }
+  var yesterdayDoc = yesterdayDocAsync.asData?.value;
+  if (yesterdayDoc == null && cache != null) {
+    yesterdayDoc = cache.getWar(yesterdayWarDateId);
+  }
 
   final caEnabled =
       ref.watch(dailyCaRemoteEnabledProvider).asData?.value ?? false;

@@ -36,7 +36,12 @@ class ShareDeepLinkService {
     final appLinks = AppLinks();
     final initial = await appLinks.getInitialLink();
     if (initial != null && _shouldHandle(initial)) {
-      await _handleIncoming(ref: ref, router: router, uri: initial);
+      await _handleIncoming(
+        ref: ref,
+        router: router,
+        uri: initial,
+        replaceStack: true,
+      );
     }
 
     _subscription = appLinks.uriLinkStream.listen((uri) async {
@@ -49,11 +54,13 @@ class ShareDeepLinkService {
     required WidgetRef ref,
     required GoRouter router,
     required Uri uri,
+    bool replaceStack = false,
   }) async {
     final openedPulse = await openPulseArticleFromIncomingShare(
       ref: ref,
       router: router,
       uri: uri,
+      replaceStack: replaceStack,
     );
     if (openedPulse) return;
     SessionEntrySource.capture(

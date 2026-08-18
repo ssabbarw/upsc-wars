@@ -32,8 +32,10 @@ import '../features/community/services/community_bucket_presence_service.dart';
 import '../features/home/providers/auth_providers.dart';
 import '../core/providers/prefs_provider.dart';
 import '../core/providers/user_database_provider.dart';
+import '../core/auth/super_user.dart';
 import '../core/router/app_router.dart'
     show appRouterProvider;
+import '../features/fomo_pulse/data/fomo_pulse_incoming_share.dart';
 import '../core/router/question_bank_loading_screen.dart';
 import '../core/services/prelims_surfaces_refresh.dart';
 import '../core/theme/app_theme.dart';
@@ -272,6 +274,9 @@ class _RootMaterialApp extends HookConsumerWidget {
               ActivationMilestones.firstAccountSignIn,
             ),
           );
+        }
+        if (SuperUser.isSignedIn(u)) {
+          FomoPulseIncomingShareStore.consumePending(ref.read(appRouterProvider));
         }
       },
     );

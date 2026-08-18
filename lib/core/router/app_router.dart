@@ -65,7 +65,7 @@ import '../../features/question_editor/screens/question_editor_form_screen.dart'
 import '../../features/question_editor/screens/question_editor_preview_screen.dart';
 import '../../features/question_editor/screens/question_editor_search_screen.dart';
 import '../../features/question_editor/widgets/question_editor_access.dart';
-import '../providers/super_user_provider.dart';
+import '../auth/super_user.dart';
 import '../../features/push_spot_test/screens/spot_test_composer_screen.dart';
 import '../../features/home/providers/auth_providers.dart';
 import '../../features/results/screens/confidence_tier_review_screen.dart';
@@ -74,7 +74,7 @@ import '../../features/results/screens/mistake_review_screen.dart';
 import '../../features/push_spot_test/push_spot_test_launch_params.dart';
 import '../../features/push_spot_test/screens/push_spot_results_screen.dart';
 import '../../features/push_spot_test/screens/push_spot_test_launch_screen.dart';
-import '../../features/fomo_pulse/domain/fomo_pulse_models.dart';
+import '../../features/fomo_pulse/data/fomo_pulse_incoming_share.dart';
 import '../../features/fomo_pulse/screens/fomo_pulse_article_screen.dart';
 import '../../features/fomo_pulse/screens/fomo_pulse_composer_screen.dart';
 import '../../features/fomo_pulse/screens/fomo_pulse_detail_screen.dart';
@@ -120,7 +120,10 @@ final GlobalKey<NavigatorState> rootNavigatorKey = GlobalKey<NavigatorState>(
 @Riverpod(keepAlive: true)
 GoRouter appRouter(Ref ref) {
   ref.watch(appBootstrapProvider).requireValue;
-  final isSuperUser = ref.watch(isSuperUserProvider);
+  final authAsync = ref.watch(authStateChangesProvider);
+  final authReady = authAsync.hasValue;
+  final isSuperUser =
+      authReady && SuperUser.isSignedIn(authAsync.asData!.value);
   final questionEditorAllowed = () =>
       canAccessQuestionEditor(isSuperUser: isSuperUser);
   final adminDashboardAllowed = () =>
@@ -390,8 +393,13 @@ GoRouter appRouter(Ref ref) {
 
       if (u.scheme == 'upscwars' &&
           u.host.toLowerCase() == 'pulse-article') {
-        // Handled by ShareDeepLinkService → Pulse article screen.
-        return '/';
+        final articleUrl = articleUrlFromIncomingShareUri(u);
+        if (articleUrl != null &&
+            !state.matchedLocation
+                .startsWith('/internal/fomo-pulse-composer/article')) {
+          return pulseArticleRouteForUrl(articleUrl);
+        }
+        return null;
       }
 
       if (u.scheme == 'upscwars' &&
@@ -502,20 +510,19 @@ GoRouter appRouter(Ref ref) {
             path: 'article',
             name: 'fomo_pulse_article',
             builder: (context, state) {
+              if (!authReady) {
+                return const Scaffold(
+                  body: Center(child: CircularProgressIndicator()),
+                );
+              }
               if (!isSuperUser) {
                 return const Scaffold(
                   body: Center(child: Text('Not available')),
                 );
               }
-              final extra = state.extra;
-              if (extra is FomoPulseArticleArgs) {
-                return FomoPulseArticleScreen(args: extra);
-              }
-              final url = state.uri.queryParameters['url']?.trim() ?? '';
-              if (url.startsWith('http://') || url.startsWith('https://')) {
-                return FomoPulseArticleScreen(
-                  args: FomoPulseArticleArgs.url(url: url),
-                );
+              final args = pulseArticleArgsFromRoute(state);
+              if (args != null) {
+                return FomoPulseArticleScreen(args: args);
               }
               return const Scaffold(
                 body: Center(child: Text('Pick an article first')),

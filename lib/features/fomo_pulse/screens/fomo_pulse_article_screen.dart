@@ -10,6 +10,7 @@ import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../push_spot_test/widgets/push_notification_preview_card.dart';
+import '../data/fomo_pulse_article_fetch.dart';
 import '../data/fomo_pulse_cloud_service.dart';
 import '../domain/fomo_pulse_models.dart';
 import '../fomo_pulse_constants.dart';
@@ -63,7 +64,7 @@ class FomoPulseArticleScreen extends HookConsumerWidget {
       final fromPreview = preview.value?.ogTitle.trim() ?? '';
       if (fromPreview.isNotEmpty) return fromPreview;
       if (args.heading.isNotEmpty) return args.heading;
-      return sourceUrl;
+      return '';
     }();
 
     final summary = () {
@@ -94,10 +95,26 @@ class FomoPulseArticleScreen extends HookConsumerWidget {
             imageSource: imageSource,
           );
         } else {
+          var articleText = await fetchArticleTextFromUrl(sourceUrl);
+          if ((articleText == null || articleText.length < 100) &&
+              summary.isNotEmpty) {
+            articleText = summary;
+          }
+          if (articleText != null && articleText.length >= 100) {
+            debugPrint(
+              'FomoPulseArticleScreen: using on-device article text '
+              '(${articleText.length} chars)',
+            );
+          } else {
+            debugPrint(
+              'FomoPulseArticleScreen: no on-device text; server will fetch',
+            );
+          }
           next = await cloud.generateFromUrl(
             sourceUrl,
             imageUrl: imageUrl,
             imageSource: imageSource,
+            articleText: articleText,
           );
         }
         draft.value = next;
@@ -201,66 +218,89 @@ class FomoPulseArticleScreen extends HookConsumerWidget {
         ? current!.upscPoints
         : (args.candidate?.upscPoints ?? const <String>[]);
 
+    final hasPreviewData =
+        preview.value != null || args.heading.isNotEmpty || args.summary.isNotEmpty;
+
     return Scaffold(
       appBar: AppBar(title: const Text('Pulse article')),
       body: ListView(
         padding: const EdgeInsets.all(AppSpacing.lg),
         children: [
-          if (previewLoading.value && imageUrl.isEmpty)
-            const LinearProgressIndicator(),
-          FomoPulseHeroImage(
-            imageUrl: imageUrl,
-            imageSource: imageSource,
-          ),
-          if (imageUrl.isNotEmpty) const SizedBox(height: AppSpacing.md),
-          Text(
-            heading,
-            style: AppTextStyles.h3().copyWith(fontWeight: FontWeight.w800),
-          ),
-          if (args.candidate?.gsSubject.isNotEmpty == true) ...[
-            const SizedBox(height: AppSpacing.xs),
-            Text(
-              args.candidate!.gsSubject,
-              style: AppTextStyles.caption().copyWith(
-                color: scheme.onSurfaceVariant,
+          if (previewLoading.value && !hasPreviewData) ...[
+            const SizedBox(height: AppSpacing.xl),
+            const Center(child: CircularProgressIndicator()),
+            const SizedBox(height: AppSpacing.md),
+            Center(
+              child: Text(
+                'Loading article preview…',
+                style: AppTextStyles.caption().copyWith(
+                  color: scheme.onSurfaceVariant,
+                ),
               ),
             ),
-          ],
-          if (summary.isNotEmpty) ...[
-            const SizedBox(height: AppSpacing.md),
-            Text(
-              summary,
-              style: AppTextStyles.bodySm().copyWith(height: 1.4),
+            const SizedBox(height: AppSpacing.xl),
+          ] else ...[
+            if (previewLoading.value)
+              const LinearProgressIndicator(),
+            FomoPulseHeroImage(
+              imageUrl: imageUrl,
+              imageSource: imageSource,
             ),
-          ],
-          if (points.isNotEmpty) ...[
-            const SizedBox(height: AppSpacing.md),
-            Text('UPSC points', style: AppTextStyles.label()),
-            const SizedBox(height: AppSpacing.xs),
-            ...points.map(
-              (p) => Padding(
-                padding: const EdgeInsets.only(bottom: AppSpacing.xs),
-                child: Text('• $p', style: AppTextStyles.bodySm()),
+            if (imageUrl.isNotEmpty) const SizedBox(height: AppSpacing.md),
+            if (heading.isNotEmpty)
+              Text(
+                heading,
+                style: AppTextStyles.h3().copyWith(fontWeight: FontWeight.w800),
               ),
-            ),
-          ],
-          if (sourceUrl.isNotEmpty) ...[
-            const SizedBox(height: AppSpacing.sm),
-            TextButton.icon(
-              onPressed: () async {
-                final uri = Uri.tryParse(sourceUrl);
-                if (uri != null) {
-                  await launchUrl(uri, mode: LaunchMode.externalApplication);
-                }
-              },
-              icon: const Icon(Icons.open_in_new, size: 18),
-              label: const Text('Open original article'),
-            ),
+            if (args.candidate?.gsSubject.isNotEmpty == true) ...[
+              const SizedBox(height: AppSpacing.xs),
+              Text(
+                args.candidate!.gsSubject,
+                style: AppTextStyles.caption().copyWith(
+                  color: scheme.onSurfaceVariant,
+                ),
+              ),
+            ],
+            if (summary.isNotEmpty) ...[
+              const SizedBox(height: AppSpacing.md),
+              Text(
+                summary,
+                style: AppTextStyles.bodySm().copyWith(height: 1.4),
+              ),
+            ],
+            if (points.isNotEmpty) ...[
+              const SizedBox(height: AppSpacing.md),
+              Text('UPSC points', style: AppTextStyles.label()),
+              const SizedBox(height: AppSpacing.xs),
+              ...points.map(
+                (p) => Padding(
+                  padding: const EdgeInsets.only(bottom: AppSpacing.xs),
+                  child: Text('• $p', style: AppTextStyles.bodySm()),
+                ),
+              ),
+            ],
+            if (sourceUrl.isNotEmpty) ...[
+              const SizedBox(height: AppSpacing.sm),
+              TextButton.icon(
+                onPressed: () async {
+                  final uri = Uri.tryParse(sourceUrl);
+                  if (uri != null) {
+                    await launchUrl(uri, mode: LaunchMode.externalApplication);
+                  }
+                },
+                icon: const Icon(Icons.open_in_new, size: 18),
+                label: Text(
+                  Uri.tryParse(sourceUrl)?.host.replaceFirst('www.', '') ??
+                      'Open article',
+                ),
+              ),
+            ],
           ],
           const SizedBox(height: AppSpacing.lg),
           if (current == null)
             FilledButton.icon(
               onPressed: generating.value ||
+                      previewLoading.value ||
                       (!args.isHarvest && sourceUrl.isEmpty)
                   ? null
                   : () => unawaited(makeQuestion()),

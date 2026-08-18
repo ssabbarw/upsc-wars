@@ -12,7 +12,6 @@ import '../../../core/domain/entities/test_question.dart';
 import '../../../core/providers/catalog_providers.dart';
 import '../../../core/providers/kill_switch_provider.dart';
 import '../../../core/providers/prefs_provider.dart';
-import '../../home/providers/auth_providers.dart';
 import '../daily_war_constants.dart';
 import '../data/daily_war_firestore_paths.dart';
 import '../data/daily_war_local_cache.dart';
@@ -24,6 +23,9 @@ import '../domain/daily_war_streak.dart';
 import 'server_clock_provider.dart';
 
 part 'daily_war_providers.g.dart';
+
+/// Dedupes concurrent Firestore reads for the same public war [dateId].
+final _warDocInflight = <String, Future<DailyWarDoc?>>{};
 
 @Riverpod(keepAlive: true)
 Future<DailyWarLocalCache> dailyWarLocalCache(Ref ref) async {
@@ -61,10 +63,8 @@ class DailyWarSessionHydrated extends _$DailyWarSessionHydrated {
   }
 }
 
-String _warHydrateKey(Ref ref, String dateId) {
-  final uid = ref.read(authStateChangesProvider).asData?.value?.uid ?? 'out';
-  return 'war:$dateId:$uid';
-}
+/// Public war docs are identical for every user — key by [dateId] only.
+String _warHydrateKey(String dateId) => 'war:$dateId';
 
 /// Firestore once per session (or [force]); otherwise SharedPreferences cache.
 Future<DailyWarDoc?> _fetchWarDoc({
@@ -73,23 +73,53 @@ Future<DailyWarDoc?> _fetchWarDoc({
   required String dateId,
   required bool force,
 }) async {
-  final key = _warHydrateKey(ref, dateId);
+  final key = _warHydrateKey(dateId);
   final hydrated = ref.read(dailyWarSessionHydratedProvider.notifier);
   final cached = cache.getWar(dateId);
   if (!force && hydrated.hasKey(key)) return cached;
 
-  // Claim the session slot before awaiting so we don't double-fetch.
-  hydrated.mark(key);
+  if (!force) {
+    final inflight = _warDocInflight[dateId];
+    if (inflight != null) return inflight;
+  }
+
+  final future = _fetchWarDocFromServer(
+    ref: ref,
+    cache: cache,
+    dateId: dateId,
+    key: key,
+    cached: cached,
+  );
+  if (!force) {
+    _warDocInflight[dateId] = future;
+  }
+  try {
+    return await future;
+  } finally {
+    if (!force) _warDocInflight.remove(dateId);
+  }
+}
+
+Future<DailyWarDoc?> _fetchWarDocFromServer({
+  required Ref ref,
+  required DailyWarLocalCache cache,
+  required String dateId,
+  required String key,
+  required DailyWarDoc? cached,
+}) async {
+  final hydrated = ref.read(dailyWarSessionHydratedProvider.notifier);
   try {
     final snap = await DailyWarFirestorePaths.warDoc(dateId).get(
       const GetOptions(source: Source.server),
     );
     final doc = _warDocFromSnap(dateId, snap);
     if (doc != null) await cache.putWar(doc);
+    hydrated.mark(key);
     return doc ?? cached;
   } on Object catch (e, st) {
     debugPrint('dailyWar fetch war $dateId failed: $e');
     debugPrintStack(stackTrace: st);
+    hydrated.mark(key);
     return cached;
   }
 }
@@ -134,7 +164,7 @@ Future<DailyWarDoc?> _buildWarDoc({
   required void Function(DailyWarDoc? doc) setState,
 }) async {
   final cache = await ref.watch(dailyWarLocalCacheProvider.future);
-  final key = _warHydrateKey(ref, dateId);
+  final key = _warHydrateKey(dateId);
   final hydrated = ref.read(dailyWarSessionHydratedProvider.notifier);
   if (hydrated.hasKey(key)) return cache.getWar(dateId);
 
@@ -162,7 +192,6 @@ class DailyWarTodayDoc extends _$DailyWarTodayDoc {
   @override
   Future<DailyWarDoc?> build() async {
     final dateId = ref.watch(dailyWarTodayDateIdProvider);
-    ref.watch(authStateChangesProvider);
     return _buildWarDoc(
       ref: ref,
       dateId: dateId,
@@ -331,7 +360,6 @@ class DailyWarYesterdayDoc extends _$DailyWarYesterdayDoc {
   @override
   Future<DailyWarDoc?> build() async {
     final dateId = ref.watch(dailyWarYesterdayDateIdProvider);
-    ref.watch(authStateChangesProvider);
     return _buildWarDoc(
       ref: ref,
       dateId: dateId,
