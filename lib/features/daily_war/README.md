@@ -56,4 +56,4 @@ Schedules (`Asia/Kolkata`):
 | **20:59** | lobby open push (N3) + copy UUIDs to public |
 | **21:40** | rank + results push (after live window sized from Q count) |
 
-Admin dashboard → **Push: morning / lobby / results** to test without waiting for cron.
+Admin Settings → **Daily War** → **Push: morning / lobby / results** to test without waiting for cron.

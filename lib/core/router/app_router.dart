@@ -57,8 +57,7 @@ import '../../features/home/screens/profile_screen.dart';
 import '../../features/home/screens/settings_screen.dart';
 import '../../features/home/screens/about_us_screen.dart';
 import '../../features/home/screens/progress_hub_screen.dart';
-import '../../features/admin_dashboard/admin_dashboard_access.dart';
-import '../../features/admin_dashboard/screens/admin_dashboard_screen.dart';
+import '../../features/daily_war/screens/daily_war_admin_screen.dart';
 import '../../features/internal/screens/feature_health_screen.dart';
 import '../../features/internal/play_store_demo/play_store_demo_screen.dart';
 import '../../features/question_editor/screens/question_editor_form_screen.dart';
@@ -129,8 +128,6 @@ GoRouter appRouter(Ref ref) {
       authReady && SuperUser.isSignedIn(authAsync.asData!.value);
   final questionEditorAllowed = () =>
       canAccessQuestionEditor(isSuperUser: isSuperUser);
-  final adminDashboardAllowed = () =>
-      canAccessAdminDashboard(isSuperUser: isSuperUser);
   final shellHasCommunity = FeatureFlags.communityTab;
   final redirectRefresh = _CommunityTabRedirectRefresh();
   ref.onDispose(redirectRefresh.dispose);
@@ -486,13 +483,13 @@ GoRouter appRouter(Ref ref) {
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
-        path: '/internal/admin-dashboard',
-        name: 'admin_dashboard',
+        path: '/internal/daily-war-admin',
+        name: 'daily_war_admin',
         builder: (context, state) {
-          if (!adminDashboardAllowed()) {
+          if (!isSuperUser) {
             return const Scaffold(body: Center(child: Text('Not available')));
           }
-          return const AdminDashboardScreen();
+          return const DailyWarAdminScreen();
         },
       ),
       GoRoute(

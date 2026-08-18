@@ -8,7 +8,7 @@ import '../providers/analytics_provider.dart';
 
 /// Admin / editor / about surfaces — skip for growth analytics volume.
 const Set<String> kScreenViewIgnoredNames = {
-  'admin_dashboard',
+  'daily_war_admin',
   'feature_health',
   'spot_composer',
   'question_editor',

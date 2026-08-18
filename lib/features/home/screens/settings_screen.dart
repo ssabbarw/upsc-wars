@@ -15,7 +15,6 @@ import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../core/constants/creator_contact.dart';
 import '../../../core/providers/super_user_provider.dart';
-import '../../admin_dashboard/admin_dashboard_access.dart';
 import '../../question_editor/widgets/question_editor_access.dart';
 import '../../daily_ca/daily_ca_admin_constants.dart';
 import '../../daily_ca/data/daily_ca_firestore.dart';
@@ -39,8 +38,6 @@ class SettingsScreen extends ConsumerWidget {
         DailyCaGenerateConfig.fromMap(null);
     final showQuestionEditor =
         canAccessQuestionEditor(isSuperUser: isSuperUser);
-    final showAdminDashboard =
-        canAccessAdminDashboard(isSuperUser: isSuperUser);
 
     return Scaffold(
       appBar: AppBar(
@@ -132,10 +129,7 @@ class SettingsScreen extends ConsumerWidget {
               ],
             ),
 
-            if (kDebugMode ||
-                showQuestionEditor ||
-                showAdminDashboard ||
-                isSuperUser) ...[
+            if (kDebugMode || showQuestionEditor || isSuperUser) ...[
               const SizedBox(height: AppSpacing.lg),
               _Section(
                 title: isSuperUser && !kDebugMode ? 'Admin tools' : 'Internal',
@@ -202,14 +196,14 @@ class SettingsScreen extends ConsumerWidget {
                       },
                     ),
                   ],
-                  if (showAdminDashboard)
+                  if (isSuperUser)
                     _NavTile(
-                      icon: Icons.dashboard_outlined,
+                      icon: Icons.military_tech_outlined,
                       iconBg: Color(0xFFE8F0FF),
                       iconColor: Color(0xFF1D4ED8),
-                      title: 'Admin dashboard',
-                      subtitle: 'Downloads, tests, battles, push stats',
-                      onTap: () => context.push('/internal/admin-dashboard'),
+                      title: 'Daily War',
+                      subtitle: 'Generate, review, and publish tonight’s paper',
+                      onTap: () => context.push('/internal/daily-war-admin'),
                     ),
                   if (kDebugMode)
                     _NavTile(
