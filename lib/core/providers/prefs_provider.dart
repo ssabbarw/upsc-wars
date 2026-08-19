@@ -82,6 +82,9 @@ abstract final class PrefKeys {
   static const sessionReviewShareCoachSeen =
       'session_review_share_coach_seen_v1';
 
+  /// Shown once: test config sheet coach mark (question count, mode, timed toggle).
+  static const testConfigCoachMarkSeen = 'test_config_coach_mark_seen_v1';
+
   /// Last Remote Config `home_page_video` JSON `version` the user dismissed.
   static const homePageVideoDismissedVersion =
       'home_page_video_dismissed_version_v1';
@@ -314,6 +317,11 @@ class PrefsService {
       _p.getBool(PrefKeys.sessionReviewShareCoachSeen) ?? false;
   set sessionReviewShareCoachSeen(bool v) =>
       _p.setBool(PrefKeys.sessionReviewShareCoachSeen, v);
+
+  bool get testConfigCoachMarkSeen =>
+      _p.getBool(PrefKeys.testConfigCoachMarkSeen) ?? false;
+  set testConfigCoachMarkSeen(bool v) =>
+      _p.setBool(PrefKeys.testConfigCoachMarkSeen, v);
 
   int get homePageVideoDismissedVersion =>
       _p.getInt(PrefKeys.homePageVideoDismissedVersion) ?? 0;

@@ -6,7 +6,6 @@ import '../../../core/providers/user_database_provider.dart';
 import '../../daily_war/domain/daily_war_schedule.dart';
 import '../domain/daily_revision.dart';
 import '../domain/today_hero.dart';
-import 'home_activation_provider.dart';
 
 class DailyDrillState {
   const DailyDrillState({
@@ -40,9 +39,8 @@ class DailyDrillState {
 final dailyDrillProvider = FutureProvider<DailyDrillState?>((
   ref,
 ) async {
-  final activation = await ref.watch(homeActivationProvider.future);
-  if (!activation.activationComplete) return null;
-
+  // Show the revision card regardless of activation state — the card handles
+  // empty queues gracefully and teaches new users what the queue is for.
   final prefs = await ref.watch(prefsServiceProvider.future);
   final subject = prefs.dailyPracticeSubject;
   final db = ref.watch(userDatabaseProvider);

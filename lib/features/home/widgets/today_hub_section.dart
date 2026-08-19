@@ -360,8 +360,9 @@ class TodayHubSection extends HookConsumerWidget {
   }
 }
 
-/// Groups the Daily CA card and CA Shots in one outlined container so they
-/// read as a single "Current Affairs" block.
+/// Groups the Daily CA test card and CA Shots into one polished "Current
+/// Affairs" block. The test card sits in a tinted panel; CA Shots sit in a
+/// contrasting accent strip below, making both feel like first-class entries.
 class _CaGroup extends StatelessWidget {
   const _CaGroup({required this.borderColor, required this.ca});
 
@@ -371,65 +372,143 @@ class _CaGroup extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
-    return Container(
-      decoration: BoxDecoration(
-        color: scheme.surfaceContainerLow,
-        borderRadius: BorderRadius.circular(AppRadius.xl),
-        border: Border.all(color: borderColor, width: 0.5),
-      ),
-      clipBehavior: Clip.antiAlias,
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
+    // Top panel: inherits the CA card's own info-blue tint.
+    final topBg = isDark ? AppColors.infoBgDark : AppColors.infoBg;
+    final topBorder = isDark
+        ? AppColors.infoTextDark.withValues(alpha: 0.25)
+        : AppColors.infoText.withValues(alpha: 0.18);
+
+    // Bottom strip: primary-teal accent for the Shots entry.
+    final shotsBg = isDark
+        ? AppColors.primary.withValues(alpha: 0.14)
+        : AppColors.primary.withValues(alpha: 0.07);
+    final shotsAccent = AppColors.primary;
+
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(AppRadius.xl),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          // CA daily-test card — strip its own outline so the group owns it
-          Padding(
-            padding: const EdgeInsets.fromLTRB(
-              AppSpacing.sm,
-              AppSpacing.sm,
-              AppSpacing.sm,
-              0,
+          // ── Top: CA test card ─────────────────────────────────────────
+          Container(
+            decoration: BoxDecoration(
+              color: topBg,
+              border: Border.all(color: topBorder, width: 1.2),
+              borderRadius: const BorderRadius.vertical(
+                top: Radius.circular(AppRadius.xl),
+              ),
             ),
             child: ca,
           ),
-          Divider(height: AppSpacing.sm * 2, thickness: 0.5, color: borderColor),
-          // CA Shots row
-          InkWell(
-            onTap: () => context.push('/fomo-pulse'),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: AppSpacing.md,
-                vertical: AppSpacing.md,
-              ),
-              child: Row(
-                children: [
-                  Icon(Icons.bolt_rounded, color: scheme.primary, size: 20),
-                  const SizedBox(width: AppSpacing.sm),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Current affairs shots',
-                          style: AppTextStyles.label().copyWith(
-                            fontWeight: FontWeight.w800,
-                            color: scheme.onSurface,
-                          ),
+
+          // Thin teal separator between the two panels
+          Container(
+            height: 1,
+            color: shotsAccent.withValues(alpha: isDark ? 0.22 : 0.14),
+          ),
+
+          // ── Bottom: CA Shots strip ────────────────────────────────────
+          Material(
+            color: Colors.transparent,
+            child: InkWell(
+              onTap: () => context.push('/fomo-pulse'),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: shotsBg,
+                  // Uniform border colour required when borderRadius is set.
+                  // The top-divider tint is handled by the Divider widget above.
+                  border: Border.all(color: topBorder, width: 1.2),
+                  borderRadius: const BorderRadius.vertical(
+                    bottom: Radius.circular(AppRadius.xl),
+                  ),
+                ),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: AppSpacing.lg,
+                  vertical: AppSpacing.md,
+                ),
+                child: Row(
+                  children: [
+                    // Bolt icon well
+                    Container(
+                      width: 36,
+                      height: 36,
+                      decoration: BoxDecoration(
+                        color: shotsAccent.withValues(
+                          alpha: isDark ? 0.22 : 0.12,
                         ),
-                        Text(
-                          'Breaking CA brief, then 1 MCQ shot',
-                          style: AppTextStyles.caption().copyWith(
-                            color: scheme.onSurfaceVariant,
+                        borderRadius: BorderRadius.circular(AppRadius.sm),
+                        border: Border.all(
+                          color: shotsAccent.withValues(
+                            alpha: isDark ? 0.45 : 0.28,
                           ),
+                          width: 1,
                         ),
-                      ],
+                      ),
+                      child: Icon(
+                        Icons.bolt_rounded,
+                        size: 20,
+                        color: shotsAccent,
+                      ),
                     ),
-                  ),
-                  Icon(
-                    Icons.chevron_right,
-                    color: scheme.onSurfaceVariant,
-                    size: 20,
-                  ),
-                ],
+                    const SizedBox(width: AppSpacing.md),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Text(
+                                'CA Shots',
+                                style: AppTextStyles.label().copyWith(
+                                  fontWeight: FontWeight.w800,
+                                  color: scheme.onSurface,
+                                ),
+                              ),
+                              const SizedBox(width: AppSpacing.xs),
+                              Container(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 6,
+                                  vertical: 1,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: shotsAccent.withValues(
+                                    alpha: isDark ? 0.28 : 0.13,
+                                  ),
+                                  borderRadius: BorderRadius.circular(
+                                    AppRadius.pill,
+                                  ),
+                                ),
+                                child: Text(
+                                  'Quick read',
+                                  style: AppTextStyles.caption().copyWith(
+                                    color: shotsAccent,
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 10,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 2),
+                          Text(
+                            'Today\'s brief + 1 MCQ — done in 60 s',
+                            style: AppTextStyles.caption().copyWith(
+                              color: scheme.onSurfaceVariant,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(width: AppSpacing.sm),
+                    Icon(
+                      Icons.arrow_forward_rounded,
+                      size: 18,
+                      color: shotsAccent,
+                    ),
+                  ],
+                ),
               ),
             ),
           ),

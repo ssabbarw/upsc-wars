@@ -85,9 +85,7 @@ class HomeScreen extends HookConsumerWidget {
 
     useEffect(() {
       home.whenData((h) {
-        cachedStreakText.value = h.streakCount == 0
-            ? 'Start your streak'
-            : '${h.streakCount} days';
+        cachedStreakText.value = '${h.streakCount} day${h.streakCount == 1 ? '' : 's'}';
       });
       return null;
     }, [home]);
@@ -101,10 +99,7 @@ class HomeScreen extends HookConsumerWidget {
         ? _toTitleCase(safeName)
         : (user?.email ?? 'Aspirant');
     final avatarInitials = _avatarInitials(user?.displayName);
-    final avatarBackgroundColor = _avatarBackgroundColor(
-      user?.displayName,
-      scheme,
-    );
+    final avatarColors = _avatarColors(user?.displayName, isDark);
     void openProfile() {
       if (!context.mounted) return;
       context.push('/profile');
@@ -216,7 +211,7 @@ class HomeScreen extends HookConsumerWidget {
                               decoration: BoxDecoration(
                                 color: !accountSignedIn
                                     ? scheme.surfaceContainerLow
-                                    : avatarBackgroundColor,
+                                    : avatarColors.bg,
                                 shape: BoxShape.circle,
                                 border: Border.all(
                                   color: borderColor,
@@ -241,8 +236,8 @@ class HomeScreen extends HookConsumerWidget {
                                               avatarInitials,
                                               style: AppTextStyles.label()
                                                   .copyWith(
-                                                    color: scheme
-                                                        .onPrimaryContainer,
+                                                    color: avatarColors.fg,
+                                                    fontWeight: FontWeight.w700,
                                                   ),
                                             ),
                                           );
@@ -267,8 +262,9 @@ class HomeScreen extends HookConsumerWidget {
                                                     avatarInitials,
                                                     style: AppTextStyles.label()
                                                         .copyWith(
-                                                          color: scheme
-                                                              .onPrimaryContainer,
+                                                          color: avatarColors.fg,
+                                                          fontWeight:
+                                                              FontWeight.w700,
                                                         ),
                                                   ),
                                                 ),
@@ -433,13 +429,9 @@ class HomeScreen extends HookConsumerWidget {
                             // One streak, fed by any Today ring — War no longer
                             // replaces it, so a missed 9 PM is not a broken day.
                             final streakLabel = home.when(
-                              data: (h) => h.streakCount == 0
-                                  ? 'Start your streak'
-                                  : '${h.streakCount} days',
-                              loading: () =>
-                                  cachedStreakText.value ?? 'Start your streak',
-                              error: (error, stackTrace) =>
-                                  cachedStreakText.value ?? 'Start your streak',
+                              data: (h) => '${h.streakCount} day${h.streakCount == 1 ? '' : 's'}',
+                              loading: () => cachedStreakText.value ?? '0 days',
+                              error: (_, __) => cachedStreakText.value ?? '0 days',
                             );
                             return Container(
                               padding: const EdgeInsets.symmetric(
@@ -680,21 +672,14 @@ class HomeScreen extends HookConsumerWidget {
     return words.join(' ');
   }
 
-  Color _avatarBackgroundColor(String? displayName, ColorScheme scheme) {
-    final seed = displayName?.trim().toLowerCase() ?? '';
-    const defaultIndex = 0;
-    final palette = [
-      (bg: Colors.indigo.shade100, fg: Colors.indigo.shade900),
-      (bg: Colors.teal.shade100, fg: Colors.teal.shade900),
-      (bg: Colors.deepOrange.shade100, fg: Colors.deepOrange.shade900),
-      (bg: Colors.purple.shade100, fg: Colors.purple.shade900),
-      (bg: Colors.blue.shade100, fg: Colors.blue.shade900),
-      (bg: Colors.green.shade100, fg: Colors.green.shade900),
-    ];
-    final index = seed.isEmpty
-        ? defaultIndex
-        : seed.hashCode.abs() % palette.length;
-    return palette[index].bg.withValues(alpha: 0.9);
+  ({Color bg, Color fg}) _avatarColors(
+    String? displayName,
+    bool isDark,
+  ) {
+    // Same dark navy as the CA card — consistent with the app's info blue.
+    return isDark
+        ? (bg: const Color(0xFF042C53), fg: AppColors.infoTextDark)
+        : (bg: AppColors.infoText, fg: const Color(0xFFFFFFFF));
   }
 }
 

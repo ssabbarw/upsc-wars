@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -96,6 +98,50 @@ class TestConfigBottomSheet extends HookConsumerWidget {
     final prefsAsync = ref.watch(prefsServiceProvider);
 
     final maxQ = args.availableQuestionCount;
+
+    // Coach mark keys
+    final questionChipsKey = useMemoized(() => GlobalKey(), const []);
+    final modeCardsKey = useMemoized(() => GlobalKey(), const []);
+    final timedCardKey = useMemoized(() => GlobalKey(), const []);
+    final coachRequested = useState(false);
+
+    useEffect(() {
+      if (coachRequested.value) return null;
+      coachRequested.value = true;
+      final hasChips = args.lockedQuestionCount == null && maxQ > 0;
+      final hasModes = !args.forceExamMode;
+      var cancelled = false;
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        unawaited(() async {
+          final prefs = await ref.read(prefsServiceProvider.future);
+          if (cancelled || !context.mounted) return;
+          if (prefs.testConfigCoachMarkSeen) return;
+          prefs.testConfigCoachMarkSeen = true;
+
+          if (!context.mounted) return;
+          late final OverlayEntry entry;
+          void dismiss() {
+            if (!entry.mounted) return;
+            entry.remove();
+          }
+
+          entry = OverlayEntry(
+            builder: (ctx) => _TestConfigCoachMarkOverlay(
+              questionChipsKey: questionChipsKey,
+              modeCardsKey: modeCardsKey,
+              timedCardKey: timedCardKey,
+              hasQuestionChips: hasChips,
+              hasModeCards: hasModes,
+              onDismiss: dismiss,
+            ),
+          );
+          Overlay.of(context).insert(entry);
+        }());
+      });
+      return () {
+        cancelled = true;
+      };
+    }, const []);
     final countChoices = useMemoized(() {
       if (maxQ <= 0) return <int>[];
       final hits = _presetCounts.where((n) => n <= maxQ).toList();
@@ -367,21 +413,37 @@ class TestConfigBottomSheet extends HookConsumerWidget {
                             ),
                           )
                         else if (maxQ > 0)
-                          Row(
-                            mainAxisSize: MainAxisSize.min,
+                          Column(
+                            key: questionChipsKey,
+                            crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
-                              for (var i = 0; i < countChoices.length; i++) ...[
-                                if (i > 0) const SizedBox(width: AppSpacing.xs),
-                                _CompactCountChip(
-                                  label: '${countChoices[i]}',
-                                  selected: selectedPreset.value ==
-                                      countChoices[i],
-                                  examMode: isExam.value,
-                                  isDark: isDark,
-                                  onTap: () =>
-                                      selectedPreset.value = countChoices[i],
+                              Text(
+                                'Questions',
+                                style: AppTextStyles.caption().copyWith(
+                                  color: scheme.onSurfaceVariant,
                                 ),
-                              ],
+                              ),
+                              const SizedBox(height: 4),
+                              Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  for (var i = 0;
+                                      i < countChoices.length;
+                                      i++) ...[
+                                    if (i > 0)
+                                      const SizedBox(width: AppSpacing.xs),
+                                    _CompactCountChip(
+                                      label: '${countChoices[i]}',
+                                      selected: selectedPreset.value ==
+                                          countChoices[i],
+                                      examMode: isExam.value,
+                                      isDark: isDark,
+                                      onTap: () =>
+                                          selectedPreset.value = countChoices[i],
+                                    ),
+                                  ],
+                                ],
+                              ),
                             ],
                           ),
                       ],
@@ -405,6 +467,7 @@ class TestConfigBottomSheet extends HookConsumerWidget {
                       ),
                       const SizedBox(height: AppSpacing.md),
                       Row(
+                        key: modeCardsKey,
                         children: [
                           Expanded(
                             child: TestConfigModeOptionCard(
@@ -447,8 +510,10 @@ class TestConfigBottomSheet extends HookConsumerWidget {
                       confidenceReminder(),
                       const SizedBox(height: AppSpacing.sm),
                       _TimedTestCard(
+                        key: timedCardKey,
                         timed: examTimed.value,
                         duration: _formatExamDuration(effectiveCount),
+                        questionCount: effectiveCount,
                         interactive: !args.forceExamMode,
                         onChanged: (v) => examTimed.value = v,
                         borderColor: borderColor,
@@ -615,8 +680,10 @@ class _CompactCountChip extends StatelessWidget {
 
 class _TimedTestCard extends StatelessWidget {
   const _TimedTestCard({
+    super.key,
     required this.timed,
     required this.duration,
+    required this.questionCount,
     required this.interactive,
     required this.onChanged,
     required this.borderColor,
@@ -625,6 +692,7 @@ class _TimedTestCard extends StatelessWidget {
 
   final bool timed;
   final String duration;
+  final int questionCount;
   final bool interactive;
   final ValueChanged<bool> onChanged;
   final Color borderColor;
@@ -652,22 +720,30 @@ class _TimedTestCard extends StatelessWidget {
             ),
             child: Row(
               children: [
-                Icon(Icons.timer_outlined, color: infoText, size: 24),
+                Icon(
+                  timed ? Icons.timer_outlined : Icons.timer_off_outlined,
+                  color: timed ? infoText : scheme.onSurfaceVariant,
+                  size: 24,
+                ),
                 const SizedBox(width: AppSpacing.md),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Timed test',
+                        timed ? 'Timed test' : 'No time limit',
                         style: AppTextStyles.label().copyWith(
                           color: scheme.onSurface,
                         ),
                       ),
                       Text(
-                        duration,
-                        style: AppTextStyles.bodySm().copyWith(
-                          color: scheme.onSurfaceVariant,
+                        timed
+                            ? '$questionCount Q × ${kDebugSecondsPerQuestion}s = $duration'
+                            : 'Take as long as you need on each question.',
+                        style: AppTextStyles.caption().copyWith(
+                          color: scheme.onSurfaceVariant.withValues(
+                            alpha: 0.65,
+                          ),
                         ),
                       ),
                     ],
@@ -684,7 +760,7 @@ class _TimedTestCard extends StatelessWidget {
           ),
           Divider(height: 1, thickness: 0.5, color: borderColor),
           Container(
-            color: infoBg,
+            color: timed ? infoBg : scheme.surfaceContainerLow,
             padding: const EdgeInsets.symmetric(
               horizontal: AppSpacing.lg,
               vertical: AppSpacing.sm,
@@ -692,18 +768,344 @@ class _TimedTestCard extends StatelessWidget {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Icon(Icons.info_outline_rounded, size: 16, color: infoText),
+                Icon(
+                  Icons.info_outline_rounded,
+                  size: 16,
+                  color: timed ? infoText : scheme.onSurfaceVariant,
+                ),
                 const SizedBox(width: AppSpacing.sm),
                 Expanded(
                   child: Text(
-                    'Exam mode is a timed test with explanations after it ends.',
-                    style: AppTextStyles.caption().copyWith(color: infoText),
+                    timed
+                        ? 'Exam mode is a timed test with explanations after it ends.'
+                        : 'No clock running — ideal for deep reading and revision.',
+                    style: AppTextStyles.caption().copyWith(
+                      color: timed ? infoText : scheme.onSurfaceVariant,
+                    ),
                   ),
                 ),
               ],
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Coach mark overlay — shown once, walks through 3 targets sequentially.
+// ---------------------------------------------------------------------------
+
+class _TestConfigCoachMarkOverlay extends StatefulWidget {
+  const _TestConfigCoachMarkOverlay({
+    required this.questionChipsKey,
+    required this.modeCardsKey,
+    required this.timedCardKey,
+    required this.hasQuestionChips,
+    required this.hasModeCards,
+    required this.onDismiss,
+  });
+
+  final GlobalKey questionChipsKey;
+  final GlobalKey modeCardsKey;
+  final GlobalKey timedCardKey;
+  final bool hasQuestionChips;
+  final bool hasModeCards;
+  final VoidCallback onDismiss;
+
+  @override
+  State<_TestConfigCoachMarkOverlay> createState() =>
+      _TestConfigCoachMarkOverlayState();
+}
+
+class _TestConfigCoachMarkOverlayState
+    extends State<_TestConfigCoachMarkOverlay>
+    with SingleTickerProviderStateMixin {
+  late final List<_CoachStep> _steps;
+  int _current = 0;
+  late final AnimationController _anim;
+  late final Animation<double> _fade;
+
+  @override
+  void initState() {
+    super.initState();
+    _anim = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 250),
+    );
+    _fade = CurvedAnimation(parent: _anim, curve: Curves.easeOut);
+    _buildSteps();
+    _anim.forward();
+  }
+
+  void _buildSteps() {
+    _steps = [];
+    if (widget.hasQuestionChips) {
+      _steps.add(
+        _CoachStep(
+          key: widget.questionChipsKey,
+          title: 'Pick question count',
+          body: 'Choose how many questions you want in this session — '
+              '10 for a quick drill, 25 for a full practice block.',
+        ),
+      );
+    }
+    if (widget.hasModeCards) {
+      _steps.add(
+        _CoachStep(
+          key: widget.modeCardsKey,
+          title: 'Choose a mode',
+          body: 'Exam hides all explanations until the test ends — '
+              'just like the real paper. Learning shows the answer '
+              'and explanation right after each question.',
+        ),
+      );
+    }
+    _steps.add(
+      _CoachStep(
+        key: widget.timedCardKey,
+        title: 'Timed test',
+        body: 'Each question gets ${kDebugSecondsPerQuestion}s. '
+            'Toggle this off if you prefer practising without the clock.',
+      ),
+    );
+  }
+
+  void _next() {
+    if (_current < _steps.length - 1) {
+      _anim.reverse().then((_) {
+        if (!mounted) return;
+        setState(() => _current++);
+        _anim.forward();
+      });
+    } else {
+      widget.onDismiss();
+    }
+  }
+
+  @override
+  void dispose() {
+    _anim.dispose();
+    super.dispose();
+  }
+
+  Rect? _targetRect(_CoachStep step) {
+    final ro = step.key.currentContext?.findRenderObject();
+    if (ro is! RenderBox) return null;
+    final offset = ro.localToGlobal(Offset.zero);
+    return offset & ro.size;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    if (_current >= _steps.length) return const SizedBox.shrink();
+    final step = _steps[_current];
+    final rect = _targetRect(step);
+    final screenSize = MediaQuery.sizeOf(context);
+    const pad = 8.0;
+
+    return FadeTransition(
+      opacity: _fade,
+      child: Stack(
+        children: [
+          // Dimmed scrim with a cutout around the target
+          if (rect != null)
+            CustomPaint(
+              size: screenSize,
+              painter: _ScrimWithHolePainter(
+                hole: rect.inflate(pad),
+                color: Colors.black.withValues(alpha: 0.6),
+                radius: 12,
+              ),
+            )
+          else
+            Positioned.fill(
+              child: ColoredBox(
+                color: Colors.black.withValues(alpha: 0.6),
+              ),
+            ),
+          // Tap outside = advance
+          Positioned.fill(
+            child: GestureDetector(
+              behavior: HitTestBehavior.opaque,
+              onTap: _next,
+            ),
+          ),
+          // Bubble — positioned below or above the target
+          if (rect != null)
+            _CoachBubble(
+              step: step,
+              rect: rect.inflate(pad),
+              screenSize: screenSize,
+              current: _current + 1,
+              total: _steps.length,
+              scheme: scheme,
+              onNext: _next,
+            ),
+        ],
+      ),
+    );
+  }
+}
+
+class _CoachStep {
+  const _CoachStep({
+    required this.key,
+    required this.title,
+    required this.body,
+  });
+  final GlobalKey key;
+  final String title;
+  final String body;
+}
+
+class _ScrimWithHolePainter extends CustomPainter {
+  const _ScrimWithHolePainter({
+    required this.hole,
+    required this.color,
+    required this.radius,
+  });
+
+  final Rect hole;
+  final Color color;
+  final double radius;
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()..color = color;
+    final path = Path()
+      ..addRect(Rect.fromLTWH(0, 0, size.width, size.height))
+      ..addRRect(RRect.fromRectAndRadius(hole, Radius.circular(radius)))
+      ..fillType = PathFillType.evenOdd;
+    canvas.drawPath(path, paint);
+  }
+
+  @override
+  bool shouldRepaint(_ScrimWithHolePainter old) =>
+      old.hole != hole || old.color != color;
+}
+
+class _CoachBubble extends StatelessWidget {
+  const _CoachBubble({
+    required this.step,
+    required this.rect,
+    required this.screenSize,
+    required this.current,
+    required this.total,
+    required this.scheme,
+    required this.onNext,
+  });
+
+  final _CoachStep step;
+  final Rect rect;
+  final Size screenSize;
+  final int current;
+  final int total;
+  final ColorScheme scheme;
+  final VoidCallback onNext;
+
+  @override
+  Widget build(BuildContext context) {
+    const bubbleWidth = 300.0;
+    const bubbleEstimatedHeight = 160.0;
+    const arrowSize = 10.0;
+    const margin = 12.0;
+
+    // Place bubble below target if there's room, else above.
+    final belowY = rect.bottom + arrowSize + margin;
+    final aboveY = rect.top - arrowSize - margin - bubbleEstimatedHeight;
+    final placeBelow = belowY + bubbleEstimatedHeight < screenSize.height - 24;
+    final bubbleTop = placeBelow ? belowY : aboveY;
+
+    // Horizontally centre on target, clamped to screen edges.
+    final centreX = rect.center.dx - bubbleWidth / 2;
+    final bubbleLeft = centreX.clamp(margin, screenSize.width - bubbleWidth - margin);
+
+    return Positioned(
+      left: bubbleLeft,
+      top: bubbleTop,
+      width: bubbleWidth,
+      child: Material(
+        color: Colors.transparent,
+        child: Container(
+          decoration: BoxDecoration(
+            color: scheme.surface,
+            borderRadius: BorderRadius.circular(14),
+            boxShadow: [
+              BoxShadow(
+                color: scheme.shadow.withValues(alpha: 0.25),
+                blurRadius: 24,
+                offset: const Offset(0, 8),
+              ),
+            ],
+          ),
+          padding: const EdgeInsets.fromLTRB(16, 14, 16, 14),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Row(
+                children: [
+                  Expanded(
+                    child: Text(
+                      step.title,
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w700,
+                        color: scheme.onSurface,
+                      ),
+                    ),
+                  ),
+                  Text(
+                    '$current / $total',
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: scheme.onSurfaceVariant,
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 6),
+              Text(
+                step.body,
+                style: TextStyle(
+                  fontSize: 13,
+                  height: 1.4,
+                  color: scheme.onSurfaceVariant,
+                ),
+              ),
+              const SizedBox(height: 12),
+              Align(
+                alignment: Alignment.centerRight,
+                child: FilledButton(
+                  onPressed: onNext,
+                  style: FilledButton.styleFrom(
+                    backgroundColor: AppColors.info,
+                    foregroundColor: Colors.white,
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 20,
+                      vertical: 8,
+                    ),
+                    minimumSize: Size.zero,
+                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                  ),
+                  child: Text(
+                    current == total ? 'Got it' : 'Next',
+                    style: const TextStyle(
+                      fontSize: 13,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
