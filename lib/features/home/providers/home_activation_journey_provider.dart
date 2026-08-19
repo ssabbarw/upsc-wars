@@ -105,7 +105,7 @@ class HomeActivationJourneyState {
 }
 
 final homeActivationJourneyProvider =
-    FutureProvider.autoDispose<HomeActivationJourneyState>((ref) async {
+    FutureProvider<HomeActivationJourneyState>((ref) async {
   final prefs = await ref.watch(prefsServiceProvider.future);
   final db = ref.watch(userDatabaseProvider);
 

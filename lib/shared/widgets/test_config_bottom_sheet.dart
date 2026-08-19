@@ -89,7 +89,8 @@ class TestConfigBottomSheet extends HookConsumerWidget {
     final isExam = useState(args.forceExamMode ? true : true);
     final selectedPreset = useState(args.lockedQuestionCount ?? 10);
     final examTimed = useState(args.forceExamMode ? true : true);
-    final learningSecs = useState(60);
+    // null = no limit
+    final learningSecs = useState<int?>(60);
     final isSubmitting = useState(false);
 
     final prefsAsync = ref.watch(prefsServiceProvider);
@@ -138,13 +139,14 @@ class TestConfigBottomSheet extends HookConsumerWidget {
         } else {
           timeLimitSecs = learningSecs.value;
         }
+        final hasLearningTimer = !isExam.value && learningSecs.value != null;
         final config = SessionConfig(
           subject: args.subject,
           topic: args.topic,
           subTopic: args.subTopic,
           mode: isExam.value ? 'exam' : 'learning',
           questionCount: effectiveCount,
-          isTimed: isExam.value ? examTimed.value : true,
+          isTimed: isExam.value ? examTimed.value : hasLearningTimer,
           timeLimitSecs: timeLimitSecs,
           language: lang,
           specificQuestionUuids: args.specificQuestionUuids,
@@ -307,47 +309,92 @@ class TestConfigBottomSheet extends HookConsumerWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     const SizedBox(height: AppSpacing.sm),
-                    Text(
-                      args.subjectDisplayName,
-                      style: AppTextStyles.h2().copyWith(
-                        color: scheme.onSurface,
-                      ),
-                    ),
-                    const SizedBox(height: AppSpacing.sm),
-                    if (args.fixedQuestionSetLabel != null) ...[
-                      Text(
-                        args.fixedQuestionSetLabel!,
-                        style: AppTextStyles.bodyMd().copyWith(
-                          color: scheme.onSurfaceVariant,
-                          height: 1.3,
-                        ),
-                      ),
-                      const SizedBox(height: AppSpacing.sm),
-                    ],
-                    if (args.topicDisplayName != null) ...[
-                      Text(
-                        args.topicDisplayName!,
-                        style: AppTextStyles.bodyMd().copyWith(
-                          color: scheme.onSurfaceVariant,
-                        ),
-                      ),
-                      // Locked sets already show the count under Number of questions.
-                      if (args.lockedQuestionCount == null) ...[
-                        const SizedBox(height: AppSpacing.xs),
-                        Text(
-                          '${formatIntCount(maxQ)} questions available',
-                          style: AppTextStyles.bodySm().copyWith(
-                            color: scheme.onSurfaceVariant,
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                args.subjectDisplayName,
+                                style: AppTextStyles.h2().copyWith(
+                                  color: scheme.onSurface,
+                                ),
+                              ),
+                              if (args.fixedQuestionSetLabel != null) ...[
+                                const SizedBox(height: 2),
+                                Text(
+                                  args.fixedQuestionSetLabel!,
+                                  style: AppTextStyles.bodySm().copyWith(
+                                    color: scheme.onSurfaceVariant,
+                                    height: 1.3,
+                                  ),
+                                ),
+                              ],
+                              if (args.topicDisplayName != null) ...[
+                                const SizedBox(height: 2),
+                                Text(
+                                  args.topicDisplayName!,
+                                  style: AppTextStyles.bodySm().copyWith(
+                                    color: scheme.onSurfaceVariant,
+                                  ),
+                                ),
+                              ],
+                            ],
                           ),
                         ),
+                        // Q count picker inline with the header
+                        if (args.lockedQuestionCount != null)
+                          Container(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: AppSpacing.md,
+                              vertical: AppSpacing.sm,
+                            ),
+                            decoration: BoxDecoration(
+                              color: scheme.surfaceContainerLow,
+                              borderRadius: BorderRadius.circular(AppRadius.md),
+                              border: Border.all(
+                                color: borderColor,
+                                width: 0.5,
+                              ),
+                            ),
+                            child: Text(
+                              '${args.lockedQuestionCount} Q',
+                              style: AppTextStyles.label().copyWith(
+                                color: scheme.onSurfaceVariant,
+                              ),
+                            ),
+                          )
+                        else if (maxQ > 0)
+                          Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              for (var i = 0; i < countChoices.length; i++) ...[
+                                if (i > 0) const SizedBox(width: AppSpacing.xs),
+                                _CompactCountChip(
+                                  label: '${countChoices[i]}',
+                                  selected: selectedPreset.value ==
+                                      countChoices[i],
+                                  examMode: isExam.value,
+                                  isDark: isDark,
+                                  onTap: () =>
+                                      selectedPreset.value = countChoices[i],
+                                ),
+                              ],
+                            ],
+                          ),
                       ],
-                    ] else
+                    ),
+                    if (capped) ...[
+                      const SizedBox(height: AppSpacing.xs),
                       Text(
-                        '${formatIntCount(maxQ)} questions · ${args.topicCountWhenSubjectOnly} topics',
-                        style: AppTextStyles.bodyMd().copyWith(
-                          color: scheme.onSurfaceVariant,
+                        'Only ${formatIntCount(maxQ)} available',
+                        style: AppTextStyles.caption().copyWith(
+                          color: AppColors.warning,
                         ),
                       ),
+                    ],
                     const SizedBox(height: AppSpacing.xxl),
                     if (!args.forceExamMode) ...[
                       Text(
@@ -387,23 +434,6 @@ class TestConfigBottomSheet extends HookConsumerWidget {
                         ],
                       ),
                     ],
-                    const SizedBox(height: AppSpacing.xxl),
-                    Text(
-                      'Number of questions',
-                      style: AppTextStyles.label().copyWith(
-                        color: scheme.onSurface,
-                      ),
-                    ),
-                    if (capped) ...[
-                      const SizedBox(height: AppSpacing.sm),
-                      Text(
-                        'Only ${formatIntCount(maxQ)} questions available for this topic.',
-                        style: AppTextStyles.caption().copyWith(
-                          color: AppColors.warning,
-                        ),
-                      ),
-                    ],
-                    const SizedBox(height: AppSpacing.md),
                     if (maxQ == 0) ...[
                       Text(
                         'No questions available for this topic.',
@@ -411,44 +441,7 @@ class TestConfigBottomSheet extends HookConsumerWidget {
                           color: scheme.onSurfaceVariant,
                         ),
                       ),
-                    ] else if (args.lockedQuestionCount != null) ...[
-                      Container(
-                        width: double.infinity,
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: AppSpacing.md,
-                          vertical: AppSpacing.sm,
-                        ),
-                        decoration: BoxDecoration(
-                          color: scheme.surfaceContainerLow,
-                          borderRadius: BorderRadius.circular(AppRadius.md),
-                          border: Border.all(color: borderColor, width: 0.5),
-                        ),
-                        child: Text(
-                          '${args.lockedQuestionCount} questions (fixed set)',
-                          style: AppTextStyles.bodySm().copyWith(
-                            color: scheme.onSurfaceVariant,
-                          ),
-                        ),
-                      ),
-                    ] else
-                      Row(
-                        children: [
-                          for (var i = 0; i < countChoices.length; i++) ...[
-                            if (i > 0) const SizedBox(width: AppSpacing.sm),
-                            Expanded(
-                              child: _CountTile(
-                                label: '${countChoices[i]}',
-                                selected:
-                                    selectedPreset.value == countChoices[i],
-                                examMode: isExam.value,
-                                isDark: isDark,
-                                onTap: () =>
-                                    selectedPreset.value = countChoices[i],
-                              ),
-                            ),
-                          ],
-                        ],
-                      ),
+                    ],
                     if (isExam.value) ...[
                       const SizedBox(height: AppSpacing.xxl),
                       confidenceReminder(),
@@ -496,6 +489,15 @@ class TestConfigBottomSheet extends HookConsumerWidget {
                               selected: learningSecs.value == 120,
                               isDark: isDark,
                               onTap: () => learningSecs.value = 120,
+                            ),
+                          ),
+                          const SizedBox(width: AppSpacing.sm),
+                          Expanded(
+                            child: TestConfigLearningTimeTile(
+                              label: 'No limit',
+                              selected: learningSecs.value == null,
+                              isDark: isDark,
+                              onTap: () => learningSecs.value = null,
                             ),
                           ),
                         ],
@@ -556,8 +558,9 @@ class TestConfigBottomSheet extends HookConsumerWidget {
   }
 }
 
-class _CountTile extends HookConsumerWidget {
-  const _CountTile({
+/// Small inline chip shown next to the subject title for question count.
+class _CompactCountChip extends StatelessWidget {
+  const _CompactCountChip({
     required this.label,
     required this.selected,
     required this.examMode,
@@ -572,9 +575,8 @@ class _CountTile extends HookConsumerWidget {
   final VoidCallback? onTap;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
-
     Color bg;
     Color fg;
     Color border;
@@ -589,28 +591,22 @@ class _CountTile extends HookConsumerWidget {
         border = AppColors.primary;
       }
     } else {
-      bg = scheme.surface;
-      fg = scheme.onSurface;
+      bg = scheme.surfaceContainerLow;
+      fg = scheme.onSurfaceVariant;
       border = isDark ? AppColors.borderDark : AppColors.borderLight;
     }
-
-    return Material(
-      color: AppColors.transparent,
-      child: InkWell(
-        onTap: onTap,
-        borderRadius: BorderRadius.circular(AppRadius.md),
-        child: Container(
-          alignment: Alignment.center,
-          padding: const EdgeInsets.symmetric(vertical: AppSpacing.md),
-          decoration: BoxDecoration(
-            color: bg,
-            borderRadius: BorderRadius.circular(AppRadius.md),
-            border: Border.all(color: border, width: selected ? 2 : 0.5),
-          ),
-          child: Text(
-            label,
-            style: AppTextStyles.labelSm().copyWith(color: fg),
-          ),
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+        decoration: BoxDecoration(
+          color: bg,
+          borderRadius: BorderRadius.circular(AppRadius.md),
+          border: Border.all(color: border, width: selected ? 1.5 : 0.5),
+        ),
+        child: Text(
+          label,
+          style: AppTextStyles.labelSm().copyWith(color: fg),
         ),
       ),
     );

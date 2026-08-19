@@ -477,25 +477,24 @@ class HomeScreen extends HookConsumerWidget {
                         final journey = ref.watch(
                           homeActivationJourneyProvider,
                         );
-                        return journey.when(
-                          loading: () => const SizedBox.shrink(),
-                          error: (_, _) => const SizedBox.shrink(),
-                          data: (state) {
-                            final Widget child;
-                            if (state.shouldShowChecklist) {
-                              child = ActivationJourneyCard(state: state);
-                            } else if (state.shouldShowDangerZoneNudge) {
-                              child = DangerZoneHomeNudge(state: state);
-                            } else {
-                              return const SizedBox.shrink();
-                            }
-                            return Padding(
-                              padding: const EdgeInsets.only(
-                                bottom: AppSpacing.md,
-                              ),
-                              child: child,
-                            );
-                          },
+                        // Use .value so that a reload (e.g. on dark-mode
+                        // toggle) keeps the last known state visible instead
+                        // of collapsing to empty while the Future re-runs.
+                        final state = journey.value;
+                        if (state == null) return const SizedBox.shrink();
+                        final Widget child;
+                        if (state.shouldShowChecklist) {
+                          child = ActivationJourneyCard(state: state);
+                        } else if (state.shouldShowDangerZoneNudge) {
+                          child = DangerZoneHomeNudge(state: state);
+                        } else {
+                          return const SizedBox.shrink();
+                        }
+                        return Padding(
+                          padding: const EdgeInsets.only(
+                            bottom: AppSpacing.md,
+                          ),
+                          child: child,
                         );
                       },
                     ),

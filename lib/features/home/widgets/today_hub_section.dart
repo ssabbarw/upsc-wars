@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
@@ -8,6 +7,8 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/constants/daily_drill_constants.dart';
 import '../../../core/providers/prefs_provider.dart';
+import '../../../core/theme/app_colors.dart';
+import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../daily_ca/domain/daily_ca_schedule.dart';
@@ -239,14 +240,9 @@ class TodayHubSection extends HookConsumerWidget {
     }
 
     Widget withShots(Widget ca) {
-      return Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          ca,
-          const SizedBox(height: AppSpacing.sm),
-          const FomoPulseHomeCard(),
-        ],
-      );
+      final isDark = Theme.of(context).brightness == Brightness.dark;
+      final borderColor = isDark ? AppColors.borderDark : AppColors.borderLight;
+      return _CaGroup(borderColor: borderColor, ca: ca);
     }
 
     Widget? placed(TodaySlotId id, TodayLoopLayout layout) {
@@ -339,105 +335,86 @@ class TodayHubSection extends HookConsumerWidget {
           const SizedBox(height: AppSpacing.md),
           const FomoPulseHomeCard(),
         ],
-        if (kDebugMode) ...[
-          const SizedBox(height: AppSpacing.lg),
-          const _GrandWarPreview(),
-        ],
       ],
     );
   }
 }
 
-/// Debug-only preview of the Saturday Grand War card with fake week topics.
-class _GrandWarPreview extends StatelessWidget {
-  const _GrandWarPreview();
+/// Groups the Daily CA card and CA Shots in one outlined container so they
+/// read as a single "Current Affairs" block.
+class _CaGroup extends StatelessWidget {
+  const _CaGroup({required this.borderColor, required this.ca});
 
-  static const _fakeTopics = [
-    DailyWarTopicRef(subjectSlug: 'polity', topic: 'Local Government'),
-    DailyWarTopicRef(subjectSlug: 'economy', topic: 'Money and Banking'),
-    DailyWarTopicRef(subjectSlug: 'geography', topic: 'Ocean Currents'),
-    DailyWarTopicRef(subjectSlug: 'environment', topic: 'Biodiversity Hotspots'),
-    DailyWarTopicRef(subjectSlug: 'modern_history', topic: 'Gandhian Era'),
-    DailyWarTopicRef(subjectSlug: 'ancient_history', topic: 'Maurya Empire'),
-  ];
+  final Color borderColor;
+  final Widget ca;
 
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          'DEBUG — GRAND WAR PREVIEW',
-          style: TextStyle(
-            fontSize: 10,
-            fontWeight: FontWeight.w800,
-            color: scheme.onSurfaceVariant,
-            letterSpacing: 1,
-          ),
-        ),
-        const SizedBox(height: 6),
-        // Hero layout
-        _HubWarCard(
-          dateId: '2026-08-22',
-          submitted: false,
-          topics: _fakeTopics,
-          phase: DailyWarPhase.morning,
-          overnight: false,
-          layout: TodayLoopLayout.hero,
-          showNow: false,
-          isGrand: true,
-        ),
-        const SizedBox(height: 8),
-        // Banner layout (companion)
-        _HubWarCard(
-          dateId: '2026-08-22',
-          submitted: false,
-          topics: _fakeTopics,
-          phase: DailyWarPhase.morning,
-          overnight: false,
-          layout: TodayLoopLayout.banner,
-          showNow: false,
-          isGrand: true,
-        ),
-        const SizedBox(height: 8),
-        // Tile layout
-        Row(
-          children: [
-            Expanded(
-              child: _HubWarCard(
-                dateId: '2026-08-22',
-                submitted: false,
-                topics: _fakeTopics,
-                phase: DailyWarPhase.morning,
-                overnight: false,
-                layout: TodayLoopLayout.tile,
-                showNow: false,
-                isGrand: true,
-              ),
+    return Container(
+      decoration: BoxDecoration(
+        color: scheme.surfaceContainerLow,
+        borderRadius: BorderRadius.circular(AppRadius.xl),
+        border: Border.all(color: borderColor, width: 0.5),
+      ),
+      clipBehavior: Clip.antiAlias,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          // CA daily-test card — strip its own outline so the group owns it
+          Padding(
+            padding: const EdgeInsets.fromLTRB(
+              AppSpacing.sm,
+              AppSpacing.sm,
+              AppSpacing.sm,
+              0,
             ),
-            const SizedBox(width: 8),
-            Expanded(
-              child: SizedBox(
-                height: 148,
-                child: DecoratedBox(
-                  decoration: BoxDecoration(
-                    color: scheme.surfaceContainerLow,
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: Center(
-                    child: Text(
-                      'other\ncard',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(color: scheme.onSurfaceVariant),
+            child: ca,
+          ),
+          Divider(height: AppSpacing.sm * 2, thickness: 0.5, color: borderColor),
+          // CA Shots row
+          InkWell(
+            onTap: () => context.push('/fomo-pulse'),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: AppSpacing.md,
+                vertical: AppSpacing.md,
+              ),
+              child: Row(
+                children: [
+                  Icon(Icons.bolt_rounded, color: scheme.primary, size: 20),
+                  const SizedBox(width: AppSpacing.sm),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Current affairs shots',
+                          style: AppTextStyles.label().copyWith(
+                            fontWeight: FontWeight.w800,
+                            color: scheme.onSurface,
+                          ),
+                        ),
+                        Text(
+                          'Breaking CA brief, then 1 MCQ shot',
+                          style: AppTextStyles.caption().copyWith(
+                            color: scheme.onSurfaceVariant,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                ),
+                  Icon(
+                    Icons.chevron_right,
+                    color: scheme.onSurfaceVariant,
+                    size: 20,
+                  ),
+                ],
               ),
             ),
-          ],
-        ),
-      ],
+          ),
+        ],
+      ),
     );
   }
 }

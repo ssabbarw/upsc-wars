@@ -94,6 +94,25 @@ class _DailyWarLobbyBody extends HookConsumerWidget {
       return null;
     }, [snap.dateId, snap.phase]);
 
+    // When the lobby/live phase opens, force-refresh the doc if questions
+    // haven't loaded yet. The doc is fetched once per session on app open
+    // (before 9 PM, questionUuids is still empty). Without this refresh the
+    // Join button shows but immediately errors with "Questions publish just
+    // before 9 PM."
+    final refreshedForDate = useRef<String?>(null);
+    useEffect(() {
+      final phase = snap.phase;
+      final isLobbyOrLive = phase == DailyWarPhase.lobby ||
+          phase == DailyWarPhase.liveJoinable;
+      if (!isLobbyOrLive) return null;
+      final needsQuestions = snap.doc == null || snap.doc!.questionUuids.isEmpty;
+      if (!needsQuestions) return null;
+      if (refreshedForDate.value == snap.dateId) return null;
+      refreshedForDate.value = snap.dateId;
+      unawaited(ref.read(dailyWarTodayDocProvider.notifier).refresh());
+      return null;
+    }, [snap.dateId, snap.phase, snap.doc?.questionUuids.isEmpty]);
+
     final offset = ref.watch(serverTimeOffsetMsProvider).asData?.value ?? 0;
     final utc = DateTime.fromMillisecondsSinceEpoch(
       DateTime.now().millisecondsSinceEpoch + offset,

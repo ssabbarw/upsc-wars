@@ -37,7 +37,7 @@ class DailyDrillState {
   };
 }
 
-final dailyDrillProvider = FutureProvider.autoDispose<DailyDrillState?>((
+final dailyDrillProvider = FutureProvider<DailyDrillState?>((
   ref,
 ) async {
   final activation = await ref.watch(homeActivationProvider.future);
