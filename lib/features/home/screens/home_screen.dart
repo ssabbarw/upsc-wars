@@ -163,7 +163,12 @@ class HomeScreen extends HookConsumerWidget {
                       : const AlwaysScrollableScrollPhysics(
                           parent: BouncingScrollPhysics(),
                         ),
-                  padding: const EdgeInsets.all(AppSpacing.lg),
+                  padding: const EdgeInsets.fromLTRB(
+                    AppSpacing.lg,
+                    AppSpacing.xs,
+                    AppSpacing.lg,
+                    AppSpacing.lg,
+                  ),
                   children: [
                     if (bootstrap.hasError)
                       Padding(
