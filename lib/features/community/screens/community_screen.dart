@@ -46,6 +46,11 @@ class CommunityScreen extends HookConsumerWidget {
     );
     final chatHasUnread = ref.watch(chatInboxHasUnreadProvider);
     return PopToShellHomeScope(
+      onInnerBack: () {
+        if (tabController.index == 0) return false;
+        tabController.animateTo(0);
+        return true;
+      },
       child: Scaffold(
         appBar: AppBar(
           title: Text('Community', style: AppTextStyles.h3()),

@@ -7,23 +7,22 @@ import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/widgets/pop_to_shell_home_scope.dart';
-import '../../daily_war/screens/daily_war_history_screen.dart';
 import '../../history/screens/history_screen.dart';
 import '../providers/today_hub_provider.dart';
 import 'progress_screen.dart';
 
-/// Shell tab that hosts Progress, Test History, and Daily Wars History.
+/// Shell tab that hosts Progress and Test History.
 class ProgressHubScreen extends HookConsumerWidget {
   const ProgressHubScreen({super.key, this.initialTabIndex = 0});
 
-  /// 0 = Progress, 1 = Test History, 2 = Daily Wars History.
+  /// 0 = Progress, 1 = Test History.
   final int initialTabIndex;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final controller = useTabController(
-      initialLength: 3,
-      initialIndex: initialTabIndex.clamp(0, 2),
+      initialLength: 2,
+      initialIndex: initialTabIndex.clamp(0, 1),
     );
     useListenable(controller);
     final scheme = Theme.of(context).colorScheme;
@@ -32,6 +31,11 @@ class ProgressHubScreen extends HookConsumerWidget {
     final fullDays = hub.fullDaysThisWeek;
 
     return PopToShellHomeScope(
+      onInnerBack: () {
+        if (controller.index == 0) return false;
+        controller.animateTo(0);
+        return true;
+      },
       child: Scaffold(
         appBar: AppBar(
           title: Text('Progress', style: AppTextStyles.h3()),
@@ -70,7 +74,6 @@ class ProgressHubScreen extends HookConsumerWidget {
                 tabs: const [
                   Tab(text: 'Progress', height: 40),
                   Tab(text: 'Test History', height: 40),
-                  Tab(text: 'Daily Wars History', height: 40),
                 ],
               ),
             ),
@@ -80,7 +83,6 @@ class ProgressHubScreen extends HookConsumerWidget {
                 children: const [
                   ProgressScreen(embedded: true),
                   HistoryScreen(embedded: true),
-                  DailyWarHistoryScreen(embedded: true),
                 ],
               ),
             ),
