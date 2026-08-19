@@ -783,13 +783,6 @@ final class MemoryPairsGamePlayedEvent extends AnalyticsEvent {
   final String difficulty;
 }
 
-/// **Daily practice card shown** on home for activated users.
-///
-/// **GA4:** `daily_drill_card_shown` (no parameters).
-final class DailyDrillCardShownEvent extends AnalyticsEvent {
-  const DailyDrillCardShownEvent();
-}
-
 /// **User started the daily practice drill** from home.
 ///
 /// **GA4:** `daily_drill_started` with `subject`, `source`, `completed_today`.

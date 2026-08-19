@@ -179,6 +179,10 @@ abstract final class PrefKeys {
 
   /// yyyy-MM-dd days where every available Today ring was closed (recent only).
   static const todayFullDayDatesV1 = 'today_full_day_dates_v1';
+
+  /// ISO dates (`YYYY-MM-DD`) whose Daily CA results/explanations were opened.
+  static const dailyCaResultsOpenedDatesV1 =
+      'daily_ca_results_opened_dates_v1';
 }
 
 class PrefsService {
@@ -523,6 +527,24 @@ class PrefsService {
       _p.getStringList(PrefKeys.todayFullDayDatesV1) ?? const [];
   set todayFullDayDates(List<String> v) =>
       _p.setStringList(PrefKeys.todayFullDayDatesV1, v);
+
+  List<String> get dailyCaResultsOpenedDates =>
+      _p.getStringList(PrefKeys.dailyCaResultsOpenedDatesV1) ?? const [];
+
+  bool hasOpenedDailyCaResults(String isoDate) =>
+      dailyCaResultsOpenedDates.contains(isoDate);
+
+  void markDailyCaResultsOpened(String isoDate) {
+    final iso = isoDate.trim();
+    if (iso.isEmpty) return;
+    final next = [
+      iso,
+      for (final d in dailyCaResultsOpenedDates)
+        if (d != iso) d,
+    ];
+    if (next.length > 21) next.removeRange(21, next.length);
+    _p.setStringList(PrefKeys.dailyCaResultsOpenedDatesV1, next);
+  }
 }
 
 @Riverpod(keepAlive: true)

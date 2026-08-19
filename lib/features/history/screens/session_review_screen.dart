@@ -5,6 +5,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import 'package:upsc_wars/core/constants/question_source_constants.dart';
 import 'package:upsc_wars/core/domain/entities/answer_confidence.dart';
 import 'package:upsc_wars/core/domain/entities/test_question.dart';
 import 'package:upsc_wars/core/providers/app_language_helpers.dart';
@@ -17,6 +18,7 @@ import 'package:upsc_wars/shared/theme/dark_mode_toggle.dart';
 import 'package:upsc_wars/shared/widgets/en_hi_language_toggle.dart';
 import 'package:upsc_wars/shared/widgets/question_table_view.dart';
 import 'package:upsc_wars/shared/widgets/selectable_copy_search_text.dart';
+import 'package:upsc_wars/features/daily_ca/providers/daily_ca_providers.dart';
 import 'package:upsc_wars/features/history/providers/review_session_provider.dart';
 import 'package:upsc_wars/features/history/widgets/explanation_card.dart';
 import 'package:upsc_wars/features/results/widgets/share_test_bottom_sheet.dart';
@@ -365,6 +367,22 @@ class SessionReviewScreen extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final params = (sessionId: sessionId, focusWrong: focusWrong);
     final review = ref.watch(reviewSessionProvider(params));
+    useEffect(() {
+      unawaited(() async {
+        final session =
+            await ref.read(userDatabaseProvider).sessionsDao.getSessionById(
+              sessionId,
+            );
+        final topic = session?.topic;
+        if (session?.subject ==
+                QuestionSourceConstants.dailyCaSessionSubject &&
+            topic != null &&
+            topic.isNotEmpty) {
+          await markDailyCaResultsOpened(ref, topic);
+        }
+      }());
+      return null;
+    }, [sessionId]);
     return Scaffold(
       body: SafeArea(
         child: review.when(

@@ -9,6 +9,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/analytics/analytics_events.dart';
 import '../../../core/analytics/analytics_global_dispatch.dart';
+import '../../../core/analytics/screen_flow_analytics.dart';
 import '../../../core/domain/entities/revision_queue_item.dart';
 import '../../../core/domain/entities/session_result.dart';
 import '../../../core/domain/entities/test_question.dart';
@@ -18,6 +19,7 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../home/domain/demo_diagnostic_ephemeral_store.dart';
 import '../domain/session_insight_case.dart';
 import '../domain/session_insight_metrics.dart';
 import '../providers/session_coach_providers.dart';
@@ -192,6 +194,7 @@ class SessionSummaryCompactView extends HookConsumerWidget {
           questionCount: result.questionCount,
           metrics: metrics,
         ),
+        _BackToHomeButton(sessionId: sessionId, scheme: scheme),
         if (showRevisionQueue) ...[
           SizedBox(height: metrics.sectionGap),
           _RevisionQueueCard(
@@ -919,6 +922,43 @@ class _TopicAccuracyList extends StatelessWidget {
           );
         }),
       ],
+    );
+  }
+}
+
+class _BackToHomeButton extends ConsumerWidget {
+  const _BackToHomeButton({
+    required this.sessionId,
+    required this.scheme,
+  });
+
+  final String sessionId;
+  final ColorScheme scheme;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    return TextButton(
+      onPressed: () {
+        HapticFeedback.lightImpact();
+        logGlobalAnalytics(
+          const UspSessionCoachCtaTappedEvent(action: 'back_to_home'),
+        );
+        ScreenFlow.logAction(
+          ref,
+          screenName: ScreenFlow.sessionResults,
+          actionId: 'back_to_home_cta',
+          actionKind: 'back',
+        );
+        clearDemoDiagnosticEphemeral(sessionId);
+        context.go('/');
+      },
+      child: Text(
+        'Back to home',
+        style: AppTextStyles.label().copyWith(
+          fontWeight: FontWeight.w600,
+          color: scheme.onSurfaceVariant,
+        ),
+      ),
     );
   }
 }

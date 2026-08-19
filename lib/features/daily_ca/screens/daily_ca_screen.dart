@@ -192,13 +192,15 @@ class DailyCaScreen extends HookConsumerWidget {
               launching: launching.value || paperChecking,
               questionsReady: paperLive,
               compact: compact,
-              onStartPaper: paperIso == null
+              onStartPaper: paperIso == null || paperCompleted || !paperLive
                   ? null
-                  : paperCompleted
-                  ? () => unawaited(openPaperResults(paperIso))
-                  : paperLive
-                  ? () => unawaited(openDayTest(paperIso, isRevise: false))
-                  : null,
+                  : () => unawaited(openDayTest(paperIso, isRevise: false)),
+              onRevisePaper: paperIso == null || !paperCompleted
+                  ? null
+                  : () => unawaited(openDayTest(paperIso, isRevise: true)),
+              onViewResults: paperIso == null || !paperCompleted
+                  ? null
+                  : () => unawaited(openPaperResults(paperIso)),
             ),
             SizedBox(height: compact ? AppSpacing.sm : AppSpacing.md),
             Expanded(

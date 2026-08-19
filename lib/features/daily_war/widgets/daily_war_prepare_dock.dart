@@ -16,8 +16,8 @@ import '../theme/daily_war_theme.dart';
 
 /// Docked "STEP 2 · PREPARE" strip under the War hero (design WarBelowFold).
 ///
-/// When Daily War RC is off, returns [SizedBox.shrink] so the normal
-/// [DailyDrillCard] can show instead.
+/// When Daily War RC is off, returns [SizedBox.shrink] so the home revision
+/// queue can show instead.
 class DailyWarPrepareDock extends HookConsumerWidget {
   const DailyWarPrepareDock({super.key});
 

@@ -422,8 +422,6 @@ class FirebaseAnalyticsSink implements AnalyticsSink {
           'set_id': setId,
           'difficulty': difficulty,
         });
-      case DailyDrillCardShownEvent():
-        await _log('daily_drill_card_shown', const {});
       case DailyDrillStartedEvent(
           :final subject,
           :final source,

@@ -22,6 +22,8 @@ class DailyCaTodaySection extends StatefulWidget {
     required this.paperCompleted,
     required this.launching,
     required this.onStartPaper,
+    this.onRevisePaper,
+    this.onViewResults,
     this.questionsReady = true,
     this.compact = false,
   });
@@ -36,6 +38,12 @@ class DailyCaTodaySection extends StatefulWidget {
   /// False when the scheduled paper has no live questions yet.
   final bool questionsReady;
   final VoidCallback? onStartPaper;
+
+  /// After the first attempt: reopen the paper to review answers.
+  final VoidCallback? onRevisePaper;
+
+  /// After the first attempt: jump to the last completed session's results.
+  final VoidCallback? onViewResults;
 
   /// Tighter padding and type so the hub fits a short phone.
   final bool compact;
@@ -101,7 +109,7 @@ class _DailyCaTodaySectionState extends State<DailyCaTodaySection> {
           ? 'Today\'s test will be available soon.'
           : 'Today\'s test will be available tomorrow morning.';
     } else if (widget.paperCompleted) {
-      headline = 'Completed · open your results';
+      headline = 'Quiz done. Open the explanations if a line still nags.';
     } else if (isTodaysPaper) {
       headline = 'Current affairs test from yesterday\'s news.';
     } else {
@@ -212,7 +220,9 @@ class _DailyCaTodaySectionState extends State<DailyCaTodaySection> {
                           : !allowed
                           ? null
                           : widget.questionsReady
-                          ? widget.onStartPaper
+                          ? (widget.paperCompleted
+                                ? widget.onRevisePaper
+                                : widget.onStartPaper)
                           : () {
                               showDailyCaUnavailableSheet(
                                 context: context,
@@ -254,7 +264,7 @@ class _DailyCaTodaySectionState extends State<DailyCaTodaySection> {
                             : !widget.questionsReady
                             ? 'Available soon'
                             : widget.paperCompleted
-                            ? 'View results'
+                            ? 'Revise this test'
                             : 'Start today\'s test',
                         style: AppTextStyles.label().copyWith(
                           fontWeight: FontWeight.w700,
@@ -263,6 +273,31 @@ class _DailyCaTodaySectionState extends State<DailyCaTodaySection> {
                       ),
                     ),
                   ),
+                  if (widget.paperCompleted &&
+                      widget.onViewResults != null) ...[
+                    SizedBox(height: compact ? 2 : 4),
+                    TextButton(
+                      onPressed: widget.launching
+                          ? null
+                          : widget.onViewResults,
+                      style: TextButton.styleFrom(
+                        visualDensity: VisualDensity.compact,
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: AppSpacing.md,
+                          vertical: 4,
+                        ),
+                        minimumSize: Size.zero,
+                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                      ),
+                      child: Text(
+                        'View results',
+                        style: AppTextStyles.label().copyWith(
+                          fontWeight: FontWeight.w700,
+                          color: AppColors.primary,
+                        ),
+                      ),
+                    ),
+                  ],
                   SizedBox(height: compact ? 8 : 10),
                   Row(
                     children: [

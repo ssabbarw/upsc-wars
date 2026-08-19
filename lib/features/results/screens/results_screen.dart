@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../core/constants/question_source_constants.dart';
 import '../../../core/analytics/screen_flow_analytics.dart';
 import '../../../core/responsive/app_breakpoints.dart';
 import '../../../core/debug/upsc_wars_trace.dart';
@@ -25,6 +26,7 @@ import '../../community/open_challenge/open_challenge_exam_registry.dart';
 import '../../community/open_challenge/open_challenge_post_results_submit.dart';
 import '../../community/widgets/open_challenge_post_from_results_card.dart';
 import '../../community/widgets/open_challenge_results_actions.dart';
+import '../../daily_ca/providers/daily_ca_providers.dart';
 import '../../home/domain/demo_diagnostic_ephemeral_store.dart';
 import '../../home/providers/home_activation_provider.dart';
 import '../../home/providers/home_activation_journey_provider.dart';
@@ -130,6 +132,13 @@ class ResultsScreen extends ConsumerWidget {
       if (next.hasValue && prev?.hasValue != true) {
         ref.invalidate(homeActivationProvider);
         ref.invalidate(homeActivationJourneyProvider);
+        final result = next.requireValue;
+        if (result.subject == QuestionSourceConstants.dailyCaSessionSubject) {
+          final iso = result.topic;
+          if (iso != null && iso.isNotEmpty) {
+            unawaited(markDailyCaResultsOpened(ref, iso));
+          }
+        }
       }
       if (next.hasError) {
         upscWarsTrace(

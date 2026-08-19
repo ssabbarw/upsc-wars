@@ -8,7 +8,7 @@ enum TodaySlotId {
   /// Revision of misses / bookmarks (weekdays) or last week's mistakes (Sunday).
   practice,
 
-  /// Tonight's Daily War.
+  /// Tonight's Daily War (Sunday: Week Review stands in).
   war,
 }
 
@@ -45,16 +45,14 @@ class TodayHeroPick {
 
 /// Time-of-day hero plus overnight catch-up.
 ///
-/// The hub day stays on yesterday until 6 AM so midnight does not reset the
-/// three loops. Next day's War paper is generated at 5:50 AM, so overnight
-/// never promotes tomorrow's drill.
+/// Slots: 6 AM–6 PM follows the CA → revise → queue → War cascade.
+/// 6 PM–midnight is War (Sunday: Week Review). Midnight–6 AM is yesterday
+/// catch-up, then last night's War.
 abstract final class TodayHero {
   TodayHero._();
 
   static const paperHourIst = 6;
-  static const practiceHourIst = 12;
   static const warHourIst = 18;
-  static const warWindowEndHourIst = 21;
 
   /// Calendar day the three loops belong to (yesterday before 6 AM).
   static DateTime hubDate(DateTime istNow) {
@@ -81,9 +79,8 @@ abstract final class TodayHero {
   /// Midnight–6 AM: last night's War, not the paper generated at 5:50 AM.
   static bool usesYesterdayWar(DateTime istNow) => istNow.hour < paperHourIst;
 
-  /// After 9 PM through 6 AM — War is over or the night is winding down.
-  static bool afterWarUntilMorning(DateTime istNow) =>
-      istNow.hour >= warWindowEndHourIst || istNow.hour < paperHourIst;
+  /// 6 PM through midnight — War owns the hero.
+  static bool warOwnsSlot(DateTime istNow) => istNow.hour >= warHourIst;
 
   static TodaySlotStatus _statusFor({
     required bool available,
@@ -178,13 +175,28 @@ abstract final class TodayHero {
     required TodayWarUrgency warUrgency,
     required List<TodaySlot> slots,
     bool isSunday = false,
+    bool paperRevised = false,
+    bool revisionQueueEmpty = false,
   }) {
     return pick(
       istNow: istNow,
       warUrgency: warUrgency,
       slots: slots,
       isSunday: isSunday,
+      paperRevised: paperRevised,
+      revisionQueueEmpty: revisionQueueEmpty,
     ).hero;
+  }
+
+  /// CA unfinished = not attempted, or attempted but results never opened.
+  static bool caUnfinished({
+    required List<TodaySlot> slots,
+    required bool paperRevised,
+  }) {
+    final status = statusOf(slots, TodaySlotId.current);
+    if (status == TodaySlotStatus.rest) return false;
+    if (status == TodaySlotStatus.open) return true;
+    return !paperRevised;
   }
 
   static TodayHeroPick pick({
@@ -192,6 +204,8 @@ abstract final class TodayHero {
     required TodayWarUrgency warUrgency,
     required List<TodaySlot> slots,
     bool isSunday = false,
+    bool paperRevised = false,
+    bool revisionQueueEmpty = false,
   }) {
     TodayHeroPick prefer(TodaySlotId id, {bool caughtUp = false}) {
       bool available(TodaySlotId x) =>
@@ -219,58 +233,37 @@ abstract final class TodayHero {
       return TodayHeroPick(hero: id, caughtUp: caughtUp);
     }
 
-    if (warUrgency == TodayWarUrgency.live &&
-        statusOf(slots, TodaySlotId.war) != TodaySlotStatus.rest) {
-      return const TodayHeroPick(hero: TodaySlotId.war);
+    TodayHeroPick cascade({required bool overnight}) {
+      if (caUnfinished(slots: slots, paperRevised: paperRevised)) {
+        return prefer(TodaySlotId.current);
+      }
+      if (!revisionQueueEmpty &&
+          statusOf(slots, TodaySlotId.practice) != TodaySlotStatus.rest) {
+        return prefer(TodaySlotId.practice);
+      }
+      return prefer(TodaySlotId.war, caughtUp: overnight);
     }
 
     final hour = istNow.hour;
-    final caOpen = statusOf(slots, TodaySlotId.current) == TodaySlotStatus.open;
-    final drillOpen =
-        statusOf(slots, TodaySlotId.practice) == TodaySlotStatus.open;
-    final warOpen = statusOf(slots, TodaySlotId.war) == TodaySlotStatus.open;
 
-    TodayHeroPick overnightCatchUp() {
-      if (isFullDay(slots)) {
-        return prefer(
-          isSunday ? TodaySlotId.practice : TodaySlotId.war,
-          caughtUp: true,
-        );
-      }
-      if (caOpen) return prefer(TodaySlotId.current);
-      if (drillOpen) return prefer(TodaySlotId.practice);
-      if (warOpen) return prefer(TodaySlotId.war);
+    // 6 PM – midnight: War (or Sunday Week Review via the war slot).
+    // [warUrgency] is the live/results phase inside that window; it must not
+    // steal the 6 AM–6 PM CA cascade.
+    if (hour >= warHourIst) {
       return prefer(
-        isSunday ? TodaySlotId.practice : TodaySlotId.war,
-        caughtUp: true,
+        TodaySlotId.war,
+        caughtUp: warUrgency == TodayWarUrgency.results &&
+            statusOf(slots, TodaySlotId.war) == TodaySlotStatus.done,
       );
     }
 
-    if (afterWarUntilMorning(istNow)) {
-      return overnightCatchUp();
+    // Midnight – 6 AM: yesterday's CA / queue, else last night's War.
+    if (hour < paperHourIst) {
+      return cascade(overnight: true);
     }
 
-    if (isSunday) {
-      if (hour >= practiceHourIst) {
-        return prefer(TodaySlotId.practice);
-      }
-      if (caOpen) return prefer(TodaySlotId.current);
-      return prefer(TodaySlotId.practice);
-    }
-
-    // 6 PM – 9 PM: wait for War; drill stays visible as a companion.
-    if (hour >= warHourIst && hour < warWindowEndHourIst) {
-      return prefer(TodaySlotId.war);
-    }
-
-    // Noon – 6 PM: revision queue.
-    if (hour >= practiceHourIst && hour < warHourIst) {
-      return prefer(TodaySlotId.practice);
-    }
-
-    // 6 AM – noon: paper, then drill once the paper is done.
-    if (caOpen) return prefer(TodaySlotId.current);
-    return prefer(TodaySlotId.practice);
+    // 6 AM – 6 PM: CA start → CA revise → revision queue → War.
+    return cascade(overnight: false);
   }
 
   static List<TodaySlotId> displayOrder(

@@ -6,6 +6,8 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 
 import '../../../core/constants/question_source_constants.dart';
+import '../../../core/domain/entities/session_config.dart';
+import '../../../core/providers/catalog_providers.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/widgets/test_config_bottom_sheet.dart';
 import '../data/daily_ca_firestore.dart';
@@ -13,10 +15,10 @@ import '../data/daily_ca_load_error.dart';
 import '../data/daily_ca_repository.dart';
 import '../providers/daily_ca_providers.dart';
 
-/// Loads one day's current-affairs MCQs and opens the test config sheet.
+/// Loads one day's current-affairs MCQs.
 ///
-/// Shared by the Daily CA calendar and the home Today hub so both go through the
-/// same Firestore fetch, local upsert, and error copy.
+/// First attempt opens the test config sheet. Revise skips the sheet and starts
+/// an untimed learning session on the same questions.
 Future<void> openDailyCaTest({
   required BuildContext context,
   required WidgetRef ref,
@@ -31,6 +33,34 @@ Future<void> openDailyCaTest({
     if (!context.mounted) return;
     if (uuids.isEmpty) {
       throw DailyCaNotAvailableException(isoDate, firestorePath: firestorePath);
+    }
+
+    final analyticsKey = isRevise
+        ? '${QuestionSourceConstants.analyticsDailyCurrentAffairs}_revise'
+        : QuestionSourceConstants.analyticsDailyCurrentAffairs;
+
+    if (isRevise) {
+      final create = await ref.read(createSessionUseCaseProvider.future);
+      final lang = await ref.read(appLanguageProvider.future);
+      final sessionId = await create.execute(
+        SessionConfig(
+          subject: QuestionSourceConstants.dailyCaSessionSubject,
+          topic: isoDate,
+          mode: 'learning',
+          questionCount: uuids.length,
+          isTimed: false,
+          timeLimitSecs: null,
+          language: lang,
+          specificQuestionUuids: uuids,
+          analyticsFeatureKey: analyticsKey,
+        ),
+      );
+      if (!context.mounted) return;
+      await context.push('/test/$sessionId');
+      if (!context.mounted) return;
+      ref.invalidate(dailyCaDayCompletedProvider(isoDate));
+      onFinished?.call();
+      return;
     }
 
     final label = DateFormat(
@@ -48,10 +78,8 @@ Future<void> openDailyCaTest({
         topicCountWhenSubjectOnly: 1,
         lockedQuestionCount: uuids.length,
         specificQuestionUuids: uuids,
-        startButtonLabel: isRevise ? 'Revise' : 'Start test',
-        analyticsFeatureKey: isRevise
-            ? '${QuestionSourceConstants.analyticsDailyCurrentAffairs}_revise'
-            : QuestionSourceConstants.analyticsDailyCurrentAffairs,
+        startButtonLabel: 'Start test',
+        analyticsFeatureKey: analyticsKey,
         onSessionCreated: (sessionId) async {
           await context.push('/test/$sessionId');
           if (!context.mounted) return;

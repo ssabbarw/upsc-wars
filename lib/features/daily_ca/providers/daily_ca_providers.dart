@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/providers/kill_switch_provider.dart';
+import '../../../core/providers/prefs_provider.dart';
 import '../../../core/providers/user_database_provider.dart';
 import '../data/daily_ca_firestore.dart';
 import '../data/daily_ca_repository.dart';
@@ -84,3 +85,26 @@ final dailyCaDayCompletedProvider =
       final db = ref.watch(userDatabaseProvider);
       return db.sessionsDao.hasCompletedDailyCa(isoDate);
     });
+
+/// Bumped after [markDailyCaResultsOpened] so home can leave the revise hero.
+class DailyCaResultsOpenedEpoch extends Notifier<int> {
+  @override
+  int build() => 0;
+
+  void bump() => state++;
+}
+
+final dailyCaResultsOpenedEpochProvider =
+    NotifierProvider<DailyCaResultsOpenedEpoch, int>(
+      DailyCaResultsOpenedEpoch.new,
+    );
+
+/// Record that results/explanations for this paper date were opened.
+Future<void> markDailyCaResultsOpened(WidgetRef ref, String isoDate) async {
+  final iso = isoDate.trim();
+  if (iso.isEmpty) return;
+  final prefs = await ref.read(prefsServiceProvider.future);
+  if (prefs.hasOpenedDailyCaResults(iso)) return;
+  prefs.markDailyCaResultsOpened(iso);
+  ref.read(dailyCaResultsOpenedEpochProvider.notifier).bump();
+}

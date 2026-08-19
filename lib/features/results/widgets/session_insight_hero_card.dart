@@ -180,32 +180,34 @@ class SessionInsightHeroCard extends ConsumerWidget {
               ),
             ),
           ],
-          const SizedBox(height: AppSpacing.md),
-          SizedBox(
-            height: 44,
-            child: FilledButton.icon(
-              style: FilledButton.styleFrom(
-                backgroundColor: style.ctaBackground,
-                foregroundColor: style.ctaForeground,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(AppRadius.md),
+          if (insightCase != SessionInsightCase.fNoAttempts) ...[
+            const SizedBox(height: AppSpacing.md),
+            SizedBox(
+              height: 44,
+              child: FilledButton.icon(
+                style: FilledButton.styleFrom(
+                  backgroundColor: style.ctaBackground,
+                  foregroundColor: style.ctaForeground,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(AppRadius.md),
+                  ),
                 ),
-              ),
-              onPressed: () => _onCta(context, ref),
-              icon: const Icon(Icons.adjust, size: 20),
-              label: Text(
-                style.ctaLabel(
-                  sureWrong: sureWrong,
-                  eduWrong: eduWrong,
-                  wrong: result.wrong,
-                  weakestTopic: weakestTopicName,
-                ),
-                style: AppTextStyles.label().copyWith(
-                  fontWeight: FontWeight.w700,
+                onPressed: () => _onCta(context, ref),
+                icon: const Icon(Icons.adjust, size: 20),
+                label: Text(
+                  style.ctaLabel(
+                    sureWrong: sureWrong,
+                    eduWrong: eduWrong,
+                    wrong: result.wrong,
+                    weakestTopic: weakestTopicName,
+                  ),
+                  style: AppTextStyles.label().copyWith(
+                    fontWeight: FontWeight.w700,
+                  ),
                 ),
               ),
             ),
-          ),
+          ],
         ],
       ),
     );

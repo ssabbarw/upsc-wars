@@ -972,6 +972,26 @@ class SessionsDao extends DatabaseAccessor<UserDatabase>
     return (row.read<int?>('c') ?? 0) > 0;
   }
 
+  /// Latest completed Sunday week-review session in [startInclusive, endExclusive).
+  Future<String?> getLatestCompletedSundayWeekReviewSessionId({
+    required DateTime startInclusive,
+    required DateTime endExclusive,
+  }) async {
+    final row = await customSelect(
+      "SELECT id FROM sessions "
+      "WHERE analytics_feature_key = ? AND status = 'completed' "
+      "AND completed_at >= ? AND completed_at < ? "
+      "ORDER BY completed_at DESC, created_at DESC LIMIT 1",
+      variables: [
+        Variable.withString('sunday_week_review'),
+        Variable.withDateTime(startInclusive),
+        Variable.withDateTime(endExclusive),
+      ],
+      readsFrom: {sessions},
+    ).getSingleOrNull();
+    return row?.read<String>('id');
+  }
+
   /// Whether the user completed the daily CA test for [sourceDate] (`YYYY-MM-DD`).
   Future<bool> hasCompletedDailyCa(String sourceDate) async {
     final id = await getLatestCompletedDailyCaSessionId(sourceDate);
@@ -987,6 +1007,21 @@ class SessionsDao extends DatabaseAccessor<UserDatabase>
       variables: [
         Variable.withString(QuestionSourceConstants.dailyCaSessionSubject),
         Variable.withString(sourceDate),
+      ],
+      readsFrom: {sessions},
+    ).getSingleOrNull();
+    return row?.read<String>('id');
+  }
+
+  /// Latest completed Daily War session for [dateId] (`YYYY-MM-DD`), or null.
+  Future<String?> getLatestCompletedDailyWarSessionId(String dateId) async {
+    final row = await customSelect(
+      "SELECT id FROM sessions "
+      "WHERE subject = ? AND topic = ? AND status = 'completed' "
+      "ORDER BY completed_at DESC, created_at DESC LIMIT 1",
+      variables: [
+        Variable.withString('daily_war'),
+        Variable.withString(dateId),
       ],
       readsFrom: {sessions},
     ).getSingleOrNull();

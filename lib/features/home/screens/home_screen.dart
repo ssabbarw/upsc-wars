@@ -492,10 +492,7 @@ class HomeScreen extends HookConsumerWidget {
                       builder: (context, ref, _) {
                         final journey = ref.watch(homeActivationJourneyProvider);
                         final state = journey.asData?.value ?? journey.value;
-                        final forceCollapsed =
-                            state?.shouldShowChecklist ?? false;
                         return TodayHubSection(
-                          forceWarCollapsed: forceCollapsed,
                           activationJourney: state,
                           activationJourneyLoading:
                               journey.isLoading && !journey.hasValue,

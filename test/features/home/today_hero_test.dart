@@ -49,7 +49,7 @@ void main() {
   });
 
   group('TodayHero.scheduledHero', () {
-    test('6 AM – noon is the paper when it is still open', () {
+    test('6 AM – 6 PM is the paper while it is still open', () {
       expect(
         TodayHero.scheduledHero(
           istNow: DateTime(2026, 8, 17, 6),
@@ -57,19 +57,16 @@ void main() {
         ),
         TodaySlotId.current,
       );
-    });
-
-    test('noon – 6 PM is the revision queue', () {
       expect(
         TodayHero.scheduledHero(
           istNow: DateTime(2026, 8, 17, 12),
           warUrgency: TodayWarUrgency.none,
         ),
-        TodaySlotId.practice,
+        TodaySlotId.current,
       );
     });
 
-    test('6 PM – 9 PM is War', () {
+    test('6 PM – midnight is War', () {
       expect(
         TodayHero.scheduledHero(
           istNow: DateTime(2026, 8, 17, 18),
@@ -77,31 +74,90 @@ void main() {
         ),
         TodaySlotId.war,
       );
+      expect(
+        TodayHero.scheduledHero(
+          istNow: DateTime(2026, 8, 17, 22),
+          warUrgency: TodayWarUrgency.results,
+        ),
+        TodaySlotId.war,
+      );
     });
 
-    test('a live War cuts into the morning paper window', () {
+    test('a live War does not steal the morning paper', () {
       expect(
         TodayHero.scheduledHero(
           istNow: DateTime(2026, 8, 17, 9),
           warUrgency: TodayWarUrgency.live,
         ),
-        TodaySlotId.war,
+        TodaySlotId.current,
       );
     });
   });
 
   group('TodayHero.pick', () {
-    test('morning paper done promotes the drill', () {
+    test('morning attempted but not revised stays on CA', () {
       final pick = TodayHero.pick(
         istNow: DateTime(2026, 8, 17, 8),
         warUrgency: TodayWarUrgency.none,
         slots: _slots(currentDone: true),
       );
+      expect(pick.hero, TodaySlotId.current);
+      expect(pick.caughtUp, isFalse);
+    });
+
+    test('morning paper revised promotes the drill', () {
+      final pick = TodayHero.pick(
+        istNow: DateTime(2026, 8, 17, 8),
+        warUrgency: TodayWarUrgency.none,
+        slots: _slots(currentDone: true),
+        paperRevised: true,
+      );
       expect(pick.hero, TodaySlotId.practice);
       expect(pick.caughtUp, isFalse);
     });
 
-    test('6 PM – 9 PM is War even if the paper is still open', () {
+    test('morning revised and empty queue falls through to War', () {
+      final pick = TodayHero.pick(
+        istNow: DateTime(2026, 8, 17, 8),
+        warUrgency: TodayWarUrgency.none,
+        slots: _slots(currentDone: true),
+        paperRevised: true,
+        revisionQueueEmpty: true,
+      );
+      expect(pick.hero, TodaySlotId.war);
+    });
+
+    test('noon unfinished CA stays on the paper', () {
+      final pick = TodayHero.pick(
+        istNow: DateTime(2026, 8, 17, 13),
+        warUrgency: TodayWarUrgency.none,
+        slots: _slots(),
+      );
+      expect(pick.hero, TodaySlotId.current);
+    });
+
+    test('noon revised with a queue is the drill', () {
+      final pick = TodayHero.pick(
+        istNow: DateTime(2026, 8, 17, 13),
+        warUrgency: TodayWarUrgency.none,
+        slots: _slots(currentDone: true),
+        paperRevised: true,
+      );
+      expect(pick.hero, TodaySlotId.practice);
+    });
+
+    test('afternoon empty queue falls through to War', () {
+      final pick = TodayHero.pick(
+        istNow: DateTime(2026, 8, 17, 15),
+        warUrgency: TodayWarUrgency.none,
+        slots: _slots(currentDone: true),
+        paperRevised: true,
+        revisionQueueEmpty: true,
+      );
+      expect(pick.hero, TodaySlotId.war);
+    });
+
+    test('6 PM – midnight is War even if the paper is still open', () {
       final pick = TodayHero.pick(
         istNow: DateTime(2026, 8, 17, 19),
         warUrgency: TodayWarUrgency.none,
@@ -121,37 +177,50 @@ void main() {
       );
     });
 
-    test('overnight all-done is caught up', () {
+    test('10 PM is War even if CA was never attempted', () {
       final pick = TodayHero.pick(
         istNow: DateTime(2026, 8, 17, 22),
         warUrgency: TodayWarUrgency.results,
-        slots: _slots(
-          currentDone: true,
-          practiceDone: true,
-          warDone: true,
-        ),
+        slots: _slots(practiceDone: true, warDone: true),
       );
-      expect(pick.caughtUp, isTrue);
+      expect(pick.hero, TodaySlotId.war);
     });
 
-    test('overnight missing paper shows current affairs', () {
+    test('overnight unfinished CA is catch-up', () {
       final pick = TodayHero.pick(
-        istNow: DateTime(2026, 8, 17, 22),
-        warUrgency: TodayWarUrgency.results,
+        istNow: DateTime(2026, 8, 18, 1),
+        warUrgency: TodayWarUrgency.none,
         slots: _slots(practiceDone: true, warDone: true),
       );
       expect(pick.hero, TodaySlotId.current);
       expect(pick.caughtUp, isFalse);
     });
 
-    test('overnight missing drill shows tonight\'s topics, not tomorrow', () {
+    test('overnight missing drill shows the queue, not tomorrow', () {
       final pick = TodayHero.pick(
         istNow: DateTime(2026, 8, 18, 1),
         warUrgency: TodayWarUrgency.none,
         slots: _slots(currentDone: true, warDone: true),
+        paperRevised: true,
       );
       expect(pick.hero, TodaySlotId.practice);
       expect(pick.caughtUp, isFalse);
+    });
+
+    test('overnight all-done is last night\'s War, caught up', () {
+      final pick = TodayHero.pick(
+        istNow: DateTime(2026, 8, 18, 1),
+        warUrgency: TodayWarUrgency.results,
+        slots: _slots(
+          currentDone: true,
+          practiceDone: true,
+          warDone: true,
+        ),
+        paperRevised: true,
+        revisionQueueEmpty: true,
+      );
+      expect(pick.hero, TodaySlotId.war);
+      expect(pick.caughtUp, isTrue);
     });
 
     test('uses last night\'s War before 6 AM, not tomorrow\'s paper', () {
@@ -160,12 +229,12 @@ void main() {
       expect(TodayHero.usesYesterdayWar(DateTime(2026, 8, 17, 6)), isFalse);
     });
 
-    test('Sunday morning paper, then week review', () {
+    test('Sunday morning paper, then week review via the war slot', () {
       expect(
         TodayHero.pick(
           istNow: DateTime(2026, 8, 16, 8),
           warUrgency: TodayWarUrgency.none,
-          slots: _slots(warAvailable: false),
+          slots: _slots(),
           isSunday: true,
         ).hero,
         TodaySlotId.current,
@@ -174,11 +243,23 @@ void main() {
         TodayHero.pick(
           istNow: DateTime(2026, 8, 16, 8),
           warUrgency: TodayWarUrgency.none,
-          slots: _slots(currentDone: true, warAvailable: false),
+          slots: _slots(currentDone: true),
           isSunday: true,
+          paperRevised: true,
+          revisionQueueEmpty: true,
         ).hero,
-        TodaySlotId.practice,
+        TodaySlotId.war,
       );
+    });
+
+    test('Sunday evening is Week Review (war slot)', () {
+      final pick = TodayHero.pick(
+        istNow: DateTime(2026, 8, 16, 19),
+        warUrgency: TodayWarUrgency.none,
+        slots: _slots(),
+        isSunday: true,
+      );
+      expect(pick.hero, TodaySlotId.war);
     });
 
     test('evening with War off falls through to the drill', () {

@@ -28,6 +28,7 @@ class TodayHubData {
     required this.paperLive,
     required this.paperChecking,
     required this.paperCompleted,
+    required this.paperResultsOpened,
     required this.staticAvailable,
     required this.staticSubject,
     required this.staticSubjectDisplay,
@@ -58,6 +59,9 @@ class TodayHubData {
   /// True while the live-document check is in flight.
   final bool paperChecking;
   final bool paperCompleted;
+
+  /// True when results/explanations for [paperDate] were opened at least once.
+  final bool paperResultsOpened;
 
   /// False while the revision-queue provider has not resolved.
   final bool staticAvailable;
@@ -134,6 +138,9 @@ final todayHubProvider = Provider.autoDispose<TodayHubData>((ref) {
 
   final drill = ref.watch(dailyDrillProvider).asData?.value;
   final prefs = ref.watch(prefsServiceProvider).asData?.value;
+  ref.watch(dailyCaResultsOpenedEpochProvider);
+  final paperResultsOpened = paperIso != null &&
+      (prefs?.hasOpenedDailyCaResults(paperIso) ?? false);
 
   return TodayHubData(
     warEnabled: warEnabled,
@@ -148,6 +155,7 @@ final todayHubProvider = Provider.autoDispose<TodayHubData>((ref) {
     paperLive: paperLive,
     paperChecking: paperChecking,
     paperCompleted: paperCompleted,
+    paperResultsOpened: paperResultsOpened,
     staticAvailable: drill != null,
     staticSubject: drill?.subject ?? '',
     staticSubjectDisplay: drill?.subjectDisplayName ?? '',
