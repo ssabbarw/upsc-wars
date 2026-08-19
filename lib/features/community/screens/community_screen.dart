@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
@@ -7,11 +9,13 @@ import 'package:intl/intl.dart';
 import '../../../core/analytics/analytics_audience.dart';
 import '../../../core/constants/app_constants.dart';
 import '../../../core/layout/system_insets.dart';
+import '../../../core/notifications/notification_prompt_policy.dart';
 import '../../../core/presentation/user_display_name.dart';
 import '../../../core/providers/super_user_provider.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../core/services/battle_messaging_service.dart';
 import '../../../shared/widgets/push_denied_banner.dart';
 import '../../../shared/widgets/pop_to_shell_home_scope.dart';
 import '../../../shared/widgets/unread_pulse_wrapper.dart';
@@ -45,6 +49,16 @@ class CommunityScreen extends HookConsumerWidget {
       initialIndex: safeIndex,
     );
     final chatHasUnread = ref.watch(chatInboxHasUnreadProvider);
+    useEffect(() {
+      unawaited(
+        BattleMessagingService.maybePromptAfterScreenSettles(
+          context: context,
+          surface: NotificationPromptSurface.community,
+          source: 'community_screen',
+        ),
+      );
+      return null;
+    }, const []);
     return PopToShellHomeScope(
       onInnerBack: () {
         if (tabController.index == 0) return false;

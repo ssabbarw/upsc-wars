@@ -6,9 +6,13 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 
+import '../../../core/notifications/notification_prompt_policy.dart';
+import '../../../core/services/battle_messaging_service.dart';
 import '../../../core/theme/app_colors.dart';
+import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../shared/widgets/shimmer_box.dart';
 import '../daily_war_constants.dart';
 import '../domain/daily_war_models.dart';
 import '../domain/daily_war_phase.dart';
@@ -42,6 +46,18 @@ class DailyWarHistoryScreen extends HookConsumerWidget {
       return t.cancel;
     }, const []);
     tick.value;
+
+    useEffect(() {
+      if (embedded) return null;
+      unawaited(
+        BattleMessagingService.maybePromptAfterScreenSettles(
+          context: context,
+          surface: NotificationPromptSurface.dailyWar,
+          source: 'daily_war_history',
+        ),
+      );
+      return null;
+    }, const []);
 
     final ist = DailyWarSchedule.nowIst(
       DateTime.fromMillisecondsSinceEpoch(
@@ -190,10 +206,7 @@ class DailyWarHistoryScreen extends HookConsumerWidget {
         ),
         const SizedBox(height: AppSpacing.md),
         async.when(
-          loading: () => const Padding(
-            padding: EdgeInsets.all(AppSpacing.xxl),
-            child: Center(child: CircularProgressIndicator()),
-          ),
+          loading: () => const _MonthCalendarShimmer(),
           error: (e, _) => Text(
             'Could not load Wars: $e',
             style: AppTextStyles.bodySm().copyWith(color: AppColors.wrong),
@@ -236,6 +249,48 @@ class DailyWarHistoryScreen extends HookConsumerWidget {
         ),
       ),
       body: body,
+    );
+  }
+}
+
+class _MonthCalendarShimmer extends StatelessWidget {
+  const _MonthCalendarShimmer();
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Row(
+          children: [
+            for (var i = 0; i < 7; i++)
+              const Expanded(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 4, vertical: 2),
+                  child: ShimmerBox(width: double.infinity, height: 10),
+                ),
+              ),
+          ],
+        ),
+        const SizedBox(height: AppSpacing.sm),
+        GridView.builder(
+          shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
+          itemCount: 35,
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 7,
+            mainAxisSpacing: AppSpacing.xs,
+            crossAxisSpacing: AppSpacing.xs,
+          ),
+          itemBuilder: (_, _) => const Padding(
+            padding: EdgeInsets.all(6),
+            child: ShimmerBox(
+              width: double.infinity,
+              height: double.infinity,
+              borderRadius: AppRadius.pill,
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

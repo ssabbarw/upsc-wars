@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 
+import '../../../core/notifications/notification_prompt_policy.dart';
 import '../../../core/services/battle_messaging_service.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_text_styles.dart';
@@ -114,6 +115,8 @@ class DailyCaHomeCard extends HookConsumerWidget {
             try {
               await BattleMessagingService.requestPushAuthorizationIfNotDetermined(
                 source: 'ca_card_not_live',
+                surface: NotificationPromptSurface.dailyCa,
+                kind: NotificationPromptKind.explicit,
               );
               notifyPrimerVisible.value = false;
             } finally {

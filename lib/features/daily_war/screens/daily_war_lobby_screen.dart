@@ -5,7 +5,10 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../core/notifications/notification_prompt_policy.dart';
 import '../../../core/providers/kill_switch_provider.dart';
+import '../../../core/services/battle_messaging_service.dart';
+import '../../../shared/widgets/shimmer_box.dart';
 import '../daily_war_constants.dart';
 import '../data/daily_war_cloud_service.dart';
 import '../domain/daily_war_copy.dart';
@@ -26,8 +29,7 @@ class DailyWarLobbyScreen extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final available = ref.watch(dailyWarRemoteEnabledProvider);
     return available.when(
-      loading: () =>
-          const Scaffold(body: Center(child: CircularProgressIndicator())),
+      loading: () => const _DailyWarLobbySkeleton(),
       error: (_, _) => Scaffold(
         appBar: AppBar(title: const Text('Daily War')),
         body: const Center(child: Text('Daily War is not available.')),
@@ -53,11 +55,81 @@ class DailyWarLobbyScreen extends HookConsumerWidget {
   }
 }
 
+/// Dark lobby-shaped placeholder while Remote Config resolves.
+class _DailyWarLobbySkeleton extends StatelessWidget {
+  const _DailyWarLobbySkeleton();
+
+  static const _bone = Color(0xFF2A2A2E);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: DwColors.surface,
+      appBar: AppBar(
+        backgroundColor: DwColors.surface,
+        foregroundColor: DwColors.onDark,
+        title: const ShimmerBox(
+          width: 110,
+          height: 18,
+          color: _bone,
+        ),
+      ),
+      body: SingleChildScrollView(
+        physics: const NeverScrollableScrollPhysics(),
+        padding: const EdgeInsets.fromLTRB(20, 8, 20, 32),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const ShimmerBox(width: 88, height: 10, color: _bone),
+            const SizedBox(height: 12),
+            Row(
+              children: [
+                for (var i = 0; i < 7; i++) ...[
+                  if (i > 0) const SizedBox(width: 8),
+                  const Expanded(
+                    child: ShimmerBox(
+                      width: double.infinity,
+                      height: 36,
+                      borderRadius: 18,
+                      color: _bone,
+                    ),
+                  ),
+                ],
+              ],
+            ),
+            const SizedBox(height: 16),
+            const ShimmerBox(width: 160, height: 12, color: _bone),
+            const SizedBox(height: 10),
+            const ShimmerBox(width: double.infinity, height: 22, color: _bone),
+            const SizedBox(height: 8),
+            const ShimmerBox(width: 220, height: 22, color: _bone),
+            const SizedBox(height: 16),
+            const ShimmerBox(
+              width: double.infinity,
+              height: 120,
+              borderRadius: 16,
+              color: _bone,
+            ),
+            const SizedBox(height: 24),
+            const ShimmerBox(
+              width: double.infinity,
+              height: 48,
+              borderRadius: 12,
+              color: _bone,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
 class _DailyWarLobbyBody extends HookConsumerWidget {
   const _DailyWarLobbyBody();
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final todayDoc = ref.watch(dailyWarTodayDocProvider);
     final snap = ref.watch(dailyWarHomeSnapshotProvider);
     final launching = useState(false);
     final tick = useState(0);
@@ -91,6 +163,17 @@ class _DailyWarLobbyBody extends HookConsumerWidget {
       return null;
     }, [snap.dateId, snap.phase]);
 
+    useEffect(() {
+      unawaited(
+        BattleMessagingService.maybePromptAfterScreenSettles(
+          context: context,
+          surface: NotificationPromptSurface.dailyWar,
+          source: 'daily_war_lobby',
+        ),
+      );
+      return null;
+    }, const []);
+
     // When the lobby/live phase opens, force-refresh the doc if questions
     // haven't loaded yet. The doc is fetched once per session on app open
     // (before 9 PM, questionUuids is still empty). Without this refresh the
@@ -109,6 +192,10 @@ class _DailyWarLobbyBody extends HookConsumerWidget {
       unawaited(ref.read(dailyWarTodayDocProvider.notifier).refresh());
       return null;
     }, [snap.dateId, snap.phase, snap.doc?.questionUuids.isEmpty]);
+
+    if (todayDoc.isLoading && snap.doc == null) {
+      return const _DailyWarLobbySkeleton();
+    }
 
     final offset = ref.watch(serverTimeOffsetMsProvider).asData?.value ?? 0;
     final utc = DateTime.fromMillisecondsSinceEpoch(

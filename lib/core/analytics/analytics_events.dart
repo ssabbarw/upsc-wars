@@ -335,8 +335,8 @@ final class PushPermissionPromptResultEvent extends AnalyticsEvent {
 /// was closed. Tracks whether the user asked for the system prompt.
 ///
 /// **GA4:** `deferred_push_education_outcome` with:
-/// * `source` — `post_test` (after completing a test path) or `community_signin`
-///   (signed in from Community with prompt armed);
+/// * `source` — screen or CTA, e.g. `daily_war_history`, `daily_ca_screen`,
+///   `community_screen`, `ca_card_not_live`;
 /// * `modal_index` — 1 or 2 (max two education modals);
 /// * `tapped_enable` — 1 if the user chose “Turn on notifications”, else 0.
 final class DeferredPushEducationModalOutcomeEvent extends AnalyticsEvent {

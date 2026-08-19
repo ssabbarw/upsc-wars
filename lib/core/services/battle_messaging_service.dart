@@ -5,6 +5,7 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:upsc_wars/core/admin_dashboard/admin_dashboard_service.dart';
 import 'package:upsc_wars/core/admin_dashboard/pending_notification_conversion.dart';
@@ -13,6 +14,8 @@ import 'package:upsc_wars/core/analytics/analytics_global_dispatch.dart';
 import 'package:upsc_wars/core/analytics/session_entry_source.dart';
 import 'package:upsc_wars/core/debug/cursor_debug_log.dart';
 import 'package:upsc_wars/core/debug/upsc_wars_trace.dart';
+import 'package:upsc_wars/core/notifications/notification_prompt_policy.dart';
+import 'package:upsc_wars/core/providers/prefs_provider.dart';
 import 'package:upsc_wars/core/router/app_router.dart';
 import 'package:upsc_wars/core/services/app_local_notifications_service.dart';
 import 'package:upsc_wars/core/services/fcm_token_sync_service.dart';
@@ -63,6 +66,9 @@ class BattleMessagingService {
   /// iOS throws `permissionRequestInProgress` if `requestPermission()` is called
   /// concurrently. Keep a single in-flight request and share it across callers.
   static Future<AuthorizationStatus?>? _pushPermissionRequestInFlight;
+
+  /// One education sheet at a time (War / CA / Community can all settle).
+  static Future<void>? _educationPromptInFlight;
 
   static void setPendingOpenedNotification(RemoteMessage message) {
     _pendingOpenedNotification = message;
@@ -595,20 +601,84 @@ class BattleMessagingService {
     };
   }
 
+  /// After a War / CA / Community screen paints, maybe show the education sheet.
+  ///
+  /// Shell tabs stay mounted in the background, so we only prompt when the
+  /// current router location still matches [surface].
+  static Future<void> maybePromptAfterScreenSettles({
+    required BuildContext context,
+    required NotificationPromptSurface surface,
+    required String source,
+  }) async {
+    await Future<void>.delayed(NotificationPromptPolicy.screenSettleDelay);
+    if (!context.mounted) return;
+    if (!TickerMode.of(context)) return;
+    if (!_locationMatchesSurface(context, surface)) return;
+    await requestPushAuthorizationIfNotDetermined(
+      source: source,
+      surface: surface,
+      kind: NotificationPromptKind.automatic,
+    );
+  }
+
+  static bool _locationMatchesSurface(
+    BuildContext context,
+    NotificationPromptSurface surface,
+  ) {
+    final path = GoRouter.of(context).routeInformationProvider.value.uri.path;
+    return switch (surface) {
+      NotificationPromptSurface.dailyWar =>
+        path == '/daily-war' || path.startsWith('/daily-war/'),
+      NotificationPromptSurface.dailyCa =>
+        path == '/daily-ca' || path.startsWith('/daily-ca/'),
+      NotificationPromptSurface.community =>
+        path == '/community' || path.startsWith('/community/'),
+      NotificationPromptSurface.generic => true,
+    };
+  }
+
   /// Prompts when notifications are not yet allowed.
   ///
-  /// Always shows the in-app education sheet first; the OS dialog runs only
-  /// if the user taps "Turn on alerts". Intended for explicit user actions
-  /// — not auto-prompts.
+  /// Always shows the in-app education sheet first (unless the user already
+  /// tapped enable once); the OS dialog runs only if they tap the CTA.
+  /// Automatic calls are capped and cooldown-gated by [NotificationPromptPolicy].
   ///
   /// iOS: only when [AuthorizationStatus.notDetermined].
   /// Android 13+: when POST_NOTIFICATIONS is not granted (treats pre-prompt as
   /// not-yet-asked, not denied — [notificationAuthorizationStatus] cannot distinguish).
   static Future<void> requestPushAuthorizationIfNotDetermined({
     String source = 'unknown',
+    NotificationPromptSurface surface = NotificationPromptSurface.generic,
+    NotificationPromptKind kind = NotificationPromptKind.explicit,
   }) async {
     if (kIsWeb) return;
 
+    final inFlight = _educationPromptInFlight;
+    if (inFlight != null) {
+      await inFlight;
+      return;
+    }
+
+    final future = _requestPushAuthorizationIfNotDeterminedBody(
+      source: source,
+      surface: surface,
+      kind: kind,
+    );
+    _educationPromptInFlight = future;
+    try {
+      await future;
+    } finally {
+      if (identical(_educationPromptInFlight, future)) {
+        _educationPromptInFlight = null;
+      }
+    }
+  }
+
+  static Future<void> _requestPushAuthorizationIfNotDeterminedBody({
+    required String source,
+    required NotificationPromptSurface surface,
+    required NotificationPromptKind kind,
+  }) async {
     if (defaultTargetPlatform == TargetPlatform.android) {
       final sdkInt = (await DeviceInfoPlugin().androidInfo).version.sdkInt;
       if (sdkInt >= 33) {
@@ -621,10 +691,30 @@ class BattleMessagingService {
       if (status != AuthorizationStatus.notDetermined) return;
     }
 
+    final prefs = PrefsService(await SharedPreferences.getInstance());
+    if (prefs.deferredPushPermissionSheetCompletedV1) {
+      await requestPushAuthorizationAndSync(source: source);
+      return;
+    }
+
+    if (kind == NotificationPromptKind.automatic &&
+        !NotificationPromptPolicy.shouldShowAutomatic(
+          automaticShownCount: prefs.deferredPushModalShownCountV2,
+          lastAutomaticShownAt: prefs.deferredPushLastAutomaticShownAt,
+          now: DateTime.now(),
+        )) {
+      return;
+    }
+
     final ctx = rootNavigatorKey.currentContext;
     if (ctx == null || !ctx.mounted) return;
 
-    final accepted = await showDeferredPushPermissionSheet(ctx, source: source);
+    final accepted = await showDeferredPushPermissionSheet(
+      ctx,
+      source: source,
+      surface: surface,
+      kind: kind,
+    );
     if (accepted != true) return;
 
     await requestPushAuthorizationAndSync(source: source);

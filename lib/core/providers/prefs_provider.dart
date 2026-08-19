@@ -105,6 +105,10 @@ abstract final class PrefKeys {
   static const deferredPushModalShownCountV2 =
       'deferred_push_modal_shown_count_v2';
 
+  /// Epoch ms of the last automatic notification-permission sheet.
+  static const deferredPushLastAutomaticShownAtMsV1 =
+      'deferred_push_last_automatic_shown_at_ms_v1';
+
   /// User dismissed the post-modal home notification hint.
   static const deferredPushHomeNudgeDismissedV2 =
       'deferred_push_home_nudge_dismissed_v2';
@@ -356,6 +360,23 @@ class PrefsService {
       _p.getInt(PrefKeys.deferredPushModalShownCountV2) ?? 0;
   set deferredPushModalShownCountV2(int v) =>
       _p.setInt(PrefKeys.deferredPushModalShownCountV2, v);
+
+  DateTime? get deferredPushLastAutomaticShownAt {
+    final ms = _p.getInt(PrefKeys.deferredPushLastAutomaticShownAtMsV1);
+    if (ms == null || ms <= 0) return null;
+    return DateTime.fromMillisecondsSinceEpoch(ms);
+  }
+
+  set deferredPushLastAutomaticShownAt(DateTime? v) {
+    if (v == null) {
+      _p.remove(PrefKeys.deferredPushLastAutomaticShownAtMsV1);
+    } else {
+      _p.setInt(
+        PrefKeys.deferredPushLastAutomaticShownAtMsV1,
+        v.millisecondsSinceEpoch,
+      );
+    }
+  }
 
   bool get deferredPushHomeNudgeDismissedV2 =>
       _p.getBool(PrefKeys.deferredPushHomeNudgeDismissedV2) ?? false;

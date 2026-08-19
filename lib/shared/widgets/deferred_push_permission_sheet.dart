@@ -6,6 +6,8 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../core/analytics/analytics_events.dart';
 import '../../core/analytics/screen_flow_analytics.dart';
+import '../../core/layout/system_insets.dart';
+import '../../core/notifications/notification_prompt_policy.dart';
 import '../../core/providers/analytics_provider.dart';
 import '../../core/providers/prefs_provider.dart';
 import '../../core/debug/upsc_wars_trace.dart';
@@ -13,35 +15,34 @@ import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_radius.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_text_styles.dart';
+import 'dismissible_modal_sheet.dart';
 
 /// Returns `true` if the user chose to open the system permission flow.
 Future<bool?> showDeferredPushPermissionSheet(
   BuildContext context, {
   required String source,
+  NotificationPromptSurface surface = NotificationPromptSurface.generic,
+  NotificationPromptKind kind = NotificationPromptKind.explicit,
 }) async {
   try {
-    upscWarsTrace('showDeferredPushPermissionSheet: open source=$source');
+    upscWarsTrace(
+      'showDeferredPushPermissionSheet: open source=$source surface=$surface',
+    );
     return await showModalBottomSheet<bool>(
-    context: context,
-    useRootNavigator: true,
-    isScrollControlled: true,
-    isDismissible: false,
-    enableDrag: false,
-    backgroundColor: Colors.transparent,
-    builder: (sheetContext) {
-      final scheme = Theme.of(sheetContext).colorScheme;
-      final isDark = Theme.of(sheetContext).brightness == Brightness.dark;
-      final bottom = MediaQuery.paddingOf(sheetContext).bottom;
-      final borderColor = isDark ? AppColors.borderDark : AppColors.borderLight;
-      return _DeferredPushPermissionPanel(
-        sheetContext: sheetContext,
-        scheme: scheme,
-        isDark: isDark,
-        bottom: bottom,
-        borderColor: borderColor,
-        source: source,
-      );
-    },
+      context: context,
+      useRootNavigator: true,
+      isScrollControlled: true,
+      isDismissible: true,
+      enableDrag: true,
+      backgroundColor: Colors.transparent,
+      builder: (sheetContext) {
+        return _DeferredPushPermissionPanel(
+          sheetContext: sheetContext,
+          source: source,
+          surface: surface,
+          kind: kind,
+        );
+      },
     );
   } catch (e, st) {
     upscWarsTrace('showDeferredPushPermissionSheet', error: e, stackTrace: st);
@@ -49,60 +50,29 @@ Future<bool?> showDeferredPushPermissionSheet(
   }
 }
 
-class _NotificationBenefit {
-  const _NotificationBenefit({
-    required this.title,
-    required this.body,
-    required this.icon,
-  });
-
-  final String title;
-  final String body;
-  final IconData icon;
-}
-
-const _notificationBenefits = [
-  _NotificationBenefit(
-    icon: Icons.military_tech_rounded,
-    title: 'Daily War',
-    body: '9pm nudge so you don’t miss it.',
-  ),
-  _NotificationBenefit(
-    icon: Icons.adjust_rounded,
-    title: 'Weak topics',
-    body: 'Practice where you’re slipping.',
-  ),
-  _NotificationBenefit(
-    icon: Icons.groups_rounded,
-    title: 'Battles & updates',
-    body: 'Invites and key alerts.',
-  ),
-];
-
 class _DeferredPushPermissionPanel extends HookConsumerWidget {
   const _DeferredPushPermissionPanel({
     required this.sheetContext,
-    required this.scheme,
-    required this.isDark,
-    required this.bottom,
-    required this.borderColor,
     required this.source,
+    required this.surface,
+    required this.kind,
   });
 
   final BuildContext sheetContext;
-  final ColorScheme scheme;
-  final bool isDark;
-  final double bottom;
-  final Color borderColor;
   final String source;
+  final NotificationPromptSurface surface;
+  final NotificationPromptKind kind;
 
-  Future<void> _closeWithOutcome(
+  Future<void> _recordOutcome(
     WidgetRef ref, {
     required bool tappedEnable,
   }) async {
     final prefs = await ref.read(prefsServiceProvider.future);
-    final modalIndex = prefs.deferredPushModalShownCountV2 + 1;
-    prefs.deferredPushModalShownCountV2 = modalIndex;
+    if (kind == NotificationPromptKind.automatic) {
+      prefs.deferredPushModalShownCountV2 =
+          prefs.deferredPushModalShownCountV2 + 1;
+      prefs.deferredPushLastAutomaticShownAt = DateTime.now();
+    }
     if (tappedEnable) {
       prefs.deferredPushPermissionSheetCompletedV1 = true;
     }
@@ -111,20 +81,22 @@ class _DeferredPushPermissionPanel extends HookConsumerWidget {
       ref.read(analyticsServiceProvider).track(
             DeferredPushEducationModalOutcomeEvent(
               source: source,
-              modalIndex: modalIndex.clamp(1, 2),
+              modalIndex: prefs.deferredPushModalShownCountV2.clamp(1, 2),
               tappedEnableNotifications: tappedEnable,
             ),
           ),
     );
-    if (sheetContext.mounted) {
-      Navigator.of(sheetContext).pop(tappedEnable);
-    }
   }
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final scheme = Theme.of(context).colorScheme;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final copy = NotificationPromptCopy.forSurface(surface);
     final started = useRef(DateTime.now());
+    final recorded = useRef(false);
     final analytics = ref.read(analyticsServiceProvider);
+
     useEffect(
       () {
         unawaited(
@@ -133,8 +105,7 @@ class _DeferredPushPermissionPanel extends HookConsumerWidget {
           ),
         );
         return () {
-          final d =
-              DateTime.now().difference(started.value).inMilliseconds;
+          final d = DateTime.now().difference(started.value).inMilliseconds;
           if (d < 0) return;
           unawaited(
             analytics.track(
@@ -150,144 +121,176 @@ class _DeferredPushPermissionPanel extends HookConsumerWidget {
       const [],
     );
 
-    return PopScope(
-      canPop: false,
+    Future<void> finish({required bool tappedEnable}) async {
+      if (recorded.value) return;
+      recorded.value = true;
+      await _recordOutcome(ref, tappedEnable: tappedEnable);
+    }
+
+    Future<void> close({required bool tappedEnable}) async {
+      await finish(tappedEnable: tappedEnable);
+      if (sheetContext.mounted) {
+        Navigator.of(sheetContext).pop(tappedEnable);
+      }
+    }
+
+    final sheetFill = isDark ? scheme.surface : AppColors.gray50;
+    final iconWell = isDark
+        ? AppColors.primaryDeep.withValues(alpha: 0.55)
+        : AppColors.primaryLight;
+
+    return DismissOnScrimTap(
       child: Padding(
         padding: EdgeInsets.fromLTRB(
           AppSpacing.sm,
           0,
           AppSpacing.sm,
-          bottom + AppSpacing.sm,
+          sheetBottomPadding(context),
         ),
-        child: DecoratedBox(
-          decoration: BoxDecoration(
-            color: scheme.surface,
+        child: Align(
+          alignment: Alignment.bottomCenter,
+          child: Material(
+            color: sheetFill,
             borderRadius: const BorderRadius.vertical(
-              top: Radius.circular(AppRadius.xl),
+              top: Radius.circular(28),
             ),
-            border: Border.all(color: borderColor.withValues(alpha: 0.45)),
-            boxShadow: [
-              BoxShadow(
-                color: AppColors.gray900.withValues(
-                  alpha: isDark ? 0.5 : 0.12,
+            clipBehavior: Clip.antiAlias,
+            child: PopScope(
+              onPopInvokedWithResult: (didPop, result) {
+                if (!didPop) return;
+                unawaited(finish(tappedEnable: result == true));
+              },
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(
+                  AppSpacing.xl,
+                  AppSpacing.sm,
+                  AppSpacing.xl,
+                  AppSpacing.lg,
                 ),
-                blurRadius: 24,
-                offset: const Offset(0, -6),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Center(
+                      child: Container(
+                        width: 36,
+                        height: 4,
+                        decoration: BoxDecoration(
+                          color: scheme.onSurfaceVariant.withValues(alpha: 0.28),
+                          borderRadius: BorderRadius.circular(AppRadius.pill),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: AppSpacing.xl),
+                    Container(
+                      width: 44,
+                      height: 44,
+                      decoration: BoxDecoration(
+                        color: iconWell,
+                        borderRadius: BorderRadius.circular(AppRadius.md),
+                      ),
+                      alignment: Alignment.center,
+                      child: Icon(
+                        Icons.notifications_rounded,
+                        size: 22,
+                        color: isDark
+                            ? AppColors.correctTextDark
+                            : AppColors.warning,
+                      ),
+                    ),
+                    const SizedBox(height: AppSpacing.lg),
+                    Text(
+                      copy.title,
+                      style: AppTextStyles.h1().copyWith(
+                        color: scheme.onSurface,
+                        fontWeight: FontWeight.w700,
+                        height: 1.25,
+                        letterSpacing: -0.3,
+                      ),
+                    ),
+                    const SizedBox(height: AppSpacing.sm),
+                    Text(
+                      copy.body,
+                      style: AppTextStyles.body().copyWith(
+                        color: scheme.onSurfaceVariant,
+                        height: 1.45,
+                      ),
+                    ),
+                    const SizedBox(height: AppSpacing.sm),
+                    Text(
+                      copy.alsoLine,
+                      style: AppTextStyles.bodySm().copyWith(
+                        color: scheme.onSurfaceVariant,
+                        height: 1.4,
+                      ),
+                    ),
+                    const SizedBox(height: AppSpacing.xxl),
+                    SizedBox(
+                      width: double.infinity,
+                      height: 52,
+                      child: FilledButton(
+                        onPressed: () {
+                          upscWarsTrace(
+                            'showDeferredPushPermissionSheet: tap_enable',
+                          );
+                          ScreenFlow.logAction(
+                            ref,
+                            screenName: ScreenFlow.deferredPushPrePrompt,
+                            actionId: 'turn_on_notifications',
+                          );
+                          unawaited(close(tappedEnable: true));
+                        },
+                        style: FilledButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(AppRadius.pill),
+                          ),
+                        ),
+                        child: Text(
+                          copy.cta,
+                          style: AppTextStyles.label().copyWith(
+                            fontWeight: FontWeight.w700,
+                            color: AppColors.onPrimary,
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: AppSpacing.sm),
+                    Center(
+                      child: TextButton(
+                        onPressed: () {
+                          upscWarsTrace(
+                            'showDeferredPushPermissionSheet: tap_not_now',
+                          );
+                          ScreenFlow.logAction(
+                            ref,
+                            screenName: ScreenFlow.deferredPushPrePrompt,
+                            actionId: 'not_now',
+                            actionKind: 'dismiss',
+                          );
+                          unawaited(close(tappedEnable: false));
+                        },
+                        child: Text(
+                          NotificationPromptCopy.notNow,
+                          style: AppTextStyles.label().copyWith(
+                            color: scheme.onSurface,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: AppSpacing.xs),
+                    Center(
+                      child: Text(
+                        NotificationPromptCopy.footer,
+                        textAlign: TextAlign.center,
+                        style: AppTextStyles.caption().copyWith(
+                          color: scheme.onSurfaceVariant.withValues(alpha: 0.8),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            ],
-          ),
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(
-              AppSpacing.lg,
-              AppSpacing.lg,
-              AppSpacing.lg,
-              AppSpacing.md,
-            ),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Text(
-                  'Stay on track',
-                  textAlign: TextAlign.center,
-                  style: AppTextStyles.h3().copyWith(
-                    color: scheme.onSurface,
-                    letterSpacing: -0.3,
-                  ),
-                ),
-                const SizedBox(height: AppSpacing.xs),
-                Text(
-                  'Useful pings only — turn off anytime.',
-                  textAlign: TextAlign.center,
-                  style: AppTextStyles.bodySm().copyWith(
-                    color: scheme.onSurfaceVariant,
-                    height: 1.35,
-                  ),
-                ),
-                const SizedBox(height: AppSpacing.md),
-                ..._notificationBenefits.map(
-                  (benefit) => Padding(
-                    padding: const EdgeInsets.only(bottom: AppSpacing.sm),
-                    child: Row(
-                      children: [
-                        Container(
-                          width: 36,
-                          height: 36,
-                          decoration: BoxDecoration(
-                            color: scheme.primaryContainer.withValues(
-                              alpha: isDark ? 0.35 : 0.55,
-                            ),
-                            borderRadius: BorderRadius.circular(AppRadius.sm),
-                          ),
-                          child: Icon(
-                            benefit.icon,
-                            size: 20,
-                            color: scheme.primary,
-                          ),
-                        ),
-                        const SizedBox(width: AppSpacing.sm),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                benefit.title,
-                                style: AppTextStyles.body().copyWith(
-                                  color: scheme.onSurface,
-                                  fontWeight: FontWeight.w600,
-                                  height: 1.2,
-                                ),
-                              ),
-                              Text(
-                                benefit.body,
-                                style: AppTextStyles.bodySm().copyWith(
-                                  color: scheme.onSurfaceVariant,
-                                  height: 1.3,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                const SizedBox(height: AppSpacing.md),
-                FilledButton(
-                  onPressed: () {
-                    upscWarsTrace('showDeferredPushPermissionSheet: tap_enable');
-                    ScreenFlow.logAction(
-                      ref,
-                      screenName: ScreenFlow.deferredPushPrePrompt,
-                      actionId: 'turn_on_notifications',
-                    );
-                    unawaited(_closeWithOutcome(ref, tappedEnable: true));
-                  },
-                  child: Text(
-                    'Turn on alerts',
-                    style: AppTextStyles.label(),
-                  ),
-                ),
-                const SizedBox(height: AppSpacing.sm),
-                TextButton(
-                  onPressed: () {
-                    upscWarsTrace('showDeferredPushPermissionSheet: tap_not_now');
-                    ScreenFlow.logAction(
-                      ref,
-                      screenName: ScreenFlow.deferredPushPrePrompt,
-                      actionId: 'not_now',
-                      actionKind: 'dismiss',
-                    );
-                    unawaited(_closeWithOutcome(ref, tappedEnable: false));
-                  },
-                  child: Text(
-                    'Maybe later',
-                    style: AppTextStyles.label().copyWith(
-                      color: scheme.onSurfaceVariant,
-                    ),
-                  ),
-                ),
-              ],
             ),
           ),
         ),

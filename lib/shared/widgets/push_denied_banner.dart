@@ -77,14 +77,14 @@ class PushDeniedBanner extends HookConsumerWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'You’re missing Community alerts',
+                    'You’re missing Daily War, CA & community alerts',
                     style: AppTextStyles.label().copyWith(
                       color: scheme.onSurface,
                     ),
                   ),
                   const SizedBox(height: AppSpacing.xs),
                   Text(
-                    'Turn on notifications to get battle invites, challenge updates, and chat replies.',
+                    'Turn on notifications for tonight’s war, daily current affairs, practice reminders, and battle invites.',
                     style: AppTextStyles.caption().copyWith(
                       color: scheme.onSurfaceVariant,
                       height: 1.25,

@@ -32,6 +32,8 @@ class TodayHubData {
     required this.staticSubject,
     required this.staticSubjectDisplay,
     required this.staticCompleted,
+    required this.revisionWrongCount,
+    required this.revisionBookmarkCount,
     required this.streak,
     required this.fullDaysThisWeek,
   });
@@ -57,11 +59,13 @@ class TodayHubData {
   final bool paperChecking;
   final bool paperCompleted;
 
-  /// False until home activation completes — the drill stays out of the way.
+  /// False while the revision-queue provider has not resolved.
   final bool staticAvailable;
   final String staticSubject;
   final String staticSubjectDisplay;
   final bool staticCompleted;
+  final int revisionWrongCount;
+  final int revisionBookmarkCount;
 
   final int streak;
   final int fullDaysThisWeek;
@@ -148,6 +152,8 @@ final todayHubProvider = Provider.autoDispose<TodayHubData>((ref) {
     staticSubject: drill?.subject ?? '',
     staticSubjectDisplay: drill?.subjectDisplayName ?? '',
     staticCompleted: drill?.completedToday ?? false,
+    revisionWrongCount: drill?.wrongCount ?? 0,
+    revisionBookmarkCount: drill?.bookmarkCount ?? 0,
     streak: prefs == null
         ? 0
         : DailyStreakService.visibleStreak(prefs: prefs),

@@ -479,17 +479,19 @@ class HomeScreen extends HookConsumerWidget {
                     Consumer(
                       builder: (context, ref, _) {
                         final journey = ref.watch(homeActivationJourneyProvider);
-                        final state = journey.value;
+                        final state = journey.asData?.value ?? journey.value;
                         final forceCollapsed =
                             state?.shouldShowChecklist ?? false;
                         return TodayHubSection(
                           forceWarCollapsed: forceCollapsed,
                           activationJourney: state,
+                          activationJourneyLoading:
+                              journey.isLoading && !journey.hasValue,
                         );
                       },
                     ),
                     const SizedBox(height: AppSpacing.md),
-                    // Practice section: tabbed Subjects + PYQ
+                    // Practice section: PYQ carousel above Subjects
                     Consumer(
                       builder: (context, ref, _) {
                         final journey = ref.watch(
@@ -844,40 +846,19 @@ class _PyqYearCarousel extends StatelessWidget {
           accent: AppColors.primary,
         ),
         const SizedBox(height: AppSpacing.sm),
-        LayoutBuilder(
-          builder: (context, constraints) {
-            final isWide = constraints.maxWidth >= AppBreakpoints.tablet;
-            if (isWide) {
-              return Wrap(
-                spacing: AppSpacing.sm,
-                runSpacing: AppSpacing.sm,
-                children: [
-                  for (var i = 0; i < years.length; i++)
-                    _HomeDiscoveryCard(
-                      borderColor: borderColor,
-                      titleText: years[i],
-                      icon: _icons[i % _icons.length],
-                      accent: _accents[i % _accents.length],
-                      onTap: () => context.push('/pyq-year/${years[i]}'),
-                    ),
-                ],
-              );
-            }
-            return _HorizontalDiscoveryStrip(
-              children: [
-                for (var i = 0; i < years.length; i++) ...[
-                  if (i != 0) const SizedBox(width: AppSpacing.sm),
-                  _HomeDiscoveryCard(
-                    borderColor: borderColor,
-                    titleText: years[i],
-                    icon: _icons[i % _icons.length],
-                    accent: _accents[i % _accents.length],
-                    onTap: () => context.push('/pyq-year/${years[i]}'),
-                  ),
-                ],
-              ],
-            );
-          },
+        _HorizontalDiscoveryStrip(
+          children: [
+            for (var i = 0; i < years.length; i++) ...[
+              if (i != 0) const SizedBox(width: AppSpacing.sm),
+              _HomeDiscoveryCard(
+                borderColor: borderColor,
+                titleText: years[i],
+                icon: _icons[i % _icons.length],
+                accent: _accents[i % _accents.length],
+                onTap: () => context.push('/pyq-year/${years[i]}'),
+              ),
+            ],
+          ],
         ),
       ],
     );
@@ -990,9 +971,9 @@ class _HomeDiscoveryCard extends StatelessWidget {
   }
 }
 
-// ── Practice Section (tabbed: Subjects / PYQ by Year) ────────────────────────
+// ── Practice Section (PYQ by Year above Subjects) ────────────────────────────
 
-class _PracticeSection extends HookConsumerWidget {
+class _PracticeSection extends StatelessWidget {
   const _PracticeSection({
     required this.borderColor,
     this.secondary = false,
@@ -1011,77 +992,14 @@ class _PracticeSection extends HookConsumerWidget {
   ];
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final scheme = Theme.of(context).colorScheme;
-    final selectedTab = useState(0); // 0 = Subjects, 1 = PYQ
-
+  Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        // Segment toggle header
-        Row(
-          children: [
-            _PracticeTab(
-              label: 'Subjects',
-              selected: selectedTab.value == 0,
-              onTap: () => selectedTab.value = 0,
-              scheme: scheme,
-            ),
-            const SizedBox(width: AppSpacing.sm),
-            _PracticeTab(
-              label: 'PYQ by Year',
-              selected: selectedTab.value == 1,
-              onTap: () => selectedTab.value = 1,
-              scheme: scheme,
-            ),
-          ],
-        ),
-        const SizedBox(height: AppSpacing.sm),
-        if (selectedTab.value == 0)
-          _SubjectGrid(borderColor: borderColor, secondary: secondary)
-        else
-          _PyqYearCarousel(borderColor: borderColor, years: _pyqYears),
+        _PyqYearCarousel(borderColor: borderColor, years: _pyqYears),
+        const SizedBox(height: AppSpacing.md),
+        _SubjectGrid(borderColor: borderColor, secondary: secondary),
       ],
-    );
-  }
-}
-
-class _PracticeTab extends StatelessWidget {
-  const _PracticeTab({
-    required this.label,
-    required this.selected,
-    required this.onTap,
-    required this.scheme,
-  });
-
-  final String label;
-  final bool selected;
-  final VoidCallback onTap;
-  final ColorScheme scheme;
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 180),
-        padding: const EdgeInsets.symmetric(
-          horizontal: AppSpacing.md,
-          vertical: AppSpacing.xs,
-        ),
-        decoration: BoxDecoration(
-          color: selected ? AppColors.primary : scheme.surfaceContainerLow,
-          borderRadius: BorderRadius.circular(AppRadius.pill),
-        ),
-        child: Text(
-          label,
-          style: AppTextStyles.caption().copyWith(
-            color: selected ? AppColors.onPrimary : scheme.onSurfaceVariant,
-            fontWeight: selected ? FontWeight.w700 : FontWeight.w500,
-            letterSpacing: 0.3,
-          ),
-        ),
-      ),
     );
   }
 }

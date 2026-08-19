@@ -59,7 +59,7 @@ void main() {
       );
     });
 
-    test('noon – 6 PM is the drill', () {
+    test('noon – 6 PM is the revision queue', () {
       expect(
         TodayHero.scheduledHero(
           istNow: DateTime(2026, 8, 17, 12),

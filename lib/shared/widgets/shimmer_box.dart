@@ -3,19 +3,22 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 
 /// A pulsing placeholder box used in skeleton loading states.
 ///
-/// Animates opacity between 40 % and 100 % using the theme's
-/// [ColorScheme.surfaceContainerLow] so it adapts to both light and dark mode.
+/// Animates opacity between 40 % and 100 %. Defaults to the theme's
+/// [ColorScheme.surfaceContainerLow]; pass [color] to override (e.g. dark
+/// Daily War surfaces).
 class ShimmerBox extends HookWidget {
   const ShimmerBox({
     super.key,
     required this.width,
     required this.height,
     this.borderRadius = 6,
+    this.color,
   });
 
   final double width;
   final double height;
   final double borderRadius;
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +32,8 @@ class ShimmerBox extends HookWidget {
       ),
     );
 
-    final color = Theme.of(context).colorScheme.surfaceContainerLow;
+    final color =
+        this.color ?? Theme.of(context).colorScheme.surfaceContainerLow;
 
     return AnimatedBuilder(
       animation: ctrl,

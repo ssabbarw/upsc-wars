@@ -3,6 +3,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../shared/widgets/shimmer_box.dart';
 import '../domain/daily_war_badges.dart';
 import '../providers/daily_war_providers.dart';
 import '../theme/daily_war_theme.dart';
@@ -22,79 +23,100 @@ class DailyWarEarnedBadgesSection extends ConsumerWidget {
     final scheme = Theme.of(context).colorScheme;
     final async = ref.watch(dailyWarBadgeTalliesProvider);
 
-    return async.when(
-      loading: () => const Padding(
-        padding: EdgeInsets.symmetric(vertical: AppSpacing.lg),
-        child: Center(child: CircularProgressIndicator()),
-      ),
-      error: (e, _) => Text(
-        'Could not load badges: $e',
-        style: AppTextStyles.bodySm().copyWith(color: scheme.error),
-      ),
-      data: (tallies) {
-        final earnedIds = _catalog
-            .where((id) => (tallies[id] ?? 0) > 0)
-            .toList();
-        final lockedIds = _catalog
-            .where((id) => (tallies[id] ?? 0) <= 0)
-            .toList();
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Divider(
+          height: 1,
+          thickness: 0.5,
+          color: scheme.outlineVariant.withValues(alpha: 0.7),
+        ),
+        const SizedBox(height: AppSpacing.lg),
+        Text(
+          'Earned badges',
+          style: AppTextStyles.h3().copyWith(
+            color: scheme.onSurface,
+            fontWeight: FontWeight.w700,
+          ),
+        ),
+        const SizedBox(height: AppSpacing.sm),
+        async.when(
+          loading: () => const _EarnedBadgesShimmer(),
+          error: (e, _) => Text(
+            'Could not load badges: $e',
+            style: AppTextStyles.bodySm().copyWith(color: scheme.error),
+          ),
+          data: (tallies) {
+            final earnedIds = _catalog
+                .where((id) => (tallies[id] ?? 0) > 0)
+                .toList();
+            final lockedIds = _catalog
+                .where((id) => (tallies[id] ?? 0) <= 0)
+                .toList();
 
-        return Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Divider(
-              height: 1,
-              thickness: 0.5,
-              color: scheme.outlineVariant.withValues(alpha: 0.7),
-            ),
-            const SizedBox(height: AppSpacing.lg),
-            Text(
-              'EARNED BADGES',
-              style: AppTextStyles.caption().copyWith(
-                color: scheme.onSurfaceVariant,
-                fontWeight: FontWeight.w700,
-                letterSpacing: 1.1,
-              ),
-            ),
-            const SizedBox(height: AppSpacing.sm),
-            if (earnedIds.isEmpty)
-              Text(
-                'You have not yet earned a badge',
-                style: AppTextStyles.bodySm().copyWith(
-                  color: scheme.onSurfaceVariant,
-                ),
-              )
-            else
-              Wrap(
-                spacing: 6,
-                runSpacing: 6,
-                children: [
-                  for (final id in earnedIds)
-                    _BadgeChip(
-                      badgeId: id,
-                      count: tallies[id] ?? 0,
-                      earned: true,
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                if (earnedIds.isEmpty)
+                  Text(
+                    'You have not yet earned a badge',
+                    style: AppTextStyles.bodySm().copyWith(
+                      color: scheme.onSurfaceVariant,
                     ),
+                  )
+                else
+                  Wrap(
+                    spacing: 6,
+                    runSpacing: 6,
+                    children: [
+                      for (final id in earnedIds)
+                        _BadgeChip(
+                          badgeId: id,
+                          count: tallies[id] ?? 0,
+                          earned: true,
+                        ),
+                    ],
+                  ),
+                if (lockedIds.isNotEmpty) ...[
+                  const SizedBox(height: AppSpacing.md),
+                  Wrap(
+                    spacing: 6,
+                    runSpacing: 6,
+                    children: [
+                      for (final id in lockedIds)
+                        _BadgeChip(
+                          badgeId: id,
+                          count: 0,
+                          earned: false,
+                        ),
+                    ],
+                  ),
                 ],
-              ),
-            if (lockedIds.isNotEmpty) ...[
-              const SizedBox(height: AppSpacing.md),
-              Wrap(
-                spacing: 6,
-                runSpacing: 6,
-                children: [
-                  for (final id in lockedIds)
-                    _BadgeChip(
-                      badgeId: id,
-                      count: 0,
-                      earned: false,
-                    ),
-                ],
-              ),
-            ],
-          ],
-        );
-      },
+              ],
+            );
+          },
+        ),
+      ],
+    );
+  }
+}
+
+class _EarnedBadgesShimmer extends StatelessWidget {
+  const _EarnedBadgesShimmer();
+
+  @override
+  Widget build(BuildContext context) {
+    return const Wrap(
+      spacing: 6,
+      runSpacing: 6,
+      children: [
+        ShimmerBox(width: 132, height: 44, borderRadius: 10),
+        ShimmerBox(width: 118, height: 44, borderRadius: 10),
+        ShimmerBox(width: 148, height: 44, borderRadius: 10),
+        ShimmerBox(width: 110, height: 44, borderRadius: 10),
+        ShimmerBox(width: 140, height: 44, borderRadius: 10),
+        ShimmerBox(width: 124, height: 44, borderRadius: 10),
+      ],
     );
   }
 }

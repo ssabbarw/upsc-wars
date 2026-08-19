@@ -263,7 +263,7 @@ abstract final class TodayHero {
       return prefer(TodaySlotId.war);
     }
 
-    // Noon – 6 PM: War-topic drill.
+    // Noon – 6 PM: revision queue.
     if (hour >= practiceHourIst && hour < warHourIst) {
       return prefer(TodaySlotId.practice);
     }

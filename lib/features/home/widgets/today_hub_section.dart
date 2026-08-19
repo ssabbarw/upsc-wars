@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:intl/intl.dart';
 
 import '../../../core/providers/prefs_provider.dart';
 import '../../../core/theme/app_colors.dart';
@@ -12,6 +13,7 @@ import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../daily_ca/domain/daily_ca_schedule.dart';
 import '../../daily_ca/domain/open_daily_ca_test.dart';
+import '../../daily_ca/widgets/daily_ca_unavailable_sheet.dart';
 import '../../daily_war/domain/daily_war_copy.dart';
 import '../../daily_war/domain/daily_war_models.dart';
 import '../../daily_war/domain/daily_war_phase.dart';
@@ -20,6 +22,8 @@ import '../../daily_war/domain/daily_war_schedule.dart';
 import '../../daily_war/providers/server_clock_provider.dart';
 import '../../daily_war/theme/daily_war_theme.dart';
 import '../../daily_war/widgets/daily_war_home_card.dart';
+import '../domain/activation_journey_constants.dart';
+import '../domain/daily_revision.dart';
 import '../domain/daily_streak_service.dart';
 import '../domain/start_sunday_week_review.dart';
 import '../domain/today_hero.dart';
@@ -38,10 +42,15 @@ class TodayHubSection extends HookConsumerWidget {
     super.key,
     this.forceWarCollapsed = false,
     this.activationJourney,
+    this.activationJourneyLoading = false,
   });
 
   final bool forceWarCollapsed;
   final HomeActivationJourneyState? activationJourney;
+
+  /// True on the first load, before we know whether START HERE should win.
+  /// Avoids flashing the time-of-day hero for a new user.
+  final bool activationJourneyLoading;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -144,6 +153,27 @@ class TodayHubSection extends HookConsumerWidget {
       }
     }
 
+    void openPaperOrUnavailable() {
+      if (data.paperLive) {
+        unawaited(openPaper());
+        return;
+      }
+      unawaited(
+        showDailyCaUnavailableSheet(
+          context: context,
+          availableFrom: DailyCaSchedule.nextOpensAt(referenceIst: ist),
+          pendingLive: data.paperDate != null,
+          onSeeHistory: () {
+            if (context.mounted) context.push('/daily-ca');
+          },
+        ),
+      );
+    }
+
+    void openWarSurface() {
+      context.push('/daily-war/history');
+    }
+
     Future<void> openWeekReview() async {
       final uuids = weekReview?.uuids ?? const <String>[];
       if (uuids.isEmpty || launchingReview.value) return;
@@ -175,10 +205,14 @@ class TodayHubSection extends HookConsumerWidget {
       switch (hero) {
         case TodaySlotId.war:
           if (!data.warEnabled || sundayHub) break;
-          // Use full DailyWarHomeCard only when it's the true live/urgent hero.
+          // Full War surface for tonight's window (prepare through live).
+          // Overnight / catch-up keep the compact card.
           final useFullWar = !overnight && !pick.caughtUp && !forceWarCollapsed;
-          if (useFullWar && warLive) {
-            return DailyWarHomeCard(forceCollapsed: false);
+          if (useFullWar) {
+            return const DailyWarHomeCard(
+              forceCollapsed: false,
+              forceExpanded: true,
+            );
           }
           return _WarHeroCard(
             dateId: hubWarDateId,
@@ -205,7 +239,7 @@ class TodayHubSection extends HookConsumerWidget {
             loading: launchingPaper.value || data.paperChecking,
             questionsReady: data.paperLive,
             emphasized: !pick.caughtUp,
-            onStart: data.paperLive ? openPaper : null,
+            onStart: openPaperOrUnavailable,
           );
 
         case TodaySlotId.practice:
@@ -225,6 +259,8 @@ class TodayHubSection extends HookConsumerWidget {
           return _PracticeHeroCard(
             isSunday: false,
             mistakeCount: 0,
+            wrongCount: data.revisionWrongCount,
+            bookmarkCount: data.revisionBookmarkCount,
             completed: data.staticCompleted,
             loading: false,
             emphasized: !pick.caughtUp,
@@ -298,12 +334,15 @@ class TodayHubSection extends HookConsumerWidget {
               if (!data.staticAvailable) continue;
               rows.add(
                 _TodayListRowData(
-                  icon: Icons.fitness_center_rounded,
+                  icon: Icons.replay_rounded,
                   accent: AppColors.primary,
-                  title: 'Static War',
+                  title: 'Revision queue',
                   subtitle: data.staticCompleted
                       ? 'Done today'
-                      : '10 questions, timed, your subjects',
+                      : DailyRevision.countsLine(
+                          missed: data.revisionWrongCount,
+                          saved: data.revisionBookmarkCount,
+                        ),
                   done: data.staticCompleted,
                   locked: false,
                   onTap: () {
@@ -343,62 +382,33 @@ class TodayHubSection extends HookConsumerWidget {
                 subtitle: warSubtitle,
                 done: hubWarSubmitted,
                 locked: false,
-                onTap: () => context.push('/daily-war/history'),
+                onTap: openWarSurface,
               ),
             );
         }
       }
 
       if (hero == TodaySlotId.current && data.caEnabled) {
-        rows.insert(
-          0,
-          _TodayListRowData(
-            icon: Icons.article_outlined,
-            accent: AppColors.info,
-            title: 'Daily Current Affairs Test',
-            subtitle: data.paperCompleted
-                ? 'Done today'
-                : "Current affairs test from yesterday's news.",
-            done: data.paperCompleted,
-            locked: false,
-            onTap: () => context.push('/daily-ca'),
-          ),
-        );
-        rows.insert(1, _caShotsListRow(context));
+        rows.insert(0, _caShotsListRow(context));
       }
 
-      if (hero == TodaySlotId.war && data.warEnabled && !sundayHub) {
-        rows.add(
-          _TodayListRowData(
-            icon: Icons.shield_outlined,
-            accent: DwColors.crimsonBright,
-            title: warName,
-            subtitle: _warListSubtitle(
-              submitted: hubWarSubmitted,
-              live: warLive,
-              resultsOpen: warResultsOpen,
-              topics: warTopics,
-              phase: warPhase,
-              isGrand: isGrand,
-              weekend: weekend,
-            ),
-            done: hubWarSubmitted,
-            locked: false,
-            onTap: () => context.push('/daily-war/history'),
-          ),
-        );
-      }
-
-      // Always show Danger Zone at the end
+      final scored = activationJourney?.scoredAttempts;
+      final unlockAt =
+          ActivationJourneyConstants.confidenceMapUnlockAttempts;
+      final unlocked = scored != null && scored >= unlockAt;
       rows.add(
         _TodayListRowData(
           icon: Icons.lock_outline_rounded,
           accent: AppColors.wrong,
           title: 'Danger Zone',
-          subtitle: 'Unlocks at 50 questions — 0/50 so far',
+          subtitle: unlocked
+              ? 'Trap patterns from questions you were sure about'
+              : scored == null
+              ? 'Unlocks at $unlockAt questions'
+              : 'Unlocks at $unlockAt questions — $scored/$unlockAt so far',
           done: false,
-          locked: true,
-          onTap: () => context.push('/weak-areas/traps'),
+          locked: !unlocked,
+          onTap: unlocked ? () => context.push('/weak-areas/traps') : null,
         ),
       );
 
@@ -415,9 +425,14 @@ class TodayHubSection extends HookConsumerWidget {
 
     // When activation checklist is active, show it as the hero instead.
     final journey = activationJourney;
-    final heroWidget = (journey != null && journey.shouldShowChecklist)
-        ? ActivationJourneyCard(state: journey)
-        : buildHeroCard();
+    final Widget heroWidget;
+    if (activationJourneyLoading) {
+      heroWidget = const _HeroLoadingCard();
+    } else if (journey != null && journey.shouldShowChecklist) {
+      heroWidget = ActivationJourneyCard(state: journey);
+    } else {
+      heroWidget = buildHeroCard();
+    }
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -847,11 +862,12 @@ class _WarHeroCard extends StatelessWidget {
       eyebrow = 'TONIGHT';
       final topicTitle = topicsLine.isNotEmpty
           ? topicsLine
-          : 'Daily War starts in';
+          : 'Daily War starts at 9 PM';
       title = topicTitle;
-      description =
-          'Local Government — Union Executive. All-India live test, public leaderboard.';
-      ctaLabel = 'Set a reminder';
+      description = isGrand
+          ? 'Static GS week revision. All-India live test, public leaderboard.'
+          : 'Static GS paper. All-India live test, public leaderboard.';
+      ctaLabel = 'Open';
       bg = isDark ? const Color(0xFF0D2818) : const Color(0xFF1B4332);
     }
 
@@ -864,14 +880,7 @@ class _WarHeroCard extends StatelessWidget {
       ctaColor: submitted || (!live && !resultsOpen)
           ? AppColors.primary
           : DwColors.crimsonBright,
-      onTap: () {
-        if (submitted) {
-          if (dateId.isEmpty) return;
-          context.push('/daily-war/history/$dateId');
-          return;
-        }
-        context.push('/daily-war');
-      },
+      onTap: () => context.push('/daily-war/history'),
     );
   }
 }
@@ -906,23 +915,33 @@ class _CaHeroCard extends StatelessWidget {
     final String title;
     final String description;
     final String ctaLabel;
+    final date = paperDate;
+    final dateLabel = date == null
+        ? null
+        : (isTodaysPaper
+              ? "Today's paper"
+              : '${DateFormat('d MMM').format(date)} paper');
 
-    if (completed) {
+    if (date == null) {
       eyebrow = 'CURRENT AFFAIRS';
-      title = 'Today\'s brief done';
-      description = 'You\'ve read today\'s CA brief and answered the question.';
-      ctaLabel = 'Revise again';
+      title = 'Paper quiz';
+      description = 'Opens at 6 AM — yesterday\'s news, today\'s questions.';
+      ctaLabel = 'Soon';
+    } else if (completed) {
+      eyebrow = 'CURRENT AFFAIRS';
+      title = dateLabel!;
+      description = 'Quiz done. Open the explanations if a line still nags.';
+      ctaLabel = 'Open answers';
     } else if (!questionsReady) {
       eyebrow = 'CURRENT AFFAIRS';
-      title = 'Today\'s brief coming soon';
-      description =
-          'The daily CA brief will be ready shortly. Check back in a few minutes.';
-      ctaLabel = 'Check back later';
+      title = dateLabel!;
+      description = 'Questions are being prepared. Check back shortly.';
+      ctaLabel = 'Soon';
     } else {
-      eyebrow = 'START HERE';
-      title = "Today's current affairs brief";
-      description = 'Read the brief, answer the MCQ — done in under 3 minutes.';
-      ctaLabel = 'Read the brief';
+      eyebrow = 'CURRENT AFFAIRS';
+      title = dateLabel!;
+      description = 'A test on yesterday\'s news. Same paper, then the answers.';
+      ctaLabel = 'Start the quiz';
     }
 
     return _BigHeroCard(
@@ -945,6 +964,8 @@ class _PracticeHeroCard extends StatelessWidget {
   const _PracticeHeroCard({
     required this.isSunday,
     required this.mistakeCount,
+    this.wrongCount = 0,
+    this.bookmarkCount = 0,
     required this.completed,
     required this.loading,
     required this.emphasized,
@@ -954,6 +975,8 @@ class _PracticeHeroCard extends StatelessWidget {
 
   final bool isSunday;
   final int mistakeCount;
+  final int wrongCount;
+  final int bookmarkCount;
   final bool completed;
   final bool loading;
   final bool emphasized;
@@ -987,16 +1010,24 @@ class _PracticeHeroCard extends StatelessWidget {
         ctaLabel = mistakeCount > 0 ? 'Start review' : 'Quick practice instead';
       }
     } else {
-      eyebrow = 'THIS AFTERNOON';
+      eyebrow = 'REVISION QUEUE';
+      title = 'Revision queue';
+      final counts = DailyRevision.countsLine(
+        missed: wrongCount,
+        saved: bookmarkCount,
+      );
       if (completed) {
-        title = 'Static War done';
-        description = 'Today\'s drill is in the books. Keep it up.';
-        ctaLabel = 'See results';
-      } else {
-        title = 'Static War';
+        description = counts == DailyRevision.emptyQueueLine
+            ? 'Today\'s revision is in the books.'
+            : '$counts. Open again if you want another set.';
+        ctaLabel = 'Open again';
+      } else if (wrongCount <= 0 && bookmarkCount <= 0) {
         description =
-            '10 questions, timed, your subjects. Sharpen before tonight.';
-        ctaLabel = 'Start the drill';
+            'Questions you get wrong or bookmark land here. Then take a short random test.';
+        ctaLabel = 'Empty';
+      } else {
+        description = '$counts. A short random test from either pool.';
+        ctaLabel = 'Open';
       }
     }
 
@@ -1039,6 +1070,22 @@ class _DayCompleteHeroCard extends StatelessWidget {
       ctaColor: AppColors.primary,
       onTap: null,
       footer: '🔥 Streak intact · Next war in 15h',
+    );
+  }
+}
+
+class _HeroLoadingCard extends StatelessWidget {
+  const _HeroLoadingCard();
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return Container(
+      height: 220,
+      decoration: BoxDecoration(
+        color: scheme.surfaceContainerLow,
+        borderRadius: BorderRadius.circular(AppRadius.xl),
+      ),
     );
   }
 }

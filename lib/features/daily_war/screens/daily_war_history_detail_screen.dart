@@ -10,6 +10,7 @@ import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/widgets/dismissible_modal_sheet.dart';
+import '../../../shared/widgets/shimmer_box.dart';
 import '../../community/widgets/admin_bot_label.dart';
 import '../daily_war_constants.dart';
 import '../domain/daily_war_copy.dart';
@@ -60,7 +61,7 @@ class DailyWarHistoryDetailScreen extends HookConsumerWidget {
     final scheme = Theme.of(context).colorScheme;
 
     final body = archiveAsync.when(
-      loading: () => const Center(child: CircularProgressIndicator()),
+      loading: () => const _DaySheetShimmer(),
       error: (e, _) => Center(
         child: Padding(
           padding: const EdgeInsets.all(24),
@@ -302,6 +303,62 @@ class DailyWarHistoryDetailScreen extends HookConsumerWidget {
       backgroundColor: scheme.surface,
       appBar: AppBar(title: const Text('War archive')),
       body: body,
+    );
+  }
+}
+
+class _DaySheetShimmer extends StatelessWidget {
+  const _DaySheetShimmer();
+
+  @override
+  Widget build(BuildContext context) {
+    return const SingleChildScrollView(
+      physics: NeverScrollableScrollPhysics(),
+      padding: EdgeInsets.fromLTRB(20, 8, 20, 40),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              ShimmerBox(width: 88, height: 18, borderRadius: 6),
+              Spacer(),
+              ShimmerBox(width: 72, height: 12),
+            ],
+          ),
+          SizedBox(height: 12),
+          ShimmerBox(width: 160, height: 12),
+          SizedBox(height: 8),
+          ShimmerBox(width: double.infinity, height: 28),
+          SizedBox(height: 6),
+          ShimmerBox(width: 220, height: 28),
+          SizedBox(height: 20),
+          ShimmerBox(
+            width: double.infinity,
+            height: 120,
+            borderRadius: 16,
+          ),
+          SizedBox(height: 16),
+          ShimmerBox(width: 140, height: 16),
+          SizedBox(height: 12),
+          ShimmerBox(
+            width: double.infinity,
+            height: 56,
+            borderRadius: 12,
+          ),
+          SizedBox(height: 8),
+          ShimmerBox(
+            width: double.infinity,
+            height: 56,
+            borderRadius: 12,
+          ),
+          SizedBox(height: 8),
+          ShimmerBox(
+            width: double.infinity,
+            height: 56,
+            borderRadius: 12,
+          ),
+        ],
+      ),
     );
   }
 }

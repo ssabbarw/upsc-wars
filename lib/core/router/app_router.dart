@@ -49,7 +49,6 @@ import '../../features/daily_war/screens/daily_war_history_detail_screen.dart';
 import '../../features/daily_war/screens/daily_war_history_revise_screen.dart';
 import '../../features/daily_war/screens/daily_war_history_screen.dart';
 import '../../features/daily_war/screens/daily_war_leaderboard_screen.dart';
-import '../../features/daily_war/screens/daily_war_lobby_screen.dart';
 import '../../features/daily_war/screens/daily_war_results_screen.dart';
 import '../../features/pyq/screens/pyq_year_packs_screen.dart';
 import '../../features/home/screens/complete_profile_screen.dart';
@@ -773,7 +772,7 @@ GoRouter appRouter(Ref ref) {
         parentNavigatorKey: rootNavigatorKey,
         path: '/daily-war',
         name: 'daily_war_lobby',
-        builder: (context, state) => const DailyWarLobbyScreen(),
+        builder: (context, state) => const DailyWarHistoryScreen(),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
