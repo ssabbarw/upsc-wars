@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:app_settings/app_settings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
@@ -15,7 +14,6 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
-import '../../../shared/widgets/deferred_push_permission_sheet.dart';
 import '../../../shared/widgets/dismissible_modal_sheet.dart';
 import '../providers/home_activation_journey_provider.dart';
 import 'get_started_card.dart';
@@ -77,39 +75,155 @@ class ActivationJourneyCard extends HookConsumerWidget {
       };
     }, [container]);
 
-    final cardFill = isDark
-        ? AppColors.primaryDeep.withValues(alpha: 0.28)
-        : AppColors.primaryLight;
-    final divider = isDark
-        ? Colors.white.withValues(alpha: 0.08)
-        : AppColors.primary.withValues(alpha: 0.12);
+    // New big-card hero style matching the home redesign.
+    final bg = isDark ? const Color(0xFF0D2818) : const Color(0xFF1B4332);
+    final ctaColor = AppColors.primary;
 
-    return Container(
-      decoration: BoxDecoration(
-        color: cardFill,
-        borderRadius: BorderRadius.circular(16),
-      ),
-      padding: EdgeInsets.fromLTRB(
-        14,
-        10,
-        14,
-        state.checklistCompletedCount > 0 ? 4 : 6,
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          _Header(
-            completedCount: state.checklistCompletedCount,
-            onSnooze: state.canSnoozeChecklist
-                ? () =>
-                      unawaited(showActivationJourneySnoozeSheet(context, ref))
-                : null,
+    // When demo is already done, show a quieter completed state.
+    if (state.todo1Done) {
+      final scheme = Theme.of(context).colorScheme;
+      return Container(
+        decoration: BoxDecoration(
+          color: isDark
+              ? AppColors.primaryDeep.withValues(alpha: 0.28)
+              : AppColors.primaryLight,
+          borderRadius: BorderRadius.circular(AppRadius.xl),
+        ),
+        padding: const EdgeInsets.all(AppSpacing.lg),
+        child: Row(
+          children: [
+            Container(
+              width: 36,
+              height: 36,
+              decoration: BoxDecoration(
+                color: AppColors.primary.withValues(alpha: 0.15),
+                shape: BoxShape.circle,
+              ),
+              child: const Icon(
+                Icons.check_rounded,
+                size: 18,
+                color: AppColors.primary,
+              ),
+            ),
+            const SizedBox(width: AppSpacing.md),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Demo test done',
+                    style: AppTextStyles.label().copyWith(
+                      color: scheme.onSurface,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  Text(
+                    'You\'re all set — practice every day to build your rank.',
+                    style: AppTextStyles.caption().copyWith(
+                      color: scheme.onSurfaceVariant,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      );
+    }
+
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: () => unawaited(showGetStartedDiagnosticIntroSheet(context)),
+        borderRadius: BorderRadius.circular(AppRadius.xl),
+        child: Ink(
+          decoration: BoxDecoration(
+            color: bg,
+            borderRadius: BorderRadius.circular(AppRadius.xl),
           ),
-          SizedBox(height: state.todo1Done ? 6 : 8),
-          _DemoStep(state: state),
-          Divider(height: 1, thickness: 1, color: divider),
-          _RemindersStep(state: state),
-        ],
+          padding: const EdgeInsets.all(AppSpacing.lg),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Row(
+                children: [
+                  Text(
+                    'START HERE',
+                    style: AppTextStyles.caption().copyWith(
+                      color: ctaColor,
+                      fontWeight: FontWeight.w800,
+                      letterSpacing: 1.2,
+                    ),
+                  ),
+                  const Spacer(),
+                  if (state.canSnoozeChecklist)
+                    GestureDetector(
+                      onTap: () => unawaited(
+                        showActivationJourneySnoozeSheet(context, ref),
+                      ),
+                      child: Icon(
+                        Icons.close_rounded,
+                        size: 18,
+                        color: Colors.white.withValues(alpha: 0.45),
+                      ),
+                    ),
+                ],
+              ),
+              const SizedBox(height: AppSpacing.sm),
+              Text(
+                'Take the 5-minute demo test',
+                style: AppTextStyles.h1().copyWith(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w800,
+                  fontSize: 22,
+                  height: 1.2,
+                ),
+              ),
+              const SizedBox(height: AppSpacing.sm),
+              Text(
+                'See how a trap question fools confident aspirants \u2014 and how Danger Zone catches it.',
+                style: AppTextStyles.bodySm().copyWith(
+                  color: Colors.white.withValues(alpha: 0.72),
+                  height: 1.5,
+                ),
+              ),
+              const SizedBox(height: AppSpacing.lg),
+              SizedBox(
+                height: 48,
+                child: ElevatedButton(
+                  onPressed: () =>
+                      unawaited(showGetStartedDiagnosticIntroSheet(context)),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: ctaColor,
+                    foregroundColor: Colors.white,
+                    elevation: 0,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(AppRadius.pill),
+                    ),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Start the test',
+                        style: AppTextStyles.label().copyWith(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                      const SizedBox(width: AppSpacing.xs),
+                      const Icon(
+                        Icons.arrow_forward_rounded,
+                        size: 16,
+                        color: Colors.white,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
@@ -242,247 +356,6 @@ class _ActivationJourneySnoozeSheet extends ConsumerWidget {
   }
 }
 
-class _Header extends StatelessWidget {
-  const _Header({required this.completedCount, this.onSnooze});
-
-  final int completedCount;
-  final VoidCallback? onSnooze;
-
-  @override
-  Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-    final label = completedCount == 0 ? 'START HERE' : 'KEEP GOING';
-    const total = HomeActivationJourneyState.checklistStepCount;
-    return Row(
-      children: [
-        Text(
-          label,
-          style: AppTextStyles.caption().copyWith(
-            color: AppColors.primaryDark,
-            fontWeight: FontWeight.w800,
-            letterSpacing: 1.2,
-          ),
-        ),
-        const Spacer(),
-        Text(
-          '$completedCount of $total',
-          style: AppTextStyles.caption().copyWith(
-            color: AppColors.primaryDark.withValues(alpha: 0.7),
-            fontWeight: FontWeight.w600,
-          ),
-        ),
-        const SizedBox(width: 8),
-        Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            for (var i = 0; i < total; i++) ...[
-              if (i > 0) const SizedBox(width: 3),
-              Container(
-                width: 14,
-                height: 4,
-                decoration: BoxDecoration(
-                  color: i < completedCount
-                      ? AppColors.primary
-                      : AppColors.primary.withValues(alpha: 0.22),
-                  borderRadius: BorderRadius.circular(2),
-                ),
-              ),
-            ],
-          ],
-        ),
-        if (onSnooze != null) ...[
-          const SizedBox(width: 4),
-          IconButton(
-            onPressed: onSnooze,
-            visualDensity: VisualDensity.compact,
-            padding: EdgeInsets.zero,
-            constraints: const BoxConstraints(minWidth: 32, minHeight: 32),
-            tooltip: 'Hide for now',
-            icon: Icon(
-              Icons.close_rounded,
-              size: 18,
-              color: scheme.onSurfaceVariant.withValues(alpha: 0.7),
-            ),
-          ),
-        ],
-      ],
-    );
-  }
-}
-
-class _DemoStep extends ConsumerWidget {
-  const _DemoStep({required this.state});
-
-  final HomeActivationJourneyState state;
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final scheme = Theme.of(context).colorScheme;
-    final done = state.todo1Done;
-
-    if (done) {
-      return const _CollapsedDoneRow(title: 'Demo test done');
-    }
-
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const _ActiveBadge(index: 1),
-          const SizedBox(width: 10),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Take a demo test',
-                  style: AppTextStyles.label().copyWith(
-                    color: scheme.onSurface,
-                    fontWeight: FontWeight.w800,
-                    fontSize: 15,
-                    height: 1.15,
-                  ),
-                ),
-                const SizedBox(height: 2),
-                Text(
-                  'Explanations, traps & elimination — see how it works.',
-                  style: AppTextStyles.bodySm().copyWith(
-                    color: scheme.onSurfaceVariant,
-                    height: 1.3,
-                  ),
-                ),
-                const SizedBox(height: 6),
-                Row(
-                  children: [
-                    TextButton(
-                      onPressed: () {
-                        unawaited(
-                          Analytics.track(
-                            ref,
-                            const ActivationJourneyTodoTappedEvent(
-                              todoIndex: 1,
-                            ),
-                          ),
-                        );
-                        unawaited(showGetStartedDiagnosticIntroSheet(context));
-                      },
-                      style: TextButton.styleFrom(
-                        foregroundColor: AppColors.primaryDark,
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 0,
-                          vertical: 4,
-                        ),
-                        minimumSize: Size.zero,
-                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                        visualDensity: VisualDensity.compact,
-                      ),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Text(
-                            'Let\u2019s go',
-                            style: AppTextStyles.label().copyWith(
-                              fontWeight: FontWeight.w700,
-                              color: AppColors.primaryDark,
-                              fontSize: 13,
-                            ),
-                          ),
-                          const SizedBox(width: 2),
-                          const Icon(
-                            Icons.arrow_forward_rounded,
-                            size: 14,
-                            color: AppColors.primaryDark,
-                          ),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(width: 10),
-                    Text(
-                      'About 5 min',
-                      style: AppTextStyles.caption().copyWith(
-                        color: scheme.onSurfaceVariant,
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class _RemindersStep extends ConsumerWidget {
-  const _RemindersStep({required this.state});
-
-  final HomeActivationJourneyState state;
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final done = state.todo2Done;
-
-    if (done) {
-      return const _CollapsedDoneRow(title: 'Reminders on');
-    }
-
-    return _ActiveCompactStep(
-      index: 2,
-      title: 'Turn on daily reminders',
-      subtitle: 'Stay on track for the 9pm War and daily practice.',
-      ctaLabel: 'Turn on notifications',
-      onCta: () => unawaited(_enableReminders(context, ref)),
-    );
-  }
-}
-
-Future<void> _enableReminders(BuildContext context, WidgetRef ref) async {
-  // Capture before awaits — OS permission dialog can dispose the widget/ref.
-  final container = ProviderScope.containerOf(context);
-
-  await Analytics.track(
-    ref,
-    const ActivationJourneyTodoTappedEvent(todoIndex: 2),
-  );
-
-  if (await BattleMessagingService.notificationsAreEnabled()) {
-    container.invalidate(homeActivationJourneyProvider);
-    return;
-  }
-
-  // Same education sheet that used to auto-show on 2nd app open.
-  if (!context.mounted) return;
-  final accepted = await showDeferredPushPermissionSheet(
-    context,
-    source: 'activation_reminders',
-  );
-  if (accepted != true) {
-    container.invalidate(homeActivationJourneyProvider);
-    return;
-  }
-
-  try {
-    final status = await BattleMessagingService.requestPushAuthorizationAndSync(
-      source: 'activation_reminders',
-    );
-    final grantedByOs =
-        status != null &&
-        BattleMessagingService.notificationAuthorizationAllowsPush(status);
-    final enabled = await BattleMessagingService.notificationsAreEnabled();
-
-    // Only open Settings when still blocked after an explicit denial.
-    // Avoid a race right after grant where the OS briefly reports disabled.
-    if (!enabled && !grantedByOs) {
-      await AppSettings.openAppSettings(type: AppSettingsType.notification);
-    }
-  } catch (_) {
-    // Permission / FCM sync failures shouldn't crash home — refresh UI anyway.
-  }
-
-  container.invalidate(homeActivationJourneyProvider);
-}
 
 class _ReminderLifecycleObserver with WidgetsBindingObserver {
   _ReminderLifecycleObserver({required this.onResumed});
@@ -651,169 +524,7 @@ class DangerZoneHomeNudge extends ConsumerWidget {
   }
 }
 
-class _ActiveCompactStep extends StatelessWidget {
-  const _ActiveCompactStep({
-    required this.index,
-    required this.title,
-    required this.subtitle,
-    this.ctaLabel,
-    this.onCta,
-  });
 
-  final int index;
-  final String title;
-  final String subtitle;
-
-  /// When null, the step renders without a button (passive / self-completing).
-  final String? ctaLabel;
-  final VoidCallback? onCta;
-
-  @override
-  Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          _ActiveBadge(index: index),
-          const SizedBox(width: 10),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: AppTextStyles.label().copyWith(
-                    color: scheme.onSurface,
-                    fontWeight: FontWeight.w800,
-                    fontSize: 15,
-                    height: 1.15,
-                  ),
-                ),
-                const SizedBox(height: 2),
-                Text(
-                  subtitle,
-                  style: AppTextStyles.bodySm().copyWith(
-                    color: scheme.onSurfaceVariant,
-                    height: 1.3,
-                  ),
-                ),
-                if (ctaLabel != null && onCta != null) ...[
-                  const SizedBox(height: 6),
-                  TextButton(
-                    onPressed: onCta,
-                    style: TextButton.styleFrom(
-                      foregroundColor: AppColors.primaryDark,
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 0,
-                        vertical: 4,
-                      ),
-                      minimumSize: Size.zero,
-                      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                      visualDensity: VisualDensity.compact,
-                    ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(
-                          ctaLabel!,
-                          style: AppTextStyles.label().copyWith(
-                            fontWeight: FontWeight.w700,
-                            color: AppColors.primaryDark,
-                            fontSize: 13,
-                          ),
-                        ),
-                        const SizedBox(width: 2),
-                        const Icon(
-                          Icons.arrow_forward_rounded,
-                          size: 14,
-                          color: AppColors.primaryDark,
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class _CollapsedDoneRow extends StatelessWidget {
-  const _CollapsedDoneRow({required this.title});
-
-  final String title;
-
-  @override
-  Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 4),
-      child: Row(
-        children: [
-          Container(
-            width: 14,
-            height: 14,
-            decoration: BoxDecoration(
-              color: AppColors.primary.withValues(alpha: 0.85),
-              shape: BoxShape.circle,
-            ),
-            child: const Icon(
-              Icons.check_rounded,
-              size: 10,
-              color: Colors.white,
-            ),
-          ),
-          const SizedBox(width: 10),
-          Expanded(
-            child: Text(
-              title,
-              style: AppTextStyles.caption().copyWith(
-                color: scheme.onSurfaceVariant.withValues(alpha: 0.75),
-                fontWeight: FontWeight.w600,
-                height: 1.1,
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class _ActiveBadge extends StatelessWidget {
-  const _ActiveBadge({required this.index});
-
-  final int index;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 22,
-      height: 22,
-      alignment: Alignment.center,
-      decoration: const BoxDecoration(
-        color: AppColors.primary,
-        shape: BoxShape.circle,
-      ),
-      child: Text(
-        '$index',
-        style: AppTextStyles.caption().copyWith(
-          color: Colors.white,
-          fontWeight: FontWeight.w800,
-          fontSize: 11,
-          height: 1,
-        ),
-      ),
-    );
-  }
-}
 
 Future<void> _openDangerZone(
   BuildContext context,

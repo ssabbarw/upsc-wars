@@ -484,44 +484,33 @@ class HomeScreen extends HookConsumerWidget {
                       ],
                     ),
                     const SizedBox(height: AppSpacing.md),
+                    // Danger Zone nudge (quiet, after checklist graduates).
                     Consumer(
                       builder: (context, ref, _) {
                         final journey = ref.watch(
                           homeActivationJourneyProvider,
                         );
-                        // Use .value so that a reload (e.g. on dark-mode
-                        // toggle) keeps the last known state visible instead
-                        // of collapsing to empty while the Future re-runs.
                         final state = journey.value;
-                        if (state == null) return const SizedBox.shrink();
-                        final Widget child;
-                        if (state.shouldShowChecklist) {
-                          child = ActivationJourneyCard(state: state);
-                        } else if (state.shouldShowDangerZoneNudge) {
-                          child = DangerZoneHomeNudge(state: state);
-                        } else {
+                        if (state == null || !state.shouldShowDangerZoneNudge) {
                           return const SizedBox.shrink();
                         }
                         return Padding(
                           padding: const EdgeInsets.only(
                             bottom: AppSpacing.md,
                           ),
-                          child: child,
+                          child: DangerZoneHomeNudge(state: state),
                         );
                       },
                     ),
-                    // START HERE sits above the daily loops. Keep War collapsed
-                    // so the checklist still reads as the first thing to do.
                     Consumer(
                       builder: (context, ref, _) {
-                        final forceCollapsed = ref
-                            .watch(homeActivationJourneyProvider)
-                            .maybeWhen(
-                              data: (s) => s.shouldShowChecklist,
-                              orElse: () => false,
-                            );
+                        final journey = ref.watch(homeActivationJourneyProvider);
+                        final state = journey.value;
+                        final forceCollapsed =
+                            state?.shouldShowChecklist ?? false;
                         return TodayHubSection(
                           forceWarCollapsed: forceCollapsed,
+                          activationJourney: state,
                         );
                       },
                     ),

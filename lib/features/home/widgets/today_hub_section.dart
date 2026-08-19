@@ -5,7 +5,6 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../core/constants/daily_drill_constants.dart';
 import '../../../core/providers/prefs_provider.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
@@ -13,7 +12,6 @@ import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../daily_ca/domain/daily_ca_schedule.dart';
 import '../../daily_ca/domain/open_daily_ca_test.dart';
-import '../../daily_ca/widgets/daily_ca_home_card.dart';
 import '../../daily_war/domain/daily_war_copy.dart';
 import '../../daily_war/domain/daily_war_models.dart';
 import '../../daily_war/domain/daily_war_phase.dart';
@@ -24,30 +22,34 @@ import '../../daily_war/theme/daily_war_theme.dart';
 import '../../daily_war/widgets/daily_war_explainer_sheet.dart';
 import '../../daily_war/widgets/daily_war_home_card.dart';
 import '../../daily_war/widgets/daily_war_topics_sheet.dart';
-import '../../fomo_pulse/widgets/fomo_pulse_home_card.dart';
 import '../domain/daily_streak_service.dart';
 import '../domain/start_sunday_week_review.dart';
 import '../domain/today_hero.dart';
 import '../providers/sunday_week_review_provider.dart';
 import '../providers/today_hub_provider.dart';
-import 'daily_drill_card.dart';
+import '../providers/home_activation_journey_provider.dart';
+import 'activation_journey_card.dart';
 import 'daily_revision_choice_sheet.dart';
-import 'sunday_week_review_card.dart';
-import 'today_loop_card.dart';
 
-/// Daily ritual on home: one full-width hero, companions in a row.
+/// Daily ritual on home: one full-width hero card + a flat "TODAY" activity list.
 ///
-/// Missing loops (Remote Config off, Sunday rest, not yet activated) simply
-/// drop out — one companion becomes a banner, a single loop is just the hero.
+/// The hero card changes based on time of day and which activity is most urgent.
+/// All other activities appear as list rows beneath the hero.
 class TodayHubSection extends HookConsumerWidget {
-  const TodayHubSection({super.key, this.forceWarCollapsed = false});
+  const TodayHubSection({
+    super.key,
+    this.forceWarCollapsed = false,
+    this.activationJourney,
+  });
 
   final bool forceWarCollapsed;
+  final HomeActivationJourneyState? activationJourney;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final data = ref.watch(todayHubProvider);
     final scheme = Theme.of(context).colorScheme;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
 
     final offset = ref.watch(serverTimeOffsetMsProvider).asData?.value ?? 0;
     final tick = useState(0);
@@ -155,379 +157,614 @@ class TodayHubSection extends HookConsumerWidget {
       }
     }
 
-    Widget? cardFor(TodaySlotId id, TodayLoopLayout layout) {
-      final isHero = id == hero && layout == TodayLoopLayout.hero;
-      switch (id) {
-        case TodaySlotId.current:
-          if (!data.caEnabled) return null;
-          return DailyCaHomeCard(
-            paperDate: data.paperDate,
-            isTodaysPaper:
-                data.paperDate != null &&
-                DailyCaSchedule.isTodaysPaper(
-                  data.paperDate!,
-                  referenceIst: ist,
-                ),
-            completed: data.paperCompleted,
-            questionCount: DailyDrillConstants.questionCount,
-            loading: launchingPaper.value || data.paperChecking,
-            questionsReady: data.paperLive,
-            emphasized: isHero && !pick.caughtUp,
-            layout: layout,
-            onStart: data.paperLive ? openPaper : null,
-          );
-        case TodaySlotId.practice:
-          if (sundayHub) {
-            if (weekReview == null) return null;
-            return SundayWeekReviewCard(
-              mistakeCount: weekReview.uuids.length,
-              completed: weekReview.completedToday,
-              emphasized: isHero && !pick.caughtUp,
-              loading: launchingReview.value,
-              layout: layout,
-              onStart: openWeekReview,
-              onStartDrillInstead: data.staticAvailable
-                  ? () {
-                      unawaited(
-                        showDailyRevisionChoiceSheet(
-                          context: context,
-                          ref: ref,
-                          source: 'sunday_week_review_empty',
-                        ),
-                      );
-                    }
-                  : null,
-            );
-          }
-          if (!data.staticAvailable) return null;
-          return DailyDrillCard(
-            emphasized: isHero && !pick.caughtUp,
-            layout: layout,
-          );
+    // ── War phase helpers ────────────────────────────────────────────────────
+    final warLive =
+        warPhase == DailyWarPhase.lobby ||
+        warPhase == DailyWarPhase.liveJoinable ||
+        warPhase == DailyWarPhase.liveLocked;
+    final warResultsOpen =
+        overnight ||
+        warPhase == DailyWarPhase.resultsPending ||
+        warPhase == DailyWarPhase.resultsReady;
+    final isGrand = hubWarDoc?.isGrand == true;
+    final weekend = isGrand || warTopics.length > 2;
+    final warName = isGrand ? 'Grand War' : 'Daily War';
+
+    // ── Hero card content ────────────────────────────────────────────────────
+
+    // Returns the hero card widget for the given hero slot.
+    Widget buildHeroCard() {
+      switch (hero) {
         case TodaySlotId.war:
-          if (!data.warEnabled || sundayHub) return null;
+          if (!data.warEnabled || sundayHub) break;
+          // Use full DailyWarHomeCard only when it's the true live/urgent hero.
           final useFullWar =
-              isHero && !overnight && !pick.caughtUp && !forceWarCollapsed;
-          if (useFullWar) {
+              !overnight && !pick.caughtUp && !forceWarCollapsed;
+          if (useFullWar && warLive) {
             return DailyWarHomeCard(forceCollapsed: false);
           }
-          return _HubWarCard(
+          return _WarHeroCard(
             dateId: hubWarDateId,
             submitted: hubWarSubmitted,
             topics: warTopics,
             phase: warPhase,
             overnight: overnight,
-            layout: layout,
-            showNow: isHero && !pick.caughtUp,
-            isGrand: hubWarDoc?.isGrand == true,
+            showNow: !pick.caughtUp,
+            isGrand: isGrand,
+            caughtUp: pick.caughtUp,
+          );
+
+        case TodaySlotId.current:
+          if (!data.caEnabled) break;
+          return _CaHeroCard(
+            paperDate: data.paperDate,
+            isTodaysPaper: data.paperDate != null &&
+                DailyCaSchedule.isTodaysPaper(
+                  data.paperDate!,
+                  referenceIst: ist,
+                ),
+            completed: data.paperCompleted,
+            loading: launchingPaper.value || data.paperChecking,
+            questionsReady: data.paperLive,
+            emphasized: !pick.caughtUp,
+            onStart: data.paperLive ? openPaper : null,
+          );
+
+        case TodaySlotId.practice:
+          if (sundayHub) {
+            if (weekReview == null) break;
+            return _PracticeHeroCard(
+              isSunday: true,
+              mistakeCount: weekReview.uuids.length,
+              completed: weekReview.completedToday,
+              loading: launchingReview.value,
+              emphasized: !pick.caughtUp,
+              caughtUp: pick.caughtUp,
+              onStart: openWeekReview,
+            );
+          }
+          if (!data.staticAvailable) break;
+          return _PracticeHeroCard(
+            isSunday: false,
+            mistakeCount: 0,
+            completed: data.staticCompleted,
+            loading: false,
+            emphasized: !pick.caughtUp,
+            caughtUp: pick.caughtUp,
+            onStart: () {
+              unawaited(
+                showDailyRevisionChoiceSheet(
+                  context: context,
+                  ref: ref,
+                  source: 'today_hub_hero',
+                ),
+              );
+            },
           );
       }
+
+      // Fallback: full-day done card
+      return _DayCompleteHeroCard(slots: slots);
     }
 
-    Widget rowOf(List<Widget> cards) {
-      if (cards.length == 1) return cards.first;
-      return IntrinsicHeight(
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            for (var i = 0; i < cards.length; i++) ...[
-              if (i > 0) const SizedBox(width: AppSpacing.sm),
-              Expanded(child: cards[i]),
-            ],
-          ],
-        ),
-      );
-    }
+    // ── TODAY list rows ──────────────────────────────────────────────────────
 
-    Widget withShots(Widget ca) {
-      final isDark = Theme.of(context).brightness == Brightness.dark;
-      final borderColor = isDark ? AppColors.borderDark : AppColors.borderLight;
-      return _CaGroup(borderColor: borderColor, ca: ca);
-    }
+    final allDisplayIds = TodayHero.displayOrder(
+      hero,
+      warEvening: warEvening,
+      caughtUp: pick.caughtUp,
+    );
+    final companionIds = allDisplayIds.where((id) => id != hero).toList();
 
-    // Returns an "Available from …" label when the slot has no content yet.
-    // War always has topics/info to show, so it is never dimmed.
-    // Practice is only dimmed before noon when the drill hasn't been assigned.
-    String? upcomingLabelFor(TodaySlotId id) {
-      if (pick.caughtUp) return null;
-      switch (id) {
-        case TodaySlotId.current:
-          return null;
-        case TodaySlotId.practice:
-          if (!sundayHub && !data.staticAvailable &&
-              hour < TodayHero.practiceHourIst) return 'From 12 PM';
-          return null;
-        case TodaySlotId.war:
-          // War card always shows topics or "Tonight at 9 PM" — never dim it.
-          return null;
+    List<_TodayListRowData> buildListRows() {
+      final rows = <_TodayListRowData>[];
+
+      for (final id in companionIds) {
+        switch (id) {
+          case TodaySlotId.current:
+            if (!data.caEnabled) continue;
+            // Daily CA test row
+            rows.add(_TodayListRowData(
+              icon: Icons.article_outlined,
+              accent: AppColors.info,
+              title: 'Daily Current Affairs Test',
+              subtitle: data.paperCompleted
+                  ? 'Done today'
+                  : "Current affairs test from yesterday's news.",
+              done: data.paperCompleted,
+              locked: false,
+              onTap: data.paperLive ? openPaper : null,
+              loading: launchingPaper.value || data.paperChecking,
+            ));
+            rows.add(_caShotsListRow(context));
+
+          case TodaySlotId.practice:
+            if (sundayHub) {
+              if (weekReview == null) continue;
+              rows.add(_TodayListRowData(
+                icon: Icons.history_edu_rounded,
+                accent: AppColors.warning,
+                title: 'Week Review',
+                subtitle: weekReview.completedToday
+                    ? 'Done today'
+                    : '${weekReview.uuids.length} mistakes to revisit',
+                done: weekReview.completedToday,
+                locked: false,
+                onTap: weekReview.uuids.isNotEmpty ? openWeekReview : null,
+                loading: launchingReview.value,
+              ));
+            } else {
+              if (!data.staticAvailable) continue;
+              rows.add(_TodayListRowData(
+                icon: Icons.fitness_center_rounded,
+                accent: AppColors.primary,
+                title: 'Static War',
+                subtitle: data.staticCompleted
+                    ? 'Done today'
+                    : '10 questions, timed, your subjects',
+                done: data.staticCompleted,
+                locked: false,
+                onTap: () {
+                  unawaited(
+                    showDailyRevisionChoiceSheet(
+                      context: context,
+                      ref: ref,
+                      source: 'today_hub_list',
+                    ),
+                  );
+                },
+              ));
+            }
+
+          case TodaySlotId.war:
+            if (!data.warEnabled || sundayHub) continue;
+            final warTitle = warLive
+                ? (isGrand ? 'Grand War — LIVE' : 'Daily War — LIVE')
+                : warResultsOpen
+                ? 'Daily War — last night'
+                : warName;
+            final warSubtitle = _warListSubtitle(
+              submitted: hubWarSubmitted,
+              live: warLive,
+              resultsOpen: warResultsOpen,
+              topics: warTopics,
+              phase: warPhase,
+              isGrand: isGrand,
+              weekend: weekend,
+            );
+            rows.add(_TodayListRowData(
+              icon: Icons.shield_outlined,
+              accent: DwColors.crimsonBright,
+              title: warTitle,
+              subtitle: warSubtitle,
+              done: hubWarSubmitted,
+              locked: false,
+              onTap: () {
+                if (warLive) {
+                  context.push('/daily-war');
+                  return;
+                }
+                if (hubWarSubmitted || warResultsOpen) {
+                  if (hubWarDateId.isEmpty) return;
+                  context.push('/daily-war/history/$hubWarDateId');
+                  return;
+                }
+                if (weekend && warTopics.isNotEmpty) {
+                  unawaited(
+                    showDailyWarTopicsSheet(
+                      context: context,
+                      topics: warTopics,
+                    ),
+                  );
+                  return;
+                }
+                unawaited(
+                  showDailyWarExplainerSheet(
+                    context: context,
+                    topics: warTopics,
+                    isGrand: isGrand,
+                  ),
+                );
+              },
+            ));
+        }
       }
-    }
 
-    Widget? placed(TodaySlotId id, TodayLoopLayout layout) {
-      final card = cardFor(id, layout);
-      if (card == null) return null;
-      final base = id == TodaySlotId.current ? withShots(card) : card;
-      final label = id != hero ? upcomingLabelFor(id) : null;
-      if (label == null) return base;
-      return _UpcomingCompanionWrap(label: label, child: base);
-    }
-
-    final companionIds = [
-      for (final id in TodayHero.companions(hero, warEvening: warEvening))
-        if (cardFor(id, TodayLoopLayout.tile) != null) id,
-    ];
-    // War topics and the CA+shots pair need full width — keep them out of
-    // the half-width tile row.
-    final companionBlocks = <Widget>[];
-    var rowIds = <TodaySlotId>[];
-
-    void flushRow() {
-      if (rowIds.isEmpty) return;
-      final layout = rowIds.length == 1
-          ? TodayLoopLayout.banner
-          : TodayLoopLayout.tile;
-      final cards = [
-        for (final id in rowIds) cardFor(id, layout),
-      ].whereType<Widget>().toList();
-      if (cards.isNotEmpty) companionBlocks.add(rowOf(cards));
-      rowIds = [];
-    }
-
-    for (final id in companionIds) {
-      if (id == TodaySlotId.war || id == TodaySlotId.current) {
-        flushRow();
-        final block = placed(id, TodayLoopLayout.banner);
-        if (block != null) companionBlocks.add(block);
-      } else {
-        rowIds.add(id);
+      // CA Shots sits under Daily CA; if CA is the hero, still show it first.
+      if (hero == TodaySlotId.current && data.caEnabled) {
+        rows.insert(0, _caShotsListRow(context));
       }
+
+      // Always show Danger Zone at the end
+      rows.add(_TodayListRowData(
+        icon: Icons.lock_outline_rounded,
+        accent: AppColors.wrong,
+        title: 'Danger Zone',
+        subtitle: 'Unlocks at 50 questions — 0/50 so far',
+        done: false,
+        locked: true,
+        onTap: () => context.push('/weak-areas/traps'),
+      ));
+
+      return rows;
     }
-    flushRow();
 
-    final heroCard = placed(hero, TodayLoopLayout.hero);
+    final listRows = buildListRows();
 
-    if (heroCard == null && companionBlocks.isEmpty) {
+    if (!data.caEnabled && !data.warEnabled && !data.staticAvailable) {
       return const SizedBox.shrink();
     }
 
-    final kicker = pick.caughtUp
-        ? 'DAY SEALED'
-        : hour < TodayHero.paperHourIst || hour >= TodayHero.warWindowEndHourIst
-        ? 'STILL OPEN'
-        : hour < TodayHero.practiceHourIst
-        ? 'THIS MORNING'
-        : hour < TodayHero.warHourIst
-        ? 'THIS AFTERNOON'
-        : 'TONIGHT';
-    final subline = pick.caughtUp
-        ? 'Nothing left on the table today.'
-        : kicker == 'STILL OPEN'
-        ? 'Today isn\'t closed yet.'
-        : null;
+    final borderColor = isDark ? AppColors.borderDark : AppColors.borderLight;
+
+    // When activation checklist is active, show it as the hero instead.
+    final journey = activationJourney;
+    final heroWidget = (journey != null && journey.shouldShowChecklist)
+        ? ActivationJourneyCard(state: journey)
+        : buildHeroCard();
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Text(
-          kicker,
-          style: AppTextStyles.caption().copyWith(
-            color: scheme.onSurfaceVariant,
-            fontWeight: FontWeight.w800,
-            letterSpacing: 1.2,
-          ),
-        ),
-        if (subline != null) ...[
-          const SizedBox(height: 2),
+        // ── Hero card ──────────────────────────────────────────────────────
+        heroWidget,
+
+        // ── TODAY list ─────────────────────────────────────────────────────
+        if (listRows.isNotEmpty) ...[
+          const SizedBox(height: AppSpacing.md),
           Text(
-            subline,
-            style: AppTextStyles.bodySm().copyWith(
+            'TODAY',
+            style: AppTextStyles.caption().copyWith(
               color: scheme.onSurfaceVariant,
+              fontWeight: FontWeight.w700,
+              letterSpacing: 1.1,
             ),
           ),
-        ],
-        const SizedBox(height: AppSpacing.md),
-        ?heroCard,
-        for (final block in companionBlocks) ...[
-          const SizedBox(height: AppSpacing.md),
-          block,
-        ],
-        if (!data.caEnabled) ...[
-          const SizedBox(height: AppSpacing.md),
-          const FomoPulseHomeCard(),
+          const SizedBox(height: AppSpacing.sm),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(AppRadius.lg),
+            child: Container(
+              decoration: BoxDecoration(
+                color: scheme.surface,
+                borderRadius: BorderRadius.circular(AppRadius.lg),
+                border: Border.all(color: borderColor, width: 0.8),
+              ),
+              child: Column(
+                children: [
+                  for (var i = 0; i < listRows.length; i++) ...[
+                    if (i > 0)
+                      Divider(
+                        height: 1,
+                        thickness: 0.8,
+                        color: borderColor,
+                        indent: 16,
+                        endIndent: 0,
+                      ),
+                    _TodayListRow(data: listRows[i]),
+                  ],
+                ],
+              ),
+            ),
+          ),
         ],
       ],
     );
   }
 }
 
-/// Groups the Daily CA test card and CA Shots into one polished "Current
-/// Affairs" block. The test card sits in a tinted panel; CA Shots sit in a
-/// contrasting accent strip below, making both feel like first-class entries.
-class _CaGroup extends StatelessWidget {
-  const _CaGroup({required this.borderColor, required this.ca});
+// ── List row data ─────────────────────────────────────────────────────────────
 
-  final Color borderColor;
-  final Widget ca;
+class _TodayListRowData {
+  const _TodayListRowData({
+    required this.icon,
+    required this.accent,
+    required this.title,
+    required this.subtitle,
+    required this.done,
+    required this.locked,
+    this.onTap,
+    this.loading = false,
+  });
+
+  final IconData icon;
+  final Color accent;
+  final String title;
+  final String subtitle;
+  final bool done;
+  final bool locked;
+  final VoidCallback? onTap;
+  final bool loading;
+}
+
+class _TodayListRow extends StatelessWidget {
+  const _TodayListRow({required this.data});
+
+  final _TodayListRowData data;
 
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final accent =
+        data.locked ? scheme.onSurfaceVariant.withValues(alpha: 0.5) : data.accent;
+    final fg =
+        data.locked ? scheme.onSurfaceVariant : scheme.onSurface;
 
-    // Top panel: inherits the CA card's own info-blue tint.
-    final topBg = isDark ? AppColors.infoBgDark : AppColors.infoBg;
-    final topBorder = isDark
-        ? AppColors.infoTextDark.withValues(alpha: 0.25)
-        : AppColors.infoText.withValues(alpha: 0.18);
-
-    // Bottom strip: primary-teal accent for the Shots entry.
-    final shotsBg = isDark
-        ? AppColors.primary.withValues(alpha: 0.14)
-        : AppColors.primary.withValues(alpha: 0.07);
-    final shotsAccent = AppColors.primary;
-
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(AppRadius.xl),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          // ── Top: CA test card ─────────────────────────────────────────
-          Container(
-            decoration: BoxDecoration(
-              color: topBg,
-              border: Border.all(color: topBorder, width: 1.2),
-              borderRadius: const BorderRadius.vertical(
-                top: Radius.circular(AppRadius.xl),
-              ),
+    return Opacity(
+      opacity: data.locked ? 0.7 : 1.0,
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          onTap: data.locked ? null : data.onTap,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: AppSpacing.lg,
+              vertical: AppSpacing.md,
             ),
-            child: ca,
-          ),
-
-          // Thin teal separator between the two panels
-          Container(
-            height: 1,
-            color: shotsAccent.withValues(alpha: isDark ? 0.22 : 0.14),
-          ),
-
-          // ── Bottom: CA Shots strip ────────────────────────────────────
-          Material(
-            color: Colors.transparent,
-            child: InkWell(
-              onTap: () => context.push('/fomo-pulse'),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: shotsBg,
-                  // Uniform border colour required when borderRadius is set.
-                  // The top-divider tint is handled by the Divider widget above.
-                  border: Border.all(color: topBorder, width: 1.2),
-                  borderRadius: const BorderRadius.vertical(
-                    bottom: Radius.circular(AppRadius.xl),
+            child: Row(
+              children: [
+                // Icon well
+                Container(
+                  width: 40,
+                  height: 40,
+                  decoration: BoxDecoration(
+                    color: data.locked
+                        ? scheme.surfaceContainerLow
+                        : accent.withValues(
+                            alpha: isDark ? 0.18 : 0.12,
+                          ),
+                    borderRadius: BorderRadius.circular(AppRadius.md),
+                  ),
+                  child: Icon(
+                    data.done
+                        ? Icons.check_rounded
+                        : data.locked
+                        ? Icons.lock_outline_rounded
+                        : data.icon,
+                    color: data.done ? data.accent : accent,
+                    size: 20,
                   ),
                 ),
-                padding: const EdgeInsets.symmetric(
-                  horizontal: AppSpacing.lg,
-                  vertical: AppSpacing.md,
-                ),
-                child: Row(
-                  children: [
-                    // Bolt icon well
-                    Container(
-                      width: 36,
-                      height: 36,
-                      decoration: BoxDecoration(
-                        color: shotsAccent.withValues(
-                          alpha: isDark ? 0.22 : 0.12,
-                        ),
-                        borderRadius: BorderRadius.circular(AppRadius.sm),
-                        border: Border.all(
-                          color: shotsAccent.withValues(
-                            alpha: isDark ? 0.45 : 0.28,
-                          ),
-                          width: 1,
+                const SizedBox(width: AppSpacing.md),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        data.title,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: AppTextStyles.label().copyWith(
+                          color: fg,
+                          fontWeight: FontWeight.w600,
                         ),
                       ),
-                      child: Icon(
-                        Icons.bolt_rounded,
-                        size: 20,
-                        color: shotsAccent,
+                      const SizedBox(height: 2),
+                      Text(
+                        data.subtitle,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: AppTextStyles.caption().copyWith(
+                          color: scheme.onSurfaceVariant,
+                        ),
                       ),
-                    ),
-                    const SizedBox(width: AppSpacing.md),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            children: [
-                              Text(
-                                'CA Shots',
-                                style: AppTextStyles.label().copyWith(
-                                  fontWeight: FontWeight.w800,
-                                  color: scheme.onSurface,
-                                ),
-                              ),
-                              const SizedBox(width: AppSpacing.xs),
-                              Container(
-                                padding: const EdgeInsets.symmetric(
-                                  horizontal: 6,
-                                  vertical: 1,
-                                ),
-                                decoration: BoxDecoration(
-                                  color: shotsAccent.withValues(
-                                    alpha: isDark ? 0.28 : 0.13,
-                                  ),
-                                  borderRadius: BorderRadius.circular(
-                                    AppRadius.pill,
-                                  ),
-                                ),
-                                child: Text(
-                                  'Quick read',
-                                  style: AppTextStyles.caption().copyWith(
-                                    color: shotsAccent,
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 10,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(height: 2),
-                          Text(
-                            'Today\'s brief + 1 MCQ — done in 60 s',
-                            style: AppTextStyles.caption().copyWith(
-                              color: scheme.onSurfaceVariant,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(width: AppSpacing.sm),
-                    Icon(
-                      Icons.arrow_forward_rounded,
-                      size: 18,
-                      color: shotsAccent,
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
+                const SizedBox(width: AppSpacing.sm),
+                if (data.loading)
+                  SizedBox(
+                    width: 16,
+                    height: 16,
+                    child: CircularProgressIndicator(
+                      strokeWidth: 2,
+                      color: accent,
+                    ),
+                  )
+                else if (data.locked)
+                  const SizedBox.shrink()
+                else
+                  Icon(
+                    Icons.arrow_forward_ios_rounded,
+                    size: 13,
+                    color: scheme.onSurfaceVariant,
+                  ),
+              ],
             ),
           ),
-        ],
+        ),
       ),
     );
   }
 }
 
-class _HubWarCard extends StatelessWidget {
-  const _HubWarCard({
+// ── TODAY list helpers ────────────────────────────────────────────────────────
+
+_TodayListRowData _caShotsListRow(BuildContext context) {
+  return _TodayListRowData(
+    icon: Icons.bolt_rounded,
+    accent: AppColors.primary,
+    title: 'CA Shots',
+    subtitle: 'Breaking news brief + 1 MCQ based on it.',
+    done: false,
+    locked: false,
+    onTap: () => context.push('/fomo-pulse'),
+  );
+}
+
+String _warListSubtitle({
+  required bool submitted,
+  required bool live,
+  required bool resultsOpen,
+  required List<DailyWarTopicRef> topics,
+  required DailyWarPhase phase,
+  required bool isGrand,
+  required bool weekend,
+}) {
+  if (weekend) return 'Topics: all from this week.';
+  final topicsLine = DailyWarCopy.topicsLine(topics, sep: ' · ');
+  if (topicsLine.isNotEmpty) return topicsLine;
+  if (submitted) return 'You were there — see your rank';
+  if (live) return 'All-India live paper. Join now.';
+  if (resultsOpen) return "Last night's paper is up";
+  return 'All-India live test · 9 PM';
+}
+
+// ── Big Hero Cards ────────────────────────────────────────────────────────────
+
+/// Full-bleed dark hero card matching the design screenshots.
+class _BigHeroCard extends StatelessWidget {
+  const _BigHeroCard({
+    required this.eyebrow,
+    required this.title,
+    required this.description,
+    required this.ctaLabel,
+    required this.background,
+    required this.ctaColor,
+    required this.onTap,
+    this.footer,
+    this.loading = false,
+    this.done = false,
+  });
+
+  final String eyebrow;
+  final String title;
+  final String description;
+  final String ctaLabel;
+  final Color background;
+  final Color ctaColor;
+  final VoidCallback? onTap;
+  final String? footer;
+  final bool loading;
+  final bool done;
+
+  @override
+  Widget build(BuildContext context) {
+    // Determine if the background is dark so we can adjust text colors.
+    final bgLuminance = background.computeLuminance();
+    final isDarkBg = bgLuminance < 0.35;
+    final eyebrowColor =
+        isDarkBg ? ctaColor : ctaColor.withValues(alpha: 0.85);
+    final titleColor = isDarkBg ? Colors.white : Colors.white;
+    final descColor =
+        isDarkBg ? Colors.white.withValues(alpha: 0.72) : Colors.white.withValues(alpha: 0.72);
+    final footerColor =
+        isDarkBg ? Colors.white.withValues(alpha: 0.55) : Colors.white.withValues(alpha: 0.55);
+
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: loading ? null : onTap,
+        borderRadius: BorderRadius.circular(AppRadius.xl),
+        child: Ink(
+          decoration: BoxDecoration(
+            color: background,
+            borderRadius: BorderRadius.circular(AppRadius.xl),
+          ),
+          padding: const EdgeInsets.all(AppSpacing.lg),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Text(
+                eyebrow,
+                style: AppTextStyles.caption().copyWith(
+                  color: eyebrowColor,
+                  fontWeight: FontWeight.w800,
+                  letterSpacing: 1.2,
+                ),
+              ),
+              const SizedBox(height: AppSpacing.sm),
+              Text(
+                title,
+                style: AppTextStyles.h1().copyWith(
+                  color: titleColor,
+                  fontWeight: FontWeight.w800,
+                  fontSize: 22,
+                  height: 1.2,
+                ),
+              ),
+              const SizedBox(height: AppSpacing.sm),
+              Text(
+                description,
+                style: AppTextStyles.bodySm().copyWith(
+                  color: descColor,
+                  height: 1.5,
+                ),
+              ),
+              const SizedBox(height: AppSpacing.lg),
+              SizedBox(
+                height: 48,
+                child: ElevatedButton(
+                  onPressed: loading ? null : onTap,
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: ctaColor,
+                    foregroundColor: Colors.white,
+                    elevation: 0,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(AppRadius.pill),
+                    ),
+                  ),
+                  child: loading
+                      ? const SizedBox(
+                          width: 20,
+                          height: 20,
+                          child: CircularProgressIndicator(
+                            strokeWidth: 2,
+                            color: Colors.white,
+                          ),
+                        )
+                      : Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              ctaLabel,
+                              style: AppTextStyles.label().copyWith(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                            const SizedBox(width: AppSpacing.xs),
+                            const Icon(
+                              Icons.arrow_forward_rounded,
+                              size: 16,
+                              color: Colors.white,
+                            ),
+                          ],
+                        ),
+                ),
+              ),
+              if (footer != null) ...[
+                const SizedBox(height: AppSpacing.md),
+                Text(
+                  footer!,
+                  style: AppTextStyles.caption().copyWith(
+                    color: footerColor,
+                    fontFamily: 'monospace',
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ],
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+// ── War Hero Card ─────────────────────────────────────────────────────────────
+
+class _WarHeroCard extends StatelessWidget {
+  const _WarHeroCard({
     required this.dateId,
     required this.submitted,
     required this.topics,
     required this.phase,
     required this.overnight,
-    required this.layout,
     required this.showNow,
     required this.isGrand,
+    required this.caughtUp,
   });
 
   final String dateId;
@@ -535,9 +772,9 @@ class _HubWarCard extends StatelessWidget {
   final List<DailyWarTopicRef> topics;
   final DailyWarPhase phase;
   final bool overnight;
-  final TodayLoopLayout layout;
   final bool showNow;
   final bool isGrand;
+  final bool caughtUp;
 
   @override
   Widget build(BuildContext context) {
@@ -550,96 +787,63 @@ class _HubWarCard extends StatelessWidget {
         overnight ||
         phase == DailyWarPhase.resultsPending ||
         phase == DailyWarPhase.resultsReady;
-    // Saturday Grand War revisits the whole week (~10 topics). Don't stack
-    // them — weekdays keep the two-topic title.
     final weekend = isGrand || topics.length > 2;
     final warName = isGrand ? 'Grand War' : 'Daily War';
-    final warEyebrow = isGrand ? 'GRAND WAR' : 'DAILY WAR';
-    final weekBit = topics.isEmpty
-        ? 'Week revision'
-        : 'Week revision · ${topics.length} topics';
+    final topicsLine = DailyWarCopy.topicsLine(topics, sep: '\n');
 
-    final String title;
-    final String subtitle;
-    final String cta;
     final String eyebrow;
-    final int titleMaxLines;
-    if (weekend) {
-      titleMaxLines = 1;
-      if (submitted) {
-        title = warName;
-        subtitle = layout == TodayLoopLayout.tile ? 'You were there' : weekBit;
-        cta = layout == TodayLoopLayout.hero ? 'See how you did' : 'Result';
-        eyebrow = warEyebrow;
-      } else if (live) {
-        title = warName;
-        subtitle = layout == TodayLoopLayout.tile
-            ? 'Join now'
-            : '$weekBit. The room is open.';
-        cta = 'Join';
-        eyebrow = 'LIVE';
-      } else if (resultsOpen) {
-        title = warName;
-        subtitle = layout == TodayLoopLayout.tile
-            ? 'Last night'
-            : 'Last night · $weekBit';
-        cta = layout == TodayLoopLayout.hero ? 'Open the paper' : 'Paper';
-        eyebrow = 'LAST NIGHT';
-      } else {
-        title = 'Saturday at 9 PM';
-        subtitle = layout == TodayLoopLayout.tile
-            ? weekBit
-            : '$weekBit. Same paper, All-India.';
-        cta = topics.isNotEmpty ? 'See topics' : 'How it works';
-        eyebrow = warEyebrow;
-      }
+    final String title;
+    final String description;
+    final String ctaLabel;
+    final Color bg;
+
+    if (submitted) {
+      eyebrow = caughtUp ? 'DAY COMPLETE' : 'DAILY WAR';
+      title = caughtUp ? 'Well played tonight' : (topicsLine.isNotEmpty ? topicsLine : warName);
+      description = caughtUp
+          ? 'You\'ve submitted. Rankings close out at 9 PM.'
+          : 'You were in the room. The rank is waiting.';
+      ctaLabel = 'See how you did';
+      bg = isDark ? const Color(0xFF1A3A2A) : const Color(0xFF1B4332);
+    } else if (live) {
+      eyebrow = 'LIVE NOW';
+      title = topicsLine.isNotEmpty ? topicsLine : warName;
+      description = 'All-India live paper. Same questions, then the rank.';
+      ctaLabel = 'Join the War';
+      bg = isDark ? DwColors.surface : DwColors.crimsonSoft;
+    } else if (resultsOpen) {
+      eyebrow = 'LAST NIGHT';
+      title = topicsLine.isNotEmpty ? topicsLine : warName;
+      description = "Last night's paper is up if you still want the questions.";
+      ctaLabel = 'Open the paper';
+      bg = isDark ? const Color(0xFF2A1A1A) : const Color(0xFF3B1F1F);
+    } else if (weekend) {
+      final weekBit = topics.isEmpty
+          ? 'Week revision'
+          : 'Week revision · ${topics.length} topics';
+      eyebrow = isGrand ? 'GRAND WAR' : 'DAILY WAR';
+      title = 'Saturday at 9 PM';
+      description = '$weekBit. Same paper, All-India.';
+      ctaLabel = topics.isNotEmpty ? 'See topics' : 'How it works';
+      bg = isDark ? DwColors.surface : DwColors.crimsonSoft;
     } else {
-      final topicsLine = DailyWarCopy.topicsLine(topics, sep: '\n');
-      final topicTitle = topicsLine.isEmpty ? null : topicsLine;
-      titleMaxLines = topics.isEmpty ? 2 : (topics.length * 2).clamp(2, 4);
-      if (submitted) {
-        title = topicTitle ?? warName;
-        subtitle = layout == TodayLoopLayout.tile
-            ? 'You were there'
-            : 'You were in the room. The rank is waiting.';
-        cta = layout == TodayLoopLayout.hero ? 'See how you did' : 'Result';
-        eyebrow = warEyebrow;
-      } else if (live) {
-        title = topicTitle ?? warName;
-        subtitle = layout == TodayLoopLayout.tile
-            ? 'Join the live paper'
-            : 'Live All-India paper. Same questions, then the rank.';
-        cta = 'Join';
-        eyebrow = 'LIVE';
-      } else if (resultsOpen) {
-        title = topicTitle ?? warName;
-        subtitle = layout == TodayLoopLayout.tile
-            ? 'Last night\'s paper'
-            : 'Last night\'s paper is up if you still want the questions.';
-        cta = layout == TodayLoopLayout.hero ? 'Open the paper' : 'Paper';
-        eyebrow = 'LAST NIGHT';
-      } else {
-        title = topicTitle ?? 'Tonight at 9 PM';
-        subtitle = layout == TodayLoopLayout.tile
-            ? 'All-India live test · 9 PM'
-            : 'All-India live test. Tonight at 9 PM.';
-        cta = 'How it works';
-        eyebrow = warEyebrow;
-      }
+      eyebrow = 'TONIGHT';
+      final topicTitle = topicsLine.isNotEmpty ? topicsLine : 'Daily War starts in';
+      title = topicTitle;
+      description = 'Local Government — Union Executive. All-India live test, public leaderboard.';
+      ctaLabel = 'Set a reminder';
+      bg = isDark ? const Color(0xFF0D2818) : const Color(0xFF1B4332);
     }
 
-    return TodayLoopCard(
-      layout: layout,
+    return _BigHeroCard(
       eyebrow: eyebrow,
       title: title,
-      subtitle: subtitle,
-      cta: cta,
-      titleMaxLines: titleMaxLines,
-      icon: Icons.shield_outlined,
-      accent: DwColors.crimsonBright,
-      background: isDark ? DwColors.surface : DwColors.crimsonSoft,
-      foreground: isDark ? DwColors.onDark : null,
-      mutedForeground: isDark ? DwColors.onDarkMuted : null,
+      description: description,
+      ctaLabel: ctaLabel,
+      background: bg,
+      ctaColor: submitted || (!live && !resultsOpen)
+          ? AppColors.primary
+          : DwColors.crimsonBright,
       onTap: () {
         if (live) {
           context.push('/daily-war');
@@ -662,52 +866,169 @@ class _HubWarCard extends StatelessWidget {
           ),
         );
       },
-      done: submitted,
-      showNow: showNow,
     );
   }
 }
 
-/// Wraps a companion card with reduced opacity and an "Available from …" label
-/// to signal that the card's time window has not started yet.
-class _UpcomingCompanionWrap extends StatelessWidget {
-  const _UpcomingCompanionWrap({
-    required this.label,
-    required this.child,
+// ── CA Hero Card ──────────────────────────────────────────────────────────────
+
+class _CaHeroCard extends StatelessWidget {
+  const _CaHeroCard({
+    required this.paperDate,
+    required this.isTodaysPaper,
+    required this.completed,
+    required this.loading,
+    required this.questionsReady,
+    required this.emphasized,
+    required this.onStart,
   });
 
-  final String label;
-  final Widget child;
+  final DateTime? paperDate;
+  final bool isTodaysPaper;
+  final bool completed;
+  final bool loading;
+  final bool questionsReady;
+  final bool emphasized;
+  final VoidCallback? onStart;
 
   @override
   Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-    return Opacity(
-      opacity: 0.55,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          IgnorePointer(child: child),
-          const SizedBox(height: 4),
-          Row(
-            children: [
-              Icon(
-                Icons.schedule_rounded,
-                size: 12,
-                color: scheme.onSurfaceVariant,
-              ),
-              const SizedBox(width: 4),
-              Text(
-                label,
-                style: AppTextStyles.caption().copyWith(
-                  color: scheme.onSurfaceVariant,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ],
-          ),
-        ],
-      ),
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final bg = isDark ? AppColors.infoBgDark : const Color(0xFF0C447C);
+
+    final String eyebrow;
+    final String title;
+    final String description;
+    final String ctaLabel;
+
+    if (completed) {
+      eyebrow = 'CURRENT AFFAIRS';
+      title = 'Today\'s brief done';
+      description = 'You\'ve read today\'s CA brief and answered the question.';
+      ctaLabel = 'Revise again';
+    } else if (!questionsReady) {
+      eyebrow = 'CURRENT AFFAIRS';
+      title = 'Today\'s brief coming soon';
+      description = 'The daily CA brief will be ready shortly. Check back in a few minutes.';
+      ctaLabel = 'Check back later';
+    } else {
+      eyebrow = 'START HERE';
+      title = "Today's current affairs brief";
+      description = 'Read the brief, answer the MCQ — done in under 3 minutes.';
+      ctaLabel = 'Read the brief';
+    }
+
+    return _BigHeroCard(
+      eyebrow: eyebrow,
+      title: title,
+      description: description,
+      ctaLabel: ctaLabel,
+      background: bg,
+      ctaColor: AppColors.primary,
+      loading: loading,
+      done: completed,
+      onTap: onStart,
+    );
+  }
+}
+
+// ── Practice Hero Card ────────────────────────────────────────────────────────
+
+class _PracticeHeroCard extends StatelessWidget {
+  const _PracticeHeroCard({
+    required this.isSunday,
+    required this.mistakeCount,
+    required this.completed,
+    required this.loading,
+    required this.emphasized,
+    required this.caughtUp,
+    required this.onStart,
+  });
+
+  final bool isSunday;
+  final int mistakeCount;
+  final bool completed;
+  final bool loading;
+  final bool emphasized;
+  final bool caughtUp;
+  final VoidCallback? onStart;
+
+  @override
+  Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final bg = isDark
+        ? AppColors.primaryDeep.withValues(alpha: 0.5)
+        : AppColors.primaryDark;
+
+    final String eyebrow;
+    final String title;
+    final String description;
+    final String ctaLabel;
+
+    if (isSunday) {
+      eyebrow = 'SUNDAY REVIEW';
+      if (completed) {
+        title = 'Week review done';
+        description = 'You\'ve gone through last week\'s mistakes. Streak intact.';
+        ctaLabel = 'See results';
+      } else {
+        title = 'Review last week\'s mistakes';
+        description = mistakeCount > 0
+            ? '$mistakeCount questions where you slipped last week.'
+            : 'No mistakes from last week — you\'re clean.';
+        ctaLabel = mistakeCount > 0 ? 'Start review' : 'Quick practice instead';
+      }
+    } else {
+      eyebrow = 'THIS AFTERNOON';
+      if (completed) {
+        title = 'Static War done';
+        description = 'Today\'s drill is in the books. Keep it up.';
+        ctaLabel = 'See results';
+      } else {
+        title = 'Static War';
+        description = '10 questions, timed, your subjects. Sharpen before tonight.';
+        ctaLabel = 'Start the drill';
+      }
+    }
+
+    return _BigHeroCard(
+      eyebrow: eyebrow,
+      title: title,
+      description: description,
+      ctaLabel: ctaLabel,
+      background: bg,
+      ctaColor: AppColors.primary,
+      loading: loading,
+      done: completed,
+      onTap: onStart,
+    );
+  }
+}
+
+// ── Day Complete Hero Card ────────────────────────────────────────────────────
+
+class _DayCompleteHeroCard extends StatelessWidget {
+  const _DayCompleteHeroCard({required this.slots});
+
+  final List<TodaySlot> slots;
+
+  @override
+  Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final bg = isDark ? const Color(0xFF0D3B22) : const Color(0xFF1B4332);
+
+    final doneCount = slots.where((s) => s.isDone).length;
+    final availableCount = slots.where((s) => !s.isRest).length;
+
+    return _BigHeroCard(
+      eyebrow: 'DAY COMPLETE',
+      title: 'All done for today',
+      description: 'You\'ve completed $doneCount of $availableCount activities. Rankings close at 9 PM.',
+      ctaLabel: 'See tonight\'s results',
+      background: bg,
+      ctaColor: AppColors.primary,
+      onTap: null,
+      footer: '🔥 Streak intact · Next war in 15h',
     );
   }
 }

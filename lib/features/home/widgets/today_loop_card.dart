@@ -15,6 +15,9 @@ enum TodayLoopLayout {
 
   /// Full-width slim strip when only one companion is on.
   banner,
+
+  /// Flat list row inside the "TODAY" list section.
+  listRow,
 }
 
 /// Shared chrome for CA, drill, week review, and compact War.
@@ -71,6 +74,33 @@ class TodayLoopCard extends StatelessWidget {
     final border = done
         ? accent.withValues(alpha: 0.4)
         : (isDark ? AppColors.borderDark : AppColors.borderLight);
+
+    // List-row variant: no card container, just a tap target with padding.
+    if (layout == TodayLoopLayout.listRow) {
+      return Material(
+        color: Colors.transparent,
+        child: InkWell(
+          onTap: loading ? null : onTap,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: AppSpacing.lg,
+              vertical: AppSpacing.md,
+            ),
+            child: _ListRowBody(
+              eyebrow: eyebrow,
+              title: title,
+              subtitle: subtitle,
+              icon: icon,
+              accent: accent,
+              fg: fg,
+              muted: muted,
+              done: done,
+              loading: loading,
+            ),
+          ),
+        ),
+      );
+    }
 
     return Material(
       color: Colors.transparent,
@@ -140,6 +170,17 @@ class TodayLoopCard extends StatelessWidget {
                       done: done,
                       loading: loading,
                       titleMaxLines: titleMaxLines ?? 1,
+                    ),
+                  TodayLoopLayout.listRow => _ListRowBody(
+                      eyebrow: eyebrow,
+                      title: title,
+                      subtitle: subtitle,
+                      icon: icon,
+                      accent: accent,
+                      fg: fg,
+                      muted: muted,
+                      done: done,
+                      loading: loading,
                     ),
                 },
               ),
@@ -513,6 +554,91 @@ class _BannerBody extends StatelessWidget {
           const SizedBox(width: AppSpacing.sm),
           ctaWidget,
         ],
+      ],
+    );
+  }
+}
+
+/// Flat list-row layout used inside the "TODAY" section.
+class _ListRowBody extends StatelessWidget {
+  const _ListRowBody({
+    required this.eyebrow,
+    required this.title,
+    required this.subtitle,
+    required this.icon,
+    required this.accent,
+    required this.fg,
+    required this.muted,
+    required this.done,
+    required this.loading,
+  });
+
+  final String eyebrow;
+  final String title;
+  final String subtitle;
+  final IconData icon;
+  final Color accent;
+  final Color fg;
+  final Color muted;
+  final bool done;
+  final bool loading;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        // Icon well
+        Container(
+          width: 40,
+          height: 40,
+          decoration: BoxDecoration(
+            color: accent.withValues(alpha: 0.13),
+            borderRadius: BorderRadius.circular(AppRadius.md),
+          ),
+          child: Icon(
+            done ? Icons.check_rounded : icon,
+            color: accent,
+            size: 20,
+          ),
+        ),
+        const SizedBox(width: AppSpacing.md),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                title,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: AppTextStyles.label().copyWith(
+                  color: fg,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              const SizedBox(height: 2),
+              Text(
+                subtitle,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: AppTextStyles.caption().copyWith(color: muted),
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(width: AppSpacing.sm),
+        if (loading)
+          SizedBox(
+            width: 16,
+            height: 16,
+            child: CircularProgressIndicator(strokeWidth: 2, color: accent),
+          )
+        else
+          Icon(
+            Icons.arrow_forward_ios_rounded,
+            size: 14,
+            color: muted,
+          ),
       ],
     );
   }

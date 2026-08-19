@@ -29,13 +29,13 @@ class FomoPulseHomeCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Current affairs shots',
+                      'CA Shots',
                       style: AppTextStyles.label().copyWith(
                         fontWeight: FontWeight.w800,
                       ),
                     ),
                     Text(
-                      'Breaking CA brief, then 1 MCQ shot',
+                      'Breaking news brief + 1 MCQ based on it.',
                       style: AppTextStyles.caption().copyWith(
                         color: scheme.onSurfaceVariant,
                       ),
