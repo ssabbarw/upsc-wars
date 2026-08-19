@@ -153,6 +153,15 @@ abstract final class DailyCaSchedule {
     return '${h.toString().padLeft(2, '0')}:${m.toString().padLeft(2, '0')}';
   }
 
+  /// Live timer pill — always `HH:MM:SS`.
+  static String formatCountdownHms(Duration remaining) {
+    final d = remaining.isNegative ? Duration.zero : remaining;
+    final h = d.inHours.toString().padLeft(2, '0');
+    final m = d.inMinutes.remainder(60).toString().padLeft(2, '0');
+    final s = d.inSeconds.remainder(60).toString().padLeft(2, '0');
+    return '$h:$m:$s';
+  }
+
   static String monthStartIso(int year, int month) =>
       formatIsoDate(DateTime(year, month, 1));
 

@@ -18,6 +18,7 @@ import '../../../core/providers/app_bootstrap.dart';
 import '../../../core/providers/kill_switch_provider.dart';
 import '../../../core/providers/quick_practice_providers.dart';
 import '../../../core/responsive/app_breakpoints.dart';
+import '../../../core/services/battle_messaging_service.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
@@ -77,6 +78,17 @@ class HomeScreen extends HookConsumerWidget {
       });
       return null;
     }, const []);
+
+    final routeInfo = GoRouter.of(context).routeInformationProvider;
+    useListenable(routeInfo);
+    final onHomeRoute = routeInfo.value.uri.path == '/';
+    useEffect(() {
+      if (!onHomeRoute) return null;
+      unawaited(
+        BattleMessagingService.maybePromptAfterFirstTestHome(context: context),
+      );
+      return null;
+    }, [onHomeRoute]);
 
     useEffect(() {
       home.whenData((h) {

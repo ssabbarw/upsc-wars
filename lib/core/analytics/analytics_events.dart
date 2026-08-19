@@ -316,8 +316,11 @@ final class PushNotificationStatusSnapshotEvent extends AnalyticsEvent {
 /// ([BattleMessagingService.requestPushAuthorizationAndSync]). One event per
 /// prompt attempt (not debounced like [PushNotificationStatusSnapshotEvent]).
 ///
+/// **Granted** is also emitted as [PushPermissionGrantedEvent] when
+/// `allows_push` is 1, so funnels do not have to filter this event.
+///
 /// **GA4:** `push_permission_prompt_result` with `status`, `allows_push` (0/1),
-/// and `source` (call site, e.g. `second_app_open`). Also updates user
+/// and `source` (call site, e.g. `post_first_test`). Also updates user
 /// property `push_alerts` in [FirebaseAnalyticsSink].
 final class PushPermissionPromptResultEvent extends AnalyticsEvent {
   const PushPermissionPromptResultEvent({
@@ -331,12 +334,35 @@ final class PushPermissionPromptResultEvent extends AnalyticsEvent {
   final String source;
 }
 
-/// **Deferred “education” bottom sheet** (after a test or community sign-in)
+/// **User granted OS notification permission** after our in-app sheet + system
+/// dialog. Fired only when [PushPermissionPromptResultEvent.allowsPush] is true.
+///
+/// **GA4:** `push_permission_granted` with `source`.
+final class PushPermissionGrantedEvent extends AnalyticsEvent {
+  const PushPermissionGrantedEvent({required this.source});
+
+  final String source;
+}
+
+/// **In-app notification-permission education sheet was shown.** Pair with
+/// [DeferredPushEducationModalOutcomeEvent] (close) and
+/// [PushPermissionGrantedEvent] (OS allow). Distinct from [ScreenViewedEvent]
+/// (`deferred_push_pre_prompt`), which has no `source`.
+///
+/// **GA4:** `deferred_push_education_shown` with `source` (e.g. `post_first_test`,
+/// `daily_war_history`, `daily_ca_screen`, `community_screen`, `ca_card_not_live`).
+final class DeferredPushEducationModalShownEvent extends AnalyticsEvent {
+  const DeferredPushEducationModalShownEvent({required this.source});
+
+  final String source;
+}
+
+/// **Deferred “education” bottom sheet**
 /// was closed. Tracks whether the user asked for the system prompt.
 ///
 /// **GA4:** `deferred_push_education_outcome` with:
 /// * `source` — screen or CTA, e.g. `daily_war_history`, `daily_ca_screen`,
-///   `community_screen`, `ca_card_not_live`;
+///   `community_screen`, `ca_card_not_live`, `post_first_test`;
 /// * `modal_index` — 1 or 2 (max two education modals);
 /// * `tapped_enable` — 1 if the user chose “Turn on notifications”, else 0.
 final class DeferredPushEducationModalOutcomeEvent extends AnalyticsEvent {

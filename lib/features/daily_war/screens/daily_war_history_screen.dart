@@ -6,6 +6,7 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 
+import '../../../core/layout/system_insets.dart';
 import '../../../core/notifications/notification_prompt_policy.dart';
 import '../../../core/services/battle_messaging_service.dart';
 import '../../../core/theme/app_colors.dart';
@@ -35,6 +36,7 @@ class DailyWarHistoryScreen extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     final async = ref.watch(dailyWarHistoryBundleProvider);
     final snap = ref.watch(dailyWarHomeSnapshotProvider);
     final launching = useState(false);
@@ -143,6 +145,10 @@ class DailyWarHistoryScreen extends HookConsumerWidget {
       displayedMonth.value = next;
     }
 
+    void jumpToThisMonth() {
+      displayedMonth.value = DateTime(ist.year, ist.month);
+    }
+
     Future<void> onDateTap(String iso) async {
       final date = DailyWarSchedule.parseIsoDate(iso);
       if (DailyWarSchedule.isWarOffDay(date)) return;
@@ -165,12 +171,20 @@ class DailyWarHistoryScreen extends HookConsumerWidget {
         shownMonth.year < maxMonth.year ||
         (shownMonth.year == maxMonth.year && shownMonth.month < maxMonth.month);
 
+    final cardShadow = [
+      BoxShadow(
+        color: AppColors.gray900.withValues(alpha: isDark ? 0.35 : 0.07),
+        blurRadius: 18,
+        offset: const Offset(0, 6),
+      ),
+    ];
+
     final body = ListView(
-      padding: const EdgeInsets.fromLTRB(
+      padding: EdgeInsets.fromLTRB(
         AppSpacing.lg,
-        AppSpacing.sm,
+        AppSpacing.md,
         AppSpacing.lg,
-        AppSpacing.xxxl,
+        paddedBottomInset(context, AppSpacing.lg),
       ),
       children: [
         DailyWarTodaySection(
@@ -184,71 +198,152 @@ class DailyWarHistoryScreen extends HookConsumerWidget {
           },
           onAttemptUnranked: () => unawaited(onTodayUnranked()),
         ),
-        const SizedBox(height: AppSpacing.lg),
-        Row(
-          children: [
-            IconButton(
-              onPressed: canGoToPreviousMonth ? () => shiftMonth(-1) : null,
-              icon: const Icon(Icons.chevron_left_rounded),
+        const SizedBox(height: AppSpacing.md),
+        DecoratedBox(
+          decoration: BoxDecoration(
+            color: scheme.surface,
+            borderRadius: BorderRadius.circular(AppRadius.xl),
+            boxShadow: cardShadow,
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(AppSpacing.md),
+            child: Column(
+              children: [
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    'HISTORY',
+                    style: AppTextStyles.caption().copyWith(
+                      color: scheme.onSurfaceVariant,
+                      letterSpacing: 0.8,
+                      fontWeight: FontWeight.w800,
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 4),
+                Row(
+                  children: [
+                    _MonthNavButton(
+                      icon: Icons.chevron_left_rounded,
+                      onPressed: canGoToPreviousMonth
+                          ? () => shiftMonth(-1)
+                          : null,
+                    ),
+                    Expanded(
+                      child: Text(
+                        monthTitle,
+                        textAlign: TextAlign.center,
+                        style: AppTextStyles.h3().copyWith(
+                          color: scheme.onSurface,
+                          fontWeight: FontWeight.w800,
+                        ),
+                      ),
+                    ),
+                    _MonthNavButton(
+                      icon: Icons.chevron_right_rounded,
+                      onPressed: canGoToNextMonth
+                          ? () => shiftMonth(1)
+                          : null,
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 6),
+                async.when(
+                  loading: () => const _MonthCalendarShimmer(),
+                  error: (e, _) => Text(
+                    'Could not load Wars: $e',
+                    style: AppTextStyles.bodySm().copyWith(
+                      color: AppColors.wrong,
+                    ),
+                  ),
+                  data: (bundle) {
+                    final warsByDate = {
+                      for (final w in bundle.wars) w.dateId: w,
+                    };
+                    if (snap.doc != null) {
+                      warsByDate.putIfAbsent(
+                        snap.doc!.dateId,
+                        () => snap.doc!,
+                      );
+                    }
+                    final submittedDates = bundle.submissions.keys.toSet();
+                    if (snap.submission != null && snap.dateId.isNotEmpty) {
+                      submittedDates.add(snap.dateId);
+                    }
+                    return DailyWarMonthCalendar(
+                      year: displayedMonth.value.year,
+                      month: displayedMonth.value.month,
+                      warsByDate: warsByDate,
+                      submittedDates: submittedDates,
+                      minDate: minDate,
+                      todayIso: todayIso,
+                      liveDateId: live ? snap.dateId : null,
+                      nowIst: ist,
+                      onDateTap: (iso) => unawaited(onDateTap(iso)),
+                    );
+                  },
+                ),
+              ],
             ),
-            Expanded(
-              child: Text(
-                monthTitle,
-                textAlign: TextAlign.center,
-                style: AppTextStyles.h3().copyWith(color: scheme.onSurface),
-              ),
-            ),
-            IconButton(
-              onPressed: canGoToNextMonth ? () => shiftMonth(1) : null,
-              icon: const Icon(Icons.chevron_right_rounded),
-            ),
-          ],
+          ),
         ),
         const SizedBox(height: AppSpacing.md),
-        async.when(
-          loading: () => const _MonthCalendarShimmer(),
-          error: (e, _) => Text(
-            'Could not load Wars: $e',
-            style: AppTextStyles.bodySm().copyWith(color: AppColors.wrong),
+        DecoratedBox(
+          decoration: BoxDecoration(
+            color: scheme.surface,
+            borderRadius: BorderRadius.circular(AppRadius.xl),
+            boxShadow: cardShadow,
           ),
-          data: (bundle) {
-            final warsByDate = {for (final w in bundle.wars) w.dateId: w};
-            if (snap.doc != null) {
-              warsByDate.putIfAbsent(snap.doc!.dateId, () => snap.doc!);
-            }
-            final submittedDates = bundle.submissions.keys.toSet();
-            if (snap.submission != null && snap.dateId.isNotEmpty) {
-              submittedDates.add(snap.dateId);
-            }
-            return DailyWarMonthCalendar(
-              year: displayedMonth.value.year,
-              month: displayedMonth.value.month,
-              warsByDate: warsByDate,
-              submittedDates: submittedDates,
-              minDate: minDate,
-              todayIso: todayIso,
-              liveDateId: live ? snap.dateId : null,
-              nowIst: ist,
-              onDateTap: (iso) => unawaited(onDateTap(iso)),
-            );
-          },
+          child: const Padding(
+            padding: EdgeInsets.all(AppSpacing.md),
+            child: DailyWarEarnedBadgesSection(),
+          ),
         ),
-        const SizedBox(height: AppSpacing.lg),
-        const DailyWarEarnedBadgesSection(),
       ],
     );
 
     if (embedded) return body;
 
     return Scaffold(
-      backgroundColor: scheme.surface,
+      backgroundColor: isDark
+          ? AppColors.surfaceTertiaryDark
+          : AppColors.surfaceTertiaryLight,
       appBar: AppBar(
-        title: Text(
-          'Daily War',
-          style: AppTextStyles.h3().copyWith(color: scheme.onSurface),
-        ),
+        centerTitle: true,
+        title: const Text('Daily War'),
+        actions: [
+          IconButton(
+            tooltip: 'This month',
+            onPressed: jumpToThisMonth,
+            icon: const Icon(
+              Icons.event_available_rounded,
+              color: AppColors.primary,
+            ),
+          ),
+        ],
       ),
       body: body,
+    );
+  }
+}
+
+class _MonthNavButton extends StatelessWidget {
+  const _MonthNavButton({required this.icon, required this.onPressed});
+
+  final IconData icon;
+  final VoidCallback? onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 32,
+      height: 32,
+      child: IconButton(
+        padding: EdgeInsets.zero,
+        visualDensity: VisualDensity.compact,
+        onPressed: onPressed,
+        icon: Icon(icon, color: AppColors.primary, size: 22),
+      ),
     );
   }
 }
@@ -278,15 +373,16 @@ class _MonthCalendarShimmer extends StatelessWidget {
           itemCount: 35,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 7,
-            mainAxisSpacing: AppSpacing.xs,
-            crossAxisSpacing: AppSpacing.xs,
+            mainAxisSpacing: 4,
+            crossAxisSpacing: 4,
+            childAspectRatio: 1.05,
           ),
           itemBuilder: (_, _) => const Padding(
-            padding: EdgeInsets.all(6),
+            padding: EdgeInsets.all(4),
             child: ShimmerBox(
               width: double.infinity,
               height: double.infinity,
-              borderRadius: AppRadius.pill,
+              borderRadius: AppRadius.sm,
             ),
           ),
         ),

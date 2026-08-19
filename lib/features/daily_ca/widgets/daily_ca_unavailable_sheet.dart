@@ -70,13 +70,8 @@ class _DailyCaUnavailableSheetState extends State<_DailyCaUnavailableSheet> {
     super.dispose();
   }
 
-  static String _hms(Duration remaining) {
-    final d = remaining.isNegative ? Duration.zero : remaining;
-    final h = d.inHours.toString().padLeft(2, '0');
-    final m = d.inMinutes.remainder(60).toString().padLeft(2, '0');
-    final s = d.inSeconds.remainder(60).toString().padLeft(2, '0');
-    return '$h:$m:$s';
-  }
+  static String _hms(Duration remaining) =>
+      DailyCaSchedule.formatCountdownHms(remaining);
 
   @override
   Widget build(BuildContext context) {

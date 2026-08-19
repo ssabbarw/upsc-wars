@@ -42,7 +42,6 @@ abstract final class DailyCaSourceLinks {
     final day = contentDate.day;
     final dayPadded = day.toString().padLeft(2, '0');
     final monthName = _monthNames[contentDate.month - 1];
-    final ordinal = _ordinal(day);
     final dateLabel = DateFormat('d MMM').format(contentDate);
 
     String titled(String name) => '$name daily current affairs: $dateLabel';
@@ -56,13 +55,6 @@ abstract final class DailyCaSourceLinks {
             'upsc-current-affairs-$day-$monthName-$year/',
       ),
       DailyCaSourceLink(
-        name: 'PW OnlyIAS',
-        title: titled('PW OnlyIAS'),
-        url:
-            'https://pwonlyias.com/news-headline/'
-            'news-of-the-day-$ordinal-$monthName-$year/',
-      ),
-      DailyCaSourceLink(
         name: 'ForumIAS',
         title: titled('ForumIAS'),
         url:
@@ -71,13 +63,5 @@ abstract final class DailyCaSourceLinks {
             '$day-$monthName-$year/',
       ),
     ];
-  }
-
-  /// `1 → 01st`, `6 → 06th`, `11 → 11th` — same as the Python pipeline.
-  static String _ordinal(int day) {
-    final suffix = (day >= 11 && day <= 13)
-        ? 'th'
-        : const ['th', 'st', 'nd', 'rd', 'th'][day % 10 > 4 ? 4 : day % 10];
-    return '${day.toString().padLeft(2, '0')}$suffix';
   }
 }

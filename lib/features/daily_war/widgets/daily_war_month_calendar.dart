@@ -4,7 +4,6 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
-import '../../../shared/widgets/calendar_color_legend.dart';
 import '../domain/daily_war_models.dart';
 import '../domain/daily_war_schedule.dart';
 import '../theme/daily_war_theme.dart';
@@ -70,7 +69,13 @@ class DailyWarMonthCalendar extends StatelessWidget {
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final border = isDark ? AppColors.borderDark : AppColors.borderLight;
+    final sundayFill = isDark ? AppColors.warningBgDark : AppColors.warningBg;
+    final sundayText = isDark
+        ? AppColors.warningTextDark
+        : AppColors.warningText;
+    final cellFill = isDark
+        ? AppColors.surfaceSecondaryDark
+        : AppColors.surfaceTertiaryLight;
     final firstOfMonth = DateTime(year, month, 1);
     final daysInMonth = DateTime(year, month + 1, 0).day;
     final leadingBlanks = (firstOfMonth.weekday - DateTime.monday) % 7;
@@ -87,11 +92,7 @@ class DailyWarMonthCalendar extends StatelessWidget {
                     label,
                     style: AppTextStyles.caption().copyWith(
                       color: label == 'Sun'
-                          ? (isDark
-                                ? AppColors.warningTextDark
-                                : AppColors.warningText)
-                          : label == 'Sat'
-                          ? DwColors.gold
+                          ? sundayText
                           : scheme.onSurfaceVariant,
                       fontWeight: FontWeight.w600,
                     ),
@@ -100,14 +101,15 @@ class DailyWarMonthCalendar extends StatelessWidget {
               ),
           ],
         ),
-        const SizedBox(height: AppSpacing.sm),
+        const SizedBox(height: AppSpacing.xs),
         GridView.builder(
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 7,
-            mainAxisSpacing: AppSpacing.xs,
-            crossAxisSpacing: AppSpacing.xs,
+            mainAxisSpacing: 4,
+            crossAxisSpacing: 4,
+            childAspectRatio: 1.05,
           ),
           itemCount: leadingBlanks + daysInMonth,
           itemBuilder: (context, index) {
@@ -121,85 +123,56 @@ class DailyWarMonthCalendar extends StatelessWidget {
             final attempted = submittedDates.contains(iso);
             final canTap = _canTap(kind);
 
-            Color? fill;
+            Color fill = cellFill;
             Color textColor = scheme.onSurface;
-            var borderColor = isToday ? AppColors.primary : border;
-            var borderWidth = isToday ? 1.5 : 0.5;
+            Color? ring;
 
-            switch (kind) {
-              case DailyWarDayKind.rest:
-                fill = isDark ? AppColors.warningBgDark : AppColors.warningBg;
-                textColor = isDark
-                    ? AppColors.warningTextDark
-                    : AppColors.warningText;
-              case DailyWarDayKind.future:
-              case DailyWarDayKind.empty:
-                textColor = scheme.onSurfaceVariant.withValues(alpha: 0.45);
-              case DailyWarDayKind.upcoming:
-                textColor = scheme.onSurface;
-              case DailyWarDayKind.live:
-                borderColor = DwColors.crimsonBright;
-                borderWidth = 1.6;
-                fill = isDark
-                    ? DwColors.crimson.withValues(alpha: 0.18)
-                    : DwColors.crimsonSoft;
-                textColor = isDark
-                    ? DwColors.crimsonBright
-                    : DwColors.crimson;
-              case DailyWarDayKind.done:
-              case DailyWarDayKind.missed:
-                textColor = scheme.onSurfaceVariant;
-            }
-
-            if (attempted) {
+            if (isToday) {
               fill = AppColors.primary;
               textColor = AppColors.onPrimary;
-              borderColor = AppColors.primaryDark;
-              borderWidth = isToday ? 1.8 : 1.2;
-            }
-
-            if (isGrand && kind != DailyWarDayKind.rest) {
-              borderColor = DwColors.gold;
-              if (borderWidth < 1.2) borderWidth = 1.2;
+              ring = AppColors.primaryDark;
+            } else if (kind == DailyWarDayKind.rest) {
+              fill = sundayFill;
+              textColor = sundayText;
+            } else if (kind == DailyWarDayKind.empty ||
+                kind == DailyWarDayKind.future) {
+              textColor = scheme.onSurfaceVariant.withValues(alpha: 0.4);
+            } else if (kind == DailyWarDayKind.live) {
+              textColor = AppColors.primary;
+              ring = AppColors.primary;
+            } else if (attempted || kind == DailyWarDayKind.done) {
+              textColor = AppColors.primary;
             }
 
             return Material(
-              color: Colors.transparent,
+              color: AppColors.transparent,
               child: InkWell(
                 onTap: canTap ? () => onDateTap(iso) : null,
-                borderRadius: BorderRadius.circular(AppRadius.md),
+                borderRadius: BorderRadius.circular(AppRadius.sm),
                 child: Ink(
                   decoration: BoxDecoration(
                     color: fill,
-                    borderRadius: BorderRadius.circular(AppRadius.md),
-                    border: Border.all(color: borderColor, width: borderWidth),
+                    borderRadius: BorderRadius.circular(AppRadius.sm),
+                    border: ring == null
+                        ? null
+                        : Border.all(color: ring, width: 1.5),
                   ),
                   child: Stack(
                     alignment: Alignment.center,
                     children: [
                       Text(
                         '$day',
-                        style: AppTextStyles.label().copyWith(
+                        style: AppTextStyles.labelSm().copyWith(
                           color: textColor,
                           fontWeight: isToday
-                              ? FontWeight.w700
-                              : FontWeight.w500,
+                              ? FontWeight.w800
+                              : FontWeight.w600,
                         ),
                       ),
-                      if (attempted)
-                        const Positioned(
-                          top: 4,
-                          right: 4,
-                          child: Icon(
-                            Icons.check_circle_rounded,
-                            size: 12,
-                            color: AppColors.onPrimary,
-                          ),
-                        ),
                       if (warsByDate[iso]?.isGrand == true ||
                           (isGrand && kind != DailyWarDayKind.rest))
                         Positioned(
-                          bottom: 3,
+                          bottom: 4,
                           child: Container(
                             width: 4,
                             height: 4,
@@ -215,36 +188,6 @@ class DailyWarMonthCalendar extends StatelessWidget {
               ),
             );
           },
-        ),
-        const SizedBox(height: AppSpacing.md),
-        CalendarColorLegend(
-          items: [
-            CalendarLegendSwatch(
-              label: 'Attempted',
-              fill: AppColors.primary,
-              border: AppColors.primaryDark,
-            ),
-            CalendarLegendSwatch(
-              label: 'Live',
-              fill: isDark
-                  ? DwColors.crimson.withValues(alpha: 0.18)
-                  : DwColors.crimsonSoft,
-              border: DwColors.crimsonBright,
-            ),
-            CalendarLegendSwatch(
-              label: 'Grand War',
-              border: DwColors.gold,
-              dot: DwColors.gold,
-            ),
-            CalendarLegendSwatch(
-              label: 'Sunday',
-              fill: isDark ? AppColors.warningBgDark : AppColors.warningBg,
-              border: isDark
-                  ? AppColors.warningTextDark
-                  : AppColors.warningText,
-            ),
-            const CalendarLegendSwatch(label: 'Today', border: AppColors.primary),
-          ],
         ),
       ],
     );

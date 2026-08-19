@@ -26,20 +26,15 @@ class DailyWarEarnedBadgesSection extends ConsumerWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Divider(
-          height: 1,
-          thickness: 0.5,
-          color: scheme.outlineVariant.withValues(alpha: 0.7),
-        ),
-        const SizedBox(height: AppSpacing.lg),
         Text(
-          'Earned badges',
-          style: AppTextStyles.h3().copyWith(
-            color: scheme.onSurface,
-            fontWeight: FontWeight.w700,
+          'EARNED BADGES',
+          style: AppTextStyles.caption().copyWith(
+            color: scheme.onSurfaceVariant,
+            letterSpacing: 0.8,
+            fontWeight: FontWeight.w800,
           ),
         ),
-        const SizedBox(height: AppSpacing.sm),
+        const SizedBox(height: AppSpacing.md),
         async.when(
           loading: () => const _EarnedBadgesShimmer(),
           error: (e, _) => Text(

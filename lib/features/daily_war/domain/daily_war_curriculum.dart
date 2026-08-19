@@ -1,9 +1,11 @@
 /// Ordered topics (≥60 questions) per subject for Daily War curriculum.
-/// Cross-subject day rotation advances one subject pointer by 2 topics per War.
+/// Weekdays finish one subject at a time (2 topics per War, 1 if that's all
+/// that remains), then move to the next subject. After the last subject, the
+/// cycle restarts from the first.
 abstract final class DailyWarCurriculum {
   DailyWarCurriculum._();
 
-  /// Subject slug rotation order (one subject advanced per weekday War).
+  /// Subject order. Stay on a subject until its topics are exhausted.
   static const subjectRotation = <String>[
     'polity',
     'economy',

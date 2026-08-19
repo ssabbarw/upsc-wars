@@ -161,7 +161,7 @@ void main() {
   });
 
   group('DailyWarCurriculumPicker', () {
-    test('picks two sequential polity topics and advances index', () {
+    test('stays on polity until its topics are finished', () {
       final picked = DailyWarCurriculumPicker.pickWeekday(
         subjectRotationIndex: 0,
         topicIndexBySubject: const {},
@@ -170,8 +170,93 @@ void main() {
       expect(picked.topics, hasLength(2));
       expect(picked.topics[0].topic, 'Parliament');
       expect(picked.topics[1].topic, 'Judiciary');
-      expect(picked.nextSubjectRotationIndex, 1);
+      expect(picked.nextSubjectRotationIndex, 0);
       expect(picked.nextTopicIndexForSubject, 2);
+
+      final next = DailyWarCurriculumPicker.pickWeekday(
+        subjectRotationIndex: picked.nextSubjectRotationIndex,
+        topicIndexBySubject: {'polity': picked.nextTopicIndexForSubject},
+      );
+      expect(next.subjectSlug, 'polity');
+      expect(next.topics[0].topic, 'Fundamental Rights');
+      expect(next.topics[1].topic, 'Constitutional Foundations');
+      expect(next.nextSubjectRotationIndex, 0);
+      expect(next.nextTopicIndexForSubject, 4);
+    });
+
+    test('last leftover topic is a singleton then next subject starts', () {
+      final polity = DailyWarCurriculum.topicsBySubject['polity']!;
+      expect(polity.length.isOdd, isTrue);
+
+      final leftover = DailyWarCurriculumPicker.pickWeekday(
+        subjectRotationIndex: 0,
+        topicIndexBySubject: {'polity': polity.length - 1},
+      );
+      expect(leftover.subjectSlug, 'polity');
+      expect(leftover.topics, hasLength(1));
+      expect(leftover.topics[0].topic, polity.last);
+      expect(leftover.nextSubjectRotationIndex, 1);
+      expect(leftover.nextTopicIndexForSubject, 0);
+
+      final economy = DailyWarCurriculumPicker.pickWeekday(
+        subjectRotationIndex: leftover.nextSubjectRotationIndex,
+        topicIndexBySubject: {'economy': leftover.nextTopicIndexForSubject},
+      );
+      expect(economy.subjectSlug, 'economy');
+      expect(economy.topics, hasLength(2));
+      expect(economy.topics[0].topic, 'Money and Banking');
+      expect(economy.topics[1].topic, 'Global Economic Groupings');
+      expect(economy.nextSubjectRotationIndex, 1);
+      expect(economy.nextTopicIndexForSubject, 2);
+    });
+
+    test('restarts at first subject after the last subject finishes', () {
+      final rotation = DailyWarCurriculum.subjectRotation;
+      final lastSlug = rotation.last;
+      final lastTopics = DailyWarCurriculum.topicsBySubject[lastSlug]!;
+
+      final leftover = DailyWarCurriculumPicker.pickWeekday(
+        subjectRotationIndex: rotation.length - 1,
+        topicIndexBySubject: {lastSlug: lastTopics.length - 1},
+      );
+      expect(leftover.subjectSlug, lastSlug);
+      expect(leftover.topics, hasLength(1));
+      expect(leftover.nextSubjectRotationIndex, 0);
+      expect(leftover.nextTopicIndexForSubject, 0);
+
+      final restart = DailyWarCurriculumPicker.pickWeekday(
+        subjectRotationIndex: leftover.nextSubjectRotationIndex,
+        topicIndexBySubject: {
+          DailyWarCurriculum.subjectRotation.first:
+              leftover.nextTopicIndexForSubject,
+        },
+      );
+      expect(restart.subjectSlug, 'polity');
+      expect(restart.topics[0].topic, 'Parliament');
+      expect(restart.topics[1].topic, 'Judiciary');
+    });
+
+    test('walks an entire odd-length subject two topics at a time', () {
+      final polity = DailyWarCurriculum.topicsBySubject['polity']!;
+      var rotationIndex = 0;
+      var topicIndex = 0;
+      final seen = <String>[];
+      var wars = 0;
+      while (rotationIndex == 0) {
+        final picked = DailyWarCurriculumPicker.pickWeekday(
+          subjectRotationIndex: rotationIndex,
+          topicIndexBySubject: {'polity': topicIndex},
+        );
+        seen.addAll(picked.topics.map((t) => t.topic));
+        wars += 1;
+        expect(wars, lessThan(20));
+        rotationIndex = picked.nextSubjectRotationIndex;
+        topicIndex = picked.nextTopicIndexForSubject;
+      }
+      expect(seen, polity);
+      expect(wars, 9);
+      expect(rotationIndex, 1);
+      expect(topicIndex, 0);
     });
 
     test('curriculum maps 125 topics', () {

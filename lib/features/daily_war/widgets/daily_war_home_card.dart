@@ -619,18 +619,6 @@ class _CollapsedWarHeader extends StatelessWidget {
         const SizedBox(width: 8),
         GestureDetector(
           behavior: HitTestBehavior.opaque,
-          onTap: () => unawaited(showDailyWarHelpSheet(context)),
-          child: const Padding(
-            padding: EdgeInsets.all(4),
-            child: Icon(
-              Icons.help_outline_rounded,
-              size: 16,
-              color: DwColors.onDarkMuted,
-            ),
-          ),
-        ),
-        GestureDetector(
-          behavior: HitTestBehavior.opaque,
           onTap: onExpand,
           child: const Padding(
             padding: EdgeInsets.fromLTRB(4, 4, 0, 4),
@@ -756,16 +744,12 @@ class _StatusRow extends StatelessWidget {
     required this.left,
     this.right,
     this.pulse = false,
-    this.showHelp = false,
-    this.onHelp,
     this.onCollapse,
   });
 
   final String left;
   final String? right;
   final bool pulse;
-  final bool showHelp;
-  final VoidCallback? onHelp;
   final VoidCallback? onCollapse;
 
   @override
@@ -793,27 +777,6 @@ class _StatusRow extends StatelessWidget {
         if (right != null) ...[
           const SizedBox(width: 8),
           Text(right!, style: DwText.stamp()),
-        ],
-        if (showHelp) ...[
-          const SizedBox(width: 4),
-          GestureDetector(
-            behavior: HitTestBehavior.opaque,
-            onTap: () {
-              if (onHelp != null) {
-                onHelp!();
-                return;
-              }
-              unawaited(showDailyWarHelpSheet(context));
-            },
-            child: const Padding(
-              padding: EdgeInsets.all(4),
-              child: Icon(
-                Icons.help_outline_rounded,
-                size: 18,
-                color: DwColors.onDarkMuted,
-              ),
-            ),
-          ),
         ],
         if (onCollapse != null) ...[
           const SizedBox(width: 2),
@@ -933,14 +896,6 @@ class _PrepareCompact extends StatelessWidget {
           left: isGrand ? 'GRAND WAR · SATURDAY' : 'DAILY WAR',
           right: '9:00 PM',
           pulse: true,
-          showHelp: true,
-          onHelp: () => unawaited(
-            showDailyWarExplainerSheet(
-              context: context,
-              topics: topics,
-              isGrand: isGrand,
-            ),
-          ),
           onCollapse: onCollapse,
         ),
         const SizedBox(height: 12),

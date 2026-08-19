@@ -128,13 +128,13 @@ function shuffleInPlace(arr) {
 function pickTopicsForSubject(subjectSlug, topicIndex) {
   const list = TOPICS_BY_SUBJECT[subjectSlug] || [];
   if (!list.length) return { topics: [], nextIndex: 0 };
+  const start = Math.max(0, Math.min(topicIndex, list.length));
+  const n = Math.min(2, list.length - start);
   const topics = [];
-  let idx = ((topicIndex % list.length) + list.length) % list.length;
-  for (let i = 0; i < 2; i++) {
-    topics.push({ subject: subjectSlug, topic: list[idx] });
-    idx = (idx + 1) % list.length;
+  for (let i = 0; i < n; i++) {
+    topics.push({ subject: subjectSlug, topic: list[start + i] });
   }
-  return { topics, nextIndex: idx };
+  return { topics, nextIndex: start + n };
 }
 
 function poolForTopics(topics) {
@@ -197,26 +197,55 @@ async function loadCurriculum() {
   };
 }
 
-async function pickWeekdayTopics(curriculum) {
-  const subject =
-    SUBJECT_ROTATION[
-      curriculum.subjectRotationIndex % SUBJECT_ROTATION.length
-    ];
-  const topicIndex = curriculum.topicIndexBySubject[subject] || 0;
+function weekdayPickFrom(subjectIndex, topicIndexBySubject) {
+  const rotation = SUBJECT_ROTATION;
+  const subject = rotation[subjectIndex];
+  const list = TOPICS_BY_SUBJECT[subject] || [];
+  let topicIndex = topicIndexBySubject[subject] || 0;
+  if (topicIndex < 0) topicIndex = 0;
+  if (!list.length || topicIndex >= list.length) return null;
   const { topics, nextIndex } = pickTopicsForSubject(subject, topicIndex);
+  const finished = nextIndex >= list.length;
+  const nextSubjectRotationIndex = finished
+    ? (subjectIndex + 1) % rotation.length
+    : subjectIndex;
+  const nextTopicIndexForSubject = finished ? 0 : nextIndex;
+  const nextSubject = rotation[nextSubjectRotationIndex];
   return {
     topics,
     kind: "daily",
     questionCount: 15,
     patch: {
-      subject_rotation_index:
-        (curriculum.subjectRotationIndex + 1) % SUBJECT_ROTATION.length,
+      subject_rotation_index: nextSubjectRotationIndex,
       topic_index_by_subject: {
-        ...curriculum.topicIndexBySubject,
-        [subject]: nextIndex,
+        ...topicIndexBySubject,
+        [nextSubject]: nextTopicIndexForSubject,
       },
     },
   };
+}
+
+async function pickWeekdayTopics(curriculum) {
+  const rotation = SUBJECT_ROTATION;
+  const startIndex =
+    ((curriculum.subjectRotationIndex % rotation.length) + rotation.length) %
+    rotation.length;
+  const topicIndexBySubject = curriculum.topicIndexBySubject || {};
+  for (let offset = 0; offset < rotation.length; offset++) {
+    const picked = weekdayPickFrom(
+      (startIndex + offset) % rotation.length,
+      topicIndexBySubject,
+    );
+    if (picked) return picked;
+  }
+  return (
+    weekdayPickFrom(0, {}) || {
+      topics: [],
+      kind: "daily",
+      questionCount: 15,
+      patch: null,
+    }
+  );
 }
 
 async function pickGrandTopics(curriculum, dateId) {
@@ -252,20 +281,15 @@ async function pickGrandTopics(curriculum, dateId) {
 async function peekNextTopics(curriculum, afterPatch) {
   const nextCurriculum = {
     subjectRotationIndex:
-      (afterPatch && afterPatch.subject_rotation_index != null
+      afterPatch && afterPatch.subject_rotation_index != null
         ? afterPatch.subject_rotation_index
-        : curriculum.subjectRotationIndex) % SUBJECT_ROTATION.length,
+        : curriculum.subjectRotationIndex,
     topicIndexBySubject:
       (afterPatch && afterPatch.topic_index_by_subject) ||
       curriculum.topicIndexBySubject,
   };
-  const subject =
-    SUBJECT_ROTATION[
-      nextCurriculum.subjectRotationIndex % SUBJECT_ROTATION.length
-    ];
-  const topicIndex = nextCurriculum.topicIndexBySubject[subject] || 0;
-  const { topics } = pickTopicsForSubject(subject, topicIndex);
-  return topics;
+  const weekday = await pickWeekdayTopics(nextCurriculum);
+  return weekday.topics;
 }
 
 async function generateWarForDateId(dateId, { force = false } = {}) {

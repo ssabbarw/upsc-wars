@@ -26,6 +26,8 @@ import 'analytics_sink.dart';
 /// * `battle_invite_accepted` — (none)
 /// * `push_permission_snapshot` — `status`, `allows_push` (0/1); also sets user property `push_alerts`
 /// * `push_permission_prompt_result` — `status`, `allows_push` (0/1), `source`; also sets `push_alerts`
+/// * `push_permission_granted` — `source` (OS allow after our prompt)
+/// * `deferred_push_education_shown` — `source` (in-app permission sheet impression)
 /// * `onboarding_step_duration` — `step` (`thesis` / `depth` / `games`), `duration_ms`
 /// * `onboarding_flow_opened` / `onboarding_flow_completed` — `total_duration_ms` on completed only
 /// * `onboarding_exited_incomplete` — `highest_step`, `last_step`, `elapsed_ms`, `reached_last_step` (0/1)
@@ -233,6 +235,10 @@ class FirebaseAnalyticsSink implements AnalyticsSink {
           'allows_push': allowsPush ? 1 : 0,
           'source': source,
         });
+      case PushPermissionGrantedEvent(:final source):
+        await _log('push_permission_granted', {'source': source});
+      case DeferredPushEducationModalShownEvent(:final source):
+        await _log('deferred_push_education_shown', {'source': source});
       case OnboardingStepDurationEvent(
           :final step,
           :final durationMs,

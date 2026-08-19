@@ -23,6 +23,7 @@ class DailyCaTodaySection extends StatefulWidget {
     required this.launching,
     required this.onStartPaper,
     this.questionsReady = true,
+    this.compact = false,
   });
 
   final DateTime minDate;
@@ -35,6 +36,9 @@ class DailyCaTodaySection extends StatefulWidget {
   /// False when the scheduled paper has no live questions yet.
   final bool questionsReady;
   final VoidCallback? onStartPaper;
+
+  /// Tighter padding and type so the hub fits a short phone.
+  final bool compact;
 
   @override
   State<DailyCaTodaySection> createState() => _DailyCaTodaySectionState();
@@ -64,26 +68,33 @@ class _DailyCaTodaySectionState extends State<DailyCaTodaySection> {
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final border = isDark ? AppColors.borderDark : AppColors.borderLight;
+    final compact = widget.compact;
+    final info = isDark ? AppColors.infoTextDark : AppColors.infoText;
+    final infoSoft = isDark ? AppColors.infoBgDark : AppColors.infoBg;
+    final pad = compact ? AppSpacing.md : AppSpacing.lg;
+    final gap = compact ? AppSpacing.sm : AppSpacing.md;
 
     final paperDate = widget.paperDate;
-    final allowed = paperDate != null &&
+    final allowed =
+        paperDate != null &&
         DailyCaSchedule.isOnOrAfterMinDate(paperDate, widget.minDate);
-    final isTodaysPaper = paperDate != null &&
+    final isTodaysPaper =
+        paperDate != null &&
         DailyCaSchedule.isTodaysPaper(paperDate, referenceIst: _ist);
     final nextOpen = DailyCaSchedule.nextOpensAt(referenceIst: _ist);
-    final countdownLabel = DailyCaSchedule.formatCountdown(
+    final countdownLabel = DailyCaSchedule.formatCountdownHms(
       DailyCaSchedule.timeUntilNextOpen(referenceIst: _ist),
     );
-    final nextIsToday = DailyCaSchedule.dateOnly(nextOpen) ==
-        DailyCaSchedule.dateOnly(_ist);
+    final nextIsToday =
+        DailyCaSchedule.dateOnly(nextOpen) == DailyCaSchedule.dateOnly(_ist);
     final nextCopy = nextIsToday
-        ? 'Today\'s test opens at 6 AM · $countdownLabel'
-        : 'Tomorrow\'s test opens at 6 AM · $countdownLabel';
+        ? 'Today\'s test opens at 6 AM'
+        : 'Tomorrow\'s test opens at 6 AM';
 
     final String headline;
     if (!allowed) {
-      headline = 'Daily tests start from '
+      headline =
+          'Daily tests start from '
           '${DateFormat('d MMM yyyy').format(widget.minDate)}.';
     } else if (!widget.questionsReady) {
       headline = nextIsToday
@@ -94,105 +105,210 @@ class _DailyCaTodaySectionState extends State<DailyCaTodaySection> {
     } else if (isTodaysPaper) {
       headline = 'Current affairs test from yesterday\'s news.';
     } else {
-      headline = '10 MCQs from the '
-          '${DateFormat('d MMM').format(paperDate)} paper';
+      headline =
+          '10 MCQs from the ${DateFormat('d MMM').format(paperDate)} paper';
     }
 
-    return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.all(AppSpacing.lg),
+    final reviseCopy = isTodaysPaper
+        ? "You can revise yesterday's current affairs from these links."
+        : 'You can revise this day\'s current affairs from these links.';
+
+    return DecoratedBox(
       decoration: BoxDecoration(
-        color: isDark ? AppColors.infoBgDark : AppColors.infoBg,
-        borderRadius: BorderRadius.circular(AppRadius.lg),
-        border: Border.all(color: border, width: 0.5),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Text(
-            "TODAY'S PAPER",
-            style: AppTextStyles.caption().copyWith(
-              color: isDark ? AppColors.infoTextDark : AppColors.infoText,
-              letterSpacing: 0.8,
-              fontWeight: FontWeight.w700,
-            ),
-          ),
-          const SizedBox(height: AppSpacing.sm),
-          Text(
-            headline,
-            style: AppTextStyles.bodySm().copyWith(
-              color: scheme.onSurfaceVariant,
-            ),
-          ),
-          if (allowed) ...[
-            const SizedBox(height: AppSpacing.md),
-            Text(
-              isTodaysPaper
-                  ? "You can revise yesterday's current affairs from these links."
-                  : 'You can revise this day\'s current affairs from these links.',
-              style: AppTextStyles.labelSm().copyWith(
-                fontWeight: FontWeight.w700,
-                color: scheme.onSurface,
-                height: 1.35,
-              ),
-            ),
-            const SizedBox(height: AppSpacing.xs),
-            for (final link in DailyCaSourceLinks.forDate(paperDate)) ...[
-              DailyCaSourceLinkRow(link: link),
-              const SizedBox(height: 4),
-            ],
-          ] else
-            const SizedBox(height: AppSpacing.md),
-          FilledButton.icon(
-            onPressed: widget.launching
-                ? null
-                : !allowed
-                ? null
-                : widget.questionsReady
-                ? widget.onStartPaper
-                : () {
-                    showDailyCaUnavailableSheet(
-                      context: context,
-                      availableFrom: DailyCaSchedule.nextOpensAt(
-                        referenceIst: _ist,
-                      ),
-                      pendingLive: true,
-                      onSeeHistory: () {},
-                    );
-                  },
-            icon: widget.launching
-                ? SizedBox(
-                    width: 18,
-                    height: 18,
-                    child: CircularProgressIndicator(
-                      strokeWidth: 2,
-                      color: scheme.onPrimary,
-                    ),
-                  )
-                : Icon(
-                    widget.paperCompleted
-                        ? Icons.replay_rounded
-                        : Icons.play_arrow_rounded,
-                  ),
-            label: Text(
-              !allowed
-                  ? 'Not started yet'
-                  : !widget.questionsReady
-                  ? 'Available soon'
-                  : widget.paperCompleted
-                  ? 'View results'
-                  : 'Start today\'s test',
-            ),
-          ),
-          const SizedBox(height: AppSpacing.sm),
-          Text(
-            nextCopy,
-            textAlign: TextAlign.center,
-            style: AppTextStyles.caption().copyWith(
-              color: scheme.onSurfaceVariant,
-            ),
+        color: scheme.surface,
+        borderRadius: BorderRadius.circular(AppRadius.xl),
+        boxShadow: [
+          BoxShadow(
+            color: AppColors.gray900.withValues(alpha: isDark ? 0.35 : 0.07),
+            blurRadius: 18,
+            offset: const Offset(0, 6),
           ),
         ],
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(AppRadius.xl),
+        child: Stack(
+          children: [
+            Padding(
+              padding: EdgeInsets.fromLTRB(pad, pad, pad, compact ? 10 : pad),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          Container(
+                            width: 22,
+                            height: 22,
+                            decoration: BoxDecoration(
+                              color: info,
+                              borderRadius: BorderRadius.circular(6),
+                            ),
+                            child: const Icon(
+                              Icons.newspaper_rounded,
+                              size: 13,
+                              color: AppColors.onPrimary,
+                            ),
+                          ),
+                          const SizedBox(width: 8),
+                          Text(
+                            "TODAY'S PAPER",
+                            style: AppTextStyles.caption().copyWith(
+                              color: info,
+                              letterSpacing: 0.7,
+                              fontWeight: FontWeight.w800,
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: compact ? 8 : 10),
+                      Text(
+                        headline,
+                        style:
+                            (compact ? AppTextStyles.h3() : AppTextStyles.h2())
+                                .copyWith(
+                                  fontWeight: FontWeight.w800,
+                                  color: scheme.onSurface,
+                                  height: 1.25,
+                                ),
+                      ),
+                      const SizedBox(height: 6),
+                      Container(
+                        width: 28,
+                        height: 3,
+                        decoration: BoxDecoration(
+                          color: info,
+                          borderRadius: BorderRadius.circular(2),
+                        ),
+                      ),
+                      SizedBox(height: compact ? 6 : 8),
+                      if (allowed)
+                        Text(
+                          reviseCopy,
+                          style: AppTextStyles.caption().copyWith(
+                            color: scheme.onSurfaceVariant,
+                            height: 1.35,
+                          ),
+                        ),
+                    ],
+                  ),
+                  if (allowed) ...[
+                    SizedBox(height: gap),
+                    for (final link in DailyCaSourceLinks.forDate(
+                      paperDate,
+                    )) ...[
+                      DailyCaSourceLinkRow(link: link, compact: compact),
+                      SizedBox(height: compact ? 4 : 6),
+                    ],
+                  ] else
+                    SizedBox(height: gap),
+                  SizedBox(
+                    height: compact ? 42 : 46,
+                    child: FilledButton.icon(
+                      onPressed: widget.launching
+                          ? null
+                          : !allowed
+                          ? null
+                          : widget.questionsReady
+                          ? widget.onStartPaper
+                          : () {
+                              showDailyCaUnavailableSheet(
+                                context: context,
+                                availableFrom: DailyCaSchedule.nextOpensAt(
+                                  referenceIst: _ist,
+                                ),
+                                pendingLive: true,
+                                onSeeHistory: () {},
+                              );
+                            },
+                      style: FilledButton.styleFrom(
+                        backgroundColor: AppColors.primary,
+                        foregroundColor: AppColors.onPrimary,
+                        disabledBackgroundColor: AppColors.primary.withValues(
+                          alpha: 0.45,
+                        ),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(AppRadius.md),
+                        ),
+                      ),
+                      icon: widget.launching
+                          ? const SizedBox(
+                              width: 16,
+                              height: 16,
+                              child: CircularProgressIndicator(
+                                strokeWidth: 2,
+                                color: AppColors.onPrimary,
+                              ),
+                            )
+                          : Icon(
+                              widget.paperCompleted
+                                  ? Icons.replay_rounded
+                                  : Icons.play_arrow_rounded,
+                              size: 20,
+                            ),
+                      label: Text(
+                        !allowed
+                            ? 'Not started yet'
+                            : !widget.questionsReady
+                            ? 'Available soon'
+                            : widget.paperCompleted
+                            ? 'View results'
+                            : 'Start today\'s test',
+                        style: AppTextStyles.label().copyWith(
+                          fontWeight: FontWeight.w700,
+                          color: AppColors.onPrimary,
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: compact ? 8 : 10),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.schedule_rounded,
+                        size: 14,
+                        color: scheme.onSurfaceVariant,
+                      ),
+                      const SizedBox(width: 6),
+                      Expanded(
+                        child: Text(
+                          nextCopy,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: AppTextStyles.caption().copyWith(
+                            color: scheme.onSurfaceVariant,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 8),
+                      Container(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 8,
+                          vertical: 4,
+                        ),
+                        decoration: BoxDecoration(
+                          color: infoSoft,
+                          borderRadius: BorderRadius.circular(AppRadius.pill),
+                        ),
+                        child: Text(
+                          countdownLabel,
+                          style: AppTextStyles.caption().copyWith(
+                            color: info,
+                            fontWeight: FontWeight.w800,
+                            fontFeatures: const [FontFeature.tabularFigures()],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

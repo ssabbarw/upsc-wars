@@ -4,7 +4,6 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
-import '../../../shared/widgets/calendar_color_legend.dart';
 import '../domain/daily_ca_schedule.dart';
 
 class DailyCaMonthCalendar extends StatelessWidget {
@@ -16,15 +15,20 @@ class DailyCaMonthCalendar extends StatelessWidget {
     required this.onDateTap,
     required this.minDate,
     this.nowIst,
+    this.paperIso,
   });
 
   final int year;
   final int month;
   final Set<String> completedDates;
   final void Function(String isoDate) onDateTap;
+
   /// Earliest selectable date on the calendar (date-only).
   final DateTime minDate;
   final DateTime? nowIst;
+
+  /// News date of the open paper — drawn in primary text when not today.
+  final String? paperIso;
 
   static const _weekdays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
@@ -32,13 +36,21 @@ class DailyCaMonthCalendar extends StatelessWidget {
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final border = isDark ? AppColors.borderDark : AppColors.borderLight;
+    final sundayFill = isDark ? AppColors.warningBgDark : AppColors.warningBg;
+    final sundayText = isDark
+        ? AppColors.warningTextDark
+        : AppColors.warningText;
+    final cellFill = isDark
+        ? AppColors.surfaceSecondaryDark
+        : AppColors.surfaceTertiaryLight;
     final reference = nowIst ?? DailyCaSchedule.nowIst();
     final todayIso = DailyCaSchedule.formatIsoDate(reference);
     final firstOfMonth = DateTime(year, month, 1);
     final daysInMonth = DateTime(year, month + 1, 0).day;
     // Monday = 0 … Sunday = 6
     final leadingBlanks = (firstOfMonth.weekday - DateTime.monday) % 7;
+    final itemCount = leadingBlanks + daysInMonth;
+    final rowCount = (itemCount / 7).ceil();
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -52,9 +64,7 @@ class DailyCaMonthCalendar extends StatelessWidget {
                     label,
                     style: AppTextStyles.caption().copyWith(
                       color: label == 'Sun'
-                          ? (isDark
-                              ? AppColors.warningTextDark
-                              : AppColors.warningText)
+                          ? sundayText
                           : scheme.onSurfaceVariant,
                       fontWeight: FontWeight.w600,
                     ),
@@ -63,116 +73,147 @@ class DailyCaMonthCalendar extends StatelessWidget {
               ),
           ],
         ),
-        const SizedBox(height: AppSpacing.sm),
-        GridView.builder(
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 7,
-            mainAxisSpacing: AppSpacing.xs,
-            crossAxisSpacing: AppSpacing.xs,
-          ),
-          itemCount: leadingBlanks + daysInMonth,
-          itemBuilder: (context, index) {
-            if (index < leadingBlanks) return const SizedBox.shrink();
-            final day = index - leadingBlanks + 1;
-            final istDate = DateTime(year, month, day);
-            final iso = DailyCaSchedule.formatIsoDate(istDate);
-            final isOffDay = DailyCaSchedule.isSunday(istDate);
-            final isToday = iso == todayIso;
-            final isPublished = DailyCaSchedule.isPublishedForDate(
-              istDate,
-              referenceIst: reference,
-            );
-            final isCompleted = completedDates.contains(iso);
-            final isBeforeMin = !DailyCaSchedule.isOnOrAfterMinDate(
-              istDate,
-              minDate,
-            );
-            final canTap = !isOffDay && !isBeforeMin && isPublished;
-
-            Color? fill;
-            Color textColor = scheme.onSurface;
-            if (isOffDay) {
-              fill = isDark ? AppColors.warningBgDark : AppColors.warningBg;
-              textColor = isDark
-                  ? AppColors.warningTextDark
-                  : AppColors.warningText;
-            } else if (isBeforeMin) {
-              textColor = scheme.onSurfaceVariant.withValues(alpha: 0.45);
-            } else if (isCompleted) {
-              fill = AppColors.primary;
-              textColor = AppColors.onPrimary;
-            } else if (!isPublished) {
-              textColor = scheme.onSurfaceVariant.withValues(alpha: 0.55);
-            }
-
-            return Material(
-              color: Colors.transparent,
-              child: InkWell(
-                onTap: canTap ? () => onDateTap(iso) : null,
-                borderRadius: BorderRadius.circular(AppRadius.md),
-                child: Ink(
-                  decoration: BoxDecoration(
-                    color: fill,
-                    borderRadius: BorderRadius.circular(AppRadius.md),
-                    border: Border.all(
-                      color: isToday ? AppColors.primary : border,
-                      width: isToday ? 1.5 : 0.5,
-                    ),
-                  ),
-                  child: Stack(
-                    alignment: Alignment.center,
+        const SizedBox(height: AppSpacing.xs),
+        Expanded(
+          child: Column(
+            children: [
+              for (var row = 0; row < rowCount; row++) ...[
+                if (row > 0) const SizedBox(height: 4),
+                Expanded(
+                  child: Row(
                     children: [
-                      Text(
-                        '$day',
-                        style: AppTextStyles.label().copyWith(
-                          color: textColor,
-                          fontWeight: isToday ? FontWeight.w700 : FontWeight.w500,
-                        ),
-                      ),
-                      if (isCompleted)
-                        const Positioned(
-                          top: 4,
-                          right: 4,
-                          child: Icon(
-                            Icons.check_circle_rounded,
-                            size: 12,
-                            color: AppColors.onPrimary,
+                      for (var col = 0; col < 7; col++) ...[
+                        if (col > 0) const SizedBox(width: 4),
+                        Expanded(
+                          child: _DayCell(
+                            index: row * 7 + col,
+                            leadingBlanks: leadingBlanks,
+                            year: year,
+                            month: month,
+                            todayIso: todayIso,
+                            paperIso: paperIso,
+                            completedDates: completedDates,
+                            minDate: minDate,
+                            reference: reference,
+                            cellFill: cellFill,
+                            sundayFill: sundayFill,
+                            sundayText: sundayText,
+                            onSurface: scheme.onSurface,
+                            onSurfaceVariant: scheme.onSurfaceVariant,
+                            onDateTap: onDateTap,
                           ),
                         ),
+                      ],
                     ],
                   ),
                 ),
-              ),
-            );
-          },
-        ),
-        const SizedBox(height: AppSpacing.md),
-        CalendarColorLegend(
-          items: [
-            CalendarLegendSwatch(
-              label: 'Attempted',
-              fill: AppColors.primary,
-              border: AppColors.primaryDark,
-            ),
-            CalendarLegendSwatch(
-              label: 'Today',
-              border: AppColors.primary,
-            ),
-            CalendarLegendSwatch(
-              label: 'Sunday',
-              fill: isDark ? AppColors.warningBgDark : AppColors.warningBg,
-              border: isDark
-                  ? AppColors.warningTextDark
-                  : AppColors.warningText,
-            ),
-            CalendarLegendSwatch(
-              label: 'Not open yet',
-            ),
-          ],
+              ],
+            ],
+          ),
         ),
       ],
     );
   }
 }
+
+class _DayCell extends StatelessWidget {
+  const _DayCell({
+    required this.index,
+    required this.leadingBlanks,
+    required this.year,
+    required this.month,
+    required this.todayIso,
+    required this.paperIso,
+    required this.completedDates,
+    required this.minDate,
+    required this.reference,
+    required this.cellFill,
+    required this.sundayFill,
+    required this.sundayText,
+    required this.onSurface,
+    required this.onSurfaceVariant,
+    required this.onDateTap,
+  });
+
+  final int index;
+  final int leadingBlanks;
+  final int year;
+  final int month;
+  final String todayIso;
+  final String? paperIso;
+  final Set<String> completedDates;
+  final DateTime minDate;
+  final DateTime reference;
+  final Color cellFill;
+  final Color sundayFill;
+  final Color sundayText;
+  final Color onSurface;
+  final Color onSurfaceVariant;
+  final void Function(String isoDate) onDateTap;
+
+  @override
+  Widget build(BuildContext context) {
+    final daysInMonth = DateTime(year, month + 1, 0).day;
+    if (index < leadingBlanks || index - leadingBlanks + 1 > daysInMonth) {
+      return const SizedBox.expand();
+    }
+
+    final day = index - leadingBlanks + 1;
+    final istDate = DateTime(year, month, day);
+    final iso = DailyCaSchedule.formatIsoDate(istDate);
+    final isOffDay = DailyCaSchedule.isSunday(istDate);
+    final isToday = iso == todayIso;
+    final isPaper = iso == paperIso;
+    final isPublished = DailyCaSchedule.isPublishedForDate(
+      istDate,
+      referenceIst: reference,
+    );
+    final isCompleted = completedDates.contains(iso);
+    final isBeforeMin = !DailyCaSchedule.isOnOrAfterMinDate(istDate, minDate);
+    final canTap = !isOffDay && !isBeforeMin && isPublished;
+
+    Color fill = cellFill;
+    Color textColor = onSurface;
+    Color? ring;
+
+    if (isToday) {
+      fill = AppColors.primary;
+      textColor = AppColors.onPrimary;
+      ring = AppColors.primaryDark;
+    } else if (isOffDay) {
+      fill = sundayFill;
+      textColor = sundayText;
+    } else if (isBeforeMin) {
+      textColor = onSurfaceVariant.withValues(alpha: 0.4);
+    } else if (isCompleted || isPaper) {
+      textColor = AppColors.primary;
+    } else if (!isPublished) {
+      textColor = onSurfaceVariant.withValues(alpha: 0.5);
+    }
+
+    return Material(
+      color: AppColors.transparent,
+      child: InkWell(
+        onTap: canTap ? () => onDateTap(iso) : null,
+        borderRadius: BorderRadius.circular(AppRadius.sm),
+        child: Ink(
+          decoration: BoxDecoration(
+            color: fill,
+            borderRadius: BorderRadius.circular(AppRadius.sm),
+            border: ring == null ? null : Border.all(color: ring, width: 1.5),
+          ),
+          child: Center(
+            child: Text(
+              '$day',
+              style: AppTextStyles.labelSm().copyWith(
+                color: textColor,
+                fontWeight: isToday ? FontWeight.w800 : FontWeight.w600,
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+

@@ -104,6 +104,9 @@ class _DeferredPushPermissionPanel extends HookConsumerWidget {
             ScreenViewedEvent(screenName: ScreenFlow.deferredPushPrePrompt),
           ),
         );
+        unawaited(
+          analytics.track(DeferredPushEducationModalShownEvent(source: source)),
+        );
         return () {
           final d = DateTime.now().difference(started.value).inMilliseconds;
           if (d < 0) return;

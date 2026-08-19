@@ -3,6 +3,7 @@ enum NotificationPromptSurface {
   dailyWar,
   dailyCa,
   community,
+  postFirstTest,
   generic,
 }
 
@@ -52,6 +53,14 @@ class NotificationPromptCopy {
         alsoLine:
             'You’ll also get Daily War, current affairs, and practice reminders.',
         cta: 'Turn on alerts',
+      ),
+      NotificationPromptSurface.postFirstTest => const NotificationPromptCopy(
+        title: 'Get pinged to practice tomorrow',
+        body:
+            'A daily reminder so this doesn’t stay a one-off — show up again without having to remember.',
+        alsoLine:
+            'You’ll also get Daily War, current affairs, and community invites.',
+        cta: 'Turn on reminders',
       ),
       NotificationPromptSurface.generic => const NotificationPromptCopy(
         title: 'Stay on track with useful pings',

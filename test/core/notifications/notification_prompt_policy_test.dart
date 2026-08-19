@@ -51,6 +51,14 @@ void main() {
   });
 
   group('NotificationPromptCopy', () {
+    test('first-test copy leads with practice and mentions other uses', () {
+      final copy = NotificationPromptCopy.forSurface(
+        NotificationPromptSurface.postFirstTest,
+      );
+      expect(copy.title.toLowerCase(), contains('practice'));
+      expect(copy.alsoLine.toLowerCase(), contains('daily war'));
+    });
+
     test('war copy leads with Daily War and mentions other uses', () {
       final copy = NotificationPromptCopy.forSurface(
         NotificationPromptSurface.dailyWar,

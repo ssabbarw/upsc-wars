@@ -169,6 +169,19 @@ void main() {
       );
     });
 
+    test('HMS countdown keeps hours minutes and seconds', () {
+      expect(
+        DailyCaSchedule.formatCountdownHms(
+          const Duration(hours: 11, minutes: 58, seconds: 32),
+        ),
+        '11:58:32',
+      );
+      expect(
+        DailyCaSchedule.formatCountdownHms(Duration.zero),
+        '00:00:00',
+      );
+    });
+
     test('min date blocks earlier calendar days', () {
       final min = DailyCaSchedule.defaultCalendarMinDate;
       expect(

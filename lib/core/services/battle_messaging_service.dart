@@ -612,11 +612,33 @@ class BattleMessagingService {
   }) async {
     await Future<void>.delayed(NotificationPromptPolicy.screenSettleDelay);
     if (!context.mounted) return;
-    if (!TickerMode.of(context)) return;
+    if (!TickerMode.valuesOf(context).enabled) return;
     if (!_locationMatchesSurface(context, surface)) return;
     await requestPushAuthorizationIfNotDetermined(
       source: source,
       surface: surface,
+      kind: NotificationPromptKind.automatic,
+    );
+  }
+
+  /// After the first completed test (demo or any scored test), show the
+  /// education sheet once the user is back on Home — not over explanations.
+  static Future<void> maybePromptAfterFirstTestHome({
+    required BuildContext context,
+  }) async {
+    if (kIsWeb) return;
+    await Future<void>.delayed(NotificationPromptPolicy.screenSettleDelay);
+    if (!context.mounted) return;
+    if (!TickerMode.valuesOf(context).enabled) return;
+    if (GoRouter.of(context).routeInformationProvider.value.uri.path != '/') {
+      return;
+    }
+    final prefs = PrefsService(await SharedPreferences.getInstance());
+    if (!prefs.pushPermissionPromptPendingAfterFirstTest) return;
+    prefs.pushPermissionPromptPendingAfterFirstTest = false;
+    await requestPushAuthorizationIfNotDetermined(
+      source: 'post_first_test',
+      surface: NotificationPromptSurface.postFirstTest,
       kind: NotificationPromptKind.automatic,
     );
   }
@@ -633,6 +655,7 @@ class BattleMessagingService {
         path == '/daily-ca' || path.startsWith('/daily-ca/'),
       NotificationPromptSurface.community =>
         path == '/community' || path.startsWith('/community/'),
+      NotificationPromptSurface.postFirstTest => path == '/',
       NotificationPromptSurface.generic => true,
     };
   }
@@ -781,13 +804,17 @@ class BattleMessagingService {
     AuthorizationStatus status,
     String source,
   ) {
+    final allowsPush = notificationAuthorizationAllowsPush(status);
     logGlobalAnalytics(
       PushPermissionPromptResultEvent(
         status: notificationAuthorizationStatusLabel(status),
-        allowsPush: notificationAuthorizationAllowsPush(status),
+        allowsPush: allowsPush,
         source: source,
       ),
     );
+    if (allowsPush) {
+      logGlobalAnalytics(PushPermissionGrantedEvent(source: source));
+    }
   }
 
   /// Returns the device token for storing on `users/{email}` (server targets invites).

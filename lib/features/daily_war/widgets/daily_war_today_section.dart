@@ -13,7 +13,6 @@ import '../domain/daily_war_phase.dart';
 import '../domain/daily_war_schedule.dart';
 import '../providers/daily_war_providers.dart';
 import '../providers/server_clock_provider.dart';
-import '../theme/daily_war_theme.dart';
 
 /// Tonight's War on the calendar hub — timer until 9 PM, then join.
 class DailyWarTodaySection extends HookConsumerWidget {
@@ -55,119 +54,237 @@ class DailyWarTodaySection extends HookConsumerWidget {
 
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final border = isDark ? AppColors.borderDark : AppColors.borderLight;
-    final accent = isGrand ? DwColors.gold : DwColors.crimsonBright;
+    final info = isDark ? AppColors.infoTextDark : AppColors.infoText;
+    final infoSoft = isDark ? AppColors.infoBgDark : AppColors.infoBg;
 
     final String eyebrow;
     final String headline;
     final String? cta;
     final VoidCallback? onCta;
-    final bool showTimer;
+    final IconData ctaIcon;
+    final String subtext;
 
     if (snap.phase == DailyWarPhase.restDay) {
       eyebrow = 'SUNDAY OFF';
-      headline = 'No live paper today. Next War is Monday at 9:00 PM IST.';
+      headline = 'No live paper today.';
+      subtext = 'Next War is Monday at 9:00 PM IST.';
       cta = null;
       onCta = null;
-      showTimer = false;
+      ctaIcon = Icons.play_arrow_rounded;
     } else if (snap.submission != null) {
-      eyebrow = isGrand ? 'GRAND WAR' : 'DAILY WAR';
+      eyebrow = isGrand ? 'GRAND WAR' : 'TONIGHT\'S WAR';
       headline = topicsLine.isNotEmpty
           ? topicsLine
           : 'You were in tonight\'s paper.';
+      subtext = snap.submission!.hasOfficialRank
+          ? 'Open your rank and explanations.'
+          : 'Your attempt is in. Results will follow.';
       cta = snap.submission!.hasOfficialRank
-          ? 'See your results'
+          ? 'View results'
           : 'Open your attempt';
       onCta = onOpenResults;
-      showTimer = false;
+      ctaIcon = Icons.replay_rounded;
     } else if (snap.phase == DailyWarPhase.lobby ||
         snap.phase == DailyWarPhase.liveJoinable) {
       eyebrow = 'LIVE NOW';
       headline = topicsLine.isNotEmpty
           ? topicsLine
           : (isGrand ? 'Grand War is live.' : 'Daily War is live.');
+      subtext = 'All-India live paper. Join before the window closes.';
       cta = launching ? 'Starting…' : 'Join now';
       onCta = launching ? null : onJoinLive;
-      showTimer = false;
+      ctaIcon = Icons.play_arrow_rounded;
     } else if (snap.phase == DailyWarPhase.resultsPending ||
         snap.phase == DailyWarPhase.resultsReady) {
-      eyebrow = isGrand ? 'GRAND WAR' : 'DAILY WAR';
+      eyebrow = isGrand ? 'GRAND WAR' : 'TONIGHT\'S WAR';
       headline = 'Tonight\'s live window has closed.';
+      subtext = 'You can still attempt this paper unranked.';
       cta = launching ? 'Starting…' : 'Attempt unranked';
       onCta = launching ? null : onAttemptUnranked;
-      showTimer = false;
+      ctaIcon = Icons.play_arrow_rounded;
     } else {
-      eyebrow = isGrand ? 'GRAND WAR TONIGHT' : 'TONIGHT · 9:00 PM';
+      eyebrow = isGrand ? 'GRAND WAR TONIGHT' : 'TONIGHT\'S WAR';
       headline = topicsLine.isNotEmpty
           ? topicsLine
           : (isGrand
                 ? 'Week revision. Same paper, All-India.'
                 : 'All-India live paper. Lobby opens at 8:59 PM.');
+      subtext = isGrand
+          ? 'Saturday Grand War starts at 9:00 PM IST.'
+          : 'Daily War starts at 9:00 PM IST.';
       cta = untilStart.isNegative ? 'Available soon' : null;
       onCta = null;
-      showTimer = !untilStart.isNegative;
+      ctaIcon = Icons.play_arrow_rounded;
     }
 
-    return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.all(AppSpacing.lg),
+    final nextStart = (!untilStart.isNegative &&
+            snap.phase != DailyWarPhase.restDay)
+        ? start
+        : DailyWarSchedule.startAtForDate(
+            DailyWarSchedule.nextWarDate(ist),
+          );
+    final untilNext = nextStart.difference(ist);
+    final nextIsTonight =
+        DailyWarSchedule.dateOnly(nextStart) ==
+        DailyWarSchedule.dateOnly(ist);
+    final footerLabel = nextIsTonight
+        ? 'Tonight\'s War starts at 9 PM'
+        : nextStart.weekday == DateTime.monday
+        ? 'Monday\'s War starts at 9 PM'
+        : 'Next War starts at 9 PM';
+
+    return DecoratedBox(
       decoration: BoxDecoration(
-        color: isDark ? DwColors.surface : DwColors.crimsonSoft,
-        borderRadius: BorderRadius.circular(AppRadius.lg),
-        border: Border.all(color: border, width: 0.5),
+        color: scheme.surface,
+        borderRadius: BorderRadius.circular(AppRadius.xl),
+        boxShadow: [
+          BoxShadow(
+            color: AppColors.gray900.withValues(alpha: isDark ? 0.35 : 0.07),
+            blurRadius: 18,
+            offset: const Offset(0, 6),
+          ),
+        ],
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Text(
-            eyebrow,
-            style: AppTextStyles.caption().copyWith(
-              color: accent,
-              letterSpacing: 0.8,
-              fontWeight: FontWeight.w700,
+      child: Padding(
+        padding: const EdgeInsets.all(AppSpacing.lg),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Row(
+              children: [
+                Container(
+                  width: 22,
+                  height: 22,
+                  decoration: BoxDecoration(
+                    color: info,
+                    borderRadius: BorderRadius.circular(6),
+                  ),
+                  child: Icon(
+                    isGrand
+                        ? Icons.workspace_premium_rounded
+                        : Icons.bolt_rounded,
+                    size: 13,
+                    color: AppColors.onPrimary,
+                  ),
+                ),
+                const SizedBox(width: 8),
+                Text(
+                  eyebrow,
+                  style: AppTextStyles.caption().copyWith(
+                    color: info,
+                    letterSpacing: 0.7,
+                    fontWeight: FontWeight.w800,
+                  ),
+                ),
+              ],
             ),
-          ),
-          const SizedBox(height: AppSpacing.sm),
-          Text(
-            headline,
-            style: AppTextStyles.bodySm().copyWith(
-              color: isDark ? DwColors.onDark : scheme.onSurface,
-              height: 1.35,
-            ),
-          ),
-          if (showTimer) ...[
-            const SizedBox(height: AppSpacing.md),
+            const SizedBox(height: 10),
             Text(
-              DailyWarSchedule.formatCountdown(untilStart),
-              textAlign: TextAlign.center,
-              style: AppTextStyles.h1().copyWith(
-                color: isDark ? DwColors.onDark : scheme.onSurface,
+              headline,
+              style: AppTextStyles.h2().copyWith(
                 fontWeight: FontWeight.w800,
-                fontSize: 28,
-                fontFeatures: const [FontFeature.tabularFigures()],
+                color: scheme.onSurface,
+                height: 1.25,
               ),
             ),
-            const SizedBox(height: AppSpacing.xs),
+            const SizedBox(height: 6),
+            Container(
+              width: 28,
+              height: 3,
+              decoration: BoxDecoration(
+                color: info,
+                borderRadius: BorderRadius.circular(2),
+              ),
+            ),
+            const SizedBox(height: 8),
             Text(
-              'Until tonight\'s War',
-              textAlign: TextAlign.center,
+              subtext,
               style: AppTextStyles.caption().copyWith(
                 color: scheme.onSurfaceVariant,
+                height: 1.35,
               ),
             ),
-          ],
-          if (cta != null) ...[
-            const SizedBox(height: AppSpacing.md),
-            FilledButton(
-              onPressed: onCta,
-              style: FilledButton.styleFrom(
-                backgroundColor: DwColors.crimson,
-                foregroundColor: Colors.white,
+            if (cta != null) ...[
+              const SizedBox(height: AppSpacing.md),
+              SizedBox(
+                height: 46,
+                child: FilledButton.icon(
+                  onPressed: launching ? null : onCta,
+                  style: FilledButton.styleFrom(
+                    backgroundColor: AppColors.primary,
+                    foregroundColor: AppColors.onPrimary,
+                    disabledBackgroundColor: AppColors.primary.withValues(
+                      alpha: 0.45,
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(AppRadius.md),
+                    ),
+                  ),
+                  icon: launching
+                      ? const SizedBox(
+                          width: 16,
+                          height: 16,
+                          child: CircularProgressIndicator(
+                            strokeWidth: 2,
+                            color: AppColors.onPrimary,
+                          ),
+                        )
+                      : Icon(ctaIcon, size: 20),
+                  label: Text(
+                    cta,
+                    style: AppTextStyles.label().copyWith(
+                      fontWeight: FontWeight.w700,
+                      color: AppColors.onPrimary,
+                    ),
+                  ),
+                ),
               ),
-              child: Text(cta),
+            ],
+            const SizedBox(height: 10),
+            Row(
+              children: [
+                Icon(
+                  Icons.schedule_rounded,
+                  size: 14,
+                  color: scheme.onSurfaceVariant,
+                ),
+                const SizedBox(width: 6),
+                Expanded(
+                  child: Text(
+                    footerLabel,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: AppTextStyles.caption().copyWith(
+                      color: scheme.onSurfaceVariant,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 8),
+                Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 8,
+                    vertical: 4,
+                  ),
+                  decoration: BoxDecoration(
+                    color: infoSoft,
+                    borderRadius: BorderRadius.circular(AppRadius.pill),
+                  ),
+                  child: Text(
+                    DailyWarSchedule.formatCountdown(
+                      untilNext.isNegative ? Duration.zero : untilNext,
+                    ),
+                    style: AppTextStyles.caption().copyWith(
+                      color: info,
+                      fontWeight: FontWeight.w800,
+                      fontFeatures: const [FontFeature.tabularFigures()],
+                    ),
+                  ),
+                ),
+              ],
             ),
           ],
-        ],
+        ),
       ),
     );
   }

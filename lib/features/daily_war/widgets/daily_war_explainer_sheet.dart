@@ -124,7 +124,9 @@ class _DailyWarExplainerSheet extends HookConsumerWidget {
                     Text(
                       isGrand
                           ? 'Saturday\'s paper is these:'
-                          : 'Tonight\'s paper is these two:',
+                          : topics.length == 1
+                              ? 'Tonight\'s paper is this:'
+                              : 'Tonight\'s paper is these:',
                       style: AppTextStyles.bodySm().copyWith(
                         color: DwColors.onDark,
                         fontWeight: FontWeight.w700,
