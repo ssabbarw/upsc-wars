@@ -331,13 +331,16 @@ class TestConfigBottomSheet extends HookConsumerWidget {
                           color: scheme.onSurfaceVariant,
                         ),
                       ),
-                      const SizedBox(height: AppSpacing.xs),
-                      Text(
-                        '${formatIntCount(maxQ)} questions available',
-                        style: AppTextStyles.bodySm().copyWith(
-                          color: scheme.onSurfaceVariant,
+                      // Locked sets already show the count under Number of questions.
+                      if (args.lockedQuestionCount == null) ...[
+                        const SizedBox(height: AppSpacing.xs),
+                        Text(
+                          '${formatIntCount(maxQ)} questions available',
+                          style: AppTextStyles.bodySm().copyWith(
+                            color: scheme.onSurfaceVariant,
+                          ),
                         ),
-                      ),
+                      ],
                     ] else
                       Text(
                         '${formatIntCount(maxQ)} questions · ${args.topicCountWhenSubjectOnly} topics',
@@ -450,40 +453,14 @@ class TestConfigBottomSheet extends HookConsumerWidget {
                       const SizedBox(height: AppSpacing.xxl),
                       confidenceReminder(),
                       const SizedBox(height: AppSpacing.sm),
-                      if (!args.forceExamMode)
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Timed test',
-                              style: AppTextStyles.label().copyWith(
-                                color: scheme.onSurface,
-                              ),
-                            ),
-                            Switch(
-                              value: examTimed.value,
-                              onChanged: (v) => examTimed.value = v,
-                              activeThumbColor: AppColors.onPrimary,
-                              activeTrackColor: AppColors.info,
-                            ),
-                          ],
-                        ),
-                      if (args.forceExamMode)
-                        Text(
-                          'Timed test',
-                          style: AppTextStyles.label().copyWith(
-                            color: scheme.onSurface,
-                          ),
-                        ),
-                      if (examTimed.value) ...[
-                        const SizedBox(height: AppSpacing.sm),
-                        Text(
-                          _formatExamDuration(effectiveCount),
-                          style: AppTextStyles.bodySm().copyWith(
-                            color: scheme.onSurfaceVariant,
-                          ),
-                        ),
-                      ],
+                      _TimedTestCard(
+                        timed: examTimed.value,
+                        duration: _formatExamDuration(effectiveCount),
+                        interactive: !args.forceExamMode,
+                        onChanged: (v) => examTimed.value = v,
+                        borderColor: borderColor,
+                        isDark: isDark,
+                      ),
                     ] else ...[
                       const SizedBox(height: AppSpacing.xxl),
                       Text(
@@ -635,6 +612,102 @@ class _CountTile extends HookConsumerWidget {
             style: AppTextStyles.labelSm().copyWith(color: fg),
           ),
         ),
+      ),
+    );
+  }
+}
+
+class _TimedTestCard extends StatelessWidget {
+  const _TimedTestCard({
+    required this.timed,
+    required this.duration,
+    required this.interactive,
+    required this.onChanged,
+    required this.borderColor,
+    required this.isDark,
+  });
+
+  final bool timed;
+  final String duration;
+  final bool interactive;
+  final ValueChanged<bool> onChanged;
+  final Color borderColor;
+  final bool isDark;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    final infoBg = isDark ? AppColors.infoBgDark : AppColors.infoBg;
+    final infoText = isDark ? AppColors.infoTextDark : AppColors.infoText;
+
+    return Container(
+      decoration: BoxDecoration(
+        color: scheme.surface,
+        borderRadius: BorderRadius.circular(AppRadius.lg),
+        border: Border.all(color: borderColor, width: 0.5),
+      ),
+      clipBehavior: Clip.antiAlias,
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: AppSpacing.lg,
+              vertical: AppSpacing.md,
+            ),
+            child: Row(
+              children: [
+                Icon(Icons.timer_outlined, color: infoText, size: 24),
+                const SizedBox(width: AppSpacing.md),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Timed test',
+                        style: AppTextStyles.label().copyWith(
+                          color: scheme.onSurface,
+                        ),
+                      ),
+                      Text(
+                        duration,
+                        style: AppTextStyles.bodySm().copyWith(
+                          color: scheme.onSurfaceVariant,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Switch(
+                  value: timed,
+                  onChanged: interactive ? onChanged : null,
+                  activeThumbColor: AppColors.onPrimary,
+                  activeTrackColor: AppColors.info,
+                ),
+              ],
+            ),
+          ),
+          Divider(height: 1, thickness: 0.5, color: borderColor),
+          Container(
+            color: infoBg,
+            padding: const EdgeInsets.symmetric(
+              horizontal: AppSpacing.lg,
+              vertical: AppSpacing.sm,
+            ),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Icon(Icons.info_outline_rounded, size: 16, color: infoText),
+                const SizedBox(width: AppSpacing.sm),
+                Expanded(
+                  child: Text(
+                    'Exam mode is a timed test with explanations after it ends.',
+                    style: AppTextStyles.caption().copyWith(color: infoText),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }

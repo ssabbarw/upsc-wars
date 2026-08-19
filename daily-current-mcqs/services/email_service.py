@@ -122,6 +122,9 @@ class PipelineReport:
             f"Sources used:     {', '.join(self.reachable_sources) or 'N/A'}",
             f"Failed URLs:      {', '.join(self.failed_sources) or 'None'}",
             f"Hindi translated: {'Yes' if self.hindi_ok else 'No'}",
+            "",
+            "This email is the English draft (daily_ca_drafts).",
+            "The app reads live questions from daily_mcqs after auto-publish at 12:00 AM IST, if you have not published yourself.",
         ]
         if self.warnings:
             body_parts.append("\nWarnings:")

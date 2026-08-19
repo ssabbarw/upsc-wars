@@ -31,7 +31,7 @@ Python pipeline (Cloud Function `generateDailyCa`, every 15 min; runs at `admin_
 | `generateDailyCa` | every 15 min; runs at configured IST clock (default 8:00 PM) | Python harvest + 15/20 English drafts |
 | `updateDailyCaDraft` | callable | Super-user saves edits + chosen ids |
 | `publishDailyCaDay` | callable | Translates chosen 5–10 to Hindi, writes `daily_mcqs/{Y}/{M}/{D}` |
-| `autoPublishDailyCa` | 5:50 AM IST | If unpublished: chosen ≥5, else first 10, skip if &lt;5 |
+| `autoPublishDailyCa` | 12:00 AM IST | If you have not published: writes English to `daily_mcqs`, then Hindi. Emails success/failure. Skip if &lt;5. No retry. |
 | `adminAutoPublishDailyCa` | callable | Manual auto-publish |
 
 Secrets: **`ANTHROPIC_API_KEY`**, **`GMAIL_SENDER` / `GMAIL_APP_PASSWORD` / `GMAIL_RECIPIENT`**.

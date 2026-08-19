@@ -8,7 +8,7 @@ admin_dashboard/daily_ca.generate_hour_ist / generate_minute_ist (IST, default 2
 import os
 
 os.environ.setdefault("MCQ_MODEL", "claude-sonnet-4-6")
-os.environ.setdefault("MAX_RETRIES", "3")
+os.environ.setdefault("MAX_RETRIES", "1")
 os.environ.setdefault("PROMPT_VERSION", "1.4")
 
 from datetime import datetime, timedelta, timezone
@@ -97,8 +97,20 @@ def generateDailyCa(event: scheduler_fn.ScheduledEvent) -> None:
         merge=True,
     )
     print("generateDailyCa start", slot)
-    apply_firestore_llm_overrides(force=True)
-    run(now.date(), local=False)
+    try:
+        apply_firestore_llm_overrides(force=True)
+        run(now.date(), local=False)
+    except Exception as e:
+        print("generateDailyCa failed", slot, e)
+        try:
+            from services.email_service import send_email
+
+            send_email(
+                f"FAILED — Generate — {now.date().isoformat()}",
+                f"generateDailyCa crashed (no retry):\n{e}",
+            )
+        except Exception as mail_err:
+            print("generateDailyCa failure email failed", mail_err)
     ref.set(
         {
             "last_generate_slot": slot,

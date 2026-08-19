@@ -9,6 +9,7 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../domain/daily_ca_schedule.dart';
+import '../../fomo_pulse/widgets/fomo_pulse_home_card.dart';
 import '../domain/open_daily_ca_test.dart';
 import '../providers/daily_ca_providers.dart';
 import '../widgets/daily_ca_month_calendar.dart';
@@ -120,6 +121,8 @@ class DailyCaScreen extends HookConsumerWidget {
                       openDayTestStable(paperIso, isRevise: paperCompleted),
                     ),
           ),
+          const SizedBox(height: AppSpacing.md),
+          const FomoPulseHomeCard(),
           const SizedBox(height: AppSpacing.lg),
           Row(
             children: [

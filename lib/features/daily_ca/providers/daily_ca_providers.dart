@@ -4,6 +4,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/providers/kill_switch_provider.dart';
 import '../../../core/providers/user_database_provider.dart';
+import '../data/daily_ca_firestore.dart';
 import '../data/daily_ca_repository.dart';
 import '../domain/daily_ca_schedule.dart';
 
@@ -29,22 +30,27 @@ final dailyCaRepositoryProvider = Provider<DailyCaRepository>((ref) {
 
 /// Whether the clock-open paper actually has a live `daily_mcqs` document.
 ///
-/// The home widget used the schedule alone, so a tap could claim "today's
-/// paper" for a date that was never published.
+/// Snapshot stream so home updates when auto-publish writes the doc (the
+/// one-shot fetch cached `false` if the user opened the app a few minutes
+/// early).
 final dailyCaScheduledPaperIsLiveProvider =
-    FutureProvider.autoDispose<bool>((ref) async {
+    StreamProvider.autoDispose<bool>((ref) async* {
   final minDate = await ref.watch(dailyCaCalendarMinDateProvider.future);
   final scheduled = DailyCaSchedule.paperQuizContentDate();
-  if (scheduled == null) return false;
-  if (!DailyCaSchedule.isOnOrAfterMinDate(scheduled, minDate)) return false;
-
-  try {
-    final iso = DailyCaSchedule.formatIsoDate(scheduled);
-    final doc = await ref.read(dailyCaRepositoryProvider).fetchDay(iso);
-    return doc != null && doc.questions.isNotEmpty;
-  } on Object {
-    return false;
+  if (scheduled == null) {
+    yield false;
+    return;
   }
+  if (!DailyCaSchedule.isOnOrAfterMinDate(scheduled, minDate)) {
+    yield false;
+    return;
+  }
+
+  final iso = DailyCaSchedule.formatIsoDate(scheduled);
+  yield* DailyCaFirestore.dayDoc(iso).snapshots().map((snap) {
+    if (!snap.exists) return false;
+    return DailyCaRepository.snapshotHasQuestions(snap.data());
+  });
 });
 
 class DailyCaMonthKey {

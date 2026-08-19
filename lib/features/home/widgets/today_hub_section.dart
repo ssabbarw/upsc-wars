@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
@@ -21,6 +22,7 @@ import '../../daily_war/providers/server_clock_provider.dart';
 import '../../daily_war/theme/daily_war_theme.dart';
 import '../../daily_war/widgets/daily_war_explainer_sheet.dart';
 import '../../daily_war/widgets/daily_war_home_card.dart';
+import '../../daily_war/widgets/daily_war_topics_sheet.dart';
 import '../../fomo_pulse/widgets/fomo_pulse_home_card.dart';
 import '../domain/daily_streak_service.dart';
 import '../domain/start_sunday_week_review.dart';
@@ -221,19 +223,74 @@ class TodayHubSection extends HookConsumerWidget {
       }
     }
 
+    Widget rowOf(List<Widget> cards) {
+      if (cards.length == 1) return cards.first;
+      return IntrinsicHeight(
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            for (var i = 0; i < cards.length; i++) ...[
+              if (i > 0) const SizedBox(width: AppSpacing.sm),
+              Expanded(child: cards[i]),
+            ],
+          ],
+        ),
+      );
+    }
+
+    Widget withShots(Widget ca) {
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          ca,
+          const SizedBox(height: AppSpacing.sm),
+          const FomoPulseHomeCard(),
+        ],
+      );
+    }
+
+    Widget? placed(TodaySlotId id, TodayLoopLayout layout) {
+      final card = cardFor(id, layout);
+      if (card == null) return null;
+      if (id == TodaySlotId.current) return withShots(card);
+      return card;
+    }
+
     final companionIds = [
       for (final id in TodayHero.companions(hero, warEvening: warEvening))
         if (cardFor(id, TodayLoopLayout.tile) != null) id,
     ];
-    final companionLayout = companionIds.length == 1
-        ? TodayLoopLayout.banner
-        : TodayLoopLayout.tile;
-    final heroCard = cardFor(hero, TodayLoopLayout.hero);
-    final companionCards = [
-      for (final id in companionIds) cardFor(id, companionLayout),
-    ].whereType<Widget>().toList();
+    // War topics and the CA+shots pair need full width — keep them out of
+    // the half-width tile row.
+    final companionBlocks = <Widget>[];
+    var rowIds = <TodaySlotId>[];
 
-    if (heroCard == null && companionCards.isEmpty) {
+    void flushRow() {
+      if (rowIds.isEmpty) return;
+      final layout = rowIds.length == 1
+          ? TodayLoopLayout.banner
+          : TodayLoopLayout.tile;
+      final cards = [
+        for (final id in rowIds) cardFor(id, layout),
+      ].whereType<Widget>().toList();
+      if (cards.isNotEmpty) companionBlocks.add(rowOf(cards));
+      rowIds = [];
+    }
+
+    for (final id in companionIds) {
+      if (id == TodaySlotId.war || id == TodaySlotId.current) {
+        flushRow();
+        final block = placed(id, TodayLoopLayout.banner);
+        if (block != null) companionBlocks.add(block);
+      } else {
+        rowIds.add(id);
+      }
+    }
+    flushRow();
+
+    final heroCard = placed(hero, TodayLoopLayout.hero);
+
+    if (heroCard == null && companionBlocks.isEmpty) {
       return const SizedBox.shrink();
     }
 
@@ -274,25 +331,112 @@ class TodayHubSection extends HookConsumerWidget {
         ],
         const SizedBox(height: AppSpacing.md),
         ?heroCard,
-        if (companionCards.isNotEmpty) ...[
+        for (final block in companionBlocks) ...[
           const SizedBox(height: AppSpacing.md),
-          if (companionCards.length == 1)
-            companionCards.first
-          else
-            IntrinsicHeight(
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  for (var i = 0; i < companionCards.length; i++) ...[
-                    if (i > 0) const SizedBox(width: AppSpacing.sm),
-                    Expanded(child: companionCards[i]),
-                  ],
-                ],
+          block,
+        ],
+        if (!data.caEnabled) ...[
+          const SizedBox(height: AppSpacing.md),
+          const FomoPulseHomeCard(),
+        ],
+        if (kDebugMode) ...[
+          const SizedBox(height: AppSpacing.lg),
+          const _GrandWarPreview(),
+        ],
+      ],
+    );
+  }
+}
+
+/// Debug-only preview of the Saturday Grand War card with fake week topics.
+class _GrandWarPreview extends StatelessWidget {
+  const _GrandWarPreview();
+
+  static const _fakeTopics = [
+    DailyWarTopicRef(subjectSlug: 'polity', topic: 'Local Government'),
+    DailyWarTopicRef(subjectSlug: 'economy', topic: 'Money and Banking'),
+    DailyWarTopicRef(subjectSlug: 'geography', topic: 'Ocean Currents'),
+    DailyWarTopicRef(subjectSlug: 'environment', topic: 'Biodiversity Hotspots'),
+    DailyWarTopicRef(subjectSlug: 'modern_history', topic: 'Gandhian Era'),
+    DailyWarTopicRef(subjectSlug: 'ancient_history', topic: 'Maurya Empire'),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'DEBUG — GRAND WAR PREVIEW',
+          style: TextStyle(
+            fontSize: 10,
+            fontWeight: FontWeight.w800,
+            color: scheme.onSurfaceVariant,
+            letterSpacing: 1,
+          ),
+        ),
+        const SizedBox(height: 6),
+        // Hero layout
+        _HubWarCard(
+          dateId: '2026-08-22',
+          submitted: false,
+          topics: _fakeTopics,
+          phase: DailyWarPhase.morning,
+          overnight: false,
+          layout: TodayLoopLayout.hero,
+          showNow: false,
+          isGrand: true,
+        ),
+        const SizedBox(height: 8),
+        // Banner layout (companion)
+        _HubWarCard(
+          dateId: '2026-08-22',
+          submitted: false,
+          topics: _fakeTopics,
+          phase: DailyWarPhase.morning,
+          overnight: false,
+          layout: TodayLoopLayout.banner,
+          showNow: false,
+          isGrand: true,
+        ),
+        const SizedBox(height: 8),
+        // Tile layout
+        Row(
+          children: [
+            Expanded(
+              child: _HubWarCard(
+                dateId: '2026-08-22',
+                submitted: false,
+                topics: _fakeTopics,
+                phase: DailyWarPhase.morning,
+                overnight: false,
+                layout: TodayLoopLayout.tile,
+                showNow: false,
+                isGrand: true,
               ),
             ),
-        ],
-        const SizedBox(height: AppSpacing.md),
-        const FomoPulseHomeCard(),
+            const SizedBox(width: 8),
+            Expanded(
+              child: SizedBox(
+                height: 148,
+                child: DecoratedBox(
+                  decoration: BoxDecoration(
+                    color: scheme.surfaceContainerLow,
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Center(
+                    child: Text(
+                      'other\ncard',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(color: scheme.onSurfaceVariant),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ],
     );
   }
@@ -326,47 +470,95 @@ class _HubWarCard extends StatelessWidget {
         phase == DailyWarPhase.lobby ||
         phase == DailyWarPhase.liveJoinable ||
         phase == DailyWarPhase.liveLocked;
-    final topicsLine = DailyWarCopy.topicsLine(topics);
+    final resultsOpen =
+        overnight ||
+        phase == DailyWarPhase.resultsPending ||
+        phase == DailyWarPhase.resultsReady;
+    // Saturday Grand War revisits the whole week (~10 topics). Don't stack
+    // them — weekdays keep the two-topic title.
+    final weekend = isGrand || topics.length > 2;
+    final warName = isGrand ? 'Grand War' : 'Daily War';
+    final warEyebrow = isGrand ? 'GRAND WAR' : 'DAILY WAR';
+    final weekBit = topics.isEmpty
+        ? 'Week revision'
+        : 'Week revision · ${topics.length} topics';
 
     final String title;
     final String subtitle;
     final String cta;
-    if (submitted) {
-      title = layout == TodayLoopLayout.tile
-          ? 'Daily War'
-          : (topicsLine.isEmpty ? 'Daily War' : topicsLine);
-      subtitle = layout == TodayLoopLayout.tile
-          ? 'You were there'
-          : 'You were in the room. The rank is waiting.';
-      cta = layout == TodayLoopLayout.hero ? 'See how you did' : 'Result';
-    } else if (live) {
-      title = 'Daily War';
-      subtitle = 'The room is open.';
-      cta = 'Join';
-    } else if (overnight ||
-        phase == DailyWarPhase.resultsPending ||
-        phase == DailyWarPhase.resultsReady) {
-      title = topicsLine.isEmpty ? 'Last night' : topicsLine;
-      subtitle = layout == TodayLoopLayout.tile
-          ? 'Missed'
-          : 'The paper is up if you still want the questions.';
-      cta = layout == TodayLoopLayout.hero ? 'Open the paper' : 'Paper';
+    final String eyebrow;
+    final int titleMaxLines;
+    if (weekend) {
+      titleMaxLines = 1;
+      if (submitted) {
+        title = warName;
+        subtitle = layout == TodayLoopLayout.tile ? 'You were there' : weekBit;
+        cta = layout == TodayLoopLayout.hero ? 'See how you did' : 'Result';
+        eyebrow = warEyebrow;
+      } else if (live) {
+        title = warName;
+        subtitle = layout == TodayLoopLayout.tile
+            ? 'Join now'
+            : '$weekBit. The room is open.';
+        cta = 'Join';
+        eyebrow = 'LIVE';
+      } else if (resultsOpen) {
+        title = warName;
+        subtitle = layout == TodayLoopLayout.tile
+            ? 'Last night'
+            : 'Last night · $weekBit';
+        cta = layout == TodayLoopLayout.hero ? 'Open the paper' : 'Paper';
+        eyebrow = 'LAST NIGHT';
+      } else {
+        title = 'Saturday at 9 PM';
+        subtitle = layout == TodayLoopLayout.tile
+            ? weekBit
+            : '$weekBit. Same paper, All-India.';
+        cta = topics.isNotEmpty ? 'See topics' : 'How it works';
+        eyebrow = warEyebrow;
+      }
     } else {
-      title = layout == TodayLoopLayout.tile
-          ? 'Daily War'
-          : (topicsLine.isEmpty ? 'Two topics a night' : topicsLine);
-      subtitle = layout == TodayLoopLayout.tile
-          ? '9 PM'
-          : 'Same paper. Whole country. Warm up first.';
-      cta = 'How it works';
+      final topicsLine = DailyWarCopy.topicsLine(topics, sep: '\n');
+      final topicTitle = topicsLine.isEmpty ? null : topicsLine;
+      titleMaxLines = topics.isEmpty ? 2 : (topics.length * 2).clamp(2, 4);
+      if (submitted) {
+        title = topicTitle ?? warName;
+        subtitle = layout == TodayLoopLayout.tile
+            ? 'You were there'
+            : 'You were in the room. The rank is waiting.';
+        cta = layout == TodayLoopLayout.hero ? 'See how you did' : 'Result';
+        eyebrow = warEyebrow;
+      } else if (live) {
+        title = topicTitle ?? warName;
+        subtitle = layout == TodayLoopLayout.tile
+            ? 'Join the live paper'
+            : 'Live All-India paper. Same questions, then the rank.';
+        cta = 'Join';
+        eyebrow = 'LIVE';
+      } else if (resultsOpen) {
+        title = topicTitle ?? warName;
+        subtitle = layout == TodayLoopLayout.tile
+            ? 'Last night\'s paper'
+            : 'Last night\'s paper is up if you still want the questions.';
+        cta = layout == TodayLoopLayout.hero ? 'Open the paper' : 'Paper';
+        eyebrow = 'LAST NIGHT';
+      } else {
+        title = topicTitle ?? 'Tonight at 9 PM';
+        subtitle = layout == TodayLoopLayout.tile
+            ? 'All-India live test · 9 PM'
+            : 'All-India live test. Tonight at 9 PM.';
+        cta = 'How it works';
+        eyebrow = warEyebrow;
+      }
     }
 
     return TodayLoopCard(
       layout: layout,
-      eyebrow: live ? 'LIVE' : '9 PM',
+      eyebrow: eyebrow,
       title: title,
       subtitle: subtitle,
       cta: cta,
+      titleMaxLines: titleMaxLines,
       icon: Icons.shield_outlined,
       accent: DwColors.crimsonBright,
       background: isDark ? DwColors.surface : DwColors.crimsonSoft,
@@ -377,12 +569,13 @@ class _HubWarCard extends StatelessWidget {
           context.push('/daily-war');
           return;
         }
-        if (submitted ||
-            overnight ||
-            phase == DailyWarPhase.resultsPending ||
-            phase == DailyWarPhase.resultsReady) {
+        if (submitted || resultsOpen) {
           if (dateId.isEmpty) return;
           context.push('/daily-war/history/$dateId');
+          return;
+        }
+        if (weekend && topics.isNotEmpty) {
+          unawaited(showDailyWarTopicsSheet(context: context, topics: topics));
           return;
         }
         unawaited(

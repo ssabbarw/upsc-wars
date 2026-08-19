@@ -35,6 +35,12 @@ class DailyCaRepository {
     developer.log(message, name: _logName, stackTrace: stackTrace);
   }
 
+  /// True when a live `daily_mcqs` snapshot has at least one question map.
+  static bool snapshotHasQuestions(Map<String, dynamic>? data) {
+    if (data == null) return false;
+    return _coerceQuestionMaps(data['questions']).isNotEmpty;
+  }
+
   /// Firestore may store `questions` as a List or a Map with numeric keys.
   static List<Map<String, dynamic>> _coerceQuestionMaps(Object? raw) {
     if (raw is List) {

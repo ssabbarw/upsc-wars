@@ -32,7 +32,9 @@ import '../widgets/today_hub_section.dart';
 import '../../memory_pairs/widgets/push_memory_pairs_debug_card.dart';
 import '../../mini_games/widgets/push_revision_game_debug_card.dart';
 import '../../push_spot_test/widgets/push_spot_test_debug_card.dart';
+import '../../daily_ca/providers/daily_ca_providers.dart';
 import '../../daily_war/providers/daily_war_providers.dart';
+import '../providers/today_hub_provider.dart';
 import '../../daily_war/theme/daily_war_theme.dart';
 import '../../../shared/widgets/push_denied_banner.dart';
 import '../../../shared/theme/dark_mode_toggle.dart';
@@ -148,6 +150,8 @@ class HomeScreen extends HookConsumerWidget {
                   ref.invalidate(homeActivationProvider);
                   ref.invalidate(homeActivationJourneyProvider);
                   ref.invalidate(dailyDrillProvider);
+                  ref.invalidate(dailyCaScheduledPaperIsLiveProvider);
+                  ref.invalidate(todayHubProvider);
                   final warOn = await ref.read(
                     dailyWarRemoteEnabledProvider.future,
                   );
@@ -468,22 +472,6 @@ class HomeScreen extends HookConsumerWidget {
                       ],
                     ),
                     const SizedBox(height: AppSpacing.md),
-                    // While START HERE is up, keep Daily War collapsed so the
-                    // checklist stays the hero. User can still expand War.
-                    Consumer(
-                      builder: (context, ref, _) {
-                        final forceCollapsed = ref
-                            .watch(homeActivationJourneyProvider)
-                            .maybeWhen(
-                              data: (s) => s.shouldShowChecklist,
-                              orElse: () => false,
-                            );
-                        return TodayHubSection(
-                          forceWarCollapsed: forceCollapsed,
-                        );
-                      },
-                    ),
-                    const SizedBox(height: AppSpacing.md),
                     Consumer(
                       builder: (context, ref, _) {
                         final journey = ref.watch(
@@ -508,6 +496,21 @@ class HomeScreen extends HookConsumerWidget {
                               child: child,
                             );
                           },
+                        );
+                      },
+                    ),
+                    // START HERE sits above the daily loops. Keep War collapsed
+                    // so the checklist still reads as the first thing to do.
+                    Consumer(
+                      builder: (context, ref, _) {
+                        final forceCollapsed = ref
+                            .watch(homeActivationJourneyProvider)
+                            .maybeWhen(
+                              data: (s) => s.shouldShowChecklist,
+                              orElse: () => false,
+                            );
+                        return TodayHubSection(
+                          forceWarCollapsed: forceCollapsed,
                         );
                       },
                     ),

@@ -15,6 +15,7 @@ import '../domain/daily_ca_schedule.dart';
 Future<void> showDailyCaUnavailableSheet({
   required BuildContext context,
   DateTime? availableFrom,
+  bool pendingLive = false,
   VoidCallback? onSeeHistory,
 }) {
   return showModalBottomSheet<void>(
@@ -27,6 +28,7 @@ Future<void> showDailyCaUnavailableSheet({
       availableFrom:
           availableFrom ??
           DailyCaSchedule.nextOpensAt(referenceIst: DailyCaSchedule.nowIst()),
+      pendingLive: pendingLive,
       onSeeHistory: onSeeHistory,
     ),
   );
@@ -35,10 +37,12 @@ Future<void> showDailyCaUnavailableSheet({
 class _DailyCaUnavailableSheet extends StatefulWidget {
   const _DailyCaUnavailableSheet({
     required this.availableFrom,
+    this.pendingLive = false,
     this.onSeeHistory,
   });
 
   final DateTime availableFrom;
+  final bool pendingLive;
   final VoidCallback? onSeeHistory;
 
   @override
@@ -124,7 +128,9 @@ class _DailyCaUnavailableSheetState extends State<_DailyCaUnavailableSheet> {
                     ),
                   ),
                   Text(
-                    'Questions will be available soon',
+                    widget.pendingLive
+                        ? 'Questions aren\'t live yet'
+                        : 'Questions will be available soon',
                     style: AppTextStyles.h2().copyWith(
                       fontWeight: FontWeight.w800,
                       color: scheme.onSurface,
@@ -132,67 +138,75 @@ class _DailyCaUnavailableSheetState extends State<_DailyCaUnavailableSheet> {
                   ),
                   const SizedBox(height: AppSpacing.md),
                   Text(
-                    'Each paper is built from news articles. It tests how well '
-                    'you read the previous day\'s news — yesterday\'s newspaper, '
-                    'this morning\'s quiz.',
+                    widget.pendingLive
+                        ? 'This morning\'s paper was generated, but it has not '
+                            'been published to the app yet. Pull home to refresh '
+                            'in a minute.'
+                        : 'Each paper is built from news articles. It tests how well '
+                            'you read the previous day\'s news — yesterday\'s newspaper, '
+                            'this morning\'s quiz.',
                     style: AppTextStyles.bodySm().copyWith(
                       color: scheme.onSurfaceVariant,
                       height: 1.5,
                     ),
                   ),
                   const SizedBox(height: AppSpacing.lg),
-                  Container(
-                    padding: const EdgeInsets.all(AppSpacing.md),
-                    decoration: BoxDecoration(
-                      color: softBg,
-                      borderRadius: BorderRadius.circular(AppRadius.md),
-                      border: Border.all(color: accent.withValues(alpha: 0.25)),
-                    ),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Icon(
-                          Icons.event_available_rounded,
-                          color: accent,
-                          size: 22,
+                  if (!widget.pendingLive) ...[
+                    Container(
+                      padding: const EdgeInsets.all(AppSpacing.md),
+                      decoration: BoxDecoration(
+                        color: softBg,
+                        borderRadius: BorderRadius.circular(AppRadius.md),
+                        border: Border.all(
+                          color: accent.withValues(alpha: 0.25),
                         ),
-                        const SizedBox(width: AppSpacing.sm),
-                        Expanded(
-                          child: Text.rich(
-                            TextSpan(
-                              children: [
-                                TextSpan(
-                                  text: "Today's test will be from :\n",
-                                  style: AppTextStyles.bodySm().copyWith(
-                                    color: scheme.onSurface,
-                                    fontWeight: FontWeight.w600,
-                                    height: 1.45,
+                      ),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Icon(
+                            Icons.event_available_rounded,
+                            color: accent,
+                            size: 22,
+                          ),
+                          const SizedBox(width: AppSpacing.sm),
+                          Expanded(
+                            child: Text.rich(
+                              TextSpan(
+                                children: [
+                                  TextSpan(
+                                    text: "Today's test will be from :\n",
+                                    style: AppTextStyles.bodySm().copyWith(
+                                      color: scheme.onSurface,
+                                      fontWeight: FontWeight.w600,
+                                      height: 1.45,
+                                    ),
                                   ),
-                                ),
-                                TextSpan(
-                                  text: dateLabel,
-                                  style: AppTextStyles.h2().copyWith(
-                                    color: scheme.onSurface,
-                                    fontWeight: FontWeight.w800,
-                                    height: 1.3,
+                                  TextSpan(
+                                    text: dateLabel,
+                                    style: AppTextStyles.h2().copyWith(
+                                      color: scheme.onSurface,
+                                      fontWeight: FontWeight.w800,
+                                      height: 1.3,
+                                    ),
                                   ),
-                                ),
-                                TextSpan(
-                                  text: '\nTest available in $countdown',
-                                  style: AppTextStyles.bodySm().copyWith(
-                                    color: scheme.onSurfaceVariant,
-                                    fontWeight: FontWeight.w600,
-                                    height: 1.45,
+                                  TextSpan(
+                                    text: '\nTest available in $countdown',
+                                    style: AppTextStyles.bodySm().copyWith(
+                                      color: scheme.onSurfaceVariant,
+                                      fontWeight: FontWeight.w600,
+                                      height: 1.45,
+                                    ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                  ),
-                  const SizedBox(height: AppSpacing.lg),
+                    const SizedBox(height: AppSpacing.lg),
+                  ],
                   if (widget.onSeeHistory != null) ...[
                     OutlinedButton(
                       onPressed: () {

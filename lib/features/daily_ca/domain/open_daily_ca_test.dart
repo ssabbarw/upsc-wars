@@ -48,7 +48,6 @@ Future<void> openDailyCaTest({
         topicCountWhenSubjectOnly: 1,
         lockedQuestionCount: uuids.length,
         specificQuestionUuids: uuids,
-        fixedQuestionSetLabel: '${uuids.length} questions · $label',
         startButtonLabel: isRevise ? 'Revise' : 'Start test',
         analyticsFeatureKey: isRevise
             ? '${QuestionSourceConstants.analyticsDailyCurrentAffairs}_revise'

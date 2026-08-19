@@ -56,25 +56,25 @@ class DailyCaHomeCard extends StatelessWidget {
           ? "Today's paper"
           : '${DateFormat('d MMM').format(date)} paper';
       subtitle = layout == TodayLoopLayout.tile
-          ? 'Not up yet'
-          : 'Questions aren\'t up yet. Tomorrow\'s paper opens at 6 AM.';
+          ? 'Not live yet'
+          : 'Questions were generated, but they are not live yet. Pull to refresh.';
       cta = 'Soon';
     } else if (completed) {
       title = isTodaysPaper
           ? "Today's paper"
           : '${DateFormat('d MMM').format(date)} paper';
       subtitle = layout == TodayLoopLayout.tile
-          ? 'Locked in'
-          : 'Locked in. Open the explanations if a line still nags.';
+          ? 'Quiz done'
+          : 'Quiz done. Open the explanations if a line still nags.';
       cta = layout == TodayLoopLayout.hero ? 'Open answers' : 'Answers';
     } else {
       title = isTodaysPaper
           ? "Today's paper"
           : '${DateFormat('d MMM').format(date)} paper';
-            subtitle = layout == TodayLoopLayout.tile
-          ? 'From this morning\'s news'
-          : 'You already read it. $questionCount questions make it stay.';
-      cta = layout == TodayLoopLayout.hero ? 'Lock it in' : 'Open';
+      subtitle = layout == TodayLoopLayout.tile
+          ? 'Yesterday\'s news, $questionCount Q'
+          : '$questionCount-question test on yesterday\'s news.';
+      cta = layout == TodayLoopLayout.hero ? 'Start the quiz' : 'Start';
     }
 
     return TodayLoopCard(
@@ -92,6 +92,7 @@ class DailyCaHomeCard extends StatelessWidget {
               showDailyCaUnavailableSheet(
                 context: context,
                 availableFrom: DailyCaSchedule.nextOpensAt(),
+                pendingLive: date != null,
                 onSeeHistory: () {
                   if (context.mounted) context.push('/daily-ca');
                 },

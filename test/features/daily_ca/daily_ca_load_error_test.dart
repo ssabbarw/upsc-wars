@@ -43,4 +43,37 @@ void main() {
       expect(message, isNot(contains('daily_mcqs')));
     });
   });
+
+  group('DailyCaRepository.snapshotHasQuestions', () {
+    test('true for a list of question maps', () {
+      expect(
+        DailyCaRepository.snapshotHasQuestions({
+          'questions': [
+            {'uuid': 'a'},
+          ],
+        }),
+        isTrue,
+      );
+    });
+
+    test('true for numeric-keyed question maps', () {
+      expect(
+        DailyCaRepository.snapshotHasQuestions({
+          'questions': {
+            '0': {'uuid': 'a'},
+          },
+        }),
+        isTrue,
+      );
+    });
+
+    test('false when missing or empty', () {
+      expect(DailyCaRepository.snapshotHasQuestions(null), isFalse);
+      expect(DailyCaRepository.snapshotHasQuestions({}), isFalse);
+      expect(
+        DailyCaRepository.snapshotHasQuestions({'questions': <Object>[]}),
+        isFalse,
+      );
+    });
+  });
 }

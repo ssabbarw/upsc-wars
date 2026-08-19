@@ -48,7 +48,7 @@ QUESTIONS_TARGET        = int(os.getenv("QUESTIONS_TARGET", 15))
 WEEKEND_QUESTIONS_TARGET = int(os.getenv("WEEKEND_QUESTIONS_TARGET", 20))
 MIN_QUESTIONS_TO_WRITE  = int(os.getenv("MIN_QUESTIONS_TO_WRITE", 5))
 PROMPT_VERSION          = os.getenv("PROMPT_VERSION", "1.4")
-MAX_RETRIES             = int(os.getenv("MAX_RETRIES", 1))  # 1 for POC, 3 for production
+MAX_RETRIES             = int(os.getenv("MAX_RETRIES", 1))  # 1 = no auto-retry
 QUESTIONS_MIN           = 1
 QUESTIONS_MAX           = 50
 TOPICS_PER_GENERATE_CALL = int(os.getenv("TOPICS_PER_GENERATE_CALL", 3))

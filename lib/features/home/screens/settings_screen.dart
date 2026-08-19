@@ -205,6 +205,15 @@ class SettingsScreen extends ConsumerWidget {
                       subtitle: 'Generate, review, and publish tonight’s paper',
                       onTap: () => context.push('/internal/daily-war-admin'),
                     ),
+                  if (isSuperUser)
+                    _NavTile(
+                      icon: Icons.html_rounded,
+                      iconBg: Color(0xFFFFF4E6),
+                      iconColor: Color(0xFFB25A00),
+                      title: 'HTML message preview',
+                      subtitle: 'Open the long HTML announcement as users see it',
+                      onTap: () => context.push('/notification/long-html'),
+                    ),
                   if (kDebugMode)
                     _NavTile(
                       icon: Icons.analytics_outlined,

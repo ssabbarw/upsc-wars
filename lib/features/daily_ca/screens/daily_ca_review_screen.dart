@@ -41,11 +41,16 @@ class DailyCaReviewScreen extends HookConsumerWidget {
           }
           final questions = local.value ?? draft.questions;
           final chosen = questions.where((q) => q.chosen).length;
-          final frozen = draft.isFrozen();
+          final clockOpen = draft.isFrozen();
+          final frozen = clockOpen && draft.isPublished;
           final canPublish =
               chosen >= DailyCaAdminConstants.minPublish &&
               chosen <= DailyCaAdminConstants.maxPublish &&
               !frozen;
+          final canAutoPublish =
+              !frozen &&
+              !draft.isPublished &&
+              questions.length >= DailyCaAdminConstants.minPublish;
 
           Future<void> save() async {
             saving.value = true;
@@ -68,6 +73,30 @@ class DailyCaReviewScreen extends HookConsumerWidget {
               }
             } finally {
               saving.value = false;
+            }
+          }
+
+          Future<void> autoPublish() async {
+            publishing.value = true;
+            try {
+              final count = await ref
+                  .read(dailyCaAdminCloudServiceProvider)
+                  .autoPublish(date: isoDate);
+              if (context.mounted) {
+                AppToast.showText(
+                  context,
+                  count == 0
+                      ? 'Auto-publish skipped (already live, Sunday, or <5 questions).'
+                      : 'Published $count questions.',
+                );
+              }
+              ref.invalidate(dailyCaDraftProvider(isoDate));
+            } catch (e) {
+              if (context.mounted) {
+                AppToast.showText(context, 'Publish failed: $e');
+              }
+            } finally {
+              publishing.value = false;
             }
           }
 
@@ -112,6 +141,8 @@ class DailyCaReviewScreen extends HookConsumerWidget {
                 child: Text(
                   frozen
                       ? 'This paper is live. Use question corrections for further edits.'
+                      : clockOpen && !draft.isPublished
+                      ? 'This paper should already be live. Publish or auto-publish the first 10 so the app can show it.'
                       : draft.isWeekendPack
                       ? 'Weekend pack (Sat+Sun news). Pick 5–10. Hindi runs on publish.'
                       : 'Pick 5–10. Hindi runs on publish.',
@@ -129,6 +160,11 @@ class DailyCaReviewScreen extends HookConsumerWidget {
                     const Spacer(),
                     if (frozen)
                       Text('Live — frozen', style: AppTextStyles.caption())
+                    else if (clockOpen && !draft.isPublished)
+                      Text(
+                        'Missing live paper — publish now',
+                        style: AppTextStyles.caption(),
+                      )
                     else if (draft.isPublished)
                       Text('Published · can republish until 6 AM', style: AppTextStyles.caption()),
                   ],
@@ -226,15 +262,19 @@ class DailyCaReviewScreen extends HookConsumerWidget {
                       const SizedBox(width: AppSpacing.md),
                       Expanded(
                         child: FilledButton(
-                          onPressed: canPublish && !publishing.value
+                          onPressed: publishing.value
+                              ? null
+                              : canPublish
                               ? publish
+                              : canAutoPublish
+                              ? autoPublish
                               : null,
                           child: Text(
                             publishing.value
                                 ? 'Publishing…'
-                                : draft.isPublished
-                                ? 'Republish'
-                                : 'Publish',
+                                : canPublish
+                                ? (draft.isPublished ? 'Republish' : 'Publish')
+                                : 'Auto-publish',
                           ),
                         ),
                       ),

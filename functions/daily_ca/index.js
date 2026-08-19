@@ -174,23 +174,32 @@ async function translateEnList(enList) {
   return parsed;
 }
 
-async function translateOneByOne(questions) {
-  const out = [];
-  for (let i = 0; i < questions.length; i++) {
-    const en = questions[i].en || {};
-    const [hi] = await translateEnList([en]);
-    out.push(hi);
-  }
-  return out;
+async function attachHindi(questions) {
+  return translateEnList(questions.map((q) => q.en || {}));
 }
 
-async function attachHindi(questions) {
-  try {
-    return await translateEnList(questions.map((q) => q.en || {}));
-  } catch (e) {
-    console.warn("batch translate failed, falling back per-question", e);
-    return translateOneByOne(questions);
-  }
+function errorText(e) {
+  if (e == null) return "unknown error";
+  if (typeof e === "string") return e;
+  const lines = [];
+  if (e.code) lines.push(`code: ${e.code}`);
+  if (e.message) lines.push(e.message);
+  if (e.details) lines.push(String(e.details));
+  if (e.stack) lines.push(e.stack);
+  return lines.join("\n") || String(e);
+}
+
+async function emailStep(kind, iso, ok, extra) {
+  const subject = `${ok ? "SUCCESS" : "FAILED"} — ${kind} — ${iso}`;
+  const body = [
+    `Step: ${kind}`,
+    `Date: ${iso}`,
+    `Result: ${ok ? "SUCCESS" : "FAILED"}`,
+    extra ? `\n${extra}` : "",
+  ]
+    .filter((line) => line !== "")
+    .join("\n");
+  await sendAdminEmail(subject, body);
 }
 
 function pickQuestionsForAuto(draft) {
@@ -239,6 +248,21 @@ async function writeLive(iso, questions, extraMeta) {
     },
     questions,
   });
+}
+
+function liveQuestionCount(questions) {
+  if (Array.isArray(questions)) return questions.length;
+  if (questions && typeof questions === "object") {
+    return Object.keys(questions).length;
+  }
+  return 0;
+}
+
+async function liveDocHasQuestions(iso) {
+  const snap = await liveDocRef(iso).get();
+  if (!snap.exists) return false;
+  const data = snap.data() || {};
+  return liveQuestionCount(data.questions) > 0;
 }
 
 async function sendAdminFcm({ title, body, dateIso, status }) {
@@ -323,79 +347,129 @@ async function sendAdminEmail(subject, body) {
 }
 
 async function publishSelected(iso, selected, { auto }) {
-  if (selected.length < PUBLISH_MIN || selected.length > PUBLISH_MAX) {
-    throw new HttpsError(
-      "failed-precondition",
-      `Need ${PUBLISH_MIN}–${PUBLISH_MAX} questions, got ${selected.length}.`,
-    );
-  }
+  const publishKind = auto ? "Auto-publish" : "Manual publish";
+  try {
+    if (selected.length < PUBLISH_MIN || selected.length > PUBLISH_MAX) {
+      throw new HttpsError(
+        "failed-precondition",
+        `Need ${PUBLISH_MIN}–${PUBLISH_MAX} questions, got ${selected.length}.`,
+      );
+    }
 
-  const draftSnap = await draftRef(iso).get();
-  const prevHiByDraftId = new Map();
-  if (draftSnap.exists) {
-    for (const q of draftSnap.data().questions || []) {
-      if (q && q.hi && Object.keys(q.hi).length) {
-        prevHiByDraftId.set(String(q.draft_id || q.uuid || ""), {
-          hi: q.hi,
-          fp: q.en_fingerprint || enFingerprint(q),
-        });
+    const draftSnap = await draftRef(iso).get();
+    const prevHiByDraftId = new Map();
+    if (draftSnap.exists) {
+      for (const q of draftSnap.data().questions || []) {
+        if (q && q.hi && Object.keys(q.hi).length) {
+          prevHiByDraftId.set(String(q.draft_id || q.uuid || ""), {
+            hi: q.hi,
+            fp: q.en_fingerprint || enFingerprint(q),
+          });
+        }
       }
     }
-  }
 
-  const needTranslate = [];
-  const needIndex = [];
-  selected.forEach((q, i) => {
-    const id = String(q.draft_id || q.uuid || "");
-    const fp = enFingerprint(q);
-    const prev = prevHiByDraftId.get(id);
-    if (prev && prev.fp === fp && prev.hi) {
-      selected[i] = { ...q, hi: prev.hi, en_fingerprint: fp };
-    } else {
-      needTranslate.push(q);
-      needIndex.push(i);
-    }
-  });
-
-  if (needTranslate.length) {
-    const hindi = await attachHindi(needTranslate);
-    needIndex.forEach((qi, j) => {
-      selected[qi] = {
-        ...selected[qi],
-        hi: hindi[j] || {},
-        en_fingerprint: enFingerprint(selected[qi]),
-      };
+    const needTranslate = [];
+    const needIndex = [];
+    selected.forEach((q, i) => {
+      const id = String(q.draft_id || q.uuid || "");
+      const fp = enFingerprint(q);
+      const prev = prevHiByDraftId.get(id);
+      if (prev && prev.fp === fp && prev.hi) {
+        selected[i] = { ...q, hi: prev.hi, en_fingerprint: fp };
+      } else {
+        needTranslate.push(q);
+        needIndex.push(i);
+      }
     });
-  }
 
-  const liveQuestions = selected.map((q, i) =>
-    toLiveQuestion(q, iso, i + 1),
-  );
-  await writeLive(iso, liveQuestions, { auto: !!auto });
+    const chosenIds = selected.map((q) => String(q.draft_id || q.uuid || ""));
+    const englishLive = selected.map((q, i) => toLiveQuestion(q, iso, i + 1));
+    await writeLive(iso, englishLive, {
+      auto: !!auto,
+      hindi_pending: needTranslate.length > 0,
+    });
+    await draftRef(iso).set(
+      {
+        status: "published",
+        published_at: admin.firestore.FieldValue.serverTimestamp(),
+        published_count: englishLive.length,
+        auto_published: !!auto,
+        hindi_available: needTranslate.length === 0,
+        chosen_uuids: chosenIds,
+      },
+      { merge: true },
+    );
+    await emailStep(
+      publishKind,
+      iso,
+      true,
+      `${englishLive.length} English questions written to daily_mcqs/${iso.replace(/-/g, "/")}.`,
+    );
 
-  const mergedQuestions = (draftSnap.exists ? draftSnap.data().questions : selected).map(
-    (q) => {
+    let hindiOk = needTranslate.length === 0;
+    if (needTranslate.length) {
+      try {
+        const hindi = await attachHindi(needTranslate);
+        needIndex.forEach((qi, j) => {
+          selected[qi] = {
+            ...selected[qi],
+            hi: hindi[j] || {},
+            en_fingerprint: enFingerprint(selected[qi]),
+          };
+        });
+        const liveWithHi = selected.map((q, i) => toLiveQuestion(q, iso, i + 1));
+        await writeLive(iso, liveWithHi, { auto: !!auto });
+        hindiOk = true;
+        await emailStep(
+          "Hindi translation",
+          iso,
+          true,
+          `${needTranslate.length} questions translated.`,
+        );
+      } catch (e) {
+        console.error("Hindi translation failed; English paper is live", iso, e);
+        await emailStep("Hindi translation", iso, false, errorText(e));
+      }
+    } else {
+      await emailStep(
+        "Hindi translation",
+        iso,
+        true,
+        "Reused existing Hindi. No new translation call.",
+      );
+    }
+
+    const liveQuestions = hindiOk
+      ? selected.map((q, i) => toLiveQuestion(q, iso, i + 1))
+      : englishLive;
+
+    const mergedQuestions = (
+      draftSnap.exists ? draftSnap.data().questions : selected
+    ).map((q) => {
       const id = String(q.draft_id || q.uuid || "");
       const updated = selected.find(
         (s) => String(s.draft_id || s.uuid || "") === id,
       );
       return updated || q;
-    },
-  );
+    });
 
-  await draftRef(iso).set(
-    {
-      status: "published",
-      published_at: admin.firestore.FieldValue.serverTimestamp(),
-      published_count: liveQuestions.length,
-      auto_published: !!auto,
-      questions: mergedQuestions,
-      chosen_uuids: selected.map((q) => String(q.draft_id || q.uuid || "")),
-    },
-    { merge: true },
-  );
+    await draftRef(iso).set(
+      {
+        published_count: liveQuestions.length,
+        hindi_available: hindiOk,
+        questions: mergedQuestions,
+        chosen_uuids: chosenIds,
+      },
+      { merge: true },
+    );
 
-  return { count: liveQuestions.length };
+    return { count: liveQuestions.length, hindi: hindiOk };
+  } catch (e) {
+    await emailStep(publishKind, iso, false, errorText(e));
+    if (e && typeof e === "object") e.publishEmailed = true;
+    throw e;
+  }
 }
 
 const callableOpts = {
@@ -404,9 +478,12 @@ const callableOpts = {
   memory: "512MiB",
 };
 
+const gmailSecrets = ["GMAIL_SENDER", "GMAIL_APP_PASSWORD", "GMAIL_RECIPIENT"];
+
 const publishOpts = {
   ...callableOpts,
-  secrets: ["ANTHROPIC_API_KEY"],
+  timeoutSeconds: 540,
+  secrets: ["ANTHROPIC_API_KEY", ...gmailSecrets],
 };
 
 exports.updateDailyCaDraft = onCall(callableOpts, async (request) => {
@@ -415,7 +492,7 @@ exports.updateDailyCaDraft = onCall(callableOpts, async (request) => {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(iso)) {
     throw new HttpsError("invalid-argument", "date must be YYYY-MM-DD.");
   }
-  if (isLive(iso)) {
+  if (isLive(iso) && (await liveDocHasQuestions(iso))) {
     throw new HttpsError(
       "failed-precondition",
       "This paper is already live. Use question corrections after 6 AM.",
@@ -444,39 +521,51 @@ exports.updateDailyCaDraft = onCall(callableOpts, async (request) => {
 exports.publishDailyCaDay = onCall(publishOpts, async (request) => {
   requireAdmin(request);
   const iso = String((request.data && request.data.date) || "").trim();
-  if (!/^\d{4}-\d{2}-\d{2}$/.test(iso)) {
-    throw new HttpsError("invalid-argument", "date must be YYYY-MM-DD.");
-  }
+  try {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(iso)) {
+      throw new HttpsError("invalid-argument", "date must be YYYY-MM-DD.");
+    }
 
-  if (isLive(iso) && request.data && request.data.allow_after_open !== true) {
-    throw new HttpsError(
-      "failed-precondition",
-      "This paper is already live. Use question corrections after 6 AM.",
-    );
-  }
+    if (
+      isLive(iso) &&
+      (await liveDocHasQuestions(iso)) &&
+      request.data &&
+      request.data.allow_after_open !== true
+    ) {
+      throw new HttpsError(
+        "failed-precondition",
+        "This paper is already live. Use question corrections after 6 AM.",
+      );
+    }
 
-  const snap = await draftRef(iso).get();
-  if (!snap.exists) {
-    throw new HttpsError("not-found", `No draft for ${iso}.`);
-  }
-  const draft = snap.data() || {};
-  const questions = Array.isArray(draft.questions) ? draft.questions : [];
-  let selected = questions.filter((q) => q && q.chosen === true);
-  if (selected.length === 0 && Array.isArray(draft.chosen_uuids)) {
-    const want = new Set(draft.chosen_uuids.map(String));
-    selected = questions.filter((q) =>
-      want.has(String(q.draft_id || q.uuid || "")),
-    );
-  }
-  if (request.data && Array.isArray(request.data.chosen_uuids) && request.data.chosen_uuids.length) {
-    const want = new Set(request.data.chosen_uuids.map(String));
-    selected = questions.filter((q) =>
-      want.has(String(q.draft_id || q.uuid || "")),
-    );
-  }
+    const snap = await draftRef(iso).get();
+    if (!snap.exists) {
+      throw new HttpsError("not-found", `No draft for ${iso}.`);
+    }
+    const draft = snap.data() || {};
+    const questions = Array.isArray(draft.questions) ? draft.questions : [];
+    let selected = questions.filter((q) => q && q.chosen === true);
+    if (selected.length === 0 && Array.isArray(draft.chosen_uuids)) {
+      const want = new Set(draft.chosen_uuids.map(String));
+      selected = questions.filter((q) =>
+        want.has(String(q.draft_id || q.uuid || "")),
+      );
+    }
+    if (request.data && Array.isArray(request.data.chosen_uuids) && request.data.chosen_uuids.length) {
+      const want = new Set(request.data.chosen_uuids.map(String));
+      selected = questions.filter((q) =>
+        want.has(String(q.draft_id || q.uuid || "")),
+      );
+    }
 
-  const result = await publishSelected(iso, selected, { auto: false });
-  return { ok: true, ...result };
+    const result = await publishSelected(iso, selected, { auto: false });
+    return { ok: true, ...result };
+  } catch (e) {
+    if (!e || !e.publishEmailed) {
+      await emailStep("Manual publish", iso || "unknown", false, errorText(e));
+    }
+    throw e;
+  }
 });
 
 async function autoPublishForIso(iso) {
@@ -485,6 +574,12 @@ async function autoPublishForIso(iso) {
   }
   const snap = await draftRef(iso).get();
   if (!snap.exists) {
+    await emailStep(
+      "Auto-publish",
+      iso,
+      false,
+      "No draft in daily_ca_drafts. Generation did not write this date.",
+    );
     return { skipped: true, reason: "no_draft" };
   }
   const draft = snap.data() || {};
@@ -503,36 +598,54 @@ async function autoPublishForIso(iso) {
       dateIso: iso,
       status: "skipped",
     });
-    await sendAdminEmail(
-      `SKIPPED — ${iso}`,
-      `Auto-publish skipped for ${iso}: fewer than ${PUBLISH_MIN} valid questions.`,
+    await emailStep(
+      "Auto-publish",
+      iso,
+      false,
+      `Fewer than ${PUBLISH_MIN} valid questions (got ${selected.length}).`,
     );
     return { skipped: true, reason: "fewer_than_5" };
   }
-  const result = await publishSelected(iso, selected, { auto: true });
-  await sendAdminFcm({
-    title: `CA auto-published — ${iso}`,
-    body: `${result.count} questions are live at 6 AM.`,
-    dateIso: iso,
-    status: "published",
-  });
-  return result;
+  try {
+    const result = await publishSelected(iso, selected, { auto: true });
+    await sendAdminFcm({
+      title: `CA auto-published — ${iso}`,
+      body: `${result.count} questions are live.`,
+      dateIso: iso,
+      status: "published",
+    });
+    return result;
+  } catch (e) {
+    console.error("autoPublishDailyCa failed", iso, e);
+    await sendAdminFcm({
+      title: `CA publish failed — ${iso}`,
+      body: "Auto-publish failed. Check the pipeline email.",
+      dateIso: iso,
+      status: "failed",
+    });
+    throw e;
+  }
 }
 
 exports.autoPublishDailyCa = onSchedule(
   {
-    schedule: "50 5 * * *",
+    schedule: "0 0 * * *",
     timeZone: "Asia/Kolkata",
     region: "asia-south1",
-    timeoutSeconds: 300,
+    timeoutSeconds: 540,
     memory: "512MiB",
-    secrets: ["ANTHROPIC_API_KEY"],
+    secrets: ["ANTHROPIC_API_KEY", ...gmailSecrets],
   },
   async () => {
     const iso = yesterdayIso(istParts());
-    const result = await autoPublishForIso(iso);
-    console.log("autoPublishDailyCa", iso, result);
-    return result;
+    try {
+      const result = await autoPublishForIso(iso);
+      console.log("autoPublishDailyCa", iso, result);
+      return result;
+    } catch (e) {
+      console.error("autoPublishDailyCa", iso, e);
+      return { iso, failed: true, error: errorText(e) };
+    }
   },
 );
 

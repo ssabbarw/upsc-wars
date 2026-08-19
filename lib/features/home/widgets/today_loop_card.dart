@@ -37,6 +37,7 @@ class TodayLoopCard extends StatelessWidget {
     this.mutedForeground,
     this.footer,
     this.actions,
+    this.titleMaxLines,
   });
 
   final TodayLoopLayout layout;
@@ -57,6 +58,9 @@ class TodayLoopCard extends StatelessWidget {
 
   /// Replaces the hero CTA pill when set (e.g. missed vs saved).
   final Widget? actions;
+
+  /// Overrides the layout default so long titles (two War topics) can wrap.
+  final int? titleMaxLines;
 
   @override
   Widget build(BuildContext context) {
@@ -109,6 +113,7 @@ class TodayLoopCard extends StatelessWidget {
                       loading: loading,
                       footer: footer,
                       actions: actions,
+                      titleMaxLines: titleMaxLines ?? 2,
                     ),
                   TodayLoopLayout.tile => _TileBody(
                       eyebrow: eyebrow,
@@ -121,6 +126,7 @@ class TodayLoopCard extends StatelessWidget {
                       muted: muted,
                       done: done,
                       loading: loading,
+                      titleMaxLines: titleMaxLines ?? 1,
                     ),
                   TodayLoopLayout.banner => _BannerBody(
                       eyebrow: eyebrow,
@@ -133,6 +139,7 @@ class TodayLoopCard extends StatelessWidget {
                       muted: muted,
                       done: done,
                       loading: loading,
+                      titleMaxLines: titleMaxLines ?? 1,
                     ),
                 },
               ),
@@ -220,6 +227,7 @@ class _HeroBody extends StatelessWidget {
     required this.loading,
     this.footer,
     this.actions,
+    this.titleMaxLines = 2,
   });
 
   final String eyebrow;
@@ -234,6 +242,7 @@ class _HeroBody extends StatelessWidget {
   final bool loading;
   final Widget? footer;
   final Widget? actions;
+  final int titleMaxLines;
 
   @override
   Widget build(BuildContext context) {
@@ -260,7 +269,7 @@ class _HeroBody extends StatelessWidget {
                   const SizedBox(height: 4),
                   Text(
                     title,
-                    maxLines: 2,
+                    maxLines: titleMaxLines,
                     overflow: TextOverflow.ellipsis,
                     style: AppTextStyles.h2().copyWith(
                       fontWeight: FontWeight.w700,
@@ -332,6 +341,7 @@ class _TileBody extends StatelessWidget {
     required this.muted,
     required this.done,
     required this.loading,
+    this.titleMaxLines = 1,
   });
 
   final String eyebrow;
@@ -344,6 +354,7 @@ class _TileBody extends StatelessWidget {
   final Color muted;
   final bool done;
   final bool loading;
+  final int titleMaxLines;
 
   @override
   Widget build(BuildContext context) {
@@ -376,7 +387,7 @@ class _TileBody extends StatelessWidget {
           const SizedBox(height: 4),
           Text(
             title,
-            maxLines: 1,
+            maxLines: titleMaxLines,
             overflow: TextOverflow.ellipsis,
             style: AppTextStyles.bodyMd().copyWith(
               fontWeight: FontWeight.w700,
@@ -421,6 +432,7 @@ class _BannerBody extends StatelessWidget {
     required this.muted,
     required this.done,
     required this.loading,
+    this.titleMaxLines = 1,
   });
 
   final String eyebrow;
@@ -433,59 +445,74 @@ class _BannerBody extends StatelessWidget {
   final Color muted;
   final bool done;
   final bool loading;
+  final int titleMaxLines;
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        _IconMark(icon: icon, accent: accent, done: done),
-        const SizedBox(width: AppSpacing.md),
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                eyebrow,
-                style: AppTextStyles.caption().copyWith(
-                  color: accent,
-                  fontWeight: FontWeight.w800,
-                  letterSpacing: 0.8,
-                ),
-              ),
-              const SizedBox(height: 2),
-              Text(
-                title,
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-                style: AppTextStyles.bodyMd().copyWith(
-                  fontWeight: FontWeight.w700,
-                  color: fg,
-                ),
-              ),
-              Text(
-                subtitle,
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-                style: AppTextStyles.caption().copyWith(color: muted),
-              ),
-            ],
-          ),
-        ),
-        const SizedBox(width: AppSpacing.sm),
-        if (loading)
-          const SizedBox(
+    final ctaWidget = loading
+        ? const SizedBox(
             width: 18,
             height: 18,
             child: CircularProgressIndicator(strokeWidth: 2),
           )
-        else
-          Text(
+        : Text(
             cta,
             style: AppTextStyles.labelSm().copyWith(
               color: accent,
               fontWeight: FontWeight.w700,
             ),
+          );
+    final titleBlock = Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          eyebrow,
+          style: AppTextStyles.caption().copyWith(
+            color: accent,
+            fontWeight: FontWeight.w800,
+            letterSpacing: 0.8,
           ),
+        ),
+        const SizedBox(height: 2),
+        Text(
+          title,
+          maxLines: titleMaxLines,
+          overflow: TextOverflow.ellipsis,
+          style: AppTextStyles.bodyMd().copyWith(
+            fontWeight: FontWeight.w700,
+            color: fg,
+          ),
+        ),
+        Text(
+          subtitle,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+          style: AppTextStyles.caption().copyWith(color: muted),
+        ),
+      ],
+    );
+
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        _IconMark(icon: icon, accent: accent, done: done),
+        const SizedBox(width: AppSpacing.md),
+        Expanded(
+          child: titleMaxLines > 1
+              ? Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    titleBlock,
+                    const SizedBox(height: AppSpacing.sm),
+                    ctaWidget,
+                  ],
+                )
+              : titleBlock,
+        ),
+        if (titleMaxLines <= 1) ...[
+          const SizedBox(width: AppSpacing.sm),
+          ctaWidget,
+        ],
       ],
     );
   }

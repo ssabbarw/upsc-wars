@@ -78,7 +78,7 @@ class _DailyCaTodaySectionState extends State<DailyCaTodaySection> {
       headline = 'Daily tests start from '
           '${DateFormat('d MMM yyyy').format(widget.minDate)}.';
     } else if (!widget.questionsReady) {
-      headline = 'Questions aren\'t up yet. Tomorrow\'s paper opens at 6 AM.';
+      headline = 'Questions were generated, but they are not live yet.';
     } else if (isTodaysPaper) {
       headline = "10 MCQs from today's newspaper";
     } else {
@@ -126,6 +126,7 @@ class _DailyCaTodaySectionState extends State<DailyCaTodaySection> {
                       availableFrom: DailyCaSchedule.nextOpensAt(
                         referenceIst: _ist,
                       ),
+                      pendingLive: true,
                       onSeeHistory: () {},
                     );
                   },

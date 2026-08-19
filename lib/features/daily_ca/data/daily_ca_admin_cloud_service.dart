@@ -33,7 +33,7 @@ class DailyCaAdminCloudService {
     try {
       final callable = _functions.httpsCallable(
         'publishDailyCaDay',
-        options: HttpsCallableOptions(timeout: const Duration(minutes: 3)),
+        options: HttpsCallableOptions(timeout: const Duration(minutes: 9)),
       );
       final result = await callable.call<Map<String, dynamic>>({
         'date': date,
@@ -45,6 +45,26 @@ class DailyCaAdminCloudService {
       return chosenIds.length;
     } on FirebaseFunctionsException catch (e, st) {
       debugPrint('publishDailyCaDay: ${e.code} ${e.message}');
+      debugPrintStack(stackTrace: st);
+      throw DailyCaAdminException(e.message ?? e.code);
+    }
+  }
+
+  Future<int> autoPublish({required String date}) async {
+    try {
+      final callable = _functions.httpsCallable(
+        'adminAutoPublishDailyCa',
+        options: HttpsCallableOptions(timeout: const Duration(minutes: 9)),
+      );
+      final result = await callable.call<Map<String, dynamic>>({
+        'date': date,
+      });
+      final count = result.data['count'];
+      if (count is int) return count;
+      if (count is num) return count.toInt();
+      return 0;
+    } on FirebaseFunctionsException catch (e, st) {
+      debugPrint('adminAutoPublishDailyCa: ${e.code} ${e.message}');
       debugPrintStack(stackTrace: st);
       throw DailyCaAdminException(e.message ?? e.code);
     }

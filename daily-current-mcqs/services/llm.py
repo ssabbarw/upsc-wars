@@ -241,7 +241,7 @@ def _anthropic_json(
     def fn():
         messages = [{"role": "user", "content": user_message}]
         max_turns = 20
-        max_parse_retries = 2
+        max_parse_retries = 0
         parse_retries = 0
         turn = 0
         accumulated_text = ""
