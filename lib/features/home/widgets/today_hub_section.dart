@@ -245,11 +245,31 @@ class TodayHubSection extends HookConsumerWidget {
       return _CaGroup(borderColor: borderColor, ca: ca);
     }
 
+    // Returns an "Available from …" label when the slot has no content yet.
+    // War always has topics/info to show, so it is never dimmed.
+    // Practice is only dimmed before noon when the drill hasn't been assigned.
+    String? upcomingLabelFor(TodaySlotId id) {
+      if (pick.caughtUp) return null;
+      switch (id) {
+        case TodaySlotId.current:
+          return null;
+        case TodaySlotId.practice:
+          if (!sundayHub && !data.staticAvailable &&
+              hour < TodayHero.practiceHourIst) return 'From 12 PM';
+          return null;
+        case TodaySlotId.war:
+          // War card always shows topics or "Tonight at 9 PM" — never dim it.
+          return null;
+      }
+    }
+
     Widget? placed(TodaySlotId id, TodayLoopLayout layout) {
       final card = cardFor(id, layout);
       if (card == null) return null;
-      if (id == TodaySlotId.current) return withShots(card);
-      return card;
+      final base = id == TodaySlotId.current ? withShots(card) : card;
+      final label = id != hero ? upcomingLabelFor(id) : null;
+      if (label == null) return base;
+      return _UpcomingCompanionWrap(label: label, child: base);
     }
 
     final companionIds = [
@@ -565,6 +585,50 @@ class _HubWarCard extends StatelessWidget {
       },
       done: submitted,
       showNow: showNow,
+    );
+  }
+}
+
+/// Wraps a companion card with reduced opacity and an "Available from …" label
+/// to signal that the card's time window has not started yet.
+class _UpcomingCompanionWrap extends StatelessWidget {
+  const _UpcomingCompanionWrap({
+    required this.label,
+    required this.child,
+  });
+
+  final String label;
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return Opacity(
+      opacity: 0.55,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          IgnorePointer(child: child),
+          const SizedBox(height: 4),
+          Row(
+            children: [
+              Icon(
+                Icons.schedule_rounded,
+                size: 12,
+                color: scheme.onSurfaceVariant,
+              ),
+              const SizedBox(width: 4),
+              Text(
+                label,
+                style: AppTextStyles.caption().copyWith(
+                  color: scheme.onSurfaceVariant,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }

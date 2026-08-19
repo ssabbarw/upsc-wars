@@ -1,7 +1,11 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 
+import '../../../core/services/battle_messaging_service.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../home/widgets/today_loop_card.dart';
@@ -9,7 +13,7 @@ import '../domain/daily_ca_schedule.dart';
 import 'daily_ca_unavailable_sheet.dart';
 
 /// Newspaper quiz on home — hero, tile, or banner depending on the Today hub.
-class DailyCaHomeCard extends StatelessWidget {
+class DailyCaHomeCard extends HookConsumerWidget {
   const DailyCaHomeCard({
     super.key,
     required this.paperDate,
@@ -38,11 +42,32 @@ class DailyCaHomeCard extends StatelessWidget {
   final TodayLoopLayout layout;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final accent = isDark ? AppColors.infoTextDark : AppColors.infoText;
     final background = isDark ? AppColors.infoBgDark : AppColors.infoBg;
     final date = paperDate;
+
+    // Whether we should offer the notify-me primer in the footer.
+    // Only relevant on hero layout when the paper is not yet live.
+    final notifyPrimerVisible = useState(false);
+    final primerLoading = useState(false);
+
+    final notPaperLiveYet =
+        layout == TodayLoopLayout.hero && !kIsWeb && !questionsReady && !completed;
+
+    useEffect(() {
+      if (!notPaperLiveYet) {
+        // Paper became live (or layout changed) — hide primer immediately.
+        notifyPrimerVisible.value = false;
+        return null;
+      }
+      var cancelled = false;
+      BattleMessagingService.notificationsAreEnabled().then((enabled) {
+        if (!cancelled) notifyPrimerVisible.value = !enabled;
+      });
+      return () => cancelled = true;
+    }, [notPaperLiveYet]);
 
     final String title;
     final String subtitle;
@@ -57,7 +82,7 @@ class DailyCaHomeCard extends StatelessWidget {
           : '${DateFormat('d MMM').format(date)} paper';
       subtitle = layout == TodayLoopLayout.tile
           ? 'Not live yet'
-          : 'Questions were generated, but they are not live yet. Pull to refresh.';
+          : 'Questions are being prepared. Check back shortly.';
       cta = 'Soon';
     } else if (completed) {
       title = isTodaysPaper
@@ -75,6 +100,39 @@ class DailyCaHomeCard extends StatelessWidget {
           ? 'Yesterday\'s news, $questionCount Q'
           : '$questionCount-question test on yesterday\'s news.';
       cta = layout == TodayLoopLayout.hero ? 'Start the quiz' : 'Start';
+    }
+
+    Widget? footer;
+    if (layout == TodayLoopLayout.hero) {
+      if (notifyPrimerVisible.value) {
+        footer = _NotifyMePrimer(
+          accent: accent,
+          loading: primerLoading.value,
+          onTap: () async {
+            if (primerLoading.value) return;
+            primerLoading.value = true;
+            try {
+              await BattleMessagingService.requestPushAuthorizationIfNotDetermined(
+                source: 'ca_card_not_live',
+              );
+              notifyPrimerVisible.value = false;
+            } finally {
+              primerLoading.value = false;
+            }
+          },
+        );
+      } else {
+        footer = GestureDetector(
+          onTap: () => context.push('/daily-ca'),
+          child: Text(
+            'All papers',
+            style: AppTextStyles.labelSm().copyWith(
+              color: Theme.of(context).colorScheme.onSurfaceVariant,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+        );
+      }
     }
 
     return TodayLoopCard(
@@ -101,18 +159,51 @@ class DailyCaHomeCard extends StatelessWidget {
       done: completed,
       loading: loading,
       showNow: emphasized && layout == TodayLoopLayout.hero,
-      footer: layout == TodayLoopLayout.hero
-          ? GestureDetector(
-              onTap: () => context.push('/daily-ca'),
-              child: Text(
-                'All papers',
-                style: AppTextStyles.labelSm().copyWith(
-                  color: Theme.of(context).colorScheme.onSurfaceVariant,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
+      footer: footer,
+    );
+  }
+}
+
+class _NotifyMePrimer extends StatelessWidget {
+  const _NotifyMePrimer({
+    required this.accent,
+    required this.loading,
+    required this.onTap,
+  });
+
+  final Color accent;
+  final bool loading;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: loading ? null : onTap,
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          if (loading)
+            SizedBox(
+              width: 14,
+              height: 14,
+              child: CircularProgressIndicator(strokeWidth: 1.5, color: accent),
             )
-          : null,
+          else
+            Icon(Icons.notifications_none_rounded, size: 15, color: accent),
+          const SizedBox(width: 4),
+          Flexible(
+            child: Text(
+              'Notify me when live',
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: AppTextStyles.labelSm().copyWith(
+                color: accent,
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

@@ -69,7 +69,7 @@ class GamesHomeCard extends StatelessWidget {
                         ),
                         const SizedBox(height: 2),
                         Text(
-                          'Memory, timelines, duels, and more',
+                          'Recall, timeline, fact-or-bluff — train the UPSC way',
                           style: AppTextStyles.caption().copyWith(
                             color: scheme.onSurfaceVariant,
                           ),

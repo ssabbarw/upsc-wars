@@ -399,6 +399,21 @@ class HomeScreen extends HookConsumerWidget {
                       children: [
                         const PrelimsDaysInfo(),
                         const Spacer(),
+                        // Trap count pill — taps into weak areas
+                        home.maybeWhen(
+                          data: (h) => h.revisionTrapCount > 0
+                              ? Padding(
+                                  padding: const EdgeInsets.only(
+                                    right: AppSpacing.sm,
+                                  ),
+                                  child: _TrapPill(
+                                    count: h.revisionTrapCount,
+                                    borderColor: borderColor,
+                                  ),
+                                )
+                              : const SizedBox.shrink(),
+                          orElse: () => const SizedBox.shrink(),
+                        ),
                         Consumer(
                           builder: (context, ref, _) {
                             final warOn =
@@ -519,6 +534,7 @@ class HomeScreen extends HookConsumerWidget {
                       },
                     ),
                     const SizedBox(height: AppSpacing.md),
+                    // Practice section: tabbed Subjects + PYQ
                     Consumer(
                       builder: (context, ref, _) {
                         final journey = ref.watch(
@@ -528,11 +544,27 @@ class HomeScreen extends HookConsumerWidget {
                           data: (s) => s.shouldShowActivationSurface,
                           orElse: () => false,
                         );
-                        return _SubjectGrid(
+                        return _PracticeSection(
                           borderColor: borderColor,
                           secondary: secondary,
                         );
                       },
+                    ),
+                    // Trap Patterns — immediately after practice, always visible
+                    home.when(
+                      loading: () => const SizedBox.shrink(),
+                      error: (_, _) => const SizedBox.shrink(),
+                      data: (h) => h.revisionTrapCount > 0
+                          ? Padding(
+                              padding: const EdgeInsets.only(
+                                top: AppSpacing.md,
+                              ),
+                              child: _TrapPatternsCard(
+                                trapCount: h.revisionTrapCount,
+                                borderColor: borderColor,
+                              ),
+                            )
+                          : const SizedBox.shrink(),
                     ),
                     const SizedBox(height: AppSpacing.md),
                     home.when(
@@ -564,33 +596,13 @@ class HomeScreen extends HookConsumerWidget {
                         ],
                       ),
                       data: (h) {
-                        const pyqYears = [
-                          '2025',
-                          '2024',
-                          '2023',
-                          '2022',
-                          '2021',
-                          '2020',
-                        ];
                         return Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             HomePageVideoBanner(borderColor: borderColor),
                             const SizedBox(height: AppSpacing.md),
-                            _PyqYearCarousel(
-                              borderColor: borderColor,
-                              years: pyqYears,
-                            ),
-                            const SizedBox(height: AppSpacing.md),
                             const PushDeniedBanner(),
                             _QuickPracticeSection(borderColor: borderColor),
-                            if (h.revisionTrapCount > 0) ...[
-                              const SizedBox(height: AppSpacing.md),
-                              _TrapPatternsCard(
-                                trapCount: h.revisionTrapCount,
-                                borderColor: borderColor,
-                              ),
-                            ],
                           ],
                         );
                       },
@@ -683,6 +695,53 @@ class HomeScreen extends HookConsumerWidget {
         ? defaultIndex
         : seed.hashCode.abs() % palette.length;
     return palette[index].bg.withValues(alpha: 0.9);
+  }
+}
+
+class _TrapPill extends StatelessWidget {
+  const _TrapPill({required this.count, required this.borderColor});
+
+  final int count;
+  final Color borderColor;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final fg = isDark ? AppColors.wrongTextDark : AppColors.wrongText;
+    final bg = isDark ? AppColors.wrongBgDark : AppColors.wrongBg;
+
+    return GestureDetector(
+      onTap: () => context.push('/weak-areas/traps'),
+      child: Container(
+        padding: const EdgeInsets.symmetric(
+          horizontal: AppSpacing.sm,
+          vertical: AppSpacing.xs,
+        ),
+        decoration: BoxDecoration(
+          color: bg,
+          borderRadius: BorderRadius.circular(AppRadius.pill),
+          border: Border.all(
+            color: fg.withValues(alpha: 0.35),
+            width: 0.5,
+          ),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(Icons.warning_amber_rounded, size: 13, color: fg),
+            const SizedBox(width: 3),
+            Text(
+              '$count trap${count == 1 ? '' : 's'}',
+              style: AppTextStyles.caption().copyWith(
+                color: scheme.onSurface,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
 
@@ -984,6 +1043,102 @@ class _HomeDiscoveryCard extends StatelessWidget {
                 ),
               ),
             ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+// ── Practice Section (tabbed: Subjects / PYQ by Year) ────────────────────────
+
+class _PracticeSection extends HookConsumerWidget {
+  const _PracticeSection({
+    required this.borderColor,
+    this.secondary = false,
+  });
+
+  final Color borderColor;
+  final bool secondary;
+
+  static const _pyqYears = [
+    '2025',
+    '2024',
+    '2023',
+    '2022',
+    '2021',
+    '2020',
+  ];
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final scheme = Theme.of(context).colorScheme;
+    final selectedTab = useState(0); // 0 = Subjects, 1 = PYQ
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        // Segment toggle header
+        Row(
+          children: [
+            _PracticeTab(
+              label: 'Subjects',
+              selected: selectedTab.value == 0,
+              onTap: () => selectedTab.value = 0,
+              scheme: scheme,
+            ),
+            const SizedBox(width: AppSpacing.sm),
+            _PracticeTab(
+              label: 'PYQ by Year',
+              selected: selectedTab.value == 1,
+              onTap: () => selectedTab.value = 1,
+              scheme: scheme,
+            ),
+          ],
+        ),
+        const SizedBox(height: AppSpacing.sm),
+        if (selectedTab.value == 0)
+          _SubjectGrid(borderColor: borderColor, secondary: secondary)
+        else
+          _PyqYearCarousel(borderColor: borderColor, years: _pyqYears),
+      ],
+    );
+  }
+}
+
+class _PracticeTab extends StatelessWidget {
+  const _PracticeTab({
+    required this.label,
+    required this.selected,
+    required this.onTap,
+    required this.scheme,
+  });
+
+  final String label;
+  final bool selected;
+  final VoidCallback onTap;
+  final ColorScheme scheme;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 180),
+        padding: const EdgeInsets.symmetric(
+          horizontal: AppSpacing.md,
+          vertical: AppSpacing.xs,
+        ),
+        decoration: BoxDecoration(
+          color: selected ? AppColors.primary : scheme.surfaceContainerLow,
+          borderRadius: BorderRadius.circular(AppRadius.pill),
+        ),
+        child: Text(
+          label,
+          style: AppTextStyles.caption().copyWith(
+            color: selected ? AppColors.onPrimary : scheme.onSurfaceVariant,
+            fontWeight: selected ? FontWeight.w700 : FontWeight.w500,
+            letterSpacing: 0.3,
           ),
         ),
       ),

@@ -320,7 +320,7 @@ class _HeroBody extends StatelessWidget {
               ),
               if (footer != null) ...[
                 const Spacer(),
-                footer!,
+                Flexible(child: footer!),
               ],
             ],
           ),
