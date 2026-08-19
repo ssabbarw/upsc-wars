@@ -11,6 +11,7 @@ const Set<String> kScreenViewIgnoredNames = {
   'daily_war_admin',
   'feature_health',
   'spot_composer',
+  'push_debug',
   'question_editor',
   'question_editor_edit',
   'question_editor_preview',

@@ -19,9 +19,7 @@ import '../../daily_war/domain/daily_war_phase_resolver.dart';
 import '../../daily_war/domain/daily_war_schedule.dart';
 import '../../daily_war/providers/server_clock_provider.dart';
 import '../../daily_war/theme/daily_war_theme.dart';
-import '../../daily_war/widgets/daily_war_explainer_sheet.dart';
 import '../../daily_war/widgets/daily_war_home_card.dart';
-import '../../daily_war/widgets/daily_war_topics_sheet.dart';
 import '../domain/daily_streak_service.dart';
 import '../domain/start_sunday_week_review.dart';
 import '../domain/today_hero.dart';
@@ -178,8 +176,7 @@ class TodayHubSection extends HookConsumerWidget {
         case TodaySlotId.war:
           if (!data.warEnabled || sundayHub) break;
           // Use full DailyWarHomeCard only when it's the true live/urgent hero.
-          final useFullWar =
-              !overnight && !pick.caughtUp && !forceWarCollapsed;
+          final useFullWar = !overnight && !pick.caughtUp && !forceWarCollapsed;
           if (useFullWar && warLive) {
             return DailyWarHomeCard(forceCollapsed: false);
           }
@@ -198,7 +195,8 @@ class TodayHubSection extends HookConsumerWidget {
           if (!data.caEnabled) break;
           return _CaHeroCard(
             paperDate: data.paperDate,
-            isTodaysPaper: data.paperDate != null &&
+            isTodaysPaper:
+                data.paperDate != null &&
                 DailyCaSchedule.isTodaysPaper(
                   data.paperDate!,
                   referenceIst: ist,
@@ -264,56 +262,61 @@ class TodayHubSection extends HookConsumerWidget {
           case TodaySlotId.current:
             if (!data.caEnabled) continue;
             // Daily CA test row
-            rows.add(_TodayListRowData(
-              icon: Icons.article_outlined,
-              accent: AppColors.info,
-              title: 'Daily Current Affairs Test',
-              subtitle: data.paperCompleted
-                  ? 'Done today'
-                  : "Current affairs test from yesterday's news.",
-              done: data.paperCompleted,
-              locked: false,
-              onTap: data.paperLive ? openPaper : null,
-              loading: launchingPaper.value || data.paperChecking,
-            ));
+            rows.add(
+              _TodayListRowData(
+                icon: Icons.article_outlined,
+                accent: AppColors.info,
+                title: 'Daily Current Affairs Test',
+                subtitle: data.paperCompleted
+                    ? 'Done today'
+                    : "Current affairs test from yesterday's news.",
+                done: data.paperCompleted,
+                locked: false,
+                onTap: () => context.push('/daily-ca'),
+              ),
+            );
             rows.add(_caShotsListRow(context));
 
           case TodaySlotId.practice:
             if (sundayHub) {
               if (weekReview == null) continue;
-              rows.add(_TodayListRowData(
-                icon: Icons.history_edu_rounded,
-                accent: AppColors.warning,
-                title: 'Week Review',
-                subtitle: weekReview.completedToday
-                    ? 'Done today'
-                    : '${weekReview.uuids.length} mistakes to revisit',
-                done: weekReview.completedToday,
-                locked: false,
-                onTap: weekReview.uuids.isNotEmpty ? openWeekReview : null,
-                loading: launchingReview.value,
-              ));
+              rows.add(
+                _TodayListRowData(
+                  icon: Icons.history_edu_rounded,
+                  accent: AppColors.warning,
+                  title: 'Week Review',
+                  subtitle: weekReview.completedToday
+                      ? 'Done today'
+                      : '${weekReview.uuids.length} mistakes to revisit',
+                  done: weekReview.completedToday,
+                  locked: false,
+                  onTap: weekReview.uuids.isNotEmpty ? openWeekReview : null,
+                  loading: launchingReview.value,
+                ),
+              );
             } else {
               if (!data.staticAvailable) continue;
-              rows.add(_TodayListRowData(
-                icon: Icons.fitness_center_rounded,
-                accent: AppColors.primary,
-                title: 'Static War',
-                subtitle: data.staticCompleted
-                    ? 'Done today'
-                    : '10 questions, timed, your subjects',
-                done: data.staticCompleted,
-                locked: false,
-                onTap: () {
-                  unawaited(
-                    showDailyRevisionChoiceSheet(
-                      context: context,
-                      ref: ref,
-                      source: 'today_hub_list',
-                    ),
-                  );
-                },
-              ));
+              rows.add(
+                _TodayListRowData(
+                  icon: Icons.fitness_center_rounded,
+                  accent: AppColors.primary,
+                  title: 'Static War',
+                  subtitle: data.staticCompleted
+                      ? 'Done today'
+                      : '10 questions, timed, your subjects',
+                  done: data.staticCompleted,
+                  locked: false,
+                  onTap: () {
+                    unawaited(
+                      showDailyRevisionChoiceSheet(
+                        context: context,
+                        ref: ref,
+                        source: 'today_hub_list',
+                      ),
+                    );
+                  },
+                ),
+              );
             }
 
           case TodaySlotId.war:
@@ -332,59 +335,72 @@ class TodayHubSection extends HookConsumerWidget {
               isGrand: isGrand,
               weekend: weekend,
             );
-            rows.add(_TodayListRowData(
-              icon: Icons.shield_outlined,
-              accent: DwColors.crimsonBright,
-              title: warTitle,
-              subtitle: warSubtitle,
-              done: hubWarSubmitted,
-              locked: false,
-              onTap: () {
-                if (warLive) {
-                  context.push('/daily-war');
-                  return;
-                }
-                if (hubWarSubmitted || warResultsOpen) {
-                  if (hubWarDateId.isEmpty) return;
-                  context.push('/daily-war/history/$hubWarDateId');
-                  return;
-                }
-                if (weekend && warTopics.isNotEmpty) {
-                  unawaited(
-                    showDailyWarTopicsSheet(
-                      context: context,
-                      topics: warTopics,
-                    ),
-                  );
-                  return;
-                }
-                unawaited(
-                  showDailyWarExplainerSheet(
-                    context: context,
-                    topics: warTopics,
-                    isGrand: isGrand,
-                  ),
-                );
-              },
-            ));
+            rows.add(
+              _TodayListRowData(
+                icon: Icons.shield_outlined,
+                accent: DwColors.crimsonBright,
+                title: warTitle,
+                subtitle: warSubtitle,
+                done: hubWarSubmitted,
+                locked: false,
+                onTap: () => context.push('/daily-war/history'),
+              ),
+            );
         }
       }
 
-      // CA Shots sits under Daily CA; if CA is the hero, still show it first.
       if (hero == TodaySlotId.current && data.caEnabled) {
-        rows.insert(0, _caShotsListRow(context));
+        rows.insert(
+          0,
+          _TodayListRowData(
+            icon: Icons.article_outlined,
+            accent: AppColors.info,
+            title: 'Daily Current Affairs Test',
+            subtitle: data.paperCompleted
+                ? 'Done today'
+                : "Current affairs test from yesterday's news.",
+            done: data.paperCompleted,
+            locked: false,
+            onTap: () => context.push('/daily-ca'),
+          ),
+        );
+        rows.insert(1, _caShotsListRow(context));
+      }
+
+      if (hero == TodaySlotId.war && data.warEnabled && !sundayHub) {
+        rows.add(
+          _TodayListRowData(
+            icon: Icons.shield_outlined,
+            accent: DwColors.crimsonBright,
+            title: warName,
+            subtitle: _warListSubtitle(
+              submitted: hubWarSubmitted,
+              live: warLive,
+              resultsOpen: warResultsOpen,
+              topics: warTopics,
+              phase: warPhase,
+              isGrand: isGrand,
+              weekend: weekend,
+            ),
+            done: hubWarSubmitted,
+            locked: false,
+            onTap: () => context.push('/daily-war/history'),
+          ),
+        );
       }
 
       // Always show Danger Zone at the end
-      rows.add(_TodayListRowData(
-        icon: Icons.lock_outline_rounded,
-        accent: AppColors.wrong,
-        title: 'Danger Zone',
-        subtitle: 'Unlocks at 50 questions — 0/50 so far',
-        done: false,
-        locked: true,
-        onTap: () => context.push('/weak-areas/traps'),
-      ));
+      rows.add(
+        _TodayListRowData(
+          icon: Icons.lock_outline_rounded,
+          accent: AppColors.wrong,
+          title: 'Danger Zone',
+          subtitle: 'Unlocks at 50 questions — 0/50 so far',
+          done: false,
+          locked: true,
+          onTap: () => context.push('/weak-areas/traps'),
+        ),
+      );
 
       return rows;
     }
@@ -485,10 +501,10 @@ class _TodayListRow extends StatelessWidget {
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final accent =
-        data.locked ? scheme.onSurfaceVariant.withValues(alpha: 0.5) : data.accent;
-    final fg =
-        data.locked ? scheme.onSurfaceVariant : scheme.onSurface;
+    final accent = data.locked
+        ? scheme.onSurfaceVariant.withValues(alpha: 0.5)
+        : data.accent;
+    final fg = data.locked ? scheme.onSurfaceVariant : scheme.onSurface;
 
     return Opacity(
       opacity: data.locked ? 0.7 : 1.0,
@@ -510,9 +526,7 @@ class _TodayListRow extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: data.locked
                         ? scheme.surfaceContainerLow
-                        : accent.withValues(
-                            alpha: isDark ? 0.18 : 0.12,
-                          ),
+                        : accent.withValues(alpha: isDark ? 0.18 : 0.12),
                     borderRadius: BorderRadius.circular(AppRadius.md),
                   ),
                   child: Icon(
@@ -644,13 +658,14 @@ class _BigHeroCard extends StatelessWidget {
     // Determine if the background is dark so we can adjust text colors.
     final bgLuminance = background.computeLuminance();
     final isDarkBg = bgLuminance < 0.35;
-    final eyebrowColor =
-        isDarkBg ? ctaColor : ctaColor.withValues(alpha: 0.85);
+    final eyebrowColor = isDarkBg ? ctaColor : ctaColor.withValues(alpha: 0.85);
     final titleColor = isDarkBg ? Colors.white : Colors.white;
-    final descColor =
-        isDarkBg ? Colors.white.withValues(alpha: 0.72) : Colors.white.withValues(alpha: 0.72);
-    final footerColor =
-        isDarkBg ? Colors.white.withValues(alpha: 0.55) : Colors.white.withValues(alpha: 0.55);
+    final descColor = isDarkBg
+        ? Colors.white.withValues(alpha: 0.72)
+        : Colors.white.withValues(alpha: 0.72);
+    final footerColor = isDarkBg
+        ? Colors.white.withValues(alpha: 0.55)
+        : Colors.white.withValues(alpha: 0.55);
 
     return Material(
       color: Colors.transparent,
@@ -799,7 +814,9 @@ class _WarHeroCard extends StatelessWidget {
 
     if (submitted) {
       eyebrow = caughtUp ? 'DAY COMPLETE' : 'DAILY WAR';
-      title = caughtUp ? 'Well played tonight' : (topicsLine.isNotEmpty ? topicsLine : warName);
+      title = caughtUp
+          ? 'Well played tonight'
+          : (topicsLine.isNotEmpty ? topicsLine : warName);
       description = caughtUp
           ? 'You\'ve submitted. Rankings close out at 9 PM.'
           : 'You were in the room. The rank is waiting.';
@@ -828,9 +845,12 @@ class _WarHeroCard extends StatelessWidget {
       bg = isDark ? DwColors.surface : DwColors.crimsonSoft;
     } else {
       eyebrow = 'TONIGHT';
-      final topicTitle = topicsLine.isNotEmpty ? topicsLine : 'Daily War starts in';
+      final topicTitle = topicsLine.isNotEmpty
+          ? topicsLine
+          : 'Daily War starts in';
       title = topicTitle;
-      description = 'Local Government — Union Executive. All-India live test, public leaderboard.';
+      description =
+          'Local Government — Union Executive. All-India live test, public leaderboard.';
       ctaLabel = 'Set a reminder';
       bg = isDark ? const Color(0xFF0D2818) : const Color(0xFF1B4332);
     }
@@ -845,26 +865,12 @@ class _WarHeroCard extends StatelessWidget {
           ? AppColors.primary
           : DwColors.crimsonBright,
       onTap: () {
-        if (live) {
-          context.push('/daily-war');
-          return;
-        }
-        if (submitted || resultsOpen) {
+        if (submitted) {
           if (dateId.isEmpty) return;
           context.push('/daily-war/history/$dateId');
           return;
         }
-        if (weekend && topics.isNotEmpty) {
-          unawaited(showDailyWarTopicsSheet(context: context, topics: topics));
-          return;
-        }
-        unawaited(
-          showDailyWarExplainerSheet(
-            context: context,
-            topics: topics,
-            isGrand: isGrand,
-          ),
-        );
+        context.push('/daily-war');
       },
     );
   }
@@ -909,7 +915,8 @@ class _CaHeroCard extends StatelessWidget {
     } else if (!questionsReady) {
       eyebrow = 'CURRENT AFFAIRS';
       title = 'Today\'s brief coming soon';
-      description = 'The daily CA brief will be ready shortly. Check back in a few minutes.';
+      description =
+          'The daily CA brief will be ready shortly. Check back in a few minutes.';
       ctaLabel = 'Check back later';
     } else {
       eyebrow = 'START HERE';
@@ -969,7 +976,8 @@ class _PracticeHeroCard extends StatelessWidget {
       eyebrow = 'SUNDAY REVIEW';
       if (completed) {
         title = 'Week review done';
-        description = 'You\'ve gone through last week\'s mistakes. Streak intact.';
+        description =
+            'You\'ve gone through last week\'s mistakes. Streak intact.';
         ctaLabel = 'See results';
       } else {
         title = 'Review last week\'s mistakes';
@@ -986,7 +994,8 @@ class _PracticeHeroCard extends StatelessWidget {
         ctaLabel = 'See results';
       } else {
         title = 'Static War';
-        description = '10 questions, timed, your subjects. Sharpen before tonight.';
+        description =
+            '10 questions, timed, your subjects. Sharpen before tonight.';
         ctaLabel = 'Start the drill';
       }
     }
@@ -1023,7 +1032,8 @@ class _DayCompleteHeroCard extends StatelessWidget {
     return _BigHeroCard(
       eyebrow: 'DAY COMPLETE',
       title: 'All done for today',
-      description: 'You\'ve completed $doneCount of $availableCount activities. Rankings close at 9 PM.',
+      description:
+          'You\'ve completed $doneCount of $availableCount activities. Rankings close at 9 PM.',
       ctaLabel: 'See tonight\'s results',
       background: bg,
       ctaColor: AppColors.primary,

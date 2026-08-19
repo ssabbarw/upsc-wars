@@ -5,16 +5,13 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../core/analytics/analytics.dart';
-import '../../../core/analytics/analytics_events.dart';
-import '../../../core/domain/entities/session_config.dart';
-import '../../../core/providers/catalog_providers.dart';
 import '../../../core/providers/kill_switch_provider.dart';
 import '../daily_war_constants.dart';
 import '../data/daily_war_cloud_service.dart';
 import '../domain/daily_war_copy.dart';
 import '../domain/daily_war_phase.dart';
 import '../domain/daily_war_schedule.dart';
+import '../domain/start_daily_war_attempt.dart';
 import '../providers/daily_war_providers.dart';
 import '../providers/server_clock_provider.dart';
 import '../theme/daily_war_theme.dart';
@@ -124,12 +121,10 @@ class _DailyWarLobbyBody extends HookConsumerWidget {
         snap.doc?.questionCount ??
         DailyWarSchedule.questionCountForDate(warDate);
     final start = DailyWarSchedule.startAtForDate(warDate);
-    final liveEnd = DailyWarSchedule.liveEndsAt(warDate, questionCount: qCount);
     final rankTarget = DailyWarSchedule.rankTargetAt(warDate);
     final lateClose = DailyWarSchedule.lateJoinClosesAt(warDate);
     final untilStart = start.difference(ist);
     final untilLate = lateClose.difference(ist);
-    final windowSecs = DailyWarSchedule.liveWindowMinutesFor(qCount) * 60;
     final canEnter = snap.phase == DailyWarPhase.liveJoinable;
     final alreadyDone = snap.submission != null;
     final isGrand = snap.doc?.isGrand == true;
@@ -152,60 +147,16 @@ class _DailyWarLobbyBody extends HookConsumerWidget {
         );
         return;
       }
-      if (doc.questionUuids.isEmpty) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(
-              unranked
-                  ? 'Paper not available yet.'
-                  : 'Questions publish just before 9 PM. Try again shortly.',
-            ),
-          ),
-        );
-        return;
-      }
 
       launching.value = true;
       try {
-        final create = await ref.read(createSessionUseCaseProvider.future);
-        final lang = await ref.read(appLanguageProvider.future);
-        final remainingSecs = unranked
-            ? windowSecs
-            : liveEnd.difference(ist).inSeconds.clamp(60, windowSecs);
-
-        final sessionId = await create.execute(
-          SessionConfig(
-            subject: DailyWarConstants.sessionSubject,
-            topic: snap.dateId,
-            mode: 'exam',
-            questionCount: doc.questionUuids.length,
-            isTimed: true,
-            timeLimitSecs: remainingSecs,
-            language: lang,
-            specificQuestionUuids: doc.questionUuids,
-            analyticsFeatureKey: unranked
-                ? DailyWarConstants.analyticsUnranked
-                : DailyWarConstants.analyticsLive,
-          ),
+        await startDailyWarAttempt(
+          context: context,
+          ref: ref,
+          doc: doc,
+          unranked: unranked,
+          istNow: ist,
         );
-        unawaited(
-          Analytics.track(
-            ref,
-            DailyWarAttemptedEvent(
-              dateId: snap.dateId,
-              mode: unranked ? 'unranked' : 'live',
-              isGrand: isGrand,
-            ),
-          ),
-        );
-        if (!context.mounted) return;
-        context.go('/test/$sessionId');
-      } on Object catch (e) {
-        if (context.mounted) {
-          ScaffoldMessenger.of(
-            context,
-          ).showSnackBar(SnackBar(content: Text('Could not start War: $e')));
-        }
       } finally {
         launching.value = false;
       }

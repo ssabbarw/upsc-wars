@@ -59,6 +59,7 @@ import '../../features/home/screens/about_us_screen.dart';
 import '../../features/home/screens/progress_hub_screen.dart';
 import '../../features/daily_war/screens/daily_war_admin_screen.dart';
 import '../../features/internal/screens/feature_health_screen.dart';
+import '../../features/internal/screens/push_debug_screen.dart';
 import '../../features/internal/play_store_demo/play_store_demo_screen.dart';
 import '../../features/question_editor/screens/question_editor_form_screen.dart';
 import '../../features/question_editor/screens/question_editor_preview_screen.dart';
@@ -497,6 +498,17 @@ GoRouter appRouter(Ref ref) {
         path: '/internal/feature-health',
         name: 'feature_health',
         builder: (context, state) => const FeatureHealthScreen(),
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/internal/push-debug',
+        name: 'push_debug',
+        builder: (context, state) {
+          if (!kDebugMode && !isSuperUser) {
+            return const Scaffold(body: Center(child: Text('Not available')));
+          }
+          return const PushDebugScreen();
+        },
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,

@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -26,12 +25,8 @@ import '../../../core/theme/app_text_styles.dart';
 import '../providers/auth_providers.dart';
 import '../providers/home_activation_provider.dart';
 import '../providers/home_activation_journey_provider.dart';
-import '../widgets/activation_journey_card.dart';
 import '../providers/daily_drill_provider.dart';
 import '../widgets/today_hub_section.dart';
-import '../../memory_pairs/widgets/push_memory_pairs_debug_card.dart';
-import '../../mini_games/widgets/push_revision_game_debug_card.dart';
-import '../../push_spot_test/widgets/push_spot_test_debug_card.dart';
 import '../../daily_ca/providers/daily_ca_providers.dart';
 import '../../daily_war/providers/daily_war_providers.dart';
 import '../providers/today_hub_provider.dart';
@@ -292,8 +287,7 @@ class HomeScreen extends HookConsumerWidget {
                                         .asData
                                         ?.value;
                                     final journeyActive =
-                                        journey?.shouldShowActivationSurface ??
-                                        false;
+                                        journey?.shouldShowChecklist ?? false;
                                     final firstName = userName.split(' ').first;
                                     final title = journeyActive
                                         ? (firstName.toLowerCase() == 'aspirant'
@@ -302,9 +296,7 @@ class HomeScreen extends HookConsumerWidget {
                                         : greeting;
                                     final subtitle = !journeyActive
                                         ? userName
-                                        : (journey!.shouldShowChecklist
-                                              ? 'Two things worth doing first'
-                                              : 'Your Danger Zone is building');
+                                        : 'Start with the demo test';
                                     return Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
@@ -484,24 +476,6 @@ class HomeScreen extends HookConsumerWidget {
                       ],
                     ),
                     const SizedBox(height: AppSpacing.md),
-                    // Danger Zone nudge (quiet, after checklist graduates).
-                    Consumer(
-                      builder: (context, ref, _) {
-                        final journey = ref.watch(
-                          homeActivationJourneyProvider,
-                        );
-                        final state = journey.value;
-                        if (state == null || !state.shouldShowDangerZoneNudge) {
-                          return const SizedBox.shrink();
-                        }
-                        return Padding(
-                          padding: const EdgeInsets.only(
-                            bottom: AppSpacing.md,
-                          ),
-                          child: DangerZoneHomeNudge(state: state),
-                        );
-                      },
-                    ),
                     Consumer(
                       builder: (context, ref, _) {
                         final journey = ref.watch(homeActivationJourneyProvider);
@@ -522,7 +496,7 @@ class HomeScreen extends HookConsumerWidget {
                           homeActivationJourneyProvider,
                         );
                         final secondary = journey.maybeWhen(
-                          data: (s) => s.shouldShowActivationSurface,
+                          data: (s) => s.shouldShowChecklist,
                           orElse: () => false,
                         );
                         return _PracticeSection(
@@ -616,14 +590,6 @@ class HomeScreen extends HookConsumerWidget {
                         },
                       ),
                     ),
-                    if (kDebugMode) ...[
-                      const SizedBox(height: AppSpacing.lg),
-                      const PushMemoryPairsDebugCard(),
-                      const SizedBox(height: AppSpacing.sm),
-                      const PushRevisionGameDebugCard(),
-                      const SizedBox(height: AppSpacing.sm),
-                      const PushSpotTestDebugCard(),
-                    ],
                     const SizedBox(height: AppSpacing.sm),
                   ],
                 ),

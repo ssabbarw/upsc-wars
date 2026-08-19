@@ -172,24 +172,28 @@ void main() {
     test('min date blocks earlier calendar days', () {
       final min = DailyCaSchedule.defaultCalendarMinDate;
       expect(
-        DailyCaSchedule.isOnOrAfterMinDate(DateTime(2026, 6, 4), min),
+        DailyCaSchedule.isOnOrAfterMinDate(DateTime(2026, 8, 17), min),
         isFalse,
       );
       expect(
-        DailyCaSchedule.isOnOrAfterMinDate(DateTime(2026, 6, 5), min),
+        DailyCaSchedule.isOnOrAfterMinDate(DateTime(2026, 8, 18), min),
         isTrue,
       );
-      expect(DailyCaSchedule.defaultCalendarMinDateIso, '2026-06-05');
+      expect(DailyCaSchedule.defaultCalendarMinDateIso, '2026-08-18');
     });
 
     test('parseCalendarMinDate accepts YYYY-MM-DD from Remote Config', () {
       expect(
-        DailyCaSchedule.parseCalendarMinDate('2026-06-05'),
-        DateTime(2026, 6, 5),
+        DailyCaSchedule.parseCalendarMinDate('2026-08-18'),
+        DateTime(2026, 8, 18),
       );
       expect(
-        DailyCaSchedule.parseCalendarMinDate('2026-6-5'),
-        DateTime(2026, 6, 5),
+        DailyCaSchedule.parseCalendarMinDate('2026-8-18'),
+        DateTime(2026, 8, 18),
+      );
+      expect(
+        DailyCaSchedule.parseCalendarMinDate('2026-06-05'),
+        DateTime(2026, 8, 18),
       );
       expect(
         DailyCaSchedule.parseCalendarMinDate(''),
@@ -199,6 +203,15 @@ void main() {
         DailyCaSchedule.parseCalendarMinDate('invalid'),
         DailyCaSchedule.defaultCalendarMinDate,
       );
+    });
+
+    test('month navigation stays within min date and current month', () {
+      final minMonth = DateTime(2026, 8);
+      final currentMonth = DateTime(2026, 8);
+      expect(DailyCaSchedule.isMonthBefore(2026, 7, minMonth), isTrue);
+      expect(DailyCaSchedule.isMonthBefore(2026, 8, minMonth), isFalse);
+      expect(DailyCaSchedule.isMonthAfter(2026, 9, currentMonth), isTrue);
+      expect(DailyCaSchedule.isMonthAfter(2026, 8, currentMonth), isFalse);
     });
   });
 }

@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -13,14 +12,12 @@ import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../push_spot_test_launcher.dart';
 
-/// Debug-only home entry to exercise push spot-test flow without FCM.
+/// Admin entry to exercise push spot-test flow without FCM.
 class PushSpotTestDebugCard extends ConsumerWidget {
   const PushSpotTestDebugCard({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    if (!kDebugMode) return const SizedBox.shrink();
-
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
 

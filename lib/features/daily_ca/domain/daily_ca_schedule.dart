@@ -15,7 +15,8 @@ abstract final class DailyCaSchedule {
   static const istOffset = Duration(hours: 5, minutes: 30);
 
   /// Fallback when Remote Config is unavailable or invalid.
-  static final DateTime defaultCalendarMinDate = DateTime(2026, 6, 5);
+  /// First public Daily CA paper date — calendars never go earlier.
+  static final DateTime defaultCalendarMinDate = DateTime(2026, 8, 18);
 
   static String get defaultCalendarMinDateIso =>
       formatIsoDate(defaultCalendarMinDate);
@@ -30,11 +31,15 @@ abstract final class DailyCaSchedule {
     final match = _isoDatePattern.firstMatch(trimmed);
     if (match == null) return defaultCalendarMinDate;
 
-    return DateTime(
+    final parsed = DateTime(
       int.parse(match.group(1)!),
       int.parse(match.group(2)!),
       int.parse(match.group(3)!),
     );
+    if (parsed.isBefore(defaultCalendarMinDate)) {
+      return defaultCalendarMinDate;
+    }
+    return parsed;
   }
 
   /// Current IST wall clock as a timezone-agnostic [DateTime].
@@ -167,6 +172,12 @@ abstract final class DailyCaSchedule {
   static bool isMonthBefore(int year, int month, DateTime minMonth) {
     if (year < minMonth.year) return true;
     if (year == minMonth.year && month < minMonth.month) return true;
+    return false;
+  }
+
+  static bool isMonthAfter(int year, int month, DateTime maxMonth) {
+    if (year > maxMonth.year) return true;
+    if (year == maxMonth.year && month > maxMonth.month) return true;
     return false;
   }
 }

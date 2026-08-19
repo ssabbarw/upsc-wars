@@ -8,6 +8,8 @@ import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../domain/daily_ca_schedule.dart';
+import '../domain/daily_ca_source_links.dart';
+import 'daily_ca_source_link_row.dart';
 import 'daily_ca_unavailable_sheet.dart';
 
 /// The paper quiz to attempt now, with a local 1s timer so the rest of the
@@ -69,18 +71,28 @@ class _DailyCaTodaySectionState extends State<DailyCaTodaySection> {
         DailyCaSchedule.isOnOrAfterMinDate(paperDate, widget.minDate);
     final isTodaysPaper = paperDate != null &&
         DailyCaSchedule.isTodaysPaper(paperDate, referenceIst: _ist);
+    final nextOpen = DailyCaSchedule.nextOpensAt(referenceIst: _ist);
     final countdownLabel = DailyCaSchedule.formatCountdown(
       DailyCaSchedule.timeUntilNextOpen(referenceIst: _ist),
     );
+    final nextIsToday = DailyCaSchedule.dateOnly(nextOpen) ==
+        DailyCaSchedule.dateOnly(_ist);
+    final nextCopy = nextIsToday
+        ? 'Today\'s test opens at 6 AM · $countdownLabel'
+        : 'Tomorrow\'s test opens at 6 AM · $countdownLabel';
 
     final String headline;
     if (!allowed) {
       headline = 'Daily tests start from '
           '${DateFormat('d MMM yyyy').format(widget.minDate)}.';
     } else if (!widget.questionsReady) {
-      headline = 'Questions were generated, but they are not live yet.';
+      headline = nextIsToday
+          ? 'Today\'s test will be available soon.'
+          : 'Today\'s test will be available tomorrow morning.';
+    } else if (widget.paperCompleted) {
+      headline = 'Completed · open your results';
     } else if (isTodaysPaper) {
-      headline = "10 MCQs from today's newspaper";
+      headline = 'Current affairs test from yesterday\'s news.';
     } else {
       headline = '10 MCQs from the '
           '${DateFormat('d MMM').format(paperDate)} paper';
@@ -107,12 +119,30 @@ class _DailyCaTodaySectionState extends State<DailyCaTodaySection> {
           ),
           const SizedBox(height: AppSpacing.sm),
           Text(
-            widget.paperCompleted ? 'Completed · tap to revise' : headline,
+            headline,
             style: AppTextStyles.bodySm().copyWith(
               color: scheme.onSurfaceVariant,
             ),
           ),
-          const SizedBox(height: AppSpacing.md),
+          if (allowed) ...[
+            const SizedBox(height: AppSpacing.md),
+            Text(
+              isTodaysPaper
+                  ? "You can revise yesterday's current affairs from these links."
+                  : 'You can revise this day\'s current affairs from these links.',
+              style: AppTextStyles.labelSm().copyWith(
+                fontWeight: FontWeight.w700,
+                color: scheme.onSurface,
+                height: 1.35,
+              ),
+            ),
+            const SizedBox(height: AppSpacing.xs),
+            for (final link in DailyCaSourceLinks.forDate(paperDate)) ...[
+              DailyCaSourceLinkRow(link: link),
+              const SizedBox(height: 4),
+            ],
+          ] else
+            const SizedBox(height: AppSpacing.md),
           FilledButton.icon(
             onPressed: widget.launching
                 ? null
@@ -148,15 +178,15 @@ class _DailyCaTodaySectionState extends State<DailyCaTodaySection> {
               !allowed
                   ? 'Not started yet'
                   : !widget.questionsReady
-                  ? 'Coming soon'
+                  ? 'Available soon'
                   : widget.paperCompleted
-                  ? 'Revise this paper'
-                  : 'Start the quiz',
+                  ? 'View results'
+                  : 'Start today\'s test',
             ),
           ),
           const SizedBox(height: AppSpacing.sm),
           Text(
-            'Next paper opens in $countdownLabel',
+            nextCopy,
             textAlign: TextAlign.center,
             style: AppTextStyles.caption().copyWith(
               color: scheme.onSurfaceVariant,

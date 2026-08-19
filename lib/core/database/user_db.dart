@@ -974,16 +974,23 @@ class SessionsDao extends DatabaseAccessor<UserDatabase>
 
   /// Whether the user completed the daily CA test for [sourceDate] (`YYYY-MM-DD`).
   Future<bool> hasCompletedDailyCa(String sourceDate) async {
+    final id = await getLatestCompletedDailyCaSessionId(sourceDate);
+    return id != null;
+  }
+
+  /// Latest completed Daily CA session for [sourceDate], or null.
+  Future<String?> getLatestCompletedDailyCaSessionId(String sourceDate) async {
     final row = await customSelect(
-      "SELECT COUNT(*) AS c FROM sessions "
-      "WHERE subject = ? AND topic = ? AND status = 'completed'",
+      "SELECT id FROM sessions "
+      "WHERE subject = ? AND topic = ? AND status = 'completed' "
+      "ORDER BY completed_at DESC, created_at DESC LIMIT 1",
       variables: [
         Variable.withString(QuestionSourceConstants.dailyCaSessionSubject),
         Variable.withString(sourceDate),
       ],
       readsFrom: {sessions},
-    ).getSingle();
-    return (row.read<int?>('c') ?? 0) > 0;
+    ).getSingleOrNull();
+    return row?.read<String>('id');
   }
 
   /// Completed daily CA dates in `[startInclusive, endInclusive]` (`YYYY-MM-DD`).

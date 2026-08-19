@@ -2,16 +2,18 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../core/providers/user_database_provider.dart';
 import '../domain/daily_ca_schedule.dart';
-import '../../fomo_pulse/widgets/fomo_pulse_home_card.dart';
 import '../domain/open_daily_ca_test.dart';
 import '../providers/daily_ca_providers.dart';
+import '../widgets/daily_ca_day_sheet.dart';
 import '../widgets/daily_ca_month_calendar.dart';
 import '../widgets/daily_ca_today_section.dart';
 
@@ -70,6 +72,18 @@ class DailyCaScreen extends HookConsumerWidget {
       }
     }
 
+    Future<void> openPaperResults(String isoDate) async {
+      final db = ref.read(userDatabaseProvider);
+      final sessionId =
+          await db.sessionsDao.getLatestCompletedDailyCaSessionId(isoDate);
+      if (!context.mounted) return;
+      if (sessionId == null) {
+        await openDayTest(isoDate, isRevise: true);
+        return;
+      }
+      context.push('/results/$sessionId');
+    }
+
     final openDayTestStable = useCallback(
       openDayTest,
       [monthKey, paperCompleted],
@@ -90,8 +104,13 @@ class DailyCaScreen extends HookConsumerWidget {
     void shiftMonth(int delta) {
       final m = displayedMonth.value;
       final next = DateTime(m.year, m.month + delta);
+      final maxMonth = DateTime(istNow.year, istNow.month);
       if (delta < 0 &&
           DailyCaSchedule.isMonthBefore(next.year, next.month, minMonth)) {
+        return;
+      }
+      if (delta > 0 &&
+          DailyCaSchedule.isMonthAfter(next.year, next.month, maxMonth)) {
         return;
       }
       displayedMonth.value = next;
@@ -101,6 +120,12 @@ class DailyCaScreen extends HookConsumerWidget {
       displayedMonth.value.year,
       displayedMonth.value.month - 1,
       minMonth,
+    );
+    final maxMonth = DateTime(istNow.year, istNow.month);
+    final canGoToNextMonth = !DailyCaSchedule.isMonthAfter(
+      displayedMonth.value.year,
+      displayedMonth.value.month + 1,
+      maxMonth,
     );
     final monthTitle = DateFormat('MMMM yyyy').format(displayedMonth.value);
 
@@ -115,14 +140,14 @@ class DailyCaScreen extends HookConsumerWidget {
             paperCompleted: paperCompleted,
             launching: launching.value || paperChecking,
             questionsReady: paperLive,
-            onStartPaper: paperIso == null || !paperLive
+            onStartPaper: paperIso == null
                 ? null
-                : () => unawaited(
-                      openDayTestStable(paperIso, isRevise: paperCompleted),
-                    ),
+                : paperCompleted
+                ? () => unawaited(openPaperResults(paperIso))
+                : paperLive
+                ? () => unawaited(openDayTest(paperIso, isRevise: false))
+                : null,
           ),
-          const SizedBox(height: AppSpacing.md),
-          const FomoPulseHomeCard(),
           const SizedBox(height: AppSpacing.lg),
           Row(
             children: [
@@ -138,7 +163,7 @@ class DailyCaScreen extends HookConsumerWidget {
                 ),
               ),
               IconButton(
-                onPressed: () => shiftMonth(1),
+                onPressed: canGoToNextMonth ? () => shiftMonth(1) : null,
                 icon: const Icon(Icons.chevron_right_rounded),
               ),
             ],
@@ -182,7 +207,17 @@ class DailyCaScreen extends HookConsumerWidget {
                   return;
                 }
                 unawaited(
-                  openDayTestStable(iso, isRevise: completed.contains(iso)),
+                  showDailyCaDaySheet(
+                    context: context,
+                    isoDate: iso,
+                    completed: completed.contains(iso),
+                    onStartTest: () => unawaited(
+                      openDayTest(
+                        iso,
+                        isRevise: completed.contains(iso),
+                      ),
+                    ),
+                  ),
                 );
               },
             ),

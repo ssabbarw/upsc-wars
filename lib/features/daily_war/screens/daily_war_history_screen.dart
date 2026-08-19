@@ -1,18 +1,28 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:intl/intl.dart';
 
+import '../../../core/theme/app_colors.dart';
+import '../../../core/theme/app_spacing.dart';
+import '../../../core/theme/app_text_styles.dart';
 import '../daily_war_constants.dart';
-import '../domain/daily_war_copy.dart';
 import '../domain/daily_war_models.dart';
+import '../domain/daily_war_phase.dart';
+import '../domain/daily_war_schedule.dart';
+import '../domain/start_daily_war_attempt.dart';
 import '../providers/daily_war_providers.dart';
-import '../theme/daily_war_theme.dart';
+import '../providers/server_clock_provider.dart';
+import '../widgets/daily_war_earned_badges_section.dart';
+import '../widgets/daily_war_month_calendar.dart';
+import '../widgets/daily_war_today_section.dart';
+import 'daily_war_history_detail_screen.dart';
 
-/// Shared archive of past Wars with personal attempt state.
-///
-/// Backed by [dailyWarHistoryBundleProvider] which serves ranked wars from
-/// local cache and only hits Firestore for a short recent window.
-class DailyWarHistoryScreen extends ConsumerWidget {
+/// Calendar hub for Daily War — tonight's paper on top, archive by date.
+class DailyWarHistoryScreen extends HookConsumerWidget {
   const DailyWarHistoryScreen({super.key, this.embedded = false});
 
   /// When true, omit [Scaffold] / [AppBar] (used inside Progress hub).
@@ -20,190 +30,199 @@ class DailyWarHistoryScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final async = ref.watch(dailyWarHistoryBundleProvider);
     final scheme = Theme.of(context).colorScheme;
+    final async = ref.watch(dailyWarHistoryBundleProvider);
+    final snap = ref.watch(dailyWarHomeSnapshotProvider);
+    final launching = useState(false);
 
-    final body = Column(
+    final offset = ref.watch(serverTimeOffsetMsProvider).asData?.value ?? 0;
+    final tick = useState(0);
+    useEffect(() {
+      final t = Timer.periodic(const Duration(seconds: 1), (_) => tick.value++);
+      return t.cancel;
+    }, const []);
+    tick.value;
+
+    final ist = DailyWarSchedule.nowIst(
+      DateTime.fromMillisecondsSinceEpoch(
+        DateTime.now().millisecondsSinceEpoch + offset,
+        isUtc: true,
+      ),
+    );
+    final todayIso = DailyWarSchedule.formatIsoDate(
+      DailyWarSchedule.warDateFor(ist),
+    );
+    final minDate = DailyWarSchedule.dateOnly(DailyWarSchedule.calendarMinDate);
+
+    final initialMonth = DateTime(ist.year, ist.month);
+    final displayedMonth = useState(initialMonth);
+    final monthTitle = DateFormat('MMMM yyyy').format(displayedMonth.value);
+
+    final live =
+        snap.phase == DailyWarPhase.lobby ||
+        snap.phase == DailyWarPhase.liveJoinable;
+
+    Future<void> joinLive() async {
+      final doc = snap.doc;
+      if (doc == null || launching.value) {
+        if (doc == null && context.mounted) {
+          context.push(dailyWarLobbyRoute());
+        }
+        return;
+      }
+      launching.value = true;
+      try {
+        await startDailyWarAttempt(
+          context: context,
+          ref: ref,
+          doc: doc,
+          unranked: false,
+          istNow: ist,
+        );
+      } finally {
+        launching.value = false;
+      }
+    }
+
+    Future<void> attemptUnranked(DailyWarDoc doc) async {
+      if (launching.value) return;
+      launching.value = true;
+      try {
+        await startDailyWarAttempt(
+          context: context,
+          ref: ref,
+          doc: doc,
+          unranked: true,
+          istNow: ist,
+        );
+      } finally {
+        launching.value = false;
+      }
+    }
+
+    Future<void> onTodayUnranked() async {
+      final doc = snap.doc;
+      if (doc == null) {
+        if (context.mounted) context.push(dailyWarLobbyRoute());
+        return;
+      }
+      await attemptUnranked(doc);
+    }
+
+    void shiftMonth(int delta) {
+      final m = displayedMonth.value;
+      final next = DateTime(m.year, m.month + delta);
+      final minMonth = DateTime(minDate.year, minDate.month);
+      final maxMonth = DateTime(ist.year, ist.month);
+      if (delta < 0 &&
+          (next.year < minMonth.year ||
+              (next.year == minMonth.year && next.month < minMonth.month))) {
+        return;
+      }
+      if (delta > 0 &&
+          (next.year > maxMonth.year ||
+              (next.year == maxMonth.year && next.month > maxMonth.month))) {
+        return;
+      }
+      displayedMonth.value = next;
+    }
+
+    Future<void> onDateTap(String iso) async {
+      final date = DailyWarSchedule.parseIsoDate(iso);
+      if (DailyWarSchedule.isWarOffDay(date)) return;
+      if (date.isBefore(minDate)) return;
+      if (date.isAfter(DailyWarSchedule.dateOnly(ist))) return;
+      if (!context.mounted) return;
+      await showDailyWarDaySheet(context: context, dateId: iso);
+    }
+
+    final minMonth = DateTime(minDate.year, minDate.month);
+    final maxMonth = DateTime(ist.year, ist.month);
+    final shownMonth = DateTime(
+      displayedMonth.value.year,
+      displayedMonth.value.month,
+    );
+    final canGoToPreviousMonth =
+        shownMonth.year > minMonth.year ||
+        (shownMonth.year == minMonth.year && shownMonth.month > minMonth.month);
+    final canGoToNextMonth =
+        shownMonth.year < maxMonth.year ||
+        (shownMonth.year == maxMonth.year && shownMonth.month < maxMonth.month);
+
+    final body = ListView(
+      padding: const EdgeInsets.fromLTRB(
+        AppSpacing.lg,
+        AppSpacing.sm,
+        AppSpacing.lg,
+        AppSpacing.xxxl,
+      ),
       children: [
-        Padding(
-          padding: const EdgeInsets.fromLTRB(16, 4, 16, 4),
-          child: Align(
-            alignment: Alignment.centerRight,
-            child: TextButton(
-              onPressed: () => context.push(dailyWarBadgesRoute()),
-              style: TextButton.styleFrom(
-                padding: const EdgeInsets.symmetric(horizontal: 8),
-                minimumSize: Size.zero,
-                tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-              ),
-              child: Text(
-                'Your Earned badges',
-                style: DwText.dm(
-                  size: 12,
-                  weight: FontWeight.w700,
-                  color: DwColors.teal,
-                ),
-              ),
-            ),
-          ),
+        DailyWarTodaySection(
+          launching: launching.value,
+          onJoinLive: () => unawaited(joinLive()),
+          onOpenResults: () {
+            if (snap.dateId.isEmpty) return;
+            unawaited(
+              showDailyWarDaySheet(context: context, dateId: snap.dateId),
+            );
+          },
+          onAttemptUnranked: () => unawaited(onTodayUnranked()),
         ),
-        Expanded(
-          child: async.when(
-              loading: () => const Center(child: CircularProgressIndicator()),
-              error: (e, _) => Center(child: Text('$e')),
-              data: (bundle) {
-                final wars = bundle.wars;
-                final subs = bundle.submissions;
-
-                if (wars.isEmpty) {
-                  return Center(
-                    child: Text(
-                      'No Wars yet',
-                      style: DwText.dm(
-                        size: 14,
-                        color: DwColors.muted,
-                      ),
-                    ),
-                  );
-                }
-
-                return ListView.separated(
-                  padding: const EdgeInsets.fromLTRB(16, 8, 16, 24),
-                  itemCount: wars.length,
-                  separatorBuilder: (_, _) => const SizedBox(height: 10),
-                  itemBuilder: (context, i) {
-                    final w = wars[i];
-                    final sub = subs[w.dateId];
-                    final subjects = DailyWarCopy.subjectsLine(w.topics);
-                    final topics = DailyWarCopy.topicsLine(w.topics);
-                    final status = _WarStatus.fromSubmission(sub);
-
-                    final isGrand = w.isGrand;
-                    final kindColor =
-                        isGrand ? DwColors.gold : DwColors.crimsonBright;
-                    return Material(
-                      color: Colors.transparent,
-                      child: InkWell(
-                        onTap: () => context.push(
-                          dailyWarHistoryDetailRoute(w.dateId),
-                        ),
-                        borderRadius: BorderRadius.circular(14),
-                        child: Ink(
-                          padding: const EdgeInsets.all(14),
-                          decoration: BoxDecoration(
-                            color: DwColors.surface,
-                            borderRadius: BorderRadius.circular(14),
-                            border: Border.all(
-                              color: status.borderColor,
-                            ),
-                          ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
-                                children: [
-                                  Container(
-                                    padding: const EdgeInsets.symmetric(
-                                      horizontal: 8,
-                                      vertical: 3,
-                                    ),
-                                    decoration: BoxDecoration(
-                                      color: kindColor.withValues(alpha: 0.14),
-                                      borderRadius: BorderRadius.circular(6),
-                                      border: Border.all(
-                                        color: kindColor.withValues(
-                                          alpha: 0.35,
-                                        ),
-                                      ),
-                                    ),
-                                    child: Text(
-                                      isGrand ? 'GRAND WAR' : 'DAILY WAR',
-                                      style: DwText.dm(
-                                        size: 10,
-                                        weight: FontWeight.w800,
-                                        color: kindColor,
-                                        letterSpacing: 0.8,
-                                      ),
-                                    ),
-                                  ),
-                                  const SizedBox(width: 8),
-                                  _StatusBadge(status: status),
-                                  const Spacer(),
-                                  Text(
-                                    DailyWarCopy.formatWarDate(w.dateId),
-                                    style: DwText.dm(
-                                      size: 12,
-                                      weight: FontWeight.w600,
-                                      color: DwColors.onDarkMuted,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              const SizedBox(height: 10),
-                              if (subjects.isNotEmpty) ...[
-                                Text(
-                                  subjects,
-                                  style: DwText.dm(
-                                    size: 12,
-                                    weight: FontWeight.w600,
-                                    color: DwColors.crimsonBright,
-                                    letterSpacing: 0.6,
-                                  ),
-                                ),
-                                const SizedBox(height: 2),
-                              ],
-                              Text(
-                                topics,
-                                maxLines: 2,
-                                overflow: TextOverflow.ellipsis,
-                                style: DwText.dm(
-                                  size: 15,
-                                  weight: FontWeight.w700,
-                                  color: DwColors.onDark,
-                                ),
-                              ),
-                              const SizedBox(height: 8),
-                              Row(
-                                children: [
-                                  if (status.detail != null)
-                                    Expanded(
-                                      child: Text(
-                                        status.detail!,
-                                        style: DwText.dm(
-                                          size: 12,
-                                          weight: FontWeight.w600,
-                                          color: status.color,
-                                        ),
-                                      ),
-                                    )
-                                  else
-                                    const Spacer(),
-                                  Text(
-                                    'Open',
-                                    style: DwText.dm(
-                                      size: 11,
-                                      weight: FontWeight.w700,
-                                      color: DwColors.onDarkMuted,
-                                    ),
-                                  ),
-                                  const Icon(
-                                    Icons.chevron_right_rounded,
-                                    size: 18,
-                                    color: DwColors.onDarkDim,
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    );
-                  },
-                );
-              },
+        const SizedBox(height: AppSpacing.lg),
+        Row(
+          children: [
+            IconButton(
+              onPressed: canGoToPreviousMonth ? () => shiftMonth(-1) : null,
+              icon: const Icon(Icons.chevron_left_rounded),
             ),
+            Expanded(
+              child: Text(
+                monthTitle,
+                textAlign: TextAlign.center,
+                style: AppTextStyles.h3().copyWith(color: scheme.onSurface),
+              ),
+            ),
+            IconButton(
+              onPressed: canGoToNextMonth ? () => shiftMonth(1) : null,
+              icon: const Icon(Icons.chevron_right_rounded),
+            ),
+          ],
+        ),
+        const SizedBox(height: AppSpacing.md),
+        async.when(
+          loading: () => const Padding(
+            padding: EdgeInsets.all(AppSpacing.xxl),
+            child: Center(child: CircularProgressIndicator()),
           ),
-        ],
+          error: (e, _) => Text(
+            'Could not load Wars: $e',
+            style: AppTextStyles.bodySm().copyWith(color: AppColors.wrong),
+          ),
+          data: (bundle) {
+            final warsByDate = {for (final w in bundle.wars) w.dateId: w};
+            if (snap.doc != null) {
+              warsByDate.putIfAbsent(snap.doc!.dateId, () => snap.doc!);
+            }
+            final submittedDates = bundle.submissions.keys.toSet();
+            if (snap.submission != null && snap.dateId.isNotEmpty) {
+              submittedDates.add(snap.dateId);
+            }
+            return DailyWarMonthCalendar(
+              year: displayedMonth.value.year,
+              month: displayedMonth.value.month,
+              warsByDate: warsByDate,
+              submittedDates: submittedDates,
+              minDate: minDate,
+              todayIso: todayIso,
+              liveDateId: live ? snap.dateId : null,
+              nowIst: ist,
+              onDateTap: (iso) => unawaited(onDateTap(iso)),
+            );
+          },
+        ),
+        const SizedBox(height: AppSpacing.lg),
+        const DailyWarEarnedBadgesSection(),
+      ],
     );
 
     if (embedded) return body;
@@ -212,85 +231,11 @@ class DailyWarHistoryScreen extends ConsumerWidget {
       backgroundColor: scheme.surface,
       appBar: AppBar(
         title: Text(
-          'War History',
-          style: DwText.dm(
-            size: 18,
-            weight: FontWeight.w700,
-            color: scheme.onSurface,
-          ),
+          'Daily War',
+          style: AppTextStyles.h3().copyWith(color: scheme.onSurface),
         ),
       ),
       body: body,
     );
   }
 }
-
-class _WarStatus {
-  const _WarStatus({
-    required this.label,
-    required this.color,
-    this.detail,
-  });
-
-  final String label;
-  final Color color;
-  final String? detail;
-
-  Color get borderColor => color.withValues(alpha: 0.35);
-
-  static _WarStatus fromSubmission(DailyWarSubmission? sub) {
-    if (sub == null) {
-      return const _WarStatus(
-        label: 'Missed',
-        color: DwColors.onDarkMuted,
-      );
-    }
-    if (sub.hasOfficialRank) {
-      return _WarStatus(
-        label: 'Attempted',
-        color: DwColors.teal,
-        detail: 'AIR ${sub.air} · ${sub.score}',
-      );
-    }
-    if (sub.mode == 'unranked') {
-      return _WarStatus(
-        label: 'Practiced',
-        color: const Color(0xFFAEB8FF),
-        detail: '${sub.score}',
-      );
-    }
-    return const _WarStatus(
-      label: 'Submitted',
-      color: DwColors.gold,
-      detail: 'Waiting for rank',
-    );
-  }
-}
-
-class _StatusBadge extends StatelessWidget {
-  const _StatusBadge({required this.status});
-
-  final _WarStatus status;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
-      decoration: BoxDecoration(
-        color: status.color.withValues(alpha: 0.16),
-        borderRadius: BorderRadius.circular(6),
-        border: Border.all(color: status.color.withValues(alpha: 0.4)),
-      ),
-      child: Text(
-        status.label.toUpperCase(),
-        style: DwText.dm(
-          size: 10,
-          weight: FontWeight.w800,
-          color: status.color,
-          letterSpacing: 0.7,
-        ),
-      ),
-    );
-  }
-}
-

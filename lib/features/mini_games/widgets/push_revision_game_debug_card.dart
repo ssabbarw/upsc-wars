@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -9,7 +8,7 @@ import '../../../core/theme/app_text_styles.dart';
 import '../push/push_revision_game_launch_params.dart';
 import '../shared/revision_game_analytics.dart';
 
-/// Temporary home entry to test push → games hub → config sheet without FCM.
+/// Admin entry to test push → games hub → config sheet without FCM.
 class PushRevisionGameDebugCard extends StatefulWidget {
   const PushRevisionGameDebugCard({super.key});
 
@@ -42,8 +41,6 @@ class _PushRevisionGameDebugCardState extends State<PushRevisionGameDebugCard> {
 
   @override
   Widget build(BuildContext context) {
-    if (!kDebugMode) return const SizedBox.shrink();
-
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
 

@@ -100,7 +100,7 @@ Future<KillSwitchSnapshot> killSwitch(Ref ref) async {
       dailyWarLobbyCountEnabledRemoteConfigKey: true,
       dailyWarMinVisibleLobbyCountRemoteConfigKey: 200,
       dailyWarLiveCountPollSecondsRemoteConfigKey: 15,
-      dailyCaCalendarMinDateRemoteConfigKey: '2026-06-05',
+      dailyCaCalendarMinDateRemoteConfigKey: '2026-08-18',
       qotdMaxPostsPerDayRemoteConfigKey: 3,
       factOrBluffSecondsRemoteConfigKey: 10,
       questionCorrectionsRevisionRemoteConfigKey: 0,

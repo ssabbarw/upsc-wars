@@ -599,7 +599,7 @@ class BattleMessagingService {
   ///
   /// Always shows the in-app education sheet first; the OS dialog runs only
   /// if the user taps "Turn on alerts". Intended for explicit user actions
-  /// (e.g. START HERE → Turn on daily reminders) — not auto-prompts.
+  /// — not auto-prompts.
   ///
   /// iOS: only when [AuthorizationStatus.notDetermined].
   /// Android 13+: when POST_NOTIFICATIONS is not granted (treats pre-prompt as

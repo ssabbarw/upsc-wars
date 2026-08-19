@@ -18,14 +18,33 @@ class DailyWarBadgeChip extends StatelessWidget {
   Widget build(BuildContext context) {
     final asset = DailyWarBadges.assetForTier(badgeId) ??
         DailyWarBadges.assetForAward(badgeId);
-    if (asset == null) return SizedBox(width: size, height: size);
+    if (asset == null) return _MissingBadge(size: size);
     return Image.asset(
       asset,
       width: size,
       height: size,
       fit: BoxFit.contain,
       filterQuality: FilterQuality.medium,
-      errorBuilder: (_, _, _) => SizedBox(width: size, height: size),
+      errorBuilder: (_, _, _) => _MissingBadge(size: size),
+    );
+  }
+}
+
+class _MissingBadge extends StatelessWidget {
+  const _MissingBadge({required this.size});
+
+  final double size;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: size,
+      height: size,
+      child: Icon(
+        Icons.workspace_premium_rounded,
+        size: size * 0.72,
+        color: Theme.of(context).colorScheme.primary,
+      ),
     );
   }
 }

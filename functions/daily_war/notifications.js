@@ -47,14 +47,14 @@ async function readDailyWarRollout() {
       enabledRaw === undefined || enabledRaw === null || enabledRaw === ""
         ? true
         : enabledRaw === true ||
-          enabledRaw === "true" ||
-          enabledRaw === "1";
+        enabledRaw === "true" ||
+        enabledRaw === "1";
     const adminsOnly =
       adminsRaw === undefined || adminsRaw === null || adminsRaw === ""
         ? true
         : adminsRaw === true ||
-          adminsRaw === "true" ||
-          adminsRaw === "1";
+        adminsRaw === "true" ||
+        adminsRaw === "1";
     return { enabled, adminsOnly };
   } catch (e) {
     console.warn("readDailyWarRollout failed; defaulting enabled+admins-only", e);
@@ -96,7 +96,7 @@ function topicsPhrase(topics) {
 }
 
 function warTitle(kind) {
-  return kind === "grand" ? "Grand War" : "Daily War";
+  return kind === "grand" ? "Grand Static War" : "Daily Static War";
 }
 
 /**

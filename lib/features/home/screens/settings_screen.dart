@@ -214,6 +214,16 @@ class SettingsScreen extends ConsumerWidget {
                       subtitle: 'Open the long HTML announcement as users see it',
                       onTap: () => context.push('/notification/long-html'),
                     ),
+                  if (kDebugMode || isSuperUser)
+                    _NavTile(
+                      icon: Icons.notifications_outlined,
+                      iconBg: Color(0xFFE8F0FF),
+                      iconColor: Color(0xFF1D4ED8),
+                      title: 'Push debug',
+                      subtitle:
+                          'Memory Pairs, revision game, and spot test launch',
+                      onTap: () => context.push('/internal/push-debug'),
+                    ),
                   if (kDebugMode)
                     _NavTile(
                       icon: Icons.analytics_outlined,

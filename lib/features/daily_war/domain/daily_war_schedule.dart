@@ -39,6 +39,9 @@ abstract final class DailyWarSchedule {
   /// Minimum participants before UI shows raw lobby/count numbers.
   static const minVisibleParticipantCount = 200;
 
+  /// First public War night — calendars never go earlier.
+  static final DateTime calendarMinDate = DateTime(2026, 8, 18);
+
   /// Shared live-window length for a paper of [questionCount] questions.
   static int liveWindowMinutesFor(int questionCount) {
     final q = questionCount < 1 ? weekdayQuestionCount : questionCount;

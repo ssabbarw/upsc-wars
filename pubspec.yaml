@@ -88,5 +88,6 @@ flutter:
     - assets/data/
     - assets/images/
     - assets/images/onboarding/
+    - assets/images/daily_war/badges/
     - assets/mini_games/
     - google_fonts/

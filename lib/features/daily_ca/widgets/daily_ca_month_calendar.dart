@@ -4,6 +4,7 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../shared/widgets/calendar_color_legend.dart';
 import '../domain/daily_ca_schedule.dart';
 
 class DailyCaMonthCalendar extends StatelessWidget {
@@ -99,13 +100,11 @@ class DailyCaMonthCalendar extends StatelessWidget {
                   : AppColors.warningText;
             } else if (isBeforeMin) {
               textColor = scheme.onSurfaceVariant.withValues(alpha: 0.45);
+            } else if (isCompleted) {
+              fill = AppColors.primary;
+              textColor = AppColors.onPrimary;
             } else if (!isPublished) {
               textColor = scheme.onSurfaceVariant.withValues(alpha: 0.55);
-            } else if (isCompleted) {
-              fill = isDark ? AppColors.correctBgDark : AppColors.correctBg;
-              textColor = isDark
-                  ? AppColors.correctTextDark
-                  : AppColors.correctText;
             }
 
             return Material(
@@ -139,7 +138,7 @@ class DailyCaMonthCalendar extends StatelessWidget {
                           child: Icon(
                             Icons.check_circle_rounded,
                             size: 12,
-                            color: AppColors.correct,
+                            color: AppColors.onPrimary,
                           ),
                         ),
                     ],
@@ -148,6 +147,30 @@ class DailyCaMonthCalendar extends StatelessWidget {
               ),
             );
           },
+        ),
+        const SizedBox(height: AppSpacing.md),
+        CalendarColorLegend(
+          items: [
+            CalendarLegendSwatch(
+              label: 'Attempted',
+              fill: AppColors.primary,
+              border: AppColors.primaryDark,
+            ),
+            CalendarLegendSwatch(
+              label: 'Today',
+              border: AppColors.primary,
+            ),
+            CalendarLegendSwatch(
+              label: 'Sunday',
+              fill: isDark ? AppColors.warningBgDark : AppColors.warningBg,
+              border: isDark
+                  ? AppColors.warningTextDark
+                  : AppColors.warningText,
+            ),
+            CalendarLegendSwatch(
+              label: 'Not open yet',
+            ),
+          ],
         ),
       ],
     );
