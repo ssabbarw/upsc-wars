@@ -36,10 +36,11 @@ import '../providers/home_activation_journey_provider.dart';
 import 'activation_journey_card.dart';
 import 'daily_revision_choice_sheet.dart';
 
-/// Daily ritual on home: one full-width hero card + a flat "TODAY" activity list.
+/// Daily ritual on home: one full-width hero card + a flat "Keep going" list.
 ///
 /// The hero card changes based on time of day and which activity is most urgent.
-/// All other activities appear as list rows beneath the hero.
+/// Keep going always lists CA Shots, Current Affairs test, Daily War,
+/// Danger Zone, and Revision queue — independent of the hero.
 class TodayHubSection extends HookConsumerWidget {
   const TodayHubSection({
     super.key,
@@ -121,7 +122,6 @@ class TodayHubSection extends HookConsumerWidget {
     );
     final hero = pick.hero;
     final fullDay = TodayHero.isFullDay(slots);
-    final warEvening = TodayHero.warOwnsSlot(ist);
 
     useEffect(() {
       if (!fullDay) return null;
@@ -474,87 +474,28 @@ class TodayHubSection extends HookConsumerWidget {
       }
     }
 
-    // ── TODAY list rows ──────────────────────────────────────────────────────
-
-    final allDisplayIds = TodayHero.displayOrder(
-      hero,
-      warEvening: warEvening,
-      caughtUp: pick.caughtUp,
-    );
-    final companionIds = allDisplayIds.where((id) => id != hero).toList();
+    // ── Keep going list — always the same set, independent of the hero ─────
 
     List<_TodayListRowData> buildListRows() {
       final rows = <_TodayListRowData>[];
 
-      for (final id in companionIds) {
-        switch (id) {
-          case TodaySlotId.current:
-            if (!data.caEnabled) continue;
-            // Daily CA test row
-            rows.add(
-              _TodayListRowData(
-                icon: Icons.article_outlined,
-                accent: AppColors.info,
-                title: 'Daily Current Affairs Test',
-                subtitle: !data.paperCompleted
-                    ? "Current affairs test from yesterday's news."
-                    : data.paperResultsOpened
-                    ? 'Done today'
-                    : 'Quiz done — open answers',
-                done: data.paperCompleted && data.paperResultsOpened,
-                locked: false,
-                onTap: () => context.push('/daily-ca'),
-              ),
-            );
-            rows.add(_caShotsListRow(context));
-
-          case TodaySlotId.practice:
-            if (!data.staticAvailable || queueEmpty) continue;
-            rows.add(
-              _TodayListRowData(
-                icon: Icons.replay_rounded,
-                accent: AppColors.primary,
-                title: 'Revision queue',
-                subtitle: data.staticCompleted
-                    ? 'Done today'
-                    : DailyRevision.countsLine(
-                        missed: data.revisionWrongCount,
-                        saved: data.revisionBookmarkCount,
-                      ),
-                done: data.staticCompleted,
-                locked: false,
-                onTap: () {
-                  unawaited(
-                    showDailyRevisionChoiceSheet(
-                      context: context,
-                      ref: ref,
-                      source: 'today_hub_list',
-                    ),
-                  );
-                },
-              ),
-            );
-
-          case TodaySlotId.war:
-            if (!sundayHub || weekReview == null) continue;
-            rows.add(
-              _TodayListRowData(
-                icon: Icons.history_edu_rounded,
-                accent: AppColors.warning,
-                title: 'Week Review',
-                subtitle: weekReview.completedToday
-                    ? 'Done today'
-                    : '${weekReview.uuids.length} mistakes to revisit',
-                done: weekReview.completedToday,
-                locked: false,
-                onTap: weekReviewTap(
-                  completed: weekReview.completedToday,
-                  mistakeCount: weekReview.uuids.length,
-                ),
-                loading: launchingReview.value,
-              ),
-            );
-        }
+      if (data.caEnabled) {
+        rows.add(_caShotsListRow(context));
+        rows.add(
+          _TodayListRowData(
+            icon: Icons.article_outlined,
+            accent: AppColors.info,
+            title: 'Daily Current Affairs Test',
+            subtitle: !data.paperCompleted
+                ? "Current affairs test from yesterday's news."
+                : data.paperResultsOpened
+                ? 'Done today'
+                : 'Quiz done — open answers',
+            done: data.paperCompleted && data.paperResultsOpened,
+            locked: false,
+            onTap: () => context.push('/daily-ca'),
+          ),
+        );
       }
 
       if (data.warEnabled) {
@@ -584,10 +525,6 @@ class TodayHubSection extends HookConsumerWidget {
         );
       }
 
-      if (hero == TodaySlotId.current && data.caEnabled) {
-        rows.insert(0, _caShotsListRow(context));
-      }
-
       final scored = activationJourney?.scoredAttempts;
       final unlockAt = ActivationJourneyConstants.confidenceMapUnlockAttempts;
       final unlocked = scored != null && scored >= unlockAt;
@@ -608,16 +545,53 @@ class TodayHubSection extends HookConsumerWidget {
         ),
       );
 
-      if (data.staticAvailable && queueEmpty) {
+      if (data.staticAvailable) {
         rows.add(
           _TodayListRowData(
             icon: Icons.replay_rounded,
             accent: AppColors.primary,
             title: 'Revision queue',
-            subtitle: DailyRevision.emptyQueueLine,
-            done: false,
-            locked: true,
-            onTap: null,
+            subtitle: queueEmpty
+                ? DailyRevision.emptyQueueLine
+                : data.staticCompleted
+                ? 'Done today'
+                : DailyRevision.countsLine(
+                    missed: data.revisionWrongCount,
+                    saved: data.revisionBookmarkCount,
+                  ),
+            done: !queueEmpty && data.staticCompleted,
+            locked: queueEmpty,
+            onTap: queueEmpty
+                ? null
+                : () {
+                    unawaited(
+                      showDailyRevisionChoiceSheet(
+                        context: context,
+                        ref: ref,
+                        source: 'today_hub_list',
+                      ),
+                    );
+                  },
+          ),
+        );
+      }
+
+      if (sundayHub && weekReview != null) {
+        rows.add(
+          _TodayListRowData(
+            icon: Icons.history_edu_rounded,
+            accent: AppColors.warning,
+            title: 'Week Review',
+            subtitle: weekReview.completedToday
+                ? 'Done today'
+                : '${weekReview.uuids.length} mistakes to revisit',
+            done: weekReview.completedToday,
+            locked: false,
+            onTap: weekReviewTap(
+              completed: weekReview.completedToday,
+              mistakeCount: weekReview.uuids.length,
+            ),
+            loading: launchingReview.value,
           ),
         );
       }
