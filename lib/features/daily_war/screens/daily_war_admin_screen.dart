@@ -7,6 +7,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../data/daily_war_cloud_service.dart';
+import '../domain/daily_war_copy.dart';
 import '../domain/daily_war_schedule.dart';
 import '../providers/daily_war_providers.dart';
 import 'daily_war_admin_preview_screen.dart';
@@ -39,7 +40,7 @@ class DailyWarAdminScreen extends HookConsumerWidget {
     }
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Daily War')),
+      appBar: AppBar(title: const Text(DailyWarCopy.programName)),
       body: ListView(
         padding: const EdgeInsets.all(AppSpacing.md),
         children: [

@@ -5,6 +5,7 @@ class TrafficBotIndex {
     this.emails = const {},
     this.uids = const {},
     this.warPeopleLast24h = 0,
+    this.battleCompletedPeopleLast24h = 0,
   });
 
   final Set<String> emails;
@@ -14,6 +15,9 @@ class TrafficBotIndex {
   /// Written by Cloud Functions; 0 when the field is missing.
   final int warPeopleLast24h;
 
+  /// Unique real users who submitted a bot 1v1 paper in the last 24h.
+  final int battleCompletedPeopleLast24h;
+
   static const empty = TrafficBotIndex();
 
   factory TrafficBotIndex.fromMap(Map<String, dynamic>? map) {
@@ -22,6 +26,7 @@ class TrafficBotIndex {
       emails: _stringSet(map['emails'], lower: true),
       uids: _stringSet(map['uids'], lower: false),
       warPeopleLast24h: _asInt(map['warPeopleLast24h']),
+      battleCompletedPeopleLast24h: _asInt(map['battleCompletedPeopleLast24h']),
     );
   }
 

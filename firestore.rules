@@ -343,9 +343,12 @@ service cloud.firestore {
       allow write: if false;
     }
 
-    /// Breaking-news Pulse MCQs — public read for signed-in users; server writes only.
+    /// CA Shots (FOMO Pulse) — public read so home can open them before
+    /// Google/Apple sign-in (same pattern as daily_wars / daily_mcqs).
+    /// Attempt sync stays signed-in via callable + fomo_pulse_user_state.
+    /// Clients must not write pulses (Cloud Functions only).
     match /fomo_pulses/{pulseId} {
-      allow read: if signedIn();
+      allow read: if true;
       allow write: if false;
     }
 
@@ -399,6 +402,12 @@ service cloud.firestore {
       );
     }
 
+    function isBotBattlesPath() {
+      return request.path.matches(
+        '/databases/' + database + '/documents/admin_dashboard/bot_battles(/.*)?'
+      );
+    }
+
     /// Super-user CA generate clock (hour/minute IST). Functions also write here.
     match /admin_dashboard/daily_ca {
       allow read, write: if isSuperUserEmail();
@@ -410,10 +419,20 @@ service cloud.firestore {
       allow write: if false;
     }
 
+    /// Bot battle join/complete log — Cloud Functions only. Super users read.
+    match /admin_dashboard/bot_battles {
+      allow read: if isSuperUserEmail();
+      allow write: if false;
+    }
+    match /admin_dashboard/bot_battles/{path=**} {
+      allow read: if isSuperUserEmail();
+      allow write: if false;
+    }
+
     /// In-app admin dashboard metrics — super users read; clients write aggregates.
     match /admin_dashboard/{path=**} {
       allow read: if isSuperUserEmail();
-      allow write: if signedIn() && !isTrafficBotsDoc();
+      allow write: if signedIn() && !isTrafficBotsDoc() && !isBotBattlesPath();
     }
 
     // Authenticated users: all other collections (tighten per collection before prod if needed).

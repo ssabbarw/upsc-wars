@@ -9,6 +9,7 @@ import '../../../core/providers/user_database_provider.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/widgets/dismissible_modal_sheet.dart';
 import '../daily_war_constants.dart';
+import '../domain/daily_war_copy.dart';
 import '../domain/daily_war_schedule.dart';
 import '../domain/daily_war_week_summary.dart';
 import '../theme/daily_war_theme.dart';
@@ -84,7 +85,7 @@ class _WeekProgressSheet extends ConsumerWidget {
                       ),
                     ),
                     Text(
-                      'Your week in War',
+                      'Your week in ${DailyWarCopy.programName}',
                       style: AppTextStyles.h3().copyWith(
                         fontWeight: FontWeight.w800,
                         color: scheme.onSurface,

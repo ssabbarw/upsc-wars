@@ -84,17 +84,17 @@ abstract final class DailyWarBadges {
     'climber': (
       label: 'Climber',
       asset: '$assetDir/climber.png',
-      blurb: 'Jumped ≥10 AIR ranks vs last War',
+      blurb: 'Jumped ≥10 AIR ranks vs last battle',
     ),
     'streak_7_nights': (
       label: '7-Night Streak',
       asset: '$assetDir/streak-7-nights.png',
-      blurb: '7+ War nights in a row',
+      blurb: '7+ battle nights in a row',
     ),
     'effort_first_war': (
       label: 'Week Opener',
       asset: '$assetDir/effort-first-war.png',
-      blurb: 'First War of the week',
+      blurb: 'First battle of the week',
     ),
     'effort_finisher': (
       label: 'Finisher',
@@ -104,12 +104,12 @@ abstract final class DailyWarBadges {
     'effort_back_in': (
       label: 'Back In',
       asset: '$assetDir/effort-back-in.png',
-      blurb: 'Returned after missing a War night',
+      blurb: 'Returned after missing a night',
     ),
     'effort_full_week': (
       label: 'Full Week',
       asset: '$assetDir/effort-full-week.png',
-      blurb: 'Fought all six War nights',
+      blurb: 'Fought all six nights',
     ),
     'effort_half_century': (
       label: 'Half Century',

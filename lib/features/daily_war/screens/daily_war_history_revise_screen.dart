@@ -92,7 +92,7 @@ class DailyWarHistoryReviseScreen extends HookConsumerWidget {
             final isQueued = queued.value[q.uuid] ?? false;
 
             return ReviewBody(
-              title: 'War revise',
+              title: 'Static War revise',
               showRevisionBadge: false,
               progressRight: dateId,
               question: q,

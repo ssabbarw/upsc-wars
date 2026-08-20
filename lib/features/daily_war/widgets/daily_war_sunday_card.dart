@@ -90,12 +90,12 @@ class DailyWarSundayCard extends ConsumerWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'SUNDAY · NO WAR TONIGHT',
+                'SUNDAY · NO BATTLE TONIGHT',
                 style: DwText.eyebrow(color: const Color(0x99C5CDFF)),
               ),
               const SizedBox(height: 2),
               Text(
-                'Rest day · War returns Monday 9 PM',
+                'Rest day · ${DailyWarCopy.dailyEventName} returns Monday 9 PM',
                 style: DwText.dm(
                   size: 11,
                   weight: FontWeight.w500,
@@ -188,7 +188,7 @@ class DailyWarSundayCard extends ConsumerWidget {
       final n = s.missedTopics.length;
       return n > 0
           ? '$n topics went by · nothing lost for Monday'
-          : 'No War nights this week · Monday is a fresh start';
+          : 'No battle nights this week · Monday is a fresh start';
     }
     if (s.attemptedAll) {
       return 'Streak safe · revise or rest until Monday';

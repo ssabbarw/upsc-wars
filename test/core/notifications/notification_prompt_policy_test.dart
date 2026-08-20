@@ -56,15 +56,15 @@ void main() {
         NotificationPromptSurface.postFirstTest,
       );
       expect(copy.title.toLowerCase(), contains('practice'));
-      expect(copy.alsoLine.toLowerCase(), contains('daily war'));
+      expect(copy.alsoLine.toLowerCase(), contains('static war'));
     });
 
-    test('war copy leads with Daily War and mentions other uses', () {
+    test('war copy leads with Daily Battle and mentions other uses', () {
       final copy = NotificationPromptCopy.forSurface(
         NotificationPromptSurface.dailyWar,
       );
-      expect(copy.title.toLowerCase(), contains('war'));
-      expect(copy.body.toLowerCase(), contains('daily war'));
+      expect(copy.title.toLowerCase(), contains('daily battle'));
+      expect(copy.body.toLowerCase(), contains('daily battle'));
       expect(copy.alsoLine.toLowerCase(), contains('daily ca'));
       expect(copy.alsoLine.toLowerCase(), contains('battle'));
     });

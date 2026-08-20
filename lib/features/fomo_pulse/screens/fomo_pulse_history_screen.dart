@@ -1,23 +1,32 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 
+import '../../../core/providers/app_language_helpers.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../shared/widgets/en_hi_language_toggle.dart';
 import '../domain/fomo_pulse_models.dart';
 import '../fomo_pulse_constants.dart';
 import '../providers/fomo_pulse_providers.dart';
 
-class FomoPulseHistoryScreen extends ConsumerWidget {
+class FomoPulseHistoryScreen extends HookConsumerWidget {
   const FomoPulseHistoryScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final async = ref.watch(fomoPulseHistoryProvider);
     final scheme = Theme.of(context).colorScheme;
+    final prefsLang = watchAppLanguage(ref);
+    final langOverride = useState<String?>(null);
+    final uiLang = normalizeAppLanguage(langOverride.value ?? prefsLang);
+    final preferHindi = uiLang == 'hi';
 
     return Scaffold(
       appBar: AppBar(
@@ -27,6 +36,16 @@ class FomoPulseHistoryScreen extends ConsumerWidget {
           onPressed: () => context.canPop() ? context.pop() : context.go('/'),
         ),
         actions: [
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 10),
+            child: EnHiLanguageToggle(
+              language: uiLang,
+              onChanged: (lang) {
+                langOverride.value = lang;
+                unawaited(persistAppLanguage(ref, lang));
+              },
+            ),
+          ),
           TextButton.icon(
             onPressed: () => _showWhatIsCaShotsSheet(context),
             icon: const Icon(Icons.info_outline, size: 18),
@@ -88,6 +107,7 @@ class FomoPulseHistoryScreen extends ConsumerWidget {
                         _PulseHistoryTile(
                           pulse: section.pulses[i],
                           attempt: data.attempts[section.pulses[i].pulseId],
+                          preferHindi: preferHindi,
                           onTap: () => context.push(
                             FomoPulseConstants.detailLocation(
                               section.pulses[i].pulseId,
@@ -236,11 +256,13 @@ class _PulseHistoryTile extends StatelessWidget {
   const _PulseHistoryTile({
     required this.pulse,
     required this.attempt,
+    required this.preferHindi,
     required this.onTap,
   });
 
   final FomoPulse pulse;
   final FomoPulseAttemptState? attempt;
+  final bool preferHindi;
   final VoidCallback onTap;
 
   @override
@@ -252,6 +274,8 @@ class _PulseHistoryTile extends StatelessWidget {
     final dateLabel = date != null
         ? DateFormat('d MMM · h:mm a').format(date.toLocal())
         : '';
+    final title = pulse.listTitle(preferHindi: preferHindi);
+    final body = pulse.listBody(preferHindi: preferHindi);
 
     final (badgeBg, badgeFg, badgeLabel) = !attempted
         ? (scheme.surfaceContainerHighest, scheme.onSurfaceVariant, 'Not done')
@@ -285,7 +309,9 @@ class _PulseHistoryTile extends StatelessWidget {
                   const SizedBox(width: AppSpacing.sm),
                   Expanded(
                     child: Text(
-                      pulse.title,
+                      title,
+                      maxLines: 3,
+                      overflow: TextOverflow.ellipsis,
                       style: AppTextStyles.label().copyWith(
                         fontWeight: FontWeight.w700,
                       ),
@@ -293,10 +319,10 @@ class _PulseHistoryTile extends StatelessWidget {
                   ),
                 ],
               ),
-              if (pulse.body.isNotEmpty) ...[
+              if (body.isNotEmpty) ...[
                 const SizedBox(height: AppSpacing.xs),
                 Text(
-                  pulse.body,
+                  body,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                   style: AppTextStyles.bodySm().copyWith(

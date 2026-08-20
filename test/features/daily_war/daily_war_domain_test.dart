@@ -1,4 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:upsc_wars/features/daily_war/domain/daily_war_copy.dart';
 import 'package:upsc_wars/features/daily_war/domain/daily_war_curriculum.dart';
 import 'package:upsc_wars/features/daily_war/domain/daily_war_curriculum_picker.dart';
 import 'package:upsc_wars/features/daily_war/domain/daily_war_phase.dart';
@@ -274,6 +275,16 @@ void main() {
       expect(result.wrong, 1);
       expect(result.unanswered, 1);
       expect(result.points, closeTo(2 - 2 / 3, 0.01));
+    });
+  });
+
+  group('DailyWarCopy names', () {
+    test('Static War is the program; Daily Battle is the weeknight event', () {
+      expect(DailyWarCopy.programName, 'Static War');
+      expect(DailyWarCopy.eventName(isGrand: false), 'Daily Battle');
+      expect(DailyWarCopy.eventName(isGrand: true), 'Grand War');
+      expect(DailyWarCopy.eventNameCaps(isGrand: false), 'DAILY BATTLE');
+      expect(DailyWarCopy.eventNameCaps(isGrand: true), 'GRAND WAR');
     });
   });
 }

@@ -10,19 +10,25 @@ class TrapDescription {
   const TrapDescription({
     required this.trapType,
     required this.displayName,
+    required this.blurb,
     required this.description,
   });
 
   final String trapType;
   final String displayName;
+  final String blurb;
   final String description;
 
-  factory TrapDescription.fromJson(Map<String, dynamic> json) =>
-      TrapDescription(
-        trapType: json['trap_type'] as String,
-        displayName: json['display_name'] as String,
-        description: json['description'] as String,
-      );
+  factory TrapDescription.fromJson(Map<String, dynamic> json) {
+    final description = json['description'] as String;
+    final blurb = (json['blurb'] as String?)?.trim();
+    return TrapDescription(
+      trapType: json['trap_type'] as String,
+      displayName: json['display_name'] as String,
+      blurb: (blurb != null && blurb.isNotEmpty) ? blurb : description,
+      description: description,
+    );
+  }
 }
 
 /// Loads the trap descriptions JSON once and keeps it alive.

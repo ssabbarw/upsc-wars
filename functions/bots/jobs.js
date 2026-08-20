@@ -27,6 +27,7 @@ const {
   processDailyWarSubmit,
 } = require("./daily_war_bots");
 const { readBotConfig } = require("./config");
+const { publishBotWarPeopleLast24h } = require("./war_stats");
 
 function db() {
   return admin.firestore();
@@ -116,6 +117,11 @@ async function runBotTick() {
   await releaseStaleBattles(roster);
   roster = await listRoster();
   await publishTrafficBotIndex(roster);
+  try {
+    await publishBotWarPeopleLast24h();
+  } catch (e) {
+    console.error("publishBotWarPeopleLast24h", e);
+  }
 
   const metaSnap = await db().collection("bot_state").doc("meta").get();
   const lastPresence = Number((metaSnap.data() || {}).lastPresenceAtMs) || 0;

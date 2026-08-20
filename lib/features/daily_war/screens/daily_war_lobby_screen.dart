@@ -31,18 +31,18 @@ class DailyWarLobbyScreen extends HookConsumerWidget {
     return available.when(
       loading: () => const _DailyWarLobbySkeleton(),
       error: (_, _) => Scaffold(
-        appBar: AppBar(title: const Text('Daily War')),
-        body: const Center(child: Text('Daily War is not available.')),
+        appBar: AppBar(title: const Text(DailyWarCopy.programName)),
+        body: const Center(child: Text('Static War is not available.')),
       ),
       data: (on) {
         if (!on) {
           return Scaffold(
-            appBar: AppBar(title: const Text('Daily War')),
+            appBar: AppBar(title: const Text(DailyWarCopy.programName)),
             body: const Center(
               child: Padding(
                 padding: EdgeInsets.all(24),
                 child: Text(
-                  'Daily War is not available on this account yet.',
+                  'Static War is not available on this account yet.',
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -68,11 +68,7 @@ class _DailyWarLobbySkeleton extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: DwColors.surface,
         foregroundColor: DwColors.onDark,
-        title: const ShimmerBox(
-          width: 110,
-          height: 18,
-          color: _bone,
-        ),
+        title: const ShimmerBox(width: 110, height: 18, color: _bone),
       ),
       body: SingleChildScrollView(
         physics: const NeverScrollableScrollPhysics(),
@@ -182,10 +178,11 @@ class _DailyWarLobbyBody extends HookConsumerWidget {
     final refreshedForDate = useRef<String?>(null);
     useEffect(() {
       final phase = snap.phase;
-      final isLobbyOrLive = phase == DailyWarPhase.lobby ||
-          phase == DailyWarPhase.liveJoinable;
+      final isLobbyOrLive =
+          phase == DailyWarPhase.lobby || phase == DailyWarPhase.liveJoinable;
       if (!isLobbyOrLive) return null;
-      final needsQuestions = snap.doc == null || snap.doc!.questionUuids.isEmpty;
+      final needsQuestions =
+          snap.doc == null || snap.doc!.questionUuids.isEmpty;
       if (!needsQuestions) return null;
       if (refreshedForDate.value == snap.dateId) return null;
       refreshedForDate.value = snap.dateId;
@@ -230,7 +227,7 @@ class _DailyWarLobbyBody extends HookConsumerWidget {
       final doc = snap.doc;
       if (doc == null) {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Tonight\'s War is not ready yet.')),
+          const SnackBar(content: Text('Tonight\'s battle is not ready yet.')),
         );
         return;
       }
@@ -260,12 +257,12 @@ class _DailyWarLobbyBody extends HookConsumerWidget {
         backgroundColor: DwColors.surface,
         foregroundColor: DwColors.onDark,
         title: Text(
-          isGrand ? 'Grand War' : 'Daily War',
+          isGrand ? DailyWarCopy.grandEventName : DailyWarCopy.dailyEventName,
           style: DwText.dm(size: 18, weight: FontWeight.w700),
         ),
         actions: [
           IconButton(
-            tooltip: 'How Daily War works',
+            tooltip: 'How ${DailyWarCopy.programName} works',
             onPressed: () => unawaited(showDailyWarHelpSheet(context)),
             icon: const Icon(
               Icons.help_outline_rounded,
@@ -293,8 +290,8 @@ class _DailyWarLobbyBody extends HookConsumerWidget {
             snap.phase == DailyWarPhase.lobby
                 ? 'LOBBY OPEN'
                 : snap.phase == DailyWarPhase.liveJoinable
-                ? 'WAR IS LIVE'
-                : _statusEyebrow(snap.phase),
+                ? '${DailyWarCopy.eventNameCaps(isGrand: isGrand)} IS LIVE'
+                : _statusEyebrow(snap.phase, isGrand: isGrand),
             style: DwText.eyebrow(),
           ),
           const SizedBox(height: 12),
@@ -304,7 +301,7 @@ class _DailyWarLobbyBody extends HookConsumerWidget {
             Text('Sunday off', style: DwText.topic()),
             const SizedBox(height: 8),
             Text(
-              'No live paper today. Next War is Monday at 9:00 PM IST.',
+              'No live paper today. Next ${DailyWarCopy.dailyEventName} is Monday at 9:00 PM IST.',
               style: DwText.body(),
             ),
           ] else if (topics.isEmpty)
@@ -443,7 +440,7 @@ class _DailyWarLobbyBody extends HookConsumerWidget {
     );
   }
 
-  String _statusEyebrow(DailyWarPhase phase) {
+  String _statusEyebrow(DailyWarPhase phase, {required bool isGrand}) {
     switch (phase) {
       case DailyWarPhase.resultsReady:
         return 'RESULTS READY';
@@ -454,14 +451,14 @@ class _DailyWarLobbyBody extends HookConsumerWidget {
       case DailyWarPhase.restDay:
         return 'SUNDAY OFF';
       default:
-        return 'DAILY WAR';
+        return DailyWarCopy.eventNameCaps(isGrand: isGrand);
     }
   }
 
   String _statusCopy(DailyWarPhase phase, {required String rankClock}) {
     switch (phase) {
       case DailyWarPhase.restDay:
-        return 'No paper today · next War Monday 9:00 PM';
+        return 'No paper today · next ${DailyWarCopy.dailyEventName} Monday 9:00 PM';
       case DailyWarPhase.preAnnounce:
       case DailyWarPhase.morning:
       case DailyWarPhase.countdown:

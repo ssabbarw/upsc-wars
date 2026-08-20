@@ -23,6 +23,7 @@ import '../../../shared/widgets/tappable_circular_avatar.dart';
 import '../../../shared/widgets/app_toast.dart';
 import '../../chat/providers/chat_providers.dart';
 import '../../home/providers/auth_providers.dart';
+import '../domain/community_bot.dart';
 import '../domain/entities/community_user.dart';
 import '../providers/community_providers.dart';
 import '../providers/open_challenge_providers.dart';
@@ -423,18 +424,23 @@ class _AdminRecentsSummary extends ConsumerWidget {
         real += 1;
       }
     }
-    final vsBots =
-        ref.watch(trafficBotIndexProvider).asData?.value.warPeopleLast24h ?? 0;
+    final botIndex =
+        ref.watch(trafficBotIndexProvider).asData?.value ?? TrafficBotIndex.empty;
+    final vsBots = botIndex.warPeopleLast24h;
+    final finished = botIndex.battleCompletedPeopleLast24h;
     final realLabel = real == 1 ? '1 real user' : '$real real users';
     final botLabel = bots == 1 ? '1 bot' : '$bots bots';
     final warLabel = vsBots == 1
-        ? '1 person vs bots (24h)'
-        : '$vsBots people vs bots (24h)';
+        ? '1 person joined vs bots (24h)'
+        : '$vsBots people joined vs bots (24h)';
+    final doneLabel = finished == 1
+        ? '1 finished'
+        : '$finished finished';
     final scheme = Theme.of(context).colorScheme;
     return Padding(
       padding: const EdgeInsets.only(top: AppSpacing.xs),
       child: Text(
-        '$realLabel · $botLabel · $warLabel',
+        '$realLabel · $botLabel · $warLabel · $doneLabel',
         style: AppTextStyles.bodySm().copyWith(color: scheme.onSurfaceVariant),
       ),
     );

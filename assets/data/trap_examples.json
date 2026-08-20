@@ -1,0 +1,242 @@
+[
+  {
+    "trap_type": "entity-swap",
+    "correct_option": "b",
+    "en": {
+      "stem": "Which body is constitutionally mandated to recommend how the net proceeds of Union taxes are shared with the States?",
+      "options": {
+        "a": "NITI Aayog",
+        "b": "Finance Commission",
+        "c": "Comptroller and Auditor General of India",
+        "d": "Union Ministry of Finance"
+      },
+      "why": "NITI Aayog is real, central, and advises on money matters — which is exactly why it works as bait. The tax-sharing mandate belongs to the Finance Commission under Article 280."
+    },
+    "hi": {
+      "stem": "संघ के करों की शुद्ध प्राप्तियों को राज्यों के बीच बाँटने की सिफ़ारिश करने का संवैधानिक दायित्व किस निकाय का है?",
+      "options": {
+        "a": "नीति आयोग",
+        "b": "वित्त आयोग",
+        "c": "भारत का नियंत्रक एवं महालेखापरीक्षक",
+        "d": "केंद्रीय वित्त मंत्रालय"
+      },
+      "why": "नीति आयोग वास्तविक है, केंद्रीय है और धन से जुड़े मामलों पर सलाह देता है — इसीलिए यह चारा बनता है। करों के बँटवारे की सिफ़ारिश अनुच्छेद 280 के तहत वित्त आयोग करता है।"
+    }
+  },
+  {
+    "trap_type": "scope-extension",
+    "correct_option": "b",
+    "en": {
+      "stem": "Which of the following statements about Fundamental Rights is correct?",
+      "options": {
+        "a": "Every Fundamental Right is available to citizens and foreigners alike",
+        "b": "Some Fundamental Rights, such as the freedoms under Article 19, are available only to citizens",
+        "c": "Fundamental Rights are available only while Parliament is in session",
+        "d": "Fundamental Rights are available only to persons born in India"
+      },
+      "why": "Option (a) starts from something true — Articles 14 and 21 do cover every person — and stretches it to cover every right and everyone."
+    },
+    "hi": {
+      "stem": "मौलिक अधिकारों के संबंध में निम्नलिखित में से कौन-सा कथन सही है?",
+      "options": {
+        "a": "प्रत्येक मौलिक अधिकार नागरिकों और विदेशियों, दोनों को समान रूप से उपलब्ध है",
+        "b": "कुछ मौलिक अधिकार, जैसे अनुच्छेद 19 की स्वतंत्रताएँ, केवल नागरिकों को उपलब्ध हैं",
+        "c": "मौलिक अधिकार केवल तभी उपलब्ध हैं जब संसद सत्र में हो",
+        "d": "मौलिक अधिकार केवल भारत में जन्मे व्यक्तियों को उपलब्ध हैं"
+      },
+      "why": "विकल्प (a) एक सच्चाई से शुरू होता है — अनुच्छेद 14 और 21 हर व्यक्ति पर लागू होते हैं — और उसे खींचकर हर अधिकार और हर व्यक्ति तक बढ़ा देता है।"
+    }
+  },
+  {
+    "trap_type": "conflation",
+    "correct_option": "b",
+    "en": {
+      "stem": "The Dandi March of 1930 was launched as part of which movement?",
+      "options": {
+        "a": "Non-Cooperation Movement",
+        "b": "Civil Disobedience Movement",
+        "c": "Quit India Movement",
+        "d": "Khilafat Movement"
+      },
+      "why": "Non-Cooperation (1920–22) and Civil Disobedience (1930) are both Gandhi-led mass movements, so they blur into a single memory. Dandi belongs only to the second."
+    },
+    "hi": {
+      "stem": "1930 का दांडी मार्च किस आंदोलन के अंतर्गत शुरू किया गया था?",
+      "options": {
+        "a": "असहयोग आंदोलन",
+        "b": "सविनय अवज्ञा आंदोलन",
+        "c": "भारत छोड़ो आंदोलन",
+        "d": "खिलाफ़त आंदोलन"
+      },
+      "why": "असहयोग (1920–22) और सविनय अवज्ञा (1930) — दोनों गांधीजी के नेतृत्व वाले जनांदोलन हैं, इसलिए स्मृति में एक हो जाते हैं। दांडी केवल दूसरे से जुड़ा है।"
+    }
+  },
+  {
+    "trap_type": "temporal-swap",
+    "correct_option": "b",
+    "en": {
+      "stem": "On which date did the Constitution of India come into force?",
+      "options": {
+        "a": "26 November 1949",
+        "b": "26 January 1950",
+        "c": "15 August 1947",
+        "d": "26 January 1930"
+      },
+      "why": "26 November 1949 is a genuine Constitution date — the day it was adopted. The trap attaches the right fact to the wrong date."
+    },
+    "hi": {
+      "stem": "भारत का संविधान किस तिथि को लागू हुआ था?",
+      "options": {
+        "a": "26 नवंबर 1949",
+        "b": "26 जनवरी 1950",
+        "c": "15 अगस्त 1947",
+        "d": "26 जनवरी 1930"
+      },
+      "why": "26 नवंबर 1949 संविधान से जुड़ी असली तिथि है — इसी दिन इसे अंगीकृत किया गया था। जाल सही तथ्य को गलत तिथि से जोड़ देता है।"
+    }
+  },
+  {
+    "trap_type": "partial-truth",
+    "correct_option": "b",
+    "en": {
+      "stem": "Which of the following statements about the Rajya Sabha is correct?",
+      "options": {
+        "a": "It is a permanent House, and one-half of its members retire every three years",
+        "b": "It is a permanent House, and one-third of its members retire every two years",
+        "c": "It is dissolved along with the Lok Sabha every five years",
+        "d": "Its members are directly elected by the people for a term of six years"
+      },
+      "why": "Option (a) opens with a true clause — the Rajya Sabha is a permanent House — and then plants one wrong number. The accurate half lowers your guard before the error lands."
+    },
+    "hi": {
+      "stem": "राज्यसभा के संबंध में निम्नलिखित में से कौन-सा कथन सही है?",
+      "options": {
+        "a": "यह एक स्थायी सदन है, और इसके आधे सदस्य हर तीन वर्ष में सेवानिवृत्त होते हैं",
+        "b": "यह एक स्थायी सदन है, और इसके एक-तिहाई सदस्य हर दो वर्ष में सेवानिवृत्त होते हैं",
+        "c": "यह लोकसभा के साथ हर पाँच वर्ष में भंग हो जाती है",
+        "d": "इसके सदस्य जनता द्वारा छह वर्ष के लिए सीधे चुने जाते हैं"
+      },
+      "why": "विकल्प (a) एक सही बात से शुरू होता है — राज्यसभा स्थायी सदन है — और फिर एक गलत संख्या जोड़ देता है। सही हिस्सा आपकी सतर्कता कम कर देता है।"
+    }
+  },
+  {
+    "trap_type": "reversed-causation",
+    "correct_option": "a",
+    "en": {
+      "stem": "Which of the following correctly explains the sea breeze felt on a coast during the day?",
+      "options": {
+        "a": "Land heats faster than the sea, so air moves from the sea towards the land",
+        "b": "The sea heats faster than the land, so air moves from the sea towards the land",
+        "c": "The land cools faster than the sea, so air moves from the land towards the sea",
+        "d": "Air pressure over the land rises during the day, drawing air in from the sea"
+      },
+      "why": "Option (b) ends with the familiar answer — a breeze coming off the sea — but reverses which surface heats first. Right effect, wrong cause."
+    },
+    "hi": {
+      "stem": "दिन के समय तट पर चलने वाली समुद्री समीर की सही व्याख्या कौन-सी है?",
+      "options": {
+        "a": "स्थल समुद्र की तुलना में तेज़ी से गर्म होता है, इसलिए हवा समुद्र से स्थल की ओर चलती है",
+        "b": "समुद्र स्थल की तुलना में तेज़ी से गर्म होता है, इसलिए हवा समुद्र से स्थल की ओर चलती है",
+        "c": "स्थल समुद्र की तुलना में तेज़ी से ठंडा होता है, इसलिए हवा स्थल से समुद्र की ओर चलती है",
+        "d": "दिन में स्थल के ऊपर वायुदाब बढ़ जाता है, जिससे हवा समुद्र से खिंचकर आती है"
+      },
+      "why": "विकल्प (b) का अंत जाना-पहचाना है — हवा समुद्र से आती है — पर वह यह उलट देता है कि पहले गर्म कौन होता है। परिणाम सही, कारण गलत।"
+    }
+  },
+  {
+    "trap_type": "plausible-fabrication",
+    "correct_option": "c",
+    "en": {
+      "stem": "Which of the following is listed as a Fundamental Duty in Article 51A of the Constitution?",
+      "options": {
+        "a": "To pay all taxes honestly and on time",
+        "b": "To vote in every general election",
+        "c": "To protect and improve the natural environment",
+        "d": "To serve in the armed forces for at least one year"
+      },
+      "why": "The three wrong options read like duties a good citizen owes the country, in constitutional language. None of them appears in Article 51A."
+    },
+    "hi": {
+      "stem": "निम्नलिखित में से कौन-सा संविधान के अनुच्छेद 51क में सूचीबद्ध एक मौलिक कर्तव्य है?",
+      "options": {
+        "a": "सभी कर ईमानदारी से और समय पर चुकाना",
+        "b": "प्रत्येक आम चुनाव में मतदान करना",
+        "c": "प्राकृतिक पर्यावरण की रक्षा करना और उसका संवर्धन करना",
+        "d": "कम से कम एक वर्ष तक सशस्त्र बलों में सेवा करना"
+      },
+      "why": "तीनों गलत विकल्प ऐसे कर्तव्य लगते हैं जो एक अच्छे नागरिक को निभाने चाहिए, और भाषा भी संवैधानिक लगती है। इनमें से कोई भी अनुच्छेद 51क में नहीं है।"
+    }
+  },
+  {
+    "trap_type": "geographic-swap",
+    "correct_option": "c",
+    "en": {
+      "stem": "The Sundarbans mangrove forest lies mainly in the delta formed by which river system?",
+      "options": {
+        "a": "Mahanadi",
+        "b": "Godavari and Krishna",
+        "c": "Ganga and Brahmaputra",
+        "d": "Narmada and Tapi"
+      },
+      "why": "Every option names a real Indian river system with a well-known coast. The trap keeps the fact intact and moves it to the wrong part of the map."
+    },
+    "hi": {
+      "stem": "सुंदरवन मैंग्रोव वन मुख्यतः किस नदी तंत्र द्वारा निर्मित डेल्टा में स्थित है?",
+      "options": {
+        "a": "महानदी",
+        "b": "गोदावरी और कृष्णा",
+        "c": "गंगा और ब्रह्मपुत्र",
+        "d": "नर्मदा और ताप्ती"
+      },
+      "why": "हर विकल्प एक असली भारतीय नदी तंत्र है जिसका तट प्रसिद्ध है। जाल तथ्य को ज्यों का त्यों रखता है और उसे मानचित्र पर गलत जगह रख देता है।"
+    }
+  },
+  {
+    "trap_type": "negation-trap",
+    "correct_option": "b",
+    "en": {
+      "stem": "Which of the following is NOT a Fundamental Right under the Constitution of India?",
+      "options": {
+        "a": "Right to Equality",
+        "b": "Right to Property",
+        "c": "Right to Freedom of Religion",
+        "d": "Right to Constitutional Remedies"
+      },
+      "why": "Read at speed and you pick the first right you recognise. The word NOT flips the task: the Right to Property was moved out in 1978 and is now a legal right under Article 300A."
+    },
+    "hi": {
+      "stem": "निम्नलिखित में से कौन-सा भारत के संविधान के अंतर्गत मौलिक अधिकार नहीं है?",
+      "options": {
+        "a": "समानता का अधिकार",
+        "b": "संपत्ति का अधिकार",
+        "c": "धार्मिक स्वतंत्रता का अधिकार",
+        "d": "संवैधानिक उपचारों का अधिकार"
+      },
+      "why": "जल्दबाज़ी में पढ़ने पर आप पहला पहचाना हुआ अधिकार चुन लेते हैं। 'नहीं' शब्द काम पलट देता है: संपत्ति का अधिकार 1978 में हटाकर अनुच्छेद 300क के तहत विधिक अधिकार बना दिया गया।"
+    }
+  },
+  {
+    "trap_type": "negative-framing",
+    "correct_option": "d",
+    "en": {
+      "stem": "All of the following Union Territories have a legislative assembly EXCEPT:",
+      "options": {
+        "a": "Delhi",
+        "b": "Puducherry",
+        "c": "Jammu and Kashmir",
+        "d": "Chandigarh"
+      },
+      "why": "Three options are true statements and only the exception is the answer. Your knowledge can be correct and your marking still wrong."
+    },
+    "hi": {
+      "stem": "निम्नलिखित सभी केंद्र शासित प्रदेशों में विधानसभा है, सिवाय:",
+      "options": {
+        "a": "दिल्ली",
+        "b": "पुदुचेरी",
+        "c": "जम्मू और कश्मीर",
+        "d": "चंडीगढ़"
+      },
+      "why": "तीन विकल्प सही कथन हैं और उत्तर केवल अपवाद है। आपका ज्ञान सही हो सकता है और फिर भी निशान गलत लग सकता है।"
+    }
+  }
+]

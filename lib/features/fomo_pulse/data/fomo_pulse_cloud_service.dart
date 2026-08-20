@@ -16,11 +16,19 @@ class FomoPulseCloudService {
 
   final FirebaseFunctions _functions;
 
-  static const _generateTimeout = Duration(minutes: 3);
+  /// Generate runs EN draft + Hindi translate (two LLM calls).
+  static const _generateTimeout = Duration(minutes: 5);
 
   HttpsCallable _generateDraftCallable() {
     return _functions.httpsCallable(
       'generateFomoPulseDraft',
+      options: HttpsCallableOptions(timeout: _generateTimeout),
+    );
+  }
+
+  HttpsCallable _longCallable(String name) {
+    return _functions.httpsCallable(
+      name,
       options: HttpsCallableOptions(timeout: _generateTimeout),
     );
   }
@@ -140,7 +148,7 @@ class FomoPulseCloudService {
   }
 
   Future<FomoPulseDraft> translateDraft(FomoPulseDraft draft) async {
-    final callable = _functions.httpsCallable('translateFomoPulseDraft');
+    final callable = _longCallable('translateFomoPulseDraft');
     final result = await callable.call<Map<String, dynamic>>({
       'question': draft.question.toServerMap(),
       'news_summary': draft.newsSummary,
@@ -183,7 +191,7 @@ class FomoPulseCloudService {
     String newsSummaryHi = '',
     List<String> upscPointsHi = const [],
   }) async {
-    final callable = _functions.httpsCallable('sendFomoPulseNotification');
+    final callable = _longCallable('sendFomoPulseNotification');
     final result = await callable.call<Map<String, dynamic>>({
       'title': title.trim(),
       'body': body.trim(),

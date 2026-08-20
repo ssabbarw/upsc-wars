@@ -101,6 +101,38 @@ abstract final class DailyCaSchedule {
     return !now.isBefore(opensAtForDate(istDate));
   }
 
+  /// History calendar cells that should open the day sheet.
+  ///
+  /// Published papers plus **today**, even on Sunday and before 6 AM, so the
+  /// highlighted cell opens today's paper (yesterday's news) instead of a dead tap.
+  /// Later days stay closed.
+  static bool isCalendarDaySelectable(
+    DateTime istDate, {
+    required DateTime minDate,
+    DateTime? referenceIst,
+  }) {
+    final now = referenceIst ?? nowIst();
+    if (dateOnly(istDate) == dateOnly(now)) return true;
+    if (isSunday(istDate)) return false;
+    if (!isOnOrAfterMinDate(istDate, minDate)) return false;
+    return isPublishedForDate(istDate, referenceIst: now);
+  }
+
+  /// News date the history calendar should show for a tap on [tappedDate].
+  ///
+  /// Today always maps to [paperQuizContentDate] — the same paper as the
+  /// Today's Paper card. Other days are themselves.
+  static DateTime? calendarTapContentDate(
+    DateTime tappedDate, {
+    DateTime? referenceIst,
+  }) {
+    final now = referenceIst ?? nowIst();
+    if (dateOnly(tappedDate) == dateOnly(now)) {
+      return paperQuizContentDate(referenceIst: now);
+    }
+    return dateOnly(tappedDate);
+  }
+
   /// Newest content day whose quiz is open — the "paper" to serve right now.
   ///
   /// Skips Sundays, so Monday morning still serves Saturday's paper rather

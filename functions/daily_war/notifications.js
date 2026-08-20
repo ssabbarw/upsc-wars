@@ -96,7 +96,7 @@ function topicsPhrase(topics) {
 }
 
 function warTitle(kind) {
-  return kind === "grand" ? "Grand Static War" : "Daily Static War";
+  return kind === "grand" ? "Grand War" : "Daily Battle";
 }
 
 /**
@@ -158,8 +158,8 @@ async function notifyMorning(dateId) {
     );
     const title =
       kind === "grand"
-        ? "Grand War tonight, 9 PM"
-        : "Tonight, 9 PM: Daily War";
+        ? `${warTitle(kind)} tonight, 9 PM`
+        : `Tonight, 9 PM: ${warTitle(kind)}`;
     const body =
       kind === "grand"
         ? phrase
@@ -185,7 +185,9 @@ async function notifyReminder30(dateId) {
     const war = await loadWarPublic(dateId);
     if (!war) return { ok: false, reason: "no_war" };
     const phrase = topicsPhrase(war.topics);
-    const title = "War in 30 minutes";
+    const kind = war.kind || "daily";
+    const title =
+      kind === "grand" ? "Grand War in 30 minutes" : "Daily Battle in 30 minutes";
     const body = phrase
       ? `${phrase}. Lobby opens 8:59 · starts 9:00 PM IST.`
       : "Lobby opens 8:59 · starts 9:00 PM IST.";
@@ -207,8 +209,8 @@ async function notifyLobbyOpen(dateId) {
     const phrase = topicsPhrase(war.topics);
     const title = "Lobby is open";
     const body = phrase
-      ? `${phrase}. War starts at 9:00 PM IST.`
-      : "Daily War lobby is open. War starts at 9:00 PM IST.";
+      ? `${phrase}. Starts at 9:00 PM IST.`
+      : "Daily Battle lobby is open. Starts at 9:00 PM IST.";
     return sendDailyWarTopic({
       title,
       body,
@@ -230,8 +232,8 @@ async function notifyResultsReady(dateId, rankedRows) {
     const title = "All-India Ranks are ready";
     const body =
       n > 0
-        ? `Tonight's War results are in · ${n.toLocaleString("en-IN")} aspirants. Tap to see your AIR.`
-        : "Tonight's War results are in. Tap to review.";
+        ? `Tonight's results are in · ${n.toLocaleString("en-IN")} aspirants. Tap to see your AIR.`
+        : "Tonight's results are in. Tap to review.";
 
     const topicResult = await sendDailyWarTopic({
       title,

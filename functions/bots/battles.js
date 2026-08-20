@@ -23,7 +23,7 @@ const {
   optionToResponseInt,
   skillForBot,
 } = require("./questions");
-const { recordBotWarConnection } = require("./war_stats");
+const { recordBotBattleJoined } = require("./battle_stats");
 
 const MAX_BODY_LEN = 180;
 
@@ -380,13 +380,18 @@ async function onBattleMatchWritten(sessionId, after) {
     if (!locked) return null;
     if (!guestBot) {
       try {
-        await recordBotWarConnection({
+        await recordBotBattleJoined({
           sessionId,
           humanEmail: guestEmail,
           botEmail: hostEmail,
+          botId: hostBot.id,
+          direction: "outgoing",
+          subject: after.subject,
+          humanDisplayName: after.guest_display_name,
+          botName: hostBot.name,
         });
       } catch (e) {
-        console.error("recordBotWarConnection", sessionId, e);
+        console.error("recordBotBattleJoined", sessionId, e);
       }
     }
     await sleep(randInt(mulberry32(hashString(`start:${sessionId}`)), 4000, 9000));
@@ -407,13 +412,18 @@ async function onBattleMatchWritten(sessionId, after) {
     if (!locked) return null;
     if (!hostBot) {
       try {
-        await recordBotWarConnection({
+        await recordBotBattleJoined({
           sessionId,
           humanEmail: hostEmail,
           botEmail: guestEmail,
+          botId: guestBot.id,
+          direction: "incoming",
+          subject: after.subject,
+          humanDisplayName: after.host_display_name,
+          botName: guestBot.name,
         });
       } catch (e) {
-        console.error("recordBotWarConnection", sessionId, e);
+        console.error("recordBotBattleJoined", sessionId, e);
       }
     }
     try {

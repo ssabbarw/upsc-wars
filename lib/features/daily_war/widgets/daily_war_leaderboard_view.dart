@@ -3,6 +3,7 @@ import 'package:intl/intl.dart';
 
 import '../../community/widgets/admin_bot_label.dart';
 import '../domain/daily_war_badges.dart';
+import '../domain/daily_war_copy.dart';
 import '../domain/daily_war_models.dart';
 import '../theme/daily_war_theme.dart';
 import 'daily_war_badge_chip.dart';
@@ -145,7 +146,7 @@ class _PodiumHeader extends StatelessWidget {
           Row(
             children: [
               Text(
-                '${isGrand ? 'GRAND WAR' : 'DAILY WAR'} · $dateLabel',
+                '${DailyWarCopy.eventNameCaps(isGrand: isGrand)} · $dateLabel',
                 style: DwText.dm(
                   size: 11,
                   weight: FontWeight.w700,

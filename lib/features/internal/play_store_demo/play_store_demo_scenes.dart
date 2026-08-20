@@ -1457,7 +1457,7 @@ class _EndCardScene extends StatelessWidget {
     'Elimination Techniques',
     'Trap Analysis',
     'Statement Analysis',
-    'Daily War',
+    'Static War',
     'Revision Games',
     'Online Battles',
     'Open Challenge',

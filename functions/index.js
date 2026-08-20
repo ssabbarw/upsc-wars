@@ -787,5 +787,6 @@ exports.setLlmAdminSettings = llmAdmin.setLlmAdminSettings;
 
 exports.tickBots = bots.tickBots;
 exports.onBotBattleMatchWritten = bots.onBotBattleMatchWritten;
+exports.onBotBattlePaperSubmitted = bots.onBotBattlePaperSubmitted;
 exports.adminRunBotTick = bots.adminRunBotTick;
 exports.adminPlanBotDay = bots.adminPlanBotDay;

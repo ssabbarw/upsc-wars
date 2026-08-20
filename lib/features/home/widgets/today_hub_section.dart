@@ -283,7 +283,7 @@ class TodayHubSection extends HookConsumerWidget {
         warPhase == DailyWarPhase.resultsReady;
     final isGrand = hubWarDoc?.isGrand == true;
     final weekend = isGrand || warTopics.length > 2;
-    final warName = isGrand ? 'Grand War' : 'Daily War';
+    final warName = DailyWarCopy.eventName(isGrand: isGrand);
 
     // ── Hero card content ────────────────────────────────────────────────────
 
@@ -500,9 +500,9 @@ class TodayHubSection extends HookConsumerWidget {
 
       if (data.warEnabled) {
         final warTitle = warLive
-            ? (isGrand ? 'Grand War — LIVE' : 'Daily War — LIVE')
+            ? '${DailyWarCopy.eventName(isGrand: isGrand)} — LIVE'
             : warResultsOpen
-            ? 'Daily War — last night'
+            ? '${DailyWarCopy.eventName(isGrand: isGrand)} — last night'
             : warName;
         rows.add(
           _TodayListRowData(
@@ -998,7 +998,7 @@ class _WarHeroCard extends StatelessWidget {
         phase == DailyWarPhase.resultsPending;
     final resultsReady = phase == DailyWarPhase.resultsReady;
     final weekend = isGrand || topics.length > 2;
-    final warName = isGrand ? 'Grand War' : 'Daily War';
+    final warName = DailyWarCopy.eventName(isGrand: isGrand);
     final topicsLine = DailyWarCopy.topicsLine(topics, sep: '\n');
     final tonightBg = isDark
         ? const Color(0xFF0D2818)
@@ -1012,8 +1012,8 @@ class _WarHeroCard extends StatelessWidget {
 
     if (submitted) {
       eyebrow = caughtUp
-          ? (isGrand ? 'GRAND WAR · DAY COMPLETE' : 'DAILY WAR · DAY COMPLETE')
-          : (isGrand ? 'GRAND WAR' : 'DAILY WAR');
+          ? '${DailyWarCopy.eventNameCaps(isGrand: isGrand)} · DAY COMPLETE'
+          : DailyWarCopy.eventNameCaps(isGrand: isGrand);
       title = caughtUp
           ? 'Well played tonight'
           : (topicsLine.isNotEmpty ? topicsLine : warName);
@@ -1026,7 +1026,7 @@ class _WarHeroCard extends StatelessWidget {
       eyebrow = 'LIVE · JOIN NOW';
       title = topicsLine.isNotEmpty ? topicsLine : warName;
       description = 'You can still join. Same paper, then the rank.';
-      ctaLabel = 'Join the War';
+      ctaLabel = isGrand ? 'Join the War' : 'Join the Battle';
       bg = tonightBg;
     } else if (compiling) {
       eyebrow = 'RANKS COMPILING';
@@ -1035,7 +1035,7 @@ class _WarHeroCard extends StatelessWidget {
       ctaLabel = 'See the paper';
       bg = isDark ? const Color(0xFF2A1A1A) : const Color(0xFF3B1F1F);
     } else if (overnight) {
-      eyebrow = isGrand ? 'GRAND WAR · LAST NIGHT' : 'DAILY WAR · LAST NIGHT';
+      eyebrow = '${DailyWarCopy.eventNameCaps(isGrand: isGrand)} · LAST NIGHT';
       title = topicsLine.isNotEmpty ? topicsLine : warName;
       description = "Last night's paper is up if you still want the questions.";
       ctaLabel = 'Open the paper';
@@ -1050,7 +1050,7 @@ class _WarHeroCard extends StatelessWidget {
       final weekBit = topics.isEmpty
           ? 'Week revision'
           : 'Week revision · ${topics.length} topics';
-      eyebrow = isGrand ? 'GRAND WAR' : 'DAILY WAR';
+      eyebrow = DailyWarCopy.eventNameCaps(isGrand: isGrand);
       title = 'Saturday at 9 PM';
       description = '$weekBit. Same paper, All-India.';
       ctaLabel = topics.isNotEmpty ? 'See topics' : 'How it works';
@@ -1059,7 +1059,7 @@ class _WarHeroCard extends StatelessWidget {
       eyebrow = 'TONIGHT';
       final topicTitle = topicsLine.isNotEmpty
           ? topicsLine
-          : 'Daily War starts at 9 PM';
+          : '${DailyWarCopy.dailyEventName} starts at 9 PM';
       title = topicTitle;
       description = isGrand
           ? 'Static GS week revision. All-India live test, public leaderboard.'

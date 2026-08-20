@@ -23,17 +23,20 @@ void main() {
         'emails': ['Aarav.Kumar11@Gmail.com', '', null],
         'uids': ['UidOne', '  '],
         'warPeopleLast24h': 4,
+        'battleCompletedPeopleLast24h': 2,
       });
       expect(index.matches(email: 'aarav.kumar11@gmail.com'), isTrue);
       expect(index.matches(uid: 'UidOne'), isTrue);
       expect(index.matches(uid: 'uidone'), isFalse);
       expect(index.warPeopleLast24h, 4);
+      expect(index.battleCompletedPeopleLast24h, 2);
     });
 
     test('empty map is a no-op', () {
       expect(TrafficBotIndex.fromMap(null).matches(email: 'a@b.com'), isFalse);
       expect(TrafficBotIndex.empty.matches(uid: 'x'), isFalse);
       expect(TrafficBotIndex.fromMap(null).warPeopleLast24h, 0);
+      expect(TrafficBotIndex.fromMap(null).battleCompletedPeopleLast24h, 0);
     });
 
     test('parses warPeopleLast24h from num', () {
@@ -44,6 +47,12 @@ void main() {
       expect(
         TrafficBotIndex.fromMap({'warPeopleLast24h': 'nope'}).warPeopleLast24h,
         0,
+      );
+      expect(
+        TrafficBotIndex.fromMap({
+          'battleCompletedPeopleLast24h': 3.0,
+        }).battleCompletedPeopleLast24h,
+        3,
       );
     });
   });

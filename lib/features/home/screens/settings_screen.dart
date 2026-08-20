@@ -201,9 +201,18 @@ class SettingsScreen extends ConsumerWidget {
                       icon: Icons.military_tech_outlined,
                       iconBg: Color(0xFFE8F0FF),
                       iconColor: Color(0xFF1D4ED8),
-                      title: 'Daily War',
+                      title: 'Static War',
                       subtitle: 'Generate, review, and publish tonight’s paper',
                       onTap: () => context.push('/internal/daily-war-admin'),
+                    ),
+                  if (isSuperUser)
+                    _NavTile(
+                      icon: Icons.sports_kabaddi_outlined,
+                      iconBg: Color(0xFFEEF1F6),
+                      iconColor: Color(0xFF334155),
+                      title: 'Bot battles',
+                      subtitle: 'People who joined or finished vs Recents bots',
+                      onTap: () => context.push('/internal/bot-battles'),
                     ),
                   if (isSuperUser)
                     _NavTile(

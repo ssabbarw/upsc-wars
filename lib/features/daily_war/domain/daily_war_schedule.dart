@@ -1,6 +1,6 @@
-/// IST schedule for Daily War / Grand War.
+/// IST schedule for Static War / Grand War.
 ///
-/// Rhythm: **Mon–Fri** Daily War (2 topics) · **Saturday** Grand War (week
+/// Rhythm: **Mon–Fri** Daily Battle (2 topics) · **Saturday** Grand War (week
 /// revision) · **Sunday** off.
 ///
 /// Live window length is derived from tonight's question count
@@ -79,7 +79,7 @@ abstract final class DailyWarSchedule {
   /// Grand War runs on Saturdays (revises Mon–Fri).
   static bool isGrandWarDay(DateTime istDate) => isSaturday(istDate);
 
-  /// Mon–Fri Daily War nights.
+  /// Mon–Fri Daily Battle nights.
   static bool isWeekdayWarDay(DateTime istDate) =>
       istDate.weekday >= DateTime.monday && istDate.weekday <= DateTime.friday;
 

@@ -17,6 +17,7 @@ Future<void> showDailyCaDaySheet({
   required String isoDate,
   required bool completed,
   required VoidCallback onStartTest,
+  bool questionsReady = true,
 }) {
   return showModalBottomSheet<void>(
     context: context,
@@ -28,6 +29,7 @@ Future<void> showDailyCaDaySheet({
       child: _DailyCaDaySheet(
         isoDate: isoDate,
         completed: completed,
+        questionsReady: questionsReady,
         onStartTest: onStartTest,
       ),
     ),
@@ -38,11 +40,13 @@ class _DailyCaDaySheet extends StatelessWidget {
   const _DailyCaDaySheet({
     required this.isoDate,
     required this.completed,
+    required this.questionsReady,
     required this.onStartTest,
   });
 
   final String isoDate;
   final bool completed;
+  final bool questionsReady;
   final VoidCallback onStartTest;
 
   @override
@@ -55,15 +59,25 @@ class _DailyCaDaySheet extends StatelessWidget {
     final dateLabel = DateFormat('d MMMM yyyy').format(date);
     final newsLabel = DateFormat('d MMMM').format(date);
     final now = DailyCaSchedule.nowIst();
-    final isYesterdaysNews =
-        DailyCaSchedule.dateOnly(
-          now,
-        ).difference(DailyCaSchedule.dateOnly(date)).inDays ==
-        1;
+    final openPaper = DailyCaSchedule.paperQuizContentDate(referenceIst: now);
+    final isOpenPaper =
+        openPaper != null &&
+        DailyCaSchedule.dateOnly(openPaper) == DailyCaSchedule.dateOnly(date);
+    final isTodaysPaper = DailyCaSchedule.isTodaysPaper(
+      date,
+      referenceIst: now,
+    );
     final links = DailyCaSourceLinks.forDate(date);
-    final reviseHeading = isYesterdaysNews
+    final reviseHeading = isTodaysPaper
         ? "You can revise yesterday's current affairs from our recommended links."
         : 'You can revise this day\'s current affairs from our recommended links.';
+    final ctaLabel = !questionsReady
+        ? 'Available soon'
+        : completed
+        ? 'Revise this test'
+        : isOpenPaper
+        ? 'Start today\'s test'
+        : 'Start the test';
 
     return Padding(
       padding: EdgeInsets.fromLTRB(
@@ -105,7 +119,9 @@ class _DailyCaDaySheet extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    'DAILY CURRENT AFFAIRS TEST',
+                    isOpenPaper
+                        ? 'TODAY\'S PAPER'
+                        : 'DAILY CURRENT AFFAIRS TEST',
                     style: AppTextStyles.caption().copyWith(
                       color: accent,
                       fontWeight: FontWeight.w800,
@@ -123,7 +139,7 @@ class _DailyCaDaySheet extends StatelessWidget {
                   ),
                   const SizedBox(height: AppSpacing.sm),
                   Text(
-                    'This test is based on current affairs from $newsLabel.',
+                    'This test is from questions from $newsLabel.',
                     style: AppTextStyles.bodySm().copyWith(
                       color: scheme.onSurfaceVariant,
                       height: 1.45,
@@ -168,19 +184,25 @@ class _DailyCaDaySheet extends StatelessWidget {
                   SizedBox(
                     height: 48,
                     child: FilledButton(
-                      onPressed: () {
-                        Navigator.pop(context);
-                        onStartTest();
-                      },
+                      onPressed: !questionsReady
+                          ? null
+                          : () {
+                              Navigator.pop(context);
+                              onStartTest();
+                            },
                       style: FilledButton.styleFrom(
                         backgroundColor: AppColors.primary,
                         foregroundColor: AppColors.onPrimary,
+                        disabledBackgroundColor: AppColors.primary.withValues(
+                          alpha: 0.45,
+                        ),
+                        disabledForegroundColor: AppColors.onPrimary,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(AppRadius.lg),
                         ),
                       ),
                       child: Text(
-                        completed ? 'Revise this test' : 'Start the test',
+                        ctaLabel,
                         style: AppTextStyles.label().copyWith(
                           fontWeight: FontWeight.w700,
                           color: AppColors.onPrimary,

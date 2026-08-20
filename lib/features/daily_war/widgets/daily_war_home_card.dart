@@ -417,7 +417,9 @@ class _PrepareCompact extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         _StatusRow(
-          left: isGrand ? 'GRAND WAR · SATURDAY' : 'DAILY WAR',
+          left: isGrand
+              ? '${DailyWarCopy.grandEventNameCaps} · SATURDAY'
+              : DailyWarCopy.dailyEventNameCaps,
           right: '9:00 PM',
           pulse: true,
         ),
@@ -717,7 +719,7 @@ class _ResultsPending extends StatelessWidget {
         Text(
           snap.submission != null
               ? 'Your score is in · we\'ll notify you when AIR is ready'
-              : 'Tonight\'s War is over · AIR at 9:40 PM',
+              : 'Tonight\'s battle is over · AIR at 9:40 PM',
           style: DwText.topicCompact(),
         ),
         const SizedBox(height: 8),
@@ -775,7 +777,7 @@ class _ResultPlayed extends StatelessWidget {
         if (next.isNotEmpty) ...[
           const SizedBox(height: 10),
           Text(
-            'Tomorrow\'s War · ${DailyWarCopy.compactTopics(next)}',
+            'Tomorrow · ${DailyWarCopy.compactTopics(next)}',
             style: DwText.meta(),
           ),
         ],
@@ -817,7 +819,7 @@ class _ResultSatOut extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        _StatusRow(left: 'TONIGHT\'S WAR IS OVER'),
+        _StatusRow(left: 'TONIGHT\'S BATTLE IS OVER'),
         const SizedBox(height: 12),
         if (writersShown != null)
           Text(
@@ -837,7 +839,7 @@ class _ResultSatOut extends StatelessWidget {
         const _PrimaryCta(label: 'Unranked attempt'),
         if (next.isNotEmpty) ...[
           const SizedBox(height: 12),
-          Text('Tomorrow\'s War · 9:00 PM IST', style: DwText.meta()),
+          Text('Tomorrow · 9:00 PM IST', style: DwText.meta()),
           Text(
             DailyWarCopy.compactTopics(next),
             style: DwText.body(color: DwColors.onDark),

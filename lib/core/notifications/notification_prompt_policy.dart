@@ -31,9 +31,9 @@ class NotificationPromptCopy {
   static NotificationPromptCopy forSurface(NotificationPromptSurface surface) {
     return switch (surface) {
       NotificationPromptSurface.dailyWar => const NotificationPromptCopy(
-        title: 'Get pinged before tonight’s War',
+        title: 'Get pinged before tonight’s Daily Battle',
         body:
-            'One reminder, 30 minutes before the 9 PM Daily War — so you’re never scrambling in when it starts.',
+            'One reminder, 30 minutes before the 9 PM Daily Battle — so you’re never scrambling in when it starts.',
         alsoLine:
             'You’ll also get Daily CA, practice reminders, and battle invites.',
         cta: 'Turn on reminders',
@@ -43,7 +43,7 @@ class NotificationPromptCopy {
         body:
             'A morning nudge when the Daily Current Affairs paper is ready — so you don’t miss yesterday’s news.',
         alsoLine:
-            'You’ll also get Daily War reminders, practice pings, and battle invites.',
+            'You’ll also get Static War reminders, practice pings, and battle invites.',
         cta: 'Turn on reminders',
       ),
       NotificationPromptSurface.community => const NotificationPromptCopy(
@@ -51,7 +51,7 @@ class NotificationPromptCopy {
         body:
             'Know when someone challenges you or replies in chat, without checking Community.',
         alsoLine:
-            'You’ll also get Daily War, current affairs, and practice reminders.',
+            'You’ll also get Static War, current affairs, and practice reminders.',
         cta: 'Turn on alerts',
       ),
       NotificationPromptSurface.postFirstTest => const NotificationPromptCopy(
@@ -59,13 +59,13 @@ class NotificationPromptCopy {
         body:
             'A daily reminder so this doesn’t stay a one-off — show up again without having to remember.',
         alsoLine:
-            'You’ll also get Daily War, current affairs, and community invites.',
+            'You’ll also get Static War, current affairs, and community invites.',
         cta: 'Turn on reminders',
       ),
       NotificationPromptSurface.generic => const NotificationPromptCopy(
         title: 'Stay on track with useful pings',
         body:
-            'Daily War, current affairs, practice reminders, and community invites — only the ones that help you show up.',
+            'Static War, current affairs, practice reminders, and community invites — only the ones that help you show up.',
         alsoLine: 'You can turn these off anytime.',
         cta: 'Turn on reminders',
       ),

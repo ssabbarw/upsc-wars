@@ -67,12 +67,12 @@ class DailyWarTodaySection extends HookConsumerWidget {
     if (snap.phase == DailyWarPhase.restDay) {
       eyebrow = 'SUNDAY OFF';
       headline = 'No live paper today.';
-      subtext = 'Next War is Monday at 9:00 PM IST.';
+      subtext = 'Next ${DailyWarCopy.dailyEventName} is Monday at 9:00 PM IST.';
       cta = null;
       onCta = null;
       ctaIcon = Icons.play_arrow_rounded;
     } else if (snap.submission != null) {
-      eyebrow = isGrand ? 'GRAND WAR' : 'TONIGHT\'S WAR';
+      eyebrow = DailyWarCopy.eventNameCaps(isGrand: isGrand);
       headline = topicsLine.isNotEmpty
           ? topicsLine
           : 'You were in tonight\'s paper.';
@@ -89,49 +89,52 @@ class DailyWarTodaySection extends HookConsumerWidget {
       eyebrow = 'LIVE NOW';
       headline = topicsLine.isNotEmpty
           ? topicsLine
-          : (isGrand ? 'Grand War is live.' : 'Daily War is live.');
+          : (isGrand
+                ? '${DailyWarCopy.grandEventName} is live.'
+                : '${DailyWarCopy.dailyEventName} is live.');
       subtext = 'All-India live paper. Join before the window closes.';
       cta = launching ? 'Starting…' : 'Join now';
       onCta = launching ? null : onJoinLive;
       ctaIcon = Icons.play_arrow_rounded;
     } else if (snap.phase == DailyWarPhase.resultsPending ||
         snap.phase == DailyWarPhase.resultsReady) {
-      eyebrow = isGrand ? 'GRAND WAR' : 'TONIGHT\'S WAR';
+      eyebrow = DailyWarCopy.eventNameCaps(isGrand: isGrand);
       headline = 'Tonight\'s live window has closed.';
       subtext = 'You can still attempt this paper unranked.';
       cta = launching ? 'Starting…' : 'Attempt unranked';
       onCta = launching ? null : onAttemptUnranked;
       ctaIcon = Icons.play_arrow_rounded;
     } else {
-      eyebrow = isGrand ? 'GRAND WAR TONIGHT' : 'TONIGHT\'S WAR';
+      eyebrow = isGrand
+          ? '${DailyWarCopy.grandEventNameCaps} TONIGHT'
+          : DailyWarCopy.dailyEventNameCaps;
       headline = topicsLine.isNotEmpty
           ? topicsLine
           : (isGrand
                 ? 'Week revision. Same paper, All-India.'
                 : 'All-India live paper. Lobby opens at 8:59 PM.');
       subtext = isGrand
-          ? 'Saturday Grand War starts at 9:00 PM IST.'
-          : 'Daily War starts at 9:00 PM IST.';
+          ? 'Saturday ${DailyWarCopy.grandEventName} starts at 9:00 PM IST.'
+          : '${DailyWarCopy.dailyEventName} starts at 9:00 PM IST.';
       cta = untilStart.isNegative ? 'Available soon' : null;
       onCta = null;
       ctaIcon = Icons.play_arrow_rounded;
     }
 
-    final nextStart = (!untilStart.isNegative &&
-            snap.phase != DailyWarPhase.restDay)
+    final nextStart =
+        (!untilStart.isNegative && snap.phase != DailyWarPhase.restDay)
         ? start
-        : DailyWarSchedule.startAtForDate(
-            DailyWarSchedule.nextWarDate(ist),
-          );
+        : DailyWarSchedule.startAtForDate(DailyWarSchedule.nextWarDate(ist));
     final untilNext = nextStart.difference(ist);
     final nextIsTonight =
-        DailyWarSchedule.dateOnly(nextStart) ==
-        DailyWarSchedule.dateOnly(ist);
+        DailyWarSchedule.dateOnly(nextStart) == DailyWarSchedule.dateOnly(ist);
+    final nextIsGrand = nextStart.weekday == DateTime.saturday;
+    final nextEvent = DailyWarCopy.eventName(isGrand: nextIsGrand);
     final footerLabel = nextIsTonight
-        ? 'Tonight\'s War starts at 9 PM'
+        ? 'Tonight\'s $nextEvent starts at 9 PM'
         : nextStart.weekday == DateTime.monday
-        ? 'Monday\'s War starts at 9 PM'
-        : 'Next War starts at 9 PM';
+        ? 'Monday\'s $nextEvent starts at 9 PM'
+        : 'Next $nextEvent starts at 9 PM';
 
     return DecoratedBox(
       decoration: BoxDecoration(

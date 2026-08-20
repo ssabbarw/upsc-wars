@@ -457,11 +457,13 @@ class FomoPulseDraft {
         ? Map<String, dynamic>.from(map['harvest'] as Map)
         : null;
     final points = map['upsc_points'];
+    final pointsHi = map['upsc_points_hi'];
     return FomoPulseDraft(
       sendRecommended: map['send'] != false,
       notificationTitle: (map['notification_title'] ?? '').toString(),
       notificationBody: (map['notification_body'] ?? '').toString(),
       newsSummary: (map['news_summary'] ?? '').toString(),
+      newsSummaryHi: (map['news_summary_hi'] ?? '').toString(),
       sourceUrl: (map['source_url'] ?? '').toString(),
       question: FomoPulseQuestion.fromMap(
         map['question'] is Map
@@ -475,6 +477,12 @@ class FomoPulseDraft {
       upscPoints: points is List
           ? [
               for (final p in points)
+                if (p.toString().trim().isNotEmpty) p.toString().trim(),
+            ]
+          : const [],
+      upscPointsHi: pointsHi is List
+          ? [
+              for (final p in pointsHi)
                 if (p.toString().trim().isNotEmpty) p.toString().trim(),
             ]
           : const [],
@@ -604,6 +612,33 @@ class FomoPulse {
     final exp = expiresAt;
     if (exp == null) return false;
     return DateTime.now().isAfter(exp);
+  }
+
+  /// True when a Hindi news summary exists for list/detail display.
+  bool get hasHindiCopy => newsSummaryHi.trim().isNotEmpty;
+
+  /// List card title. When Hindi is preferred and a summary exists, use the
+  /// first non-empty summary line; otherwise the English push title.
+  String listTitle({required bool preferHindi}) {
+    if (!preferHindi || !hasHindiCopy) return title;
+    for (final line in newsSummaryHi.split('\n')) {
+      final t = line.trim();
+      if (t.isNotEmpty) return t;
+    }
+    return title;
+  }
+
+  /// List card subtitle. Remaining Hindi summary lines when preferred &
+  /// available; otherwise the English push body. Empty if the only Hindi
+  /// line was already used as the title.
+  String listBody({required bool preferHindi}) {
+    if (!preferHindi || !hasHindiCopy) return body;
+    final lines = [
+      for (final line in newsSummaryHi.split('\n'))
+        if (line.trim().isNotEmpty) line.trim(),
+    ];
+    if (lines.length <= 1) return '';
+    return lines.skip(1).join('\n');
   }
 
   FomoPulseCommunityStats? communityStats({int minAttempts = 20}) {

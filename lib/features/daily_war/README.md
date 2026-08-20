@@ -1,7 +1,7 @@
 # Daily War — build notes
 
-Nightly All-India MCQ event (9:00 PM IST). Product name: **Daily War** /
-Saturday **Grand War** · **Sunday off**.
+Nightly All-India MCQ event (9:00 PM IST). Product name: **Static War** /
+weeknights **Daily Battle** · Saturday **Grand War** · **Sunday off**.
 
 ## Phases
 
@@ -56,4 +56,4 @@ Schedules (`Asia/Kolkata`):
 | **20:59** | lobby open push (N3) + copy UUIDs to public |
 | **21:40** | rank + results push (after live window sized from Q count) |
 
-Admin Settings → **Daily War** → **Push: morning / lobby / results** to test without waiting for cron.
+Admin Settings → **Static War** → **Push: morning / lobby / results** to test without waiting for cron.

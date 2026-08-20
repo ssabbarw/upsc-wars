@@ -506,6 +506,89 @@ function toHttpsError(e, fallback = "Pulse generation failed.") {
   return new HttpsError("failed-precondition", message || fallback);
 }
 
+function hasQuestionHindi(question) {
+  return !!(
+    question &&
+    question.hi &&
+    String(question.hi.display_text || "").trim()
+  );
+}
+
+/**
+ * EN → HI for news summary, UPSC points, and question text fields.
+ * Reuses pulse_translate_system.txt (same as the admin Translate callable).
+ */
+async function attachHindi({
+  question,
+  newsSummary,
+  upscPoints,
+  sourceUrl,
+  newsSummaryHi = "",
+  upscPointsHi = [],
+  requestedModel,
+  force = false,
+}) {
+  const normalized = normalizeQuestion(question, sourceUrl);
+  const existingSummaryHi = String(newsSummaryHi || "").trim();
+  const existingPointsHi = normalizePoints(upscPointsHi);
+  if (
+    !force &&
+    hasQuestionHindi(normalized) &&
+    existingSummaryHi
+  ) {
+    return {
+      question: normalized,
+      news_summary_hi: existingSummaryHi,
+      upsc_points_hi: existingPointsHi,
+    };
+  }
+
+  // Harvest often already has question.hi from Daily CA — only translate summary.
+  if (!force && hasQuestionHindi(normalized) && !existingSummaryHi) {
+    const summaryOnly = await anthropicJson(
+      loadPrompt("pulse_translate_system.txt"),
+      JSON.stringify({
+        news_summary: String(newsSummary || "").trim(),
+        upsc_points: normalizePoints(upscPoints),
+      }),
+      requestedModel,
+    );
+    return {
+      question: normalized,
+      news_summary_hi: String(summaryOnly.news_summary || "").trim(),
+      upsc_points_hi: normalizePoints(summaryOnly.upsc_points),
+    };
+  }
+
+  const payload = {
+    ...(normalized.en || {}),
+    news_summary: String(newsSummary || "").trim(),
+    upsc_points: normalizePoints(upscPoints),
+  };
+  const hi = await anthropicJson(
+    loadPrompt("pulse_translate_system.txt"),
+    JSON.stringify(payload),
+    requestedModel,
+  );
+  normalized.hi = {
+    display_text: String(hi.display_text || "").trim(),
+    option_a: String(hi.option_a || "").trim(),
+    option_b: String(hi.option_b || "").trim(),
+    option_c: String(hi.option_c || "").trim(),
+    option_d: String(hi.option_d || "").trim(),
+    strong_distractor: String(hi.strong_distractor || "").trim(),
+    elimination_logic: normalizeStringArray(hi.elimination_logic, 6),
+    upsc_trap_explanation: String(hi.upsc_trap_explanation || "").trim(),
+    statement_analysis: normalizeStatementAnalysis(hi.statement_analysis),
+    final_explanation: String(hi.final_explanation || "").trim(),
+  };
+  return {
+    question: normalized,
+    news_summary_hi: String(hi.news_summary || "").trim(),
+    upsc_points_hi: normalizePoints(hi.upsc_points),
+  };
+}
+
 const callableOpts = {
   region: REGION,
   timeoutSeconds: 120,
@@ -513,9 +596,10 @@ const callableOpts = {
   secrets: ["ANTHROPIC_API_KEY"],
 };
 
+/** Generate + Hindi translate can be two LLM calls. */
 const generateOpts = {
   ...callableOpts,
-  timeoutSeconds: 180,
+  timeoutSeconds: 300,
 };
 
 /**
@@ -645,6 +729,15 @@ exports.generateFomoPulseDraft = onCall(generateOpts, async (request) => {
       formatNewsSummary(hooks.news_summary) ||
       formatNewsSummary(meta.news_summary) ||
       String(meta.news_summary || "").trim();
+    const question = normalizeQuestion(q, sourceUrl);
+    // Harvest may already have question.hi from Daily CA; still need summary HI.
+    const hindi = await attachHindi({
+      question,
+      newsSummary,
+      upscPoints: points,
+      sourceUrl,
+      requestedModel,
+    });
     return {
       ok: true,
       draft: {
@@ -656,11 +749,13 @@ exports.generateFomoPulseDraft = onCall(generateOpts, async (request) => {
           ? (hooks.notification_body || "").slice(0, MAX_BODY)
           : "",
         news_summary: newsSummary,
+        news_summary_hi: hindi.news_summary_hi,
         source_url: sourceUrl,
         image_url: imageUrl,
         image_source: imageSource,
         upsc_points: points,
-        question: normalizeQuestion(q, sourceUrl),
+        upsc_points_hi: hindi.upsc_points_hi,
+        question: hindi.question,
         harvest: { draft_date: draftDate, draft_id: draftId },
       },
     };
@@ -717,6 +812,18 @@ exports.generateFomoPulseDraft = onCall(generateOpts, async (request) => {
           ? generated.question
           : generated;
       const shouldSend = normalizeSendFlag(generated.send, true);
+      const newsSummary =
+        formatNewsSummary(generated.news_summary) ||
+        String(generated.news_summary || "").trim();
+      const upscPoints = normalizePoints(generated.upsc_points);
+      const question = normalizeQuestion(questionRaw, url);
+      const hindi = await attachHindi({
+        question,
+        newsSummary,
+        upscPoints,
+        sourceUrl: url,
+        requestedModel,
+      });
       return {
         ok: true,
         draft: {
@@ -733,15 +840,15 @@ exports.generateFomoPulseDraft = onCall(generateOpts, async (request) => {
                 MAX_BODY,
               )
             : "",
-          news_summary:
-            formatNewsSummary(generated.news_summary) ||
-            String(generated.news_summary || "").trim(),
+          news_summary: newsSummary,
+          news_summary_hi: hindi.news_summary_hi,
           source_url: url,
           image_url: String(data.image_url || "").trim() || page.image_url || "",
           image_source:
             String(data.image_source || "").trim() || page.image_source || "",
-          upsc_points: normalizePoints(generated.upsc_points),
-          question: normalizeQuestion(questionRaw, url),
+          upsc_points: upscPoints,
+          upsc_points_hi: hindi.upsc_points_hi,
+          question: hindi.question,
           harvest: null,
         },
       };
@@ -756,6 +863,7 @@ exports.generateFomoPulseDraft = onCall(generateOpts, async (request) => {
 
 /**
  * Admin: Hindi for an already-generated Pulse MCQ. No Firestore write.
+ * Prefer generate (auto-translates); this remains for re-translate.
  */
 exports.translateFomoPulseDraft = onCall(generateOpts, async (request) => {
   requireAdmin(request);
@@ -764,41 +872,27 @@ exports.translateFomoPulseDraft = onCall(generateOpts, async (request) => {
   if (!question || typeof question !== "object") {
     throw new HttpsError("invalid-argument", "question required.");
   }
-  const normalized = normalizeQuestion(question, data.source_url);
-  const payload = {
-    ...(normalized.en || {}),
-    news_summary: String(data.news_summary || "").trim(),
-    upsc_points: normalizePoints(data.upsc_points),
-  };
-  const hi = await anthropicJson(
-    loadPrompt("pulse_translate_system.txt"),
-    JSON.stringify(payload),
-  );
-  normalized.hi = {
-    display_text: String(hi.display_text || "").trim(),
-    option_a: String(hi.option_a || "").trim(),
-    option_b: String(hi.option_b || "").trim(),
-    option_c: String(hi.option_c || "").trim(),
-    option_d: String(hi.option_d || "").trim(),
-    strong_distractor: String(hi.strong_distractor || "").trim(),
-    elimination_logic: normalizeStringArray(hi.elimination_logic, 6),
-    upsc_trap_explanation: String(hi.upsc_trap_explanation || "").trim(),
-    statement_analysis: normalizeStatementAnalysis(hi.statement_analysis),
-    final_explanation: String(hi.final_explanation || "").trim(),
-  };
+  const hindi = await attachHindi({
+    question,
+    newsSummary: data.news_summary,
+    upscPoints: data.upsc_points,
+    sourceUrl: data.source_url,
+    force: true,
+  });
   return {
     ok: true,
-    question: normalized,
-    news_summary_hi: String(hi.news_summary || "").trim(),
-    upsc_points_hi: normalizePoints(hi.upsc_points),
+    question: hindi.question,
+    news_summary_hi: hindi.news_summary_hi,
+    upsc_points_hi: hindi.upsc_points_hi,
   };
 });
 
 /**
  * Admin: persist pulse + send FCM (self or broadcast).
  * Cost: 2 Firestore writes (pulse + notification analytics).
+ * Auto-attaches Hindi if the draft is missing it (older clients / skipped translate).
  */
-exports.sendFomoPulseNotification = onCall(callableOpts, async (request) => {
+exports.sendFomoPulseNotification = onCall(generateOpts, async (request) => {
   const email = requireAdmin(request);
   const data = request.data || {};
   const title = String(data.title || "").trim().slice(0, MAX_TITLE);
@@ -818,6 +912,33 @@ exports.sendFomoPulseNotification = onCall(callableOpts, async (request) => {
       ? "broadcast"
       : "self";
 
+  const newsSummary = String(data.news_summary || "").trim();
+  let newsSummaryHi = String(data.news_summary_hi || "").trim();
+  let upscPoints = normalizePoints(data.upsc_points);
+  let upscPointsHi = normalizePoints(data.upsc_points_hi);
+  const sourceUrl = String(
+    data.source_url || question.meta.source_url || "",
+  ).trim();
+
+  if (!hasQuestionHindi(question) || !newsSummaryHi) {
+    try {
+      const hindi = await attachHindi({
+        question,
+        newsSummary,
+        upscPoints,
+        sourceUrl,
+        newsSummaryHi,
+        upscPointsHi,
+      });
+      question = hindi.question;
+      newsSummaryHi = hindi.news_summary_hi;
+      upscPointsHi = hindi.upsc_points_hi;
+    } catch (e) {
+      console.error("sendFomoPulseNotification: Hindi attach failed:", e);
+      // Still send English-only rather than blocking the push.
+    }
+  }
+
   const pulseId = crypto.randomUUID();
   const notificationId = pulseId;
   const now = admin.firestore.Timestamp.now();
@@ -830,14 +951,14 @@ exports.sendFomoPulseNotification = onCall(callableOpts, async (request) => {
     status: "sent",
     title,
     body,
-    news_summary: String(data.news_summary || "").trim(),
-    news_summary_hi: String(data.news_summary_hi || "").trim(),
-    source_url: String(data.source_url || question.meta.source_url || "").trim(),
+    news_summary: newsSummary,
+    news_summary_hi: newsSummaryHi,
+    source_url: sourceUrl,
     image_url: String(data.image_url || "").trim(),
     image_source: String(data.image_source || "").trim(),
-    upsc_points: normalizePoints(data.upsc_points),
-    upsc_points_hi: normalizePoints(data.upsc_points_hi),
-    hindi_available: !!(question.hi && question.hi.display_text),
+    upsc_points: upscPoints,
+    upsc_points_hi: upscPointsHi,
+    hindi_available: hasQuestionHindi(question),
     question,
     sent_at: now,
     expires_at: expiresAt,

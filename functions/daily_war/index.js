@@ -708,14 +708,14 @@ async function assertDailyWarParticipant(request) {
   }
   const rollout = await notif.readDailyWarRollout();
   if (!rollout.enabled) {
-    throw new HttpsError("failed-precondition", "Daily War is disabled.");
+    throw new HttpsError("failed-precondition", "Static War is disabled.");
   }
   if (rollout.adminsOnly) {
     const email = (request.auth.token.email || "").toLowerCase().trim();
     if (!notif.isDailyWarAdminEmail(email)) {
       throw new HttpsError(
         "permission-denied",
-        "Daily War is in admin preview.",
+        "Static War is in admin preview.",
       );
     }
   }

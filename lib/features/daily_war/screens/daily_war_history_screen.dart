@@ -15,6 +15,7 @@ import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/widgets/shimmer_box.dart';
 import '../daily_war_constants.dart';
+import '../domain/daily_war_copy.dart';
 import '../domain/daily_war_models.dart';
 import '../domain/daily_war_phase.dart';
 import '../domain/daily_war_schedule.dart';
@@ -251,7 +252,7 @@ class DailyWarHistoryScreen extends HookConsumerWidget {
                 async.when(
                   loading: () => const _MonthCalendarShimmer(),
                   error: (e, _) => Text(
-                    'Could not load Wars: $e',
+                    'Could not load Static War: $e',
                     style: AppTextStyles.bodySm().copyWith(
                       color: AppColors.wrong,
                     ),
@@ -310,7 +311,7 @@ class DailyWarHistoryScreen extends HookConsumerWidget {
           : AppColors.surfaceTertiaryLight,
       appBar: AppBar(
         centerTitle: true,
-        title: const Text('Daily War'),
+        title: const Text(DailyWarCopy.programName),
         actions: [
           IconButton(
             tooltip: 'This month',

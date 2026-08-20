@@ -46,7 +46,7 @@ class DailyWarBadgesScreen extends ConsumerWidget {
               ),
               const SizedBox(height: 4),
               Text(
-                'Counts sync from your War nights — kept on this device and in the cloud.',
+                'Counts sync from your Static War nights — kept on this device and in the cloud.',
                 style: DwText.dm(
                   size: 12,
                   color: scheme.onSurfaceVariant,

@@ -164,7 +164,7 @@ class DailyWarResultsScreen extends HookConsumerWidget {
         backgroundColor: DwColors.surface,
         foregroundColor: DwColors.onDark,
         title: Text(
-          'War results',
+          'Static War results',
           style: DwText.dm(size: 18, weight: FontWeight.w700),
         ),
       ),
@@ -290,7 +290,7 @@ class _ReadyBody extends ConsumerWidget {
         ],
         if (nextTopics.isNotEmpty) ...[
           const SizedBox(height: 28),
-          Text('Tomorrow\'s War', style: DwText.meta()),
+          Text('Tomorrow', style: DwText.meta()),
           const SizedBox(height: 6),
           Text(
             DailyWarCopy.compactTopics(nextTopics),
@@ -326,7 +326,7 @@ class _ReadyBody extends ConsumerWidget {
         TextButton(
           onPressed: () => context.push(dailyWarHistoryRoute()),
           child: Text(
-            'War History',
+            'History',
             style: DwText.dm(
               size: 13,
               weight: FontWeight.w600,

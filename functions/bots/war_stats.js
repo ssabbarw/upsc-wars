@@ -18,27 +18,47 @@ function pruneSessions(sessions, cutoffMs) {
   const next = {};
   for (const [id, row] of Object.entries(sessions || {})) {
     if (!row || typeof row !== "object") continue;
-    if (Number(row.connectedAtMs) < cutoffMs) continue;
+    const joined = Number(row.connectedAtMs) || 0;
+    const completed = Number(row.completedAtMs) || 0;
+    if (joined < cutoffMs && completed < cutoffMs) continue;
     const humanEmail = String(row.humanEmail || "").toLowerCase().trim();
     if (!humanEmail) continue;
-    next[id] = {
+    const out = {
       humanEmail,
       botEmail: String(row.botEmail || "").toLowerCase().trim(),
-      connectedAtMs: Number(row.connectedAtMs) || 0,
+      connectedAtMs: joined,
     };
+    if (completed > 0) out.completedAtMs = completed;
+    next[id] = out;
   }
   return next;
 }
 
-function uniquePeople(sessions) {
-  return new Set(
-    Object.values(sessions)
-      .map((row) => row.humanEmail)
-      .filter(Boolean),
-  ).size;
+function uniquePeople(sessions, { completedOnly = false, cutoffMs = 0 } = {}) {
+  const emails = new Set();
+  for (const row of Object.values(sessions || {})) {
+    const email = String((row && row.humanEmail) || "")
+      .toLowerCase()
+      .trim();
+    if (!email) continue;
+    if (completedOnly) {
+      const completed = Number(row.completedAtMs) || 0;
+      if (completed < cutoffMs) continue;
+    } else {
+      const joined = Number(row.connectedAtMs) || 0;
+      if (joined < cutoffMs) continue;
+    }
+    emails.add(email);
+  }
+  return emails.size;
 }
 
-async function syncWarPeopleLast24h({ sessionId, humanEmail, botEmail } = {}) {
+async function syncWarPeopleLast24h({
+  sessionId,
+  humanEmail,
+  botEmail,
+  completed = false,
+} = {}) {
   const now = Date.now();
   const cutoff = now - WINDOW_MS;
   const extraId = String(sessionId || "").trim();
@@ -47,34 +67,60 @@ async function syncWarPeopleLast24h({ sessionId, humanEmail, botEmail } = {}) {
     const snap = await tx.get(connectionsRef());
     const sessions = pruneSessions((snap.data() || {}).sessions, cutoff);
     if (extraId && extraHuman) {
-      sessions[extraId] = {
+      const prev = sessions[extraId] || {};
+      const row = {
         humanEmail: extraHuman,
-        botEmail: String(botEmail || "").toLowerCase().trim(),
-        connectedAtMs: now,
+        botEmail: String(botEmail || prev.botEmail || "")
+          .toLowerCase()
+          .trim(),
+        connectedAtMs: Number(prev.connectedAtMs) || now,
       };
+      const prevCompleted = Number(prev.completedAtMs) || 0;
+      if (completed) row.completedAtMs = prevCompleted || now;
+      else if (prevCompleted > 0) row.completedAtMs = prevCompleted;
+      sessions[extraId] = row;
     }
-    const people = uniquePeople(sessions);
+    const people = uniquePeople(sessions, { cutoffMs: cutoff });
+    const completedPeople = uniquePeople(sessions, {
+      completedOnly: true,
+      cutoffMs: cutoff,
+    });
     tx.set(connectionsRef(), { sessions, updatedAtMs: now });
     tx.set(
       trafficBotsRef(),
       {
         warPeopleLast24h: people,
         warPeopleLast24hUpdatedAtMs: now,
+        battleCompletedPeopleLast24h: completedPeople,
+        battleCompletedPeopleLast24hUpdatedAtMs: now,
       },
       { merge: true },
     );
-    return people;
+    return { people, completedPeople };
   });
 }
 
 async function recordBotWarConnection({ sessionId, humanEmail, botEmail }) {
   const sid = String(sessionId || "").trim();
   const email = String(humanEmail || "").toLowerCase().trim();
-  if (!sid || !email) return 0;
+  if (!sid || !email) return { people: 0, completedPeople: 0 };
   return syncWarPeopleLast24h({
     sessionId: sid,
     humanEmail: email,
     botEmail,
+    completed: false,
+  });
+}
+
+async function recordBotWarCompletion({ sessionId, humanEmail, botEmail }) {
+  const sid = String(sessionId || "").trim();
+  const email = String(humanEmail || "").toLowerCase().trim();
+  if (!sid || !email) return { people: 0, completedPeople: 0 };
+  return syncWarPeopleLast24h({
+    sessionId: sid,
+    humanEmail: email,
+    botEmail,
+    completed: true,
   });
 }
 
@@ -84,5 +130,8 @@ async function publishBotWarPeopleLast24h() {
 
 module.exports = {
   recordBotWarConnection,
+  recordBotWarCompletion,
   publishBotWarPeopleLast24h,
+  pruneSessions,
+  uniquePeople,
 };

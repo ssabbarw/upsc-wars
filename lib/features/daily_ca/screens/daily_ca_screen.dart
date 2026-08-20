@@ -31,15 +31,20 @@ class DailyCaScreen extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final minDate = ref.watch(dailyCaCalendarMinDateProvider).maybeWhen(
-      data: (date) => date,
-      orElse: () => DailyCaSchedule.defaultCalendarMinDate,
-    );
+    final minDate = ref
+        .watch(dailyCaCalendarMinDateProvider)
+        .maybeWhen(
+          data: (date) => date,
+          orElse: () => DailyCaSchedule.defaultCalendarMinDate,
+        );
     final minMonth = DailyCaSchedule.minMonthForDate(minDate);
     final istNow = DailyCaSchedule.nowIst();
-    final paperDate = DailyCaSchedule.paperQuizContentDate(referenceIst: istNow);
-    final paperIso =
-        paperDate == null ? null : DailyCaSchedule.formatIsoDate(paperDate);
+    final paperDate = DailyCaSchedule.paperQuizContentDate(
+      referenceIst: istNow,
+    );
+    final paperIso = paperDate == null
+        ? null
+        : DailyCaSchedule.formatIsoDate(paperDate);
     final paperLiveAsync = ref.watch(dailyCaScheduledPaperIsLiveProvider);
     final paperLive = paperLiveAsync.asData?.value ?? false;
     final paperChecking = paperLiveAsync.isLoading;
@@ -55,7 +60,8 @@ class DailyCaScreen extends HookConsumerWidget {
     final launching = useState(false);
     final compact = MediaQuery.sizeOf(context).height < 760;
 
-    final paperCompleted = paperIso != null &&
+    final paperCompleted =
+        paperIso != null &&
         completedAsync.maybeWhen(
           data: (dates) => dates.contains(paperIso),
           orElse: () => false,
@@ -80,8 +86,9 @@ class DailyCaScreen extends HookConsumerWidget {
 
     Future<void> openPaperResults(String isoDate) async {
       final db = ref.read(userDatabaseProvider);
-      final sessionId =
-          await db.sessionsDao.getLatestCompletedDailyCaSessionId(isoDate);
+      final sessionId = await db.sessionsDao.getLatestCompletedDailyCaSessionId(
+        isoDate,
+      );
       if (!context.mounted) return;
       if (sessionId == null) {
         await openDayTest(isoDate, isRevise: true);
@@ -90,10 +97,10 @@ class DailyCaScreen extends HookConsumerWidget {
       context.push('/results/$sessionId');
     }
 
-    final openDayTestStable = useCallback(
-      openDayTest,
-      [monthKey, paperCompleted],
-    );
+    final openDayTestStable = useCallback(openDayTest, [
+      monthKey,
+      paperCompleted,
+    ]);
 
     final autoStarted = useRef(false);
     useEffect(() {
@@ -285,36 +292,42 @@ class DailyCaScreen extends HookConsumerWidget {
                             onDateTap: (iso) {
                               if (launching.value) return;
                               final date = DailyCaSchedule.parseIsoDate(iso);
-                              if (!DailyCaSchedule.isOnOrAfterMinDate(
-                                date,
-                                minDate,
-                              )) {
-                                return;
-                              }
                               final now = DailyCaSchedule.nowIst();
-                              if (!DailyCaSchedule.isPublishedForDate(
+                              if (!DailyCaSchedule.isCalendarDaySelectable(
                                 date,
+                                minDate: minDate,
                                 referenceIst: now,
                               )) {
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
-                                    content: Text(
-                                      'This test is not available yet.',
-                                      style: AppTextStyles.bodySm(),
-                                    ),
-                                  ),
-                                );
                                 return;
                               }
+                              final contentDate =
+                                  DailyCaSchedule.calendarTapContentDate(
+                                    date,
+                                    referenceIst: now,
+                                  );
+                              if (contentDate == null ||
+                                  !DailyCaSchedule.isOnOrAfterMinDate(
+                                    contentDate,
+                                    minDate,
+                                  )) {
+                                return;
+                              }
+                              final contentIso = DailyCaSchedule.formatIsoDate(
+                                contentDate,
+                              );
+                              final isTodayTap =
+                                  DailyCaSchedule.dateOnly(date) ==
+                                  DailyCaSchedule.dateOnly(now);
                               unawaited(
                                 showDailyCaDaySheet(
                                   context: context,
-                                  isoDate: iso,
-                                  completed: completed.contains(iso),
+                                  isoDate: contentIso,
+                                  completed: completed.contains(contentIso),
+                                  questionsReady: !isTodayTap || paperLive,
                                   onStartTest: () => unawaited(
                                     openDayTest(
-                                      iso,
-                                      isRevise: completed.contains(iso),
+                                      contentIso,
+                                      isRevise: completed.contains(contentIso),
                                     ),
                                   ),
                                 ),

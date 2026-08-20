@@ -399,20 +399,18 @@ class HomeScreen extends HookConsumerWidget {
                       children: [
                         const PrelimsDaysInfo(),
                         const Spacer(),
-                        // Trap count pill — taps into weak areas
-                        home.maybeWhen(
-                          data: (h) => h.revisionTrapCount > 0
-                              ? Padding(
-                                  padding: const EdgeInsets.only(
-                                    right: AppSpacing.sm,
-                                  ),
-                                  child: _TrapPill(
-                                    count: h.revisionTrapCount,
-                                    borderColor: borderColor,
-                                  ),
-                                )
-                              : const SizedBox.shrink(),
-                          orElse: () => const SizedBox.shrink(),
+                        // Trap pill — always visible, including for new users.
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            right: AppSpacing.sm,
+                          ),
+                          child: _TrapPill(
+                            count: home.maybeWhen(
+                              data: (h) => h.revisionTrapCount,
+                              orElse: () => 0,
+                            ),
+                            borderColor: borderColor,
+                          ),
                         ),
                         Consumer(
                           builder: (context, ref, _) {
@@ -683,7 +681,9 @@ class _TrapPill extends StatelessWidget {
             Icon(Icons.warning_amber_rounded, size: 13, color: fg),
             const SizedBox(width: 3),
             Text(
-              '$count trap${count == 1 ? '' : 's'}',
+              count > 0
+                  ? '$count trap${count == 1 ? '' : 's'}'
+                  : 'Traps',
               style: AppTextStyles.caption().copyWith(
                 color: scheme.onSurface,
                 fontWeight: FontWeight.w600,

@@ -4,9 +4,27 @@ import '../../../core/constants/subject_constants.dart';
 import '../domain/daily_war_models.dart';
 import '../domain/daily_war_schedule.dart';
 
-/// Shared copy helpers for Daily War surfaces.
+/// Shared copy helpers for Static War surfaces.
 abstract final class DailyWarCopy {
   DailyWarCopy._();
+
+  /// The program: static GS, two topics a night, All-India paper.
+  static const programName = 'Static War';
+  static const programNameCaps = 'STATIC WAR';
+
+  /// Mon–Fri 9 PM event.
+  static const dailyEventName = 'Daily Battle';
+  static const dailyEventNameCaps = 'DAILY BATTLE';
+
+  /// Saturday week-revision event.
+  static const grandEventName = 'Grand War';
+  static const grandEventNameCaps = 'GRAND WAR';
+
+  static String eventName({required bool isGrand}) =>
+      isGrand ? grandEventName : dailyEventName;
+
+  static String eventNameCaps({required bool isGrand}) =>
+      isGrand ? grandEventNameCaps : dailyEventNameCaps;
 
   /// Maps curriculum slugs (`polity`, `modern_history`) → session subject slugs.
   static String sessionSubjectSlug(String curriculumSlug) {
@@ -36,7 +54,10 @@ abstract final class DailyWarCopy {
     return topics.map((t) => subjectDisplay(t.subjectSlug)).toSet().join(' + ');
   }
 
-  static String topicsLine(List<DailyWarTopicRef> topics, {String sep = ' + '}) {
+  static String topicsLine(
+    List<DailyWarTopicRef> topics, {
+    String sep = ' + ',
+  }) {
     if (topics.isEmpty) return '';
     return topics.map((t) => t.topic).join(sep);
   }
@@ -66,10 +87,7 @@ abstract final class DailyWarCopy {
     return '$subjects · $names';
   }
 
-  static String rulesLine({
-    required int questionCount,
-    required bool isGrand,
-  }) {
+  static String rulesLine({required int questionCount, required bool isGrand}) {
     final mins = DailyWarSchedule.liveWindowMinutesFor(questionCount);
     return '$questionCount Q · $mins MIN';
   }

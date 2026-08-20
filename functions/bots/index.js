@@ -5,6 +5,7 @@ const { readBotConfig } = require("./config");
 const { planToday } = require("./growth");
 const { runBotTick } = require("./jobs");
 const { handleIncomingInvite, onBattleMatchWritten } = require("./battles");
+const { onBattlePaperSubmitted } = require("./battle_stats");
 const { getBotByEmail } = require("./roster");
 
 const REGION = "asia-south1";
@@ -73,6 +74,32 @@ exports.onBotBattleMatchWritten = onDocumentWritten(
       return await onBattleMatchWritten(sessionId, afterSnap.data() || {});
     } catch (e) {
       console.error("onBotBattleMatchWritten", sessionId, e);
+      return null;
+    }
+  },
+);
+
+exports.onBotBattlePaperSubmitted = onDocumentWritten(
+  {
+    document: "battle_matches/{sessionId}/joined_users/{participantId}",
+    region: REGION,
+    timeoutSeconds: 60,
+    memory: "256MiB",
+  },
+  async (event) => {
+    const afterSnap = event.data && event.data.after;
+    if (!afterSnap || !afterSnap.exists) return null;
+    const after = afterSnap.data() || {};
+    if (after.battle_paper_submitted !== true) return null;
+    const beforeSnap = event.data && event.data.before;
+    const before = beforeSnap && beforeSnap.exists ? beforeSnap.data() || {} : {};
+    if (before.battle_paper_submitted === true) return null;
+    const sessionId = event.params.sessionId;
+    const participantId = event.params.participantId;
+    try {
+      return await onBattlePaperSubmitted(sessionId, participantId);
+    } catch (e) {
+      console.error("onBotBattlePaperSubmitted", sessionId, participantId, e);
       return null;
     }
   },

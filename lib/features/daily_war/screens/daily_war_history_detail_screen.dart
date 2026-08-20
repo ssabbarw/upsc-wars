@@ -62,14 +62,12 @@ class DailyWarHistoryDetailScreen extends HookConsumerWidget {
 
     final body = archiveAsync.when(
       loading: () => const _DaySheetShimmer(),
-      error: (e, _) => Center(
-        child: Padding(
-          padding: const EdgeInsets.all(24),
-          child: Text(
-            '$e',
-            style: AppTextStyles.body().copyWith(color: AppColors.wrong),
-            textAlign: TextAlign.center,
-          ),
+      error: (e, _) => Padding(
+        padding: const EdgeInsets.all(24),
+        child: Text(
+          '$e',
+          style: AppTextStyles.body().copyWith(color: AppColors.wrong),
+          textAlign: TextAlign.center,
         ),
       ),
       data: (archive) {
@@ -112,8 +110,11 @@ class DailyWarHistoryDetailScreen extends HookConsumerWidget {
           }
         }
 
-        return ListView(
-          padding: const EdgeInsets.fromLTRB(20, 8, 20, 40),
+        // Shrink-wrap Column (not ListView) so the sheet hugs content and
+        // leave scrim + drag-dismiss usable. Parent scrolls only if needed.
+        return Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Row(
               children: [
@@ -128,7 +129,9 @@ class DailyWarHistoryDetailScreen extends HookConsumerWidget {
                     border: Border.all(color: accent.withValues(alpha: 0.35)),
                   ),
                   child: Text(
-                    isGrand ? 'GRAND WAR' : 'DAILY WAR',
+                    isGrand
+                        ? DailyWarCopy.grandEventNameCaps
+                        : DailyWarCopy.dailyEventNameCaps,
                     style: AppTextStyles.caption().copyWith(
                       fontWeight: FontWeight.w800,
                       color: accent,
@@ -159,7 +162,9 @@ class DailyWarHistoryDetailScreen extends HookConsumerWidget {
               const SizedBox(height: 4),
             ],
             Text(
-              topics.isEmpty ? (isGrand ? 'Grand War' : 'Daily War') : topics,
+              topics.isEmpty
+                  ? DailyWarCopy.eventName(isGrand: isGrand)
+                  : topics,
               style: AppTextStyles.h1().copyWith(
                 fontWeight: FontWeight.w800,
                 color: scheme.onSurface,
@@ -275,23 +280,35 @@ class DailyWarHistoryDetailScreen extends HookConsumerWidget {
             color: scheme.surface,
             borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
             clipBehavior: Clip.antiAlias,
-            child: SizedBox(
-              height: MediaQuery.sizeOf(context).height * 0.86,
-              child: Column(
-                children: [
-                  Center(
-                    child: Container(
-                      width: 40,
-                      height: 4,
-                      margin: const EdgeInsets.only(top: 10, bottom: 4),
-                      decoration: BoxDecoration(
-                        color: scheme.onSurfaceVariant.withValues(alpha: 0.35),
-                        borderRadius: BorderRadius.circular(2),
+            // Hug content; only grow up to 75%. Scrim above stays tappable.
+            // Clamping physics lets sheet drag-dismiss win when content fits.
+            child: ConstrainedBox(
+              constraints: BoxConstraints(
+                maxHeight: MediaQuery.sizeOf(context).height * 0.75,
+              ),
+              child: SingleChildScrollView(
+                physics: const ClampingScrollPhysics(),
+                padding: const EdgeInsets.fromLTRB(20, 8, 20, 24),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Center(
+                      child: Container(
+                        width: 40,
+                        height: 4,
+                        margin: const EdgeInsets.only(top: 2, bottom: 12),
+                        decoration: BoxDecoration(
+                          color: scheme.onSurfaceVariant.withValues(
+                            alpha: 0.35,
+                          ),
+                          borderRadius: BorderRadius.circular(2),
+                        ),
                       ),
                     ),
-                  ),
-                  Expanded(child: body),
-                ],
+                    body,
+                  ],
+                ),
               ),
             ),
           ),
@@ -301,8 +318,11 @@ class DailyWarHistoryDetailScreen extends HookConsumerWidget {
 
     return Scaffold(
       backgroundColor: scheme.surface,
-      appBar: AppBar(title: const Text('War archive')),
-      body: body,
+      appBar: AppBar(title: const Text('Static War archive')),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.fromLTRB(20, 8, 20, 40),
+        child: body,
+      ),
     );
   }
 }
@@ -312,53 +332,34 @@ class _DaySheetShimmer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
-      physics: NeverScrollableScrollPhysics(),
-      padding: EdgeInsets.fromLTRB(20, 8, 20, 40),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              ShimmerBox(width: 88, height: 18, borderRadius: 6),
-              Spacer(),
-              ShimmerBox(width: 72, height: 12),
-            ],
-          ),
-          SizedBox(height: 12),
-          ShimmerBox(width: 160, height: 12),
-          SizedBox(height: 8),
-          ShimmerBox(width: double.infinity, height: 28),
-          SizedBox(height: 6),
-          ShimmerBox(width: 220, height: 28),
-          SizedBox(height: 20),
-          ShimmerBox(
-            width: double.infinity,
-            height: 120,
-            borderRadius: 16,
-          ),
-          SizedBox(height: 16),
-          ShimmerBox(width: 140, height: 16),
-          SizedBox(height: 12),
-          ShimmerBox(
-            width: double.infinity,
-            height: 56,
-            borderRadius: 12,
-          ),
-          SizedBox(height: 8),
-          ShimmerBox(
-            width: double.infinity,
-            height: 56,
-            borderRadius: 12,
-          ),
-          SizedBox(height: 8),
-          ShimmerBox(
-            width: double.infinity,
-            height: 56,
-            borderRadius: 12,
-          ),
-        ],
-      ),
+    return const Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          children: [
+            ShimmerBox(width: 88, height: 18, borderRadius: 6),
+            Spacer(),
+            ShimmerBox(width: 72, height: 12),
+          ],
+        ),
+        SizedBox(height: 12),
+        ShimmerBox(width: 160, height: 12),
+        SizedBox(height: 8),
+        ShimmerBox(width: double.infinity, height: 28),
+        SizedBox(height: 6),
+        ShimmerBox(width: 220, height: 28),
+        SizedBox(height: 20),
+        ShimmerBox(width: double.infinity, height: 120, borderRadius: 16),
+        SizedBox(height: 16),
+        ShimmerBox(width: 140, height: 16),
+        SizedBox(height: 12),
+        ShimmerBox(width: double.infinity, height: 56, borderRadius: 12),
+        SizedBox(height: 8),
+        ShimmerBox(width: double.infinity, height: 56, borderRadius: 12),
+        SizedBox(height: 8),
+        ShimmerBox(width: double.infinity, height: 56, borderRadius: 12),
+      ],
     );
   }
 }
@@ -609,7 +610,7 @@ class _LeaderboardPlaceholder extends StatelessWidget {
           Text(
             ranksReady
                 ? 'No ranked finishers yet'
-                : 'Ranks land after the War closes · All-India board fills here',
+                : 'Ranks land after the paper closes · All-India board fills here',
             textAlign: TextAlign.center,
             style: AppTextStyles.caption().copyWith(
               fontWeight: FontWeight.w600,

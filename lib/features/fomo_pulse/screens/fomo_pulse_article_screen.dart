@@ -413,7 +413,9 @@ class FomoPulseArticleScreen extends HookConsumerWidget {
                     )
                   : const Icon(Icons.auto_awesome),
               label: Text(
-                generating.value ? 'Making question…' : 'Make question',
+                generating.value
+                    ? 'Making question + Hindi…'
+                    : 'Make question',
               ),
             ),
           ] else ...[
@@ -569,18 +571,21 @@ class FomoPulseArticleScreen extends HookConsumerWidget {
                 ),
               ),
             ],
-            if (current.question.hasHindi) ...[
-              const SizedBox(height: AppSpacing.sm),
-              Text(
-                'Hindi translation is attached and will be stored on this CA Shot.',
-                style: AppTextStyles.caption().copyWith(
-                  color: scheme.onSurfaceVariant,
-                ),
+            const SizedBox(height: AppSpacing.sm),
+            Text(
+              current.question.hasHindi &&
+                      current.newsSummaryHi.trim().isNotEmpty
+                  ? 'English + Hindi are attached (summary and MCQ). '
+                      'Readers see Hindi when app language is Hindi.'
+                  : 'Hindi missing — generate usually adds it. '
+                      'Tap translate before posting so both languages are stored.',
+              style: AppTextStyles.caption().copyWith(
+                color: scheme.onSurfaceVariant,
               ),
-            ],
+            ),
             const SizedBox(height: AppSpacing.md),
             OutlinedButton.icon(
-              onPressed: translating.value || current.question.hasHindi
+              onPressed: translating.value
                   ? null
                   : () => unawaited(translate()),
               icon: translating.value
@@ -591,10 +596,10 @@ class FomoPulseArticleScreen extends HookConsumerWidget {
                     )
                   : const Icon(Icons.translate),
               label: Text(
-                current.question.hasHindi
-                    ? 'Hindi added'
-                    : translating.value
+                translating.value
                     ? 'Translating…'
+                    : current.question.hasHindi
+                    ? 'Re-translate Hindi'
                     : 'Translate to Hindi',
               ),
             ),

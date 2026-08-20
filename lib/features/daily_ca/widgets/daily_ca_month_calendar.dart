@@ -170,7 +170,11 @@ class _DayCell extends StatelessWidget {
     );
     final isCompleted = completedDates.contains(iso);
     final isBeforeMin = !DailyCaSchedule.isOnOrAfterMinDate(istDate, minDate);
-    final canTap = !isOffDay && !isBeforeMin && isPublished;
+    final canTap = DailyCaSchedule.isCalendarDaySelectable(
+      istDate,
+      minDate: minDate,
+      referenceIst: reference,
+    );
 
     Color fill = cellFill;
     Color textColor = onSurface;

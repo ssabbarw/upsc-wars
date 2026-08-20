@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 import '../../../core/layout/system_insets.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/widgets/dismissible_modal_sheet.dart';
+import '../domain/daily_war_copy.dart';
 import '../domain/daily_war_schedule.dart';
 import '../theme/daily_war_theme.dart';
 
-/// “How Daily War works” — opened only from the `?` control.
+/// “How Static War works” — opened only from the `?` control.
 Future<void> showDailyWarHelpSheet(BuildContext context) {
   return showModalBottomSheet<void>(
     context: context,
@@ -61,7 +62,7 @@ class _DailyWarHelpSheet extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  'How Daily War works',
+                  'How ${DailyWarCopy.programName} works',
                   style: AppTextStyles.h2().copyWith(
                     color: scheme.onSurface,
                     fontWeight: FontWeight.w800,
@@ -75,7 +76,7 @@ class _DailyWarHelpSheet extends StatelessWidget {
                   body:
                       'Same paper, All-India · '
                       '${DailyWarSchedule.weekdayQuestionCount}Q / ${weekdayMins}m weeknights · '
-                      '${DailyWarSchedule.grandWarQuestionCount}Q / ${grandMins}m Sat Grand',
+                      '${DailyWarSchedule.grandWarQuestionCount}Q / ${grandMins}m Sat ${DailyWarCopy.grandEventName}',
                 ),
                 _HelpRow(
                   icon: Icons.leaderboard_rounded,
@@ -89,7 +90,8 @@ class _DailyWarHelpSheet extends StatelessWidget {
                   icon: Icons.calendar_month_rounded,
                   iconColor: const Color(0xFFEA580C),
                   title: 'Week rhythm',
-                  body: '2 topics Mon–Fri · Grand Sat · Sunday off',
+                  body:
+                      '2 topics Mon–Fri · ${DailyWarCopy.grandEventName} Sat · Sunday off',
                 ),
                 _HelpRow(
                   icon: Icons.history_rounded,

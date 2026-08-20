@@ -107,7 +107,7 @@ To **retract** when real traffic shows up, set Remote Config `bots_appear_per_da
 Deploy (from repo root):
 
 ```bash
-firebase deploy --only functions:tickBots,functions:onBotBattleMatchWritten,functions:adminRunBotTick,functions:adminPlanBotDay,functions:sendBattleInvite,firestore:rules
+firebase deploy --only functions:tickBots,functions:onBotBattleMatchWritten,functions:onBotBattlePaperSubmitted,functions:adminRunBotTick,functions:adminPlanBotDay,functions:sendBattleInvite,firestore:rules
 ```
 
 Or deploy all functions. After the first deploy, wait up to 5 minutes for `tickBots`, or call **`adminRunBotTick`** (admin email).
@@ -136,4 +136,12 @@ Optional Remote Config keys (code defaults apply if missing):
 | `bots_same_user_cooldown_days` | 2 | Same human vs same bot |
 
 Bots have no photo, Telegram, or Instagram. They never reply to chat. Profiles live in `users/` with `isBot: true`; roster/jobs are Admin-only (`bot_roster`, `bot_jobs`, `bot_state`).
+
+Human vs bot 1v1s are logged to **`admin_dashboard/bot_battles`** (Cloud Functions only; super users read in **Settings → Admin tools → Bot battles**):
+
+- `sessions/{sessionId}` — join + finish metadata for each live bot battle
+- `daily/{YYYY-MM-DD}` — session counts and unique people (IST)
+- `traffic_bots.warPeopleLast24h` / `battleCompletedPeopleLast24h` — rolling 24h unique people
+
+`joined` is written when the battle actually starts. `completed` is written when the **human** submits their paper (`battle_paper_submitted`). Bot paper submit is stored as `botFinishedAtMs` on the same session doc.
 

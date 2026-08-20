@@ -2,51 +2,61 @@
   {
     "trap_type": "entity-swap",
     "display_name": "Entity Swap",
+    "blurb": "Right fact, wrong person or institution.",
     "description": "A detail that belongs to one person, dynasty, or institution is attributed to another. Both entities are real and related to the topic, making the swap hard to catch without precise recall."
   },
   {
     "trap_type": "scope-extension",
     "display_name": "Scope Extension",
+    "blurb": "True in one case, written as if always true.",
     "description": "Takes a statement that is true in a limited context and presents it as universally true. A policy, event, or phenomenon that applied to one region, period, or group is stated as if it applied everywhere or always."
   },
   {
     "trap_type": "conflation",
     "display_name": "Conflation",
+    "blurb": "Two distinct things fused into one claim.",
     "description": "Merges two distinct events, people, or concepts into one. A characteristic of X is attributed to Y because both belong to the same broad topic or era. The merged statement sounds entirely plausible on the surface."
   },
   {
     "trap_type": "temporal-swap",
     "display_name": "Temporal Swap",
+    "blurb": "Right fact, wrong year or era.",
     "description": "Assigns the right fact to the wrong time period, or places the right event in the wrong century. Common where dates cluster closely and chronological precision is tested."
   },
   {
     "trap_type": "partial-truth",
     "display_name": "Partial Truth",
+    "blurb": "Mostly right, with one planted error.",
     "description": "The statement is mostly correct but contains one false detail — a wrong date, wrong name, or wrong attribute embedded in an otherwise accurate sentence. The correct parts lower your guard before the error lands."
   },
   {
     "trap_type": "reversed-causation",
     "display_name": "Reversed Causation",
+    "blurb": "Cause and effect swapped.",
     "description": "Swaps cause and effect. The consequence of an event is presented as its cause, or an outcome is attributed to the wrong preceding factor."
   },
   {
     "trap_type": "plausible-fabrication",
     "display_name": "Plausible Fabrication",
+    "blurb": "Sounds official. Never existed.",
     "description": "The statement sounds authoritative and fits the context but is simply not true — no such treaty, provision, institution, or event exists. Designed to exploit gaps in knowledge rather than confuse between two real things."
   },
   {
     "trap_type": "geographic-swap",
     "display_name": "Geographic Swap",
+    "blurb": "Right fact, wrong place.",
     "description": "Assigns a feature, event, or characteristic to the wrong location. A river, site, battle, or resource belonging to one region is placed in another that feels contextually similar."
   },
   {
     "trap_type": "negation-trap",
     "display_name": "Negation Trap",
+    "blurb": "NOT / except / incorrect — easy to miss.",
     "description": "Uses 'not','never','except', or 'which of the following is incorrect' framing to flip the task. Students answer as if selecting correct statements and pick the wrong option."
   },
   {
     "trap_type": "negative-framing",
     "display_name": "Negative Framing",
+    "blurb": "The question itself asks for the wrong option.",
     "description": "The question itself is framed in a negative form (for example asking for the incorrect statement, exception, or NOT true option). This framing increases error risk even when content knowledge is adequate."
   }
 ]
