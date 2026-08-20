@@ -81,10 +81,16 @@ class DailyWarHistoryDetailScreen extends HookConsumerWidget {
         final canRevise = war.questionUuids.isNotEmpty;
         final isTonight = snap.dateId == dateId;
         final liveTonight =
-            isTonight &&
-            (snap.phase == DailyWarPhase.lobby ||
-                snap.phase == DailyWarPhase.liveJoinable);
-        final canAttempt = sub == null && war.questionsVisible;
+            isTonight && snap.phase == DailyWarPhase.liveJoinable;
+        final lobbyTonight = isTonight && snap.phase == DailyWarPhase.lobby;
+        final canAttempt =
+            sub == null && war.questionsVisible && !lobbyTonight;
+        final untilStart = DailyWarSchedule.startAtForDate(
+          DailyWarSchedule.parseIsoDate(dateId),
+        ).difference(snap.istNow);
+        final untilStartLabel = DailyWarSchedule.formatCountdown(
+          untilStart.isNegative ? Duration.zero : untilStart,
+        );
 
         Future<void> startAttempt() async {
           if (launching.value) return;
@@ -181,7 +187,9 @@ class DailyWarHistoryDetailScreen extends HookConsumerWidget {
               ),
             ],
             const SizedBox(height: 20),
-            if (canAttempt || (sub == null && !war.questionsVisible)) ...[
+            if (canAttempt ||
+                lobbyTonight ||
+                (sub == null && !war.questionsVisible)) ...[
               SizedBox(
                 width: double.infinity,
                 height: 48,
@@ -200,6 +208,8 @@ class DailyWarHistoryDetailScreen extends HookConsumerWidget {
                   child: Text(
                     launching.value
                         ? 'Starting…'
+                        : lobbyTonight
+                        ? 'Starts in $untilStartLabel'
                         : !war.questionsVisible
                         ? 'Paper not published yet'
                         : liveTonight

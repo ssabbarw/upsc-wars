@@ -277,6 +277,16 @@ class DailyWarTodaySubmission extends _$DailyWarTodaySubmission {
     state = AsyncValue.data(sub);
     return sub;
   }
+
+  /// After a successful Cloud submit — write cache + flip home/lobby CTAs.
+  Future<void> applyLocal(DailyWarSubmission sub) async {
+    final dateId = ref.read(dailyWarTodayDateIdProvider);
+    if (sub.uid.isEmpty || dateId.isEmpty) return;
+    final cache = await ref.read(dailyWarLocalCacheProvider.future);
+    await cache.putSubmission(sub.uid, sub, dateId);
+    ref.read(dailyWarSessionHydratedProvider.notifier).mark('sub:${sub.uid}:$dateId');
+    state = AsyncValue.data(sub);
+  }
 }
 
 /// Combined home-hero view model for today's War.

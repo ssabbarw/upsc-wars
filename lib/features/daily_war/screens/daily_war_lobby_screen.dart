@@ -407,7 +407,11 @@ class _DailyWarLobbyBody extends HookConsumerWidget {
                 loading: launching.value,
               )
             else if (snap.phase == DailyWarPhase.lobby)
-              const _DwButton(label: 'Starts at 9:00 PM')
+              _DwButton(
+                label: untilStart.isNegative
+                    ? 'Starting…'
+                    : 'Starts in ${mmSs(untilStart)}',
+              )
             else if (snap.phase == DailyWarPhase.resultsReady ||
                 snap.phase == DailyWarPhase.resultsPending)
               _DwButton(
@@ -500,6 +504,12 @@ class _DwButton extends StatelessWidget {
               style: FilledButton.styleFrom(
                 backgroundColor: DwColors.crimson,
                 foregroundColor: DwColors.onDark,
+                disabledBackgroundColor: DwColors.crimson.withValues(
+                  alpha: 0.45,
+                ),
+                disabledForegroundColor: DwColors.onDark.withValues(
+                  alpha: 0.85,
+                ),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),

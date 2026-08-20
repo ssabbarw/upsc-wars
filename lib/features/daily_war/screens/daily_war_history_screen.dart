@@ -77,11 +77,14 @@ class DailyWarHistoryScreen extends HookConsumerWidget {
     final displayedMonth = useState(initialMonth);
     final monthTitle = DateFormat('MMMM yyyy').format(displayedMonth.value);
 
-    final live =
-        snap.phase == DailyWarPhase.lobby ||
-        snap.phase == DailyWarPhase.liveJoinable;
+    final live = snap.phase == DailyWarPhase.liveJoinable;
+    final inLobby = snap.phase == DailyWarPhase.lobby;
 
     Future<void> joinLive() async {
+      if (inLobby) {
+        if (context.mounted) context.push(dailyWarLobbyRoute());
+        return;
+      }
       final doc = snap.doc;
       if (doc == null || launching.value) {
         if (doc == null && context.mounted) {

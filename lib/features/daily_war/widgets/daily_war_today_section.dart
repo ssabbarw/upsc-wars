@@ -84,8 +84,20 @@ class DailyWarTodaySection extends HookConsumerWidget {
           : 'Open your attempt';
       onCta = onOpenResults;
       ctaIcon = Icons.replay_rounded;
-    } else if (snap.phase == DailyWarPhase.lobby ||
-        snap.phase == DailyWarPhase.liveJoinable) {
+    } else if (snap.phase == DailyWarPhase.lobby) {
+      eyebrow = 'LOBBY OPEN';
+      headline = topicsLine.isNotEmpty
+          ? topicsLine
+          : (isGrand
+                ? '${DailyWarCopy.grandEventName} lobby is open.'
+                : '${DailyWarCopy.dailyEventName} lobby is open.');
+      subtext = 'Paper starts at 9:00 PM IST. Join when the timer hits zero.';
+      cta = untilStart.isNegative
+          ? 'Starting…'
+          : 'Starts in ${DailyWarSchedule.formatCountdown(untilStart)}';
+      onCta = null;
+      ctaIcon = Icons.schedule_rounded;
+    } else if (snap.phase == DailyWarPhase.liveJoinable) {
       eyebrow = 'LIVE NOW';
       headline = topicsLine.isNotEmpty
           ? topicsLine

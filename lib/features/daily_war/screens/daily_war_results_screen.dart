@@ -101,6 +101,34 @@ class DailyWarResultsScreen extends HookConsumerWidget {
           );
           if (cancelled) return;
           if (!result.ok) {
+            final already =
+                (result.errorMessage ?? '').toLowerCase().contains('already');
+            if (already) {
+              final uid = FirebaseAuth.instance.currentUser?.uid;
+              if (uid != null) {
+                await ref
+                    .read(dailyWarTodaySubmissionProvider.notifier)
+                    .refresh();
+                ref.invalidate(dailyWarHistoryBundleProvider);
+                ref.invalidate(dailyWarArchiveProvider(dateId));
+                final snap = await DailyWarFirestorePaths.submissionDoc(
+                  dateId,
+                  uid,
+                ).get();
+                if (snap.exists && snap.data() != null) {
+                  submission.value =
+                      DailyWarSubmission.fromMap(uid, snap.data()!);
+                  score.value = submission.value?.score;
+                  final warDoc =
+                      await ref.read(dailyWarDocByIdProvider(dateId).future);
+                  nextTopics.value = warDoc?.nextTopics ?? const [];
+                  participantCount.value = warDoc?.participantCount;
+                  questionCount.value = warDoc?.questionCount ?? 15;
+                  syncState.value = _SyncState.ready;
+                  return;
+                }
+              }
+            }
             error.value = result.errorMessage ?? 'Submit failed';
             syncState.value = _SyncState.error;
             return;
@@ -138,14 +166,43 @@ class DailyWarResultsScreen extends HookConsumerWidget {
           questionCount.value = warDoc?.questionCount ?? 15;
 
           final uid = FirebaseAuth.instance.currentUser?.uid;
+          DailyWarSubmission? synced;
           if (uid != null) {
             final snap = await DailyWarFirestorePaths.submissionDoc(
               dateId,
               uid,
             ).get();
             if (snap.exists && snap.data() != null) {
-              submission.value = DailyWarSubmission.fromMap(uid, snap.data()!);
+              synced = DailyWarSubmission.fromMap(uid, snap.data()!);
+            } else {
+              synced = DailyWarSubmission(
+                uid: uid,
+                mode: mode,
+                score: result.score ?? 0,
+                correct: result.correct ?? 0,
+                wrong: result.wrong ?? 0,
+                unanswered: result.unanswered ?? 0,
+                elapsedMs: elapsedMs,
+                displayName: displayName,
+                answers: answers,
+                streakDays: streakDays ?? 0,
+                tierId: tierId,
+                badges: result.badges,
+                submittedAtMs: DateTime.now().millisecondsSinceEpoch,
+              );
             }
+            submission.value = synced;
+            final todayId = ref.read(dailyWarTodayDateIdProvider);
+            if (dateId == todayId) {
+              await ref
+                  .read(dailyWarTodaySubmissionProvider.notifier)
+                  .applyLocal(synced);
+            } else {
+              final cache = await ref.read(dailyWarLocalCacheProvider.future);
+              await cache.putSubmission(uid, synced, dateId);
+            }
+            ref.invalidate(dailyWarHistoryBundleProvider);
+            ref.invalidate(dailyWarArchiveProvider(dateId));
           }
 
           syncState.value = _SyncState.ready;
