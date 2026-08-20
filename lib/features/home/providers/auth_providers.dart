@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../core/auth/super_user.dart';
 import '../../../core/domain/repositories/auth_repository.dart';
 import '../data/repositories/firebase_auth_repository.dart';
 
@@ -14,6 +15,45 @@ final authRepositoryProvider = Provider<AuthRepository>((ref) {
 final authStateChangesProvider = StreamProvider<User?>((ref) {
   final repo = ref.watch(authRepositoryProvider);
   return repo.userChanges();
+});
+
+/// Stable auth identity for [appRouterProvider].
+///
+/// Token refreshes (`getIdToken(true)`) also emit [userChanges], but must not
+/// recreate [GoRouter] (that resets navigation to `/`).
+@immutable
+class AuthRouterIdentity {
+  const AuthRouterIdentity({
+    required this.authReady,
+    required this.uid,
+    required this.isSuperUser,
+  });
+
+  final bool authReady;
+  final String? uid;
+  final bool isSuperUser;
+
+  @override
+  bool operator ==(Object other) {
+    return other is AuthRouterIdentity &&
+        other.authReady == authReady &&
+        other.uid == uid &&
+        other.isSuperUser == isSuperUser;
+  }
+
+  @override
+  int get hashCode => Object.hash(authReady, uid, isSuperUser);
+}
+
+final authRouterIdentityProvider = Provider<AuthRouterIdentity>((ref) {
+  final authAsync = ref.watch(authStateChangesProvider);
+  final authReady = authAsync.hasValue;
+  final user = authAsync.asData?.value;
+  return AuthRouterIdentity(
+    authReady: authReady,
+    uid: user?.uid,
+    isSuperUser: authReady && SuperUser.isSignedIn(user),
+  );
 });
 
 class AuthActionsNotifier extends AsyncNotifier<void> {

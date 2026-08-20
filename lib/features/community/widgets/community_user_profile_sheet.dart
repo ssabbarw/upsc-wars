@@ -35,6 +35,24 @@ String formatCommunityProfileLastOnline(int millis) {
   ).format(DateTime.fromMillisecondsSinceEpoch(millis));
 }
 
+sealed class _CommunityProfileNav {
+  const _CommunityProfileNav();
+}
+
+final class _CommunityProfileInviteNav extends _CommunityProfileNav {
+  const _CommunityProfileInviteNav(this.target);
+  final BattleInviteTarget target;
+}
+
+final class _CommunityProfileMessageNav extends _CommunityProfileNav {
+  const _CommunityProfileMessageNav({
+    required this.chatId,
+    required this.payload,
+  });
+  final String chatId;
+  final ChatThreadRoutePayload payload;
+}
+
 Future<void> showCommunityUserProfileSheet(
   BuildContext context,
   WidgetRef ref,
@@ -53,15 +71,17 @@ Future<void> showCommunityUserProfileSheet(
   var isBlocked = blockedInitially;
   final meNorm = currentUserEmail?.toLowerCase().trim();
   if (!context.mounted) return;
-  await showModalBottomSheet<void>(
+  final router = GoRouter.of(context);
+  final action = await showModalBottomSheet<_CommunityProfileNav>(
     context: context,
     isScrollControlled: true,
+    useRootNavigator: true,
     shape: const RoundedRectangleBorder(
       borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
     ),
-    builder: (context) => StatefulBuilder(
-      builder: (context, setState) {
-        final scheme = Theme.of(context).colorScheme;
+    builder: (sheetContext) => StatefulBuilder(
+      builder: (sheetContext, setState) {
+        final scheme = Theme.of(sheetContext).colorScheme;
         final displayLabel = displayNameForViewer(
           name: user.name,
           viewerEmail: meNorm,
@@ -82,7 +102,7 @@ Future<void> showCommunityUserProfileSheet(
               AppSpacing.lg,
               AppSpacing.lg,
               AppSpacing.lg,
-              paddedBottomInset(context, AppSpacing.xxl),
+              paddedBottomInset(sheetContext, AppSpacing.xxl),
             ),
             child: Column(
               mainAxisSize: MainAxisSize.min,
@@ -141,9 +161,9 @@ Future<void> showCommunityUserProfileSheet(
                                 final nextBlocked = !isBlocked;
                                 if (nextBlocked &&
                                     confirmBlockClosesChat &&
-                                    context.mounted) {
+                                    sheetContext.mounted) {
                                   final confirmed = await showDialog<bool>(
-                                    context: context,
+                                    context: sheetContext,
                                     builder: (dialogContext) => AlertDialog(
                                       title: const Text('Block this user?'),
                                       content: const Text(
@@ -175,25 +195,25 @@ Future<void> showCommunityUserProfileSheet(
                                     blocked: nextBlocked,
                                   );
                                   if (nextBlocked && confirmBlockClosesChat) {
-                                    if (context.mounted) {
-                                      Navigator.of(context).pop();
+                                    if (sheetContext.mounted) {
+                                      Navigator.of(sheetContext).pop();
                                     }
                                     onBlockedFromChat?.call();
                                     return;
                                   }
                                   setState(() => isBlocked = nextBlocked);
-                                  if (context.mounted) {
+                                  if (sheetContext.mounted) {
                                     AppToast.showText(
-                                      context,
+                                      sheetContext,
                                       nextBlocked
                                           ? 'You will not see messages or battle invites from ${user.name}.'
                                           : '${user.name} has been unblocked.',
                                     );
                                   }
                                 } catch (e) {
-                                  if (context.mounted) {
+                                  if (sheetContext.mounted) {
                                     AppToast.showText(
-                                      context,
+                                      sheetContext,
                                       'Could not update block: $e',
                                     );
                                   }
@@ -213,16 +233,19 @@ Future<void> showCommunityUserProfileSheet(
                         onPressed: !canInviteBattle
                             ? null
                             : () {
-                                Navigator.of(context).pop();
-                                context.push(
-                                  '/battle/config',
-                                  extra: BattleInviteTarget(
-                                    email: user.email.toLowerCase(),
-                                    displayName: user.name,
-                                    photoUrl:
-                                        AppConstants.customProfilePhotoUrl(
-                                          user.photoUrl,
-                                        ),
+                                Navigator.of(
+                                  sheetContext,
+                                  rootNavigator: true,
+                                ).pop(
+                                  _CommunityProfileInviteNav(
+                                    BattleInviteTarget(
+                                      email: user.email.toLowerCase(),
+                                      displayName: user.name,
+                                      photoUrl:
+                                          AppConstants.customProfilePhotoUrl(
+                                            user.photoUrl,
+                                          ),
+                                    ),
                                   ),
                                 );
                               },
@@ -240,22 +263,26 @@ Future<void> showCommunityUserProfileSheet(
                       onPressed: isBlocked || isSelf
                           ? null
                           : () {
-                              Navigator.of(context).pop();
                               final me = currentUserEmail;
                               if (me == null || me.isEmpty) return;
                               final chatId = ChatIds.chatIdForPair(
                                 me,
                                 user.email,
                               );
-                              context.push(
-                                '/chat/$chatId',
-                                extra: ChatThreadRoutePayload(
-                                  peerEmail: user.email.toLowerCase(),
-                                  peerDisplayName: user.name,
-                                  peerPhotoUrl:
-                                      AppConstants.customProfilePhotoUrl(
-                                        user.photoUrl,
-                                      ),
+                              Navigator.of(
+                                sheetContext,
+                                rootNavigator: true,
+                              ).pop(
+                                _CommunityProfileMessageNav(
+                                  chatId: chatId,
+                                  payload: ChatThreadRoutePayload(
+                                    peerEmail: user.email.toLowerCase(),
+                                    peerDisplayName: user.name,
+                                    peerPhotoUrl:
+                                        AppConstants.customProfilePhotoUrl(
+                                          user.photoUrl,
+                                        ),
+                                  ),
                                 ),
                               );
                             },
@@ -315,7 +342,7 @@ Future<void> showCommunityUserProfileSheet(
                         onPressed: (user.instagram ?? '').isEmpty
                             ? null
                             : () => openCommunityExternalUrl(
-                                context,
+                                sheetContext,
                                 'https://instagram.com/${user.instagram!.replaceAll('@', '')}',
                               ),
                         icon: const Icon(Icons.camera_alt_outlined),
@@ -333,7 +360,7 @@ Future<void> showCommunityUserProfileSheet(
                         onPressed: (user.telegram ?? '').isEmpty
                             ? null
                             : () => openCommunityExternalUrl(
-                                context,
+                                sheetContext,
                                 'https://t.me/${user.telegram!.replaceAll('@', '')}',
                               ),
                         icon: const Icon(Icons.send_outlined),
@@ -354,4 +381,15 @@ Future<void> showCommunityUserProfileSheet(
       },
     ),
   );
+  if (action == null) return;
+  // Push after the sheet route is gone, from the captured router (root), so a
+  // shell-tab switch cannot swallow the next screen.
+  WidgetsBinding.instance.addPostFrameCallback((_) {
+    switch (action) {
+      case _CommunityProfileInviteNav(:final target):
+        router.push('/battle/config', extra: target);
+      case _CommunityProfileMessageNav(:final chatId, :final payload):
+        router.push('/chat/$chatId', extra: payload);
+    }
+  });
 }

@@ -64,7 +64,6 @@ import '../../features/question_editor/screens/question_editor_form_screen.dart'
 import '../../features/question_editor/screens/question_editor_preview_screen.dart';
 import '../../features/question_editor/screens/question_editor_search_screen.dart';
 import '../../features/question_editor/widgets/question_editor_access.dart';
-import '../auth/super_user.dart';
 import '../../features/push_spot_test/screens/spot_test_composer_screen.dart';
 import '../../features/home/providers/auth_providers.dart';
 import '../../features/results/screens/confidence_tier_review_screen.dart';
@@ -122,10 +121,12 @@ final GlobalKey<NavigatorState> rootNavigatorKey = GlobalKey<NavigatorState>(
 @Riverpod(keepAlive: true)
 GoRouter appRouter(Ref ref) {
   ref.watch(appBootstrapProvider).requireValue;
-  final authAsync = ref.watch(authStateChangesProvider);
-  final authReady = authAsync.hasValue;
-  final isSuperUser =
-      authReady && SuperUser.isSignedIn(authAsync.asData!.value);
+  // Watch a stable identity only. Full [authStateChangesProvider] also fires on
+  // ID-token refresh (e.g. battle Firestore priming), which would recreate this
+  // GoRouter and dump the user back on `/`.
+  final authIdentity = ref.watch(authRouterIdentityProvider);
+  final authReady = authIdentity.authReady;
+  final isSuperUser = authIdentity.isSuperUser;
   final questionEditorAllowed = () =>
       canAccessQuestionEditor(isSuperUser: isSuperUser);
   final shellHasCommunity = FeatureFlags.communityTab;

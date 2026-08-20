@@ -18,7 +18,8 @@ class BattleMatchFirestoreService {
     if (user == null) {
       throw StateError('Sign in with Google before using battle sync.');
     }
-    await user.getIdToken(true);
+    // Do not force-refresh: that emits userChanges and used to recreate GoRouter.
+    await user.getIdToken();
   }
 
   static const battleModeHuman = 'human';

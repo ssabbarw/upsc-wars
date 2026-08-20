@@ -36,8 +36,15 @@ class _PopToShellHomeScopeState extends State<PopToShellHomeScope> {
     return false;
   }
 
+  bool _rootHasOverlayRoute() {
+    final rootNav = Navigator.maybeOf(context, rootNavigator: true);
+    return rootNav != null && rootNav.canPop();
+  }
+
   Future<bool> _onBackButtonPressed() async {
     if (!TickerMode.valuesOf(context).enabled) return false;
+    // Let root-navigator sheets/dialogs handle back instead of switching Home.
+    if (_rootHasOverlayRoute()) return false;
     if (_alreadyHandledThisFrame()) return true;
     if (widget.onInnerBack?.call() ?? false) return true;
     final shell = StatefulNavigationShell.maybeOf(context);
@@ -51,8 +58,14 @@ class _PopToShellHomeScopeState extends State<PopToShellHomeScope> {
   void _onPopInvoked(bool didPop) {
     if (didPop) return;
     if (!TickerMode.valuesOf(context).enabled) return;
+    if (_rootHasOverlayRoute()) return;
     if (_alreadyHandledThisFrame()) return;
     if (widget.onInnerBack?.call() ?? false) return;
+    // Inside a shell tab, modal/sheet pops are delivered here because [canPop]
+    // is false. Switching to Home would hide any follow-up push (battle invite).
+    // System back still reaches Home via [BackButtonListener].
+    final shell = StatefulNavigationShell.maybeOf(context);
+    if (shell != null) return;
     _goHome();
   }
 

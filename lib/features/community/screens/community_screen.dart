@@ -651,18 +651,20 @@ Future<void> _showSettings(BuildContext context, WidgetRef ref) async {
 }
 
 Future<void> _showRandomConnectSheet(BuildContext context) async {
-  await showModalBottomSheet<void>(
+  final router = GoRouter.of(context);
+  final start = await showModalBottomSheet<bool>(
     context: context,
+    useRootNavigator: true,
     shape: const RoundedRectangleBorder(
       borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
     ),
-    builder: (context) {
+    builder: (sheetContext) {
       return Padding(
         padding: EdgeInsets.fromLTRB(
           AppSpacing.lg,
           AppSpacing.lg,
           AppSpacing.lg,
-          paddedBottomInset(context, AppSpacing.lg),
+          paddedBottomInset(sheetContext, AppSpacing.lg),
         ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -676,10 +678,10 @@ Future<void> _showRandomConnectSheet(BuildContext context) async {
             SizedBox(
               width: double.infinity,
               child: FilledButton(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                  context.push('/battle/config');
-                },
+                onPressed: () => Navigator.of(
+                  sheetContext,
+                  rootNavigator: true,
+                ).pop(true),
                 child: const Text('Random Connect'),
               ),
             ),
@@ -688,4 +690,8 @@ Future<void> _showRandomConnectSheet(BuildContext context) async {
       );
     },
   );
+  if (start != true) return;
+  WidgetsBinding.instance.addPostFrameCallback((_) {
+    router.push('/battle/config');
+  });
 }
