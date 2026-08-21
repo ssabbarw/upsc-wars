@@ -4,10 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../core/auth/auth_session.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../features/home/providers/auth_providers.dart';
 import '../domain/daily_war_copy.dart';
 import '../domain/daily_war_phase.dart';
 import '../domain/daily_war_schedule.dart';
@@ -39,6 +41,9 @@ class DailyWarTodaySection extends HookConsumerWidget {
     tick.value;
 
     final snap = ref.watch(dailyWarHomeSnapshotProvider);
+    final accountSignedIn = AuthSession.isAccountSignedIn(
+      ref.watch(authStateChangesProvider).asData?.value,
+    );
     final offset = ref.watch(serverTimeOffsetMsProvider).asData?.value ?? 0;
     final utc = DateTime.fromMillisecondsSinceEpoch(
       DateTime.now().millisecondsSinceEpoch + offset,
@@ -102,20 +107,32 @@ class DailyWarTodaySection extends HookConsumerWidget {
       headline = topicsLine.isNotEmpty
           ? topicsLine
           : (isGrand
-                ? '${DailyWarCopy.grandEventName} is live.'
-                : '${DailyWarCopy.dailyEventName} is live.');
+                ? '${DailyWarCopy.grandEventName}.'
+                : '${DailyWarCopy.dailyEventName}.');
       subtext = 'All-India live paper. Join before the window closes.';
-      cta = launching ? 'Starting…' : 'Join now';
+      cta = launching
+          ? 'Starting…'
+          : accountSignedIn
+          ? 'Join now'
+          : 'Sign in to join';
       onCta = launching ? null : onJoinLive;
-      ctaIcon = Icons.play_arrow_rounded;
+      ctaIcon = accountSignedIn
+          ? Icons.play_arrow_rounded
+          : Icons.login_rounded;
     } else if (snap.phase == DailyWarPhase.resultsPending ||
         snap.phase == DailyWarPhase.resultsReady) {
       eyebrow = DailyWarCopy.eventNameCaps(isGrand: isGrand);
       headline = 'Tonight\'s live window has closed.';
       subtext = 'You can still attempt this paper unranked.';
-      cta = launching ? 'Starting…' : 'Attempt unranked';
+      cta = launching
+          ? 'Starting…'
+          : accountSignedIn
+          ? 'Attempt unranked'
+          : 'Sign in to attempt';
       onCta = launching ? null : onAttemptUnranked;
-      ctaIcon = Icons.play_arrow_rounded;
+      ctaIcon = accountSignedIn
+          ? Icons.play_arrow_rounded
+          : Icons.login_rounded;
     } else {
       eyebrow = isGrand
           ? '${DailyWarCopy.grandEventNameCaps} TONIGHT'

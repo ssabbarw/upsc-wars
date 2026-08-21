@@ -9,12 +9,16 @@ import '../../../core/analytics/analytics.dart';
 import '../../../core/analytics/analytics_events.dart';
 import '../../../core/domain/entities/session_config.dart';
 import '../../../core/providers/catalog_providers.dart';
+import '../../../shared/auth/ensure_account_sign_in.dart';
 import '../daily_war_constants.dart';
 import '../providers/daily_war_providers.dart';
 import 'daily_war_models.dart';
 import 'daily_war_schedule.dart';
 
 /// Starts a live or unranked Daily War paper and opens the test flow.
+///
+/// Requires a real (non-anonymous) account before the paper opens so submit
+/// cannot fail mid-attempt for guests.
 Future<void> startDailyWarAttempt({
   required BuildContext context,
   required WidgetRef ref,
@@ -36,26 +40,40 @@ Future<void> startDailyWarAttempt({
     return;
   }
 
+  final signedIn = await ensureAccountSignedIn(
+    context: context,
+    ref: ref,
+    reason: unranked
+        ? 'Sign in to attempt this War.'
+        : 'Sign in to join tonight\'s War.',
+  );
+  if (!signedIn || !context.mounted) return;
+
   final uid = FirebaseAuth.instance.currentUser?.uid;
-  if (uid != null && uid.isNotEmpty) {
-    final cache = await ref.read(dailyWarLocalCacheProvider.future);
-    final existing = cache.getSubmission(uid, doc.dateId) ??
-        (doc.dateId == ref.read(dailyWarTodayDateIdProvider)
-            ? ref.read(dailyWarTodaySubmissionProvider).asData?.value
-            : null);
-    if (existing != null) {
-      if (!context.mounted) return;
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(
-            existing.isLive
-                ? 'You already submitted this War.'
-                : 'You already practiced this War.',
-          ),
+  if (uid == null || uid.isEmpty) return;
+
+  // Account may have changed (anonymous → Google); refresh tonight's attempt.
+  if (doc.dateId == ref.read(dailyWarTodayDateIdProvider)) {
+    await ref.read(dailyWarTodaySubmissionProvider.notifier).refresh();
+  }
+
+  final cache = await ref.read(dailyWarLocalCacheProvider.future);
+  final existing = cache.getSubmission(uid, doc.dateId) ??
+      (doc.dateId == ref.read(dailyWarTodayDateIdProvider)
+          ? ref.read(dailyWarTodaySubmissionProvider).asData?.value
+          : null);
+  if (existing != null) {
+    if (!context.mounted) return;
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(
+          existing.isLive
+              ? 'You already submitted this War.'
+              : 'You already practiced this War.',
         ),
-      );
-      return;
-    }
+      ),
+    );
+    return;
   }
 
   final warDate = DailyWarSchedule.parseIsoDate(doc.dateId);

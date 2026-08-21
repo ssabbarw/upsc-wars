@@ -4,11 +4,13 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../core/auth/auth_session.dart';
 import '../../../core/layout/system_insets.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../features/home/providers/auth_providers.dart';
 import '../../../shared/widgets/dismissible_modal_sheet.dart';
 import '../../../shared/widgets/shimmer_box.dart';
 import '../../community/widgets/admin_bot_label.dart';
@@ -56,6 +58,9 @@ class DailyWarHistoryDetailScreen extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final archiveAsync = ref.watch(dailyWarArchiveProvider(dateId));
     final snap = ref.watch(dailyWarHomeSnapshotProvider);
+    final accountSignedIn = AuthSession.isAccountSignedIn(
+      ref.watch(authStateChangesProvider).asData?.value,
+    );
     final myUid = FirebaseAuth.instance.currentUser?.uid ?? '';
     final launching = useState(false);
     final scheme = Theme.of(context).colorScheme;
@@ -213,8 +218,10 @@ class DailyWarHistoryDetailScreen extends HookConsumerWidget {
                         : !war.questionsVisible
                         ? 'Paper not published yet'
                         : liveTonight
-                        ? 'Join now'
-                        : 'Start this day\'s test',
+                        ? (accountSignedIn ? 'Join now' : 'Sign in to join')
+                        : (accountSignedIn
+                              ? 'Start this day\'s test'
+                              : 'Sign in to attempt'),
                     style: AppTextStyles.label().copyWith(
                       fontWeight: FontWeight.w700,
                       color: canAttempt

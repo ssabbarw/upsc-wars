@@ -161,6 +161,11 @@ class _DailyWarHomeCardBody extends HookConsumerWidget {
                     isGrand: isGrand,
                   ),
                 )
+              : snap.phase == DailyWarPhase.lobby ||
+                    snap.phase == DailyWarPhase.liveJoinable ||
+                    (snap.phase == DailyWarPhase.liveLocked &&
+                        snap.submission == null)
+              ? () => context.push(dailyWarLobbyRoute())
               : () => context.push(dailyWarHistoryRoute()),
           borderRadius: BorderRadius.circular(20),
           child: Ink(
@@ -256,10 +261,10 @@ class _HeroBody extends StatelessWidget {
         return _ResultsPending(snap: snap, topics: topics);
       case DailyWarPhase.liveLocked:
         return _LiveLocked(
+          snap: snap,
           topics: topics,
           writersShown: writersShown,
           isGrand: isGrand,
-          qCount: qCount,
         );
       case DailyWarPhase.liveJoinable:
         return _LiveJoinable(
@@ -658,46 +663,62 @@ class _LiveJoinable extends StatelessWidget {
 
 class _LiveLocked extends StatelessWidget {
   const _LiveLocked({
+    required this.snap,
     required this.topics,
     required this.writersShown,
     required this.isGrand,
-    required this.qCount,
   });
 
+  final DailyWarHomeSnapshot snap;
   final List<DailyWarTopicRef> topics;
   final String? writersShown;
   final bool isGrand;
-  final int qCount;
 
   @override
   Widget build(BuildContext context) {
+    final sub = snap.submission;
+    final submitted = sub != null;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         _StatusRow(
-          left: 'IN PROGRESS',
+          left: submitted ? 'YOU\'RE IN' : 'IN PROGRESS',
           right: 'ENTRY CLOSED 9:10 PM',
           pulse: true,
         ),
         const SizedBox(height: 12),
-        Text('Tonight\'s paper is being written', style: DwText.topicCompact()),
+        Text(
+          submitted
+              ? (sub.hasOfficialRank
+                    ? 'Your AIR ${sub.air} is ready'
+                    : 'Your attempt is in · AIR at 9:40 PM IST')
+              : 'Tonight\'s ${DailyWarCopy.eventName(isGrand: isGrand)} is live',
+          style: DwText.topicCompact(),
+        ),
         const SizedBox(height: 6),
         Text(
-          'Score on submission · All-India Rank at 9:40 PM IST.',
+          submitted ? DailyWarCopy.compactTopics(topics) : 'Late join closed.',
           style: DwText.body(),
         ),
-        if (writersShown != null) ...[
+        if (!submitted && writersShown != null) ...[
           const SizedBox(height: 12),
           Text(
             '$writersShown aspirants · ${DailyWarCopy.compactTopics(topics)}',
             style: DwText.meta(),
           ),
-        ] else ...[
+        ] else if (!submitted) ...[
           const SizedBox(height: 10),
           Text(DailyWarCopy.compactTopics(topics), style: DwText.meta()),
         ],
         const SizedBox(height: 14),
-        const _PrimaryCta(label: 'Read the topic notes', filled: false),
+        _PrimaryCta(
+          label: submitted
+              ? (sub.hasOfficialRank
+                    ? 'See your AIR ${sub.air}'
+                    : 'Open your attempt')
+              : 'Today\'s war is live',
+          filled: !submitted || sub.hasOfficialRank,
+        ),
       ],
     );
   }

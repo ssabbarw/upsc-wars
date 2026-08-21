@@ -5,9 +5,11 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../core/auth/auth_session.dart';
 import '../../../core/notifications/notification_prompt_policy.dart';
 import '../../../core/providers/kill_switch_provider.dart';
 import '../../../core/services/battle_messaging_service.dart';
+import '../../../features/home/providers/auth_providers.dart';
 import '../../../shared/widgets/shimmer_box.dart';
 import '../daily_war_constants.dart';
 import '../data/daily_war_cloud_service.dart';
@@ -213,6 +215,9 @@ class _DailyWarLobbyBody extends HookConsumerWidget {
     final alreadyDone = snap.submission != null;
     final isGrand = snap.doc?.isGrand == true;
     final topics = snap.doc?.topics ?? const [];
+    final accountSignedIn = AuthSession.isAccountSignedIn(
+      ref.watch(authStateChangesProvider).asData?.value,
+    );
 
     final countShown = DailyWarCopy.formatVisibleCount(
       raw: snap.phase == DailyWarPhase.lobby
@@ -400,7 +405,11 @@ class _DailyWarLobbyBody extends HookConsumerWidget {
               )
             else if (canEnter)
               _DwButton(
-                label: launching.value ? 'Starting…' : 'Join now',
+                label: launching.value
+                    ? 'Starting…'
+                    : accountSignedIn
+                    ? 'Join now'
+                    : 'Sign in to join',
                 onPressed: launching.value
                     ? null
                     : () => unawaited(enterWar(unranked: false)),
@@ -412,10 +421,16 @@ class _DailyWarLobbyBody extends HookConsumerWidget {
                     ? 'Starting…'
                     : 'Starts in ${mmSs(untilStart)}',
               )
+            else if (snap.phase == DailyWarPhase.liveLocked)
+              const _DwButton(label: 'You can\'t join now')
             else if (snap.phase == DailyWarPhase.resultsReady ||
                 snap.phase == DailyWarPhase.resultsPending)
               _DwButton(
-                label: 'Attempt unranked',
+                label: launching.value
+                    ? 'Starting…'
+                    : accountSignedIn
+                    ? 'Attempt unranked'
+                    : 'Sign in to attempt',
                 filled: false,
                 onPressed: launching.value
                     ? null

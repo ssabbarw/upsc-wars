@@ -76,7 +76,8 @@ class QuestionStatsSyncService {
   /// Uploads one completed session to Firestore (no-op if already synced).
   Future<bool> syncSession(String sessionId) async {
     try {
-      await AnonymousAuthService.ensureSignedIn();
+      final signedIn = await AnonymousAuthService.ensureSignedIn();
+      if (!signedIn) return false;
       final session = await _userDb.sessionsDao.getSessionById(sessionId);
       if (session == null ||
           session.status != 'completed' ||
@@ -97,7 +98,8 @@ class QuestionStatsSyncService {
   /// Aggregates unsynced sessions and writes batched increments to Firestore.
   Future<int> syncUnsyncedSessions() async {
     try {
-      await AnonymousAuthService.ensureSignedIn();
+      final signedIn = await AnonymousAuthService.ensureSignedIn();
+      if (!signedIn) return 0;
       final sessions =
           await _userDb.sessionsDao.getUnsyncedCompletedSessions();
       return _syncSessions(sessions);
