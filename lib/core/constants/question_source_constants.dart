@@ -16,6 +16,8 @@ abstract final class QuestionSourceConstants {
   static const String subjectPyqSessionTopic = 'pyq';
 
   static const String analyticsDailyCurrentAffairs = 'daily_current_affairs';
+  static const String analyticsDailyCurrentAffairsRevise =
+      'daily_current_affairs_revise';
   static const String analyticsSubjectCurrentAffairs = 'subject_current_affairs';
   static const String analyticsSubjectPyq = 'subject_pyq';
 

@@ -16,8 +16,10 @@ class FomoPulseLocalCache {
     return _prefs ??= await SharedPreferences.getInstance();
   }
 
-  Future<({List<FomoPulse> pulses, Map<String, FomoPulseAttemptState> attempts})>
-      read() async {
+  Future<
+    ({List<FomoPulse> pulses, Map<String, FomoPulseAttemptState> attempts})
+  >
+  read() async {
     final prefs = await _ensurePrefs();
     final pulsesRaw = prefs.getString(FomoPulseConstants.cachePulsesKey);
     final attemptsRaw = prefs.getString(FomoPulseConstants.cacheAttemptsKey);
@@ -29,7 +31,8 @@ class FomoPulseLocalCache {
 
   Future<bool> isListFresh() async {
     final prefs = await _ensurePrefs();
-    final syncedAt = prefs.getInt(FomoPulseConstants.cacheListSyncedAtMsKey) ?? 0;
+    final syncedAt =
+        prefs.getInt(FomoPulseConstants.cacheListSyncedAtMsKey) ?? 0;
     if (syncedAt <= 0) return false;
     final age = DateTime.now().millisecondsSinceEpoch - syncedAt;
     return age < FomoPulseConstants.historyCacheTtl.inMilliseconds;
@@ -51,16 +54,26 @@ class FomoPulseLocalCache {
     );
   }
 
+  Future<void> removePulse(String pulseId) async {
+    final current = await read();
+    final pulses = [
+      for (final p in current.pulses)
+        if (p.pulseId != pulseId) p,
+    ];
+    final attempts = Map<String, FomoPulseAttemptState>.from(current.attempts)
+      ..remove(pulseId);
+    await writeList(pulses: pulses, attempts: attempts);
+  }
+
   Future<void> upsertPulse(FomoPulse pulse) async {
     final current = await read();
-    final next = [
-      pulse,
-      ...current.pulses.where((p) => p.pulseId != pulse.pulseId),
-    ]..sort((a, b) {
-        final am = a.sentAt?.millisecondsSinceEpoch ?? 0;
-        final bm = b.sentAt?.millisecondsSinceEpoch ?? 0;
-        return bm.compareTo(am);
-      });
+    final next =
+        [pulse, ...current.pulses.where((p) => p.pulseId != pulse.pulseId)]
+          ..sort((a, b) {
+            final am = a.sentAt?.millisecondsSinceEpoch ?? 0;
+            final bm = b.sentAt?.millisecondsSinceEpoch ?? 0;
+            return bm.compareTo(am);
+          });
     final trimmed = next.take(FomoPulseConstants.historyPageSize).toList();
     final prefs = await _ensurePrefs();
     await prefs.setString(

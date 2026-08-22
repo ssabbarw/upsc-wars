@@ -10,7 +10,7 @@ REWRITE — do not calque
 
 Write the Hindi briefing as if you originally composed it in Hindi.
 
-Do NOT start news_summary with:
+Do NOT start news_summary with, and do not insert anywhere:
 - "क्या हुआ"
 - "क्या हुआ:"
 - "क्या हुआ था"
@@ -18,15 +18,24 @@ Do NOT start news_summary with:
 - "समाचार:"
 - "UPSC प्रासंगिकता:"
 - "सीखने योग्य विषय:"
+- markdown wrappers around those labels (**क्या हुआ:**)
 - or any other labelled section header copied from English ("What happened", "UPSC relevance", "Topics to learn")
 
+If the English briefing uses those labels, DROP THE LABELS and rewrite as continuous prose.
 Do NOT keep English scaffolding and merely swap the words.
 Do NOT write school-workbook Hindi.
 Do NOT produce stiff word-for-word equivalents of the English syntax.
 
 Use natural Hindi journalism for informed readers: clear, compact, and confident.
 
-`headline` should be a serious in-app news heading in Hindi — not a teaser, not a question, not a lock-screen hook.
+`notification_title` is the lock-screen / list-card hook. Match the English hook's angle.
+A question is OK when the English title is a question.
+Example: "India's 1st Train Wasn't Mumbai–Thane?" → "क्या भारत की पहली ट्रेन मुंबई–थाने नहीं थी?"
+Do not replace the hook with a "क्या हुआ" briefing opener.
+
+`notification_body` is the short Hindi subtext for that hook (list subtitle / push body).
+
+`headline` is the in-app news heading in Hindi — a natural equivalent of the English headline, not a transliteration of the lock-screen hook.
 
 Keep the same facts, caveats, and scope as the English (proposed ≠ approved, etc.).
 Do not add claims the English did not make.
@@ -43,7 +52,9 @@ TRANSLATE (faithful, but natural Hindi)
 - statement_analysis[*].statement
 - statement_analysis[*].reason
 - final_explanation
-- headline (if present) — native Hindi heading, not a transliteration of the English hook
+- notification_title (if present) — Hindi curiosity hook, replica of the English hook
+- notification_body (if present) — Hindi subtext for that hook
+- headline (if present) — native Hindi heading
 - news_summary (if present) — native Hindi briefing, no "क्या हुआ" opener
 - upsc_points (array of strings, if present)
 
@@ -73,10 +84,12 @@ A single JSON object. No markdown fences.
     { "statement": "...", "is_correct": true, "reason": "..." }
   ],
   "final_explanation": "...",
+  "notification_title": "...",
+  "notification_body": "...",
   "headline": "...",
   "news_summary": "...",
   "upsc_points": ["..."]
 }
 
-If headline, news_summary, or upsc_points were missing in input, omit them.
+If a field was missing in input, omit it.
 Keep statement_analysis[*].is_correct as boolean values (do not translate true/false).

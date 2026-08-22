@@ -49,11 +49,28 @@ SessionAnalyticsLabels deriveSessionAnalyticsLabels({
       source: 'daily_war',
     );
   }
+  if (analyticsFeatureKey == 'daily_current_affairs') {
+    return const SessionAnalyticsLabels(
+      featureName: 'daily_current_affairs',
+      source: 'daily_ca',
+    );
+  }
+  if (analyticsFeatureKey == 'daily_current_affairs_revise') {
+    return const SessionAnalyticsLabels(
+      featureName: 'daily_current_affairs_revise',
+      source: 'daily_ca',
+    );
+  }
   switch (subject) {
     case 'daily_war':
       return const SessionAnalyticsLabels(
         featureName: 'daily_war',
         source: 'daily_war',
+      );
+    case 'daily_ca':
+      return const SessionAnalyticsLabels(
+        featureName: 'daily_current_affairs',
+        source: 'daily_ca',
       );
     case 'revision':
     case 'revision_quick':

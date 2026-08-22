@@ -152,20 +152,17 @@ BAD headline: "India may import sugar. But why?"  (that belongs in the notificat
 
 Write continuous prose. Target approximately 80–150 words.
 
-Cover, in natural paragraphs — not labelled sections:
-
-1. What happened
-2. Why it matters
-3. Important context
+In natural paragraphs (never labelled or numbered beats), cover the development, why it matters, and the needed context.
 
 Do not write a newspaper article.
 Do not simply copy the source.
 
-NEVER start the summary with English scaffolding such as:
-- "What happened"
-- "What happened:"
+NEVER use section labels, markdown headings, or workbook prompts such as:
+- "What happened" / "What happened:"
 - "UPSC relevance:"
 - "Topics to learn:"
+- "Why it matters:"
+- Hindi calques of those labels ("क्या हुआ", "क्या हुआ:", "UPSC प्रासंगिकता")
 
 NEVER use a template that a translator would turn into "Kya hua".
 The briefing should read as original editorial writing, not as filled-in blanks.

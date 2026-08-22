@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:developer' as developer;
 
 import 'package:flutter/material.dart';
@@ -5,6 +6,8 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 
+import '../../../core/analytics/analytics.dart';
+import '../../../core/analytics/analytics_events.dart';
 import '../../../core/constants/question_source_constants.dart';
 import '../../../core/domain/entities/session_config.dart';
 import '../../../core/providers/catalog_providers.dart';
@@ -36,7 +39,7 @@ Future<void> openDailyCaTest({
     }
 
     final analyticsKey = isRevise
-        ? '${QuestionSourceConstants.analyticsDailyCurrentAffairs}_revise'
+        ? QuestionSourceConstants.analyticsDailyCurrentAffairsRevise
         : QuestionSourceConstants.analyticsDailyCurrentAffairs;
 
     if (isRevise) {
@@ -53,6 +56,12 @@ Future<void> openDailyCaTest({
           language: lang,
           specificQuestionUuids: uuids,
           analyticsFeatureKey: analyticsKey,
+        ),
+      );
+      unawaited(
+        Analytics.track(
+          ref,
+          DailyCaAttemptedEvent(dateId: isoDate, mode: 'revise'),
         ),
       );
       if (!context.mounted) return;
@@ -81,6 +90,12 @@ Future<void> openDailyCaTest({
         startButtonLabel: 'Start test',
         analyticsFeatureKey: analyticsKey,
         onSessionCreated: (sessionId) async {
+          unawaited(
+            Analytics.track(
+              ref,
+              DailyCaAttemptedEvent(dateId: isoDate, mode: 'first'),
+            ),
+          );
           await context.push('/test/$sessionId');
           if (!context.mounted) return;
           ref.invalidate(dailyCaDayCompletedProvider(isoDate));

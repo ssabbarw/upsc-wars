@@ -222,6 +222,20 @@ class FomoPulseCloudService {
     );
   }
 
+  Future<void> deletePulse(String pulseId) async {
+    final id = pulseId.trim();
+    if (id.isEmpty) {
+      throw ArgumentError('pulse_id required.');
+    }
+    try {
+      final callable = _functions.httpsCallable('deleteFomoPulse');
+      await callable.call<Map<String, dynamic>>({'pulse_id': id});
+    } catch (e, st) {
+      logCallableError('deleteFomoPulse', e, st);
+      rethrow;
+    }
+  }
+
   Future<FomoPulseSubmitResult> submitAttempt({
     required String pulseId,
     required String selectedOption,
@@ -290,6 +304,10 @@ class FomoPulseRepository {
     return (pulse: pulse, attempt: cached.attempts[pulseId]);
   }
 
+  Future<void> removePulseFromCache(String pulseId) {
+    return _cache.removePulse(pulseId);
+  }
+
   /// Set [updateCommunityCounts] to false for an optimistic write made before
   /// the server round trip — the counters on [result] are locally guessed and
   /// would overwrite the real ones.
@@ -328,7 +346,9 @@ class FomoPulseRepository {
   Future<FomoPulse?> fetchPulse(String pulseId) async {
     final doc = await _firestore.collection(_pulses).doc(pulseId).get();
     if (!doc.exists) return null;
-    return FomoPulse.fromFirestore(doc.id, doc.data()!);
+    final data = doc.data()!;
+    if (data['status'] != 'sent') return null;
+    return FomoPulse.fromFirestore(doc.id, data);
   }
 
   /// One read for all attempt statuses (cost-efficient history).

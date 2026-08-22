@@ -41,15 +41,16 @@ It is NOT a teaser, NOT a question, and NOT a reworded notification_title.
 
 GOOD headline: "India weighing sugar imports amid ethanol blending push"
 
-`news_summary` is a 80–150 word prose briefing covering what happened, why it matters, and important context.
+`news_summary` is a 80–150 word prose briefing covering the development, why it matters, and important context.
 
-Write continuous editorial prose.
+Write continuous editorial prose. Do not number the beats.
 
 NEVER start with or include labelled scaffolding such as:
 - "What happened"
 - "What happened:"
 - "UPSC relevance:"
 - "Topics to learn:"
+- "क्या हुआ" / "क्या हुआ:"
 
 That English template produces Hindi like "Kya hua" and feels like a filled-in form.
 The briefing should read as original writing.

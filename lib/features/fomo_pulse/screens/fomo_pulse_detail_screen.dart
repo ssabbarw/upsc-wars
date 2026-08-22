@@ -36,6 +36,16 @@ class FomoPulseDetailScreen extends HookConsumerWidget {
     // so back should land on home rather than close the app.
     final canPop = context.canPop();
 
+    useEffect(() {
+      unawaited(
+        Analytics.track(
+          ref,
+          CaShotOpenedEvent(pulseId: pulseId, source: entrySource),
+        ),
+      );
+      return null;
+    }, [pulseId, entrySource]);
+
     return PopScope(
       canPop: canPop,
       onPopInvokedWithResult: (didPop, _) {

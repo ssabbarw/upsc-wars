@@ -14,6 +14,7 @@ const path = require("path");
 const tls = require("tls");
 
 const llmAdmin = require("../llm_admin");
+const { parseJsonFromText } = require("../parse_llm_json");
 const IST_OFFSET_MS = (5 * 60 + 30) * 60 * 1000;
 const DRAFTS = "daily_ca_drafts";
 const LIVE = "daily_mcqs";
@@ -134,21 +135,6 @@ function enFingerprint(q) {
     upsc_trap_explanation: en.upsc_trap_explanation || "",
     statement_analysis: en.statement_analysis || null,
   });
-}
-
-function parseJsonFromText(text) {
-  const raw = String(text || "").trim();
-  const fence = raw.indexOf("```");
-  let payload = raw;
-  if (fence !== -1) {
-    let after = raw.slice(fence + 3);
-    if (after.startsWith("json")) after = after.slice(4);
-    const end = after.indexOf("```");
-    payload = (end === -1 ? after : after.slice(0, end)).trim();
-  }
-  const start = payload.search(/[\[{]/);
-  if (start < 0) throw new Error("No JSON in model output");
-  return JSON.parse(payload.slice(start));
 }
 
 function loadTranslatePrompt() {

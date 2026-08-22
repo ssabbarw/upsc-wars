@@ -11,6 +11,7 @@ import 'package:upsc_wars/core/analytics/analytics_events.dart';
 import 'package:upsc_wars/core/analytics/analytics_service.dart';
 import 'package:upsc_wars/core/analytics/question_attempt_analytics_input.dart';
 import 'package:upsc_wars/core/analytics/session_analytics_derive.dart';
+import 'package:upsc_wars/core/constants/question_source_constants.dart';
 import 'package:upsc_wars/core/database/user_db.dart';
 import 'package:upsc_wars/features/history/data/repositories/session_history_repository_impl.dart';
 import 'package:upsc_wars/features/home/domain/create_get_started_session_use_case.dart';
@@ -542,6 +543,24 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
           pureCorrect: r.confidencePureCorrect,
         ),
       );
+      final caKey = r.analyticsFeatureKey;
+      final dateId = r.topic ?? sessionMeta?.topic;
+      if (dateId != null &&
+          dateId.isNotEmpty &&
+          (caKey == QuestionSourceConstants.analyticsDailyCurrentAffairs ||
+              caKey ==
+                  QuestionSourceConstants.analyticsDailyCurrentAffairsRevise)) {
+        await _analytics.track(
+          DailyCaSubmittedEvent(
+            dateId: dateId,
+            mode: caKey ==
+                    QuestionSourceConstants.analyticsDailyCurrentAffairsRevise
+                ? 'revise'
+                : 'first',
+            score: r.accuracy,
+          ),
+        );
+      }
     } catch (e, st) {
       developer.log(
         'UspSessionResultSnapshot skipped: $e',

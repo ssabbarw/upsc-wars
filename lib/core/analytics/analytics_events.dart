@@ -8,7 +8,8 @@
 //   time, user paths** — use **Google Analytics 4** Active users + (optional)
 //   **BigQuery** export; `first_open` and engagement are often automatic.
 //   Custom app opens: [AppOpenedEvent] (`app_opened`). Daily War attempters:
-//   [DailyWarAttemptedEvent] (`daily_war_attempted`).
+//   [DailyWarAttemptedEvent] (`daily_war_attempted`). Daily CA attempters:
+//   [DailyCaAttemptedEvent] (`daily_ca_attempted`).
 // * **Play Store install conversion, organic vs paid source, CPI, campaign
 //   UTM** — use **Play Console** + **Google Play Install Referrer** (or
 //   Campaign URL on first launch) when you run ads; this codebase does not
@@ -883,11 +884,70 @@ final class DailyWarSubmittedEvent extends AnalyticsEvent {
   final double score;
 }
 
+// ── Daily Current Affairs Test ───────────────────────────────────────────────
+
+/// **User started a Daily Current Affairs paper** (first attempt or revise).
+///
+/// Use unique users on this event (filter `mode=first`) for “how many are
+/// taking the Daily CA test”. App-wide users remain [AppOpenedEvent] / GA4
+/// Active users.
+///
+/// **GA4:** `daily_ca_attempted` with `date_id`, `mode` (`first`|`revise`).
+/// Also sets user property `daily_ca_player` = `yes`.
+final class DailyCaAttemptedEvent extends AnalyticsEvent {
+  const DailyCaAttemptedEvent({
+    required this.dateId,
+    required this.mode,
+  });
+
+  final String dateId;
+
+  /// `first` or `revise`.
+  final String mode;
+}
+
+/// **A Daily Current Affairs session was submitted** (completed, not abandoned).
+///
+/// Pair with [DailyCaAttemptedEvent] for start → submit conversion.
+///
+/// **GA4:** `daily_ca_submitted` with `date_id`, `mode` (`first`|`revise`),
+/// `score_hundredths` (accuracy × 100, int).
+final class DailyCaSubmittedEvent extends AnalyticsEvent {
+  const DailyCaSubmittedEvent({
+    required this.dateId,
+    required this.mode,
+    required this.score,
+  });
+
+  final String dateId;
+  final String mode;
+
+  /// Accuracy in 0–1 (sink stores × 100).
+  final double score;
+}
+
 // ── CA Shots (FOMO Pulse) ────────────────────────────────────────────────────
+
+/// **User opened the CA Shots list** (`/fomo-pulse` history hub).
+///
+/// Organic funnel step 0. Pair unique users with [CaShotOpenedEvent] /
+/// [CaShotSummaryViewedEvent] / [CaShotAttemptedEvent] filtered to
+/// `source=history`.
+///
+/// **GA4:** `ca_shot_hub_opened` with `shot_count`, `done_count`.
+final class CaShotHubOpenedEvent extends AnalyticsEvent {
+  const CaShotHubOpenedEvent({
+    required this.shotCount,
+    required this.doneCount,
+  });
+
+  final int shotCount;
+  final int doneCount;
+}
 
 /// **User tapped a CA Shot push notification.**
 ///
-/// Funnel step 1. Pair unique users with [CaShotSummaryViewedEvent],
+/// Push funnel step 1. Pair unique users with [CaShotSummaryViewedEvent],
 /// [CaShotMcqOpenedEvent], and [CaShotAttemptedEvent].
 ///
 /// **GA4:** `ca_shot_notif_opened` with `pulse_id`, `channel` (`fcm`|`local`).
@@ -899,6 +959,23 @@ final class CaShotNotifOpenedEvent extends AnalyticsEvent {
 
   final String pulseId;
   final String channel;
+}
+
+/// **User opened a CA Shot detail screen** (before the briefing necessarily
+/// loaded). [source] is `push` | `history` | `share` | `in_app`.
+///
+/// In-app / hub funnel step 1. Filter `source=history` for opens from the
+/// CA Shots list. Pair with [CaShotSummaryViewedEvent] for open → read.
+///
+/// **GA4:** `ca_shot_opened` with `pulse_id`, `source`.
+final class CaShotOpenedEvent extends AnalyticsEvent {
+  const CaShotOpenedEvent({
+    required this.pulseId,
+    required this.source,
+  });
+
+  final String pulseId;
+  final String source;
 }
 
 /// **CA Shot news summary was shown** (News tab on the detail screen).
@@ -938,7 +1015,8 @@ final class CaShotMcqOpenedEvent extends AnalyticsEvent {
 /// **User submitted an answer on a CA Shot MCQ** (first attempt this visit).
 ///
 /// Funnel step 4. Use unique users vs [CaShotSummaryViewedEvent] for
-/// open → attempt conversion; vs [CaShotNotifOpenedEvent] for push → attempt.
+/// open → attempt conversion; vs [CaShotNotifOpenedEvent] for push → attempt;
+/// vs [CaShotOpenedEvent] with `source=history` for CA Shots list → attempt.
 ///
 /// **GA4:** `ca_shot_attempted` with `pulse_id`, `source`, `correct` (0/1).
 final class CaShotAttemptedEvent extends AnalyticsEvent {

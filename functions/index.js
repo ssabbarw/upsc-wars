@@ -779,6 +779,7 @@ exports.previewFomoPulseArticle = fomoPulse.previewFomoPulseArticle;
 exports.generateFomoPulseDraft = fomoPulse.generateFomoPulseDraft;
 exports.translateFomoPulseDraft = fomoPulse.translateFomoPulseDraft;
 exports.sendFomoPulseNotification = fomoPulse.sendFomoPulseNotification;
+exports.deleteFomoPulse = fomoPulse.deleteFomoPulse;
 exports.submitFomoPulseAttempt = fomoPulse.submitFomoPulseAttempt;
 
 const llmAdmin = require("./llm_admin");

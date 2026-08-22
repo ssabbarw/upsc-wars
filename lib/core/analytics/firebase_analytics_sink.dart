@@ -54,7 +54,12 @@ import 'analytics_sink.dart';
 /// * `daily_war_attempted` — `date_id`, `mode`, `is_grand`; sets user
 ///   property `daily_war_player` = `yes`
 /// * `daily_war_submitted` — `date_id`, `mode`, `is_grand`, `score_hundredths`
+/// * `daily_ca_attempted` — `date_id`, `mode`; sets user property
+///   `daily_ca_player` = `yes`
+/// * `daily_ca_submitted` — `date_id`, `mode`, `score_hundredths`
+/// * `ca_shot_hub_opened` — `shot_count`, `done_count`
 /// * `ca_shot_notif_opened` — `pulse_id`, `channel`
+/// * `ca_shot_opened` — `pulse_id`, `source`
 /// * `ca_shot_summary_viewed` — `pulse_id`, `source`
 /// * `ca_shot_mcq_opened` — `pulse_id`, `source`, `already_attempted`
 /// * `ca_shot_attempted` — `pulse_id`, `source`, `correct`
@@ -62,8 +67,9 @@ import 'analytics_sink.dart';
 /// * `activation_journey_todo_tapped` — `todo_index`
 /// * `activation_journey_snoozed` — no parameters
 ///
-/// **App users vs Daily War attempters:** count unique users on `app_opened`
-/// (or GA4 Active users) vs unique users on `daily_war_attempted`.
+/// **App users vs Daily War / Daily CA attempters:** count unique users on
+/// `app_opened` (or GA4 Active users) vs unique users on `daily_war_attempted`
+/// / `daily_ca_attempted` (`mode=first` for first-time papers).
 ///
 /// All events also send `user_id` when the user is signed in to Firebase Auth.
 class FirebaseAnalyticsSink implements AnalyticsSink {
@@ -472,10 +478,35 @@ class FirebaseAnalyticsSink implements AnalyticsSink {
           'is_grand': isGrand ? 1 : 0,
           'score_hundredths': (score * 100).round(),
         });
+      case DailyCaAttemptedEvent(:final dateId, :final mode):
+        await _analytics.setUserProperty(
+          name: 'daily_ca_player',
+          value: 'yes',
+        );
+        await _log('daily_ca_attempted', {
+          'date_id': dateId,
+          'mode': mode,
+        });
+      case DailyCaSubmittedEvent(:final dateId, :final mode, :final score):
+        await _log('daily_ca_submitted', {
+          'date_id': dateId,
+          'mode': mode,
+          'score_hundredths': (score * 100).round(),
+        });
+      case CaShotHubOpenedEvent(:final shotCount, :final doneCount):
+        await _log('ca_shot_hub_opened', {
+          'shot_count': shotCount,
+          'done_count': doneCount,
+        });
       case CaShotNotifOpenedEvent(:final pulseId, :final channel):
         await _log('ca_shot_notif_opened', {
           'pulse_id': pulseId,
           'channel': channel,
+        });
+      case CaShotOpenedEvent(:final pulseId, :final source):
+        await _log('ca_shot_opened', {
+          'pulse_id': pulseId,
+          'source': source,
         });
       case CaShotSummaryViewedEvent(:final pulseId, :final source):
         await _log('ca_shot_summary_viewed', {

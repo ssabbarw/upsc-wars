@@ -6,12 +6,16 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 
+import '../../../core/analytics/analytics.dart';
+import '../../../core/analytics/analytics_events.dart';
 import '../../../core/providers/app_language_helpers.dart';
+import '../../../core/providers/super_user_provider.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/widgets/en_hi_language_toggle.dart';
+import '../data/fomo_pulse_cloud_service.dart';
 import '../domain/fomo_pulse_models.dart';
 import '../fomo_pulse_constants.dart';
 import '../providers/fomo_pulse_providers.dart';
@@ -27,6 +31,26 @@ class FomoPulseHistoryScreen extends HookConsumerWidget {
     final langOverride = useState<String?>(null);
     final uiLang = normalizeAppLanguage(langOverride.value ?? prefsLang);
     final preferHindi = uiLang == 'hi';
+    final loggedHubOpen = useRef(false);
+    final isAdmin = ref.watch(isSuperUserProvider);
+    final hiddenIds = useState<Set<String>>(const {});
+
+    useEffect(() {
+      if (loggedHubOpen.value || async.isLoading) return null;
+      loggedHubOpen.value = true;
+      final data = async.asData?.value;
+      unawaited(
+        Analytics.track(
+          ref,
+          CaShotHubOpenedEvent(
+            shotCount: data?.pulses.length ?? 0,
+            doneCount:
+                data?.attempts.values.where((a) => a.attempted).length ?? 0,
+          ),
+        ),
+      );
+      return null;
+    }, [async]);
 
     return Scaffold(
       appBar: AppBar(
@@ -58,7 +82,11 @@ class FomoPulseHistoryScreen extends HookConsumerWidget {
         loading: () => const Center(child: CircularProgressIndicator()),
         error: (e, _) => Center(child: Text('$e')),
         data: (data) {
-          if (data.pulses.isEmpty) {
+          final pulses = [
+            for (final p in data.pulses)
+              if (!hiddenIds.value.contains(p.pulseId)) p,
+          ];
+          if (pulses.isEmpty) {
             return Center(
               child: Padding(
                 padding: const EdgeInsets.all(AppSpacing.lg),
@@ -72,9 +100,10 @@ class FomoPulseHistoryScreen extends HookConsumerWidget {
               ),
             );
           }
-          final sections = _groupByDate(data.pulses);
+          final sections = _groupByDate(pulses);
           return RefreshIndicator(
             onRefresh: () async {
+              hiddenIds.value = const {};
               await ref
                   .read(fomoPulseRepositoryProvider)
                   .loadHistory(forceRefresh: true);
@@ -104,16 +133,16 @@ class FomoPulseHistoryScreen extends HookConsumerWidget {
                       ),
                       const SizedBox(height: AppSpacing.sm),
                       for (var i = 0; i < section.pulses.length; i++) ...[
-                        _PulseHistoryTile(
+                        _historyTile(
+                          context: context,
+                          ref: ref,
                           pulse: section.pulses[i],
                           attempt: data.attempts[section.pulses[i].pulseId],
                           preferHindi: preferHindi,
-                          onTap: () => context.push(
-                            FomoPulseConstants.detailLocation(
-                              section.pulses[i].pulseId,
-                              source: FomoPulseConstants.entryHistory,
-                            ),
-                          ),
+                          isAdmin: isAdmin,
+                          onDeleted: (pulseId) {
+                            hiddenIds.value = {...hiddenIds.value, pulseId};
+                          },
                         ),
                         if (i != section.pulses.length - 1)
                           const SizedBox(height: AppSpacing.sm),
@@ -127,6 +156,112 @@ class FomoPulseHistoryScreen extends HookConsumerWidget {
         },
       ),
     );
+  }
+}
+
+Widget _historyTile({
+  required BuildContext context,
+  required WidgetRef ref,
+  required FomoPulse pulse,
+  required FomoPulseAttemptState? attempt,
+  required bool preferHindi,
+  required bool isAdmin,
+  required ValueChanged<String> onDeleted,
+}) {
+  final tile = _PulseHistoryTile(
+    pulse: pulse,
+    attempt: attempt,
+    preferHindi: preferHindi,
+    onTap: () => context.push(
+      FomoPulseConstants.detailLocation(
+        pulse.pulseId,
+        source: FomoPulseConstants.entryHistory,
+      ),
+    ),
+  );
+  if (!isAdmin) return tile;
+
+  final scheme = Theme.of(context).colorScheme;
+  return Dismissible(
+    key: ValueKey(pulse.pulseId),
+    direction: DismissDirection.horizontal,
+    background: _deleteSwipeBackground(scheme, Alignment.centerLeft),
+    secondaryBackground: _deleteSwipeBackground(scheme, Alignment.centerRight),
+    confirmDismiss: (_) => _confirmDeletePulse(context, ref, pulse),
+    onDismissed: (_) {
+      onDeleted(pulse.pulseId);
+      ref.invalidate(fomoPulseDetailProvider(pulse.pulseId));
+      if (!context.mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('CA Shot deleted for everyone.')),
+      );
+    },
+    child: tile,
+  );
+}
+
+Widget _deleteSwipeBackground(ColorScheme scheme, Alignment alignment) {
+  return Container(
+    alignment: alignment,
+    padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
+    decoration: BoxDecoration(
+      color: scheme.error,
+      borderRadius: BorderRadius.circular(AppRadius.lg),
+    ),
+    child: Icon(Icons.delete_outline, color: scheme.onError),
+  );
+}
+
+Future<bool> _confirmDeletePulse(
+  BuildContext context,
+  WidgetRef ref,
+  FomoPulse pulse,
+) async {
+  final ok = await showDialog<bool>(
+    context: context,
+    builder: (ctx) {
+      final error = Theme.of(ctx).colorScheme.error;
+      final onError = Theme.of(ctx).colorScheme.onError;
+      return AlertDialog(
+        title: const Text('Delete CA Shot?'),
+        content: const Text(
+          'This removes it for everyone. It will disappear from CA Shots and new attempts will be blocked.',
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, false),
+            child: const Text('Cancel'),
+          ),
+          FilledButton(
+            style: FilledButton.styleFrom(
+              backgroundColor: error,
+              foregroundColor: onError,
+            ),
+            onPressed: () => Navigator.pop(ctx, true),
+            child: const Text('Delete for everyone'),
+          ),
+        ],
+      );
+    },
+  );
+  if (ok != true) return false;
+  try {
+    await ref.read(fomoPulseCloudServiceProvider).deletePulse(pulse.pulseId);
+    await ref
+        .read(fomoPulseRepositoryProvider)
+        .removePulseFromCache(pulse.pulseId);
+    return true;
+  } catch (e) {
+    if (context.mounted) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            'Could not delete: ${FomoPulseCloudService.describeCallableError(e)}',
+          ),
+        ),
+      );
+    }
+    return false;
   }
 }
 
