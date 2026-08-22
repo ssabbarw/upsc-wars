@@ -11,6 +11,7 @@ import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/widgets/dismissible_modal_sheet.dart';
 import '../domain/trap_example.dart';
 import '../providers/trap_example_provider.dart';
+import 'trap_pattern_visual.dart';
 
 Future<void> showTrapExampleSheet({
   required BuildContext context,
@@ -105,8 +106,16 @@ class TrapExampleSheet extends HookConsumerWidget {
                       letterSpacing: 0.8,
                     ),
                   ),
-                  const SizedBox(height: AppSpacing.xs),
-                  Text(displayName, style: AppTextStyles.h2()),
+                  const SizedBox(height: AppSpacing.sm),
+                  Row(
+                    children: [
+                      TrapPatternIconWell(trapType: trapType),
+                      const SizedBox(width: AppSpacing.md),
+                      Expanded(
+                        child: Text(displayName, style: AppTextStyles.h2()),
+                      ),
+                    ],
+                  ),
                   if (blurb.isNotEmpty) ...[
                     const SizedBox(height: AppSpacing.xs),
                     Text(

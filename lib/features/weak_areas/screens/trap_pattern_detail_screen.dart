@@ -14,6 +14,7 @@ import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../widgets/trap_example_sheet.dart';
+import '../widgets/trap_pattern_visual.dart';
 
 class TrapPatternDetailScreen extends HookConsumerWidget {
   const TrapPatternDetailScreen({super.key, required this.trapType});
@@ -267,6 +268,12 @@ class TrapPatternDetailScreen extends HookConsumerWidget {
                     context.canPop() ? context.pop() : context.go('/weak-areas/traps'),
                 icon: const Icon(Icons.chevron_left),
               ),
+              TrapPatternIconWell(
+                trapType: Uri.decodeComponent(trapType),
+                size: 32,
+                iconSize: 18,
+              ),
+              const SizedBox(width: AppSpacing.sm),
               Expanded(
                 child: Text(
                   title,

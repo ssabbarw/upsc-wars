@@ -742,6 +742,7 @@ class _TrapPatternsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Material(
       color: AppColors.transparent,
       child: InkWell(
@@ -756,6 +757,27 @@ class _TrapPatternsCard extends StatelessWidget {
           ),
           child: Row(
             children: [
+              Container(
+                width: 40,
+                height: 40,
+                decoration: BoxDecoration(
+                  color: AppColors.warning.withValues(
+                    alpha: isDark ? 0.22 : 0.12,
+                  ),
+                  borderRadius: BorderRadius.circular(AppRadius.md),
+                  border: Border.all(
+                    color: AppColors.warning.withValues(alpha: 0.35),
+                    width: 0.5,
+                  ),
+                ),
+                alignment: Alignment.center,
+                child: const Icon(
+                  Icons.psychology_alt_rounded,
+                  size: 22,
+                  color: AppColors.warning,
+                ),
+              ),
+              const SizedBox(width: AppSpacing.md),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,

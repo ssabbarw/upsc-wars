@@ -34,7 +34,8 @@ void main() {
 
     expect(find.text('Entity Swap'), findsOneWidget);
     expect(find.text('Right fact, wrong person.'), findsOneWidget);
-    expect(find.text('Caught you 0×'), findsOneWidget);
+    expect(find.text('0×'), findsOneWidget);
+    expect(find.byIcon(Icons.switch_account_rounded), findsOneWidget);
 
     await tester.tap(find.text('See example'));
     await tester.pump();
