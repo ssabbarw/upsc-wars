@@ -343,30 +343,8 @@ class _SignedInProfileBody extends HookConsumerWidget {
           ),
         ),
         const Padding(
-          padding: EdgeInsets.only(bottom: 8),
+          padding: EdgeInsets.only(bottom: 20),
           child: _ProfileFooter(),
-        ),
-        SafeArea(
-          top: false,
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
-            child: SizedBox(
-              width: double.infinity,
-              child: OutlinedButton.icon(
-                onPressed: isBusy
-                    ? null
-                    : () async {
-                        final shouldLogout = await _confirmProfileLogout(
-                          context,
-                        );
-                        if (!shouldLogout) return;
-                        ref.read(authActionsProvider.notifier).signOut();
-                      },
-                icon: const Icon(Icons.logout_rounded),
-                label: Text(isBusy ? 'Logging out...' : 'Log out'),
-              ),
-            ),
-          ),
         ),
       ],
     );

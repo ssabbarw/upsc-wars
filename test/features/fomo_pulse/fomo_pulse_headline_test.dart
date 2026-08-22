@@ -2,19 +2,15 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:upsc_wars/features/fomo_pulse/domain/fomo_pulse_models.dart';
 
 FomoPulse _pulse({
-  String title = 'India may import sugar. But why?',
-  String body = 'Ethanol blending is squeezing domestic supply.',
-  String headline = 'India weighing sugar imports amid ethanol blending push',
-  String headlineHi = 'एथेनॉल मिश्रण के बीच भारत गन्ना चीनी आयात पर विचार कर रहा है',
-  String newsSummary =
-      'The government is considering sugar imports after ethanol blending tightened domestic availability.',
-  String newsSummaryHi =
-      'एथेनॉल मिश्रण ने घरेलू आपूर्ति को तंग किया है, इसलिए सरकार चीनी आयात पर विचार कर रही है।',
+  String headline = "India's 1st Train Wasn't Mumbai–Thane?",
+  String headlineHi = 'क्या भारत की पहली ट्रेन मुंबई–थाने नहीं थी?',
+  String newsSummary = 'Madras Day reveals a forgotten 1830s railway.',
+  String newsSummaryHi = 'मद्रास डे एक भुलाई गई 1830 की रेल याद दिलाता है।',
 }) {
   return FomoPulse(
     pulseId: 'p1',
-    title: title,
-    body: body,
+    title: 'Push title',
+    body: 'Push body',
     headline: headline,
     headlineHi: headlineHi,
     newsSummary: newsSummary,
@@ -29,42 +25,65 @@ FomoPulse _pulse({
 }
 
 void main() {
-  group('FomoPulse headlines', () {
-    test('in-app heading is the serious headline, not the push title', () {
+  group('FomoPulse copy', () {
+    test('list and detail use headline + news_summary per language', () {
       final pulse = _pulse();
       expect(
-        pulse.displayHeadline(preferHindi: false),
-        'India weighing sugar imports amid ethanol blending push',
+        pulse.listTitle(preferHindi: false),
+        "India's 1st Train Wasn't Mumbai–Thane?",
       );
-      expect(pulse.title, isNot(pulse.displayHeadline(preferHindi: false)));
-    });
-
-    test('Hindi in-app heading uses headlineHi, not Kya hua summary', () {
-      final pulse = _pulse(
-        newsSummaryHi: 'क्या हुआ: सरकार चीनी आयात पर विचार कर रही है।',
+      expect(
+        pulse.listTitle(preferHindi: true),
+        'क्या भारत की पहली ट्रेन मुंबई–थाने नहीं थी?',
+      );
+      expect(
+        pulse.listBody(preferHindi: false),
+        'Madras Day reveals a forgotten 1830s railway.',
+      );
+      expect(
+        pulse.listBody(preferHindi: true),
+        'मद्रास डे एक भुलाई गई 1830 की रेल याद दिलाता है।',
       );
       expect(
         pulse.displayHeadline(preferHindi: true),
-        'एथेनॉल मिश्रण के बीच भारत गन्ना चीनी आयात पर विचार कर रहा है',
+        pulse.listTitle(preferHindi: true),
       );
-      expect(pulse.displayHeadline(preferHindi: true), isNot(contains('क्या हुआ')));
     });
 
-    test('legacy pulses without headline fall back to push title', () {
+    test('empty headline uses the push title, not the briefing', () {
       final pulse = _pulse(headline: '', headlineHi: '');
-      expect(
-        pulse.displayHeadline(preferHindi: false),
-        'India may import sugar. But why?',
-      );
-    });
-
-    test('list subtitle prefers briefing once a headline exists', () {
-      final pulse = _pulse();
+      expect(pulse.listTitle(preferHindi: false), 'Push title');
       expect(
         pulse.listBody(preferHindi: false),
-        contains('ethanol blending'),
+        'Madras Day reveals a forgotten 1830s railway.',
       );
-      expect(pulse.listBody(preferHindi: false), isNot(pulse.body));
+    });
+
+    test('Hindi falls back to English when hi fields are empty', () {
+      final pulse = _pulse(headlineHi: '', newsSummaryHi: '');
+      expect(
+        pulse.listTitle(preferHindi: true),
+        "India's 1st Train Wasn't Mumbai–Thane?",
+      );
+      expect(
+        pulse.listBody(preferHindi: true),
+        'Madras Day reveals a forgotten 1830s railway.',
+      );
+    });
+
+    test('list and detail drop a leading What happened label', () {
+      final pulse = _pulse(
+        newsSummary: 'What happened: Madras Day reveals a forgotten railway.',
+        newsSummaryHi: '**क्या हुआ:** मद्रास डे एक भुलाई गई रेल याद दिलाता है।',
+      );
+      expect(
+        pulse.listBody(preferHindi: false),
+        'Madras Day reveals a forgotten railway.',
+      );
+      expect(
+        pulse.listBody(preferHindi: true),
+        'मद्रास डे एक भुलाई गई रेल याद दिलाता है।',
+      );
     });
   });
 }

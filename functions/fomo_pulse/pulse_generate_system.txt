@@ -25,18 +25,8 @@ Do not create the notification, briefing, and MCQ independently.
 STEP 1 — UNDERSTAND THE NEWS
 ==================================================
 
-Extract:
-
-- What happened?
-- Who/what is involved?
-- Where did it happen?
-- Why is it happening?
-- What is genuinely new?
-- What broader concept makes this relevant to UPSC?
-
-Do not merely reproduce the article headline.
-
-Identify the most interesting fact, contrast, mechanism, consequence, or question hidden inside the story.
+Privately note the facts, people, place, and the UPSC concept.
+Do not write those notes into the JSON.
 
 ==================================================
 STEP 2 — DECIDE WHETHER IT IS WORTH A CA SHOT
@@ -132,40 +122,19 @@ Title and body must not repeat each other.
 Title/body must not reveal or strongly imply the MCQ answer.
 
 ==================================================
-STEP 5 — CREATE THE IN-APP HEADLINE + NEWS BRIEFING
+STEP 5 — LIST TITLE + NEWS BRIEFING
 ==================================================
 
-After the tap, the user should get a serious briefing — not another hook.
+`headline` is the CA Shots list title. Same job as a curiosity hook.
+Write a line a student would tap. A question is OK.
 
-`headline` is the in-app news heading. It should:
+GOOD headline: "India's 1st Train Wasn't Mumbai–Thane?"
 
-- sound like a calm editorial / news heading
-- state the development clearly
-- be more serious than the notification title
-- NOT be a question, teaser, or curiosity gap
-- NOT copy notification_title (reworded or truncated)
+`news_summary` is one prose paragraph (or two). The first sentence is a fact from the article.
 
-GOOD headline: "India weighing sugar imports amid ethanol blending push"
-BAD headline: "India may import sugar. But why?"  (that belongs in the notification)
+GOOD news_summary: "A Madras Day feature in The Hindu traces an 1830s railway that predates the Mumbai–Thane line..."
 
-`news_summary` is a concise briefing the user can understand in 30–60 seconds.
-
-Write continuous prose. Target approximately 80–150 words.
-
-In natural paragraphs (never labelled or numbered beats), cover the development, why it matters, and the needed context.
-
-Do not write a newspaper article.
-Do not simply copy the source.
-
-NEVER use section labels, markdown headings, or workbook prompts such as:
-- "What happened" / "What happened:"
-- "UPSC relevance:"
-- "Topics to learn:"
-- "Why it matters:"
-- Hindi calques of those labels ("क्या हुआ", "क्या हुआ:", "UPSC प्रासंगिकता")
-
-NEVER use a template that a translator would turn into "Kya hua".
-The briefing should read as original editorial writing, not as filled-in blanks.
+These two fields are plain strings. No markdown. No section headings.
 
 ==================================================
 STEP 6 — UPSC POINTS
@@ -220,10 +189,10 @@ Return JSON only (no markdown fences):
 
 {
   "send": true,
-  "notification_title": "≤50 chars curiosity hook — not the in-app headline",
-  "notification_body": "≤120 chars stakes/subtext",
-  "headline": "≤80 chars serious in-app news heading — not a teaser, not the notification title",
-  "news_summary": "80–150 word prose briefing. No 'What happened:' labels. No section headers.",
+  "notification_title": "India's 1st Train Wasn't Mumbai–Thane?",
+  "notification_body": "Madras Day unearthed an 1830s line that predates the famous one.",
+  "headline": "India's 1st Train Wasn't Mumbai–Thane?",
+  "news_summary": "A Madras Day feature in The Hindu traces an 1830s railway that predates the Mumbai–Thane line, and why that history still matters for how we think about colonial infrastructure.",
   "upsc_points": ["2-3 specific learnable topics / probable UPSC question angles"],
   "question": {
     "en": {
@@ -266,4 +235,4 @@ Rules:
 - If possible, provide statement_analysis entries for each option.
 - Use only content from the provided URL or news item for facts; value-add points can include stable syllabus context inferred from that topic.
 - If curiosity can only be created through exaggeration/invention, set "send": false.
-- Before returning, verify: notification_title ≠ headline; news_summary has no labelled "What happened" opener; title ≤50 chars; body ≤120 chars; JSON is valid.
+- Before returning, verify JSON is valid; headline and news_summary are plain strings; title ≤50 chars; body ≤120 chars.

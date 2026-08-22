@@ -7,6 +7,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../../../core/analytics/analytics.dart';
 import '../../../core/analytics/analytics_events.dart';
+import '../../../core/auth/auth_session.dart';
 import '../../../core/constants/prelims_countdown.dart';
 import '../../../core/constants/app_constants.dart';
 import '../../../core/providers/prefs_provider.dart';
@@ -16,6 +17,7 @@ import '../../../core/theme/app_text_styles.dart';
 import '../../../core/constants/creator_contact.dart';
 import '../../../core/providers/super_user_provider.dart';
 import '../../question_editor/widgets/question_editor_access.dart';
+import '../providers/auth_providers.dart';
 import '../../daily_ca/daily_ca_admin_constants.dart';
 import '../../daily_ca/data/daily_ca_firestore.dart';
 import '../../daily_ca/domain/daily_ca_generate_config.dart';
@@ -38,6 +40,9 @@ class SettingsScreen extends ConsumerWidget {
         DailyCaGenerateConfig.fromMap(null);
     final showQuestionEditor =
         canAccessQuestionEditor(isSuperUser: isSuperUser);
+    final isSignedIn = AuthSession.isAccountSignedIn(
+      ref.watch(authStateChangesProvider).asData?.value,
+    );
 
     return Scaffold(
       appBar: AppBar(
@@ -272,6 +277,15 @@ class SettingsScreen extends ConsumerWidget {
                 ],
               ),
             ],
+            if (isSignedIn) ...[
+              const SizedBox(height: AppSpacing.lg),
+              const _Section(
+                title: 'Account',
+                children: [
+                  _LogoutTile(),
+                ],
+              ),
+            ],
             const SizedBox(height: AppSpacing.xl),
             Center(
               child: Text(
@@ -487,6 +501,67 @@ class _NavTile extends StatelessWidget {
       ),
     );
   }
+}
+
+class _LogoutTile extends ConsumerWidget {
+  const _LogoutTile();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final scheme = Theme.of(context).colorScheme;
+    final isBusy = ref.watch(authActionsProvider).isLoading;
+
+    return ListTile(
+      onTap: isBusy
+          ? null
+          : () async {
+              await HapticFeedback.selectionClick();
+              final shouldLogout = await _confirmLogout(context);
+              if (!shouldLogout) return;
+              await ref.read(authActionsProvider.notifier).signOut();
+            },
+      leading: const _LeadingIcon(
+        icon: Icons.logout_rounded,
+        bg: Color(0xFFFFE8EC),
+        color: Color(0xFFC2103A),
+      ),
+      title: Text(
+        isBusy ? 'Logging out...' : 'Log out',
+        style: AppTextStyles.label(),
+      ),
+      subtitle: Text(
+        'Sign out of this device',
+        style: AppTextStyles.bodySm().copyWith(color: scheme.onSurfaceVariant),
+      ),
+      contentPadding: const EdgeInsets.symmetric(
+        horizontal: AppSpacing.lg,
+        vertical: 10,
+      ),
+    );
+  }
+}
+
+Future<bool> _confirmLogout(BuildContext context) async {
+  final result = await showDialog<bool>(
+    context: context,
+    builder: (dialogContext) {
+      return AlertDialog(
+        title: const Text('Log out?'),
+        content: const Text('Are you sure you want to log out?'),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(dialogContext).pop(false),
+            child: const Text('Cancel'),
+          ),
+          FilledButton(
+            onPressed: () => Navigator.of(dialogContext).pop(true),
+            child: const Text('Log out'),
+          ),
+        ],
+      );
+    },
+  );
+  return result ?? false;
 }
 
 class _ExternalLinkTile extends StatelessWidget {

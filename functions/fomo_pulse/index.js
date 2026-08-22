@@ -286,26 +286,6 @@ function normalizeSendFlag(raw, fallback = true) {
   return fallback;
 }
 
-const SUMMARY_LABEL =
-  "(?:what happened(?: was)?|upsc relevance|topics to learn|why it matters|" +
-  "क्या हुआ(?: था)?|न्यूज़|समाचार|upsc प्रासंगिकता|सीखने योग्य विषय)";
-const SUMMARY_LABEL_LINE_RE = new RegExp(
-  `(?:^|\\n+)\\s*(?:\\*{1,3}|_{1,3}|#{1,6}\\s+)*${SUMMARY_LABEL}\\s*:?\\s*(?:\\*{1,3}|_{1,3})?:?\\s*`,
-  "gi",
-);
-const SUMMARY_LABEL_INLINE_RE = new RegExp(
-  `(?:\\*{1,3}|_{1,3})?\\s*${SUMMARY_LABEL}\\s*:?\\s*(?:\\*{1,3}|_{1,3})?`,
-  "gi",
-);
-
-function stripSummaryLabels(text) {
-  let raw = String(text || "").trim();
-  if (!raw) return "";
-  raw = raw.replace(SUMMARY_LABEL_LINE_RE, "\n");
-  raw = raw.replace(SUMMARY_LABEL_INLINE_RE, "");
-  return raw.replace(/\n{3,}/g, "\n\n").trim();
-}
-
 function nestedObject(raw, key) {
   return raw && typeof raw === "object" && raw[key] && typeof raw[key] === "object"
     ? raw[key]
@@ -324,49 +304,29 @@ function pickCopyField(raw, keys) {
   return "";
 }
 
-function asProse(value) {
+function asText(value) {
   return typeof value === "string" ? value.trim() : "";
 }
 
-function formatNewsSummary(raw) {
-  if (!raw) return "";
-  if (typeof raw === "string") return stripSummaryLabels(raw);
-  if (typeof raw !== "object") return stripSummaryLabels(String(raw));
-  const shot = nestedObject(raw, "ca_shot");
-  const prose =
-    asProse(raw.news_summary) ||
-    asProse(shot.news_summary) ||
-    asProse(raw.briefing);
-  if (prose) return stripSummaryLabels(prose);
-  const nested =
-    raw.news_summary && typeof raw.news_summary === "object"
-      ? raw.news_summary
-      : shot.news_summary && typeof shot.news_summary === "object"
-        ? shot.news_summary
-        : raw;
-  const what = String(nested.what_happened || nested.what || "").trim();
-  const relevance = String(
-    nested.upsc_relevance ||
-      nested.why_upsc ||
-      shot.why_upsc ||
-      nested.relevance ||
-      "",
+/** Drop a leading "What happened:" / "क्या हुआ:" so the briefing starts with the news. */
+function cleanNewsSummary(text) {
+  return asText(text).replace(
+    /^\*{0,2}\s*(what happened|क्या हुआ)\s*:?\s*\*{0,2}\s*/i,
+    "",
   ).trim();
-  const context = String(nested.context || nested.why_it_matters || "").trim();
-  return [what, relevance, context]
-    .map((part) => stripSummaryLabels(part))
-    .filter(Boolean)
-    .join("\n\n");
+}
+
+function formatNewsSummary(raw) {
+  if (typeof raw === "string") return cleanNewsSummary(raw);
+  if (!raw || typeof raw !== "object") return "";
+  return cleanNewsSummary(
+    asText(raw.news_summary) || asText(nestedObject(raw, "ca_shot").news_summary),
+  );
 }
 
 function formatHeadline(raw, fallback = "") {
   const fromCopy = pickCopyField(raw, ["headline"]);
   if (fromCopy) return fromCopy;
-  if (raw && typeof raw === "object") {
-    const nested = nestedObject(raw, "news_summary");
-    const fromNested = String(nested.headline || "").trim();
-    if (fromNested) return fromNested;
-  }
   return String(fallback || "").trim();
 }
 
@@ -592,46 +552,12 @@ function hasQuestionHindi(question) {
   );
 }
 
-function hindiHeadlineFrom(raw, fallback = "") {
-  const text = stripSummaryLabels(raw);
-  if (text) return text;
-  return stripSummaryLabels(fallback);
-}
-
-function hindiNotificationField(hi, keys) {
-  if (!hi || typeof hi !== "object") return "";
-  for (const key of keys) {
-    const text = String(hi[key] || "").trim();
-    if (text) return text;
-  }
-  return "";
-}
-
-function hindiFieldsFrom(hi, extras = {}) {
-  return {
-    headline_hi: hindiHeadlineFrom(hi && hi.headline, extras.headline_hi),
-    news_summary_hi: stripSummaryLabels(
-      (hi && hi.news_summary) || extras.news_summary_hi || "",
-    ),
-    upsc_points_hi: normalizePoints(
-      (hi && hi.upsc_points) || extras.upsc_points_hi,
-    ),
-    title_hi: hindiNotificationField(hi, [
-      "notification_title",
-      "title",
-      "title_hi",
-    ]) || String(extras.title_hi || "").trim(),
-    body_hi: hindiNotificationField(hi, [
-      "notification_body",
-      "body",
-      "body_hi",
-    ]) || String(extras.body_hi || "").trim(),
-  };
+function textField(raw) {
+  return String(raw || "").trim();
 }
 
 /**
- * EN → HI for headline, news summary, UPSC points, push copy, and question text.
- * Reuses pulse_translate_system.txt (same as the admin Translate callable).
+ * EN → HI for headline, news_summary, upsc_points, and question text.
  */
 async function attachHindi({
   question,
@@ -642,44 +568,33 @@ async function attachHindi({
   newsSummaryHi = "",
   upscPointsHi = [],
   headlineHi = "",
-  notificationTitle = "",
-  notificationBody = "",
-  titleHi = "",
-  bodyHi = "",
   requestedModel,
   force = false,
 }) {
   const normalized = normalizeQuestion(question, sourceUrl);
-  const existingSummaryHi = stripSummaryLabels(newsSummaryHi);
+  const existingSummaryHi = cleanNewsSummary(newsSummaryHi);
   const existingPointsHi = normalizePoints(upscPointsHi);
-  const existingHeadlineHi = hindiHeadlineFrom(headlineHi);
-  const existingTitleHi = String(titleHi || "").trim();
-  const existingBodyHi = String(bodyHi || "").trim();
+  const existingHeadlineHi = textField(headlineHi);
   if (
     !force &&
     hasQuestionHindi(normalized) &&
     existingSummaryHi &&
-    existingTitleHi
+    existingHeadlineHi
   ) {
     return {
       question: normalized,
       headline_hi: existingHeadlineHi,
       news_summary_hi: existingSummaryHi,
       upsc_points_hi: existingPointsHi,
-      title_hi: existingTitleHi,
-      body_hi: existingBodyHi,
     };
   }
 
   const briefingPayload = {
-    headline: String(headline || "").trim(),
-    news_summary: String(newsSummary || "").trim(),
+    headline: textField(headline),
+    news_summary: cleanNewsSummary(newsSummary),
     upsc_points: normalizePoints(upscPoints),
-    notification_title: String(notificationTitle || "").trim(),
-    notification_body: String(notificationBody || "").trim(),
   };
 
-  // Harvest often already has question.hi from Daily CA — only rewrite briefing.
   if (!force && hasQuestionHindi(normalized) && !existingSummaryHi) {
     const summaryOnly = await anthropicJson(
       loadPrompt("pulse_translate_system.txt"),
@@ -688,40 +603,39 @@ async function attachHindi({
     );
     return {
       question: normalized,
-      ...hindiFieldsFrom(summaryOnly),
+      headline_hi: textField(summaryOnly.headline),
+      news_summary_hi: cleanNewsSummary(summaryOnly.news_summary),
+      upsc_points_hi: normalizePoints(summaryOnly.upsc_points),
     };
   }
 
-  const payload = {
-    ...(normalized.en || {}),
-    ...briefingPayload,
-  };
   const hi = await anthropicJson(
     loadPrompt("pulse_translate_system.txt"),
-    JSON.stringify(payload),
+    JSON.stringify({
+      ...(normalized.en || {}),
+      ...briefingPayload,
+    }),
     requestedModel,
   );
   normalized.hi = {
-    display_text: String(hi.display_text || "").trim(),
-    option_a: String(hi.option_a || "").trim(),
-    option_b: String(hi.option_b || "").trim(),
-    option_c: String(hi.option_c || "").trim(),
-    option_d: String(hi.option_d || "").trim(),
-    strong_distractor: String(hi.strong_distractor || "").trim(),
+    display_text: textField(hi.display_text),
+    option_a: textField(hi.option_a),
+    option_b: textField(hi.option_b),
+    option_c: textField(hi.option_c),
+    option_d: textField(hi.option_d),
+    strong_distractor: textField(hi.strong_distractor),
     elimination_logic: normalizeStringArray(hi.elimination_logic, 6),
-    upsc_trap_explanation: String(hi.upsc_trap_explanation || "").trim(),
+    upsc_trap_explanation: textField(hi.upsc_trap_explanation),
     statement_analysis: normalizeStatementAnalysis(hi.statement_analysis),
-    final_explanation: String(hi.final_explanation || "").trim(),
+    final_explanation: textField(hi.final_explanation),
   };
   return {
     question: normalized,
-    ...hindiFieldsFrom(hi, {
-      headline_hi: existingHeadlineHi,
-      news_summary_hi: existingSummaryHi,
-      upsc_points_hi: existingPointsHi,
-      title_hi: existingTitleHi,
-      body_hi: existingBodyHi,
-    }),
+    headline_hi: textField(hi.headline) || existingHeadlineHi,
+    news_summary_hi: cleanNewsSummary(hi.news_summary) || existingSummaryHi,
+    upsc_points_hi: normalizePoints(hi.upsc_points).length
+      ? normalizePoints(hi.upsc_points)
+      : existingPointsHi,
   };
 }
 
@@ -867,14 +781,14 @@ exports.generateFomoPulseDraft = onCall(generateOpts, async (request) => {
       formatNewsSummary(hooks) ||
       formatNewsSummary(meta.news_summary) ||
       String(meta.news_summary || "").trim();
-    const headline = formatHeadline(hooks);
-    const question = normalizeQuestion(q, sourceUrl);
     const notificationTitle = shouldSend
       ? formatNotificationTitle(hooks).slice(0, MAX_TITLE)
       : "";
     const notificationBody = shouldSend
       ? formatNotificationBody(hooks).slice(0, MAX_BODY)
       : "";
+    const headline = formatHeadline(hooks) || notificationTitle;
+    const question = normalizeQuestion(q, sourceUrl);
     // Harvest may already have question.hi from Daily CA; still need summary HI.
     const hindi = await attachHindi({
       question,
@@ -882,8 +796,6 @@ exports.generateFomoPulseDraft = onCall(generateOpts, async (request) => {
       newsSummary,
       upscPoints: points,
       sourceUrl,
-      notificationTitle,
-      notificationBody,
       requestedModel,
     });
     return {
@@ -892,8 +804,6 @@ exports.generateFomoPulseDraft = onCall(generateOpts, async (request) => {
         send: shouldSend,
         notification_title: notificationTitle,
         notification_body: notificationBody,
-        notification_title_hi: hindi.title_hi,
-        notification_body_hi: hindi.body_hi,
         headline,
         headline_hi: hindi.headline_hi,
         news_summary: newsSummary,
@@ -964,7 +874,6 @@ exports.generateFomoPulseDraft = onCall(generateOpts, async (request) => {
         formatNewsSummary(generated.news_summary) ||
         formatNewsSummary(generated) ||
         String(generated.news_summary || "").trim();
-      const headline = formatHeadline(generated);
       const generatedPoints = formatLearnableTopics(generated);
       const upscPoints =
         generatedPoints.length > 0
@@ -977,14 +886,13 @@ exports.generateFomoPulseDraft = onCall(generateOpts, async (request) => {
       const notificationBody = shouldSend
         ? formatNotificationBody(generated).slice(0, MAX_BODY)
         : "";
+      const headline = formatHeadline(generated) || notificationTitle;
       const hindi = await attachHindi({
         question,
         headline,
         newsSummary,
         upscPoints,
         sourceUrl: url,
-        notificationTitle,
-        notificationBody,
         requestedModel,
       });
       return {
@@ -993,8 +901,6 @@ exports.generateFomoPulseDraft = onCall(generateOpts, async (request) => {
           send: shouldSend,
           notification_title: notificationTitle,
           notification_body: notificationBody,
-          notification_title_hi: hindi.title_hi,
-          notification_body_hi: hindi.body_hi,
           headline,
           headline_hi: hindi.headline_hi,
           news_summary: newsSummary,
@@ -1035,8 +941,6 @@ exports.translateFomoPulseDraft = onCall(generateOpts, async (request) => {
     newsSummary: data.news_summary,
     upscPoints: data.upsc_points,
     sourceUrl: data.source_url,
-    notificationTitle: data.notification_title || data.title,
-    notificationBody: data.notification_body || data.body,
     force: true,
   });
   return {
@@ -1045,8 +949,6 @@ exports.translateFomoPulseDraft = onCall(generateOpts, async (request) => {
     headline_hi: hindi.headline_hi,
     news_summary_hi: hindi.news_summary_hi,
     upsc_points_hi: hindi.upsc_points_hi,
-    notification_title_hi: hindi.title_hi,
-    notification_body_hi: hindi.body_hi,
   };
 });
 
@@ -1075,19 +977,17 @@ exports.sendFomoPulseNotification = onCall(generateOpts, async (request) => {
       ? "broadcast"
       : "self";
 
-  const newsSummary = stripSummaryLabels(data.news_summary);
-  let newsSummaryHi = stripSummaryLabels(data.news_summary_hi);
-  const headline = String(data.headline || "").trim();
-  let headlineHi = hindiHeadlineFrom(data.headline_hi);
+  const newsSummary = cleanNewsSummary(data.news_summary);
+  let newsSummaryHi = cleanNewsSummary(data.news_summary_hi);
+  const headline = textField(data.headline);
+  let headlineHi = textField(data.headline_hi);
   let upscPoints = normalizePoints(data.upsc_points);
   let upscPointsHi = normalizePoints(data.upsc_points_hi);
-  let titleHi = String(data.title_hi || data.notification_title_hi || "").trim();
-  let bodyHi = String(data.body_hi || data.notification_body_hi || "").trim();
   const sourceUrl = String(
     data.source_url || question.meta.source_url || "",
   ).trim();
 
-  if (!hasQuestionHindi(question) || !newsSummaryHi || !titleHi) {
+  if (!hasQuestionHindi(question) || !newsSummaryHi || !headlineHi) {
     try {
       const hindi = await attachHindi({
         question,
@@ -1098,17 +998,11 @@ exports.sendFomoPulseNotification = onCall(generateOpts, async (request) => {
         newsSummaryHi,
         upscPointsHi,
         headlineHi,
-        notificationTitle: title,
-        notificationBody: body,
-        titleHi,
-        bodyHi,
       });
       question = hindi.question;
       newsSummaryHi = hindi.news_summary_hi;
       upscPointsHi = hindi.upsc_points_hi;
       headlineHi = hindi.headline_hi || headlineHi;
-      titleHi = hindi.title_hi || titleHi;
-      bodyHi = hindi.body_hi || bodyHi;
     } catch (e) {
       console.error("sendFomoPulseNotification: Hindi attach failed:", e);
       // Still send English-only rather than blocking the push.
@@ -1127,8 +1021,6 @@ exports.sendFomoPulseNotification = onCall(generateOpts, async (request) => {
     status: "sent",
     title,
     body,
-    title_hi: titleHi,
-    body_hi: bodyHi,
     headline,
     headline_hi: headlineHi,
     news_summary: newsSummary,
@@ -1211,7 +1103,7 @@ exports.sendFomoPulseNotification = onCall(generateOpts, async (request) => {
  * and attempt callable both drop it. 1 Firestore read + 1 write.
  */
 exports.deleteFomoPulse = onCall(
-  { region: REGION, timeoutSeconds: 30 },
+  { region: REGION, timeoutSeconds: 30, invoker: "public" },
   async (request) => {
     const email = requireAdmin(request);
     const pulseId = String((request.data || {}).pulse_id || "").trim();

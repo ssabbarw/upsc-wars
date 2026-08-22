@@ -219,49 +219,124 @@ Future<bool> _confirmDeletePulse(
 ) async {
   final ok = await showDialog<bool>(
     context: context,
-    builder: (ctx) {
-      final error = Theme.of(ctx).colorScheme.error;
-      final onError = Theme.of(ctx).colorScheme.onError;
-      return AlertDialog(
+    builder: (ctx) => _DeletePulseConfirmDialog(
+      onDelete: () async {
+        await ref
+            .read(fomoPulseCloudServiceProvider)
+            .deletePulse(pulse.pulseId);
+        await ref
+            .read(fomoPulseRepositoryProvider)
+            .removePulseFromCache(pulse.pulseId);
+      },
+    ),
+  );
+  return ok == true;
+}
+
+class _DeletePulseConfirmDialog extends StatefulWidget {
+  const _DeletePulseConfirmDialog({required this.onDelete});
+
+  final Future<void> Function() onDelete;
+
+  @override
+  State<_DeletePulseConfirmDialog> createState() =>
+      _DeletePulseConfirmDialogState();
+}
+
+class _DeletePulseConfirmDialogState extends State<_DeletePulseConfirmDialog> {
+  var _busy = false;
+  String? _error;
+
+  Future<void> _submit() async {
+    if (_busy) return;
+    setState(() {
+      _busy = true;
+      _error = null;
+    });
+    try {
+      await widget.onDelete();
+      if (!mounted) return;
+      Navigator.pop(context, true);
+    } catch (e) {
+      if (!mounted) return;
+      setState(() {
+        _busy = false;
+        _error = FomoPulseCloudService.describeCallableError(e);
+      });
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return PopScope(
+      canPop: !_busy,
+      child: AlertDialog(
         title: const Text('Delete CA Shot?'),
-        content: const Text(
-          'This removes it for everyone. It will disappear from CA Shots and new attempts will be blocked.',
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              'This removes it for everyone. It will disappear from CA Shots and new attempts will be blocked.',
+            ),
+            if (_busy) ...[
+              const SizedBox(height: AppSpacing.lg),
+              Row(
+                children: [
+                  SizedBox(
+                    width: 20,
+                    height: 20,
+                    child: CircularProgressIndicator(
+                      strokeWidth: 2,
+                      color: scheme.primary,
+                    ),
+                  ),
+                  const SizedBox(width: AppSpacing.sm),
+                  Text(
+                    'Deleting for everyone…',
+                    style: AppTextStyles.bodySm().copyWith(
+                      color: scheme.onSurfaceVariant,
+                    ),
+                  ),
+                ],
+              ),
+            ],
+            if (_error != null) ...[
+              const SizedBox(height: AppSpacing.md),
+              Text(
+                _error!,
+                style: AppTextStyles.bodySm().copyWith(color: scheme.error),
+              ),
+            ],
+          ],
         ),
         actions: [
           TextButton(
-            onPressed: () => Navigator.pop(ctx, false),
+            onPressed: _busy ? null : () => Navigator.pop(context, false),
             child: const Text('Cancel'),
           ),
           FilledButton(
             style: FilledButton.styleFrom(
-              backgroundColor: error,
-              foregroundColor: onError,
+              backgroundColor: scheme.error,
+              foregroundColor: scheme.onError,
+              minimumSize: const Size(64, 40),
             ),
-            onPressed: () => Navigator.pop(ctx, true),
-            child: const Text('Delete for everyone'),
+            onPressed: _submit,
+            child: _busy
+                ? SizedBox(
+                    width: 18,
+                    height: 18,
+                    child: CircularProgressIndicator(
+                      strokeWidth: 2,
+                      color: scheme.onError,
+                    ),
+                  )
+                : const Text('Delete for everyone'),
           ),
         ],
-      );
-    },
-  );
-  if (ok != true) return false;
-  try {
-    await ref.read(fomoPulseCloudServiceProvider).deletePulse(pulse.pulseId);
-    await ref
-        .read(fomoPulseRepositoryProvider)
-        .removePulseFromCache(pulse.pulseId);
-    return true;
-  } catch (e) {
-    if (context.mounted) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(
-            'Could not delete: ${FomoPulseCloudService.describeCallableError(e)}',
-          ),
-        ),
-      );
-    }
-    return false;
+      ),
+    );
   }
 }
 

@@ -158,9 +158,7 @@ class _PulseBody extends HookConsumerWidget {
     final tabController = useTabController(initialLength: 2);
 
     final isHi = watchAppLanguage(ref) == 'hi';
-    final summary = isHi && pulse.newsSummaryHi.trim().isNotEmpty
-        ? pulse.newsSummaryHi
-        : pulse.newsSummary;
+    final summary = pulse.listBody(preferHindi: isHi);
     final points = isHi && pulse.upscPointsHi.isNotEmpty
         ? pulse.upscPointsHi
         : pulse.upscPoints;

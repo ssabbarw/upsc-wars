@@ -632,48 +632,44 @@ class FomoPulse {
     return DateTime.now().isAfter(exp);
   }
 
-  /// True when a Hindi news summary exists for list/detail display.
-  bool get hasHindiCopy => newsSummaryHi.trim().isNotEmpty;
+  bool get hasHindiCopy =>
+      headlineHi.trim().isNotEmpty || newsSummaryHi.trim().isNotEmpty;
 
-  /// In-app heading. Uses the serious briefing headline when present so the
-  /// push FOMO title is not reused on the article.
+  String _copy({
+    required bool preferHindi,
+    required String hi,
+    required String en,
+  }) {
+    if (preferHindi && hi.trim().isNotEmpty) return hi.trim();
+    return en.trim();
+  }
+
+  /// List + in-app title: `headline` / `headline_hi`, else the push title.
   String displayHeadline({required bool preferHindi}) {
-    if (preferHindi) {
-      final hi = headlineHi.trim();
-      if (hi.isNotEmpty) return hi;
-    }
-    final en = headline.trim();
-    if (en.isNotEmpty) return en;
-    if (preferHindi && hasHindiCopy) {
-      for (final line in newsSummaryHi.split('\n')) {
-        final t = line.trim();
-        if (t.isNotEmpty) return t;
-      }
-    }
+    final fromHeadline = _copy(
+      preferHindi: preferHindi,
+      hi: headlineHi,
+      en: headline,
+    );
+    if (fromHeadline.isNotEmpty) return fromHeadline;
     return title;
   }
 
-  /// List card title. Prefer the in-app headline over the push title.
-  String listTitle({required bool preferHindi}) {
-    return displayHeadline(preferHindi: preferHindi);
-  }
+  String listTitle({required bool preferHindi}) =>
+      displayHeadline(preferHindi: preferHindi);
 
-  /// List card subtitle. Prefer the briefing over the push body.
-  String listBody({required bool preferHindi}) {
-    if (preferHindi && hasHindiCopy) {
-      if (headlineHi.trim().isNotEmpty) return newsSummaryHi.trim();
-      final lines = [
-        for (final line in newsSummaryHi.split('\n'))
-          if (line.trim().isNotEmpty) line.trim(),
-      ];
-      if (lines.length <= 1) return '';
-      return lines.skip(1).join('\n');
-    }
-    if (headline.trim().isNotEmpty && newsSummary.trim().isNotEmpty) {
-      return newsSummary.trim();
-    }
-    return body;
-  }
+  static final _leadingBriefingLabel = RegExp(
+    r'^\*{0,2}\s*(what happened|क्या हुआ)\s*:?\s*\*{0,2}\s*',
+    caseSensitive: false,
+  );
+
+  static String _briefingWithoutLabel(String raw) =>
+      raw.replaceFirst(_leadingBriefingLabel, '').trim();
+
+  /// List + detail briefing: `news_summary` / `news_summary_hi`.
+  String listBody({required bool preferHindi}) => _briefingWithoutLabel(
+    _copy(preferHindi: preferHindi, hi: newsSummaryHi, en: newsSummary),
+  );
 
   FomoPulseCommunityStats? communityStats({int minAttempts = 20}) {
     if (attemptCount < minAttempts) return null;
