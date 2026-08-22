@@ -459,7 +459,8 @@ class FomoPulseArticleScreen extends HookConsumerWidget {
               controller: titleCtrl,
               decoration: const InputDecoration(
                 labelText: 'Heading',
-                helperText: 'Shown as the notification title. Editable.',
+                helperText:
+                    'Push title — curiosity hook to earn the tap. Not the in-app headline.',
               ),
             ),
             const SizedBox(height: AppSpacing.sm),
@@ -467,7 +468,8 @@ class FomoPulseArticleScreen extends HookConsumerWidget {
               controller: bodyCtrl,
               decoration: const InputDecoration(
                 labelText: 'Subheading',
-                helperText: 'Shown under the title. Editable.',
+                helperText:
+                    'Push body — enough context to make the hook land. Editable.',
               ),
               maxLines: 3,
             ),
@@ -476,6 +478,19 @@ class FomoPulseArticleScreen extends HookConsumerWidget {
               title: titleCtrl.text,
               body: bodyCtrl.text,
             ),
+            if (current.headline.trim().isNotEmpty) ...[
+              const SizedBox(height: AppSpacing.md),
+              _MetaCard(
+                title: 'In-app headline',
+                child: Text(
+                  current.headline,
+                  style: AppTextStyles.bodySm().copyWith(
+                    fontWeight: FontWeight.w700,
+                    height: 1.35,
+                  ),
+                ),
+              ),
+            ],
             const SizedBox(height: AppSpacing.lg),
             Text('MCQ', style: AppTextStyles.label()),
             const SizedBox(height: AppSpacing.sm),

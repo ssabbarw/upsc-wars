@@ -155,6 +155,7 @@ class _PulseBody extends HookConsumerWidget {
         ? pulse.upscPointsHi
         : pulse.upscPoints;
     final summaryText = summary.isNotEmpty ? summary : pulse.body;
+    final heading = pulse.displayHeadline(preferHindi: isHi);
 
     final stats = pulse.communityStats(
       minAttempts: FomoPulseConstants.minStatsAttempts,
@@ -193,18 +194,6 @@ class _PulseBody extends HookConsumerWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Padding(
-          padding: const EdgeInsets.fromLTRB(
-            AppSpacing.lg,
-            AppSpacing.lg,
-            AppSpacing.lg,
-            AppSpacing.sm,
-          ),
-          child: _HeaderCard(
-            pulse: pulse,
-            summary: summaryText,
-          ),
-        ),
         TabBar(
           controller: tabController,
           labelColor: AppColors.primary,
@@ -228,6 +217,19 @@ class _PulseBody extends HookConsumerWidget {
               ListView(
                 padding: const EdgeInsets.symmetric(vertical: AppSpacing.lg),
                 children: [
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(
+                      AppSpacing.lg,
+                      0,
+                      AppSpacing.lg,
+                      AppSpacing.lg,
+                    ),
+                    child: _HeaderCard(
+                      heading: heading,
+                      pulse: pulse,
+                      summary: summaryText,
+                    ),
+                  ),
                   _SectionBlock(
                     title: 'News Summary',
                     icon: Icons.article_outlined,
@@ -238,13 +240,6 @@ class _PulseBody extends HookConsumerWidget {
                       children: [
                         _NewsImage(imageUrl: pulse.imageUrl),
                         const SizedBox(height: AppSpacing.md),
-                        Text(
-                          pulse.title,
-                          style: AppTextStyles.label().copyWith(
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                        const SizedBox(height: AppSpacing.sm),
                         Text(
                           summaryText,
                           maxLines: showFullSummary.value ? null : 3,
@@ -427,8 +422,13 @@ class _SectionBlock extends StatelessWidget {
 }
 
 class _HeaderCard extends StatelessWidget {
-  const _HeaderCard({required this.pulse, required this.summary});
+  const _HeaderCard({
+    required this.heading,
+    required this.pulse,
+    required this.summary,
+  });
 
+  final String heading;
   final FomoPulse pulse;
   final String summary;
 
@@ -441,7 +441,7 @@ class _HeaderCard extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          pulse.title,
+          heading,
           style: AppTextStyles.h2().copyWith(fontWeight: FontWeight.w800),
         ),
         const SizedBox(height: AppSpacing.sm),

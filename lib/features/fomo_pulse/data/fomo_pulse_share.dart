@@ -18,7 +18,10 @@ Future<void> shareFomoPulse(
   FomoPulseCommunityStats? stats,
 }) async {
   final uri = fomoPulseShareUri(pulse.pulseId);
-  final title = pulse.title.trim();
+  final title = (pulse.headline.trim().isNotEmpty
+          ? pulse.headline
+          : pulse.title)
+      .trim();
   final buf = StringBuffer();
   if (title.isNotEmpty) buf.writeln(title);
   if (bragCorrect) {
