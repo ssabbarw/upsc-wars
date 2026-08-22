@@ -21,6 +21,8 @@ import 'package:upsc_wars/core/services/app_local_notifications_service.dart';
 import 'package:upsc_wars/core/services/fcm_token_sync_service.dart';
 import 'package:upsc_wars/features/community/open_challenge/open_challenge_fcm.dart';
 import 'package:upsc_wars/features/daily_war/daily_war_constants.dart';
+import 'package:upsc_wars/features/home/domain/today_hero.dart';
+import 'package:upsc_wars/features/home/providers/today_hero_intent_provider.dart';
 import 'package:upsc_wars/features/daily_ca/daily_ca_admin_constants.dart';
 import 'package:upsc_wars/features/memory_pairs/push/push_memory_pairs_fcm.dart';
 import 'package:upsc_wars/features/memory_pairs/push/push_memory_pairs_launch_params.dart';
@@ -175,7 +177,8 @@ class BattleMessagingService {
         final r = _activeRouter;
         if (r == null) return;
         WidgetsBinding.instance.addPostFrameCallback((_) {
-          r.go('/daily-drill/start');
+          TodayHeroIntentStore.capture(TodaySlotId.practice);
+          r.go(TodayHero.homeLocation(hero: TodaySlotId.practice));
         });
       };
       AppLocalNotificationsService.onFomoPulseLocalTap = (pulseId) {
@@ -216,7 +219,8 @@ class BattleMessagingService {
         final r = _activeRouter;
         if (r == null) return;
         WidgetsBinding.instance.addPostFrameCallback((_) {
-          r.go('/daily-ca?start=1');
+          TodayHeroIntentStore.capture(TodaySlotId.current);
+          r.go(TodayHero.homeLocation(hero: TodaySlotId.current));
         });
       };
       await AppLocalNotificationsService.ensureInitialized();
@@ -500,7 +504,13 @@ class BattleMessagingService {
         return;
       }
       if (ocKind == DailyWarConstants.fcmKind) {
-        router.go(dailyWarLobbyRoute());
+        final phase = message.data['phase']?.toString();
+        if (DailyWarConstants.fcmPhaseOpensHomeHero(phase)) {
+          TodayHeroIntentStore.capture(TodaySlotId.war);
+          router.go(TodayHero.homeLocation(hero: TodaySlotId.war));
+        } else {
+          router.go(dailyWarLobbyRoute());
+        }
         return;
       }
       if (ocKind == DailyCaAdminConstants.fcmKind) {

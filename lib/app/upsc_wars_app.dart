@@ -34,14 +34,14 @@ import '../features/home/providers/auth_providers.dart';
 import '../core/providers/prefs_provider.dart';
 import '../core/providers/user_database_provider.dart';
 import '../core/auth/super_user.dart';
-import '../core/router/app_router.dart'
-    show appRouterProvider;
+import '../core/router/app_router.dart' show appRouterProvider;
 import '../features/fomo_pulse/data/fomo_pulse_incoming_share.dart';
 import '../core/router/question_bank_loading_screen.dart';
 import '../core/services/prelims_surfaces_refresh.dart';
 import '../core/theme/app_theme.dart';
 import '../features/battle/widgets/battle_chat_fab.dart';
 import '../features/battle/widgets/battle_spectate_overlay.dart';
+
 class UpscWarsApp extends HookConsumerWidget {
   const UpscWarsApp({super.key});
 
@@ -119,14 +119,12 @@ class _RootMaterialApp extends HookConsumerWidget {
         final entry = SessionEntrySource.consume();
         await Analytics.track(
           ref,
-          AppOpenedEvent(
-            entrySource: entry.source,
-            entryDetail: entry.detail,
-          ),
+          AppOpenedEvent(entrySource: entry.source, entryDetail: entry.detail),
         );
         final p = await ref.read(prefsServiceProvider.future);
-        final wasFirstInstall =
-            !p.hasActivationMilestone(ActivationMilestones.firstProcessLaunch);
+        final wasFirstInstall = !p.hasActivationMilestone(
+          ActivationMilestones.firstProcessLaunch,
+        );
         NoTestReminderService.recordFirstInstallIfNeeded(p);
         await logActivationMilestoneForServices(
           ref.read(analyticsServiceProvider),
@@ -144,26 +142,34 @@ class _RootMaterialApp extends HookConsumerWidget {
             prefs: p,
             completedSessionCount: completedCount,
           );
-          // Recovery nudge: anything finished today is enough to skip it.
           await LocalDailyRemindersSync.sync(
             prefs: p,
-            dailyCaEnabled:
-                await ref.read(dailyCaRemoteEnabledProvider.future),
+            db: db,
+            dailyCaEnabled: await ref.read(dailyCaRemoteEnabledProvider.future),
           );
         } catch (e, st) {
-          upscWarsTrace('no_test_reminder_sync error', error: e, stackTrace: st);
+          upscWarsTrace(
+            'no_test_reminder_sync error',
+            error: e,
+            stackTrace: st,
+          );
         }
       }());
       Future<void> syncLocalDailyReminders() async {
         try {
           final p = await ref.read(prefsServiceProvider.future);
+          final db = ref.read(userDatabaseProvider);
           await LocalDailyRemindersSync.sync(
             prefs: p,
-            dailyCaEnabled:
-                await ref.read(dailyCaRemoteEnabledProvider.future),
+            db: db,
+            dailyCaEnabled: await ref.read(dailyCaRemoteEnabledProvider.future),
           );
         } catch (e, st) {
-          upscWarsTrace('local_daily_reminders_sync error', error: e, stackTrace: st);
+          upscWarsTrace(
+            'local_daily_reminders_sync error',
+            error: e,
+            stackTrace: st,
+          );
         }
       }
 
@@ -190,7 +196,9 @@ class _RootMaterialApp extends HookConsumerWidget {
       unawaited(() async {
         try {
           await ref.read(killSwitchProvider.future);
-          final sync = await ref.read(questionCorrectionsSyncServiceProvider.future);
+          final sync = await ref.read(
+            questionCorrectionsSyncServiceProvider.future,
+          );
           final applied = await sync.syncIfNeeded();
           if (applied > 0) {
             upscWarsTrace('question_corrections_sync applied=$applied');
@@ -221,10 +229,7 @@ class _RootMaterialApp extends HookConsumerWidget {
         onResumed: () {
           unawaited(PrelimsSurfacesRefresh.refreshAllSurfaces());
           unawaited(
-            ShareDeepLinkService.handleResume(
-              ref,
-              ref.read(appRouterProvider),
-            ),
+            ShareDeepLinkService.handleResume(ref, ref.read(appRouterProvider)),
           );
         },
       );
@@ -261,36 +266,31 @@ class _RootMaterialApp extends HookConsumerWidget {
       return timer.cancel;
     }, const []);
 
-    ref.listen<AsyncValue<User?>>(
-      authStateChangesProvider,
-      (prev, next) {
-        final u = next.asData?.value;
-        unawaited(FirebaseAnalyticsSink.syncCollectionForUser(u));
-        if (!next.hasValue) return;
-        if (!AuthSession.isAccountSignedIn(u)) return;
-        unawaited(FcmTokenSyncService.syncForCurrentUser());
-        unawaited(CommunityBucketPresenceService.syncForCurrentUser(ref));
-        User? prevUser;
-        if (prev is AsyncData<User?>) prevUser = prev.value;
-        if (!AuthSession.isAccountSignedIn(prevUser)) {
-          final method = (u != null && u.providerData.isNotEmpty)
-              ? u.providerData.first.providerId
-              : null;
-          unawaited(
-            Analytics.track(ref, AccountSignedInEvent(method: method)),
-          );
-          unawaited(
-            logActivationMilestoneOnce(
-              ref,
-              ActivationMilestones.firstAccountSignIn,
-            ),
-          );
-        }
-        if (SuperUser.isSignedIn(u)) {
-          FomoPulseIncomingShareStore.consumePending(ref.read(appRouterProvider));
-        }
-      },
-    );
+    ref.listen<AsyncValue<User?>>(authStateChangesProvider, (prev, next) {
+      final u = next.asData?.value;
+      unawaited(FirebaseAnalyticsSink.syncCollectionForUser(u));
+      if (!next.hasValue) return;
+      if (!AuthSession.isAccountSignedIn(u)) return;
+      unawaited(FcmTokenSyncService.syncForCurrentUser());
+      unawaited(CommunityBucketPresenceService.syncForCurrentUser(ref));
+      User? prevUser;
+      if (prev is AsyncData<User?>) prevUser = prev.value;
+      if (!AuthSession.isAccountSignedIn(prevUser)) {
+        final method = (u != null && u.providerData.isNotEmpty)
+            ? u.providerData.first.providerId
+            : null;
+        unawaited(Analytics.track(ref, AccountSignedInEvent(method: method)));
+        unawaited(
+          logActivationMilestoneOnce(
+            ref,
+            ActivationMilestones.firstAccountSignIn,
+          ),
+        );
+      }
+      if (SuperUser.isSignedIn(u)) {
+        FomoPulseIncomingShareStore.consumePending(ref.read(appRouterProvider));
+      }
+    });
 
     final router = ref.watch(appRouterProvider);
     final prefs = ref.watch(prefsServiceProvider);

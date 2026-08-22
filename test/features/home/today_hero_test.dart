@@ -164,17 +164,11 @@ void main() {
         slots: _slots(),
       );
       expect(pick.hero, TodaySlotId.war);
-      expect(
-        TodayHero.displayOrder(
-          pick.hero,
-          warEvening: true,
-        ),
-        [
-          TodaySlotId.war,
-          TodaySlotId.practice,
-          TodaySlotId.current,
-        ],
-      );
+      expect(TodayHero.displayOrder(pick.hero, warEvening: true), [
+        TodaySlotId.war,
+        TodaySlotId.practice,
+        TodaySlotId.current,
+      ]);
     });
 
     test('10 PM is War even if CA was never attempted', () {
@@ -211,11 +205,7 @@ void main() {
       final pick = TodayHero.pick(
         istNow: DateTime(2026, 8, 18, 1),
         warUrgency: TodayWarUrgency.results,
-        slots: _slots(
-          currentDone: true,
-          practiceDone: true,
-          warDone: true,
-        ),
+        slots: _slots(currentDone: true, practiceDone: true, warDone: true),
         paperRevised: true,
         revisionQueueEmpty: true,
       );
@@ -281,14 +271,69 @@ void main() {
     });
 
     test('companions sit beside the hero, not under a stack', () {
-      expect(
-        TodayHero.companions(TodaySlotId.war, warEvening: true),
-        [TodaySlotId.practice, TodaySlotId.current],
-      );
+      expect(TodayHero.companions(TodaySlotId.war, warEvening: true), [
+        TodaySlotId.practice,
+        TodaySlotId.current,
+      ]);
     });
 
     test('Monday before 6 AM is still Sunday\'s hub', () {
       expect(TodayHero.isSundayHub(DateTime(2026, 8, 17, 1)), isTrue);
+    });
+  });
+
+  group('TodayHero.forcedHero', () {
+    test('practice pin wins in the morning even if CA is unfinished', () {
+      final pick = TodayHero.pick(
+        istNow: DateTime(2026, 8, 17, 8),
+        warUrgency: TodayWarUrgency.none,
+        slots: _slots(),
+        forcedHero: TodaySlotId.practice,
+      );
+      expect(pick.hero, TodaySlotId.practice);
+    });
+
+    test('CA pin wins after 6 PM unless War is live', () {
+      final pick = TodayHero.pick(
+        istNow: DateTime(2026, 8, 17, 19),
+        warUrgency: TodayWarUrgency.prepare,
+        slots: _slots(),
+        forcedHero: TodaySlotId.current,
+      );
+      expect(pick.hero, TodaySlotId.current);
+    });
+
+    test('live War beats a stale CA or practice pin', () {
+      final pick = TodayHero.pick(
+        istNow: DateTime(2026, 8, 17, 21),
+        warUrgency: TodayWarUrgency.live,
+        slots: _slots(),
+        forcedHero: TodaySlotId.practice,
+      );
+      expect(pick.hero, TodaySlotId.war);
+    });
+
+    test('rest forced slot falls through via prefer', () {
+      final pick = TodayHero.pick(
+        istNow: DateTime(2026, 8, 17, 8),
+        warUrgency: TodayWarUrgency.none,
+        slots: _slots(practiceAvailable: false),
+        forcedHero: TodaySlotId.practice,
+      );
+      expect(pick.hero, TodaySlotId.current);
+    });
+  });
+
+  group('TodayHero.homeLocation', () {
+    test('parses and builds /?hero=', () {
+      expect(TodayHero.slotIdFromQuery('practice'), TodaySlotId.practice);
+      expect(TodayHero.slotIdFromQuery('current'), TodaySlotId.current);
+      expect(TodayHero.slotIdFromQuery('war'), TodaySlotId.war);
+      expect(TodayHero.slotIdFromQuery('nope'), isNull);
+      expect(
+        TodayHero.homeLocation(hero: TodaySlotId.practice),
+        '/?hero=practice',
+      );
     });
   });
 

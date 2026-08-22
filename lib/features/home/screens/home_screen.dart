@@ -31,6 +31,8 @@ import '../widgets/today_hub_section.dart';
 import '../../daily_ca/providers/daily_ca_providers.dart';
 import '../../daily_war/providers/daily_war_providers.dart';
 import '../providers/today_hub_provider.dart';
+import '../providers/today_hero_intent_provider.dart';
+import '../domain/today_hero.dart';
 import '../../daily_war/theme/daily_war_theme.dart';
 import '../../../shared/widgets/push_denied_banner.dart';
 import '../../../shared/theme/dark_mode_toggle.dart';
@@ -42,7 +44,10 @@ import '../../../shared/widgets/home_page_video_banner.dart';
 import '../../../shared/widgets/rate_review_sheet.dart';
 
 class HomeScreen extends HookConsumerWidget {
-  const HomeScreen({super.key});
+  const HomeScreen({super.key, this.heroSlot});
+
+  /// Optional pin from `/?hero=` (reminder / prepare-style War FCM).
+  final TodaySlotId? heroSlot;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -58,6 +63,12 @@ class HomeScreen extends HookConsumerWidget {
       orElse: () => false,
     );
     final cachedStreakText = useState<String?>(null);
+
+    useEffect(() {
+      if (heroSlot == null) return null;
+      TodayHeroIntentStore.capture(heroSlot!);
+      return null;
+    }, [heroSlot]);
 
     final past200ms = useState(false);
     useEffect(() {
@@ -92,7 +103,8 @@ class HomeScreen extends HookConsumerWidget {
 
     useEffect(() {
       home.whenData((h) {
-        cachedStreakText.value = '${h.streakCount} day${h.streakCount == 1 ? '' : 's'}';
+        cachedStreakText.value =
+            '${h.streakCount} day${h.streakCount == 1 ? '' : 's'}';
       });
       return null;
     }, [home]);
@@ -269,7 +281,8 @@ class HomeScreen extends HookConsumerWidget {
                                                     avatarInitials,
                                                     style: AppTextStyles.label()
                                                         .copyWith(
-                                                          color: avatarColors.fg,
+                                                          color:
+                                                              avatarColors.fg,
                                                           fontWeight:
                                                               FontWeight.w700,
                                                         ),
@@ -401,9 +414,7 @@ class HomeScreen extends HookConsumerWidget {
                         const Spacer(),
                         // Trap pill — always visible, including for new users.
                         Padding(
-                          padding: const EdgeInsets.only(
-                            right: AppSpacing.sm,
-                          ),
+                          padding: const EdgeInsets.only(right: AppSpacing.sm),
                           child: _TrapPill(
                             count: home.maybeWhen(
                               data: (h) => h.revisionTrapCount,
@@ -431,9 +442,11 @@ class HomeScreen extends HookConsumerWidget {
                             // One streak, fed by any Today ring — War no longer
                             // replaces it, so a missed 9 PM is not a broken day.
                             final streakLabel = home.when(
-                              data: (h) => '${h.streakCount} day${h.streakCount == 1 ? '' : 's'}',
+                              data: (h) =>
+                                  '${h.streakCount} day${h.streakCount == 1 ? '' : 's'}',
                               loading: () => cachedStreakText.value ?? '0 days',
-                              error: (_, __) => cachedStreakText.value ?? '0 days',
+                              error: (_, __) =>
+                                  cachedStreakText.value ?? '0 days',
                             );
                             return Container(
                               padding: const EdgeInsets.symmetric(
@@ -488,7 +501,9 @@ class HomeScreen extends HookConsumerWidget {
                     const SizedBox(height: AppSpacing.md),
                     Consumer(
                       builder: (context, ref, _) {
-                        final journey = ref.watch(homeActivationJourneyProvider);
+                        final journey = ref.watch(
+                          homeActivationJourneyProvider,
+                        );
                         final state = journey.asData?.value ?? journey.value;
                         return TodayHubSection(
                           activationJourney: state,
@@ -636,10 +651,7 @@ class HomeScreen extends HookConsumerWidget {
     return words.join(' ');
   }
 
-  ({Color bg, Color fg}) _avatarColors(
-    String? displayName,
-    bool isDark,
-  ) {
+  ({Color bg, Color fg}) _avatarColors(String? displayName, bool isDark) {
     // Same dark navy as the CA card — consistent with the app's info blue.
     return isDark
         ? (bg: const Color(0xFF042C53), fg: AppColors.infoTextDark)
@@ -670,10 +682,7 @@ class _TrapPill extends StatelessWidget {
         decoration: BoxDecoration(
           color: bg,
           borderRadius: BorderRadius.circular(AppRadius.pill),
-          border: Border.all(
-            color: fg.withValues(alpha: 0.35),
-            width: 0.5,
-          ),
+          border: Border.all(color: fg.withValues(alpha: 0.35), width: 0.5),
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
@@ -681,9 +690,7 @@ class _TrapPill extends StatelessWidget {
             Icon(Icons.warning_amber_rounded, size: 13, color: fg),
             const SizedBox(width: 3),
             Text(
-              count > 0
-                  ? '$count trap${count == 1 ? '' : 's'}'
-                  : 'Traps',
+              count > 0 ? '$count trap${count == 1 ? '' : 's'}' : 'Traps',
               style: AppTextStyles.caption().copyWith(
                 color: scheme.onSurface,
                 fontWeight: FontWeight.w600,
@@ -983,22 +990,12 @@ class _HomeDiscoveryCard extends StatelessWidget {
 // ── Practice Section (PYQ by Year above Subjects) ────────────────────────────
 
 class _PracticeSection extends StatelessWidget {
-  const _PracticeSection({
-    required this.borderColor,
-    this.secondary = false,
-  });
+  const _PracticeSection({required this.borderColor, this.secondary = false});
 
   final Color borderColor;
   final bool secondary;
 
-  static const _pyqYears = [
-    '2025',
-    '2024',
-    '2023',
-    '2022',
-    '2021',
-    '2020',
-  ];
+  static const _pyqYears = ['2025', '2024', '2023', '2022', '2021', '2020'];
 
   @override
   Widget build(BuildContext context) {

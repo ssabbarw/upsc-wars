@@ -9,6 +9,6 @@ abstract final class DailyDrillConstants {
   /// Local hour (0–23) for the drill reminder.
   ///
   /// Mid-afternoon on purpose: the morning belongs to the current-affairs paper
-  /// quiz, and this only fires on days where nothing has been done yet.
+  /// quiz. Only fires once that paper is revised and the revision queue is open.
   static const defaultReminderHour = 15;
 }

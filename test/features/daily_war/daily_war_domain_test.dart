@@ -1,4 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:upsc_wars/features/daily_war/daily_war_constants.dart';
 import 'package:upsc_wars/features/daily_war/domain/daily_war_copy.dart';
 import 'package:upsc_wars/features/daily_war/domain/daily_war_curriculum.dart';
 import 'package:upsc_wars/features/daily_war/domain/daily_war_curriculum_picker.dart';
@@ -285,6 +286,24 @@ void main() {
       expect(DailyWarCopy.eventName(isGrand: true), 'Grand War');
       expect(DailyWarCopy.eventNameCaps(isGrand: false), 'DAILY BATTLE');
       expect(DailyWarCopy.eventNameCaps(isGrand: true), 'GRAND WAR');
+    });
+  });
+
+  group('DailyWarConstants.fcmPhaseOpensHomeHero', () {
+    test('morning and 30-min land on the home War hero', () {
+      expect(DailyWarConstants.fcmPhaseOpensHomeHero('morning'), isTrue);
+      expect(DailyWarConstants.fcmPhaseOpensHomeHero('reminder_30'), isTrue);
+      expect(DailyWarConstants.fcmPhaseOpensHomeHero('MORNING'), isTrue);
+    });
+
+    test('lobby and results stay on the War lobby', () {
+      expect(DailyWarConstants.fcmPhaseOpensHomeHero('lobby'), isFalse);
+      expect(DailyWarConstants.fcmPhaseOpensHomeHero('results'), isFalse);
+      expect(
+        DailyWarConstants.fcmPhaseOpensHomeHero('results_personal'),
+        isFalse,
+      );
+      expect(DailyWarConstants.fcmPhaseOpensHomeHero(null), isFalse);
     });
   });
 }

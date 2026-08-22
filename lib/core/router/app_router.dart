@@ -39,6 +39,7 @@ import '../../features/chat/screens/chat_thread_screen.dart';
 import '../../features/chat/domain/entities/chat_thread_route_payload.dart';
 import '../../features/home/screens/daily_drill_launch_screen.dart';
 import '../../features/home/screens/home_screen.dart';
+import '../../features/home/domain/today_hero.dart';
 import '../../features/onboarding/screens/onboarding_flow_screen.dart';
 import '../../features/notifications/screens/long_html_notification_screen.dart';
 import '../../features/daily_ca/screens/daily_ca_screen.dart';
@@ -150,7 +151,11 @@ GoRouter appRouter(Ref ref) {
         GoRoute(
           path: '/',
           name: 'home',
-          builder: (context, state) => const HomeScreen(),
+          builder: (context, state) => HomeScreen(
+            heroSlot: TodayHero.slotIdFromQuery(
+              state.uri.queryParameters[TodayHero.heroQueryKey],
+            ),
+          ),
         ),
       ],
     ),

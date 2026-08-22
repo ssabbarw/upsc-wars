@@ -12,18 +12,9 @@ enum TodaySlotId {
   war,
 }
 
-enum TodaySlotStatus {
-  open,
-  done,
-  rest,
-}
+enum TodaySlotStatus { open, done, rest }
 
-enum TodayWarUrgency {
-  none,
-  prepare,
-  live,
-  results,
-}
+enum TodayWarUrgency { none, prepare, live, results }
 
 class TodaySlot {
   const TodaySlot({required this.id, required this.status});
@@ -170,6 +161,29 @@ abstract final class TodayHero {
     ).hero;
   }
 
+  static const heroQueryKey = 'hero';
+
+  static TodaySlotId? slotIdFromQuery(String? raw) {
+    switch (raw?.trim()) {
+      case 'current':
+        return TodaySlotId.current;
+      case 'practice':
+        return TodaySlotId.practice;
+      case 'war':
+        return TodaySlotId.war;
+      default:
+        return null;
+    }
+  }
+
+  static String homeLocation({TodaySlotId? hero}) {
+    if (hero == null) return '/';
+    return Uri(
+      path: '/',
+      queryParameters: {heroQueryKey: hero.name},
+    ).toString();
+  }
+
   static TodaySlotId heroFor({
     required DateTime istNow,
     required TodayWarUrgency warUrgency,
@@ -177,6 +191,7 @@ abstract final class TodayHero {
     bool isSunday = false,
     bool paperRevised = false,
     bool revisionQueueEmpty = false,
+    TodaySlotId? forcedHero,
   }) {
     return pick(
       istNow: istNow,
@@ -185,6 +200,7 @@ abstract final class TodayHero {
       isSunday: isSunday,
       paperRevised: paperRevised,
       revisionQueueEmpty: revisionQueueEmpty,
+      forcedHero: forcedHero,
     ).hero;
   }
 
@@ -206,6 +222,7 @@ abstract final class TodayHero {
     bool isSunday = false,
     bool paperRevised = false,
     bool revisionQueueEmpty = false,
+    TodaySlotId? forcedHero,
   }) {
     TodayHeroPick prefer(TodaySlotId id, {bool caughtUp = false}) {
       bool available(TodaySlotId x) =>
@@ -246,13 +263,28 @@ abstract final class TodayHero {
 
     final hour = istNow.hour;
 
+    // A live War must not hide behind a stale CA / practice pin from a
+    // notification opened after lobby.
+    final liveWarBeatsPin =
+        forcedHero != null &&
+        forcedHero != TodaySlotId.war &&
+        warUrgency == TodayWarUrgency.live &&
+        statusOf(slots, TodaySlotId.war) != TodaySlotStatus.rest;
+    if (liveWarBeatsPin) {
+      return prefer(TodaySlotId.war);
+    }
+    if (forcedHero != null) {
+      return prefer(forcedHero);
+    }
+
     // 6 PM – midnight: War (or Sunday Week Review via the war slot).
     // [warUrgency] is the live/results phase inside that window; it must not
     // steal the 6 AM–6 PM CA cascade.
     if (hour >= warHourIst) {
       return prefer(
         TodaySlotId.war,
-        caughtUp: warUrgency == TodayWarUrgency.results &&
+        caughtUp:
+            warUrgency == TodayWarUrgency.results &&
             statusOf(slots, TodaySlotId.war) == TodaySlotStatus.done,
       );
     }
@@ -272,18 +304,10 @@ abstract final class TodayHero {
     bool caughtUp = false,
   }) {
     if (caughtUp) {
-      return const [
-        TodaySlotId.current,
-        TodaySlotId.practice,
-        TodaySlotId.war,
-      ];
+      return const [TodaySlotId.current, TodaySlotId.practice, TodaySlotId.war];
     }
     if (warEvening && hero == TodaySlotId.war) {
-      return const [
-        TodaySlotId.war,
-        TodaySlotId.practice,
-        TodaySlotId.current,
-      ];
+      return const [TodaySlotId.war, TodaySlotId.practice, TodaySlotId.current];
     }
     const rest = [TodaySlotId.current, TodaySlotId.practice, TodaySlotId.war];
     return [hero, ...rest.where((id) => id != hero)];
@@ -295,6 +319,9 @@ abstract final class TodayHero {
     bool warEvening = false,
   }) {
     final ordered = displayOrder(hero, warEvening: warEvening);
-    return [for (final id in ordered) if (id != hero) id];
+    return [
+      for (final id in ordered)
+        if (id != hero) id,
+    ];
   }
 }

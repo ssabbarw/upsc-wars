@@ -21,4 +21,54 @@ void main() {
       expect(fireAt, DateTime(2026, 6, 12, 8, 0));
     });
   });
+
+  group('DailyPracticeReminderService.shouldFireToday', () {
+    test('schedules when CA is revised and the queue is open', () {
+      expect(
+        DailyPracticeReminderService.shouldFireToday(
+          activationComplete: true,
+          paperRevised: true,
+          practiceCompletedToday: false,
+          queueEmpty: false,
+        ),
+        isTrue,
+      );
+    });
+
+    test('does not schedule when CA is still unfinished', () {
+      expect(
+        DailyPracticeReminderService.shouldFireToday(
+          activationComplete: true,
+          paperRevised: false,
+          practiceCompletedToday: false,
+          queueEmpty: false,
+        ),
+        isFalse,
+      );
+    });
+
+    test('does not schedule when the queue is empty', () {
+      expect(
+        DailyPracticeReminderService.shouldFireToday(
+          activationComplete: true,
+          paperRevised: true,
+          practiceCompletedToday: false,
+          queueEmpty: true,
+        ),
+        isFalse,
+      );
+    });
+
+    test('does not schedule after the drill is done today', () {
+      expect(
+        DailyPracticeReminderService.shouldFireToday(
+          activationComplete: true,
+          paperRevised: true,
+          practiceCompletedToday: true,
+          queueEmpty: false,
+        ),
+        isFalse,
+      );
+    });
+  });
 }

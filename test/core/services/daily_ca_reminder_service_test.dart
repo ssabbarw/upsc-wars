@@ -41,4 +41,28 @@ void main() {
       );
     });
   });
+
+  group('DailyCaReminderService.fireAt', () {
+    test('skipToday rolls a still-pending morning to the next paper day', () {
+      expect(
+        DailyCaReminderService.fireAt(
+          reference: DateTime(2026, 8, 18, 5),
+          skipToday: true,
+        ),
+        DateTime(2026, 8, 19, 7),
+      );
+    });
+
+    test('skipToday is a no-op once today\'s slot has passed', () {
+      expect(
+        DailyCaReminderService.fireAt(
+          reference: DateTime(2026, 8, 18, 9),
+          skipToday: true,
+        ),
+        DailyCaReminderService.nextReminderLocalTime(
+          reference: DateTime(2026, 8, 18, 9),
+        ),
+      );
+    });
+  });
 }

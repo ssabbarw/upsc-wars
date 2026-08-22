@@ -17,8 +17,20 @@ abstract final class DailyWarConstants {
   /// FCM topic when rollout is admins-only.
   static const adminBroadcastFcmTopic = 'upsc_wars_daily_war_admins';
 
-  /// FCM `data.kind` for Daily War opens → `/daily-war`.
+  /// FCM `data.kind` for Daily War opens.
   static const fcmKind = 'daily_war';
+
+  /// Prepare-style phases land on home with the War hero; lobby/results stay
+  /// on `/daily-war`.
+  static bool fcmPhaseOpensHomeHero(String? phase) {
+    switch (phase?.trim().toLowerCase()) {
+      case 'morning':
+      case 'reminder_30':
+        return true;
+      default:
+        return false;
+    }
+  }
 
   /// How often clients poll RTDB live counts during lobby / live.
   /// Default RTDB lobby/writing poll interval (overridable via Remote Config).

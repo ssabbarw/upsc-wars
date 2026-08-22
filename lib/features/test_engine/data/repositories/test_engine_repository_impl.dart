@@ -22,7 +22,7 @@ import 'package:upsc_wars/core/domain/entities/test_question.dart';
 import 'package:upsc_wars/core/domain/errors/app_errors.dart';
 import 'package:upsc_wars/core/parsers/question_display_text_parser.dart';
 import 'package:upsc_wars/core/providers/prefs_provider.dart';
-import 'package:upsc_wars/core/services/daily_practice_reminder_service.dart';
+import 'package:upsc_wars/core/services/local_daily_reminders_sync.dart';
 import 'package:upsc_wars/core/services/no_test_reminder_service.dart';
 import 'package:upsc_wars/core/services/question_stats_sync_service.dart';
 import 'package:upsc_wars/features/test_engine/domain/repositories/test_engine_repository.dart';
@@ -228,8 +228,9 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
       topic: q.topic,
       negativeFraming: q.negativeFraming,
       displayText: parsedEn.stem.trim().isEmpty ? displayTextEn : parsedEn.stem,
-      displayTextHi:
-          parsedHi.stem.trim().isEmpty ? displayTextHi : parsedHi.stem,
+      displayTextHi: parsedHi.stem.trim().isEmpty
+          ? displayTextHi
+          : parsedHi.stem,
       optionA: optionAEn,
       optionAHi: optionAHi,
       optionB: optionBEn,
@@ -279,8 +280,7 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
   @override
   Future<Set<String>> fetchWeakTopicKeys(
     List<({String subject, String topic})> pairs,
-  ) =>
-      _userDb.userTopicStatsDao.weakTopicKeysAmong(pairs);
+  ) => _userDb.userTopicStatsDao.weakTopicKeysAmong(pairs);
 
   @override
   Future<bool> updateQuestionAttempt({
@@ -304,8 +304,8 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
     final now = DateTime.now();
     final conf =
         confidence != null && AnswerConfidence.values.contains(confidence)
-            ? confidence
-            : null;
+        ? confidence
+        : null;
     await _userDb.sessionQuestionsDao.updateSessionQuestionFields(
       sq.id,
       selectedOption: Value(normSelected),
@@ -363,8 +363,8 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
     if (sq == null) return;
     final conf =
         confidence != null && AnswerConfidence.values.contains(confidence)
-            ? confidence
-            : null;
+        ? confidence
+        : null;
     await _userDb.sessionQuestionsDao.updateSessionQuestionFields(
       sq.id,
       confidence: Value(conf),
@@ -464,7 +464,9 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
       DateTime.now(),
     );
     unawaited(
-      QuestionStatsSyncService(userDb: _userDb).persistAndSyncSession(sessionId),
+      QuestionStatsSyncService(
+        userDb: _userDb,
+      ).persistAndSyncSession(sessionId),
     );
     final completedSessionCount = await _userDb.sessionsDao
         .countCompletedSessions();
@@ -477,9 +479,10 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
     await _recordHomeActivation(sessionId, sessionMeta?.analyticsFeatureKey);
 
     unawaited(
-      DailyPracticeReminderService.syncAfterSessionSubmit(
+      LocalDailyRemindersSync.syncPractice(
         prefs: _prefsService,
-        analyticsFeatureKey: sessionMeta?.analyticsFeatureKey,
+        db: _userDb,
+        dailyCaEnabled: true,
       ),
     );
 
@@ -518,8 +521,9 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
     }
 
     try {
-      final r = await SessionHistoryRepositoryImpl(_userDb)
-          .getSessionResult(sessionId);
+      final r = await SessionHistoryRepositoryImpl(
+        _userDb,
+      ).getSessionResult(sessionId);
       final accH = (r.accuracy * 100).round();
       await _analytics.track(
         UspSessionResultSnapshotEvent(
@@ -631,12 +635,12 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
       await logFirstTestQuitInMidForServices(_analytics, _prefsService);
     }
     await _userDb.transaction(() async {
-      await (_userDb.delete(_userDb.sessionQuestions)
-            ..where((t) => t.sessionId.equals(sessionId)))
-          .go();
-      await (_userDb.delete(_userDb.sessions)
-            ..where((t) => t.id.equals(sessionId)))
-          .go();
+      await (_userDb.delete(
+        _userDb.sessionQuestions,
+      )..where((t) => t.sessionId.equals(sessionId))).go();
+      await (_userDb.delete(
+        _userDb.sessions,
+      )..where((t) => t.id.equals(sessionId))).go();
     });
   }
 
@@ -691,7 +695,9 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
   Future<void> _updateTopicStatsForSession(String sessionId) async {
     final session = await _userDb.sessionsDao.getSessionById(sessionId);
     if (session == null) return;
-    final rows = await _userDb.sessionQuestionsDao.getSessionQuestionsOrdered(sessionId);
+    final rows = await _userDb.sessionQuestionsDao.getSessionQuestionsOrdered(
+      sessionId,
+    );
     final scored = rows
         .where((r) => r.status == 'correct' || r.status == 'wrong')
         .toList();
@@ -740,7 +746,9 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
     final columnsRaw = language == 'hi' ? table.hiColumns : table.enColumns;
     final rowsRaw = language == 'hi' ? table.hiRows : table.enRows;
     final header = language == 'hi' ? table.hiHeaderText : table.enHeaderText;
-    final footerRaw = language == 'hi' ? table.hiFooterText : table.enFooterText;
+    final footerRaw = language == 'hi'
+        ? table.hiFooterText
+        : table.enFooterText;
     final footer = _stripOptionsFromFooter(footerRaw);
     final columns = _parseStringList(columnsRaw);
     final rowsDecoded = _safeJsonDecode(rowsRaw);
@@ -860,10 +868,10 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
     if (hasSureOrEdu) {
       markHomeActivationComplete(_prefsService);
       unawaited(
-        DailyPracticeReminderService.sync(
+        LocalDailyRemindersSync.syncPractice(
           prefs: _prefsService,
-          activationComplete: true,
-          completedToday: false,
+          db: _userDb,
+          dailyCaEnabled: true,
         ),
       );
     }

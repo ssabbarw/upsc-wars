@@ -24,9 +24,7 @@ class DailyCaReminderService {
     );
     // A morning only carries a new paper if the day before was a content day.
     for (var i = 0; i < 8; i++) {
-      if (DailyCaSchedule.isTestDay(
-        slot.subtract(const Duration(days: 1)),
-      )) {
+      if (DailyCaSchedule.isTestDay(slot.subtract(const Duration(days: 1)))) {
         return slot;
       }
       slot = slot.add(const Duration(days: 1));
@@ -34,7 +32,10 @@ class DailyCaReminderService {
     return slot;
   }
 
-  static Future<void> sync({required bool enabled}) async {
+  static Future<void> sync({
+    required bool enabled,
+    bool skipToday = false,
+  }) async {
     if (kIsWeb) return;
     if (!enabled) {
       await AppLocalNotificationsService.cancelDailyCaPaperReminder();
@@ -42,8 +43,25 @@ class DailyCaReminderService {
     }
     await DailyPracticeReminderService.ensureTimezonesReady();
     await AppLocalNotificationsService.scheduleDailyCaPaperReminder(
-      fireAtLocal: nextReminderLocalTime(reference: DateTime.now()),
+      fireAtLocal: fireAt(reference: DateTime.now(), skipToday: skipToday),
       questionCount: DailyDrillConstants.questionCount,
     );
+  }
+
+  /// Next valid 7 AM slot, skipping [reference]'s morning when [skipToday].
+  @visibleForTesting
+  static DateTime fireAt({
+    required DateTime reference,
+    required bool skipToday,
+  }) {
+    var slot = nextReminderLocalTime(reference: reference);
+    if (!skipToday) return slot;
+    final startOfTomorrow = DateTime(
+      reference.year,
+      reference.month,
+      reference.day,
+    ).add(const Duration(days: 1));
+    if (!slot.isBefore(startOfTomorrow)) return slot;
+    return nextReminderLocalTime(reference: slot);
   }
 }

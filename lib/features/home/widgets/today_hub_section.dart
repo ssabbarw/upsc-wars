@@ -32,6 +32,7 @@ import '../domain/start_sunday_week_review.dart';
 import '../domain/today_hero.dart';
 import '../providers/sunday_week_review_provider.dart';
 import '../providers/today_hub_provider.dart';
+import '../providers/today_hero_intent_provider.dart';
 import '../providers/home_activation_journey_provider.dart';
 import 'activation_journey_card.dart';
 import 'daily_revision_choice_sheet.dart';
@@ -112,6 +113,24 @@ class TodayHubSection extends HookConsumerWidget {
       warAvailable: warAvailable,
       warDone: warDone,
     );
+    final intentListenable = useListenable(TodayHeroIntentStore.notifier);
+    final intent = intentListenable.value;
+    final hubDay = TodayHero.hubDate(ist);
+    final intentExpired = intent != null && intent.hubDate != hubDay;
+    final intentSlotDone =
+        intent != null &&
+        TodayHero.statusOf(slots, intent.slot) == TodaySlotStatus.done;
+    useEffect(() {
+      if (intent == null) return null;
+      if (!intentExpired && !intentSlotDone) return null;
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        TodayHeroIntentStore.clear();
+      });
+      return null;
+    }, [intent, intentExpired, intentSlotDone]);
+    final forcedHero = intent == null || intentExpired || intentSlotDone
+        ? null
+        : intent.slot;
     final pick = TodayHero.pick(
       istNow: ist,
       warUrgency: TodayHero.warUrgencyFor(warPhase),
@@ -119,6 +138,7 @@ class TodayHubSection extends HookConsumerWidget {
       isSunday: sundayHub,
       paperRevised: data.paperResultsOpened,
       revisionQueueEmpty: queueEmpty,
+      forcedHero: forcedHero,
     );
     final hero = pick.hero;
     final fullDay = TodayHero.isFullDay(slots);

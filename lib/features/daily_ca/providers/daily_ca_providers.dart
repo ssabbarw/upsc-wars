@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/foundation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -5,6 +7,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../../core/providers/kill_switch_provider.dart';
 import '../../../core/providers/prefs_provider.dart';
 import '../../../core/providers/user_database_provider.dart';
+import '../../../core/services/local_daily_reminders_sync.dart';
 import '../data/daily_ca_firestore.dart';
 import '../data/daily_ca_repository.dart';
 import '../domain/daily_ca_schedule.dart';
@@ -34,8 +37,9 @@ final dailyCaRepositoryProvider = Provider<DailyCaRepository>((ref) {
 /// Snapshot stream so home updates when auto-publish writes the doc (the
 /// one-shot fetch cached `false` if the user opened the app a few minutes
 /// early).
-final dailyCaScheduledPaperIsLiveProvider =
-    StreamProvider.autoDispose<bool>((ref) async* {
+final dailyCaScheduledPaperIsLiveProvider = StreamProvider.autoDispose<bool>((
+  ref,
+) async* {
   final minDate = await ref.watch(dailyCaCalendarMinDateProvider.future);
   final scheduled = DailyCaSchedule.paperQuizContentDate();
   if (scheduled == null) {
@@ -68,11 +72,8 @@ class DailyCaMonthKey {
   int get hashCode => Object.hash(year, month);
 }
 
-final dailyCaCompletedDatesProvider =
-    FutureProvider.autoDispose.family<Set<String>, DailyCaMonthKey>((
-      ref,
-      key,
-    ) async {
+final dailyCaCompletedDatesProvider = FutureProvider.autoDispose
+    .family<Set<String>, DailyCaMonthKey>((ref, key) async {
       final db = ref.watch(userDatabaseProvider);
       return db.sessionsDao.getCompletedDailyCaDatesBetween(
         startInclusive: DailyCaSchedule.monthStartIso(key.year, key.month),
@@ -80,8 +81,8 @@ final dailyCaCompletedDatesProvider =
       );
     });
 
-final dailyCaDayCompletedProvider =
-    FutureProvider.autoDispose.family<bool, String>((ref, isoDate) async {
+final dailyCaDayCompletedProvider = FutureProvider.autoDispose
+    .family<bool, String>((ref, isoDate) async {
       final db = ref.watch(userDatabaseProvider);
       return db.sessionsDao.hasCompletedDailyCa(isoDate);
     });
@@ -107,4 +108,11 @@ Future<void> markDailyCaResultsOpened(WidgetRef ref, String isoDate) async {
   if (prefs.hasOpenedDailyCaResults(iso)) return;
   prefs.markDailyCaResultsOpened(iso);
   ref.read(dailyCaResultsOpenedEpochProvider.notifier).bump();
+  unawaited(
+    LocalDailyRemindersSync.syncPractice(
+      prefs: prefs,
+      db: ref.read(userDatabaseProvider),
+      dailyCaEnabled: true,
+    ),
+  );
 }

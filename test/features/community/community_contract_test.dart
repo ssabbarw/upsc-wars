@@ -47,9 +47,9 @@ void main() {
   });
 
   group('CommunityBucketUtils', () {
-    test('looks back 36 hours of 3-hour buckets', () {
-      expect(CommunityBucketUtils.lookbackHours, 36);
-      expect(CommunityBucketUtils.maxBucketLookback, 12);
+    test('looks back 72 hours of 3-hour buckets, including the oldest window', () {
+      expect(CommunityBucketUtils.lookbackHours, 72);
+      expect(CommunityBucketUtils.maxBucketLookback, 25);
     });
 
     test('returns expected bucket for hour ranges', () {

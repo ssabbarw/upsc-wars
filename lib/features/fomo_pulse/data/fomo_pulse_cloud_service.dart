@@ -152,6 +152,7 @@ class FomoPulseCloudService {
     final result = await callable.call<Map<String, dynamic>>({
       'question': draft.question.toServerMap(),
       'news_summary': draft.newsSummary,
+      'headline': draft.headline,
       'upsc_points': draft.upscPoints,
       'source_url': draft.sourceUrl,
     });
@@ -165,6 +166,7 @@ class FomoPulseCloudService {
       question: FomoPulseQuestion.fromMap(
         Map<String, dynamic>.from(questionRaw),
       ),
+      headlineHi: (data['headline_hi'] ?? '').toString(),
       newsSummaryHi: (data['news_summary_hi'] ?? '').toString(),
       upscPointsHi: hiPoints is List
           ? [
@@ -188,6 +190,8 @@ class FomoPulseCloudService {
     String imageUrl = '',
     String imageSource = '',
     List<String> upscPoints = const [],
+    String headline = '',
+    String headlineHi = '',
     String newsSummaryHi = '',
     List<String> upscPointsHi = const [],
   }) async {
@@ -195,6 +199,8 @@ class FomoPulseCloudService {
     final result = await callable.call<Map<String, dynamic>>({
       'title': title.trim(),
       'body': body.trim(),
+      'headline': headline.trim(),
+      'headline_hi': headlineHi.trim(),
       'news_summary': newsSummary.trim(),
       'news_summary_hi': newsSummaryHi.trim(),
       'source_url': sourceUrl.trim(),
@@ -399,6 +405,8 @@ class FomoPulsePushService {
         imageUrl: draft.imageUrl,
         imageSource: draft.imageSource,
         upscPoints: draft.upscPoints,
+        headline: draft.headline,
+        headlineHi: draft.headlineHi,
         newsSummaryHi: draft.newsSummaryHi,
         upscPointsHi: draft.upscPointsHi,
       );

@@ -6,7 +6,7 @@ import 'package:timezone/timezone.dart' as tz;
 import '../providers/prefs_provider.dart';
 import 'app_local_notifications_service.dart';
 
-/// Schedules one local reminder per day for the home daily practice drill.
+/// Schedules one local reminder per day for the home revision-queue loop.
 class DailyPracticeReminderService {
   DailyPracticeReminderService._();
 
@@ -27,14 +27,31 @@ class DailyPracticeReminderService {
     return todaySlot.add(const Duration(days: 1));
   }
 
+  /// Fire today only when the queue would be the Today-hub hero: CA revised
+  /// (or no paper), queue non-empty, and the drill not yet done.
+  @visibleForTesting
+  static bool shouldFireToday({
+    required bool activationComplete,
+    required bool paperRevised,
+    required bool practiceCompletedToday,
+    required bool queueEmpty,
+  }) {
+    return activationComplete &&
+        paperRevised &&
+        !practiceCompletedToday &&
+        !queueEmpty;
+  }
+
   static Future<void> sync({
     required PrefsService prefs,
     required bool activationComplete,
-    required bool completedToday,
+    required bool paperRevised,
+    required bool practiceCompletedToday,
+    required bool queueEmpty,
   }) async {
     if (kIsWeb) return;
 
-    if (!activationComplete) {
+    if (!activationComplete || queueEmpty) {
       await AppLocalNotificationsService.cancelDailyPracticeReminder();
       return;
     }
@@ -42,29 +59,21 @@ class DailyPracticeReminderService {
     await ensureTimezonesReady();
 
     final hour = prefs.dailyPracticeReminderHour;
-    final fireAt = completedToday
-        ? nextReminderLocalTime(
+    final fireToday = shouldFireToday(
+      activationComplete: activationComplete,
+      paperRevised: paperRevised,
+      practiceCompletedToday: practiceCompletedToday,
+      queueEmpty: queueEmpty,
+    );
+    final fireAt = fireToday
+        ? nextReminderLocalTime(reference: DateTime.now(), hour: hour)
+        : nextReminderLocalTime(
             reference: DateTime.now().add(const Duration(days: 1)),
             hour: hour,
-          )
-        : nextReminderLocalTime(reference: DateTime.now(), hour: hour);
+          );
 
     await AppLocalNotificationsService.scheduleDailyPracticeReminder(
       fireAtLocal: fireAt,
-    );
-  }
-
-  /// The drill reminder is a recovery nudge, so **any** finished session pushes
-  /// it to tomorrow — not just a drill. A day with a paper quiz or a War in it
-  /// does not need to be nagged about practice.
-  static Future<void> syncAfterSessionSubmit({
-    required PrefsService prefs,
-    required String? analyticsFeatureKey,
-  }) async {
-    await sync(
-      prefs: prefs,
-      activationComplete: prefs.homeActivationComplete,
-      completedToday: true,
     );
   }
 

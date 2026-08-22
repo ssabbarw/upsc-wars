@@ -43,6 +43,8 @@ class CommunityRepository {
     await docRef.set({emailFieldKey: userPayload}, SetOptions(merge: true));
   }
 
+  /// One 3-hour presence doc. Empty windows return `[]` so Recents can walk
+  /// the next older bucket instead of substituting `users`.
   Future<List<CommunityUser>> fetchRecentUsers({int bucketOffset = 0}) async {
     if (bucketOffset >= CommunityBucketUtils.maxBucketLookback) return const [];
     final timestamp = DateTime.now()
@@ -62,17 +64,9 @@ class CommunityRepository {
         );
 
     final snap = await bucketDoc.get();
-    if (!snap.exists) {
-      return bucketOffset == 0
-          ? _fetchRecentUsersFromUsersCollection()
-          : const [];
-    }
+    if (!snap.exists) return const [];
     final data = snap.data();
-    if (data == null || data.isEmpty) {
-      return bucketOffset == 0
-          ? _fetchRecentUsersFromUsersCollection()
-          : const [];
-    }
+    if (data == null || data.isEmpty) return const [];
 
     final users = <CommunityUser>[];
     for (final entry in data.entries) {
@@ -96,40 +90,6 @@ class CommunityRepository {
 
     users.sort((a, b) => b.lastOnlineTime.compareTo(a.lastOnlineTime));
     return dedupeCommunityUsersByLatest(users);
-  }
-
-  Future<List<CommunityUser>> _fetchRecentUsersFromUsersCollection() async {
-    final minTs = DateTime.now()
-        .subtract(const Duration(hours: 24))
-        .millisecondsSinceEpoch;
-    final query = await _firestore
-        .collection(CommunityLegacyContract.usersCollection)
-        .where(
-          CommunityLegacyContract.lastOnlineTime,
-          isGreaterThanOrEqualTo: minTs,
-        )
-        .orderBy(CommunityLegacyContract.lastOnlineTime, descending: true)
-        .limit(100)
-        .get();
-
-    final users = query.docs
-        .map((doc) => communityUserFromLegacyMap(doc.id, doc.data()))
-        .toList();
-    if (users.isNotEmpty) {
-      return dedupeCommunityUsersByLatest(users);
-    }
-
-    final unfiltered = await _firestore
-        .collection(CommunityLegacyContract.usersCollection)
-        .limit(100)
-        .get();
-
-    final fallbackUsers =
-        unfiltered.docs
-            .map((doc) => communityUserFromLegacyMap(doc.id, doc.data()))
-            .toList()
-          ..sort((a, b) => b.lastOnlineTime.compareTo(a.lastOnlineTime));
-    return dedupeCommunityUsersByLatest(fallbackUsers);
   }
 
   /// Loads `users/{email}` for profile display (e.g. chat header).

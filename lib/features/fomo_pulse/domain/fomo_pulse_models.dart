@@ -405,6 +405,8 @@ class FomoPulseDraft {
     this.imageUrl = '',
     this.imageSource = '',
     this.upscPoints = const [],
+    this.headline = '',
+    this.headlineHi = '',
     this.newsSummaryHi = '',
     this.upscPointsHi = const [],
   });
@@ -420,6 +422,8 @@ class FomoPulseDraft {
   final String imageUrl;
   final String imageSource;
   final List<String> upscPoints;
+  final String headline;
+  final String headlineHi;
   final String newsSummaryHi;
   final List<String> upscPointsHi;
 
@@ -432,6 +436,8 @@ class FomoPulseDraft {
     String? imageUrl,
     String? imageSource,
     List<String>? upscPoints,
+    String? headline,
+    String? headlineHi,
     String? newsSummaryHi,
     List<String>? upscPointsHi,
   }) {
@@ -447,6 +453,8 @@ class FomoPulseDraft {
       imageUrl: imageUrl ?? this.imageUrl,
       imageSource: imageSource ?? this.imageSource,
       upscPoints: upscPoints ?? this.upscPoints,
+      headline: headline ?? this.headline,
+      headlineHi: headlineHi ?? this.headlineHi,
       newsSummaryHi: newsSummaryHi ?? this.newsSummaryHi,
       upscPointsHi: upscPointsHi ?? this.upscPointsHi,
     );
@@ -462,6 +470,8 @@ class FomoPulseDraft {
       sendRecommended: map['send'] != false,
       notificationTitle: (map['notification_title'] ?? '').toString(),
       notificationBody: (map['notification_body'] ?? '').toString(),
+      headline: (map['headline'] ?? '').toString(),
+      headlineHi: (map['headline_hi'] ?? '').toString(),
       newsSummary: (map['news_summary'] ?? '').toString(),
       newsSummaryHi: (map['news_summary_hi'] ?? '').toString(),
       sourceUrl: (map['source_url'] ?? '').toString(),
@@ -553,6 +563,8 @@ class FomoPulse {
     this.imageUrl = '',
     this.imageSource = '',
     this.upscPoints = const [],
+    this.headline = '',
+    this.headlineHi = '',
     this.newsSummaryHi = '',
     this.upscPointsHi = const [],
   });
@@ -570,6 +582,8 @@ class FomoPulse {
   final String imageUrl;
   final String imageSource;
   final List<String> upscPoints;
+  final String headline;
+  final String headlineHi;
   final String newsSummaryHi;
   final List<String> upscPointsHi;
 
@@ -586,6 +600,8 @@ class FomoPulse {
     String? imageUrl,
     String? imageSource,
     List<String>? upscPoints,
+    String? headline,
+    String? headlineHi,
     String? newsSummaryHi,
     List<String>? upscPointsHi,
   }) {
@@ -603,6 +619,8 @@ class FomoPulse {
       imageUrl: imageUrl ?? this.imageUrl,
       imageSource: imageSource ?? this.imageSource,
       upscPoints: upscPoints ?? this.upscPoints,
+      headline: headline ?? this.headline,
+      headlineHi: headlineHi ?? this.headlineHi,
       newsSummaryHi: newsSummaryHi ?? this.newsSummaryHi,
       upscPointsHi: upscPointsHi ?? this.upscPointsHi,
     );
@@ -617,28 +635,44 @@ class FomoPulse {
   /// True when a Hindi news summary exists for list/detail display.
   bool get hasHindiCopy => newsSummaryHi.trim().isNotEmpty;
 
-  /// List card title. When Hindi is preferred and a summary exists, use the
-  /// first non-empty summary line; otherwise the English push title.
-  String listTitle({required bool preferHindi}) {
-    if (!preferHindi || !hasHindiCopy) return title;
-    for (final line in newsSummaryHi.split('\n')) {
-      final t = line.trim();
-      if (t.isNotEmpty) return t;
+  /// In-app heading. Uses the serious briefing headline when present so the
+  /// push FOMO title is not reused on the article.
+  String displayHeadline({required bool preferHindi}) {
+    if (preferHindi) {
+      final hi = headlineHi.trim();
+      if (hi.isNotEmpty) return hi;
+    }
+    final en = headline.trim();
+    if (en.isNotEmpty) return en;
+    if (preferHindi && hasHindiCopy) {
+      for (final line in newsSummaryHi.split('\n')) {
+        final t = line.trim();
+        if (t.isNotEmpty) return t;
+      }
     }
     return title;
   }
 
-  /// List card subtitle. Remaining Hindi summary lines when preferred &
-  /// available; otherwise the English push body. Empty if the only Hindi
-  /// line was already used as the title.
+  /// List card title. Prefer the in-app headline over the push title.
+  String listTitle({required bool preferHindi}) {
+    return displayHeadline(preferHindi: preferHindi);
+  }
+
+  /// List card subtitle. Prefer the briefing over the push body.
   String listBody({required bool preferHindi}) {
-    if (!preferHindi || !hasHindiCopy) return body;
-    final lines = [
-      for (final line in newsSummaryHi.split('\n'))
-        if (line.trim().isNotEmpty) line.trim(),
-    ];
-    if (lines.length <= 1) return '';
-    return lines.skip(1).join('\n');
+    if (preferHindi && hasHindiCopy) {
+      if (headlineHi.trim().isNotEmpty) return newsSummaryHi.trim();
+      final lines = [
+        for (final line in newsSummaryHi.split('\n'))
+          if (line.trim().isNotEmpty) line.trim(),
+      ];
+      if (lines.length <= 1) return '';
+      return lines.skip(1).join('\n');
+    }
+    if (headline.trim().isNotEmpty && newsSummary.trim().isNotEmpty) {
+      return newsSummary.trim();
+    }
+    return body;
   }
 
   FomoPulseCommunityStats? communityStats({int minAttempts = 20}) {
@@ -654,6 +688,8 @@ class FomoPulse {
       pulseId: id,
       title: (data['title'] ?? '').toString(),
       body: (data['body'] ?? '').toString(),
+      headline: (data['headline'] ?? '').toString(),
+      headlineHi: (data['headline_hi'] ?? '').toString(),
       newsSummary: (data['news_summary'] ?? '').toString(),
       sourceUrl: (data['source_url'] ?? '').toString(),
       question: FomoPulseQuestion.fromMap(
@@ -678,6 +714,8 @@ class FomoPulse {
       'pulse_id': pulseId,
       'title': title,
       'body': body,
+      'headline': headline,
+      'headline_hi': headlineHi,
       'news_summary': newsSummary,
       'source_url': sourceUrl,
       'question': question.toServerMap(),
@@ -698,6 +736,8 @@ class FomoPulse {
       pulseId: (data['pulse_id'] ?? '').toString(),
       title: (data['title'] ?? '').toString(),
       body: (data['body'] ?? '').toString(),
+      headline: (data['headline'] ?? '').toString(),
+      headlineHi: (data['headline_hi'] ?? '').toString(),
       newsSummary: (data['news_summary'] ?? '').toString(),
       sourceUrl: (data['source_url'] ?? '').toString(),
       question: FomoPulseQuestion.fromMap(
