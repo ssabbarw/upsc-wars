@@ -48,16 +48,6 @@ const ADMIN_EMAILS = new Set(
   ].map((e) => e.toLowerCase()),
 );
 
-function pulseBroadcastAllowlist() {
-  const raw = process.env.SPOT_TEST_BROADCAST_EMAILS || "";
-  return new Set(
-    raw
-      .split(",")
-      .map((e) => e.trim().toLowerCase())
-      .filter(Boolean),
-  );
-}
-
 function db() {
   return admin.firestore();
 }
@@ -1072,10 +1062,6 @@ exports.sendFomoPulseNotification = onCall(generateOpts, async (request) => {
     );
 
   if (target === "broadcast") {
-    const allowlist = pulseBroadcastAllowlist();
-    if (!allowlist.has(email)) {
-      return { ok: false, reason: "not_authorized", pulseId };
-    }
     await admin.messaging().send({
       topic: FOMO_PULSE_FCM_TOPIC,
       ...message,
