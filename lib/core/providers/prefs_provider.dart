@@ -183,6 +183,16 @@ abstract final class PrefKeys {
   /// ISO dates (`YYYY-MM-DD`) whose Daily CA results/explanations were opened.
   static const dailyCaResultsOpenedDatesV1 =
       'daily_ca_results_opened_dates_v1';
+
+  /// Shown once: Home sheet introducing CA Shots, Daily CA Test, Daily Battle.
+  static const dailyRitualsIntroSeenV1 = 'daily_rituals_intro_seen_v1';
+
+  /// JSON list of [DailyRitualIds] the user has opened at least once.
+  static const dailyRitualsOpenedIdsV1 = 'daily_rituals_opened_ids_v1';
+
+  /// Last [ReleaseVersion] string the user dismissed on the soft-update banner.
+  static const softUpdateDismissedVersionV1 =
+      'soft_update_dismissed_version_v1';
 }
 
 class PrefsService {
@@ -545,6 +555,40 @@ class PrefsService {
     if (next.length > 21) next.removeRange(21, next.length);
     _p.setStringList(PrefKeys.dailyCaResultsOpenedDatesV1, next);
   }
+
+  bool get dailyRitualsIntroSeen =>
+      _p.getBool(PrefKeys.dailyRitualsIntroSeenV1) ?? false;
+  set dailyRitualsIntroSeen(bool v) =>
+      _p.setBool(PrefKeys.dailyRitualsIntroSeenV1, v);
+
+  Set<String> get dailyRitualsOpenedIds {
+    final raw = _p.getString(PrefKeys.dailyRitualsOpenedIdsV1);
+    if (raw == null || raw.isEmpty) return <String>{};
+    try {
+      final list = jsonDecode(raw);
+      if (list is! List) return <String>{};
+      return list.map((e) => e.toString()).toSet();
+    } catch (_) {
+      return <String>{};
+    }
+  }
+
+  /// Returns `true` when [id] was newly recorded.
+  bool markDailyRitualOpened(String id) {
+    if (id.isEmpty) return false;
+    final next = dailyRitualsOpenedIds;
+    if (!next.add(id)) return false;
+    _p.setString(
+      PrefKeys.dailyRitualsOpenedIdsV1,
+      jsonEncode(next.toList()..sort()),
+    );
+    return true;
+  }
+
+  String get softUpdateDismissedVersion =>
+      (_p.getString(PrefKeys.softUpdateDismissedVersionV1) ?? '').trim();
+  set softUpdateDismissedVersion(String v) =>
+      _p.setString(PrefKeys.softUpdateDismissedVersionV1, v.trim());
 }
 
 @Riverpod(keepAlive: true)

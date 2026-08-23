@@ -20,6 +20,7 @@ import '../providers/daily_ca_providers.dart';
 import '../widgets/daily_ca_day_sheet.dart';
 import '../widgets/daily_ca_month_calendar.dart';
 import '../widgets/daily_ca_today_section.dart';
+import '../../home/domain/daily_rituals.dart';
 
 class DailyCaScreen extends HookConsumerWidget {
   const DailyCaScreen({super.key, this.autoStartPaper = false});
@@ -59,6 +60,11 @@ class DailyCaScreen extends HookConsumerWidget {
     final completedAsync = ref.watch(dailyCaCompletedDatesProvider(monthKey));
     final launching = useState(false);
     final compact = MediaQuery.sizeOf(context).height < 760;
+
+    useEffect(() {
+      unawaited(markDailyRitualOpened(ref, DailyRitualIds.dailyCa));
+      return null;
+    }, const []);
 
     final paperCompleted =
         paperIso != null &&

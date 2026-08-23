@@ -27,6 +27,7 @@ import '../../daily_war/theme/daily_war_theme.dart';
 import '../../daily_war/widgets/daily_war_home_card.dart';
 import '../domain/activation_journey_constants.dart';
 import '../domain/daily_revision.dart';
+import '../domain/daily_rituals.dart';
 import '../domain/daily_streak_service.dart';
 import '../domain/start_sunday_week_review.dart';
 import '../domain/today_hero.dart';
@@ -36,6 +37,7 @@ import '../providers/today_hero_intent_provider.dart';
 import '../providers/home_activation_journey_provider.dart';
 import 'activation_journey_card.dart';
 import 'daily_revision_choice_sheet.dart';
+import 'daily_rituals_intro_sheet.dart';
 
 /// Daily ritual on home: one full-width hero card + a flat "Keep going" list.
 ///
@@ -496,11 +498,19 @@ class TodayHubSection extends HookConsumerWidget {
 
     // ── Keep going list — always the same set, independent of the hero ─────
 
+    final openedRituals =
+        ref.watch(dailyRitualsOpenedProvider).asData?.value ?? const {};
+
     List<_TodayListRowData> buildListRows() {
       final rows = <_TodayListRowData>[];
 
       if (data.caEnabled) {
-        rows.add(_caShotsListRow(context));
+        rows.add(
+          _caShotsListRow(
+            context,
+            showNew: !openedRituals.contains(DailyRitualIds.caShots),
+          ),
+        );
         rows.add(
           _TodayListRowData(
             icon: Icons.article_outlined,
@@ -513,6 +523,7 @@ class TodayHubSection extends HookConsumerWidget {
                 : 'Quiz done — open answers',
             done: data.paperCompleted && data.paperResultsOpened,
             locked: false,
+            showNew: !openedRituals.contains(DailyRitualIds.dailyCa),
             onTap: () => context.push('/daily-ca'),
           ),
         );
@@ -540,6 +551,7 @@ class TodayHubSection extends HookConsumerWidget {
             ),
             done: hubWarSubmitted,
             locked: false,
+            showNew: !openedRituals.contains(DailyRitualIds.dailyWar),
             onTap: openWarSurface,
           ),
         );
@@ -664,13 +676,48 @@ class TodayHubSection extends HookConsumerWidget {
         // ── TODAY list ─────────────────────────────────────────────────────
         if (listRows.isNotEmpty) ...[
           const SizedBox(height: AppSpacing.md),
-          Text(
-            'Keep going',
-            style: AppTextStyles.caption().copyWith(
-              color: scheme.onSurfaceVariant,
-              fontWeight: FontWeight.w700,
-              letterSpacing: 1.1,
-            ),
+          Row(
+            children: [
+              Text(
+                'Keep going',
+                style: AppTextStyles.caption().copyWith(
+                  color: scheme.onSurfaceVariant,
+                  fontWeight: FontWeight.w700,
+                  letterSpacing: 1.1,
+                ),
+              ),
+              const Spacer(),
+              InkWell(
+                onTap: () => unawaited(
+                  showDailyRitualsIntroSheet(context, ref, fromHelp: true),
+                ),
+                borderRadius: BorderRadius.circular(AppRadius.pill),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: AppSpacing.xs,
+                    vertical: 2,
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(
+                        Icons.info_outline_rounded,
+                        size: 14,
+                        color: scheme.onSurfaceVariant,
+                      ),
+                      const SizedBox(width: 4),
+                      Text(
+                        'What is this?',
+                        style: AppTextStyles.caption().copyWith(
+                          color: scheme.onSurfaceVariant,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
           ),
           const SizedBox(height: AppSpacing.sm),
           ClipRRect(
@@ -717,6 +764,7 @@ class _TodayListRowData {
     this.subtitleMaxLines = 1,
     this.onTap,
     this.loading = false,
+    this.showNew = false,
   });
 
   final IconData icon;
@@ -728,6 +776,7 @@ class _TodayListRowData {
   final bool locked;
   final VoidCallback? onTap;
   final bool loading;
+  final bool showNew;
 }
 
 class _TodayListRow extends StatelessWidget {
@@ -783,14 +832,24 @@ class _TodayListRow extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Text(
-                        data.title,
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        style: AppTextStyles.label().copyWith(
-                          color: fg,
-                          fontWeight: FontWeight.w600,
-                        ),
+                      Row(
+                        children: [
+                          Flexible(
+                            child: Text(
+                              data.title,
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              style: AppTextStyles.label().copyWith(
+                                color: fg,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                          if (data.showNew && !data.done) ...[
+                            const SizedBox(width: AppSpacing.xs),
+                            _NewBadge(accent: data.accent),
+                          ],
+                        ],
                       ),
                       const SizedBox(height: 2),
                       Text(
@@ -833,7 +892,10 @@ class _TodayListRow extends StatelessWidget {
 
 // ── TODAY list helpers ────────────────────────────────────────────────────────
 
-_TodayListRowData _caShotsListRow(BuildContext context) {
+_TodayListRowData _caShotsListRow(
+  BuildContext context, {
+  required bool showNew,
+}) {
   return _TodayListRowData(
     icon: Icons.bolt_rounded,
     accent: AppColors.primary,
@@ -841,8 +903,35 @@ _TodayListRowData _caShotsListRow(BuildContext context) {
     subtitle: 'Breaking news brief + 1 MCQ based on it.',
     done: false,
     locked: false,
+    showNew: showNew,
     onTap: () => context.push('/fomo-pulse'),
   );
+}
+
+class _NewBadge extends StatelessWidget {
+  const _NewBadge({required this.accent});
+
+  final Color accent;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 1),
+      decoration: BoxDecoration(
+        color: accent.withValues(alpha: 0.14),
+        borderRadius: BorderRadius.circular(AppRadius.pill),
+      ),
+      child: Text(
+        'NEW',
+        style: AppTextStyles.caption().copyWith(
+          color: accent,
+          fontWeight: FontWeight.w800,
+          fontSize: 9,
+          letterSpacing: 0.4,
+        ),
+      ),
+    );
+  }
 }
 
 String _warListSubtitle({

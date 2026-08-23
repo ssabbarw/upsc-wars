@@ -9,6 +9,7 @@ import 'package:intl/intl.dart';
 import '../../../core/analytics/analytics.dart';
 import '../../../core/analytics/analytics_events.dart';
 import '../../../core/providers/app_language_helpers.dart';
+import '../../home/domain/daily_rituals.dart';
 import '../../../core/providers/super_user_provider.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
@@ -39,6 +40,7 @@ class FomoPulseHistoryScreen extends HookConsumerWidget {
       if (loggedHubOpen.value || async.isLoading) return null;
       loggedHubOpen.value = true;
       final data = async.asData?.value;
+      unawaited(markDailyRitualOpened(ref, DailyRitualIds.caShots));
       unawaited(
         Analytics.track(
           ref,

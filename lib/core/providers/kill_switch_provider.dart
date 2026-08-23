@@ -109,6 +109,9 @@ Future<KillSwitchSnapshot> killSwitch(Ref ref) async {
       'prelims_date': '2027-05-23',
       // JSON: { "video_link": "https://...", "message": "...", "version": 1 }
       'home_page_video': '',
+      // Optional dismissible update banner (same format as kill_switch_version).
+      'soft_update_version': '',
+      'soft_update_message': '',
     });
     await rc.fetchAndActivate();
     final raw = rc.getString(killSwitchVersionRemoteConfigKey).trim();

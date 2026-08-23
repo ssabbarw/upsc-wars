@@ -42,6 +42,8 @@ import '../../../shared/widgets/quick_practice_mode_sheet.dart';
 import '../../../shared/widgets/contact_us_entry.dart';
 import '../../../shared/widgets/home_page_video_banner.dart';
 import '../../../shared/widgets/rate_review_sheet.dart';
+import '../../../shared/widgets/soft_update_banner.dart';
+import '../widgets/daily_rituals_intro_sheet.dart';
 
 class HomeScreen extends HookConsumerWidget {
   const HomeScreen({super.key, this.heroSlot});
@@ -98,6 +100,7 @@ class HomeScreen extends HookConsumerWidget {
       unawaited(
         BattleMessagingService.maybePromptAfterFirstTestHome(context: context),
       );
+      unawaited(maybeShowDailyRitualsIntro(context: context, ref: ref));
       return null;
     }, [onHomeRoute]);
 
@@ -499,6 +502,7 @@ class HomeScreen extends HookConsumerWidget {
                       ],
                     ),
                     const SizedBox(height: AppSpacing.md),
+                    const SoftUpdateBanner(),
                     Consumer(
                       builder: (context, ref, _) {
                         final journey = ref.watch(

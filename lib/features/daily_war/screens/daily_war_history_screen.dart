@@ -14,6 +14,7 @@ import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/widgets/shimmer_box.dart';
+import '../../home/domain/daily_rituals.dart';
 import '../daily_war_constants.dart';
 import '../domain/daily_war_copy.dart';
 import '../domain/daily_war_models.dart';
@@ -51,6 +52,7 @@ class DailyWarHistoryScreen extends HookConsumerWidget {
     tick.value;
 
     useEffect(() {
+      unawaited(markDailyRitualOpened(ref, DailyRitualIds.dailyWar));
       if (embedded) return null;
       unawaited(
         BattleMessagingService.maybePromptAfterScreenSettles(

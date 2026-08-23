@@ -9,6 +9,7 @@ import 'package:url_launcher/url_launcher.dart';
 import '../../../core/analytics/analytics.dart';
 import '../../../core/analytics/analytics_events.dart';
 import '../../../core/providers/app_language_helpers.dart';
+import '../../home/domain/daily_rituals.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
@@ -37,6 +38,7 @@ class FomoPulseDetailScreen extends HookConsumerWidget {
     final canPop = context.canPop();
 
     useEffect(() {
+      unawaited(markDailyRitualOpened(ref, DailyRitualIds.caShots));
       unawaited(
         Analytics.track(
           ref,
