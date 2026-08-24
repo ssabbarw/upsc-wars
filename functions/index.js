@@ -525,6 +525,266 @@ exports.sendSpotTestNotification = functions.https.onCall(async (data, context) 
   return { ok: true, target: "self", notificationId };
 });
 
+const BROADCAST_ADMIN_EMAILS = new Set([
+  "sachinsabbarwal@gmail.com",
+  "upscwars@gmail.com",
+  "tinyminyapps@gmail.com",
+  "upscmcqpractice@gmail.com",
+]);
+
+const MAX_ANNOUNCEMENT_HTML_LEN = 80000;
+const LONG_HTML_COLLECTION = "Long_Html_Message";
+const LONG_HTML_DOC_ID = "message";
+const LONG_HTML_FIELD = "message";
+const ANDROID_NOTIF_CHANNEL = "general_v2";
+
+function broadcastAdminAllowlist() {
+  return new Set([
+    ...BROADCAST_ADMIN_EMAILS,
+    ...spotTestBroadcastAllowlist(),
+    ...questionEditorAllowlist(),
+  ]);
+}
+
+function requireBroadcastAdmin(context) {
+  if (!context.auth) {
+    throw new functions.https.HttpsError(
+      "unauthenticated",
+      "Sign in required.",
+    );
+  }
+  const tokenEmail = context.auth.token.email;
+  if (!tokenEmail || typeof tokenEmail !== "string") {
+    throw new functions.https.HttpsError(
+      "failed-precondition",
+      "Your account must have an email.",
+    );
+  }
+  const email = tokenEmail.toLowerCase().trim();
+  if (!broadcastAdminAllowlist().has(email)) {
+    throw new functions.https.HttpsError(
+      "permission-denied",
+      "Your account is not allowed to send broadcasts.",
+    );
+  }
+  return email;
+}
+
+function clipAnnouncementHtml(raw) {
+  return typeof raw === "string" && raw.trim()
+    ? raw.trim().slice(0, MAX_ANNOUNCEMENT_HTML_LEN)
+    : "";
+}
+
+async function writeLongHtmlMessage({ html, title, email }) {
+  await admin
+    .firestore()
+    .collection(LONG_HTML_COLLECTION)
+    .doc(LONG_HTML_DOC_ID)
+    .set(
+      {
+        [LONG_HTML_FIELD]: html,
+        title: title || "",
+        updated_at: admin.firestore.FieldValue.serverTimestamp(),
+        updated_by: email,
+      },
+      { merge: true },
+    );
+}
+
+async function readLongHtmlMessage() {
+  const snap = await admin
+    .firestore()
+    .collection(LONG_HTML_COLLECTION)
+    .doc(LONG_HTML_DOC_ID)
+    .get();
+  if (!snap.exists) return "";
+  const value = (snap.data() || {})[LONG_HTML_FIELD];
+  return typeof value === "string" ? value.trim() : "";
+}
+
+/**
+ * HTTPS callable `saveLongHtmlMessage` — writes the in-app announcement
+ * (`Long_Html_Message/message`) without sending FCM.
+ *
+ * data: html (required), title?
+ */
+exports.saveLongHtmlMessage = functions.https.onCall(async (data, context) => {
+  const email = requireBroadcastAdmin(context);
+  const html = clipAnnouncementHtml(data && data.html);
+  if (!html) {
+    throw new functions.https.HttpsError(
+      "invalid-argument",
+      "html is required.",
+    );
+  }
+  const titleRaw = data && data.title;
+  const title =
+    typeof titleRaw === "string" && titleRaw.trim()
+      ? titleRaw.trim().slice(0, 120)
+      : "";
+  await writeLongHtmlMessage({ html, title, email });
+  functions.logger.info("saveLongHtmlMessage: saved", { email });
+  return { ok: true, saved: true };
+});
+
+/**
+ * HTTPS callable `sendBroadcastAnnouncement` — admin tray notification.
+ * Does **not** write long HTML unless `saveHtml` is true.
+ * `openLongHtml` opens whatever is already saved in Firestore.
+ *
+ * data: title, body, target, openLongHtml?, html?, saveHtml?
+ */
+exports.sendBroadcastAnnouncement = functions.https.onCall(
+  async (data, context) => {
+    const email = requireBroadcastAdmin(context);
+
+    const titleRaw = data && data.title;
+    const bodyRaw = data && data.body;
+    const title =
+      typeof titleRaw === "string" && titleRaw.trim()
+        ? titleRaw.trim().slice(0, 120)
+        : "";
+    const body =
+      typeof bodyRaw === "string" && bodyRaw.trim()
+        ? bodyRaw.trim().slice(0, MAX_BODY_LEN)
+        : "";
+    if (!title || !body) {
+      throw new functions.https.HttpsError(
+        "invalid-argument",
+        "title and body are required.",
+      );
+    }
+
+    const html = clipAnnouncementHtml(data && data.html);
+    const saveHtml = Boolean(data && data.saveHtml) && Boolean(html);
+    const openLongHtml = Boolean(data && data.openLongHtml);
+
+    const targetRaw = data && data.target;
+    const target =
+      typeof targetRaw === "string" && targetRaw.trim() === "broadcast"
+        ? "broadcast"
+        : "self";
+
+    const notificationId = crypto.randomUUID();
+    const kindRaw = data && data.kind;
+    const kind =
+      typeof kindRaw === "string" && kindRaw.trim()
+        ? kindRaw.trim().slice(0, 40)
+        : "announcement";
+
+    if (saveHtml) {
+      await writeLongHtmlMessage({ html, title, email });
+    }
+
+    if (openLongHtml) {
+      const live = saveHtml ? html : await readLongHtmlMessage();
+      if (!live) {
+        return { ok: false, reason: "no_html" };
+      }
+    }
+
+    const fcmData = {
+      kind,
+      notification_id: notificationId,
+    };
+    if (openLongHtml) {
+      fcmData.type = "long_html_message";
+    }
+
+    const message = {
+      notification: { title, body },
+      data: fcmData,
+      android: {
+        priority: "high",
+        notification: {
+          channelId: ANDROID_NOTIF_CHANNEL,
+          sound: "default",
+        },
+      },
+      apns: {
+        payload: {
+          aps: { sound: "default" },
+        },
+      },
+    };
+
+    await admin
+      .firestore()
+      .collection("admin_dashboard")
+      .doc("notifications")
+      .collection("items")
+      .doc(notificationId)
+      .set(
+        {
+          kind,
+          title,
+          sent_at: admin.firestore.FieldValue.serverTimestamp(),
+          opens: 0,
+          conversions: 0,
+          updated_at: admin.firestore.FieldValue.serverTimestamp(),
+          created_by: email,
+          target,
+        },
+        { merge: true },
+      );
+
+    if (target === "broadcast") {
+      try {
+        await admin.messaging().send({
+          ...message,
+          topic: SPOT_TEST_BROADCAST_TOPIC,
+        });
+      } catch (e) {
+        functions.logger.error("sendBroadcastAnnouncement: broadcast failed", {
+          email,
+          error: e && e.message ? e.message : String(e),
+        });
+        return { ok: false, reason: "send_failed" };
+      }
+      functions.logger.info("sendBroadcastAnnouncement: broadcast delivered", {
+        email,
+        topic: SPOT_TEST_BROADCAST_TOPIC,
+        notificationId,
+        kind,
+      });
+      return {
+        ok: true,
+        target: "broadcast",
+        notificationId,
+        topic: SPOT_TEST_BROADCAST_TOPIC,
+      };
+    }
+
+    const userSnap = await admin.firestore().collection("users").doc(email).get();
+    const userData = userSnap.data() || {};
+    const fcmToken = userData.fcm_token || userData.fcmToken;
+    if (!fcmToken || typeof fcmToken !== "string") {
+      functions.logger.warn("sendBroadcastAnnouncement: no token", { email });
+      return { ok: false, reason: "no_token" };
+    }
+
+    try {
+      await admin.messaging().send({
+        ...message,
+        token: fcmToken,
+      });
+    } catch (e) {
+      functions.logger.error("sendBroadcastAnnouncement: FCM failed", {
+        email,
+        error: e && e.message ? e.message : String(e),
+      });
+      return { ok: false, reason: "send_failed" };
+    }
+
+    functions.logger.info("sendBroadcastAnnouncement: delivered to self", {
+      email,
+      notificationId,
+    });
+    return { ok: true, target: "self", notificationId };
+  },
+);
+
 /**
  * RTDB trigger: notify peer on new chat message.
  */

@@ -243,6 +243,19 @@ final class StreakContinuedEvent extends AnalyticsEvent {
   final int streakLength;
 }
 
+/// **A revision or revision_quick session was started.**
+///
+/// **GA4:** `revision_started` with `questions_count`, `subject`.
+final class RevisionStartedEvent extends AnalyticsEvent {
+  const RevisionStartedEvent({
+    required this.questionsCount,
+    required this.subject,
+  });
+
+  final int questionsCount;
+  final String subject;
+}
+
 /// **A revision or revision_quick session was completed.**
 ///
 /// **GA4:** `revision_completed` with `questions_count`, `subject`.
@@ -591,6 +604,7 @@ final class UspSessionCoachCtaTappedEvent extends AnalyticsEvent {
 ///
 /// **GA4:** `app_notification_open` with `channel` (`fcm` | `local`),
 /// `kind` (routing hint: `battle_join` | `open_challenge` | `long_html` | `unknown`).
+/// Also logs alias `notification_opened` with the same parameters.
 final class AppNotificationOpenEvent extends AnalyticsEvent {
   const AppNotificationOpenEvent({required this.channel, required this.kind});
 
@@ -870,6 +884,7 @@ final class DailyWarAttemptedEvent extends AnalyticsEvent {
 ///
 /// **GA4:** `daily_war_submitted` with `date_id`, `mode` (`live`|`unranked`),
 /// `is_grand` (0/1), `score_hundredths` (score × 100, int).
+/// Also logs alias `daily_static_war_completed` with the same parameters.
 final class DailyWarSubmittedEvent extends AnalyticsEvent {
   const DailyWarSubmittedEvent({
     required this.dateId,
@@ -894,6 +909,7 @@ final class DailyWarSubmittedEvent extends AnalyticsEvent {
 ///
 /// **GA4:** `daily_ca_attempted` with `date_id`, `mode` (`first`|`revise`).
 /// Also sets user property `daily_ca_player` = `yes`.
+/// Also logs alias `daily_current_affairs_started` with the same parameters.
 final class DailyCaAttemptedEvent extends AnalyticsEvent {
   const DailyCaAttemptedEvent({
     required this.dateId,
@@ -912,6 +928,7 @@ final class DailyCaAttemptedEvent extends AnalyticsEvent {
 ///
 /// **GA4:** `daily_ca_submitted` with `date_id`, `mode` (`first`|`revise`),
 /// `score_hundredths` (accuracy × 100, int).
+/// Also logs alias `daily_current_affairs_completed` with the same parameters.
 final class DailyCaSubmittedEvent extends AnalyticsEvent {
   const DailyCaSubmittedEvent({
     required this.dateId,

@@ -402,6 +402,15 @@ class _TestEngineLoaded extends HookConsumerWidget {
       );
       if (s.subject == 'revision' || s.subject == 'revision_quick') {
         unawaited(
+          Analytics.track(
+            ref,
+            RevisionStartedEvent(
+              questionsCount: s.questionCount,
+              subject: s.subject,
+            ),
+          ),
+        );
+        unawaited(
           logActivationMilestoneOnce(
             ref,
             ActivationMilestones.firstRevisionTest,

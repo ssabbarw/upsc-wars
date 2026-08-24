@@ -221,6 +221,15 @@ class SettingsScreen extends ConsumerWidget {
                     ),
                   if (isSuperUser)
                     _NavTile(
+                      icon: Icons.campaign_outlined,
+                      iconBg: Color(0xFFFCEBEB),
+                      iconColor: Color(0xFFC2103A),
+                      title: 'Broadcast',
+                      subtitle: 'Notify everyone — update the app or a custom message',
+                      onTap: () => context.push('/internal/broadcast'),
+                    ),
+                  if (isSuperUser)
+                    _NavTile(
                       icon: Icons.html_rounded,
                       iconBg: Color(0xFFFFF4E6),
                       iconColor: Color(0xFFB25A00),

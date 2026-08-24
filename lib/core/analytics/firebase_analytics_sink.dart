@@ -20,7 +20,7 @@ import 'analytics_sink.dart';
 /// * `feature_viewed` / `feature_started` / `feature_completed` — `feature_name`, `subject`, `topic?`, `difficulty?`, `source`
 /// * `question_attempted` — per-question fields (see [QuestionAttemptedEvent])
 /// * `streak_continued` — `streak_length`
-/// * `revision_completed` — `questions_count`, `subject`
+/// * `revision_started` / `revision_completed` — `questions_count`, `subject`
 /// * `mcq_test_session_started` — `subject`, `topic?`, `analytics_feature_key?`
 /// * `battle_invite_outcome` — `kind`
 /// * `battle_invite_accepted` — (none)
@@ -45,7 +45,7 @@ import 'analytics_sink.dart';
 ///   `question_count`, `correct`, `wrong`, `accuracy_hundredths`, `danger_zone_wrong`,
 ///   and confidence bucket totals (see [UspSessionResultSnapshotEvent])
 /// * `usp_coach_cta` — `action` (result coach / Danger Zone CTA labels)
-/// * `app_notification_open` — `channel` (`fcm` / `local`), `kind` (e.g. battle)
+/// * `app_notification_open` / `notification_opened` — `channel` (`fcm` / `local`), `kind` (e.g. battle)
 /// * `account_signed_in` — `method?`
 /// * `game_screen_opened` — `game_name`
 /// * `game_started` — `game_name`, `total_rounds?`
@@ -53,10 +53,12 @@ import 'analytics_sink.dart';
 /// * `daily_war_home_shown` — `date_id`, `phase`, `is_grand`
 /// * `daily_war_attempted` — `date_id`, `mode`, `is_grand`; sets user
 ///   property `daily_war_player` = `yes`
-/// * `daily_war_submitted` — `date_id`, `mode`, `is_grand`, `score_hundredths`
-/// * `daily_ca_attempted` — `date_id`, `mode`; sets user property
-///   `daily_ca_player` = `yes`
-/// * `daily_ca_submitted` — `date_id`, `mode`, `score_hundredths`
+/// * `daily_war_submitted` / `daily_static_war_completed` — `date_id`, `mode`,
+///   `is_grand`, `score_hundredths`
+/// * `daily_ca_attempted` / `daily_current_affairs_started` — `date_id`, `mode`;
+///   sets user property `daily_ca_player` = `yes`
+/// * `daily_ca_submitted` / `daily_current_affairs_completed` — `date_id`,
+///   `mode`, `score_hundredths`
 /// * `ca_shot_hub_opened` — `shot_count`, `done_count`
 /// * `ca_shot_notif_opened` — `pulse_id`, `channel`
 /// * `ca_shot_opened` — `pulse_id`, `source`
@@ -201,6 +203,11 @@ class FirebaseAnalyticsSink implements AnalyticsSink {
       case StreakContinuedEvent(:final streakLength):
         await _log('streak_continued', {
           'streak_length': streakLength,
+        });
+      case RevisionStartedEvent(:final questionsCount, :final subject):
+        await _log('revision_started', {
+          'questions_count': questionsCount,
+          'subject': subject,
         });
       case RevisionCompletedEvent(:final questionsCount, :final subject):
         await _log('revision_completed', {
@@ -356,10 +363,12 @@ class FirebaseAnalyticsSink implements AnalyticsSink {
       case UspSessionCoachCtaTappedEvent(:final action):
         await _log('usp_coach_cta', {'action': action});
       case AppNotificationOpenEvent(:final channel, :final kind):
-        await _log('app_notification_open', {
+        final notificationParams = <String, Object>{
           'channel': channel,
           'kind': kind,
-        });
+        };
+        await _log('app_notification_open', notificationParams);
+        await _log('notification_opened', notificationParams);
       case AccountSignedInEvent(:final method):
         await _log('account_signed_in', {
           if (method case final m?) 'method': m,
@@ -472,27 +481,33 @@ class FirebaseAnalyticsSink implements AnalyticsSink {
           :final isGrand,
           :final score,
         ):
-        await _log('daily_war_submitted', {
+        final warSubmittedParams = <String, Object>{
           'date_id': dateId,
           'mode': mode,
           'is_grand': isGrand ? 1 : 0,
           'score_hundredths': (score * 100).round(),
-        });
+        };
+        await _log('daily_war_submitted', warSubmittedParams);
+        await _log('daily_static_war_completed', warSubmittedParams);
       case DailyCaAttemptedEvent(:final dateId, :final mode):
         await _analytics.setUserProperty(
           name: 'daily_ca_player',
           value: 'yes',
         );
-        await _log('daily_ca_attempted', {
+        final caStartedParams = <String, Object>{
           'date_id': dateId,
           'mode': mode,
-        });
+        };
+        await _log('daily_ca_attempted', caStartedParams);
+        await _log('daily_current_affairs_started', caStartedParams);
       case DailyCaSubmittedEvent(:final dateId, :final mode, :final score):
-        await _log('daily_ca_submitted', {
+        final caSubmittedParams = <String, Object>{
           'date_id': dateId,
           'mode': mode,
           'score_hundredths': (score * 100).round(),
-        });
+        };
+        await _log('daily_ca_submitted', caSubmittedParams);
+        await _log('daily_current_affairs_completed', caSubmittedParams);
       case CaShotHubOpenedEvent(:final shotCount, :final doneCount):
         await _log('ca_shot_hub_opened', {
           'shot_count': shotCount,
