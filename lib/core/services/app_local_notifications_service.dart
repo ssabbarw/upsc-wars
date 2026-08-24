@@ -11,6 +11,7 @@ import '../constants/prelims_countdown.dart';
 import '../constants/prelims_debug_flags.dart';
 import '../debug/upsc_wars_trace.dart';
 import '../providers/prefs_provider.dart';
+import '../../features/chat/chat_fcm.dart';
 
 /// Single [FlutterLocalNotificationsPlugin] for prelims + foreground FCM targets.
 class AppLocalNotificationsService {
@@ -37,8 +38,19 @@ class AppLocalNotificationsService {
   /// Opens the Fomo Pulse detail screen when a foreground pulse tap fires.
   static void Function(String pulseId)? onFomoPulseLocalTap;
 
+  /// Opens a chat thread when a foreground chat notification is tapped.
+  static void Function({
+    required String chatId,
+    required String senderEmail,
+    required String senderName,
+  })?
+  onChatMessageLocalTap;
+
   /// Holds a pulse ID that arrived before [onFomoPulseLocalTap] was wired.
   static String? _pendingFomoPulseId;
+
+  static ({String chatId, String senderEmail, String senderName})?
+  _pendingChatTap;
 
   static const _noTestReminderChannelId = 'no_test_reminder_v1';
   static const _noTestReminderChannelName = 'Study reminders';
@@ -59,7 +71,13 @@ class AppLocalNotificationsService {
   static const _fomoPulseChannelDescription =
       'Breaking news quizzes from UPSC Wars';
 
+  static const _chatChannelId = 'chat_messages_v1';
+  static const _chatChannelName = 'Chat';
+  static const _chatChannelDescription =
+      'Direct messages while you are in the app (tap to open)';
+
   static const foregroundFomoPulseNotificationId = 9002;
+  static const foregroundChatMessageNotificationId = 9003;
 
   // IMPORTANT: Android channels are sticky. We versioned this channel so existing
   // installs that previously had a silent/low-importance default channel will
@@ -227,6 +245,24 @@ class AppLocalNotificationsService {
       } else {
         _pendingFomoPulseId = pulseId;
       }
+      return;
+    }
+    final chatTap = ChatFcm.parseLocalPayload(payload);
+    if (chatTap != null) {
+      final handler = onChatMessageLocalTap;
+      upscWarsTrace(
+        'LocalNotification chat_message chatIdLen=${chatTap.chatId.length} '
+        'handlerReady=${handler != null}',
+      );
+      if (handler != null) {
+        handler(
+          chatId: chatTap.chatId,
+          senderEmail: chatTap.senderEmail,
+          senderName: chatTap.senderName,
+        );
+      } else {
+        _pendingChatTap = chatTap;
+      }
     }
   }
 
@@ -237,6 +273,18 @@ class AppLocalNotificationsService {
     if (id == null) return;
     _pendingFomoPulseId = null;
     onFomoPulseLocalTap?.call(id);
+  }
+
+  /// Called by [BattleMessagingService] after wiring [onChatMessageLocalTap].
+  static void consumePendingChatMessageTap() {
+    final tap = _pendingChatTap;
+    if (tap == null) return;
+    _pendingChatTap = null;
+    onChatMessageLocalTap?.call(
+      chatId: tap.chatId,
+      senderEmail: tap.senderEmail,
+      senderName: tap.senderName,
+    );
   }
 
   /// Heads-up style local notification so the user can tap through to join while in-app.
@@ -336,6 +384,63 @@ class AppLocalNotificationsService {
       payload: 'fomo_pulse:$pulseId',
     );
     upscWarsTrace('LocalNotification posted fomo_pulse:$pulseId');
+  }
+
+  /// Heads-up system notification for a chat message received in the foreground.
+  /// Tapping routes to the thread via [onChatMessageLocalTap].
+  static Future<void> showForegroundChatMessage({
+    required String title,
+    required String body,
+    required String chatId,
+    required String senderEmail,
+    String? senderName,
+  }) async {
+    if (kIsWeb) return;
+    await ensureInitialized();
+
+    final androidImpl = _plugin
+        .resolvePlatformSpecificImplementation<
+          AndroidFlutterLocalNotificationsPlugin
+        >();
+    await androidImpl?.createNotificationChannel(
+      const AndroidNotificationChannel(
+        _chatChannelId,
+        _chatChannelName,
+        description: _chatChannelDescription,
+        importance: Importance.high,
+      ),
+    );
+
+    await _plugin.show(
+      id: foregroundChatMessageNotificationId,
+      title: title.isNotEmpty ? title : 'New message',
+      body: body.isNotEmpty ? body : 'Tap to open chat',
+      notificationDetails: NotificationDetails(
+        android: AndroidNotificationDetails(
+          _chatChannelId,
+          _chatChannelName,
+          channelDescription: _chatChannelDescription,
+          importance: Importance.high,
+          priority: Priority.high,
+          icon: '@drawable/ic_notification',
+          color: const Color(0xFF085041),
+          largeIcon: const DrawableResourceAndroidBitmap('@mipmap/ic_launcher'),
+          category: AndroidNotificationCategory.message,
+          autoCancel: true,
+        ),
+        iOS: const DarwinNotificationDetails(
+          presentAlert: true,
+          presentBadge: true,
+          presentSound: true,
+        ),
+      ),
+      payload: ChatFcm.localPayload(
+        chatId: chatId,
+        senderEmail: senderEmail,
+        senderName: senderName ?? title,
+      ),
+    );
+    upscWarsTrace('LocalNotification posted chat_message');
   }
 
   /// Android prelims persistent notification (same behaviour as before consolidation).

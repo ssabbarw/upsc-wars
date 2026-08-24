@@ -33,10 +33,11 @@ Future<void> shareFomoPulse(
     if (body.isNotEmpty) buf.writeln(body);
   }
   buf.write(uri.toString());
+  // share_plus forbids uri + text together; the link is already in [text].
   await SharePlus.instance.share(
     ShareParams(
       text: buf.toString().trim(),
-      uri: uri,
+      title: title.isNotEmpty ? title : null,
     ),
   );
 }

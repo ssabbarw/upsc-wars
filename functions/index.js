@@ -847,6 +847,7 @@ exports.onChatMessageCreated = functions.database
           kind: "chat_message",
           chatId: String(context.params.chatId),
           senderEmail,
+          senderName,
         },
       });
     } catch (e) {

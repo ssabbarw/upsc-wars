@@ -34,10 +34,10 @@ import '../../features/community/screens/open_challenge_detail_screen.dart';
 import '../../features/community/screens/open_challenge_pick_subject_screen.dart';
 import '../../features/community/providers/community_providers.dart';
 import '../../features/community/providers/open_challenge_providers.dart';
+import '../../features/chat/chat_fcm.dart';
 import '../../features/chat/providers/chat_providers.dart';
 import '../../features/chat/screens/chat_list_screen.dart';
 import '../../features/chat/screens/chat_thread_screen.dart';
-import '../../features/chat/domain/entities/chat_thread_route_payload.dart';
 import '../../features/home/screens/daily_drill_launch_screen.dart';
 import '../../features/home/screens/home_screen.dart';
 import '../../features/home/domain/today_hero.dart';
@@ -757,10 +757,13 @@ GoRouter appRouter(Ref ref) {
         path: '/chat/:chatId',
         name: 'chat_thread',
         builder: (context, state) {
-          final extra = state.extra;
-          if (extra is! ChatThreadRoutePayload) {
+          final payload = ChatFcm.payloadFromRoute(
+            extra: state.extra,
+            queryParameters: state.uri.queryParameters,
+          );
+          if (payload.peerEmail.isEmpty) {
             upscWarsTrace(
-              'chat_thread invalid extra type=${extra.runtimeType} '
+              'chat_thread invalid extra type=${state.extra.runtimeType} '
               'chatIdLen=${state.pathParameters['chatId']?.length ?? 0}',
             );
             return const Scaffold(
@@ -769,13 +772,13 @@ GoRouter appRouter(Ref ref) {
           }
           upscWarsTrace(
             'chat_thread build chatIdLen=${state.pathParameters['chatId']?.length ?? 0} '
-            'peerEmailLen=${extra.peerEmail.length}',
+            'peerEmailLen=${payload.peerEmail.length}',
           );
           return ChatThreadScreen(
             chatId: state.pathParameters['chatId']!,
-            peerEmail: extra.peerEmail,
-            peerDisplayName: extra.peerDisplayName,
-            peerPhotoUrl: extra.peerPhotoUrl,
+            peerEmail: payload.peerEmail,
+            peerDisplayName: payload.peerDisplayName,
+            peerPhotoUrl: payload.peerPhotoUrl,
           );
         },
       ),

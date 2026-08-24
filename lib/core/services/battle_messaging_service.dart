@@ -20,6 +20,8 @@ import 'package:upsc_wars/core/router/app_router.dart';
 import 'package:upsc_wars/core/services/app_local_notifications_service.dart';
 import 'package:upsc_wars/core/services/fcm_token_sync_service.dart';
 import 'package:upsc_wars/features/community/open_challenge/open_challenge_fcm.dart';
+import 'package:upsc_wars/features/chat/chat_fcm.dart';
+import 'package:upsc_wars/features/chat/domain/entities/chat_thread_route_payload.dart';
 import 'package:upsc_wars/features/daily_war/daily_war_constants.dart';
 import 'package:upsc_wars/features/home/domain/today_hero.dart';
 import 'package:upsc_wars/features/home/providers/today_hero_intent_provider.dart';
@@ -196,6 +198,25 @@ class BattleMessagingService {
         _navigateToPulse(pulseId);
       };
       AppLocalNotificationsService.consumePendingFomoPulseTap();
+      AppLocalNotificationsService.onChatMessageLocalTap =
+          ({required chatId, required senderEmail, required senderName}) {
+            SessionEntrySource.capture(
+              SessionEntrySource.push,
+              detail: ChatFcm.kind,
+            );
+            logGlobalAnalytics(
+              const AppNotificationOpenEvent(
+                channel: 'local',
+                kind: ChatFcm.kind,
+              ),
+            );
+            _navigateToChat(
+              chatId: chatId,
+              peerEmail: senderEmail,
+              peerName: senderName,
+            );
+          };
+      AppLocalNotificationsService.consumePendingChatMessageTap();
       AppLocalNotificationsService.onDailyCaPaperReminderTap = () {
         SessionEntrySource.capture(
           SessionEntrySource.push,
@@ -247,6 +268,7 @@ class BattleMessagingService {
 
     // A local-notification tap can land before the router was assigned.
     _consumePendingPulseNavigation();
+    _consumePendingChatNavigation();
     upscWarsTrace('BattleMessagingService.initialize: done');
   }
 
@@ -275,7 +297,7 @@ class BattleMessagingService {
         !messageOpensLongHtmlScreen(message) &&
         sessionId != null &&
         sessionId.isNotEmpty;
-    final isChatMessage = kind == 'chat_message';
+    final isChatMessage = kind == ChatFcm.kind;
 
     if (isBattleJoinInvite) {
       unawaited(
@@ -290,22 +312,46 @@ class BattleMessagingService {
       return;
     }
     if (isChatMessage) {
+      final chatId = ChatFcm.chatIdFromData(message.data);
+      final senderEmail = ChatFcm.senderEmailFromData(message.data);
+      if (chatId == null || senderEmail == null) return;
+      if (_isOnChatThread(chatId)) return;
+      // iOS already presents the FCM banner in the foreground.
+      if (_systemShowsForegroundFcmBanner) return;
+      final senderName =
+          ChatFcm.senderNameFromData(message.data) ??
+          ((title != null && title.isNotEmpty) ? title : 'UPSC Warrior');
+      unawaited(
+        AppLocalNotificationsService.showForegroundChatMessage(
+          title: senderName,
+          body: (bodyRaw != null && bodyRaw.isNotEmpty)
+              ? bodyRaw
+              : 'Tap to open chat',
+          chatId: chatId,
+          senderEmail: senderEmail,
+          senderName: senderName,
+        ),
+      );
       return;
     }
 
-    // Fomo Pulse: always show a real system notification so it appears in the
-    // tray even when the app is in the foreground (easier to test & more natural).
+    // Fomo Pulse: on Android, FCM does not show a tray item while the app is
+    // open, so post a local notification. iOS already shows the FCM banner via
+    // [setForegroundNotificationPresentationOptions] — posting another local
+    // one duplicates it.
     if (kind == FomoPulseFcm.kind) {
       final pulseId = FomoPulseFcm.pulseIdFromData(message.data);
       upscWarsTrace('FomoPulse foreground message pulseId=$pulseId');
       if (pulseId != null && pulseId.isNotEmpty) {
-        unawaited(
-          AppLocalNotificationsService.showForegroundFomoPulse(
-            title: resolvedTitle,
-            body: resolvedBody,
-            pulseId: pulseId,
-          ),
-        );
+        if (!_systemShowsForegroundFcmBanner) {
+          unawaited(
+            AppLocalNotificationsService.showForegroundFomoPulse(
+              title: resolvedTitle,
+              body: resolvedBody,
+              pulseId: pulseId,
+            ),
+          );
+        }
         return;
       }
     }
@@ -321,6 +367,19 @@ class BattleMessagingService {
 
   /// Pulse tap that arrived before [_router] was available (cold start).
   static String? _pendingPulseId;
+
+  static ({String chatId, String peerEmail, String? peerName})? _pendingChatNav;
+
+  /// iOS presents FCM `notification` payloads in the foreground because
+  /// [FirebaseMessaging.setForegroundNotificationPresentationOptions] is on.
+  /// Posting a second local notification would duplicate the banner.
+  static bool get _systemShowsForegroundFcmBanner =>
+      !kIsWeb && defaultTargetPlatform == TargetPlatform.iOS;
+
+  static bool _isOnChatThread(String chatId) {
+    final path = _activeRouter?.routeInformationProvider.value.uri.path ?? '';
+    return path == '/chat/${chatId.trim()}';
+  }
 
   /// Navigate to a Fomo Pulse detail screen. Works whether called from a
   /// local notification tap (foreground) or an FCM background tap.
@@ -342,11 +401,53 @@ class BattleMessagingService {
     r.go(target);
   }
 
+  static void _navigateToChat({
+    required String chatId,
+    required String peerEmail,
+    String? peerName,
+  }) {
+    if (_isOnChatThread(chatId)) return;
+    final r = _activeRouter;
+    if (r == null) {
+      upscWarsTrace('Chat nav deferred: router not ready');
+      _pendingChatNav = (
+        chatId: chatId,
+        peerEmail: peerEmail,
+        peerName: peerName,
+      );
+      return;
+    }
+    final payload = ChatThreadRoutePayload(
+      peerEmail: peerEmail,
+      peerDisplayName: (peerName != null && peerName.trim().isNotEmpty)
+          ? peerName.trim()
+          : 'UPSC Warrior',
+    );
+    final target = ChatFcm.threadLocation(
+      chatId: chatId,
+      peerEmail: peerEmail,
+      peerName: payload.peerDisplayName,
+    );
+    upscWarsTrace('Chat nav -> $target');
+    r.go(target, extra: payload);
+  }
+
   static void _consumePendingPulseNavigation() {
     final id = _pendingPulseId;
     if (id == null) return;
     _pendingPulseId = null;
     _navigateToPulse(id);
+  }
+
+  static void _consumePendingChatNavigation() {
+    final pending = _pendingChatNav;
+    if (pending == null) return;
+    _pendingChatNav = null;
+    _navigateToChat(
+      chatId: pending.chatId,
+      peerEmail: pending.peerEmail,
+      peerName: pending.peerName,
+    );
   }
 
   static void _handleDataMessage(RemoteMessage message) {
@@ -362,6 +463,7 @@ class BattleMessagingService {
     if (messageOpensLongHtmlScreen(message)) return 'long_html';
     final raw = message.data['kind']?.toString().trim().toLowerCase();
     if (raw == OpenChallengeFcm.kind) return 'open_challenge';
+    if (raw == ChatFcm.kind) return ChatFcm.kind;
     if (raw == PushSpotTestFcm.kind) return PushSpotTestFcm.kind;
     if (raw == FomoPulseFcm.kind) return FomoPulseFcm.kind;
     if (raw == PushMemoryPairsFcm.kind) return PushMemoryPairsFcm.kind;
@@ -486,6 +588,20 @@ class BattleMessagingService {
         final pulseId = FomoPulseFcm.pulseIdFromData(message.data);
         if (pulseId != null && pulseId.isNotEmpty) {
           _navigateToPulse(pulseId);
+        }
+        return;
+      }
+      if (ocKind == ChatFcm.kind) {
+        final chatId = ChatFcm.chatIdFromData(message.data);
+        final senderEmail = ChatFcm.senderEmailFromData(message.data);
+        if (chatId != null && senderEmail != null) {
+          _navigateToChat(
+            chatId: chatId,
+            peerEmail: senderEmail,
+            peerName:
+                ChatFcm.senderNameFromData(message.data) ??
+                message.notification?.title,
+          );
         }
         return;
       }

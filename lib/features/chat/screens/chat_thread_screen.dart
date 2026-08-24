@@ -48,9 +48,7 @@ class ChatThreadScreen extends HookConsumerWidget {
         : const AsyncLoading<List<ChatMessage>>();
     final composerState = ref.watch(chatComposerProvider);
     final typingAsync = rtdbReady
-        ? ref.watch(
-            chatTypingProvider((chatId: chatId, peerEmail: peerEmail)),
-          )
+        ? ref.watch(chatTypingProvider((chatId: chatId, peerEmail: peerEmail)))
         : const AsyncLoading<bool>();
     final presenceAsync = rtdbReady
         ? ref.watch(chatPresenceProvider(peerEmail))
@@ -65,10 +63,9 @@ class ChatThreadScreen extends HookConsumerWidget {
     useEffect(() {
       if (!rtdbReady) return null;
       unawaited(() async {
-        await ref.read(chatComposerProvider.notifier).ensureThread(
-              chatId: chatId,
-              peerEmail: peerEmail,
-            );
+        await ref
+            .read(chatComposerProvider.notifier)
+            .ensureThread(chatId: chatId, peerEmail: peerEmail);
         if (!context.mounted) return;
         ref.read(chatRuntimeConfigProvider.notifier).refresh();
         unawaited(ref.read(chatComposerProvider.notifier).markRead(chatId));
@@ -80,7 +77,8 @@ class ChatThreadScreen extends HookConsumerWidget {
       final email = rtdbEmail;
       if (email == null || email.isEmpty) return null;
       final config =
-          ref.read(chatRuntimeConfigProvider).value ?? ChatRuntimeConfig.defaults;
+          ref.read(chatRuntimeConfigProvider).value ??
+          ChatRuntimeConfig.defaults;
       final chatService = ref.read(chatServiceProvider);
       final composer = ref.read(chatComposerProvider.notifier);
       unawaited(() async {
@@ -97,9 +95,7 @@ class ChatThreadScreen extends HookConsumerWidget {
       }());
       return () {
         typingTimer.value?.cancel();
-        unawaited(
-          composer.setTyping(chatId: chatId, isTyping: false),
-        );
+        unawaited(composer.setTyping(chatId: chatId, isTyping: false));
         unawaited(() async {
           try {
             await chatService.setOnline(
@@ -118,15 +114,12 @@ class ChatThreadScreen extends HookConsumerWidget {
       if (text.isEmpty) return;
       typingTimer.value?.cancel();
       try {
-        await ref.read(chatComposerProvider.notifier).setTyping(
-              chatId: chatId,
-              isTyping: false,
-            );
-        await ref.read(chatComposerProvider.notifier).sendMessage(
-              chatId: chatId,
-              peerEmail: peerEmail,
-              text: text,
-            );
+        await ref
+            .read(chatComposerProvider.notifier)
+            .setTyping(chatId: chatId, isTyping: false);
+        await ref
+            .read(chatComposerProvider.notifier)
+            .sendMessage(chatId: chatId, peerEmail: peerEmail, text: text);
         input.clear();
         if (scroll.hasClients) {
           scroll.animateTo(
@@ -148,19 +141,17 @@ class ChatThreadScreen extends HookConsumerWidget {
       if (config == null || !config.enableTypingIndicator) return;
       final isTyping = value.trim().isNotEmpty;
       unawaited(
-        ref.read(chatComposerProvider.notifier).setTyping(
-              chatId: chatId,
-              isTyping: isTyping,
-            ),
+        ref
+            .read(chatComposerProvider.notifier)
+            .setTyping(chatId: chatId, isTyping: isTyping),
       );
       typingTimer.value?.cancel();
       if (isTyping) {
         typingTimer.value = Timer(const Duration(seconds: 3), () {
           unawaited(
-            ref.read(chatComposerProvider.notifier).setTyping(
-                  chatId: chatId,
-                  isTyping: false,
-                ),
+            ref
+                .read(chatComposerProvider.notifier)
+                .setTyping(chatId: chatId, isTyping: false),
           );
         });
       }
@@ -174,7 +165,8 @@ class ChatThreadScreen extends HookConsumerWidget {
       final me = ref.read(currentUserEmailProvider);
       final repo = ref.read(communityRepositoryProvider);
       final loaded = await repo.fetchCommunityUserByEmail(peerEmail);
-      final user = loaded ??
+      final user =
+          loaded ??
           _fallbackPeerCommunityUser(
             peerEmail: peerEmail,
             peerDisplayName: peerDisplayName,
@@ -194,227 +186,258 @@ class ChatThreadScreen extends HookConsumerWidget {
       );
     }
 
-    return Scaffold(
-      appBar: AppBar(
-        titleSpacing: 0,
-        title: InkWell(
-          onTap: () => unawaited(openPeerProfile()),
-          child: Row(
-            children: [
-              TappableCircularAvatar(
-                imageUrl: peerPhotoUrl,
-                displayName: peerDisplayName,
-                size: 34,
-                enableImageTap: false,
-              ),
-              const SizedBox(width: AppSpacing.sm),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Row(
-                      children: [
-                        Flexible(
-                          child: Text(
-                            peerDisplayName,
-                            style: AppTextStyles.label(),
-                            overflow: TextOverflow.ellipsis,
+    final canPop = context.canPop();
+
+    return PopScope(
+      canPop: canPop,
+      onPopInvokedWithResult: (didPop, _) {
+        if (didPop) return;
+        context.go('/community');
+      },
+      child: Scaffold(
+        appBar: AppBar(
+          titleSpacing: 0,
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back),
+            onPressed: () {
+              if (canPop) {
+                context.pop();
+              } else {
+                context.go('/community');
+              }
+            },
+          ),
+          title: InkWell(
+            onTap: () => unawaited(openPeerProfile()),
+            child: Row(
+              children: [
+                TappableCircularAvatar(
+                  imageUrl: peerPhotoUrl,
+                  displayName: peerDisplayName,
+                  size: 34,
+                  enableImageTap: false,
+                ),
+                const SizedBox(width: AppSpacing.sm),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Row(
+                        children: [
+                          Flexible(
+                            child: Text(
+                              peerDisplayName,
+                              style: AppTextStyles.label(),
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                          AdminBotLabel(email: peerEmail),
+                        ],
+                      ),
+                      if (showTyping && typingAsync.value == true)
+                        Text(
+                          'typing...',
+                          style: AppTextStyles.caption().copyWith(
+                            color: Theme.of(context).colorScheme.primary,
+                          ),
+                        )
+                      else if (showOnline)
+                        Text(
+                          isOnline ? 'online' : 'offline',
+                          style: AppTextStyles.caption().copyWith(
+                            color: Theme.of(
+                              context,
+                            ).colorScheme.onSurfaceVariant,
                           ),
                         ),
-                        AdminBotLabel(email: peerEmail),
-                      ],
-                    ),
-                    if (showTyping && typingAsync.value == true)
-                      Text(
-                        'typing...',
-                        style: AppTextStyles.caption().copyWith(
-                          color: Theme.of(context).colorScheme.primary,
-                        ),
-                      )
-                    else if (showOnline)
-                      Text(
-                        isOnline ? 'online' : 'offline',
-                        style: AppTextStyles.caption().copyWith(
-                          color:
-                              Theme.of(context).colorScheme.onSurfaceVariant,
-                        ),
-                      ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
-      ),
-      body: Column(
-        children: [
-          Expanded(
-            child: !rtdbReady && !rtdbEmailAsync.isLoading
-                ? Center(
-                    child: Text(
-                      AuthSession.isCurrentAccountSignedIn()
-                          ? 'Could not start chat. Go back and try again.'
-                          : 'Sign in again to send messages.',
-                      textAlign: TextAlign.center,
-                      style: AppTextStyles.bodyMd(),
+        body: Column(
+          children: [
+            Expanded(
+              child: !rtdbReady && !rtdbEmailAsync.isLoading
+                  ? Center(
+                      child: Text(
+                        AuthSession.isCurrentAccountSignedIn()
+                            ? 'Could not start chat. Go back and try again.'
+                            : 'Sign in again to send messages.',
+                        textAlign: TextAlign.center,
+                        style: AppTextStyles.bodyMd(),
+                      ),
+                    )
+                  : messagesAsync.when(
+                      data: (messages) {
+                        final me = ref.watch(currentUserEmailProvider);
+                        final visible = iBlockedPeer
+                            ? messages
+                                  .where(
+                                    (m) =>
+                                        m.senderEmail.trim().toLowerCase() !=
+                                        peerNorm,
+                                  )
+                                  .toList()
+                            : messages;
+                        if (visible.isEmpty) {
+                          return Center(
+                            child: Text(
+                              iBlockedPeer
+                                  ? 'You have blocked this person. Their messages are hidden. '
+                                        'Unblock them in Settings to chat.'
+                                  : 'Start the conversation.',
+                              textAlign: TextAlign.center,
+                              style: AppTextStyles.bodyMd(),
+                            ),
+                          );
+                        }
+                        return ListView.builder(
+                          controller: scroll,
+                          padding: const EdgeInsets.fromLTRB(
+                            AppSpacing.md,
+                            AppSpacing.md,
+                            AppSpacing.md,
+                            AppSpacing.md,
+                          ),
+                          itemCount: visible.length,
+                          itemBuilder: (context, index) {
+                            final message = visible[index];
+                            final mine = message.senderEmail == me;
+                            final scheme = Theme.of(context).colorScheme;
+                            final timestampColor = mine
+                                ? Colors.white70
+                                : scheme.onSurfaceVariant;
+                            return Align(
+                              alignment: mine
+                                  ? Alignment.centerRight
+                                  : Alignment.centerLeft,
+                              child: Container(
+                                margin: const EdgeInsets.only(
+                                  bottom: AppSpacing.sm,
+                                ),
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: AppSpacing.md,
+                                  vertical: AppSpacing.sm,
+                                ),
+                                constraints: BoxConstraints(
+                                  maxWidth:
+                                      MediaQuery.sizeOf(context).width * 0.72,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: mine
+                                      ? scheme.primaryContainer
+                                      : scheme.surfaceContainerLow,
+                                  borderRadius: BorderRadius.circular(14),
+                                ),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    _MessageText(
+                                      text: message.text,
+                                      isCurrentUserBubble: mine,
+                                      messageStyle: AppTextStyles.bodyMd()
+                                          .copyWith(
+                                            color: mine ? Colors.white : null,
+                                          ),
+                                    ),
+                                    const SizedBox(height: 4),
+                                    Text(
+                                      _formatMessageTime(message.createdAt),
+                                      style: AppTextStyles.caption().copyWith(
+                                        color: timestampColor,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            );
+                          },
+                        );
+                      },
+                      loading: () =>
+                          const Center(child: CircularProgressIndicator()),
+                      error: (error, _) => Center(
+                        child: Text('Could not load messages: $error'),
+                      ),
                     ),
-                  )
-                : messagesAsync.when(
-              data: (messages) {
-                final me = ref.watch(currentUserEmailProvider);
-                final visible = iBlockedPeer
-                    ? messages
-                        .where(
-                          (m) =>
-                              m.senderEmail.trim().toLowerCase() != peerNorm,
-                        )
-                        .toList()
-                    : messages;
-                if (visible.isEmpty) {
-                  return Center(
-                    child: Text(
-                      iBlockedPeer
-                          ? 'You have blocked this person. Their messages are hidden. '
-                              'Unblock them in Settings to chat.'
-                          : 'Start the conversation.',
-                      textAlign: TextAlign.center,
-                      style: AppTextStyles.bodyMd(),
-                    ),
-                  );
-                }
-                return ListView.builder(
-                  controller: scroll,
+            ),
+            if (iBlockedPeer)
+              SafeArea(
+                top: false,
+                child: Padding(
                   padding: const EdgeInsets.fromLTRB(
                     AppSpacing.md,
-                    AppSpacing.md,
+                    AppSpacing.xs,
                     AppSpacing.md,
                     AppSpacing.md,
                   ),
-                  itemCount: visible.length,
-                  itemBuilder: (context, index) {
-                    final message = visible[index];
-                    final mine = message.senderEmail == me;
-                    final scheme = Theme.of(context).colorScheme;
-                    final timestampColor =
-                        mine ? Colors.white70 : scheme.onSurfaceVariant;
-                    return Align(
-                      alignment:
-                          mine ? Alignment.centerRight : Alignment.centerLeft,
-                      child: Container(
-                        margin: const EdgeInsets.only(bottom: AppSpacing.sm),
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: AppSpacing.md,
-                          vertical: AppSpacing.sm,
+                  child: Material(
+                    color: Theme.of(context).colorScheme.surfaceContainerLow,
+                    borderRadius: BorderRadius.circular(12),
+                    child: Padding(
+                      padding: const EdgeInsets.all(AppSpacing.md),
+                      child: Text(
+                        'You have blocked this person. Unblock them in '
+                        'Settings to send messages.',
+                        style: AppTextStyles.bodySm().copyWith(
+                          color: Theme.of(context).colorScheme.onSurfaceVariant,
                         ),
-                        constraints: BoxConstraints(
-                          maxWidth: MediaQuery.sizeOf(context).width * 0.72,
-                        ),
-                        decoration: BoxDecoration(
-                          color: mine
-                              ? scheme.primaryContainer
-                              : scheme.surfaceContainerLow,
-                          borderRadius: BorderRadius.circular(14),
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            _MessageText(
-                              text: message.text,
-                              isCurrentUserBubble: mine,
-                              messageStyle: AppTextStyles.bodyMd().copyWith(
-                                color: mine ? Colors.white : null,
-                              ),
-                            ),
-                            const SizedBox(height: 4),
-                            Text(
-                              _formatMessageTime(message.createdAt),
-                              style: AppTextStyles.caption().copyWith(
-                                color: timestampColor,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    );
-                  },
-                );
-              },
-              loading: () => const Center(child: CircularProgressIndicator()),
-              error: (error, _) =>
-                  Center(child: Text('Could not load messages: $error')),
-            ),
-          ),
-          if (iBlockedPeer)
-            SafeArea(
-              top: false,
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(
-                  AppSpacing.md,
-                  AppSpacing.xs,
-                  AppSpacing.md,
-                  AppSpacing.md,
-                ),
-                child: Material(
-                  color: Theme.of(context).colorScheme.surfaceContainerLow,
-                  borderRadius: BorderRadius.circular(12),
-                  child: Padding(
-                    padding: const EdgeInsets.all(AppSpacing.md),
-                    child: Text(
-                      'You have blocked this person. Unblock them in '
-                      'Settings to send messages.',
-                      style: AppTextStyles.bodySm().copyWith(
-                        color: Theme.of(context).colorScheme.onSurfaceVariant,
                       ),
                     ),
                   ),
                 ),
-              ),
-            )
-          else
-            SafeArea(
-              top: false,
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(
-                  AppSpacing.md,
-                  AppSpacing.xs,
-                  AppSpacing.md,
-                  AppSpacing.md,
-                ),
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: TextField(
-                        controller: input,
-                        onChanged: onChanged,
-                        onSubmitted: (_) => unawaited(send()),
-                        minLines: 1,
-                        maxLines: 4,
-                        textCapitalization: TextCapitalization.sentences,
-                        decoration: const InputDecoration(
-                          hintText: 'Type a message',
-                          border: OutlineInputBorder(),
+              )
+            else
+              SafeArea(
+                top: false,
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(
+                    AppSpacing.md,
+                    AppSpacing.xs,
+                    AppSpacing.md,
+                    AppSpacing.md,
+                  ),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: TextField(
+                          controller: input,
+                          onChanged: onChanged,
+                          onSubmitted: (_) => unawaited(send()),
+                          minLines: 1,
+                          maxLines: 4,
+                          textCapitalization: TextCapitalization.sentences,
+                          decoration: const InputDecoration(
+                            hintText: 'Type a message',
+                            border: OutlineInputBorder(),
+                          ),
                         ),
                       ),
-                    ),
-                    const SizedBox(width: AppSpacing.sm),
-                    FilledButton(
-                      onPressed: composerState.isLoading
-                          ? null
-                          : () => unawaited(send()),
-                      child: composerState.isLoading
-                          ? const SizedBox(
-                              width: 18,
-                              height: 18,
-                              child: CircularProgressIndicator(strokeWidth: 2),
-                            )
-                          : const Icon(Icons.send_rounded),
-                    ),
-                  ],
+                      const SizedBox(width: AppSpacing.sm),
+                      FilledButton(
+                        onPressed: composerState.isLoading
+                            ? null
+                            : () => unawaited(send()),
+                        child: composerState.isLoading
+                            ? const SizedBox(
+                                width: 18,
+                                height: 18,
+                                child: CircularProgressIndicator(
+                                  strokeWidth: 2,
+                                ),
+                              )
+                            : const Icon(Icons.send_rounded),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -483,7 +506,9 @@ class _MessageText extends StatelessWidget {
     var cursor = 0;
     for (final m in matches) {
       if (m.start > cursor) {
-        spans.add(TextSpan(text: text.substring(cursor, m.start), style: baseStyle));
+        spans.add(
+          TextSpan(text: text.substring(cursor, m.start), style: baseStyle),
+        );
       }
       final rawUrl = text.substring(m.start, m.end);
       final uri = _normalizeUri(rawUrl);
@@ -493,8 +518,7 @@ class _MessageText extends StatelessWidget {
           style: uri == null ? baseStyle : linkStyle,
           recognizer: uri == null
               ? null
-              : (TapGestureRecognizer()
-                ..onTap = () => _openUri(context, uri)),
+              : (TapGestureRecognizer()..onTap = () => _openUri(context, uri)),
         ),
       );
       cursor = m.end;
