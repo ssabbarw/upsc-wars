@@ -109,6 +109,32 @@ class RealtimeChatService implements ChatService {
   }
 
   @override
+  Future<void> syncAuthEmail({
+    required String uid,
+    required String email,
+  }) async {
+    final trimmed = email.trim().toLowerCase();
+    if (uid.isEmpty || trimmed.isEmpty) return;
+    await _db.ref('userEmails/$uid').set(trimmed);
+  }
+
+  @override
+  Future<void> ensureThread({
+    required String chatId,
+    required String currentUserEmail,
+    required String peerEmail,
+  }) async {
+    final current = currentUserEmail.trim().toLowerCase();
+    final peer = peerEmail.trim().toLowerCase();
+    if (current.isEmpty || peer.isEmpty || current == peer) return;
+    await _db.ref('chatThreads/$chatId').update({
+      'participantEmails': [current, peer]..sort(),
+      'participants/${ChatIds.emailKey(current)}': true,
+      'participants/${ChatIds.emailKey(peer)}': true,
+    });
+  }
+
+  @override
   Future<void> sendMessage({
     required String chatId,
     required String currentUserEmail,
@@ -125,46 +151,41 @@ class RealtimeChatService implements ChatService {
     final peerKey = ChatIds.emailKey(peer);
     final currentInbox = ChatIds.rulesEmailKey(current);
     final peerInbox = ChatIds.rulesEmailKey(peer);
-    final participants = [current, peer]..sort();
 
-    // Thread must exist before messages so RTDB rules can check membership.
-    final threadUpdates = <String, Object?>{
-      'chatThreads/$chatId/participantEmails': participants,
-      'chatThreads/$chatId/participants/$currentKey': true,
-      'chatThreads/$chatId/participants/$peerKey': true,
-      'chatThreads/$chatId/lastMessageText': trimmed,
-      'chatThreads/$chatId/lastMessageBy': current,
-      'chatThreads/$chatId/lastMessageAt': now,
-      'chatThreads/$chatId/updatedAt': now,
-    };
-    if (config.enableUnreadCount) {
-      threadUpdates['chatThreads/$chatId/unread/$peerKey'] =
-          ServerValue.increment(1);
-      threadUpdates['chatThreads/$chatId/unread/$currentKey'] = 0;
-    }
-    await _db.ref().update(threadUpdates);
+    await _db.ref('chatThreads/$chatId').update({
+      'participantEmails': [current, peer]..sort(),
+      'participants/$currentKey': true,
+      'participants/$peerKey': true,
+      'lastMessageText': trimmed,
+      'lastMessageBy': current,
+      'lastMessageAt': now,
+      'updatedAt': now,
+      if (config.enableUnreadCount) ...{
+        'unread/$peerKey': ServerValue.increment(1),
+        'unread/$currentKey': 0,
+      },
+    });
 
     final messageRef = _db.ref('chatMessages/$chatId').push();
+    final participants = [current, peer]..sort();
     final inbox = <String, Object?>{
       'participantEmails': participants,
       'lastMessageText': trimmed,
       'lastMessageAt': now,
       'updatedAt': now,
     };
-    await _db.ref().update({
-      'chatMessages/$chatId/${messageRef.key}': {
-        'senderEmail': current,
-        'text': trimmed,
-        'createdAt': now,
-      },
-      'userChats/$currentInbox/$chatId': {
-        ...inbox,
-        'unread': 0,
-      },
-      'userChats/$peerInbox/$chatId': {
-        ...inbox,
-        'unread': config.enableUnreadCount ? ServerValue.increment(1) : 0,
-      },
+    await messageRef.set({
+      'senderEmail': current,
+      'text': trimmed,
+      'createdAt': now,
+    });
+    await _db.ref('userChats/$currentInbox/$chatId').update({
+      ...inbox,
+      'unread': 0,
+    });
+    await _db.ref('userChats/$peerInbox/$chatId').update({
+      ...inbox,
+      'unread': config.enableUnreadCount ? ServerValue.increment(1) : 0,
     });
     unawaited(AdminDashboardWriterService().recordChatEngagement());
   }

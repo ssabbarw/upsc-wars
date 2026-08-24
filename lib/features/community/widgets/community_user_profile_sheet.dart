@@ -5,18 +5,21 @@ import 'package:intl/intl.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../core/constants/app_constants.dart';
+import '../../../core/debug/upsc_wars_trace.dart';
+import '../../../core/auth/auth_session.dart';
 import '../../../core/layout/system_insets.dart';
 import '../../../core/presentation/user_display_name.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../shared/auth/ensure_account_sign_in.dart';
 import '../../../shared/widgets/tappable_circular_avatar.dart';
 import '../../../shared/widgets/app_toast.dart';
 import '../../battle/domain/entities/battle_invite_target.dart';
 import '../../chat/domain/chat_ids.dart';
 import '../../chat/domain/entities/chat_thread_route_payload.dart';
+import '../../home/providers/auth_providers.dart';
 import '../domain/entities/community_user.dart';
-import '../providers/community_providers.dart';
 import '../providers/user_block_providers.dart';
 import '../widgets/admin_bot_label.dart';
 
@@ -53,6 +56,12 @@ final class _CommunityProfileMessageNav extends _CommunityProfileNav {
   final ChatThreadRoutePayload payload;
 }
 
+String? _signedInEmail(WidgetRef ref, [String? passed]) {
+  return AuthSession.normalizeEmail(passed) ??
+      AuthSession.emailOf(ref.read(authStateChangesProvider).asData?.value) ??
+      AuthSession.currentEmail();
+}
+
 Future<void> showCommunityUserProfileSheet(
   BuildContext context,
   WidgetRef ref,
@@ -69,8 +78,18 @@ Future<void> showCommunityUserProfileSheet(
         orElse: () => false,
       );
   var isBlocked = blockedInitially;
-  final meNorm = currentUserEmail?.toLowerCase().trim();
-  if (!context.mounted) return;
+  final meNorm = _signedInEmail(ref, currentUserEmail);
+  final hasCurrentUser = meNorm != null && meNorm.isNotEmpty;
+  upscWarsTrace(
+    'CommunityProfile sheet open hideSendMessage=$hideSendMessage '
+    'hasCurrentUser=$hasCurrentUser blockedInitially=$blockedInitially '
+    'isSelf=${hasCurrentUser && meNorm == user.email.toLowerCase()} '
+    'peerEmailLen=${user.email.length}',
+  );
+  if (!context.mounted) {
+    upscWarsTrace('CommunityProfile sheet aborted: context unmounted before show');
+    return;
+  }
   final router = GoRouter.of(context);
   final action = await showModalBottomSheet<_CommunityProfileNav>(
     context: context,
@@ -152,11 +171,8 @@ Future<void> showCommunityUserProfileSheet(
                         onPressed: isSelf
                             ? null
                             : () async {
-                                final me = currentUserEmail;
+                                final me = _signedInEmail(ref, currentUserEmail);
                                 if (me == null || me.isEmpty) return;
-                                final repo = ref.read(
-                                  communityRepositoryProvider,
-                                );
                                 final target = user.email.toLowerCase();
                                 final nextBlocked = !isBlocked;
                                 if (nextBlocked &&
@@ -189,11 +205,12 @@ Future<void> showCommunityUserProfileSheet(
                                   if (confirmed != true) return;
                                 }
                                 try {
-                                  await repo.setUserBlocked(
-                                    ownerEmail: me,
-                                    otherEmail: target,
-                                    blocked: nextBlocked,
-                                  );
+                                  await ref
+                                      .read(blockedUserEmailsProvider.notifier)
+                                      .setBlocked(
+                                        otherEmail: target,
+                                        blocked: nextBlocked,
+                                      );
                                   if (nextBlocked && confirmBlockClosesChat) {
                                     if (sheetContext.mounted) {
                                       Navigator.of(sheetContext).pop();
@@ -262,29 +279,98 @@ Future<void> showCommunityUserProfileSheet(
                     child: FilledButton.icon(
                       onPressed: isBlocked || isSelf
                           ? null
-                          : () {
-                              final me = currentUserEmail;
-                              if (me == null || me.isEmpty) return;
-                              final chatId = ChatIds.chatIdForPair(
-                                me,
-                                user.email,
-                              );
-                              Navigator.of(
-                                sheetContext,
-                                rootNavigator: true,
-                              ).pop(
-                                _CommunityProfileMessageNav(
-                                  chatId: chatId,
-                                  payload: ChatThreadRoutePayload(
-                                    peerEmail: user.email.toLowerCase(),
-                                    peerDisplayName: user.name,
-                                    peerPhotoUrl:
-                                        AppConstants.customProfilePhotoUrl(
-                                          user.photoUrl,
-                                        ),
+                          : () async {
+                              try {
+                                var me = _signedInEmail(ref, currentUserEmail);
+                                upscWarsTrace(
+                                  'CommunityProfile Send Message tapped '
+                                  'hasMe=${me != null} '
+                                  'accountSignedIn=${AuthSession.isCurrentAccountSignedIn()} '
+                                  'peerEmailLen=${user.email.length}',
+                                );
+                                if (me == null &&
+                                    !AuthSession.isCurrentAccountSignedIn()) {
+                                  upscWarsTrace(
+                                    'CommunityProfile Send Message prompting sign-in',
+                                  );
+                                  final signedIn = await ensureAccountSignedIn(
+                                    context: sheetContext,
+                                    ref: ref,
+                                    reason: 'Sign in to send messages.',
+                                  );
+                                  if (!sheetContext.mounted) return;
+                                  me = _signedInEmail(ref);
+                                  if (!signedIn || me == null) {
+                                    upscWarsTrace(
+                                      'CommunityProfile Send Message aborted '
+                                      'after sign-in signedIn=$signedIn '
+                                      'hasMe=${me != null}',
+                                    );
+                                    if (me == null && sheetContext.mounted) {
+                                      AppToast.showText(
+                                        sheetContext,
+                                        'Could not start chat. Please sign in again.',
+                                      );
+                                    }
+                                    return;
+                                  }
+                                }
+                                if (me == null || me.isEmpty) {
+                                  upscWarsTrace(
+                                    'CommunityProfile Send Message aborted: '
+                                    'missing current user email',
+                                  );
+                                  if (sheetContext.mounted) {
+                                    AppToast.showText(
+                                      sheetContext,
+                                      'Could not start chat. Please sign in again.',
+                                    );
+                                  }
+                                  return;
+                                }
+                                if (me == user.email.toLowerCase()) {
+                                  upscWarsTrace(
+                                    'CommunityProfile Send Message aborted: self',
+                                  );
+                                  return;
+                                }
+                                final chatId = ChatIds.chatIdForPair(
+                                  me,
+                                  user.email,
+                                );
+                                upscWarsTrace(
+                                  'CommunityProfile Send Message popping '
+                                  'chatIdLen=${chatId.length}',
+                                );
+                                Navigator.of(
+                                  sheetContext,
+                                  rootNavigator: true,
+                                ).pop(
+                                  _CommunityProfileMessageNav(
+                                    chatId: chatId,
+                                    payload: ChatThreadRoutePayload(
+                                      peerEmail: user.email.toLowerCase(),
+                                      peerDisplayName: user.name,
+                                      peerPhotoUrl:
+                                          AppConstants.customProfilePhotoUrl(
+                                            user.photoUrl,
+                                          ),
+                                    ),
                                   ),
-                                ),
-                              );
+                                );
+                              } catch (e, st) {
+                                upscWarsTrace(
+                                  'CommunityProfile Send Message tap failed',
+                                  error: e,
+                                  stackTrace: st,
+                                );
+                                if (sheetContext.mounted) {
+                                  AppToast.showText(
+                                    sheetContext,
+                                    'Could not start chat: $e',
+                                  );
+                                }
+                              }
                             },
                       icon: const Icon(Icons.chat_bubble_outline),
                       label: const Text('Send Message'),
@@ -381,15 +467,33 @@ Future<void> showCommunityUserProfileSheet(
       },
     ),
   );
-  if (action == null) return;
+  if (action == null) {
+    upscWarsTrace('CommunityProfile sheet dismissed without action');
+    return;
+  }
+  upscWarsTrace('CommunityProfile sheet action=${action.runtimeType}');
   // Push after the sheet route is gone, from the captured router (root), so a
   // shell-tab switch cannot swallow the next screen.
-  WidgetsBinding.instance.addPostFrameCallback((_) {
-    switch (action) {
-      case _CommunityProfileInviteNav(:final target):
-        router.push('/battle/config', extra: target);
-      case _CommunityProfileMessageNav(:final chatId, :final payload):
-        router.push('/chat/$chatId', extra: payload);
+  WidgetsBinding.instance.addPostFrameCallback((_) async {
+    try {
+      switch (action) {
+        case _CommunityProfileInviteNav(:final target):
+          upscWarsTrace('CommunityProfile navigating to /battle/config');
+          await router.push('/battle/config', extra: target);
+        case _CommunityProfileMessageNav(:final chatId, :final payload):
+          upscWarsTrace(
+            'CommunityProfile navigating to /chat '
+            'chatIdLen=${chatId.length} peerEmailLen=${payload.peerEmail.length}',
+          );
+          await router.push('/chat/$chatId', extra: payload);
+          upscWarsTrace('CommunityProfile chat push completed');
+      }
+    } catch (e, st) {
+      upscWarsTrace(
+        'CommunityProfile navigation failed action=${action.runtimeType}',
+        error: e,
+        stackTrace: st,
+      );
     }
   });
 }

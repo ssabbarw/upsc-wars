@@ -5,7 +5,6 @@ import 'package:intl/intl.dart';
 
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
-import '../../../shared/widgets/pop_to_shell_home_scope.dart';
 import '../../../shared/widgets/tappable_circular_avatar.dart';
 import '../../community/widgets/admin_bot_label.dart';
 import '../domain/entities/chat_thread_route_payload.dart';
@@ -20,9 +19,20 @@ class ChatListScreen extends HookConsumerWidget {
     final me = ref.watch(currentUserEmailProvider);
     final scheme = Theme.of(context).colorScheme;
 
-    return PopToShellHomeScope(
-      child: Scaffold(
-        appBar: AppBar(title: Text('Chats', style: AppTextStyles.h3())),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Chats', style: AppTextStyles.h3()),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            if (context.canPop()) {
+              context.pop();
+            } else {
+              context.go('/community');
+            }
+          },
+        ),
+      ),
         body: threadsAsync.when(
           loading: () => const Center(child: CircularProgressIndicator()),
           error: (_, __) => Center(
@@ -151,7 +161,6 @@ class ChatListScreen extends HookConsumerWidget {
             );
           },
         ),
-      ),
     );
   }
 }

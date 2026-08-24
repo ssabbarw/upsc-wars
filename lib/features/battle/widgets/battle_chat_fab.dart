@@ -13,6 +13,7 @@ import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/widgets/app_toast.dart';
 import '../../../shared/widgets/tappable_circular_avatar.dart';
 import '../../chat/domain/chat_ids.dart';
+import '../../chat/domain/entities/chat_message.dart';
 import '../../chat/domain/entities/chat_runtime_config.dart';
 import '../../chat/providers/chat_providers.dart';
 import '../../community/widgets/admin_bot_label.dart';
@@ -296,12 +297,21 @@ class _BattleChatSheet extends HookConsumerWidget {
     final sheetHeight = MediaQuery.of(context).size.height * 0.40;
     final keyboardInset = MediaQuery.viewInsetsOf(context).bottom;
 
-    final messagesAsync = ref.watch(chatMessagesProvider(chatId));
+    final rtdbEmailAsync = ref.watch(chatRtdbEmailProvider);
+    final rtdbEmail = rtdbEmailAsync.value;
+    final rtdbReady = rtdbEmail != null && rtdbEmail.isNotEmpty;
+    final messagesAsync = rtdbReady
+        ? ref.watch(chatMessagesProvider(chatId))
+        : const AsyncLoading<List<ChatMessage>>();
     final composerState = ref.watch(chatComposerProvider);
-    final typingAsync = ref.watch(
-      chatTypingProvider((chatId: chatId, peerEmail: opponentEmail)),
-    );
-    final presenceAsync = ref.watch(chatPresenceProvider(opponentEmail));
+    final typingAsync = rtdbReady
+        ? ref.watch(
+            chatTypingProvider((chatId: chatId, peerEmail: opponentEmail)),
+          )
+        : const AsyncLoading<bool>();
+    final presenceAsync = rtdbReady
+        ? ref.watch(chatPresenceProvider(opponentEmail))
+        : const AsyncLoading<bool>();
     final configAsync = ref.watch(chatRuntimeConfigProvider);
     final input = useTextEditingController();
     final scroll = useScrollController();
@@ -309,10 +319,18 @@ class _BattleChatSheet extends HookConsumerWidget {
     final messageCount = messagesAsync.value?.length ?? 0;
 
     useEffect(() {
-      ref.read(chatRuntimeConfigProvider.notifier).refresh();
-      unawaited(ref.read(chatComposerProvider.notifier).markRead(chatId));
+      if (!rtdbReady) return null;
+      unawaited(() async {
+        await ref.read(chatComposerProvider.notifier).ensureThread(
+              chatId: chatId,
+              peerEmail: opponentEmail,
+            );
+        if (!context.mounted) return;
+        ref.read(chatRuntimeConfigProvider.notifier).refresh();
+        unawaited(ref.read(chatComposerProvider.notifier).markRead(chatId));
+      }());
       return null;
-    }, [chatId]);
+    }, [chatId, opponentEmail, rtdbReady]);
 
     useEffect(() {
       if (messageCount <= 0) return null;
@@ -328,8 +346,8 @@ class _BattleChatSheet extends HookConsumerWidget {
     }, [messageCount]);
 
     useEffect(() {
-      final current = ref.read(currentUserEmailProvider);
-      if (current == null) return null;
+      final email = rtdbEmail;
+      if (email == null || email.isEmpty) return null;
       final config =
           ref.read(chatRuntimeConfigProvider).value ??
           ChatRuntimeConfig.defaults;
@@ -337,7 +355,7 @@ class _BattleChatSheet extends HookConsumerWidget {
         ref
             .read(chatServiceProvider)
             .setOnline(
-              currentUserEmail: current,
+              currentUserEmail: email,
               isOnline: true,
               config: config,
             ),
@@ -353,13 +371,13 @@ class _BattleChatSheet extends HookConsumerWidget {
           ref
               .read(chatServiceProvider)
               .setOnline(
-                currentUserEmail: current,
+                currentUserEmail: email,
                 isOnline: false,
                 config: config,
               ),
         );
       };
-    }, [chatId]);
+    }, [chatId, rtdbEmail]);
 
     Future<void> send() async {
       final text = input.text.trim();
@@ -388,6 +406,7 @@ class _BattleChatSheet extends HookConsumerWidget {
     }
 
     void onChanged(String value) {
+      if (!rtdbReady) return;
       final config = configAsync.value;
       if (config == null || !config.enableTypingIndicator) return;
       final isTyping = value.trim().isNotEmpty;

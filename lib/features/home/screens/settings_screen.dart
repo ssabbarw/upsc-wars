@@ -16,6 +16,7 @@ import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../core/constants/creator_contact.dart';
 import '../../../core/providers/super_user_provider.dart';
+import '../../community/providers/user_block_providers.dart';
 import '../../question_editor/widgets/question_editor_access.dart';
 import '../providers/auth_providers.dart';
 import '../../daily_ca/daily_ca_admin_constants.dart';
@@ -289,6 +290,13 @@ class SettingsScreen extends ConsumerWidget {
             if (isSignedIn) ...[
               const SizedBox(height: AppSpacing.lg),
               const _Section(
+                title: 'Privacy',
+                children: [
+                  _BlockedUsersTile(),
+                ],
+              ),
+              const SizedBox(height: AppSpacing.lg),
+              const _Section(
                 title: 'Account',
                 children: [
                   _LogoutTile(),
@@ -508,6 +516,28 @@ class _NavTile extends StatelessWidget {
         horizontal: AppSpacing.lg,
         vertical: 10,
       ),
+    );
+  }
+}
+
+class _BlockedUsersTile extends ConsumerWidget {
+  const _BlockedUsersTile();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final count = ref.watch(blockedUserEmailsProvider).value?.length ?? 0;
+    final subtitle = count == 0
+        ? 'No one blocked'
+        : count == 1
+            ? '1 person'
+            : '$count people';
+    return _NavTile(
+      icon: Icons.block_outlined,
+      iconBg: const Color(0xFFFFE8EC),
+      iconColor: const Color(0xFFC2103A),
+      title: 'Blocked users',
+      subtitle: subtitle,
+      onTap: () => context.push('/settings/blocked-users'),
     );
   }
 }

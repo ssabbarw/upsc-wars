@@ -27,6 +27,7 @@ import '../../features/battle/screens/battle_test_screen.dart';
 import '../../features/battle/screens/battle_waiting_screen.dart';
 import '../../features/history/screens/session_review_screen.dart';
 import '../../features/community/screens/community_screen.dart';
+import '../../features/community/screens/blocked_users_screen.dart';
 import '../../features/community/screens/post_qotd_flow_screen.dart';
 import '../../features/community/screens/community_connect_screen.dart';
 import '../../features/community/screens/open_challenge_detail_screen.dart';
@@ -266,6 +267,10 @@ GoRouter appRouter(Ref ref) {
     refreshListenable: redirectRefresh,
     debugLogDiagnostics: kDebugMode,
     errorBuilder: (context, state) {
+      upscWarsTrace(
+        'GoRouter errorBuilder uri=${state.uri} matched=${state.matchedLocation}',
+        error: state.error,
+      );
       // Avoid flashing raw exception pages during cold-start deep link handling.
       final p = state.uri.path;
       final isShareLaunch = p.startsWith('/share-launch/');
@@ -482,6 +487,12 @@ GoRouter appRouter(Ref ref) {
         path: '/settings',
         name: 'settings',
         builder: (context, state) => const SettingsScreen(),
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/settings/blocked-users',
+        name: 'blocked_users',
+        builder: (context, state) => const BlockedUsersScreen(),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
@@ -748,10 +759,18 @@ GoRouter appRouter(Ref ref) {
         builder: (context, state) {
           final extra = state.extra;
           if (extra is! ChatThreadRoutePayload) {
+            upscWarsTrace(
+              'chat_thread invalid extra type=${extra.runtimeType} '
+              'chatIdLen=${state.pathParameters['chatId']?.length ?? 0}',
+            );
             return const Scaffold(
               body: Center(child: Text('Invalid chat payload')),
             );
           }
+          upscWarsTrace(
+            'chat_thread build chatIdLen=${state.pathParameters['chatId']?.length ?? 0} '
+            'peerEmailLen=${extra.peerEmail.length}',
+          );
           return ChatThreadScreen(
             chatId: state.pathParameters['chatId']!,
             peerEmail: extra.peerEmail,

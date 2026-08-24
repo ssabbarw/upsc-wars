@@ -1,10 +1,13 @@
 import 'dart:async';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/foundation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../core/auth/auth_session.dart';
+import '../../../core/debug/upsc_wars_trace.dart';
 import '../../community/providers/community_providers.dart';
 import '../../community/providers/user_block_providers.dart';
 import '../../home/providers/auth_providers.dart';
@@ -23,9 +26,26 @@ final chatServiceProvider = Provider<ChatService>((ref) {
 });
 
 final currentUserEmailProvider = Provider<String?>((ref) {
-  final user = ref.watch(authStateChangesProvider).asData?.value;
-  final email = user?.email?.trim().toLowerCase();
-  if (email == null || email.isEmpty) return null;
+  return AuthSession.emailOf(
+        ref.watch(authStateChangesProvider).asData?.value,
+      ) ??
+      AuthSession.currentEmail();
+});
+
+/// Email used for chat RTDB after a token refresh.
+final chatRtdbEmailProvider = FutureProvider<String?>((ref) async {
+  ref.watch(authStateChangesProvider);
+  final email = await AuthSession.refreshTokenEmail() ??
+      AuthSession.currentEmail();
+  final uid = FirebaseAuth.instance.currentUser?.uid;
+  if (email != null && email.isNotEmpty && uid != null && uid.isNotEmpty) {
+    try {
+      await ref.read(chatServiceProvider).syncAuthEmail(uid: uid, email: email);
+    } catch (e, st) {
+      debugPrint('chatRtdbEmailProvider.syncAuthEmail: $e');
+      debugPrintStack(stackTrace: st);
+    }
+  }
   return email;
 });
 
@@ -189,23 +209,45 @@ class ChatComposerNotifier extends AsyncNotifier<void> {
   @override
   Future<void> build() async {}
 
+  Future<String?> _rtdbEmail() async {
+    return ref.read(chatRtdbEmailProvider.future);
+  }
+
+  Future<void> ensureThread({
+    required String chatId,
+    required String peerEmail,
+  }) async {
+    final current = await _rtdbEmail();
+    if (current == null) {
+      upscWarsTrace('ChatComposerNotifier.ensureThread aborted: no token email');
+      return;
+    }
+    try {
+      await ref.read(chatServiceProvider).ensureThread(
+            chatId: chatId,
+            currentUserEmail: current,
+            peerEmail: peerEmail,
+          );
+    } catch (e, st) {
+      debugPrint('ChatComposerNotifier.ensureThread: $e');
+      debugPrintStack(stackTrace: st);
+    }
+  }
+
   Future<void> sendMessage({
     required String chatId,
     required String peerEmail,
     required String text,
   }) async {
-    final current = ref.read(currentUserEmailProvider);
+    final current = await _rtdbEmail();
     if (current == null) {
       throw StateError('You are not signed in. Please sign in and try again.');
     }
-    final repo = ref.read(communityRepositoryProvider);
-    final iBlockedThem = await repo.isUserBlocked(
-      ownerEmail: current,
-      otherEmail: peerEmail,
-    );
-    if (iBlockedThem) {
+    final blocked =
+        ref.read(blockedUserEmailsProvider).value ?? const <String>{};
+    if (blocked.contains(peerEmail.toLowerCase().trim())) {
       throw StateError(
-        'You have blocked this person. Unblock them from Community to send messages.',
+        'You have blocked this person. Unblock them in Settings to send messages.',
       );
     }
     final config =
@@ -234,32 +276,38 @@ class ChatComposerNotifier extends AsyncNotifier<void> {
     required String chatId,
     required bool isTyping,
   }) async {
-    final current = ref.read(currentUserEmailProvider);
+    final current = ref.read(chatRtdbEmailProvider).value;
     if (current == null) return;
     final config =
         ref.read(chatRuntimeConfigProvider).value ?? ChatRuntimeConfig.defaults;
-    await ref
-        .read(chatServiceProvider)
-        .setTyping(
-          chatId: chatId,
-          currentUserEmail: current,
-          isTyping: isTyping,
-          config: config,
-        );
+    try {
+      await ref.read(chatServiceProvider).setTyping(
+            chatId: chatId,
+            currentUserEmail: current,
+            isTyping: isTyping,
+            config: config,
+          );
+    } catch (e, st) {
+      debugPrint('ChatComposerNotifier.setTyping: $e');
+      debugPrintStack(stackTrace: st);
+    }
   }
 
   Future<void> markRead(String chatId) async {
-    final current = ref.read(currentUserEmailProvider);
+    final current = ref.read(chatRtdbEmailProvider).value;
     if (current == null) return;
     final config =
         ref.read(chatRuntimeConfigProvider).value ?? ChatRuntimeConfig.defaults;
-    await ref
-        .read(chatServiceProvider)
-        .markThreadRead(
-          chatId: chatId,
-          currentUserEmail: current,
-          config: config,
-        );
+    try {
+      await ref.read(chatServiceProvider).markThreadRead(
+            chatId: chatId,
+            currentUserEmail: current,
+            config: config,
+          );
+    } catch (e, st) {
+      debugPrint('ChatComposerNotifier.markRead: $e');
+      debugPrintStack(stackTrace: st);
+    }
   }
 }
 

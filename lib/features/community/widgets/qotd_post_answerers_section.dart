@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../core/auth/auth_session.dart';
 import '../../../core/constants/app_constants.dart';
 import '../../../core/layout/system_insets.dart';
 import '../../../core/presentation/user_display_name.dart';
@@ -308,6 +309,9 @@ Future<void> _openAnswererProfile(
     if (fresh != null) user = fresh;
   } catch (_) {}
   if (!context.mounted) return;
-  final me = ref.read(authStateChangesProvider).asData?.value?.email;
+  final me = AuthSession.emailOf(
+        ref.read(authStateChangesProvider).asData?.value,
+      ) ??
+      AuthSession.currentEmail();
   await showCommunityUserProfileSheet(context, ref, user, currentUserEmail: me);
 }

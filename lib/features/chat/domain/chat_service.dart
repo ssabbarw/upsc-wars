@@ -21,6 +21,17 @@ abstract class ChatService {
     required ChatRuntimeConfig config,
   });
 
+  Future<void> syncAuthEmail({
+    required String uid,
+    required String email,
+  });
+
+  Future<void> ensureThread({
+    required String chatId,
+    required String currentUserEmail,
+    required String peerEmail,
+  });
+
   Future<void> sendMessage({
     required String chatId,
     required String currentUserEmail,

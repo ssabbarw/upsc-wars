@@ -105,20 +105,23 @@ class CommunityRepository {
     return communityUserFromLegacyMap(normalized, data);
   }
 
-  /// Display names for chat list rows. Never derived from the email local-part.
-  Future<Map<String, String>> fetchDisplayNamesByEmails(
+  /// Profile docs for [emails]. Missing users are omitted from the map.
+  Future<Map<String, CommunityUser>> fetchCommunityUsersByEmails(
     Iterable<String> emails,
   ) async {
-    final names = <String, String>{};
+    final users = <String, CommunityUser>{};
     final ids = emails
         .map((e) => e.toLowerCase().trim())
         .where((e) => e.isNotEmpty)
         .toSet()
         .toList();
-    if (ids.isEmpty) return names;
+    if (ids.isEmpty) return users;
     const chunkSize = 20;
     for (var i = 0; i < ids.length; i += chunkSize) {
-      final chunk = ids.sublist(i, i + chunkSize > ids.length ? ids.length : i + chunkSize);
+      final chunk = ids.sublist(
+        i,
+        i + chunkSize > ids.length ? ids.length : i + chunkSize,
+      );
       final snaps = await Future.wait(
         chunk.map(
           (id) => _firestore
@@ -130,10 +133,21 @@ class CommunityRepository {
       for (var j = 0; j < snaps.length; j++) {
         final data = snaps[j].data();
         if (data == null) continue;
-        final user = communityUserFromLegacyMap(chunk[j], data);
-        final name = user.name.trim();
-        if (name.isNotEmpty) names[chunk[j]] = name;
+        users[chunk[j]] = communityUserFromLegacyMap(chunk[j], data);
       }
+    }
+    return users;
+  }
+
+  /// Display names for chat list rows. Never derived from the email local-part.
+  Future<Map<String, String>> fetchDisplayNamesByEmails(
+    Iterable<String> emails,
+  ) async {
+    final users = await fetchCommunityUsersByEmails(emails);
+    final names = <String, String>{};
+    for (final entry in users.entries) {
+      final name = entry.value.name.trim();
+      if (name.isNotEmpty) names[entry.key] = name;
     }
     return names;
   }
@@ -171,14 +185,12 @@ class CommunityRepository {
         .collection('blocked');
   }
 
-  Stream<Set<String>> watchBlockedEmails(String ownerEmail) {
+  /// One-shot list of emails this user has blocked. No snapshot listener.
+  Future<Set<String>> fetchBlockedEmails(String ownerEmail) async {
     final normalized = ownerEmail.toLowerCase().trim();
-    if (normalized.isEmpty) {
-      return Stream.value(const <String>{});
-    }
-    return blockedUsersCol(normalized).snapshots().map(
-          (snap) => snap.docs.map((d) => d.id.toLowerCase()).toSet(),
-        );
+    if (normalized.isEmpty) return const {};
+    final snap = await blockedUsersCol(normalized).get();
+    return snap.docs.map((d) => d.id.toLowerCase()).toSet();
   }
 
   Future<bool> isUserBlocked({

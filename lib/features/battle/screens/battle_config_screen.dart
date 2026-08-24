@@ -21,6 +21,7 @@ import 'package:upsc_wars/features/battle/data/battle_match_firestore_service.da
 import 'package:upsc_wars/features/battle/domain/entities/battle_invite_target.dart';
 import 'package:upsc_wars/features/battle/domain/services/battle_name_service.dart';
 import 'package:upsc_wars/features/community/providers/community_providers.dart';
+import 'package:upsc_wars/features/community/providers/user_block_providers.dart';
 import 'package:upsc_wars/features/home/providers/auth_providers.dart';
 import 'package:upsc_wars/shared/widgets/app_toast.dart';
 import 'package:upsc_wars/shared/widgets/test_config_sheet_widgets.dart';
@@ -259,11 +260,10 @@ class _BattleConfigScreenState extends ConsumerState<BattleConfigScreen> {
           throw StateError('Sign in required to invite a player');
         }
         final guestEmail = invite.email.toLowerCase().trim();
+        final blockedByMe =
+            await ref.read(blockedUserEmailsProvider.future);
+        final hostBlockedGuest = blockedByMe.contains(guestEmail);
         final repo = ref.read(communityRepositoryProvider);
-        final hostBlockedGuest = await repo.isUserBlocked(
-          ownerEmail: hostEmail,
-          otherEmail: guestEmail,
-        );
         guestBlockedHost = await repo.isUserBlocked(
           ownerEmail: guestEmail,
           otherEmail: hostEmail,

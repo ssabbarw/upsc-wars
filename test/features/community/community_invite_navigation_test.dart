@@ -106,7 +106,7 @@ void main() {
       ProviderScope(
         overrides: [
           blockedUserEmailsProvider.overrideWith(
-            (ref) => Stream.value(const <String>{}),
+            _EmptyBlockedUserEmails.new,
           ),
         ],
         child: MaterialApp.router(routerConfig: router),
@@ -124,4 +124,9 @@ void main() {
     expect(find.text('BATTLE_CONFIG'), findsOneWidget);
     expect(find.text('HOME_TAB'), findsNothing);
   });
+}
+
+class _EmptyBlockedUserEmails extends BlockedUserEmailsNotifier {
+  @override
+  Future<Set<String>> build() async => const <String>{};
 }

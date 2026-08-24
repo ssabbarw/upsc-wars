@@ -7,6 +7,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 
 import '../../../core/analytics/analytics_audience.dart';
+import '../../../core/auth/auth_session.dart';
 import '../../../core/constants/app_constants.dart';
 import '../../../core/layout/system_insets.dart';
 import '../../../core/notifications/notification_prompt_policy.dart';
@@ -179,12 +180,10 @@ class _RecentTab extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final recent = ref.watch(communityRecentUsersProvider);
     final notifier = ref.read(communityRecentUsersProvider.notifier);
-    final currentUserEmail = ref
-        .watch(authStateChangesProvider)
-        .asData
-        ?.value
-        ?.email
-        ?.toLowerCase();
+    final currentUserEmail = AuthSession.emailOf(
+          ref.watch(authStateChangesProvider).asData?.value,
+        ) ??
+        AuthSession.currentEmail();
     final scroll = useScrollController();
 
     useEffect(() {

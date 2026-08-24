@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -8,6 +9,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../../core/auth/auth_session.dart';
 import '../../../core/constants/app_constants.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
@@ -18,6 +20,7 @@ import '../../community/providers/community_providers.dart';
 import '../../community/providers/user_block_providers.dart';
 import '../../community/screens/community_screen.dart';
 import '../../community/widgets/admin_bot_label.dart';
+import '../domain/entities/chat_message.dart';
 import '../domain/entities/chat_runtime_config.dart';
 import '../providers/chat_providers.dart';
 
@@ -37,12 +40,21 @@ class ChatThreadScreen extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final messagesAsync = ref.watch(chatMessagesProvider(chatId));
+    final rtdbEmailAsync = ref.watch(chatRtdbEmailProvider);
+    final rtdbEmail = rtdbEmailAsync.value;
+    final rtdbReady = rtdbEmail != null && rtdbEmail.isNotEmpty;
+    final messagesAsync = rtdbReady
+        ? ref.watch(chatMessagesProvider(chatId))
+        : const AsyncLoading<List<ChatMessage>>();
     final composerState = ref.watch(chatComposerProvider);
-    final typingAsync = ref.watch(
-      chatTypingProvider((chatId: chatId, peerEmail: peerEmail)),
-    );
-    final presenceAsync = ref.watch(chatPresenceProvider(peerEmail));
+    final typingAsync = rtdbReady
+        ? ref.watch(
+            chatTypingProvider((chatId: chatId, peerEmail: peerEmail)),
+          )
+        : const AsyncLoading<bool>();
+    final presenceAsync = rtdbReady
+        ? ref.watch(chatPresenceProvider(peerEmail))
+        : const AsyncLoading<bool>();
     final configAsync = ref.watch(chatRuntimeConfigProvider);
     final input = useTextEditingController();
     final scroll = useScrollController();
@@ -51,42 +63,54 @@ class ChatThreadScreen extends HookConsumerWidget {
     final iBlockedPeer = ref.watch(isPeerBlockedProvider(peerNorm));
 
     useEffect(() {
-      WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!rtdbReady) return null;
+      unawaited(() async {
+        await ref.read(chatComposerProvider.notifier).ensureThread(
+              chatId: chatId,
+              peerEmail: peerEmail,
+            );
         if (!context.mounted) return;
         ref.read(chatRuntimeConfigProvider.notifier).refresh();
         unawaited(ref.read(chatComposerProvider.notifier).markRead(chatId));
-      });
+      }());
       return null;
-    }, [chatId]);
+    }, [chatId, peerEmail, rtdbReady]);
 
     useEffect(() {
-      final current = ref.read(currentUserEmailProvider);
-      if (current == null) return null;
+      final email = rtdbEmail;
+      if (email == null || email.isEmpty) return null;
       final config =
           ref.read(chatRuntimeConfigProvider).value ?? ChatRuntimeConfig.defaults;
       final chatService = ref.read(chatServiceProvider);
       final composer = ref.read(chatComposerProvider.notifier);
-      unawaited(
-        chatService.setOnline(
-          currentUserEmail: current,
-          isOnline: true,
-          config: config,
-        ),
-      );
+      unawaited(() async {
+        try {
+          await chatService.setOnline(
+            currentUserEmail: email,
+            isOnline: true,
+            config: config,
+          );
+        } catch (e, st) {
+          debugPrint('ChatThreadScreen.setOnline: $e');
+          debugPrintStack(stackTrace: st);
+        }
+      }());
       return () {
         typingTimer.value?.cancel();
         unawaited(
           composer.setTyping(chatId: chatId, isTyping: false),
         );
-        unawaited(
-          chatService.setOnline(
-            currentUserEmail: current,
-            isOnline: false,
-            config: config,
-          ),
-        );
+        unawaited(() async {
+          try {
+            await chatService.setOnline(
+              currentUserEmail: email,
+              isOnline: false,
+              config: config,
+            );
+          } catch (_) {}
+        }());
       };
-    }, [chatId]);
+    }, [chatId, rtdbEmail]);
 
     Future<void> send() async {
       if (iBlockedPeer) return;
@@ -119,6 +143,7 @@ class ChatThreadScreen extends HookConsumerWidget {
     }
 
     void onChanged(String value) {
+      if (!rtdbReady) return;
       final config = configAsync.value;
       if (config == null || !config.enableTypingIndicator) return;
       final isTyping = value.trim().isNotEmpty;
@@ -225,7 +250,17 @@ class ChatThreadScreen extends HookConsumerWidget {
       body: Column(
         children: [
           Expanded(
-            child: messagesAsync.when(
+            child: !rtdbReady && !rtdbEmailAsync.isLoading
+                ? Center(
+                    child: Text(
+                      AuthSession.isCurrentAccountSignedIn()
+                          ? 'Could not start chat. Go back and try again.'
+                          : 'Sign in again to send messages.',
+                      textAlign: TextAlign.center,
+                      style: AppTextStyles.bodyMd(),
+                    ),
+                  )
+                : messagesAsync.when(
               data: (messages) {
                 final me = ref.watch(currentUserEmailProvider);
                 final visible = iBlockedPeer
@@ -241,7 +276,7 @@ class ChatThreadScreen extends HookConsumerWidget {
                     child: Text(
                       iBlockedPeer
                           ? 'You have blocked this person. Their messages are hidden. '
-                              'Unblock them from Community to chat.'
+                              'Unblock them in Settings to chat.'
                           : 'Start the conversation.',
                       textAlign: TextAlign.center,
                       style: AppTextStyles.bodyMd(),
@@ -326,8 +361,8 @@ class ChatThreadScreen extends HookConsumerWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(AppSpacing.md),
                     child: Text(
-                      'You have blocked this person. Unblock them from '
-                      'Community to send messages.',
+                      'You have blocked this person. Unblock them in '
+                      'Settings to send messages.',
                       style: AppTextStyles.bodySm().copyWith(
                         color: Theme.of(context).colorScheme.onSurfaceVariant,
                       ),
