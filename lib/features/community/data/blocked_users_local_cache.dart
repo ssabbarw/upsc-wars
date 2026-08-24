@@ -1,6 +1,6 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
-/// On-device copy of `users/{email}/blocked/*` doc ids (lowercased emails).
+/// On-device copy of `block_lists/{uid}` emails (keyed by owner email).
 class BlockedUsersLocalCache {
   BlockedUsersLocalCache(this._prefs);
 

@@ -157,18 +157,18 @@ service cloud.firestore {
     }
 
     /// Per-user block list: `users/{email}/blocked/{blockedEmail}` (doc ids are lowercased emails).
-    /// Owner may read/write the whole list. Any signed-in user may read only the doc whose id is
-    /// their own email — so the app can check "has this person blocked me?" without listing others.
+    /// `list` is owner-only. `get` also allows the blocked person to read the single doc whose id
+    /// is their email ("has this person blocked me?"). Combining those in `allow read` makes
+    /// collection queries fail — Firestore cannot prove every listed doc matches `blockedId`.
     match /users/{userId}/blocked/{blockedId} {
-      allow read: if signedIn()
+      allow list: if ownsUserRootDoc(userId);
+      allow get: if signedIn()
         && request.auth.token.email != null
         && (
           request.auth.token.email.lower() == userId
           || request.auth.token.email.lower() == blockedId
         );
-      allow write: if signedIn()
-        && request.auth.token.email != null
-        && request.auth.token.email.lower() == userId;
+      allow write: if ownsUserRootDoc(userId);
     }
 
     /// `users/{lowercaseEmail}` — clients cannot forge Instagram verification fields.
@@ -435,10 +435,17 @@ service cloud.firestore {
       allow write: if signedIn() && !isTrafficBotsDoc() && !isBotBattlesPath();
     }
 
+    /// Owner-only copy of blocked emails, keyed by Auth uid (always on the token).
+    match /block_lists/{uid} {
+      allow read, write: if signedIn() && request.auth.uid == uid;
+    }
+
     // Authenticated users: all other collections (tighten per collection before prod if needed).
     match /{document=**} {
       allow read, write: if signedIn()
         && !isUsersRootDoc(database)
+        && !isUsersBlockedPath(database)
+        && !isBlockListsPath(database)
         && !isAdminDashboardPath()
         && !isBotInternalPath()
         && !isAdminSecretsPath();
@@ -446,6 +453,18 @@ service cloud.firestore {
 
     function isUsersRootDoc(database) {
       return request.path.matches('/databases/' + database + '/documents/users/[^/]+$');
+    }
+
+    function isUsersBlockedPath(database) {
+      return request.path.matches(
+        '/databases/' + database + '/documents/users/[^/]+/blocked(/.*)?'
+      );
+    }
+
+    function isBlockListsPath(database) {
+      return request.path.matches(
+        '/databases/' + database + '/documents/block_lists(/.*)?'
+      );
     }
   }
 }

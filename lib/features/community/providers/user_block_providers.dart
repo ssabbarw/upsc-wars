@@ -17,10 +17,15 @@ String? _currentUserEmail(Ref ref) {
       AuthSession.currentEmail();
 }
 
+String? _currentUserUid(Ref ref) {
+  return ref.read(authStateChangesProvider).asData?.value?.uid;
+}
+
 /// Lowercased emails the current user has blocked.
 ///
-/// Loaded once from Firestore (then cached on device). Block/unblock updates
-/// the cache and writes the remote doc — no snapshot listener.
+/// Firebase `block_lists/{uid}` is read on login (and once if this device has
+/// no cache). After that the on-device cache is the source of truth. Block /
+/// unblock writes the cache and `block_lists/{uid}`.
 final blockedUserEmailsProvider =
     AsyncNotifierProvider<BlockedUserEmailsNotifier, Set<String>>(
       BlockedUserEmailsNotifier.new,
@@ -29,19 +34,32 @@ final blockedUserEmailsProvider =
 class BlockedUserEmailsNotifier extends AsyncNotifier<Set<String>> {
   @override
   Future<Set<String>> build() async {
+    ref.listen(authStateChangesProvider, (prev, next) {
+      final prevReady = prev?.hasValue ?? false;
+      if (!prevReady) return;
+      final wasSignedIn = AuthSession.isAccountSignedIn(prev?.asData?.value);
+      final nowSignedIn = AuthSession.isAccountSignedIn(next.asData?.value);
+      if (wasSignedIn || !nowSignedIn) return;
+      unawaited(_hydrateFromRemote());
+    });
+
+    final user = ref.read(authStateChangesProvider).asData?.value;
     final email = _currentUserEmail(ref);
-    if (email == null) return const {};
+    final uid = _currentUserUid(ref);
+    if (email == null ||
+        uid == null ||
+        uid.isEmpty ||
+        !AuthSession.isAccountSignedIn(user)) {
+      return const {};
+    }
 
     final prefs = await ref.watch(sharedPreferencesProvider.future);
     final cache = BlockedUsersLocalCache(prefs);
     final cached = cache.read(email);
-    if (cached != null) {
-      unawaited(_refreshFromRemote(email, cache));
-      return cached;
-    }
+    if (cached != null) return cached;
 
     try {
-      return await _loadFromRemote(email, cache);
+      return await _loadFromRemote(email: email, uid: uid, cache: cache);
     } catch (e, st) {
       debugPrint('fetchBlockedEmails failed: $e');
       debugPrintStack(stackTrace: st);
@@ -49,23 +67,36 @@ class BlockedUserEmailsNotifier extends AsyncNotifier<Set<String>> {
     }
   }
 
-  Future<Set<String>> _loadFromRemote(
-    String email,
-    BlockedUsersLocalCache cache,
-  ) async {
+  Future<Set<String>> _loadFromRemote({
+    required String email,
+    required String uid,
+    required BlockedUsersLocalCache cache,
+  }) async {
     final remote = await ref
         .read(communityRepositoryProvider)
-        .fetchBlockedEmails(email);
+        .fetchBlockedEmails(ownerUid: uid);
     await cache.write(email, remote);
     return remote;
   }
 
-  Future<void> _refreshFromRemote(
-    String email,
-    BlockedUsersLocalCache cache,
-  ) async {
+  Future<void> _hydrateFromRemote() async {
+    final user = ref.read(authStateChangesProvider).asData?.value;
+    final email = AuthSession.emailOf(user);
+    final uid = user?.uid;
+    if (email == null ||
+        uid == null ||
+        uid.isEmpty ||
+        !AuthSession.isAccountSignedIn(user)) {
+      return;
+    }
     try {
-      final remote = await _loadFromRemote(email, cache);
+      final prefs = await ref.read(sharedPreferencesProvider.future);
+      final cache = BlockedUsersLocalCache(prefs);
+      final remote = await _loadFromRemote(
+        email: email,
+        uid: uid,
+        cache: cache,
+      );
       if (!ref.mounted) return;
       final current = AuthSession.emailOf(
             ref.read(authStateChangesProvider).asData?.value,
@@ -83,11 +114,10 @@ class BlockedUserEmailsNotifier extends AsyncNotifier<Set<String>> {
     required String otherEmail,
     required bool blocked,
   }) async {
-    final me = AuthSession.emailOf(
-          ref.read(authStateChangesProvider).asData?.value,
-        ) ??
-        AuthSession.currentEmail();
-    if (me == null) return;
+    final user = ref.read(authStateChangesProvider).asData?.value;
+    final me = AuthSession.emailOf(user) ?? AuthSession.currentEmail();
+    final uid = user?.uid;
+    if (me == null || uid == null || uid.isEmpty) return;
     final other = otherEmail.toLowerCase().trim();
     if (other.isEmpty || other == me) return;
 
@@ -109,6 +139,8 @@ class BlockedUserEmailsNotifier extends AsyncNotifier<Set<String>> {
             ownerEmail: me,
             otherEmail: other,
             blocked: blocked,
+            blockedEmails: next,
+            ownerUid: uid,
           );
     } catch (e) {
       state = AsyncData(previous);

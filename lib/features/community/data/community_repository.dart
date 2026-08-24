@@ -12,6 +12,8 @@ class CommunityRepository {
 
   final FirebaseFirestore _firestore;
 
+  static const _blockListsCollection = 'block_lists';
+
   /// `buckets/{yyyy-m}/{day}/{0|3|…|21}` for “now” (same path as [fetchRecentUsers] offset 0).
   DocumentReference<Map<String, dynamic>> presenceBucketDocRefNow() {
     final now = DateTime.now();
@@ -185,12 +187,24 @@ class CommunityRepository {
         .collection('blocked');
   }
 
-  /// One-shot list of emails this user has blocked. No snapshot listener.
-  Future<Set<String>> fetchBlockedEmails(String ownerEmail) async {
-    final normalized = ownerEmail.toLowerCase().trim();
-    if (normalized.isEmpty) return const {};
-    final snap = await blockedUsersCol(normalized).get();
-    return snap.docs.map((d) => d.id.toLowerCase()).toSet();
+  /// Owner block list at `block_lists/{uid}`. Missing doc or empty `emails`
+  /// means nobody is blocked.
+  Future<Set<String>> fetchBlockedEmails({required String ownerUid}) async {
+    final uid = ownerUid.trim();
+    if (uid.isEmpty) return const {};
+    final snap =
+        await _firestore.collection(_blockListsCollection).doc(uid).get();
+    if (!snap.exists) return const {};
+    return _emailsFromBlockListData(snap.data());
+  }
+
+  Set<String> _emailsFromBlockListData(Map<String, dynamic>? data) {
+    final raw = data?['emails'];
+    if (raw is! List) return const {};
+    return raw
+        .map((e) => e.toString().toLowerCase().trim())
+        .where((e) => e.isNotEmpty)
+        .toSet();
   }
 
   Future<bool> isUserBlocked({
@@ -208,18 +222,36 @@ class CommunityRepository {
     required String ownerEmail,
     required String otherEmail,
     required bool blocked,
+    required Set<String> blockedEmails,
+    String? ownerUid,
   }) async {
     final owner = ownerEmail.toLowerCase().trim();
     final other = otherEmail.toLowerCase().trim();
     if (owner.isEmpty || other.isEmpty || owner == other) return;
     final ref = blockedUsersCol(owner).doc(other);
-    if (blocked) {
-      await ref.set({
-        'updatedAt': FieldValue.serverTimestamp(),
-      }, SetOptions(merge: true));
-    } else {
-      await ref.delete();
+    try {
+      if (blocked) {
+        await ref.set({
+          'updatedAt': FieldValue.serverTimestamp(),
+        }, SetOptions(merge: true));
+      } else {
+        await ref.delete();
+      }
+    } catch (e, st) {
+      debugPrint('setUserBlocked users/*/blocked failed: $e');
+      debugPrintStack(stackTrace: st);
     }
+    final uid = ownerUid?.trim() ?? '';
+    if (uid.isEmpty) return;
+    final emails = blockedEmails
+        .map((e) => e.toLowerCase().trim())
+        .where((e) => e.isNotEmpty)
+        .toList()
+      ..sort();
+    await _firestore.collection(_blockListsCollection).doc(uid).set({
+      'emails': emails,
+      'updatedAt': FieldValue.serverTimestamp(),
+    });
   }
 
   Future<void> updateCommunityVisibility({
