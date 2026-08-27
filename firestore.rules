@@ -200,6 +200,36 @@ service cloud.firestore {
       allow write: if false;
     }
 
+    /// Daily CA ranks — public day meta; answers stay Functions-only.
+    /// Clients must not write submissions or the leaderboard.
+    match /daily_ca_days/{dateId} {
+      allow read: if true;
+      allow write: if false;
+
+      match /private/{docId} {
+        allow read, write: if false;
+      }
+
+      match /submissions/{uid} {
+        allow read: if signedIn();
+        allow write: if false;
+      }
+
+      match /meta/{docId} {
+        allow read: if true;
+        allow write: if false;
+      }
+    }
+
+    match /daily_ca_state/{docId} {
+      allow read, write: if false;
+    }
+
+    match /daily_ca_profiles/{uid} {
+      allow read: if signedIn() && request.auth.uid == uid;
+      allow write: if false;
+    }
+
     /// Question corrections (`question_corrections/active`) — read-only on clients.
     match /question_corrections/{docId} {
       allow read: if true;
@@ -385,6 +415,16 @@ service cloud.firestore {
       );
     }
 
+    function isDailyCaRanksPath() {
+      return request.path.matches(
+        '/databases/' + database + '/documents/daily_ca_days(/.*)?'
+      ) || request.path.matches(
+        '/databases/' + database + '/documents/daily_ca_state(/.*)?'
+      ) || request.path.matches(
+        '/databases/' + database + '/documents/daily_ca_profiles(/.*)?'
+      );
+    }
+
     /// Server-only bot traffic (Admin SDK). Clients cannot read or write.
     match /bot_roster/{id} {
       allow read, write: if false;
@@ -448,7 +488,8 @@ service cloud.firestore {
         && !isBlockListsPath(database)
         && !isAdminDashboardPath()
         && !isBotInternalPath()
-        && !isAdminSecretsPath();
+        && !isAdminSecretsPath()
+        && !isDailyCaRanksPath();
     }
 
     function isUsersRootDoc(database) {

@@ -132,6 +132,7 @@ class _RootMaterialApp extends HookConsumerWidget {
           id: ActivationMilestones.firstProcessLaunch,
         );
         await ref.read(killSwitchProvider.future);
+        unawaited(FcmTokenSyncService.syncForCurrentUser());
         if (wasFirstInstall) {
           unawaited(AdminDashboardWriterService().recordNewDownload());
         }

@@ -92,6 +92,12 @@ def write_document(target_date: date, document: dict):
     )
 
 
+def draft_exists(content_date: str) -> bool:
+    """True if daily_ca_drafts/{YYYY-MM-DD} already has a document."""
+    snap = get_db().collection(DRAFT_COLLECTION).document(content_date).get()
+    return snap.exists
+
+
 def write_draft(content_date: str, document: dict):
     """Write English-only review draft to daily_ca_drafts/{YYYY-MM-DD}."""
     db = get_db()

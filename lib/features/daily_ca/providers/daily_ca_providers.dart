@@ -6,10 +6,14 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/providers/kill_switch_provider.dart';
 import '../../../core/providers/prefs_provider.dart';
+import '../../../core/providers/super_user_provider.dart';
 import '../../../core/providers/user_database_provider.dart';
 import '../../../core/services/local_daily_reminders_sync.dart';
+import '../../home/providers/auth_providers.dart';
+import '../data/daily_ca_cloud_service.dart';
 import '../data/daily_ca_firestore.dart';
 import '../data/daily_ca_repository.dart';
+import '../domain/daily_ca_rank_models.dart';
 import '../domain/daily_ca_schedule.dart';
 
 /// Earliest selectable daily CA date from Remote Config (`daily_ca_calendar_min_date`).
@@ -85,6 +89,56 @@ final dailyCaDayCompletedProvider = FutureProvider.autoDispose
     .family<bool, String>((ref, isoDate) async {
       final db = ref.watch(userDatabaseProvider);
       return db.sessionsDao.hasCompletedDailyCa(isoDate);
+    });
+
+/// Whether Daily CA ranks are available for the signed-in user.
+///
+/// Requires [dailyCaRanksEnabledRemoteConfigKey]. If
+/// [dailyCaRanksAdminsOnlyRemoteConfigKey] is true, only super-users pass.
+final dailyCaRanksRemoteEnabledProvider = FutureProvider<bool>((ref) async {
+  if (kIsWeb) return false;
+  await ref.watch(killSwitchProvider.future);
+  try {
+    final rc = FirebaseRemoteConfig.instance;
+    if (!rc.getBool(dailyCaRanksEnabledRemoteConfigKey)) {
+      return false;
+    }
+    final adminsOnly = rc.getBool(dailyCaRanksAdminsOnlyRemoteConfigKey);
+    if (!adminsOnly) return true;
+    return ref.watch(isSuperUserProvider);
+  } on Object catch (_) {
+    return false;
+  }
+});
+
+final dailyCaMySubmissionProvider = FutureProvider.autoDispose
+    .family<DailyCaSubmission?, String>((ref, isoDate) async {
+      final uid = ref.watch(authStateChangesProvider).asData?.value?.uid;
+      if (uid == null || uid.isEmpty) return null;
+      const cloud = DailyCaCloudService();
+      final rank = await cloud.myRank(dateId: isoDate);
+      if (!rank.ok) return null;
+      return DailyCaSubmission(
+        uid: uid,
+        mode: rank.mode ?? 'live',
+        score: rank.score ?? 0,
+        correct: rank.correct ?? 0,
+        wrong: rank.wrong ?? 0,
+        unanswered: rank.unanswered ?? 0,
+        elapsedMs: rank.elapsedMs ?? 0,
+        air: rank.air,
+        percentile: rank.percentile,
+        participantCount: rank.participantCount,
+      );
+    });
+
+/// Snapshot of the top 100. Fetched on open — not a live listener.
+final dailyCaLeaderboardProvider = FutureProvider.autoDispose
+    .family<DailyCaLeaderboard?, String>((ref, isoDate) async {
+      final snap = await DailyCaFirestore.leaderboardDoc(isoDate).get();
+      final data = snap.data();
+      if (!snap.exists || data == null) return null;
+      return DailyCaLeaderboard.fromMap(isoDate, data);
     });
 
 /// Bumped after [markDailyCaResultsOpened] so home can leave the revise hero.

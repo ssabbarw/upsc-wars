@@ -34,6 +34,25 @@ const IST_OFFSET_MS = (5 * 60 + 30) * 60 * 1000;
 
 /** Must match Flutter [FomoPulseConstants.broadcastFcmTopic]. */
 const FOMO_PULSE_FCM_TOPIC = "upsc_wars_fomo_pulse";
+/** Must match Flutter [PushSpotTestConstants.broadcastFcmTopic]. */
+const SPOT_TEST_FCM_TOPIC = "upsc_wars_spot_tests";
+const ANDROID_NOTIF_CHANNEL = "general_v2";
+const LONG_HTML_COLLECTION = "Long_Html_Message";
+const LONG_HTML_DOC_ID = "message";
+const CA_SHOT_UPDATE_SOURCE = "ca_shot_update";
+const PLAY_STORE_URL =
+  "https://play.google.com/store/apps/details?id=practice.upsc.indiaapps.com.upscmcqpractice";
+const APP_STORE_URL = "https://apps.apple.com/in/app/upsc-wars/id1550273627";
+const CA_SHOT_UPDATE_HTML = `<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Please update Upsc Wars</title></head>
+<body style="font-family:system-ui,-apple-system,sans-serif;margin:0;padding:24px;background:#FBF8F1;color:#10312E;">
+  <h1 style="font-size:1.35rem;margin:0 0 12px;">Update the app to open this CA Shot</h1>
+  <p style="line-height:1.5;color:#3E5A55;">This Current Affairs shot needs the latest Upsc Wars. Update from the store, then tap the notification again.</p>
+  <p><a href="${PLAY_STORE_URL}" style="color:#1D9E75;font-weight:700;">Update on Google Play</a></p>
+  <p><a href="${APP_STORE_URL}" style="color:#1D9E75;font-weight:700;">Update on the App Store</a></p>
+</body></html>`;
 
 const ADMIN_EMAILS = new Set(
   [
@@ -50,6 +69,42 @@ const ADMIN_EMAILS = new Set(
 
 function db() {
   return admin.firestore();
+}
+
+function caShotFcmMessage({ title, body, fcmData }) {
+  return {
+    notification: { title, body },
+    data: fcmData,
+    android: {
+      priority: "high",
+      notification: { channelId: ANDROID_NOTIF_CHANNEL, sound: "default" },
+    },
+    apns: { payload: { aps: { sound: "default" } } },
+  };
+}
+
+/**
+ * Old clients open `type=long_html_message` to Long_Html_Message/message.
+ * Only write the CA Shot update page when that doc is empty or already ours,
+ * so a real announcement is not overwritten.
+ */
+async function ensureCaShotUpdateHtml() {
+  const ref = db().collection(LONG_HTML_COLLECTION).doc(LONG_HTML_DOC_ID);
+  const snap = await ref.get();
+  const data = snap.exists ? snap.data() || {} : {};
+  const html = typeof data.message === "string" ? data.message.trim() : "";
+  const source = String(data.source || "");
+  if (html && source !== CA_SHOT_UPDATE_SOURCE) return;
+  if (html && source === CA_SHOT_UPDATE_SOURCE) return;
+  await ref.set(
+    {
+      message: CA_SHOT_UPDATE_HTML,
+      title: "Please update Upsc Wars",
+      source: CA_SHOT_UPDATE_SOURCE,
+      updated_at: admin.firestore.FieldValue.serverTimestamp(),
+    },
+    { merge: true },
+  );
 }
 
 function isAdminEmail(email) {
@@ -1038,10 +1093,7 @@ exports.sendFomoPulseNotification = onCall(generateOpts, async (request) => {
     pulse_id: pulseId,
     notification_id: notificationId,
   };
-  const message = {
-    notification: { title, body },
-    data: fcmData,
-  };
+  const message = caShotFcmMessage({ title, body, fcmData });
 
   await db()
     .collection("admin_dashboard")
@@ -1066,6 +1118,24 @@ exports.sendFomoPulseNotification = onCall(generateOpts, async (request) => {
       topic: FOMO_PULSE_FCM_TOPIC,
       ...message,
     });
+    // Builds that never subscribed to the CA Shot topic still sit on the
+    // older all-users topic. Same tray copy; tap opens the long-HTML update
+    // page. Devices already on the CA Shot topic are excluded so they are
+    // not double-notified.
+    try {
+      await ensureCaShotUpdateHtml();
+      await admin.messaging().send({
+        condition:
+          `'${SPOT_TEST_FCM_TOPIC}' in topics && !('${FOMO_PULSE_FCM_TOPIC}' in topics)`,
+        ...caShotFcmMessage({
+          title,
+          body,
+          fcmData: { ...fcmData, type: "long_html_message" },
+        }),
+      });
+    } catch (e) {
+      console.error("sendFomoPulseNotification: legacy update fanout failed", e);
+    }
     return { ok: true, target: "broadcast", pulseId, notificationId };
   }
 

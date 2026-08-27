@@ -1,15 +1,12 @@
 import 'package:flutter/foundation.dart';
 
 import '../../features/daily_ca/domain/daily_ca_schedule.dart';
-import '../constants/daily_drill_constants.dart';
 import 'app_local_notifications_service.dart';
 import 'daily_practice_reminder_service.dart';
 
-/// Schedules the morning "your paper quiz is live" reminder.
-///
-/// One-shot rather than repeating, so each app open books the next valid
-/// morning. Mornings where no fresh paper opens (Monday, since Sunday has no
-/// newspaper) are skipped instead of promising a quiz that isn't new.
+/// Morning "paper quiz is live" used to be a local one-shot. That push is now
+/// an FCM topic broadcast (`notifyDailyCaPaper` at 7 AM IST) so guests on the
+/// latest build get it too. [sync] only clears leftover local schedules.
 class DailyCaReminderService {
   DailyCaReminderService._();
 
@@ -37,15 +34,9 @@ class DailyCaReminderService {
     bool skipToday = false,
   }) async {
     if (kIsWeb) return;
-    if (!enabled) {
-      await AppLocalNotificationsService.cancelDailyCaPaperReminder();
-      return;
-    }
-    await DailyPracticeReminderService.ensureTimezonesReady();
-    await AppLocalNotificationsService.scheduleDailyCaPaperReminder(
-      fireAtLocal: fireAt(reference: DateTime.now(), skipToday: skipToday),
-      questionCount: DailyDrillConstants.questionCount,
-    );
+    // Paper-live push is an FCM topic send (`notifyDailyCaPaper` at 7 AM IST).
+    // Cancel any leftover local schedule so the latest build is not double-notified.
+    await AppLocalNotificationsService.cancelDailyCaPaperReminder();
   }
 
   /// Next valid 7 AM slot, skipping [reference]'s morning when [skipToday].

@@ -24,6 +24,9 @@ String sessionResultsRouteForKey(String sessionId, String? analyticsFeatureKey) 
       analyticsFeatureKey == 'daily_war_unranked') {
     return '/daily-war/results/$sessionId';
   }
+  if (analyticsFeatureKey == 'daily_current_affairs') {
+    return '/daily-ca/results/$sessionId';
+  }
   return '/results/$sessionId';
 }
 

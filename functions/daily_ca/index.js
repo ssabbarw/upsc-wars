@@ -1,9 +1,14 @@
 /**
- * Daily CA admin flow — drafts, publish, auto-publish, notify.
+ * Daily CA admin flow — drafts, publish, auto-publish, notify, ranks.
  *
  * Firestore:
  *   daily_ca_drafts/{YYYY-MM-DD}
  *   daily_mcqs/{YYYY}/{MM}/{DD}
+ *   daily_ca_days/{YYYY-MM-DD}                    — rank day (live | frozen)
+ *   daily_ca_days/{dateId}/private/answers         — keys (Functions only)
+ *   daily_ca_days/{dateId}/submissions/{uid}
+ *   daily_ca_days/{dateId}/meta/leaderboard        — top 100 snapshot
+ *   daily_ca_state/ranks                           — current ranked date_id
  */
 const { onSchedule } = require("firebase-functions/v2/scheduler");
 const { onCall, HttpsError } = require("firebase-functions/v2/https");
@@ -18,6 +23,10 @@ const { parseJsonFromText } = require("../parse_llm_json");
 const IST_OFFSET_MS = (5 * 60 + 30) * 60 * 1000;
 const DRAFTS = "daily_ca_drafts";
 const LIVE = "daily_mcqs";
+const DAYS = "daily_ca_days";
+const CA_STATE = "daily_ca_state";
+const RANKS_STATE_DOC = "ranks";
+const MAX_ELAPSED_MS = 2 * 60 * 60 * 1000;
 const PUBLISH_MIN = 5;
 const PUBLISH_MAX = 10;
 const ADMIN_EMAIL = (
@@ -25,6 +34,9 @@ const ADMIN_EMAIL = (
 )
   .trim()
   .toLowerCase();
+
+/** Must match Flutter [DailyCaConstants.broadcastFcmTopic]. */
+const DAILY_CA_FCM_TOPIC = "upsc_wars_daily_ca";
 
 const ADMIN_EMAILS = new Set(
   [
@@ -275,6 +287,22 @@ async function sendAdminFcm({ title, body, dateIso, status }) {
   return { sent: true };
 }
 
+async function sendDailyCaPaperTopic({ title, body, dateIso }) {
+  const notificationId = `daily_ca_${dateIso}_${crypto.randomUUID().slice(0, 8)}`;
+  await admin.messaging().send({
+    topic: DAILY_CA_FCM_TOPIC,
+    notification: { title, body },
+    data: {
+      kind: "daily_ca",
+      date: dateIso,
+      notification_id: notificationId,
+    },
+    android: { priority: "high" },
+    apns: { payload: { aps: { sound: "default" } } },
+  });
+  return { ok: true, topic: DAILY_CA_FCM_TOPIC, notificationId };
+}
+
 async function sendAdminEmail(subject, body) {
   const sender = process.env.GMAIL_SENDER;
   const pass = process.env.GMAIL_APP_PASSWORD;
@@ -449,6 +477,12 @@ async function publishSelected(iso, selected, { auto }) {
       },
       { merge: true },
     );
+
+    try {
+      await syncRankDay(iso, liveQuestions);
+    } catch (e) {
+      console.warn("syncRankDay after publish failed", iso, e);
+    }
 
     return { count: liveQuestions.length, hindi: hindiOk };
   } catch (e) {
@@ -635,6 +669,40 @@ exports.autoPublishDailyCa = onSchedule(
   },
 );
 
+/**
+ * 7:00 AM IST — user-facing "paper quiz is live" to everyone on the topic.
+ * Skips Monday (Sunday has no newspaper, so there is no fresh paper).
+ */
+exports.notifyDailyCaPaper = onSchedule(
+  {
+    schedule: "0 7 * * *",
+    timeZone: "Asia/Kolkata",
+    region: "asia-south1",
+    timeoutSeconds: 60,
+  },
+  async () => {
+    const parts = istParts();
+    const contentIso = yesterdayIso(parts);
+    if (isSundayIso(contentIso)) {
+      console.log("notifyDailyCaPaper skipped: no fresh paper", contentIso);
+      return { skipped: true, reason: "no_fresh_paper", date: contentIso };
+    }
+    if (!(await liveDocHasQuestions(contentIso))) {
+      console.log("notifyDailyCaPaper skipped: no live paper", contentIso);
+      return { skipped: true, reason: "no_live_paper", date: contentIso };
+    }
+    const snap = await liveDocRef(contentIso).get();
+    const count = liveQuestionCount((snap.data() || {}).questions);
+    const result = await sendDailyCaPaperTopic({
+      title: "Today's paper quiz is live",
+      body: `${count} MCQs from the news you just read`,
+      dateIso: contentIso,
+    });
+    console.log("notifyDailyCaPaper sent", contentIso, result);
+    return { ...result, date: contentIso, count };
+  },
+);
+
 exports.adminAutoPublishDailyCa = onCall(publishOpts, async (request) => {
   requireAdmin(request);
   const iso =
@@ -642,3 +710,510 @@ exports.adminAutoPublishDailyCa = onCall(publishOpts, async (request) => {
     yesterdayIso(istParts());
   return autoPublishForIso(iso);
 });
+
+// --- Live rolling ranks -------------------------------------------------------
+
+function ranksStateRef() {
+  return db().collection(CA_STATE).doc(RANKS_STATE_DOC);
+}
+
+function dayRef(iso) {
+  return db().collection(DAYS).doc(iso);
+}
+
+function coerceQuestionList(raw) {
+  if (Array.isArray(raw)) return raw.filter((q) => q && typeof q === "object");
+  if (raw && typeof raw === "object") {
+    return Object.keys(raw)
+      .sort((a, b) => Number(a) - Number(b))
+      .map((k) => raw[k])
+      .filter((q) => q && typeof q === "object");
+  }
+  return [];
+}
+
+function answersFromQuestions(questions) {
+  const answers = {};
+  const uuids = [];
+  for (const q of questions || []) {
+    const uuid = q && q.uuid ? String(q.uuid).trim() : "";
+    if (!uuid) continue;
+    uuids.push(uuid);
+    const shared = q.shared && typeof q.shared === "object" ? q.shared : {};
+    const key = String(shared.correct_option || "").trim().toLowerCase();
+    if (key) answers[uuid] = key;
+  }
+  return { answers, uuids };
+}
+
+/** Matches Flutter DailyCaSchedule.paperQuizContentDate. */
+function paperQuizContentIso(parts = istParts()) {
+  let cursor = addDaysIso(parts.iso, -1);
+  for (let i = 0; i < 9; i++) {
+    if (!isSundayIso(cursor) && isLive(cursor, parts)) {
+      return cursor;
+    }
+    cursor = addDaysIso(cursor, -1);
+  }
+  return null;
+}
+
+function parseRcBool(raw, fallback) {
+  if (raw === undefined || raw === null || raw === "") return fallback;
+  if (raw === true || raw === "true" || raw === "1") return true;
+  if (raw === false || raw === "false" || raw === "0") return false;
+  return fallback;
+}
+
+function flattenRcParams(template) {
+  const out = { ...(template.parameters || {}) };
+  const groups = template.parameterGroups || {};
+  for (const group of Object.values(groups)) {
+    Object.assign(out, (group && group.parameters) || {});
+  }
+  return out;
+}
+
+function rcParamValue(params, key) {
+  const p = params[key];
+  if (!p || !p.defaultValue) return undefined;
+  if (p.defaultValue.useInAppDefault) return undefined;
+  return p.defaultValue.value;
+}
+
+let _rolloutCache = { at: 0, value: null };
+const ROLLOUT_TTL_MS = 10 * 60 * 1000;
+
+async function readDailyCaRanksRollout() {
+  if (_rolloutCache.value && Date.now() - _rolloutCache.at < ROLLOUT_TTL_MS) {
+    return _rolloutCache.value;
+  }
+  try {
+    const template = await admin.remoteConfig().getTemplate();
+    const params = flattenRcParams(template);
+    const enabledRaw = rcParamValue(params, "daily_ca_ranks_enabled");
+    const adminsRaw = rcParamValue(params, "daily_ca_ranks_admins_only");
+    const value = {
+      enabled: parseRcBool(enabledRaw, true),
+      adminsOnly: parseRcBool(adminsRaw, true),
+    };
+    _rolloutCache = { at: Date.now(), value };
+    return value;
+  } catch (e) {
+    console.warn("readDailyCaRanksRollout failed; defaulting enabled+admins-only", e);
+    const value = { enabled: true, adminsOnly: true };
+    _rolloutCache = { at: Date.now(), value };
+    return value;
+  }
+}
+
+async function assertDailyCaRankParticipant(request) {
+  if (!request.auth) {
+    throw new HttpsError("unauthenticated", "Sign in required.");
+  }
+  const rollout = await readDailyCaRanksRollout();
+  if (!rollout.enabled) {
+    throw new HttpsError("failed-precondition", "Daily CA ranks are disabled.");
+  }
+  if (rollout.adminsOnly) {
+    const email = (request.auth.token.email || "").toLowerCase().trim();
+    if (!isAdminEmail(email)) {
+      throw new HttpsError(
+        "permission-denied",
+        "Daily CA ranks are in admin preview.",
+      );
+    }
+  }
+}
+
+function scoreAnswers(selectedByUuid, correctByUuid) {
+  let correct = 0;
+  let wrong = 0;
+  let unanswered = 0;
+  for (const uuid of Object.keys(correctByUuid)) {
+    const selected = selectedByUuid[uuid];
+    if (selected == null || String(selected).trim() === "") {
+      unanswered++;
+      continue;
+    }
+    if (
+      String(selected).trim().toLowerCase() ===
+      String(correctByUuid[uuid]).trim().toLowerCase()
+    ) {
+      correct++;
+    } else {
+      wrong++;
+    }
+  }
+  const points = Number((correct * 2 - wrong * (2 / 3)).toFixed(2));
+  return { correct, wrong, unanswered, score: points };
+}
+
+function rowSort(a, b) {
+  if (b.score !== a.score) return b.score - a.score;
+  return a.elapsed_ms - b.elapsed_ms;
+}
+
+function percentileFor(air, n) {
+  return n <= 1 ? 100 : Number((((n - air) / (n - 1)) * 100).toFixed(2));
+}
+
+/** Current AIR among live submits. Cheap aggregation reads, not a full scan. */
+async function liveStanding(dateId, score, elapsedMs) {
+  const col = dayRef(dateId).collection("submissions");
+  const [betterSnap, fasterSnap, totalSnap] = await Promise.all([
+    col.where("mode", "==", "live").where("score", ">", score).count().get(),
+    col
+      .where("mode", "==", "live")
+      .where("score", "==", score)
+      .where("elapsed_ms", "<", elapsedMs)
+      .count()
+      .get(),
+    col.where("mode", "==", "live").count().get(),
+  ]);
+  const n = totalSnap.data().count;
+  const air = betterSnap.data().count + fasterSnap.data().count + 1;
+  return { air, n, percentile: percentileFor(air, n) };
+}
+
+async function attachLiveStanding(dateId, payload) {
+  if (payload.mode !== "live" || typeof payload.score !== "number") {
+    return payload;
+  }
+  const elapsed =
+    typeof payload.elapsed_ms === "number" ? payload.elapsed_ms : 0;
+  try {
+    const standing = await liveStanding(dateId, payload.score, elapsed);
+    return {
+      ...payload,
+      air: standing.air,
+      percentile: standing.percentile,
+      participant_count: standing.n,
+    };
+  } catch (e) {
+    console.warn("liveStanding failed", dateId, e);
+    return payload;
+  }
+}
+
+function insertLeaderboardTop(top, row, n) {
+  const next = (Array.isArray(top) ? top : [])
+    .filter((e) => e && e.uid !== row.uid)
+    .map((e) => ({ ...e }));
+  next.push(row);
+  next.sort(rowSort);
+  const trimmed = next.slice(0, 100);
+  trimmed.forEach((e, i) => {
+    e.air = i + 1;
+    e.percentile = percentileFor(e.air, n);
+  });
+  return trimmed;
+}
+
+function submissionPayloadFromData(uid, d) {
+  return {
+    ok: true,
+    already: true,
+    mode: d.mode || "live",
+    score: d.score || 0,
+    correct: d.correct || 0,
+    wrong: d.wrong || 0,
+    unanswered: d.unanswered || 0,
+    elapsed_ms: Number(d.elapsed_ms) || 0,
+    air: null,
+    percentile: null,
+    participant_count: null,
+  };
+}
+
+async function syncRankDay(iso, questions) {
+  const { answers, uuids } = answersFromQuestions(questions);
+  await dayRef(iso).collection("private").doc("answers").set({
+    answers,
+    uuids,
+  });
+  return { answers, uuids };
+}
+
+async function loadAnswers(iso) {
+  const answersRef = dayRef(iso).collection("private").doc("answers");
+  const snap = await answersRef.get();
+  const data = snap.exists ? snap.data() || {} : {};
+  if (data.answers && Object.keys(data.answers).length) return data;
+
+  const liveSnap = await liveDocRef(iso).get();
+  if (!liveSnap.exists) {
+    throw new HttpsError("not-found", "Paper not found.");
+  }
+  const questions = coerceQuestionList((liveSnap.data() || {}).questions);
+  if (!questions.length) {
+    throw new HttpsError("failed-precondition", "Paper has no questions.");
+  }
+  return syncRankDay(iso, questions);
+}
+
+async function rerankAllAndFreeze(dateId) {
+  const ref = dayRef(dateId);
+  const lbRef = ref.collection("meta").doc("leaderboard");
+  const [lbSnap, subsSnap] = await Promise.all([
+    lbRef.get(),
+    ref.collection("submissions").where("mode", "==", "live").get(),
+  ]);
+  const prevLb = lbSnap.exists ? lbSnap.data() || {} : {};
+  if (prevLb.status === "frozen") {
+    return { skipped: true, reason: "already_frozen", dateId };
+  }
+  if (subsSnap.empty && !lbSnap.exists) {
+    return { skipped: true, reason: "no_day", dateId };
+  }
+
+  const rows = [];
+  subsSnap.forEach((doc) => {
+    const d = doc.data() || {};
+    rows.push({
+      uid: doc.id,
+      score: Number(d.score) || 0,
+      elapsed_ms: Number(d.elapsed_ms) || 0,
+      display_name: d.display_name || "",
+      correct: d.correct || 0,
+      wrong: d.wrong || 0,
+      unanswered: d.unanswered || 0,
+    });
+  });
+  rows.sort(rowSort);
+
+  const n = rows.length;
+  const qCount = prevLb.question_count || 0;
+  const top = rows.slice(0, 100).map((row, i) => {
+    const air = i + 1;
+    return {
+      uid: row.uid,
+      display_name: row.display_name,
+      score: row.score,
+      elapsed_ms: row.elapsed_ms,
+      air,
+      percentile: percentileFor(air, n),
+      correct: row.correct,
+      wrong: row.wrong,
+      unanswered: row.unanswered,
+    };
+  });
+
+  await lbRef.set({
+    top,
+    participant_count: n,
+    question_count: qCount,
+    status: "frozen",
+    updated_at: admin.firestore.FieldValue.serverTimestamp(),
+  });
+  return { ok: true, dateId, participant_count: n };
+}
+
+async function freezeDay(iso) {
+  const result = await rerankAllAndFreeze(iso);
+  if (!result.skipped) {
+    console.log("freezeDailyCa", iso, result.participant_count);
+  }
+  return result;
+}
+
+/**
+ * 6:00 AM IST — freeze the paper that just stopped being "today's paper".
+ * Saturday's board stays live through Monday (no Sunday pack).
+ */
+exports.freezeDailyCa = onSchedule(
+  {
+    schedule: "0 6 * * *",
+    timeZone: "Asia/Kolkata",
+    region: "asia-south1",
+    timeoutSeconds: 120,
+  },
+  async () => {
+    const current = paperQuizContentIso();
+    const stateSnap = await ranksStateRef().get();
+    const previous =
+      (stateSnap.exists && (stateSnap.data() || {}).current_date_id) || null;
+    let toFreeze = previous && previous !== current ? previous : null;
+    if (!toFreeze && previous == null) {
+      const justBefore = istParts(new Date(Date.now() - 60 * 1000));
+      const was = paperQuizContentIso(justBefore);
+      if (was && was !== current) toFreeze = was;
+    }
+    if (previous === current) {
+      return { skipped: true, reason: "same_paper", previous, current };
+    }
+    await ranksStateRef().set(
+      {
+        current_date_id: current || null,
+        updated_at: admin.firestore.FieldValue.serverTimestamp(),
+      },
+      { merge: true },
+    );
+    if (!toFreeze) {
+      return { skipped: true, reason: "first_run", previous, current };
+    }
+    return freezeDay(toFreeze);
+  },
+);
+
+exports.adminFreezeDailyCa = onCall(callableOpts, async (request) => {
+  requireAdmin(request);
+  const iso = String((request.data && request.data.date) || "").trim();
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(iso)) {
+    throw new HttpsError("invalid-argument", "date must be YYYY-MM-DD.");
+  }
+  return freezeDay(iso);
+});
+
+/**
+ * Callable: submitDailyCa
+ * data: { dateId, answers: {uuid: 'a'|'b'|...}, elapsedMs, displayName? }
+ */
+exports.submitDailyCa = onCall(
+  { region: "asia-south1" },
+  async (request) => {
+    await assertDailyCaRankParticipant(request);
+    const uid = request.auth.uid;
+    const data = request.data || {};
+    const dateId = typeof data.dateId === "string" ? data.dateId.trim() : "";
+    const elapsedMs = Math.max(
+      0,
+      Math.min(Number(data.elapsedMs) || 0, MAX_ELAPSED_MS),
+    );
+    const answers =
+      data.answers && typeof data.answers === "object" ? data.answers : null;
+    const displayName =
+      typeof data.displayName === "string"
+        ? data.displayName.trim().slice(0, 60)
+        : "";
+
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(dateId) || !answers) {
+      throw new HttpsError("invalid-argument", "dateId and answers required.");
+    }
+
+    const current = paperQuizContentIso();
+    const ref = dayRef(dateId);
+    const subRef = ref.collection("submissions").doc(uid);
+    const lbRef = ref.collection("meta").doc("leaderboard");
+
+    const privateData = await loadAnswers(dateId);
+    const correctByUuid = privateData.answers || {};
+    if (!Object.keys(correctByUuid).length) {
+      throw new HttpsError("failed-precondition", "Answers not ready.");
+    }
+    const breakdown = scoreAnswers(answers, correctByUuid);
+    const qCount = Array.isArray(privateData.uuids)
+      ? privateData.uuids.length
+      : Object.keys(correctByUuid).length;
+    const now = Date.now();
+
+    const result = await db().runTransaction(async (tx) => {
+      const existingSnap = await tx.get(subRef);
+      const lbSnap = await tx.get(lbRef);
+      const existing = existingSnap.exists ? existingSnap.data() || {} : null;
+      if (existing && existing.mode === "live") {
+        return submissionPayloadFromData(uid, existing);
+      }
+
+      const lb = lbSnap.exists ? lbSnap.data() || {} : {};
+      const frozen = lb.status === "frozen";
+      const mode = !frozen && current === dateId ? "live" : "unranked";
+      if (existing && mode === "unranked" && existing.mode === "unranked") {
+        return submissionPayloadFromData(uid, existing);
+      }
+
+      let participantCount = typeof lb.participant_count === "number"
+        ? lb.participant_count
+        : 0;
+
+      if (mode === "live") {
+        participantCount += 1;
+        const row = {
+          uid,
+          display_name: displayName,
+          score: breakdown.score,
+          elapsed_ms: elapsedMs,
+          correct: breakdown.correct,
+          wrong: breakdown.wrong,
+          unanswered: breakdown.unanswered,
+        };
+        const top = insertLeaderboardTop(lb.top, row, participantCount);
+        tx.set(lbRef, {
+          top,
+          participant_count: participantCount,
+          question_count: qCount,
+          status: "live",
+          updated_at: admin.firestore.FieldValue.serverTimestamp(),
+        });
+      }
+
+      tx.set(subRef, {
+        mode,
+        score: breakdown.score,
+        correct: breakdown.correct,
+        wrong: breakdown.wrong,
+        unanswered: breakdown.unanswered,
+        elapsed_ms: elapsedMs,
+        answers,
+        display_name: displayName,
+        submitted_at: admin.firestore.FieldValue.serverTimestamp(),
+        submitted_at_ms: now,
+      });
+
+      return {
+        ok: true,
+        already: false,
+        mode,
+        score: breakdown.score,
+        correct: breakdown.correct,
+        wrong: breakdown.wrong,
+        unanswered: breakdown.unanswered,
+        elapsed_ms: elapsedMs,
+        participant_count: participantCount || null,
+      };
+    });
+
+    return attachLiveStanding(dateId, result);
+  },
+);
+
+/**
+ * Current AIR for the signed-in user. Computed on read so it moves as
+ * others finish — not a stamp from submit time.
+ */
+exports.getDailyCaMyRank = onCall(
+  { region: "asia-south1" },
+  async (request) => {
+    await assertDailyCaRankParticipant(request);
+    const uid = request.auth.uid;
+    const dateId =
+      typeof request.data?.dateId === "string" ? request.data.dateId.trim() : "";
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(dateId)) {
+      throw new HttpsError("invalid-argument", "dateId required.");
+    }
+    const snap = await dayRef(dateId).collection("submissions").doc(uid).get();
+    if (!snap.exists) {
+      throw new HttpsError("not-found", "No submission for this paper.");
+    }
+    const d = snap.data() || {};
+    const base = {
+      ok: true,
+      mode: d.mode || "live",
+      score: d.score || 0,
+      correct: d.correct || 0,
+      wrong: d.wrong || 0,
+      unanswered: d.unanswered || 0,
+      elapsed_ms: Number(d.elapsed_ms) || 0,
+      display_name: d.display_name || "",
+    };
+    return attachLiveStanding(dateId, base);
+  },
+);
+
+exports._dailyCaRankInternals = {
+  paperQuizContentIso,
+  scoreAnswers,
+  answersFromQuestions,
+  insertLeaderboardTop,
+  freezeDay,
+};

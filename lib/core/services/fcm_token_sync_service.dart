@@ -9,17 +9,23 @@ import 'package:flutter/foundation.dart';
 import 'package:upsc_wars/core/constants/super_user_emails.dart';
 import 'package:upsc_wars/core/debug/cursor_debug_log.dart';
 import 'package:upsc_wars/core/providers/kill_switch_provider.dart';
+import 'package:upsc_wars/features/daily_ca/daily_ca_admin_constants.dart';
 import 'package:upsc_wars/features/daily_war/daily_war_constants.dart';
 import 'package:upsc_wars/features/fomo_pulse/fomo_pulse_constants.dart';
 import 'package:upsc_wars/features/push_spot_test/push_spot_test_constants.dart';
 
-/// Persists FCM device token on `users/{lowercaseEmail}` for Cloud Function invite delivery.
+/// Device FCM setup: broadcast topics for every install (CA Shots, Daily
+/// Battle, Daily CA), plus token persistence on `users/{lowercaseEmail}`
+/// when a signed-in account exists.
 class FcmTokenSyncService {
   FcmTokenSyncService._();
 
   static StreamSubscription<String>? _refreshSub;
 
   static Future<void> syncForCurrentUser() async {
+    // Topic subscribe is per-device and must not wait for account sign-in.
+    await _ensureLatestBuildBroadcastSubscriptions();
+
     final user = FirebaseAuth.instance.currentUser;
     final email = user?.email?.toLowerCase().trim();
     if (email == null || email.isEmpty) {
@@ -55,8 +61,6 @@ class FcmTokenSyncService {
       if (token == null || token.isEmpty) return;
       await _writeToken(email: email, token: token);
       await _ensureSpotTestBroadcastTopicSubscription();
-      await _ensureFomoPulseTopicSubscription();
-      await _ensureDailyWarTopicSubscription(email: email);
     } catch (e, st) {
       debugPrint('FcmTokenSyncService.syncForCurrentUser: $e');
       debugPrintStack(stackTrace: st);
@@ -66,6 +70,7 @@ class FcmTokenSyncService {
   static void ensureTokenRefreshSubscription() {
     _refreshSub ??= FirebaseMessaging.instance.onTokenRefresh.listen(
       (token) async {
+        await _ensureLatestBuildBroadcastSubscriptions();
         final user = FirebaseAuth.instance.currentUser;
         final email = user?.email?.toLowerCase().trim();
         if (email == null || email.isEmpty) return;
@@ -84,8 +89,6 @@ class FcmTokenSyncService {
           // #endregion
           await _writeToken(email: email, token: token);
           await _ensureSpotTestBroadcastTopicSubscription();
-          await _ensureFomoPulseTopicSubscription();
-          await _ensureDailyWarTopicSubscription(email: email);
         } catch (e, st) {
           debugPrint('FcmTokenSyncService.onTokenRefresh: $e');
           debugPrintStack(stackTrace: st);
@@ -107,6 +110,20 @@ class FcmTokenSyncService {
     );
   }
 
+  static Future<void> _ensureLatestBuildBroadcastSubscriptions() async {
+    await _ensureFomoPulseTopicSubscription();
+    await _ensureDailyCaTopicSubscription();
+    await _ensureDailyWarTopicSubscription(
+      email: FirebaseAuth.instance.currentUser?.email?.toLowerCase().trim(),
+    );
+  }
+
+  static Future<bool> _iosApnsReady() async {
+    if (defaultTargetPlatform != TargetPlatform.iOS) return true;
+    final apns = await FirebaseMessaging.instance.getAPNSToken();
+    return apns != null && apns.isNotEmpty;
+  }
+
   static Future<void> _ensureSpotTestBroadcastTopicSubscription() async {
     if (kIsWeb) return;
     try {
@@ -122,6 +139,7 @@ class FcmTokenSyncService {
   static Future<void> _ensureFomoPulseTopicSubscription() async {
     if (kIsWeb) return;
     try {
+      if (!await _iosApnsReady()) return;
       await FirebaseMessaging.instance.subscribeToTopic(
         FomoPulseConstants.broadcastFcmTopic,
       );
@@ -131,19 +149,34 @@ class FcmTokenSyncService {
     }
   }
 
-  static Future<void> _ensureDailyWarTopicSubscription({
-    required String email,
-  }) async {
+  static Future<void> _ensureDailyCaTopicSubscription() async {
     if (kIsWeb) return;
     try {
+      if (!await _iosApnsReady()) return;
+      final messaging = FirebaseMessaging.instance;
+      if (!FirebaseRemoteConfig.instance.getBool(dailyCaEnabledRemoteConfigKey)) {
+        await messaging.unsubscribeFromTopic(DailyCaConstants.broadcastFcmTopic);
+        return;
+      }
+      await messaging.subscribeToTopic(DailyCaConstants.broadcastFcmTopic);
+    } catch (e, st) {
+      debugPrint('FcmTokenSyncService.subscribeToDailyCaTopic: $e');
+      debugPrintStack(stackTrace: st);
+    }
+  }
+
+  static Future<void> _ensureDailyWarTopicSubscription({String? email}) async {
+    if (kIsWeb) return;
+    try {
+      if (!await _iosApnsReady()) return;
       final rc = FirebaseRemoteConfig.instance;
       final enabled = rc.getBool(dailyWarEnabledRemoteConfigKey);
       final adminsOnly = rc.getBool(dailyWarAdminsOnlyRemoteConfigKey);
-      final isAdmin = SuperUserEmails.contains(email);
-      final forUser = enabled && (!adminsOnly || isAdmin);
+      final isAdmin =
+          email != null && email.isNotEmpty && SuperUserEmails.contains(email);
 
       final messaging = FirebaseMessaging.instance;
-      if (!forUser) {
+      if (!enabled) {
         await messaging.unsubscribeFromTopic(
           DailyWarConstants.broadcastFcmTopic,
         );
@@ -152,15 +185,14 @@ class FcmTokenSyncService {
         );
         return;
       }
-      if (adminsOnly) {
+      // Everyone on this build, including guests. Server still honors
+      // daily_war_admins_only for which topic it actually sends to.
+      await messaging.subscribeToTopic(DailyWarConstants.broadcastFcmTopic);
+      if (adminsOnly && isAdmin) {
         await messaging.subscribeToTopic(
           DailyWarConstants.adminBroadcastFcmTopic,
         );
-        await messaging.unsubscribeFromTopic(
-          DailyWarConstants.broadcastFcmTopic,
-        );
       } else {
-        await messaging.subscribeToTopic(DailyWarConstants.broadcastFcmTopic);
         await messaging.unsubscribeFromTopic(
           DailyWarConstants.adminBroadcastFcmTopic,
         );

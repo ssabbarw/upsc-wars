@@ -27,5 +27,9 @@ void main() {
         'admin_dashboard/daily_ca',
       );
     });
+
+    test('rank day collection is daily_ca_days', () {
+      expect(DailyCaFirestore.daysCollection, 'daily_ca_days');
+    });
   });
 }

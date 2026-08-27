@@ -23,6 +23,7 @@ import '../../daily_ca/daily_ca_admin_constants.dart';
 import '../../daily_ca/data/daily_ca_firestore.dart';
 import '../../daily_ca/domain/daily_ca_generate_config.dart';
 import '../../daily_ca/providers/daily_ca_admin_providers.dart';
+import '../../daily_ca/widgets/daily_ca_generate_action.dart';
 import '../../daily_ca/widgets/daily_ca_review_access.dart';
 import '../../../shared/theme/dark_mode_toggle.dart';
 import '../../../shared/widgets/app_toast.dart';
@@ -197,6 +198,33 @@ class SettingsScreen extends ConsumerWidget {
                           AppToast.showText(
                             context,
                             'Generates at ${DailyCaGenerateConfig(hourIst: picked.hour, minuteIst: picked.minute).labelIst}',
+                          );
+                        }
+                      },
+                    ),
+                    _NavTile(
+                      icon: Icons.play_circle_outline_rounded,
+                      iconBg: Color(0xFFE8F7F0),
+                      iconColor: Color(0xFF0F8F5E),
+                      title: 'Generate CA test',
+                      subtitle:
+                          'Run now if the scheduled draft is missing',
+                      onTap: () async {
+                        final date = dailyCaReviewDateForNow(
+                          generateHourIst: generateConfig.hourIst,
+                          generateMinuteIst: generateConfig.minuteIst,
+                        );
+                        final result = await confirmAndGenerateDailyCa(
+                          context: context,
+                          cloud: ref.read(dailyCaAdminCloudServiceProvider),
+                          isoDate: date,
+                        );
+                        if (!context.mounted || result == null) return;
+                        AppToast.showText(context, result.userMessage);
+                        if (result.wroteDraft ||
+                            result.reason == 'already_exists') {
+                          context.push(
+                            DailyCaAdminConstants.reviewPath(date),
                           );
                         }
                       },

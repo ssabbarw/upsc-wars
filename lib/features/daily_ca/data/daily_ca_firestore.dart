@@ -66,4 +66,25 @@ abstract final class DailyCaFirestore {
         .collection(draftCollectionName)
         .doc(isoDate.trim());
   }
+
+  static const daysCollection = 'daily_ca_days';
+
+  static DocumentReference<Map<String, dynamic>> rankDayDoc(String isoDate) {
+    return FirebaseFirestore.instance
+        .collection(daysCollection)
+        .doc(isoDate.trim());
+  }
+
+  static DocumentReference<Map<String, dynamic>> submissionDoc(
+    String isoDate,
+    String uid,
+  ) {
+    return rankDayDoc(isoDate).collection('submissions').doc(uid);
+  }
+
+  static DocumentReference<Map<String, dynamic>> leaderboardDoc(
+    String isoDate,
+  ) {
+    return rankDayDoc(isoDate).collection('meta').doc('leaderboard');
+  }
 }

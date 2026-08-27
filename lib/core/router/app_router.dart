@@ -46,6 +46,8 @@ import '../../features/notifications/screens/long_html_notification_screen.dart'
 import '../../features/daily_ca/screens/daily_ca_screen.dart';
 import '../../features/daily_ca/screens/daily_ca_review_screen.dart';
 import '../../features/daily_ca/screens/daily_ca_review_edit_screen.dart';
+import '../../features/daily_ca/screens/daily_ca_results_screen.dart';
+import '../../features/daily_ca/screens/daily_ca_leaderboard_screen.dart';
 import '../../features/daily_war/screens/daily_war_badges_screen.dart';
 import '../../features/daily_war/screens/daily_war_history_detail_screen.dart';
 import '../../features/daily_war/screens/daily_war_history_revise_screen.dart';
@@ -812,6 +814,22 @@ GoRouter appRouter(Ref ref) {
         name: 'daily_ca',
         builder: (context, state) => DailyCaScreen(
           autoStartPaper: state.uri.queryParameters['start'] == '1',
+        ),
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/daily-ca/results/:sessionId',
+        name: 'daily_ca_results',
+        builder: (context, state) => DailyCaResultsScreen(
+          sessionId: state.pathParameters['sessionId']!,
+        ),
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/daily-ca/:dateId/leaderboard',
+        name: 'daily_ca_leaderboard',
+        builder: (context, state) => DailyCaLeaderboardScreen(
+          dateId: state.pathParameters['dateId']!,
         ),
       ),
       GoRoute(

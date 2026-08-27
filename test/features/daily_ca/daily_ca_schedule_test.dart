@@ -290,5 +290,29 @@ void main() {
         DateTime(2026, 8, 18),
       );
     });
+
+    test('ranked live date is the currently served paper', () {
+      expect(
+        DailyCaSchedule.isRankedLiveDate(
+          '2026-06-08',
+          referenceIst: DateTime(2026, 6, 9, 7),
+        ),
+        isTrue,
+      );
+      expect(
+        DailyCaSchedule.isRankedLiveDate(
+          '2026-06-06',
+          referenceIst: DateTime(2026, 6, 9, 7),
+        ),
+        isFalse,
+      );
+      expect(
+        DailyCaSchedule.isRankedLiveDate(
+          '2026-06-06',
+          referenceIst: DateTime(2026, 6, 8, 8),
+        ),
+        isTrue,
+      );
+    });
   });
 }

@@ -133,6 +133,13 @@ abstract final class DailyCaSchedule {
     return dateOnly(tappedDate);
   }
 
+  /// Whether [isoDate] is the currently ranked live paper (today's quiz).
+  static bool isRankedLiveDate(String isoDate, {DateTime? referenceIst}) {
+    final current = paperQuizContentDate(referenceIst: referenceIst);
+    if (current == null) return false;
+    return formatIsoDate(current) == isoDate.trim();
+  }
+
   /// Newest content day whose quiz is open — the "paper" to serve right now.
   ///
   /// Skips Sundays, so Monday morning still serves Saturday's paper rather

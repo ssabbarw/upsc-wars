@@ -1032,7 +1032,12 @@ const dailyCa = require("./daily_ca");
 exports.updateDailyCaDraft = dailyCa.updateDailyCaDraft;
 exports.publishDailyCaDay = dailyCa.publishDailyCaDay;
 exports.autoPublishDailyCa = dailyCa.autoPublishDailyCa;
+exports.notifyDailyCaPaper = dailyCa.notifyDailyCaPaper;
 exports.adminAutoPublishDailyCa = dailyCa.adminAutoPublishDailyCa;
+exports.submitDailyCa = dailyCa.submitDailyCa;
+exports.getDailyCaMyRank = dailyCa.getDailyCaMyRank;
+exports.freezeDailyCa = dailyCa.freezeDailyCa;
+exports.adminFreezeDailyCa = dailyCa.adminFreezeDailyCa;
 
 const fomoPulse = require("./fomo_pulse");
 exports.listFomoPulseHarvestCandidates = fomoPulse.listFomoPulseHarvestCandidates;

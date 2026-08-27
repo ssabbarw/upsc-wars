@@ -13,8 +13,10 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../daily_ca/daily_ca_admin_constants.dart';
 import '../../daily_ca/domain/daily_ca_schedule.dart';
 import '../../daily_ca/domain/open_daily_ca_test.dart';
+import '../../daily_ca/providers/daily_ca_providers.dart';
 import '../../daily_ca/widgets/daily_ca_unavailable_sheet.dart';
 import '../../daily_war/daily_war_constants.dart';
 import '../../daily_war/domain/daily_war_copy.dart';
@@ -198,7 +200,11 @@ class TodayHubSection extends HookConsumerWidget {
           );
           return;
         }
-        context.push('/results/$sessionId');
+        context.push(
+          (ref.read(dailyCaRanksRemoteEnabledProvider).asData?.value ?? false)
+              ? dailyCaResultsRoute(sessionId)
+              : '/results/$sessionId',
+        );
       } finally {
         launchingPaper.value = false;
       }
@@ -1193,7 +1199,7 @@ class _WarHeroCard extends StatelessWidget {
 
 // ── CA Hero Card ──────────────────────────────────────────────────────────────
 
-class _CaHeroCard extends StatelessWidget {
+class _CaHeroCard extends ConsumerWidget {
   const _CaHeroCard({
     required this.paperDate,
     required this.isTodaysPaper,
@@ -1211,20 +1217,23 @@ class _CaHeroCard extends StatelessWidget {
   final VoidCallback? onStart;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final bg = isDark ? AppColors.infoBgDark : const Color(0xFF0C447C);
 
     final String eyebrow;
     final String title;
-    final String description;
-    final String ctaLabel;
+    String description;
+    String ctaLabel;
     final date = paperDate;
     final dateLabel = date == null
         ? null
         : (isTodaysPaper
               ? "Today's paper"
               : '${DateFormat('d MMM').format(date)} paper');
+    final iso = date == null ? null : DailyCaSchedule.formatIsoDate(date);
+    final ranksOn =
+        ref.watch(dailyCaRanksRemoteEnabledProvider).asData?.value ?? false;
 
     if (date == null) {
       eyebrow = 'CURRENT AFFAIRS';
@@ -1234,8 +1243,10 @@ class _CaHeroCard extends StatelessWidget {
     } else if (completed) {
       eyebrow = 'CURRENT AFFAIRS';
       title = dateLabel!;
-      description = 'Quiz done. Open the explanations if a line still nags.';
-      ctaLabel = 'Review your attempt';
+      description = ranksOn
+          ? 'See how you stand. Champion locks at 6 AM.'
+          : 'Quiz done. Open the explanations if a line still nags.';
+      ctaLabel = ranksOn ? 'See ranks' : 'Review your attempt';
     } else if (!questionsReady) {
       eyebrow = 'CURRENT AFFAIRS';
       title = dateLabel!;
@@ -1250,6 +1261,10 @@ class _CaHeroCard extends StatelessWidget {
 
     final paperReadyToStart = date != null && questionsReady;
     void handleTap() {
+      if (completed && ranksOn && iso != null) {
+        context.push(dailyCaLeaderboardRoute(iso));
+        return;
+      }
       if (completed || paperReadyToStart) {
         onStart?.call();
         return;

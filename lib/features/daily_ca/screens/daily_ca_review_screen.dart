@@ -8,7 +8,9 @@ import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/widgets/app_toast.dart';
 import '../daily_ca_admin_constants.dart';
 import '../domain/daily_ca_draft.dart';
+import '../domain/daily_ca_schedule.dart';
 import '../providers/daily_ca_admin_providers.dart';
+import '../widgets/daily_ca_generate_action.dart';
 
 class DailyCaReviewScreen extends HookConsumerWidget {
   const DailyCaReviewScreen({required this.isoDate, super.key});
@@ -28,16 +30,75 @@ class DailyCaReviewScreen extends HookConsumerWidget {
       });
     });
 
+    final draft = async.asData?.value;
+    final frozen =
+        draft != null && draft.isFrozen() && draft.isPublished;
+
+    Future<void> generateDraft({required bool force}) async {
+      final result = await confirmAndGenerateDailyCa(
+        context: context,
+        cloud: ref.read(dailyCaAdminCloudServiceProvider),
+        isoDate: isoDate,
+        force: force,
+      );
+      if (!context.mounted || result == null) return;
+      AppToast.showText(context, result.userMessage);
+      if (result.wroteDraft || result.reason == 'already_exists') {
+        ref.invalidate(dailyCaDraftProvider(isoDate));
+      }
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: Text('CA review · $isoDate'),
+        actions: [
+          if (draft != null && !frozen)
+            IconButton(
+              tooltip: 'Regenerate draft',
+              icon: const Icon(Icons.refresh_rounded),
+              onPressed: () => generateDraft(force: true),
+            ),
+        ],
       ),
       body: async.when(
         loading: () => const Center(child: CircularProgressIndicator()),
         error: (e, _) => Center(child: Text('$e')),
         data: (draft) {
           if (draft == null) {
-            return const Center(child: Text('No draft for this date.'));
+            final isSunday = DailyCaSchedule.isSunday(
+              DailyCaSchedule.parseIsoDate(isoDate),
+            );
+            return Center(
+              child: Padding(
+                padding: const EdgeInsets.all(AppSpacing.xl),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      isSunday
+                          ? 'Sunday has no current-affairs paper.'
+                          : 'No draft for this date.',
+                      style: AppTextStyles.body(),
+                      textAlign: TextAlign.center,
+                    ),
+                    if (!isSunday) ...[
+                      const SizedBox(height: AppSpacing.md),
+                      Text(
+                        'If the scheduled run missed (API limit), generate it now. '
+                        'This usually takes 10–20 minutes.',
+                        style: AppTextStyles.bodySm(),
+                        textAlign: TextAlign.center,
+                      ),
+                      const SizedBox(height: AppSpacing.lg),
+                      FilledButton(
+                        onPressed: () => generateDraft(force: false),
+                        child: const Text('Generate this day’s test'),
+                      ),
+                    ],
+                  ],
+                ),
+              ),
+            );
           }
           final questions = local.value ?? draft.questions;
           final chosen = questions.where((q) => q.chosen).length;

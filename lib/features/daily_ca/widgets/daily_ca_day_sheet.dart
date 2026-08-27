@@ -18,6 +18,7 @@ Future<void> showDailyCaDaySheet({
   required bool completed,
   required VoidCallback onStartTest,
   bool questionsReady = true,
+  VoidCallback? onViewRankings,
 }) {
   return showModalBottomSheet<void>(
     context: context,
@@ -31,6 +32,7 @@ Future<void> showDailyCaDaySheet({
         completed: completed,
         questionsReady: questionsReady,
         onStartTest: onStartTest,
+        onViewRankings: onViewRankings,
       ),
     ),
   );
@@ -42,12 +44,14 @@ class _DailyCaDaySheet extends StatelessWidget {
     required this.completed,
     required this.questionsReady,
     required this.onStartTest,
+    this.onViewRankings,
   });
 
   final String isoDate;
   final bool completed;
   final bool questionsReady;
   final VoidCallback onStartTest;
+  final VoidCallback? onViewRankings;
 
   @override
   Widget build(BuildContext context) {
@@ -210,6 +214,29 @@ class _DailyCaDaySheet extends StatelessWidget {
                       ),
                     ),
                   ),
+                  if (onViewRankings != null) ...[
+                    const SizedBox(height: AppSpacing.sm),
+                    SizedBox(
+                      height: 44,
+                      child: OutlinedButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                          onViewRankings!();
+                        },
+                        style: OutlinedButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(AppRadius.lg),
+                          ),
+                        ),
+                        child: Text(
+                          'Paper ranks',
+                          style: AppTextStyles.label().copyWith(
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ],
               ),
             ),

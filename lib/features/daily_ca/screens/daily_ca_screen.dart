@@ -16,6 +16,7 @@ import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../domain/daily_ca_schedule.dart';
 import '../domain/open_daily_ca_test.dart';
+import '../daily_ca_admin_constants.dart';
 import '../providers/daily_ca_providers.dart';
 import '../widgets/daily_ca_day_sheet.dart';
 import '../widgets/daily_ca_month_calendar.dart';
@@ -72,6 +73,8 @@ class DailyCaScreen extends HookConsumerWidget {
           data: (dates) => dates.contains(paperIso),
           orElse: () => false,
         );
+    final ranksOn =
+        ref.watch(dailyCaRanksRemoteEnabledProvider).asData?.value ?? false;
 
     Future<void> openDayTest(String isoDate, {required bool isRevise}) async {
       if (launching.value) return;
@@ -100,7 +103,11 @@ class DailyCaScreen extends HookConsumerWidget {
         await openDayTest(isoDate, isRevise: true);
         return;
       }
-      context.push('/results/$sessionId');
+      final ranksOn =
+          ref.read(dailyCaRanksRemoteEnabledProvider).asData?.value ?? false;
+      context.push(
+        ranksOn ? dailyCaResultsRoute(sessionId) : '/results/$sessionId',
+      );
     }
 
     final openDayTestStable = useCallback(openDayTest, [
@@ -214,6 +221,9 @@ class DailyCaScreen extends HookConsumerWidget {
               onViewResults: paperIso == null || !paperCompleted
                   ? null
                   : () => unawaited(openPaperResults(paperIso)),
+              onViewRankings: paperIso == null || !ranksOn
+                  ? null
+                  : () => context.push(dailyCaLeaderboardRoute(paperIso)),
             ),
             SizedBox(height: compact ? AppSpacing.sm : AppSpacing.md),
             Expanded(
@@ -336,6 +346,11 @@ class DailyCaScreen extends HookConsumerWidget {
                                       isRevise: completed.contains(contentIso),
                                     ),
                                   ),
+                                  onViewRankings: !ranksOn
+                                      ? null
+                                      : () => context.push(
+                                          dailyCaLeaderboardRoute(contentIso),
+                                        ),
                                 ),
                               );
                             },

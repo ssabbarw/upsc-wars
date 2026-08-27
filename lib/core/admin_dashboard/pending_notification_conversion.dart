@@ -96,6 +96,8 @@ abstract final class PendingNotificationConversion {
     required RemoteMessage message,
   }) {
     if (BattleMessagingService.messageOpensLongHtmlScreen(message)) {
+      final raw = data['kind']?.toString().trim().toLowerCase();
+      if (raw == FomoPulseFcm.kind) return FomoPulseFcm.kind;
       return 'long_html';
     }
     final raw = data['kind']?.toString().trim().toLowerCase();

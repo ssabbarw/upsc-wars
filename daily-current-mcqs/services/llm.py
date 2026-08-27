@@ -18,7 +18,6 @@ from config.settings import (
     MCQ_MAX_TOKENS,
     TRANSLATE_MAX_TOKENS,
     PROMPTS_DIR,
-    MAX_RETRIES,
     QUESTIONS_TARGET,
     TOPICS_PER_GENERATE_CALL,
     PROMPT_VERSION,
@@ -108,16 +107,17 @@ def _last_text_block(content) -> str:
 
 def with_retry(fn, label: str = "API call"):
     """Call fn() with exponential backoff. Raises on final failure."""
-    for attempt in range(MAX_RETRIES):
+    retries = settings.MAX_RETRIES
+    for attempt in range(retries):
         try:
             return fn()
         except Exception as e:
             wait = 2 ** attempt
-            if attempt < MAX_RETRIES - 1:
-                log.warning(f"{label} failed (attempt {attempt+1}/{MAX_RETRIES}): {e}. Retrying in {wait}s...")
+            if attempt < retries - 1:
+                log.warning(f"{label} failed (attempt {attempt+1}/{retries}): {e}. Retrying in {wait}s...")
                 time.sleep(wait)
             else:
-                log.error(f"{label} failed after {MAX_RETRIES} attempts: {e}")
+                log.error(f"{label} failed after {retries} attempts: {e}")
                 raise
 
 

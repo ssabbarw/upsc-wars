@@ -32,6 +32,30 @@ function isDailyWarAdminEmail(email) {
   return ADMIN_EMAILS.has(String(email).trim().toLowerCase());
 }
 
+function parseRcBool(raw, fallback) {
+  if (raw === undefined || raw === null || raw === "") return fallback;
+  if (raw === true || raw === "true" || raw === "1") return true;
+  if (raw === false || raw === "false" || raw === "0") return false;
+  return fallback;
+}
+
+/** Ungrouped keys plus parameter-group folders (Console "v2", etc.). */
+function flattenRcParams(template) {
+  const out = { ...(template.parameters || {}) };
+  const groups = template.parameterGroups || {};
+  for (const group of Object.values(groups)) {
+    Object.assign(out, (group && group.parameters) || {});
+  }
+  return out;
+}
+
+function rcParamValue(params, key) {
+  const p = params[key];
+  if (!p || !p.defaultValue) return undefined;
+  if (p.defaultValue.useInAppDefault) return undefined;
+  return p.defaultValue.value;
+}
+
 /**
  * Reads Remote Config rollout.
  * @returns {Promise<{ enabled: boolean, adminsOnly: boolean }>}
@@ -39,22 +63,18 @@ function isDailyWarAdminEmail(email) {
 async function readDailyWarRollout() {
   try {
     const template = await admin.remoteConfig().getTemplate();
-    const params = template.parameters || {};
-    const enabledRaw = params.daily_war_enabled?.defaultValue?.value;
-    const adminsRaw = params.daily_war_admins_only?.defaultValue?.value;
-    // Default: feature on for admins only (safe preview).
-    const enabled =
-      enabledRaw === undefined || enabledRaw === null || enabledRaw === ""
-        ? true
-        : enabledRaw === true ||
-        enabledRaw === "true" ||
-        enabledRaw === "1";
-    const adminsOnly =
-      adminsRaw === undefined || adminsRaw === null || adminsRaw === ""
-        ? true
-        : adminsRaw === true ||
-        adminsRaw === "true" ||
-        adminsRaw === "1";
+    const params = flattenRcParams(template);
+    const enabledRaw = rcParamValue(params, "daily_war_enabled");
+    const adminsRaw = rcParamValue(params, "daily_war_admins_only");
+    // Default: feature on for admins only (safe preview) if keys are missing.
+    const enabled = parseRcBool(enabledRaw, true);
+    const adminsOnly = parseRcBool(adminsRaw, true);
+    console.log("readDailyWarRollout", {
+      enabled,
+      adminsOnly,
+      enabledRaw: enabledRaw === undefined ? "(missing)" : String(enabledRaw),
+      adminsRaw: adminsRaw === undefined ? "(missing)" : String(adminsRaw),
+    });
     return { enabled, adminsOnly };
   } catch (e) {
     console.warn("readDailyWarRollout failed; defaulting enabled+admins-only", e);

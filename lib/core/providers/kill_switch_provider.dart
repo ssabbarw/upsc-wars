@@ -41,6 +41,12 @@ const dailyWarLiveCountPollSecondsRemoteConfigKey =
 /// Remote Config: earliest selectable daily CA calendar date (`YYYY-MM-DD`, IST).
 const dailyCaCalendarMinDateRemoteConfigKey = 'daily_ca_calendar_min_date';
 
+/// Remote Config: when `false`, hide Daily CA ranks / leaderboard.
+const dailyCaRanksEnabledRemoteConfigKey = 'daily_ca_ranks_enabled';
+
+/// Remote Config: when `true`, Daily CA ranks are admin-only.
+const dailyCaRanksAdminsOnlyRemoteConfigKey = 'daily_ca_ranks_admins_only';
+
 /// Remote Config: max QOTD posts per device in a rolling 24h window (int, default 3; enforced locally).
 const qotdMaxPostsPerDayRemoteConfigKey = 'qotd_max_posts_per_day';
 
@@ -101,6 +107,8 @@ Future<KillSwitchSnapshot> killSwitch(Ref ref) async {
       dailyWarMinVisibleLobbyCountRemoteConfigKey: 200,
       dailyWarLiveCountPollSecondsRemoteConfigKey: 15,
       dailyCaCalendarMinDateRemoteConfigKey: '2026-08-18',
+      dailyCaRanksEnabledRemoteConfigKey: true,
+      dailyCaRanksAdminsOnlyRemoteConfigKey: true,
       qotdMaxPostsPerDayRemoteConfigKey: 3,
       factOrBluffSecondsRemoteConfigKey: 10,
       questionCorrectionsRevisionRemoteConfigKey: 0,

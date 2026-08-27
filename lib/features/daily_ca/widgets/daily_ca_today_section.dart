@@ -24,6 +24,7 @@ class DailyCaTodaySection extends StatefulWidget {
     required this.onStartPaper,
     this.onRevisePaper,
     this.onViewResults,
+    this.onViewRankings,
     this.questionsReady = true,
     this.compact = false,
   });
@@ -44,6 +45,9 @@ class DailyCaTodaySection extends StatefulWidget {
 
   /// After the first attempt: jump to the last completed session's results.
   final VoidCallback? onViewResults;
+
+  /// After the first attempt: open the rank board.
+  final VoidCallback? onViewRankings;
 
   /// Tighter padding and type so the hub fits a short phone.
   final bool compact;
@@ -291,6 +295,31 @@ class _DailyCaTodaySectionState extends State<DailyCaTodaySection> {
                       ),
                       child: Text(
                         'View results',
+                        style: AppTextStyles.label().copyWith(
+                          fontWeight: FontWeight.w700,
+                          color: AppColors.primary,
+                        ),
+                      ),
+                    ),
+                  ],
+                  if (widget.paperCompleted &&
+                      widget.onViewRankings != null) ...[
+                    SizedBox(height: compact ? 2 : 4),
+                    TextButton(
+                      onPressed: widget.launching
+                          ? null
+                          : widget.onViewRankings,
+                      style: TextButton.styleFrom(
+                        visualDensity: VisualDensity.compact,
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: AppSpacing.md,
+                          vertical: 4,
+                        ),
+                        minimumSize: Size.zero,
+                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                      ),
+                      child: Text(
+                        'Paper ranks',
                         style: AppTextStyles.label().copyWith(
                           fontWeight: FontWeight.w700,
                           color: AppColors.primary,

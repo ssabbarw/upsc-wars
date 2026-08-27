@@ -93,20 +93,41 @@ def _notify_admin(date_str: str, question_count: int, failed: bool):
         log.warning(f"Admin FCM failed: {e}")
 
 
+def _pipeline_result(
+    date_str: str,
+    *,
+    ok: bool,
+    skipped: bool = False,
+    question_count: int = 0,
+    error: str | None = None,
+    reason: str | None = None,
+) -> dict:
+    return {
+        "ok": ok,
+        "skipped": skipped,
+        "date": date_str,
+        "question_count": question_count,
+        "error": error,
+        "reason": reason,
+    }
+
+
 def run(today: date = None, questions_target: int = None, local: bool = False):
     if today is None:
         today = date.today()
 
+    date_str = today.strftime("%Y-%m-%d")
+    outcome = _pipeline_result(date_str, ok=False)
+
     # Sunday: no generation. Saturday is a normal weekday pack.
     if today.weekday() == 6:
         log.info(f"Sunday {today.isoformat()} — skip generation")
-        return
+        return _pipeline_result(date_str, ok=True, skipped=True, reason="sunday")
 
     is_weekend_pack = False
     if questions_target is None:
         questions_target = QUESTIONS_TARGET
 
-    date_str  = today.strftime("%Y-%m-%d")
     start     = datetime.now()
     report    = PipelineReport(date_str)
 
@@ -140,7 +161,13 @@ def run(today: date = None, questions_target: int = None, local: bool = False):
             report.add_error("All source URLs unreachable. No questions generated.")
             if not local:
                 _notify_admin(date_str, 0, failed=True)
-            return
+            outcome = _pipeline_result(
+                date_str,
+                ok=False,
+                error="All source URLs unreachable.",
+                reason="urls_unreachable",
+            )
+            return outcome
 
         # ── Step 2: Harvest topics, then 1 MCQ each ───────────────────────────
         try:
@@ -153,7 +180,13 @@ def run(today: date = None, questions_target: int = None, local: bool = False):
             report.add_error(f"MCQ generation failed: {e}")
             if not local:
                 _notify_admin(date_str, 0, failed=True)
-            return
+            outcome = _pipeline_result(
+                date_str,
+                ok=False,
+                error=f"MCQ generation failed: {e}",
+                reason="generation_failed",
+            )
+            return outcome
 
         raw_questions  = raw_data.get("questions", [])
         log.info(f"Generated {len(raw_questions)} raw questions")
@@ -180,7 +213,17 @@ def run(today: date = None, questions_target: int = None, local: bool = False):
                 f"{MIN_QUESTIONS_TO_WRITE}. Nothing written to Firestore."
             )
             _notify_admin(date_str, question_count, failed=True)
-            return
+            outcome = _pipeline_result(
+                date_str,
+                ok=False,
+                question_count=question_count,
+                error=(
+                    f"Only {question_count} valid questions — below minimum "
+                    f"{MIN_QUESTIONS_TO_WRITE}."
+                ),
+                reason="below_min",
+            )
+            return outcome
         if below_min and local:
             report.add_warning(
                 f"Only {question_count} valid questions — writing local preview anyway."
@@ -213,7 +256,10 @@ def run(today: date = None, questions_target: int = None, local: bool = False):
                 f"═══ Local preview ready — {question_count} English questions. "
                 "Run: python preview.py --serve-only"
             )
-            return
+            outcome = _pipeline_result(
+                date_str, ok=True, question_count=question_count, reason="local"
+            )
+            return outcome
 
         try:
             write_draft(date_str, document)
@@ -221,7 +267,14 @@ def run(today: date = None, questions_target: int = None, local: bool = False):
         except Exception as e:
             report.add_error(f"Firestore draft write failed: {e}")
             _notify_admin(date_str, question_count, failed=True)
-            return
+            outcome = _pipeline_result(
+                date_str,
+                ok=False,
+                question_count=question_count,
+                error=f"Firestore draft write failed: {e}",
+                reason="write_failed",
+            )
+            return outcome
 
         subjects = list(set(q["meta"].get("gs_subject", "") for q in transformed))
         report.mark_success(
@@ -234,16 +287,24 @@ def run(today: date = None, questions_target: int = None, local: bool = False):
         )
         _notify_admin(date_str, question_count, failed=False)
         log.info(f"═══ Draft ready — {question_count} English questions ═══")
+        outcome = _pipeline_result(
+            date_str, ok=True, question_count=question_count
+        )
 
     except Exception as e:
         report.add_error(f"Unexpected pipeline error: {e}")
         log.exception("Pipeline crashed")
         if not local:
             _notify_admin(date_str, 0, failed=True)
+        outcome = _pipeline_result(
+            date_str, ok=False, error=str(e), reason="crashed"
+        )
 
     finally:
         if not local:
             report.send_summary(start=start, end=datetime.now())
+
+    return outcome
 
 
 if __name__ == "__main__":

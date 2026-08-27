@@ -249,6 +249,8 @@ class BattleMessagingService {
     }
 
     FcmTokenSyncService.ensureTokenRefreshSubscription();
+    // Guests never hit the signed-in auth listener; subscribe broadcast topics here.
+    unawaited(FcmTokenSyncService.syncForCurrentUser());
 
     // Foreground: system tray often does not show; surface payload in-app.
     FirebaseMessaging.onMessage.listen(_onForegroundMessage);
@@ -460,14 +462,17 @@ class BattleMessagingService {
   }
 
   static String _notificationOpenKind(RemoteMessage message) {
-    if (messageOpensLongHtmlScreen(message)) return 'long_html';
+    // CA Shot must win over long-html: legacy broadcasts set both so old
+    // clients open the update page, while this build opens the shot.
     final raw = message.data['kind']?.toString().trim().toLowerCase();
+    if (raw == FomoPulseFcm.kind) return FomoPulseFcm.kind;
+    if (messageOpensLongHtmlScreen(message)) return 'long_html';
     if (raw == OpenChallengeFcm.kind) return 'open_challenge';
     if (raw == ChatFcm.kind) return ChatFcm.kind;
     if (raw == PushSpotTestFcm.kind) return PushSpotTestFcm.kind;
-    if (raw == FomoPulseFcm.kind) return FomoPulseFcm.kind;
     if (raw == PushMemoryPairsFcm.kind) return PushMemoryPairsFcm.kind;
     if (raw == PushRevisionGameFcm.kind) return PushRevisionGameFcm.kind;
+    if (raw == DailyCaConstants.fcmKind) return DailyCaConstants.fcmKind;
     if (raw == DailyCaAdminConstants.fcmKind) {
       return DailyCaAdminConstants.fcmKind;
     }
@@ -547,11 +552,18 @@ class BattleMessagingService {
         );
       }
       _logNotificationOpen(message, channel);
+      final ocKind = message.data['kind']?.toString().trim().toLowerCase();
+      if (ocKind == FomoPulseFcm.kind) {
+        final pulseId = FomoPulseFcm.pulseIdFromData(message.data);
+        if (pulseId != null && pulseId.isNotEmpty) {
+          _navigateToPulse(pulseId);
+          return;
+        }
+      }
       if (messageOpensLongHtmlScreen(message)) {
         router.push('/notification/long-html');
         return;
       }
-      final ocKind = message.data['kind']?.toString().trim().toLowerCase();
       if (ocKind == OpenChallengeFcm.kind) {
         final id = message.data[OpenChallengeFcm.challengeId]
             ?.toString()
@@ -581,13 +593,6 @@ class BattleMessagingService {
             queryParameters: params.toQueryParameters(),
           );
           router.go(uri.toString());
-        }
-        return;
-      }
-      if (ocKind == FomoPulseFcm.kind) {
-        final pulseId = FomoPulseFcm.pulseIdFromData(message.data);
-        if (pulseId != null && pulseId.isNotEmpty) {
-          _navigateToPulse(pulseId);
         }
         return;
       }
@@ -627,6 +632,11 @@ class BattleMessagingService {
         } else {
           router.go(dailyWarLobbyRoute());
         }
+        return;
+      }
+      if (ocKind == DailyCaConstants.fcmKind) {
+        TodayHeroIntentStore.capture(TodaySlotId.current);
+        router.go(TodayHero.homeLocation(hero: TodaySlotId.current));
         return;
       }
       if (ocKind == DailyCaAdminConstants.fcmKind) {
