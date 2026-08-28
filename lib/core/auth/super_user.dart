@@ -10,5 +10,5 @@ abstract final class SuperUser {
   static bool isEmail(String? email) => SuperUserEmails.contains(email);
 
   static bool isSignedIn(User? user) =>
-      AuthSession.isAccountSignedIn(user) && isEmail(user!.email);
+      AuthSession.isAccountSignedIn(user) && isEmail(AuthSession.emailOf(user));
 }

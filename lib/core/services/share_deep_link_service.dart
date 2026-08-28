@@ -19,8 +19,11 @@ class ShareDeepLinkService {
 
   static StreamSubscription<Uri>? _subscription;
   static StreamSubscription<String>? _nativeShareSubscription;
+  static GoRouter? _fallbackRouter;
   static String? _lastFingerprint;
   static DateTime _lastHandledAt = DateTime.fromMillisecondsSinceEpoch(0);
+
+  static GoRouter? _router() => liveGoRouter(fallback: _fallbackRouter);
 
   static bool _shouldHandle(Uri uri) {
     final article = articleUrlFromIncomingUri(uri) ?? uri.toString();
@@ -36,12 +39,12 @@ class ShareDeepLinkService {
 
   static Future<void> initialize(WidgetRef ref, GoRouter router) async {
     await dispose();
+    _fallbackRouter = router;
     final appLinks = AppLinks();
     final initial = await appLinks.getInitialLink();
     if (initial != null && _shouldHandle(initial)) {
       await _handleIncoming(
         ref: ref,
-        router: router,
         uri: initial,
         replaceStack: true,
       );
@@ -53,7 +56,6 @@ class ShareDeepLinkService {
       if (_shouldHandle(uri)) {
         await _handleIncoming(
           ref: ref,
-          router: router,
           uri: uri,
           replaceStack: true,
         );
@@ -62,33 +64,46 @@ class ShareDeepLinkService {
 
     _subscription = appLinks.uriLinkStream.listen((uri) async {
       if (!_shouldHandle(uri)) return;
-      await _handleIncoming(ref: ref, router: router, uri: uri);
+      await _handleIncoming(ref: ref, uri: uri);
     });
     _nativeShareSubscription = FomoPulseNativeShare.urlStream().listen((
       url,
     ) async {
+      // EventChannel no longer clears native pending (so resume can retry).
+      // Consume here so a later app-resume does not reopen the same share.
+      unawaited(FomoPulseNativeShare.consumePendingUrl());
       final uri = pulseArticleDeepLinkForUrl(url);
       if (!_shouldHandle(uri)) return;
-      await _handleIncoming(ref: ref, router: router, uri: uri);
+      await _handleIncoming(ref: ref, uri: uri);
     });
   }
 
   /// Chrome/Safari can deliver the URL after Flutter is already running
   /// (share sheet while backgrounded). Re-check native pending on resume.
   static Future<void> handleResume(WidgetRef ref, GoRouter router) async {
+    _fallbackRouter = router;
     final nativeUrl = await FomoPulseNativeShare.consumePendingUrl();
-    if (nativeUrl == null) return;
-    final uri = pulseArticleDeepLinkForUrl(nativeUrl);
-    if (!_shouldHandle(uri)) return;
-    await _handleIncoming(ref: ref, router: router, uri: uri);
+    if (nativeUrl != null) {
+      final uri = pulseArticleDeepLinkForUrl(nativeUrl);
+      if (_shouldHandle(uri)) {
+        await _handleIncoming(ref: ref, uri: uri);
+      }
+    }
+    FomoPulseIncomingShareStore.consumePending(fallback: _router());
   }
 
   static Future<void> _handleIncoming({
     required WidgetRef ref,
-    required GoRouter router,
     required Uri uri,
     bool replaceStack = false,
   }) async {
+    final router = _router();
+    if (router == null) {
+      debugPrint('[share-link] no live router yet uri=$uri');
+      final url = articleUrlFromIncomingUri(uri);
+      if (url != null) FomoPulseIncomingShareStore.pendingUrl = url;
+      return;
+    }
     debugPrint('[share-link] incoming uri=$uri');
     final openedPulse = await openPulseArticleFromIncomingShare(
       ref: ref,

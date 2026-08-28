@@ -289,7 +289,9 @@ class _RootMaterialApp extends HookConsumerWidget {
         );
       }
       if (SuperUser.isSignedIn(u)) {
-        FomoPulseIncomingShareStore.consumePending(ref.read(appRouterProvider));
+        FomoPulseIncomingShareStore.consumePending(
+          fallback: ref.read(appRouterProvider),
+        );
       }
     });
 

@@ -92,7 +92,7 @@ Functions use **Node.js 22** (`functions/package.json` → `engines.node`). Rede
 
 ## Community traffic bots
 
-Server-only. No app release. Recents, battle accept/send, blank QOTD, sparse Open Challenge, and Daily War participation.
+Server-only. Recents, battle accept/send, blank QOTD, sparse Open Challenge, Daily War, Daily Current Affairs Test, and CA Shots participation.
 
 Growth is gradual so Recents does not jump overnight:
 
@@ -101,6 +101,8 @@ Growth is gradual so Recents does not jump overnight:
 - Each night **15–30%** of yesterday’s faces skip today (last-seen ages off naturally).
 - The same share of **new or returning** faces trickle in during waking hours (7:20–22:40 IST), at least a few minutes apart.
 - Only **12–20%** of today’s already-seen bots look “just now” in any hour (cap 12).
+- **Daily Current Affairs Test:** as today’s bots appear, about `bots_daily_ca_fraction` of them submit the live paper (opens 6 AM IST). Attempts trickle through the day and stop ~45 minutes before that board freezes. Same scoring as humans; they update the live leaderboard.
+- **CA Shots:** about `bots_ca_shot_fraction` of today’s bots tap each recent shot (last 24h, still unexpired). Attempts land over the next few hours after it is sent, and bump the public attempt / correct counts.
 
 To **retract** when real traffic shows up, set Remote Config `bots_appear_per_day_target` lower (e.g. `20` or `0`). Each IST day the unique-bot count falls by at most `bots_retract_per_day` (default **8**), with **no new names** during the wind-down. From 100 → 20 takes about 10 days; 100 → 0 about 13. Takes effect on the **next IST day plan** (or the next `tickBots` after midnight). Emergency off: `bots_enabled = false`.
 
@@ -133,6 +135,8 @@ Optional Remote Config keys (code defaults apply if missing):
 | `bots_qotd_per_day` | 1 | Blank-comment QOTD posts |
 | `bots_open_challenge_every_n_days` | 4 | Open Challenge cadence |
 | `bots_daily_war_fraction` | 0.4 | Share of today’s bots in the War |
+| `bots_daily_ca_fraction` | 0.4 | Share of today’s bots in the Daily CA paper |
+| `bots_ca_shot_fraction` | 0.35 | Share of today’s bots per CA Shot |
 | `bots_same_user_cooldown_days` | 2 | Same human vs same bot |
 
 Bots have no photo, Telegram, or Instagram. They never reply to chat. Profiles live in `users/` with `isBot: true`; roster/jobs are Admin-only (`bot_roster`, `bot_jobs`, `bot_state`).

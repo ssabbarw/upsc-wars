@@ -32,12 +32,8 @@ enum ShareBridge {
 
   static func handle(url: URL) {
     guard let article = articleURL(from: url) else { return }
-    if let events {
-      events(article)
-      pendingArticleUrl = nil
-    } else {
-      pendingArticleUrl = article
-    }
+    pendingArticleUrl = article
+    events?(article)
   }
 
   private static func articleURL(from url: URL) -> String? {
@@ -65,7 +61,6 @@ enum ShareBridge {
     self.events = events
     if let events, let pendingArticleUrl {
       events(pendingArticleUrl)
-      self.pendingArticleUrl = nil
     }
   }
 }

@@ -29,6 +29,54 @@ void showShareLinkMessage(String message) {
   AppToast.showText(ctx, message);
 }
 
+/// [appRouterProvider] rebuilds [GoRouter] when auth identity changes.
+/// Navigating on the instance captured at service init is a silent no-op.
+GoRouter? liveGoRouter({GoRouter? fallback}) {
+  final ctx = rootNavigatorKey.currentContext;
+  if (ctx != null) {
+    try {
+      return GoRouter.of(ctx);
+    } catch (_) {
+      // Navigator exists but InheritedGoRouter is not above this context yet.
+    }
+  }
+  return fallback;
+}
+
+void navigateLive(
+  String location, {
+  GoRouter? fallback,
+  bool replace = false,
+}) {
+  void go(GoRouter router) {
+    if (replace) {
+      router.go(location);
+    } else {
+      router.push(location);
+    }
+  }
+
+  void attempt([int tryCount = 0]) {
+    final live = liveGoRouter();
+    if (live != null) {
+      go(live);
+      return;
+    }
+    if (tryCount < 10) {
+      unawaited(
+        Future<void>.delayed(
+          const Duration(milliseconds: 80),
+          () => attempt(tryCount + 1),
+        ),
+      );
+      return;
+    }
+    if (fallback != null) go(fallback);
+  }
+
+  WidgetsBinding.instance.addPostFrameCallback((_) => attempt());
+}
+
 /// Imports a fixed-id session from [payload] and navigates to the test engine.
 ///
 /// The user always chooses **Normal** (`exam`) or **Learning** on a bottom sheet

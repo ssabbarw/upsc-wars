@@ -44,7 +44,6 @@ class MainActivity : FlutterActivity() {
                         shareEvents = events
                         pendingArticleUrl?.let { url ->
                             events?.success(url)
-                            pendingArticleUrl = null
                         }
                     }
 
@@ -141,13 +140,8 @@ class MainActivity : FlutterActivity() {
     }
 
     private fun captureArticleUrl(url: String) {
-        val events = shareEvents
-        if (events != null) {
-            events.success(url)
-            pendingArticleUrl = null
-        } else {
-            pendingArticleUrl = url
-        }
+        pendingArticleUrl = url
+        shareEvents?.success(url)
     }
 
     private fun extractSharedHttpUrl(intent: Intent): String? {

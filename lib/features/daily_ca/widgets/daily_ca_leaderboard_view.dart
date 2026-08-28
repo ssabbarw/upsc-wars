@@ -4,6 +4,7 @@ import 'package:intl/intl.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../community/widgets/admin_bot_label.dart';
 import '../domain/daily_ca_rank_models.dart';
 import '../domain/daily_ca_scoring.dart';
 
@@ -256,15 +257,23 @@ class _PodiumSeat extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 8),
-        Text(
-          label,
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
-          textAlign: TextAlign.center,
-          style: AppTextStyles.caption().copyWith(
-            color: Colors.white,
-            fontWeight: FontWeight.w700,
-          ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Flexible(
+              child: Text(
+                label,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                textAlign: TextAlign.center,
+                style: AppTextStyles.caption().copyWith(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+            ),
+            if (entry != null) AdminBotLabel(uid: entry!.uid),
+          ],
         ),
         if (entry != null)
           Text(
@@ -317,14 +326,21 @@ class _RowCard extends StatelessWidget {
             ),
           ),
           Expanded(
-            child: Text(
-              isMe ? '$name (you)' : name,
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-              style: AppTextStyles.bodySm().copyWith(
-                fontWeight: FontWeight.w700,
-                color: scheme.onSurface,
-              ),
+            child: Row(
+              children: [
+                Flexible(
+                  child: Text(
+                    isMe ? '$name (you)' : name,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: AppTextStyles.bodySm().copyWith(
+                      fontWeight: FontWeight.w700,
+                      color: scheme.onSurface,
+                    ),
+                  ),
+                ),
+                AdminBotLabel(uid: entry.uid),
+              ],
             ),
           ),
           Text(

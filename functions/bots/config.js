@@ -20,6 +20,8 @@ const DEFAULTS = {
   qotdPerDay: 1,
   openChallengeEveryNDays: 4,
   dailyWarFraction: 0.4,
+  dailyCaFraction: 0.4,
+  caShotFraction: 0.35,
   sameUserCooldownDays: 2,
 };
 
@@ -176,6 +178,14 @@ async function readBotConfig() {
     dailyWarFraction: Math.max(
       0,
       Math.min(1, parseNumber(rcValue(params, "bots_daily_war_fraction"), DEFAULTS.dailyWarFraction)),
+    ),
+    dailyCaFraction: Math.max(
+      0,
+      Math.min(1, parseNumber(rcValue(params, "bots_daily_ca_fraction"), DEFAULTS.dailyCaFraction)),
+    ),
+    caShotFraction: Math.max(
+      0,
+      Math.min(1, parseNumber(rcValue(params, "bots_ca_shot_fraction"), DEFAULTS.caShotFraction)),
     ),
     sameUserCooldownDays: Math.max(
       0,

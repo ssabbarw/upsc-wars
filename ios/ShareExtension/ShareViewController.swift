@@ -14,13 +14,13 @@ final class ShareViewController: UIViewController {
     preferredContentSize = CGSize(width: 320, height: 180)
 
     status.translatesAutoresizingMaskIntoConstraints = false
-    status.text = "Opening UPSC Wars…"
+    status.text = "Opening CA Shot maker…"
     status.textAlignment = .center
     status.numberOfLines = 0
     status.font = .preferredFont(forTextStyle: .body)
 
     openButton.translatesAutoresizingMaskIntoConstraints = false
-    openButton.setTitle("Open in UPSC Wars", for: .normal)
+    openButton.setTitle("Open CA Shot maker", for: .normal)
     openButton.titleLabel?.font = .preferredFont(forTextStyle: .headline)
     openButton.addTarget(self, action: #selector(openTapped), for: .touchUpInside)
 
@@ -47,6 +47,9 @@ final class ShareViewController: UIViewController {
   @objc private func openTapped() {
     guard let destURL else { return }
     openHostApp(destURL)
+    DispatchQueue.main.asyncAfter(deadline: .now() + 0.45) { [weak self] in
+      self?.finish()
+    }
   }
 
   private func handleExtracted(_ articleURL: String?) {
@@ -67,16 +70,19 @@ final class ShareViewController: UIViewController {
     }
     destURL = dest
     openHostApp(dest)
-  }
-
-  private func openHostApp(_ url: URL) {
-    openURLViaResponder(url)
-    DispatchQueue.main.asyncAfter(deadline: .now() + 1.8) { [weak self] in
+    DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) { [weak self] in
       self?.finish()
     }
   }
 
-  /// Share extensions cannot use `extensionContext.open`. Walk the responder
+  private func openHostApp(_ url: URL) {
+    destURL = url
+    status.text = "Opening CA Shot maker…"
+    openURLViaResponder(url)
+    extensionContext?.open(url, completionHandler: nil)
+  }
+
+  /// Share extensions cannot use `UIApplication.shared`. Walk the responder
   /// chain and invoke `openURL:` so Safari/Chrome can hand off to the host app.
   private func openURLViaResponder(_ url: URL) {
     let selector = NSSelectorFromString("openURL:")
@@ -223,8 +229,9 @@ final class ShareViewController: UIViewController {
       if let results = dict[NSExtensionJavaScriptPreprocessingResultsKey] as? [String: Any] {
         if let url = results["URL"] as? String { return firstHttpURL(in: url) }
         if let url = results["url"] as? String { return firstHttpURL(in: url) }
+        if let url = results["href"] as? String { return firstHttpURL(in: url) }
       }
-      for key in ["URL", "url", "public.url"] {
+      for key in ["URL", "url", "href", "public.url"] {
         if let url = dict[key] as? String { return firstHttpURL(in: url) }
       }
     }

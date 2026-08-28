@@ -7,6 +7,7 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../community/widgets/admin_bot_label.dart';
 import '../../home/providers/auth_providers.dart';
 import '../daily_ca_admin_constants.dart';
 import '../domain/daily_ca_rank_models.dart';
@@ -268,15 +269,23 @@ class _Seat extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 6),
-        Text(
-          label,
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
-          textAlign: TextAlign.center,
-          style: AppTextStyles.caption().copyWith(
-            color: AppColors.onPrimary,
-            fontWeight: FontWeight.w700,
-          ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Flexible(
+              child: Text(
+                label,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                textAlign: TextAlign.center,
+                style: AppTextStyles.caption().copyWith(
+                  color: AppColors.onPrimary,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+            ),
+            if (entry != null) AdminBotLabel(uid: entry!.uid),
+          ],
         ),
         if (entry != null)
           Text(

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -81,14 +81,8 @@ Future<bool> openFomoPulseFromIncomingLink({
     pulseId,
     source: FomoPulseConstants.entryShare,
   );
-  WidgetsBinding.instance.addPostFrameCallback((_) {
-    debugPrint('[ca-shot-link] navigating to $target (replace=$replaceStack)');
-    if (replaceStack) {
-      router.go(target);
-    } else {
-      router.go(target);
-    }
-  });
+  debugPrint('[ca-shot-link] navigating to $target (replace=$replaceStack)');
+  navigateLive(target, fallback: router, replace: true);
   return true;
 }
 
@@ -183,20 +177,14 @@ Future<bool> openPulseComposerForArticleUrl({
   }
   if (!ref.read(isSuperUserProvider)) {
     showShareLinkMessage(
-      'Sign in as an admin to make a Pulse from this article.',
+      'Sign in as an admin to make a CA Shot from this article.',
     );
     return true;
   }
 
   final target = pulseArticleRouteForUrl(url);
-  WidgetsBinding.instance.addPostFrameCallback((_) {
-    debugPrint('[pulse-share] navigating to $target (replace=$replaceStack)');
-    if (replaceStack) {
-      router.go(target);
-    } else {
-      router.push(target);
-    }
-  });
+  debugPrint('[pulse-share] navigating to $target (replace=$replaceStack)');
+  navigateLive(target, fallback: router, replace: replaceStack);
   return true;
 }
 
@@ -204,12 +192,14 @@ Future<bool> openPulseComposerForArticleUrl({
 abstract final class FomoPulseIncomingShareStore {
   static String? pendingUrl;
 
-  static void consumePending(GoRouter router) {
+  static void consumePending({GoRouter? fallback}) {
     final url = pendingUrl?.trim();
     if (url == null || url.isEmpty) return;
     pendingUrl = null;
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      router.go(pulseArticleRouteForUrl(url));
-    });
+    navigateLive(
+      pulseArticleRouteForUrl(url),
+      fallback: fallback,
+      replace: true,
+    );
   }
 }

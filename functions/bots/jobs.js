@@ -26,6 +26,14 @@ const {
   processDailyWarLobby,
   processDailyWarSubmit,
 } = require("./daily_war_bots");
+const {
+  maybeQueueDailyCa,
+  processDailyCaSubmit,
+} = require("./daily_ca_bots");
+const {
+  maybeQueueCaShots,
+  processCaShotAttempt,
+} = require("./ca_shot_bots");
 const { readBotConfig } = require("./config");
 const { publishBotWarPeopleLast24h } = require("./war_stats");
 
@@ -59,6 +67,10 @@ async function processDueJobs(cfg) {
         result = await processDailyWarLobby(job);
       } else if (job.type === "daily_war_submit") {
         result = await processDailyWarSubmit(job);
+      } else if (job.type === "daily_ca_submit") {
+        result = await processDailyCaSubmit(job);
+      } else if (job.type === "ca_shot_attempt") {
+        result = await processCaShotAttempt(job);
       } else {
         result = { skipped: "unknown_type" };
       }
@@ -153,6 +165,16 @@ async function runBotTick() {
     planned.dailyWar = await maybeQueueDailyWar(cfg, roster, dailyRef);
   } catch (e) {
     console.error("maybeQueueDailyWar", e);
+  }
+  try {
+    planned.dailyCa = await maybeQueueDailyCa(cfg, roster);
+  } catch (e) {
+    console.error("maybeQueueDailyCa", e);
+  }
+  try {
+    planned.caShots = await maybeQueueCaShots(cfg, roster);
+  } catch (e) {
+    console.error("maybeQueueCaShots", e);
   }
 
   const jobs = await processDueJobs(cfg);
