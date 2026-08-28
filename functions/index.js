@@ -1036,6 +1036,7 @@ exports.notifyDailyCaPaper = dailyCa.notifyDailyCaPaper;
 exports.adminAutoPublishDailyCa = dailyCa.adminAutoPublishDailyCa;
 exports.submitDailyCa = dailyCa.submitDailyCa;
 exports.getDailyCaMyRank = dailyCa.getDailyCaMyRank;
+exports.getDailyCaLeaderboard = dailyCa.getDailyCaLeaderboard;
 exports.freezeDailyCa = dailyCa.freezeDailyCa;
 exports.adminFreezeDailyCa = dailyCa.adminFreezeDailyCa;
 

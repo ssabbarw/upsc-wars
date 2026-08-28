@@ -9,10 +9,7 @@ import '../../home/providers/auth_providers.dart';
 import '../domain/fomo_pulse_models.dart';
 import '../fomo_pulse_constants.dart';
 
-final _httpUrlRe = RegExp(
-  r'''https?://[^\s<>"'\)\]]+''',
-  caseSensitive: false,
-);
+final _httpUrlRe = RegExp(r'''https?://[^\s<>"'\)\]]+''', caseSensitive: false);
 
 /// First http(s) URL in [raw], or null.
 String? extractHttpUrlFromSharedText(String raw) {
@@ -43,7 +40,7 @@ final _pulseIdRe = RegExp(
 /// Parses a published CA Shot id from app / universal link URIs.
 String? parseFomoPulseIdFromUri(Uri uri) {
   if (uri.scheme == FomoPulseConstants.incomingShareScheme &&
-      uri.host.toLowerCase() == FomoPulseConstants.deepLinkHost &&
+      FomoPulseConstants.isPublicPathSegment(uri.host) &&
       uri.pathSegments.isNotEmpty) {
     final id = uri.pathSegments.first.trim();
     return _pulseIdRe.hasMatch(id) ? id : null;
@@ -58,7 +55,7 @@ String? parseFomoPulseIdFromUri(Uri uri) {
     }
     if ((host == 'upscwars.in' || host == 'www.upscwars.in') &&
         segs.length >= 2 &&
-        segs[0] == FomoPulseConstants.deepLinkHost) {
+        FomoPulseConstants.isPublicPathSegment(segs[0])) {
       final id = segs[1].trim();
       return _pulseIdRe.hasMatch(id) ? id : null;
     }
@@ -66,7 +63,7 @@ String? parseFomoPulseIdFromUri(Uri uri) {
   return null;
 }
 
-/// Opens `/fomo-pulse/{id}` when the user taps a shared CA Shot link.
+/// Opens `/ca-shot/{id}` when the user taps a shared CA Shot link.
 Future<bool> openFomoPulseFromIncomingLink({
   required GoRouter router,
   required Uri uri,

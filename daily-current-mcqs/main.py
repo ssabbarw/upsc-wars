@@ -14,6 +14,7 @@ import re
 os.environ.setdefault("MCQ_MODEL", "claude-sonnet-4-6")
 os.environ.setdefault("MAX_RETRIES", "1")
 os.environ.setdefault("PROMPT_VERSION", "1.4")
+os.environ.setdefault("QUESTIONS_TARGET", "10")
 
 from datetime import date, datetime, timedelta, timezone
 

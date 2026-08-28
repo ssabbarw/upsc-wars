@@ -129,6 +129,37 @@ void main() {
       expect(date, DateTime(2026, 6, 6));
     });
 
+    test('previous paper is the locked board before today\'s quiz', () {
+      // Tuesday 7 AM: live paper is Monday; Saturday locked at 6 AM.
+      expect(
+        DailyCaSchedule.previousPaperQuizContentDate(
+          referenceIst: DateTime(2026, 6, 9, 7),
+        ),
+        DateTime(2026, 6, 6),
+      );
+      // Monday 8 AM: live paper is still Saturday; previous is Friday.
+      expect(
+        DailyCaSchedule.previousPaperQuizContentDate(
+          referenceIst: DateTime(2026, 6, 8, 8),
+        ),
+        DateTime(2026, 6, 5),
+      );
+      // Sunday morning: live paper is Saturday; previous is Friday.
+      expect(
+        DailyCaSchedule.previousPaperQuizContentDate(
+          referenceIst: DateTime(2026, 6, 7, 9),
+        ),
+        DateTime(2026, 6, 5),
+      );
+    });
+
+    test('quiz morning is the calendar day after the news date', () {
+      expect(
+        DailyCaSchedule.quizMorningDate(DateTime(2026, 8, 26)),
+        DateTime(2026, 8, 27),
+      );
+    });
+
     test('Sunday morning serves Saturday\'s paper', () {
       final date = DailyCaSchedule.paperQuizContentDate(
         referenceIst: DateTime(2026, 6, 7, 9),

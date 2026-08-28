@@ -49,10 +49,9 @@ class DailyCaMonthCalendar extends StatelessWidget {
     final daysInMonth = DateTime(year, month + 1, 0).day;
     // Monday = 0 … Sunday = 6
     final leadingBlanks = (firstOfMonth.weekday - DateTime.monday) % 7;
-    final itemCount = leadingBlanks + daysInMonth;
-    final rowCount = (itemCount / 7).ceil();
 
     return Column(
+      mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Row(
@@ -74,42 +73,35 @@ class DailyCaMonthCalendar extends StatelessWidget {
           ],
         ),
         const SizedBox(height: AppSpacing.xs),
-        Expanded(
-          child: Column(
-            children: [
-              for (var row = 0; row < rowCount; row++) ...[
-                if (row > 0) const SizedBox(height: 4),
-                Expanded(
-                  child: Row(
-                    children: [
-                      for (var col = 0; col < 7; col++) ...[
-                        if (col > 0) const SizedBox(width: 4),
-                        Expanded(
-                          child: _DayCell(
-                            index: row * 7 + col,
-                            leadingBlanks: leadingBlanks,
-                            year: year,
-                            month: month,
-                            todayIso: todayIso,
-                            paperIso: paperIso,
-                            completedDates: completedDates,
-                            minDate: minDate,
-                            reference: reference,
-                            cellFill: cellFill,
-                            sundayFill: sundayFill,
-                            sundayText: sundayText,
-                            onSurface: scheme.onSurface,
-                            onSurfaceVariant: scheme.onSurfaceVariant,
-                            onDateTap: onDateTap,
-                          ),
-                        ),
-                      ],
-                    ],
-                  ),
-                ),
-              ],
-            ],
+        GridView.builder(
+          shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
+          itemCount: leadingBlanks + daysInMonth,
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 7,
+            mainAxisSpacing: 4,
+            crossAxisSpacing: 4,
+            childAspectRatio: 1.05,
           ),
+          itemBuilder: (context, index) {
+            return _DayCell(
+              index: index,
+              leadingBlanks: leadingBlanks,
+              year: year,
+              month: month,
+              todayIso: todayIso,
+              paperIso: paperIso,
+              completedDates: completedDates,
+              minDate: minDate,
+              reference: reference,
+              cellFill: cellFill,
+              sundayFill: sundayFill,
+              sundayText: sundayText,
+              onSurface: scheme.onSurface,
+              onSurfaceVariant: scheme.onSurfaceVariant,
+              onDateTap: onDateTap,
+            );
+          },
         ),
       ],
     );
@@ -155,7 +147,7 @@ class _DayCell extends StatelessWidget {
   Widget build(BuildContext context) {
     final daysInMonth = DateTime(year, month + 1, 0).day;
     if (index < leadingBlanks || index - leadingBlanks + 1 > daysInMonth) {
-      return const SizedBox.expand();
+      return const SizedBox.shrink();
     }
 
     final day = index - leadingBlanks + 1;

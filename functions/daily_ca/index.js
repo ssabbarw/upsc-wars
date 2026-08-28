@@ -1178,6 +1178,45 @@ exports.submitDailyCa = onCall(
 );
 
 /**
+ * Public top-100 snapshot. Admin SDK so it works even when client rules
+ * still deny daily_ca_days/{dateId}/meta/leaderboard.
+ */
+exports.getDailyCaLeaderboard = onCall(
+  { region: "asia-south1" },
+  async (request) => {
+    if (!request.auth) {
+      throw new HttpsError("unauthenticated", "Sign in required.");
+    }
+    const dateId =
+      typeof request.data?.dateId === "string" ? request.data.dateId.trim() : "";
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(dateId)) {
+      throw new HttpsError("invalid-argument", "dateId required.");
+    }
+    const snap = await dayRef(dateId).collection("meta").doc("leaderboard").get();
+    if (!snap.exists) {
+      return {
+        ok: true,
+        date_id: dateId,
+        top: [],
+        participant_count: 0,
+        question_count: 0,
+        status: "live",
+      };
+    }
+    const d = snap.data() || {};
+    const top = Array.isArray(d.top) ? d.top : [];
+    return {
+      ok: true,
+      date_id: dateId,
+      top,
+      participant_count: Number(d.participant_count) || top.length,
+      question_count: Number(d.question_count) || 0,
+      status: typeof d.status === "string" ? d.status : "live",
+    };
+  },
+);
+
+/**
  * Current AIR for the signed-in user. Computed on read so it moves as
  * others finish — not a stamp from submit time.
  */

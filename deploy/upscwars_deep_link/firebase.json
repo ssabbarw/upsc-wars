@@ -18,8 +18,12 @@
     ],
     "rewrites": [
       {
+        "source": "/ca-shot/**",
+        "destination": "/ca-shot/index.html"
+      },
+      {
         "source": "/fomo-pulse/**",
-        "destination": "/fomo-pulse/index.html"
+        "destination": "/ca-shot/index.html"
       },
       {
         "source": "/share/**",

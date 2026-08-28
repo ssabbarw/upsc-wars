@@ -20,8 +20,22 @@ abstract final class FomoPulseConstants {
   static const incomingShareScheme = 'upscwars';
   static const incomingShareHost = 'pulse-article';
 
-  /// Opens a published CA Shot: upscwars://fomo-pulse/{pulseId}
-  static const deepLinkHost = 'fomo-pulse';
+  /// Public HTTPS + in-app path: `https://upscwars.in/ca-shot/{pulseId}`.
+  static const publicPathSegment = 'ca-shot';
+
+  /// Older shares used `/fomo-pulse/{pulseId}` — still accepted on inbound links.
+  static const legacyPathSegment = 'fomo-pulse';
+
+  /// Opens a published CA Shot: upscwars://ca-shot/{pulseId}
+  static const deepLinkHost = publicPathSegment;
+  static const legacyDeepLinkHost = legacyPathSegment;
+
+  static const hubLocation = '/$publicPathSegment';
+
+  static bool isPublicPathSegment(String raw) {
+    final s = raw.trim().toLowerCase();
+    return s == deepLinkHost || s == legacyDeepLinkHost;
+  }
 
   static const entryPush = 'push';
   static const entryHistory = 'history';
@@ -39,10 +53,15 @@ abstract final class FomoPulseConstants {
     }
   }
 
-  static String detailLocation(String pulseId, {String? source}) {
+  static String detailLocation(
+    String pulseId, {
+    String? source,
+    bool mcq = false,
+  }) {
     final id = pulseId.trim();
     final src = normalizeEntrySource(source);
-    if (src == entryInApp) return '/fomo-pulse/$id';
-    return '/fomo-pulse/$id?src=$src';
+    final path = '/$publicPathSegment/$id${mcq ? '/mcq' : ''}';
+    if (src == entryInApp) return path;
+    return '$path?src=$src';
   }
 }

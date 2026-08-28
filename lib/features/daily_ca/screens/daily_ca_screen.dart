@@ -21,6 +21,7 @@ import '../providers/daily_ca_providers.dart';
 import '../widgets/daily_ca_day_sheet.dart';
 import '../widgets/daily_ca_month_calendar.dart';
 import '../widgets/daily_ca_today_section.dart';
+import '../widgets/daily_ca_yesterday_leaderboard_hero.dart';
 import '../../home/domain/daily_rituals.dart';
 
 class DailyCaScreen extends HookConsumerWidget {
@@ -196,174 +197,173 @@ class DailyCaScreen extends HookConsumerWidget {
           ),
         ],
       ),
-      body: Padding(
+      body: ListView(
         padding: EdgeInsets.fromLTRB(
           compact ? AppSpacing.md : AppSpacing.lg,
           compact ? AppSpacing.sm : AppSpacing.md,
           compact ? AppSpacing.md : AppSpacing.lg,
           paddedBottomInset(context, compact ? AppSpacing.sm : AppSpacing.md),
         ),
-        child: Column(
-          children: [
-            DailyCaTodaySection(
-              minDate: minDate,
-              paperDate: paperDate,
-              paperCompleted: paperCompleted,
-              launching: launching.value || paperChecking,
-              questionsReady: paperLive,
-              compact: compact,
-              onStartPaper: paperIso == null || paperCompleted || !paperLive
-                  ? null
-                  : () => unawaited(openDayTest(paperIso, isRevise: false)),
-              onRevisePaper: paperIso == null || !paperCompleted
-                  ? null
-                  : () => unawaited(openDayTest(paperIso, isRevise: true)),
-              onViewResults: paperIso == null || !paperCompleted
-                  ? null
-                  : () => unawaited(openPaperResults(paperIso)),
-              onViewRankings: paperIso == null || !ranksOn
-                  ? null
-                  : () => context.push(dailyCaLeaderboardRoute(paperIso)),
+        children: [
+          DailyCaYesterdayLeaderboardHero(compact: compact),
+          DailyCaTodaySection(
+            minDate: minDate,
+            paperDate: paperDate,
+            paperCompleted: paperCompleted,
+            launching: launching.value || paperChecking,
+            questionsReady: paperLive,
+            compact: compact,
+            onStartPaper: paperIso == null || paperCompleted || !paperLive
+                ? null
+                : () => unawaited(openDayTest(paperIso, isRevise: false)),
+            onRevisePaper: paperIso == null || !paperCompleted
+                ? null
+                : () => unawaited(openDayTest(paperIso, isRevise: true)),
+            onViewResults: paperIso == null || !paperCompleted
+                ? null
+                : () => unawaited(openPaperResults(paperIso)),
+            onViewRankings: null,
+          ),
+          SizedBox(height: compact ? AppSpacing.sm : AppSpacing.md),
+          DecoratedBox(
+            decoration: BoxDecoration(
+              color: scheme.surface,
+              borderRadius: BorderRadius.circular(AppRadius.xl),
+              boxShadow: cardShadow,
             ),
-            SizedBox(height: compact ? AppSpacing.sm : AppSpacing.md),
-            Expanded(
-              child: DecoratedBox(
-                decoration: BoxDecoration(
-                  color: scheme.surface,
-                  borderRadius: BorderRadius.circular(AppRadius.xl),
-                  boxShadow: cardShadow,
-                ),
-                child: Padding(
-                  padding: EdgeInsets.fromLTRB(
-                    AppSpacing.md,
-                    compact ? AppSpacing.sm : AppSpacing.md,
-                    AppSpacing.md,
-                    compact ? AppSpacing.sm : AppSpacing.md,
+            child: Padding(
+              padding: EdgeInsets.fromLTRB(
+                AppSpacing.md,
+                compact ? AppSpacing.sm : AppSpacing.md,
+                AppSpacing.md,
+                compact ? AppSpacing.sm : AppSpacing.md,
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      'HISTORY',
+                      style: AppTextStyles.caption().copyWith(
+                        color: scheme.onSurfaceVariant,
+                        letterSpacing: 0.8,
+                        fontWeight: FontWeight.w800,
+                      ),
+                    ),
                   ),
-                  child: Column(
+                  SizedBox(height: compact ? 2 : 4),
+                  Row(
                     children: [
-                      Align(
-                        alignment: Alignment.centerLeft,
+                      _MonthNavButton(
+                        icon: Icons.chevron_left_rounded,
+                        onPressed: canGoToPreviousMonth
+                            ? () => shiftMonth(-1)
+                            : null,
+                      ),
+                      Expanded(
                         child: Text(
-                          'HISTORY',
-                          style: AppTextStyles.caption().copyWith(
-                            color: scheme.onSurfaceVariant,
-                            letterSpacing: 0.8,
+                          monthTitle,
+                          textAlign: TextAlign.center,
+                          style: AppTextStyles.h3().copyWith(
+                            color: scheme.onSurface,
                             fontWeight: FontWeight.w800,
                           ),
                         ),
                       ),
-                      SizedBox(height: compact ? 2 : 4),
-                      Row(
-                        children: [
-                          _MonthNavButton(
-                            icon: Icons.chevron_left_rounded,
-                            onPressed: canGoToPreviousMonth
-                                ? () => shiftMonth(-1)
-                                : null,
-                          ),
-                          Expanded(
-                            child: Text(
-                              monthTitle,
-                              textAlign: TextAlign.center,
-                              style: AppTextStyles.h3().copyWith(
-                                color: scheme.onSurface,
-                                fontWeight: FontWeight.w800,
-                              ),
-                            ),
-                          ),
-                          _MonthNavButton(
-                            icon: Icons.chevron_right_rounded,
-                            onPressed: canGoToNextMonth
-                                ? () => shiftMonth(1)
-                                : null,
-                          ),
-                        ],
-                      ),
-                      SizedBox(height: compact ? 4 : 6),
-                      Expanded(
-                        child: completedAsync.when(
-                          loading: () => const Center(
-                            child: SizedBox(
-                              width: 22,
-                              height: 22,
-                              child: CircularProgressIndicator(strokeWidth: 2),
-                            ),
-                          ),
-                          error: (e, _) => Center(
-                            child: Text(
-                              'Could not load progress: $e',
-                              textAlign: TextAlign.center,
-                              style: AppTextStyles.bodySm().copyWith(
-                                color: AppColors.wrong,
-                              ),
-                            ),
-                          ),
-                          data: (completed) => DailyCaMonthCalendar(
-                            year: displayedMonth.value.year,
-                            month: displayedMonth.value.month,
-                            completedDates: completed,
-                            minDate: minDate,
-                            paperIso: paperIso,
-                            onDateTap: (iso) {
-                              if (launching.value) return;
-                              final date = DailyCaSchedule.parseIsoDate(iso);
-                              final now = DailyCaSchedule.nowIst();
-                              if (!DailyCaSchedule.isCalendarDaySelectable(
-                                date,
-                                minDate: minDate,
-                                referenceIst: now,
-                              )) {
-                                return;
-                              }
-                              final contentDate =
-                                  DailyCaSchedule.calendarTapContentDate(
-                                    date,
-                                    referenceIst: now,
-                                  );
-                              if (contentDate == null ||
-                                  !DailyCaSchedule.isOnOrAfterMinDate(
-                                    contentDate,
-                                    minDate,
-                                  )) {
-                                return;
-                              }
-                              final contentIso = DailyCaSchedule.formatIsoDate(
-                                contentDate,
-                              );
-                              final isTodayTap =
-                                  DailyCaSchedule.dateOnly(date) ==
-                                  DailyCaSchedule.dateOnly(now);
-                              unawaited(
-                                showDailyCaDaySheet(
-                                  context: context,
-                                  isoDate: contentIso,
-                                  completed: completed.contains(contentIso),
-                                  questionsReady: !isTodayTap || paperLive,
-                                  onStartTest: () => unawaited(
-                                    openDayTest(
-                                      contentIso,
-                                      isRevise: completed.contains(contentIso),
-                                    ),
-                                  ),
-                                  onViewRankings: !ranksOn
-                                      ? null
-                                      : () => context.push(
-                                          dailyCaLeaderboardRoute(contentIso),
-                                        ),
-                                ),
-                              );
-                            },
-                          ),
-                        ),
+                      _MonthNavButton(
+                        icon: Icons.chevron_right_rounded,
+                        onPressed: canGoToNextMonth
+                            ? () => shiftMonth(1)
+                            : null,
                       ),
                     ],
                   ),
-                ),
+                  SizedBox(height: compact ? 4 : 6),
+                  completedAsync.when(
+                    loading: () => const Padding(
+                      padding: EdgeInsets.symmetric(vertical: 24),
+                      child: Center(
+                        child: SizedBox(
+                          width: 22,
+                          height: 22,
+                          child: CircularProgressIndicator(strokeWidth: 2),
+                        ),
+                      ),
+                    ),
+                    error: (e, _) => Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 16),
+                      child: Text(
+                        'Could not load progress: $e',
+                        textAlign: TextAlign.center,
+                        style: AppTextStyles.bodySm().copyWith(
+                          color: AppColors.wrong,
+                        ),
+                      ),
+                    ),
+                    data: (completed) => DailyCaMonthCalendar(
+                      year: displayedMonth.value.year,
+                      month: displayedMonth.value.month,
+                      completedDates: completed,
+                      minDate: minDate,
+                      paperIso: paperIso,
+                      onDateTap: (iso) {
+                        if (launching.value) return;
+                        final date = DailyCaSchedule.parseIsoDate(iso);
+                        final now = DailyCaSchedule.nowIst();
+                        if (!DailyCaSchedule.isCalendarDaySelectable(
+                          date,
+                          minDate: minDate,
+                          referenceIst: now,
+                        )) {
+                          return;
+                        }
+                        final contentDate =
+                            DailyCaSchedule.calendarTapContentDate(
+                              date,
+                              referenceIst: now,
+                            );
+                        if (contentDate == null ||
+                            !DailyCaSchedule.isOnOrAfterMinDate(
+                              contentDate,
+                              minDate,
+                            )) {
+                          return;
+                        }
+                        final contentIso = DailyCaSchedule.formatIsoDate(
+                          contentDate,
+                        );
+                        final isTodayTap =
+                            DailyCaSchedule.dateOnly(date) ==
+                            DailyCaSchedule.dateOnly(now);
+                        unawaited(
+                          showDailyCaDaySheet(
+                            context: context,
+                            isoDate: contentIso,
+                            completed: completed.contains(contentIso),
+                            questionsReady: !isTodayTap || paperLive,
+                            onStartTest: () => unawaited(
+                              openDayTest(
+                                contentIso,
+                                isRevise: completed.contains(contentIso),
+                              ),
+                            ),
+                            onViewRankings:
+                                !ranksOn || contentIso == paperIso
+                                ? null
+                                : () => context.push(
+                                    dailyCaLeaderboardRoute(contentIso),
+                                  ),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                ],
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

@@ -17,7 +17,7 @@ class FomoPulseHomeCard extends StatelessWidget {
       borderRadius: BorderRadius.circular(AppRadius.lg),
       clipBehavior: Clip.antiAlias,
       child: InkWell(
-        onTap: () => context.push('/fomo-pulse'),
+        onTap: () => context.push('/ca-shot'),
         child: Padding(
           padding: const EdgeInsets.all(AppSpacing.md),
           child: Row(

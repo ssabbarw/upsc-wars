@@ -44,8 +44,8 @@ GMAIL_APP_PASSWORD  = os.getenv("GMAIL_APP_PASSWORD")
 GMAIL_RECIPIENT     = os.getenv("GMAIL_RECIPIENT")
 
 # ── Pipeline ───────────────────────────────────────────────────────────────────
-QUESTIONS_TARGET        = int(os.getenv("QUESTIONS_TARGET", 15))
-WEEKEND_QUESTIONS_TARGET = int(os.getenv("WEEKEND_QUESTIONS_TARGET", 20))
+QUESTIONS_TARGET        = int(os.getenv("QUESTIONS_TARGET", 10))
+WEEKEND_QUESTIONS_TARGET = int(os.getenv("WEEKEND_QUESTIONS_TARGET", 10))
 MIN_QUESTIONS_TO_WRITE  = int(os.getenv("MIN_QUESTIONS_TO_WRITE", 5))
 PROMPT_VERSION          = os.getenv("PROMPT_VERSION", "1.4")
 MAX_RETRIES             = int(os.getenv("MAX_RETRIES", 1))  # 1 = no auto-retry

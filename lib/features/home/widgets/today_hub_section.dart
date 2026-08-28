@@ -910,7 +910,7 @@ _TodayListRowData _caShotsListRow(
     done: false,
     locked: false,
     showNew: showNew,
-    onTap: () => context.push('/fomo-pulse'),
+    onTap: () => context.push('/ca-shot'),
   );
 }
 

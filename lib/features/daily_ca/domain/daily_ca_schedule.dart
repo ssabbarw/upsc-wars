@@ -156,6 +156,28 @@ abstract final class DailyCaSchedule {
     return null;
   }
 
+  /// Paper before [paperQuizContentDate] — the board whose champion just locked.
+  ///
+  /// Skips Sundays the same way the live paper does. Null when nothing older
+  /// has opened yet.
+  static DateTime? previousPaperQuizContentDate({DateTime? referenceIst}) {
+    final current = paperQuizContentDate(referenceIst: referenceIst);
+    if (current == null) return null;
+    final now = referenceIst ?? nowIst();
+    var cursor = dateOnly(current).subtract(const Duration(days: 1));
+    for (var i = 0; i < 9; i++) {
+      if (isTestDay(cursor) && isPublishedForDate(cursor, referenceIst: now)) {
+        return cursor;
+      }
+      cursor = cursor.subtract(const Duration(days: 1));
+    }
+    return null;
+  }
+
+  /// Calendar morning the [contentDate] paper was the live quiz (opens next day).
+  static DateTime quizMorningDate(DateTime contentDate) =>
+      dateOnly(opensAtForDate(contentDate));
+
   /// True when [contentDate] is the paper an aspirant reads on [referenceIst].
   static bool isTodaysPaper(DateTime contentDate, {DateTime? referenceIst}) {
     final now = referenceIst ?? nowIst();

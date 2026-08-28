@@ -54,108 +54,123 @@ class FomoPulseHistoryScreen extends HookConsumerWidget {
       return null;
     }, [async]);
 
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('CA Shots'),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () => context.canPop() ? context.pop() : context.go('/'),
-        ),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 10),
-            child: EnHiLanguageToggle(
-              language: uiLang,
-              onChanged: (lang) {
-                langOverride.value = lang;
-                unawaited(persistAppLanguage(ref, lang));
-              },
+    void leaveList() {
+      if (context.canPop()) {
+        context.pop();
+      } else {
+        context.go('/');
+      }
+    }
+
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (didPop, _) {
+        if (didPop) return;
+        leaveList();
+      },
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text('CA Shots'),
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back),
+            onPressed: leaveList,
+          ),
+          actions: [
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 10),
+              child: EnHiLanguageToggle(
+                language: uiLang,
+                onChanged: (lang) {
+                  langOverride.value = lang;
+                  unawaited(persistAppLanguage(ref, lang));
+                },
+              ),
             ),
-          ),
-          TextButton.icon(
-            onPressed: () => _showWhatIsCaShotsSheet(context),
-            icon: const Icon(Icons.info_outline, size: 18),
-            label: const Text("What's this?"),
-          ),
-          const SizedBox(width: AppSpacing.xs),
-        ],
-      ),
-      body: async.when(
-        loading: () => const Center(child: CircularProgressIndicator()),
-        error: (e, _) => Center(child: Text('$e')),
-        data: (data) {
-          final pulses = [
-            for (final p in data.pulses)
-              if (!hiddenIds.value.contains(p.pulseId)) p,
-          ];
-          if (pulses.isEmpty) {
-            return Center(
-              child: Padding(
-                padding: const EdgeInsets.all(AppSpacing.lg),
-                child: Text(
-                  'No CA Shots yet. Breaking CA briefings will show up here.',
-                  textAlign: TextAlign.center,
-                  style: AppTextStyles.bodySm().copyWith(
-                    color: scheme.onSurfaceVariant,
+            TextButton.icon(
+              onPressed: () => _showWhatIsCaShotsSheet(context),
+              icon: const Icon(Icons.info_outline, size: 18),
+              label: const Text("What's this?"),
+            ),
+            const SizedBox(width: AppSpacing.xs),
+          ],
+        ),
+        body: async.when(
+          loading: () => const Center(child: CircularProgressIndicator()),
+          error: (e, _) => Center(child: Text('$e')),
+          data: (data) {
+            final pulses = [
+              for (final p in data.pulses)
+                if (!hiddenIds.value.contains(p.pulseId)) p,
+            ];
+            if (pulses.isEmpty) {
+              return Center(
+                child: Padding(
+                  padding: const EdgeInsets.all(AppSpacing.lg),
+                  child: Text(
+                    'No CA Shots yet. Breaking CA briefings will show up here.',
+                    textAlign: TextAlign.center,
+                    style: AppTextStyles.bodySm().copyWith(
+                      color: scheme.onSurfaceVariant,
+                    ),
                   ),
                 ),
+              );
+            }
+            final sections = _groupByDate(pulses);
+            return RefreshIndicator(
+              onRefresh: () async {
+                hiddenIds.value = const {};
+                await ref
+                    .read(fomoPulseRepositoryProvider)
+                    .loadHistory(forceRefresh: true);
+                ref.invalidate(fomoPulseHistoryProvider);
+              },
+              child: ListView.builder(
+                physics: const AlwaysScrollableScrollPhysics(),
+                padding: const EdgeInsets.all(AppSpacing.lg),
+                itemCount: sections.length,
+                itemBuilder: (context, sectionIndex) {
+                  final section = sections[sectionIndex];
+                  return Padding(
+                    padding: EdgeInsets.only(
+                      bottom: sectionIndex == sections.length - 1
+                          ? 0
+                          : AppSpacing.lg,
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          section.label,
+                          style: AppTextStyles.label().copyWith(
+                            color: scheme.onSurfaceVariant,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                        const SizedBox(height: AppSpacing.sm),
+                        for (var i = 0; i < section.pulses.length; i++) ...[
+                          _historyTile(
+                            context: context,
+                            ref: ref,
+                            pulse: section.pulses[i],
+                            attempt: data.attempts[section.pulses[i].pulseId],
+                            preferHindi: preferHindi,
+                            isAdmin: isAdmin,
+                            onDeleted: (pulseId) {
+                              hiddenIds.value = {...hiddenIds.value, pulseId};
+                            },
+                          ),
+                          if (i != section.pulses.length - 1)
+                            const SizedBox(height: AppSpacing.sm),
+                        ],
+                      ],
+                    ),
+                  );
+                },
               ),
             );
-          }
-          final sections = _groupByDate(pulses);
-          return RefreshIndicator(
-            onRefresh: () async {
-              hiddenIds.value = const {};
-              await ref
-                  .read(fomoPulseRepositoryProvider)
-                  .loadHistory(forceRefresh: true);
-              ref.invalidate(fomoPulseHistoryProvider);
-            },
-            child: ListView.builder(
-              physics: const AlwaysScrollableScrollPhysics(),
-              padding: const EdgeInsets.all(AppSpacing.lg),
-              itemCount: sections.length,
-              itemBuilder: (context, sectionIndex) {
-                final section = sections[sectionIndex];
-                return Padding(
-                  padding: EdgeInsets.only(
-                    bottom: sectionIndex == sections.length - 1
-                        ? 0
-                        : AppSpacing.lg,
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        section.label,
-                        style: AppTextStyles.label().copyWith(
-                          color: scheme.onSurfaceVariant,
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
-                      const SizedBox(height: AppSpacing.sm),
-                      for (var i = 0; i < section.pulses.length; i++) ...[
-                        _historyTile(
-                          context: context,
-                          ref: ref,
-                          pulse: section.pulses[i],
-                          attempt: data.attempts[section.pulses[i].pulseId],
-                          preferHindi: preferHindi,
-                          isAdmin: isAdmin,
-                          onDeleted: (pulseId) {
-                            hiddenIds.value = {...hiddenIds.value, pulseId};
-                          },
-                        ),
-                        if (i != section.pulses.length - 1)
-                          const SizedBox(height: AppSpacing.sm),
-                      ],
-                    ],
-                  ),
-                );
-              },
-            ),
-          );
-        },
+          },
+        ),
       ),
     );
   }

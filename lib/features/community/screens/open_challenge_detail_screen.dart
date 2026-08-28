@@ -63,200 +63,218 @@ class _OpenChallengeDetailScreenState
         ?.toLowerCase()
         .trim();
 
-    return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: !widget.backToCommunityOpenTab,
-        leading: widget.backToCommunityOpenTab
-            ? IconButton(
-                icon: const Icon(Icons.arrow_back_ios_new_rounded),
-                onPressed: () => context.go('/community?tab=open_challenge'),
-              )
-            : null,
-        title: Text('Challenge', style: AppTextStyles.h3()),
-      ),
-      body: async.when(
-        loading: () => const Center(child: CircularProgressIndicator()),
-        error: (e, _) => Center(
-          child: Padding(
-            padding: const EdgeInsets.all(AppSpacing.lg),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text('$e', style: AppTextStyles.bodyMd()),
-                const SizedBox(height: AppSpacing.md),
-                OutlinedButton(
-                  onPressed: () => ref.invalidate(
-                    openChallengeDetailProvider(widget.challengeId),
+    final canPop = context.canPop();
+    void leave() {
+      if (widget.backToCommunityOpenTab || !canPop) {
+        context.go('/community?tab=open_challenge');
+        return;
+      }
+      context.pop();
+    }
+
+    return PopScope(
+      canPop: canPop && !widget.backToCommunityOpenTab,
+      onPopInvokedWithResult: (didPop, _) {
+        if (didPop) return;
+        leave();
+      },
+      child: Scaffold(
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back_ios_new_rounded),
+            onPressed: leave,
+          ),
+          title: Text('Challenge', style: AppTextStyles.h3()),
+        ),
+        body: async.when(
+          loading: () => const Center(child: CircularProgressIndicator()),
+          error: (e, _) => Center(
+            child: Padding(
+              padding: const EdgeInsets.all(AppSpacing.lg),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text('$e', style: AppTextStyles.bodyMd()),
+                  const SizedBox(height: AppSpacing.md),
+                  OutlinedButton(
+                    onPressed: () => ref.invalidate(
+                      openChallengeDetailProvider(widget.challengeId),
+                    ),
+                    child: const Text('Retry'),
                   ),
-                  child: const Text('Retry'),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
-        ),
-        data: (detail) {
-          if (detail == null) {
-            return Center(
-              child: Text('Challenge not found', style: AppTextStyles.bodyMd()),
-            );
-          }
-          if (kDebugMode) {
-            final keys = detail.attemptsByEmail.keys.toList()..sort();
-            debugPrint(
-              '[OpenChallenge:ui] detailScreen id=${widget.challengeId} '
-              'me=$me attemptKeys=$keys attemptCount=${detail.attemptsByEmail.length}',
-            );
-          }
-          final creator = detail.creatorEntry();
-          final board = detail.leaderboardRows();
-          final myEntry = (me != null && me.isNotEmpty)
-              ? detail.attemptsByEmail[me]
-              : null;
-          final myRank = myEntry == null
-              ? null
-              : board.indexWhere((r) => r.profile.email.toLowerCase() == me);
-          final leader = board.isEmpty ? null : board.first;
-
-          return RefreshIndicator(
-            onRefresh: () async {
-              ref.invalidate(openChallengeDetailProvider(widget.challengeId));
-            },
-            child: ListView(
-              padding: const EdgeInsets.all(AppSpacing.lg),
-              children: [
-                Text(
-                  openChallengeSubjectTitle(detail.subject),
-                  style: AppTextStyles.h2(),
+          data: (detail) {
+            if (detail == null) {
+              return Center(
+                child: Text(
+                  'Challenge not found',
+                  style: AppTextStyles.bodyMd(),
                 ),
-                const SizedBox(height: AppSpacing.xs),
-                if (creator != null) ...[
-                  Row(
-                    children: [
-                      TappableCircularAvatar(
-                        imageUrl: creator.profile.photoUrl,
-                        displayName: displayNameForViewer(
-                          name: creator.profile.name,
-                          viewerEmail: me,
-                          subjectEmail: creator.profile.email,
-                        ),
-                        size: 40,
-                      ),
-                      const SizedBox(width: AppSpacing.md),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              children: [
-                                Flexible(
-                                  child: Text(
-                                    'Created by ${displayNameForViewer(name: creator.profile.name, viewerEmail: me, subjectEmail: creator.profile.email)}',
-                                    style: AppTextStyles.label(),
-                                    overflow: TextOverflow.ellipsis,
-                                  ),
-                                ),
-                                AdminBotLabel(email: creator.profile.email),
-                              ],
-                            ),
-                            Text(
-                              _relativeCreated(detail.createdAt),
-                              style: AppTextStyles.caption().copyWith(
-                                color: scheme.onSurfaceVariant,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
+              );
+            }
+            if (kDebugMode) {
+              final keys = detail.attemptsByEmail.keys.toList()..sort();
+              debugPrint(
+                '[OpenChallenge:ui] detailScreen id=${widget.challengeId} '
+                'me=$me attemptKeys=$keys attemptCount=${detail.attemptsByEmail.length}',
+              );
+            }
+            final creator = detail.creatorEntry();
+            final board = detail.leaderboardRows();
+            final myEntry = (me != null && me.isNotEmpty)
+                ? detail.attemptsByEmail[me]
+                : null;
+            final myRank = myEntry == null
+                ? null
+                : board.indexWhere((r) => r.profile.email.toLowerCase() == me);
+            final leader = board.isEmpty ? null : board.first;
+
+            return RefreshIndicator(
+              onRefresh: () async {
+                ref.invalidate(openChallengeDetailProvider(widget.challengeId));
+              },
+              child: ListView(
+                padding: const EdgeInsets.all(AppSpacing.lg),
+                children: [
+                  Text(
+                    openChallengeSubjectTitle(detail.subject),
+                    style: AppTextStyles.h2(),
                   ),
-                ],
-                if (!detail.isExpired && detail.effectiveExpiresAt != null) ...[
-                  const SizedBox(height: AppSpacing.sm),
-                  Row(
-                    children: [
-                      Icon(
-                        Icons.hourglass_top_rounded,
-                        size: 18,
-                        color: scheme.onSurfaceVariant,
-                      ),
-                      const SizedBox(width: AppSpacing.sm),
-                      Expanded(
-                        child: Text(
-                          'Live till ${DateFormat('d MMM, h:mm a').format(detail.effectiveExpiresAt!.toLocal())}',
-                          style: AppTextStyles.caption().copyWith(
-                            color: scheme.onSurfaceVariant,
+                  const SizedBox(height: AppSpacing.xs),
+                  if (creator != null) ...[
+                    Row(
+                      children: [
+                        TappableCircularAvatar(
+                          imageUrl: creator.profile.photoUrl,
+                          displayName: displayNameForViewer(
+                            name: creator.profile.name,
+                            viewerEmail: me,
+                            subjectEmail: creator.profile.email,
+                          ),
+                          size: 40,
+                        ),
+                        const SizedBox(width: AppSpacing.md),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                children: [
+                                  Flexible(
+                                    child: Text(
+                                      'Created by ${displayNameForViewer(name: creator.profile.name, viewerEmail: me, subjectEmail: creator.profile.email)}',
+                                      style: AppTextStyles.label(),
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                  ),
+                                  AdminBotLabel(email: creator.profile.email),
+                                ],
+                              ),
+                              Text(
+                                _relativeCreated(detail.createdAt),
+                                style: AppTextStyles.caption().copyWith(
+                                  color: scheme.onSurfaceVariant,
+                                ),
+                              ),
+                            ],
                           ),
                         ),
-                      ),
-                    ],
-                  ),
-                ],
-                const SizedBox(height: AppSpacing.lg),
-                if (detail.isExpired) ...[
-                  Text(
-                    'This challenge has expired (challenges last 24 hours).',
-                    style: AppTextStyles.bodySm().copyWith(
-                      color: scheme.onSurfaceVariant,
+                      ],
                     ),
-                  ),
-                  const SizedBox(height: AppSpacing.md),
-                ] else if (myEntry == null) ...[
-                  _AcceptChallengeCallout(
-                    challengeId: widget.challengeId,
-                    subject: detail.subject,
-                    questionUuids: detail.questionUuids,
-                  ),
-                  const SizedBox(height: AppSpacing.md),
-                ] else ...[
-                  Text(
-                    'Your score: ${myEntry.score} / 10',
-                    style: AppTextStyles.label(),
-                  ),
-                  const SizedBox(height: AppSpacing.sm),
-                  if (myRank == 0)
+                  ],
+                  if (!detail.isExpired &&
+                      detail.effectiveExpiresAt != null) ...[
+                    const SizedBox(height: AppSpacing.sm),
+                    Row(
+                      children: [
+                        Icon(
+                          Icons.hourglass_top_rounded,
+                          size: 18,
+                          color: scheme.onSurfaceVariant,
+                        ),
+                        const SizedBox(width: AppSpacing.sm),
+                        Expanded(
+                          child: Text(
+                            'Live till ${DateFormat('d MMM, h:mm a').format(detail.effectiveExpiresAt!.toLocal())}',
+                            style: AppTextStyles.caption().copyWith(
+                              color: scheme.onSurfaceVariant,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                  const SizedBox(height: AppSpacing.lg),
+                  if (detail.isExpired) ...[
                     Text(
-                      'You are the winner so far 🏆',
-                      style: AppTextStyles.bodyMd().copyWith(
-                        color: scheme.primary,
-                      ),
-                    )
-                  else if (leader != null &&
-                      leader.profile.email.toLowerCase() != me)
-                    Text(
-                      '${displayNameForViewer(name: leader.profile.name, viewerEmail: me, subjectEmail: leader.profile.email)} has beaten your score',
+                      'This challenge has expired (challenges last 24 hours).',
                       style: AppTextStyles.bodySm().copyWith(
                         color: scheme.onSurfaceVariant,
                       ),
                     ),
-                  if (myEntry.reviewSessionId != null &&
-                      myEntry.reviewSessionId!.isNotEmpty) ...[
                     const SizedBox(height: AppSpacing.md),
-                    OutlinedButton.icon(
-                      onPressed: () =>
-                          context.push('/history/${myEntry.reviewSessionId}'),
-                      icon: const Icon(Icons.menu_book_outlined, size: 20),
-                      label: const Text('Review explanations'),
+                  ] else if (myEntry == null) ...[
+                    _AcceptChallengeCallout(
+                      challengeId: widget.challengeId,
+                      subject: detail.subject,
+                      questionUuids: detail.questionUuids,
                     ),
+                    const SizedBox(height: AppSpacing.md),
+                  ] else ...[
+                    Text(
+                      'Your score: ${myEntry.score} / 10',
+                      style: AppTextStyles.label(),
+                    ),
+                    const SizedBox(height: AppSpacing.sm),
+                    if (myRank == 0)
+                      Text(
+                        'You are the winner so far 🏆',
+                        style: AppTextStyles.bodyMd().copyWith(
+                          color: scheme.primary,
+                        ),
+                      )
+                    else if (leader != null &&
+                        leader.profile.email.toLowerCase() != me)
+                      Text(
+                        '${displayNameForViewer(name: leader.profile.name, viewerEmail: me, subjectEmail: leader.profile.email)} has beaten your score',
+                        style: AppTextStyles.bodySm().copyWith(
+                          color: scheme.onSurfaceVariant,
+                        ),
+                      ),
+                    if (myEntry.reviewSessionId != null &&
+                        myEntry.reviewSessionId!.isNotEmpty) ...[
+                      const SizedBox(height: AppSpacing.md),
+                      OutlinedButton.icon(
+                        onPressed: () =>
+                            context.push('/history/${myEntry.reviewSessionId}'),
+                        icon: const Icon(Icons.menu_book_outlined, size: 20),
+                        label: const Text('Review explanations'),
+                      ),
+                    ],
+                    const SizedBox(height: AppSpacing.md),
                   ],
-                  const SizedBox(height: AppSpacing.md),
-                ],
-                Text('Leaderboard', style: AppTextStyles.label()),
-                const SizedBox(height: AppSpacing.sm),
-                for (var i = 0; i < board.length; i++) ...[
-                  _LeaderTile(
-                    rank: i + 1,
-                    row: board[i],
-                    viewerEmail: me,
-                    highlight:
-                        me != null &&
-                        board[i].profile.email.toLowerCase() == me,
-                  ),
+                  Text('Leaderboard', style: AppTextStyles.label()),
                   const SizedBox(height: AppSpacing.sm),
+                  for (var i = 0; i < board.length; i++) ...[
+                    _LeaderTile(
+                      rank: i + 1,
+                      row: board[i],
+                      viewerEmail: me,
+                      highlight:
+                          me != null &&
+                          board[i].profile.email.toLowerCase() == me,
+                    ),
+                    const SizedBox(height: AppSpacing.sm),
+                  ],
                 ],
-              ],
-            ),
-          );
-        },
+              ),
+            );
+          },
+        ),
       ),
     );
   }

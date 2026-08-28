@@ -235,7 +235,30 @@ class _BattleWaitingScreenState extends ConsumerState<BattleWaitingScreen> {
     return '${t.substring(0, maxChars - 1)}…';
   }
 
-  void _leaveMatchScreen() {
+  Future<void> _leaveMatchScreen({bool confirm = true}) async {
+    if (confirm) {
+      final ok = await showDialog<bool>(
+        context: context,
+        builder: (ctx) => AlertDialog(
+          title: Text('Leave match?', style: AppTextStyles.h3()),
+          content: Text(
+            'Your opponent may still be waiting in the lobby.',
+            style: AppTextStyles.bodyMd(),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(ctx, false),
+              child: const Text('Stay'),
+            ),
+            TextButton(
+              onPressed: () => Navigator.pop(ctx, true),
+              child: const Text('Leave'),
+            ),
+          ],
+        ),
+      );
+      if (ok != true) return;
+    }
     if (!mounted) return;
     if (context.canPop()) {
       context.pop();
@@ -265,7 +288,7 @@ class _BattleWaitingScreenState extends ConsumerState<BattleWaitingScreen> {
       canPop: false,
       onPopInvokedWithResult: (didPop, _) {
         if (didPop) return;
-        _leaveMatchScreen();
+        unawaited(_leaveMatchScreen());
       },
       child: Scaffold(
         backgroundColor: Theme.of(context).brightness == Brightness.dark
@@ -275,7 +298,7 @@ class _BattleWaitingScreenState extends ConsumerState<BattleWaitingScreen> {
           title: const Text('Match'),
           leading: IconButton(
             icon: const Icon(Icons.arrow_back),
-            onPressed: _leaveMatchScreen,
+            onPressed: () => unawaited(_leaveMatchScreen()),
           ),
         ),
         body: switch (_mode) {
@@ -306,7 +329,9 @@ class _BattleWaitingScreenState extends ConsumerState<BattleWaitingScreen> {
             guestJoinWaitSecondsRemaining: _guestJoinWaitSecondsRemaining(),
             guestJoinWindowExpired: _guestJoinWindowExpired,
             onKeepWaitingGuestJoin: _onKeepWaitingGuestJoin,
-            onGoBackFromGuestJoinTimeout: _leaveMatchScreen,
+            onGoBackFromGuestJoinTimeout: () {
+              unawaited(_leaveMatchScreen(confirm: false));
+            },
           ),
         },
       ),
@@ -633,8 +658,7 @@ class _HumanLobbyBody extends StatelessWidget {
               : 'Waiting for the host to start the battle.');
 
     final opponentPhoto = AppConstants.customProfilePhotoUrl(opponentPhotoUrl);
-    final opponentAvatar =
-        opponentPhoto.isNotEmpty
+    final opponentAvatar = opponentPhoto.isNotEmpty
         ? CircleAvatar(
             radius: 22,
             backgroundColor: scheme.primaryContainer,
@@ -803,95 +827,95 @@ class _HumanLobbyBody extends StatelessWidget {
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                if (isHost &&
-                    !guestReady &&
-                    guestJoinWaitSecondsRemaining != null) ...[
-                  Text(
-                    'If your opponent joins within '
-                    '${_formatJoinWaitMmSs(kBattleHostGuestJoinWaitSeconds)}, '
-                    '\nyou can start the battle. '
-                    'Time remaining: ${_formatJoinWaitMmSs(guestJoinWaitSecondsRemaining!)}.',
-                    style: AppTextStyles.caption().copyWith(
-                      color: scheme.onSurfaceVariant,
-                      fontSize: 13,
-                      height: 1.35,
+                  children: [
+                    if (isHost &&
+                        !guestReady &&
+                        guestJoinWaitSecondsRemaining != null) ...[
+                      Text(
+                        'If your opponent joins within '
+                        '${_formatJoinWaitMmSs(kBattleHostGuestJoinWaitSeconds)}, '
+                        '\nyou can start the battle. '
+                        'Time remaining: ${_formatJoinWaitMmSs(guestJoinWaitSecondsRemaining!)}.',
+                        style: AppTextStyles.caption().copyWith(
+                          color: scheme.onSurfaceVariant,
+                          fontSize: 13,
+                          height: 1.35,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      const SizedBox(height: AppSpacing.sm),
+                    ],
+                    Text(
+                      statusLine,
+                      style: AppTextStyles.caption().copyWith(
+                        color: scheme.onSurfaceVariant,
+                        fontSize: 13,
+                        height: 1.35,
+                      ),
+                      textAlign: TextAlign.center,
                     ),
-                    textAlign: TextAlign.center,
-                  ),
-                  const SizedBox(height: AppSpacing.sm),
-                ],
-                Text(
-                  statusLine,
-                  style: AppTextStyles.caption().copyWith(
-                    color: scheme.onSurfaceVariant,
-                    fontSize: 13,
-                    height: 1.35,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                if (isHost && !guestReady && guestJoinWindowExpired) ...[
-                  const SizedBox(height: AppSpacing.md),
-                  Material(
-                    color: scheme.surfaceContainerLow,
-                    borderRadius: BorderRadius.circular(AppRadius.md),
-                    child: Padding(
-                      padding: const EdgeInsets.all(AppSpacing.md),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
-                          Text(
-                            'We timed out while waiting for your opponent to '
-                            'join. You can keep waiting in case they are slow, '
-                            'or go back.',
-                            style: AppTextStyles.bodySm().copyWith(
-                              color: scheme.onSurfaceVariant,
-                              height: 1.35,
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                          const SizedBox(height: AppSpacing.md),
-                          Row(
+                    if (isHost && !guestReady && guestJoinWindowExpired) ...[
+                      const SizedBox(height: AppSpacing.md),
+                      Material(
+                        color: scheme.surfaceContainerLow,
+                        borderRadius: BorderRadius.circular(AppRadius.md),
+                        child: Padding(
+                          padding: const EdgeInsets.all(AppSpacing.md),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: [
-                              Expanded(
-                                child: OutlinedButton(
-                                  onPressed: onGoBackFromGuestJoinTimeout,
-                                  child: const Text('Go back'),
+                              Text(
+                                'We timed out while waiting for your opponent to '
+                                'join. You can keep waiting in case they are slow, '
+                                'or go back.',
+                                style: AppTextStyles.bodySm().copyWith(
+                                  color: scheme.onSurfaceVariant,
+                                  height: 1.35,
                                 ),
+                                textAlign: TextAlign.center,
                               ),
-                              const SizedBox(width: AppSpacing.sm),
-                              Expanded(
-                                child: FilledButton(
-                                  onPressed: onKeepWaitingGuestJoin,
-                                  child: const Text('Keep waiting'),
-                                ),
+                              const SizedBox(height: AppSpacing.md),
+                              Row(
+                                children: [
+                                  Expanded(
+                                    child: OutlinedButton(
+                                      onPressed: onGoBackFromGuestJoinTimeout,
+                                      child: const Text('Go back'),
+                                    ),
+                                  ),
+                                  const SizedBox(width: AppSpacing.sm),
+                                  Expanded(
+                                    child: FilledButton(
+                                      onPressed: onKeepWaitingGuestJoin,
+                                      child: const Text('Keep waiting'),
+                                    ),
+                                  ),
+                                ],
                               ),
                             ],
                           ),
-                        ],
+                        ),
                       ),
-                    ),
-                  ),
-                ],
-                if (isHost) ...[
-                  const SizedBox(height: AppSpacing.md),
-                  FilledButton(
-                    onPressed: (guestReady && !letsStart && !startingBattle)
-                        ? onHostStartBattle
-                        : null,
-                    child: startingBattle
-                        ? const SizedBox(
-                            height: 22,
-                            width: 22,
-                            child: CircularProgressIndicator(
-                              strokeWidth: 2,
-                              color: Colors.white,
-                            ),
-                          )
-                        : const Text('Start battle'),
-                  ),
-                ],
-              ],
+                    ],
+                    if (isHost) ...[
+                      const SizedBox(height: AppSpacing.md),
+                      FilledButton(
+                        onPressed: (guestReady && !letsStart && !startingBattle)
+                            ? onHostStartBattle
+                            : null,
+                        child: startingBattle
+                            ? const SizedBox(
+                                height: 22,
+                                width: 22,
+                                child: CircularProgressIndicator(
+                                  strokeWidth: 2,
+                                  color: Colors.white,
+                                ),
+                              )
+                            : const Text('Start battle'),
+                      ),
+                    ],
+                  ],
                 ),
               );
             },

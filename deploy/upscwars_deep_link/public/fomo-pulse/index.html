@@ -25,7 +25,7 @@
 (function () {
   var uuidRe = /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/;
   var segs = location.pathname.replace(/\/+$/, '').split('/').filter(Boolean);
-  var id = (segs[0] === 'fomo-pulse' && segs[1]) ? segs[1] : null;
+  var id = ((segs[0] === 'ca-shot' || segs[0] === 'fomo-pulse') && segs[1]) ? segs[1] : null;
   var title = document.getElementById('title');
   var msg = document.getElementById('msg');
   var openBtn = document.getElementById('openBtn');
@@ -36,7 +36,6 @@
     err.hidden = false;
     return;
   }
-  var httpsUrl = 'https://upscwars.in/fomo-pulse/' + id;
   var appUrl = 'upscwars://fomo-pulse/' + id;
   openBtn.href = appUrl;
   openBtn.hidden = false;

@@ -42,7 +42,7 @@ abstract final class DailyRituals {
       title: 'CA Shots',
       when: 'Through the day',
       body: 'Breaking news brief + 1 MCQ. Two minutes when a shot lands.',
-      route: '/fomo-pulse',
+      route: '/ca-shot',
       icon: Icons.bolt_rounded,
       accent: AppColors.primary,
     ),

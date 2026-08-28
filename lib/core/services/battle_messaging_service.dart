@@ -14,6 +14,7 @@ import 'package:upsc_wars/core/analytics/analytics_global_dispatch.dart';
 import 'package:upsc_wars/core/analytics/session_entry_source.dart';
 import 'package:upsc_wars/core/debug/cursor_debug_log.dart';
 import 'package:upsc_wars/core/debug/upsc_wars_trace.dart';
+import 'package:upsc_wars/core/notifications/notification_open_stack.dart';
 import 'package:upsc_wars/core/notifications/notification_prompt_policy.dart';
 import 'package:upsc_wars/core/providers/prefs_provider.dart';
 import 'package:upsc_wars/core/router/app_router.dart';
@@ -30,7 +31,6 @@ import 'package:upsc_wars/features/memory_pairs/push/push_memory_pairs_fcm.dart'
 import 'package:upsc_wars/features/memory_pairs/push/push_memory_pairs_launch_params.dart';
 import 'package:upsc_wars/features/mini_games/push/push_revision_game_fcm.dart';
 import 'package:upsc_wars/features/mini_games/push/push_revision_game_launch_params.dart';
-import 'package:upsc_wars/features/fomo_pulse/fomo_pulse_constants.dart';
 import 'package:upsc_wars/features/fomo_pulse/fomo_pulse_fcm.dart';
 import 'package:upsc_wars/features/push_spot_test/push_spot_test_fcm.dart';
 import 'package:upsc_wars/features/push_spot_test/push_spot_test_launch_params.dart';
@@ -126,11 +126,7 @@ class BattleMessagingService {
         logGlobalAnalytics(
           const AppNotificationOpenEvent(channel: 'local', kind: 'battle_join'),
         );
-        final r = _activeRouter;
-        if (r == null) return;
-        WidgetsBinding.instance.addPostFrameCallback((_) {
-          r.go('/battle/join/$sessionId');
-        });
+        _openStack(NotificationOpenStacks.battleJoin(sessionId));
       };
       AppLocalNotificationsService.onNoTestReminderTap = () {
         SessionEntrySource.capture(
@@ -383,11 +379,31 @@ class BattleMessagingService {
     return path == '/chat/${chatId.trim()}';
   }
 
+  /// `go` [stack.base], then `push` overlays on the next frame so back walks
+  /// the stack (leaf → hub → Home / Community).
+  static void _openStack(NotificationOpenStack stack, {Object? extra}) {
+    final r = _activeRouter;
+    if (r == null) {
+      upscWarsTrace('notification stack deferred base=${stack.base}');
+      return;
+    }
+    upscWarsTrace(
+      'notification stack go ${stack.base} then push ${stack.overlays}',
+    );
+    r.go(stack.base, extra: stack.overlays.isEmpty ? extra : null);
+    if (stack.overlays.isEmpty) return;
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final router = _activeRouter ?? r;
+      for (var i = 0; i < stack.overlays.length; i++) {
+        final last = i == stack.overlays.length - 1;
+        router.push(stack.overlays[i], extra: last ? extra : null);
+      }
+    });
+    WidgetsBinding.instance.scheduleFrame();
+  }
+
   /// Navigate to a Fomo Pulse detail screen. Works whether called from a
   /// local notification tap (foreground) or an FCM background tap.
-  ///
-  /// Callers may already be inside a post-frame callback, so navigate directly
-  /// rather than deferring another frame (an idle engine may never render one).
   static void _navigateToPulse(String pulseId) {
     final r = _activeRouter;
     if (r == null) {
@@ -395,12 +411,7 @@ class BattleMessagingService {
       _pendingPulseId = pulseId;
       return;
     }
-    final target = FomoPulseConstants.detailLocation(
-      pulseId,
-      source: FomoPulseConstants.entryPush,
-    );
-    upscWarsTrace('FomoPulse nav -> $target');
-    r.go(target);
+    _openStack(NotificationOpenStacks.caShot(pulseId));
   }
 
   static void _navigateToChat({
@@ -425,13 +436,14 @@ class BattleMessagingService {
           ? peerName.trim()
           : 'UPSC Warrior',
     );
-    final target = ChatFcm.threadLocation(
-      chatId: chatId,
-      peerEmail: peerEmail,
-      peerName: payload.peerDisplayName,
+    _openStack(
+      NotificationOpenStacks.chat(
+        chatId: chatId,
+        peerEmail: peerEmail,
+        peerName: payload.peerDisplayName,
+      ),
+      extra: payload,
     );
-    upscWarsTrace('Chat nav -> $target');
-    r.go(target, extra: payload);
   }
 
   static void _consumePendingPulseNavigation() {
@@ -473,6 +485,7 @@ class BattleMessagingService {
     if (raw == PushMemoryPairsFcm.kind) return PushMemoryPairsFcm.kind;
     if (raw == PushRevisionGameFcm.kind) return PushRevisionGameFcm.kind;
     if (raw == DailyCaConstants.fcmKind) return DailyCaConstants.fcmKind;
+    if (raw == DailyWarConstants.fcmKind) return DailyWarConstants.fcmKind;
     if (raw == DailyCaAdminConstants.fcmKind) {
       return DailyCaAdminConstants.fcmKind;
     }
@@ -561,7 +574,7 @@ class BattleMessagingService {
         }
       }
       if (messageOpensLongHtmlScreen(message)) {
-        router.push('/notification/long-html');
+        _openStack(NotificationOpenStacks.longHtml);
         return;
       }
       if (ocKind == OpenChallengeFcm.kind) {
@@ -569,7 +582,7 @@ class BattleMessagingService {
             ?.toString()
             .trim();
         if (id != null && id.isNotEmpty) {
-          router.go('/community/open-challenges/$id');
+          _openStack(NotificationOpenStacks.openChallenge(id));
         }
         return;
       }
@@ -592,7 +605,9 @@ class BattleMessagingService {
             path: '/spot-test/launch',
             queryParameters: params.toQueryParameters(),
           );
-          router.go(uri.toString());
+          _openStack(
+            NotificationOpenStack(base: '/', overlays: [uri.toString()]),
+          );
         }
         return;
       }
@@ -613,7 +628,12 @@ class BattleMessagingService {
       if (ocKind == PushMemoryPairsFcm.kind) {
         final params = PushMemoryPairsLaunchParams.fromRemoteMessage(message);
         if (params.isValid) {
-          router.go(params.welcomeLocation);
+          _openStack(
+            NotificationOpenStack(
+              base: '/',
+              overlays: [params.welcomeLocation],
+            ),
+          );
         }
         return;
       }
@@ -630,7 +650,7 @@ class BattleMessagingService {
           TodayHeroIntentStore.capture(TodaySlotId.war);
           router.go(TodayHero.homeLocation(hero: TodaySlotId.war));
         } else {
-          router.go(dailyWarLobbyRoute());
+          _openStack(NotificationOpenStacks.dailyWarHub);
         }
         return;
       }
@@ -642,13 +662,13 @@ class BattleMessagingService {
       if (ocKind == DailyCaAdminConstants.fcmKind) {
         final date = message.data['date']?.toString().trim() ?? '';
         if (date.isNotEmpty) {
-          router.go(DailyCaAdminConstants.reviewPath(date));
+          _openStack(NotificationOpenStacks.dailyCaReview(date));
         }
         return;
       }
       final sessionId = message.data['sessionId'] as String?;
       if (sessionId != null && sessionId.isNotEmpty) {
-        router.go('/battle/join/$sessionId');
+        _openStack(NotificationOpenStacks.battleJoin(sessionId));
       }
     }
 

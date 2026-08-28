@@ -945,7 +945,7 @@ final class DailyCaSubmittedEvent extends AnalyticsEvent {
 
 // ── CA Shots (FOMO Pulse) ────────────────────────────────────────────────────
 
-/// **User opened the CA Shots list** (`/fomo-pulse` history hub).
+/// **User opened the CA Shots list** (`/ca-shot` history hub).
 ///
 /// Organic funnel step 0. Pair unique users with [CaShotOpenedEvent] /
 /// [CaShotSummaryViewedEvent] / [CaShotAttemptedEvent] filtered to

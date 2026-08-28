@@ -187,25 +187,26 @@ class ChatThreadScreen extends HookConsumerWidget {
     }
 
     final canPop = context.canPop();
+    void leaveThread() {
+      if (canPop) {
+        context.pop();
+      } else {
+        context.go('/chats');
+      }
+    }
 
     return PopScope(
       canPop: canPop,
       onPopInvokedWithResult: (didPop, _) {
         if (didPop) return;
-        context.go('/community');
+        leaveThread();
       },
       child: Scaffold(
         appBar: AppBar(
           titleSpacing: 0,
           leading: IconButton(
             icon: const Icon(Icons.arrow_back),
-            onPressed: () {
-              if (canPop) {
-                context.pop();
-              } else {
-                context.go('/community');
-              }
-            },
+            onPressed: leaveThread,
           ),
           title: InkWell(
             onTap: () => unawaited(openPeerProfile()),

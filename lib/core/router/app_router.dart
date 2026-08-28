@@ -374,7 +374,8 @@ GoRouter appRouter(Ref ref) {
       // Cold-start deep links can arrive as a full https URL "location" on mobile.
       // Normalize `https://upscwars.in/share/<kind>/<uuid>` to our internal route.
       final u = state.uri;
-      if (u.toString().contains('fomo-pulse')) {
+      if (u.pathSegments.any(FomoPulseConstants.isPublicPathSegment) ||
+          FomoPulseConstants.isPublicPathSegment(u.host)) {
         upscWarsTrace(
           'GoRouter redirect check uri=$u matched=${state.matchedLocation}',
         );
@@ -403,13 +404,15 @@ GoRouter appRouter(Ref ref) {
 
         if ((host == 'upscwars.in' || host == 'www.upscwars.in') &&
             segs.length >= 2 &&
-            segs[0] == 'fomo-pulse') {
+            FomoPulseConstants.isPublicPathSegment(segs[0])) {
           final pulseId = segs[1].trim();
           final uuid = RegExp(
             r'^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$',
           );
           if (uuid.hasMatch(pulseId) &&
-              !state.matchedLocation.startsWith('/fomo-pulse/')) {
+              !state.matchedLocation.startsWith(
+                '${FomoPulseConstants.hubLocation}/',
+              )) {
             return FomoPulseConstants.detailLocation(
               pulseId,
               source: FomoPulseConstants.entryShare,
@@ -430,7 +433,7 @@ GoRouter appRouter(Ref ref) {
       }
 
       if (u.scheme == 'upscwars' &&
-          u.host.toLowerCase() == 'fomo-pulse' &&
+          FomoPulseConstants.isPublicPathSegment(u.host) &&
           u.pathSegments.isNotEmpty) {
         final pulseId = u.pathSegments.first.trim();
         final uuid = RegExp(
@@ -820,17 +823,15 @@ GoRouter appRouter(Ref ref) {
         parentNavigatorKey: rootNavigatorKey,
         path: '/daily-ca/results/:sessionId',
         name: 'daily_ca_results',
-        builder: (context, state) => DailyCaResultsScreen(
-          sessionId: state.pathParameters['sessionId']!,
-        ),
+        builder: (context, state) =>
+            DailyCaResultsScreen(sessionId: state.pathParameters['sessionId']!),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/daily-ca/:dateId/leaderboard',
         name: 'daily_ca_leaderboard',
-        builder: (context, state) => DailyCaLeaderboardScreen(
-          dateId: state.pathParameters['dateId']!,
-        ),
+        builder: (context, state) =>
+            DailyCaLeaderboardScreen(dateId: state.pathParameters['dateId']!),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
@@ -1010,17 +1011,38 @@ GoRouter appRouter(Ref ref) {
         ),
       ),
       GoRoute(
+        path: '/${FomoPulseConstants.legacyPathSegment}',
+        redirect: (context, state) => FomoPulseConstants.hubLocation,
+      ),
+      GoRoute(
+        path: '/${FomoPulseConstants.legacyPathSegment}/:pulseId',
+        redirect: (context, state) => FomoPulseConstants.detailLocation(
+          state.pathParameters['pulseId']!,
+          source: state.uri.queryParameters['src'],
+        ),
+        routes: [
+          GoRoute(
+            path: 'mcq',
+            redirect: (context, state) => FomoPulseConstants.detailLocation(
+              state.pathParameters['pulseId']!,
+              source: state.uri.queryParameters['src'],
+              mcq: true,
+            ),
+          ),
+        ],
+      ),
+      GoRoute(
         parentNavigatorKey: rootNavigatorKey,
-        path: '/fomo-pulse',
+        path: FomoPulseConstants.hubLocation,
         name: 'fomo_pulse_history',
         builder: (context, state) => const FomoPulseHistoryScreen(),
       ),
-      // Detail is a sibling of the history route, not a child: notification and
-      // share-link taps use `go`, which would otherwise rebuild the stack with
-      // history sitting underneath the Pulse.
+      // Detail is a sibling of the history route so share-link `go` does not
+      // rebuild a list-under-detail stack. Notification taps push list then
+      // detail on Home instead.
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
-        path: '/fomo-pulse/:pulseId',
+        path: '${FomoPulseConstants.hubLocation}/:pulseId',
         name: 'fomo_pulse_detail',
         builder: (context, state) {
           final id = state.pathParameters['pulseId']!;

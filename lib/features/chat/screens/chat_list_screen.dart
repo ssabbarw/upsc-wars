@@ -18,21 +18,28 @@ class ChatListScreen extends HookConsumerWidget {
     final threadsAsync = ref.watch(filteredChatThreadsProvider);
     final me = ref.watch(currentUserEmailProvider);
     final scheme = Theme.of(context).colorScheme;
+    void leaveList() {
+      if (context.canPop()) {
+        context.pop();
+      } else {
+        context.go('/community');
+      }
+    }
 
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Chats', style: AppTextStyles.h3()),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () {
-            if (context.canPop()) {
-              context.pop();
-            } else {
-              context.go('/community');
-            }
-          },
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (didPop, _) {
+        if (didPop) return;
+        leaveList();
+      },
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text('Chats', style: AppTextStyles.h3()),
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back),
+            onPressed: leaveList,
+          ),
         ),
-      ),
         body: threadsAsync.when(
           loading: () => const Center(child: CircularProgressIndicator()),
           error: (_, __) => Center(
@@ -41,7 +48,7 @@ class ChatListScreen extends HookConsumerWidget {
               child: const Text('Retry'),
             ),
           ),
-            data: (threads) {
+          data: (threads) {
             if (threads.isEmpty) {
               return Center(
                 child: Text(
@@ -57,12 +64,14 @@ class ChatListScreen extends HookConsumerWidget {
             return ListView.separated(
               padding: const EdgeInsets.all(AppSpacing.md),
               itemCount: threads.length,
-              separatorBuilder: (_, __) => const SizedBox(height: AppSpacing.sm),
+              separatorBuilder: (_, __) =>
+                  const SizedBox(height: AppSpacing.sm),
               itemBuilder: (context, index) {
                 final thread = threads[index];
                 final peerEmail = peerEmailForThread(thread, me);
                 final peerName = peerNames[peerEmail] ?? 'UPSC Warrior';
-                final subtitle = thread.lastMessageText ?? 'Start the conversation';
+                final subtitle =
+                    thread.lastMessageText ?? 'Start the conversation';
                 final unread = thread.unreadCount;
                 return Material(
                   color: scheme.surfaceContainerLow,
@@ -126,7 +135,9 @@ class ChatListScreen extends HookConsumerWidget {
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
                               Text(
-                                _formatTime(thread.lastMessageAt ?? thread.updatedAt),
+                                _formatTime(
+                                  thread.lastMessageAt ?? thread.updatedAt,
+                                ),
                                 style: AppTextStyles.caption().copyWith(
                                   color: scheme.onSurfaceVariant,
                                 ),
@@ -161,12 +172,14 @@ class ChatListScreen extends HookConsumerWidget {
             );
           },
         ),
+      ),
     );
   }
 }
 
 String _formatTime(int millis) {
   if (millis <= 0) return '';
-  return DateFormat('dd MMM, hh:mm a')
-      .format(DateTime.fromMillisecondsSinceEpoch(millis));
+  return DateFormat(
+    'dd MMM, hh:mm a',
+  ).format(DateTime.fromMillisecondsSinceEpoch(millis));
 }

@@ -2,12 +2,13 @@ import 'package:share_plus/share_plus.dart';
 
 import '../../../core/deep_link/share_link_url_builder.dart';
 import '../domain/fomo_pulse_models.dart';
+import '../fomo_pulse_constants.dart';
 
 Uri fomoPulseShareUri(String pulseId) {
   return Uri(
     scheme: 'https',
     host: shareLinkWebHost,
-    path: '/fomo-pulse/${pulseId.trim()}',
+    path: '/${FomoPulseConstants.publicPathSegment}/${pulseId.trim()}',
   );
 }
 
@@ -18,10 +19,8 @@ Future<void> shareFomoPulse(
   FomoPulseCommunityStats? stats,
 }) async {
   final uri = fomoPulseShareUri(pulse.pulseId);
-  final title = (pulse.headline.trim().isNotEmpty
-          ? pulse.headline
-          : pulse.title)
-      .trim();
+  final title =
+      (pulse.headline.trim().isNotEmpty ? pulse.headline : pulse.title).trim();
   final buf = StringBuffer();
   if (title.isNotEmpty) buf.writeln(title);
   if (bragCorrect) {

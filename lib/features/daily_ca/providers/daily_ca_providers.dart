@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/foundation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../core/providers/kill_switch_provider.dart';
 import '../../../core/providers/prefs_provider.dart';
@@ -12,6 +13,7 @@ import '../../../core/services/local_daily_reminders_sync.dart';
 import '../../home/providers/auth_providers.dart';
 import '../data/daily_ca_cloud_service.dart';
 import '../data/daily_ca_firestore.dart';
+import '../data/daily_ca_leaderboard_cache.dart';
 import '../data/daily_ca_repository.dart';
 import '../domain/daily_ca_rank_models.dart';
 import '../domain/daily_ca_schedule.dart';
@@ -132,13 +134,53 @@ final dailyCaMySubmissionProvider = FutureProvider.autoDispose
       );
     });
 
-/// Snapshot of the top 100. Fetched on open — not a live listener.
+/// Snapshot of the top 100. Frozen boards stay on disk and are not re-fetched.
+final dailyCaLeaderboardCacheProvider =
+    FutureProvider<DailyCaLeaderboardCache>((ref) async {
+      final prefs = await SharedPreferences.getInstance();
+      return DailyCaLeaderboardCache(prefs);
+    });
+
 final dailyCaLeaderboardProvider = FutureProvider.autoDispose
     .family<DailyCaLeaderboard?, String>((ref, isoDate) async {
-      final snap = await DailyCaFirestore.leaderboardDoc(isoDate).get();
-      final data = snap.data();
-      if (!snap.exists || data == null) return null;
-      return DailyCaLeaderboard.fromMap(isoDate, data);
+      final cache = await ref.watch(dailyCaLeaderboardCacheProvider.future);
+      final cached = cache.get(isoDate);
+      if (cached != null && cached.isFrozen) return cached;
+
+      try {
+        final snap = await DailyCaFirestore.leaderboardDoc(isoDate).get();
+        final data = snap.data();
+        if (!snap.exists || data == null) return cached;
+        final lb = DailyCaLeaderboard.fromMap(isoDate, data);
+        if (lb.isFrozen) await cache.putFrozen(lb);
+        return lb;
+      } on Object catch (e, st) {
+        debugPrint('dailyCaLeaderboardProvider($isoDate): $e');
+        debugPrintStack(stackTrace: st);
+        return cached;
+      }
+    });
+
+/// Yesterday's frozen podium for the CA hub. [lb] is null when that paper
+/// has no ranks yet — the UI shows a placeholder.
+class DailyCaHubHeroBoard {
+  const DailyCaHubHeroBoard({required this.dateId, this.lb});
+
+  final String dateId;
+  final DailyCaLeaderboard? lb;
+}
+
+final dailyCaHubHeroBoardProvider =
+    FutureProvider.autoDispose<DailyCaHubHeroBoard?>((ref) async {
+      final minDate = await ref.watch(dailyCaCalendarMinDateProvider.future);
+      final prev = DailyCaSchedule.previousPaperQuizContentDate();
+      if (prev == null ||
+          !DailyCaSchedule.isOnOrAfterMinDate(prev, minDate)) {
+        return const DailyCaHubHeroBoard(dateId: '');
+      }
+      final iso = DailyCaSchedule.formatIsoDate(prev);
+      final lb = await ref.watch(dailyCaLeaderboardProvider(iso).future);
+      return DailyCaHubHeroBoard(dateId: iso, lb: lb);
     });
 
 /// Bumped after [markDailyCaResultsOpened] so home can leave the revise hero.

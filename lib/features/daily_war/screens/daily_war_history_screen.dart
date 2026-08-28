@@ -26,6 +26,7 @@ import '../providers/server_clock_provider.dart';
 import '../widgets/daily_war_earned_badges_section.dart';
 import '../widgets/daily_war_month_calendar.dart';
 import '../widgets/daily_war_today_section.dart';
+import '../widgets/daily_war_yesterday_leaderboard_hero.dart';
 import 'daily_war_history_detail_screen.dart';
 
 /// Calendar hub for Daily War — tonight's paper on top, archive by date.
@@ -193,6 +194,7 @@ class DailyWarHistoryScreen extends HookConsumerWidget {
         paddedBottomInset(context, AppSpacing.lg),
       ),
       children: [
+        const DailyWarYesterdayLeaderboardHero(),
         DailyWarTodaySection(
           launching: launching.value,
           onJoinLive: () => unawaited(joinLive()),
@@ -247,9 +249,7 @@ class DailyWarHistoryScreen extends HookConsumerWidget {
                     ),
                     _MonthNavButton(
                       icon: Icons.chevron_right_rounded,
-                      onPressed: canGoToNextMonth
-                          ? () => shiftMonth(1)
-                          : null,
+                      onPressed: canGoToNextMonth ? () => shiftMonth(1) : null,
                     ),
                   ],
                 ),
@@ -267,10 +267,7 @@ class DailyWarHistoryScreen extends HookConsumerWidget {
                       for (final w in bundle.wars) w.dateId: w,
                     };
                     if (snap.doc != null) {
-                      warsByDate.putIfAbsent(
-                        snap.doc!.dateId,
-                        () => snap.doc!,
-                      );
+                      warsByDate.putIfAbsent(snap.doc!.dateId, () => snap.doc!);
                     }
                     final submittedDates = bundle.submissions.keys.toSet();
                     if (snap.submission != null && snap.dateId.isNotEmpty) {
@@ -310,25 +307,44 @@ class DailyWarHistoryScreen extends HookConsumerWidget {
 
     if (embedded) return body;
 
-    return Scaffold(
-      backgroundColor: isDark
-          ? AppColors.surfaceTertiaryDark
-          : AppColors.surfaceTertiaryLight,
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Text(DailyWarCopy.programName),
-        actions: [
-          IconButton(
-            tooltip: 'This month',
-            onPressed: jumpToThisMonth,
-            icon: const Icon(
-              Icons.event_available_rounded,
-              color: AppColors.primary,
-            ),
+    void leaveHub() {
+      if (context.canPop()) {
+        context.pop();
+      } else {
+        context.go('/');
+      }
+    }
+
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (didPop, _) {
+        if (didPop) return;
+        leaveHub();
+      },
+      child: Scaffold(
+        backgroundColor: isDark
+            ? AppColors.surfaceTertiaryDark
+            : AppColors.surfaceTertiaryLight,
+        appBar: AppBar(
+          centerTitle: true,
+          title: const Text(DailyWarCopy.programName),
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back),
+            onPressed: leaveHub,
           ),
-        ],
+          actions: [
+            IconButton(
+              tooltip: 'This month',
+              onPressed: jumpToThisMonth,
+              icon: const Icon(
+                Icons.event_available_rounded,
+                color: AppColors.primary,
+              ),
+            ),
+          ],
+        ),
+        body: body,
       ),
-      body: body,
     );
   }
 }

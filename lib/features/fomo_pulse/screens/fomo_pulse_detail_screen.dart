@@ -33,9 +33,20 @@ class FomoPulseDetailScreen extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final async = ref.watch(fomoPulseDetailProvider(pulseId));
-    // Opened straight from a notification there is nothing beneath this route,
-    // so back should land on home rather than close the app.
+    // From a CA Shot notification, back should land on the list. Share / cold
+    // `go` without a stack still falls through to Home so the app does not exit.
     final canPop = context.canPop();
+    void leave() {
+      if (canPop) {
+        context.pop();
+        return;
+      }
+      if (entrySource == FomoPulseConstants.entryPush) {
+        context.go(FomoPulseConstants.hubLocation);
+        return;
+      }
+      context.go('/');
+    }
 
     useEffect(() {
       unawaited(markDailyRitualOpened(ref, DailyRitualIds.caShots));
@@ -52,14 +63,14 @@ class FomoPulseDetailScreen extends HookConsumerWidget {
       canPop: canPop,
       onPopInvokedWithResult: (didPop, _) {
         if (didPop) return;
-        context.go('/');
+        leave();
       },
       child: Scaffold(
         appBar: AppBar(
           title: const Text('CA Shot'),
           leading: IconButton(
             icon: const Icon(Icons.arrow_back),
-            onPressed: () => canPop ? context.pop() : context.go('/'),
+            onPressed: leave,
           ),
           actions: [
             async.maybeWhen(
@@ -175,10 +186,7 @@ class _PulseBody extends HookConsumerWidget {
       unawaited(
         Analytics.track(
           ref,
-          CaShotSummaryViewedEvent(
-            pulseId: pulse.pulseId,
-            source: entrySource,
-          ),
+          CaShotSummaryViewedEvent(pulseId: pulse.pulseId, source: entrySource),
         ),
       );
       var mcqLogged = false;
@@ -208,7 +216,9 @@ class _PulseBody extends HookConsumerWidget {
           controller: tabController,
           labelColor: AppColors.primary,
           unselectedLabelColor: scheme.onSurfaceVariant,
-          labelStyle: AppTextStyles.label().copyWith(fontWeight: FontWeight.w700),
+          labelStyle: AppTextStyles.label().copyWith(
+            fontWeight: FontWeight.w700,
+          ),
           unselectedLabelStyle: AppTextStyles.label(),
           indicatorColor: AppColors.primary,
           indicatorWeight: 2.5,
@@ -263,10 +273,12 @@ class _PulseBody extends HookConsumerWidget {
                           Align(
                             alignment: Alignment.centerLeft,
                             child: TextButton(
-                              onPressed: () =>
-                                  showFullSummary.value = !showFullSummary.value,
+                              onPressed: () => showFullSummary.value =
+                                  !showFullSummary.value,
                               child: Text(
-                                showFullSummary.value ? 'Show less' : 'Read more',
+                                showFullSummary.value
+                                    ? 'Show less'
+                                    : 'Read more',
                               ),
                             ),
                           ),
@@ -328,7 +340,9 @@ class _PulseBody extends HookConsumerWidget {
                       ),
                       child: Text(
                         'This CA Shot has expired.',
-                        style: AppTextStyles.label().copyWith(color: scheme.error),
+                        style: AppTextStyles.label().copyWith(
+                          color: scheme.error,
+                        ),
                       ),
                     )
                   else
@@ -366,7 +380,9 @@ class _SectionDivider extends StatelessWidget {
       child: Divider(
         height: 1,
         thickness: 1,
-        color: Theme.of(context).colorScheme.outlineVariant.withValues(alpha: 0.45),
+        color: Theme.of(
+          context,
+        ).colorScheme.outlineVariant.withValues(alpha: 0.45),
       ),
     );
   }
@@ -497,7 +513,10 @@ class _NewsImage extends StatelessWidget {
           width: double.infinity,
           height: _height,
           color: scheme.surfaceContainerHighest,
-          child: Icon(Icons.broken_image_outlined, color: scheme.onSurfaceVariant),
+          child: Icon(
+            Icons.broken_image_outlined,
+            color: scheme.onSurfaceVariant,
+          ),
         ),
       ),
     );
@@ -539,13 +558,10 @@ String _headerMetaLine(FomoPulse pulse, String summary) {
   final dateLabel = sentAt == null
       ? 'Today'
       : '${sentAt.day} ${_monthName(sentAt.month)} ${sentAt.year}';
-  final readMins = (summary
-          .split(RegExp(r'\s+'))
-          .where((e) => e.isNotEmpty)
-          .length /
-      130)
-      .ceil()
-      .clamp(1, 6);
+  final readMins =
+      (summary.split(RegExp(r'\s+')).where((e) => e.isNotEmpty).length / 130)
+          .ceil()
+          .clamp(1, 6);
   return '$dateLabel  ·  $readMins min read  ·  High Relevance';
 }
 

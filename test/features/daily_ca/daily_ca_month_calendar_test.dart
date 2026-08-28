@@ -10,8 +10,7 @@ void main() {
     await tester.pumpWidget(
       MaterialApp(
         home: Scaffold(
-          body: SizedBox(
-            height: 520,
+          body: SingleChildScrollView(
             child: DailyCaMonthCalendar(
               year: 2026,
               month: 8,

@@ -216,7 +216,9 @@ service cloud.firestore {
       }
 
       match /meta/{docId} {
-        allow read: if true;
+        // Same as Daily War — catch-all excludes daily_ca_days, so this
+        // nested match is the only client read grant. Deploy with the app.
+        allow read: if signedIn();
         allow write: if false;
       }
     }

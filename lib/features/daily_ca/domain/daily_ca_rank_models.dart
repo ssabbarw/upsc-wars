@@ -87,6 +87,18 @@ class DailyCaLeaderboardEntry {
       unanswered: (map['unanswered'] as num?)?.toInt(),
     );
   }
+
+  Map<String, dynamic> toMap() => {
+    'uid': uid,
+    'display_name': displayName,
+    'score': score,
+    'elapsed_ms': elapsedMs,
+    'air': air,
+    if (percentile != null) 'percentile': percentile,
+    if (correct != null) 'correct': correct,
+    if (wrong != null) 'wrong': wrong,
+    if (unanswered != null) 'unanswered': unanswered,
+  };
 }
 
 class DailyCaLeaderboard {
@@ -126,4 +138,12 @@ class DailyCaLeaderboard {
       status: (map['status'] as String? ?? 'live').trim(),
     );
   }
+
+  Map<String, dynamic> toCacheMap() => {
+    'date_id': dateId,
+    'top': top.map((e) => e.toMap()).toList(),
+    'participant_count': participantCount,
+    'question_count': questionCount,
+    'status': status,
+  };
 }
