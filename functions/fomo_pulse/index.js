@@ -1295,16 +1295,18 @@ exports.submitFomoPulseAttempt = onCall(
 
     const attemptCount = result.attempt_count || 0;
     const correctCount = result.correct_count || 0;
-    const showStats = attemptCount >= MIN_STATS_ATTEMPTS;
+    const stats =
+      attemptCount > 0
+        ? {
+            attempt_count: attemptCount,
+            correct_count: correctCount,
+            correct_pct: Math.round((correctCount / attemptCount) * 100),
+          }
+        : null;
     return {
       ok: true,
       ...result,
-      stats: showStats
-        ? {
-            attempt_count: attemptCount,
-            correct_pct: Math.round((correctCount / attemptCount) * 100),
-          }
-        : null,
+      stats,
     };
   },
 );

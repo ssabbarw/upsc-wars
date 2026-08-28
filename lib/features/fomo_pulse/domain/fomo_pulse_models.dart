@@ -535,17 +535,52 @@ class FomoPulseAttemptState {
 class FomoPulseCommunityStats {
   const FomoPulseCommunityStats({
     required this.attemptCount,
-    required this.correctPct,
+    required this.correctCount,
   });
 
   final int attemptCount;
-  final int correctPct;
+  final int correctCount;
+
+  int get wrongCount => (attemptCount - correctCount).clamp(0, attemptCount);
+
+  int get correctPct => attemptCount == 0
+      ? 0
+      : ((correctCount / attemptCount) * 100).round();
 
   int get fellPct => (100 - correctPct).clamp(0, 100);
 
-  String get trapLine => '$attemptCount attempted · $fellPct% fell for it';
+  String get breakdownLine {
+    if (attemptCount <= 0) return 'No attempts yet';
+    return '$attemptCount attempted · $correctCount got it right · $wrongCount got it wrong';
+  }
 
-  String get challengeLine => '$trapLine. Can you?';
+  String get trapLine {
+    if (attemptCount <= 0) return 'No attempts yet';
+    return '$attemptCount attempted · $fellPct% fell for it';
+  }
+
+  String get challengeLine => attemptCount <= 0
+      ? 'Be the first to attempt this.'
+      : '$trapLine. Can you?';
+
+  factory FomoPulseCommunityStats.fromMap(Map<String, dynamic> map) {
+    final attempts = (map['attempt_count'] as num?)?.toInt() ?? 0;
+    final correctFromCount = (map['correct_count'] as num?)?.toInt();
+    if (correctFromCount != null) {
+      return FomoPulseCommunityStats(
+        attemptCount: attempts,
+        correctCount: correctFromCount.clamp(0, attempts < 0 ? 0 : attempts),
+      );
+    }
+    final pct = (map['correct_pct'] as num?)?.toInt() ?? 0;
+    final correct = attempts == 0
+        ? 0
+        : ((pct.clamp(0, 100) / 100) * attempts).round();
+    return FomoPulseCommunityStats(
+      attemptCount: attempts,
+      correctCount: correct,
+    );
+  }
 }
 
 class FomoPulse {
@@ -671,12 +706,19 @@ class FomoPulse {
     _copy(preferHindi: preferHindi, hi: newsSummaryHi, en: newsSummary),
   );
 
-  FomoPulseCommunityStats? communityStats({int minAttempts = 20}) {
+  int get wrongCount => (attemptCount - correctCount).clamp(0, attemptCount);
+
+  FomoPulseCommunityStats get communityCounts => FomoPulseCommunityStats(
+    attemptCount: attemptCount,
+    correctCount: correctCount,
+  );
+
+  /// Null when [attemptCount] is below [minAttempts].
+  /// Pass 1 to show raw counts to everyone; [FomoPulseConstants.minStatsAttempts]
+  /// still gates share FOMO copy.
+  FomoPulseCommunityStats? communityStats({int minAttempts = 1}) {
     if (attemptCount < minAttempts) return null;
-    final pct = attemptCount == 0
-        ? 0
-        : ((correctCount / attemptCount) * 100).round();
-    return FomoPulseCommunityStats(attemptCount: attemptCount, correctPct: pct);
+    return communityCounts;
   }
 
   factory FomoPulse.fromFirestore(String id, Map<String, dynamic> data) {
@@ -797,10 +839,8 @@ class FomoPulseSubmitResult {
     final statsRaw = map['stats'];
     FomoPulseCommunityStats? stats;
     if (statsRaw is Map) {
-      final m = Map<String, dynamic>.from(statsRaw);
-      stats = FomoPulseCommunityStats(
-        attemptCount: (m['attempt_count'] as num?)?.toInt() ?? 0,
-        correctPct: (m['correct_pct'] as num?)?.toInt() ?? 0,
+      stats = FomoPulseCommunityStats.fromMap(
+        Map<String, dynamic>.from(statsRaw),
       );
     }
     return FomoPulseSubmitResult(

@@ -189,6 +189,7 @@ Widget _historyTile({
     pulse: pulse,
     attempt: attempt,
     preferHindi: preferHindi,
+    showZeroAttempts: isAdmin,
     onTap: () => context.push(
       FomoPulseConstants.detailLocation(
         pulse.pulseId,
@@ -485,12 +486,14 @@ class _PulseHistoryTile extends StatelessWidget {
     required this.attempt,
     required this.preferHindi,
     required this.onTap,
+    this.showZeroAttempts = false,
   });
 
   final FomoPulse pulse;
   final FomoPulseAttemptState? attempt;
   final bool preferHindi;
   final VoidCallback onTap;
+  final bool showZeroAttempts;
 
   @override
   Widget build(BuildContext context) {
@@ -588,6 +591,16 @@ class _PulseHistoryTile extends StatelessWidget {
                       ),
                     ),
                   ],
+                ),
+              ],
+              if (showZeroAttempts || pulse.attemptCount > 0) ...[
+                const SizedBox(height: AppSpacing.xs),
+                Text(
+                  pulse.communityCounts.breakdownLine,
+                  style: AppTextStyles.caption().copyWith(
+                    color: scheme.onSurfaceVariant,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               ],
             ],

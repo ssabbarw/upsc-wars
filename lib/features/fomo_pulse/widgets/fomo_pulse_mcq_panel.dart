@@ -43,14 +43,13 @@ class FomoPulseMcqPanel extends HookConsumerWidget {
     final openedAt = useMemoized(DateTime.now);
     final attemptedOnOpen = existingAttempt?.attempted == true;
     final picked = useState<String?>(existingAttempt?.selectedOption);
+    final liveStats = useState<FomoPulseCommunityStats?>(null);
 
     final selected = picked.value ?? '';
     final revealed = selected.isNotEmpty;
     final isCorrect =
         selected.toLowerCase() == question.correctOption.toLowerCase();
-    final stats = pulse.communityStats(
-      minAttempts: FomoPulseConstants.minStatsAttempts,
-    );
+    final stats = liveStats.value ?? pulse.communityStats();
     final valueAddPoints = isHi && pulse.upscPointsHi.isNotEmpty
         ? pulse.upscPointsHi
         : pulse.upscPoints;
@@ -82,6 +81,11 @@ class FomoPulseMcqPanel extends HookConsumerWidget {
           timeSpentSecs: secs,
         );
         await repo.recordLocalAttempt(pulseId: pulse.pulseId, result: remote);
+        if (!context.mounted) return;
+        liveStats.value = FomoPulseCommunityStats(
+          attemptCount: remote.attemptCount,
+          correctCount: remote.correctCount,
+        );
         if (!remote.alreadyAttempted) {
           unawaited(AdminDashboardWriterService().recordFomoPulseEngagement());
         }
@@ -94,6 +98,12 @@ class FomoPulseMcqPanel extends HookConsumerWidget {
       if (revealed) return;
       picked.value = option;
       if (!attemptedOnOpen) {
+        final right =
+            option.toLowerCase() == question.correctOption.toLowerCase();
+        liveStats.value = FomoPulseCommunityStats(
+          attemptCount: pulse.attemptCount + 1,
+          correctCount: pulse.correctCount + (right ? 1 : 0),
+        );
         unawaited(syncAttempt(option));
         unawaited(
           Analytics.track(
@@ -233,7 +243,7 @@ class FomoPulseMcqPanel extends HookConsumerWidget {
           if (stats != null) ...[
             const SizedBox(height: AppSpacing.xs),
             Text(
-              stats.trapLine,
+              stats.breakdownLine,
               style: AppTextStyles.caption().copyWith(
                 color: Theme.of(context).colorScheme.onSurfaceVariant,
               ),

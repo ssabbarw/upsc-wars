@@ -4,7 +4,8 @@ abstract final class FomoPulseConstants {
   static const analyticsKey = 'fomo_pulse';
   static const fcmKind = 'fomo_pulse';
 
-  /// Community stats hidden below this attempt count (server-side too).
+  /// Share-card FOMO copy stays gated so a handful of attempts does not
+  /// look like a crowd. In-app list/detail always show raw attempt counts.
   static const minStatsAttempts = 20;
 
   static const historyPageSize = 20;

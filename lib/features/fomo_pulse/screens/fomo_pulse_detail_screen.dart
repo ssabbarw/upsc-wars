@@ -178,9 +178,7 @@ class _PulseBody extends HookConsumerWidget {
     final summaryText = summary.isNotEmpty ? summary : pulse.body;
     final heading = pulse.displayHeadline(preferHindi: isHi);
 
-    final stats = pulse.communityStats(
-      minAttempts: FomoPulseConstants.minStatsAttempts,
-    );
+    final stats = pulse.communityStats();
 
     useEffect(() {
       unawaited(
@@ -325,7 +323,7 @@ class _PulseBody extends HookConsumerWidget {
                       headerColor: AppColors.warningBg,
                       titleColor: AppColors.warningText,
                       child: Text(
-                        stats.challengeLine,
+                        '${stats.breakdownLine}. Can you?',
                         style: AppTextStyles.label().copyWith(
                           color: AppColors.warningText,
                         ),
