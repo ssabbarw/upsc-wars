@@ -503,6 +503,7 @@ class HomeScreen extends HookConsumerWidget {
                     ),
                     const SizedBox(height: AppSpacing.md),
                     const SoftUpdateBanner(),
+                    const PushDeniedBanner(compact: true),
                     Consumer(
                       builder: (context, ref, _) {
                         final journey = ref.watch(
@@ -584,7 +585,7 @@ class HomeScreen extends HookConsumerWidget {
                           children: [
                             HomePageVideoBanner(borderColor: borderColor),
                             const SizedBox(height: AppSpacing.md),
-                            const PushDeniedBanner(),
+                            const PushDeniedBanner(reportShown: false),
                             _QuickPracticeSection(borderColor: borderColor),
                           ],
                         );

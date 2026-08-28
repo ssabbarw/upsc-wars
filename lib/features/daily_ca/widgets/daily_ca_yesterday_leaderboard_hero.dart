@@ -1,12 +1,17 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 
+import '../../../core/auth/auth_session.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../shared/auth/ensure_account_sign_in.dart';
+import '../../../shared/widgets/locked_leaderboard_scrim.dart';
 import '../../community/widgets/admin_bot_label.dart';
 import '../../home/providers/auth_providers.dart';
 import '../daily_ca_admin_constants.dart';
@@ -24,34 +29,42 @@ class DailyCaYesterdayLeaderboardHero extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final boardAsync = ref.watch(dailyCaHubHeroBoardProvider);
-    final myUid = ref.watch(authStateChangesProvider).asData?.value?.uid ?? '';
+    final user = ref.watch(authStateChangesProvider).asData?.value;
+    final accountSignedIn = AuthSession.isAccountSignedIn(user);
+    final myUid = user?.uid ?? '';
 
-    return boardAsync.maybeWhen(
-      data: (board) {
-        if (board == null) return const SizedBox.shrink();
-        return Padding(
-          padding: EdgeInsets.only(
-            bottom: compact ? AppSpacing.sm : AppSpacing.md,
-          ),
-          child: _HeroCard(
-            lb: board.lb,
-            dateId: board.dateId,
-            myUid: myUid,
-            compact: compact,
-          ),
-        );
-      },
-      orElse: () => Padding(
+    Future<void> signInForBoard() async {
+      final ok = await ensureAccountSignedIn(
+        context: context,
+        ref: ref,
+        reason: 'Sign in to see the leaderboard.',
+      );
+      if (!ok) return;
+      ref.invalidate(dailyCaHubHeroBoardProvider);
+    }
+
+    Widget card({DailyCaLeaderboard? lb, required String dateId}) {
+      return Padding(
         padding: EdgeInsets.only(
           bottom: compact ? AppSpacing.sm : AppSpacing.md,
         ),
         child: _HeroCard(
-          lb: null,
-          dateId: '',
+          lb: lb,
+          dateId: dateId,
           myUid: myUid,
           compact: compact,
+          locked: !accountSignedIn,
+          onSignIn: () => unawaited(signInForBoard()),
         ),
-      ),
+      );
+    }
+
+    return boardAsync.maybeWhen(
+      data: (board) {
+        if (board == null) return const SizedBox.shrink();
+        return card(lb: board.lb, dateId: board.dateId);
+      },
+      orElse: () => card(lb: null, dateId: ''),
     );
   }
 }
@@ -62,12 +75,16 @@ class _HeroCard extends StatelessWidget {
     required this.dateId,
     required this.myUid,
     required this.compact,
+    required this.locked,
+    this.onSignIn,
   });
 
   final DailyCaLeaderboard? lb;
   final String dateId;
   final String myUid;
   final bool compact;
+  final bool locked;
+  final VoidCallback? onSignIn;
 
   @override
   Widget build(BuildContext context) {
@@ -106,7 +123,7 @@ class _HeroCard extends StatelessWidget {
               : DateFormat('d MMM').format(quizMorning).toUpperCase());
 
     int? myAir;
-    if (myUid.isNotEmpty) {
+    if (!locked && myUid.isNotEmpty) {
       for (final e in top) {
         if (e.uid == myUid) {
           myAir = e.air;
@@ -125,103 +142,110 @@ class _HeroCard extends StatelessWidget {
       color: bg,
       borderRadius: BorderRadius.circular(AppRadius.xl),
       clipBehavior: Clip.antiAlias,
-      child: InkWell(
-        onTap: empty || dateId.isEmpty
-            ? null
-            : () => context.push(dailyCaLeaderboardRoute(dateId)),
-        child: Padding(
-          padding: EdgeInsets.fromLTRB(
-            compact ? AppSpacing.md : AppSpacing.lg,
-            compact ? AppSpacing.sm : AppSpacing.md,
-            compact ? AppSpacing.md : AppSpacing.lg,
-            compact ? AppSpacing.md : AppSpacing.lg,
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Text(
-                eyebrow,
-                style: AppTextStyles.caption().copyWith(
-                  color: AppColors.onPrimary.withValues(alpha: 0.7),
-                  fontWeight: FontWeight.w800,
-                  letterSpacing: 1.1,
-                ),
+      child: Stack(
+        children: [
+          InkWell(
+            onTap: locked
+                ? onSignIn
+                : (empty || dateId.isEmpty
+                      ? null
+                      : () => context.push(dailyCaLeaderboardRoute(dateId))),
+            child: Padding(
+              padding: EdgeInsets.fromLTRB(
+                compact ? AppSpacing.md : AppSpacing.lg,
+                compact ? AppSpacing.sm : AppSpacing.md,
+                compact ? AppSpacing.md : AppSpacing.lg,
+                compact ? AppSpacing.md : AppSpacing.lg,
               ),
-              const SizedBox(height: 2),
-              Text(
-                statusLine,
-                style: AppTextStyles.bodySm().copyWith(
-                  color: AppColors.onPrimary,
-                  fontWeight: FontWeight.w700,
-                ),
-              ),
-              SizedBox(height: compact ? 12 : 16),
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.end,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Expanded(
-                    child: _Seat(
-                      place: 2,
-                      entry: second,
-                      questionCount: qCount,
-                      highlight: second?.uid == myUid,
-                      compact: compact,
+                  Text(
+                    eyebrow,
+                    style: AppTextStyles.caption().copyWith(
+                      color: AppColors.onPrimary.withValues(alpha: 0.7),
+                      fontWeight: FontWeight.w800,
+                      letterSpacing: 1.1,
                     ),
                   ),
-                  Expanded(
-                    child: _Seat(
-                      place: 1,
-                      entry: first,
-                      questionCount: qCount,
-                      highlight: first?.uid == myUid,
-                      tall: true,
-                      compact: compact,
+                  const SizedBox(height: 2),
+                  Text(
+                    statusLine,
+                    style: AppTextStyles.bodySm().copyWith(
+                      color: AppColors.onPrimary,
+                      fontWeight: FontWeight.w700,
                     ),
                   ),
-                  Expanded(
-                    child: _Seat(
-                      place: 3,
-                      entry: third,
-                      questionCount: qCount,
-                      highlight: third?.uid == myUid,
-                      compact: compact,
-                    ),
+                  SizedBox(height: compact ? 12 : 16),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Expanded(
+                        child: _Seat(
+                          place: 2,
+                          entry: second,
+                          questionCount: qCount,
+                          highlight: second?.uid == myUid,
+                          compact: compact,
+                        ),
+                      ),
+                      Expanded(
+                        child: _Seat(
+                          place: 1,
+                          entry: first,
+                          questionCount: qCount,
+                          highlight: first?.uid == myUid,
+                          tall: true,
+                          compact: compact,
+                        ),
+                      ),
+                      Expanded(
+                        child: _Seat(
+                          place: 3,
+                          entry: third,
+                          questionCount: qCount,
+                          highlight: third?.uid == myUid,
+                          compact: compact,
+                        ),
+                      ),
+                    ],
                   ),
+                  if (myAir != null) ...[
+                    SizedBox(height: compact ? 8 : 10),
+                    Text(
+                      'You · AIR $myAir',
+                      textAlign: TextAlign.center,
+                      style: AppTextStyles.labelSm().copyWith(
+                        fontWeight: FontWeight.w800,
+                        color: AppColors.onPrimary,
+                      ),
+                    ),
+                  ],
+                  if (!locked && !empty)
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: Text(
+                        'See board',
+                        style: AppTextStyles.labelSm().copyWith(
+                          fontWeight: FontWeight.w700,
+                          color: AppColors.onPrimary,
+                        ),
+                      ),
+                    )
+                  else if (!locked)
+                    Text(
+                      "Today's paper is open. Ranks show here tomorrow.",
+                      textAlign: TextAlign.center,
+                      style: AppTextStyles.caption().copyWith(
+                        color: AppColors.onPrimary.withValues(alpha: 0.75),
+                      ),
+                    ),
                 ],
               ),
-              if (myAir != null) ...[
-                SizedBox(height: compact ? 8 : 10),
-                Text(
-                  'You · AIR $myAir',
-                  textAlign: TextAlign.center,
-                  style: AppTextStyles.labelSm().copyWith(
-                    fontWeight: FontWeight.w800,
-                    color: AppColors.onPrimary,
-                  ),
-                ),
-              ],
-              if (!empty)
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: Text(
-                    'See board',
-                    style: AppTextStyles.labelSm().copyWith(
-                      fontWeight: FontWeight.w700,
-                      color: AppColors.onPrimary,
-                    ),
-                  ),
-                )
-              else
-                Text(
-                  "Today's paper is open. Ranks show here tomorrow.",
-                  textAlign: TextAlign.center,
-                  style: AppTextStyles.caption().copyWith(
-                    color: AppColors.onPrimary.withValues(alpha: 0.75),
-                  ),
-                ),
-            ],
+            ),
           ),
-        ),
+          if (locked) LockedLeaderboardScrim(onTap: onSignIn),
+        ],
       ),
     );
   }
@@ -249,9 +273,7 @@ class _Seat extends StatelessWidget {
     final name = (entry?.displayName ?? '').trim();
     final label = name.isEmpty ? '—' : name;
     final maxPts = DailyCaScoring.maxPoints(questionCount);
-    final radius = compact
-        ? (tall ? 22.0 : 18.0)
-        : (tall ? 26.0 : 20.0);
+    final radius = compact ? (tall ? 22.0 : 18.0) : (tall ? 26.0 : 20.0);
     return Column(
       children: [
         CircleAvatar(

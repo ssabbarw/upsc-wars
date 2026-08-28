@@ -1,11 +1,16 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 
+import '../../../core/auth/auth_session.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
+import '../../../shared/auth/ensure_account_sign_in.dart';
+import '../../../shared/widgets/locked_leaderboard_scrim.dart';
 import '../../../shared/widgets/shimmer_box.dart';
 import '../../community/widgets/admin_bot_label.dart';
 import '../../home/providers/auth_providers.dart';
@@ -17,6 +22,10 @@ import '../providers/daily_war_providers.dart';
 import '../theme/daily_war_theme.dart';
 
 /// Podium for last night's War, above tonight's card on the hub.
+///
+/// Always paints the card (same as Daily CA). Guests get a sign-in CTA
+/// instead of ranks; signed-in users see the frozen board or an empty
+/// placeholder when last night has not locked yet.
 class DailyWarYesterdayLeaderboardHero extends ConsumerWidget {
   const DailyWarYesterdayLeaderboardHero({super.key});
 
@@ -27,42 +36,107 @@ class DailyWarYesterdayLeaderboardHero extends ConsumerWidget {
     final minDate = DailyWarSchedule.dateOnly(DailyWarSchedule.calendarMinDate);
     if (yesterdayDate.isBefore(minDate)) return const SizedBox.shrink();
 
+    final user = ref.watch(authStateChangesProvider).asData?.value;
+    final accountSignedIn = AuthSession.isAccountSignedIn(user);
+    final myUid = user?.uid ?? '';
+
+    Future<void> signInForBoard() async {
+      final ok = await ensureAccountSignedIn(
+        context: context,
+        ref: ref,
+        reason: 'Sign in to see the leaderboard.',
+      );
+      if (!ok) return;
+      ref.invalidate(dailyWarArchiveProvider(dateId));
+      await ref.read(dailyWarYesterdayDocProvider.notifier).refresh();
+    }
+
     final docAsync = ref.watch(dailyWarYesterdayDocProvider);
     return docAsync.when(
       loading: () => const _HeroShimmer(),
-      error: (_, _) => const SizedBox.shrink(),
+      error: (_, _) => Padding(
+        padding: const EdgeInsets.only(bottom: AppSpacing.md),
+        child: _HeroCard(
+          dateId: dateId,
+          lb: null,
+          war: null,
+          myUid: myUid,
+          mySubmission: null,
+          locked: !accountSignedIn,
+          onSignIn: () => unawaited(signInForBoard()),
+        ),
+      ),
       data: (doc) {
-        if (doc == null || !doc.ranksReady) return const SizedBox.shrink();
-        return _ArchiveHero(dateId: dateId);
+        if (doc == null || !doc.ranksReady) {
+          return Padding(
+            padding: const EdgeInsets.only(bottom: AppSpacing.md),
+            child: _HeroCard(
+              dateId: dateId,
+              lb: null,
+              war: doc,
+              myUid: myUid,
+              mySubmission: null,
+              locked: !accountSignedIn,
+              onSignIn: () => unawaited(signInForBoard()),
+            ),
+          );
+        }
+        return _ArchiveHero(
+          dateId: dateId,
+          myUid: myUid,
+          war: doc,
+          locked: !accountSignedIn,
+          onSignIn: () => unawaited(signInForBoard()),
+        );
       },
     );
   }
 }
 
 class _ArchiveHero extends ConsumerWidget {
-  const _ArchiveHero({required this.dateId});
+  const _ArchiveHero({
+    required this.dateId,
+    required this.myUid,
+    required this.war,
+    required this.locked,
+    this.onSignIn,
+  });
 
   final String dateId;
+  final String myUid;
+  final DailyWarDoc war;
+  final bool locked;
+  final VoidCallback? onSignIn;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final archiveAsync = ref.watch(dailyWarArchiveProvider(dateId));
-    final myUid = ref.watch(authStateChangesProvider).asData?.value?.uid ?? '';
 
     return archiveAsync.when(
       loading: () => const _HeroShimmer(),
-      error: (_, _) => const SizedBox.shrink(),
+      error: (_, _) => Padding(
+        padding: const EdgeInsets.only(bottom: AppSpacing.md),
+        child: _HeroCard(
+          dateId: dateId,
+          lb: null,
+          war: war,
+          myUid: myUid,
+          mySubmission: null,
+          locked: locked,
+          onSignIn: onSignIn,
+        ),
+      ),
       data: (archive) {
-        final lb = archive.leaderboard;
-        if (lb == null || lb.top.isEmpty) return const SizedBox.shrink();
         return Padding(
           padding: const EdgeInsets.only(bottom: AppSpacing.md),
           child: _HeroCard(
-            lb: lb,
-            war: archive.war,
             dateId: dateId,
+            lb: archive.leaderboard,
+            war: archive.war,
             myUid: myUid,
             mySubmission: archive.submission,
+            locked: locked,
+            onSignIn: onSignIn,
           ),
         );
       },
@@ -72,39 +146,50 @@ class _ArchiveHero extends ConsumerWidget {
 
 class _HeroCard extends StatelessWidget {
   const _HeroCard({
+    required this.dateId,
     required this.lb,
     required this.war,
-    required this.dateId,
     required this.myUid,
     required this.mySubmission,
+    required this.locked,
+    this.onSignIn,
   });
 
-  final DailyWarLeaderboard lb;
-  final DailyWarDoc war;
   final String dateId;
+  final DailyWarLeaderboard? lb;
+  final DailyWarDoc? war;
   final String myUid;
   final DailyWarSubmission? mySubmission;
+  final bool locked;
+  final VoidCallback? onSignIn;
 
   @override
   Widget build(BuildContext context) {
     DailyWarLeaderboardEntry? at(int air) {
-      for (final e in lb.top.take(3)) {
+      final top = lb?.top ?? const <DailyWarLeaderboardEntry>[];
+      for (final e in top.take(3)) {
         if (e.air == air) return e;
       }
-      return lb.top.length >= air ? lb.top[air - 1] : null;
+      return top.length >= air ? top[air - 1] : null;
     }
 
     final first = at(1);
     final second = at(2);
     final third = at(3);
-    final qCount = war.questionCount > 0
-        ? war.questionCount
+    final qCount = war != null && war!.questionCount > 0
+        ? war!.questionCount
         : DailyWarSchedule.questionCountForDate(
             DailyWarSchedule.parseIsoDate(dateId),
           );
     final maxPts = qCount * 2;
-    final count = lb.participantCount > 0 ? lb.participantCount : lb.top.length;
-    final isGrand = war.isGrand;
+    final top = lb?.top ?? const <DailyWarLeaderboardEntry>[];
+    final count = (lb?.participantCount ?? 0) > 0
+        ? lb!.participantCount
+        : top.length;
+    final empty = top.isEmpty;
+    final isGrand =
+        war?.isGrand ??
+        DailyWarSchedule.parseIsoDate(dateId).weekday == DateTime.saturday;
 
     DateTime? parsed;
     try {
@@ -117,8 +202,8 @@ class _HeroCard extends StatelessWidget {
         : DateFormat('d MMM').format(parsed).toUpperCase();
 
     int? myAir;
-    if (myUid.isNotEmpty) {
-      for (final e in lb.top) {
+    if (!locked && myUid.isNotEmpty) {
+      for (final e in top) {
         if (e.uid == myUid) {
           myAir = e.air;
           break;
@@ -129,114 +214,148 @@ class _HeroCard extends StatelessWidget {
           : null;
     }
 
+    final String statusLine;
+    if (empty) {
+      statusLine = war == null || war!.ranksReady
+          ? '$dateLabel · No champion locked yet'
+          : '$dateLabel · Ranks lock after the paper closes';
+    } else {
+      statusLine = '$count joined';
+    }
+
     return Material(
       color: const Color(0xFF1A3A32),
       borderRadius: BorderRadius.circular(AppRadius.xl),
       clipBehavior: Clip.antiAlias,
-      child: InkWell(
-        onTap: () => context.push(dailyWarLeaderboardRoute(dateId)),
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(
-            AppSpacing.lg,
-            AppSpacing.md,
-            AppSpacing.lg,
-            AppSpacing.lg,
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Row(
+      child: Stack(
+        children: [
+          InkWell(
+            onTap: locked
+                ? onSignIn
+                : (empty || dateId.isEmpty
+                      ? null
+                      : () => context.push(dailyWarLeaderboardRoute(dateId))),
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(
+                AppSpacing.lg,
+                AppSpacing.md,
+                AppSpacing.lg,
+                AppSpacing.lg,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
+                  Row(
+                    children: [
+                      Text(
+                        'LAST NIGHT',
+                        style: DwText.dm(
+                          size: 11,
+                          weight: FontWeight.w700,
+                          color: DwColors.onDarkMuted,
+                          letterSpacing: 0.8,
+                        ),
+                      ),
+                      const Spacer(),
+                      Text(
+                        '${DailyWarCopy.eventNameCaps(isGrand: isGrand)} · $dateLabel',
+                        style: DwText.dm(
+                          size: 11,
+                          weight: FontWeight.w600,
+                          color: DwColors.onDarkMuted,
+                          letterSpacing: 0.4,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 4),
                   Text(
-                    'LAST NIGHT',
+                    statusLine,
                     style: DwText.dm(
-                      size: 11,
+                      size: 13,
                       weight: FontWeight.w700,
-                      color: DwColors.onDarkMuted,
-                      letterSpacing: 0.8,
+                      color: DwColors.onDark,
                     ),
                   ),
-                  const Spacer(),
-                  Text(
-                    '${DailyWarCopy.eventNameCaps(isGrand: isGrand)} · $dateLabel',
-                    style: DwText.dm(
-                      size: 11,
-                      weight: FontWeight.w600,
-                      color: DwColors.onDarkMuted,
-                      letterSpacing: 0.4,
-                    ),
+                  const SizedBox(height: 14),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Expanded(
+                        child: _Seat(
+                          entry: second,
+                          place: 2,
+                          maxPts: maxPts,
+                          myUid: myUid,
+                          size: 52,
+                        ),
+                      ),
+                      Expanded(
+                        child: _Seat(
+                          entry: first,
+                          place: 1,
+                          maxPts: maxPts,
+                          myUid: myUid,
+                          size: 68,
+                          medal: true,
+                        ),
+                      ),
+                      Expanded(
+                        child: _Seat(
+                          entry: third,
+                          place: 3,
+                          maxPts: maxPts,
+                          myUid: myUid,
+                          size: 52,
+                        ),
+                      ),
+                    ],
                   ),
+                  if (myAir != null) ...[
+                    const SizedBox(height: 10),
+                    Text(
+                      'You · AIR $myAir',
+                      textAlign: TextAlign.center,
+                      style: DwText.dm(
+                        size: 12,
+                        weight: FontWeight.w700,
+                        color: DwColors.gold,
+                      ),
+                    ),
+                  ],
+                  if (!locked && !empty)
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: Text(
+                        'See board',
+                        style: DwText.dm(
+                          size: 12,
+                          weight: FontWeight.w700,
+                          color: AppColors.primary,
+                        ),
+                      ),
+                    )
+                  else if (!locked)
+                    Padding(
+                      padding: const EdgeInsets.only(top: 10),
+                      child: Text(
+                        war == null || war!.ranksReady
+                            ? 'No champion yet. Ranks land here after the paper locks.'
+                            : "Tonight's paper is open. Ranks show here tomorrow.",
+                        textAlign: TextAlign.center,
+                        style: DwText.dm(
+                          size: 12,
+                          weight: FontWeight.w600,
+                          color: DwColors.onDarkMuted,
+                        ),
+                      ),
+                    ),
                 ],
               ),
-              const SizedBox(height: 4),
-              Text(
-                '$count joined',
-                style: DwText.dm(
-                  size: 13,
-                  weight: FontWeight.w700,
-                  color: DwColors.onDark,
-                ),
-              ),
-              const SizedBox(height: 14),
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Expanded(
-                    child: _Seat(
-                      entry: second,
-                      place: 2,
-                      maxPts: maxPts,
-                      myUid: myUid,
-                      size: 52,
-                    ),
-                  ),
-                  Expanded(
-                    child: _Seat(
-                      entry: first,
-                      place: 1,
-                      maxPts: maxPts,
-                      myUid: myUid,
-                      size: 68,
-                      medal: true,
-                    ),
-                  ),
-                  Expanded(
-                    child: _Seat(
-                      entry: third,
-                      place: 3,
-                      maxPts: maxPts,
-                      myUid: myUid,
-                      size: 52,
-                    ),
-                  ),
-                ],
-              ),
-              if (myAir != null) ...[
-                const SizedBox(height: 10),
-                Text(
-                  'You · AIR $myAir',
-                  textAlign: TextAlign.center,
-                  style: DwText.dm(
-                    size: 12,
-                    weight: FontWeight.w700,
-                    color: DwColors.gold,
-                  ),
-                ),
-              ],
-              Align(
-                alignment: Alignment.centerRight,
-                child: Text(
-                  'See board',
-                  style: DwText.dm(
-                    size: 12,
-                    weight: FontWeight.w700,
-                    color: AppColors.primary,
-                  ),
-                ),
-              ),
-            ],
+            ),
           ),
-        ),
+          if (locked) LockedLeaderboardScrim(onTap: onSignIn),
+        ],
       ),
     );
   }
@@ -261,25 +380,24 @@ class _Seat extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (entry == null) {
-      return SizedBox(height: size + 40);
-    }
-    final e = entry!;
     final border = switch (place) {
       1 => DwColors.gold,
       2 => const Color(0xFFB8B8B8),
       _ => const Color(0xFFCD7F32),
     };
-    final name = e.displayName.isEmpty ? 'Warrior' : e.displayName;
-    final isMe = e.uid == myUid;
+    final name = (entry?.displayName ?? '').trim();
+    final label = entry == null ? '—' : (name.isEmpty ? 'Warrior' : name);
+    final isMe = entry != null && entry!.uid == myUid;
 
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
         if (medal)
-          const Icon(
+          Icon(
             Icons.workspace_premium_rounded,
-            color: DwColors.gold,
+            color: entry == null
+                ? DwColors.onDarkMuted.withValues(alpha: 0.45)
+                : DwColors.gold,
             size: 18,
           )
         else
@@ -292,7 +410,9 @@ class _Seat extends StatelessWidget {
           decoration: BoxDecoration(
             color: const Color(0xFF0F2924),
             border: Border.all(
-              color: isMe ? AppColors.primary : border,
+              color: isMe
+                  ? AppColors.primary
+                  : border.withValues(alpha: entry == null ? 0.4 : 1),
               width: 3,
             ),
             borderRadius: BorderRadius.circular(14),
@@ -302,7 +422,7 @@ class _Seat extends StatelessWidget {
             style: DwText.dm(
               size: size * 0.38,
               weight: FontWeight.w800,
-              color: border,
+              color: border.withValues(alpha: entry == null ? 0.45 : 1),
             ),
           ),
         ),
@@ -312,24 +432,31 @@ class _Seat extends StatelessWidget {
           children: [
             Flexible(
               child: Text(
-                name,
+                label,
                 textAlign: TextAlign.center,
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
-                style: DwText.dm(size: 12, weight: FontWeight.w700),
+                style: DwText.dm(
+                  size: 12,
+                  weight: FontWeight.w700,
+                  color: entry == null ? DwColors.onDarkMuted : DwColors.onDark,
+                ),
               ),
             ),
-            AdminBotLabel(uid: e.uid),
+            if (entry != null) AdminBotLabel(uid: entry!.uid),
           ],
         ),
-        Text(
-          '${_fmt(e.score)} / $maxPts',
-          style: DwText.dm(
-            size: 11,
-            weight: FontWeight.w600,
-            color: DwColors.onDarkMuted,
-          ),
-        ),
+        if (entry != null)
+          Text(
+            '${_fmt(entry!.score)} / $maxPts',
+            style: DwText.dm(
+              size: 11,
+              weight: FontWeight.w600,
+              color: DwColors.onDarkMuted,
+            ),
+          )
+        else
+          const SizedBox(height: 15),
       ],
     );
   }
