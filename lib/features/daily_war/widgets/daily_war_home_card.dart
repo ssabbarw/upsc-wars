@@ -75,7 +75,10 @@ class _DailyWarHomeCardBody extends HookConsumerWidget {
         .asData
         ?.value;
 
-    final offset = ref.watch(serverTimeOffsetMsProvider).asData?.value ?? 0;
+    final offset = effectiveServerTimeOffsetMs(
+      ref.watch(dailyWarDebugClockProvider),
+      ref.watch(serverTimeOffsetMsProvider).asData?.value ?? 0,
+    );
     final utc = DateTime.fromMillisecondsSinceEpoch(
       DateTime.now().millisecondsSinceEpoch + offset,
       isUtc: true,
@@ -144,9 +147,20 @@ class _DailyWarHomeCardBody extends HookConsumerWidget {
       tonightDoc: doc,
     );
 
+    final simulatingClock =
+        ref.watch(dailyWarDebugClockProvider) == DailyWarDebugClock.liveJoinable;
+
     return Padding(
       padding: const EdgeInsets.only(bottom: 12),
-      child: Material(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          if (simulatingClock)
+            const Padding(
+              padding: EdgeInsets.only(bottom: 8),
+              child: _DebugClockBanner(),
+            ),
+          Material(
         color: Colors.transparent,
         child: InkWell(
           onTap: isRest
@@ -207,6 +221,33 @@ class _DailyWarHomeCardBody extends HookConsumerWidget {
                     ),
             ),
           ),
+        ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _DebugClockBanner extends StatelessWidget {
+  const _DebugClockBanner();
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+      decoration: BoxDecoration(
+        color: const Color(0xFFFFF4E6),
+        borderRadius: BorderRadius.circular(10),
+        border: Border.all(color: const Color(0xFFFFC46B)),
+      ),
+      child: const Text(
+        'DEBUG CLOCK · 9:05 PM IST (late join). Turn off in Settings → Static War.',
+        style: TextStyle(
+          fontSize: 12,
+          fontWeight: FontWeight.w600,
+          color: Color(0xFF9A5B00),
         ),
       ),
     );

@@ -101,8 +101,10 @@ class DailyWarHistoryDetailScreen extends HookConsumerWidget {
           if (launching.value) return;
           launching.value = true;
           try {
-            final offset =
-                ref.read(serverTimeOffsetMsProvider).asData?.value ?? 0;
+            final offset = effectiveServerTimeOffsetMs(
+              ref.read(dailyWarDebugClockProvider),
+              ref.read(serverTimeOffsetMsProvider).asData?.value ?? 0,
+            );
             final ist = DailyWarSchedule.nowIst(
               DateTime.fromMillisecondsSinceEpoch(
                 DateTime.now().millisecondsSinceEpoch + offset,

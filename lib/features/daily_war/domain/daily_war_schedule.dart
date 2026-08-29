@@ -65,6 +65,22 @@ abstract final class DailyWarSchedule {
     );
   }
 
+  /// Device-clock offset (ms) so `DateTime.now() + offset` is this IST wall time
+  /// on today's IST calendar date. Used by the super-user simulate-9:05 debug clock.
+  static int offsetMsUntilIstWall({required int hour, required int minute}) {
+    final realIst = nowIst();
+    final wall = DateTime(realIst.year, realIst.month, realIst.day, hour, minute);
+    final targetUtc = DateTime.utc(
+      wall.year,
+      wall.month,
+      wall.day,
+      wall.hour,
+      wall.minute,
+    ).subtract(istOffset);
+    return targetUtc.millisecondsSinceEpoch -
+        DateTime.now().millisecondsSinceEpoch;
+  }
+
   static DateTime dateOnly(DateTime ist) =>
       DateTime(ist.year, ist.month, ist.day);
 

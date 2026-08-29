@@ -44,7 +44,10 @@ class DailyWarHistoryScreen extends HookConsumerWidget {
     final snap = ref.watch(dailyWarHomeSnapshotProvider);
     final launching = useState(false);
 
-    final offset = ref.watch(serverTimeOffsetMsProvider).asData?.value ?? 0;
+    final offset = effectiveServerTimeOffsetMs(
+      ref.watch(dailyWarDebugClockProvider),
+      ref.watch(serverTimeOffsetMsProvider).asData?.value ?? 0,
+    );
     final tick = useState(0);
     useEffect(() {
       final t = Timer.periodic(const Duration(seconds: 1), (_) => tick.value++);

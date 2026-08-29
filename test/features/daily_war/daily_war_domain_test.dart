@@ -76,6 +76,20 @@ void main() {
         DailyWarPhase.countdown,
       );
     });
+
+    test('offsetMsUntilIstWall aims DateTime.now() at 9:05 IST', () {
+      final offset = DailyWarSchedule.offsetMsUntilIstWall(
+        hour: 21,
+        minute: 5,
+      );
+      final utc = DateTime.fromMillisecondsSinceEpoch(
+        DateTime.now().millisecondsSinceEpoch + offset,
+        isUtc: true,
+      );
+      final ist = DailyWarSchedule.nowIst(utc);
+      expect(ist.hour, 21);
+      expect(ist.minute, 5);
+    });
   });
 
   group('DailyWarPhaseResolver', () {

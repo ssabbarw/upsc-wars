@@ -44,7 +44,10 @@ class DailyWarTodaySection extends HookConsumerWidget {
     final accountSignedIn = AuthSession.isAccountSignedIn(
       ref.watch(authStateChangesProvider).asData?.value,
     );
-    final offset = ref.watch(serverTimeOffsetMsProvider).asData?.value ?? 0;
+    final offset = effectiveServerTimeOffsetMs(
+      ref.watch(dailyWarDebugClockProvider),
+      ref.watch(serverTimeOffsetMsProvider).asData?.value ?? 0,
+    );
     final utc = DateTime.fromMillisecondsSinceEpoch(
       DateTime.now().millisecondsSinceEpoch + offset,
       isUtc: true,

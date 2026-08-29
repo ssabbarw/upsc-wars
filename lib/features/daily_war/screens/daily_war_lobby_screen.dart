@@ -177,8 +177,13 @@ class _DailyWarLobbyBody extends HookConsumerWidget {
     // (before 9 PM, questionUuids is still empty). Without this refresh the
     // Join button shows but immediately errors with "Questions publish just
     // before 9 PM."
+    // When simulating 9:05, skip this so we can still repro a stale empty
+    // cache (the refresh would hide the bug).
+    final simulatingClock =
+        ref.watch(dailyWarDebugClockProvider) != DailyWarDebugClock.off;
     final refreshedForDate = useRef<String?>(null);
     useEffect(() {
+      if (simulatingClock) return null;
       final phase = snap.phase;
       final isLobbyOrLive =
           phase == DailyWarPhase.lobby || phase == DailyWarPhase.liveJoinable;
@@ -190,13 +195,16 @@ class _DailyWarLobbyBody extends HookConsumerWidget {
       refreshedForDate.value = snap.dateId;
       unawaited(ref.read(dailyWarTodayDocProvider.notifier).refresh());
       return null;
-    }, [snap.dateId, snap.phase, snap.doc?.questionUuids.isEmpty]);
+    }, [snap.dateId, snap.phase, snap.doc?.questionUuids.isEmpty, simulatingClock]);
 
     if (todayDoc.isLoading && snap.doc == null) {
       return const _DailyWarLobbySkeleton();
     }
 
-    final offset = ref.watch(serverTimeOffsetMsProvider).asData?.value ?? 0;
+    final offset = effectiveServerTimeOffsetMs(
+      ref.watch(dailyWarDebugClockProvider),
+      ref.watch(serverTimeOffsetMsProvider).asData?.value ?? 0,
+    );
     final utc = DateTime.fromMillisecondsSinceEpoch(
       DateTime.now().millisecondsSinceEpoch + offset,
       isUtc: true,
@@ -291,6 +299,14 @@ class _DailyWarLobbyBody extends HookConsumerWidget {
       body: ListView(
         padding: const EdgeInsets.fromLTRB(20, 8, 20, 32),
         children: [
+          if (simulatingClock)
+            Padding(
+              padding: const EdgeInsets.only(bottom: 12),
+              child: Text(
+                'DEBUG CLOCK · 9:05 PM IST',
+                style: DwText.eyebrow(color: const Color(0xFFFFC46B)),
+              ),
+            ),
           Text(
             snap.phase == DailyWarPhase.lobby
                 ? 'LOBBY OPEN'
