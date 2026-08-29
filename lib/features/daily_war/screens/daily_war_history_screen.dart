@@ -44,10 +44,7 @@ class DailyWarHistoryScreen extends HookConsumerWidget {
     final snap = ref.watch(dailyWarHomeSnapshotProvider);
     final launching = useState(false);
 
-    final offset = effectiveServerTimeOffsetMs(
-      ref.watch(dailyWarDebugClockProvider),
-      ref.watch(serverTimeOffsetMsProvider).asData?.value ?? 0,
-    );
+    final offset = ref.watch(serverTimeOffsetMsProvider).asData?.value ?? 0;
     final tick = useState(0);
     useEffect(() {
       final t = Timer.periodic(const Duration(seconds: 1), (_) => tick.value++);
@@ -91,15 +88,24 @@ class DailyWarHistoryScreen extends HookConsumerWidget {
         if (context.mounted) context.push(dailyWarLobbyRoute());
         return;
       }
-      final doc = snap.doc;
-      if (doc == null || launching.value) {
-        if (doc == null && context.mounted) {
-          context.push(dailyWarLobbyRoute());
-        }
-        return;
-      }
+      if (launching.value) return;
       launching.value = true;
       try {
+        var doc = snap.doc;
+        doc ??= await ref.read(dailyWarTodayDocProvider.notifier).refresh();
+        if (doc == null) {
+          if (context.mounted) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text(
+                  'Tonight\'s paper isn\'t loaded yet. Try again in some time.',
+                ),
+              ),
+            );
+          }
+          return;
+        }
+        if (!context.mounted) return;
         await startDailyWarAttempt(
           context: context,
           ref: ref,
@@ -107,6 +113,12 @@ class DailyWarHistoryScreen extends HookConsumerWidget {
           unranked: false,
           istNow: ist,
         );
+      } on Object catch (e) {
+        if (context.mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text('Could not start War: $e')),
+          );
+        }
       } finally {
         launching.value = false;
       }

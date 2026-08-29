@@ -44,10 +44,7 @@ class DailyWarTodaySection extends HookConsumerWidget {
     final accountSignedIn = AuthSession.isAccountSignedIn(
       ref.watch(authStateChangesProvider).asData?.value,
     );
-    final offset = effectiveServerTimeOffsetMs(
-      ref.watch(dailyWarDebugClockProvider),
-      ref.watch(serverTimeOffsetMsProvider).asData?.value ?? 0,
-    );
+    final offset = ref.watch(serverTimeOffsetMsProvider).asData?.value ?? 0;
     final utc = DateTime.fromMillisecondsSinceEpoch(
       DateTime.now().millisecondsSinceEpoch + offset,
       isUtc: true,
@@ -99,7 +96,7 @@ class DailyWarTodaySection extends HookConsumerWidget {
           : (isGrand
                 ? '${DailyWarCopy.grandEventName} lobby is open.'
                 : '${DailyWarCopy.dailyEventName} lobby is open.');
-      subtext = 'Paper starts at 9:00 PM IST. Join when the timer hits zero.';
+      subtext = 'Paper starts at 9:00 PM IST.';
       cta = untilStart.isNegative
           ? 'Starting…'
           : 'Starts in ${DailyWarSchedule.formatCountdown(untilStart)}';
@@ -122,6 +119,15 @@ class DailyWarTodaySection extends HookConsumerWidget {
       ctaIcon = accountSignedIn
           ? Icons.play_arrow_rounded
           : Icons.login_rounded;
+    } else if (snap.phase == DailyWarPhase.liveLocked) {
+      eyebrow = 'IN PROGRESS';
+      headline = topicsLine.isNotEmpty
+          ? topicsLine
+          : '${DailyWarCopy.eventName(isGrand: isGrand)} is live.';
+      subtext = 'Entry closed at 9:10 PM IST. Ranks at 9:40 PM.';
+      cta = 'Late join closed';
+      onCta = null;
+      ctaIcon = Icons.lock_outline_rounded;
     } else if (snap.phase == DailyWarPhase.resultsPending ||
         snap.phase == DailyWarPhase.resultsReady) {
       eyebrow = DailyWarCopy.eventNameCaps(isGrand: isGrand);
@@ -148,10 +154,18 @@ class DailyWarTodaySection extends HookConsumerWidget {
       subtext = isGrand
           ? 'Saturday ${DailyWarCopy.grandEventName} starts at 9:00 PM IST.'
           : '${DailyWarCopy.dailyEventName} starts at 9:00 PM IST.';
-      cta = untilStart.isNegative ? 'Available soon' : null;
+      cta = untilStart.isNegative
+          ? 'Starting…'
+          : 'Starts in ${DailyWarSchedule.formatCountdown(untilStart)}';
       onCta = null;
-      ctaIcon = Icons.play_arrow_rounded;
+      ctaIcon = Icons.schedule_rounded;
     }
+
+    final waitingForTonightStart =
+        snap.phase == DailyWarPhase.lobby ||
+        snap.phase == DailyWarPhase.morning ||
+        snap.phase == DailyWarPhase.countdown ||
+        snap.phase == DailyWarPhase.preAnnounce;
 
     final nextStart =
         (!untilStart.isNegative && snap.phase != DailyWarPhase.restDay)
@@ -275,49 +289,51 @@ class DailyWarTodaySection extends HookConsumerWidget {
                 ),
               ),
             ],
-            const SizedBox(height: 10),
-            Row(
-              children: [
-                Icon(
-                  Icons.schedule_rounded,
-                  size: 14,
-                  color: scheme.onSurfaceVariant,
-                ),
-                const SizedBox(width: 6),
-                Expanded(
-                  child: Text(
-                    footerLabel,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: AppTextStyles.caption().copyWith(
-                      color: scheme.onSurfaceVariant,
-                      fontWeight: FontWeight.w600,
+            if (!waitingForTonightStart) ...[
+              const SizedBox(height: 10),
+              Row(
+                children: [
+                  Icon(
+                    Icons.schedule_rounded,
+                    size: 14,
+                    color: scheme.onSurfaceVariant,
+                  ),
+                  const SizedBox(width: 6),
+                  Expanded(
+                    child: Text(
+                      footerLabel,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: AppTextStyles.caption().copyWith(
+                        color: scheme.onSurfaceVariant,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
                   ),
-                ),
-                const SizedBox(width: 8),
-                Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 8,
-                    vertical: 4,
-                  ),
-                  decoration: BoxDecoration(
-                    color: infoSoft,
-                    borderRadius: BorderRadius.circular(AppRadius.pill),
-                  ),
-                  child: Text(
-                    DailyWarSchedule.formatCountdown(
-                      untilNext.isNegative ? Duration.zero : untilNext,
+                  const SizedBox(width: 8),
+                  Container(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 8,
+                      vertical: 4,
                     ),
-                    style: AppTextStyles.caption().copyWith(
-                      color: info,
-                      fontWeight: FontWeight.w800,
-                      fontFeatures: const [FontFeature.tabularFigures()],
+                    decoration: BoxDecoration(
+                      color: infoSoft,
+                      borderRadius: BorderRadius.circular(AppRadius.pill),
+                    ),
+                    child: Text(
+                      DailyWarSchedule.formatCountdown(
+                        untilNext.isNegative ? Duration.zero : untilNext,
+                      ),
+                      style: AppTextStyles.caption().copyWith(
+                        color: info,
+                        fontWeight: FontWeight.w800,
+                        fontFeatures: const [FontFeature.tabularFigures()],
+                      ),
                     ),
                   ),
-                ),
-              ],
-            ),
+                ],
+              ),
+            ],
           ],
         ),
       ),

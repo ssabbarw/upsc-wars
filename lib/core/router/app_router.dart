@@ -48,6 +48,7 @@ import '../../features/daily_ca/screens/daily_ca_review_screen.dart';
 import '../../features/daily_ca/screens/daily_ca_review_edit_screen.dart';
 import '../../features/daily_ca/screens/daily_ca_results_screen.dart';
 import '../../features/daily_ca/screens/daily_ca_leaderboard_screen.dart';
+import '../../features/daily_war/providers/daily_war_providers.dart';
 import '../../features/daily_war/screens/daily_war_badges_screen.dart';
 import '../../features/daily_war/screens/daily_war_history_detail_screen.dart';
 import '../../features/daily_war/screens/daily_war_history_revise_screen.dart';
@@ -1297,6 +1298,10 @@ class _AppShell extends HookConsumerWidget {
       if (!wasSignedOut || !nowSignedIn) return;
       WidgetsBinding.instance.addPostFrameCallback((_) {
         if (!context.mounted) return;
+        // Tonight's attempt is keyed by uid — re-read it for the new account.
+        unawaited(
+          ref.read(dailyWarTodaySubmissionProvider.notifier).refresh(),
+        );
         final showCommunityTab =
             FeatureFlags.communityTab &&
             ref

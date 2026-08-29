@@ -88,23 +88,35 @@ class DailyWarHistoryDetailScreen extends HookConsumerWidget {
         final liveTonight =
             isTonight && snap.phase == DailyWarPhase.liveJoinable;
         final lobbyTonight = isTonight && snap.phase == DailyWarPhase.lobby;
+        // 9:10 → live end: too late to join, and `submitDailyWar` rejects
+        // unranked until the live window closes.
+        final lockedTonight =
+            isTonight && snap.phase == DailyWarPhase.liveLocked;
         final canAttempt =
-            sub == null && war.questionsVisible && !lobbyTonight;
+            sub == null &&
+            !lobbyTonight &&
+            !lockedTonight &&
+            (liveTonight || war.questionsVisible);
+        final warDate = DailyWarSchedule.parseIsoDate(dateId);
         final untilStart = DailyWarSchedule.startAtForDate(
-          DailyWarSchedule.parseIsoDate(dateId),
+          warDate,
         ).difference(snap.istNow);
         final untilStartLabel = DailyWarSchedule.formatCountdown(
           untilStart.isNegative ? Duration.zero : untilStart,
+        );
+        final unrankedOpensAt = DailyWarSchedule.formatClock(
+          DailyWarSchedule.liveEndsAt(
+            warDate,
+            questionCount: war.questionCount,
+          ),
         );
 
         Future<void> startAttempt() async {
           if (launching.value) return;
           launching.value = true;
           try {
-            final offset = effectiveServerTimeOffsetMs(
-              ref.read(dailyWarDebugClockProvider),
-              ref.read(serverTimeOffsetMsProvider).asData?.value ?? 0,
-            );
+            final offset =
+                ref.read(serverTimeOffsetMsProvider).asData?.value ?? 0;
             final ist = DailyWarSchedule.nowIst(
               DateTime.fromMillisecondsSinceEpoch(
                 DateTime.now().millisecondsSinceEpoch + offset,
@@ -196,6 +208,7 @@ class DailyWarHistoryDetailScreen extends HookConsumerWidget {
             const SizedBox(height: 20),
             if (canAttempt ||
                 lobbyTonight ||
+                lockedTonight ||
                 (sub == null && !war.questionsVisible)) ...[
               SizedBox(
                 width: double.infinity,
@@ -217,10 +230,12 @@ class DailyWarHistoryDetailScreen extends HookConsumerWidget {
                         ? 'Starting…'
                         : lobbyTonight
                         ? 'Starts in $untilStartLabel'
-                        : !war.questionsVisible
-                        ? 'Paper not published yet'
                         : liveTonight
                         ? (accountSignedIn ? 'Join now' : 'Sign in to join')
+                        : lockedTonight
+                        ? 'Late join closed · unranked at $unrankedOpensAt'
+                        : !war.questionsVisible
+                        ? 'Paper not published yet'
                         : (accountSignedIn
                               ? 'Start this day\'s test'
                               : 'Sign in to attempt'),

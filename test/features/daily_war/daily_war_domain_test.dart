@@ -3,6 +3,7 @@ import 'package:upsc_wars/features/daily_war/daily_war_constants.dart';
 import 'package:upsc_wars/features/daily_war/domain/daily_war_copy.dart';
 import 'package:upsc_wars/features/daily_war/domain/daily_war_curriculum.dart';
 import 'package:upsc_wars/features/daily_war/domain/daily_war_curriculum_picker.dart';
+import 'package:upsc_wars/features/daily_war/domain/daily_war_models.dart';
 import 'package:upsc_wars/features/daily_war/domain/daily_war_phase.dart';
 import 'package:upsc_wars/features/daily_war/domain/daily_war_phase_resolver.dart';
 import 'package:upsc_wars/features/daily_war/domain/daily_war_schedule.dart';
@@ -77,18 +78,17 @@ void main() {
       );
     });
 
-    test('offsetMsUntilIstWall aims DateTime.now() at 9:05 IST', () {
-      final offset = DailyWarSchedule.offsetMsUntilIstWall(
-        hour: 21,
-        minute: 5,
+    test('isOnOrAfterLobby is false before lobby and true once live', () {
+      final before = DateTime(2026, 7, 31, 20, 58, 59);
+      final lobby = DateTime(2026, 7, 31, 20, 59);
+      final live = DateTime(2026, 7, 31, 21, 5);
+      expect(DailyWarSchedule.isOnOrAfterLobby(before), isFalse);
+      expect(DailyWarSchedule.isOnOrAfterLobby(lobby), isTrue);
+      expect(DailyWarSchedule.isOnOrAfterLobby(live), isTrue);
+      expect(
+        DailyWarSchedule.isOnOrAfterLobby(DateTime(2026, 8, 2, 21, 5)),
+        isFalse,
       );
-      final utc = DateTime.fromMillisecondsSinceEpoch(
-        DateTime.now().millisecondsSinceEpoch + offset,
-        isUtc: true,
-      );
-      final ist = DailyWarSchedule.nowIst(utc);
-      expect(ist.hour, 21);
-      expect(ist.minute, 5);
     });
   });
 
@@ -290,6 +290,27 @@ void main() {
       expect(result.wrong, 1);
       expect(result.unanswered, 1);
       expect(result.points, closeTo(2 - 2 / 3, 0.01));
+    });
+  });
+
+  group('DailyWarDoc question UUIDs', () {
+    test('keeps string UUIDs from a JSON-like List<dynamic>', () {
+      final doc = DailyWarDoc.fromMap('2026-08-28', {
+        'kind': 'daily',
+        'status': 'questions_published',
+        'question_count': 15,
+        'question_uuids': <dynamic>['uuid-1', 'uuid-2'],
+        'topics': const [],
+      });
+      expect(doc.questionUuids, ['uuid-1', 'uuid-2']);
+      expect(doc.questionsVisible, isTrue);
+    });
+
+    test('stringifies non-String list entries instead of dropping them', () {
+      expect(
+        DailyWarDoc.parseQuestionUuids(<dynamic>[1, 'abc', null, '']),
+        ['1', 'abc'],
+      );
     });
   });
 

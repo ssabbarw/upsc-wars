@@ -75,10 +75,7 @@ class _DailyWarHomeCardBody extends HookConsumerWidget {
         .asData
         ?.value;
 
-    final offset = effectiveServerTimeOffsetMs(
-      ref.watch(dailyWarDebugClockProvider),
-      ref.watch(serverTimeOffsetMsProvider).asData?.value ?? 0,
-    );
+    final offset = ref.watch(serverTimeOffsetMsProvider).asData?.value ?? 0;
     final utc = DateTime.fromMillisecondsSinceEpoch(
       DateTime.now().millisecondsSinceEpoch + offset,
       isUtc: true,
@@ -147,20 +144,9 @@ class _DailyWarHomeCardBody extends HookConsumerWidget {
       tonightDoc: doc,
     );
 
-    final simulatingClock =
-        ref.watch(dailyWarDebugClockProvider) == DailyWarDebugClock.liveJoinable;
-
     return Padding(
       padding: const EdgeInsets.only(bottom: 12),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          if (simulatingClock)
-            const Padding(
-              padding: EdgeInsets.only(bottom: 8),
-              child: _DebugClockBanner(),
-            ),
-          Material(
+      child: Material(
         color: Colors.transparent,
         child: InkWell(
           onTap: isRest
@@ -176,8 +162,8 @@ class _DailyWarHomeCardBody extends HookConsumerWidget {
                   ),
                 )
               : snap.phase == DailyWarPhase.lobby ||
-                    snap.phase == DailyWarPhase.liveJoinable ||
-                    (snap.phase == DailyWarPhase.liveLocked &&
+                    ((snap.phase == DailyWarPhase.liveJoinable ||
+                            snap.phase == DailyWarPhase.liveLocked) &&
                         snap.submission == null)
               ? () => context.push(dailyWarLobbyRoute())
               : () => context.push(dailyWarHistoryRoute()),
@@ -221,33 +207,6 @@ class _DailyWarHomeCardBody extends HookConsumerWidget {
                     ),
             ),
           ),
-        ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class _DebugClockBanner extends StatelessWidget {
-  const _DebugClockBanner();
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-      decoration: BoxDecoration(
-        color: const Color(0xFFFFF4E6),
-        borderRadius: BorderRadius.circular(10),
-        border: Border.all(color: const Color(0xFFFFC46B)),
-      ),
-      child: const Text(
-        'DEBUG CLOCK · 9:05 PM IST (late join). Turn off in Settings → Static War.',
-        style: TextStyle(
-          fontSize: 12,
-          fontWeight: FontWeight.w600,
-          color: Color(0xFF9A5B00),
         ),
       ),
     );
@@ -306,8 +265,18 @@ class _HeroBody extends StatelessWidget {
           topics: topics,
           writersShown: writersShown,
           isGrand: isGrand,
+          entryClosed: true,
         );
       case DailyWarPhase.liveJoinable:
+        if (snap.submission != null) {
+          return _LiveLocked(
+            snap: snap,
+            topics: topics,
+            writersShown: writersShown,
+            isGrand: isGrand,
+            entryClosed: false,
+          );
+        }
         return _LiveJoinable(
           topics: topics,
           untilLateClose: untilLateClose,
@@ -708,12 +677,17 @@ class _LiveLocked extends StatelessWidget {
     required this.topics,
     required this.writersShown,
     required this.isGrand,
+    required this.entryClosed,
   });
 
   final DailyWarHomeSnapshot snap;
   final List<DailyWarTopicRef> topics;
   final String? writersShown;
   final bool isGrand;
+
+  /// False while late join is still open (9:00–9:10) — this card is only
+  /// reached in that window by users who already submitted.
+  final bool entryClosed;
 
   @override
   Widget build(BuildContext context) {
@@ -724,7 +698,7 @@ class _LiveLocked extends StatelessWidget {
       children: [
         _StatusRow(
           left: submitted ? 'YOU\'RE IN' : 'IN PROGRESS',
-          right: 'ENTRY CLOSED 9:10 PM',
+          right: entryClosed ? 'ENTRY CLOSED 9:10 PM' : 'STARTED 9:00 PM IST',
           pulse: true,
         ),
         const SizedBox(height: 12),
@@ -738,7 +712,9 @@ class _LiveLocked extends StatelessWidget {
         ),
         const SizedBox(height: 6),
         Text(
-          submitted ? DailyWarCopy.compactTopics(topics) : 'Late join closed.',
+          submitted
+              ? DailyWarCopy.compactTopics(topics)
+              : (entryClosed ? 'Late join closed.' : 'Entry closes at 9:10.'),
           style: DwText.body(),
         ),
         if (!submitted && writersShown != null) ...[
@@ -773,19 +749,25 @@ class _ResultsPending extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final submitted = snap.submission != null;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         _StatusRow(left: 'RESULTS', right: 'AIR AT 9:40 PM'),
         const SizedBox(height: 12),
         Text(
-          snap.submission != null
+          submitted
               ? 'Your score is in · we\'ll notify you when AIR is ready'
               : 'Tonight\'s battle is over · AIR at 9:40 PM',
           style: DwText.topicCompact(),
         ),
         const SizedBox(height: 8),
         Text(DailyWarCopy.compactTopics(topics), style: DwText.meta()),
+        const SizedBox(height: 14),
+        _PrimaryCta(
+          label: submitted ? 'Open your attempt' : 'Attempt unranked',
+          filled: !submitted,
+        ),
       ],
     );
   }
@@ -877,7 +859,8 @@ class _ResultSatOut extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final next = snap.doc?.nextTopics ?? const <DailyWarTopicRef>[];
-    final practiced = snap.submission?.mode == 'unranked';
+    final sub = snap.submission;
+    final practiced = sub?.mode == 'unranked';
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -890,15 +873,21 @@ class _ResultSatOut extends StatelessWidget {
           ),
         const SizedBox(height: 10),
         Text(
-          practiced
-              ? 'You practiced unranked · ${snap.submission!.score.toStringAsFixed(2)}'
-              : 'You sat this one out',
+          sub == null
+              ? 'You sat this one out'
+              : practiced
+              ? 'You practiced unranked · ${sub.score.toStringAsFixed(2)}'
+              // Live attempt the rank job hasn't placed yet.
+              : 'Your attempt is in · rank pending',
           style: DwText.topicCompact(),
         ),
         const SizedBox(height: 14),
-        const _PrimaryCta(label: 'See tonight\'s paper', filled: false),
-        const SizedBox(height: 8),
-        const _PrimaryCta(label: 'Unranked attempt'),
+        if (sub == null) ...[
+          const _PrimaryCta(label: 'See tonight\'s paper', filled: false),
+          const SizedBox(height: 8),
+          const _PrimaryCta(label: 'Unranked attempt'),
+        ] else
+          const _PrimaryCta(label: 'See your attempt'),
         if (next.isNotEmpty) ...[
           const SizedBox(height: 12),
           Text('Tomorrow · 9:00 PM IST', style: DwText.meta()),

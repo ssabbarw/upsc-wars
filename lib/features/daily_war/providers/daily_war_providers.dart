@@ -34,8 +34,13 @@ Future<DailyWarLocalCache> dailyWarLocalCache(Ref ref) async {
 }
 
 /// Today's War dateId (IST) using server-corrected clock.
+///
+/// Watches the UI tick so the date rolls over at midnight while the app stays
+/// open — the RTDB offset stream can go a whole night without emitting. The
+/// returned String dedupes, so dependents only rebuild on an actual new day.
 @Riverpod(keepAlive: true)
 String dailyWarTodayDateId(Ref ref) {
+  ref.watch(dailyWarUiTickProvider);
   final utc = ref.watch(serverNowUtcProvider);
   final ist = DailyWarSchedule.nowIst(utc);
   return DailyWarSchedule.formatIsoDate(DailyWarSchedule.warDateFor(ist));
@@ -66,6 +71,47 @@ class DailyWarSessionHydrated extends _$DailyWarSessionHydrated {
 /// Public war docs are identical for every user — key by [dateId] only.
 String _warHydrateKey(String dateId) => 'war:$dateId';
 
+DateTime _istNow(Ref ref) {
+  final offset = ref.read(serverTimeOffsetMsProvider).asData?.value ?? 0;
+  return DailyWarSchedule.nowIst(
+    DateTime.fromMillisecondsSinceEpoch(
+      DateTime.now().millisecondsSinceEpoch + offset,
+      isUtc: true,
+    ),
+  );
+}
+
+/// Morning cache with empty `question_uuids` must not be treated as final
+/// once the 8:59 publish window opens.
+bool _paperAwaitingPublish({
+  required DailyWarDoc? doc,
+  required String dateId,
+  required DateTime ist,
+}) {
+  if (doc != null && doc.questionUuids.isNotEmpty) return false;
+  final todayId = DailyWarSchedule.formatIsoDate(
+    DailyWarSchedule.warDateFor(ist),
+  );
+  if (dateId != todayId) return false;
+  return DailyWarSchedule.isOnOrAfterLobby(ist);
+}
+
+/// Force-read a public war doc from Firestore and update today's provider
+/// when [dateId] is tonight.
+Future<DailyWarDoc?> refreshDailyWarDoc(Ref ref, String dateId) async {
+  final cache = await ref.read(dailyWarLocalCacheProvider.future);
+  final doc = await _fetchWarDoc(
+    ref: ref,
+    cache: cache,
+    dateId: dateId,
+    force: true,
+  );
+  if (dateId == ref.read(dailyWarTodayDateIdProvider)) {
+    ref.read(dailyWarTodayDocProvider.notifier).applyFetched(doc);
+  }
+  return doc;
+}
+
 /// Firestore once per session (or [force]); otherwise SharedPreferences cache.
 Future<DailyWarDoc?> _fetchWarDoc({
   required Ref ref,
@@ -76,7 +122,15 @@ Future<DailyWarDoc?> _fetchWarDoc({
   final key = _warHydrateKey(dateId);
   final hydrated = ref.read(dailyWarSessionHydratedProvider.notifier);
   final cached = cache.getWar(dateId);
-  if (!force && hydrated.hasKey(key)) return cached;
+  if (!force &&
+      hydrated.hasKey(key) &&
+      !_paperAwaitingPublish(
+        doc: cached,
+        dateId: dateId,
+        ist: _istNow(ref),
+      )) {
+    return cached;
+  }
 
   if (!force) {
     final inflight = _warDocInflight[dateId];
@@ -109,17 +163,32 @@ Future<DailyWarDoc?> _fetchWarDocFromServer({
 }) async {
   final hydrated = ref.read(dailyWarSessionHydratedProvider.notifier);
   try {
-    final snap = await DailyWarFirestorePaths.warDoc(dateId).get(
-      const GetOptions(source: Source.server),
-    );
+    DocumentSnapshot<Map<String, dynamic>> snap;
+    try {
+      snap = await DailyWarFirestorePaths.warDoc(dateId).get(
+        const GetOptions(source: Source.server),
+      );
+    } on Object {
+      snap = await DailyWarFirestorePaths.warDoc(dateId).get();
+    }
     final doc = _warDocFromSnap(dateId, snap);
     if (doc != null) await cache.putWar(doc);
-    hydrated.mark(key);
+    final awaiting = _paperAwaitingPublish(
+      doc: doc ?? cached,
+      dateId: dateId,
+      ist: _istNow(ref),
+    );
+    if (!awaiting) hydrated.mark(key);
     return doc ?? cached;
-  } on Object catch (e, st) {
+  } on Object catch (e) {
     debugPrint('dailyWar fetch war $dateId failed: $e');
-    debugPrintStack(stackTrace: st);
-    hydrated.mark(key);
+    if (!_paperAwaitingPublish(
+      doc: cached,
+      dateId: dateId,
+      ist: _istNow(ref),
+    )) {
+      hydrated.mark(key);
+    }
     return cached;
   }
 }
@@ -166,12 +235,18 @@ Future<DailyWarDoc?> _buildWarDoc({
   final cache = await ref.watch(dailyWarLocalCacheProvider.future);
   final key = _warHydrateKey(dateId);
   final hydrated = ref.read(dailyWarSessionHydratedProvider.notifier);
-  if (hydrated.hasKey(key)) return cache.getWar(dateId);
-
   final cached = cache.getWar(dateId);
+  final awaiting = _paperAwaitingPublish(
+    doc: cached,
+    dateId: dateId,
+    ist: _istNow(ref),
+  );
+  if (hydrated.hasKey(key) && !awaiting) return cached;
+
   if (cached != null) {
-    // Instant local paint; claim session + one background hydrate.
-    hydrated.mark(key);
+    // Instant local paint; one background hydrate. Don't freeze an empty
+    // paper after lobby open — questions publish at 20:59.
+    if (!awaiting) hydrated.mark(key);
     unawaited(() async {
       final doc = await _fetchWarDoc(
         ref: ref,
@@ -215,6 +290,10 @@ class DailyWarTodayDoc extends _$DailyWarTodayDoc {
     );
     state = AsyncValue.data(doc);
     return doc;
+  }
+
+  void applyFetched(DailyWarDoc? doc) {
+    state = AsyncValue.data(doc);
   }
 }
 
@@ -309,6 +388,28 @@ class DailyWarHomeSnapshot {
   bool get warUnplayed => submission == null;
 }
 
+/// Wall-clock tick so [dailyWarHomeSnapshot] advances lobby / live phases.
+/// Offset from RTDB does not change every second.
+final dailyWarUiTickProvider = StreamProvider<int>((ref) async* {
+  var i = 0;
+  while (true) {
+    yield i++;
+    final ist = DailyWarSchedule.nowIst();
+    final warDate = DailyWarSchedule.warDateFor(ist);
+    if (DailyWarSchedule.isWarOffDay(warDate)) {
+      await Future<void>.delayed(const Duration(minutes: 5));
+      continue;
+    }
+    final lobby = DailyWarSchedule.lobbyOpensAt(warDate);
+    final liveEnd = DailyWarSchedule.liveEndsAt(warDate);
+    final nearLive = !ist.isBefore(
+          lobby.subtract(const Duration(minutes: 5)),
+        ) &&
+        ist.isBefore(liveEnd.add(const Duration(minutes: 5)));
+    await Future<void>.delayed(Duration(seconds: nearLive ? 1 : 30));
+  }
+});
+
 /// Yesterday's War for the H7 missed strip + last-night social proof.
 class DailyWarYesterdaySnapshot {
   const DailyWarYesterdaySnapshot({
@@ -329,12 +430,18 @@ class DailyWarYesterdaySnapshot {
 
 @Riverpod(keepAlive: true)
 DailyWarHomeSnapshot dailyWarHomeSnapshot(Ref ref) {
-  final utc = ref.watch(serverNowUtcProvider);
-  final ist = DailyWarSchedule.nowIst(utc);
-  final dateId = DailyWarSchedule.formatIsoDate(
-    DailyWarSchedule.warDateFor(ist),
+  ref.watch(dailyWarUiTickProvider);
+  final offset = ref.watch(serverTimeOffsetMsProvider).asData?.value ?? 0;
+  final utc = DateTime.fromMillisecondsSinceEpoch(
+    DateTime.now().millisecondsSinceEpoch + offset,
+    isUtc: true,
   );
-  final doc = ref.watch(dailyWarTodayDocProvider).asData?.value;
+  final ist = DailyWarSchedule.nowIst(utc);
+  // Same source the doc/submission providers are keyed by, so a midnight
+  // rollover can't leave yesterday's paper labelled as tonight's.
+  final dateId = ref.watch(dailyWarTodayDateIdProvider);
+  final fetched = ref.watch(dailyWarTodayDocProvider).asData?.value;
+  final doc = fetched?.dateId == dateId ? fetched : null;
   final submission = ref.watch(dailyWarTodaySubmissionProvider).asData?.value;
   final phase = DailyWarPhaseResolver.resolve(
     referenceIst: ist,
@@ -356,6 +463,7 @@ DailyWarHomeSnapshot dailyWarHomeSnapshot(Ref ref) {
 
 @Riverpod(keepAlive: true)
 String dailyWarYesterdayDateId(Ref ref) {
+  ref.watch(dailyWarUiTickProvider);
   final utc = ref.watch(serverNowUtcProvider);
   final ist = DailyWarSchedule.nowIst(utc);
   // Skip Sunday — previous War night (Sat when today is Mon/Sun).

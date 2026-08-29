@@ -102,10 +102,7 @@ class DailyWarDoc {
           .toList();
     }
 
-    final uuidsRaw = map['question_uuids'];
-    final uuids = uuidsRaw is List
-        ? uuidsRaw.whereType<String>().toList()
-        : const <String>[];
+    final uuids = parseQuestionUuids(map['question_uuids']);
 
     return DailyWarDoc(
       dateId: dateId,
@@ -120,6 +117,16 @@ class DailyWarDoc {
       nextTopics: parseTopics(map['next_topics']),
       rankedAtMs: (map['ranked_at_ms'] as num?)?.toInt(),
     );
+  }
+
+  /// Firestore / JSON arrays are `List<dynamic>`; don't drop UUIDs with
+  /// `whereType<String>()` (that leaves the paper looking unpublished).
+  static List<String> parseQuestionUuids(dynamic raw) {
+    if (raw is! List) return const [];
+    return raw
+        .map((e) => '$e'.trim())
+        .where((s) => s.isNotEmpty && s != 'null')
+        .toList(growable: false);
   }
 }
 

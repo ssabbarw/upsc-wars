@@ -10,7 +10,6 @@ import '../data/daily_war_cloud_service.dart';
 import '../domain/daily_war_copy.dart';
 import '../domain/daily_war_schedule.dart';
 import '../providers/daily_war_providers.dart';
-import '../providers/server_clock_provider.dart';
 import 'daily_war_admin_preview_screen.dart';
 
 /// Super-user ops for tonight's Daily War paper (generate / review / publish).
@@ -50,27 +49,6 @@ class DailyWarAdminScreen extends HookConsumerWidget {
             '(not the public doc). Today: $todayId',
             style: AppTextStyles.bodySm().copyWith(
               color: scheme.onSurfaceVariant,
-            ),
-          ),
-          const SizedBox(height: AppSpacing.sm),
-          Card(
-            child: SwitchListTile(
-              contentPadding: const EdgeInsets.symmetric(horizontal: 16),
-              title: const Text('Simulate 9:05 PM IST'),
-              subtitle: const Text(
-                'Late-join window on today’s paper. Publish first, keep the '
-                'app open, then Join. Does not persist after kill.',
-              ),
-              value:
-                  ref.watch(dailyWarDebugClockProvider) ==
-                  DailyWarDebugClock.liveJoinable,
-              onChanged: (on) {
-                ref.read(dailyWarDebugClockProvider.notifier).set(
-                      on
-                          ? DailyWarDebugClock.liveJoinable
-                          : DailyWarDebugClock.off,
-                    );
-              },
             ),
           ),
           const SizedBox(height: AppSpacing.sm),

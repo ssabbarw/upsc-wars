@@ -65,10 +65,7 @@ class TodayHubSection extends HookConsumerWidget {
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
-    final offset = effectiveServerTimeOffsetMs(
-      ref.watch(dailyWarDebugClockProvider),
-      ref.watch(serverTimeOffsetMsProvider).asData?.value ?? 0,
-    );
+    final offset = ref.watch(serverTimeOffsetMsProvider).asData?.value ?? 0;
     final tick = useState(0);
     useEffect(() {
       final t = Timer.periodic(const Duration(seconds: 1), (_) => tick.value++);

@@ -48,7 +48,7 @@ final class KillSwitchProvider
   }
 }
 
-String _$killSwitchHash() => r'68de48e42c5afd1777011c975a261e6b97b6c7d6';
+String _$killSwitchHash() => r'f09ad40962bfe18e3234d58a8c2bbf46071e783b';
 
 /// Whether the Community tab should be shown (after [killSwitchProvider] fetch).
 ///

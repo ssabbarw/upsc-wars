@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -11,6 +12,7 @@ import '../../../core/domain/entities/session_config.dart';
 import '../../../core/providers/catalog_providers.dart';
 import '../../../shared/auth/ensure_account_sign_in.dart';
 import '../daily_war_constants.dart';
+import '../data/daily_war_firestore_paths.dart';
 import '../providers/daily_war_providers.dart';
 import 'daily_war_models.dart';
 import 'daily_war_schedule.dart';
@@ -26,14 +28,29 @@ Future<void> startDailyWarAttempt({
   required bool unranked,
   required DateTime istNow,
 }) async {
-  if (doc.questionUuids.isEmpty) {
+  var paper = doc;
+  try {
+    if (paper.questionUuids.isEmpty) {
+      paper = await _latestPaper(ref: ref, doc: paper);
+    }
+    if (paper.questionUuids.isEmpty &&
+        DailyWarSchedule.isOnOrAfterLobby(istNow)) {
+      await Future<void>.delayed(const Duration(seconds: 2));
+      paper = await _latestPaper(ref: ref, doc: paper);
+    }
+  } on Object catch (e) {
     if (!context.mounted) return;
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
+      SnackBar(content: Text('Could not load tonight\'s paper: $e')),
+    );
+    return;
+  }
+  if (!context.mounted) return;
+  if (paper.questionUuids.isEmpty) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
         content: Text(
-          unranked
-              ? 'Paper not available yet.'
-              : 'Questions publish just before 9 PM. Try again shortly.',
+          'Tonight\'s paper isn\'t loaded yet. Try again in some time.',
         ),
       ),
     );
@@ -76,7 +93,7 @@ Future<void> startDailyWarAttempt({
     return;
   }
 
-  final warDate = DailyWarSchedule.parseIsoDate(doc.dateId);
+  final warDate = DailyWarSchedule.parseIsoDate(paper.dateId);
   final start = DailyWarSchedule.startAtForDate(warDate);
   if (!unranked && istNow.isBefore(start)) {
     if (!context.mounted) return;
@@ -91,9 +108,9 @@ Future<void> startDailyWarAttempt({
     return;
   }
 
-  final qCount = doc.questionCount < 1
+  final qCount = paper.questionCount < 1
       ? DailyWarSchedule.questionCountForDate(warDate)
-      : doc.questionCount;
+      : paper.questionCount;
   final windowSecs = DailyWarSchedule.liveWindowMinutesFor(qCount) * 60;
   final liveEnd = DailyWarSchedule.liveEndsAt(warDate, questionCount: qCount);
   final remainingSecs = unranked
@@ -108,11 +125,11 @@ Future<void> startDailyWarAttempt({
         subject: DailyWarConstants.sessionSubject,
         topic: doc.dateId,
         mode: 'exam',
-        questionCount: doc.questionUuids.length,
+        questionCount: paper.questionUuids.length,
         isTimed: true,
         timeLimitSecs: remainingSecs,
         language: lang,
-        specificQuestionUuids: doc.questionUuids,
+        specificQuestionUuids: paper.questionUuids,
         analyticsFeatureKey: unranked
             ? DailyWarConstants.analyticsUnranked
             : DailyWarConstants.analyticsLive,
@@ -124,7 +141,7 @@ Future<void> startDailyWarAttempt({
         DailyWarAttemptedEvent(
           dateId: doc.dateId,
           mode: unranked ? 'unranked' : 'live',
-          isGrand: doc.isGrand,
+          isGrand: paper.isGrand,
         ),
       ),
     );
@@ -136,4 +153,51 @@ Future<void> startDailyWarAttempt({
       context,
     ).showSnackBar(SnackBar(content: Text('Could not start War: $e')));
   }
+}
+
+Future<DailyWarDoc> _latestPaper({
+  required WidgetRef ref,
+  required DailyWarDoc doc,
+}) async {
+  DailyWarDoc? fresh;
+  try {
+    fresh = await _fetchPublishedWar(doc.dateId);
+  } on Object catch (e) {
+    debugPrint('dailyWar latestPaper ${doc.dateId}: $e');
+  }
+  if (fresh == null) return doc;
+
+  try {
+    final cache = await ref.read(dailyWarLocalCacheProvider.future);
+    await cache.putWar(fresh);
+  } on Object catch (e) {
+    debugPrint('dailyWar latestPaper cache: $e');
+  }
+
+  // Don't write the Riverpod doc during this tap — History/home watch it and
+  // a sync notify can throw "markNeedsBuild during build".
+  final todayId = ref.read(dailyWarTodayDateIdProvider);
+  if (fresh.dateId == todayId) {
+    final captured = fresh;
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      try {
+        ref.read(dailyWarTodayDocProvider.notifier).applyFetched(captured);
+      } on Object catch (e) {
+        debugPrint('dailyWar latestPaper bind: $e');
+      }
+    });
+  }
+  return fresh;
+}
+
+Future<DailyWarDoc?> _fetchPublishedWar(String dateId) async {
+  final warRef = DailyWarFirestorePaths.warDoc(dateId);
+  DocumentSnapshot<Map<String, dynamic>> snap;
+  try {
+    snap = await warRef.get(const GetOptions(source: Source.server));
+  } on Object {
+    snap = await warRef.get();
+  }
+  if (!snap.exists || snap.data() == null) return null;
+  return DailyWarDoc.fromMap(dateId, snap.data()!);
 }

@@ -52,16 +52,28 @@ String _$dailyWarLocalCacheHash() =>
     r'9eef82da6fe1f7771f7fb635b9be582d97dbef29';
 
 /// Today's War dateId (IST) using server-corrected clock.
+///
+/// Watches the UI tick so the date rolls over at midnight while the app stays
+/// open — the RTDB offset stream can go a whole night without emitting. The
+/// returned String dedupes, so dependents only rebuild on an actual new day.
 
 @ProviderFor(dailyWarTodayDateId)
 final dailyWarTodayDateIdProvider = DailyWarTodayDateIdProvider._();
 
 /// Today's War dateId (IST) using server-corrected clock.
+///
+/// Watches the UI tick so the date rolls over at midnight while the app stays
+/// open — the RTDB offset stream can go a whole night without emitting. The
+/// returned String dedupes, so dependents only rebuild on an actual new day.
 
 final class DailyWarTodayDateIdProvider
     extends $FunctionalProvider<String, String, String>
     with $Provider<String> {
   /// Today's War dateId (IST) using server-corrected clock.
+  ///
+  /// Watches the UI tick so the date rolls over at midnight while the app stays
+  /// open — the RTDB offset stream can go a whole night without emitting. The
+  /// returned String dedupes, so dependents only rebuild on an actual new day.
   DailyWarTodayDateIdProvider._()
     : super(
         from: null,
@@ -96,7 +108,7 @@ final class DailyWarTodayDateIdProvider
 }
 
 String _$dailyWarTodayDateIdHash() =>
-    r'52f0be5e82ac693db9a9d32b5233067549162214';
+    r'8a5bad4971d5efc50d4b78972309ef9cfb9b9f71';
 
 /// Keys hydrated from Firestore once per app session (no snapshot listeners).
 
@@ -185,7 +197,7 @@ final class DailyWarTodayDocProvider
   DailyWarTodayDoc create() => DailyWarTodayDoc();
 }
 
-String _$dailyWarTodayDocHash() => r'2c69c218a427a377620aed763af02f8fee6ef5db';
+String _$dailyWarTodayDocHash() => r'b0a0019c2db4a38f6b883c983b74afe208cb06ef';
 
 /// Today's War public doc — one server read per app open, then local only.
 
@@ -237,7 +249,7 @@ final class DailyWarTodaySubmissionProvider
 }
 
 String _$dailyWarTodaySubmissionHash() =>
-    r'db4593f97518e638ab0481c0c78c47978b698119';
+    r'e31fa256fba8138233928b88f995e0fe7c06c886';
 
 /// Signed-in user's submission for today — one server read per app open.
 
@@ -307,7 +319,7 @@ final class DailyWarHomeSnapshotProvider
 }
 
 String _$dailyWarHomeSnapshotHash() =>
-    r'd09c6761bf18c69a4970a02e161bd42d1b8bf905';
+    r'a730045fc5d94acd8061b9eddf76e2b1d9b98ca1';
 
 @ProviderFor(dailyWarYesterdayDateId)
 final dailyWarYesterdayDateIdProvider = DailyWarYesterdayDateIdProvider._();
@@ -349,7 +361,7 @@ final class DailyWarYesterdayDateIdProvider
 }
 
 String _$dailyWarYesterdayDateIdHash() =>
-    r'fbd2c03a0c144691da837548cdc3c743edb599dc';
+    r'c485aec38aa960fa761974ef0125055a5d1ed272';
 
 @ProviderFor(DailyWarYesterdayDoc)
 final dailyWarYesterdayDocProvider = DailyWarYesterdayDocProvider._();
