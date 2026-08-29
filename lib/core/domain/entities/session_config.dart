@@ -1,3 +1,16 @@
+/// Thrown when [SessionConfig.requireAllSpecificUuids] is set and the local
+/// question bank cannot supply every requested UUID.
+class MissingQuestionsException implements Exception {
+  const MissingQuestionsException({required this.wanted, required this.found});
+
+  final int wanted;
+  final int found;
+
+  @override
+  String toString() =>
+      'MissingQuestionsException: found $found of $wanted questions locally';
+}
+
 class SessionConfig {
   const SessionConfig({
     required this.subject,
@@ -11,6 +24,7 @@ class SessionConfig {
     this.specificQuestionUuids,
     this.analyticsFeatureKey,
     this.dangerReviseHistoryConfidence,
+    this.requireAllSpecificUuids = false,
   });
 
   final String subject;
@@ -41,6 +55,11 @@ class SessionConfig {
   /// opens with their pick and the correct answer visible.
   final String? dangerReviseHistoryConfidence;
 
+  /// Fail instead of silently shortening the paper when the bundled question
+  /// bank is missing some of [specificQuestionUuids]. Set this for scored
+  /// all-India papers, where a short paper would mean an unfair rank.
+  final bool requireAllSpecificUuids;
+
   SessionConfig copyWith({
     String? subject,
     String? topic,
@@ -53,6 +72,7 @@ class SessionConfig {
     List<String>? specificQuestionUuids,
     String? analyticsFeatureKey,
     String? dangerReviseHistoryConfidence,
+    bool? requireAllSpecificUuids,
   }) {
     return SessionConfig(
       subject: subject ?? this.subject,
@@ -67,6 +87,8 @@ class SessionConfig {
       analyticsFeatureKey: analyticsFeatureKey ?? this.analyticsFeatureKey,
       dangerReviseHistoryConfidence:
           dangerReviseHistoryConfidence ?? this.dangerReviseHistoryConfidence,
+      requireAllSpecificUuids:
+          requireAllSpecificUuids ?? this.requireAllSpecificUuids,
     );
   }
 }

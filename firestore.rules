@@ -210,8 +210,11 @@ service cloud.firestore {
         allow read, write: if false;
       }
 
+      /// Owner only — these carry the learner's `answers` map, which a rival
+      /// could otherwise list mid-paper and copy. Standings come from
+      /// `meta/leaderboard`; every cross-user read is Admin SDK.
       match /submissions/{uid} {
-        allow read: if signedIn();
+        allow read: if signedIn() && request.auth.uid == uid;
         allow write: if false;
       }
 
@@ -337,8 +340,11 @@ service cloud.firestore {
         allow read, write: if false;
       }
 
+      /// Owner only — these carry the warrior's `answers` map, which a rival
+      /// could otherwise list mid-war and copy. Standings come from
+      /// `meta/leaderboard`; every cross-user read is Admin SDK.
       match /submissions/{uid} {
-        allow read: if signedIn();
+        allow read: if signedIn() && request.auth.uid == uid;
         allow write: if false;
       }
 

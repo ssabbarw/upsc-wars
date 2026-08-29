@@ -130,6 +130,9 @@ Future<void> startDailyWarAttempt({
         timeLimitSecs: remainingSecs,
         language: lang,
         specificQuestionUuids: paper.questionUuids,
+        // A short paper would still be scored against the full answer key, so
+        // refuse rather than hand out an unfair rank.
+        requireAllSpecificUuids: true,
         analyticsFeatureKey: unranked
             ? DailyWarConstants.analyticsUnranked
             : DailyWarConstants.analyticsLive,
@@ -147,6 +150,17 @@ Future<void> startDailyWarAttempt({
     );
     if (!context.mounted) return;
     context.go('/test/$sessionId');
+  } on MissingQuestionsException catch (e) {
+    debugPrint('dailyWar paper ${paper.dateId}: $e');
+    if (!context.mounted) return;
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
+        content: Text(
+          'Update the app to attempt tonight\'s War — some of this paper '
+          'isn\'t in your question bank yet.',
+        ),
+      ),
+    );
   } on Object catch (e) {
     if (!context.mounted) return;
     ScaffoldMessenger.of(

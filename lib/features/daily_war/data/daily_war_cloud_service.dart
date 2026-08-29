@@ -13,6 +13,7 @@ class DailyWarSubmitResult {
     this.mode,
     this.badges = const [],
     this.errorMessage,
+    this.errorReason,
   });
 
   final bool ok;
@@ -23,6 +24,10 @@ class DailyWarSubmitResult {
   final String? mode;
   final List<String> badges;
   final String? errorMessage;
+
+  /// Machine-readable `reason` from the function's error details, so callers
+  /// don't have to match on message text.
+  final String? errorReason;
 }
 
 /// Callable client for Daily War Cloud Functions (`asia-south1`).
@@ -70,9 +75,11 @@ class DailyWarCloudService {
     } on FirebaseFunctionsException catch (e, st) {
       debugPrint('DailyWarCloudService.submit: ${e.code} ${e.message}');
       debugPrintStack(stackTrace: st);
+      final details = e.details;
       return DailyWarSubmitResult(
         ok: false,
         errorMessage: e.message ?? e.code,
+        errorReason: details is Map ? details['reason']?.toString() : null,
       );
     } on Object catch (e, st) {
       debugPrint('DailyWarCloudService.submit: $e');

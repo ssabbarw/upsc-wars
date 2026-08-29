@@ -39,6 +39,11 @@ function liveEndMsFor(dateId, questionCount) {
   return startMs + liveWindowMinutesFor(questionCount) * 60 * 1000;
 }
 
+/// The client hands the exam exactly the time left in the window, so an
+/// auto-submit at the deadline always arrives a little after it. Ranking runs
+/// at 21:40, so a couple of minutes of slack costs nothing.
+const LIVE_SUBMIT_GRACE_MS = 2 * 60 * 1000;
+
 function rtdbCountsRef(dateId) {
   return admin.database().ref(`${RTDB_COUNTS}/${dateId}`);
 }
@@ -406,6 +411,15 @@ function tierIdForDays(streakDays) {
   return ["recruit", "cadet", "officer", "commander", "marshal"][index];
 }
 
+/// Left nothing blank. Shared by `no_blind_spots` and `fastest_finger` so a
+/// blank-and-submit run can't beat a genuine fast finish.
+function attemptedEveryQuestion(row, questionCount) {
+  return (
+    (row.unanswered || 0) === 0 &&
+    (row.correct || 0) + (row.wrong || 0) >= questionCount
+  );
+}
+
 function nightAwardsForRow(row, { questionCount, warStartMs, fastestUid, climberUids }) {
   const badges = [];
   if (row.air === 1) badges.push("rank_1_champion");
@@ -421,7 +435,7 @@ function nightAwardsForRow(row, { questionCount, warStartMs, fastestUid, climber
     unanswered === 0
   ) {
     badges.push("clean_sweep");
-  } else if (unanswered === 0 && correct + wrong >= questionCount) {
+  } else if (attemptedEveryQuestion(row, questionCount)) {
     badges.push("no_blind_spots");
   }
   if (fastestUid && row.uid === fastestUid) badges.push("fastest_finger");
@@ -575,6 +589,7 @@ async function rankWar(dateId) {
   let fastestUid = null;
   let fastestMs = Infinity;
   for (const row of rows) {
+    if (!attemptedEveryQuestion(row, questionCount)) continue;
     if (row.elapsed_ms > 0 && row.elapsed_ms < fastestMs) {
       fastestMs = row.elapsed_ms;
       fastestUid = row.uid;
@@ -877,10 +892,18 @@ exports.submitDailyWar = onCall(
     const liveEndMs = liveEndMsFor(dateId, qCount);
 
     if (mode === "live") {
-      if (now < startMs || now > liveEndMs) {
+      if (now < startMs) {
+        throw new HttpsError(
+          "failed-precondition",
+          "The War hasn't started yet.",
+          { reason: "live_not_started" },
+        );
+      }
+      if (now > liveEndMs + LIVE_SUBMIT_GRACE_MS) {
         throw new HttpsError(
           "failed-precondition",
           "Live submissions only during the War window.",
+          { reason: "live_window_closed" },
         );
       }
     } else {
@@ -888,6 +911,7 @@ exports.submitDailyWar = onCall(
         throw new HttpsError(
           "failed-precondition",
           "Unranked attempts open after the live window.",
+          { reason: "unranked_not_open" },
         );
       }
     }
@@ -916,7 +940,12 @@ exports.submitDailyWar = onCall(
         correct: breakdown.correct,
         wrong: breakdown.wrong,
         unanswered: breakdown.unanswered,
-        elapsed_ms: Math.max(0, Math.min(elapsedMs, 30 * 60 * 1000)),
+        // Cap at the paper's own window, not a flat 30 min — the 25-question
+        // Grand War runs 34, and ranking breaks score ties on elapsed_ms.
+        elapsed_ms: Math.max(
+          0,
+          Math.min(elapsedMs, liveWindowMinutesFor(qCount) * 60 * 1000),
+        ),
         answers,
         display_name: displayName,
         streak_days: warStreakDays,

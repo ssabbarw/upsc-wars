@@ -39,6 +39,7 @@ class DailyWarResultsScreen extends HookConsumerWidget {
     final questionCount = useState<int>(15);
     final warDateId = useState<String>('');
     final error = useState<String?>(null);
+    final demotedToUnranked = useState<bool>(false);
 
     useEffect(() {
       var cancelled = false;
@@ -90,16 +91,36 @@ class DailyWarResultsScreen extends HookConsumerWidget {
           }
 
           const cloud = DailyWarCloudService();
-          final result = await cloud.submit(
+          var effectiveMode = mode;
+          var result = await cloud.submit(
             dateId: dateId,
             answers: answers,
             elapsedMs: elapsedMs,
-            mode: mode,
+            mode: effectiveMode,
             displayName: displayName,
             warStreakDays: streakDays,
             tierId: tierId,
           );
           if (cancelled) return;
+
+          // The exam clock only advances while the app is in the foreground, so
+          // an interrupted attempt can finish long after the live window has
+          // closed. Keep the score as an unranked attempt rather than losing
+          // the whole paper.
+          if (!result.ok && result.errorReason == 'live_window_closed') {
+            effectiveMode = 'unranked';
+            result = await cloud.submit(
+              dateId: dateId,
+              answers: answers,
+              elapsedMs: elapsedMs,
+              mode: effectiveMode,
+              displayName: displayName,
+            );
+            if (cancelled) return;
+            if (result.ok) {
+              demotedToUnranked.value = true;
+            }
+          }
           if (!result.ok) {
             final already =
                 (result.errorMessage ?? '').toLowerCase().contains('already');
@@ -147,14 +168,14 @@ class DailyWarResultsScreen extends HookConsumerWidget {
               ref,
               DailyWarSubmittedEvent(
                 dateId: dateId,
-                mode: mode,
+                mode: effectiveMode,
                 isGrand: DailyWarSchedule.isGrandWarDay(warDate),
                 score: result.score ?? 0,
               ),
             ),
           );
 
-          if (mode == 'live') {
+          if (effectiveMode == 'live') {
             final prefs = await ref.read(prefsServiceProvider.future);
             DailyWarStreak.recordLivePlay(prefs: prefs, dateId: dateId);
             ref.invalidate(dailyWarStreakCountProvider);
@@ -177,7 +198,7 @@ class DailyWarResultsScreen extends HookConsumerWidget {
             } else {
               synced = DailyWarSubmission(
                 uid: uid,
-                mode: mode,
+                mode: effectiveMode,
                 score: result.score ?? 0,
                 correct: result.correct ?? 0,
                 wrong: result.wrong ?? 0,
@@ -185,8 +206,8 @@ class DailyWarResultsScreen extends HookConsumerWidget {
                 elapsedMs: elapsedMs,
                 displayName: displayName,
                 answers: answers,
-                streakDays: streakDays ?? 0,
-                tierId: tierId,
+                streakDays: effectiveMode == 'live' ? (streakDays ?? 0) : 0,
+                tierId: effectiveMode == 'live' ? tierId : null,
                 badges: result.badges,
                 submittedAtMs: DateTime.now().millisecondsSinceEpoch,
               );
@@ -265,6 +286,7 @@ class DailyWarResultsScreen extends HookConsumerWidget {
             nextTopics: nextTopics.value,
             participantCount: participantCount.value,
             questionCount: questionCount.value,
+            demotedToUnranked: demotedToUnranked.value,
           ),
         },
       ),
@@ -280,6 +302,7 @@ class _ReadyBody extends ConsumerWidget {
     required this.nextTopics,
     required this.participantCount,
     required this.questionCount,
+    this.demotedToUnranked = false,
   });
 
   final String dateId;
@@ -288,6 +311,7 @@ class _ReadyBody extends ConsumerWidget {
   final List<DailyWarTopicRef> nextTopics;
   final int? participantCount;
   final int questionCount;
+  final bool demotedToUnranked;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -338,7 +362,10 @@ class _ReadyBody extends ConsumerWidget {
             style: DwText.heroNumber(),
           ),
           Text(
-            submission?.mode == 'unranked'
+            demotedToUnranked
+                ? 'Your paper came in after the live window closed, so it\'s '
+                      'saved as an unranked attempt.'
+                : submission?.mode == 'unranked'
                 ? 'Unranked · not an official AIR'
                 : 'Submitted · AIR will be ready at 9:40 PM IST. '
                       'We\'ll notify you.',
