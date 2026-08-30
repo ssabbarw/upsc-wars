@@ -104,6 +104,7 @@ import '../../features/subject_detail/screens/subject_detail_screen.dart';
 import '../../features/subject_detail/screens/subject_history_screen.dart';
 import '../../features/subject_detail/screens/topics_list_screen.dart';
 import '../../features/subject_test/screens/subject_test_screen.dart';
+import '../../features/test_engine/screens/demo_test_launch_screen.dart';
 import '../../features/test_engine/screens/test_engine_screen.dart';
 import '../deep_link/shared_test_launch_screen.dart';
 import '../../features/topic_test/screens/topic_test_screen.dart';
@@ -973,6 +974,12 @@ GoRouter appRouter(Ref ref) {
           }
           return BattleResultScreen(payload: payload);
         },
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/test/pending-demo',
+        name: 'demo_test_pending',
+        builder: (context, state) => const DemoTestLaunchScreen(),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,

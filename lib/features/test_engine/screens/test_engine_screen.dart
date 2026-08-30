@@ -38,6 +38,7 @@ import '../providers/test_session_provider.dart';
 import '../providers/test_session_state.dart';
 import '../widgets/demo_language_coach_overlay.dart';
 import '../widgets/exam_option_confidence_strip.dart';
+import '../widgets/test_engine_question_shimmer.dart';
 
 Future<void> _showDemoConfidenceIntroThenPrompt(
   BuildContext context,
@@ -314,7 +315,7 @@ class _TestEngineAsyncBody extends HookConsumerWidget {
     final notifier = ref.read(testSessionProvider(sessionId).notifier);
 
     if (loading) {
-      return const Center(child: CircularProgressIndicator());
+      return const TestEngineQuestionShimmer();
     }
     if (err != null) {
       final isNotFound = err is SessionNotFoundException;

@@ -22,6 +22,7 @@ class QuestionsToReviewCard extends ConsumerWidget {
     required this.sureWrong,
     required this.eduWrong,
     this.compact = false,
+    this.reviewCtaKey,
   });
 
   final String sessionId;
@@ -29,6 +30,7 @@ class QuestionsToReviewCard extends ConsumerWidget {
   final int sureWrong;
   final int eduWrong;
   final bool compact;
+  final GlobalKey? reviewCtaKey;
 
   int get _total => sureWrong + eduWrong;
 
@@ -148,6 +150,7 @@ class QuestionsToReviewCard extends ConsumerWidget {
             ),
           const SizedBox(height: AppSpacing.md),
           SizedBox(
+            key: reviewCtaKey,
             height: 48,
             child: OutlinedButton.icon(
               style: OutlinedButton.styleFrom(

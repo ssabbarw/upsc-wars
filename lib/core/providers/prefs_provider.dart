@@ -52,6 +52,10 @@ abstract final class PrefKeys {
   /// Demo overlay pointing at the EN | हि language toggle.
   static const demoLanguageCoachSeenV1 = 'demo_language_coach_seen_v1';
 
+  /// Demo results overlay: review mistakes vs review all.
+  static const demoResultsReviewCoachSeenV1 =
+      'demo_results_review_coach_seen_v1';
+
   /// User dismissed the Get Started home card via the explain sheet.
   /// Legacy — ignored; prefer [getStartedCardSnoozedUntilV1].
   static const getStartedCardDismissedV1 = 'get_started_card_dismissed_v1';
@@ -303,6 +307,11 @@ class PrefsService {
       _p.getBool(PrefKeys.demoLanguageCoachSeenV1) ?? false;
   set demoLanguageCoachSeen(bool v) =>
       _p.setBool(PrefKeys.demoLanguageCoachSeenV1, v);
+
+  bool get demoResultsReviewCoachSeen =>
+      _p.getBool(PrefKeys.demoResultsReviewCoachSeenV1) ?? false;
+  set demoResultsReviewCoachSeen(bool v) =>
+      _p.setBool(PrefKeys.demoResultsReviewCoachSeenV1, v);
 
   bool get getStartedCardDismissed =>
       _p.getBool(PrefKeys.getStartedCardDismissedV1) ?? false;

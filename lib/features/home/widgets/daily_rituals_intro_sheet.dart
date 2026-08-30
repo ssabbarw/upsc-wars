@@ -17,7 +17,19 @@ import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/widgets/dismissible_modal_sheet.dart';
 import '../domain/daily_rituals.dart';
 
-/// One-time Home sheet: CA Shots, Daily CA Test, Daily Battle.
+Future<List<DailyRitualCopy>> _enabledDailyRituals(WidgetRef ref) async {
+  final caShots = await ref.read(caShotsRemoteEnabledProvider.future);
+  final dailyCa = await ref.read(dailyCaRemoteEnabledProvider.future);
+  final dailyWar = await ref.read(dailyWarRemoteEnabledProvider.future);
+  return DailyRituals.enabledItems(
+    caShotsEnabled: caShots,
+    dailyCaEnabled: dailyCa,
+    dailyWarEnabled: dailyWar,
+  );
+}
+
+/// One-time Home sheet: CA Shots, Daily CA Test, Daily Battle — only rows
+/// whose Remote Config flags are on. Skipped when none are enabled.
 Future<void> maybeShowDailyRitualsIntro({
   required BuildContext context,
   required WidgetRef ref,
@@ -34,28 +46,37 @@ Future<void> maybeShowDailyRitualsIntro({
   final kill = ref.read(killSwitchProvider).asData?.value;
   if (kill?.isActive ?? false) return;
 
+  final enabled = await _enabledDailyRituals(ref);
+  if (enabled.isEmpty) return;
+  final enabledIds = enabled.map((r) => r.id).toSet();
+
   final prefs = await ref.read(prefsServiceProvider.future);
   if (!DailyRituals.shouldShowIntro(
     onboardingSeen: prefs.patternInterruptOnboardingSeen,
     introSeen: prefs.dailyRitualsIntroSeen,
     openedIds: prefs.dailyRitualsOpenedIds,
+    enabledIds: enabledIds,
   )) {
     if (!prefs.dailyRitualsIntroSeen &&
-        DailyRitualIds.all.every(prefs.dailyRitualsOpenedIds.contains)) {
+        enabledIds.every(prefs.dailyRitualsOpenedIds.contains)) {
       prefs.dailyRitualsIntroSeen = true;
     }
     return;
   }
 
   if (!context.mounted) return;
-  await showDailyRitualsIntroSheet(context, ref);
+  await showDailyRitualsIntroSheet(context, ref, items: enabled);
 }
 
 Future<void> showDailyRitualsIntroSheet(
   BuildContext context,
   WidgetRef ref, {
   bool fromHelp = false,
+  List<DailyRitualCopy>? items,
 }) async {
+  final enabled = items ?? await _enabledDailyRituals(ref);
+  if (enabled.isEmpty) return;
+  if (!context.mounted) return;
   await showModalBottomSheet<void>(
     context: context,
     useRootNavigator: true,
@@ -64,15 +85,19 @@ Future<void> showDailyRitualsIntroSheet(
     enableDrag: true,
     backgroundColor: AppColors.transparent,
     builder: (ctx) => DismissOnScrimTap(
-      child: _DailyRitualsIntroSheet(fromHelp: fromHelp),
+      child: _DailyRitualsIntroSheet(fromHelp: fromHelp, items: enabled),
     ),
   );
 }
 
 class _DailyRitualsIntroSheet extends ConsumerStatefulWidget {
-  const _DailyRitualsIntroSheet({required this.fromHelp});
+  const _DailyRitualsIntroSheet({
+    required this.fromHelp,
+    required this.items,
+  });
 
   final bool fromHelp;
+  final List<DailyRitualCopy> items;
 
   @override
   ConsumerState<_DailyRitualsIntroSheet> createState() =>
@@ -157,20 +182,23 @@ class _DailyRitualsIntroSheetState
               ),
               const SizedBox(height: AppSpacing.xs),
               Text(
-                'Three things on Home. Same place every day.',
+                switch (widget.items.length) {
+                  1 => 'On Home. Same place every day.',
+                  2 => 'Two things on Home. Same place every day.',
+                  _ => 'Three things on Home. Same place every day.',
+                },
                 style: AppTextStyles.bodySm().copyWith(
                   color: scheme.onSurfaceVariant,
                   height: 1.35,
                 ),
               ),
               const SizedBox(height: AppSpacing.lg),
-              for (final ritual in DailyRituals.items) ...[
-                if (ritual != DailyRituals.items.first)
-                  const SizedBox(height: AppSpacing.sm),
+              for (var i = 0; i < widget.items.length; i++) ...[
+                if (i > 0) const SizedBox(height: AppSpacing.sm),
                 _RitualRow(
-                  ritual: ritual,
+                  ritual: widget.items[i],
                   isDark: isDark,
-                  onTap: () => unawaited(_openRitual(ritual)),
+                  onTap: () => unawaited(_openRitual(widget.items[i])),
                 ),
               ],
               const SizedBox(height: AppSpacing.lg),

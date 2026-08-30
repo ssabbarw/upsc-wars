@@ -28,6 +28,7 @@ class SessionInsightHeroCard extends ConsumerWidget {
     required this.topRiskPct,
     required this.weakestTopicName,
     this.compact = false,
+    this.reviewCtaKey,
   });
 
   final String sessionId;
@@ -37,6 +38,7 @@ class SessionInsightHeroCard extends ConsumerWidget {
   final int? topRiskPct;
   final String? weakestTopicName;
   final bool compact;
+  final GlobalKey? reviewCtaKey;
 
   static const _getStartedKey = 'get_started_diagnostic';
 
@@ -52,6 +54,7 @@ class SessionInsightHeroCard extends ConsumerWidget {
         sureWrong: sureWrong,
         eduWrong: eduWrong,
         compact: compact,
+        reviewCtaKey: reviewCtaKey,
       );
     }
 
@@ -169,6 +172,7 @@ class SessionInsightHeroCard extends ConsumerWidget {
           if (insightCase != SessionInsightCase.fNoAttempts) ...[
             const SizedBox(height: AppSpacing.md),
             SizedBox(
+              key: reviewCtaKey,
               height: 44,
               child: FilledButton.icon(
                 style: FilledButton.styleFrom(

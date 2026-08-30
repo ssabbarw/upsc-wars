@@ -167,14 +167,14 @@ class _OriginalCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'You’re missing Static War, CA & community alerts',
+                    'You’re missing drill, CA & community alerts',
                     style: AppTextStyles.label().copyWith(
                       color: scheme.onSurface,
                     ),
                   ),
                   const SizedBox(height: AppSpacing.xs),
                   Text(
-                    'Turn on notifications for tonight’s war, daily current affairs, practice reminders, and battle invites.',
+                    'Turn on notifications for Daily Drill, current affairs, CA Shots, and community invites.',
                     style: AppTextStyles.caption().copyWith(
                       color: scheme.onSurfaceVariant,
                       height: 1.25,

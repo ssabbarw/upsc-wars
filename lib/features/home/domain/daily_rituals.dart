@@ -66,14 +66,34 @@ abstract final class DailyRituals {
     ),
   ];
 
-  /// First-run intro: after onboarding, once, unless they already opened all three.
+  /// Rituals whose Remote Config flags are on (`ca_shots_enabled`,
+  /// `daily_ca_enabled`, `daily_war_enabled`).
+  static List<DailyRitualCopy> enabledItems({
+    required bool caShotsEnabled,
+    required bool dailyCaEnabled,
+    required bool dailyWarEnabled,
+  }) {
+    return [
+      if (caShotsEnabled)
+        items.firstWhere((r) => r.id == DailyRitualIds.caShots),
+      if (dailyCaEnabled)
+        items.firstWhere((r) => r.id == DailyRitualIds.dailyCa),
+      if (dailyWarEnabled)
+        items.firstWhere((r) => r.id == DailyRitualIds.dailyWar),
+    ];
+  }
+
+  /// First-run intro: after onboarding, once, unless every **enabled** ritual
+  /// was already opened. Hidden when [enabledIds] is empty.
   static bool shouldShowIntro({
     required bool onboardingSeen,
     required bool introSeen,
     required Set<String> openedIds,
+    Set<String> enabledIds = DailyRitualIds.all,
   }) {
     if (!onboardingSeen || introSeen) return false;
-    return !DailyRitualIds.all.every(openedIds.contains);
+    if (enabledIds.isEmpty) return false;
+    return !enabledIds.every(openedIds.contains);
   }
 }
 

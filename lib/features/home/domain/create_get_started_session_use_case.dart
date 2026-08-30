@@ -46,6 +46,10 @@ class CreateGetStartedSessionUseCase {
   }
 
   Future<String> executeMixed() async {
+    final existing = await userDb.sessionsDao
+        .getInProgressSessionIdByFeatureKey(analyticsKey);
+    if (existing != null) return existing;
+
     await prefetchCurrentAffairs();
 
     final attempted = await userDb.sessionQuestionsDao

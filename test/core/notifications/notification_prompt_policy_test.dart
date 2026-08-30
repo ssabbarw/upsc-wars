@@ -56,7 +56,11 @@ void main() {
         NotificationPromptSurface.postFirstTest,
       );
       expect(copy.title.toLowerCase(), contains('practice'));
-      expect(copy.alsoLine.toLowerCase(), contains('static war'));
+      expect(copy.alsoLine.toLowerCase(), contains('current affairs'));
+      expect(copy.alsoLine.toLowerCase(), contains('ca shots'));
+      expect(copy.alsoLine.toLowerCase(), contains('community'));
+      expect(copy.alsoLine.toLowerCase(), isNot(contains('static war')));
+      expect(copy.alsoLine.toLowerCase(), isNot(contains('daily battle')));
     });
 
     test('war copy leads with Daily Battle and mentions other uses', () {
@@ -66,7 +70,7 @@ void main() {
       expect(copy.title.toLowerCase(), contains('daily battle'));
       expect(copy.body.toLowerCase(), contains('daily battle'));
       expect(copy.alsoLine.toLowerCase(), contains('daily ca'));
-      expect(copy.alsoLine.toLowerCase(), contains('battle'));
+      expect(copy.alsoLine.toLowerCase(), isNot(contains('static war')));
     });
   });
 }

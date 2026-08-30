@@ -9,8 +9,6 @@ import '../../../core/constants/question_source_constants.dart';
 import '../../../core/analytics/screen_flow_analytics.dart';
 import '../../../core/responsive/app_breakpoints.dart';
 import '../../../core/debug/upsc_wars_trace.dart';
-import '../../../core/services/battle_messaging_service.dart';
-import '../../home/domain/create_get_started_session_use_case.dart';
 import '../../../core/presentation/session_subject_label.dart';
 import '../../../core/domain/entities/session_result.dart';
 import '../../../core/domain/errors/app_errors.dart';
@@ -140,14 +138,6 @@ class ResultsScreen extends ConsumerWidget {
           if (iso != null && iso.isNotEmpty) {
             unawaited(markDailyCaResultsOpened(ref, iso));
           }
-        }
-        if (result.analyticsFeatureKey ==
-            CreateGetStartedSessionUseCase.analyticsKey) {
-          unawaited(
-            BattleMessagingService.maybePromptAfterFirstTestHome(
-              context: context,
-            ),
-          );
         }
       }
       if (next.hasError) {

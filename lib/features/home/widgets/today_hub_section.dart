@@ -351,36 +351,37 @@ class TodayHubSection extends HookConsumerWidget {
                 ),
               ),
               const Spacer(),
-              InkWell(
-                onTap: () => unawaited(
-                  showDailyRitualsIntroSheet(context, ref, fromHelp: true),
-                ),
-                borderRadius: BorderRadius.circular(AppRadius.pill),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: AppSpacing.xs,
-                    vertical: 2,
+              if (data.caShotsEnabled || data.caEnabled || data.warEnabled)
+                InkWell(
+                  onTap: () => unawaited(
+                    showDailyRitualsIntroSheet(context, ref, fromHelp: true),
                   ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Icon(
-                        Icons.info_outline_rounded,
-                        size: 14,
-                        color: scheme.onSurfaceVariant,
-                      ),
-                      const SizedBox(width: 4),
-                      Text(
-                        'What is this?',
-                        style: AppTextStyles.caption().copyWith(
+                  borderRadius: BorderRadius.circular(AppRadius.pill),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: AppSpacing.xs,
+                      vertical: 2,
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(
+                          Icons.info_outline_rounded,
+                          size: 14,
                           color: scheme.onSurfaceVariant,
-                          fontWeight: FontWeight.w600,
                         ),
-                      ),
-                    ],
+                        const SizedBox(width: 4),
+                        Text(
+                          'What is this?',
+                          style: AppTextStyles.caption().copyWith(
+                            color: scheme.onSurfaceVariant,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-              ),
             ],
           ),
           const SizedBox(height: AppSpacing.sm),

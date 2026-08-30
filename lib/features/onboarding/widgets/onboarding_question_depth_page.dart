@@ -129,7 +129,7 @@ class _BottomCta extends HookWidget {
   final bool visible;
   final VoidCallback onContinue;
 
-  static const _ctaDelay = Duration(milliseconds: 320);
+  static const _ctaDelay = Duration(milliseconds: 120);
 
   @override
   Widget build(BuildContext context) {

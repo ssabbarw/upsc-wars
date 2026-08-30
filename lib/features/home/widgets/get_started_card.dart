@@ -18,6 +18,7 @@ import '../../../core/providers/user_database_provider.dart';
 import '../../../shared/widgets/dismissible_modal_sheet.dart';
 import '../../test_engine/providers/test_session_provider.dart';
 import '../domain/create_get_started_session_use_case.dart';
+import '../domain/demo_session_warmup.dart';
 import '../providers/home_activation_provider.dart';
 
 enum _DemoResumeChoice { resume, restart }
@@ -37,8 +38,12 @@ Future<String?> createGetStartedDiagnosticSession(
     ),
   );
   try {
-    final uc = await ref.read(createGetStartedSessionUseCaseProvider.future);
-    return await uc.executeMixed();
+    return await DemoSessionWarmup.ensure(() async {
+      final uc = await ref.read(createGetStartedSessionUseCaseProvider.future);
+      final id = await uc.executeMixed();
+      await ref.read(testSessionProvider(id).future);
+      return id;
+    });
   } on Object {
     return null;
   }
@@ -54,7 +59,7 @@ Future<String?> _resolveGetStartedDiagnosticSession(
       .getInProgressSessionProgressByFeatureKey(
         CreateGetStartedSessionUseCase.analyticsKey,
       );
-  if (progress != null) {
+  if (progress != null && progress.done > 0) {
     if (!context.mounted) return null;
     final choice = await _showDemoResumeOrRestartSheet(
       context,
@@ -83,6 +88,7 @@ Future<String?> _resolveGetStartedDiagnosticSession(
         userInitiatedQuit: false,
       );
       ref.invalidate(testSessionProvider(progress.sessionId));
+      DemoSessionWarmup.reset();
     } on Object {
       return null;
     }
@@ -123,8 +129,12 @@ Future<void> openGetStartedFromHome(BuildContext context, WidgetRef ref) async {
         CreateGetStartedSessionUseCase.analyticsKey,
       );
   if (!context.mounted) return;
-  if (progress != null) {
+  if (progress != null && progress.done > 0) {
     await launchGetStartedDiagnostic(context, ref, source: 'home_card');
+    return;
+  }
+  if (progress != null) {
+    context.push('/test/${progress.sessionId}');
     return;
   }
   await showGetStartedDiagnosticIntroSheet(context);

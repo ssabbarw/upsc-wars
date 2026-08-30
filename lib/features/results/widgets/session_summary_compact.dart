@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:math' as math;
 import 'dart:ui' as ui;
 
@@ -15,15 +16,19 @@ import '../../../core/domain/entities/session_result.dart';
 import '../../../core/domain/entities/test_question.dart';
 import '../../../core/providers/catalog_providers.dart';
 import '../../../core/providers/prefs_provider.dart';
+import '../../../core/services/battle_messaging_service.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../home/domain/create_get_started_session_use_case.dart';
 import '../../home/domain/demo_diagnostic_ephemeral_store.dart';
 import '../domain/session_insight_case.dart';
 import '../domain/session_insight_metrics.dart';
 import '../providers/session_coach_providers.dart';
 import '../providers/session_topic_accuracy_provider.dart';
+import 'demo_results_review_coach_overlay.dart';
+import 'questions_to_review_card.dart';
 import 'session_insight_hero_card.dart';
 
 void _openSessionHistoryReview(
@@ -109,6 +114,68 @@ class SessionSummaryCompactView extends HookConsumerWidget {
           );
     final timeAsync = ref.watch(sessionCoachTimeStatsProvider(sessionId));
     final revisionAsync = ref.watch(revisionQueueItemsProvider);
+    final mistakesCtaKey = useMemoized(GlobalKey.new);
+    final reviewAllKey = useMemoized(GlobalKey.new);
+    final topicsKey = useMemoized(GlobalKey.new);
+    final reviewCoachRequested = useRef(false);
+    final isDemo =
+        result.analyticsFeatureKey ==
+        CreateGetStartedSessionUseCase.analyticsKey;
+    final insightCase = insightCaseAsync.asData?.value;
+    final highlightMistakes = insightCase != null &&
+        (usesMistakeReviewFlow(insightCase) ||
+            insightCase == SessionInsightCase.d);
+    final topicRows = topicRowsAsync.asData?.value;
+    final hasTopicLists = topicRows != null && topicRows.isNotEmpty;
+
+    useEffect(() {
+      if (!isDemo || insightCase == null) return null;
+      if (topicRowsAsync.isLoading) return null;
+      if (reviewCoachRequested.value) return null;
+      reviewCoachRequested.value = true;
+      var cancelled = false;
+      OverlayEntry? entry;
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        unawaited(() async {
+          final prefs = await ref.read(prefsServiceProvider.future);
+          if (cancelled || !context.mounted) return;
+          if (prefs.demoResultsReviewCoachSeen) {
+            unawaited(
+              BattleMessagingService.maybePromptAfterFirstTestHome(
+                context: context,
+              ),
+            );
+            return;
+          }
+          prefs.demoResultsReviewCoachSeen = true;
+          void dismiss() {
+            final current = entry;
+            if (current != null && current.mounted) current.remove();
+            if (!context.mounted) return;
+            unawaited(
+              BattleMessagingService.maybePromptAfterFirstTestHome(
+                context: context,
+              ),
+            );
+          }
+
+          entry = OverlayEntry(
+            builder: (ctx) => DemoResultsReviewCoachOverlay(
+              mistakesKey: highlightMistakes ? mistakesCtaKey : null,
+              reviewAllKey: reviewAllKey,
+              topicsKey: hasTopicLists ? topicsKey : null,
+              onDismiss: dismiss,
+            ),
+          );
+          Overlay.of(context).insert(entry!);
+        }());
+      });
+      return () {
+        cancelled = true;
+        final current = entry;
+        if (current != null && current.mounted) current.remove();
+      };
+        }, [insightCase, topicRowsAsync.isLoading, hasTopicLists]);
 
     final marksRows = questionsAsync.maybeWhen(
       data: computeTopicMarksLost,
@@ -186,6 +253,7 @@ class SessionSummaryCompactView extends HookConsumerWidget {
             topRiskPct: topRisk?.pctOfLoss,
             weakestTopicName: weak?.topic,
             compact: metrics.compact,
+            reviewCtaKey: highlightMistakes ? mistakesCtaKey : null,
           ),
         ),
         SizedBox(height: metrics.sectionGap),
@@ -193,6 +261,7 @@ class SessionSummaryCompactView extends HookConsumerWidget {
           sessionId: sessionId,
           questionCount: result.questionCount,
           metrics: metrics,
+          highlightKey: reviewAllKey,
         ),
         _BackToHomeButton(sessionId: sessionId, scheme: scheme),
         if (showRevisionQueue) ...[
@@ -207,6 +276,7 @@ class SessionSummaryCompactView extends HookConsumerWidget {
         ],
         SizedBox(height: metrics.sectionGap),
         _TopTopicsSection(
+          key: hasTopicLists ? topicsKey : null,
           bestTopics: bestTopics,
           worstTopics: worstTopics,
           bestExpanded: bestTopicsExpanded.value,
@@ -772,6 +842,7 @@ class _SummarySurfaceCard extends StatelessWidget {
 
 class _TopTopicsSection extends StatelessWidget {
   const _TopTopicsSection({
+    super.key,
     required this.bestTopics,
     required this.worstTopics,
     required this.bestExpanded,
@@ -968,15 +1039,18 @@ class _ReviewAllButton extends StatelessWidget {
     required this.sessionId,
     required this.questionCount,
     required this.metrics,
+    this.highlightKey,
   });
 
   final String sessionId;
   final int questionCount;
   final _SummaryLayoutMetrics metrics;
+  final GlobalKey? highlightKey;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
+      key: highlightKey,
       height: metrics.buttonHeight,
       width: double.infinity,
       child: OutlinedButton.icon(

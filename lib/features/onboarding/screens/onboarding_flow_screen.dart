@@ -10,8 +10,7 @@ import '../../../core/analytics/analytics.dart';
 import '../../../core/analytics/analytics_events.dart';
 import '../../../core/analytics/screen_flow_analytics.dart';
 import '../../../core/providers/prefs_provider.dart';
-import '../../home/domain/prefetch_demo_current_affairs.dart';
-import '../../home/widgets/get_started_card.dart';
+import '../../home/domain/demo_session_warmup.dart';
 import '../../mini_games/shared/revision_games_theme.dart';
 import '../widgets/onboarding_question_depth_page.dart';
 import '../widgets/onboarding_scale.dart';
@@ -75,7 +74,10 @@ class OnboardingFlowScreen extends HookConsumerWidget {
 
     useEffect(() {
       unawaited(Analytics.track(ref, const OnboardingFlowOpenedEvent()));
-      unawaited(prefetchDemoCurrentAffairs(ref));
+      final container = ProviderScope.containerOf(context);
+      DemoSessionWarmup.start(
+        () => DemoSessionWarmup.loadSession(container),
+      );
       return null;
     }, const []);
 
@@ -224,15 +226,7 @@ Future<void> _complete(
   prefs.patternInterruptOnboardingSeen = true;
   ref.invalidate(prefsServiceProvider);
   if (!context.mounted) return;
-  final launched = await launchGetStartedDiagnostic(
-    context,
-    ref,
-    source: actionId == 'onboarding_skipped'
-        ? 'onboarding_skip'
-        : 'onboarding',
-    replaceRoute: true,
-  );
-  if (!launched && context.mounted) context.go('/');
+  context.go(DemoSessionWarmup.pendingRoute);
 }
 
 class _TopChrome extends StatelessWidget {
