@@ -473,6 +473,21 @@ String dailyWarYesterdayDateId(Ref ref) {
   return DailyWarSchedule.formatIsoDate(previous);
 }
 
+/// War night the hub hero should lead with, or null when tonight owns the slot.
+///
+/// The previous night holds the hero through the working day. From
+/// [DailyWarPhaseResolver.hubHeroHandoverHourIst] it steps aside so the screen
+/// is about tonight, and the hero only returns once tonight has its own ranks.
+@Riverpod(keepAlive: true)
+String? dailyWarHubHeroDateId(Ref ref) {
+  final snap = ref.watch(dailyWarHomeSnapshotProvider);
+  if (snap.phase == DailyWarPhase.resultsReady) return snap.dateId;
+  if (snap.istNow.hour >= DailyWarPhaseResolver.hubHeroHandoverHourIst) {
+    return null;
+  }
+  return ref.watch(dailyWarYesterdayDateIdProvider);
+}
+
 @Riverpod(keepAlive: true)
 class DailyWarYesterdayDoc extends _$DailyWarYesterdayDoc {
   @override

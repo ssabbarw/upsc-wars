@@ -363,6 +363,65 @@ final class DailyWarYesterdayDateIdProvider
 String _$dailyWarYesterdayDateIdHash() =>
     r'c485aec38aa960fa761974ef0125055a5d1ed272';
 
+/// War night the hub hero should lead with, or null when tonight owns the slot.
+///
+/// The previous night holds the hero through the working day. From
+/// [DailyWarPhaseResolver.hubHeroHandoverHourIst] it steps aside so the screen
+/// is about tonight, and the hero only returns once tonight has its own ranks.
+
+@ProviderFor(dailyWarHubHeroDateId)
+final dailyWarHubHeroDateIdProvider = DailyWarHubHeroDateIdProvider._();
+
+/// War night the hub hero should lead with, or null when tonight owns the slot.
+///
+/// The previous night holds the hero through the working day. From
+/// [DailyWarPhaseResolver.hubHeroHandoverHourIst] it steps aside so the screen
+/// is about tonight, and the hero only returns once tonight has its own ranks.
+
+final class DailyWarHubHeroDateIdProvider
+    extends $FunctionalProvider<String?, String?, String?>
+    with $Provider<String?> {
+  /// War night the hub hero should lead with, or null when tonight owns the slot.
+  ///
+  /// The previous night holds the hero through the working day. From
+  /// [DailyWarPhaseResolver.hubHeroHandoverHourIst] it steps aside so the screen
+  /// is about tonight, and the hero only returns once tonight has its own ranks.
+  DailyWarHubHeroDateIdProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'dailyWarHubHeroDateIdProvider',
+        isAutoDispose: false,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$dailyWarHubHeroDateIdHash();
+
+  @$internal
+  @override
+  $ProviderElement<String?> $createElement($ProviderPointer pointer) =>
+      $ProviderElement(pointer);
+
+  @override
+  String? create(Ref ref) {
+    return dailyWarHubHeroDateId(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(String? value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<String?>(value),
+    );
+  }
+}
+
+String _$dailyWarHubHeroDateIdHash() =>
+    r'63d803fd6d346758dc49df694b46b08ae8ab0780';
+
 @ProviderFor(DailyWarYesterdayDoc)
 final dailyWarYesterdayDocProvider = DailyWarYesterdayDocProvider._();
 

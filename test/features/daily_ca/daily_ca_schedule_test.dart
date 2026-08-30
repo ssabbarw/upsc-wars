@@ -114,12 +114,44 @@ void main() {
       );
     });
 
-    test('before 6 AM the previous morning\'s paper is still current', () {
-      // Tuesday 3 AM — Monday's news has not opened yet, so Saturday stands.
-      final date = DailyCaSchedule.paperQuizContentDate(
-        referenceIst: DateTime(2026, 6, 9, 3),
+    test('before 6 AM there is no current paper, only a pending one', () {
+      // Tuesday 3 AM — Monday's news has not opened yet. Saturday's paper must
+      // not stand in for it, or the reader silently re-attempts stale news.
+      final ref = DateTime(2026, 6, 9, 3);
+      expect(DailyCaSchedule.paperQuizContentDate(referenceIst: ref), isNull);
+      expect(
+        DailyCaSchedule.expectedPaperContentDate(referenceIst: ref),
+        DateTime(2026, 6, 8),
       );
-      expect(date, DateTime(2026, 6, 6));
+    });
+
+    test('a missed generation day never falls back to an older paper', () {
+      // Tuesday 10 AM: Monday's paper is what is expected, published or not.
+      final ref = DateTime(2026, 6, 9, 10);
+      expect(
+        DailyCaSchedule.expectedPaperContentDate(referenceIst: ref),
+        DateTime(2026, 6, 8),
+      );
+      expect(
+        DailyCaSchedule.paperQuizContentDate(referenceIst: ref),
+        DateTime(2026, 6, 8),
+      );
+    });
+
+    test('expected paper skips Sunday but reaches no further', () {
+      // Monday reaches back to Saturday; every other day is plain yesterday.
+      expect(
+        DailyCaSchedule.expectedPaperContentDate(
+          referenceIst: DateTime(2026, 6, 8, 8),
+        ),
+        DateTime(2026, 6, 6),
+      );
+      expect(
+        DailyCaSchedule.expectedPaperContentDate(
+          referenceIst: DateTime(2026, 6, 7, 8),
+        ),
+        DateTime(2026, 6, 6),
+      );
     });
 
     test('Monday morning still serves Saturday\'s paper', () {
@@ -312,13 +344,14 @@ void main() {
       );
     });
 
-    test('tapping today before 6 AM still maps to the open paper', () {
+    test('tapping today before 6 AM maps to the paper that is coming', () {
+      // The sheet then explains the wait, rather than opening an older paper.
       expect(
         DailyCaSchedule.calendarTapContentDate(
           DateTime(2026, 8, 20),
           referenceIst: DateTime(2026, 8, 20, 3),
         ),
-        DateTime(2026, 8, 18),
+        DateTime(2026, 8, 19),
       );
     });
 

@@ -42,12 +42,14 @@ class DailyCaScreen extends HookConsumerWidget {
         );
     final minMonth = DailyCaSchedule.minMonthForDate(minDate);
     final istNow = DailyCaSchedule.nowIst();
-    final paperDate = DailyCaSchedule.paperQuizContentDate(
+    final paperDate = DailyCaSchedule.expectedPaperContentDate(
       referenceIst: istNow,
     );
-    final paperIso = paperDate == null
-        ? null
-        : DailyCaSchedule.formatIsoDate(paperDate);
+    final paperOpen = DailyCaSchedule.isPublishedForDate(
+      paperDate,
+      referenceIst: istNow,
+    );
+    final paperIso = DailyCaSchedule.formatIsoDate(paperDate);
     final paperLiveAsync = ref.watch(dailyCaScheduledPaperIsLiveProvider);
     final paperLive = paperLiveAsync.asData?.value ?? false;
     final paperChecking = paperLiveAsync.isLoading;
@@ -68,12 +70,10 @@ class DailyCaScreen extends HookConsumerWidget {
       return null;
     }, const []);
 
-    final paperCompleted =
-        paperIso != null &&
-        completedAsync.maybeWhen(
-          data: (dates) => dates.contains(paperIso),
-          orElse: () => false,
-        );
+    final paperCompleted = completedAsync.maybeWhen(
+      data: (dates) => dates.contains(paperIso),
+      orElse: () => false,
+    );
     final ranksOn =
         ref.watch(dailyCaRanksRemoteEnabledProvider).asData?.value ?? false;
 
@@ -118,7 +118,7 @@ class DailyCaScreen extends HookConsumerWidget {
 
     final autoStarted = useRef(false);
     useEffect(() {
-      if (!autoStartPaper || autoStarted.value || paperIso == null) return null;
+      if (!autoStartPaper || autoStarted.value) return null;
       if (paperChecking) return null;
       autoStarted.value = true;
       if (!paperLive) return null;
@@ -211,15 +211,16 @@ class DailyCaScreen extends HookConsumerWidget {
             paperDate: paperDate,
             paperCompleted: paperCompleted,
             launching: launching.value || paperChecking,
+            paperOpen: paperOpen,
             questionsReady: paperLive,
             compact: compact,
-            onStartPaper: paperIso == null || paperCompleted || !paperLive
+            onStartPaper: paperCompleted || !paperLive
                 ? null
                 : () => unawaited(openDayTest(paperIso, isRevise: false)),
-            onRevisePaper: paperIso == null || !paperCompleted
+            onRevisePaper: !paperCompleted
                 ? null
                 : () => unawaited(openDayTest(paperIso, isRevise: true)),
-            onViewResults: paperIso == null || !paperCompleted
+            onViewResults: !paperCompleted
                 ? null
                 : () => unawaited(openPaperResults(paperIso)),
             onViewRankings: null,

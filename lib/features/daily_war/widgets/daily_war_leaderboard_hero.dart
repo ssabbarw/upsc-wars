@@ -23,18 +23,35 @@ import '../theme/daily_war_theme.dart';
 
 /// Podium for last night's War, above tonight's card on the hub.
 ///
-/// Always paints the card (same as Daily CA). Guests get a sign-in CTA
-/// instead of ranks; signed-in users see the frozen board or an empty
-/// placeholder when last night has not locked yet.
-class DailyWarYesterdayLeaderboardHero extends ConsumerWidget {
-  const DailyWarYesterdayLeaderboardHero({super.key});
+/// Guests get a sign-in CTA instead of ranks; signed-in users see the frozen
+/// board or an empty placeholder when that night never locked.
+///
+/// Which night it shows — and whether it shows at all — is
+/// [dailyWarHubHeroDateIdProvider]: last night through the working day,
+/// nothing through the evening build-up, tonight once ranks publish.
+class DailyWarLeaderboardHero extends ConsumerWidget {
+  const DailyWarLeaderboardHero({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final dateId = ref.watch(dailyWarYesterdayDateIdProvider);
-    final yesterdayDate = DailyWarSchedule.parseIsoDate(dateId);
+    final dateId = ref.watch(dailyWarHubHeroDateIdProvider);
+    if (dateId == null) return const SizedBox.shrink();
+    final heroDate = DailyWarSchedule.parseIsoDate(dateId);
     final minDate = DailyWarSchedule.dateOnly(DailyWarSchedule.calendarMinDate);
-    if (yesterdayDate.isBefore(minDate)) return const SizedBox.shrink();
+    if (heroDate.isBefore(minDate)) return const SizedBox.shrink();
+
+    final todayDateId = ref.watch(dailyWarTodayDateIdProvider);
+    final isTonight = dateId == todayDateId;
+    // Sunday has no War, so Monday's hero reaches back to Saturday — say so
+    // rather than calling a two-day-old board "last night".
+    final daysAgo = DailyWarSchedule.parseIsoDate(
+      todayDateId,
+    ).difference(heroDate).inDays;
+    final eyebrow = isTonight
+        ? 'TONIGHT'
+        : daysAgo <= 1
+        ? 'LAST NIGHT'
+        : 'LAST WAR';
 
     final user = ref.watch(authStateChangesProvider).asData?.value;
     final accountSignedIn = AuthSession.isAccountSignedIn(user);
@@ -48,16 +65,23 @@ class DailyWarYesterdayLeaderboardHero extends ConsumerWidget {
       );
       if (!ok) return;
       ref.invalidate(dailyWarArchiveProvider(dateId));
-      await ref.read(dailyWarYesterdayDocProvider.notifier).refresh();
+      if (isTonight) {
+        await ref.read(dailyWarTodayDocProvider.notifier).refresh();
+      } else {
+        await ref.read(dailyWarYesterdayDocProvider.notifier).refresh();
+      }
     }
 
-    final docAsync = ref.watch(dailyWarYesterdayDocProvider);
+    final docAsync = isTonight
+        ? ref.watch(dailyWarTodayDocProvider)
+        : ref.watch(dailyWarYesterdayDocProvider);
     return docAsync.when(
       loading: () => const _HeroShimmer(),
       error: (_, _) => Padding(
         padding: const EdgeInsets.only(bottom: AppSpacing.md),
         child: _HeroCard(
           dateId: dateId,
+          eyebrow: eyebrow,
           lb: null,
           war: null,
           myUid: myUid,
@@ -72,6 +96,7 @@ class DailyWarYesterdayLeaderboardHero extends ConsumerWidget {
             padding: const EdgeInsets.only(bottom: AppSpacing.md),
             child: _HeroCard(
               dateId: dateId,
+              eyebrow: eyebrow,
               lb: null,
               war: doc,
               myUid: myUid,
@@ -83,6 +108,7 @@ class DailyWarYesterdayLeaderboardHero extends ConsumerWidget {
         }
         return _ArchiveHero(
           dateId: dateId,
+          eyebrow: eyebrow,
           myUid: myUid,
           war: doc,
           locked: !accountSignedIn,
@@ -96,6 +122,7 @@ class DailyWarYesterdayLeaderboardHero extends ConsumerWidget {
 class _ArchiveHero extends ConsumerWidget {
   const _ArchiveHero({
     required this.dateId,
+    required this.eyebrow,
     required this.myUid,
     required this.war,
     required this.locked,
@@ -103,6 +130,7 @@ class _ArchiveHero extends ConsumerWidget {
   });
 
   final String dateId;
+  final String eyebrow;
   final String myUid;
   final DailyWarDoc war;
   final bool locked;
@@ -118,6 +146,7 @@ class _ArchiveHero extends ConsumerWidget {
         padding: const EdgeInsets.only(bottom: AppSpacing.md),
         child: _HeroCard(
           dateId: dateId,
+          eyebrow: eyebrow,
           lb: null,
           war: war,
           myUid: myUid,
@@ -131,6 +160,7 @@ class _ArchiveHero extends ConsumerWidget {
           padding: const EdgeInsets.only(bottom: AppSpacing.md),
           child: _HeroCard(
             dateId: dateId,
+            eyebrow: eyebrow,
             lb: archive.leaderboard,
             war: archive.war,
             myUid: myUid,
@@ -147,6 +177,7 @@ class _ArchiveHero extends ConsumerWidget {
 class _HeroCard extends StatelessWidget {
   const _HeroCard({
     required this.dateId,
+    required this.eyebrow,
     required this.lb,
     required this.war,
     required this.myUid,
@@ -156,6 +187,7 @@ class _HeroCard extends StatelessWidget {
   });
 
   final String dateId;
+  final String eyebrow;
   final DailyWarLeaderboard? lb;
   final DailyWarDoc? war;
   final String myUid;
@@ -248,7 +280,7 @@ class _HeroCard extends StatelessWidget {
                   Row(
                     children: [
                       Text(
-                        'LAST NIGHT',
+                        eyebrow,
                         style: DwText.dm(
                           size: 11,
                           weight: FontWeight.w700,

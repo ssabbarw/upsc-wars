@@ -26,7 +26,7 @@ import '../providers/server_clock_provider.dart';
 import '../widgets/daily_war_earned_badges_section.dart';
 import '../widgets/daily_war_month_calendar.dart';
 import '../widgets/daily_war_today_section.dart';
-import '../widgets/daily_war_yesterday_leaderboard_hero.dart';
+import '../widgets/daily_war_leaderboard_hero.dart';
 import 'daily_war_history_detail_screen.dart';
 
 /// Calendar hub for Daily War — tonight's paper on top, archive by date.
@@ -209,7 +209,7 @@ class DailyWarHistoryScreen extends HookConsumerWidget {
         paddedBottomInset(context, AppSpacing.lg),
       ),
       children: [
-        const DailyWarYesterdayLeaderboardHero(),
+        const DailyWarLeaderboardHero(),
         DailyWarTodaySection(
           launching: launching.value,
           onJoinLive: () => unawaited(joinLive()),

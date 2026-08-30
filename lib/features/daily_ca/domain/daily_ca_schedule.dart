@@ -120,15 +120,16 @@ abstract final class DailyCaSchedule {
 
   /// News date the history calendar should show for a tap on [tappedDate].
   ///
-  /// Today always maps to [paperQuizContentDate] — the same paper as the
-  /// Today's Paper card. Other days are themselves.
+  /// Today always maps to [expectedPaperContentDate] — the same paper as the
+  /// Today's Paper card, even before it opens, so the cell still explains
+  /// itself instead of swallowing the tap. Other days are themselves.
   static DateTime? calendarTapContentDate(
     DateTime tappedDate, {
     DateTime? referenceIst,
   }) {
     final now = referenceIst ?? nowIst();
     if (dateOnly(tappedDate) == dateOnly(now)) {
-      return paperQuizContentDate(referenceIst: now);
+      return expectedPaperContentDate(referenceIst: now);
     }
     return dateOnly(tappedDate);
   }
@@ -140,31 +141,37 @@ abstract final class DailyCaSchedule {
     return formatIsoDate(current) == isoDate.trim();
   }
 
-  /// Newest content day whose quiz is open — the "paper" to serve right now.
+  /// Content day the current paper is drawn from, open yet or not.
   ///
-  /// Skips Sundays, so Monday morning still serves Saturday's paper rather
-  /// than showing nothing. Returns null only when no content day has opened yet.
-  static DateTime? paperQuizContentDate({DateTime? referenceIst}) {
+  /// Always yesterday, except that Sunday carries no newspaper pack — so
+  /// Monday reaches back to Saturday. It never reaches further than that:
+  /// dressing up an older paper as today's hides a day the pipeline missed,
+  /// and the reader has no way to tell they are re-attempting stale news.
+  static DateTime expectedPaperContentDate({DateTime? referenceIst}) {
     final now = referenceIst ?? nowIst();
-    var cursor = dateOnly(now).subtract(const Duration(days: 1));
-    for (var i = 0; i < 9; i++) {
-      if (isTestDay(cursor) && isPublishedForDate(cursor, referenceIst: now)) {
-        return cursor;
-      }
-      cursor = cursor.subtract(const Duration(days: 1));
-    }
-    return null;
+    final cursor = dateOnly(now).subtract(const Duration(days: 1));
+    return isTestDay(cursor) ? cursor : cursor.subtract(const Duration(days: 1));
   }
 
-  /// Paper before [paperQuizContentDate] — the board whose champion just locked.
-  ///
-  /// Skips Sundays the same way the live paper does. Null when nothing older
-  /// has opened yet.
-  static DateTime? previousPaperQuizContentDate({DateTime? referenceIst}) {
-    final current = paperQuizContentDate(referenceIst: referenceIst);
-    if (current == null) return null;
+  /// [expectedPaperContentDate] once its quiz has opened — the paper to serve
+  /// right now. Null between midnight and [openHourIst], and on any day the
+  /// expected paper never opened.
+  static DateTime? paperQuizContentDate({DateTime? referenceIst}) {
     final now = referenceIst ?? nowIst();
-    var cursor = dateOnly(current).subtract(const Duration(days: 1));
+    final expected = expectedPaperContentDate(referenceIst: now);
+    return isPublishedForDate(expected, referenceIst: now) ? expected : null;
+  }
+
+  /// Paper before [expectedPaperContentDate] — the board whose champion just
+  /// locked.
+  ///
+  /// Keeps walking back past unpublished days: an archive board is allowed to
+  /// be old, unlike the paper being offered as today's.
+  static DateTime? previousPaperQuizContentDate({DateTime? referenceIst}) {
+    final now = referenceIst ?? nowIst();
+    var cursor = expectedPaperContentDate(
+      referenceIst: now,
+    ).subtract(const Duration(days: 1));
     for (var i = 0; i < 9; i++) {
       if (isTestDay(cursor) && isPublishedForDate(cursor, referenceIst: now)) {
         return cursor;

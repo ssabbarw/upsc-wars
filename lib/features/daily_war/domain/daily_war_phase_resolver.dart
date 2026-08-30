@@ -8,6 +8,13 @@ abstract final class DailyWarPhaseResolver {
   /// Afternoon countdown emphasis starts at this hour IST.
   static const countdownHourIst = 16;
 
+  /// Hour (IST) the hub stops leading with the previous night's board.
+  ///
+  /// Evening traffic is here for tonight's paper, not last night's podium, so
+  /// the hero slot hands the screen over to tonight's War from here until
+  /// tonight has ranks of its own.
+  static const hubHeroHandoverHourIst = 18;
+
   static DailyWarPhase resolve({
     required DateTime referenceIst,
     String? firestoreStatus,

@@ -10,7 +10,6 @@ import '../../../core/theme/app_text_styles.dart';
 import '../domain/daily_ca_schedule.dart';
 import '../domain/daily_ca_source_links.dart';
 import 'daily_ca_source_link_row.dart';
-import 'daily_ca_unavailable_sheet.dart';
 
 /// The paper quiz to attempt now, with a local 1s timer so the rest of the
 /// screen stays stable while the countdown ticks.
@@ -25,16 +24,20 @@ class DailyCaTodaySection extends StatefulWidget {
     this.onRevisePaper,
     this.onViewResults,
     this.onViewRankings,
+    this.paperOpen = true,
     this.questionsReady = true,
     this.compact = false,
   });
 
   final DateTime minDate;
 
-  /// News date of the open paper quiz, or null when nothing has opened.
-  final DateTime? paperDate;
+  /// News date this paper is drawn from, whether or not it has opened.
+  final DateTime paperDate;
   final bool paperCompleted;
   final bool launching;
+
+  /// False before [paperDate]'s 6 AM opening — the quiz exists but is early.
+  final bool paperOpen;
 
   /// False when the scheduled paper has no live questions yet.
   final bool questionsReady;
@@ -87,12 +90,14 @@ class _DailyCaTodaySectionState extends State<DailyCaTodaySection> {
     final gap = compact ? AppSpacing.sm : AppSpacing.md;
 
     final paperDate = widget.paperDate;
-    final allowed =
-        paperDate != null &&
-        DailyCaSchedule.isOnOrAfterMinDate(paperDate, widget.minDate);
-    final isTodaysPaper =
-        paperDate != null &&
-        DailyCaSchedule.isTodaysPaper(paperDate, referenceIst: _ist);
+    final allowed = DailyCaSchedule.isOnOrAfterMinDate(
+      paperDate,
+      widget.minDate,
+    );
+    final isTodaysPaper = DailyCaSchedule.isTodaysPaper(
+      paperDate,
+      referenceIst: _ist,
+    );
     final nextOpen = DailyCaSchedule.nextOpensAt(referenceIst: _ist);
     final countdownLabel = DailyCaSchedule.formatCountdownHms(
       DailyCaSchedule.timeUntilNextOpen(referenceIst: _ist),
@@ -103,15 +108,24 @@ class _DailyCaTodaySectionState extends State<DailyCaTodaySection> {
         ? 'Today\'s test opens at 6 AM'
         : 'Tomorrow\'s test opens at 6 AM';
 
+    /// Opened on schedule but the pipeline never produced it — the next real
+    /// paper is tomorrow's, so there is nothing to wait out today.
+    final missing = allowed && widget.paperOpen && !widget.questionsReady;
+    final untilOpen = DailyCaSchedule.formatCountdownHms(
+      DailyCaSchedule.opensAtForDate(paperDate).difference(_ist),
+    );
+
     final String headline;
     if (!allowed) {
       headline =
           'Daily tests start from '
           '${DateFormat('d MMM yyyy').format(widget.minDate)}.';
-    } else if (!widget.questionsReady) {
-      headline = nextIsToday
-          ? 'Today\'s test will be available soon.'
-          : 'Today\'s test will be available tomorrow morning.';
+    } else if (!widget.paperOpen) {
+      headline =
+          'Today\'s current affairs test, from yesterday\'s news, '
+          'goes live at 6 AM.';
+    } else if (missing) {
+      headline = 'No paper today. The next one lands tomorrow at 6 AM.';
     } else if (widget.paperCompleted) {
       headline = 'Quiz done. Open the explanations if a line still nags.';
     } else if (isTodaysPaper) {
@@ -219,24 +233,12 @@ class _DailyCaTodaySectionState extends State<DailyCaTodaySection> {
                   SizedBox(
                     height: compact ? 42 : 46,
                     child: FilledButton.icon(
-                      onPressed: widget.launching
+                      onPressed:
+                          widget.launching || !allowed || !widget.questionsReady
                           ? null
-                          : !allowed
-                          ? null
-                          : widget.questionsReady
-                          ? (widget.paperCompleted
-                                ? widget.onRevisePaper
-                                : widget.onStartPaper)
-                          : () {
-                              showDailyCaUnavailableSheet(
-                                context: context,
-                                availableFrom: DailyCaSchedule.nextOpensAt(
-                                  referenceIst: _ist,
-                                ),
-                                pendingLive: true,
-                                onSeeHistory: () {},
-                              );
-                            },
+                          : widget.paperCompleted
+                          ? widget.onRevisePaper
+                          : widget.onStartPaper,
                       style: FilledButton.styleFrom(
                         backgroundColor: AppColors.primary,
                         foregroundColor: AppColors.onPrimary,
@@ -257,7 +259,9 @@ class _DailyCaTodaySectionState extends State<DailyCaTodaySection> {
                               ),
                             )
                           : Icon(
-                              widget.paperCompleted
+                              !allowed || !widget.questionsReady
+                                  ? Icons.schedule_rounded
+                                  : widget.paperCompleted
                                   ? Icons.replay_rounded
                                   : Icons.play_arrow_rounded,
                               size: 20,
@@ -265,8 +269,10 @@ class _DailyCaTodaySectionState extends State<DailyCaTodaySection> {
                       label: Text(
                         !allowed
                             ? 'Not started yet'
-                            : !widget.questionsReady
-                            ? 'Available soon'
+                            : !widget.paperOpen
+                            ? 'Live in $untilOpen'
+                            : missing
+                            ? 'Next test in $countdownLabel'
                             : widget.paperCompleted
                             ? 'Revise this test'
                             : 'Start today\'s test',
