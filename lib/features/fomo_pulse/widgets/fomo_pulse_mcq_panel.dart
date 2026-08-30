@@ -10,6 +10,9 @@ import '../../../core/analytics/analytics.dart';
 import '../../../core/analytics/analytics_events.dart';
 import '../../../core/parsers/question_display_text_composer.dart';
 import '../../../core/providers/app_language_helpers.dart';
+import '../../../core/providers/catalog_providers.dart';
+import '../../../core/providers/prefs_provider.dart';
+import '../../home/domain/daily_streak_service.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
@@ -74,6 +77,9 @@ class FomoPulseMcqPanel extends HookConsumerWidget {
         result: local,
         updateCommunityCounts: false,
       );
+      final prefs = await ref.read(prefsServiceProvider.future);
+      DailyStreakService.recordRingClosed(prefs: prefs);
+      ref.invalidate(homeStateProvider);
       try {
         final remote = await cloud.submitAttempt(
           pulseId: pulse.pulseId,

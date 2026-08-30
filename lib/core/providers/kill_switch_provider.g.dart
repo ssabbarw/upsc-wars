@@ -48,7 +48,7 @@ final class KillSwitchProvider
   }
 }
 
-String _$killSwitchHash() => r'f09ad40962bfe18e3234d58a8c2bbf46071e783b';
+String _$killSwitchHash() => r'd54c09dbf2baa349e361c08cada2c81660313121';
 
 /// Whether the Community tab should be shown (after [killSwitchProvider] fetch).
 ///
@@ -98,21 +98,21 @@ final class CommunityTabRemoteEnabledProvider
 String _$communityTabRemoteEnabledHash() =>
     r'ed6ce0ddcb75b90a24cf3013c80fd3c4ce8b8b21';
 
-/// Whether the Daily Current Affairs home entry should be shown.
+/// Whether the Daily Current Affairs Test home entry should be shown.
 ///
 /// Fails closed (`false`) while loading or on read errors.
 
 @ProviderFor(dailyCaRemoteEnabled)
 final dailyCaRemoteEnabledProvider = DailyCaRemoteEnabledProvider._();
 
-/// Whether the Daily Current Affairs home entry should be shown.
+/// Whether the Daily Current Affairs Test home entry should be shown.
 ///
 /// Fails closed (`false`) while loading or on read errors.
 
 final class DailyCaRemoteEnabledProvider
     extends $FunctionalProvider<AsyncValue<bool>, bool, FutureOr<bool>>
     with $FutureModifier<bool>, $FutureProvider<bool> {
-  /// Whether the Daily Current Affairs home entry should be shown.
+  /// Whether the Daily Current Affairs Test home entry should be shown.
   ///
   /// Fails closed (`false`) while loading or on read errors.
   DailyCaRemoteEnabledProvider._()
@@ -142,6 +142,51 @@ final class DailyCaRemoteEnabledProvider
 
 String _$dailyCaRemoteEnabledHash() =>
     r'656cc2f8b3d20f324a31a3181b605c5fcac9caef';
+
+/// Whether the CA Shots home entry should be shown.
+///
+/// Fails closed (`false`) while loading or on read errors.
+
+@ProviderFor(caShotsRemoteEnabled)
+final caShotsRemoteEnabledProvider = CaShotsRemoteEnabledProvider._();
+
+/// Whether the CA Shots home entry should be shown.
+///
+/// Fails closed (`false`) while loading or on read errors.
+
+final class CaShotsRemoteEnabledProvider
+    extends $FunctionalProvider<AsyncValue<bool>, bool, FutureOr<bool>>
+    with $FutureModifier<bool>, $FutureProvider<bool> {
+  /// Whether the CA Shots home entry should be shown.
+  ///
+  /// Fails closed (`false`) while loading or on read errors.
+  CaShotsRemoteEnabledProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'caShotsRemoteEnabledProvider',
+        isAutoDispose: false,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$caShotsRemoteEnabledHash();
+
+  @$internal
+  @override
+  $FutureProviderElement<bool> $createElement($ProviderPointer pointer) =>
+      $FutureProviderElement(pointer);
+
+  @override
+  FutureOr<bool> create(Ref ref) {
+    return caShotsRemoteEnabled(ref);
+  }
+}
+
+String _$caShotsRemoteEnabledHash() =>
+    r'f9c83a3eb68bc549c7202376dd2c13399c394007';
 
 /// Whether Daily War is available for the **signed-in user**.
 ///

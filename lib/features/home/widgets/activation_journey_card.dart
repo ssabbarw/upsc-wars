@@ -59,7 +59,7 @@ class ActivationJourneyCard extends HookConsumerWidget {
     return Material(
       color: Colors.transparent,
       child: InkWell(
-        onTap: () => unawaited(showGetStartedDiagnosticIntroSheet(context)),
+        onTap: () => unawaited(openGetStartedFromHome(context, ref)),
         borderRadius: BorderRadius.circular(AppRadius.xl),
         child: Ink(
           decoration: BoxDecoration(
@@ -117,7 +117,7 @@ class ActivationJourneyCard extends HookConsumerWidget {
                 height: 48,
                 child: ElevatedButton(
                   onPressed: () =>
-                      unawaited(showGetStartedDiagnosticIntroSheet(context)),
+                      unawaited(openGetStartedFromHome(context, ref)),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: ctaColor,
                     foregroundColor: Colors.white,

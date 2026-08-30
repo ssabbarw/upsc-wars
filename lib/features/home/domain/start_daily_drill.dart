@@ -36,6 +36,7 @@ Future<void> startDailyDrill({
         subject: subject,
         source: source,
         completedToday: completedToday,
+        pool: 'fresh',
       ),
     ),
   );
@@ -79,6 +80,10 @@ Future<void> startRevisionDrill({
         subject: DailyRevision.analyticsSubject(pool),
         source: source,
         completedToday: completedToday,
+        pool: switch (pool) {
+          DailyRevisionPool.missed => 'missed',
+          DailyRevisionPool.saved => 'saved',
+        },
       ),
     ),
   );

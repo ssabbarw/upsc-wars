@@ -362,6 +362,32 @@ class QuestionsDao extends DatabaseAccessor<UserDatabase>
     return rows.map((r) => questions.map(r.data)).toList();
   }
 
+  /// Newest current-affairs rows, excluding [excludeUuids].
+  Future<List<Question>> getRecentCurrentAffairs({
+    required int limit,
+    Set<String> excludeUuids = const {},
+  }) async {
+    if (limit <= 0) return const [];
+    final rows = await customSelect(
+      'SELECT * FROM questions WHERE source_kind = ? '
+      'ORDER BY source_date DESC, paper_order IS NULL, paper_order ASC, uuid ASC '
+      'LIMIT ?',
+      variables: [
+        Variable.withString('current_affairs'),
+        Variable.withInt(limit + excludeUuids.length + 24),
+      ],
+      readsFrom: {questions},
+    ).get();
+    final out = <Question>[];
+    for (final r in rows) {
+      final q = questions.map(r.data);
+      if (excludeUuids.contains(q.uuid)) continue;
+      out.add(q);
+      if (out.length >= limit) break;
+    }
+    return out;
+  }
+
   /// Full daily current-affairs set for [sourceDate] (`YYYY-MM-DD`).
   Future<List<Question>> getCurrentAffairsByDate(String sourceDate) async {
     final rows = await customSelect(
@@ -906,6 +932,43 @@ class SessionsDao extends DatabaseAccessor<UserDatabase>
             ..where((t) => t.status.equals('in_progress'))
             ..orderBy([(t) => OrderingTerm.desc(t.createdAt)]))
           .get();
+
+  Future<String?> getInProgressSessionIdByFeatureKey(String featureKey) async {
+    final row = await customSelect(
+      "SELECT id FROM sessions "
+      "WHERE analytics_feature_key = ? AND status = 'in_progress' "
+      "ORDER BY created_at DESC LIMIT 1",
+      variables: [Variable.withString(featureKey)],
+      readsFrom: {sessions},
+    ).getSingleOrNull();
+    return row?.read<String>('id');
+  }
+
+  /// In-progress session for [featureKey], plus how many questions are done.
+  Future<({String sessionId, int done, int total})?>
+      getInProgressSessionProgressByFeatureKey(String featureKey) async {
+    final row = await customSelect(
+      "SELECT id, question_count FROM sessions "
+      "WHERE analytics_feature_key = ? AND status = 'in_progress' "
+      "ORDER BY created_at DESC LIMIT 1",
+      variables: [Variable.withString(featureKey)],
+      readsFrom: {sessions},
+    ).getSingleOrNull();
+    if (row == null) return null;
+    final id = row.read<String>('id');
+    final total = row.read<int>('question_count');
+    final doneRow = await customSelect(
+      "SELECT COUNT(*) AS c FROM attempts "
+      "WHERE session_id = ? AND status != 'unattempted'",
+      variables: [Variable.withString(id)],
+      readsFrom: {db.sessionQuestions},
+    ).getSingle();
+    return (
+      sessionId: id,
+      done: doneRow.read<int?>('c') ?? 0,
+      total: total,
+    );
+  }
 
   Future<int> countCompletedSessions() async {
     final row = await customSelect(

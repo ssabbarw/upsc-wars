@@ -117,12 +117,67 @@ class OnboardingQuestionDepthPage extends HookWidget {
           ),
         ),
         SizedBox(height: onb(context, 12)),
+        _BottomCta(visible: allChecked, onContinue: onContinue),
+      ],
+    );
+  }
+}
+
+class _BottomCta extends HookWidget {
+  const _BottomCta({required this.visible, required this.onContinue});
+
+  final bool visible;
+  final VoidCallback onContinue;
+
+  static const _ctaDelay = Duration(milliseconds: 320);
+
+  @override
+  Widget build(BuildContext context) {
+    final reduceMotion = MediaQuery.disableAnimationsOf(context);
+    final showButton = useState(reduceMotion && visible);
+
+    useEffect(() {
+      if (!visible) {
+        showButton.value = false;
+        return null;
+      }
+      if (reduceMotion) {
+        showButton.value = true;
+        return null;
+      }
+      final t = Timer(_ctaDelay, () => showButton.value = true);
+      return t.cancel;
+    }, [visible, reduceMotion]);
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
         AnimatedOpacity(
-          opacity: allChecked ? 1 : 0,
-          duration: const Duration(milliseconds: 350),
+          opacity: visible ? 1 : 0,
+          duration: reduceMotion
+              ? Duration.zero
+              : const Duration(milliseconds: 420),
+          curve: Curves.easeOutCubic,
+          child: Text(
+            'No timer. After each answer, the full explanation opens — '
+            'traps, statement analysis, and how to eliminate.',
+            textAlign: TextAlign.center,
+            style: RgText.body(
+              size: onb(context, 12.5),
+              height: 1.35,
+              color: RgColors.muted,
+            ),
+          ),
+        ),
+        SizedBox(height: onb(context, 12)),
+        AnimatedOpacity(
+          opacity: showButton.value ? 1 : 0,
+          duration: reduceMotion
+              ? Duration.zero
+              : const Duration(milliseconds: 350),
           curve: Curves.easeOutCubic,
           child: IgnorePointer(
-            ignoring: !allChecked,
+            ignoring: !showButton.value,
             child: FilledButton(
               onPressed: onContinue,
               style: RgText.pillButton(
@@ -139,7 +194,7 @@ class OnboardingQuestionDepthPage extends HookWidget {
                 ),
               ),
               child: Text(
-                'Next  →',
+                'Try 8 questions',
                 style: RgText.body(
                   size: onb(context, 16),
                   weight: FontWeight.w700,

@@ -71,10 +71,6 @@ class SessionInsightHeroCard extends ConsumerWidget {
     final subtitleText = insightCase == SessionInsightCase.gIncomplete
         ? _incompleteSubtitle(result)
         : style.subtitle;
-    final footnote = result.analyticsFeatureKey == _getStartedKey
-        ? 'Demo only — not saved. Your real topic insights start with full '
-            'practice tests.'
-        : null;
 
     return Container(
       decoration: BoxDecoration(
@@ -167,16 +163,6 @@ class SessionInsightHeroCard extends ConsumerWidget {
               '${topRiskPct != null ? ' ($topRiskPct% of your loss)' : ''}',
               style: AppTextStyles.caption().copyWith(
                 color: scheme.onSurfaceVariant,
-              ),
-            ),
-          ],
-          if (footnote != null) ...[
-            const SizedBox(height: AppSpacing.sm),
-            Text(
-              footnote,
-              style: AppTextStyles.caption().copyWith(
-                color: scheme.onSurfaceVariant,
-                fontStyle: FontStyle.italic,
               ),
             ),
           ],

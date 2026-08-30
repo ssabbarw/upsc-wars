@@ -140,7 +140,12 @@ class FcmTokenSyncService {
     if (kIsWeb) return;
     try {
       if (!await _iosApnsReady()) return;
-      await FirebaseMessaging.instance.subscribeToTopic(
+      final messaging = FirebaseMessaging.instance;
+      if (!FirebaseRemoteConfig.instance.getBool(caShotsEnabledRemoteConfigKey)) {
+        await messaging.unsubscribeFromTopic(FomoPulseConstants.broadcastFcmTopic);
+        return;
+      }
+      await messaging.subscribeToTopic(
         FomoPulseConstants.broadcastFcmTopic,
       );
     } catch (e, st) {

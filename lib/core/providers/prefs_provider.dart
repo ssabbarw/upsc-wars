@@ -46,6 +46,12 @@ abstract final class PrefKeys {
   static const getStartedDiagnosticAttemptedV1 =
       'get_started_diagnostic_attempted_v1';
 
+  /// Demo Q3+ intro sheet before the first confidence ask.
+  static const demoConfidenceIntroSeenV1 = 'demo_confidence_intro_seen_v1';
+
+  /// Demo overlay pointing at the EN | हि language toggle.
+  static const demoLanguageCoachSeenV1 = 'demo_language_coach_seen_v1';
+
   /// User dismissed the Get Started home card via the explain sheet.
   /// Legacy — ignored; prefer [getStartedCardSnoozedUntilV1].
   static const getStartedCardDismissedV1 = 'get_started_card_dismissed_v1';
@@ -287,6 +293,16 @@ class PrefsService {
       _p.getBool(PrefKeys.getStartedDiagnosticAttemptedV1) ?? false;
   set getStartedDiagnosticAttempted(bool v) =>
       _p.setBool(PrefKeys.getStartedDiagnosticAttemptedV1, v);
+
+  bool get demoConfidenceIntroSeen =>
+      _p.getBool(PrefKeys.demoConfidenceIntroSeenV1) ?? false;
+  set demoConfidenceIntroSeen(bool v) =>
+      _p.setBool(PrefKeys.demoConfidenceIntroSeenV1, v);
+
+  bool get demoLanguageCoachSeen =>
+      _p.getBool(PrefKeys.demoLanguageCoachSeenV1) ?? false;
+  set demoLanguageCoachSeen(bool v) =>
+      _p.setBool(PrefKeys.demoLanguageCoachSeenV1, v);
 
   bool get getStartedCardDismissed =>
       _p.getBool(PrefKeys.getStartedCardDismissedV1) ?? false;

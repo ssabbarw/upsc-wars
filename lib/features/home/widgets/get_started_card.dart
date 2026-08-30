@@ -13,11 +13,16 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../core/providers/catalog_providers.dart';
+import '../../../core/providers/user_database_provider.dart';
 import '../../../shared/widgets/dismissible_modal_sheet.dart';
+import '../../test_engine/providers/test_session_provider.dart';
 import '../domain/create_get_started_session_use_case.dart';
 import '../providers/home_activation_provider.dart';
 
-/// Creates the 7-question mixed Get Started diagnostic (returns session id or null).
+enum _DemoResumeChoice { resume, restart }
+
+/// Creates a new mixed Get Started diagnostic (returns session id or null).
 Future<String?> createGetStartedDiagnosticSession(
   WidgetRef ref, {
   String source = 'home_card',
@@ -39,6 +44,53 @@ Future<String?> createGetStartedDiagnosticSession(
   }
 }
 
+Future<String?> _resolveGetStartedDiagnosticSession(
+  BuildContext context,
+  WidgetRef ref, {
+  required String source,
+}) async {
+  final db = ref.read(userDatabaseProvider);
+  final progress = await db.sessionsDao
+      .getInProgressSessionProgressByFeatureKey(
+        CreateGetStartedSessionUseCase.analyticsKey,
+      );
+  if (progress != null) {
+    if (!context.mounted) return null;
+    final choice = await _showDemoResumeOrRestartSheet(
+      context,
+      done: progress.done,
+      total: progress.total > 0
+          ? progress.total
+          : CreateGetStartedSessionUseCase.questionCount,
+    );
+    if (choice == null || !context.mounted) return null;
+    if (choice == _DemoResumeChoice.resume) {
+      unawaited(
+        Analytics.track(
+          ref,
+          GetStartedCardTappedEvent(
+            subject: CreateGetStartedSessionUseCase.mixedSubject,
+            source: '${source}_resume',
+          ),
+        ),
+      );
+      return progress.sessionId;
+    }
+    try {
+      final repo = await ref.read(testEngineRepositoryProvider.future);
+      await repo.discardSession(
+        progress.sessionId,
+        userInitiatedQuit: false,
+      );
+      ref.invalidate(testSessionProvider(progress.sessionId));
+    } on Object {
+      return null;
+    }
+  }
+  if (!context.mounted) return null;
+  return createGetStartedDiagnosticSession(ref, source: source);
+}
+
 /// Navigates into the Get Started diagnostic test. Returns false on failure.
 Future<bool> launchGetStartedDiagnostic(
   BuildContext context,
@@ -46,15 +98,13 @@ Future<bool> launchGetStartedDiagnostic(
   String source = 'home_card',
   bool replaceRoute = false,
 }) async {
-  final sessionId = await createGetStartedDiagnosticSession(
+  final sessionId = await _resolveGetStartedDiagnosticSession(
+    context,
     ref,
     source: source,
   );
   if (!context.mounted) return false;
   if (sessionId == null) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Something went wrong. Please try again.')),
-    );
     return false;
   }
   if (replaceRoute) {
@@ -63,6 +113,39 @@ Future<bool> launchGetStartedDiagnostic(
     context.push('/test/$sessionId');
   }
   return true;
+}
+
+Future<void> openGetStartedFromHome(BuildContext context, WidgetRef ref) async {
+  final progress = await ref
+      .read(userDatabaseProvider)
+      .sessionsDao
+      .getInProgressSessionProgressByFeatureKey(
+        CreateGetStartedSessionUseCase.analyticsKey,
+      );
+  if (!context.mounted) return;
+  if (progress != null) {
+    await launchGetStartedDiagnostic(context, ref, source: 'home_card');
+    return;
+  }
+  await showGetStartedDiagnosticIntroSheet(context);
+}
+
+Future<_DemoResumeChoice?> _showDemoResumeOrRestartSheet(
+  BuildContext context, {
+  required int done,
+  required int total,
+}) {
+  return showModalBottomSheet<_DemoResumeChoice>(
+    context: context,
+    useRootNavigator: true,
+    isScrollControlled: true,
+    isDismissible: true,
+    enableDrag: true,
+    backgroundColor: Colors.transparent,
+    builder: (ctx) => DismissOnScrimTap(
+      child: _DemoResumeOrRestartSheet(done: done, total: total),
+    ),
+  );
 }
 
 /// What to expect before the first mixed-subject diagnostic.
@@ -90,7 +173,125 @@ Future<bool?> showGetStartedDiagnosticIntroSheet(
       ),
     ),
   );
-  return started;
+    return started;
+}
+
+class _DemoResumeOrRestartSheet extends StatelessWidget {
+  const _DemoResumeOrRestartSheet({
+    required this.done,
+    required this.total,
+  });
+
+  final int done;
+  final int total;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final borderColor = isDark ? AppColors.borderDark : AppColors.borderLight;
+    final subtitle = done <= 0
+        ? 'No questions answered yet.'
+        : 'You\'ve answered $done of $total questions.';
+    final resumeLabel = done <= 0
+        ? 'Resume'
+        : 'Resume · $done of $total done';
+
+    return Padding(
+      padding: EdgeInsets.fromLTRB(
+        AppSpacing.sm,
+        0,
+        AppSpacing.sm,
+        sheetBottomPadding(context, base: AppSpacing.sm),
+      ),
+      child: Align(
+        alignment: Alignment.bottomCenter,
+        child: Material(
+          color: scheme.surface,
+          borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
+          child: Container(
+            padding: const EdgeInsets.fromLTRB(
+              AppSpacing.lg,
+              AppSpacing.md,
+              AppSpacing.lg,
+              AppSpacing.lg,
+            ),
+            decoration: BoxDecoration(
+              borderRadius: const BorderRadius.vertical(
+                top: Radius.circular(24),
+              ),
+              border: Border.all(color: borderColor.withValues(alpha: 0.45)),
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Center(
+                  child: Container(
+                    width: 40,
+                    height: 4,
+                    margin: const EdgeInsets.only(bottom: AppSpacing.md),
+                    decoration: BoxDecoration(
+                      color: scheme.onSurfaceVariant.withValues(alpha: 0.35),
+                      borderRadius: BorderRadius.circular(2),
+                    ),
+                  ),
+                ),
+                Text(
+                  'Demo in progress',
+                  style: AppTextStyles.h3().copyWith(
+                    fontWeight: FontWeight.w800,
+                    color: scheme.onSurface,
+                  ),
+                ),
+                const SizedBox(height: AppSpacing.sm),
+                Text(
+                  subtitle,
+                  style: AppTextStyles.bodySm().copyWith(
+                    color: scheme.onSurfaceVariant,
+                    height: 1.4,
+                  ),
+                ),
+                const SizedBox(height: AppSpacing.lg),
+                SizedBox(
+                  height: 48,
+                  child: FilledButton(
+                    onPressed: () =>
+                        Navigator.pop(context, _DemoResumeChoice.resume),
+                    style: FilledButton.styleFrom(
+                      backgroundColor: AppColors.primary,
+                      foregroundColor: AppColors.onPrimary,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(AppRadius.lg),
+                      ),
+                    ),
+                    child: Text(
+                      resumeLabel,
+                      style: AppTextStyles.label().copyWith(
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: AppSpacing.xs),
+                TextButton(
+                  onPressed: () =>
+                      Navigator.pop(context, _DemoResumeChoice.restart),
+                  child: Text(
+                    'Start over',
+                    style: AppTextStyles.labelSm().copyWith(
+                      color: scheme.onSurfaceVariant,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
 }
 
 /// Compact home invite — hidden after first test, demo, or dismiss.
@@ -123,7 +324,7 @@ class GetStartedCard extends HookConsumerWidget {
     return Material(
       color: Colors.transparent,
       child: InkWell(
-        onTap: () => unawaited(showGetStartedDiagnosticIntroSheet(context)),
+        onTap: () => unawaited(openGetStartedFromHome(context, ref)),
         borderRadius: BorderRadius.circular(AppRadius.md),
         child: Ink(
           padding: const EdgeInsets.fromLTRB(14, 14, 6, 14),
@@ -353,18 +554,14 @@ class _GetStartedDiagnosticIntroSheet extends HookConsumerWidget {
     Future<void> start() async {
       if (loading.value) return;
       loading.value = true;
-      final sessionId = await createGetStartedDiagnosticSession(
+      final sessionId = await _resolveGetStartedDiagnosticSession(
+        context,
         ref,
         source: _analyticsSource,
       );
       if (!context.mounted) return;
       if (sessionId == null) {
-        Navigator.pop(context, false);
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('Something went wrong. Please try again.'),
-          ),
-        );
+        loading.value = false;
         return;
       }
       Navigator.pop(context, true);
@@ -453,8 +650,8 @@ class _GetStartedDiagnosticIntroSheet extends HookConsumerWidget {
                         ),
                         const SizedBox(height: AppSpacing.xs),
                         Text(
-                          'Take this demo test — answers aren\u2019t saved and '
-                          'won\u2019t affect your performance insights.',
+                          'Take this demo — current affairs mixed with '
+                          'static, with instant feedback after each answer.',
                           style: AppTextStyles.bodySm().copyWith(
                             color: scheme.onSurfaceVariant,
                             height: 1.4,
@@ -473,10 +670,10 @@ class _GetStartedDiagnosticIntroSheet extends HookConsumerWidget {
                     child: Column(
                       children: const [
                         _DiagnosticExpectationRow(
-                          icon: Icons.timer_outlined,
-                          title: '7 MCQs · 5 minutes',
+                          icon: Icons.menu_book_outlined,
+                          title: '8 MCQs · no timer',
                           subtitle:
-                              'Mixed Prelims-style questions — jump in straight away.',
+                              'Current affairs plus static — see the explanation as you go.',
                         ),
                         SizedBox(height: AppSpacing.md),
                         _DiagnosticExpectationRow(

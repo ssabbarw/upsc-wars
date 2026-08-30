@@ -32,10 +32,98 @@ import '../../../shared/widgets/selectable_copy_search_text.dart';
 import '../../../shared/widgets/top_snack_bar.dart';
 import '../../community/widgets/share_qotd_sheet.dart';
 import '../../history/widgets/explanation_card.dart';
+import '../../home/domain/create_get_started_session_use_case.dart';
 import '../../push_spot_test/push_spot_test_constants.dart';
 import '../providers/test_session_provider.dart';
 import '../providers/test_session_state.dart';
+import '../widgets/demo_language_coach_overlay.dart';
 import '../widgets/exam_option_confidence_strip.dart';
+
+Future<void> _showDemoConfidenceIntroThenPrompt(
+  BuildContext context,
+  WidgetRef ref,
+  String sessionId,
+) async {
+  final session = ref.read(testSessionProvider(sessionId)).asData?.value.session;
+  final isDemo =
+      session?.analyticsFeatureKey ==
+      CreateGetStartedSessionUseCase.analyticsKey;
+  if (isDemo) {
+    final prefs = await ref.read(prefsServiceProvider.future);
+    if (!prefs.demoConfidenceIntroSeen) {
+      if (!context.mounted) return;
+      await _showDemoConfidenceIntroSheet(context);
+      prefs.demoConfidenceIntroSeen = true;
+    }
+  }
+  if (!context.mounted) return;
+  await _showConfidenceBottomSheet(context, ref, sessionId);
+}
+
+Future<void> _showDemoConfidenceIntroSheet(BuildContext context) async {
+  final scheme = Theme.of(context).colorScheme;
+  final isDark = Theme.of(context).brightness == Brightness.dark;
+  await showModalBottomSheet<void>(
+    context: context,
+    isScrollControlled: true,
+    isDismissible: true,
+    backgroundColor: Colors.transparent,
+    builder: (ctx) {
+      return Padding(
+        padding: EdgeInsets.only(
+          left: AppSpacing.lg,
+          right: AppSpacing.lg,
+          bottom: MediaQuery.paddingOf(ctx).bottom + AppSpacing.lg,
+        ),
+        child: Container(
+          padding: const EdgeInsets.all(AppSpacing.lg),
+          decoration: BoxDecoration(
+            color: isDark ? scheme.surfaceContainerHigh : scheme.surface,
+            borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
+            border: Border.all(
+              color: isDark ? AppColors.borderDark : AppColors.borderLight,
+            ),
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Text(
+                'From now on, let\'s also check how sure you are.',
+                style: AppTextStyles.h3().copyWith(color: scheme.onSurface),
+              ),
+              const SizedBox(height: AppSpacing.sm),
+              Text.rich(
+                TextSpan(
+                  style: AppTextStyles.bodySm().copyWith(
+                    color: scheme.onSurfaceVariant,
+                    height: 1.35,
+                  ),
+                  children: [
+                    TextSpan(
+                      text: 'Why? ',
+                      style: AppTextStyles.bodySm().copyWith(
+                        color: scheme.onSurface,
+                        fontWeight: FontWeight.w700,
+                        height: 1.35,
+                      ),
+                    ),
+                    const TextSpan(text: 'To catch your confident mistakes.'),
+                  ],
+                ),
+              ),
+              const SizedBox(height: AppSpacing.lg),
+              FilledButton(
+                onPressed: () => Navigator.pop(ctx),
+                child: const Text('Got it'),
+              ),
+            ],
+          ),
+        ),
+      );
+    },
+  );
+}
 
 Future<void> _showConfidenceBottomSheet(
   BuildContext context,
@@ -156,7 +244,7 @@ class TestEngineScreen extends HookConsumerWidget {
       canPop: false,
       onPopInvokedWithResult: (didPop, result) async {
         if (didPop) return;
-        final isDiscard = mode == 'exam' || mode == 'learning';
+        final isDiscard = mode == 'exam';
         final confirmed = await showDialog<bool>(
           context: context,
           builder: (ctx) => AlertDialog(
@@ -185,7 +273,7 @@ class TestEngineScreen extends HookConsumerWidget {
         if (confirmed == true) {
           if (isDiscard) {
             await notifier.discardSession();
-          } else {
+          } else if (mode != 'learning') {
             await notifier.markAbandoned();
           }
           if (context.mounted) {
@@ -364,6 +452,44 @@ class _TestEngineLoaded extends HookConsumerWidget {
       testSessionProvider(sessionId).select((a) => a.asData?.value.session),
     );
     final featureStartedSent = useRef(false);
+    final languageToggleKey = useMemoized(GlobalKey.new);
+    final languageCoachRequested = useRef(false);
+    useEffect(() {
+      if (languageCoachRequested.value) return null;
+      final isDemo =
+          sessionForFx?.analyticsFeatureKey ==
+          CreateGetStartedSessionUseCase.analyticsKey;
+      if (!isDemo) return null;
+      languageCoachRequested.value = true;
+      var cancelled = false;
+      OverlayEntry? entry;
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        unawaited(() async {
+          final prefs = await ref.read(prefsServiceProvider.future);
+          if (cancelled || !context.mounted) return;
+          if (prefs.demoLanguageCoachSeen) return;
+          prefs.demoLanguageCoachSeen = true;
+          void dismiss() {
+            final current = entry;
+            if (current == null || !current.mounted) return;
+            current.remove();
+          }
+
+          entry = OverlayEntry(
+            builder: (ctx) => DemoLanguageCoachOverlay(
+              toggleKey: languageToggleKey,
+              onDismiss: dismiss,
+            ),
+          );
+          Overlay.of(context).insert(entry!);
+        }());
+      });
+      return () {
+        cancelled = true;
+        final current = entry;
+        if (current != null && current.mounted) current.remove();
+      };
+    }, [sessionForFx?.analyticsFeatureKey]);
     useEffect(() {
       final s = sessionForFx;
       if (s == null || featureStartedSent.value) return null;
@@ -427,7 +553,9 @@ class _TestEngineLoaded extends HookConsumerWidget {
       final was = prev?.asData?.value.confidencePromptVisible ?? false;
       final now = next.asData?.value.confidencePromptVisible ?? false;
       if (!was && now) {
-        unawaited(_showConfidenceBottomSheet(context, ref, sessionId));
+        unawaited(
+          _showDemoConfidenceIntroThenPrompt(context, ref, sessionId),
+        );
       }
     });
 
@@ -495,6 +623,7 @@ class _TestEngineLoaded extends HookConsumerWidget {
                 _TopBar(
                   sessionId: sessionId,
                   uiLanguage: uiLanguage.value,
+                  languageToggleKey: languageToggleKey,
                   onLanguageChanged: (value) {
                     uiLanguage.value = value;
                     unawaited(persistAppLanguage(ref, value));
@@ -872,12 +1001,14 @@ class _TopBar extends HookConsumerWidget {
     required this.uiLanguage,
     required this.onLanguageChanged,
     required this.onBack,
+    this.languageToggleKey,
   });
 
   final String sessionId;
   final String uiLanguage;
   final ValueChanged<String> onLanguageChanged;
   final VoidCallback onBack;
+  final GlobalKey? languageToggleKey;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -927,6 +1058,7 @@ class _TopBar extends HookConsumerWidget {
                 ref.read(testSessionProvider(sessionId).notifier).reload(),
           ),
           EnHiLanguageToggle(
+            key: languageToggleKey,
             language: uiLanguage,
             onChanged: onLanguageChanged,
             minHeight: 28,
@@ -1080,13 +1212,44 @@ class _QuestionArea extends HookConsumerWidget {
         final i = v.currentIndex;
         if (i < 0 || i >= s.questions.length) return null;
         final q = s.questions[i];
-        return (s.mode, v.explanationVisible, v.learningVerdict, q);
+        return (
+          s.mode,
+          v.explanationVisible,
+          v.learningVerdict,
+          q,
+          s.analyticsFeatureKey,
+        );
       }),
     );
 
     if (snap == null) return const SizedBox.shrink();
 
-    final (mode, explanationVisible, learningVerdict, question) = snap;
+    final (mode, explanationVisible, learningVerdict, question, featureKey) =
+        snap;
+    final expandDeepDive =
+        featureKey == CreateGetStartedSessionUseCase.analyticsKey;
+    final explanationKey = useMemoized(GlobalKey.new);
+    final explanationWasVisible = useRef(false);
+    useEffect(() {
+      final justRevealed = explanationVisible && !explanationWasVisible.value;
+      explanationWasVisible.value = explanationVisible;
+      if (mode != 'learning' || !justRevealed) return null;
+      var cancelled = false;
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        Future<void>.delayed(const Duration(milliseconds: 80), () {
+          if (cancelled) return;
+          final target = explanationKey.currentContext;
+          if (target == null) return;
+          Scrollable.ensureVisible(
+            target,
+            alignment: 0.04,
+            duration: const Duration(milliseconds: 320),
+            curve: Curves.easeOutCubic,
+          );
+        });
+      });
+      return () => cancelled = true;
+    }, [explanationVisible, question.uuid]);
     final isHindi = uiLanguage == 'hi';
     final displayText = isHindi ? question.displayTextHi : question.displayText;
     final optionA = isHindi ? question.optionAHi : question.optionA;
@@ -1179,15 +1342,19 @@ class _QuestionArea extends HookConsumerWidget {
         ],
         if (mode == 'learning') ...[
           const SizedBox(height: AppSpacing.lg),
-          AnimatedSwitcher(
-            duration: const Duration(milliseconds: 200),
-            child: explanationVisible
-                ? _ExplanationCard(
-                    question: question,
-                    uiLanguage: uiLanguage,
-                    verdict: learningVerdict,
-                  )
-                : const SizedBox.shrink(),
+          KeyedSubtree(
+            key: explanationKey,
+            child: AnimatedSwitcher(
+              duration: const Duration(milliseconds: 200),
+              child: explanationVisible
+                  ? _ExplanationCard(
+                      question: question,
+                      uiLanguage: uiLanguage,
+                      verdict: learningVerdict,
+                      expandDeepDive: expandDeepDive,
+                    )
+                  : const SizedBox.shrink(),
+            ),
           ),
         ],
       ],
@@ -1203,6 +1370,7 @@ class _QuestionArea extends HookConsumerWidget {
               Expanded(
                 flex: 55,
                 child: SingleChildScrollView(
+                  key: ValueKey('q-${question.uuid}'),
                   physics: const BouncingScrollPhysics(),
                   padding: const EdgeInsets.all(AppSpacing.lg),
                   child: questionContent,
@@ -1216,6 +1384,7 @@ class _QuestionArea extends HookConsumerWidget {
               Expanded(
                 flex: 45,
                 child: SingleChildScrollView(
+                  key: ValueKey('opt-${question.uuid}'),
                   physics: const BouncingScrollPhysics(),
                   padding: const EdgeInsets.all(AppSpacing.lg),
                   child: optionsContent,
@@ -1225,6 +1394,7 @@ class _QuestionArea extends HookConsumerWidget {
           );
         }
         return SingleChildScrollView(
+          key: ValueKey(question.uuid),
           physics: const BouncingScrollPhysics(),
           padding: const EdgeInsets.all(AppSpacing.lg),
           child: Column(
@@ -1481,11 +1651,13 @@ class _ExplanationCard extends HookConsumerWidget {
     required this.question,
     required this.uiLanguage,
     required this.verdict,
+    this.expandDeepDive = false,
   });
 
   final TestQuestion question;
   final String uiLanguage;
   final LearningVerdict? verdict;
+  final bool expandDeepDive;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -1520,6 +1692,7 @@ class _ExplanationCard extends HookConsumerWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             ExplanationCard(
+              demoForceDeepDive: expandDeepDive ? true : null,
               translation: QuestionTranslation(
                 finalExplanation: finalExplanation,
                 statementAnalysis: statementAnalysis

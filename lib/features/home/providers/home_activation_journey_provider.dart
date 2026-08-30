@@ -30,7 +30,7 @@ class HomeActivationJourneyState {
   /// Demo diagnostic submitted, or any completed session.
   final bool demoOrFirstTestDone;
 
-  /// Scored answers (correct + wrong). Demo is ephemeral, so excluded.
+  /// Scored answers (correct + wrong).
   final int scoredAttempts;
 
   /// Loud START HERE card (demo still open).

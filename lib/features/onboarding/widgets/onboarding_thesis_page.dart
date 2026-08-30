@@ -27,7 +27,9 @@ class OnboardingThesisPage extends HookWidget {
     // Hold the CTA back briefly so the screen settles before it appears.
     final showCta = useState(false);
     useEffect(() {
-      final t = Timer(const Duration(seconds: 1), () => showCta.value = true);
+      final t = Timer(const Duration(milliseconds: 300), () {
+        showCta.value = true;
+      });
       return t.cancel;
     }, const []);
 

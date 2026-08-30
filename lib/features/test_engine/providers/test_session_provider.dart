@@ -7,10 +7,13 @@ import 'package:upsc_wars/core/analytics/question_attempt_analytics_input.dart';
 import 'package:upsc_wars/core/domain/entities/active_session.dart';
 import 'package:upsc_wars/core/domain/entities/answer_confidence.dart';
 import 'package:upsc_wars/core/domain/entities/test_question.dart';
+import 'package:upsc_wars/core/constants/question_source_constants.dart';
 import 'package:upsc_wars/core/providers/catalog_providers.dart';
 import 'package:upsc_wars/core/providers/prefs_provider.dart';
+import 'package:upsc_wars/core/providers/user_database_provider.dart';
 import 'package:upsc_wars/core/router/app_router.dart';
 import 'package:upsc_wars/core/theme/app_text_styles.dart';
+import 'package:upsc_wars/features/home/domain/create_get_started_session_use_case.dart';
 import 'package:upsc_wars/features/test_engine/domain/confidence_prompt_policy.dart';
 import 'package:upsc_wars/shared/widgets/top_snack_bar.dart';
 
@@ -174,6 +177,26 @@ class TestSessionNotifier extends _$TestSessionNotifier {
     // Learning: optional global toggle; then adaptive sheet or direct commit.
     if (!prefs.confidenceTrackingEnabled) {
       await _commitSelectedOption(option, confidence: null);
+      return;
+    }
+
+    // Demo: CA first, no confidence. Ask from the first static question so
+    // results can show confident-wrong topics.
+    if (s.analyticsFeatureKey == CreateGetStartedSessionUseCase.analyticsKey) {
+      final row = await ref
+          .read(userDatabaseProvider)
+          .questionsDao
+          .getByUuid(q.uuid);
+      if (row?.sourceKind == QuestionSourceConstants.kindCurrentAffairs) {
+        await _commitSelectedOption(option, confidence: null);
+        return;
+      }
+      state = AsyncData(
+        current.copyWith(
+          pendingSelectedOption: option,
+          confidencePromptVisible: true,
+        ),
+      );
       return;
     }
 

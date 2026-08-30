@@ -7,34 +7,64 @@ import 'package:upsc_wars/core/providers/prefs_provider.dart';
 import 'package:upsc_wars/core/providers/user_database_provider.dart';
 import 'package:upsc_wars/features/test_engine/domain/usecases/create_session_use_case.dart';
 
-import '../../../core/constants/timed_exam_debug_constants.dart';
+import '../../daily_ca/data/daily_ca_repository.dart';
+import '../../daily_ca/domain/daily_ca_schedule.dart';
+import '../../daily_ca/providers/daily_ca_providers.dart';
 
-/// Creates the 7-question Get Started diagnostic spread across 2–3 topics.
+/// Creates the first-run demo: mixed current-affairs + static, learning mode.
 class CreateGetStartedSessionUseCase {
   const CreateGetStartedSessionUseCase({
     required this.createSession,
     required this.userDb,
     required this.prefsService,
+    required this.dailyCaRepository,
   });
 
   final CreateSessionUseCase createSession;
   final UserDatabase userDb;
   final PrefsService prefsService;
+  final DailyCaRepository dailyCaRepository;
 
   static const analyticsKey = 'get_started_diagnostic';
   static const defaultSubject = 'Polity';
 
   /// Mixed-subject diagnostic (same bank as battles / open-challenge misc).
   static const mixedSubject = 'misc';
-  static const questionCount = 7;
+  static const questionCount = 8;
+  static const currentAffairsCount = 4;
+
+  Future<void> prefetchCurrentAffairs() async {
+    for (final day in DailyCaSchedule.recentTestContentDates()) {
+      try {
+        await dailyCaRepository.ensureCachedForDate(
+          DailyCaSchedule.formatIsoDate(day),
+        );
+      } on Object {
+        // Keep going — static bank fills any shortfall.
+      }
+    }
+  }
 
   Future<String> executeMixed() async {
+    await prefetchCurrentAffairs();
+
     final attempted = await userDb.sessionQuestionsDao
         .getAllAttemptedQuestionUuids();
-    final picked = await userDb.questionsDao.getUnseenFirstRandomMixed(
-      limit: questionCount,
-      attemptedQuestionUuids: attempted,
+    final ca = await userDb.questionsDao.getRecentCurrentAffairs(
+      limit: currentAffairsCount,
+      excludeUuids: attempted,
     );
+    final staticNeeded = questionCount - ca.length;
+    final staticQs = staticNeeded <= 0
+        ? const <Question>[]
+        : await userDb.questionsDao.getUnseenFirstRandomMixed(
+            limit: staticNeeded,
+            attemptedQuestionUuids: {
+              ...attempted,
+              for (final q in ca) q.uuid,
+            },
+          );
+    final picked = [...ca, ...staticQs];
     if (picked.isEmpty) {
       throw StateError('No questions available for diagnostic');
     }
@@ -42,10 +72,10 @@ class CreateGetStartedSessionUseCase {
     return createSession.execute(
       SessionConfig(
         subject: mixedSubject,
-        mode: 'exam',
+        mode: 'learning',
         questionCount: picked.length,
-        isTimed: true,
-        timeLimitSecs: picked.length * kDebugSecondsPerQuestion,
+        isTimed: false,
+        timeLimitSecs: null,
         language: normalizeAppLanguage(prefsService.language),
         specificQuestionUuids: picked.map((q) => q.uuid).toList(),
         analyticsFeatureKey: analyticsKey,
@@ -53,32 +83,7 @@ class CreateGetStartedSessionUseCase {
     );
   }
 
-  Future<String> execute({required String subject}) async {
-    final attempted = await userDb.sessionQuestionsDao
-        .getAllAttemptedQuestionUuids();
-    final picked = await userDb.questionsDao.getUnseenFirstBySubjectSpreadTopics(
-      subject: subject,
-      questionCount: questionCount,
-      maxTopics: 3,
-      attemptedQuestionUuids: attempted,
-    );
-    if (picked.isEmpty) {
-      throw StateError('No questions available for $subject');
-    }
-
-    return createSession.execute(
-      SessionConfig(
-        subject: subject,
-        mode: 'exam',
-        questionCount: picked.length,
-        isTimed: true,
-        timeLimitSecs: picked.length * kDebugSecondsPerQuestion,
-        language: normalizeAppLanguage(prefsService.language),
-        specificQuestionUuids: picked.map((q) => q.uuid).toList(),
-        analyticsFeatureKey: analyticsKey,
-      ),
-    );
-  }
+  Future<String> execute({required String subject}) => executeMixed();
 }
 
 final createGetStartedSessionUseCaseProvider =
@@ -90,5 +95,6 @@ final createGetStartedSessionUseCaseProvider =
         createSession: create,
         userDb: db,
         prefsService: prefs,
+        dailyCaRepository: ref.watch(dailyCaRepositoryProvider),
       );
     });

@@ -16,8 +16,11 @@ const killSwitchVersionRemoteConfigKey = 'kill_switch_version';
 /// Remote Config: when `false`, hide the Community shell tab (compile flag must still be on).
 const communityTabEnabledRemoteConfigKey = 'community_tab_enabled';
 
-/// Remote Config: when `false`, hide Daily Current Affairs on the home screen.
+/// Remote Config: when `false`, hide the Daily Current Affairs Test on home.
 const dailyCaEnabledRemoteConfigKey = 'daily_ca_enabled';
+
+/// Remote Config: when `false`, hide CA Shots on home (fails closed).
+const caShotsEnabledRemoteConfigKey = 'ca_shots_enabled';
 
 /// Remote Config: when `false`, hide Daily War on the home screen (fails closed).
 const dailyWarEnabledRemoteConfigKey = 'daily_war_enabled';
@@ -100,6 +103,7 @@ Future<KillSwitchSnapshot> killSwitch(Ref ref) async {
       killSwitchVersionRemoteConfigKey: '',
       communityTabEnabledRemoteConfigKey: true,
       dailyCaEnabledRemoteConfigKey: true,
+      caShotsEnabledRemoteConfigKey: true,
       // On by default for admin preview; set admins_only false to open to all.
       dailyWarEnabledRemoteConfigKey: true,
       dailyWarAdminsOnlyRemoteConfigKey: true,
@@ -163,7 +167,7 @@ Future<bool> communityTabRemoteEnabled(Ref ref) async {
   }
 }
 
-/// Whether the Daily Current Affairs home entry should be shown.
+/// Whether the Daily Current Affairs Test home entry should be shown.
 ///
 /// Fails closed (`false`) while loading or on read errors.
 @Riverpod(keepAlive: true)
@@ -175,6 +179,24 @@ Future<bool> dailyCaRemoteEnabled(Ref ref) async {
   try {
     return FirebaseRemoteConfig.instance.getBool(
       dailyCaEnabledRemoteConfigKey,
+    );
+  } on Object catch (_) {
+    return false;
+  }
+}
+
+/// Whether the CA Shots home entry should be shown.
+///
+/// Fails closed (`false`) while loading or on read errors.
+@Riverpod(keepAlive: true)
+Future<bool> caShotsRemoteEnabled(Ref ref) async {
+  if (kIsWeb) {
+    return false;
+  }
+  await ref.watch(killSwitchProvider.future);
+  try {
+    return FirebaseRemoteConfig.instance.getBool(
+      caShotsEnabledRemoteConfigKey,
     );
   } on Object catch (_) {
     return false;

@@ -24,6 +24,7 @@ class TodayHubData {
     required this.yesterdayWarDoc,
     required this.yesterdayWarSubmitted,
     required this.caEnabled,
+    required this.caShotsEnabled,
     required this.paperDate,
     required this.paperLive,
     required this.paperChecking,
@@ -48,7 +49,11 @@ class TodayHubData {
   final DailyWarDoc? yesterdayWarDoc;
   final bool yesterdayWarSubmitted;
 
+  /// Daily Current Affairs Test (`daily_ca_enabled`).
   final bool caEnabled;
+
+  /// CA Shots (`ca_shots_enabled`).
+  final bool caShotsEnabled;
 
   /// News date of the paper quiz to serve now, or null when none is open.
   final DateTime? paperDate;
@@ -116,6 +121,8 @@ final todayHubProvider = Provider.autoDispose<TodayHubData>((ref) {
 
   final caEnabled =
       ref.watch(dailyCaRemoteEnabledProvider).asData?.value ?? false;
+  final caShotsEnabled =
+      ref.watch(caShotsRemoteEnabledProvider).asData?.value ?? false;
   final minDate = ref.watch(dailyCaCalendarMinDateProvider).asData?.value;
 
   var paperDate = caEnabled ? DailyCaSchedule.paperQuizContentDate() : null;
@@ -151,6 +158,7 @@ final todayHubProvider = Provider.autoDispose<TodayHubData>((ref) {
     yesterdayWarDoc: yesterdayDoc,
     yesterdayWarSubmitted: yesterdaySubmission != null,
     caEnabled: caEnabled,
+    caShotsEnabled: caShotsEnabled,
     paperDate: paperDate,
     paperLive: paperLive,
     paperChecking: paperChecking,

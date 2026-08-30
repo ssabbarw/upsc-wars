@@ -416,11 +416,11 @@ final class DeferredPushHomeNudgeDismissedEvent extends AnalyticsEvent {
   const DeferredPushHomeNudgeDismissedEvent();
 }
 
-// ── First-run onboarding (thesis → depth → games list) ──────────
+// ── First-run onboarding (thesis → depth) ───────────────────────
 
 /// **Time the user spent on one horizontal step** of the first-run flow before
-/// swiping to the next, or the last step before “Let’s go.” [step] is
-/// `thesis`, `depth`, or `games`.
+/// swiping to the next, or the last step before “Get started.” [step] is
+/// `thesis` or `depth`.
 ///
 /// **GA4:** `onboarding_step_duration` with `step`, `duration_ms` (int).
 final class OnboardingStepDurationEvent extends AnalyticsEvent {
@@ -455,7 +455,7 @@ final class OnboardingFlowCompletedEvent extends AnalyticsEvent {
 /// drop-out signal.
 ///
 /// **GA4:** `onboarding_exited_incomplete` with:
-/// * `highest_step` — furthest step id reached (`thesis` / `depth` / `games`);
+/// * `highest_step` — furthest step id reached (`thesis` / `depth`);
 /// * `last_step` — page index at exit mapped the same way;
 /// * `elapsed_ms` — time from flow open;
 /// * `reached_last_step` — 1 if the user ever reached the final horizontal page.
@@ -800,17 +800,20 @@ final class MemoryPairsGamePlayedEvent extends AnalyticsEvent {
 
 /// **User started the daily practice drill** from home.
 ///
-/// **GA4:** `daily_drill_started` with `subject`, `source`, `completed_today`.
+/// **GA4:** `daily_drill_started` with `subject`, `source`, `completed_today`,
+/// optional `pool` (`missed` / `saved` / `fresh`).
 final class DailyDrillStartedEvent extends AnalyticsEvent {
   const DailyDrillStartedEvent({
     required this.subject,
     required this.source,
     required this.completedToday,
+    this.pool,
   });
 
   final String subject;
   final String source;
   final bool completedToday;
+  final String? pool;
 }
 
 /// **User changed daily practice subject** via the gear sheet.

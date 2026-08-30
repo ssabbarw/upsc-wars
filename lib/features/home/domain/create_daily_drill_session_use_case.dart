@@ -1,7 +1,6 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/constants/daily_drill_constants.dart';
-import '../../../core/constants/timed_exam_debug_constants.dart';
 import '../../../core/database/user_db.dart';
 import '../../../core/domain/entities/session_config.dart';
 import '../../../core/providers/app_language_helpers.dart';
@@ -58,10 +57,10 @@ class CreateDailyDrillSessionUseCase {
     return createSession.execute(
       SessionConfig(
         subject: sessionSubject,
-        mode: 'exam',
+        mode: 'learning',
         questionCount: picked.length,
-        isTimed: true,
-        timeLimitSecs: picked.length * kDebugSecondsPerQuestion,
+        isTimed: false,
+        timeLimitSecs: null,
         language: normalizeAppLanguage(prefsService.language),
         specificQuestionUuids: picked.map((q) => q.uuid).toList(),
         analyticsFeatureKey: analyticsFeatureKey,

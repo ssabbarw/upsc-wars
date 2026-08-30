@@ -786,7 +786,8 @@ class BattleMessagingService {
     await Future<void>.delayed(NotificationPromptPolicy.screenSettleDelay);
     if (!context.mounted) return;
     if (!TickerMode.valuesOf(context).enabled) return;
-    if (GoRouter.of(context).routeInformationProvider.value.uri.path != '/') {
+    final path = GoRouter.of(context).routeInformationProvider.value.uri.path;
+    if (path != '/' && !path.startsWith('/results')) {
       return;
     }
     final prefs = PrefsService(await SharedPreferences.getInstance());
@@ -811,7 +812,8 @@ class BattleMessagingService {
         path == '/daily-ca' || path.startsWith('/daily-ca/'),
       NotificationPromptSurface.community =>
         path == '/community' || path.startsWith('/community/'),
-      NotificationPromptSurface.postFirstTest => path == '/',
+      NotificationPromptSurface.postFirstTest =>
+        path == '/' || path.startsWith('/results'),
       NotificationPromptSurface.generic => true,
     };
   }

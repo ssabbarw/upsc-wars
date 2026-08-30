@@ -378,5 +378,18 @@ void main() {
         isTrue,
       );
     });
+
+    test('recentTestContentDates skips Sunday and walks back', () {
+      // Monday 10 Aug 2026 — last test days are Sat 8, Fri 7, Thu 6.
+      final dates = DailyCaSchedule.recentTestContentDates(
+        count: 3,
+        referenceIst: DateTime(2026, 8, 10, 9),
+      );
+      expect(dates.map(DailyCaSchedule.formatIsoDate).toList(), [
+        '2026-08-08',
+        '2026-08-07',
+        '2026-08-06',
+      ]);
+    });
   });
 }

@@ -348,6 +348,13 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
         }
       }
     }
+
+    final prevStreak = _prefsService.currentStreak;
+    DailyStreakService.recordRingClosed(prefs: _prefsService);
+    final nextStreak = _prefsService.currentStreak;
+    if (nextStreak > prevStreak) {
+      await _analytics.track(StreakContinuedEvent(streakLength: nextStreak));
+    }
     return isCorrect;
   }
 
@@ -437,10 +444,6 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
   @override
   Future<String> submitSession(String sessionId) async {
     final sessionMeta = await _userDb.sessionsDao.getSessionById(sessionId);
-    if (sessionMeta?.analyticsFeatureKey ==
-        CreateGetStartedSessionUseCase.analyticsKey) {
-      return _submitDemoDiagnosticSession(sessionId);
-    }
 
     final rows = await _userDb.sessionQuestionsDao.getSessionQuestionsOrdered(
       sessionId,
@@ -570,40 +573,6 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
       );
     }
 
-    return sessionId;
-  }
-
-  /// Demo diagnostic: show results from memory, then discard — no stats or history.
-  Future<String> _submitDemoDiagnosticSession(String sessionId) async {
-    final active = await loadSession(sessionId);
-    final result = await SessionHistoryRepositoryImpl(
-      _userDb,
-    ).getSessionResult(sessionId);
-
-    final rows = await _userDb.sessionQuestionsDao.getSessionQuestionsOrdered(
-      sessionId,
-    );
-    final hasSureOrEdu = rows.any(
-      (r) =>
-          (r.status == 'correct' || r.status == 'wrong') &&
-          AnswerConfidence.isDangerouslyConfident(r.confidence),
-    );
-    _prefsService.getStartedDiagnosticAttempted = true;
-    if (hasSureOrEdu) {
-      markHomeActivationComplete(_prefsService);
-    }
-    await logFirstTestDoneForServices(_analytics, _prefsService);
-    await logActivationMilestoneForServices(
-      _analytics,
-      _prefsService,
-      id: ActivationMilestones.getStartedDiagnosticCompleted,
-    );
-
-    DemoDiagnosticEphemeralStore.instance.put(
-      sessionId,
-      DemoDiagnosticEphemeralSnapshot(result: result, session: active),
-    );
-    await discardSession(sessionId);
     return sessionId;
   }
 
@@ -895,7 +864,8 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
       );
     }
 
-    if (analyticsFeatureKey == 'get_started_diagnostic') {
+    if (analyticsFeatureKey == CreateGetStartedSessionUseCase.analyticsKey) {
+      _prefsService.getStartedDiagnosticAttempted = true;
       await logActivationMilestoneForServices(
         _analytics,
         _prefsService,

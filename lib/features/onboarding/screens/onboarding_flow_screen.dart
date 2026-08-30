@@ -10,8 +10,9 @@ import '../../../core/analytics/analytics.dart';
 import '../../../core/analytics/analytics_events.dart';
 import '../../../core/analytics/screen_flow_analytics.dart';
 import '../../../core/providers/prefs_provider.dart';
+import '../../home/domain/prefetch_demo_current_affairs.dart';
+import '../../home/widgets/get_started_card.dart';
 import '../../mini_games/shared/revision_games_theme.dart';
-import '../widgets/onboarding_games_page.dart';
 import '../widgets/onboarding_question_depth_page.dart';
 import '../widgets/onboarding_scale.dart';
 import '../widgets/onboarding_thesis_page.dart';
@@ -21,16 +22,15 @@ String _onboardingStepIdForIndex(int i) {
   return switch (i) {
     0 => 'thesis',
     1 => 'depth',
-    2 => 'games',
     _ => 'unknown',
   };
 }
 
-/// First-run onboarding: thesis → question depth → animated games list.
+/// First-run onboarding: thesis → question depth.
 class OnboardingFlowScreen extends HookConsumerWidget {
   const OnboardingFlowScreen({super.key});
 
-  static const int _pageCount = 3;
+  static const int _pageCount = 2;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -55,6 +55,7 @@ class OnboardingFlowScreen extends HookConsumerWidget {
       await _complete(
         ref,
         context,
+        actionId: actionId,
         markFlowCompleted: () {
           onboardingFlowCompleted.value = true;
         },
@@ -74,6 +75,7 @@ class OnboardingFlowScreen extends HookConsumerWidget {
 
     useEffect(() {
       unawaited(Analytics.track(ref, const OnboardingFlowOpenedEvent()));
+      unawaited(prefetchDemoCurrentAffairs(ref));
       return null;
     }, const []);
 
@@ -163,19 +165,8 @@ class OnboardingFlowScreen extends HookConsumerWidget {
                       ),
                       OnboardingQuestionDepthPage(
                         onContinue: () {
-                          ScreenFlow.logAction(
-                            ref,
-                            screenName: ScreenFlow.onboarding,
-                            actionId: 'depth_continued',
-                          );
-                          goToPage(2);
-                        },
-                      ),
-                      OnboardingGamesPage(
-                        isActive: page.value == 2,
-                        onGetStarted: () {
                           unawaited(
-                            completeFlow(actionId: 'games_get_started'),
+                            completeFlow(actionId: 'depth_get_started'),
                           );
                         },
                       ),
@@ -194,6 +185,7 @@ class OnboardingFlowScreen extends HookConsumerWidget {
 Future<void> _complete(
   WidgetRef ref,
   BuildContext context, {
+  required String actionId,
   required void Function() markFlowCompleted,
   required int lastStepIndex,
   required DateTime lastStepStartedAt,
@@ -231,7 +223,16 @@ Future<void> _complete(
   final prefs = await ref.read(prefsServiceProvider.future);
   prefs.patternInterruptOnboardingSeen = true;
   ref.invalidate(prefsServiceProvider);
-  if (context.mounted) context.go('/');
+  if (!context.mounted) return;
+  final launched = await launchGetStartedDiagnostic(
+    context,
+    ref,
+    source: actionId == 'onboarding_skipped'
+        ? 'onboarding_skip'
+        : 'onboarding',
+    replaceRoute: true,
+  );
+  if (!launched && context.mounted) context.go('/');
 }
 
 class _TopChrome extends StatelessWidget {

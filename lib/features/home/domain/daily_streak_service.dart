@@ -1,13 +1,12 @@
 import 'package:intl/intl.dart';
 
 import '../../../core/providers/prefs_provider.dart';
+import '../../daily_ca/domain/daily_ca_schedule.dart';
 
-/// The one daily streak, fed by closing **any** Today ring.
+/// The one daily streak, fed by the first MCQ of the day (test or CA Shot).
 ///
-/// Reuses the existing `currentStreak` / `lastActiveDate` prefs so streaks
-/// earned under the old app-open rule carry over untouched. The difference is
-/// the trigger: opening the app no longer counts, finishing a paper quiz,
-/// static drill, or War does.
+/// Day boundary is IST. Reuses `currentStreak` / `lastActiveDate` so older
+/// streaks carry over.
 abstract final class DailyStreakService {
   DailyStreakService._();
 
@@ -18,11 +17,13 @@ abstract final class DailyStreakService {
 
   static String _key(DateTime day) => _fmt.format(day);
 
+  static DateTime _clock(DateTime? now) => now ?? DailyCaSchedule.nowIst();
+
   /// Records a closed ring for [now] and returns the resulting streak.
   ///
   /// Safe to call repeatedly — the first close of the day is what counts.
   static int recordRingClosed({required PrefsService prefs, DateTime? now}) {
-    final today = now ?? DateTime.now();
+    final today = _clock(now);
     final todayKey = _key(today);
     if (prefs.lastActiveDate == todayKey) {
       if (prefs.currentStreak > 0) return prefs.currentStreak;
@@ -47,7 +48,7 @@ abstract final class DailyStreakService {
   /// Stored streaks go stale the moment a day is skipped, so a user who stopped
   /// a week ago must not still see their old number.
   static int visibleStreak({required PrefsService prefs, DateTime? now}) {
-    final today = now ?? DateTime.now();
+    final today = _clock(now);
     final last = prefs.lastActiveDate;
     if (last == null || last.isEmpty) return 0;
     if (last == _key(today)) return prefs.currentStreak;
@@ -59,11 +60,11 @@ abstract final class DailyStreakService {
 
   /// Whether today has already fed the streak.
   static bool closedToday({required PrefsService prefs, DateTime? now}) =>
-      prefs.lastActiveDate == _key(now ?? DateTime.now());
+      prefs.lastActiveDate == _key(_clock(now));
 
   /// Marks [now] as a day where every available ring was closed. Idempotent.
   static void recordFullDay({required PrefsService prefs, DateTime? now}) {
-    final todayKey = _key(now ?? DateTime.now());
+    final todayKey = _key(_clock(now));
     final dates = prefs.todayFullDayDates;
     if (dates.contains(todayKey)) return;
     final next = [...dates, todayKey];
@@ -75,7 +76,7 @@ abstract final class DailyStreakService {
 
   /// Full days within the last 7 calendar days, including today.
   static int fullDaysThisWeek({required PrefsService prefs, DateTime? now}) {
-    final today = now ?? DateTime.now();
+    final today = _clock(now);
     final keys = <String>{
       for (var i = 0; i < 7; i++)
         _key(today.subtract(Duration(days: i))),

@@ -33,7 +33,6 @@ import '../../daily_war/providers/daily_war_providers.dart';
 import '../providers/today_hub_provider.dart';
 import '../providers/today_hero_intent_provider.dart';
 import '../domain/today_hero.dart';
-import '../../daily_war/theme/daily_war_theme.dart';
 import '../../../shared/widgets/push_denied_banner.dart';
 import '../../../shared/theme/dark_mode_toggle.dart';
 import '../../../shared/widgets/app_update_kill_switch_overlay.dart';
@@ -428,22 +427,6 @@ class HomeScreen extends HookConsumerWidget {
                         ),
                         Consumer(
                           builder: (context, ref, _) {
-                            final warOn =
-                                ref
-                                    .watch(dailyWarRemoteEnabledProvider)
-                                    .asData
-                                    ?.value ??
-                                false;
-                            final warUnplayed =
-                                warOn &&
-                                (ref
-                                    .watch(dailyWarHomeSnapshotProvider)
-                                    .warUnplayed);
-                            final streakAccent = warUnplayed
-                                ? DwColors.crimson
-                                : AppColors.streak;
-                            // One streak, fed by any Today ring — War no longer
-                            // replaces it, so a missed 9 PM is not a broken day.
                             final streakLabel = home.when(
                               data: (h) =>
                                   '${h.streakCount} day${h.streakCount == 1 ? '' : 's'}',
@@ -462,10 +445,8 @@ class HomeScreen extends HookConsumerWidget {
                                   AppRadius.pill,
                                 ),
                                 border: Border.all(
-                                  color: warUnplayed
-                                      ? DwColors.crimson.withValues(alpha: 0.45)
-                                      : borderColor,
-                                  width: warUnplayed ? 1 : 0.5,
+                                  color: borderColor,
+                                  width: 0.5,
                                 ),
                               ),
                               child: Row(
@@ -473,7 +454,7 @@ class HomeScreen extends HookConsumerWidget {
                                 children: [
                                   Icon(
                                     Icons.local_fire_department,
-                                    color: streakAccent,
+                                    color: AppColors.streak,
                                     size: 16,
                                   ),
                                   const SizedBox(width: AppSpacing.xs),
@@ -483,17 +464,6 @@ class HomeScreen extends HookConsumerWidget {
                                       color: scheme.onSurface,
                                     ),
                                   ),
-                                  if (warUnplayed) ...[
-                                    const SizedBox(width: 6),
-                                    Container(
-                                      width: 6,
-                                      height: 6,
-                                      decoration: const BoxDecoration(
-                                        color: DwColors.crimson,
-                                        shape: BoxShape.circle,
-                                      ),
-                                    ),
-                                  ],
                                 ],
                               ),
                             );

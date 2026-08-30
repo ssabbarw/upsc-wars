@@ -153,6 +153,21 @@ abstract final class DailyCaSchedule {
     return isTestDay(cursor) ? cursor : cursor.subtract(const Duration(days: 1));
   }
 
+  /// Recent newspaper-pack dates to prefetch (walks back past Sundays).
+  static List<DateTime> recentTestContentDates({
+    int count = 3,
+    DateTime? referenceIst,
+  }) {
+    final now = referenceIst ?? nowIst();
+    final dates = <DateTime>[];
+    var cursor = dateOnly(now).subtract(const Duration(days: 1));
+    for (var i = 0; i < 14 && dates.length < count; i++) {
+      if (isTestDay(cursor)) dates.add(cursor);
+      cursor = cursor.subtract(const Duration(days: 1));
+    }
+    return dates;
+  }
+
   /// [expectedPaperContentDate] once its quiz has opened — the paper to serve
   /// right now. Null between midnight and [openHourIst], and on any day the
   /// expected paper never opened.
