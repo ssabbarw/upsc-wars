@@ -17,10 +17,12 @@ import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/widgets/dismissible_modal_sheet.dart';
 import '../domain/daily_rituals.dart';
 
-Future<List<DailyRitualCopy>> _enabledDailyRituals(WidgetRef ref) async {
-  final caShots = await ref.read(caShotsRemoteEnabledProvider.future);
-  final dailyCa = await ref.read(dailyCaRemoteEnabledProvider.future);
-  final dailyWar = await ref.read(dailyWarRemoteEnabledProvider.future);
+Future<List<DailyRitualCopy>> _enabledDailyRituals(
+  ProviderContainer container,
+) async {
+  final caShots = await container.read(caShotsRemoteEnabledProvider.future);
+  final dailyCa = await container.read(dailyCaRemoteEnabledProvider.future);
+  final dailyWar = await container.read(dailyWarRemoteEnabledProvider.future);
   return DailyRituals.enabledItems(
     caShotsEnabled: caShots,
     dailyCaEnabled: dailyCa,
@@ -35,6 +37,7 @@ Future<void> maybeShowDailyRitualsIntro({
   required WidgetRef ref,
 }) async {
   if (kIsWeb) return;
+  final container = ProviderScope.containerOf(context, listen: false);
   await Future<void>.delayed(const Duration(milliseconds: 700));
   if (!context.mounted) return;
   if (!TickerMode.valuesOf(context).enabled) return;
@@ -43,14 +46,14 @@ Future<void> maybeShowDailyRitualsIntro({
   }
   if (ModalRoute.of(context)?.isCurrent != true) return;
 
-  final kill = ref.read(killSwitchProvider).asData?.value;
+  final kill = container.read(killSwitchProvider).asData?.value;
   if (kill?.isActive ?? false) return;
 
-  final enabled = await _enabledDailyRituals(ref);
+  final enabled = await _enabledDailyRituals(container);
   if (enabled.isEmpty) return;
   final enabledIds = enabled.map((r) => r.id).toSet();
 
-  final prefs = await ref.read(prefsServiceProvider.future);
+  final prefs = await container.read(prefsServiceProvider.future);
   if (!DailyRituals.shouldShowIntro(
     onboardingSeen: prefs.patternInterruptOnboardingSeen,
     introSeen: prefs.dailyRitualsIntroSeen,
@@ -74,7 +77,8 @@ Future<void> showDailyRitualsIntroSheet(
   bool fromHelp = false,
   List<DailyRitualCopy>? items,
 }) async {
-  final enabled = items ?? await _enabledDailyRituals(ref);
+  final container = ProviderScope.containerOf(context, listen: false);
+  final enabled = items ?? await _enabledDailyRituals(container);
   if (enabled.isEmpty) return;
   if (!context.mounted) return;
   await showModalBottomSheet<void>(

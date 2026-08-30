@@ -74,7 +74,7 @@ class OnboardingFlowScreen extends HookConsumerWidget {
 
     useEffect(() {
       unawaited(Analytics.track(ref, const OnboardingFlowOpenedEvent()));
-      final container = ProviderScope.containerOf(context);
+      final container = ProviderScope.containerOf(context, listen: false);
       DemoSessionWarmup.start(
         () => DemoSessionWarmup.loadSession(container),
       );

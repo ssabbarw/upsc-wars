@@ -151,11 +151,8 @@ class _DemoResultsReviewCoachOverlayState
                   color: Colors.black.withValues(alpha: 0.62),
                 ),
               ),
-            Positioned.fill(
-              child: GestureDetector(
-                behavior: HitTestBehavior.opaque,
-                onTap: _next,
-              ),
+            const Positioned.fill(
+              child: ModalBarrier(dismissible: false),
             ),
             if (hole != null)
               Positioned(

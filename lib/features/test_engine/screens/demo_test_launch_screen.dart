@@ -26,7 +26,7 @@ class DemoTestLaunchScreen extends HookConsumerWidget {
     useEffect(() {
       if (sessionId.value != null) return null;
       var cancelled = false;
-      final container = ProviderScope.containerOf(context);
+      final container = ProviderScope.containerOf(context, listen: false);
       unawaited(() async {
         try {
           final id = await DemoSessionWarmup.ensure(
