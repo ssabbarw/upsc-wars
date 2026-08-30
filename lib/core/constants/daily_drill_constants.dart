@@ -6,11 +6,11 @@ abstract final class DailyDrillConstants {
   static const defaultSubject = 'misc';
   static const questionCount = 10;
 
-  /// Local hour (0–23) for the drill reminder.
+  /// Local hour (0–23) for the Daily Drill reminder.
   ///
-  /// Mid-afternoon on purpose: the morning belongs to the current-affairs paper
-  /// quiz. Only fires once that paper is revised and the revision queue is open.
-  static const defaultReminderHour = 15;
+  /// 7 PM: after work/college, before the 9 PM Daily Battle. Morning is left
+  /// for the CA paper (7 AM) when that flag is on.
+  static const defaultReminderHour = 19;
 
   /// Fresh-question subject when the revision queue is empty.
   static const weekdaySubjects = [

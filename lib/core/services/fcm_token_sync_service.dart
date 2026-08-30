@@ -111,6 +111,11 @@ class FcmTokenSyncService {
   }
 
   static Future<void> _ensureLatestBuildBroadcastSubscriptions() async {
+    try {
+      await FirebaseRemoteConfig.instance.fetchAndActivate();
+    } on Object {
+      // Last activated values / in-app defaults still gate subscribe.
+    }
     await _ensureFomoPulseTopicSubscription();
     await _ensureDailyCaTopicSubscription();
     await _ensureDailyWarTopicSubscription(

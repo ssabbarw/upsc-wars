@@ -6,7 +6,7 @@ import 'package:timezone/timezone.dart' as tz;
 import '../providers/prefs_provider.dart';
 import 'app_local_notifications_service.dart';
 
-/// Schedules one local reminder per day for the home revision-queue loop.
+/// Schedules one local reminder per day for the home Daily Drill.
 class DailyPracticeReminderService {
   DailyPracticeReminderService._();
 
@@ -27,31 +27,20 @@ class DailyPracticeReminderService {
     return todaySlot.add(const Duration(days: 1));
   }
 
-  /// Fire today only when the queue would be the Today-hub hero: CA revised
-  /// (or no paper), queue non-empty, and the drill not yet done.
+  /// Fire today when the Daily Drill is still open. Independent of CA / queue.
   @visibleForTesting
-  static bool shouldFireToday({
-    required bool activationComplete,
-    required bool paperRevised,
-    required bool practiceCompletedToday,
-    required bool queueEmpty,
-  }) {
-    return activationComplete &&
-        paperRevised &&
-        !practiceCompletedToday &&
-        !queueEmpty;
+  static bool shouldFireToday({required bool practiceCompletedToday}) {
+    return !practiceCompletedToday;
   }
 
   static Future<void> sync({
     required PrefsService prefs,
-    required bool activationComplete,
-    required bool paperRevised,
+    required bool eligible,
     required bool practiceCompletedToday,
-    required bool queueEmpty,
   }) async {
     if (kIsWeb) return;
 
-    if (!activationComplete || queueEmpty) {
+    if (!eligible) {
       await AppLocalNotificationsService.cancelDailyPracticeReminder();
       return;
     }
@@ -60,10 +49,7 @@ class DailyPracticeReminderService {
 
     final hour = prefs.dailyPracticeReminderHour;
     final fireToday = shouldFireToday(
-      activationComplete: activationComplete,
-      paperRevised: paperRevised,
       practiceCompletedToday: practiceCompletedToday,
-      queueEmpty: queueEmpty,
     );
     final fireAt = fireToday
         ? nextReminderLocalTime(reference: DateTime.now(), hour: hour)

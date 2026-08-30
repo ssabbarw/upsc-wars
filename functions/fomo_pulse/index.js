@@ -40,6 +40,46 @@ const ANDROID_NOTIF_CHANNEL = "general_v2";
 const LONG_HTML_COLLECTION = "Long_Html_Message";
 const LONG_HTML_DOC_ID = "message";
 const CA_SHOT_UPDATE_SOURCE = "ca_shot_update";
+function parseRcBool(raw, fallback) {
+  if (raw === undefined || raw === null || raw === "") return fallback;
+  if (raw === true || raw === "true" || raw === "1") return true;
+  if (raw === false || raw === "false" || raw === "0") return false;
+  return fallback;
+}
+
+function flattenRcParams(template) {
+  const out = { ...(template.parameters || {}) };
+  const groups = template.parameterGroups || {};
+  for (const group of Object.values(groups)) {
+    Object.assign(out, (group && group.parameters) || {});
+  }
+  return out;
+}
+
+function rcParamValue(params, key) {
+  const p = params[key];
+  if (!p || !p.defaultValue) return undefined;
+  if (p.defaultValue.useInAppDefault) return undefined;
+  return p.defaultValue.value;
+}
+
+async function readCaShotsEnabled() {
+  try {
+    const template = await admin.remoteConfig().getTemplate();
+    const params = flattenRcParams(template);
+    const raw = rcParamValue(params, "ca_shots_enabled");
+    const enabled = parseRcBool(raw, true);
+    console.log("readCaShotsEnabled", {
+      enabled,
+      raw: raw === undefined ? "(missing)" : String(raw),
+    });
+    return enabled;
+  } catch (e) {
+    console.warn("readCaShotsEnabled failed; defaulting on", e);
+    return true;
+  }
+}
+
 const PLAY_STORE_URL =
   "https://play.google.com/store/apps/details?id=practice.upsc.indiaapps.com.upscmcqpractice";
 const APP_STORE_URL = "https://apps.apple.com/in/app/upsc-wars/id1550273627";
@@ -1021,6 +1061,12 @@ exports.sendFomoPulseNotification = onCall(generateOpts, async (request) => {
     String(data.target || "self").trim().toLowerCase() === "broadcast"
       ? "broadcast"
       : "self";
+  if (target === "broadcast" && !(await readCaShotsEnabled())) {
+    throw new HttpsError(
+      "failed-precondition",
+      "CA Shots are disabled in Remote Config.",
+    );
+  }
 
   const newsSummary = cleanNewsSummary(data.news_summary);
   let newsSummaryHi = cleanNewsSummary(data.news_summary_hi);

@@ -486,7 +486,6 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
       LocalDailyRemindersSync.syncPractice(
         prefs: _prefsService,
         db: _userDb,
-        dailyCaEnabled: true,
       ),
     );
 
@@ -859,7 +858,6 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
         LocalDailyRemindersSync.syncPractice(
           prefs: _prefsService,
           db: _userDb,
-          dailyCaEnabled: true,
         ),
       );
     }

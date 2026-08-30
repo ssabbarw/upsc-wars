@@ -208,7 +208,6 @@ Future<void> markDailyCaResultsOpened(WidgetRef ref, String isoDate) async {
     LocalDailyRemindersSync.syncPractice(
       prefs: prefs,
       db: ref.read(userDatabaseProvider),
-      dailyCaEnabled: true,
     ),
   );
 }

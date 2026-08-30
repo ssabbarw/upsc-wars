@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:device_info_plus/device_info_plus.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -16,6 +17,7 @@ import 'package:upsc_wars/core/debug/cursor_debug_log.dart';
 import 'package:upsc_wars/core/debug/upsc_wars_trace.dart';
 import 'package:upsc_wars/core/notifications/notification_open_stack.dart';
 import 'package:upsc_wars/core/notifications/notification_prompt_policy.dart';
+import 'package:upsc_wars/core/providers/kill_switch_provider.dart';
 import 'package:upsc_wars/core/providers/prefs_provider.dart';
 import 'package:upsc_wars/core/router/app_router.dart';
 import 'package:upsc_wars/core/services/app_local_notifications_service.dart';
@@ -288,6 +290,7 @@ class BattleMessagingService {
         ? null
         : rawSessionId.toString().trim();
     final kind = message.data['kind']?.toString().trim().toLowerCase();
+    if (!_fcmKindEnabled(kind)) return;
     final isSelfTest = kind == 'self_test';
     final isBattleJoinInvite =
         !kIsWeb &&
@@ -473,6 +476,27 @@ class BattleMessagingService {
     _scheduleNavigateFromOpenedNotification(router, message, channel: 'fcm');
   }
 
+  static bool _featureRemoteEnabled(String key) {
+    try {
+      return FirebaseRemoteConfig.instance.getBool(key);
+    } on Object {
+      return true;
+    }
+  }
+
+  static bool _fcmKindEnabled(String? kind) {
+    if (kind == FomoPulseFcm.kind) {
+      return _featureRemoteEnabled(caShotsEnabledRemoteConfigKey);
+    }
+    if (kind == DailyCaConstants.fcmKind) {
+      return _featureRemoteEnabled(dailyCaEnabledRemoteConfigKey);
+    }
+    if (kind == DailyWarConstants.fcmKind) {
+      return _featureRemoteEnabled(dailyWarEnabledRemoteConfigKey);
+    }
+    return true;
+  }
+
   static String _notificationOpenKind(RemoteMessage message) {
     // CA Shot must win over long-html: legacy broadcasts set both so old
     // clients open the update page, while this build opens the shot.
@@ -566,6 +590,10 @@ class BattleMessagingService {
       }
       _logNotificationOpen(message, channel);
       final ocKind = message.data['kind']?.toString().trim().toLowerCase();
+      if (!_fcmKindEnabled(ocKind)) {
+        router.go('/');
+        return;
+      }
       if (ocKind == FomoPulseFcm.kind) {
         final pulseId = FomoPulseFcm.pulseIdFromData(message.data);
         if (pulseId != null && pulseId.isNotEmpty) {

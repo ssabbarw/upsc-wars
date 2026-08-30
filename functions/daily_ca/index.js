@@ -681,6 +681,10 @@ exports.notifyDailyCaPaper = onSchedule(
     timeoutSeconds: 60,
   },
   async () => {
+    if (!(await readDailyCaEnabled())) {
+      console.log("notifyDailyCaPaper skipped: daily_ca_enabled false");
+      return { skipped: true, reason: "rc_disabled" };
+    }
     const parts = istParts();
     const contentIso = yesterdayIso(parts);
     if (isSundayIso(contentIso)) {
@@ -783,6 +787,23 @@ function rcParamValue(params, key) {
 
 let _rolloutCache = { at: 0, value: null };
 const ROLLOUT_TTL_MS = 10 * 60 * 1000;
+
+async function readDailyCaEnabled() {
+  try {
+    const template = await admin.remoteConfig().getTemplate();
+    const params = flattenRcParams(template);
+    const raw = rcParamValue(params, "daily_ca_enabled");
+    const enabled = parseRcBool(raw, true);
+    console.log("readDailyCaEnabled", {
+      enabled,
+      raw: raw === undefined ? "(missing)" : String(raw),
+    });
+    return enabled;
+  } catch (e) {
+    console.warn("readDailyCaEnabled failed; defaulting on", e);
+    return true;
+  }
+}
 
 async function readDailyCaRanksRollout() {
   if (_rolloutCache.value && Date.now() - _rolloutCache.at < ROLLOUT_TTL_MS) {
