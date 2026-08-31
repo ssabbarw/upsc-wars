@@ -256,7 +256,11 @@ class _PulseBody extends HookConsumerWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        _NewsImage(imageUrl: pulse.imageUrl),
+                        _NewsImage(
+                          imageUrl: pulse.imageUrl,
+                          imageSource: pulse.imageSource,
+                          sourceUrl: pulse.sourceUrl,
+                        ),
                         const SizedBox(height: AppSpacing.md),
                         Text(
                           summaryText,
@@ -481,16 +485,24 @@ class _HeaderCard extends StatelessWidget {
 }
 
 class _NewsImage extends StatelessWidget {
-  const _NewsImage({required this.imageUrl});
+  const _NewsImage({
+    required this.imageUrl,
+    this.imageSource = '',
+    this.sourceUrl = '',
+  });
 
   final String imageUrl;
+  final String imageSource;
+  final String sourceUrl;
   static const double _height = 168;
 
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
+    final credit = _newsCreditLabel(imageSource, sourceUrl);
+    final Widget image;
     if (imageUrl.trim().isEmpty) {
-      return Container(
+      image = Container(
         width: double.infinity,
         height: _height,
         decoration: BoxDecoration(
@@ -499,22 +511,66 @@ class _NewsImage extends StatelessWidget {
         ),
         child: Icon(Icons.image_outlined, color: scheme.onSurfaceVariant),
       );
-    }
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(AppRadius.sm),
-      child: Image.network(
-        imageUrl,
-        width: double.infinity,
-        height: _height,
-        fit: BoxFit.cover,
-        errorBuilder: (_, _, _) => Container(
+    } else {
+      image = ClipRRect(
+        borderRadius: BorderRadius.circular(AppRadius.sm),
+        child: Image.network(
+          imageUrl,
           width: double.infinity,
           height: _height,
-          color: scheme.surfaceContainerHighest,
-          child: Icon(
-            Icons.broken_image_outlined,
-            color: scheme.onSurfaceVariant,
+          fit: BoxFit.cover,
+          errorBuilder: (_, _, _) => Container(
+            width: double.infinity,
+            height: _height,
+            color: scheme.surfaceContainerHighest,
+            child: Icon(
+              Icons.broken_image_outlined,
+              color: scheme.onSurfaceVariant,
+            ),
           ),
+        ),
+      );
+    }
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        image,
+        if (credit.isNotEmpty) ...[
+          const SizedBox(height: AppSpacing.xs),
+          _NewsCreditLine(label: credit, sourceUrl: sourceUrl),
+        ],
+      ],
+    );
+  }
+}
+
+class _NewsCreditLine extends StatelessWidget {
+  const _NewsCreditLine({required this.label, required this.sourceUrl});
+
+  final String label;
+  final String sourceUrl;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    final style = AppTextStyles.caption().copyWith(
+      color: scheme.onSurfaceVariant,
+    );
+    final uri = Uri.tryParse(sourceUrl.trim());
+    final canOpen = uri != null && uri.hasScheme && sourceUrl.trim().isNotEmpty;
+    if (!canOpen) {
+      return Text(label, style: style);
+    }
+    return InkWell(
+      onTap: () => unawaited(
+        launchUrl(uri, mode: LaunchMode.externalApplication),
+      ),
+      child: Text(
+        label,
+        style: style.copyWith(
+          decoration: TextDecoration.underline,
+          decorationColor: scheme.onSurfaceVariant,
         ),
       ),
     );
@@ -540,6 +596,21 @@ class _BulletPoints extends StatelessWidget {
       ],
     );
   }
+}
+
+String _newsCreditLabel(String imageSource, String sourceUrl) {
+  final photo = imageSource.trim();
+  if (photo.isNotEmpty) return 'Photo: $photo';
+  final host = _sourceHost(sourceUrl);
+  if (host.isNotEmpty) return 'Source: $host';
+  return '';
+}
+
+String _sourceHost(String sourceUrl) {
+  final uri = Uri.tryParse(sourceUrl.trim());
+  final host = (uri?.host ?? '').trim();
+  if (host.isEmpty) return '';
+  return host.replaceFirst(RegExp(r'^www\.', caseSensitive: false), '');
 }
 
 String _headerMetaLine(FomoPulse pulse, String summary) {
