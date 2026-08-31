@@ -33,6 +33,7 @@ import '../../../shared/widgets/top_snack_bar.dart';
 import '../../community/widgets/share_qotd_sheet.dart';
 import '../../history/widgets/explanation_card.dart';
 import '../../home/domain/create_get_started_session_use_case.dart';
+import '../../home/providers/home_activation_journey_provider.dart';
 import '../../push_spot_test/push_spot_test_constants.dart';
 import '../providers/test_session_provider.dart';
 import '../providers/test_session_state.dart';
@@ -59,6 +60,85 @@ Future<void> _showDemoConfidenceIntroThenPrompt(
   }
   if (!context.mounted) return;
   await _showConfidenceBottomSheet(context, ref, sessionId);
+}
+
+Future<void> _showDemoExplanationCoachSheet(
+  BuildContext context, {
+  required bool isCorrect,
+}) async {
+  final scheme = Theme.of(context).colorScheme;
+  final isDark = Theme.of(context).brightness == Brightness.dark;
+  await showModalBottomSheet<void>(
+    context: context,
+    isScrollControlled: true,
+    isDismissible: true,
+    enableDrag: true,
+    backgroundColor: Colors.transparent,
+    builder: (ctx) {
+      return DismissOnScrimTap(
+        child: Align(
+          alignment: Alignment.bottomCenter,
+          child: Padding(
+            padding: EdgeInsets.only(
+              left: AppSpacing.lg,
+              right: AppSpacing.lg,
+              bottom: MediaQuery.paddingOf(ctx).bottom + AppSpacing.lg,
+            ),
+            child: Container(
+              padding: const EdgeInsets.all(AppSpacing.lg),
+              decoration: BoxDecoration(
+                color: isDark ? scheme.surfaceContainerHigh : scheme.surface,
+                borderRadius: const BorderRadius.vertical(
+                  top: Radius.circular(20),
+                ),
+                border: Border.all(
+                  color: isDark ? AppColors.borderDark : AppColors.borderLight,
+                ),
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Text(
+                    isCorrect ? 'Correct' : 'Not this time',
+                    style: AppTextStyles.h3().copyWith(color: scheme.onSurface),
+                  ),
+                  const SizedBox(height: AppSpacing.sm),
+                  Text(
+                    isCorrect
+                        ? 'The marks are in the explanation — elimination, '
+                            'statement analysis, and the trap option.'
+                        : 'Read how to kill the other options — '
+                            'that\'s the real practice.',
+                    style: AppTextStyles.bodySm().copyWith(
+                      color: scheme.onSurfaceVariant,
+                      height: 1.35,
+                    ),
+                  ),
+                  const SizedBox(height: AppSpacing.lg),
+                  FilledButton(
+                    onPressed: () => Navigator.pop(ctx),
+                    child: const Text('Show explanation'),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      );
+    },
+  );
+}
+
+void _scrollToExplanation(GlobalKey key) {
+  final target = key.currentContext;
+  if (target == null) return;
+  Scrollable.ensureVisible(
+    target,
+    alignment: 0.04,
+    duration: const Duration(milliseconds: 320),
+    curve: Curves.easeOutCubic,
+  );
 }
 
 Future<void> _showDemoConfidenceIntroSheet(BuildContext context) async {
@@ -235,16 +315,65 @@ class TestEngineScreen extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final notifier = ref.read(testSessionProvider(sessionId).notifier);
-    final mode = ref.watch(
-      testSessionProvider(
-        sessionId,
-      ).select((a) => a.asData?.value.session?.mode),
+    final sessionMeta = ref.watch(
+      testSessionProvider(sessionId).select((a) {
+        final s = a.asData?.value.session;
+        if (s == null) return null;
+        return (s.mode, s.analyticsFeatureKey);
+      }),
     );
+    final mode = sessionMeta?.$1;
+    final isDemo =
+        sessionMeta?.$2 == CreateGetStartedSessionUseCase.analyticsKey;
+
+    void leaveToHome({required String actionId, required String actionKind}) {
+      ScreenFlow.logAction(
+        ref,
+        screenName: ScreenFlow.testSession,
+        actionId: actionId,
+        actionKind: actionKind,
+      );
+      if (context.canPop()) {
+        context.pop();
+      } else {
+        context.go('/');
+      }
+    }
 
     return PopScope(
       canPop: false,
       onPopInvokedWithResult: (didPop, result) async {
         if (didPop) return;
+        if (isDemo) {
+          final confirmed = await showDialog<bool>(
+            context: context,
+            builder: (ctx) => AlertDialog(
+              title: Text('Leave demo?', style: AppTextStyles.h3()),
+              content: Text(
+                'Your progress will be saved. Resume from Home when you\'re ready.',
+                style: AppTextStyles.bodyMd(),
+              ),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(ctx, false),
+                  child: const Text('Cancel'),
+                ),
+                TextButton(
+                  onPressed: () => Navigator.pop(ctx, true),
+                  child: const Text('Leave'),
+                ),
+              ],
+            ),
+          );
+          if (confirmed == true && context.mounted) {
+            ref.invalidate(homeActivationJourneyProvider);
+            leaveToHome(
+              actionId: 'demo_leave_after_dialog',
+              actionKind: 'back',
+            );
+          }
+          return;
+        }
         final isDiscard = mode == 'exam';
         final confirmed = await showDialog<bool>(
           context: context,
@@ -278,17 +407,10 @@ class TestEngineScreen extends HookConsumerWidget {
             await notifier.markAbandoned();
           }
           if (context.mounted) {
-            ScreenFlow.logAction(
-              ref,
-              screenName: ScreenFlow.testSession,
+            leaveToHome(
               actionId: 'leave_after_dialog',
               actionKind: 'back',
             );
-            if (context.canPop()) {
-              context.pop();
-            } else {
-              context.go('/');
-            }
           }
         }
       },
@@ -452,45 +574,48 @@ class _TestEngineLoaded extends HookConsumerWidget {
     final sessionForFx = ref.watch(
       testSessionProvider(sessionId).select((a) => a.asData?.value.session),
     );
+    final prefs = ref.watch(prefsServiceProvider).asData?.value;
+    final demoCoachesResetForVisit = useRef(false);
+    final isDemoSession =
+        sessionForFx?.analyticsFeatureKey ==
+        CreateGetStartedSessionUseCase.analyticsKey;
+    if (isDemoSession && prefs != null && !demoCoachesResetForVisit.value) {
+      prefs.resetDemoCoachPrompts();
+      demoCoachesResetForVisit.value = true;
+    }
     final featureStartedSent = useRef(false);
     final languageToggleKey = useMemoized(GlobalKey.new);
     final languageCoachRequested = useRef(false);
     useEffect(() {
       if (languageCoachRequested.value) return null;
-      final isDemo =
-          sessionForFx?.analyticsFeatureKey ==
-          CreateGetStartedSessionUseCase.analyticsKey;
-      if (!isDemo) return null;
+      if (!isDemoSession || prefs == null) return null;
       languageCoachRequested.value = true;
       var cancelled = false;
       OverlayEntry? entry;
       WidgetsBinding.instance.addPostFrameCallback((_) {
-        unawaited(() async {
-          final prefs = await ref.read(prefsServiceProvider.future);
-          if (cancelled || !context.mounted) return;
-          if (prefs.demoLanguageCoachSeen) return;
-          prefs.demoLanguageCoachSeen = true;
-          void dismiss() {
-            final current = entry;
-            if (current == null || !current.mounted) return;
-            current.remove();
-          }
+        if (cancelled || !context.mounted) return;
+        if (prefs.demoLanguageCoachSeen) return;
+        prefs.demoLanguageCoachSeen = true;
+        void dismiss() {
+          final current = entry;
+          if (current == null || !current.mounted) return;
+          current.remove();
+        }
 
-          entry = OverlayEntry(
-            builder: (ctx) => DemoLanguageCoachOverlay(
-              toggleKey: languageToggleKey,
-              onDismiss: dismiss,
-            ),
-          );
-          Overlay.of(context).insert(entry!);
-        }());
+        entry = OverlayEntry(
+          builder: (ctx) => DemoLanguageCoachOverlay(
+            toggleKey: languageToggleKey,
+            onDismiss: dismiss,
+          ),
+        );
+        Overlay.of(context).insert(entry!);
       });
       return () {
         cancelled = true;
         final current = entry;
         if (current != null && current.mounted) current.remove();
       };
-    }, [sessionForFx?.analyticsFeatureKey]);
+    }, [isDemoSession, prefs != null]);
     useEffect(() {
       final s = sessionForFx;
       if (s == null || featureStartedSent.value) return null;
@@ -527,6 +652,10 @@ class _TestEngineLoaded extends HookConsumerWidget {
           ActivationMilestones.firstMcqTestEntered,
         ),
       );
+      if (s.analyticsFeatureKey !=
+          CreateGetStartedSessionUseCase.analyticsKey) {
+        unawaited(maybeLogPostDemoExplore(ref, surface: 'mcq_test'));
+      }
       if (s.subject == 'revision' || s.subject == 'revision_quick') {
         unawaited(
           Analytics.track(
@@ -1227,27 +1356,48 @@ class _QuestionArea extends HookConsumerWidget {
 
     final (mode, explanationVisible, learningVerdict, question, featureKey) =
         snap;
-    final expandDeepDive =
+    final isDemoDiagnostic =
         featureKey == CreateGetStartedSessionUseCase.analyticsKey;
+    final expandDeepDive = isDemoDiagnostic;
     final explanationKey = useMemoized(GlobalKey.new);
-    final explanationWasVisible = useRef(false);
+    final explanationWasVisible = useRef<bool?>(null);
     useEffect(() {
-      final justRevealed = explanationVisible && !explanationWasVisible.value;
+      final was = explanationWasVisible.value;
       explanationWasVisible.value = explanationVisible;
-      if (mode != 'learning' || !justRevealed) return null;
+      if (mode != 'learning' || !explanationVisible) return null;
+      final isInitialObservation = was == null;
+      final justRevealed = was == false;
+      if (!isInitialObservation && !justRevealed) return null;
       var cancelled = false;
       WidgetsBinding.instance.addPostFrameCallback((_) {
-        Future<void>.delayed(const Duration(milliseconds: 80), () {
+        unawaited(() async {
+          final showCoach =
+              justRevealed &&
+              isDemoDiagnostic &&
+              (learningVerdict == LearningVerdict.correct ||
+                  learningVerdict == LearningVerdict.incorrect);
+          if (showCoach) {
+            final prefs = await ref.read(prefsServiceProvider.future);
+            if (cancelled || !context.mounted) return;
+            if (!prefs.demoExplanationCoachSeen) {
+              await Future<void>.delayed(const Duration(milliseconds: 320));
+              if (cancelled || !context.mounted) return;
+              await _showDemoExplanationCoachSheet(
+                context,
+                isCorrect: learningVerdict == LearningVerdict.correct,
+              );
+              if (!cancelled) {
+                prefs.demoExplanationCoachSeen = true;
+              }
+              if (cancelled || !context.mounted) return;
+              _scrollToExplanation(explanationKey);
+              return;
+            }
+          }
+          await Future<void>.delayed(const Duration(milliseconds: 80));
           if (cancelled) return;
-          final target = explanationKey.currentContext;
-          if (target == null) return;
-          Scrollable.ensureVisible(
-            target,
-            alignment: 0.04,
-            duration: const Duration(milliseconds: 320),
-            curve: Curves.easeOutCubic,
-          );
-        });
+          _scrollToExplanation(explanationKey);
+        }());
       });
       return () => cancelled = true;
     }, [explanationVisible, question.uuid]);
@@ -1353,6 +1503,9 @@ class _QuestionArea extends HookConsumerWidget {
                       uiLanguage: uiLanguage,
                       verdict: learningVerdict,
                       expandDeepDive: expandDeepDive,
+                      showPostQotd: !isDemoDiagnostic,
+                      analyticsSource:
+                          isDemoDiagnostic ? 'demo_test' : 'in_test',
                     )
                   : const SizedBox.shrink(),
             ),
@@ -1653,12 +1806,16 @@ class _ExplanationCard extends HookConsumerWidget {
     required this.uiLanguage,
     required this.verdict,
     this.expandDeepDive = false,
+    this.showPostQotd = true,
+    this.analyticsSource,
   });
 
   final TestQuestion question;
   final String uiLanguage;
   final LearningVerdict? verdict;
   final bool expandDeepDive;
+  final bool showPostQotd;
+  final String? analyticsSource;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -1694,6 +1851,7 @@ class _ExplanationCard extends HookConsumerWidget {
           children: [
             ExplanationCard(
               demoForceDeepDive: expandDeepDive ? true : null,
+              analyticsSource: analyticsSource,
               translation: QuestionTranslation(
                 finalExplanation: finalExplanation,
                 statementAnalysis: statementAnalysis
@@ -1712,17 +1870,19 @@ class _ExplanationCard extends HookConsumerWidget {
               ),
               showStatements: statementAnalysis.isNotEmpty,
             ),
-            const SizedBox(height: AppSpacing.md),
-            OutlinedButton.icon(
-              onPressed: () => showShareQotdSheet(
-                context: context,
-                ref: ref,
-                questionUuid: question.uuid,
-                correctOption: question.correctOption,
+            if (showPostQotd) ...[
+              const SizedBox(height: AppSpacing.md),
+              OutlinedButton.icon(
+                onPressed: () => showShareQotdSheet(
+                  context: context,
+                  ref: ref,
+                  questionUuid: question.uuid,
+                  correctOption: question.correctOption,
+                ),
+                icon: const Icon(Icons.groups_2_outlined),
+                label: const Text('Post QOTD'),
               ),
-              icon: const Icon(Icons.groups_2_outlined),
-              label: const Text('Post QOTD'),
-            ),
+            ],
           ],
         ),
       ),

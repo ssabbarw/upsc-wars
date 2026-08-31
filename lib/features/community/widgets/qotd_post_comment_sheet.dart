@@ -1,32 +1,64 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import '../../../core/auth/auth_session.dart';
 import '../../../core/layout/system_insets.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/widgets/app_toast.dart';
 import '../domain/qotd_comment_rules.dart';
 
+class QotdPostCommentResult {
+  const QotdPostCommentResult._({
+    required this.posted,
+    required this.needsSignIn,
+    required this.comment,
+  });
+
+  const QotdPostCommentResult.posted()
+      : this._(posted: true, needsSignIn: false, comment: '');
+
+  const QotdPostCommentResult.dismissed()
+      : this._(posted: false, needsSignIn: false, comment: '');
+
+  const QotdPostCommentResult.needsSignIn(String comment)
+      : this._(posted: false, needsSignIn: true, comment: comment);
+
+  final bool posted;
+  final bool needsSignIn;
+  final String comment;
+}
+
 /// Bottom sheet: optional comment with hint; empty or ≥50 chars after normalize; no newlines.
-/// Returns `true` if [onPost] completed and the sheet closed successfully.
-Future<bool> showQotdPostCommentSheet(
+///
+/// Unsigned users can draft a comment; tapping Post closes with [needsSignIn]
+/// so the caller can sign them in and re-open with [initialComment].
+Future<QotdPostCommentResult> showQotdPostCommentSheet(
   BuildContext context, {
   required Future<void> Function(String comment) onPost,
+  String initialComment = '',
 }) async {
-  final result = await showModalBottomSheet<bool>(
+  final result = await showModalBottomSheet<QotdPostCommentResult>(
     context: context,
     isScrollControlled: true,
     shape: const RoundedRectangleBorder(
       borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
     ),
-    builder: (ctx) => _QotdPostCommentSheetContent(onPost: onPost),
+    builder: (ctx) => _QotdPostCommentSheetContent(
+      onPost: onPost,
+      initialComment: initialComment,
+    ),
   );
-  return result ?? false;
+  return result ?? const QotdPostCommentResult.dismissed();
 }
 
 class _QotdPostCommentSheetContent extends StatefulWidget {
-  const _QotdPostCommentSheetContent({required this.onPost});
+  const _QotdPostCommentSheetContent({
+    required this.onPost,
+    required this.initialComment,
+  });
 
   final Future<void> Function(String comment) onPost;
+  final String initialComment;
 
   @override
   State<_QotdPostCommentSheetContent> createState() =>
@@ -42,7 +74,7 @@ class _QotdPostCommentSheetContentState
   @override
   void initState() {
     super.initState();
-    _controller = TextEditingController();
+    _controller = TextEditingController(text: widget.initialComment);
   }
 
   @override
@@ -51,9 +83,31 @@ class _QotdPostCommentSheetContentState
     super.dispose();
   }
 
+  Future<void> _submit() async {
+    if (!_formKey.currentState!.validate()) return;
+    final text = QotdCommentRules.normalize(_controller.text);
+    if (!AuthSession.isCurrentAccountSignedIn()) {
+      Navigator.of(context).pop(QotdPostCommentResult.needsSignIn(text));
+      return;
+    }
+    setState(() => _isPosting = true);
+    try {
+      await widget.onPost(text);
+      if (!mounted) return;
+      Navigator.of(context).pop(const QotdPostCommentResult.posted());
+    } catch (e, st) {
+      debugPrint('QOTD post failed: $e');
+      debugPrintStack(stackTrace: st);
+      if (!mounted) return;
+      setState(() => _isPosting = false);
+      AppToast.showText(context, '$e');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
+    final signedIn = AuthSession.isCurrentAccountSignedIn();
 
     return Padding(
       padding: EdgeInsets.only(
@@ -130,27 +184,18 @@ class _QotdPostCommentSheetContentState
                   );
                 },
               ),
+              if (!signedIn) ...[
+                const SizedBox(height: AppSpacing.sm),
+                Text(
+                  'Sign in to post. Your comment is kept.',
+                  style: AppTextStyles.caption().copyWith(
+                    color: scheme.primary,
+                  ),
+                ),
+              ],
               const SizedBox(height: AppSpacing.lg),
               FilledButton(
-                onPressed: _isPosting
-                    ? null
-                    : () async {
-                        if (!_formKey.currentState!.validate()) return;
-                        final text =
-                            QotdCommentRules.normalize(_controller.text);
-                        setState(() => _isPosting = true);
-                        try {
-                          await widget.onPost(text);
-                          if (mounted) Navigator.of(context).pop(true);
-                        } catch (e, st) {
-                          debugPrint('QOTD post failed: $e');
-                          debugPrintStack(stackTrace: st);
-                          if (mounted) {
-                            setState(() => _isPosting = false);
-                            AppToast.showText(context, '$e');
-                          }
-                        }
-                      },
+                onPressed: _isPosting ? null : _submit,
                 child: _isPosting
                     ? const SizedBox(
                         height: 20,
@@ -160,7 +205,7 @@ class _QotdPostCommentSheetContentState
                           color: Colors.white,
                         ),
                       )
-                    : const Text('Post'),
+                    : Text(signedIn ? 'Post' : 'Sign in to post'),
               ),
             ],
           ),

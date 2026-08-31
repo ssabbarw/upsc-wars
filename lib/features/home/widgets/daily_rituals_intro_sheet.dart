@@ -54,6 +54,7 @@ Future<void> maybeShowDailyRitualsIntro({
   final enabledIds = enabled.map((r) => r.id).toSet();
 
   final prefs = await container.read(prefsServiceProvider.future);
+  if (prefs.getStartedSheetPendingAfterOnboarding) return;
   if (!DailyRituals.shouldShowIntro(
     onboardingSeen: prefs.patternInterruptOnboardingSeen,
     introSeen: prefs.dailyRitualsIntroSeen,
@@ -134,13 +135,6 @@ class _DailyRitualsIntroSheetState
     );
   }
 
-  Future<void> _openRitual(DailyRitualCopy ritual) async {
-    await markDailyRitualOpened(ref, ritual.id);
-    if (!mounted) return;
-    Navigator.of(context).pop();
-    context.push(ritual.route);
-  }
-
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
@@ -202,7 +196,6 @@ class _DailyRitualsIntroSheetState
                 _RitualRow(
                   ritual: widget.items[i],
                   isDark: isDark,
-                  onTap: () => unawaited(_openRitual(widget.items[i])),
                 ),
               ],
               const SizedBox(height: AppSpacing.lg),
@@ -237,12 +230,10 @@ class _RitualRow extends StatelessWidget {
   const _RitualRow({
     required this.ritual,
     required this.isDark,
-    required this.onTap,
   });
 
   final DailyRitualCopy ritual;
   final bool isDark;
-  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -250,60 +241,51 @@ class _RitualRow extends StatelessWidget {
     return Material(
       color: scheme.surfaceContainerLow,
       borderRadius: BorderRadius.circular(AppRadius.md),
-      child: InkWell(
-        onTap: onTap,
-        borderRadius: BorderRadius.circular(AppRadius.md),
-        child: Padding(
-          padding: const EdgeInsets.all(AppSpacing.md),
-          child: Row(
-            children: [
-              Container(
-                width: 40,
-                height: 40,
-                decoration: BoxDecoration(
-                  color: ritual.accent.withValues(alpha: isDark ? 0.18 : 0.12),
-                  borderRadius: BorderRadius.circular(AppRadius.md),
-                ),
-                child: Icon(ritual.icon, color: ritual.accent, size: 20),
+      child: Padding(
+        padding: const EdgeInsets.all(AppSpacing.md),
+        child: Row(
+          children: [
+            Container(
+              width: 40,
+              height: 40,
+              decoration: BoxDecoration(
+                color: ritual.accent.withValues(alpha: isDark ? 0.18 : 0.12),
+                borderRadius: BorderRadius.circular(AppRadius.md),
               ),
-              const SizedBox(width: AppSpacing.md),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      ritual.title,
-                      style: AppTextStyles.label().copyWith(
-                        color: scheme.onSurface,
-                        fontWeight: FontWeight.w700,
-                      ),
+              child: Icon(ritual.icon, color: ritual.accent, size: 20),
+            ),
+            const SizedBox(width: AppSpacing.md),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    ritual.title,
+                    style: AppTextStyles.label().copyWith(
+                      color: scheme.onSurface,
+                      fontWeight: FontWeight.w700,
                     ),
-                    const SizedBox(height: 2),
-                    Text(
-                      ritual.when,
-                      style: AppTextStyles.caption().copyWith(
-                        color: ritual.accent,
-                        fontWeight: FontWeight.w700,
-                      ),
+                  ),
+                  const SizedBox(height: 2),
+                  Text(
+                    ritual.when,
+                    style: AppTextStyles.caption().copyWith(
+                      color: ritual.accent,
+                      fontWeight: FontWeight.w700,
                     ),
-                    const SizedBox(height: 2),
-                    Text(
-                      ritual.body,
-                      style: AppTextStyles.bodySm().copyWith(
-                        color: scheme.onSurfaceVariant,
-                        height: 1.3,
-                      ),
+                  ),
+                  const SizedBox(height: 2),
+                  Text(
+                    ritual.body,
+                    style: AppTextStyles.bodySm().copyWith(
+                      color: scheme.onSurfaceVariant,
+                      height: 1.3,
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-              Icon(
-                Icons.arrow_forward_ios_rounded,
-                size: 13,
-                color: scheme.onSurfaceVariant,
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

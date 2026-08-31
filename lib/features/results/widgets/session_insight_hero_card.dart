@@ -254,6 +254,10 @@ class SessionInsightHeroCard extends ConsumerWidget {
   }
 
   void _openHistory(BuildContext context, {bool focusWrong = false}) {
+    maybeMarkDemoDiagnosticReviewOpened(
+      sessionId,
+      analyticsFeatureKey: result.analyticsFeatureKey,
+    );
     final loc = focusWrong
         ? '/history/$sessionId?focus=wrong'
         : '/history/$sessionId';

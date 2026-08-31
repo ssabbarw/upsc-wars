@@ -77,9 +77,7 @@ class _DemoLanguageCoachOverlayState extends State<DemoLanguageCoachOverlay>
               )
             else
               Positioned.fill(
-                child: ColoredBox(
-                  color: Colors.black.withValues(alpha: 0.62),
-                ),
+                child: ColoredBox(color: Colors.black.withValues(alpha: 0.62)),
               ),
             Positioned.fill(
               child: GestureDetector(
@@ -97,10 +95,7 @@ class _DemoLanguageCoachOverlayState extends State<DemoLanguageCoachOverlay>
                   child: DecoratedBox(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(AppRadius.md),
-                      border: Border.all(
-                        color: AppColors.primary,
-                        width: 2,
-                      ),
+                      border: Border.all(color: AppColors.primary, width: 2),
                     ),
                   ),
                 ),
@@ -152,7 +147,10 @@ class _Bubble extends StatelessWidget {
 
     return Positioned(
       left: bubbleLeft,
-      top: bubbleTop.clamp(margin, screenSize.height - estimatedHeight - margin),
+      top: bubbleTop.clamp(
+        margin,
+        screenSize.height - estimatedHeight - margin,
+      ),
       width: bubbleWidth,
       child: Material(
         color: Colors.transparent,
@@ -174,7 +172,7 @@ class _Bubble extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
-                'Tap EN | हि to change language',
+                'Tap EN | हि to Change language',
                 style: AppTextStyles.label().copyWith(
                   color: scheme.onSurface,
                   fontWeight: FontWeight.w700,
@@ -217,10 +215,7 @@ class _Bubble extends StatelessWidget {
                   ),
                   child: const Text(
                     'Got it · समझ गया',
-                    style: TextStyle(
-                      fontSize: 13,
-                      fontWeight: FontWeight.w600,
-                    ),
+                    style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600),
                   ),
                 ),
               ),

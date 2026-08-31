@@ -805,27 +805,32 @@ class BattleMessagingService {
     );
   }
 
-  /// After the first completed test (demo or any scored test), show the
-  /// education sheet once the user is back on Home — not over explanations.
-  static Future<void> maybePromptAfterFirstTestHome({
+  /// After the first completed test, show the education sheet once the user
+  /// is back on Home — never over results, the review coach, or explanations.
+  ///
+  /// Returns `true` if the sheet was shown (or attempted) so Home can skip
+  /// stacking another first-run sheet on this visit.
+  static Future<bool> maybePromptAfterFirstTestHome({
     required BuildContext context,
   }) async {
-    if (kIsWeb) return;
+    if (kIsWeb) return false;
     await Future<void>.delayed(NotificationPromptPolicy.screenSettleDelay);
-    if (!context.mounted) return;
-    if (!TickerMode.valuesOf(context).enabled) return;
+    if (!context.mounted) return false;
+    if (!TickerMode.valuesOf(context).enabled) return false;
     final path = GoRouter.of(context).routeInformationProvider.value.uri.path;
-    if (path != '/' && !path.startsWith('/results')) {
-      return;
-    }
+    if (path != '/') return false;
     final prefs = PrefsService(await SharedPreferences.getInstance());
-    if (!prefs.pushPermissionPromptPendingAfterFirstTest) return;
+    if (!prefs.pushPermissionPromptPendingAfterFirstTest) return false;
     prefs.pushPermissionPromptPendingAfterFirstTest = false;
+    final skippedDemoReview = prefs.getStartedDiagnosticAttempted &&
+        !prefs.demoDiagnosticReviewOpened;
     await requestPushAuthorizationIfNotDetermined(
       source: 'post_first_test',
       surface: NotificationPromptSurface.postFirstTest,
       kind: NotificationPromptKind.automatic,
+      skippedDemoReview: skippedDemoReview,
     );
+    return true;
   }
 
   static bool _locationMatchesSurface(
@@ -840,8 +845,7 @@ class BattleMessagingService {
         path == '/daily-ca' || path.startsWith('/daily-ca/'),
       NotificationPromptSurface.community =>
         path == '/community' || path.startsWith('/community/'),
-      NotificationPromptSurface.postFirstTest =>
-        path == '/' || path.startsWith('/results'),
+      NotificationPromptSurface.postFirstTest => path == '/',
       NotificationPromptSurface.generic => true,
     };
   }
@@ -859,6 +863,7 @@ class BattleMessagingService {
     String source = 'unknown',
     NotificationPromptSurface surface = NotificationPromptSurface.generic,
     NotificationPromptKind kind = NotificationPromptKind.explicit,
+    bool skippedDemoReview = false,
   }) async {
     if (kIsWeb) return;
 
@@ -872,6 +877,7 @@ class BattleMessagingService {
       source: source,
       surface: surface,
       kind: kind,
+      skippedDemoReview: skippedDemoReview,
     );
     _educationPromptInFlight = future;
     try {
@@ -887,6 +893,7 @@ class BattleMessagingService {
     required String source,
     required NotificationPromptSurface surface,
     required NotificationPromptKind kind,
+    bool skippedDemoReview = false,
   }) async {
     if (defaultTargetPlatform == TargetPlatform.android) {
       final sdkInt = (await DeviceInfoPlugin().androidInfo).version.sdkInt;
@@ -923,6 +930,7 @@ class BattleMessagingService {
       source: source,
       surface: surface,
       kind: kind,
+      skippedDemoReview: skippedDemoReview,
     );
     if (accepted != true) return;
 

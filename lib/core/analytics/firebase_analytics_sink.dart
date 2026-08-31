@@ -68,6 +68,11 @@ import 'analytics_sink.dart';
 /// * `activation_journey_shown` — `todo1_done`, `scored_attempts`, `todo2_unlocked`
 /// * `activation_journey_todo_tapped` — `todo_index`
 /// * `activation_journey_snoozed` — no parameters
+/// * `explanation_section_viewed` — `section`, `source` (demo / in-test / review)
+/// * `demo_review_opened` — `kind` (`mistakes` | `explanations`)
+/// * `post_demo_explore` — `surface` (subject, tab, today hub, another test)
+/// * `demo_test_submitted` — `attempted`, `total`, `attempt_band`
+///   (`none` | `1_2` | `3_5` | `6_7` | `all`)
 ///
 /// **App users vs Daily War / Daily CA attempters:** count unique users on
 /// `app_opened` (or GA4 Active users) vs unique users on `daily_war_attempted`
@@ -549,6 +554,25 @@ class FirebaseAnalyticsSink implements AnalyticsSink {
           'pulse_id': pulseId,
           'source': source,
           'correct': correct ? 1 : 0,
+        });
+      case ExplanationSectionViewedEvent(:final section, :final source):
+        await _log('explanation_section_viewed', {
+          'section': section,
+          'source': source,
+        });
+      case DemoReviewOpenedEvent(:final kind):
+        await _log('demo_review_opened', {'kind': kind});
+      case PostDemoExploreEvent(:final surface):
+        await _log('post_demo_explore', {'surface': surface});
+      case DemoTestSubmittedEvent(
+          :final attempted,
+          :final total,
+          :final attemptBand,
+        ):
+        await _log('demo_test_submitted', {
+          'attempted': attempted,
+          'total': total,
+          'attempt_band': attemptBand,
         });
     }
   }

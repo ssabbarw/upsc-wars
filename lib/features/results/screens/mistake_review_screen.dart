@@ -14,6 +14,7 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../history/screens/session_review_screen.dart';
+import '../../home/domain/demo_diagnostic_ephemeral_store.dart';
 import '../domain/mistake_review_bundle.dart';
 import '../providers/mistake_review_provider.dart';
 
@@ -110,12 +111,16 @@ class _MistakeReviewFlow extends HookConsumerWidget {
     };
 
     useEffect(() {
+      maybeMarkDemoDiagnosticReviewOpened(sessionId);
       unawaited(
         logActivationMilestoneOnce(
           ref,
           ActivationMilestones.firstDangerZoneReview,
         ),
       );
+      if (DemoDiagnosticEphemeralStore.instance.peek(sessionId) != null) {
+        unawaited(logDemoReviewOpened(ref, kind: 'mistakes'));
+      }
       return null;
     }, const []);
 
@@ -165,6 +170,10 @@ class _MistakeReviewFlow extends HookConsumerWidget {
       isBookmarked: isBookmarked,
       isQueued: false,
       confidenceSessionId: sessionId,
+      analyticsSource:
+          DemoDiagnosticEphemeralStore.instance.peek(sessionId) != null
+          ? 'demo_review'
+          : 'mistake_review',
       onToggleBookmark: () async {
         final repo = await ref.read(testEngineRepositoryProvider.future);
         if (isBookmarked) {

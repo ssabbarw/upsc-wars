@@ -10,6 +10,21 @@ enum NotificationPromptSurface {
 /// Automatic = screen-open strategy. Explicit = user tapped a notify CTA.
 enum NotificationPromptKind { automatic, explicit }
 
+/// Remote-config (and similar) gates for [NotificationPromptCopy] bullets.
+class NotificationPromptFlags {
+  const NotificationPromptFlags({
+    this.dailyCa = false,
+    this.caShots = false,
+    this.dailyWar = false,
+    this.community = false,
+  });
+
+  final bool dailyCa;
+  final bool caShots;
+  final bool dailyWar;
+  final bool community;
+}
+
 /// Copy for the pre-permission sheet. Hero is contextual; [alsoLine] names
 /// the other notification uses so one prompt covers the whole product.
 class NotificationPromptCopy {
@@ -18,17 +33,23 @@ class NotificationPromptCopy {
     required this.body,
     required this.alsoLine,
     required this.cta,
+    this.bullets = const [],
   });
 
   final String title;
   final String body;
   final String alsoLine;
   final String cta;
+  final List<String> bullets;
 
   static const notNow = 'Not now';
   static const footer = 'You can change this anytime in Settings.';
 
-  static NotificationPromptCopy forSurface(NotificationPromptSurface surface) {
+  static NotificationPromptCopy forSurface(
+    NotificationPromptSurface surface, {
+    NotificationPromptFlags flags = const NotificationPromptFlags(),
+    bool skippedDemoReview = false,
+  }) {
     return switch (surface) {
       NotificationPromptSurface.dailyWar => const NotificationPromptCopy(
         title: 'Get pinged before tonight’s Daily Battle',
@@ -50,18 +71,28 @@ class NotificationPromptCopy {
         title: 'Get pinged for battles and replies',
         body:
             'Know when someone challenges you or replies in chat, without checking Community.',
-        alsoLine:
-            'You’ll also get Daily Drill, current affairs, and CA Shots.',
+        alsoLine: 'You’ll also get Daily Drill, current affairs, and CA Shots.',
         cta: 'Turn on alerts',
       ),
-      NotificationPromptSurface.postFirstTest => const NotificationPromptCopy(
-        title: 'Get pinged to practice tomorrow',
-        body:
-            'A daily reminder so this doesn’t stay a one-off — show up again without having to remember.',
-        alsoLine:
-            'You’ll also get current affairs, CA Shots, and community invites.',
-        cta: 'Turn on reminders',
-      ),
+      NotificationPromptSurface.postFirstTest => skippedDemoReview
+          ? NotificationPromptCopy(
+              title: 'No time for the explanations right now?',
+              body:
+                  'That’s fine. We can ping you later to review — and to try '
+                  'the rest of UPSC Wars.',
+              bullets: _postFirstTestBullets(flags),
+              alsoLine:
+                  'Turn on notifications and we’ll nudge you when it’s a good time.',
+              cta: 'Notify me',
+            )
+          : NotificationPromptCopy(
+              title: 'Liked this test — and the explanations?',
+              body: "That's the demo. Here's what else is waiting:",
+              bullets: _postFirstTestBullets(flags),
+              alsoLine:
+                  "Turn on notifications and we'll nudge you to revise the ones you got wrong.",
+              cta: 'Notify me',
+            ),
       NotificationPromptSurface.generic => const NotificationPromptCopy(
         title: 'Stay on track with useful pings',
         body:
@@ -70,6 +101,20 @@ class NotificationPromptCopy {
         cta: 'Turn on reminders',
       ),
     };
+  }
+
+  static List<String> _postFirstTestBullets(NotificationPromptFlags flags) {
+    return [
+      'Revision games for topics that keep slipping',
+      if (flags.community) '1v1 battles with other aspirants',
+      if (flags.dailyCa)
+        'Daily Current Affairs Test — yesterday’s news, scored',
+      if (flags.caShots)
+        'CA Shots — a news brief + 1 MCQ when something breaks',
+      if (flags.dailyWar)
+        'Daily Battle at 9 PM — same paper, All-India rank',
+      'Year-wise solved PYQs, with the same explanations',
+    ];
   }
 }
 

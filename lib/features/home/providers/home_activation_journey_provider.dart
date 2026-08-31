@@ -3,6 +3,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../../core/providers/prefs_provider.dart';
 import '../../../core/providers/user_database_provider.dart';
 import '../domain/activation_journey_constants.dart';
+import '../domain/create_get_started_session_use_case.dart';
 
 String _todayYyyyMmDd() {
   final now = DateTime.now();
@@ -25,6 +26,8 @@ class HomeActivationJourneyState {
     required this.scoredAttempts,
     required this.shouldShowChecklist,
     required this.canSnoozeChecklist,
+    required this.demoInProgressDone,
+    required this.demoInProgressTotal,
   });
 
   /// Demo diagnostic submitted, or any completed session.
@@ -38,6 +41,12 @@ class HomeActivationJourneyState {
 
   /// Snooze (X) only from the calendar day after START HERE first appeared.
   final bool canSnoozeChecklist;
+
+  /// Answered questions in an in-progress Get Started demo (`0` if none).
+  final int demoInProgressDone;
+  final int demoInProgressTotal;
+
+  bool get demoInProgress => demoInProgressDone > 0;
 
   bool get todo1Done => demoOrFirstTestDone;
 
@@ -82,11 +91,18 @@ final homeActivationJourneyProvider =
       firstShownOn.isNotEmpty &&
       _todayYyyyMmDd().compareTo(firstShownOn) > 0;
 
+  final demoProgress = await db.sessionsDao
+      .getInProgressSessionProgressByFeatureKey(
+        CreateGetStartedSessionUseCase.analyticsKey,
+      );
+
   return HomeActivationJourneyState(
     demoOrFirstTestDone: demoOrFirstTestDone,
     scoredAttempts: scoredAttempts,
     shouldShowChecklist: shouldShowChecklist,
     canSnoozeChecklist: canSnoozeChecklist,
+    demoInProgressDone: demoProgress?.done ?? 0,
+    demoInProgressTotal: demoProgress?.total ?? 0,
   );
 });
 

@@ -9,6 +9,7 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../home/domain/demo_diagnostic_ephemeral_store.dart';
 import '../domain/mistake_review_bundle.dart';
 import '../providers/mistake_review_provider.dart';
 import '../widgets/mistake_review_carousel_card.dart';
@@ -213,6 +214,7 @@ class _IntroBody extends HookWidget {
             ),
             onPressed: () {
               HapticFeedback.lightImpact();
+              maybeMarkDemoDiagnosticReviewOpened(sessionId);
               context.push('/mistake-review/$sessionId');
             },
             icon: const Icon(Icons.play_arrow_rounded),

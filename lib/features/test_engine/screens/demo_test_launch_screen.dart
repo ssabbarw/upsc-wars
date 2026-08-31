@@ -5,6 +5,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../core/analytics/screen_flow_analytics.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../home/domain/demo_session_warmup.dart';
@@ -22,6 +23,16 @@ class DemoTestLaunchScreen extends HookConsumerWidget {
     final sessionId = useState<String?>(DemoSessionWarmup.readyId);
     final error = useState<Object?>(null);
     final attempt = useState(0);
+
+    void skipToHome() {
+      ScreenFlow.logAction(
+        ref,
+        screenName: ScreenFlow.testSession,
+        actionId: 'demo_skip_to_home',
+        actionKind: 'skip',
+      );
+      context.go('/');
+    }
 
     useEffect(() {
       if (sessionId.value != null) return null;
@@ -45,39 +56,63 @@ class DemoTestLaunchScreen extends HookConsumerWidget {
       return TestEngineScreen(sessionId: sessionId.value!);
     }
 
-    return Scaffold(
-      body: SafeArea(
-        child: error.value != null
-            ? Center(
-                child: Padding(
-                  padding: const EdgeInsets.all(AppSpacing.xxl),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        'Could not load the demo test.',
-                        style: AppTextStyles.body(),
-                        textAlign: TextAlign.center,
-                      ),
-                      const SizedBox(height: AppSpacing.lg),
-                      OutlinedButton(
-                        onPressed: () {
-                          DemoSessionWarmup.reset();
-                          error.value = null;
-                          attempt.value++;
-                        },
-                        child: Text('Retry', style: AppTextStyles.label()),
-                      ),
-                      const SizedBox(height: AppSpacing.sm),
-                      TextButton(
-                        onPressed: () => context.go('/'),
-                        child: Text('Home', style: AppTextStyles.label()),
-                      ),
-                    ],
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (didPop, result) {
+        if (didPop) return;
+        skipToHome();
+      },
+      child: Scaffold(
+        body: SafeArea(
+          child: error.value != null
+              ? Center(
+                  child: Padding(
+                    padding: const EdgeInsets.all(AppSpacing.xxl),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          'Could not load the demo test.',
+                          style: AppTextStyles.body(),
+                          textAlign: TextAlign.center,
+                        ),
+                        const SizedBox(height: AppSpacing.lg),
+                        OutlinedButton(
+                          onPressed: () {
+                            DemoSessionWarmup.reset();
+                            error.value = null;
+                            attempt.value++;
+                          },
+                          child: Text('Retry', style: AppTextStyles.label()),
+                        ),
+                        const SizedBox(height: AppSpacing.sm),
+                        TextButton(
+                          onPressed: skipToHome,
+                          child: Text(
+                            'Skip to home',
+                            style: AppTextStyles.label(),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
+                )
+              : Column(
+                  children: [
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: TextButton(
+                        onPressed: skipToHome,
+                        child: Text(
+                          'Skip to home',
+                          style: AppTextStyles.label(),
+                        ),
+                      ),
+                    ),
+                    const Expanded(child: TestEngineQuestionShimmer()),
+                  ],
                 ),
-              )
-            : const TestEngineQuestionShimmer(),
+        ),
       ),
     );
   }

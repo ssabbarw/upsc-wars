@@ -8,7 +8,9 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../../core/analytics/activation_milestones.dart';
 import '../../../core/analytics/analytics.dart';
 import '../../../core/analytics/analytics_events.dart';
+import '../../../core/analytics/screen_flow_analytics.dart';
 import '../../../core/layout/system_insets.dart';
+import '../../../core/providers/prefs_provider.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
@@ -19,6 +21,7 @@ import '../../../shared/widgets/dismissible_modal_sheet.dart';
 import '../../test_engine/providers/test_session_provider.dart';
 import '../domain/create_get_started_session_use_case.dart';
 import '../domain/demo_session_warmup.dart';
+import '../providers/home_activation_journey_provider.dart';
 import '../providers/home_activation_provider.dart';
 
 enum _DemoResumeChoice { resume, restart }
@@ -89,6 +92,7 @@ Future<String?> _resolveGetStartedDiagnosticSession(
       );
       ref.invalidate(testSessionProvider(progress.sessionId));
       DemoSessionWarmup.reset();
+      ref.invalidate(homeActivationJourneyProvider);
     } on Object {
       return null;
     }
@@ -131,10 +135,6 @@ Future<void> openGetStartedFromHome(BuildContext context, WidgetRef ref) async {
   if (!context.mounted) return;
   if (progress != null && progress.done > 0) {
     await launchGetStartedDiagnostic(context, ref, source: 'home_card');
-    return;
-  }
-  if (progress != null) {
-    context.push('/test/${progress.sessionId}');
     return;
   }
   await showGetStartedDiagnosticIntroSheet(context);
@@ -183,7 +183,31 @@ Future<bool?> showGetStartedDiagnosticIntroSheet(
       ),
     ),
   );
-    return started;
+  return started;
+}
+
+/// After onboarding, Home opens the diagnostic intro once.
+///
+/// Returns `true` if the sheet was shown (caller should not stack another
+/// first-run sheet on this visit).
+Future<bool> maybeShowPendingGetStartedAfterOnboarding({
+  required BuildContext context,
+  required WidgetRef ref,
+}) async {
+  final prefs = await ref.read(prefsServiceProvider.future);
+  if (!prefs.getStartedSheetPendingAfterOnboarding) return false;
+  if (!context.mounted) return false;
+  if (GoRouter.of(context).routeInformationProvider.value.uri.path != '/') {
+    return false;
+  }
+  await Future<void>.delayed(const Duration(milliseconds: 120));
+  if (!context.mounted) return false;
+  if (GoRouter.of(context).routeInformationProvider.value.uri.path != '/') {
+    return false;
+  }
+  prefs.getStartedSheetPendingAfterOnboarding = false;
+  await showGetStartedDiagnosticIntroSheet(context, postOnboarding: true);
+  return true;
 }
 
 class _DemoResumeOrRestartSheet extends StatelessWidget {
@@ -810,9 +834,17 @@ class _GetStartedDiagnosticIntroSheet extends HookConsumerWidget {
                           TextButton(
                             onPressed: loading.value
                                 ? null
-                                : () => Navigator.pop(context, false),
+                                : () {
+                                    ScreenFlow.logAction(
+                                      ref,
+                                      screenName: ScreenFlow.onboarding,
+                                      actionId: 'demo_skip_to_home',
+                                      actionKind: 'skip',
+                                    );
+                                    Navigator.pop(context, false);
+                                  },
                             child: Text(
-                              'Do it later',
+                              'Skip to home',
                               style: AppTextStyles.labelSm().copyWith(
                                 color: scheme.onSurfaceVariant,
                               ),

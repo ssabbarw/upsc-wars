@@ -45,7 +45,10 @@ class OnboardingFlowScreen extends HookConsumerWidget {
     final hPad = onb(context, 16);
     final showSkip = page.value < _pageCount - 1;
 
-    Future<void> completeFlow({required String actionId}) async {
+    Future<void> completeFlow({
+      required String actionId,
+      bool offerDemo = false,
+    }) async {
       ScreenFlow.logAction(
         ref,
         screenName: ScreenFlow.onboarding,
@@ -55,6 +58,7 @@ class OnboardingFlowScreen extends HookConsumerWidget {
         ref,
         context,
         actionId: actionId,
+        offerDemo: offerDemo,
         markFlowCompleted: () {
           onboardingFlowCompleted.value = true;
         },
@@ -168,7 +172,10 @@ class OnboardingFlowScreen extends HookConsumerWidget {
                       OnboardingQuestionDepthPage(
                         onContinue: () {
                           unawaited(
-                            completeFlow(actionId: 'depth_get_started'),
+                            completeFlow(
+                              actionId: 'depth_get_started',
+                              offerDemo: true,
+                            ),
                           );
                         },
                       ),
@@ -188,6 +195,7 @@ Future<void> _complete(
   WidgetRef ref,
   BuildContext context, {
   required String actionId,
+  required bool offerDemo,
   required void Function() markFlowCompleted,
   required int lastStepIndex,
   required DateTime lastStepStartedAt,
@@ -224,9 +232,12 @@ Future<void> _complete(
   );
   final prefs = await ref.read(prefsServiceProvider.future);
   prefs.patternInterruptOnboardingSeen = true;
+  if (offerDemo) {
+    prefs.getStartedSheetPendingAfterOnboarding = true;
+  }
   ref.invalidate(prefsServiceProvider);
   if (!context.mounted) return;
-  context.go(DemoSessionWarmup.pendingRoute);
+  context.go('/');
 }
 
 class _TopChrome extends StatelessWidget {

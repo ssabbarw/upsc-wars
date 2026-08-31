@@ -16,7 +16,6 @@ import '../../../core/domain/entities/session_result.dart';
 import '../../../core/domain/entities/test_question.dart';
 import '../../../core/providers/catalog_providers.dart';
 import '../../../core/providers/prefs_provider.dart';
-import '../../../core/services/battle_messaging_service.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
@@ -35,7 +34,12 @@ void _openSessionHistoryReview(
   BuildContext context,
   String sessionId, {
   bool focusWrong = false,
+  String? analyticsFeatureKey,
 }) {
+  maybeMarkDemoDiagnosticReviewOpened(
+    sessionId,
+    analyticsFeatureKey: analyticsFeatureKey,
+  );
   final loc = focusWrong
       ? '/history/$sessionId?focus=wrong'
       : '/history/$sessionId';
@@ -139,24 +143,11 @@ class SessionSummaryCompactView extends HookConsumerWidget {
         unawaited(() async {
           final prefs = await ref.read(prefsServiceProvider.future);
           if (cancelled || !context.mounted) return;
-          if (prefs.demoResultsReviewCoachSeen) {
-            unawaited(
-              BattleMessagingService.maybePromptAfterFirstTestHome(
-                context: context,
-              ),
-            );
-            return;
-          }
+          if (prefs.demoResultsReviewCoachSeen) return;
           prefs.demoResultsReviewCoachSeen = true;
           void dismiss() {
             final current = entry;
             if (current != null && current.mounted) current.remove();
-            if (!context.mounted) return;
-            unawaited(
-              BattleMessagingService.maybePromptAfterFirstTestHome(
-                context: context,
-              ),
-            );
           }
 
           entry = OverlayEntry(
@@ -262,6 +253,7 @@ class SessionSummaryCompactView extends HookConsumerWidget {
           questionCount: result.questionCount,
           metrics: metrics,
           highlightKey: reviewAllKey,
+          analyticsFeatureKey: result.analyticsFeatureKey,
         ),
         _BackToHomeButton(sessionId: sessionId, scheme: scheme),
         if (showRevisionQueue) ...[
@@ -1040,12 +1032,14 @@ class _ReviewAllButton extends StatelessWidget {
     required this.questionCount,
     required this.metrics,
     this.highlightKey,
+    this.analyticsFeatureKey,
   });
 
   final String sessionId;
   final int questionCount;
   final _SummaryLayoutMetrics metrics;
   final GlobalKey? highlightKey;
+  final String? analyticsFeatureKey;
 
   @override
   Widget build(BuildContext context) {
@@ -1066,7 +1060,11 @@ class _ReviewAllButton extends StatelessWidget {
           logGlobalAnalytics(
             const UspSessionCoachCtaTappedEvent(action: 'review_all'),
           );
-          _openSessionHistoryReview(context, sessionId);
+          _openSessionHistoryReview(
+            context,
+            sessionId,
+            analyticsFeatureKey: analyticsFeatureKey,
+          );
         },
         icon: Icon(Icons.menu_book_outlined, size: 20 * metrics.factor),
         label: Text(

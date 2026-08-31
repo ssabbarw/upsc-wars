@@ -5,6 +5,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import 'package:upsc_wars/core/analytics/activation_milestones.dart';
 import 'package:upsc_wars/core/constants/question_source_constants.dart';
 import 'package:upsc_wars/core/domain/entities/answer_confidence.dart';
 import 'package:upsc_wars/core/domain/entities/test_question.dart';
@@ -21,6 +22,7 @@ import 'package:upsc_wars/shared/widgets/selectable_copy_search_text.dart';
 import 'package:upsc_wars/features/daily_ca/providers/daily_ca_providers.dart';
 import 'package:upsc_wars/features/history/providers/review_session_provider.dart';
 import 'package:upsc_wars/features/history/widgets/explanation_card.dart';
+import 'package:upsc_wars/features/home/domain/demo_diagnostic_ephemeral_store.dart';
 import 'package:upsc_wars/features/results/widgets/share_test_bottom_sheet.dart';
 
 OverlayEntry _buildSessionReviewShareCoachOverlay({
@@ -368,11 +370,27 @@ class SessionReviewScreen extends HookConsumerWidget {
     final params = (sessionId: sessionId, focusWrong: focusWrong);
     final review = ref.watch(reviewSessionProvider(params));
     useEffect(() {
+      maybeMarkDemoDiagnosticReviewOpened(sessionId);
       unawaited(() async {
         final session =
             await ref.read(userDatabaseProvider).sessionsDao.getSessionById(
               sessionId,
             );
+        maybeMarkDemoDiagnosticReviewOpened(
+          sessionId,
+          analyticsFeatureKey: session?.analyticsFeatureKey,
+        );
+        final isDemo = DemoDiagnosticEphemeralStore.instance.peek(sessionId) !=
+                null ||
+            DemoDiagnosticEphemeralStore.instance.isDemoAnalyticsKey(
+              session?.analyticsFeatureKey,
+            );
+        if (isDemo) {
+          await logDemoReviewOpened(
+            ref,
+            kind: focusWrong ? 'mistakes' : 'explanations',
+          );
+        }
         final topic = session?.topic;
         if (session?.subject ==
                 QuestionSourceConstants.dailyCaSessionSubject &&
@@ -457,6 +475,11 @@ class SessionReviewScreen extends HookConsumerWidget {
               isBookmarked: isBookmarked,
               isQueued: isQueued,
               confidenceSessionId: sessionId,
+              analyticsSource:
+                  DemoDiagnosticEphemeralStore.instance.peek(sessionId) !=
+                      null
+                  ? 'demo_review'
+                  : (focusWrong ? 'mistake_review' : 'session_review'),
               onShare: () => unawaited(
                 showShareTestBottomSheet(
                   context: context,
@@ -540,6 +563,7 @@ class ReviewBody extends StatelessWidget {
     this.isLastPage,
     this.onShare,
     this.shareLayerLink,
+    this.analyticsSource,
   });
 
   final String title;
@@ -575,6 +599,7 @@ class ReviewBody extends StatelessWidget {
   final String? confidenceSessionId;
   final VoidCallback? onShare;
   final LayerLink? shareLayerLink;
+  final String? analyticsSource;
 
   @override
   Widget build(BuildContext context) {
@@ -773,6 +798,7 @@ class ReviewBody extends StatelessWidget {
               ),
               const SizedBox(height: 6),
               ExplanationCard(
+                analyticsSource: analyticsSource,
                 translation: QuestionTranslation(
                   finalExplanation: isHindi
                       ? question.finalExplanationHi

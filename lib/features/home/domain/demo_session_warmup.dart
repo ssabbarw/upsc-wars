@@ -5,8 +5,8 @@ import 'create_get_started_session_use_case.dart';
 
 /// Shared in-flight create for the first-run demo test.
 ///
-/// Onboarding starts this immediately so "Try 8 questions" can open the test
-/// shell before the session row exists. [ensure] is the only create path so
+/// Onboarding starts this immediately so the post-onboarding intro can open
+/// the test shell before the session row exists. [ensure] is the only create path so
 /// two callers cannot insert two sessions.
 abstract final class DemoSessionWarmup {
   static const pendingRoute = '/test/pending-demo';

@@ -1050,3 +1050,79 @@ final class CaShotAttemptedEvent extends AnalyticsEvent {
   final String source;
   final bool correct;
 }
+
+// ── Onboarding journey (demo explanations → review → explore / return) ─
+
+/// **An explanation section was visible** (body or a deep-dive tab).
+///
+/// [section] is `explanation` | `statements` | `elimination` | `trap`.
+/// [source] is `demo_test` | `demo_review` | `in_test` | `session_review` |
+/// `mistake_review`.
+///
+/// **GA4:** `explanation_section_viewed` with `section`, `source`.
+final class ExplanationSectionViewedEvent extends AnalyticsEvent {
+  const ExplanationSectionViewedEvent({
+    required this.section,
+    required this.source,
+  });
+
+  final String section;
+  final String source;
+}
+
+/// **Opened post-demo review** of mistakes or all explanations.
+///
+/// [kind] is `mistakes` | `explanations`.
+///
+/// **GA4:** `demo_review_opened` with `kind`.
+final class DemoReviewOpenedEvent extends AnalyticsEvent {
+  const DemoReviewOpenedEvent({required this.kind});
+
+  final String kind;
+}
+
+/// **Tapped a non-demo surface after completing the Get Started demo.**
+///
+/// [surface] is a short id: `subject`, `progress`, `games`, `community`,
+/// `daily_drill`, `daily_ca`, `ca_shot`, `danger_zone`, `mcq_test`.
+///
+/// **GA4:** `post_demo_explore` with `surface`.
+final class PostDemoExploreEvent extends AnalyticsEvent {
+  const PostDemoExploreEvent({required this.surface});
+
+  final String surface;
+}
+
+/// Exclusive attempt bands for [DemoTestSubmittedEvent] (8-question demo).
+///
+/// * `none` — 0 scored
+/// * `1_2` — 1–2
+/// * `3_5` — 3–5
+/// * `6_7` — 6–7 (not the full paper)
+/// * `all` — every question scored
+String demoTestAttemptBand({required int attempted, required int total}) {
+  if (total > 0 && attempted >= total) return 'all';
+  if (attempted <= 0) return 'none';
+  if (attempted <= 2) return '1_2';
+  if (attempted <= 5) return '3_5';
+  return '6_7';
+}
+
+/// **Get Started demo was submitted.** [attempted] is scored answers
+/// (correct + wrong); skipped / timed-out-unanswered do not count.
+///
+/// **GA4:** `demo_test_submitted` with `attempted`, `total`, `attempt_band`
+/// (`none` | `1_2` | `3_5` | `6_7` | `all`).
+final class DemoTestSubmittedEvent extends AnalyticsEvent {
+  const DemoTestSubmittedEvent({
+    required this.attempted,
+    required this.total,
+    required this.attemptBand,
+  });
+
+  final int attempted;
+  final int total;
+  final String attemptBand;
+}
+
+

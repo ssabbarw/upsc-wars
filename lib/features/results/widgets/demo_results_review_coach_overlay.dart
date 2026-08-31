@@ -215,11 +215,22 @@ class _Bubble extends StatelessWidget {
     const arrow = 10.0;
     const margin = 12.0;
 
+    final viewPadding = MediaQuery.viewPaddingOf(context);
+    final minTop = viewPadding.top + margin;
+    final maxTop =
+        screenSize.height - viewPadding.bottom - estimatedHeight - margin;
+    final topBound = maxTop < minTop ? minTop : maxTop;
+
     final belowY = hole.bottom + arrow + margin;
-    final placeBelow = belowY + estimatedHeight < screenSize.height - 24;
-    final bubbleTop = placeBelow
+    final aboveY = hole.top - arrow - margin - estimatedHeight;
+    final fitsBelow =
+        belowY + estimatedHeight <= screenSize.height - viewPadding.bottom - margin;
+    final fitsAbove = aboveY >= minTop;
+    final bubbleTop = fitsBelow
         ? belowY
-        : hole.top - arrow - margin - estimatedHeight;
+        : fitsAbove
+            ? aboveY
+            : minTop;
     final centreX = hole.center.dx - bubbleWidth / 2;
     final bubbleLeft = centreX.clamp(
       margin,
@@ -228,7 +239,7 @@ class _Bubble extends StatelessWidget {
 
     return Positioned(
       left: bubbleLeft,
-      top: bubbleTop.clamp(margin, screenSize.height - estimatedHeight - margin),
+      top: bubbleTop.clamp(minTop, topBound),
       width: bubbleWidth,
       child: Material(
         color: Colors.transparent,

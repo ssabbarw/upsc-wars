@@ -15,6 +15,7 @@ import '../../../core/providers/catalog_providers.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../history/screens/session_review_screen.dart';
+import '../../home/domain/demo_diagnostic_ephemeral_store.dart';
 import '../providers/danger_zone_review_provider.dart';
 
 class DangerZoneReviewScreen extends HookConsumerWidget {
@@ -121,12 +122,16 @@ class _DangerZonePager extends HookConsumerWidget {
     final bookmarks = useState<Map<String, bool>>({});
 
     useEffect(() {
+      maybeMarkDemoDiagnosticReviewOpened(sessionId);
       unawaited(
         logActivationMilestoneOnce(
           ref,
           ActivationMilestones.firstDangerZoneReview,
         ),
       );
+      if (DemoDiagnosticEphemeralStore.instance.peek(sessionId) != null) {
+        unawaited(logDemoReviewOpened(ref, kind: 'mistakes'));
+      }
       return null;
     }, const []);
 
@@ -166,6 +171,10 @@ class _DangerZonePager extends HookConsumerWidget {
             isBookmarked: isBookmarked,
             isQueued: false,
             confidenceSessionId: sessionId,
+            analyticsSource:
+                DemoDiagnosticEphemeralStore.instance.peek(sessionId) != null
+                ? 'demo_review'
+                : 'mistake_review',
             onToggleBookmark: () async {
               final repo = await ref.read(testEngineRepositoryProvider.future);
               if (isBookmarked) {

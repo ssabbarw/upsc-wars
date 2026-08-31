@@ -33,6 +33,9 @@ abstract final class ActivationMilestones {
   /// First test finished on device (demo diagnostic or any persisted session).
   static const firstTestDone = 'first_test_done';
 
+  /// First finished session that is not the Get Started demo diagnostic.
+  static const firstNonDemoTestDone = 'first_non_demo_test_done';
+
   /// Studied on a 2nd distinct calendar day — the activation north-star.
   static const activatedSecondDay = 'activated_second_active_day';
 
@@ -41,6 +44,32 @@ abstract final class ActivationMilestones {
 
   /// User left their first test before submitting (demo or any session).
   static const firstTestQuitInMid = 'first_test_quit_in_mid';
+
+  /// First time an explanation body was on screen (demo or later).
+  static const firstExplanationViewed = 'first_explanation_viewed';
+
+  /// First time the Statements deep-dive tab was visible.
+  static const firstStatementAnalysisViewed = 'first_statement_analysis_viewed';
+
+  /// First time the Elimination deep-dive tab was visible.
+  static const firstEliminationViewed = 'first_elimination_viewed';
+
+  /// First time the Trap deep-dive tab was visible.
+  static const firstTrapViewed = 'first_trap_viewed';
+
+  /// Opened mistake review after the Get Started demo.
+  static const firstDemoMistakesReviewed = 'first_demo_mistakes_reviewed';
+
+  /// Opened review-all / full explanations after the Get Started demo.
+  static const firstDemoExplanationsReviewed =
+      'first_demo_explanations_reviewed';
+
+  /// First non-demo product surface after completing the demo (subject, tab,
+  /// today hub, another test).
+  static const firstPostDemoExplore = 'first_post_demo_explore';
+
+  /// First time the app was opened or resumed after the demo was completed.
+  static const firstReturnAfterDemo = 'first_return_after_demo';
 }
 
 /// Sets [PrefsService.homeActivationComplete] when Sure/Educated is logged.
@@ -100,3 +129,80 @@ Future<void> logActivationMilestoneForServices(
   prefs.addActivationMilestone(id);
   await analytics.track(ActivationMilestoneEvent(milestoneId: id));
 }
+
+const _explanationSectionMilestones = <String, String>{
+  'explanation': ActivationMilestones.firstExplanationViewed,
+  'statements': ActivationMilestones.firstStatementAnalysisViewed,
+  'elimination': ActivationMilestones.firstEliminationViewed,
+  'trap': ActivationMilestones.firstTrapViewed,
+};
+
+const _repeatableExplanationSources = {
+  'demo_test',
+  'demo_review',
+  'in_test',
+  'session_review',
+  'mistake_review',
+};
+
+/// Explanation / Statements / Elimination / Trap became visible.
+///
+/// Always records the matching one-time [ActivationMilestones] id. Also emits
+/// [ExplanationSectionViewedEvent] for onboarding-relevant [source] values.
+Future<void> logExplanationSectionViewed(
+  WidgetRef ref, {
+  required String section,
+  String source = 'other',
+}) async {
+  if (_repeatableExplanationSources.contains(source)) {
+    await Analytics.track(
+      ref,
+      ExplanationSectionViewedEvent(section: section, source: source),
+    );
+  }
+  final id = _explanationSectionMilestones[section];
+  if (id != null) {
+    await logActivationMilestoneOnce(ref, id);
+  }
+}
+
+/// Post-demo mistake review or review-all. No-op until the demo is submitted.
+Future<void> logDemoReviewOpened(
+  WidgetRef ref, {
+  required String kind,
+}) async {
+  final prefs = await ref.read(prefsServiceProvider.future);
+  if (!prefs.getStartedDiagnosticAttempted) return;
+  await Analytics.track(ref, DemoReviewOpenedEvent(kind: kind));
+  await logActivationMilestoneOnce(
+    ref,
+    kind == 'mistakes'
+        ? ActivationMilestones.firstDemoMistakesReviewed
+        : ActivationMilestones.firstDemoExplanationsReviewed,
+  );
+}
+
+/// Home / another test / a shell tab after the demo. No-op until submitted.
+Future<void> maybeLogPostDemoExplore(
+  WidgetRef ref, {
+  required String surface,
+}) async {
+  final prefs = await ref.read(prefsServiceProvider.future);
+  if (!prefs.getStartedDiagnosticAttempted) return;
+  await Analytics.track(ref, PostDemoExploreEvent(surface: surface));
+  await logActivationMilestoneOnce(
+    ref,
+    ActivationMilestones.firstPostDemoExplore,
+  );
+}
+
+/// App opened or resumed after the demo was completed (came back).
+Future<void> maybeLogReturnAfterDemo(WidgetRef ref) async {
+  final prefs = await ref.read(prefsServiceProvider.future);
+  if (!prefs.getStartedDiagnosticAttempted) return;
+  await logActivationMilestoneOnce(
+    ref,
+    ActivationMilestones.firstReturnAfterDemo,
+  );
+}
+

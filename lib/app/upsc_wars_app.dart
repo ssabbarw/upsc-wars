@@ -121,6 +121,7 @@ class _RootMaterialApp extends HookConsumerWidget {
           ref,
           AppOpenedEvent(entrySource: entry.source, entryDetail: entry.detail),
         );
+        unawaited(maybeLogReturnAfterDemo(ref));
         final p = await ref.read(prefsServiceProvider.future);
         final wasFirstInstall = !p.hasActivationMilestone(
           ActivationMilestones.firstProcessLaunch,

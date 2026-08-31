@@ -8,6 +8,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../auth/auth_session.dart';
+import '../analytics/activation_milestones.dart';
 import '../analytics/analytics_route_observer.dart';
 import '../analytics/screen_dwell_route_observer.dart';
 import '../analytics/screen_flow_analytics.dart';
@@ -1356,6 +1357,12 @@ class _AppShell extends HookConsumerWidget {
       }
       tabDwellIndex.value = toIndex;
       tabDwellAt.value = DateTime.now();
+      final names = ScreenFlow.shellTabNames(hasCommunity: showCommunityTab);
+      if (toIndex >= 0 && toIndex < names.length && names[toIndex] != 'home') {
+        unawaited(
+          maybeLogPostDemoExplore(ref, surface: names[toIndex]),
+        );
+      }
     }
 
     final navItems = <BottomNavigationBarItem>[

@@ -7,6 +7,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../core/analytics/activation_milestones.dart';
 import '../../../core/auth/auth_session.dart';
 import '../../../core/constants/app_constants.dart';
 import '../../../core/constants/subject_constants.dart';
@@ -43,6 +44,7 @@ import '../../../shared/widgets/home_page_video_banner.dart';
 import '../../../shared/widgets/rate_review_sheet.dart';
 import '../../../shared/widgets/soft_update_banner.dart';
 import '../widgets/daily_rituals_intro_sheet.dart';
+import '../widgets/get_started_card.dart';
 
 class HomeScreen extends HookConsumerWidget {
   const HomeScreen({super.key, this.heroSlot});
@@ -96,10 +98,19 @@ class HomeScreen extends HookConsumerWidget {
     final onHomeRoute = routeInfo.value.uri.path == '/';
     useEffect(() {
       if (!onHomeRoute) return null;
-      unawaited(
-        BattleMessagingService.maybePromptAfterFirstTestHome(context: context),
-      );
-      unawaited(maybeShowDailyRitualsIntro(context: context, ref: ref));
+      unawaited(() async {
+        final showedDemoIntro = await maybeShowPendingGetStartedAfterOnboarding(
+          context: context,
+          ref: ref,
+        );
+        if (showedDemoIntro || !context.mounted) return;
+        final showedPush =
+            await BattleMessagingService.maybePromptAfterFirstTestHome(
+          context: context,
+        );
+        if (showedPush || !context.mounted) return;
+        unawaited(maybeShowDailyRitualsIntro(context: context, ref: ref));
+      }());
       return null;
     }, [onHomeRoute]);
 
@@ -323,6 +334,8 @@ class HomeScreen extends HookConsumerWidget {
                                         : greeting;
                                     final subtitle = !journeyActive
                                         ? userName
+                                        : (journey?.demoInProgress ?? false)
+                                        ? 'Resume demo test'
                                         : 'Start with the demo test';
                                     return Column(
                                       crossAxisAlignment:
@@ -1081,7 +1094,7 @@ class _SubjectGrid extends ConsumerWidget {
   }
 }
 
-class _SubjectGridCard extends StatelessWidget {
+class _SubjectGridCard extends ConsumerWidget {
   const _SubjectGridCard({
     required this.info,
     required this.icon,
@@ -1095,7 +1108,7 @@ class _SubjectGridCard extends StatelessWidget {
   final Color borderColor;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
@@ -1109,8 +1122,10 @@ class _SubjectGridCard extends StatelessWidget {
     return Material(
       color: AppColors.transparent,
       child: InkWell(
-        onTap: () =>
-            context.push('/subject/${Uri.encodeComponent(info.subject)}'),
+        onTap: () {
+          unawaited(maybeLogPostDemoExplore(ref, surface: 'subject'));
+          context.push('/subject/${Uri.encodeComponent(info.subject)}');
+        },
         borderRadius: BorderRadius.circular(AppRadius.lg),
         child: Ink(
           padding: const EdgeInsets.all(AppSpacing.md),

@@ -1,7 +1,10 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import 'package:upsc_wars/core/analytics/activation_milestones.dart';
 import 'package:upsc_wars/shared/widgets/selectable_copy_search_text.dart';
 
 class QuestionTranslation {
@@ -60,6 +63,7 @@ class ExplanationCard extends HookConsumerWidget {
     this.demoForceTab,
     this.demoHighlightWatchOut = false,
     this.demoHighlightTrap = false,
+    this.analyticsSource,
     super.key,
   });
 
@@ -77,6 +81,11 @@ class ExplanationCard extends HookConsumerWidget {
 
   /// Play Store demo: pulse/glow the Trap panel and bold key trap names.
   final bool demoHighlightTrap;
+
+  /// Where this card is shown (`demo_test`, `in_test`, `demo_review`, …).
+  /// First-time activation milestones always fire; a repeatable GA4 event
+  /// fires for onboarding-relevant sources.
+  final String? analyticsSource;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -117,6 +126,38 @@ class ExplanationCard extends HookConsumerWidget {
       }
       return null;
     }, [tabs.join('|')]);
+
+    final loggedSections = useRef(<String>{});
+    useEffect(() {
+      loggedSections.value = {};
+      if (body.isNotEmpty) {
+        loggedSections.value.add('explanation');
+        unawaited(
+          logExplanationSectionViewed(
+            ref,
+            section: 'explanation',
+            source: analyticsSource ?? 'other',
+          ),
+        );
+      }
+      return null;
+    }, [body, analyticsSource]);
+
+    useEffect(() {
+      if (!deepDiveOpen.value || tabs.isEmpty) return null;
+      final i = activeTab.value.clamp(0, tabs.length - 1);
+      final section = _analyticsSectionForTab(tabs[i]);
+      if (section == null) return null;
+      if (!loggedSections.value.add(section)) return null;
+      unawaited(
+        logExplanationSectionViewed(
+          ref,
+          section: section,
+          source: analyticsSource ?? 'other',
+        ),
+      );
+      return null;
+    }, [deepDiveOpen.value, activeTab.value, tabs.join('|'), body, analyticsSource]);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -763,4 +804,13 @@ class _WatchOutCard extends HookWidget {
     );
   }
   return (title: 'Option', reason: text);
+}
+
+String? _analyticsSectionForTab(String tab) {
+  return switch (tab) {
+    'Statements' => 'statements',
+    'Elimination' => 'elimination',
+    'Trap' => 'trap',
+    _ => null,
+  };
 }

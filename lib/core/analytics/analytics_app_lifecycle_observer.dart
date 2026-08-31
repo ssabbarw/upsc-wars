@@ -5,6 +5,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'analytics.dart';
 import 'analytics_events.dart';
+import 'activation_milestones.dart';
 import 'push_notification_status_snapshot.dart';
 import 'session_entry_source.dart';
 
@@ -29,6 +30,7 @@ class AnalyticsAppLifecycleObserver extends WidgetsBindingObserver {
             entryDetail: entry.detail,
           ),
         );
+        unawaited(maybeLogReturnAfterDemo(_ref));
       }());
       unawaited(trackPushNotificationStatusSnapshot(_ref));
     } else if (state == AppLifecycleState.paused ||

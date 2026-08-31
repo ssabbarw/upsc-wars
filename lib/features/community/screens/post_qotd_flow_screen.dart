@@ -1,11 +1,8 @@
-import 'dart:async' show unawaited;
-
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../core/analytics/activation_milestones.dart';
 import '../../../core/domain/entities/test_question.dart';
 import '../../../core/providers/catalog_providers.dart';
 import '../../../core/providers/prefs_provider.dart'
@@ -21,16 +18,10 @@ import '../../../shared/widgets/selectable_copy_search_text.dart';
 import '../../../shared/widgets/test_config_sheet_widgets.dart';
 import '../../../shared/widgets/app_toast.dart';
 import '../../history/screens/session_review_screen.dart';
-import '../../home/providers/auth_providers.dart';
-import '../data/open_challenge_repository.dart' show profileFromFirebaseUser;
-import '../data/qotd_local_post_limit.dart';
 import '../data/qotd_repository.dart';
-import '../domain/entities/community_user.dart';
-import '../providers/community_providers.dart';
-import '../providers/qotd_providers.dart';
 import '../widgets/qotd_before_you_proceed_panel.dart';
 import '../widgets/qotd_option_letters_row.dart';
-import '../widgets/qotd_post_comment_sheet.dart';
+import '../widgets/share_qotd_sheet.dart';
 
 const _kQotdSubjectTileW = 108.0;
 const _kQotdSubjectTileH = 48.0;
@@ -100,54 +91,14 @@ class PostQotdFlowScreen extends HookConsumerWidget {
       final q = question.value;
       if (q == null || picked.value == null) return;
 
-      final posted = await showQotdPostCommentSheet(
-        context,
-        onPost: (comment) async {
-          final user = ref.read(authStateChangesProvider).asData?.value;
-          final email = user?.email?.toLowerCase().trim();
-          if (email == null || email.isEmpty) {
-            throw Exception('You must be signed in.');
-          }
-          CommunityUser? extraUser;
-          try {
-            extraUser = await ref
-                .read(communityRepositoryProvider)
-                .fetchCommunityUserByEmail(email);
-          } catch (_) {}
-
-          final profile = profileFromFirebaseUser(
-            emailLower: email,
-            displayName: extraUser?.name ?? user?.displayName ?? 'UPSC Warrior',
-            photoUrl: extraUser?.photoUrl ?? user?.photoURL,
-            telegram: extraUser?.telegram,
-            instagram: extraUser?.instagram,
-            status: extraUser?.status,
-          );
-
-          final prefs = await ref.read(prefsServiceProvider.future);
-          final maxPerWindow = await ref.read(qotdMaxPostsPerDayProvider.future);
-          QotdLocalPostLimit.assertCanPost(prefs, maxPerWindow);
-          await ref.read(qotdRepositoryProvider).createPost(
-                questionUuid: q.uuid,
-                comment: comment,
-                correctOption: q.correctOption,
-                author: profile,
-              );
-          QotdLocalPostLimit.recordPost(prefs);
-          ref.invalidate(qotdFeedNotifierProvider);
-        },
+      final posted = await showShareQotdSheet(
+        context: context,
+        ref: ref,
+        questionUuid: q.uuid,
+        correctOption: q.correctOption,
       );
       if (!context.mounted) return;
-      if (posted) {
-        unawaited(
-          logActivationMilestoneOnce(
-            ref,
-            ActivationMilestones.firstQotdPosted,
-          ),
-        );
-        AppToast.showText(context, 'Posted to QOTD');
-        context.pop();
-      }
+      if (posted) context.pop();
     }
 
     return Scaffold(

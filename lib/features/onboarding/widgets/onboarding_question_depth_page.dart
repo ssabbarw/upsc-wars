@@ -152,23 +152,6 @@ class _BottomCta extends HookWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        AnimatedOpacity(
-          opacity: visible ? 1 : 0,
-          duration: reduceMotion
-              ? Duration.zero
-              : const Duration(milliseconds: 420),
-          curve: Curves.easeOutCubic,
-          child: Text(
-            'No timer. After each answer, the full explanation opens — '
-            'traps, statement analysis, and how to eliminate.',
-            textAlign: TextAlign.center,
-            style: RgText.body(
-              size: onb(context, 12.5),
-              height: 1.35,
-              color: RgColors.muted,
-            ),
-          ),
-        ),
         SizedBox(height: onb(context, 12)),
         AnimatedOpacity(
           opacity: showButton.value ? 1 : 0,
@@ -180,21 +163,22 @@ class _BottomCta extends HookWidget {
             ignoring: !showButton.value,
             child: FilledButton(
               onPressed: onContinue,
-              style: RgText.pillButton(
-                fill: RgColors.tealDeep,
-                verticalPadding: onb(context, 15),
-              ).copyWith(
-                minimumSize: WidgetStatePropertyAll(
-                  Size(double.infinity, onb(context, 54)),
-                ),
-                shape: WidgetStatePropertyAll(
-                  RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(onb(context, 14)),
+              style:
+                  RgText.pillButton(
+                    fill: RgColors.tealDeep,
+                    verticalPadding: onb(context, 15),
+                  ).copyWith(
+                    minimumSize: WidgetStatePropertyAll(
+                      Size(double.infinity, onb(context, 54)),
+                    ),
+                    shape: WidgetStatePropertyAll(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(onb(context, 14)),
+                      ),
+                    ),
                   ),
-                ),
-              ),
               child: Text(
-                'Try 8 questions',
+                'Let\u2019s go',
                 style: RgText.body(
                   size: onb(context, 16),
                   weight: FontWeight.w700,

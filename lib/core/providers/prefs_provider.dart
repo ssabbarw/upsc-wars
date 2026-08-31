@@ -52,9 +52,16 @@ abstract final class PrefKeys {
   /// Demo overlay pointing at the EN | हि language toggle.
   static const demoLanguageCoachSeenV1 = 'demo_language_coach_seen_v1';
 
+  /// Demo Q1 sheet: verdict + read the explanation (once).
+  static const demoExplanationCoachSeenV1 = 'demo_explanation_coach_seen_v1';
+
   /// Demo results overlay: review mistakes vs review all.
   static const demoResultsReviewCoachSeenV1 =
       'demo_results_review_coach_seen_v1';
+
+  /// User opened post-demo session review (mistakes or all questions).
+  static const demoDiagnosticReviewOpenedV1 =
+      'demo_diagnostic_review_opened_v1';
 
   /// User dismissed the Get Started home card via the explain sheet.
   /// Legacy — ignored; prefer [getStartedCardSnoozedUntilV1].
@@ -105,6 +112,9 @@ abstract final class PrefKeys {
 
   /// JSON array of epoch ms for QOTD posts from this device (rolling 24h client cap).
   static const qotdLocalPostEpochsMsJson = 'qotd_local_post_epochs_ms_json_v1';
+
+  /// Shown once: what Community QOTD is, before the first post sheet.
+  static const qotdWhatIsIntroSeenV1 = 'qotd_what_is_intro_seen_v1';
 
   /// Legacy: one-shot “education sheet done” (older builds). When true, no modal
   /// or home nudge (preserves prior installs).
@@ -308,10 +318,29 @@ class PrefsService {
   set demoLanguageCoachSeen(bool v) =>
       _p.setBool(PrefKeys.demoLanguageCoachSeenV1, v);
 
+  bool get demoExplanationCoachSeen =>
+      _p.getBool(PrefKeys.demoExplanationCoachSeenV1) ?? false;
+  set demoExplanationCoachSeen(bool v) =>
+      _p.setBool(PrefKeys.demoExplanationCoachSeenV1, v);
+
   bool get demoResultsReviewCoachSeen =>
       _p.getBool(PrefKeys.demoResultsReviewCoachSeenV1) ?? false;
   set demoResultsReviewCoachSeen(bool v) =>
       _p.setBool(PrefKeys.demoResultsReviewCoachSeenV1, v);
+
+  /// Language, explanation, confidence intro, and results coaches — once per
+  /// demo visit. Call when opening a demo (resume or a new attempt).
+  void resetDemoCoachPrompts() {
+    demoLanguageCoachSeen = false;
+    demoExplanationCoachSeen = false;
+    demoConfidenceIntroSeen = false;
+    demoResultsReviewCoachSeen = false;
+  }
+
+  bool get demoDiagnosticReviewOpened =>
+      _p.getBool(PrefKeys.demoDiagnosticReviewOpenedV1) ?? false;
+  set demoDiagnosticReviewOpened(bool v) =>
+      _p.setBool(PrefKeys.demoDiagnosticReviewOpenedV1, v);
 
   bool get getStartedCardDismissed =>
       _p.getBool(PrefKeys.getStartedCardDismissedV1) ?? false;
@@ -389,6 +418,11 @@ class PrefsService {
       _p.getString(PrefKeys.qotdLocalPostEpochsMsJson) ?? '[]';
   set qotdLocalPostEpochsMsJson(String v) =>
       _p.setString(PrefKeys.qotdLocalPostEpochsMsJson, v);
+
+  bool get qotdWhatIsIntroSeen =>
+      _p.getBool(PrefKeys.qotdWhatIsIntroSeenV1) ?? false;
+  set qotdWhatIsIntroSeen(bool v) =>
+      _p.setBool(PrefKeys.qotdWhatIsIntroSeenV1, v);
 
   bool get deferredPushPermissionSheetCompletedV1 =>
       _p.getBool(PrefKeys.deferredPushPermissionSheetCompletedV1) ?? false;

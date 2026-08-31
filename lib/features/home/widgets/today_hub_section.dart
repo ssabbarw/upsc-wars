@@ -5,6 +5,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../core/analytics/activation_milestones.dart';
 import '../../../core/providers/prefs_provider.dart';
 import '../../../core/providers/user_database_provider.dart';
 import '../../../core/theme/app_colors.dart';
@@ -213,6 +214,7 @@ class TodayHubSection extends HookConsumerWidget {
       try {
         final drill = await ref.read(dailyDrillProvider.future);
         if (!context.mounted || drill == null) return;
+        unawaited(maybeLogPostDemoExplore(ref, surface: 'daily_drill'));
         if (drill.hasAnyPool) {
           await showDailyRevisionChoiceSheet(
             context: context,
@@ -244,8 +246,11 @@ class TodayHubSection extends HookConsumerWidget {
       if (data.caShotsEnabled) {
         rows.add(
           _caShotsListRow(
-            context,
             showNew: !openedRituals.contains(DailyRitualIds.caShots),
+            onTap: () {
+              unawaited(maybeLogPostDemoExplore(ref, surface: 'ca_shot'));
+              context.push('/ca-shot');
+            },
           ),
         );
       }
@@ -269,8 +274,18 @@ class TodayHubSection extends HookConsumerWidget {
             showLive: caLive,
             loading: caLive && launchingPaper.value,
             onTap: caLive
-                ? openPaperOrUnavailable
-                : () => context.push('/daily-ca'),
+                ? () {
+                    unawaited(
+                      maybeLogPostDemoExplore(ref, surface: 'daily_ca'),
+                    );
+                    openPaperOrUnavailable();
+                  }
+                : () {
+                    unawaited(
+                      maybeLogPostDemoExplore(ref, surface: 'daily_ca'),
+                    );
+                    context.push('/daily-ca');
+                  },
           ),
         );
       }
@@ -291,7 +306,14 @@ class TodayHubSection extends HookConsumerWidget {
           subtitleMaxLines: 2,
           done: false,
           locked: !unlocked,
-          onTap: unlocked ? () => context.push('/weak-areas/traps') : null,
+          onTap: unlocked
+              ? () {
+                  unawaited(
+                    maybeLogPostDemoExplore(ref, surface: 'danger_zone'),
+                  );
+                  context.push('/weak-areas/traps');
+                }
+              : null,
         ),
       );
 
@@ -562,9 +584,9 @@ class _TodayListRow extends StatelessWidget {
 
 // ── TODAY list helpers ────────────────────────────────────────────────────────
 
-_TodayListRowData _caShotsListRow(
-  BuildContext context, {
+_TodayListRowData _caShotsListRow({
   required bool showNew,
+  required VoidCallback onTap,
 }) {
   return _TodayListRowData(
     icon: Icons.bolt_rounded,
@@ -574,7 +596,7 @@ _TodayListRowData _caShotsListRow(
     done: false,
     locked: false,
     showNew: showNew,
-    onTap: () => context.push('/ca-shot'),
+    onTap: onTap,
   );
 }
 

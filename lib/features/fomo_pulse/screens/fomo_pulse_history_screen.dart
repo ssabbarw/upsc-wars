@@ -76,16 +76,6 @@ class FomoPulseHistoryScreen extends HookConsumerWidget {
             onPressed: leaveList,
           ),
           actions: [
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 10),
-              child: EnHiLanguageToggle(
-                language: uiLang,
-                onChanged: (lang) {
-                  langOverride.value = lang;
-                  unawaited(persistAppLanguage(ref, lang));
-                },
-              ),
-            ),
             TextButton.icon(
               onPressed: () => _showWhatIsCaShotsSheet(context),
               icon: const Icon(Icons.info_outline, size: 18),
@@ -94,82 +84,116 @@ class FomoPulseHistoryScreen extends HookConsumerWidget {
             const SizedBox(width: AppSpacing.xs),
           ],
         ),
-        body: async.when(
-          loading: () => const Center(child: CircularProgressIndicator()),
-          error: (e, _) => Center(child: Text('$e')),
-          data: (data) {
-            final pulses = [
-              for (final p in data.pulses)
-                if (!hiddenIds.value.contains(p.pulseId)) p,
-            ];
-            if (pulses.isEmpty) {
-              return Center(
-                child: Padding(
-                  padding: const EdgeInsets.all(AppSpacing.lg),
-                  child: Text(
-                    'No CA Shots yet. Breaking CA briefings will show up here.',
-                    textAlign: TextAlign.center,
-                    style: AppTextStyles.bodySm().copyWith(
-                      color: scheme.onSurfaceVariant,
-                    ),
-                  ),
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Padding(
+              padding: const EdgeInsets.fromLTRB(
+                AppSpacing.lg,
+                AppSpacing.sm,
+                AppSpacing.lg,
+                AppSpacing.xs,
+              ),
+              child: Align(
+                alignment: Alignment.centerRight,
+                child: EnHiLanguageToggle(
+                  language: uiLang,
+                  onChanged: (lang) {
+                    langOverride.value = lang;
+                    unawaited(persistAppLanguage(ref, lang));
+                  },
                 ),
-              );
-            }
-            final sections = _groupByDate(pulses);
-            return RefreshIndicator(
-              onRefresh: () async {
-                hiddenIds.value = const {};
-                await ref
-                    .read(fomoPulseRepositoryProvider)
-                    .loadHistory(forceRefresh: true);
-                ref.invalidate(fomoPulseHistoryProvider);
-              },
-              child: ListView.builder(
-                physics: const AlwaysScrollableScrollPhysics(),
-                padding: const EdgeInsets.all(AppSpacing.lg),
-                itemCount: sections.length,
-                itemBuilder: (context, sectionIndex) {
-                  final section = sections[sectionIndex];
-                  return Padding(
-                    padding: EdgeInsets.only(
-                      bottom: sectionIndex == sections.length - 1
-                          ? 0
-                          : AppSpacing.lg,
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          section.label,
-                          style: AppTextStyles.label().copyWith(
+              ),
+            ),
+            Expanded(
+              child: async.when(
+                loading: () => const Center(child: CircularProgressIndicator()),
+                error: (e, _) => Center(child: Text('$e')),
+                data: (data) {
+                  final pulses = [
+                    for (final p in data.pulses)
+                      if (!hiddenIds.value.contains(p.pulseId)) p,
+                  ];
+                  if (pulses.isEmpty) {
+                    return Center(
+                      child: Padding(
+                        padding: const EdgeInsets.all(AppSpacing.lg),
+                        child: Text(
+                          'No CA Shots yet. Breaking CA briefings will show up here.',
+                          textAlign: TextAlign.center,
+                          style: AppTextStyles.bodySm().copyWith(
                             color: scheme.onSurfaceVariant,
-                            fontWeight: FontWeight.w700,
                           ),
                         ),
-                        const SizedBox(height: AppSpacing.sm),
-                        for (var i = 0; i < section.pulses.length; i++) ...[
-                          _historyTile(
-                            context: context,
-                            ref: ref,
-                            pulse: section.pulses[i],
-                            attempt: data.attempts[section.pulses[i].pulseId],
-                            preferHindi: preferHindi,
-                            isAdmin: isAdmin,
-                            onDeleted: (pulseId) {
-                              hiddenIds.value = {...hiddenIds.value, pulseId};
-                            },
+                      ),
+                    );
+                  }
+                  final sections = _groupByDate(pulses);
+                  return RefreshIndicator(
+                    onRefresh: () async {
+                      hiddenIds.value = const {};
+                      await ref
+                          .read(fomoPulseRepositoryProvider)
+                          .loadHistory(forceRefresh: true);
+                      ref.invalidate(fomoPulseHistoryProvider);
+                    },
+                    child: ListView.builder(
+                      physics: const AlwaysScrollableScrollPhysics(),
+                      padding: const EdgeInsets.fromLTRB(
+                        AppSpacing.lg,
+                        AppSpacing.sm,
+                        AppSpacing.lg,
+                        AppSpacing.lg,
+                      ),
+                      itemCount: sections.length,
+                      itemBuilder: (context, sectionIndex) {
+                        final section = sections[sectionIndex];
+                        return Padding(
+                          padding: EdgeInsets.only(
+                            bottom: sectionIndex == sections.length - 1
+                                ? 0
+                                : AppSpacing.lg,
                           ),
-                          if (i != section.pulses.length - 1)
-                            const SizedBox(height: AppSpacing.sm),
-                        ],
-                      ],
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                section.label,
+                                style: AppTextStyles.label().copyWith(
+                                  color: scheme.onSurfaceVariant,
+                                  fontWeight: FontWeight.w700,
+                                ),
+                              ),
+                              const SizedBox(height: AppSpacing.sm),
+                              for (var i = 0; i < section.pulses.length; i++) ...[
+                                _historyTile(
+                                  context: context,
+                                  ref: ref,
+                                  pulse: section.pulses[i],
+                                  attempt:
+                                      data.attempts[section.pulses[i].pulseId],
+                                  preferHindi: preferHindi,
+                                  isAdmin: isAdmin,
+                                  onDeleted: (pulseId) {
+                                    hiddenIds.value = {
+                                      ...hiddenIds.value,
+                                      pulseId,
+                                    };
+                                  },
+                                ),
+                                if (i != section.pulses.length - 1)
+                                  const SizedBox(height: AppSpacing.sm),
+                              ],
+                            ],
+                          ),
+                        );
+                      },
                     ),
                   );
                 },
               ),
-            );
-          },
+            ),
+          ],
         ),
       ),
     );

@@ -1,5 +1,10 @@
+import 'dart:async';
+
+import 'package:shared_preferences/shared_preferences.dart';
+
 import '../../../core/domain/entities/active_session.dart';
 import '../../../core/domain/entities/session_result.dart';
+import '../../../core/providers/prefs_provider.dart';
 import 'create_get_started_session_use_case.dart';
 
 /// In-memory snapshot for the Get Started demo test after DB rows are discarded.
@@ -36,4 +41,44 @@ class DemoDiagnosticEphemeralStore {
 
 void clearDemoDiagnosticEphemeral(String sessionId) {
   DemoDiagnosticEphemeralStore.instance.remove(sessionId);
+}
+
+/// True when opening explanations should flip the post-demo notif copy off the
+/// "skipped review" path.
+bool shouldMarkDemoDiagnosticReviewOpened({
+  required bool isDemoSession,
+  required bool getStartedDiagnosticAttempted,
+  required bool pushPromptPendingAfterFirstTest,
+}) {
+  if (isDemoSession) return true;
+  // Review CTAs often omit the analytics key, and the in-memory demo snapshot
+  // is gone by the time the user opens explanations. If the first-test prompt
+  // is still waiting, any explanation open means they did not skip review.
+  return getStartedDiagnosticAttempted && pushPromptPendingAfterFirstTest;
+}
+
+/// Marks that the user opened post-demo question review (mistakes or all).
+void maybeMarkDemoDiagnosticReviewOpened(
+  String sessionId, {
+  String? analyticsFeatureKey,
+}) {
+  final store = DemoDiagnosticEphemeralStore.instance;
+  final snap = store.peek(sessionId);
+  final isDemoSession = snap != null ||
+      store.isDemoAnalyticsKey(
+        analyticsFeatureKey ?? snap?.result.analyticsFeatureKey,
+      );
+  unawaited(() async {
+    final prefs = PrefsService(await SharedPreferences.getInstance());
+    if (prefs.demoDiagnosticReviewOpened) return;
+    if (!shouldMarkDemoDiagnosticReviewOpened(
+      isDemoSession: isDemoSession,
+      getStartedDiagnosticAttempted: prefs.getStartedDiagnosticAttempted,
+      pushPromptPendingAfterFirstTest:
+          prefs.pushPermissionPromptPendingAfterFirstTest,
+    )) {
+      return;
+    }
+    prefs.demoDiagnosticReviewOpened = true;
+  }());
 }

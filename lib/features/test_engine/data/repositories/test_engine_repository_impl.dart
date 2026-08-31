@@ -864,10 +864,30 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
 
     if (analyticsFeatureKey == CreateGetStartedSessionUseCase.analyticsKey) {
       _prefsService.getStartedDiagnosticAttempted = true;
+      final attempted = rows
+          .where((r) => r.status == 'correct' || r.status == 'wrong')
+          .length;
+      final total = rows.length;
+      await _analytics.track(
+        DemoTestSubmittedEvent(
+          attempted: attempted,
+          total: total,
+          attemptBand: demoTestAttemptBand(
+            attempted: attempted,
+            total: total,
+          ),
+        ),
+      );
       await logActivationMilestoneForServices(
         _analytics,
         _prefsService,
         id: ActivationMilestones.getStartedDiagnosticCompleted,
+      );
+    } else {
+      await logActivationMilestoneForServices(
+        _analytics,
+        _prefsService,
+        id: ActivationMilestones.firstNonDemoTestDone,
       );
     }
   }

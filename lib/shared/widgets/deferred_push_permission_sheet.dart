@@ -9,6 +9,7 @@ import '../../core/analytics/screen_flow_analytics.dart';
 import '../../core/layout/system_insets.dart';
 import '../../core/notifications/notification_prompt_policy.dart';
 import '../../core/providers/analytics_provider.dart';
+import '../../core/providers/kill_switch_provider.dart';
 import '../../core/providers/prefs_provider.dart';
 import '../../core/debug/upsc_wars_trace.dart';
 import '../../core/theme/app_colors.dart';
@@ -23,6 +24,7 @@ Future<bool?> showDeferredPushPermissionSheet(
   required String source,
   NotificationPromptSurface surface = NotificationPromptSurface.generic,
   NotificationPromptKind kind = NotificationPromptKind.explicit,
+  bool skippedDemoReview = false,
 }) async {
   try {
     upscWarsTrace(
@@ -41,6 +43,7 @@ Future<bool?> showDeferredPushPermissionSheet(
           source: source,
           surface: surface,
           kind: kind,
+          skippedDemoReview: skippedDemoReview,
         );
       },
     );
@@ -56,12 +59,14 @@ class _DeferredPushPermissionPanel extends HookConsumerWidget {
     required this.source,
     required this.surface,
     required this.kind,
+    this.skippedDemoReview = false,
   });
 
   final BuildContext sheetContext;
   final String source;
   final NotificationPromptSurface surface;
   final NotificationPromptKind kind;
+  final bool skippedDemoReview;
 
   Future<void> _recordOutcome(
     WidgetRef ref, {
@@ -78,7 +83,9 @@ class _DeferredPushPermissionPanel extends HookConsumerWidget {
     }
     ref.invalidate(prefsServiceProvider);
     unawaited(
-      ref.read(analyticsServiceProvider).track(
+      ref
+          .read(analyticsServiceProvider)
+          .track(
             DeferredPushEducationModalOutcomeEvent(
               source: source,
               modalIndex: prefs.deferredPushModalShownCountV2.clamp(1, 2),
@@ -92,37 +99,51 @@ class _DeferredPushPermissionPanel extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final copy = NotificationPromptCopy.forSurface(surface);
+    final flags = surface == NotificationPromptSurface.postFirstTest
+        ? NotificationPromptFlags(
+            dailyCa:
+                ref.watch(dailyCaRemoteEnabledProvider).asData?.value ?? false,
+            caShots:
+                ref.watch(caShotsRemoteEnabledProvider).asData?.value ?? false,
+            dailyWar:
+                ref.watch(dailyWarRemoteEnabledProvider).asData?.value ?? false,
+            community:
+                ref.watch(communityTabRemoteEnabledProvider).asData?.value ??
+                false,
+          )
+        : const NotificationPromptFlags();
+    final copy = NotificationPromptCopy.forSurface(
+      surface,
+      flags: flags,
+      skippedDemoReview: skippedDemoReview,
+    );
     final started = useRef(DateTime.now());
     final recorded = useRef(false);
     final analytics = ref.read(analyticsServiceProvider);
 
-    useEffect(
-      () {
+    useEffect(() {
+      unawaited(
+        analytics.track(
+          ScreenViewedEvent(screenName: ScreenFlow.deferredPushPrePrompt),
+        ),
+      );
+      unawaited(
+        analytics.track(DeferredPushEducationModalShownEvent(source: source)),
+      );
+      return () {
+        final d = DateTime.now().difference(started.value).inMilliseconds;
+        if (d < 0) return;
         unawaited(
           analytics.track(
-            ScreenViewedEvent(screenName: ScreenFlow.deferredPushPrePrompt),
+            ScreenDwellEndedEvent(
+              screenName: ScreenFlow.deferredPushPrePrompt,
+              durationMs: d,
+              endKind: 'modal_dismissed',
+            ),
           ),
         );
-        unawaited(
-          analytics.track(DeferredPushEducationModalShownEvent(source: source)),
-        );
-        return () {
-          final d = DateTime.now().difference(started.value).inMilliseconds;
-          if (d < 0) return;
-          unawaited(
-            analytics.track(
-              ScreenDwellEndedEvent(
-                screenName: ScreenFlow.deferredPushPrePrompt,
-                durationMs: d,
-                endKind: 'modal_dismissed',
-              ),
-            ),
-          );
-        };
-      },
-      const [],
-    );
+      };
+    }, const []);
 
     Future<void> finish({required bool tappedEnable}) async {
       if (recorded.value) return;
@@ -154,144 +175,199 @@ class _DeferredPushPermissionPanel extends HookConsumerWidget {
           alignment: Alignment.bottomCenter,
           child: Material(
             color: sheetFill,
-            borderRadius: const BorderRadius.vertical(
-              top: Radius.circular(28),
-            ),
+            borderRadius: const BorderRadius.vertical(top: Radius.circular(28)),
             clipBehavior: Clip.antiAlias,
             child: PopScope(
               onPopInvokedWithResult: (didPop, result) {
                 if (!didPop) return;
                 unawaited(finish(tappedEnable: result == true));
               },
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(
-                  AppSpacing.xl,
-                  AppSpacing.sm,
-                  AppSpacing.xl,
-                  AppSpacing.lg,
+              child: ConstrainedBox(
+                constraints: BoxConstraints(
+                  maxHeight: MediaQuery.sizeOf(context).height * 0.82,
                 ),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Center(
-                      child: Container(
-                        width: 36,
-                        height: 4,
-                        decoration: BoxDecoration(
-                          color: scheme.onSurfaceVariant.withValues(alpha: 0.28),
-                          borderRadius: BorderRadius.circular(AppRadius.pill),
-                        ),
-                      ),
+                child: SingleChildScrollView(
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(
+                      AppSpacing.xl,
+                      AppSpacing.sm,
+                      AppSpacing.xl,
+                      AppSpacing.lg,
                     ),
-                    const SizedBox(height: AppSpacing.xl),
-                    Container(
-                      width: 44,
-                      height: 44,
-                      decoration: BoxDecoration(
-                        color: iconWell,
-                        borderRadius: BorderRadius.circular(AppRadius.md),
-                      ),
-                      alignment: Alignment.center,
-                      child: Icon(
-                        Icons.notifications_rounded,
-                        size: 22,
-                        color: isDark
-                            ? AppColors.correctTextDark
-                            : AppColors.warning,
-                      ),
-                    ),
-                    const SizedBox(height: AppSpacing.lg),
-                    Text(
-                      copy.title,
-                      style: AppTextStyles.h1().copyWith(
-                        color: scheme.onSurface,
-                        fontWeight: FontWeight.w700,
-                        height: 1.25,
-                        letterSpacing: -0.3,
-                      ),
-                    ),
-                    const SizedBox(height: AppSpacing.sm),
-                    Text(
-                      copy.body,
-                      style: AppTextStyles.body().copyWith(
-                        color: scheme.onSurfaceVariant,
-                        height: 1.45,
-                      ),
-                    ),
-                    const SizedBox(height: AppSpacing.sm),
-                    Text(
-                      copy.alsoLine,
-                      style: AppTextStyles.bodySm().copyWith(
-                        color: scheme.onSurfaceVariant,
-                        height: 1.4,
-                      ),
-                    ),
-                    const SizedBox(height: AppSpacing.xxl),
-                    SizedBox(
-                      width: double.infinity,
-                      height: 52,
-                      child: FilledButton(
-                        onPressed: () {
-                          upscWarsTrace(
-                            'showDeferredPushPermissionSheet: tap_enable',
-                          );
-                          ScreenFlow.logAction(
-                            ref,
-                            screenName: ScreenFlow.deferredPushPrePrompt,
-                            actionId: 'turn_on_notifications',
-                          );
-                          unawaited(close(tappedEnable: true));
-                        },
-                        style: FilledButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(AppRadius.pill),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Center(
+                          child: Container(
+                            width: 36,
+                            height: 4,
+                            decoration: BoxDecoration(
+                              color: scheme.onSurfaceVariant.withValues(
+                                alpha: 0.28,
+                              ),
+                              borderRadius: BorderRadius.circular(
+                                AppRadius.pill,
+                              ),
+                            ),
                           ),
                         ),
-                        child: Text(
-                          copy.cta,
-                          style: AppTextStyles.label().copyWith(
-                            fontWeight: FontWeight.w700,
-                            color: AppColors.onPrimary,
+                        const SizedBox(height: AppSpacing.xl),
+                        Container(
+                          width: 44,
+                          height: 44,
+                          decoration: BoxDecoration(
+                            color: iconWell,
+                            borderRadius: BorderRadius.circular(AppRadius.md),
+                          ),
+                          alignment: Alignment.center,
+                          child: Icon(
+                            copy.bullets.isNotEmpty
+                                ? Icons.auto_awesome_rounded
+                                : Icons.notifications_rounded,
+                            size: 22,
+                            color: isDark
+                                ? AppColors.correctTextDark
+                                : AppColors.warning,
                           ),
                         ),
-                      ),
-                    ),
-                    const SizedBox(height: AppSpacing.sm),
-                    Center(
-                      child: TextButton(
-                        onPressed: () {
-                          upscWarsTrace(
-                            'showDeferredPushPermissionSheet: tap_not_now',
-                          );
-                          ScreenFlow.logAction(
-                            ref,
-                            screenName: ScreenFlow.deferredPushPrePrompt,
-                            actionId: 'not_now',
-                            actionKind: 'dismiss',
-                          );
-                          unawaited(close(tappedEnable: false));
-                        },
-                        child: Text(
-                          NotificationPromptCopy.notNow,
-                          style: AppTextStyles.label().copyWith(
+                        const SizedBox(height: AppSpacing.lg),
+                        Text(
+                          copy.title,
+                          style: AppTextStyles.h1().copyWith(
                             color: scheme.onSurface,
-                            fontWeight: FontWeight.w600,
+                            fontWeight: FontWeight.w700,
+                            height: 1.25,
+                            letterSpacing: -0.3,
                           ),
                         ),
-                      ),
-                    ),
-                    const SizedBox(height: AppSpacing.xs),
-                    Center(
-                      child: Text(
-                        NotificationPromptCopy.footer,
-                        textAlign: TextAlign.center,
-                        style: AppTextStyles.caption().copyWith(
-                          color: scheme.onSurfaceVariant.withValues(alpha: 0.8),
+                        const SizedBox(height: AppSpacing.sm),
+                        Text(
+                          copy.body,
+                          style: AppTextStyles.body().copyWith(
+                            color: scheme.onSurfaceVariant,
+                            height: 1.45,
+                          ),
                         ),
-                      ),
+                        if (copy.bullets.isNotEmpty) ...[
+                          const SizedBox(height: AppSpacing.md),
+                          for (final item in copy.bullets)
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                bottom: AppSpacing.sm,
+                              ),
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.only(top: 7),
+                                    child: Container(
+                                      width: 6,
+                                      height: 6,
+                                      decoration: const BoxDecoration(
+                                        color: AppColors.primary,
+                                        shape: BoxShape.circle,
+                                      ),
+                                    ),
+                                  ),
+                                  const SizedBox(width: AppSpacing.sm),
+                                  Expanded(
+                                    child: Text(
+                                      item,
+                                      style: AppTextStyles.bodySm().copyWith(
+                                        color: scheme.onSurface,
+                                        height: 1.35,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                        ],
+                        const SizedBox(height: AppSpacing.sm),
+                        Text(
+                          copy.alsoLine,
+                          style: AppTextStyles.bodySm().copyWith(
+                            color: scheme.onSurfaceVariant,
+                            height: 1.4,
+                          ),
+                        ),
+                        SizedBox(
+                          height: copy.bullets.isNotEmpty
+                              ? AppSpacing.xl
+                              : AppSpacing.xxl,
+                        ),
+                        SizedBox(
+                          width: double.infinity,
+                          height: 52,
+                          child: FilledButton(
+                            onPressed: () {
+                              upscWarsTrace(
+                                'showDeferredPushPermissionSheet: tap_enable',
+                              );
+                              ScreenFlow.logAction(
+                                ref,
+                                screenName: ScreenFlow.deferredPushPrePrompt,
+                                actionId: 'turn_on_notifications',
+                              );
+                              unawaited(close(tappedEnable: true));
+                            },
+                            style: FilledButton.styleFrom(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(
+                                  AppRadius.pill,
+                                ),
+                              ),
+                            ),
+                            child: Text(
+                              copy.cta,
+                              style: AppTextStyles.label().copyWith(
+                                fontWeight: FontWeight.w700,
+                                color: AppColors.onPrimary,
+                              ),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(height: AppSpacing.sm),
+                        Center(
+                          child: TextButton(
+                            onPressed: () {
+                              upscWarsTrace(
+                                'showDeferredPushPermissionSheet: tap_not_now',
+                              );
+                              ScreenFlow.logAction(
+                                ref,
+                                screenName: ScreenFlow.deferredPushPrePrompt,
+                                actionId: 'not_now',
+                                actionKind: 'dismiss',
+                              );
+                              unawaited(close(tappedEnable: false));
+                            },
+                            child: Text(
+                              NotificationPromptCopy.notNow,
+                              style: AppTextStyles.label().copyWith(
+                                color: scheme.onSurface,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(height: AppSpacing.xs),
+                        Center(
+                          child: Text(
+                            NotificationPromptCopy.footer,
+                            textAlign: TextAlign.center,
+                            style: AppTextStyles.caption().copyWith(
+                              color: scheme.onSurfaceVariant.withValues(
+                                alpha: 0.8,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
-                  ],
+                  ),
                 ),
               ),
             ),

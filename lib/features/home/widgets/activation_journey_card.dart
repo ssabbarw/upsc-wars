@@ -96,7 +96,9 @@ class ActivationJourneyCard extends HookConsumerWidget {
               ),
               const SizedBox(height: AppSpacing.sm),
               Text(
-                'Take the 5-minute demo test',
+                state.demoInProgress
+                    ? 'Resume demo test'
+                    : 'Take the 5-minute demo test',
                 style: AppTextStyles.h1().copyWith(
                   color: Colors.white,
                   fontWeight: FontWeight.w800,
@@ -106,7 +108,11 @@ class ActivationJourneyCard extends HookConsumerWidget {
               ),
               const SizedBox(height: AppSpacing.sm),
               Text(
-                'See how a trap question fools confident aspirants \u2014 and how Danger Zone catches it.',
+                state.demoInProgress
+                    ? (state.demoInProgressTotal > 0
+                          ? 'You left at question ${state.demoInProgressDone} of ${state.demoInProgressTotal}. Pick up where you stopped.'
+                          : 'Pick up where you left off.')
+                    : 'See how a trap question fools confident aspirants \u2014 and how Danger Zone catches it.',
                 style: AppTextStyles.bodySm().copyWith(
                   color: Colors.white.withValues(alpha: 0.72),
                   height: 1.5,
@@ -130,7 +136,9 @@ class ActivationJourneyCard extends HookConsumerWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'Start the test',
+                        state.demoInProgress
+                            ? 'Resume demo test'
+                            : 'Start the test',
                         style: AppTextStyles.label().copyWith(
                           color: Colors.white,
                           fontWeight: FontWeight.w700,
