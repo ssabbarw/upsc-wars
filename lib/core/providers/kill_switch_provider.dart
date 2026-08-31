@@ -5,6 +5,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 import '../admin_dashboard/admin_dashboard_collection_config.dart';
 import '../config/feature_flags.dart';
 import '../constants/app_constants.dart';
+import 'package_info_provider.dart';
 import 'super_user_provider.dart';
 
 part 'kill_switch_provider.g.dart';
@@ -74,7 +75,7 @@ class KillSwitchSnapshot {
   /// Parsed Remote Config minimum, if any.
   final ReleaseVersion? requiredMinimum;
 
-  /// Parsed [AppConstants.releaseVersionLabel].
+  /// Parsed pubspec `version` (from [packageInfoProvider]).
   final ReleaseVersion? appVersion;
 
   static const inactive = KillSwitchSnapshot(isActive: false);
@@ -85,7 +86,8 @@ Future<KillSwitchSnapshot> killSwitch(Ref ref) async {
   if (kIsWeb) {
     return KillSwitchSnapshot.inactive;
   }
-  final app = ReleaseVersion.appCurrent;
+  final pkg = await ref.watch(packageInfoProvider.future);
+  final app = releaseVersionFromPackageInfo(pkg);
   if (app == null) {
     return KillSwitchSnapshot.inactive;
   }

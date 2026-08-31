@@ -1,8 +1,9 @@
-/// App-wide URLs, support contact, and release version.
+/// App-wide URLs, support contact, and product name.
 ///
-/// Bump [releaseVersionLabel] when you ship a new store build. Remote Config
-/// `kill_switch_version` uses the same format (e.g. `2.1` or `v2.1`); clients
-/// older than that minimum are prompted to update.
+/// The in-app version label and kill-switch comparison use pubspec `version`
+/// (via `package_info_plus`). Remote Config `kill_switch_version` uses the same
+/// format (e.g. `2.1` or `v2.1`); clients older than that minimum are prompted
+/// to update.
 abstract final class AppConstants {
   AppConstants._();
 
@@ -48,18 +49,6 @@ abstract final class AppConstants {
       'body': 'Hi,\n\n',
     },
   );
-
-  // ── Release (bump when publishing) ───────────────────────────────────────
-  /// Shown on Profile and compared to Remote Config `kill_switch_version`.
-  ///
-  /// Kill switch rule (see `kill_switch_provider.dart`):
-  /// - If `appVersion` < Remote Config `kill_switch_version` ⇒ update screen blocks the app.
-  ///
-  /// What value to set to block a version:
-  /// - To block **this** build, set `kill_switch_version` to a **higher** version than this
-  ///   label. Example: if this is `v2.4`, set `kill_switch_version` to `2.5` (or `v2.5`).
-  /// - To block **all 2.4.x** builds, set `kill_switch_version` to `2.5`.
-  static const String releaseVersionLabel = 'v3.1';
 }
 
 /// Comparable version from `v2.1`, `2.1`, or `2.1.0`.
@@ -83,9 +72,6 @@ final class ReleaseVersion implements Comparable<ReleaseVersion> {
     final patch = parts.length > 2 ? (int.tryParse(parts[2]) ?? 0) : 0;
     return ReleaseVersion(major, minor, patch);
   }
-
-  static ReleaseVersion? get appCurrent =>
-      ReleaseVersion.parse(AppConstants.releaseVersionLabel);
 
   @override
   int compareTo(ReleaseVersion other) {

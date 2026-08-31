@@ -4,6 +4,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../constants/app_constants.dart';
 import 'kill_switch_provider.dart';
+import 'package_info_provider.dart';
 import 'prefs_provider.dart';
 
 /// Remote Config: optional minimum for a dismissible “please update” banner.
@@ -61,11 +62,12 @@ final softUpdateProvider = FutureProvider<SoftUpdateSnapshot>((ref) async {
   if (kIsWeb) return SoftUpdateSnapshot.hidden;
   final kill = await ref.watch(killSwitchProvider.future);
   final prefs = await ref.watch(prefsServiceProvider.future);
+  final pkg = await ref.watch(packageInfoProvider.future);
   try {
     final rc = FirebaseRemoteConfig.instance;
     return resolveSoftUpdate(
       killSwitchActive: kill.isActive,
-      appVersion: ReleaseVersion.appCurrent,
+      appVersion: releaseVersionFromPackageInfo(pkg),
       rawRequired: rc.getString(softUpdateVersionRemoteConfigKey),
       rawMessage: rc.getString(softUpdateMessageRemoteConfigKey),
       dismissedVersion: prefs.softUpdateDismissedVersion,

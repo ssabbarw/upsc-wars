@@ -9,8 +9,8 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/auth/auth_session.dart';
-import '../../../core/constants/app_constants.dart';
 import '../../../core/presentation/user_display_name.dart';
+import '../../../core/providers/package_info_provider.dart';
 import '../../community/services/community_bucket_presence_service.dart';
 import '../providers/auth_providers.dart';
 import '../services/profile_photo_service.dart';
@@ -18,24 +18,29 @@ import '../../../shared/widgets/app_toast.dart';
 import '../../../shared/widgets/auth_provider_sign_in_button.dart';
 import '../../../shared/widgets/tappable_circular_avatar.dart';
 
-class _ProfileFooter extends StatelessWidget {
+class _ProfileFooter extends ConsumerWidget {
   const _ProfileFooter();
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
     final style = Theme.of(context).textTheme.labelSmall?.copyWith(
       color: scheme.onSurfaceVariant,
       height: 1.45,
     );
+    final versionLabel = ref
+        .watch(packageInfoProvider)
+        .maybeWhen(data: appVersionLabel, orElse: () => '');
     return Column(
       children: [
-        Text(
-          'Current app version: ${AppConstants.releaseVersionLabel}',
-          textAlign: TextAlign.center,
-          style: style,
-        ),
-        const SizedBox(height: 6),
+        if (versionLabel.isNotEmpty) ...[
+          Text(
+            'Current app version: $versionLabel',
+            textAlign: TextAlign.center,
+            style: style,
+          ),
+          const SizedBox(height: 6),
+        ],
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,

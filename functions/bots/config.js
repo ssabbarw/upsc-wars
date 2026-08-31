@@ -175,14 +175,20 @@ async function readBotConfig() {
       1,
       Math.min(14, Math.floor(parseNumber(rcValue(params, "bots_open_challenge_every_n_days"), DEFAULTS.openChallengeEveryNDays))),
     ),
+    dailyWarEnabled: parseBool(
+      rcValue(params, "daily_war_enabled"),
+      true,
+    ),
     dailyWarFraction: Math.max(
       0,
       Math.min(1, parseNumber(rcValue(params, "bots_daily_war_fraction"), DEFAULTS.dailyWarFraction)),
     ),
+    dailyCaEnabled: parseBool(rcValue(params, "daily_ca_enabled"), true),
     dailyCaFraction: Math.max(
       0,
       Math.min(1, parseNumber(rcValue(params, "bots_daily_ca_fraction"), DEFAULTS.dailyCaFraction)),
     ),
+    caShotsEnabled: parseBool(rcValue(params, "ca_shots_enabled"), true),
     caShotFraction: Math.max(
       0,
       Math.min(1, parseNumber(rcValue(params, "bots_ca_shot_fraction"), DEFAULTS.caShotFraction)),

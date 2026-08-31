@@ -2,9 +2,11 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'package:upsc_wars/core/constants/app_constants.dart';
+import 'package:upsc_wars/core/providers/package_info_provider.dart';
 import 'package:upsc_wars/core/theme/app_colors.dart';
 import 'package:upsc_wars/core/theme/app_radius.dart';
 import 'package:upsc_wars/core/theme/app_spacing.dart';
@@ -33,6 +35,23 @@ class WebShellLandingPage extends StatefulWidget {
 
 class _WebShellLandingPageState extends State<WebShellLandingPage> {
   String _lang = 'en'; // en | hi
+  String _versionLabel = '';
+
+  @override
+  void initState() {
+    super.initState();
+    unawaited(_loadVersionLabel());
+  }
+
+  Future<void> _loadVersionLabel() async {
+    try {
+      final info = await PackageInfo.fromPlatform();
+      if (!mounted) return;
+      setState(() => _versionLabel = appVersionLabel(info));
+    } on Object {
+      // Leave empty; footer still shows the product name.
+    }
+  }
 
   Future<void> _openUrl(String url) async {
     final uri = Uri.parse(url);
@@ -176,7 +195,9 @@ class _WebShellLandingPageState extends State<WebShellLandingPage> {
                     ),
                     const SizedBox(height: 36),
                     Text(
-                      '${AppConstants.appDisplayName} · ${AppConstants.releaseVersionLabel}',
+                      _versionLabel.isEmpty
+                          ? AppConstants.appDisplayName
+                          : '${AppConstants.appDisplayName} · $_versionLabel',
                       textAlign: TextAlign.center,
                       style: AppTextStyles.caption().copyWith(
                         color: scheme.onSurfaceVariant.withValues(alpha: 0.85),

@@ -64,13 +64,21 @@ async function processDueJobs(cfg) {
       } else if (job.type === "open_challenge") {
         result = await processOpenChallenge(job);
       } else if (job.type === "daily_war_lobby") {
-        result = await processDailyWarLobby(job);
+        result = cfg.dailyWarEnabled
+          ? await processDailyWarLobby(job)
+          : { skipped: "rc_disabled" };
       } else if (job.type === "daily_war_submit") {
-        result = await processDailyWarSubmit(job);
+        result = cfg.dailyWarEnabled
+          ? await processDailyWarSubmit(job)
+          : { skipped: "rc_disabled" };
       } else if (job.type === "daily_ca_submit") {
-        result = await processDailyCaSubmit(job);
+        result = cfg.dailyCaEnabled
+          ? await processDailyCaSubmit(job)
+          : { skipped: "rc_disabled" };
       } else if (job.type === "ca_shot_attempt") {
-        result = await processCaShotAttempt(job);
+        result = cfg.caShotsEnabled
+          ? await processCaShotAttempt(job)
+          : { skipped: "rc_disabled" };
       } else {
         result = { skipped: "unknown_type" };
       }
@@ -162,17 +170,23 @@ async function runBotTick() {
     console.error("maybeQueueOutgoingInvites", e);
   }
   try {
-    planned.dailyWar = await maybeQueueDailyWar(cfg, roster, dailyRef);
+    planned.dailyWar = cfg.dailyWarEnabled
+      ? await maybeQueueDailyWar(cfg, roster, dailyRef)
+      : { skipped: "rc_disabled" };
   } catch (e) {
     console.error("maybeQueueDailyWar", e);
   }
   try {
-    planned.dailyCa = await maybeQueueDailyCa(cfg, roster);
+    planned.dailyCa = cfg.dailyCaEnabled
+      ? await maybeQueueDailyCa(cfg, roster)
+      : { skipped: "rc_disabled" };
   } catch (e) {
     console.error("maybeQueueDailyCa", e);
   }
   try {
-    planned.caShots = await maybeQueueCaShots(cfg, roster);
+    planned.caShots = cfg.caShotsEnabled
+      ? await maybeQueueCaShots(cfg, roster)
+      : { skipped: "rc_disabled" };
   } catch (e) {
     console.error("maybeQueueCaShots", e);
   }
