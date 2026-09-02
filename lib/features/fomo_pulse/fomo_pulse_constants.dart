@@ -10,8 +10,9 @@ abstract final class FomoPulseConstants {
 
   static const historyPageSize = 20;
 
-  /// History list refetch interval. Fresh local cache skips Firestore.
-  static const historyCacheTtl = Duration(hours: 6);
+  /// Skip a list refetch when the user reopens within this window (e.g. back
+  /// from detail). Detail screens always fetch the latest pulse doc.
+  static const historyRefreshDebounce = Duration(seconds: 45);
 
   static const cachePulsesKey = 'fomo_pulse_cache_pulses_v1';
   static const cacheAttemptsKey = 'fomo_pulse_cache_attempts_v1';

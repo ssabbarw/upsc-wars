@@ -133,9 +133,8 @@ class FomoPulseHistoryScreen extends HookConsumerWidget {
                     onRefresh: () async {
                       hiddenIds.value = const {};
                       await ref
-                          .read(fomoPulseRepositoryProvider)
-                          .loadHistory(forceRefresh: true);
-                      ref.invalidate(fomoPulseHistoryProvider);
+                          .read(fomoPulseHistoryProvider.notifier)
+                          .refresh(force: true);
                     },
                     child: ListView.builder(
                       physics: const AlwaysScrollableScrollPhysics(),

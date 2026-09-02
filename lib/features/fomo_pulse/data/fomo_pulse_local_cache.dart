@@ -29,13 +29,13 @@ class FomoPulseLocalCache {
     );
   }
 
-  Future<bool> isListFresh() async {
+  Future<bool> isRecentlySynced() async {
     final prefs = await _ensurePrefs();
     final syncedAt =
         prefs.getInt(FomoPulseConstants.cacheListSyncedAtMsKey) ?? 0;
     if (syncedAt <= 0) return false;
     final age = DateTime.now().millisecondsSinceEpoch - syncedAt;
-    return age < FomoPulseConstants.historyCacheTtl.inMilliseconds;
+    return age < FomoPulseConstants.historyRefreshDebounce.inMilliseconds;
   }
 
   Future<void> writeList({

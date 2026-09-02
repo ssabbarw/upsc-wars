@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../data/fomo_pulse_cloud_service.dart';
@@ -17,16 +19,66 @@ final fomoPulsePushServiceProvider = Provider<FomoPulsePushService>(
   ),
 );
 
-final fomoPulseHistoryProvider =
-    FutureProvider.autoDispose<FomoPulseHistoryData>((ref) async {
-      final repo = ref.watch(fomoPulseRepositoryProvider);
-      return repo.loadHistory();
-    });
+typedef FomoPulseDetailData =
+    ({FomoPulse pulse, FomoPulseAttemptState? attempt});
 
-final fomoPulseDetailProvider = FutureProvider.autoDispose
-    .family<({FomoPulse pulse, FomoPulseAttemptState? attempt}), String>(
-  (ref, pulseId) async {
-    final repo = ref.watch(fomoPulseRepositoryProvider);
-    return repo.loadPulse(pulseId);
-  },
-);
+final fomoPulseHistoryProvider =
+    AsyncNotifierProvider.autoDispose<
+      FomoPulseHistoryNotifier,
+      FomoPulseHistoryData
+    >(FomoPulseHistoryNotifier.new);
+
+final fomoPulseDetailProvider = AsyncNotifierProvider.autoDispose
+    .family<FomoPulseDetailNotifier, FomoPulseDetailData, String>(
+      FomoPulseDetailNotifier.new,
+    );
+
+class FomoPulseHistoryNotifier extends AsyncNotifier<FomoPulseHistoryData> {
+  @override
+  Future<FomoPulseHistoryData> build() async {
+    final repo = ref.read(fomoPulseRepositoryProvider);
+    return repo.loadHistory(
+      onStale: (cached) {
+        Future.microtask(() {
+          if (ref.mounted) state = AsyncData(cached);
+        });
+      },
+    );
+  }
+
+  Future<void> refresh({bool force = false}) async {
+    final repo = ref.read(fomoPulseRepositoryProvider);
+    final previous = state.value;
+    if (!force &&
+        previous != null &&
+        await repo.isHistoryRecentlySynced()) {
+      return;
+    }
+    try {
+      final fresh = await repo.refreshHistory(mergeAttemptsFrom: previous);
+      if (ref.mounted) state = AsyncData(fresh);
+    } catch (e, st) {
+      if (previous != null) return;
+      if (ref.mounted) state = AsyncError(e, st);
+    }
+  }
+}
+
+class FomoPulseDetailNotifier extends AsyncNotifier<FomoPulseDetailData> {
+  FomoPulseDetailNotifier(this.pulseId);
+
+  final String pulseId;
+
+  @override
+  Future<FomoPulseDetailData> build() async {
+    final repo = ref.read(fomoPulseRepositoryProvider);
+    return repo.loadPulse(
+      pulseId,
+      onStale: (cached) {
+        Future.microtask(() {
+          if (ref.mounted) state = AsyncData(cached);
+        });
+      },
+    );
+  }
+}

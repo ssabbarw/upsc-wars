@@ -264,44 +264,79 @@ class FomoPulseRepository {
   static const _pulses = 'fomo_pulses';
   static const _userState = 'fomo_pulse_user_state';
 
-  Future<FomoPulseHistoryData> loadHistory({bool forceRefresh = false}) async {
+  Future<FomoPulseHistoryData> readCachedHistory() => _cache.read();
+
+  Future<bool> isHistoryRecentlySynced() => _cache.isRecentlySynced();
+
+  Future<FomoPulseHistoryData> refreshHistory({
+    FomoPulseHistoryData? mergeAttemptsFrom,
+  }) async {
+    final cached = mergeAttemptsFrom ?? await _cache.read();
+    final pulses = await fetchRecentPulses();
+    final remoteAttempts = await fetchUserAttemptIndex();
+    final attempts = {...cached.attempts, ...remoteAttempts};
+    await _cache.writeList(pulses: pulses, attempts: attempts);
+    return (pulses: pulses, attempts: attempts);
+  }
+
+  /// Stale-while-revalidate list load. [onStale] fires when cached rows exist
+  /// so the UI can paint immediately before the network round trip.
+  Future<FomoPulseHistoryData> loadHistory({
+    bool forceRefresh = false,
+    void Function(FomoPulseHistoryData cached)? onStale,
+  }) async {
     final cached = await _cache.read();
-    final fresh = await _cache.isListFresh();
-    if (!forceRefresh && cached.pulses.isNotEmpty && fresh) {
-      return (pulses: cached.pulses, attempts: cached.attempts);
+    if (cached.pulses.isNotEmpty) {
+      onStale?.call(cached);
+    }
+    if (!forceRefresh &&
+        cached.pulses.isNotEmpty &&
+        await _cache.isRecentlySynced()) {
+      return cached;
     }
     try {
-      final pulses = await fetchRecentPulses();
-      final remoteAttempts = await fetchUserAttemptIndex();
-      final attempts = {...cached.attempts, ...remoteAttempts};
-      await _cache.writeList(pulses: pulses, attempts: attempts);
-      return (pulses: pulses, attempts: attempts);
+      return await refreshHistory(mergeAttemptsFrom: cached);
     } catch (_) {
-      if (cached.pulses.isNotEmpty) {
-        return (pulses: cached.pulses, attempts: cached.attempts);
-      }
+      if (cached.pulses.isNotEmpty) return cached;
       rethrow;
     }
   }
 
-  Future<({FomoPulse pulse, FomoPulseAttemptState? attempt})> loadPulse(
+  Future<({FomoPulse pulse, FomoPulseAttemptState? attempt})?> readCachedPulse(
     String pulseId,
   ) async {
     final cached = await _cache.read();
-    FomoPulse? cachedPulse;
     for (final p in cached.pulses) {
       if (p.pulseId == pulseId) {
-        cachedPulse = p;
-        break;
+        return (pulse: p, attempt: cached.attempts[pulseId]);
       }
     }
-    if (cachedPulse != null) {
-      return (pulse: cachedPulse, attempt: cached.attempts[pulseId]);
+    return null;
+  }
+
+  /// Always fetches the pulse doc so community counts stay current.
+  Future<({FomoPulse pulse, FomoPulseAttemptState? attempt})> loadPulse(
+    String pulseId, {
+    void Function(({FomoPulse pulse, FomoPulseAttemptState? attempt}) cached)?
+    onStale,
+  }) async {
+    final cached = await readCachedPulse(pulseId);
+    if (cached != null) {
+      onStale?.call(cached);
     }
-    final pulse = await fetchPulse(pulseId);
-    if (pulse == null) throw StateError('Pulse not found');
-    await _cache.upsertPulse(pulse);
-    return (pulse: pulse, attempt: cached.attempts[pulseId]);
+    try {
+      final pulse = await fetchPulse(pulseId);
+      if (pulse == null) {
+        if (cached != null) return cached;
+        throw StateError('Pulse not found');
+      }
+      await _cache.upsertPulse(pulse);
+      final attempts = await _cache.read();
+      return (pulse: pulse, attempt: attempts.attempts[pulseId]);
+    } catch (_) {
+      if (cached != null) return cached;
+      rethrow;
+    }
   }
 
   Future<void> removePulseFromCache(String pulseId) {

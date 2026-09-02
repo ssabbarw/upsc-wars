@@ -97,7 +97,9 @@ class FomoPulseMcqPanel extends HookConsumerWidget {
         }
       } catch (_) {}
       ref.invalidate(fomoPulseDetailProvider(pulse.pulseId));
-      ref.invalidate(fomoPulseHistoryProvider);
+      unawaited(
+        ref.read(fomoPulseHistoryProvider.notifier).refresh(force: true),
+      );
     }
 
     void onPick(String option) {
