@@ -27,13 +27,15 @@ class DailyPracticeReminderService {
   static ({String title, String body}) copyForDayOffset({
     required int dayOffset,
     required int streak,
-    required int atRiskOffset,
+    required int? atRiskOffset,
   }) {
     const drill = (
       title: "Today's Daily Drill",
       body: '10 static MCQs. Keep the streak going.',
     );
-    if (streak >= 2 && dayOffset == atRiskOffset) {
+    if (streak >= 2 &&
+        atRiskOffset != null &&
+        dayOffset == atRiskOffset) {
       return (
         title: 'Your $streak-day streak ends tonight',
         body: '10 static MCQs is all it takes to keep it.',
@@ -55,18 +57,17 @@ class DailyPracticeReminderService {
   /// Pending reminders for the next [windowDays] days, soonest first.
   ///
   /// Slots already past [now] are dropped, as is today's once the drill is done.
+  /// [atRiskOffset] comes from [DailyStreakService.daysUntilStreakExpires] —
+  /// the home streak survives one idle day, so "ends tonight" is the second.
   @visibleForTesting
   static List<ScheduledDrillReminder> buildWindow({
     required DateTime now,
     required int hour,
     required bool practiceCompletedToday,
     required int streak,
-    required bool streakClosedToday,
+    required int? atRiskOffset,
   }) {
     final ids = AppLocalNotificationsService.dailyPracticeReminderWindowIds;
-    // A streak survives one idle day, so it expires tonight when today is still
-    // open and tomorrow night when today already counted.
-    final atRiskOffset = streakClosedToday ? 1 : 0;
 
     final reminders = <ScheduledDrillReminder>[];
     for (var offset = 0; offset < windowDays; offset++) {
@@ -99,7 +100,7 @@ class DailyPracticeReminderService {
     required bool eligible,
     required bool practiceCompletedToday,
     required int streak,
-    required bool streakClosedToday,
+    required int? atRiskOffset,
   }) async {
     if (kIsWeb) return;
 
@@ -116,7 +117,7 @@ class DailyPracticeReminderService {
         hour: prefs.dailyPracticeReminderHour,
         practiceCompletedToday: practiceCompletedToday,
         streak: streak,
-        streakClosedToday: streakClosedToday,
+        atRiskOffset: atRiskOffset,
       ),
     );
   }

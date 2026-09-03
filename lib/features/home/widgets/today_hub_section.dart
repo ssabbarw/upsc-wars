@@ -6,11 +6,14 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/analytics/activation_milestones.dart';
+import '../../../core/presentation/session_subject_label.dart';
+import '../../../core/providers/kill_switch_provider.dart';
 import '../../../core/providers/prefs_provider.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../community/providers/open_challenge_providers.dart';
 import '../../daily_war/domain/daily_war_phase.dart';
 import '../../daily_war/domain/daily_war_phase_resolver.dart';
 import '../../daily_war/domain/daily_war_schedule.dart';
@@ -32,7 +35,8 @@ import 'daily_revision_choice_sheet.dart';
 import 'daily_rituals_intro_sheet.dart';
 
 /// Daily ritual on home: CA test hero until first submit, else Daily Drill,
-/// plus a "Keep going" list (CA Shots, Current Affairs, Danger Zone).
+/// plus a "Keep going" list (CA Shots, Current Affairs, Open Challenge,
+/// Danger Zone). Static War is mounted separately on Home.
 class TodayHubSection extends HookConsumerWidget {
   const TodayHubSection({
     super.key,
@@ -205,6 +209,37 @@ class TodayHubSection extends HookConsumerWidget {
             onTap: openDailyCaHub,
           ),
         );
+      }
+
+      final communityOn =
+          ref.watch(communityTabRemoteEnabledProvider).asData?.value ?? false;
+      if (communityOn) {
+        final challenges =
+            ref.watch(openChallengesListProvider).asData?.value ?? const [];
+        final challenge = challenges.where((c) => c.myScore == null).firstOrNull;
+        if (challenge != null) {
+          final subject = openChallengeSubjectTitle(challenge.subject);
+          final top = challenge.topScore;
+          final tries = challenge.attemptCount;
+          rows.add(
+            _TodayListRowData(
+              icon: Icons.emoji_events_outlined,
+              accent: AppColors.primary,
+              title: 'Open challenge · $subject',
+              subtitle:
+                  'Beat $top/10 · $tries ${tries == 1 ? 'try' : 'tries'} · 10 Q',
+              done: false,
+              locked: false,
+              showLive: true,
+              onTap: () {
+                unawaited(
+                  maybeLogPostDemoExplore(ref, surface: 'open_challenge'),
+                );
+                context.push('/community/open-challenges/${challenge.id}');
+              },
+            ),
+          );
+        }
       }
 
       final scored = activationJourney?.scoredAttempts;

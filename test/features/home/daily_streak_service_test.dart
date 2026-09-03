@@ -44,10 +44,22 @@ void main() {
       expect(prefs.longestStreak, 2);
     });
 
-    test('a skipped day restarts at one but keeps the record', () {
+    test('one skipped day is grace and still extends the streak', () {
       prefs.currentStreak = 9;
       prefs.longestStreak = 9;
-      prefs.lastActiveDate = _key(DateTime(2026, 8, 10));
+      prefs.lastActiveDate = _key(DateTime(2026, 8, 15));
+      final next = DailyStreakService.recordRingClosed(
+        prefs: prefs,
+        now: DateTime(2026, 8, 17),
+      );
+      expect(next, 10);
+      expect(prefs.longestStreak, 10);
+    });
+
+    test('two skipped days restart at one but keep the record', () {
+      prefs.currentStreak = 9;
+      prefs.longestStreak = 9;
+      prefs.lastActiveDate = _key(DateTime(2026, 8, 14));
       final next = DailyStreakService.recordRingClosed(
         prefs: prefs,
         now: DateTime(2026, 8, 17),
@@ -57,7 +69,6 @@ void main() {
     });
 
     test('streaks earned under the old app-open rule carry over', () {
-      // Existing install: 12-day streak last touched yesterday.
       prefs.currentStreak = 12;
       prefs.lastActiveDate = _key(DateTime(2026, 8, 16));
       final next = DailyStreakService.recordRingClosed(
@@ -65,6 +76,28 @@ void main() {
         now: DateTime(2026, 8, 17),
       );
       expect(next, 13);
+    });
+
+    test('queues a one-time celebration at milestones', () {
+      prefs.currentStreak = 2;
+      prefs.lastActiveDate = _key(DateTime(2026, 8, 16));
+      DailyStreakService.recordRingClosed(
+        prefs: prefs,
+        now: DateTime(2026, 8, 17),
+      );
+      expect(prefs.pendingStreakMilestoneCelebration, 3);
+      expect(prefs.celebratedStreakMilestones, contains(3));
+
+      DailyStreakService.recordRingClosed(
+        prefs: prefs,
+        now: DateTime(2026, 8, 18),
+      );
+      // Already celebrated 3; no re-queue. Day 4 is not a milestone.
+      expect(
+        DailyStreakService.consumePendingMilestoneCelebration(prefs),
+        3,
+      );
+      expect(prefs.pendingStreakMilestoneCelebration, isNull);
     });
   });
 
@@ -88,7 +121,19 @@ void main() {
       );
     });
 
-    test('a lapsed streak shows zero rather than a stale number', () {
+    test('one grace day still shows the streak', () {
+      prefs.currentStreak = 5;
+      prefs.lastActiveDate = _key(DateTime(2026, 8, 15));
+      expect(
+        DailyStreakService.visibleStreak(
+          prefs: prefs,
+          now: DateTime(2026, 8, 17),
+        ),
+        5,
+      );
+    });
+
+    test('two missed days show zero rather than a stale number', () {
       prefs.currentStreak = 5;
       prefs.lastActiveDate = _key(DateTime(2026, 8, 10));
       expect(
@@ -102,6 +147,56 @@ void main() {
 
     test('no history means no streak', () {
       expect(DailyStreakService.visibleStreak(prefs: prefs), 0);
+    });
+  });
+
+  group('DailyStreakService.daysUntilStreakExpires', () {
+    test('closed today — expires after the grace night (day +2)', () {
+      prefs.currentStreak = 5;
+      prefs.lastActiveDate = _key(DateTime(2026, 8, 17));
+      expect(
+        DailyStreakService.daysUntilStreakExpires(
+          prefs: prefs,
+          now: DateTime(2026, 8, 17, 20),
+        ),
+        2,
+      );
+    });
+
+    test('last played yesterday — expires tomorrow night', () {
+      prefs.currentStreak = 5;
+      prefs.lastActiveDate = _key(DateTime(2026, 8, 16));
+      expect(
+        DailyStreakService.daysUntilStreakExpires(
+          prefs: prefs,
+          now: DateTime(2026, 8, 17, 10),
+        ),
+        1,
+      );
+    });
+
+    test('already in grace — expires tonight', () {
+      prefs.currentStreak = 5;
+      prefs.lastActiveDate = _key(DateTime(2026, 8, 15));
+      expect(
+        DailyStreakService.daysUntilStreakExpires(
+          prefs: prefs,
+          now: DateTime(2026, 8, 17, 10),
+        ),
+        0,
+      );
+    });
+
+    test('short streaks are not at risk', () {
+      prefs.currentStreak = 1;
+      prefs.lastActiveDate = _key(DateTime(2026, 8, 15));
+      expect(
+        DailyStreakService.daysUntilStreakExpires(
+          prefs: prefs,
+          now: DateTime(2026, 8, 17),
+        ),
+        isNull,
+      );
     });
   });
 

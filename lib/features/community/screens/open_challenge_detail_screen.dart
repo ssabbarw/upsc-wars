@@ -10,6 +10,7 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../shared/auth/ensure_account_sign_in.dart';
 import '../../../shared/widgets/tappable_circular_avatar.dart';
 import '../../home/providers/auth_providers.dart';
 import '../domain/open_challenge_models.dart';
@@ -308,6 +309,12 @@ class _AcceptChallengeCalloutState
           : () async {
               setState(() => _busy = true);
               try {
+                final signedIn = await ensureAccountSignedIn(
+                  context: context,
+                  ref: ref,
+                  reason: 'Sign in to accept this challenge.',
+                );
+                if (!signedIn || !mounted) return;
                 await launchOpenChallengeExam(
                   ref,
                   context,

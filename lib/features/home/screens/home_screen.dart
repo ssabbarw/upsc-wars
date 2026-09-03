@@ -17,6 +17,7 @@ import '../../../core/domain/entities/subject_info.dart';
 import '../../../core/providers/catalog_providers.dart';
 import '../../../core/providers/app_bootstrap.dart';
 import '../../../core/providers/kill_switch_provider.dart';
+import '../../../core/providers/prefs_provider.dart';
 import '../../../core/providers/quick_practice_providers.dart';
 import '../../../core/responsive/app_breakpoints.dart';
 import '../../../core/services/battle_messaging_service.dart';
@@ -31,11 +32,14 @@ import '../providers/daily_drill_provider.dart';
 import '../widgets/today_hub_section.dart';
 import '../../daily_ca/providers/daily_ca_providers.dart';
 import '../../daily_war/providers/daily_war_providers.dart';
+import '../../daily_war/widgets/daily_war_home_card.dart';
 import '../providers/today_hub_provider.dart';
 import '../providers/today_hero_intent_provider.dart';
+import '../domain/daily_streak_service.dart';
 import '../domain/today_hero.dart';
 import '../../../shared/widgets/push_denied_banner.dart';
 import '../../../shared/theme/dark_mode_toggle.dart';
+import '../../../shared/widgets/app_toast.dart';
 import '../../../shared/widgets/app_update_kill_switch_overlay.dart';
 import '../../../shared/widgets/prelims_countdown_card.dart';
 import '../../../shared/widgets/quick_practice_mode_sheet.dart';
@@ -118,6 +122,23 @@ class HomeScreen extends HookConsumerWidget {
       }());
       return null;
     }, [onHomeRoute]);
+
+    useEffect(() {
+      if (!onHomeRoute) return null;
+      unawaited(() async {
+        final prefs = await ref.read(prefsServiceProvider.future);
+        final milestone =
+            DailyStreakService.consumePendingMilestoneCelebration(prefs);
+        if (milestone == null || !context.mounted) return;
+        AppToast.showText(
+          context,
+          milestone == 3
+              ? '3-day streak — the habit is sticking.'
+              : '$milestone-day streak. Keep showing up.',
+        );
+      }());
+      return null;
+    }, [onHomeRoute, home]);
 
     useEffect(() {
       home.whenData((h) {
@@ -445,6 +466,10 @@ class HomeScreen extends HookConsumerWidget {
                         ),
                         Consumer(
                           builder: (context, ref, _) {
+                            final streakCount = home.maybeWhen(
+                              data: (h) => h.streakCount,
+                              orElse: () => 0,
+                            );
                             final streakLabel = home.when(
                               data: (h) =>
                                   '${h.streakCount} day${h.streakCount == 1 ? '' : 's'}',
@@ -452,19 +477,26 @@ class HomeScreen extends HookConsumerWidget {
                               error: (_, __) =>
                                   cachedStreakText.value ?? '0 days',
                             );
+                            final hot = streakCount >= 3;
                             return Container(
                               padding: const EdgeInsets.symmetric(
                                 horizontal: AppSpacing.md,
                                 vertical: AppSpacing.sm,
                               ),
                               decoration: BoxDecoration(
-                                color: scheme.surfaceContainerLow,
+                                color: hot
+                                    ? AppColors.streak.withValues(
+                                        alpha: isDark ? 0.22 : 0.12,
+                                      )
+                                    : scheme.surfaceContainerLow,
                                 borderRadius: BorderRadius.circular(
                                   AppRadius.pill,
                                 ),
                                 border: Border.all(
-                                  color: borderColor,
-                                  width: 0.5,
+                                  color: hot
+                                      ? AppColors.streak.withValues(alpha: 0.45)
+                                      : borderColor,
+                                  width: hot ? 1 : 0.5,
                                 ),
                               ),
                               child: Row(
@@ -473,13 +505,16 @@ class HomeScreen extends HookConsumerWidget {
                                   Icon(
                                     Icons.local_fire_department,
                                     color: AppColors.streak,
-                                    size: 16,
+                                    size: hot ? 18 : 16,
                                   ),
                                   const SizedBox(width: AppSpacing.xs),
                                   Text(
                                     streakLabel,
                                     style: AppTextStyles.caption().copyWith(
                                       color: scheme.onSurface,
+                                      fontWeight: hot
+                                          ? FontWeight.w700
+                                          : FontWeight.w500,
                                     ),
                                   ),
                                 ],
@@ -505,6 +540,8 @@ class HomeScreen extends HookConsumerWidget {
                         );
                       },
                     ),
+                    const SizedBox(height: AppSpacing.md),
+                    const DailyWarHomeCard(),
                     const SizedBox(height: AppSpacing.md),
                     // Practice section: PYQ carousel above Subjects
                     Consumer(

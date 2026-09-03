@@ -43,7 +43,7 @@ class LocalDailyRemindersSync {
       ),
       practiceCompletedToday: practiceCompletedToday,
       streak: DailyStreakService.visibleStreak(prefs: prefs),
-      streakClosedToday: DailyStreakService.closedToday(prefs: prefs),
+      atRiskOffset: DailyStreakService.daysUntilStreakExpires(prefs: prefs),
     );
   }
 

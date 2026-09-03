@@ -7,14 +7,14 @@ List<ScheduledDrillReminder> build({
   int hour = 19,
   bool practiceCompletedToday = false,
   int streak = 0,
-  bool streakClosedToday = false,
+  int? atRiskOffset,
 }) {
   return DailyPracticeReminderService.buildWindow(
     now: now,
     hour: hour,
     practiceCompletedToday: practiceCompletedToday,
     streak: streak,
-    streakClosedToday: streakClosedToday,
+    atRiskOffset: atRiskOffset,
   );
 }
 
@@ -69,7 +69,7 @@ void main() {
     ({String title, String body}) copy({
       required int dayOffset,
       int streak = 0,
-      int atRiskOffset = 0,
+      int? atRiskOffset,
     }) {
       return DailyPracticeReminderService.copyForDayOffset(
         dayOffset: dayOffset,
@@ -83,27 +83,22 @@ void main() {
       expect(copy(dayOffset: 1).title, "Today's Daily Drill");
     });
 
-    test('warns about the streak only on the night it expires', () {
-      expect(
-        copy(dayOffset: 0, streak: 5, atRiskOffset: 0).title,
-        'Your 5-day streak ends tonight',
-      );
-      expect(copy(dayOffset: 1, streak: 5, atRiskOffset: 0).title,
-          "Today's Daily Drill");
-    });
-
-    test('shifts the warning a night later when today already counted', () {
-      expect(copy(dayOffset: 0, streak: 5, atRiskOffset: 1).title,
-          "Today's Daily Drill");
+    test('warns about the streak only on the grace-expiry night', () {
       expect(
         copy(dayOffset: 1, streak: 5, atRiskOffset: 1).title,
         'Your 5-day streak ends tonight',
       );
+      expect(
+        copy(dayOffset: 0, streak: 5, atRiskOffset: 1).title,
+        "Today's Daily Drill",
+      );
     });
 
     test('never claims a streak that is too short to lose', () {
-      expect(copy(dayOffset: 0, streak: 1, atRiskOffset: 0).title,
-          "Today's Daily Drill");
+      expect(
+        copy(dayOffset: 0, streak: 1, atRiskOffset: 0).title,
+        "Today's Daily Drill",
+      );
     });
 
     test('escalates to restart and then win-back copy', () {

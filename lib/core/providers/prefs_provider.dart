@@ -11,6 +11,14 @@ abstract final class PrefKeys {
   static const currentStreak = 'current_streak';
   static const longestStreak = 'longest_streak';
   static const lastActiveDate = 'last_active_date';
+
+  /// JSON list of streak lengths already celebrated (3 / 7 / 14 / 30).
+  static const celebratedStreakMilestonesV1 =
+      'celebrated_streak_milestones_v1';
+
+  /// Pending home toast for a newly reached streak milestone (cleared on show).
+  static const pendingStreakMilestoneCelebrationV1 =
+      'pending_streak_milestone_celebration_v1';
   static const dailyGoal = 'daily_goal';
   static const language = 'language';
   static const dbInitialized = 'db_initialized';
@@ -237,6 +245,41 @@ class PrefsService {
       _p.remove(PrefKeys.lastActiveDate);
     } else {
       _p.setString(PrefKeys.lastActiveDate, v);
+    }
+  }
+
+  Set<int> get celebratedStreakMilestones {
+    final raw = _p.getString(PrefKeys.celebratedStreakMilestonesV1);
+    if (raw == null || raw.isEmpty) return {};
+    try {
+      final list = (jsonDecode(raw) as List<dynamic>)
+          .map((e) => (e as num).toInt())
+          .toSet();
+      return list;
+    } catch (_) {
+      return {};
+    }
+  }
+
+  set celebratedStreakMilestones(Set<int> v) {
+    _p.setString(
+      PrefKeys.celebratedStreakMilestonesV1,
+      jsonEncode(v.toList()..sort()),
+    );
+  }
+
+  int? get pendingStreakMilestoneCelebration {
+    if (!_p.containsKey(PrefKeys.pendingStreakMilestoneCelebrationV1)) {
+      return null;
+    }
+    return _p.getInt(PrefKeys.pendingStreakMilestoneCelebrationV1);
+  }
+
+  set pendingStreakMilestoneCelebration(int? v) {
+    if (v == null) {
+      _p.remove(PrefKeys.pendingStreakMilestoneCelebrationV1);
+    } else {
+      _p.setInt(PrefKeys.pendingStreakMilestoneCelebrationV1, v);
     }
   }
 
