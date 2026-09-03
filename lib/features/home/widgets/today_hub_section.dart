@@ -568,14 +568,19 @@ class _TodayListRow extends StatelessWidget {
 
 // ── TODAY list helpers ────────────────────────────────────────────────────────
 
+/// Placeholders written when a challenge has no real creator profile. Naming
+/// one of these reads as a bug rather than a person.
+const _openChallengePlaceholderNames = {'warrior', 'upsc warrior'};
+
 /// First name of an open-challenge poster, or null when there is nothing worth
-/// naming. The repository falls back to a generic 'Warrior' for challenges with
-/// no creator profile, which reads as a bug rather than a person. Past ten
-/// characters the 'Open challenge by …' title outgrows the one line it gets,
-/// so a long name is dropped rather than shown clipped.
+/// naming. Past ten characters the 'Open challenge by …' title outgrows the one
+/// line it gets, so a long name is dropped rather than shown clipped.
 String? _challengerFirstName(String postedByName) {
   final trimmed = postedByName.trim();
-  if (trimmed.isEmpty || trimmed.toLowerCase() == 'warrior') return null;
+  if (trimmed.isEmpty) return null;
+  if (_openChallengePlaceholderNames.contains(trimmed.toLowerCase())) {
+    return null;
+  }
   final first = trimmed.split(RegExp(r'\s+')).first;
   return first.length > 10 ? null : first;
 }

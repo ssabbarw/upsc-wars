@@ -115,6 +115,14 @@ service cloud.firestore {
       allow delete: if false;
     }
 
+    /// Denormalised summary of live challenges so Home costs one read instead
+    /// of one per challenge. Rebuilt by `onOpenChallengeWritten`; the Admin SDK
+    /// bypasses rules, so clients get no write path at all.
+    match /open_challenges_index/{docId} {
+      allow read: if signedIn();
+      allow write: if false;
+    }
+
     /// Community presence for “Recents”: dense map under `buckets/{yyyy-m}/{day}/{0|3|…|21}`.
     match /buckets/{yearMonth}/{day}/{bucketId} {
       allow read: if signedIn();

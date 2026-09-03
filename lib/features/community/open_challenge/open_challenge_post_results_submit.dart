@@ -47,6 +47,16 @@ Future<void> performOpenChallengePostResultsPublish({
     if (!avail.allowed) {
       throw OpenChallengePublishCooldownException(avail.bodyCopy);
     }
+  } else {
+    // Finishing the ten questions counts as attempted even if they never sign
+    // in — otherwise a guest who backs out of the sheet is offered the same
+    // challenge on Home forever.
+    final cid = ctx.existingChallengeId?.trim();
+    if (cid != null && cid.isNotEmpty) {
+      final prefs = await ref.read(prefsServiceProvider.future);
+      prefs.markOpenChallengeAttempted(cid);
+      ref.invalidate(homeOpenChallengesProvider);
+    }
   }
 
   // Guests take the exam without an account; the leaderboard is keyed by email,
@@ -109,7 +119,7 @@ Future<void> performOpenChallengePostResultsPublish({
 
   final repo = ref.read(openChallengeRepositoryProvider);
   if (ctx.kind == OpenChallengeExamKind.create) {
-    await repo.createChallengeDocument(
+    final newId = await repo.createChallengeDocument(
       creatorEmailKey: email,
       questionUuids: ctx.questionUuids,
       subject: ctx.subjectDisplay,
@@ -118,6 +128,9 @@ Future<void> performOpenChallengePostResultsPublish({
       score: score,
       reviewSessionId: sessionId,
     );
+    // Creating counts as playing it, so Home must not offer it back.
+    (await ref.read(prefsServiceProvider.future))
+        .markOpenChallengeAttempted(newId);
     await recordOpenChallengePublished(ref);
     ref.read(openChallengeExamRegistryProvider).take(sessionId);
     ref.invalidate(openChallengesListProvider);

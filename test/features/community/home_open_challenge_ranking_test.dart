@@ -47,6 +47,17 @@ void main() {
       expect(ranked.map((c) => c.id), ['open']);
     });
 
+    test('challenges played on this device are dropped', () {
+      final ranked = rankHomeOpenChallenges(
+        [
+          _tile(id: 'played-as-guest', attemptCount: 20),
+          _tile(id: 'open', attemptCount: 2),
+        ],
+        attempted: {'played-as-guest'},
+      );
+      expect(ranked.map((c) => c.id), ['open']);
+    });
+
     test('nothing left to play yields an empty slot', () {
       final ranked = rankHomeOpenChallenges([
         _tile(id: 'a', attemptCount: 3, myScore: 5),

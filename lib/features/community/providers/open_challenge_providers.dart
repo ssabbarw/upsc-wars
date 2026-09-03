@@ -18,36 +18,36 @@ final openChallengesListProvider =
   return repo.fetchAllSummaries(currentUserEmail: user?.email);
 });
 
-/// Newest documents worth scanning for the Home slot.
-const homeOpenChallengeFetchLimit = 20;
-
 /// Challenges the user has not attempted, most contested first.
 ///
 /// Home features the head of this list and links the rest through to Community.
 /// Ranking by attempt count rather than recency stops a minutes-old challenge
 /// with only the creator on it from outranking one people are fighting over.
 ///
-/// Deliberately **not** autoDispose: Home must not re-read the collection on
-/// every mount. Community keeps its own always-fresh [openChallengesListProvider].
+/// Costs exactly one document read per app session: it reads the Cloud
+/// Function-maintained index, and is deliberately **not** autoDispose so
+/// returning to Home does not refetch. Community keeps its own always-fresh
+/// [openChallengesListProvider].
 final homeOpenChallengesProvider =
     FutureProvider<List<OpenChallengeListTileModel>>((ref) async {
-  final user = ref.watch(authStateChangesProvider).asData?.value;
+  final prefs = await ref.watch(prefsServiceProvider.future);
   final repo = ref.watch(openChallengeRepositoryProvider);
-  final items = await repo.fetchAllSummaries(
-    currentUserEmail: user?.email,
-    limit: homeOpenChallengeFetchLimit,
+  final items = await repo.fetchHomeIndex();
+  return rankHomeOpenChallenges(
+    items,
+    attempted: prefs.attemptedOpenChallengeIds,
   );
-  return rankHomeOpenChallenges(items);
 });
 
 /// Drops already-attempted challenges and orders the rest most-contested first,
 /// newest breaking ties. Pure so the ordering rule stays testable.
 List<OpenChallengeListTileModel> rankHomeOpenChallenges(
-  List<OpenChallengeListTileModel> items,
-) {
+  List<OpenChallengeListTileModel> items, {
+  Set<String> attempted = const {},
+}) {
   final untried = [
     for (final item in items)
-      if (item.myScore == null) item,
+      if (item.myScore == null && !attempted.contains(item.id)) item,
   ];
   untried.sort((a, b) {
     final byContest = b.attemptCount.compareTo(a.attemptCount);

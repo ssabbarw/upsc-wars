@@ -1,5 +1,6 @@
 const functions = require("firebase-functions");
 const { onDocumentWritten } = require("firebase-functions/v2/firestore");
+const { onSchedule } = require("firebase-functions/v2/scheduler");
 const admin = require("firebase-admin");
 const crypto = require("crypto");
 
@@ -893,6 +894,109 @@ function openChallengeReadAttempts(data) {
   return out;
 }
 
+const OPEN_CHALLENGE_INDEX_COL = "open_challenges_index";
+const OPEN_CHALLENGE_INDEX_DOC = "live";
+const OPEN_CHALLENGE_INDEX_LIMIT = 20;
+
+function openChallengeMillis(value) {
+  if (value && typeof value.toMillis === "function") return value.toMillis();
+  return null;
+}
+
+/**
+ * Flattens one challenge doc into the Home summary shape, or null when it has
+ * no usable attempts. Deliberately carries no participant emails: the index is
+ * world-readable, and Home filters already-played challenges from local prefs.
+ */
+function openChallengeIndexEntry(id, data) {
+  let creator = null;
+  let creatorAtMs = null;
+  let topScore = null;
+  let attemptCount = 0;
+
+  for (const key of Object.keys(data)) {
+    if (OPEN_CHALLENGE_RESERVED.has(key)) continue;
+    const v = data[key];
+    if (!v || typeof v !== "object") continue;
+    const score = Number(v.score);
+    if (!Number.isFinite(score)) continue;
+    attemptCount += 1;
+    if (topScore == null || score > topScore) topScore = score;
+    const atMs = openChallengeMillis(v.attempted_at);
+    if (creatorAtMs == null || (atMs != null && atMs < creatorAtMs)) {
+      creatorAtMs = atMs;
+      creator = v.profile && typeof v.profile === "object" ? v.profile : {};
+    }
+  }
+  if (attemptCount === 0) return null;
+
+  const createdMs = openChallengeMillis(data.created_at);
+  const expiresMs = openChallengeMillis(data.expires_at);
+  const name = creator && creator.name ? String(creator.name) : "";
+  const photo =
+    creator && (creator.photoURL || creator.photoUrl)
+      ? String(creator.photoURL || creator.photoUrl)
+      : "";
+
+  return {
+    id,
+    subject: String(data.subject || ""),
+    top_score: topScore,
+    attempt_count: attemptCount,
+    posted_by_name: name,
+    posted_by_photo_url: photo,
+    posted_at_ms: createdMs != null ? createdMs : creatorAtMs,
+    live_until_ms:
+      expiresMs != null
+        ? expiresMs
+        : createdMs != null
+          ? createdMs + 24 * 60 * 60 * 1000
+          : null,
+  };
+}
+
+/**
+ * Rebuilds `open_challenges_index/live`, the single document Home reads.
+ *
+ * Trades a handful of reads per attempt for one read per app open instead of
+ * one per challenge document. Expired entries are only pruned when some write
+ * happens; clients re-check `live_until_ms` at render, so a stale index is safe.
+ */
+async function rebuildOpenChallengeIndex() {
+  try {
+    const snap = await admin
+      .firestore()
+      .collection("open_challenges")
+      .orderBy("created_at", "desc")
+      .limit(OPEN_CHALLENGE_INDEX_LIMIT)
+      .get();
+
+    const challenges = [];
+    for (const doc of snap.docs) {
+      const data = doc.data() || {};
+      if (openChallengeDocIsExpired(data)) continue;
+      const entry = openChallengeIndexEntry(doc.id, data);
+      if (entry) challenges.push(entry);
+    }
+
+    await admin
+      .firestore()
+      .collection(OPEN_CHALLENGE_INDEX_COL)
+      .doc(OPEN_CHALLENGE_INDEX_DOC)
+      .set({
+        challenges,
+        updated_at: admin.firestore.FieldValue.serverTimestamp(),
+      });
+    functions.logger.info("rebuildOpenChallengeIndex ok", {
+      count: challenges.length,
+    });
+  } catch (e) {
+    functions.logger.error("rebuildOpenChallengeIndex failed", {
+      error: e && e.message ? e.message : String(e),
+    });
+  }
+}
+
 async function sendOpenChallengePush(db, recipientEmail, title, body, challengeId) {
   const userSnap = await db.collection("users").doc(recipientEmail).get();
   const userData = userSnap.data() || {};
@@ -939,6 +1043,11 @@ exports.onOpenChallengeWritten = onDocumentWritten(
   async (event) => {
     const challengeId = event.params.challengeId;
     const afterSnap = event.data.after;
+
+    // Runs on every write — creates, attempts and deletes all change what Home
+    // should show, and Home only ever reads the index.
+    await rebuildOpenChallengeIndex();
+
     if (!afterSnap.exists) {
       return null;
     }
@@ -1009,6 +1118,24 @@ exports.onOpenChallengeWritten = onDocumentWritten(
     }
 
     await Promise.all(tasks);
+    return null;
+  },
+);
+
+/**
+ * Safety net for the Home index: seeds it on first deploy (before any challenge
+ * has been written) and ages out entries that expired with no write to trigger
+ * a rebuild. Roughly 20 reads an hour.
+ */
+exports.refreshOpenChallengeIndex = onSchedule(
+  {
+    schedule: "every 60 minutes",
+    timeZone: "Asia/Kolkata",
+    region: "asia-south1",
+    timeoutSeconds: 60,
+  },
+  async () => {
+    await rebuildOpenChallengeIndex();
     return null;
   },
 );

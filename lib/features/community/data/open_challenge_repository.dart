@@ -12,21 +12,42 @@ class OpenChallengeRepository {
   final FirebaseFirestore _firestore;
 
   static const _collection = 'open_challenges';
+  static const _indexCollection = 'open_challenges_index';
+  static const _indexDoc = 'live';
 
   CollectionReference<Map<String, dynamic>> get _col =>
       _firestore.collection(_collection);
 
-  /// [limit] caps the documents read — challenges live 24h, so the newest few
-  /// cover every live one. Home passes a limit; Community reads the full set.
+  /// Home's summary of live challenges — exactly **one** document read no
+  /// matter how many challenges exist. Maintained by `onOpenChallengeWritten`.
+  ///
+  /// Carries no `myScore`: the index has no emails, so callers filter played
+  /// challenges with [PrefsService.attemptedOpenChallengeIds] instead.
+  Future<List<OpenChallengeListTileModel>> fetchHomeIndex() async {
+    final snap = await _firestore
+        .collection(_indexCollection)
+        .doc(_indexDoc)
+        .get(const GetOptions(source: Source.server));
+    final raw = snap.data()?['challenges'];
+    if (raw is! List) return const [];
+    final out = <OpenChallengeListTileModel>[];
+    for (final entry in raw) {
+      if (entry is! Map) continue;
+      final tile = _indexEntryToTile(Map<String, dynamic>.from(entry));
+      if (tile != null) out.add(tile);
+    }
+    return out;
+  }
+
+  /// Full list for the Community tab, with the viewer's own score per row.
+  ///
+  /// Reads one document per challenge. Home does **not** use this — see
+  /// [fetchHomeIndex], which costs a single read.
   Future<List<OpenChallengeListTileModel>> fetchAllSummaries({
     required String? currentUserEmail,
-    int? limit,
   }) async {
     final me = currentUserEmail?.toLowerCase().trim();
-    final Query<Map<String, dynamic>> query = limit == null
-        ? _col
-        : _col.orderBy('created_at', descending: true).limit(limit);
-    final snap = await query.get(const GetOptions(source: Source.server));
+    final snap = await _col.get(const GetOptions(source: Source.server));
     final details = <OpenChallengeDetail>[];
     for (final doc in snap.docs) {
       final detail = OpenChallengeDetail.parse(doc.id, doc.data());
@@ -255,6 +276,28 @@ class OpenChallengeRepository {
         .doc(email.toLowerCase())
         .set(payload, SetOptions(merge: true));
   }
+}
+
+DateTime? _msToDate(Object? value) {
+  final ms = (value as num?)?.toInt();
+  return ms == null ? null : DateTime.fromMillisecondsSinceEpoch(ms);
+}
+
+/// Parses one entry of `open_challenges_index/live`. Mirrors the shape written
+/// by `openChallengeIndexEntry` in `functions/index.js`.
+OpenChallengeListTileModel? _indexEntryToTile(Map<String, dynamic> m) {
+  final id = (m['id'] as String?)?.trim();
+  if (id == null || id.isEmpty) return null;
+  return OpenChallengeListTileModel(
+    id: id,
+    subject: (m['subject'] as String?) ?? '',
+    attemptCount: (m['attempt_count'] as num?)?.toInt() ?? 0,
+    topScore: (m['top_score'] as num?)?.toInt() ?? 0,
+    postedByName: (m['posted_by_name'] as String?) ?? '',
+    postedByPhotoUrl: (m['posted_by_photo_url'] as String?) ?? '',
+    postedAt: _msToDate(m['posted_at_ms']),
+    liveUntil: _msToDate(m['live_until_ms']),
+  );
 }
 
 bool _firestoreChallengeDataExpired(Map<String, dynamic> data) {

@@ -121,6 +121,10 @@ abstract final class PrefKeys {
   static const openChallengeLastPublishedAtMs =
       'open_challenge_last_published_at_ms_v1';
 
+  /// JSON list of open-challenge ids already played on this device.
+  static const attemptedOpenChallengeIdsV1 =
+      'attempted_open_challenge_ids_v1';
+
   /// JSON array of epoch ms for QOTD posts from this device (rolling 24h client cap).
   static const qotdLocalPostEpochsMsJson = 'qotd_local_post_epochs_ms_json_v1';
 
@@ -473,6 +477,38 @@ class PrefsService {
       _p.setInt(PrefKeys.openChallengeLastPublishedAtMs, v);
     }
   }
+
+  /// Open-challenge ids already played on this device, oldest first.
+  ///
+  /// Tracked locally rather than derived from the attempt map: guests have no
+  /// email to match on, and the Home index document carries no participant
+  /// emails by design.
+  Set<String> get attemptedOpenChallengeIds {
+    final raw = _p.getString(PrefKeys.attemptedOpenChallengeIdsV1);
+    if (raw == null || raw.isEmpty) return const {};
+    try {
+      return (jsonDecode(raw) as List<dynamic>)
+          .map((e) => e as String)
+          .toSet();
+    } catch (_) {
+      return const {};
+    }
+  }
+
+  /// Idempotent. Counts a finished exam, whether or not the score was published.
+  void markOpenChallengeAttempted(String id) {
+    final trimmed = id.trim();
+    if (trimmed.isEmpty) return;
+    final current = attemptedOpenChallengeIds;
+    if (current.contains(trimmed)) return;
+    final next = [...current, trimmed];
+    if (next.length > _maxAttemptedOpenChallengeIds) {
+      next.removeRange(0, next.length - _maxAttemptedOpenChallengeIds);
+    }
+    _p.setString(PrefKeys.attemptedOpenChallengeIdsV1, jsonEncode(next));
+  }
+
+  static const _maxAttemptedOpenChallengeIds = 200;
 
   /// JSON list of ints: `DateTime.now().millisecondsSinceEpoch` for each QOTD post from this device.
   String get qotdLocalPostEpochsMsJson =>

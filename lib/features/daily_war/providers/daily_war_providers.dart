@@ -262,10 +262,15 @@ Future<DailyWarDoc?> _buildWarDoc({
 }
 
 /// Today's War public doc — one server read per app open, then local only.
+///
+/// Gated on the feature flag: `todayHubProvider` watches this from Home for
+/// every user, so an ungated read would bill four War documents per session to
+/// the ~all of them who cannot see the feature.
 @Riverpod(keepAlive: true)
 class DailyWarTodayDoc extends _$DailyWarTodayDoc {
   @override
   Future<DailyWarDoc?> build() async {
+    if (!await ref.watch(dailyWarRemoteEnabledProvider.future)) return null;
     final dateId = ref.watch(dailyWarTodayDateIdProvider);
     return _buildWarDoc(
       ref: ref,
@@ -298,10 +303,13 @@ class DailyWarTodayDoc extends _$DailyWarTodayDoc {
 }
 
 /// Signed-in user's submission for today — one server read per app open.
+///
+/// Gated on the feature flag for the same reason as [DailyWarTodayDoc].
 @Riverpod(keepAlive: true)
 class DailyWarTodaySubmission extends _$DailyWarTodaySubmission {
   @override
   Future<DailyWarSubmission?> build() async {
+    if (!await ref.watch(dailyWarRemoteEnabledProvider.future)) return null;
     final dateId = ref.watch(dailyWarTodayDateIdProvider);
     final uid = FirebaseAuth.instance.currentUser?.uid;
     if (uid == null || uid.isEmpty) return null;
@@ -492,6 +500,7 @@ String? dailyWarHubHeroDateId(Ref ref) {
 class DailyWarYesterdayDoc extends _$DailyWarYesterdayDoc {
   @override
   Future<DailyWarDoc?> build() async {
+    if (!await ref.watch(dailyWarRemoteEnabledProvider.future)) return null;
     final dateId = ref.watch(dailyWarYesterdayDateIdProvider);
     return _buildWarDoc(
       ref: ref,
@@ -522,6 +531,7 @@ class DailyWarYesterdayDoc extends _$DailyWarYesterdayDoc {
 class DailyWarYesterdaySubmission extends _$DailyWarYesterdaySubmission {
   @override
   Future<DailyWarSubmission?> build() async {
+    if (!await ref.watch(dailyWarRemoteEnabledProvider.future)) return null;
     final dateId = ref.watch(dailyWarYesterdayDateIdProvider);
     final uid = FirebaseAuth.instance.currentUser?.uid;
     if (uid == null || uid.isEmpty) return null;
