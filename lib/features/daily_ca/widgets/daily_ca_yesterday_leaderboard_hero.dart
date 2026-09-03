@@ -20,7 +20,7 @@ import '../domain/daily_ca_schedule.dart';
 import '../domain/daily_ca_scoring.dart';
 import '../providers/daily_ca_providers.dart';
 
-/// Podium for yesterday's frozen board, above today's quiz card.
+/// Compact podium for the CA hub: today's live board, else yesterday's.
 class DailyCaYesterdayLeaderboardHero extends ConsumerWidget {
   const DailyCaYesterdayLeaderboardHero({super.key, this.compact = false});
 
@@ -43,28 +43,31 @@ class DailyCaYesterdayLeaderboardHero extends ConsumerWidget {
       ref.invalidate(dailyCaHubHeroBoardProvider);
     }
 
-    Widget card({DailyCaLeaderboard? lb, required String dateId}) {
-      return Padding(
-        padding: EdgeInsets.only(
-          bottom: compact ? AppSpacing.sm : AppSpacing.md,
-        ),
-        child: _HeroCard(
-          lb: lb,
-          dateId: dateId,
-          myUid: myUid,
-          compact: compact,
-          locked: !accountSignedIn,
-          onSignIn: () => unawaited(signInForBoard()),
-        ),
-      );
-    }
-
     return boardAsync.maybeWhen(
       data: (board) {
-        if (board == null) return const SizedBox.shrink();
-        return card(lb: board.lb, dateId: board.dateId);
+        if (board == null || board.dateId.isEmpty) {
+          return const SizedBox.shrink();
+        }
+        final mine = accountSignedIn
+            ? ref.watch(dailyCaMySubmissionProvider(board.dateId)).asData?.value
+            : null;
+        return Padding(
+          padding: EdgeInsets.only(
+            bottom: compact ? AppSpacing.sm : AppSpacing.md,
+          ),
+          child: _HeroCard(
+            lb: board.lb,
+            dateId: board.dateId,
+            isToday: board.isToday,
+            myUid: myUid,
+            myAir: mine?.air,
+            compact: compact,
+            locked: !accountSignedIn,
+            onSignIn: () => unawaited(signInForBoard()),
+          ),
+        );
       },
-      orElse: () => card(lb: null, dateId: ''),
+      orElse: () => const SizedBox.shrink(),
     );
   }
 }
@@ -73,15 +76,19 @@ class _HeroCard extends StatelessWidget {
   const _HeroCard({
     required this.lb,
     required this.dateId,
+    required this.isToday,
     required this.myUid,
     required this.compact,
     required this.locked,
+    this.myAir,
     this.onSignIn,
   });
 
   final DailyCaLeaderboard? lb;
   final String dateId;
+  final bool isToday;
   final String myUid;
+  final int? myAir;
   final bool compact;
   final bool locked;
   final VoidCallback? onSignIn;
@@ -100,6 +107,7 @@ class _HeroCard extends StatelessWidget {
         ? lb!.participantCount
         : top.length;
     final empty = top.isEmpty;
+    final frozen = lb?.isFrozen ?? false;
 
     DateTime? contentDate;
     try {
@@ -110,32 +118,33 @@ class _HeroCard extends StatelessWidget {
     final quizMorning = contentDate == null
         ? null
         : DailyCaSchedule.quizMorningDate(contentDate);
-    final today = DailyCaSchedule.dateOnly(DailyCaSchedule.nowIst());
-    final isYesterday =
-        quizMorning != null && today.difference(quizMorning).inDays == 1;
     final dateLabel = quizMorning == null
-        ? 'Yesterday'
+        ? dateId
         : DateFormat('d MMM').format(quizMorning);
-    final eyebrow = isYesterday
-        ? 'YESTERDAY'
+    final eyebrow = isToday
+        ? 'TODAY'
         : (quizMorning == null
               ? 'YESTERDAY'
               : DateFormat('d MMM').format(quizMorning).toUpperCase());
 
-    int? myAir;
-    if (!locked && myUid.isNotEmpty) {
+    int? resolvedAir = myAir;
+    if (resolvedAir == null && !locked && myUid.isNotEmpty) {
       for (final e in top) {
         if (e.uid == myUid) {
-          myAir = e.air;
+          resolvedAir = e.air;
           break;
         }
       }
     }
 
     final statusLine = empty
-        ? (dateId.isEmpty
-              ? 'No champion yet. Ranks land here tomorrow.'
+        ? (isToday
+              ? 'Live ranks · be the first to finish'
               : '$dateLabel · No champion locked yet')
+        : isToday
+        ? (frozen
+              ? '$dateLabel · $count joined · Champion locked'
+              : '$dateLabel · $count joined · live')
         : '$dateLabel · $count joined · Champion locked';
 
     return Material(
@@ -147,7 +156,7 @@ class _HeroCard extends StatelessWidget {
           InkWell(
             onTap: locked
                 ? onSignIn
-                : (empty || dateId.isEmpty
+                : (empty
                       ? null
                       : () => context.push(dailyCaLeaderboardRoute(dateId))),
             child: Padding(
@@ -210,10 +219,10 @@ class _HeroCard extends StatelessWidget {
                       ),
                     ],
                   ),
-                  if (myAir != null) ...[
+                  if (resolvedAir != null) ...[
                     SizedBox(height: compact ? 8 : 10),
                     Text(
-                      'You · AIR $myAir',
+                      'You · AIR $resolvedAir',
                       textAlign: TextAlign.center,
                       style: AppTextStyles.labelSm().copyWith(
                         fontWeight: FontWeight.w800,
@@ -225,16 +234,16 @@ class _HeroCard extends StatelessWidget {
                     Align(
                       alignment: Alignment.centerRight,
                       child: Text(
-                        'See board',
+                        'See all ranks',
                         style: AppTextStyles.labelSm().copyWith(
                           fontWeight: FontWeight.w700,
                           color: AppColors.onPrimary,
                         ),
                       ),
                     )
-                  else if (!locked)
+                  else if (!locked && isToday && empty)
                     Text(
-                      "Today's paper is open. Ranks show here tomorrow.",
+                      'Finish the paper to appear on the board.',
                       textAlign: TextAlign.center,
                       style: AppTextStyles.caption().copyWith(
                         color: AppColors.onPrimary.withValues(alpha: 0.75),

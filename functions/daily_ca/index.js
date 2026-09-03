@@ -996,6 +996,7 @@ async function rerankAllAndFreeze(dateId) {
       score: Number(d.score) || 0,
       elapsed_ms: Number(d.elapsed_ms) || 0,
       display_name: d.display_name || "",
+      email: (d.email || "").toLowerCase().trim(),
       correct: d.correct || 0,
       wrong: d.wrong || 0,
       unanswered: d.unanswered || 0,
@@ -1010,6 +1011,7 @@ async function rerankAllAndFreeze(dateId) {
     return {
       uid: row.uid,
       display_name: row.display_name,
+      email: row.email || "",
       score: row.score,
       elapsed_ms: row.elapsed_ms,
       air,
@@ -1107,6 +1109,7 @@ exports.submitDailyCa = onCall(
       typeof data.displayName === "string"
         ? data.displayName.trim().slice(0, 60)
         : "";
+    const email = (request.auth.token.email || "").toLowerCase().trim();
 
     if (!/^\d{4}-\d{2}-\d{2}$/.test(dateId) || !answers) {
       throw new HttpsError("invalid-argument", "dateId and answers required.");
@@ -1152,6 +1155,7 @@ exports.submitDailyCa = onCall(
         const row = {
           uid,
           display_name: displayName,
+          email,
           score: breakdown.score,
           elapsed_ms: elapsedMs,
           correct: breakdown.correct,
@@ -1177,6 +1181,7 @@ exports.submitDailyCa = onCall(
         elapsed_ms: elapsedMs,
         answers,
         display_name: displayName,
+        email,
         submitted_at: admin.firestore.FieldValue.serverTimestamp(),
         submitted_at_ms: now,
       });

@@ -12,6 +12,7 @@ class DailyCaSubmission {
     this.percentile,
     this.participantCount,
     this.displayName,
+    this.email,
     this.submittedAtMs,
   });
 
@@ -28,6 +29,7 @@ class DailyCaSubmission {
   final double? percentile;
   final int? participantCount;
   final String? displayName;
+  final String? email;
   final int? submittedAtMs;
 
   bool get isLive => mode == 'live';
@@ -46,6 +48,7 @@ class DailyCaSubmission {
       percentile: (map['percentile'] as num?)?.toDouble(),
       participantCount: (map['participant_count'] as num?)?.toInt(),
       displayName: map['display_name'] as String?,
+      email: (map['email'] as String?)?.trim().toLowerCase(),
       submittedAtMs: (map['submitted_at_ms'] as num?)?.toInt(),
     );
   }
@@ -62,6 +65,7 @@ class DailyCaLeaderboardEntry {
     this.correct,
     this.wrong,
     this.unanswered,
+    this.email,
   });
 
   final String uid;
@@ -73,6 +77,7 @@ class DailyCaLeaderboardEntry {
   final int? correct;
   final int? wrong;
   final int? unanswered;
+  final String? email;
 
   factory DailyCaLeaderboardEntry.fromMap(Map<String, dynamic> map) {
     return DailyCaLeaderboardEntry(
@@ -85,6 +90,7 @@ class DailyCaLeaderboardEntry {
       correct: (map['correct'] as num?)?.toInt(),
       wrong: (map['wrong'] as num?)?.toInt(),
       unanswered: (map['unanswered'] as num?)?.toInt(),
+      email: (map['email'] as String?)?.trim().toLowerCase(),
     );
   }
 
@@ -98,6 +104,7 @@ class DailyCaLeaderboardEntry {
     if (correct != null) 'correct': correct,
     if (wrong != null) 'wrong': wrong,
     if (unanswered != null) 'unanswered': unanswered,
+    if (email != null && email!.isNotEmpty) 'email': email,
   };
 }
 

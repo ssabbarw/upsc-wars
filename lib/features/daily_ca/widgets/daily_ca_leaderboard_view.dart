@@ -113,6 +113,7 @@ class DailyCaLeaderboardView extends StatelessWidget {
                     correct: mySubmission!.correct,
                     wrong: mySubmission!.wrong,
                     unanswered: mySubmission!.unanswered,
+                    email: mySubmission!.email,
                   ),
                   questionCount: questionCount,
                   isMe: true,

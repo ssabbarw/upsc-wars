@@ -18,9 +18,9 @@ import '../domain/daily_ca_schedule.dart';
 import '../domain/open_daily_ca_test.dart';
 import '../daily_ca_admin_constants.dart';
 import '../providers/daily_ca_providers.dart';
+import '../widgets/daily_ca_action_sheet.dart';
 import '../widgets/daily_ca_day_sheet.dart';
 import '../widgets/daily_ca_month_calendar.dart';
-import '../widgets/daily_ca_today_section.dart';
 import '../widgets/daily_ca_yesterday_leaderboard_hero.dart';
 import '../../home/domain/daily_rituals.dart';
 
@@ -43,10 +43,6 @@ class DailyCaScreen extends HookConsumerWidget {
     final minMonth = DailyCaSchedule.minMonthForDate(minDate);
     final istNow = DailyCaSchedule.nowIst();
     final paperDate = DailyCaSchedule.expectedPaperContentDate(
-      referenceIst: istNow,
-    );
-    final paperOpen = DailyCaSchedule.isPublishedForDate(
-      paperDate,
       referenceIst: istNow,
     );
     final paperIso = DailyCaSchedule.formatIsoDate(paperDate);
@@ -206,24 +202,55 @@ class DailyCaScreen extends HookConsumerWidget {
         ),
         children: [
           DailyCaYesterdayLeaderboardHero(compact: compact),
-          DailyCaTodaySection(
-            minDate: minDate,
-            paperDate: paperDate,
-            paperCompleted: paperCompleted,
-            launching: launching.value || paperChecking,
-            paperOpen: paperOpen,
-            questionsReady: paperLive,
-            compact: compact,
-            onStartPaper: paperCompleted || !paperLive
-                ? null
-                : () => unawaited(openDayTest(paperIso, isRevise: false)),
-            onRevisePaper: !paperCompleted
-                ? null
-                : () => unawaited(openDayTest(paperIso, isRevise: true)),
-            onViewResults: !paperCompleted
-                ? null
-                : () => unawaited(openPaperResults(paperIso)),
-            onViewRankings: null,
+          Padding(
+            padding: EdgeInsets.only(
+              bottom: compact ? AppSpacing.sm : AppSpacing.md,
+            ),
+            child: SizedBox(
+              width: double.infinity,
+              height: 48,
+              child: FilledButton(
+                onPressed: launching.value || paperChecking
+                    ? null
+                    : () => unawaited(
+                        showDailyCaActionSheet(
+                          context: context,
+                          paperLive: paperLive,
+                          paperCompleted: paperCompleted,
+                          onStart: !paperLive || paperCompleted
+                              ? null
+                              : () => unawaited(
+                                  openDayTest(paperIso, isRevise: false),
+                                ),
+                          onRevise: !paperCompleted
+                              ? null
+                              : () => unawaited(
+                                  openDayTest(paperIso, isRevise: true),
+                                ),
+                          onReviewAnswers: !paperCompleted
+                              ? null
+                              : () => unawaited(openPaperResults(paperIso)),
+                        ),
+                      ),
+                style: FilledButton.styleFrom(
+                  backgroundColor: AppColors.primary,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(AppRadius.lg),
+                  ),
+                ),
+                child: Text(
+                  paperCompleted
+                      ? 'Review or revise'
+                      : paperLive
+                      ? 'Take today\'s test'
+                      : 'Today\'s paper',
+                  style: AppTextStyles.label().copyWith(
+                    fontWeight: FontWeight.w800,
+                    color: AppColors.onPrimary,
+                  ),
+                ),
+              ),
+            ),
           ),
           SizedBox(height: compact ? AppSpacing.sm : AppSpacing.md),
           DecoratedBox(

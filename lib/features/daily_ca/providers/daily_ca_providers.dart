@@ -161,26 +161,47 @@ final dailyCaLeaderboardProvider = FutureProvider.autoDispose
       }
     });
 
-/// Yesterday's frozen podium for the CA hub. [lb] is null when that paper
-/// has no ranks yet — the UI shows a placeholder.
+/// Preferred board for the Daily CA hub: today's paper while live, else the
+/// previous paper's board. Null when neither date is usable.
 class DailyCaHubHeroBoard {
-  const DailyCaHubHeroBoard({required this.dateId, this.lb});
+  const DailyCaHubHeroBoard({
+    required this.dateId,
+    this.lb,
+    this.isToday = false,
+  });
 
   final String dateId;
   final DailyCaLeaderboard? lb;
+  final bool isToday;
 }
 
 final dailyCaHubHeroBoardProvider =
     FutureProvider.autoDispose<DailyCaHubHeroBoard?>((ref) async {
       final minDate = await ref.watch(dailyCaCalendarMinDateProvider.future);
+      final ranksOn =
+          await ref.watch(dailyCaRanksRemoteEnabledProvider.future);
+      if (!ranksOn) return null;
+
+      final todayPaper = DailyCaSchedule.paperQuizContentDate();
+      final todayLive =
+          await ref.watch(dailyCaScheduledPaperIsLiveProvider.future);
+      if (todayPaper != null &&
+          todayLive &&
+          DailyCaSchedule.isOnOrAfterMinDate(todayPaper, minDate)) {
+        final iso = DailyCaSchedule.formatIsoDate(todayPaper);
+        final lb = await ref.watch(dailyCaLeaderboardProvider(iso).future);
+        return DailyCaHubHeroBoard(dateId: iso, lb: lb, isToday: true);
+      }
+
       final prev = DailyCaSchedule.previousPaperQuizContentDate();
       if (prev == null ||
           !DailyCaSchedule.isOnOrAfterMinDate(prev, minDate)) {
-        return const DailyCaHubHeroBoard(dateId: '');
+        return null;
       }
       final iso = DailyCaSchedule.formatIsoDate(prev);
       final lb = await ref.watch(dailyCaLeaderboardProvider(iso).future);
-      return DailyCaHubHeroBoard(dateId: iso, lb: lb);
+      if (lb == null || lb.top.isEmpty) return null;
+      return DailyCaHubHeroBoard(dateId: iso, lb: lb, isToday: false);
     });
 
 /// Bumped after [markDailyCaResultsOpened] so home can leave the revise hero.

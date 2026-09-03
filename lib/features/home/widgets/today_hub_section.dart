@@ -7,16 +7,10 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/analytics/activation_milestones.dart';
 import '../../../core/providers/prefs_provider.dart';
-import '../../../core/providers/user_database_provider.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
-import '../../daily_ca/daily_ca_admin_constants.dart';
-import '../../daily_ca/domain/daily_ca_schedule.dart';
-import '../../daily_ca/domain/open_daily_ca_test.dart';
-import '../../daily_ca/providers/daily_ca_providers.dart';
-import '../../daily_ca/widgets/daily_ca_unavailable_sheet.dart';
 import '../../daily_war/domain/daily_war_phase.dart';
 import '../../daily_war/domain/daily_war_phase_resolver.dart';
 import '../../daily_war/domain/daily_war_schedule.dart';
@@ -37,9 +31,8 @@ import 'activation_journey_card.dart';
 import 'daily_revision_choice_sheet.dart';
 import 'daily_rituals_intro_sheet.dart';
 
-/// Daily ritual on home: Daily Drill as the hero + a "Keep going" list.
-///
-/// Keep going lists CA Shots, Current Affairs test, and Danger Zone.
+/// Daily ritual on home: CA test hero until first submit, else Daily Drill,
+/// plus a "Keep going" list (CA Shots, Current Affairs, Danger Zone).
 class TodayHubSection extends HookConsumerWidget {
   const TodayHubSection({
     super.key,
@@ -138,74 +131,11 @@ class TodayHubSection extends HookConsumerWidget {
       return null;
     }, [fullDay, TodayHero.hubDate(ist).toIso8601String()]);
 
-    final launchingPaper = useState(false);
     final launchingDrill = useState(false);
 
-    Future<void> openPaper() async {
-      final iso = data.paperDateIso;
-      if (iso == null || launchingPaper.value) return;
-      launchingPaper.value = true;
-      try {
-        await openDailyCaTest(
-          context: context,
-          ref: ref,
-          isoDate: iso,
-          isRevise: false,
-          onFinished: () => ref.invalidate(todayHubProvider),
-        );
-      } finally {
-        launchingPaper.value = false;
-      }
-    }
-
-    Future<void> openPaperResults() async {
-      final iso = data.paperDateIso;
-      if (iso == null || launchingPaper.value) return;
-      launchingPaper.value = true;
-      try {
-        final db = ref.read(userDatabaseProvider);
-        final sessionId = await db.sessionsDao
-            .getLatestCompletedDailyCaSessionId(iso);
-        if (!context.mounted) return;
-        if (sessionId == null) {
-          await openDailyCaTest(
-            context: context,
-            ref: ref,
-            isoDate: iso,
-            isRevise: true,
-            onFinished: () => ref.invalidate(todayHubProvider),
-          );
-          return;
-        }
-        context.push(
-          (ref.read(dailyCaRanksRemoteEnabledProvider).asData?.value ?? false)
-              ? dailyCaResultsRoute(sessionId)
-              : '/results/$sessionId',
-        );
-      } finally {
-        launchingPaper.value = false;
-      }
-    }
-
-    void openPaperOrUnavailable() {
-      if (data.paperCompleted) {
-        unawaited(openPaperResults());
-        return;
-      }
-      if (data.paperLive) {
-        unawaited(openPaper());
-        return;
-      }
-      unawaited(
-        showDailyCaUnavailableSheet(
-          context: context,
-          availableFrom: DailyCaSchedule.nextOpensAt(referenceIst: ist),
-          pendingLive: data.paperDate != null,
-          onSeeHistory: () {
-            if (context.mounted) context.push('/daily-ca');
-          },
-        ),
-      );
+    void openDailyCaHub() {
+      unawaited(maybeLogPostDemoExplore(ref, surface: 'daily_ca'));
+      context.push('/daily-ca');
     }
 
     Future<void> openDrill({required String source}) async {
@@ -272,20 +202,7 @@ class TodayHubSection extends HookConsumerWidget {
             locked: false,
             showNew: !caLive && !openedRituals.contains(DailyRitualIds.dailyCa),
             showLive: caLive,
-            loading: caLive && launchingPaper.value,
-            onTap: caLive
-                ? () {
-                    unawaited(
-                      maybeLogPostDemoExplore(ref, surface: 'daily_ca'),
-                    );
-                    openPaperOrUnavailable();
-                  }
-                : () {
-                    unawaited(
-                      maybeLogPostDemoExplore(ref, surface: 'daily_ca'),
-                    );
-                    context.push('/daily-ca');
-                  },
+            onTap: openDailyCaHub,
           ),
         );
       }
@@ -331,13 +248,24 @@ class TodayHubSection extends HookConsumerWidget {
 
     final borderColor = isDark ? AppColors.borderDark : AppColors.borderLight;
 
-    // When activation checklist is active, show it as the hero instead.
+    // START HERE wins; else Daily CA until first submit (all day); else drill.
     final journey = activationJourney;
+    final after6Am = ist.hour >= TodayHero.paperHourIst;
+    final caHero =
+        data.caEnabled &&
+        after6Am &&
+        data.paperLive &&
+        !data.paperCompleted;
     final Widget heroWidget;
     if (activationJourneyLoading) {
       heroWidget = const _HeroLoadingCard();
     } else if (journey != null && journey.shouldShowChecklist) {
       heroWidget = ActivationJourneyCard(state: journey);
+    } else if (caHero) {
+      heroWidget = _CaTestHeroCard(
+        checking: data.paperChecking,
+        onOpen: openDailyCaHub,
+      );
     } else {
       heroWidget = _PracticeHeroCard(
         isSunday: false,
@@ -841,6 +769,33 @@ class _BigHeroCard extends StatelessWidget {
 }
 
 // ── Practice Hero Card ────────────────────────────────────────────────────────
+
+class _CaTestHeroCard extends StatelessWidget {
+  const _CaTestHeroCard({
+    required this.checking,
+    required this.onOpen,
+  });
+
+  final bool checking;
+  final VoidCallback onOpen;
+
+  @override
+  Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final bg = isDark ? AppColors.infoBgDark : AppColors.infoText;
+    return _BigHeroCard(
+      eyebrow: 'DAILY CURRENT AFFAIRS',
+      title: "Today's paper quiz",
+      description:
+          "Based on yesterday's news. Same questions for everyone — then All-India Rank.",
+      ctaLabel: 'Open paper',
+      background: bg,
+      ctaColor: AppColors.primary,
+      loading: checking,
+      onTap: onOpen,
+    );
+  }
+}
 
 class _PracticeHeroCard extends StatelessWidget {
   const _PracticeHeroCard({

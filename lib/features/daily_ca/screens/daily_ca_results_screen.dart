@@ -169,7 +169,7 @@ class DailyCaResultsScreen extends HookConsumerWidget {
   }
 }
 
-class _ReadyBody extends StatelessWidget {
+class _ReadyBody extends ConsumerWidget {
   const _ReadyBody({
     required this.dateId,
     required this.sessionId,
@@ -189,11 +189,18 @@ class _ReadyBody extends StatelessWidget {
   final bool signedIn;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
     final maxPts = DailyCaScoring.maxPoints(questionCount);
     final score = submission?.score ?? localScore;
     final ranked = submission?.hasOfficialRank == true;
+    final liveProvisional = ranked && submission?.mode == 'live';
+    final board = dateId.isEmpty
+        ? null
+        : ref.watch(dailyCaLeaderboardProvider(dateId)).asData?.value;
+    final podium = (ranksOn && ranked)
+        ? (board?.top.take(3).toList() ?? const [])
+        : const <DailyCaLeaderboardEntry>[];
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -244,13 +251,89 @@ class _ReadyBody extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height: 12),
-          Text(
-            DailyCaScheduleHint.liveCopy(submission!.mode),
-            style: AppTextStyles.bodySm().copyWith(
-              color: scheme.onSurfaceVariant,
+          if (liveProvisional) ...[
+            const SizedBox(height: 12),
+            DecoratedBox(
+              decoration: BoxDecoration(
+                color: AppColors.primary.withValues(alpha: 0.1),
+                borderRadius: BorderRadius.circular(AppRadius.md),
+                border: Border.all(
+                  color: AppColors.primary.withValues(alpha: 0.35),
+                ),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 12,
+                  vertical: 10,
+                ),
+                child: Text(
+                  DailyCaScheduleHint.liveCopy(submission!.mode),
+                  style: AppTextStyles.bodySm().copyWith(
+                    color: scheme.onSurface,
+                    fontWeight: FontWeight.w600,
+                    height: 1.35,
+                  ),
+                ),
+              ),
             ),
-          ),
+          ] else if (submission!.mode == 'unranked') ...[
+            const SizedBox(height: 12),
+            Text(
+              DailyCaScheduleHint.liveCopy(submission!.mode),
+              style: AppTextStyles.bodySm().copyWith(
+                color: scheme.onSurfaceVariant,
+              ),
+            ),
+          ],
+          if (podium.isNotEmpty) ...[
+            const SizedBox(height: 16),
+            Text(
+              'Today\'s board',
+              style: AppTextStyles.label().copyWith(
+                fontWeight: FontWeight.w800,
+              ),
+            ),
+            const SizedBox(height: 8),
+            ...podium.map((e) {
+              final isMe = e.uid == submission!.uid;
+              final name = e.displayName.trim().isEmpty
+                  ? 'Aspirant'
+                  : e.displayName.trim();
+              return Padding(
+                padding: const EdgeInsets.only(bottom: 6),
+                child: Row(
+                  children: [
+                    SizedBox(
+                      width: 28,
+                      child: Text(
+                        '${e.air}',
+                        style: AppTextStyles.label().copyWith(
+                          fontWeight: FontWeight.w800,
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Text(
+                        isMe ? '$name (you)' : name,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: AppTextStyles.bodySm().copyWith(
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ),
+                    Text(
+                      e.score.toStringAsFixed(1),
+                      style: AppTextStyles.label().copyWith(
+                        fontWeight: FontWeight.w800,
+                        color: AppColors.primary,
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            }),
+          ],
         ] else ...[
           Text(
             'SCORE',
@@ -329,7 +412,7 @@ class DailyCaScheduleHint {
     if (mode == 'unranked') {
       return 'Unranked · Champion already locked.';
     }
-    return 'This rank includes everyone who has finished so far. Open ranks again to refresh. Champion locks at 6 AM.';
+    return 'AIR can still move. Champion locks at 6 AM IST.';
   }
 }
 
