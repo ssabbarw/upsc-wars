@@ -1,9 +1,12 @@
 import 'dart:async';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+
+import '../../../shared/auth/ensure_account_sign_in.dart';
 
 import '../../../core/domain/entities/session_result.dart';
 import '../../../core/providers/prefs_provider.dart';
@@ -46,7 +49,24 @@ Future<void> performOpenChallengePostResultsPublish({
     }
   }
 
-  final user = ref.read(authStateChangesProvider).asData?.value;
+  // Guests take the exam without an account; the leaderboard is keyed by email,
+  // so sign-in is asked for here — after they have seen the value, not before.
+  if (!context.mounted) {
+    throw StateError('Publish cancelled.');
+  }
+  final signedIn = await ensureAccountSignedIn(
+    context: context,
+    ref: ref,
+    reason: 'Sign in to save your score to the leaderboard.',
+  );
+  if (!signedIn) {
+    throw StateError('You must be signed in.');
+  }
+
+  // The auth stream may not have emitted yet right after a fresh sign-in.
+  final user =
+      FirebaseAuth.instance.currentUser ??
+      ref.read(authStateChangesProvider).asData?.value;
   final email = user?.email?.toLowerCase().trim();
   if (email == null || email.isEmpty) {
     throw StateError('You must be signed in.');
@@ -101,6 +121,7 @@ Future<void> performOpenChallengePostResultsPublish({
     await recordOpenChallengePublished(ref);
     ref.read(openChallengeExamRegistryProvider).take(sessionId);
     ref.invalidate(openChallengesListProvider);
+    ref.invalidate(homeOpenChallengesProvider);
     if (context.mounted) {
       context.go('/community?tab=open_challenge');
     }
@@ -131,6 +152,7 @@ Future<void> performOpenChallengePostResultsPublish({
     }
     ref.read(openChallengeExamRegistryProvider).take(sessionId);
     ref.invalidate(openChallengesListProvider);
+    ref.invalidate(homeOpenChallengesProvider);
     ref.invalidate(openChallengeDetailProvider(cid));
     if (context.mounted) {
       context.go(
@@ -188,7 +210,9 @@ class _OpenChallengeAcceptResultsShellState
             ? 'You have already attempted this challenge.'
             : '$e'.contains('challenge_expired')
                 ? 'This challenge has expired.'
-                : '$e';
+                : '$e'.contains('must be signed in')
+                    ? 'Sign in to save your score to the leaderboard.'
+                    : '$e';
         AppToast.showText(context, msg);
         setState(() => _failed = true);
       }

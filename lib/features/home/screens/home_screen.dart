@@ -541,8 +541,9 @@ class HomeScreen extends HookConsumerWidget {
                       },
                     ),
                     const SizedBox(height: AppSpacing.md),
+                    // Renders nothing unless Remote Config allows War; it owns
+                    // its own bottom gap, so no spacer follows it here.
                     const DailyWarHomeCard(),
-                    const SizedBox(height: AppSpacing.md),
                     // Practice section: PYQ carousel above Subjects
                     Consumer(
                       builder: (context, ref, _) {

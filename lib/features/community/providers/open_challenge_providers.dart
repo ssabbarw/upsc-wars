@@ -18,6 +18,47 @@ final openChallengesListProvider =
   return repo.fetchAllSummaries(currentUserEmail: user?.email);
 });
 
+/// Newest documents worth scanning for the Home slot.
+const homeOpenChallengeFetchLimit = 20;
+
+/// Challenges the user has not attempted, most contested first.
+///
+/// Home features the head of this list and links the rest through to Community.
+/// Ranking by attempt count rather than recency stops a minutes-old challenge
+/// with only the creator on it from outranking one people are fighting over.
+///
+/// Deliberately **not** autoDispose: Home must not re-read the collection on
+/// every mount. Community keeps its own always-fresh [openChallengesListProvider].
+final homeOpenChallengesProvider =
+    FutureProvider<List<OpenChallengeListTileModel>>((ref) async {
+  final user = ref.watch(authStateChangesProvider).asData?.value;
+  final repo = ref.watch(openChallengeRepositoryProvider);
+  final items = await repo.fetchAllSummaries(
+    currentUserEmail: user?.email,
+    limit: homeOpenChallengeFetchLimit,
+  );
+  return rankHomeOpenChallenges(items);
+});
+
+/// Drops already-attempted challenges and orders the rest most-contested first,
+/// newest breaking ties. Pure so the ordering rule stays testable.
+List<OpenChallengeListTileModel> rankHomeOpenChallenges(
+  List<OpenChallengeListTileModel> items,
+) {
+  final untried = [
+    for (final item in items)
+      if (item.myScore == null) item,
+  ];
+  untried.sort((a, b) {
+    final byContest = b.attemptCount.compareTo(a.attemptCount);
+    if (byContest != 0) return byContest;
+    final ta = a.postedAt ?? DateTime.fromMillisecondsSinceEpoch(0);
+    final tb = b.postedAt ?? DateTime.fromMillisecondsSinceEpoch(0);
+    return tb.compareTo(ta);
+  });
+  return untried;
+}
+
 final openChallengeDetailProvider =
     FutureProvider.autoDispose.family<OpenChallengeDetail?, String>((ref, id) async {
   final repo = ref.watch(openChallengeRepositoryProvider);

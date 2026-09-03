@@ -256,7 +256,14 @@ GoRouter appRouter(Ref ref) {
               final tab = state.uri.queryParameters['tab'];
               final openChallenge =
                   tab == 'open_challenge' || tab == 'open-challenge';
-              return CommunityScreen(initialTabIndex: openChallenge ? 1 : 0);
+              final highlight = state.uri.queryParameters['highlight'];
+              return CommunityScreen(
+                initialTabIndex: openChallenge ? 1 : 0,
+                highlightOpenChallengeId:
+                    openChallenge && highlight != null && highlight.isNotEmpty
+                    ? highlight
+                    : null,
+              );
             },
           ),
         ],

@@ -101,6 +101,92 @@ void main() {
     });
   });
 
+  group('DailyStreakService grace is capped', () {
+    test('an unbroken run never spends the grace', () {
+      DailyStreakService.recordRingClosed(
+        prefs: prefs,
+        now: DateTime(2026, 8, 17),
+      );
+      DailyStreakService.recordRingClosed(
+        prefs: prefs,
+        now: DateTime(2026, 8, 18),
+      );
+      expect(prefs.streakGraceUsedDates, isEmpty);
+      expect(DailyStreakService.graceAvailable(prefs: prefs), isTrue);
+    });
+
+    test('a forgiven day is banked against the window', () {
+      prefs.currentStreak = 9;
+      prefs.lastActiveDate = _key(DateTime(2026, 8, 15));
+      DailyStreakService.recordRingClosed(
+        prefs: prefs,
+        now: DateTime(2026, 8, 17),
+      );
+      expect(prefs.streakGraceUsedDates, [_key(DateTime(2026, 8, 16))]);
+    });
+
+    test('a second skip inside the window breaks the streak', () {
+      prefs.currentStreak = 9;
+      prefs.lastActiveDate = _key(DateTime(2026, 8, 15));
+      // Aug 16 forgiven.
+      expect(
+        DailyStreakService.recordRingClosed(
+          prefs: prefs,
+          now: DateTime(2026, 8, 17),
+        ),
+        10,
+      );
+      // Aug 18 skipped too — no grace left, so this restarts.
+      expect(
+        DailyStreakService.recordRingClosed(
+          prefs: prefs,
+          now: DateTime(2026, 8, 19),
+        ),
+        1,
+      );
+      expect(prefs.longestStreak, 10);
+    });
+
+    test('grace recharges once the window has passed', () {
+      prefs.currentStreak = 9;
+      prefs.lastActiveDate = _key(DateTime(2026, 8, 22));
+      prefs.streakGraceUsedDates = [_key(DateTime(2026, 8, 16))];
+      expect(
+        DailyStreakService.recordRingClosed(
+          prefs: prefs,
+          now: DateTime(2026, 8, 24),
+        ),
+        10,
+      );
+    });
+
+    test('a spent grace hides the streak on the idle day', () {
+      prefs.currentStreak = 5;
+      prefs.lastActiveDate = _key(DateTime(2026, 8, 15));
+      prefs.streakGraceUsedDates = [_key(DateTime(2026, 8, 14))];
+      expect(
+        DailyStreakService.visibleStreak(
+          prefs: prefs,
+          now: DateTime(2026, 8, 17),
+        ),
+        0,
+      );
+    });
+
+    test('a spent grace pulls the last-chance nudge a day earlier', () {
+      prefs.currentStreak = 5;
+      prefs.lastActiveDate = _key(DateTime(2026, 8, 17));
+      prefs.streakGraceUsedDates = [_key(DateTime(2026, 8, 14))];
+      expect(
+        DailyStreakService.daysUntilStreakExpires(
+          prefs: prefs,
+          now: DateTime(2026, 8, 17, 20),
+        ),
+        1,
+      );
+    });
+  });
+
   group('DailyStreakService.visibleStreak', () {
     test('today and yesterday both count as alive', () {
       prefs.currentStreak = 5;

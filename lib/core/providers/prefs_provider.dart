@@ -16,6 +16,9 @@ abstract final class PrefKeys {
   static const celebratedStreakMilestonesV1 =
       'celebrated_streak_milestones_v1';
 
+  /// JSON list of `yyyy-MM-dd` days a streak grace was spent (rolling window).
+  static const streakGraceUsedDatesV1 = 'streak_grace_used_dates_v1';
+
   /// Pending home toast for a newly reached streak milestone (cleared on show).
   static const pendingStreakMilestoneCelebrationV1 =
       'pending_streak_milestone_celebration_v1';
@@ -267,6 +270,21 @@ class PrefsService {
       jsonEncode(v.toList()..sort()),
     );
   }
+
+  List<String> get streakGraceUsedDates {
+    final raw = _p.getString(PrefKeys.streakGraceUsedDatesV1);
+    if (raw == null || raw.isEmpty) return const [];
+    try {
+      return (jsonDecode(raw) as List<dynamic>)
+          .map((e) => e as String)
+          .toList();
+    } catch (_) {
+      return const [];
+    }
+  }
+
+  set streakGraceUsedDates(List<String> v) =>
+      _p.setString(PrefKeys.streakGraceUsedDatesV1, jsonEncode(v));
 
   int? get pendingStreakMilestoneCelebration {
     if (!_p.containsKey(PrefKeys.pendingStreakMilestoneCelebrationV1)) {

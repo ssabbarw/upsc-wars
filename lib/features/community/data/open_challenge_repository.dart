@@ -16,11 +16,17 @@ class OpenChallengeRepository {
   CollectionReference<Map<String, dynamic>> get _col =>
       _firestore.collection(_collection);
 
+  /// [limit] caps the documents read — challenges live 24h, so the newest few
+  /// cover every live one. Home passes a limit; Community reads the full set.
   Future<List<OpenChallengeListTileModel>> fetchAllSummaries({
     required String? currentUserEmail,
+    int? limit,
   }) async {
     final me = currentUserEmail?.toLowerCase().trim();
-    final snap = await _col.get(const GetOptions(source: Source.server));
+    final Query<Map<String, dynamic>> query = limit == null
+        ? _col
+        : _col.orderBy('created_at', descending: true).limit(limit);
+    final snap = await query.get(const GetOptions(source: Source.server));
     final details = <OpenChallengeDetail>[];
     for (final doc in snap.docs) {
       final detail = OpenChallengeDetail.parse(doc.id, doc.data());

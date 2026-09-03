@@ -214,20 +214,37 @@ class TodayHubSection extends HookConsumerWidget {
       final communityOn =
           ref.watch(communityTabRemoteEnabledProvider).asData?.value ?? false;
       if (communityOn) {
-        final challenges =
-            ref.watch(openChallengesListProvider).asData?.value ?? const [];
-        final challenge = challenges.where((c) => c.myScore == null).firstOrNull;
-        if (challenge != null) {
-          final subject = openChallengeSubjectTitle(challenge.subject);
-          final top = challenge.topScore;
-          final tries = challenge.attemptCount;
+        final untried =
+            ref.watch(homeOpenChallengesProvider).asData?.value ?? const [];
+        // The list is cached for the session, so a challenge can hit its 24h
+        // expiry while the app stays open. Re-check at render, not at fetch.
+        final now = DateTime.now();
+        final live = [
+          for (final c in untried)
+            if (c.liveUntil == null || c.liveUntil!.isAfter(now)) c,
+        ];
+        if (live.isNotEmpty) {
+          final challenge = live.first;
+          final poster = _challengerFirstName(challenge.postedByName);
+          // The subject rides in the subtitle, which gets two lines — so the
+          // part users actually choose on is never the part that ellipsizes.
+          final mixed = challenge.subject.trim().toLowerCase() == 'misc';
+          final where = mixed
+              ? 'across mixed subjects'
+              : 'in ${openChallengeSubjectTitle(challenge.subject)}';
+          // 'their' only refers to someone when the title names them.
+          final whose = poster == null ? 'the top' : 'their';
+          final goal = 'Beat $whose score of ${challenge.topScore}/10 $where';
+          final others = live.length - 1;
           rows.add(
             _TodayListRowData(
               icon: Icons.emoji_events_outlined,
               accent: AppColors.primary,
-              title: 'Open challenge · $subject',
-              subtitle:
-                  'Beat $top/10 · $tries ${tries == 1 ? 'try' : 'tries'} · 10 Q',
+              title: poster == null
+                  ? 'Open challenge'
+                  : 'Open challenge by $poster',
+              subtitle: others > 0 ? '$goal · +$others live' : goal,
+              subtitleMaxLines: 2,
               done: false,
               locked: false,
               showLive: true,
@@ -235,7 +252,11 @@ class TodayHubSection extends HookConsumerWidget {
                 unawaited(
                   maybeLogPostDemoExplore(ref, surface: 'open_challenge'),
                 );
-                context.push('/community/open-challenges/${challenge.id}');
+                // Land on the list either way so the rest stay discoverable;
+                // the featured one is marked and scrolled to on arrival.
+                context.go(
+                  '/community?tab=open_challenge&highlight=${challenge.id}',
+                );
               },
             ),
           );
@@ -546,6 +567,18 @@ class _TodayListRow extends StatelessWidget {
 }
 
 // ── TODAY list helpers ────────────────────────────────────────────────────────
+
+/// First name of an open-challenge poster, or null when there is nothing worth
+/// naming. The repository falls back to a generic 'Warrior' for challenges with
+/// no creator profile, which reads as a bug rather than a person. Past ten
+/// characters the 'Open challenge by …' title outgrows the one line it gets,
+/// so a long name is dropped rather than shown clipped.
+String? _challengerFirstName(String postedByName) {
+  final trimmed = postedByName.trim();
+  if (trimmed.isEmpty || trimmed.toLowerCase() == 'warrior') return null;
+  final first = trimmed.split(RegExp(r'\s+')).first;
+  return first.length > 10 ? null : first;
+}
 
 _TodayListRowData _caShotsListRow({
   required bool showNew,

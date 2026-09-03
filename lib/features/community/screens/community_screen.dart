@@ -37,10 +37,17 @@ export '../widgets/community_user_profile_sheet.dart'
     show showCommunityUserProfileSheet;
 
 class CommunityScreen extends HookConsumerWidget {
-  const CommunityScreen({super.key, this.initialTabIndex = 0});
+  const CommunityScreen({
+    super.key,
+    this.initialTabIndex = 0,
+    this.highlightOpenChallengeId,
+  });
 
   /// 0 = Recent online, 1 = Open challenge, 2 = QOTD.
   final int initialTabIndex;
+
+  /// Challenge to mark and scroll to, set when Home links into this tab.
+  final String? highlightOpenChallengeId;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -142,7 +149,7 @@ class CommunityScreen extends HookConsumerWidget {
                 controller: tabController,
                 children: [
                   _RecentTab(scheme: scheme),
-                  const _OpenChallengesTab(),
+                  _OpenChallengesTab(highlightId: highlightOpenChallengeId),
                   const CommunityQotdTab(),
                 ],
               ),
@@ -155,7 +162,9 @@ class CommunityScreen extends HookConsumerWidget {
 }
 
 class _OpenChallengesTab extends ConsumerWidget {
-  const _OpenChallengesTab();
+  const _OpenChallengesTab({this.highlightId});
+
+  final String? highlightId;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -166,7 +175,7 @@ class _OpenChallengesTab extends ConsumerWidget {
       child: SingleChildScrollView(
         key: const PageStorageKey<String>('community_open_challenges_scroll'),
         physics: const AlwaysScrollableScrollPhysics(),
-        child: const OpenChallengeCommunitySection(),
+        child: OpenChallengeCommunitySection(highlightId: highlightId),
       ),
     );
   }

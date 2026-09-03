@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
@@ -16,8 +19,13 @@ import '../open_challenge/open_challenge_create_availability.dart';
 import '../providers/open_challenge_providers.dart';
 import 'admin_bot_label.dart';
 
-class OpenChallengeCommunitySection extends ConsumerWidget {
-  const OpenChallengeCommunitySection({super.key});
+class OpenChallengeCommunitySection extends HookConsumerWidget {
+  const OpenChallengeCommunitySection({super.key, this.highlightId});
+
+  /// Challenge Home advertised. This list is ordered newest-first while Home
+  /// ranks by how contested a challenge is, so the one they tapped can sit well
+  /// down the page — mark it and bring it into view.
+  final String? highlightId;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -30,6 +38,30 @@ class OpenChallengeCommunitySection extends ConsumerWidget {
         ?.toLowerCase();
     final async = ref.watch(openChallengesListProvider);
     final createAvailAsync = ref.watch(openChallengeCreateAvailabilityProvider);
+
+    final highlightKey = useMemoized(() => GlobalKey(), [highlightId]);
+    final scrolledFor = useRef<String?>(null);
+    // Null when the challenge has expired or fell outside this list.
+    final highlighted = highlightId != null &&
+        (async.asData?.value.any((m) => m.id == highlightId) ?? false);
+
+    useEffect(() {
+      if (!highlighted || scrolledFor.value == highlightId) return null;
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        final target = highlightKey.currentContext;
+        if (target == null) return;
+        scrolledFor.value = highlightId;
+        unawaited(
+          Scrollable.ensureVisible(
+            target,
+            alignment: 0.1,
+            duration: const Duration(milliseconds: 350),
+            curve: Curves.easeOutCubic,
+          ),
+        );
+      });
+      return null;
+    }, [highlighted, highlightId]);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -196,7 +228,12 @@ class OpenChallengeCommunitySection extends ConsumerWidget {
                     padding: const EdgeInsets.symmetric(
                       horizontal: AppSpacing.lg,
                     ),
-                    child: _ChallengeTile(model: m, viewerEmail: viewerEmail),
+                    child: _ChallengeTile(
+                      key: m.id == highlightId ? highlightKey : null,
+                      model: m,
+                      viewerEmail: viewerEmail,
+                      highlighted: m.id == highlightId,
+                    ),
                   ),
                   const SizedBox(height: AppSpacing.sm),
                 ],
@@ -225,10 +262,18 @@ String _friendlyTimeAgo(DateTime? posted) {
 }
 
 class _ChallengeTile extends StatelessWidget {
-  const _ChallengeTile({required this.model, required this.viewerEmail});
+  const _ChallengeTile({
+    super.key,
+    required this.model,
+    required this.viewerEmail,
+    this.highlighted = false,
+  });
 
   final OpenChallengeListTileModel model;
   final String? viewerEmail;
+
+  /// The challenge the user tapped on Home.
+  final bool highlighted;
 
   @override
   Widget build(BuildContext context) {
@@ -243,10 +288,15 @@ class _ChallengeTile extends StatelessWidget {
     final accentEnd = isDark ? AppColors.primaryDark : AppColors.primary;
 
     return Material(
-      elevation: 0.5,
+      elevation: highlighted ? 3 : 0.5,
       shadowColor: scheme.shadow.withValues(alpha: 0.35),
       color: scheme.surface,
-      borderRadius: BorderRadius.circular(AppRadius.lg),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(AppRadius.lg),
+        side: highlighted
+            ? const BorderSide(color: AppColors.primary, width: 2)
+            : BorderSide.none,
+      ),
       child: InkWell(
         borderRadius: BorderRadius.circular(AppRadius.lg),
         onTap: () => context.push('/community/open-challenges/${model.id}'),
@@ -343,6 +393,15 @@ class _ChallengeTile extends StatelessWidget {
                                 spacing: AppSpacing.xs,
                                 runSpacing: AppSpacing.xs,
                                 children: [
+                                  if (highlighted)
+                                    _Pill(
+                                      icon: Icons.push_pin_rounded,
+                                      label: 'Picked for you',
+                                      background: AppColors.primary.withValues(
+                                        alpha: 0.15,
+                                      ),
+                                      foreground: AppColors.primary,
+                                    ),
                                   _Pill(
                                     icon: Icons.emoji_events_rounded,
                                     label: 'Top ${model.topScore}/10',

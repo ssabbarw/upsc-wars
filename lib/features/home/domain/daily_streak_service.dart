@@ -5,14 +5,18 @@ import '../../daily_ca/domain/daily_ca_schedule.dart';
 
 /// The one daily streak, fed by the first MCQ of the day (test or CA Shot).
 ///
-/// Day boundary is IST. One missed day is grace (streak still shows); a second
-/// consecutive miss zeroes it. Reuses `currentStreak` / `lastActiveDate` so
-/// older streaks carry over.
+/// Day boundary is IST. One missed day is forgiven, but only once per
+/// [_graceWindowDays] — otherwise alternate-day practice would hold a "daily"
+/// streak forever. Reuses `currentStreak` / `lastActiveDate` so older streaks
+/// carry over.
 abstract final class DailyStreakService {
   DailyStreakService._();
 
   /// Full-day history kept on device (two weeks is plenty for "this week").
   static const _maxFullDayDates = 14;
+
+  /// A skipped day can only be forgiven once in this rolling window.
+  static const graceWindowDays = 7;
 
   /// Milestones worth celebrating once when first reached.
   static const celebrationMilestones = <int>[3, 7, 14, 30];
@@ -28,6 +32,26 @@ abstract final class DailyStreakService {
 
   static String _dayBeforeYesterdayKey(DateTime today) =>
       _key(today.subtract(const Duration(days: 2)));
+
+  /// Whether a skipped day can still be forgiven as of [today].
+  static bool graceAvailable({required PrefsService prefs, DateTime? now}) =>
+      _graceAvailable(prefs, _clock(now));
+
+  static bool _graceAvailable(PrefsService prefs, DateTime today) {
+    final window = <String>{
+      for (var i = 0; i < graceWindowDays; i++)
+        _key(today.subtract(Duration(days: i))),
+    };
+    return !prefs.streakGraceUsedDates.any(window.contains);
+  }
+
+  static void _spendGrace(PrefsService prefs, DateTime skippedDay) {
+    final next = [...prefs.streakGraceUsedDates, _key(skippedDay)];
+    if (next.length > _maxFullDayDates) {
+      next.removeRange(0, next.length - _maxFullDayDates);
+    }
+    prefs.streakGraceUsedDates = next;
+  }
 
   /// Records a closed ring for [now] and returns the resulting streak.
   ///
@@ -45,10 +69,16 @@ abstract final class DailyStreakService {
     }
 
     final last = prefs.lastActiveDate;
-    final next = (last == _yesterdayKey(today) ||
-            last == _dayBeforeYesterdayKey(today))
+    final ranYesterday = last == _yesterdayKey(today);
+    final usesGrace = !ranYesterday &&
+        last == _dayBeforeYesterdayKey(today) &&
+        _graceAvailable(prefs, today);
+    final next = (ranYesterday || usesGrace)
         ? (prefs.currentStreak == 0 ? 1 : prefs.currentStreak + 1)
         : 1;
+    if (usesGrace) {
+      _spendGrace(prefs, today.subtract(const Duration(days: 1)));
+    }
 
     prefs.currentStreak = next;
     prefs.lastActiveDate = todayKey;
@@ -65,9 +95,11 @@ abstract final class DailyStreakService {
     final today = _clock(now);
     final last = prefs.lastActiveDate;
     if (last == null || last.isEmpty) return 0;
-    if (last == _key(today) ||
-        last == _yesterdayKey(today) ||
-        last == _dayBeforeYesterdayKey(today)) {
+    if (last == _key(today) || last == _yesterdayKey(today)) {
+      return prefs.currentStreak;
+    }
+    if (last == _dayBeforeYesterdayKey(today) &&
+        _graceAvailable(prefs, today)) {
       return prefs.currentStreak;
     }
     return 0;
@@ -90,8 +122,12 @@ abstract final class DailyStreakService {
     final today = _clock(now);
     final last = prefs.lastActiveDate;
     if (last == null || last.isEmpty) return null;
-    if (last == _key(today)) return 2;
-    if (last == _yesterdayKey(today)) return 1;
+    // With a grace still banked the streak survives one more idle day than it
+    // otherwise would, so the last-chance nudge slides a day later.
+    final grace = _graceAvailable(prefs, today);
+    if (last == _key(today)) return grace ? 2 : 1;
+    if (last == _yesterdayKey(today)) return grace ? 1 : 0;
+    // Only reachable while grace is available — visibleStreak zeroes otherwise.
     if (last == _dayBeforeYesterdayKey(today)) return 0;
     return null;
   }
