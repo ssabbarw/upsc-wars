@@ -49,20 +49,27 @@ class DailyCaResultsScreen extends HookConsumerWidget {
           dateId.value = iso;
           questionCount.value = session.questions.length;
 
-          final answers = <String, String>{};
-          for (final q in session.questions) {
-            final sel = q.selectedOption?.trim();
-            if (sel != null && sel.isNotEmpty) {
-              answers[q.uuid] = sel.toLowerCase();
-            }
-          }
-          final limit = session.timeLimitSecs ?? 0;
-          final remaining = session.savedExamRemainingSecs ?? 0;
-          final elapsedMs =
-              ((limit - remaining).clamp(0, limit > 0 ? limit : 0) * 1000);
-
           final uid = FirebaseAuth.instance.currentUser?.uid;
-          if (!ranksOn || uid == null) {
+          final displayName =
+              FirebaseAuth.instance.currentUser?.displayName?.trim();
+
+          DailyCaSubmission submissionFrom(DailyCaSubmitResult result) {
+            return DailyCaSubmission(
+              uid: uid!,
+              mode: result.mode ?? 'live',
+              score: result.score ?? 0,
+              correct: result.correct ?? 0,
+              wrong: result.wrong ?? 0,
+              unanswered: result.unanswered ?? 0,
+              elapsedMs: result.elapsedMs ?? 0,
+              air: result.air,
+              percentile: result.percentile,
+              participantCount: result.participantCount,
+              displayName: displayName,
+            );
+          }
+
+          void scoreLocally() {
             var correct = 0;
             var wrong = 0;
             for (final q in session.questions) {
@@ -78,15 +85,40 @@ class DailyCaResultsScreen extends HookConsumerWidget {
                 correct * DailyCaScoring.pointsCorrect -
                 wrong * DailyCaScoring.pointsWrong;
             syncState.value = _SyncState.ready;
+          }
+
+          if (!ranksOn || uid == null) {
+            scoreLocally();
             return;
           }
 
           const cloud = DailyCaCloudService();
+          // Already submitted (e.g. Review from hub) — load rank, do not re-submit.
+          final existing = await cloud.myRank(dateId: iso);
+          if (cancelled) return;
+          if (existing.ok) {
+            submission.value = submissionFrom(existing);
+            syncState.value = _SyncState.ready;
+            return;
+          }
+
+          final answers = <String, String>{};
+          for (final q in session.questions) {
+            final sel = q.selectedOption?.trim();
+            if (sel != null && sel.isNotEmpty) {
+              answers[q.uuid] = sel.toLowerCase();
+            }
+          }
+          final limit = session.timeLimitSecs ?? 0;
+          final remaining = session.savedExamRemainingSecs ?? 0;
+          final elapsedMs =
+              ((limit - remaining).clamp(0, limit > 0 ? limit : 0) * 1000);
+
           final result = await cloud.submit(
             dateId: iso,
             answers: answers,
             elapsedMs: elapsedMs,
-            displayName: FirebaseAuth.instance.currentUser?.displayName?.trim(),
+            displayName: displayName,
           );
           if (cancelled) return;
           if (!result.ok) {
@@ -95,19 +127,7 @@ class DailyCaResultsScreen extends HookConsumerWidget {
             return;
           }
 
-          submission.value = DailyCaSubmission(
-            uid: uid,
-            mode: result.mode ?? 'live',
-            score: result.score ?? 0,
-            correct: result.correct ?? 0,
-            wrong: result.wrong ?? 0,
-            unanswered: result.unanswered ?? 0,
-            elapsedMs: result.elapsedMs ?? elapsedMs,
-            air: result.air,
-            percentile: result.percentile,
-            participantCount: result.participantCount,
-            displayName: FirebaseAuth.instance.currentUser?.displayName?.trim(),
-          );
+          submission.value = submissionFrom(result);
           syncState.value = _SyncState.ready;
         } on Object catch (e) {
           if (cancelled) return;
@@ -136,7 +156,7 @@ class DailyCaResultsScreen extends HookConsumerWidget {
               children: [
                 CircularProgressIndicator(),
                 SizedBox(height: 16),
-                Text('Submitting your answers…'),
+                Text('Loading your results…'),
               ],
             ),
           ),

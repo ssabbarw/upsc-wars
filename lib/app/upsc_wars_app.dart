@@ -108,6 +108,12 @@ class _RootMaterialApp extends HookConsumerWidget {
       }
 
       bindGlobalAnalytics(dispatch);
+      // Ahead of the messaging/deep-link chain below: Home reads this counter
+      // shortly after mount to decide whether to ask for notifications.
+      unawaited(() async {
+        final p = await ref.read(prefsServiceProvider.future);
+        p.appOpenCount = p.appOpenCount + 1;
+      }());
       unawaited(() async {
         final router = ref.read(appRouterProvider);
         // Resolve cold-start push / deep-link attribution before app_opened.

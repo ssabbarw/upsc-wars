@@ -13,6 +13,14 @@ import '../debug/upsc_wars_trace.dart';
 import '../providers/prefs_provider.dart';
 import '../../features/chat/chat_fcm.dart';
 
+/// One pre-scheduled Daily Drill reminder in the rolling window.
+typedef ScheduledDrillReminder = ({
+  int id,
+  DateTime fireAtLocal,
+  String title,
+  String body,
+});
+
 /// Single [FlutterLocalNotificationsPlugin] for prelims + foreground FCM targets.
 class AppLocalNotificationsService {
   AppLocalNotificationsService._();
@@ -95,8 +103,23 @@ class AppLocalNotificationsService {
   static const noTestReminderNotificationId = 8001;
   static const noTestReminderPayload = 'no_test_reminder';
 
+  /// Legacy single-slot id, cancelled in favour of the rolling window below.
   static const dailyPracticeReminderNotificationId = 8002;
   static const dailyPracticeReminderPayload = 'daily_practice_reminder';
+
+  /// One id per day of the pending drill-reminder window.
+  ///
+  /// Only an app open re-arms these, so a single pending reminder goes quiet
+  /// after one skipped day — precisely when a lapsing user still needs it.
+  static const dailyPracticeReminderWindowIds = <int>[
+    8010,
+    8011,
+    8012,
+    8013,
+    8014,
+    8015,
+    8016,
+  ];
 
   static const dailyCaPaperReminderNotificationId = 8003;
   static const dailyCaPaperReminderPayload = 'daily_ca_paper_reminder';
@@ -596,26 +619,35 @@ class AppLocalNotificationsService {
     );
   }
 
-  static Future<void> scheduleDailyPracticeReminder({
-    required DateTime fireAtLocal,
-  }) async {
+  /// Replaces the pending drill window with [reminders]; unused slots are cleared.
+  static Future<void> scheduleDailyPracticeReminders(
+    List<ScheduledDrillReminder> reminders,
+  ) async {
     if (kIsWeb) return;
     await ensureInitialized();
     await _ensureNoTestReminderChannel();
+    await _plugin.cancel(id: dailyPracticeReminderNotificationId);
 
-    final scheduledDate = tz.TZDateTime.from(fireAtLocal, tz.local);
-    try {
-      await _plugin.zonedSchedule(
-        id: dailyPracticeReminderNotificationId,
-        title: "Today's Daily Drill",
-        body: '10 static MCQs. Keep the streak going.',
-        scheduledDate: scheduledDate,
-        notificationDetails: _dailyPracticeReminderDetails(),
-        androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
-        payload: dailyPracticeReminderPayload,
-      );
-    } catch (_) {
-      // Best-effort scheduling.
+    final scheduledIds = {for (final r in reminders) r.id};
+    for (final id in dailyPracticeReminderWindowIds) {
+      if (scheduledIds.contains(id)) continue;
+      await _plugin.cancel(id: id);
+    }
+
+    for (final reminder in reminders) {
+      try {
+        await _plugin.zonedSchedule(
+          id: reminder.id,
+          title: reminder.title,
+          body: reminder.body,
+          scheduledDate: tz.TZDateTime.from(reminder.fireAtLocal, tz.local),
+          notificationDetails: _dailyPracticeReminderDetails(),
+          androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
+          payload: dailyPracticeReminderPayload,
+        );
+      } catch (_) {
+        // Best-effort scheduling.
+      }
     }
   }
 
@@ -623,6 +655,9 @@ class AppLocalNotificationsService {
     if (kIsWeb) return;
     await ensureInitialized();
     await _plugin.cancel(id: dailyPracticeReminderNotificationId);
+    for (final id in dailyPracticeReminderWindowIds) {
+      await _plugin.cancel(id: id);
+    }
   }
 
   /// The one morning push: the paper quiz, plus tonight's War topics when known.

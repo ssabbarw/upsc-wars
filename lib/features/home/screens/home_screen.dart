@@ -109,6 +109,11 @@ class HomeScreen extends HookConsumerWidget {
           context: context,
         );
         if (showedPush || !context.mounted) return;
+        final showedSecondOpenPush =
+            await BattleMessagingService.maybePromptOnSecondOpenHome(
+          context: context,
+        );
+        if (showedSecondOpenPush || !context.mounted) return;
         unawaited(maybeShowDailyRitualsIntro(context: context, ref: ref));
       }());
       return null;

@@ -833,6 +833,32 @@ class BattleMessagingService {
     return true;
   }
 
+  /// From the second app open onwards, prompt anyone the post-first-test path
+  /// never reached — otherwise a user who leaves before finishing the demo is
+  /// unreachable on push *and* on local reminders, which share one permission.
+  ///
+  /// Runs after [maybePromptAfterFirstTestHome] so the contextual copy wins
+  /// when both apply. Frequency is still capped by [NotificationPromptPolicy].
+  static Future<bool> maybePromptOnSecondOpenHome({
+    required BuildContext context,
+  }) async {
+    if (kIsWeb) return false;
+    await Future<void>.delayed(NotificationPromptPolicy.screenSettleDelay);
+    if (!context.mounted) return false;
+    if (!TickerMode.valuesOf(context).enabled) return false;
+    final path = GoRouter.of(context).routeInformationProvider.value.uri.path;
+    if (path != '/') return false;
+    final prefs = PrefsService(await SharedPreferences.getInstance());
+    if (prefs.appOpenCount < 2) return false;
+    if (await notificationsAreEnabled()) return false;
+    await requestPushAuthorizationIfNotDetermined(
+      source: 'second_open',
+      surface: NotificationPromptSurface.generic,
+      kind: NotificationPromptKind.automatic,
+    );
+    return true;
+  }
+
   static bool _locationMatchesSurface(
     BuildContext context,
     NotificationPromptSurface surface,

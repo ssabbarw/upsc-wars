@@ -3,6 +3,7 @@ import '../database/user_db.dart';
 import '../providers/prefs_provider.dart';
 import '../../features/daily_ca/domain/daily_ca_schedule.dart';
 import '../../features/daily_war/domain/daily_war_schedule.dart';
+import '../../features/home/domain/daily_streak_service.dart';
 import '../../features/home/domain/today_hero.dart';
 import 'daily_ca_reminder_service.dart';
 import 'daily_practice_reminder_service.dart';
@@ -41,6 +42,8 @@ class LocalDailyRemindersSync {
         ActivationMilestones.firstTestDone,
       ),
       practiceCompletedToday: practiceCompletedToday,
+      streak: DailyStreakService.visibleStreak(prefs: prefs),
+      streakClosedToday: DailyStreakService.closedToday(prefs: prefs),
     );
   }
 

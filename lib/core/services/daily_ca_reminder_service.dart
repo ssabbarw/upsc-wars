@@ -2,7 +2,6 @@ import 'package:flutter/foundation.dart';
 
 import '../../features/daily_ca/domain/daily_ca_schedule.dart';
 import 'app_local_notifications_service.dart';
-import 'daily_practice_reminder_service.dart';
 
 /// Morning "paper quiz is live" used to be a local one-shot. That push is now
 /// an FCM topic broadcast (`notifyDailyCaPaper` at 7 AM IST) so guests on the
@@ -13,12 +12,21 @@ class DailyCaReminderService {
   /// Local hour for the reminder — an hour after the quiz opens at 6 AM IST.
   static const reminderHourLocal = 7;
 
+  /// Next [reminderHourLocal]:00 on or after [reference], rolling to tomorrow.
+  static DateTime _nextHourSlot(DateTime reference) {
+    final todaySlot = DateTime(
+      reference.year,
+      reference.month,
+      reference.day,
+      reminderHourLocal,
+    );
+    if (todaySlot.isAfter(reference)) return todaySlot;
+    return todaySlot.add(const Duration(days: 1));
+  }
+
   @visibleForTesting
   static DateTime nextReminderLocalTime({required DateTime reference}) {
-    var slot = DailyPracticeReminderService.nextReminderLocalTime(
-      reference: reference,
-      hour: reminderHourLocal,
-    );
+    var slot = _nextHourSlot(reference);
     // A morning only carries a new paper if the day before was a content day.
     for (var i = 0; i < 8; i++) {
       if (DailyCaSchedule.isTestDay(slot.subtract(const Duration(days: 1)))) {

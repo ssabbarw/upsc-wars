@@ -6,37 +6,100 @@ import 'package:timezone/timezone.dart' as tz;
 import '../providers/prefs_provider.dart';
 import 'app_local_notifications_service.dart';
 
-/// Schedules one local reminder per day for the home Daily Drill.
+/// Schedules a rolling week of local reminders for the home Daily Drill.
+///
+/// Nothing but an app open re-arms a local schedule, so keeping only the next
+/// reminder pending goes silent after one skipped day. Holding a week of slots
+/// keeps a lapsing user reachable without a server round trip.
 class DailyPracticeReminderService {
   DailyPracticeReminderService._();
 
-  /// Next local [hour]:00 on or after [reference], rolling to tomorrow when needed.
-  static DateTime nextReminderLocalTime({
-    required DateTime reference,
-    required int hour,
+  /// How many days of reminders stay pending at once.
+  static const windowDays = 7;
+
+  /// Copy for a reminder firing [dayOffset] days after the window was built.
+  ///
+  /// Opening the app rebuilds the window, so [dayOffset] doubles as days since
+  /// the last open and only an absent user reaches the later slots.
+  /// [atRiskOffset] is the one slot where the streak genuinely expires that
+  /// night; past it the streak has already lapsed and must not be claimed.
+  @visibleForTesting
+  static ({String title, String body}) copyForDayOffset({
+    required int dayOffset,
+    required int streak,
+    required int atRiskOffset,
   }) {
-    final day = DateTime(reference.year, reference.month, reference.day);
-    final todaySlot = day.copyWith(
-      hour: hour.clamp(0, 23),
-      minute: 0,
-      second: 0,
-      millisecond: 0,
-      microsecond: 0,
+    const drill = (
+      title: "Today's Daily Drill",
+      body: '10 static MCQs. Keep the streak going.',
     );
-    if (todaySlot.isAfter(reference)) return todaySlot;
-    return todaySlot.add(const Duration(days: 1));
+    if (streak >= 2 && dayOffset == atRiskOffset) {
+      return (
+        title: 'Your $streak-day streak ends tonight',
+        body: '10 static MCQs is all it takes to keep it.',
+      );
+    }
+    if (dayOffset <= 1) return drill;
+    if (dayOffset <= 3) {
+      return (
+        title: 'Pick your drill back up',
+        body: '$dayOffset days off. 10 static MCQs puts today back on the board.',
+      );
+    }
+    return (
+      title: 'Your weak topics are still waiting',
+      body: '10 MCQs from the ones you keep getting wrong. Five minutes.',
+    );
   }
 
-  /// Fire today when the Daily Drill is still open. Independent of CA / queue.
+  /// Pending reminders for the next [windowDays] days, soonest first.
+  ///
+  /// Slots already past [now] are dropped, as is today's once the drill is done.
   @visibleForTesting
-  static bool shouldFireToday({required bool practiceCompletedToday}) {
-    return !practiceCompletedToday;
+  static List<ScheduledDrillReminder> buildWindow({
+    required DateTime now,
+    required int hour,
+    required bool practiceCompletedToday,
+    required int streak,
+    required bool streakClosedToday,
+  }) {
+    final ids = AppLocalNotificationsService.dailyPracticeReminderWindowIds;
+    // A streak survives one idle day, so it expires tonight when today is still
+    // open and tomorrow night when today already counted.
+    final atRiskOffset = streakClosedToday ? 1 : 0;
+
+    final reminders = <ScheduledDrillReminder>[];
+    for (var offset = 0; offset < windowDays; offset++) {
+      if (reminders.length >= ids.length) break;
+      final fireAt = DateTime(
+        now.year,
+        now.month,
+        now.day + offset,
+        hour.clamp(0, 23),
+      );
+      if (!fireAt.isAfter(now)) continue;
+      if (offset == 0 && practiceCompletedToday) continue;
+      final copy = copyForDayOffset(
+        dayOffset: offset,
+        streak: streak,
+        atRiskOffset: atRiskOffset,
+      );
+      reminders.add((
+        id: ids[reminders.length],
+        fireAtLocal: fireAt,
+        title: copy.title,
+        body: copy.body,
+      ));
+    }
+    return reminders;
   }
 
   static Future<void> sync({
     required PrefsService prefs,
     required bool eligible,
     required bool practiceCompletedToday,
+    required int streak,
+    required bool streakClosedToday,
   }) async {
     if (kIsWeb) return;
 
@@ -47,19 +110,14 @@ class DailyPracticeReminderService {
 
     await ensureTimezonesReady();
 
-    final hour = prefs.dailyPracticeReminderHour;
-    final fireToday = shouldFireToday(
-      practiceCompletedToday: practiceCompletedToday,
-    );
-    final fireAt = fireToday
-        ? nextReminderLocalTime(reference: DateTime.now(), hour: hour)
-        : nextReminderLocalTime(
-            reference: DateTime.now().add(const Duration(days: 1)),
-            hour: hour,
-          );
-
-    await AppLocalNotificationsService.scheduleDailyPracticeReminder(
-      fireAtLocal: fireAt,
+    await AppLocalNotificationsService.scheduleDailyPracticeReminders(
+      buildWindow(
+        now: DateTime.now(),
+        hour: prefs.dailyPracticeReminderHour,
+        practiceCompletedToday: practiceCompletedToday,
+        streak: streak,
+        streakClosedToday: streakClosedToday,
+      ),
     );
   }
 
