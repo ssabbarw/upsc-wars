@@ -221,9 +221,17 @@ class OpenChallengeCommunitySection extends HookConsumerWidget {
                 ),
               );
             }
+            // Home promised this one, so it leads — landing on a list where
+            // the promised card sits mid-page reads as a broken link.
+            final ordered = highlightId == null
+                ? items
+                : [
+                    ...items.where((m) => m.id == highlightId),
+                    ...items.where((m) => m.id != highlightId),
+                  ];
             return Column(
               children: [
-                for (final m in items) ...[
+                for (final m in ordered) ...[
                   Padding(
                     padding: const EdgeInsets.symmetric(
                       horizontal: AppSpacing.lg,
@@ -394,13 +402,10 @@ class _ChallengeTile extends StatelessWidget {
                                 runSpacing: AppSpacing.xs,
                                 children: [
                                   if (highlighted)
-                                    _Pill(
-                                      icon: Icons.push_pin_rounded,
+                                    const _GlowPill(
+                                      icon: Icons.auto_awesome_rounded,
                                       label: 'Picked for you',
-                                      background: AppColors.primary.withValues(
-                                        alpha: 0.15,
-                                      ),
-                                      foreground: AppColors.primary,
+                                      color: AppColors.primary,
                                     ),
                                   _Pill(
                                     icon: Icons.emoji_events_rounded,
@@ -489,6 +494,98 @@ class _MetaRow extends StatelessWidget {
         ),
         ?trailing,
       ],
+    );
+  }
+}
+
+/// Pulsing pill for the challenge Home sent the user here to find. Mirrors the
+/// LIVE badge on Home so the glow reads as the same language.
+class _GlowPill extends StatefulWidget {
+  const _GlowPill({
+    required this.icon,
+    required this.label,
+    required this.color,
+  });
+
+  final IconData icon;
+  final String label;
+  final Color color;
+
+  @override
+  State<_GlowPill> createState() => _GlowPillState();
+}
+
+class _GlowPillState extends State<_GlowPill>
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _pulse;
+
+  @override
+  void initState() {
+    super.initState();
+    _pulse = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 1600),
+    );
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final reduceMotion = MediaQuery.disableAnimationsOf(context);
+    if (reduceMotion) {
+      _pulse.stop();
+      _pulse.value = 0.55;
+    } else if (!_pulse.isAnimating) {
+      _pulse.repeat(reverse: true);
+    }
+  }
+
+  @override
+  void dispose() {
+    _pulse.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final reduceMotion = MediaQuery.disableAnimationsOf(context);
+    return AnimatedBuilder(
+      animation: _pulse,
+      builder: (context, child) {
+        final t = reduceMotion ? 0.55 : _pulse.value;
+        return Container(
+          padding: const EdgeInsets.symmetric(
+            horizontal: AppSpacing.sm,
+            vertical: AppSpacing.xs,
+          ),
+          decoration: BoxDecoration(
+            color: widget.color.withValues(alpha: 0.12 + (t * 0.13)),
+            borderRadius: BorderRadius.circular(999),
+            boxShadow: [
+              BoxShadow(
+                color: widget.color.withValues(alpha: 0.16 + (t * 0.34)),
+                blurRadius: 5 + (t * 6),
+                spreadRadius: t * 0.8,
+              ),
+            ],
+          ),
+          child: child,
+        );
+      },
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(widget.icon, size: 14, color: widget.color),
+          const SizedBox(width: 4),
+          Text(
+            widget.label,
+            style: AppTextStyles.caption().copyWith(
+              color: widget.color,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
