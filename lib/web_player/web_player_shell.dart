@@ -25,6 +25,7 @@ import 'package:upsc_wars/web_player/web_shell_landing_page.dart';
 import 'package:upsc_wars/web_player/web_player_welcome_sheet.dart';
 import 'package:upsc_wars/web_player/web_session_chrome.dart';
 import 'package:upsc_wars/web_player/web_session_result_builder.dart';
+import 'package:upsc_wars/core/deep_link/shared_test_intro_sheet.dart';
 import 'package:upsc_wars/shared/extensions/context_extensions.dart';
 import 'package:upsc_wars/shared/widgets/question_table_view.dart';
 import 'package:upsc_wars/core/constants/app_constants.dart';
@@ -288,19 +289,6 @@ class _WebPlayerShellState extends State<WebPlayerShell>
     if (_shareId == null) return;
     final p = await SharedPreferences.getInstance();
     await p.remove(_prefsKey());
-  }
-
-  String _capitalizeDisplayName(String raw) {
-    final s = raw.trim();
-    if (s.isEmpty) return '';
-    final parts = s.split(RegExp(r'\s+')).where((e) => e.isNotEmpty);
-    return parts
-        .map((w) {
-          final lower = w.toLowerCase();
-          if (lower.length == 1) return lower.toUpperCase();
-          return '${lower[0].toUpperCase()}${lower.substring(1)}';
-        })
-        .join(' ');
   }
 
   SessionResult _buildSessionResult({required DateTime completedAt}) {
@@ -667,252 +655,19 @@ class _WebPlayerShellState extends State<WebPlayerShell>
         leaderboard = const [];
       }
     }
-    final controller = TextEditingController(text: _participantName);
-    var validationError = '';
-    var accepted = false;
-    await showModalBottomSheet<void>(
+    if (!mounted) return false;
+    final outcome = await showSharedTestIntroSheet(
       context: context,
-      isScrollControlled: true,
-      backgroundColor: Colors.transparent,
-      isDismissible: false,
-      enableDrag: false,
-      builder: (ctx) {
-        final scheme = Theme.of(ctx).colorScheme;
-        final isDark = Theme.of(ctx).brightness == Brightness.dark;
-        return StatefulBuilder(
-          builder: (ctx, setModalState) => AnimatedPadding(
-            duration: const Duration(milliseconds: 180),
-            curve: Curves.easeOut,
-            padding: EdgeInsets.only(
-              bottom: MediaQuery.viewInsetsOf(ctx).bottom,
-            ),
-            child: Padding(
-              padding: EdgeInsets.only(
-                left: AppSpacing.lg,
-                right: AppSpacing.lg,
-                bottom: MediaQuery.paddingOf(ctx).bottom + AppSpacing.lg,
-              ),
-              child: Container(
-                padding: const EdgeInsets.all(AppSpacing.lg),
-                decoration: BoxDecoration(
-                  color: isDark ? scheme.surfaceContainerHigh : scheme.surface,
-                  borderRadius: const BorderRadius.vertical(
-                    top: Radius.circular(20),
-                  ),
-                  border: Border.all(
-                    color: isDark
-                        ? AppColors.borderDark
-                        : AppColors.borderLight,
-                  ),
-                ),
-                child: SingleChildScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      Text(
-                        'Before you begin',
-                        style: AppTextStyles.h3().copyWith(
-                          color: scheme.onSurface,
-                        ),
-                      ),
-                      const SizedBox(height: AppSpacing.sm),
-                      Text(
-                        '$_sharedBy shared this test with you.',
-                        style: AppTextStyles.body().copyWith(
-                          color: scheme.onSurfaceVariant,
-                        ),
-                      ),
-                      const SizedBox(height: AppSpacing.md),
-                      TextField(
-                        controller: controller,
-                        textInputAction: TextInputAction.done,
-                        autofocus: controller.text.trim().isEmpty,
-                        decoration: InputDecoration(
-                          labelText: 'Your name',
-                          hintText: 'Enter your display name',
-                          errorText: validationError.isEmpty
-                              ? null
-                              : validationError,
-                        ),
-                        onSubmitted: (_) {
-                          final name = controller.text.trim();
-                          if (name.isEmpty) {
-                            setModalState(() {
-                              validationError =
-                                  "If you don't want to give your name, enter any random name";
-                            });
-                            return;
-                          }
-                          accepted = true;
-                          Navigator.pop(ctx);
-                        },
-                      ),
-                      const SizedBox(height: AppSpacing.md),
-                      Container(
-                        padding: const EdgeInsets.all(AppSpacing.md),
-                        decoration: BoxDecoration(
-                          color: AppColors.correct,
-                          borderRadius: BorderRadius.circular(AppRadius.md),
-                          border: Border.all(
-                            color: Colors.white.withValues(alpha: 0.14),
-                          ),
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              children: [
-                                Icon(
-                                  Icons.emoji_events_rounded,
-                                  size: 18,
-                                  color: Colors.white.withValues(alpha: 0.9),
-                                ),
-                                const SizedBox(width: AppSpacing.xs),
-                                Text(
-                                  'Leaderboard · Top 5',
-                                  style: AppTextStyles.label().copyWith(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w800,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            const SizedBox(height: AppSpacing.sm),
-                            if (leaderboard.isEmpty)
-                              Text(
-                                "Be the first to take this test.",
-                                style: AppTextStyles.bodySm().copyWith(
-                                  color: Colors.white.withValues(alpha: 0.82),
-                                ),
-                              )
-                            else
-                              for (
-                                var i = 0;
-                                i < leaderboard.length && i < 5;
-                                i++
-                              )
-                                Padding(
-                                  padding: const EdgeInsets.only(bottom: 6),
-                                  child: Row(
-                                    children: [
-                                      SizedBox(
-                                        width: 30,
-                                        child: Text(
-                                          '#${i + 1}',
-                                          style: AppTextStyles.caption()
-                                              .copyWith(
-                                                color: Colors.white.withValues(
-                                                  alpha: 0.72,
-                                                ),
-                                                fontWeight: FontWeight.w800,
-                                              ),
-                                        ),
-                                      ),
-                                      const SizedBox(width: AppSpacing.xs),
-                                      Expanded(
-                                        child: Text(
-                                          leaderboard[i].name,
-                                          maxLines: 1,
-                                          overflow: TextOverflow.ellipsis,
-                                          style: AppTextStyles.bodySm()
-                                              .copyWith(
-                                                color: Colors.white,
-                                                fontWeight: FontWeight.w700,
-                                              ),
-                                        ),
-                                      ),
-                                      const SizedBox(width: AppSpacing.sm),
-                                      Text(
-                                        '${leaderboard[i].score.toStringAsFixed(1)}%',
-                                        style: AppTextStyles.bodySm().copyWith(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.w800,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                          ],
-                        ),
-                      ),
-                      const SizedBox(height: AppSpacing.md),
-                      Container(
-                        padding: const EdgeInsets.all(AppSpacing.md),
-                        decoration: BoxDecoration(
-                          color: scheme.surfaceContainerLow,
-                          borderRadius: BorderRadius.circular(AppRadius.md),
-                          border: Border.all(
-                            color: isDark
-                                ? AppColors.borderDark
-                                : AppColors.borderLight,
-                            width: 0.6,
-                          ),
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'You are about to start a shared practice test.',
-                              style: AppTextStyles.bodySm().copyWith(
-                                color: scheme.onSurface,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                            const SizedBox(height: AppSpacing.xs),
-                            Text(
-                              _topic.isNotEmpty
-                                  ? 'Subject: $_subject · $_topic'
-                                  : 'Subject: $_subject',
-                              style: AppTextStyles.bodySm().copyWith(
-                                color: scheme.onSurfaceVariant,
-                              ),
-                            ),
-                            Text(
-                              'Questions: ${_questions.length}',
-                              style: AppTextStyles.bodySm().copyWith(
-                                color: scheme.onSurfaceVariant,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      const SizedBox(height: AppSpacing.lg),
-                      ElevatedButton(
-                        style: WebPlayerUiTokens.primaryCta(ctx),
-                        onPressed: () {
-                          final name = controller.text.trim();
-                          if (name.isEmpty) {
-                            setModalState(() {
-                              validationError =
-                                  "If you don't want to give your name, enter any random name";
-                            });
-                            return;
-                          }
-                          accepted = true;
-                          Navigator.pop(ctx);
-                        },
-                        child: const Text('Continue'),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ),
-        );
-      },
+      sharedBy: _sharedBy,
+      subject: _subject,
+      topic: _topic.isEmpty ? null : _topic,
+      questionCount: _questions.length,
+      leaderboard: leaderboard,
+      initialName: _participantName,
     );
-    if (!accepted) {
-      controller.dispose();
-      return false;
-    }
-    final name = controller.text.trim();
-    controller.dispose();
-    final formatted = _capitalizeDisplayName(name);
-    _participantName = formatted;
-    await _writeParticipantName(formatted);
+    if (!mounted || outcome == null) return false;
+    _participantName = outcome.participantName;
+    await _writeParticipantName(_participantName);
     return true;
   }
 

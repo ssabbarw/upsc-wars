@@ -1,11 +1,16 @@
+import 'dart:async';
+
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'package:upsc_wars/core/deep_link/share_link_kind.dart';
 import 'package:upsc_wars/core/deep_link/shared_session_firestore.dart';
+import 'package:upsc_wars/core/deep_link/shared_test_intro_sheet.dart';
 import 'package:upsc_wars/core/domain/entities/session_config.dart';
 import 'package:upsc_wars/core/providers/catalog_providers.dart';
+import 'package:upsc_wars/core/providers/prefs_provider.dart';
 import 'package:upsc_wars/core/theme/app_spacing.dart';
 import 'package:upsc_wars/core/theme/app_text_styles.dart';
 import 'package:upsc_wars/core/presentation/session_subject_label.dart';
@@ -88,6 +93,46 @@ class _SharedTestLaunchScreenState extends ConsumerState<SharedTestLaunchScreen>
       final sharedByRaw = (doc.sharedBy ?? '').trim();
       final sharedBy = sharedByRaw.isEmpty ? 'a friend' : sharedByRaw;
 
+      final prefs = await ref.read(prefsServiceProvider.future);
+      if (!mounted) return;
+
+      List<SharedLeaderboardEntry> leaderboard = const [];
+      try {
+        leaderboard = await SharedSessionFirestoreRepository()
+            .fetchTopLeaderboard(shareId: widget.shareId);
+      } catch (_) {
+        leaderboard = const [];
+      }
+      if (!mounted) return;
+
+      final user = FirebaseAuth.instance.currentUser;
+      final fromAuth = (user?.displayName ?? user?.email)?.trim() ?? '';
+      final initialName = fromAuth.isNotEmpty
+          ? fromAuth
+          : (prefs.getString(PrefKeys.shareParticipantNameV1) ?? '');
+
+      final intro = await showSharedTestIntroSheet(
+        context: context,
+        sharedBy: sharedBy,
+        subject: subjectDisplayName,
+        topic: topicDisplayName,
+        questionCount: ordered.length,
+        leaderboard: leaderboard,
+        initialName: initialName,
+        dismissible: true,
+      );
+      if (!mounted) return;
+      if (intro == null) {
+        if (context.canPop()) {
+          context.pop();
+        } else {
+          context.go('/');
+        }
+        return;
+      }
+      await prefs.setString(PrefKeys.shareParticipantNameV1, intro.participantName);
+      if (!mounted) return;
+
       await showTestConfigBottomSheet(
         context: context,
         args: TestConfigSheetArgs(
@@ -105,6 +150,12 @@ class _SharedTestLaunchScreenState extends ConsumerState<SharedTestLaunchScreen>
           onSessionCreated: (sessionId) {
             if (!mounted) return;
             _didStartSession = true;
+            unawaited(
+              prefs.setString(
+                PrefKeys.shareDeepLinkShareIdKey(sessionId),
+                widget.shareId,
+              ),
+            );
             context.go('/test/$sessionId');
           },
         ),

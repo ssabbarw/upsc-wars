@@ -47,6 +47,7 @@ List<Widget> _resultsScrollChildren({
   required SessionResult result,
   required String displaySubject,
   required double contentHeight,
+  String? sharedTestShareId,
 }) {
   return [
     if (result.analyticsFeatureKey == 'mcq_battle') ...[
@@ -64,7 +65,9 @@ List<Widget> _resultsScrollChildren({
     if ((result.analyticsFeatureKey ?? '').startsWith('share_deep_link_')) ...[
       const SizedBox(height: AppSpacing.md),
       _SharedLeaderboardSection(
-        shareId: sessionId,
+        shareId: (sharedTestShareId != null && sharedTestShareId.isNotEmpty)
+            ? sharedTestShareId
+            : sessionId,
         scorePct: result.accuracy,
       ),
       const SizedBox(height: AppSpacing.lg),
@@ -150,6 +153,11 @@ class ResultsScreen extends ConsumerWidget {
     });
 
     final async = ref.watch(sessionResultProvider(sessionId));
+    final shareFirestoreId = ref
+        .watch(prefsServiceProvider)
+        .asData
+        ?.value
+        .getString(PrefKeys.shareDeepLinkShareIdKey(sessionId));
     final scheme = Theme.of(context).colorScheme;
     final hPad = AppBreakpoints.fullScreenHPadding(MediaQuery.sizeOf(context).width);
 
@@ -321,6 +329,7 @@ class ResultsScreen extends ConsumerWidget {
                                 result: r,
                                 displaySubject: displaySubject,
                                 contentHeight: h,
+                                sharedTestShareId: shareFirestoreId,
                               ),
                             ),
                           ),
@@ -354,7 +363,7 @@ class _SharedLeaderboardSection extends ConsumerStatefulWidget {
 
 class _SharedLeaderboardSectionState
     extends ConsumerState<_SharedLeaderboardSection> {
-  static const _namePrefKey = 'share_participant_name_v1';
+  static const _namePrefKey = PrefKeys.shareParticipantNameV1;
 
   bool _posted = false;
   late Future<List<SharedLeaderboardEntry>> _future;

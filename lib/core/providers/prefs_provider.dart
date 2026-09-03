@@ -228,6 +228,16 @@ abstract final class PrefKeys {
   /// Last [ReleaseVersion] string the user dismissed on the soft-update banner.
   static const softUpdateDismissedVersionV1 =
       'soft_update_dismissed_version_v1';
+
+  /// Display name used when posting a shared-test leaderboard entry.
+  static const shareParticipantNameV1 = 'share_participant_name_v1';
+
+  /// Prefix for `sessionId → Firestore shareId` so results can load the
+  /// shared-test leaderboard (`share_deep_link_share_id_<sessionId>`).
+  static const shareDeepLinkShareIdPrefix = 'share_deep_link_share_id_';
+
+  static String shareDeepLinkShareIdKey(String sessionId) =>
+      '$shareDeepLinkShareIdPrefix$sessionId';
 }
 
 class PrefsService {
