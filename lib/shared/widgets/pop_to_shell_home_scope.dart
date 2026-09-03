@@ -2,14 +2,45 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:go_router/go_router.dart';
 
+/// Inner-tab back handler for the **visible** shell branch.
+///
+/// [RootBackButtonDispatcher] only invokes the last registered callback, so the
+/// shell owns the single [BackButtonListener]. Branch widgets attach here when
+/// they are on-screen ([TickerMode] is on) rather than competing for the press.
+class ShellInnerBackRegistry {
+  ShellInnerBackRegistry._();
+
+  static Object? _owner;
+  static bool Function()? _handler;
+
+  static void attach(Object owner, bool Function()? handler) {
+    _owner = owner;
+    _handler = handler;
+  }
+
+  static void detach(Object owner) {
+    if (_owner != owner) return;
+    _owner = null;
+    _handler = null;
+  }
+
+  /// True if the visible branch consumed back (e.g. QOTD → Recent online).
+  static bool handle() => _handler?.call() ?? false;
+}
+
 /// On History / Progress / Community, system back switches to the Home tab.
 ///
-/// Uses [PopScope] for route-level pops and [BackButtonListener] so Android /
-/// router back reliably reaches the shell (some shells only deliver one path).
-/// [TickerMode] guards inactive [IndexedStack] branches from handling back.
+/// Does **not** listen for the back button itself. [_AppShell] does that once
+/// above the [IndexedStack], then asks [ShellInnerBackRegistry] whether this
+/// branch wants the press. A listener here would lose to the shell's, because
+/// the dispatcher only calls the most recently registered callback — and the
+/// shell rebuilds more often than a tab.
 ///
-/// When [onInnerBack] returns true (e.g. inner tab → default tab), Home is not
-/// selected. Same-frame duplicate callbacks from both listeners are ignored.
+/// [TickerMode] decides whether this branch is the visible one, so an
+/// off-stage [IndexedStack] child does not steal the registry.
+///
+/// [PopScope] still blocks a route pop of this branch (sheets use the root
+/// navigator and are ignored here).
 class PopToShellHomeScope extends StatefulWidget {
   const PopToShellHomeScope({
     super.key,
@@ -41,18 +72,13 @@ class _PopToShellHomeScopeState extends State<PopToShellHomeScope> {
     return rootNav != null && rootNav.canPop();
   }
 
-  Future<bool> _onBackButtonPressed() async {
-    if (!TickerMode.valuesOf(context).enabled) return false;
-    // Let root-navigator sheets/dialogs handle back instead of switching Home.
-    if (_rootHasOverlayRoute()) return false;
-    if (_alreadyHandledThisFrame()) return true;
-    if (widget.onInnerBack?.call() ?? false) return true;
-    final shell = StatefulNavigationShell.maybeOf(context);
-    if (shell != null && shell.currentIndex != 0) {
-      shell.goBranch(0, initialLocation: false);
-      return true;
+  void _syncRegistry() {
+    if (!mounted) return;
+    if (TickerMode.valuesOf(context).enabled) {
+      ShellInnerBackRegistry.attach(this, widget.onInnerBack);
+    } else {
+      ShellInnerBackRegistry.detach(this);
     }
-    return false;
   }
 
   void _onPopInvoked(bool didPop) {
@@ -63,7 +89,7 @@ class _PopToShellHomeScopeState extends State<PopToShellHomeScope> {
     if (widget.onInnerBack?.call() ?? false) return;
     // Inside a shell tab, modal/sheet pops are delivered here because [canPop]
     // is false. Switching to Home would hide any follow-up push (battle invite).
-    // System back still reaches Home via [BackButtonListener].
+    // System back still reaches Home via the shell [BackButtonListener].
     final shell = StatefulNavigationShell.maybeOf(context);
     if (shell != null) return;
     _goHome();
@@ -79,14 +105,29 @@ class _PopToShellHomeScopeState extends State<PopToShellHomeScope> {
   }
 
   @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _syncRegistry();
+  }
+
+  @override
+  void didUpdateWidget(covariant PopToShellHomeScope oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    _syncRegistry();
+  }
+
+  @override
+  void dispose() {
+    ShellInnerBackRegistry.detach(this);
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return BackButtonListener(
-      onBackButtonPressed: _onBackButtonPressed,
-      child: PopScope(
-        canPop: false,
-        onPopInvokedWithResult: (didPop, _) => _onPopInvoked(didPop),
-        child: widget.child,
-      ),
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (didPop, _) => _onPopInvoked(didPop),
+      child: widget.child,
     );
   }
 }

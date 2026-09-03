@@ -163,36 +163,10 @@ class HomeScreen extends HookConsumerWidget {
       context.push('/profile');
     }
 
-    return PopScope(
-      canPop: false,
-      onPopInvokedWithResult: (didPop, result) async {
-        if (didPop) return;
-        if (killBlocked) return;
-        final exit = await showDialog<bool>(
-          context: context,
-          builder: (ctx) => AlertDialog(
-            title: Text('Exit app?', style: AppTextStyles.h3()),
-            content: Text(
-              'You will leave ${AppConstants.appDisplayName}.',
-              style: AppTextStyles.bodyMd(),
-            ),
-            actions: [
-              TextButton(
-                onPressed: () => Navigator.pop(ctx, false),
-                child: const Text('Cancel'),
-              ),
-              TextButton(
-                onPressed: () => Navigator.pop(ctx, true),
-                child: const Text('Exit'),
-              ),
-            ],
-          ),
-        );
-        if (exit == true && context.mounted) {
-          await SystemNavigator.pop();
-        }
-      },
-      child: Stack(
+    // Back is handled once for the whole shell in `_AppShell`; a listener here
+    // would sit inside an [IndexedStack] branch that stays mounted and compete
+    // with the visible tab's own handler.
+    return Stack(
         fit: StackFit.expand,
         children: [
           Scaffold(
@@ -653,7 +627,6 @@ class HomeScreen extends HookConsumerWidget {
           ),
           if (killBlocked) const AppUpdateKillSwitchOverlay(),
         ],
-      ),
     );
   }
 

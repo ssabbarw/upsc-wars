@@ -41,10 +41,16 @@ class CommunityScreen extends HookConsumerWidget {
     super.key,
     this.initialTabIndex = 0,
     this.highlightOpenChallengeId,
+    this.arrivedViaTabLink = false,
   });
 
   /// 0 = Recent online, 1 = Open challenge, 2 = QOTD.
   final int initialTabIndex;
+
+  /// Set when a `?tab=` link chose [initialTabIndex] (e.g. the Home open
+  /// challenge row). Back then leaves for Home rather than dropping onto the
+  /// default tab, which is not where the user came from.
+  final bool arrivedViaTabLink;
 
   /// Challenge to mark and scroll to, set when Home links into this tab.
   final String? highlightOpenChallengeId;
@@ -71,6 +77,8 @@ class CommunityScreen extends HookConsumerWidget {
     return PopToShellHomeScope(
       onInnerBack: () {
         if (tabController.index == 0) return false;
+        // Still sitting on the tab a link opened: back undoes that jump.
+        if (arrivedViaTabLink && tabController.index == safeIndex) return false;
         tabController.animateTo(0);
         return true;
       },

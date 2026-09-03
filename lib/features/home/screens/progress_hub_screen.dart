@@ -13,16 +13,25 @@ import 'progress_screen.dart';
 
 /// Shell tab that hosts Progress and Test History.
 class ProgressHubScreen extends HookConsumerWidget {
-  const ProgressHubScreen({super.key, this.initialTabIndex = 0});
+  const ProgressHubScreen({
+    super.key,
+    this.initialTabIndex = 0,
+    this.arrivedViaTabLink = false,
+  });
 
   /// 0 = Progress, 1 = Test History.
   final int initialTabIndex;
 
+  /// Set when a `?tab=` link chose [initialTabIndex]. Back then leaves for Home
+  /// rather than dropping onto Progress, which is not where the user came from.
+  final bool arrivedViaTabLink;
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final safeIndex = initialTabIndex.clamp(0, 1);
     final controller = useTabController(
       initialLength: 2,
-      initialIndex: initialTabIndex.clamp(0, 1),
+      initialIndex: safeIndex,
     );
     useListenable(controller);
     final scheme = Theme.of(context).colorScheme;
@@ -33,6 +42,8 @@ class ProgressHubScreen extends HookConsumerWidget {
     return PopToShellHomeScope(
       onInnerBack: () {
         if (controller.index == 0) return false;
+        // Still sitting on the tab a link opened: back undoes that jump.
+        if (arrivedViaTabLink && controller.index == safeIndex) return false;
         controller.animateTo(0);
         return true;
       },

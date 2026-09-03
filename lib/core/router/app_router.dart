@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -17,6 +18,7 @@ import '../config/feature_flags.dart';
 import '../theme/app_colors.dart';
 import '../theme/app_radius.dart';
 import '../theme/app_spacing.dart';
+import '../constants/app_constants.dart';
 import '../theme/app_text_styles.dart';
 import '../../features/bookmarks/screens/bookmarks_screen.dart';
 import '../../features/battle/domain/entities/battle_result_payload.dart';
@@ -115,6 +117,7 @@ import '../../features/weak_areas/screens/concept_detail_screen.dart'
 import '../../features/weak_areas/screens/trap_patterns_screen.dart';
 import '../../features/weak_areas/screens/trap_pattern_detail_screen.dart';
 import '../../shared/widgets/google_login_bottom_sheet.dart';
+import '../../shared/widgets/pop_to_shell_home_scope.dart';
 import '../../shared/widgets/unread_pulse_wrapper.dart';
 import '../../shared/widgets/app_toast.dart';
 import '../providers/app_bootstrap.dart';
@@ -174,7 +177,10 @@ GoRouter appRouter(Ref ref) {
           builder: (context, state) {
             final tab = state.uri.queryParameters['tab'];
             final history = tab == 'history';
-            return ProgressHubScreen(initialTabIndex: history ? 1 : 0);
+            return ProgressHubScreen(
+              initialTabIndex: history ? 1 : 0,
+              arrivedViaTabLink: history,
+            );
           },
         ),
       ],
@@ -259,6 +265,7 @@ GoRouter appRouter(Ref ref) {
               final highlight = state.uri.queryParameters['highlight'];
               return CommunityScreen(
                 initialTabIndex: openChallenge ? 1 : 0,
+                arrivedViaTabLink: openChallenge,
                 highlightOpenChallengeId:
                     openChallenge && highlight != null && highlight.isNotEmpty
                     ? highlight
@@ -1462,6 +1469,51 @@ class _AppShell extends HookConsumerWidget {
       );
     }
 
+    // Back for the whole shell is owned here, above the [IndexedStack].
+    //
+    // [RootBackButtonDispatcher] only invokes the *last* registered callback.
+    // This widget rebuilds more often than a tab, so a listener inside a branch
+    // never wins. Returning false when we are not on Home used to fall through
+    // to the system default — which is to exit the app. Ask the visible tab
+    // first (inner sub-tab), then switch to Home, and only then offer exit.
+    Future<bool> onShellBack() async {
+      // A pushed screen, sheet or dialog on the root navigator owns back first.
+      final rootNav = Navigator.maybeOf(context, rootNavigator: true);
+      if (rootNav != null && rootNav.canPop()) return false;
+      if (ShellInnerBackRegistry.handle()) return true;
+      if (navigationShell.currentIndex != 0) {
+        navigationShell.goBranch(0, initialLocation: false);
+        return true;
+      }
+      final killBlocked = ref
+          .read(killSwitchProvider)
+          .maybeWhen(data: (s) => s.isActive, orElse: () => false);
+      // The update wall owns the screen; swallow back rather than offer exit.
+      if (killBlocked) return true;
+      final exit = await showDialog<bool>(
+        context: context,
+        builder: (ctx) => AlertDialog(
+          title: Text('Exit app?', style: AppTextStyles.h3()),
+          content: Text(
+            'You will leave ${AppConstants.appDisplayName}.',
+            style: AppTextStyles.bodyMd(),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(ctx, false),
+              child: const Text('Cancel'),
+            ),
+            TextButton(
+              onPressed: () => Navigator.pop(ctx, true),
+              child: const Text('Exit'),
+            ),
+          ],
+        ),
+      );
+      if (exit == true) await SystemNavigator.pop();
+      return true;
+    }
+
     final screenWidth = MediaQuery.sizeOf(context).width;
     final isTablet = screenWidth >= AppBreakpoints.tablet;
     final isLargeTablet = screenWidth >= AppBreakpoints.largeTablet;
@@ -1528,7 +1580,7 @@ class _AppShell extends HookConsumerWidget {
             Expanded(child: navigationShell),
           ],
         ),
-      );
+      ).wrappedWithShellBackListener(onShellBack);
     }
 
     return Scaffold(
@@ -1554,6 +1606,20 @@ class _AppShell extends HookConsumerWidget {
             ),
           ],
         ),
+      ),
+    ).wrappedWithShellBackListener(onShellBack);
+  }
+}
+
+extension on Widget {
+  /// Registers [onBack] for the whole shell. See `_AppShell.onShellBack`.
+  Widget wrappedWithShellBackListener(Future<bool> Function() onBack) {
+    return BackButtonListener(
+      onBackButtonPressed: onBack,
+      child: PopScope(
+        // If the listener is skipped (some OEMs), do not finish the activity.
+        canPop: false,
+        child: this,
       ),
     );
   }

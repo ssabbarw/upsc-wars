@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/foundation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/providers/prefs_provider.dart';
@@ -30,13 +31,30 @@ final openChallengesListProvider =
 /// [openChallengesListProvider].
 final homeOpenChallengesProvider =
     FutureProvider<List<OpenChallengeListTileModel>>((ref) async {
+  // The index requires an authenticated read. Watched so a late-arriving or
+  // changed sign-in refetches — without it, this being kept alive means one
+  // failed read leaves Home empty for the rest of the session.
+  ref.watch(authStateChangesProvider);
   final prefs = await ref.watch(prefsServiceProvider.future);
   final repo = ref.watch(openChallengeRepositoryProvider);
-  final items = await repo.fetchHomeIndex();
-  return rankHomeOpenChallenges(
-    items,
-    attempted: prefs.attemptedOpenChallengeIds,
-  );
+  try {
+    final items = await repo.fetchHomeIndex();
+    if (kDebugMode) {
+      debugPrint(
+        '[OpenChallenge:home] index read ok: ${items.length} live entries',
+      );
+    }
+    return rankHomeOpenChallenges(
+      items,
+      attempted: prefs.attemptedOpenChallengeIds,
+    );
+  } on Object catch (e) {
+    // Home renders this as an absent row, so an unlogged failure is invisible.
+    if (kDebugMode) {
+      debugPrint('[OpenChallenge:home] index read FAILED: $e');
+    }
+    rethrow;
+  }
 });
 
 /// Drops already-attempted challenges and orders the rest most-contested first,
