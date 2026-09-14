@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -12,11 +13,44 @@ final openChallengeRepositoryProvider = Provider<OpenChallengeRepository>((ref) 
   return OpenChallengeRepository(FirebaseFirestore.instance);
 });
 
+bool _isFirestorePermissionDenied(Object error) {
+  if (error is FirebaseException) {
+    return error.code.toLowerCase() == 'permission-denied';
+  }
+  final text = error.toString();
+  return text.contains('PERMISSION_DENIED') ||
+      text.contains('permission-denied');
+}
+
+/// Ensures Auth has a user + ID token before Firestore rules run. Returns null
+/// when signed out or still restoring, so callers can skip the read.
+Future<User?> _authenticatedUserForFirestore(Ref ref) async {
+  final auth = ref.watch(authStateChangesProvider);
+  if (auth.isLoading) return null;
+  final user = auth.asData?.value;
+  if (user == null) return null;
+  // Cold start can emit a user before the token reaches Firestore; rules then
+  // see request.auth == null and deny (same pattern as community presence).
+  await user.getIdToken();
+  return user;
+}
+
 final openChallengesListProvider =
     FutureProvider.autoDispose<List<OpenChallengeListTileModel>>((ref) async {
-  final user = ref.watch(authStateChangesProvider).asData?.value;
+  final user = await _authenticatedUserForFirestore(ref);
+  if (user == null) return const [];
   final repo = ref.watch(openChallengeRepositoryProvider);
-  return repo.fetchAllSummaries(currentUserEmail: user?.email);
+  try {
+    return await repo.fetchAllSummaries(currentUserEmail: user.email);
+  } on Object catch (e) {
+    if (_isFirestorePermissionDenied(e)) {
+      if (kDebugMode) {
+        debugPrint('[OpenChallenge:list] permission-denied: $e');
+      }
+      return const [];
+    }
+    rethrow;
+  }
 });
 
 /// Challenges the user has not attempted, most contested first.
@@ -31,10 +65,11 @@ final openChallengesListProvider =
 /// [openChallengesListProvider].
 final homeOpenChallengesProvider =
     FutureProvider<List<OpenChallengeListTileModel>>((ref) async {
-  // The index requires an authenticated read. Watched so a late-arriving or
-  // changed sign-in refetches — without it, this being kept alive means one
-  // failed read leaves Home empty for the rest of the session.
+  // Index is world-readable (no emails) so unsigned users still see Home
+  // teasers. Watch auth so a late sign-in re-ranks via attempted prefs —
+  // without it, this kept-alive provider would stay stale for the session.
   ref.watch(authStateChangesProvider);
+
   final prefs = await ref.watch(prefsServiceProvider.future);
   final repo = ref.watch(openChallengeRepositoryProvider);
   try {
@@ -49,10 +84,12 @@ final homeOpenChallengesProvider =
       attempted: prefs.attemptedOpenChallengeIds,
     );
   } on Object catch (e) {
-    // Home renders this as an absent row, so an unlogged failure is invisible.
+    // Home renders this as an absent row; don't surface expected auth/rules
+    // denials as provider errors (Crashlytics).
     if (kDebugMode) {
       debugPrint('[OpenChallenge:home] index read FAILED: $e');
     }
+    if (_isFirestorePermissionDenied(e)) return const [];
     rethrow;
   }
 });

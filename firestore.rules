@@ -118,8 +118,10 @@ service cloud.firestore {
     /// Denormalised summary of live challenges so Home costs one read instead
     /// of one per challenge. Rebuilt by `onOpenChallengeWritten`; the Admin SDK
     /// bypasses rules, so clients get no write path at all.
+    /// World-readable: carries no emails — guests see Home teasers; joining
+    /// still requires a signed-in account.
     match /open_challenges_index/{docId} {
-      allow read: if signedIn();
+      allow read: if true;
       allow write: if false;
     }
 

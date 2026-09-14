@@ -265,7 +265,6 @@ GoRouter appRouter(Ref ref) {
               final highlight = state.uri.queryParameters['highlight'];
               return CommunityScreen(
                 initialTabIndex: openChallenge ? 1 : 0,
-                arrivedViaTabLink: openChallenge,
                 highlightOpenChallengeId:
                     openChallenge && highlight != null && highlight.isNotEmpty
                     ? highlight

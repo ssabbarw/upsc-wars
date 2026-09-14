@@ -6,6 +6,7 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/analytics/activation_milestones.dart';
+import '../../../core/auth/auth_session.dart';
 import '../../../core/presentation/session_subject_label.dart';
 import '../../../core/providers/kill_switch_provider.dart';
 import '../../../core/providers/prefs_provider.dart';
@@ -13,7 +14,10 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../shared/auth/ensure_account_sign_in.dart';
 import '../../community/providers/open_challenge_providers.dart';
+import '../../community/widgets/open_challenge_what_is_sheet.dart';
+import '../providers/auth_providers.dart';
 import '../../daily_war/domain/daily_war_phase.dart';
 import '../../daily_war/domain/daily_war_phase_resolver.dart';
 import '../../daily_war/domain/daily_war_schedule.dart';
@@ -248,10 +252,26 @@ class TodayHubSection extends HookConsumerWidget {
               done: false,
               locked: false,
               showLive: true,
-              onTap: () {
+              onTap: () async {
                 unawaited(
                   maybeLogPostDemoExplore(ref, surface: 'open_challenge'),
                 );
+                final user =
+                    ref.read(authStateChangesProvider).asData?.value;
+                if (!AuthSession.isAccountSignedIn(user)) {
+                  final wantsSignIn = await showOpenChallengeWhatIsSheet(
+                    context,
+                    showSignInCta: true,
+                  );
+                  if (!context.mounted) return;
+                  if (wantsSignIn != true) return;
+                  final signedIn = await ensureAccountSignedIn(
+                    context: context,
+                    ref: ref,
+                    reason: 'Sign in to join an open challenge.',
+                  );
+                  if (!context.mounted || !signedIn) return;
+                }
                 // Land on the list either way so the rest stay discoverable;
                 // the featured one is marked and scrolled to on arrival.
                 context.go(

@@ -272,6 +272,7 @@ class MemoryPairGameView extends HookWidget {
                   final tileHeight = _uniformMatchTileHeight(
                     columnWidth: columnWidth,
                     texts: allTexts,
+                    textScaler: MediaQuery.textScalerOf(context),
                   );
 
                   return SingleChildScrollView(
@@ -292,7 +293,7 @@ class MemoryPairGameView extends HookWidget {
                                   padding: const EdgeInsets.only(bottom: 8),
                                   child: _MatchTile(
                                     text: pairs[pid].termForLang(lang),
-                                    height: tileHeight,
+                                    minHeight: tileHeight,
                                     state: stateFor(pid, true),
                                     onTap: () => tapKey(pid),
                                   ),
@@ -309,7 +310,7 @@ class MemoryPairGameView extends HookWidget {
                                   padding: const EdgeInsets.only(bottom: 8),
                                   child: _MatchTile(
                                     text: pairs[pid].answerForLang(lang),
-                                    height: tileHeight,
+                                    minHeight: tileHeight,
                                     state: stateFor(pid, false),
                                     onTap: () => tapVal(pid),
                                   ),
@@ -377,44 +378,57 @@ class MemoryPairGameView extends HookWidget {
 enum _TileState { idle, selected, matched, wrong }
 
 const double _kMatchTileFontSize = 14;
+const double _kMatchTileLineHeight = 1.25;
 const double _kMatchTileMinHeight = 52;
+const double _kMatchTileHPad = 8;
+const double _kMatchTileVPad = 8;
+const double _kMatchTileCheckSize = 14;
+const double _kMatchTileCheckGap = 4;
 
-/// Same height for every tile — sized to fit the longest wrapped label.
+/// Same min height for every tile — sized to fit the longest wrapped label.
 double _uniformMatchTileHeight({
   required double columnWidth,
   required List<String> texts,
+  required TextScaler textScaler,
 }) {
-  const hPad = 12.0 + 18; // inner padding + optional check icon
-  const vPad = 16.0;
+  // Always reserve check-icon space so matched tiles don't wrap tighter.
+  const hPad = _kMatchTileHPad * 2 + _kMatchTileCheckSize + _kMatchTileCheckGap;
+  const vPad = _kMatchTileVPad * 2;
   final textStyle = AppTextStyles.labelSm().copyWith(
     fontSize: _kMatchTileFontSize,
     fontWeight: FontWeight.w600,
-    height: 1.25,
+    height: _kMatchTileLineHeight,
   );
-  final maxTextWidth = max(40.0, columnWidth - hPad);
+  // Slightly narrower than layout width: Google Fonts metrics can differ from
+  // TextPainter, which previously under-estimated wrap and clipped labels.
+  final maxTextWidth = max(40.0, (columnWidth - hPad) * 0.92);
 
   var maxHeight = _kMatchTileMinHeight;
-  final painter = TextPainter(textDirection: TextDirection.ltr);
+  final painter = TextPainter(
+    textDirection: TextDirection.ltr,
+    textAlign: TextAlign.center,
+    textScaler: textScaler,
+  );
   for (final text in texts) {
     painter
       ..text = TextSpan(text: text, style: textStyle)
-      ..textAlign = TextAlign.center
       ..layout(maxWidth: maxTextWidth);
     maxHeight = max(maxHeight, painter.height + vPad);
   }
-  return maxHeight;
+  // Small buffer against remaining font-metric drift.
+  return maxHeight + 4;
 }
 
 class _MatchTile extends StatelessWidget {
   const _MatchTile({
     required this.text,
-    required this.height,
+    required this.minHeight,
     required this.state,
     required this.onTap,
   });
 
   final String text;
-  final double height;
+  final double minHeight;
   final _TileState state;
   final VoidCallback onTap;
 
@@ -423,6 +437,7 @@ class _MatchTile extends StatelessWidget {
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final interactive = state != _TileState.matched;
+    final matched = state == _TileState.matched;
 
     final bg = switch (state) {
       _TileState.selected => AppColors.primary,
@@ -447,10 +462,17 @@ class _MatchTile extends StatelessWidget {
       _ => isDark ? AppColors.borderDark : AppColors.borderLight,
     };
 
+    final textStyle = AppTextStyles.labelSm().copyWith(
+      fontSize: _kMatchTileFontSize,
+      fontWeight: FontWeight.w600,
+      color: fg,
+      height: _kMatchTileLineHeight,
+    );
+
     return AnimatedContainer(
       duration: const Duration(milliseconds: 180),
-      height: height,
       width: double.infinity,
+      constraints: BoxConstraints(minHeight: minHeight),
       child: Material(
         color: bg,
         shape: RoundedRectangleBorder(
@@ -460,30 +482,34 @@ class _MatchTile extends StatelessWidget {
         child: InkWell(
           onTap: interactive ? onTap : null,
           borderRadius: BorderRadius.circular(AppRadius.lg),
-          child: Center(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                if (state == _TileState.matched) ...[
-                  Icon(Icons.check, size: 14, color: fg),
-                  const SizedBox(width: 4),
-                ],
-                Flexible(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: _kMatchTileHPad,
+              vertical: _kMatchTileVPad,
+            ),
+            child: Row(
+              children: [
+                SizedBox(
+                  width: _kMatchTileCheckSize + _kMatchTileCheckGap,
+                  child: matched
+                      ? Icon(
+                          Icons.check,
+                          size: _kMatchTileCheckSize,
+                          color: fg,
+                        )
+                      : null,
+                ),
+                Expanded(
                   child: Text(
                     text,
                     textAlign: TextAlign.center,
-                    style: AppTextStyles.labelSm().copyWith(
-                      fontSize: _kMatchTileFontSize,
-                      fontWeight: FontWeight.w600,
-                      color: fg,
-                      height: 1.25,
-                    ),
+                    softWrap: true,
+                    style: textStyle,
                   ),
                 ),
+                // Keep label centered when the leading check slot is reserved.
+                const SizedBox(width: _kMatchTileCheckSize + _kMatchTileCheckGap),
               ],
-            ),
             ),
           ),
         ),

@@ -18,6 +18,7 @@ import '../domain/open_challenge_models.dart';
 import '../open_challenge/open_challenge_create_availability.dart';
 import '../providers/open_challenge_providers.dart';
 import 'admin_bot_label.dart';
+import 'open_challenge_what_is_sheet.dart';
 
 class OpenChallengeCommunitySection extends HookConsumerWidget {
   const OpenChallengeCommunitySection({super.key, this.highlightId});
@@ -182,42 +183,53 @@ class OpenChallengeCommunitySection extends HookConsumerWidget {
                   AppSpacing.lg,
                   AppSpacing.lg,
                 ),
-                child: DecoratedBox(
-                  decoration: BoxDecoration(
-                    color: scheme.surfaceContainerHighest.withValues(
-                      alpha: 0.5,
-                    ),
-                    borderRadius: BorderRadius.circular(AppRadius.lg),
-                    border: Border.all(
-                      color: scheme.outlineVariant.withValues(alpha: 0.8),
-                    ),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(AppSpacing.lg),
-                    child: Column(
-                      children: [
-                        Text(
-                          '🎯',
-                          style: AppTextStyles.h2().copyWith(fontSize: 40),
+                child: Column(
+                  children: [
+                    DecoratedBox(
+                      decoration: BoxDecoration(
+                        color: scheme.surfaceContainerHighest.withValues(
+                          alpha: 0.5,
                         ),
-                        const SizedBox(height: AppSpacing.sm),
-                        Text(
-                          'No challenges yet — you could be first!',
-                          textAlign: TextAlign.center,
-                          style: AppTextStyles.label(),
+                        borderRadius: BorderRadius.circular(AppRadius.lg),
+                        border: Border.all(
+                          color: scheme.outlineVariant.withValues(alpha: 0.8),
                         ),
-                        const SizedBox(height: AppSpacing.xs),
-                        Text(
-                          'Crush a 10Q exam, then hit Create to drop a challenge '
-                          'for everyone.',
-                          textAlign: TextAlign.center,
-                          style: AppTextStyles.caption().copyWith(
-                            color: scheme.onSurfaceVariant,
-                          ),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(AppSpacing.lg),
+                        child: Column(
+                          children: [
+                            Text(
+                              '🎯',
+                              style: AppTextStyles.h2().copyWith(fontSize: 40),
+                            ),
+                            const SizedBox(height: AppSpacing.sm),
+                            Text(
+                              'No challenges yet — you could be first!',
+                              textAlign: TextAlign.center,
+                              style: AppTextStyles.label(),
+                            ),
+                            const SizedBox(height: AppSpacing.xs),
+                            Text(
+                              'Crush a 10Q exam, then hit Create to drop a challenge '
+                              'for everyone.',
+                              textAlign: TextAlign.center,
+                              style: AppTextStyles.caption().copyWith(
+                                color: scheme.onSurfaceVariant,
+                              ),
+                            ),
+                          ],
                         ),
-                      ],
+                      ),
                     ),
-                  ),
+                    const SizedBox(height: AppSpacing.md),
+                    TextButton(
+                      onPressed: () => unawaited(
+                        showOpenChallengeWhatIsSheet(context),
+                      ),
+                      child: const Text('What is open challenge'),
+                    ),
+                  ],
                 ),
               );
             }
@@ -245,6 +257,22 @@ class OpenChallengeCommunitySection extends HookConsumerWidget {
                   ),
                   const SizedBox(height: AppSpacing.sm),
                 ],
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(
+                    AppSpacing.lg,
+                    AppSpacing.xs,
+                    AppSpacing.lg,
+                    AppSpacing.lg,
+                  ),
+                  child: Center(
+                    child: TextButton(
+                      onPressed: () => unawaited(
+                        showOpenChallengeWhatIsSheet(context),
+                      ),
+                      child: const Text('What is open challenge'),
+                    ),
+                  ),
+                ),
               ],
             );
           },
