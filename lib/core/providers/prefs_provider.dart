@@ -49,9 +49,9 @@ abstract final class PrefKeys {
   static const patternInterruptOnboardingSeen =
       'pattern_interrupt_onboarding_seen_v1';
 
-  /// After onboarding, auto-open the Get Started subject sheet once on home.
-  static const getStartedSheetPendingAfterOnboarding =
-      'get_started_sheet_pending_after_onboarding_v1';
+  /// After onboarding, fire the OS notification permission dialog once on home.
+  static const pushPermissionPromptPendingAfterOnboardingV1 =
+      'push_permission_prompt_pending_after_onboarding_v1';
 
   /// User submitted the 7-question Get Started demo (widget or intro sheet).
   static const getStartedDiagnosticAttemptedV1 =
@@ -148,10 +148,6 @@ abstract final class PrefKeys {
   static const deferredPushHomeNudgeDismissedV2 =
       'deferred_push_home_nudge_dismissed_v2';
 
-  /// Number of times the app process was opened (local counter).
-  /// Used for "ask notification permission on 2nd open".
-  static const appOpenCountV1 = 'app_open_count_v1';
-
   /// JSON list of [ActivationMilestones] ids already logged to analytics.
   static const activationMilestonesV1 = 'activation_milestones_v1';
 
@@ -191,10 +187,6 @@ abstract final class PrefKeys {
 
   /// Local hour (0–23) for the daily practice reminder notification.
   static const dailyPracticeReminderHourV1 = 'daily_practice_reminder_hour_v1';
-
-  /// Prompt for push permission once home loads after first-test results exit.
-  static const pushPermissionPromptPendingAfterFirstTestV1 =
-      'push_permission_prompt_pending_after_first_test_v1';
 
   /// Consecutive War nights with a live (ranked) attempt on this device.
   static const dailyWarStreakV1 = 'daily_war_streak_v1';
@@ -373,10 +365,13 @@ class PrefsService {
   set patternInterruptOnboardingSeen(bool v) =>
       _p.setBool(PrefKeys.patternInterruptOnboardingSeen, v);
 
-  bool get getStartedSheetPendingAfterOnboarding =>
-      _p.getBool(PrefKeys.getStartedSheetPendingAfterOnboarding) ?? false;
-  set getStartedSheetPendingAfterOnboarding(bool v) =>
-      _p.setBool(PrefKeys.getStartedSheetPendingAfterOnboarding, v);
+  bool get pushPermissionPromptPendingAfterOnboarding =>
+      _p.getBool(PrefKeys.pushPermissionPromptPendingAfterOnboardingV1) ??
+      false;
+  set pushPermissionPromptPendingAfterOnboarding(bool v) => _p.setBool(
+        PrefKeys.pushPermissionPromptPendingAfterOnboardingV1,
+        v,
+      );
 
   bool get getStartedDiagnosticAttempted =>
       _p.getBool(PrefKeys.getStartedDiagnosticAttemptedV1) ?? false;
@@ -563,9 +558,6 @@ class PrefsService {
   set deferredPushHomeNudgeDismissedV2(bool v) =>
       _p.setBool(PrefKeys.deferredPushHomeNudgeDismissedV2, v);
 
-  int get appOpenCount => _p.getInt(PrefKeys.appOpenCountV1) ?? 0;
-  set appOpenCount(int v) => _p.setInt(PrefKeys.appOpenCountV1, v);
-
   /// Ids of [activation_milestone] events already sent (one-time activation).
   Set<String> get activationMilestones {
     final raw = _p.getString(PrefKeys.activationMilestonesV1);
@@ -659,13 +651,6 @@ class PrefsService {
       DailyDrillConstants.defaultReminderHour;
   set dailyPracticeReminderHour(int v) =>
       _p.setInt(PrefKeys.dailyPracticeReminderHourV1, v);
-
-  bool get pushPermissionPromptPendingAfterFirstTest =>
-      _p.getBool(PrefKeys.pushPermissionPromptPendingAfterFirstTestV1) ?? false;
-  set pushPermissionPromptPendingAfterFirstTest(bool v) => _p.setBool(
-        PrefKeys.pushPermissionPromptPendingAfterFirstTestV1,
-        v,
-      );
 
   int get dailyWarStreak => _p.getInt(PrefKeys.dailyWarStreakV1) ?? 0;
   set dailyWarStreak(int v) => _p.setInt(PrefKeys.dailyWarStreakV1, v);

@@ -3,27 +3,11 @@ enum NotificationPromptSurface {
   dailyWar,
   dailyCa,
   community,
-  postFirstTest,
   generic,
 }
 
-/// Automatic = screen-open strategy. Explicit = user tapped a notify CTA.
+/// Automatic = capped/cooldown strategy. Explicit = user tapped a notify CTA.
 enum NotificationPromptKind { automatic, explicit }
-
-/// Remote-config (and similar) gates for [NotificationPromptCopy] bullets.
-class NotificationPromptFlags {
-  const NotificationPromptFlags({
-    this.dailyCa = false,
-    this.caShots = false,
-    this.dailyWar = false,
-    this.community = false,
-  });
-
-  final bool dailyCa;
-  final bool caShots;
-  final bool dailyWar;
-  final bool community;
-}
 
 /// Copy for the pre-permission sheet. Hero is contextual; [alsoLine] names
 /// the other notification uses so one prompt covers the whole product.
@@ -45,11 +29,7 @@ class NotificationPromptCopy {
   static const notNow = 'Not now';
   static const footer = 'You can change this anytime in Settings.';
 
-  static NotificationPromptCopy forSurface(
-    NotificationPromptSurface surface, {
-    NotificationPromptFlags flags = const NotificationPromptFlags(),
-    bool skippedDemoReview = false,
-  }) {
+  static NotificationPromptCopy forSurface(NotificationPromptSurface surface) {
     return switch (surface) {
       NotificationPromptSurface.dailyWar => const NotificationPromptCopy(
         title: 'Get pinged before tonight’s Daily Battle',
@@ -74,25 +54,6 @@ class NotificationPromptCopy {
         alsoLine: 'You’ll also get Daily Drill, current affairs, and CA Shots.',
         cta: 'Turn on alerts',
       ),
-      NotificationPromptSurface.postFirstTest => skippedDemoReview
-          ? NotificationPromptCopy(
-              title: 'No time for the explanations right now?',
-              body:
-                  'That’s fine. We can ping you later to review — and to try '
-                  'the rest of UPSC Wars.',
-              bullets: _postFirstTestBullets(flags),
-              alsoLine:
-                  'Turn on notifications and we’ll nudge you when it’s a good time.',
-              cta: 'Notify me',
-            )
-          : NotificationPromptCopy(
-              title: 'Liked this test — and the explanations?',
-              body: "That's the demo. Here's what else is waiting:",
-              bullets: _postFirstTestBullets(flags),
-              alsoLine:
-                  "Turn on notifications and we'll nudge you to revise the ones you got wrong.",
-              cta: 'Notify me',
-            ),
       NotificationPromptSurface.generic => const NotificationPromptCopy(
         title: 'Stay on track with useful pings',
         body:
@@ -102,30 +63,15 @@ class NotificationPromptCopy {
       ),
     };
   }
-
-  static List<String> _postFirstTestBullets(NotificationPromptFlags flags) {
-    return [
-      'Revision games for topics that keep slipping',
-      if (flags.community) '1v1 battles with other aspirants',
-      if (flags.dailyCa)
-        'Daily Current Affairs Test — yesterday’s news, scored',
-      if (flags.caShots)
-        'CA Shots — a news brief + 1 MCQ when something breaks',
-      if (flags.dailyWar)
-        'Daily Battle at 9 PM — same paper, All-India rank',
-      'Year-wise solved PYQs, with the same explanations',
-    ];
-  }
 }
 
-/// When we may show the in-app education sheet (OS dialog is never auto-fired).
+/// Timing helpers for the education sheet / post-onboarding settle delay.
 abstract final class NotificationPromptPolicy {
   static const maxAutomaticShows = 2;
   static const automaticCooldown = Duration(hours: 24);
   static const screenSettleDelay = Duration(milliseconds: 800);
 
-  /// [notificationsAlreadyEnabled] and OS ineligibility are handled by the
-  /// caller. This only gates frequency for automatic prompts.
+  /// Frequency gate for automatic education-sheet shows.
   static bool shouldShowAutomatic({
     required int automaticShownCount,
     required DateTime? lastAutomaticShownAt,

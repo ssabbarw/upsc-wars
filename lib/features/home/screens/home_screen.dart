@@ -48,7 +48,6 @@ import '../../../shared/widgets/home_page_video_banner.dart';
 import '../../../shared/widgets/rate_review_sheet.dart';
 import '../../../shared/widgets/soft_update_banner.dart';
 import '../widgets/daily_rituals_intro_sheet.dart';
-import '../widgets/get_started_card.dart';
 
 class HomeScreen extends HookConsumerWidget {
   const HomeScreen({super.key, this.heroSlot});
@@ -103,21 +102,10 @@ class HomeScreen extends HookConsumerWidget {
     useEffect(() {
       if (!onHomeRoute) return null;
       unawaited(() async {
-        final showedDemoIntro = await maybeShowPendingGetStartedAfterOnboarding(
-          context: context,
-          ref: ref,
-        );
-        if (showedDemoIntro || !context.mounted) return;
-        final showedPush =
-            await BattleMessagingService.maybePromptAfterFirstTestHome(
+        await BattleMessagingService.maybePromptSystemAfterOnboardingHome(
           context: context,
         );
-        if (showedPush || !context.mounted) return;
-        final showedSecondOpenPush =
-            await BattleMessagingService.maybePromptOnSecondOpenHome(
-          context: context,
-        );
-        if (showedSecondOpenPush || !context.mounted) return;
+        if (!context.mounted) return;
         unawaited(maybeShowDailyRitualsIntro(context: context, ref: ref));
       }());
       return null;

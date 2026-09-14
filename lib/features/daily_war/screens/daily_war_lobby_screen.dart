@@ -6,9 +6,7 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/auth/auth_session.dart';
-import '../../../core/notifications/notification_prompt_policy.dart';
 import '../../../core/providers/kill_switch_provider.dart';
-import '../../../core/services/battle_messaging_service.dart';
 import '../../../features/home/providers/auth_providers.dart';
 import '../../../shared/widgets/shimmer_box.dart';
 import '../daily_war_constants.dart';
@@ -160,17 +158,6 @@ class _DailyWarLobbyBody extends HookConsumerWidget {
       unawaited(const DailyWarCloudService().joinLobby(dateId: snap.dateId));
       return null;
     }, [snap.dateId, snap.phase]);
-
-    useEffect(() {
-      unawaited(
-        BattleMessagingService.maybePromptAfterScreenSettles(
-          context: context,
-          surface: NotificationPromptSurface.dailyWar,
-          source: 'daily_war_lobby',
-        ),
-      );
-      return null;
-    }, const []);
 
     if (todayDoc.isLoading && snap.doc == null) {
       return const _DailyWarLobbySkeleton();

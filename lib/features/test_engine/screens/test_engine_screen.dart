@@ -1474,43 +1474,50 @@ class _QuestionArea extends HookConsumerWidget {
               : () => onSelectOption('c'),
         ),
         const SizedBox(height: AppSpacing.sm),
-        _OptionRow(
-          keyLabel: 'D',
-          optionKey: 'd',
-          optionText: optionD,
-          visual: _optionVisual(mode, question, 'd', explanationVisible),
-          mode: mode,
-          explanationVisible: explanationVisible,
-          sessionId: sessionId,
-          question: question,
-          onTap: (mode == 'learning' && explanationVisible)
-              ? null
-              : () => onSelectOption('d'),
-        ),
-        if (!explanationVisible) ...[
-          const SizedBox(height: AppSpacing.sm),
-          DebugCorrectAnswerBanner(question: question),
-        ],
-        if (mode == 'learning') ...[
-          const SizedBox(height: AppSpacing.lg),
-          KeyedSubtree(
-            key: explanationKey,
-            child: AnimatedSwitcher(
-              duration: const Duration(milliseconds: 200),
-              child: explanationVisible
-                  ? _ExplanationCard(
-                      question: question,
-                      uiLanguage: uiLanguage,
-                      verdict: learningVerdict,
-                      expandDeepDive: expandDeepDive,
-                      showPostQotd: !isDemoDiagnostic,
-                      analyticsSource:
-                          isDemoDiagnostic ? 'demo_test' : 'in_test',
-                    )
-                  : const SizedBox.shrink(),
-            ),
+        // Key last option + explanation together so auto-scroll keeps D and
+        // the explanation start in view (instead of pinning only the body).
+        KeyedSubtree(
+          key: explanationKey,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              _OptionRow(
+                keyLabel: 'D',
+                optionKey: 'd',
+                optionText: optionD,
+                visual: _optionVisual(mode, question, 'd', explanationVisible),
+                mode: mode,
+                explanationVisible: explanationVisible,
+                sessionId: sessionId,
+                question: question,
+                onTap: (mode == 'learning' && explanationVisible)
+                    ? null
+                    : () => onSelectOption('d'),
+              ),
+              if (!explanationVisible) ...[
+                const SizedBox(height: AppSpacing.sm),
+                DebugCorrectAnswerBanner(question: question),
+              ],
+              if (mode == 'learning') ...[
+                const SizedBox(height: AppSpacing.lg),
+                AnimatedSwitcher(
+                  duration: const Duration(milliseconds: 200),
+                  child: explanationVisible
+                      ? _ExplanationCard(
+                          question: question,
+                          uiLanguage: uiLanguage,
+                          verdict: learningVerdict,
+                          expandDeepDive: expandDeepDive,
+                          showPostQotd: !isDemoDiagnostic,
+                          analyticsSource:
+                              isDemoDiagnostic ? 'demo_test' : 'in_test',
+                        )
+                      : const SizedBox.shrink(),
+                ),
+              ],
+            ],
           ),
-        ],
+        ),
       ],
     );
 

@@ -7,9 +7,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 
 import '../../../core/layout/system_insets.dart';
-import '../../../core/notifications/notification_prompt_policy.dart';
 import '../../../core/providers/user_database_provider.dart';
-import '../../../core/services/battle_messaging_service.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
@@ -123,18 +121,6 @@ class DailyCaScreen extends HookConsumerWidget {
       });
       return null;
     }, [autoStartPaper, paperIso, paperLive, paperChecking]);
-
-    useEffect(() {
-      if (autoStartPaper) return null;
-      unawaited(
-        BattleMessagingService.maybePromptAfterScreenSettles(
-          context: context,
-          surface: NotificationPromptSurface.dailyCa,
-          source: 'daily_ca_screen',
-        ),
-      );
-      return null;
-    }, const []);
 
     void shiftMonth(int delta) {
       final m = displayedMonth.value;

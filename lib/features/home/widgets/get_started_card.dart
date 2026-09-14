@@ -10,7 +10,6 @@ import '../../../core/analytics/analytics.dart';
 import '../../../core/analytics/analytics_events.dart';
 import '../../../core/analytics/screen_flow_analytics.dart';
 import '../../../core/layout/system_insets.dart';
-import '../../../core/providers/prefs_provider.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
@@ -184,30 +183,6 @@ Future<bool?> showGetStartedDiagnosticIntroSheet(
     ),
   );
   return started;
-}
-
-/// After onboarding, Home opens the diagnostic intro once.
-///
-/// Returns `true` if the sheet was shown (caller should not stack another
-/// first-run sheet on this visit).
-Future<bool> maybeShowPendingGetStartedAfterOnboarding({
-  required BuildContext context,
-  required WidgetRef ref,
-}) async {
-  final prefs = await ref.read(prefsServiceProvider.future);
-  if (!prefs.getStartedSheetPendingAfterOnboarding) return false;
-  if (!context.mounted) return false;
-  if (GoRouter.of(context).routeInformationProvider.value.uri.path != '/') {
-    return false;
-  }
-  await Future<void>.delayed(const Duration(milliseconds: 120));
-  if (!context.mounted) return false;
-  if (GoRouter.of(context).routeInformationProvider.value.uri.path != '/') {
-    return false;
-  }
-  prefs.getStartedSheetPendingAfterOnboarding = false;
-  await showGetStartedDiagnosticIntroSheet(context, postOnboarding: true);
-  return true;
 }
 
 class _DemoResumeOrRestartSheet extends StatelessWidget {

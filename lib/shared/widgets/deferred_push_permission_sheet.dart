@@ -9,7 +9,6 @@ import '../../core/analytics/screen_flow_analytics.dart';
 import '../../core/layout/system_insets.dart';
 import '../../core/notifications/notification_prompt_policy.dart';
 import '../../core/providers/analytics_provider.dart';
-import '../../core/providers/kill_switch_provider.dart';
 import '../../core/providers/prefs_provider.dart';
 import '../../core/debug/upsc_wars_trace.dart';
 import '../../core/theme/app_colors.dart';
@@ -24,7 +23,6 @@ Future<bool?> showDeferredPushPermissionSheet(
   required String source,
   NotificationPromptSurface surface = NotificationPromptSurface.generic,
   NotificationPromptKind kind = NotificationPromptKind.explicit,
-  bool skippedDemoReview = false,
 }) async {
   try {
     upscWarsTrace(
@@ -43,7 +41,6 @@ Future<bool?> showDeferredPushPermissionSheet(
           source: source,
           surface: surface,
           kind: kind,
-          skippedDemoReview: skippedDemoReview,
         );
       },
     );
@@ -59,14 +56,12 @@ class _DeferredPushPermissionPanel extends HookConsumerWidget {
     required this.source,
     required this.surface,
     required this.kind,
-    this.skippedDemoReview = false,
   });
 
   final BuildContext sheetContext;
   final String source;
   final NotificationPromptSurface surface;
   final NotificationPromptKind kind;
-  final bool skippedDemoReview;
 
   Future<void> _recordOutcome(
     WidgetRef ref, {
@@ -99,24 +94,7 @@ class _DeferredPushPermissionPanel extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final flags = surface == NotificationPromptSurface.postFirstTest
-        ? NotificationPromptFlags(
-            dailyCa:
-                ref.watch(dailyCaRemoteEnabledProvider).asData?.value ?? false,
-            caShots:
-                ref.watch(caShotsRemoteEnabledProvider).asData?.value ?? false,
-            dailyWar:
-                ref.watch(dailyWarRemoteEnabledProvider).asData?.value ?? false,
-            community:
-                ref.watch(communityTabRemoteEnabledProvider).asData?.value ??
-                false,
-          )
-        : const NotificationPromptFlags();
-    final copy = NotificationPromptCopy.forSurface(
-      surface,
-      flags: flags,
-      skippedDemoReview: skippedDemoReview,
-    );
+    final copy = NotificationPromptCopy.forSurface(surface);
     final started = useRef(DateTime.now());
     final recorded = useRef(false);
     final analytics = ref.read(analyticsServiceProvider);

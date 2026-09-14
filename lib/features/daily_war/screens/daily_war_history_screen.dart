@@ -7,8 +7,6 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 
 import '../../../core/layout/system_insets.dart';
-import '../../../core/notifications/notification_prompt_policy.dart';
-import '../../../core/services/battle_messaging_service.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
@@ -54,14 +52,6 @@ class DailyWarHistoryScreen extends HookConsumerWidget {
 
     useEffect(() {
       unawaited(markDailyRitualOpened(ref, DailyRitualIds.dailyWar));
-      if (embedded) return null;
-      unawaited(
-        BattleMessagingService.maybePromptAfterScreenSettles(
-          context: context,
-          surface: NotificationPromptSurface.dailyWar,
-          source: 'daily_war_history',
-        ),
-      );
       return null;
     }, const []);
 

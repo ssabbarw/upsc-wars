@@ -1476,7 +1476,15 @@ class _AppShell extends HookConsumerWidget {
     // never wins. Returning false when we are not on Home used to fall through
     // to the system default — which is to exit the app. Ask the visible tab
     // first (inner sub-tab), then switch to Home, and only then offer exit.
-    Future<bool> onShellBack() async {
+    //
+    // [BackButtonListener] re-registers and calls [ChildBackButtonDispatcher.takePriority]
+    // whenever [onBackButtonPressed] identity changes. A new closure every build
+    // races the root dispatcher (assert: hasCallbacks) during auth/router churn.
+    // Keep one stable listener and forward into the latest handler via a ref.
+    final shellBackHandler = useRef<Future<bool> Function()>(
+      () async => false,
+    );
+    shellBackHandler.value = () async {
       // A pushed screen, sheet or dialog on the root navigator owns back first.
       final rootNav = Navigator.maybeOf(context, rootNavigator: true);
       if (rootNav != null && rootNav.canPop()) return false;
@@ -1512,7 +1520,11 @@ class _AppShell extends HookConsumerWidget {
       );
       if (exit == true) await SystemNavigator.pop();
       return true;
-    }
+    };
+    final onShellBack = useMemoized(
+      () => () => shellBackHandler.value(),
+      const [],
+    );
 
     final screenWidth = MediaQuery.sizeOf(context).width;
     final isTablet = screenWidth >= AppBreakpoints.tablet;

@@ -43,18 +43,15 @@ void clearDemoDiagnosticEphemeral(String sessionId) {
   DemoDiagnosticEphemeralStore.instance.remove(sessionId);
 }
 
-/// True when opening explanations should flip the post-demo notif copy off the
-/// "skipped review" path.
+/// True when opening explanations should mark the demo review as opened.
 bool shouldMarkDemoDiagnosticReviewOpened({
   required bool isDemoSession,
   required bool getStartedDiagnosticAttempted,
-  required bool pushPromptPendingAfterFirstTest,
 }) {
   if (isDemoSession) return true;
   // Review CTAs often omit the analytics key, and the in-memory demo snapshot
-  // is gone by the time the user opens explanations. If the first-test prompt
-  // is still waiting, any explanation open means they did not skip review.
-  return getStartedDiagnosticAttempted && pushPromptPendingAfterFirstTest;
+  // is gone by the time the user opens explanations.
+  return getStartedDiagnosticAttempted;
 }
 
 /// Marks that the user opened post-demo question review (mistakes or all).
@@ -74,8 +71,6 @@ void maybeMarkDemoDiagnosticReviewOpened(
     if (!shouldMarkDemoDiagnosticReviewOpened(
       isDemoSession: isDemoSession,
       getStartedDiagnosticAttempted: prefs.getStartedDiagnosticAttempted,
-      pushPromptPendingAfterFirstTest:
-          prefs.pushPermissionPromptPendingAfterFirstTest,
     )) {
       return;
     }

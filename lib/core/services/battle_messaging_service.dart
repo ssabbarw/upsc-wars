@@ -785,95 +785,22 @@ class BattleMessagingService {
     };
   }
 
-  /// After a War / CA / Community screen paints, maybe show the education sheet.
-  ///
-  /// Shell tabs stay mounted in the background, so we only prompt when the
-  /// current router location still matches [surface].
-  static Future<void> maybePromptAfterScreenSettles({
+  /// Right after onboarding lands on Home: OS permission dialog only (no
+  /// education sheet). Denied users are nudged later via [PushDeniedBanner].
+  static Future<void> maybePromptSystemAfterOnboardingHome({
     required BuildContext context,
-    required NotificationPromptSurface surface,
-    required String source,
   }) async {
+    if (kIsWeb) return;
     await Future<void>.delayed(NotificationPromptPolicy.screenSettleDelay);
     if (!context.mounted) return;
     if (!TickerMode.valuesOf(context).enabled) return;
-    if (!_locationMatchesSurface(context, surface)) return;
-    await requestPushAuthorizationIfNotDetermined(
-      source: source,
-      surface: surface,
-      kind: NotificationPromptKind.automatic,
-    );
-  }
-
-  /// After the first completed test, show the education sheet once the user
-  /// is back on Home — never over results, the review coach, or explanations.
-  ///
-  /// Returns `true` if the sheet was shown (or attempted) so Home can skip
-  /// stacking another first-run sheet on this visit.
-  static Future<bool> maybePromptAfterFirstTestHome({
-    required BuildContext context,
-  }) async {
-    if (kIsWeb) return false;
-    await Future<void>.delayed(NotificationPromptPolicy.screenSettleDelay);
-    if (!context.mounted) return false;
-    if (!TickerMode.valuesOf(context).enabled) return false;
     final path = GoRouter.of(context).routeInformationProvider.value.uri.path;
-    if (path != '/') return false;
+    if (path != '/') return;
     final prefs = PrefsService(await SharedPreferences.getInstance());
-    if (!prefs.pushPermissionPromptPendingAfterFirstTest) return false;
-    prefs.pushPermissionPromptPendingAfterFirstTest = false;
-    final skippedDemoReview = prefs.getStartedDiagnosticAttempted &&
-        !prefs.demoDiagnosticReviewOpened;
-    await requestPushAuthorizationIfNotDetermined(
-      source: 'post_first_test',
-      surface: NotificationPromptSurface.postFirstTest,
-      kind: NotificationPromptKind.automatic,
-      skippedDemoReview: skippedDemoReview,
-    );
-    return true;
-  }
-
-  /// From the second app open onwards, prompt anyone the post-first-test path
-  /// never reached — otherwise a user who leaves before finishing the demo is
-  /// unreachable on push *and* on local reminders, which share one permission.
-  ///
-  /// Runs after [maybePromptAfterFirstTestHome] so the contextual copy wins
-  /// when both apply. Frequency is still capped by [NotificationPromptPolicy].
-  static Future<bool> maybePromptOnSecondOpenHome({
-    required BuildContext context,
-  }) async {
-    if (kIsWeb) return false;
-    await Future<void>.delayed(NotificationPromptPolicy.screenSettleDelay);
-    if (!context.mounted) return false;
-    if (!TickerMode.valuesOf(context).enabled) return false;
-    final path = GoRouter.of(context).routeInformationProvider.value.uri.path;
-    if (path != '/') return false;
-    final prefs = PrefsService(await SharedPreferences.getInstance());
-    if (prefs.appOpenCount < 2) return false;
-    if (await notificationsAreEnabled()) return false;
-    await requestPushAuthorizationIfNotDetermined(
-      source: 'second_open',
-      surface: NotificationPromptSurface.generic,
-      kind: NotificationPromptKind.automatic,
-    );
-    return true;
-  }
-
-  static bool _locationMatchesSurface(
-    BuildContext context,
-    NotificationPromptSurface surface,
-  ) {
-    final path = GoRouter.of(context).routeInformationProvider.value.uri.path;
-    return switch (surface) {
-      NotificationPromptSurface.dailyWar =>
-        path == '/daily-war' || path.startsWith('/daily-war/'),
-      NotificationPromptSurface.dailyCa =>
-        path == '/daily-ca' || path.startsWith('/daily-ca/'),
-      NotificationPromptSurface.community =>
-        path == '/community' || path.startsWith('/community/'),
-      NotificationPromptSurface.postFirstTest => path == '/',
-      NotificationPromptSurface.generic => true,
-    };
+    if (!prefs.pushPermissionPromptPendingAfterOnboarding) return;
+    prefs.pushPermissionPromptPendingAfterOnboarding = false;
+    if (await notificationsAreEnabled()) return;
+    await requestPushAuthorizationAndSync(source: 'post_onboarding');
   }
 
   /// Prompts when notifications are not yet allowed.
@@ -889,7 +816,6 @@ class BattleMessagingService {
     String source = 'unknown',
     NotificationPromptSurface surface = NotificationPromptSurface.generic,
     NotificationPromptKind kind = NotificationPromptKind.explicit,
-    bool skippedDemoReview = false,
   }) async {
     if (kIsWeb) return;
 
@@ -903,7 +829,6 @@ class BattleMessagingService {
       source: source,
       surface: surface,
       kind: kind,
-      skippedDemoReview: skippedDemoReview,
     );
     _educationPromptInFlight = future;
     try {
@@ -919,7 +844,6 @@ class BattleMessagingService {
     required String source,
     required NotificationPromptSurface surface,
     required NotificationPromptKind kind,
-    bool skippedDemoReview = false,
   }) async {
     if (defaultTargetPlatform == TargetPlatform.android) {
       final sdkInt = (await DeviceInfoPlugin().androidInfo).version.sdkInt;
@@ -956,7 +880,6 @@ class BattleMessagingService {
       source: source,
       surface: surface,
       kind: kind,
-      skippedDemoReview: skippedDemoReview,
     );
     if (accepted != true) return;
 

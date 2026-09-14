@@ -47,7 +47,6 @@ class OnboardingFlowScreen extends HookConsumerWidget {
 
     Future<void> completeFlow({
       required String actionId,
-      bool offerDemo = false,
     }) async {
       ScreenFlow.logAction(
         ref,
@@ -58,7 +57,6 @@ class OnboardingFlowScreen extends HookConsumerWidget {
         ref,
         context,
         actionId: actionId,
-        offerDemo: offerDemo,
         markFlowCompleted: () {
           onboardingFlowCompleted.value = true;
         },
@@ -174,7 +172,6 @@ class OnboardingFlowScreen extends HookConsumerWidget {
                           unawaited(
                             completeFlow(
                               actionId: 'depth_get_started',
-                              offerDemo: true,
                             ),
                           );
                         },
@@ -195,7 +192,6 @@ Future<void> _complete(
   WidgetRef ref,
   BuildContext context, {
   required String actionId,
-  required bool offerDemo,
   required void Function() markFlowCompleted,
   required int lastStepIndex,
   required DateTime lastStepStartedAt,
@@ -232,9 +228,7 @@ Future<void> _complete(
   );
   final prefs = await ref.read(prefsServiceProvider.future);
   prefs.patternInterruptOnboardingSeen = true;
-  if (offerDemo) {
-    prefs.getStartedSheetPendingAfterOnboarding = true;
-  }
+  prefs.pushPermissionPromptPendingAfterOnboarding = true;
   ref.invalidate(prefsServiceProvider);
   if (!context.mounted) return;
   context.go('/');

@@ -8,11 +8,13 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'package:upsc_wars/core/analytics/analytics.dart';
 import 'package:upsc_wars/core/analytics/analytics_events.dart';
+import 'package:upsc_wars/core/notifications/notification_prompt_policy.dart';
 import 'package:upsc_wars/core/providers/prefs_provider.dart';
 import 'package:upsc_wars/core/services/battle_messaging_service.dart';
 import 'package:upsc_wars/core/theme/app_radius.dart';
 import 'package:upsc_wars/core/theme/app_spacing.dart';
 import 'package:upsc_wars/core/theme/app_text_styles.dart';
+import 'package:upsc_wars/shared/widgets/deferred_push_permission_sheet.dart';
 
 final pushDeniedBannerVisibleProvider = FutureProvider.autoDispose<bool>((
   ref,
@@ -117,7 +119,8 @@ class _CompactStrip extends StatelessWidget {
                         alignment: PlaceholderAlignment.baseline,
                         baseline: TextBaseline.alphabetic,
                         child: GestureDetector(
-                          onTap: () => unawaited(_openSettings(ref)),
+                          onTap: () =>
+                              unawaited(_promptThenOpenSettings(context, ref)),
                           child: Text('notifications', style: linkStyle),
                         ),
                       ),
@@ -182,7 +185,8 @@ class _OriginalCard extends StatelessWidget {
                   ),
                   const SizedBox(height: AppSpacing.sm),
                   TextButton(
-                    onPressed: () => unawaited(_openSettings(ref)),
+                    onPressed: () =>
+                        unawaited(_promptThenOpenSettings(context, ref)),
                     style: TextButton.styleFrom(
                       padding: EdgeInsets.zero,
                       minimumSize: Size.zero,
@@ -216,9 +220,26 @@ class _OriginalCard extends StatelessWidget {
   }
 }
 
-Future<void> _openSettings(WidgetRef ref) async {
+Future<void> _promptThenOpenSettings(
+  BuildContext context,
+  WidgetRef ref,
+) async {
   unawaited(Analytics.track(ref, const DeferredPushHomeNudgeTapEnableEvent()));
-  await AppSettings.openAppSettings(type: AppSettingsType.notification);
+  if (!context.mounted) return;
+  final accepted = await showDeferredPushPermissionSheet(
+    context,
+    source: 'home_nudge',
+    surface: NotificationPromptSurface.generic,
+    kind: NotificationPromptKind.explicit,
+  );
+  if (accepted == true) {
+    await BattleMessagingService.requestPushAuthorizationAndSync(
+      source: 'home_nudge',
+    );
+    if (!await BattleMessagingService.notificationsAreEnabled()) {
+      await AppSettings.openAppSettings(type: AppSettingsType.notification);
+    }
+  }
   ref.invalidate(pushDeniedBannerVisibleProvider);
 }
 

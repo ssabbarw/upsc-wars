@@ -8,31 +8,19 @@ void main() {
         shouldMarkDemoDiagnosticReviewOpened(
           isDemoSession: true,
           getStartedDiagnosticAttempted: false,
-          pushPromptPendingAfterFirstTest: false,
         ),
         isTrue,
       );
     });
 
-    test('marks when first-test notif prompt is still waiting after the demo', () {
+    test('marks when the demo was attempted even if the session key is missing',
+        () {
       expect(
         shouldMarkDemoDiagnosticReviewOpened(
           isDemoSession: false,
           getStartedDiagnosticAttempted: true,
-          pushPromptPendingAfterFirstTest: true,
         ),
         isTrue,
-      );
-    });
-
-    test('does not mark a later session review after the prompt already fired', () {
-      expect(
-        shouldMarkDemoDiagnosticReviewOpened(
-          isDemoSession: false,
-          getStartedDiagnosticAttempted: true,
-          pushPromptPendingAfterFirstTest: false,
-        ),
-        isFalse,
       );
     });
 
@@ -41,7 +29,6 @@ void main() {
         shouldMarkDemoDiagnosticReviewOpened(
           isDemoSession: false,
           getStartedDiagnosticAttempted: false,
-          pushPromptPendingAfterFirstTest: true,
         ),
         isFalse,
       );

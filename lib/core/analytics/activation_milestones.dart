@@ -84,7 +84,6 @@ Future<void> logFirstTestDoneForServices(
   PrefsService prefs,
 ) async {
   if (prefs.hasActivationMilestone(ActivationMilestones.firstTestDone)) return;
-  prefs.pushPermissionPromptPendingAfterFirstTest = true;
   await logActivationMilestoneForServices(
     analytics,
     prefs,

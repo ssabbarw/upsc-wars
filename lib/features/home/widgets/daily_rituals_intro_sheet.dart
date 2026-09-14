@@ -54,7 +54,6 @@ Future<void> maybeShowDailyRitualsIntro({
   final enabledIds = enabled.map((r) => r.id).toSet();
 
   final prefs = await container.read(prefsServiceProvider.future);
-  if (prefs.getStartedSheetPendingAfterOnboarding) return;
   if (!DailyRituals.shouldShowIntro(
     onboardingSeen: prefs.patternInterruptOnboardingSeen,
     introSeen: prefs.dailyRitualsIntroSeen,
