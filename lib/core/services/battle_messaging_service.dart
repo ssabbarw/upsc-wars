@@ -771,7 +771,8 @@ class BattleMessagingService {
     if (kIsWeb) return false;
     if (await notificationsAreEnabled()) return false;
     final status = await notificationAuthorizationStatus();
-    return status == AuthorizationStatus.denied;
+    return status == AuthorizationStatus.denied ||
+        status == AuthorizationStatus.deniedPermanently;
   }
 
   /// Stable label for [AnalyticsEvent] payloads (not i18n).
@@ -780,6 +781,7 @@ class BattleMessagingService {
     return switch (s) {
       AuthorizationStatus.authorized => 'authorized',
       AuthorizationStatus.denied => 'denied',
+      AuthorizationStatus.deniedPermanently => 'denied_permanently',
       AuthorizationStatus.notDetermined => 'not_determined',
       AuthorizationStatus.provisional => 'provisional',
     };

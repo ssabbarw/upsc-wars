@@ -107,7 +107,8 @@ class SpotTestPushCloudService {
     if (!kIsWeb) {
       final status =
           await BattleMessagingService.notificationAuthorizationStatus();
-      if (status == AuthorizationStatus.denied) {
+      if (status == AuthorizationStatus.denied ||
+          status == AuthorizationStatus.deniedPermanently) {
         return const SpotTestPushOutcome._(
           notificationSent: false,
           serverReason: 'notifications_denied',

@@ -192,7 +192,8 @@ class BroadcastAnnouncementCloudService {
     if (request.target == BroadcastAnnouncementTarget.self && !kIsWeb) {
       final status =
           await BattleMessagingService.notificationAuthorizationStatus();
-      if (status == AuthorizationStatus.denied) {
+      if (status == AuthorizationStatus.denied ||
+          status == AuthorizationStatus.deniedPermanently) {
         return const BroadcastAnnouncementOutcome._(
           ok: false,
           serverReason: 'notifications_denied',
