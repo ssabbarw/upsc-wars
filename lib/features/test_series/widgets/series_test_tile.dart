@@ -7,6 +7,7 @@ import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../domain/series_stats.dart';
 import '../domain/test_series_models.dart';
+import 'free_badge.dart';
 
 enum SeriesTileState { locked, upcoming, available, inProgress, attempted }
 
@@ -104,7 +105,10 @@ class SeriesTestTile extends StatelessWidget {
     final (IconData icon, Color color) = switch (state) {
       SeriesTileState.attempted => (Icons.check_rounded, AppColors.primary),
       SeriesTileState.inProgress => (Icons.play_arrow_rounded, AppColors.info),
-      SeriesTileState.upcoming => (Icons.schedule_rounded, scheme.onSurfaceVariant),
+      SeriesTileState.upcoming => (
+        Icons.schedule_rounded,
+        scheme.onSurfaceVariant,
+      ),
       SeriesTileState.locked => (Icons.lock_rounded, AppColors.warning),
       SeriesTileState.available => (Icons.description_outlined, AppColors.info),
     };
@@ -153,7 +157,7 @@ class SeriesTestTile extends StatelessWidget {
                           ),
                           if (test.isFree) ...[
                             const SizedBox(width: AppSpacing.sm),
-                            const _FreeChip(),
+                            const FreeBadge(size: 30),
                           ],
                         ],
                       ),
@@ -204,7 +208,9 @@ class _Trailing extends StatelessWidget {
           children: [
             Text(
               seriesMarksLabel(attempt!.netMarks, attempt!.maxMarks),
-              style: AppTextStyles.labelSm().copyWith(fontWeight: FontWeight.w700),
+              style: AppTextStyles.labelSm().copyWith(
+                fontWeight: FontWeight.w700,
+              ),
             ),
             const SizedBox(height: 4),
             const _Pill('Review', color: AppColors.primary),
@@ -257,30 +263,6 @@ class _Pill extends StatelessWidget {
         style: AppTextStyles.labelSm().copyWith(
           color: AppColors.onPrimary,
           fontWeight: FontWeight.w700,
-        ),
-      ),
-    );
-  }
-}
-
-class _FreeChip extends StatelessWidget {
-  const _FreeChip();
-
-  @override
-  Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 1),
-      decoration: BoxDecoration(
-        color: isDark ? AppColors.correctBgDark : AppColors.correctBg,
-        borderRadius: BorderRadius.circular(AppRadius.pill),
-      ),
-      child: Text(
-        'FREE',
-        style: AppTextStyles.labelSm().copyWith(
-          color: isDark ? AppColors.correctTextDark : AppColors.correctText,
-          fontWeight: FontWeight.w700,
-          fontSize: 10,
         ),
       ),
     );

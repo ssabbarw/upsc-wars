@@ -112,7 +112,12 @@ class TestSeriesHomeScreen extends ConsumerWidget {
                   isHindi: isHindi,
                   stats: stats,
                 ),
-                SeriesSubjectsTab(bundle: bundle, isHindi: isHindi, stats: stats),
+                SeriesSubjectsTab(
+                  bundle: bundle,
+                  owned: owned,
+                  isHindi: isHindi,
+                  stats: stats,
+                ),
                 SeriesPyqCaTab(bundle: bundle, owned: owned, stats: stats),
               ],
             );

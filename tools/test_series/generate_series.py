@@ -22,6 +22,7 @@ Output: tools/test_series/out/<series-id>.json (gitignored).
 Series shape (see docs/test_series_setup.md):
   - 38 static tests (50 Q): Polity/Economy/Environment/Geography/Modern History
     x6 and "Ancient + Medieval + Art & Culture" x8. Topic themed, ~10% PYQ.
+  - 4 "Full Syllabus" static tests (50 Q): all subjects in Prelims proportion.
   - 6 free cross-year PYQ mix tests (50 Q).
   - 8 current-affairs test shells (50 Q, filled monthly) with 5 PYQ each.
   - 14 full-length mocks (100 Q): 55 static + 10 PYQ + 35 CA (CA filled later).
@@ -53,6 +54,7 @@ IST = timezone(timedelta(hours=5, minutes=30))
 STATIC_Q = 50
 STATIC_PYQ_PER_TEST = 5  # 10%
 STATIC_THEME_SHARE = 32  # of the 45 static questions, drawn from the theme topics
+FULL_SYLLABUS_TESTS = 4  # whole-syllabus static tests (50 Q), listed under Subject tests
 PYQ_MIX_Q = 50
 PYQ_MIX_TESTS = 6
 CA_TEST_Q = 50
@@ -363,6 +365,40 @@ class Generator:
                     questions=items,
                 )
 
+    def build_full_syllabus_tests(self) -> None:
+        """Whole-syllabus static tests: every subject in one 50-question paper.
+
+        Built last so earlier tests (and an already-uploaded series) are not
+        affected: it only draws static questions nobody else has used.
+        Subject split follows the PYQ weightage used for the mocks.
+        """
+        n_static = STATIC_Q - STATIC_PYQ_PER_TEST
+        split = largest_remainder(dict(self.flt_alloc), n_static)
+        for i in range(1, FULL_SYLLABUS_TESTS + 1):
+            picked: list[str] = []
+            for bucket, count in split.items():
+                picked += self._take_static(
+                    bucket, BUCKETS[bucket]["subjects"], None, count, set(picked)
+                )
+            in_test: set[str] = set()
+            pyqs = self._pick_pyq(STATIC_PYQ_PER_TEST, in_test, balance_years=True)
+            items = [self._s(u) for u in picked] + [self._p(q) for q in pyqs]
+            self.rng.shuffle(items)
+            self.add_test(
+                id=f"static_full_syllabus_{i:02d}",
+                kind="static",
+                bucket="full_syllabus",
+                title=f"Full Syllabus Test {i}",
+                theme="All subjects, Prelims proportions",
+                themeTopics=[],
+                index=i,
+                isFree=False,
+                unlockAt=ist_midnight(self.launch),
+                questionCount=STATIC_Q,
+                status="ready",
+                questions=items,
+            )
+
     def build_ca_shells(self) -> None:
         first_unlock = date(self.launch.year, self.launch.month, 1)
         last_month = date(self.prelims.year, self.prelims.month, 1)
@@ -526,6 +562,7 @@ def main() -> None:
     gen.build_ca_shells()
     gen.build_flts(reserve)
     gen.build_pyq_mix()
+    gen.build_full_syllabus_tests()  # last: keeps every earlier test unchanged
     finalize(gen.tests)
     validate(gen.tests)
 

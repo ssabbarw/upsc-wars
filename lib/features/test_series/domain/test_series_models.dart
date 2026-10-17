@@ -17,6 +17,9 @@ abstract final class SeriesBuckets {
   static const modernHistory = 'modern_history';
   static const historyCulture = 'history_culture';
 
+  /// Whole-syllabus tests. Not a subject: it is not in [staticOrder].
+  static const fullSyllabus = 'full_syllabus';
+
   /// Display order of the static subject buckets.
   static const staticOrder = [
     polity,
@@ -34,6 +37,7 @@ abstract final class SeriesBuckets {
     geography: 'Geography',
     modernHistory: 'Modern History',
     historyCulture: 'Ancient, Medieval & Art and Culture',
+    fullSyllabus: 'Full Syllabus',
   };
 
   static const _hi = {
@@ -43,6 +47,7 @@ abstract final class SeriesBuckets {
     geography: 'भूगोल',
     modernHistory: 'आधुनिक इतिहास',
     historyCulture: 'प्राचीन, मध्यकालीन इतिहास और कला-संस्कृति',
+    fullSyllabus: 'पूर्ण पाठ्यक्रम',
   };
 
   static String label(String bucket, {bool hindi = false}) =>

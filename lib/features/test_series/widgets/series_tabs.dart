@@ -12,6 +12,7 @@ import '../domain/series_stats.dart';
 import '../domain/start_series_topic_revision.dart';
 import '../domain/test_series_models.dart';
 import '../providers/test_series_providers.dart';
+import 'free_badge.dart';
 import 'series_dashboard_widgets.dart';
 import 'series_paywall_sheet.dart';
 import 'series_test_row.dart';
@@ -153,7 +154,13 @@ class SeriesUspCard extends StatelessWidget {
     final subject = bundle.ofKind(SeriesTestKind.staticTest).length;
     final pyq = bundle.ofKind(SeriesTestKind.pyqMix).length;
 
-    Widget row(IconData icon, Color color, String title, String body) =>
+    Widget row(
+      IconData icon,
+      Color color,
+      String title,
+      String body, {
+      bool free = false,
+    }) =>
         Padding(
           padding: const EdgeInsets.only(bottom: AppSpacing.md),
           child: Row(
@@ -173,11 +180,21 @@ class SeriesUspCard extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      title,
-                      style: AppTextStyles.bodyMd().copyWith(
-                        fontWeight: FontWeight.w700,
-                      ),
+                    Row(
+                      children: [
+                        Flexible(
+                          child: Text(
+                            title,
+                            style: AppTextStyles.bodyMd().copyWith(
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                        ),
+                        if (free) ...[
+                          const SizedBox(width: AppSpacing.sm),
+                          const FreeBadge(size: 34),
+                        ],
+                      ],
                     ),
                     Text(
                       body,
@@ -216,27 +233,30 @@ class SeriesUspCard extends StatelessWidget {
             Icons.timer_outlined,
             AppColors.primary,
             '$flt full-length mocks',
-            '100 questions, 2 hours, UPSC marking (+2 / -0.66). One new mock '
-                'opens through the year, right up to the exam.',
+            'Each test has 100 questions, Time 2 hours.\nTest of all GS subjects + current affairs',
           ),
           row(
             Icons.menu_book_rounded,
             AppColors.info,
             '$subject subject tests',
-            'Topic-themed 50-question tests for Polity, Economy, Environment, '
-                'Geography and History & Culture.',
+            'Topic-wise 50-question tests for GS subjects',
           ),
           row(
             Icons.newspaper_rounded,
             AppColors.info,
             'Current affairs every month',
-            'A fresh test on the 1st, built from the last few months.',
+            'A fresh test on the 1st of each month, built from the previous month\'s Current affairs.',
           ),
           row(
             Icons.history_edu_rounded,
             AppColors.warning,
             'Previous year questions',
-            '$pyq free PYQ mix tests, plus PYQs tagged inside every paper.',
+            '$pyq free PYQ mix tests',
+            free: true,
+          ),
+          const Padding(
+            padding: EdgeInsets.only(bottom: AppSpacing.md),
+            child: Divider(height: 1),
           ),
           row(
             Icons.insights_rounded,
@@ -391,31 +411,35 @@ class SeriesOverviewTab extends ConsumerWidget {
                   ],
                 ),
                 const SizedBox(height: AppSpacing.md),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Expanded(
-                      child: SeriesInsightCard(
-                        revise: true,
-                        count: core.needsRevision.length,
-                        caption: core.useConfidence
-                            ? 'Confident mistakes'
-                            : 'Mistakes',
-                        action: 'Topics to revise first',
-                        onTap: () => openAll(revise: true),
+                // Equal-height cards: a stretching Row needs a bounded height,
+                // which a scrolling list does not give it.
+                IntrinsicHeight(
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Expanded(
+                        child: SeriesInsightCard(
+                          revise: true,
+                          count: core.needsRevision.length,
+                          caption: core.useConfidence
+                              ? 'Confident mistakes'
+                              : 'Mistakes',
+                          action: 'Topics to revise first',
+                          onTap: () => openAll(revise: true),
+                        ),
                       ),
-                    ),
-                    const SizedBox(width: AppSpacing.md),
-                    Expanded(
-                      child: SeriesInsightCard(
-                        revise: false,
-                        count: core.safeAreas.length,
-                        caption: 'Reliable topics',
-                        action: 'Keep practising',
-                        onTap: () => openAll(revise: false),
+                      const SizedBox(width: AppSpacing.md),
+                      Expanded(
+                        child: SeriesInsightCard(
+                          revise: false,
+                          count: core.safeAreas.length,
+                          caption: 'Reliable topics',
+                          action: 'Keep practising',
+                          onTap: () => openAll(revise: false),
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ],
             ),
@@ -547,16 +571,19 @@ class SeriesSubjectsTab extends ConsumerWidget {
   const SeriesSubjectsTab({
     super.key,
     required this.bundle,
+    required this.owned,
     required this.isHindi,
     required this.stats,
   });
 
   final SeriesBundle bundle;
+  final bool owned;
   final bool isHindi;
   final SeriesStats stats;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final full = bundle.forBucket(SeriesBuckets.fullSyllabus);
     final rows = [
       for (final s in stats.core.subjects)
         if (SeriesSubjects.alwaysListed.contains(s.subjectId) || s.answered > 0)
@@ -570,6 +597,26 @@ class SeriesSubjectsTab extends ConsumerWidget {
           'Subject-wise Tests',
           'Practise by subject and strengthen your concepts.',
         ),
+        if (full.isNotEmpty) ...[
+          SeriesSectionHeader(
+            'Full Syllabus Tests',
+            trailingText:
+                '${full.where((t) => stats.attempts.containsKey(t.id)).length}/${full.length} done',
+          ),
+          Padding(
+            padding: const EdgeInsets.only(bottom: AppSpacing.sm),
+            child: Text(
+              'Every subject in one paper, in Prelims proportion.',
+              style: AppTextStyles.bodySm().copyWith(
+                color: Theme.of(context).colorScheme.onSurfaceVariant,
+              ),
+            ),
+          ),
+          for (final t in full)
+            SeriesTestRow(bundle: bundle, test: t, owned: owned, stats: stats),
+          const SizedBox(height: AppSpacing.lg),
+          const SeriesSectionHeader('By subject'),
+        ],
         for (final s in rows)
           SeriesSubjectRow(
             stat: s,
