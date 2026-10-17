@@ -1167,6 +1167,10 @@ exports.getDailyCaLeaderboard = dailyCa.getDailyCaLeaderboard;
 exports.freezeDailyCa = dailyCa.freezeDailyCa;
 exports.adminFreezeDailyCa = dailyCa.adminFreezeDailyCa;
 
+const testSeries = require("./test_series");
+exports.publishTestSeriesDue = testSeries.publishTestSeriesDue;
+exports.adminPublishTestSeriesDue = testSeries.adminPublishTestSeriesDue;
+
 const fomoPulse = require("./fomo_pulse");
 exports.listFomoPulseHarvestCandidates = fomoPulse.listFomoPulseHarvestCandidates;
 exports.previewFomoPulseArticle = fomoPulse.previewFomoPulseArticle;

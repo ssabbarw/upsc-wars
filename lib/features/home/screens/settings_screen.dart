@@ -20,6 +20,7 @@ import '../../../core/providers/super_user_provider.dart';
 import '../../community/providers/user_block_providers.dart';
 import '../../question_editor/widgets/question_editor_access.dart';
 import '../providers/auth_providers.dart';
+import '../../test_series/providers/test_series_providers.dart';
 import '../../daily_ca/daily_ca_admin_constants.dart';
 import '../../daily_ca/data/daily_ca_firestore.dart';
 import '../../daily_ca/domain/daily_ca_generate_config.dart';
@@ -79,6 +80,8 @@ class SettingsScreen extends ConsumerWidget {
               children: [_PrelimsPersistentNotificationTile()],
             ),
             const SizedBox(height: AppSpacing.lg),
+
+            const _MyTestSeriesSection(),
 
             _Section(
               title: 'Support',
@@ -533,6 +536,37 @@ class _NavTile extends StatelessWidget {
         horizontal: AppSpacing.lg,
         vertical: 10,
       ),
+    );
+  }
+}
+
+/// Shown only when the user owns at least one test series.
+class _MyTestSeriesSection extends ConsumerWidget {
+  const _MyTestSeriesSection();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final owned = ref.watch(ownedSeriesIdsProvider).asData?.value ?? const {};
+    if (owned.isEmpty) return const SizedBox.shrink();
+    return Column(
+      children: [
+        _Section(
+          title: 'Test series',
+          children: [
+            _NavTile(
+              icon: Icons.workspace_premium_outlined,
+              iconBg: const Color(0xFFFFF4E6),
+              iconColor: const Color(0xFFB25A00),
+              title: 'My Test Series',
+              subtitle: owned.length == 1
+                  ? '1 series unlocked'
+                  : '${owned.length} series unlocked',
+              onTap: () => context.push('/my-test-series'),
+            ),
+          ],
+        ),
+        const SizedBox(height: AppSpacing.lg),
+      ],
     );
   }
 }

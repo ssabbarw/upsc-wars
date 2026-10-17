@@ -20,6 +20,9 @@ import '../theme/app_radius.dart';
 import '../theme/app_spacing.dart';
 import '../constants/app_constants.dart';
 import '../theme/app_text_styles.dart';
+import '../../features/test_series/screens/my_test_series_screen.dart';
+import '../../features/test_series/screens/series_subject_screen.dart';
+import '../../features/test_series/screens/test_series_home_screen.dart';
 import '../../features/bookmarks/screens/bookmarks_screen.dart';
 import '../../features/battle/domain/entities/battle_result_payload.dart';
 import '../../features/battle/domain/entities/battle_invite_target.dart';
@@ -826,6 +829,34 @@ GoRouter appRouter(Ref ref) {
         builder: (context, state) => SubjectDetailScreen(
           subject: Uri.decodeComponent(state.pathParameters['name']!),
         ),
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/test-series',
+        name: 'test_series',
+        builder: (context, state) => const TestSeriesEntryScreen(),
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/test-series/:seriesId',
+        name: 'test_series_home',
+        builder: (context, state) =>
+            TestSeriesHomeScreen(seriesId: state.pathParameters['seriesId']!),
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/test-series/:seriesId/subject/:subjectId',
+        name: 'test_series_subject',
+        builder: (context, state) => SeriesSubjectScreen(
+          seriesId: state.pathParameters['seriesId']!,
+          subjectId: state.pathParameters['subjectId']!,
+        ),
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/my-test-series',
+        name: 'my_test_series',
+        builder: (context, state) => const MyTestSeriesScreen(),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,

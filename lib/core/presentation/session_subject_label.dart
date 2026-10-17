@@ -7,6 +7,9 @@ String displayNameForSessionSubject(String subject) {
   if (subject == QuestionSourceConstants.dailyCaSessionSubject) {
     return 'Daily Current Affairs';
   }
+  if (subject == QuestionSourceConstants.testSeriesSessionSubject) {
+    return 'Test Series';
+  }
   if (subject == 'sunday_review') return 'Week review';
   if (subject == 'daily_revision') return 'Revision queue';
   final def = SubjectConstants.bySlug(subject);

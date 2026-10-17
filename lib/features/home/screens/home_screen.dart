@@ -33,6 +33,7 @@ import '../widgets/today_hub_section.dart';
 import '../../daily_ca/providers/daily_ca_providers.dart';
 import '../../daily_war/providers/daily_war_providers.dart';
 import '../../daily_war/widgets/daily_war_home_card.dart';
+import '../../test_series/widgets/test_series_home_card.dart';
 import '../providers/today_hub_provider.dart';
 import '../providers/today_hero_intent_provider.dart';
 import '../domain/daily_streak_service.dart';
@@ -48,6 +49,7 @@ import '../../../shared/widgets/home_page_video_banner.dart';
 import '../../../shared/widgets/rate_review_sheet.dart';
 import '../../../shared/widgets/soft_update_banner.dart';
 import '../widgets/daily_rituals_intro_sheet.dart';
+import '../widgets/data_restore_banner.dart';
 
 class HomeScreen extends HookConsumerWidget {
   const HomeScreen({super.key, this.heroSlot});
@@ -488,6 +490,7 @@ class HomeScreen extends HookConsumerWidget {
                     ),
                     const SizedBox(height: AppSpacing.md),
                     const SoftUpdateBanner(),
+                    const DataRestoreBanner(),
                     const PushDeniedBanner(compact: true),
                     Consumer(
                       builder: (context, ref, _) {
@@ -503,6 +506,8 @@ class HomeScreen extends HookConsumerWidget {
                       },
                     ),
                     const SizedBox(height: AppSpacing.md),
+                    // Own section: hidden unless sales are on or the user owns a series.
+                    const TestSeriesHomeCard(),
                     // Renders nothing unless Remote Config allows War; it owns
                     // its own bottom gap, so no spacer follows it here.
                     const DailyWarHomeCard(),

@@ -48,7 +48,7 @@ final class KillSwitchProvider
   }
 }
 
-String _$killSwitchHash() => r'd54c09dbf2baa349e361c08cada2c81660313121';
+String _$killSwitchHash() => r'fb272ef34d3f47ab1673b4b4edadade00add4683';
 
 /// Whether the Community tab should be shown (after [killSwitchProvider] fetch).
 ///
@@ -459,3 +459,91 @@ final class FactOrBluffSecondsRemoteProvider
 
 String _$factOrBluffSecondsRemoteHash() =>
     r'69cff7bde3da51daadeeb847c3e2c46f1cf86e99';
+
+/// Whether the Test Series may be **sold** to people who have not bought it.
+///
+/// Fails closed (`false`) while loading, on web, or on read errors. Buyers are
+/// handled separately: they keep access regardless of this flag.
+
+@ProviderFor(testSeriesSalesRemoteEnabled)
+final testSeriesSalesRemoteEnabledProvider =
+    TestSeriesSalesRemoteEnabledProvider._();
+
+/// Whether the Test Series may be **sold** to people who have not bought it.
+///
+/// Fails closed (`false`) while loading, on web, or on read errors. Buyers are
+/// handled separately: they keep access regardless of this flag.
+
+final class TestSeriesSalesRemoteEnabledProvider
+    extends $FunctionalProvider<AsyncValue<bool>, bool, FutureOr<bool>>
+    with $FutureModifier<bool>, $FutureProvider<bool> {
+  /// Whether the Test Series may be **sold** to people who have not bought it.
+  ///
+  /// Fails closed (`false`) while loading, on web, or on read errors. Buyers are
+  /// handled separately: they keep access regardless of this flag.
+  TestSeriesSalesRemoteEnabledProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'testSeriesSalesRemoteEnabledProvider',
+        isAutoDispose: false,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$testSeriesSalesRemoteEnabledHash();
+
+  @$internal
+  @override
+  $FutureProviderElement<bool> $createElement($ProviderPointer pointer) =>
+      $FutureProviderElement(pointer);
+
+  @override
+  FutureOr<bool> create(Ref ref) {
+    return testSeriesSalesRemoteEnabled(ref);
+  }
+}
+
+String _$testSeriesSalesRemoteEnabledHash() =>
+    r'71dff410a69f9877068e5bd53f94a51935b53e8b';
+
+/// Series id currently on sale (Remote Config `test_series_active_id`).
+
+@ProviderFor(testSeriesActiveIdRemote)
+final testSeriesActiveIdRemoteProvider = TestSeriesActiveIdRemoteProvider._();
+
+/// Series id currently on sale (Remote Config `test_series_active_id`).
+
+final class TestSeriesActiveIdRemoteProvider
+    extends $FunctionalProvider<AsyncValue<String>, String, FutureOr<String>>
+    with $FutureModifier<String>, $FutureProvider<String> {
+  /// Series id currently on sale (Remote Config `test_series_active_id`).
+  TestSeriesActiveIdRemoteProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'testSeriesActiveIdRemoteProvider',
+        isAutoDispose: false,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$testSeriesActiveIdRemoteHash();
+
+  @$internal
+  @override
+  $FutureProviderElement<String> $createElement($ProviderPointer pointer) =>
+      $FutureProviderElement(pointer);
+
+  @override
+  FutureOr<String> create(Ref ref) {
+    return testSeriesActiveIdRemote(ref);
+  }
+}
+
+String _$testSeriesActiveIdRemoteHash() =>
+    r'234cf92d62a2a795fbd6beda24be1756bd276eb8';

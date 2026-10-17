@@ -23,6 +23,7 @@ import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../core/theme/reading_font_scale.dart';
 import '../../../shared/extensions/context_extensions.dart';
+import '../../../shared/widgets/pyq_badge.dart';
 import '../../../shared/widgets/question_table_view.dart';
 import '../../../shared/theme/dark_mode_toggle.dart';
 import '../../../shared/widgets/debug_correct_answer_banner.dart';
@@ -1413,6 +1414,10 @@ class _QuestionArea extends HookConsumerWidget {
     Widget questionContent = Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        if (question.isPyq) ...[
+          PyqBadge(year: question.sourceYear),
+          const SizedBox(height: AppSpacing.sm),
+        ],
         if (trimmedDisplayText.isNotEmpty && !question.hasTable)
           SelectableCopySearchText(
             trimmedDisplayText,

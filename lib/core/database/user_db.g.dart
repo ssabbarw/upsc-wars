@@ -2839,6 +2839,39 @@ class $SessionsTable extends Sessions with TableInfo<$SessionsTable, Session> {
     ),
     defaultValue: const Constant(false),
   );
+  static const VerificationMeta _seriesIdMeta = const VerificationMeta(
+    'seriesId',
+  );
+  @override
+  late final GeneratedColumn<String> seriesId = GeneratedColumn<String>(
+    'series_id',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _seriesTestIdMeta = const VerificationMeta(
+    'seriesTestId',
+  );
+  @override
+  late final GeneratedColumn<String> seriesTestId = GeneratedColumn<String>(
+    'series_test_id',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _backedUpAtMeta = const VerificationMeta(
+    'backedUpAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> backedUpAt = GeneratedColumn<DateTime>(
+    'backed_up_at',
+    aliasedName,
+    true,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: false,
+  );
   @override
   List<GeneratedColumn> get $columns => [
     id,
@@ -2857,6 +2890,9 @@ class $SessionsTable extends Sessions with TableInfo<$SessionsTable, Session> {
     language,
     analyticsFeatureKey,
     synced,
+    seriesId,
+    seriesTestId,
+    backedUpAt,
   ];
   @override
   String get aliasedName => _alias ?? actualTableName;
@@ -2992,6 +3028,30 @@ class $SessionsTable extends Sessions with TableInfo<$SessionsTable, Session> {
         synced.isAcceptableOrUnknown(data['synced']!, _syncedMeta),
       );
     }
+    if (data.containsKey('series_id')) {
+      context.handle(
+        _seriesIdMeta,
+        seriesId.isAcceptableOrUnknown(data['series_id']!, _seriesIdMeta),
+      );
+    }
+    if (data.containsKey('series_test_id')) {
+      context.handle(
+        _seriesTestIdMeta,
+        seriesTestId.isAcceptableOrUnknown(
+          data['series_test_id']!,
+          _seriesTestIdMeta,
+        ),
+      );
+    }
+    if (data.containsKey('backed_up_at')) {
+      context.handle(
+        _backedUpAtMeta,
+        backedUpAt.isAcceptableOrUnknown(
+          data['backed_up_at']!,
+          _backedUpAtMeta,
+        ),
+      );
+    }
     return context;
   }
 
@@ -3065,6 +3125,18 @@ class $SessionsTable extends Sessions with TableInfo<$SessionsTable, Session> {
         DriftSqlType.bool,
         data['${effectivePrefix}synced'],
       )!,
+      seriesId: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}series_id'],
+      ),
+      seriesTestId: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}series_test_id'],
+      ),
+      backedUpAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}backed_up_at'],
+      ),
     );
   }
 
@@ -3093,6 +3165,18 @@ class Session extends DataClass implements Insertable<Session> {
 
   /// False until per-question attempt data has been aggregated to Firestore.
   final bool synced;
+
+  /// Paid Test Series this session belongs to (e.g. `prelims_2027`); null for
+  /// regular practice. Series dashboards filter on this.
+  final String? seriesId;
+
+  /// Test within the series (e.g. `static_polity_01`).
+  final String? seriesTestId;
+
+  /// When this completed session's answers were last written to the cloud
+  /// backup (`user_backups/{uid}/sessions/{id}`). Null = backup still pending
+  /// (offline, signed out, or completed before backup existed).
+  final DateTime? backedUpAt;
   const Session({
     required this.id,
     required this.createdAt,
@@ -3110,6 +3194,9 @@ class Session extends DataClass implements Insertable<Session> {
     required this.language,
     this.analyticsFeatureKey,
     required this.synced,
+    this.seriesId,
+    this.seriesTestId,
+    this.backedUpAt,
   });
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
@@ -3144,6 +3231,15 @@ class Session extends DataClass implements Insertable<Session> {
       map['analytics_feature_key'] = Variable<String>(analyticsFeatureKey);
     }
     map['synced'] = Variable<bool>(synced);
+    if (!nullToAbsent || seriesId != null) {
+      map['series_id'] = Variable<String>(seriesId);
+    }
+    if (!nullToAbsent || seriesTestId != null) {
+      map['series_test_id'] = Variable<String>(seriesTestId);
+    }
+    if (!nullToAbsent || backedUpAt != null) {
+      map['backed_up_at'] = Variable<DateTime>(backedUpAt);
+    }
     return map;
   }
 
@@ -3179,6 +3275,15 @@ class Session extends DataClass implements Insertable<Session> {
           ? const Value.absent()
           : Value(analyticsFeatureKey),
       synced: Value(synced),
+      seriesId: seriesId == null && nullToAbsent
+          ? const Value.absent()
+          : Value(seriesId),
+      seriesTestId: seriesTestId == null && nullToAbsent
+          ? const Value.absent()
+          : Value(seriesTestId),
+      backedUpAt: backedUpAt == null && nullToAbsent
+          ? const Value.absent()
+          : Value(backedUpAt),
     );
   }
 
@@ -3206,6 +3311,9 @@ class Session extends DataClass implements Insertable<Session> {
         json['analyticsFeatureKey'],
       ),
       synced: serializer.fromJson<bool>(json['synced']),
+      seriesId: serializer.fromJson<String?>(json['seriesId']),
+      seriesTestId: serializer.fromJson<String?>(json['seriesTestId']),
+      backedUpAt: serializer.fromJson<DateTime?>(json['backedUpAt']),
     );
   }
   @override
@@ -3228,6 +3336,9 @@ class Session extends DataClass implements Insertable<Session> {
       'language': serializer.toJson<String>(language),
       'analyticsFeatureKey': serializer.toJson<String?>(analyticsFeatureKey),
       'synced': serializer.toJson<bool>(synced),
+      'seriesId': serializer.toJson<String?>(seriesId),
+      'seriesTestId': serializer.toJson<String?>(seriesTestId),
+      'backedUpAt': serializer.toJson<DateTime?>(backedUpAt),
     };
   }
 
@@ -3248,6 +3359,9 @@ class Session extends DataClass implements Insertable<Session> {
     String? language,
     Value<String?> analyticsFeatureKey = const Value.absent(),
     bool? synced,
+    Value<String?> seriesId = const Value.absent(),
+    Value<String?> seriesTestId = const Value.absent(),
+    Value<DateTime?> backedUpAt = const Value.absent(),
   }) => Session(
     id: id ?? this.id,
     createdAt: createdAt ?? this.createdAt,
@@ -3271,6 +3385,9 @@ class Session extends DataClass implements Insertable<Session> {
         ? analyticsFeatureKey.value
         : this.analyticsFeatureKey,
     synced: synced ?? this.synced,
+    seriesId: seriesId.present ? seriesId.value : this.seriesId,
+    seriesTestId: seriesTestId.present ? seriesTestId.value : this.seriesTestId,
+    backedUpAt: backedUpAt.present ? backedUpAt.value : this.backedUpAt,
   );
   Session copyWithCompanion(SessionsCompanion data) {
     return Session(
@@ -3300,6 +3417,13 @@ class Session extends DataClass implements Insertable<Session> {
           ? data.analyticsFeatureKey.value
           : this.analyticsFeatureKey,
       synced: data.synced.present ? data.synced.value : this.synced,
+      seriesId: data.seriesId.present ? data.seriesId.value : this.seriesId,
+      seriesTestId: data.seriesTestId.present
+          ? data.seriesTestId.value
+          : this.seriesTestId,
+      backedUpAt: data.backedUpAt.present
+          ? data.backedUpAt.value
+          : this.backedUpAt,
     );
   }
 
@@ -3321,7 +3445,10 @@ class Session extends DataClass implements Insertable<Session> {
           ..write('examRemainingSecs: $examRemainingSecs, ')
           ..write('language: $language, ')
           ..write('analyticsFeatureKey: $analyticsFeatureKey, ')
-          ..write('synced: $synced')
+          ..write('synced: $synced, ')
+          ..write('seriesId: $seriesId, ')
+          ..write('seriesTestId: $seriesTestId, ')
+          ..write('backedUpAt: $backedUpAt')
           ..write(')'))
         .toString();
   }
@@ -3344,6 +3471,9 @@ class Session extends DataClass implements Insertable<Session> {
     language,
     analyticsFeatureKey,
     synced,
+    seriesId,
+    seriesTestId,
+    backedUpAt,
   );
   @override
   bool operator ==(Object other) =>
@@ -3364,7 +3494,10 @@ class Session extends DataClass implements Insertable<Session> {
           other.examRemainingSecs == this.examRemainingSecs &&
           other.language == this.language &&
           other.analyticsFeatureKey == this.analyticsFeatureKey &&
-          other.synced == this.synced);
+          other.synced == this.synced &&
+          other.seriesId == this.seriesId &&
+          other.seriesTestId == this.seriesTestId &&
+          other.backedUpAt == this.backedUpAt);
 }
 
 class SessionsCompanion extends UpdateCompanion<Session> {
@@ -3384,6 +3517,9 @@ class SessionsCompanion extends UpdateCompanion<Session> {
   final Value<String> language;
   final Value<String?> analyticsFeatureKey;
   final Value<bool> synced;
+  final Value<String?> seriesId;
+  final Value<String?> seriesTestId;
+  final Value<DateTime?> backedUpAt;
   final Value<int> rowid;
   const SessionsCompanion({
     this.id = const Value.absent(),
@@ -3402,6 +3538,9 @@ class SessionsCompanion extends UpdateCompanion<Session> {
     this.language = const Value.absent(),
     this.analyticsFeatureKey = const Value.absent(),
     this.synced = const Value.absent(),
+    this.seriesId = const Value.absent(),
+    this.seriesTestId = const Value.absent(),
+    this.backedUpAt = const Value.absent(),
     this.rowid = const Value.absent(),
   });
   SessionsCompanion.insert({
@@ -3421,6 +3560,9 @@ class SessionsCompanion extends UpdateCompanion<Session> {
     this.language = const Value.absent(),
     this.analyticsFeatureKey = const Value.absent(),
     this.synced = const Value.absent(),
+    this.seriesId = const Value.absent(),
+    this.seriesTestId = const Value.absent(),
+    this.backedUpAt = const Value.absent(),
     this.rowid = const Value.absent(),
   }) : id = Value(id),
        createdAt = Value(createdAt),
@@ -3446,6 +3588,9 @@ class SessionsCompanion extends UpdateCompanion<Session> {
     Expression<String>? language,
     Expression<String>? analyticsFeatureKey,
     Expression<bool>? synced,
+    Expression<String>? seriesId,
+    Expression<String>? seriesTestId,
+    Expression<DateTime>? backedUpAt,
     Expression<int>? rowid,
   }) {
     return RawValuesInsertable({
@@ -3466,6 +3611,9 @@ class SessionsCompanion extends UpdateCompanion<Session> {
       if (analyticsFeatureKey != null)
         'analytics_feature_key': analyticsFeatureKey,
       if (synced != null) 'synced': synced,
+      if (seriesId != null) 'series_id': seriesId,
+      if (seriesTestId != null) 'series_test_id': seriesTestId,
+      if (backedUpAt != null) 'backed_up_at': backedUpAt,
       if (rowid != null) 'rowid': rowid,
     });
   }
@@ -3487,6 +3635,9 @@ class SessionsCompanion extends UpdateCompanion<Session> {
     Value<String>? language,
     Value<String?>? analyticsFeatureKey,
     Value<bool>? synced,
+    Value<String?>? seriesId,
+    Value<String?>? seriesTestId,
+    Value<DateTime?>? backedUpAt,
     Value<int>? rowid,
   }) {
     return SessionsCompanion(
@@ -3506,6 +3657,9 @@ class SessionsCompanion extends UpdateCompanion<Session> {
       language: language ?? this.language,
       analyticsFeatureKey: analyticsFeatureKey ?? this.analyticsFeatureKey,
       synced: synced ?? this.synced,
+      seriesId: seriesId ?? this.seriesId,
+      seriesTestId: seriesTestId ?? this.seriesTestId,
+      backedUpAt: backedUpAt ?? this.backedUpAt,
       rowid: rowid ?? this.rowid,
     );
   }
@@ -3563,6 +3717,15 @@ class SessionsCompanion extends UpdateCompanion<Session> {
     if (synced.present) {
       map['synced'] = Variable<bool>(synced.value);
     }
+    if (seriesId.present) {
+      map['series_id'] = Variable<String>(seriesId.value);
+    }
+    if (seriesTestId.present) {
+      map['series_test_id'] = Variable<String>(seriesTestId.value);
+    }
+    if (backedUpAt.present) {
+      map['backed_up_at'] = Variable<DateTime>(backedUpAt.value);
+    }
     if (rowid.present) {
       map['rowid'] = Variable<int>(rowid.value);
     }
@@ -3588,6 +3751,9 @@ class SessionsCompanion extends UpdateCompanion<Session> {
           ..write('language: $language, ')
           ..write('analyticsFeatureKey: $analyticsFeatureKey, ')
           ..write('synced: $synced, ')
+          ..write('seriesId: $seriesId, ')
+          ..write('seriesTestId: $seriesTestId, ')
+          ..write('backedUpAt: $backedUpAt, ')
           ..write('rowid: $rowid')
           ..write(')'))
         .toString();
@@ -9156,6 +9322,9 @@ typedef $$SessionsTableCreateCompanionBuilder =
       Value<String> language,
       Value<String?> analyticsFeatureKey,
       Value<bool> synced,
+      Value<String?> seriesId,
+      Value<String?> seriesTestId,
+      Value<DateTime?> backedUpAt,
       Value<int> rowid,
     });
 typedef $$SessionsTableUpdateCompanionBuilder =
@@ -9176,6 +9345,9 @@ typedef $$SessionsTableUpdateCompanionBuilder =
       Value<String> language,
       Value<String?> analyticsFeatureKey,
       Value<bool> synced,
+      Value<String?> seriesId,
+      Value<String?> seriesTestId,
+      Value<DateTime?> backedUpAt,
       Value<int> rowid,
     });
 
@@ -9325,6 +9497,21 @@ class $$SessionsTableFilterComposer
     builder: (column) => ColumnFilters(column),
   );
 
+  ColumnFilters<String> get seriesId => $composableBuilder(
+    column: $table.seriesId,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get seriesTestId => $composableBuilder(
+    column: $table.seriesTestId,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get backedUpAt => $composableBuilder(
+    column: $table.backedUpAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
   Expression<bool> sessionQuestionsRefs(
     Expression<bool> Function($$SessionQuestionsTableFilterComposer f) f,
   ) {
@@ -9465,6 +9652,21 @@ class $$SessionsTableOrderingComposer
     column: $table.synced,
     builder: (column) => ColumnOrderings(column),
   );
+
+  ColumnOrderings<String> get seriesId => $composableBuilder(
+    column: $table.seriesId,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get seriesTestId => $composableBuilder(
+    column: $table.seriesTestId,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get backedUpAt => $composableBuilder(
+    column: $table.backedUpAt,
+    builder: (column) => ColumnOrderings(column),
+  );
 }
 
 class $$SessionsTableAnnotationComposer
@@ -9533,6 +9735,19 @@ class $$SessionsTableAnnotationComposer
 
   GeneratedColumn<bool> get synced =>
       $composableBuilder(column: $table.synced, builder: (column) => column);
+
+  GeneratedColumn<String> get seriesId =>
+      $composableBuilder(column: $table.seriesId, builder: (column) => column);
+
+  GeneratedColumn<String> get seriesTestId => $composableBuilder(
+    column: $table.seriesTestId,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<DateTime> get backedUpAt => $composableBuilder(
+    column: $table.backedUpAt,
+    builder: (column) => column,
+  );
 
   Expression<T> sessionQuestionsRefs<T extends Object>(
     Expression<T> Function($$SessionQuestionsTableAnnotationComposer a) f,
@@ -9633,6 +9848,9 @@ class $$SessionsTableTableManager
                 Value<String> language = const Value.absent(),
                 Value<String?> analyticsFeatureKey = const Value.absent(),
                 Value<bool> synced = const Value.absent(),
+                Value<String?> seriesId = const Value.absent(),
+                Value<String?> seriesTestId = const Value.absent(),
+                Value<DateTime?> backedUpAt = const Value.absent(),
                 Value<int> rowid = const Value.absent(),
               }) => SessionsCompanion(
                 id: id,
@@ -9651,6 +9869,9 @@ class $$SessionsTableTableManager
                 language: language,
                 analyticsFeatureKey: analyticsFeatureKey,
                 synced: synced,
+                seriesId: seriesId,
+                seriesTestId: seriesTestId,
+                backedUpAt: backedUpAt,
                 rowid: rowid,
               ),
           createCompanionCallback:
@@ -9671,6 +9892,9 @@ class $$SessionsTableTableManager
                 Value<String> language = const Value.absent(),
                 Value<String?> analyticsFeatureKey = const Value.absent(),
                 Value<bool> synced = const Value.absent(),
+                Value<String?> seriesId = const Value.absent(),
+                Value<String?> seriesTestId = const Value.absent(),
+                Value<DateTime?> backedUpAt = const Value.absent(),
                 Value<int> rowid = const Value.absent(),
               }) => SessionsCompanion.insert(
                 id: id,
@@ -9689,6 +9913,9 @@ class $$SessionsTableTableManager
                 language: language,
                 analyticsFeatureKey: analyticsFeatureKey,
                 synced: synced,
+                seriesId: seriesId,
+                seriesTestId: seriesTestId,
+                backedUpAt: backedUpAt,
                 rowid: rowid,
               ),
           withReferenceMapper: (p0) => p0

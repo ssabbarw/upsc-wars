@@ -125,4 +125,21 @@ void main() {
         await db.questionAttemptRecordsDao.getBySessionId(sessionId);
     expect(records, hasLength(1));
   });
+
+  test('only UUID-shaped question ids are synced (matches firestore.rules)', () {
+    expect(
+      QuestionStatsSyncService.isSyncableQuestionId(
+        '6148ef93-2c7b-4e62-8dee-18384b13e3f5',
+      ),
+      isTrue,
+    );
+    // Malformed ids that ship in the bundled bank.
+    expect(
+      QuestionStatsSyncService.isSyncableQuestionId(
+        'e5f6a7b8-c9d0-4e1f-2a3b-4c5d6e7f8g9h',
+      ),
+      isFalse,
+    );
+    expect(QuestionStatsSyncService.isSyncableQuestionId('qu1'), isFalse);
+  });
 }

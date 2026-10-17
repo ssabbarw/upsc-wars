@@ -9,6 +9,9 @@ abstract final class QuestionSourceConstants {
   /// Session [Sessions.subject] for the daily current-affairs feature.
   static const String dailyCaSessionSubject = 'daily_ca';
 
+  /// Session [Sessions.subject] for paid Test Series attempts.
+  static const String testSeriesSessionSubject = 'test_series';
+
   /// Session [Sessions.topic] for subject-wise current-affairs drills.
   static const String subjectCaSessionTopic = 'current_affairs';
 
@@ -20,6 +23,12 @@ abstract final class QuestionSourceConstants {
       'daily_current_affairs_revise';
   static const String analyticsSubjectCurrentAffairs = 'subject_current_affairs';
   static const String analyticsSubjectPyq = 'subject_pyq';
+
+  /// Scored Test Series attempt (also stored with series_id / series_test_id).
+  static const String analyticsTestSeries = 'test_series';
+
+  /// Unscored practice re-attempt of a Test Series test.
+  static const String analyticsTestSeriesPractice = 'test_series_practice';
 
   /// Maps pipeline / PYQ labels to app GS subject slugs.
   static const Map<String, String> gsSubjectSlugMap = {

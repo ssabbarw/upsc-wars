@@ -54,3 +54,7 @@ daily-current-mcqs/.env
 daily-current-mcqs/.env.local
 daily-current-mcqs/firebase_credentials.json
 daily-current-mcqs/venv/
+# Test series generator output and service-account keys (never commit)
+tools/test_series/out/
+**/service-account*.json
+**/serviceAccount*.json

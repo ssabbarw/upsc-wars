@@ -25,6 +25,7 @@ import 'package:upsc_wars/core/parsers/question_display_text_parser.dart';
 import 'package:upsc_wars/core/providers/prefs_provider.dart';
 import 'package:upsc_wars/core/services/local_daily_reminders_sync.dart';
 import 'package:upsc_wars/core/services/no_test_reminder_service.dart';
+import 'package:upsc_wars/core/backup/session_backup_service.dart';
 import 'package:upsc_wars/core/services/question_stats_sync_service.dart';
 import 'package:upsc_wars/features/test_engine/domain/repositories/test_engine_repository.dart';
 
@@ -271,6 +272,8 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
       upscTrapExplanationHi:
           trHi?.upscTrapExplanation ?? trEn?.upscTrapExplanation,
       conceptsUsed: _parseStringList(q.conceptsUsed),
+      sourceKind: q.sourceKind,
+      sourceYear: q.sourceYear,
     );
   }
 
@@ -472,6 +475,8 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
         userDb: _userDb,
       ).persistAndSyncSession(sessionId),
     );
+    // Cloud backup of this attempt's answers: one doc per test, one write.
+    unawaited(SessionBackupService(userDb: _userDb).backupSession(sessionId));
     final completedSessionCount = await _userDb.sessionsDao
         .countCompletedSessions();
     if (completedSessionCount == 1) {

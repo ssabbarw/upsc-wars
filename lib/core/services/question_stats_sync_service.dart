@@ -139,6 +139,10 @@ class QuestionStatsSyncService {
       }
       final deltas = <String, QuestionStatsDelta>{};
       for (final record in records) {
+        // Rules only accept UUID-shaped `question_stats` doc ids. A handful of
+        // bundled questions have malformed ids; one of them in a session would
+        // make the whole batch fail PERMISSION_DENIED forever.
+        if (!isSyncableQuestionId(record.questionId)) continue;
         final isFirstScored =
             !record.skipped && !seenScored.contains(record.questionId);
         final delta = deltas.putIfAbsent(
@@ -154,11 +158,22 @@ class QuestionStatsSyncService {
         }
       }
 
-      await _commitSessionSync(
-        sessionId: session.id,
-        logRef: logRef,
-        deltas: deltas.values,
-      );
+      try {
+        await _commitSessionSync(
+          sessionId: session.id,
+          logRef: logRef,
+          deltas: deltas.values,
+        );
+      } on FirebaseException catch (e, st) {
+        // Isolate the failure: one rejected session must not block every
+        // session queued behind it. It stays unsynced and is retried later.
+        debugPrint(
+          'QuestionStatsSyncService: session ${session.id} rejected '
+          '(${e.code}); continuing',
+        );
+        debugPrintStack(stackTrace: st);
+        continue;
+      }
       await _userDb.sessionsDao.markSessionSynced(session.id);
       syncedCount++;
     }
@@ -166,8 +181,17 @@ class QuestionStatsSyncService {
     return syncedCount;
   }
 
+  static final _uuidShape = RegExp(
+    r'^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$',
+  );
+
+  /// Mirrors the `isUuid()` check in `firestore.rules` for `question_stats`.
+  @visibleForTesting
+  static bool isSyncableQuestionId(String id) => _uuidShape.hasMatch(id);
+
   /// Increments bookmark counter when a user bookmarks a question.
   Future<void> recordBookmark(String questionId) async {
+    if (!isSyncableQuestionId(questionId)) return;
     try {
       await AnonymousAuthService.ensureSignedIn();
       await QuestionStatsFirestore.doc(questionId).set(
@@ -185,6 +209,7 @@ class QuestionStatsSyncService {
 
   /// Increments report counter when a user reports a question error.
   Future<void> recordReport(String questionId) async {
+    if (!isSyncableQuestionId(questionId)) return;
     try {
       await AnonymousAuthService.ensureSignedIn();
       await QuestionStatsFirestore.doc(questionId).set(

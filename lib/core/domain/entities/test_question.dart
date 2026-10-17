@@ -98,6 +98,8 @@ class TestQuestion {
     required this.upscTrapExplanation,
     required this.upscTrapExplanationHi,
     required this.conceptsUsed,
+    this.sourceKind = 'static',
+    this.sourceYear,
   });
 
   final String uuid;
@@ -139,6 +141,15 @@ class TestQuestion {
   final String? upscTrapExplanation;
   final String? upscTrapExplanationHi;
   final List<String> conceptsUsed;
+
+  /// `static` | `pyq` | `current_affairs` (from the question bank row).
+  final String sourceKind;
+
+  /// Exam year for PYQs, otherwise null.
+  final int? sourceYear;
+
+  /// True for previous-year UPSC questions (shown with a PYQ badge).
+  bool get isPyq => sourceKind == 'pyq';
 
   TestQuestion copyWith({
     String? selectedOption,
@@ -193,6 +204,8 @@ class TestQuestion {
       upscTrapExplanation: upscTrapExplanation,
       upscTrapExplanationHi: upscTrapExplanationHi,
       conceptsUsed: conceptsUsed,
+      sourceKind: sourceKind,
+      sourceYear: sourceYear,
     );
   }
 }

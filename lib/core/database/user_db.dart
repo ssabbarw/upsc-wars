@@ -115,6 +115,19 @@ class Sessions extends Table {
   BoolColumn get synced =>
       boolean().withDefault(const Constant(false))();
 
+  /// Paid Test Series this session belongs to (e.g. `prelims_2027`); null for
+  /// regular practice. Series dashboards filter on this.
+  TextColumn get seriesId => text().named('series_id').nullable()();
+
+  /// Test within the series (e.g. `static_polity_01`).
+  TextColumn get seriesTestId => text().named('series_test_id').nullable()();
+
+  /// When this completed session's answers were last written to the cloud
+  /// backup (`user_backups/{uid}/sessions/{id}`). Null = backup still pending
+  /// (offline, signed out, or completed before backup existed).
+  DateTimeColumn get backedUpAt =>
+      dateTime().named('backed_up_at').nullable()();
+
   @override
   Set<Column> get primaryKey => {id};
 }
@@ -884,6 +897,31 @@ class SessionsDao extends DatabaseAccessor<UserDatabase>
         )
         ..orderBy([(t) => OrderingTerm.asc(t.completedAt)]))
       .get();
+
+  /// Marks [ids] as written to the cloud backup.
+  Future<void> markSessionsBackedUp(Iterable<String> ids, DateTime at) async {
+    final list = ids.toList();
+    if (list.isEmpty) return;
+    await (update(sessions)..where((t) => t.id.isIn(list))).write(
+      SessionsCompanion(backedUpAt: Value(at)),
+    );
+  }
+
+  /// Completed sessions not yet in the cloud backup, oldest first.
+  Future<List<Session>> getSessionsPendingBackup() => (select(sessions)
+        ..where(
+          (t) => t.status.equals('completed') & t.backedUpAt.isNull(),
+        )
+        ..orderBy([(t) => OrderingTerm.asc(t.completedAt)]))
+      .get();
+
+  /// Which of [ids] already exist locally (used by restore to skip dupes).
+  Future<Set<String>> existingSessionIds(Iterable<String> ids) async {
+    final list = ids.toList();
+    if (list.isEmpty) return {};
+    final rows = await (select(sessions)..where((t) => t.id.isIn(list))).get();
+    return {for (final r in rows) r.id};
+  }
 
   Future<List<Session>> getAllSessionsOrderedByCreatedAtDesc() => (select(
     sessions,
@@ -1678,7 +1716,7 @@ class UserDatabase extends _$UserDatabase {
   UserDatabase([QueryExecutor? executor]) : super(executor ?? _openUnifiedDb());
 
   @override
-  int get schemaVersion => 7;
+  int get schemaVersion => 9;
 
   /// True when [column] already exists on [table] (handles prebuilt DBs whose
   /// `user_version` lags behind the actual schema).
@@ -1805,8 +1843,28 @@ class UserDatabase extends _$UserDatabase {
           'ON question_attempt_records(question_id)',
         );
       }
+      if (from < 8) {
+        if (!await _sqliteColumnExists('sessions', 'series_id')) {
+          await m.addColumn(sessions, sessions.seriesId);
+        }
+        if (!await _sqliteColumnExists('sessions', 'series_test_id')) {
+          await m.addColumn(sessions, sessions.seriesTestId);
+        }
+        await customStatement(
+          'CREATE INDEX IF NOT EXISTS idx_sessions_series '
+          'ON sessions(series_id, series_test_id)',
+        );
+      }
+      if (from < 9) {
+        if (!await _sqliteColumnExists('sessions', 'backed_up_at')) {
+          await m.addColumn(sessions, sessions.backedUpAt);
+        }
+      }
     },
   );
 }
 
 LazyDatabase _openUnifiedDb() => user_db_connection.openUserDb();
+
+/// Path of the on-device DB file (null on web).
+Future<String?> userDbFilePath() => user_db_connection.userDbFilePath();

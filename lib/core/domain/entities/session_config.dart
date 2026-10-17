@@ -25,6 +25,8 @@ class SessionConfig {
     this.analyticsFeatureKey,
     this.dangerReviseHistoryConfidence,
     this.requireAllSpecificUuids = false,
+    this.seriesId,
+    this.seriesTestId,
   });
 
   final String subject;
@@ -60,6 +62,13 @@ class SessionConfig {
   /// all-India papers, where a short paper would mean an unfair rank.
   final bool requireAllSpecificUuids;
 
+  /// Paid Test Series id (e.g. `prelims_2027`) when this is a scored series
+  /// attempt. Stored on the session row; series dashboards filter on it.
+  final String? seriesId;
+
+  /// Test id within [seriesId] (e.g. `static_polity_01`).
+  final String? seriesTestId;
+
   SessionConfig copyWith({
     String? subject,
     String? topic,
@@ -73,6 +82,8 @@ class SessionConfig {
     String? analyticsFeatureKey,
     String? dangerReviseHistoryConfidence,
     bool? requireAllSpecificUuids,
+    String? seriesId,
+    String? seriesTestId,
   }) {
     return SessionConfig(
       subject: subject ?? this.subject,
@@ -89,6 +100,8 @@ class SessionConfig {
           dangerReviseHistoryConfidence ?? this.dangerReviseHistoryConfidence,
       requireAllSpecificUuids:
           requireAllSpecificUuids ?? this.requireAllSpecificUuids,
+      seriesId: seriesId ?? this.seriesId,
+      seriesTestId: seriesTestId ?? this.seriesTestId,
     );
   }
 }

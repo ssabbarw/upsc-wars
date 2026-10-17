@@ -31,6 +31,7 @@ import '../core/services/question_stats_sync_service.dart';
 import '../features/question_editor/providers/question_editor_providers.dart';
 import '../features/community/services/community_bucket_presence_service.dart';
 import '../features/home/providers/auth_providers.dart';
+import '../features/home/providers/data_restore_provider.dart';
 import '../core/providers/prefs_provider.dart';
 import '../core/providers/user_database_provider.dart';
 import '../core/auth/super_user.dart';
@@ -196,6 +197,13 @@ class _RootMaterialApp extends HookConsumerWidget {
           upscWarsTrace('question_stats_flush error', error: e, stackTrace: st);
         }
       }());
+      // Already-signed-in launch: the auth listener below only fires on
+      // changes, so kick off restore/backup flush explicitly.
+      unawaited(
+        ref
+            .read(dataRestoreProvider.notifier)
+            .onUserChanged(FirebaseAuth.instance.currentUser),
+      );
       unawaited(() async {
         try {
           await ref.read(killSwitchProvider.future);
@@ -256,6 +264,13 @@ class _RootMaterialApp extends HookConsumerWidget {
             try {
               final db = ref.read(userDatabaseProvider);
               await QuestionStatsSyncService(userDb: db).syncAllPending();
+              final backup = ref.read(sessionBackupServiceProvider);
+              // No-op once the one-time backfill has succeeded; otherwise
+              // resumes it after an offline/failed attempt.
+              await backup.runBackfillOnce();
+              await backup.retryPending();
+              // Local hash compare; only writes if a bookmark change failed to upload.
+              await ref.read(bookmarkBackupServiceProvider).syncIfChanged();
             } catch (e, st) {
               upscWarsTrace(
                 'question_stats_periodic_flush error',
@@ -274,6 +289,9 @@ class _RootMaterialApp extends HookConsumerWidget {
       unawaited(FirebaseAnalyticsSink.syncCollectionForUser(u));
       if (!next.hasValue) return;
       if (!AuthSession.isAccountSignedIn(u)) return;
+      // Pull this account's backed-up tests onto a fresh install (shows the
+      // "Restoring your data" card on Home), then flush anything pending.
+      unawaited(ref.read(dataRestoreProvider.notifier).onUserChanged(u));
       unawaited(FcmTokenSyncService.syncForCurrentUser());
       unawaited(CommunityBucketPresenceService.syncForCurrentUser(ref));
       User? prevUser;

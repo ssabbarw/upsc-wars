@@ -1275,6 +1275,9 @@ exports.getDailyCaMyRank = onCall(
   },
 );
 
+/** Shared with the test-series functions (not a deployed function). */
+exports._requireAdmin = requireAdmin;
+
 exports._dailyCaRankInternals = {
   paperQuizContentIso,
   scoreAnswers,

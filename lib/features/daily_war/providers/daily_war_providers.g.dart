@@ -170,14 +170,26 @@ abstract class _$DailyWarSessionHydrated extends $Notifier<Set<String>> {
 }
 
 /// Today's War public doc — one server read per app open, then local only.
+///
+/// Gated on the feature flag: `todayHubProvider` watches this from Home for
+/// every user, so an ungated read would bill four War documents per session to
+/// the ~all of them who cannot see the feature.
 
 @ProviderFor(DailyWarTodayDoc)
 final dailyWarTodayDocProvider = DailyWarTodayDocProvider._();
 
 /// Today's War public doc — one server read per app open, then local only.
+///
+/// Gated on the feature flag: `todayHubProvider` watches this from Home for
+/// every user, so an ungated read would bill four War documents per session to
+/// the ~all of them who cannot see the feature.
 final class DailyWarTodayDocProvider
     extends $AsyncNotifierProvider<DailyWarTodayDoc, DailyWarDoc?> {
   /// Today's War public doc — one server read per app open, then local only.
+  ///
+  /// Gated on the feature flag: `todayHubProvider` watches this from Home for
+  /// every user, so an ungated read would bill four War documents per session to
+  /// the ~all of them who cannot see the feature.
   DailyWarTodayDocProvider._()
     : super(
         from: null,
@@ -197,9 +209,13 @@ final class DailyWarTodayDocProvider
   DailyWarTodayDoc create() => DailyWarTodayDoc();
 }
 
-String _$dailyWarTodayDocHash() => r'b0a0019c2db4a38f6b883c983b74afe208cb06ef';
+String _$dailyWarTodayDocHash() => r'ac299f98d285269e828fba25e94a4bbdaf81d69e';
 
 /// Today's War public doc — one server read per app open, then local only.
+///
+/// Gated on the feature flag: `todayHubProvider` watches this from Home for
+/// every user, so an ungated read would bill four War documents per session to
+/// the ~all of them who cannot see the feature.
 
 abstract class _$DailyWarTodayDoc extends $AsyncNotifier<DailyWarDoc?> {
   FutureOr<DailyWarDoc?> build();
@@ -220,15 +236,21 @@ abstract class _$DailyWarTodayDoc extends $AsyncNotifier<DailyWarDoc?> {
 }
 
 /// Signed-in user's submission for today — one server read per app open.
+///
+/// Gated on the feature flag for the same reason as [DailyWarTodayDoc].
 
 @ProviderFor(DailyWarTodaySubmission)
 final dailyWarTodaySubmissionProvider = DailyWarTodaySubmissionProvider._();
 
 /// Signed-in user's submission for today — one server read per app open.
+///
+/// Gated on the feature flag for the same reason as [DailyWarTodayDoc].
 final class DailyWarTodaySubmissionProvider
     extends
         $AsyncNotifierProvider<DailyWarTodaySubmission, DailyWarSubmission?> {
   /// Signed-in user's submission for today — one server read per app open.
+  ///
+  /// Gated on the feature flag for the same reason as [DailyWarTodayDoc].
   DailyWarTodaySubmissionProvider._()
     : super(
         from: null,
@@ -249,9 +271,11 @@ final class DailyWarTodaySubmissionProvider
 }
 
 String _$dailyWarTodaySubmissionHash() =>
-    r'e31fa256fba8138233928b88f995e0fe7c06c886';
+    r'b428273a3469d956faf960596db05dbe15b1b33e';
 
 /// Signed-in user's submission for today — one server read per app open.
+///
+/// Gated on the feature flag for the same reason as [DailyWarTodayDoc].
 
 abstract class _$DailyWarTodaySubmission
     extends $AsyncNotifier<DailyWarSubmission?> {
@@ -447,7 +471,7 @@ final class DailyWarYesterdayDocProvider
 }
 
 String _$dailyWarYesterdayDocHash() =>
-    r'8285f206cce8de32257082b1aefcb89271e63a46';
+    r'fdd77ba02d2c10b32ed92d011741d624ca184d5a';
 
 abstract class _$DailyWarYesterdayDoc extends $AsyncNotifier<DailyWarDoc?> {
   FutureOr<DailyWarDoc?> build();
@@ -497,7 +521,7 @@ final class DailyWarYesterdaySubmissionProvider
 }
 
 String _$dailyWarYesterdaySubmissionHash() =>
-    r'f1acf7dd036b494169c8c0471319b22202392e0b';
+    r'ceed10a2be72b0d370364cb3045b2fa61aed2a7d';
 
 abstract class _$DailyWarYesterdaySubmission
     extends $AsyncNotifier<DailyWarSubmission?> {

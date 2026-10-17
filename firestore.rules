@@ -210,6 +210,21 @@ service cloud.firestore {
       allow write: if false;
     }
 
+    /// Paid Test Series (`test_series/{seriesId}` and its `tests` subcollection).
+    /// Test docs hold only ordered question UUIDs + metadata (no answers).
+    /// Signed-in (incl. anonymous) read; the generator and monthly function
+    /// write via the Admin SDK only. Access to paid tests is gated in the app
+    /// by the RevenueCat entitlement.
+    match /test_series/{seriesId} {
+      allow read: if signedIn();
+      allow write: if false;
+
+      match /tests/{testId} {
+        allow read: if signedIn();
+        allow write: if false;
+      }
+    }
+
     /// Daily CA ranks — public day meta; answers stay Functions-only.
     /// Clients must not write submissions or the leaderboard.
     match /daily_ca_days/{dateId} {
@@ -498,9 +513,56 @@ service cloud.firestore {
       allow read, write: if signedIn() && request.auth.uid == uid;
     }
 
+    /// Per-account test backup: `user_backups/{uid}/sessions/{sessionId}` —
+    /// one document per completed attempt (answers, timing, confidence).
+    /// Owner-only and real accounts only: an anonymous uid is lost on reinstall,
+    /// so backing up under it would be useless (and it keeps bot traffic out).
+    function isRealAccount() {
+      return signedIn()
+        && request.auth.token.firebase.sign_in_provider != 'anonymous';
+    }
+
+    function validSessionBackup(sessionId) {
+      let d = request.resource.data;
+      return d.v is int
+        && d.sid == sessionId
+        && d.q is list
+        && d.q.size() > 0
+        && d.q.size() <= 2000
+        && d.subject is string
+        && d.completedAtMs is int;
+    }
+
+    match /user_backups/{uid}/sessions/{sessionId} {
+      allow read: if isRealAccount() && request.auth.uid == uid;
+      allow create, update: if isRealAccount()
+        && request.auth.uid == uid
+        && validSessionBackup(sessionId);
+      // Needed for account deletion / "delete my data".
+      allow delete: if isRealAccount() && request.auth.uid == uid;
+    }
+
+    /// Bookmarks backup: one doc per account, `user_backups/{uid}/meta/bookmarks`.
+    function validBookmarksBackup() {
+      let d = request.resource.data;
+      return d.v is int
+        && d.items is list
+        && d.items.size() <= 5000;
+    }
+
+    match /user_backups/{uid}/meta/{docId} {
+      allow read: if isRealAccount() && request.auth.uid == uid;
+      allow create, update: if isRealAccount()
+        && request.auth.uid == uid
+        && docId == 'bookmarks'
+        && validBookmarksBackup();
+      allow delete: if isRealAccount() && request.auth.uid == uid;
+    }
+
     // Authenticated users: all other collections (tighten per collection before prod if needed).
     match /{document=**} {
       allow read, write: if signedIn()
+        && !isUserBackupsPath(database)
         && !isUsersRootDoc(database)
         && !isUsersBlockedPath(database)
         && !isBlockListsPath(database)
@@ -512,6 +574,12 @@ service cloud.firestore {
 
     function isUsersRootDoc(database) {
       return request.path.matches('/databases/' + database + '/documents/users/[^/]+$');
+    }
+
+    function isUserBackupsPath(database) {
+      return request.path.matches(
+        '/databases/' + database + '/documents/user_backups(/.*)?'
+      );
     }
 
     function isUsersBlockedPath(database) {

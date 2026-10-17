@@ -114,6 +114,8 @@ class CreateSessionRepositoryImpl implements CreateSessionRepository {
               : const Value.absent(),
           language: Value(config.language),
           analyticsFeatureKey: Value(config.analyticsFeatureKey),
+          seriesId: Value(config.seriesId),
+          seriesTestId: Value(config.seriesTestId),
         ),
       );
       for (var i = 0; i < n; i++) {
@@ -184,6 +186,8 @@ class CreateSessionRepositoryImpl implements CreateSessionRepository {
               : const Value.absent(),
           language: Value(config.language),
           analyticsFeatureKey: Value(config.analyticsFeatureKey),
+          seriesId: Value(config.seriesId),
+          seriesTestId: Value(config.seriesTestId),
         ),
       );
       for (var i = 0; i < n; i++) {

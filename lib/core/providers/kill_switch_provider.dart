@@ -61,6 +61,13 @@ const factOrBluffSecondsRemoteConfigKey = 'fact_or_bluff_seconds';
 const questionCorrectionsRevisionRemoteConfigKey =
     'question_corrections_revision';
 
+/// Remote Config: when `false`, the Test Series is not sold. People who already
+/// bought it keep full access; everyone else sees nothing (fails closed).
+const testSeriesSalesEnabledRemoteConfigKey = 'test_series_sales_enabled';
+
+/// Remote Config: id of the series currently on sale (e.g. `prelims_2027`).
+const testSeriesActiveIdRemoteConfigKey = 'test_series_active_id';
+
 /// Result of comparing this build to Remote Config.
 class KillSwitchSnapshot {
   const KillSwitchSnapshot({
@@ -118,6 +125,9 @@ Future<KillSwitchSnapshot> killSwitch(Ref ref) async {
       qotdMaxPostsPerDayRemoteConfigKey: 3,
       factOrBluffSecondsRemoteConfigKey: 10,
       questionCorrectionsRevisionRemoteConfigKey: 0,
+      // Selling is off until you switch it on in the Firebase console.
+      testSeriesSalesEnabledRemoteConfigKey: false,
+      testSeriesActiveIdRemoteConfigKey: 'prelims_2027',
       adminDashboardCollectionEnabledRemoteConfigKey: true,
       // YYYY-MM-DD (time defaults to 09:30 local)
       'prelims_date': '2027-05-23',
@@ -309,6 +319,39 @@ Future<int> factOrBluffSecondsRemote(Ref ref) async {
         FirebaseRemoteConfig.instance.getInt(factOrBluffSecondsRemoteConfigKey);
     if (n <= 0) return fallback;
     return n.clamp(3, 60);
+  } on Object catch (_) {
+    return fallback;
+  }
+}
+
+/// Whether the Test Series may be **sold** to people who have not bought it.
+///
+/// Fails closed (`false`) while loading, on web, or on read errors. Buyers are
+/// handled separately: they keep access regardless of this flag.
+@Riverpod(keepAlive: true)
+Future<bool> testSeriesSalesRemoteEnabled(Ref ref) async {
+  if (kIsWeb) return false;
+  await ref.watch(killSwitchProvider.future);
+  try {
+    return FirebaseRemoteConfig.instance.getBool(
+      testSeriesSalesEnabledRemoteConfigKey,
+    );
+  } on Object catch (_) {
+    return false;
+  }
+}
+
+/// Series id currently on sale (Remote Config `test_series_active_id`).
+@Riverpod(keepAlive: true)
+Future<String> testSeriesActiveIdRemote(Ref ref) async {
+  const fallback = 'prelims_2027';
+  if (kIsWeb) return fallback;
+  await ref.watch(killSwitchProvider.future);
+  try {
+    final v = FirebaseRemoteConfig.instance
+        .getString(testSeriesActiveIdRemoteConfigKey)
+        .trim();
+    return v.isEmpty ? fallback : v;
   } on Object catch (_) {
     return fallback;
   }
