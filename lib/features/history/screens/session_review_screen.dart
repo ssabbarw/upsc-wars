@@ -12,6 +12,7 @@ import 'package:upsc_wars/core/domain/entities/test_question.dart';
 import 'package:upsc_wars/core/providers/app_language_helpers.dart';
 import 'package:upsc_wars/core/providers/catalog_providers.dart';
 import 'package:upsc_wars/core/theme/app_colors.dart';
+import 'package:upsc_wars/core/theme/reading_font_scale.dart';
 import 'package:upsc_wars/core/providers/prefs_provider.dart';
 import 'package:upsc_wars/core/providers/user_database_provider.dart';
 import 'package:upsc_wars/shared/extensions/context_extensions.dart';
@@ -372,16 +373,16 @@ class SessionReviewScreen extends HookConsumerWidget {
     useEffect(() {
       maybeMarkDemoDiagnosticReviewOpened(sessionId);
       unawaited(() async {
-        final session =
-            await ref.read(userDatabaseProvider).sessionsDao.getSessionById(
-              sessionId,
-            );
+        final session = await ref
+            .read(userDatabaseProvider)
+            .sessionsDao
+            .getSessionById(sessionId);
         maybeMarkDemoDiagnosticReviewOpened(
           sessionId,
           analyticsFeatureKey: session?.analyticsFeatureKey,
         );
-        final isDemo = DemoDiagnosticEphemeralStore.instance.peek(sessionId) !=
-                null ||
+        final isDemo =
+            DemoDiagnosticEphemeralStore.instance.peek(sessionId) != null ||
             DemoDiagnosticEphemeralStore.instance.isDemoAnalyticsKey(
               session?.analyticsFeatureKey,
             );
@@ -392,8 +393,7 @@ class SessionReviewScreen extends HookConsumerWidget {
           );
         }
         final topic = session?.topic;
-        if (session?.subject ==
-                QuestionSourceConstants.dailyCaSessionSubject &&
+        if (session?.subject == QuestionSourceConstants.dailyCaSessionSubject &&
             topic != null &&
             topic.isNotEmpty) {
           await markDailyCaResultsOpened(ref, topic);
@@ -476,8 +476,7 @@ class SessionReviewScreen extends HookConsumerWidget {
               isQueued: isQueued,
               confidenceSessionId: sessionId,
               analyticsSource:
-                  DemoDiagnosticEphemeralStore.instance.peek(sessionId) !=
-                      null
+                  DemoDiagnosticEphemeralStore.instance.peek(sessionId) != null
                   ? 'demo_review'
                   : (focusWrong ? 'mistake_review' : 'session_review'),
               onShare: () => unawaited(
@@ -739,10 +738,12 @@ class ReviewBody extends StatelessWidget {
               if (parsed.stem.isNotEmpty && !question.hasTable)
                 SelectableCopySearchText(
                   parsed.stem,
-                  style: TextStyle(
-                    fontSize: 13.5,
-                    height: 1.6,
-                    color: scheme.onSurface,
+                  style: context.readingFont(
+                    TextStyle(
+                      fontSize: 13.5,
+                      height: 1.6,
+                      color: scheme.onSurface,
+                    ),
                   ),
                 ),
               if (parsed.statements.isNotEmpty && !question.hasTable) ...[
@@ -761,10 +762,12 @@ class ReviewBody extends StatelessWidget {
                     ),
                     child: SelectableCopySearchText(
                       st,
-                      style: TextStyle(
-                        fontSize: 13,
-                        height: 1.55,
-                        color: scheme.onSurfaceVariant,
+                      style: context.readingFont(
+                        TextStyle(
+                          fontSize: 13,
+                          height: 1.55,
+                          color: scheme.onSurfaceVariant,
+                        ),
                       ),
                     ),
                   ),

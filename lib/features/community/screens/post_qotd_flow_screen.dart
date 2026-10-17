@@ -5,13 +5,13 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/domain/entities/test_question.dart';
 import '../../../core/providers/catalog_providers.dart';
-import '../../../core/providers/prefs_provider.dart'
-    show prefsServiceProvider;
+import '../../../core/providers/prefs_provider.dart' show prefsServiceProvider;
 import '../../../core/providers/user_database_provider.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../core/theme/reading_font_scale.dart';
 import '../../../shared/widgets/en_hi_language_toggle.dart';
 import '../../../shared/widgets/question_table_view.dart';
 import '../../../shared/widgets/selectable_copy_search_text.dart';
@@ -261,31 +261,31 @@ class PostQotdFlowScreen extends HookConsumerWidget {
                 child: question.value == null && drawing.value
                     ? const Center(child: CircularProgressIndicator())
                     : question.value == null
-                        ? Center(
-                            child: Text(
-                              'No question loaded.',
-                              style: AppTextStyles.bodyMd(),
+                    ? Center(
+                        child: Text(
+                          'No question loaded.',
+                          style: AppTextStyles.bodyMd(),
+                        ),
+                      )
+                    : Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Expanded(
+                            child: _PracticeStep(
+                              scheme: scheme,
+                              question: question.value!,
+                              uiLanguage: uiLang,
+                              picked: picked.value,
+                              drawing: drawing.value,
+                              onShuffle: () async {
+                                await drawQuestion();
+                              },
+                              onPick: (k) => picked.value = k,
+                              onPost: openPostSheet,
                             ),
-                          )
-                        : Column(
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: [
-                              Expanded(
-                                child: _PracticeStep(
-                                  scheme: scheme,
-                                  question: question.value!,
-                                  uiLanguage: uiLang,
-                                  picked: picked.value,
-                                  drawing: drawing.value,
-                                  onShuffle: () async {
-                                    await drawQuestion();
-                                  },
-                                  onPick: (k) => picked.value = k,
-                                  onPost: openPostSheet,
-                                ),
-                              ),
-                            ],
                           ),
+                        ],
+                      ),
               ),
             ),
     );
@@ -323,16 +323,12 @@ class _PracticeStep extends StatelessWidget {
     final od = (isHi ? question.optionDHi : question.optionD).trim();
     final hasTable = question.hasTable;
     final optionsBody = '(A) $oa\n(B) $ob\n(C) $oc\n(D) $od';
-    final nonTableBlock = () {
-      final buf = StringBuffer();
-      if (stem.isNotEmpty) buf.writeln(stem);
-      buf.writeln();
-      buf.writeln('(A) $oa');
-      buf.writeln('(B) $ob');
-      buf.writeln('(C) $oc');
-      buf.writeln('(D) $od');
-      return buf.toString().trim();
-    }();
+    final stemStyle = context.readingFont(
+      AppTextStyles.question().copyWith(color: scheme.onSurface),
+    );
+    final optionStyle = AppTextStyles.question().copyWith(
+      color: scheme.onSurface,
+    );
 
     final finalExplanation = isHi
         ? question.finalExplanationHi
@@ -385,25 +381,19 @@ class _PracticeStep extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: AppSpacing.md),
-                if (!hasTable)
-                  SelectableCopySearchText(
-                    nonTableBlock,
-                    style: AppTextStyles.question().copyWith(
-                      color: scheme.onSurface,
-                    ),
-                  )
-                else ...[
+                if (!hasTable) ...[
                   if (stem.isNotEmpty)
-                    SelectableCopySearchText(
-                      stem,
-                      style: AppTextStyles.question().copyWith(
-                        color: scheme.onSurface,
-                      ),
-                    ),
+                    SelectableCopySearchText(stem, style: stemStyle),
+                  if (stem.isNotEmpty) const SizedBox(height: AppSpacing.md),
+                  SelectableCopySearchText(optionsBody, style: optionStyle),
+                ] else ...[
+                  if (stem.isNotEmpty)
+                    SelectableCopySearchText(stem, style: stemStyle),
                   Builder(
                     builder: (_) {
-                      final td =
-                          isHi ? question.tableDataHi : question.tableData;
+                      final td = isHi
+                          ? question.tableDataHi
+                          : question.tableData;
                       final tdf =
                           td ?? question.tableDataHi ?? question.tableData;
                       if (tdf == null) return const SizedBox.shrink();
@@ -418,12 +408,7 @@ class _PracticeStep extends StatelessWidget {
                     },
                   ),
                   const SizedBox(height: AppSpacing.md),
-                  SelectableCopySearchText(
-                    optionsBody,
-                    style: AppTextStyles.question().copyWith(
-                      color: scheme.onSurface,
-                    ),
-                  ),
+                  SelectableCopySearchText(optionsBody, style: optionStyle),
                 ],
                 const SizedBox(height: AppSpacing.lg),
               ],

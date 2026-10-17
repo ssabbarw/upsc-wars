@@ -9,6 +9,7 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../core/theme/reading_font_scale.dart';
 
 class SubTopicDetailScreen extends HookConsumerWidget {
   const SubTopicDetailScreen({super.key, required this.subTopic});
@@ -26,25 +27,36 @@ class SubTopicDetailScreen extends HookConsumerWidget {
     final decoded = Uri.decodeComponent(subTopic);
 
     return subTopicsAsync.when(
-      loading: () => _scaffold(context, decoded,
-          child: const Center(child: CircularProgressIndicator())),
-      error: (e, st) => _scaffold(context, decoded,
-          child: Center(
-            child: OutlinedButton(
-              onPressed: () => ref.invalidate(weakSubTopicGroupsProvider),
-              child: const Text('Retry'),
-            ),
-          )),
+      loading: () => _scaffold(
+        context,
+        decoded,
+        child: const Center(child: CircularProgressIndicator()),
+      ),
+      error: (e, st) => _scaffold(
+        context,
+        decoded,
+        child: Center(
+          child: OutlinedButton(
+            onPressed: () => ref.invalidate(weakSubTopicGroupsProvider),
+            child: const Text('Retry'),
+          ),
+        ),
+      ),
       data: (groups) {
-        final group =
-            groups.where((g) => g.subTopic == decoded).firstOrNull;
+        final group = groups.where((g) => g.subTopic == decoded).firstOrNull;
         if (group == null) {
-          return _scaffold(context, decoded,
-              child: Center(
-                child: Text('No data found',
-                    style: AppTextStyles.bodySm()
-                        .copyWith(color: scheme.onSurfaceVariant)),
-              ));
+          return _scaffold(
+            context,
+            decoded,
+            child: Center(
+              child: Text(
+                'No data found',
+                style: AppTextStyles.bodySm().copyWith(
+                  color: scheme.onSurfaceVariant,
+                ),
+              ),
+            ),
+          );
         }
 
         Future<void> practice() async {
@@ -53,16 +65,18 @@ class SubTopicDetailScreen extends HookConsumerWidget {
           try {
             final create = await ref.read(createSessionUseCaseProvider.future);
             final lang = await ref.read(appLanguageProvider.future);
-            final id = await create.execute(SessionConfig(
-              subject: 'revision',
-              mode: 'learning',
-              questionCount: group.questionUuids.length,
-              isTimed: true,
-              timeLimitSecs: 60,
-              language: lang,
-              specificQuestionUuids: group.questionUuids,
-              analyticsFeatureKey: 'insights_dashboard',
-            ));
+            final id = await create.execute(
+              SessionConfig(
+                subject: 'revision',
+                mode: 'learning',
+                questionCount: group.questionUuids.length,
+                isTimed: true,
+                timeLimitSecs: 60,
+                language: lang,
+                specificQuestionUuids: group.questionUuids,
+                analyticsFeatureKey: 'insights_dashboard',
+              ),
+            );
             if (context.mounted) context.push('/test/$id');
           } finally {
             loading.value = false;
@@ -74,7 +88,11 @@ class SubTopicDetailScreen extends HookConsumerWidget {
           decoded,
           bottomBar: Padding(
             padding: const EdgeInsets.fromLTRB(
-              AppSpacing.lg, AppSpacing.sm, AppSpacing.lg, AppSpacing.lg),
+              AppSpacing.lg,
+              AppSpacing.sm,
+              AppSpacing.lg,
+              AppSpacing.lg,
+            ),
             child: SizedBox(
               width: double.infinity,
               child: FilledButton(
@@ -106,7 +124,11 @@ class SubTopicDetailScreen extends HookConsumerWidget {
               return ListView(
                 physics: const BouncingScrollPhysics(),
                 padding: const EdgeInsets.fromLTRB(
-                  AppSpacing.lg, 0, AppSpacing.lg, AppSpacing.xl),
+                  AppSpacing.lg,
+                  0,
+                  AppSpacing.lg,
+                  AppSpacing.xl,
+                ),
                 children: [
                   Container(
                     padding: const EdgeInsets.all(AppSpacing.md),
@@ -116,27 +138,33 @@ class SubTopicDetailScreen extends HookConsumerWidget {
                     ),
                     child: Text(
                       '${group.questionUuids.length} ${group.questionUuids.length == 1 ? 'question' : 'questions'} · got wrong ${group.failureCount} ${group.failureCount == 1 ? 'time' : 'times'}',
-                      style: AppTextStyles.bodySm()
-                          .copyWith(color: scheme.onSurfaceVariant),
+                      style: AppTextStyles.bodySm().copyWith(
+                        color: scheme.onSurfaceVariant,
+                      ),
                     ),
                   ),
                   const SizedBox(height: AppSpacing.md),
-                  ...items.map((item) => Container(
-                        margin: const EdgeInsets.only(bottom: AppSpacing.sm),
-                        padding: const EdgeInsets.all(AppSpacing.md),
-                        decoration: BoxDecoration(
-                          color: scheme.surface,
-                          borderRadius: BorderRadius.circular(AppRadius.md),
-                          border: Border.all(color: border, width: 0.5),
+                  ...items.map(
+                    (item) => Container(
+                      margin: const EdgeInsets.only(bottom: AppSpacing.sm),
+                      padding: const EdgeInsets.all(AppSpacing.md),
+                      decoration: BoxDecoration(
+                        color: scheme.surface,
+                        borderRadius: BorderRadius.circular(AppRadius.md),
+                        border: Border.all(color: border, width: 0.5),
+                      ),
+                      child: Text(
+                        item.questionStem,
+                        maxLines: 3,
+                        overflow: TextOverflow.ellipsis,
+                        style: context.readingFont(
+                          AppTextStyles.bodyMd().copyWith(
+                            color: scheme.onSurface,
+                          ),
                         ),
-                        child: Text(
-                          item.questionStem,
-                          maxLines: 3,
-                          overflow: TextOverflow.ellipsis,
-                          style: AppTextStyles.bodyMd()
-                              .copyWith(color: scheme.onSurface),
-                        ),
-                      )),
+                      ),
+                    ),
+                  ),
                 ],
               );
             },
@@ -154,28 +182,37 @@ class SubTopicDetailScreen extends HookConsumerWidget {
   }) {
     return Scaffold(
       body: SafeArea(
-        child: Column(children: [
-          Padding(
-            padding: const EdgeInsets.fromLTRB(
-              AppSpacing.sm, AppSpacing.sm, AppSpacing.lg, AppSpacing.sm),
-            child: Row(children: [
-              IconButton(
-                onPressed: () =>
-                    context.canPop() ? context.pop() : context.go('/weak-areas'),
-                icon: const Icon(Icons.chevron_left),
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.fromLTRB(
+                AppSpacing.sm,
+                AppSpacing.sm,
+                AppSpacing.lg,
+                AppSpacing.sm,
               ),
-              Expanded(
-                child: Text(
-                  title,
-                  style: AppTextStyles.h2(),
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                ),
+              child: Row(
+                children: [
+                  IconButton(
+                    onPressed: () => context.canPop()
+                        ? context.pop()
+                        : context.go('/weak-areas'),
+                    icon: const Icon(Icons.chevron_left),
+                  ),
+                  Expanded(
+                    child: Text(
+                      title,
+                      style: AppTextStyles.h2(),
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+                ],
               ),
-            ]),
-          ),
-          Expanded(child: child),
-        ]),
+            ),
+            Expanded(child: child),
+          ],
+        ),
       ),
       bottomNavigationBar: bottomBar == null
           ? null

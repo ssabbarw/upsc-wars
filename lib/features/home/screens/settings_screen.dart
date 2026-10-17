@@ -14,6 +14,7 @@ import '../../../core/providers/prefs_provider.dart';
 import '../../../core/services/prelims_surfaces_refresh.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../core/theme/reading_font_scale.dart';
 import '../../../core/constants/creator_contact.dart';
 import '../../../core/providers/super_user_provider.dart';
 import '../../community/providers/user_block_providers.dart';
@@ -40,16 +41,15 @@ class SettingsScreen extends ConsumerWidget {
     final generateConfig =
         ref.watch(dailyCaGenerateConfigProvider).asData?.value ??
         DailyCaGenerateConfig.fromMap(null);
-    final showQuestionEditor =
-        canAccessQuestionEditor(isSuperUser: isSuperUser);
+    final showQuestionEditor = canAccessQuestionEditor(
+      isSuperUser: isSuperUser,
+    );
     final isSignedIn = AuthSession.isAccountSignedIn(
       ref.watch(authStateChangesProvider).asData?.value,
     );
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Settings'),
-      ),
+      appBar: AppBar(title: const Text('Settings')),
       backgroundColor: isDark ? scheme.surface : const Color(0xFFF5F3EE),
       body: SafeArea(
         child: ListView(
@@ -68,6 +68,7 @@ class SettingsScreen extends ConsumerWidget {
               title: 'Preferences',
               children: const [
                 _DarkModeTile(),
+                _ReadingSizeTile(),
                 _ConfidenceTrackingTile(),
               ],
             ),
@@ -75,9 +76,7 @@ class SettingsScreen extends ConsumerWidget {
 
             const _Section(
               title: 'Prelims',
-              children: [
-                _PrelimsPersistentNotificationTile(),
-              ],
+              children: [_PrelimsPersistentNotificationTile()],
             ),
             const SizedBox(height: AppSpacing.lg),
 
@@ -148,7 +147,8 @@ class SettingsScreen extends ConsumerWidget {
                       iconColor: Color(0xFFB25A00),
                       title: 'Pulse composer',
                       subtitle: 'Breaking news push MCQs',
-                      onTap: () => context.push('/internal/fomo-pulse-composer'),
+                      onTap: () =>
+                          context.push('/internal/fomo-pulse-composer'),
                     ),
                     if (isSuperUser)
                       _NavTile(
@@ -207,8 +207,7 @@ class SettingsScreen extends ConsumerWidget {
                       iconBg: Color(0xFFE8F7F0),
                       iconColor: Color(0xFF0F8F5E),
                       title: 'Generate CA test',
-                      subtitle:
-                          'Run now if the scheduled draft is missing',
+                      subtitle: 'Run now if the scheduled draft is missing',
                       onTap: () async {
                         final date = dailyCaReviewDateForNow(
                           generateHourIst: generateConfig.hourIst,
@@ -223,9 +222,7 @@ class SettingsScreen extends ConsumerWidget {
                         AppToast.showText(context, result.userMessage);
                         if (result.wroteDraft ||
                             result.reason == 'already_exists') {
-                          context.push(
-                            DailyCaAdminConstants.reviewPath(date),
-                          );
+                          context.push(DailyCaAdminConstants.reviewPath(date));
                         }
                       },
                     ),
@@ -254,7 +251,8 @@ class SettingsScreen extends ConsumerWidget {
                       iconBg: Color(0xFFFCEBEB),
                       iconColor: Color(0xFFC2103A),
                       title: 'Broadcast',
-                      subtitle: 'Notify everyone — update the app or a custom message',
+                      subtitle:
+                          'Notify everyone — update the app or a custom message',
                       onTap: () => context.push('/internal/broadcast'),
                     ),
                   if (isSuperUser)
@@ -263,7 +261,8 @@ class SettingsScreen extends ConsumerWidget {
                       iconBg: Color(0xFFFFF4E6),
                       iconColor: Color(0xFFB25A00),
                       title: 'HTML message preview',
-                      subtitle: 'Open the long HTML announcement as users see it',
+                      subtitle:
+                          'Open the long HTML announcement as users see it',
                       onTap: () => context.push('/notification/long-html'),
                     ),
                   if (kDebugMode || isSuperUser)
@@ -317,19 +316,9 @@ class SettingsScreen extends ConsumerWidget {
             ],
             if (isSignedIn) ...[
               const SizedBox(height: AppSpacing.lg),
-              const _Section(
-                title: 'Privacy',
-                children: [
-                  _BlockedUsersTile(),
-                ],
-              ),
+              const _Section(title: 'Privacy', children: [_BlockedUsersTile()]),
               const SizedBox(height: AppSpacing.lg),
-              const _Section(
-                title: 'Account',
-                children: [
-                  _LogoutTile(),
-                ],
-              ),
+              const _Section(title: 'Account', children: [_LogoutTile()]),
             ],
             const SizedBox(height: AppSpacing.xl),
             Center(
@@ -557,8 +546,8 @@ class _BlockedUsersTile extends ConsumerWidget {
     final subtitle = count == 0
         ? 'No one blocked'
         : count == 1
-            ? '1 person'
-            : '$count people';
+        ? '1 person'
+        : '$count people';
     return _NavTile(
       icon: Icons.block_outlined,
       iconBg: const Color(0xFFFFE8EC),
@@ -715,7 +704,9 @@ class _DarkModeTile extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
-    return ref.watch(prefsServiceProvider).when(
+    return ref
+        .watch(prefsServiceProvider)
+        .when(
           data: (prefs) {
             return SwitchListTile(
               value: prefs.darkModeEnabled,
@@ -732,8 +723,9 @@ class _DarkModeTile extends ConsumerWidget {
               title: Text('Dark mode', style: AppTextStyles.label()),
               subtitle: Text(
                 'Comfortable contrast for long sessions.',
-                style: AppTextStyles.bodySm()
-                    .copyWith(color: scheme.onSurfaceVariant),
+                style: AppTextStyles.bodySm().copyWith(
+                  color: scheme.onSurfaceVariant,
+                ),
               ),
               contentPadding: const EdgeInsets.symmetric(
                 horizontal: AppSpacing.lg,
@@ -763,13 +755,147 @@ class _DarkModeTile extends ConsumerWidget {
   }
 }
 
+class _ReadingSizeTile extends ConsumerWidget {
+  const _ReadingSizeTile();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final scheme = Theme.of(context).colorScheme;
+    final index = ReadingFontScale.indexFor(
+      ref.watch(readingFontScaleProvider),
+    );
+    final last = ReadingFontScale.steps.length - 1;
+
+    void setIndex(int next) {
+      if (next == index || next < 0 || next > last) return;
+      HapticFeedback.selectionClick();
+      ref.read(readingFontScaleProvider.notifier).setIndex(next);
+    }
+
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(AppSpacing.lg, 12, AppSpacing.lg, 14),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const _LeadingIcon(
+                icon: Icons.format_size_rounded,
+                bg: Color(0xFFF3E8FF),
+                color: Color(0xFF7C3AED),
+              ),
+              const SizedBox(width: AppSpacing.md),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('Reading size', style: AppTextStyles.label()),
+                    Text(
+                      'Question text and explanations.',
+                      style: AppTextStyles.bodySm().copyWith(
+                        color: scheme.onSurfaceVariant,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Text(
+                ReadingFontScale.labels[index],
+                style: AppTextStyles.labelSm().copyWith(color: scheme.primary),
+              ),
+            ],
+          ),
+          const SizedBox(height: 4),
+          Row(
+            children: [
+              IconButton(
+                visualDensity: VisualDensity.compact,
+                tooltip: 'Smaller',
+                onPressed: index == 0 ? null : () => setIndex(index - 1),
+                icon: const Icon(Icons.text_decrease_rounded, size: 22),
+              ),
+              Expanded(
+                child: Slider(
+                  value: index.toDouble(),
+                  min: 0,
+                  max: last.toDouble(),
+                  divisions: last,
+                  label: ReadingFontScale.labels[index],
+                  onChanged: (v) => setIndex(v.round()),
+                ),
+              ),
+              IconButton(
+                visualDensity: VisualDensity.compact,
+                tooltip: 'Larger',
+                onPressed: index == last ? null : () => setIndex(index + 1),
+                icon: const Icon(Icons.text_increase_rounded, size: 22),
+              ),
+            ],
+          ),
+          const _ReadingSizePreview(),
+        ],
+      ),
+    );
+  }
+}
+
+class _ReadingSizePreview extends StatelessWidget {
+  const _ReadingSizePreview();
+
+  static const _question =
+      'Which of the following statements about the Indian monsoon is correct?';
+  static const _explanation =
+      'The southwest monsoon reaches the Kerala coast in early June. That onset marks the usual start of the rainy season.';
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    final caption = AppTextStyles.caption().copyWith(
+      color: scheme.onSurfaceVariant,
+      letterSpacing: 0.4,
+      fontWeight: FontWeight.w600,
+    );
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.fromLTRB(12, 10, 12, 12),
+      decoration: BoxDecoration(
+        color: scheme.surfaceContainerLow,
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text('PREVIEW', style: caption),
+          const SizedBox(height: 8),
+          Text(
+            _question,
+            style: context.readingFont(
+              AppTextStyles.question().copyWith(color: scheme.onSurface),
+            ),
+          ),
+          const SizedBox(height: 10),
+          Text(
+            _explanation,
+            style: context
+                .readingFont(const TextStyle(fontSize: 13, height: 1.65))
+                .copyWith(color: scheme.onSurface),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
 class _ConfidenceTrackingTile extends ConsumerWidget {
   const _ConfidenceTrackingTile();
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
-    return ref.watch(prefsServiceProvider).when(
+    return ref
+        .watch(prefsServiceProvider)
+        .when(
           data: (prefs) {
             return SwitchListTile(
               value: prefs.confidenceTrackingEnabled,
@@ -787,11 +913,15 @@ class _ConfidenceTrackingTile extends ConsumerWidget {
                 bg: Color(0xFFE8F7F0),
                 color: Color(0xFF0F8F5E),
               ),
-              title: Text('Confidence before reveal', style: AppTextStyles.label()),
+              title: Text(
+                'Confidence before reveal',
+                style: AppTextStyles.label(),
+              ),
               subtitle: Text(
                 'Ask “how sure are you?” before showing answers.',
-                style: AppTextStyles.bodySm()
-                    .copyWith(color: scheme.onSurfaceVariant),
+                style: AppTextStyles.bodySm().copyWith(
+                  color: scheme.onSurfaceVariant,
+                ),
               ),
               contentPadding: const EdgeInsets.symmetric(
                 horizontal: AppSpacing.lg,
@@ -838,7 +968,9 @@ class _PrelimsPersistentNotificationTile extends ConsumerWidget {
         title: Text('Status bar reminder', style: AppTextStyles.label()),
         subtitle: Text(
           'Available on Android.',
-          style: AppTextStyles.bodySm().copyWith(color: scheme.onSurfaceVariant),
+          style: AppTextStyles.bodySm().copyWith(
+            color: scheme.onSurfaceVariant,
+          ),
         ),
         contentPadding: const EdgeInsets.symmetric(
           horizontal: AppSpacing.lg,
@@ -847,7 +979,9 @@ class _PrelimsPersistentNotificationTile extends ConsumerWidget {
       );
     }
 
-    return ref.watch(prefsServiceProvider).when(
+    return ref
+        .watch(prefsServiceProvider)
+        .when(
           data: (prefs) {
             final enabled = prefs.prelimsPersistentNotificationEnabled;
             return Padding(
@@ -867,11 +1001,15 @@ class _PrelimsPersistentNotificationTile extends ConsumerWidget {
                       bg: Color(0xFFE8F7F0),
                       color: Color(0xFF0F8F5E),
                     ),
-                    title: Text('Status bar reminder', style: AppTextStyles.label()),
+                    title: Text(
+                      'Status bar reminder',
+                      style: AppTextStyles.label(),
+                    ),
                     subtitle: Text(
                       'Keep the days-until-Prelims count visible.',
-                      style: AppTextStyles.bodySm()
-                          .copyWith(color: scheme.onSurfaceVariant),
+                      style: AppTextStyles.bodySm().copyWith(
+                        color: scheme.onSurfaceVariant,
+                      ),
                     ),
                     contentPadding: const EdgeInsets.symmetric(
                       horizontal: AppSpacing.lg,

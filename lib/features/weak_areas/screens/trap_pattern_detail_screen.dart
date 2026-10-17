@@ -13,6 +13,7 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../core/theme/reading_font_scale.dart';
 import '../widgets/trap_example_sheet.dart';
 import '../widgets/trap_pattern_visual.dart';
 
@@ -36,24 +37,33 @@ class TrapPatternDetailScreen extends HookConsumerWidget {
       loading: () => null,
       error: (_, _) => null,
     );
-    final displayName = trapEntry?.displayName ??
+    final displayName =
+        trapEntry?.displayName ??
         decoded
             .split('-')
-            .map((w) => w.isEmpty ? w : '${w[0].toUpperCase()}${w.substring(1)}')
+            .map(
+              (w) => w.isEmpty ? w : '${w[0].toUpperCase()}${w.substring(1)}',
+            )
             .join(' ');
     final description = trapEntry?.description;
     final blurb = trapEntry?.blurb ?? '';
 
     return trapsAsync.when(
-      loading: () => _scaffold(context, displayName,
-          child: const Center(child: CircularProgressIndicator())),
-      error: (e, st) => _scaffold(context, displayName,
-          child: Center(
-            child: OutlinedButton(
-              onPressed: () => ref.invalidate(weakTrapGroupsProvider),
-              child: const Text('Retry'),
-            ),
-          )),
+      loading: () => _scaffold(
+        context,
+        displayName,
+        child: const Center(child: CircularProgressIndicator()),
+      ),
+      error: (e, st) => _scaffold(
+        context,
+        displayName,
+        child: Center(
+          child: OutlinedButton(
+            onPressed: () => ref.invalidate(weakTrapGroupsProvider),
+            child: const Text('Retry'),
+          ),
+        ),
+      ),
       data: (groups) {
         final group = groups.where((g) => g.trapType == decoded).firstOrNull;
 
@@ -65,16 +75,18 @@ class TrapPatternDetailScreen extends HookConsumerWidget {
           try {
             final create = await ref.read(createSessionUseCaseProvider.future);
             final lang = await ref.read(appLanguageProvider.future);
-            final id = await create.execute(SessionConfig(
-              subject: 'revision',
-              mode: 'learning',
-              questionCount: group.questionUuids.length,
-              isTimed: true,
-              timeLimitSecs: 60,
-              language: lang,
-              specificQuestionUuids: group.questionUuids,
-              analyticsFeatureKey: 'trap_awareness',
-            ));
+            final id = await create.execute(
+              SessionConfig(
+                subject: 'revision',
+                mode: 'learning',
+                questionCount: group.questionUuids.length,
+                isTimed: true,
+                timeLimitSecs: 60,
+                language: lang,
+                specificQuestionUuids: group.questionUuids,
+                analyticsFeatureKey: 'trap_awareness',
+              ),
+            );
             if (context.mounted) context.push('/test/$id');
           } finally {
             loading.value = false;
@@ -90,7 +102,11 @@ class TrapPatternDetailScreen extends HookConsumerWidget {
           bottomBar: hasCaught
               ? Padding(
                   padding: const EdgeInsets.fromLTRB(
-                    AppSpacing.lg, AppSpacing.sm, AppSpacing.lg, AppSpacing.lg),
+                    AppSpacing.lg,
+                    AppSpacing.sm,
+                    AppSpacing.lg,
+                    AppSpacing.lg,
+                  ),
                   child: SizedBox(
                     width: double.infinity,
                     child: FilledButton(
@@ -144,8 +160,9 @@ class TrapPatternDetailScreen extends HookConsumerWidget {
                   data: (allItems) {
                     final items = allItems
                         .where(
-                          (i) =>
-                              caughtGroup.questionUuids.contains(i.questionUuid),
+                          (i) => caughtGroup.questionUuids.contains(
+                            i.questionUuid,
+                          ),
                         )
                         .toList();
                     return _detailBody(
@@ -182,7 +199,11 @@ class TrapPatternDetailScreen extends HookConsumerWidget {
     return ListView(
       physics: const BouncingScrollPhysics(),
       padding: const EdgeInsets.fromLTRB(
-        AppSpacing.lg, 0, AppSpacing.lg, AppSpacing.xl),
+        AppSpacing.lg,
+        0,
+        AppSpacing.lg,
+        AppSpacing.xl,
+      ),
       children: [
         if (description != null && description.isNotEmpty) ...[
           Container(
@@ -210,8 +231,9 @@ class TrapPatternDetailScreen extends HookConsumerWidget {
             caughtCount == 0
                 ? 'Caught you 0× — not enough data yet'
                 : '$caughtCount ${caughtCount == 1 ? 'question' : 'questions'} caught by this trap',
-            style: AppTextStyles.bodySm()
-                .copyWith(color: scheme.onSurfaceVariant),
+            style: AppTextStyles.bodySm().copyWith(
+              color: scheme.onSurfaceVariant,
+            ),
           ),
         ),
         const SizedBox(height: AppSpacing.sm),
@@ -230,22 +252,25 @@ class TrapPatternDetailScreen extends HookConsumerWidget {
           ),
         ),
         if (stems.isNotEmpty) const SizedBox(height: AppSpacing.sm),
-        ...stems.map((stem) => Container(
-              margin: const EdgeInsets.only(bottom: AppSpacing.sm),
-              padding: const EdgeInsets.all(AppSpacing.md),
-              decoration: BoxDecoration(
-                color: scheme.surface,
-                borderRadius: BorderRadius.circular(AppRadius.md),
-                border: Border.all(color: border, width: 0.5),
+        ...stems.map(
+          (stem) => Container(
+            margin: const EdgeInsets.only(bottom: AppSpacing.sm),
+            padding: const EdgeInsets.all(AppSpacing.md),
+            decoration: BoxDecoration(
+              color: scheme.surface,
+              borderRadius: BorderRadius.circular(AppRadius.md),
+              border: Border.all(color: border, width: 0.5),
+            ),
+            child: Text(
+              stem,
+              maxLines: 3,
+              overflow: TextOverflow.ellipsis,
+              style: context.readingFont(
+                AppTextStyles.bodyMd().copyWith(color: scheme.onSurface),
               ),
-              child: Text(
-                stem,
-                maxLines: 3,
-                overflow: TextOverflow.ellipsis,
-                style: AppTextStyles.bodyMd()
-                    .copyWith(color: scheme.onSurface),
-              ),
-            )),
+            ),
+          ),
+        ),
       ],
     );
   }
@@ -258,34 +283,43 @@ class TrapPatternDetailScreen extends HookConsumerWidget {
   }) {
     return Scaffold(
       body: SafeArea(
-        child: Column(children: [
-          Padding(
-            padding: const EdgeInsets.fromLTRB(
-              AppSpacing.sm, AppSpacing.sm, AppSpacing.lg, AppSpacing.sm),
-            child: Row(children: [
-              IconButton(
-                onPressed: () =>
-                    context.canPop() ? context.pop() : context.go('/weak-areas/traps'),
-                icon: const Icon(Icons.chevron_left),
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.fromLTRB(
+                AppSpacing.sm,
+                AppSpacing.sm,
+                AppSpacing.lg,
+                AppSpacing.sm,
               ),
-              TrapPatternIconWell(
-                trapType: Uri.decodeComponent(trapType),
-                size: 32,
-                iconSize: 18,
+              child: Row(
+                children: [
+                  IconButton(
+                    onPressed: () => context.canPop()
+                        ? context.pop()
+                        : context.go('/weak-areas/traps'),
+                    icon: const Icon(Icons.chevron_left),
+                  ),
+                  TrapPatternIconWell(
+                    trapType: Uri.decodeComponent(trapType),
+                    size: 32,
+                    iconSize: 18,
+                  ),
+                  const SizedBox(width: AppSpacing.sm),
+                  Expanded(
+                    child: Text(
+                      title,
+                      style: AppTextStyles.h2(),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+                ],
               ),
-              const SizedBox(width: AppSpacing.sm),
-              Expanded(
-                child: Text(
-                  title,
-                  style: AppTextStyles.h2(),
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                ),
-              ),
-            ]),
-          ),
-          Expanded(child: child),
-        ]),
+            ),
+            Expanded(child: child),
+          ],
+        ),
       ),
       bottomNavigationBar: bottomBar == null
           ? null

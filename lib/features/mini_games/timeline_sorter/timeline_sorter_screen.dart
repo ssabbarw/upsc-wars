@@ -4,6 +4,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/providers/app_language_helpers.dart';
+import '../../../core/theme/reading_font_scale.dart';
 import '../shared/game_intro_view.dart';
 import '../shared/mini_game_models.dart';
 import '../shared/revision_game_analytics.dart';
@@ -41,9 +42,10 @@ class TimelineSorterScreen extends HookConsumerWidget {
       persistAppLanguage(ref, v);
     }
 
-    final provider = timelineSorterControllerProvider(
-      (subjects: subjectsCsv, difficulties: difficultiesCsv),
-    );
+    final provider = timelineSorterControllerProvider((
+      subjects: subjectsCsv,
+      difficulties: difficultiesCsv,
+    ));
     final async = ref.watch(provider);
     final howToReady = useGameHowToSheet(
       context: context,
@@ -82,7 +84,7 @@ class TimelineSorterScreen extends HookConsumerWidget {
       title: set == null || complete
           ? 'Timeline Sorter'
           : '${set.subject} · Set ${snapshot!.setIndex + 1}/'
-              '${snapshot.session.length}',
+                '${snapshot.session.length}',
       trailing: set == null || complete
           ? null
           : RgLangToggle(
@@ -155,13 +157,14 @@ class TimelineSorterScreen extends HookConsumerWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 14),
                   buildDefaultDragHandles: false,
                   itemCount: state.order.length,
-                  onReorderStart:
-                      revealed ? null : (_) => HapticFeedback.lightImpact(),
+                  onReorderStart: revealed
+                      ? null
+                      : (_) => HapticFeedback.lightImpact(),
                   onReorder: revealed
                       ? (_, _) {}
                       : (oldIndex, newIndex) => ref
-                          .read(provider.notifier)
-                          .reorder(oldIndex, newIndex),
+                            .read(provider.notifier)
+                            .reorder(oldIndex, newIndex),
                   proxyDecorator: (child, index, animation) {
                     return AnimatedBuilder(
                       animation: animation,
@@ -192,15 +195,15 @@ class TimelineSorterScreen extends HookConsumerWidget {
                         color: !revealed
                             ? RgColors.card
                             : slotCorrect
-                                ? RgColors.correctBg
-                                : RgColors.wrongBg,
+                            ? RgColors.correctBg
+                            : RgColors.wrongBg,
                         borderRadius: BorderRadius.circular(RgRadius.md),
                         border: Border.all(
                           color: !revealed
                               ? RgColors.border
                               : slotCorrect
-                                  ? RgColors.correctBorder
-                                  : RgColors.wrongBorder,
+                              ? RgColors.correctBorder
+                              : RgColors.wrongBorder,
                         ),
                       ),
                       child: Row(
@@ -225,9 +228,11 @@ class TimelineSorterScreen extends HookConsumerWidget {
                           Expanded(
                             child: Text(
                               item.labelForLang(lang),
-                              style: RgText.body(
-                                size: 12.5,
-                                weight: FontWeight.w600,
+                              style: context.readingFont(
+                                RgText.body(
+                                  size: 12.5,
+                                  weight: FontWeight.w600,
+                                ),
                               ),
                             ),
                           ),
@@ -264,10 +269,8 @@ class TimelineSorterScreen extends HookConsumerWidget {
                   padding: const EdgeInsets.fromLTRB(14, 0, 14, 12),
                   child: Text(
                     set.explanationForLang(lang),
-                    style: RgText.body(
-                      size: 11,
-                      height: 1.5,
-                      color: RgColors.muted,
+                    style: context.readingFont(
+                      RgText.body(size: 11, height: 1.5, color: RgColors.muted),
                     ),
                   ),
                 ),

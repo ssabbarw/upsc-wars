@@ -6,6 +6,7 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/providers/app_language_helpers.dart';
+import '../../../core/theme/reading_font_scale.dart';
 import '../shared/game_intro_view.dart';
 import '../shared/mini_game_models.dart';
 import '../shared/revision_game_analytics.dart';
@@ -266,9 +267,7 @@ class _PlayerHalf extends StatelessWidget {
         children: [
           Row(
             children: [
-              Expanded(
-                child: RgMonoLabel('Q$questionNumber · $subject'),
-              ),
+              Expanded(child: RgMonoLabel('Q$questionNumber · $subject')),
               RgLangToggle(
                 language: language,
                 onChanged: onLangChanged,
@@ -277,7 +276,10 @@ class _PlayerHalf extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 10),
-          Text(question, style: RgText.display(size: 15, height: 1.28)),
+          Text(
+            question,
+            style: context.readingFont(RgText.display(size: 15, height: 1.28)),
+          ),
           const SizedBox(height: 12),
           for (var i = 0; i < options.length; i++) ...[
             if (i > 0) const SizedBox(height: 8),
@@ -287,7 +289,8 @@ class _PlayerHalf extends StatelessWidget {
               isSelected: !revealed && selectedIndex == i,
               isCorrect: revealed && i == answerIndex,
               isWrong: revealed && wrongIndex == i,
-              dimmed: (waiting && selectedIndex != i) ||
+              dimmed:
+                  (waiting && selectedIndex != i) ||
                   (revealed && i != answerIndex && wrongIndex != i),
               onTap: () => onTap(i),
             ),

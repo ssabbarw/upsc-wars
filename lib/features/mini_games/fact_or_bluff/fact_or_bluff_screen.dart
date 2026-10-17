@@ -3,6 +3,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/providers/app_language_helpers.dart';
+import '../../../core/theme/reading_font_scale.dart';
 import '../shared/game_intro_view.dart';
 import '../shared/mini_game_models.dart';
 import '../shared/revision_game_analytics.dart';
@@ -174,12 +175,15 @@ class FactOrBluffScreen extends HookConsumerWidget {
                 child: Text(
                   '“${item.statementForLang(lang)}”',
                   textAlign: TextAlign.center,
-                  style:
-                      RgText.display(
-                        size: 20,
-                        weight: FontWeight.w800,
-                        height: 1.3,
-                      ).copyWith(
+                  style: context
+                      .readingFont(
+                        RgText.display(
+                          size: 20,
+                          weight: FontWeight.w800,
+                          height: 1.3,
+                        ),
+                      )
+                      .copyWith(
                         decoration: !awaiting && !item.isFact
                             ? TextDecoration.lineThrough
                             : null,
@@ -208,7 +212,10 @@ class FactOrBluffScreen extends HookConsumerWidget {
                 ),
               ] else ...[
                 const SizedBox(height: 16),
-                RgExplanationChip(text: item.explanationForLang(lang), size: 12),
+                RgExplanationChip(
+                  text: item.explanationForLang(lang),
+                  size: 12,
+                ),
               ],
             ],
           );

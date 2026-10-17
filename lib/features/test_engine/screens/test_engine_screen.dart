@@ -21,6 +21,7 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../core/theme/reading_font_scale.dart';
 import '../../../shared/extensions/context_extensions.dart';
 import '../../../shared/widgets/question_table_view.dart';
 import '../../../shared/theme/dark_mode_toggle.dart';
@@ -46,7 +47,11 @@ Future<void> _showDemoConfidenceIntroThenPrompt(
   WidgetRef ref,
   String sessionId,
 ) async {
-  final session = ref.read(testSessionProvider(sessionId)).asData?.value.session;
+  final session = ref
+      .read(testSessionProvider(sessionId))
+      .asData
+      ?.value
+      .session;
   final isDemo =
       session?.analyticsFeatureKey ==
       CreateGetStartedSessionUseCase.analyticsKey;
@@ -107,9 +112,9 @@ Future<void> _showDemoExplanationCoachSheet(
                   Text(
                     isCorrect
                         ? 'The marks are in the explanation — elimination, '
-                            'statement analysis, and the trap option.'
+                              'statement analysis, and the trap option.'
                         : 'Read how to kill the other options — '
-                            'that\'s the real practice.',
+                              'that\'s the real practice.',
                     style: AppTextStyles.bodySm().copyWith(
                       color: scheme.onSurfaceVariant,
                       height: 1.35,
@@ -407,10 +412,7 @@ class TestEngineScreen extends HookConsumerWidget {
             await notifier.markAbandoned();
           }
           if (context.mounted) {
-            leaveToHome(
-              actionId: 'leave_after_dialog',
-              actionKind: 'back',
-            );
+            leaveToHome(actionId: 'leave_after_dialog', actionKind: 'back');
           }
         }
       },
@@ -683,9 +685,7 @@ class _TestEngineLoaded extends HookConsumerWidget {
       final was = prev?.asData?.value.confidencePromptVisible ?? false;
       final now = next.asData?.value.confidencePromptVisible ?? false;
       if (!was && now) {
-        unawaited(
-          _showDemoConfidenceIntroThenPrompt(context, ref, sessionId),
-        );
+        unawaited(_showDemoConfidenceIntroThenPrompt(context, ref, sessionId));
       }
     });
 
@@ -1416,7 +1416,9 @@ class _QuestionArea extends HookConsumerWidget {
         if (trimmedDisplayText.isNotEmpty && !question.hasTable)
           SelectableCopySearchText(
             trimmedDisplayText,
-            style: AppTextStyles.question().copyWith(color: scheme.onSurface),
+            style: context.readingFont(
+              AppTextStyles.question().copyWith(color: scheme.onSurface),
+            ),
           ),
         if (question.hasTable && tableData != null) ...[
           SizedBox(
@@ -1509,8 +1511,9 @@ class _QuestionArea extends HookConsumerWidget {
                           verdict: learningVerdict,
                           expandDeepDive: expandDeepDive,
                           showPostQotd: !isDemoDiagnostic,
-                          analyticsSource:
-                              isDemoDiagnostic ? 'demo_test' : 'in_test',
+                          analyticsSource: isDemoDiagnostic
+                              ? 'demo_test'
+                              : 'in_test',
                         )
                       : const SizedBox.shrink(),
                 ),

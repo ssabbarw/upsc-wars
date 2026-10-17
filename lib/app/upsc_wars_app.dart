@@ -39,6 +39,7 @@ import '../features/fomo_pulse/data/fomo_pulse_incoming_share.dart';
 import '../core/router/question_bank_loading_screen.dart';
 import '../core/services/prelims_surfaces_refresh.dart';
 import '../core/theme/app_theme.dart';
+import '../core/theme/reading_font_scale.dart';
 import '../features/battle/widgets/battle_chat_fab.dart';
 import '../features/battle/widgets/battle_spectate_overlay.dart';
 
@@ -317,13 +318,15 @@ class _RootMaterialApp extends HookConsumerWidget {
             '(blank frame if this repeats)',
           );
         }
-        return Stack(
-          fit: StackFit.expand,
-          children: [
-            child ?? const SizedBox.shrink(),
-            const BattleSpectateFabHost(),
-            const BattleChatFabHost(),
-          ],
+        return ReadingFontScaleHost(
+          child: Stack(
+            fit: StackFit.expand,
+            children: [
+              child ?? const SizedBox.shrink(),
+              const BattleSpectateFabHost(),
+              const BattleChatFabHost(),
+            ],
+          ),
         );
       },
     );

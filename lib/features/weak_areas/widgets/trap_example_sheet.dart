@@ -8,6 +8,7 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../core/theme/reading_font_scale.dart';
 import '../../../shared/widgets/dismissible_modal_sheet.dart';
 import '../domain/trap_example.dart';
 import '../providers/trap_example_provider.dart';
@@ -184,7 +185,9 @@ class _TrapExampleMcq extends HookWidget {
       children: [
         Text(
           content.stem,
-          style: AppTextStyles.question().copyWith(color: scheme.onSurface),
+          style: context.readingFont(
+            AppTextStyles.question().copyWith(color: scheme.onSurface),
+          ),
         ),
         const SizedBox(height: AppSpacing.md),
         for (final entry in content.options.entries) ...[
@@ -203,18 +206,18 @@ class _TrapExampleMcq extends HookWidget {
             gotIt ? 'You spotted it.' : "That's the trap.",
             style: AppTextStyles.labelSm().copyWith(
               color: gotIt
-                  ? (isDark
-                        ? AppColors.correctTextDark
-                        : AppColors.correctText)
+                  ? (isDark ? AppColors.correctTextDark : AppColors.correctText)
                   : (isDark ? AppColors.wrongTextDark : AppColors.wrongText),
             ),
           ),
           const SizedBox(height: AppSpacing.xs),
           Text(
             content.why,
-            style: AppTextStyles.bodySm().copyWith(
-              color: scheme.onSurfaceVariant,
-              height: 1.45,
+            style: context.readingFont(
+              AppTextStyles.bodySm().copyWith(
+                color: scheme.onSurfaceVariant,
+                height: 1.45,
+              ),
             ),
           ),
         ],

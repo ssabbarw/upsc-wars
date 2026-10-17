@@ -7,6 +7,7 @@ import 'package:upsc_wars/core/theme/app_colors.dart';
 import 'package:upsc_wars/core/theme/app_radius.dart';
 import 'package:upsc_wars/core/theme/app_spacing.dart';
 import 'package:upsc_wars/core/theme/app_text_styles.dart';
+import 'package:upsc_wars/core/theme/reading_font_scale.dart';
 import 'package:upsc_wars/shared/extensions/context_extensions.dart';
 import 'package:upsc_wars/shared/widgets/selectable_copy_search_text.dart';
 
@@ -101,8 +102,8 @@ class QuestionTableView extends StatelessWidget {
         if (header != null && header.isNotEmpty) ...[
           SelectableCopySearchText(
             header,
-            style: AppTextStyles.bodySm().copyWith(
-              color: scheme.onSurfaceVariant,
+            style: context.readingFont(
+              AppTextStyles.bodySm().copyWith(color: scheme.onSurfaceVariant),
             ),
           ),
           const SizedBox(height: AppSpacing.sm),
@@ -138,10 +139,12 @@ class QuestionTableView extends StatelessWidget {
                           child: SelectableCopySearchText(
                             cell,
                             textAlign: TextAlign.left,
-                            style: (rowIndex == 0
-                                    ? AppTextStyles.labelSm()
-                                    : AppTextStyles.bodySm())
-                                .copyWith(color: scheme.onSurface),
+                            style: context.readingFont(
+                              (rowIndex == 0
+                                      ? AppTextStyles.labelSm()
+                                      : AppTextStyles.bodySm())
+                                  .copyWith(color: scheme.onSurface),
+                            ),
                           ),
                         ),
                     ],
@@ -154,8 +157,8 @@ class QuestionTableView extends StatelessWidget {
           const SizedBox(height: AppSpacing.sm),
           SelectableCopySearchText(
             footer,
-            style: AppTextStyles.bodySm().copyWith(
-              color: scheme.onSurfaceVariant,
+            style: context.readingFont(
+              AppTextStyles.bodySm().copyWith(color: scheme.onSurfaceVariant),
             ),
           ),
         ],

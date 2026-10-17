@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../core/theme/reading_font_scale.dart';
 import '../../community/widgets/qotd_option_letters_row.dart';
 import '../domain/fomo_pulse_models.dart';
 
@@ -29,7 +30,8 @@ class FomoPulseQuestionBlock extends StatelessWidget {
         : (question.newsTrigger.isNotEmpty
               ? question.newsTrigger
               : 'Answer this Pulse');
-    final hasOptionText = question.optionA.trim().isNotEmpty ||
+    final hasOptionText =
+        question.optionA.trim().isNotEmpty ||
         question.optionB.trim().isNotEmpty ||
         question.optionC.trim().isNotEmpty ||
         question.optionD.trim().isNotEmpty;
@@ -39,7 +41,9 @@ class FomoPulseQuestionBlock extends StatelessWidget {
       children: [
         Text(
           prompt,
-          style: AppTextStyles.body().copyWith(height: 1.4),
+          style: context.readingFont(
+            AppTextStyles.body().copyWith(height: 1.4),
+          ),
         ),
         if (hasOptionText) ...[
           const SizedBox(height: AppSpacing.md),

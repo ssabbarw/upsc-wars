@@ -13,6 +13,7 @@ import '../../../core/presentation/user_display_name.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../core/theme/reading_font_scale.dart';
 import '../../../shared/widgets/question_table_view.dart';
 import '../../../shared/widgets/selectable_copy_search_text.dart';
 import '../../../shared/widgets/tappable_circular_avatar.dart';
@@ -161,7 +162,10 @@ class _QotdPostCardState extends ConsumerState<QotdPostCard> {
       if (!mounted || widget.post.id != postId) return;
       if (!r.alreadyAttempted) {
         unawaited(
-          logActivationMilestoneOnce(ref, ActivationMilestones.firstQotdAttempt),
+          logActivationMilestoneOnce(
+            ref,
+            ActivationMilestones.firstQotdAttempt,
+          ),
         );
       }
       setState(() {
@@ -327,11 +331,7 @@ class _QotdPostCardState extends ConsumerState<QotdPostCard> {
     );
   }
 
-  Widget _catalogMetaLines(
-    ColorScheme scheme,
-    TestQuestion q,
-    bool expanded,
-  ) {
+  Widget _catalogMetaLines(ColorScheme scheme, TestQuestion q, bool expanded) {
     final cap = AppTextStyles.caption().copyWith(
       color: scheme.onSurfaceVariant,
     );
@@ -492,17 +492,7 @@ class _QotdPostCardState extends ConsumerState<QotdPostCard> {
     final questionStyle = AppTextStyles.question().copyWith(
       color: scheme.onSurface,
     );
-
-    final nonTableBlock = () {
-      final buf = StringBuffer();
-      if (stem.isNotEmpty) buf.writeln(stem);
-      buf.writeln();
-      buf.writeln('(A) $oa');
-      buf.writeln('(B) $ob');
-      buf.writeln('(C) $oc');
-      buf.writeln('(D) $od');
-      return buf.toString().trim();
-    }();
+    final stemStyle = context.readingFont(questionStyle);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -518,11 +508,12 @@ class _QotdPostCardState extends ConsumerState<QotdPostCard> {
             ),
           ),
         ],
-        if (!hasTable)
-          SelectableCopySearchText(nonTableBlock, style: questionStyle)
-        else ...[
-          if (stem.isNotEmpty)
-            SelectableCopySearchText(stem, style: questionStyle),
+        if (!hasTable) ...[
+          if (stem.isNotEmpty) SelectableCopySearchText(stem, style: stemStyle),
+          if (stem.isNotEmpty) const SizedBox(height: AppSpacing.md),
+          SelectableCopySearchText(optionsBody, style: questionStyle),
+        ] else ...[
+          if (stem.isNotEmpty) SelectableCopySearchText(stem, style: stemStyle),
           Builder(
             builder: (_) {
               final td = isHi ? q.tableDataHi : q.tableData;

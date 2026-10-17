@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../core/theme/reading_font_scale.dart';
 import 'revision_games_theme.dart';
 
 /// Compact EN | हि control for cream games surfaces. Tap **anywhere** toggles
@@ -337,10 +338,12 @@ class RgExplanationChip extends StatelessWidget {
           Expanded(
             child: Text(
               text,
-              style: RgText.body(
-                size: size,
-                height: 1.5,
-                color: RgColors.warningText,
+              style: context.readingFont(
+                RgText.body(
+                  size: size,
+                  height: 1.5,
+                  color: RgColors.warningText,
+                ),
               ),
             ),
           ),
@@ -391,10 +394,7 @@ class RgSessionCompleteView extends StatelessWidget {
             const SizedBox(height: 22),
             SizedBox(
               width: 200,
-              child: RgPillButton(
-                label: 'Play again',
-                onPressed: onPlayAgain,
-              ),
+              child: RgPillButton(label: 'Play again', onPressed: onPlayAgain),
             ),
             const SizedBox(height: 4),
             TextButton(

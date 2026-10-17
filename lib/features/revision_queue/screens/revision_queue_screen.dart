@@ -11,6 +11,7 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../core/theme/reading_font_scale.dart';
 
 class RevisionQueueScreen extends HookConsumerWidget {
   const RevisionQueueScreen({super.key});
@@ -27,14 +28,16 @@ class RevisionQueueScreen extends HookConsumerWidget {
       final lang = await ref.read(appLanguageProvider.future);
       final count = items.length > 50 ? 50 : items.length;
       if (count == 0) return;
-      final id = await create.execute(SessionConfig(
-        subject: 'revision',
-        mode: 'learning',
-        questionCount: 50,
-        isTimed: true,
-        timeLimitSecs: 60,
-        language: lang,
-      ).copyWith(questionCount: count));
+      final id = await create.execute(
+        SessionConfig(
+          subject: 'revision',
+          mode: 'learning',
+          questionCount: 50,
+          isTimed: true,
+          timeLimitSecs: 60,
+          language: lang,
+        ).copyWith(questionCount: count),
+      );
       if (context.mounted) context.push('/test/$id');
     }
 
@@ -44,62 +47,84 @@ class RevisionQueueScreen extends HookConsumerWidget {
           children: [
             // ── Header row ─────────────────────────────────────────────────
             Padding(
-              padding: const EdgeInsets.fromLTRB(AppSpacing.sm, AppSpacing.sm, AppSpacing.lg, AppSpacing.sm),
-              child: Row(children: [
-                IconButton(
-                  onPressed: () {
-                    ScreenFlow.logAction(
-                      ref,
-                      screenName: ScreenFlow.revisionQueue,
-                      actionId: 'back',
-                      actionKind: 'back',
-                    );
-                    if (context.canPop()) {
-                      context.pop();
-                    } else {
-                      context.go('/');
-                    }
-                  },
-                  icon: const Icon(Icons.chevron_left),
-                ),
-                Expanded(
-                  child: async.when(
-                    data: (items) {
-                      final filtered = _filter(items, selectedSubject.value);
-                      return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                        Text('Revision queue', style: AppTextStyles.h2().copyWith(color: scheme.onSurface)),
-                        Text(
-                          '${filtered.length} question${filtered.length == 1 ? '' : 's'}',
-                          style: AppTextStyles.bodySm().copyWith(color: scheme.onSurfaceVariant),
-                        ),
-                      ]);
+              padding: const EdgeInsets.fromLTRB(
+                AppSpacing.sm,
+                AppSpacing.sm,
+                AppSpacing.lg,
+                AppSpacing.sm,
+              ),
+              child: Row(
+                children: [
+                  IconButton(
+                    onPressed: () {
+                      ScreenFlow.logAction(
+                        ref,
+                        screenName: ScreenFlow.revisionQueue,
+                        actionId: 'back',
+                        actionKind: 'back',
+                      );
+                      if (context.canPop()) {
+                        context.pop();
+                      } else {
+                        context.go('/');
+                      }
                     },
-                    loading: () => Text('Revision queue', style: AppTextStyles.h2()),
-                    error: (e, st) => Text('Revision queue', style: AppTextStyles.h2()),
+                    icon: const Icon(Icons.chevron_left),
                   ),
-                ),
-              ]),
+                  Expanded(
+                    child: async.when(
+                      data: (items) {
+                        final filtered = _filter(items, selectedSubject.value);
+                        return Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Revision queue',
+                              style: AppTextStyles.h2().copyWith(
+                                color: scheme.onSurface,
+                              ),
+                            ),
+                            Text(
+                              '${filtered.length} question${filtered.length == 1 ? '' : 's'}',
+                              style: AppTextStyles.bodySm().copyWith(
+                                color: scheme.onSurfaceVariant,
+                              ),
+                            ),
+                          ],
+                        );
+                      },
+                      loading: () =>
+                          Text('Revision queue', style: AppTextStyles.h2()),
+                      error: (e, st) =>
+                          Text('Revision queue', style: AppTextStyles.h2()),
+                    ),
+                  ),
+                ],
+              ),
             ),
             // ── Subject filter chips ────────────────────────────────────────
             async.whenOrNull(
-              data: (items) {
-                // Collect unique subjects that actually have queue items.
-                final subjects = items
-                    .map((e) => e.subject)
-                    .toSet()
-                    .toList()
-                  ..sort();
-                if (subjects.length <= 1) return const SizedBox.shrink();
-                return _SubjectFilterChips(
-                  subjects: subjects,
-                  selected: selectedSubject.value,
-                  onSelected: (s) => selectedSubject.value = s,
-                );
-              },
-            ) ?? const SizedBox.shrink(),
+                  data: (items) {
+                    // Collect unique subjects that actually have queue items.
+                    final subjects =
+                        items.map((e) => e.subject).toSet().toList()..sort();
+                    if (subjects.length <= 1) return const SizedBox.shrink();
+                    return _SubjectFilterChips(
+                      subjects: subjects,
+                      selected: selectedSubject.value,
+                      onSelected: (s) => selectedSubject.value = s,
+                    );
+                  },
+                ) ??
+                const SizedBox.shrink(),
             // ── Start button ────────────────────────────────────────────────
             Padding(
-              padding: const EdgeInsets.fromLTRB(AppSpacing.lg, AppSpacing.sm, AppSpacing.lg, 0),
+              padding: const EdgeInsets.fromLTRB(
+                AppSpacing.lg,
+                AppSpacing.sm,
+                AppSpacing.lg,
+                0,
+              ),
               child: async.when(
                 data: (items) {
                   final filtered = _filter(items, selectedSubject.value);
@@ -123,8 +148,13 @@ class RevisionQueueScreen extends HookConsumerWidget {
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: null,
-                    style: ElevatedButton.styleFrom(backgroundColor: AppColors.primary),
-                    child: Text('Start revision session', style: AppTextStyles.label()),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: AppColors.primary,
+                    ),
+                    child: Text(
+                      'Start revision session',
+                      style: AppTextStyles.label(),
+                    ),
                   ),
                 ),
                 error: (e, st) => const SizedBox.shrink(),
@@ -138,7 +168,8 @@ class RevisionQueueScreen extends HookConsumerWidget {
                   physics: const BouncingScrollPhysics(),
                   padding: const EdgeInsets.all(AppSpacing.lg),
                   itemCount: 8,
-                  separatorBuilder: (_, _) => const SizedBox(height: AppSpacing.sm),
+                  separatorBuilder: (_, _) =>
+                      const SizedBox(height: AppSpacing.sm),
                   itemBuilder: (_, _) => Container(
                     height: 84,
                     decoration: BoxDecoration(
@@ -157,23 +188,33 @@ class RevisionQueueScreen extends HookConsumerWidget {
                   final filtered = _filter(items, selectedSubject.value);
                   if (items.isEmpty) {
                     return Center(
-                      child: Column(mainAxisSize: MainAxisSize.min, children: [
-                        Text('Your revision queue is empty',
-                            style: AppTextStyles.h3().copyWith(color: scheme.onSurface)),
-                        const SizedBox(height: AppSpacing.sm),
-                        Text(
-                          'Questions you get wrong or bookmark will appear here',
-                          style: AppTextStyles.bodySm().copyWith(color: scheme.onSurfaceVariant),
-                        ),
-                      ]),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(
+                            'Your revision queue is empty',
+                            style: AppTextStyles.h3().copyWith(
+                              color: scheme.onSurface,
+                            ),
+                          ),
+                          const SizedBox(height: AppSpacing.sm),
+                          Text(
+                            'Questions you get wrong or bookmark will appear here',
+                            style: AppTextStyles.bodySm().copyWith(
+                              color: scheme.onSurfaceVariant,
+                            ),
+                          ),
+                        ],
+                      ),
                     );
                   }
                   if (filtered.isEmpty) {
                     return Center(
                       child: Text(
                         'No items for this subject.',
-                        style: AppTextStyles.bodySm()
-                            .copyWith(color: scheme.onSurfaceVariant),
+                        style: AppTextStyles.bodySm().copyWith(
+                          color: scheme.onSurfaceVariant,
+                        ),
                       ),
                     );
                   }
@@ -191,8 +232,9 @@ class RevisionQueueScreen extends HookConsumerWidget {
     );
   }
 
-  List<dynamic> _filter(List<dynamic> items, String? subject) =>
-      subject == null ? items : items.where((e) => e.subject == subject).toList();
+  List<dynamic> _filter(List<dynamic> items, String? subject) => subject == null
+      ? items
+      : items.where((e) => e.subject == subject).toList();
 }
 
 // ────────────────────────────────────────────────────────────────────────────
@@ -274,7 +316,8 @@ class _Row extends HookConsumerWidget {
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final border = isDark ? AppColors.borderDark : AppColors.borderLight;
-    final subj = SubjectConstants.bySlug(item.subject)?.displayName ?? item.subject;
+    final subj =
+        SubjectConstants.bySlug(item.subject)?.displayName ?? item.subject;
     final mastered = item.numberOfTimesAnsweredCorrectlyInRevision >= 2;
     final badgeBg = mastered
         ? (isDark ? AppColors.correctBgDark : AppColors.correctBg)
@@ -291,21 +334,47 @@ class _Row extends HookConsumerWidget {
         borderRadius: BorderRadius.circular(AppRadius.lg),
         border: Border.all(color: border, width: 0.5),
       ),
-      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        Text('$subj · ${item.topic}', style: AppTextStyles.caption().copyWith(color: scheme.onSurfaceVariant)),
-        const SizedBox(height: AppSpacing.xs),
-        Text(item.questionStem, maxLines: 2, overflow: TextOverflow.ellipsis, style: AppTextStyles.bodyMd().copyWith(color: scheme.onSurface)),
-        const SizedBox(height: AppSpacing.sm),
-        Row(children: [
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: AppSpacing.sm, vertical: AppSpacing.xs),
-            decoration: BoxDecoration(color: badgeBg, borderRadius: BorderRadius.circular(AppRadius.sm)),
-            child: Text(mastered ? 'Mastered' : 'In queue', style: AppTextStyles.caption().copyWith(color: badgeFg)),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            '$subj · ${item.topic}',
+            style: AppTextStyles.caption().copyWith(
+              color: scheme.onSurfaceVariant,
+            ),
           ),
-          const SizedBox(width: AppSpacing.md),
-          _Dots(streak: item.numberOfTimesAnsweredCorrectlyInRevision),
-        ]),
-      ]),
+          const SizedBox(height: AppSpacing.xs),
+          Text(
+            item.questionStem,
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+            style: context.readingFont(
+              AppTextStyles.bodyMd().copyWith(color: scheme.onSurface),
+            ),
+          ),
+          const SizedBox(height: AppSpacing.sm),
+          Row(
+            children: [
+              Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: AppSpacing.sm,
+                  vertical: AppSpacing.xs,
+                ),
+                decoration: BoxDecoration(
+                  color: badgeBg,
+                  borderRadius: BorderRadius.circular(AppRadius.sm),
+                ),
+                child: Text(
+                  mastered ? 'Mastered' : 'In queue',
+                  style: AppTextStyles.caption().copyWith(color: badgeFg),
+                ),
+              ),
+              const SizedBox(width: AppSpacing.md),
+              _Dots(streak: item.numberOfTimesAnsweredCorrectlyInRevision),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
@@ -317,8 +386,20 @@ class _Dots extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final border = isDark ? AppColors.borderDark : AppColors.borderLight;
-    Widget dot(bool filled) => Container(width: 8, height: 8, decoration: BoxDecoration(color: filled ? AppColors.correct : AppColors.transparent, borderRadius: BorderRadius.circular(99), border: Border.all(color: filled ? AppColors.correct : border, width: 1)));
-    return Row(children: [dot(streak >= 1), const SizedBox(width: 4), dot(streak >= 2)]);
+    Widget dot(bool filled) => Container(
+      width: 8,
+      height: 8,
+      decoration: BoxDecoration(
+        color: filled ? AppColors.correct : AppColors.transparent,
+        borderRadius: BorderRadius.circular(99),
+        border: Border.all(
+          color: filled ? AppColors.correct : border,
+          width: 1,
+        ),
+      ),
+    );
+    return Row(
+      children: [dot(streak >= 1), const SizedBox(width: 4), dot(streak >= 2)],
+    );
   }
 }
-

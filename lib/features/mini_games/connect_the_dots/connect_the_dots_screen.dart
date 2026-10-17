@@ -3,6 +3,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/providers/app_language_helpers.dart';
+import '../../../core/theme/reading_font_scale.dart';
 import '../shared/game_intro_view.dart';
 import '../shared/mini_game_models.dart';
 import '../shared/revision_game_analytics.dart';
@@ -40,9 +41,10 @@ class ConnectTheDotsScreen extends HookConsumerWidget {
       persistAppLanguage(ref, v);
     }
 
-    final provider = connectTheDotsControllerProvider(
-      (subjects: subjectsCsv, difficulties: difficultiesCsv),
-    );
+    final provider = connectTheDotsControllerProvider((
+      subjects: subjectsCsv,
+      difficulties: difficultiesCsv,
+    ));
     final async = ref.watch(provider);
     final howToReady = useGameHowToSheet(
       context: context,
@@ -200,7 +202,9 @@ class _ClueCard extends StatelessWidget {
       ),
       child: Text(
         text,
-        style: RgText.body(size: 12, weight: FontWeight.w600),
+        style: context.readingFont(
+          RgText.body(size: 12, weight: FontWeight.w600),
+        ),
       ),
     );
   }

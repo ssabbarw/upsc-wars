@@ -5,6 +5,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'package:upsc_wars/core/analytics/activation_milestones.dart';
+import 'package:upsc_wars/core/theme/reading_font_scale.dart';
 import 'package:upsc_wars/shared/widgets/selectable_copy_search_text.dart';
 
 class QuestionTranslation {
@@ -143,31 +144,38 @@ class ExplanationCard extends HookConsumerWidget {
       return null;
     }, [body, analyticsSource]);
 
-    useEffect(() {
-      if (!deepDiveOpen.value || tabs.isEmpty) return null;
-      final i = activeTab.value.clamp(0, tabs.length - 1);
-      final section = _analyticsSectionForTab(tabs[i]);
-      if (section == null) return null;
-      if (!loggedSections.value.add(section)) return null;
-      unawaited(
-        logExplanationSectionViewed(
-          ref,
-          section: section,
-          source: analyticsSource ?? 'other',
-        ),
-      );
-      return null;
-    }, [deepDiveOpen.value, activeTab.value, tabs.join('|'), body, analyticsSource]);
+    useEffect(
+      () {
+        if (!deepDiveOpen.value || tabs.isEmpty) return null;
+        final i = activeTab.value.clamp(0, tabs.length - 1);
+        final section = _analyticsSectionForTab(tabs[i]);
+        if (section == null) return null;
+        if (!loggedSections.value.add(section)) return null;
+        unawaited(
+          logExplanationSectionViewed(
+            ref,
+            section: section,
+            source: analyticsSource ?? 'other',
+          ),
+        );
+        return null;
+      },
+      [
+        deepDiveOpen.value,
+        activeTab.value,
+        tabs.join('|'),
+        body,
+        analyticsSource,
+      ],
+    );
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SelectableCopySearchText(
           body,
-          style: TextStyle(
-            fontSize: 13,
-            height: 1.65,
-            color: scheme.onSurface,
+          style: context.readingFont(
+            TextStyle(fontSize: 13, height: 1.65, color: scheme.onSurface),
           ),
         ),
         if (valueAdd.isNotEmpty) ...[
@@ -194,10 +202,12 @@ class ExplanationCard extends HookConsumerWidget {
                 const SizedBox(height: 4),
                 SelectableCopySearchText(
                   valueAdd,
-                  style: TextStyle(
-                    fontSize: 12,
-                    height: 1.6,
-                    color: scheme.onSurfaceVariant,
+                  style: context.readingFont(
+                    TextStyle(
+                      fontSize: 12,
+                      height: 1.6,
+                      color: scheme.onSurfaceVariant,
+                    ),
                   ),
                 ),
               ],
@@ -205,101 +215,101 @@ class ExplanationCard extends HookConsumerWidget {
           ),
         ],
         if (hasDeepDive) ...[
-            const SizedBox(height: 10),
-            InkWell(
-              onTap: () {
-                deepDiveOpen.value = !deepDiveOpen.value;
-                if (!deepDiveOpen.value) activeTab.value = 0;
-              },
-              child: Container(
-                padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
-                decoration: BoxDecoration(
-                  border: Border(
-                    top: BorderSide(
-                      color: scheme.outlineVariant.withValues(alpha: 0.5),
-                      width: 0.5,
-                    ),
+          const SizedBox(height: 10),
+          InkWell(
+            onTap: () {
+              deepDiveOpen.value = !deepDiveOpen.value;
+              if (!deepDiveOpen.value) activeTab.value = 0;
+            },
+            child: Container(
+              padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+              decoration: BoxDecoration(
+                border: Border(
+                  top: BorderSide(
+                    color: scheme.outlineVariant.withValues(alpha: 0.5),
+                    width: 0.5,
                   ),
                 ),
-                child: Row(
-                  children: [
-                    Text(
-                      'Deep dive',
-                      style: TextStyle(
-                        fontSize: 13,
-                        fontWeight: FontWeight.w500,
-                        color: scheme.onSurface,
-                      ),
+              ),
+              child: Row(
+                children: [
+                  Text(
+                    'Deep dive',
+                    style: TextStyle(
+                      fontSize: 13,
+                      fontWeight: FontWeight.w500,
+                      color: scheme.onSurface,
                     ),
-                    const Spacer(),
-                    Icon(
-                      deepDiveOpen.value
-                          ? Icons.keyboard_arrow_up
-                          : Icons.keyboard_arrow_down,
-                      size: 18,
-                      color: scheme.onSurfaceVariant,
-                    ),
-                  ],
-                ),
+                  ),
+                  const Spacer(),
+                  Icon(
+                    deepDiveOpen.value
+                        ? Icons.keyboard_arrow_up
+                        : Icons.keyboard_arrow_down,
+                    size: 18,
+                    color: scheme.onSurfaceVariant,
+                  ),
+                ],
               ),
             ),
-            if (deepDiveOpen.value) ...[
-              Row(
-                children: [
-                  for (var i = 0; i < tabs.length; i++)
-                    Expanded(
-                      child: InkWell(
-                        onTap: () => activeTab.value = i,
-                        child: Container(
-                          padding: const EdgeInsets.symmetric(vertical: 9),
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                            border: Border(
-                              bottom: BorderSide(
-                                color: activeTab.value == i
-                                    ? primary
-                                    : Colors.transparent,
-                                width: 2,
-                              ),
-                              top: BorderSide(
-                                color: scheme.outlineVariant.withValues(
-                                  alpha: 0.7,
-                                ),
-                                width: 0.5,
-                              ),
-                            ),
-                          ),
-                          child: Text(
-                            tabs[i],
-                            style: TextStyle(
-                              fontSize: 12,
-                              fontWeight: activeTab.value == i
-                                  ? FontWeight.w500
-                                  : FontWeight.w400,
+          ),
+          if (deepDiveOpen.value) ...[
+            Row(
+              children: [
+                for (var i = 0; i < tabs.length; i++)
+                  Expanded(
+                    child: InkWell(
+                      onTap: () => activeTab.value = i,
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(vertical: 9),
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          border: Border(
+                            bottom: BorderSide(
                               color: activeTab.value == i
                                   ? primary
-                                  : scheme.onSurfaceVariant,
+                                  : Colors.transparent,
+                              width: 2,
                             ),
+                            top: BorderSide(
+                              color: scheme.outlineVariant.withValues(
+                                alpha: 0.7,
+                              ),
+                              width: 0.5,
+                            ),
+                          ),
+                        ),
+                        child: Text(
+                          tabs[i],
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: activeTab.value == i
+                                ? FontWeight.w500
+                                : FontWeight.w400,
+                            color: activeTab.value == i
+                                ? primary
+                                : scheme.onSurfaceVariant,
                           ),
                         ),
                       ),
                     ),
-                ],
+                  ),
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: _TabBody(
+                tab: tabs[activeTab.value],
+                translation: translation,
+                watchOut: watchOut,
+                isDark: isDark,
+                highlightWatchOut: demoHighlightWatchOut,
+                highlightTrap: demoHighlightTrap,
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 10),
-                child: _TabBody(
-                  tab: tabs[activeTab.value],
-                  translation: translation,
-                  watchOut: watchOut,
-                  isDark: isDark,
-                  highlightWatchOut: demoHighlightWatchOut,
-                  highlightTrap: demoHighlightTrap,
-                ),
-              ),
-            ],
+            ),
           ],
         ],
+      ],
     );
   }
 }
@@ -369,10 +379,12 @@ class _TabBody extends StatelessWidget {
                     Expanded(
                       child: SelectableCopySearchText(
                         eliminationSteps[i],
-                        style: TextStyle(
-                          fontSize: 12,
-                          height: 1.55,
-                          color: scheme.onSurface,
+                        style: context.readingFont(
+                          TextStyle(
+                            fontSize: 12,
+                            height: 1.55,
+                            color: scheme.onSurface,
+                          ),
                         ),
                       ),
                     ),
@@ -391,10 +403,12 @@ class _TabBody extends StatelessWidget {
                   ? _TrapHighlightCard(text: trapText, isDark: isDark)
                   : SelectableCopySearchText(
                       trapText,
-                      style: TextStyle(
-                        fontSize: 12,
-                        height: 1.65,
-                        color: scheme.onSurface,
+                      style: context.readingFont(
+                        TextStyle(
+                          fontSize: 12,
+                          height: 1.65,
+                          color: scheme.onSurface,
+                        ),
                       ),
                     ),
             if (translation.conceptsUsed.any((c) => c.trim().isNotEmpty)) ...[
@@ -445,7 +459,9 @@ class _TrapConceptChip extends StatelessWidget {
         ),
         child: SelectableCopySearchText(
           tag,
-          style: TextStyle(fontSize: 11, color: scheme.onSurfaceVariant),
+          style: context.readingFont(
+            TextStyle(fontSize: 11, color: scheme.onSurfaceVariant),
+          ),
         ),
       );
     }
@@ -466,10 +482,12 @@ class _TrapConceptChip extends StatelessWidget {
       ),
       child: Text(
         tag,
-        style: const TextStyle(
-          fontSize: 12,
-          fontWeight: FontWeight.w800,
-          color: Color(0xFFE24B4A),
+        style: context.readingFont(
+          const TextStyle(
+            fontSize: 12,
+            fontWeight: FontWeight.w800,
+            color: Color(0xFFE24B4A),
+          ),
         ),
       ),
     );
@@ -499,18 +517,22 @@ class _TrapHighlightCard extends HookWidget {
       return null;
     }, const []);
 
-    final scale = Tween<double>(begin: 1.0, end: 1.04).animate(
-      CurvedAnimation(parent: controller, curve: Curves.easeInOut),
-    );
-    final glow = Tween<double>(begin: 0.25, end: 0.65).animate(
-      CurvedAnimation(parent: controller, curve: Curves.easeInOut),
-    );
+    final scale = Tween<double>(
+      begin: 1.0,
+      end: 1.04,
+    ).animate(CurvedAnimation(parent: controller, curve: Curves.easeInOut));
+    final glow = Tween<double>(
+      begin: 0.25,
+      end: 0.65,
+    ).animate(CurvedAnimation(parent: controller, curve: Curves.easeInOut));
 
-    final baseStyle = TextStyle(
-      fontSize: 13,
-      height: 1.6,
-      fontWeight: FontWeight.w600,
-      color: isDark ? const Color(0xFFF7CFCF) : const Color(0xFF501313),
+    final baseStyle = context.readingFont(
+      TextStyle(
+        fontSize: 13,
+        height: 1.6,
+        fontWeight: FontWeight.w600,
+        color: isDark ? const Color(0xFFF7CFCF) : const Color(0xFF501313),
+      ),
     );
     final hiStyle = baseStyle.copyWith(
       fontWeight: FontWeight.w900,
@@ -568,7 +590,11 @@ class _TrapHighlightCard extends HookWidget {
       while (true) {
         final i = lower.indexOf(needle, start);
         if (i < 0) break;
-        matches.add((i, i + phrase.length, text.substring(i, i + phrase.length)));
+        matches.add((
+          i,
+          i + phrase.length,
+          text.substring(i, i + phrase.length),
+        ));
         start = i + phrase.length;
       }
     }
@@ -641,10 +667,12 @@ class _StatementRow extends StatelessWidget {
               Expanded(
                 child: SelectableCopySearchText(
                   item.statement,
-                  style: TextStyle(
-                    fontSize: 12,
-                    height: 1.55,
-                    color: scheme.onSurface,
+                  style: context.readingFont(
+                    TextStyle(
+                      fontSize: 12,
+                      height: 1.55,
+                      color: scheme.onSurface,
+                    ),
                   ),
                 ),
               ),
@@ -671,10 +699,12 @@ class _StatementRow extends StatelessWidget {
             padding: const EdgeInsets.only(left: 26),
             child: SelectableCopySearchText(
               item.reason,
-              style: TextStyle(
-                fontSize: 12,
-                height: 1.55,
-                color: scheme.onSurfaceVariant,
+              style: context.readingFont(
+                TextStyle(
+                  fontSize: 12,
+                  height: 1.55,
+                  color: scheme.onSurfaceVariant,
+                ),
               ),
             ),
           ),
@@ -712,12 +742,14 @@ class _WatchOutCard extends HookWidget {
       return null;
     }, [highlight]);
 
-    final scale = Tween<double>(begin: 1.0, end: 1.05).animate(
-      CurvedAnimation(parent: controller, curve: Curves.easeInOut),
-    );
-    final glow = Tween<double>(begin: 0.28, end: 0.7).animate(
-      CurvedAnimation(parent: controller, curve: Curves.easeInOut),
-    );
+    final scale = Tween<double>(
+      begin: 1.0,
+      end: 1.05,
+    ).animate(CurvedAnimation(parent: controller, curve: Curves.easeInOut));
+    final glow = Tween<double>(
+      begin: 0.28,
+      end: 0.7,
+    ).animate(CurvedAnimation(parent: controller, curve: Curves.easeInOut));
 
     final card = Container(
       width: double.infinity,
@@ -734,25 +766,29 @@ class _WatchOutCard extends HookWidget {
         children: [
           SelectableCopySearchText(
             'Watch out - $title',
-            style: TextStyle(
-              fontSize: 10,
-              fontWeight: FontWeight.w500,
-              letterSpacing: 0.4,
-              color: isDark
-                  ? const Color(0xFFF4D39E)
-                  : const Color(0xFF854F0B),
+            style: context.readingFont(
+              TextStyle(
+                fontSize: 10,
+                fontWeight: FontWeight.w500,
+                letterSpacing: 0.4,
+                color: isDark
+                    ? const Color(0xFFF4D39E)
+                    : const Color(0xFF854F0B),
+              ),
             ),
           ),
           const SizedBox(height: 4),
           SelectableCopySearchText(
             reason,
-            style: TextStyle(
-              fontSize: highlight ? 14 : 12,
-              height: 1.55,
-              fontWeight: highlight ? FontWeight.w700 : FontWeight.w400,
-              color: isDark
-                  ? const Color(0xFFF4D39E)
-                  : const Color(0xFF633806),
+            style: context.readingFont(
+              TextStyle(
+                fontSize: highlight ? 14 : 12,
+                height: 1.55,
+                fontWeight: highlight ? FontWeight.w700 : FontWeight.w400,
+                color: isDark
+                    ? const Color(0xFFF4D39E)
+                    : const Color(0xFF633806),
+              ),
             ),
           ),
         ],

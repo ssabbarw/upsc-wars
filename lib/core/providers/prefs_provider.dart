@@ -13,8 +13,7 @@ abstract final class PrefKeys {
   static const lastActiveDate = 'last_active_date';
 
   /// JSON list of streak lengths already celebrated (3 / 7 / 14 / 30).
-  static const celebratedStreakMilestonesV1 =
-      'celebrated_streak_milestones_v1';
+  static const celebratedStreakMilestonesV1 = 'celebrated_streak_milestones_v1';
 
   /// JSON list of `yyyy-MM-dd` days a streak grace was spent (rolling window).
   static const streakGraceUsedDatesV1 = 'streak_grace_used_dates_v1';
@@ -40,6 +39,9 @@ abstract final class PrefKeys {
 
   /// Ask confidence before reveal in practice (adaptive); default on.
   static const confidenceTrackingEnabled = 'confidence_tracking_enabled';
+
+  /// Multiplier for question statements and explanation copy.
+  static const readingFontScale = 'reading_font_scale';
 
   /// Shown once: Hindi/English availability + question-screen toggle.
   static const bilingualQuestionWelcomeSeen =
@@ -95,8 +97,7 @@ abstract final class PrefKeys {
   static const activationGamesOpenedV1 = 'activation_games_opened_v1';
 
   /// Journey fully dismissed (grandfathered or completed).
-  static const activationJourneyDismissedV1 =
-      'activation_journey_dismissed_v1';
+  static const activationJourneyDismissedV1 = 'activation_journey_dismissed_v1';
 
   /// YYYY-MM-DD: first local calendar day the START HERE checklist may show again.
   static const activationJourneySnoozedUntilV1 =
@@ -122,8 +123,7 @@ abstract final class PrefKeys {
       'open_challenge_last_published_at_ms_v1';
 
   /// JSON list of open-challenge ids already played on this device.
-  static const attemptedOpenChallengeIdsV1 =
-      'attempted_open_challenge_ids_v1';
+  static const attemptedOpenChallengeIdsV1 = 'attempted_open_challenge_ids_v1';
 
   /// JSON array of epoch ms for QOTD posts from this device (rolling 24h client cap).
   static const qotdLocalPostEpochsMsJson = 'qotd_local_post_epochs_ms_json_v1';
@@ -195,8 +195,7 @@ abstract final class PrefKeys {
   static const dailyWarLongestStreakV1 = 'daily_war_longest_streak_v1';
 
   /// YYYY-MM-DD of last live War attempt used for streak continuity.
-  static const dailyWarLastPlayedDateIdV1 =
-      'daily_war_last_played_date_id_v1';
+  static const dailyWarLastPlayedDateIdV1 = 'daily_war_last_played_date_id_v1';
 
   /// Consecutive War nights missed since last play (0 or 1 grace).
   static const dailyWarPendingMissesV1 = 'daily_war_pending_misses_v1';
@@ -208,8 +207,7 @@ abstract final class PrefKeys {
   static const todayFullDayDatesV1 = 'today_full_day_dates_v1';
 
   /// ISO dates (`YYYY-MM-DD`) whose Daily CA results/explanations were opened.
-  static const dailyCaResultsOpenedDatesV1 =
-      'daily_ca_results_opened_dates_v1';
+  static const dailyCaResultsOpenedDatesV1 = 'daily_ca_results_opened_dates_v1';
 
   /// Shown once: Home sheet introducing CA Shots, Daily CA Test, Daily Battle.
   static const dailyRitualsIntroSeenV1 = 'daily_rituals_intro_seen_v1';
@@ -355,6 +353,10 @@ class PrefsService {
   set confidenceTrackingEnabled(bool v) =>
       _p.setBool(PrefKeys.confidenceTrackingEnabled, v);
 
+  /// 1.0 is the designed size. The settings slider snaps this to fixed steps.
+  double get readingFontScale => _p.getDouble(PrefKeys.readingFontScale) ?? 1.0;
+  set readingFontScale(double v) => _p.setDouble(PrefKeys.readingFontScale, v);
+
   bool get bilingualQuestionWelcomeSeen =>
       _p.getBool(PrefKeys.bilingualQuestionWelcomeSeen) ?? false;
   set bilingualQuestionWelcomeSeen(bool v) =>
@@ -368,10 +370,8 @@ class PrefsService {
   bool get pushPermissionPromptPendingAfterOnboarding =>
       _p.getBool(PrefKeys.pushPermissionPromptPendingAfterOnboardingV1) ??
       false;
-  set pushPermissionPromptPendingAfterOnboarding(bool v) => _p.setBool(
-        PrefKeys.pushPermissionPromptPendingAfterOnboardingV1,
-        v,
-      );
+  set pushPermissionPromptPendingAfterOnboarding(bool v) =>
+      _p.setBool(PrefKeys.pushPermissionPromptPendingAfterOnboardingV1, v);
 
   bool get getStartedDiagnosticAttempted =>
       _p.getBool(PrefKeys.getStartedDiagnosticAttemptedV1) ?? false;
@@ -492,9 +492,7 @@ class PrefsService {
     final raw = _p.getString(PrefKeys.attemptedOpenChallengeIdsV1);
     if (raw == null || raw.isEmpty) return const {};
     try {
-      return (jsonDecode(raw) as List<dynamic>)
-          .map((e) => e as String)
-          .toSet();
+      return (jsonDecode(raw) as List<dynamic>).map((e) => e as String).toSet();
     } catch (_) {
       return const {};
     }
@@ -577,11 +575,13 @@ class PrefsService {
     if (id.isEmpty) return;
     final s = activationMilestones;
     s.add(id);
-    _p.setString(PrefKeys.activationMilestonesV1, jsonEncode(s.toList()..sort()));
+    _p.setString(
+      PrefKeys.activationMilestonesV1,
+      jsonEncode(s.toList()..sort()),
+    );
   }
 
-  bool get firstInsightSeen =>
-      _p.getBool(PrefKeys.firstInsightSeenV1) ?? false;
+  bool get firstInsightSeen => _p.getBool(PrefKeys.firstInsightSeenV1) ?? false;
   set firstInsightSeen(bool v) => _p.setBool(PrefKeys.firstInsightSeenV1, v);
 
   bool get memoryPairsGameDiscovered =>
@@ -596,7 +596,8 @@ class PrefsService {
 
   bool get appReviewPromptShown =>
       _p.getBool(PrefKeys.appReviewPromptShownV1) ?? false;
-  set appReviewPromptShown(bool v) => _p.setBool(PrefKeys.appReviewPromptShownV1, v);
+  set appReviewPromptShown(bool v) =>
+      _p.setBool(PrefKeys.appReviewPromptShownV1, v);
 
   bool get homeActivationComplete =>
       _p.getBool(PrefKeys.homeActivationCompleteV1) ?? false;
@@ -623,10 +624,9 @@ class PrefsService {
     _p.setString(PrefKeys.activationSessionDaysV1, jsonEncode(sorted));
   }
 
-  int? get firstInstallAtMs =>
-      _p.containsKey(PrefKeys.firstInstallAtMsV1)
-          ? _p.getInt(PrefKeys.firstInstallAtMsV1)
-          : null;
+  int? get firstInstallAtMs => _p.containsKey(PrefKeys.firstInstallAtMsV1)
+      ? _p.getInt(PrefKeys.firstInstallAtMsV1)
+      : null;
   set firstInstallAtMs(int? v) {
     if (v == null) {
       _p.remove(PrefKeys.firstInstallAtMsV1);
@@ -678,8 +678,8 @@ class PrefsService {
   /// `null` when the user has never toggled collapse on the home War card.
   bool? get dailyWarHomeCollapsedOrNull =>
       _p.containsKey(PrefKeys.dailyWarHomeCollapsedV1)
-          ? _p.getBool(PrefKeys.dailyWarHomeCollapsedV1)
-          : null;
+      ? _p.getBool(PrefKeys.dailyWarHomeCollapsedV1)
+      : null;
 
   set dailyWarHomeCollapsed(bool v) =>
       _p.setBool(PrefKeys.dailyWarHomeCollapsedV1, v);

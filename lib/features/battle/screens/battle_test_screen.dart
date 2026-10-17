@@ -15,6 +15,7 @@ import 'package:upsc_wars/core/theme/app_colors.dart';
 import 'package:upsc_wars/core/theme/app_radius.dart';
 import 'package:upsc_wars/core/theme/app_spacing.dart';
 import 'package:upsc_wars/core/theme/app_text_styles.dart';
+import 'package:upsc_wars/core/theme/reading_font_scale.dart';
 import 'package:upsc_wars/features/battle/battle_submit_navigation.dart';
 import 'package:upsc_wars/features/battle/providers/battle_session_provider.dart';
 import 'package:upsc_wars/features/battle/widgets/battle_live_scoreboard.dart';
@@ -82,7 +83,9 @@ class _BattleTestSessionView extends HookConsumerWidget {
     final autoSubmitDone = useRef(false);
     final featureStartedSent = useRef(false);
     final baseSession = ref.watch(
-      battleSessionProvider(sessionId).select((u) => u.battleSession?.baseSession),
+      battleSessionProvider(
+        sessionId,
+      ).select((u) => u.battleSession?.baseSession),
     );
 
     useEffect(() {
@@ -161,24 +164,23 @@ class _BattleTestSessionView extends HookConsumerWidget {
     Future<void> confirmLeave() async {
       final confirmed = await showDialog<bool>(
         context: context,
-        builder:
-            (ctx) => AlertDialog(
-              title: Text('Leave battle?', style: AppTextStyles.h3()),
-              content: Text(
-                'Going back means you want to quit the battle, but your progress will be saved.',
-                style: AppTextStyles.bodyMd(),
-              ),
-              actions: [
-                TextButton(
-                  onPressed: () => Navigator.pop(ctx, false),
-                  child: const Text('Cancel'),
-                ),
-                TextButton(
-                  onPressed: () => Navigator.pop(ctx, true),
-                  child: const Text('Leave'),
-                ),
-              ],
+        builder: (ctx) => AlertDialog(
+          title: Text('Leave battle?', style: AppTextStyles.h3()),
+          content: Text(
+            'Going back means you want to quit the battle, but your progress will be saved.',
+            style: AppTextStyles.bodyMd(),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(ctx, false),
+              child: const Text('Cancel'),
             ),
+            TextButton(
+              onPressed: () => Navigator.pop(ctx, true),
+              child: const Text('Leave'),
+            ),
+          ],
+        ),
       );
       if (confirmed == true) {
         await notifier.markAbandoned();
@@ -207,24 +209,13 @@ class _BattleTestSessionView extends HookConsumerWidget {
             IconButton(
               tooltip: 'Question grid',
               icon: const Icon(Icons.grid_view_outlined),
-              onPressed:
-                  () => _showBattleQuestionGrid(
-                    context,
-                    ref,
-                    sessionId,
-                  ),
+              onPressed: () => _showBattleQuestionGrid(context, ref, sessionId),
             ),
             IconButton(
               tooltip: 'Dark mode',
-              icon: Icon(
-                isDark ? Icons.dark_mode : Icons.light_mode,
-                size: 20,
-              ),
+              icon: Icon(isDark ? Icons.dark_mode : Icons.light_mode, size: 20),
               onPressed: () async {
-                await setDarkModeEnabled(
-                  ref: ref,
-                  darkModeEnabled: !isDark,
-                );
+                await setDarkModeEnabled(ref: ref, darkModeEnabled: !isDark);
               },
             ),
           ],
@@ -235,254 +226,245 @@ class _BattleTestSessionView extends HookConsumerWidget {
               MediaQuery.sizeOf(context).width,
             ),
             child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Padding(
-                padding: const EdgeInsets.fromLTRB(
-                  AppSpacing.lg,
-                  AppSpacing.sm,
-                  AppSpacing.lg,
-                  0,
-                ),
-                child: BattleLiveScoreboard(sessionId: sessionId),
-              ),
-              if (state.waitingForGuestToJoin)
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
                 Padding(
                   padding: const EdgeInsets.fromLTRB(
                     AppSpacing.lg,
-                    AppSpacing.xs,
+                    AppSpacing.sm,
                     AppSpacing.lg,
                     0,
                   ),
-                  child: DecoratedBox(
-                    decoration: BoxDecoration(
-                      color: scheme.surfaceContainerHighest,
-                      borderRadius: BorderRadius.circular(AppRadius.md),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: AppSpacing.md,
-                        vertical: AppSpacing.sm,
-                      ),
-                      child: Row(
-                        children: [
-                          Icon(
-                            Icons.hourglass_top,
-                            size: 20,
-                            color: scheme.primary,
-                          ),
-                          const SizedBox(width: AppSpacing.sm),
-                          Expanded(
-                            child: Text(
-                              'Waiting for your opponent to join before you can answer.',
-                              style: AppTextStyles.bodyMd().copyWith(
-                                color: scheme.onSurface,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
+                  child: BattleLiveScoreboard(sessionId: sessionId),
                 ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(
-                  AppSpacing.lg,
-                  AppSpacing.sm,
-                  AppSpacing.lg,
-                  AppSpacing.xs,
-                ),
-                child: Row(
-                  children: [
-                    InkWell(
-                      onTap:
-                          state.isSubmitting || state.waitingForGuestToJoin
-                              ? null
-                              : notifier.toggleFlag,
-                      borderRadius: BorderRadius.circular(AppRadius.md),
+                if (state.waitingForGuestToJoin)
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(
+                      AppSpacing.lg,
+                      AppSpacing.xs,
+                      AppSpacing.lg,
+                      0,
+                    ),
+                    child: DecoratedBox(
+                      decoration: BoxDecoration(
+                        color: scheme.surfaceContainerHighest,
+                        borderRadius: BorderRadius.circular(AppRadius.md),
+                      ),
                       child: Padding(
                         padding: const EdgeInsets.symmetric(
-                          horizontal: AppSpacing.sm,
-                          vertical: AppSpacing.xs,
+                          horizontal: AppSpacing.md,
+                          vertical: AppSpacing.sm,
                         ),
                         child: Row(
-                          mainAxisSize: MainAxisSize.min,
                           children: [
                             Icon(
-                              q.flagged ? Icons.flag : Icons.outlined_flag,
-                              size: 18,
-                              color:
-                                  q.flagged
-                                      ? AppColors.warning
-                                      : scheme.onSurfaceVariant,
+                              Icons.hourglass_top,
+                              size: 20,
+                              color: scheme.primary,
                             ),
-                            const SizedBox(width: 4),
-                            Text(
-                              'Revisit',
-                              style: AppTextStyles.caption().copyWith(
-                                color: scheme.onSurfaceVariant,
+                            const SizedBox(width: AppSpacing.sm),
+                            Expanded(
+                              child: Text(
+                                'Waiting for your opponent to join before you can answer.',
+                                style: AppTextStyles.bodyMd().copyWith(
+                                  color: scheme.onSurface,
+                                ),
                               ),
                             ),
                           ],
                         ),
                       ),
                     ),
-                    Expanded(
-                      child: Text(
-                        _mmss(remain),
-                        textAlign: TextAlign.center,
-                        style: AppTextStyles.label().copyWith(
-                          color:
-                              remain <= 300
-                                  ? AppColors.wrong
-                                  : scheme.onSurface,
+                  ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(
+                    AppSpacing.lg,
+                    AppSpacing.sm,
+                    AppSpacing.lg,
+                    AppSpacing.xs,
+                  ),
+                  child: Row(
+                    children: [
+                      InkWell(
+                        onTap: state.isSubmitting || state.waitingForGuestToJoin
+                            ? null
+                            : notifier.toggleFlag,
+                        borderRadius: BorderRadius.circular(AppRadius.md),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: AppSpacing.sm,
+                            vertical: AppSpacing.xs,
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Icon(
+                                q.flagged ? Icons.flag : Icons.outlined_flag,
+                                size: 18,
+                                color: q.flagged
+                                    ? AppColors.warning
+                                    : scheme.onSurfaceVariant,
+                              ),
+                              const SizedBox(width: 4),
+                              Text(
+                                'Revisit',
+                                style: AppTextStyles.caption().copyWith(
+                                  color: scheme.onSurfaceVariant,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                    TextButton(
-                      onPressed:
-                          state.isSubmitting || state.waitingForGuestToJoin
-                              ? null
-                              : () async {
-                                  try {
-                                    await submitBattleWithOptionalSpectate(
-                                      context,
-                                      ref,
-                                      sessionId,
-                                    );
-                                  } catch (_) {
-                                    if (!context.mounted) return;
-                                    showTopSnackBar(
-                                      context,
-                                      content: Text(
-                                        'Could not submit battle. Please retry.',
-                                        style: AppTextStyles.bodyMd()
-                                            .copyWith(
-                                              color: scheme.onSurface,
-                                            ),
-                                      ),
-                                    );
-                                  }
-                                },
-                      child: const Text('Submit'),
-                    ),
-                  ],
-                ),
-              ),
-              Expanded(
-                child: _BattleQuestionArea(
-                  question: q,
-                  uiLanguage: uiLanguage.value,
-                  onLanguageChanged: (value) {
-                    uiLanguage.value = value;
-                    unawaited(persistAppLanguage(ref, value));
-                  },
-                  revealed: revealed,
-                  selectedOption: selectedForCurrent,
-                  optionsLocked: state.waitingForGuestToJoin,
-                  onSelectOption: notifier.selectOption,
-                ),
-              ),
-              if (state.errorMessage != null) ...[
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: AppSpacing.lg,
-                  ),
-                  child: Text(
-                    state.errorMessage!,
-                    style: AppTextStyles.caption().copyWith(
-                      color: AppColors.wrong,
-                    ),
-                  ),
-                ),
-              ],
-              Padding(
-                padding: const EdgeInsets.fromLTRB(
-                  AppSpacing.lg,
-                  AppSpacing.sm,
-                  AppSpacing.lg,
-                  AppSpacing.lg,
-                ),
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: OutlinedButton.icon(
-                        onPressed: idx > 0 ? notifier.movePrev : null,
-                        icon: const Icon(Icons.chevron_left, size: 18),
-                        label: const Text('Prev'),
+                      Expanded(
+                        child: Text(
+                          _mmss(remain),
+                          textAlign: TextAlign.center,
+                          style: AppTextStyles.label().copyWith(
+                            color: remain <= 300
+                                ? AppColors.wrong
+                                : scheme.onSurface,
+                          ),
+                        ),
                       ),
-                    ),
-                    IconButton(
-                      onPressed:
-                          state.isSubmitting
-                              ? null
-                              : () async {
-                                  final marked = await notifier.toggleBookmark();
+                      TextButton(
+                        onPressed:
+                            state.isSubmitting || state.waitingForGuestToJoin
+                            ? null
+                            : () async {
+                                try {
+                                  await submitBattleWithOptionalSpectate(
+                                    context,
+                                    ref,
+                                    sessionId,
+                                  );
+                                } catch (_) {
                                   if (!context.mounted) return;
                                   showTopSnackBar(
                                     context,
                                     content: Text(
-                                      marked
-                                          ? 'Bookmarked'
-                                          : 'Bookmark removed',
+                                      'Could not submit battle. Please retry.',
                                       style: AppTextStyles.bodyMd().copyWith(
                                         color: scheme.onSurface,
                                       ),
                                     ),
                                   );
-                                },
-                      icon: Icon(
-                        (state.bookmarkedByUuid[q.uuid] ?? false)
-                            ? Icons.bookmark
-                            : Icons.bookmark_border,
-                        size: 22,
+                                }
+                              },
+                        child: const Text('Submit'),
+                      ),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: _BattleQuestionArea(
+                    question: q,
+                    uiLanguage: uiLanguage.value,
+                    onLanguageChanged: (value) {
+                      uiLanguage.value = value;
+                      unawaited(persistAppLanguage(ref, value));
+                    },
+                    revealed: revealed,
+                    selectedOption: selectedForCurrent,
+                    optionsLocked: state.waitingForGuestToJoin,
+                    onSelectOption: notifier.selectOption,
+                  ),
+                ),
+                if (state.errorMessage != null) ...[
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: AppSpacing.lg,
+                    ),
+                    child: Text(
+                      state.errorMessage!,
+                      style: AppTextStyles.caption().copyWith(
+                        color: AppColors.wrong,
                       ),
                     ),
-                    Expanded(
-                      child:
-                          isLast
-                              ? ElevatedButton(
-                                onPressed:
-                                    state.isSubmitting
-                                        ? null
-                                        : () async {
-                                          try {
-                                            await submitBattleWithOptionalSpectate(
-                                              context,
-                                              ref,
-                                              sessionId,
-                                            );
-                                          } catch (_) {
-                                            if (!context.mounted) return;
-                                            showTopSnackBar(
-                                              context,
-                                              content: Text(
-                                                'Could not submit battle. Please retry.',
-                                                style: AppTextStyles.bodyMd()
-                                                    .copyWith(
-                                                      color: scheme.onSurface,
-                                                    ),
-                                              ),
-                                            );
-                                          }
-                                        },
+                  ),
+                ],
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(
+                    AppSpacing.lg,
+                    AppSpacing.sm,
+                    AppSpacing.lg,
+                    AppSpacing.lg,
+                  ),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: OutlinedButton.icon(
+                          onPressed: idx > 0 ? notifier.movePrev : null,
+                          icon: const Icon(Icons.chevron_left, size: 18),
+                          label: const Text('Prev'),
+                        ),
+                      ),
+                      IconButton(
+                        onPressed: state.isSubmitting
+                            ? null
+                            : () async {
+                                final marked = await notifier.toggleBookmark();
+                                if (!context.mounted) return;
+                                showTopSnackBar(
+                                  context,
+                                  content: Text(
+                                    marked ? 'Bookmarked' : 'Bookmark removed',
+                                    style: AppTextStyles.bodyMd().copyWith(
+                                      color: scheme.onSurface,
+                                    ),
+                                  ),
+                                );
+                              },
+                        icon: Icon(
+                          (state.bookmarkedByUuid[q.uuid] ?? false)
+                              ? Icons.bookmark
+                              : Icons.bookmark_border,
+                          size: 22,
+                        ),
+                      ),
+                      Expanded(
+                        child: isLast
+                            ? ElevatedButton(
+                                onPressed: state.isSubmitting
+                                    ? null
+                                    : () async {
+                                        try {
+                                          await submitBattleWithOptionalSpectate(
+                                            context,
+                                            ref,
+                                            sessionId,
+                                          );
+                                        } catch (_) {
+                                          if (!context.mounted) return;
+                                          showTopSnackBar(
+                                            context,
+                                            content: Text(
+                                              'Could not submit battle. Please retry.',
+                                              style: AppTextStyles.bodyMd()
+                                                  .copyWith(
+                                                    color: scheme.onSurface,
+                                                  ),
+                                            ),
+                                          );
+                                        }
+                                      },
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: AppColors.primary,
                                 ),
                                 child: const Text('Submit'),
                               )
-                              : OutlinedButton.icon(
+                            : OutlinedButton.icon(
                                 onPressed: notifier.moveNext,
                                 iconAlignment: IconAlignment.end,
                                 icon: const Icon(Icons.chevron_right, size: 18),
                                 label: const Text('Next'),
                               ),
-                    ),
-                  ],
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-            ],
-          ),
+              ],
+            ),
           ),
         ),
       ),
@@ -517,19 +499,19 @@ Future<void> _showBattleQuestionGrid(
           final questions = session.questions;
           final responses = b.playerResponsesByQuestion;
           final attempted = questions.where((q) {
-            return responses.containsKey(q.uuid) ||
-                q.status != 'unattempted';
+            return responses.containsKey(q.uuid) || q.status != 'unattempted';
           }).length;
           final skipped = questions.where((q) {
-            return !responses.containsKey(q.uuid) &&
-                q.status == 'unattempted';
+            return !responses.containsKey(q.uuid) && q.status == 'unattempted';
           }).length;
           final flagged = questions.where((q) => q.flagged).length;
 
           return Container(
             decoration: BoxDecoration(
               color: isDark ? scheme.surfaceContainerHigh : scheme.surface,
-              borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
+              borderRadius: const BorderRadius.vertical(
+                top: Radius.circular(20),
+              ),
               border: Border.all(
                 color: isDark ? AppColors.borderDark : AppColors.borderLight,
                 width: 0.8,
@@ -583,14 +565,18 @@ Future<void> _showBattleQuestionGrid(
                     ),
                     _BattleGridLegendItem(
                       label: 'Attempted',
-                      bg: isDark ? AppColors.correctBgDark : AppColors.correctBg,
+                      bg: isDark
+                          ? AppColors.correctBgDark
+                          : AppColors.correctBg,
                       fg: isDark
                           ? AppColors.correctTextDark
                           : AppColors.correctText,
                     ),
                     _BattleGridLegendItem(
                       label: 'Flagged',
-                      bg: isDark ? AppColors.warningBgDark : AppColors.warningBg,
+                      bg: isDark
+                          ? AppColors.warningBgDark
+                          : AppColors.warningBg,
                       fg: isDark
                           ? AppColors.warningTextDark
                           : AppColors.warningText,
@@ -631,7 +617,9 @@ Future<void> _showBattleQuestionGrid(
                     color: scheme.surfaceContainerLow,
                     borderRadius: BorderRadius.circular(AppRadius.md),
                     border: Border.all(
-                      color: isDark ? AppColors.borderDark : AppColors.borderLight,
+                      color: isDark
+                          ? AppColors.borderDark
+                          : AppColors.borderLight,
                       width: 0.6,
                     ),
                   ),
@@ -676,36 +664,36 @@ Future<void> _showBattleQuestionGrid(
                     const SizedBox(width: AppSpacing.sm),
                     Expanded(
                       child: ElevatedButton(
-                        onPressed:
-                            state.isSubmitting
-                                ? null
-                                : () async {
-                                  try {
-                                    if (ctx.mounted) Navigator.pop(ctx);
-                                    await submitBattleWithOptionalSpectate(
-                                      context,
-                                      ref,
-                                      sessionId,
-                                    );
-                                  } catch (_) {
-                                    if (!context.mounted) return;
-                                    showTopSnackBar(
-                                      context,
-                                      content: Text(
-                                        'Could not submit battle. Please retry.',
-                                        style: AppTextStyles.bodyMd()
-                                            .copyWith(
-                                              color: scheme.onSurface,
-                                            ),
+                        onPressed: state.isSubmitting
+                            ? null
+                            : () async {
+                                try {
+                                  if (ctx.mounted) Navigator.pop(ctx);
+                                  await submitBattleWithOptionalSpectate(
+                                    context,
+                                    ref,
+                                    sessionId,
+                                  );
+                                } catch (_) {
+                                  if (!context.mounted) return;
+                                  showTopSnackBar(
+                                    context,
+                                    content: Text(
+                                      'Could not submit battle. Please retry.',
+                                      style: AppTextStyles.bodyMd().copyWith(
+                                        color: scheme.onSurface,
                                       ),
-                                    );
-                                  }
-                                },
+                                    ),
+                                  );
+                                }
+                              },
                         style: ElevatedButton.styleFrom(
-                          backgroundColor:
-                              isDark ? scheme.errorContainer : AppColors.wrong,
-                          foregroundColor:
-                              isDark ? scheme.onErrorContainer : null,
+                          backgroundColor: isDark
+                              ? scheme.errorContainer
+                              : AppColors.wrong,
+                          foregroundColor: isDark
+                              ? scheme.onErrorContainer
+                              : null,
                         ),
                         child: const Text('Submit Test'),
                       ),
@@ -915,12 +903,12 @@ class _BattleQuestionArea extends StatelessWidget {
         if (trimmed.isNotEmpty && !question.hasTable)
           SelectableCopySearchText(
             trimmed,
-            style: AppTextStyles.question().copyWith(color: scheme.onSurface),
+            style: context.readingFont(
+              AppTextStyles.question().copyWith(color: scheme.onSurface),
+            ),
           ),
         if (question.hasTable && tableData != null) ...[
-          SizedBox(
-            height: trimmed.isNotEmpty ? AppSpacing.sm : AppSpacing.xs,
-          ),
+          SizedBox(height: trimmed.isNotEmpty ? AppSpacing.sm : AppSpacing.xs),
           QuestionTableView(table: tableData),
         ],
         DebugCorrectAnswerBanner(question: question),
@@ -952,8 +940,7 @@ class _BattleQuestionArea extends StatelessWidget {
 
     return LayoutBuilder(
       builder: (context, constraints) {
-        final isTwoColumn =
-            constraints.maxWidth >= AppBreakpoints.largeTablet;
+        final isTwoColumn = constraints.maxWidth >= AppBreakpoints.largeTablet;
         if (isTwoColumn) {
           return Row(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -1177,9 +1164,7 @@ class _BattleOptionRow extends StatelessWidget {
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
                               color: badgeBg,
-                              borderRadius: BorderRadius.circular(
-                                AppRadius.sm,
-                              ),
+                              borderRadius: BorderRadius.circular(AppRadius.sm),
                             ),
                             child: Text(
                               keyLabel,
@@ -1301,16 +1286,15 @@ class _BattleExplanationPanel extends StatelessWidget {
           ExplanationCard(
             translation: QuestionTranslation(
               finalExplanation: finalExplanation,
-              statementAnalysis:
-                  statementAnalysis
-                      .map(
-                        (e) => StatementAnalysisVm(
-                          statement: e.label,
-                          isCorrect: e.isCorrect,
-                          reason: e.reason,
-                        ),
-                      )
-                      .toList(),
+              statementAnalysis: statementAnalysis
+                  .map(
+                    (e) => StatementAnalysisVm(
+                      statement: e.label,
+                      isCorrect: e.isCorrect,
+                      reason: e.reason,
+                    ),
+                  )
+                  .toList(),
               eliminationLogic: eliminationLogic,
               strongDistractor: strongDistractor,
               upscTrapExplanation: upscTrapExplanation,

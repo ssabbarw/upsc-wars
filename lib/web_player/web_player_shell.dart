@@ -17,6 +17,7 @@ import 'package:upsc_wars/core/theme/app_colors.dart';
 import 'package:upsc_wars/core/theme/app_radius.dart';
 import 'package:upsc_wars/core/theme/app_spacing.dart';
 import 'package:upsc_wars/core/theme/app_text_styles.dart';
+import 'package:upsc_wars/core/theme/reading_font_scale.dart';
 import 'package:upsc_wars/core/theme/app_theme.dart';
 import 'package:upsc_wars/features/history/widgets/explanation_card.dart';
 import 'package:upsc_wars/web_player/web_player_results_screen.dart';
@@ -1045,19 +1046,19 @@ class _WebPlayerShellState extends State<WebPlayerShell>
         WidgetsBinding.instance.addPostFrameCallback((_) {
           if (!mounted) return;
           _showLandingNotFoundToast = false;
-        AppToast.show(
-          context,
-          duration: const Duration(seconds: 8),
-          top: true,
-          backgroundColor: AppColors.wrong,
-          foregroundColor: Colors.white,
-          child: const Center(
-            child: Text(
-              'Link not found (expired).',
-              textAlign: TextAlign.center,
+          AppToast.show(
+            context,
+            duration: const Duration(seconds: 8),
+            top: true,
+            backgroundColor: AppColors.wrong,
+            foregroundColor: Colors.white,
+            child: const Center(
+              child: Text(
+                'Link not found (expired).',
+                textAlign: TextAlign.center,
+              ),
             ),
-          ),
-        );
+          );
         });
       }
       return WebShellLandingPage(onToggleTheme: widget.onToggleTheme);
@@ -1199,8 +1200,10 @@ class _WebPlayerShellState extends State<WebPlayerShell>
                     if (stemTrimmed.isNotEmpty)
                       SelectableCopySearchText(
                         stemTrimmed,
-                        style: AppTextStyles.question().copyWith(
-                          color: scheme.onSurface,
+                        style: context.readingFont(
+                          AppTextStyles.question().copyWith(
+                            color: scheme.onSurface,
+                          ),
                         ),
                       ),
                     if (q.hasTable && table != null) ...[

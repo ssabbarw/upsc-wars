@@ -16,6 +16,7 @@ import 'package:upsc_wars/core/theme/app_colors.dart';
 import 'package:upsc_wars/core/theme/app_radius.dart';
 import 'package:upsc_wars/core/theme/app_spacing.dart';
 import 'package:upsc_wars/core/theme/app_text_styles.dart';
+import 'package:upsc_wars/core/theme/reading_font_scale.dart';
 import 'package:upsc_wars/core/theme/app_theme.dart';
 import 'package:upsc_wars/features/history/widgets/explanation_card.dart';
 import 'package:upsc_wars/share_web/share_web_session_chrome.dart';
@@ -410,7 +411,9 @@ class _ShareWebShellState extends State<ShareWebShell>
     if (!mounted || ok) return;
     AppToast.show(
       context,
-      child: const Text('Could not open email. You can copy our address below.'),
+      child: const Text(
+        'Could not open email. You can copy our address below.',
+      ),
       duration: const Duration(seconds: 8),
       action: AppToastAction(
         label: 'Copy email',
@@ -484,11 +487,10 @@ class _ShareWebShellState extends State<ShareWebShell>
         correct++;
       }
     }
-    final score = _questions.isEmpty ? 0.0 : (correct / _questions.length) * 100;
-    await _appendLeaderboardEntry(
-      name: _participantName,
-      score: score,
-    );
+    final score = _questions.isEmpty
+        ? 0.0
+        : (correct / _questions.length) * 100;
+    await _appendLeaderboardEntry(name: _participantName, score: score);
     _completedAtIso = completedAt.toIso8601String();
     await _writeSaved();
     if (!mounted) return;
@@ -902,8 +904,10 @@ class _ShareWebShellState extends State<ShareWebShell>
                     if (stemTrimmed.isNotEmpty)
                       SelectableCopySearchText(
                         stemTrimmed,
-                        style: AppTextStyles.question().copyWith(
-                          color: scheme.onSurface,
+                        style: context.readingFont(
+                          AppTextStyles.question().copyWith(
+                            color: scheme.onSurface,
+                          ),
                         ),
                       ),
                     if (q.hasTable && table != null) ...[
