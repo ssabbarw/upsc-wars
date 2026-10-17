@@ -1125,4 +1125,20 @@ final class DemoTestSubmittedEvent extends AnalyticsEvent {
   final String attemptBand;
 }
 
+/// **User switched the in-app EN | हि language.** Fired only when the saved
+/// language actually changes. Count unique users on `to_language` to see who
+/// chose Hindi vs English.
+///
+/// **GA4:** `app_language_switched` with `from_language` and `to_language`
+/// (`en` | `hi`). Also sets user property `app_language` to [toLanguage].
+final class AppLanguageSwitchedEvent extends AnalyticsEvent {
+  const AppLanguageSwitchedEvent({
+    required this.fromLanguage,
+    required this.toLanguage,
+  });
+
+  final String fromLanguage;
+  final String toLanguage;
+}
+
 

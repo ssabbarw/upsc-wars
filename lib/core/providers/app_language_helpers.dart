@@ -1,5 +1,7 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../analytics/analytics.dart';
+import '../analytics/analytics_events.dart';
 import 'catalog_providers.dart';
 import 'prefs_provider.dart';
 
@@ -21,7 +23,15 @@ String watchAppLanguage(WidgetRef ref, {String fallback = 'en'}) {
 Future<void> persistAppLanguage(WidgetRef ref, String lang) async {
   final normalized = normalizeAppLanguage(lang);
   final prefs = await ref.read(prefsServiceProvider.future);
-  if (prefs.language == normalized) return;
+  final previous = normalizeAppLanguage(prefs.language);
+  if (previous == normalized) return;
   prefs.language = normalized;
   ref.invalidate(appLanguageProvider);
+  await Analytics.track(
+    ref,
+    AppLanguageSwitchedEvent(
+      fromLanguage: previous,
+      toLanguage: normalized,
+    ),
+  );
 }

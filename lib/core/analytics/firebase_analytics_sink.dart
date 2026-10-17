@@ -73,6 +73,8 @@ import 'analytics_sink.dart';
 /// * `post_demo_explore` — `surface` (subject, tab, today hub, another test)
 /// * `demo_test_submitted` — `attempted`, `total`, `attempt_band`
 ///   (`none` | `1_2` | `3_5` | `6_7` | `all`)
+/// * `app_language_switched` — `from_language`, `to_language` (`en` | `hi`);
+///   also sets user property `app_language`
 ///
 /// **App users vs Daily War / Daily CA attempters:** count unique users on
 /// `app_opened` (or GA4 Active users) vs unique users on `daily_war_attempted`
@@ -573,6 +575,15 @@ class FirebaseAnalyticsSink implements AnalyticsSink {
           'attempted': attempted,
           'total': total,
           'attempt_band': attemptBand,
+        });
+      case AppLanguageSwitchedEvent(:final fromLanguage, :final toLanguage):
+        await _analytics.setUserProperty(
+          name: 'app_language',
+          value: toLanguage,
+        );
+        await _log('app_language_switched', {
+          'from_language': fromLanguage,
+          'to_language': toLanguage,
         });
     }
   }
