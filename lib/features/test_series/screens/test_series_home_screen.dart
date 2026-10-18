@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -20,7 +21,11 @@ class TestSeriesEntryScreen extends ConsumerWidget {
     final owned = ref.watch(ownedSeriesIdsProvider);
     final canSell = ref.watch(testSeriesCanSellProvider);
 
-    if (activeId.isLoading || owned.isLoading || canSell.isLoading) {
+    // Only block on the first load. Soft refreshes (e.g. after purchase) keep
+    // the previous value so we don't remount [TestSeriesHomeScreen] / TabBar.
+    if ((!activeId.hasValue && activeId.isLoading) ||
+        (!owned.hasValue && owned.isLoading) ||
+        (!canSell.hasValue && canSell.isLoading)) {
       return const Scaffold(body: Center(child: CircularProgressIndicator()));
     }
     final active = activeId.asData?.value;
@@ -45,7 +50,7 @@ class TestSeriesEntryScreen extends ConsumerWidget {
 
 /// Series home: Overview, Full-Length Tests, Subject-wise Tests and
 /// PYQ & Current Affairs tabs.
-class TestSeriesHomeScreen extends ConsumerWidget {
+class TestSeriesHomeScreen extends HookConsumerWidget {
   const TestSeriesHomeScreen({super.key, required this.seriesId});
 
   final String seriesId;
@@ -57,72 +62,76 @@ class TestSeriesHomeScreen extends ConsumerWidget {
     final isHindi = ref.watch(appLanguageProvider).asData?.value == 'hi';
     final owned = ownedIds.contains(seriesId);
     final statsAsync = ref.watch(seriesStatsProvider(seriesId));
+    // Stable across ownership rebuilds so TabBarView doesn't jumpToPage
+    // during build (setState-during-build assertion).
+    final tabController = useTabController(initialLength: 4);
 
-    return DefaultTabController(
-      length: 4,
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text(
-            bundleAsync.asData?.value.info.displayTitle(hindi: isHindi) ?? 'Test Series',
-          ),
-          actions: [
-            if (ownedIds.isNotEmpty)
-              IconButton(
-                tooltip: 'My test series',
-                icon: const Icon(Icons.history_rounded),
-                onPressed: () => context.push('/my-test-series'),
-              ),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          bundleAsync.asData?.value.info.displayTitle(hindi: isHindi) ??
+              'Test Series',
+        ),
+        actions: [
+          if (ownedIds.isNotEmpty)
+            IconButton(
+              tooltip: 'My test series',
+              icon: const Icon(Icons.history_rounded),
+              onPressed: () => context.push('/my-test-series'),
+            ),
+        ],
+        // Four short labels that fit the screen width: no sideways scrolling.
+        bottom: TabBar(
+          controller: tabController,
+          labelPadding: const EdgeInsets.symmetric(horizontal: 4),
+          tabs: const [
+            Tab(text: 'Overview'),
+            Tab(text: 'Full-Length'),
+            Tab(text: 'Subjects'),
+            Tab(text: 'PYQ & CA'),
           ],
-          // Four short labels that fit the screen width: no sideways scrolling.
-          bottom: const TabBar(
-            labelPadding: EdgeInsets.symmetric(horizontal: 4),
-            tabs: [
-              Tab(text: 'Overview'),
-              Tab(text: 'Full-Length'),
-              Tab(text: 'Subjects'),
-              Tab(text: 'PYQ & CA'),
+        ),
+      ),
+      body: bundleAsync.when(
+        loading: () => const Center(child: CircularProgressIndicator()),
+        error: (e, _) => _LoadError(
+          onRetry: () => ref.invalidate(seriesBundleProvider(seriesId)),
+        ),
+        data: (bundle) {
+          // Keep the previous numbers on screen while stats refresh.
+          final stats =
+              statsAsync.value ??
+              SeriesStats.compute(
+                bundle: bundle,
+                attemptList: const [],
+                answers: const [],
+              );
+          return TabBarView(
+            controller: tabController,
+            children: [
+              SeriesOverviewTab(
+                bundle: bundle,
+                owned: owned,
+                isHindi: isHindi,
+                stats: stats,
+                tabController: tabController,
+              ),
+              SeriesFullLengthTab(
+                bundle: bundle,
+                owned: owned,
+                isHindi: isHindi,
+                stats: stats,
+              ),
+              SeriesSubjectsTab(
+                bundle: bundle,
+                owned: owned,
+                isHindi: isHindi,
+                stats: stats,
+              ),
+              SeriesPyqCaTab(bundle: bundle, owned: owned, stats: stats),
             ],
-          ),
-        ),
-        body: bundleAsync.when(
-          loading: () => const Center(child: CircularProgressIndicator()),
-          error: (e, _) => _LoadError(
-            onRetry: () => ref.invalidate(seriesBundleProvider(seriesId)),
-          ),
-          data: (bundle) {
-            // Keep the previous numbers on screen while stats refresh.
-            final stats =
-                statsAsync.value ??
-                SeriesStats.compute(
-                  bundle: bundle,
-                  attemptList: const [],
-                  answers: const [],
-                );
-            return TabBarView(
-              children: [
-                SeriesOverviewTab(
-                  bundle: bundle,
-                  owned: owned,
-                  isHindi: isHindi,
-                  stats: stats,
-                ),
-                SeriesFullLengthTab(
-                  bundle: bundle,
-                  owned: owned,
-                  isHindi: isHindi,
-                  stats: stats,
-                ),
-                SeriesSubjectsTab(
-                  bundle: bundle,
-                  owned: owned,
-                  isHindi: isHindi,
-                  stats: stats,
-                ),
-                SeriesPyqCaTab(bundle: bundle, owned: owned, stats: stats),
-              ],
-            );
-          },
-        ),
+          );
+        },
       ),
     );
   }

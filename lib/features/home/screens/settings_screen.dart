@@ -27,8 +27,10 @@ import '../../daily_ca/domain/daily_ca_generate_config.dart';
 import '../../daily_ca/providers/daily_ca_admin_providers.dart';
 import '../../daily_ca/widgets/daily_ca_generate_action.dart';
 import '../../daily_ca/widgets/daily_ca_review_access.dart';
+import '../../../core/providers/app_language_helpers.dart';
 import '../../../shared/theme/dark_mode_toggle.dart';
 import '../../../shared/widgets/app_toast.dart';
+import '../../../shared/widgets/content_language_picker.dart';
 
 class SettingsScreen extends ConsumerWidget {
   const SettingsScreen({super.key});
@@ -68,6 +70,7 @@ class SettingsScreen extends ConsumerWidget {
             _Section(
               title: 'Preferences',
               children: const [
+                _ContentLanguageTile(),
                 _DarkModeTile(),
                 _ReadingSizeTile(),
                 _ConfidenceTrackingTile(),
@@ -728,6 +731,46 @@ class _LeadingIcon extends StatelessWidget {
       ),
       alignment: Alignment.center,
       child: Icon(icon, color: color, size: 22),
+    );
+  }
+}
+
+class _ContentLanguageTile extends ConsumerWidget {
+  const _ContentLanguageTile();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final scheme = Theme.of(context).colorScheme;
+    final language = watchAppLanguage(ref);
+    final isHindi = language == 'hi';
+
+    return ListTile(
+      leading: const _LeadingIcon(
+        icon: Icons.translate_rounded,
+        bg: Color(0xFFE1F5EE),
+        color: Color(0xFF0F6E56),
+      ),
+      title: Text('Question language', style: AppTextStyles.label()),
+      subtitle: Text(
+        isHindi
+            ? 'Hindi content · app stays English'
+            : 'Everything in English',
+        style: AppTextStyles.bodySm().copyWith(
+          color: scheme.onSurfaceVariant,
+        ),
+      ),
+      trailing: Icon(
+        Icons.chevron_right_rounded,
+        color: scheme.onSurfaceVariant,
+      ),
+      contentPadding: const EdgeInsets.symmetric(
+        horizontal: AppSpacing.lg,
+        vertical: 10,
+      ),
+      onTap: () => showContentLanguageChoiceSheet(
+        context: context,
+        ref: ref,
+      ),
     );
   }
 }

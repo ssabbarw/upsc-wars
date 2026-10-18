@@ -10,10 +10,13 @@ import 'revenuecat_config.dart';
 enum PurchaseOutcomeKind { purchased, cancelled, pending, unavailable, failed }
 
 class PurchaseOutcome {
-  const PurchaseOutcome(this.kind, {this.message});
+  const PurchaseOutcome(this.kind, {this.message, this.ownedIds});
 
   final PurchaseOutcomeKind kind;
   final String? message;
+
+  /// Entitlement ids active after a successful purchase/restore attempt.
+  final Set<String>? ownedIds;
 
   bool get isPurchased => kind == PurchaseOutcomeKind.purchased;
 }
@@ -44,6 +47,16 @@ class TestSeriesPurchaseService {
   void _log(String m) => developer.log(m, name: _logName);
 
   Set<String> _owned(CustomerInfo info) => info.entitlements.active.keys.toSet();
+
+  void _logCustomerInfo(String label, CustomerInfo info) {
+    final active = info.entitlements.active.keys.toList()..sort();
+    final all = info.entitlements.all.keys.toList()..sort();
+    final products = info.allPurchasedProductIdentifiers.toList()..sort();
+    _log(
+      '$label active=$active allEntitlements=$all '
+      'purchasedProducts=$products',
+    );
+  }
 
   /// Configures the SDK once and keeps the RevenueCat user in sync with
   /// [accountUid] (null = signed out / anonymous).
@@ -105,9 +118,12 @@ class TestSeriesPurchaseService {
       return const PurchaseOutcome(PurchaseOutcomeKind.unavailable);
     }
     try {
+      _log('buying product=${product.identifier}');
       final result = await Purchases.purchase(PurchaseParams.storeProduct(product));
-      _ownedController.add(_owned(result.customerInfo));
-      return const PurchaseOutcome(PurchaseOutcomeKind.purchased);
+      _logCustomerInfo('after purchase', result.customerInfo);
+      final owned = _owned(result.customerInfo);
+      _ownedController.add(owned);
+      return PurchaseOutcome(PurchaseOutcomeKind.purchased, ownedIds: owned);
     } on PlatformException catch (e) {
       final code = PurchasesErrorHelper.getErrorCode(e);
       switch (code) {
@@ -121,9 +137,14 @@ class TestSeriesPurchaseService {
         case PurchasesErrorCode.productAlreadyPurchasedError:
           // Already owned: refresh entitlements so the UI unlocks.
           try {
-            _ownedController.add(_owned(await Purchases.restorePurchases()));
-          } on Object catch (_) {}
-          return const PurchaseOutcome(PurchaseOutcomeKind.purchased);
+            final info = await Purchases.restorePurchases();
+            _logCustomerInfo('after already-purchased restore', info);
+            final owned = _owned(info);
+            _ownedController.add(owned);
+            return PurchaseOutcome(PurchaseOutcomeKind.purchased, ownedIds: owned);
+          } on Object catch (_) {
+            return const PurchaseOutcome(PurchaseOutcomeKind.purchased);
+          }
         default:
           _log('purchase failed: $code ${e.message}');
           return PurchaseOutcome(
@@ -141,6 +162,7 @@ class TestSeriesPurchaseService {
   Future<Set<String>> restore() async {
     if (!isSupported || !_configured) return const {};
     final info = await Purchases.restorePurchases();
+    _logCustomerInfo('after restore', info);
     final owned = _owned(info);
     _ownedController.add(owned);
     return owned;

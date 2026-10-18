@@ -19,30 +19,29 @@ final authStateChangesProvider = StreamProvider<User?>((ref) {
 
 /// Stable auth identity for [appRouterProvider].
 ///
-/// Token refreshes (`getIdToken(true)`) also emit [userChanges], but must not
-/// recreate [GoRouter] (that resets navigation to `/`).
+/// Token refreshes and account sign-in (anonymous → Google/Apple, including
+/// uid changes) must not recreate [GoRouter] — that resets navigation to `/`
+/// and drops in-progress flows (e.g. test-series paywall after login).
+/// Only [authReady] / [isSuperUser] matter for route guards.
 @immutable
 class AuthRouterIdentity {
   const AuthRouterIdentity({
     required this.authReady,
-    required this.uid,
     required this.isSuperUser,
   });
 
   final bool authReady;
-  final String? uid;
   final bool isSuperUser;
 
   @override
   bool operator ==(Object other) {
     return other is AuthRouterIdentity &&
         other.authReady == authReady &&
-        other.uid == uid &&
         other.isSuperUser == isSuperUser;
   }
 
   @override
-  int get hashCode => Object.hash(authReady, uid, isSuperUser);
+  int get hashCode => Object.hash(authReady, isSuperUser);
 }
 
 final authRouterIdentityProvider = Provider<AuthRouterIdentity>((ref) {
@@ -51,7 +50,6 @@ final authRouterIdentityProvider = Provider<AuthRouterIdentity>((ref) {
   final user = authAsync.asData?.value;
   return AuthRouterIdentity(
     authReady: authReady,
-    uid: user?.uid,
     isSuperUser: authReady && SuperUser.isSignedIn(user),
   );
 });

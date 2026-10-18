@@ -133,12 +133,17 @@ final GlobalKey<NavigatorState> rootNavigatorKey = GlobalKey<NavigatorState>(
   debugLabel: 'root',
 );
 
+/// Survives [appRouterProvider] rebuilds (e.g. super-user flag flip) so we do
+/// not dump the user on `/` mid-flow.
+String? _appRouterRestoreLocation;
+
 @Riverpod(keepAlive: true)
 GoRouter appRouter(Ref ref) {
   ref.watch(appBootstrapProvider).requireValue;
   // Watch a stable identity only. Full [authStateChangesProvider] also fires on
   // ID-token refresh (e.g. battle Firestore priming), which would recreate this
-  // GoRouter and dump the user back on `/`.
+  // GoRouter and dump the user back on `/`. Account sign-in is intentionally
+  // excluded from [AuthRouterIdentity] for the same reason.
   final authIdentity = ref.watch(authRouterIdentityProvider);
   final authReady = authIdentity.authReady;
   final isSuperUser = authIdentity.isSuperUser;
@@ -150,6 +155,12 @@ GoRouter appRouter(Ref ref) {
   ref.listen(communityTabRemoteEnabledProvider, (_, _) {
     redirectRefresh.notify();
   });
+  final restoredLocation = _appRouterRestoreLocation;
+  _appRouterRestoreLocation = null;
+  final initialLocation =
+      (restoredLocation == null || restoredLocation.isEmpty)
+      ? '/'
+      : restoredLocation;
 
   bool communityTabVisibleForRedirect() {
     if (!shellHasCommunity) return false;
@@ -278,9 +289,9 @@ GoRouter appRouter(Ref ref) {
         ],
       ),
   ];
-  return GoRouter(
+  final router = GoRouter(
     navigatorKey: rootNavigatorKey,
-    initialLocation: '/',
+    initialLocation: initialLocation,
     // The engine remembers the last reported route, so a restart would resume
     // wherever the user was. Cold-start deep links arrive through
     // ShareDeepLinkService, not the platform default location.
@@ -1242,6 +1253,15 @@ GoRouter appRouter(Ref ref) {
       ),
     ],
   );
+  ref.onDispose(() {
+    try {
+      final loc = router.state.uri.toString();
+      if (loc.isNotEmpty) _appRouterRestoreLocation = loc;
+    } on Object {
+      // Router may already be torn down.
+    }
+  });
+  return router;
 }
 
 /// Triggers [GoRouter] redirect re-evaluation when Remote Config toggles Community.

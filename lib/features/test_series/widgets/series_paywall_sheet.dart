@@ -87,10 +87,26 @@ class SeriesPaywallSheet extends HookConsumerWidget {
         if (!context.mounted) return;
         switch (outcome.kind) {
           case PurchaseOutcomeKind.purchased:
-            await ref.read(ownedSeriesIdsProvider.notifier).refresh();
-            if (context.mounted) {
+            // Store success ≠ entitlement. Unlock only when RC grants
+            // [bundle.info.entitlementId] (e.g. prelims_2027).
+            var owned = outcome.ownedIds ?? const <String>{};
+            if (!owned.contains(bundle.info.entitlementId)) {
+              owned = await ref.read(ownedSeriesIdsProvider.notifier).restore();
+            } else {
+              await ref.read(ownedSeriesIdsProvider.notifier).refresh();
+              owned = await ref.read(ownedSeriesIdsProvider.future);
+            }
+            if (!context.mounted) return;
+            if (owned.contains(bundle.info.entitlementId)) {
               toast('Unlocked! Every test in this series is now yours.');
               Navigator.of(context).pop(true);
+            } else {
+              toast(
+                'Payment went through, but access was not granted yet. '
+                'Tap Restore purchase, or check that RevenueCat entitlement '
+                '"${bundle.info.entitlementId}" is attached to product '
+                '"${bundle.info.productId}".',
+              );
             }
           case PurchaseOutcomeKind.cancelled:
             break;

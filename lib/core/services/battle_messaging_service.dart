@@ -787,10 +787,12 @@ class BattleMessagingService {
     };
   }
 
-  /// Right after onboarding lands on Home: OS permission dialog only (no
-  /// education sheet). Denied users are nudged later via [PushDeniedBanner].
+  /// Right after onboarding lands on Home: optional pre-step (e.g. language),
+  /// then OS permission dialog only (no education sheet). Denied users are
+  /// nudged later via [PushDeniedBanner].
   static Future<void> maybePromptSystemAfterOnboardingHome({
     required BuildContext context,
+    Future<void> Function()? beforeSystemPrompt,
   }) async {
     if (kIsWeb) return;
     await Future<void>.delayed(NotificationPromptPolicy.screenSettleDelay);
@@ -801,6 +803,12 @@ class BattleMessagingService {
     final prefs = PrefsService(await SharedPreferences.getInstance());
     if (!prefs.pushPermissionPromptPendingAfterOnboarding) return;
     prefs.pushPermissionPromptPendingAfterOnboarding = false;
+
+    if (beforeSystemPrompt != null) {
+      await beforeSystemPrompt();
+      if (!context.mounted) return;
+    }
+
     if (await notificationsAreEnabled()) return;
     await requestPushAuthorizationAndSync(source: 'post_onboarding');
   }

@@ -58,3 +58,6 @@ daily-current-mcqs/venv/
 tools/test_series/out/
 **/service-account*.json
 **/serviceAccount*.json
+
+# Local Flutter --dart-define values (copy from dart_defines.example.json)
+dart_defines.json

@@ -37,15 +37,26 @@ final seriesLocalRepositoryProvider = Provider<SeriesLocalRepository>(
 ///
 /// A series pass is one-time and never expires: once an id is in this set the
 /// user keeps full access to that series' tests, history and dashboard.
+///
+/// In [kDebugMode] nothing is cached: ownership follows RevenueCat only, so
+/// cancelled license-test purchases can be bought again without clearing app
+/// data.
 class OwnedSeriesNotifier extends AsyncNotifier<Set<String>> {
   String _cacheKey(String? uid) => 'test_series_owned_ids_${uid ?? 'anon'}';
 
   Future<Set<String>> _readCache(String? uid) async {
+    if (kDebugMode) {
+      // Drop any prefs left over from earlier debug runs.
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.remove(_cacheKey(uid));
+      return const {};
+    }
     final prefs = await SharedPreferences.getInstance();
     return (prefs.getStringList(_cacheKey(uid)) ?? const <String>[]).toSet();
   }
 
   Future<void> _writeCache(String? uid, Set<String> ids) async {
+    if (kDebugMode) return;
     final prefs = await SharedPreferences.getInstance();
     await prefs.setStringList(_cacheKey(uid), ids.toList());
   }
@@ -59,6 +70,11 @@ class OwnedSeriesNotifier extends AsyncNotifier<Set<String>> {
     final cached = await _readCache(uid);
 
     final sub = service.ownedChanges.listen((ids) {
+      if (kDebugMode) {
+        // Trust live entitlements only (no sticky merge).
+        state = AsyncData(ids);
+        return;
+      }
       // Never drop a cached pass because of a transient empty answer.
       final merged = {...cached, ...ids};
       unawaited(_writeCache(uid, merged));
@@ -70,6 +86,7 @@ class OwnedSeriesNotifier extends AsyncNotifier<Set<String>> {
     try {
       await service.sync(accountUid: uid);
       final live = await service.ownedSeriesIds();
+      if (kDebugMode) return live;
       final merged = {...cached, ...live};
       await _writeCache(uid, merged);
       return merged;
@@ -79,15 +96,38 @@ class OwnedSeriesNotifier extends AsyncNotifier<Set<String>> {
   }
 
   /// Re-reads entitlements from RevenueCat (after a purchase or restore).
+  ///
+  /// Soft-updates [state] instead of [invalidateSelf] so the series home
+  /// (and its TabBar) is not torn down into a loading spinner mid-frame.
   Future<void> refresh() async {
-    ref.invalidateSelf();
-    await future;
+    final service = ref.read(testSeriesPurchaseServiceProvider);
+    final user = ref.read(authStateChangesProvider).asData?.value;
+    final uid = AuthSession.isAccountSignedIn(user) ? user!.uid : null;
+    if (!service.isSupported) return;
+    try {
+      await service.sync(accountUid: uid);
+      final live = await service.ownedSeriesIds();
+      if (kDebugMode) {
+        state = AsyncData(live);
+        return;
+      }
+      final current = state.asData?.value ?? await _readCache(uid);
+      final merged = {...current, ...live};
+      await _writeCache(uid, merged);
+      state = AsyncData(merged);
+    } on Object {
+      // Keep whatever we already showed.
+    }
   }
 
   /// Restores purchases from the store account. Returns the owned ids.
   Future<Set<String>> restore() async {
     final service = ref.read(testSeriesPurchaseServiceProvider);
     final restored = await service.restore();
+    if (kDebugMode) {
+      state = AsyncData(restored);
+      return restored;
+    }
     final current = state.asData?.value ?? const <String>{};
     final merged = {...current, ...restored};
     final user = ref.read(authStateChangesProvider).asData?.value;
@@ -128,6 +168,9 @@ final testSeriesCanSellProvider = FutureProvider<bool>((ref) async {
 
 /// A series with all its tests. Emits the cached copy first (instant,
 /// offline-friendly), then the fresh copy from Firestore.
+///
+/// Catalog reads are public so signed-out users get a preview; paid access is
+/// gated in the UI via RevenueCat (`ownedSeriesIdsProvider`).
 ///
 /// Retry is disabled: Riverpod 3 would otherwise keep the provider in a
 /// "loading" state while it silently retries, so a permission or network error

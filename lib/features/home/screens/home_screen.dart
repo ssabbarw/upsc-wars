@@ -42,6 +42,7 @@ import '../../../shared/widgets/push_denied_banner.dart';
 import '../../../shared/theme/dark_mode_toggle.dart';
 import '../../../shared/widgets/app_toast.dart';
 import '../../../shared/widgets/app_update_kill_switch_overlay.dart';
+import '../../../shared/widgets/content_language_picker.dart';
 import '../../../shared/widgets/prelims_countdown_card.dart';
 import '../../../shared/widgets/quick_practice_mode_sheet.dart';
 import '../../../shared/widgets/contact_us_entry.dart';
@@ -106,6 +107,12 @@ class HomeScreen extends HookConsumerWidget {
       unawaited(() async {
         await BattleMessagingService.maybePromptSystemAfterOnboardingHome(
           context: context,
+          beforeSystemPrompt: () => showContentLanguageChoiceSheet(
+            context: context,
+            ref: ref,
+            barrierDismissible: false,
+            confirmLabel: 'Continue',
+          ),
         );
         if (!context.mounted) return;
         unawaited(maybeShowDailyRitualsIntro(context: context, ref: ref));

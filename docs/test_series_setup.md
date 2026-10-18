@@ -60,7 +60,7 @@ Set `test_series_sales_enabled` to `true` and publish the template when you are 
 firebase deploy --only firestore:rules,functions
 ```
 
-`firestore.rules` now allows signed-in users to read `test_series/**` (writes are server only).
+`firestore.rules` allows **public read** of `test_series/**` so signed-out users can preview the catalog (writes are server only). Purchase still requires Google/Apple sign-in in the app.
 
 ### Admin credentials for the scripts
 

@@ -212,15 +212,16 @@ service cloud.firestore {
 
     /// Paid Test Series (`test_series/{seriesId}` and its `tests` subcollection).
     /// Test docs hold only ordered question UUIDs + metadata (no answers).
-    /// Signed-in (incl. anonymous) read; the generator and monthly function
-    /// write via the Admin SDK only. Access to paid tests is gated in the app
-    /// by the RevenueCat entitlement.
+    /// Public read so signed-out users can preview the catalog and free tests;
+    /// the generator and monthly function write via the Admin SDK only.
+    /// Access to paid tests is gated in the app by the RevenueCat entitlement
+    /// (purchase requires a real Google/Apple account).
     match /test_series/{seriesId} {
-      allow read: if signedIn();
+      allow read: if true;
       allow write: if false;
 
       match /tests/{testId} {
-        allow read: if signedIn();
+        allow read: if true;
         allow write: if false;
       }
     }

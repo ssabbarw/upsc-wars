@@ -288,17 +288,18 @@ class SeriesOverviewTab extends ConsumerWidget {
     required this.owned,
     required this.isHindi,
     required this.stats,
+    required this.tabController,
   });
 
   final SeriesBundle bundle;
   final bool owned;
   final bool isHindi;
   final SeriesStats stats;
+  final TabController tabController;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final core = stats.core;
-    final controller = DefaultTabController.of(context);
     final flts = bundle.ofKind(SeriesTestKind.fullLength);
     final listed = [
       for (final id in SeriesSubjects.alwaysListed) core.subject(id)!,
@@ -449,7 +450,7 @@ class SeriesOverviewTab extends ConsumerWidget {
         SeriesSectionHeader(
           'Full-Length Tests',
           actionLabel: 'See all',
-          onAction: () => controller.animateTo(1),
+          onAction: () => tabController.animateTo(1),
         ),
         for (final t in flts.take(3))
           SeriesTestRow(bundle: bundle, test: t, owned: owned, stats: stats),
@@ -457,7 +458,7 @@ class SeriesOverviewTab extends ConsumerWidget {
         SeriesSectionHeader(
           'Subject-wise Performance',
           actionLabel: 'See all',
-          onAction: () => controller.animateTo(2),
+          onAction: () => tabController.animateTo(2),
         ),
         for (final s in listed.take(3))
           SeriesSubjectRow(
