@@ -10,6 +10,7 @@ import '../../../shared/widgets/dismissible_modal_sheet.dart';
 import '../domain/daily_revision.dart';
 import '../domain/start_daily_drill.dart';
 import '../providers/daily_drill_provider.dart';
+import '../../../l10n/l10n.dart';
 
 /// Incorrect vs bookmarked. Returns after the session closes, or on dismiss.
 Future<void> showDailyRevisionChoiceSheet({
@@ -96,11 +97,10 @@ class _DailyRevisionChoiceSheet extends StatelessWidget {
                   const SizedBox(height: AppSpacing.xs),
                   Text(
                     state.hasAnyPool
-                        ? 'Pick a pool. You\'ll get a short random test from '
-                              'those questions — up to ${DailyRevision.questionCount} '
-                              'at a time.'
-                        : 'Questions you get wrong or bookmark will appear here. '
-                              'Then you can take a short random test from either pool.',
+                        ? context.l10n.revisionPickPool(
+                            DailyRevision.questionCount,
+                          )
+                        : context.l10n.revisionEmptyPools,
                     style: AppTextStyles.bodySm().copyWith(
                       color: scheme.onSurfaceVariant,
                       height: 1.45,
@@ -110,8 +110,7 @@ class _DailyRevisionChoiceSheet extends StatelessWidget {
                   _PoolTile(
                     icon: Icons.close_rounded,
                     title: DailyRevision.incorrectLabel,
-                    subtitle:
-                        'A random test from questions you answered incorrectly.',
+                    subtitle: context.l10n.revisionPoolWrongBody,
                     count: '${state.wrongCount}',
                     enabled: state.hasWrongs,
                     borderColor: borderColor,
@@ -122,8 +121,7 @@ class _DailyRevisionChoiceSheet extends StatelessWidget {
                   _PoolTile(
                     icon: Icons.bookmark_rounded,
                     title: DailyRevision.bookmarkedLabel,
-                    subtitle:
-                        'A random test from questions you have bookmarked.',
+                    subtitle: context.l10n.revisionPoolSavedBody,
                     count: '${state.bookmarkCount}',
                     enabled: state.hasBookmarks,
                     borderColor: borderColor,

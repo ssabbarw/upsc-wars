@@ -9,6 +9,7 @@ import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/widgets/dismissible_modal_sheet.dart';
+import '../../../l10n/l10n.dart';
 
 /// Returns the selected subject slug, or `null` if dismissed.
 Future<String?> showDailyDrillSubjectSheet(
@@ -104,7 +105,7 @@ class _DailyDrillSubjectSheet extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        'Daily practice subject',
+                        context.l10n.drillSubjectTitle,
                         style: AppTextStyles.h3().copyWith(
                           fontWeight: FontWeight.w800,
                           color: scheme.onSurface,
@@ -112,7 +113,7 @@ class _DailyDrillSubjectSheet extends StatelessWidget {
                       ),
                       const SizedBox(height: AppSpacing.xs),
                       Text(
-                        'Choose what your daily drill focuses on.',
+                        context.l10n.drillSubjectBody,
                         style: AppTextStyles.bodySm().copyWith(
                           color: scheme.onSurfaceVariant,
                         ),

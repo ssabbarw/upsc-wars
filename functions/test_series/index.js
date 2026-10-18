@@ -7,10 +7,12 @@
  *    publishes any mock test that unlocks that day. 06:00 leaves time for the
  *    midnight daily-CA auto-publish to finish for the previous day.
  *  - adminPublishTestSeriesDue (callable, admin only): same, on demand.
+ *  - Promo codes and "free for everyone" offers: see ./promos.js.
  */
 const { onSchedule } = require("firebase-functions/v2/scheduler");
 const { onCall, HttpsError } = require("firebase-functions/v2/https");
 const { publishAllDue, publishDueTests } = require("./builder");
+const promos = require("./promos");
 
 const REGION = "asia-south1";
 
@@ -47,3 +49,10 @@ exports.adminPublishTestSeriesDue = onCall(
     return publishAllDue(asOf, { dryRun });
   },
 );
+
+exports.redeemTestSeriesCode = promos.redeemTestSeriesCode;
+exports.adminCreateTestSeriesPromo = promos.adminCreateTestSeriesPromo;
+exports.adminSetTestSeriesPromoActive = promos.adminSetTestSeriesPromoActive;
+exports.adminAnnounceFreeTestSeries = promos.adminAnnounceFreeTestSeries;
+exports.adminNotifyFreeTestSeriesOffer = promos.adminNotifyFreeTestSeriesOffer;
+exports.adminCloseFreeTestSeriesOffer = promos.adminCloseFreeTestSeriesOffer;

@@ -70,6 +70,7 @@ import '../../features/home/screens/progress_hub_screen.dart';
 import '../../features/daily_war/screens/daily_war_admin_screen.dart';
 import '../../features/internal/screens/bot_battles_admin_screen.dart';
 import '../../features/internal/screens/broadcast_announcement_screen.dart';
+import '../../features/internal/screens/test_series_promos_admin_screen.dart';
 import '../../features/internal/screens/feature_health_screen.dart';
 import '../../features/internal/screens/push_debug_screen.dart';
 import '../../features/internal/play_store_demo/play_store_demo_screen.dart';
@@ -126,6 +127,7 @@ import '../../shared/widgets/app_toast.dart';
 import '../providers/app_bootstrap.dart';
 import '../providers/kill_switch_provider.dart';
 import '../responsive/app_breakpoints.dart';
+import '../../l10n/l10n.dart';
 
 part 'app_router.g.dart';
 
@@ -313,10 +315,10 @@ GoRouter appRouter(Ref ref) {
       final looksLikeShareLink = raw.toLowerCase().contains(
         'upscwars.in/share',
       );
-      final title = looksLikeShareLink ? 'Link could not be opened' : 'Oh snap';
+      final title = looksLikeShareLink ? context.l10n.routerLinkFailedTitle : context.l10n.routerErrorTitle;
       final body = looksLikeShareLink
-          ? 'This link could not be opened.\nPlease try again.'
-          : 'Something went wrong.\nPlease try again.';
+          ? context.l10n.routerLinkFailedBody
+          : context.l10n.routerErrorBody;
 
       final scheme = Theme.of(context).colorScheme;
       final isDark = Theme.of(context).brightness == Brightness.dark;
@@ -388,7 +390,7 @@ GoRouter appRouter(Ref ref) {
                         width: double.infinity,
                         child: FilledButton(
                           onPressed: () => GoRouter.of(context).go('/'),
-                          child: const Text('Go home'),
+                          child: Text(context.l10n.routerGoHome),
                         ),
                       ),
                     ],
@@ -566,6 +568,17 @@ GoRouter appRouter(Ref ref) {
             return const Scaffold(body: Center(child: Text('Not available')));
           }
           return const BroadcastAnnouncementScreen();
+        },
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/internal/test-series-promos',
+        name: 'test_series_promos_admin',
+        builder: (context, state) {
+          if (!isSuperUser) {
+            return const Scaffold(body: Center(child: Text('Not available')));
+          }
+          return const TestSeriesPromosAdminScreen();
         },
       ),
       GoRoute(
@@ -1551,19 +1564,19 @@ class _AppShell extends HookConsumerWidget {
       final exit = await showDialog<bool>(
         context: context,
         builder: (ctx) => AlertDialog(
-          title: Text('Exit app?', style: AppTextStyles.h3()),
+          title: Text(context.l10n.routerExitDialogTitle, style: AppTextStyles.h3()),
           content: Text(
-            'You will leave ${AppConstants.appDisplayName}.',
+            context.l10n.routerExitDialogBody(AppConstants.appDisplayName),
             style: AppTextStyles.bodyMd(),
           ),
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(ctx, false),
-              child: const Text('Cancel'),
+              child: Text(context.l10n.commonCancel),
             ),
             TextButton(
               onPressed: () => Navigator.pop(ctx, true),
-              child: const Text('Exit'),
+              child: Text(context.l10n.commonExit),
             ),
           ],
         ),

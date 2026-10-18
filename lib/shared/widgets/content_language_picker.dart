@@ -8,6 +8,7 @@ import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_radius.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_text_styles.dart';
+import '../../l10n/l10n.dart';
 
 /// Sample bilingual MCQ used only for the language-choice preview.
 class ContentLanguagePreviewSample {
@@ -81,7 +82,7 @@ class ContentLanguagePicker extends StatelessWidget {
               child: _OptionChip(
                 selected: !_isHindi,
                 title: 'English',
-                subtitle: 'Everything in English',
+                subtitle: 'App & questions in English',
                 onTap: () {
                   HapticFeedback.selectionClick();
                   onChanged('en');
@@ -92,8 +93,8 @@ class ContentLanguagePicker extends StatelessWidget {
             Expanded(
               child: _OptionChip(
                 selected: _isHindi,
-                title: 'Hindi',
-                subtitle: 'Questions in Hindi',
+                title: 'हिन्दी',
+                subtitle: 'ऐप और सवाल हिन्दी में',
                 onTap: () {
                   HapticFeedback.selectionClick();
                   onChanged('hi');
@@ -105,8 +106,8 @@ class ContentLanguagePicker extends StatelessWidget {
         const SizedBox(height: AppSpacing.sm),
         Text(
           _isHindi
-              ? 'App menus stay English. Questions & explanations in Hindi.'
-              : 'App menus and questions both in English.',
+              ? context.l10n.languagePickerHintHi
+              : context.l10n.languagePickerHintEn,
           style: AppTextStyles.caption().copyWith(
             color: scheme.onSurfaceVariant,
             height: 1.35,
@@ -231,14 +232,14 @@ class _PreviewCard extends StatelessWidget {
           children: [
             Row(
               children: [
-                const _Badge(
-                  label: 'App · EN',
+                _Badge(
+                  label: isHindi ? 'App · हि' : 'App · EN',
                   bg: AppColors.infoBg,
                   fg: AppColors.info,
                 ),
                 const SizedBox(width: 6),
                 _Badge(
-                  label: isHindi ? 'Content · हि' : 'Content · EN',
+                  label: isHindi ? 'Questions · हि' : 'Questions · EN',
                   bg: isHindi ? AppColors.warningBg : AppColors.correctBg,
                   fg: isHindi ? AppColors.warning : AppColors.correct,
                 ),
@@ -246,7 +247,7 @@ class _PreviewCard extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             Text(
-              'Practice test',
+              context.l10n.languagePickerPracticeTest,
               style: AppTextStyles.caption().copyWith(
                 color: scheme.onSurfaceVariant,
                 fontWeight: FontWeight.w600,
@@ -352,7 +353,7 @@ Future<void> showContentLanguageChoiceSheet({
   required BuildContext context,
   required WidgetRef ref,
   bool barrierDismissible = true,
-  String confirmLabel = 'Done',
+  String? confirmLabel,
 }) async {
   final scheme = Theme.of(context).colorScheme;
   final bottom = MediaQuery.paddingOf(context).bottom;
@@ -390,7 +391,7 @@ class _ContentLanguageChoiceSheet extends StatefulWidget {
   final String initialLanguage;
   final ColorScheme scheme;
   final double bottomInset;
-  final String confirmLabel;
+  final String? confirmLabel;
   final Future<void> Function(String lang) onPersist;
 
   @override
@@ -439,14 +440,14 @@ class _ContentLanguageChoiceSheetState
                   ),
                   const SizedBox(height: AppSpacing.sm),
                   Text(
-                    'Choose Content language',
+                    context.l10n.languagePickerTitle,
                     style: AppTextStyles.h3().copyWith(
                       fontWeight: FontWeight.w800,
                     ),
                   ),
                   const SizedBox(height: 2),
                   Text(
-                    'Menus stay in English — pick how questions appear.',
+                    context.l10n.languagePickerSubtitle,
                     style: AppTextStyles.caption().copyWith(
                       color: widget.scheme.onSurfaceVariant,
                     ),
@@ -462,7 +463,7 @@ class _ContentLanguageChoiceSheetState
                   const SizedBox(height: AppSpacing.md),
                   FilledButton(
                     onPressed: () => Navigator.of(context).pop(),
-                    child: Text(widget.confirmLabel),
+                    child: Text(widget.confirmLabel ?? context.l10n.commonDone),
                   ),
                 ],
               ),

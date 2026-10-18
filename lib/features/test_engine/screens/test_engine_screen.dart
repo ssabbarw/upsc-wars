@@ -42,6 +42,7 @@ import '../providers/test_session_state.dart';
 import '../widgets/demo_language_coach_overlay.dart';
 import '../widgets/exam_option_confidence_strip.dart';
 import '../widgets/test_engine_question_shimmer.dart';
+import '../../../l10n/l10n.dart';
 
 Future<void> _showDemoConfidenceIntroThenPrompt(
   BuildContext context,
@@ -106,16 +107,16 @@ Future<void> _showDemoExplanationCoachSheet(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Text(
-                    isCorrect ? 'Correct' : 'Not this time',
+                    isCorrect
+                        ? context.l10n.testCorrect
+                        : context.l10n.testNotThisTime,
                     style: AppTextStyles.h3().copyWith(color: scheme.onSurface),
                   ),
                   const SizedBox(height: AppSpacing.sm),
                   Text(
                     isCorrect
-                        ? 'The marks are in the explanation — elimination, '
-                              'statement analysis, and the trap option.'
-                        : 'Read how to kill the other options — '
-                              'that\'s the real practice.',
+                        ? context.l10n.testHintCorrect
+                        : context.l10n.testHintWrong,
                     style: AppTextStyles.bodySm().copyWith(
                       color: scheme.onSurfaceVariant,
                       height: 1.35,
@@ -124,7 +125,7 @@ Future<void> _showDemoExplanationCoachSheet(
                   const SizedBox(height: AppSpacing.lg),
                   FilledButton(
                     onPressed: () => Navigator.pop(ctx),
-                    child: const Text('Show explanation'),
+                    child: Text(context.l10n.testShowExplanation),
                   ),
                 ],
               ),
@@ -176,7 +177,7 @@ Future<void> _showDemoConfidenceIntroSheet(BuildContext context) async {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Text(
-                'From now on, let\'s also check how sure you are.',
+                context.l10n.testConfidenceIntroTitle,
                 style: AppTextStyles.h3().copyWith(color: scheme.onSurface),
               ),
               const SizedBox(height: AppSpacing.sm),
@@ -188,21 +189,21 @@ Future<void> _showDemoConfidenceIntroSheet(BuildContext context) async {
                   ),
                   children: [
                     TextSpan(
-                      text: 'Why? ',
+                      text: context.l10n.testConfidenceWhy,
                       style: AppTextStyles.bodySm().copyWith(
                         color: scheme.onSurface,
                         fontWeight: FontWeight.w700,
                         height: 1.35,
                       ),
                     ),
-                    const TextSpan(text: 'To catch your confident mistakes.'),
+                    TextSpan(text: context.l10n.testConfidenceWhyBody),
                   ],
                 ),
               ),
               const SizedBox(height: AppSpacing.lg),
               FilledButton(
                 onPressed: () => Navigator.pop(ctx),
-                child: const Text('Got it'),
+                child: Text(context.l10n.commonGotIt),
               ),
             ],
           ),
@@ -245,12 +246,12 @@ Future<void> _showConfidenceBottomSheet(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Text(
-                'How sure are you?',
+                context.l10n.testHowSure,
                 style: AppTextStyles.h3().copyWith(color: scheme.onSurface),
               ),
               const SizedBox(height: AppSpacing.xs),
               Text(
-                'Pick before you see the answer — this builds your Danger Zone map.',
+                context.l10n.testHowSureBody,
                 style: AppTextStyles.caption().copyWith(
                   color: scheme.onSurfaceVariant,
                 ),
@@ -354,19 +355,22 @@ class TestEngineScreen extends HookConsumerWidget {
           final confirmed = await showDialog<bool>(
             context: context,
             builder: (ctx) => AlertDialog(
-              title: Text('Leave demo?', style: AppTextStyles.h3()),
+              title: Text(
+                context.l10n.testLeaveDemoTitle,
+                style: AppTextStyles.h3(),
+              ),
               content: Text(
-                'Your progress will be saved. Resume from Home when you\'re ready.',
+                context.l10n.testLeaveDemoBody,
                 style: AppTextStyles.bodyMd(),
               ),
               actions: [
                 TextButton(
                   onPressed: () => Navigator.pop(ctx, false),
-                  child: const Text('Cancel'),
+                  child: Text(context.l10n.commonCancel),
                 ),
                 TextButton(
                   onPressed: () => Navigator.pop(ctx, true),
-                  child: const Text('Leave'),
+                  child: Text(context.l10n.testLeave),
                 ),
               ],
             ),
@@ -385,23 +389,27 @@ class TestEngineScreen extends HookConsumerWidget {
           context: context,
           builder: (ctx) => AlertDialog(
             title: Text(
-              isDiscard ? 'Go back?' : 'Leave test?',
+              isDiscard
+                  ? context.l10n.testGoBackTitle
+                  : context.l10n.testLeaveTestTitle,
               style: AppTextStyles.h3(),
             ),
             content: Text(
               isDiscard
-                  ? 'Are you sure? Your progress will be lost.'
-                  : 'Your progress will be saved and you can resume later.',
+                  ? context.l10n.testGoBackBody
+                  : context.l10n.testLeaveTestBody,
               style: AppTextStyles.bodyMd(),
             ),
             actions: [
               TextButton(
                 onPressed: () => Navigator.pop(ctx, false),
-                child: const Text('Cancel'),
+                child: Text(context.l10n.commonCancel),
               ),
               TextButton(
                 onPressed: () => Navigator.pop(ctx, true),
-                child: Text(isDiscard ? 'Go back' : 'Leave'),
+                child: Text(
+                  isDiscard ? context.l10n.testGoBack : context.l10n.testLeave,
+                ),
               ),
             ],
           ),
@@ -446,10 +454,10 @@ class _TestEngineAsyncBody extends HookConsumerWidget {
       final isNotFound = err is SessionNotFoundException;
       final isNoQuestions = err is SessionHasNoQuestionsException;
       final msg = isNotFound
-          ? 'Session not found'
+          ? context.l10n.testSessionNotFound
           : isNoQuestions
-          ? 'Something went wrong'
-          : 'Could not load test session.';
+          ? context.l10n.commonSomethingWrong
+          : context.l10n.testSessionLoadFailed;
       return Center(
         child: Padding(
           padding: const EdgeInsets.all(AppSpacing.xxl),
@@ -461,7 +469,10 @@ class _TestEngineAsyncBody extends HookConsumerWidget {
               if (!isNotFound && !isNoQuestions)
                 OutlinedButton(
                   onPressed: notifier.reload,
-                  child: Text('Retry', style: AppTextStyles.label()),
+                  child: Text(
+                    context.l10n.commonRetry,
+                    style: AppTextStyles.label(),
+                  ),
                 ),
               if (isNotFound || isNoQuestions) ...[
                 const SizedBox(height: AppSpacing.sm),
@@ -737,7 +748,7 @@ class _TestEngineLoaded extends HookConsumerWidget {
                 ),
                 color: scheme.surfaceContainerLow,
                 child: Text(
-                  'Timer paused while app was closed. Remaining time may not be accurate.',
+                  context.l10n.testTimerPausedNotice,
                   style: AppTextStyles.caption().copyWith(
                     color: scheme.onSurfaceVariant,
                   ),
@@ -790,7 +801,9 @@ class _TestEngineLoaded extends HookConsumerWidget {
                 showTopSnackBar(
                   context,
                   content: Text(
-                    marked ? 'Bookmarked' : 'Bookmark removed',
+                    marked
+                        ? context.l10n.testBookmarked
+                        : context.l10n.testBookmarkRemoved,
                     style: AppTextStyles.bodyMd().copyWith(
                       color: Theme.of(context).colorScheme.onSurface,
                     ),
@@ -882,7 +895,7 @@ Future<void> _showTestPaletteSheet(
                       Align(
                         alignment: Alignment.centerLeft,
                         child: Text(
-                          'Tap any number to jump to that question',
+                          context.l10n.testGridHint,
                           style: AppTextStyles.caption().copyWith(
                             color: scheme.onSurfaceVariant,
                           ),
@@ -894,12 +907,12 @@ Future<void> _showTestPaletteSheet(
                         runSpacing: AppSpacing.xs,
                         children: [
                           _LegendItem(
-                            label: 'Current',
+                            label: context.l10n.testGridCurrent,
                             bg: AppColors.primary,
                             fg: AppColors.onPrimary,
                           ),
                           _LegendItem(
-                            label: 'Attempted',
+                            label: context.l10n.testGridAttempted,
                             bg: isDark
                                 ? AppColors.correctBgDark
                                 : AppColors.correctBg,
@@ -908,7 +921,7 @@ Future<void> _showTestPaletteSheet(
                                 : AppColors.correctText,
                           ),
                           _LegendItem(
-                            label: 'Flagged',
+                            label: context.l10n.testGridFlagged,
                             bg: isDark
                                 ? AppColors.warningBgDark
                                 : AppColors.warningBg,
@@ -917,7 +930,7 @@ Future<void> _showTestPaletteSheet(
                                 : AppColors.warningText,
                           ),
                           _LegendItem(
-                            label: 'Not visited',
+                            label: context.l10n.testGridNotVisited,
                             bg: scheme.surfaceContainerLow,
                             fg: scheme.onSurfaceVariant,
                           ),
@@ -974,11 +987,17 @@ Future<void> _showTestPaletteSheet(
                             TableRow(
                               children: [
                                 _CountCell(
-                                  label: 'Attempted',
+                                  label: context.l10n.testGridAttempted,
                                   value: '$attempted',
                                 ),
-                                _CountCell(label: 'Skipped', value: '$skipped'),
-                                _CountCell(label: 'Flagged', value: '$flagged'),
+                                _CountCell(
+                                  label: context.l10n.testGridSkipped,
+                                  value: '$skipped',
+                                ),
+                                _CountCell(
+                                  label: context.l10n.testGridFlagged,
+                                  value: '$flagged',
+                                ),
                               ],
                             ),
                           ],
@@ -990,7 +1009,7 @@ Future<void> _showTestPaletteSheet(
                           Expanded(
                             child: OutlinedButton(
                               onPressed: () => Navigator.of(ctx).pop(),
-                              child: const Text('Go back'),
+                              child: Text(context.l10n.testGoBack),
                             ),
                           ),
                           const SizedBox(width: AppSpacing.sm),
@@ -1032,8 +1051,8 @@ Future<void> _showTestPaletteSheet(
                               ),
                               child: Text(
                                 session.mode == 'exam'
-                                    ? 'Submit Test'
-                                    : 'Submit',
+                                    ? context.l10n.testSubmitTest
+                                    : context.l10n.testSubmit,
                               ),
                             ),
                           ),
@@ -1170,7 +1189,7 @@ class _TopBar extends HookConsumerWidget {
       child: Row(
         children: [
           IconButton(
-            tooltip: 'Back',
+            tooltip: context.l10n.commonBack,
             onPressed: onBack,
             visualDensity: VisualDensity.compact,
             padding: EdgeInsets.zero,
@@ -1179,7 +1198,7 @@ class _TopBar extends HookConsumerWidget {
           ),
           const SizedBox(width: AppSpacing.xs),
           Text(
-            'Q${currentIndex + 1} of $qLen',
+            context.l10n.testQuestionOfTotal(currentIndex + 1, qLen),
             style: AppTextStyles.label().copyWith(color: scheme.onSurface),
           ),
           const Spacer(),
@@ -1966,7 +1985,7 @@ class _BottomBar extends HookConsumerWidget {
             child: OutlinedButton.icon(
               onPressed: canPrev ? onPrev : null,
               icon: const Icon(Icons.chevron_left, size: 18),
-              label: const Text('Prev'),
+              label: Text(context.l10n.testPrev),
             ),
           ),
           const SizedBox(width: AppSpacing.sm),
@@ -1983,7 +2002,7 @@ class _BottomBar extends HookConsumerWidget {
               onPressed: canNext ? onNext : null,
               iconAlignment: IconAlignment.end,
               icon: const Icon(Icons.chevron_right, size: 18),
-              label: const Text('Next'),
+              label: Text(context.l10n.testNext),
             ),
           ),
         ],
@@ -2049,7 +2068,7 @@ class _ExamActionRow extends HookConsumerWidget {
                     color: isDark ? scheme.error : AppColors.wrong,
                   ),
                 ),
-                child: const Text('Submit'),
+                child: Text(context.l10n.testSubmit),
               ),
             ],
           ),

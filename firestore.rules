@@ -226,6 +226,38 @@ service cloud.firestore {
       }
     }
 
+    /// Free access to the test series. Everything here is written by Cloud
+    /// Functions only (Admin SDK); these paths are also excluded from the
+    /// catch-all rule at the bottom, otherwise any signed-in user could grant
+    /// themselves a series.
+    ///
+    /// Grants: the app reads its own. Keyed by Firebase uid of a real account.
+    match /test_series_grants/{uid} {
+      allow read: if isRealAccount() && request.auth.uid == uid;
+      allow write: if false;
+    }
+
+    /// Public "free for everyone" banner state (holds the open offer's code).
+    match /test_series_open_offer/{seriesId} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    /// Promo codes + who redeemed them. Super users read for the admin screen.
+    match /test_series_promos/{code} {
+      allow read: if isSuperUserEmail();
+      allow write: if false;
+
+      match /redemptions/{uid} {
+        allow read: if isSuperUserEmail();
+        allow write: if false;
+      }
+    }
+
+    match /test_series_redeem_attempts/{uid} {
+      allow read, write: if false;
+    }
+
     /// Daily CA ranks — public day meta; answers stay Functions-only.
     /// Clients must not write submissions or the leaderboard.
     match /daily_ca_days/{dateId} {
@@ -570,7 +602,17 @@ service cloud.firestore {
         && !isAdminDashboardPath()
         && !isBotInternalPath()
         && !isAdminSecretsPath()
-        && !isDailyCaRanksPath();
+        && !isDailyCaRanksPath()
+        && !isTestSeriesPath();
+    }
+
+    /// The catalog (`test_series/**`, read-only to clients) and the access
+    /// collections (`test_series_grants`, `_promos`, `_open_offer`,
+    /// `_redeem_attempts`). Both have explicit rules above.
+    function isTestSeriesPath() {
+      return request.path.matches(
+        '/databases/' + database + '/documents/test_series(_[a-z_]+)?(/.*)?'
+      );
     }
 
     function isUsersRootDoc(database) {

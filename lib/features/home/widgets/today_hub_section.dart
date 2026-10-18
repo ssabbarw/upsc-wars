@@ -37,9 +37,10 @@ import '../providers/home_activation_journey_provider.dart';
 import 'activation_journey_card.dart';
 import 'daily_revision_choice_sheet.dart';
 import 'daily_rituals_intro_sheet.dart';
+import '../../../l10n/l10n.dart';
 
 /// Daily ritual on home: CA test hero until first submit, else Daily Drill,
-/// plus a "Keep going" list (CA Shots, Current Affairs, Open Challenge,
+/// plus a context.l10n.activationKeepGoing list (CA Shots, Current Affairs, Open Challenge,
 /// Danger Zone). Static War is mounted separately on Home.
 class TodayHubSection extends HookConsumerWidget {
   const TodayHubSection({
@@ -184,6 +185,7 @@ class TodayHubSection extends HookConsumerWidget {
       if (data.caShotsEnabled) {
         rows.add(
           _caShotsListRow(
+            context,
             showNew: !openedRituals.contains(DailyRitualIds.caShots),
             onTap: () {
               unawaited(maybeLogPostDemoExplore(ref, surface: 'ca_shot'));
@@ -200,12 +202,12 @@ class TodayHubSection extends HookConsumerWidget {
             accent: AppColors.info,
             title: 'Daily Current Affairs Test',
             subtitle: caLive
-                ? "Live now — based on yesterday's news."
+                ? context.l10n.todayCaLive
                 : !data.paperCompleted
-                ? "Current affairs test from yesterday's news."
+                ? context.l10n.todayCaNotDone
                 : data.paperResultsOpened
-                ? 'Done today'
-                : 'Quiz done — open answers',
+                ? context.l10n.todayDone
+                : context.l10n.todayQuizDoneOpenAnswers,
             done: data.paperCompleted && data.paperResultsOpened,
             locked: false,
             showNew: !caLive && !openedRituals.contains(DailyRitualIds.dailyCa),
@@ -233,12 +235,15 @@ class TodayHubSection extends HookConsumerWidget {
           // The subject rides in the subtitle, which gets two lines — so the
           // part users actually choose on is never the part that ellipsizes.
           final mixed = challenge.subject.trim().toLowerCase() == 'misc';
-          final where = mixed
-              ? 'across mixed subjects'
-              : 'in ${openChallengeSubjectTitle(challenge.subject)}';
           // 'their' only refers to someone when the title names them.
-          final whose = poster == null ? 'the top' : 'their';
-          final goal = 'Beat $whose score of ${challenge.topScore}/10 $where';
+          final who = poster == null ? 'top' : 'poster';
+          final goal = mixed
+              ? context.l10n.homeChallengeGoalMixed(who, challenge.topScore)
+              : context.l10n.homeChallengeGoalSubject(
+                  who,
+                  challenge.topScore,
+                  openChallengeSubjectTitle(challenge.subject),
+                );
           final others = live.length - 1;
           rows.add(
             _TodayListRowData(
@@ -246,8 +251,8 @@ class TodayHubSection extends HookConsumerWidget {
               accent: AppColors.primary,
               title: poster == null
                   ? 'Open challenge'
-                  : 'Open challenge by $poster',
-              subtitle: others > 0 ? '$goal · +$others live' : goal,
+                  : context.l10n.homeOpenChallengeBy(poster),
+              subtitle: others > 0 ? context.l10n.homeGoalOthersLive(goal, others) : goal,
               subtitleMaxLines: 2,
               done: false,
               locked: false,
@@ -268,7 +273,7 @@ class TodayHubSection extends HookConsumerWidget {
                   final signedIn = await ensureAccountSignedIn(
                     context: context,
                     ref: ref,
-                    reason: 'Sign in to join an open challenge.',
+                    reason: context.l10n.todaySignInOpenChallenge,
                   );
                   if (!context.mounted || !signedIn) return;
                 }
@@ -292,10 +297,10 @@ class TodayHubSection extends HookConsumerWidget {
           accent: AppColors.wrong,
           title: 'Danger Zone',
           subtitle: unlocked
-              ? 'Questions you got wrong while sure — trap patterns.'
+              ? context.l10n.todayDangerUnlocked
               : scored == null
-              ? 'Questions you got wrong while sure. Unlocks at $unlockAt questions.'
-              : 'Questions you got wrong while sure. Unlocks at $unlockAt questions. — $scored/$unlockAt so far.',
+              ? context.l10n.homeDangerLocked(unlockAt)
+              : context.l10n.homeDangerLockedProgress(unlockAt, scored),
           subtitleMaxLines: 2,
           done: false,
           locked: !unlocked,
@@ -369,7 +374,7 @@ class TodayHubSection extends HookConsumerWidget {
           Row(
             children: [
               Text(
-                'Keep going',
+                context.l10n.activationKeepGoing,
                 style: AppTextStyles.caption().copyWith(
                   color: scheme.onSurfaceVariant,
                   fontWeight: FontWeight.w700,
@@ -398,7 +403,7 @@ class TodayHubSection extends HookConsumerWidget {
                         ),
                         const SizedBox(width: 4),
                         Text(
-                          'What is this?',
+                          context.l10n.todayWhatIsThis,
                           style: AppTextStyles.caption().copyWith(
                             color: scheme.onSurfaceVariant,
                             fontWeight: FontWeight.w600,
@@ -605,7 +610,8 @@ String? _challengerFirstName(String postedByName) {
   return first.length > 10 ? null : first;
 }
 
-_TodayListRowData _caShotsListRow({
+_TodayListRowData _caShotsListRow(
+  BuildContext context, {
   required bool showNew,
   required VoidCallback onTap,
 }) {
@@ -613,7 +619,7 @@ _TodayListRowData _caShotsListRow({
     icon: Icons.bolt_rounded,
     accent: AppColors.primary,
     title: 'CA Shots',
-    subtitle: 'Breaking news brief + 1 MCQ based on it.',
+    subtitle: context.l10n.todayCaShotSubtitle,
     done: false,
     locked: false,
     showNew: showNew,
@@ -878,10 +884,10 @@ class _CaTestHeroCard extends StatelessWidget {
     final bg = isDark ? AppColors.infoBgDark : AppColors.infoText;
     return _BigHeroCard(
       eyebrow: 'DAILY CURRENT AFFAIRS',
-      title: "Today's paper quiz",
+      title: context.l10n.todayPaperQuizTitle,
       description:
-          "Based on yesterday's news. Same questions for everyone — then All-India Rank.",
-      ctaLabel: 'Open paper',
+          context.l10n.todayPaperQuizBody,
+      ctaLabel: context.l10n.todayOpenPaper,
       background: bg,
       ctaColor: AppColors.primary,
       loading: checking,
@@ -926,42 +932,42 @@ class _PracticeHeroCard extends StatelessWidget {
     if (isSunday) {
       if (completed) {
         eyebrow = 'WEEK REVIEW · DONE';
-        title = 'Week review done';
+        title = context.l10n.todayWeekDone;
         description =
-            'You\'ve gone through last week\'s mistakes. Streak intact.';
-        ctaLabel = 'See results';
+            context.l10n.todayWeekDoneBody;
+        ctaLabel = context.l10n.todaySeeResults;
       } else if (mistakeCount <= 0) {
         eyebrow = 'WEEK REVIEW · EMPTY';
-        title = 'No mistakes this week';
-        description = 'No mistakes from last week — you\'re clean.';
-        ctaLabel = 'Quick practice instead';
+        title = context.l10n.todayWeekEmpty;
+        description = context.l10n.todayWeekEmptyBody;
+        ctaLabel = context.l10n.todayQuickPracticeInstead;
       } else {
         eyebrow = 'WEEK REVIEW';
-        title = 'Review last week\'s mistakes';
-        description = '$mistakeCount questions where you slipped last week.';
-        ctaLabel = 'Start review';
+        title = context.l10n.todayWeekReviewTitle;
+        description = context.l10n.homeWeekReviewCount(mistakeCount);
+        ctaLabel = context.l10n.todayStartReview;
       }
     } else {
       eyebrow = 'DAILY DRILL';
-      title = completed ? 'Drill done' : 'Today\'s drill';
+      title = completed ? context.l10n.todayDrillDone : context.l10n.todayDrillTitle;
       final counts = DailyRevision.countsLine(
         missed: wrongCount,
         saved: bookmarkCount,
       );
       final subjectBit = subjectDisplay.isEmpty
-          ? '10 questions with instant feedback.'
-          : '10 $subjectDisplay questions with instant feedback.';
+          ? context.l10n.todayDrillBody
+          : context.l10n.homeDrillSubjectBit(subjectDisplay);
       if (completed) {
         description = counts == DailyRevision.emptyQueueLine
-            ? 'Today\'s drill is in the books.'
-            : '$counts. Open again if you want another set.';
-        ctaLabel = 'Open again';
+            ? context.l10n.todayDrillInBooks
+            : context.l10n.homeDrillOpenAgain(counts);
+        ctaLabel = context.l10n.todayOpenAgain;
       } else if (wrongCount <= 0 && bookmarkCount <= 0) {
         description = subjectBit;
-        ctaLabel = 'Start';
+        ctaLabel = context.l10n.commonStart;
       } else {
-        description = '$counts. A short set from misses or bookmarks.';
-        ctaLabel = 'Start';
+        description = context.l10n.homeDrillShortSet(counts);
+        ctaLabel = context.l10n.commonStart;
       }
     }
 

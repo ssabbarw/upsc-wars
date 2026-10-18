@@ -10,6 +10,7 @@ import '../../../shared/widgets/pop_to_shell_home_scope.dart';
 import '../../history/screens/history_screen.dart';
 import '../providers/today_hub_provider.dart';
 import 'progress_screen.dart';
+import '../../../l10n/l10n.dart';
 
 /// Shell tab that hosts Progress and Test History.
 class ProgressHubScreen extends HookConsumerWidget {
@@ -82,9 +83,9 @@ class ProgressHubScreen extends HookConsumerWidget {
                 dividerColor: scheme.outlineVariant.withValues(alpha: 0.5),
                 splashFactory: NoSplash.splashFactory,
                 overlayColor: WidgetStateProperty.all(Colors.transparent),
-                tabs: const [
+                tabs: [
                   Tab(text: 'Progress', height: 40),
-                  Tab(text: 'Test History', height: 40),
+                  Tab(text: context.l10n.progressTabHistory, height: 40),
                 ],
               ),
             ),
@@ -116,8 +117,8 @@ class _WeekSummaryBanner extends StatelessWidget {
     final bg = isDark ? AppColors.correctBgDark : AppColors.correctBg;
     final fg = isDark ? AppColors.correctTextDark : AppColors.correctText;
     final label = fullDays == 7
-        ? 'Perfect week — all 7 days sealed 🔥'
-        : '$fullDays of 7 days sealed this week';
+        ? context.l10n.progressPerfectWeek
+        : context.l10n.progressDaysSealed(fullDays);
 
     return Container(
       width: double.infinity,

@@ -2,6 +2,7 @@ import 'package:drift/drift.dart';
 
 import '../../../core/constants/daily_drill_constants.dart';
 import '../../../core/database/user_db.dart';
+import '../../../l10n/l10n.dart';
 
 /// Afternoon drill pool: incorrect MCQs, or bookmarked MCQs.
 enum DailyRevisionPool { missed, saved }
@@ -13,32 +14,31 @@ abstract final class DailyRevision {
   static const sessionSubject = 'daily_revision';
   static const questionCount = DailyDrillConstants.questionCount;
 
-  static const incorrectLabel = 'Incorrect MCQs';
-  static const bookmarkedLabel = 'Bookmarked MCQs';
-  static const emptyQueueLine = 'Nothing in the queue yet';
+  static String get incorrectLabel => appL10n.revisionIncorrectMcqs;
+  static String get bookmarkedLabel => appL10n.revisionBookmarkedMcqs;
+  static String get emptyQueueLine => appL10n.revisionQueueEmptyLine;
 
-  static String _countBit(int n, String singular, String plural) =>
-      '$n\u00a0${n == 1 ? singular : plural}';
+  static String _incorrectBit(int n) => appL10n.revisionCountIncorrect(n);
+
+  static String _bookmarkBit(int n) => appL10n.revisionCountBookmark(n);
 
   static String countsLine({required int missed, required int saved}) {
     if (missed <= 0 && saved <= 0) return emptyQueueLine;
-    if (missed <= 0) return _countBit(saved, 'bookmark', 'bookmarks');
-    if (saved <= 0) return _countBit(missed, 'incorrect', 'incorrects');
-    return '${_countBit(missed, 'incorrect', 'incorrects')}'
-        ' · ${_countBit(saved, 'bookmark', 'bookmarks')}';
+    if (missed <= 0) return _bookmarkBit(saved);
+    if (saved <= 0) return _incorrectBit(missed);
+    return '${_incorrectBit(missed)} · ${_bookmarkBit(saved)}';
   }
 
   /// Two lines for the narrow home tile so "bookmarks" never orphans.
   static String countsStacked({required int missed, required int saved}) {
     if (missed <= 0 && saved <= 0) return emptyQueueLine;
-    if (missed <= 0) return _countBit(saved, 'bookmark', 'bookmarks');
-    if (saved <= 0) return _countBit(missed, 'incorrect', 'incorrects');
-    return '${_countBit(missed, 'incorrect', 'incorrects')}\n'
-        '${_countBit(saved, 'bookmark', 'bookmarks')}';
+    if (missed <= 0) return _bookmarkBit(saved);
+    if (saved <= 0) return _incorrectBit(missed);
+    return '${_incorrectBit(missed)}\n${_bookmarkBit(saved)}';
   }
 
   static String poolCountLabel(int available) =>
-      available <= 0 ? 'None' : '$available';
+      available <= 0 ? appL10n.commonNone : '$available';
 
   static String analyticsSubject(DailyRevisionPool pool) => switch (pool) {
     DailyRevisionPool.missed => 'revision_missed',

@@ -15,6 +15,7 @@ import '../../../shared/extensions/time_formatting.dart';
 import '../../../shared/widgets/pop_to_shell_home_scope.dart';
 import '../../../shared/widgets/contact_us_entry.dart';
 import '../providers/history_filters_provider.dart';
+import '../../../l10n/l10n.dart';
 
 class HistoryScreen extends HookConsumerWidget {
   const HistoryScreen({super.key, this.embedded = false});
@@ -45,11 +46,11 @@ class HistoryScreen extends HookConsumerWidget {
               children: [
                 if (!embedded)
                   Text(
-                    'History',
+                    context.l10n.historyTitle,
                     style: AppTextStyles.h2().copyWith(color: scheme.onSurface),
                   ),
                 Text(
-                  '${list.length} sessions',
+                  context.l10n.historySessionsCount(list.length),
                   style: AppTextStyles.bodySm().copyWith(
                     color: scheme.onSurfaceVariant,
                   ),
@@ -64,13 +65,13 @@ class HistoryScreen extends HookConsumerWidget {
                     ),
                   )
                 : Text(
-                    'History',
+                    context.l10n.historyTitle,
                     style: AppTextStyles.h2().copyWith(color: scheme.onSurface),
                   ),
             error: (e, st) => embedded
                 ? const SizedBox.shrink()
                 : Text(
-                    'History',
+                    context.l10n.historyTitle,
                     style: AppTextStyles.h2().copyWith(color: scheme.onSurface),
                   ),
           ),
@@ -97,7 +98,7 @@ class HistoryScreen extends HookConsumerWidget {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Text('Failed to load history', style: AppTextStyles.body()),
+                  Text(context.l10n.historyLoadFailed, style: AppTextStyles.body()),
                   const SizedBox(height: AppSpacing.md),
                   OutlinedButton(
                     onPressed: () => ref.invalidate(
@@ -106,7 +107,7 @@ class HistoryScreen extends HookConsumerWidget {
                         mode: filters.mode,
                       ),
                     ),
-                    child: Text('Retry', style: AppTextStyles.label()),
+                    child: Text(context.l10n.commonRetry, style: AppTextStyles.label()),
                   ),
                 ],
               ),
@@ -119,8 +120,8 @@ class HistoryScreen extends HookConsumerWidget {
                     children: [
                       Text(
                         filters.subject == null && filters.mode == null
-                            ? 'No sessions yet'
-                            : 'No sessions found',
+                            ? context.l10n.historyEmpty
+                            : context.l10n.historyNoneFound,
                         style: AppTextStyles.h3().copyWith(
                           color: scheme.onSurface,
                         ),
@@ -128,8 +129,8 @@ class HistoryScreen extends HookConsumerWidget {
                       const SizedBox(height: AppSpacing.sm),
                       Text(
                         filters.subject == null && filters.mode == null
-                            ? 'Complete a test to see your history here'
-                            : 'Try changing your filters',
+                            ? context.l10n.historyEmptyHint
+                            : context.l10n.historyChangeFilters,
                         style: AppTextStyles.bodySm().copyWith(
                           color: scheme.onSurfaceVariant,
                         ),
@@ -200,7 +201,7 @@ class _FilterStrip extends HookConsumerWidget {
         scrollDirection: Axis.horizontal,
         padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
         children: [
-          pill('All', filters.subject == null && filters.mode == null, () => ref.read(historyFilterStateProvider.notifier).setAll()),
+          pill(context.l10n.commonAll, filters.subject == null && filters.mode == null, () => ref.read(historyFilterStateProvider.notifier).setAll()),
           const SizedBox(width: AppSpacing.sm),
           for (final s in SubjectConstants.ordered) ...[
             pill(s.displayName, filters.subject == s.slug, () => ref.read(historyFilterStateProvider.notifier).setSubject(s.slug)),
@@ -241,9 +242,9 @@ class _SessionCard extends HookConsumerWidget {
                 ? (isDark ? AppColors.infoTextDark : AppColors.infoText)
                 : (isDark ? AppColors.onPrimary : AppColors.primaryDeep);
     final modeLabel = summary.status == 'abandoned'
-        ? 'Abandoned'
+        ? context.l10n.historyAbandoned
         : summary.status == 'in_progress'
-            ? 'In progress'
+            ? context.l10n.historyInProgress
             : (summary.mode == 'exam' ? 'Exam' : 'Learning');
 
     final accColor = switch (summary.accuracyTier) {
@@ -310,7 +311,7 @@ class _SessionCard extends HookConsumerWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(summary.accuracy == null ? '—' : '${summary.accuracy!.toStringAsFixed(1)}%', style: AppTextStyles.labelSm().copyWith(color: accColor)),
-                  Text(summary.status == 'in_progress' ? '$score done' : score, style: AppTextStyles.labelSm().copyWith(color: scheme.onSurface)),
+                  Text(summary.status == 'in_progress' ? context.l10n.historyScoreDone(score) : score, style: AppTextStyles.labelSm().copyWith(color: scheme.onSurface)),
                   Text(summary.netScore == null ? '—' : 'net ${summary.netScore!.toStringAsFixed(1)}', style: AppTextStyles.caption().copyWith(color: scheme.onSurfaceVariant)),
                   Text(avg, style: AppTextStyles.caption().copyWith(color: scheme.onSurfaceVariant)),
                 ],
@@ -337,7 +338,7 @@ class _SessionCard extends HookConsumerWidget {
                       style: ElevatedButton.styleFrom(
                         backgroundColor: AppColors.primary,
                       ),
-                      child: Text('Resume', style: AppTextStyles.labelSm()),
+                      child: Text(context.l10n.commonResume, style: AppTextStyles.labelSm()),
                     )
                   else
                     OutlinedButton(
@@ -346,7 +347,7 @@ class _SessionCard extends HookConsumerWidget {
                             ? '/subject-test'
                             : '/topic-test',
                       ),
-                      child: Text('Restart', style: AppTextStyles.labelSm()),
+                      child: Text(context.l10n.historyRestart, style: AppTextStyles.labelSm()),
                     ),
                 ],
               ),

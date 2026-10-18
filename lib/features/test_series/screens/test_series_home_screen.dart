@@ -11,16 +11,24 @@ import '../widgets/intro/series_intro_tab.dart';
 import '../widgets/series_tabs.dart';
 import 'my_test_series_screen.dart';
 
-/// `/test-series`: opens the series on sale, or the user's own series when
-/// sales are off, or a short notice when there is nothing to show.
-class TestSeriesEntryScreen extends ConsumerWidget {
+/// `/test-series`: opens the series on sale (or on free offer), or the user's
+/// own series when sales are off, or a short notice when there is nothing to
+/// show.
+class TestSeriesEntryScreen extends HookConsumerWidget {
   const TestSeriesEntryScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    // Re-check for a free offer every time the screen opens: the user may
+    // have arrived from the push that announced one while the app was running.
+    useEffect(() {
+      Future.microtask(() => ref.invalidate(testSeriesOpenOfferProvider));
+      return null;
+    }, const []);
+
     final activeId = ref.watch(activeSeriesIdProvider);
     final owned = ref.watch(ownedSeriesIdsProvider);
-    final canSell = ref.watch(testSeriesCanSellProvider);
+    final canSell = ref.watch(testSeriesCanUnlockProvider);
 
     // Only block on the first load. Soft refreshes (e.g. after purchase) keep
     // the previous value so we don't remount [TestSeriesHomeScreen] / TabBar.

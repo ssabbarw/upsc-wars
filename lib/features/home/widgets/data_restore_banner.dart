@@ -10,6 +10,7 @@ import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../providers/data_restore_provider.dart';
+import '../../../l10n/l10n.dart';
 
 /// Temporary Home card shown while a signed-in account's backed-up tests are
 /// being restored after a (re)install, so the app never feels stuck.
@@ -55,15 +56,16 @@ class DataRestoreBanner extends HookConsumerWidget {
     final String title;
     final String body;
     if (failed) {
-      title = 'Restore paused';
-      body = progress.message ?? 'Could not restore your data.';
+      title = context.l10n.restorePaused;
+      body = progress.message ?? context.l10n.restoreFailedBody;
     } else if (done) {
-      title = 'Your data is back';
-      body = progress.message ?? 'Restored your tests.';
+      title = context.l10n.restoreDoneTitle;
+      body = progress.message ?? context.l10n.restoreDoneBody;
     } else {
-      title = 'Restoring your data…';
-      body = '${progress.done} of ${progress.total} tests'
-          '${progress.message == null ? '' : ' · ${progress.message}'}';
+      title = context.l10n.restoreInProgressTitle;
+      body =
+          context.l10n.restoreProgressTests(progress.done, progress.total) +
+          (progress.message == null ? '' : ' · ${progress.message}');
     }
 
     return Padding(
@@ -127,11 +129,11 @@ class DataRestoreBanner extends HookConsumerWidget {
                       onPressed: () => unawaited(
                         ref.read(dataRestoreProvider.notifier).retry(),
                       ),
-                      child: const Text('Retry'),
+                      child: Text(context.l10n.commonRetry),
                     ),
                     IconButton(
                       visualDensity: VisualDensity.compact,
-                      tooltip: 'Dismiss',
+                      tooltip: context.l10n.commonDismiss,
                       onPressed: () =>
                           ref.read(dataRestoreProvider.notifier).dismiss(),
                       icon: Icon(
@@ -156,7 +158,7 @@ class DataRestoreBanner extends HookConsumerWidget {
                 ),
                 const SizedBox(height: AppSpacing.xs),
                 Text(
-                  'You can keep using the app while this finishes.',
+                  context.l10n.restoreKeepUsing,
                   style: AppTextStyles.bodySm().copyWith(
                     color: scheme.onSurfaceVariant,
                   ),

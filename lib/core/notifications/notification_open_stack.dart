@@ -71,6 +71,12 @@ abstract final class NotificationOpenStacks {
         overlays: ['/battle/join/${sessionId.trim()}'],
       );
 
+  /// "Test series is free for you" push: Home → series (claim screen).
+  static const testSeries = NotificationOpenStack(
+    base: '/',
+    overlays: ['/test-series'],
+  );
+
   static const longHtml = NotificationOpenStack(
     base: '/',
     overlays: ['/notification/long-html'],

@@ -39,8 +39,13 @@ class TestSeriesHomeCard extends ConsumerWidget {
 
     final title = bundle?.info.displayTitle(hindi: isHindi) ?? 'Prelims Test Series';
 
+    final hasFreeOffer =
+        !owned && ref.watch(testSeriesOpenOfferProvider).asData?.value != null;
+
     final String subtitle;
-    if (owned && stats != null) {
+    if (hasFreeOffer) {
+      subtitle = 'Free for you for a limited time. Tap to claim every test.';
+    } else if (owned && stats != null) {
       subtitle =
           '${stats.overall.attempted} of ${stats.overall.total} tests attempted';
     } else if (bundle != null) {

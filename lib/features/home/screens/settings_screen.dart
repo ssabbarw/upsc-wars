@@ -31,6 +31,7 @@ import '../../../core/providers/app_language_helpers.dart';
 import '../../../shared/theme/dark_mode_toggle.dart';
 import '../../../shared/widgets/app_toast.dart';
 import '../../../shared/widgets/content_language_picker.dart';
+import '../../../l10n/l10n.dart';
 
 class SettingsScreen extends ConsumerWidget {
   const SettingsScreen({super.key});
@@ -52,7 +53,7 @@ class SettingsScreen extends ConsumerWidget {
     );
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Settings')),
+      appBar: AppBar(title: Text(context.l10n.settingsTitle)),
       backgroundColor: isDark ? scheme.surface : const Color(0xFFF5F3EE),
       body: SafeArea(
         child: ListView(
@@ -68,7 +69,7 @@ class SettingsScreen extends ConsumerWidget {
             const SizedBox(height: AppSpacing.lg),
 
             _Section(
-              title: 'Preferences',
+              title: context.l10n.settingsSectionPreferences,
               children: const [
                 _ContentLanguageTile(),
                 _DarkModeTile(),
@@ -87,29 +88,29 @@ class SettingsScreen extends ConsumerWidget {
             const _MyTestSeriesSection(),
 
             _Section(
-              title: 'Support',
+              title: context.l10n.settingsSectionSupport,
               children: [
                 _ExternalLinkTile(
                   icon: Icons.mark_email_unread_outlined,
                   iconBg: Color(0xFFEAF1FF),
                   iconColor: Color(0xFF2F6BFF),
-                  title: 'Send feedback',
+                  title: context.l10n.settingsSendFeedback,
                   subtitle: CreatorContact.email,
                   uriBuilder: CreatorContact.mailtoFeedbackUri,
                 ),
-                const _ExternalLinkTile(
+                _ExternalLinkTile(
                   icon: Icons.send_rounded,
                   iconBg: Color(0xFFEAF1FF),
                   iconColor: Color(0xFF2F6BFF),
-                  title: 'Telegram (direct)',
+                  title: context.l10n.settingsTelegramDirect,
                   subtitle: 't.me/upsc_wars_sachin',
                   uriBuilder: _telegramDirectUri,
                 ),
-                const _ExternalLinkTile(
+                _ExternalLinkTile(
                   icon: Icons.groups_2_rounded,
                   iconBg: Color(0xFFE8F7F0),
                   iconColor: Color(0xFF0F8F5E),
-                  title: 'Telegram (group)',
+                  title: context.l10n.settingsTelegramGroup,
                   subtitle: 't.me/upsc_wars_group',
                   uriBuilder: _telegramGroupUri,
                 ),
@@ -118,24 +119,24 @@ class SettingsScreen extends ConsumerWidget {
             const SizedBox(height: AppSpacing.lg),
 
             _Section(
-              title: 'About',
+              title: context.l10n.settingsSectionAbout,
               children: [
                 _NavTile(
                   icon: Icons.info_outline_rounded,
                   iconBg: Color(0xFFF1F0FF),
                   iconColor: Color(0xFF5A43FF),
-                  title: 'About us',
-                  subtitle: 'What we’re building, why it exists',
+                  title: context.l10n.settingsAboutUs,
+                  subtitle: context.l10n.settingsAboutUsSubtitle,
                   onTap: () => context.push('/about-us'),
                 ),
                 _NavTile(
                   icon: Icons.star_rate_rounded,
                   iconBg: Color(0xFFFFF4E6),
                   iconColor: Color(0xFFB25A00),
-                  title: 'Rate the app',
+                  title: context.l10n.settingsRateApp,
                   subtitle: defaultTargetPlatform == TargetPlatform.iOS
-                      ? 'Open App Store'
-                      : 'Open Play Store',
+                      ? context.l10n.settingsOpenAppStore
+                      : context.l10n.settingsOpenPlayStore,
                   onTap: () => _openStore(context),
                 ),
               ],
@@ -263,6 +264,16 @@ class SettingsScreen extends ConsumerWidget {
                     ),
                   if (isSuperUser)
                     _NavTile(
+                      icon: Icons.card_giftcard_rounded,
+                      iconBg: Color(0xFFE1F5EE),
+                      iconColor: Color(0xFF0F6E56),
+                      title: 'Free test series',
+                      subtitle:
+                          'Promo codes for influencers, or free for everyone',
+                      onTap: () => context.push('/internal/test-series-promos'),
+                    ),
+                  if (isSuperUser)
+                    _NavTile(
                       icon: Icons.html_rounded,
                       iconBg: Color(0xFFFFF4E6),
                       iconColor: Color(0xFFB25A00),
@@ -322,14 +333,14 @@ class SettingsScreen extends ConsumerWidget {
             ],
             if (isSignedIn) ...[
               const SizedBox(height: AppSpacing.lg),
-              const _Section(title: 'Privacy', children: [_BlockedUsersTile()]),
+              _Section(title: context.l10n.settingsSectionPrivacy, children: [_BlockedUsersTile()]),
               const SizedBox(height: AppSpacing.lg),
-              const _Section(title: 'Account', children: [_LogoutTile()]),
+              _Section(title: context.l10n.settingsSectionAccount, children: [_LogoutTile()]),
             ],
             const SizedBox(height: AppSpacing.xl),
             Center(
               child: Text(
-                'Built with care for every serious aspirant.',
+                context.l10n.settingsFooter,
                 textAlign: TextAlign.center,
                 style: AppTextStyles.caption().copyWith(
                   color: scheme.onSurfaceVariant,
@@ -355,7 +366,7 @@ Future<void> _openStore(BuildContext context) async {
   final uri = Uri.parse(url);
   final ok = await launchUrl(uri, mode: LaunchMode.externalApplication);
   if (!ok && context.mounted) {
-    AppToast.showText(context, 'Could not open the store. Try again later.');
+    AppToast.showText(context, context.l10n.settingsStoreOpenFailed);
   }
 }
 
@@ -415,7 +426,7 @@ class _Header extends StatelessWidget {
                 ),
                 const SizedBox(height: 4),
                 Text(
-                  'Make the app feel like yours.',
+                  context.l10n.settingsHeaderTagline,
                   style: AppTextStyles.h2().copyWith(color: scheme.onSurface),
                 ),
               ],
@@ -561,9 +572,7 @@ class _MyTestSeriesSection extends ConsumerWidget {
               iconBg: const Color(0xFFFFF4E6),
               iconColor: const Color(0xFFB25A00),
               title: 'My Test Series',
-              subtitle: owned.length == 1
-                  ? '1 series unlocked'
-                  : '${owned.length} series unlocked',
+              subtitle: context.l10n.settingsSeriesUnlocked(owned.length),
               onTap: () => context.push('/my-test-series'),
             ),
           ],
@@ -581,15 +590,13 @@ class _BlockedUsersTile extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final count = ref.watch(blockedUserEmailsProvider).value?.length ?? 0;
     final subtitle = count == 0
-        ? 'No one blocked'
-        : count == 1
-        ? '1 person'
-        : '$count people';
+        ? context.l10n.settingsNoOneBlocked
+        : context.l10n.settingsBlockedCount(count);
     return _NavTile(
       icon: Icons.block_outlined,
       iconBg: const Color(0xFFFFE8EC),
       iconColor: const Color(0xFFC2103A),
-      title: 'Blocked users',
+      title: context.l10n.settingsBlockedUsers,
       subtitle: subtitle,
       onTap: () => context.push('/settings/blocked-users'),
     );
@@ -619,11 +626,11 @@ class _LogoutTile extends ConsumerWidget {
         color: Color(0xFFC2103A),
       ),
       title: Text(
-        isBusy ? 'Logging out...' : 'Log out',
+        isBusy ? context.l10n.settingsLoggingOut : context.l10n.commonLogOut,
         style: AppTextStyles.label(),
       ),
       subtitle: Text(
-        'Sign out of this device',
+        context.l10n.settingsSignOutSubtitle,
         style: AppTextStyles.bodySm().copyWith(color: scheme.onSurfaceVariant),
       ),
       contentPadding: const EdgeInsets.symmetric(
@@ -639,16 +646,16 @@ Future<bool> _confirmLogout(BuildContext context) async {
     context: context,
     builder: (dialogContext) {
       return AlertDialog(
-        title: const Text('Log out?'),
-        content: const Text('Are you sure you want to log out?'),
+        title: Text(context.l10n.settingsLogOutConfirmTitle),
+        content: Text(context.l10n.settingsLogOutConfirmBody),
         actions: [
           TextButton(
             onPressed: () => Navigator.of(dialogContext).pop(false),
-            child: const Text('Cancel'),
+            child: Text(context.l10n.commonCancel),
           ),
           FilledButton(
             onPressed: () => Navigator.of(dialogContext).pop(true),
-            child: const Text('Log out'),
+            child: Text(context.l10n.commonLogOut),
           ),
         ],
       );
@@ -681,7 +688,7 @@ class _ExternalLinkTile extends StatelessWidget {
       mode: LaunchMode.externalApplication,
     );
     if (!ok && context.mounted) {
-      AppToast.showText(context, 'Could not open link.');
+      AppToast.showText(context, context.l10n.settingsLinkOpenFailed);
     }
   }
 
@@ -750,11 +757,11 @@ class _ContentLanguageTile extends ConsumerWidget {
         bg: Color(0xFFE1F5EE),
         color: Color(0xFF0F6E56),
       ),
-      title: Text('Question language', style: AppTextStyles.label()),
+      title: Text(context.l10n.settingsLanguageTitle, style: AppTextStyles.label()),
       subtitle: Text(
         isHindi
-            ? 'Hindi content · app stays English'
-            : 'Everything in English',
+            ? context.l10n.settingsLanguageSubtitleHi
+            : context.l10n.settingsLanguageSubtitleEn,
         style: AppTextStyles.bodySm().copyWith(
           color: scheme.onSurfaceVariant,
         ),
@@ -797,9 +804,9 @@ class _DarkModeTile extends ConsumerWidget {
                 bg: const Color(0xFFEEF1F6),
                 color: const Color(0xFF334155),
               ),
-              title: Text('Dark mode', style: AppTextStyles.label()),
+              title: Text(context.l10n.settingsDarkMode, style: AppTextStyles.label()),
               subtitle: Text(
-                'Comfortable contrast for long sessions.',
+                context.l10n.settingsDarkModeSubtitle,
                 style: AppTextStyles.bodySm().copyWith(
                   color: scheme.onSurfaceVariant,
                 ),
@@ -867,9 +874,9 @@ class _ReadingSizeTile extends ConsumerWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Reading size', style: AppTextStyles.label()),
+                    Text(context.l10n.settingsReadingSize, style: AppTextStyles.label()),
                     Text(
-                      'Question text and explanations.',
+                      context.l10n.settingsReadingSizeSubtitle,
                       style: AppTextStyles.bodySm().copyWith(
                         color: scheme.onSurfaceVariant,
                       ),
@@ -878,7 +885,7 @@ class _ReadingSizeTile extends ConsumerWidget {
                 ),
               ),
               Text(
-                ReadingFontScale.labels[index],
+                readingSizeLabel(context, index),
                 style: AppTextStyles.labelSm().copyWith(color: scheme.primary),
               ),
             ],
@@ -888,7 +895,7 @@ class _ReadingSizeTile extends ConsumerWidget {
             children: [
               IconButton(
                 visualDensity: VisualDensity.compact,
-                tooltip: 'Smaller',
+                tooltip: context.l10n.settingsReadingSmaller,
                 onPressed: index == 0 ? null : () => setIndex(index - 1),
                 icon: const Icon(Icons.text_decrease_rounded, size: 22),
               ),
@@ -898,13 +905,13 @@ class _ReadingSizeTile extends ConsumerWidget {
                   min: 0,
                   max: last.toDouble(),
                   divisions: last,
-                  label: ReadingFontScale.labels[index],
+                  label: readingSizeLabel(context, index),
                   onChanged: (v) => setIndex(v.round()),
                 ),
               ),
               IconButton(
                 visualDensity: VisualDensity.compact,
-                tooltip: 'Larger',
+                tooltip: context.l10n.settingsReadingLarger,
                 onPressed: index == last ? null : () => setIndex(index + 1),
                 icon: const Icon(Icons.text_increase_rounded, size: 22),
               ),
@@ -943,7 +950,7 @@ class _ReadingSizePreview extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('PREVIEW', style: caption),
+          Text(context.l10n.settingsPreview, style: caption),
           const SizedBox(height: 8),
           Text(
             _question,
@@ -991,11 +998,11 @@ class _ConfidenceTrackingTile extends ConsumerWidget {
                 color: Color(0xFF0F8F5E),
               ),
               title: Text(
-                'Confidence before reveal',
+                context.l10n.settingsConfidenceTitle,
                 style: AppTextStyles.label(),
               ),
               subtitle: Text(
-                'Ask “how sure are you?” before showing answers.',
+                context.l10n.settingsConfidenceSubtitle,
                 style: AppTextStyles.bodySm().copyWith(
                   color: scheme.onSurfaceVariant,
                 ),
@@ -1042,9 +1049,9 @@ class _PrelimsPersistentNotificationTile extends ConsumerWidget {
           bg: Color(0xFFE8F7F0),
           color: Color(0xFF0F8F5E),
         ),
-        title: Text('Status bar reminder', style: AppTextStyles.label()),
+        title: Text(context.l10n.settingsStatusBarReminder, style: AppTextStyles.label()),
         subtitle: Text(
-          'Available on Android.',
+          context.l10n.settingsAndroidOnly,
           style: AppTextStyles.bodySm().copyWith(
             color: scheme.onSurfaceVariant,
           ),
@@ -1079,11 +1086,11 @@ class _PrelimsPersistentNotificationTile extends ConsumerWidget {
                       color: Color(0xFF0F8F5E),
                     ),
                     title: Text(
-                      'Status bar reminder',
+                      context.l10n.settingsStatusBarReminder,
                       style: AppTextStyles.label(),
                     ),
                     subtitle: Text(
-                      'Keep the days-until-Prelims count visible.',
+                      context.l10n.settingsStatusBarReminderSubtitle,
                       style: AppTextStyles.bodySm().copyWith(
                         color: scheme.onSurfaceVariant,
                       ),
@@ -1215,4 +1222,15 @@ class _AndroidPrelimsNotificationPreview extends StatelessWidget {
       ),
     );
   }
+}
+
+String readingSizeLabel(BuildContext context, int index) {
+  final l10n = context.l10n;
+  return switch (index) {
+    0 => l10n.readingSizeSmall,
+    1 => l10n.readingSizeDefault,
+    2 => l10n.readingSizeMedium,
+    3 => l10n.readingSizeLarge,
+    _ => l10n.readingSizeExtraLarge,
+  };
 }

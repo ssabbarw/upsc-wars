@@ -37,6 +37,7 @@ import 'package:upsc_wars/features/fomo_pulse/fomo_pulse_fcm.dart';
 import 'package:upsc_wars/features/push_spot_test/push_spot_test_fcm.dart';
 import 'package:upsc_wars/features/push_spot_test/push_spot_test_launch_params.dart';
 import 'package:upsc_wars/features/notifications/long_html_notification_constants.dart';
+import 'package:upsc_wars/features/test_series/test_series_fcm.dart';
 import 'package:upsc_wars/shared/widgets/app_toast.dart';
 import 'package:upsc_wars/shared/widgets/deferred_push_permission_sheet.dart';
 
@@ -603,6 +604,10 @@ class BattleMessagingService {
       }
       if (messageOpensLongHtmlScreen(message)) {
         _openStack(NotificationOpenStacks.longHtml);
+        return;
+      }
+      if (ocKind == TestSeriesFcm.kind) {
+        _openStack(NotificationOpenStacks.testSeries);
         return;
       }
       if (ocKind == OpenChallengeFcm.kind) {

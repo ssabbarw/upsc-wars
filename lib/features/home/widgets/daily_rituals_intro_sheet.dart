@@ -16,6 +16,7 @@ import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/widgets/dismissible_modal_sheet.dart';
 import '../domain/daily_rituals.dart';
+import '../../../l10n/l10n.dart';
 
 Future<List<DailyRitualCopy>> _enabledDailyRituals(
   ProviderContainer container,
@@ -171,7 +172,7 @@ class _DailyRitualsIntroSheetState
               ),
               const SizedBox(height: AppSpacing.lg),
               Text(
-                'Your daily loop',
+                context.l10n.ritualsIntroTitle,
                 style: AppTextStyles.h2().copyWith(
                   color: scheme.onSurface,
                   fontWeight: FontWeight.w800,
@@ -180,9 +181,9 @@ class _DailyRitualsIntroSheetState
               const SizedBox(height: AppSpacing.xs),
               Text(
                 switch (widget.items.length) {
-                  1 => 'On Home. Same place every day.',
-                  2 => 'Two things on Home. Same place every day.',
-                  _ => 'Three things on Home. Same place every day.',
+                  1 => context.l10n.ritualsIntroOne,
+                  2 => context.l10n.ritualsIntroTwo,
+                  _ => context.l10n.ritualsIntroThree,
                 },
                 style: AppTextStyles.bodySm().copyWith(
                   color: scheme.onSurfaceVariant,
@@ -210,7 +211,7 @@ class _DailyRitualsIntroSheetState
                   ),
                 ),
                 child: Text(
-                  'Got it',
+                  context.l10n.commonGotIt,
                   style: AppTextStyles.label().copyWith(
                     color: AppColors.onPrimary,
                     fontWeight: FontWeight.w700,

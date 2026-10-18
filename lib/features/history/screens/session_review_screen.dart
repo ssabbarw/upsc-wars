@@ -25,6 +25,7 @@ import 'package:upsc_wars/features/history/providers/review_session_provider.dar
 import 'package:upsc_wars/features/history/widgets/explanation_card.dart';
 import 'package:upsc_wars/features/home/domain/demo_diagnostic_ephemeral_store.dart';
 import 'package:upsc_wars/features/results/widgets/share_test_bottom_sheet.dart';
+import '../../../l10n/l10n.dart';
 
 OverlayEntry _buildSessionReviewShareCoachOverlay({
   required BuildContext context,
@@ -62,7 +63,7 @@ OverlayEntry _buildSessionReviewShareCoachOverlay({
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Share this test',
+                  context.l10n.reviewShareTitle,
                   style: TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w700,
@@ -71,8 +72,7 @@ OverlayEntry _buildSessionReviewShareCoachOverlay({
                 ),
                 const SizedBox(height: 6),
                 Text(
-                  'Tap Share to send this question (or the whole test) to friends.\n\n'
-                  'Found an error in a question? Use Share to report it to the UPSC Wars developer.',
+                  context.l10n.reviewShareBody,
                   style: TextStyle(
                     fontSize: 13,
                     height: 1.35,
@@ -84,7 +84,7 @@ OverlayEntry _buildSessionReviewShareCoachOverlay({
                   alignment: Alignment.centerRight,
                   child: FilledButton(
                     onPressed: onDismiss,
-                    child: const Text('Got it'),
+                    child: Text(context.l10n.commonGotIt),
                   ),
                 ),
               ],
@@ -283,7 +283,7 @@ class _SingleQuestionReviewScreenState
           child: Center(
             child: FilledButton(
               onPressed: _loadMeta,
-              child: const Text('Retry'),
+              child: Text(context.l10n.commonRetry),
             ),
           ),
         ),
@@ -408,7 +408,7 @@ class SessionReviewScreen extends HookConsumerWidget {
           error: (e, st) => Center(
             child: FilledButton(
               onPressed: () => ref.invalidate(reviewSessionProvider(params)),
-              child: const Text('Retry'),
+              child: Text(context.l10n.commonRetry),
             ),
           ),
           data: (state) {
@@ -468,7 +468,7 @@ class SessionReviewScreen extends HookConsumerWidget {
             return ReviewBody(
               title: 'Session review',
               showRevisionBadge: false,
-              progressRight: '$correct correct · $wrong wrong',
+              progressRight: context.l10n.reviewCorrectWrong(correct, wrong),
               question: q,
               current: current,
               total: total,
@@ -685,7 +685,7 @@ class ReviewBody extends StatelessWidget {
                   children: [
                     Expanded(
                       child: Text(
-                        'Question $current of $total',
+                        context.l10n.reviewQuestionOfTotal(current, total),
                         softWrap: true,
                         style: TextStyle(
                           fontSize: 12,
@@ -725,8 +725,8 @@ class ReviewBody extends StatelessWidget {
             children: [
               _VerdictStrip(question: question, status: status),
               const SizedBox(height: 14),
-              const Text(
-                'QUESTION',
+              Text(
+                context.l10n.reviewQuestionLabel,
                 style: TextStyle(
                   fontSize: 11,
                   letterSpacing: 0.5,
@@ -845,12 +845,14 @@ class ReviewBody extends StatelessWidget {
               Expanded(
                 child: OutlinedButton(
                   onPressed: current == 1 ? null : onPrev,
-                  child: const Text('← Prev'),
+                  child: Text(context.l10n.reviewPrevArrow),
                 ),
               ),
               const SizedBox(width: 8),
               IconButton(
-                tooltip: isBookmarked ? 'Remove bookmark' : 'Bookmark',
+                tooltip: isBookmarked
+                    ? context.l10n.reviewRemoveBookmark
+                    : 'Bookmark',
                 onPressed: onToggleBookmark,
                 icon: Icon(
                   isBookmarked ? Icons.bookmark : Icons.bookmark_border,
@@ -868,7 +870,11 @@ class ReviewBody extends StatelessWidget {
                     foregroundColor: scheme.onPrimary,
                   ),
                   onPressed: onNext,
-                  child: Text(showDone ? 'Done' : 'Next →'),
+                  child: Text(
+                    showDone
+                        ? context.l10n.commonDone
+                        : context.l10n.reviewNextArrow,
+                  ),
                 ),
               ),
             ],
@@ -878,8 +884,8 @@ class ReviewBody extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(bottom: 10),
             child: isQueued
-                ? const Text(
-                    'In revision queue',
+                ? Text(
+                    context.l10n.reviewInRevisionQueue,
                     style: TextStyle(
                       fontSize: 11,
                       color: Color(0xFF1D9E75),
@@ -889,7 +895,7 @@ class ReviewBody extends StatelessWidget {
                 : InkWell(
                     onTap: onAddToRevision,
                     child: Text(
-                      'Add to revision queue',
+                      context.l10n.reviewAddToRevisionQueue,
                       style: TextStyle(
                         fontSize: 11,
                         color: scheme.onSurfaceVariant,
@@ -1356,7 +1362,7 @@ class _VerdictStatus {
 _VerdictStatus _statusFor(String status, bool revisionMode, bool isDark) {
   if (revisionMode) {
     return _VerdictStatus(
-      label: 'Correct answer',
+      label: appL10n.reviewCorrectAnswer,
       bg: isDark ? const Color(0xFF153126) : const Color(0xFFE1F5EE),
       pillBg: isDark ? const Color(0xFF275941) : const Color(0xFFC0DD97),
       pillText: isDark ? const Color(0xFFC8F5E0) : const Color(0xFF173404),
@@ -1367,7 +1373,7 @@ _VerdictStatus _statusFor(String status, bool revisionMode, bool isDark) {
   }
   if (status == 'wrong') {
     return _VerdictStatus(
-      label: 'Incorrect',
+      label: appL10n.reviewIncorrect,
       bg: isDark ? const Color(0xFF3B1515) : const Color(0xFFFCEBEB),
       pillBg: isDark ? const Color(0xFF6A2C2C) : const Color(0xFFF09595),
       pillText: isDark ? const Color(0xFFF7CFCF) : const Color(0xFF501313),
@@ -1378,7 +1384,7 @@ _VerdictStatus _statusFor(String status, bool revisionMode, bool isDark) {
   }
   if (status == 'correct') {
     return _VerdictStatus(
-      label: 'Correct',
+      label: appL10n.testCorrect,
       bg: isDark ? const Color(0xFF153126) : const Color(0xFFE1F5EE),
       pillBg: isDark ? const Color(0xFF275941) : const Color(0xFFC0DD97),
       pillText: isDark ? const Color(0xFFC8F5E0) : const Color(0xFF173404),
@@ -1389,7 +1395,7 @@ _VerdictStatus _statusFor(String status, bool revisionMode, bool isDark) {
   }
   if (status == 'timed_out') {
     return _VerdictStatus(
-      label: "Time's up",
+      label: appL10n.reviewTimesUp,
       bg: isDark ? const Color(0xFF39290E) : const Color(0xFFFAEEDA),
       pillBg: isDark ? const Color(0xFF5B3F14) : const Color(0xFFFAEEDA),
       pillText: isDark ? const Color(0xFFF4D39E) : const Color(0xFF854F0B),
@@ -1399,7 +1405,7 @@ _VerdictStatus _statusFor(String status, bool revisionMode, bool isDark) {
     );
   }
   return _VerdictStatus(
-    label: 'Skipped',
+    label: appL10n.reviewSkipped,
     bg: isDark ? const Color(0xFF39290E) : const Color(0xFFFAEEDA),
     pillBg: isDark ? const Color(0xFF5B3F14) : const Color(0xFFFAEEDA),
     pillText: isDark ? const Color(0xFFF4D39E) : const Color(0xFF854F0B),
@@ -1448,7 +1454,7 @@ _OptionState _optionState(
       letterColor: isDark ? const Color(0xFFA7D7AD) : const Color(0xFF3B6D11),
       textColor: scheme.onSurface,
       strong: true,
-      tag: 'Correct',
+      tag: appL10n.testCorrect,
       tagBg: isDark ? const Color(0xFF2F5B35) : const Color(0xFFC0DD97),
       tagColor: isDark ? const Color(0xFFD4F4D9) : const Color(0xFF173404),
     );
@@ -1460,7 +1466,7 @@ _OptionState _optionState(
       letterColor: isDark ? const Color(0xFFE2A8A8) : const Color(0xFFA32D2D),
       textColor: scheme.onSurface,
       strong: true,
-      tag: 'Your pick',
+      tag: appL10n.reviewYourPick,
       tagBg: isDark ? const Color(0xFF6A2C2C) : const Color(0xFFF7C1C1),
       tagColor: isDark ? const Color(0xFFF7CFCF) : const Color(0xFF501313),
     );

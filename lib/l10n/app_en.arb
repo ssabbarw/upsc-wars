@@ -1,0 +1,588 @@
+{
+  "@@locale": "en",
+  "commonCancel": "Cancel",
+  "commonRetry": "Retry",
+  "commonDone": "Done",
+  "commonContinue": "Continue",
+  "commonExit": "Exit",
+  "commonLogOut": "Log out",
+  "languagePickerTitle": "Choose language",
+  "languagePickerSubtitle": "One setting for the whole app and the questions.",
+  "languagePickerHintEn": "App and questions both in English.",
+  "languagePickerHintHi": "App and questions both in Hindi.",
+  "languagePickerPracticeTest": "Practice test",
+  "readingSizeSmall": "Small",
+  "readingSizeDefault": "Default",
+  "readingSizeMedium": "Medium",
+  "readingSizeLarge": "Large",
+  "readingSizeExtraLarge": "Extra large",
+  "routerExitDialogTitle": "Exit app?",
+  "routerExitDialogBody": "You will leave {appName}.",
+  "@routerExitDialogBody": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsSeriesUnlocked": "{count, plural, =1{1 series unlocked} other{{count} series unlocked}}",
+  "@settingsSeriesUnlocked": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsBlockedCount": "{count, plural, =1{1 person} other{{count} people}}",
+  "@settingsBlockedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsLanguageSubtitleEn": "App and questions in English",
+  "settingsLanguageSubtitleHi": "App and questions in Hindi",
+  "settingsTitle": "Settings",
+  "settingsSectionPreferences": "Preferences",
+  "settingsSectionSupport": "Support",
+  "settingsSendFeedback": "Send feedback",
+  "settingsTelegramDirect": "Telegram (direct)",
+  "settingsTelegramGroup": "Telegram (group)",
+  "settingsSectionAbout": "About",
+  "settingsAboutUs": "About us",
+  "settingsAboutUsSubtitle": "What we’re building, why it exists",
+  "settingsRateApp": "Rate the app",
+  "settingsOpenAppStore": "Open App Store",
+  "settingsOpenPlayStore": "Open Play Store",
+  "settingsSectionPrivacy": "Privacy",
+  "settingsSectionAccount": "Account",
+  "settingsFooter": "Built with care for every serious aspirant.",
+  "settingsStoreOpenFailed": "Could not open the store. Try again later.",
+  "settingsHeaderTagline": "Make the app feel like yours.",
+  "settingsNoOneBlocked": "No one blocked",
+  "settingsBlockedUsers": "Blocked users",
+  "settingsLoggingOut": "Logging out...",
+  "settingsSignOutSubtitle": "Sign out of this device",
+  "settingsLogOutConfirmTitle": "Log out?",
+  "settingsLogOutConfirmBody": "Are you sure you want to log out?",
+  "settingsLinkOpenFailed": "Could not open link.",
+  "settingsLanguageTitle": "Question language",
+  "settingsDarkMode": "Dark mode",
+  "settingsDarkModeSubtitle": "Comfortable contrast for long sessions.",
+  "settingsReadingSize": "Reading size",
+  "settingsReadingSizeSubtitle": "Question text and explanations.",
+  "settingsReadingSmaller": "Smaller",
+  "settingsReadingLarger": "Larger",
+  "settingsPreview": "PREVIEW",
+  "settingsConfidenceTitle": "Confidence before reveal",
+  "settingsConfidenceSubtitle": "Ask “how sure are you?” before showing answers.",
+  "settingsStatusBarReminder": "Status bar reminder",
+  "settingsAndroidOnly": "Available on Android.",
+  "settingsStatusBarReminderSubtitle": "Keep the days-until-Prelims count visible.",
+  "routerGoHome": "Go home",
+  "routerLinkFailedTitle": "Link could not be opened",
+  "routerErrorTitle": "Oh snap",
+  "routerLinkFailedBody": "This link could not be opened.\nPlease try again.",
+  "routerErrorBody": "Something went wrong.\nPlease try again.",
+  "revisionQueueEmptyLine": "Nothing in the queue yet",
+  "commonNone": "None",
+  "revisionIncorrectMcqs": "Incorrect MCQs",
+  "revisionBookmarkedMcqs": "Bookmarked MCQs",
+  "revisionCountIncorrect": "{count, plural, =1{1 incorrect} other{{count} incorrects}}",
+  "@revisionCountIncorrect": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "revisionCountBookmark": "{count, plural, =1{1 bookmark} other{{count} bookmarks}}",
+  "@revisionCountBookmark": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "ritualCaShotsWhen": "Through the day",
+  "ritualCaShotsBody": "Breaking news brief + 1 MCQ. Two minutes when a shot lands.",
+  "ritualDailyCaWhen": "Opens 6 AM",
+  "ritualDailyCaBody": "Yesterday's news as a scored paper. Revise any past day.",
+  "ritualDailyWarWhen": "9 PM · Mon–Fri",
+  "ritualDailyWarBody": "All-India live static GS paper. Same questions, then the rank.",
+  "homeStreakMilestoneToast": "{count}-day streak. Keep showing up.",
+  "@homeStreakMilestoneToast": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "homeStreakDays": "{count, plural, =1{1 day} other{{count} days}}",
+  "@homeStreakDays": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "homeGreetingNamed": "Hey, {name}",
+  "@homeGreetingNamed": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "homeGoodMorning": "Good morning",
+  "homeGoodAfternoon": "Good afternoon",
+  "homeGoodEvening": "Good evening",
+  "homeTrapsCount": "{count, plural, =1{1 trap} other{{count} traps}}",
+  "@homeTrapsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "homeCaughtByTraps": "You've been caught by {count, plural, =1{1 trap type} other{{count} trap types}}",
+  "@homeCaughtByTraps": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "homeStartNQuestionTest": "Start {count}-question test",
+  "@homeStartNQuestionTest": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "homeCountAvailable": "{count} available",
+  "@homeCountAvailable": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "activationLeftAt": "You left at question {done} of {total}. Pick up where you stopped.",
+  "@activationLeftAt": {
+    "placeholders": {
+      "done": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "homeAnsweredOf": "You've answered {done} of {total} questions.",
+  "@homeAnsweredOf": {
+    "placeholders": {
+      "done": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "homeResumeProgress": "Resume · {done} of {total} done",
+  "@homeResumeProgress": {
+    "placeholders": {
+      "done": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "restoreProgressTests": "{done} of {total} tests",
+  "@restoreProgressTests": {
+    "placeholders": {
+      "done": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "revisionPickPool": "Pick a pool. You’ll get a short random test from those questions — up to {count} at a time.",
+  "@revisionPickPool": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "homeOpenChallengeBy": "Open challenge by {name}",
+  "@homeOpenChallengeBy": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "homeGoalOthersLive": "{goal} · +{count} live",
+  "@homeGoalOthersLive": {
+    "placeholders": {
+      "goal": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "homeChallengeGoalMixed": "{who, select, poster{Beat their score of {score}/10 across mixed subjects} other{Beat the top score of {score}/10 across mixed subjects}}",
+  "@homeChallengeGoalMixed": {
+    "placeholders": {
+      "who": {
+        "type": "String"
+      },
+      "score": {
+        "type": "int"
+      }
+    }
+  },
+  "homeChallengeGoalSubject": "{who, select, poster{Beat their score of {score}/10 in {subject}} other{Beat the top score of {score}/10 in {subject}}}",
+  "@homeChallengeGoalSubject": {
+    "placeholders": {
+      "who": {
+        "type": "String"
+      },
+      "score": {
+        "type": "int"
+      },
+      "subject": {
+        "type": "String"
+      }
+    }
+  },
+  "homeDangerLocked": "Questions you got wrong while sure. Unlocks at {total} questions.",
+  "@homeDangerLocked": {
+    "placeholders": {
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "homeDangerLockedProgress": "Questions you got wrong while sure. Unlocks at {total} questions. — {scored}/{total} so far.",
+  "@homeDangerLockedProgress": {
+    "placeholders": {
+      "total": {
+        "type": "int"
+      },
+      "scored": {
+        "type": "int"
+      }
+    }
+  },
+  "homeWeekReviewCount": "{mistakes} questions where you slipped last week.",
+  "@homeWeekReviewCount": {
+    "placeholders": {
+      "mistakes": {
+        "type": "int"
+      }
+    }
+  },
+  "homeDrillSubjectBit": "10 {subject} questions with instant feedback.",
+  "@homeDrillSubjectBit": {
+    "placeholders": {
+      "subject": {
+        "type": "String"
+      }
+    }
+  },
+  "homeDrillOpenAgain": "{counts}. Open again if you want another set.",
+  "@homeDrillOpenAgain": {
+    "placeholders": {
+      "counts": {
+        "type": "String"
+      }
+    }
+  },
+  "homeDrillShortSet": "{counts}. A short set from misses or bookmarks.",
+  "@homeDrillShortSet": {
+    "placeholders": {
+      "counts": {
+        "type": "String"
+      }
+    }
+  },
+  "homeStreak3Toast": "3-day streak — the habit is sticking.",
+  "homeQuestionBankUnavailable": "Question bank unavailable",
+  "homeQuestionBankUnavailableBody": "The question database could not be opened. Reinstall the app or ensure storage is available, then restart.",
+  "homeGreetingGeneric": "Hey there",
+  "homeResumeDemoTest": "Resume demo test",
+  "homeStartWithDemoTest": "Start with the demo test",
+  "homeRateReview": "Rate & review",
+  "homePickAnySubject": "PICK ANY SUBJECT",
+  "homeSubjects": "SUBJECTS",
+  "homeQuestionsYouSaved": "Questions you saved",
+  "activationStartHere": "START HERE",
+  "activationTakeDemo": "Take the 5-minute demo test",
+  "activationPickUp": "Pick up where you left off.",
+  "activationDemoPitch": "See how a trap question fools confident aspirants — and how Danger Zone catches it.",
+  "activationStartTest": "Start the test",
+  "activationHideTitle": "Hide for now?",
+  "activationHideBody": "We’ll bring this back tomorrow.",
+  "activationHideConfirm": "Hide for now",
+  "activationKeepGoing": "Keep going",
+  "drillSubjectTitle": "Daily practice subject",
+  "drillSubjectBody": "Choose what your daily drill focuses on.",
+  "revisionEmptyPools": "Questions you get wrong or bookmark will appear here. Then you can take a short random test from either pool.",
+  "revisionPoolWrongBody": "A random test from questions you answered incorrectly.",
+  "revisionPoolSavedBody": "A random test from questions you have bookmarked.",
+  "ritualsIntroTitle": "Your daily loop",
+  "ritualsIntroOne": "On Home. Same place every day.",
+  "ritualsIntroTwo": "Two things on Home. Same place every day.",
+  "ritualsIntroThree": "Three things on Home. Same place every day.",
+  "commonGotIt": "Got it",
+  "restorePaused": "Restore paused",
+  "restoreFailedBody": "Could not restore your data.",
+  "restoreDoneTitle": "Your data is back",
+  "restoreDoneBody": "Restored your tests.",
+  "restoreInProgressTitle": "Restoring your data…",
+  "commonDismiss": "Dismiss",
+  "restoreKeepUsing": "You can keep using the app while this finishes.",
+  "homeNoQuestionsYet": "No questions answered yet.",
+  "commonResume": "Resume",
+  "demoInProgress": "Demo in progress",
+  "commonStartOver": "Start over",
+  "demoTry": "Try a demo test",
+  "demoTrySuffix": " — see the edge UPSC Wars gives you",
+  "demoRemindTomorrow": "Remind me tomorrow",
+  "demoNotNowTitle": "Not now?",
+  "demoNotNowBody": "This 5-minute demo finds questions you feel sure about but get wrong — the edge UPSC Wars is built around. We’ll nudge you again tomorrow until you finish one test.",
+  "demoTryDiagnostic": "Try the diagnostic instead",
+  "demoIntroTitle": "Find where UPSC Wars gives you an edge",
+  "demoIntroBody": "Take this demo — current affairs mixed with static, with instant feedback after each answer.",
+  "demoPoint1Title": "8 MCQs · no timer",
+  "demoPoint1Body": "Current affairs plus static — see the explanation as you go.",
+  "demoPoint2Title": "Mark your confidence",
+  "demoPoint2Body": "Sure, educated guess, or unsure — we spot what feels right but isn’t.",
+  "demoPoint3Title": "Rich insights when you finish",
+  "demoPoint3Body": "Confident mistakes, trap patterns, and what to revise next.",
+  "demoPoint4Title": "Explanations that actually teach",
+  "demoPoint4Body": "Traps, elimination, statement analysis — not just right or wrong.",
+  "demoLetsGo": "Let’s go",
+  "demoSkipToHome": "Skip to home",
+  "todayCaLive": "Live now — based on yesterday's news.",
+  "todayCaNotDone": "Current affairs test from yesterday's news.",
+  "todayDone": "Done today",
+  "todayQuizDoneOpenAnswers": "Quiz done — open answers",
+  "todaySignInOpenChallenge": "Sign in to join an open challenge.",
+  "todayDangerUnlocked": "Questions you got wrong while sure — trap patterns.",
+  "todayWhatIsThis": "What is this?",
+  "todayCaShotSubtitle": "Breaking news brief + 1 MCQ based on it.",
+  "todayPaperQuizTitle": "Today's paper quiz",
+  "todayPaperQuizBody": "Based on yesterday's news. Same questions for everyone — then All-India Rank.",
+  "todayOpenPaper": "Open paper",
+  "todayWeekDone": "Week review done",
+  "todayWeekDoneBody": "You've gone through last week's mistakes. Streak intact.",
+  "todaySeeResults": "See results",
+  "todayWeekEmpty": "No mistakes this week",
+  "todayWeekEmptyBody": "No mistakes from last week — you're clean.",
+  "todayQuickPracticeInstead": "Quick practice instead",
+  "todayWeekReviewTitle": "Review last week's mistakes",
+  "todayStartReview": "Start review",
+  "todayDrillDone": "Drill done",
+  "todayDrillTitle": "Today's drill",
+  "todayDrillBody": "10 questions with instant feedback.",
+  "todayDrillInBooks": "Today's drill is in the books.",
+  "todayOpenAgain": "Open again",
+  "commonStart": "Start",
+  "progressPerfectWeek": "Perfect week — all 7 days sealed 🔥",
+  "progressDaysSealed": "{count} of 7 days sealed this week",
+  "@progressDaysSealed": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "progressWrongAnswersAllTime": "{count, plural, =1{wrong answer (all-time) · } other{wrong answers (all-time) · }}",
+  "@progressWrongAnswersAllTime": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "progressAttemptedAccuracy": "{attempted} attempted · {accuracy} accuracy",
+  "@progressAttemptedAccuracy": {
+    "placeholders": {
+      "attempted": {
+        "type": "int"
+      },
+      "accuracy": {
+        "type": "String"
+      }
+    }
+  },
+  "progressWrongAllTime": "{count} wrong (all-time)",
+  "@progressWrongAllTime": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "profileAppVersion": "Current app version: {version}",
+  "@profileAppVersion": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "progressTabHistory": "Test History",
+  "progressLoadFailed": "Could not load overview.",
+  "progressSubtitle": "Your performance across all subjects",
+  "progressSubjectsPractised": " subjects practised",
+  "progressSortMostMistakes": "Most mistakes",
+  "progressNotStarted": "Not started",
+  "profileMadeWithLove": "Made with love ",
+  "profileInDelhi": " in Delhi",
+  "profileTitle": "Profile",
+  "profileYourProfile": "Your Profile",
+  "profileSignInPitch": "Sign in to join the community, participate in battles, and build your profile.",
+  "authSigningIn": "Signing in...",
+  "authContinueApple": "Continue with Apple",
+  "authContinueGoogle": "Continue with Google",
+  "profilePhotoUpdated": "Profile photo updated",
+  "profilePhotoWebHint": "Profile photo can be changed in the Android or iOS app.",
+  "profileNoEmail": "No email",
+  "profileAuthentication": "Authentication",
+  "profileAccountConnected": "Account connected",
+  "profileDataSecure": "Your account data remains secure",
+  "profileTelegramSlash": "Telegram username should not contain /",
+  "profileInstagramSlash": "Instagram username should not contain /",
+  "profileCommunityUpdated": "Community profile updated",
+  "profileCommunityTitle": "Community Profile",
+  "profileCommunityBody": "Complete these fields so aspirants can connect with you.",
+  "profileOptionalSubject": "Optional Subject",
+  "profileInstagramLabel": "Instagram (without @)",
+  "profileTelegramLabel": "Telegram (without @)",
+  "profileUpdating": "Updating...",
+  "profileUpdate": "Update",
+  "riskLower": "Lower risk",
+  "riskMedium": "Medium risk",
+  "riskHigher": "Higher risk",
+  "testQuestionOfTotal": "Q{current} of {total}",
+  "@testQuestionOfTotal": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "historySessionsCount": "{count, plural, =1{1 session} other{{count} sessions}}",
+  "@historySessionsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "historyScoreDone": "{score} done",
+  "@historyScoreDone": {
+    "placeholders": {
+      "score": {
+        "type": "String"
+      }
+    }
+  },
+  "reviewCorrectWrong": "{correct} correct · {wrong} wrong",
+  "@reviewCorrectWrong": {
+    "placeholders": {
+      "correct": {
+        "type": "int"
+      },
+      "wrong": {
+        "type": "int"
+      }
+    }
+  },
+  "reviewQuestionOfTotal": "Question {current} of {total}",
+  "@reviewQuestionOfTotal": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "testCorrect": "Correct",
+  "testNotThisTime": "Not this time",
+  "testHintCorrect": "The marks are in the explanation — elimination, statement analysis, and the trap option.",
+  "testHintWrong": "Read how to kill the other options — that's the real practice.",
+  "testShowExplanation": "Show explanation",
+  "testConfidenceIntroTitle": "From now on, let's also check how sure you are.",
+  "testConfidenceWhy": "Why? ",
+  "testConfidenceWhyBody": "To catch your confident mistakes.",
+  "testHowSure": "How sure are you?",
+  "testHowSureBody": "Pick before you see the answer — this builds your Danger Zone map.",
+  "testLeaveDemoTitle": "Leave demo?",
+  "testLeaveDemoBody": "Your progress will be saved. Resume from Home when you're ready.",
+  "testLeave": "Leave",
+  "testGoBackTitle": "Go back?",
+  "testLeaveTestTitle": "Leave test?",
+  "testGoBackBody": "Are you sure? Your progress will be lost.",
+  "testLeaveTestBody": "Your progress will be saved and you can resume later.",
+  "testGoBack": "Go back",
+  "testSessionNotFound": "Session not found",
+  "commonSomethingWrong": "Something went wrong",
+  "testSessionLoadFailed": "Could not load test session.",
+  "testTimerPausedNotice": "Timer paused while app was closed. Remaining time may not be accurate.",
+  "testBookmarked": "Bookmarked",
+  "testBookmarkRemoved": "Bookmark removed",
+  "testGridHint": "Tap any number to jump to that question",
+  "testGridCurrent": "Current",
+  "testGridAttempted": "Attempted",
+  "testGridFlagged": "Flagged",
+  "testGridNotVisited": "Not visited",
+  "testGridSkipped": "Skipped",
+  "testSubmitTest": "Submit Test",
+  "testSubmit": "Submit",
+  "commonBack": "Back",
+  "testPrev": "Prev",
+  "testNext": "Next",
+  "demoLoadFailed": "Could not load the demo test.",
+  "historyTitle": "History",
+  "historyLoadFailed": "Failed to load history",
+  "historyEmpty": "No sessions yet",
+  "historyNoneFound": "No sessions found",
+  "historyEmptyHint": "Complete a test to see your history here",
+  "historyChangeFilters": "Try changing your filters",
+  "commonAll": "All",
+  "historyAbandoned": "Abandoned",
+  "historyInProgress": "In progress",
+  "historyRestart": "Restart",
+  "reviewShareTitle": "Share this test",
+  "reviewShareBody": "Tap Share to send this question (or the whole test) to friends.\n\nFound an error in a question? Use Share to report it to the UPSC Wars developer.",
+  "reviewQuestionLabel": "QUESTION",
+  "reviewPrevArrow": "← Prev",
+  "reviewNextArrow": "Next →",
+  "reviewRemoveBookmark": "Remove bookmark",
+  "reviewInRevisionQueue": "In revision queue",
+  "reviewAddToRevisionQueue": "Add to revision queue",
+  "reviewCorrectAnswer": "Correct answer",
+  "reviewIncorrect": "Incorrect",
+  "reviewTimesUp": "Time's up",
+  "reviewSkipped": "Skipped",
+  "reviewYourPick": "Your pick"
+}

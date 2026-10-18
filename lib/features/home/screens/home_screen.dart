@@ -51,6 +51,7 @@ import '../../../shared/widgets/rate_review_sheet.dart';
 import '../../../shared/widgets/soft_update_banner.dart';
 import '../widgets/daily_rituals_intro_sheet.dart';
 import '../widgets/data_restore_banner.dart';
+import '../../../l10n/l10n.dart';
 
 class HomeScreen extends HookConsumerWidget {
   const HomeScreen({super.key, this.heroSlot});
@@ -111,7 +112,7 @@ class HomeScreen extends HookConsumerWidget {
             context: context,
             ref: ref,
             barrierDismissible: false,
-            confirmLabel: 'Continue',
+            confirmLabel: context.l10n.commonContinue,
           ),
         );
         if (!context.mounted) return;
@@ -130,8 +131,8 @@ class HomeScreen extends HookConsumerWidget {
         AppToast.showText(
           context,
           milestone == 3
-              ? '3-day streak — the habit is sticking.'
-              : '$milestone-day streak. Keep showing up.',
+              ? context.l10n.homeStreak3Toast
+              : context.l10n.homeStreakMilestoneToast(milestone),
         );
       }());
       return null;
@@ -140,12 +141,12 @@ class HomeScreen extends HookConsumerWidget {
     useEffect(() {
       home.whenData((h) {
         cachedStreakText.value =
-            '${h.streakCount} day${h.streakCount == 1 ? '' : 's'}';
+            context.l10n.homeStreakDays(h.streakCount);
       });
       return null;
     }, [home]);
 
-    final greeting = _greeting();
+    final greeting = _greeting(context);
     final user = authState.asData?.value;
     final accountSignedIn = AuthSession.isAccountSignedIn(user);
     final rawName = user?.displayName?.trim() ?? '';
@@ -206,14 +207,14 @@ class HomeScreen extends HookConsumerWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  'Question bank unavailable',
+                                  context.l10n.homeQuestionBankUnavailable,
                                   style: AppTextStyles.label().copyWith(
                                     color: scheme.onSurface,
                                   ),
                                 ),
                                 const SizedBox(height: AppSpacing.xs),
                                 Text(
-                                  'The question database could not be opened. Reinstall the app or ensure storage is available, then restart.',
+                                  context.l10n.homeQuestionBankUnavailableBody,
                                   style: AppTextStyles.bodySm().copyWith(
                                     color: scheme.onSurfaceVariant,
                                   ),
@@ -326,14 +327,14 @@ class HomeScreen extends HookConsumerWidget {
                                     final firstName = userName.split(' ').first;
                                     final title = journeyActive
                                         ? (firstName.toLowerCase() == 'aspirant'
-                                              ? 'Hey there'
-                                              : 'Hey, $firstName')
+                                              ? context.l10n.homeGreetingGeneric
+                                              : context.l10n.homeGreetingNamed(firstName))
                                         : greeting;
                                     final subtitle = !journeyActive
                                         ? userName
                                         : (journey?.demoInProgress ?? false)
-                                        ? 'Resume demo test'
-                                        : 'Start with the demo test';
+                                        ? context.l10n.homeResumeDemoTest
+                                        : context.l10n.homeStartWithDemoTest;
                                     return Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
@@ -443,10 +444,10 @@ class HomeScreen extends HookConsumerWidget {
                             );
                             final streakLabel = home.when(
                               data: (h) =>
-                                  '${h.streakCount} day${h.streakCount == 1 ? '' : 's'}',
-                              loading: () => cachedStreakText.value ?? '0 days',
+                                  context.l10n.homeStreakDays(h.streakCount),
+                              loading: () => cachedStreakText.value ?? context.l10n.homeStreakDays(0),
                               error: (_, __) =>
-                                  cachedStreakText.value ?? '0 days',
+                                  cachedStreakText.value ?? context.l10n.homeStreakDays(0),
                             );
                             final hot = streakCount >= 3;
                             return Container(
@@ -575,7 +576,7 @@ class HomeScreen extends HookConsumerWidget {
                         children: [
                           OutlinedButton(
                             onPressed: () => ref.invalidate(homeStateProvider),
-                            child: Text('Retry', style: AppTextStyles.label()),
+                            child: Text(context.l10n.commonRetry, style: AppTextStyles.label()),
                           ),
                         ],
                       ),
@@ -609,7 +610,7 @@ class HomeScreen extends HookConsumerWidget {
                             onPressed: () =>
                                 unawaited(showRateReviewSheet(context, ref)),
                             child: Text(
-                              'Rate & review',
+                              context.l10n.homeRateReview,
                               style: AppTextStyles.labelSm().copyWith(
                                 fontWeight: FontWeight.w700,
                                 decoration: TextDecoration.underline,
@@ -630,11 +631,12 @@ class HomeScreen extends HookConsumerWidget {
     );
   }
 
-  String _greeting() {
+  String _greeting(BuildContext context) {
     final h = DateTime.now().hour;
-    if (h < 12) return 'Good morning';
-    if (h < 17) return 'Good afternoon';
-    return 'Good evening';
+    final l10n = context.l10n;
+    if (h < 12) return l10n.homeGoodMorning;
+    if (h < 17) return l10n.homeGoodAfternoon;
+    return l10n.homeGoodEvening;
   }
 
   String _avatarInitials(String? displayName) {
@@ -694,7 +696,7 @@ class _TrapPill extends StatelessWidget {
             Icon(Icons.warning_amber_rounded, size: 13, color: fg),
             const SizedBox(width: 3),
             Text(
-              count > 0 ? '$count trap${count == 1 ? '' : 's'}' : 'Traps',
+              count > 0 ? context.l10n.homeTrapsCount(count) : 'Traps',
               style: AppTextStyles.caption().copyWith(
                 color: scheme.onSurface,
                 fontWeight: FontWeight.w600,
@@ -794,7 +796,7 @@ class _TrapPatternsCard extends StatelessWidget {
                     ),
                     const SizedBox(height: AppSpacing.xs),
                     Text(
-                      "You've been caught by $trapCount trap ${trapCount == 1 ? 'type' : 'types'}",
+                      context.l10n.homeCaughtByTraps(trapCount),
                       style: AppTextStyles.bodySm().copyWith(
                         color: scheme.onSurfaceVariant,
                       ),
@@ -1065,7 +1067,7 @@ class _SubjectGrid extends ConsumerWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            secondary ? 'PICK ANY SUBJECT' : 'SUBJECTS',
+            secondary ? context.l10n.homePickAnySubject : context.l10n.homeSubjects,
             style: AppTextStyles.caption().copyWith(
               color: scheme.onSurfaceVariant,
               letterSpacing: secondary ? 0.8 : 0.6,
@@ -1263,7 +1265,7 @@ class _QuickPracticeSection extends HookConsumerWidget {
         const SizedBox(height: AppSpacing.sm),
         _QuickPracticeCard(
           title: 'Bookmarked Questions',
-          subtitle: 'Questions you saved',
+          subtitle: context.l10n.homeQuestionsYouSaved,
           count: bmN,
           icon: Icons.bookmark_outline,
           color: AppColors.info,
@@ -1301,8 +1303,8 @@ class _QuickPracticeCard extends HookConsumerWidget {
     final loading = useState(false);
     final capped = count.clamp(1, 10);
     final btnLabel = count >= 10
-        ? 'Start 10-question test'
-        : 'Start $capped-question test';
+        ? context.l10n.homeStartNQuestionTest(10)
+        : context.l10n.homeStartNQuestionTest(capped);
     final iconBg = isDark
         ? color.withValues(alpha: 0.25)
         : color.withValues(alpha: 0.12);
@@ -1374,7 +1376,7 @@ class _QuickPracticeCard extends HookConsumerWidget {
                 ),
                 const SizedBox(height: AppSpacing.xs),
                 Text(
-                  '$count available',
+                  context.l10n.homeCountAvailable(count),
                   style: AppTextStyles.caption().copyWith(color: color),
                 ),
               ],

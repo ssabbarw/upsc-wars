@@ -11,6 +11,7 @@ import '../../../core/providers/super_user_provider.dart';
 import '../../../core/providers/user_database_provider.dart';
 import '../../home/providers/auth_providers.dart';
 import '../data/series_local_repository.dart';
+import '../data/test_series_access_service.dart';
 import '../data/test_series_purchase_service.dart';
 import '../data/test_series_repository.dart';
 import '../domain/series_stats.dart';
@@ -32,15 +33,20 @@ final seriesLocalRepositoryProvider = Provider<SeriesLocalRepository>(
   (ref) => SeriesLocalRepository(ref.watch(userDatabaseProvider)),
 );
 
-/// Series ids the signed-in user owns (RevenueCat entitlements, cached
-/// locally so access works offline).
+final testSeriesAccessServiceProvider = Provider<TestSeriesAccessService>(
+  (ref) => TestSeriesAccessService(),
+);
+
+/// Series ids the signed-in user owns: RevenueCat entitlements (paid) plus
+/// account grants from a promo code or free offer (`test_series_grants/{uid}`),
+/// cached locally so access works offline.
 ///
 /// A series pass is one-time and never expires: once an id is in this set the
 /// user keeps full access to that series' tests, history and dashboard.
 ///
-/// In [kDebugMode] nothing is cached: ownership follows RevenueCat only, so
-/// cancelled license-test purchases can be bought again without clearing app
-/// data.
+/// In [kDebugMode] nothing is cached: ownership follows RevenueCat and the
+/// server grants only, so cancelled license-test purchases can be bought again
+/// without clearing app data.
 class OwnedSeriesNotifier extends AsyncNotifier<Set<String>> {
   String _cacheKey(String? uid) => 'test_series_owned_ids_${uid ?? 'anon'}';
 
@@ -61,6 +67,21 @@ class OwnedSeriesNotifier extends AsyncNotifier<Set<String>> {
     await prefs.setStringList(_cacheKey(uid), ids.toList());
   }
 
+  /// Grants for [uid] from Firestore. Null when signed out or the read failed
+  /// (callers then keep what they already know instead of dropping access).
+  Future<Set<String>?> _fetchGrants(String? uid) async {
+    if (uid == null) return null;
+    try {
+      return await ref
+          .read(testSeriesAccessServiceProvider)
+          .fetchGrantedSeriesIds(uid)
+          // A slow network must not hold the entry screen on a spinner.
+          .timeout(const Duration(seconds: 6));
+    } on Object {
+      return null;
+    }
+  }
+
   @override
   Future<Set<String>> build() async {
     final service = ref.watch(testSeriesPurchaseServiceProvider);
@@ -68,51 +89,60 @@ class OwnedSeriesNotifier extends AsyncNotifier<Set<String>> {
     final uid = AuthSession.isAccountSignedIn(user) ? user!.uid : null;
 
     final cached = await _readCache(uid);
+    // Latest grants we know about; RevenueCat updates must not drop them.
+    var grants = const <String>{};
 
     final sub = service.ownedChanges.listen((ids) {
       if (kDebugMode) {
         // Trust live entitlements only (no sticky merge).
-        state = AsyncData(ids);
+        state = AsyncData({...ids, ...grants});
         return;
       }
       // Never drop a cached pass because of a transient empty answer.
-      final merged = {...cached, ...ids};
+      final merged = {...cached, ...grants, ...ids};
       unawaited(_writeCache(uid, merged));
       state = AsyncData(merged);
     });
     ref.onDispose(sub.cancel);
 
-    if (!service.isSupported) return cached;
-    try {
-      await service.sync(accountUid: uid);
-      final live = await service.ownedSeriesIds();
-      if (kDebugMode) return live;
-      final merged = {...cached, ...live};
-      await _writeCache(uid, merged);
-      return merged;
-    } on Object {
-      return cached;
+    grants = await _fetchGrants(uid) ?? const <String>{};
+
+    var live = const <String>{};
+    if (service.isSupported) {
+      try {
+        await service.sync(accountUid: uid);
+        live = await service.ownedSeriesIds();
+      } on Object {
+        // Fall through with whatever the cache and grants say.
+      }
     }
+    if (kDebugMode) return {...live, ...grants};
+    final merged = {...cached, ...grants, ...live};
+    await _writeCache(uid, merged);
+    return merged;
   }
 
-  /// Re-reads entitlements from RevenueCat (after a purchase or restore).
+  /// Re-reads entitlements and grants (after a purchase, restore or redeem).
   ///
   /// Soft-updates [state] instead of [invalidateSelf] so the series home
   /// (and its TabBar) is not torn down into a loading spinner mid-frame.
   Future<void> refresh() async {
     final service = ref.read(testSeriesPurchaseServiceProvider);
-    final user = ref.read(authStateChangesProvider).asData?.value;
+    final user = FirebaseAuth.instance.currentUser;
     final uid = AuthSession.isAccountSignedIn(user) ? user!.uid : null;
-    if (!service.isSupported) return;
     try {
-      await service.sync(accountUid: uid);
-      final live = await service.ownedSeriesIds();
+      final grants = await _fetchGrants(uid) ?? const <String>{};
+      var live = const <String>{};
+      if (service.isSupported) {
+        await service.sync(accountUid: uid);
+        live = await service.ownedSeriesIds();
+      }
       if (kDebugMode) {
-        state = AsyncData(live);
+        state = AsyncData({...live, ...grants});
         return;
       }
       final current = state.asData?.value ?? await _readCache(uid);
-      final merged = {...current, ...live};
+      final merged = {...current, ...grants, ...live};
       await _writeCache(uid, merged);
       state = AsyncData(merged);
     } on Object {
@@ -120,18 +150,33 @@ class OwnedSeriesNotifier extends AsyncNotifier<Set<String>> {
     }
   }
 
-  /// Restores purchases from the store account. Returns the owned ids.
+  /// Restores access for the signed-in account: store purchases (RevenueCat)
+  /// plus free-access grants. Returns the owned ids.
+  ///
+  /// Throws only when *neither* source could be checked, so "nothing found"
+  /// is never reported just because the network was down.
   Future<Set<String>> restore() async {
     final service = ref.read(testSeriesPurchaseServiceProvider);
-    final restored = await service.restore();
+    final user = FirebaseAuth.instance.currentUser;
+    final uid = AuthSession.isAccountSignedIn(user) ? user!.uid : null;
+
+    Set<String> restored = const {};
+    Object? storeError;
+    try {
+      restored = await service.restore();
+    } on Object catch (e) {
+      storeError = e;
+    }
+    final grants = await _fetchGrants(uid);
+    if (storeError != null && grants == null) throw storeError;
+
+    final fresh = {...restored, ...?grants};
     if (kDebugMode) {
-      state = AsyncData(restored);
-      return restored;
+      state = AsyncData(fresh);
+      return fresh;
     }
     final current = state.asData?.value ?? const <String>{};
-    final merged = {...current, ...restored};
-    final user = ref.read(authStateChangesProvider).asData?.value;
-    final uid = AuthSession.isAccountSignedIn(user) ? user!.uid : null;
+    final merged = {...current, ...fresh};
     await _writeCache(uid, merged);
     state = AsyncData(merged);
     return merged;
@@ -151,12 +196,16 @@ final activeSeriesIdProvider = FutureProvider<String>(
 /// Whether the home entry should show. Buyers always see it (even after sales
 /// are switched off); everyone else only while selling is on. Super-users
 /// always see it so they can test before launch.
+///
+/// A live "free for everyone" offer also shows it, so the push that announces
+/// the offer always lands somewhere even while sales are off.
 final testSeriesEntryVisibleProvider = FutureProvider<bool>((ref) async {
   // Debug builds always show it so the feature can be developed and tested
   // without touching Remote Config. Release builds are unaffected.
   if (kDebugMode || ref.watch(isSuperUserProvider)) return true;
   final owned = await ref.watch(ownedSeriesIdsProvider.future);
   if (owned.isNotEmpty) return true;
+  if (await ref.watch(testSeriesOpenOfferProvider.future) != null) return true;
   return ref.watch(testSeriesSalesRemoteEnabledProvider.future);
 });
 
@@ -164,6 +213,30 @@ final testSeriesEntryVisibleProvider = FutureProvider<bool>((ref) async {
 final testSeriesCanSellProvider = FutureProvider<bool>((ref) async {
   if (kDebugMode || ref.watch(isSuperUserProvider)) return true;
   return ref.watch(testSeriesSalesRemoteEnabledProvider.future);
+});
+
+/// The live "free for everyone" offer on the active series, or null.
+///
+/// Public read, so it works signed out. Any failure counts as "no offer":
+/// this only ever adds a free path, it never gates one.
+final testSeriesOpenOfferProvider =
+    FutureProvider.autoDispose<SeriesOpenOffer?>((ref) async {
+      try {
+        final seriesId = await ref.watch(activeSeriesIdProvider.future);
+        return await ref
+            .read(testSeriesAccessServiceProvider)
+            .fetchOpenOffer(seriesId)
+            .timeout(const Duration(seconds: 6));
+      } on Object {
+        return null;
+      }
+    });
+
+/// Whether the active series can be unlocked at all right now: on sale, or
+/// free through a live offer. Drives the unlock bar and entry screen.
+final testSeriesCanUnlockProvider = FutureProvider<bool>((ref) async {
+  if (await ref.watch(testSeriesCanSellProvider.future)) return true;
+  return await ref.watch(testSeriesOpenOfferProvider.future) != null;
 });
 
 /// A series with all its tests. Emits the cached copy first (instant,

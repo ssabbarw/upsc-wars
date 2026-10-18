@@ -33,6 +33,9 @@ import '../features/community/services/community_bucket_presence_service.dart';
 import '../features/home/providers/auth_providers.dart';
 import '../features/home/providers/data_restore_provider.dart';
 import '../core/providers/prefs_provider.dart';
+import '../core/providers/app_language_helpers.dart';
+import '../core/providers/catalog_providers.dart' show appLanguageProvider;
+import '../l10n/l10n.dart';
 import '../core/providers/user_database_provider.dart';
 import '../core/auth/super_user.dart';
 import '../core/router/app_router.dart' show appRouterProvider;
@@ -322,12 +325,22 @@ class _RootMaterialApp extends HookConsumerWidget {
           service.darkModeEnabled ? ThemeMode.dark : ThemeMode.light,
       orElse: () => ThemeMode.system,
     );
+    // One language setting drives both the UI and question content. `.value`
+    // keeps the previous language while the provider reloads after a switch,
+    // so the UI does not flash back to English.
+    final language = normalizeAppLanguage(
+      ref.watch(appLanguageProvider).value ?? prefs.value?.language,
+    );
+    AppL10n.locale = Locale(language);
     return MaterialApp.router(
       title: AppConstants.appDisplayName,
       debugShowCheckedModeBanner: false,
       theme: AppTheme.light(),
       darkTheme: AppTheme.dark(),
       themeMode: themeMode,
+      locale: Locale(language),
+      supportedLocales: AppLocalizations.supportedLocales,
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
       routerConfig: router,
       builder: (context, child) {
         if (child == null) {

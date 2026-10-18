@@ -14,6 +14,7 @@ import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/widgets/dismissible_modal_sheet.dart';
 import '../providers/home_activation_journey_provider.dart';
 import 'get_started_card.dart';
+import '../../../l10n/l10n.dart';
 
 /// START HERE — cold-start card until the demo test is done.
 class ActivationJourneyCard extends HookConsumerWidget {
@@ -73,7 +74,7 @@ class ActivationJourneyCard extends HookConsumerWidget {
               Row(
                 children: [
                   Text(
-                    'START HERE',
+                    context.l10n.activationStartHere,
                     style: AppTextStyles.caption().copyWith(
                       color: ctaColor,
                       fontWeight: FontWeight.w800,
@@ -97,8 +98,8 @@ class ActivationJourneyCard extends HookConsumerWidget {
               const SizedBox(height: AppSpacing.sm),
               Text(
                 state.demoInProgress
-                    ? 'Resume demo test'
-                    : 'Take the 5-minute demo test',
+                    ? context.l10n.homeResumeDemoTest
+                    : context.l10n.activationTakeDemo,
                 style: AppTextStyles.h1().copyWith(
                   color: Colors.white,
                   fontWeight: FontWeight.w800,
@@ -110,9 +111,9 @@ class ActivationJourneyCard extends HookConsumerWidget {
               Text(
                 state.demoInProgress
                     ? (state.demoInProgressTotal > 0
-                          ? 'You left at question ${state.demoInProgressDone} of ${state.demoInProgressTotal}. Pick up where you stopped.'
-                          : 'Pick up where you left off.')
-                    : 'See how a trap question fools confident aspirants \u2014 and how Danger Zone catches it.',
+                          ? context.l10n.activationLeftAt(state.demoInProgressDone, state.demoInProgressTotal)
+                          : context.l10n.activationPickUp)
+                    : context.l10n.activationDemoPitch,
                 style: AppTextStyles.bodySm().copyWith(
                   color: Colors.white.withValues(alpha: 0.72),
                   height: 1.5,
@@ -137,8 +138,8 @@ class ActivationJourneyCard extends HookConsumerWidget {
                     children: [
                       Text(
                         state.demoInProgress
-                            ? 'Resume demo test'
-                            : 'Start the test',
+                            ? context.l10n.homeResumeDemoTest
+                            : context.l10n.activationStartTest,
                         style: AppTextStyles.label().copyWith(
                           color: Colors.white,
                           fontWeight: FontWeight.w700,
@@ -235,7 +236,7 @@ class _ActivationJourneySnoozeSheet extends ConsumerWidget {
                   ),
                 ),
                 Text(
-                  'Hide for now?',
+                  context.l10n.activationHideTitle,
                   style: AppTextStyles.h3().copyWith(
                     fontWeight: FontWeight.w800,
                     color: scheme.onSurface,
@@ -243,7 +244,7 @@ class _ActivationJourneySnoozeSheet extends ConsumerWidget {
                 ),
                 const SizedBox(height: AppSpacing.sm),
                 Text(
-                  'We\u2019ll bring this back tomorrow.',
+                  context.l10n.activationHideBody,
                   style: AppTextStyles.bodySm().copyWith(
                     color: scheme.onSurfaceVariant,
                     height: 1.4,
@@ -262,7 +263,7 @@ class _ActivationJourneySnoozeSheet extends ConsumerWidget {
                       ),
                     ),
                     child: Text(
-                      'Hide for now',
+                      context.l10n.activationHideConfirm,
                       style: AppTextStyles.label().copyWith(
                         fontWeight: FontWeight.w700,
                       ),
@@ -273,7 +274,7 @@ class _ActivationJourneySnoozeSheet extends ConsumerWidget {
                 TextButton(
                   onPressed: () => Navigator.pop(context),
                   child: Text(
-                    'Keep going',
+                    context.l10n.activationKeepGoing,
                     style: AppTextStyles.labelSm().copyWith(
                       color: AppColors.primaryDark,
                       fontWeight: FontWeight.w700,

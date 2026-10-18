@@ -11,6 +11,7 @@ import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/auth/ensure_account_sign_in.dart';
+import '../data/test_series_access_service.dart';
 import '../data/test_series_purchase_service.dart';
 import '../domain/test_series_models.dart';
 import '../providers/test_series_providers.dart';
@@ -51,6 +52,19 @@ class SeriesPaywallSheet extends HookConsumerWidget {
     final productAsync = ref.watch(seriesProductProvider(bundle.info.productId));
     final busy = useState(false);
     final canSell = ref.watch(testSeriesCanSellProvider).asData?.value ?? false;
+    final access = ref.watch(testSeriesAccessServiceProvider);
+    final offer = ref.watch(testSeriesOpenOfferProvider).asData?.value;
+    final isFreeOffer = offer != null && offer.seriesId == bundle.info.id;
+
+    final showCodeField = useState(false);
+    final codeCtrl = useTextEditingController();
+    final codeError = useState<String?>(null);
+    // Set when Restore finds nothing, so the user sees why and what to do next.
+    final restoreNote = useState<String?>(null);
+
+    bool unlocks(Set<String> owned) =>
+        owned.contains(bundle.info.entitlementId) ||
+        owned.contains(bundle.info.id);
 
     final tests = bundle.tests;
     final paid = tests.where((t) => !t.isFree).length;
@@ -90,14 +104,14 @@ class SeriesPaywallSheet extends HookConsumerWidget {
             // Store success ≠ entitlement. Unlock only when RC grants
             // [bundle.info.entitlementId] (e.g. prelims_2027).
             var owned = outcome.ownedIds ?? const <String>{};
-            if (!owned.contains(bundle.info.entitlementId)) {
+            if (!unlocks(owned)) {
               owned = await ref.read(ownedSeriesIdsProvider.notifier).restore();
             } else {
               await ref.read(ownedSeriesIdsProvider.notifier).refresh();
               owned = await ref.read(ownedSeriesIdsProvider.future);
             }
             if (!context.mounted) return;
-            if (owned.contains(bundle.info.entitlementId)) {
+            if (unlocks(owned)) {
               toast('Unlocked! Every test in this series is now yours.');
               Navigator.of(context).pop(true);
             } else {
@@ -122,27 +136,96 @@ class SeriesPaywallSheet extends HookConsumerWidget {
       }
     }
 
-    Future<void> restore() async {
+    /// Redeems [code] for the signed-in account (a promo code the user typed,
+    /// or the hidden code behind a free-for-everyone offer).
+    Future<void> redeem(String code, {required String signInReason}) async {
       if (busy.value) return;
       busy.value = true;
+      codeError.value = null;
+      restoreNote.value = null;
       try {
         final signedIn = await ensureAccountSignedIn(
           context: context,
           ref: ref,
-          reason: 'Sign in with the Google account you used to buy.',
+          reason: signInReason,
+        );
+        if (!signedIn || !context.mounted) return;
+
+        final outcome = await access.redeem(code);
+        if (!context.mounted) return;
+        if (!outcome.granted) {
+          final message = outcome.message ?? 'That code could not be applied.';
+          if (showCodeField.value) {
+            codeError.value = message;
+          } else {
+            toast(message);
+          }
+          return;
+        }
+
+        final notifier = ref.read(ownedSeriesIdsProvider.notifier);
+        await notifier.refresh();
+        var owned = await ref.read(ownedSeriesIdsProvider.future);
+        if (!unlocks(owned)) owned = await notifier.restore();
+        if (!context.mounted) return;
+        if (unlocks(owned)) {
+          toast(
+            outcome.kind == RedeemKind.alreadyOwned
+                ? 'You already have access to this series.'
+                : 'Unlocked! Every test in this series is now yours.',
+          );
+          Navigator.of(context).pop(true);
+        } else {
+          toast(
+            'Your access was added but has not loaded yet. '
+            'Tap Restore purchase in a moment.',
+          );
+        }
+      } on Object {
+        toast('Something went wrong. Please try again.');
+      } finally {
+        busy.value = false;
+      }
+    }
+
+    Future<void> applyTypedCode() async {
+      final code = codeCtrl.text.trim();
+      if (code.isEmpty) {
+        codeError.value = 'Enter your code first.';
+        return;
+      }
+      await redeem(
+        code,
+        signInReason: 'Sign in with Google so your access is saved to your account.',
+      );
+    }
+
+    Future<void> restore() async {
+      if (busy.value) return;
+      busy.value = true;
+      restoreNote.value = null;
+      try {
+        final signedIn = await ensureAccountSignedIn(
+          context: context,
+          ref: ref,
+          reason: 'Sign in with the Google account you used before.',
         );
         if (!signedIn || !context.mounted) return;
         await service.sync(accountUid: FirebaseAuth.instance.currentUser?.uid);
         final owned = await ref.read(ownedSeriesIdsProvider.notifier).restore();
         if (!context.mounted) return;
-        if (owned.contains(bundle.info.entitlementId)) {
-          toast('Purchase restored.');
+        if (unlocks(owned)) {
+          toast('Access restored.');
           Navigator.of(context).pop(true);
         } else {
-          toast('No purchase found for this account.');
+          restoreNote.value = isFreeOffer
+              ? 'Nothing was found for this account. You can claim your free access below.'
+              : canSell
+              ? 'Nothing was found for this account. You can unlock the series below.'
+              : 'Nothing was found for this account.';
         }
       } on Object {
-        toast('Could not restore purchases. Please try again.');
+        toast('Could not restore. Please check your connection and try again.');
       } finally {
         busy.value = false;
       }
@@ -195,7 +278,42 @@ class SeriesPaywallSheet extends HookConsumerWidget {
               ),
             ],
             const SizedBox(height: AppSpacing.xl),
-            if (!service.isSupported)
+            if (restoreNote.value != null) ...[
+              _Notice(restoreNote.value!, color: scheme.onSurface),
+              const SizedBox(height: AppSpacing.md),
+            ],
+            if (isFreeOffer) ...[
+              _Notice(
+                'Free for you for a limited time. Claim it once and it stays '
+                'yours, on every device you sign in on.',
+                color: scheme.onSurface,
+              ),
+              const SizedBox(height: AppSpacing.md),
+              FilledButton(
+                onPressed: busy.value
+                    ? null
+                    : () => unawaited(
+                        redeem(
+                          offer.code,
+                          signInReason:
+                              'Sign in with Google so your free access is saved to your account.',
+                        ),
+                      ),
+                style: FilledButton.styleFrom(
+                  minimumSize: const Size.fromHeight(52),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(AppRadius.lg),
+                  ),
+                ),
+                child: busy.value
+                    ? const SizedBox(
+                        width: 22,
+                        height: 22,
+                        child: CircularProgressIndicator(strokeWidth: 2),
+                      )
+                    : const Text('Claim free access'),
+              ),
+            ] else if (!service.isSupported)
               _Notice(
                 'Purchases are not available on this device or build yet.',
                 color: scheme.onSurfaceVariant,
@@ -225,6 +343,54 @@ class SeriesPaywallSheet extends HookConsumerWidget {
                       ),
               ),
             const SizedBox(height: AppSpacing.sm),
+            if (showCodeField.value)
+              Padding(
+                padding: const EdgeInsets.only(bottom: AppSpacing.sm),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      child: TextField(
+                        controller: codeCtrl,
+                        enabled: !busy.value,
+                        autofocus: true,
+                        textCapitalization: TextCapitalization.characters,
+                        autocorrect: false,
+                        enableSuggestions: false,
+                        textInputAction: TextInputAction.done,
+                        onChanged: (_) => codeError.value = null,
+                        onSubmitted: (_) => unawaited(applyTypedCode()),
+                        decoration: InputDecoration(
+                          labelText: 'Discount code',
+                          errorText: codeError.value,
+                          errorMaxLines: 2,
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(AppRadius.md),
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: AppSpacing.sm),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 4),
+                      child: FilledButton.tonal(
+                        onPressed: busy.value
+                            ? null
+                            : () => unawaited(applyTypedCode()),
+                        style: FilledButton.styleFrom(
+                          minimumSize: const Size(0, 48),
+                        ),
+                        child: const Text('Apply'),
+                      ),
+                    ),
+                  ],
+                ),
+              )
+            else
+              TextButton(
+                onPressed: busy.value ? null : () => showCodeField.value = true,
+                child: const Text('Have a code?'),
+              ),
             TextButton(
               onPressed: busy.value ? null : () => unawaited(restore()),
               child: const Text('Restore purchase'),

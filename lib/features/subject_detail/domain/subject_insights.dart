@@ -1,15 +1,18 @@
+import '../../../l10n/l10n.dart';
 /// Risk tier from percentile bands within a subject (topic ranking).
 enum RiskTier { low, medium, high }
 
 extension RiskTierX on RiskTier {
-  String get label {
+  String get label => labelFor(appL10n);
+
+  String labelFor(AppLocalizations l10n) {
     switch (this) {
       case RiskTier.low:
-        return 'Lower risk';
+        return l10n.riskLower;
       case RiskTier.medium:
-        return 'Medium risk';
+        return l10n.riskMedium;
       case RiskTier.high:
-        return 'Higher risk';
+        return l10n.riskHigher;
     }
   }
 

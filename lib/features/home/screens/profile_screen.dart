@@ -17,6 +17,7 @@ import '../services/profile_photo_service.dart';
 import '../../../shared/widgets/app_toast.dart';
 import '../../../shared/widgets/auth_provider_sign_in_button.dart';
 import '../../../shared/widgets/tappable_circular_avatar.dart';
+import '../../../l10n/l10n.dart';
 
 class _ProfileFooter extends ConsumerWidget {
   const _ProfileFooter();
@@ -35,7 +36,7 @@ class _ProfileFooter extends ConsumerWidget {
       children: [
         if (versionLabel.isNotEmpty) ...[
           Text(
-            'Current app version: $versionLabel',
+            context.l10n.profileAppVersion(versionLabel),
             textAlign: TextAlign.center,
             style: style,
           ),
@@ -45,13 +46,13 @@ class _ProfileFooter extends ConsumerWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text('Made with love ', style: style),
+            Text(context.l10n.profileMadeWithLove, style: style),
             Icon(
               Icons.favorite,
               size: 15,
               color: scheme.error.withValues(alpha: 0.9),
             ),
-            Text(' in Delhi', style: style),
+            Text(context.l10n.profileInDelhi, style: style),
           ],
         ),
       ],
@@ -70,11 +71,11 @@ class ProfileScreen extends HookConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Profile'),
+        title: Text(context.l10n.profileTitle),
         actions: [
           IconButton(
             icon: const Icon(Icons.settings_outlined),
-            tooltip: 'Settings',
+            tooltip: context.l10n.settingsTitle,
             onPressed: () => context.push('/settings'),
           ),
         ],
@@ -105,12 +106,12 @@ class ProfileScreen extends HookConsumerWidget {
                             ),
                             const SizedBox(height: 16),
                             Text(
-                              'Your Profile',
+                              context.l10n.profileYourProfile,
                               style: Theme.of(context).textTheme.titleLarge,
                             ),
                             const SizedBox(height: 8),
                             Text(
-                              'Sign in to join the community, participate in battles, and build your profile.',
+                              context.l10n.profileSignInPitch,
                               textAlign: TextAlign.center,
                               style: Theme.of(context).textTheme.bodyMedium,
                             ),
@@ -136,8 +137,8 @@ class ProfileScreen extends HookConsumerWidget {
                                                 .signInWithApple(),
                                       isLoading: isBusy,
                                       text: isBusy
-                                          ? 'Signing in...'
-                                          : 'Continue with Apple',
+                                          ? context.l10n.authSigningIn
+                                          : context.l10n.authContinueApple,
                                     ),
                                     const SizedBox(height: 12),
                                   ],
@@ -152,8 +153,8 @@ class ProfileScreen extends HookConsumerWidget {
                                               .signInWithGoogle(),
                                     isLoading: isBusy,
                                     text: isBusy
-                                        ? 'Signing in...'
-                                        : 'Continue with Google',
+                                        ? context.l10n.authSigningIn
+                                        : context.l10n.authContinueGoogle,
                                   ),
                                 ],
                               ),
@@ -195,7 +196,7 @@ class _SignedInProfileBody extends HookConsumerWidget {
         final (ok, err) = await photoService.pickCropUploadAndUpdateProfile();
         if (!context.mounted) return;
         if (ok) {
-          AppToast.showText(context, 'Profile photo updated');
+          AppToast.showText(context, context.l10n.profilePhotoUpdated);
           unawaited(CommunityBucketPresenceService.syncForCurrentUser(ref));
         } else if (err != null) {
           AppToast.showText(context, err);
@@ -287,7 +288,7 @@ class _SignedInProfileBody extends HookConsumerWidget {
                           if (kIsWeb) ...[
                             const SizedBox(height: 10),
                             Text(
-                              'Profile photo can be changed in the Android or iOS app.',
+                              context.l10n.profilePhotoWebHint,
                               textAlign: TextAlign.center,
                               style: Theme.of(context).textTheme.bodySmall
                                   ?.copyWith(color: scheme.onSurfaceVariant),
@@ -301,7 +302,7 @@ class _SignedInProfileBody extends HookConsumerWidget {
                           ),
                           const SizedBox(height: 4),
                           Text(
-                            user.email ?? 'No email',
+                            user.email ?? context.l10n.profileNoEmail,
                             textAlign: TextAlign.center,
                             style: Theme.of(context).textTheme.bodyMedium,
                           ),
@@ -320,20 +321,20 @@ class _SignedInProfileBody extends HookConsumerWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Account',
+                              context.l10n.settingsSectionAccount,
                               style: Theme.of(context).textTheme.titleMedium,
                             ),
                             const SizedBox(height: 12),
-                            const _InfoRow(
+                            _InfoRow(
                               icon: Icons.verified_user_outlined,
-                              label: 'Authentication',
-                              value: 'Account connected',
+                              label: context.l10n.profileAuthentication,
+                              value: context.l10n.profileAccountConnected,
                             ),
                             const SizedBox(height: 10),
-                            const _InfoRow(
+                            _InfoRow(
                               icon: Icons.shield_outlined,
-                              label: 'Privacy',
-                              value: 'Your account data remains secure',
+                              label: context.l10n.settingsSectionPrivacy,
+                              value: context.l10n.profileDataSecure,
                             ),
                           ],
                         ),
@@ -401,14 +402,14 @@ class _CommunityProfileCard extends HookConsumerWidget {
 
       final tele = telegramController.text.trim();
       if (tele.contains('/')) {
-        AppToast.showText(context, 'Telegram username should not contain /');
+        AppToast.showText(context, context.l10n.profileTelegramSlash);
         return;
       }
 
       final instaRaw = instagramController.text.trim();
       final insta = instaRaw.replaceAll('@', '').trim();
       if (insta.contains('/')) {
-        AppToast.showText(context, 'Instagram username should not contain /');
+        AppToast.showText(context, context.l10n.profileInstagramSlash);
         return;
       }
 
@@ -425,7 +426,7 @@ class _CommunityProfileCard extends HookConsumerWidget {
               'lastOnlineTime': DateTime.now().millisecondsSinceEpoch,
             }, SetOptions(merge: true));
         if (context.mounted) {
-          AppToast.showText(context, 'Community profile updated');
+          AppToast.showText(context, context.l10n.profileCommunityUpdated);
         }
       } finally {
         if (context.mounted) saving.value = false;
@@ -441,12 +442,12 @@ class _CommunityProfileCard extends HookConsumerWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Community Profile',
+              context.l10n.profileCommunityTitle,
               style: Theme.of(context).textTheme.titleMedium,
             ),
             const SizedBox(height: 4),
             Text(
-              'Complete these fields so aspirants can connect with you.',
+              context.l10n.profileCommunityBody,
               style: Theme.of(context).textTheme.bodySmall,
             ),
             const SizedBox(height: 12),
@@ -464,8 +465,8 @@ class _CommunityProfileCard extends HookConsumerWidget {
             TextField(
               controller: optionalController,
               maxLength: 50,
-              decoration: const InputDecoration(
-                labelText: 'Optional Subject',
+              decoration: InputDecoration(
+                labelText: context.l10n.profileOptionalSubject,
                 border: OutlineInputBorder(),
               ),
             ),
@@ -473,8 +474,8 @@ class _CommunityProfileCard extends HookConsumerWidget {
             TextField(
               controller: instagramController,
               maxLength: 30,
-              decoration: const InputDecoration(
-                labelText: 'Instagram (without @)',
+              decoration: InputDecoration(
+                labelText: context.l10n.profileInstagramLabel,
                 border: OutlineInputBorder(),
               ),
             ),
@@ -482,8 +483,8 @@ class _CommunityProfileCard extends HookConsumerWidget {
             TextField(
               controller: telegramController,
               maxLength: 30,
-              decoration: const InputDecoration(
-                labelText: 'Telegram (without @)',
+              decoration: InputDecoration(
+                labelText: context.l10n.profileTelegramLabel,
                 border: OutlineInputBorder(),
               ),
             ),
@@ -492,7 +493,11 @@ class _CommunityProfileCard extends HookConsumerWidget {
               width: double.infinity,
               child: FilledButton(
                 onPressed: isBusy || saving.value ? null : saveCommunityProfile,
-                child: Text(saving.value ? 'Updating...' : 'Update'),
+                child: Text(
+                  saving.value
+                      ? context.l10n.profileUpdating
+                      : context.l10n.profileUpdate,
+                ),
               ),
             ),
           ],

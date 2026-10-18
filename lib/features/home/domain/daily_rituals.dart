@@ -3,6 +3,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/providers/prefs_provider.dart';
 import '../../../core/theme/app_colors.dart';
+import '../../../l10n/l10n.dart';
 import '../../daily_war/domain/daily_war_copy.dart';
 
 /// The three daily current-affairs / live-test rituals on Home.
@@ -36,12 +37,12 @@ class DailyRitualCopy {
 
 /// Shared titles / routes for the intro sheet and Home NEW badges.
 abstract final class DailyRituals {
-  static const items = <DailyRitualCopy>[
+  static List<DailyRitualCopy> get items => [
     DailyRitualCopy(
       id: DailyRitualIds.caShots,
       title: 'CA Shots',
-      when: 'Through the day',
-      body: 'Breaking news brief + 1 MCQ. Two minutes when a shot lands.',
+      when: appL10n.ritualCaShotsWhen,
+      body: appL10n.ritualCaShotsBody,
       route: '/ca-shot',
       icon: Icons.bolt_rounded,
       accent: AppColors.primary,
@@ -49,8 +50,8 @@ abstract final class DailyRituals {
     DailyRitualCopy(
       id: DailyRitualIds.dailyCa,
       title: 'Daily Current Affairs Test',
-      when: 'Opens 6 AM',
-      body: "Yesterday's news as a scored paper. Revise any past day.",
+      when: appL10n.ritualDailyCaWhen,
+      body: appL10n.ritualDailyCaBody,
       route: '/daily-ca',
       icon: Icons.article_outlined,
       accent: AppColors.info,
@@ -58,8 +59,8 @@ abstract final class DailyRituals {
     DailyRitualCopy(
       id: DailyRitualIds.dailyWar,
       title: DailyWarCopy.dailyEventName,
-      when: '9 PM · Mon–Fri',
-      body: 'All-India live static GS paper. Same questions, then the rank.',
+      when: appL10n.ritualDailyWarWhen,
+      body: appL10n.ritualDailyWarBody,
       route: '/daily-war',
       icon: Icons.shield_outlined,
       accent: AppColors.wrong,

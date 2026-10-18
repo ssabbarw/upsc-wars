@@ -18,6 +18,7 @@ import '../../../core/theme/app_text_styles.dart';
 import '../../subject_detail/domain/subject_insights.dart';
 import '../../subject_detail/domain/subject_overview_row.dart';
 import '../../subject_detail/providers/all_subjects_overview_provider.dart';
+import '../../../l10n/l10n.dart';
 
 class ProgressScreen extends HookConsumerWidget {
   const ProgressScreen({super.key, this.embedded = false});
@@ -36,7 +37,7 @@ class ProgressScreen extends HookConsumerWidget {
       loading: () => _ProgressSkeleton(borderColor: borderColor),
       error: (e, _) => Center(
         child: Text(
-          'Could not load overview.',
+          context.l10n.progressLoadFailed,
           style: AppTextStyles.bodySm().copyWith(
             color: Theme.of(context).colorScheme.onSurfaceVariant,
           ),
@@ -176,7 +177,7 @@ class _Header extends StatelessWidget {
             const SizedBox(height: AppSpacing.xs),
           ],
           Text(
-            'Your performance across all subjects',
+            context.l10n.progressSubtitle,
             style: AppTextStyles.bodySm().copyWith(
               color: scheme.onSurfaceVariant,
             ),
@@ -219,15 +220,13 @@ class _Header extends StatelessWidget {
                           ),
                         ),
                         TextSpan(
-                          text: totalWrong == 1
-                              ? 'wrong answer (all-time) · '
-                              : 'wrong answers (all-time) · ',
+                          text: context.l10n.progressWrongAnswersAllTime(totalWrong),
                         ),
                         TextSpan(
                           text: '$attemptedCount/8',
                           style: const TextStyle(fontWeight: FontWeight.w600),
                         ),
-                        const TextSpan(text: ' subjects practised'),
+                        TextSpan(text: context.l10n.progressSubjectsPractised),
                       ],
                     ),
                   ),
@@ -287,7 +286,7 @@ class _SortChips extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
       child: Row(
         children: [
-          chip('Most mistakes', SubjectSortMode.mistakes),
+          chip(context.l10n.progressSortMostMistakes, SubjectSortMode.mistakes),
           const SizedBox(width: AppSpacing.sm),
           chip('Accuracy ↑', SubjectSortMode.accuracy),
           const SizedBox(width: AppSpacing.sm),
@@ -368,14 +367,14 @@ class _SubjectRow extends ConsumerWidget {
                   const SizedBox(height: 2),
                   if (row.hasAttempts)
                     Text(
-                      '${row.totalAttempted} attempted · ${accuracyText ?? '—'} accuracy',
+                      context.l10n.progressAttemptedAccuracy(row.totalAttempted, accuracyText ?? '—'),
                       style: AppTextStyles.bodySm().copyWith(
                         color: scheme.onSurfaceVariant,
                       ),
                     )
                   else
                     Text(
-                      'Not started',
+                      context.l10n.progressNotStarted,
                       style: AppTextStyles.bodySm().copyWith(
                         color: scheme.onSurfaceVariant,
                       ),
@@ -392,7 +391,7 @@ class _SubjectRow extends ConsumerWidget {
                   _RiskBadge(row: row, isDark: isDark),
                   const SizedBox(height: 4),
                   Text(
-                    '${row.wrongAnswerCount} wrong (all-time)',
+                    context.l10n.progressWrongAllTime(row.wrongAnswerCount),
                     style: AppTextStyles.bodySm().copyWith(
                       color: scheme.onSurfaceVariant,
                       fontSize: 11,
@@ -441,7 +440,7 @@ class _RiskBadge extends StatelessWidget {
         borderRadius: BorderRadius.circular(AppRadius.pill),
       ),
       child: Text(
-        '${row.riskTier.emoji} ${row.riskTier.label}',
+        '${row.riskTier.emoji} ${row.riskTier.labelFor(context.l10n)}',
         style: AppTextStyles.bodySm().copyWith(
           color: fg,
           fontWeight: FontWeight.w600,
@@ -471,7 +470,7 @@ class _NotStartedBadge extends StatelessWidget {
         borderRadius: BorderRadius.circular(AppRadius.pill),
       ),
       child: Text(
-        'Not started',
+        context.l10n.progressNotStarted,
         style: AppTextStyles.bodySm().copyWith(
           color: isDark ? AppColors.gray400 : AppColors.gray600,
           fontSize: 11,

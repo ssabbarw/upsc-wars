@@ -22,6 +22,7 @@ import '../domain/create_get_started_session_use_case.dart';
 import '../domain/demo_session_warmup.dart';
 import '../providers/home_activation_journey_provider.dart';
 import '../providers/home_activation_provider.dart';
+import '../../../l10n/l10n.dart';
 
 enum _DemoResumeChoice { resume, restart }
 
@@ -200,11 +201,11 @@ class _DemoResumeOrRestartSheet extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final borderColor = isDark ? AppColors.borderDark : AppColors.borderLight;
     final subtitle = done <= 0
-        ? 'No questions answered yet.'
-        : 'You\'ve answered $done of $total questions.';
+        ? context.l10n.homeNoQuestionsYet
+        : context.l10n.homeAnsweredOf(done, total);
     final resumeLabel = done <= 0
-        ? 'Resume'
-        : 'Resume · $done of $total done';
+        ? context.l10n.commonResume
+        : context.l10n.homeResumeProgress(done, total);
 
     return Padding(
       padding: EdgeInsets.fromLTRB(
@@ -247,7 +248,7 @@ class _DemoResumeOrRestartSheet extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  'Demo in progress',
+                  context.l10n.demoInProgress,
                   style: AppTextStyles.h3().copyWith(
                     fontWeight: FontWeight.w800,
                     color: scheme.onSurface,
@@ -287,7 +288,7 @@ class _DemoResumeOrRestartSheet extends StatelessWidget {
                   onPressed: () =>
                       Navigator.pop(context, _DemoResumeChoice.restart),
                   child: Text(
-                    'Start over',
+                    context.l10n.commonStartOver,
                     style: AppTextStyles.labelSm().copyWith(
                       color: scheme.onSurfaceVariant,
                       fontWeight: FontWeight.w700,
@@ -353,14 +354,14 @@ class GetStartedCard extends HookConsumerWidget {
                   TextSpan(
                     children: [
                       TextSpan(
-                        text: 'Try a demo test',
+                        text: context.l10n.demoTry,
                         style: AppTextStyles.labelSm().copyWith(
                           color: AppColors.primaryDark,
                           fontWeight: FontWeight.w800,
                         ),
                       ),
                       TextSpan(
-                        text: ' — see the edge UPSC Wars gives you',
+                        text: context.l10n.demoTrySuffix,
                         style: AppTextStyles.bodySm().copyWith(
                           color: scheme.onSurfaceVariant,
                           height: 1.25,
@@ -378,7 +379,7 @@ class GetStartedCard extends HookConsumerWidget {
                 visualDensity: VisualDensity.compact,
                 padding: EdgeInsets.zero,
                 constraints: const BoxConstraints(minWidth: 32, minHeight: 32),
-                tooltip: 'Remind me tomorrow',
+                tooltip: context.l10n.demoRemindTomorrow,
                 icon: Icon(
                   Icons.close_rounded,
                   size: 16,
@@ -467,7 +468,7 @@ class _GetStartedSnoozeSheet extends ConsumerWidget {
                   ),
                 ),
                 Text(
-                  'Not now?',
+                  context.l10n.demoNotNowTitle,
                   style: AppTextStyles.h3().copyWith(
                     fontWeight: FontWeight.w800,
                     color: scheme.onSurface,
@@ -475,9 +476,7 @@ class _GetStartedSnoozeSheet extends ConsumerWidget {
                 ),
                 const SizedBox(height: AppSpacing.sm),
                 Text(
-                  'This 5-minute demo finds questions you feel sure about but '
-                  'get wrong — the edge UPSC Wars is built around. We\u2019ll '
-                  'nudge you again tomorrow until you finish one test.',
+                  context.l10n.demoNotNowBody,
                   style: AppTextStyles.bodySm().copyWith(
                     color: scheme.onSurfaceVariant,
                     height: 1.4,
@@ -496,7 +495,7 @@ class _GetStartedSnoozeSheet extends ConsumerWidget {
                       ),
                     ),
                     child: Text(
-                      'Remind me tomorrow',
+                      context.l10n.demoRemindTomorrow,
                       style: AppTextStyles.label().copyWith(
                         fontWeight: FontWeight.w700,
                       ),
@@ -510,7 +509,7 @@ class _GetStartedSnoozeSheet extends ConsumerWidget {
                     unawaited(showGetStartedDiagnosticIntroSheet(context));
                   },
                   child: Text(
-                    'Try the diagnostic instead',
+                    context.l10n.demoTryDiagnostic,
                     style: AppTextStyles.labelSm().copyWith(
                       color: AppColors.primaryDark,
                       fontWeight: FontWeight.w700,
@@ -650,7 +649,7 @@ class _GetStartedDiagnosticIntroSheet extends HookConsumerWidget {
                         ),
                         const SizedBox(height: AppSpacing.xs),
                         Text(
-                          'Find where UPSC Wars gives you an edge',
+                          context.l10n.demoIntroTitle,
                           style: AppTextStyles.h2().copyWith(
                             fontWeight: FontWeight.w800,
                             height: 1.15,
@@ -659,8 +658,7 @@ class _GetStartedDiagnosticIntroSheet extends HookConsumerWidget {
                         ),
                         const SizedBox(height: AppSpacing.xs),
                         Text(
-                          'Take this demo — current affairs mixed with '
-                          'static, with instant feedback after each answer.',
+                          context.l10n.demoIntroBody,
                           style: AppTextStyles.bodySm().copyWith(
                             color: scheme.onSurfaceVariant,
                             height: 1.4,
@@ -677,36 +675,33 @@ class _GetStartedDiagnosticIntroSheet extends HookConsumerWidget {
                       AppSpacing.md,
                     ),
                     child: Column(
-                      children: const [
+                      children: [
                         _DiagnosticExpectationRow(
                           icon: Icons.menu_book_outlined,
-                          title: '8 MCQs · no timer',
+                          title: context.l10n.demoPoint1Title,
                           subtitle:
-                              'Current affairs plus static — see the explanation as you go.',
+                              context.l10n.demoPoint1Body,
                         ),
                         SizedBox(height: AppSpacing.md),
                         _DiagnosticExpectationRow(
                           icon: Icons.psychology_outlined,
-                          title: 'Mark your confidence',
+                          title: context.l10n.demoPoint2Title,
                           subtitle:
-                              'Sure, educated guess, or unsure — we spot what '
-                              'feels right but isn\u2019t.',
+                              context.l10n.demoPoint2Body,
                         ),
                         SizedBox(height: AppSpacing.md),
                         _DiagnosticExpectationRow(
                           icon: Icons.insights_outlined,
-                          title: 'Rich insights when you finish',
+                          title: context.l10n.demoPoint3Title,
                           subtitle:
-                              'Confident mistakes, trap patterns, and what to '
-                              'revise next.',
+                              context.l10n.demoPoint3Body,
                         ),
                         SizedBox(height: AppSpacing.md),
                         _DiagnosticExpectationRow(
                           icon: Icons.menu_book_outlined,
-                          title: 'Explanations that actually teach',
+                          title: context.l10n.demoPoint4Title,
                           subtitle:
-                              'Traps, elimination, statement analysis — not just '
-                              'right or wrong.',
+                              context.l10n.demoPoint4Body,
                         ),
                       ],
                     ),
@@ -797,7 +792,7 @@ class _GetStartedDiagnosticIntroSheet extends HookConsumerWidget {
                                     ),
                                   )
                                 : Text(
-                                    'Let\u2019s go',
+                                    context.l10n.demoLetsGo,
                                     style: AppTextStyles.label().copyWith(
                                       fontWeight: FontWeight.w700,
                                     ),
@@ -819,7 +814,7 @@ class _GetStartedDiagnosticIntroSheet extends HookConsumerWidget {
                                     Navigator.pop(context, false);
                                   },
                             child: Text(
-                              'Skip to home',
+                              context.l10n.demoSkipToHome,
                               style: AppTextStyles.labelSm().copyWith(
                                 color: scheme.onSurfaceVariant,
                               ),

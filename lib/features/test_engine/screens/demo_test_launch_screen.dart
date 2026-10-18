@@ -12,6 +12,7 @@ import '../../home/domain/demo_session_warmup.dart';
 import '../providers/test_session_provider.dart';
 import '../widgets/test_engine_question_shimmer.dart';
 import 'test_engine_screen.dart';
+import '../../../l10n/l10n.dart';
 
 /// Opens immediately on the demo CTA; swaps in [TestEngineScreen] when the
 /// background-created session is ready.
@@ -72,7 +73,7 @@ class DemoTestLaunchScreen extends HookConsumerWidget {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
-                          'Could not load the demo test.',
+                          context.l10n.demoLoadFailed,
                           style: AppTextStyles.body(),
                           textAlign: TextAlign.center,
                         ),
@@ -83,13 +84,16 @@ class DemoTestLaunchScreen extends HookConsumerWidget {
                             error.value = null;
                             attempt.value++;
                           },
-                          child: Text('Retry', style: AppTextStyles.label()),
+                          child: Text(
+                            context.l10n.commonRetry,
+                            style: AppTextStyles.label(),
+                          ),
                         ),
                         const SizedBox(height: AppSpacing.sm),
                         TextButton(
                           onPressed: skipToHome,
                           child: Text(
-                            'Skip to home',
+                            context.l10n.demoSkipToHome,
                             style: AppTextStyles.label(),
                           ),
                         ),
@@ -104,7 +108,7 @@ class DemoTestLaunchScreen extends HookConsumerWidget {
                       child: TextButton(
                         onPressed: skipToHome,
                         child: Text(
-                          'Skip to home',
+                          context.l10n.demoSkipToHome,
                           style: AppTextStyles.label(),
                         ),
                       ),
