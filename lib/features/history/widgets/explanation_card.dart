@@ -65,11 +65,16 @@ class ExplanationCard extends HookConsumerWidget {
     this.demoHighlightWatchOut = false,
     this.demoHighlightTrap = false,
     this.analyticsSource,
+    this.trackViews = true,
     super.key,
   });
 
   final QuestionTranslation translation;
   final bool showStatements;
+
+  /// False for marketing samples (e.g. the test series intro), so reading one
+  /// does not count as the user's first real explanation view.
+  final bool trackViews;
 
   /// When non-null (Play Store demo), forces the deep-dive section open/closed.
   final bool? demoForceDeepDive;
@@ -131,7 +136,7 @@ class ExplanationCard extends HookConsumerWidget {
     final loggedSections = useRef(<String>{});
     useEffect(() {
       loggedSections.value = {};
-      if (body.isNotEmpty) {
+      if (trackViews && body.isNotEmpty) {
         loggedSections.value.add('explanation');
         unawaited(
           logExplanationSectionViewed(
@@ -146,7 +151,7 @@ class ExplanationCard extends HookConsumerWidget {
 
     useEffect(
       () {
-        if (!deepDiveOpen.value || tabs.isEmpty) return null;
+        if (!trackViews || !deepDiveOpen.value || tabs.isEmpty) return null;
         final i = activeTab.value.clamp(0, tabs.length - 1);
         final section = _analyticsSectionForTab(tabs[i]);
         if (section == null) return null;

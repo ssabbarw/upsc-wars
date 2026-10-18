@@ -7,6 +7,7 @@ import '../../../core/providers/catalog_providers.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../domain/series_stats.dart';
 import '../providers/test_series_providers.dart';
+import '../widgets/intro/series_intro_tab.dart';
 import '../widgets/series_tabs.dart';
 import 'my_test_series_screen.dart';
 
@@ -50,6 +51,9 @@ class TestSeriesEntryScreen extends ConsumerWidget {
 
 /// Series home: Overview, Full-Length Tests, Subject-wise Tests and
 /// PYQ & Current Affairs tabs.
+///
+/// For people who have not unlocked the series, the Overview tab is the sales
+/// page ([SeriesIntroTab]) and a buy bar stays pinned under every tab.
 class TestSeriesHomeScreen extends HookConsumerWidget {
   const TestSeriesHomeScreen({super.key, required this.seriesId});
 
@@ -109,13 +113,21 @@ class TestSeriesHomeScreen extends HookConsumerWidget {
           return TabBarView(
             controller: tabController,
             children: [
-              SeriesOverviewTab(
-                bundle: bundle,
-                owned: owned,
-                isHindi: isHindi,
-                stats: stats,
-                tabController: tabController,
-              ),
+              if (owned)
+                SeriesOverviewTab(
+                  bundle: bundle,
+                  owned: owned,
+                  isHindi: isHindi,
+                  stats: stats,
+                  tabController: tabController,
+                )
+              else
+                SeriesIntroTab(
+                  bundle: bundle,
+                  isHindi: isHindi,
+                  stats: stats,
+                  tabController: tabController,
+                ),
               SeriesFullLengthTab(
                 bundle: bundle,
                 owned: owned,
@@ -133,6 +145,9 @@ class TestSeriesHomeScreen extends HookConsumerWidget {
           );
         },
       ),
+      bottomNavigationBar: (owned || bundleAsync.asData?.value == null)
+          ? null
+          : SeriesUnlockBar(bundle: bundleAsync.asData!.value),
     );
   }
 }

@@ -37,6 +37,20 @@ class AppColors {
   static const infoText = Color(0xFF0C447C);
   static const infoTextDark = Color(0xFFB5D4F4);
 
+  // ── Accent: purple (value addition / insights) ───────────────────────
+  static const purple = Color(0xFF7C5CE0);
+  static const purpleBg = Color(0xFFF0ECFC);
+  static const purpleBgDark = Color(0xFF2B2350);
+  static const purpleText = Color(0xFF4B33A8);
+  static const purpleTextDark = Color(0xFFD0C6F6);
+
+  // ── Test series intro: gold medal + hero gradient ─────────────────────
+  static const gold = Color(0xFFF2B01E);
+  static const introHeroStart = Color(0xFFFFF3DC);
+  static const introHeroEnd = Color(0xFFE4F5EC);
+  static const introHeroStartDark = Color(0xFF3A2D12);
+  static const introHeroEndDark = Color(0xFF10382C);
+
   // ── Neutral grays ────────────────────────────────────────────────────
   static const gray50 = Color(0xFFF1EFE8);
   static const gray100 = Color(0xFFD3D1C7);

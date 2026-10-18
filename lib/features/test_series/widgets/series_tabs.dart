@@ -14,7 +14,6 @@ import '../domain/test_series_models.dart';
 import '../providers/test_series_providers.dart';
 import 'free_badge.dart';
 import 'series_dashboard_widgets.dart';
-import 'series_paywall_sheet.dart';
 import 'series_test_row.dart';
 
 /// Opens the read-through of the user's questions on [topic].
@@ -91,53 +90,6 @@ class _TabIntro extends StatelessWidget {
 }
 
 String _marks(double net, double max) => '${net.round()}/${max.round()}';
-
-/// Shown to people who have not unlocked the series.
-class SeriesUnlockBanner extends ConsumerWidget {
-  const SeriesUnlockBanner({super.key, required this.bundle});
-
-  final SeriesBundle bundle;
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final canSell = ref.watch(testSeriesCanSellProvider).value ?? false;
-    return Container(
-      margin: const EdgeInsets.only(bottom: AppSpacing.lg),
-      padding: const EdgeInsets.all(AppSpacing.lg),
-      decoration: BoxDecoration(
-        color: AppColors.primaryLight.withValues(alpha: 0.5),
-        borderRadius: BorderRadius.circular(AppRadius.lg),
-        border: Border.all(color: AppColors.primary.withValues(alpha: 0.35)),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            'Try the series',
-            style: AppTextStyles.h3().copyWith(color: AppColors.primaryDeep),
-          ),
-          const SizedBox(height: AppSpacing.xs),
-          Text(
-            'Free tests are open now. Unlock the rest with one payment: '
-            'no subscription, no expiry.',
-            style: AppTextStyles.bodySm().copyWith(
-              color: AppColors.primaryDeep,
-            ),
-          ),
-          if (canSell) ...[
-            const SizedBox(height: AppSpacing.md),
-            FilledButton(
-              onPressed: () => unawaited(
-                showSeriesPaywall(context: context, bundle: bundle),
-              ),
-              child: const Text('Unlock all tests'),
-            ),
-          ],
-        ],
-      ),
-    );
-  }
-}
 
 /// "What you get" card on the Overview: the series' selling points, with real
 /// counts from the published series.
@@ -335,7 +287,6 @@ class SeriesOverviewTab extends ConsumerWidget {
     return _TabList(
       seriesId: bundle.info.id,
       children: [
-        if (!owned) SeriesUnlockBanner(bundle: bundle),
         _TabIntro(
           'Your Preparation Overview',
           stats.hasAnyAttempt
