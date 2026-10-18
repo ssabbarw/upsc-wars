@@ -53,6 +53,3 @@ exports.adminPublishTestSeriesDue = onCall(
 exports.redeemTestSeriesCode = promos.redeemTestSeriesCode;
 exports.adminCreateTestSeriesPromo = promos.adminCreateTestSeriesPromo;
 exports.adminSetTestSeriesPromoActive = promos.adminSetTestSeriesPromoActive;
-exports.adminAnnounceFreeTestSeries = promos.adminAnnounceFreeTestSeries;
-exports.adminNotifyFreeTestSeriesOffer = promos.adminNotifyFreeTestSeriesOffer;
-exports.adminCloseFreeTestSeriesOffer = promos.adminCloseFreeTestSeriesOffer;

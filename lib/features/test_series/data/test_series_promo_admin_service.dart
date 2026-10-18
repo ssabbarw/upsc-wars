@@ -2,23 +2,8 @@ import 'package:cloud_functions/cloud_functions.dart';
 
 import 'test_series_access_service.dart';
 
-/// Result of announcing a free offer.
-class AnnounceOutcome {
-  const AnnounceOutcome({
-    required this.code,
-    required this.notified,
-    this.pushError,
-  });
-
-  final String code;
-
-  /// False when the offer is live but the push did not go out (retry it).
-  final bool notified;
-  final String? pushError;
-}
-
-/// Admin callables for promo codes and free offers. Reads (the code list and
-/// who redeemed) go straight to Firestore, which only super users may read.
+/// Admin callables for promo codes. Reads (the code list and who redeemed)
+/// go straight to Firestore, which only super users may read.
 class TestSeriesPromoAdminService {
   TestSeriesPromoAdminService({FirebaseFunctions? functions})
     : _functions =
@@ -55,6 +40,9 @@ class TestSeriesPromoAdminService {
   }
 
   /// Creates a code. Leave [code] empty to generate one. Returns the code.
+  ///
+  /// [maxRedemptions] caps how many people can use it; [expiresAt] is the
+  /// moment after which it shows "Code expired". Both are optional.
   Future<String> createCode({
     required String seriesId,
     required String label,
@@ -77,37 +65,5 @@ class TestSeriesPromoAdminService {
       'code': code,
       'active': active,
     });
-  }
-
-  /// Opens a free-for-everyone offer and (optionally) pushes it to everyone.
-  Future<AnnounceOutcome> announce({
-    required String seriesId,
-    String? title,
-    String? body,
-    bool notify = true,
-    int? maxRedemptions,
-    DateTime? expiresAt,
-  }) async {
-    final data = await _call('adminAnnounceFreeTestSeries', {
-      'seriesId': seriesId,
-      'notify': notify,
-      if (title != null && title.trim().isNotEmpty) 'title': title.trim(),
-      if (body != null && body.trim().isNotEmpty) 'body': body.trim(),
-      'maxRedemptions': ?maxRedemptions,
-      if (expiresAt != null) 'expiresAt': expiresAt.toUtc().toIso8601String(),
-    });
-    return AnnounceOutcome(
-      code: data['code'].toString(),
-      notified: data['notified'] == true,
-      pushError: data['pushError']?.toString(),
-    );
-  }
-
-  Future<void> resendPush(String seriesId) async {
-    await _call('adminNotifyFreeTestSeriesOffer', {'seriesId': seriesId});
-  }
-
-  Future<void> closeOffer(String seriesId) async {
-    await _call('adminCloseFreeTestSeriesOffer', {'seriesId': seriesId});
   }
 }

@@ -1040,4 +1040,133 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get reviewYourPick => 'Your pick';
+
+  @override
+  String get onbSublinePrefix => 'We analyze every answer to ';
+
+  @override
+  String get onbSublinePhrase => 'identify the topics that help or hurt';
+
+  @override
+  String get onbSublineSuffix => ' your score.';
+
+  @override
+  String get onbFeatureExplanation => 'Rich explanation';
+
+  @override
+  String get onbFeatureStatement => 'Statement analysis';
+
+  @override
+  String get onbFeatureElimination => 'Elimination technique';
+
+  @override
+  String get onbFeatureDistractor => 'Strong distractor option';
+
+  @override
+  String get onbThesisEyebrow => 'THE UPSC REALITY';
+
+  @override
+  String get onbConfidentWrong => 'Confident\n& Wrong';
+
+  @override
+  String get onbConfidentWrongBody =>
+      'Topics you are confident about and get wrong.';
+
+  @override
+  String get onbGuessRight => 'Guess\n& Right';
+
+  @override
+  String get onbGuessRightBody =>
+      'Topics where your guesses are right more often.';
+
+  @override
+  String get onbNext => 'Next  →';
+
+  @override
+  String get onbLead => 'Prelims isn\'t about knowing everything.';
+
+  @override
+  String get onbAccent => 'UPSC Wars shows you where you stand.';
+
+  @override
+  String get onbAvoidMistakes => 'Avoid costly mistakes.';
+
+  @override
+  String get onbReviseTopics => 'Revise these topics.';
+
+  @override
+  String get onbAttemptMore => 'Attempt more from these topics';
+
+  @override
+  String get onbGainMarks => 'Gain +ve marks.';
+
+  @override
+  String get onbDepthEyebrow => 'THE UPSC EDGE';
+
+  @override
+  String get onbDepthTitle => 'Each question in\nUPSC Wars has:';
+
+  @override
+  String get aboutWhyBody =>
+      'I prepared for UPSC myself and realised that most aspirants solve thousands of MCQs but still don’t know where they are actually losing marks.\n\nSometimes the problem is not lack of knowledge — it is overconfidence, risky guessing, weak revision, and repeated mistakes.\n\nAt the same time, preparation is also about knowing where you can safely take smart risks and attempt more with confidence.\n\nThat is why I built UPSC Wars.';
+
+  @override
+  String get aboutGoalBody =>
+      'So your preparation becomes smarter, not just harder.\n\nMy goal is simple:\n\nHelp aspirants prepare like someone who clears Prelims.\n\nBuilt independently. No coaching institute. No big team. Just a serious attempt to make UPSC preparation better.';
+
+  @override
+  String get aboutConnectBody =>
+      'Your feedback directly improves UPSC Wars.\n\nIf something feels missing, confusing, or useful, please message me. I read every feedback personally.\n\n📩 upscwars@gmail.com';
+
+  @override
+  String get aboutReviewBody =>
+      'If UPSC Wars helped your preparation, please leave a review.\n\nYour review helps more serious aspirants discover the app and helps improve the app faster.';
+
+  @override
+  String get aboutBullet1 =>
+      '• Areas where confident answers or intelligent guesses often go wrong\n';
+
+  @override
+  String get aboutArrow1 => '  → Avoid taking extra risks here\n\n';
+
+  @override
+  String get aboutBullet2 =>
+      '• Areas where confident answers or intelligent guesses are usually correct\n';
+
+  @override
+  String get aboutArrow2 => '  → Take smarter risks here\n\n';
+
+  @override
+  String get aboutBullet3 =>
+      '• Common UPSC trap patterns and tricky question types\n';
+
+  @override
+  String get aboutArrow3 => '  → Stay alert and avoid negative marking';
+
+  @override
+  String get aboutExAspirant => '(Ex-aspirant)';
+
+  @override
+  String get aboutWhyTitle => 'Why I Built UPSC Wars';
+
+  @override
+  String get aboutHelpsFind => 'It helps you find:';
+
+  @override
+  String get aboutConnect => 'Connect';
+
+  @override
+  String get aboutReviews => 'Reviews';
+
+  @override
+  String get aboutRateReview => 'Rate/Review UPSC Wars';
+
+  @override
+  String get aboutFeedbackEmail => 'Send Feedback on Email';
+
+  @override
+  String get aboutFeedbackTelegram => 'Send Feedback on Telegram';
+
+  @override
+  String get aboutLinkFailed => 'Could not open link';
 }

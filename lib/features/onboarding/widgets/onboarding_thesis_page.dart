@@ -6,6 +6,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../mini_games/shared/revision_games_theme.dart';
 import 'onboarding_scale.dart';
+import '../../../l10n/l10n.dart';
 
 /// Screen 1 — thesis: Confident & Wrong vs Guess & Right.
 class OnboardingThesisPage extends HookWidget {
@@ -42,7 +43,7 @@ class OnboardingThesisPage extends HookWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Text(
-                  'THE UPSC REALITY',
+                  context.l10n.onbThesisEyebrow,
                   style: RgText.mono(
                     size: onb(context, 11),
                     letterSpacingEm: 0.14,
@@ -62,10 +63,9 @@ class OnboardingThesisPage extends HookWidget {
                         child: _ThesisCard(
                           bg: AppColors.wrongBg,
                           titleColor: RgColors.wrong,
-                          title: 'Confident\n& Wrong',
+                          title: context.l10n.onbConfidentWrong,
                           subtitle:
-                              'Topics you are confident about and get '
-                              'wrong.',
+                              context.l10n.onbConfidentWrongBody,
                           top: _WarningBadge(size: onb(context, 48)),
                           bottom: _SceneImage(
                             asset: '$_assetPrefix/red_scene.png',
@@ -78,10 +78,9 @@ class OnboardingThesisPage extends HookWidget {
                         child: _ThesisCard(
                           bg: AppColors.correctBg,
                           titleColor: RgColors.tealDeep,
-                          title: 'Guess\n& Right',
+                          title: context.l10n.onbGuessRight,
                           subtitle:
-                              'Topics where your guesses are right more '
-                              'often.',
+                              context.l10n.onbGuessRightBody,
                           top: _TargetBadge(size: onb(context, 48)),
                           bottom: _SceneImage(
                             asset: '$_assetPrefix/green_scene.png',
@@ -123,7 +122,7 @@ class OnboardingThesisPage extends HookWidget {
                       ),
                     ),
                 child: Text(
-                  'Next  →',
+                  context.l10n.onbNext,
                   style: RgText.body(
                     size: onb(context, 16),
                     weight: FontWeight.w700,
@@ -145,13 +144,14 @@ class OnboardingThesisPage extends HookWidget {
 class _GlowingSubline extends HookWidget {
   const _GlowingSubline();
 
-  static const _prefix = 'We analyze every answer to ';
-  static const _phrase = 'identify the topics that help or hurt';
-  static const _suffix = ' your score.';
-  static final _total = _prefix.length + _phrase.length + _suffix.length;
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+    final prefix = l10n.onbSublinePrefix;
+    final phrase = l10n.onbSublinePhrase;
+    final suffix = l10n.onbSublineSuffix;
+    final total = prefix.length + phrase.length + suffix.length;
     final typing = useAnimationController(
       // ~16ms per character.
       duration: const Duration(milliseconds: 1230),
@@ -181,7 +181,7 @@ class _GlowingSubline extends HookWidget {
     return AnimatedBuilder(
       animation: Listenable.merge([typing, pulse]),
       builder: (context, _) {
-        final chars = (typing.value * _total).round();
+        final chars = (typing.value * total).round();
         final typed = typing.isCompleted;
 
         final t = typed ? Curves.easeInOut.transform(pulse.value) : 1.0;
@@ -201,13 +201,13 @@ class _GlowingSubline extends HookWidget {
         final visible = TextSpan(
           style: base,
           children: [
-            TextSpan(text: clip(_prefix, chars)),
+            TextSpan(text: clip(prefix, chars)),
             TextSpan(
-              text: clip(_phrase, chars - _prefix.length),
+              text: clip(phrase, chars - prefix.length),
               style: glow,
             ),
             TextSpan(
-              text: clip(_suffix, chars - _prefix.length - _phrase.length),
+              text: clip(suffix, chars - prefix.length - phrase.length),
             ),
           ],
         );
@@ -221,13 +221,13 @@ class _GlowingSubline extends HookWidget {
               child: Text.rich(
                 TextSpan(
                   style: base,
-                  children: const [
-                    TextSpan(text: _prefix),
+                  children: [
+                    TextSpan(text: prefix),
                     TextSpan(
-                      text: _phrase,
+                      text: phrase,
                       style: TextStyle(fontWeight: FontWeight.w600),
                     ),
-                    TextSpan(text: _suffix),
+                    TextSpan(text: suffix),
                   ],
                 ),
               ),
@@ -269,9 +269,9 @@ class _Headline extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text("Prelims isn't about knowing everything.", style: lead),
+        Text(context.l10n.onbLead, style: lead),
         SizedBox(height: 6 * scale),
-        Text('UPSC Wars shows you where you stand.', style: accent),
+        Text(context.l10n.onbAccent, style: accent),
       ],
     );
   }
@@ -432,15 +432,15 @@ class _SummaryStrip extends StatelessWidget {
     final items = [
       (
         icon: Icons.trending_down_rounded,
-        title: 'Avoid costly mistakes.',
-        caption: 'Revise these topics.',
+        title: context.l10n.onbAvoidMistakes,
+        caption: context.l10n.onbReviseTopics,
         bg: AppColors.wrongBg,
         fg: RgColors.wrong,
       ),
       (
         icon: Icons.trending_up_rounded,
-        title: 'Attempt more from these topics',
-        caption: 'Gain +ve marks.',
+        title: context.l10n.onbAttemptMore,
+        caption: context.l10n.onbGainMarks,
         bg: AppColors.correctBg,
         fg: RgColors.tealDeep,
       ),

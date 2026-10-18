@@ -12,6 +12,7 @@ import '../../../core/analytics/screen_flow_analytics.dart';
 import '../../../core/providers/prefs_provider.dart';
 import '../../home/domain/demo_session_warmup.dart';
 import '../../mini_games/shared/revision_games_theme.dart';
+import '../widgets/onboarding_language_gate.dart';
 import '../widgets/onboarding_question_depth_page.dart';
 import '../widgets/onboarding_scale.dart';
 import '../widgets/onboarding_thesis_page.dart';
@@ -26,8 +27,22 @@ String _onboardingStepIdForIndex(int i) {
 }
 
 /// First-run onboarding: thesis → question depth.
-class OnboardingFlowScreen extends HookConsumerWidget {
+/// Language first (bilingual), then the intro pages in that language.
+class OnboardingFlowScreen extends HookWidget {
   const OnboardingFlowScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final languageReady = useState(false);
+    if (!languageReady.value) {
+      return OnboardingLanguageGate(onChosen: () => languageReady.value = true);
+    }
+    return const _OnboardingPagesScreen();
+  }
+}
+
+class _OnboardingPagesScreen extends HookConsumerWidget {
+  const _OnboardingPagesScreen();
 
   static const int _pageCount = 2;
 

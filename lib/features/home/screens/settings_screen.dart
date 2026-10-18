@@ -267,9 +267,9 @@ class SettingsScreen extends ConsumerWidget {
                       icon: Icons.card_giftcard_rounded,
                       iconBg: Color(0xFFE1F5EE),
                       iconColor: Color(0xFF0F6E56),
-                      title: 'Free test series',
+                      title: 'Offer codes',
                       subtitle:
-                          'Promo codes for influencers, or free for everyone',
+                          'Free test series codes for influencers, with limits and expiry',
                       onTap: () => context.push('/internal/test-series-promos'),
                     ),
                   if (isSuperUser)

@@ -1022,4 +1022,134 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get reviewYourPick => 'आपका चुनाव';
+
+  @override
+  String get onbSublinePrefix => 'हम हर जवाब का analysis करते हैं ताकि ';
+
+  @override
+  String get onbSublinePhrase =>
+      'पता चले कि कौन से topics आपका score बढ़ाते या घटाते हैं';
+
+  @override
+  String get onbSublineSuffix => '।';
+
+  @override
+  String get onbFeatureExplanation => 'विस्तृत explanation';
+
+  @override
+  String get onbFeatureStatement => 'Statement analysis';
+
+  @override
+  String get onbFeatureElimination => 'Elimination technique';
+
+  @override
+  String get onbFeatureDistractor => 'दमदार distractor option';
+
+  @override
+  String get onbThesisEyebrow => 'UPSC की सच्चाई';
+
+  @override
+  String get onbConfidentWrong => 'Confident\nऔर गलत';
+
+  @override
+  String get onbConfidentWrongBody =>
+      'वे topics जिनमें आप confident हैं पर गलत करते हैं।';
+
+  @override
+  String get onbGuessRight => 'Guess\nऔर सही';
+
+  @override
+  String get onbGuessRightBody =>
+      'वे topics जहाँ आपके guess अक्सर सही निकलते हैं।';
+
+  @override
+  String get onbNext => 'आगे  →';
+
+  @override
+  String get onbLead => 'Prelims सब कुछ जानने का नाम नहीं है।';
+
+  @override
+  String get onbAccent => 'UPSC Wars दिखाता है कि आप कहाँ खड़े हैं।';
+
+  @override
+  String get onbAvoidMistakes => 'महँगी गलतियों से बचिए।';
+
+  @override
+  String get onbReviseTopics => 'इन topics को revise कीजिए।';
+
+  @override
+  String get onbAttemptMore => 'इन topics से ज़्यादा attempt कीजिए';
+
+  @override
+  String get onbGainMarks => 'Positive marks कमाइए।';
+
+  @override
+  String get onbDepthEyebrow => 'UPSC की EDGE';
+
+  @override
+  String get onbDepthTitle => 'UPSC Wars के हर सवाल में है:';
+
+  @override
+  String get aboutWhyBody =>
+      'मैंने खुद UPSC की तैयारी की है, और समझा कि ज़्यादातर aspirants हज़ारों MCQs हल करते हैं, फिर भी उन्हें पता नहीं चलता कि असल में उनके marks कहाँ कट रहे हैं।\n\nकई बार समस्या knowledge की कमी नहीं होती — वह होती है overconfidence, जोखिम भरे guess, कमज़ोर revision और बार-बार दोहराई गई गलतियाँ।\n\nसाथ ही, तैयारी का मतलब यह जानना भी है कि आप कहाँ सोच-समझकर risk ले सकते हैं और पूरे confidence के साथ ज़्यादा attempt कर सकते हैं।\n\nइसीलिए मैंने UPSC Wars बनाया।';
+
+  @override
+  String get aboutGoalBody =>
+      'ताकि आपकी तैयारी सिर्फ़ ज़्यादा मेहनत वाली नहीं, ज़्यादा समझदार बने।\n\nमेरा लक्ष्य सीधा है:\n\nAspirants को वैसे तैयारी करने में मदद करना जैसे Prelims निकालने वाला करता है।\n\nयह पूरी तरह independent है। कोई coaching institute नहीं। कोई बड़ी team नहीं। बस UPSC की तैयारी को बेहतर बनाने की एक गंभीर कोशिश।';
+
+  @override
+  String get aboutConnectBody =>
+      'आपका feedback सीधे UPSC Wars को बेहतर बनाता है।\n\nअगर कुछ कमी लगे, उलझन हो या कुछ काम का लगे, तो मुझे message कीजिए। मैं हर feedback खुद पढ़ता हूँ।\n\n📩 upscwars@gmail.com';
+
+  @override
+  String get aboutReviewBody =>
+      'अगर UPSC Wars से आपकी तैयारी में मदद मिली हो, तो कृपया एक review दीजिए।\n\nआपका review और गंभीर aspirants को ऐप तक पहुँचाता है और ऐप को तेज़ी से बेहतर बनाने में मदद करता है।';
+
+  @override
+  String get aboutBullet1 =>
+      '• ऐसे areas जहाँ confident जवाब या सोच-समझकर लगाए गए guess अक्सर गलत निकलते हैं\n';
+
+  @override
+  String get aboutArrow1 => '  → यहाँ extra risk लेने से बचिए\n\n';
+
+  @override
+  String get aboutBullet2 =>
+      '• ऐसे areas जहाँ confident जवाब या सोच-समझकर लगाए गए guess अक्सर सही निकलते हैं\n';
+
+  @override
+  String get aboutArrow2 => '  → यहाँ समझदारी से risk लीजिए\n\n';
+
+  @override
+  String get aboutBullet3 =>
+      '• UPSC के आम trap patterns और मुश्किल सवालों के प्रकार\n';
+
+  @override
+  String get aboutArrow3 => '  → सतर्क रहिए और negative marking से बचिए';
+
+  @override
+  String get aboutExAspirant => '(पूर्व aspirant)';
+
+  @override
+  String get aboutWhyTitle => 'मैंने UPSC Wars क्यों बनाया';
+
+  @override
+  String get aboutHelpsFind => 'यह आपको यह खोजने में मदद करता है:';
+
+  @override
+  String get aboutConnect => 'संपर्क करें';
+
+  @override
+  String get aboutReviews => 'रिव्यू';
+
+  @override
+  String get aboutRateReview => 'UPSC Wars को Rate/Review करें';
+
+  @override
+  String get aboutFeedbackEmail => 'Email पर Feedback भेजें';
+
+  @override
+  String get aboutFeedbackTelegram => 'Telegram पर Feedback भेजें';
+
+  @override
+  String get aboutLinkFailed => 'लिंक नहीं खुल सका';
 }

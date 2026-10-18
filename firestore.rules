@@ -237,12 +237,6 @@ service cloud.firestore {
       allow write: if false;
     }
 
-    /// Public "free for everyone" banner state (holds the open offer's code).
-    match /test_series_open_offer/{seriesId} {
-      allow read: if true;
-      allow write: if false;
-    }
-
     /// Promo codes + who redeemed them. Super users read for the admin screen.
     match /test_series_promos/{code} {
       allow read: if isSuperUserEmail();
@@ -607,8 +601,8 @@ service cloud.firestore {
     }
 
     /// The catalog (`test_series/**`, read-only to clients) and the access
-    /// collections (`test_series_grants`, `_promos`, `_open_offer`,
-    /// `_redeem_attempts`). Both have explicit rules above.
+    /// collections (`test_series_grants`, `_promos`, `_redeem_attempts`). Both
+    /// have explicit rules above.
     function isTestSeriesPath() {
       return request.path.matches(
         '/databases/' + database + '/documents/test_series(_[a-z_]+)?(/.*)?'

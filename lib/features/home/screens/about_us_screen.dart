@@ -7,6 +7,7 @@ import '../../../core/constants/creator_contact.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../l10n/l10n.dart';
 
 class AboutUsScreen extends StatelessWidget {
   const AboutUsScreen({super.key});
@@ -18,7 +19,7 @@ class AboutUsScreen extends StatelessWidget {
     if (!ok && context.mounted) {
       ScaffoldMessenger.of(
         context,
-      ).showSnackBar(const SnackBar(content: Text('Could not open link')));
+      ).showSnackBar(const SnackBar(content: Text(context.l10n.aboutLinkFailed)));
     }
   }
 
@@ -72,7 +73,7 @@ class AboutUsScreen extends StatelessWidget {
     final scheme = Theme.of(context).colorScheme;
 
     return Scaffold(
-      appBar: AppBar(title: const Text('About us')),
+      appBar: AppBar(title: const Text(context.l10n.settingsAboutUs)),
       body: SafeArea(
         child: ListView(
           padding: const EdgeInsets.all(AppSpacing.lg),
@@ -109,7 +110,7 @@ class AboutUsScreen extends StatelessWidget {
                         ),
                         const SizedBox(height: 4),
                         Text(
-                          '(Ex-aspirant)',
+                          context.l10n.aboutExAspirant,
                           textAlign: TextAlign.center,
                           style: AppTextStyles.bodySm().copyWith(
                             color: scheme.onSurfaceVariant,
@@ -121,7 +122,7 @@ class AboutUsScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: AppSpacing.lg),
                   Text(
-                    'Why I Built UPSC Wars',
+                    context.l10n.aboutWhyTitle,
                     style: AppTextStyles.labelSm().copyWith(
                       color: scheme.primary,
                       letterSpacing: 0.6,
@@ -130,7 +131,7 @@ class AboutUsScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: AppSpacing.md),
                   Text(
-                    'I prepared for UPSC myself and realised that most aspirants solve thousands of MCQs but still don’t know where they are actually losing marks.\n\nSometimes the problem is not lack of knowledge — it is overconfidence, risky guessing, weak revision, and repeated mistakes.\n\nAt the same time, preparation is also about knowing where you can safely take smart risks and attempt more with confidence.\n\nThat is why I built UPSC Wars.',
+                    context.l10n.aboutWhyBody,
                     style: AppTextStyles.bodyMd().copyWith(
                       color: scheme.onSurfaceVariant,
                       height: 1.45,
@@ -138,7 +139,7 @@ class AboutUsScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: AppSpacing.md),
                   Text(
-                    'It helps you find:',
+                    context.l10n.aboutHelpsFind,
                     style: AppTextStyles.bodyMd().copyWith(
                       color: scheme.onSurfaceVariant,
                       height: 1.45,
@@ -154,10 +155,10 @@ class AboutUsScreen extends StatelessWidget {
                       children: [
                         const TextSpan(
                           text:
-                              '• Areas where confident answers or intelligent guesses often go wrong\n',
+                              context.l10n.aboutBullet1,
                         ),
                         TextSpan(
-                          text: '  → Avoid taking extra risks here\n\n',
+                          text: context.l10n.aboutArrow1,
                           style: AppTextStyles.bodyMd().copyWith(
                             color: scheme.onSurface,
                             fontWeight: FontWeight.w500,
@@ -165,10 +166,10 @@ class AboutUsScreen extends StatelessWidget {
                         ),
                         const TextSpan(
                           text:
-                              '• Areas where confident answers or intelligent guesses are usually correct\n',
+                              context.l10n.aboutBullet2,
                         ),
                         TextSpan(
-                          text: '  → Take smarter risks here\n\n',
+                          text: context.l10n.aboutArrow2,
                           style: AppTextStyles.bodyMd().copyWith(
                             color: scheme.onSurface,
                             fontWeight: FontWeight.w500,
@@ -176,10 +177,10 @@ class AboutUsScreen extends StatelessWidget {
                         ),
                         const TextSpan(
                           text:
-                              '• Common UPSC trap patterns and tricky question types\n',
+                              context.l10n.aboutBullet3,
                         ),
                         TextSpan(
-                          text: '  → Stay alert and avoid negative marking',
+                          text: context.l10n.aboutArrow3,
                           style: AppTextStyles.bodyMd().copyWith(
                             color: scheme.onSurface,
                             fontWeight: FontWeight.w500,
@@ -190,7 +191,7 @@ class AboutUsScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: AppSpacing.md),
                   Text(
-                    'So your preparation becomes smarter, not just harder.\n\nMy goal is simple:\n\nHelp aspirants prepare like someone who clears Prelims.\n\nBuilt independently. No coaching institute. No big team. Just a serious attempt to make UPSC preparation better.',
+                    context.l10n.aboutGoalBody,
                     style: AppTextStyles.bodyMd().copyWith(
                       color: scheme.onSurfaceVariant,
                       height: 1.45,
@@ -198,12 +199,12 @@ class AboutUsScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: AppSpacing.lg),
                   Text(
-                    'Connect',
+                    context.l10n.aboutConnect,
                     style: AppTextStyles.h2().copyWith(color: scheme.onSurface),
                   ),
                   const SizedBox(height: AppSpacing.md),
                   Text(
-                    'Your feedback directly improves UPSC Wars.\n\nIf something feels missing, confusing, or useful, please message me. I read every feedback personally.\n\n📩 upscwars@gmail.com',
+                    context.l10n.aboutConnectBody,
                     style: AppTextStyles.bodyMd().copyWith(
                       color: scheme.onSurfaceVariant,
                       height: 1.45,
@@ -211,7 +212,7 @@ class AboutUsScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: AppSpacing.md),
                   Text(
-                    'Reviews',
+                    context.l10n.aboutReviews,
                     style: AppTextStyles.bodyMd().copyWith(
                       color: scheme.onSurface,
                       fontWeight: FontWeight.w700,
@@ -219,7 +220,7 @@ class AboutUsScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: AppSpacing.sm),
                   Text(
-                    'If UPSC Wars helped your preparation, please leave a review.\n\nYour review helps more serious aspirants discover the app and helps improve the app faster.',
+                    context.l10n.aboutReviewBody,
                     style: AppTextStyles.bodyMd().copyWith(
                       color: scheme.onSurfaceVariant,
                       height: 1.45,
@@ -230,7 +231,7 @@ class AboutUsScreen extends StatelessWidget {
                     width: double.infinity,
                     child: FilledButton(
                       onPressed: () async => _openStoreListing(context),
-                      child: const Text('Rate/Review UPSC Wars'),
+                      child: const Text(context.l10n.aboutRateReview),
                     ),
                   ),
                   const SizedBox(height: AppSpacing.sm),
@@ -241,7 +242,7 @@ class AboutUsScreen extends StatelessWidget {
                         context,
                         Uri.parse('mailto:upscwars@gmail.com?subject=Feedback'),
                       ),
-                      child: const Text('Send Feedback on Email'),
+                      child: const Text(context.l10n.aboutFeedbackEmail),
                     ),
                   ),
                   const SizedBox(height: AppSpacing.sm),
@@ -252,7 +253,7 @@ class AboutUsScreen extends StatelessWidget {
                         context,
                         Uri.parse(CreatorContact.telegramDirectUrl),
                       ),
-                      child: const Text('Send Feedback on Telegram'),
+                      child: Text(context.l10n.aboutFeedbackTelegram),
                     ),
                   ),
                 ],

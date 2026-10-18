@@ -8,23 +8,21 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 
 import '../../../core/theme/app_colors.dart';
-import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/widgets/app_toast.dart';
 import '../../test_series/data/test_series_promo_admin_service.dart';
 import '../../test_series/providers/test_series_providers.dart';
 
-final _dateFmt = DateFormat('d MMM, h:mm a');
+final _dateTimeFmt = DateFormat('d MMM yyyy, h:mm a');
+final _dateFmt = DateFormat('d MMM yyyy');
 
 DateTime? _ts(Object? v) => v is Timestamp ? v.toDate() : null;
 
-/// Super-user screen: give the Prelims Test Series away for free.
-///
-///  - "Free for everyone": opens an offer and pushes it to all installs.
-///    Claiming it creates a permanent grant on the user's account.
-///  - Promo codes (for example one per influencer) with live redemption counts
-///    and the list of who redeemed.
+/// Super-user screen: promo codes that unlock the Prelims Test Series for free
+/// (for example one per influencer). Each code can have a redemption limit and
+/// an expiry date; after either, the app shows "Code expired" / "Code limit
+/// reached". Tap a code to see who redeemed it.
 class TestSeriesPromosAdminScreen extends HookConsumerWidget {
   const TestSeriesPromosAdminScreen({super.key});
 
@@ -34,11 +32,11 @@ class TestSeriesPromosAdminScreen extends HookConsumerWidget {
     final service = useMemoized(TestSeriesPromoAdminService.new);
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Free test series')),
+      appBar: AppBar(title: const Text('Offer codes')),
       body: seriesAsync.when(
         loading: () => const Center(child: CircularProgressIndicator()),
         error: (e, _) => Center(child: Text('Could not read the active series.\n$e')),
-        data: (seriesId) => _Body(seriesId: seriesId, service: service),
+        data: (seriesId) => _CodeList(service: service),
       ),
       floatingActionButton: seriesAsync.hasValue
           ? FloatingActionButton.extended(
@@ -82,10 +80,11 @@ Future<void> _createCode(
   }
 }
 
-class _Body extends StatelessWidget {
-  const _Body({required this.seriesId, required this.service});
+enum _CodeStatus { active, expired, limitReached, disabled }
 
-  final String seriesId;
+class _CodeList extends StatelessWidget {
+  const _CodeList({required this.service});
+
   final TestSeriesPromoAdminService service;
 
   @override
@@ -99,19 +98,28 @@ class _Body extends StatelessWidget {
     return StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
       stream: promos,
       builder: (context, snap) {
-        final docs = snap.data?.docs ?? const [];
-        var viaCodes = 0;
-        var viaOffers = 0;
-        for (final d in docs) {
-          final n = (d.data()['redemptionCount'] as num?)?.toInt() ?? 0;
-          if (d.data()['kind'] == 'open') {
-            viaOffers += n;
-          } else {
-            viaCodes += n;
-          }
+        if (snap.hasError) {
+          return Center(child: Text('Could not load codes: ${snap.error}'));
         }
-        final codes = docs.where((d) => d.data()['kind'] != 'open').toList();
-
+        if (!snap.hasData) {
+          return const Center(child: CircularProgressIndicator());
+        }
+        final docs = snap.data!.docs;
+        if (docs.isEmpty) {
+          return const Center(
+            child: Padding(
+              padding: EdgeInsets.all(AppSpacing.xl),
+              child: Text(
+                'No codes yet. Tap "New code", then give it to an influencer.',
+                textAlign: TextAlign.center,
+              ),
+            ),
+          );
+        }
+        var total = 0;
+        for (final d in docs) {
+          total += (d.data()['redemptionCount'] as num?)?.toInt() ?? 0;
+        }
         return ListView(
           padding: const EdgeInsets.fromLTRB(
             AppSpacing.lg,
@@ -120,257 +128,19 @@ class _Body extends StatelessWidget {
             96,
           ),
           children: [
-            Text('Series: $seriesId', style: AppTextStyles.caption()),
-            const SizedBox(height: AppSpacing.md),
-            _OfferCard(seriesId: seriesId, service: service),
-            const SizedBox(height: AppSpacing.xl),
-            Row(
-              children: [
-                Expanded(child: Text('Promo codes', style: AppTextStyles.h3())),
-                Text(
-                  '$viaCodes via codes · $viaOffers via offers',
-                  style: AppTextStyles.caption(),
-                ),
-              ],
+            Text(
+              '${docs.length} ${docs.length == 1 ? 'code' : 'codes'} · '
+              '$total redeemed in total',
+              style: AppTextStyles.caption(),
             ),
             const SizedBox(height: AppSpacing.sm),
-            if (snap.hasError)
-              Text('Could not load codes: ${snap.error}')
-            else if (!snap.hasData)
-              const Padding(
-                padding: EdgeInsets.all(AppSpacing.xl),
-                child: Center(child: CircularProgressIndicator()),
-              )
-            else if (codes.isEmpty)
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: AppSpacing.lg),
-                child: Text(
-                  'No codes yet. Tap "New code", then give it to an influencer.',
-                  style: AppTextStyles.bodyMd(),
-                ),
-              )
-            else
-              for (final d in codes) _CodeTile(doc: d, service: service),
+            for (final d in docs) _CodeTile(doc: d, service: service),
           ],
         );
       },
     );
   }
 }
-
-// ---------------------------------------------------------------------------
-// Free for everyone
-// ---------------------------------------------------------------------------
-
-class _OfferCard extends StatelessWidget {
-  const _OfferCard({required this.seriesId, required this.service});
-
-  final String seriesId;
-  final TestSeriesPromoAdminService service;
-
-  @override
-  Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-    final offerStream = FirebaseFirestore.instance
-        .collection('test_series_open_offer')
-        .doc(seriesId)
-        .snapshots();
-
-    return StreamBuilder<DocumentSnapshot<Map<String, dynamic>>>(
-      stream: offerStream,
-      builder: (context, snap) {
-        final offer = snap.data?.data();
-        final active = offer != null && offer['active'] == true;
-        final expiresAt = _ts(offer?['expiresAt']);
-        final live = active && (expiresAt == null || expiresAt.isAfter(DateTime.now()));
-        final code = offer?['promoCode']?.toString();
-        final notifiedAt = _ts(offer?['notifiedAt']);
-
-        return Container(
-          padding: const EdgeInsets.all(AppSpacing.lg),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(AppRadius.lg),
-            border: Border.all(
-              color: live ? AppColors.correct : scheme.outlineVariant,
-            ),
-            color: live
-                ? AppColors.correct.withValues(alpha: 0.08)
-                : scheme.surfaceContainerLow,
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  Icon(
-                    live ? Icons.celebration_rounded : Icons.public_rounded,
-                    color: live ? AppColors.correct : scheme.onSurfaceVariant,
-                  ),
-                  const SizedBox(width: AppSpacing.sm),
-                  Expanded(
-                    child: Text(
-                      live ? 'Free for everyone: LIVE' : 'Free for everyone',
-                      style: AppTextStyles.h3(),
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: AppSpacing.sm),
-              if (!live)
-                Text(
-                  'Everyone sees "Claim free access" and gets a push. Each claim '
-                  'is saved to their account for good, so you can stop the offer '
-                  'any time without taking anything away.',
-                  style: AppTextStyles.bodySm(),
-                )
-              else ...[
-                if (code != null) _OfferStats(code: code),
-                Text(
-                  notifiedAt == null
-                      ? 'Push not sent yet.'
-                      : 'Push sent ${_dateFmt.format(notifiedAt)}.',
-                  style: AppTextStyles.bodySm(),
-                ),
-                if (expiresAt != null)
-                  Text(
-                    'Ends ${_dateFmt.format(expiresAt)}.',
-                    style: AppTextStyles.bodySm(),
-                  ),
-              ],
-              const SizedBox(height: AppSpacing.md),
-              Wrap(
-                spacing: AppSpacing.sm,
-                runSpacing: AppSpacing.sm,
-                children: [
-                  if (!live)
-                    FilledButton.icon(
-                      onPressed: () => unawaited(_announce(context)),
-                      icon: const Icon(Icons.campaign_rounded),
-                      label: const Text('Make free + notify'),
-                    )
-                  else ...[
-                    OutlinedButton.icon(
-                      onPressed: () => unawaited(_resend(context)),
-                      icon: const Icon(Icons.notifications_active_outlined),
-                      label: Text(notifiedAt == null ? 'Send push' : 'Send push again'),
-                    ),
-                    OutlinedButton.icon(
-                      onPressed: () => unawaited(_close(context)),
-                      icon: const Icon(Icons.stop_circle_outlined),
-                      label: const Text('Stop offer'),
-                    ),
-                  ],
-                ],
-              ),
-            ],
-          ),
-        );
-      },
-    );
-  }
-
-  Future<void> _announce(BuildContext context) async {
-    final input = await showDialog<_OfferInput>(
-      context: context,
-      builder: (_) => const _AnnounceDialog(),
-    );
-    if (input == null || !context.mounted) return;
-    try {
-      final result = await service.announce(
-        seriesId: seriesId,
-        title: input.title,
-        body: input.body,
-        notify: input.notify,
-        maxRedemptions: input.maxRedemptions,
-        expiresAt: input.expiresAt,
-      );
-      if (!context.mounted) return;
-      AppToast.showText(
-        context,
-        result.notified
-            ? 'Offer is live and the push went out.'
-            : input.notify
-            ? 'Offer is live, but the push failed (${result.pushError ?? 'unknown'}). '
-                  'Use "Send push".'
-            : 'Offer is live (no push sent).',
-      );
-    } on Object catch (e) {
-      if (context.mounted) {
-        AppToast.showText(context, TestSeriesPromoAdminService.describe(e));
-      }
-    }
-  }
-
-  Future<void> _resend(BuildContext context) async {
-    final ok = await _confirm(
-      context,
-      title: 'Send the push to everyone?',
-      message: 'Everyone with the app gets the notification again.',
-      action: 'Send',
-    );
-    if (!ok || !context.mounted) return;
-    try {
-      await service.resendPush(seriesId);
-      if (context.mounted) AppToast.showText(context, 'Push sent.');
-    } on Object catch (e) {
-      if (context.mounted) {
-        AppToast.showText(context, TestSeriesPromoAdminService.describe(e));
-      }
-    }
-  }
-
-  Future<void> _close(BuildContext context) async {
-    final ok = await _confirm(
-      context,
-      title: 'Stop the free offer?',
-      message:
-          'Nobody can claim it after this. People who already claimed keep '
-          'their access.',
-      action: 'Stop offer',
-    );
-    if (!ok || !context.mounted) return;
-    try {
-      await service.closeOffer(seriesId);
-      if (context.mounted) AppToast.showText(context, 'Offer stopped.');
-    } on Object catch (e) {
-      if (context.mounted) {
-        AppToast.showText(context, TestSeriesPromoAdminService.describe(e));
-      }
-    }
-  }
-}
-
-class _OfferStats extends StatelessWidget {
-  const _OfferStats({required this.code});
-
-  final String code;
-
-  @override
-  Widget build(BuildContext context) {
-    return StreamBuilder<DocumentSnapshot<Map<String, dynamic>>>(
-      stream: FirebaseFirestore.instance
-          .collection('test_series_promos')
-          .doc(code)
-          .snapshots(),
-      builder: (context, snap) {
-        final d = snap.data?.data();
-        final n = (d?['redemptionCount'] as num?)?.toInt() ?? 0;
-        final max = (d?['maxRedemptions'] as num?)?.toInt();
-        return Padding(
-          padding: const EdgeInsets.only(bottom: 2),
-          child: Text(
-            max == null ? '$n claimed' : '$n of $max claimed',
-            style: AppTextStyles.h2(),
-          ),
-        );
-      },
-    );
-  }
-}
-
-// ---------------------------------------------------------------------------
-// Codes
-// ---------------------------------------------------------------------------
 
 class _CodeTile extends StatelessWidget {
   const _CodeTile({required this.doc, required this.service});
@@ -385,15 +155,32 @@ class _CodeTile extends StatelessWidget {
     final label = d['label']?.toString() ?? '';
     final count = (d['redemptionCount'] as num?)?.toInt() ?? 0;
     final max = (d['maxRedemptions'] as num?)?.toInt();
-    final active = d['active'] == true;
+    final enabled = d['active'] == true;
     final expiresAt = _ts(d['expiresAt']);
-    final expired = expiresAt != null && expiresAt.isBefore(DateTime.now());
+
+    final status = !enabled
+        ? _CodeStatus.disabled
+        : (expiresAt != null && !expiresAt.isAfter(DateTime.now()))
+        ? _CodeStatus.expired
+        : (max != null && count >= max)
+        ? _CodeStatus.limitReached
+        : _CodeStatus.active;
+    final live = status == _CodeStatus.active;
     final scheme = Theme.of(context).colorScheme;
+
+    final (statusText, statusColor) = switch (status) {
+      _CodeStatus.active => ('Active', AppColors.correct),
+      _CodeStatus.expired => ('Expired', AppColors.wrong),
+      _CodeStatus.limitReached => ('Limit reached', AppColors.warning),
+      _CodeStatus.disabled => ('Disabled', scheme.onSurfaceVariant),
+    };
 
     final details = <String>[
       max == null ? '$count redeemed' : '$count of $max redeemed',
       if (expiresAt != null)
-        expired ? 'expired ${_dateFmt.format(expiresAt)}' : 'ends ${_dateFmt.format(expiresAt)}',
+        status == _CodeStatus.expired
+            ? 'expired ${_dateFmt.format(expiresAt)}'
+            : 'valid till ${_dateFmt.format(expiresAt)}',
     ].join(' · ');
 
     return Card(
@@ -407,8 +194,7 @@ class _CodeTile extends StatelessWidget {
                 code,
                 style: AppTextStyles.h3().copyWith(
                   letterSpacing: 1,
-                  color: active && !expired ? null : scheme.onSurfaceVariant,
-                  decoration: active && !expired ? null : TextDecoration.lineThrough,
+                  color: live ? null : scheme.onSurfaceVariant,
                 ),
               ),
             ),
@@ -423,10 +209,24 @@ class _CodeTile extends StatelessWidget {
             ),
           ],
         ),
-        subtitle: Text('$label\n$details'),
+        subtitle: Text.rich(
+          TextSpan(
+            children: [
+              TextSpan(text: '$label\n'),
+              TextSpan(
+                text: statusText,
+                style: TextStyle(
+                  color: statusColor,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+              TextSpan(text: ' · $details'),
+            ],
+          ),
+        ),
         isThreeLine: true,
         trailing: Switch(
-          value: active,
+          value: enabled,
           onChanged: (v) async {
             try {
               await service.setCodeActive(code, active: v);
@@ -506,7 +306,7 @@ class _RedemptionsSheet extends StatelessWidget {
                       dense: true,
                       title: Text(d['email']?.toString() ?? docs[i].id),
                       trailing: Text(
-                        at == null ? '' : _dateFmt.format(at),
+                        at == null ? '' : _dateTimeFmt.format(at),
                         style: AppTextStyles.caption(),
                       ),
                     );
@@ -522,40 +322,8 @@ class _RedemptionsSheet extends StatelessWidget {
 }
 
 // ---------------------------------------------------------------------------
-// Dialogs
+// Create dialog
 // ---------------------------------------------------------------------------
-
-Future<bool> _confirm(
-  BuildContext context, {
-  required String title,
-  required String message,
-  required String action,
-}) async {
-  final ok = await showDialog<bool>(
-    context: context,
-    builder: (ctx) => AlertDialog(
-      title: Text(title),
-      content: Text(message),
-      actions: [
-        TextButton(
-          onPressed: () => Navigator.of(ctx).pop(false),
-          child: const Text('Cancel'),
-        ),
-        FilledButton(
-          onPressed: () => Navigator.of(ctx).pop(true),
-          child: Text(action),
-        ),
-      ],
-    ),
-  );
-  return ok ?? false;
-}
-
-/// Empty -> null. Otherwise a positive int, or null if it is not one.
-int? _positiveInt(String raw) {
-  final n = int.tryParse(raw.trim());
-  return (n != null && n > 0) ? n : null;
-}
 
 class _CodeInput {
   const _CodeInput({
@@ -571,6 +339,12 @@ class _CodeInput {
   final DateTime? expiresAt;
 }
 
+/// Empty -> null. Otherwise a positive int, or null if it is not one.
+int? _positiveInt(String raw) {
+  final n = int.tryParse(raw.trim());
+  return (n != null && n > 0) ? n : null;
+}
+
 class _CreateCodeDialog extends HookWidget {
   const _CreateCodeDialog();
 
@@ -579,38 +353,54 @@ class _CreateCodeDialog extends HookWidget {
     final label = useTextEditingController();
     final code = useTextEditingController();
     final max = useTextEditingController();
-    final days = useTextEditingController();
+    final lastDay = useState<DateTime?>(null);
     final error = useState<String?>(null);
+
+    Future<void> pickDate() async {
+      final now = DateTime.now();
+      final picked = await showDatePicker(
+        context: context,
+        initialDate: lastDay.value ?? now.add(const Duration(days: 30)),
+        firstDate: now,
+        lastDate: now.add(const Duration(days: 365 * 3)),
+        helpText: 'Last day the code works',
+      );
+      if (picked != null) {
+        lastDay.value = picked;
+        error.value = null;
+      }
+    }
 
     void submit() {
       if (label.text.trim().isEmpty) {
-        error.value = 'Add a label, for example the influencer\'s name.';
+        error.value = "Add a label, for example the influencer's name.";
         return;
       }
       if (max.text.trim().isNotEmpty && _positiveInt(max.text) == null) {
-        error.value = 'Max redemptions must be a whole number.';
+        error.value = 'Max people must be a whole number.';
         return;
       }
-      final d = _positiveInt(days.text);
-      if (days.text.trim().isNotEmpty && d == null) {
-        error.value = 'Expiry must be a whole number of days.';
-        return;
-      }
+      // The chosen day is the last valid day: the code stops at its end.
+      final d = lastDay.value;
+      final expiresAt = d == null
+          ? null
+          : DateTime(d.year, d.month, d.day, 23, 59, 59);
       Navigator.of(context).pop(
         _CodeInput(
           label: label.text.trim(),
           code: code.text.trim().isEmpty ? null : code.text.trim(),
           maxRedemptions: _positiveInt(max.text),
-          expiresAt: d == null ? null : DateTime.now().add(Duration(days: d)),
+          expiresAt: expiresAt,
         ),
       );
     }
 
     return AlertDialog(
-      title: const Text('New promo code'),
+      title: const Text('New offer code'),
       content: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             TextField(
               controller: label,
@@ -632,15 +422,32 @@ class _CreateCodeDialog extends HookWidget {
               controller: max,
               keyboardType: TextInputType.number,
               decoration: const InputDecoration(
-                labelText: 'Max redemptions (optional)',
+                labelText: 'Max people (optional)',
+                helperText: 'Empty means no limit',
               ),
             ),
-            TextField(
-              controller: days,
-              keyboardType: TextInputType.number,
-              decoration: const InputDecoration(
-                labelText: 'Expires in days (optional)',
-              ),
+            const SizedBox(height: AppSpacing.md),
+            Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    lastDay.value == null
+                        ? 'No expiry date'
+                        : 'Works till ${_dateFmt.format(lastDay.value!)}',
+                  ),
+                ),
+                if (lastDay.value != null)
+                  IconButton(
+                    tooltip: 'Remove date',
+                    icon: const Icon(Icons.close_rounded),
+                    onPressed: () => lastDay.value = null,
+                  ),
+                TextButton.icon(
+                  onPressed: () => unawaited(pickDate()),
+                  icon: const Icon(Icons.event_rounded),
+                  label: Text(lastDay.value == null ? 'Set date' : 'Change'),
+                ),
+              ],
             ),
             if (error.value != null)
               Padding(
@@ -659,125 +466,6 @@ class _CreateCodeDialog extends HookWidget {
           child: const Text('Cancel'),
         ),
         FilledButton(onPressed: submit, child: const Text('Create')),
-      ],
-    );
-  }
-}
-
-class _OfferInput {
-  const _OfferInput({
-    required this.notify,
-    this.title,
-    this.body,
-    this.maxRedemptions,
-    this.expiresAt,
-  });
-
-  final bool notify;
-  final String? title;
-  final String? body;
-  final int? maxRedemptions;
-  final DateTime? expiresAt;
-}
-
-class _AnnounceDialog extends HookWidget {
-  const _AnnounceDialog();
-
-  @override
-  Widget build(BuildContext context) {
-    final title = useTextEditingController();
-    final body = useTextEditingController();
-    final max = useTextEditingController();
-    final days = useTextEditingController();
-    final notify = useState(true);
-    final error = useState<String?>(null);
-
-    void submit() {
-      if (max.text.trim().isNotEmpty && _positiveInt(max.text) == null) {
-        error.value = 'Limit must be a whole number.';
-        return;
-      }
-      final d = _positiveInt(days.text);
-      if (days.text.trim().isNotEmpty && d == null) {
-        error.value = 'Duration must be a whole number of days.';
-        return;
-      }
-      Navigator.of(context).pop(
-        _OfferInput(
-          notify: notify.value,
-          title: title.text,
-          body: body.text,
-          maxRedemptions: _positiveInt(max.text),
-          expiresAt: d == null ? null : DateTime.now().add(Duration(days: d)),
-        ),
-      );
-    }
-
-    return AlertDialog(
-      title: const Text('Make it free for everyone'),
-      content: SingleChildScrollView(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            SwitchListTile(
-              contentPadding: EdgeInsets.zero,
-              title: const Text('Send a push to everyone'),
-              value: notify.value,
-              onChanged: (v) => notify.value = v,
-            ),
-            if (notify.value) ...[
-              TextField(
-                controller: title,
-                maxLength: 120,
-                decoration: const InputDecoration(
-                  labelText: 'Push title (optional)',
-                  hintText: 'Prelims 2027 Test Series is free for you',
-                ),
-              ),
-              TextField(
-                controller: body,
-                maxLength: 180,
-                maxLines: 2,
-                decoration: const InputDecoration(
-                  labelText: 'Push message (optional)',
-                  hintText: 'Every test is unlocked for you. Tap to claim it.',
-                ),
-              ),
-            ],
-            TextField(
-              controller: max,
-              keyboardType: TextInputType.number,
-              decoration: const InputDecoration(
-                labelText: 'Only the first N people (optional)',
-              ),
-            ),
-            TextField(
-              controller: days,
-              keyboardType: TextInputType.number,
-              decoration: const InputDecoration(
-                labelText: 'Offer lasts (days, optional)',
-              ),
-            ),
-            if (error.value != null)
-              Padding(
-                padding: const EdgeInsets.only(top: AppSpacing.sm),
-                child: Text(
-                  error.value!,
-                  style: TextStyle(color: Theme.of(context).colorScheme.error),
-                ),
-              ),
-          ],
-        ),
-      ),
-      actions: [
-        TextButton(
-          onPressed: () => Navigator.of(context).pop(),
-          child: const Text('Cancel'),
-        ),
-        FilledButton(
-          onPressed: submit,
-          child: Text(notify.value ? 'Go live + notify' : 'Go live'),
-        ),
       ],
     );
   }

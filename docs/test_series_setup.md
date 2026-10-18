@@ -104,9 +104,9 @@ Re-run `upload_test_series.js` only with `--force` if you want to replace tests 
 4. Check: locked tests open, "My Test Series" appears under Settings, and uninstall/reinstall plus **Restore purchases** brings the access back.
 5. Turn `test_series_sales_enabled` off and confirm a fresh account no longer sees the entry, while the buyer still does.
 
-## 7. Free access: promo codes and "free for everyone"
+## 7. Offer codes (free access for influencers)
 
-Give the series away without touching Google Play or RevenueCat. Super users manage it in the app: **Settings > Free test series**.
+Give the series away with codes, without touching Google Play or RevenueCat. Super users manage them in the app: **Settings > Offer codes**.
 
 ```bash
 firebase deploy --only firestore:rules,functions
@@ -114,19 +114,20 @@ firebase deploy --only firestore:rules,functions
 
 | Want | Do |
 | --- | --- |
-| A code for an influencer | **New code**, label it with their name (optional: your own code text, max redemptions, expiry). Share the code. People enter it under **Have a code?** in the unlock sheet. |
-| Count who used it | The code's row shows `N redeemed`. Tap the row for the emails and times. |
-| Free for everyone | **Make free + notify**. Everyone gets a push ("free for you"), the series shows **Claim free access**, and each claim is saved to the person's account. **Stop offer** closes it. |
+| A code for an influencer | **New code**. Label it with their name. Optional: your own code text (for example `RAHUL50`), **Max people**, and a **last valid day**. Share the code. People enter it under **Have a code?** in the unlock sheet. |
+| Count who used it | The code's row shows `N of max redeemed` and a status (Active, Expired, Limit reached, Disabled). Tap the row for the emails and times. |
+| Switch a code off | The switch on its row. |
+
+What the user sees: after the last valid day (it works until 11:59 PM that day) the field says **Code expired**. Once the max is reached it says **Code limit reached**. Unknown or disabled codes say "That code isn't valid".
 
 How it works:
 
 - A redemption writes `test_series_grants/{firebaseUid}` through a Cloud Function (`redeemTestSeriesCode`). The app unions these grants with RevenueCat entitlements, so it behaves exactly like a purchase.
 - Grants belong to the Google/Apple account (a real account is required, anonymous users are asked to sign in first). They survive reinstalls and work on any device after signing in. **Restore purchase** re-reads both RevenueCat and the grants; if neither has anything it says "Nothing was found" and the buy button stays available.
-- Stopping an offer or disabling a code never removes access that was already granted.
+- Expiring, disabling or filling up a code never removes access that was already granted.
 - The same user cannot use up two redemptions: if they already own the series, the code is not consumed.
 - Codes are case-insensitive. After 8 unknown codes in an hour an account is throttled.
-- The push goes to the `upsc_wars_spot_tests` topic (all installs), so people who already own the series also get it. A live offer also shows the series entry when `test_series_sales_enabled` is off, so the push always lands somewhere.
-- Not covered by the Remote Config sales switch: promo codes only work where the user can reach the series. Keep `test_series_sales_enabled` on while influencer codes are in use, or run a "free for everyone" offer.
+- Codes are only reachable where the user can reach the series, so keep `test_series_sales_enabled` on while codes are in use.
 
 ## Behaviour notes
 

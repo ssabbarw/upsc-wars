@@ -1819,6 +1819,246 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Your pick'**
   String get reviewYourPick;
+
+  /// No description provided for @onbSublinePrefix.
+  ///
+  /// In en, this message translates to:
+  /// **'We analyze every answer to '**
+  String get onbSublinePrefix;
+
+  /// No description provided for @onbSublinePhrase.
+  ///
+  /// In en, this message translates to:
+  /// **'identify the topics that help or hurt'**
+  String get onbSublinePhrase;
+
+  /// No description provided for @onbSublineSuffix.
+  ///
+  /// In en, this message translates to:
+  /// **' your score.'**
+  String get onbSublineSuffix;
+
+  /// No description provided for @onbFeatureExplanation.
+  ///
+  /// In en, this message translates to:
+  /// **'Rich explanation'**
+  String get onbFeatureExplanation;
+
+  /// No description provided for @onbFeatureStatement.
+  ///
+  /// In en, this message translates to:
+  /// **'Statement analysis'**
+  String get onbFeatureStatement;
+
+  /// No description provided for @onbFeatureElimination.
+  ///
+  /// In en, this message translates to:
+  /// **'Elimination technique'**
+  String get onbFeatureElimination;
+
+  /// No description provided for @onbFeatureDistractor.
+  ///
+  /// In en, this message translates to:
+  /// **'Strong distractor option'**
+  String get onbFeatureDistractor;
+
+  /// No description provided for @onbThesisEyebrow.
+  ///
+  /// In en, this message translates to:
+  /// **'THE UPSC REALITY'**
+  String get onbThesisEyebrow;
+
+  /// No description provided for @onbConfidentWrong.
+  ///
+  /// In en, this message translates to:
+  /// **'Confident\n& Wrong'**
+  String get onbConfidentWrong;
+
+  /// No description provided for @onbConfidentWrongBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Topics you are confident about and get wrong.'**
+  String get onbConfidentWrongBody;
+
+  /// No description provided for @onbGuessRight.
+  ///
+  /// In en, this message translates to:
+  /// **'Guess\n& Right'**
+  String get onbGuessRight;
+
+  /// No description provided for @onbGuessRightBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Topics where your guesses are right more often.'**
+  String get onbGuessRightBody;
+
+  /// No description provided for @onbNext.
+  ///
+  /// In en, this message translates to:
+  /// **'Next  →'**
+  String get onbNext;
+
+  /// No description provided for @onbLead.
+  ///
+  /// In en, this message translates to:
+  /// **'Prelims isn\'t about knowing everything.'**
+  String get onbLead;
+
+  /// No description provided for @onbAccent.
+  ///
+  /// In en, this message translates to:
+  /// **'UPSC Wars shows you where you stand.'**
+  String get onbAccent;
+
+  /// No description provided for @onbAvoidMistakes.
+  ///
+  /// In en, this message translates to:
+  /// **'Avoid costly mistakes.'**
+  String get onbAvoidMistakes;
+
+  /// No description provided for @onbReviseTopics.
+  ///
+  /// In en, this message translates to:
+  /// **'Revise these topics.'**
+  String get onbReviseTopics;
+
+  /// No description provided for @onbAttemptMore.
+  ///
+  /// In en, this message translates to:
+  /// **'Attempt more from these topics'**
+  String get onbAttemptMore;
+
+  /// No description provided for @onbGainMarks.
+  ///
+  /// In en, this message translates to:
+  /// **'Gain +ve marks.'**
+  String get onbGainMarks;
+
+  /// No description provided for @onbDepthEyebrow.
+  ///
+  /// In en, this message translates to:
+  /// **'THE UPSC EDGE'**
+  String get onbDepthEyebrow;
+
+  /// No description provided for @onbDepthTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Each question in\nUPSC Wars has:'**
+  String get onbDepthTitle;
+
+  /// No description provided for @aboutWhyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'I prepared for UPSC myself and realised that most aspirants solve thousands of MCQs but still don’t know where they are actually losing marks.\n\nSometimes the problem is not lack of knowledge — it is overconfidence, risky guessing, weak revision, and repeated mistakes.\n\nAt the same time, preparation is also about knowing where you can safely take smart risks and attempt more with confidence.\n\nThat is why I built UPSC Wars.'**
+  String get aboutWhyBody;
+
+  /// No description provided for @aboutGoalBody.
+  ///
+  /// In en, this message translates to:
+  /// **'So your preparation becomes smarter, not just harder.\n\nMy goal is simple:\n\nHelp aspirants prepare like someone who clears Prelims.\n\nBuilt independently. No coaching institute. No big team. Just a serious attempt to make UPSC preparation better.'**
+  String get aboutGoalBody;
+
+  /// No description provided for @aboutConnectBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Your feedback directly improves UPSC Wars.\n\nIf something feels missing, confusing, or useful, please message me. I read every feedback personally.\n\n📩 upscwars@gmail.com'**
+  String get aboutConnectBody;
+
+  /// No description provided for @aboutReviewBody.
+  ///
+  /// In en, this message translates to:
+  /// **'If UPSC Wars helped your preparation, please leave a review.\n\nYour review helps more serious aspirants discover the app and helps improve the app faster.'**
+  String get aboutReviewBody;
+
+  /// No description provided for @aboutBullet1.
+  ///
+  /// In en, this message translates to:
+  /// **'• Areas where confident answers or intelligent guesses often go wrong\n'**
+  String get aboutBullet1;
+
+  /// No description provided for @aboutArrow1.
+  ///
+  /// In en, this message translates to:
+  /// **'  → Avoid taking extra risks here\n\n'**
+  String get aboutArrow1;
+
+  /// No description provided for @aboutBullet2.
+  ///
+  /// In en, this message translates to:
+  /// **'• Areas where confident answers or intelligent guesses are usually correct\n'**
+  String get aboutBullet2;
+
+  /// No description provided for @aboutArrow2.
+  ///
+  /// In en, this message translates to:
+  /// **'  → Take smarter risks here\n\n'**
+  String get aboutArrow2;
+
+  /// No description provided for @aboutBullet3.
+  ///
+  /// In en, this message translates to:
+  /// **'• Common UPSC trap patterns and tricky question types\n'**
+  String get aboutBullet3;
+
+  /// No description provided for @aboutArrow3.
+  ///
+  /// In en, this message translates to:
+  /// **'  → Stay alert and avoid negative marking'**
+  String get aboutArrow3;
+
+  /// No description provided for @aboutExAspirant.
+  ///
+  /// In en, this message translates to:
+  /// **'(Ex-aspirant)'**
+  String get aboutExAspirant;
+
+  /// No description provided for @aboutWhyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Why I Built UPSC Wars'**
+  String get aboutWhyTitle;
+
+  /// No description provided for @aboutHelpsFind.
+  ///
+  /// In en, this message translates to:
+  /// **'It helps you find:'**
+  String get aboutHelpsFind;
+
+  /// No description provided for @aboutConnect.
+  ///
+  /// In en, this message translates to:
+  /// **'Connect'**
+  String get aboutConnect;
+
+  /// No description provided for @aboutReviews.
+  ///
+  /// In en, this message translates to:
+  /// **'Reviews'**
+  String get aboutReviews;
+
+  /// No description provided for @aboutRateReview.
+  ///
+  /// In en, this message translates to:
+  /// **'Rate/Review UPSC Wars'**
+  String get aboutRateReview;
+
+  /// No description provided for @aboutFeedbackEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Send Feedback on Email'**
+  String get aboutFeedbackEmail;
+
+  /// No description provided for @aboutFeedbackTelegram.
+  ///
+  /// In en, this message translates to:
+  /// **'Send Feedback on Telegram'**
+  String get aboutFeedbackTelegram;
+
+  /// No description provided for @aboutLinkFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not open link'**
+  String get aboutLinkFailed;
 }
 
 class _AppLocalizationsDelegate

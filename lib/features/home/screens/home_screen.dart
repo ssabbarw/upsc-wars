@@ -108,12 +108,17 @@ class HomeScreen extends HookConsumerWidget {
       unawaited(() async {
         await BattleMessagingService.maybePromptSystemAfterOnboardingHome(
           context: context,
-          beforeSystemPrompt: () => showContentLanguageChoiceSheet(
-            context: context,
-            ref: ref,
-            barrierDismissible: false,
-            confirmLabel: context.l10n.commonContinue,
-          ),
+          beforeSystemPrompt: () async {
+            // Onboarding already asked; only ask here if that was skipped.
+            final prefs = await ref.read(prefsServiceProvider.future);
+            if (prefs.languageChosen || !context.mounted) return;
+            await showContentLanguageChoiceSheet(
+              context: context,
+              ref: ref,
+              barrierDismissible: false,
+              confirmLabel: context.l10n.commonContinue,
+            );
+          },
         );
         if (!context.mounted) return;
         unawaited(maybeShowDailyRitualsIntro(context: context, ref: ref));

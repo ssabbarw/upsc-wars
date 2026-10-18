@@ -24,6 +24,7 @@ Future<void> persistAppLanguage(WidgetRef ref, String lang) async {
   final normalized = normalizeAppLanguage(lang);
   final prefs = await ref.read(prefsServiceProvider.future);
   final previous = normalizeAppLanguage(prefs.language);
+  prefs.languageChosen = true;
   if (previous == normalized) return;
   prefs.language = normalized;
   ref.invalidate(appLanguageProvider);

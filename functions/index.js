@@ -1173,9 +1173,6 @@ exports.adminPublishTestSeriesDue = testSeries.adminPublishTestSeriesDue;
 exports.redeemTestSeriesCode = testSeries.redeemTestSeriesCode;
 exports.adminCreateTestSeriesPromo = testSeries.adminCreateTestSeriesPromo;
 exports.adminSetTestSeriesPromoActive = testSeries.adminSetTestSeriesPromoActive;
-exports.adminAnnounceFreeTestSeries = testSeries.adminAnnounceFreeTestSeries;
-exports.adminNotifyFreeTestSeriesOffer = testSeries.adminNotifyFreeTestSeriesOffer;
-exports.adminCloseFreeTestSeriesOffer = testSeries.adminCloseFreeTestSeriesOffer;
 
 const fomoPulse = require("./fomo_pulse");
 exports.listFomoPulseHarvestCandidates = fomoPulse.listFomoPulseHarvestCandidates;

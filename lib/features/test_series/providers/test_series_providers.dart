@@ -196,16 +196,12 @@ final activeSeriesIdProvider = FutureProvider<String>(
 /// Whether the home entry should show. Buyers always see it (even after sales
 /// are switched off); everyone else only while selling is on. Super-users
 /// always see it so they can test before launch.
-///
-/// A live "free for everyone" offer also shows it, so the push that announces
-/// the offer always lands somewhere even while sales are off.
 final testSeriesEntryVisibleProvider = FutureProvider<bool>((ref) async {
   // Debug builds always show it so the feature can be developed and tested
   // without touching Remote Config. Release builds are unaffected.
   if (kDebugMode || ref.watch(isSuperUserProvider)) return true;
   final owned = await ref.watch(ownedSeriesIdsProvider.future);
   if (owned.isNotEmpty) return true;
-  if (await ref.watch(testSeriesOpenOfferProvider.future) != null) return true;
   return ref.watch(testSeriesSalesRemoteEnabledProvider.future);
 });
 
@@ -213,30 +209,6 @@ final testSeriesEntryVisibleProvider = FutureProvider<bool>((ref) async {
 final testSeriesCanSellProvider = FutureProvider<bool>((ref) async {
   if (kDebugMode || ref.watch(isSuperUserProvider)) return true;
   return ref.watch(testSeriesSalesRemoteEnabledProvider.future);
-});
-
-/// The live "free for everyone" offer on the active series, or null.
-///
-/// Public read, so it works signed out. Any failure counts as "no offer":
-/// this only ever adds a free path, it never gates one.
-final testSeriesOpenOfferProvider =
-    FutureProvider.autoDispose<SeriesOpenOffer?>((ref) async {
-      try {
-        final seriesId = await ref.watch(activeSeriesIdProvider.future);
-        return await ref
-            .read(testSeriesAccessServiceProvider)
-            .fetchOpenOffer(seriesId)
-            .timeout(const Duration(seconds: 6));
-      } on Object {
-        return null;
-      }
-    });
-
-/// Whether the active series can be unlocked at all right now: on sale, or
-/// free through a live offer. Drives the unlock bar and entry screen.
-final testSeriesCanUnlockProvider = FutureProvider<bool>((ref) async {
-  if (await ref.watch(testSeriesCanSellProvider.future)) return true;
-  return await ref.watch(testSeriesOpenOfferProvider.future) != null;
 });
 
 /// A series with all its tests. Emits the cached copy first (instant,

@@ -53,8 +53,6 @@ class SeriesPaywallSheet extends HookConsumerWidget {
     final busy = useState(false);
     final canSell = ref.watch(testSeriesCanSellProvider).asData?.value ?? false;
     final access = ref.watch(testSeriesAccessServiceProvider);
-    final offer = ref.watch(testSeriesOpenOfferProvider).asData?.value;
-    final isFreeOffer = offer != null && offer.seriesId == bundle.info.id;
 
     final showCodeField = useState(false);
     final codeCtrl = useTextEditingController();
@@ -218,9 +216,7 @@ class SeriesPaywallSheet extends HookConsumerWidget {
           toast('Access restored.');
           Navigator.of(context).pop(true);
         } else {
-          restoreNote.value = isFreeOffer
-              ? 'Nothing was found for this account. You can claim your free access below.'
-              : canSell
+          restoreNote.value = canSell
               ? 'Nothing was found for this account. You can unlock the series below.'
               : 'Nothing was found for this account.';
         }
@@ -282,38 +278,7 @@ class SeriesPaywallSheet extends HookConsumerWidget {
               _Notice(restoreNote.value!, color: scheme.onSurface),
               const SizedBox(height: AppSpacing.md),
             ],
-            if (isFreeOffer) ...[
-              _Notice(
-                'Free for you for a limited time. Claim it once and it stays '
-                'yours, on every device you sign in on.',
-                color: scheme.onSurface,
-              ),
-              const SizedBox(height: AppSpacing.md),
-              FilledButton(
-                onPressed: busy.value
-                    ? null
-                    : () => unawaited(
-                        redeem(
-                          offer.code,
-                          signInReason:
-                              'Sign in with Google so your free access is saved to your account.',
-                        ),
-                      ),
-                style: FilledButton.styleFrom(
-                  minimumSize: const Size.fromHeight(52),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(AppRadius.lg),
-                  ),
-                ),
-                child: busy.value
-                    ? const SizedBox(
-                        width: 22,
-                        height: 22,
-                        child: CircularProgressIndicator(strokeWidth: 2),
-                      )
-                    : const Text('Claim free access'),
-              ),
-            ] else if (!service.isSupported)
+            if (!service.isSupported)
               _Notice(
                 'Purchases are not available on this device or build yet.',
                 color: scheme.onSurfaceVariant,

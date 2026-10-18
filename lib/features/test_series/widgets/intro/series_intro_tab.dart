@@ -93,7 +93,7 @@ class SeriesIntroTab extends ConsumerWidget {
 }
 
 /// Always-visible buy bar: price on the left, button on the right. Hidden when
-/// the series is neither on sale nor free through a live offer.
+/// the series is not on sale.
 class SeriesUnlockBar extends ConsumerWidget {
   const SeriesUnlockBar({super.key, required this.bundle});
 
@@ -101,10 +101,8 @@ class SeriesUnlockBar extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final canUnlock = ref.watch(testSeriesCanUnlockProvider).asData?.value ?? false;
-    if (!canUnlock) return const SizedBox.shrink();
-    final freeOffer = ref.watch(testSeriesOpenOfferProvider).asData?.value;
-    final isFreeOffer = freeOffer != null && freeOffer.seriesId == bundle.info.id;
+    final canSell = ref.watch(testSeriesCanSellProvider).asData?.value ?? false;
+    if (!canSell) return const SizedBox.shrink();
 
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
@@ -124,31 +122,7 @@ class SeriesUnlockBar extends ConsumerWidget {
           padding: const EdgeInsets.all(AppSpacing.md),
           child: Row(
             children: [
-              if (isFreeOffer) ...[
-                Padding(
-                  padding: const EdgeInsets.only(left: AppSpacing.xs),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Free for you',
-                        style: AppTextStyles.h1().copyWith(
-                          fontSize: 22,
-                          fontWeight: FontWeight.w800,
-                        ),
-                      ),
-                      Text(
-                        'Limited-time offer',
-                        style: AppTextStyles.caption().copyWith(
-                          color: scheme.onSurfaceVariant,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                const SizedBox(width: AppSpacing.lg),
-              ] else if (price != null) ...[
+              if (price != null) ...[
                 Padding(
                   padding: const EdgeInsets.only(left: AppSpacing.xs),
                   child: Column(
@@ -184,7 +158,7 @@ class SeriesUnlockBar extends ConsumerWidget {
                       borderRadius: BorderRadius.circular(AppRadius.lg),
                     ),
                   ),
-                  child: Text(isFreeOffer ? 'Claim free access' : 'Unlock all tests'),
+                  child: const Text('Unlock all tests'),
                 ),
               ),
             ],

@@ -23,6 +23,7 @@ abstract final class PrefKeys {
       'pending_streak_milestone_celebration_v1';
   static const dailyGoal = 'daily_goal';
   static const language = 'language';
+  static const languageChosen = 'language_chosen';
   static const dbInitialized = 'db_initialized';
   static const dbAssetVersion = 'db_asset_version';
   static const darkModeEnabled = 'dark_mode_enabled';
@@ -310,6 +311,11 @@ class PrefsService {
 
   String get language => _p.getString(PrefKeys.language) ?? 'en';
   set language(String v) => _p.setString(PrefKeys.language, v);
+
+  /// True once the user picked a language explicitly (first-run gate or
+  /// Settings). Lets us skip the post-onboarding language sheet.
+  bool get languageChosen => _p.getBool(PrefKeys.languageChosen) ?? false;
+  set languageChosen(bool v) => _p.setBool(PrefKeys.languageChosen, v);
 
   bool get dbInitialized => _p.getBool(PrefKeys.dbInitialized) ?? false;
   set dbInitialized(bool v) => _p.setBool(PrefKeys.dbInitialized, v);

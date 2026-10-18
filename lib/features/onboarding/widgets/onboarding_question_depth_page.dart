@@ -6,6 +6,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../mini_games/shared/revision_games_theme.dart';
 import 'onboarding_scale.dart';
+import '../../../l10n/l10n.dart';
 
 class _FeatureLine {
   const _FeatureLine({
@@ -21,27 +22,27 @@ class _FeatureLine {
   final Color tint;
 }
 
-const _kFeatures = [
+List<_FeatureLine> _kFeatures(AppLocalizations l10n) => [
   _FeatureLine(
-    title: 'Rich explanation',
+    title: l10n.onbFeatureExplanation,
     icon: Icons.menu_book_rounded,
     accent: RgColors.tealDeep,
     tint: AppColors.correctBg,
   ),
   _FeatureLine(
-    title: 'Statement analysis',
+    title: l10n.onbFeatureStatement,
     icon: Icons.fact_check_rounded,
     accent: RgColors.info,
     tint: AppColors.infoBg,
   ),
   _FeatureLine(
-    title: 'Elimination technique',
+    title: l10n.onbFeatureElimination,
     icon: Icons.filter_alt_rounded,
     accent: RgColors.warning,
     tint: AppColors.warningBg,
   ),
   _FeatureLine(
-    title: 'Strong distractor option',
+    title: l10n.onbFeatureDistractor,
     icon: Icons.psychology_alt_rounded,
     accent: RgColors.wrong,
     tint: AppColors.wrongBg,
@@ -59,11 +60,12 @@ class OnboardingQuestionDepthPage extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
+    final features = _kFeatures(context.l10n);
     final checked = useState(0);
 
     useEffect(() {
       final timers = <Timer>[];
-      for (var i = 0; i < _kFeatures.length; i++) {
+      for (var i = 0; i < features.length; i++) {
         timers.add(
           Timer(Duration(milliseconds: _firstDelayMs + _staggerMs * i), () {
             checked.value = i + 1;
@@ -77,7 +79,7 @@ class OnboardingQuestionDepthPage extends HookWidget {
       };
     }, const []);
 
-    final allChecked = checked.value >= _kFeatures.length;
+    final allChecked = checked.value >= features.length;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -88,7 +90,7 @@ class OnboardingQuestionDepthPage extends HookWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Text(
-                  'THE UPSC EDGE',
+                  context.l10n.onbDepthEyebrow,
                   style: RgText.mono(
                     size: onb(context, 11),
                     letterSpacingEm: 0.14,
@@ -97,7 +99,7 @@ class OnboardingQuestionDepthPage extends HookWidget {
                 ),
                 SizedBox(height: onb(context, 10)),
                 Text(
-                  'Each question in\nUPSC Wars has:',
+                  context.l10n.onbDepthTitle,
                   style: RgText.display(
                     size: onb(context, 24),
                     weight: FontWeight.w800,
@@ -105,10 +107,10 @@ class OnboardingQuestionDepthPage extends HookWidget {
                   ),
                 ),
                 SizedBox(height: onb(context, 22)),
-                for (var i = 0; i < _kFeatures.length; i++) ...[
+                for (var i = 0; i < features.length; i++) ...[
                   if (i > 0) SizedBox(height: onb(context, 10)),
                   _FeatureRow(
-                    feature: _kFeatures[i],
+                    feature: features[i],
                     checked: checked.value > i,
                   ),
                 ],
@@ -178,7 +180,7 @@ class _BottomCta extends HookWidget {
                     ),
                   ),
               child: Text(
-                'Let\u2019s go',
+                context.l10n.demoLetsGo,
                 style: RgText.body(
                   size: onb(context, 16),
                   weight: FontWeight.w700,

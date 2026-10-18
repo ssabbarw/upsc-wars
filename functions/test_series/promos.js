@@ -1,32 +1,27 @@
 /**
- * Free access to the paid Prelims Test Series: promo codes + "free for
- * everyone" offers.
+ * Promo codes that unlock the paid Prelims Test Series for free (for example
+ * one code per influencer).
  *
  * Data model (all server-written; see firestore.rules):
  *
  *  test_series_promos/{CODE}                 one doc per code
- *      seriesId, label, kind ("code" | "open"), active, maxRedemptions|null,
- *      expiresAt|null, redemptionCount, createdAt, createdBy
+ *      seriesId, label, active, maxRedemptions|null, expiresAt|null,
+ *      redemptionCount, createdAt, createdBy
  *  test_series_promos/{CODE}/redemptions/{uid}
  *      uid, email, redeemedAt   (one per user per code: this is the audit
  *      trail and also what makes redeeming idempotent)
  *  test_series_grants/{uid}                  what the app reads
  *      series: { [seriesId]: { source, code, grantedAt } }
- *  test_series_open_offer/{seriesId}         public; drives the in-app
- *      "Free for you, claim it" banner. Holds the hidden `kind: "open"` code.
  *  test_series_redeem_attempts/{uid}         failed-guess throttle
  *
  * A grant is permanent and tied to the Firebase uid (a real Google/Apple
  * account), so it survives reinstalls and works on every device the user
- * signs in on. Closing an offer or disabling a code never revokes grants.
+ * signs in on. Disabling or expiring a code never revokes existing grants.
  *
  * Callables:
  *  - redeemTestSeriesCode               (any real account)
  *  - adminCreateTestSeriesPromo         (admin)
  *  - adminSetTestSeriesPromoActive      (admin)
- *  - adminAnnounceFreeTestSeries        (admin) open offer + push
- *  - adminNotifyFreeTestSeriesOffer     (admin) re-send the push
- *  - adminCloseFreeTestSeriesOffer      (admin)
  */
 const admin = require("firebase-admin");
 const crypto = require("crypto");
@@ -36,14 +31,7 @@ const REGION = "asia-south1";
 
 const PROMOS = "test_series_promos";
 const GRANTS = "test_series_grants";
-const OFFERS = "test_series_open_offer";
 const ATTEMPTS = "test_series_redeem_attempts";
-
-/** Every install subscribes to this topic; must match the broadcast topic. */
-const BROADCAST_TOPIC = "upsc_wars_spot_tests";
-const ANDROID_NOTIF_CHANNEL = "general_v2";
-/** Must match Flutter `TestSeriesFcm.kind`. */
-const FCM_KIND = "test_series_free";
 
 const MAX_FAILED_ATTEMPTS = 8;
 const ATTEMPT_WINDOW_MS = 60 * 60 * 1000;
@@ -53,6 +41,8 @@ const CODE_RE = /^[A-Z0-9][A-Z0-9_-]{2,31}$/;
 const CODE_ALPHABET = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
 
 const INVALID_CODE_MESSAGE = "That code isn't valid. Check it and try again.";
+const EXPIRED_MESSAGE = "Code expired";
+const LIMIT_REACHED_MESSAGE = "Code limit reached";
 
 function db() {
   return admin.firestore();
@@ -88,13 +78,13 @@ function normalizeCode(raw) {
   return CODE_RE.test(code) ? code : null;
 }
 
-function randomCode(length, prefix = "") {
+function randomCode(length) {
   const bytes = crypto.randomBytes(length);
   let out = "";
   for (let i = 0; i < length; i++) {
     out += CODE_ALPHABET[bytes[i] % CODE_ALPHABET.length];
   }
-  return `${prefix}${out}`;
+  return out;
 }
 
 function trimmed(raw, max) {
@@ -120,7 +110,7 @@ function parseExpiry(raw) {
     throw new HttpsError("invalid-argument", "expiresAt must be an ISO date.");
   }
   if (d.getTime() <= Date.now()) {
-    throw new HttpsError("invalid-argument", "expiresAt must be in the future.");
+    throw new HttpsError("invalid-argument", "The expiry date must be in the future.");
   }
   return admin.firestore.Timestamp.fromDate(d);
 }
@@ -216,11 +206,7 @@ async function redeemCode({ uid, email, code }) {
       return { status: "already_owned", seriesId };
     }
     if (promo.expiresAt && promo.expiresAt.toMillis() <= Date.now()) {
-      throw new RedeemFailure(
-        "failed-precondition",
-        "This code has expired.",
-        false,
-      );
+      throw new RedeemFailure("failed-precondition", EXPIRED_MESSAGE, false);
     }
     const max = promo.maxRedemptions;
     if (
@@ -230,7 +216,7 @@ async function redeemCode({ uid, email, code }) {
     ) {
       throw new RedeemFailure(
         "failed-precondition",
-        "This code has been fully redeemed.",
+        LIMIT_REACHED_MESSAGE,
         false,
       );
     }
@@ -240,7 +226,7 @@ async function redeemCode({ uid, email, code }) {
       {
         series: {
           [seriesId]: {
-            source: promo.kind === "open" ? "open_offer" : "code",
+            source: "code",
             code,
             grantedAt: admin.firestore.FieldValue.serverTimestamp(),
           },
@@ -288,7 +274,7 @@ exports.redeemTestSeriesCode = onCall({ region: REGION }, async (request) => {
 });
 
 // ---------------------------------------------------------------------------
-// Admin: codes
+// Admin
 // ---------------------------------------------------------------------------
 
 exports.adminCreateTestSeriesPromo = onCall(
@@ -330,7 +316,6 @@ exports.adminCreateTestSeriesPromo = onCall(
           .create({
             seriesId,
             label,
-            kind: "code",
             active: true,
             maxRedemptions,
             expiresAt,
@@ -363,202 +348,7 @@ exports.adminSetTestSeriesPromoActive = onCall(
     const ref = db().collection(PROMOS).doc(code);
     const snap = await ref.get();
     if (!snap.exists) throw new HttpsError("not-found", "No such code.");
-    if (snap.data().kind === "open") {
-      throw new HttpsError(
-        "failed-precondition",
-        "This is an everyone offer. Stop it from the offer card instead.",
-      );
-    }
     await ref.update({ active: data.active });
     return { ok: true };
-  },
-);
-
-// ---------------------------------------------------------------------------
-// Admin: free for everyone
-// ---------------------------------------------------------------------------
-
-async function activeOfferFor(seriesId) {
-  const snap = await db().collection(OFFERS).doc(seriesId).get();
-  const offer = snap.data();
-  return offer && offer.active === true ? offer : null;
-}
-
-async function sendOfferPush({ seriesId, title, body, adminEmail }) {
-  const notificationId = crypto.randomUUID();
-  const message = {
-    topic: BROADCAST_TOPIC,
-    notification: { title, body },
-    data: {
-      kind: FCM_KIND,
-      series_id: seriesId,
-      notification_id: notificationId,
-    },
-    android: {
-      priority: "high",
-      notification: { channelId: ANDROID_NOTIF_CHANNEL, sound: "default" },
-    },
-    apns: { payload: { aps: { sound: "default" } } },
-  };
-  // Same bookkeeping as sendBroadcastAnnouncement so opens show up on the
-  // admin dashboard.
-  await db()
-    .collection("admin_dashboard")
-    .doc("notifications")
-    .collection("items")
-    .doc(notificationId)
-    .set(
-      {
-        kind: FCM_KIND,
-        title,
-        sent_at: admin.firestore.FieldValue.serverTimestamp(),
-        opens: 0,
-        conversions: 0,
-        updated_at: admin.firestore.FieldValue.serverTimestamp(),
-        created_by: adminEmail,
-        target: "broadcast",
-      },
-      { merge: true },
-    );
-  await admin.messaging().send(message);
-  await db().collection(OFFERS).doc(seriesId).set(
-    {
-      notifiedAt: admin.firestore.FieldValue.serverTimestamp(),
-      lastNotificationId: notificationId,
-    },
-    { merge: true },
-  );
-  return notificationId;
-}
-
-function offerCopy(series, data) {
-  const seriesTitle = trimmed(series.title, 80) || "Prelims Test Series";
-  return {
-    title: trimmed(data.title, 120) || `${seriesTitle} is free for you`,
-    body:
-      trimmed(data.body, 180) ||
-      "Every test is unlocked for you, no payment needed. Tap to claim it.",
-  };
-}
-
-exports.adminAnnounceFreeTestSeries = onCall(
-  { region: REGION },
-  async (request) => {
-    const adminEmail = requireAdmin(request);
-    const data = request.data || {};
-    const seriesId = trimmed(data.seriesId, 80);
-    const series = await loadSeries(seriesId);
-    const notify = data.notify !== false;
-    const maxRedemptions = parseMax(data.maxRedemptions);
-    const expiresAt = parseExpiry(data.expiresAt);
-    const { title, body } = offerCopy(series, data);
-
-    // Only one open offer per series: retire the previous campaign's code
-    // (its redemptions and everyone's grants stay).
-    const previous = await activeOfferFor(seriesId);
-    if (previous && previous.promoCode) {
-      await db()
-        .collection(PROMOS)
-        .doc(previous.promoCode)
-        .set({ active: false }, { merge: true });
-    }
-
-    const code = randomCode(6, "FREE-");
-    const dateLabel = new Date().toLocaleDateString("en-IN", {
-      timeZone: "Asia/Kolkata",
-      day: "numeric",
-      month: "short",
-      year: "numeric",
-    });
-    await db()
-      .collection(PROMOS)
-      .doc(code)
-      .create({
-        seriesId,
-        label: `Free for everyone (${dateLabel})`,
-        kind: "open",
-        active: true,
-        maxRedemptions,
-        expiresAt,
-        redemptionCount: 0,
-        createdAt: admin.firestore.FieldValue.serverTimestamp(),
-        createdBy: adminEmail,
-      });
-    await db().collection(OFFERS).doc(seriesId).set({
-      seriesId,
-      active: true,
-      promoCode: code,
-      title,
-      body,
-      expiresAt,
-      createdAt: admin.firestore.FieldValue.serverTimestamp(),
-      createdBy: adminEmail,
-      notifiedAt: null,
-    });
-
-    if (!notify) return { ok: true, code, notified: false };
-    try {
-      const notificationId = await sendOfferPush({
-        seriesId,
-        title,
-        body,
-        adminEmail,
-      });
-      return { ok: true, code, notified: true, notificationId };
-    } catch (e) {
-      // The offer is live; the admin can retry the push separately.
-      console.error("adminAnnounceFreeTestSeries: push failed", e);
-      return { ok: true, code, notified: false, pushError: String(e.message || e) };
-    }
-  },
-);
-
-exports.adminNotifyFreeTestSeriesOffer = onCall(
-  { region: REGION },
-  async (request) => {
-    const adminEmail = requireAdmin(request);
-    const seriesId = trimmed((request.data || {}).seriesId, 80);
-    const series = await loadSeries(seriesId);
-    const offer = await activeOfferFor(seriesId);
-    if (!offer) {
-      throw new HttpsError("failed-precondition", "No active offer to announce.");
-    }
-    const { title, body } = offerCopy(series, offer);
-    try {
-      const notificationId = await sendOfferPush({
-        seriesId,
-        title,
-        body,
-        adminEmail,
-      });
-      return { ok: true, notificationId };
-    } catch (e) {
-      console.error("adminNotifyFreeTestSeriesOffer: push failed", e);
-      throw new HttpsError("unavailable", `Push failed: ${e.message || e}`);
-    }
-  },
-);
-
-exports.adminCloseFreeTestSeriesOffer = onCall(
-  { region: REGION },
-  async (request) => {
-    requireAdmin(request);
-    const seriesId = trimmed((request.data || {}).seriesId, 80);
-    if (!seriesId) {
-      throw new HttpsError("invalid-argument", "seriesId is required.");
-    }
-    const offer = await activeOfferFor(seriesId);
-    if (!offer) return { ok: true, closed: false };
-    if (offer.promoCode) {
-      await db()
-        .collection(PROMOS)
-        .doc(offer.promoCode)
-        .set({ active: false }, { merge: true });
-    }
-    await db()
-      .collection(OFFERS)
-      .doc(seriesId)
-      .set({ active: false, closedAt: admin.firestore.FieldValue.serverTimestamp() }, { merge: true });
-    return { ok: true, closed: true };
   },
 );
