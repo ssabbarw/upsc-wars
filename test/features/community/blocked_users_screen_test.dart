@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:upsc_wars/core/providers/super_user_provider.dart';
+import 'package:upsc_wars/l10n/app_localizations.dart';
 import 'package:upsc_wars/features/community/domain/entities/community_user.dart';
 import 'package:upsc_wars/features/community/providers/user_block_providers.dart';
 import 'package:upsc_wars/features/community/screens/blocked_users_screen.dart';
@@ -16,7 +17,11 @@ void main() {
           blockedUserEmailsProvider.overrideWith(_EmptyBlockedUserEmails.new),
           blockedUserProfilesProvider.overrideWith((ref) async => const {}),
         ],
-        child: const MaterialApp(home: BlockedUsersScreen()),
+        child: MaterialApp(
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          home: const BlockedUsersScreen(),
+        ),
       ),
     );
     await tester.pumpAndSettle();
@@ -48,7 +53,11 @@ void main() {
             },
           ),
         ],
-        child: const MaterialApp(home: BlockedUsersScreen()),
+        child: MaterialApp(
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          home: const BlockedUsersScreen(),
+        ),
       ),
     );
     await tester.pumpAndSettle();

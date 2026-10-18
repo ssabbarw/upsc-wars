@@ -60,44 +60,44 @@ class DailyWarAdminScreen extends HookConsumerWidget {
                 onPressed: busy.value
                     ? null
                     : () => unawaited(
-                          run(() async {
-                            const cloud = DailyWarCloudService();
-                            final ok = await cloud.adminGenerate(
-                              dateId: todayId,
-                              force: false,
-                            );
-                            preview.value = await cloud.adminPreview(
-                              dateId: todayId,
-                            );
-                            await refreshHomeWar();
-                            final topics = preview.value?.topics.length ?? 0;
-                            message.value = ok
-                                ? 'Generate ok · $todayId · $topics topics'
-                                : 'Generate failed';
-                          }),
-                        ),
+                        run(() async {
+                          const cloud = DailyWarCloudService();
+                          final ok = await cloud.adminGenerate(
+                            dateId: todayId,
+                            force: false,
+                          );
+                          preview.value = await cloud.adminPreview(
+                            dateId: todayId,
+                          );
+                          await refreshHomeWar();
+                          final topics = preview.value?.topics.length ?? 0;
+                          message.value = ok
+                              ? 'Generate ok · $todayId · $topics topics'
+                              : 'Generate failed';
+                        }),
+                      ),
                 child: const Text('Generate today'),
               ),
               OutlinedButton(
                 onPressed: busy.value
                     ? null
                     : () => unawaited(
-                          run(() async {
-                            const cloud = DailyWarCloudService();
-                            final ok = await cloud.adminGenerate(
-                              dateId: todayId,
-                              force: true,
-                            );
-                            preview.value = await cloud.adminPreview(
-                              dateId: todayId,
-                            );
-                            await refreshHomeWar();
-                            final topics = preview.value?.topics.length ?? 0;
-                            message.value = ok
-                                ? 'Force regenerated · $topics topics'
-                                : 'Regenerate failed';
-                          }),
-                        ),
+                        run(() async {
+                          const cloud = DailyWarCloudService();
+                          final ok = await cloud.adminGenerate(
+                            dateId: todayId,
+                            force: true,
+                          );
+                          preview.value = await cloud.adminPreview(
+                            dateId: todayId,
+                          );
+                          await refreshHomeWar();
+                          final topics = preview.value?.topics.length ?? 0;
+                          message.value = ok
+                              ? 'Force regenerated · $topics topics'
+                              : 'Regenerate failed';
+                        }),
+                      ),
                 child: const Text('Force regenerate'),
               ),
               OutlinedButton(
@@ -117,82 +117,84 @@ class DailyWarAdminScreen extends HookConsumerWidget {
                 onPressed: busy.value
                     ? null
                     : () => unawaited(
-                          run(() async {
-                            const cloud = DailyWarCloudService();
-                            preview.value = await cloud.adminPreview(
-                              dateId: todayId,
-                            );
-                            message.value = preview.value == null
-                                ? 'Preview failed — generate first?'
-                                : 'Meta loaded · use Review questions for full paper';
-                          }),
-                        ),
+                        run(() async {
+                          const cloud = DailyWarCloudService();
+                          preview.value = await cloud.adminPreview(
+                            dateId: todayId,
+                          );
+                          message.value = preview.value == null
+                              ? 'Preview failed — generate first?'
+                              : 'Meta loaded · use Review questions for full paper';
+                        }),
+                      ),
                 child: const Text('Preview meta'),
               ),
               OutlinedButton(
                 onPressed: busy.value
                     ? null
                     : () => unawaited(
-                          run(() async {
-                            const cloud = DailyWarCloudService();
-                            final ok = await cloud.adminPublish(dateId: todayId);
-                            message.value =
-                                ok ? 'Published to public path' : 'Publish failed';
-                            preview.value = await cloud.adminPreview(
-                              dateId: todayId,
-                            );
-                          }),
-                        ),
+                        run(() async {
+                          const cloud = DailyWarCloudService();
+                          final ok = await cloud.adminPublish(dateId: todayId);
+                          message.value = ok
+                              ? 'Published to public path'
+                              : 'Publish failed';
+                          preview.value = await cloud.adminPreview(
+                            dateId: todayId,
+                          );
+                        }),
+                      ),
                 child: const Text('Publish now'),
               ),
               OutlinedButton(
                 onPressed: busy.value
                     ? null
                     : () => unawaited(
-                          run(() async {
-                            const cloud = DailyWarCloudService();
-                            final ok = await cloud.adminNotify(
-                              dateId: todayId,
-                              phase: 'morning',
-                            );
-                            message.value = ok
-                                ? 'Sent morning topics push'
-                                : 'Morning push failed (generate first?)';
-                          }),
-                        ),
+                        run(() async {
+                          const cloud = DailyWarCloudService();
+                          final ok = await cloud.adminNotify(
+                            dateId: todayId,
+                            phase: 'morning',
+                          );
+                          message.value = ok
+                              ? 'Sent morning topics push'
+                              : 'Morning push failed (generate first?)';
+                        }),
+                      ),
                 child: const Text('Push: morning'),
               ),
               OutlinedButton(
                 onPressed: busy.value
                     ? null
                     : () => unawaited(
-                          run(() async {
-                            const cloud = DailyWarCloudService();
-                            final ok = await cloud.adminNotify(
-                              dateId: todayId,
-                              phase: 'lobby',
-                            );
-                            message.value =
-                                ok ? 'Sent lobby push' : 'Lobby push failed';
-                          }),
-                        ),
+                        run(() async {
+                          const cloud = DailyWarCloudService();
+                          final ok = await cloud.adminNotify(
+                            dateId: todayId,
+                            phase: 'lobby',
+                          );
+                          message.value = ok
+                              ? 'Sent lobby push'
+                              : 'Lobby push failed';
+                        }),
+                      ),
                 child: const Text('Push: lobby'),
               ),
               OutlinedButton(
                 onPressed: busy.value
                     ? null
                     : () => unawaited(
-                          run(() async {
-                            const cloud = DailyWarCloudService();
-                            final ok = await cloud.adminNotify(
-                              dateId: todayId,
-                              phase: 'results',
-                            );
-                            message.value = ok
-                                ? 'Sent results push (also re-ranks)'
-                                : 'Results push failed';
-                          }),
-                        ),
+                        run(() async {
+                          const cloud = DailyWarCloudService();
+                          final ok = await cloud.adminNotify(
+                            dateId: todayId,
+                            phase: 'results',
+                          );
+                          message.value = ok
+                              ? 'Sent results push (also re-ranks)'
+                              : 'Results push failed';
+                        }),
+                      ),
                 child: const Text('Push: results'),
               ),
             ],

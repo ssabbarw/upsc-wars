@@ -13,6 +13,7 @@ abstract final class CommunityLegacyContract {
   static const photoUrl = 'photoURL';
   static const lastOnlineTime = 'lastOnlineTime';
   static const appVersion = 'appVersion';
+
   /// Device model string written to `buckets` presence payloads (e.g. Android model).
   static const phoneModel = 'phoneModel';
   static const acceptingBattleInvites = 'acceptingBattleInvites';

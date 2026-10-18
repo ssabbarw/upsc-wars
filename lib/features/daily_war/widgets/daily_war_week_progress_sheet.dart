@@ -14,6 +14,7 @@ import '../domain/daily_war_schedule.dart';
 import '../domain/daily_war_week_summary.dart';
 import '../theme/daily_war_theme.dart';
 import 'daily_war_badge_chip.dart';
+import '../../../l10n/l10n.dart';
 
 /// Compact Sunday progress — nights, accuracy, danger topics, badges.
 Future<void> showDailyWarWeekProgressSheet({
@@ -85,7 +86,7 @@ class _WeekProgressSheet extends ConsumerWidget {
                       ),
                     ),
                     Text(
-                      'Your week in ${DailyWarCopy.programName}',
+                      context.l10n.dwYourWeekIn(DailyWarCopy.programName),
                       style: AppTextStyles.h3().copyWith(
                         fontWeight: FontWeight.w800,
                         color: scheme.onSurface,
@@ -105,7 +106,7 @@ class _WeekProgressSheet extends ConsumerWidget {
                           child: _BigStat(
                             value:
                                 '${summary.attemptedNights}/${summary.warNights}',
-                            label: 'nights attempted',
+                            label: context.l10n.dwNightsAttempted,
                           ),
                         ),
                         const SizedBox(width: 10),
@@ -121,7 +122,7 @@ class _WeekProgressSheet extends ConsumerWidget {
                     ),
                     const SizedBox(height: 20),
                     Text(
-                      'Confidently wrong',
+                      context.l10n.dwConfidentlyWrong,
                       style: AppTextStyles.label().copyWith(
                         fontWeight: FontWeight.w800,
                         color: scheme.onSurface,
@@ -129,7 +130,7 @@ class _WeekProgressSheet extends ConsumerWidget {
                     ),
                     const SizedBox(height: 4),
                     Text(
-                      'Topics where you marked Sure / Educated guess and missed.',
+                      context.l10n.dwConfWrongBody,
                       style: AppTextStyles.caption().copyWith(
                         color: scheme.onSurfaceVariant,
                       ),
@@ -137,13 +138,13 @@ class _WeekProgressSheet extends ConsumerWidget {
                     const SizedBox(height: 10),
                     dangerAsync.when(
                       loading: () => Text(
-                        'Loading…',
+                        context.l10n.commonLoading,
                         style: AppTextStyles.bodySm().copyWith(
                           color: scheme.onSurfaceVariant,
                         ),
                       ),
                       error: (_, _) => Text(
-                        'Couldn\'t load danger topics.',
+                        context.l10n.dwDangerLoadFailed,
                         style: AppTextStyles.bodySm().copyWith(
                           color: scheme.onSurfaceVariant,
                         ),
@@ -152,8 +153,8 @@ class _WeekProgressSheet extends ConsumerWidget {
                         if (topics.isEmpty) {
                           return Text(
                             summary.attemptedNone
-                                ? 'No attempts this week yet.'
-                                : 'None this week — keep that map clean.',
+                                ? context.l10n.dwNoAttemptsWeek
+                                : context.l10n.dwNoneWeek,
                             style: AppTextStyles.bodySm().copyWith(
                               color: scheme.onSurfaceVariant,
                               height: 1.35,
@@ -208,7 +209,7 @@ class _WeekProgressSheet extends ConsumerWidget {
                     ),
                     const SizedBox(height: 20),
                     Text(
-                      'Badges earned',
+                      context.l10n.dwBadgesEarned,
                       style: AppTextStyles.label().copyWith(
                         fontWeight: FontWeight.w800,
                         color: scheme.onSurface,
@@ -218,8 +219,8 @@ class _WeekProgressSheet extends ConsumerWidget {
                     if (summary.badgeCounts.isEmpty)
                       Text(
                         summary.attemptedNone
-                            ? 'Show up Monday to start collecting.'
-                            : 'No badges this week.',
+                            ? context.l10n.dwShowUpMonday
+                            : context.l10n.dwNoBadgesWeek,
                         style: AppTextStyles.bodySm().copyWith(
                           color: scheme.onSurfaceVariant,
                         ),

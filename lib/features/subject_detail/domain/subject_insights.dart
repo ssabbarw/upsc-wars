@@ -1,4 +1,5 @@
 import '../../../l10n/l10n.dart';
+
 /// Risk tier from percentile bands within a subject (topic ranking).
 enum RiskTier { low, medium, high }
 
@@ -53,8 +54,10 @@ class SubjectInsights {
 
   /// Sure + educated-guess wrongs in the danger zone definition.
   final int dangerZoneWrongCount;
+
   /// Wrong attempts where confidence was "Sure" (`very_sure` in the DB).
   final int dangerZoneSureWrongCount;
+
   /// Wrong attempts where confidence was "Educated guess" (`somewhat_sure`).
   final int dangerZoneEducatedGuessWrongCount;
   final double dangerZoneMarks;
@@ -76,12 +79,11 @@ List<TopicPercentileRow> topicRowsWithPercentileTiers(
   final out = <TopicPercentileRow>[];
   for (var i = 0; i < n; i++) {
     final row = sortedDesc[i];
-    final tier =
-        i < redN
-            ? RiskTier.high
-            : i < redN + yellowN
-                ? RiskTier.medium
-                : RiskTier.low;
+    final tier = i < redN
+        ? RiskTier.high
+        : i < redN + yellowN
+        ? RiskTier.medium
+        : RiskTier.low;
     out.add(
       TopicPercentileRow(
         topic: row.topic,

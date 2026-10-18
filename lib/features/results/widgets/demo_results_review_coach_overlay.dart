@@ -4,6 +4,7 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../l10n/l10n.dart';
 
 class _ReviewCoachStep {
   const _ReviewCoachStep({
@@ -57,23 +58,21 @@ class _DemoResultsReviewCoachOverlayState
       if (widget.mistakesKey != null)
         _ReviewCoachStep(
           key: widget.mistakesKey!,
-          title: 'Review only your mistakes',
-          body: 'Just the questions you got wrong — the ones worth going back to.',
+          title: appL10n.resultsCoachMistakesTitle,
+          body: appL10n.resultsCoachMistakesBody,
         ),
       _ReviewCoachStep(
         key: widget.reviewAllKey,
         title: widget.mistakesKey != null
-            ? 'Or review all questions'
-            : 'Review all questions',
-        body: 'The full paper, including the ones you got right.',
+            ? appL10n.resultsCoachAllOr
+            : appL10n.resultsCoachAll,
+        body: appL10n.resultsCoachAllBody,
       ),
       if (widget.topicsKey != null)
         _ReviewCoachStep(
           key: widget.topicsKey!,
-          title: 'You don’t have to remember this',
-          body:
-              'The same weak and strong topic lists live on every subject. '
-              'Open a subject from Home anytime.',
+          title: appL10n.resultsCoachTopicsTitle,
+          body: appL10n.resultsCoachTopicsBody,
         ),
     ];
     _anim.forward();
@@ -147,13 +146,9 @@ class _DemoResultsReviewCoachOverlayState
               )
             else
               Positioned.fill(
-                child: ColoredBox(
-                  color: Colors.black.withValues(alpha: 0.62),
-                ),
+                child: ColoredBox(color: Colors.black.withValues(alpha: 0.62)),
               ),
-            const Positioned.fill(
-              child: ModalBarrier(dismissible: false),
-            ),
+            const Positioned.fill(child: ModalBarrier(dismissible: false)),
             if (hole != null)
               Positioned(
                 left: hole.left,
@@ -224,13 +219,14 @@ class _Bubble extends StatelessWidget {
     final belowY = hole.bottom + arrow + margin;
     final aboveY = hole.top - arrow - margin - estimatedHeight;
     final fitsBelow =
-        belowY + estimatedHeight <= screenSize.height - viewPadding.bottom - margin;
+        belowY + estimatedHeight <=
+        screenSize.height - viewPadding.bottom - margin;
     final fitsAbove = aboveY >= minTop;
     final bubbleTop = fitsBelow
         ? belowY
         : fitsAbove
-            ? aboveY
-            : minTop;
+        ? aboveY
+        : minTop;
     final centreX = hole.center.dx - bubbleWidth / 2;
     final bubbleLeft = centreX.clamp(
       margin,
@@ -307,7 +303,9 @@ class _Bubble extends StatelessWidget {
                     ),
                   ),
                   child: Text(
-                    current == total ? 'Got it' : 'Next',
+                    current == total
+                        ? context.l10n.resultsCoachGotIt
+                        : context.l10n.resultsCoachNext,
                     style: const TextStyle(
                       fontSize: 13,
                       fontWeight: FontWeight.w600,

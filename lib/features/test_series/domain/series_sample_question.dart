@@ -75,7 +75,9 @@ class SeriesSampleQuestion {
       if (score < _minRichness || score <= bestScore) continue;
 
       bestScore = score;
-      final gs = (meta['gs_subject'] ?? meta['subject'] ?? '').toString().trim();
+      final gs = (meta['gs_subject'] ?? meta['subject'] ?? '')
+          .toString()
+          .trim();
       best = SeriesSampleQuestion(
         en: en,
         hi: _content(q['hi'], concepts),
@@ -115,7 +117,8 @@ class SeriesSampleQuestion {
     if (sa is List) {
       for (final item in sa) {
         if (item is! Map) continue;
-        final verdict = item['is_correct'] ?? item['correct'] ?? item['verdict'];
+        final verdict =
+            item['is_correct'] ?? item['correct'] ?? item['verdict'];
         final v = verdict.toString().trim().toLowerCase();
         statements.add(
           StatementAnalysisVm(

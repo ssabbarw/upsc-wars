@@ -14,7 +14,9 @@ class SessionHistoryRepositoryImpl implements SessionHistoryRepository {
   Future<SessionResult> getSessionResult(String sessionId) async {
     final session = await _userDb.sessionsDao.getSessionById(sessionId);
     if (session == null) throw const SessionNotFoundException();
-    final rows = await _userDb.sessionQuestionsDao.getSessionQuestionsOrdered(sessionId);
+    final rows = await _userDb.sessionQuestionsDao.getSessionQuestionsOrdered(
+      sessionId,
+    );
     var correct = 0, wrong = 0, unattempted = 0, timedOut = 0;
     var attemptedTimeSum = 0, attemptedTimeCount = 0;
     var totalTimeSecs = 0;
@@ -42,7 +44,9 @@ class SessionHistoryRepositoryImpl implements SessionHistoryRepository {
     }
     final attempted = correct + wrong;
     final accuracy = attempted == 0 ? 0.0 : (correct / attempted) * 100;
-    final avg = attemptedTimeCount == 0 ? null : (attemptedTimeSum / attemptedTimeCount);
+    final avg = attemptedTimeCount == 0
+        ? null
+        : (attemptedTimeSum / attemptedTimeCount);
 
     var dangerZoneWrong = 0;
     for (final r in rows) {
@@ -119,19 +123,80 @@ class SessionHistoryRepositoryImpl implements SessionHistoryRepository {
   }
 
   @override
-  Future<List<SessionSummary>> getSessionList({String? subject, String? mode}) async {
-    var sessions = await _userDb.sessionsDao.getAllSessionsOrderedByCreatedAtDesc();
-    if (subject != null) sessions = sessions.where((s) => s.subject == subject).toList();
+  Future<List<SessionSummary>> getSessionList({
+    String? subject,
+    String? mode,
+  }) async {
+    var sessions = await _userDb.sessionsDao
+        .getAllSessionsOrderedByCreatedAtDesc();
+    if (subject != null)
+      sessions = sessions.where((s) => s.subject == subject).toList();
     if (mode != null) sessions = sessions.where((s) => s.mode == mode).toList();
     final out = <SessionSummary>[];
     for (final s in sessions) {
-      final rows = await _userDb.sessionQuestionsDao.getSessionQuestionsOrdered(s.id);
+      final rows = await _userDb.sessionQuestionsDao.getSessionQuestionsOrdered(
+        s.id,
+      );
       if (s.status == 'in_progress') {
-        out.add(SessionSummary(sessionId: s.id, subject: s.subject, topic: s.topic, mode: s.mode, status: s.status, createdAt: s.createdAt, questionCount: s.questionCount, correct: null, wrong: null, accuracy: null, accuracyTier: null, netScore: null, avgTimeSpentSecs: null));
+        out.add(
+          SessionSummary(
+            sessionId: s.id,
+            subject: s.subject,
+            topic: s.topic,
+            mode: s.mode,
+            status: s.status,
+            createdAt: s.createdAt,
+            questionCount: s.questionCount,
+            correct: null,
+            wrong: null,
+            accuracy: null,
+            accuracyTier: null,
+            netScore: null,
+            avgTimeSpentSecs: null,
+          ),
+        );
         continue;
       }
       if (s.status == 'abandoned') {
-        out.add(SessionSummary(
+        out.add(
+          SessionSummary(
+            sessionId: s.id,
+            subject: s.subject,
+            topic: s.topic,
+            mode: s.mode,
+            status: s.status,
+            createdAt: s.createdAt,
+            questionCount: s.questionCount,
+            correct: null,
+            wrong: null,
+            accuracy: null,
+            accuracyTier: null,
+            netScore: null,
+            avgTimeSpentSecs: null,
+          ),
+        );
+        continue;
+      }
+      var correct = 0, wrong = 0, timeSum = 0, timeCount = 0;
+      for (final r in rows) {
+        if (r.status == 'correct') {
+          correct++;
+          if (r.timeSpentSecs != null) {
+            timeSum += r.timeSpentSecs!;
+            timeCount++;
+          }
+        }
+        if (r.status == 'wrong') {
+          wrong++;
+          if (r.timeSpentSecs != null) {
+            timeSum += r.timeSpentSecs!;
+            timeCount++;
+          }
+        }
+      }
+      final attempted = correct + wrong;
+      out.add(
+        SessionSummary(
           sessionId: s.id,
           subject: s.subject,
           topic: s.topic,
@@ -139,36 +204,17 @@ class SessionHistoryRepositoryImpl implements SessionHistoryRepository {
           status: s.status,
           createdAt: s.createdAt,
           questionCount: s.questionCount,
-          correct: null,
-          wrong: null,
-          accuracy: null,
-          accuracyTier: null,
-          netScore: null,
-          avgTimeSpentSecs: null,
-        ));
-        continue;
-      }
-      var correct = 0, wrong = 0, timeSum = 0, timeCount = 0;
-      for (final r in rows) {
-        if (r.status == 'correct') {correct++; if (r.timeSpentSecs != null) {timeSum += r.timeSpentSecs!; timeCount++;}}
-        if (r.status == 'wrong') {wrong++; if (r.timeSpentSecs != null) {timeSum += r.timeSpentSecs!; timeCount++;}}
-      }
-      final attempted = correct + wrong;
-      out.add(SessionSummary(
-        sessionId: s.id,
-        subject: s.subject,
-        topic: s.topic,
-        mode: s.mode,
-        status: s.status,
-        createdAt: s.createdAt,
-        questionCount: s.questionCount,
-        correct: correct,
-        wrong: wrong,
-        accuracy: attempted == 0 ? 0.0 : (correct / attempted) * 100,
-        netScore: (correct * 2) - (wrong * 0.66),
-        avgTimeSpentSecs: timeCount == 0 ? null : (timeSum / timeCount),
-        accuracyTier: _tierFor(attempted, attempted == 0 ? 0.0 : (correct / attempted) * 100),
-      ));
+          correct: correct,
+          wrong: wrong,
+          accuracy: attempted == 0 ? 0.0 : (correct / attempted) * 100,
+          netScore: (correct * 2) - (wrong * 0.66),
+          avgTimeSpentSecs: timeCount == 0 ? null : (timeSum / timeCount),
+          accuracyTier: _tierFor(
+            attempted,
+            attempted == 0 ? 0.0 : (correct / attempted) * 100,
+          ),
+        ),
+      );
     }
     return out;
   }
@@ -183,12 +229,12 @@ class SessionHistoryRepositoryImpl implements SessionHistoryRepository {
     required int limit,
     required int offset,
   }) async {
-    final sessionRows =
-        await _userDb.sessionsDao.getCompletedSessionsBySubjectOrderedPaged(
-      subject: subject,
-      limit: limit,
-      offset: offset,
-    );
+    final sessionRows = await _userDb.sessionsDao
+        .getCompletedSessionsBySubjectOrderedPaged(
+          subject: subject,
+          limit: limit,
+          offset: offset,
+        );
     final out = <SessionSummary>[];
     for (final s in sessionRows) {
       final rows = await _userDb.sessionQuestionsDao.getSessionQuestionsOrdered(
@@ -240,17 +286,21 @@ class SessionHistoryRepositoryImpl implements SessionHistoryRepository {
   Future<int> getDailyProgressCount(DateTime date) async {
     final start = DateTime(date.year, date.month, date.day);
     final end = start.add(const Duration(days: 1));
-    final sessions = await _userDb.sessionsDao.getAllSessionsOrderedByCreatedAtDesc();
-    final ids = sessions.where((s) => !s.createdAt.isBefore(start) && s.createdAt.isBefore(end)).map((s) => s.id);
+    final sessions = await _userDb.sessionsDao
+        .getAllSessionsOrderedByCreatedAtDesc();
+    final ids = sessions
+        .where((s) => !s.createdAt.isBefore(start) && s.createdAt.isBefore(end))
+        .map((s) => s.id);
     var count = 0;
     for (final id in ids) {
-      final rows = await _userDb.sessionQuestionsDao.getSessionQuestionsOrdered(id);
+      final rows = await _userDb.sessionQuestionsDao.getSessionQuestionsOrdered(
+        id,
+      );
       count += rows.where((r) => r.status != 'unattempted').length;
     }
     return count;
   }
 }
-
 
 String _tierFor(int attempted, double accuracy) {
   if (attempted == 0) return 'dash';

@@ -11,6 +11,7 @@ import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../core/theme/reading_font_scale.dart';
 import '../../../shared/widgets/top_snack_bar.dart';
+import '../../../l10n/l10n.dart';
 
 class BookmarksScreen extends HookConsumerWidget {
   const BookmarksScreen({super.key});
@@ -27,9 +28,9 @@ class BookmarksScreen extends HookConsumerWidget {
       if (!context.mounted) return;
       showTopSnackBar(
         context,
-        content: const Text('Bookmark removed'),
+        content: Text(context.l10n.bookmarkRemoved),
         action: SnackBarAction(
-          label: 'Undo',
+          label: context.l10n.commonUndo,
           onPressed: () async {
             final add = await ref.read(addBookmarkUseCaseProvider.future);
             await add.execute(item.questionUuid, note: item.userNote);
@@ -69,7 +70,7 @@ class BookmarksScreen extends HookConsumerWidget {
                             ),
                           ),
                           Text(
-                            '${items.length} saved',
+                            context.l10n.bookmarksSavedCount(items.length),
                             style: AppTextStyles.bodySm().copyWith(
                               color: scheme.onSurfaceVariant,
                             ),
@@ -104,7 +105,10 @@ class BookmarksScreen extends HookConsumerWidget {
                 error: (e, st) => Center(
                   child: OutlinedButton(
                     onPressed: () => ref.invalidate(bookmarksListProvider),
-                    child: Text('Retry', style: AppTextStyles.label()),
+                    child: Text(
+                      context.l10n.commonRetry,
+                      style: AppTextStyles.label(),
+                    ),
                   ),
                 ),
                 data: (items) {
@@ -114,14 +118,14 @@ class BookmarksScreen extends HookConsumerWidget {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Text(
-                            'No bookmarks yet',
+                            context.l10n.bookmarksEmptyTitle,
                             style: AppTextStyles.h3().copyWith(
                               color: scheme.onSurface,
                             ),
                           ),
                           const SizedBox(height: AppSpacing.sm),
                           Text(
-                            'Bookmark questions during a test to save them here',
+                            context.l10n.bookmarksEmptyBody,
                             style: AppTextStyles.bodySm().copyWith(
                               color: scheme.onSurfaceVariant,
                             ),
@@ -197,7 +201,7 @@ class BookmarksScreen extends HookConsumerWidget {
                                 OutlinedButton(
                                   onPressed: () => remove(b),
                                   child: Text(
-                                    'Remove',
+                                    context.l10n.commonRemove,
                                     style: AppTextStyles.labelSm().copyWith(
                                       color: AppColors.wrong,
                                     ),

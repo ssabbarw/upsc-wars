@@ -9,6 +9,7 @@ import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/widgets/en_hi_language_toggle.dart';
 import '../providers/qotd_providers.dart';
 import '../widgets/qotd_post_card.dart';
+import '../../../l10n/l10n.dart';
 
 String _qotdNormLang(String? code) =>
     (code ?? 'en').toLowerCase().trim() == 'hi' ? 'hi' : 'en';
@@ -69,8 +70,7 @@ class CommunityQotdTab extends HookConsumerWidget {
                     ),
                     const SizedBox(height: AppSpacing.xs),
                     Text(
-                      'Share a tough question with the Community. Tap a card to expand, '
-                      'react, and attempt.',
+                      context.l10n.qotdTabIntro,
                       style: AppTextStyles.bodySm().copyWith(
                         color: scheme.onSurfaceVariant,
                       ),
@@ -106,7 +106,7 @@ class CommunityQotdTab extends HookConsumerWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      'Could not load QOTD feed',
+                      context.l10n.qotdFeedFailed,
                       style: AppTextStyles.bodyMd(),
                     ),
                     const SizedBox(height: AppSpacing.sm),
@@ -120,7 +120,7 @@ class CommunityQotdTab extends HookConsumerWidget {
                     const SizedBox(height: AppSpacing.md),
                     FilledButton(
                       onPressed: () => ref.invalidate(qotdFeedNotifierProvider),
-                      child: const Text('Retry'),
+                      child: Text(context.l10n.commonRetry),
                     ),
                   ],
                 ),
@@ -142,9 +142,7 @@ class CommunityQotdTab extends HookConsumerWidget {
                     ),
                     children: [
                       Text(
-                        'No questions shared yet. Pull to refresh, or tap Create '
-                        'to post one (for example after you attempt a question in '
-                        'a test).',
+                        context.l10n.qotdEmpty,
                         style: AppTextStyles.bodyMd().copyWith(
                           color: scheme.onSurfaceVariant,
                         ),

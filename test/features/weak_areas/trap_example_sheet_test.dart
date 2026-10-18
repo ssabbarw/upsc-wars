@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:upsc_wars/l10n/app_localizations.dart';
 import 'package:upsc_wars/features/weak_areas/domain/trap_example.dart';
 import 'package:upsc_wars/features/weak_areas/widgets/trap_example_sheet.dart';
 
@@ -38,8 +39,12 @@ void main() {
   );
 
   Widget wrap(Widget child) => ProviderScope(
-        child: MaterialApp(home: Scaffold(body: child)),
-      );
+    child: MaterialApp(
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
+      home: Scaffold(body: child),
+    ),
+  );
 
   Widget sheet({String language = 'en', TrapExample value = example}) {
     return wrap(
@@ -58,7 +63,10 @@ void main() {
     await tester.pump();
 
     expect(find.text('Entity Swap'), findsOneWidget);
-    expect(find.text('Right fact, wrong person or institution.'), findsOneWidget);
+    expect(
+      find.text('Right fact, wrong person or institution.'),
+      findsOneWidget,
+    );
     expect(find.text(en.stem), findsOneWidget);
     expect(find.text(en.why), findsNothing);
 

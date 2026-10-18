@@ -3,8 +3,9 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'open_challenge_exam_context.dart';
 
 /// In-memory bridge between session creation and [ResultsScreen].
-final openChallengeExamRegistryProvider =
-    Provider<OpenChallengeExamRegistry>((ref) {
+final openChallengeExamRegistryProvider = Provider<OpenChallengeExamRegistry>((
+  ref,
+) {
   return OpenChallengeExamRegistry();
 });
 

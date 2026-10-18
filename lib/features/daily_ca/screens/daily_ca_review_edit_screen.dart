@@ -62,7 +62,11 @@ class DailyCaReviewEditScreen extends HookWidget {
         ? Map<String, dynamic>.from(en.value['table_data'] as Map)
         : null;
 
-    Future<void> editField(String label, String value, ValueChanged<String> onSave) async {
+    Future<void> editField(
+      String label,
+      String value,
+      ValueChanged<String> onSave,
+    ) async {
       final controller = TextEditingController(text: value);
       final next = await showModalBottomSheet<String>(
         context: context,
@@ -85,7 +89,9 @@ class DailyCaReviewEditScreen extends HookWidget {
                   controller: controller,
                   maxLines: 6,
                   autofocus: true,
-                  decoration: const InputDecoration(border: OutlineInputBorder()),
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(),
+                  ),
                 ),
                 const SizedBox(height: AppSpacing.md),
                 FilledButton(
@@ -286,7 +292,8 @@ class _TableEditor extends StatelessWidget {
     String label,
     String value,
     ValueChanged<String> onSave,
-  ) onEdit;
+  )
+  onEdit;
   final ValueChanged<Map<String, dynamic>> onChanged;
 
   List<String> get columns {
@@ -364,9 +371,7 @@ class _TableEditor extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.all(8),
                         child: Text(
-                          (dataRows[r][cols[c]] ??
-                                  dataRows[r]['col_$c'] ??
-                                  '')
+                          (dataRows[r][cols[c]] ?? dataRows[r]['col_$c'] ?? '')
                               .toString(),
                           style: AppTextStyles.caption(),
                         ),

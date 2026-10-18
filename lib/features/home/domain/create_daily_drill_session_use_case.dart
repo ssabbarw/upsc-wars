@@ -28,8 +28,8 @@ class CreateDailyDrillSessionUseCase {
     List<DailyWarTopicRef> warTopics = const [],
     String analyticsFeatureKey = DailyDrillConstants.analyticsKey,
   }) async {
-    final attempted =
-        await userDb.sessionQuestionsDao.getAllAttemptedQuestionUuids();
+    final attempted = await userDb.sessionQuestionsDao
+        .getAllAttemptedQuestionUuids();
     var picked = warTopics.isNotEmpty
         ? await _pickWarTopics(warTopics, attempted)
         : const <Question>[];

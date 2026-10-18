@@ -33,8 +33,7 @@ class SubjectScoredAccuracySummary {
       sureTotal > 0 ? (100 * sureWrong / sureTotal) : null;
 
   /// Share of Educated-guess attempts that were wrong (0–100), or null if none.
-  double? get wrongWhenEducatedGuessPercent =>
-      educatedGuessTotal > 0
-          ? (100 * educatedGuessWrong / educatedGuessTotal)
-          : null;
+  double? get wrongWhenEducatedGuessPercent => educatedGuessTotal > 0
+      ? (100 * educatedGuessWrong / educatedGuessTotal)
+      : null;
 }

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../l10n/l10n.dart';
 
 /// Explains open challenges.
 ///
@@ -41,34 +42,25 @@ Future<bool?> showOpenChallengeWhatIsSheet(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Text(
-                'What is an open challenge?',
+                context.l10n.ocWhatIs,
                 style: AppTextStyles.h3().copyWith(color: scheme.onSurface),
               ),
               const SizedBox(height: AppSpacing.sm),
               Text(
-                'A warrior posts their 10-question exam for everyone to try.',
+                context.l10n.ocWhat1,
                 style: AppTextStyles.bodySm().copyWith(
                   color: scheme.onSurfaceVariant,
                   height: 1.35,
                 ),
               ),
               const SizedBox(height: AppSpacing.md),
-              _Bullet(
-                scheme: scheme,
-                text: 'Same 10 questions for every challenger.',
-              ),
-              _Bullet(
-                scheme: scheme,
-                text: 'Beat the top score on the leaderboard.',
-              ),
-              _Bullet(
-                scheme: scheme,
-                text: 'Each challenge stays live for 24 hours.',
-              ),
+              _Bullet(scheme: scheme, text: context.l10n.ocWhat2),
+              _Bullet(scheme: scheme, text: context.l10n.ocWhat3),
+              _Bullet(scheme: scheme, text: context.l10n.ocWhat4),
               if (showSignInCta) ...[
                 const SizedBox(height: AppSpacing.md),
                 Text(
-                  'Sign in to join a challenge and post your own.',
+                  context.l10n.ocWhatSignIn,
                   style: AppTextStyles.bodySm().copyWith(
                     color: scheme.onSurface,
                     height: 1.35,
@@ -79,13 +71,15 @@ Future<bool?> showOpenChallengeWhatIsSheet(
               const SizedBox(height: AppSpacing.lg),
               FilledButton(
                 onPressed: () => Navigator.pop(ctx, showSignInCta),
-                child: Text(showSignInCta ? 'Sign in to join' : 'Got it'),
+                child: Text(
+                  showSignInCta ? context.l10n.dwSignInJoin : 'Got it',
+                ),
               ),
               if (showSignInCta) ...[
                 const SizedBox(height: AppSpacing.sm),
                 TextButton(
                   onPressed: () => Navigator.pop(ctx, false),
-                  child: const Text('Not now'),
+                  child: Text(context.l10n.commonNotNow),
                 ),
               ],
             ],

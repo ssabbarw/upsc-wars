@@ -1,5 +1,6 @@
 import 'package:cloud_functions/cloud_functions.dart';
 import 'package:flutter/foundation.dart';
+import '../../../l10n/l10n.dart';
 
 /// Outcome of [BattleInviteCloudService.sendBattleInvite].
 ///
@@ -33,18 +34,18 @@ class BattleInviteOutcome {
       return transportError.toString();
     }
     if (notificationSent) {
-      return 'Battle invite sent.';
+      return appL10n.bicSent;
     }
     if (serverReason == 'no_token') {
-      return 'Invitee has no push token yet. They can still join using the session link.';
+      return appL10n.bicNoToken;
     }
     if (serverReason == 'blocked') {
       return '';
     }
     if (serverReason == 'send_failed') {
-      return 'Push could not be sent. They can still join using the session link.';
+      return appL10n.bicPushFailed;
     }
-    return 'Invite status unclear. Check Firebase Functions logs.';
+    return appL10n.bicUnclear;
   }
 
   /// Low-cardinality label for the `battle_invite_outcome` analytics event.
@@ -82,7 +83,9 @@ class BattleInviteCloudService {
       final data = result.data;
       final ok = data['ok'] == true;
       if (ok) {
-        debugPrint('BattleInviteCloudService: callable ok=true sessionId=$sessionId');
+        debugPrint(
+          'BattleInviteCloudService: callable ok=true sessionId=$sessionId',
+        );
         return const BattleInviteOutcome._(notificationSent: true);
       }
       final reason = data['reason']?.toString();
@@ -99,17 +102,11 @@ class BattleInviteCloudService {
         '${e.code} ${e.message}',
       );
       debugPrintStack(stackTrace: st);
-      return BattleInviteOutcome._(
-        notificationSent: false,
-        transportError: e,
-      );
+      return BattleInviteOutcome._(notificationSent: false, transportError: e);
     } catch (e, st) {
       debugPrint('BattleInviteCloudService.sendBattleInvite: $e');
       debugPrintStack(stackTrace: st);
-      return BattleInviteOutcome._(
-        notificationSent: false,
-        transportError: e,
-      );
+      return BattleInviteOutcome._(notificationSent: false, transportError: e);
     }
   }
 }

@@ -15,10 +15,7 @@ class BattleRoomRepository {
   }) async {
     await BattleFirestorePaths.joinedUsersCol(sessionId)
         .doc(participantDocId)
-        .set(
-          {'battle_paper_submitted': true},
-          SetOptions(merge: true),
-        );
+        .set({'battle_paper_submitted': true}, SetOptions(merge: true));
   }
 
   Future<void> upsertParticipantResponses({
@@ -33,15 +30,12 @@ class BattleRoomRepository {
       final selected = responsesByQuestionUuid[q.uuid];
       responses[i] = optionToLegacyResponseInt(selected);
     }
-    await BattleFirestorePaths.joinedUsersCol(sessionId)
-        .doc(participantDocId)
-        .set(
-          {
-            'game_progress_status': 'Active',
-            'responses': responses,
-          },
-          SetOptions(merge: true),
-        );
+    await BattleFirestorePaths.joinedUsersCol(
+      sessionId,
+    ).doc(participantDocId).set({
+      'game_progress_status': 'Active',
+      'responses': responses,
+    }, SetOptions(merge: true));
   }
 
   static int optionToLegacyResponseInt(String? option) {

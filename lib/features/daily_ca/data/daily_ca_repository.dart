@@ -21,10 +21,9 @@ class DailyCaDayDocument {
 }
 
 class DailyCaRepository {
-  DailyCaRepository({
-    required UserDatabase db,
-  }) : _db = db,
-       _upsert = QuestionBankUpsert(db);
+  DailyCaRepository({required UserDatabase db})
+    : _db = db,
+      _upsert = QuestionBankUpsert(db);
 
   static const _logName = 'DailyCaRepository';
 
@@ -98,9 +97,7 @@ class DailyCaRepository {
         return null;
       }
 
-      final questions = questionMaps
-          .map(_normalizeQuestionMap)
-          .toList();
+      final questions = questionMaps.map(_normalizeQuestionMap).toList();
 
       if (questions.isEmpty) {
         _log('Document at $path: questions array had no valid maps');
@@ -183,7 +180,8 @@ class DailyCaRepository {
       'meta': {
         'gs_subject': shared['subject'] ?? shared['gs_subject'] ?? '',
         'topic': shared['topic'] ?? '',
-        'sub_topic': shared['subtopic'] ?? shared['sub_topic'] ?? 'Current Affairs',
+        'sub_topic':
+            shared['subtopic'] ?? shared['sub_topic'] ?? 'Current Affairs',
         'pool_order': shared['pool_order'],
       },
       'shared': {
@@ -193,8 +191,12 @@ class DailyCaRepository {
         'has_table': shared['has_table'] ?? false,
         'correct_option': shared['correct_option'],
       },
-      'en': q['en'] is Map ? Map<String, dynamic>.from(q['en'] as Map) : <String, dynamic>{},
-      'hi': q['hi'] is Map ? Map<String, dynamic>.from(q['hi'] as Map) : <String, dynamic>{},
+      'en': q['en'] is Map
+          ? Map<String, dynamic>.from(q['en'] as Map)
+          : <String, dynamic>{},
+      'hi': q['hi'] is Map
+          ? Map<String, dynamic>.from(q['hi'] as Map)
+          : <String, dynamic>{},
     };
   }
 }

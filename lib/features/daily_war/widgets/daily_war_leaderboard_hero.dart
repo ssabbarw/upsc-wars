@@ -20,6 +20,7 @@ import '../domain/daily_war_models.dart';
 import '../domain/daily_war_schedule.dart';
 import '../providers/daily_war_providers.dart';
 import '../theme/daily_war_theme.dart';
+import '../../../l10n/l10n.dart';
 
 /// Podium for last night's War, above tonight's card on the hub.
 ///
@@ -48,10 +49,10 @@ class DailyWarLeaderboardHero extends ConsumerWidget {
       todayDateId,
     ).difference(heroDate).inDays;
     final eyebrow = isTonight
-        ? 'TONIGHT'
+        ? context.l10n.dwTonight
         : daysAgo <= 1
-        ? 'LAST NIGHT'
-        : 'LAST WAR';
+        ? context.l10n.dwLastNight
+        : context.l10n.dwLastWar;
 
     final user = ref.watch(authStateChangesProvider).asData?.value;
     final accountSignedIn = AuthSession.isAccountSignedIn(user);
@@ -61,7 +62,7 @@ class DailyWarLeaderboardHero extends ConsumerWidget {
       final ok = await ensureAccountSignedIn(
         context: context,
         ref: ref,
-        reason: 'Sign in to see the leaderboard.',
+        reason: context.l10n.dcaSignInLeaderboard,
       );
       if (!ok) return;
       ref.invalidate(dailyWarArchiveProvider(dateId));
@@ -249,10 +250,10 @@ class _HeroCard extends StatelessWidget {
     final String statusLine;
     if (empty) {
       statusLine = war == null || war!.ranksReady
-          ? '$dateLabel · No champion locked yet'
-          : '$dateLabel · Ranks lock after the paper closes';
+          ? context.l10n.dcaNoChampionYet(dateLabel)
+          : context.l10n.dwRanksLockAfter(dateLabel);
     } else {
-      statusLine = '$count joined';
+      statusLine = context.l10n.dcaJoinedCount(count);
     }
 
     return Material(
@@ -346,7 +347,7 @@ class _HeroCard extends StatelessWidget {
                   if (myAir != null) ...[
                     const SizedBox(height: 10),
                     Text(
-                      'You · AIR $myAir',
+                      context.l10n.dcaYouAir(myAir),
                       textAlign: TextAlign.center,
                       style: DwText.dm(
                         size: 12,
@@ -359,7 +360,7 @@ class _HeroCard extends StatelessWidget {
                     Align(
                       alignment: Alignment.centerRight,
                       child: Text(
-                        'See board',
+                        context.l10n.dwSeeBoard,
                         style: DwText.dm(
                           size: 12,
                           weight: FontWeight.w700,
@@ -372,8 +373,8 @@ class _HeroCard extends StatelessWidget {
                       padding: const EdgeInsets.only(top: 10),
                       child: Text(
                         war == null || war!.ranksReady
-                            ? 'No champion yet. Ranks land here after the paper locks.'
-                            : "Tonight's paper is open. Ranks show here tomorrow.",
+                            ? context.l10n.dwNoChampionYet
+                            : context.l10n.dwPaperOpenRanksTomorrow,
                         textAlign: TextAlign.center,
                         style: DwText.dm(
                           size: 12,

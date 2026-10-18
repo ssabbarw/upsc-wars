@@ -31,15 +31,16 @@ class MemoryPairSubjectGroup {
   int countForDifficulty(MemoryPairDifficulty difficulty) =>
       sortedItems.where((i) => i.definition.difficulty == difficulty).length;
 
-  List<MemoryPairSetListItem> itemsForDifficulty(MemoryPairDifficulty difficulty) =>
-      sortedItems.where((i) => i.definition.difficulty == difficulty).toList();
+  List<MemoryPairSetListItem> itemsForDifficulty(
+    MemoryPairDifficulty difficulty,
+  ) => sortedItems.where((i) => i.definition.difficulty == difficulty).toList();
 }
 
 int _difficultySortKey(MemoryPairDifficulty d) => switch (d) {
-      MemoryPairDifficulty.easy => 0,
-      MemoryPairDifficulty.medium => 1,
-      MemoryPairDifficulty.hard => 2,
-    };
+  MemoryPairDifficulty.easy => 0,
+  MemoryPairDifficulty.medium => 1,
+  MemoryPairDifficulty.hard => 2,
+};
 
 List<MemoryPairSubjectGroup> groupMemoryPairSetsBySubject(
   List<MemoryPairSetListItem> items, {
@@ -57,10 +58,11 @@ List<MemoryPairSubjectGroup> groupMemoryPairSetsBySubject(
   final orderedKeys = [
     ...kMemoryPairSubjectOrder.where(buckets.containsKey),
     ...() {
-      final rest = buckets.keys
-          .where((k) => !kMemoryPairSubjectOrder.contains(k))
-          .toList()
-        ..sort();
+      final rest =
+          buckets.keys
+              .where((k) => !kMemoryPairSubjectOrder.contains(k))
+              .toList()
+            ..sort();
       return rest;
     }(),
   ];
@@ -73,8 +75,9 @@ List<MemoryPairSubjectGroup> groupMemoryPairSetsBySubject(
         sortedItems: () {
           final list = List<MemoryPairSetListItem>.from(buckets[key] ?? []);
           list.sort((a, b) {
-            final byDiff = _difficultySortKey(a.definition.difficulty)
-                .compareTo(_difficultySortKey(b.definition.difficulty));
+            final byDiff = _difficultySortKey(
+              a.definition.difficulty,
+            ).compareTo(_difficultySortKey(b.definition.difficulty));
             if (byDiff != 0) return byDiff;
             return a.definition.nameEn.compareTo(b.definition.nameEn);
           });

@@ -8,6 +8,7 @@ import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../domain/memory_pair_models.dart';
+import '../../../l10n/l10n.dart';
 
 /// Stacked flashcards: tap to flip, swipe any direction for next (loops).
 class MemoryPairFlashDeck extends HookWidget {
@@ -81,7 +82,9 @@ class MemoryPairFlashDeck extends HookWidget {
     }
 
     void onPointerMove(PointerMoveEvent e) {
-      if (!dragging.value || exitingOffset.value != null || dragStart.value == null) {
+      if (!dragging.value ||
+          exitingOffset.value != null ||
+          dragStart.value == null) {
         return;
       }
       dragOffset.value = e.position - dragStart.value!;
@@ -201,42 +204,46 @@ class MemoryPairFlashDeck extends HookWidget {
                                 child: Opacity(
                                   opacity: liveOpacity,
                                   child: AnimatedBuilder(
-                                animation: flipController,
-                                builder: (context, _) {
-                                  final angle =
-                                      flipController.value * math.pi;
-                                  final showBack = flipController.value >= 0.5;
-                                  return Transform(
-                                    alignment: Alignment.center,
-                                    transform: Matrix4.identity()
-                                      ..setEntry(3, 2, 0.001)
-                                      ..rotateY(angle),
-                                    child: showBack
-                                        ? Transform(
-                                            alignment: Alignment.center,
-                                            transform: Matrix4.identity()
-                                              ..rotateY(math.pi),
-                                            child: _CardFace(
-                                              label: 'Answer',
-                                              text: answer,
-                                              fontSize: faceFontSize(answer),
-                                              background: AppColors.primary,
-                                              foreground: Colors.white,
-                                              labelColor: Colors.white70,
-                                              isDark: isDark,
-                                            ),
-                                          )
-                                        : _CardFace(
-                                            label: 'Term',
-                                            text: term,
-                                            fontSize: faceFontSize(term),
-                                            background: scheme.surface,
-                                            foreground: scheme.onSurface,
-                                            labelColor: scheme.onSurfaceVariant,
-                                            isDark: isDark,
-                                          ),
-                                  );
-                                },
+                                    animation: flipController,
+                                    builder: (context, _) {
+                                      final angle =
+                                          flipController.value * math.pi;
+                                      final showBack =
+                                          flipController.value >= 0.5;
+                                      return Transform(
+                                        alignment: Alignment.center,
+                                        transform: Matrix4.identity()
+                                          ..setEntry(3, 2, 0.001)
+                                          ..rotateY(angle),
+                                        child: showBack
+                                            ? Transform(
+                                                alignment: Alignment.center,
+                                                transform: Matrix4.identity()
+                                                  ..rotateY(math.pi),
+                                                child: _CardFace(
+                                                  label: context.l10n.btAnswer,
+                                                  text: answer,
+                                                  fontSize: faceFontSize(
+                                                    answer,
+                                                  ),
+                                                  background: AppColors.primary,
+                                                  foreground: Colors.white,
+                                                  labelColor: Colors.white70,
+                                                  isDark: isDark,
+                                                ),
+                                              )
+                                            : _CardFace(
+                                                label: context.l10n.mpTerm,
+                                                text: term,
+                                                fontSize: faceFontSize(term),
+                                                background: scheme.surface,
+                                                foreground: scheme.onSurface,
+                                                labelColor:
+                                                    scheme.onSurfaceVariant,
+                                                isDark: isDark,
+                                              ),
+                                      );
+                                    },
                                   ),
                                 ),
                               ),
@@ -252,9 +259,7 @@ class MemoryPairFlashDeck extends HookWidget {
           ),
           const SizedBox(height: AppSpacing.xs),
           Text(
-            flipped.value
-                ? 'Tap to see term'
-                : 'Tap to flip · swipe any direction for next',
+            flipped.value ? context.l10n.mpTapTerm : context.l10n.mpTapFlip,
             textAlign: TextAlign.center,
             style: AppTextStyles.caption().copyWith(
               color: scheme.onSurfaceVariant,
@@ -276,7 +281,7 @@ class MemoryPairFlashDeck extends HookWidget {
               FilledButton.icon(
                 onPressed: onPlay,
                 icon: const Icon(Icons.play_arrow_rounded, size: 20),
-                label: const Text('Play'),
+                label: Text(context.l10n.mpPlay),
                 style: FilledButton.styleFrom(
                   padding: const EdgeInsets.symmetric(
                     horizontal: AppSpacing.lg,
@@ -319,8 +324,8 @@ class _ProgressDots extends StatelessWidget {
             color: active
                 ? AppColors.primary
                 : (isDark
-                    ? Colors.white.withValues(alpha: 0.12)
-                    : Colors.black.withValues(alpha: 0.1)),
+                      ? Colors.white.withValues(alpha: 0.12)
+                      : Colors.black.withValues(alpha: 0.1)),
           ),
         );
       }),

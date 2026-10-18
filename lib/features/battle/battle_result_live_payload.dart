@@ -37,14 +37,10 @@ BattleResultPayload battleResultPayloadFromQuestionMaps({
     playerScore: playerScore.points,
     opponentScore: opponentScore.points,
     playerOutcomeByQuestion: questions
-        .map(
-          (q) => outcomeFor(playerByUuid[q.uuid], q.correctOption),
-        )
+        .map((q) => outcomeFor(playerByUuid[q.uuid], q.correctOption))
         .toList(),
     opponentOutcomeByQuestion: questions
-        .map(
-          (q) => outcomeFor(opponentByUuid[q.uuid], q.correctOption),
-        )
+        .map((q) => outcomeFor(opponentByUuid[q.uuid], q.correctOption))
         .toList(),
   );
 }

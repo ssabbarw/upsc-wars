@@ -8,7 +8,8 @@ import 'package:upsc_wars/features/revision_queue/domain/repositories/revision_r
 const _negativeFramingTrapType = 'negative-framing';
 
 class RevisionRepositoryImpl implements RevisionRepository {
-  const RevisionRepositoryImpl({required UserDatabase userDb}) : _userDb = userDb;
+  const RevisionRepositoryImpl({required UserDatabase userDb})
+    : _userDb = userDb;
   final UserDatabase _userDb;
 
   @override
@@ -19,23 +20,25 @@ class RevisionRepositoryImpl implements RevisionRepository {
       final q = await _userDb.questionsDao.getByUuid(r.questionUuid);
       if (q == null) continue;
       final parsed = QuestionDisplayTextParser.parse(q.enDisplayText ?? '');
-      items.add(RevisionQueueItem(
-        id: r.id,
-        questionUuid: r.questionUuid,
-        dateAddedToQueue: r.dateAddedToQueue,
-        numberOfTimesAnsweredCorrectlyInRevision:
-            r.numberOfTimesAnsweredCorrectlyInRevision,
-        numberOfTimesAnsweredIncorrectlyInRevision:
-            r.numberOfTimesAnsweredIncorrectlyInRevision,
-        hasGraduatedFromQueue: r.hasGraduatedFromQueue,
-        dateGraduated: r.dateGraduated,
-        subject: q.subject,
-        topic: q.topic,
-        questionStem: parsed.stem,
-        conceptAnchor: q.conceptAnchor,
-        subTopic: q.subTopic,
-        trapType: q.trapType,
-      ));
+      items.add(
+        RevisionQueueItem(
+          id: r.id,
+          questionUuid: r.questionUuid,
+          dateAddedToQueue: r.dateAddedToQueue,
+          numberOfTimesAnsweredCorrectlyInRevision:
+              r.numberOfTimesAnsweredCorrectlyInRevision,
+          numberOfTimesAnsweredIncorrectlyInRevision:
+              r.numberOfTimesAnsweredIncorrectlyInRevision,
+          hasGraduatedFromQueue: r.hasGraduatedFromQueue,
+          dateGraduated: r.dateGraduated,
+          subject: q.subject,
+          topic: q.topic,
+          questionStem: parsed.stem,
+          conceptAnchor: q.conceptAnchor,
+          subTopic: q.subTopic,
+          trapType: q.trapType,
+        ),
+      );
     }
     return items;
   }
@@ -46,8 +49,9 @@ class RevisionRepositoryImpl implements RevisionRepository {
 
   @override
   Future<List<String>> getActiveRevisionSubjectSlugs({int limit = 3}) async {
-    final uuids =
-        (await _userDb.revisionQueueDao.fetchActiveQueue()).map((e) => e.questionUuid).toList();
+    final uuids = (await _userDb.revisionQueueDao.fetchActiveQueue())
+        .map((e) => e.questionUuid)
+        .toList();
     if (uuids.isEmpty) return const [];
     final map = <String, String>{};
     for (final uuid in uuids) {
@@ -89,7 +93,11 @@ class RevisionRepositoryImpl implements RevisionRepository {
   Future<List<WeakSubTopicGroup>> getWeakSubTopicGroups() async {
     final rows = await _userDb.revisionQueueDao.fetchActiveQueue();
     // subject|subTopic -> (subject, subTopic, failureCount, uuids)
-    final map = <String, ({String subject, String subTopic, int failures, List<String> uuids})>{};
+    final map =
+        <
+          String,
+          ({String subject, String subTopic, int failures, List<String> uuids})
+        >{};
     for (final r in rows) {
       final q = await _userDb.questionsDao.getByUuid(r.questionUuid);
       if (q == null) continue;
@@ -107,24 +115,32 @@ class RevisionRepositoryImpl implements RevisionRepository {
         map[key] = (
           subject: existing.subject,
           subTopic: existing.subTopic,
-          failures: existing.failures + r.numberOfTimesAnsweredIncorrectlyInRevision + 1,
+          failures:
+              existing.failures +
+              r.numberOfTimesAnsweredIncorrectlyInRevision +
+              1,
           uuids: [...existing.uuids, r.questionUuid],
         );
       }
     }
-    final groups = map.entries
-        .map((e) => WeakSubTopicGroup(
-              subject: e.value.subject,
-              subTopic: e.value.subTopic,
-              failureCount: e.value.failures,
-              questionUuids: e.value.uuids,
-            ))
-        .toList()
-      ..sort((a, b) {
-        final bySubject = a.subject.toLowerCase().compareTo(b.subject.toLowerCase());
-        if (bySubject != 0) return bySubject;
-        return b.failureCount.compareTo(a.failureCount);
-      });
+    final groups =
+        map.entries
+            .map(
+              (e) => WeakSubTopicGroup(
+                subject: e.value.subject,
+                subTopic: e.value.subTopic,
+                failureCount: e.value.failures,
+                questionUuids: e.value.uuids,
+              ),
+            )
+            .toList()
+          ..sort((a, b) {
+            final bySubject = a.subject.toLowerCase().compareTo(
+              b.subject.toLowerCase(),
+            );
+            if (bySubject != 0) return bySubject;
+            return b.failureCount.compareTo(a.failureCount);
+          });
     return groups;
   }
 
@@ -144,11 +160,13 @@ class RevisionRepositoryImpl implements RevisionRepository {
       }
     }
     return map.entries
-        .map((e) => TrapPatternGroup(
-              trapType: e.key,
-              questionCount: e.value.length,
-              questionUuids: e.value,
-            ))
+        .map(
+          (e) => TrapPatternGroup(
+            trapType: e.key,
+            questionCount: e.value.length,
+            questionUuids: e.value,
+          ),
+        )
         .toList()
       ..sort((a, b) => b.questionCount.compareTo(a.questionCount));
   }

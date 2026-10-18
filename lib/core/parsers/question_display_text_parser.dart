@@ -42,7 +42,9 @@ abstract final class QuestionDisplayTextParser {
       final current = matches[i];
       final key = (current.group(1) ?? '').toLowerCase();
       final valueStart = current.end;
-      final valueEnd = i + 1 < matches.length ? matches[i + 1].start : raw.length;
+      final valueEnd = i + 1 < matches.length
+          ? matches[i + 1].start
+          : raw.length;
       if (!ordered.containsKey(key)) {
         ordered[key] = raw.substring(valueStart, valueEnd).trim();
       }

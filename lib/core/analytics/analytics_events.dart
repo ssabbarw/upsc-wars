@@ -36,10 +36,7 @@ sealed class AnalyticsEvent {
 /// **GA4:** `app_opened` with `entry_source` (`organic` | `push` | `deep_link`)
 /// and optional `entry_detail` (e.g. notification kind).
 final class AppOpenedEvent extends AnalyticsEvent {
-  const AppOpenedEvent({
-    this.entrySource = 'organic',
-    this.entryDetail,
-  });
+  const AppOpenedEvent({this.entrySource = 'organic', this.entryDetail});
 
   final String entrySource;
   final String? entryDetail;
@@ -53,10 +50,7 @@ final class AppOpenedEvent extends AnalyticsEvent {
 /// `deep_link`) and optional `entry_detail`.
 /// **Note:** Distinct from GA4’s automatic “session”; this is a custom event name.
 final class SessionStartedEvent extends AnalyticsEvent {
-  const SessionStartedEvent({
-    this.entrySource = 'organic',
-    this.entryDetail,
-  });
+  const SessionStartedEvent({this.entrySource = 'organic', this.entryDetail});
 
   final String entrySource;
   final String? entryDetail;
@@ -145,6 +139,7 @@ sealed class FeatureUsageEvent extends AnalyticsEvent {
   final String subject;
   final String? topic;
   final String? difficulty;
+
   /// How the user entered the flow (`home`, `share`, etc. — from sessionderive).
   final String source;
 }
@@ -661,10 +656,7 @@ final class RevisionRecommendationClickedEvent extends AnalyticsEvent {
 ///
 /// **GA4:** `risk_card_clicked` with `subject` and `risk_tier`.
 final class RiskCardClickedEvent extends AnalyticsEvent {
-  const RiskCardClickedEvent({
-    required this.subject,
-    required this.riskTier,
-  });
+  const RiskCardClickedEvent({required this.subject, required this.riskTier});
 
   final String subject;
   final String riskTier;
@@ -748,10 +740,7 @@ final class GameScreenOpenedEvent extends AnalyticsEvent {
 ///
 /// **GA4:** `game_started` with `game_name`, optional `total_rounds`.
 final class GameStartedEvent extends AnalyticsEvent {
-  const GameStartedEvent({
-    required this.gameName,
-    this.totalRounds,
-  });
+  const GameStartedEvent({required this.gameName, this.totalRounds});
 
   final String gameName;
   final int? totalRounds;
@@ -914,10 +903,7 @@ final class DailyWarSubmittedEvent extends AnalyticsEvent {
 /// Also sets user property `daily_ca_player` = `yes`.
 /// Also logs alias `daily_current_affairs_started` with the same parameters.
 final class DailyCaAttemptedEvent extends AnalyticsEvent {
-  const DailyCaAttemptedEvent({
-    required this.dateId,
-    required this.mode,
-  });
+  const DailyCaAttemptedEvent({required this.dateId, required this.mode});
 
   final String dateId;
 
@@ -972,10 +958,7 @@ final class CaShotHubOpenedEvent extends AnalyticsEvent {
 ///
 /// **GA4:** `ca_shot_notif_opened` with `pulse_id`, `channel` (`fcm`|`local`).
 final class CaShotNotifOpenedEvent extends AnalyticsEvent {
-  const CaShotNotifOpenedEvent({
-    required this.pulseId,
-    required this.channel,
-  });
+  const CaShotNotifOpenedEvent({required this.pulseId, required this.channel});
 
   final String pulseId;
   final String channel;
@@ -989,10 +972,7 @@ final class CaShotNotifOpenedEvent extends AnalyticsEvent {
 ///
 /// **GA4:** `ca_shot_opened` with `pulse_id`, `source`.
 final class CaShotOpenedEvent extends AnalyticsEvent {
-  const CaShotOpenedEvent({
-    required this.pulseId,
-    required this.source,
-  });
+  const CaShotOpenedEvent({required this.pulseId, required this.source});
 
   final String pulseId;
   final String source;
@@ -1005,10 +985,7 @@ final class CaShotOpenedEvent extends AnalyticsEvent {
 ///
 /// **GA4:** `ca_shot_summary_viewed` with `pulse_id`, `source`.
 final class CaShotSummaryViewedEvent extends AnalyticsEvent {
-  const CaShotSummaryViewedEvent({
-    required this.pulseId,
-    required this.source,
-  });
+  const CaShotSummaryViewedEvent({required this.pulseId, required this.source});
 
   final String pulseId;
   final String source;
@@ -1140,5 +1117,3 @@ final class AppLanguageSwitchedEvent extends AnalyticsEvent {
   final String fromLanguage;
   final String toLanguage;
 }
-
-

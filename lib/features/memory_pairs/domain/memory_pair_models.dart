@@ -63,16 +63,16 @@ extension MemoryPairDifficultyX on MemoryPairDifficulty {
   String get id => name;
 
   String get label => switch (this) {
-        MemoryPairDifficulty.easy => 'Easy',
-        MemoryPairDifficulty.medium => 'Medium',
-        MemoryPairDifficulty.hard => 'Hard',
-      };
+    MemoryPairDifficulty.easy => 'Easy',
+    MemoryPairDifficulty.medium => 'Medium',
+    MemoryPairDifficulty.hard => 'Hard',
+  };
 
   int get pairCount => switch (this) {
-        MemoryPairDifficulty.easy => 6,
-        MemoryPairDifficulty.medium => 8,
-        MemoryPairDifficulty.hard => 10,
-      };
+    MemoryPairDifficulty.easy => 6,
+    MemoryPairDifficulty.medium => 8,
+    MemoryPairDifficulty.hard => 10,
+  };
 
   Color chipColor(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;

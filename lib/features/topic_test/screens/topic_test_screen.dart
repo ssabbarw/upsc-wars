@@ -14,6 +14,7 @@ import '../../../shared/widgets/accuracy_percentage_text.dart';
 import '../../../shared/widgets/contact_us_entry.dart';
 import '../../subject_detail/widgets/topic_entry_bottom_sheet.dart';
 import '../providers/topic_test_ui_providers.dart';
+import '../../../l10n/l10n.dart';
 
 class _NoScrollbarBehavior extends ScrollBehavior {
   const _NoScrollbarBehavior();
@@ -39,7 +40,9 @@ class TopicTestScreen extends HookConsumerWidget {
     final selectedSlug = ref.watch(topicTestSelectedSubjectSlugProvider);
     final searchController = useTextEditingController();
     final topicsAsync = ref.watch(topicTestDisplayedTopicsProvider);
-    final revisionCountsAsync = ref.watch(topicRevisionQueueCountsByTopicProvider);
+    final revisionCountsAsync = ref.watch(
+      topicRevisionQueueCountsByTopicProvider,
+    );
 
     final hPadding = AppBreakpoints.fullScreenHPadding(
       MediaQuery.sizeOf(context).width,
@@ -51,171 +54,194 @@ class TopicTestScreen extends HookConsumerWidget {
         child: Padding(
           padding: hPadding,
           child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Padding(
-              padding: const EdgeInsets.fromLTRB(
-                AppSpacing.sm,
-                AppSpacing.sm,
-                AppSpacing.lg,
-                AppSpacing.sm,
-              ),
-              child: Row(
-                children: [
-                  IconButton(
-                    icon: const Icon(Icons.chevron_left),
-                    color: scheme.onSurface,
-                    onPressed: () => context.pop(),
-                  ),
-                  Expanded(
-                    child: Text(
-                      'Topic test',
-                      style: AppTextStyles.h2()
-                          .copyWith(color: scheme.onSurface),
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Padding(
+                padding: const EdgeInsets.fromLTRB(
+                  AppSpacing.sm,
+                  AppSpacing.sm,
+                  AppSpacing.lg,
+                  AppSpacing.sm,
+                ),
+                child: Row(
+                  children: [
+                    IconButton(
+                      icon: const Icon(Icons.chevron_left),
+                      color: scheme.onSurface,
+                      onPressed: () => context.pop(),
                     ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 44,
-              child: ScrollConfiguration(
-                behavior: const _NoScrollbarBehavior(),
-                child: ListView.separated(
-                  scrollDirection: Axis.horizontal,
-                  physics: const BouncingScrollPhysics(),
-                  padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
-                  itemCount: SubjectConstants.ordered.length,
-                  separatorBuilder: (context, index) =>
-                      const SizedBox(width: AppSpacing.sm),
-                  itemBuilder: (context, i) {
-                    final def = SubjectConstants.ordered[i];
-                    final selected = def.slug == selectedSlug;
-                    return GestureDetector(
-                      onTap: () {
-                        searchController.clear();
-                        ref
-                            .read(topicTestSearchQueryProvider.notifier)
-                            .setQuery('');
-                        ref
-                            .read(topicTestSelectedSubjectSlugProvider.notifier)
-                            .setSlug(def.slug);
-                      },
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: AppSpacing.lg,
-                          vertical: AppSpacing.sm,
+                    Expanded(
+                      child: Text(
+                        'Topic test',
+                        style: AppTextStyles.h2().copyWith(
+                          color: scheme.onSurface,
                         ),
-                        decoration: BoxDecoration(
-                          color: selected
-                              ? AppColors.primary
-                              : scheme.surface,
-                          borderRadius: BorderRadius.circular(AppRadius.pill),
-                          border: Border.all(
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 44,
+                child: ScrollConfiguration(
+                  behavior: const _NoScrollbarBehavior(),
+                  child: ListView.separated(
+                    scrollDirection: Axis.horizontal,
+                    physics: const BouncingScrollPhysics(),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: AppSpacing.lg,
+                    ),
+                    itemCount: SubjectConstants.ordered.length,
+                    separatorBuilder: (context, index) =>
+                        const SizedBox(width: AppSpacing.sm),
+                    itemBuilder: (context, i) {
+                      final def = SubjectConstants.ordered[i];
+                      final selected = def.slug == selectedSlug;
+                      return GestureDetector(
+                        onTap: () {
+                          searchController.clear();
+                          ref
+                              .read(topicTestSearchQueryProvider.notifier)
+                              .setQuery('');
+                          ref
+                              .read(
+                                topicTestSelectedSubjectSlugProvider.notifier,
+                              )
+                              .setSlug(def.slug);
+                        },
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: AppSpacing.lg,
+                            vertical: AppSpacing.sm,
+                          ),
+                          decoration: BoxDecoration(
                             color: selected
                                 ? AppColors.primary
-                                : borderColor,
-                            width: 0.5,
+                                : scheme.surface,
+                            borderRadius: BorderRadius.circular(AppRadius.pill),
+                            border: Border.all(
+                              color: selected ? AppColors.primary : borderColor,
+                              width: 0.5,
+                            ),
+                          ),
+                          alignment: Alignment.center,
+                          child: Text(
+                            def.displayName,
+                            style: AppTextStyles.labelSm().copyWith(
+                              color: selected
+                                  ? AppColors.onPrimary
+                                  : scheme.onSurfaceVariant,
+                            ),
                           ),
                         ),
-                        alignment: Alignment.center,
-                        child: Text(
-                          def.displayName,
-                          style: AppTextStyles.labelSm().copyWith(
-                            color: selected
-                                ? AppColors.onPrimary
-                                : scheme.onSurfaceVariant,
-                          ),
-                        ),
-                      ),
-                    );
-                  },
-                ),
-              ),
-            ),
-            const SizedBox(height: AppSpacing.md),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
-              child: TextField(
-                controller: searchController,
-                onChanged: (v) => ref
-                    .read(topicTestSearchQueryProvider.notifier)
-                    .setQuery(v),
-                style: AppTextStyles.body()
-                    .copyWith(color: scheme.onSurface),
-                decoration: InputDecoration(
-                  hintText: 'Search topics...',
-                  hintStyle: AppTextStyles.body().copyWith(
-                    color: scheme.onSurfaceVariant,
-                  ),
-                  filled: true,
-                  fillColor: scheme.surfaceContainerLow,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(AppRadius.md),
-                    borderSide: BorderSide.none,
-                  ),
-                  contentPadding: const EdgeInsets.symmetric(
-                    horizontal: AppSpacing.lg,
-                    vertical: AppSpacing.md,
+                      );
+                    },
                   ),
                 ),
               ),
-            ),
-            const SizedBox(height: AppSpacing.md),
-            Expanded(
-              child: topicsAsync.when(
-                data: (topics) {
-                  if (topics.isEmpty) {
-                    return Center(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Text(
-                            'No topics match your search.',
-                            style: AppTextStyles.body()
-                                .copyWith(color: scheme.onSurfaceVariant),
-                          ),
-                          const SizedBox(height: AppSpacing.lg),
-                          const ContactUsTextButton(),
-                        ],
-                      ),
-                    );
-                  }
-                  return LayoutBuilder(
-                    builder: (context, constraints) {
-                      final isWide =
-                          constraints.maxWidth >= AppBreakpoints.tablet;
+              const SizedBox(height: AppSpacing.md),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
+                child: TextField(
+                  controller: searchController,
+                  onChanged: (v) => ref
+                      .read(topicTestSearchQueryProvider.notifier)
+                      .setQuery(v),
+                  style: AppTextStyles.body().copyWith(color: scheme.onSurface),
+                  decoration: InputDecoration(
+                    hintText: context.l10n.topicSearchHint,
+                    hintStyle: AppTextStyles.body().copyWith(
+                      color: scheme.onSurfaceVariant,
+                    ),
+                    filled: true,
+                    fillColor: scheme.surfaceContainerLow,
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(AppRadius.md),
+                      borderSide: BorderSide.none,
+                    ),
+                    contentPadding: const EdgeInsets.symmetric(
+                      horizontal: AppSpacing.lg,
+                      vertical: AppSpacing.md,
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: AppSpacing.md),
+              Expanded(
+                child: topicsAsync.when(
+                  data: (topics) {
+                    if (topics.isEmpty) {
+                      return Center(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Text(
+                              context.l10n.topicNoMatch,
+                              style: AppTextStyles.body().copyWith(
+                                color: scheme.onSurfaceVariant,
+                              ),
+                            ),
+                            const SizedBox(height: AppSpacing.lg),
+                            const ContactUsTextButton(),
+                          ],
+                        ),
+                      );
+                    }
+                    return LayoutBuilder(
+                      builder: (context, constraints) {
+                        final isWide =
+                            constraints.maxWidth >= AppBreakpoints.tablet;
 
-                      Widget buildRow(TopicInfo t) {
-                        final subj = SubjectConstants.bySlug(t.subject);
-                        final revisionQueueCount =
-                            revisionCountsAsync.maybeWhen(
-                          data: (counts) => counts[t.topic] ?? 0,
-                          orElse: () => 0,
-                        );
-                        final isWeak = t.attemptCount > 0 &&
-                            (t.accuracyPercent ?? 0) < 50;
-                        return _TopicRow(
-                          topic: t,
-                          borderColor: borderColor,
-                          revisionQueueCount: revisionQueueCount,
-                          isWeak: isWeak,
-                          onTap: () => showTopicEntryBottomSheet(
-                            context: context,
-                            subject: t.subject,
-                            topic: t.topic,
-                            subjectDisplayName:
-                                subj?.displayName ?? t.subject,
-                            topicDisplayName: t.displayName,
-                            availableQuestionCount: t.questionCount,
-                            onTestSessionCreated: (id) =>
-                                context.push('/test/$id'),
-                          ),
-                        );
-                      }
+                        Widget buildRow(TopicInfo t) {
+                          final subj = SubjectConstants.bySlug(t.subject);
+                          final revisionQueueCount = revisionCountsAsync
+                              .maybeWhen(
+                                data: (counts) => counts[t.topic] ?? 0,
+                                orElse: () => 0,
+                              );
+                          final isWeak =
+                              t.attemptCount > 0 &&
+                              (t.accuracyPercent ?? 0) < 50;
+                          return _TopicRow(
+                            topic: t,
+                            borderColor: borderColor,
+                            revisionQueueCount: revisionQueueCount,
+                            isWeak: isWeak,
+                            onTap: () => showTopicEntryBottomSheet(
+                              context: context,
+                              subject: t.subject,
+                              topic: t.topic,
+                              subjectDisplayName:
+                                  subj?.displayName ?? t.subject,
+                              topicDisplayName: t.displayName,
+                              availableQuestionCount: t.questionCount,
+                              onTestSessionCreated: (id) =>
+                                  context.push('/test/$id'),
+                            ),
+                          );
+                        }
 
-                      if (isWide) {
-                        return GridView.builder(
+                        if (isWide) {
+                          return GridView.builder(
+                            physics: const BouncingScrollPhysics(),
+                            padding: const EdgeInsets.fromLTRB(
+                              AppSpacing.lg,
+                              0,
+                              AppSpacing.lg,
+                              AppSpacing.xxl,
+                            ),
+                            gridDelegate:
+                                const SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount: 2,
+                                  crossAxisSpacing: AppSpacing.sm,
+                                  mainAxisSpacing: AppSpacing.sm,
+                                  childAspectRatio: 2.8,
+                                ),
+                            itemCount: topics.length,
+                            itemBuilder: (context, i) => buildRow(topics[i]),
+                          );
+                        }
+                        return ListView.separated(
                           physics: const BouncingScrollPhysics(),
                           padding: const EdgeInsets.fromLTRB(
                             AppSpacing.lg,
@@ -223,103 +249,88 @@ class TopicTestScreen extends HookConsumerWidget {
                             AppSpacing.lg,
                             AppSpacing.xxl,
                           ),
-                          gridDelegate:
-                              const SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 2,
-                                crossAxisSpacing: AppSpacing.sm,
-                                mainAxisSpacing: AppSpacing.sm,
-                                childAspectRatio: 2.8,
-                              ),
-                          itemCount: topics.length,
-                          itemBuilder: (context, i) => buildRow(topics[i]),
-                        );
-                      }
-                      return ListView.separated(
-                        physics: const BouncingScrollPhysics(),
-                        padding: const EdgeInsets.fromLTRB(
-                          AppSpacing.lg,
-                          0,
-                          AppSpacing.lg,
-                          AppSpacing.xxl,
-                        ),
-                        itemCount: topics.length + 1,
-                        separatorBuilder: (context, index) {
-                          if (index == topics.length - 1) {
-                            return const SizedBox(height: AppSpacing.xl);
-                          }
-                          return const SizedBox(
-                            height: AppSpacing.cardListGap,
-                          );
-                        },
-                        itemBuilder: (context, i) {
-                          if (i == topics.length) {
-                            return const Center(
-                              child: ContactUsTextButton(),
+                          itemCount: topics.length + 1,
+                          separatorBuilder: (context, index) {
+                            if (index == topics.length - 1) {
+                              return const SizedBox(height: AppSpacing.xl);
+                            }
+                            return const SizedBox(
+                              height: AppSpacing.cardListGap,
                             );
-                          }
-                          return buildRow(topics[i]);
-                        },
-                      );
-                    },
-                  );
-                },
-                loading: () => ListView.separated(
-                  physics: const BouncingScrollPhysics(),
-                  padding: const EdgeInsets.fromLTRB(
-                    AppSpacing.lg,
-                    0,
-                    AppSpacing.lg,
-                    AppSpacing.xxl,
-                  ),
-                  itemCount: 9,
-                  separatorBuilder: (context, index) {
-                    if (index == 7) {
-                      return const SizedBox(height: AppSpacing.xl);
-                    }
-                    return const SizedBox(height: AppSpacing.sm);
-                  },
-                  itemBuilder: (context, index) {
-                    if (index == 8) {
-                      return const Center(child: ContactUsTextButton());
-                    }
-                    return Container(
-                      height: 72,
-                      decoration: BoxDecoration(
-                        color: scheme.surfaceContainerLow,
-                        borderRadius: BorderRadius.circular(AppRadius.lg),
-                      ),
+                          },
+                          itemBuilder: (context, i) {
+                            if (i == topics.length) {
+                              return const Center(child: ContactUsTextButton());
+                            }
+                            return buildRow(topics[i]);
+                          },
+                        );
+                      },
                     );
                   },
-                ),
-                error: (e, st) => Center(
-                  child: Padding(
-                    padding: const EdgeInsets.all(AppSpacing.xxl),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(
-                          'Could not load topics.',
-                          textAlign: TextAlign.center,
-                          style: AppTextStyles.body()
-                              .copyWith(color: scheme.onSurface),
+                  loading: () => ListView.separated(
+                    physics: const BouncingScrollPhysics(),
+                    padding: const EdgeInsets.fromLTRB(
+                      AppSpacing.lg,
+                      0,
+                      AppSpacing.lg,
+                      AppSpacing.xxl,
+                    ),
+                    itemCount: 9,
+                    separatorBuilder: (context, index) {
+                      if (index == 7) {
+                        return const SizedBox(height: AppSpacing.xl);
+                      }
+                      return const SizedBox(height: AppSpacing.sm);
+                    },
+                    itemBuilder: (context, index) {
+                      if (index == 8) {
+                        return const Center(child: ContactUsTextButton());
+                      }
+                      return Container(
+                        height: 72,
+                        decoration: BoxDecoration(
+                          color: scheme.surfaceContainerLow,
+                          borderRadius: BorderRadius.circular(AppRadius.lg),
                         ),
-                        const SizedBox(height: AppSpacing.lg),
-                        OutlinedButton(
-                          onPressed: () {
-                            ref.invalidate(topicTestDisplayedTopicsProvider);
-                            ref.invalidate(topicRevisionQueueCountsByTopicProvider);
-                          },
-                          child: Text('Retry', style: AppTextStyles.label()),
-                        ),
-                        const SizedBox(height: AppSpacing.lg),
-                        const ContactUsTextButton(),
-                      ],
+                      );
+                    },
+                  ),
+                  error: (e, st) => Center(
+                    child: Padding(
+                      padding: const EdgeInsets.all(AppSpacing.xxl),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(
+                            context.l10n.topicLoadFailed,
+                            textAlign: TextAlign.center,
+                            style: AppTextStyles.body().copyWith(
+                              color: scheme.onSurface,
+                            ),
+                          ),
+                          const SizedBox(height: AppSpacing.lg),
+                          OutlinedButton(
+                            onPressed: () {
+                              ref.invalidate(topicTestDisplayedTopicsProvider);
+                              ref.invalidate(
+                                topicRevisionQueueCountsByTopicProvider,
+                              );
+                            },
+                            child: Text(
+                              context.l10n.commonRetry,
+                              style: AppTextStyles.label(),
+                            ),
+                          ),
+                          const SizedBox(height: AppSpacing.lg),
+                          const ContactUsTextButton(),
+                        ],
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
           ),
         ),
       ),
@@ -375,8 +386,9 @@ class _TopicRow extends HookConsumerWidget {
                           children: [
                             Text(
                               topic.displayName,
-                              style: AppTextStyles.label()
-                                  .copyWith(color: scheme.onSurface),
+                              style: AppTextStyles.label().copyWith(
+                                color: scheme.onSurface,
+                              ),
                             ),
                             const SizedBox(height: AppSpacing.sm),
                             AccuracyPercentageText(
@@ -387,17 +399,22 @@ class _TopicRow extends HookConsumerWidget {
                             if (revisionQueueCount > 0) ...[
                               const SizedBox(height: AppSpacing.xs),
                               Text(
-                                '$revisionQueueCount in revision queue',
-                                style: AppTextStyles.caption()
-                                    .copyWith(color: scheme.onSurfaceVariant),
+                                context.l10n.topicInRevisionQueue(
+                                  revisionQueueCount,
+                                ),
+                                style: AppTextStyles.caption().copyWith(
+                                  color: scheme.onSurfaceVariant,
+                                ),
                               ),
                             ],
                             if (topic.dangerSureWrong > 0 ||
                                 topic.dangerEducatedGuessWrong > 0) ...[
                               const SizedBox(height: AppSpacing.xs),
                               Text(
-                                'Sure wrong: ${topic.dangerSureWrong} · '
-                                'Educated guess wrong: ${topic.dangerEducatedGuessWrong} (all-time)',
+                                context.l10n.topicDangerLine(
+                                  topic.dangerSureWrong,
+                                  topic.dangerEducatedGuessWrong,
+                                ),
                                 style: AppTextStyles.caption().copyWith(
                                   color: scheme.onSurfaceVariant,
                                   height: 1.3,

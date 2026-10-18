@@ -14,13 +14,14 @@ final fomoPulseRepositoryProvider = Provider<FomoPulseRepository>(
 );
 
 final fomoPulsePushServiceProvider = Provider<FomoPulsePushService>(
-  (ref) => FomoPulsePushService(
-    cloud: ref.watch(fomoPulseCloudServiceProvider),
-  ),
+  (ref) =>
+      FomoPulsePushService(cloud: ref.watch(fomoPulseCloudServiceProvider)),
 );
 
-typedef FomoPulseDetailData =
-    ({FomoPulse pulse, FomoPulseAttemptState? attempt});
+typedef FomoPulseDetailData = ({
+  FomoPulse pulse,
+  FomoPulseAttemptState? attempt,
+});
 
 final fomoPulseHistoryProvider =
     AsyncNotifierProvider.autoDispose<
@@ -49,9 +50,7 @@ class FomoPulseHistoryNotifier extends AsyncNotifier<FomoPulseHistoryData> {
   Future<void> refresh({bool force = false}) async {
     final repo = ref.read(fomoPulseRepositoryProvider);
     final previous = state.value;
-    if (!force &&
-        previous != null &&
-        await repo.isHistoryRecentlySynced()) {
+    if (!force && previous != null && await repo.isHistoryRecentlySynced()) {
       return;
     }
     try {

@@ -43,22 +43,14 @@ class ShareDeepLinkService {
     final appLinks = AppLinks();
     final initial = await appLinks.getInitialLink();
     if (initial != null && _shouldHandle(initial)) {
-      await _handleIncoming(
-        ref: ref,
-        uri: initial,
-        replaceStack: true,
-      );
+      await _handleIncoming(ref: ref, uri: initial, replaceStack: true);
     }
 
     final nativeUrl = await FomoPulseNativeShare.consumePendingUrl();
     if (nativeUrl != null) {
       final uri = pulseArticleDeepLinkForUrl(nativeUrl);
       if (_shouldHandle(uri)) {
-        await _handleIncoming(
-          ref: ref,
-          uri: uri,
-          replaceStack: true,
-        );
+        await _handleIncoming(ref: ref, uri: uri, replaceStack: true);
       }
     }
 
@@ -118,10 +110,7 @@ class ShareDeepLinkService {
       replaceStack: replaceStack,
     );
     if (openedCaShot) return;
-    SessionEntrySource.capture(
-      SessionEntrySource.deepLink,
-      detail: 'share',
-    );
+    SessionEntrySource.capture(SessionEntrySource.deepLink, detail: 'share');
     await openShareUriIfApplicable(ref: ref, router: router, uri: uri);
   }
 

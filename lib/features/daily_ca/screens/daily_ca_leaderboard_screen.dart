@@ -6,6 +6,7 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../providers/daily_ca_providers.dart';
 import '../widgets/daily_ca_leaderboard_view.dart';
+import '../../../l10n/l10n.dart';
 
 class DailyCaLeaderboardScreen extends ConsumerWidget {
   const DailyCaLeaderboardScreen({super.key, required this.dateId});
@@ -55,7 +56,7 @@ class DailyCaLeaderboardScreen extends ConsumerWidget {
                   Padding(
                     padding: const EdgeInsets.all(24),
                     child: Text(
-                      'No ranks yet. Be the first to finish today\'s paper.',
+                      context.l10n.dcaNoRanks,
                       textAlign: TextAlign.center,
                       style: AppTextStyles.body().copyWith(
                         color: scheme.onSurfaceVariant,

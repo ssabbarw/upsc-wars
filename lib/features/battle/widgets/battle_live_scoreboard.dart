@@ -32,8 +32,7 @@ class BattleLiveScoreboard extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final spectate = ref.watch(battleSpectateProvider);
     if (spectate != null && spectate.sessionId == sessionId) {
-      final finished =
-          battleFinishedOverride ?? spectate.battleSettled;
+      final finished = battleFinishedOverride ?? spectate.battleSettled;
       return BattleScoresCollapsible(
         opponentName: spectate.opponentName,
         playerOutcomeByQuestion: spectate.playerOutcomes,
@@ -53,11 +52,9 @@ class BattleLiveScoreboard extends ConsumerWidget {
       final payload = notifier.buildResultPayload();
       final n = battle.baseSession.questions.length;
       final playerOutcomes =
-          payload?.playerOutcomeByQuestion ??
-          List<bool?>.filled(n, null);
+          payload?.playerOutcomeByQuestion ?? List<bool?>.filled(n, null);
       final opponentOutcomes =
-          payload?.opponentOutcomeByQuestion ??
-          List<bool?>.filled(n, null);
+          payload?.opponentOutcomeByQuestion ?? List<bool?>.filled(n, null);
       final opponentCaughtUp = battle.baseSession.questions.every(
         (q) => battle.opponentResponsesByQuestion.containsKey(q.uuid),
       );

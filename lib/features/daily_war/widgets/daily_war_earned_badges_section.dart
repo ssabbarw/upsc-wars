@@ -8,6 +8,7 @@ import '../domain/daily_war_badges.dart';
 import '../providers/daily_war_providers.dart';
 import '../theme/daily_war_theme.dart';
 import 'daily_war_badge_chip.dart';
+import '../../../l10n/l10n.dart';
 
 /// War badges under the calendar hub — earned first, then locked.
 class DailyWarEarnedBadgesSection extends ConsumerWidget {
@@ -27,7 +28,7 @@ class DailyWarEarnedBadgesSection extends ConsumerWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Text(
-          'EARNED BADGES',
+          context.l10n.dwEarnedBadges,
           style: AppTextStyles.caption().copyWith(
             color: scheme.onSurfaceVariant,
             letterSpacing: 0.8,
@@ -38,7 +39,7 @@ class DailyWarEarnedBadgesSection extends ConsumerWidget {
         async.when(
           loading: () => const _EarnedBadgesShimmer(),
           error: (e, _) => Text(
-            'Could not load badges: $e',
+            context.l10n.dwBadgesLoadFailed(e.toString()),
             style: AppTextStyles.bodySm().copyWith(color: scheme.error),
           ),
           data: (tallies) {
@@ -54,7 +55,7 @@ class DailyWarEarnedBadgesSection extends ConsumerWidget {
               children: [
                 if (earnedIds.isEmpty)
                   Text(
-                    'You have not yet earned a badge',
+                    context.l10n.dwNoBadgeYet,
                     style: AppTextStyles.bodySm().copyWith(
                       color: scheme.onSurfaceVariant,
                     ),
@@ -79,11 +80,7 @@ class DailyWarEarnedBadgesSection extends ConsumerWidget {
                     runSpacing: 6,
                     children: [
                       for (final id in lockedIds)
-                        _BadgeChip(
-                          badgeId: id,
-                          count: 0,
-                          earned: false,
-                        ),
+                        _BadgeChip(badgeId: id, count: 0, earned: false),
                     ],
                   ),
                 ],
@@ -192,10 +189,26 @@ class _BadgeChip extends StatelessWidget {
 
     return ColorFiltered(
       colorFilter: const ColorFilter.matrix(<double>[
-        0.2126, 0.7152, 0.0722, 0, 0,
-        0.2126, 0.7152, 0.0722, 0, 0,
-        0.2126, 0.7152, 0.0722, 0, 0,
-        0, 0, 0, 1, 0,
+        0.2126,
+        0.7152,
+        0.0722,
+        0,
+        0,
+        0.2126,
+        0.7152,
+        0.0722,
+        0,
+        0,
+        0.2126,
+        0.7152,
+        0.0722,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
       ]),
       child: Opacity(opacity: 0.55, child: chip),
     );

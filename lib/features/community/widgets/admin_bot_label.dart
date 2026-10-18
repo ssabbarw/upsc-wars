@@ -21,7 +21,8 @@ class AdminBotLabel extends ConsumerWidget {
       return const SizedBox.shrink();
     }
     final index =
-        ref.watch(trafficBotIndexProvider).asData?.value ?? TrafficBotIndex.empty;
+        ref.watch(trafficBotIndexProvider).asData?.value ??
+        TrafficBotIndex.empty;
     if (!index.matches(email: email, uid: uid)) {
       return const SizedBox.shrink();
     }

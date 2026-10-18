@@ -10,6 +10,7 @@ import '../../../core/theme/app_spacing.dart';
 import '../fomo_pulse_constants.dart';
 import '../providers/fomo_pulse_providers.dart';
 import '../widgets/fomo_pulse_mcq_panel.dart';
+import '../../../l10n/l10n.dart';
 
 /// Standalone MCQ route (e.g. deep links). Detail screen uses [FomoPulseMcqPanel] inline.
 class FomoPulseMcqScreen extends HookConsumerWidget {
@@ -29,7 +30,7 @@ class FomoPulseMcqScreen extends HookConsumerWidget {
     final async = ref.watch(fomoPulseDetailProvider(pulseId));
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Attempt')),
+      appBar: AppBar(title: Text(context.l10n.fpAttempt)),
       body: async.when(
         loading: () => const Center(child: CircularProgressIndicator()),
         error: (e, _) => Center(
@@ -40,8 +41,8 @@ class FomoPulseMcqScreen extends HookConsumerWidget {
               children: [
                 const Icon(Icons.wifi_off_rounded, size: 48),
                 const SizedBox(height: AppSpacing.lg),
-                const Text(
-                  'Could not load this CA Shot.',
+                Text(
+                  context.l10n.fpLoadFailed,
                   textAlign: TextAlign.center,
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
@@ -50,7 +51,7 @@ class FomoPulseMcqScreen extends HookConsumerWidget {
                   onPressed: () =>
                       ref.invalidate(fomoPulseDetailProvider(pulseId)),
                   icon: const Icon(Icons.refresh),
-                  label: const Text('Retry'),
+                  label: Text(context.l10n.commonRetry),
                 ),
               ],
             ),

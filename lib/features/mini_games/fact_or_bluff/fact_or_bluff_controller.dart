@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/providers/kill_switch_provider.dart';
 import '../shared/mini_game_content_repository.dart';
 import '../shared/mini_game_models.dart';
+import '../../../l10n/l10n.dart';
 
 /// Fallback / Remote Config default when RC is unavailable.
 const factOrBluffDefaultSeconds = 10;
@@ -105,7 +106,7 @@ class FactOrBluffController extends AsyncNotifier<FactOrBluffState> {
         index: 0,
         durationSeconds: durationSeconds,
         secondsLeft: 0,
-        error: 'No fact-or-bluff items found.',
+        error: appL10n.gmErrNoFob,
       );
     }
     // Timer is armed only once the player leaves the "How to play" sheet and

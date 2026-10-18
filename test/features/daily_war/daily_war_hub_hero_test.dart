@@ -24,10 +24,7 @@ void main() {
 
   test('last night holds the hero through the working day', () {
     expect(
-      heroDateId(
-        phase: DailyWarPhase.morning,
-        ist: DateTime(2026, 8, 29, 10),
-      ),
+      heroDateId(phase: DailyWarPhase.morning, ist: DateTime(2026, 8, 29, 10)),
       yesterday,
     );
     expect(
@@ -67,18 +64,12 @@ void main() {
 
   test('a Sunday evening shows no board at all', () {
     expect(
-      heroDateId(
-        phase: DailyWarPhase.restDay,
-        ist: DateTime(2026, 8, 30, 19),
-      ),
+      heroDateId(phase: DailyWarPhase.restDay, ist: DateTime(2026, 8, 30, 19)),
       isNull,
     );
     // ...but Saturday's Grand War still leads the Sunday daytime.
     expect(
-      heroDateId(
-        phase: DailyWarPhase.restDay,
-        ist: DateTime(2026, 8, 30, 11),
-      ),
+      heroDateId(phase: DailyWarPhase.restDay, ist: DateTime(2026, 8, 30, 11)),
       yesterday,
     );
   });

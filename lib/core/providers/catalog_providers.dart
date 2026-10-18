@@ -101,7 +101,6 @@ Future<List<TopicInfo>> topicTestTopics(Ref ref, String subject) async {
   return uc.execute(subject, lang);
 }
 
-
 @Riverpod(keepAlive: true)
 Future<TestEngineRepository> testEngineRepository(Ref ref) async {
   final prefs = await ref.watch(prefsServiceProvider.future);
@@ -119,7 +118,9 @@ Future<LoadSessionUseCase> loadSessionUseCase(Ref ref) async {
 }
 
 @Riverpod(keepAlive: true)
-Future<UpdateQuestionAttemptUseCase> updateQuestionAttemptUseCase(Ref ref) async {
+Future<UpdateQuestionAttemptUseCase> updateQuestionAttemptUseCase(
+  Ref ref,
+) async {
   final repo = await ref.watch(testEngineRepositoryProvider.future);
   return UpdateQuestionAttemptUseCase(repo);
 }
@@ -143,7 +144,9 @@ Future<SubmitSessionUseCase> submitSessionUseCase(Ref ref) async {
 }
 
 @Riverpod(keepAlive: true)
-Future<HandleTimedOutQuestionUseCase> handleTimedOutQuestionUseCase(Ref ref) async {
+Future<HandleTimedOutQuestionUseCase> handleTimedOutQuestionUseCase(
+  Ref ref,
+) async {
   final repo = await ref.watch(testEngineRepositoryProvider.future);
   return HandleTimedOutQuestionUseCase(repo);
 }
@@ -153,7 +156,6 @@ Future<MarkSessionAbandonedUseCase> markSessionAbandonedUseCase(Ref ref) async {
   final repo = await ref.watch(testEngineRepositoryProvider.future);
   return MarkSessionAbandonedUseCase(repo);
 }
-
 
 @Riverpod(keepAlive: true)
 SessionHistoryRepository sessionHistoryRepository(Ref ref) {
@@ -199,7 +201,6 @@ Future<int> dailyProgressCount(Ref ref) async {
   return uc.execute(DateTime.now());
 }
 
-
 @Riverpod(keepAlive: true)
 Future<RevisionRepository> revisionRepository(Ref ref) async {
   return RevisionRepositoryImpl(userDb: ref.watch(userDatabaseProvider));
@@ -212,7 +213,9 @@ Future<GetRevisionQueueUseCase> getRevisionQueueUseCase(Ref ref) async {
 }
 
 @Riverpod(keepAlive: true)
-Future<UpdateRevisionQueueProgressUseCase> updateRevisionQueueProgressUseCase(Ref ref) async {
+Future<UpdateRevisionQueueProgressUseCase> updateRevisionQueueProgressUseCase(
+  Ref ref,
+) async {
   final repo = await ref.watch(revisionRepositoryProvider.future);
   return UpdateRevisionQueueProgressUseCase(repo);
 }

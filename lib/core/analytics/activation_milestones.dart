@@ -28,7 +28,8 @@ abstract final class ActivationMilestones {
   static const firstRevisionTest = 'first_revision_test_started';
   static const firstScorecardShare = 'first_session_scorecard_link_shared';
   static const firstAccountSignIn = 'first_account_signed_in';
-  static const getStartedDiagnosticCompleted = 'get_started_diagnostic_completed';
+  static const getStartedDiagnosticCompleted =
+      'get_started_diagnostic_completed';
 
   /// First test finished on device (demo diagnostic or any persisted session).
   static const firstTestDone = 'first_test_done';
@@ -106,10 +107,7 @@ Future<void> logFirstTestQuitInMidForServices(
 }
 
 /// Logs [ActivationMilestoneEvent] at most once per [id] (see [PrefsService]).
-Future<void> logActivationMilestoneOnce(
-  WidgetRef ref,
-  String id,
-) async {
+Future<void> logActivationMilestoneOnce(WidgetRef ref, String id) async {
   final prefs = await ref.read(prefsServiceProvider.future);
   if (prefs.hasActivationMilestone(id)) return;
   prefs.addActivationMilestone(id);
@@ -166,10 +164,7 @@ Future<void> logExplanationSectionViewed(
 }
 
 /// Post-demo mistake review or review-all. No-op until the demo is submitted.
-Future<void> logDemoReviewOpened(
-  WidgetRef ref, {
-  required String kind,
-}) async {
+Future<void> logDemoReviewOpened(WidgetRef ref, {required String kind}) async {
   final prefs = await ref.read(prefsServiceProvider.future);
   if (!prefs.getStartedDiagnosticAttempted) return;
   await Analytics.track(ref, DemoReviewOpenedEvent(kind: kind));
@@ -204,4 +199,3 @@ Future<void> maybeLogReturnAfterDemo(WidgetRef ref) async {
     ActivationMilestones.firstReturnAfterDemo,
   );
 }
-

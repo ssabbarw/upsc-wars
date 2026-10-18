@@ -140,7 +140,8 @@ class DailyCaLeaderboard {
     return DailyCaLeaderboard(
       dateId: dateId,
       top: top,
-      participantCount: (map['participant_count'] as num?)?.toInt() ?? top.length,
+      participantCount:
+          (map['participant_count'] as num?)?.toInt() ?? top.length,
       questionCount: (map['question_count'] as num?)?.toInt() ?? 0,
       status: (map['status'] as String? ?? 'live').trim(),
     );

@@ -40,7 +40,9 @@ Future<void> startSeriesTopicRevision({
     );
     if (uuids.isEmpty) {
       messenger.showSnackBar(
-        const SnackBar(content: Text('No questions to revise for this topic yet.')),
+        const SnackBar(
+          content: Text('No questions to revise for this topic yet.'),
+        ),
       );
       return;
     }
@@ -57,14 +59,17 @@ Future<void> startSeriesTopicRevision({
         isTimed: false,
         language: language,
         specificQuestionUuids: uuids,
-        analyticsFeatureKey: QuestionSourceConstants.analyticsTestSeriesPractice,
+        analyticsFeatureKey:
+            QuestionSourceConstants.analyticsTestSeriesPractice,
       ),
     );
     if (!context.mounted) return;
     await context.push('/test/$sessionId');
   } on Object {
     messenger.showSnackBar(
-      const SnackBar(content: Text("Couldn't open this topic. Please try again.")),
+      const SnackBar(
+        content: Text("Couldn't open this topic. Please try again."),
+      ),
     );
   }
 }

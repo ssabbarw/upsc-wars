@@ -7,6 +7,7 @@ import '../../../core/theme/app_text_styles.dart';
 import '../../community/widgets/admin_bot_label.dart';
 import '../domain/daily_ca_rank_models.dart';
 import '../domain/daily_ca_scoring.dart';
+import '../../../l10n/l10n.dart';
 
 /// Top 100 snapshot plus a sticky "you" row when you are outside the list.
 class DailyCaLeaderboardView extends StatelessWidget {
@@ -44,7 +45,9 @@ class DailyCaLeaderboardView extends StatelessWidget {
       }
     }
     final meOutside =
-        meEntry == null && mySubmission != null && mySubmission!.hasOfficialRank;
+        meEntry == null &&
+        mySubmission != null &&
+        mySubmission!.hasOfficialRank;
 
     DateTime? parsed;
     try {
@@ -75,20 +78,17 @@ class DailyCaLeaderboardView extends StatelessWidget {
               SliverPadding(
                 padding: const EdgeInsets.fromLTRB(16, 12, 16, 100),
                 sliver: SliverList(
-                  delegate: SliverChildBuilderDelegate(
-                    (context, i) {
-                      final e = rest[i];
-                      return Padding(
-                        padding: const EdgeInsets.only(bottom: 8),
-                        child: _RowCard(
-                          entry: e,
-                          questionCount: questionCount,
-                          isMe: e.uid == myUid,
-                        ),
-                      );
-                    },
-                    childCount: rest.length,
-                  ),
+                  delegate: SliverChildBuilderDelegate((context, i) {
+                    final e = rest[i];
+                    return Padding(
+                      padding: const EdgeInsets.only(bottom: 8),
+                      child: _RowCard(
+                        entry: e,
+                        questionCount: questionCount,
+                        isMe: e.uid == myUid,
+                      ),
+                    );
+                  }, childCount: rest.length),
                 ),
               ),
             ],
@@ -166,14 +166,14 @@ class _Header extends StatelessWidget {
           ),
           const SizedBox(height: 4),
           Text(
-            '$joined joined',
+            context.l10n.dcaJoinedCount(joined),
             style: AppTextStyles.bodySm().copyWith(color: Colors.white),
           ),
           const SizedBox(height: 6),
           Text(
             isFrozen
-                ? 'Champion is locked for this paper.'
-                : 'Pull to refresh. Champion locks at 6 AM.',
+                ? context.l10n.dcaChampionLocked
+                : context.l10n.dcaPullRefresh,
             textAlign: TextAlign.center,
             style: AppTextStyles.caption().copyWith(
               color: Colors.white70,
@@ -302,7 +302,9 @@ class _RowCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
     final maxPts = DailyCaScoring.maxPoints(questionCount);
-    final name = entry.displayName.trim().isEmpty ? 'Aspirant' : entry.displayName;
+    final name = entry.displayName.trim().isEmpty
+        ? 'Aspirant'
+        : entry.displayName;
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
       decoration: BoxDecoration(

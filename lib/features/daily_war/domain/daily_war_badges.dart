@@ -45,83 +45,84 @@ abstract final class DailyWarBadges {
   };
 
   /// Night / milestone awards (hex icons in the mock).
-  static const awardMeta = <String, ({String label, String asset, String blurb})>{
-    'rank_1_champion': (
-      label: 'Champion',
-      asset: '$assetDir/rank-1-champion.png',
-      blurb: 'All-India Rank 1 for a night',
-    ),
-    'rank_2_silver': (
-      label: 'Silver',
-      asset: '$assetDir/rank-2-silver.png',
-      blurb: 'All-India Rank 2 for a night',
-    ),
-    'rank_3_bronze': (
-      label: 'Bronze',
-      asset: '$assetDir/rank-3-bronze.png',
-      blurb: 'All-India Rank 3 for a night',
-    ),
-    'clean_sweep': (
-      label: 'Clean Sweep',
-      asset: '$assetDir/clean-sweep.png',
-      blurb: 'Every question correct',
-    ),
-    'no_blind_spots': (
-      label: 'No Blind Spots',
-      asset: '$assetDir/no-blind-spots.png',
-      blurb: 'Attempted every question',
-    ),
-    'fastest_finger': (
-      label: 'Fastest Finger',
-      asset: '$assetDir/fastest-finger.png',
-      blurb: 'Fastest live finish that night',
-    ),
-    'nine_pm_sharp': (
-      label: '9 PM Sharp',
-      asset: '$assetDir/nine-pm-sharp.png',
-      blurb: 'Submitted within 3 minutes of 9 PM',
-    ),
-    'climber': (
-      label: 'Climber',
-      asset: '$assetDir/climber.png',
-      blurb: 'Jumped ≥10 AIR ranks vs last battle',
-    ),
-    'streak_7_nights': (
-      label: '7-Night Streak',
-      asset: '$assetDir/streak-7-nights.png',
-      blurb: '7+ battle nights in a row',
-    ),
-    'effort_first_war': (
-      label: 'Week Opener',
-      asset: '$assetDir/effort-first-war.png',
-      blurb: 'First battle of the week',
-    ),
-    'effort_finisher': (
-      label: 'Finisher',
-      asset: '$assetDir/effort-finisher.png',
-      blurb: 'Submitted with at least one attempt',
-    ),
-    'effort_back_in': (
-      label: 'Back In',
-      asset: '$assetDir/effort-back-in.png',
-      blurb: 'Returned after missing a night',
-    ),
-    'effort_full_week': (
-      label: 'Full Week',
-      asset: '$assetDir/effort-full-week.png',
-      blurb: 'Fought all six nights',
-    ),
-    'effort_half_century': (
-      label: 'Half Century',
-      asset: '$assetDir/effort-half-century.png',
-      blurb: '50+ questions attempted this week',
-    ),
-    'effort_century': (
-      label: 'Century',
-      asset: '$assetDir/effort-century.png',
-      blurb: '100 questions attempted this week',
-    ),
-  };
+  static const awardMeta =
+      <String, ({String label, String asset, String blurb})>{
+        'rank_1_champion': (
+          label: 'Champion',
+          asset: '$assetDir/rank-1-champion.png',
+          blurb: 'All-India Rank 1 for a night',
+        ),
+        'rank_2_silver': (
+          label: 'Silver',
+          asset: '$assetDir/rank-2-silver.png',
+          blurb: 'All-India Rank 2 for a night',
+        ),
+        'rank_3_bronze': (
+          label: 'Bronze',
+          asset: '$assetDir/rank-3-bronze.png',
+          blurb: 'All-India Rank 3 for a night',
+        ),
+        'clean_sweep': (
+          label: 'Clean Sweep',
+          asset: '$assetDir/clean-sweep.png',
+          blurb: 'Every question correct',
+        ),
+        'no_blind_spots': (
+          label: 'No Blind Spots',
+          asset: '$assetDir/no-blind-spots.png',
+          blurb: 'Attempted every question',
+        ),
+        'fastest_finger': (
+          label: 'Fastest Finger',
+          asset: '$assetDir/fastest-finger.png',
+          blurb: 'Fastest live finish that night',
+        ),
+        'nine_pm_sharp': (
+          label: '9 PM Sharp',
+          asset: '$assetDir/nine-pm-sharp.png',
+          blurb: 'Submitted within 3 minutes of 9 PM',
+        ),
+        'climber': (
+          label: 'Climber',
+          asset: '$assetDir/climber.png',
+          blurb: 'Jumped ≥10 AIR ranks vs last battle',
+        ),
+        'streak_7_nights': (
+          label: '7-Night Streak',
+          asset: '$assetDir/streak-7-nights.png',
+          blurb: '7+ battle nights in a row',
+        ),
+        'effort_first_war': (
+          label: 'Week Opener',
+          asset: '$assetDir/effort-first-war.png',
+          blurb: 'First battle of the week',
+        ),
+        'effort_finisher': (
+          label: 'Finisher',
+          asset: '$assetDir/effort-finisher.png',
+          blurb: 'Submitted with at least one attempt',
+        ),
+        'effort_back_in': (
+          label: 'Back In',
+          asset: '$assetDir/effort-back-in.png',
+          blurb: 'Returned after missing a night',
+        ),
+        'effort_full_week': (
+          label: 'Full Week',
+          asset: '$assetDir/effort-full-week.png',
+          blurb: 'Fought all six nights',
+        ),
+        'effort_half_century': (
+          label: 'Half Century',
+          asset: '$assetDir/effort-half-century.png',
+          blurb: '50+ questions attempted this week',
+        ),
+        'effort_century': (
+          label: 'Century',
+          asset: '$assetDir/effort-century.png',
+          blurb: '100 questions attempted this week',
+        ),
+      };
 
   /// Display order for the badges cabinet (effort → night → podium).
   static const catalogOrder = <String>[

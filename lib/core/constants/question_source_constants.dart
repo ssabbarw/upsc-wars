@@ -21,7 +21,8 @@ abstract final class QuestionSourceConstants {
   static const String analyticsDailyCurrentAffairs = 'daily_current_affairs';
   static const String analyticsDailyCurrentAffairsRevise =
       'daily_current_affairs_revise';
-  static const String analyticsSubjectCurrentAffairs = 'subject_current_affairs';
+  static const String analyticsSubjectCurrentAffairs =
+      'subject_current_affairs';
   static const String analyticsSubjectPyq = 'subject_pyq';
 
   /// Scored Test Series attempt (also stored with series_id / series_test_id).

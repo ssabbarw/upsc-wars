@@ -78,7 +78,9 @@ Future<void> launchOpenChallengeExam(
       ),
     );
 
-    ref.read(openChallengeExamRegistryProvider).register(
+    ref
+        .read(openChallengeExamRegistryProvider)
+        .register(
           OpenChallengeExamContext(
             kind: args.kind,
             sessionId: sessionId,

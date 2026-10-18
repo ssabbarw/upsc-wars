@@ -10,6 +10,7 @@ import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_text_styles.dart';
 import '../../core/review/app_review_service.dart';
 import 'app_toast.dart';
+import '../../l10n/l10n.dart';
 
 /// Opens a bottom sheet with Telegram DM, email, and Telegram group.
 Future<void> showContactUsSheet(BuildContext context) async {
@@ -34,13 +35,12 @@ Future<void> showContactUsSheet(BuildContext context) async {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Text(
-                'Get in touch',
+                context.l10n.cuGetInTouch,
                 style: AppTextStyles.h3().copyWith(color: scheme.onSurface),
               ),
               const SizedBox(height: AppSpacing.xs),
               Text(
-                'If something is unclear, you have a feature idea, or any feedback — '
-                'pick what works best for you.',
+                context.l10n.cuBody,
                 style: AppTextStyles.bodySm().copyWith(
                   color: scheme.onSurfaceVariant,
                   height: 1.45,
@@ -51,8 +51,8 @@ Future<void> showContactUsSheet(BuildContext context) async {
                 icon: Icons.send_rounded,
                 iconBg: AppColors.infoBg,
                 iconColor: AppColors.info,
-                title: 'Telegram (direct message)',
-                subtitle: 'Quick questions & updates',
+                title: context.l10n.cuTgDirect,
+                subtitle: context.l10n.cuTgDirectSub,
                 onTap: () => _launchAndPop(
                   sheetContext,
                   Uri.parse(CreatorContact.telegramDirectUrl),
@@ -75,8 +75,8 @@ Future<void> showContactUsSheet(BuildContext context) async {
                 icon: Icons.groups_outlined,
                 iconBg: AppColors.primaryLight,
                 iconColor: AppColors.primaryDark,
-                title: 'Telegram group',
-                subtitle: 'Community & discussion',
+                title: context.l10n.cuTgGroup,
+                subtitle: context.l10n.cuTgGroupSub,
                 onTap: () => _launchAndPop(
                   sheetContext,
                   Uri.parse(CreatorContact.telegramGroupUrl),
@@ -97,7 +97,7 @@ Future<void> _launchAndPop(BuildContext sheetContext, Uri uri) async {
   final ok = await launchUrl(uri, mode: LaunchMode.externalApplication);
   if (!ok) {
     if (!sheetContext.mounted) return;
-    AppToast.showText(sheetContext, 'Could not open link.');
+    AppToast.showText(sheetContext, sheetContext.l10n.cuOpenFailed);
   }
 }
 
@@ -190,7 +190,7 @@ class ContactUsTextButton extends StatelessWidget {
   /// Visible link text. Defaults to `Contact us`; subject detail uses `Get in touch`.
   final String linkLabel;
 
-  /// When true, shows a subtle "Rate / review" link next to contact.
+  /// When true, shows a subtle context.l10n.cuRate link next to contact.
   final bool showRateReviewCta;
 
   @override
@@ -208,7 +208,7 @@ class ContactUsTextButton extends StatelessWidget {
           await HapticFeedback.selectionClick();
           await ref.read(appReviewServiceProvider).openStoreListing();
         },
-        child: Text('Rate / review', style: linkStyle),
+        child: Text(context.l10n.cuRate, style: linkStyle),
       ),
     );
 

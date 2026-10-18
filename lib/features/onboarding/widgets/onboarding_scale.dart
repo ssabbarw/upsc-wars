@@ -30,10 +30,7 @@ class OnboardingFit extends StatelessWidget {
           child: FittedBox(
             fit: BoxFit.scaleDown,
             alignment: Alignment.topCenter,
-            child: SizedBox(
-              width: constraints.maxWidth,
-              child: child,
-            ),
+            child: SizedBox(width: constraints.maxWidth, child: child),
           ),
         );
       },

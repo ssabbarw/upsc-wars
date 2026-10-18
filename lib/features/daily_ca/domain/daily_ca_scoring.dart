@@ -37,8 +37,7 @@ abstract final class DailyCaScoring {
     );
   }
 
-  static double maxPoints(int questionCount) =>
-      questionCount * pointsCorrect;
+  static double maxPoints(int questionCount) => questionCount * pointsCorrect;
 }
 
 class DailyCaScoreBreakdown {

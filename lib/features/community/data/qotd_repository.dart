@@ -45,11 +45,8 @@ class QotdRepository {
     return doc.id;
   }
 
-  Future<
-      ({
-        List<QotdPost> posts,
-        DocumentSnapshot<Map<String, dynamic>>? last,
-      })> fetchPage({
+  Future<({List<QotdPost> posts, DocumentSnapshot<Map<String, dynamic>>? last})>
+  fetchPage({
     required int limit,
     DocumentSnapshot<Map<String, dynamic>>? startAfter,
     bool onlyLiveWindow = true,
@@ -57,8 +54,9 @@ class QotdRepository {
     final minCreatedAt = onlyLiveWindow
         ? Timestamp.fromDate(DateTime.now().subtract(kQotdPostLiveDuration))
         : null;
-    Query<Map<String, dynamic>> q =
-        _col.orderBy('created_at', descending: true).limit(limit);
+    Query<Map<String, dynamic>> q = _col
+        .orderBy('created_at', descending: true)
+        .limit(limit);
     if (minCreatedAt != null) {
       q = q.where('created_at', isGreaterThan: minCreatedAt);
     }
@@ -230,12 +228,9 @@ class QotdRepository {
   }
 
   Future<
-      ({
-        bool isCorrect,
-        bool alreadyAttempted,
-        int correctCount,
-        int wrongCount,
-      })> submitAttempt({
+    ({bool isCorrect, bool alreadyAttempted, int correctCount, int wrongCount})
+  >
+  submitAttempt({
     required String postId,
     required String uid,
     required String pickedOption,

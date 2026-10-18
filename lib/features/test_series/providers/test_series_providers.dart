@@ -235,32 +235,32 @@ final seriesBundleProvider = StreamProvider.family<SeriesBundle, String>((
 }, retry: (_, _) => null);
 
 /// Stats and per-test attempts for a series, from the local database.
-final seriesStatsProvider = FutureProvider.autoDispose.family<SeriesStats, String>((
-  ref,
-  seriesId,
-) async {
-  final bundle = await ref.watch(seriesBundleProvider(seriesId).future);
-  final local = ref.watch(seriesLocalRepositoryProvider);
-  final attempts = await local.completedAttempts(seriesId);
-  final answers = await local.answerRows(seriesId);
-  return SeriesStats.compute(
-    bundle: bundle,
-    attemptList: attempts,
-    answers: answers,
-  );
-});
+final seriesStatsProvider = FutureProvider.autoDispose
+    .family<SeriesStats, String>((ref, seriesId) async {
+      final bundle = await ref.watch(seriesBundleProvider(seriesId).future);
+      final local = ref.watch(seriesLocalRepositoryProvider);
+      final attempts = await local.completedAttempts(seriesId);
+      final answers = await local.answerRows(seriesId);
+      return SeriesStats.compute(
+        bundle: bundle,
+        attemptList: attempts,
+        answers: answers,
+      );
+    });
 
 /// `testId -> sessionId` for started-but-unfinished scored attempts.
-final seriesInProgressProvider = FutureProvider.autoDispose.family<Map<String, String>, String>((
-  ref,
-  seriesId,
-) {
-  return ref.watch(seriesLocalRepositoryProvider).inProgressSessions(seriesId);
-});
+final seriesInProgressProvider = FutureProvider.autoDispose
+    .family<Map<String, String>, String>((ref, seriesId) {
+      return ref
+          .watch(seriesLocalRepositoryProvider)
+          .inProgressSessions(seriesId);
+    });
 
 /// Every series that belongs in "My Test Series": owned ones plus any the user
 /// has attempted tests of (for example only the free tests). Newest year first.
-final mySeriesIdsProvider = FutureProvider.autoDispose<List<String>>((ref) async {
+final mySeriesIdsProvider = FutureProvider.autoDispose<List<String>>((
+  ref,
+) async {
   final owned = await ref.watch(ownedSeriesIdsProvider.future);
   final attempted = await ref
       .watch(seriesLocalRepositoryProvider)

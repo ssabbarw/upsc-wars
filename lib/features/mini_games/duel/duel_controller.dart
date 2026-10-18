@@ -2,6 +2,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../shared/mini_game_content_repository.dart';
 import '../shared/mini_game_models.dart';
+import '../../../l10n/l10n.dart';
 
 /// Match length — configurable constant, not a user setting this phase.
 const duelMatchLength = 5;
@@ -101,10 +102,12 @@ class DuelState {
       p2Score: p2Score ?? this.p2Score,
       p1Locked: clearSelections ? false : (p1Locked ?? this.p1Locked),
       p2Locked: clearSelections ? false : (p2Locked ?? this.p2Locked),
-      p1SelectedIndex:
-          clearSelections ? null : (p1SelectedIndex ?? this.p1SelectedIndex),
-      p2SelectedIndex:
-          clearSelections ? null : (p2SelectedIndex ?? this.p2SelectedIndex),
+      p1SelectedIndex: clearSelections
+          ? null
+          : (p1SelectedIndex ?? this.p1SelectedIndex),
+      p2SelectedIndex: clearSelections
+          ? null
+          : (p2SelectedIndex ?? this.p2SelectedIndex),
       p1Passed: clearSelections ? false : (p1Passed ?? this.p1Passed),
       p2Passed: clearSelections ? false : (p2Passed ?? this.p2Passed),
       p1WrongIndex: clearWrongIndices
@@ -130,11 +133,11 @@ class DuelController extends AsyncNotifier<DuelState> {
   Future<DuelState> build() async {
     final pool = await ref.read(duelRepositoryProvider).loadQuestions();
     if (pool.isEmpty) {
-      return const DuelState(
+      return DuelState(
         pool: [],
         matchQuestions: [],
         questionIndex: 0,
-        error: 'No duel questions found.',
+        error: appL10n.gmErrNoDuel,
       );
     }
     return DuelState(
@@ -177,10 +180,12 @@ class DuelController extends AsyncNotifier<DuelState> {
     final next = current.copyWith(
       p1Locked: player == DuelPlayer.one ? true : current.p1Locked,
       p2Locked: player == DuelPlayer.two ? true : current.p2Locked,
-      p1SelectedIndex:
-          player == DuelPlayer.one ? optionIndex : current.p1SelectedIndex,
-      p2SelectedIndex:
-          player == DuelPlayer.two ? optionIndex : current.p2SelectedIndex,
+      p1SelectedIndex: player == DuelPlayer.one
+          ? optionIndex
+          : current.p1SelectedIndex,
+      p2SelectedIndex: player == DuelPlayer.two
+          ? optionIndex
+          : current.p2SelectedIndex,
       p1Passed: player == DuelPlayer.one ? false : current.p1Passed,
       p2Passed: player == DuelPlayer.two ? false : current.p2Passed,
     );
@@ -214,17 +219,17 @@ class DuelController extends AsyncNotifier<DuelState> {
 
   DuelState _resolve(DuelState pending) {
     final answer = pending.current!.answerIndex;
-    final p1Correct =
-        !pending.p1Passed && pending.p1SelectedIndex == answer;
-    final p2Correct =
-        !pending.p2Passed && pending.p2SelectedIndex == answer;
+    final p1Correct = !pending.p1Passed && pending.p1SelectedIndex == answer;
+    final p2Correct = !pending.p2Passed && pending.p2SelectedIndex == answer;
 
-    final p1Wrong = !pending.p1Passed &&
+    final p1Wrong =
+        !pending.p1Passed &&
             pending.p1SelectedIndex != null &&
             pending.p1SelectedIndex != answer
         ? pending.p1SelectedIndex
         : null;
-    final p2Wrong = !pending.p2Passed &&
+    final p2Wrong =
+        !pending.p2Passed &&
             pending.p2SelectedIndex != null &&
             pending.p2SelectedIndex != answer
         ? pending.p2SelectedIndex

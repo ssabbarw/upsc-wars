@@ -18,12 +18,18 @@ void main() {
     file = File('${dir.path}/test.db');
     db = UserDatabase(NativeDatabase(file));
 
-    Future<void> session(String id, String status, {bool withAttempt = true}) async {
+    Future<void> session(
+      String id,
+      String status, {
+      bool withAttempt = true,
+    }) async {
       await db.sessionsDao.insertSession(
         SessionsCompanion.insert(
           id: id,
           createdAt: DateTime.fromMillisecondsSinceEpoch(1700000000000),
-          completedAt: Value(DateTime.fromMillisecondsSinceEpoch(1700000500000)),
+          completedAt: Value(
+            DateTime.fromMillisecondsSinceEpoch(1700000500000),
+          ),
           subject: 'polity',
           mode: 'exam',
           status: status,
@@ -58,20 +64,19 @@ void main() {
     await dir.delete(recursive: true);
   });
 
-  test('isolate snapshot returns only completed, not-yet-backed-up sessions',
-      () async {
-    final snap = await buildPendingSnapshotInBackground(
-      dbPath: file.path,
-      limit: 100,
-    );
-    expect(
-      snap.payloads.map((p) => p['sid']).toSet(),
-      {'done1', 'done2'},
-    );
-    // No attempts -> skipped (marked, never retried).
-    expect(snap.skippedIds, ['empty']);
-    expect(snap.payloads.first['q'], isA<List>());
-  });
+  test(
+    'isolate snapshot returns only completed, not-yet-backed-up sessions',
+    () async {
+      final snap = await buildPendingSnapshotInBackground(
+        dbPath: file.path,
+        limit: 100,
+      );
+      expect(snap.payloads.map((p) => p['sid']).toSet(), {'done1', 'done2'});
+      // No attempts -> skipped (marked, never retried).
+      expect(snap.skippedIds, ['empty']);
+      expect(snap.payloads.first['q'], isA<List>());
+    },
+  );
 
   test('respects the batch limit', () async {
     final snap = await buildPendingSnapshotInBackground(

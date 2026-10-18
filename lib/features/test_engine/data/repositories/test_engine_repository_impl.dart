@@ -488,10 +488,7 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
     await _recordHomeActivation(sessionId, sessionMeta?.analyticsFeatureKey);
 
     unawaited(
-      LocalDailyRemindersSync.syncPractice(
-        prefs: _prefsService,
-        db: _userDb,
-      ),
+      LocalDailyRemindersSync.syncPractice(prefs: _prefsService, db: _userDb),
     );
 
     await _updateTopicStatsForSession(sessionId);
@@ -560,7 +557,8 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
         await _analytics.track(
           DailyCaSubmittedEvent(
             dateId: dateId,
-            mode: caKey ==
+            mode:
+                caKey ==
                     QuestionSourceConstants.analyticsDailyCurrentAffairsRevise
                 ? 'revise'
                 : 'first',
@@ -860,10 +858,7 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
     if (hasSureOrEdu) {
       markHomeActivationComplete(_prefsService);
       unawaited(
-        LocalDailyRemindersSync.syncPractice(
-          prefs: _prefsService,
-          db: _userDb,
-        ),
+        LocalDailyRemindersSync.syncPractice(prefs: _prefsService, db: _userDb),
       );
     }
 
@@ -877,10 +872,7 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
         DemoTestSubmittedEvent(
           attempted: attempted,
           total: total,
-          attemptBand: demoTestAttemptBand(
-            attempted: attempted,
-            total: total,
-          ),
+          attemptBand: demoTestAttemptBand(attempted: attempted, total: total),
         ),
       );
       await logActivationMilestoneForServices(

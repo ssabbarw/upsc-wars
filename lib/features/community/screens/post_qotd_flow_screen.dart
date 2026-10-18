@@ -22,6 +22,7 @@ import '../data/qotd_repository.dart';
 import '../widgets/qotd_before_you_proceed_panel.dart';
 import '../widgets/qotd_option_letters_row.dart';
 import '../widgets/share_qotd_sheet.dart';
+import '../../../l10n/l10n.dart';
 
 const _kQotdSubjectTileW = 108.0;
 const _kQotdSubjectTileH = 48.0;
@@ -61,14 +62,14 @@ class PostQotdFlowScreen extends HookConsumerWidget {
         );
         if (!context.mounted) return;
         if (uuid == null) {
-          AppToast.showText(context, 'No questions found for this subject.');
+          AppToast.showText(context, context.l10n.qotdNoQuestions);
           return;
         }
         final repo = await ref.read(testEngineRepositoryProvider.future);
         final q = await repo.loadStandaloneQuestionByUuid(uuid);
         if (!context.mounted) return;
         if (q == null) {
-          AppToast.showText(context, 'Could not load that question.');
+          AppToast.showText(context, context.l10n.qotdLoadFailed);
           return;
         }
         question.value = q;
@@ -80,7 +81,7 @@ class PostQotdFlowScreen extends HookConsumerWidget {
 
     Future<void> startWithSubject() async {
       if (subjectKey.value == null) {
-        AppToast.showText(context, 'Pick a subject first.');
+        AppToast.showText(context, context.l10n.qotdPickFirst);
         return;
       }
       step.value = 1;
@@ -126,7 +127,7 @@ class PostQotdFlowScreen extends HookConsumerWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(AppSpacing.lg),
                   child: Text(
-                    'Could not load subjects: $e',
+                    context.l10n.qotdSubjectsFailed(e.toString()),
                     style: AppTextStyles.bodyMd(),
                   ),
                 ),
@@ -150,7 +151,7 @@ class PostQotdFlowScreen extends HookConsumerWidget {
                           crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: [
                             Text(
-                              'Pick your subject',
+                              context.l10n.ocPickSubject,
                               style: AppTextStyles.h1().copyWith(
                                 color: scheme.onSurface,
                                 fontWeight: FontWeight.w600,
@@ -158,15 +159,14 @@ class PostQotdFlowScreen extends HookConsumerWidget {
                             ),
                             const SizedBox(height: AppSpacing.xs),
                             Text(
-                              'One random question from your bank · shuffle, attempt, '
-                              'then post to Community QOTD.',
+                              context.l10n.qotdIntro,
                               style: AppTextStyles.bodySm().copyWith(
                                 color: scheme.onSurfaceVariant,
                               ),
                             ),
                             const SizedBox(height: AppSpacing.lg),
                             Text(
-                              'Subject',
+                              context.l10n.commonSubject,
                               style: AppTextStyles.label().copyWith(
                                 color: scheme.onSurface,
                               ),
@@ -242,7 +242,7 @@ class PostQotdFlowScreen extends HookConsumerWidget {
                             ),
                           ),
                           child: Text(
-                            'Continue to question',
+                            context.l10n.qotdContinue,
                             style: AppTextStyles.label().copyWith(
                               color: AppColors.onPrimary,
                               fontWeight: FontWeight.w600,
@@ -263,7 +263,7 @@ class PostQotdFlowScreen extends HookConsumerWidget {
                     : question.value == null
                     ? Center(
                         child: Text(
-                          'No question loaded.',
+                          context.l10n.qotdNoneLoaded,
                           style: AppTextStyles.bodyMd(),
                         ),
                       )
@@ -375,7 +375,11 @@ class _PracticeStep extends StatelessWidget {
                                 ),
                               )
                             : const Icon(Icons.shuffle),
-                        label: Text(drawing ? 'Loading…' : 'Shuffle question'),
+                        label: Text(
+                          drawing
+                              ? context.l10n.commonLoading
+                              : context.l10n.qotdShuffle,
+                        ),
                       ),
                     ),
                   ],
@@ -448,13 +452,13 @@ class _PracticeStep extends StatelessWidget {
                       );
                     },
                     icon: const Icon(Icons.menu_book_outlined),
-                    label: const Text('Read explanation'),
+                    label: Text(context.l10n.qotdReadExpl),
                   ),
                 if (hasExplanation) const SizedBox(height: AppSpacing.md),
                 FilledButton.icon(
                   onPressed: () => onPost(),
                   icon: const Icon(Icons.send_outlined),
-                  label: const Text('Post this question'),
+                  label: Text(context.l10n.qotdPostThis),
                 ),
               ],
             ],

@@ -32,8 +32,9 @@ class AssetTimelineSorterRepository implements TimelineSorterRepository {
 
   @override
   Future<List<TimelineSorterSet>> loadSets() async {
-    final raw =
-        await rootBundle.loadString('assets/mini_games/timeline_sorter.json');
+    final raw = await rootBundle.loadString(
+      'assets/mini_games/timeline_sorter.json',
+    );
     final list = json.decode(raw) as List<dynamic>;
     return list
         .cast<Map<String, dynamic>>()
@@ -47,8 +48,9 @@ class AssetOddOneOutRepository implements OddOneOutRepository {
 
   @override
   Future<List<OddOneOutItem>> loadItems() async {
-    final raw =
-        await rootBundle.loadString('assets/mini_games/odd_one_out.json');
+    final raw = await rootBundle.loadString(
+      'assets/mini_games/odd_one_out.json',
+    );
     final list = json.decode(raw) as List<dynamic>;
     return list
         .cast<Map<String, dynamic>>()
@@ -62,8 +64,9 @@ class AssetFactOrBluffRepository implements FactOrBluffRepository {
 
   @override
   Future<List<FactOrBluffItem>> loadItems() async {
-    final raw =
-        await rootBundle.loadString('assets/mini_games/fact_or_bluff.json');
+    final raw = await rootBundle.loadString(
+      'assets/mini_games/fact_or_bluff.json',
+    );
     final list = json.decode(raw) as List<dynamic>;
     return list
         .cast<Map<String, dynamic>>()
@@ -77,8 +80,9 @@ class AssetConnectTheDotsRepository implements ConnectTheDotsRepository {
 
   @override
   Future<List<ConnectTheDotsItem>> loadItems() async {
-    final raw =
-        await rootBundle.loadString('assets/mini_games/connect_the_dots.json');
+    final raw = await rootBundle.loadString(
+      'assets/mini_games/connect_the_dots.json',
+    );
     final list = json.decode(raw) as List<dynamic>;
     return list
         .cast<Map<String, dynamic>>()

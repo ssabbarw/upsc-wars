@@ -35,18 +35,8 @@ class ContentLanguagePreviewSample {
         'निम्नलिखित में से कौन सा/से सही है/हैं?\n\n'
         '1. ये निरपेक्ष हैं और इन पर कोई प्रतिबंध नहीं लगाया जा सकता।\n'
         '2. ये न्यायालयों द्वारा प्रवर्तनीय हैं।',
-    optionsEn: [
-      '1 only',
-      '2 only',
-      'Both 1 and 2',
-      'Neither 1 nor 2',
-    ],
-    optionsHi: [
-      'केवल 1',
-      'केवल 2',
-      '1 और 2 दोनों',
-      'न तो 1 और न ही 2',
-    ],
+    optionsEn: ['1 only', '2 only', 'Both 1 and 2', 'Neither 1 nor 2'],
+    optionsHi: ['केवल 1', 'केवल 2', '1 और 2 दोनों', 'न तो 1 और न ही 2'],
   );
 }
 
@@ -158,10 +148,7 @@ class _OptionChip extends StatelessWidget {
           ),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(AppRadius.md),
-            border: Border.all(
-              color: border,
-              width: selected ? 1.5 : 1,
-            ),
+            border: Border.all(color: border, width: selected ? 1.5 : 1),
           ),
           child: Column(
             children: [
@@ -264,10 +251,7 @@ class _PreviewCard extends StatelessWidget {
             const SizedBox(height: 8),
             for (var i = 0; i < options.length; i++) ...[
               if (i > 0) const SizedBox(height: 6),
-              _PreviewOption(
-                label: _labels[i],
-                text: options[i],
-              ),
+              _PreviewOption(label: _labels[i], text: options[i]),
             ],
           ],
         ),
@@ -319,11 +303,7 @@ class _PreviewOption extends StatelessWidget {
 }
 
 class _Badge extends StatelessWidget {
-  const _Badge({
-    required this.label,
-    required this.bg,
-    required this.fg,
-  });
+  const _Badge({required this.label, required this.bg, required this.fg});
 
   final String label;
   final Color bg;

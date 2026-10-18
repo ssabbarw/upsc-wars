@@ -73,8 +73,8 @@ class CreatePushSpotTestSessionUseCase {
       );
     }
 
-    final attempted =
-        await userDb.sessionQuestionsDao.getAllAttemptedQuestionUuids();
+    final attempted = await userDb.sessionQuestionsDao
+        .getAllAttemptedQuestionUuids();
     final subInput = subTopic?.trim();
     final sub = subInput == null || subInput.isEmpty
         ? null

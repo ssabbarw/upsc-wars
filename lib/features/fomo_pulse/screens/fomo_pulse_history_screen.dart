@@ -20,6 +20,7 @@ import '../data/fomo_pulse_cloud_service.dart';
 import '../domain/fomo_pulse_models.dart';
 import '../fomo_pulse_constants.dart';
 import '../providers/fomo_pulse_providers.dart';
+import '../../../l10n/l10n.dart';
 
 class FomoPulseHistoryScreen extends HookConsumerWidget {
   const FomoPulseHistoryScreen({super.key});
@@ -79,7 +80,7 @@ class FomoPulseHistoryScreen extends HookConsumerWidget {
             TextButton.icon(
               onPressed: () => _showWhatIsCaShotsSheet(context),
               icon: const Icon(Icons.info_outline, size: 18),
-              label: const Text("What's this?"),
+              label: Text(context.l10n.fpWhatsThis),
             ),
             const SizedBox(width: AppSpacing.xs),
           ],
@@ -119,7 +120,7 @@ class FomoPulseHistoryScreen extends HookConsumerWidget {
                       child: Padding(
                         padding: const EdgeInsets.all(AppSpacing.lg),
                         child: Text(
-                          'No CA Shots yet. Breaking CA briefings will show up here.',
+                          context.l10n.fpNone,
                           textAlign: TextAlign.center,
                           style: AppTextStyles.bodySm().copyWith(
                             color: scheme.onSurfaceVariant,
@@ -164,7 +165,11 @@ class FomoPulseHistoryScreen extends HookConsumerWidget {
                                 ),
                               ),
                               const SizedBox(height: AppSpacing.sm),
-                              for (var i = 0; i < section.pulses.length; i++) ...[
+                              for (
+                                var i = 0;
+                                i < section.pulses.length;
+                                i++
+                              ) ...[
                                 _historyTile(
                                   context: context,
                                   ref: ref,
@@ -401,12 +406,12 @@ void _showWhatIsCaShotsSheet(BuildContext context) {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'What are CA Shots?',
+                context.l10n.fpWhatAre,
                 style: AppTextStyles.h3().copyWith(fontWeight: FontWeight.w800),
               ),
               const SizedBox(height: AppSpacing.sm),
               Text(
-                'Think of these as short daily drills — shots you can take every day to prepare for your final battle.',
+                context.l10n.fpWhatBody,
                 style: AppTextStyles.bodySm().copyWith(
                   color: scheme.onSurfaceVariant,
                   height: 1.4,
@@ -415,30 +420,27 @@ void _showWhatIsCaShotsSheet(BuildContext context) {
               const SizedBox(height: AppSpacing.lg),
               _ExplainerRow(
                 icon: Icons.notifications_active_outlined,
-                title: 'Frequent alerts',
-                body:
-                    'You get notified when a UPSC-relevant article is worth your attention.',
+                title: context.l10n.fpAlertsT,
+                body: context.l10n.fpAlertsB,
               ),
               const SizedBox(height: AppSpacing.md),
               _ExplainerRow(
                 icon: Icons.quiz_outlined,
-                title: 'One focused MCQ',
-                body:
-                    'Each shot gives one concept-based MCQ from that article, with explanation.',
+                title: context.l10n.fpMcqT,
+                body: context.l10n.fpMcqB,
               ),
               const SizedBox(height: AppSpacing.md),
               _ExplainerRow(
                 icon: Icons.shield_outlined,
-                title: 'Battle readiness',
-                body:
-                    'Take these shots daily so your concepts stay sharp for the final battle.',
+                title: context.l10n.fpReadyT,
+                body: context.l10n.fpReadyB,
               ),
               const SizedBox(height: AppSpacing.xl),
               SizedBox(
                 width: double.infinity,
                 child: FilledButton(
                   onPressed: () => Navigator.of(ctx).pop(),
-                  child: const Text('Got it'),
+                  child: Text(context.l10n.mpGotIt),
                 ),
               ),
             ],
@@ -531,17 +533,21 @@ class _PulseHistoryTile extends StatelessWidget {
     final body = pulse.listBody(preferHindi: preferHindi);
 
     final (badgeBg, badgeFg, badgeLabel) = !attempted
-        ? (scheme.surfaceContainerHighest, scheme.onSurfaceVariant, 'Not done')
+        ? (
+            scheme.surfaceContainerHighest,
+            scheme.onSurfaceVariant,
+            context.l10n.fpNotDone,
+          )
         : attempt!.isCorrect
         ? (
             isDark ? AppColors.correctBgDark : AppColors.correctBg,
             isDark ? AppColors.correctTextDark : AppColors.correctText,
-            'Done · Correct',
+            context.l10n.fpDoneCorrect,
           )
         : (
             isDark ? AppColors.wrongBgDark : AppColors.wrongBg,
             isDark ? AppColors.wrongTextDark : AppColors.wrongText,
-            'Done · Wrong',
+            context.l10n.fpDoneWrong,
           );
 
     return Material(
@@ -691,7 +697,7 @@ List<_HistorySection> _groupByDate(List<FomoPulse> pulses) {
     for (final key in keys)
       _HistorySection(
         label: key == 'undated'
-            ? 'Undated'
+            ? appL10n.fpUndated
             : DateFormat('EEE, d MMM').format(DateTime.parse(key)),
         pulses: groups[key]!,
       ),

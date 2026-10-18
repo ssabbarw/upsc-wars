@@ -60,9 +60,7 @@ class _OnboardingPagesScreen extends HookConsumerWidget {
     final hPad = onb(context, 16);
     final showSkip = page.value < _pageCount - 1;
 
-    Future<void> completeFlow({
-      required String actionId,
-    }) async {
+    Future<void> completeFlow({required String actionId}) async {
       ScreenFlow.logAction(
         ref,
         screenName: ScreenFlow.onboarding,
@@ -92,9 +90,7 @@ class _OnboardingPagesScreen extends HookConsumerWidget {
     useEffect(() {
       unawaited(Analytics.track(ref, const OnboardingFlowOpenedEvent()));
       final container = ProviderScope.containerOf(context, listen: false);
-      DemoSessionWarmup.start(
-        () => DemoSessionWarmup.loadSession(container),
-      );
+      DemoSessionWarmup.start(() => DemoSessionWarmup.loadSession(container));
       return null;
     }, const []);
 
@@ -185,9 +181,7 @@ class _OnboardingPagesScreen extends HookConsumerWidget {
                       OnboardingQuestionDepthPage(
                         onContinue: () {
                           unawaited(
-                            completeFlow(
-                              actionId: 'depth_get_started',
-                            ),
+                            completeFlow(actionId: 'depth_get_started'),
                           );
                         },
                       ),
@@ -225,8 +219,9 @@ Future<void> _complete(
       ),
     );
   }
-  final totalMs =
-      DateTime.now().difference(onboardingFlowStartedAt).inMilliseconds;
+  final totalMs = DateTime.now()
+      .difference(onboardingFlowStartedAt)
+      .inMilliseconds;
   if (totalMs >= 0) {
     unawaited(
       Analytics.track(

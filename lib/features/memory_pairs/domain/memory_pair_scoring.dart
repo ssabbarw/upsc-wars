@@ -1,4 +1,5 @@
 import 'memory_pair_models.dart';
+import '../../../l10n/l10n.dart';
 
 String formatMemoryPairTime(int sec) {
   sec = sec < 0 ? 0 : sec;
@@ -28,9 +29,9 @@ int starsFor(int sec, int pairs, int errors) {
 }
 
 String starVerdict(int stars) => switch (stars) {
-      5 => 'Razor sharp',
-      4 => 'Strong recall',
-      3 => 'Solid, can be faster',
-      2 => 'Recall is slow',
-      _ => 'Needs heavy revision',
-    };
+  5 => appL10n.mpV5,
+  4 => appL10n.mpV4,
+  3 => appL10n.mpV3,
+  2 => appL10n.mpV2,
+  _ => appL10n.mpV1,
+};

@@ -253,8 +253,9 @@ class SeriesBundle {
   List<SeriesTest> ofKind(String kind) =>
       tests.where((t) => t.kind == kind).toList();
 
-  List<SeriesTest> forBucket(String bucket) =>
-      tests.where((t) => t.kind == SeriesTestKind.staticTest && t.bucket == bucket).toList();
+  List<SeriesTest> forBucket(String bucket) => tests
+      .where((t) => t.kind == SeriesTestKind.staticTest && t.bucket == bucket)
+      .toList();
 
   SeriesTest? byId(String id) {
     for (final t in tests) {
@@ -275,7 +276,9 @@ class SeriesBundle {
       final info = TestSeriesInfo.fromMap(infoMap['id'] as String, infoMap);
       final tests = <SeriesTest>[];
       (m['tests'] as Map).forEach((k, v) {
-        tests.add(SeriesTest.fromMap(k as String, Map<String, dynamic>.from(v as Map)));
+        tests.add(
+          SeriesTest.fromMap(k as String, Map<String, dynamic>.from(v as Map)),
+        );
       });
       return SeriesBundle(info: info, tests: sortSeriesTests(tests));
     } on Object {

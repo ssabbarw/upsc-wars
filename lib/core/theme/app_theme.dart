@@ -100,11 +100,17 @@ class AppTheme {
         fillColor: AppColors.surfacePrimaryLight,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(AppRadius.md),
-          borderSide: const BorderSide(color: AppColors.borderLight, width: 0.5),
+          borderSide: const BorderSide(
+            color: AppColors.borderLight,
+            width: 0.5,
+          ),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(AppRadius.md),
-          borderSide: const BorderSide(color: AppColors.borderLight, width: 0.5),
+          borderSide: const BorderSide(
+            color: AppColors.borderLight,
+            width: 0.5,
+          ),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(AppRadius.md),

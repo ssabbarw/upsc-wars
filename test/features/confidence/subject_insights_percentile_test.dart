@@ -8,9 +8,7 @@ void main() {
     });
 
     test('single topic is always high tier (top band)', () {
-      final rows = topicRowsWithPercentileTiers([
-        (topic: 'A', dangerCount: 3),
-      ]);
+      final rows = topicRowsWithPercentileTiers([(topic: 'A', dangerCount: 3)]);
       expect(rows, hasLength(1));
       expect(rows.single.topic, 'A');
       expect(rows.single.dangerCount, 3);
@@ -29,12 +27,11 @@ void main() {
       expect(redN, 2);
       expect(yellowN, 3);
       for (var i = 0; i < 10; i++) {
-        final expected =
-            i < redN
-                ? RiskTier.high
-                : i < redN + yellowN
-                    ? RiskTier.medium
-                    : RiskTier.low;
+        final expected = i < redN
+            ? RiskTier.high
+            : i < redN + yellowN
+            ? RiskTier.medium
+            : RiskTier.low;
         expect(rows[i].tier, expected, reason: 'index $i');
       }
     });

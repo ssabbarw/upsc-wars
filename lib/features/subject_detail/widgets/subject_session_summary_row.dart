@@ -7,13 +7,14 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../l10n/l10n.dart';
 
 String relativeSessionListDate(DateTime dt) {
   final now = DateTime.now();
   final diff = now.difference(dt);
-  if (diff.inDays == 0) return 'Today';
-  if (diff.inDays == 1) return 'Yesterday';
-  if (diff.inDays < 7) return '${diff.inDays} days ago';
+  if (diff.inDays == 0) return appL10n.commonToday;
+  if (diff.inDays == 1) return appL10n.commonYesterday;
+  if (diff.inDays < 7) return appL10n.commonDaysAgo(diff.inDays);
   return DateFormat('d MMM y').format(dt);
 }
 
@@ -32,7 +33,9 @@ class SubjectSessionSummaryRow extends StatelessWidget {
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
     final isLearning = session.mode == 'learning';
-    final modeLabel = isLearning ? 'Learning' : 'Exam';
+    final modeLabel = isLearning
+        ? context.l10n.subjModeLearning
+        : context.l10n.subjModeExam;
     final modeColor = isLearning ? AppColors.primary : AppColors.info;
     final modeBg = isLearning ? AppColors.correctBg : AppColors.infoBg;
 
@@ -40,8 +43,12 @@ class SubjectSessionSummaryRow extends StatelessWidget {
     final correct = session.correct;
     final total = session.questionCount;
     final scoreText = accuracy != null && correct != null
-        ? '$correct/$total correct · ${accuracy.toStringAsFixed(0)}%'
-        : '$total questions';
+        ? context.l10n.subjCorrectOfTotal(
+            correct,
+            total,
+            accuracy.toStringAsFixed(0),
+          )
+        : context.l10n.subjQuestionsPlain(total);
 
     return Material(
       color: AppColors.transparent,

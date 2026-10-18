@@ -70,16 +70,16 @@ class _WebShellLandingPageState extends State<WebShellLandingPage> {
     final isHi = _lang == 'hi';
 
     Text heading(String en, String hi) => Text(
-          isHi ? hi : en,
-          textAlign: TextAlign.center,
-          style: AppTextStyles.h1().copyWith(
-            fontSize: w >= 820 ? 42 : 30,
-            fontWeight: FontWeight.w800,
-            color: isDark ? AppColors.onSurfaceDark : AppColors.primaryDeep,
-            letterSpacing: -0.8,
-            height: 1.08,
-          ),
-        );
+      isHi ? hi : en,
+      textAlign: TextAlign.center,
+      style: AppTextStyles.h1().copyWith(
+        fontSize: w >= 820 ? 42 : 30,
+        fontWeight: FontWeight.w800,
+        color: isDark ? AppColors.onSurfaceDark : AppColors.primaryDeep,
+        letterSpacing: -0.8,
+        height: 1.08,
+      ),
+    );
 
     return Scaffold(
       extendBodyBehindAppBar: true,
@@ -153,7 +153,9 @@ class _WebShellLandingPageState extends State<WebShellLandingPage> {
                       onScrollToVideo: () {
                         AppToast.showText(
                           context,
-                          isHi ? 'डेमो वीडियो जल्द आ रहा है' : 'Demo video coming soon',
+                          isHi
+                              ? 'डेमो वीडियो जल्द आ रहा है'
+                              : 'Demo video coming soon',
                           duration: const Duration(seconds: 3),
                         );
                       },
@@ -190,8 +192,9 @@ class _WebShellLandingPageState extends State<WebShellLandingPage> {
                       isHi: isHi,
                       onOpenPlayStore: () =>
                           unawaited(_openUrl(AppConstants.playStoreUrl)),
-                      onOpenIos: () =>
-                          unawaited(_openUrl(WebShellLandingPage.iosStoreUrl())),
+                      onOpenIos: () => unawaited(
+                        _openUrl(WebShellLandingPage.iosStoreUrl()),
+                      ),
                     ),
                     const SizedBox(height: 36),
                     Text(
@@ -353,7 +356,9 @@ class _HeroBlock extends StatelessWidget {
                 borderRadius: BorderRadius.circular(999),
               ),
               child: Text(
-                isHi ? 'GS Paper 1 • 25,000+ प्रश्न' : 'GS Paper 1 • 25,000+ Questions',
+                isHi
+                    ? 'GS Paper 1 • 25,000+ प्रश्न'
+                    : 'GS Paper 1 • 25,000+ Questions',
                 style: AppTextStyles.caption().copyWith(
                   color: Colors.white,
                   fontWeight: FontWeight.w700,
@@ -382,14 +387,18 @@ class _HeroBlock extends StatelessWidget {
             style: WebPlayerUiTokens.primaryCta(context),
             onPressed: onScrollToVideo,
             icon: const Icon(Icons.play_circle_outline_rounded),
-            label: Text(isHi ? 'देखें यह कैसे काम करता है' : 'Watch How It Works'),
+            label: Text(
+              isHi ? 'देखें यह कैसे काम करता है' : 'Watch How It Works',
+            ),
           ),
           const SizedBox(height: 10),
           OutlinedButton.icon(
             style: WebPlayerUiTokens.outlineFullWidth(context),
             onPressed: onOpenPlayStore,
             icon: const Icon(Icons.download_rounded),
-            label: Text(isHi ? 'Play Store से डाउनलोड करें' : 'Download on Play Store'),
+            label: Text(
+              isHi ? 'Play Store से डाउनलोड करें' : 'Download on Play Store',
+            ),
           ),
           if (w < 520) ...[
             const SizedBox(height: 10),
@@ -421,9 +430,19 @@ class _StatsRow extends StatelessWidget {
     final w = MediaQuery.sizeOf(context).width;
     final cols = w >= 820 ? 3 : 2;
     final items = <(String, String, String)>[
-      ('25,000+', isHi ? 'गहन व्याख्या के साथ प्रश्न' : 'Questions with Deep Explanations', '🎯'),
+      (
+        '25,000+',
+        isHi
+            ? 'गहन व्याख्या के साथ प्रश्न'
+            : 'Questions with Deep Explanations',
+        '🎯',
+      ),
       ('100%', isHi ? 'GS Paper 1 कवरेज' : 'GS Paper 1 Coverage', '📚'),
-      ('2', isHi ? 'भाषाएं (अंग्रेजी + हिंदी)' : 'Languages (English + Hindi)', '🌐'),
+      (
+        '2',
+        isHi ? 'भाषाएं (अंग्रेजी + हिंदी)' : 'Languages (English + Hindi)',
+        '🌐',
+      ),
     ];
     final shown = cols == 2 ? items.take(2).toList() : items;
 
@@ -547,7 +566,8 @@ class _FeaturesGrid extends StatelessWidget {
         titleHi: 'Concept Anchors',
         bodyEn:
             'Every question is linked to core concepts. Build deep, interconnected knowledge—not isolated facts.',
-        bodyHi: 'हर प्रश्न मुख्य अवधारणाओं से जुड़ा है। गहरा, आपस में जुड़ा हुआ ज्ञान बनाएं—अलग-थलग तथ्य नहीं।',
+        bodyHi:
+            'हर प्रश्न मुख्य अवधारणाओं से जुड़ा है। गहरा, आपस में जुड़ा हुआ ज्ञान बनाएं—अलग-थलग तथ्य नहीं।',
       ),
       (
         icon: '🔄',
@@ -613,8 +633,7 @@ class _FeaturesGrid extends StatelessWidget {
               ),
               if (j != slice.length - 1) const SizedBox(width: AppSpacing.lg),
             ],
-            if (slice.length < cols)
-              const Expanded(child: SizedBox.shrink()),
+            if (slice.length < cols) const Expanded(child: SizedBox.shrink()),
           ],
         ),
       );
@@ -647,29 +666,34 @@ class _ReviewsGrid extends StatelessWidget {
     ];
 
     Widget card(String text) => _CardShell(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text('★★★★★', style: AppTextStyles.bodySm().copyWith(color: const Color(0xFFFBBF24))),
-              const SizedBox(height: 10),
-              Text(
-                text,
-                style: AppTextStyles.bodySm().copyWith(
-                  color: Theme.of(context).colorScheme.onSurface,
-                  height: 1.55,
-                ),
-              ),
-              const SizedBox(height: 12),
-              Text(
-                isHi ? '— Play Store Reviewer' : '— Play Store Reviewer',
-                style: AppTextStyles.caption().copyWith(
-                  color: Theme.of(context).colorScheme.onSurfaceVariant,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ],
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            '★★★★★',
+            style: AppTextStyles.bodySm().copyWith(
+              color: const Color(0xFFFBBF24),
+            ),
           ),
-        );
+          const SizedBox(height: 10),
+          Text(
+            text,
+            style: AppTextStyles.bodySm().copyWith(
+              color: Theme.of(context).colorScheme.onSurface,
+              height: 1.55,
+            ),
+          ),
+          const SizedBox(height: 12),
+          Text(
+            isHi ? '— Play Store Reviewer' : '— Play Store Reviewer',
+            style: AppTextStyles.caption().copyWith(
+              color: Theme.of(context).colorScheme.onSurfaceVariant,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+        ],
+      ),
+    );
 
     if (cols == 1) {
       return Column(
@@ -716,7 +740,9 @@ class _BottomCta extends StatelessWidget {
       child: Column(
         children: [
           Text(
-            isHi ? 'अपनी तैयारी को बदलने के लिए तैयार हैं?' : 'Ready to Transform Your Prep?',
+            isHi
+                ? 'अपनी तैयारी को बदलने के लिए तैयार हैं?'
+                : 'Ready to Transform Your Prep?',
             textAlign: TextAlign.center,
             style: AppTextStyles.h2().copyWith(
               color: Colors.white,
@@ -758,7 +784,9 @@ class _BottomCta extends StatelessWidget {
                   child: OutlinedButton(
                     style: OutlinedButton.styleFrom(
                       foregroundColor: Colors.white,
-                      side: BorderSide(color: Colors.white.withValues(alpha: 0.9)),
+                      side: BorderSide(
+                        color: Colors.white.withValues(alpha: 0.9),
+                      ),
                       padding: const EdgeInsets.symmetric(vertical: 14),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(AppRadius.md),
@@ -790,7 +818,9 @@ class _BottomCta extends StatelessWidget {
                 OutlinedButton(
                   style: OutlinedButton.styleFrom(
                     foregroundColor: Colors.white,
-                    side: BorderSide(color: Colors.white.withValues(alpha: 0.9)),
+                    side: BorderSide(
+                      color: Colors.white.withValues(alpha: 0.9),
+                    ),
                     padding: const EdgeInsets.symmetric(vertical: 14),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(AppRadius.md),
@@ -815,14 +845,10 @@ class _BottomCta extends StatelessWidget {
           Theme(
             data: Theme.of(context).copyWith(
               textButtonTheme: TextButtonThemeData(
-                style: TextButton.styleFrom(
-                  foregroundColor: Colors.white,
-                ),
+                style: TextButton.styleFrom(foregroundColor: Colors.white),
               ),
             ),
-            child: const ContactUsTextButton(
-              linkLabel: 'Contact us',
-            ),
+            child: const ContactUsTextButton(linkLabel: 'Contact us'),
           ),
         ],
       ),

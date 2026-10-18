@@ -5,6 +5,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../providers/daily_war_providers.dart';
 import '../theme/daily_war_theme.dart';
 import '../widgets/daily_war_leaderboard_view.dart';
+import '../../../l10n/l10n.dart';
 
 /// Full-screen “Tonight's war · leaderboard”.
 class DailyWarLeaderboardScreen extends ConsumerWidget {
@@ -23,7 +24,7 @@ class DailyWarLeaderboardScreen extends ConsumerWidget {
         backgroundColor: DwColors.surface,
         foregroundColor: DwColors.onDark,
         title: Text(
-          'Tonight\'s war · leaderboard',
+          context.l10n.dwTonightsLeaderboard,
           style: DwText.dm(size: 16, weight: FontWeight.w700),
         ),
       ),
@@ -39,7 +40,7 @@ class DailyWarLeaderboardScreen extends ConsumerWidget {
           if (lb == null || lb.top.isEmpty) {
             return Center(
               child: Text(
-                'Leaderboard not ready yet.',
+                context.l10n.dwLeaderboardNotReady,
                 style: DwText.body(),
               ),
             );

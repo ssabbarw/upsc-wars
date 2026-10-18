@@ -23,6 +23,7 @@ class TopicInfo {
 
   /// Wrong attempts with Sure confidence (lifetime; same definition as subject Danger Zone).
   final int dangerSureWrong;
+
   /// Wrong attempts with Educated-guess confidence (lifetime).
   final int dangerEducatedGuessWrong;
 }

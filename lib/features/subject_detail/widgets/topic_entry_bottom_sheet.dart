@@ -10,6 +10,7 @@ import '../../../shared/widgets/dismissible_modal_sheet.dart';
 import '../../../shared/widgets/test_config_bottom_sheet.dart';
 import '../providers/topic_insights_provider.dart';
 import 'danger_zone_summary_card.dart';
+import '../../../l10n/l10n.dart';
 
 /// Subject-style bottom sheet for a topic: start a test + Danger zone for that topic.
 Future<void> showTopicEntryBottomSheet({
@@ -149,12 +150,12 @@ class _TopicEntryBottomSheetBody extends ConsumerWidget {
                     ),
                   );
                 },
-          child: Text('Start a test', style: AppTextStyles.label()),
+          child: Text(context.l10n.subjStartTest, style: AppTextStyles.label()),
         ),
         if (availableQuestionCount <= 0) ...[
           const SizedBox(height: AppSpacing.sm),
           Text(
-            'No questions in this topic right now.',
+            context.l10n.topicSheetNoQuestions,
             style: AppTextStyles.caption().copyWith(
               color: scheme.onSurfaceVariant,
             ),
@@ -162,7 +163,7 @@ class _TopicEntryBottomSheetBody extends ConsumerWidget {
         ],
         const SizedBox(height: AppSpacing.xxl),
         Text(
-          'INSIGHTS',
+          context.l10n.topicSheetInsights,
           style: AppTextStyles.caption().copyWith(
             color: scheme.onSurfaceVariant,
             letterSpacing: 0.6,
@@ -177,7 +178,7 @@ class _TopicEntryBottomSheetBody extends ConsumerWidget {
             ),
           ),
           error: (e, _) => Text(
-            'Could not load Danger zone.',
+            context.l10n.topicSheetDzFailed,
             style: AppTextStyles.bodySm().copyWith(color: scheme.onSurface),
           ),
           data: (insights) => DangerZoneSummaryCard(

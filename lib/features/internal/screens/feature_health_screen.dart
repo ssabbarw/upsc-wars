@@ -45,9 +45,7 @@ class FeatureHealthScreen extends ConsumerWidget {
               child: Text(
                 text,
                 textAlign: right ? TextAlign.right : TextAlign.start,
-                style: AppTextStyles.bodySm().copyWith(
-                  color: scheme.onSurface,
-                ),
+                style: AppTextStyles.bodySm().copyWith(color: scheme.onSurface),
               ),
             );
           }
@@ -131,10 +129,7 @@ class FeatureHealthScreen extends ConsumerWidget {
                   TableRow(
                     children: [
                       cell(entry.$2),
-                      cell(
-                        '${byName[entry.$1]?.totalViews ?? 0}',
-                        right: true,
-                      ),
+                      cell('${byName[entry.$1]?.totalViews ?? 0}', right: true),
                       cell(
                         '${byName[entry.$1]?.totalStarts ?? 0}',
                         right: true,
@@ -143,10 +138,7 @@ class FeatureHealthScreen extends ConsumerWidget {
                         '${byName[entry.$1]?.totalCompletions ?? 0}',
                         right: true,
                       ),
-                      cell(
-                        '${_repeatUsage(byName[entry.$1])}',
-                        right: true,
-                      ),
+                      cell('${_repeatUsage(byName[entry.$1])}', right: true),
                     ],
                   ),
               ],

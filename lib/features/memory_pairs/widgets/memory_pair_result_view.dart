@@ -6,6 +6,7 @@ import '../../../core/theme/app_text_styles.dart';
 import '../domain/memory_pair_models.dart';
 import '../domain/memory_pair_scoring.dart';
 import 'memory_pair_shared_widgets.dart';
+import '../../../l10n/l10n.dart';
 
 class MemoryPairResultView extends StatelessWidget {
   const MemoryPairResultView({
@@ -50,7 +51,7 @@ class MemoryPairResultView extends StatelessWidget {
         ),
         const SizedBox(height: AppSpacing.xs),
         Text(
-          'Complete',
+          context.l10n.mpComplete,
           textAlign: TextAlign.center,
           style: AppTextStyles.caption().copyWith(
             color: scheme.onSurfaceVariant,
@@ -60,7 +61,7 @@ class MemoryPairResultView extends StatelessWidget {
         Center(child: MemoryPairStars(value: stars, size: 30, gap: 6)),
         const SizedBox(height: AppSpacing.sm),
         Text(
-          '$stars / 5 · ${starVerdict(stars)}',
+          context.l10n.mpStarsVerdict(stars, starVerdict(stars)),
           textAlign: TextAlign.center,
           style: AppTextStyles.bodySm().copyWith(
             color: scheme.onSurfaceVariant,
@@ -74,7 +75,7 @@ class MemoryPairResultView extends StatelessWidget {
             _StatBlock(
               icon: Icons.timer_outlined,
               value: formatMemoryPairTime(result.seconds),
-              label: 'Time',
+              label: context.l10n.mpTime,
               color: AppColors.primary,
             ),
             Container(
@@ -86,8 +87,10 @@ class MemoryPairResultView extends StatelessWidget {
             _StatBlock(
               icon: Icons.error_outline,
               value: '${result.errors}',
-              label: 'Errors',
-              color: result.errors > 0 ? AppColors.wrong : scheme.onSurfaceVariant,
+              label: context.l10n.mpErrors,
+              color: result.errors > 0
+                  ? AppColors.wrong
+                  : scheme.onSurfaceVariant,
             ),
           ],
         ),
@@ -99,15 +102,15 @@ class MemoryPairResultView extends StatelessWidget {
               children: [
                 _MiniStat(
                   value: formatMemoryPairTime(result.seconds),
-                  label: 'Total time',
+                  label: context.l10n.mpTotalTime,
                 ),
                 _MiniStat(
                   value: '${result.errors}',
-                  label: 'Total errors',
+                  label: context.l10n.mpTotalErrors,
                 ),
                 _MiniStat(
                   value: '${result.pairsCount}',
-                  label: 'Pairs cleared',
+                  label: context.l10n.mpPairsCleared,
                 ),
               ],
             ),
@@ -120,7 +123,9 @@ class MemoryPairResultView extends StatelessWidget {
             decoration: BoxDecoration(
               color: AppColors.primary.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(12),
-              border: Border.all(color: AppColors.primary.withValues(alpha: 0.2)),
+              border: Border.all(
+                color: AppColors.primary.withValues(alpha: 0.2),
+              ),
             ),
             child: Row(
               children: [
@@ -128,7 +133,7 @@ class MemoryPairResultView extends StatelessWidget {
                 const SizedBox(width: AppSpacing.sm),
                 Expanded(
                   child: Text(
-                    'New best time for this set',
+                    context.l10n.mpNewBest,
                     style: AppTextStyles.labelSm().copyWith(
                       color: AppColors.primary,
                       fontWeight: FontWeight.w600,
@@ -150,7 +155,7 @@ class MemoryPairResultView extends StatelessWidget {
                 Icon(Icons.verified, color: AppColors.primary, size: 20),
                 const SizedBox(width: AppSpacing.sm),
                 Text(
-                  'No wrong taps — full recall',
+                  context.l10n.mpFullRecall,
                   style: AppTextStyles.labelSm().copyWith(
                     fontWeight: FontWeight.w600,
                   ),
@@ -162,18 +167,15 @@ class MemoryPairResultView extends StatelessWidget {
         OutlinedButton.icon(
           onPressed: onTryAnotherSet,
           icon: const Icon(Icons.grid_view_rounded),
-          label: const Text('Try another set'),
+          label: Text(context.l10n.mpTryAnother),
         ),
         const SizedBox(height: AppSpacing.sm),
         FilledButton.icon(
           onPressed: onPlayAgain,
           icon: const Icon(Icons.refresh),
-          label: const Text('Play again'),
+          label: Text(context.l10n.gmPlayAgain),
         ),
-        TextButton(
-          onPressed: onExit,
-          child: const Text('Back to sets'),
-        ),
+        TextButton(onPressed: onExit, child: Text(context.l10n.mpBackToSets)),
       ],
     );
   }
@@ -238,7 +240,9 @@ class _MiniStat extends StatelessWidget {
           children: [
             Text(
               value,
-              style: AppTextStyles.label().copyWith(fontWeight: FontWeight.w700),
+              style: AppTextStyles.label().copyWith(
+                fontWeight: FontWeight.w700,
+              ),
             ),
             const SizedBox(height: 4),
             Text(
@@ -273,7 +277,7 @@ class _WeakList extends StatelessWidget {
             Icon(Icons.replay, size: 18, color: AppColors.warning),
             const SizedBox(width: 6),
             Text(
-              '${pairs.length} pair${pairs.length > 1 ? 's' : ''} you got wrong',
+              context.l10n.mpWrongPairs(pairs.length),
               style: AppTextStyles.caption().copyWith(
                 fontWeight: FontWeight.w700,
                 color: scheme.onSurfaceVariant,
@@ -302,7 +306,11 @@ class _WeakList extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Icon(Icons.arrow_forward, size: 16, color: scheme.onSurfaceVariant),
+                      Icon(
+                        Icons.arrow_forward,
+                        size: 16,
+                        color: scheme.onSurfaceVariant,
+                      ),
                       Expanded(
                         child: Text(
                           pairs[i].answerForLang(lang),

@@ -112,8 +112,7 @@ class Sessions extends Table {
       text().named('analytics_feature_key').nullable()();
 
   /// False until per-question attempt data has been aggregated to Firestore.
-  BoolColumn get synced =>
-      boolean().withDefault(const Constant(false))();
+  BoolColumn get synced => boolean().withDefault(const Constant(false))();
 
   /// Paid Test Series this session belongs to (e.g. `prelims_2027`); null for
   /// regular practice. Series dashboards filter on this.
@@ -142,15 +141,13 @@ class QuestionAttemptRecords extends Table {
       text().named('session_id').references(Sessions, #id)();
   TextColumn get questionId =>
       text().named('question_id').references(Questions, #uuid)();
-  TextColumn get selectedOption =>
-      text().named('selected_option').nullable()();
+  TextColumn get selectedOption => text().named('selected_option').nullable()();
   BoolColumn get isCorrect => boolean().named('is_correct').nullable()();
   IntColumn get timeTakenSeconds =>
       integer().named('time_taken_seconds').nullable()();
   BoolColumn get isSure =>
       boolean().named('is_sure').withDefault(const Constant(false))();
-  BoolColumn get skipped =>
-      boolean().withDefault(const Constant(false))();
+  BoolColumn get skipped => boolean().withDefault(const Constant(false))();
   DateTimeColumn get attemptedAt => dateTime().named('attempted_at')();
 
   @override
@@ -268,17 +265,17 @@ class QuestionsDao extends DatabaseAccessor<UserDatabase>
       (select(questions)..where((t) => t.uuid.equals(uuid))).getSingleOrNull();
 
   /// Prefix search for the internal question editor (`uuid` LIKE `prefix%`).
-  Future<List<Question>> searchUuidsByPrefix(String prefix, {int limit = 20}) async {
+  Future<List<Question>> searchUuidsByPrefix(
+    String prefix, {
+    int limit = 20,
+  }) async {
     final p = prefix.trim();
     if (p.isEmpty) return const [];
     final cap = limit.clamp(1, 50);
     final rows = await customSelect(
       'SELECT * FROM questions WHERE uuid LIKE ? '
       'ORDER BY uuid ASC LIMIT ?',
-      variables: [
-        Variable.withString('$p%'),
-        Variable.withInt(cap),
-      ],
+      variables: [Variable.withString('$p%'), Variable.withInt(cap)],
       readsFrom: {questions},
     ).get();
     return rows.map((r) => questions.map(r.data)).toList();
@@ -294,10 +291,7 @@ class QuestionsDao extends DatabaseAccessor<UserDatabase>
       'WHERE en_display_text LIKE ? COLLATE NOCASE '
       '   OR hi_display_text LIKE ? COLLATE NOCASE '
       'ORDER BY uuid ASC LIMIT 1',
-      variables: [
-        Variable.withString(pattern),
-        Variable.withString(pattern),
-      ],
+      variables: [Variable.withString(pattern), Variable.withString(pattern)],
       readsFrom: {questions},
     ).get();
     if (rows.isEmpty) return null;
@@ -313,10 +307,7 @@ class QuestionsDao extends DatabaseAccessor<UserDatabase>
       'SELECT COUNT(*) AS c FROM questions '
       'WHERE en_display_text LIKE ? COLLATE NOCASE '
       '   OR hi_display_text LIKE ? COLLATE NOCASE',
-      variables: [
-        Variable.withString(pattern),
-        Variable.withString(pattern),
-      ],
+      variables: [Variable.withString(pattern), Variable.withString(pattern)],
       readsFrom: {questions},
     ).getSingle();
     return row.read<int?>('c') ?? 0;
@@ -649,10 +640,7 @@ class QuestionsDao extends DatabaseAccessor<UserDatabase>
     final rows = await customSelect(
       'SELECT DISTINCT sub_topic FROM questions WHERE subject = ? AND topic = ? '
       'ORDER BY sub_topic ASC',
-      variables: [
-        Variable.withString(subject),
-        Variable.withString(topic),
-      ],
+      variables: [Variable.withString(subject), Variable.withString(topic)],
       readsFrom: {questions},
     ).get();
     return rows.map((row) => row.read<String>('sub_topic')).toList();
@@ -891,12 +879,13 @@ class SessionsDao extends DatabaseAccessor<UserDatabase>
       );
 
   /// Completed sessions pending Firestore aggregation, oldest first.
-  Future<List<Session>> getUnsyncedCompletedSessions() => (select(sessions)
-        ..where(
-          (t) => t.status.equals('completed') & t.synced.equals(false),
-        )
-        ..orderBy([(t) => OrderingTerm.asc(t.completedAt)]))
-      .get();
+  Future<List<Session>> getUnsyncedCompletedSessions() =>
+      (select(sessions)
+            ..where(
+              (t) => t.status.equals('completed') & t.synced.equals(false),
+            )
+            ..orderBy([(t) => OrderingTerm.asc(t.completedAt)]))
+          .get();
 
   /// Marks [ids] as written to the cloud backup.
   Future<void> markSessionsBackedUp(Iterable<String> ids, DateTime at) async {
@@ -908,12 +897,11 @@ class SessionsDao extends DatabaseAccessor<UserDatabase>
   }
 
   /// Completed sessions not yet in the cloud backup, oldest first.
-  Future<List<Session>> getSessionsPendingBackup() => (select(sessions)
-        ..where(
-          (t) => t.status.equals('completed') & t.backedUpAt.isNull(),
-        )
-        ..orderBy([(t) => OrderingTerm.asc(t.completedAt)]))
-      .get();
+  Future<List<Session>> getSessionsPendingBackup() =>
+      (select(sessions)
+            ..where((t) => t.status.equals('completed') & t.backedUpAt.isNull())
+            ..orderBy([(t) => OrderingTerm.asc(t.completedAt)]))
+          .get();
 
   /// Which of [ids] already exist locally (used by restore to skip dupes).
   Future<Set<String>> existingSessionIds(Iterable<String> ids) async {
@@ -984,7 +972,7 @@ class SessionsDao extends DatabaseAccessor<UserDatabase>
 
   /// In-progress session for [featureKey], plus how many questions are done.
   Future<({String sessionId, int done, int total})?>
-      getInProgressSessionProgressByFeatureKey(String featureKey) async {
+  getInProgressSessionProgressByFeatureKey(String featureKey) async {
     final row = await customSelect(
       "SELECT id, question_count FROM sessions "
       "WHERE analytics_feature_key = ? AND status = 'in_progress' "
@@ -1001,11 +989,7 @@ class SessionsDao extends DatabaseAccessor<UserDatabase>
       variables: [Variable.withString(id)],
       readsFrom: {db.sessionQuestions},
     ).getSingle();
-    return (
-      sessionId: id,
-      done: doneRow.read<int?>('c') ?? 0,
-      total: total,
-    );
+    return (sessionId: id, done: doneRow.read<int?>('c') ?? 0, total: total);
   }
 
   Future<int> countCompletedSessions() async {
@@ -1147,8 +1131,7 @@ class SessionsDao extends DatabaseAccessor<UserDatabase>
     ).get();
     return {
       for (final row in rows)
-        if (_isIsoDate(row.read<String?>('topic')))
-          row.read<String>('topic'),
+        if (_isIsoDate(row.read<String?>('topic'))) row.read<String>('topic'),
     };
   }
 }

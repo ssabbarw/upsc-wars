@@ -291,10 +291,7 @@ class SessionBackupService {
     if (uid == null) return 0;
 
     final total = await remoteCount();
-    var progress = RestoreProgress(
-      phase: RestorePhase.restoring,
-      total: total,
-    );
+    var progress = RestoreProgress(phase: RestorePhase.restoring, total: total);
     onProgress?.call(progress);
     if (total == 0) return 0;
 
@@ -326,9 +323,7 @@ class SessionBackupService {
 
       if (fresh.isNotEmpty) {
         if (ensureCaDate != null) {
-          progress = progress.copyWith(
-            message: 'Fetching current affairs…',
-          );
+          progress = progress.copyWith(message: 'Fetching current affairs…');
           onProgress?.call(progress);
           await _cacheMissingCaQuestions(fresh, triedCaDates, ensureCaDate);
         }
@@ -430,14 +425,12 @@ class SessionBackupService {
 
     if (isRevision) {
       // Correct answers happen mid-session, before the submit-time re-queue.
-      final correct = r.attempts
-          .where((a) => a.status.value == 'correct')
-          .toList()
-        ..sort(
-          (a, b) => (a.attemptedAt.value ?? completedAt).compareTo(
-            b.attemptedAt.value ?? completedAt,
-          ),
-        );
+      final correct =
+          r.attempts.where((a) => a.status.value == 'correct').toList()..sort(
+            (a, b) => (a.attemptedAt.value ?? completedAt).compareTo(
+              b.attemptedAt.value ?? completedAt,
+            ),
+          );
       for (final a in correct) {
         final uuid = a.questionUuid.value;
         final row = await dao.getRevisionQueueItemByQuestionUuid(uuid);
@@ -462,9 +455,7 @@ class SessionBackupService {
   /// per-topic accuracy survives a reinstall.
   Future<void> _rebuildTopicStats(RestoredSession r) async {
     final scored = r.attempts
-        .where(
-          (a) => a.status.value == 'correct' || a.status.value == 'wrong',
-        )
+        .where((a) => a.status.value == 'correct' || a.status.value == 'wrong')
         .toList();
     if (scored.isEmpty) return;
 
@@ -473,7 +464,10 @@ class SessionBackupService {
     ]);
     final byUuid = {for (final q in questions) q.uuid: q};
     final agg =
-        <String, ({String subject, String topic, int n, int ok, int bad, int t})>{};
+        <
+          String,
+          ({String subject, String topic, int n, int ok, int bad, int t})
+        >{};
     for (final a in scored) {
       final q = byUuid[a.questionUuid.value];
       if (q == null) continue;

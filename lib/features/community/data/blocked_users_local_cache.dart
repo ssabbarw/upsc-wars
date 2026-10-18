@@ -22,11 +22,12 @@ class BlockedUsersLocalCache {
   }
 
   Future<void> write(String ownerEmail, Set<String> emails) {
-    final list = emails
-        .map((e) => e.toLowerCase().trim())
-        .where((e) => e.isNotEmpty)
-        .toList()
-      ..sort();
+    final list =
+        emails
+            .map((e) => e.toLowerCase().trim())
+            .where((e) => e.isNotEmpty)
+            .toList()
+          ..sort();
     return _prefs.setStringList(_key(ownerEmail), list);
   }
 }

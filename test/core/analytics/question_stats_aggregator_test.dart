@@ -39,10 +39,7 @@ void main() {
         isFirstScoredAttempt: true,
       )
       ..absorbRecord(
-        record: _record(
-          questionId: 'q1',
-          skipped: true,
-        ),
+        record: _record(questionId: 'q1', skipped: true),
         isFirstScoredAttempt: false,
       );
 
@@ -81,10 +78,7 @@ void main() {
 
   test('QuestionStatsDerived computes metrics from counters', () {
     expect(
-      QuestionStatsDerived.accuracyPercent(
-        totalAttempts: 10,
-        correctCount: 7,
-      ),
+      QuestionStatsDerived.accuracyPercent(totalAttempts: 10, correctCount: 7),
       70.0,
     );
     expect(

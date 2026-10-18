@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -19,6 +20,7 @@ import '../domain/fomo_pulse_models.dart';
 import '../fomo_pulse_constants.dart';
 import '../providers/fomo_pulse_providers.dart';
 import '../widgets/fomo_pulse_mcq_panel.dart';
+import '../../../l10n/l10n.dart';
 
 class FomoPulseDetailScreen extends HookConsumerWidget {
   const FomoPulseDetailScreen({
@@ -79,7 +81,7 @@ class FomoPulseDetailScreen extends HookConsumerWidget {
                 children: [
                   if (data.pulse.sourceUrl.isNotEmpty)
                     IconButton(
-                      tooltip: 'Read source',
+                      tooltip: context.l10n.fpReadSource,
                       onPressed: () async {
                         final uri = Uri.tryParse(data.pulse.sourceUrl);
                         if (uri != null) {
@@ -92,7 +94,7 @@ class FomoPulseDetailScreen extends HookConsumerWidget {
                       icon: const Icon(Icons.open_in_new),
                     ),
                   IconButton(
-                    tooltip: 'Share',
+                    tooltip: context.l10n.fpShare,
                     onPressed: () => unawaited(
                       shareFomoPulse(
                         data.pulse,
@@ -119,14 +121,14 @@ class FomoPulseDetailScreen extends HookConsumerWidget {
                 children: [
                   const Icon(Icons.wifi_off_rounded, size: 48),
                   const SizedBox(height: 16),
-                  const Text(
-                    'Could not load this CA Shot.',
+                  Text(
+                    context.l10n.fpLoadFailed,
                     textAlign: TextAlign.center,
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 8),
                   Text(
-                    'Check your internet connection and try again.',
+                    context.l10n.fpCheckNet,
                     textAlign: TextAlign.center,
                     style: TextStyle(color: Colors.grey[600]),
                   ),
@@ -135,7 +137,7 @@ class FomoPulseDetailScreen extends HookConsumerWidget {
                     onPressed: () =>
                         ref.invalidate(fomoPulseDetailProvider(pulseId)),
                     icon: const Icon(Icons.refresh),
-                    label: const Text('Retry'),
+                    label: Text(context.l10n.commonRetry),
                   ),
                 ],
               ),
@@ -249,7 +251,7 @@ class _PulseBody extends HookConsumerWidget {
                     ),
                   ),
                   _SectionBlock(
-                    title: 'News Summary',
+                    title: context.l10n.fpNewsSummary,
                     icon: Icons.article_outlined,
                     headerColor: AppColors.primaryLight,
                     titleColor: AppColors.primaryDark,
@@ -279,8 +281,8 @@ class _PulseBody extends HookConsumerWidget {
                                   !showFullSummary.value,
                               child: Text(
                                 showFullSummary.value
-                                    ? 'Show less'
-                                    : 'Read more',
+                                    ? context.l10n.fpShowLess
+                                    : context.l10n.fpReadMore,
                               ),
                             ),
                           ),
@@ -291,7 +293,7 @@ class _PulseBody extends HookConsumerWidget {
                   if (points.isNotEmpty) ...[
                     const _SectionDivider(),
                     _SectionBlock(
-                      title: 'Why is this relevant for UPSC?',
+                      title: context.l10n.fpWhyRelevant,
                       icon: Icons.track_changes_outlined,
                       headerColor: const Color(0xFFF3E8FF),
                       titleColor: const Color(0xFF6D28D9),
@@ -309,8 +311,8 @@ class _PulseBody extends HookConsumerWidget {
                         icon: const Icon(Icons.quiz_outlined),
                         label: Text(
                           alreadyAttempted
-                              ? 'Review your MCQ Attempt'
-                              : 'Attempt the MCQ',
+                              ? context.l10n.fpReviewAttempt
+                              : context.l10n.fpAttemptMcq,
                         ),
                       ),
                     ),
@@ -327,7 +329,7 @@ class _PulseBody extends HookConsumerWidget {
                       headerColor: AppColors.warningBg,
                       titleColor: AppColors.warningText,
                       child: Text(
-                        '${stats.breakdownLine}. Can you?',
+                        context.l10n.fpCanYou(stats.breakdownLine),
                         style: AppTextStyles.label().copyWith(
                           color: AppColors.warningText,
                         ),
@@ -341,7 +343,7 @@ class _PulseBody extends HookConsumerWidget {
                         horizontal: AppSpacing.lg,
                       ),
                       child: Text(
-                        'This CA Shot has expired.',
+                        context.l10n.fpExpired,
                         style: AppTextStyles.label().copyWith(
                           color: scheme.error,
                         ),
@@ -349,7 +351,7 @@ class _PulseBody extends HookConsumerWidget {
                     )
                   else
                     _SectionBlock(
-                      title: 'Attempt the MCQ',
+                      title: context.l10n.fpAttemptMcq,
                       icon: Icons.quiz_outlined,
                       headerColor: AppColors.primaryLight,
                       titleColor: AppColors.primaryDark,
@@ -563,9 +565,8 @@ class _NewsCreditLine extends StatelessWidget {
       return Text(label, style: style);
     }
     return InkWell(
-      onTap: () => unawaited(
-        launchUrl(uri, mode: LaunchMode.externalApplication),
-      ),
+      onTap: () =>
+          unawaited(launchUrl(uri, mode: LaunchMode.externalApplication)),
       child: Text(
         label,
         style: style.copyWith(
@@ -600,9 +601,9 @@ class _BulletPoints extends StatelessWidget {
 
 String _newsCreditLabel(String imageSource, String sourceUrl) {
   final photo = imageSource.trim();
-  if (photo.isNotEmpty) return 'Photo: $photo';
+  if (photo.isNotEmpty) return appL10n.fpPhoto(photo);
   final host = _sourceHost(sourceUrl);
-  if (host.isNotEmpty) return 'Source: $host';
+  if (host.isNotEmpty) return appL10n.fpSource(host);
   return '';
 }
 
@@ -625,36 +626,17 @@ String _headerMetaLine(FomoPulse pulse, String summary) {
 
   final sentAt = pulse.sentAt;
   final dateLabel = sentAt == null
-      ? 'Today'
-      : '${sentAt.day} ${_monthName(sentAt.month)} ${sentAt.year}';
+      ? appL10n.mpToday
+      : DateFormat('d MMM y').format(sentAt.toLocal());
   final readMins =
       (summary.split(RegExp(r'\s+')).where((e) => e.isNotEmpty).length / 130)
           .ceil()
           .clamp(1, 6);
-  return '$dateLabel  ·  $readMins min read  ·  High Relevance';
+  return appL10n.fpMetaLine(dateLabel, readMins);
 }
 
 String _prettyQuestionType(String raw) {
   final t = raw.trim();
   if (t.isEmpty || t.toLowerCase() == 'direct') return '';
   return t.replaceAll('-', ' ');
-}
-
-String _monthName(int month) {
-  const months = <String>[
-    'Jan',
-    'Feb',
-    'Mar',
-    'Apr',
-    'May',
-    'Jun',
-    'Jul',
-    'Aug',
-    'Sep',
-    'Oct',
-    'Nov',
-    'Dec',
-  ];
-  final i = month.clamp(1, 12) - 1;
-  return months[i];
 }

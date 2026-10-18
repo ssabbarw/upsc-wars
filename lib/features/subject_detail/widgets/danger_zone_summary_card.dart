@@ -14,6 +14,7 @@ import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/widgets/app_toast.dart';
 import '../domain/subject_insights.dart';
 import '../providers/subject_danger_zone_revise_uuids.dart';
+import '../../../l10n/l10n.dart';
 
 /// Danger Zone card: counts + Revise for Sure / Educated guess (lifetime).
 ///
@@ -65,7 +66,11 @@ class DangerZoneSummaryCard extends HookConsumerWidget {
       }
     }
 
-    Future<void> startRevise(String key, String confidence, String analyticsKey) async {
+    Future<void> startRevise(
+      String key,
+      String confidence,
+      String analyticsKey,
+    ) async {
       if (revBusy.value != null) return;
       revBusy.value = key;
       try {
@@ -85,7 +90,7 @@ class DangerZoneSummaryCard extends HookConsumerWidget {
               );
         if (!context.mounted) return;
         if (uuids.isEmpty) {
-          AppToast.showText(context, 'No questions in this category.');
+          AppToast.showText(context, context.l10n.dzNoQuestions);
           return;
         }
         final create = await ref.read(createSessionUseCaseProvider.future);
@@ -107,7 +112,7 @@ class DangerZoneSummaryCard extends HookConsumerWidget {
         if (context.mounted) await navigateToTest(id);
       } catch (e) {
         if (context.mounted) {
-        AppToast.showText(context, 'Could not start session: $e');
+          AppToast.showText(context, context.l10n.dzStartFailed(e.toString()));
         }
       } finally {
         if (context.mounted) revBusy.value = null;
@@ -145,14 +150,14 @@ class DangerZoneSummaryCard extends HookConsumerWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Danger zone of $dangerZoneContextLabel',
+                    context.l10n.dzTitleOf(dangerZoneContextLabel),
                     style: AppTextStyles.label().copyWith(
                       color: scheme.onSurface,
                     ),
                   ),
                   const SizedBox(height: AppSpacing.xs),
                   Text(
-                    'Wrong answers with Sure or Educated-guess (all-time)',
+                    context.l10n.dzSubtitle,
                     style: AppTextStyles.caption().copyWith(
                       color: scheme.onSurfaceVariant,
                     ),
@@ -160,14 +165,17 @@ class DangerZoneSummaryCard extends HookConsumerWidget {
                   const SizedBox(height: AppSpacing.md),
                   if (calm)
                     Text(
-                      'No Sure or Educated-guess wrong answers yet.',
+                      context.l10n.dzCalm,
                       style: AppTextStyles.bodyMd().copyWith(
                         color: scheme.onSurface,
                       ),
                     )
                   else ...[
                     Text(
-                      'Total: $count wrong · about ${insights.dangerZoneMarks.toStringAsFixed(2)} marks (0.66 each if counted)',
+                      context.l10n.dzTotalLine(
+                        count,
+                        insights.dangerZoneMarks.toStringAsFixed(2),
+                      ),
                       style: AppTextStyles.bodySm().copyWith(
                         color: scheme.onSurface,
                         height: 1.35,
@@ -175,7 +183,9 @@ class DangerZoneSummaryCard extends HookConsumerWidget {
                     ),
                     const SizedBox(height: AppSpacing.md),
                     _DangerZoneBreakdownTile(
-                      accent: isDark ? AppColors.wrongTextDark : AppColors.wrong,
+                      accent: isDark
+                          ? AppColors.wrongTextDark
+                          : AppColors.wrong,
                       barColor: isDark
                           ? AppColors.wrongTextDark
                           : AppColors.wrongText,
@@ -184,20 +194,20 @@ class DangerZoneSummaryCard extends HookConsumerWidget {
                           : AppColors.wrongBg,
                       borderColor: borderColor,
                       icon: Icons.bolt_rounded,
-                      title: 'Sure — wrong',
-                      subtitle: 'You marked Sure and answered incorrectly.',
+                      title: context.l10n.dzSureWrong,
+                      subtitle: context.l10n.dzSureWrongBody,
                       count: sureWrong,
-                      marksLabel: '≈ $sureMarksStr marks',
+                      marksLabel: context.l10n.dzApproxMarks(sureMarksStr),
                       isReviseLoading: revBusy.value == 'sure',
                       onRevise: sureWrong == 0 || revBusy.value != null
                           ? null
                           : () => startRevise(
-                                'sure',
-                                AnswerConfidence.verySure,
-                                topic != null
-                                    ? 'topic_danger_sure'
-                                    : 'subject_danger_sure',
-                              ),
+                              'sure',
+                              AnswerConfidence.verySure,
+                              topic != null
+                                  ? 'topic_danger_sure'
+                                  : 'subject_danger_sure',
+                            ),
                     ),
                     const SizedBox(height: AppSpacing.sm),
                     _DangerZoneBreakdownTile(
@@ -212,20 +222,20 @@ class DangerZoneSummaryCard extends HookConsumerWidget {
                           : AppColors.warningBg,
                       borderColor: borderColor,
                       icon: Icons.auto_awesome_outlined,
-                      title: 'Educated guess — wrong',
-                      subtitle: 'You marked Educated guess and answered incorrectly.',
+                      title: context.l10n.dzEduWrong,
+                      subtitle: context.l10n.dzEduWrongBody,
                       count: guessWrong,
-                      marksLabel: '≈ $guessMarksStr marks',
+                      marksLabel: context.l10n.dzApproxMarks(guessMarksStr),
                       isReviseLoading: revBusy.value == 'guess',
                       onRevise: guessWrong == 0 || revBusy.value != null
                           ? null
                           : () => startRevise(
-                                'guess',
-                                AnswerConfidence.somewhatSure,
-                                topic != null
-                                    ? 'topic_danger_guess'
-                                    : 'subject_danger_guess',
-                              ),
+                              'guess',
+                              AnswerConfidence.somewhatSure,
+                              topic != null
+                                  ? 'topic_danger_guess'
+                                  : 'subject_danger_guess',
+                            ),
                     ),
                   ],
                 ],
@@ -363,7 +373,9 @@ class _DangerZoneBreakdownTile extends StatelessWidget {
                 onPressed: isReviseLoading ? null : onRevise,
                 style: FilledButton.styleFrom(
                   minimumSize: const Size.fromHeight(40),
-                  padding: const EdgeInsets.symmetric(horizontal: AppSpacing.md),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: AppSpacing.md,
+                  ),
                 ),
                 child: isReviseLoading
                     ? SizedBox(
@@ -375,7 +387,7 @@ class _DangerZoneBreakdownTile extends StatelessWidget {
                         ),
                       )
                     : Text(
-                        'Revise',
+                        context.l10n.commonRevise,
                         style: AppTextStyles.label(),
                       ),
               ),

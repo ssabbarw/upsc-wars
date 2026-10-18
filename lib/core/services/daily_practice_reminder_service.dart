@@ -33,9 +33,7 @@ class DailyPracticeReminderService {
       title: "Today's Daily Drill",
       body: '10 static MCQs. Keep the streak going.',
     );
-    if (streak >= 2 &&
-        atRiskOffset != null &&
-        dayOffset == atRiskOffset) {
+    if (streak >= 2 && atRiskOffset != null && dayOffset == atRiskOffset) {
       return (
         title: 'Your $streak-day streak ends tonight',
         body: '10 static MCQs is all it takes to keep it.',
@@ -45,7 +43,8 @@ class DailyPracticeReminderService {
     if (dayOffset <= 3) {
       return (
         title: 'Pick your drill back up',
-        body: '$dayOffset days off. 10 static MCQs puts today back on the board.',
+        body:
+            '$dayOffset days off. 10 static MCQs puts today back on the board.',
       );
     }
     return (

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:upsc_wars/core/theme/app_colors.dart';
+import 'package:upsc_wars/l10n/app_localizations.dart';
 import 'package:upsc_wars/features/weak_areas/domain/trap_pattern_catalog.dart';
 import 'package:upsc_wars/features/weak_areas/widgets/trap_pattern_card.dart';
 
@@ -15,6 +16,8 @@ void main() {
     var example = false;
     await tester.pumpWidget(
       MaterialApp(
+        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        supportedLocales: AppLocalizations.supportedLocales,
         home: Scaffold(
           body: TrapPatternCard(
             item: const TrapPatternListItem(
@@ -47,6 +50,8 @@ void main() {
     var opened = false;
     await tester.pumpWidget(
       MaterialApp(
+        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        supportedLocales: AppLocalizations.supportedLocales,
         home: Scaffold(
           body: TrapPatternCard(
             item: const TrapPatternListItem(

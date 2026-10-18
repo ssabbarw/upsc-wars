@@ -21,6 +21,7 @@ import 'package:upsc_wars/features/battle/widgets/battle_live_scoreboard.dart';
 import 'package:upsc_wars/features/battle/widgets/battle_result_score_breakdown.dart';
 import 'package:upsc_wars/features/battle/widgets/battle_spectate_overlay.dart';
 import 'package:upsc_wars/features/home/providers/auth_providers.dart';
+import '../../../l10n/l10n.dart';
 
 Future<void> _leaveBattleResultScreen(
   BuildContext context,
@@ -44,7 +45,9 @@ class BattleResultScreen extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final hPad = AppBreakpoints.fullScreenHPadding(MediaQuery.sizeOf(context).width);
+    final hPad = AppBreakpoints.fullScreenHPadding(
+      MediaQuery.sizeOf(context).width,
+    );
     final spectate = ref.watch(battleSpectateProvider);
     final battleUi = ref.watch(battleSessionProvider(payload.sessionId));
     final battle = battleUi.battleSession;
@@ -185,7 +188,7 @@ class BattleResultScreen extends HookConsumerWidget {
       },
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Battle Result'),
+          title: Text(context.l10n.brTitle),
           leading: IconButton(
             icon: const Icon(Icons.arrow_back),
             onPressed: () => unawaited(_leaveBattleResultScreen(context, ref)),
@@ -257,14 +260,14 @@ class BattleResultScreen extends HookConsumerWidget {
                         }
                       },
                       icon: const Icon(Icons.menu_book_outlined),
-                      label: const Text('Review explanations'),
+                      label: Text(context.l10n.ocReviewExpl),
                     ),
                     const SizedBox(height: AppSpacing.sm),
                     OutlinedButton(
                       onPressed: () async {
                         if (context.mounted) context.go('/');
                       },
-                      child: const Text('Back to Home'),
+                      child: Text(context.l10n.commonBackToHome),
                     ),
                   ],
                 ),

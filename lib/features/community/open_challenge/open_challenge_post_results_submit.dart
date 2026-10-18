@@ -22,6 +22,7 @@ import '../open_challenge/open_challenge_exam_registry.dart';
 import '../providers/community_providers.dart';
 import '../providers/open_challenge_providers.dart';
 import '../../../shared/widgets/app_toast.dart';
+import '../../../l10n/l10n.dart';
 
 /// Thrown when [performOpenChallengePostResultsPublish] blocks create (24h local cooldown).
 final class OpenChallengePublishCooldownException implements Exception {
@@ -67,7 +68,7 @@ Future<void> performOpenChallengePostResultsPublish({
   final signedIn = await ensureAccountSignedIn(
     context: context,
     ref: ref,
-    reason: 'Sign in to save your score to the leaderboard.',
+    reason: context.l10n.ocSignInSave,
   );
   if (!signedIn) {
     throw StateError('You must be signed in.');
@@ -83,7 +84,9 @@ Future<void> performOpenChallengePostResultsPublish({
   }
 
   final db = ref.read(userDatabaseProvider);
-  final rows = await db.sessionQuestionsDao.getSessionQuestionsOrdered(sessionId);
+  final rows = await db.sessionQuestionsDao.getSessionQuestionsOrdered(
+    sessionId,
+  );
   final attempts = <String, String>{};
   for (final r in rows) {
     final o = r.selectedOption?.trim().toLowerCase();
@@ -129,8 +132,9 @@ Future<void> performOpenChallengePostResultsPublish({
       reviewSessionId: sessionId,
     );
     // Creating counts as playing it, so Home must not offer it back.
-    (await ref.read(prefsServiceProvider.future))
-        .markOpenChallengeAttempted(newId);
+    (await ref.read(
+      prefsServiceProvider.future,
+    )).markOpenChallengeAttempted(newId);
     await recordOpenChallengePublished(ref);
     ref.read(openChallengeExamRegistryProvider).take(sessionId);
     ref.invalidate(openChallengesListProvider);
@@ -168,9 +172,7 @@ Future<void> performOpenChallengePostResultsPublish({
     ref.invalidate(homeOpenChallengesProvider);
     ref.invalidate(openChallengeDetailProvider(cid));
     if (context.mounted) {
-      context.go(
-        '/community/open-challenges/$cid?origin=accept_flow',
-      );
+      context.go('/community/open-challenges/$cid?origin=accept_flow');
     }
   }
 }
@@ -220,12 +222,12 @@ class _OpenChallengeAcceptResultsShellState
     } catch (e) {
       if (mounted) {
         final msg = '$e'.contains('already_attempted')
-            ? 'You have already attempted this challenge.'
+            ? context.l10n.ocAlreadyAttempted
             : '$e'.contains('challenge_expired')
-                ? 'This challenge has expired.'
-                : '$e'.contains('must be signed in')
-                    ? 'Sign in to save your score to the leaderboard.'
-                    : '$e';
+            ? context.l10n.ocExpired
+            : '$e'.contains('must be signed in')
+            ? context.l10n.ocSignInSave
+            : '$e';
         AppToast.showText(context, msg);
         setState(() => _failed = true);
       }
@@ -248,13 +250,13 @@ class _OpenChallengeAcceptResultsShellState
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
-                    'Could not save your score',
+                    context.l10n.ocSaveFailed,
                     style: AppTextStyles.h3(),
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: AppSpacing.md),
                   Text(
-                    'Check your connection and try again.',
+                    context.l10n.commonCheckConnection,
                     style: AppTextStyles.bodySm().copyWith(
                       color: scheme.onSurfaceVariant,
                     ),
@@ -268,7 +270,7 @@ class _OpenChallengeAcceptResultsShellState
                             setState(() => _failed = false);
                             unawaited(_run());
                           },
-                    child: const Text('Retry'),
+                    child: Text(context.l10n.commonRetry),
                   ),
                 ],
               ),
@@ -294,7 +296,7 @@ class _OpenChallengeAcceptResultsShellState
                 ),
                 const SizedBox(height: AppSpacing.xl),
                 Text(
-                  'Publishing your score',
+                  context.l10n.ocPublishingScore,
                   style: AppTextStyles.h2().copyWith(
                     color: scheme.onSurface,
                     letterSpacing: -0.3,
@@ -303,7 +305,7 @@ class _OpenChallengeAcceptResultsShellState
                 ),
                 const SizedBox(height: AppSpacing.md),
                 Text(
-                  'Locking your answers onto the leaderboard — almost there.',
+                  context.l10n.ocLocking,
                   style: AppTextStyles.bodySm().copyWith(
                     color: scheme.onSurfaceVariant,
                     height: 1.4,

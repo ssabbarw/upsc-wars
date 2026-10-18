@@ -130,8 +130,9 @@ class HomeScreen extends HookConsumerWidget {
       if (!onHomeRoute) return null;
       unawaited(() async {
         final prefs = await ref.read(prefsServiceProvider.future);
-        final milestone =
-            DailyStreakService.consumePendingMilestoneCelebration(prefs);
+        final milestone = DailyStreakService.consumePendingMilestoneCelebration(
+          prefs,
+        );
         if (milestone == null || !context.mounted) return;
         AppToast.showText(
           context,
@@ -145,8 +146,7 @@ class HomeScreen extends HookConsumerWidget {
 
     useEffect(() {
       home.whenData((h) {
-        cachedStreakText.value =
-            context.l10n.homeStreakDays(h.streakCount);
+        cachedStreakText.value = context.l10n.homeStreakDays(h.streakCount);
       });
       return null;
     }, [home]);
@@ -170,469 +170,461 @@ class HomeScreen extends HookConsumerWidget {
     // would sit inside an [IndexedStack] branch that stays mounted and compete
     // with the visible tab's own handler.
     return Stack(
-        fit: StackFit.expand,
-        children: [
-          Scaffold(
-            body: SafeArea(
-              child: RefreshIndicator(
-                onRefresh: () async {
-                  ref.invalidate(homeStateProvider);
-                  ref.invalidate(homeActivationProvider);
-                  ref.invalidate(homeActivationJourneyProvider);
-                  ref.invalidate(dailyDrillProvider);
-                  ref.invalidate(dailyCaScheduledPaperIsLiveProvider);
-                  ref.invalidate(todayHubProvider);
-                  final warOn = await ref.read(
-                    dailyWarRemoteEnabledProvider.future,
-                  );
-                  if (warOn) await refreshDailyWarHome(ref);
-                },
-                child: ListView(
-                  physics: killBlocked
-                      ? const NeverScrollableScrollPhysics()
-                      : const AlwaysScrollableScrollPhysics(
-                          parent: BouncingScrollPhysics(),
-                        ),
-                  padding: const EdgeInsets.fromLTRB(
-                    AppSpacing.lg,
-                    AppSpacing.xs,
-                    AppSpacing.lg,
-                    AppSpacing.lg,
-                  ),
-                  children: [
-                    if (bootstrap.hasError)
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: AppSpacing.md),
-                        child: Material(
-                          color: scheme.surfaceContainerLow,
-                          borderRadius: BorderRadius.circular(AppRadius.md),
-                          child: Padding(
-                            padding: const EdgeInsets.all(AppSpacing.lg),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  context.l10n.homeQuestionBankUnavailable,
-                                  style: AppTextStyles.label().copyWith(
-                                    color: scheme.onSurface,
-                                  ),
+      fit: StackFit.expand,
+      children: [
+        Scaffold(
+          body: SafeArea(
+            child: RefreshIndicator(
+              onRefresh: () async {
+                ref.invalidate(homeStateProvider);
+                ref.invalidate(homeActivationProvider);
+                ref.invalidate(homeActivationJourneyProvider);
+                ref.invalidate(dailyDrillProvider);
+                ref.invalidate(dailyCaScheduledPaperIsLiveProvider);
+                ref.invalidate(todayHubProvider);
+                final warOn = await ref.read(
+                  dailyWarRemoteEnabledProvider.future,
+                );
+                if (warOn) await refreshDailyWarHome(ref);
+              },
+              child: ListView(
+                physics: killBlocked
+                    ? const NeverScrollableScrollPhysics()
+                    : const AlwaysScrollableScrollPhysics(
+                        parent: BouncingScrollPhysics(),
+                      ),
+                padding: const EdgeInsets.fromLTRB(
+                  AppSpacing.lg,
+                  AppSpacing.xs,
+                  AppSpacing.lg,
+                  AppSpacing.lg,
+                ),
+                children: [
+                  if (bootstrap.hasError)
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: AppSpacing.md),
+                      child: Material(
+                        color: scheme.surfaceContainerLow,
+                        borderRadius: BorderRadius.circular(AppRadius.md),
+                        child: Padding(
+                          padding: const EdgeInsets.all(AppSpacing.lg),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                context.l10n.homeQuestionBankUnavailable,
+                                style: AppTextStyles.label().copyWith(
+                                  color: scheme.onSurface,
                                 ),
-                                const SizedBox(height: AppSpacing.xs),
-                                Text(
-                                  context.l10n.homeQuestionBankUnavailableBody,
-                                  style: AppTextStyles.bodySm().copyWith(
+                              ),
+                              const SizedBox(height: AppSpacing.xs),
+                              Text(
+                                context.l10n.homeQuestionBankUnavailableBody,
+                                style: AppTextStyles.bodySm().copyWith(
+                                  color: scheme.onSurfaceVariant,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Material(
+                        color: AppColors.transparent,
+                        child: InkWell(
+                          onTap: openProfile,
+                          borderRadius: BorderRadius.circular(AppRadius.pill),
+                          child: Container(
+                            width: 36,
+                            height: 36,
+                            margin: const EdgeInsets.only(right: AppSpacing.sm),
+                            decoration: BoxDecoration(
+                              color: !accountSignedIn
+                                  ? scheme.surfaceContainerLow
+                                  : avatarColors.bg,
+                              shape: BoxShape.circle,
+                              border: Border.all(
+                                color: borderColor,
+                                width: 0.5,
+                              ),
+                            ),
+                            child: !accountSignedIn
+                                ? Icon(
+                                    Icons.person_outline,
+                                    size: 18,
                                     color: scheme.onSurfaceVariant,
+                                  )
+                                : Builder(
+                                    builder: (context) {
+                                      final photo =
+                                          AppConstants.customProfilePhotoUrl(
+                                            user!.photoURL,
+                                          );
+                                      if (photo.isEmpty) {
+                                        return Center(
+                                          child: Text(
+                                            avatarInitials,
+                                            style: AppTextStyles.label()
+                                                .copyWith(
+                                                  color: avatarColors.fg,
+                                                  fontWeight: FontWeight.w700,
+                                                ),
+                                          ),
+                                        );
+                                      }
+                                      return ClipOval(
+                                        child: CachedNetworkImage(
+                                          imageUrl: photo,
+                                          width: 36,
+                                          height: 36,
+                                          fit: BoxFit.cover,
+                                          memCacheWidth:
+                                              (36 *
+                                                      MediaQuery.devicePixelRatioOf(
+                                                        context,
+                                                      ))
+                                                  .round(),
+                                          fadeInDuration: Duration.zero,
+                                          fadeOutDuration: Duration.zero,
+                                          errorWidget: (context, url, error) =>
+                                              Center(
+                                                child: Text(
+                                                  avatarInitials,
+                                                  style: AppTextStyles.label()
+                                                      .copyWith(
+                                                        color: avatarColors.fg,
+                                                        fontWeight:
+                                                            FontWeight.w700,
+                                                      ),
+                                                ),
+                                              ),
+                                        ),
+                                      );
+                                    },
+                                  ),
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: Material(
+                          color: AppColors.transparent,
+                          child: InkWell(
+                            onTap: openProfile,
+                            borderRadius: BorderRadius.circular(AppRadius.md),
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                vertical: AppSpacing.xs,
+                              ),
+                              child: Consumer(
+                                builder: (context, ref, _) {
+                                  final journey = ref
+                                      .watch(homeActivationJourneyProvider)
+                                      .asData
+                                      ?.value;
+                                  final journeyActive =
+                                      journey?.shouldShowChecklist ?? false;
+                                  final firstName = userName.split(' ').first;
+                                  final title = journeyActive
+                                      ? (firstName.toLowerCase() == 'aspirant'
+                                            ? context.l10n.homeGreetingGeneric
+                                            : context.l10n.homeGreetingNamed(
+                                                firstName,
+                                              ))
+                                      : greeting;
+                                  final subtitle = !journeyActive
+                                      ? userName
+                                      : (journey?.demoInProgress ?? false)
+                                      ? context.l10n.homeResumeDemoTest
+                                      : context.l10n.homeStartWithDemoTest;
+                                  return Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        title,
+                                        style: AppTextStyles.h2().copyWith(
+                                          color: scheme.onSurface,
+                                        ),
+                                      ),
+                                      Text(
+                                        subtitle,
+                                        style: AppTextStyles.bodySm().copyWith(
+                                          color: scheme.onSurfaceVariant,
+                                        ),
+                                      ),
+                                    ],
+                                  );
+                                },
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Material(
+                        color: AppColors.transparent,
+                        child: InkWell(
+                          onTap: () async {
+                            await setDarkModeEnabled(
+                              ref: ref,
+                              darkModeEnabled: !isDark,
+                            );
+                          },
+                          borderRadius: BorderRadius.circular(AppRadius.md),
+                          child: Container(
+                            padding: const EdgeInsets.all(AppSpacing.sm),
+                            margin: const EdgeInsets.only(right: AppSpacing.sm),
+                            decoration: BoxDecoration(
+                              color: scheme.surfaceContainerLow,
+                              borderRadius: BorderRadius.circular(AppRadius.md),
+                              border: Border.all(
+                                color: borderColor,
+                                width: 0.5,
+                              ),
+                            ),
+                            child: Icon(
+                              isDark ? Icons.dark_mode : Icons.light_mode,
+                              size: 18,
+                              color: scheme.onSurfaceVariant,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Material(
+                        color: AppColors.transparent,
+                        child: InkWell(
+                          onTap: () => context.push('/settings'),
+                          borderRadius: BorderRadius.circular(AppRadius.md),
+                          child: Container(
+                            padding: const EdgeInsets.all(AppSpacing.sm),
+                            decoration: BoxDecoration(
+                              color: scheme.surfaceContainerLow,
+                              borderRadius: BorderRadius.circular(AppRadius.md),
+                              border: Border.all(
+                                color: borderColor,
+                                width: 0.5,
+                              ),
+                            ),
+                            child: Icon(
+                              Icons.settings_outlined,
+                              size: 18,
+                              color: scheme.onSurfaceVariant,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: AppSpacing.sm),
+                  Row(
+                    children: [
+                      const PrelimsDaysInfo(),
+                      const Spacer(),
+                      // Trap pill — always visible, including for new users.
+                      Padding(
+                        padding: const EdgeInsets.only(right: AppSpacing.sm),
+                        child: _TrapPill(
+                          count: home.maybeWhen(
+                            data: (h) => h.revisionTrapCount,
+                            orElse: () => 0,
+                          ),
+                          borderColor: borderColor,
+                        ),
+                      ),
+                      Consumer(
+                        builder: (context, ref, _) {
+                          final streakCount = home.maybeWhen(
+                            data: (h) => h.streakCount,
+                            orElse: () => 0,
+                          );
+                          final streakLabel = home.when(
+                            data: (h) =>
+                                context.l10n.homeStreakDays(h.streakCount),
+                            loading: () =>
+                                cachedStreakText.value ??
+                                context.l10n.homeStreakDays(0),
+                            error: (_, __) =>
+                                cachedStreakText.value ??
+                                context.l10n.homeStreakDays(0),
+                          );
+                          final hot = streakCount >= 3;
+                          return Container(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: AppSpacing.md,
+                              vertical: AppSpacing.sm,
+                            ),
+                            decoration: BoxDecoration(
+                              color: hot
+                                  ? AppColors.streak.withValues(
+                                      alpha: isDark ? 0.22 : 0.12,
+                                    )
+                                  : scheme.surfaceContainerLow,
+                              borderRadius: BorderRadius.circular(
+                                AppRadius.pill,
+                              ),
+                              border: Border.all(
+                                color: hot
+                                    ? AppColors.streak.withValues(alpha: 0.45)
+                                    : borderColor,
+                                width: hot ? 1 : 0.5,
+                              ),
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Icon(
+                                  Icons.local_fire_department,
+                                  color: AppColors.streak,
+                                  size: hot ? 18 : 16,
+                                ),
+                                const SizedBox(width: AppSpacing.xs),
+                                Text(
+                                  streakLabel,
+                                  style: AppTextStyles.caption().copyWith(
+                                    color: scheme.onSurface,
+                                    fontWeight: hot
+                                        ? FontWeight.w700
+                                        : FontWeight.w500,
                                   ),
                                 ),
                               ],
                             ),
-                          ),
-                        ),
-                      ),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Material(
-                          color: AppColors.transparent,
-                          child: InkWell(
-                            onTap: openProfile,
-                            borderRadius: BorderRadius.circular(AppRadius.pill),
-                            child: Container(
-                              width: 36,
-                              height: 36,
-                              margin: const EdgeInsets.only(
-                                right: AppSpacing.sm,
-                              ),
-                              decoration: BoxDecoration(
-                                color: !accountSignedIn
-                                    ? scheme.surfaceContainerLow
-                                    : avatarColors.bg,
-                                shape: BoxShape.circle,
-                                border: Border.all(
-                                  color: borderColor,
-                                  width: 0.5,
-                                ),
-                              ),
-                              child: !accountSignedIn
-                                  ? Icon(
-                                      Icons.person_outline,
-                                      size: 18,
-                                      color: scheme.onSurfaceVariant,
-                                    )
-                                  : Builder(
-                                      builder: (context) {
-                                        final photo =
-                                            AppConstants.customProfilePhotoUrl(
-                                              user!.photoURL,
-                                            );
-                                        if (photo.isEmpty) {
-                                          return Center(
-                                            child: Text(
-                                              avatarInitials,
-                                              style: AppTextStyles.label()
-                                                  .copyWith(
-                                                    color: avatarColors.fg,
-                                                    fontWeight: FontWeight.w700,
-                                                  ),
-                                            ),
-                                          );
-                                        }
-                                        return ClipOval(
-                                          child: CachedNetworkImage(
-                                            imageUrl: photo,
-                                            width: 36,
-                                            height: 36,
-                                            fit: BoxFit.cover,
-                                            memCacheWidth:
-                                                (36 *
-                                                        MediaQuery.devicePixelRatioOf(
-                                                          context,
-                                                        ))
-                                                    .round(),
-                                            fadeInDuration: Duration.zero,
-                                            fadeOutDuration: Duration.zero,
-                                            errorWidget:
-                                                (context, url, error) => Center(
-                                                  child: Text(
-                                                    avatarInitials,
-                                                    style: AppTextStyles.label()
-                                                        .copyWith(
-                                                          color:
-                                                              avatarColors.fg,
-                                                          fontWeight:
-                                                              FontWeight.w700,
-                                                        ),
-                                                  ),
-                                                ),
-                                          ),
-                                        );
-                                      },
-                                    ),
-                            ),
-                          ),
-                        ),
-                        Expanded(
-                          child: Material(
-                            color: AppColors.transparent,
-                            child: InkWell(
-                              onTap: openProfile,
-                              borderRadius: BorderRadius.circular(AppRadius.md),
-                              child: Padding(
-                                padding: const EdgeInsets.symmetric(
-                                  vertical: AppSpacing.xs,
-                                ),
-                                child: Consumer(
-                                  builder: (context, ref, _) {
-                                    final journey = ref
-                                        .watch(homeActivationJourneyProvider)
-                                        .asData
-                                        ?.value;
-                                    final journeyActive =
-                                        journey?.shouldShowChecklist ?? false;
-                                    final firstName = userName.split(' ').first;
-                                    final title = journeyActive
-                                        ? (firstName.toLowerCase() == 'aspirant'
-                                              ? context.l10n.homeGreetingGeneric
-                                              : context.l10n.homeGreetingNamed(firstName))
-                                        : greeting;
-                                    final subtitle = !journeyActive
-                                        ? userName
-                                        : (journey?.demoInProgress ?? false)
-                                        ? context.l10n.homeResumeDemoTest
-                                        : context.l10n.homeStartWithDemoTest;
-                                    return Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          title,
-                                          style: AppTextStyles.h2().copyWith(
-                                            color: scheme.onSurface,
-                                          ),
-                                        ),
-                                        Text(
-                                          subtitle,
-                                          style: AppTextStyles.bodySm()
-                                              .copyWith(
-                                                color: scheme.onSurfaceVariant,
-                                              ),
-                                        ),
-                                      ],
-                                    );
-                                  },
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Material(
-                          color: AppColors.transparent,
-                          child: InkWell(
-                            onTap: () async {
-                              await setDarkModeEnabled(
-                                ref: ref,
-                                darkModeEnabled: !isDark,
-                              );
-                            },
-                            borderRadius: BorderRadius.circular(AppRadius.md),
-                            child: Container(
-                              padding: const EdgeInsets.all(AppSpacing.sm),
-                              margin: const EdgeInsets.only(
-                                right: AppSpacing.sm,
-                              ),
-                              decoration: BoxDecoration(
-                                color: scheme.surfaceContainerLow,
-                                borderRadius: BorderRadius.circular(
-                                  AppRadius.md,
-                                ),
-                                border: Border.all(
-                                  color: borderColor,
-                                  width: 0.5,
-                                ),
-                              ),
-                              child: Icon(
-                                isDark ? Icons.dark_mode : Icons.light_mode,
-                                size: 18,
-                                color: scheme.onSurfaceVariant,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Material(
-                          color: AppColors.transparent,
-                          child: InkWell(
-                            onTap: () => context.push('/settings'),
-                            borderRadius: BorderRadius.circular(AppRadius.md),
-                            child: Container(
-                              padding: const EdgeInsets.all(AppSpacing.sm),
-                              decoration: BoxDecoration(
-                                color: scheme.surfaceContainerLow,
-                                borderRadius: BorderRadius.circular(
-                                  AppRadius.md,
-                                ),
-                                border: Border.all(
-                                  color: borderColor,
-                                  width: 0.5,
-                                ),
-                              ),
-                              child: Icon(
-                                Icons.settings_outlined,
-                                size: 18,
-                                color: scheme.onSurfaceVariant,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: AppSpacing.sm),
-                    Row(
-                      children: [
-                        const PrelimsDaysInfo(),
-                        const Spacer(),
-                        // Trap pill — always visible, including for new users.
-                        Padding(
-                          padding: const EdgeInsets.only(right: AppSpacing.sm),
-                          child: _TrapPill(
-                            count: home.maybeWhen(
-                              data: (h) => h.revisionTrapCount,
-                              orElse: () => 0,
-                            ),
-                            borderColor: borderColor,
-                          ),
-                        ),
-                        Consumer(
-                          builder: (context, ref, _) {
-                            final streakCount = home.maybeWhen(
-                              data: (h) => h.streakCount,
-                              orElse: () => 0,
-                            );
-                            final streakLabel = home.when(
-                              data: (h) =>
-                                  context.l10n.homeStreakDays(h.streakCount),
-                              loading: () => cachedStreakText.value ?? context.l10n.homeStreakDays(0),
-                              error: (_, __) =>
-                                  cachedStreakText.value ?? context.l10n.homeStreakDays(0),
-                            );
-                            final hot = streakCount >= 3;
-                            return Container(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: AppSpacing.md,
-                                vertical: AppSpacing.sm,
-                              ),
-                              decoration: BoxDecoration(
-                                color: hot
-                                    ? AppColors.streak.withValues(
-                                        alpha: isDark ? 0.22 : 0.12,
-                                      )
-                                    : scheme.surfaceContainerLow,
-                                borderRadius: BorderRadius.circular(
-                                  AppRadius.pill,
-                                ),
-                                border: Border.all(
-                                  color: hot
-                                      ? AppColors.streak.withValues(alpha: 0.45)
-                                      : borderColor,
-                                  width: hot ? 1 : 0.5,
-                                ),
-                              ),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  Icon(
-                                    Icons.local_fire_department,
-                                    color: AppColors.streak,
-                                    size: hot ? 18 : 16,
-                                  ),
-                                  const SizedBox(width: AppSpacing.xs),
-                                  Text(
-                                    streakLabel,
-                                    style: AppTextStyles.caption().copyWith(
-                                      color: scheme.onSurface,
-                                      fontWeight: hot
-                                          ? FontWeight.w700
-                                          : FontWeight.w500,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            );
-                          },
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: AppSpacing.md),
-                    const SoftUpdateBanner(),
-                    const DataRestoreBanner(),
-                    const PushDeniedBanner(compact: true),
-                    Consumer(
-                      builder: (context, ref, _) {
-                        final journey = ref.watch(
-                          homeActivationJourneyProvider,
-                        );
-                        final state = journey.asData?.value ?? journey.value;
-                        return TodayHubSection(
-                          activationJourney: state,
-                          activationJourneyLoading:
-                              journey.isLoading && !journey.hasValue,
-                        );
-                      },
-                    ),
-                    const SizedBox(height: AppSpacing.md),
-                    // Own section: hidden unless sales are on or the user owns a series.
-                    const TestSeriesHomeCard(),
-                    // Renders nothing unless Remote Config allows War; it owns
-                    // its own bottom gap, so no spacer follows it here.
-                    const DailyWarHomeCard(),
-                    // Practice section: PYQ carousel above Subjects
-                    Consumer(
-                      builder: (context, ref, _) {
-                        final journey = ref.watch(
-                          homeActivationJourneyProvider,
-                        );
-                        final secondary = journey.maybeWhen(
-                          data: (s) => s.shouldShowChecklist,
-                          orElse: () => false,
-                        );
-                        return _PracticeSection(
-                          borderColor: borderColor,
-                          secondary: secondary,
-                        );
-                      },
-                    ),
-                    // Trap Patterns — immediately after practice, always visible
-                    home.when(
-                      loading: () => const SizedBox.shrink(),
-                      error: (_, _) => const SizedBox.shrink(),
-                      data: (h) => h.revisionTrapCount > 0
-                          ? Padding(
-                              padding: const EdgeInsets.only(
-                                top: AppSpacing.md,
-                              ),
-                              child: _TrapPatternsCard(
-                                trapCount: h.revisionTrapCount,
-                                borderColor: borderColor,
-                              ),
-                            )
-                          : const SizedBox.shrink(),
-                    ),
-                    const SizedBox(height: AppSpacing.md),
-                    home.when(
-                      loading: () {
-                        if (!past200ms.value) {
-                          return SizedBox(
-                            height: 120,
-                            child: Center(
-                              child: SizedBox(
-                                width: 24,
-                                height: 24,
-                                child: CircularProgressIndicator(
-                                  strokeWidth: 2,
-                                  color: AppColors.primary,
-                                ),
-                              ),
-                            ),
-                          );
-                        }
-                        return _HeaderLoading(borderColor: borderColor);
-                      },
-                      error: (e, st) => Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          OutlinedButton(
-                            onPressed: () => ref.invalidate(homeStateProvider),
-                            child: Text(context.l10n.commonRetry, style: AppTextStyles.label()),
-                          ),
-                        ],
-                      ),
-                      data: (h) {
-                        return Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            HomePageVideoBanner(borderColor: borderColor),
-                            const SizedBox(height: AppSpacing.md),
-                            const PushDeniedBanner(reportShown: false),
-                            _QuickPracticeSection(borderColor: borderColor),
-                          ],
-                        );
-                      },
-                    ),
-                    const SizedBox(height: AppSpacing.lg),
-                    const Center(
-                      child: ContactUsTextButton(showRateReviewCta: false),
-                    ),
-                    Center(
-                      child: Consumer(
-                        builder: (context, ref, child) {
-                          return TextButton(
-                            style: TextButton.styleFrom(
-                              visualDensity: VisualDensity.compact,
-                              tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                              foregroundColor: Theme.of(
-                                context,
-                              ).colorScheme.primary,
-                            ),
-                            onPressed: () =>
-                                unawaited(showRateReviewSheet(context, ref)),
-                            child: Text(
-                              context.l10n.homeRateReview,
-                              style: AppTextStyles.labelSm().copyWith(
-                                fontWeight: FontWeight.w700,
-                                decoration: TextDecoration.underline,
-                              ),
-                            ),
                           );
                         },
                       ),
+                    ],
+                  ),
+                  const SizedBox(height: AppSpacing.md),
+                  const SoftUpdateBanner(),
+                  const DataRestoreBanner(),
+                  const PushDeniedBanner(compact: true),
+                  Consumer(
+                    builder: (context, ref, _) {
+                      final journey = ref.watch(homeActivationJourneyProvider);
+                      final state = journey.asData?.value ?? journey.value;
+                      return TodayHubSection(
+                        activationJourney: state,
+                        activationJourneyLoading:
+                            journey.isLoading && !journey.hasValue,
+                      );
+                    },
+                  ),
+                  const SizedBox(height: AppSpacing.md),
+                  // Own section: hidden unless sales are on or the user owns a series.
+                  const TestSeriesHomeCard(),
+                  // Renders nothing unless Remote Config allows War; it owns
+                  // its own bottom gap, so no spacer follows it here.
+                  const DailyWarHomeCard(),
+                  // Practice section: PYQ carousel above Subjects
+                  Consumer(
+                    builder: (context, ref, _) {
+                      final journey = ref.watch(homeActivationJourneyProvider);
+                      final secondary = journey.maybeWhen(
+                        data: (s) => s.shouldShowChecklist,
+                        orElse: () => false,
+                      );
+                      return _PracticeSection(
+                        borderColor: borderColor,
+                        secondary: secondary,
+                      );
+                    },
+                  ),
+                  // Trap Patterns — immediately after practice, always visible
+                  home.when(
+                    loading: () => const SizedBox.shrink(),
+                    error: (_, _) => const SizedBox.shrink(),
+                    data: (h) => h.revisionTrapCount > 0
+                        ? Padding(
+                            padding: const EdgeInsets.only(top: AppSpacing.md),
+                            child: _TrapPatternsCard(
+                              trapCount: h.revisionTrapCount,
+                              borderColor: borderColor,
+                            ),
+                          )
+                        : const SizedBox.shrink(),
+                  ),
+                  const SizedBox(height: AppSpacing.md),
+                  home.when(
+                    loading: () {
+                      if (!past200ms.value) {
+                        return SizedBox(
+                          height: 120,
+                          child: Center(
+                            child: SizedBox(
+                              width: 24,
+                              height: 24,
+                              child: CircularProgressIndicator(
+                                strokeWidth: 2,
+                                color: AppColors.primary,
+                              ),
+                            ),
+                          ),
+                        );
+                      }
+                      return _HeaderLoading(borderColor: borderColor);
+                    },
+                    error: (e, st) => Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        OutlinedButton(
+                          onPressed: () => ref.invalidate(homeStateProvider),
+                          child: Text(
+                            context.l10n.commonRetry,
+                            style: AppTextStyles.label(),
+                          ),
+                        ),
+                      ],
                     ),
-                    const SizedBox(height: AppSpacing.sm),
-                  ],
-                ),
+                    data: (h) {
+                      return Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          HomePageVideoBanner(borderColor: borderColor),
+                          const SizedBox(height: AppSpacing.md),
+                          const PushDeniedBanner(reportShown: false),
+                          _QuickPracticeSection(borderColor: borderColor),
+                        ],
+                      );
+                    },
+                  ),
+                  const SizedBox(height: AppSpacing.lg),
+                  const Center(
+                    child: ContactUsTextButton(showRateReviewCta: false),
+                  ),
+                  Center(
+                    child: Consumer(
+                      builder: (context, ref, child) {
+                        return TextButton(
+                          style: TextButton.styleFrom(
+                            visualDensity: VisualDensity.compact,
+                            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                            foregroundColor: Theme.of(
+                              context,
+                            ).colorScheme.primary,
+                          ),
+                          onPressed: () =>
+                              unawaited(showRateReviewSheet(context, ref)),
+                          child: Text(
+                            context.l10n.homeRateReview,
+                            style: AppTextStyles.labelSm().copyWith(
+                              fontWeight: FontWeight.w700,
+                              decoration: TextDecoration.underline,
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                  const SizedBox(height: AppSpacing.sm),
+                ],
               ),
             ),
           ),
-          if (killBlocked) const AppUpdateKillSwitchOverlay(),
-        ],
+        ),
+        if (killBlocked) const AppUpdateKillSwitchOverlay(),
+      ],
     );
   }
 
@@ -1072,7 +1064,9 @@ class _SubjectGrid extends ConsumerWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            secondary ? context.l10n.homePickAnySubject : context.l10n.homeSubjects,
+            secondary
+                ? context.l10n.homePickAnySubject
+                : context.l10n.homeSubjects,
             style: AppTextStyles.caption().copyWith(
               color: scheme.onSurfaceVariant,
               letterSpacing: secondary ? 0.8 : 0.6,

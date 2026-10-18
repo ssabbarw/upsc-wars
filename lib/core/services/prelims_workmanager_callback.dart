@@ -8,7 +8,10 @@ import 'prelims_surfaces_refresh.dart';
 
 @pragma('vm:entry-point')
 void prelimsWorkmanagerCallbackDispatcher() {
-  Workmanager().executeTask((String task, Map<String, dynamic>? inputData) async {
+  Workmanager().executeTask((
+    String task,
+    Map<String, dynamic>? inputData,
+  ) async {
     WidgetsFlutterBinding.ensureInitialized();
     try {
       await PrelimsSurfacesRefresh.refreshAllSurfaces();
@@ -17,7 +20,9 @@ void prelimsWorkmanagerCallbackDispatcher() {
       if (!kIsWeb) {
         try {
           await Firebase.initializeApp();
-          await FirebaseCrashlytics.instance.setCrashlyticsCollectionEnabled(true);
+          await FirebaseCrashlytics.instance.setCrashlyticsCollectionEnabled(
+            true,
+          );
           await FirebaseCrashlytics.instance.recordError(
             e,
             st,

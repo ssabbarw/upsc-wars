@@ -19,7 +19,9 @@ void main() {
   });
 
   Future<void> seedQuestion(String uuid) async {
-    await db.into(db.questions).insert(
+    await db
+        .into(db.questions)
+        .insert(
           QuestionsCompanion.insert(
             uuid: uuid,
             subject: 'polity',
@@ -42,7 +44,9 @@ void main() {
     String? confidence,
     int? timeSpentSecs,
   }) async {
-    await db.into(db.sessions).insert(
+    await db
+        .into(db.sessions)
+        .insert(
           SessionsCompanion.insert(
             id: sessionId,
             createdAt: DateTime.utc(2026, 1, 1),
@@ -53,7 +57,9 @@ void main() {
             isTimed: false,
           ),
         );
-    await db.into(db.sessionQuestions).insert(
+    await db
+        .into(db.sessionQuestions)
+        .insert(
           SessionQuestionsCompanion.insert(
             id: attemptId,
             sessionId: sessionId,
@@ -70,38 +76,41 @@ void main() {
     return sessionId;
   }
 
-  test('persistAttemptsOnSessionComplete writes records and marks unsynced',
-      () async {
-    await seedQuestion('q1');
-    const sessionId = 's1';
-    await seedInProgressSession(
-      sessionId: sessionId,
-      attemptId: 'a1',
-      questionUuid: 'q1',
-      status: 'correct',
-      confidence: AnswerConfidence.verySure,
-      timeSpentSecs: 30,
-    );
-    await db.sessionsDao.updateSessionStatus(sessionId, 'completed');
-    await db.sessionsDao.updateSessionCompletedAt(
-      sessionId,
-      DateTime.utc(2026, 1, 2),
-    );
+  test(
+    'persistAttemptsOnSessionComplete writes records and marks unsynced',
+    () async {
+      await seedQuestion('q1');
+      const sessionId = 's1';
+      await seedInProgressSession(
+        sessionId: sessionId,
+        attemptId: 'a1',
+        questionUuid: 'q1',
+        status: 'correct',
+        confidence: AnswerConfidence.verySure,
+        timeSpentSecs: 30,
+      );
+      await db.sessionsDao.updateSessionStatus(sessionId, 'completed');
+      await db.sessionsDao.updateSessionCompletedAt(
+        sessionId,
+        DateTime.utc(2026, 1, 2),
+      );
 
-    await service.persistAttemptsOnSessionComplete(sessionId);
+      await service.persistAttemptsOnSessionComplete(sessionId);
 
-    final records =
-        await db.questionAttemptRecordsDao.getBySessionId(sessionId);
-    expect(records, hasLength(1));
-    expect(records.single.questionId, 'q1');
-    expect(records.single.isCorrect, isTrue);
-    expect(records.single.isSure, isTrue);
-    expect(records.single.timeTakenSeconds, 30);
-    expect(records.single.skipped, isFalse);
+      final records = await db.questionAttemptRecordsDao.getBySessionId(
+        sessionId,
+      );
+      expect(records, hasLength(1));
+      expect(records.single.questionId, 'q1');
+      expect(records.single.isCorrect, isTrue);
+      expect(records.single.isSure, isTrue);
+      expect(records.single.timeTakenSeconds, 30);
+      expect(records.single.skipped, isFalse);
 
-    final session = await db.sessionsDao.getSessionById(sessionId);
-    expect(session?.synced, isFalse);
-  });
+      final session = await db.sessionsDao.getSessionById(sessionId);
+      expect(session?.synced, isFalse);
+    },
+  );
 
   test('persistAttemptsOnSessionComplete is idempotent', () async {
     await seedQuestion('q1');
@@ -121,25 +130,29 @@ void main() {
     await service.persistAttemptsOnSessionComplete(sessionId);
     await service.persistAttemptsOnSessionComplete(sessionId);
 
-    final records =
-        await db.questionAttemptRecordsDao.getBySessionId(sessionId);
+    final records = await db.questionAttemptRecordsDao.getBySessionId(
+      sessionId,
+    );
     expect(records, hasLength(1));
   });
 
-  test('only UUID-shaped question ids are synced (matches firestore.rules)', () {
-    expect(
-      QuestionStatsSyncService.isSyncableQuestionId(
-        '6148ef93-2c7b-4e62-8dee-18384b13e3f5',
-      ),
-      isTrue,
-    );
-    // Malformed ids that ship in the bundled bank.
-    expect(
-      QuestionStatsSyncService.isSyncableQuestionId(
-        'e5f6a7b8-c9d0-4e1f-2a3b-4c5d6e7f8g9h',
-      ),
-      isFalse,
-    );
-    expect(QuestionStatsSyncService.isSyncableQuestionId('qu1'), isFalse);
-  });
+  test(
+    'only UUID-shaped question ids are synced (matches firestore.rules)',
+    () {
+      expect(
+        QuestionStatsSyncService.isSyncableQuestionId(
+          '6148ef93-2c7b-4e62-8dee-18384b13e3f5',
+        ),
+        isTrue,
+      );
+      // Malformed ids that ship in the bundled bank.
+      expect(
+        QuestionStatsSyncService.isSyncableQuestionId(
+          'e5f6a7b8-c9d0-4e1f-2a3b-4c5d6e7f8g9h',
+        ),
+        isFalse,
+      );
+      expect(QuestionStatsSyncService.isSyncableQuestionId('qu1'), isFalse);
+    },
+  );
 }

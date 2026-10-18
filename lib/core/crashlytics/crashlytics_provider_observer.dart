@@ -15,11 +15,7 @@ final class CrashlyticsProviderObserver extends ProviderObserver {
     Object error,
     StackTrace stackTrace,
   ) {
-    _report(
-      error,
-      stackTrace,
-      'riverpod_provider:${context.provider}',
-    );
+    _report(error, stackTrace, 'riverpod_provider:${context.provider}');
   }
 
   void _report(Object error, StackTrace stackTrace, String reason) {

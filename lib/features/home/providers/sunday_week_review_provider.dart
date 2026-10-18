@@ -21,30 +21,30 @@ class SundayWeekReviewState {
 /// Sunday-only: mistakes from Mon–Sat of this week, ready to re-attempt.
 final sundayWeekReviewProvider =
     FutureProvider.autoDispose<SundayWeekReviewState?>((ref) async {
-  final activation = await ref.watch(homeActivationProvider.future);
-  if (!activation.activationComplete) return null;
+      final activation = await ref.watch(homeActivationProvider.future);
+      if (!activation.activationComplete) return null;
 
-  final ist = DailyWarSchedule.nowIst();
-  if (!TodayHero.isSundayHub(ist)) return null;
+      final ist = DailyWarSchedule.nowIst();
+      if (!TodayHero.isSundayHub(ist)) return null;
 
-  final db = ref.watch(userDatabaseProvider);
-  final hub = TodayHero.hubDate(ist);
-  final start = SundayWeekReview.weekStartMonday(hub);
-  final end = SundayWeekReview.weekEndExclusive(hub);
+      final db = ref.watch(userDatabaseProvider);
+      final hub = TodayHero.hubDate(ist);
+      final start = SundayWeekReview.weekStartMonday(hub);
+      final end = SundayWeekReview.weekEndExclusive(hub);
 
-  final uuids = await SundayWeekReview.queryWrongUuids(
-    db,
-    startInclusive: start,
-    endExclusive: end,
-  );
-  final completedToday =
-      await db.sessionsDao.hasCompletedSundayWeekReviewBetween(
-    startInclusive: TodayHero.hubWindowStart(ist),
-    endExclusive: TodayHero.hubWindowEnd(ist),
-  );
+      final uuids = await SundayWeekReview.queryWrongUuids(
+        db,
+        startInclusive: start,
+        endExclusive: end,
+      );
+      final completedToday = await db.sessionsDao
+          .hasCompletedSundayWeekReviewBetween(
+            startInclusive: TodayHero.hubWindowStart(ist),
+            endExclusive: TodayHero.hubWindowEnd(ist),
+          );
 
-  return SundayWeekReviewState(
-    uuids: uuids,
-    completedToday: completedToday,
-  );
-});
+      return SundayWeekReviewState(
+        uuids: uuids,
+        completedToday: completedToday,
+      );
+    });

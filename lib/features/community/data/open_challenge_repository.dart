@@ -78,9 +78,7 @@ class OpenChallengeRepository {
       }
       final creator = detail.creatorEntry();
       final postedName = creator?.profile.name ?? 'Warrior';
-      final postedPhoto =
-          creator?.profile.photoUrl ??
-          '';
+      final postedPhoto = creator?.profile.photoUrl ?? '';
       out.add(
         OpenChallengeListTileModel(
           id: detail.id,

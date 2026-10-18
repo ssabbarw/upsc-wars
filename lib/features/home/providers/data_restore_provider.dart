@@ -60,7 +60,8 @@ class DataRestoreController extends Notifier<RestoreProgress> {
 
   /// Hides the "done" card.
   void dismiss() {
-    if (state.phase == RestorePhase.done || state.phase == RestorePhase.failed) {
+    if (state.phase == RestorePhase.done ||
+        state.phase == RestorePhase.failed) {
       state = const RestoreProgress();
     }
   }

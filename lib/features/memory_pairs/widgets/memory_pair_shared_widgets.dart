@@ -5,6 +5,7 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../l10n/l10n.dart';
 
 class MemoryPairStars extends StatelessWidget {
   const MemoryPairStars({
@@ -151,11 +152,11 @@ class MemoryPairSurfaceCard extends StatelessWidget {
 }
 
 String memoryPairRelativePlayed(DateTime? at) {
-  if (at == null) return 'Never played';
+  if (at == null) return appL10n.mpNeverPlayed;
   final diff = DateTime.now().difference(at);
-  if (diff.inDays == 0) return 'Today';
-  if (diff.inDays == 1) return 'Yesterday';
-  if (diff.inDays < 7) return '${diff.inDays} days ago';
-  if (diff.inDays < 30) return '${diff.inDays ~/ 7} wk ago';
-  return '${diff.inDays ~/ 30} mo ago';
+  if (diff.inDays == 0) return appL10n.mpToday;
+  if (diff.inDays == 1) return appL10n.mpYesterday;
+  if (diff.inDays < 7) return appL10n.mpDaysAgo(diff.inDays);
+  if (diff.inDays < 30) return appL10n.mpWkAgo(diff.inDays ~/ 7);
+  return appL10n.mpMoAgo(diff.inDays ~/ 30);
 }

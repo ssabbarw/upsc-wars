@@ -70,25 +70,26 @@ void main() {
     expect(items[2].caughtCount, 0);
   });
 
-  test('keeps unknown trap types from user data at the end of caught group', () {
-    final items = TrapPatternCatalog.merge(
-      descriptions: {
-        'entity-swap': _desc('entity-swap', 'Entity Swap', 'a'),
-      },
-      groups: const [
-        TrapPatternGroup(
-          trapType: 'mystery-trap',
-          questionCount: 2,
-          questionUuids: ['q1', 'q2'],
-        ),
-      ],
-    );
+  test(
+    'keeps unknown trap types from user data at the end of caught group',
+    () {
+      final items = TrapPatternCatalog.merge(
+        descriptions: {'entity-swap': _desc('entity-swap', 'Entity Swap', 'a')},
+        groups: const [
+          TrapPatternGroup(
+            trapType: 'mystery-trap',
+            questionCount: 2,
+            questionUuids: ['q1', 'q2'],
+          ),
+        ],
+      );
 
-    expect(items.map((i) => i.trapType).toList(), [
-      'mystery-trap',
-      'entity-swap',
-    ]);
-    expect(items[0].displayName, 'Mystery Trap');
-    expect(items[1].caughtCount, 0);
-  });
+      expect(items.map((i) => i.trapType).toList(), [
+        'mystery-trap',
+        'entity-swap',
+      ]);
+      expect(items[0].displayName, 'Mystery Trap');
+      expect(items[1].caughtCount, 0);
+    },
+  );
 }

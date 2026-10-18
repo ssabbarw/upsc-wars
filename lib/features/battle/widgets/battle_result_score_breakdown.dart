@@ -7,6 +7,7 @@ import 'package:upsc_wars/core/theme/app_radius.dart';
 import 'package:upsc_wars/core/theme/app_spacing.dart';
 import 'package:upsc_wars/core/theme/app_text_styles.dart';
 import 'package:upsc_wars/features/battle/domain/entities/battle_result_payload.dart';
+import '../../../l10n/l10n.dart';
 
 ({int correct, int wrong, int unanswered, int total}) _outcomeCounts(
   List<bool?> outcomes,
@@ -31,22 +32,23 @@ import 'package:upsc_wars/features/battle/domain/entities/battle_result_payload.
   );
 }
 
-String _firstName(String raw, {String fallback = 'Opponent'}) {
+String _firstName(String raw, {String? fallback}) {
   final parts = raw
       .trim()
       .split(RegExp(r'\s+'))
       .where((e) => e.isNotEmpty)
       .toList();
-  if (parts.isEmpty) return fallback;
+  if (parts.isEmpty) return fallback ?? appL10n.commonOpponent;
   return parts.first;
 }
 
 String _accuracyLine(({int correct, int wrong, int unanswered, int total}) c) {
   final attempted = c.correct + c.wrong;
-  if (attempted <= 0) return 'no scored attempts';
+  if (attempted <= 0) return appL10n.bsbNoAttempts;
   final pct = (100 * c.correct / attempted).round();
-  return '$pct% accuracy · ${c.correct} correct, ${c.wrong} wrong'
-      '${c.unanswered > 0 ? ', ${c.unanswered} unanswered' : ''}';
+  return c.unanswered > 0
+      ? appL10n.bsbAccUn(pct, c.correct, c.wrong, c.unanswered)
+      : appL10n.bsbAcc(pct, c.correct, c.wrong);
 }
 
 String _calcSnippet(({int correct, int wrong, int unanswered, int total}) c) {
@@ -56,7 +58,7 @@ String _calcSnippet(({int correct, int wrong, int unanswered, int total}) c) {
   return '+$pos / −$neg';
 }
 
-/// Head-to-head score summary card ("How you stacked up").
+/// Head-to-head score summary card (context.l10n.bsbStacked).
 class BattleResultScoreComparison extends StatelessWidget {
   const BattleResultScoreComparison({super.key, required this.payload});
 
@@ -76,7 +78,10 @@ class BattleResultScoreComparison extends StatelessWidget {
 
     final youWon = tie || ahead;
     final oppWon = tie || !ahead;
-    final playerName = _firstName(payload.playerName, fallback: 'You');
+    final playerName = _firstName(
+      payload.playerName,
+      fallback: appL10n.commonYou,
+    );
     final opponentName = _firstName(payload.opponentName);
 
     final cardBg = isDark ? AppColors.surfaceSecondaryDark : Colors.white;
@@ -93,9 +98,7 @@ class BattleResultScoreComparison extends StatelessWidget {
       child: Stack(
         children: [
           Positioned.fill(
-            child: CustomPaint(
-              painter: _ConfettiPainter(isDark: isDark),
-            ),
+            child: CustomPaint(painter: _ConfettiPainter(isDark: isDark)),
           ),
           Padding(
             padding: const EdgeInsets.fromLTRB(
@@ -118,7 +121,7 @@ class BattleResultScoreComparison extends StatelessWidget {
                           scheme: scheme,
                           isWinner: youWon && !tie,
                           isLoser: oppWon && !tie,
-                          roleLabel: 'YOU',
+                          roleLabel: context.l10n.bsbYouCaps,
                           name: playerName,
                           score: mine,
                         ),
@@ -142,51 +145,47 @@ class BattleResultScoreComparison extends StatelessWidget {
                     ],
                   ),
                 ),
-                    const SizedBox(height: AppSpacing.md),
-                    Divider(height: 1, color: borderCol.withValues(alpha: 0.7)),
-                    const SizedBox(height: AppSpacing.md),
-                    IntrinsicHeight(
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
-                          Expanded(
-                            child: _PlayerStatColumn(
-                              scheme: scheme,
-                              isPositive: youWon,
-                              label: 'You',
-                              score: mine,
-                              calc: _calcSnippet(you),
-                              accuracy: _accuracyLine(you),
-                            ),
-                          ),
-                          Container(
-                            width: 1,
-                            color: borderCol.withValues(alpha: 0.7),
-                          ),
-                          Expanded(
-                            child: _PlayerStatColumn(
-                              scheme: scheme,
-                              isPositive: oppWon,
-                              label: opponentName,
-                              score: theirs,
-                              calc: _calcSnippet(opp),
-                              accuracy: _accuracyLine(opp),
-                            ),
-                          ),
-                        ],
+                const SizedBox(height: AppSpacing.md),
+                Divider(height: 1, color: borderCol.withValues(alpha: 0.7)),
+                const SizedBox(height: AppSpacing.md),
+                IntrinsicHeight(
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Expanded(
+                        child: _PlayerStatColumn(
+                          scheme: scheme,
+                          isPositive: youWon,
+                          label: appL10n.commonYou,
+                          score: mine,
+                          calc: _calcSnippet(you),
+                          accuracy: _accuracyLine(you),
+                        ),
                       ),
-                    ),
-                    const SizedBox(height: AppSpacing.md),
-                    _DeltaSummaryPill(
-                      tie: tie,
-                      ahead: ahead,
-                      delta: delta.abs(),
-                    ),
-                  ],
+                      Container(
+                        width: 1,
+                        color: borderCol.withValues(alpha: 0.7),
+                      ),
+                      Expanded(
+                        child: _PlayerStatColumn(
+                          scheme: scheme,
+                          isPositive: oppWon,
+                          label: opponentName,
+                          score: theirs,
+                          calc: _calcSnippet(opp),
+                          accuracy: _accuracyLine(opp),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-            ],
+                const SizedBox(height: AppSpacing.md),
+                _DeltaSummaryPill(tie: tie, ahead: ahead, delta: delta.abs()),
+              ],
+            ),
           ),
+        ],
+      ),
     );
   }
 }
@@ -216,13 +215,12 @@ class BattleResultOutcomeBanner extends StatelessWidget {
 
     final scheme = Theme.of(context).colorScheme;
     final (title, subtitle) = tie
-        ? ('Neck and neck!', 'It is a tie. That was intense.')
-        : ('So close!', 'You lost this one. Come back stronger.');
+        ? (context.l10n.bsbTieTitle, context.l10n.bsbTieSub)
+        : (context.l10n.bsbLoseTitle, context.l10n.bsbLoseSub);
 
-    final statusLine = spectateVerdict ??
-        (tie
-            ? 'Scores are tied on points.'
-            : 'Your opponent is ahead on points (for now).');
+    final statusLine =
+        spectateVerdict ??
+        (tie ? context.l10n.bsbTiedPoints : context.l10n.bsoOppAheadNow);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -267,11 +265,7 @@ class _VictoryBanner extends StatelessWidget {
         gradient: const LinearGradient(
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
-          colors: [
-            Color(0xFF0A4D3C),
-            Color(0xFF085041),
-            Color(0xFF063D32),
-          ],
+          colors: [Color(0xFF0A4D3C), Color(0xFF085041), Color(0xFF063D32)],
         ),
         boxShadow: [
           BoxShadow(
@@ -286,10 +280,7 @@ class _VictoryBanner extends StatelessWidget {
         children: [
           Positioned.fill(
             child: CustomPaint(
-              painter: _ConfettiPainter(
-                isDark: true,
-                dense: true,
-              ),
+              painter: _ConfettiPainter(isDark: true, dense: true),
             ),
           ),
           Positioned(
@@ -327,8 +318,9 @@ class _VictoryBanner extends StatelessWidget {
                     Icon(
                       Icons.spa_outlined,
                       size: 22,
-                      color: AppColors.onboardingScoreMutedGreen
-                          .withValues(alpha: 0.85),
+                      color: AppColors.onboardingScoreMutedGreen.withValues(
+                        alpha: 0.85,
+                      ),
                     ),
                     const SizedBox(width: AppSpacing.sm),
                     Icon(
@@ -340,14 +332,15 @@ class _VictoryBanner extends StatelessWidget {
                     Icon(
                       Icons.spa_outlined,
                       size: 22,
-                      color: AppColors.onboardingScoreMutedGreen
-                          .withValues(alpha: 0.85),
+                      color: AppColors.onboardingScoreMutedGreen.withValues(
+                        alpha: 0.85,
+                      ),
                     ),
                   ],
                 ),
                 const SizedBox(height: AppSpacing.sm),
                 Text(
-                  'Victory unlocked!',
+                  context.l10n.bsbVictory,
                   style: AppTextStyles.h1().copyWith(
                     color: Colors.white,
                     fontWeight: FontWeight.w900,
@@ -356,7 +349,7 @@ class _VictoryBanner extends StatelessWidget {
                 ),
                 const SizedBox(height: AppSpacing.xs),
                 Text(
-                  'You outplayed your opponent this round.',
+                  context.l10n.bsbOutplayed,
                   style: AppTextStyles.bodySm().copyWith(
                     color: Colors.white.withValues(alpha: 0.88),
                   ),
@@ -385,8 +378,7 @@ class _VictoryBanner extends StatelessWidget {
                       ),
                       const SizedBox(width: AppSpacing.xs),
                       Text(
-                        spectateVerdict ??
-                            'You are ahead on points (for now).',
+                        spectateVerdict ?? context.l10n.bsoYouAheadNow,
                         style: AppTextStyles.bodySm().copyWith(
                           color: Colors.white.withValues(alpha: 0.95),
                           fontWeight: FontWeight.w600,
@@ -415,10 +407,14 @@ class _StackedUpHeader extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Icon(Icons.spa_outlined, size: 18, color: accent.withValues(alpha: 0.8)),
+        Icon(
+          Icons.spa_outlined,
+          size: 18,
+          color: accent.withValues(alpha: 0.8),
+        ),
         const SizedBox(width: AppSpacing.sm),
         Text(
-          'How you stacked up',
+          context.l10n.bsbStacked,
           style: AppTextStyles.label().copyWith(
             letterSpacing: 0.2,
             fontWeight: FontWeight.w600,
@@ -426,7 +422,11 @@ class _StackedUpHeader extends StatelessWidget {
           ),
         ),
         const SizedBox(width: AppSpacing.sm),
-        Icon(Icons.spa_outlined, size: 18, color: accent.withValues(alpha: 0.8)),
+        Icon(
+          Icons.spa_outlined,
+          size: 18,
+          color: accent.withValues(alpha: 0.8),
+        ),
       ],
     );
   }
@@ -499,9 +499,7 @@ class _ScorePillar extends StatelessWidget {
         ? loseAccent
         : scheme.primary;
     final bg = isWinner
-        ? (isDark
-              ? winAccent.withValues(alpha: 0.14)
-              : AppColors.correctBg)
+        ? (isDark ? winAccent.withValues(alpha: 0.14) : AppColors.correctBg)
         : isLoser
         ? (isDark ? loseAccent.withValues(alpha: 0.12) : AppColors.wrongBg)
         : scheme.surfaceContainerHighest.withValues(alpha: isDark ? 0.35 : 0.5);
@@ -518,9 +516,7 @@ class _ScorePillar extends StatelessWidget {
       ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(AppRadius.lg),
-        border: Border.all(
-          color: accent.withValues(alpha: borderAlpha),
-        ),
+        border: Border.all(color: accent.withValues(alpha: borderAlpha)),
         color: bg,
       ),
       child: Column(
@@ -665,25 +661,23 @@ class _DeltaSummaryPill extends StatelessWidget {
 
     if (tie) {
       accent = AppColors.gray600;
-      bg = isDark
-          ? AppColors.gray800.withValues(alpha: 0.5)
-          : AppColors.gray50;
+      bg = isDark ? AppColors.gray800.withValues(alpha: 0.5) : AppColors.gray50;
       icon = Icons.horizontal_rule_rounded;
-      text = 'Tie on points';
+      text = context.l10n.bsbTiePts;
     } else if (ahead) {
       accent = winAccent;
       bg = isDark
           ? winAccent.withValues(alpha: 0.14)
           : winAccent.withValues(alpha: 0.1);
       icon = Icons.north_rounded;
-      text = 'You were ahead by ${delta.toStringAsFixed(2)} points';
+      text = context.l10n.bsbAheadBy(delta.toStringAsFixed(2));
     } else {
       accent = loseAccent;
       bg = isDark
           ? loseAccent.withValues(alpha: 0.14)
           : loseAccent.withValues(alpha: 0.08);
       icon = Icons.south_rounded;
-      text = 'They led by ${delta.toStringAsFixed(2)} points';
+      text = context.l10n.bsbLedBy(delta.toStringAsFixed(2));
     }
 
     return Container(
@@ -717,20 +711,7 @@ class _DeltaSummaryPill extends StatelessWidget {
                   color: accent,
                   fontWeight: FontWeight.w500,
                 ),
-                children: tie
-                    ? [TextSpan(text: text)]
-                    : [
-                        TextSpan(
-                          text: ahead
-                              ? 'You were ahead by '
-                              : 'They led by ',
-                        ),
-                        TextSpan(
-                          text: delta.toStringAsFixed(2),
-                          style: const TextStyle(fontWeight: FontWeight.w700),
-                        ),
-                        const TextSpan(text: ' points'),
-                      ],
+                children: _boldDeltaSpans(text, delta, tie),
               ),
               textAlign: TextAlign.center,
             ),
@@ -770,10 +751,7 @@ class _ConfettiPainter extends CustomPainter {
         ..color = piece.color.withValues(alpha: alpha)
         ..style = PaintingStyle.fill;
 
-      final center = Offset(
-        piece.x * size.width,
-        piece.y * size.height,
-      );
+      final center = Offset(piece.x * size.width, piece.y * size.height);
       canvas.save();
       canvas.translate(center.dx, center.dy);
       canvas.rotate(piece.rotation);
@@ -812,4 +790,18 @@ class _ConfettiPiece {
   final double h;
   final double rotation;
   final Color color;
+}
+
+List<InlineSpan> _boldDeltaSpans(String text, double delta, bool tie) {
+  final d = delta.toStringAsFixed(2);
+  final i = text.indexOf(d);
+  if (tie || i < 0) return [TextSpan(text: text)];
+  return [
+    TextSpan(text: text.substring(0, i)),
+    TextSpan(
+      text: d,
+      style: const TextStyle(fontWeight: FontWeight.w700),
+    ),
+    TextSpan(text: text.substring(i + d.length)),
+  ];
 }

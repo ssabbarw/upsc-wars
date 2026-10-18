@@ -74,7 +74,9 @@ class SeriesIntroTab extends ConsumerWidget {
             onSeeAll: () => tabController.animateTo(SeriesBrowseTab.pyqAndCa),
           ),
           const SizedBox(height: AppSpacing.xxl),
-          IntroExplanations(onSeeExample: () => unawaited(openSampleQuestion())),
+          IntroExplanations(
+            onSeeExample: () => unawaited(openSampleQuestion()),
+          ),
           const SizedBox(height: AppSpacing.xxl),
           IntroSmartTools(
             onSeeAnalysisExample: () => unawaited(openAnalysisExample()),

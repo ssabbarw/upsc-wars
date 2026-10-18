@@ -14,7 +14,8 @@ double sheetBottomPadding(
   double base = 0,
   bool includeKeyboard = true,
 }) {
-  final keyboard =
-      includeKeyboard ? MediaQuery.viewInsetsOf(context).bottom : 0.0;
+  final keyboard = includeKeyboard
+      ? MediaQuery.viewInsetsOf(context).bottom
+      : 0.0;
   return keyboard + paddedBottomInset(context, base);
 }

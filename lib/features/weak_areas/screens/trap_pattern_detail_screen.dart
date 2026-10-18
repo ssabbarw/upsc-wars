@@ -16,6 +16,7 @@ import '../../../core/theme/app_text_styles.dart';
 import '../../../core/theme/reading_font_scale.dart';
 import '../widgets/trap_example_sheet.dart';
 import '../widgets/trap_pattern_visual.dart';
+import '../../../l10n/l10n.dart';
 
 class TrapPatternDetailScreen extends HookConsumerWidget {
   const TrapPatternDetailScreen({super.key, required this.trapType});
@@ -60,7 +61,7 @@ class TrapPatternDetailScreen extends HookConsumerWidget {
         child: Center(
           child: OutlinedButton(
             onPressed: () => ref.invalidate(weakTrapGroupsProvider),
-            child: const Text('Retry'),
+            child: Text(context.l10n.commonRetry),
           ),
         ),
       ),
@@ -124,7 +125,7 @@ class TrapPatternDetailScreen extends HookConsumerWidget {
                                 color: AppColors.onPrimary,
                               ),
                             )
-                          : const Text('Practice This Trap Type'),
+                          : Text(context.l10n.weakPracticeTrap),
                     ),
                   ),
                 )
@@ -229,8 +230,8 @@ class TrapPatternDetailScreen extends HookConsumerWidget {
           ),
           child: Text(
             caughtCount == 0
-                ? 'Caught you 0× — not enough data yet'
-                : '$caughtCount ${caughtCount == 1 ? 'question' : 'questions'} caught by this trap',
+                ? context.l10n.trapsCaughtZero
+                : context.l10n.trapsCaughtByThis(caughtCount),
             style: AppTextStyles.bodySm().copyWith(
               color: scheme.onSurfaceVariant,
             ),
@@ -248,7 +249,7 @@ class TrapPatternDetailScreen extends HookConsumerWidget {
                 blurb: blurb,
               ),
             ),
-            child: const Text('See example'),
+            child: Text(context.l10n.trapsSeeExample),
           ),
         ),
         if (stems.isNotEmpty) const SizedBox(height: AppSpacing.sm),

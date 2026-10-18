@@ -7,7 +7,8 @@ class WeeklyReportService {
     // Placeholder: delta / improved / slipping from week-over-week can be added later.
     return WeeklyMentorReport(
       readinessDelta: null,
-      biggestRiskLine: 'Keep logging attempts with confidence to sharpen trends.',
+      biggestRiskLine:
+          'Keep logging attempts with confidence to sharpen trends.',
     );
   }
 }

@@ -8,6 +8,7 @@ import '../domain/daily_war_badges.dart';
 import '../domain/daily_war_models.dart';
 import '../theme/daily_war_theme.dart';
 import 'daily_war_badge_chip.dart';
+import '../../../l10n/l10n.dart';
 
 /// Profile bottom sheet for a leaderboard warrior — name + badges.
 Future<void> showDailyWarWarriorSheet({
@@ -48,7 +49,9 @@ class _WarriorSheet extends StatelessWidget {
     final scheme = Theme.of(context).colorScheme;
     final name = entry.displayName.isEmpty
         ? (isMe ? 'You' : 'Warrior')
-        : (isMe ? '${entry.displayName} (you)' : entry.displayName);
+        : (isMe
+              ? context.l10n.resultsNameYou(entry.displayName)
+              : entry.displayName);
     final initials = _initials(
       entry.displayName.isEmpty ? 'YO' : entry.displayName,
     );
@@ -154,7 +157,7 @@ class _WarriorSheet extends StatelessWidget {
                 const SizedBox(height: 12),
                 if (displayAwards.isEmpty)
                   Text(
-                    'No badges earned this night yet.',
+                    context.l10n.dwNoBadgesNight,
                     style: AppTextStyles.bodySm().copyWith(
                       color: scheme.onSurfaceVariant,
                     ),
@@ -174,8 +177,7 @@ class _WarriorSheet extends StatelessWidget {
                   ),
                 const SizedBox(height: 8),
                 Text(
-                  'Consistency tiers climb over 30 War nights. Miss two nights '
-                  'in a row and you fall one tier.',
+                  context.l10n.dwTiersNote,
                   style: AppTextStyles.caption().copyWith(
                     color: scheme.onSurfaceVariant,
                     height: 1.35,

@@ -17,6 +17,7 @@ import '../../chat/domain/entities/chat_message.dart';
 import '../../chat/domain/entities/chat_runtime_config.dart';
 import '../../chat/providers/chat_providers.dart';
 import '../../community/widgets/admin_bot_label.dart';
+import '../../../l10n/l10n.dart';
 
 // ---------------------------------------------------------------------------
 // Overlay state — activated by BattleResultScreen, cleared on dispose.
@@ -227,19 +228,22 @@ class _BattleChatFab extends HookConsumerWidget {
       useRootNavigator: true,
       builder: (dialogContext) {
         return AlertDialog(
-          title: Text('Close chat?', style: AppTextStyles.h3()),
+          title: Text(
+            dialogContext.l10n.bcfCloseTitle,
+            style: AppTextStyles.h3(),
+          ),
           content: Text(
-            'Are you sure you want to hide this battle chat?',
+            dialogContext.l10n.bcfCloseBody,
             style: AppTextStyles.bodyMd(),
           ),
           actions: [
             TextButton(
               onPressed: () => Navigator.of(dialogContext).pop(false),
-              child: const Text('Cancel'),
+              child: Text(dialogContext.l10n.commonCancel),
             ),
             FilledButton(
               onPressed: () => Navigator.of(dialogContext).pop(true),
-              child: const Text('Close'),
+              child: Text(dialogContext.l10n.commonClose),
             ),
           ],
         );
@@ -321,10 +325,9 @@ class _BattleChatSheet extends HookConsumerWidget {
     useEffect(() {
       if (!rtdbReady) return null;
       unawaited(() async {
-        await ref.read(chatComposerProvider.notifier).ensureThread(
-              chatId: chatId,
-              peerEmail: opponentEmail,
-            );
+        await ref
+            .read(chatComposerProvider.notifier)
+            .ensureThread(chatId: chatId, peerEmail: opponentEmail);
         if (!context.mounted) return;
         ref.read(chatRuntimeConfigProvider.notifier).refresh();
         unawaited(ref.read(chatComposerProvider.notifier).markRead(chatId));
@@ -354,11 +357,7 @@ class _BattleChatSheet extends HookConsumerWidget {
       unawaited(
         ref
             .read(chatServiceProvider)
-            .setOnline(
-              currentUserEmail: email,
-              isOnline: true,
-              config: config,
-            ),
+            .setOnline(currentUserEmail: email, isOnline: true, config: config),
       );
       return () {
         typingTimer.value?.cancel();
@@ -400,7 +399,7 @@ class _BattleChatSheet extends HookConsumerWidget {
         }
       } catch (e) {
         if (context.mounted) {
-          AppToast.showText(context, 'Failed to send: $e');
+          AppToast.showText(context, context.l10n.bcfSendFailed(e.toString()));
         }
       }
     }
@@ -519,7 +518,7 @@ class _BattleChatSheet extends HookConsumerWidget {
                     if (messages.isEmpty) {
                       return Center(
                         child: Text(
-                          'Start the conversation.',
+                          context.l10n.bcfStartConv,
                           style: AppTextStyles.bodyMd().copyWith(
                             color: scheme.onSurfaceVariant,
                           ),
@@ -586,8 +585,9 @@ class _BattleChatSheet extends HookConsumerWidget {
                   },
                   loading: () =>
                       const Center(child: CircularProgressIndicator()),
-                  error: (e, _) =>
-                      Center(child: Text('Could not load messages: $e')),
+                  error: (e, _) => Center(
+                    child: Text(context.l10n.bcfLoadFailed(e.toString())),
+                  ),
                 ),
               ),
               // Input bar
@@ -610,8 +610,8 @@ class _BattleChatSheet extends HookConsumerWidget {
                           minLines: 1,
                           maxLines: 4,
                           textCapitalization: TextCapitalization.sentences,
-                          decoration: const InputDecoration(
-                            hintText: 'Type a message',
+                          decoration: InputDecoration(
+                            hintText: context.l10n.bcfHint,
                             border: OutlineInputBorder(),
                           ),
                         ),

@@ -72,7 +72,9 @@ class _SampleQuestionBody extends HookConsumerWidget {
               label: sample.isCurrentAffairs
                   ? "Yesterday's current affairs"
                   : 'Sample question',
-              tone: sample.isCurrentAffairs ? SeriesTone.blue : SeriesTone.purple,
+              tone: sample.isCurrentAffairs
+                  ? SeriesTone.blue
+                  : SeriesTone.purple,
               icon: sample.isCurrentAffairs
                   ? Icons.newspaper_rounded
                   : Icons.menu_book_rounded,
@@ -92,7 +94,9 @@ class _SampleQuestionBody extends HookConsumerWidget {
         const SizedBox(height: AppSpacing.md),
         Text(
           'This is how every question in the series is explained.',
-          style: AppTextStyles.bodySm().copyWith(color: scheme.onSurfaceVariant),
+          style: AppTextStyles.bodySm().copyWith(
+            color: scheme.onSurfaceVariant,
+          ),
         ),
         const SizedBox(height: AppSpacing.lg),
         Text(content.stem, style: AppTextStyles.question()),
@@ -239,7 +243,8 @@ class _OptionTile extends StatelessWidget {
                 borderRadius: BorderRadius.circular(AppRadius.lg),
                 border: Border.all(
                   color: border,
-                  width: state == _OptionState.correct ||
+                  width:
+                      state == _OptionState.correct ||
                           state == _OptionState.wrong
                       ? 1.4
                       : 0.8,
@@ -294,7 +299,10 @@ class _ResultBanner extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final tone = right ? SeriesTone.green : SeriesTone.red;
-    final c = seriesToneColors(attempted ? tone : SeriesTone.green, isDark: isDark);
+    final c = seriesToneColors(
+      attempted ? tone : SeriesTone.green,
+      isDark: isDark,
+    );
     final label = !attempted
         ? 'Correct answer: $correctLetter'
         : right

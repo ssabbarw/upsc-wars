@@ -108,9 +108,13 @@ class OverallPerformanceService {
       }
     }
 
-    var score = (acc * 0.45 + (n == 0 ? 40.0 : (100 - (dangerCount / n * 100).clamp(0, 100)) * 0.5))
-        .round()
-        .clamp(0, 100);
+    var score =
+        (acc * 0.45 +
+                (n == 0
+                    ? 40.0
+                    : (100 - (dangerCount / n * 100).clamp(0, 100)) * 0.5))
+            .round()
+            .clamp(0, 100);
     if (n < 5) score = 45;
 
     ReadinessBand band;
@@ -126,7 +130,9 @@ class OverallPerformanceService {
       band = ReadinessBand.examReady;
     }
 
-    final bySubject = <String, int>{for (final r in subjAcc) r.read<String>('s'): 0};
+    final bySubject = <String, int>{
+      for (final r in subjAcc) r.read<String>('s'): 0,
+    };
     var cards = <SubjectMentorCard>[];
     for (final e in bySubject.keys) {
       final health = (score * 0.7 + 20).round().clamp(0, 100);

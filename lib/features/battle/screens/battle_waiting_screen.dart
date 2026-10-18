@@ -19,6 +19,7 @@ import 'package:upsc_wars/features/battle/domain/battle_monogram_palette.dart';
 import 'package:upsc_wars/features/community/widgets/admin_bot_label.dart';
 import 'package:upsc_wars/features/home/providers/auth_providers.dart';
 import 'package:upsc_wars/shared/widgets/app_toast.dart';
+import '../../../l10n/l10n.dart';
 
 /// Human-readable room-style id (stable for a given session UUID).
 /// Host wait for human guest to open the invite before [Start battle] is enabled.
@@ -240,19 +241,19 @@ class _BattleWaitingScreenState extends ConsumerState<BattleWaitingScreen> {
       final ok = await showDialog<bool>(
         context: context,
         builder: (ctx) => AlertDialog(
-          title: Text('Leave match?', style: AppTextStyles.h3()),
+          title: Text(context.l10n.bwLeaveTitle, style: AppTextStyles.h3()),
           content: Text(
-            'Your opponent may still be waiting in the lobby.',
+            context.l10n.bwLeaveBody,
             style: AppTextStyles.bodyMd(),
           ),
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(ctx, false),
-              child: const Text('Stay'),
+              child: Text(context.l10n.bwStay),
             ),
             TextButton(
               onPressed: () => Navigator.pop(ctx, true),
-              child: const Text('Leave'),
+              child: Text(context.l10n.testLeave),
             ),
           ],
         ),
@@ -275,7 +276,7 @@ class _BattleWaitingScreenState extends ConsumerState<BattleWaitingScreen> {
       await svc.signalHostStartedBattle(widget.sessionId);
     } catch (_) {
       if (mounted) {
-        AppToast.showText(context, 'Could not start battle. Try again.');
+        AppToast.showText(context, appL10n.bwStartFailed);
       }
     } finally {
       if (mounted) setState(() => _startingBattle = false);
@@ -295,7 +296,7 @@ class _BattleWaitingScreenState extends ConsumerState<BattleWaitingScreen> {
             ? AppColors.surfaceSecondaryDark
             : AppColors.surfaceSecondaryLight,
         appBar: AppBar(
-          title: const Text('Match'),
+          title: Text(context.l10n.bwMatch),
           leading: IconButton(
             icon: const Icon(Icons.arrow_back),
             onPressed: () => unawaited(_leaveMatchScreen()),
@@ -460,7 +461,7 @@ class _BattleWaitBotCountdownState extends State<_BattleWaitBotCountdown>
                         ),
                         const SizedBox(height: AppSpacing.lg),
                         Text(
-                          'Battle ID',
+                          context.l10n.bwBattleId,
                           style: AppTextStyles.labelSm().copyWith(
                             color: scheme.onSurfaceVariant,
                           ),
@@ -483,7 +484,7 @@ class _BattleWaitBotCountdownState extends State<_BattleWaitBotCountdown>
                         ),
                         const SizedBox(height: AppSpacing.md),
                         Text(
-                          '2 joined',
+                          context.l10n.bw2Joined,
                           style: AppTextStyles.label().copyWith(
                             color: scheme.onSurface,
                           ),
@@ -502,7 +503,7 @@ class _BattleWaitBotCountdownState extends State<_BattleWaitBotCountdown>
                             ),
                             _JoinedParticipant(
                               letter: _initialLetter(widget.playerName),
-                              label: 'You',
+                              label: context.l10n.commonYou,
                               scheme: scheme,
                               monogramBackground: youBg,
                               monogramForeground: youFg,
@@ -562,7 +563,7 @@ class _BattleWaitBotCountdownState extends State<_BattleWaitBotCountdown>
                       const SizedBox(width: AppSpacing.sm),
                       Flexible(
                         child: Text(
-                          'Please wait… battle is starting in a few seconds.',
+                          context.l10n.bwStartingSoon,
                           style: AppTextStyles.caption().copyWith(
                             color: scheme.onSurfaceVariant,
                             fontSize: 12,
@@ -650,12 +651,8 @@ class _HumanLobbyBody extends StatelessWidget {
     final youFg = battleMatchMonogramForeground(youBg);
 
     final statusLine = isHost
-        ? (guestReady
-              ? 'Opponent joined. Start the battle when you are ready.'
-              : 'Waiting for your opponent to open the invite and join.')
-        : (letsStart
-              ? 'Starting battle…'
-              : 'Waiting for the host to start the battle.');
+        ? (guestReady ? context.l10n.bwOppJoined : context.l10n.bwWaitOppJoin)
+        : (letsStart ? context.l10n.bwStarting : context.l10n.bwWaitHost);
 
     final opponentPhoto = AppConstants.customProfilePhotoUrl(opponentPhotoUrl);
     final opponentAvatar = opponentPhoto.isNotEmpty
@@ -742,7 +739,7 @@ class _HumanLobbyBody extends StatelessWidget {
                         ),
                         const SizedBox(height: AppSpacing.lg),
                         Text(
-                          'Battle ID',
+                          context.l10n.bwBattleId,
                           style: AppTextStyles.labelSm().copyWith(
                             color: scheme.onSurfaceVariant,
                           ),
@@ -766,8 +763,8 @@ class _HumanLobbyBody extends StatelessWidget {
                         const SizedBox(height: AppSpacing.md),
                         Text(
                           guestReady
-                              ? 'Opponent in lobby'
-                              : 'Waiting for opponent',
+                              ? context.l10n.bwOppInLobby
+                              : context.l10n.bwWaitOpp,
                           style: AppTextStyles.label().copyWith(
                             color: scheme.onSurface,
                           ),
@@ -788,7 +785,7 @@ class _HumanLobbyBody extends StatelessWidget {
                             ),
                             _JoinedParticipant(
                               letter: initialLetter(playerName),
-                              label: 'You',
+                              label: context.l10n.commonYou,
                               scheme: scheme,
                               monogramBackground: youBg,
                               monogramForeground: youFg,
@@ -832,10 +829,10 @@ class _HumanLobbyBody extends StatelessWidget {
                         !guestReady &&
                         guestJoinWaitSecondsRemaining != null) ...[
                       Text(
-                        'If your opponent joins within '
-                        '${_formatJoinWaitMmSs(kBattleHostGuestJoinWaitSeconds)}, '
-                        '\nyou can start the battle. '
-                        'Time remaining: ${_formatJoinWaitMmSs(guestJoinWaitSecondsRemaining!)}.',
+                        context.l10n.bwJoinWindow(
+                          _formatJoinWaitMmSs(kBattleHostGuestJoinWaitSeconds),
+                          _formatJoinWaitMmSs(guestJoinWaitSecondsRemaining!),
+                        ),
                         style: AppTextStyles.caption().copyWith(
                           color: scheme.onSurfaceVariant,
                           fontSize: 13,
@@ -865,9 +862,7 @@ class _HumanLobbyBody extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: [
                               Text(
-                                'We timed out while waiting for your opponent to '
-                                'join. You can keep waiting in case they are slow, '
-                                'or go back.',
+                                context.l10n.bwTimedOut,
                                 style: AppTextStyles.bodySm().copyWith(
                                   color: scheme.onSurfaceVariant,
                                   height: 1.35,
@@ -880,14 +875,14 @@ class _HumanLobbyBody extends StatelessWidget {
                                   Expanded(
                                     child: OutlinedButton(
                                       onPressed: onGoBackFromGuestJoinTimeout,
-                                      child: const Text('Go back'),
+                                      child: Text(context.l10n.commonGoBack),
                                     ),
                                   ),
                                   const SizedBox(width: AppSpacing.sm),
                                   Expanded(
                                     child: FilledButton(
                                       onPressed: onKeepWaitingGuestJoin,
-                                      child: const Text('Keep waiting'),
+                                      child: Text(context.l10n.bwKeepWaiting),
                                     ),
                                   ),
                                 ],
@@ -912,7 +907,7 @@ class _HumanLobbyBody extends StatelessWidget {
                                   color: Colors.white,
                                 ),
                               )
-                            : const Text('Start battle'),
+                            : Text(context.l10n.subjectTestStartBattle),
                       ),
                     ],
                   ],

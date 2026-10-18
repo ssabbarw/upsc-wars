@@ -6,6 +6,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../mini_games/shared/revision_games_theme.dart';
 import 'onboarding_scale.dart';
+import '../../../l10n/l10n.dart';
 
 class _GameLine {
   const _GameLine({
@@ -135,7 +136,7 @@ class OnboardingGamesPage extends HookWidget {
                 ),
                 SizedBox(height: onb(context, 10)),
                 Text(
-                  'Six games. Zero boring revision.',
+                  context.l10n.obgTitle,
                   style: RgText.display(
                     size: onb(context, 24),
                     weight: FontWeight.w800,
@@ -145,10 +146,7 @@ class OnboardingGamesPage extends HookWidget {
                 SizedBox(height: onb(context, 20)),
                 for (var i = 0; i < _kGames.length; i++) ...[
                   if (i > 0) SizedBox(height: onb(context, 10)),
-                  _GameRow(
-                    game: _kGames[i],
-                    visible: revealed.value > i,
-                  ),
+                  _GameRow(game: _kGames[i], visible: revealed.value > i),
                 ],
               ],
             ),
@@ -163,21 +161,22 @@ class OnboardingGamesPage extends HookWidget {
             ignoring: !ready.value,
             child: FilledButton(
               onPressed: onGetStarted,
-              style: RgText.pillButton(
-                fill: RgColors.tealDeep,
-                verticalPadding: onb(context, 16),
-              ).copyWith(
-                minimumSize: WidgetStatePropertyAll(
-                  Size(double.infinity, onb(context, 56)),
-                ),
-                shape: WidgetStatePropertyAll(
-                  RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(onb(context, 14)),
+              style:
+                  RgText.pillButton(
+                    fill: RgColors.tealDeep,
+                    verticalPadding: onb(context, 16),
+                  ).copyWith(
+                    minimumSize: WidgetStatePropertyAll(
+                      Size(double.infinity, onb(context, 56)),
+                    ),
+                    shape: WidgetStatePropertyAll(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(onb(context, 14)),
+                      ),
+                    ),
                   ),
-                ),
-              ),
               child: Text(
-                'Get started',
+                context.l10n.obgStart,
                 style: RgText.body(
                   size: onb(context, 17),
                   weight: FontWeight.w700,
@@ -253,7 +252,7 @@ class _GameRow extends StatelessWidget {
                     ),
                     SizedBox(height: onb(context, 3)),
                     Text(
-                      game.body,
+                      _gameBody(context, game),
                       style: RgText.body(
                         size: onb(context, 12.5),
                         height: 1.3,
@@ -269,4 +268,17 @@ class _GameRow extends StatelessWidget {
       ),
     );
   }
+}
+
+String _gameBody(BuildContext context, _GameLine game) {
+  final l10n = context.l10n;
+  return switch (game.title) {
+    'Memory Pairs' => l10n.gmDescMemory,
+    'Timeline Sorter' => l10n.gmDescTimeline,
+    'Odd One Out' => l10n.obgOdd,
+    'Fact or Bluff' => l10n.obgFob,
+    'Connect the Dots' => l10n.obgCtd,
+    '1v1 Duel' => l10n.obgDuel,
+    _ => game.body,
+  };
 }

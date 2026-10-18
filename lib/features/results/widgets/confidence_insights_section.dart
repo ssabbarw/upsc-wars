@@ -7,6 +7,7 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../l10n/l10n.dart';
 
 /// Shown after tests when exam mode or any confidence was logged — includes
 /// coverage nudges and tap-through to per-tier question review.
@@ -113,7 +114,7 @@ class ConfidenceInsightsSection extends StatelessWidget {
                       ),
                       const SizedBox(height: AppSpacing.xs),
                       Text(
-                        'Tap a cell to review those questions only (same session).',
+                        context.l10n.resultsMatrixHint,
                         style: AppTextStyles.caption().copyWith(
                           color: scheme.onSurfaceVariant,
                           height: 1.35,
@@ -138,21 +139,20 @@ class ConfidenceInsightsSection extends StatelessWidget {
               _TeaserCallout(
                 scheme: scheme,
                 icon: Icons.touch_app_rounded,
-                title: 'Unlock this map next time',
-                body:
-                    'You did not log confidence on any of your $answered scored questions. '
-                    'After each answer, use the three chips under your chosen option — it takes one tap '
-                    'and powers Danger Zone, accuracy by tier, and smarter revision hints.',
+                title: context.l10n.resultsUnlockMap,
+                body: context.l10n.resultsUnlockMapBody(answered),
               ),
             ] else if (showNudge) ...[
               const SizedBox(height: AppSpacing.md),
               _TeaserCallout(
                 scheme: scheme,
                 icon: Icons.auto_graph_rounded,
-                title: 'Log a bit more next round',
-                body:
-                    'You tagged $logged of $answered scored questions (${(coverage * 100).toStringAsFixed(0)}%). '
-                    'Aim for at least half — the more you log, the sharper your insights get.',
+                title: context.l10n.resultsLogMore,
+                body: context.l10n.resultsLogMoreBody(
+                  logged,
+                  answered,
+                  (coverage * 100).toStringAsFixed(0),
+                ),
               ),
             ],
             if (logged > 0) ...[
@@ -239,7 +239,10 @@ class _CalibrationMatrix extends StatelessWidget {
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _MatrixRowLabel(scheme: scheme, label: 'Correct'),
+            _MatrixRowLabel(
+              scheme: scheme,
+              label: context.l10n.resultsMatrixCorrect,
+            ),
             Expanded(
               child: _MatrixCell(
                 scheme: scheme,
@@ -276,7 +279,10 @@ class _CalibrationMatrix extends StatelessWidget {
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _MatrixRowLabel(scheme: scheme, label: 'Wrong'),
+            _MatrixRowLabel(
+              scheme: scheme,
+              label: context.l10n.resultsMatrixWrong,
+            ),
             Expanded(
               child: _MatrixCell(
                 scheme: scheme,
@@ -515,11 +521,16 @@ class _SureTierAccuracyBanner extends StatelessWidget {
           Expanded(
             child: Text(
               warn
-                  ? 'When you tapped Sure, you were right '
-                        '${pct.toStringAsFixed(0)}% of the time ($sureCorrect / $sureTotal). '
-                        'Aim for about 75%+ on high-conviction picks before Prelims.'
-                  : 'Sure-tier accuracy ${pct.toStringAsFixed(0)}% ($sureCorrect / $sureTotal). '
-                        'That is in a healthy range for conviction answers.',
+                  ? context.l10n.resultsSureWarn(
+                      pct.toStringAsFixed(0),
+                      sureCorrect,
+                      sureTotal,
+                    )
+                  : context.l10n.resultsSureOk(
+                      pct.toStringAsFixed(0),
+                      sureCorrect,
+                      sureTotal,
+                    ),
               style: AppTextStyles.bodySm().copyWith(
                 color: warn ? scheme.onErrorContainer : scheme.onSurface,
                 height: 1.35,
@@ -583,7 +594,7 @@ class _CoverageMeter extends StatelessWidget {
         ),
         const SizedBox(height: AppSpacing.xs),
         Text(
-          'Questions where you tapped Sure, Intelligent, or Pure guess after answering.',
+          context.l10n.resultsCoverageHint,
           style: AppTextStyles.caption().copyWith(
             color: scheme.onSurfaceVariant,
             height: 1.3,

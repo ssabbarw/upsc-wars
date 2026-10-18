@@ -9,7 +9,9 @@ import '../data/open_challenge_repository.dart';
 import '../domain/open_challenge_models.dart';
 import '../open_challenge/open_challenge_create_availability.dart';
 
-final openChallengeRepositoryProvider = Provider<OpenChallengeRepository>((ref) {
+final openChallengeRepositoryProvider = Provider<OpenChallengeRepository>((
+  ref,
+) {
   return OpenChallengeRepository(FirebaseFirestore.instance);
 });
 
@@ -37,21 +39,21 @@ Future<User?> _authenticatedUserForFirestore(Ref ref) async {
 
 final openChallengesListProvider =
     FutureProvider.autoDispose<List<OpenChallengeListTileModel>>((ref) async {
-  final user = await _authenticatedUserForFirestore(ref);
-  if (user == null) return const [];
-  final repo = ref.watch(openChallengeRepositoryProvider);
-  try {
-    return await repo.fetchAllSummaries(currentUserEmail: user.email);
-  } on Object catch (e) {
-    if (_isFirestorePermissionDenied(e)) {
-      if (kDebugMode) {
-        debugPrint('[OpenChallenge:list] permission-denied: $e');
+      final user = await _authenticatedUserForFirestore(ref);
+      if (user == null) return const [];
+      final repo = ref.watch(openChallengeRepositoryProvider);
+      try {
+        return await repo.fetchAllSummaries(currentUserEmail: user.email);
+      } on Object catch (e) {
+        if (_isFirestorePermissionDenied(e)) {
+          if (kDebugMode) {
+            debugPrint('[OpenChallenge:list] permission-denied: $e');
+          }
+          return const [];
+        }
+        rethrow;
       }
-      return const [];
-    }
-    rethrow;
-  }
-});
+    });
 
 /// Challenges the user has not attempted, most contested first.
 ///
@@ -65,34 +67,34 @@ final openChallengesListProvider =
 /// [openChallengesListProvider].
 final homeOpenChallengesProvider =
     FutureProvider<List<OpenChallengeListTileModel>>((ref) async {
-  // Index is world-readable (no emails) so unsigned users still see Home
-  // teasers. Watch auth so a late sign-in re-ranks via attempted prefs —
-  // without it, this kept-alive provider would stay stale for the session.
-  ref.watch(authStateChangesProvider);
+      // Index is world-readable (no emails) so unsigned users still see Home
+      // teasers. Watch auth so a late sign-in re-ranks via attempted prefs —
+      // without it, this kept-alive provider would stay stale for the session.
+      ref.watch(authStateChangesProvider);
 
-  final prefs = await ref.watch(prefsServiceProvider.future);
-  final repo = ref.watch(openChallengeRepositoryProvider);
-  try {
-    final items = await repo.fetchHomeIndex();
-    if (kDebugMode) {
-      debugPrint(
-        '[OpenChallenge:home] index read ok: ${items.length} live entries',
-      );
-    }
-    return rankHomeOpenChallenges(
-      items,
-      attempted: prefs.attemptedOpenChallengeIds,
-    );
-  } on Object catch (e) {
-    // Home renders this as an absent row; don't surface expected auth/rules
-    // denials as provider errors (Crashlytics).
-    if (kDebugMode) {
-      debugPrint('[OpenChallenge:home] index read FAILED: $e');
-    }
-    if (_isFirestorePermissionDenied(e)) return const [];
-    rethrow;
-  }
-});
+      final prefs = await ref.watch(prefsServiceProvider.future);
+      final repo = ref.watch(openChallengeRepositoryProvider);
+      try {
+        final items = await repo.fetchHomeIndex();
+        if (kDebugMode) {
+          debugPrint(
+            '[OpenChallenge:home] index read ok: ${items.length} live entries',
+          );
+        }
+        return rankHomeOpenChallenges(
+          items,
+          attempted: prefs.attemptedOpenChallengeIds,
+        );
+      } on Object catch (e) {
+        // Home renders this as an absent row; don't surface expected auth/rules
+        // denials as provider errors (Crashlytics).
+        if (kDebugMode) {
+          debugPrint('[OpenChallenge:home] index read FAILED: $e');
+        }
+        if (_isFirestorePermissionDenied(e)) return const [];
+        rethrow;
+      }
+    });
 
 /// Drops already-attempted challenges and orders the rest most-contested first,
 /// newest breaking ties. Pure so the ordering rule stays testable.
@@ -114,23 +116,22 @@ List<OpenChallengeListTileModel> rankHomeOpenChallenges(
   return untried;
 }
 
-final openChallengeDetailProvider =
-    FutureProvider.autoDispose.family<OpenChallengeDetail?, String>((ref, id) async {
-  final repo = ref.watch(openChallengeRepositoryProvider);
-  return repo.fetchDetail(id);
-});
+final openChallengeDetailProvider = FutureProvider.autoDispose
+    .family<OpenChallengeDetail?, String>((ref, id) async {
+      final repo = ref.watch(openChallengeRepositoryProvider);
+      return repo.fetchDetail(id);
+    });
 
 /// Local prefs: whether create / post-as-challenge is allowed (24h after last publish).
 final openChallengeCreateAvailabilityProvider =
     FutureProvider.autoDispose<OpenChallengeCreateAvailability>((ref) async {
-  final prefs = await ref.watch(prefsServiceProvider.future);
-  return OpenChallengeCreateAvailability.fromPrefs(prefs);
-});
+      final prefs = await ref.watch(prefsServiceProvider.future);
+      return OpenChallengeCreateAvailability.fromPrefs(prefs);
+    });
 
 /// Call after a successful Firestore publish (create flow only).
 Future<void> recordOpenChallengePublished(WidgetRef ref) async {
   final prefs = await ref.read(prefsServiceProvider.future);
-  prefs.openChallengeLastPublishedAtMs =
-      DateTime.now().millisecondsSinceEpoch;
+  prefs.openChallengeLastPublishedAtMs = DateTime.now().millisecondsSinceEpoch;
   ref.invalidate(openChallengeCreateAvailabilityProvider);
 }

@@ -15,6 +15,7 @@ import 'package:upsc_wars/core/theme/app_radius.dart';
 import 'package:upsc_wars/core/theme/app_spacing.dart';
 import 'package:upsc_wars/core/theme/app_text_styles.dart';
 import 'package:upsc_wars/shared/widgets/deferred_push_permission_sheet.dart';
+import '../../l10n/l10n.dart';
 
 final pushDeniedBannerVisibleProvider = FutureProvider.autoDispose<bool>((
   ref,
@@ -111,20 +112,17 @@ class _CompactStrip extends StatelessWidget {
                   TextSpan(
                     style: bodyStyle,
                     children: [
-                      const TextSpan(
-                        text:
-                            'You’re missing updates and reminders. Please enable ',
-                      ),
+                      TextSpan(text: context.l10n.pdLead),
                       WidgetSpan(
                         alignment: PlaceholderAlignment.baseline,
                         baseline: TextBaseline.alphabetic,
                         child: GestureDetector(
                           onTap: () =>
                               unawaited(_promptThenOpenSettings(context, ref)),
-                          child: Text('notifications', style: linkStyle),
+                          child: Text(context.l10n.pdLink, style: linkStyle),
                         ),
                       ),
-                      const TextSpan(text: '.'),
+                      TextSpan(text: context.l10n.pdTrail),
                     ],
                   ),
                 ),
@@ -170,14 +168,14 @@ class _OriginalCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'You’re missing drill, CA & community alerts',
+                    context.l10n.pdTitle,
                     style: AppTextStyles.label().copyWith(
                       color: scheme.onSurface,
                     ),
                   ),
                   const SizedBox(height: AppSpacing.xs),
                   Text(
-                    'Turn on notifications for Daily Drill, current affairs, CA Shots, and community invites.',
+                    context.l10n.pdBody,
                     style: AppTextStyles.caption().copyWith(
                       color: scheme.onSurfaceVariant,
                       height: 1.25,
@@ -193,7 +191,7 @@ class _OriginalCard extends StatelessWidget {
                       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                     ),
                     child: Text(
-                      'Enable alerts',
+                      context.l10n.pdEnable,
                       style: AppTextStyles.label().copyWith(
                         color: scheme.primary,
                         fontWeight: FontWeight.w700,
@@ -204,7 +202,7 @@ class _OriginalCard extends StatelessWidget {
               ),
             ),
             IconButton(
-              tooltip: 'Dismiss',
+              tooltip: context.l10n.commonDismiss,
               visualDensity: VisualDensity.compact,
               onPressed: () => unawaited(_dismiss(ref)),
               icon: Icon(

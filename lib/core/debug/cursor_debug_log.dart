@@ -37,5 +37,4 @@ class CursorDebugLog {
       // Swallow: never crash app for debug logging.
     }
   }
-
 }

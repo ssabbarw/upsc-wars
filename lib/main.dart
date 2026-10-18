@@ -7,9 +7,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:intl/date_symbol_data_local.dart';
 import 'package:workmanager/workmanager.dart';
 
 import 'app/upsc_wars_app.dart';
+import 'core/analytics/posthog_bootstrap.dart';
 import 'core/debug/upsc_wars_trace.dart';
 import 'core/crashlytics/crashlytics_provider_observer.dart';
 import 'core/crashlytics/firebase_crashlytics_bootstrap.dart';
@@ -23,9 +25,13 @@ import 'core/services/prelims_workmanager_callback.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
+  // Date symbols for every app language, so `DateFormat` follows
+  // `Intl.defaultLocale` (set from the app language) without a load gap.
+  await initializeDateFormatting('en');
+  await initializeDateFormatting('hi');
+
   // Never fetch fonts over the network at runtime.
   GoogleFonts.config.allowRuntimeFetching = false;
-
   FlutterError.onError = (FlutterErrorDetails details) {
     FlutterError.presentError(details);
     upscWarsTrace(
@@ -36,7 +42,11 @@ Future<void> main() async {
   };
 
   PlatformDispatcher.instance.onError = (Object error, StackTrace stack) {
-    upscWarsTrace('PlatformDispatcher.onError', error: error, stackTrace: stack);
+    upscWarsTrace(
+      'PlatformDispatcher.onError',
+      error: error,
+      stackTrace: stack,
+    );
     return false;
   };
 
@@ -45,6 +55,7 @@ Future<void> main() async {
   await AnonymousAuthService.ensureSignedIn();
   await setupFirebaseCrashlytics();
   await FirebaseInAppMessagingService.initializeAfterFirebase();
+  await PostHogBootstrap.setup();
   // Capture tap-to-open payload before runApp. On Android, reading
   // getInitialMessage too late can leave data unavailable for routing.
   final openedFromNotification = await FirebaseMessaging.instance

@@ -192,8 +192,10 @@ class CommunityRepository {
   Future<Set<String>> fetchBlockedEmails({required String ownerUid}) async {
     final uid = ownerUid.trim();
     if (uid.isEmpty) return const {};
-    final snap =
-        await _firestore.collection(_blockListsCollection).doc(uid).get();
+    final snap = await _firestore
+        .collection(_blockListsCollection)
+        .doc(uid)
+        .get();
     if (!snap.exists) return const {};
     return _emailsFromBlockListData(snap.data());
   }
@@ -243,11 +245,12 @@ class CommunityRepository {
     }
     final uid = ownerUid?.trim() ?? '';
     if (uid.isEmpty) return;
-    final emails = blockedEmails
-        .map((e) => e.toLowerCase().trim())
-        .where((e) => e.isNotEmpty)
-        .toList()
-      ..sort();
+    final emails =
+        blockedEmails
+            .map((e) => e.toLowerCase().trim())
+            .where((e) => e.isNotEmpty)
+            .toList()
+          ..sort();
     await _firestore.collection(_blockListsCollection).doc(uid).set({
       'emails': emails,
       'updatedAt': FieldValue.serverTimestamp(),

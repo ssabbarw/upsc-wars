@@ -98,7 +98,8 @@ class BlockedUserEmailsNotifier extends AsyncNotifier<Set<String>> {
         cache: cache,
       );
       if (!ref.mounted) return;
-      final current = AuthSession.emailOf(
+      final current =
+          AuthSession.emailOf(
             ref.read(authStateChangesProvider).asData?.value,
           ) ??
           AuthSession.currentEmail();
@@ -135,7 +136,9 @@ class BlockedUserEmailsNotifier extends AsyncNotifier<Set<String>> {
     await cache.write(me, next);
 
     try {
-      await ref.read(communityRepositoryProvider).setUserBlocked(
+      await ref
+          .read(communityRepositoryProvider)
+          .setUserBlocked(
             ownerEmail: me,
             otherEmail: other,
             blocked: blocked,
@@ -151,8 +154,7 @@ class BlockedUserEmailsNotifier extends AsyncNotifier<Set<String>> {
 }
 
 /// True if [otherEmail] is blocked by the signed-in user.
-final isPeerBlockedProvider =
-    Provider.family<bool, String>((ref, otherEmail) {
+final isPeerBlockedProvider = Provider.family<bool, String>((ref, otherEmail) {
   final normalized = otherEmail.toLowerCase().trim();
   final blocked = ref.watch(blockedUserEmailsProvider).value;
   if (blocked == null) return false;
@@ -160,8 +162,9 @@ final isPeerBlockedProvider =
 });
 
 /// Profile docs for people the current user has blocked. Missing docs omitted.
-final blockedUserProfilesProvider =
-    FutureProvider<Map<String, CommunityUser>>((ref) async {
+final blockedUserProfilesProvider = FutureProvider<Map<String, CommunityUser>>((
+  ref,
+) async {
   final emails = await ref.watch(blockedUserEmailsProvider.future);
   if (emails.isEmpty) return const {};
   return ref

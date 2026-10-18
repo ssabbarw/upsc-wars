@@ -6,10 +6,7 @@ import 'package:upsc_wars/core/services/battle_messaging_service.dart';
 import 'package:upsc_wars/core/services/fcm_token_sync_service.dart';
 
 /// Who receives the spot-test push from the composer.
-enum SpotTestSendTarget {
-  self,
-  broadcast,
-}
+enum SpotTestSendTarget { self, broadcast }
 
 /// Result of [SpotTestPushCloudService.sendSpotTestNotification].
 class SpotTestPushOutcome {
@@ -131,10 +128,7 @@ class SpotTestPushCloudService {
         final target = targetRaw == 'broadcast'
             ? SpotTestSendTarget.broadcast
             : SpotTestSendTarget.self;
-        return SpotTestPushOutcome._(
-          notificationSent: true,
-          target: target,
-        );
+        return SpotTestPushOutcome._(notificationSent: true, target: target);
       }
       final reason = data['reason']?.toString();
       debugPrint('sendSpotTestNotification: ok=false reason=$reason');

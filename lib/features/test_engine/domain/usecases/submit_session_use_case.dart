@@ -5,5 +5,6 @@ class SubmitSessionUseCase {
 
   final TestEngineRepository _repository;
 
-  Future<String> execute(String sessionId) => _repository.submitSession(sessionId);
+  Future<String> execute(String sessionId) =>
+      _repository.submitSession(sessionId);
 }

@@ -116,10 +116,7 @@ class DailyCaDraft {
         final item = rawQuestions[i];
         if (item is Map) {
           list.add(
-            DailyCaDraftQuestion.fromMap(
-              Map<String, dynamic>.from(item),
-              i,
-            ),
+            DailyCaDraftQuestion.fromMap(Map<String, dynamic>.from(item), i),
           );
         }
       }

@@ -35,9 +35,7 @@ class FcmTokenSyncService {
           hypothesisId: 'C',
           location: 'fcm_token_sync_service.dart:syncForCurrentUser',
           message: 'No email; skipping token sync',
-          data: {
-            'hasUser': user != null,
-          },
+          data: {'hasUser': user != null},
         ),
       );
       // #endregion
@@ -52,9 +50,7 @@ class FcmTokenSyncService {
           hypothesisId: 'B',
           location: 'fcm_token_sync_service.dart:syncForCurrentUser',
           message: 'Fetched FCM token for sync',
-          data: {
-            'fcmTokenPresent': token != null && token.trim().isNotEmpty,
-          },
+          data: {'fcmTokenPresent': token != null && token.trim().isNotEmpty},
         ),
       );
       // #endregion
@@ -68,46 +64,41 @@ class FcmTokenSyncService {
   }
 
   static void ensureTokenRefreshSubscription() {
-    _refreshSub ??= FirebaseMessaging.instance.onTokenRefresh.listen(
-      (token) async {
-        await _ensureLatestBuildBroadcastSubscriptions();
-        final user = FirebaseAuth.instance.currentUser;
-        final email = user?.email?.toLowerCase().trim();
-        if (email == null || email.isEmpty) return;
-        try {
-          // #region agent log
-          unawaited(
-            CursorDebugLog.write(
-              hypothesisId: 'B',
-              location: 'fcm_token_sync_service.dart:onTokenRefresh',
-              message: 'onTokenRefresh fired',
-              data: {
-                'fcmTokenPresent': token.trim().isNotEmpty,
-              },
-            ),
-          );
-          // #endregion
-          await _writeToken(email: email, token: token);
-          await _ensureSpotTestBroadcastTopicSubscription();
-        } catch (e, st) {
-          debugPrint('FcmTokenSyncService.onTokenRefresh: $e');
-          debugPrintStack(stackTrace: st);
-        }
-      },
-    );
+    _refreshSub ??= FirebaseMessaging.instance.onTokenRefresh.listen((
+      token,
+    ) async {
+      await _ensureLatestBuildBroadcastSubscriptions();
+      final user = FirebaseAuth.instance.currentUser;
+      final email = user?.email?.toLowerCase().trim();
+      if (email == null || email.isEmpty) return;
+      try {
+        // #region agent log
+        unawaited(
+          CursorDebugLog.write(
+            hypothesisId: 'B',
+            location: 'fcm_token_sync_service.dart:onTokenRefresh',
+            message: 'onTokenRefresh fired',
+            data: {'fcmTokenPresent': token.trim().isNotEmpty},
+          ),
+        );
+        // #endregion
+        await _writeToken(email: email, token: token);
+        await _ensureSpotTestBroadcastTopicSubscription();
+      } catch (e, st) {
+        debugPrint('FcmTokenSyncService.onTokenRefresh: $e');
+        debugPrintStack(stackTrace: st);
+      }
+    });
   }
 
   static Future<void> _writeToken({
     required String email,
     required String token,
   }) async {
-    await FirebaseFirestore.instance.collection('users').doc(email).set(
-      {
-        'fcm_token': token,
-        'fcm_token_updated_at': FieldValue.serverTimestamp(),
-      },
-      SetOptions(merge: true),
-    );
+    await FirebaseFirestore.instance.collection('users').doc(email).set({
+      'fcm_token': token,
+      'fcm_token_updated_at': FieldValue.serverTimestamp(),
+    }, SetOptions(merge: true));
   }
 
   static Future<void> _ensureLatestBuildBroadcastSubscriptions() async {
@@ -146,13 +137,15 @@ class FcmTokenSyncService {
     try {
       if (!await _iosApnsReady()) return;
       final messaging = FirebaseMessaging.instance;
-      if (!FirebaseRemoteConfig.instance.getBool(caShotsEnabledRemoteConfigKey)) {
-        await messaging.unsubscribeFromTopic(FomoPulseConstants.broadcastFcmTopic);
+      if (!FirebaseRemoteConfig.instance.getBool(
+        caShotsEnabledRemoteConfigKey,
+      )) {
+        await messaging.unsubscribeFromTopic(
+          FomoPulseConstants.broadcastFcmTopic,
+        );
         return;
       }
-      await messaging.subscribeToTopic(
-        FomoPulseConstants.broadcastFcmTopic,
-      );
+      await messaging.subscribeToTopic(FomoPulseConstants.broadcastFcmTopic);
     } catch (e, st) {
       debugPrint('FcmTokenSyncService.subscribeToFomoPulseTopic: $e');
       debugPrintStack(stackTrace: st);
@@ -164,8 +157,12 @@ class FcmTokenSyncService {
     try {
       if (!await _iosApnsReady()) return;
       final messaging = FirebaseMessaging.instance;
-      if (!FirebaseRemoteConfig.instance.getBool(dailyCaEnabledRemoteConfigKey)) {
-        await messaging.unsubscribeFromTopic(DailyCaConstants.broadcastFcmTopic);
+      if (!FirebaseRemoteConfig.instance.getBool(
+        dailyCaEnabledRemoteConfigKey,
+      )) {
+        await messaging.unsubscribeFromTopic(
+          DailyCaConstants.broadcastFcmTopic,
+        );
         return;
       }
       await messaging.subscribeToTopic(DailyCaConstants.broadcastFcmTopic);

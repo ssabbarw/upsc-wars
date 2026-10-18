@@ -165,8 +165,8 @@ class SubjectPickChipTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final fill = selected
         ? (isDark
-            ? AppColors.primaryDeep.withValues(alpha: 0.45)
-            : AppColors.primaryLight)
+              ? AppColors.primaryDeep.withValues(alpha: 0.45)
+              : AppColors.primaryLight)
         : scheme.surface;
     final border = selected
         ? AppColors.primary

@@ -4,6 +4,7 @@ import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_radius.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_text_styles.dart';
+import '../../l10n/l10n.dart';
 
 /// Shows a bottom sheet that lets the user pick Tutor or Exam mode.
 /// Returns `'tutor'` or `'exam'`, or `null` if dismissed.
@@ -73,23 +74,30 @@ class _QuickPracticeModeSheet extends StatelessWidget {
                       Icons.close_rounded,
                       color: scheme.onSurfaceVariant,
                     ),
-                    tooltip: MaterialLocalizations.of(context).closeButtonTooltip,
+                    tooltip: MaterialLocalizations.of(
+                      context,
+                    ).closeButtonTooltip,
                   ),
                 ),
               ],
             ),
           ),
           const SizedBox(height: AppSpacing.md),
-          Text('Choose mode', style: AppTextStyles.h3().copyWith(color: scheme.onSurface)),
+          Text(
+            context.l10n.qpTitle,
+            style: AppTextStyles.h3().copyWith(color: scheme.onSurface),
+          ),
           const SizedBox(height: AppSpacing.xs),
           Text(
-            'How would you like to practice?',
-            style: AppTextStyles.bodySm().copyWith(color: scheme.onSurfaceVariant),
+            context.l10n.qpSub,
+            style: AppTextStyles.bodySm().copyWith(
+              color: scheme.onSurfaceVariant,
+            ),
           ),
           const SizedBox(height: AppSpacing.lg),
           _ModeOption(
-            title: 'Tutor Mode',
-            description: 'See explanations after each question',
+            title: context.l10n.qpTutor,
+            description: context.l10n.qpTutorDesc,
             icon: Icons.lightbulb_outline,
             color: AppColors.primary,
             borderColor: borderColor,
@@ -97,8 +105,8 @@ class _QuickPracticeModeSheet extends StatelessWidget {
           ),
           const SizedBox(height: AppSpacing.sm),
           _ModeOption(
-            title: 'Exam Mode',
-            description: 'Get results at the end',
+            title: context.l10n.qpExam,
+            description: context.l10n.qpExamDesc,
             icon: Icons.timer_outlined,
             color: AppColors.info,
             borderColor: borderColor,
@@ -165,17 +173,25 @@ class _ModeOption extends StatelessWidget {
                   children: [
                     Text(
                       title,
-                      style: AppTextStyles.label().copyWith(color: scheme.onSurface),
+                      style: AppTextStyles.label().copyWith(
+                        color: scheme.onSurface,
+                      ),
                     ),
                     const SizedBox(height: AppSpacing.xs),
                     Text(
                       description,
-                      style: AppTextStyles.bodySm().copyWith(color: scheme.onSurfaceVariant),
+                      style: AppTextStyles.bodySm().copyWith(
+                        color: scheme.onSurfaceVariant,
+                      ),
                     ),
                   ],
                 ),
               ),
-              Icon(Icons.chevron_right, color: scheme.onSurfaceVariant, size: 20),
+              Icon(
+                Icons.chevron_right,
+                color: scheme.onSurfaceVariant,
+                size: 20,
+              ),
             ],
           ),
         ),

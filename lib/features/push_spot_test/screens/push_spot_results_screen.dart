@@ -73,16 +73,15 @@ class PushSpotResultsScreen extends ConsumerWidget {
             error: (e, _) => _ErrorBody(message: e.toString()),
             data: (result) {
               return questionAsync.when(
-                loading: () =>
-                    const Center(child: CircularProgressIndicator()),
+                loading: () => const Center(child: CircularProgressIndicator()),
                 error: (e, _) => _ErrorBody(message: e.toString()),
                 data: (question) => Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     Padding(
-                      padding: _contentPadding(context).copyWith(
-                        bottom: AppSpacing.sm,
-                      ),
+                      padding: _contentPadding(
+                        context,
+                      ).copyWith(bottom: AppSpacing.sm),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
@@ -119,9 +118,7 @@ class PushSpotResultsScreen extends ConsumerWidget {
                             ),
                             if (_confidenceNote(question) != null) ...[
                               const SizedBox(height: AppSpacing.sm),
-                              _ConfidenceNote(
-                                text: _confidenceNote(question)!,
-                              ),
+                              _ConfidenceNote(text: _confidenceNote(question)!),
                             ],
                             const SizedBox(height: AppSpacing.md),
                             _ReviewExplanationTile(
@@ -144,9 +141,7 @@ class PushSpotResultsScreen extends ConsumerWidget {
             data: (_) => _SpotResultsFooter(
               padding: _footerPadding(context),
               followUpLabel: _followUpLabel(result),
-              onFollowUp: () => unawaited(
-                _startFollowUp(context, ref, result),
-              ),
+              onFollowUp: () => unawaited(_startFollowUp(context, ref, result)),
               onDone: () => context.go('/'),
             ),
             orElse: () => null,
@@ -207,9 +202,9 @@ class PushSpotResultsScreen extends ConsumerWidget {
       context.go('/test/$id');
     } catch (e) {
       if (!context.mounted) return;
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Could not start follow-up: $e')),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text('Could not start follow-up: $e')));
     }
   }
 }
@@ -247,7 +242,9 @@ class _SpotResultsFooter extends StatelessWidget {
       color: scheme.surface,
       child: DecoratedBox(
         decoration: BoxDecoration(
-          border: Border(top: BorderSide(color: borderColor.withValues(alpha: 0.45))),
+          border: Border(
+            top: BorderSide(color: borderColor.withValues(alpha: 0.45)),
+          ),
         ),
         child: SafeArea(
           top: false,
@@ -315,10 +312,7 @@ class _CatalogContextCard extends StatelessWidget {
           ),
           if ((result.topic ?? '').trim().isNotEmpty) ...[
             const SizedBox(height: AppSpacing.sm),
-            _ContextRow(
-              label: 'Topic',
-              value: displayTopicLabel(result.topic),
-            ),
+            _ContextRow(label: 'Topic', value: displayTopicLabel(result.topic)),
           ],
           if ((result.subTopic ?? '').trim().isNotEmpty) ...[
             const SizedBox(height: AppSpacing.sm),
@@ -365,14 +359,12 @@ class _ContextRow extends StatelessWidget {
         Expanded(
           child: Text(
             value,
-            style: (emphasize
-                    ? AppTextStyles.label()
-                    : AppTextStyles.bodySm())
+            style: (emphasize ? AppTextStyles.label() : AppTextStyles.bodySm())
                 .copyWith(
-              color: emphasize ? scheme.onSurface : scheme.onSurfaceVariant,
-              fontWeight: emphasize ? FontWeight.w700 : FontWeight.w500,
-              height: 1.35,
-            ),
+                  color: emphasize ? scheme.onSurface : scheme.onSurfaceVariant,
+                  fontWeight: emphasize ? FontWeight.w700 : FontWeight.w500,
+                  height: 1.35,
+                ),
           ),
         ),
       ],
@@ -381,10 +373,7 @@ class _ContextRow extends StatelessWidget {
 }
 
 class _AttemptCard extends StatelessWidget {
-  const _AttemptCard({
-    required this.question,
-    required this.language,
-  });
+  const _AttemptCard({required this.question, required this.language});
 
   final TestQuestion question;
   final String language;
@@ -473,7 +462,8 @@ class _AttemptCard extends StatelessWidget {
               accent: scheme.onSurfaceVariant,
             ),
           ],
-          if (question.timeSpentSecs != null && question.timeSpentSecs! > 0) ...[
+          if (question.timeSpentSecs != null &&
+              question.timeSpentSecs! > 0) ...[
             const SizedBox(height: AppSpacing.sm),
             _AttemptLine(
               label: 'Time',
@@ -659,10 +649,7 @@ class _ConfidenceNote extends StatelessWidget {
 }
 
 class _ExplanationBlock extends StatelessWidget {
-  const _ExplanationBlock({
-    required this.question,
-    required this.language,
-  });
+  const _ExplanationBlock({required this.question, required this.language});
 
   final TestQuestion question;
   final String language;

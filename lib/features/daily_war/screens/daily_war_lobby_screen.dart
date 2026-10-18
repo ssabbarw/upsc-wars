@@ -21,6 +21,7 @@ import '../theme/daily_war_theme.dart';
 import '../widgets/daily_war_help_sheet.dart';
 import '../widgets/daily_war_topics_sheet.dart';
 import '../widgets/daily_war_week_strip.dart';
+import '../../../l10n/l10n.dart';
 
 class DailyWarLobbyScreen extends HookConsumerWidget {
   const DailyWarLobbyScreen({super.key});
@@ -32,17 +33,17 @@ class DailyWarLobbyScreen extends HookConsumerWidget {
       loading: () => const _DailyWarLobbySkeleton(),
       error: (_, _) => Scaffold(
         appBar: AppBar(title: const Text(DailyWarCopy.programName)),
-        body: const Center(child: Text('Static War is not available.')),
+        body: Center(child: Text(context.l10n.dwNotAvailable)),
       ),
       data: (on) {
         if (!on) {
           return Scaffold(
             appBar: AppBar(title: const Text(DailyWarCopy.programName)),
-            body: const Center(
+            body: Center(
               child: Padding(
                 padding: EdgeInsets.all(24),
                 child: Text(
-                  'Static War is not available on this account yet.',
+                  context.l10n.dwNotAvailableAccount,
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -203,11 +204,7 @@ class _DailyWarLobbyBody extends HookConsumerWidget {
         if (doc == null) {
           if (context.mounted) {
             ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(
-                content: Text(
-                  'Tonight\'s paper isn\'t loaded yet. Try again in some time.',
-                ),
-              ),
+              SnackBar(content: Text(context.l10n.dwPaperNotLoaded)),
             );
           }
           return;
@@ -241,7 +238,7 @@ class _DailyWarLobbyBody extends HookConsumerWidget {
         ),
         actions: [
           IconButton(
-            tooltip: 'How ${DailyWarCopy.programName} works',
+            tooltip: context.l10n.dwHowWorks(DailyWarCopy.programName),
             onPressed: () => unawaited(showDailyWarHelpSheet(context)),
             icon: const Icon(
               Icons.help_outline_rounded,
@@ -252,7 +249,7 @@ class _DailyWarLobbyBody extends HookConsumerWidget {
           TextButton(
             onPressed: () => context.push(dailyWarHistoryRoute()),
             child: Text(
-              'History',
+              context.l10n.dwHistory,
               style: DwText.dm(
                 size: 13,
                 weight: FontWeight.w600,
@@ -267,9 +264,11 @@ class _DailyWarLobbyBody extends HookConsumerWidget {
         children: [
           Text(
             snap.phase == DailyWarPhase.lobby
-                ? 'LOBBY OPEN'
+                ? context.l10n.dwLobbyOpen
                 : snap.phase == DailyWarPhase.liveJoinable
-                ? '${DailyWarCopy.eventNameCaps(isGrand: isGrand)} IS LIVE'
+                ? context.l10n.dwEventIsLiveCaps(
+                    DailyWarCopy.eventNameCaps(isGrand: isGrand),
+                  )
                 : _statusEyebrow(snap.phase, isGrand: isGrand),
             style: DwText.eyebrow(),
           ),
@@ -277,10 +276,10 @@ class _DailyWarLobbyBody extends HookConsumerWidget {
           DailyWarWeekStrip(referenceIst: ist),
           const SizedBox(height: 16),
           if (snap.phase == DailyWarPhase.restDay) ...[
-            Text('Sunday off', style: DwText.topic()),
+            Text(context.l10n.dwSundayOffTitle, style: DwText.topic()),
             const SizedBox(height: 8),
             Text(
-              'No live paper today. Next ${DailyWarCopy.dailyEventName} is Monday at 9:00 PM IST.',
+              context.l10n.dwNoLiveNext(DailyWarCopy.dailyEventName),
               style: DwText.body(),
             ),
           ] else if (topics.isEmpty)
@@ -300,7 +299,7 @@ class _DailyWarLobbyBody extends HookConsumerWidget {
               Padding(
                 padding: const EdgeInsets.only(bottom: 4),
                 child: Text(
-                  '+ ${topics.length - 2} more',
+                  context.l10n.dwPlusMore(topics.length - 2),
                   style: DwText.dm(
                     size: 13,
                     weight: FontWeight.w600,
@@ -313,8 +312,8 @@ class _DailyWarLobbyBody extends HookConsumerWidget {
                   showDailyWarTopicsSheet(context: context, topics: topics),
               child: Text(
                 topics.length > 2
-                    ? 'See all ${topics.length} topics →'
-                    : 'Practice these topics →',
+                    ? context.l10n.dwSeeAllTopics(topics.length)
+                    : context.l10n.dwPracticeTopics,
                 style: DwText.dm(
                   size: 13,
                   weight: FontWeight.w700,
@@ -337,9 +336,11 @@ class _DailyWarLobbyBody extends HookConsumerWidget {
                 children: [
                   Text(
                     snap.phase == DailyWarPhase.lobby
-                        ? 'Starts in ${DailyWarSchedule.formatCountdown(untilStart)}'
+                        ? context.l10n.dwStartsIn(
+                            DailyWarSchedule.formatCountdown(untilStart),
+                          )
                         : canEnter
-                        ? 'Join until 9:10 · ${mmSs(untilLate)} left'
+                        ? context.l10n.dwJoinUntilLeft(mmSs(untilLate))
                         : _statusCopy(
                             snap.phase,
                             rankClock: DailyWarSchedule.formatClock(rankTarget),
@@ -361,8 +362,8 @@ class _DailyWarLobbyBody extends HookConsumerWidget {
                     Text(countShown, style: DwText.heroNumber()),
                     Text(
                       snap.phase == DailyWarPhase.lobby
-                          ? 'aspirants in the lobby'
-                          : 'writing right now',
+                          ? context.l10n.dwAspirantsInLobby
+                          : context.l10n.dwWritingNow,
                       style: DwText.body(),
                     ),
                   ],
@@ -373,17 +374,17 @@ class _DailyWarLobbyBody extends HookConsumerWidget {
             if (alreadyDone)
               _DwButton(
                 label: snap.submission?.hasOfficialRank == true
-                    ? 'See your AIR ${snap.submission!.air}'
-                    : 'Open History',
+                    ? context.l10n.dwSeeYourAir(snap.submission!.air ?? 0)
+                    : context.l10n.dwOpenHistory,
                 onPressed: () => context.push(dailyWarHistoryRoute()),
               )
             else if (canEnter)
               _DwButton(
                 label: launching.value
-                    ? 'Starting…'
+                    ? context.l10n.dwStarting
                     : accountSignedIn
-                    ? 'Join now'
-                    : 'Sign in to join',
+                    ? context.l10n.dwJoinNow
+                    : context.l10n.dwSignInJoin,
                 onPressed: launching.value
                     ? null
                     : () => unawaited(enterWar(unranked: false)),
@@ -392,35 +393,32 @@ class _DailyWarLobbyBody extends HookConsumerWidget {
             else if (snap.phase == DailyWarPhase.lobby)
               _DwButton(
                 label: untilStart.isNegative
-                    ? 'Starting…'
-                    : 'Starts in ${mmSs(untilStart)}',
+                    ? context.l10n.dwStarting
+                    : context.l10n.dwStartsIn(mmSs(untilStart)),
               )
             else if (snap.phase == DailyWarPhase.liveLocked)
-              const _DwButton(label: 'You can\'t join now')
+              _DwButton(label: context.l10n.dwCantJoinNow)
             else if (snap.phase == DailyWarPhase.resultsReady ||
                 snap.phase == DailyWarPhase.resultsPending)
               _DwButton(
                 label: launching.value
-                    ? 'Starting…'
+                    ? context.l10n.dwStarting
                     : accountSignedIn
-                    ? 'Attempt unranked'
-                    : 'Sign in to attempt',
+                    ? context.l10n.dwAttemptUnranked
+                    : context.l10n.dwSignInAttempt,
                 filled: false,
                 onPressed: launching.value
                     ? null
                     : () => unawaited(enterWar(unranked: true)),
               )
             else
-              Text(
-                'Come back at 8:59 PM IST to enter the lobby.',
-                style: DwText.body(),
-              ),
+              Text(context.l10n.dwComeBack859, style: DwText.body()),
           ],
           const SizedBox(height: 16),
           TextButton(
             onPressed: () => context.pop(),
             child: Text(
-              'Back to home',
+              context.l10n.resultsBackToHome,
               style: DwText.dm(
                 size: 13,
                 weight: FontWeight.w600,
@@ -436,13 +434,13 @@ class _DailyWarLobbyBody extends HookConsumerWidget {
   String _statusEyebrow(DailyWarPhase phase, {required bool isGrand}) {
     switch (phase) {
       case DailyWarPhase.resultsReady:
-        return 'RESULTS READY';
+        return appL10n.dwResultsReady;
       case DailyWarPhase.resultsPending:
-        return 'RESULTS';
+        return appL10n.dwResultsEyebrow;
       case DailyWarPhase.liveLocked:
-        return 'IN PROGRESS';
+        return appL10n.dwInProgress;
       case DailyWarPhase.restDay:
-        return 'SUNDAY OFF';
+        return appL10n.dwSundayOff;
       default:
         return DailyWarCopy.eventNameCaps(isGrand: isGrand);
     }
@@ -451,20 +449,20 @@ class _DailyWarLobbyBody extends HookConsumerWidget {
   String _statusCopy(DailyWarPhase phase, {required String rankClock}) {
     switch (phase) {
       case DailyWarPhase.restDay:
-        return 'No paper today · next ${DailyWarCopy.dailyEventName} Monday 9:00 PM';
+        return appL10n.dwNoPaperNext(DailyWarCopy.dailyEventName);
       case DailyWarPhase.preAnnounce:
       case DailyWarPhase.morning:
       case DailyWarPhase.countdown:
-        return 'Prepare today · lobby opens 8:59 PM';
+        return appL10n.dwPrepareToday;
       case DailyWarPhase.liveLocked:
-        return 'Late join closed · AIR at $rankClock';
+        return appL10n.dwLateClosedAirAt(rankClock);
       case DailyWarPhase.resultsPending:
-        return 'Ranks calculating…';
+        return appL10n.dwRanksCalculating;
       case DailyWarPhase.resultsReady:
-        return 'Results ready';
+        return appL10n.dwResultsReadyTitle;
       case DailyWarPhase.lobby:
       case DailyWarPhase.liveJoinable:
-        return 'Ready';
+        return appL10n.dwReady;
     }
   }
 }

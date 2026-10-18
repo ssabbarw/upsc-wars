@@ -10,6 +10,7 @@ import '../../../core/theme/app_text_styles.dart';
 import '../domain/daily_ca_schedule.dart';
 import '../domain/daily_ca_source_links.dart';
 import 'daily_ca_source_link_row.dart';
+import '../../../l10n/l10n.dart';
 
 /// The paper quiz to attempt now, with a local 1s timer so the rest of the
 /// screen stays stable while the countdown ticks.
@@ -105,8 +106,8 @@ class _DailyCaTodaySectionState extends State<DailyCaTodaySection> {
     final nextIsToday =
         DailyCaSchedule.dateOnly(nextOpen) == DailyCaSchedule.dateOnly(_ist);
     final nextCopy = nextIsToday
-        ? 'Today\'s test opens at 6 AM'
-        : 'Tomorrow\'s test opens at 6 AM';
+        ? context.l10n.dcaTodayOpens
+        : context.l10n.dcaTomorrowOpens;
 
     /// Opened on schedule but the pipeline never produced it — the next real
     /// paper is tomorrow's, so there is nothing to wait out today.
@@ -117,27 +118,26 @@ class _DailyCaTodaySectionState extends State<DailyCaTodaySection> {
 
     final String headline;
     if (!allowed) {
-      headline =
-          'Daily tests start from '
-          '${DateFormat('d MMM yyyy').format(widget.minDate)}.';
+      headline = context.l10n.dcaStartFrom(
+        DateFormat('d MMM yyyy').format(widget.minDate),
+      );
     } else if (!widget.paperOpen) {
-      headline =
-          'Today\'s current affairs test, from yesterday\'s news, '
-          'goes live at 6 AM.';
+      headline = context.l10n.dcaGoesLive6;
     } else if (missing) {
-      headline = 'No paper today. The next one lands tomorrow at 6 AM.';
+      headline = context.l10n.dcaNoPaperToday;
     } else if (widget.paperCompleted) {
-      headline = 'Quiz done. Open the explanations if a line still nags.';
+      headline = context.l10n.dcaQuizDone;
     } else if (isTodaysPaper) {
-      headline = 'Current affairs test from yesterday\'s news.';
+      headline = context.l10n.dcaCaFromYesterday;
     } else {
-      headline =
-          '10 MCQs from the ${DateFormat('d MMM').format(paperDate)} paper';
+      headline = context.l10n.dcaTenFromPaper(
+        DateFormat('d MMM').format(paperDate),
+      );
     }
 
     final reviseCopy = isTodaysPaper
-        ? "You can revise yesterday's current affairs from these links."
-        : 'You can revise this day\'s current affairs from these links.';
+        ? context.l10n.dcaReviseYesterday
+        : context.l10n.dcaReviseThisDay;
 
     return DecoratedBox(
       decoration: BoxDecoration(
@@ -268,14 +268,14 @@ class _DailyCaTodaySectionState extends State<DailyCaTodaySection> {
                             ),
                       label: Text(
                         !allowed
-                            ? 'Not started yet'
+                            ? context.l10n.dcaNotStartedYet
                             : !widget.paperOpen
-                            ? 'Live in $untilOpen'
+                            ? context.l10n.dcaLiveIn(untilOpen)
                             : missing
-                            ? 'Next test in $countdownLabel'
+                            ? context.l10n.dcaNextTestIn(countdownLabel)
                             : widget.paperCompleted
-                            ? 'Revise this test'
-                            : 'Start today\'s test',
+                            ? context.l10n.dcaReviseThisTest
+                            : context.l10n.dcaStartTodays,
                         style: AppTextStyles.label().copyWith(
                           fontWeight: FontWeight.w700,
                           color: AppColors.onPrimary,
@@ -287,9 +287,7 @@ class _DailyCaTodaySectionState extends State<DailyCaTodaySection> {
                       widget.onViewResults != null) ...[
                     SizedBox(height: compact ? 2 : 4),
                     TextButton(
-                      onPressed: widget.launching
-                          ? null
-                          : widget.onViewResults,
+                      onPressed: widget.launching ? null : widget.onViewResults,
                       style: TextButton.styleFrom(
                         visualDensity: VisualDensity.compact,
                         padding: const EdgeInsets.symmetric(
@@ -300,7 +298,7 @@ class _DailyCaTodaySectionState extends State<DailyCaTodaySection> {
                         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                       ),
                       child: Text(
-                        'View results',
+                        context.l10n.dcaViewResults,
                         style: AppTextStyles.label().copyWith(
                           fontWeight: FontWeight.w700,
                           color: AppColors.primary,

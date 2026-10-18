@@ -6,7 +6,9 @@ abstract final class QuestionStatsFirestore {
   static const syncLogCollectionName = 'question_stats_sync_log';
 
   static DocumentReference<Map<String, dynamic>> doc(String questionId) {
-    return FirebaseFirestore.instance.collection(collectionName).doc(questionId);
+    return FirebaseFirestore.instance
+        .collection(collectionName)
+        .doc(questionId);
   }
 
   static const totalAttempts = 'total_attempts';

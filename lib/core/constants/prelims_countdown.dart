@@ -1,6 +1,7 @@
+import '../../l10n/l10n.dart';
+
 class PrelimsCountdown {
   PrelimsCountdown._();
-
   // UPSC Prelims start time (local device time): 24 May, 09:30 AM.
   static final DateTime prelimsDate = DateTime(2026, 5, 24, 9, 30);
 
@@ -25,8 +26,8 @@ class PrelimsCountdown {
 
   static String daysLabel({DateTime? now, DateTime? targetDate}) {
     final days = daysLeft(now: now, targetDate: targetDate);
-    if (days == 0) return 'Prelims is today';
-    return '$days days to UPSC Prelims';
+    if (days == 0) return appL10n.prelimsToday;
+    return appL10n.prelimsDaysTo(days);
   }
 
   static String quoteForDate({DateTime? now}) {
@@ -48,15 +49,18 @@ class PrelimsCountdown {
   static String persistentNotificationTitle() => 'UPSC Prelims';
 
   /// Body for the persistent notification: days remaining only (no quote, no H:M:S).
-  static String persistentNotificationBody({DateTime? now, DateTime? targetDate}) {
+  static String persistentNotificationBody({
+    DateTime? now,
+    DateTime? targetDate,
+  }) {
     final days = daysLeft(now: now, targetDate: targetDate);
 
     if (days <= 0) {
-      return 'It\'s the exam day,\nYou\'ve prepared for this — breathe and execute.';
+      return appL10n.prelimsBodyToday;
     }
     if (days == 1) {
-      return '1 day to go,\nOne calm session at a time.';
+      return appL10n.prelimsBodyOneDay;
     }
-    return '$days days to go\nSmall steps, every day — that\'s the edge.';
+    return appL10n.prelimsBodyDays(days);
   }
 }

@@ -14,6 +14,7 @@ class WebPlayerAttemptSnapshot {
   final String? selectedOption;
   final String? confidence;
   final bool revealed;
+
   /// In exam mode: option + confidence locked for this question.
   final bool examAnswered;
 
@@ -88,7 +89,8 @@ SessionResult buildWebPlayerSessionResult({
   for (final q in questions) {
     final a = attempts[q.uuid];
     if (a == null) continue;
-    final wrongAns = a.selectedOption != null &&
+    final wrongAns =
+        a.selectedOption != null &&
         a.selectedOption != q.correctOption.toLowerCase();
     if (wrongAns && AnswerConfidence.isDangerouslyConfident(a.confidence)) {
       dangerZoneWrong++;

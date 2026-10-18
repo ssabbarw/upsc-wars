@@ -8,10 +8,10 @@ enum MiniGameDifficulty {
   hard;
 
   static MiniGameDifficulty parse(String? raw) => switch (raw) {
-        'easy' => MiniGameDifficulty.easy,
-        'hard' => MiniGameDifficulty.hard,
-        _ => MiniGameDifficulty.medium,
-      };
+    'easy' => MiniGameDifficulty.easy,
+    'hard' => MiniGameDifficulty.hard,
+    _ => MiniGameDifficulty.medium,
+  };
 }
 
 String _miniGameText(String en, String? hi, String lang) {
@@ -42,11 +42,11 @@ class TimelineItem {
   String labelForLang(String lang) => _miniGameText(label, labelHi, lang);
 
   factory TimelineItem.fromJson(Map<String, dynamic> json) => TimelineItem(
-        label: json['label'] as String,
-        labelHi: json['label_hi'] as String?,
-        yearDisplay: json['year_display'] as String,
-        sortKey: json['sort_key'] as int,
-      );
+    label: json['label'] as String,
+    labelHi: json['label_hi'] as String?,
+    yearDisplay: json['year_display'] as String,
+    sortKey: json['sort_key'] as int,
+  );
 }
 
 class TimelineSorterSet {
@@ -118,15 +118,15 @@ class OddOneOutItem {
       _miniGameText(explanation, explanationHi, lang);
 
   factory OddOneOutItem.fromJson(Map<String, dynamic> json) => OddOneOutItem(
-        id: json['id'] as String,
-        subject: json['subject'] as String,
-        difficulty: MiniGameDifficulty.parse(json['difficulty'] as String?),
-        items: (json['items'] as List<dynamic>).cast<String>(),
-        itemsHi: (json['items_hi'] as List<dynamic>?)?.cast<String>(),
-        oddIndex: json['odd_index'] as int,
-        explanation: json['explanation'] as String,
-        explanationHi: json['explanation_hi'] as String?,
-      );
+    id: json['id'] as String,
+    subject: json['subject'] as String,
+    difficulty: MiniGameDifficulty.parse(json['difficulty'] as String?),
+    items: (json['items'] as List<dynamic>).cast<String>(),
+    itemsHi: (json['items_hi'] as List<dynamic>?)?.cast<String>(),
+    oddIndex: json['odd_index'] as int,
+    explanation: json['explanation'] as String,
+    explanationHi: json['explanation_hi'] as String?,
+  );
 }
 
 class FactOrBluffItem {
@@ -245,15 +245,15 @@ class DuelQuestion {
       _miniGameList(options, optionsHi, lang);
 
   factory DuelQuestion.fromJson(Map<String, dynamic> json) => DuelQuestion(
-        id: json['id'] as String,
-        subject: json['subject'] as String,
-        difficulty: MiniGameDifficulty.parse(json['difficulty'] as String?),
-        question: json['question'] as String,
-        questionHi: json['question_hi'] as String?,
-        options: (json['options'] as List<dynamic>).cast<String>(),
-        optionsHi: (json['options_hi'] as List<dynamic>?)?.cast<String>(),
-        answerIndex: json['answer_index'] as int,
-      );
+    id: json['id'] as String,
+    subject: json['subject'] as String,
+    difficulty: MiniGameDifficulty.parse(json['difficulty'] as String?),
+    question: json['question'] as String,
+    questionHi: json['question_hi'] as String?,
+    options: (json['options'] as List<dynamic>).cast<String>(),
+    optionsHi: (json['options_hi'] as List<dynamic>?)?.cast<String>(),
+    answerIndex: json['answer_index'] as int,
+  );
 }
 
 /// Content filter chosen before launching a game. Empty strings = no filter.
@@ -287,8 +287,8 @@ List<T> drawMiniGameSession<T>({
   final byDifficulty = difficulties.isEmpty
       ? subjectPool
       : subjectPool
-          .where((e) => difficulties.contains(difficultyOf(e).name))
-          .toList();
+            .where((e) => difficulties.contains(difficultyOf(e).name))
+            .toList();
   final source = byDifficulty.isEmpty ? subjectPool : byDifficulty;
 
   source.shuffle();

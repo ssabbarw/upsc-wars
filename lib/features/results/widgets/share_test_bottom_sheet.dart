@@ -10,6 +10,7 @@ import 'package:upsc_wars/core/theme/app_radius.dart';
 import 'package:upsc_wars/core/theme/app_spacing.dart';
 import 'package:upsc_wars/core/theme/app_text_styles.dart';
 import 'package:upsc_wars/shared/widgets/app_toast.dart';
+import '../../../l10n/l10n.dart';
 
 /// Shows a bottom sheet to share a test with friends.
 ///
@@ -26,18 +27,13 @@ Future<void> showShareTestBottomSheet({
     context: context,
     isScrollControlled: true,
     backgroundColor: Colors.transparent,
-    builder: (ctx) => _ShareTestBottomSheetBody(
-      sessionId: sessionId,
-      question: question,
-    ),
+    builder: (ctx) =>
+        _ShareTestBottomSheetBody(sessionId: sessionId, question: question),
   );
 }
 
 class _ShareTestBottomSheetBody extends ConsumerStatefulWidget {
-  const _ShareTestBottomSheetBody({
-    required this.sessionId,
-    this.question,
-  });
+  const _ShareTestBottomSheetBody({required this.sessionId, this.question});
   final String sessionId;
   final TestQuestion? question;
 
@@ -103,7 +99,7 @@ class _ShareTestBottomSheetBodyState
     if (mounted) {
       AppToast.showText(
         context,
-        'Link copied to clipboard',
+        context.l10n.shareLinkCopied,
         duration: const Duration(seconds: 2),
       );
     }
@@ -159,7 +155,7 @@ class _ShareTestBottomSheetBodyState
                 const SizedBox(width: AppSpacing.md),
                 Expanded(
                   child: Text(
-                    'Share Test',
+                    context.l10n.shareTitle,
                     style: AppTextStyles.h3().copyWith(
                       color: scheme.onSurface,
                       letterSpacing: -0.5,
@@ -178,7 +174,7 @@ class _ShareTestBottomSheetBodyState
               Row(
                 children: [
                   _ModeCard(
-                    label: 'Question',
+                    label: context.l10n.shareQuestion,
                     icon: Icons.quiz_outlined,
                     isSelected: _selectedType == 'question',
                     onTap: () => _generateLink('question'),
@@ -186,7 +182,7 @@ class _ShareTestBottomSheetBodyState
                   ),
                   const SizedBox(width: AppSpacing.md),
                   _ModeCard(
-                    label: 'Entire Test',
+                    label: context.l10n.shareEntireTest,
                     icon: Icons.assignment_outlined,
                     isSelected: _selectedType == 'entire',
                     onTap: () => _generateLink('entire'),
@@ -201,8 +197,8 @@ class _ShareTestBottomSheetBodyState
               child: _isLoading
                   ? _buildLoadingState(scheme)
                   : currentUri != null
-                      ? _buildSuccessState(currentUri, scheme, isDark)
-                      : _buildErrorState(scheme),
+                  ? _buildSuccessState(currentUri, scheme, isDark)
+                  : _buildErrorState(scheme),
             ),
           ],
         ),
@@ -218,8 +214,10 @@ class _ShareTestBottomSheetBodyState
         CircularProgressIndicator(strokeWidth: 3, color: scheme.primary),
         const SizedBox(height: AppSpacing.lg),
         Text(
-          'Generating link...',
-          style: AppTextStyles.bodySm().copyWith(color: scheme.onSurfaceVariant),
+          context.l10n.shareGenerating,
+          style: AppTextStyles.bodySm().copyWith(
+            color: scheme.onSurfaceVariant,
+          ),
         ),
         const SizedBox(height: AppSpacing.xl),
       ],
@@ -236,13 +234,13 @@ class _ShareTestBottomSheetBodyState
           _buildInfoRow(
             scheme,
             Icons.people_outline_rounded,
-            'You can share this link with your friends.',
+            context.l10n.shareInfoFriends,
           ),
           const SizedBox(height: AppSpacing.sm),
           _buildInfoRow(
             scheme,
             Icons.bug_report_outlined,
-            'You can use this link to report any error in this question to the upsc wars team.',
+            context.l10n.shareInfoReport,
           ),
           const SizedBox(height: AppSpacing.lg),
         ],
@@ -274,7 +272,7 @@ class _ShareTestBottomSheetBodyState
               IconButton(
                 onPressed: () => _copyToClipboard(uri.toString()),
                 icon: const Icon(Icons.copy_all_rounded, size: 20),
-                tooltip: 'Copy',
+                tooltip: context.l10n.commonCopy,
                 color: scheme.primary,
               ),
             ],
@@ -288,7 +286,7 @@ class _ShareTestBottomSheetBodyState
                 child: OutlinedButton.icon(
                   onPressed: () => showContactUsSheet(context),
                   icon: const Icon(Icons.support_agent_rounded),
-                  label: const Text('Contact Us'),
+                  label: Text(context.l10n.shareContactUs),
                 ),
               ),
               const SizedBox(width: AppSpacing.md),
@@ -299,7 +297,7 @@ class _ShareTestBottomSheetBodyState
                   SharePlus.instance.share(ShareParams(uri: uri));
                 },
                 icon: const Icon(Icons.share_rounded),
-                label: const Text('Share Link'),
+                label: Text(context.l10n.shareLink),
               ),
             ),
           ],
@@ -312,7 +310,7 @@ class _ShareTestBottomSheetBodyState
                 child: TextButton.icon(
                   onPressed: () => Navigator.pop(context),
                   icon: const Icon(Icons.check_circle_outline_rounded),
-                  label: const Text('Done'),
+                  label: Text(context.l10n.commonDone),
                 ),
               ),
             ],
@@ -352,13 +350,13 @@ class _ShareTestBottomSheetBodyState
         const Icon(Icons.error_outline_rounded, color: Colors.red, size: 40),
         const SizedBox(height: AppSpacing.md),
         Text(
-          'Failed to generate link',
+          context.l10n.shareFailed,
           style: AppTextStyles.body().copyWith(color: scheme.error),
         ),
         const SizedBox(height: AppSpacing.lg),
         TextButton(
           onPressed: () => _generateLink(_selectedType),
-          child: const Text('Retry'),
+          child: Text(context.l10n.commonRetry),
         ),
       ],
     );

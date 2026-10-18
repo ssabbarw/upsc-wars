@@ -109,10 +109,7 @@ class OnboardingQuestionDepthPage extends HookWidget {
                 SizedBox(height: onb(context, 22)),
                 for (var i = 0; i < features.length; i++) ...[
                   if (i > 0) SizedBox(height: onb(context, 10)),
-                  _FeatureRow(
-                    feature: features[i],
-                    checked: checked.value > i,
-                  ),
+                  _FeatureRow(feature: features[i], checked: checked.value > i),
                 ],
               ],
             ),

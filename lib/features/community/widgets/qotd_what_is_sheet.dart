@@ -5,6 +5,7 @@ import '../../../core/providers/prefs_provider.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../l10n/l10n.dart';
 
 /// First tap on Post QOTD: a short explainer. No-op after it has been seen.
 Future<void> maybeShowQotdWhatIsIntro({
@@ -47,30 +48,24 @@ Future<void> showQotdWhatIsSheet(BuildContext context) {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Text(
-                'What is QOTD?',
+                context.l10n.qotdWhatIs,
                 style: AppTextStyles.h3().copyWith(color: scheme.onSurface),
               ),
               const SizedBox(height: AppSpacing.sm),
               Text(
-                'Share a question from your test with the community.',
+                context.l10n.qotdWhat1,
                 style: AppTextStyles.bodySm().copyWith(
                   color: scheme.onSurfaceVariant,
                   height: 1.35,
                 ),
               ),
               const SizedBox(height: AppSpacing.md),
-              _Bullet(
-                scheme: scheme,
-                text: 'Others attempt it and react.',
-              ),
-              _Bullet(
-                scheme: scheme,
-                text: 'It stays live for 24 hours.',
-              ),
+              _Bullet(scheme: scheme, text: context.l10n.qotdWhat2),
+              _Bullet(scheme: scheme, text: context.l10n.qotdWhat3),
               const SizedBox(height: AppSpacing.lg),
               FilledButton(
                 onPressed: () => Navigator.pop(ctx),
-                child: const Text('Got it'),
+                child: Text(context.l10n.commonGotIt),
               ),
             ],
           ),

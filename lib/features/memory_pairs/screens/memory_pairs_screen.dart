@@ -25,6 +25,7 @@ import '../widgets/memory_pair_revise_view.dart';
 import '../widgets/memory_pair_set_detail_view.dart';
 import '../widgets/memory_pairs_sets_view.dart';
 import '../widgets/memory_pairs_subject_view.dart';
+import '../../../l10n/l10n.dart';
 
 enum _MemoryPairsStep { subjects, subject, setDetail, revise, game, result }
 
@@ -138,8 +139,8 @@ class MemoryPairsScreen extends HookConsumerWidget {
       isWeakRetry.value = pairsOverride != null;
       final set = activeSet.value;
       if (set != null) {
-        final pairs = pairsOverride ??
-            set.pairs.take(set.difficulty.pairCount).toList();
+        final pairs =
+            pairsOverride ?? set.pairs.take(set.difficulty.pairCount).toList();
         unawaited(
           Analytics.track(
             ref,
@@ -174,9 +175,7 @@ class MemoryPairsScreen extends HookConsumerWidget {
 
     void onGameDone(MemoryPairGameResult result) async {
       lastResult.value = result;
-      isNewBest.value = isWeakRetry.value
-          ? false
-          : await saveResult(result);
+      isNewBest.value = isWeakRetry.value ? false : await saveResult(result);
       isWeakRetry.value = false;
       unawaited(
         Analytics.track(
@@ -194,15 +193,15 @@ class MemoryPairsScreen extends HookConsumerWidget {
     }
 
     String title() => switch (step.value) {
-          _MemoryPairsStep.subjects => 'Memory Pairs',
-          _MemoryPairsStep.subject =>
-            activeSubject.value?.subjectLabel ?? 'Subject',
-          _MemoryPairsStep.setDetail => 'Set detail',
-          _MemoryPairsStep.revise => 'Revise',
-          _MemoryPairsStep.game =>
-            activeSet.value?.nameForLang(lang) ?? 'Memory Pairs',
-          _MemoryPairsStep.result => 'Summary',
-        };
+      _MemoryPairsStep.subjects => 'Memory Pairs',
+      _MemoryPairsStep.subject =>
+        activeSubject.value?.subjectLabel ?? context.l10n.commonSubject,
+      _MemoryPairsStep.setDetail => context.l10n.mpSetDetail,
+      _MemoryPairsStep.revise => context.l10n.mpRevise,
+      _MemoryPairsStep.game =>
+        activeSet.value?.nameForLang(lang) ?? 'Memory Pairs',
+      _MemoryPairsStep.result => context.l10n.mpSummary,
+    };
 
     void exitToHomeOrPop() {
       if (context.canPop()) {
@@ -262,70 +261,74 @@ class MemoryPairsScreen extends HookConsumerWidget {
       child: Scaffold(
         body: SafeArea(
           child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.fromLTRB(
-                AppSpacing.sm,
-                AppSpacing.sm,
-                AppSpacing.lg,
-                AppSpacing.sm,
-              ),
-              child: Row(
-                children: [
-                  IconButton(
-                    onPressed: onBack,
-                    icon: const Icon(Icons.chevron_left),
-                  ),
-                  if (showAppBarTitle)
-                    Expanded(
-                      child: Text(
-                        title(),
-                        style: AppTextStyles.h2().copyWith(
-                          color: Theme.of(context).colorScheme.onSurface,
-                          fontWeight: step.value == _MemoryPairsStep.subject
-                              ? FontWeight.w800
-                              : FontWeight.w600,
-                        ),
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    )
-                  else
-                    const Spacer(),
-                  if (step.value == _MemoryPairsStep.subject && subject != null)
-                    MemoryPairSubjectIcon(
-                      icon: memoryPairSubjectVisual(subject.subjectKey).icon,
-                      color: memoryPairSubjectVisual(subject.subjectKey).accent,
-                      size: 40,
+            children: [
+              Padding(
+                padding: const EdgeInsets.fromLTRB(
+                  AppSpacing.sm,
+                  AppSpacing.sm,
+                  AppSpacing.lg,
+                  AppSpacing.sm,
+                ),
+                child: Row(
+                  children: [
+                    IconButton(
+                      onPressed: onBack,
+                      icon: const Icon(Icons.chevron_left),
                     ),
-                ],
+                    if (showAppBarTitle)
+                      Expanded(
+                        child: Text(
+                          title(),
+                          style: AppTextStyles.h2().copyWith(
+                            color: Theme.of(context).colorScheme.onSurface,
+                            fontWeight: step.value == _MemoryPairsStep.subject
+                                ? FontWeight.w800
+                                : FontWeight.w600,
+                          ),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      )
+                    else
+                      const Spacer(),
+                    if (step.value == _MemoryPairsStep.subject &&
+                        subject != null)
+                      MemoryPairSubjectIcon(
+                        icon: memoryPairSubjectVisual(subject.subjectKey).icon,
+                        color: memoryPairSubjectVisual(
+                          subject.subjectKey,
+                        ).accent,
+                        size: 40,
+                      ),
+                  ],
+                ),
               ),
-            ),
-            Expanded(
-              child: switch (step.value) {
-                _MemoryPairsStep.subjects => MemoryPairsSetsView(
+              Expanded(
+                child: switch (step.value) {
+                  _MemoryPairsStep.subjects => MemoryPairsSetsView(
                     onOpenSubject: openSubject,
                   ),
-                _MemoryPairsStep.subject when subject != null =>
-                  MemoryPairsSubjectView(
-                    group: subject,
-                    lang: lang,
-                    onOpenSet: openSet,
-                  ),
-                _MemoryPairsStep.setDetail when set != null =>
-                  MemoryPairSetDetailView(
-                    set: set,
-                    lang: lang,
-                    onRevise: () => step.value = _MemoryPairsStep.revise,
-                    onPlay: startGame,
-                  ),
-                _MemoryPairsStep.revise when set != null => MemoryPairReviseView(
-                    set: set,
-                    difficulty: set.difficulty,
-                    lang: lang,
-                    onPlay: () => startGame(),
-                  ),
-                _MemoryPairsStep.game when set != null => MemoryPairGameView(
+                  _MemoryPairsStep.subject when subject != null =>
+                    MemoryPairsSubjectView(
+                      group: subject,
+                      lang: lang,
+                      onOpenSet: openSet,
+                    ),
+                  _MemoryPairsStep.setDetail when set != null =>
+                    MemoryPairSetDetailView(
+                      set: set,
+                      lang: lang,
+                      onRevise: () => step.value = _MemoryPairsStep.revise,
+                      onPlay: startGame,
+                    ),
+                  _MemoryPairsStep.revise when set != null =>
+                    MemoryPairReviseView(
+                      set: set,
+                      difficulty: set.difficulty,
+                      lang: lang,
+                      onPlay: () => startGame(),
+                    ),
+                  _MemoryPairsStep.game when set != null => MemoryPairGameView(
                     pairs: pairsForGame,
                     lang: lang,
                     onDone: onGameDone,
@@ -334,30 +337,30 @@ class MemoryPairsScreen extends HookConsumerWidget {
                       retryPairs.value = null;
                     },
                   ),
-                _MemoryPairsStep.result when set != null &&
-                    lastResult.value != null =>
-                  MemoryPairResultView(
-                    set: set,
-                    difficulty: set.difficulty,
-                    lang: lang,
-                    result: lastResult.value!,
-                    isNewBest: isNewBest.value,
-                    onTryAnotherSet: () {
-                      step.value = _MemoryPairsStep.subjects;
-                      activeSet.value = null;
-                      activeSubject.value = null;
-                    },
-                    onPlayAgain: () => startGame(),
-                    onExit: () {
-                      step.value = _MemoryPairsStep.subjects;
-                      activeSet.value = null;
-                      activeSubject.value = null;
-                    },
-                  ),
-                _ => const SizedBox.shrink(),
-              },
-            ),
-          ],
+                  _MemoryPairsStep.result
+                      when set != null && lastResult.value != null =>
+                    MemoryPairResultView(
+                      set: set,
+                      difficulty: set.difficulty,
+                      lang: lang,
+                      result: lastResult.value!,
+                      isNewBest: isNewBest.value,
+                      onTryAnotherSet: () {
+                        step.value = _MemoryPairsStep.subjects;
+                        activeSet.value = null;
+                        activeSubject.value = null;
+                      },
+                      onPlayAgain: () => startGame(),
+                      onExit: () {
+                        step.value = _MemoryPairsStep.subjects;
+                        activeSet.value = null;
+                        activeSubject.value = null;
+                      },
+                    ),
+                  _ => const SizedBox.shrink(),
+                },
+              ),
+            ],
           ),
         ),
       ),

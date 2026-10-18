@@ -27,9 +27,10 @@ class ShimmerBox extends HookWidget {
     )..repeat(reverse: true);
 
     final opacity = useAnimation(
-      Tween<double>(begin: 0.4, end: 1.0).animate(
-        CurvedAnimation(parent: ctrl, curve: Curves.easeInOut),
-      ),
+      Tween<double>(
+        begin: 0.4,
+        end: 1.0,
+      ).animate(CurvedAnimation(parent: ctrl, curve: Curves.easeInOut)),
     );
 
     final color =

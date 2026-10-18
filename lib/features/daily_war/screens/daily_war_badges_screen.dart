@@ -5,6 +5,7 @@ import '../domain/daily_war_badges.dart';
 import '../providers/daily_war_providers.dart';
 import '../theme/daily_war_theme.dart';
 import '../widgets/daily_war_badge_chip.dart';
+import '../../../l10n/l10n.dart';
 
 /// Cabinet of every Daily War award + how many times it was earned.
 class DailyWarBadgesScreen extends ConsumerWidget {
@@ -37,7 +38,7 @@ class DailyWarBadgesScreen extends ConsumerWidget {
             padding: const EdgeInsets.fromLTRB(16, 8, 16, 28),
             children: [
               Text(
-                '$kinds badges · $earned total earns',
+                context.l10n.dwBadgesCount(kinds, earned),
                 style: DwText.dm(
                   size: 13,
                   weight: FontWeight.w600,
@@ -46,7 +47,7 @@ class DailyWarBadgesScreen extends ConsumerWidget {
               ),
               const SizedBox(height: 4),
               Text(
-                'Counts sync from your Static War nights — kept on this device and in the cloud.',
+                context.l10n.dwBadgesSyncNote,
                 style: DwText.dm(
                   size: 12,
                   color: scheme.onSurfaceVariant,

@@ -8,9 +8,14 @@ import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../domain/daily_ca_source_links.dart';
+import '../../../l10n/l10n.dart';
 
 class DailyCaSourceLinkRow extends StatelessWidget {
-  const DailyCaSourceLinkRow({super.key, required this.link, this.compact = false});
+  const DailyCaSourceLinkRow({
+    super.key,
+    required this.link,
+    this.compact = false,
+  });
 
   final DailyCaSourceLink link;
   final bool compact;
@@ -74,9 +79,9 @@ class DailyCaSourceLinkRow extends StatelessWidget {
     if (uri == null) return;
     final ok = await launchUrl(uri, mode: LaunchMode.externalApplication);
     if (!ok && context.mounted) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Could not open this link.')),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text(context.l10n.dcaLinkFailed)));
     }
   }
 }

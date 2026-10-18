@@ -28,7 +28,8 @@ class SeriesSubjectScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final isHindi = ref.watch(appLanguageProvider).asData?.value == 'hi';
     final owned =
-        ref.watch(ownedSeriesIdsProvider).asData?.value.contains(seriesId) ?? false;
+        ref.watch(ownedSeriesIdsProvider).asData?.value.contains(seriesId) ??
+        false;
     final bundleAsync = ref.watch(seriesBundleProvider(seriesId));
     final statsAsync = ref.watch(seriesStatsProvider(seriesId));
     final title = SeriesSubjects.label(subjectId, hindi: isHindi);
@@ -37,7 +38,8 @@ class SeriesSubjectScreen extends ConsumerWidget {
       appBar: AppBar(title: Text(title)),
       body: bundleAsync.when(
         loading: () => const Center(child: CircularProgressIndicator()),
-        error: (_, _) => const Center(child: Text("Couldn't load this subject.")),
+        error: (_, _) =>
+            const Center(child: Text("Couldn't load this subject.")),
         data: (bundle) {
           final stats =
               statsAsync.value ??
@@ -78,7 +80,12 @@ class SeriesSubjectScreen extends ConsumerWidget {
                 if (tests.isNotEmpty) ...[
                   SeriesSectionHeader('Tests in $title'),
                   for (final t in tests)
-                    SeriesTestRow(bundle: bundle, test: t, owned: owned, stats: stats),
+                    SeriesTestRow(
+                      bundle: bundle,
+                      test: t,
+                      owned: owned,
+                      stats: stats,
+                    ),
                 ] else
                   Text(
                     'This subject has no tests of its own. Its numbers come '
@@ -108,7 +115,9 @@ class _SubjectHeader extends StatelessWidget {
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final hasData = subject.answered > 0;
-    final color = hasData ? seriesAccuracyColor(subject.accuracy) : scheme.onSurfaceVariant;
+    final color = hasData
+        ? seriesAccuracyColor(subject.accuracy)
+        : scheme.onSurfaceVariant;
     final tests = subject.tests;
     final caption = tests != null
         ? '${tests.attempted} of ${tests.total} tests completed'
@@ -153,7 +162,9 @@ class _SubjectHeader extends StatelessWidget {
                 const SizedBox(height: 2),
                 Text(
                   caption,
-                  style: AppTextStyles.bodySm().copyWith(color: scheme.onSurfaceVariant),
+                  style: AppTextStyles.bodySm().copyWith(
+                    color: scheme.onSurfaceVariant,
+                  ),
                 ),
                 const SizedBox(height: AppSpacing.sm),
                 ClipRRect(
@@ -181,7 +192,9 @@ class _SubjectHeader extends StatelessWidget {
               ),
               Text(
                 'accuracy',
-                style: AppTextStyles.caption().copyWith(color: scheme.onSurfaceVariant),
+                style: AppTextStyles.caption().copyWith(
+                  color: scheme.onSurfaceVariant,
+                ),
               ),
             ],
           ),

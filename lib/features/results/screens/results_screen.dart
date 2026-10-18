@@ -32,6 +32,7 @@ import '../../home/providers/home_activation_provider.dart';
 import '../../home/providers/home_activation_journey_provider.dart';
 import '../widgets/session_summary_coach.dart';
 import '../widgets/share_test_bottom_sheet.dart';
+import '../../../l10n/l10n.dart';
 
 String _sessionResultPhase(AsyncValue<SessionResult>? v) {
   if (v == null) return '(none)';
@@ -54,14 +55,8 @@ List<Widget> _resultsScrollChildren({
       BattleLiveScoreboard(sessionId: sessionId),
       const SizedBox(height: AppSpacing.md),
     ],
-    OpenChallengeResultsActions(
-      sessionId: sessionId,
-      result: result,
-    ),
-    OpenChallengePostFromResultsCard(
-      sessionId: sessionId,
-      result: result,
-    ),
+    OpenChallengeResultsActions(sessionId: sessionId, result: result),
+    OpenChallengePostFromResultsCard(sessionId: sessionId, result: result),
     if ((result.analyticsFeatureKey ?? '').startsWith('share_deep_link_')) ...[
       const SizedBox(height: AppSpacing.md),
       _SharedLeaderboardSection(
@@ -90,19 +85,19 @@ Future<void> _confirmLeaveResultsAndGoHome(
   final confirmed = await showDialog<bool>(
     context: context,
     builder: (ctx) => AlertDialog(
-      title: Text('Are you sure?', style: AppTextStyles.h3()),
+      title: Text(context.l10n.resultsAreYouSure, style: AppTextStyles.h3()),
       content: Text(
-        'You will return to the home screen.',
+        context.l10n.resultsReturnHome,
         style: AppTextStyles.bodyMd(),
       ),
       actions: [
         TextButton(
           onPressed: () => Navigator.pop(ctx, false),
-          child: const Text('Cancel'),
+          child: Text(context.l10n.commonCancel),
         ),
         TextButton(
           onPressed: () => Navigator.pop(ctx, true),
-          child: const Text('Go to Home'),
+          child: Text(context.l10n.resultsGoToHome),
         ),
       ],
     ),
@@ -159,7 +154,9 @@ class ResultsScreen extends ConsumerWidget {
         ?.value
         .getString(PrefKeys.shareDeepLinkShareIdKey(sessionId));
     final scheme = Theme.of(context).colorScheme;
-    final hPad = AppBreakpoints.fullScreenHPadding(MediaQuery.sizeOf(context).width);
+    final hPad = AppBreakpoints.fullScreenHPadding(
+      MediaQuery.sizeOf(context).width,
+    );
 
     // Submit uses go('/results/...'), so the root stack often cannot pop.
     return PopScope(
@@ -179,8 +176,7 @@ class ResultsScreen extends ConsumerWidget {
         backgroundColor: scheme.surface,
         body: SafeArea(
           child: async.when(
-            loading: () =>
-                _ResultsLoadingWithTrace(sessionId: sessionId),
+            loading: () => _ResultsLoadingWithTrace(sessionId: sessionId),
             error: (e, st) {
               upscWarsTrace(
                 'ResultsScreen async.when error branch sessionId=$sessionId',
@@ -195,8 +191,8 @@ class ResultsScreen extends ConsumerWidget {
                     children: [
                       Text(
                         e is SessionNotFoundException
-                            ? 'Session not found'
-                            : 'Could not load results',
+                            ? context.l10n.testSessionNotFound
+                            : context.l10n.resultsLoadFailed,
                         style: AppTextStyles.body(),
                       ),
                       const SizedBox(height: AppSpacing.md),
@@ -204,7 +200,10 @@ class ResultsScreen extends ConsumerWidget {
                         OutlinedButton(
                           onPressed: () =>
                               ref.invalidate(sessionResultProvider(sessionId)),
-                          child: Text('Retry', style: AppTextStyles.label()),
+                          child: Text(
+                            context.l10n.commonRetry,
+                            style: AppTextStyles.label(),
+                          ),
                         ),
                       if (e is SessionNotFoundException) ...[
                         const SizedBox(height: AppSpacing.sm),
@@ -261,12 +260,10 @@ class ResultsScreen extends ConsumerWidget {
                               actionId: 'app_bar_back',
                             ),
                           ),
-                          icon: const Icon(
-                            Icons.arrow_back_ios_new_rounded,
-                          ),
+                          icon: const Icon(Icons.arrow_back_ios_new_rounded),
                         ),
                         IconButton(
-                          tooltip: 'Share test',
+                          tooltip: context.l10n.resultsShareTest,
                           style: IconButton.styleFrom(
                             foregroundColor: scheme.onSurface,
                           ),
@@ -283,7 +280,7 @@ class ResultsScreen extends ConsumerWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Session summary',
+                                context.l10n.resultsSessionSummary,
                                 style: AppTextStyles.h2().copyWith(
                                   color: scheme.onSurface,
                                   letterSpacing: -0.5,
@@ -390,7 +387,10 @@ class _SharedLeaderboardSectionState
     if (prefs.getBool(postedKey)) return;
 
     final user = FirebaseAuth.instance.currentUser;
-    final rawName = (user?.displayName ?? user?.email) ?? prefs.getString(_namePrefKey) ?? '';
+    final rawName =
+        (user?.displayName ?? user?.email) ??
+        prefs.getString(_namePrefKey) ??
+        '';
     final name = rawName.trim();
     if (name.isEmpty) return;
 
@@ -479,7 +479,7 @@ class _SharedLeaderboardSectionState
                           ),
                         ),
                         Text(
-                          'Top 5 for this shared test',
+                          context.l10n.resultsTop5Shared,
                           style: AppTextStyles.caption().copyWith(
                             color: Colors.white.withValues(alpha: 0.86),
                             fontWeight: FontWeight.w700,
@@ -503,7 +503,7 @@ class _SharedLeaderboardSectionState
                       ),
                     ),
                     child: Text(
-                      'Your score: ${widget.scorePct.round()}%',
+                      context.l10n.resultsYourScore(widget.scorePct.round()),
                       style: AppTextStyles.caption().copyWith(
                         color: Colors.white,
                         fontWeight: FontWeight.w900,
@@ -513,7 +513,8 @@ class _SharedLeaderboardSectionState
                 ],
               ),
               const SizedBox(height: AppSpacing.sm),
-              if (snap.connectionState == ConnectionState.waiting && list.isEmpty)
+              if (snap.connectionState == ConnectionState.waiting &&
+                  list.isEmpty)
                 Center(
                   child: Padding(
                     padding: const EdgeInsets.symmetric(vertical: 10),
@@ -529,7 +530,7 @@ class _SharedLeaderboardSectionState
                 )
               else if (top5.isEmpty)
                 Text(
-                  "It's empty.",
+                  context.l10n.resultsLeaderboardEmpty,
                   style: AppTextStyles.bodySm().copyWith(
                     color: Colors.white.withValues(alpha: 0.92),
                     fontWeight: FontWeight.w700,
@@ -557,7 +558,7 @@ class _SharedLeaderboardSectionState
                         children: [
                           Expanded(
                             child: Text(
-                              '$me (you)',
+                              context.l10n.resultsNameYou(me),
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
                               style: AppTextStyles.bodySm().copyWith(
@@ -582,7 +583,7 @@ class _SharedLeaderboardSectionState
                 Padding(
                   padding: const EdgeInsets.only(top: 6),
                   child: Text(
-                    'Could not load leaderboard.',
+                    context.l10n.resultsLeaderboardFailed,
                     style: AppTextStyles.caption().copyWith(
                       color: Colors.white.withValues(alpha: 0.9),
                     ),
@@ -614,8 +615,9 @@ class _LeaderRow extends StatelessWidget {
     final badgeBg = highlight
         ? Colors.white.withValues(alpha: 0.22)
         : Colors.white.withValues(alpha: 0.12);
-    final border =
-        highlight ? Colors.white.withValues(alpha: 0.95) : Colors.transparent;
+    final border = highlight
+        ? Colors.white.withValues(alpha: 0.95)
+        : Colors.transparent;
 
     return Padding(
       padding: const EdgeInsets.only(bottom: 8),

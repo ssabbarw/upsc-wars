@@ -60,10 +60,7 @@ void main() {
         draft.isFrozen(referenceIst: DateTime(2026, 6, 9, 5, 59)),
         isFalse,
       );
-      expect(
-        draft.isFrozen(referenceIst: DateTime(2026, 6, 9, 6)),
-        isTrue,
-      );
+      expect(draft.isFrozen(referenceIst: DateTime(2026, 6, 9, 6)), isTrue);
     });
   });
 }

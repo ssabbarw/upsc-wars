@@ -55,7 +55,9 @@ class QotdOptionLettersRow extends StatelessWidget {
         fg = isDark ? AppColors.wrongTextDark : AppColors.wrongText;
         borderW = 2;
       } else {
-        bg = isDark ? AppColors.surfaceTertiaryDark : AppColors.surfaceTertiaryLight;
+        bg = isDark
+            ? AppColors.surfaceTertiaryDark
+            : AppColors.surfaceTertiaryLight;
         border = isDark ? AppColors.borderDark : AppColors.borderLight;
         fg = scheme.onSurfaceVariant;
         borderW = 1.5;

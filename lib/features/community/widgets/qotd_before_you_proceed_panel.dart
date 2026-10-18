@@ -3,13 +3,14 @@ import 'package:flutter/material.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../l10n/l10n.dart';
 
-const _kQotdBeforeYouProceedRuleLines = <String>[
-  'Each QOTD stays in Community for 24 hours from when you post it.',
-  'One random MCQ is drawn from your offline catalog for the subject you pick.',
-  'Shuffle until you find a question worth sharing, then attempt it.',
-  'You post after attempting; your pick is stored with the community post.',
-  'Your name and an optional short comment appear on the QOTD card.',
+List<String> get _kQotdBeforeYouProceedRuleLines => <String>[
+  appL10n.qotdRule1,
+  appL10n.qotdRule2,
+  appL10n.qotdRule3,
+  appL10n.qotdRule4,
+  appL10n.qotdRule5,
 ];
 
 /// Shown on the post-QOTD subject step so expectations are clear before continuing.
@@ -30,7 +31,7 @@ class QotdBeforeYouProceedPanel extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('Before you proceed', style: AppTextStyles.label()),
+          Text(context.l10n.qotdBeforeProceed, style: AppTextStyles.label()),
           const SizedBox(height: AppSpacing.sm),
           for (final line in _kQotdBeforeYouProceedRuleLines)
             _qotdRuleBullet(line),

@@ -32,7 +32,9 @@ class NoTestReminderService {
       installLocal.month,
       installLocal.day,
     );
-    return installDay.add(const Duration(days: 1)).copyWith(
+    return installDay
+        .add(const Duration(days: 1))
+        .copyWith(
           hour: _reminderHour,
           minute: 0,
           second: 0,

@@ -6,7 +6,7 @@ import 'admin_dashboard_service.dart';
 /// Mirrors selected [AnalyticsEvent]s into Firestore `admin_dashboard` docs.
 class AdminDashboardAnalyticsSink implements AnalyticsSink {
   AdminDashboardAnalyticsSink({AdminDashboardWriterService? writer})
-      : _writer = writer ?? AdminDashboardWriterService();
+    : _writer = writer ?? AdminDashboardWriterService();
 
   final AdminDashboardWriterService _writer;
 

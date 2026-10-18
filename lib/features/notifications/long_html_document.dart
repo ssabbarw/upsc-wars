@@ -69,7 +69,10 @@ $inner
 </html>''';
   }
 
-  static String _injectIntoExisting(String html, {required String backgroundCss}) {
+  static String _injectIntoExisting(
+    String html, {
+    required String backgroundCss,
+  }) {
     final extras = StringBuffer()
       ..write(viewportMeta)
       ..write('<style>')
@@ -80,7 +83,10 @@ $inner
       final at = head.end;
       return '${html.substring(0, at)}$extras${html.substring(at)}';
     }
-    final htmlTag = RegExp('<html[^>]*>', caseSensitive: false).firstMatch(html);
+    final htmlTag = RegExp(
+      '<html[^>]*>',
+      caseSensitive: false,
+    ).firstMatch(html);
     if (htmlTag != null) {
       final at = htmlTag.end;
       return '${html.substring(0, at)}<head>$extras</head>${html.substring(at)}';

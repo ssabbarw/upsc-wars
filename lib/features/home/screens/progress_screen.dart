@@ -45,10 +45,7 @@ class ProgressScreen extends HookConsumerWidget {
       ),
       data: (rows) {
         final sorted = _sortedRows(rows, sortMode.value);
-        final totalWrong = rows.fold(
-          0,
-          (sum, r) => sum + r.wrongAnswerCount,
-        );
+        final totalWrong = rows.fold(0, (sum, r) => sum + r.wrongAnswerCount);
         final attemptedCount = rows.where((r) => r.hasAttempts).length;
 
         return CustomScrollView(
@@ -78,10 +75,8 @@ class ProgressScreen extends HookConsumerWidget {
                 itemCount: sorted.length,
                 separatorBuilder: (_, _) =>
                     const SizedBox(height: AppSpacing.cardListGap),
-                itemBuilder: (context, i) => _SubjectRow(
-                  row: sorted[i],
-                  borderColor: borderColor,
-                ),
+                itemBuilder: (context, i) =>
+                    _SubjectRow(row: sorted[i], borderColor: borderColor),
               ),
             ),
             SliverToBoxAdapter(
@@ -103,9 +98,7 @@ class ProgressScreen extends HookConsumerWidget {
     if (embedded) return body;
 
     return PopToShellHomeScope(
-      child: Scaffold(
-        body: SafeArea(child: body),
-      ),
+      child: Scaffold(body: SafeArea(child: body)),
     );
   }
 
@@ -220,7 +213,9 @@ class _Header extends StatelessWidget {
                           ),
                         ),
                         TextSpan(
-                          text: context.l10n.progressWrongAnswersAllTime(totalWrong),
+                          text: context.l10n.progressWrongAnswersAllTime(
+                            totalWrong,
+                          ),
                         ),
                         TextSpan(
                           text: '$attemptedCount/8',
@@ -245,10 +240,7 @@ class _Header extends StatelessWidget {
 // ────────────────────────────────────────────────────────────────────────────
 
 class _SortChips extends StatelessWidget {
-  const _SortChips({
-    required this.sortMode,
-    required this.onSortChanged,
-  });
+  const _SortChips({required this.sortMode, required this.onSortChanged});
 
   final SubjectSortMode sortMode;
   final ValueChanged<SubjectSortMode> onSortChanged;
@@ -313,8 +305,9 @@ class _SubjectRow extends ConsumerWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     final accuracy = row.accuracyPercent;
-    final accuracyText =
-        accuracy != null ? '${accuracy.toStringAsFixed(0)}%' : null;
+    final accuracyText = accuracy != null
+        ? '${accuracy.toStringAsFixed(0)}%'
+        : null;
 
     return GestureDetector(
       onTap: () {
@@ -343,7 +336,9 @@ class _SubjectRow extends ConsumerWidget {
               width: 44,
               height: 44,
               decoration: BoxDecoration(
-                color: AppColors.primaryLight.withValues(alpha: isDark ? 0.12 : 1.0),
+                color: AppColors.primaryLight.withValues(
+                  alpha: isDark ? 0.12 : 1.0,
+                ),
                 borderRadius: BorderRadius.circular(AppRadius.md),
               ),
               child: Icon(
@@ -367,7 +362,10 @@ class _SubjectRow extends ConsumerWidget {
                   const SizedBox(height: 2),
                   if (row.hasAttempts)
                     Text(
-                      context.l10n.progressAttemptedAccuracy(row.totalAttempted, accuracyText ?? '—'),
+                      context.l10n.progressAttemptedAccuracy(
+                        row.totalAttempted,
+                        accuracyText ?? '—',
+                      ),
                       style: AppTextStyles.bodySm().copyWith(
                         color: scheme.onSurfaceVariant,
                       ),
@@ -494,31 +492,31 @@ class _ProgressSkeleton extends HookWidget {
     final scheme = Theme.of(context).colorScheme;
 
     Widget row() => Container(
-          padding: const EdgeInsets.all(AppSpacing.md),
-          decoration: BoxDecoration(
-            color: scheme.surfaceContainerLow,
-            borderRadius: BorderRadius.circular(AppRadius.lg),
-            border: Border.all(color: borderColor),
+      padding: const EdgeInsets.all(AppSpacing.md),
+      decoration: BoxDecoration(
+        color: scheme.surfaceContainerLow,
+        borderRadius: BorderRadius.circular(AppRadius.lg),
+        border: Border.all(color: borderColor),
+      ),
+      child: Row(
+        children: [
+          ShimmerBox(width: 44, height: 44, borderRadius: AppRadius.md),
+          const SizedBox(width: AppSpacing.md),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                ShimmerBox(width: 120, height: 13),
+                const SizedBox(height: 6),
+                ShimmerBox(width: 80, height: 11),
+              ],
+            ),
           ),
-          child: Row(
-            children: [
-              ShimmerBox(width: 44, height: 44, borderRadius: AppRadius.md),
-              const SizedBox(width: AppSpacing.md),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    ShimmerBox(width: 120, height: 13),
-                    const SizedBox(height: 6),
-                    ShimmerBox(width: 80, height: 11),
-                  ],
-                ),
-              ),
-              const SizedBox(width: AppSpacing.sm),
-              ShimmerBox(width: 64, height: 22, borderRadius: AppRadius.pill),
-            ],
-          ),
-        );
+          const SizedBox(width: AppSpacing.sm),
+          ShimmerBox(width: 64, height: 22, borderRadius: AppRadius.pill),
+        ],
+      ),
+    );
 
     return SingleChildScrollView(
       physics: const NeverScrollableScrollPhysics(),
@@ -530,7 +528,11 @@ class _ProgressSkeleton extends HookWidget {
           const SizedBox(height: AppSpacing.xs),
           ShimmerBox(width: 200, height: 13),
           const SizedBox(height: AppSpacing.lg),
-          ShimmerBox(width: double.infinity, height: 52, borderRadius: AppRadius.md),
+          ShimmerBox(
+            width: double.infinity,
+            height: 52,
+            borderRadius: AppRadius.md,
+          ),
           const SizedBox(height: AppSpacing.lg),
           ...List.generate(
             8,

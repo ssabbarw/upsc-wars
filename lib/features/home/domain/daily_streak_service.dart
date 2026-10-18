@@ -70,7 +70,8 @@ abstract final class DailyStreakService {
 
     final last = prefs.lastActiveDate;
     final ranYesterday = last == _yesterdayKey(today);
-    final usesGrace = !ranYesterday &&
+    final usesGrace =
+        !ranYesterday &&
         last == _dayBeforeYesterdayKey(today) &&
         _graceAvailable(prefs, today);
     final next = (ranYesterday || usesGrace)
@@ -148,8 +149,7 @@ abstract final class DailyStreakService {
   static int fullDaysThisWeek({required PrefsService prefs, DateTime? now}) {
     final today = _clock(now);
     final keys = <String>{
-      for (var i = 0; i < 7; i++)
-        _key(today.subtract(Duration(days: i))),
+      for (var i = 0; i < 7; i++) _key(today.subtract(Duration(days: i))),
     };
     return prefs.todayFullDayDates.where(keys.contains).length;
   }

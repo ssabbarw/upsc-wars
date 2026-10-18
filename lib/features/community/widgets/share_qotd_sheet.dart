@@ -16,6 +16,7 @@ import '../providers/community_providers.dart';
 import '../providers/qotd_providers.dart';
 import 'qotd_post_comment_sheet.dart';
 import 'qotd_what_is_sheet.dart';
+import '../../../l10n/l10n.dart';
 
 /// First-time QOTD explainer, then the comment sheet.
 ///
@@ -47,7 +48,7 @@ Future<bool> showShareQotdSheet({
     );
     if (!context.mounted) return false;
     if (result.posted) {
-      AppToast.showText(context, 'Posted to Community QOTD');
+      AppToast.showText(context, context.l10n.qotdPosted);
       unawaited(
         logActivationMilestoneOnce(ref, ActivationMilestones.firstQotdPosted),
       );
@@ -104,7 +105,9 @@ Future<void> _createQotdPost({
   final prefs = await ref.read(prefsServiceProvider.future);
   final maxPerWindow = await ref.read(qotdMaxPostsPerDayProvider.future);
   QotdLocalPostLimit.assertCanPost(prefs, maxPerWindow);
-  await ref.read(qotdRepositoryProvider).createPost(
+  await ref
+      .read(qotdRepositoryProvider)
+      .createPost(
         questionUuid: questionUuid,
         comment: comment,
         correctOption: correctOption,

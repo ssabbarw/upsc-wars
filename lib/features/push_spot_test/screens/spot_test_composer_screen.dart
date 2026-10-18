@@ -62,7 +62,9 @@ class _ComposerBody extends HookConsumerWidget {
     }
 
     final subject = useState(subjects.first);
-    final topic = useState<String?>(_firstCatalogTopic(catalog, subjects.first));
+    final topic = useState<String?>(
+      _firstCatalogTopic(catalog, subjects.first),
+    );
     final subtopic = useState<String?>(null);
     final pinQuestion = useState(false);
     final pinnedQuestion = useState<Question?>(null);
@@ -147,9 +149,9 @@ class _ComposerBody extends HookConsumerWidget {
         return;
       }
       if (topic.value == null) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Pick a topic.')),
-        );
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(const SnackBar(content: Text('Pick a topic.')));
         return;
       }
       if (pinQuestion.value && pinnedQuestion.value == null) {
@@ -188,7 +190,9 @@ class _ComposerBody extends HookConsumerWidget {
         Text(
           'Pick subject, topic, and subtopic from the question-bank catalog. '
           'Shuffle an MCQ if you want a specific question.',
-          style: AppTextStyles.bodySm().copyWith(color: scheme.onSurfaceVariant),
+          style: AppTextStyles.bodySm().copyWith(
+            color: scheme.onSurfaceVariant,
+          ),
         ),
         const SizedBox(height: AppSpacing.lg),
         Text('Catalog', style: AppTextStyles.label()),
@@ -220,8 +224,7 @@ class _ComposerBody extends HookConsumerWidget {
             helperText: topics.isEmpty ? 'No topics in catalog' : null,
           ),
           items: [
-            for (final t in topics)
-              DropdownMenuItem(value: t, child: Text(t)),
+            for (final t in topics) DropdownMenuItem(value: t, child: Text(t)),
           ],
           onChanged: topics.isEmpty
               ? null
@@ -296,7 +299,9 @@ class _ComposerBody extends HookConsumerWidget {
                   )
                 : const Icon(Icons.shuffle),
             label: Text(
-              pinnedQuestion.value == null ? 'Shuffle question' : 'Shuffle again',
+              pinnedQuestion.value == null
+                  ? 'Shuffle question'
+                  : 'Shuffle again',
             ),
           ),
           if (pinnedQuestion.value != null) ...[
@@ -329,10 +334,7 @@ class _ComposerBody extends HookConsumerWidget {
         const SizedBox(height: AppSpacing.md),
         Text('Live preview', style: AppTextStyles.caption()),
         const SizedBox(height: AppSpacing.xs),
-        PushNotificationPreviewCard(
-          title: titleCtrl.text,
-          body: bodyCtrl.text,
-        ),
+        PushNotificationPreviewCard(title: titleCtrl.text, body: bodyCtrl.text),
         const SizedBox(height: AppSpacing.lg),
         Text('Send to', style: AppTextStyles.label()),
         const SizedBox(height: AppSpacing.sm),
@@ -357,15 +359,17 @@ class _ComposerBody extends HookConsumerWidget {
           sendTarget.value == SpotTestSendTarget.self
               ? 'Delivers only to your signed-in device.'
               : 'Delivers to all devices subscribed to topic '
-                  '"${PushSpotTestConstants.broadcastFcmTopic}". '
-                  'Requires your email on the Cloud Function allowlist.',
+                    '"${PushSpotTestConstants.broadcastFcmTopic}". '
+                    'Requires your email on the Cloud Function allowlist.',
           style: AppTextStyles.caption().copyWith(
             color: scheme.onSurfaceVariant,
           ),
         ),
         const SizedBox(height: AppSpacing.xl),
         FilledButton.icon(
-          onPressed: topic.value == null ? null : () => unawaited(openSendReview()),
+          onPressed: topic.value == null
+              ? null
+              : () => unawaited(openSendReview()),
           icon: const Icon(Icons.send_outlined),
           label: const Text('Review & send'),
         ),
@@ -374,17 +378,17 @@ class _ComposerBody extends HookConsumerWidget {
           onPressed: topic.value == null
               ? null
               : () => unawaited(
-                    launchPushSpotTest(
-                      context: context,
-                      ref: ref,
-                      subject: subject.value,
-                      topic: topic.value!,
-                      subTopic: subtopic.value,
-                      questionUuid: pinQuestion.value
-                          ? pinnedQuestion.value?.uuid
-                          : null,
-                    ),
+                  launchPushSpotTest(
+                    context: context,
+                    ref: ref,
+                    subject: subject.value,
+                    topic: topic.value!,
+                    subTopic: subtopic.value,
+                    questionUuid: pinQuestion.value
+                        ? pinnedQuestion.value?.uuid
+                        : null,
                   ),
+                ),
           icon: const Icon(Icons.play_arrow_outlined),
           label: const Text('Preview test in app'),
         ),
@@ -522,9 +526,9 @@ class _SendReviewSheetState extends ConsumerState<_SendReviewSheet> {
       if (!mounted) return;
       Navigator.of(context).pop();
       if (!widget.parentContext.mounted) return;
-      ScaffoldMessenger.of(widget.parentContext).showSnackBar(
-        SnackBar(content: Text(outcome.userFacingMessage)),
-      );
+      ScaffoldMessenger.of(
+        widget.parentContext,
+      ).showSnackBar(SnackBar(content: Text(outcome.userFacingMessage)));
     } finally {
       if (mounted) setState(() => _sending = false);
     }
@@ -576,10 +580,7 @@ class _SendReviewSheetState extends ConsumerState<_SendReviewSheet> {
             ),
           ),
           const SizedBox(height: AppSpacing.md),
-          PushNotificationPreviewCard(
-            title: widget.title,
-            body: widget.body,
-          ),
+          PushNotificationPreviewCard(title: widget.title, body: widget.body),
           const SizedBox(height: AppSpacing.md),
           _PayloadRow(label: 'Subject', value: widget.subject),
           _PayloadRow(label: 'Topic', value: widget.topic),
@@ -606,7 +607,9 @@ class _SendReviewSheetState extends ConsumerState<_SendReviewSheet> {
             children: [
               Expanded(
                 child: OutlinedButton(
-                  onPressed: _sending ? null : () => Navigator.of(context).pop(),
+                  onPressed: _sending
+                      ? null
+                      : () => Navigator.of(context).pop(),
                   child: const Text('Cancel'),
                 ),
               ),

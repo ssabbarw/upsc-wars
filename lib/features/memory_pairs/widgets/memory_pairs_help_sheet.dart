@@ -4,6 +4,7 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../l10n/l10n.dart';
 
 void showMemoryPairsHelpSheet(BuildContext context) {
   final scheme = Theme.of(context).colorScheme;
@@ -31,84 +32,86 @@ void showMemoryPairsHelpSheet(BuildContext context) {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-          Row(
-            children: [
-              Container(
-                width: 48,
-                height: 48,
-                decoration: BoxDecoration(
-                  color: AppColors.primary.withValues(
-                    alpha: isDark ? 0.22 : 0.12,
+            Row(
+              children: [
+                Container(
+                  width: 48,
+                  height: 48,
+                  decoration: BoxDecoration(
+                    color: AppColors.primary.withValues(
+                      alpha: isDark ? 0.22 : 0.12,
+                    ),
+                    shape: BoxShape.circle,
                   ),
-                  shape: BoxShape.circle,
+                  child: const Icon(
+                    Icons.emoji_events_outlined,
+                    color: AppColors.primary,
+                    size: 26,
+                  ),
                 ),
-                child: const Icon(
-                  Icons.emoji_events_outlined,
-                  color: AppColors.primary,
-                  size: 26,
+                const SizedBox(width: AppSpacing.md),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        context.l10n.mpHowItWorks,
+                        style: AppTextStyles.h3().copyWith(
+                          color: scheme.onSurface,
+                          fontWeight: FontWeight.w800,
+                        ),
+                      ),
+                      const SizedBox(height: 2),
+                      Text(
+                        context.l10n.mpTrain,
+                        style: AppTextStyles.caption().copyWith(
+                          color: scheme.onSurfaceVariant,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: AppSpacing.xl),
+            _HelpStep(
+              number: '1',
+              title: context.l10n.mpStep1T,
+              body: context.l10n.mpStep1B,
+              isDark: isDark,
+            ),
+            const SizedBox(height: AppSpacing.sm),
+            _HelpStep(
+              number: '2',
+              title: context.l10n.mpStep2T,
+              body: context.l10n.mpStep2B,
+              isDark: isDark,
+            ),
+            const SizedBox(height: AppSpacing.sm),
+            _HelpStep(
+              number: '3',
+              title: context.l10n.mpStep3T,
+              body: context.l10n.mpStep3B,
+              isDark: isDark,
+            ),
+            const SizedBox(height: AppSpacing.xl),
+            FilledButton(
+              onPressed: () => Navigator.of(context).pop(),
+              style: FilledButton.styleFrom(
+                backgroundColor: AppColors.primary,
+                foregroundColor: AppColors.onPrimary,
+                padding: const EdgeInsets.symmetric(vertical: 14),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(AppRadius.lg),
                 ),
               ),
-              const SizedBox(width: AppSpacing.md),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'How it works',
-                      style: AppTextStyles.h3().copyWith(
-                        color: scheme.onSurface,
-                        fontWeight: FontWeight.w800,
-                      ),
-                    ),
-                    const SizedBox(height: 2),
-                    Text(
-                      'Train recall in under a minute',
-                      style: AppTextStyles.caption().copyWith(
-                        color: scheme.onSurfaceVariant,
-                      ),
-                    ),
-                  ],
+              child: Text(
+                context.l10n.mpGotIt,
+                style: AppTextStyles.label().copyWith(
+                  fontWeight: FontWeight.w700,
                 ),
-              ),
-            ],
-          ),
-          const SizedBox(height: AppSpacing.xl),
-          _HelpStep(
-            number: '1',
-            title: 'Pick a subject',
-            body: 'Browse Polity, History, Geography, and more.',
-            isDark: isDark,
-          ),
-          const SizedBox(height: AppSpacing.sm),
-          _HelpStep(
-            number: '2',
-            title: 'Choose a topic',
-            body: 'Each set has a difficulty tag — easy to hard.',
-            isDark: isDark,
-          ),
-          const SizedBox(height: AppSpacing.sm),
-          _HelpStep(
-            number: '3',
-            title: 'Match the pairs',
-            body: 'Tap a term, then its answer. Beat your best time and earn stars.',
-            isDark: isDark,
-          ),
-          const SizedBox(height: AppSpacing.xl),
-          FilledButton(
-            onPressed: () => Navigator.of(context).pop(),
-            style: FilledButton.styleFrom(
-              backgroundColor: AppColors.primary,
-              foregroundColor: AppColors.onPrimary,
-              padding: const EdgeInsets.symmetric(vertical: 14),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(AppRadius.lg),
               ),
             ),
-            child: Text(
-              'Got it',
-              style: AppTextStyles.label().copyWith(fontWeight: FontWeight.w700),
-            ),
-          ),
           ],
         ),
       ),

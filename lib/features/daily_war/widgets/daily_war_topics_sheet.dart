@@ -15,6 +15,7 @@ import '../../../shared/widgets/top_snack_bar.dart';
 import '../domain/daily_war_copy.dart';
 import '../domain/daily_war_models.dart';
 import '../theme/daily_war_theme.dart';
+import '../../../l10n/l10n.dart';
 
 /// Full topic list for tonight's War, with a practice-test action per topic.
 Future<void> showDailyWarTopicsSheet({
@@ -79,7 +80,7 @@ class _DailyWarTopicsSheet extends ConsumerWidget {
                           ),
                         ),
                         Text(
-                          'Revise before 9 PM',
+                          context.l10n.dwReviseBefore9,
                           style: AppTextStyles.h3().copyWith(
                             color: scheme.onSurface,
                             fontWeight: FontWeight.w800,
@@ -88,8 +89,8 @@ class _DailyWarTopicsSheet extends ConsumerWidget {
                         const SizedBox(height: 4),
                         Text(
                           topics.length == 1
-                              ? 'Tonight\'s war draws from this topic. Run the PYQs now so you walk in warm.'
-                              : 'Tonight\'s war draws from these ${topics.length} topics. Run the PYQs now so you walk in warm.',
+                              ? context.l10n.dwDrawsFromOne
+                              : context.l10n.dwDrawsFromMany(topics.length),
                           style: AppTextStyles.bodySm().copyWith(
                             color: scheme.onSurfaceVariant,
                             height: 1.35,
@@ -125,7 +126,7 @@ class _DailyWarTopicsSheet extends ConsumerWidget {
                   Padding(
                     padding: const EdgeInsets.fromLTRB(20, 0, 20, 16),
                     child: Text(
-                      'Revision here does not count towards your war rank.',
+                      context.l10n.dwRevisionNoRank,
                       style: AppTextStyles.caption().copyWith(
                         color: scheme.onSurfaceVariant,
                       ),
@@ -163,8 +164,8 @@ class _TopicPracticeRow extends ConsumerWidget {
         context,
         content: Text(
           match == null
-              ? 'Topic not found in catalog.'
-              : 'No questions available for this topic yet.',
+              ? context.l10n.subjTopicNotFound
+              : context.l10n.dwNoQuestionsTopic,
         ),
       );
       return;
@@ -185,7 +186,7 @@ class _TopicPracticeRow extends ConsumerWidget {
         availableQuestionCount: match.questionCount,
         topicCountWhenSubjectOnly: 0,
         analyticsFeatureKey: 'daily_war_topic_practice',
-        startButtonLabel: 'Start practice',
+        startButtonLabel: context.l10n.dwStartPractice,
         onSessionCreated: (id) => context.push('/test/$id'),
       ),
     );
@@ -244,7 +245,7 @@ class _TopicPracticeRow extends ConsumerWidget {
               tapTargetSize: MaterialTapTargetSize.shrinkWrap,
             ),
             child: Text(
-              'Practice',
+              context.l10n.dwPractice,
               style: AppTextStyles.labelSm().copyWith(
                 fontWeight: FontWeight.w700,
                 color: DwColors.crimson,

@@ -12,21 +12,25 @@ import 'package:upsc_wars/features/test_series/providers/test_series_providers.d
 import 'package:upsc_wars/features/test_series/screens/test_series_home_screen.dart';
 import 'package:upsc_wars/features/test_series/widgets/series_paywall_sheet.dart';
 
-SeriesTest _test(String id, String kind, {String bucket = '', bool free = false}) =>
-    SeriesTest(
-      id: id,
-      seriesId: 'prelims_2027',
-      kind: kind,
-      bucket: bucket,
-      title: id,
-      index: 1,
-      isFree: free,
-      unlockAt: DateTime(2026),
-      durationMins: 60,
-      questionCount: 10,
-      status: 'ready',
-      questions: const [],
-    );
+SeriesTest _test(
+  String id,
+  String kind, {
+  String bucket = '',
+  bool free = false,
+}) => SeriesTest(
+  id: id,
+  seriesId: 'prelims_2027',
+  kind: kind,
+  bucket: bucket,
+  title: id,
+  index: 1,
+  isFree: free,
+  unlockAt: DateTime(2026),
+  durationMins: 60,
+  questionCount: 10,
+  status: 'ready',
+  questions: const [],
+);
 
 SeriesBundle _bundle({int ca = 12}) => SeriesBundle(
   info: TestSeriesInfo(
@@ -54,7 +58,10 @@ Map<String, dynamic> _caQuestion({
   bool rich = true,
 }) => {
   'uuid': 'q1',
-  'meta': {'gs_subject': 'Environment', 'concepts_used': ['Green credit']},
+  'meta': {
+    'gs_subject': 'Environment',
+    'concepts_used': ['Green credit'],
+  },
   'shared': {'correct_option': correct, 'has_table': table},
   'en': {
     'display_text':
@@ -130,7 +137,9 @@ void main() {
         ProviderScope(
           overrides: [
             seriesBundleProvider.overrideWith((ref, id) => Stream.value(b)),
-            ownedSeriesIdsProvider.overrideWith(owned ? _Owned.new : _NotOwned.new),
+            ownedSeriesIdsProvider.overrideWith(
+              owned ? _Owned.new : _NotOwned.new,
+            ),
             seriesStatsProvider.overrideWith(
               (ref, id) async => SeriesStats.compute(
                 bundle: b,
@@ -194,7 +203,10 @@ void main() {
 
       await tester.tap(find.text('Full-Length'));
       await tester.pumpAndSettle();
-      expect(find.text('Simulate the real exam: 100 questions, 2 hours.'), findsOneWidget);
+      expect(
+        find.text('Simulate the real exam: 100 questions, 2 hours.'),
+        findsOneWidget,
+      );
       // The buy bar stays under every tab.
       expect(find.text('Unlock all tests'), findsOneWidget);
       expect(find.text('Smarter than a score'), findsNothing);

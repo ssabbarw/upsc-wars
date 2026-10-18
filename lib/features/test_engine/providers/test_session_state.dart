@@ -64,6 +64,7 @@ class TestSessionState {
   final Map<String, bool> bookmarkedByUuid;
   final bool showTimedExamResumeBanner;
   final int furthestAnsweredIndex;
+
   /// Global count of scored attempts when this session was opened (+ local bumps).
   final int lifetimeScoredAttempts;
   final Set<String> weakTopicKeys;
@@ -109,10 +110,9 @@ class TestSessionState {
       explanationVisible: explanationVisible ?? this.explanationVisible,
       paletteOpen: paletteOpen ?? this.paletteOpen,
       submitSheetOpen: submitSheetOpen ?? this.submitSheetOpen,
-      learningVerdict:
-          clearLearningVerdict
-              ? null
-              : (learningVerdict ?? this.learningVerdict),
+      learningVerdict: clearLearningVerdict
+          ? null
+          : (learningVerdict ?? this.learningVerdict),
       isSubmitting: isSubmitting ?? this.isSubmitting,
       bookmarkedByUuid: bookmarkedByUuid ?? this.bookmarkedByUuid,
       showTimedExamResumeBanner:
@@ -122,8 +122,9 @@ class TestSessionState {
       lifetimeScoredAttempts:
           lifetimeScoredAttempts ?? this.lifetimeScoredAttempts,
       weakTopicKeys: weakTopicKeys ?? this.weakTopicKeys,
-      pendingSelectedOption:
-          clearPendingOption ? null : (pendingSelectedOption ?? this.pendingSelectedOption),
+      pendingSelectedOption: clearPendingOption
+          ? null
+          : (pendingSelectedOption ?? this.pendingSelectedOption),
       confidencePromptVisible:
           confidencePromptVisible ?? this.confidencePromptVisible,
       preStartPaused: preStartPaused ?? this.preStartPaused,

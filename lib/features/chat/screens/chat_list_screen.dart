@@ -9,6 +9,7 @@ import '../../../shared/widgets/tappable_circular_avatar.dart';
 import '../../community/widgets/admin_bot_label.dart';
 import '../domain/entities/chat_thread_route_payload.dart';
 import '../providers/chat_providers.dart';
+import '../../../l10n/l10n.dart';
 
 class ChatListScreen extends HookConsumerWidget {
   const ChatListScreen({super.key});
@@ -34,7 +35,7 @@ class ChatListScreen extends HookConsumerWidget {
       },
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Chats', style: AppTextStyles.h3()),
+          title: Text(context.l10n.chatListTitle, style: AppTextStyles.h3()),
           leading: IconButton(
             icon: const Icon(Icons.arrow_back),
             onPressed: leaveList,
@@ -45,14 +46,14 @@ class ChatListScreen extends HookConsumerWidget {
           error: (_, __) => Center(
             child: OutlinedButton(
               onPressed: () => ref.invalidate(chatThreadsProvider),
-              child: const Text('Retry'),
+              child: Text(context.l10n.commonRetry),
             ),
           ),
           data: (threads) {
             if (threads.isEmpty) {
               return Center(
                 child: Text(
-                  'No chats yet',
+                  context.l10n.chatNone,
                   style: AppTextStyles.bodyMd().copyWith(
                     color: scheme.onSurfaceVariant,
                   ),
@@ -71,7 +72,7 @@ class ChatListScreen extends HookConsumerWidget {
                 final peerEmail = peerEmailForThread(thread, me);
                 final peerName = peerNames[peerEmail] ?? 'UPSC Warrior';
                 final subtitle =
-                    thread.lastMessageText ?? 'Start the conversation';
+                    thread.lastMessageText ?? appL10n.chatStartConv;
                 final unread = thread.unreadCount;
                 return Material(
                   color: scheme.surfaceContainerLow,

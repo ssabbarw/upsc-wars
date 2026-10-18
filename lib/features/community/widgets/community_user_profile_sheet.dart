@@ -22,12 +22,13 @@ import '../../home/providers/auth_providers.dart';
 import '../domain/entities/community_user.dart';
 import '../providers/user_block_providers.dart';
 import '../widgets/admin_bot_label.dart';
+import '../../../l10n/l10n.dart';
 
 Future<void> openCommunityExternalUrl(BuildContext context, String url) async {
   final uri = Uri.parse(url);
   if (!await launchUrl(uri, mode: LaunchMode.externalApplication) &&
       context.mounted) {
-    AppToast.showText(context, 'Could not open link');
+    AppToast.showText(context, context.l10n.commLinkFailed);
   }
 }
 
@@ -87,7 +88,9 @@ Future<void> showCommunityUserProfileSheet(
     'peerEmailLen=${user.email.length}',
   );
   if (!context.mounted) {
-    upscWarsTrace('CommunityProfile sheet aborted: context unmounted before show');
+    upscWarsTrace(
+      'CommunityProfile sheet aborted: context unmounted before show',
+    );
     return;
   }
   final router = GoRouter.of(context);
@@ -153,7 +156,9 @@ Future<void> showCommunityUserProfileSheet(
                           ),
                           const SizedBox(height: AppSpacing.xs),
                           Text(
-                            user.isInBattle ? 'fighting a battle' : 'available',
+                            user.isInBattle
+                                ? context.l10n.commFighting
+                                : context.l10n.commAvailable,
                             style: AppTextStyles.caption().copyWith(
                               color: scheme.onSurfaceVariant,
                             ),
@@ -171,7 +176,10 @@ Future<void> showCommunityUserProfileSheet(
                         onPressed: isSelf
                             ? null
                             : () async {
-                                final me = _signedInEmail(ref, currentUserEmail);
+                                final me = _signedInEmail(
+                                  ref,
+                                  currentUserEmail,
+                                );
                                 if (me == null || me.isEmpty) return;
                                 final target = user.email.toLowerCase();
                                 final nextBlocked = !isBlocked;
@@ -181,17 +189,16 @@ Future<void> showCommunityUserProfileSheet(
                                   final confirmed = await showDialog<bool>(
                                     context: sheetContext,
                                     builder: (dialogContext) => AlertDialog(
-                                      title: const Text('Block this user?'),
-                                      content: const Text(
-                                        'This will close this chat and block '
-                                        'them.',
-                                      ),
+                                      title: Text(context.l10n.commBlockTitle),
+                                      content: Text(context.l10n.commBlockBody),
                                       actions: [
                                         TextButton(
                                           onPressed: () => Navigator.of(
                                             dialogContext,
                                           ).pop(false),
-                                          child: const Text('Cancel'),
+                                          child: Text(
+                                            context.l10n.commonCancel,
+                                          ),
                                         ),
                                         FilledButton(
                                           onPressed: () => Navigator.of(
@@ -223,15 +230,21 @@ Future<void> showCommunityUserProfileSheet(
                                     AppToast.showText(
                                       sheetContext,
                                       nextBlocked
-                                          ? 'You will not see messages or battle invites from ${user.name}.'
-                                          : '${user.name} has been unblocked.',
+                                          ? context.l10n.commBlockedMsg(
+                                              user.name,
+                                            )
+                                          : context.l10n.blockedUnblocked(
+                                              user.name,
+                                            ),
                                     );
                                   }
                                 } catch (e) {
                                   if (sheetContext.mounted) {
                                     AppToast.showText(
                                       sheetContext,
-                                      'Could not update block: $e',
+                                      context.l10n.commBlockUpdateFailed(
+                                        e.toString(),
+                                      ),
                                     );
                                   }
                                 }
@@ -296,7 +309,7 @@ Future<void> showCommunityUserProfileSheet(
                                   final signedIn = await ensureAccountSignedIn(
                                     context: sheetContext,
                                     ref: ref,
-                                    reason: 'Sign in to send messages.',
+                                    reason: context.l10n.commSignInMsg,
                                   );
                                   if (!sheetContext.mounted) return;
                                   me = _signedInEmail(ref);
@@ -309,7 +322,7 @@ Future<void> showCommunityUserProfileSheet(
                                     if (me == null && sheetContext.mounted) {
                                       AppToast.showText(
                                         sheetContext,
-                                        'Could not start chat. Please sign in again.',
+                                        context.l10n.commChatStartSignIn,
                                       );
                                     }
                                     return;
@@ -323,7 +336,7 @@ Future<void> showCommunityUserProfileSheet(
                                   if (sheetContext.mounted) {
                                     AppToast.showText(
                                       sheetContext,
-                                      'Could not start chat. Please sign in again.',
+                                      context.l10n.commChatStartSignIn,
                                     );
                                   }
                                   return;
@@ -367,13 +380,15 @@ Future<void> showCommunityUserProfileSheet(
                                 if (sheetContext.mounted) {
                                   AppToast.showText(
                                     sheetContext,
-                                    'Could not start chat: $e',
+                                    context.l10n.commChatStartFailed(
+                                      e.toString(),
+                                    ),
                                   );
                                 }
                               }
                             },
                       icon: const Icon(Icons.chat_bubble_outline),
-                      label: const Text('Send Message'),
+                      label: Text(context.l10n.commSendMessage),
                     ),
                   ),
                   const SizedBox(height: AppSpacing.md),
@@ -413,7 +428,11 @@ Future<void> showCommunityUserProfileSheet(
                       const SizedBox(width: AppSpacing.sm),
                       Expanded(
                         child: Text(
-                          'Last online: ${formatCommunityProfileLastOnline(user.lastOnlineTime)}',
+                          context.l10n.commLastOnline(
+                            formatCommunityProfileLastOnline(
+                              user.lastOnlineTime,
+                            ),
+                          ),
                           style: AppTextStyles.bodySm(),
                         ),
                       ),

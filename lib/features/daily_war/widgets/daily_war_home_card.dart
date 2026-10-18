@@ -21,6 +21,7 @@ import '../theme/daily_war_theme.dart';
 import 'daily_war_explainer_sheet.dart';
 import 'daily_war_sunday_card.dart';
 import 'daily_war_topics_sheet.dart';
+import '../../../l10n/l10n.dart';
 
 /// Home hero for Daily War — three-band near-black card (design H1–H9).
 class DailyWarHomeCard extends HookConsumerWidget {
@@ -433,7 +434,7 @@ class _PrepareCompact extends StatelessWidget {
       children: [
         _StatusRow(
           left: isGrand
-              ? '${DailyWarCopy.grandEventNameCaps} · SATURDAY'
+              ? context.l10n.dwEventSaturday(DailyWarCopy.grandEventNameCaps)
               : DailyWarCopy.dailyEventNameCaps,
           right: '9:00 PM',
           pulse: true,
@@ -469,7 +470,7 @@ class _PrepareCompact extends StatelessWidget {
               showDailyWarTopicsSheet(context: context, topics: topics),
             ),
             child: Text(
-              '+ ${topics.length - 2} more · See all →',
+              context.l10n.dwMoreSeeAll(topics.length - 2),
               style: DwText.dm(
                 size: 13,
                 weight: FontWeight.w700,
@@ -494,7 +495,7 @@ class _PrepareCompact extends StatelessWidget {
               isGrand: isGrand,
             ),
           ),
-          child: _PrimaryCta(label: 'Revise', filled: true),
+          child: _PrimaryCta(label: context.l10n.commonRevise, filled: true),
         ),
       ],
     );
@@ -523,7 +524,7 @@ class _CoverageMeter extends StatelessWidget {
           children: [
             Expanded(
               child: Text(
-                '$covered of $total topics covered',
+                context.l10n.dwTopicsCovered(covered, total),
                 style: DwText.dm(
                   size: 12,
                   weight: FontWeight.w600,
@@ -533,7 +534,7 @@ class _CoverageMeter extends StatelessWidget {
             ),
             if (tonightAdds > 0)
               Text(
-                'tonight adds $tonightAdds',
+                context.l10n.dwTonightAdds(tonightAdds),
                 style: DwText.dm(
                   size: 12,
                   weight: FontWeight.w600,
@@ -581,15 +582,18 @@ class _LobbyOpen extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         _StatusRow(
-          left: 'LOBBY OPEN',
-          right: 'STARTS 9:00 PM IST',
+          left: context.l10n.dwLobbyOpen,
+          right: context.l10n.dwStarts9,
           pulse: true,
         ),
         const SizedBox(height: 14),
         if (lobbyShown != null)
-          _CountCallout(count: lobbyShown!, label: 'aspirants in the lobby')
+          _CountCallout(
+            count: lobbyShown!,
+            label: context.l10n.dwAspirantsInLobby,
+          )
         else
-          Text('The lobby is filling up', style: DwText.topicCompact()),
+          Text(context.l10n.dwLobbyFilling, style: DwText.topicCompact()),
         const SizedBox(height: 10),
         Text(
           DailyWarCopy.compactTopics(topics),
@@ -601,11 +605,12 @@ class _LobbyOpen extends StatelessWidget {
           style: DwText.meta(),
         ),
         const SizedBox(height: 14),
-        const _PrimaryCta(label: 'Enter lobby'),
+        _PrimaryCta(label: context.l10n.dwEnterLobby),
         const SizedBox(height: 8),
         Text(
-          'WAR STARTS IN '
-          '${startsIn.length > 5 ? startsIn.substring(3) : startsIn}',
+          context.l10n.dwWarStartsIn(
+            startsIn.length > 5 ? startsIn.substring(3) : startsIn,
+          ),
           style: DwText.stamp(color: DwColors.crimsonBright),
         ),
       ],
@@ -640,28 +645,28 @@ class _LiveJoinable extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         _StatusRow(
-          left: 'WAR IS LIVE',
-          right: 'STARTED 9:00 PM IST',
+          left: context.l10n.dwWarIsLive,
+          right: context.l10n.dwStarted9,
           pulse: true,
         ),
         const SizedBox(height: 12),
-        Text('You can still join until 9:10', style: DwText.topicCompact()),
+        Text(context.l10n.dwJoinUntil910, style: DwText.topicCompact()),
         const SizedBox(height: 6),
         Text(
-          'Your timer starts on entry — the $closeClock close does not move.',
+          context.l10n.dwTimerStartsOnEntry(closeClock),
           style: DwText.body(),
         ),
         if (writersShown != null) ...[
           const SizedBox(height: 12),
-          _CountCallout(count: writersShown!, label: 'writing right now'),
+          _CountCallout(count: writersShown!, label: context.l10n.dwWritingNow),
         ],
         const SizedBox(height: 8),
         Text(DailyWarCopy.compactTopics(topics), style: DwText.meta()),
         const SizedBox(height: 14),
-        const _PrimaryCta(label: 'Join now'),
+        _PrimaryCta(label: context.l10n.dwJoinNow),
         const SizedBox(height: 8),
         Text(
-          'ENTRY CLOSES IN $entryShort',
+          context.l10n.dwEntryClosesIn(entryShort),
           style: DwText.stamp(color: DwColors.crimsonBright),
         ),
       ],
@@ -697,30 +702,39 @@ class _LiveLocked extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         _StatusRow(
-          left: submitted ? 'YOU\'RE IN' : 'IN PROGRESS',
-          right: entryClosed ? 'ENTRY CLOSED 9:10 PM' : 'STARTED 9:00 PM IST',
+          left: submitted ? context.l10n.dwYoureIn : context.l10n.dwInProgress,
+          right: entryClosed
+              ? context.l10n.dwEntryClosed910
+              : context.l10n.dwStarted9,
           pulse: true,
         ),
         const SizedBox(height: 12),
         Text(
           submitted
               ? (sub.hasOfficialRank
-                    ? 'Your AIR ${sub.air} is ready'
-                    : 'Your attempt is in · AIR at 9:40 PM IST')
-              : 'Tonight\'s ${DailyWarCopy.eventName(isGrand: isGrand)} is live',
+                    ? context.l10n.dwYourAirReady(sub.air ?? 0)
+                    : context.l10n.dwAttemptInAir940)
+              : context.l10n.dwTonightEventLive(
+                  DailyWarCopy.eventName(isGrand: isGrand),
+                ),
           style: DwText.topicCompact(),
         ),
         const SizedBox(height: 6),
         Text(
           submitted
               ? DailyWarCopy.compactTopics(topics)
-              : (entryClosed ? 'Late join closed.' : 'Entry closes at 9:10.'),
+              : (entryClosed
+                    ? context.l10n.dwLateJoinClosedDot
+                    : context.l10n.dwEntryCloses910),
           style: DwText.body(),
         ),
         if (!submitted && writersShown != null) ...[
           const SizedBox(height: 12),
           Text(
-            '$writersShown aspirants · ${DailyWarCopy.compactTopics(topics)}',
+            context.l10n.dwAspirantsTopics(
+              writersShown ?? '',
+              DailyWarCopy.compactTopics(topics),
+            ),
             style: DwText.meta(),
           ),
         ] else if (!submitted) ...[
@@ -731,9 +745,9 @@ class _LiveLocked extends StatelessWidget {
         _PrimaryCta(
           label: submitted
               ? (sub.hasOfficialRank
-                    ? 'See your AIR ${sub.air}'
-                    : 'Open your attempt')
-              : 'Today\'s war is live',
+                    ? context.l10n.dwSeeYourAir(sub.air ?? 0)
+                    : context.l10n.dwOpenAttempt)
+              : context.l10n.dwTodaysWarLive,
           filled: !submitted || sub.hasOfficialRank,
         ),
       ],
@@ -753,19 +767,24 @@ class _ResultsPending extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        _StatusRow(left: 'RESULTS', right: 'AIR AT 9:40 PM'),
+        _StatusRow(
+          left: context.l10n.dwResultsEyebrow,
+          right: context.l10n.dwAirAt940,
+        ),
         const SizedBox(height: 12),
         Text(
           submitted
-              ? 'Your score is in · we\'ll notify you when AIR is ready'
-              : 'Tonight\'s battle is over · AIR at 9:40 PM',
+              ? context.l10n.dwScoreInNotify
+              : context.l10n.dwBattleOverAir,
           style: DwText.topicCompact(),
         ),
         const SizedBox(height: 8),
         Text(DailyWarCopy.compactTopics(topics), style: DwText.meta()),
         const SizedBox(height: 14),
         _PrimaryCta(
-          label: submitted ? 'Open your attempt' : 'Attempt unranked',
+          label: submitted
+              ? context.l10n.dwOpenAttempt
+              : context.l10n.dwAttemptUnranked,
           filled: !submitted,
         ),
       ],
@@ -795,7 +814,7 @@ class _ResultPlayed extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        _StatusRow(left: 'TONIGHT\'S RESULT · $dateLabel'),
+        _StatusRow(left: context.l10n.dwTonightsResult(dateLabel)),
         const SizedBox(height: 12),
         Text('ALL-INDIA RANK', style: DwText.meta()),
         const SizedBox(height: 2),
@@ -817,11 +836,11 @@ class _ResultPlayed extends StatelessWidget {
           ],
         ),
         const SizedBox(height: 14),
-        const _PrimaryCta(label: 'Full results & review'),
+        _PrimaryCta(label: context.l10n.dwFullResults),
         if (next.isNotEmpty) ...[
           const SizedBox(height: 10),
           Text(
-            'Tomorrow · ${DailyWarCopy.compactTopics(next)}',
+            context.l10n.dwTomorrowTopics(DailyWarCopy.compactTopics(next)),
             style: DwText.meta(),
           ),
         ],
@@ -864,33 +883,33 @@ class _ResultSatOut extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        _StatusRow(left: 'TONIGHT\'S BATTLE IS OVER'),
+        _StatusRow(left: context.l10n.dwBattleOverCaps),
         const SizedBox(height: 12),
         if (writersShown != null)
           Text(
-            '$writersShown aspirants wrote it',
+            context.l10n.dwAspirantsWroteIt(writersShown ?? ''),
             style: DwText.body(color: DwColors.onDark),
           ),
         const SizedBox(height: 10),
         Text(
           sub == null
-              ? 'You sat this one out'
+              ? context.l10n.dwSatOut
               : practiced
-              ? 'You practiced unranked · ${sub.score.toStringAsFixed(2)}'
+              ? context.l10n.dwPracticedUnranked(sub.score.toStringAsFixed(2))
               // Live attempt the rank job hasn't placed yet.
-              : 'Your attempt is in · rank pending',
+              : context.l10n.dwAttemptInPending,
           style: DwText.topicCompact(),
         ),
         const SizedBox(height: 14),
         if (sub == null) ...[
-          const _PrimaryCta(label: 'See tonight\'s paper', filled: false),
+          _PrimaryCta(label: context.l10n.dwSeeTonightsPaper, filled: false),
           const SizedBox(height: 8),
-          const _PrimaryCta(label: 'Unranked attempt'),
+          _PrimaryCta(label: context.l10n.dwUnrankedAttempt),
         ] else
-          const _PrimaryCta(label: 'See your attempt'),
+          _PrimaryCta(label: context.l10n.dwSeeYourAttempt),
         if (next.isNotEmpty) ...[
           const SizedBox(height: 12),
-          Text('Tomorrow · 9:00 PM IST', style: DwText.meta()),
+          Text(context.l10n.dwTomorrow9, style: DwText.meta()),
           Text(
             DailyWarCopy.compactTopics(next),
             style: DwText.body(color: DwColors.onDark),

@@ -21,6 +21,7 @@ import '../../history/widgets/explanation_card.dart';
 import '../domain/fomo_pulse_models.dart';
 import '../fomo_pulse_constants.dart';
 import '../providers/fomo_pulse_providers.dart';
+import '../../../l10n/l10n.dart';
 
 /// Tutor-like MCQ: tap option → instant verdict + explanation.
 class FomoPulseMcqPanel extends HookConsumerWidget {
@@ -234,7 +235,7 @@ class FomoPulseMcqPanel extends HookConsumerWidget {
         if (!revealed) ...[
           const SizedBox(height: AppSpacing.sm),
           Text(
-            'Pick an option to see answer and explanation.',
+            context.l10n.fpPickSee,
             style: AppTextStyles.caption().copyWith(
               color: Theme.of(context).colorScheme.onSurfaceVariant,
             ),
@@ -243,7 +244,9 @@ class FomoPulseMcqPanel extends HookConsumerWidget {
         if (revealed) ...[
           const SizedBox(height: AppSpacing.lg),
           Text(
-            isCorrect ? 'Correct!' : 'Incorrect',
+            isCorrect
+                ? context.l10n.fpCorrectBang
+                : context.l10n.reviewIncorrect,
             style: AppTextStyles.label().copyWith(
               color: isCorrect ? AppColors.correct : AppColors.wrong,
             ),
@@ -290,12 +293,12 @@ class FomoPulseMcqPanel extends HookConsumerWidget {
             FilledButton.icon(
               onPressed: () => context.go('/'),
               icon: const Icon(Icons.home_outlined),
-              label: const Text('Back to Home'),
+              label: Text(context.l10n.commonBackToHome),
             ),
             const SizedBox(height: AppSpacing.sm),
             TextButton(
               onPressed: () => context.pop(),
-              child: const Text('Back to CA Shot'),
+              child: Text(context.l10n.fpBackToShot),
             ),
           ],
         ],
@@ -304,7 +307,10 @@ class FomoPulseMcqPanel extends HookConsumerWidget {
   }
 }
 
-String _explanationWithValueAdd(String explanation, List<String> valueAddPoints) {
+String _explanationWithValueAdd(
+  String explanation,
+  List<String> valueAddPoints,
+) {
   final trimmed = explanation.trim();
   final parts = FinalExplanationParts.split(trimmed);
   if (parts.valueAddition.trim().isNotEmpty) return trimmed;

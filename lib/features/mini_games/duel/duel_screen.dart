@@ -13,6 +13,7 @@ import '../shared/revision_game_analytics.dart';
 import '../shared/revision_games_theme.dart';
 import '../shared/revision_games_widgets.dart';
 import 'duel_controller.dart';
+import '../../../l10n/l10n.dart';
 
 /// 1v1 Duel — Revision Games v2 "scoreboard-strip" treatment (option 1a).
 ///
@@ -63,12 +64,11 @@ class DuelScreen extends HookConsumerWidget {
         badgeBg: GameAccent.duel.badgeBg,
         stepAccent: GameAccent.duel.stepAccent,
         title: '1v1 Duel',
-        startLabel: 'Start match',
-        steps: const [
-          'Lay the phone flat on the table between you.',
-          'Same question, 2 options each — mirrored top and bottom.',
-          'Both pick (or pass) first — correct answer reveals only '
-              'when both have locked in.',
+        startLabel: context.l10n.gmDuelStart,
+        steps: [
+          context.l10n.gmDuelStep1,
+          context.l10n.gmDuelStep2,
+          context.l10n.gmDuelStep3,
         ],
       ),
     );
@@ -147,7 +147,7 @@ class DuelScreen extends HookConsumerWidget {
             if (q == null) {
               return Center(
                 child: Text(
-                  'No question',
+                  context.l10n.gmDuelNoQ,
                   style: RgText.body(color: RgColors.muted),
                 ),
               );
@@ -307,7 +307,7 @@ class _PlayerHalf extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 8),
                 ),
                 child: Text(
-                  'Pass',
+                  context.l10n.gmDuelPass,
                   style: RgText.mono(size: 11, color: RgColors.muted),
                 ),
               ),
@@ -315,21 +315,21 @@ class _PlayerHalf extends StatelessWidget {
           ] else if (waiting && passed) ...[
             const SizedBox(height: 10),
             Text(
-              'Passed — waiting…',
+              context.l10n.gmDuelPassedWait,
               textAlign: TextAlign.center,
               style: RgText.mono(size: 10, color: RgColors.muted),
             ),
           ] else if (revealed && passed) ...[
             const SizedBox(height: 10),
             Text(
-              'Passed',
+              context.l10n.gmDuelPassed,
               textAlign: TextAlign.center,
               style: RgText.mono(size: 10, color: RgColors.muted),
             ),
           ] else if (revealed && gotItRight) ...[
             const SizedBox(height: 10),
             Text(
-              'Point!',
+              context.l10n.gmDuelPoint,
               textAlign: TextAlign.center,
               style: RgText.mono(size: 10, color: RgColors.tealDeep),
             ),
@@ -657,21 +657,21 @@ class _EndHalf extends StatelessWidget {
       stampBg = RgColors.teal;
       stampFg = RgColors.onDark;
       scoreColor = RgColors.teal;
-      caption = 'You win, $ownLabel';
+      caption = context.l10n.gmDuelYouWin(ownLabel);
       stampAngle = -0.052;
     } else if (lost) {
       stampText = 'DEFEAT';
       stampBg = RgColors.stampNeutralBg;
       stampFg = RgColors.muted;
       scoreColor = RgColors.mutedSoft;
-      caption = '$otherLabel wins';
+      caption = context.l10n.gmDuelWins(otherLabel);
       stampAngle = 0.052;
     } else {
       stampText = 'DRAW';
       stampBg = RgColors.warningBg;
       stampFg = RgColors.warningText;
       scoreColor = RgColors.warning;
-      caption = 'Evenly matched';
+      caption = context.l10n.gmDuelEven;
       stampAngle = -0.052;
     }
 
@@ -716,7 +716,7 @@ class _EndHalf extends StatelessWidget {
           onPressed: onExit,
           style: TextButton.styleFrom(foregroundColor: RgColors.muted),
           child: Text(
-            'Exit',
+            context.l10n.gmDuelExit,
             style: RgText.body(size: 12, color: RgColors.muted),
           ),
         ),
@@ -798,7 +798,7 @@ class _EndSeam extends StatelessWidget {
               borderRadius: BorderRadius.circular(RgRadius.pill),
             ),
             child: Text(
-              'Rematch',
+              context.l10n.gmDuelRematch,
               style: RgText.body(
                 size: 13,
                 weight: FontWeight.w700,

@@ -6,5 +6,6 @@ class LoadSessionUseCase {
 
   final TestEngineRepository _repository;
 
-  Future<ActiveSession> execute(String sessionId) => _repository.loadSession(sessionId);
+  Future<ActiveSession> execute(String sessionId) =>
+      _repository.loadSession(sessionId);
 }

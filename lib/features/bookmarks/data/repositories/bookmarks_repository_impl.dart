@@ -16,9 +16,9 @@ class BookmarksRepositoryImpl implements BookmarksRepository {
     required UserDatabase userDb,
     required PrefsService prefs,
     required AnalyticsService analytics,
-  })  : _userDb = userDb,
-        _prefs = prefs,
-        _analytics = analytics;
+  }) : _userDb = userDb,
+       _prefs = prefs,
+       _analytics = analytics;
   final UserDatabase _userDb;
   final PrefsService _prefs;
   final AnalyticsService _analytics;
@@ -26,28 +26,34 @@ class BookmarksRepositoryImpl implements BookmarksRepository {
 
   @override
   Future<List<BookmarkItem>> getBookmarks() async {
-    final rows = await _userDb.bookmarksDao.getAllBookmarksOrderedByCreatedAtDesc();
+    final rows = await _userDb.bookmarksDao
+        .getAllBookmarksOrderedByCreatedAtDesc();
     final out = <BookmarkItem>[];
     for (final b in rows) {
       final q = await _userDb.questionsDao.getByUuid(b.questionUuid);
       if (q == null) continue;
-      out.add(BookmarkItem(
-        id: b.id,
-        questionUuid: b.questionUuid,
-        createdAt: b.createdAt,
-        userNote: b.userNote,
-        subject: q.subject,
-        topic: q.topic,
-        questionStem:
-            QuestionDisplayTextParser.parse(q.enDisplayText ?? '').stem,
-      ));
+      out.add(
+        BookmarkItem(
+          id: b.id,
+          questionUuid: b.questionUuid,
+          createdAt: b.createdAt,
+          userNote: b.userNote,
+          subject: q.subject,
+          topic: q.topic,
+          questionStem: QuestionDisplayTextParser.parse(
+            q.enDisplayText ?? '',
+          ).stem,
+        ),
+      );
     }
     return out;
   }
 
   @override
   Future<void> addBookmark(String questionUuid, {String? note}) async {
-    final existing = await _userDb.bookmarksDao.getBookmarkByQuestionUuid(questionUuid);
+    final existing = await _userDb.bookmarksDao.getBookmarkByQuestionUuid(
+      questionUuid,
+    );
     if (existing == null) {
       await _userDb.bookmarksDao.insertBookmark(
         BookmarksCompanion.insert(
@@ -76,11 +82,15 @@ class BookmarksRepositoryImpl implements BookmarksRepository {
   }
 
   @override
-  Future<void> removeBookmark(String questionUuid) => _userDb.bookmarksDao.deleteBookmarkByQuestionUuid(questionUuid);
+  Future<void> removeBookmark(String questionUuid) =>
+      _userDb.bookmarksDao.deleteBookmarkByQuestionUuid(questionUuid);
 
   @override
-  Future<bool> isBookmarked(String questionUuid) => _userDb.bookmarksDao.isQuestionBookmarked(questionUuid);
+  Future<bool> isBookmarked(String questionUuid) =>
+      _userDb.bookmarksDao.isQuestionBookmarked(questionUuid);
 
   @override
-  Future<int> count() async => (await _userDb.bookmarksDao.getAllBookmarksOrderedByCreatedAtDesc()).length;
+  Future<int> count() async =>
+      (await _userDb.bookmarksDao.getAllBookmarksOrderedByCreatedAtDesc())
+          .length;
 }

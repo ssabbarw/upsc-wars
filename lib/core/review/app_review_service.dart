@@ -63,4 +63,3 @@ final class AppReviewService {
     unawaited(launchUrl(uri, mode: LaunchMode.externalApplication));
   }
 }
-

@@ -145,10 +145,7 @@ class RgText {
       elevation: 0,
       shape: const StadiumBorder(),
       padding: EdgeInsets.symmetric(vertical: verticalPadding),
-      textStyle: GoogleFonts.dmSans(
-        fontSize: 14,
-        fontWeight: FontWeight.w700,
-      ),
+      textStyle: GoogleFonts.dmSans(fontSize: 14, fontWeight: FontWeight.w700),
     );
   }
 }

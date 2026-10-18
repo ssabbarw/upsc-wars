@@ -21,6 +21,7 @@ import '../widgets/daily_ca_day_sheet.dart';
 import '../widgets/daily_ca_month_calendar.dart';
 import '../widgets/daily_ca_yesterday_leaderboard_hero.dart';
 import '../../home/domain/daily_rituals.dart';
+import '../../../l10n/l10n.dart';
 
 class DailyCaScreen extends HookConsumerWidget {
   const DailyCaScreen({super.key, this.autoStartPaper = false});
@@ -170,7 +171,7 @@ class DailyCaScreen extends HookConsumerWidget {
         title: const Text('Daily Current Affairs'),
         actions: [
           IconButton(
-            tooltip: 'This month',
+            tooltip: context.l10n.dcaThisMonth,
             onPressed: jumpToThisMonth,
             icon: const Icon(
               Icons.event_available_rounded,
@@ -226,10 +227,10 @@ class DailyCaScreen extends HookConsumerWidget {
                 ),
                 child: Text(
                   paperCompleted
-                      ? 'Review or revise'
+                      ? context.l10n.dcaReviewOrRevise
                       : paperLive
-                      ? 'Take today\'s test'
-                      : 'Today\'s paper',
+                      ? context.l10n.dcaTakeTodays
+                      : context.l10n.dcaTodaysPaperBtn,
                   style: AppTextStyles.label().copyWith(
                     fontWeight: FontWeight.w800,
                     color: AppColors.onPrimary,
@@ -308,7 +309,7 @@ class DailyCaScreen extends HookConsumerWidget {
                     error: (e, _) => Padding(
                       padding: const EdgeInsets.symmetric(vertical: 16),
                       child: Text(
-                        'Could not load progress: $e',
+                        context.l10n.dcaProgressFailed(e.toString()),
                         textAlign: TextAlign.center,
                         style: AppTextStyles.bodySm().copyWith(
                           color: AppColors.wrong,
@@ -362,8 +363,7 @@ class DailyCaScreen extends HookConsumerWidget {
                                 isRevise: completed.contains(contentIso),
                               ),
                             ),
-                            onViewRankings:
-                                !ranksOn || contentIso == paperIso
+                            onViewRankings: !ranksOn || contentIso == paperIso
                                 ? null
                                 : () => context.push(
                                     dailyCaLeaderboardRoute(contentIso),

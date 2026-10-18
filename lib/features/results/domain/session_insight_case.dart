@@ -38,7 +38,8 @@ const kMinCompletionRateForExcellent = 0.5;
 /// On longer tests, require at least this many attempts even if rate passes.
 const kMinAttemptedForExcellentWhenLargeTest = 3;
 
-int sessionAnsweredScored(SessionResult result) => result.correct + result.wrong;
+int sessionAnsweredScored(SessionResult result) =>
+    result.correct + result.wrong;
 
 int sessionLoggedConfidenceTotal(SessionResult result) =>
     result.confidenceSureTotal +
@@ -60,7 +61,8 @@ int sessionEduWrongCount(SessionResult result) =>
 int sessionPureWrongCount(SessionResult result) =>
     result.confidencePureTotal - result.confidencePureCorrect;
 
-double sessionTierMarksLost(int wrongCount) => wrongCount * kPrelimsWrongMarkPenalty;
+double sessionTierMarksLost(int wrongCount) =>
+    wrongCount * kPrelimsWrongMarkPenalty;
 
 int sessionRemainingCount(SessionResult result) =>
     result.unattempted + result.timedOut;

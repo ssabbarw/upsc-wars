@@ -22,10 +22,7 @@ void main() {
     });
 
     test('generate config path is admin_dashboard/daily_ca', () {
-      expect(
-        DailyCaFirestore.generateConfigPath,
-        'admin_dashboard/daily_ca',
-      );
+      expect(DailyCaFirestore.generateConfigPath, 'admin_dashboard/daily_ca');
     });
 
     test('rank day collection is daily_ca_days', () {

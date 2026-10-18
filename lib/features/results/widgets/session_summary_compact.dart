@@ -29,6 +29,7 @@ import '../providers/session_topic_accuracy_provider.dart';
 import 'demo_results_review_coach_overlay.dart';
 import 'questions_to_review_card.dart';
 import 'session_insight_hero_card.dart';
+import '../../../l10n/l10n.dart';
 
 void _openSessionHistoryReview(
   BuildContext context,
@@ -126,7 +127,8 @@ class SessionSummaryCompactView extends HookConsumerWidget {
         result.analyticsFeatureKey ==
         CreateGetStartedSessionUseCase.analyticsKey;
     final insightCase = insightCaseAsync.asData?.value;
-    final highlightMistakes = insightCase != null &&
+    final highlightMistakes =
+        insightCase != null &&
         (usesMistakeReviewFlow(insightCase) ||
             insightCase == SessionInsightCase.d);
     final topicRows = topicRowsAsync.asData?.value;
@@ -166,7 +168,7 @@ class SessionSummaryCompactView extends HookConsumerWidget {
         final current = entry;
         if (current != null && current.mounted) current.remove();
       };
-        }, [insightCase, topicRowsAsync.isLoading, hasTopicLists]);
+    }, [insightCase, topicRowsAsync.isLoading, hasTopicLists]);
 
     final marksRows = questionsAsync.maybeWhen(
       data: computeTopicMarksLost,
@@ -353,7 +355,7 @@ class _CompactScoreRow extends StatelessWidget {
           final rounded = d.round();
           final sign = rounded > 0 ? '+' : '';
           return Text(
-            '$sign$rounded% accuracy vs your last test',
+            context.l10n.resultsAccuracyVsLast(sign, rounded),
             style: AppTextStyles.caption().copyWith(
               color: scheme.onSurfaceVariant,
             ),
@@ -365,9 +367,15 @@ class _CompactScoreRow extends StatelessWidget {
     }
 
     final marksBreakdown = attempted == 0
-        ? 'Attempt questions to earn marks'
-        : '+${positiveMarks.toStringAsFixed(2)} earned · '
-              '${negativeMarks == 0 ? '0 lost' : '−${negativeMarks.toStringAsFixed(2)} lost'}';
+        ? context.l10n.resultsAttemptToEarn
+        : context.l10n.resultsMarksBreakdown(
+            positiveMarks.toStringAsFixed(2),
+            negativeMarks == 0
+                ? context.l10n.resultsZeroLost
+                : context.l10n.resultsMarksLost(
+                    negativeMarks.toStringAsFixed(2),
+                  ),
+          );
 
     return _SummarySurfaceCard(
       scheme: scheme,
@@ -385,7 +393,7 @@ class _CompactScoreRow extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Net marks',
+                        context.l10n.resultsNetMarks,
                         style: AppTextStyles.caption().copyWith(
                           color: scheme.onSurfaceVariant,
                           fontWeight: FontWeight.w700,
@@ -488,7 +496,7 @@ class _SessionAttemptBar extends StatelessWidget {
         Row(
           children: [
             Text(
-              'All $total questions',
+              context.l10n.resultsAllQuestions(total),
               style: AppTextStyles.caption().copyWith(
                 fontWeight: FontWeight.w700,
                 color: scheme.onSurface,
@@ -497,8 +505,8 @@ class _SessionAttemptBar extends StatelessWidget {
             const Spacer(),
             Text(
               attempted == 0
-                  ? 'None attempted'
-                  : '$attempted attempted · $skipped skipped',
+                  ? context.l10n.resultsNoneAttempted
+                  : context.l10n.resultsAttemptedSkipped(attempted, skipped),
               style: AppTextStyles.caption().copyWith(
                 color: scheme.onSurfaceVariant,
               ),
@@ -523,10 +531,16 @@ class _SessionAttemptBar extends StatelessWidget {
           children: [
             _AttemptLegendItem(
               color: AppColors.correct,
-              label: '$correct correct',
+              label: context.l10n.resultsCountCorrect(correct),
             ),
-            _AttemptLegendItem(color: AppColors.wrong, label: '$wrong wrong'),
-            _AttemptLegendItem(color: trackColor, label: '$skipped skipped'),
+            _AttemptLegendItem(
+              color: AppColors.wrong,
+              label: context.l10n.resultsCountWrong(wrong),
+            ),
+            _AttemptLegendItem(
+              color: trackColor,
+              label: context.l10n.resultsCountSkipped(skipped),
+            ),
           ],
         ),
       ],
@@ -585,15 +599,15 @@ class _SemiCircularAccuracyGauge extends StatelessWidget {
         : AppColors.gray200;
     final progress = attempted == 0 ? 0.0 : (accuracy / 100).clamp(0.0, 1.0);
     final attemptedLabel = attempted == 0
-        ? 'No attempts yet'
-        : '$correct of $attempted correct';
+        ? context.l10n.resultsNoAttemptsYet
+        : context.l10n.resultsCorrectOfAttempted(correct, attempted);
 
     return Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Text(
-          'Attempt accuracy',
+          context.l10n.resultsAttemptAccuracy,
           style: AppTextStyles.caption().copyWith(
             color: scheme.onSurfaceVariant,
             fontWeight: FontWeight.w600,
@@ -740,8 +754,7 @@ class _RevisionQueueCard extends StatelessWidget {
               children: [
                 if (wrongInSession > 0)
                   Text(
-                    '$wrongInSession question${wrongInSession == 1 ? '' : 's'} '
-                    'added to revision queue',
+                    context.l10n.resultsAddedToQueue(wrongInSession),
                     style: AppTextStyles.labelSm().copyWith(
                       color: scheme.onSurface,
                       fontWeight: FontWeight.w700,
@@ -749,7 +762,7 @@ class _RevisionQueueCard extends StatelessWidget {
                   )
                 else
                   Text(
-                    'No incorrect answers added from this test.',
+                    context.l10n.resultsNoneAddedToQueue,
                     style: AppTextStyles.caption().copyWith(
                       color: scheme.onSurfaceVariant,
                     ),
@@ -757,7 +770,7 @@ class _RevisionQueueCard extends StatelessWidget {
                 if (due > 0) ...[
                   const SizedBox(height: 4),
                   Text(
-                    '$due total in queue',
+                    context.l10n.resultsTotalInQueue(due),
                     style: AppTextStyles.caption().copyWith(
                       color: AppColors.coachTrendEmerald,
                       fontWeight: FontWeight.w600,
@@ -794,7 +807,7 @@ class _RevisionQueueCard extends StatelessWidget {
               context.push('/revision-queue');
             },
             child: Text(
-              'Go to queue',
+              context.l10n.resultsGoToQueue,
               style: AppTextStyles.caption().copyWith(
                 fontWeight: FontWeight.w700,
               ),
@@ -865,7 +878,7 @@ class _TopTopicsSection extends StatelessWidget {
       children: [
         if (worstTopics.isNotEmpty) ...[
           _TopicAccuracyList(
-            title: 'Most inaccurate topics',
+            title: context.l10n.resultsWorstTopics,
             topics: worstTopics,
             expanded: worstExpanded,
             onToggle: onToggleWorst,
@@ -877,7 +890,7 @@ class _TopTopicsSection extends StatelessWidget {
         ],
         if (bestTopics.isNotEmpty)
           _TopicAccuracyList(
-            title: 'Top topic accuracy',
+            title: context.l10n.resultsBestTopics,
             topics: bestTopics,
             expanded: bestExpanded,
             onToggle: onToggleBest,
@@ -930,7 +943,11 @@ class _TopicAccuracyList extends StatelessWidget {
             if (topics.length > defaultVisibleCount)
               TextButton(
                 onPressed: onToggle,
-                child: Text(expanded ? 'Show less' : 'View all'),
+                child: Text(
+                  expanded
+                      ? context.l10n.commonShowLess
+                      : context.l10n.commonViewAll,
+                ),
               ),
           ],
         ),
@@ -944,7 +961,11 @@ class _TopicAccuracyList extends StatelessWidget {
               ? AppColors.wrong
               : (accuracyPct >= 50 ? AppColors.correct : AppColors.wrong);
           final statLabel = showInaccuracy
-              ? '${(100 - accuracyPct).round()}% wrong ($wrongCount/${row.attempted})'
+              ? context.l10n.resultsPctWrong(
+                  (100 - accuracyPct).round(),
+                  wrongCount,
+                  row.attempted,
+                )
               : '${accuracyPct.round()}% (${row.correct}/${row.attempted})';
           return Padding(
             padding: const EdgeInsets.only(bottom: AppSpacing.sm),
@@ -990,10 +1011,7 @@ class _TopicAccuracyList extends StatelessWidget {
 }
 
 class _BackToHomeButton extends ConsumerWidget {
-  const _BackToHomeButton({
-    required this.sessionId,
-    required this.scheme,
-  });
+  const _BackToHomeButton({required this.sessionId, required this.scheme});
 
   final String sessionId;
   final ColorScheme scheme;
@@ -1016,7 +1034,7 @@ class _BackToHomeButton extends ConsumerWidget {
         context.go('/');
       },
       child: Text(
-        'Back to home',
+        context.l10n.resultsBackToHome,
         style: AppTextStyles.label().copyWith(
           fontWeight: FontWeight.w600,
           color: scheme.onSurfaceVariant,
@@ -1068,7 +1086,7 @@ class _ReviewAllButton extends StatelessWidget {
         },
         icon: Icon(Icons.menu_book_outlined, size: 20 * metrics.factor),
         label: Text(
-          'Review all questions ($questionCount)',
+          context.l10n.resultsReviewAll(questionCount),
           style: AppTextStyles.label().copyWith(
             fontWeight: FontWeight.w700,
             fontSize: (14 * metrics.factor).clamp(12.0, 14.0),
@@ -1100,7 +1118,7 @@ class _MoreInsightsTile extends StatelessWidget {
         child: Row(
           children: [
             Text(
-              'More insights',
+              context.l10n.resultsMoreInsights,
               style: AppTextStyles.labelSm().copyWith(
                 color: scheme.onSurfaceVariant,
               ),
@@ -1130,8 +1148,7 @@ class _TimeInline extends StatelessWidget {
       loading: () => const SizedBox.shrink(),
       error: (_, _) => const SizedBox.shrink(),
       data: (t) => Text(
-        'Avg ${t.avgSecs}s per question · '
-        'Fastest ${t.minSecs}s · Slowest ${t.maxSecs}s',
+        context.l10n.resultsTimingLine(t.avgSecs, t.minSecs, t.maxSecs),
         style: AppTextStyles.caption().copyWith(color: scheme.onSurfaceVariant),
       ),
     );

@@ -6,6 +6,7 @@ import 'package:upsc_wars/features/battle/domain/battle_monogram_palette.dart';
 import 'package:upsc_wars/core/theme/app_radius.dart';
 import 'package:upsc_wars/core/theme/app_spacing.dart';
 import 'package:upsc_wars/core/theme/app_text_styles.dart';
+import '../../../l10n/l10n.dart';
 
 /// Collapsible battle scores: two players in one row with compact per-question
 /// outcome circles. Uses surface chrome so [AppColors.correct] chips stay
@@ -46,8 +47,7 @@ class BattleScoresCollapsible extends StatelessWidget {
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
     // Mid-gray panels (avoid near-white in light; avoid heavy black in dark).
-    final headerBg =
-        isDark ? AppColors.surfaceTertiaryDark : AppColors.gray100;
+    final headerBg = isDark ? AppColors.surfaceTertiaryDark : AppColors.gray100;
     final onHeader = scheme.onSurface;
     final subtle = scheme.onSurfaceVariant;
     final border = scheme.outline.withValues(alpha: isDark ? 0.4 : 0.28);
@@ -86,7 +86,7 @@ class BattleScoresCollapsible extends StatelessWidget {
           title: Row(
             children: [
               Text(
-                'Scores',
+                context.l10n.bshScores,
                 style: AppTextStyles.label().copyWith(
                   color: onHeader,
                   fontWeight: FontWeight.w600,
@@ -100,7 +100,9 @@ class BattleScoresCollapsible extends StatelessWidget {
                     vertical: 2,
                   ),
                   decoration: BoxDecoration(
-                    color: AppColors.info.withValues(alpha: isDark ? 0.35 : 0.2),
+                    color: AppColors.info.withValues(
+                      alpha: isDark ? 0.35 : 0.2,
+                    ),
                     borderRadius: BorderRadius.circular(AppRadius.pill),
                     border: Border.all(
                       color: AppColors.info.withValues(alpha: 0.55),
@@ -118,7 +120,7 @@ class BattleScoresCollapsible extends StatelessWidget {
                       ),
                       const SizedBox(width: 4),
                       Text(
-                        'Battle finished',
+                        context.l10n.bshFinished,
                         style: AppTextStyles.caption().copyWith(
                           fontWeight: FontWeight.w700,
                           color: isDark
@@ -178,7 +180,7 @@ class BattleScoresCollapsible extends StatelessWidget {
                                 )
                               : null,
                         ),
-                        title: 'You',
+                        title: context.l10n.commonYou,
                         outcomes: playerOutcomeByQuestion,
                       ),
                     ),
@@ -377,8 +379,7 @@ class _PlayerAvatarStrip extends StatelessWidget {
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
     final url = AppConstants.customProfilePhotoUrl(photoUrl);
-    final cachePx =
-        (36 * MediaQuery.devicePixelRatioOf(context)).round();
+    final cachePx = (36 * MediaQuery.devicePixelRatioOf(context)).round();
     if (url.isEmpty) {
       return _MonogramAvatar(
         letter: initial,

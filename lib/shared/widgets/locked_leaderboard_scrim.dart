@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_text_styles.dart';
+import '../../l10n/l10n.dart';
 
 /// Light frost over the leaderboard with a lock and sign-in CTA.
 class LockedLeaderboardScrim extends StatelessWidget {
@@ -43,7 +44,7 @@ class LockedLeaderboardScrim extends StatelessWidget {
                     ),
                     const SizedBox(height: 8),
                     Text(
-                      'Sign in to see the leaderboard',
+                      context.l10n.lbSignIn,
                       textAlign: TextAlign.center,
                       style: AppTextStyles.label().copyWith(
                         color: Colors.white,

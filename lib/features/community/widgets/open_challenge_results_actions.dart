@@ -11,6 +11,7 @@ import '../open_challenge/open_challenge_analytics.dart';
 import '../open_challenge/open_challenge_exam_registry.dart';
 import '../open_challenge/open_challenge_post_results_submit.dart';
 import '../../../shared/widgets/app_toast.dart';
+import '../../../l10n/l10n.dart';
 
 /// Open-challenge **create** only: auto-publishes from [ResultsScreen].
 /// Accept flow uses [OpenChallengeAcceptResultsShell] instead.
@@ -108,7 +109,7 @@ class _OpenChallengeResultsActionsState
             const SizedBox(width: AppSpacing.md),
             Expanded(
               child: Text(
-                'Publishing your challenge…',
+                context.l10n.ocPublishingChallenge,
                 style: AppTextStyles.bodySm().copyWith(
                   color: Theme.of(context).colorScheme.onSurfaceVariant,
                 ),
@@ -135,7 +136,7 @@ class _OpenChallengeResultsActionsState
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Text(
-                'Could not complete this step. Check your connection and try again.',
+                context.l10n.ocStepFailed,
                 style: AppTextStyles.bodySm().copyWith(
                   color: scheme.onErrorContainer,
                 ),
@@ -146,7 +147,7 @@ class _OpenChallengeResultsActionsState
                   setState(() => _failed = false);
                   unawaited(_submit(context));
                 },
-                child: const Text('Retry'),
+                child: Text(context.l10n.commonRetry),
               ),
             ],
           ),
@@ -175,10 +176,10 @@ class _OpenChallengeResultsActionsState
     } catch (e) {
       if (context.mounted) {
         final msg = '$e'.contains('already_attempted')
-            ? 'You have already attempted this challenge.'
+            ? context.l10n.ocAlreadyAttempted
             : '$e'.contains('challenge_expired')
-                ? 'This challenge has expired.'
-                : '$e';
+            ? context.l10n.ocExpired
+            : '$e';
         AppToast.showText(context, msg);
       }
       if (mounted) setState(() => _failed = true);

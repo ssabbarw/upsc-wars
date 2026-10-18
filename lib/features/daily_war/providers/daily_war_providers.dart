@@ -124,11 +124,7 @@ Future<DailyWarDoc?> _fetchWarDoc({
   final cached = cache.getWar(dateId);
   if (!force &&
       hydrated.hasKey(key) &&
-      !_paperAwaitingPublish(
-        doc: cached,
-        dateId: dateId,
-        ist: _istNow(ref),
-      )) {
+      !_paperAwaitingPublish(doc: cached, dateId: dateId, ist: _istNow(ref))) {
     return cached;
   }
 
@@ -165,9 +161,9 @@ Future<DailyWarDoc?> _fetchWarDocFromServer({
   try {
     DocumentSnapshot<Map<String, dynamic>> snap;
     try {
-      snap = await DailyWarFirestorePaths.warDoc(dateId).get(
-        const GetOptions(source: Source.server),
-      );
+      snap = await DailyWarFirestorePaths.warDoc(
+        dateId,
+      ).get(const GetOptions(source: Source.server));
     } on Object {
       snap = await DailyWarFirestorePaths.warDoc(dateId).get();
     }
@@ -210,9 +206,10 @@ Future<DailyWarSubmission?> _fetchSubmission({
 
   hydrated.mark(key);
   try {
-    final snap = await DailyWarFirestorePaths.submissionDoc(dateId, uid).get(
-      const GetOptions(source: Source.server),
-    );
+    final snap = await DailyWarFirestorePaths.submissionDoc(
+      dateId,
+      uid,
+    ).get(const GetOptions(source: Source.server));
     if (!snap.exists || snap.data() == null) {
       await cache.putSubmissionAbsent(uid, dateId);
       return null;
@@ -371,7 +368,9 @@ class DailyWarTodaySubmission extends _$DailyWarTodaySubmission {
     if (sub.uid.isEmpty || dateId.isEmpty) return;
     final cache = await ref.read(dailyWarLocalCacheProvider.future);
     await cache.putSubmission(sub.uid, sub, dateId);
-    ref.read(dailyWarSessionHydratedProvider.notifier).mark('sub:${sub.uid}:$dateId');
+    ref
+        .read(dailyWarSessionHydratedProvider.notifier)
+        .mark('sub:${sub.uid}:$dateId');
     state = AsyncValue.data(sub);
   }
 }
@@ -410,9 +409,8 @@ final dailyWarUiTickProvider = StreamProvider<int>((ref) async* {
     }
     final lobby = DailyWarSchedule.lobbyOpensAt(warDate);
     final liveEnd = DailyWarSchedule.liveEndsAt(warDate);
-    final nearLive = !ist.isBefore(
-          lobby.subtract(const Duration(minutes: 5)),
-        ) &&
+    final nearLive =
+        !ist.isBefore(lobby.subtract(const Duration(minutes: 5))) &&
         ist.isBefore(liveEnd.add(const Duration(minutes: 5)));
     await Future<void>.delayed(Duration(seconds: nearLive ? 1 : 30));
   }
@@ -431,9 +429,7 @@ class DailyWarYesterdaySnapshot {
   final DailyWarSubmission? submission;
 
   bool get shouldShowMissedStrip =>
-      doc != null &&
-      doc!.questionsVisible &&
-      submission == null;
+      doc != null && doc!.questionsVisible && submission == null;
 }
 
 @Riverpod(keepAlive: true)
@@ -455,10 +451,9 @@ DailyWarHomeSnapshot dailyWarHomeSnapshot(Ref ref) {
     referenceIst: ist,
     firestoreStatus: doc?.status,
     ranksReady: doc?.ranksReady ?? false,
-    questionCount: doc?.questionCount ??
-        DailyWarSchedule.questionCountForDate(
-          DailyWarSchedule.warDateFor(ist),
-        ),
+    questionCount:
+        doc?.questionCount ??
+        DailyWarSchedule.questionCountForDate(DailyWarSchedule.warDateFor(ist)),
   );
   return DailyWarHomeSnapshot(
     dateId: dateId,
@@ -602,8 +597,10 @@ Future<void> refreshDailyWarHome(WidgetRef ref) async {
 DailyWarYesterdaySnapshot dailyWarYesterdaySnapshot(Ref ref) {
   final dateId = ref.watch(dailyWarYesterdayDateIdProvider);
   final doc = ref.watch(dailyWarYesterdayDocProvider).asData?.value;
-  final submission =
-      ref.watch(dailyWarYesterdaySubmissionProvider).asData?.value;
+  final submission = ref
+      .watch(dailyWarYesterdaySubmissionProvider)
+      .asData
+      ?.value;
   return DailyWarYesterdaySnapshot(
     dateId: dateId,
     doc: doc,
@@ -727,10 +724,11 @@ Stream<DailyWarLiveCounts> dailyWarLiveCounts(Ref ref) async* {
   final snap = ref.watch(dailyWarHomeSnapshotProvider);
   final pollSeconds =
       ref.watch(dailyWarLiveCountPollSecondsRemoteProvider).asData?.value ??
-          DailyWarConstants.liveCountPollSeconds;
+      DailyWarConstants.liveCountPollSeconds;
   final phase = snap.phase;
   final dateId = snap.dateId;
-  final shouldPoll = phase == DailyWarPhase.lobby ||
+  final shouldPoll =
+      phase == DailyWarPhase.lobby ||
       phase == DailyWarPhase.liveJoinable ||
       phase == DailyWarPhase.liveLocked;
 
@@ -761,7 +759,7 @@ Stream<DailyWarLiveCounts> dailyWarLiveCounts(Ref ref) async* {
     // Re-read RC each tick so Console changes apply without restarting the app.
     final secs =
         ref.read(dailyWarLiveCountPollSecondsRemoteProvider).asData?.value ??
-            pollSeconds;
+        pollSeconds;
     await Future<void>.delayed(Duration(seconds: secs));
   }
 }
@@ -791,9 +789,6 @@ final dailyWarStreakCountProvider = Provider<int>((ref) {
   final prefs = ref.watch(prefsServiceProvider).asData?.value;
   if (prefs == null) return 0;
   final utc = ref.watch(serverNowUtcProvider);
-  DailyWarStreak.reconcile(
-    prefs: prefs,
-    istNow: DailyWarSchedule.nowIst(utc),
-  );
+  DailyWarStreak.reconcile(prefs: prefs, istNow: DailyWarSchedule.nowIst(utc));
   return prefs.dailyWarStreak;
 });

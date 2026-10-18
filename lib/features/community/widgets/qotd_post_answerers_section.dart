@@ -20,6 +20,7 @@ import '../providers/community_providers.dart';
 import '../providers/qotd_providers.dart';
 import 'admin_bot_label.dart';
 import 'community_user_profile_sheet.dart';
+import '../../../l10n/l10n.dart';
 
 Future<void> showQotdAnswerersBottomSheet(
   BuildContext parentContext,
@@ -44,113 +45,116 @@ Future<void> showQotdAnswerersBottomSheet(
           return Padding(
             padding: EdgeInsets.only(bottom: systemBottomInset(ctx)),
             child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(top: AppSpacing.sm),
-                child: Center(
-                  child: Container(
-                    width: 40,
-                    height: 4,
-                    decoration: BoxDecoration(
-                      color: scheme.onSurfaceVariant.withValues(alpha: 0.35),
-                      borderRadius: BorderRadius.circular(2),
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: AppSpacing.sm),
+                  child: Center(
+                    child: Container(
+                      width: 40,
+                      height: 4,
+                      decoration: BoxDecoration(
+                        color: scheme.onSurfaceVariant.withValues(alpha: 0.35),
+                        borderRadius: BorderRadius.circular(2),
+                      ),
                     ),
                   ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(
-                  AppSpacing.lg,
-                  AppSpacing.md,
-                  AppSpacing.lg,
-                  AppSpacing.sm,
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Text('Who answered', style: AppTextStyles.h3()),
-                    const SizedBox(height: AppSpacing.xs),
-                    Text(
-                      statsLine,
-                      style: AppTextStyles.caption().copyWith(
-                        color: scheme.onSurfaceVariant,
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(
+                    AppSpacing.lg,
+                    AppSpacing.md,
+                    AppSpacing.lg,
+                    AppSpacing.sm,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Text(
+                        sheetContext.l10n.qotdWhoAnswered,
+                        style: AppTextStyles.h3(),
                       ),
-                    ),
-                  ],
-                ),
-              ),
-              Expanded(
-                child: Consumer(
-                  builder: (c, ref, _) {
-                    final async = ref.watch(qotdPostAttemptsProvider(postId));
-                    return async.when(
-                      loading: () => const Center(
-                        child: Padding(
-                          padding: EdgeInsets.all(AppSpacing.lg),
-                          child: CircularProgressIndicator(),
+                      const SizedBox(height: AppSpacing.xs),
+                      Text(
+                        statsLine,
+                        style: AppTextStyles.caption().copyWith(
+                          color: scheme.onSurfaceVariant,
                         ),
                       ),
-                      error: (_, err) => Center(
-                        child: Padding(
-                          padding: const EdgeInsets.all(AppSpacing.lg),
-                          child: Text(
-                            'Could not load attempts.',
-                            style: AppTextStyles.bodySm().copyWith(
-                              color: scheme.error,
-                            ),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: Consumer(
+                    builder: (c, ref, _) {
+                      final async = ref.watch(qotdPostAttemptsProvider(postId));
+                      return async.when(
+                        loading: () => const Center(
+                          child: Padding(
+                            padding: EdgeInsets.all(AppSpacing.lg),
+                            child: CircularProgressIndicator(),
                           ),
                         ),
-                      ),
-                      data: (rows) {
-                        if (rows.isEmpty) {
-                          return Center(
-                            child: Padding(
-                              padding: const EdgeInsets.all(AppSpacing.lg),
-                              child: Text(
-                                'No attempts yet.',
-                                style: AppTextStyles.bodySm().copyWith(
-                                  color: scheme.onSurfaceVariant,
-                                ),
+                        error: (_, err) => Center(
+                          child: Padding(
+                            padding: const EdgeInsets.all(AppSpacing.lg),
+                            child: Text(
+                              sheetContext.l10n.qotdAttemptsFailed,
+                              style: AppTextStyles.bodySm().copyWith(
+                                color: scheme.error,
                               ),
                             ),
-                          );
-                        }
-                        return ListView.separated(
-                          controller: scrollController,
-                          padding: const EdgeInsets.fromLTRB(
-                            AppSpacing.lg,
-                            0,
-                            AppSpacing.lg,
-                            AppSpacing.lg,
                           ),
-                          itemCount: rows.length,
-                          separatorBuilder: (_, _) => Divider(
-                            height: 1,
-                            color: scheme.outlineVariant.withValues(
-                              alpha: 0.35,
-                            ),
-                          ),
-                          itemBuilder: (context, i) {
-                            return _QotdAnswererRow(
-                              entry: rows[i],
-                              onOpenProfile: (e) async {
-                                Navigator.of(parentContext).pop();
-                                await _openAnswererProfile(
-                                  parentContext,
-                                  ref,
-                                  e,
-                                );
-                              },
+                        ),
+                        data: (rows) {
+                          if (rows.isEmpty) {
+                            return Center(
+                              child: Padding(
+                                padding: const EdgeInsets.all(AppSpacing.lg),
+                                child: Text(
+                                  sheetContext.l10n.qotdNoAttempts,
+                                  style: AppTextStyles.bodySm().copyWith(
+                                    color: scheme.onSurfaceVariant,
+                                  ),
+                                ),
+                              ),
                             );
-                          },
-                        );
-                      },
-                    );
-                  },
+                          }
+                          return ListView.separated(
+                            controller: scrollController,
+                            padding: const EdgeInsets.fromLTRB(
+                              AppSpacing.lg,
+                              0,
+                              AppSpacing.lg,
+                              AppSpacing.lg,
+                            ),
+                            itemCount: rows.length,
+                            separatorBuilder: (_, _) => Divider(
+                              height: 1,
+                              color: scheme.outlineVariant.withValues(
+                                alpha: 0.35,
+                              ),
+                            ),
+                            itemBuilder: (context, i) {
+                              return _QotdAnswererRow(
+                                entry: rows[i],
+                                onOpenProfile: (e) async {
+                                  Navigator.of(parentContext).pop();
+                                  await _openAnswererProfile(
+                                    parentContext,
+                                    ref,
+                                    e,
+                                  );
+                                },
+                              );
+                            },
+                          );
+                        },
+                      );
+                    },
+                  ),
                 ),
-              ),
-            ],
+              ],
             ),
           );
         },
@@ -216,14 +220,13 @@ class _QotdAnswererRow extends StatelessWidget {
                             overflow: TextOverflow.ellipsis,
                           ),
                         ),
-                        AdminBotLabel(
-                          email: entry.authorEmail,
-                          uid: entry.uid,
-                        ),
+                        AdminBotLabel(email: entry.authorEmail, uid: entry.uid),
                       ],
                     ),
                     Text(
-                      entry.isCorrect ? 'Correct' : 'Wrong',
+                      entry.isCorrect
+                          ? context.l10n.resultsMatrixCorrect
+                          : context.l10n.resultsMatrixWrong,
                       style: AppTextStyles.caption().copyWith(
                         color: entry.isCorrect
                             ? (isDark
@@ -297,7 +300,7 @@ Future<void> _openAnswererProfile(
   final email = (e.authorEmail ?? '').trim().toLowerCase();
   if (email.isEmpty) {
     if (context.mounted) {
-      AppToast.showText(context, 'Profile is not available for this attempt yet.');
+      AppToast.showText(context, context.l10n.qotdProfileUnavailable);
     }
     return;
   }
@@ -309,9 +312,8 @@ Future<void> _openAnswererProfile(
     if (fresh != null) user = fresh;
   } catch (_) {}
   if (!context.mounted) return;
-  final me = AuthSession.emailOf(
-        ref.read(authStateChangesProvider).asData?.value,
-      ) ??
+  final me =
+      AuthSession.emailOf(ref.read(authStateChangesProvider).asData?.value) ??
       AuthSession.currentEmail();
   await showCommunityUserProfileSheet(context, ref, user, currentUserEmail: me);
 }

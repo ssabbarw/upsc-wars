@@ -9,6 +9,7 @@ import '../shared/revision_game_analytics.dart';
 import '../shared/revision_games_theme.dart';
 import '../shared/revision_games_widgets.dart';
 import 'odd_one_out_controller.dart';
+import '../../../l10n/l10n.dart';
 
 class OddOneOutScreen extends HookConsumerWidget {
   const OddOneOutScreen({
@@ -40,9 +41,10 @@ class OddOneOutScreen extends HookConsumerWidget {
       persistAppLanguage(ref, v);
     }
 
-    final provider = oddOneOutControllerProvider(
-      (subjects: subjectsCsv, difficulties: difficultiesCsv),
-    );
+    final provider = oddOneOutControllerProvider((
+      subjects: subjectsCsv,
+      difficulties: difficultiesCsv,
+    ));
     final async = ref.watch(provider);
     final howToReady = useGameHowToSheet(
       context: context,
@@ -53,10 +55,10 @@ class OddOneOutScreen extends HookConsumerWidget {
         accent: GameAccent.oddOneOut.accent,
         badgeBg: GameAccent.oddOneOut.badgeBg,
         title: 'Odd One Out',
-        steps: const [
-          'Look at all four options.',
-          'Pick the odd one out.',
-          'See the highlight and explanation instantly.',
+        steps: [
+          context.l10n.gmOddStep1,
+          context.l10n.gmOddStep2,
+          context.l10n.gmOddStep3,
         ],
       ),
     );
@@ -80,7 +82,7 @@ class OddOneOutScreen extends HookConsumerWidget {
     return RgGameScaffold(
       title: item == null || complete
           ? 'Odd One Out'
-          : 'Odd One Out · ${item.subject}',
+          : context.l10n.gmOddTitle(item.subject),
       trailing: item == null || complete
           ? null
           : Row(
@@ -97,7 +99,7 @@ class OddOneOutScreen extends HookConsumerWidget {
             ),
       footer: revealed && !complete
           ? RgPillButton(
-              label: 'Next →',
+              label: context.l10n.gmNext,
               verticalPadding: 11,
               onPressed: () => ref.read(provider.notifier).next(),
             )
@@ -120,7 +122,7 @@ class OddOneOutScreen extends HookConsumerWidget {
           if (item == null) {
             return Center(
               child: Text(
-                state.error ?? 'No content',
+                state.error ?? context.l10n.gmNoContent,
                 style: RgText.body(color: RgColors.muted),
               ),
             );
@@ -131,7 +133,10 @@ class OddOneOutScreen extends HookConsumerWidget {
             children: [
               Center(
                 child: RgMonoLabel(
-                  '${state.index + 1} of ${state.session.length}',
+                  context.l10n.gmNOfTotal(
+                    state.index + 1,
+                    state.session.length,
+                  ),
                 ),
               ),
               const SizedBox(height: 10),
@@ -185,20 +190,16 @@ class _DifficultyPill extends StatelessWidget {
   Widget build(BuildContext context) {
     final (label, fg, bg) = switch (difficulty) {
       MiniGameDifficulty.easy => (
-          'EASY',
-          RgColors.tealDeep,
-          RgColors.correctBg,
-        ),
+        'EASY',
+        RgColors.tealDeep,
+        RgColors.correctBg,
+      ),
       MiniGameDifficulty.medium => (
-          'MEDIUM',
-          RgColors.warningText,
-          RgColors.warningBg,
-        ),
-      MiniGameDifficulty.hard => (
-          'HARD',
-          RgColors.wrongText,
-          RgColors.wrongBg,
-        ),
+        'MEDIUM',
+        RgColors.warningText,
+        RgColors.warningBg,
+      ),
+      MiniGameDifficulty.hard => ('HARD', RgColors.wrongText, RgColors.wrongBg),
     };
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
@@ -206,10 +207,7 @@ class _DifficultyPill extends StatelessWidget {
         color: bg,
         borderRadius: BorderRadius.circular(RgRadius.pill),
       ),
-      child: Text(
-        label,
-        style: RgText.mono(size: 10, color: fg),
-      ),
+      child: Text(label, style: RgText.mono(size: 10, color: fg)),
     );
   }
 }

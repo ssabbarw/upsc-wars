@@ -54,8 +54,14 @@ class _InsightExampleBody extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final red = seriesToneColors(SeriesTone.red, isDark: isDark);
 
-    final totalCorrect = _modernHistoryTopics.fold<int>(0, (a, t) => a + t.correct);
-    final totalAnswered = _modernHistoryTopics.fold<int>(0, (a, t) => a + t.answered);
+    final totalCorrect = _modernHistoryTopics.fold<int>(
+      0,
+      (a, t) => a + t.correct,
+    );
+    final totalAnswered = _modernHistoryTopics.fold<int>(
+      0,
+      (a, t) => a + t.answered,
+    );
     final overall = totalCorrect / totalAnswered;
     final weakest = [..._modernHistoryTopics]
       ..sort((a, b) => a.accuracy.compareTo(b.accuracy));
@@ -82,7 +88,9 @@ class _InsightExampleBody extends StatelessWidget {
         const SizedBox(height: 2),
         Text(
           '$totalCorrect of $totalAnswered questions correct',
-          style: AppTextStyles.bodySm().copyWith(color: scheme.onSurfaceVariant),
+          style: AppTextStyles.bodySm().copyWith(
+            color: scheme.onSurfaceVariant,
+          ),
         ),
         const SizedBox(height: AppSpacing.lg),
         Container(
@@ -116,7 +124,9 @@ class _InsightExampleBody extends StatelessWidget {
           'In the app, tap any topic to re-read exactly the questions you '
           'attempted in it.',
           textAlign: TextAlign.center,
-          style: AppTextStyles.bodySm().copyWith(color: scheme.onSurfaceVariant),
+          style: AppTextStyles.bodySm().copyWith(
+            color: scheme.onSurfaceVariant,
+          ),
         ),
         const SizedBox(height: AppSpacing.md),
         FilledButton(

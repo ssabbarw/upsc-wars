@@ -11,6 +11,7 @@ import '../shared/revision_game_analytics.dart';
 import '../shared/revision_games_theme.dart';
 import '../shared/revision_games_widgets.dart';
 import 'timeline_sorter_controller.dart';
+import '../../../l10n/l10n.dart';
 
 class TimelineSorterScreen extends HookConsumerWidget {
   const TimelineSorterScreen({
@@ -56,10 +57,10 @@ class TimelineSorterScreen extends HookConsumerWidget {
         accent: GameAccent.timelineSorter.accent,
         badgeBg: GameAccent.timelineSorter.badgeBg,
         title: 'Timeline Sorter',
-        steps: const [
-          'Read the shuffled events for the set.',
-          'Hold and drag rows to place them in order.',
-          'Tap Check to reveal years and what you got right.',
+        steps: [
+          context.l10n.gmTlStep1,
+          context.l10n.gmTlStep2,
+          context.l10n.gmTlStep3,
         ],
       ),
     );
@@ -83,8 +84,11 @@ class TimelineSorterScreen extends HookConsumerWidget {
     return RgGameScaffold(
       title: set == null || complete
           ? 'Timeline Sorter'
-          : '${set.subject} · Set ${snapshot!.setIndex + 1}/'
-                '${snapshot.session.length}',
+          : context.l10n.gmSetTitle(
+              set.subject,
+              snapshot!.setIndex + 1,
+              snapshot.session.length,
+            ),
       trailing: set == null || complete
           ? null
           : RgLangToggle(
@@ -95,7 +99,7 @@ class TimelineSorterScreen extends HookConsumerWidget {
       footer: set == null || complete
           ? null
           : RgPillButton(
-              label: revealed ? 'Next set →' : 'Check',
+              label: revealed ? context.l10n.gmNextSet : context.l10n.gmCheck,
               verticalPadding: 11,
               onPressed: () => revealed
                   ? ref.read(provider.notifier).nextSet()
@@ -119,7 +123,7 @@ class TimelineSorterScreen extends HookConsumerWidget {
           if (set == null) {
             return Center(
               child: Text(
-                state.error ?? 'No content',
+                state.error ?? context.l10n.gmNoContent,
                 style: RgText.body(color: RgColors.muted),
               ),
             );
@@ -142,7 +146,7 @@ class TimelineSorterScreen extends HookConsumerWidget {
                           RgMonoLabel(set.themeForLang(lang)),
                           const SizedBox(height: 4),
                           Text(
-                            'Hold and drag to reorder, then check.',
+                            context.l10n.gmTlHint,
                             style: RgText.body(
                               size: 11,
                               color: RgColors.mutedSoft,
@@ -300,7 +304,7 @@ class _ScoreBanner extends StatelessWidget {
         border: Border.all(color: RgColors.warningBorder),
       ),
       child: Text(
-        '$correct of $total correct',
+        context.l10n.gmCorrectOfTotal(correct, total),
         style: RgText.body(
           size: 12,
           weight: FontWeight.w700,

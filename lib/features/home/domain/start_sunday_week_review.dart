@@ -42,9 +42,7 @@ Future<void> startSundayWeekReview({
   } on Object {
     if (!context.mounted) return;
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-        content: Text('Something went wrong. Please try again.'),
-      ),
+      const SnackBar(content: Text('Something went wrong. Please try again.')),
     );
   }
 }

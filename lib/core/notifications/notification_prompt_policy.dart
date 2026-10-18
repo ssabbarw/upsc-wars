@@ -1,10 +1,5 @@
 /// Where the notification-permission sheet is being considered.
-enum NotificationPromptSurface {
-  dailyWar,
-  dailyCa,
-  community,
-  generic,
-}
+enum NotificationPromptSurface { dailyWar, dailyCa, community, generic }
 
 /// Automatic = capped/cooldown strategy. Explicit = user tapped a notify CTA.
 enum NotificationPromptKind { automatic, explicit }

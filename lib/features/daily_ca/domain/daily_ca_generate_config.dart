@@ -1,9 +1,6 @@
 /// When the Cloud Function should generate tonight's English drafts (IST).
 class DailyCaGenerateConfig {
-  const DailyCaGenerateConfig({
-    required this.hourIst,
-    required this.minuteIst,
-  });
+  const DailyCaGenerateConfig({required this.hourIst, required this.minuteIst});
 
   static const defaultHourIst = 20;
   static const defaultMinuteIst = 0;

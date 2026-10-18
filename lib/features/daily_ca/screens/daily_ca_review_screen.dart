@@ -31,8 +31,7 @@ class DailyCaReviewScreen extends HookConsumerWidget {
     });
 
     final draft = async.asData?.value;
-    final frozen =
-        draft != null && draft.isFrozen() && draft.isPublished;
+    final frozen = draft != null && draft.isFrozen() && draft.isPublished;
 
     Future<void> generateDraft({required bool force}) async {
       final result = await confirmAndGenerateDailyCa(
@@ -116,14 +115,16 @@ class DailyCaReviewScreen extends HookConsumerWidget {
           Future<void> save() async {
             saving.value = true;
             try {
-              await ref.read(dailyCaAdminCloudServiceProvider).saveDraft(
-                date: isoDate,
-                questions: questions.map((q) => q.raw).toList(),
-                chosenIds: [
-                  for (final q in questions)
-                    if (q.chosen) q.draftId,
-                ],
-              );
+              await ref
+                  .read(dailyCaAdminCloudServiceProvider)
+                  .saveDraft(
+                    date: isoDate,
+                    questions: questions.map((q) => q.raw).toList(),
+                    chosenIds: [
+                      for (final q in questions)
+                        if (q.chosen) q.draftId,
+                    ],
+                  );
               if (context.mounted) {
                 AppToast.showText(context, 'Saved');
               }
@@ -227,7 +228,10 @@ class DailyCaReviewScreen extends HookConsumerWidget {
                         style: AppTextStyles.caption(),
                       )
                     else if (draft.isPublished)
-                      Text('Published · can republish until 6 AM', style: AppTextStyles.caption()),
+                      Text(
+                        'Published · can republish until 6 AM',
+                        style: AppTextStyles.caption(),
+                      ),
                   ],
                 ),
               ),
@@ -285,22 +289,22 @@ class DailyCaReviewScreen extends HookConsumerWidget {
                           onPressed: frozen
                               ? null
                               : () async {
-                            final updated =
-                                await context.push<Map<String, dynamic>>(
-                              '/internal/daily-ca-review/$isoDate/edit',
-                              extra: q.raw,
-                            );
-                            if (updated == null) return;
-                            final next = [...questions];
-                            next[index] = DailyCaDraftQuestion.fromMap(
-                              updated,
-                              index,
-                            );
-                            if (q.chosen) {
-                              next[index] = next[index].copyChosen(true);
-                            }
-                            local.value = next;
-                          },
+                                  final updated = await context
+                                      .push<Map<String, dynamic>>(
+                                        '/internal/daily-ca-review/$isoDate/edit',
+                                        extra: q.raw,
+                                      );
+                                  if (updated == null) return;
+                                  final next = [...questions];
+                                  next[index] = DailyCaDraftQuestion.fromMap(
+                                    updated,
+                                    index,
+                                  );
+                                  if (q.chosen) {
+                                    next[index] = next[index].copyChosen(true);
+                                  }
+                                  local.value = next;
+                                },
                         ),
                       ),
                     );

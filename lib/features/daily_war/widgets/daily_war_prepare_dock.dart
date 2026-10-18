@@ -13,8 +13,9 @@ import '../domain/daily_war_copy.dart';
 import '../domain/daily_war_phase.dart';
 import '../providers/daily_war_providers.dart';
 import '../theme/daily_war_theme.dart';
+import '../../../l10n/l10n.dart';
 
-/// Docked "STEP 2 · PREPARE" strip under the War hero (design WarBelowFold).
+/// Docked context.l10n.dwStep2 strip under the War hero (design WarBelowFold).
 ///
 /// When Daily War RC is off, returns [SizedBox.shrink] so the home revision
 /// queue can show instead.
@@ -44,7 +45,8 @@ class _PrepareDockBody extends HookConsumerWidget {
     final loading = useState(false);
 
     // Hide dock once live / results take over the hero's primary job.
-    final hide = snap.phase == DailyWarPhase.restDay ||
+    final hide =
+        snap.phase == DailyWarPhase.restDay ||
         snap.phase == DailyWarPhase.lobby ||
         snap.phase == DailyWarPhase.liveJoinable ||
         snap.phase == DailyWarPhase.liveLocked ||
@@ -54,13 +56,14 @@ class _PrepareDockBody extends HookConsumerWidget {
     if (hide) return const SizedBox.shrink();
 
     final topics = snap.doc?.topics ?? const [];
-    final curriculumSlug =
-        topics.isNotEmpty ? topics.first.subjectSlug : 'polity';
+    final curriculumSlug = topics.isNotEmpty
+        ? topics.first.subjectSlug
+        : 'polity';
     final sessionSubject = DailyWarCopy.sessionSubjectSlug(curriculumSlug);
     final subjectName = DailyWarCopy.subjectDisplay(curriculumSlug);
     final topicHint = topics.isEmpty
-        ? '10 quick MCQs on tonight\'s subject'
-        : 'Tonight: ${DailyWarCopy.topicsLine(topics)}';
+        ? context.l10n.dwQuick10
+        : context.l10n.dwTonightTopics(DailyWarCopy.topicsLine(topics));
 
     Future<void> startPrepare() async {
       if (loading.value) return;
@@ -76,8 +79,9 @@ class _PrepareDockBody extends HookConsumerWidget {
         ),
       );
       try {
-        final uc =
-            await ref.read(createDailyDrillSessionUseCaseProvider.future);
+        final uc = await ref.read(
+          createDailyDrillSessionUseCaseProvider.future,
+        );
         final sessionId = await uc.execute(
           subject: sessionSubject,
           warTopics: topics,
@@ -87,9 +91,7 @@ class _PrepareDockBody extends HookConsumerWidget {
       } on Object {
         if (context.mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-              content: Text('Something went wrong. Please try again.'),
-            ),
+            SnackBar(content: Text(context.l10n.commonTryAgainError)),
           );
         }
       } finally {
@@ -123,7 +125,7 @@ class _PrepareDockBody extends HookConsumerWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'STEP 2 · PREPARE',
+                        context.l10n.dwStep2,
                         style: DwText.dm(
                           size: 10,
                           weight: FontWeight.w700,
@@ -133,7 +135,7 @@ class _PrepareDockBody extends HookConsumerWidget {
                       ),
                       const SizedBox(height: 4),
                       Text(
-                        'Daily Drill · $subjectName',
+                        context.l10n.dwDailyDrillSubject(subjectName),
                         style: DwText.dm(
                           size: 14,
                           weight: FontWeight.w700,
@@ -145,10 +147,7 @@ class _PrepareDockBody extends HookConsumerWidget {
                         topicHint,
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
-                        style: DwText.dm(
-                          size: 11,
-                          color: DwColors.muted,
-                        ),
+                        style: DwText.dm(size: 11, color: DwColors.muted),
                       ),
                     ],
                   ),

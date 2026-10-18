@@ -13,10 +13,12 @@ abstract final class PushSpotTestConstants {
   static const broadcastFcmTopic = 'upsc_wars_spot_tests';
 }
 
-String pushSpotTestResultsRoute(String sessionId) =>
-    '/spot-results/$sessionId';
+String pushSpotTestResultsRoute(String sessionId) => '/spot-results/$sessionId';
 
-String sessionResultsRouteForKey(String sessionId, String? analyticsFeatureKey) {
+String sessionResultsRouteForKey(
+  String sessionId,
+  String? analyticsFeatureKey,
+) {
   if (analyticsFeatureKey == PushSpotTestConstants.analyticsKey) {
     return pushSpotTestResultsRoute(sessionId);
   }

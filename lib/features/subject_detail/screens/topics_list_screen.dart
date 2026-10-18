@@ -15,6 +15,7 @@ import '../../../shared/widgets/accuracy_percentage_text.dart';
 import '../../../shared/widgets/contact_us_entry.dart';
 import '../providers/subject_detail_providers.dart';
 import '../widgets/topic_entry_bottom_sheet.dart';
+import '../../../l10n/l10n.dart';
 
 class TopicsListScreen extends HookConsumerWidget {
   const TopicsListScreen({super.key, required this.subject});
@@ -384,7 +385,7 @@ class _TopicCard extends StatelessWidget {
                               label: 'Accuracy',
                               child: notStarted
                                   ? Text(
-                                      'Not started',
+                                      context.l10n.topicsNotStarted,
                                       style: AppTextStyles.caption().copyWith(
                                         color: scheme.onSurfaceVariant,
                                         height: 1.3,
@@ -403,7 +404,9 @@ class _TopicCard extends StatelessWidget {
                                           tier: topic.accuracyTier,
                                         ),
                                         Text(
-                                          '· ${topic.attemptCount} ${topic.attemptCount == 1 ? 'attempt' : 'attempts'}',
+                                          context.l10n.topicsAttempts(
+                                            topic.attemptCount,
+                                          ),
                                           style: AppTextStyles.caption()
                                               .copyWith(
                                                 color: scheme.onSurfaceVariant,
@@ -515,14 +518,17 @@ class _ErrorState extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
-              'Could not load topics.',
+              context.l10n.topicLoadFailed,
               textAlign: TextAlign.center,
               style: AppTextStyles.body().copyWith(color: scheme.onSurface),
             ),
             const SizedBox(height: AppSpacing.lg),
             OutlinedButton(
               onPressed: onRetry,
-              child: Text('Retry', style: AppTextStyles.label()),
+              child: Text(
+                context.l10n.commonRetry,
+                style: AppTextStyles.label(),
+              ),
             ),
             const SizedBox(height: AppSpacing.lg),
             const ContactUsTextButton(),
@@ -550,13 +556,13 @@ class _EmptyState extends StatelessWidget {
             ),
             const SizedBox(height: AppSpacing.md),
             Text(
-              'No topics found for this subject.',
+              context.l10n.topicsNoneFound,
               textAlign: TextAlign.center,
               style: AppTextStyles.body().copyWith(color: scheme.onSurface),
             ),
             const SizedBox(height: AppSpacing.xs),
             Text(
-              'If your question bank is still installing, go back and try again in a moment.',
+              context.l10n.topicsBankInstalling,
               textAlign: TextAlign.center,
               style: AppTextStyles.caption().copyWith(
                 color: scheme.onSurfaceVariant,

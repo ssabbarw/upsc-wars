@@ -26,43 +26,46 @@ void main() {
     await db.bookmarksDao.getAllBookmarksOrderedByCreatedAtDesc(),
   );
 
-  test('fingerprint is stable, order-independent and change-sensitive', () async {
-    final empty = await fp();
-    await add('1', 'q1', 1000);
-    final one = await fp();
-    expect(one, isNot(empty));
+  test(
+    'fingerprint is stable, order-independent and change-sensitive',
+    () async {
+      final empty = await fp();
+      await add('1', 'q1', 1000);
+      final one = await fp();
+      expect(one, isNot(empty));
 
-    await add('2', 'q2', 2000, note: 'remember');
-    final two = await fp();
-    expect(two, isNot(one));
-    expect(await fp(), two); // stable
+      await add('2', 'q2', 2000, note: 'remember');
+      final two = await fp();
+      expect(two, isNot(one));
+      expect(await fp(), two); // stable
 
-    // Same set inserted in a different order gives the same fingerprint.
-    final other = UserDatabase(NativeDatabase.memory());
-    await other.bookmarksDao.insertBookmark(
-      BookmarksCompanion.insert(
-        id: 'b',
-        questionUuid: 'q2',
-        createdAt: DateTime.fromMillisecondsSinceEpoch(2000),
-        userNote: const Value('remember'),
-      ),
-    );
-    await other.bookmarksDao.insertBookmark(
-      BookmarksCompanion.insert(
-        id: 'a',
-        questionUuid: 'q1',
-        createdAt: DateTime.fromMillisecondsSinceEpoch(1000),
-      ),
-    );
-    expect(
-      BookmarkBackupService.fingerprint(
-        await other.bookmarksDao.getAllBookmarksOrderedByCreatedAtDesc(),
-      ),
-      two,
-    );
-    await other.close();
+      // Same set inserted in a different order gives the same fingerprint.
+      final other = UserDatabase(NativeDatabase.memory());
+      await other.bookmarksDao.insertBookmark(
+        BookmarksCompanion.insert(
+          id: 'b',
+          questionUuid: 'q2',
+          createdAt: DateTime.fromMillisecondsSinceEpoch(2000),
+          userNote: const Value('remember'),
+        ),
+      );
+      await other.bookmarksDao.insertBookmark(
+        BookmarksCompanion.insert(
+          id: 'a',
+          questionUuid: 'q1',
+          createdAt: DateTime.fromMillisecondsSinceEpoch(1000),
+        ),
+      );
+      expect(
+        BookmarkBackupService.fingerprint(
+          await other.bookmarksDao.getAllBookmarksOrderedByCreatedAtDesc(),
+        ),
+        two,
+      );
+      await other.close();
 
-    await db.bookmarksDao.deleteBookmarkByQuestionUuid('q2');
-    expect(await fp(), one); // removal returns to the earlier state
-  });
+      await db.bookmarksDao.deleteBookmarkByQuestionUuid('q2');
+      expect(await fp(), one); // removal returns to the earlier state
+    },
+  );
 }

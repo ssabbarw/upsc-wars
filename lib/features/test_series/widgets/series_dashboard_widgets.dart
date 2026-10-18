@@ -140,12 +140,16 @@ class SeriesStatTile extends StatelessWidget {
                   alignment: Alignment.centerLeft,
                   child: Text(
                     value,
-                    style: AppTextStyles.h2().copyWith(fontWeight: FontWeight.w700),
+                    style: AppTextStyles.h2().copyWith(
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
                 ),
                 Text(
                   label,
-                  style: AppTextStyles.caption().copyWith(color: scheme.onSurfaceVariant),
+                  style: AppTextStyles.caption().copyWith(
+                    color: scheme.onSurfaceVariant,
+                  ),
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                 ),
@@ -200,7 +204,9 @@ class SeriesInsightCard extends StatelessWidget {
               Row(
                 children: [
                   Icon(
-                    revise ? Icons.error_outline_rounded : Icons.verified_user_outlined,
+                    revise
+                        ? Icons.error_outline_rounded
+                        : Icons.verified_user_outlined,
                     color: accent,
                     size: 20,
                   ),
@@ -248,7 +254,11 @@ class SeriesInsightCard extends StatelessWidget {
 
 /// Two-way switch between "Needs Revision" and "Safe Areas".
 class SeriesInsightToggle extends StatelessWidget {
-  const SeriesInsightToggle({super.key, required this.revise, required this.onChanged});
+  const SeriesInsightToggle({
+    super.key,
+    required this.revise,
+    required this.onChanged,
+  });
 
   final bool revise;
   final ValueChanged<bool> onChanged;
@@ -277,7 +287,9 @@ class SeriesInsightToggle extends StatelessWidget {
             child: Text(
               isRevise ? 'Needs Revision' : 'Safe Areas',
               style: AppTextStyles.label().copyWith(
-                color: selected ? accent : Theme.of(context).colorScheme.onSurfaceVariant,
+                color: selected
+                    ? accent
+                    : Theme.of(context).colorScheme.onSurfaceVariant,
                 fontWeight: FontWeight.w700,
               ),
             ),
@@ -289,7 +301,9 @@ class SeriesInsightToggle extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(3),
       decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.surfaceContainerHighest.withValues(alpha: 0.5),
+        color: Theme.of(
+          context,
+        ).colorScheme.surfaceContainerHighest.withValues(alpha: 0.5),
         borderRadius: BorderRadius.circular(AppRadius.md + 3),
       ),
       child: Row(children: [segment(true), segment(false)]),
@@ -352,7 +366,9 @@ class SeriesTopicTile extends StatelessWidget {
                     borderRadius: BorderRadius.circular(AppRadius.sm),
                   ),
                   child: Icon(
-                    revise ? Icons.menu_book_rounded : Icons.check_circle_outline_rounded,
+                    revise
+                        ? Icons.menu_book_rounded
+                        : Icons.check_circle_outline_rounded,
                     color: accent,
                     size: 20,
                   ),
@@ -364,13 +380,17 @@ class SeriesTopicTile extends StatelessWidget {
                     children: [
                       Text(
                         topic.topic,
-                        style: AppTextStyles.bodyMd().copyWith(fontWeight: FontWeight.w600),
+                        style: AppTextStyles.bodyMd().copyWith(
+                          fontWeight: FontWeight.w600,
+                        ),
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                       ),
                       Text(
                         subtitle,
-                        style: AppTextStyles.bodySm().copyWith(color: scheme.onSurfaceVariant),
+                        style: AppTextStyles.bodySm().copyWith(
+                          color: scheme.onSurfaceVariant,
+                        ),
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                       ),
@@ -385,7 +405,10 @@ class SeriesTopicTile extends StatelessWidget {
                     fontWeight: FontWeight.w700,
                   ),
                 ),
-                Icon(Icons.chevron_right_rounded, color: scheme.onSurfaceVariant),
+                Icon(
+                  Icons.chevron_right_rounded,
+                  color: scheme.onSurfaceVariant,
+                ),
               ],
             ),
           ),
@@ -497,13 +520,18 @@ class SeriesTopicsPanel extends HookWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        SeriesInsightToggle(revise: revise.value, onChanged: (v) => revise.value = v),
+        SeriesInsightToggle(
+          revise: revise.value,
+          onChanged: (v) => revise.value = v,
+        ),
         const SizedBox(height: AppSpacing.lg),
         Text(title, style: AppTextStyles.h3()),
         const SizedBox(height: 2),
         Text(
           subtitle,
-          style: AppTextStyles.bodySm().copyWith(color: scheme.onSurfaceVariant),
+          style: AppTextStyles.bodySm().copyWith(
+            color: scheme.onSurfaceVariant,
+          ),
         ),
         const SizedBox(height: AppSpacing.md),
         if (list.isEmpty)
@@ -512,7 +540,9 @@ class SeriesTopicsPanel extends HookWidget {
             decoration: _cardDecoration(context),
             child: Text(
               emptyText,
-              style: AppTextStyles.bodySm().copyWith(color: scheme.onSurfaceVariant),
+              style: AppTextStyles.bodySm().copyWith(
+                color: scheme.onSurfaceVariant,
+              ),
             ),
           )
         else ...[
@@ -561,7 +591,9 @@ class SeriesSubjectRow extends StatelessWidget {
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
     final hasData = stat.answered > 0;
-    final color = hasData ? seriesAccuracyColor(stat.accuracy) : scheme.onSurfaceVariant;
+    final color = hasData
+        ? seriesAccuracyColor(stat.accuracy)
+        : scheme.onSurfaceVariant;
     final tests = stat.tests;
     final String caption;
     if (tests != null) {
@@ -607,7 +639,10 @@ class SeriesSubjectRow extends StatelessWidget {
                         children: [
                           Expanded(
                             child: Text(
-                              SeriesSubjects.label(stat.subjectId, hindi: isHindi),
+                              SeriesSubjects.label(
+                                stat.subjectId,
+                                hindi: isHindi,
+                              ),
                               style: AppTextStyles.bodyMd().copyWith(
                                 fontWeight: FontWeight.w600,
                               ),
@@ -644,7 +679,10 @@ class SeriesSubjectRow extends StatelessWidget {
                     ],
                   ),
                 ),
-                Icon(Icons.chevron_right_rounded, color: scheme.onSurfaceVariant),
+                Icon(
+                  Icons.chevron_right_rounded,
+                  color: scheme.onSurfaceVariant,
+                ),
               ],
             ),
           ),

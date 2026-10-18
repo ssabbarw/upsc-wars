@@ -19,7 +19,9 @@ abstract final class WebPlayerUiTokens {
         EdgeInsets.symmetric(vertical: 15, horizontal: 20),
       ),
       shape: WidgetStatePropertyAll(
-        RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppRadius.md)),
+        RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(AppRadius.md),
+        ),
       ),
       elevation: const WidgetStatePropertyAll(0),
       shadowColor: const WidgetStatePropertyAll(AppColors.transparent),
@@ -121,8 +123,9 @@ abstract final class WebPlayerUiTokens {
       selectedColor: isDark
           ? AppColors.primaryDark.withValues(alpha: 0.5)
           : AppColors.primaryLight,
-      backgroundColor:
-          isDark ? AppColors.surfaceSecondaryDark : AppColors.surfacePrimaryLight,
+      backgroundColor: isDark
+          ? AppColors.surfaceSecondaryDark
+          : AppColors.surfacePrimaryLight,
       side: BorderSide(
         color: selected
             ? AppColors.primary

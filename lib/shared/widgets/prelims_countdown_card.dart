@@ -10,6 +10,7 @@ import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_radius.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_text_styles.dart';
+import '../../l10n/l10n.dart';
 
 /// Compact one-line prelims countdown for the home screen.
 class PrelimsDaysInfo extends ConsumerWidget {
@@ -17,9 +18,9 @@ class PrelimsDaysInfo extends ConsumerWidget {
 
   static String label({DateTime? now, DateTime? targetDate}) {
     final days = PrelimsCountdown.daysLeft(now: now, targetDate: targetDate);
-    if (days <= 0) return 'Prelims: today';
-    if (days == 1) return 'Prelims: 1 day';
-    return 'Prelims: $days days';
+    if (days <= 0) return appL10n.pcToday;
+    if (days == 1) return appL10n.pcOneDay;
+    return appL10n.pcDays(days);
   }
 
   @override
@@ -31,11 +32,7 @@ class PrelimsDaysInfo extends ConsumerWidget {
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Icon(
-          Icons.event_outlined,
-          size: 14,
-          color: scheme.onSurfaceVariant,
-        ),
+        Icon(Icons.event_outlined, size: 14, color: scheme.onSurfaceVariant),
         const SizedBox(width: AppSpacing.xs),
         Text(
           label(targetDate: prelimsDate),
@@ -81,7 +78,7 @@ class PrelimsCountdownCard extends HookWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'UPSC PRELIMS COUNTDOWN',
+            context.l10n.pcTitle,
             style: AppTextStyles.caption().copyWith(
               color: scheme.onSurface,
               letterSpacing: 0.4,
@@ -89,7 +86,7 @@ class PrelimsCountdownCard extends HookWidget {
           ),
           const SizedBox(height: AppSpacing.xs),
           Text(
-            'Days : Hours : Min : Sec',
+            context.l10n.pcUnits,
             style: AppTextStyles.caption().copyWith(
               color: scheme.onSurfaceVariant,
               letterSpacing: 0.3,

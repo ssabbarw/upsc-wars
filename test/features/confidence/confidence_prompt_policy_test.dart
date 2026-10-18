@@ -73,25 +73,28 @@ void main() {
       );
     });
 
-    test('after early learner band, routine direct question with no weak topic → false', () {
-      final q = buildTestQuestion(
-        uuid: 'q1',
-        questionType: 'direct',
-        trapType: null,
-        subject: 'ancient_history',
-        topic: 'StableTopic',
-      );
-      expect(
-        ConfidencePromptPolicy.shouldPrompt(
-          prefs: prefs,
-          question: q,
-          session: session(subject: 'ancient_history'),
-          lifetimeScoredAttempts: 200,
-          weakTopicKeys: {},
-        ),
-        isFalse,
-      );
-    });
+    test(
+      'after early learner band, routine direct question with no weak topic → false',
+      () {
+        final q = buildTestQuestion(
+          uuid: 'q1',
+          questionType: 'direct',
+          trapType: null,
+          subject: 'ancient_history',
+          topic: 'StableTopic',
+        );
+        expect(
+          ConfidencePromptPolicy.shouldPrompt(
+            prefs: prefs,
+            question: q,
+            session: session(subject: 'ancient_history'),
+            lifetimeScoredAttempts: 200,
+            weakTopicKeys: {},
+          ),
+          isFalse,
+        );
+      },
+    );
 
     test('PYQ subject slug triggers prompt after early learner band', () {
       final q = buildTestQuestion(

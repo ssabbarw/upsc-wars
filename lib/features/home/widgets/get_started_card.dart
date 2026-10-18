@@ -86,10 +86,7 @@ Future<String?> _resolveGetStartedDiagnosticSession(
     }
     try {
       final repo = await ref.read(testEngineRepositoryProvider.future);
-      await repo.discardSession(
-        progress.sessionId,
-        userInitiatedQuit: false,
-      );
+      await repo.discardSession(progress.sessionId, userInitiatedQuit: false);
       ref.invalidate(testSessionProvider(progress.sessionId));
       DemoSessionWarmup.reset();
       ref.invalidate(homeActivationJourneyProvider);
@@ -187,10 +184,7 @@ Future<bool?> showGetStartedDiagnosticIntroSheet(
 }
 
 class _DemoResumeOrRestartSheet extends StatelessWidget {
-  const _DemoResumeOrRestartSheet({
-    required this.done,
-    required this.total,
-  });
+  const _DemoResumeOrRestartSheet({required this.done, required this.total});
 
   final int done;
   final int total;
@@ -679,29 +673,25 @@ class _GetStartedDiagnosticIntroSheet extends HookConsumerWidget {
                         _DiagnosticExpectationRow(
                           icon: Icons.menu_book_outlined,
                           title: context.l10n.demoPoint1Title,
-                          subtitle:
-                              context.l10n.demoPoint1Body,
+                          subtitle: context.l10n.demoPoint1Body,
                         ),
                         SizedBox(height: AppSpacing.md),
                         _DiagnosticExpectationRow(
                           icon: Icons.psychology_outlined,
                           title: context.l10n.demoPoint2Title,
-                          subtitle:
-                              context.l10n.demoPoint2Body,
+                          subtitle: context.l10n.demoPoint2Body,
                         ),
                         SizedBox(height: AppSpacing.md),
                         _DiagnosticExpectationRow(
                           icon: Icons.insights_outlined,
                           title: context.l10n.demoPoint3Title,
-                          subtitle:
-                              context.l10n.demoPoint3Body,
+                          subtitle: context.l10n.demoPoint3Body,
                         ),
                         SizedBox(height: AppSpacing.md),
                         _DiagnosticExpectationRow(
                           icon: Icons.menu_book_outlined,
                           title: context.l10n.demoPoint4Title,
-                          subtitle:
-                              context.l10n.demoPoint4Body,
+                          subtitle: context.l10n.demoPoint4Body,
                         ),
                       ],
                     ),

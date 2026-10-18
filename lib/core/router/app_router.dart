@@ -159,8 +159,7 @@ GoRouter appRouter(Ref ref) {
   });
   final restoredLocation = _appRouterRestoreLocation;
   _appRouterRestoreLocation = null;
-  final initialLocation =
-      (restoredLocation == null || restoredLocation.isEmpty)
+  final initialLocation = (restoredLocation == null || restoredLocation.isEmpty)
       ? '/'
       : restoredLocation;
 
@@ -315,7 +314,9 @@ GoRouter appRouter(Ref ref) {
       final looksLikeShareLink = raw.toLowerCase().contains(
         'upscwars.in/share',
       );
-      final title = looksLikeShareLink ? context.l10n.routerLinkFailedTitle : context.l10n.routerErrorTitle;
+      final title = looksLikeShareLink
+          ? context.l10n.routerLinkFailedTitle
+          : context.l10n.routerErrorTitle;
       final body = looksLikeShareLink
           ? context.l10n.routerLinkFailedBody
           : context.l10n.routerErrorBody;
@@ -1384,9 +1385,7 @@ class _AppShell extends HookConsumerWidget {
       WidgetsBinding.instance.addPostFrameCallback((_) {
         if (!context.mounted) return;
         // Tonight's attempt is keyed by uid — re-read it for the new account.
-        unawaited(
-          ref.read(dailyWarTodaySubmissionProvider.notifier).refresh(),
-        );
+        unawaited(ref.read(dailyWarTodaySubmissionProvider.notifier).refresh());
         final showCommunityTab =
             FeatureFlags.communityTab &&
             ref
@@ -1436,9 +1435,7 @@ class _AppShell extends HookConsumerWidget {
       tabDwellAt.value = DateTime.now();
       final names = ScreenFlow.shellTabNames(hasCommunity: showCommunityTab);
       if (toIndex >= 0 && toIndex < names.length && names[toIndex] != 'home') {
-        unawaited(
-          maybeLogPostDemoExplore(ref, surface: names[toIndex]),
-        );
+        unawaited(maybeLogPostDemoExplore(ref, surface: names[toIndex]));
       }
     }
 
@@ -1544,9 +1541,7 @@ class _AppShell extends HookConsumerWidget {
     // whenever [onBackButtonPressed] identity changes. A new closure every build
     // races the root dispatcher (assert: hasCallbacks) during auth/router churn.
     // Keep one stable listener and forward into the latest handler via a ref.
-    final shellBackHandler = useRef<Future<bool> Function()>(
-      () async => false,
-    );
+    final shellBackHandler = useRef<Future<bool> Function()>(() async => false);
     shellBackHandler.value = () async {
       // A pushed screen, sheet or dialog on the root navigator owns back first.
       final rootNav = Navigator.maybeOf(context, rootNavigator: true);
@@ -1564,7 +1559,10 @@ class _AppShell extends HookConsumerWidget {
       final exit = await showDialog<bool>(
         context: context,
         builder: (ctx) => AlertDialog(
-          title: Text(context.l10n.routerExitDialogTitle, style: AppTextStyles.h3()),
+          title: Text(
+            context.l10n.routerExitDialogTitle,
+            style: AppTextStyles.h3(),
+          ),
           content: Text(
             context.l10n.routerExitDialogBody(AppConstants.appDisplayName),
             style: AppTextStyles.bodyMd(),
@@ -1585,7 +1583,8 @@ class _AppShell extends HookConsumerWidget {
       return true;
     };
     final onShellBack = useMemoized(
-      () => () => shellBackHandler.value(),
+      () =>
+          () => shellBackHandler.value(),
       const [],
     );
 

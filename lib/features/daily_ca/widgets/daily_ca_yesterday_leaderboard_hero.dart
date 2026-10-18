@@ -19,6 +19,7 @@ import '../domain/daily_ca_rank_models.dart';
 import '../domain/daily_ca_schedule.dart';
 import '../domain/daily_ca_scoring.dart';
 import '../providers/daily_ca_providers.dart';
+import '../../../l10n/l10n.dart';
 
 /// Compact podium for the CA hub: today's live board, else yesterday's.
 class DailyCaYesterdayLeaderboardHero extends ConsumerWidget {
@@ -37,7 +38,7 @@ class DailyCaYesterdayLeaderboardHero extends ConsumerWidget {
       final ok = await ensureAccountSignedIn(
         context: context,
         ref: ref,
-        reason: 'Sign in to see the leaderboard.',
+        reason: context.l10n.dcaSignInLeaderboard,
       );
       if (!ok) return;
       ref.invalidate(dailyCaHubHeroBoardProvider);
@@ -122,9 +123,9 @@ class _HeroCard extends StatelessWidget {
         ? dateId
         : DateFormat('d MMM').format(quizMorning);
     final eyebrow = isToday
-        ? 'TODAY'
+        ? context.l10n.dcaEyebrowToday
         : (quizMorning == null
-              ? 'YESTERDAY'
+              ? context.l10n.dcaEyebrowYesterday
               : DateFormat('d MMM').format(quizMorning).toUpperCase());
 
     int? resolvedAir = myAir;
@@ -139,13 +140,13 @@ class _HeroCard extends StatelessWidget {
 
     final statusLine = empty
         ? (isToday
-              ? 'Live ranks · be the first to finish'
-              : '$dateLabel · No champion locked yet')
+              ? context.l10n.dcaLiveFirst
+              : context.l10n.dcaNoChampionYet(dateLabel))
         : isToday
         ? (frozen
-              ? '$dateLabel · $count joined · Champion locked'
-              : '$dateLabel · $count joined · live')
-        : '$dateLabel · $count joined · Champion locked';
+              ? context.l10n.dcaJoinedLocked(dateLabel, count)
+              : context.l10n.dcaJoinedLive(dateLabel, count))
+        : context.l10n.dcaJoinedLocked(dateLabel, count);
 
     return Material(
       color: bg,
@@ -222,7 +223,7 @@ class _HeroCard extends StatelessWidget {
                   if (resolvedAir != null) ...[
                     SizedBox(height: compact ? 8 : 10),
                     Text(
-                      'You · AIR $resolvedAir',
+                      context.l10n.dcaYouAir(resolvedAir),
                       textAlign: TextAlign.center,
                       style: AppTextStyles.labelSm().copyWith(
                         fontWeight: FontWeight.w800,
@@ -234,7 +235,7 @@ class _HeroCard extends StatelessWidget {
                     Align(
                       alignment: Alignment.centerRight,
                       child: Text(
-                        'See all ranks',
+                        context.l10n.dcaSeeAllRanks,
                         style: AppTextStyles.labelSm().copyWith(
                           fontWeight: FontWeight.w700,
                           color: AppColors.onPrimary,
@@ -243,7 +244,7 @@ class _HeroCard extends StatelessWidget {
                     )
                   else if (!locked && isToday && empty)
                     Text(
-                      'Finish the paper to appear on the board.',
+                      context.l10n.dcaFinishToAppear,
                       textAlign: TextAlign.center,
                       style: AppTextStyles.caption().copyWith(
                         color: AppColors.onPrimary.withValues(alpha: 0.75),

@@ -13,6 +13,7 @@ import '../../home/domain/start_daily_drill.dart';
 import '../domain/daily_war_copy.dart';
 import '../domain/daily_war_models.dart';
 import '../theme/daily_war_theme.dart';
+import '../../../l10n/l10n.dart';
 
 /// What Daily War is, how two topics a day cover the map, and a warm-up CTA.
 Future<void> showDailyWarExplainerSheet({
@@ -100,7 +101,7 @@ class _DailyWarExplainerSheet extends HookConsumerWidget {
                     ),
                   ),
                   Text(
-                    'Full syllabus.\nTwo topics at a time.',
+                    context.l10n.dwExplainerHead,
                     style: DwText.dm(
                       size: 24,
                       weight: FontWeight.w800,
@@ -111,7 +112,7 @@ class _DailyWarExplainerSheet extends HookConsumerWidget {
                   ),
                   const SizedBox(height: 8),
                   Text(
-                    '9 PM live paper. Same questions. Then you see the leaderboard.',
+                    context.l10n.dwExplainerSub,
                     style: DwText.dm(
                       size: 14,
                       weight: FontWeight.w500,
@@ -123,10 +124,10 @@ class _DailyWarExplainerSheet extends HookConsumerWidget {
                   if (topics.isNotEmpty) ...[
                     Text(
                       isGrand
-                          ? 'Saturday\'s paper is these:'
+                          ? context.l10n.dwPaperIsTheseSat
                           : topics.length == 1
-                              ? 'Tonight\'s paper is this:'
-                              : 'Tonight\'s paper is these:',
+                          ? context.l10n.dwPaperIsThis
+                          : context.l10n.dwPaperIsThese,
                       style: AppTextStyles.bodySm().copyWith(
                         color: DwColors.onDark,
                         fontWeight: FontWeight.w700,
@@ -147,8 +148,8 @@ class _DailyWarExplainerSheet extends HookConsumerWidget {
                   ] else
                     Text(
                       isGrand
-                          ? 'This week\'s two topics land here.'
-                          : 'Tonight\'s two topics land here.',
+                          ? context.l10n.dwWeekTopicsLand
+                          : context.l10n.dwTonightTopicsLand,
                       style: AppTextStyles.bodySm().copyWith(
                         color: DwColors.onDarkMuted,
                       ),
@@ -180,7 +181,7 @@ class _DailyWarExplainerSheet extends HookConsumerWidget {
                               ),
                             )
                           : Text(
-                              'Try 10 questions on these',
+                              context.l10n.dwTry10,
                               style: AppTextStyles.label().copyWith(
                                 color: DwColors.onDark,
                                 fontWeight: FontWeight.w800,

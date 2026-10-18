@@ -17,9 +17,7 @@ class SimpleSparkline extends StatelessWidget {
     return SizedBox(
       height: height,
       width: double.infinity,
-      child: CustomPaint(
-        painter: _SparkPainter(points: points),
-      ),
+      child: CustomPaint(painter: _SparkPainter(points: points)),
     );
   }
 }

@@ -42,18 +42,8 @@ class EnHiLanguageToggle extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                _Seg(
-                  label: 'EN',
-                  selected: !isHi,
-                  scheme: scheme,
-                  left: true,
-                ),
-                _Seg(
-                  label: 'हि',
-                  selected: isHi,
-                  scheme: scheme,
-                  left: false,
-                ),
+                _Seg(label: 'EN', selected: !isHi, scheme: scheme, left: true),
+                _Seg(label: 'हि', selected: isHi, scheme: scheme, left: false),
               ],
             ),
           ),

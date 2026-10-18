@@ -35,9 +35,7 @@ class QuestionEditorPreviewScreen extends HookConsumerWidget {
       args.original,
       args.edited,
     );
-    final correctOptionChanged = diffs.any(
-      (d) => d.label == 'Correct option',
-    );
+    final correctOptionChanged = diffs.any((d) => d.label == 'Correct option');
 
     Future<void> publish() async {
       publishing.value = true;
@@ -95,10 +93,7 @@ class QuestionEditorPreviewScreen extends HookConsumerWidget {
                 'Correct option changed. Past attempts may have been scored under the old key.',
               ),
               actions: [
-                TextButton(
-                  onPressed: () {},
-                  child: const Text('Understood'),
-                ),
+                TextButton(onPressed: () {}, child: const Text('Understood')),
               ],
             ),
           ],

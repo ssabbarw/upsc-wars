@@ -446,11 +446,10 @@ class _ShareWebLegendItem extends StatelessWidget {
 }
 
 /// Read-only attempt snapshot for palette cells (uuid → revealed, confidence, selection).
-typedef ShareWebAttemptLookup = ({
-  bool revealed,
-  String? selectedOption,
-  String? confidence,
-}) Function(String questionUuid);
+typedef ShareWebAttemptLookup =
+    ({bool revealed, String? selectedOption, String? confidence}) Function(
+      String questionUuid,
+    );
 
 Future<void> showShareWebQuestionGridSheet({
   required BuildContext context,
@@ -476,14 +475,18 @@ Future<void> showShareWebQuestionGridSheet({
           return Container(
             decoration: BoxDecoration(
               color: isDark ? scheme.surfaceContainerHigh : scheme.surface,
-              borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
+              borderRadius: const BorderRadius.vertical(
+                top: Radius.circular(20),
+              ),
               border: Border.all(
                 color: isDark ? AppColors.borderDark : AppColors.borderLight,
                 width: 0.8,
               ),
               boxShadow: [
                 BoxShadow(
-                  color: AppColors.gray900.withValues(alpha: isDark ? 0.45 : 0.14),
+                  color: AppColors.gray900.withValues(
+                    alpha: isDark ? 0.45 : 0.14,
+                  ),
                   blurRadius: 16,
                   offset: const Offset(0, -4),
                 ),
@@ -516,8 +519,12 @@ Future<void> showShareWebQuestionGridSheet({
                     ),
                     _ShareWebLegendItem(
                       label: 'Attempted',
-                      bg: isDark ? AppColors.correctBgDark : AppColors.correctBg,
-                      fg: isDark ? AppColors.correctTextDark : AppColors.correctText,
+                      bg: isDark
+                          ? AppColors.correctBgDark
+                          : AppColors.correctBg,
+                      fg: isDark
+                          ? AppColors.correctTextDark
+                          : AppColors.correctText,
                     ),
                     _ShareWebLegendItem(
                       label: 'Not visited',

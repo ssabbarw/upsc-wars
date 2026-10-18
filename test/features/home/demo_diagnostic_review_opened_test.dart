@@ -13,16 +13,18 @@ void main() {
       );
     });
 
-    test('marks when the demo was attempted even if the session key is missing',
-        () {
-      expect(
-        shouldMarkDemoDiagnosticReviewOpened(
-          isDemoSession: false,
-          getStartedDiagnosticAttempted: true,
-        ),
-        isTrue,
-      );
-    });
+    test(
+      'marks when the demo was attempted even if the session key is missing',
+      () {
+        expect(
+          shouldMarkDemoDiagnosticReviewOpened(
+            isDemoSession: false,
+            getStartedDiagnosticAttempted: true,
+          ),
+          isTrue,
+        );
+      },
+    );
 
     test('does not mark when the user never took the demo', () {
       expect(

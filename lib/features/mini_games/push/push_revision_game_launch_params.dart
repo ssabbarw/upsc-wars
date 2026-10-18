@@ -23,23 +23,21 @@ class PushRevisionGameLaunchParams {
   }
 
   Map<String, String> toQueryParameters({int? nonce}) => {
-        PushRevisionGameFcm.queryKeyConfig:
-            PushRevisionGameFcm.normalizeGameId(gameId) ?? gameId.trim(),
-        PushRevisionGameFcm.queryKeyNonce:
-            (nonce ?? DateTime.now().millisecondsSinceEpoch).toString(),
-      };
+    PushRevisionGameFcm.queryKeyConfig:
+        PushRevisionGameFcm.normalizeGameId(gameId) ?? gameId.trim(),
+    PushRevisionGameFcm.queryKeyNonce:
+        (nonce ?? DateTime.now().millisecondsSinceEpoch).toString(),
+  };
 
   /// `/games?config=<gameId>&t=<nonce>` — hub opens the config sheet for [gameId].
   String get hubLocation {
-    final uri = Uri(
-      path: '/games',
-      queryParameters: toQueryParameters(),
-    );
+    final uri = Uri(path: '/games', queryParameters: toQueryParameters());
     return uri.toString();
   }
 
   static PushRevisionGameLaunchParams fromQuery(Map<String, String> q) {
-    final raw = q[PushRevisionGameFcm.queryKeyConfig] ??
+    final raw =
+        q[PushRevisionGameFcm.queryKeyConfig] ??
         q[PushRevisionGameFcm.dataKeyGame] ??
         '';
     return PushRevisionGameLaunchParams(

@@ -12,7 +12,10 @@ const _kMaxProfilePhotoBytes = 100 * 1024;
 
 /// Re-encode as JPEG until size ≤ [maxBytes] by lowering quality, then
 /// shrinking the long edge if needed (floor 96px).
-Uint8List _jpegBytesUnderMax(Uint8List bytes, {int maxBytes = _kMaxProfilePhotoBytes}) {
+Uint8List _jpegBytesUnderMax(
+  Uint8List bytes, {
+  int maxBytes = _kMaxProfilePhotoBytes,
+}) {
   final decoded = img.decodeImage(bytes);
   if (decoded == null) {
     throw StateError('Could not decode image');
@@ -65,11 +68,9 @@ img.Image _fitLongEdge(img.Image src, int longEdgeMax) {
 /// each upload). Community/presence may later copy `photoURL` into Firestore
 /// when [CommunityBucketPresenceService] syncs, but Auth holds the canonical URL.
 class ProfilePhotoService {
-  ProfilePhotoService({
-    FirebaseAuth? auth,
-    FirebaseStorage? storage,
-  })  : _auth = auth ?? FirebaseAuth.instance,
-        _storage = storage ?? FirebaseStorage.instance;
+  ProfilePhotoService({FirebaseAuth? auth, FirebaseStorage? storage})
+    : _auth = auth ?? FirebaseAuth.instance,
+      _storage = storage ?? FirebaseStorage.instance;
 
   final FirebaseAuth _auth;
   final FirebaseStorage _storage;
@@ -79,7 +80,10 @@ class ProfilePhotoService {
   /// - `(false, message)` — error.
   Future<(bool, String?)> pickCropUploadAndUpdateProfile() async {
     if (kIsWeb) {
-      return (false, 'Profile photo upload is not available in the browser build.');
+      return (
+        false,
+        'Profile photo upload is not available in the browser build.',
+      );
     }
 
     final user = _auth.currentUser;
@@ -129,8 +133,9 @@ class ProfilePhotoService {
       final rawBytes = await file.readAsBytes();
       final jpegBytes = _jpegBytesUnderMax(rawBytes);
 
-      final storageRef =
-          _storage.ref().child('profile_photos/${user.uid}/avatar.jpg');
+      final storageRef = _storage.ref().child(
+        'profile_photos/${user.uid}/avatar.jpg',
+      );
       await storageRef.putData(
         jpegBytes,
         SettableMetadata(contentType: 'image/jpeg'),
@@ -145,10 +150,7 @@ class ProfilePhotoService {
       return (true, null);
     } on FirebaseException catch (e) {
       debugPrint('ProfilePhotoService: $e');
-      return (
-        false,
-        e.message ?? 'Could not upload your photo. Try again.',
-      );
+      return (false, e.message ?? 'Could not upload your photo. Try again.');
     } catch (e, st) {
       debugPrint('ProfilePhotoService: $e');
       debugPrintStack(stackTrace: st);

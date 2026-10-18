@@ -13,6 +13,7 @@ import '../../home/domain/demo_diagnostic_ephemeral_store.dart';
 import '../domain/mistake_review_bundle.dart';
 import '../providers/mistake_review_provider.dart';
 import '../widgets/mistake_review_carousel_card.dart';
+import '../../../l10n/l10n.dart';
 
 class MistakeReviewIntroScreen extends HookConsumerWidget {
   const MistakeReviewIntroScreen({super.key, required this.sessionId});
@@ -26,7 +27,7 @@ class MistakeReviewIntroScreen extends HookConsumerWidget {
       MediaQuery.sizeOf(context).width,
     );
     final contentPad = hPad.left == 0 && hPad.right == 0
-        ? const EdgeInsets.symmetric(horizontal: AppSpacing.lg)
+        ? EdgeInsets.symmetric(horizontal: AppSpacing.lg)
         : hPad;
 
     return Scaffold(
@@ -34,7 +35,7 @@ class MistakeReviewIntroScreen extends HookConsumerWidget {
         child: Padding(
           padding: contentPad,
           child: async.when(
-            loading: () => const Center(child: CircularProgressIndicator()),
+            loading: () => Center(child: CircularProgressIndicator()),
             error: (_, _) => _IntroError(
               onRetry: () =>
                   ref.invalidate(mistakeReviewBundleProvider(sessionId)),
@@ -43,7 +44,7 @@ class MistakeReviewIntroScreen extends HookConsumerWidget {
             data: (bundle) {
               if (bundle.total == 0) {
                 return _IntroError(
-                  message: 'No reviewable mistakes in this session.',
+                  message: context.l10n.resultsNoReviewable,
                   onBack: () => context.pop(),
                 );
               }
@@ -57,13 +58,9 @@ class MistakeReviewIntroScreen extends HookConsumerWidget {
 }
 
 class _IntroError extends StatelessWidget {
-  const _IntroError({
-    this.message = 'Could not load review.',
-    this.onRetry,
-    required this.onBack,
-  });
+  _IntroError({this.message, this.onRetry, required this.onBack});
 
-  final String message;
+  final String? message;
   final VoidCallback? onRetry;
   final VoidCallback onBack;
 
@@ -74,10 +71,16 @@ class _IntroError extends StatelessWidget {
       children: [
         IconButton(onPressed: onBack, icon: const Icon(Icons.chevron_left)),
         const Spacer(),
-        Text(message, style: AppTextStyles.body()),
+        Text(
+          message ?? context.l10n.resultsReviewLoadFailedDot,
+          style: AppTextStyles.body(),
+        ),
         if (onRetry != null) ...[
           const SizedBox(height: AppSpacing.md),
-          OutlinedButton(onPressed: onRetry, child: const Text('Retry')),
+          OutlinedButton(
+            onPressed: onRetry,
+            child: Text(context.l10n.commonRetry),
+          ),
         ],
         const Spacer(),
       ],
@@ -106,8 +109,8 @@ class _IntroBody extends HookWidget {
     }
 
     final title = bundle.hasSureWrong
-        ? 'Review confident mistakes'
-        : 'Review your mistakes';
+        ? context.l10n.resultsReviewConfidentMistakes
+        : context.l10n.resultsReviewYourMistakes;
 
     int countFor(MistakeReviewCarouselKind kind) => switch (kind) {
       MistakeReviewCarouselKind.sureWrong => bundle.sureWrong.length,
@@ -151,7 +154,7 @@ class _IntroBody extends HookWidget {
         ),
         const SizedBox(height: AppSpacing.xs),
         Text(
-          'You lost marks on ${bundle.total} question${bundle.total == 1 ? '' : 's'}',
+          context.l10n.resultsLostMarksOn(bundle.total),
           style: AppTextStyles.h2().copyWith(
             fontWeight: FontWeight.w900,
             color: scheme.onSurface,
@@ -160,7 +163,7 @@ class _IntroBody extends HookWidget {
         if (cards.length > 1) ...[
           const SizedBox(height: AppSpacing.xs),
           Text(
-            'Swipe to see both types',
+            context.l10n.resultsSwipeBoth,
             style: AppTextStyles.bodySm().copyWith(
               color: scheme.onSurfaceVariant,
             ),
@@ -219,8 +222,10 @@ class _IntroBody extends HookWidget {
             },
             icon: const Icon(Icons.play_arrow_rounded),
             label: Text(
-              'Start review',
-              style: AppTextStyles.label().copyWith(fontWeight: FontWeight.w800),
+              context.l10n.resultsStartReview,
+              style: AppTextStyles.label().copyWith(
+                fontWeight: FontWeight.w800,
+              ),
             ),
           ),
         ),

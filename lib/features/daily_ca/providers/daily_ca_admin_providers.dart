@@ -9,12 +9,13 @@ final dailyCaAdminCloudServiceProvider = Provider<DailyCaAdminCloudService>(
   (ref) => DailyCaAdminCloudService(),
 );
 
-final dailyCaGenerateConfigProvider =
-    StreamProvider<DailyCaGenerateConfig>((ref) {
-      return DailyCaFirestore.generateConfigDoc().snapshots().map(
-        (snap) => DailyCaGenerateConfig.fromMap(snap.data()),
-      );
-    });
+final dailyCaGenerateConfigProvider = StreamProvider<DailyCaGenerateConfig>((
+  ref,
+) {
+  return DailyCaFirestore.generateConfigDoc().snapshots().map(
+    (snap) => DailyCaGenerateConfig.fromMap(snap.data()),
+  );
+});
 
 final dailyCaDraftProvider = FutureProvider.autoDispose
     .family<DailyCaDraft?, String>((ref, isoDate) async {

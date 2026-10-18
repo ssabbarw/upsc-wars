@@ -102,10 +102,14 @@ final todayHubProvider = Provider.autoDispose<TodayHubData>((ref) {
       ref.watch(dailyWarRemoteEnabledProvider).asData?.value ?? false;
   final warDocAsync = ref.watch(dailyWarTodayDocProvider);
   final yesterdayDocAsync = ref.watch(dailyWarYesterdayDocProvider);
-  final warSubmission =
-      ref.watch(dailyWarTodaySubmissionProvider).asData?.value;
-  final yesterdaySubmission =
-      ref.watch(dailyWarYesterdaySubmissionProvider).asData?.value;
+  final warSubmission = ref
+      .watch(dailyWarTodaySubmissionProvider)
+      .asData
+      ?.value;
+  final yesterdaySubmission = ref
+      .watch(dailyWarYesterdaySubmissionProvider)
+      .asData
+      ?.value;
   final warDateId = ref.watch(dailyWarTodayDateIdProvider);
   final yesterdayWarDateId = ref.watch(dailyWarYesterdayDateIdProvider);
   final cache = ref.watch(dailyWarLocalCacheProvider).asData?.value;
@@ -134,11 +138,11 @@ final todayHubProvider = Provider.autoDispose<TodayHubData>((ref) {
   final liveAsync = caEnabled
       ? ref.watch(dailyCaScheduledPaperIsLiveProvider)
       : const AsyncValue<bool>.data(false);
-  final paperLive =
-      paperDate != null && (liveAsync.asData?.value ?? false);
+  final paperLive = paperDate != null && (liveAsync.asData?.value ?? false);
   final paperChecking = paperDate != null && liveAsync.isLoading;
-  final paperIso =
-      paperDate == null ? null : DailyCaSchedule.formatIsoDate(paperDate);
+  final paperIso = paperDate == null
+      ? null
+      : DailyCaSchedule.formatIsoDate(paperDate);
   final paperCompleted = paperIso == null
       ? false
       : ref.watch(dailyCaDayCompletedProvider(paperIso)).asData?.value ?? false;
@@ -146,8 +150,8 @@ final todayHubProvider = Provider.autoDispose<TodayHubData>((ref) {
   final drill = ref.watch(dailyDrillProvider).asData?.value;
   final prefs = ref.watch(prefsServiceProvider).asData?.value;
   ref.watch(dailyCaResultsOpenedEpochProvider);
-  final paperResultsOpened = paperIso != null &&
-      (prefs?.hasOpenedDailyCaResults(paperIso) ?? false);
+  final paperResultsOpened =
+      paperIso != null && (prefs?.hasOpenedDailyCaResults(paperIso) ?? false);
 
   return TodayHubData(
     warEnabled: warEnabled,
@@ -170,9 +174,7 @@ final todayHubProvider = Provider.autoDispose<TodayHubData>((ref) {
     staticCompleted: drill?.completedToday ?? false,
     revisionWrongCount: drill?.wrongCount ?? 0,
     revisionBookmarkCount: drill?.bookmarkCount ?? 0,
-    streak: prefs == null
-        ? 0
-        : DailyStreakService.visibleStreak(prefs: prefs),
+    streak: prefs == null ? 0 : DailyStreakService.visibleStreak(prefs: prefs),
     fullDaysThisWeek: prefs == null
         ? 0
         : DailyStreakService.fullDaysThisWeek(prefs: prefs),

@@ -466,7 +466,7 @@ class SessionReviewScreen extends HookConsumerWidget {
             }, const []);
 
             return ReviewBody(
-              title: 'Session review',
+              title: context.l10n.srTitle,
               showRevisionBadge: false,
               progressRight: context.l10n.reviewCorrectWrong(correct, wrong),
               question: q,
@@ -852,7 +852,7 @@ class ReviewBody extends StatelessWidget {
               IconButton(
                 tooltip: isBookmarked
                     ? context.l10n.reviewRemoveBookmark
-                    : 'Bookmark',
+                    : context.l10n.srBookmark,
                 onPressed: onToggleBookmark,
                 icon: Icon(
                   isBookmarked ? Icons.bookmark : Icons.bookmark_border,
@@ -1013,7 +1013,7 @@ class _TopBar extends HookConsumerWidget {
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Text(
-                'Revision mode',
+                context.l10n.srRevisionMode,
                 style: TextStyle(
                   fontSize: 11,
                   fontWeight: FontWeight.w500,
@@ -1099,7 +1099,9 @@ class _VerdictStrip extends StatelessWidget {
               const SizedBox(width: 8),
               if (status.showYouAndCorrect) ...[
                 Text(
-                  'You: (${(question.selectedOption ?? '').toLowerCase()})',
+                  context.l10n.srYou(
+                    (question.selectedOption ?? '').toLowerCase(),
+                  ),
                   style: TextStyle(
                     fontSize: 12,
                     color: isDark ? scheme.error : const Color(0xFFA32D2D),
@@ -1107,7 +1109,7 @@ class _VerdictStrip extends StatelessWidget {
                 ),
                 const SizedBox(width: 12),
                 Text(
-                  'Correct: (${question.correctOption.toLowerCase()})',
+                  context.l10n.srCorrect(question.correctOption.toLowerCase()),
                   style: TextStyle(
                     fontSize: 12,
                     color: isDark ? scheme.primary : const Color(0xFF3B6D11),
@@ -1117,7 +1119,9 @@ class _VerdictStrip extends StatelessWidget {
                 Text(
                   status.showOnlyCorrect
                       ? '(${question.correctOption.toLowerCase()})'
-                      : 'Your answer: (${(question.selectedOption ?? '').toLowerCase()})',
+                      : context.l10n.srYourAnswer(
+                          (question.selectedOption ?? '').toLowerCase(),
+                        ),
                   style: TextStyle(
                     fontSize: 12,
                     color: status.showOnlyCorrect

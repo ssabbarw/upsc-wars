@@ -14,10 +14,7 @@ String currentAffairsQuestionUuid({
   required String sourceDate,
   required int poolOrder,
 }) {
-  return _uuid.v5(
-    Namespace.url.value,
-    'upsc-wars|ca|$sourceDate|$poolOrder',
-  );
+  return _uuid.v5(Namespace.url.value, 'upsc-wars|ca|$sourceDate|$poolOrder');
 }
 
 /// Upserts canonical Firestore question maps into the local question bank.
@@ -61,9 +58,18 @@ class QuestionBankUpsert {
       for (var i = 0; i < questionMaps.length; i++) {
         final map = questionMaps[i];
         final poolOrder = _readPoolOrder(map, i + 1);
-        final uuid = _readUuid(map, sourceDate: sourceDate, poolOrder: poolOrder);
+        final uuid = _readUuid(
+          map,
+          sourceDate: sourceDate,
+          poolOrder: poolOrder,
+        );
         uuids.add(uuid);
-        await _upsertOne(map, uuid: uuid, sourceDate: sourceDate, poolOrder: poolOrder);
+        await _upsertOne(
+          map,
+          uuid: uuid,
+          sourceDate: sourceDate,
+          poolOrder: poolOrder,
+        );
       }
     });
     return uuids;
@@ -105,39 +111,41 @@ class QuestionBankUpsert {
     final subjectLabel = preserved != null && preserved.subject.isNotEmpty
         ? preserved.subject
         : gsSubject;
-    final sourceKind = preserved?.sourceKind ??
-        QuestionSourceConstants.kindCurrentAffairs;
+    final sourceKind =
+        preserved?.sourceKind ?? QuestionSourceConstants.kindCurrentAffairs;
     final sourceYear = preserved?.sourceYear;
     final resolvedSourceDate = preserved?.sourceDate ?? sourceDate;
     final resolvedPaperOrder = preserved?.paperOrder ?? poolOrder;
     final negativeFraming = preserved?.negativeFraming ?? false;
 
-    await _db.into(_db.questions).insertOnConflictUpdate(
-      QuestionsCompanion.insert(
-        uuid: uuid,
-        subject: subjectLabel,
-        topic: topic,
-        subTopic: subTopic,
-        questionType: qType,
-        trapType: Value(_nullableStr(shared['trap_type'])),
-        correctOption: correctOption.isEmpty ? 'a' : correctOption,
-        conceptAnchor: conceptAnchor.isEmpty ? subTopic : conceptAnchor,
-        conceptsUsed: conceptsJson,
-        enDisplayText: Value(_nullableStr(en['display_text'])),
-        hiDisplayText: Value(_nullableStr(hi['display_text'])),
-        hasTable: Value(preserved?.hasTable ?? hasTable),
-        negativeFraming: Value(negativeFraming),
-        paperOrder: Value(resolvedPaperOrder),
-        gsSubject: Value(gsSubject.isEmpty ? subjectLabel : gsSubject),
-        sourceKind: Value(sourceKind),
-        sourceYear: sourceYear == null
-            ? const Value.absent()
-            : Value(sourceYear),
-        sourceDate: resolvedSourceDate.isEmpty
-            ? const Value.absent()
-            : Value(resolvedSourceDate),
-      ),
-    );
+    await _db
+        .into(_db.questions)
+        .insertOnConflictUpdate(
+          QuestionsCompanion.insert(
+            uuid: uuid,
+            subject: subjectLabel,
+            topic: topic,
+            subTopic: subTopic,
+            questionType: qType,
+            trapType: Value(_nullableStr(shared['trap_type'])),
+            correctOption: correctOption.isEmpty ? 'a' : correctOption,
+            conceptAnchor: conceptAnchor.isEmpty ? subTopic : conceptAnchor,
+            conceptsUsed: conceptsJson,
+            enDisplayText: Value(_nullableStr(en['display_text'])),
+            hiDisplayText: Value(_nullableStr(hi['display_text'])),
+            hasTable: Value(preserved?.hasTable ?? hasTable),
+            negativeFraming: Value(negativeFraming),
+            paperOrder: Value(resolvedPaperOrder),
+            gsSubject: Value(gsSubject.isEmpty ? subjectLabel : gsSubject),
+            sourceKind: Value(sourceKind),
+            sourceYear: sourceYear == null
+                ? const Value.absent()
+                : Value(sourceYear),
+            sourceDate: resolvedSourceDate.isEmpty
+                ? const Value.absent()
+                : Value(resolvedSourceDate),
+          ),
+        );
 
     for (final lang in ['en', 'hi']) {
       final payload = lang == 'en' ? en : hi;
@@ -187,19 +195,18 @@ class QuestionBankUpsert {
       return;
     }
 
-    await (_db.update(_db.questionTranslations)
-          ..where(
-            (t) => t.questionUuid.equals(uuid) & t.language.equals(language),
-          ))
+    await (_db.update(_db.questionTranslations)..where(
+          (t) => t.questionUuid.equals(uuid) & t.language.equals(language),
+        ))
         .write(
-      QuestionTranslationsCompanion(
-        strongDistractor: Value(strongDistractor),
-        eliminationLogic: Value(eliminationLogic),
-        upscTrapExplanation: Value(upscTrapExplanation),
-        finalExplanation: Value(finalExplanation),
-        statementAnalysis: Value(statementAnalysis),
-      ),
-    );
+          QuestionTranslationsCompanion(
+            strongDistractor: Value(strongDistractor),
+            eliminationLogic: Value(eliminationLogic),
+            upscTrapExplanation: Value(upscTrapExplanation),
+            finalExplanation: Value(finalExplanation),
+            statementAnalysis: Value(statementAnalysis),
+          ),
+        );
   }
 
   Future<void> _upsertTable({
@@ -245,9 +252,9 @@ class QuestionBankUpsert {
     if (existing == null) {
       await _db.into(_db.questionTables).insert(companion);
     } else {
-      await (_db.update(_db.questionTables)
-            ..where((t) => t.questionUuid.equals(uuid)))
-          .write(
+      await (_db.update(
+        _db.questionTables,
+      )..where((t) => t.questionUuid.equals(uuid))).write(
         QuestionTablesCompanion(
           enHeaderText: companion.enHeaderText,
           enFooterText: companion.enFooterText,

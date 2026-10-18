@@ -21,7 +21,9 @@ abstract final class FomoPulseNativeShare {
   static Future<String?> consumePendingUrl() async {
     if (!_supported) return null;
     try {
-      final raw = await _methods.invokeMethod<String>('consumeSharedArticleUrl');
+      final raw = await _methods.invokeMethod<String>(
+        'consumeSharedArticleUrl',
+      );
       final url = raw?.trim();
       if (url == null || url.isEmpty) return null;
       debugPrint('[pulse-share] native pending url=$url');

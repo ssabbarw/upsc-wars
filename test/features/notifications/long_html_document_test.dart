@@ -16,8 +16,10 @@ void main() {
       expect(out, isNot(contains('<title>')));
     });
 
-    test('injects viewport into an existing document without showing title as body', () {
-      const raw = '''
+    test(
+      'injects viewport into an existing document without showing title as body',
+      () {
+        const raw = '''
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,12 +30,13 @@ void main() {
   <p>Hello</p>
 </body>
 </html>''';
-      final out = LongHtmlDocument.forWebView(raw, backgroundCss: '#f5f5f3');
-      expect(out, contains(LongHtmlDocument.viewportMeta));
-      expect(out, contains('overflow-x: hidden'));
-      expect(out, contains('<p>Hello</p>'));
-      expect(out, contains('<title>Daily War is live</title>'));
-    });
+        final out = LongHtmlDocument.forWebView(raw, backgroundCss: '#f5f5f3');
+        expect(out, contains(LongHtmlDocument.viewportMeta));
+        expect(out, contains('overflow-x: hidden'));
+        expect(out, contains('<p>Hello</p>'));
+        expect(out, contains('<title>Daily War is live</title>'));
+      },
+    );
   });
 
   group('LongHtmlDocument.forHtmlWidget', () {
@@ -56,10 +59,7 @@ void main() {
     });
 
     test('passes a fragment through', () {
-      expect(
-        LongHtmlDocument.forHtmlWidget('<p>Hi</p>'),
-        '<p>Hi</p>',
-      );
+      expect(LongHtmlDocument.forHtmlWidget('<p>Hi</p>'), '<p>Hi</p>');
     });
   });
 }

@@ -26,19 +26,20 @@ import 'qotd_option_letters_row.dart';
 import 'qotd_post_answerers_section.dart';
 import '../../history/screens/session_review_screen.dart';
 import 'admin_bot_label.dart';
+import '../../../l10n/l10n.dart';
 
 String _qotdLiveUntilFormatted(DateTime at) {
   return DateFormat('d MMM, h:mm a').format(at.toLocal());
 }
 
 String _qotdPostedFriendlyAgo(DateTime? posted) {
-  if (posted == null) return 'just now ✨';
+  if (posted == null) return appL10n.commonJustNow;
   final diff = DateTime.now().difference(posted);
-  if (diff.inSeconds < 60) return 'just now ✨';
-  if (diff.inMinutes < 60) return '${diff.inMinutes}m ago';
-  if (diff.inHours < 24) return '${diff.inHours}h ago';
-  if (diff.inDays < 7) return '${diff.inDays}d ago';
-  return '${(diff.inDays / 7).floor()}w ago';
+  if (diff.inSeconds < 60) return appL10n.commonJustNow;
+  if (diff.inMinutes < 60) return appL10n.commonMinAgo(diff.inMinutes);
+  if (diff.inHours < 24) return appL10n.commonHrAgo(diff.inHours);
+  if (diff.inDays < 7) return appL10n.commonDayAgo(diff.inDays);
+  return appL10n.commonWeekAgo((diff.inDays / 7).floor());
 }
 
 String _qotdCompactMeta(QotdPost post) {

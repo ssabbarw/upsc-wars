@@ -22,18 +22,19 @@ abstract final class DailyCaFirestore {
     required int hourIst,
     required int minuteIst,
   }) {
-    return generateConfigDoc().set(
-      {
-        'generate_hour_ist': hourIst.clamp(0, 23),
-        'generate_minute_ist': minuteIst.clamp(0, 59),
-      },
-      SetOptions(merge: true),
-    );
+    return generateConfigDoc().set({
+      'generate_hour_ist': hourIst.clamp(0, 23),
+      'generate_minute_ist': minuteIst.clamp(0, 59),
+    }, SetOptions(merge: true));
   }
 
   /// Parses `YYYY-MM-DD` into zero-padded `(year, month, day)` path segments.
-  static ({String year, String month, String day}) pathSegments(String isoDate) {
-    final match = RegExp(r'^(\d{4})-(\d{1,2})-(\d{1,2})$').firstMatch(isoDate.trim());
+  static ({String year, String month, String day}) pathSegments(
+    String isoDate,
+  ) {
+    final match = RegExp(
+      r'^(\d{4})-(\d{1,2})-(\d{1,2})$',
+    ).firstMatch(isoDate.trim());
     if (match == null) {
       throw ArgumentError('Invalid ISO date (expected YYYY-MM-DD): $isoDate');
     }

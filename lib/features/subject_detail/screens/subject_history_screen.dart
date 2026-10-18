@@ -13,6 +13,7 @@ import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/widgets/test_config_bottom_sheet.dart';
 import '../providers/subject_detail_providers.dart';
 import '../widgets/subject_session_summary_row.dart';
+import '../../../l10n/l10n.dart';
 
 /// Paginated completed-session list for one subject.
 class SubjectHistoryScreen extends ConsumerStatefulWidget {
@@ -160,15 +161,20 @@ class _SubjectHistoryScreenState extends ConsumerState<SubjectHistoryScreen> {
                   ),
                   const SizedBox(height: AppSpacing.md),
                   Text(
-                    'Could not load history.',
-                    style: AppTextStyles.bodySm().copyWith(color: scheme.onSurface),
+                    context.l10n.subjHistLoadFailed,
+                    style: AppTextStyles.bodySm().copyWith(
+                      color: scheme.onSurface,
+                    ),
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: AppSpacing.md),
                   Center(
                     child: OutlinedButton(
                       onPressed: _loadFirstPage,
-                      child: Text('Retry', style: AppTextStyles.label()),
+                      child: Text(
+                        context.l10n.commonRetry,
+                        style: AppTextStyles.label(),
+                      ),
                     ),
                   ),
                 ],
@@ -180,9 +186,7 @@ class _SubjectHistoryScreenState extends ConsumerState<SubjectHistoryScreen> {
                 physics: const AlwaysScrollableScrollPhysics(),
                 padding: const EdgeInsets.all(AppSpacing.lg),
                 children: [
-                  SizedBox(
-                    height: MediaQuery.sizeOf(context).height * 0.25,
-                  ),
+                  SizedBox(height: MediaQuery.sizeOf(context).height * 0.25),
                   Icon(
                     Icons.history_outlined,
                     size: 40,
@@ -190,13 +194,15 @@ class _SubjectHistoryScreenState extends ConsumerState<SubjectHistoryScreen> {
                   ),
                   const SizedBox(height: AppSpacing.md),
                   Text(
-                    'No completed sessions yet.',
+                    context.l10n.subjHistEmptyTitle,
                     textAlign: TextAlign.center,
-                    style: AppTextStyles.label().copyWith(color: scheme.onSurface),
+                    style: AppTextStyles.label().copyWith(
+                      color: scheme.onSurface,
+                    ),
                   ),
                   const SizedBox(height: AppSpacing.xs),
                   Text(
-                    'Start a test to see your results here.',
+                    context.l10n.subjHistEmptyBody,
                     textAlign: TextAlign.center,
                     style: AppTextStyles.caption().copyWith(
                       color: scheme.onSurfaceVariant,
@@ -223,7 +229,10 @@ class _SubjectHistoryScreenState extends ConsumerState<SubjectHistoryScreen> {
                               ),
                             );
                           },
-                          child: Text('Start a test', style: AppTextStyles.label()),
+                          child: Text(
+                            context.l10n.subjStartTest,
+                            style: AppTextStyles.label(),
+                          ),
                         );
                       },
                       loading: () => const SizedBox(
@@ -266,7 +275,10 @@ class _SubjectHistoryScreenState extends ConsumerState<SubjectHistoryScreen> {
                       child: Center(
                         child: OutlinedButton(
                           onPressed: () => unawaited(_loadMore()),
-                          child: Text('Load more', style: AppTextStyles.label()),
+                          child: Text(
+                            context.l10n.commonLoadMore,
+                            style: AppTextStyles.label(),
+                          ),
                         ),
                       ),
                     );

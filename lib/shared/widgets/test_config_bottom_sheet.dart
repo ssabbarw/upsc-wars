@@ -17,6 +17,7 @@ import 'top_snack_bar.dart';
 import 'dismissible_modal_sheet.dart';
 import 'test_config_sheet_widgets.dart';
 import '../extensions/count_formatting.dart';
+import '../../l10n/l10n.dart';
 
 class TestConfigSheetArgs {
   const TestConfigSheetArgs({
@@ -207,7 +208,7 @@ class TestConfigBottomSheet extends HookConsumerWidget {
         showTopSnackBar(
           context,
           content: Text(
-            'Something went wrong. Please try again.',
+            context.l10n.tcWentWrong,
             style: AppTextStyles.bodyMd().copyWith(
               color: Theme.of(context).colorScheme.onSurface,
             ),
@@ -257,15 +258,14 @@ class TestConfigBottomSheet extends HookConsumerWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Confidence rating is off',
+                            context.l10n.tcConfOff,
                             style: AppTextStyles.labelSm().copyWith(
                               color: scheme.onSurface,
                             ),
                           ),
                           const SizedBox(height: 2),
                           Text(
-                            'Turn it on to track how sure you were before reveal '
-                            'and unlock Danger Zone insights.',
+                            context.l10n.tcConfOffBody,
                             style: AppTextStyles.bodySm().copyWith(
                               color: scheme.onSurfaceVariant,
                               height: 1.35,
@@ -427,19 +427,22 @@ class TestConfigBottomSheet extends HookConsumerWidget {
                               Row(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
-                                  for (var i = 0;
-                                      i < countChoices.length;
-                                      i++) ...[
+                                  for (
+                                    var i = 0;
+                                    i < countChoices.length;
+                                    i++
+                                  ) ...[
                                     if (i > 0)
                                       const SizedBox(width: AppSpacing.xs),
                                     _CompactCountChip(
                                       label: '${countChoices[i]}',
-                                      selected: selectedPreset.value ==
+                                      selected:
+                                          selectedPreset.value ==
                                           countChoices[i],
                                       examMode: isExam.value,
                                       isDark: isDark,
-                                      onTap: () =>
-                                          selectedPreset.value = countChoices[i],
+                                      onTap: () => selectedPreset.value =
+                                          countChoices[i],
                                     ),
                                   ],
                                 ],
@@ -451,7 +454,7 @@ class TestConfigBottomSheet extends HookConsumerWidget {
                     if (capped) ...[
                       const SizedBox(height: AppSpacing.xs),
                       Text(
-                        'Only ${formatIntCount(maxQ)} available',
+                        context.l10n.tcOnlyAvail(formatIntCount(maxQ)),
                         style: AppTextStyles.caption().copyWith(
                           color: AppColors.warning,
                         ),
@@ -472,8 +475,7 @@ class TestConfigBottomSheet extends HookConsumerWidget {
                           Expanded(
                             child: TestConfigModeOptionCard(
                               title: 'Exam',
-                              description:
-                                  'Simulate real conditions. Explanation after test ends.',
+                              description: context.l10n.tcExamDesc,
                               icon: Icons.timer_outlined,
                               selected: isExam.value,
                               examStyle: true,
@@ -485,8 +487,7 @@ class TestConfigBottomSheet extends HookConsumerWidget {
                           Expanded(
                             child: TestConfigModeOptionCard(
                               title: 'Learning',
-                              description:
-                                  'See explanation after each question.',
+                              description: context.l10n.tcLearnDesc,
                               icon: Icons.lightbulb_outline,
                               selected: !isExam.value,
                               examStyle: false,
@@ -499,7 +500,7 @@ class TestConfigBottomSheet extends HookConsumerWidget {
                     ],
                     if (maxQ == 0) ...[
                       Text(
-                        'No questions available for this topic.',
+                        context.l10n.tcNoQuestions,
                         style: AppTextStyles.bodySm().copyWith(
                           color: scheme.onSurfaceVariant,
                         ),
@@ -522,7 +523,7 @@ class TestConfigBottomSheet extends HookConsumerWidget {
                     ] else ...[
                       const SizedBox(height: AppSpacing.xxl),
                       Text(
-                        'Time per question',
+                        context.l10n.tcTimePerQ,
                         style: AppTextStyles.label().copyWith(
                           color: scheme.onSurface,
                         ),
@@ -559,7 +560,7 @@ class TestConfigBottomSheet extends HookConsumerWidget {
                           const SizedBox(width: AppSpacing.sm),
                           Expanded(
                             child: TestConfigLearningTimeTile(
-                              label: 'No limit',
+                              label: context.l10n.tcNoLimit,
                               selected: learningSecs.value == null,
                               isDark: isDark,
                               onTap: () => learningSecs.value = null,
@@ -600,8 +601,8 @@ class TestConfigBottomSheet extends HookConsumerWidget {
                             : Text(
                                 args.startButtonLabel ??
                                     (isExam.value
-                                        ? 'Start exam'
-                                        : 'Start learning session'),
+                                        ? context.l10n.tcStartExam
+                                        : context.l10n.tcStartLearning),
                                 style: AppTextStyles.label(),
                               ),
                       ),
@@ -619,7 +620,7 @@ class TestConfigBottomSheet extends HookConsumerWidget {
   static String _formatExamDuration(int questionCount) {
     final totalSecs = questionCount * kDebugSecondsPerQuestion;
     final minutes = (totalSecs / 60).round();
-    return '$minutes minutes total';
+    return appL10n.tcMinutesTotal(minutes);
   }
 }
 
@@ -669,10 +670,7 @@ class _CompactCountChip extends StatelessWidget {
           borderRadius: BorderRadius.circular(AppRadius.md),
           border: Border.all(color: border, width: selected ? 1.5 : 0.5),
         ),
-        child: Text(
-          label,
-          style: AppTextStyles.labelSm().copyWith(color: fg),
-        ),
+        child: Text(label, style: AppTextStyles.labelSm().copyWith(color: fg)),
       ),
     );
   }
@@ -731,7 +729,7 @@ class _TimedTestCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        timed ? 'Timed test' : 'No time limit',
+                        timed ? 'Timed test' : context.l10n.tcNoTimeLimit,
                         style: AppTextStyles.label().copyWith(
                           color: scheme.onSurface,
                         ),
@@ -739,7 +737,7 @@ class _TimedTestCard extends StatelessWidget {
                       Text(
                         timed
                             ? '$questionCount Q × ${kDebugSecondsPerQuestion}s = $duration'
-                            : 'Take as long as you need on each question.',
+                            : context.l10n.tcTakeTime,
                         style: AppTextStyles.caption().copyWith(
                           color: scheme.onSurfaceVariant.withValues(
                             alpha: 0.65,
@@ -776,9 +774,7 @@ class _TimedTestCard extends StatelessWidget {
                 const SizedBox(width: AppSpacing.sm),
                 Expanded(
                   child: Text(
-                    timed
-                        ? 'Exam mode is a timed test with explanations after it ends.'
-                        : 'No clock running — ideal for deep reading and revision.',
+                    timed ? context.l10n.tcExamNote : context.l10n.tcLearnNote,
                     style: AppTextStyles.caption().copyWith(
                       color: timed ? infoText : scheme.onSurfaceVariant,
                     ),
@@ -845,9 +841,8 @@ class _TestConfigCoachMarkOverlayState
       _steps.add(
         _CoachStep(
           key: widget.questionChipsKey,
-          title: 'Pick question count',
-          body: 'Choose how many questions you want in this session — '
-              '10 for a quick drill, 25 for a full practice block.',
+          title: appL10n.tcCoach1T,
+          body: appL10n.tcCoach1B,
         ),
       );
     }
@@ -855,10 +850,8 @@ class _TestConfigCoachMarkOverlayState
       _steps.add(
         _CoachStep(
           key: widget.modeCardsKey,
-          title: 'Choose a mode',
-          body: 'Exam hides all explanations until the test ends — '
-              'just like the real paper. Learning shows the answer '
-              'and explanation right after each question.',
+          title: appL10n.tcCoach2T,
+          body: appL10n.tcCoach2B,
         ),
       );
     }
@@ -866,8 +859,7 @@ class _TestConfigCoachMarkOverlayState
       _CoachStep(
         key: widget.timedCardKey,
         title: 'Timed test',
-        body: 'Each question gets ${kDebugSecondsPerQuestion}s. '
-            'Toggle this off if you prefer practising without the clock.',
+        body: appL10n.tcCoach3B(kDebugSecondsPerQuestion),
       ),
     );
   }
@@ -922,9 +914,7 @@ class _TestConfigCoachMarkOverlayState
             )
           else
             Positioned.fill(
-              child: ColoredBox(
-                color: Colors.black.withValues(alpha: 0.6),
-              ),
+              child: ColoredBox(color: Colors.black.withValues(alpha: 0.6)),
             ),
           // Tap outside = advance
           Positioned.fill(
@@ -1021,7 +1011,10 @@ class _CoachBubble extends StatelessWidget {
 
     // Horizontally centre on target, clamped to screen edges.
     final centreX = rect.center.dx - bubbleWidth / 2;
-    final bubbleLeft = centreX.clamp(margin, screenSize.width - bubbleWidth - margin);
+    final bubbleLeft = centreX.clamp(
+      margin,
+      screenSize.width - bubbleWidth - margin,
+    );
 
     return Positioned(
       left: bubbleLeft,
@@ -1095,7 +1088,9 @@ class _CoachBubble extends StatelessWidget {
                     ),
                   ),
                   child: Text(
-                    current == total ? 'Got it' : 'Next',
+                    current == total
+                        ? context.l10n.mpGotIt
+                        : context.l10n.testNext,
                     style: const TextStyle(
                       fontSize: 13,
                       fontWeight: FontWeight.w600,

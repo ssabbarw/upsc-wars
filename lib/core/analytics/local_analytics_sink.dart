@@ -21,10 +21,7 @@ class LocalAnalyticsSink implements AnalyticsSink {
         await _db.userFeatureStatsDao.incrementStarts(featureName, now);
       case FeatureCompletedEvent(:final featureName):
         await _db.userFeatureStatsDao.incrementCompletions(featureName, now);
-      case QuestionAttemptedEvent(
-          :final correct,
-          :final trapType,
-        ):
+      case QuestionAttemptedEvent(:final correct, :final trapType):
         if (!correct && trapType != null && trapType.isNotEmpty) {
           await _db.userTrapStatsDao.recordFailure(trapType: trapType, at: now);
         }

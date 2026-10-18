@@ -14,6 +14,7 @@ import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../history/screens/session_review_screen.dart';
 import '../providers/confidence_tier_review_provider.dart';
+import '../../../l10n/l10n.dart';
 
 class ConfidenceTierReviewScreen extends HookConsumerWidget {
   const ConfidenceTierReviewScreen({
@@ -40,7 +41,7 @@ class ConfidenceTierReviewScreen extends HookConsumerWidget {
             child: Padding(
               padding: const EdgeInsets.all(AppSpacing.xxl),
               child: Text(
-                'Invalid confidence filter.',
+                context.l10n.resultsInvalidFilter,
                 style: AppTextStyles.body(),
               ),
             ),
@@ -57,51 +58,56 @@ class ConfidenceTierReviewScreen extends HookConsumerWidget {
       )),
     );
 
-    final hPad = AppBreakpoints.fullScreenHPadding(MediaQuery.sizeOf(context).width);
+    final hPad = AppBreakpoints.fullScreenHPadding(
+      MediaQuery.sizeOf(context).width,
+    );
     return Scaffold(
       body: SafeArea(
         child: Padding(
           padding: hPad,
           child: async.when(
-          loading: () => const Center(child: CircularProgressIndicator()),
-          error: (_, _) => Center(
-            child: Padding(
-              padding: const EdgeInsets.all(AppSpacing.xxl),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text('Could not load review', style: AppTextStyles.body()),
-                  const SizedBox(height: AppSpacing.md),
-                  OutlinedButton(
-                    onPressed: () => ref.invalidate(
-                      confidenceTierQuestionsProvider((
-                        sessionId: sessionId,
-                        tier: tier,
-                        outcomeFilter: outcomeFilter,
-                      )),
+            loading: () => const Center(child: CircularProgressIndicator()),
+            error: (_, _) => Center(
+              child: Padding(
+                padding: const EdgeInsets.all(AppSpacing.xxl),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      context.l10n.resultsReviewLoadFailed,
+                      style: AppTextStyles.body(),
                     ),
-                    child: const Text('Retry'),
-                  ),
-                ],
+                    const SizedBox(height: AppSpacing.md),
+                    OutlinedButton(
+                      onPressed: () => ref.invalidate(
+                        confidenceTierQuestionsProvider((
+                          sessionId: sessionId,
+                          tier: tier,
+                          outcomeFilter: outcomeFilter,
+                        )),
+                      ),
+                      child: Text(context.l10n.commonRetry),
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
-          data: (questions) {
-            if (questions.isEmpty) {
-              return _EmptyTierReview(
+            data: (questions) {
+              if (questions.isEmpty) {
+                return _EmptyTierReview(
+                  tier: tier,
+                  outcomeFilter: outcomeFilter,
+                  onBack: () => context.pop(),
+                );
+              }
+              return _TierPager(
+                sessionId: sessionId,
                 tier: tier,
                 outcomeFilter: outcomeFilter,
-                onBack: () => context.pop(),
+                questions: questions,
               );
-            }
-            return _TierPager(
-              sessionId: sessionId,
-              tier: tier,
-              outcomeFilter: outcomeFilter,
-              questions: questions,
-            );
-          },
-        ),
+            },
+          ),
         ),
       ),
     );
@@ -125,7 +131,7 @@ class _EmptyTierReview extends StatelessWidget {
     final label = AnswerConfidence.examShortLabel(tier);
     final outcomeLine = outcomeFilter == null
         ? ''
-        : ' with outcome “$outcomeFilter”';
+        : context.l10n.resultsWithOutcome(outcomeFilter!);
     return Padding(
       padding: const EdgeInsets.all(AppSpacing.xxl),
       child: Column(
@@ -134,12 +140,12 @@ class _EmptyTierReview extends StatelessWidget {
           IconButton(onPressed: onBack, icon: const Icon(Icons.chevron_left)),
           const Spacer(),
           Text(
-            'No $label items',
+            context.l10n.resultsNoTierItems(label),
             style: AppTextStyles.h2().copyWith(color: scheme.onSurface),
           ),
           const SizedBox(height: AppSpacing.sm),
           Text(
-            'No scored questions in this session were logged under “$label”$outcomeLine.',
+            context.l10n.resultsNoTierBody(label, outcomeLine),
             style: AppTextStyles.bodyMd().copyWith(
               color: scheme.onSurfaceVariant,
             ),
@@ -192,7 +198,9 @@ class _TierPager extends HookConsumerWidget {
     final isBookmarked = bookmarks.value[q.uuid] ?? false;
     final filterSuffix = outcomeFilter == null
         ? ''
-        : ' · ${outcomeFilter == 'wrong' ? 'Wrong only' : 'Correct only'}';
+        : (outcomeFilter == 'wrong'
+              ? context.l10n.resultsWrongOnly
+              : context.l10n.resultsCorrectOnly);
 
     return ReviewBody(
       title: '$tierLabel · Review$filterSuffix',
@@ -233,7 +241,7 @@ class _TierPager extends HookConsumerWidget {
         uiLanguage.value = lang;
         unawaited(persistAppLanguage(ref, lang));
       },
-      confidenceBanner: 'Logged as: $tierLabel$filterSuffix',
+      confidenceBanner: context.l10n.resultsLoggedAs(tierLabel, filterSuffix),
     );
   }
 }

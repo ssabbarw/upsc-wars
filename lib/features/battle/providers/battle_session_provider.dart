@@ -21,6 +21,7 @@ import 'package:upsc_wars/features/battle/domain/battle_opponent_policy.dart';
 import 'package:upsc_wars/features/battle/domain/services/battle_name_service.dart';
 import 'package:upsc_wars/features/battle/domain/services/bot_battle_service.dart';
 import 'package:upsc_wars/features/home/providers/auth_providers.dart';
+import '../../../l10n/l10n.dart';
 
 final botBattleServiceProvider = Provider<BotBattleService>(
   (ref) => const BotBattleService(),
@@ -141,9 +142,7 @@ class BattleSessionController extends StateNotifier<BattleSessionUiState> {
         bookmarked[q.uuid] = await repo.isBookmarked(q.uuid);
       }
       var totalElapsed = 0;
-      if (base.mode == 'exam' &&
-          base.isTimed &&
-          base.timeLimitSecs != null) {
+      if (base.mode == 'exam' && base.isTimed && base.timeLimitSecs != null) {
         final saved = base.savedExamRemainingSecs;
         if (saved != null) {
           totalElapsed = (base.timeLimitSecs! - saved).clamp(
@@ -169,13 +168,15 @@ class BattleSessionController extends StateNotifier<BattleSessionUiState> {
           if (playerId == host && guest.isNotEmpty) {
             opponentId = guest;
             final gn = (d['guest_display_name'] as String?)?.trim();
-            opponentName =
-                (gn != null && gn.isNotEmpty) ? gn : 'Opponent';
+            opponentName = (gn != null && gn.isNotEmpty)
+                ? gn
+                : appL10n.commonOpponent;
           } else if (playerId == guest && host.isNotEmpty) {
             opponentId = host;
             final hn = (d['host_display_name'] as String?)?.trim();
-            opponentName =
-                (hn != null && hn.isNotEmpty) ? hn : 'Opponent';
+            opponentName = (hn != null && hn.isNotEmpty)
+                ? hn
+                : appL10n.commonOpponent;
           }
           humanLobbyWaiting =
               opponentId != BattleOpponentPolicy.syntheticBotDocId &&
@@ -203,10 +204,7 @@ class BattleSessionController extends StateNotifier<BattleSessionUiState> {
           displayName: user?.displayName ?? 'You',
           photoUrl: (photo == null || photo.isEmpty) ? null : photo,
         ),
-        opponent: BattleParticipant(
-          id: opponentId,
-          displayName: opponentName,
-        ),
+        opponent: BattleParticipant(id: opponentId, displayName: opponentName),
         playerResponsesByQuestion: _playerResponsesFromSession(base),
         opponentResponsesByQuestion: const <String, String>{},
       );
@@ -276,9 +274,7 @@ class BattleSessionController extends StateNotifier<BattleSessionUiState> {
     final current = state.battleSession;
     if (current == null) return;
     if (state.waitingForGuestToJoin) {
-      state = state.copyWith(
-        errorMessage: 'Waiting for your opponent to join…',
-      );
+      state = state.copyWith(errorMessage: appL10n.bspWaitJoin);
       return;
     }
     final roomId = state.roomId;
@@ -321,7 +317,7 @@ class BattleSessionController extends StateNotifier<BattleSessionUiState> {
       );
       _scheduleBotAnswerForCurrentQuestion();
     } catch (_) {
-      state = state.copyWith(errorMessage: 'Could not record your answer.');
+      state = state.copyWith(errorMessage: appL10n.bspRecordFailed);
     }
   }
 
@@ -405,7 +401,11 @@ class BattleSessionController extends StateNotifier<BattleSessionUiState> {
     final next = !q.flagged;
     try {
       final uc = await ref.read(flagQuestionUseCaseProvider.future);
-      await uc.execute(sessionId: sessionId, questionUuid: q.uuid, flagged: next);
+      await uc.execute(
+        sessionId: sessionId,
+        questionUuid: q.uuid,
+        flagged: next,
+      );
       final updated = [...current.baseSession.questions];
       updated[state.currentIndex] = q.copyWith(flagged: next);
       state = state.copyWith(
@@ -446,7 +446,7 @@ class BattleSessionController extends StateNotifier<BattleSessionUiState> {
     } catch (_) {
       state = state.copyWith(
         isSubmitting: false,
-        errorMessage: 'Could not submit battle.',
+        errorMessage: appL10n.bspSubmitFailed,
       );
       rethrow;
     }
@@ -546,9 +546,7 @@ class BattleSessionController extends StateNotifier<BattleSessionUiState> {
         question.uuid: selectedOption,
       };
       state = state.copyWith(
-        battleSession: cur.copyWith(
-          opponentResponsesByQuestion: merged,
-        ),
+        battleSession: cur.copyWith(opponentResponsesByQuestion: merged),
       );
     } catch (error, stackTrace) {
       debugPrint('BattleSessionController._commitBotAnswer failed: $error');
@@ -667,12 +665,12 @@ class BattleSessionController extends StateNotifier<BattleSessionUiState> {
   String _friendlyStartError(Object error) {
     final message = error.toString().toLowerCase();
     if (message.contains('permission-denied')) {
-      return 'Battle permission denied by Firestore rules.';
+      return appL10n.bspPermDenied;
     }
     if (message.contains('unavailable') || message.contains('network')) {
-      return 'Network unavailable. Please check internet and retry.';
+      return appL10n.bspNetwork;
     }
-    return 'Could not start online battle. Please retry.';
+    return appL10n.bspStartFailed;
   }
 
   @override

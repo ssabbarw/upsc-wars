@@ -69,10 +69,7 @@ class DailyCaCloudService {
     } on FirebaseFunctionsException catch (e, st) {
       debugPrint('DailyCaCloudService.submit: ${e.code} ${e.message}');
       debugPrintStack(stackTrace: st);
-      return DailyCaSubmitResult(
-        ok: false,
-        errorMessage: e.message ?? e.code,
-      );
+      return DailyCaSubmitResult(ok: false, errorMessage: e.message ?? e.code);
     } on Object catch (e, st) {
       debugPrint('DailyCaCloudService.submit: $e');
       debugPrintStack(stackTrace: st);
@@ -103,10 +100,7 @@ class DailyCaCloudService {
     } on FirebaseFunctionsException catch (e, st) {
       debugPrint('DailyCaCloudService.myRank: ${e.code} ${e.message}');
       debugPrintStack(stackTrace: st);
-      return DailyCaSubmitResult(
-        ok: false,
-        errorMessage: e.message ?? e.code,
-      );
+      return DailyCaSubmitResult(ok: false, errorMessage: e.message ?? e.code);
     } on Object catch (e, st) {
       debugPrint('DailyCaCloudService.myRank: $e');
       debugPrintStack(stackTrace: st);

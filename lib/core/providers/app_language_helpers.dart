@@ -13,10 +13,12 @@ String normalizeAppLanguage(String? lang) {
 
 /// Watches the saved language; uses [fallback] while prefs are loading.
 String watchAppLanguage(WidgetRef ref, {String fallback = 'en'}) {
-  return ref.watch(prefsServiceProvider).maybeWhen(
-    data: (prefs) => normalizeAppLanguage(prefs.language),
-    orElse: () => fallback,
-  );
+  return ref
+      .watch(prefsServiceProvider)
+      .maybeWhen(
+        data: (prefs) => normalizeAppLanguage(prefs.language),
+        orElse: () => fallback,
+      );
 }
 
 /// Persists the user's EN / Hindi choice for future tests and reviews.
@@ -30,9 +32,6 @@ Future<void> persistAppLanguage(WidgetRef ref, String lang) async {
   ref.invalidate(appLanguageProvider);
   await Analytics.track(
     ref,
-    AppLanguageSwitchedEvent(
-      fromLanguage: previous,
-      toLanguage: normalized,
-    ),
+    AppLanguageSwitchedEvent(fromLanguage: previous, toLanguage: normalized),
   );
 }

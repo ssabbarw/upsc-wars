@@ -8,6 +8,7 @@ import '../../../core/theme/app_text_styles.dart';
 import '../domain/memory_pair_models.dart';
 import 'memory_pair_flash_deck.dart';
 import 'memory_pair_shared_widgets.dart';
+import '../../../l10n/l10n.dart';
 
 class MemoryPairReviseView extends HookWidget {
   const MemoryPairReviseView({
@@ -57,7 +58,7 @@ class MemoryPairReviseView extends HookWidget {
                       ),
                     ),
                     Text(
-                      '${pairs.length} pairs',
+                      context.l10n.mpPairsCount(pairs.length),
                       style: AppTextStyles.caption().copyWith(
                         color: scheme.onSurfaceVariant,
                       ),
@@ -104,7 +105,7 @@ class MemoryPairReviseView extends HookWidget {
               child: FilledButton.icon(
                 onPressed: onPlay,
                 icon: const Icon(Icons.play_arrow_rounded),
-                label: const Text('Play now'),
+                label: Text(context.l10n.mpPlayNow),
               ),
             ),
           ),
@@ -144,14 +145,14 @@ class _ViewModeToggle extends StatelessWidget {
         children: [
           _ToggleChip(
             icon: Icons.style_outlined,
-            label: 'Cards',
+            label: context.l10n.mpCards,
             selected: mode == _ReviseMode.cards,
             onTap: () => onChanged(_ReviseMode.cards),
             scheme: scheme,
           ),
           _ToggleChip(
             icon: Icons.view_list_rounded,
-            label: 'List',
+            label: context.l10n.mpList,
             selected: mode == _ReviseMode.list,
             onTap: () => onChanged(_ReviseMode.list),
             scheme: scheme,
@@ -255,7 +256,7 @@ class _FlashList extends StatelessWidget {
       itemBuilder: (context, i) {
         if (i == 0) {
           return Text(
-            'Tap a row to reveal its answer',
+            context.l10n.mpTapRow,
             style: AppTextStyles.caption().copyWith(
               color: scheme.onSurfaceVariant,
             ),
@@ -277,7 +278,11 @@ class _FlashList extends StatelessWidget {
                   ),
                 ),
               ),
-              Icon(Icons.arrow_forward, size: 16, color: scheme.onSurfaceVariant),
+              Icon(
+                Icons.arrow_forward,
+                size: 16,
+                color: scheme.onSurfaceVariant,
+              ),
               const SizedBox(width: AppSpacing.sm),
               Expanded(
                 child: Text(

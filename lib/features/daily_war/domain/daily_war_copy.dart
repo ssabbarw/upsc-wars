@@ -3,6 +3,7 @@ import 'package:intl/intl.dart';
 import '../../../core/constants/subject_constants.dart';
 import '../domain/daily_war_models.dart';
 import '../domain/daily_war_schedule.dart';
+import '../../../l10n/l10n.dart';
 
 /// Shared copy helpers for Static War surfaces.
 abstract final class DailyWarCopy {
@@ -78,9 +79,9 @@ abstract final class DailyWarCopy {
     bool isLoading = false,
   }) {
     if (topics.isEmpty) {
-      if (loadFailed) return 'Couldn\'t load tonight\'s topics';
-      if (isLoading) return 'Finding tonight\'s topics…';
-      return 'Two topics a night';
+      if (loadFailed) return appL10n.dwTopicsLoadFailed;
+      if (isLoading) return appL10n.dwTopicsFinding;
+      return appL10n.dwTwoTopics;
     }
     final subjects = subjectsLine(topics);
     final names = topicsLine(topics);
@@ -97,7 +98,7 @@ abstract final class DailyWarCopy {
     required bool isGrand,
   }) {
     final mins = DailyWarSchedule.liveWindowMinutesFor(questionCount);
-    return '$questionCount Q · $mins MIN · ONE ATTEMPT';
+    return appL10n.dwRulesLobby(questionCount, mins);
   }
 
   /// Formats a count for display, or `null` when RC / threshold hide it.

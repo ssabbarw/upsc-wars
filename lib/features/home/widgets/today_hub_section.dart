@@ -252,7 +252,9 @@ class TodayHubSection extends HookConsumerWidget {
               title: poster == null
                   ? 'Open challenge'
                   : context.l10n.homeOpenChallengeBy(poster),
-              subtitle: others > 0 ? context.l10n.homeGoalOthersLive(goal, others) : goal,
+              subtitle: others > 0
+                  ? context.l10n.homeGoalOthersLive(goal, others)
+                  : goal,
               subtitleMaxLines: 2,
               done: false,
               locked: false,
@@ -261,8 +263,7 @@ class TodayHubSection extends HookConsumerWidget {
                 unawaited(
                   maybeLogPostDemoExplore(ref, surface: 'open_challenge'),
                 );
-                final user =
-                    ref.read(authStateChangesProvider).asData?.value;
+                final user = ref.read(authStateChangesProvider).asData?.value;
                 if (!AuthSession.isAccountSignedIn(user)) {
                   final wantsSignIn = await showOpenChallengeWhatIsSheet(
                     context,
@@ -333,10 +334,7 @@ class TodayHubSection extends HookConsumerWidget {
     final journey = activationJourney;
     final after6Am = ist.hour >= TodayHero.paperHourIst;
     final caHero =
-        data.caEnabled &&
-        after6Am &&
-        data.paperLive &&
-        !data.paperCompleted;
+        data.caEnabled && after6Am && data.paperLive && !data.paperCompleted;
     final Widget heroWidget;
     if (activationJourneyLoading) {
       heroWidget = const _HeroLoadingCard();
@@ -870,10 +868,7 @@ class _BigHeroCard extends StatelessWidget {
 // ── Practice Hero Card ────────────────────────────────────────────────────────
 
 class _CaTestHeroCard extends StatelessWidget {
-  const _CaTestHeroCard({
-    required this.checking,
-    required this.onOpen,
-  });
+  const _CaTestHeroCard({required this.checking, required this.onOpen});
 
   final bool checking;
   final VoidCallback onOpen;
@@ -885,8 +880,7 @@ class _CaTestHeroCard extends StatelessWidget {
     return _BigHeroCard(
       eyebrow: 'DAILY CURRENT AFFAIRS',
       title: context.l10n.todayPaperQuizTitle,
-      description:
-          context.l10n.todayPaperQuizBody,
+      description: context.l10n.todayPaperQuizBody,
       ctaLabel: context.l10n.todayOpenPaper,
       background: bg,
       ctaColor: AppColors.primary,
@@ -933,8 +927,7 @@ class _PracticeHeroCard extends StatelessWidget {
       if (completed) {
         eyebrow = 'WEEK REVIEW · DONE';
         title = context.l10n.todayWeekDone;
-        description =
-            context.l10n.todayWeekDoneBody;
+        description = context.l10n.todayWeekDoneBody;
         ctaLabel = context.l10n.todaySeeResults;
       } else if (mistakeCount <= 0) {
         eyebrow = 'WEEK REVIEW · EMPTY';
@@ -949,7 +942,9 @@ class _PracticeHeroCard extends StatelessWidget {
       }
     } else {
       eyebrow = 'DAILY DRILL';
-      title = completed ? context.l10n.todayDrillDone : context.l10n.todayDrillTitle;
+      title = completed
+          ? context.l10n.todayDrillDone
+          : context.l10n.todayDrillTitle;
       final counts = DailyRevision.countsLine(
         missed: wrongCount,
         saved: bookmarkCount,

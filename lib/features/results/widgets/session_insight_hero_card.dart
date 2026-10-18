@@ -16,6 +16,7 @@ import '../../../core/theme/app_text_styles.dart';
 import '../../home/domain/demo_diagnostic_ephemeral_store.dart';
 import '../domain/session_insight_case.dart';
 import 'questions_to_review_card.dart';
+import '../../../l10n/l10n.dart';
 
 /// Hero insight card for session summary (cases A–G).
 class SessionInsightHeroCard extends ConsumerWidget {
@@ -147,7 +148,7 @@ class SessionInsightHeroCard extends ConsumerWidget {
                 ),
                 const SizedBox(width: AppSpacing.xs),
                 Text(
-                  'Real exam cost: −${marks.toStringAsFixed(2)} marks',
+                  context.l10n.resultsRealExamCost(marks.toStringAsFixed(2)),
                   style: AppTextStyles.labelSm().copyWith(
                     color: AppColors.wrong,
                     fontWeight: FontWeight.w700,
@@ -162,8 +163,9 @@ class SessionInsightHeroCard extends ConsumerWidget {
                   insightCase == SessionInsightCase.c)) ...[
             const SizedBox(height: AppSpacing.xs),
             Text(
-              'Top risk area: $topRiskTopic'
-              '${topRiskPct != null ? ' ($topRiskPct% of your loss)' : ''}',
+              (topRiskPct != null
+                  ? context.l10n.resultsTopRiskPct(topRiskTopic!, topRiskPct!)
+                  : context.l10n.resultsTopRisk(topRiskTopic!)),
               style: AppTextStyles.caption().copyWith(
                 color: scheme.onSurfaceVariant,
               ),
@@ -272,11 +274,7 @@ class SessionInsightHeroCard extends ConsumerWidget {
 }
 
 class _Pill extends StatelessWidget {
-  const _Pill({
-    required this.label,
-    required this.color,
-    required this.isDark,
-  });
+  const _Pill({required this.label, required this.color, required this.isDark});
 
   final String label;
   final Color color;
@@ -345,29 +343,30 @@ _CaseStyle _caseStyle(SessionInsightCase c, bool isDark) {
     case SessionInsightCase.a:
       return _CaseStyle(
         eyebrow: '',
-        subtitle: 'You were sure, but incorrect. These are rank killers.',
+        subtitle: appL10n.resultsCaseASubtitle,
         background: isDark
             ? AppColors.wrongBgDark.withValues(alpha: 0.65)
             : AppColors.coachDangerSurfaceLight,
         border: AppColors.coachDangerBorder,
-        accent: isDark ? AppColors.wrongTextDark : AppColors.coachDangerTitleText,
+        accent: isDark
+            ? AppColors.wrongTextDark
+            : AppColors.coachDangerTitleText,
         ctaBackground: AppColors.wrong,
         ctaForeground: AppColors.onPrimary,
         title: ({required sureWrong, required eduWrong, required wrong}) =>
-            '$sureWrong Confident Mistake${sureWrong == 1 ? '' : 's'}',
-        ctaLabel: ({
-          required sureWrong,
-          required eduWrong,
-          required wrong,
-          required weakestTopic,
-        }) =>
-            'Review $sureWrong confident mistake${sureWrong == 1 ? '' : 's'}',
+            appL10n.resultsConfidentMistakesTitle(sureWrong),
+        ctaLabel:
+            ({
+              required sureWrong,
+              required eduWrong,
+              required wrong,
+              required weakestTopic,
+            }) => appL10n.resultsReviewConfidentCta(sureWrong),
       );
     case SessionInsightCase.b:
       return _CaseStyle(
         eyebrow: '',
-        subtitle:
-            'Your elimination strategy failed more often than it worked.',
+        subtitle: appL10n.resultsCaseBSubtitle,
         background: isDark
             ? AppColors.warningBgDark.withValues(alpha: 0.5)
             : AppColors.warningBg.withValues(alpha: 0.35),
@@ -376,52 +375,52 @@ _CaseStyle _caseStyle(SessionInsightCase c, bool isDark) {
         ctaBackground: AppColors.warning,
         ctaForeground: Colors.white,
         title: ({required sureWrong, required eduWrong, required wrong}) =>
-            '$eduWrong Educated Guess Mistake${eduWrong == 1 ? '' : 's'}',
-        ctaLabel: ({
-          required sureWrong,
-          required eduWrong,
-          required wrong,
-          required weakestTopic,
-        }) =>
-            'Review $eduWrong educated guess${eduWrong == 1 ? '' : 'es'}',
+            appL10n.resultsEduMistakesTitle(eduWrong),
+        ctaLabel:
+            ({
+              required sureWrong,
+              required eduWrong,
+              required wrong,
+              required weakestTopic,
+            }) => appL10n.resultsReviewEduCta(eduWrong),
       );
     case SessionInsightCase.c:
       return _CaseStyle(
         eyebrow: '',
-        subtitle:
-            'You lost marks from both overconfidence and risky elimination.',
+        subtitle: appL10n.resultsCaseCSubtitle,
         background: isDark
             ? AppColors.wrongBgDark.withValues(alpha: 0.65)
             : AppColors.coachDangerSurfaceLight,
         border: AppColors.coachDangerBorder,
-        accent: isDark ? AppColors.wrongTextDark : AppColors.coachDangerTitleText,
+        accent: isDark
+            ? AppColors.wrongTextDark
+            : AppColors.coachDangerTitleText,
         ctaBackground: AppColors.wrong,
         ctaForeground: AppColors.onPrimary,
         title: ({required sureWrong, required eduWrong, required wrong}) {
           if (sureWrong > 0 && eduWrong > 0) {
-            return '$sureWrong Confident · $eduWrong Educated guess';
+            return appL10n.resultsMixedMistakesTitle(sureWrong, eduWrong);
           }
           if (sureWrong > 0) {
-            return '$sureWrong Confident Mistake${sureWrong == 1 ? '' : 's'}';
+            return appL10n.resultsConfidentMistakesTitle(sureWrong);
           }
-          return '$eduWrong Educated Guess Mistake${eduWrong == 1 ? '' : 's'}';
+          return appL10n.resultsEduMistakesTitle(eduWrong);
         },
-        ctaLabel: ({
-          required sureWrong,
-          required eduWrong,
-          required wrong,
-          required weakestTopic,
-        }) {
-          final n = sureWrong + eduWrong;
-          return 'Review $n confident mistake${n == 1 ? '' : 's'}';
-        },
+        ctaLabel:
+            ({
+              required sureWrong,
+              required eduWrong,
+              required wrong,
+              required weakestTopic,
+            }) {
+              final n = sureWrong + eduWrong;
+              return appL10n.resultsReviewConfidentCta(n);
+            },
       );
     case SessionInsightCase.d:
       return _CaseStyle(
         eyebrow: '',
-        subtitle:
-            'Wrong answers were pure guesses. '
-            'You still lost marks worth reviewing.',
+        subtitle: appL10n.resultsCaseDSubtitle,
         background: isDark
             ? AppColors.infoBgDark.withValues(alpha: 0.45)
             : AppColors.infoBg.withValues(alpha: 0.35),
@@ -430,20 +429,19 @@ _CaseStyle _caseStyle(SessionInsightCase c, bool isDark) {
         ctaBackground: AppColors.info,
         ctaForeground: AppColors.onPrimary,
         title: ({required sureWrong, required eduWrong, required wrong}) =>
-            'No confident mistakes',
-        ctaLabel: ({
-          required sureWrong,
-          required eduWrong,
-          required wrong,
-          required weakestTopic,
-        }) =>
-            'Review your mistakes',
+            appL10n.resultsNoConfidentMistakes,
+        ctaLabel:
+            ({
+              required sureWrong,
+              required eduWrong,
+              required wrong,
+              required weakestTopic,
+            }) => appL10n.resultsReviewYourMistakes,
       );
     case SessionInsightCase.e:
       return _CaseStyle(
-        eyebrow: 'EXCELLENT SESSION',
-        subtitle:
-            'When you were confident, you stayed accurate. Keep the momentum.',
+        eyebrow: appL10n.resultsExcellentEyebrow,
+        subtitle: appL10n.resultsCaseESubtitle,
         background: isDark
             ? AppColors.correctBgDark.withValues(alpha: 0.45)
             : AppColors.correctBg.withValues(alpha: 0.35),
@@ -452,115 +450,108 @@ _CaseStyle _caseStyle(SessionInsightCase c, bool isDark) {
         ctaBackground: AppColors.correct,
         ctaForeground: AppColors.onPrimary,
         title: ({required sureWrong, required eduWrong, required wrong}) =>
-            'Excellent session',
-        ctaLabel: ({
-          required sureWrong,
-          required eduWrong,
-          required wrong,
-          required weakestTopic,
-        }) =>
-            'Practice more',
+            appL10n.resultsExcellentTitle,
+        ctaLabel:
+            ({
+              required sureWrong,
+              required eduWrong,
+              required wrong,
+              required weakestTopic,
+            }) => appL10n.resultsPracticeMore,
       );
     case SessionInsightCase.gIncomplete:
       return _CaseStyle(
         eyebrow: '',
-        subtitle:
-            'You left questions unanswered. Finish full tests for better insights.',
+        subtitle: appL10n.resultsCaseFSubtitle,
         background: _schemeNeutralBg(isDark),
         border: AppColors.borderLight,
         accent: AppColors.primaryDark,
         ctaBackground: AppColors.primary,
         ctaForeground: AppColors.onPrimary,
         title: ({required sureWrong, required eduWrong, required wrong}) =>
-            'Incomplete session',
-        ctaLabel: ({
-          required sureWrong,
-          required eduWrong,
-          required wrong,
-          required weakestTopic,
-        }) =>
-            'Practice more',
+            appL10n.resultsIncompleteTitle,
+        ctaLabel:
+            ({
+              required sureWrong,
+              required eduWrong,
+              required wrong,
+              required weakestTopic,
+            }) => appL10n.resultsPracticeMore,
       );
     case SessionInsightCase.fLockedSettings:
       return _CaseStyle(
-        eyebrow: 'INSIGHTS LOCKED',
-        subtitle:
-            'Enable confidence tracking to unlock personalised insights.',
+        eyebrow: appL10n.resultsLockedEyebrow,
+        subtitle: appL10n.resultsCaseGSubtitle,
         background: _schemeNeutralBg(isDark),
         border: AppColors.borderLight,
         accent: AppColors.primaryDark,
         ctaBackground: AppColors.primary,
         ctaForeground: AppColors.onPrimary,
         title: ({required sureWrong, required eduWrong, required wrong}) =>
-            'Insights locked',
-        ctaLabel: ({
-          required sureWrong,
-          required eduWrong,
-          required wrong,
-          required weakestTopic,
-        }) =>
-            'Enable confidence tracking',
+            appL10n.resultsLockedTitle,
+        ctaLabel:
+            ({
+              required sureWrong,
+              required eduWrong,
+              required wrong,
+              required weakestTopic,
+            }) => appL10n.resultsEnableTracking,
       );
     case SessionInsightCase.fLockedSkipped:
       return _CaseStyle(
         eyebrow: '',
-        subtitle:
-            'As this test was attempted without marking confidence.',
+        subtitle: appL10n.resultsCaseHSubtitle,
         background: _schemeNeutralBg(isDark),
         border: AppColors.borderLight,
         accent: AppColors.primaryDark,
         ctaBackground: AppColors.primary,
         ctaForeground: AppColors.onPrimary,
         title: ({required sureWrong, required eduWrong, required wrong}) =>
-            'Confidence insights not available',
-        ctaLabel: ({
-          required sureWrong,
-          required eduWrong,
-          required wrong,
-          required weakestTopic,
-        }) =>
-            'Retry with confidence marking',
+            appL10n.resultsInsightsUnavailable,
+        ctaLabel:
+            ({
+              required sureWrong,
+              required eduWrong,
+              required wrong,
+              required weakestTopic,
+            }) => appL10n.resultsRetryWithConfidence,
       );
     case SessionInsightCase.fNoAttempts:
       return _CaseStyle(
         eyebrow: '',
-        subtitle:
-            'You submitted without answering any questions. '
-            'Try again when you are ready.',
+        subtitle: appL10n.resultsCaseISubtitle,
         background: _schemeNeutralBg(isDark),
         border: AppColors.borderLight,
         accent: AppColors.primaryDark,
         ctaBackground: AppColors.primary,
         ctaForeground: AppColors.onPrimary,
         title: ({required sureWrong, required eduWrong, required wrong}) =>
-            'No questions attempted',
-        ctaLabel: ({
-          required sureWrong,
-          required eduWrong,
-          required wrong,
-          required weakestTopic,
-        }) =>
-            'Retry test',
+            appL10n.resultsNoQuestionsAttempted,
+        ctaLabel:
+            ({
+              required sureWrong,
+              required eduWrong,
+              required wrong,
+              required weakestTopic,
+            }) => appL10n.resultsRetryTest,
       );
   }
 }
 
-Color _schemeNeutralBg(bool isDark) => isDark
-    ? AppColors.surfaceSecondaryDark
-    : AppColors.surfaceSecondaryLight;
+Color _schemeNeutralBg(bool isDark) =>
+    isDark ? AppColors.surfaceSecondaryDark : AppColors.surfaceSecondaryLight;
 
 String _incompleteTitle(SessionResult result) {
   final attempted = sessionAnsweredScored(result);
-  return '$attempted of ${result.questionCount} attempted';
+  return appL10n.resultsIncompleteHeadline(attempted, result.questionCount);
 }
 
 String _incompleteSubtitle(SessionResult result) {
   final remaining = sessionRemainingCount(result);
   if (remaining > 0) {
-    return 'You left $remaining question${remaining == 1 ? '' : 's'} '
-        'unanswered. Finish full tests for better insights.';
+    return appL10n.resultsLeftUnanswered(remaining);
   }
-  return 'Finish more of the test before calling it a clean session.';
+  return appL10n.resultsFinishMore;
 }
 
 void logSessionInsightCaseShown(

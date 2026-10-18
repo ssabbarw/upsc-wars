@@ -22,9 +22,11 @@ class RedeemOutcome {
 /// `test_series_grants/{uid}`. The uid belongs to the Google/Apple account, so
 /// a grant follows the user across reinstalls and devices.
 class TestSeriesAccessService {
-  TestSeriesAccessService({FirebaseFirestore? firestore, FirebaseFunctions? functions})
-    : _firestore = firestore,
-      _functions = functions;
+  TestSeriesAccessService({
+    FirebaseFirestore? firestore,
+    FirebaseFunctions? functions,
+  }) : _firestore = firestore,
+       _functions = functions;
 
   static const _logName = 'TestSeriesAccess';
   static const functionsRegion = 'asia-south1';
@@ -69,14 +71,16 @@ class TestSeriesAccessService {
         default:
           return const RedeemOutcome(
             RedeemKind.failed,
-            message: 'Could not check the code. Check your connection and try again.',
+            message:
+                'Could not check the code. Check your connection and try again.',
           );
       }
     } on Object catch (e) {
       developer.log('redeem failed: $e', name: _logName);
       return const RedeemOutcome(
         RedeemKind.failed,
-        message: 'Could not check the code. Check your connection and try again.',
+        message:
+            'Could not check the code. Check your connection and try again.',
       );
     }
   }

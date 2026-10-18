@@ -23,6 +23,7 @@ import '../domain/start_daily_war_attempt.dart';
 import '../providers/daily_war_providers.dart';
 import '../providers/server_clock_provider.dart';
 import '../theme/daily_war_theme.dart';
+import '../../../l10n/l10n.dart';
 
 /// One War night: personal result, leaderboard teaser, revise entry.
 ///
@@ -199,7 +200,7 @@ class DailyWarHistoryDetailScreen extends HookConsumerWidget {
             if (archive.fromLocalOnly) ...[
               const SizedBox(height: 8),
               Text(
-                'Saved on this device',
+                context.l10n.dwSavedOnDevice,
                 style: AppTextStyles.caption().copyWith(
                   color: scheme.onSurfaceVariant,
                 ),
@@ -229,16 +230,16 @@ class DailyWarHistoryDetailScreen extends HookConsumerWidget {
                     launching.value
                         ? 'Starting…'
                         : lobbyTonight
-                        ? 'Starts in $untilStartLabel'
+                        ? context.l10n.dwStartsIn(untilStartLabel)
                         : liveTonight
                         ? (accountSignedIn ? 'Join now' : 'Sign in to join')
                         : lockedTonight
-                        ? 'Late join closed · unranked at $unrankedOpensAt'
+                        ? context.l10n.dwLateClosedUnrankedAt(unrankedOpensAt)
                         : !war.questionsVisible
-                        ? 'Paper not published yet'
+                        ? context.l10n.dwPaperNotPublished
                         : (accountSignedIn
-                              ? 'Start this day\'s test'
-                              : 'Sign in to attempt'),
+                              ? context.l10n.dwStartDayTest
+                              : context.l10n.dwSignInAttempt),
                     style: AppTextStyles.label().copyWith(
                       fontWeight: FontWeight.w700,
                       color: canAttempt
@@ -267,7 +268,7 @@ class DailyWarHistoryDetailScreen extends HookConsumerWidget {
                     ),
                   ),
                   child: Text(
-                    'Revise this paper',
+                    context.l10n.dwReviseThisPaper,
                     style: AppTextStyles.label().copyWith(
                       fontWeight: FontWeight.w700,
                       color: AppColors.onPrimary,
@@ -278,7 +279,7 @@ class DailyWarHistoryDetailScreen extends HookConsumerWidget {
             ],
             const SizedBox(height: 28),
             Text(
-              'LEADERBOARD',
+              context.l10n.dwLeaderboardCaps,
               style: AppTextStyles.caption().copyWith(
                 fontWeight: FontWeight.w800,
                 letterSpacing: 1.1,
@@ -352,7 +353,7 @@ class DailyWarHistoryDetailScreen extends HookConsumerWidget {
 
     return Scaffold(
       backgroundColor: scheme.surface,
-      appBar: AppBar(title: const Text('Static War archive')),
+      appBar: AppBar(title: Text(context.l10n.dwArchiveTitle)),
       body: SingleChildScrollView(
         padding: const EdgeInsets.fromLTRB(20, 8, 20, 40),
         child: body,
@@ -423,7 +424,7 @@ class _MyResultCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'YOUR ATTEMPT',
+              context.l10n.dwYourAttemptCaps,
               style: AppTextStyles.caption().copyWith(
                 fontWeight: FontWeight.w800,
                 letterSpacing: 0.8,
@@ -432,7 +433,7 @@ class _MyResultCard extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             Text(
-              'Not attempted',
+              context.l10n.dwNotAttempted,
               style: AppTextStyles.h1().copyWith(
                 fontWeight: FontWeight.w800,
                 color: scheme.onSurface,
@@ -441,8 +442,10 @@ class _MyResultCard extends StatelessWidget {
             const SizedBox(height: 4),
             Text(
               war.ranksReady
-                  ? '${war.participantCount ?? '—'} warriors that night'
-                  : 'Start the test above to take this paper.',
+                  ? context.l10n.dwWarriorsThatNight(
+                      '${war.participantCount ?? '—'}',
+                    )
+                  : context.l10n.dwStartAboveToTake,
               style: AppTextStyles.bodySm().copyWith(
                 color: scheme.onSurfaceVariant,
               ),
@@ -453,14 +456,14 @@ class _MyResultCard extends StatelessWidget {
     }
 
     final airLabel = sub!.hasOfficialRank
-        ? 'AIR ${sub!.air}'
+        ? context.l10n.dwAirLabel(sub!.air ?? 0)
         : sub!.mode == 'unranked'
-        ? 'Practice'
-        : 'Pending rank';
+        ? context.l10n.dwPractice
+        : context.l10n.dwPendingRank;
     final pct = sub!.percentile;
     final pctLabel = pct == null
         ? null
-        : 'Better than ${pct.toStringAsFixed(0)}%';
+        : context.l10n.dwBetterThan(pct.toStringAsFixed(0));
 
     return Container(
       width: double.infinity,
@@ -474,7 +477,7 @@ class _MyResultCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'YOUR ATTEMPT',
+            context.l10n.dwYourAttemptCaps,
             style: AppTextStyles.caption().copyWith(
               fontWeight: FontWeight.w800,
               letterSpacing: 0.8,
@@ -497,7 +500,7 @@ class _MyResultCard extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(bottom: 4),
                 child: Text(
-                  '${_fmtScore(sub!.score)} pts',
+                  context.l10n.dwPts(_fmtScore(sub!.score)),
                   style: AppTextStyles.label().copyWith(
                     fontWeight: FontWeight.w700,
                     color: DwColors.crimson,
@@ -522,19 +525,19 @@ class _MyResultCard extends StatelessWidget {
           Row(
             children: [
               _StatPill(
-                label: 'Correct',
+                label: context.l10n.resultsMatrixCorrect,
                 value: '${sub!.correct}',
                 color: AppColors.correct,
               ),
               const SizedBox(width: 8),
               _StatPill(
-                label: 'Wrong',
+                label: context.l10n.resultsMatrixWrong,
                 value: '${sub!.wrong}',
                 color: AppColors.wrong,
               ),
               const SizedBox(width: 8),
               _StatPill(
-                label: 'Skip',
+                label: context.l10n.dwSkip,
                 value: '${sub!.unanswered}',
                 color: scheme.onSurfaceVariant,
               ),
@@ -643,8 +646,8 @@ class _LeaderboardPlaceholder extends StatelessWidget {
           const SizedBox(height: 14),
           Text(
             ranksReady
-                ? 'No ranked finishers yet'
-                : 'Ranks land after the paper closes · All-India board fills here',
+                ? context.l10n.dwNoRankedFinishers
+                : context.l10n.dwRanksLandAfter,
             textAlign: TextAlign.center,
             style: AppTextStyles.caption().copyWith(
               fontWeight: FontWeight.w600,
@@ -801,8 +804,8 @@ class _LeaderboardTeaser extends StatelessWidget {
           children: [
             Text(
               preview.isEmpty
-                  ? 'Leaderboard'
-                  : 'Top ${preview.length} of $count',
+                  ? context.l10n.dwLeaderboardTitle
+                  : context.l10n.dwTopNOf(preview.length, count),
               style: AppTextStyles.caption().copyWith(
                 color: scheme.onSurfaceVariant,
               ),
@@ -861,7 +864,7 @@ class _LeaderboardTeaser extends StatelessWidget {
             if (myAir != null && !lb.top.any((e) => e.uid == myUid)) ...[
               const SizedBox(height: 4),
               Text(
-                'You · AIR $myAir',
+                context.l10n.dcaYouAir(myAir ?? 0),
                 style: AppTextStyles.labelSm().copyWith(
                   fontWeight: FontWeight.w700,
                   color: AppColors.primary,
@@ -875,7 +878,7 @@ class _LeaderboardTeaser extends StatelessWidget {
                   onPressed: () =>
                       context.push(dailyWarLeaderboardRoute(dateId)),
                   child: Text(
-                    'See all $count',
+                    context.l10n.dwSeeAllCount(count),
                     style: AppTextStyles.labelSm().copyWith(
                       fontWeight: FontWeight.w700,
                       color: AppColors.primary,

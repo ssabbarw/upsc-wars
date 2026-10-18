@@ -41,10 +41,7 @@ class BotBattleSession {
 
   bool get isOutgoing => direction == 'outgoing';
 
-  factory BotBattleSession.fromDoc(
-    String id,
-    Map<String, dynamic>? map,
-  ) {
+  factory BotBattleSession.fromDoc(String id, Map<String, dynamic>? map) {
     if (map == null) {
       return BotBattleSession(
         sessionId: id,
@@ -109,17 +106,15 @@ class BotBattlesAdminSnapshot {
 /// Super-user reads of `admin_dashboard/bot_battles` and 24h counters on traffic_bots.
 class BotBattlesAdminService {
   BotBattlesAdminService({FirebaseFirestore? firestore})
-      : _firestore = firestore ?? FirebaseFirestore.instance;
+    : _firestore = firestore ?? FirebaseFirestore.instance;
 
   final FirebaseFirestore _firestore;
 
   static const collectionName = AdminDashboardWriterService.collectionName;
   static const rootDoc = 'bot_battles';
 
-  CollectionReference<Map<String, dynamic>> get _sessions => _firestore
-      .collection(collectionName)
-      .doc(rootDoc)
-      .collection('sessions');
+  CollectionReference<Map<String, dynamic>> get _sessions =>
+      _firestore.collection(collectionName).doc(rootDoc).collection('sessions');
 
   CollectionReference<Map<String, dynamic>> get _daily =>
       _firestore.collection(collectionName).doc(rootDoc).collection('daily');
@@ -143,10 +138,13 @@ class BotBattlesAdminService {
       }
       final joinsSnap = await _daily.doc(dateId).collection('join_users').get();
       for (final doc in joinsSnap.docs) {
-        if (doc.id.trim().isNotEmpty) joinEmails.add(doc.id.trim().toLowerCase());
+        if (doc.id.trim().isNotEmpty)
+          joinEmails.add(doc.id.trim().toLowerCase());
       }
-      final completionsSnap =
-          await _daily.doc(dateId).collection('completion_users').get();
+      final completionsSnap = await _daily
+          .doc(dateId)
+          .collection('completion_users')
+          .get();
       for (final doc in completionsSnap.docs) {
         if (doc.id.trim().isNotEmpty) {
           completionEmails.add(doc.id.trim().toLowerCase());
@@ -154,14 +152,18 @@ class BotBattlesAdminService {
       }
     }
 
-    final recentSnap =
-        await _sessions.orderBy('joinedAtMs', descending: true).limit(40).get();
+    final recentSnap = await _sessions
+        .orderBy('joinedAtMs', descending: true)
+        .limit(40)
+        .get();
     final recent = recentSnap.docs
         .map((doc) => BotBattleSession.fromDoc(doc.id, doc.data()))
         .toList();
 
-    final trafficSnap =
-        await _firestore.collection(collectionName).doc('traffic_bots').get();
+    final trafficSnap = await _firestore
+        .collection(collectionName)
+        .doc('traffic_bots')
+        .get();
     final traffic = trafficSnap.data() ?? const <String, dynamic>{};
 
     return BotBattlesAdminSnapshot(

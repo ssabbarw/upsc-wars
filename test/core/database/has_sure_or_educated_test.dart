@@ -16,7 +16,9 @@ void main() {
   });
 
   Future<void> seedQuestion(String uuid) async {
-    await db.into(db.questions).insert(
+    await db
+        .into(db.questions)
+        .insert(
           QuestionsCompanion.insert(
             uuid: uuid,
             subject: 'polity',
@@ -38,7 +40,9 @@ void main() {
     required String status,
     String? confidence,
   }) async {
-    await db.into(db.sessions).insert(
+    await db
+        .into(db.sessions)
+        .insert(
           SessionsCompanion.insert(
             id: sessionId,
             createdAt: DateTime.utc(2026, 1, 1),
@@ -51,7 +55,9 @@ void main() {
           ),
           mode: InsertMode.insertOrReplace,
         );
-    await db.into(db.sessionQuestions).insert(
+    await db
+        .into(db.sessionQuestions)
+        .insert(
           SessionQuestionsCompanion.insert(
             id: attemptId,
             sessionId: sessionId,
@@ -66,37 +72,41 @@ void main() {
         );
   }
 
-  test('hasSureOrEducatedOnCompletedSessions is true for sure/educated rows',
-      () async {
-    await seedQuestion('q1');
-    await seedCompletedAttempt(
-      sessionId: 's1',
-      attemptId: 'a1',
-      questionUuid: 'q1',
-      status: 'wrong',
-      confidence: AnswerConfidence.somewhatSure,
-    );
+  test(
+    'hasSureOrEducatedOnCompletedSessions is true for sure/educated rows',
+    () async {
+      await seedQuestion('q1');
+      await seedCompletedAttempt(
+        sessionId: 's1',
+        attemptId: 'a1',
+        questionUuid: 'q1',
+        status: 'wrong',
+        confidence: AnswerConfidence.somewhatSure,
+      );
 
-    expect(
-      await db.sessionQuestionsDao.hasSureOrEducatedOnCompletedSessions(),
-      isTrue,
-    );
-  });
+      expect(
+        await db.sessionQuestionsDao.hasSureOrEducatedOnCompletedSessions(),
+        isTrue,
+      );
+    },
+  );
 
-  test('hasSureOrEducatedOnCompletedSessions is false for guessing only',
-      () async {
-    await seedQuestion('q1');
-    await seedCompletedAttempt(
-      sessionId: 's1',
-      attemptId: 'a1',
-      questionUuid: 'q1',
-      status: 'wrong',
-      confidence: AnswerConfidence.guessing,
-    );
+  test(
+    'hasSureOrEducatedOnCompletedSessions is false for guessing only',
+    () async {
+      await seedQuestion('q1');
+      await seedCompletedAttempt(
+        sessionId: 's1',
+        attemptId: 'a1',
+        questionUuid: 'q1',
+        status: 'wrong',
+        confidence: AnswerConfidence.guessing,
+      );
 
-    expect(
-      await db.sessionQuestionsDao.hasSureOrEducatedOnCompletedSessions(),
-      isFalse,
-    );
-  });
+      expect(
+        await db.sessionQuestionsDao.hasSureOrEducatedOnCompletedSessions(),
+        isFalse,
+      );
+    },
+  );
 }

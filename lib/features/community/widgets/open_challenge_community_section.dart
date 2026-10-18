@@ -19,6 +19,7 @@ import '../open_challenge/open_challenge_create_availability.dart';
 import '../providers/open_challenge_providers.dart';
 import 'admin_bot_label.dart';
 import 'open_challenge_what_is_sheet.dart';
+import '../../../l10n/l10n.dart';
 
 class OpenChallengeCommunitySection extends HookConsumerWidget {
   const OpenChallengeCommunitySection({super.key, this.highlightId});
@@ -43,7 +44,8 @@ class OpenChallengeCommunitySection extends HookConsumerWidget {
     final highlightKey = useMemoized(() => GlobalKey(), [highlightId]);
     final scrolledFor = useRef<String?>(null);
     // Null when the challenge has expired or fell outside this list.
-    final highlighted = highlightId != null &&
+    final highlighted =
+        highlightId != null &&
         (async.asData?.value.any((m) => m.id == highlightId) ?? false);
 
     useEffect(() {
@@ -92,8 +94,7 @@ class OpenChallengeCommunitySection extends HookConsumerWidget {
                     ),
                     const SizedBox(height: AppSpacing.xs),
                     Text(
-                      'Same 10 questions — beat the room! Tap a card for the full '
-                      'story.',
+                      context.l10n.ocSectionIntro,
                       style: AppTextStyles.bodySm().copyWith(
                         color: scheme.onSurfaceVariant,
                       ),
@@ -105,7 +106,7 @@ class OpenChallengeCommunitySection extends HookConsumerWidget {
                 data: (OpenChallengeCreateAvailability avail) {
                   return Tooltip(
                     message: avail.allowed
-                        ? 'Start a new 10-question challenge'
+                        ? context.l10n.ocStartNew
                         : avail.tooltipLine,
                     child: FilledButton.tonal(
                       onPressed: avail.allowed
@@ -162,14 +163,11 @@ class OpenChallengeCommunitySection extends HookConsumerWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Text(
-                  'Could not load challenges',
-                  style: AppTextStyles.bodyMd(),
-                ),
+                Text(context.l10n.ocLoadFailed, style: AppTextStyles.bodyMd()),
                 const SizedBox(height: AppSpacing.xs),
                 OutlinedButton(
                   onPressed: () => ref.invalidate(openChallengesListProvider),
-                  child: const Text('Retry'),
+                  child: Text(context.l10n.commonRetry),
                 ),
               ],
             ),
@@ -205,14 +203,13 @@ class OpenChallengeCommunitySection extends HookConsumerWidget {
                             ),
                             const SizedBox(height: AppSpacing.sm),
                             Text(
-                              'No challenges yet — you could be first!',
+                              context.l10n.ocNoneYet,
                               textAlign: TextAlign.center,
                               style: AppTextStyles.label(),
                             ),
                             const SizedBox(height: AppSpacing.xs),
                             Text(
-                              'Crush a 10Q exam, then hit Create to drop a challenge '
-                              'for everyone.',
+                              context.l10n.ocCrushIntro,
                               textAlign: TextAlign.center,
                               style: AppTextStyles.caption().copyWith(
                                 color: scheme.onSurfaceVariant,
@@ -224,10 +221,9 @@ class OpenChallengeCommunitySection extends HookConsumerWidget {
                     ),
                     const SizedBox(height: AppSpacing.md),
                     TextButton(
-                      onPressed: () => unawaited(
-                        showOpenChallengeWhatIsSheet(context),
-                      ),
-                      child: const Text('What is open challenge'),
+                      onPressed: () =>
+                          unawaited(showOpenChallengeWhatIsSheet(context)),
+                      child: Text(context.l10n.ocWhatIsShort),
                     ),
                   ],
                 ),
@@ -266,10 +262,9 @@ class OpenChallengeCommunitySection extends HookConsumerWidget {
                   ),
                   child: Center(
                     child: TextButton(
-                      onPressed: () => unawaited(
-                        showOpenChallengeWhatIsSheet(context),
-                      ),
-                      child: const Text('What is open challenge'),
+                      onPressed: () =>
+                          unawaited(showOpenChallengeWhatIsSheet(context)),
+                      child: Text(context.l10n.ocWhatIsShort),
                     ),
                   ),
                 ),
@@ -288,13 +283,13 @@ String _liveUntilLabel(DateTime utcOrLocal) {
 }
 
 String _friendlyTimeAgo(DateTime? posted) {
-  if (posted == null) return 'just now ✨';
+  if (posted == null) return appL10n.commonJustNow;
   final diff = DateTime.now().difference(posted);
-  if (diff.inSeconds < 60) return 'just now ✨';
-  if (diff.inMinutes < 60) return '${diff.inMinutes}m ago';
-  if (diff.inHours < 24) return '${diff.inHours}h ago';
-  if (diff.inDays < 7) return '${diff.inDays}d ago';
-  return '${(diff.inDays / 7).floor()}w ago';
+  if (diff.inSeconds < 60) return appL10n.commonJustNow;
+  if (diff.inMinutes < 60) return appL10n.commonMinAgo(diff.inMinutes);
+  if (diff.inHours < 24) return appL10n.commonHrAgo(diff.inHours);
+  if (diff.inDays < 7) return appL10n.commonDayAgo(diff.inDays);
+  return appL10n.commonWeekAgo((diff.inDays / 7).floor());
 }
 
 class _ChallengeTile extends StatelessWidget {
@@ -403,7 +398,7 @@ class _ChallengeTile extends StatelessWidget {
                               const SizedBox(height: AppSpacing.sm),
                               _MetaRow(
                                 icon: Icons.person_rounded,
-                                text: 'by $postedLabel',
+                                text: context.l10n.ocByName(postedLabel),
                                 scheme: scheme,
                                 trailing: AdminBotLabel(
                                   email: model.postedByEmail,
@@ -419,8 +414,9 @@ class _ChallengeTile extends StatelessWidget {
                                 const SizedBox(height: AppSpacing.xs),
                                 _MetaRow(
                                   icon: Icons.hourglass_top_rounded,
-                                  text:
-                                      'Live till ${_liveUntilLabel(model.liveUntil!)}',
+                                  text: context.l10n.ocLiveTill(
+                                    _liveUntilLabel(model.liveUntil!),
+                                  ),
                                   scheme: scheme,
                                 ),
                               ],
@@ -430,9 +426,9 @@ class _ChallengeTile extends StatelessWidget {
                                 runSpacing: AppSpacing.xs,
                                 children: [
                                   if (highlighted)
-                                    const _GlowPill(
+                                    _GlowPill(
                                       icon: Icons.auto_awesome_rounded,
-                                      label: 'Picked for you',
+                                      label: context.l10n.ocPickedForYou,
                                       color: AppColors.primary,
                                     ),
                                   _Pill(
@@ -449,8 +445,9 @@ class _ChallengeTile extends StatelessWidget {
                                   ),
                                   _Pill(
                                     icon: Icons.groups_rounded,
-                                    label:
-                                        '${model.attemptCount} ${model.attemptCount == 1 ? 'try' : 'tries'}',
+                                    label: context.l10n.ocTries(
+                                      model.attemptCount,
+                                    ),
                                     background: scheme.secondaryContainer
                                         .withValues(
                                           alpha: isDark ? 0.35 : 0.65,
@@ -460,7 +457,7 @@ class _ChallengeTile extends StatelessWidget {
                                   if (my != null)
                                     _Pill(
                                       icon: Icons.flag_rounded,
-                                      label: 'You $my/10',
+                                      label: context.l10n.ocYouScore(my),
                                       background: scheme.primaryContainer
                                           .withValues(alpha: 0.55),
                                       foreground: scheme.onPrimaryContainer,

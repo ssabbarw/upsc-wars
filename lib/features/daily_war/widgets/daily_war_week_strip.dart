@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../domain/daily_war_schedule.dart';
 import '../theme/daily_war_theme.dart';
+import '../../../l10n/l10n.dart';
 
 /// Mon–Sun rhythm strip for War detail (not home).
 class DailyWarWeekStrip extends StatelessWidget {
@@ -34,7 +35,7 @@ class DailyWarWeekStrip extends StatelessWidget {
         ),
         const SizedBox(height: 8),
         Text(
-          'Mon–Fri new topics · Sat revises the week · Sunday off',
+          context.l10n.dwWeekStrip,
           style: DwText.dm(
             size: 11,
             weight: FontWeight.w500,
@@ -49,11 +50,7 @@ class DailyWarWeekStrip extends StatelessWidget {
 }
 
 class _DayCell extends StatelessWidget {
-  const _DayCell({
-    required this.label,
-    required this.day,
-    required this.today,
-  });
+  const _DayCell({required this.label, required this.day, required this.today});
 
   final String label;
   final DateTime day;
@@ -61,7 +58,8 @@ class _DayCell extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isToday = day.year == today.year &&
+    final isToday =
+        day.year == today.year &&
         day.month == today.month &&
         day.day == today.day;
     final isPast = day.isBefore(today);
@@ -97,7 +95,9 @@ class _DayCell extends StatelessWidget {
       border = active
           ? DwColors.teal.withValues(alpha: isToday ? 0.9 : 0.5)
           : DwColors.borderOnDark;
-      fill = isToday ? DwColors.teal.withValues(alpha: 0.18) : Colors.transparent;
+      fill = isToday
+          ? DwColors.teal.withValues(alpha: 0.18)
+          : Colors.transparent;
       text = active ? DwColors.teal : DwColors.onDarkFaint;
       center = Container(
         width: 5,

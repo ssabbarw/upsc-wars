@@ -8,6 +8,7 @@ import '../domain/memory_pair_models.dart';
 import '../domain/memory_pair_scoring.dart';
 import '../providers/memory_pairs_providers.dart';
 import 'memory_pair_shared_widgets.dart';
+import '../../../l10n/l10n.dart';
 
 class MemoryPairSetDetailView extends ConsumerWidget {
   const MemoryPairSetDetailView({
@@ -87,18 +88,18 @@ class MemoryPairSetDetailView extends ConsumerWidget {
               children: [
                 _StatCell(
                   value: '$playCount',
-                  label: 'Pairs in round',
+                  label: context.l10n.mpPairsInRound,
                 ),
                 _StatCell(
                   value: bestSeconds != null
                       ? formatMemoryPairTime(bestSeconds)
                       : '—',
-                  label: 'Best time',
+                  label: context.l10n.mpBestTime,
                   accent: true,
                 ),
                 _StatCell(
                   value: memoryPairRelativePlayed(lastPlayed),
-                  label: 'Last played',
+                  label: context.l10n.mpLastPlayed,
                   small: true,
                 ),
               ],
@@ -112,7 +113,7 @@ class MemoryPairSetDetailView extends ConsumerWidget {
               child: OutlinedButton.icon(
                 onPressed: onRevise,
                 icon: const Icon(Icons.style_outlined, size: 18),
-                label: const Text('Revise'),
+                label: Text(context.l10n.mpRevise),
               ),
             ),
             const SizedBox(width: AppSpacing.md),
@@ -121,7 +122,7 @@ class MemoryPairSetDetailView extends ConsumerWidget {
               child: FilledButton.icon(
                 onPressed: onPlay,
                 icon: const Icon(Icons.play_arrow_rounded, size: 20),
-                label: const Text('Play now'),
+                label: Text(context.l10n.mpPlayNow),
               ),
             ),
           ],
@@ -162,9 +163,9 @@ class _StatCell extends StatelessWidget {
               overflow: TextOverflow.ellipsis,
               style: (small ? AppTextStyles.labelSm() : AppTextStyles.h3())
                   .copyWith(
-                color: accent ? AppColors.primary : scheme.onSurface,
-                fontWeight: FontWeight.w700,
-              ),
+                    color: accent ? AppColors.primary : scheme.onSurface,
+                    fontWeight: FontWeight.w700,
+                  ),
             ),
             const SizedBox(height: 4),
             Text(

@@ -47,8 +47,8 @@ Future<bool> ensureAccountSignedIn({
 
   if (!context.mounted) return false;
   final err = ref.read(authActionsProvider).error;
-  ScaffoldMessenger.of(context).showSnackBar(
-    SnackBar(content: Text(err?.toString() ?? reason)),
-  );
+  ScaffoldMessenger.of(
+    context,
+  ).showSnackBar(SnackBar(content: Text(err?.toString() ?? reason)));
   return false;
 }

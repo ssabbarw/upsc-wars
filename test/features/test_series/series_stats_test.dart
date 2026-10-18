@@ -56,8 +56,16 @@ void main() {
       entitlementId: 'e',
     ),
     tests: [
-      _test('static_polity_01', SeriesTestKind.staticTest, bucket: SeriesBuckets.polity),
-      _test('static_polity_02', SeriesTestKind.staticTest, bucket: SeriesBuckets.polity),
+      _test(
+        'static_polity_01',
+        SeriesTestKind.staticTest,
+        bucket: SeriesBuckets.polity,
+      ),
+      _test(
+        'static_polity_02',
+        SeriesTestKind.staticTest,
+        bucket: SeriesBuckets.polity,
+      ),
       _test('flt_01', SeriesTestKind.fullLength),
       _test('flt_02', SeriesTestKind.fullLength),
       _test('pyq_01', SeriesTestKind.pyqMix),
@@ -68,28 +76,37 @@ void main() {
   group('SeriesSubjects', () {
     test('current affairs question goes to its own group by source kind', () {
       expect(
-        SeriesSubjects.groupForQuestion(gsSubject: 'Polity', sourceKind: 'current_affairs'),
+        SeriesSubjects.groupForQuestion(
+          gsSubject: 'Polity',
+          sourceKind: 'current_affairs',
+        ),
         SeriesSubjects.currentAffairs,
       );
       expect(
         SeriesSubjects.groupForQuestion(gsSubject: 'Polity', sourceKind: 'pyq'),
         SeriesBuckets.polity,
       );
-      expect(SeriesSubjects.groupFor('Current affairs'), SeriesSubjects.currentAffairs);
+      expect(
+        SeriesSubjects.groupFor('Current affairs'),
+        SeriesSubjects.currentAffairs,
+      );
     });
 
     test('topic label collapses uninformative topics', () {
-      String label(String topic, {String gs = 'Polity'}) => SeriesSubjects.topicLabel(
-        group: SeriesSubjects.groupFor(gs),
-        gsSubject: gs,
-        topic: topic,
-      );
+      String label(String topic, {String gs = 'Polity'}) =>
+          SeriesSubjects.topicLabel(
+            group: SeriesSubjects.groupFor(gs),
+            gsSubject: gs,
+            topic: topic,
+          );
       expect(label('Parliament'), 'Parliament');
       expect(label(''), SeriesSubjects.mixedTopics);
       expect(label('default'), SeriesSubjects.mixedTopics);
       expect(label('Polity'), SeriesSubjects.mixedTopics);
-      expect(label('Indian Polity & Governance', gs: 'Indian Polity & Governance'),
-          SeriesSubjects.mixedTopics);
+      expect(
+        label('Indian Polity & Governance', gs: 'Indian Polity & Governance'),
+        SeriesSubjects.mixedTopics,
+      );
     });
 
     test('current affairs topics are the GS subject they cover', () {
@@ -118,7 +135,13 @@ void main() {
           _row('flt_01', 'Parliament', correct: true, count: 6),
           _row('static_polity_01', 'Parliament', correct: false, count: 3),
           _row('pyq_01', 'Parliament', correct: false, count: 50),
-          _row('ca_01', 'Parliament', correct: false, count: 50, kind: 'current_affairs'),
+          _row(
+            'ca_01',
+            'Parliament',
+            correct: false,
+            count: 50,
+            kind: 'current_affairs',
+          ),
         ],
       );
       expect(stats.core.tests.attempted, 2);
@@ -166,9 +189,27 @@ void main() {
         bundle: bundle,
         attemptList: [_attempt('flt_01')],
         answers: [
-          _row('flt_01', 'Parliament', correct: true, count: 3, confidence: 'very_sure'),
-          _row('flt_01', 'Parliament', correct: false, count: 3, confidence: 'guessing'),
-          _row('flt_01', 'Federalism', correct: false, count: 2, confidence: 'very_sure'),
+          _row(
+            'flt_01',
+            'Parliament',
+            correct: true,
+            count: 3,
+            confidence: 'very_sure',
+          ),
+          _row(
+            'flt_01',
+            'Parliament',
+            correct: false,
+            count: 3,
+            confidence: 'guessing',
+          ),
+          _row(
+            'flt_01',
+            'Federalism',
+            correct: false,
+            count: 2,
+            confidence: 'very_sure',
+          ),
         ],
       );
       expect(stats.core.useConfidence, isTrue);
@@ -182,32 +223,72 @@ void main() {
         bundle: bundle,
         attemptList: [_attempt('flt_01')],
         answers: [
-          _row('flt_01', 'Parliament', correct: true, count: 5, confidence: 'very_sure'),
-          _row('flt_01', 'Federalism', correct: true, count: 2, confidence: 'very_sure'),
-          _row('flt_01', 'Judiciary', correct: true, count: 8, confidence: 'very_sure'),
-          _row('flt_01', 'Judiciary', correct: false, count: 1, confidence: 'very_sure'),
+          _row(
+            'flt_01',
+            'Parliament',
+            correct: true,
+            count: 5,
+            confidence: 'very_sure',
+          ),
+          _row(
+            'flt_01',
+            'Federalism',
+            correct: true,
+            count: 2,
+            confidence: 'very_sure',
+          ),
+          _row(
+            'flt_01',
+            'Judiciary',
+            correct: true,
+            count: 8,
+            confidence: 'very_sure',
+          ),
+          _row(
+            'flt_01',
+            'Judiciary',
+            correct: false,
+            count: 1,
+            confidence: 'very_sure',
+          ),
         ],
       );
       expect(stats.core.safeAreas.map((t) => t.topic), ['Parliament']);
     });
 
-    test('Science & Tech and Current Affairs rows come from full-length answers', () {
-      final stats = SeriesStats.compute(
-        bundle: bundle,
-        attemptList: [_attempt('flt_01')],
-        answers: [
-          _row('flt_01', 'Space', correct: true, count: 4, gs: 'Science & Technology'),
-          _row('flt_01', 'x', correct: false, count: 1, gs: 'Economy', kind: 'current_affairs'),
-        ],
-      );
-      expect(stats.core.subject(SeriesSubjects.scienceTech)!.correct, 4);
-      final ca = stats.core.subject(SeriesSubjects.currentAffairs)!;
-      expect(ca.wrong, 1);
-      expect(ca.topics.single.topic, 'Economy');
-      expect(ca.tests, isNull);
-      // Polity (subject tests) has 2 tests and none attempted.
-      expect(stats.core.subject(SeriesBuckets.polity)!.tests!.total, 2);
-    });
+    test(
+      'Science & Tech and Current Affairs rows come from full-length answers',
+      () {
+        final stats = SeriesStats.compute(
+          bundle: bundle,
+          attemptList: [_attempt('flt_01')],
+          answers: [
+            _row(
+              'flt_01',
+              'Space',
+              correct: true,
+              count: 4,
+              gs: 'Science & Technology',
+            ),
+            _row(
+              'flt_01',
+              'x',
+              correct: false,
+              count: 1,
+              gs: 'Economy',
+              kind: 'current_affairs',
+            ),
+          ],
+        );
+        expect(stats.core.subject(SeriesSubjects.scienceTech)!.correct, 4);
+        final ca = stats.core.subject(SeriesSubjects.currentAffairs)!;
+        expect(ca.wrong, 1);
+        expect(ca.topics.single.topic, 'Economy');
+        expect(ca.tests, isNull);
+        // Polity (subject tests) has 2 tests and none attempted.
+        expect(stats.core.subject(SeriesBuckets.polity)!.tests!.total, 2);
+      },
+    );
   });
 
   group('revisionQuestionUuids', () {

@@ -10,6 +10,7 @@ import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/widgets/dismissible_modal_sheet.dart';
 import '../domain/daily_ca_schedule.dart';
+import '../../../l10n/l10n.dart';
 
 /// Explains the newspaper quiz when today's paper is not live yet.
 Future<void> showDailyCaUnavailableSheet({
@@ -124,8 +125,8 @@ class _DailyCaUnavailableSheetState extends State<_DailyCaUnavailableSheet> {
                   ),
                   Text(
                     widget.pendingLive
-                        ? 'Questions aren\'t live yet'
-                        : 'Questions will be available soon',
+                        ? context.l10n.dcaNotLiveTitle
+                        : context.l10n.dcaSoonTitle,
                     style: AppTextStyles.h2().copyWith(
                       fontWeight: FontWeight.w800,
                       color: scheme.onSurface,
@@ -134,12 +135,8 @@ class _DailyCaUnavailableSheetState extends State<_DailyCaUnavailableSheet> {
                   const SizedBox(height: AppSpacing.md),
                   Text(
                     widget.pendingLive
-                        ? 'This morning\'s paper was generated, but it has not '
-                            'been published to the app yet. Pull home to refresh '
-                            'in a minute.'
-                        : 'Each paper is built from news articles. It tests how well '
-                            'you read the previous day\'s news — yesterday\'s newspaper, '
-                            'this morning\'s quiz.',
+                        ? context.l10n.dcaNotLiveBody
+                        : context.l10n.dcaSoonBody,
                     style: AppTextStyles.bodySm().copyWith(
                       color: scheme.onSurfaceVariant,
                       height: 1.5,
@@ -170,7 +167,7 @@ class _DailyCaUnavailableSheetState extends State<_DailyCaUnavailableSheet> {
                               TextSpan(
                                 children: [
                                   TextSpan(
-                                    text: "Today's test will be from :\n",
+                                    text: context.l10n.dcaTestWillBeFrom,
                                     style: AppTextStyles.bodySm().copyWith(
                                       color: scheme.onSurface,
                                       fontWeight: FontWeight.w600,
@@ -186,7 +183,8 @@ class _DailyCaUnavailableSheetState extends State<_DailyCaUnavailableSheet> {
                                     ),
                                   ),
                                   TextSpan(
-                                    text: '\nTest available in $countdown',
+                                    text:
+                                        '\n${context.l10n.dcaAvailableIn(countdown)}',
                                     style: AppTextStyles.bodySm().copyWith(
                                       color: scheme.onSurfaceVariant,
                                       fontWeight: FontWeight.w600,
@@ -217,7 +215,7 @@ class _DailyCaUnavailableSheetState extends State<_DailyCaUnavailableSheet> {
                         ),
                       ),
                       child: Text(
-                        'See past current affairs MCQs',
+                        context.l10n.dcaSeePast,
                         style: AppTextStyles.label().copyWith(
                           fontWeight: FontWeight.w600,
                         ),
@@ -237,7 +235,7 @@ class _DailyCaUnavailableSheetState extends State<_DailyCaUnavailableSheet> {
                       ),
                     ),
                     child: Text(
-                      'Got it',
+                      context.l10n.commonGotIt,
                       style: AppTextStyles.label().copyWith(
                         color: AppColors.onPrimary,
                         fontWeight: FontWeight.w600,

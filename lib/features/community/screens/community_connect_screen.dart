@@ -8,6 +8,7 @@ import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../battle/domain/entities/battle_invite_target.dart';
 import '../domain/entities/community_user.dart';
+import '../../../l10n/l10n.dart';
 
 class CommunityConnectScreen extends StatelessWidget {
   const CommunityConnectScreen({super.key, this.selectedUser});
@@ -36,8 +37,8 @@ class CommunityConnectScreen extends StatelessWidget {
           children: [
             Text(
               user == null
-                  ? 'Start a random battle connect.'
-                  : 'Challenge $targetLabel in a battle.',
+                  ? context.l10n.connectRandomIntro
+                  : context.l10n.connectChallengeUser(targetLabel ?? ''),
               style: AppTextStyles.bodyMd(),
             ),
             const SizedBox(height: AppSpacing.lg),
@@ -57,15 +58,14 @@ class CommunityConnectScreen extends StatelessWidget {
                         ),
                 ),
                 child: Text(
-                  user == null ? 'Random Connect' : 'Start Challenge',
+                  user == null
+                      ? 'Random Connect'
+                      : context.l10n.connectStartChallenge,
                 ),
               ),
             ),
             const SizedBox(height: AppSpacing.sm),
-            Text(
-              'You will briefly see joined players, then battle auto-starts.',
-              style: AppTextStyles.caption(),
-            ),
+            Text(context.l10n.connectNote, style: AppTextStyles.caption()),
           ],
         ),
       ),

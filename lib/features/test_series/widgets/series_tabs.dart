@@ -112,54 +112,53 @@ class SeriesUspCard extends StatelessWidget {
       String title,
       String body, {
       bool free = false,
-    }) =>
-        Padding(
-          padding: const EdgeInsets.only(bottom: AppSpacing.md),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                width: 34,
-                height: 34,
-                decoration: BoxDecoration(
-                  color: color.withValues(alpha: 0.12),
-                  borderRadius: BorderRadius.circular(AppRadius.sm),
-                ),
-                child: Icon(icon, size: 19, color: color),
-              ),
-              const SizedBox(width: AppSpacing.md),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+    }) => Padding(
+      padding: const EdgeInsets.only(bottom: AppSpacing.md),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            width: 34,
+            height: 34,
+            decoration: BoxDecoration(
+              color: color.withValues(alpha: 0.12),
+              borderRadius: BorderRadius.circular(AppRadius.sm),
+            ),
+            child: Icon(icon, size: 19, color: color),
+          ),
+          const SizedBox(width: AppSpacing.md),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
                   children: [
-                    Row(
-                      children: [
-                        Flexible(
-                          child: Text(
-                            title,
-                            style: AppTextStyles.bodyMd().copyWith(
-                              fontWeight: FontWeight.w700,
-                            ),
-                          ),
+                    Flexible(
+                      child: Text(
+                        title,
+                        style: AppTextStyles.bodyMd().copyWith(
+                          fontWeight: FontWeight.w700,
                         ),
-                        if (free) ...[
-                          const SizedBox(width: AppSpacing.sm),
-                          const FreeBadge(size: 34),
-                        ],
-                      ],
-                    ),
-                    Text(
-                      body,
-                      style: AppTextStyles.bodySm().copyWith(
-                        color: scheme.onSurfaceVariant,
                       ),
                     ),
+                    if (free) ...[
+                      const SizedBox(width: AppSpacing.sm),
+                      const FreeBadge(size: 34),
+                    ],
                   ],
                 ),
-              ),
-            ],
+                Text(
+                  body,
+                  style: AppTextStyles.bodySm().copyWith(
+                    color: scheme.onSurfaceVariant,
+                  ),
+                ),
+              ],
+            ),
           ),
-        );
+        ],
+      ),
+    );
 
     return Container(
       padding: const EdgeInsets.fromLTRB(

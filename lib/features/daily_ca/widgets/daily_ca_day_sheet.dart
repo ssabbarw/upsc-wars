@@ -10,6 +10,7 @@ import '../../../shared/widgets/dismissible_modal_sheet.dart';
 import '../domain/daily_ca_schedule.dart';
 import '../domain/daily_ca_source_links.dart';
 import 'daily_ca_source_link_row.dart';
+import '../../../l10n/l10n.dart';
 
 /// Date hub before starting a Daily CA paper: news date, source briefs, start.
 Future<void> showDailyCaDaySheet({
@@ -73,15 +74,15 @@ class _DailyCaDaySheet extends StatelessWidget {
     );
     final links = DailyCaSourceLinks.forDate(date);
     final reviseHeading = isTodaysPaper
-        ? "You can revise yesterday's current affairs from our recommended links."
-        : 'You can revise this day\'s current affairs from our recommended links.';
+        ? context.l10n.dcaReviseYesterdayRec
+        : context.l10n.dcaReviseThisDayRec;
     final ctaLabel = !questionsReady
-        ? 'Available soon'
+        ? context.l10n.dcaAvailableSoon
         : completed
-        ? 'Revise this test'
+        ? context.l10n.dcaReviseThisTest
         : isOpenPaper
-        ? 'Start today\'s test'
-        : 'Start the test';
+        ? context.l10n.dcaStartTodays
+        : context.l10n.dcaStartTheTest;
 
     return Padding(
       padding: EdgeInsets.fromLTRB(
@@ -143,7 +144,7 @@ class _DailyCaDaySheet extends StatelessWidget {
                   ),
                   const SizedBox(height: AppSpacing.sm),
                   Text(
-                    'This test is from questions from $newsLabel.',
+                    context.l10n.dcaTestFromNews(newsLabel),
                     style: AppTextStyles.bodySm().copyWith(
                       color: scheme.onSurfaceVariant,
                       height: 1.45,
@@ -170,7 +171,7 @@ class _DailyCaDaySheet extends StatelessWidget {
                         ),
                         const SizedBox(height: AppSpacing.xs),
                         Text(
-                          'These are our favourite sources for this day\'s current affairs.',
+                          context.l10n.dcaFavSources,
                           style: AppTextStyles.caption().copyWith(
                             color: scheme.onSurfaceVariant,
                             height: 1.35,

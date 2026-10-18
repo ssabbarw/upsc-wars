@@ -63,10 +63,7 @@ class CreateGetStartedSessionUseCase {
         ? const <Question>[]
         : await userDb.questionsDao.getUnseenFirstRandomMixed(
             limit: staticNeeded,
-            attemptedQuestionUuids: {
-              ...attempted,
-              for (final q in ca) q.uuid,
-            },
+            attemptedQuestionUuids: {...attempted, for (final q in ca) q.uuid},
           );
     final picked = [...ca, ...staticQs];
     if (picked.isEmpty) {

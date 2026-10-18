@@ -8,6 +8,7 @@ import '../domain/daily_war_models.dart';
 import '../theme/daily_war_theme.dart';
 import 'daily_war_badge_chip.dart';
 import 'daily_war_warrior_sheet.dart';
+import '../../../l10n/l10n.dart';
 
 /// Full leaderboard: green podium header, list 4+, sticky “you” footer.
 class DailyWarLeaderboardView extends StatelessWidget {
@@ -32,7 +33,9 @@ class DailyWarLeaderboardView extends StatelessWidget {
   Widget build(BuildContext context) {
     final top = lb.top;
     final podium = top.take(3).toList();
-    final rest = top.length > 3 ? top.sublist(3) : const <DailyWarLeaderboardEntry>[];
+    final rest = top.length > 3
+        ? top.sublist(3)
+        : const <DailyWarLeaderboardEntry>[];
     DailyWarLeaderboardEntry? meEntry;
     for (final e in top) {
       if (e.uid == myUid) {
@@ -40,7 +43,8 @@ class DailyWarLeaderboardView extends StatelessWidget {
         break;
       }
     }
-    final meOutside = meEntry == null &&
+    final meOutside =
+        meEntry == null &&
         mySubmission != null &&
         mySubmission!.hasOfficialRank;
 
@@ -72,20 +76,17 @@ class DailyWarLeaderboardView extends StatelessWidget {
               SliverPadding(
                 padding: const EdgeInsets.fromLTRB(12, 12, 12, 100),
                 sliver: SliverList(
-                  delegate: SliverChildBuilderDelegate(
-                    (context, i) {
-                      final e = rest[i];
-                      return Padding(
-                        padding: const EdgeInsets.only(bottom: 8),
-                        child: _LbCard(
-                          entry: e,
-                          questionCount: questionCount,
-                          isMe: e.uid == myUid,
-                        ),
-                      );
-                    },
-                    childCount: rest.length,
-                  ),
+                  delegate: SliverChildBuilderDelegate((context, i) {
+                    final e = rest[i];
+                    return Padding(
+                      padding: const EdgeInsets.only(bottom: 8),
+                      child: _LbCard(
+                        entry: e,
+                        questionCount: questionCount,
+                        isMe: e.uid == myUid,
+                      ),
+                    );
+                  }, childCount: rest.length),
                 ),
               ),
             ],
@@ -156,8 +157,10 @@ class _PodiumHeader extends StatelessWidget {
               ),
               const Spacer(),
               Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 4,
+                ),
                 decoration: BoxDecoration(
                   color: Colors.white.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(20),
@@ -165,8 +168,11 @@ class _PodiumHeader extends StatelessWidget {
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    const Icon(Icons.people_alt_rounded,
-                        size: 14, color: DwColors.onDark),
+                    const Icon(
+                      Icons.people_alt_rounded,
+                      size: 14,
+                      color: DwColors.onDark,
+                    ),
                     const SizedBox(width: 4),
                     Text(
                       '${_commas(joined)} joined',
@@ -273,8 +279,11 @@ class _PodiumSlot extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           if (medal)
-            const Icon(Icons.workspace_premium_rounded,
-                color: DwColors.gold, size: 20)
+            const Icon(
+              Icons.workspace_premium_rounded,
+              color: DwColors.gold,
+              size: 20,
+            )
           else
             const SizedBox(height: 20),
           const SizedBox(height: 4),
@@ -409,7 +418,7 @@ class _LbCard extends StatelessWidget {
                       children: [
                         Flexible(
                           child: Text(
-                            isMe ? '$name (you)' : name,
+                            isMe ? context.l10n.resultsNameYou(name) : name,
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                             style: DwText.dm(size: 14, weight: FontWeight.w700),
@@ -517,9 +526,10 @@ class _StickyYou extends StatelessWidget {
     final name = entry?.displayName.isNotEmpty == true
         ? entry!.displayName
         : (submission?.displayName?.isNotEmpty == true
-            ? submission!.displayName!
-            : 'You');
-    final synthetic = entry ??
+              ? submission!.displayName!
+              : 'You');
+    final synthetic =
+        entry ??
         DailyWarLeaderboardEntry(
           uid: submission?.uid ?? '',
           displayName: name,
@@ -534,7 +544,7 @@ class _StickyYou extends StatelessWidget {
     // Rough “up N ranks” tease vs mid-pack when we lack previous AIR.
     final mid = (participantCount / 2).round().clamp(1, participantCount);
     final delta = mid - air;
-    final deltaLabel = delta > 0 ? 'up $delta ranks' : title;
+    final deltaLabel = delta > 0 ? context.l10n.dwUpRanks(delta) : title;
 
     return Material(
       color: const Color(0xFF1A3A32),
@@ -595,12 +605,11 @@ class _StickyYou extends StatelessWidget {
                     ],
                   ),
                 ),
-                if ((entry?.tierId ??
-                        DailyWarBadges.tierIdForDays(streak)) !=
+                if ((entry?.tierId ?? DailyWarBadges.tierIdForDays(streak)) !=
                     null) ...[
                   DailyWarBadgeChip(
-                    badgeId: entry?.tierId ??
-                        DailyWarBadges.tierIdForDays(streak)!,
+                    badgeId:
+                        entry?.tierId ?? DailyWarBadges.tierIdForDays(streak)!,
                     size: 22,
                   ),
                   const SizedBox(width: 8),

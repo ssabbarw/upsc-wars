@@ -9,10 +9,7 @@ import 'package:upsc_wars/features/notifications/long_html_notification_constant
 import 'package:upsc_wars/features/push_spot_test/push_spot_test_constants.dart';
 
 /// Who receives [BroadcastAnnouncementCloudService.send].
-enum BroadcastAnnouncementTarget {
-  self,
-  broadcast,
-}
+enum BroadcastAnnouncementTarget { self, broadcast }
 
 /// Live `Long_Html_Message/message` document.
 class SavedLongHtmlMessage {

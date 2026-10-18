@@ -3,22 +3,26 @@ import 'package:upsc_wars/core/database/user_db.dart';
 import 'package:upsc_wars/core/domain/repositories/test_catalog_repository.dart';
 
 class TestCatalogRepositoryImpl implements TestCatalogRepository {
-  TestCatalogRepositoryImpl({
-    required UserDatabase userDatabase,
-  }) : _userDatabase = userDatabase;
+  TestCatalogRepositoryImpl({required UserDatabase userDatabase})
+    : _userDatabase = userDatabase;
 
   final UserDatabase _userDatabase;
 
   @override
   Future<List<SubjectMetrics>> fetchSubjectMetrics(String language) async {
-    final scored = await _userDatabase.sessionQuestionsDao.getScoredPracticeRows();
+    final scored = await _userDatabase.sessionQuestionsDao
+        .getScoredPracticeRows();
     final bySubject = await _aggregateBySubject(scored);
     final out = <SubjectMetrics>[];
     for (final def in SubjectConstants.ordered) {
       final subject = def.slug;
-      final qCount = (await _userDatabase.questionsDao.getBySubject(subject)).length;
-      final topicCount = (await _userDatabase.questionsDao.getTopicQuestionCountsForSubject(subject))
-          .length;
+      final qCount = (await _userDatabase.questionsDao.getBySubject(
+        subject,
+      )).length;
+      final topicCount =
+          (await _userDatabase.questionsDao.getTopicQuestionCountsForSubject(
+            subject,
+          )).length;
       final agg = bySubject[subject] ?? _Agg();
       out.add(
         SubjectMetrics(
@@ -38,24 +42,27 @@ class TestCatalogRepositoryImpl implements TestCatalogRepository {
     String subject,
     String language,
   ) async {
-    final scored = await _userDatabase.sessionQuestionsDao.getScoredPracticeRows();
+    final scored = await _userDatabase.sessionQuestionsDao
+        .getScoredPracticeRows();
     final byTopic = await _aggregateByTopic(scored, subject);
-    final countsRows = await _userDatabase.questionsDao.getTopicQuestionCountsForSubject(
-      subject,
-    );
+    final countsRows = await _userDatabase.questionsDao
+        .getTopicQuestionCountsForSubject(subject);
     final counts = {for (final row in countsRows) row.topic: row.questionCount};
     final topicNames = counts.keys.toList();
     final names = <String, String>{};
     for (final topic in topicNames) {
       if (language == 'hi') {
-        final translation = await _userDatabase.topicTranslationsDao.getByEnglishName(topic);
+        final translation = await _userDatabase.topicTranslationsDao
+            .getByEnglishName(topic);
         names[topic] = translation?.hindiName ?? topic;
       } else {
         names[topic] = topic;
       }
     }
     final topics = names.keys.toList()
-      ..sort((a, b) => names[a]!.toLowerCase().compareTo(names[b]!.toLowerCase()));
+      ..sort(
+        (a, b) => names[a]!.toLowerCase().compareTo(names[b]!.toLowerCase()),
+      );
     return [
       for (final topic in topics)
         TopicMetrics(
@@ -74,7 +81,9 @@ class TestCatalogRepositoryImpl implements TestCatalogRepository {
   ) async {
     if (rows.isEmpty) return {};
     final uuids = rows.map((r) => r.questionUuid).toList();
-    final locs = await _userDatabase.questionsDao.getSubjectTopicForUuids(uuids);
+    final locs = await _userDatabase.questionsDao.getSubjectTopicForUuids(
+      uuids,
+    );
     final map = <String, _Agg>{};
     for (final row in rows) {
       final loc = locs[row.questionUuid];
@@ -92,7 +101,9 @@ class TestCatalogRepositoryImpl implements TestCatalogRepository {
   ) async {
     if (rows.isEmpty) return {};
     final uuids = rows.map((r) => r.questionUuid).toList();
-    final locs = await _userDatabase.questionsDao.getSubjectTopicForUuids(uuids);
+    final locs = await _userDatabase.questionsDao.getSubjectTopicForUuids(
+      uuids,
+    );
     final map = <String, _Agg>{};
     for (final row in rows) {
       final loc = locs[row.questionUuid];

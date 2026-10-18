@@ -4,7 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 /// Inline spans for strings that use markdown-style `**bold**` (markers are not shown).
-List<InlineSpan> doubleAsteriskBoldInlineSpans(String data, TextStyle baseStyle) {
+List<InlineSpan> doubleAsteriskBoldInlineSpans(
+  String data,
+  TextStyle baseStyle,
+) {
   final spans = <InlineSpan>[];
   final boldStyle = baseStyle.copyWith(fontWeight: FontWeight.w700);
   var i = 0;
@@ -24,7 +27,9 @@ List<InlineSpan> doubleAsteriskBoldInlineSpans(String data, TextStyle baseStyle)
       spans.add(TextSpan(text: data.substring(open)));
       break;
     }
-    spans.add(TextSpan(text: data.substring(open + 2, close), style: boldStyle));
+    spans.add(
+      TextSpan(text: data.substring(open + 2, close), style: boldStyle),
+    );
     i = close + 2;
   }
   if (spans.isEmpty) {
@@ -70,8 +75,9 @@ class SelectableCopySearchText extends StatelessWidget {
     );
     final sel = editableTextState.textEditingValue.selection;
     final plain = editableTextState.textEditingValue.text;
-    final selected =
-        sel.isValid && !sel.isCollapsed ? sel.textInside(plain).trim() : '';
+    final selected = sel.isValid && !sel.isCollapsed
+        ? sel.textInside(plain).trim()
+        : '';
     if (selected.isNotEmpty) {
       baseItems.add(
         ContextMenuButtonItem(
@@ -109,7 +115,9 @@ class SelectableCopySearchText extends StatelessWidget {
       maxLines: maxLines,
       textWidthBasis: textWidthBasis ?? TextWidthBasis.parent,
       textHeightBehavior: textHeightBehavior,
-      semanticsLabel: semanticsLabel ?? (data.contains('**') ? data.replaceAll('**', '') : null),
+      semanticsLabel:
+          semanticsLabel ??
+          (data.contains('**') ? data.replaceAll('**', '') : null),
       contextMenuBuilder: _contextMenuBuilder,
     );
   }

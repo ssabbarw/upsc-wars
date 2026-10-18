@@ -46,7 +46,8 @@ class TestSeriesPurchaseService {
 
   void _log(String m) => developer.log(m, name: _logName);
 
-  Set<String> _owned(CustomerInfo info) => info.entitlements.active.keys.toSet();
+  Set<String> _owned(CustomerInfo info) =>
+      info.entitlements.active.keys.toSet();
 
   void _logCustomerInfo(String label, CustomerInfo info) {
     final active = info.entitlements.active.keys.toList()..sort();
@@ -64,7 +65,9 @@ class TestSeriesPurchaseService {
     if (!isSupported) return;
     try {
       if (!_configured) {
-        await Purchases.setLogLevel(kDebugMode ? LogLevel.debug : LogLevel.warn);
+        await Purchases.setLogLevel(
+          kDebugMode ? LogLevel.debug : LogLevel.warn,
+        );
         final config = PurchasesConfiguration(RevenueCatConfig.androidApiKey)
           ..appUserID = accountUid;
         await Purchases.configure(config);
@@ -83,7 +86,11 @@ class TestSeriesPurchaseService {
         _loggedInUid = null;
       }
     } on Object catch (e, st) {
-      developer.log('RevenueCat sync failed: $e', name: _logName, stackTrace: st);
+      developer.log(
+        'RevenueCat sync failed: $e',
+        name: _logName,
+        stackTrace: st,
+      );
     }
   }
 
@@ -101,10 +108,9 @@ class TestSeriesPurchaseService {
   /// Store listing for the one-time product (price comes from Google Play).
   Future<StoreProduct?> loadProduct(String productId) async {
     if (!isSupported || !_configured) return null;
-    final products = await Purchases.getProducts(
-      [productId],
-      productCategory: ProductCategory.nonSubscription,
-    );
+    final products = await Purchases.getProducts([
+      productId,
+    ], productCategory: ProductCategory.nonSubscription);
     for (final p in products) {
       if (p.identifier == productId || p.identifier.startsWith('$productId:')) {
         return p;
@@ -119,7 +125,9 @@ class TestSeriesPurchaseService {
     }
     try {
       _log('buying product=${product.identifier}');
-      final result = await Purchases.purchase(PurchaseParams.storeProduct(product));
+      final result = await Purchases.purchase(
+        PurchaseParams.storeProduct(product),
+      );
       _logCustomerInfo('after purchase', result.customerInfo);
       final owned = _owned(result.customerInfo);
       _ownedController.add(owned);
@@ -132,7 +140,8 @@ class TestSeriesPurchaseService {
         case PurchasesErrorCode.paymentPendingError:
           return const PurchaseOutcome(
             PurchaseOutcomeKind.pending,
-            message: 'Your payment is pending. The series unlocks once it completes.',
+            message:
+                'Your payment is pending. The series unlocks once it completes.',
           );
         case PurchasesErrorCode.productAlreadyPurchasedError:
           // Already owned: refresh entitlements so the UI unlocks.
@@ -141,7 +150,10 @@ class TestSeriesPurchaseService {
             _logCustomerInfo('after already-purchased restore', info);
             final owned = _owned(info);
             _ownedController.add(owned);
-            return PurchaseOutcome(PurchaseOutcomeKind.purchased, ownedIds: owned);
+            return PurchaseOutcome(
+              PurchaseOutcomeKind.purchased,
+              ownedIds: owned,
+            );
           } on Object catch (_) {
             return const PurchaseOutcome(PurchaseOutcomeKind.purchased);
           }

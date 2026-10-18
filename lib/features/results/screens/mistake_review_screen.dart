@@ -17,6 +17,7 @@ import '../../history/screens/session_review_screen.dart';
 import '../../home/domain/demo_diagnostic_ephemeral_store.dart';
 import '../domain/mistake_review_bundle.dart';
 import '../providers/mistake_review_provider.dart';
+import '../../../l10n/l10n.dart';
 
 enum _MistakeReviewPhase { sure, eduGuess }
 
@@ -37,7 +38,7 @@ class MistakeReviewScreen extends HookConsumerWidget {
         child: Padding(
           padding: hPad,
           child: async.when(
-            loading: () => const Center(child: CircularProgressIndicator()),
+            loading: () => Center(child: CircularProgressIndicator()),
             error: (_, _) => _ReviewError(
               onRetry: () =>
                   ref.invalidate(mistakeReviewBundleProvider(sessionId)),
@@ -46,7 +47,7 @@ class MistakeReviewScreen extends HookConsumerWidget {
             data: (bundle) {
               if (bundle.total == 0) {
                 return _ReviewError(
-                  message: 'No reviewable mistakes in this session.',
+                  message: context.l10n.resultsNoReviewable,
                   onBack: () => context.pop(),
                 );
               }
@@ -60,13 +61,9 @@ class MistakeReviewScreen extends HookConsumerWidget {
 }
 
 class _ReviewError extends StatelessWidget {
-  const _ReviewError({
-    this.message = 'Could not load review.',
-    this.onRetry,
-    required this.onBack,
-  });
+  const _ReviewError({this.message, this.onRetry, required this.onBack});
 
-  final String message;
+  final String? message;
   final VoidCallback? onRetry;
   final VoidCallback onBack;
 
@@ -77,10 +74,16 @@ class _ReviewError extends StatelessWidget {
       children: [
         IconButton(onPressed: onBack, icon: const Icon(Icons.chevron_left)),
         const Spacer(),
-        Text(message, style: AppTextStyles.body()),
+        Text(
+          message ?? context.l10n.resultsReviewLoadFailedDot,
+          style: AppTextStyles.body(),
+        ),
         if (onRetry != null) ...[
           const SizedBox(height: AppSpacing.md),
-          OutlinedButton(onPressed: onRetry, child: const Text('Retry')),
+          OutlinedButton(
+            onPressed: onRetry,
+            child: Text(context.l10n.commonRetry),
+          ),
         ],
         const Spacer(),
       ],
@@ -147,7 +150,9 @@ class _MistakeReviewFlow extends HookConsumerWidget {
     };
 
     final isSurePhase = phase.value == _MistakeReviewPhase.sure;
-    final segmentLabel = isSurePhase ? 'Sure + wrong' : 'Edu guess + wrong';
+    final segmentLabel = isSurePhase
+        ? context.l10n.resultsSureWrongSeg
+        : context.l10n.resultsEduWrongSeg;
     final segmentColor = isSurePhase
         ? AppColors.coachDangerTitleText
         : AppColors.warningText;

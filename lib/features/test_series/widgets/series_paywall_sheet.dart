@@ -49,7 +49,9 @@ class SeriesPaywallSheet extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
     final service = ref.watch(testSeriesPurchaseServiceProvider);
-    final productAsync = ref.watch(seriesProductProvider(bundle.info.productId));
+    final productAsync = ref.watch(
+      seriesProductProvider(bundle.info.productId),
+    );
     final busy = useState(false);
     final canSell = ref.watch(testSeriesCanSellProvider).asData?.value ?? false;
     final access = ref.watch(testSeriesAccessServiceProvider);
@@ -73,7 +75,9 @@ class SeriesPaywallSheet extends HookConsumerWidget {
 
     void toast(String message) {
       if (!context.mounted) return;
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message)));
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text(message)));
     }
 
     Future<void> buy() async {
@@ -83,7 +87,8 @@ class SeriesPaywallSheet extends HookConsumerWidget {
         final signedIn = await ensureAccountSignedIn(
           context: context,
           ref: ref,
-          reason: 'Sign in with Google so your purchase is saved to your account.',
+          reason:
+              'Sign in with Google so your purchase is saved to your account.',
         );
         if (!signedIn || !context.mounted) return;
 
@@ -92,7 +97,9 @@ class SeriesPaywallSheet extends HookConsumerWidget {
             productAsync.asData?.value ??
             await service.loadProduct(bundle.info.productId);
         if (product == null) {
-          toast('This pass is not available right now. Please try again later.');
+          toast(
+            'This pass is not available right now. Please try again later.',
+          );
           return;
         }
         final outcome = await service.buy(product);
@@ -194,7 +201,8 @@ class SeriesPaywallSheet extends HookConsumerWidget {
       }
       await redeem(
         code,
-        signInReason: 'Sign in with Google so your access is saved to your account.',
+        signInReason:
+            'Sign in with Google so your access is saved to your account.',
       );
     }
 
@@ -258,19 +266,33 @@ class SeriesPaywallSheet extends HookConsumerWidget {
             Text(
               'One payment. No subscription. Yours forever, including every '
               'test added later.',
-              style: AppTextStyles.bodyMd().copyWith(color: scheme.onSurfaceVariant),
+              style: AppTextStyles.bodyMd().copyWith(
+                color: scheme.onSurfaceVariant,
+              ),
             ),
             const SizedBox(height: AppSpacing.lg),
-            _Bullet('$staticCount subject tests, 50 questions each, with 10% PYQs'),
-            _Bullet('$ca current-affairs tests, added on the 1st of every month'),
-            _Bullet('$mocks full-length mocks that mirror the real paper (100 Q, 2 hrs)'),
-            const _Bullet('Hindi and English on every question and explanation'),
-            const _Bullet('Dashboard: accuracy by subject, danger-zone and risk topics'),
+            _Bullet(
+              '$staticCount subject tests, 50 questions each, with 10% PYQs',
+            ),
+            _Bullet(
+              '$ca current-affairs tests, added on the 1st of every month',
+            ),
+            _Bullet(
+              '$mocks full-length mocks that mirror the real paper (100 Q, 2 hrs)',
+            ),
+            const _Bullet(
+              'Hindi and English on every question and explanation',
+            ),
+            const _Bullet(
+              'Dashboard: accuracy by subject, danger-zone and risk topics',
+            ),
             if (free > 0) ...[
               const SizedBox(height: AppSpacing.sm),
               Text(
                 '$free tests are free to try first, including all PYQ tests.',
-                style: AppTextStyles.bodySm().copyWith(color: scheme.onSurfaceVariant),
+                style: AppTextStyles.bodySm().copyWith(
+                  color: scheme.onSurfaceVariant,
+                ),
               ),
             ],
             const SizedBox(height: AppSpacing.xl),
@@ -304,7 +326,9 @@ class SeriesPaywallSheet extends HookConsumerWidget {
                         child: CircularProgressIndicator(strokeWidth: 2),
                       )
                     : Text(
-                        price == null ? 'Unlock all tests' : 'Unlock all tests · $price',
+                        price == null
+                            ? 'Unlock all tests'
+                            : 'Unlock all tests · $price',
                       ),
               ),
             const SizedBox(height: AppSpacing.sm),
@@ -381,7 +405,11 @@ class _Bullet extends StatelessWidget {
         children: [
           const Padding(
             padding: EdgeInsets.only(top: 2),
-            child: Icon(Icons.check_circle_rounded, size: 18, color: AppColors.primary),
+            child: Icon(
+              Icons.check_circle_rounded,
+              size: 18,
+              color: AppColors.primary,
+            ),
           ),
           const SizedBox(width: AppSpacing.sm),
           Expanded(child: Text(text, style: AppTextStyles.bodyMd())),

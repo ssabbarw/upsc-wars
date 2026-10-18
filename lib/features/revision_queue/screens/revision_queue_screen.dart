@@ -12,6 +12,7 @@ import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../core/theme/reading_font_scale.dart';
+import '../../../l10n/l10n.dart';
 
 class RevisionQueueScreen extends HookConsumerWidget {
   const RevisionQueueScreen({super.key});
@@ -85,7 +86,7 @@ class RevisionQueueScreen extends HookConsumerWidget {
                               ),
                             ),
                             Text(
-                              '${filtered.length} question${filtered.length == 1 ? '' : 's'}',
+                              context.l10n.commonQuestionCount(filtered.length),
                               style: AppTextStyles.bodySm().copyWith(
                                 color: scheme.onSurfaceVariant,
                               ),
@@ -138,7 +139,7 @@ class RevisionQueueScreen extends HookConsumerWidget {
                               backgroundColor: AppColors.primary,
                             ),
                             child: Text(
-                              'Start revision session',
+                              context.l10n.revisionStartSession,
                               style: AppTextStyles.label(),
                             ),
                           ),
@@ -152,7 +153,7 @@ class RevisionQueueScreen extends HookConsumerWidget {
                       backgroundColor: AppColors.primary,
                     ),
                     child: Text(
-                      'Start revision session',
+                      context.l10n.revisionStartSession,
                       style: AppTextStyles.label(),
                     ),
                   ),
@@ -181,7 +182,10 @@ class RevisionQueueScreen extends HookConsumerWidget {
                 error: (e, st) => Center(
                   child: OutlinedButton(
                     onPressed: () => ref.invalidate(revisionQueueItemsProvider),
-                    child: Text('Retry', style: AppTextStyles.label()),
+                    child: Text(
+                      context.l10n.commonRetry,
+                      style: AppTextStyles.label(),
+                    ),
                   ),
                 ),
                 data: (items) {
@@ -192,14 +196,14 @@ class RevisionQueueScreen extends HookConsumerWidget {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Text(
-                            'Your revision queue is empty',
+                            context.l10n.revisionEmptyTitle,
                             style: AppTextStyles.h3().copyWith(
                               color: scheme.onSurface,
                             ),
                           ),
                           const SizedBox(height: AppSpacing.sm),
                           Text(
-                            'Questions you get wrong or bookmark will appear here',
+                            context.l10n.revisionEmptyBody,
                             style: AppTextStyles.bodySm().copyWith(
                               color: scheme.onSurfaceVariant,
                             ),
@@ -211,7 +215,7 @@ class RevisionQueueScreen extends HookConsumerWidget {
                   if (filtered.isEmpty) {
                     return Center(
                       child: Text(
-                        'No items for this subject.',
+                        context.l10n.revisionNoItemsSubject,
                         style: AppTextStyles.bodySm().copyWith(
                           color: scheme.onSurfaceVariant,
                         ),
@@ -259,7 +263,7 @@ class _SubjectFilterChips extends StatelessWidget {
     Widget chip(String? subject) {
       final isAll = subject == null;
       final label = isAll
-          ? 'All'
+          ? context.l10n.commonAll
           : (SubjectConstants.bySlug(subject)?.displayName ?? subject);
       final isSelected = selected == subject;
       return Padding(
@@ -297,7 +301,7 @@ class _SubjectFilterChips extends StatelessWidget {
       ),
       child: Row(
         children: [
-          chip(null), // "All" chip
+          chip(null), // context.l10n.commonAll chip
           ...subjects.map(chip),
         ],
       ),
@@ -365,7 +369,9 @@ class _Row extends HookConsumerWidget {
                   borderRadius: BorderRadius.circular(AppRadius.sm),
                 ),
                 child: Text(
-                  mastered ? 'Mastered' : 'In queue',
+                  mastered
+                      ? context.l10n.revisionMastered
+                      : context.l10n.revisionInQueue,
                   style: AppTextStyles.caption().copyWith(color: badgeFg),
                 ),
               ),

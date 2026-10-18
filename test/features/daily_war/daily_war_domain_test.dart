@@ -307,10 +307,10 @@ void main() {
     });
 
     test('stringifies non-String list entries instead of dropping them', () {
-      expect(
-        DailyWarDoc.parseQuestionUuids(<dynamic>[1, 'abc', null, '']),
-        ['1', 'abc'],
-      );
+      expect(DailyWarDoc.parseQuestionUuids(<dynamic>[1, 'abc', null, '']), [
+        '1',
+        'abc',
+      ]);
     });
   });
 

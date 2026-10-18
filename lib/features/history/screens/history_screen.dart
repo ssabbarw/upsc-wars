@@ -98,7 +98,10 @@ class HistoryScreen extends HookConsumerWidget {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Text(context.l10n.historyLoadFailed, style: AppTextStyles.body()),
+                  Text(
+                    context.l10n.historyLoadFailed,
+                    style: AppTextStyles.body(),
+                  ),
                   const SizedBox(height: AppSpacing.md),
                   OutlinedButton(
                     onPressed: () => ref.invalidate(
@@ -107,7 +110,10 @@ class HistoryScreen extends HookConsumerWidget {
                         mode: filters.mode,
                       ),
                     ),
-                    child: Text(context.l10n.commonRetry, style: AppTextStyles.label()),
+                    child: Text(
+                      context.l10n.commonRetry,
+                      style: AppTextStyles.label(),
+                    ),
                   ),
                 ],
               ),
@@ -159,9 +165,7 @@ class HistoryScreen extends HookConsumerWidget {
     if (embedded) return body;
 
     return PopToShellHomeScope(
-      child: Scaffold(
-        body: SafeArea(child: body),
-      ),
+      child: Scaffold(body: SafeArea(child: body)),
     );
   }
 }
@@ -176,14 +180,21 @@ class _FilterStrip extends HookConsumerWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final border = isDark ? AppColors.borderDark : AppColors.borderLight;
 
-    Widget pill(String label, bool selected, VoidCallback onTap) => GestureDetector(
+    Widget pill(String label, bool selected, VoidCallback onTap) =>
+        GestureDetector(
           onTap: onTap,
           child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg, vertical: AppSpacing.sm),
+            padding: const EdgeInsets.symmetric(
+              horizontal: AppSpacing.lg,
+              vertical: AppSpacing.sm,
+            ),
             decoration: BoxDecoration(
               color: selected ? AppColors.primary : scheme.surface,
               borderRadius: BorderRadius.circular(AppRadius.pill),
-              border: Border.all(color: selected ? AppColors.primary : border, width: 0.5),
+              border: Border.all(
+                color: selected ? AppColors.primary : border,
+                width: 0.5,
+              ),
             ),
             child: Text(
               label,
@@ -201,15 +212,35 @@ class _FilterStrip extends HookConsumerWidget {
         scrollDirection: Axis.horizontal,
         padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
         children: [
-          pill(context.l10n.commonAll, filters.subject == null && filters.mode == null, () => ref.read(historyFilterStateProvider.notifier).setAll()),
+          pill(
+            context.l10n.commonAll,
+            filters.subject == null && filters.mode == null,
+            () => ref.read(historyFilterStateProvider.notifier).setAll(),
+          ),
           const SizedBox(width: AppSpacing.sm),
           for (final s in SubjectConstants.ordered) ...[
-            pill(s.displayName, filters.subject == s.slug, () => ref.read(historyFilterStateProvider.notifier).setSubject(s.slug)),
+            pill(
+              s.displayName,
+              filters.subject == s.slug,
+              () => ref
+                  .read(historyFilterStateProvider.notifier)
+                  .setSubject(s.slug),
+            ),
             const SizedBox(width: AppSpacing.sm),
           ],
-          pill('Exam', filters.mode == 'exam', () => ref.read(historyFilterStateProvider.notifier).setMode('exam')),
+          pill(
+            'Exam',
+            filters.mode == 'exam',
+            () => ref.read(historyFilterStateProvider.notifier).setMode('exam'),
+          ),
           const SizedBox(width: AppSpacing.sm),
-          pill('Learning', filters.mode == 'learning', () => ref.read(historyFilterStateProvider.notifier).setMode('learning')),
+          pill(
+            'Learning',
+            filters.mode == 'learning',
+            () => ref
+                .read(historyFilterStateProvider.notifier)
+                .setMode('learning'),
+          ),
         ],
       ),
     );
@@ -230,22 +261,22 @@ class _SessionCard extends HookConsumerWidget {
     final modeBg = summary.status == 'abandoned'
         ? scheme.surfaceContainerLow
         : summary.status == 'in_progress'
-            ? (isDark ? AppColors.warningBgDark : AppColors.warningBg)
-            : summary.mode == 'exam'
-                ? (isDark ? AppColors.infoBgDark : AppColors.infoBg)
-                : (isDark ? AppColors.primaryDeep : AppColors.primaryLight);
+        ? (isDark ? AppColors.warningBgDark : AppColors.warningBg)
+        : summary.mode == 'exam'
+        ? (isDark ? AppColors.infoBgDark : AppColors.infoBg)
+        : (isDark ? AppColors.primaryDeep : AppColors.primaryLight);
     final modeFg = summary.status == 'abandoned'
         ? scheme.onSurfaceVariant
         : summary.status == 'in_progress'
-            ? (isDark ? AppColors.warningTextDark : AppColors.warningText)
-            : summary.mode == 'exam'
-                ? (isDark ? AppColors.infoTextDark : AppColors.infoText)
-                : (isDark ? AppColors.onPrimary : AppColors.primaryDeep);
+        ? (isDark ? AppColors.warningTextDark : AppColors.warningText)
+        : summary.mode == 'exam'
+        ? (isDark ? AppColors.infoTextDark : AppColors.infoText)
+        : (isDark ? AppColors.onPrimary : AppColors.primaryDeep);
     final modeLabel = summary.status == 'abandoned'
         ? context.l10n.historyAbandoned
         : summary.status == 'in_progress'
-            ? context.l10n.historyInProgress
-            : (summary.mode == 'exam' ? 'Exam' : 'Learning');
+        ? context.l10n.historyInProgress
+        : (summary.mode == 'exam' ? 'Exam' : 'Learning');
 
     final accColor = switch (summary.accuracyTier) {
       'high' => AppColors.correct,
@@ -254,8 +285,12 @@ class _SessionCard extends HookConsumerWidget {
       _ => scheme.onSurfaceVariant,
     };
 
-    final score = summary.correct == null ? '—' : '${summary.correct}/${summary.questionCount}';
-    final avg = summary.avgTimeSpentSecs == null ? '—' : formatMmSsFromSecs(summary.avgTimeSpentSecs!.round());
+    final score = summary.correct == null
+        ? '—'
+        : '${summary.correct}/${summary.questionCount}';
+    final avg = summary.avgTimeSpentSecs == null
+        ? '—'
+        : formatMmSsFromSecs(summary.avgTimeSpentSecs!.round());
 
     return Container(
       decoration: BoxDecoration(
@@ -267,7 +302,12 @@ class _SessionCard extends HookConsumerWidget {
       ),
       child: Container(
         decoration: summary.status == 'in_progress'
-            ? BoxDecoration(border: Border(left: BorderSide(color: AppColors.warning, width: 2)), borderRadius: BorderRadius.circular(AppRadius.lg))
+            ? BoxDecoration(
+                border: Border(
+                  left: BorderSide(color: AppColors.warning, width: 2),
+                ),
+                borderRadius: BorderRadius.circular(AppRadius.lg),
+              )
             : null,
         child: Padding(
           padding: const EdgeInsets.all(AppSpacing.lg),
@@ -284,23 +324,35 @@ class _SessionCard extends HookConsumerWidget {
                           subj,
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
-                          style: AppTextStyles.label().copyWith(color: scheme.onSurface),
+                          style: AppTextStyles.label().copyWith(
+                            color: scheme.onSurface,
+                          ),
                         ),
                         if (summary.topic != null)
                           Text(
                             summary.topic!,
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
-                            style: AppTextStyles.bodySm()
-                                .copyWith(color: scheme.onSurfaceVariant),
+                            style: AppTextStyles.bodySm().copyWith(
+                              color: scheme.onSurfaceVariant,
+                            ),
                           ),
                       ],
                     ),
                   ),
                   Container(
-                    padding: const EdgeInsets.symmetric(horizontal: AppSpacing.sm, vertical: AppSpacing.xs),
-                    decoration: BoxDecoration(color: modeBg, borderRadius: BorderRadius.circular(AppRadius.sm)),
-                    child: Text(modeLabel, style: AppTextStyles.caption().copyWith(color: modeFg)),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: AppSpacing.sm,
+                      vertical: AppSpacing.xs,
+                    ),
+                    decoration: BoxDecoration(
+                      color: modeBg,
+                      borderRadius: BorderRadius.circular(AppRadius.sm),
+                    ),
+                    child: Text(
+                      modeLabel,
+                      style: AppTextStyles.caption().copyWith(color: modeFg),
+                    ),
                   ),
                 ],
               ),
@@ -310,10 +362,34 @@ class _SessionCard extends HookConsumerWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(summary.accuracy == null ? '—' : '${summary.accuracy!.toStringAsFixed(1)}%', style: AppTextStyles.labelSm().copyWith(color: accColor)),
-                  Text(summary.status == 'in_progress' ? context.l10n.historyScoreDone(score) : score, style: AppTextStyles.labelSm().copyWith(color: scheme.onSurface)),
-                  Text(summary.netScore == null ? '—' : 'net ${summary.netScore!.toStringAsFixed(1)}', style: AppTextStyles.caption().copyWith(color: scheme.onSurfaceVariant)),
-                  Text(avg, style: AppTextStyles.caption().copyWith(color: scheme.onSurfaceVariant)),
+                  Text(
+                    summary.accuracy == null
+                        ? '—'
+                        : '${summary.accuracy!.toStringAsFixed(1)}%',
+                    style: AppTextStyles.labelSm().copyWith(color: accColor),
+                  ),
+                  Text(
+                    summary.status == 'in_progress'
+                        ? context.l10n.historyScoreDone(score)
+                        : score,
+                    style: AppTextStyles.labelSm().copyWith(
+                      color: scheme.onSurface,
+                    ),
+                  ),
+                  Text(
+                    summary.netScore == null
+                        ? '—'
+                        : 'net ${summary.netScore!.toStringAsFixed(1)}',
+                    style: AppTextStyles.caption().copyWith(
+                      color: scheme.onSurfaceVariant,
+                    ),
+                  ),
+                  Text(
+                    avg,
+                    style: AppTextStyles.caption().copyWith(
+                      color: scheme.onSurfaceVariant,
+                    ),
+                  ),
                 ],
               ),
               const SizedBox(height: AppSpacing.md),
@@ -322,7 +398,9 @@ class _SessionCard extends HookConsumerWidget {
                   Expanded(
                     child: Text(
                       DateFormat('dd MMM, hh:mm a').format(summary.createdAt),
-                      style: AppTextStyles.caption().copyWith(color: scheme.onSurfaceVariant),
+                      style: AppTextStyles.caption().copyWith(
+                        color: scheme.onSurfaceVariant,
+                      ),
                     ),
                   ),
                   if (summary.status == 'completed')
@@ -338,16 +416,20 @@ class _SessionCard extends HookConsumerWidget {
                       style: ElevatedButton.styleFrom(
                         backgroundColor: AppColors.primary,
                       ),
-                      child: Text(context.l10n.commonResume, style: AppTextStyles.labelSm()),
+                      child: Text(
+                        context.l10n.commonResume,
+                        style: AppTextStyles.labelSm(),
+                      ),
                     )
                   else
                     OutlinedButton(
                       onPressed: () => context.push(
-                        summary.topic == null
-                            ? '/subject-test'
-                            : '/topic-test',
+                        summary.topic == null ? '/subject-test' : '/topic-test',
                       ),
-                      child: Text(context.l10n.historyRestart, style: AppTextStyles.labelSm()),
+                      child: Text(
+                        context.l10n.historyRestart,
+                        style: AppTextStyles.labelSm(),
+                      ),
                     ),
                 ],
               ),

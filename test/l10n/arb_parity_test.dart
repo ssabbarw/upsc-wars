@@ -17,10 +17,9 @@ void main() {
   Set<String> placeholders(String message) {
     // Top-level `{name}` args; ICU plural/select blocks only contribute their
     // selector, which is declared in the template metadata anyway.
-    return RegExp(r'\{(\w+)(?:,|\})')
-        .allMatches(message)
-        .map((m) => m.group(1)!)
-        .toSet();
+    return RegExp(
+      r'\{(\w+)(?:,|\})',
+    ).allMatches(message).map((m) => m.group(1)!).toSet();
   }
 
   test('hindi has every english key', () {

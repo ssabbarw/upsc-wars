@@ -24,8 +24,18 @@ String _plural(int n, String one, [String? many]) =>
     '$n ${n == 1 ? one : (many ?? '${one}s')}';
 
 const _months = [
-  'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-  'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',
+  'Jan',
+  'Feb',
+  'Mar',
+  'Apr',
+  'May',
+  'Jun',
+  'Jul',
+  'Aug',
+  'Sep',
+  'Oct',
+  'Nov',
+  'Dec',
 ];
 
 // ─────────────────────────────────────────────────────────────────────────
@@ -226,7 +236,9 @@ class _HeroArt extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
                 boxShadow: [
                   BoxShadow(
-                    color: AppColors.gray900.withValues(alpha: isDark ? 0.5 : 0.14),
+                    color: AppColors.gray900.withValues(
+                      alpha: isDark ? 0.5 : 0.14,
+                    ),
                     blurRadius: 10,
                     offset: const Offset(0, 4),
                   ),
@@ -242,7 +254,10 @@ class _HeroArt extends StatelessWidget {
                       height: 14,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(4),
-                        border: Border.all(color: AppColors.gray200, width: 1.2),
+                        border: Border.all(
+                          color: AppColors.gray200,
+                          width: 1.2,
+                        ),
                       ),
                     ),
                   ),
@@ -373,7 +388,11 @@ class IntroCounts extends StatelessWidget {
           decoration: introCardDecoration(context),
           child: Row(
             children: [
-              stat(bundle.tests.length, 'Total tests', numberColor(SeriesTone.green)),
+              stat(
+                bundle.tests.length,
+                'Total tests',
+                numberColor(SeriesTone.green),
+              ),
               divider(),
               stat(flt, 'Full-length mocks', numberColor(SeriesTone.blue)),
               divider(),
@@ -535,43 +554,39 @@ class IntroExplanations extends ConsumerWidget {
         ? "From yesterday's current affairs"
         : 'A sample GS question';
 
-    Widget tile(
-      SeriesTone tone,
-      IconData icon,
-      String title,
-      String body,
-    ) => Expanded(
-      child: Container(
-        padding: const EdgeInsets.all(AppSpacing.md),
-        decoration: introCardDecoration(context, tone: tone),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            ToneIconBadge(icon: icon, tone: tone, size: 36),
-            const SizedBox(height: AppSpacing.sm),
-            Text(
-              title,
-              style: AppTextStyles.label().copyWith(
-                color: seriesToneColors(
-                  tone,
-                  isDark: Theme.of(context).brightness == Brightness.dark,
-                ).fg,
-                fontWeight: FontWeight.w700,
-              ),
+    Widget tile(SeriesTone tone, IconData icon, String title, String body) =>
+        Expanded(
+          child: Container(
+            padding: const EdgeInsets.all(AppSpacing.md),
+            decoration: introCardDecoration(context, tone: tone),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                ToneIconBadge(icon: icon, tone: tone, size: 36),
+                const SizedBox(height: AppSpacing.sm),
+                Text(
+                  title,
+                  style: AppTextStyles.label().copyWith(
+                    color: seriesToneColors(
+                      tone,
+                      isDark: Theme.of(context).brightness == Brightness.dark,
+                    ).fg,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+                const SizedBox(height: 2),
+                Text(
+                  body,
+                  style: AppTextStyles.caption().copyWith(
+                    color: scheme.onSurfaceVariant,
+                    height: 1.45,
+                    fontSize: 12,
+                  ),
+                ),
+              ],
             ),
-            const SizedBox(height: 2),
-            Text(
-              body,
-              style: AppTextStyles.caption().copyWith(
-                color: scheme.onSurfaceVariant,
-                height: 1.45,
-                fontSize: 12,
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
+          ),
+        );
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -875,7 +890,10 @@ class _BlindSpotVisual extends StatelessWidget {
           decoration: BoxDecoration(
             color: c.bg,
             borderRadius: BorderRadius.circular(AppRadius.md),
-            border: Border.all(color: c.accent.withValues(alpha: 0.4), width: 0.8),
+            border: Border.all(
+              color: c.accent.withValues(alpha: 0.4),
+              width: 0.8,
+            ),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -1176,7 +1194,9 @@ class IntroWrapUp extends StatelessWidget {
             ],
           ),
           const SizedBox(height: AppSpacing.md),
-          line('${_plural(bundle.tests.length, 'test')}: mocks, subjects and current affairs'),
+          line(
+            '${_plural(bundle.tests.length, 'test')}: mocks, subjects and current affairs',
+          ),
           line('Detailed explanations in English and हिन्दी'),
           line('Revision queue, blind spots and topic-wise analysis'),
           line('No subscription, no expiry. Tests added later are included.'),

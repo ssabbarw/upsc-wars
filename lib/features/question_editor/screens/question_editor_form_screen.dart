@@ -53,9 +53,7 @@ class QuestionEditorFormScreen extends HookConsumerWidget {
     }, [uuid]);
 
     if (loading.value) {
-      return const Scaffold(
-        body: Center(child: CircularProgressIndicator()),
-      );
+      return const Scaffold(body: Center(child: CircularProgressIndicator()));
     }
 
     if (error.value != null || draft.value == null) {
@@ -69,7 +67,9 @@ class QuestionEditorFormScreen extends HookConsumerWidget {
     final orig = original.value!;
     final hasTable = d.hasTable;
 
-    void patch(QuestionEditorDraft Function(QuestionEditorDraft current) update) {
+    void patch(
+      QuestionEditorDraft Function(QuestionEditorDraft current) update,
+    ) {
       draft.value = update(draft.value!);
     }
 
@@ -244,16 +244,20 @@ class _LangFields extends StatelessWidget {
     final ob = isHindi ? draft.optionBHi : draft.optionBEn;
     final oc = isHindi ? draft.optionCHi : draft.optionCEn;
     final od = isHindi ? draft.optionDHi : draft.optionDEn;
-    final body =
-        isHindi ? draft.finalExplanationBodyHi : draft.finalExplanationBodyEn;
+    final body = isHindi
+        ? draft.finalExplanationBodyHi
+        : draft.finalExplanationBodyEn;
     final valueAdd = isHindi ? draft.valueAdditionHi : draft.valueAdditionEn;
     final elim = isHindi ? draft.eliminationLogicHi : draft.eliminationLogicEn;
-    final distractor =
-        isHindi ? draft.strongDistractorHi : draft.strongDistractorEn;
-    final trap =
-        isHindi ? draft.upscTrapExplanationHi : draft.upscTrapExplanationEn;
-    final stmt =
-        isHindi ? draft.statementAnalysisHi : draft.statementAnalysisEn;
+    final distractor = isHindi
+        ? draft.strongDistractorHi
+        : draft.strongDistractorEn;
+    final trap = isHindi
+        ? draft.upscTrapExplanationHi
+        : draft.upscTrapExplanationEn;
+    final stmt = isHindi
+        ? draft.statementAnalysisHi
+        : draft.statementAnalysisEn;
     final lang = isHindi ? 'HI' : 'EN';
 
     return Column(
@@ -305,12 +309,7 @@ class _LangFields extends StatelessWidget {
         _field(
           'Elimination (one step per line)',
           elim.join('\n'),
-          (v) => onPatch(
-            (current) => patchLang(
-              current,
-              elim: v.split('\n'),
-            ),
-          ),
+          (v) => onPatch((current) => patchLang(current, elim: v.split('\n'))),
           minLines: 6,
           lang: lang,
         ),

@@ -99,8 +99,7 @@ class DailyWarWeekSummary {
   int get totalQuestions => correct + wrong + unanswered;
 
   bool get attemptedNone => attemptedNights == 0;
-  bool get attemptedAll =>
-      warNights > 0 && attemptedNights >= warNights;
+  bool get attemptedAll => warNights > 0 && attemptedNights >= warNights;
   bool get attemptedPartial =>
       attemptedNights > 0 && attemptedNights < warNights;
 
@@ -115,9 +114,7 @@ class DailyWarWeekSummary {
     final sunday = DailyWarSchedule.dateOnly(sundayIst);
     final monday = sunday.subtract(Duration(days: sunday.weekday - 1));
 
-    final byId = <String, DailyWarDoc>{
-      for (final w in wars) w.dateId: w,
-    };
+    final byId = <String, DailyWarDoc>{for (final w in wars) w.dateId: w};
 
     final days = <DailyWarWeekDayCell>[];
     var attempted = 0;
@@ -174,8 +171,8 @@ class DailyWarWeekSummary {
             percentileSum += pct;
             percentileN++;
           }
-          final tier = sub.tierId ??
-              DailyWarBadges.tierIdForDays(sub.streakDays);
+          final tier =
+              sub.tierId ?? DailyWarBadges.tierIdForDays(sub.streakDays);
           if (tier != null) {
             badgeTally[tier] = (badgeTally[tier] ?? 0) + 1;
           }
@@ -212,10 +209,11 @@ class DailyWarWeekSummary {
         ? ((syllabusTopicsCovered / 12).floor() + 1).clamp(1, 99)
         : 1;
 
-    final badgeCounts = badgeTally.entries
-        .map((e) => DailyWarBadgeCount(badgeId: e.key, count: e.value))
-        .toList()
-      ..sort((a, b) => b.count.compareTo(a.count));
+    final badgeCounts =
+        badgeTally.entries
+            .map((e) => DailyWarBadgeCount(badgeId: e.key, count: e.value))
+            .toList()
+          ..sort((a, b) => b.count.compareTo(a.count));
 
     return DailyWarWeekSummary(
       monday: monday,

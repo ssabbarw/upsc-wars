@@ -35,9 +35,6 @@ void showTopSnackBar(
     top: true,
     action: action == null
         ? null
-        : AppToastAction(
-            label: action.label,
-            onPressed: action.onPressed,
-          ),
+        : AppToastAction(label: action.label, onPressed: action.onPressed),
   );
 }

@@ -56,9 +56,7 @@ class DailyCaAdminCloudService {
         'adminAutoPublishDailyCa',
         options: HttpsCallableOptions(timeout: const Duration(minutes: 9)),
       );
-      final result = await callable.call<Map<String, dynamic>>({
-        'date': date,
-      });
+      final result = await callable.call<Map<String, dynamic>>({'date': date});
       final count = result.data['count'];
       if (count is int) return count;
       if (count is num) return count.toInt();

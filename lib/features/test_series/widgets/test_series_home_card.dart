@@ -19,7 +19,8 @@ class TestSeriesHomeCard extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final visible = ref.watch(testSeriesEntryVisibleProvider).asData?.value ?? false;
+    final visible =
+        ref.watch(testSeriesEntryVisibleProvider).asData?.value ?? false;
     if (!visible) return const SizedBox.shrink();
 
     final scheme = Theme.of(context).colorScheme;
@@ -27,7 +28,8 @@ class TestSeriesHomeCard extends ConsumerWidget {
     final isHindi = ref.watch(appLanguageProvider).asData?.value == 'hi';
 
     final seriesId = ref.watch(activeSeriesIdProvider).asData?.value;
-    final ownedIds = ref.watch(ownedSeriesIdsProvider).asData?.value ?? const {};
+    final ownedIds =
+        ref.watch(ownedSeriesIdsProvider).asData?.value ?? const {};
     final owned = seriesId != null && ownedIds.contains(seriesId);
 
     final bundle = seriesId == null
@@ -37,7 +39,8 @@ class TestSeriesHomeCard extends ConsumerWidget {
         ? null
         : ref.watch(seriesStatsProvider(seriesId)).asData?.value;
 
-    final title = bundle?.info.displayTitle(hindi: isHindi) ?? 'Prelims Test Series';
+    final title =
+        bundle?.info.displayTitle(hindi: isHindi) ?? 'Prelims Test Series';
 
     final String subtitle;
     if (owned && stats != null) {
@@ -67,7 +70,9 @@ class TestSeriesHomeCard extends ConsumerWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(AppRadius.lg),
               border: Border.all(
-                color: AppColors.warning.withValues(alpha: isDark ? 0.55 : 0.45),
+                color: AppColors.warning.withValues(
+                  alpha: isDark ? 0.55 : 0.45,
+                ),
                 width: 1,
               ),
               color: AppColors.warning.withValues(alpha: isDark ? 0.10 : 0.06),

@@ -30,6 +30,7 @@ class SafeAreaRow {
   final String displayName;
   final int confidentTotal;
   final int confidentCorrect;
+
   /// 0–100, one decimal where useful
   final double ratePercent;
   final double globalRatePercent;
@@ -48,13 +49,16 @@ class SubjectMockPrepInsights {
 
   final List<ReviseBeforeMockRow> reviseTopics;
   final List<SafeAreaRow> safeTopics;
+
   /// Share of (very_sure + somewhat_sure) scored attempts that are **correct**, all subjects. Null if none.
   final double? globalConfidentRatePercent;
+
   /// Share of those same attempts that are **wrong**, all subjects. Null if none.
   final double? globalConfidentMistakeRatePercent;
 
   /// Topics with at least one confident wrong (lifetime), before UI list cap.
   final int reviseTopicTotalCount;
+
   /// Topics that qualify as “safe” (lifetime), before UI list cap.
   final int safeTopicTotalCount;
 

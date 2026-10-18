@@ -67,6 +67,7 @@ dependencies:
   app_settings: ^7.0.0
   wakelock_plus: ^1.6.0
   purchases_flutter: ^10.16.0
+  posthog_flutter: ^5.55.0
 
 dev_dependencies:
   flutter_test:

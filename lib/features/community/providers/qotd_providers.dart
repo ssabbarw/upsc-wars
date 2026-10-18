@@ -11,12 +11,10 @@ import '../data/qotd_repository.dart';
 import '../domain/qotd_models.dart';
 
 /// Live list of QOTD attempts for one post (newest [QotdAttemptEntry.attemptedAt] first).
-final qotdPostAttemptsProvider =
-    StreamProvider.autoDispose.family<List<QotdAttemptEntry>, String>(
-  (ref, postId) {
-    return ref.read(qotdRepositoryProvider).watchAttempts(postId);
-  },
-);
+final qotdPostAttemptsProvider = StreamProvider.autoDispose
+    .family<List<QotdAttemptEntry>, String>((ref, postId) {
+      return ref.read(qotdRepositoryProvider).watchAttempts(postId);
+    });
 
 /// [TestQuestion] plus catalog fields not on [TestQuestion] (e.g. subtopic).
 class QotdQuestionVm {
@@ -36,8 +34,9 @@ final qotdMaxPostsPerDayProvider = FutureProvider<int>((ref) async {
   if (kIsWeb) return 3;
   await ref.watch(killSwitchProvider.future);
   try {
-    final n = FirebaseRemoteConfig.instance
-        .getInt(qotdMaxPostsPerDayRemoteConfigKey);
+    final n = FirebaseRemoteConfig.instance.getInt(
+      qotdMaxPostsPerDayRemoteConfigKey,
+    );
     if (n <= 0) return 3;
     if (n > 99) return 99;
     return n;
@@ -48,13 +47,16 @@ final qotdMaxPostsPerDayProvider = FutureProvider<int>((ref) async {
 
 final qotdQuestionByUuidProvider =
     FutureProvider.family<QotdQuestionVm?, String>((ref, uuid) async {
-  final repo = await ref.watch(testEngineRepositoryProvider.future);
-  final q = await repo.loadStandaloneQuestionByUuid(uuid);
-  if (q == null) return null;
-  final row = await ref.read(userDatabaseProvider).questionsDao.getByUuid(uuid);
-  final sub = (row?.subTopic ?? '').trim();
-  return QotdQuestionVm(question: q, subTopic: sub);
-});
+      final repo = await ref.watch(testEngineRepositoryProvider.future);
+      final q = await repo.loadStandaloneQuestionByUuid(uuid);
+      if (q == null) return null;
+      final row = await ref
+          .read(userDatabaseProvider)
+          .questionsDao
+          .getByUuid(uuid);
+      final sub = (row?.subTopic ?? '').trim();
+      return QotdQuestionVm(question: q, subTopic: sub);
+    });
 
 class QotdFeedView {
   const QotdFeedView({required this.posts, required this.hasMore});
@@ -110,10 +112,7 @@ class QotdFeedNotifier extends AsyncNotifier<QotdFeedView> {
     _loadMoreInFlight = true;
     try {
       final repo = ref.read(qotdRepositoryProvider);
-      final page = await repo.fetchPage(
-        limit: _pageSize,
-        startAfter: _cursor,
-      );
+      final page = await repo.fetchPage(limit: _pageSize, startAfter: _cursor);
       if (page.posts.isEmpty) {
         state = AsyncData(vm.copyWith(hasMore: false));
         return;
@@ -121,10 +120,7 @@ class QotdFeedNotifier extends AsyncNotifier<QotdFeedView> {
       _cursor = page.last;
       final hasMore = page.posts.length >= _pageSize;
       state = AsyncData(
-        QotdFeedView(
-          posts: [...vm.posts, ...page.posts],
-          hasMore: hasMore,
-        ),
+        QotdFeedView(posts: [...vm.posts, ...page.posts], hasMore: hasMore),
       );
     } finally {
       _loadMoreInFlight = false;

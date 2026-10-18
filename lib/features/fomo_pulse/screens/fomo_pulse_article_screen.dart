@@ -83,7 +83,9 @@ class FomoPulseArticleScreen extends HookConsumerWidget {
     useEffect(() {
       unawaited(() async {
         try {
-          final llm = await ref.read(llmAdminCloudServiceProvider).getSettings();
+          final llm = await ref
+              .read(llmAdminCloudServiceProvider)
+              .getSettings();
           llmModels.value = llm.models;
           shotsModel.value = llm.shotsModel;
         } catch (e, st) {
@@ -437,9 +439,7 @@ class FomoPulseArticleScreen extends HookConsumerWidget {
                     )
                   : const Icon(Icons.auto_awesome),
               label: Text(
-                generating.value
-                    ? 'Making question + Hindi…'
-                    : 'Make question',
+                generating.value ? 'Making question + Hindi…' : 'Make question',
               ),
             ),
           ] else ...[
@@ -615,9 +615,9 @@ class FomoPulseArticleScreen extends HookConsumerWidget {
               current.question.hasHindi &&
                       current.newsSummaryHi.trim().isNotEmpty
                   ? 'English + Hindi are attached (summary and MCQ). '
-                      'Readers see Hindi when app language is Hindi.'
+                        'Readers see Hindi when app language is Hindi.'
                   : 'Hindi missing — generate usually adds it. '
-                      'Tap translate before posting so both languages are stored.',
+                        'Tap translate before posting so both languages are stored.',
               style: AppTextStyles.caption().copyWith(
                 color: scheme.onSurfaceVariant,
               ),

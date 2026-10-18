@@ -20,10 +20,7 @@ FomoPulse _pulse({int attempts = 0, int correct = 0}) {
 void main() {
   group('FomoPulseCommunityStats', () {
     test('breakdown lists attempted, right, and wrong', () {
-      const stats = FomoPulseCommunityStats(
-        attemptCount: 12,
-        correctCount: 5,
-      );
+      const stats = FomoPulseCommunityStats(attemptCount: 12, correctCount: 5);
       expect(stats.wrongCount, 7);
       expect(stats.correctPct, 42);
       expect(stats.fellPct, 58);

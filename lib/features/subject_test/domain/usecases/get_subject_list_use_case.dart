@@ -18,7 +18,8 @@ class GetSubjectListUseCase {
   }
 
   SubjectInfo _mapSubject(SubjectDefinition def, SubjectMetrics? m) {
-    final metrics = m ??
+    final metrics =
+        m ??
         SubjectMetrics(
           subject: def.slug,
           questionCount: 0,

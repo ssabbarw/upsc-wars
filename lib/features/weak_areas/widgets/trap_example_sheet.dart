@@ -13,6 +13,7 @@ import '../../../shared/widgets/dismissible_modal_sheet.dart';
 import '../domain/trap_example.dart';
 import '../providers/trap_example_provider.dart';
 import 'trap_pattern_visual.dart';
+import '../../../l10n/l10n.dart';
 
 Future<void> showTrapExampleSheet({
   required BuildContext context,
@@ -100,7 +101,7 @@ class TrapExampleSheet extends HookConsumerWidget {
                     ),
                   ),
                   Text(
-                    'EXAMPLE',
+                    context.l10n.trapsExampleEyebrow,
                     style: AppTextStyles.caption().copyWith(
                       color: AppColors.wrong,
                       fontWeight: FontWeight.w800,
@@ -133,7 +134,7 @@ class TrapExampleSheet extends HookConsumerWidget {
                       child: Center(child: CircularProgressIndicator()),
                     ),
                     error: (_, _) => Text(
-                      'Could not load an example.',
+                      context.l10n.trapsExampleLoadFailed,
                       style: AppTextStyles.bodySm().copyWith(
                         color: scheme.onSurfaceVariant,
                       ),
@@ -141,7 +142,7 @@ class TrapExampleSheet extends HookConsumerWidget {
                     data: (example) {
                       if (example == null) {
                         return Text(
-                          'No example written for this trap yet.',
+                          context.l10n.trapsNoExample,
                           style: AppTextStyles.bodySm().copyWith(
                             color: scheme.onSurfaceVariant,
                           ),
@@ -203,7 +204,7 @@ class _TrapExampleMcq extends HookWidget {
         ],
         if (revealed) ...[
           Text(
-            gotIt ? 'You spotted it.' : "That's the trap.",
+            gotIt ? context.l10n.trapsSpotted : context.l10n.trapsThatsTheTrap,
             style: AppTextStyles.labelSm().copyWith(
               color: gotIt
                   ? (isDark ? AppColors.correctTextDark : AppColors.correctText)

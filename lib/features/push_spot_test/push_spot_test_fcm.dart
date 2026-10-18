@@ -21,8 +21,7 @@ abstract final class PushSpotTestFcm {
 
   /// Reads an exact question id from FCM custom data, if present.
   static String? questionUuidFromData(Map<String, dynamic> data) {
-    final raw =
-        data[dataKeyQuestionUuid] ?? data[dataKeyQuestionUuidAlt];
+    final raw = data[dataKeyQuestionUuid] ?? data[dataKeyQuestionUuidAlt];
     final s = raw?.toString().trim();
     if (s == null || s.isEmpty) return null;
     return s;

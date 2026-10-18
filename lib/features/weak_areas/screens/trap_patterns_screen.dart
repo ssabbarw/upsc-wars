@@ -19,6 +19,7 @@ import '../domain/trap_pattern_catalog.dart';
 import '../widgets/trap_example_sheet.dart';
 import '../widgets/trap_pattern_card.dart';
 import '../widgets/trap_patterns_tracking_note.dart';
+import '../../../l10n/l10n.dart';
 
 class TrapPatternsScreen extends HookConsumerWidget {
   const TrapPatternsScreen({super.key});
@@ -42,37 +43,50 @@ class TrapPatternsScreen extends HookConsumerWidget {
           children: [
             Padding(
               padding: const EdgeInsets.fromLTRB(
-                AppSpacing.sm, AppSpacing.sm, AppSpacing.lg, AppSpacing.sm),
-              child: Row(children: [
-                IconButton(
-                  onPressed: () =>
-                      context.canPop() ? context.pop() : context.go('/weak-areas'),
-                  icon: const Icon(Icons.chevron_left),
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('Trap Patterns', style: AppTextStyles.h2()),
-                    descriptionsAsync.when(
-                      data: (descriptions) {
-                        final groups = trapsAsync.asData?.value ?? const [];
-                        final caught = groups
-                            .where((g) => g.questionCount > 0)
-                            .length;
-                        return Text(
-                          caught == 0
-                              ? '${descriptions.length} UPSC traps'
-                              : '$caught of ${descriptions.length} have caught you',
-                          style: AppTextStyles.bodySm()
-                              .copyWith(color: scheme.onSurfaceVariant),
-                        );
-                      },
-                      loading: () => const SizedBox.shrink(),
-                      error: (_, _) => const SizedBox.shrink(),
-                    ),
-                  ],
-                ),
-              ]),
+                AppSpacing.sm,
+                AppSpacing.sm,
+                AppSpacing.lg,
+                AppSpacing.sm,
+              ),
+              child: Row(
+                children: [
+                  IconButton(
+                    onPressed: () => context.canPop()
+                        ? context.pop()
+                        : context.go('/weak-areas'),
+                    icon: const Icon(Icons.chevron_left),
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('Trap Patterns', style: AppTextStyles.h2()),
+                      descriptionsAsync.when(
+                        data: (descriptions) {
+                          final groups = trapsAsync.asData?.value ?? const [];
+                          final caught = groups
+                              .where((g) => g.questionCount > 0)
+                              .length;
+                          return Text(
+                            caught == 0
+                                ? context.l10n.trapsCatalogCount(
+                                    descriptions.length,
+                                  )
+                                : context.l10n.trapsCaughtOfTotal(
+                                    caught,
+                                    descriptions.length,
+                                  ),
+                            style: AppTextStyles.bodySm().copyWith(
+                              color: scheme.onSurfaceVariant,
+                            ),
+                          );
+                        },
+                        loading: () => const SizedBox.shrink(),
+                        error: (_, _) => const SizedBox.shrink(),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
             Expanded(
               child: descriptionsAsync.when(
@@ -80,16 +94,17 @@ class TrapPatternsScreen extends HookConsumerWidget {
                 error: (e, st) => Center(
                   child: OutlinedButton(
                     onPressed: () => ref.invalidate(trapDescriptionsProvider),
-                    child: const Text('Retry'),
+                    child: Text(context.l10n.commonRetry),
                   ),
                 ),
                 data: (descriptions) {
                   if (descriptions.isEmpty) {
                     return Center(
                       child: Text(
-                        'No trap catalog yet',
-                        style: AppTextStyles.bodySm()
-                            .copyWith(color: scheme.onSurfaceVariant),
+                        context.l10n.trapsNoCatalog,
+                        style: AppTextStyles.bodySm().copyWith(
+                          color: scheme.onSurfaceVariant,
+                        ),
                       ),
                     );
                   }
@@ -106,12 +121,16 @@ class TrapPatternsScreen extends HookConsumerWidget {
                   return ListView.separated(
                     physics: const BouncingScrollPhysics(),
                     padding: const EdgeInsets.fromLTRB(
-                      AppSpacing.lg, AppSpacing.sm, AppSpacing.lg, AppSpacing.xxl),
+                      AppSpacing.lg,
+                      AppSpacing.sm,
+                      AppSpacing.lg,
+                      AppSpacing.xxl,
+                    ),
                     itemCount: items.length + 1,
                     separatorBuilder: (_, _) =>
                         const SizedBox(height: AppSpacing.sm),
                     itemBuilder: (context, i) {
-                      if (i == 0) return const TrapPatternsTrackingNote();
+                      if (i == 0) return TrapPatternsTrackingNote();
                       final item = items[i - 1];
                       return TrapPatternCard(
                         item: item,
@@ -140,17 +159,21 @@ class TrapPatternsScreen extends HookConsumerWidget {
   }
 
   Widget _skeleton(ColorScheme scheme) => ListView.separated(
-        physics: const NeverScrollableScrollPhysics(),
-        padding: const EdgeInsets.fromLTRB(
-          AppSpacing.lg, AppSpacing.sm, AppSpacing.lg, AppSpacing.xxl),
-        itemCount: 4,
-        separatorBuilder: (_, _) => const SizedBox(height: AppSpacing.sm),
-        itemBuilder: (_, _) => Container(
-          height: 96,
-          decoration: BoxDecoration(
-            color: scheme.surfaceContainerLow,
-            borderRadius: BorderRadius.circular(AppRadius.md),
-          ),
-        ),
-      );
+    physics: const NeverScrollableScrollPhysics(),
+    padding: const EdgeInsets.fromLTRB(
+      AppSpacing.lg,
+      AppSpacing.sm,
+      AppSpacing.lg,
+      AppSpacing.xxl,
+    ),
+    itemCount: 4,
+    separatorBuilder: (_, _) => const SizedBox(height: AppSpacing.sm),
+    itemBuilder: (_, _) => Container(
+      height: 96,
+      decoration: BoxDecoration(
+        color: scheme.surfaceContainerLow,
+        borderRadius: BorderRadius.circular(AppRadius.md),
+      ),
+    ),
+  );
 }

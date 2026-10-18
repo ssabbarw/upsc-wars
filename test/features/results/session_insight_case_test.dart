@@ -51,10 +51,7 @@ void main() {
     test('F when confidence tracking disabled', () {
       final r = _result(wrong: 5, sureTotal: 5);
       expect(
-        classifySessionInsight(
-          result: r,
-          confidenceTrackingEnabled: false,
-        ),
+        classifySessionInsight(result: r, confidenceTrackingEnabled: false),
         SessionInsightCase.fLockedSettings,
       );
     });
@@ -62,36 +59,21 @@ void main() {
     test('no attempts returns fNoAttempts', () {
       final r = _result(correct: 0, wrong: 0);
       expect(
-        classifySessionInsight(
-          result: r,
-          confidenceTrackingEnabled: true,
-        ),
+        classifySessionInsight(result: r, confidenceTrackingEnabled: true),
         SessionInsightCase.fNoAttempts,
       );
     });
 
     test('F when exam with low coverage', () {
-      final r = _result(
-        correct: 1,
-        wrong: 5,
-        sureTotal: 1,
-        sureCorrect: 1,
-      );
+      final r = _result(correct: 1, wrong: 5, sureTotal: 1, sureCorrect: 1);
       expect(
-        classifySessionInsight(
-          result: r,
-          confidenceTrackingEnabled: true,
-        ),
+        classifySessionInsight(result: r, confidenceTrackingEnabled: true),
         SessionInsightCase.fLockedSkipped,
       );
     });
 
     test('C when both sure and edu wrong', () {
-      final r = _result(
-        wrong: 3,
-        sureTotal: 2,
-        eduTotal: 1,
-      );
+      final r = _result(wrong: 3, sureTotal: 2, eduTotal: 1);
       expect(
         classifySessionInsight(
           result: r,
@@ -103,12 +85,7 @@ void main() {
     });
 
     test('A when sure wrong only', () {
-      final r = _result(
-        wrong: 2,
-        sureTotal: 2,
-        pureTotal: 1,
-        pureCorrect: 0,
-      );
+      final r = _result(wrong: 2, sureTotal: 2, pureTotal: 1, pureCorrect: 0);
       expect(
         classifySessionInsight(
           result: r,
@@ -120,10 +97,7 @@ void main() {
     });
 
     test('B when edu wrong only', () {
-      final r = _result(
-        wrong: 2,
-        eduTotal: 2,
-      );
+      final r = _result(wrong: 2, eduTotal: 2);
       expect(
         classifySessionInsight(
           result: r,
@@ -135,10 +109,7 @@ void main() {
     });
 
     test('D when pure guess wrong only', () {
-      final r = _result(
-        wrong: 3,
-        pureTotal: 3,
-      );
+      final r = _result(wrong: 3, pureTotal: 3);
       expect(
         classifySessionInsight(
           result: r,
@@ -150,11 +121,7 @@ void main() {
     });
 
     test('E when no wrong answers and test substantially complete', () {
-      final r = _result(
-        correct: 5,
-        sureTotal: 5,
-        sureCorrect: 5,
-      );
+      final r = _result(correct: 5, sureTotal: 5, sureCorrect: 5);
       expect(
         classifySessionInsight(
           result: r,

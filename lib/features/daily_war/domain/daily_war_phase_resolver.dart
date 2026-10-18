@@ -38,8 +38,8 @@ abstract final class DailyWarPhaseResolver {
     final lateJoin = DailyWarSchedule.lateJoinClosesAt(warDate);
     final liveEnd = DailyWarSchedule.liveEndsAt(
       warDate,
-      questionCount: questionCount ??
-          DailyWarSchedule.questionCountForDate(warDate),
+      questionCount:
+          questionCount ?? DailyWarSchedule.questionCountForDate(warDate),
     );
 
     if (referenceIst.isBefore(announceAt)) {

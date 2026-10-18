@@ -36,9 +36,7 @@ class DailyDrillState {
   };
 }
 
-final dailyDrillProvider = FutureProvider<DailyDrillState?>((
-  ref,
-) async {
+final dailyDrillProvider = FutureProvider<DailyDrillState?>((ref) async {
   // Show the revision card regardless of activation state — the card handles
   // empty queues gracefully and teaches new users what the queue is for.
   final prefs = await ref.watch(prefsServiceProvider.future);

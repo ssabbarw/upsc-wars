@@ -33,6 +33,7 @@ import '../widgets/admin_bot_label.dart';
 
 export '../widgets/community_user_profile_sheet.dart'
     show showCommunityUserProfileSheet;
+import '../../../l10n/l10n.dart';
 
 class CommunityScreen extends HookConsumerWidget {
   const CommunityScreen({
@@ -178,7 +179,8 @@ class _RecentTab extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final recent = ref.watch(communityRecentUsersProvider);
     final notifier = ref.read(communityRecentUsersProvider.notifier);
-    final currentUserEmail = AuthSession.emailOf(
+    final currentUserEmail =
+        AuthSession.emailOf(
           ref.watch(authStateChangesProvider).asData?.value,
         ) ??
         AuthSession.currentEmail();
@@ -238,13 +240,13 @@ class _RecentTab extends HookConsumerWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
-                  'Could not load recent users',
+                  context.l10n.commRecentFailed,
                   style: AppTextStyles.bodyMd(),
                 ),
                 const SizedBox(height: AppSpacing.sm),
                 OutlinedButton(
                   onPressed: () => ref.invalidate(communityRecentUsersProvider),
-                  child: const Text('Retry'),
+                  child: Text(context.l10n.commonRetry),
                 ),
               ],
             ),
@@ -289,7 +291,7 @@ class _RecentTab extends HookConsumerWidget {
                   ),
                   children: [
                     Text(
-                      'Tap a user to view profile and social links.',
+                      context.l10n.commTapUser,
                       style: AppTextStyles.bodySm().copyWith(
                         color: scheme.onSurfaceVariant,
                       ),
@@ -297,7 +299,9 @@ class _RecentTab extends HookConsumerWidget {
                     if (lastRefreshedAt != null) ...[
                       const SizedBox(height: AppSpacing.xs),
                       Text(
-                        'Last refreshed: ${DateFormat('hh:mm a').format(lastRefreshedAt)}',
+                        context.l10n.commLastRefreshed(
+                          DateFormat('hh:mm a').format(lastRefreshedAt),
+                        ),
                         style: AppTextStyles.caption().copyWith(
                           color: scheme.onSurfaceVariant,
                         ),
@@ -307,12 +311,12 @@ class _RecentTab extends HookConsumerWidget {
                     const SizedBox(height: AppSpacing.md),
                     if (sortedUsers.isEmpty) ...[
                       Text(
-                        'No users found in the latest window.',
+                        context.l10n.commNoUsers,
                         style: AppTextStyles.bodyMd(),
                       ),
                       const SizedBox(height: AppSpacing.xs),
                       Text(
-                        'Pull down to refresh.',
+                        context.l10n.commPullRefresh,
                         style: AppTextStyles.caption().copyWith(
                           color: scheme.onSurfaceVariant,
                         ),
@@ -345,7 +349,7 @@ class _RecentTab extends HookConsumerWidget {
                         ),
                         child: Center(
                           child: Text(
-                            "That's all",
+                            context.l10n.commThatsAll,
                             style: AppTextStyles.caption().copyWith(
                               color: scheme.onSurfaceVariant,
                             ),
@@ -422,7 +426,8 @@ class _AdminRecentsSummary extends ConsumerWidget {
       }
     }
     final botIndex =
-        ref.watch(trafficBotIndexProvider).asData?.value ?? TrafficBotIndex.empty;
+        ref.watch(trafficBotIndexProvider).asData?.value ??
+        TrafficBotIndex.empty;
     final vsBots = botIndex.warPeopleLast24h;
     final finished = botIndex.battleCompletedPeopleLast24h;
     final realLabel = real == 1 ? '1 real user' : '$real real users';
@@ -430,9 +435,7 @@ class _AdminRecentsSummary extends ConsumerWidget {
     final warLabel = vsBots == 1
         ? '1 person joined vs bots (24h)'
         : '$vsBots people joined vs bots (24h)';
-    final doneLabel = finished == 1
-        ? '1 finished'
-        : '$finished finished';
+    final doneLabel = finished == 1 ? '1 finished' : '$finished finished';
     final scheme = Theme.of(context).colorScheme;
     return Padding(
       padding: const EdgeInsets.only(top: AppSpacing.xs),
@@ -451,10 +454,8 @@ class _RecentLoadingCaption extends StatelessWidget {
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
     return Text(
-      'Loading recent users…',
-      style: AppTextStyles.bodySm().copyWith(
-        color: scheme.onSurfaceVariant,
-      ),
+      context.l10n.commLoadingRecent,
+      style: AppTextStyles.bodySm().copyWith(color: scheme.onSurfaceVariant),
     );
   }
 }
@@ -566,7 +567,7 @@ Future<void> _showSettings(BuildContext context, WidgetRef ref) async {
                   ),
                 ),
                 child: Text(
-                  'Set Visibility',
+                  context.l10n.commSetVisibility,
                   textAlign: TextAlign.center,
                   style: AppTextStyles.h3().copyWith(color: scheme.onPrimary),
                 ),
@@ -579,11 +580,11 @@ Future<void> _showSettings(BuildContext context, WidgetRef ref) async {
               const SizedBox(height: AppSpacing.xs),
               SwitchListTile(
                 value: accepting,
-                title: const Text('Accept battle invites'),
+                title: Text(context.l10n.commAcceptInvites),
                 subtitle: Text(
                   accepting
-                      ? 'You are receiving battle invites.'
-                      : 'You are not receiving battle invites.',
+                      ? context.l10n.commReceivingInvites
+                      : context.l10n.commNotReceivingInvites,
                   style: AppTextStyles.caption(),
                 ),
                 onChanged: (v) => setState(() => accepting = v),
@@ -591,11 +592,11 @@ Future<void> _showSettings(BuildContext context, WidgetRef ref) async {
               const Divider(height: 1),
               SwitchListTile(
                 value: showBattle,
-                title: const Text('Show my in-battle status'),
+                title: Text(context.l10n.commShowBattleStatus),
                 subtitle: Text(
                   showBattle
-                      ? 'Others can see when you are in a battle.'
-                      : 'Others cannot see your in-battle status.',
+                      ? context.l10n.commOthersCanSee
+                      : context.l10n.commOthersCannotSee,
                   style: AppTextStyles.caption(),
                 ),
                 onChanged: (v) => setState(() => showBattle = v),
@@ -611,7 +612,7 @@ Future<void> _showSettings(BuildContext context, WidgetRef ref) async {
                     borderRadius: BorderRadius.circular(AppRadius.md),
                   ),
                   child: Text(
-                    'Keep your profile updated so others can connect with you even outside ${AppConstants.appDisplayName}.',
+                    context.l10n.commKeepProfile(AppConstants.appDisplayName),
                     style: AppTextStyles.bodySm().copyWith(
                       color: scheme.onSurfaceVariant,
                     ),
@@ -636,11 +637,14 @@ Future<void> _showSettings(BuildContext context, WidgetRef ref) async {
                             );
                       } catch (_) {
                         if (context.mounted) {
-                          AppToast.showText(context, 'Failed to save settings');
+                          AppToast.showText(
+                            context,
+                            context.l10n.commSaveFailed,
+                          );
                         }
                       }
                     },
-                    child: const Text('Save'),
+                    child: Text(context.l10n.commonSave),
                   ),
                 ),
               ),
@@ -673,7 +677,7 @@ Future<void> _showRandomConnectSheet(BuildContext context) async {
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
-              'Tap below for Random Battle Connect',
+              context.l10n.commTapRandom,
               style: AppTextStyles.bodyMd(),
               textAlign: TextAlign.center,
             ),
@@ -681,10 +685,8 @@ Future<void> _showRandomConnectSheet(BuildContext context) async {
             SizedBox(
               width: double.infinity,
               child: FilledButton(
-                onPressed: () => Navigator.of(
-                  sheetContext,
-                  rootNavigator: true,
-                ).pop(true),
+                onPressed: () =>
+                    Navigator.of(sheetContext, rootNavigator: true).pop(true),
                 child: const Text('Random Connect'),
               ),
             ),

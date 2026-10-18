@@ -111,7 +111,10 @@ class ActivationJourneyCard extends HookConsumerWidget {
               Text(
                 state.demoInProgress
                     ? (state.demoInProgressTotal > 0
-                          ? context.l10n.activationLeftAt(state.demoInProgressDone, state.demoInProgressTotal)
+                          ? context.l10n.activationLeftAt(
+                              state.demoInProgressDone,
+                              state.demoInProgressTotal,
+                            )
                           : context.l10n.activationPickUp)
                     : context.l10n.activationDemoPitch,
                 style: AppTextStyles.bodySm().copyWith(
@@ -289,4 +292,3 @@ class _ActivationJourneySnoozeSheet extends ConsumerWidget {
     );
   }
 }
-

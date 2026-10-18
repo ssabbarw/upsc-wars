@@ -47,9 +47,12 @@ Map<String, dynamic> testQuestionToShareMap(TestQuestion q) {
     'finalExplanationHi': q.finalExplanationHi,
     'eliminationLogic': q.eliminationLogic,
     'eliminationLogicHi': q.eliminationLogicHi,
-    'statementAnalysis': q.statementAnalysis.map(statementAnalysisItemToMap).toList(),
-    'statementAnalysisHi':
-        q.statementAnalysisHi.map(statementAnalysisItemToMap).toList(),
+    'statementAnalysis': q.statementAnalysis
+        .map(statementAnalysisItemToMap)
+        .toList(),
+    'statementAnalysisHi': q.statementAnalysisHi
+        .map(statementAnalysisItemToMap)
+        .toList(),
     'strongDistractor': q.strongDistractor,
     'strongDistractorHi': q.strongDistractorHi,
     'upscTrapExplanation': q.upscTrapExplanation,
@@ -140,7 +143,9 @@ TestQuestion testQuestionFromShareMap(
     selectedOption: m['selectedOption'] as String?,
     status: _shareStr(m, 'status', 'unattempted'),
     flagged: _shareBool(m, 'flagged'),
-    timeSpentSecs: (m['timeSpentSecs'] is num) ? (m['timeSpentSecs'] as num).toInt() : null,
+    timeSpentSecs: (m['timeSpentSecs'] is num)
+        ? (m['timeSpentSecs'] as num).toInt()
+        : null,
     confidence: m['confidence'] as String?,
     conceptAnchor: m['conceptAnchor'] as String?,
     finalExplanation: m['finalExplanation'] as String?,

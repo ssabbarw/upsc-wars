@@ -5,20 +5,14 @@ void main() {
   const columns = ['Economic Growth Drivers', 'Mechanism of Impact'];
 
   test('reads cells from semantic column keys', () {
-    final rows = questionTableRowsAsCells(
-      [
-        {
-          'Economic Growth Drivers': 'A. Nominal rupee appreciation',
-          'Mechanism of Impact': '2. Inflates the rupee value of GDP',
-        },
-      ],
-      columns,
-    );
+    final rows = questionTableRowsAsCells([
+      {
+        'Economic Growth Drivers': 'A. Nominal rupee appreciation',
+        'Mechanism of Impact': '2. Inflates the rupee value of GDP',
+      },
+    ], columns);
     expect(rows, [
-      [
-        'A. Nominal rupee appreciation',
-        '2. Inflates the rupee value of GDP',
-      ],
+      ['A. Nominal rupee appreciation', '2. Inflates the rupee value of GDP'],
     ]);
   });
 
@@ -40,14 +34,11 @@ void main() {
   });
 
   test('reads share-map {cells: [...]} rows', () {
-    final rows = questionTableRowsAsCells(
-      [
-        {
-          'cells': ['A. Left', '1. Right'],
-        },
-      ],
-      columns,
-    );
+    final rows = questionTableRowsAsCells([
+      {
+        'cells': ['A. Left', '1. Right'],
+      },
+    ], columns);
     expect(rows, [
       ['A. Left', '1. Right'],
     ]);

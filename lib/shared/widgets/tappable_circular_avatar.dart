@@ -19,6 +19,7 @@ class TappableCircularAvatar extends StatelessWidget {
   final String displayName;
   final double size;
   final String? previewName;
+
   /// When false, tapping the photo does not open fullscreen preview (parent can handle taps).
   final bool enableImageTap;
 

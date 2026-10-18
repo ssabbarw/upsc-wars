@@ -8,6 +8,7 @@ import '../../core/review/app_review_service.dart';
 import '../../core/theme/app_radius.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_text_styles.dart';
+import '../../l10n/l10n.dart';
 
 Future<void> showRateReviewSheet(BuildContext context, WidgetRef ref) async {
   await showModalBottomSheet<void>(
@@ -34,7 +35,7 @@ Future<void> showRateReviewSheet(BuildContext context, WidgetRef ref) async {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Text(
-                'Built by an Aspirant, for Aspirants',
+                context.l10n.rrTitle,
                 style: AppTextStyles.h3().copyWith(color: scheme.onSurface),
                 textAlign: TextAlign.center,
               ),
@@ -42,7 +43,7 @@ Future<void> showRateReviewSheet(BuildContext context, WidgetRef ref) async {
               const SizedBox(height: AppSpacing.sm),
 
               Text(
-                'Built by an ex-UPSC aspirant who faced the same struggle of solving endless MCQs without clearly knowing where marks were being lost.',
+                context.l10n.rrBody1,
                 style: AppTextStyles.bodyMd().copyWith(
                   color: scheme.onSurfaceVariant,
                   height: 1.4,
@@ -53,7 +54,7 @@ Future<void> showRateReviewSheet(BuildContext context, WidgetRef ref) async {
               const SizedBox(height: AppSpacing.md),
 
               Text(
-                'The goal was simple: help aspirants prepare smarter by identifying confident mistakes, danger zones, safe risk areas, and better revision priorities.',
+                context.l10n.rrBody2,
                 style: AppTextStyles.bodyMd().copyWith(
                   color: scheme.onSurfaceVariant,
                   height: 1.4,
@@ -79,7 +80,7 @@ Future<void> showRateReviewSheet(BuildContext context, WidgetRef ref) async {
                     }
                   },
                   child: Text(
-                    'Read About Journey of UPSC Wars',
+                    context.l10n.rrJourney,
                     style: AppTextStyles.labelSm().copyWith(
                       color: scheme.primary,
                       fontWeight: FontWeight.w700,
@@ -91,7 +92,7 @@ Future<void> showRateReviewSheet(BuildContext context, WidgetRef ref) async {
               const SizedBox(height: AppSpacing.sm),
 
               Text(
-                'If UPSC Wars is helping your preparation, your review can help other aspirants find it too.',
+                context.l10n.rrBody3,
                 style: AppTextStyles.bodyMd().copyWith(
                   color: scheme.onSurfaceVariant,
                   height: 1.4,
@@ -122,7 +123,7 @@ Future<void> showRateReviewSheet(BuildContext context, WidgetRef ref) async {
                       borderRadius: BorderRadius.circular(AppRadius.md),
                     ),
                   ),
-                  child: const Text('⭐ Rate & Review UPSC Wars'),
+                  child: Text(context.l10n.rrRate),
                 ),
               ),
 
@@ -138,7 +139,7 @@ Future<void> showRateReviewSheet(BuildContext context, WidgetRef ref) async {
                       Navigator.of(sheetContext).pop();
                     }
                   },
-                  child: const Text('Not now'),
+                  child: Text(context.l10n.commonNotNow),
                 ),
               ),
             ],

@@ -189,9 +189,7 @@ Future<bool> dailyCaRemoteEnabled(Ref ref) async {
   }
   await ref.watch(killSwitchProvider.future);
   try {
-    return FirebaseRemoteConfig.instance.getBool(
-      dailyCaEnabledRemoteConfigKey,
-    );
+    return FirebaseRemoteConfig.instance.getBool(dailyCaEnabledRemoteConfigKey);
   } on Object catch (_) {
     return false;
   }
@@ -207,9 +205,7 @@ Future<bool> caShotsRemoteEnabled(Ref ref) async {
   }
   await ref.watch(killSwitchProvider.future);
   try {
-    return FirebaseRemoteConfig.instance.getBool(
-      caShotsEnabledRemoteConfigKey,
-    );
+    return FirebaseRemoteConfig.instance.getBool(caShotsEnabledRemoteConfigKey);
   } on Object catch (_) {
     return false;
   }
@@ -315,8 +311,9 @@ Future<int> factOrBluffSecondsRemote(Ref ref) async {
   if (kIsWeb) return fallback;
   try {
     await ref.watch(killSwitchProvider.future);
-    final n =
-        FirebaseRemoteConfig.instance.getInt(factOrBluffSecondsRemoteConfigKey);
+    final n = FirebaseRemoteConfig.instance.getInt(
+      factOrBluffSecondsRemoteConfigKey,
+    );
     if (n <= 0) return fallback;
     return n.clamp(3, 60);
   } on Object catch (_) {

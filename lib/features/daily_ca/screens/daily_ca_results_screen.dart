@@ -15,6 +15,7 @@ import '../data/daily_ca_cloud_service.dart';
 import '../domain/daily_ca_rank_models.dart';
 import '../domain/daily_ca_scoring.dart';
 import '../providers/daily_ca_providers.dart';
+import '../../../l10n/l10n.dart';
 
 /// After a first Daily CA attempt: submit for AIR when ranks are on.
 class DailyCaResultsScreen extends HookConsumerWidget {
@@ -50,8 +51,8 @@ class DailyCaResultsScreen extends HookConsumerWidget {
           questionCount.value = session.questions.length;
 
           final uid = FirebaseAuth.instance.currentUser?.uid;
-          final displayName =
-              FirebaseAuth.instance.currentUser?.displayName?.trim();
+          final displayName = FirebaseAuth.instance.currentUser?.displayName
+              ?.trim();
 
           DailyCaSubmission submissionFrom(DailyCaSubmitResult result) {
             return DailyCaSubmission(
@@ -122,7 +123,7 @@ class DailyCaResultsScreen extends HookConsumerWidget {
           );
           if (cancelled) return;
           if (!result.ok) {
-            error.value = result.errorMessage ?? 'Submit failed';
+            error.value = result.errorMessage ?? appL10n.dcaSubmitFailed;
             syncState.value = _SyncState.error;
             return;
           }
@@ -150,13 +151,13 @@ class DailyCaResultsScreen extends HookConsumerWidget {
       body: Padding(
         padding: const EdgeInsets.fromLTRB(20, 8, 20, 32),
         child: switch (syncState.value) {
-          _SyncState.loading => const Center(
+          _SyncState.loading => Center(
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
                 CircularProgressIndicator(),
                 SizedBox(height: 16),
-                Text('Loading your results…'),
+                Text(context.l10n.dcaLoadingResults),
               ],
             ),
           ),
@@ -164,7 +165,7 @@ class DailyCaResultsScreen extends HookConsumerWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Text(
-                error.value ?? 'Something went wrong',
+                error.value ?? context.l10n.commonSomethingWrong,
                 style: AppTextStyles.body().copyWith(color: AppColors.wrong),
               ),
               const SizedBox(height: 16),
@@ -246,7 +247,7 @@ class _ReadyBody extends ConsumerWidget {
           if (submission!.participantCount != null) ...[
             const SizedBox(height: 4),
             Text(
-              'of ${submission!.participantCount}',
+              context.l10n.dcaOfCount(submission!.participantCount ?? 0),
               style: AppTextStyles.body().copyWith(
                 fontWeight: FontWeight.w700,
                 color: scheme.onSurfaceVariant,
@@ -308,7 +309,7 @@ class _ReadyBody extends ConsumerWidget {
           if (podium.isNotEmpty) ...[
             const SizedBox(height: 16),
             Text(
-              'Today\'s board',
+              context.l10n.dcaTodaysBoard,
               style: AppTextStyles.label().copyWith(
                 fontWeight: FontWeight.w800,
               ),
@@ -334,7 +335,7 @@ class _ReadyBody extends ConsumerWidget {
                     ),
                     Expanded(
                       child: Text(
-                        isMe ? '$name (you)' : name,
+                        isMe ? context.l10n.resultsNameYou(name) : name,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                         style: AppTextStyles.bodySm().copyWith(
@@ -375,12 +376,12 @@ class _ReadyBody extends ConsumerWidget {
           const SizedBox(height: 8),
           Text(
             !ranksOn
-                ? 'Ranks are in preview.'
+                ? context.l10n.dcaRanksPreview
                 : !signedIn
-                ? 'Sign in from Profile to join today\'s All-India Rank.'
+                ? context.l10n.dcaSignInForAir
                 : submission?.mode == 'unranked'
-                ? 'Unranked · this paper\'s Champion is already locked.'
-                : 'Submitted.',
+                ? context.l10n.dcaUnrankedLocked
+                : context.l10n.dcaSubmitted,
             style: AppTextStyles.bodySm().copyWith(
               color: scheme.onSurfaceVariant,
             ),
@@ -396,7 +397,7 @@ class _ReadyBody extends ConsumerWidget {
                 borderRadius: BorderRadius.circular(AppRadius.lg),
               ),
             ),
-            child: const Text('Today\'s leaderboard'),
+            child: Text(context.l10n.dcaTodaysLeaderboard),
           ),
           const SizedBox(height: 10),
         ],
@@ -408,7 +409,7 @@ class _ReadyBody extends ConsumerWidget {
               borderRadius: BorderRadius.circular(AppRadius.lg),
             ),
           ),
-          child: const Text('Review answers'),
+          child: Text(context.l10n.dcaReviewAnswers),
         ),
         const SizedBox(height: 10),
         FilledButton(
@@ -420,7 +421,7 @@ class _ReadyBody extends ConsumerWidget {
               borderRadius: BorderRadius.circular(AppRadius.lg),
             ),
           ),
-          child: const Text('Done'),
+          child: Text(context.l10n.commonDone),
         ),
       ],
     );
@@ -430,9 +431,9 @@ class _ReadyBody extends ConsumerWidget {
 class DailyCaScheduleHint {
   static String liveCopy(String mode) {
     if (mode == 'unranked') {
-      return 'Unranked · Champion already locked.';
+      return appL10n.dcaLiveUnranked;
     }
-    return 'AIR can still move. Champion locks at 6 AM IST.';
+    return appL10n.dcaLiveAir;
   }
 }
 

@@ -163,7 +163,10 @@ class LlmAdminSettingsScreen extends HookConsumerWidget {
                   onModelChanged: saving.value
                       ? null
                       : (id) => unawaited(
-                          persist(caModel: id, success: 'Daily CA model saved.'),
+                          persist(
+                            caModel: id,
+                            success: 'Daily CA model saved.',
+                          ),
                         ),
                   keySet: current?.caKeySet ?? false,
                   keyFromEnv: current?.caKeyFromEnv ?? false,
@@ -243,7 +246,10 @@ class _PipelineCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(title, style: AppTextStyles.h3().copyWith(fontWeight: FontWeight.w700)),
+          Text(
+            title,
+            style: AppTextStyles.h3().copyWith(fontWeight: FontWeight.w700),
+          ),
           const SizedBox(height: 4),
           Text(
             subtitle,

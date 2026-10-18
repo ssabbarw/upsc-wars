@@ -56,55 +56,57 @@ class HomeActivationJourneyState {
 
 final homeActivationJourneyProvider =
     FutureProvider<HomeActivationJourneyState>((ref) async {
-  final prefs = await ref.watch(prefsServiceProvider.future);
-  final db = ref.watch(userDatabaseProvider);
+      final prefs = await ref.watch(prefsServiceProvider.future);
+      final db = ref.watch(userDatabaseProvider);
 
-  final scoredAttempts = await db.sessionQuestionsDao.countScoredAttempts();
-  final completedSessions = await db.sessionsDao.countCompletedSessions();
-  final demoDone = prefs.getStartedDiagnosticAttempted;
-  final demoOrFirstTestDone = demoDone || completedSessions > 0;
+      final scoredAttempts = await db.sessionQuestionsDao.countScoredAttempts();
+      final completedSessions = await db.sessionsDao.countCompletedSessions();
+      final demoDone = prefs.getStartedDiagnosticAttempted;
+      final demoOrFirstTestDone = demoDone || completedSessions > 0;
 
-  // Grandfather existing active users so we don't re-gate START HERE.
-  if (!prefs.activationJourneyInitialized) {
-    prefs.activationJourneyInitialized = true;
-    if (scoredAttempts >=
-            ActivationJourneyConstants.confidenceMapUnlockAttempts ||
-        (prefs.homeActivationComplete && completedSessions >= 3)) {
-      prefs.activationJourneyDismissed = true;
-    }
-  }
+      // Grandfather existing active users so we don't re-gate START HERE.
+      if (!prefs.activationJourneyInitialized) {
+        prefs.activationJourneyInitialized = true;
+        if (scoredAttempts >=
+                ActivationJourneyConstants.confidenceMapUnlockAttempts ||
+            (prefs.homeActivationComplete && completedSessions >= 3)) {
+          prefs.activationJourneyDismissed = true;
+        }
+      }
 
-  final snoozedUntil = prefs.activationJourneySnoozedUntil;
-  final checklistSnoozed =
-      snoozedUntil.isNotEmpty && _todayYyyyMmDd().compareTo(snoozedUntil) < 0;
+      final snoozedUntil = prefs.activationJourneySnoozedUntil;
+      final checklistSnoozed =
+          snoozedUntil.isNotEmpty &&
+          _todayYyyyMmDd().compareTo(snoozedUntil) < 0;
 
-  final stillActive = !prefs.activationJourneyDismissed;
-  final shouldShowChecklist =
-      stillActive && !demoOrFirstTestDone && !checklistSnoozed;
+      final stillActive = !prefs.activationJourneyDismissed;
+      final shouldShowChecklist =
+          stillActive && !demoOrFirstTestDone && !checklistSnoozed;
 
-  var firstShownOn = prefs.activationJourneyFirstShownOn;
-  if (shouldShowChecklist && firstShownOn.isEmpty) {
-    firstShownOn = _todayYyyyMmDd();
-    prefs.activationJourneyFirstShownOn = firstShownOn;
-  }
-  final canSnoozeChecklist = shouldShowChecklist &&
-      firstShownOn.isNotEmpty &&
-      _todayYyyyMmDd().compareTo(firstShownOn) > 0;
+      var firstShownOn = prefs.activationJourneyFirstShownOn;
+      if (shouldShowChecklist && firstShownOn.isEmpty) {
+        firstShownOn = _todayYyyyMmDd();
+        prefs.activationJourneyFirstShownOn = firstShownOn;
+      }
+      final canSnoozeChecklist =
+          shouldShowChecklist &&
+          firstShownOn.isNotEmpty &&
+          _todayYyyyMmDd().compareTo(firstShownOn) > 0;
 
-  final demoProgress = await db.sessionsDao
-      .getInProgressSessionProgressByFeatureKey(
-        CreateGetStartedSessionUseCase.analyticsKey,
+      final demoProgress = await db.sessionsDao
+          .getInProgressSessionProgressByFeatureKey(
+            CreateGetStartedSessionUseCase.analyticsKey,
+          );
+
+      return HomeActivationJourneyState(
+        demoOrFirstTestDone: demoOrFirstTestDone,
+        scoredAttempts: scoredAttempts,
+        shouldShowChecklist: shouldShowChecklist,
+        canSnoozeChecklist: canSnoozeChecklist,
+        demoInProgressDone: demoProgress?.done ?? 0,
+        demoInProgressTotal: demoProgress?.total ?? 0,
       );
-
-  return HomeActivationJourneyState(
-    demoOrFirstTestDone: demoOrFirstTestDone,
-    scoredAttempts: scoredAttempts,
-    shouldShowChecklist: shouldShowChecklist,
-    canSnoozeChecklist: canSnoozeChecklist,
-    demoInProgressDone: demoProgress?.done ?? 0,
-    demoInProgressTotal: demoProgress?.total ?? 0,
-  );
-});
+    });
 
 /// Hide START HERE until tomorrow; returns daily until the demo is done.
 Future<void> snoozeActivationJourneyUntilTomorrow(WidgetRef ref) async {

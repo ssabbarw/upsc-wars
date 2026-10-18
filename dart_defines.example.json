@@ -1,3 +1,5 @@
 {
-  "REVENUECAT_ANDROID_KEY": "goog_xxxxxxxx"
+  "REVENUECAT_ANDROID_KEY": "goog_xxxxxxxx",
+  "POSTHOG_API_KEY": "phc_xxxxxxxx",
+  "POSTHOG_HOST": "https://us.i.posthog.com"
 }

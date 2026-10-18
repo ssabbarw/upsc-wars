@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../../../core/parsers/question_display_text_parser.dart';
+import '../../../l10n/l10n.dart';
 
 typedef FomoPulseHistoryData = ({
   List<FomoPulse> pulses,
@@ -153,9 +154,9 @@ class FomoPulseQuestion {
       optionD.trim().isNotEmpty;
 
   String get stemText => QuestionDisplayTextParser.stemOnly(
-        displayText,
-        hasSeparateOptions: hasSeparateOptions,
-      );
+    displayText,
+    hasSeparateOptions: hasSeparateOptions,
+  );
 
   FomoPulseQuestion localized(bool hindi) {
     if (!hindi || !hasHindi) return this;
@@ -543,25 +544,23 @@ class FomoPulseCommunityStats {
 
   int get wrongCount => (attemptCount - correctCount).clamp(0, attemptCount);
 
-  int get correctPct => attemptCount == 0
-      ? 0
-      : ((correctCount / attemptCount) * 100).round();
+  int get correctPct =>
+      attemptCount == 0 ? 0 : ((correctCount / attemptCount) * 100).round();
 
   int get fellPct => (100 - correctPct).clamp(0, 100);
 
   String get breakdownLine {
-    if (attemptCount <= 0) return 'No attempts yet';
-    return '$attemptCount attempted · $correctCount got it right · $wrongCount got it wrong';
+    if (attemptCount <= 0) return appL10n.fpNoAttempts;
+    return appL10n.fpBreakdown(attemptCount, correctCount, wrongCount);
   }
 
   String get trapLine {
-    if (attemptCount <= 0) return 'No attempts yet';
-    return '$attemptCount attempted · $fellPct% fell for it';
+    if (attemptCount <= 0) return appL10n.fpNoAttempts;
+    return appL10n.fpTrap(attemptCount, fellPct);
   }
 
-  String get challengeLine => attemptCount <= 0
-      ? 'Be the first to attempt this.'
-      : '$trapLine. Can you?';
+  String get challengeLine =>
+      attemptCount <= 0 ? appL10n.fpBeFirst : appL10n.fpCanYou(trapLine);
 
   factory FomoPulseCommunityStats.fromMap(Map<String, dynamic> map) {
     final attempts = (map['attempt_count'] as num?)?.toInt() ?? 0;

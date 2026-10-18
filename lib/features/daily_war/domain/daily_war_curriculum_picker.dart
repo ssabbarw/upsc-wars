@@ -38,7 +38,8 @@ abstract final class DailyWarCurriculumPicker {
     String subjectSlug,
     int nextSubjectRotationIndex,
     int nextTopicIndexForSubject,
-  }) pickWeekday({
+  })
+  pickWeekday({
     required int subjectRotationIndex,
     required Map<String, int> topicIndexBySubject,
   }) {
@@ -66,10 +67,7 @@ abstract final class DailyWarCurriculumPicker {
     }
 
     // Every subject pointer is exhausted — restart the cycle.
-    return _pickOpenSubject(
-      subjectIndex: 0,
-      topicIndexBySubject: const {},
-    )!;
+    return _pickOpenSubject(subjectIndex: 0, topicIndexBySubject: const {})!;
   }
 
   static ({

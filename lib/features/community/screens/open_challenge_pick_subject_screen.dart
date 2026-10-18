@@ -13,6 +13,7 @@ import '../open_challenge/open_challenge_before_you_start_panel.dart';
 import '../open_challenge/open_challenge_create_availability.dart';
 import '../open_challenge/open_challenge_launch_exam.dart';
 import '../providers/open_challenge_providers.dart';
+import '../../../l10n/l10n.dart';
 
 class OpenChallengePickSubjectScreen extends ConsumerStatefulWidget {
   const OpenChallengePickSubjectScreen({super.key});
@@ -42,7 +43,7 @@ class _OpenChallengePickSubjectScreenState
           ? AppColors.surfaceSecondaryDark
           : AppColors.surfaceSecondaryLight,
       appBar: AppBar(
-        title: Text('Create challenge', style: AppTextStyles.h3()),
+        title: Text(context.l10n.ocCreateChallenge, style: AppTextStyles.h3()),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -64,7 +65,7 @@ class _OpenChallengePickSubjectScreenState
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Text(
-                        'Pick your subject',
+                        context.l10n.ocPickSubject,
                         style: AppTextStyles.h1().copyWith(
                           color: scheme.onSurface,
                           fontWeight: FontWeight.w600,
@@ -72,15 +73,16 @@ class _OpenChallengePickSubjectScreenState
                       ),
                       const SizedBox(height: AppSpacing.xs),
                       Text(
-                        'Pick one subject or mixed misc · 10 MCQs · Timed '
-                        '(${(10 * kDebugSecondsPerQuestion / 60).round()} min)',
+                        context.l10n.ocPickSubtitle(
+                          (10 * kDebugSecondsPerQuestion / 60).round(),
+                        ),
                         style: AppTextStyles.bodySm().copyWith(
                           color: scheme.onSurfaceVariant,
                         ),
                       ),
                       const SizedBox(height: AppSpacing.lg),
                       Text(
-                        'Subject',
+                        context.l10n.commonSubject,
                         style: AppTextStyles.label().copyWith(
                           color: scheme.onSurface,
                         ),
@@ -108,8 +110,7 @@ class _OpenChallengePickSubjectScreenState
                                 height: _tileHeight,
                                 child: SubjectPickChipTile(
                                   label: 'Misc',
-                                  selected:
-                                      _selectedSubject == _miscSubjectKey,
+                                  selected: _selectedSubject == _miscSubjectKey,
                                   onTap: () => setState(
                                     () => _selectedSubject = _miscSubjectKey,
                                   ),
@@ -148,9 +149,7 @@ class _OpenChallengePickSubjectScreenState
                           const SizedBox(width: AppSpacing.sm),
                           Expanded(
                             child: Text(
-                              'Ten questions are chosen at random from your '
-                              'local bank for this subject. Timer runs during '
-                              'the challenge.',
+                              context.l10n.ocPickNote,
                               style: AppTextStyles.caption().copyWith(
                                 color: scheme.onSurfaceVariant,
                                 height: 1.4,
@@ -167,7 +166,7 @@ class _OpenChallengePickSubjectScreenState
                 loading: () => const Center(child: CircularProgressIndicator()),
                 error: (_, _) => Center(
                   child: Text(
-                    'Could not load subjects',
+                    context.l10n.ocSubjectsFailed,
                     style: AppTextStyles.body(),
                   ),
                 ),
@@ -192,34 +191,34 @@ class _OpenChallengePickSubjectScreenState
                 child: ref
                     .watch(openChallengeCreateAvailabilityProvider)
                     .when(
-                  loading: () => FilledButton(
-                    onPressed: null,
-                    style: FilledButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(vertical: 14),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(AppRadius.md),
+                      loading: () => FilledButton(
+                        onPressed: null,
+                        style: FilledButton.styleFrom(
+                          padding: const EdgeInsets.symmetric(vertical: 14),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(AppRadius.md),
+                          ),
+                        ),
+                        child: Text(
+                          context.l10n.ocStartMyAttempt,
+                          style: AppTextStyles.label().copyWith(
+                            color: AppColors.onPrimary.withValues(alpha: 0.5),
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
                       ),
-                    ),
-                    child: Text(
-                      'Start my challenge attempt',
-                      style: AppTextStyles.label().copyWith(
-                        color: AppColors.onPrimary.withValues(alpha: 0.5),
-                        fontWeight: FontWeight.w600,
+                      error: (_, _) => _pickSubjectStartColumn(
+                        scheme: scheme,
+                        blocked: false,
+                        avail: null,
                       ),
+                      data: (OpenChallengeCreateAvailability avail) =>
+                          _pickSubjectStartColumn(
+                            scheme: scheme,
+                            blocked: !avail.allowed,
+                            avail: avail,
+                          ),
                     ),
-                  ),
-                  error: (_, _) => _pickSubjectStartColumn(
-                    scheme: scheme,
-                    blocked: false,
-                    avail: null,
-                  ),
-                  data: (OpenChallengeCreateAvailability avail) =>
-                      _pickSubjectStartColumn(
-                    scheme: scheme,
-                    blocked: !avail.allowed,
-                    avail: avail,
-                  ),
-                ),
               ),
             ),
           ),
@@ -233,8 +232,7 @@ class _OpenChallengePickSubjectScreenState
     required bool blocked,
     required OpenChallengeCreateAvailability? avail,
   }) {
-    final canStart =
-        !blocked && _selectedSubject != null && !_starting;
+    final canStart = !blocked && _selectedSubject != null && !_starting;
     return Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -253,7 +251,7 @@ class _OpenChallengePickSubjectScreenState
         Tooltip(
           message: blocked && avail != null
               ? avail.tooltipLine
-              : 'Begin the timed 10-MCQ challenge',
+              : context.l10n.ocBeginTimed,
           child: FilledButton(
             onPressed: canStart ? _onStartChallenge : null,
             style: FilledButton.styleFrom(
@@ -272,7 +270,7 @@ class _OpenChallengePickSubjectScreenState
                     ),
                   )
                 : Text(
-                    'Start my challenge attempt',
+                    context.l10n.ocStartMyAttempt,
                     style: AppTextStyles.label().copyWith(
                       color: AppColors.onPrimary,
                       fontWeight: FontWeight.w600,

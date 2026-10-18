@@ -12,6 +12,8 @@ class CreateSessionUseCase {
   Future<void> importSharedBattle({
     required String sessionId,
     required SessionConfig config,
-  }) =>
-      _repository.importSessionWithFixedId(sessionId: sessionId, config: config);
+  }) => _repository.importSessionWithFixedId(
+    sessionId: sessionId,
+    config: config,
+  );
 }

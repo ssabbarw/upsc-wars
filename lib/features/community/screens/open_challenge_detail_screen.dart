@@ -16,6 +16,7 @@ import '../domain/open_challenge_models.dart';
 import '../open_challenge/open_challenge_launch_exam.dart';
 import '../providers/open_challenge_providers.dart';
 import '../widgets/admin_bot_label.dart';
+import '../../../l10n/l10n.dart';
 
 class OpenChallengeDetailScreen extends ConsumerStatefulWidget {
   const OpenChallengeDetailScreen({
@@ -101,7 +102,7 @@ class _OpenChallengeDetailScreenState
                     onPressed: () => ref.invalidate(
                       openChallengeDetailProvider(widget.challengeId),
                     ),
-                    child: const Text('Retry'),
+                    child: Text(context.l10n.commonRetry),
                   ),
                 ],
               ),
@@ -111,7 +112,7 @@ class _OpenChallengeDetailScreenState
             if (detail == null) {
               return Center(
                 child: Text(
-                  'Challenge not found',
+                  context.l10n.ocNotFound,
                   style: AppTextStyles.bodyMd(),
                 ),
               );
@@ -166,7 +167,13 @@ class _OpenChallengeDetailScreenState
                                 children: [
                                   Flexible(
                                     child: Text(
-                                      'Created by ${displayNameForViewer(name: creator.profile.name, viewerEmail: me, subjectEmail: creator.profile.email)}',
+                                      context.l10n.ocCreatedBy(
+                                        displayNameForViewer(
+                                          name: creator.profile.name,
+                                          viewerEmail: me,
+                                          subjectEmail: creator.profile.email,
+                                        ),
+                                      ),
                                       style: AppTextStyles.label(),
                                       overflow: TextOverflow.ellipsis,
                                     ),
@@ -199,7 +206,11 @@ class _OpenChallengeDetailScreenState
                         const SizedBox(width: AppSpacing.sm),
                         Expanded(
                           child: Text(
-                            'Live till ${DateFormat('d MMM, h:mm a').format(detail.effectiveExpiresAt!.toLocal())}',
+                            context.l10n.ocLiveTill(
+                              DateFormat(
+                                'd MMM, h:mm a',
+                              ).format(detail.effectiveExpiresAt!.toLocal()),
+                            ),
                             style: AppTextStyles.caption().copyWith(
                               color: scheme.onSurfaceVariant,
                             ),
@@ -211,7 +222,7 @@ class _OpenChallengeDetailScreenState
                   const SizedBox(height: AppSpacing.lg),
                   if (detail.isExpired) ...[
                     Text(
-                      'This challenge has expired (challenges last 24 hours).',
+                      context.l10n.ocExpired24,
                       style: AppTextStyles.bodySm().copyWith(
                         color: scheme.onSurfaceVariant,
                       ),
@@ -226,13 +237,13 @@ class _OpenChallengeDetailScreenState
                     const SizedBox(height: AppSpacing.md),
                   ] else ...[
                     Text(
-                      'Your score: ${myEntry.score} / 10',
+                      context.l10n.ocYourScore(myEntry.score),
                       style: AppTextStyles.label(),
                     ),
                     const SizedBox(height: AppSpacing.sm),
                     if (myRank == 0)
                       Text(
-                        'You are the winner so far 🏆',
+                        context.l10n.ocWinnerSoFar,
                         style: AppTextStyles.bodyMd().copyWith(
                           color: scheme.primary,
                         ),
@@ -240,7 +251,13 @@ class _OpenChallengeDetailScreenState
                     else if (leader != null &&
                         leader.profile.email.toLowerCase() != me)
                       Text(
-                        '${displayNameForViewer(name: leader.profile.name, viewerEmail: me, subjectEmail: leader.profile.email)} has beaten your score',
+                        context.l10n.ocBeatenBy(
+                          displayNameForViewer(
+                            name: leader.profile.name,
+                            viewerEmail: me,
+                            subjectEmail: leader.profile.email,
+                          ),
+                        ),
                         style: AppTextStyles.bodySm().copyWith(
                           color: scheme.onSurfaceVariant,
                         ),
@@ -252,7 +269,7 @@ class _OpenChallengeDetailScreenState
                         onPressed: () =>
                             context.push('/history/${myEntry.reviewSessionId}'),
                         icon: const Icon(Icons.menu_book_outlined, size: 20),
-                        label: const Text('Review explanations'),
+                        label: Text(context.l10n.ocReviewExpl),
                       ),
                     ],
                     const SizedBox(height: AppSpacing.md),
@@ -331,7 +348,7 @@ class _AcceptChallengeCalloutState
                 color: AppColors.onPrimary,
               ),
             )
-          : const Text('Accept Challenge'),
+          : Text(context.l10n.ocAccept),
     );
   }
 }
@@ -417,15 +434,15 @@ class _LeaderTile extends StatelessWidget {
 String _relativeCreated(DateTime? createdAt) {
   if (createdAt == null) return '';
   final diff = DateTime.now().difference(createdAt);
-  if (diff.inSeconds < 60) return 'Created just now';
-  if (diff.inMinutes < 60) return 'Created ${diff.inMinutes}m ago';
-  if (diff.inHours < 48) return 'Created ${diff.inHours}h ago';
-  return 'Created ${diff.inDays}d ago';
+  if (diff.inSeconds < 60) return appL10n.ocCreatedJustNow;
+  if (diff.inMinutes < 60) return appL10n.ocCreatedMin(diff.inMinutes);
+  if (diff.inHours < 48) return appL10n.ocCreatedHr(diff.inHours);
+  return appL10n.ocCreatedDay(diff.inDays);
 }
 
 String _attemptedLabel(DateTime at) {
   final diff = DateTime.now().difference(at);
-  if (diff.inMinutes < 120) return '${diff.inMinutes}m ago';
-  if (diff.inHours < 48) return '${diff.inHours}h ago';
-  return '${diff.inDays}d ago';
+  if (diff.inMinutes < 120) return appL10n.commonMinAgo(diff.inMinutes);
+  if (diff.inHours < 48) return appL10n.commonHrAgo(diff.inHours);
+  return appL10n.commonDayAgo(diff.inDays);
 }

@@ -14,9 +14,9 @@ void main() {
     for (final item in _load('assets/data/trap_examples.json'))
       item['trap_type'] as String: TrapExample.fromJson(item),
   };
-  final catalogTraps = _load('assets/data/trap_descriptions.json')
-      .map((item) => item['trap_type'] as String)
-      .toSet();
+  final catalogTraps = _load(
+    'assets/data/trap_descriptions.json',
+  ).map((item) => item['trap_type'] as String).toSet();
 
   test('every trap in the catalog has an example question', () {
     expect(examples.keys.toSet(), catalogTraps);
@@ -40,8 +40,12 @@ void main() {
         final content = example.forLanguage(language);
         final reason = '${entry.key} ($language)';
         expect(content.stem, isNotEmpty, reason: reason);
-        expect(content.options.keys.toList(), ['a', 'b', 'c', 'd'],
-            reason: reason);
+        expect(content.options.keys.toList(), [
+          'a',
+          'b',
+          'c',
+          'd',
+        ], reason: reason);
         expect(
           content.options.values.every((o) => o.isNotEmpty),
           isTrue,

@@ -23,8 +23,7 @@ void main() {
   });
 
   test('compose round-trips with parser', () {
-    const raw =
-        'What is 2+2?\n\n(a) 3\n(b) 4\n(c) 5\n(d) 6';
+    const raw = 'What is 2+2?\n\n(a) 3\n(b) 4\n(c) 5\n(d) 6';
     final parsed = QuestionDisplayTextParser.parse(raw);
     final composed = QuestionDisplayTextComposer.compose(
       stem: parsed.stem,

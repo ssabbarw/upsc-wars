@@ -4,11 +4,7 @@ import '../domain/daily_war_badges.dart';
 
 /// Small hexagonal badge image for leaderboard rows.
 class DailyWarBadgeChip extends StatelessWidget {
-  const DailyWarBadgeChip({
-    super.key,
-    required this.badgeId,
-    this.size = 22,
-  });
+  const DailyWarBadgeChip({super.key, required this.badgeId, this.size = 22});
 
   /// Tier id (`recruit`…) or award id (`clean_sweep`…).
   final String badgeId;
@@ -16,7 +12,8 @@ class DailyWarBadgeChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final asset = DailyWarBadges.assetForTier(badgeId) ??
+    final asset =
+        DailyWarBadges.assetForTier(badgeId) ??
         DailyWarBadges.assetForAward(badgeId);
     if (asset == null) return _MissingBadge(size: size);
     return Image.asset(
@@ -51,11 +48,7 @@ class _MissingBadge extends StatelessWidget {
 
 /// Badge with label underneath (profile sheet).
 class DailyWarBadgeTile extends StatelessWidget {
-  const DailyWarBadgeTile({
-    super.key,
-    required this.badgeId,
-    this.size = 56,
-  });
+  const DailyWarBadgeTile({super.key, required this.badgeId, this.size = 56});
 
   final String badgeId;
   final double size;

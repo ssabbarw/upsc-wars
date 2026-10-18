@@ -16,6 +16,7 @@ import '../../core/theme/app_radius.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_text_styles.dart';
 import 'app_toast.dart';
+import '../../l10n/l10n.dart';
 
 /// Home nudge when Remote Config `soft_update_version` is ahead of this build.
 class SoftUpdateBanner extends ConsumerWidget {
@@ -40,7 +41,7 @@ class SoftUpdateBanner extends ConsumerWidget {
       mode: LaunchMode.externalApplication,
     );
     if (!ok && context.mounted) {
-      AppToast.showText(context, 'Could not open the store.');
+      AppToast.showText(context, context.l10n.suStoreFailed);
     }
   }
 
@@ -120,7 +121,9 @@ class _SoftUpdateBannerBodyState extends State<_SoftUpdateBannerBody> {
   @override
   Widget build(BuildContext context) {
     final bg = widget.isDark ? AppColors.warningBgDark : AppColors.warningBg;
-    final fg = widget.isDark ? AppColors.warningTextDark : AppColors.warningText;
+    final fg = widget.isDark
+        ? AppColors.warningTextDark
+        : AppColors.warningText;
 
     return Padding(
       padding: const EdgeInsets.only(bottom: AppSpacing.md),
@@ -144,7 +147,7 @@ class _SoftUpdateBannerBodyState extends State<_SoftUpdateBannerBody> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Update available',
+                      context.l10n.suAvailable,
                       style: AppTextStyles.label().copyWith(
                         color: fg,
                         fontWeight: FontWeight.w800,
@@ -176,7 +179,7 @@ class _SoftUpdateBannerBodyState extends State<_SoftUpdateBannerBody> {
                           ),
                           onPressed: widget.onUpdate,
                           child: Text(
-                            'Update',
+                            context.l10n.suUpdate,
                             style: AppTextStyles.label().copyWith(
                               color: fg,
                               fontWeight: FontWeight.w800,
@@ -195,7 +198,7 @@ class _SoftUpdateBannerBodyState extends State<_SoftUpdateBannerBody> {
                             ),
                             onPressed: widget.onDismiss,
                             child: Text(
-                              'Later',
+                              context.l10n.suLater,
                               style: AppTextStyles.label().copyWith(
                                 color: widget.scheme.onSurfaceVariant,
                               ),

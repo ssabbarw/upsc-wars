@@ -20,7 +20,8 @@ String questionTableCell(Map<Object?, Object?> row, String column, int index) {
   final byCol = row[column];
   if (byCol != null && byCol.toString().isNotEmpty) return byCol.toString();
   final byIndex = row['col_$index'];
-  if (byIndex != null && byIndex.toString().isNotEmpty) return byIndex.toString();
+  if (byIndex != null && byIndex.toString().isNotEmpty)
+    return byIndex.toString();
   if (index == 0) {
     final v = row['list_i'];
     if (v != null && v.toString().isNotEmpty) return v.toString();
@@ -127,6 +128,7 @@ class TestQuestion {
   final String status;
   final bool flagged;
   final int? timeSpentSecs;
+
   /// `AnswerConfidence.*` or null if not captured.
   final String? confidence;
   final String? conceptAnchor;

@@ -16,6 +16,7 @@ import '../domain/chat_service.dart';
 import '../domain/entities/chat_message.dart';
 import '../domain/entities/chat_runtime_config.dart';
 import '../domain/entities/chat_thread.dart';
+import '../../../l10n/l10n.dart';
 
 const chatEnableOnlineIndicatorKey = 'chat_enable_online_indicator';
 const chatEnableTypingIndicatorKey = 'chat_enable_typing_indicator';
@@ -35,8 +36,8 @@ final currentUserEmailProvider = Provider<String?>((ref) {
 /// Email used for chat RTDB after a token refresh.
 final chatRtdbEmailProvider = FutureProvider<String?>((ref) async {
   ref.watch(authStateChangesProvider);
-  final email = await AuthSession.refreshTokenEmail() ??
-      AuthSession.currentEmail();
+  final email =
+      await AuthSession.refreshTokenEmail() ?? AuthSession.currentEmail();
   final uid = FirebaseAuth.instance.currentUser?.uid;
   if (email != null && email.isNotEmpty && uid != null && uid.isNotEmpty) {
     try {
@@ -93,11 +94,13 @@ final chatRuntimeConfigProvider =
       ChatRuntimeConfigNotifier.new,
     );
 
-final chatMessagesProvider =
-    StreamProvider.family<List<ChatMessage>, String>((ref, chatId) {
-      final service = ref.watch(chatServiceProvider);
-      return service.watchMessages(chatId: chatId, limit: 100);
-    });
+final chatMessagesProvider = StreamProvider.family<List<ChatMessage>, String>((
+  ref,
+  chatId,
+) {
+  final service = ref.watch(chatServiceProvider);
+  return service.watchMessages(chatId: chatId, limit: 100);
+});
 
 final chatThreadsProvider = StreamProvider<List<ChatThread>>((ref) {
   final service = ref.watch(chatServiceProvider);
@@ -124,8 +127,7 @@ final chatPeerDisplayNamesProvider = FutureProvider<Map<String, String>>((
   final threads = ref.watch(filteredChatThreadsProvider).value ?? const [];
   final me = ref.watch(currentUserEmailProvider);
   final emails = <String>{
-    for (final thread in threads)
-      peerEmailForThread(thread, me),
+    for (final thread in threads) peerEmailForThread(thread, me),
   }..removeWhere((e) => e.isEmpty);
   if (emails.isEmpty) return const {};
 
@@ -162,8 +164,9 @@ List<ChatThread> _threadsHidingBlocked(
 }
 
 /// Threads with people you have blocked omitted (inbox, badges).
-final filteredChatThreadsProvider =
-    Provider<AsyncValue<List<ChatThread>>>((ref) {
+final filteredChatThreadsProvider = Provider<AsyncValue<List<ChatThread>>>((
+  ref,
+) {
   final threads = ref.watch(chatThreadsProvider);
   final blockedAsync = ref.watch(blockedUserEmailsProvider);
   final me = ref.watch(currentUserEmailProvider);
@@ -177,7 +180,9 @@ final filteredChatThreadsProvider =
 
 /// True when any non-blocked thread has unread messages (for inbox / nav highlights).
 final chatInboxHasUnreadProvider = Provider<bool>((ref) {
-  return ref.watch(filteredChatThreadsProvider).maybeWhen(
+  return ref
+      .watch(filteredChatThreadsProvider)
+      .maybeWhen(
         data: (threads) => threads.any((t) => t.unreadCount > 0),
         orElse: () => false,
       );
@@ -187,7 +192,8 @@ final chatTypingProvider = StreamProvider.family
     .autoDispose<bool, ({String chatId, String peerEmail})>((ref, data) {
       final service = ref.watch(chatServiceProvider);
       final config =
-          ref.watch(chatRuntimeConfigProvider).value ?? ChatRuntimeConfig.defaults;
+          ref.watch(chatRuntimeConfigProvider).value ??
+          ChatRuntimeConfig.defaults;
       return service.watchIsTyping(
         chatId: data.chatId,
         peerEmail: data.peerEmail,
@@ -219,11 +225,15 @@ class ChatComposerNotifier extends AsyncNotifier<void> {
   }) async {
     final current = await _rtdbEmail();
     if (current == null) {
-      upscWarsTrace('ChatComposerNotifier.ensureThread aborted: no token email');
+      upscWarsTrace(
+        'ChatComposerNotifier.ensureThread aborted: no token email',
+      );
       return;
     }
     try {
-      await ref.read(chatServiceProvider).ensureThread(
+      await ref
+          .read(chatServiceProvider)
+          .ensureThread(
             chatId: chatId,
             currentUserEmail: current,
             peerEmail: peerEmail,
@@ -241,14 +251,12 @@ class ChatComposerNotifier extends AsyncNotifier<void> {
   }) async {
     final current = await _rtdbEmail();
     if (current == null) {
-      throw StateError('You are not signed in. Please sign in and try again.');
+      throw StateError(appL10n.chatNotSignedIn);
     }
     final blocked =
         ref.read(blockedUserEmailsProvider).value ?? const <String>{};
     if (blocked.contains(peerEmail.toLowerCase().trim())) {
-      throw StateError(
-        'You have blocked this person. Unblock them in Settings to send messages.',
-      );
+      throw StateError(appL10n.chatBlockedSend);
     }
     final config =
         ref.read(chatRuntimeConfigProvider).value ?? ChatRuntimeConfig.defaults;
@@ -281,7 +289,9 @@ class ChatComposerNotifier extends AsyncNotifier<void> {
     final config =
         ref.read(chatRuntimeConfigProvider).value ?? ChatRuntimeConfig.defaults;
     try {
-      await ref.read(chatServiceProvider).setTyping(
+      await ref
+          .read(chatServiceProvider)
+          .setTyping(
             chatId: chatId,
             currentUserEmail: current,
             isTyping: isTyping,
@@ -299,7 +309,9 @@ class ChatComposerNotifier extends AsyncNotifier<void> {
     final config =
         ref.read(chatRuntimeConfigProvider).value ?? ChatRuntimeConfig.defaults;
     try {
-      await ref.read(chatServiceProvider).markThreadRead(
+      await ref
+          .read(chatServiceProvider)
+          .markThreadRead(
             chatId: chatId,
             currentUserEmail: current,
             config: config,

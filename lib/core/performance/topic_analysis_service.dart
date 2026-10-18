@@ -77,7 +77,8 @@ class TopicAnalysisService {
     // Single aggregate for 14d window; show as flat “recent” line (14 points).
     final points = List.generate(14, (_) => TrendPoint(rate));
 
-    final total = z.sureWrong +
+    final total =
+        z.sureWrong +
         z.educatedWrong +
         z.sureCorrect +
         z.educatedCorrect +
@@ -86,8 +87,8 @@ class TopicAnalysisService {
     final head = total < 3
         ? 'Not enough attempts yet in this topic'
         : (z.sureWrong + z.educatedWrong > z.sureCorrect + z.educatedCorrect
-            ? 'Confident side needs calibration'
-            : 'Solid signal on confident answers');
+              ? 'Confident side needs calibration'
+              : 'Solid signal on confident answers');
     final reasons = <String>[];
     if (z.sureWrong > 0) {
       reasons.add('Very-sure wrongs: ${z.sureWrong}');
@@ -96,7 +97,9 @@ class TopicAnalysisService {
       reasons.add('Educated-guess wrongs: ${z.educatedWrong}');
     }
     if (reasons.isEmpty) {
-      reasons.add('No confident wrongs logged — or keep practising for signal.');
+      reasons.add(
+        'No confident wrongs logged — or keep practising for signal.',
+      );
     }
 
     return TopicMentorAnalysis(

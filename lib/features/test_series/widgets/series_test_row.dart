@@ -72,7 +72,9 @@ class SeriesTestRow extends ConsumerWidget {
     }
     if (!test.isAvailableAt(now)) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('${test.title}: ${seriesUnlockLabel(test, now)}.')),
+        SnackBar(
+          content: Text('${test.title}: ${seriesUnlockLabel(test, now)}.'),
+        ),
       );
       return;
     }
@@ -106,7 +108,9 @@ class SeriesTestRow extends ConsumerWidget {
     } on Object {
       messenger.showSnackBar(
         const SnackBar(
-          content: Text("Couldn't load this test. Check your connection and try again."),
+          content: Text(
+            "Couldn't load this test. Check your connection and try again.",
+          ),
         ),
       );
     }
@@ -191,13 +195,18 @@ class _StartSheet extends StatelessWidget {
               const SizedBox(height: AppSpacing.xs),
               Text(
                 test.theme!,
-                style: AppTextStyles.bodyMd().copyWith(color: scheme.onSurfaceVariant),
+                style: AppTextStyles.bodyMd().copyWith(
+                  color: scheme.onSurfaceVariant,
+                ),
               ),
             ],
             const SizedBox(height: AppSpacing.lg),
             _Fact(Icons.quiz_outlined, '${test.questionCount} questions'),
             _Fact(Icons.timer_outlined, '${test.durationMins} minutes, timed'),
-            const _Fact(Icons.calculate_outlined, '+2 for correct, -0.66 for wrong'),
+            const _Fact(
+              Icons.calculate_outlined,
+              '+2 for correct, -0.66 for wrong',
+            ),
             const _Fact(
               Icons.flag_outlined,
               'One scored attempt. Afterwards you can review it and practise '
@@ -206,7 +215,9 @@ class _StartSheet extends StatelessWidget {
             const SizedBox(height: AppSpacing.lg),
             FilledButton(
               onPressed: () => Navigator.pop(context, true),
-              style: FilledButton.styleFrom(minimumSize: const Size.fromHeight(50)),
+              style: FilledButton.styleFrom(
+                minimumSize: const Size.fromHeight(50),
+              ),
               child: const Text('Start test'),
             ),
           ],

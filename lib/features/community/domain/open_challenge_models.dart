@@ -434,7 +434,6 @@ String? _nonEmptyString(Object? value) {
   return t.isEmpty ? null : t;
 }
 
-
 int? _scoreFromFirestoreAttempt(Map<String, dynamic> map) {
   final s = map['score'];
   if (s is num) return s.toInt();

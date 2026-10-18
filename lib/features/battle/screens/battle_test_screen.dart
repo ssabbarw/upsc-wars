@@ -28,6 +28,7 @@ import 'package:upsc_wars/shared/widgets/en_hi_language_toggle.dart';
 import 'package:upsc_wars/shared/widgets/question_table_view.dart';
 import 'package:upsc_wars/shared/widgets/selectable_copy_search_text.dart';
 import 'package:upsc_wars/shared/widgets/top_snack_bar.dart';
+import '../../../l10n/l10n.dart';
 
 class BattleTestScreen extends ConsumerWidget {
   const BattleTestScreen({super.key, required this.sessionId});
@@ -47,7 +48,7 @@ class BattleTestScreen extends ConsumerWidget {
         appBar: AppBar(title: const Text('Battle')),
         body: Center(
           child: Text(
-            state.errorMessage ?? 'Could not open battle.',
+            state.errorMessage ?? context.l10n.btOpenFailed,
             style: AppTextStyles.body(),
           ),
         ),
@@ -165,19 +166,16 @@ class _BattleTestSessionView extends HookConsumerWidget {
       final confirmed = await showDialog<bool>(
         context: context,
         builder: (ctx) => AlertDialog(
-          title: Text('Leave battle?', style: AppTextStyles.h3()),
-          content: Text(
-            'Going back means you want to quit the battle, but your progress will be saved.',
-            style: AppTextStyles.bodyMd(),
-          ),
+          title: Text(ctx.l10n.btLeaveTitle, style: AppTextStyles.h3()),
+          content: Text(ctx.l10n.btLeaveBody, style: AppTextStyles.bodyMd()),
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(ctx, false),
-              child: const Text('Cancel'),
+              child: Text(ctx.l10n.commonCancel),
             ),
             TextButton(
               onPressed: () => Navigator.pop(ctx, true),
-              child: const Text('Leave'),
+              child: Text(ctx.l10n.testLeave),
             ),
           ],
         ),
@@ -207,12 +205,12 @@ class _BattleTestSessionView extends HookConsumerWidget {
           centerTitle: true,
           actions: [
             IconButton(
-              tooltip: 'Question grid',
+              tooltip: context.l10n.btGridTooltip,
               icon: const Icon(Icons.grid_view_outlined),
               onPressed: () => _showBattleQuestionGrid(context, ref, sessionId),
             ),
             IconButton(
-              tooltip: 'Dark mode',
+              tooltip: context.l10n.settingsDarkMode,
               icon: Icon(isDark ? Icons.dark_mode : Icons.light_mode, size: 20),
               onPressed: () async {
                 await setDarkModeEnabled(ref: ref, darkModeEnabled: !isDark);
@@ -265,7 +263,7 @@ class _BattleTestSessionView extends HookConsumerWidget {
                             const SizedBox(width: AppSpacing.sm),
                             Expanded(
                               child: Text(
-                                'Waiting for your opponent to join before you can answer.',
+                                context.l10n.btWaitJoin,
                                 style: AppTextStyles.bodyMd().copyWith(
                                   color: scheme.onSurface,
                                 ),
@@ -307,7 +305,7 @@ class _BattleTestSessionView extends HookConsumerWidget {
                               ),
                               const SizedBox(width: 4),
                               Text(
-                                'Revisit',
+                                context.l10n.btRevisit,
                                 style: AppTextStyles.caption().copyWith(
                                   color: scheme.onSurfaceVariant,
                                 ),
@@ -343,7 +341,7 @@ class _BattleTestSessionView extends HookConsumerWidget {
                                   showTopSnackBar(
                                     context,
                                     content: Text(
-                                      'Could not submit battle. Please retry.',
+                                      context.l10n.btSubmitFailed,
                                       style: AppTextStyles.bodyMd().copyWith(
                                         color: scheme.onSurface,
                                       ),
@@ -351,7 +349,7 @@ class _BattleTestSessionView extends HookConsumerWidget {
                                   );
                                 }
                               },
-                        child: const Text('Submit'),
+                        child: Text(context.l10n.testSubmit),
                       ),
                     ],
                   ),
@@ -396,7 +394,7 @@ class _BattleTestSessionView extends HookConsumerWidget {
                         child: OutlinedButton.icon(
                           onPressed: idx > 0 ? notifier.movePrev : null,
                           icon: const Icon(Icons.chevron_left, size: 18),
-                          label: const Text('Prev'),
+                          label: Text(context.l10n.testPrev),
                         ),
                       ),
                       IconButton(
@@ -408,7 +406,9 @@ class _BattleTestSessionView extends HookConsumerWidget {
                                 showTopSnackBar(
                                   context,
                                   content: Text(
-                                    marked ? 'Bookmarked' : 'Bookmark removed',
+                                    marked
+                                        ? context.l10n.testBookmarked
+                                        : context.l10n.testBookmarkRemoved,
                                     style: AppTextStyles.bodyMd().copyWith(
                                       color: scheme.onSurface,
                                     ),
@@ -439,7 +439,7 @@ class _BattleTestSessionView extends HookConsumerWidget {
                                           showTopSnackBar(
                                             context,
                                             content: Text(
-                                              'Could not submit battle. Please retry.',
+                                              context.l10n.btSubmitFailed,
                                               style: AppTextStyles.bodyMd()
                                                   .copyWith(
                                                     color: scheme.onSurface,
@@ -451,13 +451,13 @@ class _BattleTestSessionView extends HookConsumerWidget {
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: AppColors.primary,
                                 ),
-                                child: const Text('Submit'),
+                                child: Text(context.l10n.testSubmit),
                               )
                             : OutlinedButton.icon(
                                 onPressed: notifier.moveNext,
                                 iconAlignment: IconAlignment.end,
                                 icon: const Icon(Icons.chevron_right, size: 18),
-                                label: const Text('Next'),
+                                label: Text(context.l10n.testNext),
                               ),
                       ),
                     ],
@@ -539,7 +539,7 @@ Future<void> _showBattleQuestionGrid(
                 Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
-                    'Question Grid',
+                    context.l10n.btGridTitle,
                     style: AppTextStyles.h3().copyWith(color: scheme.onSurface),
                   ),
                 ),
@@ -547,7 +547,7 @@ Future<void> _showBattleQuestionGrid(
                 Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
-                    'Tap any number to jump to that question',
+                    context.l10n.testGridHint,
                     style: AppTextStyles.caption().copyWith(
                       color: scheme.onSurfaceVariant,
                     ),
@@ -559,12 +559,12 @@ Future<void> _showBattleQuestionGrid(
                   runSpacing: AppSpacing.xs,
                   children: [
                     _BattleGridLegendItem(
-                      label: 'Current',
+                      label: context.l10n.testGridCurrent,
                       bg: AppColors.primary,
                       fg: AppColors.onPrimary,
                     ),
                     _BattleGridLegendItem(
-                      label: 'Attempted',
+                      label: context.l10n.testGridAttempted,
                       bg: isDark
                           ? AppColors.correctBgDark
                           : AppColors.correctBg,
@@ -573,7 +573,7 @@ Future<void> _showBattleQuestionGrid(
                           : AppColors.correctText,
                     ),
                     _BattleGridLegendItem(
-                      label: 'Flagged',
+                      label: context.l10n.testGridFlagged,
                       bg: isDark
                           ? AppColors.warningBgDark
                           : AppColors.warningBg,
@@ -582,7 +582,7 @@ Future<void> _showBattleQuestionGrid(
                           : AppColors.warningText,
                     ),
                     _BattleGridLegendItem(
-                      label: 'Not visited',
+                      label: context.l10n.testGridNotVisited,
                       bg: scheme.surfaceContainerLow,
                       fg: scheme.onSurfaceVariant,
                     ),
@@ -636,15 +636,15 @@ Future<void> _showBattleQuestionGrid(
                       TableRow(
                         children: [
                           _BattleGridCountCell(
-                            label: 'Attempted',
+                            label: context.l10n.testGridAttempted,
                             value: '$attempted',
                           ),
                           _BattleGridCountCell(
-                            label: 'Skipped',
+                            label: context.l10n.testGridSkipped,
                             value: '$skipped',
                           ),
                           _BattleGridCountCell(
-                            label: 'Flagged',
+                            label: context.l10n.testGridFlagged,
                             value: '$flagged',
                           ),
                         ],
@@ -658,7 +658,7 @@ Future<void> _showBattleQuestionGrid(
                     Expanded(
                       child: OutlinedButton(
                         onPressed: () => Navigator.of(ctx).pop(),
-                        child: const Text('Go back'),
+                        child: Text(context.l10n.testGoBack),
                       ),
                     ),
                     const SizedBox(width: AppSpacing.sm),
@@ -679,7 +679,7 @@ Future<void> _showBattleQuestionGrid(
                                   showTopSnackBar(
                                     context,
                                     content: Text(
-                                      'Could not submit battle. Please retry.',
+                                      context.l10n.btSubmitFailed,
                                       style: AppTextStyles.bodyMd().copyWith(
                                         color: scheme.onSurface,
                                       ),
@@ -695,7 +695,7 @@ Future<void> _showBattleQuestionGrid(
                               ? scheme.onErrorContainer
                               : null,
                         ),
-                        child: const Text('Submit Test'),
+                        child: Text(context.l10n.testSubmitTest),
                       ),
                     ),
                   ],
@@ -883,7 +883,7 @@ class _BattleQuestionArea extends StatelessWidget {
       children: [
         Expanded(
           child: Text(
-            'Question',
+            context.l10n.shareQuestion,
             style: AppTextStyles.caption().copyWith(
               color: scheme.onSurfaceVariant,
             ),
@@ -1227,17 +1227,17 @@ class _BattleExplanationPanel extends StatelessWidget {
       LearningVerdict.correct => (
         isDark ? AppColors.correctBgDark : AppColors.correctBg,
         isDark ? AppColors.correctTextDark : AppColors.correctText,
-        'Correct',
+        context.l10n.testCorrect,
       ),
       LearningVerdict.incorrect => (
         isDark ? AppColors.wrongBgDark : AppColors.wrongBg,
         isDark ? AppColors.wrongTextDark : AppColors.wrongText,
-        'Incorrect',
+        context.l10n.reviewIncorrect,
       ),
       _ => (
         isDark ? AppColors.warningBgDark : AppColors.warningBg,
         isDark ? AppColors.warningTextDark : AppColors.warningText,
-        'Answer',
+        context.l10n.btAnswer,
       ),
     };
 

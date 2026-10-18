@@ -87,7 +87,9 @@ class DailyWarAdminPreviewScreen extends HookConsumerWidget {
                 padding: const EdgeInsets.all(AppSpacing.lg),
                 child: Text(
                   error.value!,
-                  style: AppTextStyles.bodyMd().copyWith(color: AppColors.wrong),
+                  style: AppTextStyles.bodyMd().copyWith(
+                    color: AppColors.wrong,
+                  ),
                 ),
               ),
             )
@@ -250,10 +252,7 @@ class _QuestionReviewCard extends StatelessWidget {
           AppSpacing.md,
         ),
         children: [
-          SelectableText(
-            question.displayText,
-            style: AppTextStyles.bodyMd(),
-          ),
+          SelectableText(question.displayText, style: AppTextStyles.bodyMd()),
           const SizedBox(height: AppSpacing.md),
           option('a', question.optionA),
           option('b', question.optionB),

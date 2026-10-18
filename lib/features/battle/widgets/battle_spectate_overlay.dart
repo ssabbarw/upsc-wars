@@ -16,6 +16,7 @@ import 'package:upsc_wars/core/theme/app_text_styles.dart';
 import 'package:upsc_wars/shared/widgets/dismissible_modal_sheet.dart';
 import 'package:upsc_wars/features/battle/providers/battle_spectate_provider.dart';
 import 'package:upsc_wars/features/battle/widgets/battle_live_scoreboard.dart';
+import '../../../l10n/l10n.dart';
 
 /// True while the spectate bottom sheet is on screen (hides the FAB chip).
 class BattleSpectateSheetOpenNotifier extends StateNotifier<bool> {
@@ -35,7 +36,7 @@ String _opponentShortName(String opponentName) {
       .split(RegExp(r'\s+'))
       .where((e) => e.isNotEmpty)
       .toList();
-  if (w.isEmpty) return 'Your opponent';
+  if (w.isEmpty) return appL10n.bsoYourOpp;
   return w.first;
 }
 
@@ -43,34 +44,34 @@ String battleSpectateVerdictLine(BattleSpectateState s) {
   final diff = s.playerPoints - s.opponentPoints;
   if (s.opponentCaughtUp || s.timerExpired) {
     if (diff.abs() < 0.001) {
-      return 'Tie on points.';
+      return appL10n.bsoTie;
     }
     if (diff > 0) {
-      return 'You were ahead on points.';
+      return appL10n.bsoYouAhead;
     }
-    return 'Your opponent was ahead on points.';
+    return appL10n.bsoOppAhead;
   }
   if (diff > 0.5) {
-    return 'You are ahead on points (for now).';
+    return appL10n.bsoYouAheadNow;
   }
   if (diff < -0.5) {
-    return 'Your opponent is ahead on points (for now).';
+    return appL10n.bsoOppAheadNow;
   }
-  return 'Scores are very close.';
+  return appL10n.bsoClose;
 }
 
 String battleSpectateStatusSubline(BattleSpectateState s) {
   final short = _opponentShortName(s.opponentName);
   if (s.opponentPaperSubmitted && !s.opponentCaughtUp) {
-    return '$short has submitted; unanswered questions stay blank.';
+    return appL10n.bsoSubmitted(short);
   }
   if (s.opponentCaughtUp) {
-    return '$short has locked in every answer.';
+    return appL10n.bsoLockedAll(short);
   }
   if (s.timerExpired) {
-    return 'The timer window ended; the room will not add more live marks.';
+    return appL10n.bsoTimerEnded;
   }
-  return '$short is still working through the paper.';
+  return appL10n.bsoStillWorking(short);
 }
 
 Offset? _decodeFabOffset(String? raw) {
@@ -131,20 +132,19 @@ Future<void> promptStopLiveDuelFromFab(WidgetRef ref) async {
     context: dialogContext,
     useRootNavigator: true,
     builder: (ctx) => AlertDialog(
-      title: Text('Close live duel?', style: AppTextStyles.h3()),
+      title: Text(ctx.l10n.bsoCloseTitle, style: AppTextStyles.h3()),
       content: Text(
-        '${_opponentShortName(s.opponentName)} is still answering. '
-        'Stop the live duel anyway?',
+        ctx.l10n.bsoCloseBody(_opponentShortName(s.opponentName)),
         style: AppTextStyles.bodyMd(),
       ),
       actions: [
         TextButton(
           onPressed: () => Navigator.pop(ctx, false),
-          child: const Text('Cancel'),
+          child: Text(ctx.l10n.commonCancel),
         ),
         FilledButton(
           onPressed: () => Navigator.pop(ctx, true),
-          child: const Text('Stop'),
+          child: Text(ctx.l10n.bsoStop),
         ),
       ],
     ),
@@ -170,20 +170,19 @@ Future<bool> tryStopBattleSpectate(BuildContext context, WidgetRef ref) async {
     context: context,
     useRootNavigator: true,
     builder: (ctx) => AlertDialog(
-      title: Text('Leave the live board?', style: AppTextStyles.h3()),
+      title: Text(ctx.l10n.bsoLeaveTitle, style: AppTextStyles.h3()),
       content: Text(
-        '${_opponentShortName(s.opponentName)} is still answering. '
-        'Do you want to stop watching?',
+        ctx.l10n.bsoLeaveBody(_opponentShortName(s.opponentName)),
         style: AppTextStyles.bodyMd(),
       ),
       actions: [
         TextButton(
           onPressed: () => Navigator.pop(ctx, false),
-          child: const Text('Keep watching'),
+          child: Text(ctx.l10n.bsoKeepWatching),
         ),
         FilledButton(
           onPressed: () => Navigator.pop(ctx, true),
-          child: const Text('Stop'),
+          child: Text(ctx.l10n.bsoStop),
         ),
       ],
     ),
@@ -237,7 +236,9 @@ class BattleSpectateFabHost extends HookConsumerWidget {
     final settled = s.battleSettled;
     final accent = settled ? AppColors.info : AppColors.primary;
     final duelIcon = settled ? Icons.flag_rounded : Icons.sensors_rounded;
-    final duelLabel = settled ? 'Battle over' : 'Live duel';
+    final duelLabel = settled
+        ? context.l10n.bsoBattleOver
+        : context.l10n.bsoLiveDuel;
 
     void schedulePersistFab(Offset topLeft) {
       persistTimer.value?.cancel();
@@ -437,12 +438,12 @@ class _BattleSpectateSheetBody extends HookConsumerWidget {
                 FilledButton.icon(
                   onPressed: () => tryStopBattleSpectate(sheetContext, ref),
                   icon: const Icon(Icons.visibility_off_outlined, size: 20),
-                  label: const Text('Stop following'),
+                  label: Text(context.l10n.bsoStopFollowing),
                 ),
                 const SizedBox(height: AppSpacing.sm),
                 OutlinedButton(
                   onPressed: () => Navigator.of(sheetContext).pop(),
-                  child: const Text('Close panel'),
+                  child: Text(context.l10n.bsoClosePanel),
                 ),
               ],
             ),

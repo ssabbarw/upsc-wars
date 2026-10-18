@@ -83,8 +83,8 @@ class MemoryPairDifficultyTabBar extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: active
                           ? (isDark
-                              ? color.withValues(alpha: 0.22)
-                              : color.withValues(alpha: 0.14))
+                                ? color.withValues(alpha: 0.22)
+                                : color.withValues(alpha: 0.14))
                           : Colors.transparent,
                       borderRadius: BorderRadius.circular(AppRadius.md),
                     ),
@@ -109,11 +109,7 @@ class MemoryPairDifficultyTabBar extends StatelessWidget {
 
 /// Up to 3 stars — filled count indicates tier or mastery preview.
 class MemoryPairTierStars extends StatelessWidget {
-  const MemoryPairTierStars({
-    super.key,
-    required this.filled,
-    this.size = 16,
-  });
+  const MemoryPairTierStars({super.key, required this.filled, this.size = 16});
 
   final int filled;
   final double size;
@@ -121,8 +117,7 @@ class MemoryPairTierStars extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final emptyColor =
-        isDark ? AppColors.gray600 : AppColors.borderLight;
+    final emptyColor = isDark ? AppColors.gray600 : AppColors.borderLight;
 
     return Row(
       mainAxisSize: MainAxisSize.min,

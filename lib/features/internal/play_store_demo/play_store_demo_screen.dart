@@ -19,18 +19,17 @@ class PlayStoreDemoScreen extends HookWidget {
   @override
   Widget build(BuildContext context) {
     if (!kDebugMode) {
-      return const Scaffold(
-        body: Center(child: Text('Not available')),
-      );
+      return const Scaffold(body: Center(child: Text('Not available')));
     }
 
     final stepIndex = useState(0);
     final finished = useState(false);
 
-    final step = playStoreDemoScript[stepIndex.value.clamp(
-      0,
-      playStoreDemoScript.length - 1,
-    )];
+    final step =
+        playStoreDemoScript[stepIndex.value.clamp(
+          0,
+          playStoreDemoScript.length - 1,
+        )];
     final isLast = stepIndex.value >= playStoreDemoScript.length - 1;
 
     // Auto-advance through the script. Stays on the end card.

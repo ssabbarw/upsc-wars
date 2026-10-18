@@ -53,7 +53,8 @@ class _ShareLinkTestModeSheetBody extends StatefulWidget {
       _ShareLinkTestModeSheetBodyState();
 }
 
-class _ShareLinkTestModeSheetBodyState extends State<_ShareLinkTestModeSheetBody> {
+class _ShareLinkTestModeSheetBodyState
+    extends State<_ShareLinkTestModeSheetBody> {
   String _mode = 'learning';
 
   @override
@@ -68,8 +69,9 @@ class _ShareLinkTestModeSheetBodyState extends State<_ShareLinkTestModeSheetBody
       ShareLinkKind.test => 'Shared test',
     };
     final topicTrim = widget.topic?.trim();
-    final topicLine =
-        topicTrim != null && topicTrim.isNotEmpty ? topicTrim : null;
+    final topicLine = topicTrim != null && topicTrim.isNotEmpty
+        ? topicTrim
+        : null;
 
     return Padding(
       padding: EdgeInsets.only(
@@ -109,8 +111,9 @@ class _ShareLinkTestModeSheetBodyState extends State<_ShareLinkTestModeSheetBody
                       Icons.close_rounded,
                       color: scheme.onSurfaceVariant,
                     ),
-                    tooltip:
-                        MaterialLocalizations.of(context).closeButtonTooltip,
+                    tooltip: MaterialLocalizations.of(
+                      context,
+                    ).closeButtonTooltip,
                   ),
               ],
             ),
@@ -149,10 +152,7 @@ class _ShareLinkTestModeSheetBodyState extends State<_ShareLinkTestModeSheetBody
                   value: 'learning',
                   label: Text('Learning'),
                 ),
-                ButtonSegment<String>(
-                  value: 'exam',
-                  label: Text('Normal'),
-                ),
+                ButtonSegment<String>(value: 'exam', label: Text('Normal')),
               ],
               selected: {_mode},
               onSelectionChanged: (s) {

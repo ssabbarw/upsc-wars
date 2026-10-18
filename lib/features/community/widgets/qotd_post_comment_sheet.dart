@@ -6,6 +6,7 @@ import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/widgets/app_toast.dart';
 import '../domain/qotd_comment_rules.dart';
+import '../../../l10n/l10n.dart';
 
 class QotdPostCommentResult {
   const QotdPostCommentResult._({
@@ -15,13 +16,13 @@ class QotdPostCommentResult {
   });
 
   const QotdPostCommentResult.posted()
-      : this._(posted: true, needsSignIn: false, comment: '');
+    : this._(posted: true, needsSignIn: false, comment: '');
 
   const QotdPostCommentResult.dismissed()
-      : this._(posted: false, needsSignIn: false, comment: '');
+    : this._(posted: false, needsSignIn: false, comment: '');
 
   const QotdPostCommentResult.needsSignIn(String comment)
-      : this._(posted: false, needsSignIn: true, comment: comment);
+    : this._(posted: false, needsSignIn: true, comment: comment);
 
   final bool posted;
   final bool needsSignIn;
@@ -126,9 +127,7 @@ class _QotdPostCommentSheetContentState
               Text('Post to QOTD', style: AppTextStyles.h3()),
               const SizedBox(height: AppSpacing.sm),
               Text(
-                'Optional note for the community. You learned something new? '
-                'Spotted something ironic? A concept felt challenged? '
-                'Be specific — or leave this blank.',
+                context.l10n.qotdNoteIntro,
                 style: AppTextStyles.caption().copyWith(
                   color: scheme.onSurfaceVariant,
                 ),
@@ -142,13 +141,11 @@ class _QotdPostCommentSheetContentState
                 textCapitalization: TextCapitalization.sentences,
                 inputFormatters: [
                   FilteringTextInputFormatter.deny(RegExp(r'[\r\n]')),
-                  LengthLimitingTextInputFormatter(
-                    QotdCommentRules.maxLength,
-                  ),
+                  LengthLimitingTextInputFormatter(QotdCommentRules.maxLength),
                 ],
-                decoration: const InputDecoration(
-                  labelText: 'Comment (optional)',
-                  hintText: 'Leave blank, or write at least 50 characters…',
+                decoration: InputDecoration(
+                  labelText: context.l10n.qotdCommentLabel,
+                  hintText: context.l10n.qotdCommentHint,
                   alignLabelWithHint: true,
                   border: OutlineInputBorder(),
                 ),
@@ -167,8 +164,7 @@ class _QotdPostCommentSheetContentState
                       children: [
                         if (n > 0 && n < need)
                           Text(
-                            '${need - n} more characters to reach $need, '
-                            'or clear the field to post without a comment.',
+                            context.l10n.qotdMoreChars(need - n, need),
                             style: AppTextStyles.caption().copyWith(
                               color: scheme.error,
                             ),
@@ -187,7 +183,7 @@ class _QotdPostCommentSheetContentState
               if (!signedIn) ...[
                 const SizedBox(height: AppSpacing.sm),
                 Text(
-                  'Sign in to post. Your comment is kept.',
+                  context.l10n.qotdSignInKept,
                   style: AppTextStyles.caption().copyWith(
                     color: scheme.primary,
                   ),
@@ -205,7 +201,11 @@ class _QotdPostCommentSheetContentState
                           color: Colors.white,
                         ),
                       )
-                    : Text(signedIn ? 'Post' : 'Sign in to post'),
+                    : Text(
+                        signedIn
+                            ? context.l10n.qotdPost
+                            : context.l10n.qotdSignInPost,
+                      ),
               ),
             ],
           ),

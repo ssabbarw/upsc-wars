@@ -7,6 +7,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:upsc_wars/core/analytics/activation_milestones.dart';
 import 'package:upsc_wars/core/theme/reading_font_scale.dart';
 import 'package:upsc_wars/shared/widgets/selectable_copy_search_text.dart';
+import '../../../l10n/l10n.dart';
 
 class QuestionTranslation {
   const QuestionTranslation({
@@ -689,7 +690,9 @@ class _StatementRow extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Text(
-                  item.isCorrect ? 'Correct' : 'Incorrect',
+                  item.isCorrect
+                      ? context.l10n.testCorrect
+                      : context.l10n.reviewIncorrect,
                   style: TextStyle(
                     fontSize: 10,
                     fontWeight: FontWeight.w500,
@@ -770,7 +773,7 @@ class _WatchOutCard extends HookWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SelectableCopySearchText(
-            'Watch out - $title',
+            context.l10n.ecWatchOut(title),
             style: context.readingFont(
               TextStyle(
                 fontSize: 10,

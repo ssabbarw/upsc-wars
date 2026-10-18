@@ -122,13 +122,18 @@ void main() {
     expect(SessionBackupCodec.decode({'v': 99, 'sid': 'x', 'q': []}), isNull);
   });
 
-  test('pending backup query only returns completed, unbacked sessions', () async {
-    expect(
-      (await source.sessionsDao.getSessionsPendingBackup()).map((s) => s.id),
-      ['s1'],
-    );
-    await source.sessionsDao.markSessionsBackedUp(['s1'], DateTime.now());
-    expect(await source.sessionsDao.getSessionsPendingBackup(), isEmpty);
-    expect(await source.sessionsDao.existingSessionIds(['s1', 'nope']), {'s1'});
-  });
+  test(
+    'pending backup query only returns completed, unbacked sessions',
+    () async {
+      expect(
+        (await source.sessionsDao.getSessionsPendingBackup()).map((s) => s.id),
+        ['s1'],
+      );
+      await source.sessionsDao.markSessionsBackedUp(['s1'], DateTime.now());
+      expect(await source.sessionsDao.getSessionsPendingBackup(), isEmpty);
+      expect(await source.sessionsDao.existingSessionIds(['s1', 'nope']), {
+        's1',
+      });
+    },
+  );
 }

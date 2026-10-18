@@ -77,10 +77,7 @@ class _PushRevisionGameDebugCardState extends State<PushRevisionGameDebugCard> {
           const SizedBox(height: AppSpacing.sm),
           DropdownButtonFormField<String>(
             value: _gameId,
-            decoration: const InputDecoration(
-              labelText: 'game',
-              isDense: true,
-            ),
+            decoration: const InputDecoration(labelText: 'game', isDense: true),
             items: [
               for (final id in _options)
                 DropdownMenuItem(value: id, child: Text(id)),

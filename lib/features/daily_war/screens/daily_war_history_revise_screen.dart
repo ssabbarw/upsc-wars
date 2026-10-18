@@ -10,6 +10,7 @@ import '../../../core/providers/catalog_providers.dart';
 import '../../history/screens/session_review_screen.dart';
 import '../providers/daily_war_providers.dart';
 import '../theme/daily_war_theme.dart';
+import '../../../l10n/l10n.dart';
 
 /// Revise a past War paper using [ReviewBody] with attempt overlays.
 class DailyWarHistoryReviseScreen extends HookConsumerWidget {
@@ -42,9 +43,10 @@ class DailyWarHistoryReviseScreen extends HookConsumerWidget {
                   Text('$e', textAlign: TextAlign.center),
                   const SizedBox(height: 16),
                   FilledButton(
-                    onPressed: () =>
-                        ref.invalidate(dailyWarArchiveQuestionsProvider(dateId)),
-                    child: const Text('Retry'),
+                    onPressed: () => ref.invalidate(
+                      dailyWarArchiveQuestionsProvider(dateId),
+                    ),
+                    child: Text(context.l10n.commonRetry),
                   ),
                 ],
               ),
@@ -63,7 +65,9 @@ class DailyWarHistoryReviseScreen extends HookConsumerWidget {
             useEffect(() {
               if (questions.isEmpty) return null;
               unawaited(() async {
-                final repo = await ref.read(testEngineRepositoryProvider.future);
+                final repo = await ref.read(
+                  testEngineRepositoryProvider.future,
+                );
                 final map = <String, bool>{};
                 for (final q in questions) {
                   map[q.uuid] = await repo.isBookmarked(q.uuid);
@@ -76,7 +80,7 @@ class DailyWarHistoryReviseScreen extends HookConsumerWidget {
             if (questions.isEmpty) {
               return Center(
                 child: Text(
-                  'No questions available',
+                  context.l10n.dwNoQuestionsAvail,
                   style: DwText.dm(
                     size: 14,
                     color: Theme.of(context).colorScheme.onSurface,
@@ -92,7 +96,7 @@ class DailyWarHistoryReviseScreen extends HookConsumerWidget {
             final isQueued = queued.value[q.uuid] ?? false;
 
             return ReviewBody(
-              title: 'Static War revise',
+              title: context.l10n.dwStaticWarRevise,
               showRevisionBadge: false,
               progressRight: dateId,
               question: q,
@@ -101,7 +105,9 @@ class DailyWarHistoryReviseScreen extends HookConsumerWidget {
               isBookmarked: isBookmarked,
               isQueued: isQueued,
               onToggleBookmark: () async {
-                final repo = await ref.read(testEngineRepositoryProvider.future);
+                final repo = await ref.read(
+                  testEngineRepositoryProvider.future,
+                );
                 if (isBookmarked) {
                   await repo.removeBookmark(q.uuid);
                 } else {

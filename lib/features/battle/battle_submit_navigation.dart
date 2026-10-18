@@ -7,6 +7,7 @@ import 'package:upsc_wars/core/theme/app_spacing.dart';
 import 'package:upsc_wars/core/theme/app_text_styles.dart';
 import 'package:upsc_wars/features/battle/providers/battle_session_provider.dart';
 import 'package:upsc_wars/features/battle/providers/battle_spectate_provider.dart';
+import '../../l10n/l10n.dart';
 
 enum _BattleSubmitChoice {
   /// Stay on the battle test (dismiss sheet only).
@@ -144,16 +145,15 @@ Future<_BattleSubmitChoice?> _showBattleSubmitConfirmationSheet(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Text(
-                  'Submit your answers?',
+                  ctx.l10n.bsnTitle,
                   style: AppTextStyles.h3().copyWith(color: scheme.onSurface),
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: AppSpacing.sm),
                 Text(
                   opponentStillPlaying
-                      ? 'Your score will lock in. You can watch your opponent '
-                            'finish on a live board, or go straight to results.'
-                      : 'Your score will lock in and you will see the outcome.',
+                      ? ctx.l10n.bsnBodyWatch
+                      : ctx.l10n.bsnBodyPlain,
                   style: AppTextStyles.bodyMd().copyWith(
                     color: scheme.onSurfaceVariant,
                   ),
@@ -163,21 +163,21 @@ Future<_BattleSubmitChoice?> _showBattleSubmitConfirmationSheet(
                 TextButton(
                   onPressed: () =>
                       Navigator.pop(ctx, _BattleSubmitChoice.continueBattle),
-                  child: const Text('Continue battle'),
+                  child: Text(ctx.l10n.bsnContinue),
                 ),
                 if (opponentStillPlaying) ...[
                   const SizedBox(height: AppSpacing.xs),
                   OutlinedButton(
                     onPressed: () =>
                         Navigator.pop(ctx, _BattleSubmitChoice.watchAndExit),
-                    child: const Text('Submit and Watch their progress'),
+                    child: Text(ctx.l10n.bsnWatch),
                   ),
                 ],
                 const SizedBox(height: AppSpacing.sm),
                 FilledButton(
                   onPressed: () =>
                       Navigator.pop(ctx, _BattleSubmitChoice.submitOnly),
-                  child: const Text('Submit & see results'),
+                  child: Text(ctx.l10n.bsnSeeResults),
                 ),
               ],
             ),

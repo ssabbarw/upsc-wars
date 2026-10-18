@@ -12,6 +12,7 @@ import '../constants/prelims_debug_flags.dart';
 import '../debug/upsc_wars_trace.dart';
 import '../providers/prefs_provider.dart';
 import '../../features/chat/chat_fcm.dart';
+import '../../l10n/l10n.dart';
 
 /// One pre-scheduled Daily Drill reminder in the rolling window.
 typedef ScheduledDrillReminder = ({
@@ -65,9 +66,8 @@ class AppLocalNotificationsService {
   static const _noTestReminderChannelDescription =
       'Reminders to take your first practice test';
 
-  static const _noTestReminderTitle = 'Find where UPSC Wars gives you an edge';
-  static const _noTestReminderBody =
-      'Take 7 quick MCQs. Get coached to eliminate better, spot weak areas, and see where you\u2019re strong.';
+  static String get _noTestReminderTitle => appL10n.notifNoTestTitle;
+  static String get _noTestReminderBody => appL10n.notifNoTestBody;
 
   static const _battleChannelId = 'battle_invites_foreground';
   static const _battleChannelName = 'Battle invites';
@@ -333,8 +333,8 @@ class AppLocalNotificationsService {
 
     await _plugin.show(
       id: foregroundBattleInviteNotificationId,
-      title: title.isNotEmpty ? title : 'Battle invite',
-      body: body.isNotEmpty ? body : 'Tap to join',
+      title: title.isNotEmpty ? title : appL10n.notifBattleInviteTitle,
+      body: body.isNotEmpty ? body : appL10n.notifTapToJoin,
       notificationDetails: NotificationDetails(
         android: AndroidNotificationDetails(
           _battleChannelId,
@@ -383,8 +383,8 @@ class AppLocalNotificationsService {
 
     await _plugin.show(
       id: foregroundFomoPulseNotificationId,
-      title: title.isNotEmpty ? title : 'CA Shot',
-      body: body.isNotEmpty ? body : 'Tap to read & attempt',
+      title: title.isNotEmpty ? title : appL10n.notifCaShotTitle,
+      body: body.isNotEmpty ? body : appL10n.notifTapToRead,
       notificationDetails: NotificationDetails(
         android: AndroidNotificationDetails(
           _fomoPulseChannelId,
@@ -436,8 +436,8 @@ class AppLocalNotificationsService {
 
     await _plugin.show(
       id: foregroundChatMessageNotificationId,
-      title: title.isNotEmpty ? title : 'New message',
-      body: body.isNotEmpty ? body : 'Tap to open chat',
+      title: title.isNotEmpty ? title : appL10n.notifNewMessage,
+      body: body.isNotEmpty ? body : appL10n.notifTapToOpenChat,
       notificationDetails: NotificationDetails(
         android: AndroidNotificationDetails(
           _chatChannelId,
@@ -672,12 +672,12 @@ class AppLocalNotificationsService {
 
     final scheduledDate = tz.TZDateTime.from(fireAtLocal, tz.local);
     final body = warTopicsLine == null || warTopicsLine.isEmpty
-        ? '$questionCount MCQs from the news you just read'
-        : '$questionCount MCQs from the news · Tonight: $warTopicsLine';
+        ? appL10n.notifPaperBody(questionCount)
+        : appL10n.notifPaperBodyTonight(questionCount, warTopicsLine);
     try {
       await _plugin.zonedSchedule(
         id: dailyCaPaperReminderNotificationId,
-        title: "Today's paper quiz is live",
+        title: appL10n.notifPaperTitle,
         body: body,
         scheduledDate: scheduledDate,
         notificationDetails: _dailyPracticeReminderDetails(),

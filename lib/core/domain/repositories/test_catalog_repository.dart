@@ -36,8 +36,5 @@ class TopicMetrics {
 abstract class TestCatalogRepository {
   Future<List<SubjectMetrics>> fetchSubjectMetrics(String language);
 
-  Future<List<TopicMetrics>> fetchTopicMetrics(
-    String subject,
-    String language,
-  );
+  Future<List<TopicMetrics>> fetchTopicMetrics(String subject, String language);
 }

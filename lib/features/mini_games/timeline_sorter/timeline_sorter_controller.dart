@@ -2,6 +2,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../shared/mini_game_content_repository.dart';
 import '../shared/mini_game_models.dart';
+import '../../../l10n/l10n.dart';
 
 /// Sets played per session, drawn randomly from the filtered pool.
 const timelineSessionSize = 10;
@@ -30,9 +31,7 @@ class TimelineSorterState {
   final String? error;
 
   TimelineSorterSet? get current =>
-      session.isEmpty || setIndex >= session.length
-          ? null
-          : session[setIndex];
+      session.isEmpty || setIndex >= session.length ? null : session[setIndex];
 
   bool get isCorrect {
     final set = current;
@@ -89,12 +88,12 @@ class TimelineSorterController extends AsyncNotifier<TimelineSorterState> {
   Future<TimelineSorterState> build() async {
     final pool = await ref.read(timelineSorterRepositoryProvider).loadSets();
     if (pool.isEmpty) {
-      return const TimelineSorterState(
+      return TimelineSorterState(
         pool: [],
         session: [],
         setIndex: 0,
         order: [],
-        error: 'No timeline sets found.',
+        error: appL10n.gmErrNoTimeline,
       );
     }
     return _newSession(pool);
@@ -150,8 +149,9 @@ class TimelineSorterController extends AsyncNotifier<TimelineSorterState> {
     state = AsyncData(
       current.copyWith(
         phase: TimelinePhase.revealed,
-        correctCount:
-            current.isCorrect ? current.correctCount + 1 : current.correctCount,
+        correctCount: current.isCorrect
+            ? current.correctCount + 1
+            : current.correctCount,
       ),
     );
   }
@@ -161,9 +161,7 @@ class TimelineSorterController extends AsyncNotifier<TimelineSorterState> {
     if (current == null || current.session.isEmpty) return;
     final nextIndex = current.setIndex + 1;
     if (nextIndex >= current.session.length) {
-      state = AsyncData(
-        current.copyWith(phase: TimelinePhase.sessionComplete),
-      );
+      state = AsyncData(current.copyWith(phase: TimelinePhase.sessionComplete));
       return;
     }
     state = AsyncData(
@@ -184,5 +182,5 @@ class TimelineSorterController extends AsyncNotifier<TimelineSorterState> {
 
 final timelineSorterControllerProvider = AsyncNotifierProvider.autoDispose
     .family<TimelineSorterController, TimelineSorterState, MiniGameFilter>(
-  TimelineSorterController.new,
-);
+      TimelineSorterController.new,
+    );

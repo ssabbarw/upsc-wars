@@ -42,10 +42,7 @@ Future<void> startDailyDrill({
   );
   try {
     final uc = await ref.read(createDailyDrillSessionUseCaseProvider.future);
-    final sessionId = await uc.execute(
-      subject: subject,
-      warTopics: warTopics,
-    );
+    final sessionId = await uc.execute(subject: subject, warTopics: warTopics);
     if (!context.mounted) return;
     await context.push('/test/$sessionId');
     if (!context.mounted) return;
@@ -55,9 +52,7 @@ Future<void> startDailyDrill({
   } on Object {
     if (!context.mounted) return;
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-        content: Text('Something went wrong. Please try again.'),
-      ),
+      const SnackBar(content: Text('Something went wrong. Please try again.')),
     );
   }
 }
@@ -111,9 +106,7 @@ Future<void> startRevisionDrill({
   } on Object {
     if (!context.mounted) return;
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-        content: Text('Something went wrong. Please try again.'),
-      ),
+      const SnackBar(content: Text('Something went wrong. Please try again.')),
     );
   }
 }

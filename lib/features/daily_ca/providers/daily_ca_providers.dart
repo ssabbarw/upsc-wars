@@ -135,11 +135,12 @@ final dailyCaMySubmissionProvider = FutureProvider.autoDispose
     });
 
 /// Snapshot of the top 100. Frozen boards stay on disk and are not re-fetched.
-final dailyCaLeaderboardCacheProvider =
-    FutureProvider<DailyCaLeaderboardCache>((ref) async {
-      final prefs = await SharedPreferences.getInstance();
-      return DailyCaLeaderboardCache(prefs);
-    });
+final dailyCaLeaderboardCacheProvider = FutureProvider<DailyCaLeaderboardCache>(
+  (ref) async {
+    final prefs = await SharedPreferences.getInstance();
+    return DailyCaLeaderboardCache(prefs);
+  },
+);
 
 final dailyCaLeaderboardProvider = FutureProvider.autoDispose
     .family<DailyCaLeaderboard?, String>((ref, isoDate) async {
@@ -178,13 +179,13 @@ class DailyCaHubHeroBoard {
 final dailyCaHubHeroBoardProvider =
     FutureProvider.autoDispose<DailyCaHubHeroBoard?>((ref) async {
       final minDate = await ref.watch(dailyCaCalendarMinDateProvider.future);
-      final ranksOn =
-          await ref.watch(dailyCaRanksRemoteEnabledProvider.future);
+      final ranksOn = await ref.watch(dailyCaRanksRemoteEnabledProvider.future);
       if (!ranksOn) return null;
 
       final todayPaper = DailyCaSchedule.paperQuizContentDate();
-      final todayLive =
-          await ref.watch(dailyCaScheduledPaperIsLiveProvider.future);
+      final todayLive = await ref.watch(
+        dailyCaScheduledPaperIsLiveProvider.future,
+      );
       if (todayPaper != null &&
           todayLive &&
           DailyCaSchedule.isOnOrAfterMinDate(todayPaper, minDate)) {
@@ -194,8 +195,7 @@ final dailyCaHubHeroBoardProvider =
       }
 
       final prev = DailyCaSchedule.previousPaperQuizContentDate();
-      if (prev == null ||
-          !DailyCaSchedule.isOnOrAfterMinDate(prev, minDate)) {
+      if (prev == null || !DailyCaSchedule.isOnOrAfterMinDate(prev, minDate)) {
         return null;
       }
       final iso = DailyCaSchedule.formatIsoDate(prev);

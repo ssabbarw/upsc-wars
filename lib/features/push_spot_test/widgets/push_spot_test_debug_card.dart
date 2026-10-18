@@ -71,10 +71,7 @@ class PushSpotTestDebugCard extends ConsumerWidget {
 }
 
 class _PushSpotDebugSheet extends ConsumerStatefulWidget {
-  const _PushSpotDebugSheet({
-    required this.parentContext,
-    required this.ref,
-  });
+  const _PushSpotDebugSheet({required this.parentContext, required this.ref});
 
   final BuildContext parentContext;
   final WidgetRef ref;
@@ -122,8 +119,7 @@ class _PushSpotDebugSheetState extends ConsumerState<_PushSpotDebugSheet> {
           : await db.questionsDao.getTopicQuestionCountsForSubject(
               pickedSubject,
             );
-      final withQuestions =
-          topics.where((t) => t.questionCount > 0).toList();
+      final withQuestions = topics.where((t) => t.questionCount > 0).toList();
       final pickedTopic = withQuestions.isNotEmpty
           ? withQuestions.first.topic
           : null;
@@ -213,9 +209,9 @@ class _PushSpotDebugSheetState extends ConsumerState<_PushSpotDebugSheet> {
       );
     } catch (e) {
       if (!widget.parentContext.mounted) return;
-      ScaffoldMessenger.of(widget.parentContext).showSnackBar(
-        SnackBar(content: Text('Spot test failed: $e')),
-      );
+      ScaffoldMessenger.of(
+        widget.parentContext,
+      ).showSnackBar(SnackBar(content: Text('Spot test failed: $e')));
     } finally {
       if (mounted) setState(() => _loading = false);
     }

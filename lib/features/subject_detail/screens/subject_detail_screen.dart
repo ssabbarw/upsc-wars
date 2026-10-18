@@ -23,6 +23,7 @@ import '../providers/subject_scored_accuracy_provider.dart';
 import '../widgets/danger_zone_summary_card.dart';
 import '../widgets/mock_prep_why_bottom_sheet.dart';
 import '../widgets/topic_entry_bottom_sheet.dart';
+import '../../../l10n/l10n.dart';
 
 class SubjectDetailScreen extends ConsumerWidget {
   const SubjectDetailScreen({super.key, required this.subject});
@@ -52,96 +53,96 @@ class SubjectDetailScreen extends ConsumerWidget {
         child: Padding(
           padding: hPadding,
           child: CustomScrollView(
-          physics: const BouncingScrollPhysics(),
-          slivers: [
-            SliverToBoxAdapter(
-              child: _Header(
-                subject: subject,
-                displayName: displayName,
-                subjectIcon: subjectIcon,
-                borderColor: borderColor,
-                infoAsync: infoAsync,
-                insightsAsync: insightsAsync,
-                scheme: scheme,
-                isDark: isDark,
-              ),
-            ),
-            SliverToBoxAdapter(
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(
-                  AppSpacing.lg,
-                  AppSpacing.lg,
-                  AppSpacing.lg,
-                  0,
-                ),
-                child: _PerformanceSummarySection(
-                  subject: subject,
-                  borderColor: borderColor,
-                ),
-              ),
-            ),
-            SliverToBoxAdapter(
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(
-                  AppSpacing.lg,
-                  AppSpacing.xxxl,
-                  AppSpacing.lg,
-                  0,
-                ),
-                child: _NewTestSection(
+            physics: const BouncingScrollPhysics(),
+            slivers: [
+              SliverToBoxAdapter(
+                child: _Header(
                   subject: subject,
                   displayName: displayName,
+                  subjectIcon: subjectIcon,
                   borderColor: borderColor,
                   infoAsync: infoAsync,
+                  insightsAsync: insightsAsync,
+                  scheme: scheme,
+                  isDark: isDark,
                 ),
               ),
-            ),
-            SliverToBoxAdapter(
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(
-                  AppSpacing.lg,
-                  AppSpacing.xxxl,
-                  AppSpacing.lg,
-                  0,
-                ),
-                child: _PerformanceInsightsSection(
-                  subject: subject,
-                  displayName: displayName,
-                  borderColor: borderColor,
-                ),
-              ),
-            ),
-            SliverToBoxAdapter(
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(
-                  AppSpacing.lg,
-                  AppSpacing.xxxl,
-                  AppSpacing.lg,
-                  0,
-                ),
-                child: _HistorySection(
-                  subject: subject,
-                  borderColor: borderColor,
-                ),
-              ),
-            ),
-            SliverToBoxAdapter(
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(
-                  AppSpacing.lg,
-                  AppSpacing.lg,
-                  AppSpacing.lg,
-                  AppSpacing.sm,
-                ),
-                child: const Center(
-                  child: ContactUsTextButton(
-                    leadingText: 'Any questions or feedback?\n',
-                    linkLabel: 'Get in touch',
+              SliverToBoxAdapter(
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(
+                    AppSpacing.lg,
+                    AppSpacing.lg,
+                    AppSpacing.lg,
+                    0,
+                  ),
+                  child: _PerformanceSummarySection(
+                    subject: subject,
+                    borderColor: borderColor,
                   ),
                 ),
               ),
-            ),
-          ],
+              SliverToBoxAdapter(
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(
+                    AppSpacing.lg,
+                    AppSpacing.xxxl,
+                    AppSpacing.lg,
+                    0,
+                  ),
+                  child: _NewTestSection(
+                    subject: subject,
+                    displayName: displayName,
+                    borderColor: borderColor,
+                    infoAsync: infoAsync,
+                  ),
+                ),
+              ),
+              SliverToBoxAdapter(
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(
+                    AppSpacing.lg,
+                    AppSpacing.xxxl,
+                    AppSpacing.lg,
+                    0,
+                  ),
+                  child: _PerformanceInsightsSection(
+                    subject: subject,
+                    displayName: displayName,
+                    borderColor: borderColor,
+                  ),
+                ),
+              ),
+              SliverToBoxAdapter(
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(
+                    AppSpacing.lg,
+                    AppSpacing.xxxl,
+                    AppSpacing.lg,
+                    0,
+                  ),
+                  child: _HistorySection(
+                    subject: subject,
+                    borderColor: borderColor,
+                  ),
+                ),
+              ),
+              SliverToBoxAdapter(
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(
+                    AppSpacing.lg,
+                    AppSpacing.lg,
+                    AppSpacing.lg,
+                    AppSpacing.sm,
+                  ),
+                  child: Center(
+                    child: ContactUsTextButton(
+                      leadingText: context.l10n.subjFeedbackLead,
+                      linkLabel: context.l10n.subjGetInTouch,
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
       ),
@@ -438,7 +439,10 @@ class _Header extends ConsumerWidget {
                 itemBuilder: (context) => [
                   PopupMenuItem(
                     value: 'topics',
-                    child: Text('Browse topics', style: AppTextStyles.bodySm()),
+                    child: Text(
+                      context.l10n.subjBrowseTopicsLower,
+                      style: AppTextStyles.bodySm(),
+                    ),
                   ),
                   PopupMenuItem(
                     value: 'history',
@@ -477,16 +481,16 @@ class _NewTestSection extends ConsumerWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const _ScreenSectionHeader(
+        _ScreenSectionHeader(
           title: 'NEW TEST',
-          subtitle: 'Start a test or practice specific topics.',
+          subtitle: context.l10n.subjNewTestBody,
         ),
         const SizedBox(height: AppSpacing.sm),
         _PracticeCard(
           icon: Icons.edit_note_rounded,
           iconColor: AppColors.primary,
-          title: 'Start a test and mark confidence to see your insights',
-          subtitle: 'Questions from all topics in $displayName',
+          title: context.l10n.subjStartAndMark,
+          subtitle: context.l10n.subjAllTopicsIn(displayName),
           borderColor: borderColor,
           isDark: isDark,
           onTap: () {
@@ -507,10 +511,10 @@ class _NewTestSection extends ConsumerWidget {
         _PracticeCard(
           icon: Icons.format_list_bulleted_rounded,
           iconColor: AppColors.info,
-          title: 'Browse Topics',
+          title: context.l10n.subjBrowseTopics,
           subtitle: info != null
-              ? 'Practice specific topics (${info.topicCount} topics)'
-              : 'Practice specific topics',
+              ? context.l10n.subjPracticeTopicsCount(info.topicCount)
+              : context.l10n.subjPracticeTopics,
           borderColor: borderColor,
           isDark: isDark,
           onTap: () =>
@@ -617,9 +621,9 @@ class _HistorySection extends ConsumerWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const _ScreenSectionHeader(
+        _ScreenSectionHeader(
           title: 'HISTORY',
-          subtitle: 'List of Completed sessions for this subject.',
+          subtitle: context.l10n.subjHistoryBody,
         ),
         const SizedBox(height: AppSpacing.sm),
         countAsync.when(
@@ -643,7 +647,7 @@ class _HistorySection extends ConsumerWidget {
                 const SizedBox(width: AppSpacing.md),
                 Expanded(
                   child: Text(
-                    'Could not load session count.',
+                    context.l10n.subjSessionCountFailed,
                     style: AppTextStyles.caption().copyWith(
                       color: scheme.onSurfaceVariant,
                       height: 1.45,
@@ -654,7 +658,10 @@ class _HistorySection extends ConsumerWidget {
                   onPressed: () => ref.invalidate(
                     subjectCompletedSessionCountProvider(subject),
                   ),
-                  child: Text('Retry', style: AppTextStyles.label()),
+                  child: Text(
+                    context.l10n.commonRetry,
+                    style: AppTextStyles.label(),
+                  ),
                 ),
               ],
             ),
@@ -662,10 +669,10 @@ class _HistorySection extends ConsumerWidget {
           data: (count) => _PracticeCard(
             icon: Icons.history_rounded,
             iconColor: AppColors.info,
-            title: 'View test history',
+            title: context.l10n.subjViewHistory,
             subtitle: count == 0
-                ? 'No completed sessions yet'
-                : '$count completed session${count == 1 ? '' : 's'}',
+                ? context.l10n.subjNoSessionsYet
+                : context.l10n.subjCompletedSessions(count),
             borderColor: borderColor,
             isDark: isDark,
             onTap: () => context.push(
@@ -705,24 +712,23 @@ class _PerformanceSummarySection extends ConsumerWidget {
           children: [
             Expanded(
               child: Text(
-                'Could not load subject stats.',
-                style: AppTextStyles.bodySm().copyWith(
-                  color: scheme.onSurface,
-                ),
+                context.l10n.subjStatsFailed,
+                style: AppTextStyles.bodySm().copyWith(color: scheme.onSurface),
               ),
             ),
             TextButton(
               onPressed: () =>
                   ref.invalidate(subjectScoredAccuracyProvider(subject)),
-              child: Text('Retry', style: AppTextStyles.label()),
+              child: Text(
+                context.l10n.commonRetry,
+                style: AppTextStyles.label(),
+              ),
             ),
           ],
         ),
       ),
-      data: (summary) => _SubjectScoredSummaryCard(
-        summary: summary,
-        borderColor: borderColor,
-      ),
+      data: (summary) =>
+          _SubjectScoredSummaryCard(summary: summary, borderColor: borderColor),
     );
   }
 }
@@ -755,9 +761,7 @@ class _PerformanceInsightsSection extends ConsumerWidget {
 
         if (!showInsightBlocks) {
           return Text(
-            'Mark Sure or Educated guess when you answer scored questions '
-            'in this subject — mock-prep advice and your confidence '
-            'breakdown will appear here.',
+            context.l10n.subjMarkHint,
             style: AppTextStyles.caption().copyWith(
               color: scheme.onSurfaceVariant,
               height: 1.45,
@@ -790,8 +794,7 @@ class _PerformanceInsightsSection extends ConsumerWidget {
               loading: () => _InsightsSkeleton(borderColor: borderColor),
               error: (e, _) => _InsightsLoadError(
                 borderColor: borderColor,
-                onRetry: () =>
-                    ref.invalidate(subjectInsightsProvider(subject)),
+                onRetry: () => ref.invalidate(subjectInsightsProvider(subject)),
               ),
               data: (insights) => _ConfidenceBreakdownSection(
                 subject: subject,
@@ -802,7 +805,7 @@ class _PerformanceInsightsSection extends ConsumerWidget {
             ),
             const SizedBox(height: AppSpacing.md),
             Text(
-              'More scored answers with confidence labels sharpen these stats.',
+              context.l10n.subjStatsSharpen,
               style: AppTextStyles.caption().copyWith(
                 color: scheme.onSurfaceVariant,
                 height: 1.4,
@@ -869,7 +872,7 @@ class _SubjectScoredSummaryCard extends StatelessWidget {
         children: [
           if (!hasAttempts)
             Text(
-              'No attempted answers yet.\nStart a test and mark confidence to see your insights',
+              context.l10n.subjNoAttemptsYet,
               style: AppTextStyles.bodySm().copyWith(
                 color: scheme.onSurfaceVariant,
                 height: 1.45,
@@ -893,7 +896,7 @@ class _SubjectScoredSummaryCard extends StatelessWidget {
                     ),
                   ),
                   TextSpan(
-                    text: ' accuracy',
+                    text: context.l10n.subjAccuracySuffix,
                     style: TextStyle(
                       color: scheme.onSurface,
                       fontWeight: FontWeight.w600,
@@ -911,7 +914,7 @@ class _SubjectScoredSummaryCard extends StatelessWidget {
                     ),
                   ),
                   TextSpan(
-                    text: ' MCQs attempted',
+                    text: context.l10n.subjMcqsAttempted,
                     style: TextStyle(
                       color: scheme.onSurfaceVariant,
                       fontWeight: FontWeight.w500,
@@ -937,7 +940,7 @@ class _SubjectScoredSummaryCard extends StatelessWidget {
   ) {
     if (s.sureTotal == 0) {
       return Text(
-        'Sure → wrong: — (no Sure-marked answers yet)',
+        appL10n.subjSureNone,
         style: AppTextStyles.caption().copyWith(
           color: scheme.onSurfaceVariant,
           height: 1.35,
@@ -955,7 +958,7 @@ class _SubjectScoredSummaryCard extends StatelessWidget {
             style: TextStyle(color: scheme.onSurfaceVariant),
           ),
           TextSpan(
-            text: 'wrong',
+            text: appL10n.commonWrongLower,
             style: TextStyle(color: wrongRed, fontWeight: FontWeight.w700),
           ),
           TextSpan(
@@ -986,7 +989,7 @@ class _SubjectScoredSummaryCard extends StatelessWidget {
   ) {
     if (s.educatedGuessTotal == 0) {
       return Text(
-        'Educated guess → wrong: — (no Educated-guess answers yet)',
+        appL10n.subjGuessNone,
         style: AppTextStyles.caption().copyWith(
           color: scheme.onSurfaceVariant,
           height: 1.35,
@@ -1004,7 +1007,7 @@ class _SubjectScoredSummaryCard extends StatelessWidget {
             style: TextStyle(color: scheme.onSurfaceVariant),
           ),
           TextSpan(
-            text: 'wrong',
+            text: appL10n.commonWrongLower,
             style: TextStyle(color: wrongRed, fontWeight: FontWeight.w700),
           ),
           TextSpan(
@@ -1058,7 +1061,7 @@ class _ConfidenceBreakdownSection extends StatelessWidget {
         Divider(),
         const SizedBox(height: AppSpacing.md),
         Text(
-          'Your confidence breakdown in this subject',
+          context.l10n.subjBreakdownTitle,
           style: AppTextStyles.label().copyWith(
             color: scheme.onSurface,
             fontWeight: FontWeight.w700,
@@ -1072,10 +1075,10 @@ class _ConfidenceBreakdownSection extends StatelessWidget {
               child: _ConfidenceMiniCard(
                 icon: Icons.bolt_rounded,
                 iconColor: isDark ? AppColors.wrongTextDark : AppColors.wrong,
-                title: 'Sure — wrong',
+                title: context.l10n.dzSureWrong,
                 count: sureWrong,
-                marksLabel: '≈ $sureMarksStr marks',
-                subtitle: 'You marked Sure and answered incorrectly.',
+                marksLabel: context.l10n.dzApproxMarks(sureMarksStr),
+                subtitle: context.l10n.dzSureWrongBody,
                 background: isDark
                     ? AppColors.wrongBgDark.withValues(alpha: 0.35)
                     : AppColors.wrongBg,
@@ -1089,10 +1092,10 @@ class _ConfidenceBreakdownSection extends StatelessWidget {
                 iconColor: isDark
                     ? AppColors.warningTextDark
                     : AppColors.warningText,
-                title: 'Educated guess — wrong',
+                title: context.l10n.dzEduWrong,
                 count: guessWrong,
-                marksLabel: '≈ $guessMarksStr marks',
-                subtitle: 'You marked Educated guess and answered incorrectly.',
+                marksLabel: context.l10n.dzApproxMarks(guessMarksStr),
+                subtitle: context.l10n.dzEduWrongBody,
                 background: isDark
                     ? AppColors.warningBgDark.withValues(alpha: 0.35)
                     : AppColors.warningBg,
@@ -1122,8 +1125,8 @@ class _ConfidenceBreakdownSection extends StatelessWidget {
           ),
           child: Text(
             insights.isWellCalibrated
-                ? 'No confident wrongs to analyse yet'
-                : 'Revise these questions',
+                ? context.l10n.subjNoConfidentWrongs
+                : context.l10n.subjReviseQuestions,
             style: AppTextStyles.label().copyWith(color: AppColors.onPrimary),
           ),
         ),
@@ -1221,7 +1224,7 @@ Future<void> _openTopicEntryFromRow(
     }
     if (!context.mounted) return;
     if (match == null) {
-      AppToast.showText(context, 'Topic not found in catalog.');
+      AppToast.showText(context, context.l10n.subjTopicNotFound);
       return;
     }
     if (!context.mounted) return;
@@ -1236,7 +1239,10 @@ Future<void> _openTopicEntryFromRow(
     );
   } catch (e) {
     if (context.mounted) {
-      AppToast.showText(context, 'Could not open topic: $e');
+      AppToast.showText(
+        context,
+        context.l10n.subjTopicOpenFailed(e.toString()),
+      );
     }
   }
 }
@@ -1285,14 +1291,14 @@ void _openDangerZoneDetailSheet(
                       onPressed: () => Navigator.pop(sheetContext),
                       icon: const Icon(Icons.arrow_back_rounded),
                       color: scheme.onSurface,
-                      tooltip: 'Back',
+                      tooltip: context.l10n.commonBack,
                     ),
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Revise MCQs',
+                            context.l10n.subjReviseMcqs,
                             style: AppTextStyles.label().copyWith(
                               color: scheme.onSurface,
                               fontWeight: FontWeight.w800,
@@ -1408,11 +1414,13 @@ class _AdviceForSubjectMockPrepGroupState
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
-    final adviceTitle = 'ADVICE FOR ${widget.displayName.toUpperCase()}';
+    final adviceTitle = context.l10n.subjAdviceFor(
+      widget.displayName.toUpperCase(),
+    );
     final hasLists = _mockPrepHasTopicLists(widget.mock);
     final subtitle = hasLists
-        ? 'Where to revise vs where to attempt more'
-        : 'Start attempting MCQs with marking confidence to see advices and insights here';
+        ? context.l10n.subjAdviceSubtitle
+        : context.l10n.subjAdviceEmpty;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -1466,9 +1474,9 @@ class _AdviceForSubjectMockPrepGroupState
                 unselectedLabelStyle: AppTextStyles.caption().copyWith(
                   fontWeight: FontWeight.w500,
                 ),
-                tabs: const [
-                  Tab(text: 'Revise Before Your Next Mock'),
-                  Tab(text: 'Safe Areas for Higher Attempts'),
+                tabs: [
+                  Tab(text: context.l10n.mockReviseTitle),
+                  Tab(text: context.l10n.mockSafeTitle),
                 ],
               );
             },
@@ -1538,7 +1546,7 @@ class _ReviseBeforeNextMockCard extends StatelessWidget {
               const SizedBox(width: AppSpacing.sm),
               Expanded(
                 child: Text(
-                  'Revise Before Your Next Mock',
+                  context.l10n.mockReviseTitle,
                   style: AppTextStyles.bodySm().copyWith(
                     color: scheme.onSurface,
                     fontWeight: FontWeight.w700,
@@ -1549,8 +1557,7 @@ class _ReviseBeforeNextMockCard extends StatelessWidget {
           ),
           const SizedBox(height: AppSpacing.md),
           Text(
-            'You are likely to lose marks in these topics due to overconfidence '
-            'and risky guessing.',
+            context.l10n.subjReviseTopicsIntro,
             style: AppTextStyles.caption().copyWith(
               color: scheme.onSurfaceVariant,
               height: 1.45,
@@ -1562,7 +1569,7 @@ class _ReviseBeforeNextMockCard extends StatelessWidget {
           Divider(color: scheme.outlineVariant.withValues(alpha: 0.35)),
           const SizedBox(height: AppSpacing.md),
           Text(
-            'Topics to revise',
+            context.l10n.subjTopicsToRevise,
             style: AppTextStyles.caption().copyWith(
               color: scheme.onSurfaceVariant,
               fontWeight: FontWeight.w600,
@@ -1573,12 +1580,8 @@ class _ReviseBeforeNextMockCard extends StatelessWidget {
           if (!mock.hasReviseData)
             _SubjectInsightEmptyPanel(
               icon: Icons.fact_check_outlined,
-              title: 'No topics to list',
-              body:
-                  'No topic in this subject has enough wrong answers marked '
-                  '“Very sure” or “Somewhat sure” to show here yet. As that '
-                  'pattern shows up, you will see it broken down by type of '
-                  'confidence.',
+              title: context.l10n.subjNoTopicsToList,
+              body: context.l10n.subjNoTopicsBody,
               borderColor: borderColor,
               accentTint: accent,
             )
@@ -1638,7 +1641,7 @@ class _WhyTheseTopicsTile extends StatelessWidget {
               const SizedBox(width: AppSpacing.sm),
               Expanded(
                 child: Text(
-                  'Why these topics?',
+                  context.l10n.subjWhyTopics,
                   style: AppTextStyles.caption().copyWith(
                     color: scheme.onSurface,
                     fontWeight: FontWeight.w600,
@@ -1692,8 +1695,10 @@ class _ReviseBeforeMockRowWidget extends ConsumerWidget {
               ),
               const SizedBox(height: 4),
               Text(
-                'Sure wrong: ${row.sureWrong}'
-                ' · Edu guess wrong: ${row.educatedGuessWrong}',
+                context.l10n.subjSureEduWrong(
+                  row.sureWrong,
+                  row.educatedGuessWrong,
+                ),
                 style: AppTextStyles.caption().copyWith(
                   color: scheme.onSurfaceVariant,
                   height: 1.35,
@@ -1726,7 +1731,7 @@ class _ReviseBeforeMockRowWidget extends ConsumerWidget {
             topicDisplayName: row.displayName,
           ),
           child: Text(
-            'Revisit this topic',
+            context.l10n.subjRevisitTopic,
             style: AppTextStyles.caption().copyWith(
               fontWeight: FontWeight.w700,
             ),
@@ -1771,7 +1776,7 @@ class _MockSafeAreasCard extends StatelessWidget {
               const SizedBox(width: AppSpacing.sm),
               Expanded(
                 child: Text(
-                  'Safe Areas for Higher Attempts',
+                  context.l10n.mockSafeTitle,
                   style: AppTextStyles.bodySm().copyWith(
                     color: scheme.onSurface,
                     fontWeight: FontWeight.w700,
@@ -1782,8 +1787,7 @@ class _MockSafeAreasCard extends StatelessWidget {
           ),
           const SizedBox(height: AppSpacing.md),
           Text(
-            'You can trust your judgment more in these topics. Attempt more '
-            'from here in mocks and exams.',
+            context.l10n.subjSafeIntro,
             style: AppTextStyles.caption().copyWith(
               color: scheme.onSurfaceVariant,
               height: 1.45,
@@ -1795,7 +1799,7 @@ class _MockSafeAreasCard extends StatelessWidget {
           Divider(color: scheme.outlineVariant.withValues(alpha: 0.35)),
           const SizedBox(height: AppSpacing.md),
           Text(
-            'Safe scoring topics',
+            context.l10n.subjSafeTopics,
             style: AppTextStyles.caption().copyWith(
               color: scheme.onSurfaceVariant,
               fontWeight: FontWeight.w600,
@@ -1809,15 +1813,11 @@ class _MockSafeAreasCard extends StatelessWidget {
                   ? Icons.hourglass_empty_outlined
                   : Icons.insights_outlined,
               title: mock.globalConfidentRatePercent == null
-                  ? 'Baseline not ready'
-                  : 'No topics qualify yet',
+                  ? context.l10n.subjBaselineNotReady
+                  : context.l10n.subjNoTopicsQualify,
               body: mock.globalConfidentRatePercent == null
-                  ? 'We need a solid sample of scored answers where you were '
-                        'very or somewhat sure. Keep using confidence on tests so '
-                        'we can set your global rate and list topics that beat it.'
-                  : 'In this subject, no topic is clearly above your overall '
-                        'confident-correct rate yet. The list will update as you '
-                        'add more very sure or somewhat sure attempts.',
+                  ? context.l10n.subjBaselineBody
+                  : context.l10n.subjNoQualifyBody,
               borderColor: borderColor,
               accentTint: accent,
             )
@@ -1873,8 +1873,10 @@ class _MockSafeAreaRow extends ConsumerWidget {
               ),
               const SizedBox(height: 4),
               Text(
-                'When confident: ${row.ratePercent.toStringAsFixed(1)}% right'
-                ' · vs ${row.globalRatePercent.toStringAsFixed(1)}% overall',
+                context.l10n.subjConfidentRate(
+                  row.ratePercent.toStringAsFixed(1),
+                  row.globalRatePercent.toStringAsFixed(1),
+                ),
                 style: AppTextStyles.caption().copyWith(
                   color: scheme.onSurfaceVariant,
                   height: 1.35,
@@ -1904,7 +1906,7 @@ class _MockSafeAreaRow extends ConsumerWidget {
             topicDisplayName: row.displayName,
           ),
           child: Text(
-            'Attempt more',
+            context.l10n.subjAttemptMore,
             style: AppTextStyles.caption().copyWith(
               fontWeight: FontWeight.w700,
             ),
@@ -1930,13 +1932,13 @@ class _MockPrepLoadError extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Could not load mock-prep tips.',
+            context.l10n.subjMockPrepFailed,
             style: AppTextStyles.bodySm().copyWith(color: scheme.onSurface),
           ),
           const SizedBox(height: AppSpacing.md),
           OutlinedButton(
             onPressed: onRetry,
-            child: Text('Retry', style: AppTextStyles.label()),
+            child: Text(context.l10n.commonRetry, style: AppTextStyles.label()),
           ),
         ],
       ),
@@ -1964,8 +1966,8 @@ class _MockPrepInsightsSkeleton extends StatelessWidget {
           children: [
             Expanded(
               child: _ScreenSectionHeader(
-                title: 'ADVICE FOR ${displayName.toUpperCase()}',
-                subtitle: 'Where to revise vs where to attempt more',
+                title: context.l10n.subjAdviceFor(displayName.toUpperCase()),
+                subtitle: context.l10n.subjAdviceSubtitle,
               ),
             ),
             Icon(Icons.expand_more, color: scheme.onSurfaceVariant),
@@ -2009,13 +2011,13 @@ class _InsightsLoadError extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Could not load insights.',
+            context.l10n.subjInsightsFailed,
             style: AppTextStyles.bodySm().copyWith(color: scheme.onSurface),
           ),
           const SizedBox(height: AppSpacing.md),
           OutlinedButton(
             onPressed: onRetry,
-            child: Text('Retry', style: AppTextStyles.label()),
+            child: Text(context.l10n.commonRetry, style: AppTextStyles.label()),
           ),
         ],
       ),

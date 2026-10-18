@@ -16,7 +16,9 @@ LazyDatabase openUserDb() {
         sqlite3Wasm: Uri.parse('sqlite3.wasm'),
         driftWorker: Uri.parse('drift_worker.dart.js'),
         initializeDatabase: () async {
-          final data = await rootBundle.load('assets/db/upsc_wars_questions.db');
+          final data = await rootBundle.load(
+            'assets/db/upsc_wars_questions.db',
+          );
           return data.buffer.asUint8List();
         },
       ),

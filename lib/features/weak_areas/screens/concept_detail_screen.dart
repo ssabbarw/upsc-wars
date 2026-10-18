@@ -10,6 +10,7 @@ import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../core/theme/reading_font_scale.dart';
+import '../../../l10n/l10n.dart';
 
 class SubTopicDetailScreen extends HookConsumerWidget {
   const SubTopicDetailScreen({super.key, required this.subTopic});
@@ -38,7 +39,7 @@ class SubTopicDetailScreen extends HookConsumerWidget {
         child: Center(
           child: OutlinedButton(
             onPressed: () => ref.invalidate(weakSubTopicGroupsProvider),
-            child: const Text('Retry'),
+            child: Text(context.l10n.commonRetry),
           ),
         ),
       ),
@@ -50,7 +51,7 @@ class SubTopicDetailScreen extends HookConsumerWidget {
             decoded,
             child: Center(
               child: Text(
-                'No data found',
+                context.l10n.commonNoDataFound,
                 style: AppTextStyles.bodySm().copyWith(
                   color: scheme.onSurfaceVariant,
                 ),
@@ -110,7 +111,7 @@ class SubTopicDetailScreen extends HookConsumerWidget {
                           color: AppColors.onPrimary,
                         ),
                       )
-                    : const Text('Practice This Sub-topic'),
+                    : Text(context.l10n.weakPracticeSubtopic),
               ),
             ),
           ),
@@ -137,7 +138,12 @@ class SubTopicDetailScreen extends HookConsumerWidget {
                       borderRadius: BorderRadius.circular(AppRadius.md),
                     ),
                     child: Text(
-                      '${group.questionUuids.length} ${group.questionUuids.length == 1 ? 'question' : 'questions'} · got wrong ${group.failureCount} ${group.failureCount == 1 ? 'time' : 'times'}',
+                      context.l10n.weakGroupSummary(
+                        context.l10n.commonQuestionCount(
+                          group.questionUuids.length,
+                        ),
+                        context.l10n.commonTimesCount(group.failureCount),
+                      ),
                       style: AppTextStyles.bodySm().copyWith(
                         color: scheme.onSurfaceVariant,
                       ),

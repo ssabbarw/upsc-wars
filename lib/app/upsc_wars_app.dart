@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:intl/intl.dart';
 
 import '../core/auth/auth_session.dart';
 import '../core/debug/upsc_wars_trace.dart';
@@ -14,6 +15,7 @@ import '../core/analytics/analytics.dart';
 import '../core/analytics/analytics_events.dart';
 import '../core/analytics/analytics_global_dispatch.dart';
 import '../core/analytics/firebase_analytics_sink.dart';
+import '../core/analytics/posthog_analytics_sink.dart';
 import '../core/analytics/push_notification_status_snapshot.dart';
 import '../core/analytics/session_entry_source.dart';
 import '../core/providers/analytics_provider.dart';
@@ -118,9 +120,9 @@ class _RootMaterialApp extends HookConsumerWidget {
         // Resolve cold-start push / deep-link attribution before app_opened.
         await BattleMessagingService.initialize(router);
         await ShareDeepLinkService.initialize(ref, router);
-        await FirebaseAnalyticsSink.syncCollectionForUser(
-          FirebaseAuth.instance.currentUser,
-        );
+        final currentUser = FirebaseAuth.instance.currentUser;
+        await FirebaseAnalyticsSink.syncCollectionForUser(currentUser);
+        await PostHogAnalyticsSink.syncForUser(currentUser);
         final entry = SessionEntrySource.consume();
         await Analytics.track(
           ref,
@@ -290,6 +292,7 @@ class _RootMaterialApp extends HookConsumerWidget {
     ref.listen<AsyncValue<User?>>(authStateChangesProvider, (prev, next) {
       final u = next.asData?.value;
       unawaited(FirebaseAnalyticsSink.syncCollectionForUser(u));
+      unawaited(PostHogAnalyticsSink.syncForUser(u));
       if (!next.hasValue) return;
       if (!AuthSession.isAccountSignedIn(u)) return;
       // Pull this account's backed-up tests onto a fresh install (shows the
@@ -332,6 +335,8 @@ class _RootMaterialApp extends HookConsumerWidget {
       ref.watch(appLanguageProvider).value ?? prefs.value?.language,
     );
     AppL10n.locale = Locale(language);
+    // Month / weekday names in `DateFormat(...)` follow the app language.
+    Intl.defaultLocale = language;
     return MaterialApp.router(
       title: AppConstants.appDisplayName,
       debugShowCheckedModeBanner: false,

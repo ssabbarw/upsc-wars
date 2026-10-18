@@ -35,7 +35,8 @@ class TestSeriesPromosAdminScreen extends HookConsumerWidget {
       appBar: AppBar(title: const Text('Offer codes')),
       body: seriesAsync.when(
         loading: () => const Center(child: CircularProgressIndicator()),
-        error: (e, _) => Center(child: Text('Could not read the active series.\n$e')),
+        error: (e, _) =>
+            Center(child: Text('Could not read the active series.\n$e')),
         data: (seriesId) => _CodeList(service: service),
       ),
       floatingActionButton: seriesAsync.hasValue
@@ -232,7 +233,10 @@ class _CodeTile extends StatelessWidget {
               await service.setCodeActive(code, active: v);
             } on Object catch (e) {
               if (context.mounted) {
-                AppToast.showText(context, TestSeriesPromoAdminService.describe(e));
+                AppToast.showText(
+                  context,
+                  TestSeriesPromoAdminService.describe(e),
+                );
               }
             }
           },
@@ -294,7 +298,9 @@ class _RedemptionsSheet extends StatelessWidget {
                 }
                 final docs = snap.data!.docs;
                 if (docs.isEmpty) {
-                  return const Center(child: Text('Nobody has used this code yet.'));
+                  return const Center(
+                    child: Text('Nobody has used this code yet.'),
+                  );
                 }
                 return ListView.separated(
                   itemCount: docs.length,

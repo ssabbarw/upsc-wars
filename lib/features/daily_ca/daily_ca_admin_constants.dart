@@ -20,8 +20,7 @@ abstract final class DailyCaConstants {
   static const functionsRegion = DailyCaAdminConstants.functionsRegion;
 }
 
-String dailyCaResultsRoute(String sessionId) =>
-    '/daily-ca/results/$sessionId';
+String dailyCaResultsRoute(String sessionId) => '/daily-ca/results/$sessionId';
 
 String dailyCaLeaderboardRoute(String dateId) =>
     '/daily-ca/$dateId/leaderboard';

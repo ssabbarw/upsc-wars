@@ -61,7 +61,8 @@ void maybeMarkDemoDiagnosticReviewOpened(
 }) {
   final store = DemoDiagnosticEphemeralStore.instance;
   final snap = store.peek(sessionId);
-  final isDemoSession = snap != null ||
+  final isDemoSession =
+      snap != null ||
       store.isDemoAnalyticsKey(
         analyticsFeatureKey ?? snap?.result.analyticsFeatureKey,
       );

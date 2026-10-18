@@ -48,65 +48,35 @@ abstract final class DwText {
     );
   }
 
-  static TextStyle eyebrow({Color color = DwColors.crimsonBright}) => dm(
-        size: 10,
-        weight: FontWeight.w700,
-        color: color,
-        letterSpacing: 1.4,
-      );
+  static TextStyle eyebrow({Color color = DwColors.crimsonBright}) =>
+      dm(size: 10, weight: FontWeight.w700, color: color, letterSpacing: 1.4);
 
-  static TextStyle stamp({Color color = DwColors.onDarkMuted}) => dm(
-        size: 10,
-        weight: FontWeight.w600,
-        color: color,
-        letterSpacing: 0.6,
-      );
+  static TextStyle stamp({Color color = DwColors.onDarkMuted}) =>
+      dm(size: 10, weight: FontWeight.w600, color: color, letterSpacing: 0.6);
 
-  static TextStyle subject({Color color = DwColors.onDark}) => dm(
-        size: 12,
-        weight: FontWeight.w600,
-        color: color,
-        letterSpacing: 1.2,
-      );
+  static TextStyle subject({Color color = DwColors.onDark}) =>
+      dm(size: 12, weight: FontWeight.w600, color: color, letterSpacing: 1.2);
 
-  static TextStyle topic({Color color = DwColors.onDark}) => dm(
-        size: 23,
-        weight: FontWeight.w700,
-        color: color,
-        height: 1.15,
-      );
+  static TextStyle topic({Color color = DwColors.onDark}) =>
+      dm(size: 23, weight: FontWeight.w700, color: color, height: 1.15);
 
-  static TextStyle topicCompact({Color color = DwColors.onDark}) => dm(
-        size: 19,
-        weight: FontWeight.w700,
-        color: color,
-        height: 1.15,
-      );
+  static TextStyle topicCompact({Color color = DwColors.onDark}) =>
+      dm(size: 19, weight: FontWeight.w700, color: color, height: 1.15);
 
   static TextStyle heroNumber({Color color = DwColors.onDark}) => dm(
-        size: 40,
-        weight: FontWeight.w700,
-        color: color,
-        height: 1.05,
-        letterSpacing: -0.5,
-      );
+    size: 40,
+    weight: FontWeight.w700,
+    color: color,
+    height: 1.05,
+    letterSpacing: -0.5,
+  );
 
-  static TextStyle body({Color color = DwColors.onDarkMuted}) => dm(
-        size: 12,
-        weight: FontWeight.w400,
-        color: color,
-      );
+  static TextStyle body({Color color = DwColors.onDarkMuted}) =>
+      dm(size: 12, weight: FontWeight.w400, color: color);
 
-  static TextStyle cta({Color color = DwColors.onDark}) => dm(
-        size: 14,
-        weight: FontWeight.w700,
-        color: color,
-      );
+  static TextStyle cta({Color color = DwColors.onDark}) =>
+      dm(size: 14, weight: FontWeight.w700, color: color);
 
-  static TextStyle meta({Color color = DwColors.onDarkFaint}) => dm(
-        size: 11,
-        weight: FontWeight.w500,
-        color: color,
-        letterSpacing: 0.4,
-      );
+  static TextStyle meta({Color color = DwColors.onDarkFaint}) =>
+      dm(size: 11, weight: FontWeight.w500, color: color, letterSpacing: 0.4);
 }

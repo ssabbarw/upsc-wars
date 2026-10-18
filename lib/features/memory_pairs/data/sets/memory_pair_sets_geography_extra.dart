@@ -130,7 +130,6 @@ const List<MemoryPairSetDefinition> kMemoryPairSetsGeographyExtra = [
     ],
   ),
 
-
   MemoryPairSetDefinition(
     id: 'state_capitals',
     nameEn: 'States & Capitals',

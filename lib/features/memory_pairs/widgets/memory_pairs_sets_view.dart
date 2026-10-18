@@ -13,12 +13,10 @@ import '../domain/memory_pair_subject_meta.dart';
 import '../providers/memory_pairs_providers.dart';
 import 'memory_pairs_catalog_widgets.dart';
 import 'memory_pairs_help_sheet.dart';
+import '../../../l10n/l10n.dart';
 
 class MemoryPairsSetsView extends ConsumerWidget {
-  const MemoryPairsSetsView({
-    super.key,
-    required this.onOpenSubject,
-  });
+  const MemoryPairsSetsView({super.key, required this.onOpenSubject});
 
   final ValueChanged<MemoryPairSubjectGroup> onOpenSubject;
 
@@ -34,7 +32,7 @@ class MemoryPairsSetsView extends ConsumerWidget {
       error: (_, _) => Center(
         child: OutlinedButton(
           onPressed: () => ref.invalidate(memoryPairSetListProvider),
-          child: const Text('Retry'),
+          child: Text(context.l10n.commonRetry),
         ),
       ),
       data: (items) {
@@ -65,7 +63,7 @@ class MemoryPairsSetsView extends ConsumerWidget {
                       ),
                       const SizedBox(height: 4),
                       Text(
-                        'Learn. Recall. Master.',
+                        context.l10n.mpTagline,
                         style: AppTextStyles.bodySm().copyWith(
                           color: scheme.onSurfaceVariant,
                         ),
@@ -95,7 +93,7 @@ class MemoryPairsSetsView extends ConsumerWidget {
             ),
             const SizedBox(height: AppSpacing.lg),
             Text(
-              'Browse by Subject',
+              context.l10n.mpBrowse,
               style: AppTextStyles.labelSm().copyWith(
                 color: scheme.onSurfaceVariant,
                 fontWeight: FontWeight.w600,
@@ -113,9 +111,7 @@ class MemoryPairsSetsView extends ConsumerWidget {
                 ),
               ),
             const SizedBox(height: AppSpacing.lg),
-            _HowItWorksCard(
-              onTap: () => showMemoryPairsHelpSheet(context),
-            ),
+            _HowItWorksCard(onTap: () => showMemoryPairsHelpSheet(context)),
           ],
         );
       },
@@ -171,7 +167,7 @@ class _SubjectCard extends StatelessWidget {
                     ),
                     const SizedBox(height: 2),
                     Text(
-                      '${group.totalSets} topics',
+                      context.l10n.mpTopics(group.totalSets),
                       style: AppTextStyles.caption().copyWith(
                         color: scheme.onSurfaceVariant,
                       ),
@@ -217,9 +213,7 @@ class _HowItWorksCard extends StatelessWidget {
           decoration: BoxDecoration(
             color: AppColors.primary.withValues(alpha: isDark ? 0.12 : 0.08),
             borderRadius: BorderRadius.circular(AppRadius.lg),
-            border: Border.all(
-              color: AppColors.primary.withValues(alpha: 0.2),
-            ),
+            border: Border.all(color: AppColors.primary.withValues(alpha: 0.2)),
           ),
           child: Row(
             children: [
@@ -242,7 +236,7 @@ class _HowItWorksCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'How it works?',
+                      context.l10n.mpHowItWorksQ,
                       style: AppTextStyles.label().copyWith(
                         color: scheme.onSurface,
                         fontWeight: FontWeight.w700,
@@ -250,8 +244,7 @@ class _HowItWorksCard extends StatelessWidget {
                     ),
                     const SizedBox(height: 4),
                     Text(
-                      'Topics are grouped by difficulty. Earn stars as you '
-                      'master harder topics!',
+                      context.l10n.mpGroupedNote,
                       style: AppTextStyles.caption().copyWith(
                         color: scheme.onSurfaceVariant,
                         height: 1.4,

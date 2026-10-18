@@ -29,10 +29,7 @@ class QuestionTextSearchResult {
 }
 
 class QuestionEditorLoadBundle {
-  const QuestionEditorLoadBundle({
-    required this.row,
-    required this.draft,
-  });
+  const QuestionEditorLoadBundle({required this.row, required this.draft});
 
   final Question row;
   final QuestionEditorDraft draft;

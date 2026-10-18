@@ -38,9 +38,9 @@ class AnalyticsRouteObserver extends NavigatorObserver {
     if (name == null || name.isEmpty) return;
     if (kScreenViewIgnoredNames.contains(name)) return;
     unawaited(
-      _ref.read(analyticsServiceProvider).track(
-            ScreenViewedEvent(screenName: name),
-          ),
+      _ref
+          .read(analyticsServiceProvider)
+          .track(ScreenViewedEvent(screenName: name)),
     );
   }
 

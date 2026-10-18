@@ -16,6 +16,7 @@ import '../open_challenge/open_challenge_post_eligibility.dart';
 import '../providers/community_providers.dart';
 import '../providers/open_challenge_providers.dart';
 import '../../../shared/widgets/app_toast.dart';
+import '../../../l10n/l10n.dart';
 
 /// Encourages posting a strong 10-question exam as a community open challenge.
 class OpenChallengePostFromResultsCard extends ConsumerStatefulWidget {
@@ -47,7 +48,8 @@ class _OpenChallengePostFromResultsCardState
     return availAsync.when(
       loading: () => const SizedBox.shrink(),
       error: (_, _) => _postCard(context, scheme, allowed: true, avail: null),
-      data: (avail) => _postCard(context, scheme, allowed: avail.allowed, avail: avail),
+      data: (avail) =>
+          _postCard(context, scheme, allowed: avail.allowed, avail: avail),
     );
   }
 
@@ -70,11 +72,10 @@ class _OpenChallengePostFromResultsCardState
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text('Share the challenge', style: AppTextStyles.label()),
+            Text(context.l10n.ocShareChallenge, style: AppTextStyles.label()),
             const SizedBox(height: AppSpacing.xs),
             Text(
-              'Great score (${widget.result.correct}/10). Post this set as an '
-              'open challenge so others can try the same questions in Community.',
+              context.l10n.ocGreatScore(widget.result.correct),
               style: AppTextStyles.bodySm().copyWith(
                 color: scheme.onSurfaceVariant,
               ),
@@ -92,12 +93,14 @@ class _OpenChallengePostFromResultsCardState
             const SizedBox(height: AppSpacing.md),
             Tooltip(
               message: allowed
-                  ? 'Publish to Community'
-                  : avail?.tooltipLine ?? 'Temporarily unavailable',
+                  ? context.l10n.ocPublishCommunity
+                  : avail?.tooltipLine ?? context.l10n.ocTempUnavailable,
               child: FilledButton.tonal(
                 onPressed: (!allowed || _busy) ? null : _onPost,
                 child: Text(
-                  _busy ? 'Posting…' : 'Post as open challenge',
+                  _busy
+                      ? context.l10n.ocPosting
+                      : context.l10n.ocPostAsChallenge,
                 ),
               ),
             ),

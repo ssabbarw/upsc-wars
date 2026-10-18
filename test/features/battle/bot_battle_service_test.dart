@@ -42,14 +42,8 @@ void main() {
           questionIndex: i % 5,
           question: _question('q$i', 'b'),
         );
-        expect(
-          plan.delay,
-          greaterThanOrEqualTo(const Duration(seconds: 5)),
-        );
-        expect(
-          plan.delay,
-          lessThanOrEqualTo(const Duration(seconds: 100)),
-        );
+        expect(plan.delay, greaterThanOrEqualTo(const Duration(seconds: 5)));
+        expect(plan.delay, lessThanOrEqualTo(const Duration(seconds: 100)));
       }
     });
   });

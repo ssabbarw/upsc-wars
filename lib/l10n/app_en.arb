@@ -624,5 +624,3030 @@
   "aboutRateReview": "Rate/Review UPSC Wars",
   "aboutFeedbackEmail": "Send Feedback on Email",
   "aboutFeedbackTelegram": "Send Feedback on Telegram",
-  "aboutLinkFailed": "Could not open link"
+  "aboutLinkFailed": "Could not open link",
+  "resultsAccuracyVsLast": "{sign}{value}% accuracy vs your last test",
+  "@resultsAccuracyVsLast": {
+    "placeholders": {
+      "sign": {
+        "type": "String"
+      },
+      "value": {
+        "type": "int"
+      }
+    }
+  },
+  "resultsMarksBreakdown": "+{earned} earned · {lost}",
+  "@resultsMarksBreakdown": {
+    "placeholders": {
+      "earned": {
+        "type": "String"
+      },
+      "lost": {
+        "type": "String"
+      }
+    }
+  },
+  "resultsZeroLost": "0 lost",
+  "resultsMarksLost": "−{value} lost",
+  "@resultsMarksLost": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "resultsAllQuestions": "All {total} questions",
+  "@resultsAllQuestions": {
+    "placeholders": {
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "resultsAttemptedSkipped": "{attempted} attempted · {skipped} skipped",
+  "@resultsAttemptedSkipped": {
+    "placeholders": {
+      "attempted": {
+        "type": "int"
+      },
+      "skipped": {
+        "type": "int"
+      }
+    }
+  },
+  "resultsCountCorrect": "{count} correct",
+  "@resultsCountCorrect": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "resultsCountWrong": "{count} wrong",
+  "@resultsCountWrong": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "resultsCountSkipped": "{count} skipped",
+  "@resultsCountSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "resultsCorrectOfAttempted": "{correct} of {attempted} correct",
+  "@resultsCorrectOfAttempted": {
+    "placeholders": {
+      "correct": {
+        "type": "int"
+      },
+      "attempted": {
+        "type": "int"
+      }
+    }
+  },
+  "resultsAddedToQueue": "{count, plural, =1{1 question added to revision queue} other{{count} questions added to revision queue}}",
+  "@resultsAddedToQueue": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "resultsTotalInQueue": "{count} total in queue",
+  "@resultsTotalInQueue": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "resultsPctWrong": "{pct}% wrong ({wrong}/{attempted})",
+  "@resultsPctWrong": {
+    "placeholders": {
+      "pct": {
+        "type": "int"
+      },
+      "wrong": {
+        "type": "int"
+      },
+      "attempted": {
+        "type": "int"
+      }
+    }
+  },
+  "resultsReviewAll": "Review all questions ({count})",
+  "@resultsReviewAll": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "resultsTimingLine": "Avg {avg}s per question · Fastest {min}s · Slowest {max}s",
+  "@resultsTimingLine": {
+    "placeholders": {
+      "avg": {
+        "type": "int"
+      },
+      "min": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "resultsYourScore": "Your score: {pct}%",
+  "@resultsYourScore": {
+    "placeholders": {
+      "pct": {
+        "type": "int"
+      }
+    }
+  },
+  "resultsNameYou": "{name} (you)",
+  "@resultsNameYou": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "resultsAttemptToEarn": "Attempt questions to earn marks",
+  "resultsNetMarks": "Net marks",
+  "resultsNoneAttempted": "None attempted",
+  "resultsNoAttemptsYet": "No attempts yet",
+  "resultsAttemptAccuracy": "Attempt accuracy",
+  "resultsNoneAddedToQueue": "No incorrect answers added from this test.",
+  "resultsGoToQueue": "Go to queue",
+  "resultsWorstTopics": "Most inaccurate topics",
+  "resultsBestTopics": "Top topic accuracy",
+  "commonShowLess": "Show less",
+  "commonViewAll": "View all",
+  "resultsBackToHome": "Back to home",
+  "resultsMoreInsights": "More insights",
+  "resultsAreYouSure": "Are you sure?",
+  "resultsReturnHome": "You will return to the home screen.",
+  "resultsGoToHome": "Go to Home",
+  "resultsLoadFailed": "Could not load results",
+  "resultsShareTest": "Share test",
+  "resultsSessionSummary": "Session summary",
+  "resultsTop5Shared": "Top 5 for this shared test",
+  "resultsLeaderboardEmpty": "It's empty.",
+  "resultsLeaderboardFailed": "Could not load leaderboard.",
+  "shareLinkCopied": "Link copied to clipboard",
+  "shareTitle": "Share Test",
+  "shareQuestion": "Question",
+  "shareEntireTest": "Entire Test",
+  "shareGenerating": "Generating link...",
+  "shareInfoFriends": "You can share this link with your friends.",
+  "shareInfoReport": "You can use this link to report any error in this question to the upsc wars team.",
+  "commonCopy": "Copy",
+  "shareContactUs": "Contact Us",
+  "shareLink": "Share Link",
+  "shareFailed": "Failed to generate link",
+  "resultsReviewYourMistakes": "Review your mistakes",
+  "resultsRealExamCost": "Real exam cost: −{marks} marks",
+  "@resultsRealExamCost": {
+    "placeholders": {
+      "marks": {
+        "type": "String"
+      }
+    }
+  },
+  "resultsTopRisk": "Top risk area: {topic}",
+  "@resultsTopRisk": {
+    "placeholders": {
+      "topic": {
+        "type": "String"
+      }
+    }
+  },
+  "resultsTopRiskPct": "Top risk area: {topic} ({pct}% of your loss)",
+  "@resultsTopRiskPct": {
+    "placeholders": {
+      "topic": {
+        "type": "String"
+      },
+      "pct": {
+        "type": "int"
+      }
+    }
+  },
+  "resultsConfidentMistakesTitle": "{count, plural, =1{1 Confident Mistake} other{{count} Confident Mistakes}}",
+  "@resultsConfidentMistakesTitle": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "resultsReviewConfidentCta": "{count, plural, =1{Review 1 confident mistake} other{Review {count} confident mistakes}}",
+  "@resultsReviewConfidentCta": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "resultsEduMistakesTitle": "{count, plural, =1{1 Educated Guess Mistake} other{{count} Educated Guess Mistakes}}",
+  "@resultsEduMistakesTitle": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "resultsReviewEduCta": "{count, plural, =1{Review 1 educated guess} other{Review {count} educated guesses}}",
+  "@resultsReviewEduCta": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "resultsMixedMistakesTitle": "{sure} Confident · {edu} Educated guess",
+  "@resultsMixedMistakesTitle": {
+    "placeholders": {
+      "sure": {
+        "type": "int"
+      },
+      "edu": {
+        "type": "int"
+      }
+    }
+  },
+  "resultsIncompleteHeadline": "{attempted} of {total} attempted",
+  "@resultsIncompleteHeadline": {
+    "placeholders": {
+      "attempted": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "resultsLeftUnanswered": "{count, plural, =1{You left 1 question unanswered. Finish full tests for better insights.} other{You left {count} questions unanswered. Finish full tests for better insights.}}",
+  "@resultsLeftUnanswered": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "resultsQrMixed": "You lost marks on {total} questions — some you were sure about",
+  "@resultsQrMixed": {
+    "placeholders": {
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "resultsQrSure": "{count, plural, =1{You lost marks on 1 question — you were sure about it} other{You lost marks on {count} questions — you were sure about them}}",
+  "@resultsQrSure": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "resultsQrEdu": "{count, plural, =1{You lost marks on 1 question — your educated guess didn''t pay off} other{You lost marks on {count} questions — your educated guess didn''t pay off}}",
+  "@resultsQrEdu": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "resultsCaseASubtitle": "You were sure, but incorrect. These are rank killers.",
+  "resultsCaseBSubtitle": "Your elimination strategy failed more often than it worked.",
+  "resultsCaseCSubtitle": "You lost marks from both overconfidence and risky elimination.",
+  "resultsCaseDSubtitle": "Wrong answers were pure guesses. You still lost marks worth reviewing.",
+  "resultsNoConfidentMistakes": "No confident mistakes",
+  "resultsExcellentEyebrow": "EXCELLENT SESSION",
+  "resultsCaseESubtitle": "When you were confident, you stayed accurate. Keep the momentum.",
+  "resultsExcellentTitle": "Excellent session",
+  "resultsPracticeMore": "Practice more",
+  "resultsCaseFSubtitle": "You left questions unanswered. Finish full tests for better insights.",
+  "resultsIncompleteTitle": "Incomplete session",
+  "resultsLockedEyebrow": "INSIGHTS LOCKED",
+  "resultsCaseGSubtitle": "Enable confidence tracking to unlock personalised insights.",
+  "resultsLockedTitle": "Insights locked",
+  "resultsEnableTracking": "Enable confidence tracking",
+  "resultsCaseHSubtitle": "As this test was attempted without marking confidence.",
+  "resultsInsightsUnavailable": "Confidence insights not available",
+  "resultsRetryWithConfidence": "Retry with confidence marking",
+  "resultsCaseISubtitle": "You submitted without answering any questions. Try again when you are ready.",
+  "resultsNoQuestionsAttempted": "No questions attempted",
+  "resultsRetryTest": "Retry test",
+  "resultsFinishMore": "Finish more of the test before calling it a clean session.",
+  "resultsQrTitle": "QUESTIONS TO REVIEW",
+  "resultsQrReveal": "These questions may reveal:",
+  "resultsQrBullet1": "Concepts that feel familiar but aren't fully clear",
+  "resultsQrBullet2": "Topics where the detail matters and you missed it",
+  "resultsQrBullet3": "Avoidable exam-day mistakes",
+  "resultsYouWere": "You were {label}",
+  "@resultsYouWere": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "resultsNoTierItems": "No {label} items",
+  "@resultsNoTierItems": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "resultsWithOutcome": " with outcome “{outcome}”",
+  "@resultsWithOutcome": {
+    "placeholders": {
+      "outcome": {
+        "type": "String"
+      }
+    }
+  },
+  "resultsNoTierBody": "No scored questions in this session were logged under “{label}”{outcome}.",
+  "@resultsNoTierBody": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      },
+      "outcome": {
+        "type": "String"
+      }
+    }
+  },
+  "resultsWrongOnly": " · Wrong only",
+  "resultsCorrectOnly": " · Correct only",
+  "resultsLoggedAs": "Logged as: {tier}{suffix}",
+  "@resultsLoggedAs": {
+    "placeholders": {
+      "tier": {
+        "type": "String"
+      },
+      "suffix": {
+        "type": "String"
+      }
+    }
+  },
+  "resultsLostMarksOn": "{count, plural, =1{You lost marks on 1 question} other{You lost marks on {count} questions}}",
+  "@resultsLostMarksOn": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "resultsWatchOutFor": "Watch out for:",
+  "resultsEyebrowSureWrong": "CONFIDENT · WRONG",
+  "resultsSureDesc": "You were sure — and lost marks anyway. \n\nGo through these carefully and check whether you misread the question or your understanding has a gap.",
+  "resultsSureBullet3": "Traps that feel obvious in hindsight",
+  "resultsEyebrowEduWrong": "EDUCATED GUESS · WRONG",
+  "resultsEduDesc": "You had some idea but not enough. These are clean gaps — easier to fix than confident mistakes. You know you need to revise these.",
+  "resultsEduBullet1": "Topics that need focused revision",
+  "resultsEduBullet2": "Concepts partially encountered but not fully absorbed",
+  "resultsEduBullet3": "Areas where elimination logic needs strengthening",
+  "resultsReviewLoadFailed": "Could not load review",
+  "resultsNoDangerItems": "No Danger Zone items",
+  "resultsNoDangerBody": "Wrong answers without a confidence pick, or where you marked \"Guessing\", do not appear here.",
+  "resultsInvalidFilter": "Invalid confidence filter.",
+  "resultsNoReviewable": "No reviewable mistakes in this session.",
+  "resultsReviewLoadFailedDot": "Could not load review.",
+  "resultsSureWrongSeg": "Sure + wrong",
+  "resultsEduWrongSeg": "Edu guess + wrong",
+  "resultsReviewConfidentMistakes": "Review confident mistakes",
+  "resultsSwipeBoth": "Swipe to see both types",
+  "resultsStartReview": "Start review",
+  "resultsUnlockMapBody": "You did not log confidence on any of your {answered} scored questions. After each answer, use the three chips under your chosen option — it takes one tap and powers Danger Zone, accuracy by tier, and smarter revision hints.",
+  "@resultsUnlockMapBody": {
+    "placeholders": {
+      "answered": {
+        "type": "int"
+      }
+    }
+  },
+  "resultsLogMoreBody": "You tagged {logged} of {answered} scored questions ({pct}%). Aim for at least half — the more you log, the sharper your insights get.",
+  "@resultsLogMoreBody": {
+    "placeholders": {
+      "logged": {
+        "type": "int"
+      },
+      "answered": {
+        "type": "int"
+      },
+      "pct": {
+        "type": "String"
+      }
+    }
+  },
+  "resultsSureWarn": "When you tapped Sure, you were right {pct}% of the time ({correct} / {total}). Aim for about 75%+ on high-conviction picks before Prelims.",
+  "@resultsSureWarn": {
+    "placeholders": {
+      "pct": {
+        "type": "String"
+      },
+      "correct": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "resultsSureOk": "Sure-tier accuracy {pct}% ({correct} / {total}). That is in a healthy range for conviction answers.",
+  "@resultsSureOk": {
+    "placeholders": {
+      "pct": {
+        "type": "String"
+      },
+      "correct": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "resultsMatrixHint": "Tap a cell to review those questions only (same session).",
+  "resultsUnlockMap": "Unlock this map next time",
+  "resultsLogMore": "Log a bit more next round",
+  "resultsMatrixCorrect": "Correct",
+  "resultsMatrixWrong": "Wrong",
+  "resultsCoverageHint": "Questions where you tapped Sure, Intelligent, or Pure guess after answering.",
+  "resultsCoachMistakesTitle": "Review only your mistakes",
+  "resultsCoachMistakesBody": "Just the questions you got wrong — the ones worth going back to.",
+  "resultsCoachAllOr": "Or review all questions",
+  "resultsCoachAll": "Review all questions",
+  "resultsCoachAllBody": "The full paper, including the ones you got right.",
+  "resultsCoachTopicsTitle": "You don’t have to remember this",
+  "resultsCoachTopicsBody": "The same weak and strong topic lists live on every subject. Open a subject from Home anytime.",
+  "resultsCoachGotIt": "Got it",
+  "resultsCoachNext": "Next",
+  "commonQuestionCount": "{count, plural, =1{1 question} other{{count} questions}}",
+  "@commonQuestionCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "bookmarksSavedCount": "{count} saved",
+  "@bookmarksSavedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "revisionStartSession": "Start revision session",
+  "revisionEmptyTitle": "Your revision queue is empty",
+  "revisionEmptyBody": "Questions you get wrong or bookmark will appear here",
+  "revisionNoItemsSubject": "No items for this subject.",
+  "revisionMastered": "Mastered",
+  "revisionInQueue": "In queue",
+  "bookmarkRemoved": "Bookmark removed",
+  "commonUndo": "Undo",
+  "bookmarksEmptyTitle": "No bookmarks yet",
+  "bookmarksEmptyBody": "Bookmark questions during a test to save them here",
+  "commonRemove": "Remove",
+  "trapsCatalogCount": "{count} UPSC traps",
+  "@trapsCatalogCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "trapsCaughtOfTotal": "{caught} of {total} have caught you",
+  "@trapsCaughtOfTotal": {
+    "placeholders": {
+      "caught": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "weakGroupSummary": "{questions} · got wrong {times}",
+  "@weakGroupSummary": {
+    "placeholders": {
+      "questions": {
+        "type": "String"
+      },
+      "times": {
+        "type": "String"
+      }
+    }
+  },
+  "commonTimesCount": "{count, plural, =1{1 time} other{{count} times}}",
+  "@commonTimesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "trapsCaughtByThis": "{count, plural, =1{1 question caught by this trap} other{{count} questions caught by this trap}}",
+  "@trapsCaughtByThis": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "weakNeedMore": "Attempt more questions to start seeing your weak areas for {subject}",
+  "@weakNeedMore": {
+    "placeholders": {
+      "subject": {
+        "type": "String"
+      }
+    }
+  },
+  "trapsCaughtCount": "Caught you {count}×",
+  "@trapsCaughtCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "topicInRevisionQueue": "{count} in revision queue",
+  "@topicInRevisionQueue": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "topicDangerLine": "Sure wrong: {sure} · Educated guess wrong: {edu} (all-time)",
+  "@topicDangerLine": {
+    "placeholders": {
+      "sure": {
+        "type": "int"
+      },
+      "edu": {
+        "type": "int"
+      }
+    }
+  },
+  "subjectTestInfo": "{questions} questions · {topics} topics",
+  "@subjectTestInfo": {
+    "placeholders": {
+      "questions": {
+        "type": "String"
+      },
+      "topics": {
+        "type": "int"
+      }
+    }
+  },
+  "pyqNoQuestionsYear": "No questions are available for {year} yet.",
+  "@pyqNoQuestionsYear": {
+    "placeholders": {
+      "year": {
+        "type": "String"
+      }
+    }
+  },
+  "pyqSetOf": "Set {n} of {total}",
+  "@pyqSetOf": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "pyqFixedOrder": "{count} questions (fixed order for this set)",
+  "@pyqFixedOrder": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "pyqTestN": "Test {n}",
+  "@pyqTestN": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "pyqQuestionsRange": "Questions {from}–{to}",
+  "@pyqQuestionsRange": {
+    "placeholders": {
+      "from": {
+        "type": "int"
+      },
+      "to": {
+        "type": "int"
+      }
+    }
+  },
+  "notifLoadFailed": "Could not load message.\n{error}",
+  "@notifLoadFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "trapsNoCatalog": "No trap catalog yet",
+  "commonNoDataFound": "No data found",
+  "weakPracticeSubtopic": "Practice This Sub-topic",
+  "weakPracticeTrap": "Practice This Trap Type",
+  "trapsCaughtZero": "Caught you 0× — not enough data yet",
+  "trapsSeeExample": "See example",
+  "weakLegend": "Accuracy = % correct among attempted questions in the topic.\nAttempt = % of topic questions you have attempted.",
+  "trapsExampleEyebrow": "EXAMPLE",
+  "trapsExampleLoadFailed": "Could not load an example.",
+  "trapsNoExample": "No example written for this trap yet.",
+  "trapsSpotted": "You spotted it.",
+  "trapsThatsTheTrap": "That's the trap.",
+  "trapsTrackingNote": "We keep track of which traps catch you most, so you can watch for them in the exam.",
+  "topicSearchHint": "Search topics...",
+  "topicNoMatch": "No topics match your search.",
+  "topicLoadFailed": "Could not load topics.",
+  "subjectTestChooseBattle": "Choose a subject to start battle",
+  "subjectTestChooseBegin": "Choose a subject to begin",
+  "subjectTestStartBattle": "Start battle",
+  "subjectTestLoadFailed": "Could not load subjects.",
+  "pyqLoadFailed": "Could not load PYQ sets",
+  "commonCompleted": "Completed",
+  "notifScreenTitle": "Notification",
+  "notifNoAnnouncement": "No announcement is available right now.",
+  "notifEmptyAnnouncement": "This announcement is empty.",
+  "topicsAttempts": "{count, plural, =1{· 1 attempt} other{· {count} attempts}}",
+  "@topicsAttempts": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "commonDaysAgo": "{count} days ago",
+  "@commonDaysAgo": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "subjCorrectOfTotal": "{correct}/{total} correct · {pct}%",
+  "@subjCorrectOfTotal": {
+    "placeholders": {
+      "correct": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      },
+      "pct": {
+        "type": "String"
+      }
+    }
+  },
+  "subjQuestionsPlain": "{count} questions",
+  "@subjQuestionsPlain": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "dzStartFailed": "Could not start session: {error}",
+  "@dzStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "dzTitleOf": "Danger zone of {label}",
+  "@dzTitleOf": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "dzTotalLine": "Total: {count} wrong · about {marks} marks (0.66 each if counted)",
+  "@dzTotalLine": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "marks": {
+        "type": "String"
+      }
+    }
+  },
+  "dzApproxMarks": "≈ {marks} marks",
+  "@dzApproxMarks": {
+    "placeholders": {
+      "marks": {
+        "type": "String"
+      }
+    }
+  },
+  "subjAllTopicsIn": "Questions from all topics in {subject}",
+  "@subjAllTopicsIn": {
+    "placeholders": {
+      "subject": {
+        "type": "String"
+      }
+    }
+  },
+  "subjPracticeTopicsCount": "Practice specific topics ({count} topics)",
+  "@subjPracticeTopicsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "subjCompletedSessions": "{count, plural, =1{1 completed session} other{{count} completed sessions}}",
+  "@subjCompletedSessions": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "commonWrongLower": "wrong",
+  "subjTopicOpenFailed": "Could not open topic: {error}",
+  "@subjTopicOpenFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "subjAdviceFor": "ADVICE FOR {subject}",
+  "@subjAdviceFor": {
+    "placeholders": {
+      "subject": {
+        "type": "String"
+      }
+    }
+  },
+  "subjSureEduWrong": "Sure wrong: {sure} · Edu guess wrong: {edu}",
+  "@subjSureEduWrong": {
+    "placeholders": {
+      "sure": {
+        "type": "int"
+      },
+      "edu": {
+        "type": "int"
+      }
+    }
+  },
+  "subjConfidentRate": "When confident: {rate}% right · vs {global}% overall",
+  "@subjConfidentRate": {
+    "placeholders": {
+      "rate": {
+        "type": "String"
+      },
+      "global": {
+        "type": "String"
+      }
+    }
+  },
+  "subjHistLoadFailed": "Could not load history.",
+  "subjHistEmptyTitle": "No completed sessions yet.",
+  "subjHistEmptyBody": "Start a test to see your results here.",
+  "subjStartTest": "Start a test",
+  "commonLoadMore": "Load more",
+  "topicsNotStarted": "Not started",
+  "topicsNoneFound": "No topics found for this subject.",
+  "topicsBankInstalling": "If your question bank is still installing, go back and try again in a moment.",
+  "commonToday": "Today",
+  "commonYesterday": "Yesterday",
+  "subjModeLearning": "Learning",
+  "subjModeExam": "Exam",
+  "dzNoQuestions": "No questions in this category.",
+  "dzSubtitle": "Wrong answers with Sure or Educated-guess (all-time)",
+  "dzCalm": "No Sure or Educated-guess wrong answers yet.",
+  "dzSureWrong": "Sure — wrong",
+  "dzSureWrongBody": "You marked Sure and answered incorrectly.",
+  "dzEduWrong": "Educated guess — wrong",
+  "dzEduWrongBody": "You marked Educated guess and answered incorrectly.",
+  "commonRevise": "Revise",
+  "topicSheetNoQuestions": "No questions in this topic right now.",
+  "topicSheetInsights": "INSIGHTS",
+  "topicSheetDzFailed": "Could not load Danger zone.",
+  "mockReviseTitle": "Revise Before Your Next Mock",
+  "mockReviseWhy": "These are topics where your Sure + Incorrect and Educated Guess + Incorrect are higher than your usual average.",
+  "mockWhatToDo": "What to do",
+  "mockReviseAction": "Revise these topics from your notes first before your next mock to reduce costly mistakes and improve your score.",
+  "mockSafeTitle": "Safe Areas for Higher Attempts",
+  "mockSafeWhy": "These are topics where your Sure + Correct and Educated Guess + Correct are better than your usual average.",
+  "mockSafeAction": "Be more confident while attempting questions from these topics in mocks and exams.",
+  "mockMoreClarity": "Want further clarity? ",
+  "subjFeedbackLead": "Any questions or feedback?\\n",
+  "subjGetInTouch": "Get in touch",
+  "subjBrowseTopicsLower": "Browse topics",
+  "subjNewTestBody": "Start a test or practice specific topics.",
+  "subjStartAndMark": "Start a test and mark confidence to see your insights",
+  "subjBrowseTopics": "Browse Topics",
+  "subjPracticeTopics": "Practice specific topics",
+  "subjHistoryBody": "List of Completed sessions for this subject.",
+  "subjSessionCountFailed": "Could not load session count.",
+  "subjViewHistory": "View test history",
+  "subjNoSessionsYet": "No completed sessions yet",
+  "subjStatsFailed": "Could not load subject stats.",
+  "subjMarkHint": "Mark Sure or Educated guess when you answer scored questions in this subject — mock-prep advice and your confidence breakdown will appear here.",
+  "subjStatsSharpen": "More scored answers with confidence labels sharpen these stats.",
+  "subjNoAttemptsYet": "No attempted answers yet.\\nStart a test and mark confidence to see your insights",
+  "subjAccuracySuffix": " accuracy",
+  "subjMcqsAttempted": " MCQs attempted",
+  "subjSureNone": "Sure → wrong: — (no Sure-marked answers yet)",
+  "subjGuessNone": "Educated guess → wrong: — (no Educated-guess answers yet)",
+  "subjBreakdownTitle": "Your confidence breakdown in this subject",
+  "subjNoConfidentWrongs": "No confident wrongs to analyse yet",
+  "subjReviseQuestions": "Revise these questions",
+  "subjTopicNotFound": "Topic not found in catalog.",
+  "subjReviseMcqs": "Revise MCQs",
+  "subjAdviceSubtitle": "Where to revise vs where to attempt more",
+  "subjAdviceEmpty": "Start attempting MCQs with marking confidence to see advices and insights here",
+  "subjReviseTopicsIntro": "You are likely to lose marks in these topics due to overconfidence and risky guessing.",
+  "subjTopicsToRevise": "Topics to revise",
+  "subjNoTopicsToList": "No topics to list",
+  "subjNoTopicsBody": "No topic in this subject has enough wrong answers marked “Very sure” or “Somewhat sure” to show here yet. As that pattern shows up, you will see it broken down by type of confidence.",
+  "subjWhyTopics": "Why these topics?",
+  "subjRevisitTopic": "Revisit this topic",
+  "subjSafeIntro": "You can trust your judgment more in these topics. Attempt more from here in mocks and exams.",
+  "subjSafeTopics": "Safe scoring topics",
+  "subjBaselineNotReady": "Baseline not ready",
+  "subjNoTopicsQualify": "No topics qualify yet",
+  "subjBaselineBody": "We need a solid sample of scored answers where you were very or somewhat sure. Keep using confidence on tests so we can set your global rate and list topics that beat it.",
+  "subjNoQualifyBody": "In this subject, no topic is clearly above your overall confident-correct rate yet. The list will update as you add more very sure or somewhat sure attempts.",
+  "subjAttemptMore": "Attempt more",
+  "subjMockPrepFailed": "Could not load mock-prep tips.",
+  "subjInsightsFailed": "Could not load insights.",
+  "notifPaperBody": "{count} MCQs from the news you just read",
+  "@notifPaperBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "notifPaperBodyTonight": "{count} MCQs from the news · Tonight: {topics}",
+  "@notifPaperBodyTonight": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "topics": {
+        "type": "String"
+      }
+    }
+  },
+  "prelimsDaysTo": "{days} days to UPSC Prelims",
+  "@prelimsDaysTo": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "prelimsBodyDays": "{days} days to go\nSmall steps, every day — that's the edge.",
+  "@prelimsBodyDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "notifNoTestTitle": "Find where UPSC Wars gives you an edge",
+  "notifNoTestBody": "Take 7 quick MCQs. Get coached to eliminate better, spot weak areas, and see where you’re strong.",
+  "notifBattleInviteTitle": "Battle invite",
+  "notifTapToJoin": "Tap to join",
+  "notifCaShotTitle": "CA Shot",
+  "notifTapToRead": "Tap to read & attempt",
+  "notifNewMessage": "New message",
+  "notifTapToOpenChat": "Tap to open chat",
+  "notifPaperTitle": "Today's paper quiz is live",
+  "prelimsToday": "Prelims is today",
+  "prelimsBodyToday": "It's the exam day,\nYou've prepared for this — breathe and execute.",
+  "prelimsBodyOneDay": "1 day to go,\nOne calm session at a time.",
+  "dcaProgressFailed": "Could not load progress: {error}",
+  "@dcaProgressFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "dcaOfCount": "of {count}",
+  "@dcaOfCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "dcaAvailableIn": "Test available in {countdown}",
+  "@dcaAvailableIn": {
+    "placeholders": {
+      "countdown": {
+        "type": "String"
+      }
+    }
+  },
+  "dcaJoinedCount": "{count} joined",
+  "@dcaJoinedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "dcaTestFromNews": "This test is from questions from {date}.",
+  "@dcaTestFromNews": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "dcaNoChampionYet": "{date} · No champion locked yet",
+  "@dcaNoChampionYet": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "dcaJoinedLocked": "{date} · {count} joined · Champion locked",
+  "@dcaJoinedLocked": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "dcaJoinedLive": "{date} · {count} joined · live",
+  "@dcaJoinedLive": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "dcaYouAir": "You · AIR {air}",
+  "@dcaYouAir": {
+    "placeholders": {
+      "air": {
+        "type": "int"
+      }
+    }
+  },
+  "dcaStartFrom": "Daily tests start from {date}.",
+  "@dcaStartFrom": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "dcaTenFromPaper": "10 MCQs from the {date} paper",
+  "@dcaTenFromPaper": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "dcaLiveIn": "Live in {t}",
+  "@dcaLiveIn": {
+    "placeholders": {
+      "t": {
+        "type": "String"
+      }
+    }
+  },
+  "dcaNextTestIn": "Next test in {t}",
+  "@dcaNextTestIn": {
+    "placeholders": {
+      "t": {
+        "type": "String"
+      }
+    }
+  },
+  "dcaThisMonth": "This month",
+  "dcaReviewOrRevise": "Review or revise",
+  "dcaTakeTodays": "Take today's test",
+  "dcaTodaysPaperBtn": "Today's paper",
+  "dcaNoRanks": "No ranks yet. Be the first to finish today's paper.",
+  "dcaSubmitFailed": "Submit failed",
+  "dcaLoadingResults": "Loading your results…",
+  "dcaTodaysBoard": "Today's board",
+  "dcaRanksPreview": "Ranks are in preview.",
+  "dcaSignInForAir": "Sign in from Profile to join today's All-India Rank.",
+  "dcaUnrankedLocked": "Unranked · this paper's Champion is already locked.",
+  "dcaSubmitted": "Submitted.",
+  "dcaTodaysLeaderboard": "Today's leaderboard",
+  "dcaReviewAnswers": "Review answers",
+  "dcaLiveUnranked": "Unranked · Champion already locked.",
+  "dcaLiveAir": "AIR can still move. Champion locks at 6 AM IST.",
+  "dcaNotAvailableCopy": "Questions for this date are not available yet.",
+  "dcaGenericLoadCopy": "Could not load test. Check your connection and try again.",
+  "testStartTest": "Start test",
+  "dcaNotLiveTitle": "Questions aren't live yet",
+  "dcaSoonTitle": "Questions will be available soon",
+  "dcaNotLiveBody": "This morning's paper was generated, but it has not been published to the app yet. Pull home to refresh in a minute.",
+  "dcaSoonBody": "Each paper is built from news articles. It tests how well you read the previous day's news — yesterday's newspaper, this morning's quiz.",
+  "dcaSeePast": "See past current affairs MCQs",
+  "dcaChampionLocked": "Champion is locked for this paper.",
+  "dcaPullRefresh": "Pull to refresh. Champion locks at 6 AM.",
+  "dcaLinkFailed": "Could not open this link.",
+  "dcaReviseThisDayRec": "You can revise this day's current affairs from our recommended links.",
+  "dcaAvailableSoon": "Available soon",
+  "dcaReviseThisTest": "Revise this test",
+  "dcaStartTodays": "Start today's test",
+  "dcaStartTheTest": "Start the test",
+  "dcaFavSources": "These are our favourite sources for this day's current affairs.",
+  "dcaQuizNotOpen": "Today's quiz isn't open yet. Check back after 6 AM, or pick a past day below.",
+  "dcaAlreadySubmitted": "You already submitted. Review answers or revise in learning mode.",
+  "dcaSameQuestions": "Same questions for everyone — based on yesterday's news.",
+  "dcaReviseLearning": "Revise (learning)",
+  "dcaSignInLeaderboard": "Sign in to see the leaderboard.",
+  "dcaEyebrowToday": "TODAY",
+  "dcaEyebrowYesterday": "YESTERDAY",
+  "dcaLiveFirst": "Live ranks · be the first to finish",
+  "dcaSeeAllRanks": "See all ranks",
+  "dcaFinishToAppear": "Finish the paper to appear on the board.",
+  "dcaTodayOpens": "Today's test opens at 6 AM",
+  "dcaTomorrowOpens": "Tomorrow's test opens at 6 AM",
+  "dcaGoesLive6": "Today's current affairs test, from yesterday's news, goes live at 6 AM.",
+  "dcaNoPaperToday": "No paper today. The next one lands tomorrow at 6 AM.",
+  "dcaQuizDone": "Quiz done. Open the explanations if a line still nags.",
+  "dcaCaFromYesterday": "Current affairs test from yesterday's news.",
+  "dcaReviseThisDay": "You can revise this day's current affairs from these links.",
+  "dcaNotStartedYet": "Not started yet",
+  "dcaViewResults": "View results",
+  "dcaReviseYesterdayRec": "You can revise yesterday's current affairs from our recommended links.",
+  "dcaReviseYesterday": "You can revise yesterday's current affairs from these links.",
+  "dcaTestWillBeFrom": "Today's test will be from :\n",
+  "dwStarting": "Starting…",
+  "dwStartsIn": "Starts in {t}",
+  "@dwStartsIn": {
+    "placeholders": {
+      "t": {
+        "type": "String"
+      }
+    }
+  },
+  "dwJoinNow": "Join now",
+  "dwSignInJoin": "Sign in to join",
+  "dwAttemptUnranked": "Attempt unranked",
+  "dwSignInAttempt": "Sign in to attempt",
+  "dwLobbyOpen": "LOBBY OPEN",
+  "dwInProgress": "IN PROGRESS",
+  "dwSundayOff": "SUNDAY OFF",
+  "dwOpenAttempt": "Open your attempt",
+  "dwAspirantsInLobby": "aspirants in the lobby",
+  "dwWritingNow": "writing right now",
+  "dwLateJoinClosed": "Late join closed",
+  "dwPaperNotLoaded": "Tonight's paper isn't loaded yet. Try again in some time.",
+  "dwHistory": "History",
+  "dwTomorrowTopics": "Tomorrow · {topics}",
+  "@dwTomorrowTopics": {
+    "placeholders": {
+      "topics": {
+        "type": "String"
+      }
+    }
+  },
+  "dwPractice": "Practice",
+  "dwNextEventMonday": "Next {event} is Monday at 9:00 PM IST.",
+  "@dwNextEventMonday": {
+    "placeholders": {
+      "event": {
+        "type": "String"
+      }
+    }
+  },
+  "dwEventLobbyOpen": "{event} lobby is open.",
+  "@dwEventLobbyOpen": {
+    "placeholders": {
+      "event": {
+        "type": "String"
+      }
+    }
+  },
+  "dwEventIsLive": "{event} is live.",
+  "@dwEventIsLive": {
+    "placeholders": {
+      "event": {
+        "type": "String"
+      }
+    }
+  },
+  "dwEventTonight": "{event} TONIGHT",
+  "@dwEventTonight": {
+    "placeholders": {
+      "event": {
+        "type": "String"
+      }
+    }
+  },
+  "dwSatEventStarts": "Saturday {event} starts at 9:00 PM IST.",
+  "@dwSatEventStarts": {
+    "placeholders": {
+      "event": {
+        "type": "String"
+      }
+    }
+  },
+  "dwEventStarts": "{event} starts at 9:00 PM IST.",
+  "@dwEventStarts": {
+    "placeholders": {
+      "event": {
+        "type": "String"
+      }
+    }
+  },
+  "dwFooterTonight": "Tonight's {event} starts at 9 PM",
+  "@dwFooterTonight": {
+    "placeholders": {
+      "event": {
+        "type": "String"
+      }
+    }
+  },
+  "dwFooterMonday": "Monday's {event} starts at 9 PM",
+  "@dwFooterMonday": {
+    "placeholders": {
+      "event": {
+        "type": "String"
+      }
+    }
+  },
+  "dwFooterNext": "Next {event} starts at 9 PM",
+  "@dwFooterNext": {
+    "placeholders": {
+      "event": {
+        "type": "String"
+      }
+    }
+  },
+  "dwRestDay": "Rest day · {event} returns Monday 9 PM",
+  "@dwRestDay": {
+    "placeholders": {
+      "event": {
+        "type": "String"
+      }
+    }
+  },
+  "dwWeekComplete": "Week {n} complete",
+  "@dwWeekComplete": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "dwNightsOf": "{a} of {b} nights",
+  "@dwNightsOf": {
+    "placeholders": {
+      "a": {
+        "type": "int"
+      },
+      "b": {
+        "type": "int"
+      }
+    }
+  },
+  "dwTopicsWentBy": "{n} topics went by · nothing lost for Monday",
+  "@dwTopicsWentBy": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "dwTopicsLanded": "{n} topics landed",
+  "@dwTopicsLanded": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "dwStillOpen": " · {n} still open",
+  "@dwStillOpen": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "dwTonightTopics": "Tonight: {topics}",
+  "@dwTonightTopics": {
+    "placeholders": {
+      "topics": {
+        "type": "String"
+      }
+    }
+  },
+  "dwDailyDrillSubject": "Daily Drill · {subject}",
+  "@dwDailyDrillSubject": {
+    "placeholders": {
+      "subject": {
+        "type": "String"
+      }
+    }
+  },
+  "dwHowWorks": "How {program} works",
+  "@dwHowWorks": {
+    "placeholders": {
+      "program": {
+        "type": "String"
+      }
+    }
+  },
+  "dwHelpLiveBody": "Same paper, All-India · {wq}Q / {wm}m weeknights · {gq}Q / {gm}m Sat {event}",
+  "@dwHelpLiveBody": {
+    "placeholders": {
+      "wq": {
+        "type": "int"
+      },
+      "wm": {
+        "type": "int"
+      },
+      "gq": {
+        "type": "int"
+      },
+      "gm": {
+        "type": "int"
+      },
+      "event": {
+        "type": "String"
+      }
+    }
+  },
+  "dwAirAt": "AIR at {t}",
+  "@dwAirAt": {
+    "placeholders": {
+      "t": {
+        "type": "String"
+      }
+    }
+  },
+  "dwHelpRhythmBody": "2 topics Mon–Fri · {event} Sat · Sunday off",
+  "@dwHelpRhythmBody": {
+    "placeholders": {
+      "event": {
+        "type": "String"
+      }
+    }
+  },
+  "dwDrawsFromMany": "Tonight's war draws from these {n} topics. Run the PYQs now so you walk in warm.",
+  "@dwDrawsFromMany": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "dwYourWeekIn": "Your week in {program}",
+  "@dwYourWeekIn": {
+    "placeholders": {
+      "program": {
+        "type": "String"
+      }
+    }
+  },
+  "dwUpRanks": "up {n} ranks",
+  "@dwUpRanks": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "dwRanksLockAfter": "{date} · Ranks lock after the paper closes",
+  "@dwRanksLockAfter": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "dwBadgesLoadFailed": "Could not load badges: {error}",
+  "@dwBadgesLoadFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "dwEventSaturday": "{event} · SATURDAY",
+  "@dwEventSaturday": {
+    "placeholders": {
+      "event": {
+        "type": "String"
+      }
+    }
+  },
+  "dwMoreSeeAll": "+ {n} more · See all →",
+  "@dwMoreSeeAll": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "dwTopicsCovered": "{covered} of {total} topics covered",
+  "@dwTopicsCovered": {
+    "placeholders": {
+      "covered": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "dwTonightAdds": "tonight adds {n}",
+  "@dwTonightAdds": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "dwWarStartsIn": "WAR STARTS IN {t}",
+  "@dwWarStartsIn": {
+    "placeholders": {
+      "t": {
+        "type": "String"
+      }
+    }
+  },
+  "dwTimerStartsOnEntry": "Your timer starts on entry — the {t} close does not move.",
+  "@dwTimerStartsOnEntry": {
+    "placeholders": {
+      "t": {
+        "type": "String"
+      }
+    }
+  },
+  "dwEntryClosesIn": "ENTRY CLOSES IN {t}",
+  "@dwEntryClosesIn": {
+    "placeholders": {
+      "t": {
+        "type": "String"
+      }
+    }
+  },
+  "dwYourAirReady": "Your AIR {air} is ready",
+  "@dwYourAirReady": {
+    "placeholders": {
+      "air": {
+        "type": "int"
+      }
+    }
+  },
+  "dwTonightEventLive": "Tonight's {event} is live",
+  "@dwTonightEventLive": {
+    "placeholders": {
+      "event": {
+        "type": "String"
+      }
+    }
+  },
+  "dwAspirantsTopics": "{n} aspirants · {topics}",
+  "@dwAspirantsTopics": {
+    "placeholders": {
+      "n": {
+        "type": "String"
+      },
+      "topics": {
+        "type": "String"
+      }
+    }
+  },
+  "dwSeeYourAir": "See your AIR {air}",
+  "@dwSeeYourAir": {
+    "placeholders": {
+      "air": {
+        "type": "int"
+      }
+    }
+  },
+  "dwTonightsResult": "TONIGHT'S RESULT · {date}",
+  "@dwTonightsResult": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "dwAspirantsWroteIt": "{n} aspirants wrote it",
+  "@dwAspirantsWroteIt": {
+    "placeholders": {
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "dwPracticedUnranked": "You practiced unranked · {score}",
+  "@dwPracticedUnranked": {
+    "placeholders": {
+      "score": {
+        "type": "String"
+      }
+    }
+  },
+  "dwBadgesCount": "{kinds} badges · {earned} total earns",
+  "@dwBadgesCount": {
+    "placeholders": {
+      "kinds": {
+        "type": "int"
+      },
+      "earned": {
+        "type": "int"
+      }
+    }
+  },
+  "dwEventIsLiveCaps": "{event} IS LIVE",
+  "@dwEventIsLiveCaps": {
+    "placeholders": {
+      "event": {
+        "type": "String"
+      }
+    }
+  },
+  "dwNoLiveNext": "No live paper today. Next {event} is Monday at 9:00 PM IST.",
+  "@dwNoLiveNext": {
+    "placeholders": {
+      "event": {
+        "type": "String"
+      }
+    }
+  },
+  "dwPlusMore": "+ {n} more",
+  "@dwPlusMore": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "dwSeeAllTopics": "See all {n} topics →",
+  "@dwSeeAllTopics": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "dwJoinUntilLeft": "Join until 9:10 · {t} left",
+  "@dwJoinUntilLeft": {
+    "placeholders": {
+      "t": {
+        "type": "String"
+      }
+    }
+  },
+  "dwNoPaperNext": "No paper today · next {event} Monday 9:00 PM",
+  "@dwNoPaperNext": {
+    "placeholders": {
+      "event": {
+        "type": "String"
+      }
+    }
+  },
+  "dwLateClosedAirAt": "Late join closed · AIR at {t}",
+  "@dwLateClosedAirAt": {
+    "placeholders": {
+      "t": {
+        "type": "String"
+      }
+    }
+  },
+  "dwStartFailed": "Could not start War: {error}",
+  "@dwStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "dwLoadFailed": "Could not load Static War: {error}",
+  "@dwLoadFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "dwPaperLoadFailed": "Could not load tonight's paper: {error}",
+  "@dwPaperLoadFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "dwBattleStartsLeft": "Battle starts at 9:00 PM IST · {t} left.",
+  "@dwBattleStartsLeft": {
+    "placeholders": {
+      "t": {
+        "type": "String"
+      }
+    }
+  },
+  "dwRulesLobby": "{q} Q · {m} MIN · ONE ATTEMPT",
+  "@dwRulesLobby": {
+    "placeholders": {
+      "q": {
+        "type": "int"
+      },
+      "m": {
+        "type": "int"
+      }
+    }
+  },
+  "dwNoLivePaper": "No live paper today.",
+  "dwYouWereIn": "You were in tonight's paper.",
+  "dwOpenRankExpl": "Open your rank and explanations.",
+  "dwAttemptInResultsFollow": "Your attempt is in. Results will follow.",
+  "dwPaperStarts9": "Paper starts at 9:00 PM IST.",
+  "dwLiveNow": "LIVE NOW",
+  "dwLiveJoinBefore": "All-India live paper. Join before the window closes.",
+  "dwEntryClosedRanks": "Entry closed at 9:10 PM IST. Ranks at 9:40 PM.",
+  "dwWindowClosed": "Tonight's live window has closed.",
+  "dwStillUnranked": "You can still attempt this paper unranked.",
+  "dwWeekRevision": "Week revision. Same paper, All-India.",
+  "dwLobbyOpens859": "All-India live paper. Lobby opens at 8:59 PM.",
+  "dwSundayNoBattle": "SUNDAY · NO BATTLE TONIGHT",
+  "dwQuietWeek": "A quiet week",
+  "dwNoBattleNights": "No battle nights this week · Monday is a fresh start",
+  "dwStreakSafe": "Streak safe · revise or rest until Monday",
+  "dwFullWeekSummary": "Full week summary",
+  "dwTopicsMonday": "Topics up Monday morning",
+  "dwCatchUp": "Catch up",
+  "dwReviseWeek": "Revise week",
+  "dwPracticeEarly": "Practice early",
+  "dwUpNext": "UP NEXT",
+  "dwMonday9": "Monday · 9 PM",
+  "dwWeekStrip": "Mon–Fri new topics · Sat revises the week · Sunday off",
+  "dwExplainerHead": "Full syllabus.\nTwo topics at a time.",
+  "dwExplainerSub": "9 PM live paper. Same questions. Then you see the leaderboard.",
+  "dwPaperIsTheseSat": "Saturday's paper is these:",
+  "dwPaperIsThis": "Tonight's paper is this:",
+  "dwPaperIsThese": "Tonight's paper is these:",
+  "dwWeekTopicsLand": "This week's two topics land here.",
+  "dwTonightTopicsLand": "Tonight's two topics land here.",
+  "dwTry10": "Try 10 questions on these",
+  "dwQuick10": "10 quick MCQs on tonight's subject",
+  "commonTryAgainError": "Something went wrong. Please try again.",
+  "dwStep2": "STEP 2 · PREPARE",
+  "dwHelpLiveTitle": "Live at 9:00 PM",
+  "dwHelpAirBody": "See your score on submission · we'll notify you when ranks are ready",
+  "dwHelpRhythmTitle": "Week rhythm",
+  "dwHelpMissedTitle": "Missed a night?",
+  "dwHelpMissedBody": "Practice later · no rank · streak breaks",
+  "dwReviseBefore9": "Revise before 9 PM",
+  "dwDrawsFromOne": "Tonight's war draws from this topic. Run the PYQs now so you walk in warm.",
+  "dwRevisionNoRank": "Revision here does not count towards your war rank.",
+  "dwNoQuestionsTopic": "No questions available for this topic yet.",
+  "dwStartPractice": "Start practice",
+  "dwNightsAttempted": "nights attempted",
+  "dwConfidentlyWrong": "Confidently wrong",
+  "dwConfWrongBody": "Topics where you marked Sure / Educated guess and missed.",
+  "commonLoading": "Loading…",
+  "dwDangerLoadFailed": "Couldn't load danger topics.",
+  "dwNoAttemptsWeek": "No attempts this week yet.",
+  "dwNoneWeek": "None this week — keep that map clean.",
+  "dwBadgesEarned": "Badges earned",
+  "dwShowUpMonday": "Show up Monday to start collecting.",
+  "dwNoBadgesWeek": "No badges this week.",
+  "dwNoBadgesNight": "No badges earned this night yet.",
+  "dwTiersNote": "Consistency tiers climb over 30 War nights. Miss two nights in a row and you fall one tier.",
+  "dwTonight": "TONIGHT",
+  "dwLastNight": "LAST NIGHT",
+  "dwLastWar": "LAST WAR",
+  "dwSeeBoard": "See board",
+  "dwNoChampionYet": "No champion yet. Ranks land here after the paper locks.",
+  "dwEarnedBadges": "EARNED BADGES",
+  "dwNoBadgeYet": "You have not yet earned a badge",
+  "dwStarts9": "STARTS 9:00 PM IST",
+  "dwLobbyFilling": "The lobby is filling up",
+  "dwEnterLobby": "Enter lobby",
+  "dwWarIsLive": "WAR IS LIVE",
+  "dwStarted9": "STARTED 9:00 PM IST",
+  "dwJoinUntil910": "You can still join until 9:10",
+  "dwYoureIn": "YOU'RE IN",
+  "dwEntryClosed910": "ENTRY CLOSED 9:10 PM",
+  "dwAttemptInAir940": "Your attempt is in · AIR at 9:40 PM IST",
+  "dwLateJoinClosedDot": "Late join closed.",
+  "dwEntryCloses910": "Entry closes at 9:10.",
+  "dwTodaysWarLive": "Today's war is live",
+  "dwResultsEyebrow": "RESULTS",
+  "dwAirAt940": "AIR AT 9:40 PM",
+  "dwScoreInNotify": "Your score is in · we'll notify you when AIR is ready",
+  "dwBattleOverAir": "Tonight's battle is over · AIR at 9:40 PM",
+  "dwFullResults": "Full results & review",
+  "dwBattleOverCaps": "TONIGHT'S BATTLE IS OVER",
+  "dwSatOut": "You sat this one out",
+  "dwAttemptInPending": "Your attempt is in · rank pending",
+  "dwSeeTonightsPaper": "See tonight's paper",
+  "dwUnrankedAttempt": "Unranked attempt",
+  "dwSeeYourAttempt": "See your attempt",
+  "dwTomorrow9": "Tomorrow · 9:00 PM IST",
+  "dwNoQuestionsAvail": "No questions available",
+  "dwStaticWarRevise": "Static War revise",
+  "dwTonightsLeaderboard": "Tonight's war · leaderboard",
+  "dwLeaderboardNotReady": "Leaderboard not ready yet.",
+  "dwBadgesSyncNote": "Counts sync from your Static War nights — kept on this device and in the cloud.",
+  "dwResultsTitle": "Static War results",
+  "dwSubmitting": "Submitting your answers…",
+  "dwDemoted": "Your paper came in after the live window closed, so it's saved as an unranked attempt.",
+  "dwUnrankedNotOfficial": "Unranked · not an official AIR",
+  "dwSubmittedAirReady": "Submitted · AIR will be ready at 9:40 PM IST. We'll notify you.",
+  "dwTomorrow": "Tomorrow",
+  "dwTonightsLeaderboardBtn": "Tonight's leaderboard",
+  "dwNotAvailable": "Static War is not available.",
+  "dwNotAvailableAccount": "Static War is not available on this account yet.",
+  "dwSundayOffTitle": "Sunday off",
+  "dwPracticeTopics": "Practice these topics →",
+  "dwOpenHistory": "Open History",
+  "dwCantJoinNow": "You can't join now",
+  "dwComeBack859": "Come back at 8:59 PM IST to enter the lobby.",
+  "dwResultsReady": "RESULTS READY",
+  "dwPrepareToday": "Prepare today · lobby opens 8:59 PM",
+  "dwRanksCalculating": "Ranks calculating…",
+  "dwResultsReadyTitle": "Results ready",
+  "dwReady": "Ready",
+  "dwHistoryCaps": "HISTORY",
+  "dwSignInAttemptWar": "Sign in to attempt this War.",
+  "dwSignInJoinWar": "Sign in to join tonight's War.",
+  "dwAlreadySubmitted": "You already submitted this War.",
+  "dwAlreadyPracticed": "You already practiced this War.",
+  "dwUpdateApp": "Update the app to attempt tonight's War — some of this paper isn't in your question bank yet.",
+  "dwTopicsLoadFailed": "Couldn't load tonight's topics",
+  "dwTopicsFinding": "Finding tonight's topics…",
+  "dwTwoTopics": "Two topics a night",
+  "dwPaperOpenRanksTomorrow": "Tonight's paper is open. Ranks show here tomorrow.",
+  "dwLateClosedUnrankedAt": "Late join closed · unranked at {t}",
+  "@dwLateClosedUnrankedAt": {
+    "placeholders": {
+      "t": {
+        "type": "String"
+      }
+    }
+  },
+  "dwWarriorsThatNight": "{n} warriors that night",
+  "@dwWarriorsThatNight": {
+    "placeholders": {
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "dwAirLabel": "AIR {air}",
+  "@dwAirLabel": {
+    "placeholders": {
+      "air": {
+        "type": "int"
+      }
+    }
+  },
+  "dwBetterThan": "Better than {pct}%",
+  "@dwBetterThan": {
+    "placeholders": {
+      "pct": {
+        "type": "String"
+      }
+    }
+  },
+  "dwPts": "{score} pts",
+  "@dwPts": {
+    "placeholders": {
+      "score": {
+        "type": "String"
+      }
+    }
+  },
+  "dwTopNOf": "Top {n} of {count}",
+  "@dwTopNOf": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "dwSeeAllCount": "See all {count}",
+  "@dwSeeAllCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "dwSavedOnDevice": "Saved on this device",
+  "dwPaperNotPublished": "Paper not published yet",
+  "dwStartDayTest": "Start this day's test",
+  "dwReviseThisPaper": "Revise this paper",
+  "dwLeaderboardCaps": "LEADERBOARD",
+  "dwArchiveTitle": "Static War archive",
+  "dwYourAttemptCaps": "YOUR ATTEMPT",
+  "dwNotAttempted": "Not attempted",
+  "dwStartAboveToTake": "Start the test above to take this paper.",
+  "dwPendingRank": "Pending rank",
+  "dwSkip": "Skip",
+  "dwNoRankedFinishers": "No ranked finishers yet",
+  "dwRanksLandAfter": "Ranks land after the paper closes · All-India board fills here",
+  "dwLeaderboardTitle": "Leaderboard",
+  "ocPleaseNote": "Please note:",
+  "ocTooltipLine": "One live challenge per 24h · next slot ~{eta}",
+  "@ocTooltipLine": {
+    "placeholders": {
+      "eta": {
+        "type": "String"
+      }
+    }
+  },
+  "ocBodyCopy": "You already have a live challenge. Next create in ~{eta}.",
+  "@ocBodyCopy": {
+    "placeholders": {
+      "eta": {
+        "type": "String"
+      }
+    }
+  },
+  "ocPickCopy": "Still on cooldown — next create in ~{eta}.",
+  "@ocPickCopy": {
+    "placeholders": {
+      "eta": {
+        "type": "String"
+      }
+    }
+  },
+  "qotdSubjectsFailed": "Could not load subjects: {error}",
+  "@qotdSubjectsFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "ocPickSubtitle": "Pick one subject or mixed misc · 10 MCQs · Timed ({n} min)",
+  "@ocPickSubtitle": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "ocAlreadyAttempted": "You have already attempted this challenge.",
+  "ocExpired": "This challenge has expired.",
+  "ocSignInSave": "Sign in to save your score to the leaderboard.",
+  "ocSaveFailed": "Could not save your score",
+  "commonCheckConnection": "Check your connection and try again.",
+  "ocPublishingScore": "Publishing your score",
+  "ocLocking": "Locking your answers onto the leaderboard — almost there.",
+  "ocRule1": "You will answer 10 questions in exam mode — no hints, no explanations.",
+  "ocRule2": "Your score is posted publicly with your name.",
+  "ocRule3": "You can only attempt each challenge once.",
+  "ocRule4": "Ties are broken by who attempted earlier.",
+  "ocBeforeStart": "Before you start",
+  "ocConfidenceNote": "While selecting an option, marking confidence level is optional, but we recommend it for better insights.",
+  "ocAMoment": "a moment",
+  "qotdNoQuestions": "No questions found for this subject.",
+  "qotdLoadFailed": "Could not load that question.",
+  "qotdPickFirst": "Pick a subject first.",
+  "ocPickSubject": "Pick your subject",
+  "qotdIntro": "One random question from your bank · shuffle, attempt, then post to Community QOTD.",
+  "commonSubject": "Subject",
+  "qotdContinue": "Continue to question",
+  "qotdNoneLoaded": "No question loaded.",
+  "qotdShuffle": "Shuffle question",
+  "qotdReadExpl": "Read explanation",
+  "qotdPostThis": "Post this question",
+  "qotdTabIntro": "Share a tough question with the Community. Tap a card to expand, react, and attempt.",
+  "qotdFeedFailed": "Could not load QOTD feed",
+  "qotdEmpty": "No questions shared yet. Pull to refresh, or tap Create to post one (for example after you attempt a question in a test).",
+  "ocCreateChallenge": "Create challenge",
+  "ocPickNote": "Ten questions are chosen at random from your local bank for this subject. Timer runs during the challenge.",
+  "ocSubjectsFailed": "Could not load subjects",
+  "ocStartMyAttempt": "Start my challenge attempt",
+  "ocBeginTimed": "Begin the timed 10-MCQ challenge",
+  "commonJustNow": "just now ✨",
+  "commonMinAgo": "{n}m ago",
+  "@commonMinAgo": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "commonHrAgo": "{n}h ago",
+  "@commonHrAgo": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "commonDayAgo": "{n}d ago",
+  "@commonDayAgo": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "commonWeekAgo": "{n}w ago",
+  "@commonWeekAgo": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "blockedUnblocked": "{name} has been unblocked.",
+  "@blockedUnblocked": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "blockedUnblockFailed": "Could not unblock: {error}",
+  "@blockedUnblockFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "connectChallengeUser": "Challenge {target} in a battle.",
+  "@connectChallengeUser": {
+    "placeholders": {
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "ocCreatedBy": "Created by {name}",
+  "@ocCreatedBy": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "ocLiveTill": "Live till {t}",
+  "@ocLiveTill": {
+    "placeholders": {
+      "t": {
+        "type": "String"
+      }
+    }
+  },
+  "ocYourScore": "Your score: {s} / 10",
+  "@ocYourScore": {
+    "placeholders": {
+      "s": {
+        "type": "int"
+      }
+    }
+  },
+  "ocBeatenBy": "{name} has beaten your score",
+  "@ocBeatenBy": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "ocCreatedMin": "Created {n}m ago",
+  "@ocCreatedMin": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "ocCreatedHr": "Created {n}h ago",
+  "@ocCreatedHr": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "ocCreatedDay": "Created {n}d ago",
+  "@ocCreatedDay": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "commLastRefreshed": "Last refreshed: {t}",
+  "@commLastRefreshed": {
+    "placeholders": {
+      "t": {
+        "type": "String"
+      }
+    }
+  },
+  "commKeepProfile": "Keep your profile updated so others can connect with you even outside {app}.",
+  "@commKeepProfile": {
+    "placeholders": {
+      "app": {
+        "type": "String"
+      }
+    }
+  },
+  "qotdMinChars": "Write at least {n} characters, or leave this blank.",
+  "@qotdMinChars": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "qotdMaxChars": "Please keep it under {n} characters.",
+  "@qotdMaxChars": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "qotdMoreChars": "{n} more characters to reach {need}, or clear the field to post without a comment.",
+  "@qotdMoreChars": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      },
+      "need": {
+        "type": "int"
+      }
+    }
+  },
+  "ocGreatScore": "Great score ({n}/10). Post this set as an open challenge so others can try the same questions in Community.",
+  "@ocGreatScore": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "ocByName": "by {name}",
+  "@ocByName": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "ocTries": "{count, plural, =1{1 try} other{{count} tries}}",
+  "@ocTries": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "ocYouScore": "You {n}/10",
+  "@ocYouScore": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "commBlockedMsg": "You will not see messages or battle invites from {name}.",
+  "@commBlockedMsg": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "commBlockUpdateFailed": "Could not update block: {error}",
+  "@commBlockUpdateFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "commChatStartFailed": "Could not start chat: {error}",
+  "@commChatStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "commLastOnline": "Last online: {t}",
+  "@commLastOnline": {
+    "placeholders": {
+      "t": {
+        "type": "String"
+      }
+    }
+  },
+  "blockedNone": "No one blocked",
+  "blockedNote": "People you block won’t be able to message you or send battle invites.",
+  "blockedUnblock": "Unblock",
+  "connectRandomIntro": "Start a random battle connect.",
+  "connectStartChallenge": "Start Challenge",
+  "connectNote": "You will briefly see joined players, then battle auto-starts.",
+  "ocNotFound": "Challenge not found",
+  "ocExpired24": "This challenge has expired (challenges last 24 hours).",
+  "ocWinnerSoFar": "You are the winner so far 🏆",
+  "ocReviewExpl": "Review explanations",
+  "ocAccept": "Accept Challenge",
+  "ocCreatedJustNow": "Created just now",
+  "commRecentFailed": "Could not load recent users",
+  "commTapUser": "Tap a user to view profile and social links.",
+  "commNoUsers": "No users found in the latest window.",
+  "commPullRefresh": "Pull down to refresh.",
+  "commLoadingRecent": "Loading recent users…",
+  "commSetVisibility": "Set Visibility",
+  "commAcceptInvites": "Accept battle invites",
+  "commReceivingInvites": "You are receiving battle invites.",
+  "commNotReceivingInvites": "You are not receiving battle invites.",
+  "commShowBattleStatus": "Show my in-battle status",
+  "commOthersCanSee": "Others can see when you are in a battle.",
+  "commOthersCannotSee": "Others cannot see your in-battle status.",
+  "commSaveFailed": "Failed to save settings",
+  "commonSave": "Save",
+  "commTapRandom": "Tap below for Random Battle Connect",
+  "qotdNoteIntro": "Optional note for the community. You learned something new? Spotted something ironic? A concept felt challenged? Be specific — or leave this blank.",
+  "qotdCommentLabel": "Comment (optional)",
+  "qotdCommentHint": "Leave blank, or write at least 50 characters…",
+  "qotdSignInKept": "Sign in to post. Your comment is kept.",
+  "qotdPost": "Post",
+  "qotdSignInPost": "Sign in to post",
+  "ocShareChallenge": "Share the challenge",
+  "ocPublishCommunity": "Publish to Community",
+  "ocTempUnavailable": "Temporarily unavailable",
+  "ocPosting": "Posting…",
+  "ocPostAsChallenge": "Post as open challenge",
+  "qotdRule1": "Each QOTD stays in Community for 24 hours from when you post it.",
+  "qotdRule2": "One random MCQ is drawn from your offline catalog for the subject you pick.",
+  "qotdRule3": "Shuffle until you find a question worth sharing, then attempt it.",
+  "qotdRule4": "You post after attempting; your pick is stored with the community post.",
+  "qotdRule5": "Your name and an optional short comment appear on the QOTD card.",
+  "qotdBeforeProceed": "Before you proceed",
+  "qotdWhoAnswered": "Who answered",
+  "qotdAttemptsFailed": "Could not load attempts.",
+  "qotdNoAttempts": "No attempts yet.",
+  "qotdProfileUnavailable": "Profile is not available for this attempt yet.",
+  "qotdWhatIs": "What is QOTD?",
+  "qotdWhat1": "Share a question from your test with the community.",
+  "qotdWhat2": "Others attempt it and react.",
+  "qotdWhat3": "It stays live for 24 hours.",
+  "ocPublishingChallenge": "Publishing your challenge…",
+  "ocStepFailed": "Could not complete this step. Check your connection and try again.",
+  "ocWhatIs": "What is an open challenge?",
+  "ocWhat1": "A warrior posts their 10-question exam for everyone to try.",
+  "ocWhat2": "Same 10 questions for every challenger.",
+  "ocWhat3": "Beat the top score on the leaderboard.",
+  "ocWhat4": "Each challenge stays live for 24 hours.",
+  "ocWhatSignIn": "Sign in to join a challenge and post your own.",
+  "commonNotNow": "Not now",
+  "qotdPosted": "Posted to Community QOTD",
+  "ocSectionIntro": "Same 10 questions — beat the room! Tap a card for the full story.",
+  "ocStartNew": "Start a new 10-question challenge",
+  "ocLoadFailed": "Could not load challenges",
+  "ocNoneYet": "No challenges yet — you could be first!",
+  "ocCrushIntro": "Crush a 10Q exam, then hit Create to drop a challenge for everyone.",
+  "ocWhatIsShort": "What is open challenge",
+  "ocPickedForYou": "Picked for you",
+  "commLinkFailed": "Could not open link",
+  "commFighting": "fighting a battle",
+  "commAvailable": "available",
+  "commBlockTitle": "Block this user?",
+  "commBlockBody": "This will close this chat and block them.",
+  "commSignInMsg": "Sign in to send messages.",
+  "commChatStartSignIn": "Could not start chat. Please sign in again.",
+  "commSendMessage": "Send Message",
+  "commThatsAll": "That's all",
+  "bcSubInvite": "Battle vs {name} · 10 MCQs · Timed ({mins} min)",
+  "@bcSubInvite": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "mins": {
+        "type": "int"
+      }
+    }
+  },
+  "bcSubPick": "Pick one subject or mixed misc · 10 MCQs · Timed ({mins} min)",
+  "@bcSubPick": {
+    "placeholders": {
+      "mins": {
+        "type": "int"
+      }
+    }
+  },
+  "bcErrSetup": "Battle setup failed ({code}).",
+  "@bcErrSetup": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "bwJoinWindow": "If your opponent joins within {window}, \nyou can start the battle. Time remaining: {remaining}.",
+  "@bwJoinWindow": {
+    "placeholders": {
+      "window": {
+        "type": "String"
+      },
+      "remaining": {
+        "type": "String"
+      }
+    }
+  },
+  "bsoSubmitted": "{name} has submitted; unanswered questions stay blank.",
+  "@bsoSubmitted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "bsoLockedAll": "{name} has locked in every answer.",
+  "@bsoLockedAll": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "bsoStillWorking": "{name} is still working through the paper.",
+  "@bsoStillWorking": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "bsoCloseBody": "{name} is still answering. Stop the live duel anyway?",
+  "@bsoCloseBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "bsoLeaveBody": "{name} is still answering. Do you want to stop watching?",
+  "@bsoLeaveBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "bjSignIn": "Sign in to join this battle.",
+  "bjNotFound": "This battle was not found. It may have expired.",
+  "bjNotPvp": "This link is not for a player-vs-player battle.",
+  "bjWrongAccount": "This invite was sent to a different account.",
+  "bjClosed": "This battle is no longer accepting joins. It may have already started.",
+  "bjIncomplete": "Battle data is incomplete.",
+  "bjJoinFailed": "Could not join battle.",
+  "bjTitle": "Join battle",
+  "bjSomethingWrong": "Something went wrong.",
+  "commonHome": "Home",
+  "brTitle": "Battle Result",
+  "commonBackToHome": "Back to Home",
+  "bcTitle": "Configure battle",
+  "bcPick": "Pick your battlefield",
+  "bcMisc": "Misc",
+  "bcTimerNote": "Timer runs during the battle. Answers lock in once chosen, with explanations shown so you learn as you go.",
+  "bcLoadFailed": "Could not load subjects",
+  "bcUnblockFirst": "Unblock this player in Community before inviting them.",
+  "bcErrPermission": "Could not save the battle room. Sign in and try again, or check Firestore rules.",
+  "bcErrUnavailable": "Firestore is temporarily unavailable. Check your connection and try again.",
+  "bcErrTimeout": "Saving the battle timed out. Check your internet connection and try again.",
+  "bwLeaveTitle": "Leave match?",
+  "bwLeaveBody": "Your opponent may still be waiting in the lobby.",
+  "bwStay": "Stay",
+  "bwStartFailed": "Could not start battle. Try again.",
+  "bwMatch": "Match",
+  "bwBattleId": "Battle ID",
+  "bw2Joined": "2 joined",
+  "commonYou": "You",
+  "bwStartingSoon": "Please wait… battle is starting in a few seconds.",
+  "bwOppJoined": "Opponent joined. Start the battle when you are ready.",
+  "bwWaitOppJoin": "Waiting for your opponent to open the invite and join.",
+  "bwStarting": "Starting battle…",
+  "bwWaitHost": "Waiting for the host to start the battle.",
+  "bwOppInLobby": "Opponent in lobby",
+  "bwWaitOpp": "Waiting for opponent",
+  "bwTimedOut": "We timed out while waiting for your opponent to join. You can keep waiting in case they are slow, or go back.",
+  "commonGoBack": "Go back",
+  "bwKeepWaiting": "Keep waiting",
+  "bshScores": "Scores",
+  "bshFinished": "Battle finished",
+  "bsnTitle": "Submit your answers?",
+  "bsnBodyWatch": "Your score will lock in. You can watch your opponent finish on a live board, or go straight to results.",
+  "bsnBodyPlain": "Your score will lock in and you will see the outcome.",
+  "bsnContinue": "Continue battle",
+  "bsnWatch": "Submit and Watch their progress",
+  "bsnSeeResults": "Submit & see results",
+  "bsoYourOpp": "Your opponent",
+  "bsoTie": "Tie on points.",
+  "bsoYouAhead": "You were ahead on points.",
+  "bsoOppAhead": "Your opponent was ahead on points.",
+  "bsoYouAheadNow": "You are ahead on points (for now).",
+  "bsoOppAheadNow": "Your opponent is ahead on points (for now).",
+  "bsoClose": "Scores are very close.",
+  "bsoTimerEnded": "The timer window ended; the room will not add more live marks.",
+  "bsoCloseTitle": "Close live duel?",
+  "bsoStop": "Stop",
+  "bsoLeaveTitle": "Leave the live board?",
+  "bsoKeepWatching": "Keep watching",
+  "bsoBattleOver": "Battle over",
+  "bsoLiveDuel": "Live duel",
+  "bsoStopFollowing": "Stop following",
+  "bsoClosePanel": "Close panel",
+  "bcfSendFailed": "Failed to send: {error}",
+  "@bcfSendFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "bcfLoadFailed": "Could not load messages: {error}",
+  "@bcfLoadFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "bsbAcc": "{pct}% accuracy · {correct} correct, {wrong} wrong",
+  "@bsbAcc": {
+    "placeholders": {
+      "pct": {
+        "type": "int"
+      },
+      "correct": {
+        "type": "int"
+      },
+      "wrong": {
+        "type": "int"
+      }
+    }
+  },
+  "bsbAccUn": "{pct}% accuracy · {correct} correct, {wrong} wrong, {un} unanswered",
+  "@bsbAccUn": {
+    "placeholders": {
+      "pct": {
+        "type": "int"
+      },
+      "correct": {
+        "type": "int"
+      },
+      "wrong": {
+        "type": "int"
+      },
+      "un": {
+        "type": "int"
+      }
+    }
+  },
+  "bsbAheadBy": "You were ahead by {delta} points",
+  "@bsbAheadBy": {
+    "placeholders": {
+      "delta": {
+        "type": "String"
+      }
+    }
+  },
+  "bsbLedBy": "They led by {delta} points",
+  "@bsbLedBy": {
+    "placeholders": {
+      "delta": {
+        "type": "String"
+      }
+    }
+  },
+  "btOpenFailed": "Could not open battle.",
+  "btLeaveTitle": "Leave battle?",
+  "btLeaveBody": "Going back means you want to quit the battle, but your progress will be saved.",
+  "btGridTooltip": "Question grid",
+  "btWaitJoin": "Waiting for your opponent to join before you can answer.",
+  "btRevisit": "Revisit",
+  "btSubmitFailed": "Could not submit battle. Please retry.",
+  "btGridTitle": "Question Grid",
+  "btAnswer": "Answer",
+  "bcfCloseTitle": "Close chat?",
+  "bcfCloseBody": "Are you sure you want to hide this battle chat?",
+  "commonClose": "Close",
+  "bcfStartConv": "Start the conversation.",
+  "bcfHint": "Type a message",
+  "commonOpponent": "Opponent",
+  "bsbNoAttempts": "no scored attempts",
+  "bsbYouCaps": "YOU",
+  "bsbTieTitle": "Neck and neck!",
+  "bsbTieSub": "It is a tie. That was intense.",
+  "bsbLoseTitle": "So close!",
+  "bsbLoseSub": "You lost this one. Come back stronger.",
+  "bsbTiedPoints": "Scores are tied on points.",
+  "bsbVictory": "Victory unlocked!",
+  "bsbOutplayed": "You outplayed your opponent this round.",
+  "bsbStacked": "How you stacked up",
+  "bsbTiePts": "Tie on points",
+  "bspWaitJoin": "Waiting for your opponent to join…",
+  "bspRecordFailed": "Could not record your answer.",
+  "bspSubmitFailed": "Could not submit battle.",
+  "bspPermDenied": "Battle permission denied by Firestore rules.",
+  "bspNetwork": "Network unavailable. Please check internet and retry.",
+  "bspStartFailed": "Could not start online battle. Please retry.",
+  "bicSent": "Battle invite sent.",
+  "bicNoToken": "Invitee has no push token yet. They can still join using the session link.",
+  "bicPushFailed": "Push could not be sent. They can still join using the session link.",
+  "bicUnclear": "Invite status unclear. Check Firebase Functions logs.",
+  "gmSetTitle": "{subject} · Set {n}/{total}",
+  "@gmSetTitle": {
+    "placeholders": {
+      "subject": {
+        "type": "String"
+      },
+      "n": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "gmCorrectOfTotal": "{correct} of {total} correct",
+  "@gmCorrectOfTotal": {
+    "placeholders": {
+      "correct": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "gmOddTitle": "Odd One Out · {subject}",
+  "@gmOddTitle": {
+    "placeholders": {
+      "subject": {
+        "type": "String"
+      }
+    }
+  },
+  "gmNOfTotal": "{n} of {total}",
+  "@gmNOfTotal": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "gmFobStep2": "You have {seconds} seconds on the clock.",
+  "@gmFobStep2": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "gmSubjNOfTotal": "{subject} · {n} of {total}",
+  "@gmSubjNOfTotal": {
+    "placeholders": {
+      "subject": {
+        "type": "String"
+      },
+      "n": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "gmDuelYouWin": "You win, {name}",
+  "@gmDuelYouWin": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "gmDuelWins": "{name} wins",
+  "@gmDuelWins": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "gmDescMemory": "Match terms to answers — train recall.",
+  "gmDescTimeline": "Put events in the right order.",
+  "gmOddStep2": "Pick the odd one out.",
+  "gmDescFob": "Ten seconds. Trust your gut.",
+  "gmDescCtd": "Find the hidden link.",
+  "gmDescDuel": "One phone, two players, fastest wins.",
+  "gmStartN": "Start · {n} questions",
+  "@gmStartN": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "gmTlStep1": "Read the shuffled events for the set.",
+  "gmTlStep2": "Hold and drag rows to place them in order.",
+  "gmTlStep3": "Tap Check to reveal years and what you got right.",
+  "gmNextSet": "Next set →",
+  "gmCheck": "Check",
+  "gmNoContent": "No content",
+  "gmTlHint": "Hold and drag to reorder, then check.",
+  "gmErrNoTimeline": "No timeline sets found.",
+  "gmOddStep1": "Look at all four options.",
+  "gmOddStep3": "See the highlight and explanation instantly.",
+  "gmNext": "Next →",
+  "gmErrNoOdd": "No odd-one-out items found.",
+  "gmFobStep1": "Read the statement fast.",
+  "gmFobStep3": "Tap FACT or BLUFF before time runs out.",
+  "gmGotIt": "You got it",
+  "gmNotThisTime": "Not this time",
+  "gmTooSlow": "Too slow",
+  "gmErrNoFob": "No fact-or-bluff items found.",
+  "gmCtdStep1": "Read all three clues together.",
+  "gmCtdStep2": "Think about what links them.",
+  "gmCtdStep3": "Tap the option that ties them together.",
+  "gmCtdHidden": "What's the hidden link?",
+  "gmErrNoCtd": "No connect-the-dots items found.",
+  "gmDuelStart": "Start match",
+  "gmDuelStep1": "Lay the phone flat on the table between you.",
+  "gmDuelStep2": "Same question, 2 options each — mirrored top and bottom.",
+  "gmDuelStep3": "Both pick (or pass) first — correct answer reveals only when both have locked in.",
+  "gmDuelNoQ": "No question",
+  "gmDuelPass": "Pass",
+  "gmDuelPassedWait": "Passed — waiting…",
+  "gmDuelPassed": "Passed",
+  "gmDuelPoint": "Point!",
+  "gmDuelEven": "Evenly matched",
+  "gmDuelExit": "Exit",
+  "gmDuelRematch": "Rematch",
+  "gmErrNoDuel": "No duel questions found.",
+  "gmSessionComplete": "Session complete",
+  "gmSolid": "Solid recall.",
+  "gmAnotherPass": "Worth another pass.",
+  "gmPlayAgain": "Play again",
+  "gmBackToGames": "Back to games",
+  "gmHowToPlay": "How to play",
+  "gmDontShow": "Don't show again",
+  "gmHomeSubtitle": "Recall, timeline, fact-or-bluff — train the UPSC way",
+  "gmConfig": "Config",
+  "gmSetup": "Set up your session",
+  "gmLanguage": "Language",
+  "gmSubjects": "Subjects",
+  "gmAll": "All",
+  "gmStart": "Start",
+  "mpPairsCount": "{n} pairs",
+  "@mpPairsCount": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "mpUnlock": "To unlock, attempt {n} {subject} questions",
+  "@mpUnlock": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      },
+      "subject": {
+        "type": "String"
+      }
+    }
+  },
+  "mpUnlockDone": "{done} of {total} done",
+  "@mpUnlockDone": {
+    "placeholders": {
+      "done": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "mpDaysAgo": "{n} days ago",
+  "@mpDaysAgo": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "mpWkAgo": "{n} wk ago",
+  "@mpWkAgo": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "mpMoAgo": "{n} mo ago",
+  "@mpMoAgo": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "mpMatched": "{done}/{total} matched",
+  "@mpMatched": {
+    "placeholders": {
+      "done": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "mpTimeErrors": "{time} · {n} errors",
+  "@mpTimeErrors": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      },
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "mpStarsVerdict": "{stars} / 5 · {verdict}",
+  "@mpStarsVerdict": {
+    "placeholders": {
+      "stars": {
+        "type": "int"
+      },
+      "verdict": {
+        "type": "String"
+      }
+    }
+  },
+  "mpWrongPairs": "{n, plural, =1{1 pair you got wrong} other{{n} pairs you got wrong}}",
+  "@mpWrongPairs": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "mpTopics": "{n} topics",
+  "@mpTopics": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "mpQuickDrill": "Quick {n}-pair recall drill — tap Start when you are ready.",
+  "@mpQuickDrill": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "mpPlayNow": "Play now",
+  "mpCards": "Cards",
+  "mpList": "List",
+  "mpTapRow": "Tap a row to reveal its answer",
+  "mpNeverPlayed": "Never played",
+  "mpToday": "Today",
+  "mpYesterday": "Yesterday",
+  "mpPairsInRound": "Pairs in round",
+  "mpBestTime": "Best time",
+  "mpLastPlayed": "Last played",
+  "mpRevise": "Revise",
+  "mpErrors": "Errors",
+  "mpProgress": "Progress",
+  "mpTerms": "Terms",
+  "mpAnswers": "Answers",
+  "mpAllMatched": "All pairs matched",
+  "mpPaused": "Paused",
+  "mpResume": "Resume",
+  "mpQuitToSet": "Quit to set",
+  "mpComplete": "Complete",
+  "mpTime": "Time",
+  "mpTotalTime": "Total time",
+  "mpTotalErrors": "Total errors",
+  "mpPairsCleared": "Pairs cleared",
+  "mpNewBest": "New best time for this set",
+  "mpFullRecall": "No wrong taps — full recall",
+  "mpTryAnother": "Try another set",
+  "mpBackToSets": "Back to sets",
+  "mpV5": "Razor sharp",
+  "mpV4": "Strong recall",
+  "mpV3": "Solid, can be faster",
+  "mpV2": "Recall is slow",
+  "mpV1": "Needs heavy revision",
+  "mpTagline": "Learn. Recall. Master.",
+  "mpBrowse": "Browse by Subject",
+  "mpHowItWorksQ": "How it works?",
+  "mpGroupedNote": "Topics are grouped by difficulty. Earn stars as you master harder topics!",
+  "mpTerm": "Term",
+  "mpTapTerm": "Tap to see term",
+  "mpTapFlip": "Tap to flip · swipe any direction for next",
+  "mpPlay": "Play",
+  "mpHowItWorks": "How it works",
+  "mpTrain": "Train recall in under a minute",
+  "mpStep1T": "Pick a subject",
+  "mpStep1B": "Browse Polity, History, Geography, and more.",
+  "mpStep2T": "Choose a topic",
+  "mpStep2B": "Each set has a difficulty tag — easy to hard.",
+  "mpStep3T": "Match the pairs",
+  "mpStep3B": "Tap a term, then its answer. Beat your best time and earn stars.",
+  "mpGotIt": "Got it",
+  "mpOpenFailed": "Could not open game",
+  "mpGoHome": "Go home",
+  "mpRevisionGame": "Revision Game",
+  "mpBrowseAll": "Browse all sets",
+  "mpSetDetail": "Set detail",
+  "mpSummary": "Summary",
+  "chatNotSignedIn": "You are not signed in. Please sign in and try again.",
+  "chatBlockedSend": "You have blocked this person. Unblock them in Settings to send messages.",
+  "chatSendFailed": "Message failed to send: {error}",
+  "@chatSendFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "cpUpdateFailed": "Could not update profile: {error}",
+  "@cpUpdateFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "cpPrivacy": "Privacy note: Apple may not share your real email/name on future sign-ins. We store this name only to show it inside {app}.",
+  "@cpPrivacy": {
+    "placeholders": {
+      "app": {
+        "type": "String"
+      }
+    }
+  },
+  "fpCanYou": "{line}. Can you?",
+  "@fpCanYou": {
+    "placeholders": {
+      "line": {
+        "type": "String"
+      }
+    }
+  },
+  "fpPhoto": "Photo: {name}",
+  "@fpPhoto": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "fpSource": "Source: {name}",
+  "@fpSource": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "fpMetaLine": "{date}  ·  {n} min read  ·  High Relevance",
+  "@fpMetaLine": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "fpBreakdown": "{a} attempted · {c} got it right · {w} got it wrong",
+  "@fpBreakdown": {
+    "placeholders": {
+      "a": {
+        "type": "int"
+      },
+      "c": {
+        "type": "int"
+      },
+      "w": {
+        "type": "int"
+      }
+    }
+  },
+  "fpTrap": "{a} attempted · {p}% fell for it",
+  "@fpTrap": {
+    "placeholders": {
+      "a": {
+        "type": "int"
+      },
+      "p": {
+        "type": "int"
+      }
+    }
+  },
+  "chatListTitle": "Chats",
+  "chatNone": "No chats yet",
+  "chatStartConv": "Start the conversation",
+  "chatStartFailed": "Could not start chat. Go back and try again.",
+  "chatSignInAgain": "Sign in again to send messages.",
+  "chatBlockedHidden": "You have blocked this person. Their messages are hidden. Unblock them in Settings to chat.",
+  "chatOpenLink": "Could not open link",
+  "cpPhotoUpdated": "Photo updated",
+  "cpNameNotAllowed": "UPSC War is not allowed in name",
+  "cpEnterName": "Please enter your name",
+  "cpProfileUpdated": "Profile updated",
+  "cpTitle": "Complete your profile",
+  "cpSignInContinue": "Sign in to continue",
+  "cpConnect": "Connect your account to sync your profile and progress across devices.",
+  "cpSigningIn": "Signing in…",
+  "cpSignIn": "Sign in",
+  "cpHelps": "This helps others recognize you in Community and chat.",
+  "cpPhotoWeb": "Profile photo can be changed in the Android or iOS app.",
+  "cpYourName": "Your name",
+  "cpNameHint": "e.g. Sachin",
+  "cpSaving": "Saving…",
+  "cpPhotoAnytime": "You can change your photo anytime from Profile.",
+  "ddOpenFailed": "Could not open revision queue",
+  "fpWhatsThis": "What's this?",
+  "fpNone": "No CA Shots yet. Breaking CA briefings will show up here.",
+  "fpWhatAre": "What are CA Shots?",
+  "fpWhatBody": "Think of these as short daily drills — shots you can take every day to prepare for your final battle.",
+  "fpAlertsT": "Frequent alerts",
+  "fpAlertsB": "You get notified when a UPSC-relevant article is worth your attention.",
+  "fpMcqT": "One focused MCQ",
+  "fpMcqB": "Each shot gives one concept-based MCQ from that article, with explanation.",
+  "fpReadyT": "Battle readiness",
+  "fpReadyB": "Take these shots daily so your concepts stay sharp for the final battle.",
+  "fpNotDone": "Not done",
+  "fpDoneCorrect": "Done · Correct",
+  "fpDoneWrong": "Done · Wrong",
+  "fpUndated": "Undated",
+  "fpReadSource": "Read source",
+  "fpShare": "Share",
+  "fpLoadFailed": "Could not load this CA Shot.",
+  "fpCheckNet": "Check your internet connection and try again.",
+  "fpNewsSummary": "News Summary",
+  "fpShowLess": "Show less",
+  "fpReadMore": "Read more",
+  "fpWhyRelevant": "Why is this relevant for UPSC?",
+  "fpReviewAttempt": "Review your MCQ Attempt",
+  "fpAttemptMcq": "Attempt the MCQ",
+  "fpExpired": "This CA Shot has expired.",
+  "fpAttempt": "Attempt",
+  "fpPickSee": "Pick an option to see answer and explanation.",
+  "fpCorrectBang": "Correct!",
+  "fpBackToShot": "Back to CA Shot",
+  "fpHomeSub": "Breaking news brief + 1 MCQ based on it.",
+  "fpAnswerThis": "Answer this Pulse",
+  "fpPickSubmit": "Pick an option to submit your answer.",
+  "fpNoAttempts": "No attempts yet",
+  "fpBeFirst": "Be the first to attempt this.",
+  "tcOnlyAvail": "Only {n} available",
+  "@tcOnlyAvail": {
+    "placeholders": {
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "tcMinutesTotal": "{n} minutes total",
+  "@tcMinutesTotal": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "tcCoach1T": "Pick question count",
+  "tcCoach1B": "Choose how many questions you want in this session — 10 for a quick drill, 25 for a full practice block.",
+  "tcCoach2T": "Choose a mode",
+  "tcCoach2B": "Exam hides all explanations until the test ends — just like the real paper. Learning shows the answer and explanation right after each question.",
+  "tcCoach3B": "Each question gets {n}s. Toggle this off if you prefer practising without the clock.",
+  "@tcCoach3B": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "glTitle": "Sign in to {app}",
+  "@glTitle": {
+    "placeholders": {
+      "app": {
+        "type": "String"
+      }
+    }
+  },
+  "pcDays": "Prelims: {n} days",
+  "@pcDays": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "pdLead": "You’re missing updates and reminders. Please enable ",
+  "pdLink": "notifications",
+  "pdTrail": ".",
+  "tcWentWrong": "Something went wrong. Please try again.",
+  "tcConfOff": "Confidence rating is off",
+  "tcConfOffBody": "Turn it on to track how sure you were before reveal and unlock Danger Zone insights.",
+  "tcExamDesc": "Simulate real conditions. Explanation after test ends.",
+  "tcLearnDesc": "See explanation after each question.",
+  "tcNoQuestions": "No questions available for this topic.",
+  "tcTimePerQ": "Time per question",
+  "tcNoLimit": "No limit",
+  "tcStartExam": "Start exam",
+  "tcStartLearning": "Start learning session",
+  "tcNoTimeLimit": "No time limit",
+  "tcTakeTime": "Take as long as you need on each question.",
+  "tcExamNote": "Exam mode is a timed test with explanations after it ends.",
+  "tcLearnNote": "No clock running — ideal for deep reading and revision.",
+  "glBody": "Save your progress, sync stats across devices, and keep your streak safe.",
+  "glSigningIn": "Signing in...",
+  "glApple": "Continue with Apple",
+  "glGoogle": "Continue with Google",
+  "glAgree": "By continuing, you agree to our Privacy Policy and to authenticate with Apple or Google via Firebase.",
+  "glReadPolicy": "Read full privacy policy",
+  "cuGetInTouch": "Get in touch",
+  "cuBody": "If something is unclear, you have a feature idea, or any feedback — pick what works best for you.",
+  "cuTgDirect": "Telegram (direct message)",
+  "cuTgDirectSub": "Quick questions & updates",
+  "cuTgGroup": "Telegram group",
+  "cuTgGroupSub": "Community & discussion",
+  "cuOpenFailed": "Could not open link.",
+  "cuRate": "Rate / review",
+  "rrTitle": "Built by an Aspirant, for Aspirants",
+  "rrBody1": "Built by an ex-UPSC aspirant who faced the same struggle of solving endless MCQs without clearly knowing where marks were being lost.",
+  "rrBody2": "The goal was simple: help aspirants prepare smarter by identifying confident mistakes, danger zones, safe risk areas, and better revision priorities.",
+  "rrJourney": "Read About Journey of UPSC Wars",
+  "rrBody3": "If UPSC Wars is helping your preparation, your review can help other aspirants find it too.",
+  "rrRate": "⭐ Rate & Review UPSC Wars",
+  "qpTitle": "Choose mode",
+  "qpSub": "How would you like to practice?",
+  "qpTutor": "Tutor Mode",
+  "qpTutorDesc": "See explanations after each question",
+  "qpExam": "Exam Mode",
+  "qpExamDesc": "Get results at the end",
+  "pcToday": "Prelims: today",
+  "pcOneDay": "Prelims: 1 day",
+  "pcTitle": "UPSC PRELIMS COUNTDOWN",
+  "pcUnits": "Days : Hours : Min : Sec",
+  "pdTitle": "You’re missing drill, CA & community alerts",
+  "pdBody": "Turn on notifications for Daily Drill, current affairs, CA Shots, and community invites.",
+  "pdEnable": "Enable alerts",
+  "suStoreFailed": "Could not open the store.",
+  "suAvailable": "Update available",
+  "suUpdate": "Update",
+  "suLater": "Later",
+  "kuTitle": "Update required",
+  "kuBody": "This version is no longer supported.\n Kindly Update to keep practicing.",
+  "kuContinue": "Update from the store to continue",
+  "vbDismissQ": "Dismiss?",
+  "vbDismissBody": "Are you sure? You will not be reminded of this again.",
+  "commonYes": "Yes",
+  "vbDefault": "We posted a short video that may help.",
+  "vbWatch": "Watch video",
+  "lbSignIn": "Sign in to see the leaderboard",
+  "obgOdd": "Spot the one that doesn’t belong.",
+  "obgFob": "Ten seconds on the clock — trust your gut.",
+  "obgCtd": "Find the hidden link between clues.",
+  "obgDuel": "One phone, two players — fastest wins.",
+  "ecWatchOut": "Watch out - {title}",
+  "@ecWatchOut": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "srYou": "You: ({opt})",
+  "@srYou": {
+    "placeholders": {
+      "opt": {
+        "type": "String"
+      }
+    }
+  },
+  "srCorrect": "Correct: ({opt})",
+  "@srCorrect": {
+    "placeholders": {
+      "opt": {
+        "type": "String"
+      }
+    }
+  },
+  "srYourAnswer": "Your answer: ({opt})",
+  "@srYourAnswer": {
+    "placeholders": {
+      "opt": {
+        "type": "String"
+      }
+    }
+  },
+  "stSharedWithYou": "{name} shared this test with you.",
+  "@stSharedWithYou": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "stSubjectTopic": "Subject: {subject} · {topic}",
+  "@stSubjectTopic": {
+    "placeholders": {
+      "subject": {
+        "type": "String"
+      },
+      "topic": {
+        "type": "String"
+      }
+    }
+  },
+  "stSubject": "Subject: {subject}",
+  "@stSubject": {
+    "placeholders": {
+      "subject": {
+        "type": "String"
+      }
+    }
+  },
+  "stQuestions": "Questions: {n}",
+  "@stQuestions": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "obgTitle": "Six games. Zero boring revision.",
+  "obgStart": "Get started",
+  "srTitle": "Session review",
+  "srBookmark": "Bookmark",
+  "srRevisionMode": "Revision mode",
+  "stNameHint": "If you don't want to give your name, enter any random name",
+  "stBefore": "Before you begin",
+  "stEnterName": "Enter your display name",
+  "stTop5": "Leaderboard · Top 5",
+  "stBeFirst": "Be the first to take this test.",
+  "stAbout": "You are about to start a shared practice test.",
+  "stTitle": "Shared test",
+  "stOhSnap": "Oh snap.",
+  "stExpired": "This link is unavailable or expired.\nAsk your friend to reshare.",
+  "stOpening": "Opening shared test…",
+  "stPreparing": "Preparing configuration…"
 }

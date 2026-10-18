@@ -22,7 +22,8 @@ class MyTestSeriesScreen extends ConsumerWidget {
       appBar: AppBar(title: const Text('My Test Series')),
       body: idsAsync.when(
         loading: () => const Center(child: CircularProgressIndicator()),
-        error: (_, _) => const Center(child: Text("Couldn't load your test series.")),
+        error: (_, _) =>
+            const Center(child: Text("Couldn't load your test series.")),
         data: (ids) {
           if (ids.isEmpty) {
             return const Center(
@@ -58,7 +59,8 @@ class _SeriesCard extends ConsumerWidget {
     final bundleAsync = ref.watch(seriesBundleProvider(seriesId));
     final statsAsync = ref.watch(seriesStatsProvider(seriesId));
     final owned =
-        ref.watch(ownedSeriesIdsProvider).asData?.value.contains(seriesId) ?? false;
+        ref.watch(ownedSeriesIdsProvider).asData?.value.contains(seriesId) ??
+        false;
 
     final bundle = bundleAsync.asData?.value;
     final stats = statsAsync.asData?.value;
@@ -89,19 +91,29 @@ class _SeriesCard extends ConsumerWidget {
               children: [
                 Row(
                   children: [
-                    const Icon(Icons.workspace_premium_rounded, color: AppColors.warning),
+                    const Icon(
+                      Icons.workspace_premium_rounded,
+                      color: AppColors.warning,
+                    ),
                     const SizedBox(width: AppSpacing.sm),
                     Expanded(child: Text(title, style: AppTextStyles.h3())),
                     Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 8,
+                        vertical: 2,
+                      ),
                       decoration: BoxDecoration(
-                        color: owned ? AppColors.primaryLight : scheme.surfaceContainerHighest,
+                        color: owned
+                            ? AppColors.primaryLight
+                            : scheme.surfaceContainerHighest,
                         borderRadius: BorderRadius.circular(AppRadius.pill),
                       ),
                       child: Text(
                         owned ? 'Unlocked' : 'Free tests',
                         style: AppTextStyles.labelSm().copyWith(
-                          color: owned ? AppColors.primaryDeep : scheme.onSurfaceVariant,
+                          color: owned
+                              ? AppColors.primaryDeep
+                              : scheme.onSurfaceVariant,
                           fontWeight: FontWeight.w700,
                         ),
                       ),
@@ -121,14 +133,18 @@ class _SeriesCard extends ConsumerWidget {
                   const SizedBox(height: AppSpacing.xs),
                   Text(
                     'Prelims is over. All tests stay open for practice.',
-                    style: AppTextStyles.bodySm().copyWith(color: scheme.onSurfaceVariant),
+                    style: AppTextStyles.bodySm().copyWith(
+                      color: scheme.onSurfaceVariant,
+                    ),
                   ),
                 ],
                 if (bundle == null && bundleAsync.hasError) ...[
                   const SizedBox(height: AppSpacing.xs),
                   Text(
                     "Couldn't load this series.",
-                    style: AppTextStyles.bodySm().copyWith(color: AppColors.wrong),
+                    style: AppTextStyles.bodySm().copyWith(
+                      color: AppColors.wrong,
+                    ),
                   ),
                 ],
               ],

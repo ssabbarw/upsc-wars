@@ -12,6 +12,7 @@ import '../../core/theme/app_radius.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_text_styles.dart';
 import 'app_toast.dart';
+import '../../l10n/l10n.dart';
 
 /// Full-screen, non-dismissable scrim + compact bottom sheet (kill switch).
 class AppUpdateKillSwitchOverlay extends StatelessWidget {
@@ -26,7 +27,7 @@ class AppUpdateKillSwitchOverlay extends StatelessWidget {
     final uri = Uri.parse(url);
     final ok = await launchUrl(uri, mode: LaunchMode.externalApplication);
     if (!ok && context.mounted) {
-      AppToast.showText(context, 'Could not open the store.');
+      AppToast.showText(context, context.l10n.suStoreFailed);
     }
   }
 
@@ -92,7 +93,7 @@ class AppUpdateKillSwitchOverlay extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         Text(
-                          'Update required',
+                          context.l10n.kuTitle,
                           textAlign: TextAlign.center,
                           style: AppTextStyles.h3().copyWith(
                             color: scheme.onSurface,
@@ -102,7 +103,7 @@ class AppUpdateKillSwitchOverlay extends StatelessWidget {
                         ),
                         const SizedBox(height: AppSpacing.sm),
                         Text(
-                          'This version is no longer supported.\n Kindly Update to keep practicing.',
+                          context.l10n.kuBody,
                           textAlign: TextAlign.center,
                           style: AppTextStyles.bodySm().copyWith(
                             color: scheme.onSurfaceVariant,
@@ -126,7 +127,9 @@ class AppUpdateKillSwitchOverlay extends StatelessWidget {
                             ),
                           ),
                           child: Text(
-                            url.isEmpty ? 'Store link missing' : 'Update',
+                            url.isEmpty
+                                ? 'Store link missing'
+                                : context.l10n.suUpdate,
                             style: AppTextStyles.label().copyWith(
                               color: AppColors.onPrimary,
                             ),
@@ -144,7 +147,7 @@ class AppUpdateKillSwitchOverlay extends StatelessWidget {
                         ],
                         const SizedBox(height: AppSpacing.md),
                         Text(
-                          'Update from the store to continue',
+                          context.l10n.kuContinue,
                           textAlign: TextAlign.center,
                           style: AppTextStyles.caption().copyWith(
                             color: scheme.onSurfaceVariant.withValues(

@@ -13,11 +13,7 @@ void main() {
           'Indian map',
           'Reports & indices',
         ]),
-        [
-          'Government schemes',
-          'World map',
-          'Indian map',
-        ],
+        ['Government schemes', 'World map', 'Indian map'],
       );
     });
 

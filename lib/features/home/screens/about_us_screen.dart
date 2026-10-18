@@ -19,7 +19,7 @@ class AboutUsScreen extends StatelessWidget {
     if (!ok && context.mounted) {
       ScaffoldMessenger.of(
         context,
-      ).showSnackBar(const SnackBar(content: Text(context.l10n.aboutLinkFailed)));
+      ).showSnackBar(SnackBar(content: Text(context.l10n.aboutLinkFailed)));
     }
   }
 
@@ -73,7 +73,7 @@ class AboutUsScreen extends StatelessWidget {
     final scheme = Theme.of(context).colorScheme;
 
     return Scaffold(
-      appBar: AppBar(title: const Text(context.l10n.settingsAboutUs)),
+      appBar: AppBar(title: Text(context.l10n.settingsAboutUs)),
       body: SafeArea(
         child: ListView(
           padding: const EdgeInsets.all(AppSpacing.lg),
@@ -153,10 +153,7 @@ class AboutUsScreen extends StatelessWidget {
                         height: 1.45,
                       ),
                       children: [
-                        const TextSpan(
-                          text:
-                              context.l10n.aboutBullet1,
-                        ),
+                        TextSpan(text: context.l10n.aboutBullet1),
                         TextSpan(
                           text: context.l10n.aboutArrow1,
                           style: AppTextStyles.bodyMd().copyWith(
@@ -164,10 +161,7 @@ class AboutUsScreen extends StatelessWidget {
                             fontWeight: FontWeight.w500,
                           ),
                         ),
-                        const TextSpan(
-                          text:
-                              context.l10n.aboutBullet2,
-                        ),
+                        TextSpan(text: context.l10n.aboutBullet2),
                         TextSpan(
                           text: context.l10n.aboutArrow2,
                           style: AppTextStyles.bodyMd().copyWith(
@@ -175,10 +169,7 @@ class AboutUsScreen extends StatelessWidget {
                             fontWeight: FontWeight.w500,
                           ),
                         ),
-                        const TextSpan(
-                          text:
-                              context.l10n.aboutBullet3,
-                        ),
+                        TextSpan(text: context.l10n.aboutBullet3),
                         TextSpan(
                           text: context.l10n.aboutArrow3,
                           style: AppTextStyles.bodyMd().copyWith(
@@ -231,7 +222,7 @@ class AboutUsScreen extends StatelessWidget {
                     width: double.infinity,
                     child: FilledButton(
                       onPressed: () async => _openStoreListing(context),
-                      child: const Text(context.l10n.aboutRateReview),
+                      child: Text(context.l10n.aboutRateReview),
                     ),
                   ),
                   const SizedBox(height: AppSpacing.sm),
@@ -242,7 +233,7 @@ class AboutUsScreen extends StatelessWidget {
                         context,
                         Uri.parse('mailto:upscwars@gmail.com?subject=Feedback'),
                       ),
-                      child: const Text(context.l10n.aboutFeedbackEmail),
+                      child: Text(context.l10n.aboutFeedbackEmail),
                     ),
                   ),
                   const SizedBox(height: AppSpacing.sm),

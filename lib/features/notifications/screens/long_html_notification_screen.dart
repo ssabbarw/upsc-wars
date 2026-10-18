@@ -9,6 +9,7 @@ import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../long_html_document.dart';
 import '../long_html_notification_constants.dart';
+import '../../../l10n/l10n.dart';
 
 /// Full-screen announcement loaded from Firestore
 /// `Long_Html_Message` / `message` field `message` (HTML).
@@ -24,7 +25,7 @@ class LongHtmlNotificationScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: scheme.surface,
       appBar: AppBar(
-        title: Text('Notification', style: AppTextStyles.h3()),
+        title: Text(context.l10n.notifScreenTitle, style: AppTextStyles.h3()),
       ),
       body: FutureBuilder<DocumentSnapshot<Map<String, dynamic>>>(
         future: FirebaseFirestore.instance
@@ -39,7 +40,7 @@ class LongHtmlNotificationScreen extends StatelessWidget {
             return Padding(
               padding: const EdgeInsets.all(AppSpacing.lg),
               child: Text(
-                'Could not load message.\n${snapshot.error}',
+                context.l10n.notifLoadFailed(snapshot.error.toString()),
                 style: AppTextStyles.bodyMd().copyWith(color: scheme.error),
               ),
             );
@@ -49,7 +50,7 @@ class LongHtmlNotificationScreen extends StatelessWidget {
             return Padding(
               padding: const EdgeInsets.all(AppSpacing.lg),
               child: Text(
-                'No announcement is available right now.',
+                context.l10n.notifNoAnnouncement,
                 style: AppTextStyles.bodyMd(),
               ),
             );
@@ -61,7 +62,7 @@ class LongHtmlNotificationScreen extends StatelessWidget {
             return Padding(
               padding: const EdgeInsets.all(AppSpacing.lg),
               child: Text(
-                'This announcement is empty.',
+                context.l10n.notifEmptyAnnouncement,
                 style: AppTextStyles.bodyMd(),
               ),
             );
@@ -69,10 +70,7 @@ class LongHtmlNotificationScreen extends StatelessWidget {
           if (kIsWeb) {
             return _HtmlWidgetView(html: html, scheme: scheme);
           }
-          return _HtmlWebView(
-            html: html,
-            background: scheme.surface,
-          );
+          return _HtmlWebView(html: html, background: scheme.surface);
         },
       ),
     );
@@ -135,8 +133,7 @@ class _HtmlWebViewState extends State<_HtmlWebView> {
     return Stack(
       children: [
         WebViewWidget(controller: _controller),
-        if (_loading)
-          const Center(child: CircularProgressIndicator()),
+        if (_loading) const Center(child: CircularProgressIndicator()),
       ],
     );
   }

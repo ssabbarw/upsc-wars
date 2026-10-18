@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 
 import '../../core/constants/app_constants.dart';
 import 'auth_provider_sign_in_button.dart';
+import '../../l10n/l10n.dart';
 
-String _privacyPolicyBody() => '''
+String _privacyPolicyBody() =>
+    '''
 ${AppConstants.appDisplayName} — Privacy Policy
 
 This describes how ${AppConstants.appDisplayName} ("we", "the app") handles information when you sign in with Google and use connected features.
@@ -117,12 +119,12 @@ class GoogleLoginBottomSheet extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             Text(
-              'Sign in to ${AppConstants.appDisplayName}',
+              context.l10n.glTitle(AppConstants.appDisplayName),
               style: Theme.of(context).textTheme.titleLarge,
             ),
             const SizedBox(height: 8),
             Text(
-              'Save your progress, sync stats across devices, and keep your streak safe.',
+              context.l10n.glBody,
               style: Theme.of(context).textTheme.bodyMedium,
             ),
             const SizedBox(height: 20),
@@ -131,7 +133,9 @@ class GoogleLoginBottomSheet extends StatelessWidget {
                 type: AuthProviderButtonType.apple,
                 onPressed: onAppleTap,
                 isLoading: isLoading,
-                text: isLoading ? 'Signing in...' : 'Continue with Apple',
+                text: isLoading
+                    ? context.l10n.glSigningIn
+                    : context.l10n.glApple,
               ),
               const SizedBox(height: 12),
             ],
@@ -139,14 +143,12 @@ class GoogleLoginBottomSheet extends StatelessWidget {
               type: AuthProviderButtonType.google,
               onPressed: isLoading ? null : onGoogleTap,
               isLoading: isLoading,
-              text: isLoading ? 'Signing in...' : 'Continue with Google',
+              text: isLoading
+                  ? context.l10n.glSigningIn
+                  : context.l10n.glGoogle,
             ),
             const SizedBox(height: 12),
-            Text(
-              'By continuing, you agree to our Privacy Policy and to authenticate '
-              'with Apple or Google via Firebase.',
-              style: small,
-            ),
+            Text(context.l10n.glAgree, style: small),
             Align(
               alignment: Alignment.centerLeft,
               child: TextButton(
@@ -158,7 +160,7 @@ class GoogleLoginBottomSheet extends StatelessWidget {
                   foregroundColor: scheme.primary,
                 ),
                 child: Text(
-                  'Read full privacy policy',
+                  context.l10n.glReadPolicy,
                   style: small?.copyWith(
                     fontWeight: FontWeight.w600,
                     color: scheme.primary,
@@ -183,11 +185,10 @@ Future<void> showGoogleLoginBottomSheet({
     context: context,
     isScrollControlled: true,
     useSafeArea: true,
-    builder: (_) =>
-        GoogleLoginBottomSheet(
-          onGoogleTap: onGoogleTap,
-          onAppleTap: onAppleTap,
-          isLoading: isLoading,
-        ),
+    builder: (_) => GoogleLoginBottomSheet(
+      onGoogleTap: onGoogleTap,
+      onAppleTap: onAppleTap,
+      isLoading: isLoading,
+    ),
   );
 }

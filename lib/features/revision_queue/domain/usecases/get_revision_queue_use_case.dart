@@ -7,12 +7,16 @@ class GetRevisionQueueUseCase {
   const GetRevisionQueueUseCase(this._repository);
   final RevisionRepository _repository;
 
-  Future<List<RevisionQueueItem>> execute() => _repository.getActiveRevisionQueueItems();
+  Future<List<RevisionQueueItem>> execute() =>
+      _repository.getActiveRevisionQueueItems();
   Future<int> count() => _repository.getActiveRevisionQueueCount();
-  Future<List<String>> subjects({int limit = 3}) => _repository.getActiveRevisionSubjectSlugs(limit: limit);
+  Future<List<String>> subjects({int limit = 3}) =>
+      _repository.getActiveRevisionSubjectSlugs(limit: limit);
 
-  Future<List<WeakSubTopicGroup>> subTopicGroups() => _repository.getWeakSubTopicGroups();
-  Future<List<TrapPatternGroup>> trapGroups() => _repository.getWeakTrapGroups();
+  Future<List<WeakSubTopicGroup>> subTopicGroups() =>
+      _repository.getWeakSubTopicGroups();
+  Future<List<TrapPatternGroup>> trapGroups() =>
+      _repository.getWeakTrapGroups();
   Future<int> uniqueSubTopicCount() => _repository.getUniqueSubTopicCount();
   Future<int> uniqueTrapTypeCount() => _repository.getUniqueTrapTypeCount();
 }

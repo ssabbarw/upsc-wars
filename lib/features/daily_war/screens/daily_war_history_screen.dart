@@ -26,6 +26,7 @@ import '../widgets/daily_war_month_calendar.dart';
 import '../widgets/daily_war_today_section.dart';
 import '../widgets/daily_war_leaderboard_hero.dart';
 import 'daily_war_history_detail_screen.dart';
+import '../../../l10n/l10n.dart';
 
 /// Calendar hub for Daily War — tonight's paper on top, archive by date.
 class DailyWarHistoryScreen extends HookConsumerWidget {
@@ -86,11 +87,7 @@ class DailyWarHistoryScreen extends HookConsumerWidget {
         if (doc == null) {
           if (context.mounted) {
             ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(
-                content: Text(
-                  'Tonight\'s paper isn\'t loaded yet. Try again in some time.',
-                ),
-              ),
+              SnackBar(content: Text(context.l10n.dwPaperNotLoaded)),
             );
           }
           return;
@@ -106,7 +103,7 @@ class DailyWarHistoryScreen extends HookConsumerWidget {
       } on Object catch (e) {
         if (context.mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('Could not start War: $e')),
+            SnackBar(content: Text(context.l10n.dwStartFailed(e.toString()))),
           );
         }
       } finally {
@@ -225,7 +222,7 @@ class DailyWarHistoryScreen extends HookConsumerWidget {
                 Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
-                    'HISTORY',
+                    context.l10n.dwHistoryCaps,
                     style: AppTextStyles.caption().copyWith(
                       color: scheme.onSurfaceVariant,
                       letterSpacing: 0.8,
@@ -262,7 +259,7 @@ class DailyWarHistoryScreen extends HookConsumerWidget {
                 async.when(
                   loading: () => const _MonthCalendarShimmer(),
                   error: (e, _) => Text(
-                    'Could not load Static War: $e',
+                    context.l10n.dwLoadFailed(e.toString()),
                     style: AppTextStyles.bodySm().copyWith(
                       color: AppColors.wrong,
                     ),
@@ -339,7 +336,7 @@ class DailyWarHistoryScreen extends HookConsumerWidget {
           ),
           actions: [
             IconButton(
-              tooltip: 'This month',
+              tooltip: context.l10n.dcaThisMonth,
               onPressed: jumpToThisMonth,
               icon: const Icon(
                 Icons.event_available_rounded,

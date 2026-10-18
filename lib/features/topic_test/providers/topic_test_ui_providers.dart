@@ -38,38 +38,35 @@ Future<List<TopicInfo>> topicTestDisplayedTopics(Ref ref) async {
   final statsRows = await db.userTopicStatsDao.fetchBySubject(subject);
   final statsByTopic = {for (final row in statsRows) row.topic: row};
 
-  final merged = filtered
-      .map((topic) {
-        final stat = statsByTopic[topic.topic];
-        final d = dangerByTopic[topic.topic];
-        final fromUser = stat?.totalAttempted ?? 0;
-        final attemptCount =
-            fromUser > 0 ? fromUser : topic.attemptCount;
-        final double? accuracyPercent;
-        if (fromUser > 0) {
-          accuracyPercent = stat!.accuracyPercentage;
-        } else if (topic.attemptCount > 0) {
-          accuracyPercent = topic.accuracyPercent;
-        } else {
-          accuracyPercent = null;
-        }
+  final merged = filtered.map((topic) {
+    final stat = statsByTopic[topic.topic];
+    final d = dangerByTopic[topic.topic];
+    final fromUser = stat?.totalAttempted ?? 0;
+    final attemptCount = fromUser > 0 ? fromUser : topic.attemptCount;
+    final double? accuracyPercent;
+    if (fromUser > 0) {
+      accuracyPercent = stat!.accuracyPercentage;
+    } else if (topic.attemptCount > 0) {
+      accuracyPercent = topic.accuracyPercent;
+    } else {
+      accuracyPercent = null;
+    }
 
-        return TopicInfo(
-          topic: topic.topic,
-          subject: topic.subject,
-          displayName: topic.displayName,
-          questionCount: topic.questionCount,
-          attemptCount: attemptCount,
-          accuracyPercent: accuracyPercent,
-          accuracyTier: AccuracyRules.tierFor(
-            attemptCount: attemptCount,
-            accuracyPercent: accuracyPercent,
-          ),
-          dangerSureWrong: d?.sure ?? 0,
-          dangerEducatedGuessWrong: d?.guess ?? 0,
-        );
-      })
-      .toList();
+    return TopicInfo(
+      topic: topic.topic,
+      subject: topic.subject,
+      displayName: topic.displayName,
+      questionCount: topic.questionCount,
+      attemptCount: attemptCount,
+      accuracyPercent: accuracyPercent,
+      accuracyTier: AccuracyRules.tierFor(
+        attemptCount: attemptCount,
+        accuracyPercent: accuracyPercent,
+      ),
+      dangerSureWrong: d?.sure ?? 0,
+      dangerEducatedGuessWrong: d?.guess ?? 0,
+    );
+  }).toList();
 
   merged.sort((a, b) {
     final aAttempted = a.attemptCount > 0;

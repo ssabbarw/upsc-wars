@@ -201,8 +201,7 @@ class DailyWarLocalCache {
     DailyWarLeaderboard? lb = getLeaderboard(dateId);
     if (!localOnly && resolved.ranksReady && lb == null) {
       try {
-        final snap =
-            await DailyWarFirestorePaths.leaderboardDoc(dateId).get();
+        final snap = await DailyWarFirestorePaths.leaderboardDoc(dateId).get();
         if (snap.exists && snap.data() != null) {
           lb = DailyWarLeaderboard.fromMap(dateId, snap.data()!);
           await putLeaderboard(lb);
@@ -217,11 +216,12 @@ class DailyWarLocalCache {
       sub = getSubmission(uid, dateId);
       final knownAbsent = hasKnownAbsence(uid, dateId);
       final needsAnswers = sub != null && sub.answers.isEmpty && !localOnly;
-      if (!localOnly &&
-          ((sub == null && !knownAbsent) || needsAnswers)) {
+      if (!localOnly && ((sub == null && !knownAbsent) || needsAnswers)) {
         try {
-          final snap =
-              await DailyWarFirestorePaths.submissionDoc(dateId, uid).get();
+          final snap = await DailyWarFirestorePaths.submissionDoc(
+            dateId,
+            uid,
+          ).get();
           if (snap.exists && snap.data() != null) {
             sub = DailyWarSubmission.fromMap(uid, snap.data()!);
             await putSubmission(uid, sub, dateId);
@@ -249,7 +249,8 @@ class DailyWarLocalCache {
     }
 
     // Only freeze locally once ranks + leaderboard + attempt (with answers) are in.
-    final attemptHydrated = uid.isEmpty ||
+    final attemptHydrated =
+        uid.isEmpty ||
         hasKnownAbsence(uid, dateId) ||
         (sub != null &&
             (sub.answers.isNotEmpty || (sub.correct + sub.wrong) == 0));
@@ -296,12 +297,11 @@ class DailyWarLocalCache {
   /// History with cache-first + selective network refresh.
   Future<DailyWarHistoryBundle> loadHistory({required String uid}) async {
     final cached = cachedWarsNewestFirst();
-    final byId = <String, DailyWarDoc>{
-      for (final w in cached) w.dateId: w,
-    };
+    final byId = <String, DailyWarDoc>{for (final w in cached) w.dateId: w};
 
     final updatedAtMs = _historyUpdatedAtMs();
-    final fresh = updatedAtMs != null &&
+    final fresh =
+        updatedAtMs != null &&
         byId.isNotEmpty &&
         DateTime.now().millisecondsSinceEpoch - updatedAtMs <
             historyRefreshTtl.inMilliseconds;
@@ -384,8 +384,10 @@ class DailyWarLocalCache {
           continue;
         }
         try {
-          final snap =
-              await DailyWarFirestorePaths.submissionDoc(w.dateId, uid).get();
+          final snap = await DailyWarFirestorePaths.submissionDoc(
+            w.dateId,
+            uid,
+          ).get();
           if (snap.exists && snap.data() != null) {
             final sub = DailyWarSubmission.fromMap(uid, snap.data()!);
             subs[w.dateId] = sub;
@@ -468,7 +470,8 @@ class DailyWarLocalCache {
     String? todayDateId,
   }) async {
     final cached = getWar(dateId);
-    final today = todayDateId ??
+    final today =
+        todayDateId ??
         DailyWarSchedule.formatIsoDate(
           DailyWarSchedule.warDateFor(DailyWarSchedule.nowIst()),
         );
@@ -490,10 +493,7 @@ class DailyWarLocalCache {
 }
 
 class DailyWarHistoryBundle {
-  const DailyWarHistoryBundle({
-    required this.wars,
-    required this.submissions,
-  });
+  const DailyWarHistoryBundle({required this.wars, required this.submissions});
 
   final List<DailyWarDoc> wars;
   final Map<String, DailyWarSubmission> submissions;

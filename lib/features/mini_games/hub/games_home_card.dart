@@ -5,6 +5,7 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../l10n/l10n.dart';
 
 /// Home entry for the Games hub (Revision Games).
 class GamesHomeCard extends StatelessWidget {
@@ -69,7 +70,7 @@ class GamesHomeCard extends StatelessWidget {
                         ),
                         const SizedBox(height: 2),
                         Text(
-                          'Recall, timeline, fact-or-bluff — train the UPSC way',
+                          context.l10n.gmHomeSubtitle,
                           style: AppTextStyles.caption().copyWith(
                             color: scheme.onSurfaceVariant,
                           ),
@@ -77,10 +78,7 @@ class GamesHomeCard extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Icon(
-                    Icons.chevron_right,
-                    color: scheme.onSurfaceVariant,
-                  ),
+                  Icon(Icons.chevron_right, color: scheme.onSurfaceVariant),
                 ],
               ),
             ),

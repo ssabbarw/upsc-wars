@@ -25,7 +25,9 @@ void main() {
       analytics: AnalyticsService(const []),
     );
 
-    await db.into(db.questions).insert(
+    await db
+        .into(db.questions)
+        .insert(
           QuestionsCompanion.insert(
             uuid: 'qu1',
             subject: 'ancient_history',
@@ -40,7 +42,9 @@ void main() {
         );
 
     const sessionId = 'se1';
-    await db.into(db.sessions).insert(
+    await db
+        .into(db.sessions)
+        .insert(
           SessionsCompanion.insert(
             id: sessionId,
             createdAt: DateTime.utc(2026, 2, 1),
@@ -51,7 +55,9 @@ void main() {
             isTimed: false,
           ),
         );
-    await db.into(db.sessionQuestions).insert(
+    await db
+        .into(db.sessionQuestions)
+        .insert(
           SessionQuestionsCompanion.insert(
             id: 'att1',
             sessionId: sessionId,
@@ -92,8 +98,9 @@ void main() {
       analytics: null,
     );
 
-    final row =
-        (await db.sessionQuestionsDao.getSessionQuestionsOrdered('se1')).single;
+    final row = (await db.sessionQuestionsDao.getSessionQuestionsOrdered(
+      'se1',
+    )).single;
     expect(row.confidence, isNull);
   });
 }

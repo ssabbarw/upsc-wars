@@ -27,9 +27,7 @@ class QuestionCorrectionPublishService {
             : null,
       );
     } on FirebaseFunctionsException catch (e, st) {
-      debugPrint(
-        'QuestionCorrectionPublishService: ${e.code} ${e.message}',
-      );
+      debugPrint('QuestionCorrectionPublishService: ${e.code} ${e.message}');
       debugPrintStack(stackTrace: st);
       return QuestionCorrectionPublishOutcome(
         success: false,

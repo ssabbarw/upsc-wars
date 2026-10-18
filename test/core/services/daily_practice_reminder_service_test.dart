@@ -105,14 +105,8 @@ void main() {
       expect(copy(dayOffset: 2).title, 'Pick your drill back up');
       expect(copy(dayOffset: 2).body, startsWith('2 days off'));
       expect(copy(dayOffset: 3).title, 'Pick your drill back up');
-      expect(
-        copy(dayOffset: 4).title,
-        'Your weak topics are still waiting',
-      );
-      expect(
-        copy(dayOffset: 6).title,
-        'Your weak topics are still waiting',
-      );
+      expect(copy(dayOffset: 4).title, 'Your weak topics are still waiting');
+      expect(copy(dayOffset: 6).title, 'Your weak topics are still waiting');
     });
   });
 }

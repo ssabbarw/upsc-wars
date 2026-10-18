@@ -17,6 +17,7 @@ import 'package:upsc_wars/core/theme/app_text_styles.dart';
 import 'package:upsc_wars/features/battle/data/battle_firestore_paths.dart';
 import 'package:upsc_wars/features/battle/data/battle_match_firestore_service.dart';
 import 'package:upsc_wars/features/home/providers/auth_providers.dart';
+import '../../../l10n/l10n.dart';
 
 /// Joiner entry: deep link / manual route with [sessionId] from host invite.
 class BattleJoinScreen extends ConsumerStatefulWidget {
@@ -44,7 +45,7 @@ class _BattleJoinScreenState extends ConsumerState<BattleJoinScreen> {
     if (guestEmail.isEmpty) {
       setState(() {
         _busy = false;
-        _error = 'Sign in to join this battle.';
+        _error = appL10n.bjSignIn;
       });
       return;
     }
@@ -54,7 +55,7 @@ class _BattleJoinScreenState extends ConsumerState<BattleJoinScreen> {
       if (!snap.exists) {
         setState(() {
           _busy = false;
-          _error = 'This battle was not found. It may have expired.';
+          _error = appL10n.bjNotFound;
         });
         return;
       }
@@ -62,7 +63,7 @@ class _BattleJoinScreenState extends ConsumerState<BattleJoinScreen> {
       if (d['battle_mode'] != BattleMatchFirestoreService.battleModeHuman) {
         setState(() {
           _busy = false;
-          _error = 'This link is not for a player-vs-player battle.';
+          _error = appL10n.bjNotPvp;
         });
         return;
       }
@@ -70,7 +71,7 @@ class _BattleJoinScreenState extends ConsumerState<BattleJoinScreen> {
       if (expectedGuest.isEmpty || guestEmail != expectedGuest) {
         setState(() {
           _busy = false;
-          _error = 'This invite was sent to a different account.';
+          _error = appL10n.bjWrongAccount;
         });
         return;
       }
@@ -80,8 +81,7 @@ class _BattleJoinScreenState extends ConsumerState<BattleJoinScreen> {
       if (started) {
         setState(() {
           _busy = false;
-          _error =
-              'This battle is no longer accepting joins. It may have already started.';
+          _error = appL10n.bjClosed;
         });
         return;
       }
@@ -90,7 +90,7 @@ class _BattleJoinScreenState extends ConsumerState<BattleJoinScreen> {
       if (uuidsRaw is! List || uuidsRaw.isEmpty) {
         setState(() {
           _busy = false;
-          _error = 'Battle data is incomplete.';
+          _error = appL10n.bjIncomplete;
         });
         return;
       }
@@ -123,9 +123,7 @@ class _BattleJoinScreenState extends ConsumerState<BattleJoinScreen> {
 
       await svc.signalGuestLobbyReady(widget.sessionId);
 
-      unawaited(
-        Analytics.track(ref, const BattleInviteAcceptedEvent()),
-      );
+      unawaited(Analytics.track(ref, const BattleInviteAcceptedEvent()));
       unawaited(
         logActivationMilestoneOnce(
           ref,
@@ -141,8 +139,9 @@ class _BattleJoinScreenState extends ConsumerState<BattleJoinScreen> {
         '/battle/wait/${widget.sessionId}',
         extra: {
           'playerName': user?.displayName ?? 'You',
-          'opponentName':
-              (hostName != null && hostName.isNotEmpty) ? hostName : 'Opponent',
+          'opponentName': (hostName != null && hostName.isNotEmpty)
+              ? hostName
+              : appL10n.commonOpponent,
           if (guestPhoto != null && guestPhoto.isNotEmpty)
             'playerPhotoUrl': guestPhoto,
         },
@@ -150,7 +149,7 @@ class _BattleJoinScreenState extends ConsumerState<BattleJoinScreen> {
     } on FirebaseException catch (e) {
       setState(() {
         _busy = false;
-        _error = e.message ?? 'Could not join battle.';
+        _error = e.message ?? appL10n.bjJoinFailed;
       });
     } catch (e) {
       setState(() {
@@ -163,7 +162,9 @@ class _BattleJoinScreenState extends ConsumerState<BattleJoinScreen> {
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
-    final hPad = AppBreakpoints.fullScreenHPadding(MediaQuery.sizeOf(context).width);
+    final hPad = AppBreakpoints.fullScreenHPadding(
+      MediaQuery.sizeOf(context).width,
+    );
     return PopScope(
       canPop: false,
       onPopInvokedWithResult: (didPop, result) {
@@ -172,10 +173,8 @@ class _BattleJoinScreenState extends ConsumerState<BattleJoinScreen> {
       },
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Join battle', style: AppTextStyles.h3()),
-          leading: BackButton(
-            onPressed: () => context.go('/'),
-          ),
+          title: Text(context.l10n.bjTitle, style: AppTextStyles.h3()),
+          leading: BackButton(onPressed: () => context.go('/')),
         ),
         body: Center(
           child: Padding(
@@ -191,15 +190,16 @@ class _BattleJoinScreenState extends ConsumerState<BattleJoinScreen> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
-                        _error ?? 'Something went wrong.',
+                        _error ?? context.l10n.bjSomethingWrong,
                         textAlign: TextAlign.center,
-                        style: AppTextStyles.bodyMd()
-                            .copyWith(color: scheme.error),
+                        style: AppTextStyles.bodyMd().copyWith(
+                          color: scheme.error,
+                        ),
                       ),
                       const SizedBox(height: AppSpacing.lg),
                       FilledButton(
                         onPressed: () => context.go('/'),
-                        child: const Text('Home'),
+                        child: Text(context.l10n.commonHome),
                       ),
                     ],
                   ),

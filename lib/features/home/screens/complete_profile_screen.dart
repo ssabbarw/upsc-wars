@@ -14,6 +14,7 @@ import '../../../shared/widgets/tappable_circular_avatar.dart';
 import '../../community/services/community_bucket_presence_service.dart';
 import '../providers/auth_providers.dart';
 import '../services/profile_photo_service.dart';
+import '../../../l10n/l10n.dart';
 
 class CompleteProfileScreen extends HookConsumerWidget {
   const CompleteProfileScreen({super.key});
@@ -48,7 +49,7 @@ class CompleteProfileScreen extends HookConsumerWidget {
         final (ok, err) = await photoService.pickCropUploadAndUpdateProfile();
         if (!context.mounted) return;
         if (ok) {
-          AppToast.showText(context, 'Photo updated');
+          AppToast.showText(context, context.l10n.cpPhotoUpdated);
           unawaited(CommunityBucketPresenceService.syncForCurrentUser(ref));
         } else if (err != null) {
           AppToast.showText(context, err);
@@ -68,11 +69,11 @@ class CompleteProfileScreen extends HookConsumerWidget {
 
       final name = nameController.text.trim();
       if (name.toLowerCase().contains('upsc wars')) {
-        AppToast.showText(context, 'UPSC War is not allowed in name');
+        AppToast.showText(context, context.l10n.cpNameNotAllowed);
         return;
       }
       if (name.length < 2) {
-        AppToast.showText(context, 'Please enter your name');
+        AppToast.showText(context, context.l10n.cpEnterName);
         return;
       }
 
@@ -82,7 +83,7 @@ class CompleteProfileScreen extends HookConsumerWidget {
         await u.reload();
         unawaited(CommunityBucketPresenceService.syncForCurrentUser(ref));
         if (!context.mounted) return;
-        AppToast.showText(context, 'Profile updated');
+        AppToast.showText(context, context.l10n.cpProfileUpdated);
         if (context.canPop()) {
           context.pop();
         } else {
@@ -90,7 +91,7 @@ class CompleteProfileScreen extends HookConsumerWidget {
         }
       } catch (e) {
         if (context.mounted) {
-          AppToast.showText(context, 'Could not update profile: $e');
+          AppToast.showText(context, context.l10n.cpUpdateFailed(e.toString()));
         }
       } finally {
         if (context.mounted) saving.value = false;
@@ -104,7 +105,7 @@ class CompleteProfileScreen extends HookConsumerWidget {
         : 'User';
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Complete your profile')),
+      appBar: AppBar(title: Text(context.l10n.cpTitle)),
       body: SafeArea(
         child: Center(
           child: ConstrainedBox(
@@ -124,12 +125,12 @@ class CompleteProfileScreen extends HookConsumerWidget {
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           Text(
-                            'Sign in to continue',
+                            context.l10n.cpSignInContinue,
                             style: Theme.of(context).textTheme.titleMedium,
                           ),
                           const SizedBox(height: 6),
                           Text(
-                            'Connect your account to sync your profile and progress across devices.',
+                            context.l10n.cpConnect,
                             style: Theme.of(context).textTheme.bodyMedium
                                 ?.copyWith(color: scheme.onSurfaceVariant),
                           ),
@@ -154,7 +155,11 @@ class CompleteProfileScreen extends HookConsumerWidget {
                                     },
                                   ),
                             icon: const Icon(Icons.login_rounded),
-                            label: Text(isBusy ? 'Signing in…' : 'Sign in'),
+                            label: Text(
+                              isBusy
+                                  ? context.l10n.cpSigningIn
+                                  : context.l10n.cpSignIn,
+                            ),
                           ),
                         ],
                       ),
@@ -163,7 +168,7 @@ class CompleteProfileScreen extends HookConsumerWidget {
                   const SizedBox(height: 14),
                 ],
                 Text(
-                  'This helps others recognize you in Community and chat.',
+                  context.l10n.cpHelps,
                   style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                     color: scheme.onSurfaceVariant,
                     height: 1.4,
@@ -227,7 +232,7 @@ class CompleteProfileScreen extends HookConsumerWidget {
                         if (kIsWeb) ...[
                           const SizedBox(height: 10),
                           Text(
-                            'Profile photo can be changed in the Android or iOS app.',
+                            context.l10n.cpPhotoWeb,
                             textAlign: TextAlign.center,
                             style: Theme.of(context).textTheme.bodySmall
                                 ?.copyWith(color: scheme.onSurfaceVariant),
@@ -239,10 +244,10 @@ class CompleteProfileScreen extends HookConsumerWidget {
                           textCapitalization: TextCapitalization.words,
                           textInputAction: TextInputAction.done,
                           onSubmitted: (_) => unawaited(onSave()),
-                          decoration: const InputDecoration(
-                            labelText: 'Your name',
+                          decoration: InputDecoration(
+                            labelText: context.l10n.cpYourName,
                             border: OutlineInputBorder(),
-                            hintText: 'e.g. Sachin',
+                            hintText: context.l10n.cpNameHint,
                           ),
                         ),
                         const SizedBox(height: 14),
@@ -250,12 +255,16 @@ class CompleteProfileScreen extends HookConsumerWidget {
                           width: double.infinity,
                           child: FilledButton(
                             onPressed: saving.value ? null : onSave,
-                            child: Text(saving.value ? 'Saving…' : 'Save'),
+                            child: Text(
+                              saving.value
+                                  ? context.l10n.cpSaving
+                                  : context.l10n.commonSave,
+                            ),
                           ),
                         ),
                         const SizedBox(height: 10),
                         Text(
-                          'You can change your photo anytime from Profile.',
+                          context.l10n.cpPhotoAnytime,
                           textAlign: TextAlign.center,
                           style: Theme.of(context).textTheme.bodySmall
                               ?.copyWith(color: scheme.onSurfaceVariant),
@@ -266,8 +275,7 @@ class CompleteProfileScreen extends HookConsumerWidget {
                 ),
                 const SizedBox(height: 14),
                 Text(
-                  'Privacy note: Apple may not share your real email/name on future sign-ins. '
-                  'We store this name only to show it inside ${AppConstants.appDisplayName}.',
+                  context.l10n.cpPrivacy(AppConstants.appDisplayName),
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
                     color: scheme.onSurfaceVariant,
                     height: 1.4,

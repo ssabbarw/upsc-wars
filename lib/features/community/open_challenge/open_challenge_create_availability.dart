@@ -1,4 +1,5 @@
 import '../../../core/providers/prefs_provider.dart';
+import '../../../l10n/l10n.dart';
 
 /// Local 24h cooldown after publishing an open challenge (same device).
 class OpenChallengeCreateAvailability {
@@ -36,7 +37,7 @@ class OpenChallengeCreateAvailability {
   String get etaShort {
     final d = _remaining;
     if (d == null) return '';
-    if (d.inMinutes < 1) return 'a moment';
+    if (d.inMinutes < 1) return appL10n.ocAMoment;
     if (d.inHours < 1) return '${d.inMinutes} min';
     final h = d.inHours;
     final m = d.inMinutes.remainder(60);
@@ -46,14 +47,11 @@ class OpenChallengeCreateAvailability {
   }
 
   /// One line for tooltips / compact rows.
-  String get tooltipLine =>
-      'One live challenge per 24h · next slot ~$etaShort';
+  String get tooltipLine => appL10n.ocTooltipLine(etaShort);
 
   /// Cards + Community hint under Create.
-  String get bodyCopy =>
-      'You already have a live challenge. Next create in ~$etaShort.';
+  String get bodyCopy => appL10n.ocBodyCopy(etaShort);
 
   /// Subject picker footer when blocked.
-  String get pickSubjectCopy =>
-      'Still on cooldown — next create in ~$etaShort.';
+  String get pickSubjectCopy => appL10n.ocPickCopy(etaShort);
 }

@@ -37,10 +37,20 @@ class ValidationError:
     index: int  # index within the JSON list
     uuid: Optional[str]
     message: str
+    snippet: str = ""  # first words of en.display_text, to locate the question
 
 
 def _non_empty_str(value: Any) -> bool:
     return isinstance(value, str) and value.strip() != ""
+
+
+def _snippet(obj: dict[str, Any], max_len: int = 70) -> str:
+    en = obj.get("en")
+    text = en.get("display_text") if isinstance(en, dict) else None
+    if not _non_empty_str(text):
+        return ""
+    text = " ".join(text.split())
+    return text if len(text) <= max_len else text[:max_len].rstrip() + "..."
 
 
 def validate_question_obj(
@@ -51,6 +61,7 @@ def validate_question_obj(
     errors: list[ValidationError] = []
 
     uuid = obj.get("uuid")
+    snippet = _snippet(obj)
     if not _non_empty_str(uuid):
         errors.append(
             ValidationError(
@@ -58,6 +69,7 @@ def validate_question_obj(
                 index=idx,
                 uuid=None,
                 message="Missing or empty 'uuid'",
+                snippet=snippet,
             )
         )
 
@@ -68,6 +80,7 @@ def validate_question_obj(
                 index=idx,
                 uuid=uuid if isinstance(uuid, str) else None,
                 message=msg,
+                snippet=snippet,
             )
         )
 
@@ -254,9 +267,14 @@ def main() -> None:
     if all_errors:
         print("\n[VALIDATION FAILED]")
         for e in all_errors:
-            idx_info = f"index {e.index}" if e.index >= 0 else "file-level"
+            # Question numbers are 1-based (as in an editor's list); index is 0-based.
+            idx_info = (
+                f"Q#{e.index + 1}, index {e.index}" if e.index >= 0 else "file-level"
+            )
             uuid_info = f", uuid={e.uuid}" if e.uuid else ""
             print(f"- {e.file} ({idx_info}{uuid_info}): {e.message}")
+            if e.snippet:
+                print(f'    "{e.snippet}"')
         print(
             f"\nChecked {total_files} files; "
             f"found {len(all_errors)} error(s)."

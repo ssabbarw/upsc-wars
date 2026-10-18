@@ -12,14 +12,13 @@ class PushMemoryPairsDebugCard extends StatefulWidget {
   const PushMemoryPairsDebugCard({super.key});
 
   @override
-  State<PushMemoryPairsDebugCard> createState() => _PushMemoryPairsDebugCardState();
+  State<PushMemoryPairsDebugCard> createState() =>
+      _PushMemoryPairsDebugCardState();
 }
 
 class _PushMemoryPairsDebugCardState extends State<PushMemoryPairsDebugCard> {
   final _setId = TextEditingController(text: 'national_parks');
-  final _title = TextEditingController(
-    text: 'National Parks challenge',
-  );
+  final _title = TextEditingController(text: 'National Parks challenge');
   final _body = TextEditingController(
     text: 'Match famous parks to their states — 6 pairs, under a minute.',
   );

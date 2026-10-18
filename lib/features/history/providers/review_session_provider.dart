@@ -38,37 +38,38 @@ class ReviewSessionState {
 typedef ReviewSessionParams = ({String sessionId, bool focusWrong});
 
 final reviewSessionProvider =
-    FutureProvider.family<ReviewSessionState, ReviewSessionParams>(
-  (ref, arg) async {
-    final load = await ref.read(loadSessionUseCaseProvider.future);
-    final active = await load.execute(arg.sessionId);
-    final sorted = [...active.questions]
-      ..sort((a, b) => a.position.compareTo(b.position));
-    final repo = await ref.read(testEngineRepositoryProvider.future);
-    final userDb = ref.read(userDatabaseProvider);
+    FutureProvider.family<ReviewSessionState, ReviewSessionParams>((
+      ref,
+      arg,
+    ) async {
+      final load = await ref.read(loadSessionUseCaseProvider.future);
+      final active = await load.execute(arg.sessionId);
+      final sorted = [...active.questions]
+        ..sort((a, b) => a.position.compareTo(b.position));
+      final repo = await ref.read(testEngineRepositoryProvider.future);
+      final userDb = ref.read(userDatabaseProvider);
 
-    final bm = <String, bool>{};
-    final queue = <String, bool>{};
-    for (final q in sorted) {
-      bm[q.uuid] = await repo.isBookmarked(q.uuid);
-      final queued = await userDb.revisionQueueDao
-          .getRevisionQueueItemByQuestionUuid(q.uuid);
-      queue[q.uuid] = queued != null;
-    }
+      final bm = <String, bool>{};
+      final queue = <String, bool>{};
+      for (final q in sorted) {
+        bm[q.uuid] = await repo.isBookmarked(q.uuid);
+        final queued = await userDb.revisionQueueDao
+            .getRevisionQueueItemByQuestionUuid(q.uuid);
+        queue[q.uuid] = queued != null;
+      }
 
-    var startIndex = 0;
-    if (arg.focusWrong) {
-      final i = sorted.indexWhere((q) => q.status == 'wrong');
-      if (i >= 0) startIndex = i;
-    }
+      var startIndex = 0;
+      if (arg.focusWrong) {
+        final i = sorted.indexWhere((q) => q.status == 'wrong');
+        if (i >= 0) startIndex = i;
+      }
 
-    return ReviewSessionState(
-      questions: sorted,
-      currentIndex: startIndex,
-      bookmarkedByUuid: bm,
-      queuedByUuid: queue,
-    );
-  },
-);
+      return ReviewSessionState(
+        questions: sorted,
+        currentIndex: startIndex,
+        bookmarkedByUuid: bm,
+        queuedByUuid: queue,
+      );
+    });
 
 const reviewSessionUuid = Uuid();

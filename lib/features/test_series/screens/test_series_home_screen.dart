@@ -62,7 +62,8 @@ class TestSeriesHomeScreen extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final bundleAsync = ref.watch(seriesBundleProvider(seriesId));
-    final ownedIds = ref.watch(ownedSeriesIdsProvider).asData?.value ?? const {};
+    final ownedIds =
+        ref.watch(ownedSeriesIdsProvider).asData?.value ?? const {};
     final isHindi = ref.watch(appLanguageProvider).asData?.value == 'hi';
     final owned = ownedIds.contains(seriesId);
     final statsAsync = ref.watch(seriesStatsProvider(seriesId));

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:upsc_wars/l10n/app_localizations.dart';
 import 'package:upsc_wars/features/community/domain/entities/community_user.dart';
 import 'package:upsc_wars/features/community/providers/user_block_providers.dart';
 import 'package:upsc_wars/features/community/widgets/community_user_profile_sheet.dart';
@@ -105,11 +106,13 @@ void main() {
     await tester.pumpWidget(
       ProviderScope(
         overrides: [
-          blockedUserEmailsProvider.overrideWith(
-            _EmptyBlockedUserEmails.new,
-          ),
+          blockedUserEmailsProvider.overrideWith(_EmptyBlockedUserEmails.new),
         ],
-        child: MaterialApp.router(routerConfig: router),
+        child: MaterialApp.router(
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          routerConfig: router,
+        ),
       ),
     );
     await tester.pumpAndSettle();

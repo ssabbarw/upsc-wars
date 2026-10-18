@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../l10n/l10n.dart';
 
 /// Home entry for CA Shots history.
 class FomoPulseHomeCard extends StatelessWidget {
@@ -35,7 +36,7 @@ class FomoPulseHomeCard extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      'Breaking news brief + 1 MCQ based on it.',
+                      context.l10n.fpHomeSub,
                       style: AppTextStyles.caption().copyWith(
                         color: scheme.onSurfaceVariant,
                       ),

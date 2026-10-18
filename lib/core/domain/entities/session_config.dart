@@ -94,7 +94,8 @@ class SessionConfig {
       isTimed: isTimed ?? this.isTimed,
       timeLimitSecs: timeLimitSecs ?? this.timeLimitSecs,
       language: language ?? this.language,
-      specificQuestionUuids: specificQuestionUuids ?? this.specificQuestionUuids,
+      specificQuestionUuids:
+          specificQuestionUuids ?? this.specificQuestionUuids,
       analyticsFeatureKey: analyticsFeatureKey ?? this.analyticsFeatureKey,
       dangerReviseHistoryConfidence:
           dangerReviseHistoryConfidence ?? this.dangerReviseHistoryConfidence,

@@ -108,7 +108,8 @@ abstract final class SeriesSubjects {
         : QuestionSourceConstants.normalizeGsSubject(gsRaw);
 
     if (group == currentAffairs) {
-      if (gs.isEmpty || gs.toLowerCase() == 'current affairs') return mixedTopics;
+      if (gs.isEmpty || gs.toLowerCase() == 'current affairs')
+        return mixedTopics;
       return gs;
     }
 
@@ -149,7 +150,8 @@ class SeriesTestAttempt {
   final int wrong;
   final int questionCount;
 
-  int get unanswered => (questionCount - correct - wrong).clamp(0, questionCount);
+  int get unanswered =>
+      (questionCount - correct - wrong).clamp(0, questionCount);
 
   /// UPSC marking: +2 correct, -2/3 wrong.
   double get netMarks => correct * 2 - wrong * (2 / 3);
@@ -397,7 +399,10 @@ class SeriesStats {
   double get overallAccuracy => core.accuracy;
   bool get hasAnyAttempt => attempts.isNotEmpty;
 
-  static const coreKinds = {SeriesTestKind.staticTest, SeriesTestKind.fullLength};
+  static const coreKinds = {
+    SeriesTestKind.staticTest,
+    SeriesTestKind.fullLength,
+  };
   static const fltKinds = {SeriesTestKind.fullLength};
 
   /// Pure computation so it can be unit tested without a database.
@@ -412,7 +417,8 @@ class SeriesStats {
       final prev = attempts[a.testId];
       if (prev == null ||
           (a.completedAt != null &&
-              (prev.completedAt == null || a.completedAt!.isBefore(prev.completedAt!)))) {
+              (prev.completedAt == null ||
+                  a.completedAt!.isBefore(prev.completedAt!)))) {
         attempts[a.testId] = a;
       }
     }
@@ -523,7 +529,9 @@ class SeriesStats {
       }
       final isBucket = SeriesBuckets.staticOrder.contains(id);
       final bucketTests = isBucket
-          ? tests.where((t) => t.kind == SeriesTestKind.staticTest && t.bucket == id)
+          ? tests.where(
+              (t) => t.kind == SeriesTestKind.staticTest && t.bucket == id,
+            )
           : const <SeriesTest>[];
       subjects.add(
         SubjectStat(

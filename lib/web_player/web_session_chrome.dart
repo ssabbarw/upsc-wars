@@ -19,6 +19,7 @@ enum WebPlayerOptionVisual { unselected, selected, correct, wrong }
 WebPlayerOptionVisual webPlayerOptionVisual({
   required TestQuestion q,
   required String optionKey,
+
   /// When false (exam in progress), only selection highlight is shown.
   required bool revealAnswerKey,
   String? selectedOption,
@@ -69,13 +70,17 @@ class WebPlayerSessionChrome extends StatelessWidget {
   final VoidCallback onOpenQuestionGrid;
   final VoidCallback onToggleDarkMode;
   final bool timed;
+
   /// Per-question countdown (learning).
   final int remainingSecs;
+
   /// Whole-test countdown (exam).
   final int examRemainingSecs;
+
   /// `learning` | `exam`
   final String sessionMode;
   final bool reviewMode;
+
   /// Learning + exam: opens question grid; sheet includes Submit to end test.
   final VoidCallback? onSubmitTest;
 
@@ -229,6 +234,7 @@ class WebPlayerOptionTile extends StatelessWidget {
   final VoidCallback? onTap;
   final String? confidenceStored;
   final bool showConfidenceHeader;
+
   /// Exam confidence row inside the same card as the option (in-app pattern).
   final Widget? confidenceFooter;
 
@@ -562,10 +568,7 @@ class _WebPlayerExamTierToggle extends StatelessWidget {
     final borderColor = selected
         ? accent
         : accent.withValues(alpha: isDark ? 0.38 : 0.42);
-    final border = Border.all(
-      color: borderColor,
-      width: selected ? 2.5 : 1,
-    );
+    final border = Border.all(color: borderColor, width: selected ? 2.5 : 1);
     final inactiveDim = !enabled && !selected;
     return Material(
       color: Colors.transparent,
@@ -595,16 +598,14 @@ class _WebPlayerExamTierToggle extends StatelessWidget {
                       ),
                     ]
                   : selected && !enabled
-                      ? [
-                          BoxShadow(
-                            color: accent.withValues(
-                              alpha: isDark ? 0.22 : 0.18,
-                            ),
-                            blurRadius: 6,
-                            offset: const Offset(0, 2),
-                          ),
-                        ]
-                      : null,
+                  ? [
+                      BoxShadow(
+                        color: accent.withValues(alpha: isDark ? 0.22 : 0.18),
+                        blurRadius: 6,
+                        offset: const Offset(0, 2),
+                      ),
+                    ]
+                  : null,
             ),
             child: Padding(
               padding: const EdgeInsets.symmetric(
@@ -633,8 +634,9 @@ class _WebPlayerExamTierToggle extends StatelessWidget {
                         overflow: TextOverflow.ellipsis,
                         style: AppTextStyles.labelSm().copyWith(
                           color: selected ? onSurface : labelUnselected,
-                          fontWeight:
-                              selected ? FontWeight.w800 : FontWeight.w500,
+                          fontWeight: selected
+                              ? FontWeight.w800
+                              : FontWeight.w500,
                           height: 1.2,
                           fontSize: 11,
                         ),
@@ -696,12 +698,14 @@ class _WebPlayerLegendItem extends StatelessWidget {
 }
 
 /// Read-only attempt snapshot for palette cells (uuid → revealed, confidence, selection).
-typedef WebPlayerAttemptLookup = ({
-  bool revealed,
-  bool examAnswered,
-  String? selectedOption,
-  String? confidence,
-}) Function(String questionUuid);
+typedef WebPlayerAttemptLookup =
+    ({
+      bool revealed,
+      bool examAnswered,
+      String? selectedOption,
+      String? confidence,
+    })
+    Function(String questionUuid);
 
 Future<void> showWebPlayerQuestionGridSheet({
   required BuildContext context,
@@ -733,8 +737,9 @@ Future<void> showWebPlayerQuestionGridSheet({
       }
     }
   }
-  final learningRemaining =
-      showSubmitPanel && !isExamMode ? questions.length - learningAnswered : 0;
+  final learningRemaining = showSubmitPanel && !isExamMode
+      ? questions.length - learningAnswered
+      : 0;
 
   return showModalBottomSheet<void>(
     context: context,
@@ -750,14 +755,18 @@ Future<void> showWebPlayerQuestionGridSheet({
           return Container(
             decoration: BoxDecoration(
               color: isDark ? scheme.surfaceContainerHigh : scheme.surface,
-              borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
+              borderRadius: const BorderRadius.vertical(
+                top: Radius.circular(20),
+              ),
               border: Border.all(
                 color: isDark ? AppColors.borderDark : AppColors.borderLight,
                 width: 0.8,
               ),
               boxShadow: [
                 BoxShadow(
-                  color: AppColors.gray900.withValues(alpha: isDark ? 0.45 : 0.14),
+                  color: AppColors.gray900.withValues(
+                    alpha: isDark ? 0.45 : 0.14,
+                  ),
                   blurRadius: 16,
                   offset: const Offset(0, -4),
                 ),
@@ -790,8 +799,12 @@ Future<void> showWebPlayerQuestionGridSheet({
                     ),
                     _WebPlayerLegendItem(
                       label: 'Attempted',
-                      bg: isDark ? AppColors.correctBgDark : AppColors.correctBg,
-                      fg: isDark ? AppColors.correctTextDark : AppColors.correctText,
+                      bg: isDark
+                          ? AppColors.correctBgDark
+                          : AppColors.correctBg,
+                      fg: isDark
+                          ? AppColors.correctTextDark
+                          : AppColors.correctText,
                     ),
                     _WebPlayerLegendItem(
                       label: 'Not visited',
@@ -829,7 +842,9 @@ Future<void> showWebPlayerQuestionGridSheet({
                       color: scheme.surfaceContainerLow,
                       borderRadius: BorderRadius.circular(AppRadius.md),
                       border: Border.all(
-                        color: isDark ? AppColors.borderDark : AppColors.borderLight,
+                        color: isDark
+                            ? AppColors.borderDark
+                            : AppColors.borderLight,
                         width: 0.6,
                       ),
                     ),

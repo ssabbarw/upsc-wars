@@ -16,6 +16,7 @@ import '../shared/revision_game_analytics.dart';
 import '../shared/revision_games_theme.dart';
 import '../shared/revision_games_widgets.dart';
 import '../timeline_sorter/timeline_sorter_controller.dart';
+import '../../../l10n/l10n.dart';
 
 class _GameEntry {
   const _GameEntry({
@@ -109,6 +110,19 @@ const _games = [
   ),
 ];
 
+String _gameDescription(BuildContext context, _GameEntry game) {
+  final l10n = context.l10n;
+  return switch (game.id) {
+    RevisionGameNames.memoryPairs => l10n.gmDescMemory,
+    RevisionGameNames.timelineSorter => l10n.gmDescTimeline,
+    RevisionGameNames.oddOneOut => l10n.gmOddStep2,
+    RevisionGameNames.factOrBluff => l10n.gmDescFob,
+    RevisionGameNames.connectTheDots => l10n.gmDescCtd,
+    RevisionGameNames.duel => l10n.gmDescDuel,
+    _ => game.description,
+  };
+}
+
 _GameEntry? _gameEntryById(String? rawId) {
   final id = PushRevisionGameFcm.normalizeGameId(rawId ?? '');
   if (id == null) return null;
@@ -117,6 +131,7 @@ _GameEntry? _gameEntryById(String? rawId) {
   }
   return null;
 }
+
 class _GameLaunchConfig {
   const _GameLaunchConfig({
     required this.subjects,
@@ -280,23 +295,23 @@ class _SubjectPickerSheetState extends State<_SubjectPickerSheet> {
             ),
           ),
           const SizedBox(height: 14),
-          const RgMonoLabel('Config'),
+          RgMonoLabel(context.l10n.gmConfig),
           const SizedBox(height: 4),
           Text(widget.gameTitle, style: RgText.display(size: 20)),
           const SizedBox(height: 4),
           Text(
-            'Set up your session',
+            context.l10n.gmSetup,
             style: RgText.body(size: 13, color: RgColors.muted),
           ),
           const SizedBox(height: 12),
-          const RgMonoLabel('Language'),
+          RgMonoLabel(context.l10n.gmLanguage),
           const SizedBox(height: 6),
           RgLangToggle(
             language: _lang,
             onChanged: (v) => setState(() => _lang = v),
           ),
           const SizedBox(height: 12),
-          const RgMonoLabel('Subjects'),
+          RgMonoLabel(context.l10n.gmSubjects),
           const SizedBox(height: 6),
           Flexible(
             child: SingleChildScrollView(
@@ -305,7 +320,7 @@ class _SubjectPickerSheetState extends State<_SubjectPickerSheet> {
                 runSpacing: 6,
                 children: [
                   _subjectChip(
-                    label: 'All',
+                    label: context.l10n.gmAll,
                     selected: _selected.isEmpty,
                     onTap: () => setState(_selected.clear),
                   ),
@@ -345,7 +360,7 @@ class _SubjectPickerSheetState extends State<_SubjectPickerSheet> {
           ),
           const SizedBox(height: 18),
           RgPillButton(
-            label: 'Start · ${widget.sessionSize} questions',
+            label: context.l10n.gmStartN(widget.sessionSize),
             verticalPadding: 13,
             onPressed: () => Navigator.of(context).pop(
               _GameLaunchConfig(
@@ -421,6 +436,7 @@ class GamesHubScreen extends HookConsumerWidget {
     return PopToShellHomeScope(child: hub);
   }
 }
+
 class _GameCard extends StatelessWidget {
   const _GameCard({required this.game, required this.onTap});
 
@@ -468,7 +484,7 @@ class _GameCard extends StatelessWidget {
                     ),
                     const SizedBox(height: 2),
                     Text(
-                      game.description,
+                      _gameDescription(context, game),
                       style: RgText.body(
                         size: 11,
                         color: dark

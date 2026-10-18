@@ -12,6 +12,7 @@ import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/widgets/test_config_bottom_sheet.dart';
 import '../providers/pyq_year_packs_provider.dart';
+import '../../../l10n/l10n.dart';
 
 class PyqYearPacksScreen extends ConsumerWidget {
   const PyqYearPacksScreen({super.key, required this.year});
@@ -27,7 +28,9 @@ class PyqYearPacksScreen extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(displayNameForSessionSubject(PyqConstants.subjectSlugForYear(year))),
+        title: Text(
+          displayNameForSessionSubject(PyqConstants.subjectSlugForYear(year)),
+        ),
       ),
       body: async.when(
         loading: () => const Center(child: CircularProgressIndicator()),
@@ -38,7 +41,7 @@ class PyqYearPacksScreen extends ConsumerWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
-                  'Could not load PYQ sets',
+                  context.l10n.pyqLoadFailed,
                   style: AppTextStyles.h3().copyWith(color: scheme.onSurface),
                 ),
                 const SizedBox(height: AppSpacing.sm),
@@ -51,8 +54,12 @@ class PyqYearPacksScreen extends ConsumerWidget {
                 ),
                 const SizedBox(height: AppSpacing.lg),
                 OutlinedButton(
-                  onPressed: () => ref.invalidate(pyqYearPacksDataProvider(year)),
-                  child: Text('Retry', style: AppTextStyles.label()),
+                  onPressed: () =>
+                      ref.invalidate(pyqYearPacksDataProvider(year)),
+                  child: Text(
+                    context.l10n.commonRetry,
+                    style: AppTextStyles.label(),
+                  ),
                 ),
               ],
             ),
@@ -64,7 +71,7 @@ class PyqYearPacksScreen extends ConsumerWidget {
               child: Padding(
                 padding: const EdgeInsets.all(AppSpacing.xxl),
                 child: Text(
-                  'No questions are available for $year yet.',
+                  context.l10n.pyqNoQuestionsYear(year),
                   textAlign: TextAlign.center,
                   style: AppTextStyles.body().copyWith(
                     color: scheme.onSurfaceVariant,
@@ -82,7 +89,8 @@ class PyqYearPacksScreen extends ConsumerWidget {
               final uuids = d.packUuids[i];
               final startQ = i * PyqConstants.questionsPerPack + 1;
               final endQ = startQ + uuids.length - 1;
-              final completed = i < d.packCompleted.length && d.packCompleted[i];
+              final completed =
+                  i < d.packCompleted.length && d.packCompleted[i];
               return Material(
                 color: Colors.transparent,
                 child: InkWell(
@@ -94,16 +102,20 @@ class PyqYearPacksScreen extends ConsumerWidget {
                         args: TestConfigSheetArgs(
                           subject: d.subject,
                           topic: PyqConstants.packTopic(i),
-                          subjectDisplayName:
-                              displayNameForSessionSubject(d.subject),
-                          topicDisplayName:
-                              'Set ${i + 1} of ${d.packUuids.length}',
+                          subjectDisplayName: displayNameForSessionSubject(
+                            d.subject,
+                          ),
+                          topicDisplayName: context.l10n.pyqSetOf(
+                            i + 1,
+                            d.packUuids.length,
+                          ),
                           availableQuestionCount: uuids.length,
                           topicCountWhenSubjectOnly: 1,
                           lockedQuestionCount: uuids.length,
                           specificQuestionUuids: uuids,
-                          fixedQuestionSetLabel:
-                              '${uuids.length} questions (fixed order for this set)',
+                          fixedQuestionSetLabel: context.l10n.pyqFixedOrder(
+                            uuids.length,
+                          ),
                           analyticsFeatureKey: 'pyq_year_pack',
                           onSessionCreated: (sessionId) async {
                             await context.push('/test/$sessionId');
@@ -129,14 +141,14 @@ class PyqYearPacksScreen extends ConsumerWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Test ${i + 1}',
+                                context.l10n.pyqTestN(i + 1),
                                 style: AppTextStyles.label().copyWith(
                                   color: scheme.onSurface,
                                 ),
                               ),
                               const SizedBox(height: AppSpacing.xs),
                               Text(
-                                'Questions $startQ–$endQ',
+                                context.l10n.pyqQuestionsRange(startQ, endQ),
                                 style: AppTextStyles.bodySm().copyWith(
                                   color: scheme.onSurfaceVariant,
                                 ),
@@ -144,7 +156,7 @@ class PyqYearPacksScreen extends ConsumerWidget {
                               if (completed) ...[
                                 const SizedBox(height: AppSpacing.xs),
                                 Text(
-                                  'Completed',
+                                  context.l10n.commonCompleted,
                                   style: AppTextStyles.caption().copyWith(
                                     color: AppColors.correct,
                                     fontWeight: FontWeight.w600,

@@ -7,14 +7,14 @@ import '../domain/subject_overview_row.dart';
 /// How subjects are sorted in the Progress overview screen.
 enum SubjectSortMode { mistakes, accuracy, alphabetical }
 
-
 /// Aggregated performance data for all 8 subjects in a single round-trip.
 ///
 /// Returns rows in [SubjectConstants.ordered] order; sorting is applied in the
 /// UI layer so it reacts instantly to [subjectSortModeProvider] changes without
 /// re-querying the DB.
-final allSubjectsOverviewProvider =
-    FutureProvider.autoDispose<List<SubjectOverviewRow>>((ref) async {
+final allSubjectsOverviewProvider = FutureProvider.autoDispose<List<SubjectOverviewRow>>((
+  ref,
+) async {
   final db = ref.watch(userDatabaseProvider);
 
   // ── 1. Wrong count per subject (all-time) ─────────────────────────────────
@@ -57,8 +57,7 @@ final allSubjectsOverviewProvider =
       r.read<String>('subject'): r.read<int>('wrong_count'),
   };
   final totalBySubject = {
-    for (final r in totalRows)
-      r.read<String>('subject'): r.read<int>('total'),
+    for (final r in totalRows) r.read<String>('subject'): r.read<int>('total'),
   };
   final correctBySubject = {
     for (final r in totalRows)

@@ -31,10 +31,10 @@ class PushMemoryPairsLaunchParams {
   }
 
   Map<String, String> toQueryParameters() => {
-        'set': setId.trim(),
-        if (title != null && title!.trim().isNotEmpty) 'title': title!.trim(),
-        if (body != null && body!.trim().isNotEmpty) 'body': body!.trim(),
-      };
+    'set': setId.trim(),
+    if (title != null && title!.trim().isNotEmpty) 'title': title!.trim(),
+    if (body != null && body!.trim().isNotEmpty) 'body': body!.trim(),
+  };
 
   String get welcomeLocation {
     final uri = Uri(
@@ -47,10 +47,7 @@ class PushMemoryPairsLaunchParams {
   String get autoplayGameLocation {
     final uri = Uri(
       path: '/memory-pairs',
-      queryParameters: {
-        'set': setId.trim(),
-        'autoplay': '1',
-      },
+      queryParameters: {'set': setId.trim(), 'autoplay': '1'},
     );
     return uri.toString();
   }

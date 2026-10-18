@@ -221,9 +221,7 @@ class _CaptionBubble extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: accent.withValues(alpha: 0.22),
                       borderRadius: BorderRadius.circular(8),
-                      border: Border.all(
-                        color: accent.withValues(alpha: 0.45),
-                      ),
+                      border: Border.all(color: accent.withValues(alpha: 0.45)),
                     ),
                     child: Text(
                       subCaption!,

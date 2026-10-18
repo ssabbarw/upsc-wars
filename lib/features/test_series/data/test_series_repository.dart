@@ -37,7 +37,10 @@ class TestSeriesRepository {
       throw StateError('Test series "$seriesId" does not exist.');
     }
 
-    final info = TestSeriesInfo.fromMap(seriesId, _normalize(seriesSnap.data()!));
+    final info = TestSeriesInfo.fromMap(
+      seriesId,
+      _normalize(seriesSnap.data()!),
+    );
     final tests = testsSnap.docs
         .map((d) => SeriesTest.fromMap(d.id, _normalize(d.data())))
         .toList();

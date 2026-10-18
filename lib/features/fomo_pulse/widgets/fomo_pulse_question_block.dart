@@ -5,6 +5,7 @@ import '../../../core/theme/app_text_styles.dart';
 import '../../../core/theme/reading_font_scale.dart';
 import '../../community/widgets/qotd_option_letters_row.dart';
 import '../domain/fomo_pulse_models.dart';
+import '../../../l10n/l10n.dart';
 
 class FomoPulseQuestionBlock extends StatelessWidget {
   const FomoPulseQuestionBlock({
@@ -29,7 +30,7 @@ class FomoPulseQuestionBlock extends StatelessWidget {
         ? question.stemText.trim()
         : (question.newsTrigger.isNotEmpty
               ? question.newsTrigger
-              : 'Answer this Pulse');
+              : context.l10n.fpAnswerThis);
     final hasOptionText =
         question.optionA.trim().isNotEmpty ||
         question.optionB.trim().isNotEmpty ||
@@ -62,7 +63,7 @@ class FomoPulseQuestionBlock extends StatelessWidget {
         if (picked == null) ...[
           const SizedBox(height: AppSpacing.sm),
           Text(
-            'Pick an option to submit your answer.',
+            context.l10n.fpPickSubmit,
             style: AppTextStyles.caption().copyWith(
               color: scheme.onSurfaceVariant,
             ),

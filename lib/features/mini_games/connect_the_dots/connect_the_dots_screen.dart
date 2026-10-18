@@ -10,6 +10,7 @@ import '../shared/revision_game_analytics.dart';
 import '../shared/revision_games_theme.dart';
 import '../shared/revision_games_widgets.dart';
 import 'connect_the_dots_controller.dart';
+import '../../../l10n/l10n.dart';
 
 class ConnectTheDotsScreen extends HookConsumerWidget {
   const ConnectTheDotsScreen({
@@ -55,10 +56,10 @@ class ConnectTheDotsScreen extends HookConsumerWidget {
         accent: GameAccent.connectTheDots.accent,
         badgeBg: GameAccent.connectTheDots.badgeBg,
         title: 'Connect the Dots',
-        steps: const [
-          'Read all three clues together.',
-          'Think about what links them.',
-          'Tap the option that ties them together.',
+        steps: [
+          context.l10n.gmCtdStep1,
+          context.l10n.gmCtdStep2,
+          context.l10n.gmCtdStep3,
         ],
       ),
     );
@@ -90,7 +91,7 @@ class ConnectTheDotsScreen extends HookConsumerWidget {
             ),
       footer: revealed && !complete
           ? RgPillButton(
-              label: 'Next →',
+              label: context.l10n.gmNext,
               verticalPadding: 11,
               onPressed: () => ref.read(provider.notifier).next(),
             )
@@ -113,7 +114,7 @@ class ConnectTheDotsScreen extends HookConsumerWidget {
           if (item == null) {
             return Center(
               child: Text(
-                state.error ?? 'No content',
+                state.error ?? context.l10n.gmNoContent,
                 style: RgText.body(color: RgColors.muted),
               ),
             );
@@ -129,8 +130,11 @@ class ConnectTheDotsScreen extends HookConsumerWidget {
             padding: const EdgeInsets.fromLTRB(14, 14, 14, 20),
             children: [
               RgMonoLabel(
-                '${item.subject} · ${state.index + 1} of '
-                '${state.session.length}',
+                context.l10n.gmSubjNOfTotal(
+                  item.subject,
+                  state.index + 1,
+                  state.session.length,
+                ),
               ),
               const SizedBox(height: 10),
               for (var i = 0; i < dots.length; i++) ...[
@@ -138,7 +142,7 @@ class ConnectTheDotsScreen extends HookConsumerWidget {
                 _ClueCard(text: dots[i], revealed: revealed),
               ],
               const SizedBox(height: 12),
-              const RgMonoLabel("What's the hidden link?"),
+              RgMonoLabel(context.l10n.gmCtdHidden),
               const SizedBox(height: 8),
               if (!revealed)
                 for (var i = 0; i < options.length; i++)

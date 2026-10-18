@@ -10,10 +10,9 @@ abstract final class ChatIds {
   }
 
   static String emailKey(String email) {
-    return base64Url.encode(utf8.encode(email.trim().toLowerCase())).replaceAll(
-      '=',
-      '',
-    );
+    return base64Url
+        .encode(utf8.encode(email.trim().toLowerCase()))
+        .replaceAll('=', '');
   }
 
   /// RTDB key rules can recompute from `auth.token.email` (`.` is not allowed in keys).

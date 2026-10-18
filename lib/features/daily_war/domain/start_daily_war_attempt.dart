@@ -16,6 +16,7 @@ import '../data/daily_war_firestore_paths.dart';
 import '../providers/daily_war_providers.dart';
 import 'daily_war_models.dart';
 import 'daily_war_schedule.dart';
+import '../../../l10n/l10n.dart';
 
 /// Starts a live or unranked Daily War paper and opens the test flow.
 ///
@@ -41,28 +42,22 @@ Future<void> startDailyWarAttempt({
   } on Object catch (e) {
     if (!context.mounted) return;
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('Could not load tonight\'s paper: $e')),
+      SnackBar(content: Text(appL10n.dwPaperLoadFailed(e.toString()))),
     );
     return;
   }
   if (!context.mounted) return;
   if (paper.questionUuids.isEmpty) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-        content: Text(
-          'Tonight\'s paper isn\'t loaded yet. Try again in some time.',
-        ),
-      ),
-    );
+    ScaffoldMessenger.of(
+      context,
+    ).showSnackBar(SnackBar(content: Text(appL10n.dwPaperNotLoaded)));
     return;
   }
 
   final signedIn = await ensureAccountSignedIn(
     context: context,
     ref: ref,
-    reason: unranked
-        ? 'Sign in to attempt this War.'
-        : 'Sign in to join tonight\'s War.',
+    reason: unranked ? appL10n.dwSignInAttemptWar : appL10n.dwSignInJoinWar,
   );
   if (!signedIn || !context.mounted) return;
 
@@ -75,7 +70,8 @@ Future<void> startDailyWarAttempt({
   }
 
   final cache = await ref.read(dailyWarLocalCacheProvider.future);
-  final existing = cache.getSubmission(uid, doc.dateId) ??
+  final existing =
+      cache.getSubmission(uid, doc.dateId) ??
       (doc.dateId == ref.read(dailyWarTodayDateIdProvider)
           ? ref.read(dailyWarTodaySubmissionProvider).asData?.value
           : null);
@@ -85,8 +81,8 @@ Future<void> startDailyWarAttempt({
       SnackBar(
         content: Text(
           existing.isLive
-              ? 'You already submitted this War.'
-              : 'You already practiced this War.',
+              ? appL10n.dwAlreadySubmitted
+              : appL10n.dwAlreadyPracticed,
         ),
       ),
     );
@@ -100,8 +96,9 @@ Future<void> startDailyWarAttempt({
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text(
-          'Battle starts at 9:00 PM IST · '
-          '${DailyWarSchedule.formatCountdown(start.difference(istNow))} left.',
+          appL10n.dwBattleStartsLeft(
+            DailyWarSchedule.formatCountdown(start.difference(istNow)),
+          ),
         ),
       ),
     );
@@ -153,19 +150,14 @@ Future<void> startDailyWarAttempt({
   } on MissingQuestionsException catch (e) {
     debugPrint('dailyWar paper ${paper.dateId}: $e');
     if (!context.mounted) return;
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-        content: Text(
-          'Update the app to attempt tonight\'s War — some of this paper '
-          'isn\'t in your question bank yet.',
-        ),
-      ),
-    );
-  } on Object catch (e) {
-    if (!context.mounted) return;
     ScaffoldMessenger.of(
       context,
-    ).showSnackBar(SnackBar(content: Text('Could not start War: $e')));
+    ).showSnackBar(SnackBar(content: Text(appL10n.dwUpdateApp)));
+  } on Object catch (e) {
+    if (!context.mounted) return;
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text(appL10n.dwStartFailed(e.toString()))),
+    );
   }
 }
 

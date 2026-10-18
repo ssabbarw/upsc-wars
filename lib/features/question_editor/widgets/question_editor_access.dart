@@ -7,8 +7,7 @@ import '../../../core/config/feature_flags.dart';
 import '../../../core/providers/super_user_provider.dart';
 
 /// Whether the question editor is compiled in (debug / dart-define).
-bool get isQuestionEditorEnabled =>
-    kDebugMode || FeatureFlags.questionEditor;
+bool get isQuestionEditorEnabled => kDebugMode || FeatureFlags.questionEditor;
 
 /// Question editor routes and edit affordances (compile flag or super user).
 bool canAccessQuestionEditor({required bool isSuperUser}) =>

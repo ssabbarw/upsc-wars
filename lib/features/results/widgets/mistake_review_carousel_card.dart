@@ -4,6 +4,7 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../l10n/l10n.dart';
 
 enum MistakeReviewCarouselKind { sureWrong, eduGuessWrong }
 
@@ -78,7 +79,7 @@ class MistakeReviewCarouselCard extends StatelessWidget {
           ),
           const SizedBox(height: AppSpacing.md),
           Text(
-            'Watch out for:',
+            context.l10n.resultsWatchOutFor,
             style: AppTextStyles.label().copyWith(
               fontWeight: FontWeight.w800,
               color: style.accent,
@@ -159,41 +160,37 @@ class _CarouselCardStyle {
 }
 
 _CarouselCardStyle _sureStyle() {
-  return const _CarouselCardStyle(
+  return _CarouselCardStyle(
     surface: Color(0xFFFDF2F2),
     border: AppColors.coachDangerBorder,
     accent: AppColors.coachDangerTitleText,
     iconBg: Color(0xFFFECACA),
     icon: Icons.psychology_outlined,
-    eyebrow: 'CONFIDENT · WRONG',
-    description:
-        'You were sure — and lost marks anyway. \n\nGo through these carefully '
-        'and check whether you misread the question or your understanding has a gap.',
+    eyebrow: appL10n.resultsEyebrowSureWrong,
+    description: appL10n.resultsSureDesc,
     bullets: [
-      'Concepts that feel familiar but aren\'t fully clear',
-      'Topics where the detail matters and you missed it',
-      'Traps that feel obvious in hindsight',
-      'Avoidable exam-day mistakes',
+      appL10n.resultsQrBullet1,
+      appL10n.resultsQrBullet2,
+      appL10n.resultsSureBullet3,
+      appL10n.resultsQrBullet3,
     ],
     bulletBoxBg: Colors.white,
   );
 }
 
 _CarouselCardStyle _eduStyle() {
-  return const _CarouselCardStyle(
+  return _CarouselCardStyle(
     surface: AppColors.warningBg,
     border: AppColors.warning,
     accent: AppColors.warningText,
     iconBg: Color(0xFFF5D495),
     icon: Icons.help_outline,
-    eyebrow: 'EDUCATED GUESS · WRONG',
-    description:
-        'You had some idea but not enough. These are clean gaps — easier to fix '
-        'than confident mistakes. You know you need to revise these.',
+    eyebrow: appL10n.resultsEyebrowEduWrong,
+    description: appL10n.resultsEduDesc,
     bullets: [
-      'Topics that need focused revision',
-      'Concepts partially encountered but not fully absorbed',
-      'Areas where elimination logic needs strengthening',
+      appL10n.resultsEduBullet1,
+      appL10n.resultsEduBullet2,
+      appL10n.resultsEduBullet3,
     ],
     bulletBoxBg: Colors.white,
   );

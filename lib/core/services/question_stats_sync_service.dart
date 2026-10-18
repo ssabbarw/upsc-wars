@@ -30,8 +30,9 @@ class QuestionStatsSyncService {
 
   /// Persists immutable attempt snapshots and marks the session unsynced.
   Future<void> persistAttemptsOnSessionComplete(String sessionId) async {
-    final existing =
-        await _userDb.questionAttemptRecordsDao.getBySessionId(sessionId);
+    final existing = await _userDb.questionAttemptRecordsDao.getBySessionId(
+      sessionId,
+    );
     if (existing.isNotEmpty) {
       await _userDb.sessionsDao.markSessionUnsynced(sessionId);
       return;
@@ -55,9 +56,7 @@ class QuestionStatsSyncService {
         selectedOption: Value(skipped ? null : sq.selectedOption),
         isCorrect: Value(skipped ? null : sq.isCorrect),
         timeTakenSeconds: Value(skipped ? null : sq.timeSpentSecs),
-        isSure: Value(
-          !skipped && sq.confidence == AnswerConfidence.verySure,
-        ),
+        isSure: Value(!skipped && sq.confidence == AnswerConfidence.verySure),
         skipped: Value(skipped),
         attemptedAt: sq.attemptedAt ?? now,
       );
@@ -79,9 +78,7 @@ class QuestionStatsSyncService {
       final signedIn = await AnonymousAuthService.ensureSignedIn();
       if (!signedIn) return false;
       final session = await _userDb.sessionsDao.getSessionById(sessionId);
-      if (session == null ||
-          session.status != 'completed' ||
-          session.synced) {
+      if (session == null || session.status != 'completed' || session.synced) {
         return false;
       }
       return (await _syncSessions([session])) > 0;
@@ -100,8 +97,7 @@ class QuestionStatsSyncService {
     try {
       final signedIn = await AnonymousAuthService.ensureSignedIn();
       if (!signedIn) return 0;
-      final sessions =
-          await _userDb.sessionsDao.getUnsyncedCompletedSessions();
+      final sessions = await _userDb.sessionsDao.getUnsyncedCompletedSessions();
       return _syncSessions(sessions);
     } catch (e, st) {
       debugPrint('QuestionStatsSyncService.syncUnsyncedSessions: $e');
@@ -149,10 +145,7 @@ class QuestionStatsSyncService {
           record.questionId,
           () => QuestionStatsDelta(questionId: record.questionId),
         );
-        delta.absorbRecord(
-          record: record,
-          isFirstScoredAttempt: isFirstScored,
-        );
+        delta.absorbRecord(record: record, isFirstScoredAttempt: isFirstScored);
         if (!record.skipped) {
           seenScored.add(record.questionId);
         }
@@ -194,13 +187,10 @@ class QuestionStatsSyncService {
     if (!isSyncableQuestionId(questionId)) return;
     try {
       await AnonymousAuthService.ensureSignedIn();
-      await QuestionStatsFirestore.doc(questionId).set(
-        {
-          QuestionStatsFirestore.bookmarkedCount: FieldValue.increment(1),
-          QuestionStatsFirestore.updatedAt: FieldValue.serverTimestamp(),
-        },
-        SetOptions(merge: true),
-      );
+      await QuestionStatsFirestore.doc(questionId).set({
+        QuestionStatsFirestore.bookmarkedCount: FieldValue.increment(1),
+        QuestionStatsFirestore.updatedAt: FieldValue.serverTimestamp(),
+      }, SetOptions(merge: true));
     } catch (e, st) {
       debugPrint('QuestionStatsSyncService.recordBookmark: $e');
       debugPrintStack(stackTrace: st);
@@ -212,13 +202,10 @@ class QuestionStatsSyncService {
     if (!isSyncableQuestionId(questionId)) return;
     try {
       await AnonymousAuthService.ensureSignedIn();
-      await QuestionStatsFirestore.doc(questionId).set(
-        {
-          QuestionStatsFirestore.reportCount: FieldValue.increment(1),
-          QuestionStatsFirestore.updatedAt: FieldValue.serverTimestamp(),
-        },
-        SetOptions(merge: true),
-      );
+      await QuestionStatsFirestore.doc(questionId).set({
+        QuestionStatsFirestore.reportCount: FieldValue.increment(1),
+        QuestionStatsFirestore.updatedAt: FieldValue.serverTimestamp(),
+      }, SetOptions(merge: true));
     } catch (e, st) {
       debugPrint('QuestionStatsSyncService.recordReport: $e');
       debugPrintStack(stackTrace: st);

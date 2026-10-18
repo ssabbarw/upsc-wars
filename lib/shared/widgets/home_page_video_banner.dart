@@ -12,6 +12,7 @@ import '../../core/theme/app_radius.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_text_styles.dart';
 import '../utils/youtube_video_id.dart';
+import '../../l10n/l10n.dart';
 
 /// Remote Config [homePageVideoRemoteConfigKey]: message, Watch video, dismiss.
 class HomePageVideoBanner extends ConsumerWidget {
@@ -27,19 +28,16 @@ class HomePageVideoBanner extends ConsumerWidget {
     final confirmed = await showDialog<bool>(
       context: context,
       builder: (ctx) => AlertDialog(
-        title: Text('Dismiss?', style: AppTextStyles.h3()),
-        content: Text(
-          'Are you sure? You will not be reminded of this again.',
-          style: AppTextStyles.body(),
-        ),
+        title: Text(ctx.l10n.vbDismissQ, style: AppTextStyles.h3()),
+        content: Text(ctx.l10n.vbDismissBody, style: AppTextStyles.body()),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx, false),
-            child: Text('Cancel', style: AppTextStyles.label()),
+            child: Text(ctx.l10n.commonCancel, style: AppTextStyles.label()),
           ),
           TextButton(
             onPressed: () => Navigator.pop(ctx, true),
-            child: Text('Yes', style: AppTextStyles.label()),
+            child: Text(ctx.l10n.commonYes, style: AppTextStyles.label()),
           ),
         ],
       ),
@@ -67,7 +65,7 @@ class HomePageVideoBanner extends ConsumerWidget {
       data: (payload) {
         if (payload == null) return const SizedBox.shrink();
         final body = payload.message.trim().isEmpty
-            ? 'We posted a short video that may help.'
+            ? context.l10n.vbDefault
             : payload.message.trim();
 
         return Column(
@@ -146,7 +144,7 @@ class HomePageVideoBanner extends ConsumerWidget {
                                       color: scheme.primary,
                                     ),
                                     label: Text(
-                                      'Watch video',
+                                      context.l10n.vbWatch,
                                       style: AppTextStyles.label().copyWith(
                                         color: scheme.primary,
                                       ),
@@ -170,7 +168,7 @@ class HomePageVideoBanner extends ConsumerWidget {
                                       ),
                                     ),
                                     child: Text(
-                                      'Dismiss',
+                                      context.l10n.commonDismiss,
                                       style: AppTextStyles.label().copyWith(
                                         color: scheme.onSurfaceVariant,
                                       ),

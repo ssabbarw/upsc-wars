@@ -11,6 +11,7 @@ import '../domain/memory_pair_scoring.dart';
 import '../domain/memory_pair_subject_meta.dart';
 import 'memory_pair_shared_widgets.dart';
 import 'memory_pairs_catalog_widgets.dart';
+import '../../../l10n/l10n.dart';
 
 class MemoryPairsSubjectView extends StatelessWidget {
   const MemoryPairsSubjectView({
@@ -95,15 +96,16 @@ class _TopicCard extends StatelessWidget {
 
     final pct = item.unlockRequired == 0
         ? 100
-        : ((item.unlockProgress / item.unlockRequired) * 100)
-            .round()
-            .clamp(0, 100);
+        : ((item.unlockProgress / item.unlockRequired) * 100).round().clamp(
+            0,
+            100,
+          );
     final progress = item.unlockRequired == 0
         ? 1.0
         : (item.unlockProgress / item.unlockRequired).clamp(0.0, 1.0);
     final unlockSubjectLabel =
         SubjectConstants.bySlug(def.unlockSubjectSlug)?.displayName ??
-            def.unlockSubjectSlug;
+        def.unlockSubjectSlug;
 
     return Opacity(
       opacity: unlocked ? 1 : 0.7,
@@ -154,7 +156,9 @@ class _TopicCard extends StatelessWidget {
                       ),
                     ),
                     Icon(
-                      unlocked ? Icons.chevron_right_rounded : Icons.lock_outline,
+                      unlocked
+                          ? Icons.chevron_right_rounded
+                          : Icons.lock_outline,
                       color: scheme.onSurfaceVariant.withValues(alpha: 0.7),
                     ),
                   ],
@@ -162,8 +166,10 @@ class _TopicCard extends StatelessWidget {
                 if (!unlocked) ...[
                   const SizedBox(height: AppSpacing.md),
                   Text(
-                    'To unlock, attempt ${item.unlockRequired} '
-                    '$unlockSubjectLabel questions',
+                    context.l10n.mpUnlock(
+                      item.unlockRequired,
+                      unlockSubjectLabel,
+                    ),
                     style: AppTextStyles.bodySm().copyWith(
                       color: scheme.onSurfaceVariant,
                       height: 1.35,
@@ -197,7 +203,10 @@ class _TopicCard extends StatelessWidget {
                   ),
                   const SizedBox(height: 4),
                   Text(
-                    '${item.unlockProgress} of ${item.unlockRequired} done',
+                    context.l10n.mpUnlockDone(
+                      item.unlockProgress,
+                      item.unlockRequired,
+                    ),
                     style: AppTextStyles.caption().copyWith(
                       color: scheme.onSurfaceVariant,
                       fontSize: 11,

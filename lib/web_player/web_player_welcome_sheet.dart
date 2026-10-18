@@ -81,17 +81,18 @@ class _WebPlayerWelcomeSheetBody extends StatefulWidget {
       _WebPlayerWelcomeSheetBodyState();
 }
 
-class _WebPlayerWelcomeSheetBodyState extends State<_WebPlayerWelcomeSheetBody> {
+class _WebPlayerWelcomeSheetBodyState
+    extends State<_WebPlayerWelcomeSheetBody> {
   /// Default to Exam like in-app test config.
   String _sessionMode = 'exam';
   bool _examTimed = true;
   int _learningSecs = 60;
 
   String get _kindLabel => switch (widget.kind) {
-        ShareLinkKind.question => 'Shared question',
-        ShareLinkKind.battle => 'Shared set',
-        ShareLinkKind.test => 'Shared test',
-      };
+    ShareLinkKind.question => 'Shared question',
+    ShareLinkKind.battle => 'Shared set',
+    ShareLinkKind.test => 'Shared test',
+  };
 
   String get _topicLine {
     final t = widget.topic?.trim();
@@ -105,8 +106,7 @@ class _WebPlayerWelcomeSheetBodyState extends State<_WebPlayerWelcomeSheetBody> 
     return 'Hello $name';
   }
 
-  bool get _isLearning =>
-      widget.learningOnly || _sessionMode == 'learning';
+  bool get _isLearning => widget.learningOnly || _sessionMode == 'learning';
 
   String _formatExamDurationTotal() {
     final n = widget.questionCount < 1 ? 1 : widget.questionCount;
@@ -118,8 +118,7 @@ class _WebPlayerWelcomeSheetBodyState extends State<_WebPlayerWelcomeSheetBody> 
   void _popWithOutcome() {
     final mode = widget.learningOnly ? 'learning' : _sessionMode;
     final timed = mode == 'exam' ? _examTimed : true;
-    final perQ =
-        mode == 'exam' ? kDebugSecondsPerQuestion : _learningSecs;
+    final perQ = mode == 'exam' ? kDebugSecondsPerQuestion : _learningSecs;
     Navigator.of(context).pop(
       WebPlayerWelcomeOutcome(
         sessionMode: mode,
@@ -162,7 +161,8 @@ class _WebPlayerWelcomeSheetBodyState extends State<_WebPlayerWelcomeSheetBody> 
     final scheme = theme.colorScheme;
     final isDark = theme.brightness == Brightness.dark;
     final borderColor = isDark ? AppColors.borderDark : AppColors.borderLight;
-    final sheetBg = theme.bottomSheetTheme.backgroundColor ??
+    final sheetBg =
+        theme.bottomSheetTheme.backgroundColor ??
         (isDark ? AppColors.surfacePrimaryDark : AppColors.surfacePrimaryLight);
 
     return Padding(
@@ -172,282 +172,284 @@ class _WebPlayerWelcomeSheetBodyState extends State<_WebPlayerWelcomeSheetBody> 
         bottom: MediaQuery.paddingOf(context).bottom + AppSpacing.sm,
       ),
       child: Container(
-          decoration: BoxDecoration(
-            color: sheetBg,
-            borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
-            border: Border.all(color: borderColor),
-            boxShadow: [
-              BoxShadow(
-                color: AppColors.gray900.withValues(alpha: isDark ? 0.45 : 0.14),
-                blurRadius: 16,
-                offset: const Offset(0, -4),
+        decoration: BoxDecoration(
+          color: sheetBg,
+          borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
+          border: Border.all(color: borderColor),
+          boxShadow: [
+            BoxShadow(
+              color: AppColors.gray900.withValues(alpha: isDark ? 0.45 : 0.14),
+              blurRadius: 16,
+              offset: const Offset(0, -4),
+            ),
+          ],
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Padding(
+              padding: const EdgeInsets.fromLTRB(
+                AppSpacing.xs,
+                AppSpacing.sm,
+                AppSpacing.xs,
+                0,
               ),
-            ],
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Padding(
-                padding: const EdgeInsets.fromLTRB(
-                  AppSpacing.xs,
-                  AppSpacing.sm,
-                  AppSpacing.xs,
-                  0,
-                ),
-                child: Row(
-                  children: [
-                    IconButton(
-                      padding: EdgeInsets.zero,
-                      constraints: const BoxConstraints(
-                        minWidth: 44,
-                        minHeight: 40,
+              child: Row(
+                children: [
+                  IconButton(
+                    padding: EdgeInsets.zero,
+                    constraints: const BoxConstraints(
+                      minWidth: 44,
+                      minHeight: 40,
+                    ),
+                    onPressed: null,
+                    icon: Icon(
+                      Icons.close_rounded,
+                      color: scheme.onSurfaceVariant,
+                    ),
+                  ),
+                  Expanded(
+                    child: Center(
+                      child: Container(
+                        width: 36,
+                        height: 4,
+                        decoration: BoxDecoration(
+                          color: borderColor,
+                          borderRadius: BorderRadius.circular(2),
+                        ),
                       ),
-                      onPressed: null,
-                      icon: Icon(
-                        Icons.close_rounded,
+                    ),
+                  ),
+                  const SizedBox(width: 44),
+                ],
+              ),
+            ),
+            Flexible(
+              fit: FlexFit.loose,
+              child: SingleChildScrollView(
+                physics: const BouncingScrollPhysics(),
+                padding: const EdgeInsets.fromLTRB(
+                  AppSpacing.xxl,
+                  AppSpacing.xs,
+                  AppSpacing.xxl,
+                  AppSpacing.lg,
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    if (_helloLine.isNotEmpty) ...[
+                      Text(
+                        _helloLine,
+                        style: AppTextStyles.h3().copyWith(
+                          color: scheme.onSurface,
+                        ),
+                      ),
+                      const SizedBox(height: AppSpacing.sm),
+                    ],
+                    Text(
+                      widget.subject,
+                      style: AppTextStyles.h2().copyWith(
+                        color: scheme.onSurface,
+                      ),
+                    ),
+                    const SizedBox(height: AppSpacing.sm),
+                    if (_topicLine.isNotEmpty) ...[
+                      Text(
+                        _topicLine,
+                        style: AppTextStyles.bodyMd().copyWith(
+                          color: scheme.onSurfaceVariant,
+                        ),
+                      ),
+                      const SizedBox(height: AppSpacing.xs),
+                    ],
+                    Text(
+                      _kindLabel,
+                      style: AppTextStyles.bodySm().copyWith(
                         color: scheme.onSurfaceVariant,
                       ),
                     ),
-                    Expanded(
-                      child: Center(
-                        child: Container(
-                          width: 36,
-                          height: 4,
-                          decoration: BoxDecoration(
-                            color: borderColor,
-                            borderRadius: BorderRadius.circular(2),
-                          ),
-                        ),
+                    const SizedBox(height: AppSpacing.xxl),
+                    Text(
+                      'Number of questions',
+                      style: AppTextStyles.label().copyWith(
+                        color: scheme.onSurface,
                       ),
                     ),
-                    const SizedBox(width: 44),
-                  ],
-                ),
-              ),
-              Flexible(
-                fit: FlexFit.loose,
-                child: SingleChildScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  padding: const EdgeInsets.fromLTRB(
-                    AppSpacing.xxl,
-                    AppSpacing.xs,
-                    AppSpacing.xxl,
-                    AppSpacing.lg,
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      if (_helloLine.isNotEmpty) ...[
-                        Text(
-                          _helloLine,
-                          style: AppTextStyles.h3().copyWith(
-                            color: scheme.onSurface,
-                          ),
-                        ),
-                        const SizedBox(height: AppSpacing.sm),
-                      ],
-                      Text(
-                        widget.subject,
-                        style: AppTextStyles.h2().copyWith(color: scheme.onSurface),
+                    const SizedBox(height: AppSpacing.md),
+                    Container(
+                      width: double.infinity,
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: AppSpacing.md,
+                        vertical: AppSpacing.sm,
                       ),
-                      const SizedBox(height: AppSpacing.sm),
-                      if (_topicLine.isNotEmpty) ...[
-                        Text(
-                          _topicLine,
-                          style: AppTextStyles.bodyMd().copyWith(
-                            color: scheme.onSurfaceVariant,
-                          ),
-                        ),
-                        const SizedBox(height: AppSpacing.xs),
-                      ],
-                      Text(
-                        _kindLabel,
+                      decoration: BoxDecoration(
+                        color: scheme.surfaceContainerLow,
+                        borderRadius: BorderRadius.circular(AppRadius.md),
+                        border: Border.all(color: borderColor, width: 0.5),
+                      ),
+                      child: Text(
+                        '${formatIntCount(widget.questionCount)} questions '
+                        '(fixed for this link)',
                         style: AppTextStyles.bodySm().copyWith(
                           color: scheme.onSurfaceVariant,
                         ),
                       ),
+                    ),
+                    if (!widget.learningOnly) ...[
                       const SizedBox(height: AppSpacing.xxl),
                       Text(
-                        'Number of questions',
+                        'Mode',
                         style: AppTextStyles.label().copyWith(
                           color: scheme.onSurface,
                         ),
                       ),
                       const SizedBox(height: AppSpacing.md),
-                      Container(
-                        width: double.infinity,
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: AppSpacing.md,
-                          vertical: AppSpacing.sm,
+                      Row(
+                        children: [
+                          Expanded(
+                            child: TestConfigModeOptionCard(
+                              title: 'Exam',
+                              description:
+                                  'Simulate real conditions. Explanation after test ends.',
+                              icon: Icons.timer_outlined,
+                              selected: _sessionMode == 'exam',
+                              examStyle: true,
+                              borderColor: borderColor,
+                              onTap: () =>
+                                  setState(() => _sessionMode = 'exam'),
+                            ),
+                          ),
+                          const SizedBox(width: AppSpacing.md),
+                          Expanded(
+                            child: TestConfigModeOptionCard(
+                              title: 'Learning',
+                              description:
+                                  'See explanation after each question.',
+                              icon: Icons.lightbulb_outline,
+                              selected: _sessionMode == 'learning',
+                              examStyle: false,
+                              borderColor: borderColor,
+                              onTap: () =>
+                                  setState(() => _sessionMode = 'learning'),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ] else ...[
+                      const SizedBox(height: AppSpacing.xxl),
+                      Text(
+                        'Learning practice',
+                        style: AppTextStyles.label().copyWith(
+                          color: scheme.onSurface,
                         ),
-                        decoration: BoxDecoration(
-                          color: scheme.surfaceContainerLow,
-                          borderRadius: BorderRadius.circular(AppRadius.md),
-                          border: Border.all(color: borderColor, width: 0.5),
+                      ),
+                      const SizedBox(height: AppSpacing.md),
+                      Text(
+                        'Pick an option, log how sure you were, then see the '
+                        'full explanation before the next question.',
+                        style: AppTextStyles.bodyMd().copyWith(
+                          color: scheme.onSurfaceVariant,
+                          height: 1.45,
                         ),
-                        child: Text(
-                          '${formatIntCount(widget.questionCount)} questions '
-                          '(fixed for this link)',
+                      ),
+                    ],
+                    if (_isLearning) ...[
+                      const SizedBox(height: AppSpacing.xxl),
+                      Text(
+                        'Time per question',
+                        style: AppTextStyles.label().copyWith(
+                          color: scheme.onSurface,
+                        ),
+                      ),
+                      const SizedBox(height: AppSpacing.md),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: TestConfigLearningTimeTile(
+                              label: '45s',
+                              selected: _learningSecs == 45,
+                              isDark: isDark,
+                              onTap: () => setState(() => _learningSecs = 45),
+                            ),
+                          ),
+                          const SizedBox(width: AppSpacing.sm),
+                          Expanded(
+                            child: TestConfigLearningTimeTile(
+                              label: '1 min',
+                              selected: _learningSecs == 60,
+                              isDark: isDark,
+                              onTap: () => setState(() => _learningSecs = 60),
+                            ),
+                          ),
+                          const SizedBox(width: AppSpacing.sm),
+                          Expanded(
+                            child: TestConfigLearningTimeTile(
+                              label: '2 min',
+                              selected: _learningSecs == 120,
+                              isDark: isDark,
+                              onTap: () => setState(() => _learningSecs = 120),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ] else ...[
+                      const SizedBox(height: AppSpacing.xxl),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Timed test',
+                            style: AppTextStyles.label().copyWith(
+                              color: scheme.onSurface,
+                            ),
+                          ),
+                          Switch(
+                            value: _examTimed,
+                            onChanged: (v) => setState(() => _examTimed = v),
+                            activeThumbColor: AppColors.onPrimary,
+                            activeTrackColor: AppColors.info,
+                          ),
+                        ],
+                      ),
+                      if (_examTimed) ...[
+                        const SizedBox(height: AppSpacing.sm),
+                        Text(
+                          _formatExamDurationTotal(),
                           style: AppTextStyles.bodySm().copyWith(
                             color: scheme.onSurfaceVariant,
                           ),
                         ),
-                      ),
-                      if (!widget.learningOnly) ...[
-                        const SizedBox(height: AppSpacing.xxl),
-                        Text(
-                          'Mode',
-                          style: AppTextStyles.label().copyWith(
-                            color: scheme.onSurface,
-                          ),
-                        ),
-                        const SizedBox(height: AppSpacing.md),
-                        Row(
-                          children: [
-                            Expanded(
-                              child: TestConfigModeOptionCard(
-                                title: 'Exam',
-                                description:
-                                    'Simulate real conditions. Explanation after test ends.',
-                                icon: Icons.timer_outlined,
-                                selected: _sessionMode == 'exam',
-                                examStyle: true,
-                                borderColor: borderColor,
-                                onTap: () => setState(() => _sessionMode = 'exam'),
-                              ),
-                            ),
-                            const SizedBox(width: AppSpacing.md),
-                            Expanded(
-                              child: TestConfigModeOptionCard(
-                                title: 'Learning',
-                                description:
-                                    'See explanation after each question.',
-                                icon: Icons.lightbulb_outline,
-                                selected: _sessionMode == 'learning',
-                                examStyle: false,
-                                borderColor: borderColor,
-                                onTap: () =>
-                                    setState(() => _sessionMode = 'learning'),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ] else ...[
-                        const SizedBox(height: AppSpacing.xxl),
-                        Text(
-                          'Learning practice',
-                          style: AppTextStyles.label().copyWith(
-                            color: scheme.onSurface,
-                          ),
-                        ),
-                        const SizedBox(height: AppSpacing.md),
-                        Text(
-                          'Pick an option, log how sure you were, then see the '
-                          'full explanation before the next question.',
-                          style: AppTextStyles.bodyMd().copyWith(
-                            color: scheme.onSurfaceVariant,
-                            height: 1.45,
-                          ),
-                        ),
                       ],
-                      if (_isLearning) ...[
-                        const SizedBox(height: AppSpacing.xxl),
-                        Text(
-                          'Time per question',
-                          style: AppTextStyles.label().copyWith(
-                            color: scheme.onSurface,
-                          ),
-                        ),
-                        const SizedBox(height: AppSpacing.md),
-                        Row(
-                          children: [
-                            Expanded(
-                              child: TestConfigLearningTimeTile(
-                                label: '45s',
-                                selected: _learningSecs == 45,
-                                isDark: isDark,
-                                onTap: () => setState(() => _learningSecs = 45),
-                              ),
-                            ),
-                            const SizedBox(width: AppSpacing.sm),
-                            Expanded(
-                              child: TestConfigLearningTimeTile(
-                                label: '1 min',
-                                selected: _learningSecs == 60,
-                                isDark: isDark,
-                                onTap: () => setState(() => _learningSecs = 60),
-                              ),
-                            ),
-                            const SizedBox(width: AppSpacing.sm),
-                            Expanded(
-                              child: TestConfigLearningTimeTile(
-                                label: '2 min',
-                                selected: _learningSecs == 120,
-                                isDark: isDark,
-                                onTap: () => setState(() => _learningSecs = 120),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ] else ...[
-                        const SizedBox(height: AppSpacing.xxl),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Timed test',
-                              style: AppTextStyles.label().copyWith(
-                                color: scheme.onSurface,
-                              ),
-                            ),
-                            Switch(
-                              value: _examTimed,
-                              onChanged: (v) =>
-                                  setState(() => _examTimed = v),
-                              activeThumbColor: AppColors.onPrimary,
-                              activeTrackColor: AppColors.info,
-                            ),
-                          ],
-                        ),
-                        if (_examTimed) ...[
-                          const SizedBox(height: AppSpacing.sm),
-                          Text(
-                            _formatExamDurationTotal(),
-                            style: AppTextStyles.bodySm().copyWith(
-                              color: scheme.onSurfaceVariant,
-                            ),
-                          ),
-                        ],
-                      ],
-                      const SizedBox(height: AppSpacing.xxl),
-                      if (widget.onFeedbackPressed != null)
-                        Center(
-                          child: TextButton.icon(
-                            onPressed: widget.onFeedbackPressed,
-                            icon: const Icon(Icons.email_outlined, size: 20),
-                            label: const Text('Send feedback to team'),
-                          ),
-                        ),
-                      const SizedBox(height: AppSpacing.xxl),
                     ],
-                  ),
+                    const SizedBox(height: AppSpacing.xxl),
+                    if (widget.onFeedbackPressed != null)
+                      Center(
+                        child: TextButton.icon(
+                          onPressed: widget.onFeedbackPressed,
+                          icon: const Icon(Icons.email_outlined, size: 20),
+                          label: const Text('Send feedback to team'),
+                        ),
+                      ),
+                    const SizedBox(height: AppSpacing.xxl),
+                  ],
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(
-                  AppSpacing.xxl,
-                  0,
-                  AppSpacing.xxl,
-                  AppSpacing.lg,
-                ),
-                child: ElevatedButton(
-                  onPressed: _popWithOutcome,
-                  style: _startButtonStyle(context, scheme),
-                  child: Text(_startLabel()),
-                ),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(
+                AppSpacing.xxl,
+                0,
+                AppSpacing.xxl,
+                AppSpacing.lg,
               ),
-            ],
-          ),
+              child: ElevatedButton(
+                onPressed: _popWithOutcome,
+                style: _startButtonStyle(context, scheme),
+                child: Text(_startLabel()),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

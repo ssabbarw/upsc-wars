@@ -6,6 +6,7 @@ import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../domain/trap_pattern_catalog.dart';
 import 'trap_pattern_visual.dart';
+import '../../../l10n/l10n.dart';
 
 class TrapPatternCard extends StatelessWidget {
   const TrapPatternCard({
@@ -99,7 +100,7 @@ class TrapPatternCard extends StatelessWidget {
                     ),
                   ),
                   icon: const Icon(Icons.lightbulb_outline_rounded, size: 16),
-                  label: const Text('See example'),
+                  label: Text(context.l10n.trapsSeeExample),
                 ),
               ),
             ],
@@ -137,7 +138,7 @@ class _CaughtCountChip extends StatelessWidget {
         borderRadius: BorderRadius.circular(AppRadius.pill),
       ),
       child: Text(
-        caught ? 'Caught you ${count}×' : '0×',
+        caught ? context.l10n.trapsCaughtCount(count) : '0×',
         style: AppTextStyles.caption().copyWith(
           color: fg,
           fontWeight: FontWeight.w600,

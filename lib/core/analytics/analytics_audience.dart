@@ -4,7 +4,7 @@ import 'package:flutter/foundation.dart';
 import '../auth/auth_session.dart';
 import '../auth/super_user.dart';
 
-/// Who must not contribute product analytics (GA4, Drift, admin dashboard).
+/// Who must not contribute product analytics (GA4, PostHog, Drift, admin).
 ///
 /// Debug builds never capture. Admins are listed super-user emails. Bots use
 /// reserved mailbox domains so they cannot collide with Google/Apple sign-in.

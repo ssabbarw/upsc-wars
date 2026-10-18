@@ -6,9 +6,8 @@ import 'package:upsc_wars/core/domain/entities/session_config.dart';
 import 'package:upsc_wars/core/domain/repositories/create_session_repository.dart';
 
 class CreateSessionRepositoryImpl implements CreateSessionRepository {
-  CreateSessionRepositoryImpl({
-    required UserDatabase userDatabase,
-  }) : _userDatabase = userDatabase;
+  CreateSessionRepositoryImpl({required UserDatabase userDatabase})
+    : _userDatabase = userDatabase;
 
   final UserDatabase _userDatabase;
 
@@ -36,15 +35,19 @@ class CreateSessionRepositoryImpl implements CreateSessionRepository {
       }
     } else if (config.subject == 'revision') {
       final active = await _userDatabase.revisionQueueDao.fetchActiveQueue();
-      final uuids = active.take(config.questionCount).map((e) => e.questionUuid).toList();
+      final uuids = active
+          .take(config.questionCount)
+          .map((e) => e.questionUuid)
+          .toList();
       picked = await _userDatabase.questionsDao.getByUuidsInOrder(uuids);
     } else if (config.subject == 'revision_quick') {
       final uuids = await _userDatabase.revisionQueueDao
           .fetchActiveQueueRandomized(config.questionCount);
       picked = await _userDatabase.questionsDao.getByUuidsInOrder(uuids);
     } else if (config.subject == 'bookmarks') {
-      final uuids = await _userDatabase.bookmarksDao
-          .getRandomBookmarkUuids(config.questionCount);
+      final uuids = await _userDatabase.bookmarksDao.getRandomBookmarkUuids(
+        config.questionCount,
+      );
       picked = await _userDatabase.questionsDao.getByUuidsInOrder(uuids);
     } else if (config.subject == 'misc') {
       picked = await _userDatabase.questionsDao.getUnseenFirstRandomMixed(
@@ -54,14 +57,14 @@ class CreateSessionRepositoryImpl implements CreateSessionRepository {
     } else if (topic != null) {
       final sub = config.subTopic?.trim();
       if (sub != null && sub.isNotEmpty) {
-        var subPicked =
-            await _userDatabase.questionsDao.getUnseenFirstByTopicSubTopic(
-          subject: config.subject,
-          topic: topic,
-          subTopic: sub,
-          limit: want,
-          attemptedQuestionUuids: attempted,
-        );
+        var subPicked = await _userDatabase.questionsDao
+            .getUnseenFirstByTopicSubTopic(
+              subject: config.subject,
+              topic: topic,
+              subTopic: sub,
+              limit: want,
+              attemptedQuestionUuids: attempted,
+            );
         if (subPicked.isEmpty) {
           subPicked = await _userDatabase.questionsDao.getUnseenFirstByTopic(
             subject: config.subject,
@@ -107,7 +110,8 @@ class CreateSessionRepositoryImpl implements CreateSessionRepository {
           questionCount: n,
           isTimed: config.isTimed,
           timeLimitSecs: Value(config.timeLimitSecs),
-          examRemainingSecs: (config.mode == 'exam' &&
+          examRemainingSecs:
+              (config.mode == 'exam' &&
                   config.isTimed &&
                   config.timeLimitSecs != null)
               ? Value(config.timeLimitSecs)
@@ -155,7 +159,9 @@ class CreateSessionRepositoryImpl implements CreateSessionRepository {
 
     final uuids = config.specificQuestionUuids;
     if (uuids == null || uuids.isEmpty) {
-      throw StateError('importSessionWithFixedId requires specificQuestionUuids');
+      throw StateError(
+        'importSessionWithFixedId requires specificQuestionUuids',
+      );
     }
 
     final picked = await _userDatabase.questionsDao.getByUuidsInOrder(uuids);
@@ -179,7 +185,8 @@ class CreateSessionRepositoryImpl implements CreateSessionRepository {
           questionCount: n,
           isTimed: config.isTimed,
           timeLimitSecs: Value(config.timeLimitSecs),
-          examRemainingSecs: (config.mode == 'exam' &&
+          examRemainingSecs:
+              (config.mode == 'exam' &&
                   config.isTimed &&
                   config.timeLimitSecs != null)
               ? Value(config.timeLimitSecs)
@@ -219,8 +226,9 @@ Future<Map<String, String>> _fetchLastWrongSelectionsByQuestion(
         : i + _hydrateInChunk;
     final part = questionUuids.sublist(i, end);
     final placeholders = List.filled(part.length, '?').join(',');
-    final rows = await db.customSelect(
-      '''
+    final rows = await db
+        .customSelect(
+          '''
       SELECT q1.question_uuid AS quid, q1.selected_option AS sel
       FROM attempts q1
       INNER JOIN (
@@ -236,13 +244,14 @@ Future<Map<String, String>> _fetchLastWrongSelectionsByQuestion(
         AND q1.attempted_at = t.mx
         AND q1.confidence = ?
       ''',
-      variables: [
-        ...part.map(Variable.withString),
-        Variable.withString(confidence),
-        Variable.withString(confidence),
-      ],
-      readsFrom: {db.sessionQuestions},
-    ).get();
+          variables: [
+            ...part.map(Variable.withString),
+            Variable.withString(confidence),
+            Variable.withString(confidence),
+          ],
+          readsFrom: {db.sessionQuestions},
+        )
+        .get();
     for (final r in rows) {
       final quid = r.read<String>('quid');
       final sel = r.read<String?>('sel');
@@ -267,7 +276,9 @@ Future<void> _hydrateDangerReviseFromHistory(
   );
   if (prior.isEmpty) return;
 
-  final rows = await db.sessionQuestionsDao.getSessionQuestionsOrdered(sessionId);
+  final rows = await db.sessionQuestionsDao.getSessionQuestionsOrdered(
+    sessionId,
+  );
   final now = DateTime.now();
   const valid = {'a', 'b', 'c', 'd'};
 

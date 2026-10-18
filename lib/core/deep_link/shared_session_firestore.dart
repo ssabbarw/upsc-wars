@@ -51,7 +51,9 @@ class SharedSessionFirestoreRepository {
 
   final FirebaseFirestore _db;
 
-  CollectionReference<Map<String, dynamic>> _leaderboardCollection(String shareId) {
+  CollectionReference<Map<String, dynamic>> _leaderboardCollection(
+    String shareId,
+  ) {
     return _db
         .collection(SharedSessionFirestore.collectionName)
         .doc(shareId)
@@ -69,21 +71,26 @@ class SharedSessionFirestoreRepository {
     // Firestore rules expect schemaVersion as a number; use explicit int.
     final safeSubject = subject.trim().isEmpty ? 'Misc' : subject.trim();
     final safeSharedBy = sharedBy?.trim();
-    await _db.collection(SharedSessionFirestore.collectionName).doc(shareId).set({
-      'kind': kind.pathSegment,
-      'subject': safeSubject,
-      if (topic != null && topic.trim().isNotEmpty) 'topic': topic.trim(),
-      if (safeSharedBy != null && safeSharedBy.isNotEmpty)
-        'sharedBy': safeSharedBy,
-      'uuids': questionMaps,
-      'createdAt': FieldValue.serverTimestamp(),
-      'schemaVersion': 1,
-    });
+    await _db
+        .collection(SharedSessionFirestore.collectionName)
+        .doc(shareId)
+        .set({
+          'kind': kind.pathSegment,
+          'subject': safeSubject,
+          if (topic != null && topic.trim().isNotEmpty) 'topic': topic.trim(),
+          if (safeSharedBy != null && safeSharedBy.isNotEmpty)
+            'sharedBy': safeSharedBy,
+          'uuids': questionMaps,
+          'createdAt': FieldValue.serverTimestamp(),
+          'schemaVersion': 1,
+        });
   }
 
   Future<SharedSessionDocument> fetch(String shareId) async {
-    final snap =
-        await _db.collection(SharedSessionFirestore.collectionName).doc(shareId).get();
+    final snap = await _db
+        .collection(SharedSessionFirestore.collectionName)
+        .doc(shareId)
+        .get();
     if (!snap.exists) {
       throw StateError('Shared session not found.');
     }
@@ -152,10 +159,9 @@ class SharedSessionFirestoreRepository {
     int limit = 5,
   }) async {
     final safeLimit = limit < 1 ? 1 : (limit > 20 ? 20 : limit);
-    final snap = await _leaderboardCollection(shareId)
-        .orderBy('score', descending: true)
-        .limit(50)
-        .get();
+    final snap = await _leaderboardCollection(
+      shareId,
+    ).orderBy('score', descending: true).limit(50).get();
 
     final out = <SharedLeaderboardEntry>[];
     for (final d in snap.docs) {
@@ -163,7 +169,10 @@ class SharedSessionFirestoreRepository {
       final name = (m['name'] as String?)?.trim();
       final score = (m['score'] as num?)?.toDouble();
       final attemptedAtMs = (m['attemptedAtMs'] as num?)?.toInt();
-      if (name == null || name.isEmpty || score == null || attemptedAtMs == null) {
+      if (name == null ||
+          name.isEmpty ||
+          score == null ||
+          attemptedAtMs == null) {
         continue;
       }
       out.add(

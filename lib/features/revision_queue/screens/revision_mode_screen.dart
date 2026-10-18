@@ -9,6 +9,7 @@ import 'package:upsc_wars/core/providers/app_language_helpers.dart';
 import 'package:upsc_wars/core/providers/catalog_providers.dart';
 import 'package:upsc_wars/features/history/providers/review_session_provider.dart';
 import 'package:upsc_wars/features/history/screens/session_review_screen.dart';
+import '../../../l10n/l10n.dart';
 
 class RevisionModeScreen extends HookConsumerWidget {
   const RevisionModeScreen({super.key, required this.sessionId});
@@ -23,18 +24,17 @@ class RevisionModeScreen extends HookConsumerWidget {
       body: SafeArea(
         child: review.when(
           loading: () => const Center(child: CircularProgressIndicator()),
-          error:
-              (e, st) => Center(
-                child: FilledButton(
-                  onPressed:
-                      () => ref.invalidate(
-                      reviewSessionProvider(
-                        (sessionId: sessionId, focusWrong: false),
-                      ),
-                    ),
-                  child: const Text('Retry'),
-                ),
+          error: (e, st) => Center(
+            child: FilledButton(
+              onPressed: () => ref.invalidate(
+                reviewSessionProvider((
+                  sessionId: sessionId,
+                  focusWrong: false,
+                )),
               ),
+              child: Text(context.l10n.commonRetry),
+            ),
+          ),
           data: (state) {
             final index = useState(0);
             final preferredLanguage = watchAppLanguage(ref);

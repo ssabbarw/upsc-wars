@@ -25,15 +25,14 @@ class QuestionCorrectionsSyncService {
   int get localRevision =>
       _prefs.getInt(PrefKeys.questionCorrectionsRevision) ?? 0;
 
-  int? get lastSyncedAtMs => _prefs.getInt(PrefKeys.questionCorrectionsSyncedAtMs);
+  int? get lastSyncedAtMs =>
+      _prefs.getInt(PrefKeys.questionCorrectionsSyncedAtMs);
 
   bool shouldSyncNow({DateTime? now}) {
     final last = lastSyncedAtMs;
     if (last == null) return true;
     final clock = now ?? DateTime.now();
-    final elapsed = clock.difference(
-      DateTime.fromMillisecondsSinceEpoch(last),
-    );
+    final elapsed = clock.difference(DateTime.fromMillisecondsSinceEpoch(last));
     return elapsed >= syncInterval;
   }
 
@@ -80,10 +79,7 @@ class QuestionCorrectionsSyncService {
       }
 
       await _upsert.applyCorrections(maps);
-      await _prefs.setInt(
-        PrefKeys.questionCorrectionsRevision,
-        activeRevision,
-      );
+      await _prefs.setInt(PrefKeys.questionCorrectionsRevision, activeRevision);
       await _touchSyncedAt();
       return maps.length;
     } catch (e, st) {

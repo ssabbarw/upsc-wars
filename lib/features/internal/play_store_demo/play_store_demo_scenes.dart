@@ -119,7 +119,8 @@ class PlayStoreDemoScene extends StatelessWidget {
         autoSwitchToStrong: false,
       ),
       PlayStoreDemoBeat.gamesHub => const _GamesHubScene(),
-      PlayStoreDemoBeat.gameTimelineSorter => const _TimelineSorterTrailerScene(),
+      PlayStoreDemoBeat.gameTimelineSorter =>
+        const _TimelineSorterTrailerScene(),
       PlayStoreDemoBeat.gameFactOrBluff => const _FactOrBluffScene(),
       PlayStoreDemoBeat.endCard => const _EndCardScene(),
     };
@@ -486,13 +487,7 @@ class _ExplanationScene extends HookWidget {
         );
       });
       return null;
-    }, [
-      scrollMode,
-      forceTab,
-      forceDeepDive,
-      highlightWatchOut,
-      highlightTrap,
-    ]);
+    }, [scrollMode, forceTab, forceDeepDive, highlightWatchOut, highlightTrap]);
 
     return ColoredBox(
       color: scheme.surface,
@@ -801,11 +796,7 @@ class _DzDangerTab extends StatelessWidget {
               padding: EdgeInsets.zero,
               children: [
                 for (final t in topics)
-                  _AccuracyTopicRow(
-                    name: t.$1,
-                    accuracy: t.$2,
-                    accent: accent,
-                  ),
+                  _AccuracyTopicRow(name: t.$1, accuracy: t.$2, accent: accent),
               ],
             ),
           ),
@@ -1181,10 +1172,7 @@ class _TimelineSorterTrailerScene extends HookWidget {
                           ),
                           Text(
                             'Modern History · Set 1/10',
-                            style: RgText.body(
-                              size: 12,
-                              color: RgColors.muted,
-                            ),
+                            style: RgText.body(size: 12, color: RgColors.muted),
                           ),
                         ],
                       ),
@@ -1227,9 +1215,11 @@ class _TimelineSorterTrailerScene extends HookWidget {
                   return Stack(
                     clipBehavior: Clip.none,
                     children: [
-                      for (var eventIndex = 0;
-                          eventIndex < _events.length;
-                          eventIndex++)
+                      for (
+                        var eventIndex = 0;
+                        eventIndex < _events.length;
+                        eventIndex++
+                      )
                         AnimatedPositioned(
                           key: ValueKey(eventIndex),
                           duration: const Duration(milliseconds: 420),
@@ -1297,7 +1287,10 @@ class _TimelineTrailerRow extends StatelessWidget {
     return AnimatedContainer(
       duration: const Duration(milliseconds: 280),
       curve: Curves.easeOutCubic,
-      padding: EdgeInsets.symmetric(horizontal: 12, vertical: revealed ? 10 : 11),
+      padding: EdgeInsets.symmetric(
+        horizontal: 12,
+        vertical: revealed ? 10 : 11,
+      ),
       decoration: BoxDecoration(
         color: revealed ? RgColors.correctBg : RgColors.card,
         borderRadius: BorderRadius.circular(RgRadius.md),
@@ -1513,11 +1506,7 @@ class _EndCardScene extends StatelessWidget {
                 const SizedBox(height: 12),
                 const _StoreBadge(
                   background: Color(0xFF000000),
-                  icon: Icon(
-                    Icons.apple,
-                    size: 30,
-                    color: Colors.white,
-                  ),
+                  icon: Icon(Icons.apple, size: 30, color: Colors.white),
                   eyebrow: 'Download on the',
                   title: 'App Store',
                 ),

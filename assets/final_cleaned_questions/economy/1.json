@@ -124,8 +124,14 @@
     "negative_framing": false
   },
   {
+    "uuid": "bfbbcef7-a6f7-4c32-953f-c38d55b623f8",
     "meta": {
-      "subject": "Economy"
+      "subject": "Economy",
+      "topic": "Agriculture",
+      "sub_topic": "Agricultural credit — Kisan Credit Card",
+      "concepts_used": [
+        "KCC Validity Period vs. Repayment Schedule of Individual Drawals"
+      ]
     },
     "shared": {
       "correct_option": "c",

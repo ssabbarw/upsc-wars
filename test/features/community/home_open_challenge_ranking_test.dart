@@ -25,7 +25,11 @@ void main() {
   group('rankHomeOpenChallenges', () {
     test('a contested challenge outranks a fresher empty one', () {
       final ranked = rankHomeOpenChallenges([
-        _tile(id: 'fresh', attemptCount: 1, postedAt: DateTime(2026, 8, 17, 20)),
+        _tile(
+          id: 'fresh',
+          attemptCount: 1,
+          postedAt: DateTime(2026, 8, 17, 20),
+        ),
         _tile(id: 'busy', attemptCount: 9, postedAt: DateTime(2026, 8, 17, 6)),
       ]);
       expect(ranked.map((c) => c.id), ['busy', 'fresh']);

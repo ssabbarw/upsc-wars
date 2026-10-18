@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../../core/theme/reading_font_scale.dart';
 import 'revision_games_theme.dart';
+import '../../../l10n/l10n.dart';
 
 /// Compact EN | हि control for cream games surfaces. Tap **anywhere** toggles
 /// (avoids tiny per-segment hit targets). Uses [RgColors], not app ColorScheme,
@@ -375,7 +376,7 @@ class RgSessionCompleteView extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const RgMonoLabel('Session complete'),
+            RgMonoLabel(context.l10n.gmSessionComplete),
             const SizedBox(height: 10),
             Text(
               '$correct / $total',
@@ -388,13 +389,16 @@ class RgSessionCompleteView extends StatelessWidget {
             ),
             const SizedBox(height: 6),
             Text(
-              strong ? 'Solid recall.' : 'Worth another pass.',
+              strong ? context.l10n.gmSolid : context.l10n.gmAnotherPass,
               style: RgText.body(size: 13, weight: FontWeight.w600),
             ),
             const SizedBox(height: 22),
             SizedBox(
               width: 200,
-              child: RgPillButton(label: 'Play again', onPressed: onPlayAgain),
+              child: RgPillButton(
+                label: context.l10n.gmPlayAgain,
+                onPressed: onPlayAgain,
+              ),
             ),
             const SizedBox(height: 4),
             TextButton(
@@ -402,7 +406,7 @@ class RgSessionCompleteView extends StatelessWidget {
                   context.canPop() ? context.pop() : context.go('/games'),
               style: TextButton.styleFrom(foregroundColor: RgColors.muted),
               child: Text(
-                'Back to games',
+                context.l10n.gmBackToGames,
                 style: RgText.body(size: 13, color: RgColors.muted),
               ),
             ),

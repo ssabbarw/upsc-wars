@@ -141,7 +141,9 @@ class ScreenDwellRouteObserver extends NavigatorObserver {
     if (oldRoute != null) {
       _removeRoute(oldRoute, 'replaced');
     }
-    if (newRoute != null && isTracked(newRoute) && !_byRoute.containsKey(newRoute)) {
+    if (newRoute != null &&
+        isTracked(newRoute) &&
+        !_byRoute.containsKey(newRoute)) {
       _byRoute[newRoute] = _Dwell()..startSegment(_nowMs());
     }
   }

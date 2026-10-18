@@ -77,7 +77,9 @@ class _UnreadPulseWrapperState extends State<UnreadPulseWrapper>
             decoration: BoxDecoration(
               boxShadow: [
                 BoxShadow(
-                  color: widget.scheme.primary.withValues(alpha: primaryGlow * 0.55),
+                  color: widget.scheme.primary.withValues(
+                    alpha: primaryGlow * 0.55,
+                  ),
                   blurRadius: blur,
                   spreadRadius: 0.8 * t,
                 ),

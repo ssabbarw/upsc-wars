@@ -333,9 +333,15 @@ class SettingsScreen extends ConsumerWidget {
             ],
             if (isSignedIn) ...[
               const SizedBox(height: AppSpacing.lg),
-              _Section(title: context.l10n.settingsSectionPrivacy, children: [_BlockedUsersTile()]),
+              _Section(
+                title: context.l10n.settingsSectionPrivacy,
+                children: [_BlockedUsersTile()],
+              ),
               const SizedBox(height: AppSpacing.lg),
-              _Section(title: context.l10n.settingsSectionAccount, children: [_LogoutTile()]),
+              _Section(
+                title: context.l10n.settingsSectionAccount,
+                children: [_LogoutTile()],
+              ),
             ],
             const SizedBox(height: AppSpacing.xl),
             Center(
@@ -757,14 +763,15 @@ class _ContentLanguageTile extends ConsumerWidget {
         bg: Color(0xFFE1F5EE),
         color: Color(0xFF0F6E56),
       ),
-      title: Text(context.l10n.settingsLanguageTitle, style: AppTextStyles.label()),
+      title: Text(
+        context.l10n.settingsLanguageTitle,
+        style: AppTextStyles.label(),
+      ),
       subtitle: Text(
         isHindi
             ? context.l10n.settingsLanguageSubtitleHi
             : context.l10n.settingsLanguageSubtitleEn,
-        style: AppTextStyles.bodySm().copyWith(
-          color: scheme.onSurfaceVariant,
-        ),
+        style: AppTextStyles.bodySm().copyWith(color: scheme.onSurfaceVariant),
       ),
       trailing: Icon(
         Icons.chevron_right_rounded,
@@ -774,10 +781,7 @@ class _ContentLanguageTile extends ConsumerWidget {
         horizontal: AppSpacing.lg,
         vertical: 10,
       ),
-      onTap: () => showContentLanguageChoiceSheet(
-        context: context,
-        ref: ref,
-      ),
+      onTap: () => showContentLanguageChoiceSheet(context: context, ref: ref),
     );
   }
 }
@@ -804,7 +808,10 @@ class _DarkModeTile extends ConsumerWidget {
                 bg: const Color(0xFFEEF1F6),
                 color: const Color(0xFF334155),
               ),
-              title: Text(context.l10n.settingsDarkMode, style: AppTextStyles.label()),
+              title: Text(
+                context.l10n.settingsDarkMode,
+                style: AppTextStyles.label(),
+              ),
               subtitle: Text(
                 context.l10n.settingsDarkModeSubtitle,
                 style: AppTextStyles.bodySm().copyWith(
@@ -874,7 +881,10 @@ class _ReadingSizeTile extends ConsumerWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(context.l10n.settingsReadingSize, style: AppTextStyles.label()),
+                    Text(
+                      context.l10n.settingsReadingSize,
+                      style: AppTextStyles.label(),
+                    ),
                     Text(
                       context.l10n.settingsReadingSizeSubtitle,
                       style: AppTextStyles.bodySm().copyWith(
@@ -1049,7 +1059,10 @@ class _PrelimsPersistentNotificationTile extends ConsumerWidget {
           bg: Color(0xFFE8F7F0),
           color: Color(0xFF0F8F5E),
         ),
-        title: Text(context.l10n.settingsStatusBarReminder, style: AppTextStyles.label()),
+        title: Text(
+          context.l10n.settingsStatusBarReminder,
+          style: AppTextStyles.label(),
+        ),
         subtitle: Text(
           context.l10n.settingsAndroidOnly,
           style: AppTextStyles.bodySm().copyWith(

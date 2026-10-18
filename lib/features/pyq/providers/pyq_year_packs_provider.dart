@@ -17,8 +17,8 @@ class PyqYearPacksData {
   final List<bool> packCompleted;
 }
 
-final pyqYearPacksDataProvider =
-    FutureProvider.autoDispose.family<PyqYearPacksData, String>((ref, year) async {
+final pyqYearPacksDataProvider = FutureProvider.autoDispose
+    .family<PyqYearPacksData, String>((ref, year) async {
       final subject = PyqConstants.subjectSlugForYear(year);
       final db = ref.watch(userDatabaseProvider);
       final questions = await db.questionsDao.getBySubjectPaperOrder(subject);
@@ -33,7 +33,9 @@ final pyqYearPacksDataProvider =
       final perPack = PyqConstants.questionsPerPack;
       final packs = <List<String>>[];
       for (var i = 0; i < questions.length; i += perPack) {
-        final end = i + perPack > questions.length ? questions.length : i + perPack;
+        final end = i + perPack > questions.length
+            ? questions.length
+            : i + perPack;
         packs.add(questions.sublist(i, end).map((q) => q.uuid).toList());
       }
       final done = <bool>[];

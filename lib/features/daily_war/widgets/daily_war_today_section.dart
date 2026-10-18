@@ -15,6 +15,7 @@ import '../domain/daily_war_phase.dart';
 import '../domain/daily_war_schedule.dart';
 import '../providers/daily_war_providers.dart';
 import '../providers/server_clock_provider.dart';
+import '../../../l10n/l10n.dart';
 
 /// Tonight's War on the calendar hub — timer until 9 PM, then join.
 class DailyWarTodaySection extends HookConsumerWidget {
@@ -70,93 +71,97 @@ class DailyWarTodaySection extends HookConsumerWidget {
     final String subtext;
 
     if (snap.phase == DailyWarPhase.restDay) {
-      eyebrow = 'SUNDAY OFF';
-      headline = 'No live paper today.';
-      subtext = 'Next ${DailyWarCopy.dailyEventName} is Monday at 9:00 PM IST.';
+      eyebrow = context.l10n.dwSundayOff;
+      headline = context.l10n.dwNoLivePaper;
+      subtext = context.l10n.dwNextEventMonday(DailyWarCopy.dailyEventName);
       cta = null;
       onCta = null;
       ctaIcon = Icons.play_arrow_rounded;
     } else if (snap.submission != null) {
       eyebrow = DailyWarCopy.eventNameCaps(isGrand: isGrand);
-      headline = topicsLine.isNotEmpty
-          ? topicsLine
-          : 'You were in tonight\'s paper.';
+      headline = topicsLine.isNotEmpty ? topicsLine : context.l10n.dwYouWereIn;
       subtext = snap.submission!.hasOfficialRank
-          ? 'Open your rank and explanations.'
-          : 'Your attempt is in. Results will follow.';
+          ? context.l10n.dwOpenRankExpl
+          : context.l10n.dwAttemptInResultsFollow;
       cta = snap.submission!.hasOfficialRank
-          ? 'View results'
-          : 'Open your attempt';
+          ? context.l10n.dcaViewResults
+          : context.l10n.dwOpenAttempt;
       onCta = onOpenResults;
       ctaIcon = Icons.replay_rounded;
     } else if (snap.phase == DailyWarPhase.lobby) {
-      eyebrow = 'LOBBY OPEN';
+      eyebrow = context.l10n.dwLobbyOpen;
       headline = topicsLine.isNotEmpty
           ? topicsLine
           : (isGrand
-                ? '${DailyWarCopy.grandEventName} lobby is open.'
-                : '${DailyWarCopy.dailyEventName} lobby is open.');
-      subtext = 'Paper starts at 9:00 PM IST.';
+                ? context.l10n.dwEventLobbyOpen(DailyWarCopy.grandEventName)
+                : context.l10n.dwEventLobbyOpen(DailyWarCopy.dailyEventName));
+      subtext = context.l10n.dwPaperStarts9;
       cta = untilStart.isNegative
-          ? 'Starting…'
-          : 'Starts in ${DailyWarSchedule.formatCountdown(untilStart)}';
+          ? context.l10n.dwStarting
+          : context.l10n.dwStartsIn(
+              DailyWarSchedule.formatCountdown(untilStart),
+            );
       onCta = null;
       ctaIcon = Icons.schedule_rounded;
     } else if (snap.phase == DailyWarPhase.liveJoinable) {
-      eyebrow = 'LIVE NOW';
+      eyebrow = context.l10n.dwLiveNow;
       headline = topicsLine.isNotEmpty
           ? topicsLine
           : (isGrand
                 ? '${DailyWarCopy.grandEventName}.'
                 : '${DailyWarCopy.dailyEventName}.');
-      subtext = 'All-India live paper. Join before the window closes.';
+      subtext = context.l10n.dwLiveJoinBefore;
       cta = launching
-          ? 'Starting…'
+          ? context.l10n.dwStarting
           : accountSignedIn
-          ? 'Join now'
-          : 'Sign in to join';
+          ? context.l10n.dwJoinNow
+          : context.l10n.dwSignInJoin;
       onCta = launching ? null : onJoinLive;
       ctaIcon = accountSignedIn
           ? Icons.play_arrow_rounded
           : Icons.login_rounded;
     } else if (snap.phase == DailyWarPhase.liveLocked) {
-      eyebrow = 'IN PROGRESS';
+      eyebrow = context.l10n.dwInProgress;
       headline = topicsLine.isNotEmpty
           ? topicsLine
-          : '${DailyWarCopy.eventName(isGrand: isGrand)} is live.';
-      subtext = 'Entry closed at 9:10 PM IST. Ranks at 9:40 PM.';
-      cta = 'Late join closed';
+          : context.l10n.dwEventIsLive(
+              DailyWarCopy.eventName(isGrand: isGrand),
+            );
+      subtext = context.l10n.dwEntryClosedRanks;
+      cta = context.l10n.dwLateJoinClosed;
       onCta = null;
       ctaIcon = Icons.lock_outline_rounded;
     } else if (snap.phase == DailyWarPhase.resultsPending ||
         snap.phase == DailyWarPhase.resultsReady) {
       eyebrow = DailyWarCopy.eventNameCaps(isGrand: isGrand);
-      headline = 'Tonight\'s live window has closed.';
-      subtext = 'You can still attempt this paper unranked.';
+      headline = context.l10n.dwWindowClosed;
+      subtext = context.l10n.dwStillUnranked;
       cta = launching
-          ? 'Starting…'
+          ? context.l10n.dwStarting
           : accountSignedIn
-          ? 'Attempt unranked'
-          : 'Sign in to attempt';
+          ? context.l10n.dwAttemptUnranked
+          : context.l10n.dwSignInAttempt;
       onCta = launching ? null : onAttemptUnranked;
       ctaIcon = accountSignedIn
           ? Icons.play_arrow_rounded
           : Icons.login_rounded;
     } else {
       eyebrow = isGrand
-          ? '${DailyWarCopy.grandEventNameCaps} TONIGHT'
+          ? context.l10n.dwEventTonight(DailyWarCopy.grandEventNameCaps)
           : DailyWarCopy.dailyEventNameCaps;
       headline = topicsLine.isNotEmpty
           ? topicsLine
           : (isGrand
-                ? 'Week revision. Same paper, All-India.'
-                : 'All-India live paper. Lobby opens at 8:59 PM.');
+                ? context.l10n.dwWeekRevision
+                : context.l10n.dwLobbyOpens859);
       subtext = isGrand
-          ? 'Saturday ${DailyWarCopy.grandEventName} starts at 9:00 PM IST.'
-          : '${DailyWarCopy.dailyEventName} starts at 9:00 PM IST.';
+          ? context.l10n.dwSatEventStarts(DailyWarCopy.grandEventName)
+          : context.l10n.dwEventStarts(DailyWarCopy.dailyEventName);
       cta = untilStart.isNegative
-          ? 'Starting…'
-          : 'Starts in ${DailyWarSchedule.formatCountdown(untilStart)}';
+          ? context.l10n.dwStarting
+          : context.l10n.dwStartsIn(
+              DailyWarSchedule.formatCountdown(untilStart),
+            );
       onCta = null;
       ctaIcon = Icons.schedule_rounded;
     }
@@ -177,10 +182,10 @@ class DailyWarTodaySection extends HookConsumerWidget {
     final nextIsGrand = nextStart.weekday == DateTime.saturday;
     final nextEvent = DailyWarCopy.eventName(isGrand: nextIsGrand);
     final footerLabel = nextIsTonight
-        ? 'Tonight\'s $nextEvent starts at 9 PM'
+        ? context.l10n.dwFooterTonight(nextEvent)
         : nextStart.weekday == DateTime.monday
-        ? 'Monday\'s $nextEvent starts at 9 PM'
-        : 'Next $nextEvent starts at 9 PM';
+        ? context.l10n.dwFooterMonday(nextEvent)
+        : context.l10n.dwFooterNext(nextEvent);
 
     return DecoratedBox(
       decoration: BoxDecoration(

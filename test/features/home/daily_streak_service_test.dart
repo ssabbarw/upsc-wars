@@ -93,10 +93,7 @@ void main() {
         now: DateTime(2026, 8, 18),
       );
       // Already celebrated 3; no re-queue. Day 4 is not a milestone.
-      expect(
-        DailyStreakService.consumePendingMilestoneCelebration(prefs),
-        3,
-      );
+      expect(DailyStreakService.consumePendingMilestoneCelebration(prefs), 3);
       expect(prefs.pendingStreakMilestoneCelebration, isNull);
     });
   });
@@ -292,17 +289,11 @@ void main() {
       DailyStreakService.recordFullDay(prefs: prefs, now: now);
       DailyStreakService.recordFullDay(prefs: prefs, now: now);
       expect(prefs.todayFullDayDates.length, 1);
-      expect(
-        DailyStreakService.fullDaysThisWeek(prefs: prefs, now: now),
-        1,
-      );
+      expect(DailyStreakService.fullDaysThisWeek(prefs: prefs, now: now), 1);
     });
 
     test('full days older than a week drop out of the count', () {
-      DailyStreakService.recordFullDay(
-        prefs: prefs,
-        now: DateTime(2026, 8, 1),
-      );
+      DailyStreakService.recordFullDay(prefs: prefs, now: DateTime(2026, 8, 1));
       DailyStreakService.recordFullDay(
         prefs: prefs,
         now: DateTime(2026, 8, 16),

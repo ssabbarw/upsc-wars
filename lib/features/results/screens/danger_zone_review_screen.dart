@@ -17,6 +17,7 @@ import '../../../core/theme/app_text_styles.dart';
 import '../../history/screens/session_review_screen.dart';
 import '../../home/domain/demo_diagnostic_ephemeral_store.dart';
 import '../providers/danger_zone_review_provider.dart';
+import '../../../l10n/l10n.dart';
 
 class DangerZoneReviewScreen extends HookConsumerWidget {
   const DangerZoneReviewScreen({super.key, required this.sessionId});
@@ -27,47 +28,56 @@ class DangerZoneReviewScreen extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final async = ref.watch(dangerZoneQuestionsProvider(sessionId));
 
-    final hPad = AppBreakpoints.fullScreenHPadding(MediaQuery.sizeOf(context).width);
+    final hPad = AppBreakpoints.fullScreenHPadding(
+      MediaQuery.sizeOf(context).width,
+    );
     return Scaffold(
       body: SafeArea(
         child: Padding(
           padding: hPad,
           child: async.when(
-          loading: () => const Center(child: CircularProgressIndicator()),
-          error: (_, _) => Center(
-            child: Padding(
-              padding: const EdgeInsets.all(AppSpacing.xxl),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text('Could not load review', style: AppTextStyles.body()),
-                  const SizedBox(height: AppSpacing.md),
-                  OutlinedButton(
-                    onPressed: () =>
-                        ref.invalidate(dangerZoneQuestionsProvider(sessionId)),
-                    child: const Text('Retry'),
-                  ),
-                ],
+            loading: () => const Center(child: CircularProgressIndicator()),
+            error: (_, _) => Center(
+              child: Padding(
+                padding: const EdgeInsets.all(AppSpacing.xxl),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      context.l10n.resultsReviewLoadFailed,
+                      style: AppTextStyles.body(),
+                    ),
+                    const SizedBox(height: AppSpacing.md),
+                    OutlinedButton(
+                      onPressed: () => ref.invalidate(
+                        dangerZoneQuestionsProvider(sessionId),
+                      ),
+                      child: Text(context.l10n.commonRetry),
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
-          data: (questions) {
-            if (questions.isEmpty) {
-              return _EmptyDangerZone(
-                onBack: () {
-                  ScreenFlow.logAction(
-                    ref,
-                    screenName: ScreenFlow.dangerZoneReview,
-                    actionId: 'back',
-                    actionKind: 'back',
-                  );
-                  context.pop();
-                },
+            data: (questions) {
+              if (questions.isEmpty) {
+                return _EmptyDangerZone(
+                  onBack: () {
+                    ScreenFlow.logAction(
+                      ref,
+                      screenName: ScreenFlow.dangerZoneReview,
+                      actionId: 'back',
+                      actionKind: 'back',
+                    );
+                    context.pop();
+                  },
+                );
+              }
+              return _DangerZonePager(
+                sessionId: sessionId,
+                questions: questions,
               );
-            }
-            return _DangerZonePager(sessionId: sessionId, questions: questions);
-          },
-        ),
+            },
+          ),
         ),
       ),
     );
@@ -90,13 +100,12 @@ class _EmptyDangerZone extends StatelessWidget {
           IconButton(onPressed: onBack, icon: const Icon(Icons.chevron_left)),
           const Spacer(),
           Text(
-            'No Danger Zone items',
+            context.l10n.resultsNoDangerItems,
             style: AppTextStyles.h2().copyWith(color: scheme.onSurface),
           ),
           const SizedBox(height: AppSpacing.sm),
           Text(
-            'Wrong answers without a confidence pick, or where you marked '
-            '"Guessing", do not appear here.',
+            context.l10n.resultsNoDangerBody,
             style: AppTextStyles.bodyMd().copyWith(
               color: scheme.onSurfaceVariant,
             ),
@@ -210,7 +219,7 @@ class _DangerZonePager extends HookConsumerWidget {
               uiLanguage.value = lang;
               unawaited(persistAppLanguage(ref, lang));
             },
-            confidenceBanner: 'You were $confLabel',
+            confidenceBanner: context.l10n.resultsYouWere(confLabel),
           ),
         ),
       ],

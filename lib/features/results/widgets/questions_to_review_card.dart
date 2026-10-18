@@ -12,6 +12,7 @@ import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../domain/session_insight_case.dart';
+import '../../../l10n/l10n.dart';
 
 /// Session summary hero for sure-wrong / educated-guess-wrong (cases A–C).
 class QuestionsToReviewCard extends ConsumerWidget {
@@ -36,12 +37,12 @@ class QuestionsToReviewCard extends ConsumerWidget {
 
   String get _headline {
     if (sureWrong > 0 && eduWrong > 0) {
-      return 'You lost marks on $_total questions — some you were sure about';
+      return appL10n.resultsQrMixed(_total);
     }
     if (sureWrong > 0) {
-      return 'You lost marks on $sureWrong question${sureWrong == 1 ? '' : 's'} — you were sure about ${sureWrong == 1 ? 'it' : 'them'}';
+      return appL10n.resultsQrSure(sureWrong);
     }
-    return 'You lost marks on $eduWrong question${eduWrong == 1 ? '' : 's'} — your educated guess didn\'t pay off';
+    return appL10n.resultsQrEdu(eduWrong);
   }
 
   @override
@@ -52,7 +53,9 @@ class QuestionsToReviewCard extends ConsumerWidget {
         ? AppColors.wrongBgDark.withValues(alpha: 0.65)
         : AppColors.coachDangerSurfaceLight;
     final border = AppColors.coachDangerBorder;
-    final accent = isDark ? AppColors.wrongTextDark : AppColors.coachDangerTitleText;
+    final accent = isDark
+        ? AppColors.wrongTextDark
+        : AppColors.coachDangerTitleText;
 
     return Container(
       decoration: BoxDecoration(
@@ -69,7 +72,7 @@ class QuestionsToReviewCard extends ConsumerWidget {
             children: [
               Expanded(
                 child: Text(
-                  'QUESTIONS TO REVIEW',
+                  context.l10n.resultsQrTitle,
                   style: AppTextStyles.caption().copyWith(
                     fontWeight: FontWeight.w800,
                     letterSpacing: 1.1,
@@ -115,17 +118,17 @@ class QuestionsToReviewCard extends ConsumerWidget {
           ],
           const SizedBox(height: AppSpacing.md),
           Text(
-            'These questions may reveal:',
+            context.l10n.resultsQrReveal,
             style: AppTextStyles.bodySm().copyWith(
               color: accent,
               fontWeight: FontWeight.w600,
             ),
           ),
           const SizedBox(height: AppSpacing.xs),
-          for (final bullet in const [
-            'Concepts that feel familiar but aren\'t fully clear',
-            'Topics where the detail matters and you missed it',
-            'Avoidable exam-day mistakes',
+          for (final bullet in [
+            context.l10n.resultsQrBullet1,
+            context.l10n.resultsQrBullet2,
+            context.l10n.resultsQrBullet3,
           ])
             Padding(
               padding: const EdgeInsets.only(bottom: 4),
@@ -159,7 +162,9 @@ class QuestionsToReviewCard extends ConsumerWidget {
                     ? scheme.surface.withValues(alpha: 0.5)
                     : Colors.white,
                 side: BorderSide(
-                  color: isDark ? AppColors.borderDark : AppColors.summaryButtonBorder,
+                  color: isDark
+                      ? AppColors.borderDark
+                      : AppColors.summaryButtonBorder,
                 ),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(AppRadius.md),
@@ -168,7 +173,7 @@ class QuestionsToReviewCard extends ConsumerWidget {
               onPressed: () => _onReviewMistakes(context, ref),
               icon: const Icon(Icons.medical_services_outlined, size: 20),
               label: Text(
-                'Review your mistakes',
+                context.l10n.resultsReviewYourMistakes,
                 style: AppTextStyles.label().copyWith(
                   fontWeight: FontWeight.w800,
                 ),

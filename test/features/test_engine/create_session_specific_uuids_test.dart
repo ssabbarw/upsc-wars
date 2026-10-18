@@ -18,7 +18,9 @@ void main() {
     db = UserDatabase(NativeDatabase.memory());
     repo = CreateSessionRepositoryImpl(userDatabase: db);
     for (final uuid in ['qu1', 'qu2']) {
-      await db.into(db.questions).insert(
+      await db
+          .into(db.questions)
+          .insert(
             QuestionsCompanion.insert(
               uuid: uuid,
               subject: 'ancient_history',
@@ -36,10 +38,7 @@ void main() {
 
   tearDown(() async => db.close());
 
-  SessionConfig configFor(
-    List<String> uuids, {
-    required bool requireAll,
-  }) {
+  SessionConfig configFor(List<String> uuids, {required bool requireAll}) {
     return SessionConfig(
       subject: 'daily_war',
       mode: 'exam',

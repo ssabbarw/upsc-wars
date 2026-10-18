@@ -8,6 +8,7 @@ import '../../../shared/widgets/app_toast.dart';
 import '../../../shared/widgets/tappable_circular_avatar.dart';
 import '../providers/user_block_providers.dart';
 import '../widgets/admin_bot_label.dart';
+import '../../../l10n/l10n.dart';
 
 class BlockedUsersScreen extends ConsumerWidget {
   const BlockedUsersScreen({super.key});
@@ -26,7 +27,7 @@ class BlockedUsersScreen extends ConsumerWidget {
         error: (_, __) => Center(
           child: OutlinedButton(
             onPressed: () => ref.invalidate(blockedUserEmailsProvider),
-            child: const Text('Retry'),
+            child: Text(context.l10n.commonRetry),
           ),
         ),
         data: (emails) {
@@ -38,13 +39,13 @@ class BlockedUsersScreen extends ConsumerWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      'No one blocked',
+                      context.l10n.blockedNone,
                       style: AppTextStyles.h3(),
                       textAlign: TextAlign.center,
                     ),
                     const SizedBox(height: AppSpacing.sm),
                     Text(
-                      'People you block won’t be able to message you or send battle invites.',
+                      context.l10n.blockedNote,
                       style: AppTextStyles.bodyMd().copyWith(
                         color: scheme.onSurfaceVariant,
                       ),
@@ -101,7 +102,7 @@ class BlockedUsersScreen extends ConsumerWidget {
                       const SizedBox(width: AppSpacing.sm),
                       TextButton(
                         onPressed: () => _unblock(context, ref, email, name),
-                        child: const Text('Unblock'),
+                        child: Text(context.l10n.blockedUnblock),
                       ),
                     ],
                   ),
@@ -122,16 +123,18 @@ class BlockedUsersScreen extends ConsumerWidget {
   ) async {
     HapticFeedback.selectionClick();
     try {
-      await ref.read(blockedUserEmailsProvider.notifier).setBlocked(
-            otherEmail: email,
-            blocked: false,
-          );
+      await ref
+          .read(blockedUserEmailsProvider.notifier)
+          .setBlocked(otherEmail: email, blocked: false);
       if (context.mounted) {
-        AppToast.showText(context, '$name has been unblocked.');
+        AppToast.showText(context, context.l10n.blockedUnblocked(name));
       }
     } catch (e) {
       if (context.mounted) {
-        AppToast.showText(context, 'Could not unblock: $e');
+        AppToast.showText(
+          context,
+          context.l10n.blockedUnblockFailed(e.toString()),
+        );
       }
     }
   }

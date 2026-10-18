@@ -96,10 +96,7 @@ Future<void> showDailyRitualsIntroSheet(
 }
 
 class _DailyRitualsIntroSheet extends ConsumerStatefulWidget {
-  const _DailyRitualsIntroSheet({
-    required this.fromHelp,
-    required this.items,
-  });
+  const _DailyRitualsIntroSheet({required this.fromHelp, required this.items});
 
   final bool fromHelp;
   final List<DailyRitualCopy> items;
@@ -193,10 +190,7 @@ class _DailyRitualsIntroSheetState
               const SizedBox(height: AppSpacing.lg),
               for (var i = 0; i < widget.items.length; i++) ...[
                 if (i > 0) const SizedBox(height: AppSpacing.sm),
-                _RitualRow(
-                  ritual: widget.items[i],
-                  isDark: isDark,
-                ),
+                _RitualRow(ritual: widget.items[i], isDark: isDark),
               ],
               const SizedBox(height: AppSpacing.lg),
               FilledButton(
@@ -227,10 +221,7 @@ class _DailyRitualsIntroSheetState
 }
 
 class _RitualRow extends StatelessWidget {
-  const _RitualRow({
-    required this.ritual,
-    required this.isDark,
-  });
+  const _RitualRow({required this.ritual, required this.isDark});
 
   final DailyRitualCopy ritual;
   final bool isDark;

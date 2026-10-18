@@ -150,7 +150,9 @@ abstract final class DailyCaSchedule {
   static DateTime expectedPaperContentDate({DateTime? referenceIst}) {
     final now = referenceIst ?? nowIst();
     final cursor = dateOnly(now).subtract(const Duration(days: 1));
-    return isTestDay(cursor) ? cursor : cursor.subtract(const Duration(days: 1));
+    return isTestDay(cursor)
+        ? cursor
+        : cursor.subtract(const Duration(days: 1));
   }
 
   /// Recent newspaper-pack dates to prefetch (walks back past Sundays).

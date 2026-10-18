@@ -4,13 +4,11 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../l10n/l10n.dart';
 
 /// Why trap counts exist — shown above the catalog on [TrapPatternsScreen].
 class TrapPatternsTrackingNote extends StatelessWidget {
   const TrapPatternsTrackingNote({super.key});
-
-  static const message =
-      'We keep track of which traps catch you most, so you can watch for them in the exam.';
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +24,7 @@ class TrapPatternsTrackingNote extends StatelessWidget {
         borderRadius: BorderRadius.circular(AppRadius.md),
       ),
       child: Text(
-        message,
+        context.l10n.trapsTrackingNote,
         style: AppTextStyles.bodySm().copyWith(color: fg, height: 1.4),
       ),
     );

@@ -25,7 +25,8 @@ abstract final class ScreenFlow {
   static const String revisionQueue = 'revision_queue';
   static const String battleResults = 'battle_results';
 
-  static List<String> shellTabNames({required bool hasCommunity}) => hasCommunity
+  static List<String> shellTabNames({required bool hasCommunity}) =>
+      hasCommunity
       ? const ['home', 'progress', 'games', 'community']
       : const ['home', 'progress', 'games'];
 
@@ -38,7 +39,9 @@ abstract final class ScreenFlow {
     final names = shellTabNames(hasCommunity: hasCommunity);
     if (fromIndex < 0 || fromIndex >= names.length) return;
     if (durationMs < 0) return;
-    await ref.read(analyticsServiceProvider).track(
+    await ref
+        .read(analyticsServiceProvider)
+        .track(
           ScreenDwellEndedEvent(
             screenName: names[fromIndex],
             durationMs: durationMs,

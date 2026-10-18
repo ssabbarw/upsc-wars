@@ -5,5 +5,6 @@ class MarkSessionAbandonedUseCase {
 
   final TestEngineRepository _repository;
 
-  Future<void> execute(String sessionId) => _repository.markSessionAbandoned(sessionId);
+  Future<void> execute(String sessionId) =>
+      _repository.markSessionAbandoned(sessionId);
 }

@@ -17,6 +17,7 @@ import '../data/daily_ca_firestore.dart';
 import '../data/daily_ca_load_error.dart';
 import '../data/daily_ca_repository.dart';
 import '../providers/daily_ca_providers.dart';
+import '../../../l10n/l10n.dart';
 
 /// Loads one day's current-affairs MCQs.
 ///
@@ -72,9 +73,7 @@ Future<void> openDailyCaTest({
       return;
     }
 
-    final label = DateFormat(
-      'd MMM yyyy',
-    ).format(DateTime.parse(isoDate));
+    final label = DateFormat('d MMM yyyy').format(DateTime.parse(isoDate));
 
     await showTestConfigBottomSheet(
       context: context,
@@ -87,7 +86,7 @@ Future<void> openDailyCaTest({
         topicCountWhenSubjectOnly: 1,
         lockedQuestionCount: uuids.length,
         specificQuestionUuids: uuids,
-        startButtonLabel: 'Start test',
+        startButtonLabel: context.l10n.testStartTest,
         analyticsFeatureKey: analyticsKey,
         onSessionCreated: (sessionId) async {
           unawaited(

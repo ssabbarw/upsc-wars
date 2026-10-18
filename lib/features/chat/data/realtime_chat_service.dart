@@ -231,10 +231,7 @@ class RealtimeChatService implements ChatService {
     final key = ChatIds.rulesEmailKey(currentUserEmail);
     final ref = _db.ref('presence/$key');
     if (isOnline) {
-      await ref.update({
-        'isOnline': true,
-        'lastSeenAt': ServerValue.timestamp,
-      });
+      await ref.update({'isOnline': true, 'lastSeenAt': ServerValue.timestamp});
       unawaited(
         ref.onDisconnect().update({
           'isOnline': false,
@@ -243,10 +240,7 @@ class RealtimeChatService implements ChatService {
       );
       return;
     }
-    await ref.update({
-      'isOnline': false,
-      'lastSeenAt': ServerValue.timestamp,
-    });
+    await ref.update({'isOnline': false, 'lastSeenAt': ServerValue.timestamp});
   }
 }
 

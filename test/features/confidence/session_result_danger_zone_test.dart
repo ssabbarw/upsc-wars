@@ -17,7 +17,9 @@ void main() {
   });
 
   Future<void> seedQuestion(String uuid, {String subject = 's'}) async {
-    await db.into(db.questions).insert(
+    await db
+        .into(db.questions)
+        .insert(
           QuestionsCompanion.insert(
             uuid: uuid,
             subject: subject,
@@ -36,7 +38,9 @@ void main() {
     String sessionId, {
     required List<SessionQuestionsCompanion> attemptRows,
   }) async {
-    await db.into(db.sessions).insert(
+    await db
+        .into(db.sessions)
+        .insert(
           SessionsCompanion.insert(
             id: sessionId,
             createdAt: DateTime.utc(2026, 1, 1),
@@ -136,30 +140,33 @@ void main() {
     expect(r.hasSureOrEducatedGuessMarks, isTrue);
   });
 
-  test('getSessionResult danger zone is zero when no confident wrongs', () async {
-    const sid = 'sess-2';
-    await seedQuestion('q10');
-    await seedSessionWithAttempts(
-      sid,
-      attemptRows: [
-        SessionQuestionsCompanion.insert(
-          id: 'b1',
-          sessionId: sid,
-          questionUuid: 'q10',
-          position: 1,
-          selectedOption: const Value('a'),
-          isCorrect: const Value(true),
-          status: const Value('correct'),
-          attemptedAt: Value(DateTime.utc(2026, 1, 2)),
-        ),
-      ],
-    );
+  test(
+    'getSessionResult danger zone is zero when no confident wrongs',
+    () async {
+      const sid = 'sess-2';
+      await seedQuestion('q10');
+      await seedSessionWithAttempts(
+        sid,
+        attemptRows: [
+          SessionQuestionsCompanion.insert(
+            id: 'b1',
+            sessionId: sid,
+            questionUuid: 'q10',
+            position: 1,
+            selectedOption: const Value('a'),
+            isCorrect: const Value(true),
+            status: const Value('correct'),
+            attemptedAt: Value(DateTime.utc(2026, 1, 2)),
+          ),
+        ],
+      );
 
-    final repo = SessionHistoryRepositoryImpl(db);
-    final r = await repo.getSessionResult(sid);
+      final repo = SessionHistoryRepositoryImpl(db);
+      final r = await repo.getSessionResult(sid);
 
-    expect(r.dangerZoneWrongCount, 0);
-    expect(r.dangerZoneMarksEstimate, 0.0);
-    expect(r.hasSureOrEducatedGuessMarks, isFalse);
-  });
+      expect(r.dangerZoneWrongCount, 0);
+      expect(r.dangerZoneMarksEstimate, 0.0);
+      expect(r.hasSureOrEducatedGuessMarks, isFalse);
+    },
+  );
 }

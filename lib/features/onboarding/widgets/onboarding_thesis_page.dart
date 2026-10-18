@@ -64,8 +64,7 @@ class OnboardingThesisPage extends HookWidget {
                           bg: AppColors.wrongBg,
                           titleColor: RgColors.wrong,
                           title: context.l10n.onbConfidentWrong,
-                          subtitle:
-                              context.l10n.onbConfidentWrongBody,
+                          subtitle: context.l10n.onbConfidentWrongBody,
                           top: _WarningBadge(size: onb(context, 48)),
                           bottom: _SceneImage(
                             asset: '$_assetPrefix/red_scene.png',
@@ -79,8 +78,7 @@ class OnboardingThesisPage extends HookWidget {
                           bg: AppColors.correctBg,
                           titleColor: RgColors.tealDeep,
                           title: context.l10n.onbGuessRight,
-                          subtitle:
-                              context.l10n.onbGuessRightBody,
+                          subtitle: context.l10n.onbGuessRightBody,
                           top: _TargetBadge(size: onb(context, 48)),
                           bottom: _SceneImage(
                             asset: '$_assetPrefix/green_scene.png',
@@ -144,7 +142,6 @@ class OnboardingThesisPage extends HookWidget {
 class _GlowingSubline extends HookWidget {
   const _GlowingSubline();
 
-
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
@@ -176,7 +173,8 @@ class _GlowingSubline extends HookWidget {
       color: RgColors.muted,
     );
 
-    String clip(String s, int count) => s.substring(0, count.clamp(0, s.length));
+    String clip(String s, int count) =>
+        s.substring(0, count.clamp(0, s.length));
 
     return AnimatedBuilder(
       animation: Listenable.merge([typing, pulse]),
@@ -202,13 +200,8 @@ class _GlowingSubline extends HookWidget {
           style: base,
           children: [
             TextSpan(text: clip(prefix, chars)),
-            TextSpan(
-              text: clip(phrase, chars - prefix.length),
-              style: glow,
-            ),
-            TextSpan(
-              text: clip(suffix, chars - prefix.length - phrase.length),
-            ),
+            TextSpan(text: clip(phrase, chars - prefix.length), style: glow),
+            TextSpan(text: clip(suffix, chars - prefix.length - phrase.length)),
           ],
         );
 

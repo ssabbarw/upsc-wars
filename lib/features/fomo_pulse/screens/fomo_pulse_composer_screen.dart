@@ -263,9 +263,7 @@ class FomoPulseComposerScreen extends HookConsumerWidget {
                 const SizedBox(width: AppSpacing.sm),
                 Expanded(
                   child: OutlinedButton.icon(
-                    onPressed: urlCtrl.text.isEmpty
-                        ? null
-                        : urlCtrl.clear,
+                    onPressed: urlCtrl.text.isEmpty ? null : urlCtrl.clear,
                     icon: const Icon(Icons.clear_rounded),
                     label: const Text('Clear'),
                   ),

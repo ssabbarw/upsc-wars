@@ -70,13 +70,11 @@ class BattleSpectateState {
   ).points;
 
   List<bool?> _outcomes(Map<String, String> byUuid) {
-    return questions
-        .map((q) {
-          final sel = byUuid[q.uuid];
-          if (sel == null) return null;
-          return sel.toLowerCase() == q.correctOption.toLowerCase();
-        })
-        .toList();
+    return questions.map((q) {
+      final sel = byUuid[q.uuid];
+      if (sel == null) return null;
+      return sel.toLowerCase() == q.correctOption.toLowerCase();
+    }).toList();
   }
 
   BattleSpectateState copyWith({
@@ -206,10 +204,9 @@ class BattleSpectateNotifier extends StateNotifier<BattleSpectateState?> {
       deadline: args.deadline,
       opponentPaperSubmitted: args.opponentPaperSubmitted,
     );
-    _sub = _joinedUsersCol(args.sessionId).snapshots().listen(
-      _onSnapshot,
-      onError: (_) {},
-    );
+    _sub = _joinedUsersCol(
+      args.sessionId,
+    ).snapshots().listen(_onSnapshot, onError: (_) {});
     unawaited(_persistSnapshot());
   }
 
@@ -304,11 +301,9 @@ class BattleSpectateNotifier extends StateNotifier<BattleSpectateState?> {
 }
 
 final battleSpectateProvider =
-    StateNotifierProvider<BattleSpectateNotifier, BattleSpectateState?>(
-      (ref) {
-        ref.keepAlive();
-        final notifier = BattleSpectateNotifier(ref);
-        notifier.scheduleRestoreFromPrefs();
-        return notifier;
-      },
-    );
+    StateNotifierProvider<BattleSpectateNotifier, BattleSpectateState?>((ref) {
+      ref.keepAlive();
+      final notifier = BattleSpectateNotifier(ref);
+      notifier.scheduleRestoreFromPrefs();
+      return notifier;
+    });

@@ -6,6 +6,7 @@ import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/widgets/dismissible_modal_sheet.dart';
+import '../../../l10n/l10n.dart';
 
 /// Bottom sheet for today's paper: start, revise, or review answers.
 Future<void> showDailyCaActionSheet({
@@ -46,10 +47,9 @@ Future<void> showDailyCaActionSheet({
                       width: 36,
                       height: 4,
                       decoration: BoxDecoration(
-                        color: Theme.of(ctx)
-                            .colorScheme
-                            .onSurfaceVariant
-                            .withValues(alpha: 0.35),
+                        color: Theme.of(
+                          ctx,
+                        ).colorScheme.onSurfaceVariant.withValues(alpha: 0.35),
                         borderRadius: BorderRadius.circular(AppRadius.pill),
                       ),
                     ),
@@ -64,10 +64,10 @@ Future<void> showDailyCaActionSheet({
                   const SizedBox(height: AppSpacing.xs),
                   Text(
                     !paperLive
-                        ? "Today's quiz isn't open yet. Check back after 6 AM, or pick a past day below."
+                        ? ctx.l10n.dcaQuizNotOpen
                         : paperCompleted
-                        ? 'You already submitted. Review answers or revise in learning mode.'
-                        : "Same questions for everyone — based on yesterday's news.",
+                        ? ctx.l10n.dcaAlreadySubmitted
+                        : ctx.l10n.dcaSameQuestions,
                     style: AppTextStyles.bodySm().copyWith(
                       color: Theme.of(ctx).colorScheme.onSurfaceVariant,
                       height: 1.4,
@@ -87,7 +87,7 @@ Future<void> showDailyCaActionSheet({
                           borderRadius: BorderRadius.circular(AppRadius.lg),
                         ),
                       ),
-                      child: const Text('Start test'),
+                      child: Text(ctx.l10n.testStartTest),
                     ),
                   if (paperLive && paperCompleted) ...[
                     if (onReviewAnswers != null)
@@ -103,7 +103,7 @@ Future<void> showDailyCaActionSheet({
                             borderRadius: BorderRadius.circular(AppRadius.lg),
                           ),
                         ),
-                        child: const Text('Review answers'),
+                        child: Text(ctx.l10n.dcaReviewAnswers),
                       ),
                     if (onRevise != null) ...[
                       const SizedBox(height: AppSpacing.sm),
@@ -118,7 +118,7 @@ Future<void> showDailyCaActionSheet({
                             borderRadius: BorderRadius.circular(AppRadius.lg),
                           ),
                         ),
-                        child: const Text('Revise (learning)'),
+                        child: Text(ctx.l10n.dcaReviseLearning),
                       ),
                     ],
                   ],
@@ -131,7 +131,7 @@ Future<void> showDailyCaActionSheet({
                           borderRadius: BorderRadius.circular(AppRadius.lg),
                         ),
                       ),
-                      child: const Text('Got it'),
+                      child: Text(ctx.l10n.commonGotIt),
                     ),
                 ],
               ),

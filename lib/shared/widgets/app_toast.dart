@@ -151,10 +151,9 @@ class _ToastCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final fg = foregroundColor ?? Colors.white;
-    final textStyle = Theme.of(context).textTheme.bodyMedium?.copyWith(
-      color: fg,
-      height: 1.25,
-    );
+    final textStyle = Theme.of(
+      context,
+    ).textTheme.bodyMedium?.copyWith(color: fg, height: 1.25);
 
     final content = DefaultTextStyle(
       style: textStyle ?? const TextStyle(),

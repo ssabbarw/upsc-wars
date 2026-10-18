@@ -15,6 +15,7 @@ import 'package:upsc_wars/core/theme/app_spacing.dart';
 import 'package:upsc_wars/core/theme/app_text_styles.dart';
 import 'package:upsc_wars/core/presentation/session_subject_label.dart';
 import 'package:upsc_wars/shared/widgets/test_config_bottom_sheet.dart';
+import '../../l10n/l10n.dart';
 
 class SharedTestLaunchScreen extends ConsumerStatefulWidget {
   const SharedTestLaunchScreen({super.key, required this.shareId});
@@ -26,7 +27,8 @@ class SharedTestLaunchScreen extends ConsumerStatefulWidget {
       _SharedTestLaunchScreenState();
 }
 
-class _SharedTestLaunchScreenState extends ConsumerState<SharedTestLaunchScreen> {
+class _SharedTestLaunchScreenState
+    extends ConsumerState<SharedTestLaunchScreen> {
   bool _started = false;
   bool _didStartSession = false;
   String? _error;
@@ -46,10 +48,10 @@ class _SharedTestLaunchScreenState extends ConsumerState<SharedTestLaunchScreen>
   }
 
   String _analyticsKeyForKind(ShareLinkKind kind) => switch (kind) {
-        ShareLinkKind.battle => 'share_deep_link_battle',
-        ShareLinkKind.test => 'share_deep_link_test',
-        ShareLinkKind.question => 'share_deep_link_question',
-      };
+    ShareLinkKind.battle => 'share_deep_link_battle',
+    ShareLinkKind.test => 'share_deep_link_test',
+    ShareLinkKind.question => 'share_deep_link_question',
+  };
 
   Future<void> _openExistingTestFlow() async {
     try {
@@ -89,7 +91,9 @@ class _SharedTestLaunchScreenState extends ConsumerState<SharedTestLaunchScreen>
       }
 
       final subjectDisplayName = displayNameForSessionSubject(doc.subject);
-      final topicDisplayName = doc.topic?.trim().isNotEmpty == true ? doc.topic : null;
+      final topicDisplayName = doc.topic?.trim().isNotEmpty == true
+          ? doc.topic
+          : null;
       final sharedByRaw = (doc.sharedBy ?? '').trim();
       final sharedBy = sharedByRaw.isEmpty ? 'a friend' : sharedByRaw;
 
@@ -130,7 +134,10 @@ class _SharedTestLaunchScreenState extends ConsumerState<SharedTestLaunchScreen>
         }
         return;
       }
-      await prefs.setString(PrefKeys.shareParticipantNameV1, intro.participantName);
+      await prefs.setString(
+        PrefKeys.shareParticipantNameV1,
+        intro.participantName,
+      );
       if (!mounted) return;
 
       await showTestConfigBottomSheet(
@@ -181,7 +188,7 @@ class _SharedTestLaunchScreenState extends ConsumerState<SharedTestLaunchScreen>
     if (_error != null) {
       return Scaffold(
         appBar: AppBar(
-          title: const Text('Shared test'),
+          title: Text(context.l10n.stTitle),
           leading: IconButton(
             icon: const Icon(Icons.arrow_back),
             onPressed: () => context.go('/'),
@@ -195,12 +202,12 @@ class _SharedTestLaunchScreenState extends ConsumerState<SharedTestLaunchScreen>
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
-                    'Oh snap.',
+                    context.l10n.stOhSnap,
                     style: AppTextStyles.h2().copyWith(color: scheme.onSurface),
                   ),
                   const SizedBox(height: AppSpacing.sm),
                   Text(
-                    'This link is unavailable or expired.\nAsk your friend to reshare.',
+                    context.l10n.stExpired,
                     textAlign: TextAlign.center,
                     style: AppTextStyles.bodyMd().copyWith(
                       color: scheme.onSurfaceVariant,
@@ -210,7 +217,7 @@ class _SharedTestLaunchScreenState extends ConsumerState<SharedTestLaunchScreen>
                   const SizedBox(height: AppSpacing.lg),
                   FilledButton(
                     onPressed: () => context.go('/'),
-                    child: const Text('Go home'),
+                    child: Text(context.l10n.mpGoHome),
                   ),
                 ],
               ),
@@ -230,13 +237,13 @@ class _SharedTestLaunchScreenState extends ConsumerState<SharedTestLaunchScreen>
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
-                  'Opening shared test…',
+                  context.l10n.stOpening,
                   style: AppTextStyles.h3().copyWith(color: scheme.onSurface),
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: AppSpacing.sm),
                 Text(
-                  'Preparing configuration…',
+                  context.l10n.stPreparing,
                   style: AppTextStyles.bodyMd().copyWith(
                     color: scheme.onSurfaceVariant,
                   ),
@@ -252,4 +259,3 @@ class _SharedTestLaunchScreenState extends ConsumerState<SharedTestLaunchScreen>
     );
   }
 }
-

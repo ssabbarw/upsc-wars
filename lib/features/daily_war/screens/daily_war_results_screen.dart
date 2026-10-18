@@ -21,6 +21,7 @@ import '../domain/daily_war_schedule.dart';
 import '../domain/daily_war_streak.dart';
 import '../providers/daily_war_providers.dart';
 import '../theme/daily_war_theme.dart';
+import '../../../l10n/l10n.dart';
 
 /// After the local test session completes, sync score to Cloud Functions and
 /// show AIR (live) or practice score (unranked).
@@ -122,8 +123,9 @@ class DailyWarResultsScreen extends HookConsumerWidget {
             }
           }
           if (!result.ok) {
-            final already =
-                (result.errorMessage ?? '').toLowerCase().contains('already');
+            final already = (result.errorMessage ?? '').toLowerCase().contains(
+              'already',
+            );
             if (already) {
               final uid = FirebaseAuth.instance.currentUser?.uid;
               if (uid != null) {
@@ -137,11 +139,14 @@ class DailyWarResultsScreen extends HookConsumerWidget {
                   uid,
                 ).get();
                 if (snap.exists && snap.data() != null) {
-                  submission.value =
-                      DailyWarSubmission.fromMap(uid, snap.data()!);
+                  submission.value = DailyWarSubmission.fromMap(
+                    uid,
+                    snap.data()!,
+                  );
                   score.value = submission.value?.score;
-                  final warDoc =
-                      await ref.read(dailyWarDocByIdProvider(dateId).future);
+                  final warDoc = await ref.read(
+                    dailyWarDocByIdProvider(dateId).future,
+                  );
                   nextTopics.value = warDoc?.nextTopics ?? const [];
                   participantCount.value = warDoc?.participantCount;
                   questionCount.value = warDoc?.questionCount ?? 15;
@@ -150,7 +155,7 @@ class DailyWarResultsScreen extends HookConsumerWidget {
                 }
               }
             }
-            error.value = result.errorMessage ?? 'Submit failed';
+            error.value = result.errorMessage ?? appL10n.dcaSubmitFailed;
             syncState.value = _SyncState.error;
             return;
           }
@@ -242,7 +247,7 @@ class DailyWarResultsScreen extends HookConsumerWidget {
         backgroundColor: DwColors.surface,
         foregroundColor: DwColors.onDark,
         title: Text(
-          'Static War results',
+          context.l10n.dwResultsTitle,
           style: DwText.dm(size: 18, weight: FontWeight.w700),
         ),
       ),
@@ -256,7 +261,7 @@ class DailyWarResultsScreen extends HookConsumerWidget {
                 const CircularProgressIndicator(color: DwColors.crimsonBright),
                 const SizedBox(height: 16),
                 Text(
-                  'Submitting your answers…',
+                  context.l10n.dwSubmitting,
                   style: DwText.body(color: DwColors.onDark),
                 ),
               ],
@@ -266,7 +271,7 @@ class DailyWarResultsScreen extends HookConsumerWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Text(
-                error.value ?? 'Something went wrong',
+                error.value ?? context.l10n.commonSomethingWrong,
                 style: DwText.body(color: DwColors.crimsonBright),
               ),
               const SizedBox(height: 16),
@@ -363,18 +368,16 @@ class _ReadyBody extends ConsumerWidget {
           ),
           Text(
             demotedToUnranked
-                ? 'Your paper came in after the live window closed, so it\'s '
-                      'saved as an unranked attempt.'
+                ? context.l10n.dwDemoted
                 : submission?.mode == 'unranked'
-                ? 'Unranked · not an official AIR'
-                : 'Submitted · AIR will be ready at 9:40 PM IST. '
-                      'We\'ll notify you.',
+                ? context.l10n.dwUnrankedNotOfficial
+                : context.l10n.dwSubmittedAirReady,
             style: DwText.body(),
           ),
         ],
         if (nextTopics.isNotEmpty) ...[
           const SizedBox(height: 28),
-          Text('Tomorrow', style: DwText.meta()),
+          Text(context.l10n.dwTomorrow, style: DwText.meta()),
           const SizedBox(height: 6),
           Text(
             DailyWarCopy.compactTopics(nextTopics),
@@ -392,7 +395,10 @@ class _ReadyBody extends ConsumerWidget {
                 borderRadius: BorderRadius.circular(12),
               ),
             ),
-            child: Text('Tonight\'s leaderboard', style: DwText.cta()),
+            child: Text(
+              context.l10n.dwTonightsLeaderboardBtn,
+              style: DwText.cta(),
+            ),
           ),
           const SizedBox(height: 10),
         ],
@@ -405,12 +411,12 @@ class _ReadyBody extends ConsumerWidget {
               borderRadius: BorderRadius.circular(12),
             ),
           ),
-          child: Text('Done', style: DwText.cta()),
+          child: Text(context.l10n.commonDone, style: DwText.cta()),
         ),
         TextButton(
           onPressed: () => context.push(dailyWarHistoryRoute()),
           child: Text(
-            'History',
+            context.l10n.dwHistory,
             style: DwText.dm(
               size: 13,
               weight: FontWeight.w600,

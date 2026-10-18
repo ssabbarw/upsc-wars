@@ -5,6 +5,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../../core/providers/prefs_provider.dart';
 import 'revision_games_theme.dart';
 import 'revision_games_widgets.dart';
+import '../../../l10n/l10n.dart';
 
 /// Pref keys — when true, the how-to bottom sheet is skipped for that game.
 abstract final class GameHowToPrefs {
@@ -25,7 +26,7 @@ class GameHowToConfig {
     this.badgeBg,
     this.stepAccent,
     this.stepIcons,
-    this.startLabel = 'Start',
+    this.startLabel,
   });
 
   final String prefKey;
@@ -36,11 +37,11 @@ class GameHowToConfig {
   final Color? badgeBg;
   final Color? stepAccent;
   final List<IconData>? stepIcons;
-  final String startLabel;
+  final String? startLabel;
 }
 
 /// Shows the how-to as a modal bottom sheet over the game, unless the user
-/// previously chose "Don't show again". Returns when the sheet is dismissed.
+/// previously chose context.l10n.gmDontShow. Returns when the sheet is dismissed.
 Future<void> showGameHowToIfNeeded({
   required BuildContext context,
   required WidgetRef ref,
@@ -81,11 +82,7 @@ bool useGameHowToSheet({
     var cancelled = false;
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       if (cancelled || !context.mounted) return;
-      await showGameHowToIfNeeded(
-        context: context,
-        ref: ref,
-        config: config,
-      );
+      await showGameHowToIfNeeded(context: context, ref: ref, config: config);
       if (!cancelled) ready.value = true;
     });
     return () => cancelled = true;
@@ -142,7 +139,7 @@ class _GameHowToSheetState extends State<_GameHowToSheet> {
               ),
               const SizedBox(height: 14),
               Text(
-                'How to play',
+                context.l10n.gmHowToPlay,
                 style: RgText.monoLbl(color: RgColors.mutedSoft),
               ),
               const SizedBox(height: 8),
@@ -152,7 +149,8 @@ class _GameHowToSheetState extends State<_GameHowToSheet> {
                     width: 44,
                     height: 44,
                     decoration: BoxDecoration(
-                      color: config.badgeBg ??
+                      color:
+                          config.badgeBg ??
                           config.accent.withValues(alpha: 0.12),
                       borderRadius: BorderRadius.circular(RgRadius.lg),
                     ),
@@ -162,8 +160,7 @@ class _GameHowToSheetState extends State<_GameHowToSheet> {
                   Expanded(
                     child: Text(
                       config.title,
-                      style:
-                          RgText.display(size: 18, weight: FontWeight.w800),
+                      style: RgText.display(size: 18, weight: FontWeight.w800),
                     ),
                   ),
                 ],
@@ -176,8 +173,7 @@ class _GameHowToSheetState extends State<_GameHowToSheet> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Icon(
-                        config.stepIcons != null &&
-                                i < config.stepIcons!.length
+                        config.stepIcons != null && i < config.stepIcons!.length
                             ? config.stepIcons![i]
                             : _numerals[i.clamp(0, _numerals.length - 1)],
                         size: 18,
@@ -194,8 +190,7 @@ class _GameHowToSheetState extends State<_GameHowToSheet> {
                   ),
                 ),
               InkWell(
-                onTap: () =>
-                    setState(() => _dontShowAgain = !_dontShowAgain),
+                onTap: () => setState(() => _dontShowAgain = !_dontShowAgain),
                 borderRadius: BorderRadius.circular(8),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 8),
@@ -217,7 +212,7 @@ class _GameHowToSheetState extends State<_GameHowToSheet> {
                       const SizedBox(width: 8),
                       Expanded(
                         child: Text(
-                          "Don't show again",
+                          context.l10n.gmDontShow,
                           style: RgText.body(size: 13),
                         ),
                       ),
@@ -227,7 +222,7 @@ class _GameHowToSheetState extends State<_GameHowToSheet> {
               ),
               const SizedBox(height: 4),
               RgPillButton(
-                label: config.startLabel,
+                label: config.startLabel ?? context.l10n.gmStart,
                 onPressed: () => Navigator.of(context).pop(_dontShowAgain),
                 verticalPadding: 13,
               ),

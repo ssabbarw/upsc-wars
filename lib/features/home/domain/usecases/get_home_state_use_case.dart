@@ -14,11 +14,11 @@ class GetHomeStateUseCase {
     required GetRevisionQueueUseCase revision,
     required GetBookmarksUseCase bookmarks,
     required GetSessionListUseCase sessions,
-  })  : _prefs = prefs,
-        _daily = daily,
-        _revision = revision,
-        _bookmarks = bookmarks,
-        _sessions = sessions;
+  }) : _prefs = prefs,
+       _daily = daily,
+       _revision = revision,
+       _bookmarks = bookmarks,
+       _sessions = sessions;
 
   final PrefsService _prefs;
   final GetDailyProgressUseCase _daily;
@@ -36,10 +36,12 @@ class GetHomeStateUseCase {
       _sessions.execute(),
     ]);
     final sessionList = futures[5] as List<SessionSummary>;
-    final inProgress =
-        sessionList.where((e) => e.status == 'in_progress').firstOrNull;
-    final lastCompleted =
-        sessionList.where((e) => e.status == 'completed').firstOrNull;
+    final inProgress = sessionList
+        .where((e) => e.status == 'in_progress')
+        .firstOrNull;
+    final lastCompleted = sessionList
+        .where((e) => e.status == 'completed')
+        .firstOrNull;
     final lastSession = inProgress ?? lastCompleted;
     return HomeState(
       streakCount: DailyStreakService.visibleStreak(prefs: _prefs),

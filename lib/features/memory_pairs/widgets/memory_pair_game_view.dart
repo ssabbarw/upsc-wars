@@ -11,6 +11,7 @@ import '../../../core/theme/app_text_styles.dart';
 import '../domain/memory_pair_models.dart';
 import '../domain/memory_pair_scoring.dart';
 import '../domain/memory_pair_shuffle.dart';
+import '../../../l10n/l10n.dart';
 
 typedef MemoryPairGameDone = void Function(MemoryPairGameResult result);
 
@@ -45,14 +46,12 @@ class MemoryPairGameView extends HookWidget {
     final celebrate = useState(false);
     final reported = useRef(false);
 
-    final keyOrder = useMemoized(
-      () => shuffleIndices(pairs.length, 7),
-      [pairs],
-    );
-    final valOrder = useMemoized(
-      () => shuffleIndices(pairs.length, 19),
-      [pairs],
-    );
+    final keyOrder = useMemoized(() => shuffleIndices(pairs.length, 7), [
+      pairs,
+    ]);
+    final valOrder = useMemoized(() => shuffleIndices(pairs.length, 19), [
+      pairs,
+    ]);
 
     useEffect(() {
       if (!started.value || paused.value) return null;
@@ -146,7 +145,11 @@ class MemoryPairGameView extends HookWidget {
               ),
               child: Row(
                 children: [
-                  Icon(Icons.timer_outlined, size: 18, color: AppColors.primary),
+                  Icon(
+                    Icons.timer_outlined,
+                    size: 18,
+                    color: AppColors.primary,
+                  ),
                   const SizedBox(width: 6),
                   Text(
                     formatMemoryPairTime(elapsed.value),
@@ -168,7 +171,7 @@ class MemoryPairGameView extends HookWidget {
                         ),
                       ),
                       Text(
-                        'Errors',
+                        context.l10n.mpErrors,
                         style: AppTextStyles.caption().copyWith(
                           color: errors.value > 0
                               ? AppColors.wrong
@@ -194,14 +197,17 @@ class MemoryPairGameView extends HookWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        'Progress',
+                        context.l10n.mpProgress,
                         style: AppTextStyles.caption().copyWith(
                           color: scheme.onSurfaceVariant,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
                       Text(
-                        '${matched.value.length}/${pairs.length} matched',
+                        context.l10n.mpMatched(
+                          matched.value.length,
+                          pairs.length,
+                        ),
                         style: AppTextStyles.caption().copyWith(
                           color: scheme.onSurfaceVariant,
                           fontWeight: FontWeight.w600,
@@ -235,7 +241,7 @@ class MemoryPairGameView extends HookWidget {
                 children: [
                   Expanded(
                     child: Text(
-                      'Terms',
+                      context.l10n.mpTerms,
                       style: AppTextStyles.caption().copyWith(
                         fontWeight: FontWeight.w700,
                         letterSpacing: 0.8,
@@ -246,7 +252,7 @@ class MemoryPairGameView extends HookWidget {
                   const SizedBox(width: AppSpacing.sm),
                   Expanded(
                     child: Text(
-                      'Answers',
+                      context.l10n.mpAnswers,
                       style: AppTextStyles.caption().copyWith(
                         fontWeight: FontWeight.w700,
                         letterSpacing: 0.8,
@@ -343,16 +349,23 @@ class MemoryPairGameView extends HookWidget {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Icon(Icons.check_circle, size: 40, color: AppColors.primary),
+                    Icon(
+                      Icons.check_circle,
+                      size: 40,
+                      color: AppColors.primary,
+                    ),
                     const SizedBox(height: AppSpacing.sm),
                     Text(
-                      'All pairs matched',
+                      context.l10n.mpAllMatched,
                       style: AppTextStyles.label().copyWith(
                         fontWeight: FontWeight.w700,
                       ),
                     ),
                     Text(
-                      '${formatMemoryPairTime(elapsed.value)} · ${errors.value} errors',
+                      context.l10n.mpTimeErrors(
+                        formatMemoryPairTime(elapsed.value),
+                        errors.value,
+                      ),
                       style: AppTextStyles.caption().copyWith(
                         color: scheme.onSurfaceVariant,
                       ),
@@ -441,12 +454,12 @@ class _MatchTile extends StatelessWidget {
 
     final bg = switch (state) {
       _TileState.selected => AppColors.primary,
-      _TileState.matched => isDark
-          ? AppColors.primary.withValues(alpha: 0.15)
-          : AppColors.primaryLight.withValues(alpha: 0.5),
-      _TileState.wrong => isDark
-          ? AppColors.wrong.withValues(alpha: 0.18)
-          : AppColors.wrongBg,
+      _TileState.matched =>
+        isDark
+            ? AppColors.primary.withValues(alpha: 0.15)
+            : AppColors.primaryLight.withValues(alpha: 0.5),
+      _TileState.wrong =>
+        isDark ? AppColors.wrong.withValues(alpha: 0.18) : AppColors.wrongBg,
       _ => scheme.surface,
     };
     final fg = switch (state) {
@@ -492,11 +505,7 @@ class _MatchTile extends StatelessWidget {
                 SizedBox(
                   width: _kMatchTileCheckSize + _kMatchTileCheckGap,
                   child: matched
-                      ? Icon(
-                          Icons.check,
-                          size: _kMatchTileCheckSize,
-                          color: fg,
-                        )
+                      ? Icon(Icons.check, size: _kMatchTileCheckSize, color: fg)
                       : null,
                 ),
                 Expanded(
@@ -508,7 +517,9 @@ class _MatchTile extends StatelessWidget {
                   ),
                 ),
                 // Keep label centered when the leading check slot is reserved.
-                const SizedBox(width: _kMatchTileCheckSize + _kMatchTileCheckGap),
+                const SizedBox(
+                  width: _kMatchTileCheckSize + _kMatchTileCheckGap,
+                ),
               ],
             ),
           ),
@@ -547,19 +558,19 @@ class _PauseOverlay extends StatelessWidget {
                 children: [
                   const Icon(Icons.pause_circle_outline, size: 36),
                   const SizedBox(height: AppSpacing.sm),
-                  Text('Paused', style: AppTextStyles.h3()),
-                  Text('$time · $errors errors'),
+                  Text(context.l10n.mpPaused, style: AppTextStyles.h3()),
+                  Text(context.l10n.mpTimeErrors(time, errors)),
                   const SizedBox(height: AppSpacing.lg),
                   SizedBox(
                     width: double.infinity,
                     child: FilledButton(
                       onPressed: onResume,
-                      child: const Text('Resume'),
+                      child: Text(context.l10n.mpResume),
                     ),
                   ),
                   TextButton(
                     onPressed: onQuit,
-                    child: const Text('Quit to set'),
+                    child: Text(context.l10n.mpQuitToSet),
                   ),
                 ],
               ),

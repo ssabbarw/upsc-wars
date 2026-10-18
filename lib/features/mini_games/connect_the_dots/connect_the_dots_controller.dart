@@ -2,6 +2,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../shared/mini_game_content_repository.dart';
 import '../shared/mini_game_models.dart';
+import '../../../l10n/l10n.dart';
 
 /// Puzzles played per session, drawn randomly from the filtered pool.
 const connectTheDotsSessionSize = 10;
@@ -45,8 +46,9 @@ class ConnectTheDotsState {
       pool: pool ?? this.pool,
       session: session ?? this.session,
       index: index ?? this.index,
-      selectedIndex:
-          clearSelected ? null : (selectedIndex ?? this.selectedIndex),
+      selectedIndex: clearSelected
+          ? null
+          : (selectedIndex ?? this.selectedIndex),
       revealed: revealed ?? this.revealed,
       sessionComplete: sessionComplete ?? this.sessionComplete,
       correctCount: correctCount ?? this.correctCount,
@@ -64,11 +66,11 @@ class ConnectTheDotsController extends AsyncNotifier<ConnectTheDotsState> {
   Future<ConnectTheDotsState> build() async {
     final pool = await ref.read(connectTheDotsRepositoryProvider).loadItems();
     if (pool.isEmpty) {
-      return const ConnectTheDotsState(
+      return ConnectTheDotsState(
         pool: [],
         session: [],
         index: 0,
-        error: 'No connect-the-dots items found.',
+        error: appL10n.gmErrNoCtd,
       );
     }
     return _newSession(pool);
@@ -96,8 +98,7 @@ class ConnectTheDotsController extends AsyncNotifier<ConnectTheDotsState> {
       current.copyWith(
         selectedIndex: optionIndex,
         revealed: true,
-        correctCount:
-            correct ? current.correctCount + 1 : current.correctCount,
+        correctCount: correct ? current.correctCount + 1 : current.correctCount,
       ),
     );
   }
@@ -111,11 +112,7 @@ class ConnectTheDotsController extends AsyncNotifier<ConnectTheDotsState> {
       return;
     }
     state = AsyncData(
-      current.copyWith(
-        index: nextIndex,
-        clearSelected: true,
-        revealed: false,
-      ),
+      current.copyWith(index: nextIndex, clearSelected: true, revealed: false),
     );
   }
 
@@ -128,5 +125,5 @@ class ConnectTheDotsController extends AsyncNotifier<ConnectTheDotsState> {
 
 final connectTheDotsControllerProvider = AsyncNotifierProvider.autoDispose
     .family<ConnectTheDotsController, ConnectTheDotsState, MiniGameFilter>(
-  ConnectTheDotsController.new,
-);
+      ConnectTheDotsController.new,
+    );

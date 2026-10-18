@@ -15,8 +15,8 @@ class AdminDashboardWriterService {
   AdminDashboardWriterService({
     FirebaseFirestore? firestore,
     bool? collectionEnabledOverride,
-  })  : _firestore = firestore ?? FirebaseFirestore.instance,
-        _collectionEnabledOverride = collectionEnabledOverride;
+  }) : _firestore = firestore ?? FirebaseFirestore.instance,
+       _collectionEnabledOverride = collectionEnabledOverride;
 
   final FirebaseFirestore _firestore;
   final bool? _collectionEnabledOverride;
@@ -27,13 +27,25 @@ class AdminDashboardWriterService {
       _collectionEnabledOverride ?? isAdminDashboardCollectionEnabled();
 
   DocumentReference<Map<String, dynamic>> _dailyRef(String dateKey) =>
-      _firestore.collection(collectionName).doc('daily').collection('days').doc(dateKey);
+      _firestore
+          .collection(collectionName)
+          .doc('daily')
+          .collection('days')
+          .doc(dateKey);
 
   DocumentReference<Map<String, dynamic>> _lifecycleRef(String uid) =>
-      _firestore.collection(collectionName).doc('user_lifecycle').collection('users').doc(uid);
+      _firestore
+          .collection(collectionName)
+          .doc('user_lifecycle')
+          .collection('users')
+          .doc(uid);
 
   DocumentReference<Map<String, dynamic>> _notificationRef(String id) =>
-      _firestore.collection(collectionName).doc('notifications').collection('items').doc(id);
+      _firestore
+          .collection(collectionName)
+          .doc('notifications')
+          .collection('items')
+          .doc(id);
 
   Future<String?> _uid() async {
     await AnonymousAuthService.ensureSignedIn();
@@ -51,19 +63,13 @@ class AdminDashboardWriterService {
       await _firestore.runTransaction((tx) async {
         final life = await tx.get(_lifecycleRef(uid));
         if (life.exists && life.data()?['first_install_date'] != null) return;
-        tx.set(
-          _lifecycleRef(uid),
-          {
-            'first_install_date': today,
-            'recorded_at': FieldValue.serverTimestamp(),
-          },
-          SetOptions(merge: true),
-        );
-        tx.set(
-          _dailyRef(today),
-          {AdminDashboardMetrics.newDownloads: FieldValue.increment(1)},
-          SetOptions(merge: true),
-        );
+        tx.set(_lifecycleRef(uid), {
+          'first_install_date': today,
+          'recorded_at': FieldValue.serverTimestamp(),
+        }, SetOptions(merge: true));
+        tx.set(_dailyRef(today), {
+          AdminDashboardMetrics.newDownloads: FieldValue.increment(1),
+        }, SetOptions(merge: true));
       });
     } catch (e, st) {
       _logError('recordNewDownload', e, st);
@@ -97,19 +103,13 @@ class AdminDashboardWriterService {
       await _firestore.runTransaction((tx) async {
         final life = await tx.get(_lifecycleRef(uid));
         if (life.exists && life.data()?[lifecycleField] != null) return;
-        tx.set(
-          _lifecycleRef(uid),
-          {
-            lifecycleField: today,
-            'recorded_at': FieldValue.serverTimestamp(),
-          },
-          SetOptions(merge: true),
-        );
-        tx.set(
-          _dailyRef(today),
-          {dailyMetric: FieldValue.increment(1)},
-          SetOptions(merge: true),
-        );
+        tx.set(_lifecycleRef(uid), {
+          lifecycleField: today,
+          'recorded_at': FieldValue.serverTimestamp(),
+        }, SetOptions(merge: true));
+        tx.set(_dailyRef(today), {
+          dailyMetric: FieldValue.increment(1),
+        }, SetOptions(merge: true));
       });
     } catch (e, st) {
       _logError('_recordFirstTimeDaily', e, st);
@@ -130,19 +130,13 @@ class AdminDashboardWriterService {
       await _firestore.runTransaction((tx) async {
         final life = await tx.get(_lifecycleRef(uid));
         if (life.exists && life.data()?['first_test_date'] != null) return;
-        tx.set(
-          _lifecycleRef(uid),
-          {
-            'first_test_date': today,
-            'recorded_at': FieldValue.serverTimestamp(),
-          },
-          SetOptions(merge: true),
-        );
-        tx.set(
-          _dailyRef(today),
-          {AdminDashboardMetrics.firstTestUsers: FieldValue.increment(1)},
-          SetOptions(merge: true),
-        );
+        tx.set(_lifecycleRef(uid), {
+          'first_test_date': today,
+          'recorded_at': FieldValue.serverTimestamp(),
+        }, SetOptions(merge: true));
+        tx.set(_dailyRef(today), {
+          AdminDashboardMetrics.firstTestUsers: FieldValue.increment(1),
+        }, SetOptions(merge: true));
       });
       if (analyticsFeatureKey == 'mcq_battle') {
         await recordBattleEngagement();
@@ -159,28 +153,23 @@ class AdminDashboardWriterService {
     if (uid == null) return;
     final today = adminDashboardTodayKey();
     try {
-      await _incrementDailyCounter(today, AdminDashboardMetrics.memoryGamePlays);
+      await _incrementDailyCounter(
+        today,
+        AdminDashboardMetrics.memoryGamePlays,
+      );
       if (isFirstEverOnDevice) {
         await _firestore.runTransaction((tx) async {
           final life = await tx.get(_lifecycleRef(uid));
           if (life.exists && life.data()?['first_memory_game_date'] != null) {
             return;
           }
-          tx.set(
-            _lifecycleRef(uid),
-            {
-              'first_memory_game_date': today,
-              'recorded_at': FieldValue.serverTimestamp(),
-            },
-            SetOptions(merge: true),
-          );
-          tx.set(
-            _dailyRef(today),
-            {
-              AdminDashboardMetrics.firstMemoryGameUsers: FieldValue.increment(1),
-            },
-            SetOptions(merge: true),
-          );
+          tx.set(_lifecycleRef(uid), {
+            'first_memory_game_date': today,
+            'recorded_at': FieldValue.serverTimestamp(),
+          }, SetOptions(merge: true));
+          tx.set(_dailyRef(today), {
+            AdminDashboardMetrics.firstMemoryGameUsers: FieldValue.increment(1),
+          }, SetOptions(merge: true));
         });
       }
       await _maybeRecordNotificationConversion(isMemoryGameConversion: true);
@@ -203,14 +192,10 @@ class AdminDashboardWriterService {
       await _firestore.runTransaction((tx) async {
         final life = await tx.get(_lifecycleRef(uid));
         if (life.exists && life.data()?['first_battle_date'] != null) return;
-        tx.set(
-          _lifecycleRef(uid),
-          {
-            'first_battle_date': today,
-            'recorded_at': FieldValue.serverTimestamp(),
-          },
-          SetOptions(merge: true),
-        );
+        tx.set(_lifecycleRef(uid), {
+          'first_battle_date': today,
+          'recorded_at': FieldValue.serverTimestamp(),
+        }, SetOptions(merge: true));
       });
       await _maybeRecordNotificationConversion(isBattleConversion: true);
     } catch (e, st) {
@@ -256,16 +241,12 @@ class AdminDashboardWriterService {
         final openSnap = await tx.get(openUser);
         if (openSnap.exists) return;
         tx.set(openUser, {'at': FieldValue.serverTimestamp()});
-        tx.set(
-          notif,
-          {
-            'kind': kind,
-            if (title != null && title.isNotEmpty) 'title': title,
-            'opens': FieldValue.increment(1),
-            'updated_at': FieldValue.serverTimestamp(),
-          },
-          SetOptions(merge: true),
-        );
+        tx.set(notif, {
+          'kind': kind,
+          if (title != null && title.isNotEmpty) 'title': title,
+          'opens': FieldValue.increment(1),
+          'updated_at': FieldValue.serverTimestamp(),
+        }, SetOptions(merge: true));
       });
     } catch (e, st) {
       _logError('recordNotificationOpen', e, st);
@@ -281,8 +262,10 @@ class AdminDashboardWriterService {
     if (pending == null) return;
     final kind = pending.kind ?? '';
     final converts = switch (kind) {
-      'push_spot_test' || 'fomo_pulse' || 'no_test_reminder' || 'daily_practice_reminder' =>
-        isTestConversion,
+      'push_spot_test' ||
+      'fomo_pulse' ||
+      'no_test_reminder' ||
+      'daily_practice_reminder' => isTestConversion,
       'memory_pairs' => isMemoryGameConversion,
       'battle_join' => isBattleConversion || isTestConversion,
       _ => isTestConversion || isMemoryGameConversion || isBattleConversion,
@@ -307,14 +290,10 @@ class AdminDashboardWriterService {
         final convSnap = await tx.get(convUser);
         if (convSnap.exists) return;
         tx.set(convUser, {'at': FieldValue.serverTimestamp()});
-        tx.set(
-          notif,
-          {
-            'conversions': FieldValue.increment(1),
-            'updated_at': FieldValue.serverTimestamp(),
-          },
-          SetOptions(merge: true),
-        );
+        tx.set(notif, {
+          'conversions': FieldValue.increment(1),
+          'updated_at': FieldValue.serverTimestamp(),
+        }, SetOptions(merge: true));
       });
     } catch (e, st) {
       _logError('recordNotificationConversion', e, st);
@@ -327,25 +306,22 @@ class AdminDashboardWriterService {
     required String uid,
   }) async {
     await _firestore.runTransaction((tx) async {
-      final userDoc = _dailyRef(dateKey)
-          .collection('users')
-          .doc('${metric}__$uid');
+      final userDoc = _dailyRef(
+        dateKey,
+      ).collection('users').doc('${metric}__$uid');
       final snap = await tx.get(userDoc);
       if (snap.exists) return;
       tx.set(userDoc, {'at': FieldValue.serverTimestamp()});
-      tx.set(
-        _dailyRef(dateKey),
-        {metric: FieldValue.increment(1)},
-        SetOptions(merge: true),
-      );
+      tx.set(_dailyRef(dateKey), {
+        metric: FieldValue.increment(1),
+      }, SetOptions(merge: true));
     });
   }
 
   Future<void> _incrementDailyCounter(String dateKey, String metric) async {
-    await _dailyRef(dateKey).set(
-      {metric: FieldValue.increment(1)},
-      SetOptions(merge: true),
-    );
+    await _dailyRef(
+      dateKey,
+    ).set({metric: FieldValue.increment(1)}, SetOptions(merge: true));
   }
 
   void _logError(String method, Object e, StackTrace st) {
@@ -408,7 +384,7 @@ class AdminDashboardNotificationStats {
 /// Reads Firestore aggregates for super-user dashboard screens.
 class AdminDashboardReaderService {
   AdminDashboardReaderService({FirebaseFirestore? firestore})
-      : _firestore = firestore ?? FirebaseFirestore.instance;
+    : _firestore = firestore ?? FirebaseFirestore.instance;
 
   final FirebaseFirestore _firestore;
 
@@ -442,13 +418,16 @@ class AdminDashboardReaderService {
       final data = dailySnap.data();
       if (data != null) {
         newDownloads += _asInt(data[AdminDashboardMetrics.newDownloads]);
-        onboardingCompletedUsers +=
-            _asInt(data[AdminDashboardMetrics.onboardingCompletedUsers]);
-        firstDemoTestUsers +=
-            _asInt(data[AdminDashboardMetrics.firstDemoTestUsers]);
+        onboardingCompletedUsers += _asInt(
+          data[AdminDashboardMetrics.onboardingCompletedUsers],
+        );
+        firstDemoTestUsers += _asInt(
+          data[AdminDashboardMetrics.firstDemoTestUsers],
+        );
         firstTestUsers += _asInt(data[AdminDashboardMetrics.firstTestUsers]);
-        firstMemoryGameUsers +=
-            _asInt(data[AdminDashboardMetrics.firstMemoryGameUsers]);
+        firstMemoryGameUsers += _asInt(
+          data[AdminDashboardMetrics.firstMemoryGameUsers],
+        );
         memoryGamePlays += _asInt(data[AdminDashboardMetrics.memoryGamePlays]);
       }
 

@@ -75,12 +75,11 @@ class BookmarkBackupService {
   /// Stable fingerprint of the bookmark set (uuid, time, note).
   @visibleForTesting
   static String fingerprint(List<Bookmark> rows) {
-    final parts =
-        [
-          for (final b in rows)
-            '${b.questionUuid}|${b.createdAt.millisecondsSinceEpoch}|'
-                '${b.userNote ?? ''}',
-        ]..sort();
+    final parts = [
+      for (final b in rows)
+        '${b.questionUuid}|${b.createdAt.millisecondsSinceEpoch}|'
+            '${b.userNote ?? ''}',
+    ]..sort();
     // FNV-1a 64-bit-ish over the joined string; collisions only cost a
     // skipped upload until the next change.
     var h = 0xcbf29ce484222325;
@@ -101,7 +100,8 @@ class BookmarkBackupService {
     try {
       final uid = _uid;
       if (uid == null) return false;
-      final rows = await _db.bookmarksDao.getAllBookmarksOrderedByCreatedAtDesc();
+      final rows = await _db.bookmarksDao
+          .getAllBookmarksOrderedByCreatedAtDesc();
       final prefs = await SharedPreferences.getInstance();
       final key = _hashKey(uid);
       final stored = prefs.getString(key);

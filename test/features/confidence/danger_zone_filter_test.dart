@@ -33,11 +33,7 @@ void main() {
         status: 'wrong',
         confidence: AnswerConfidence.guessing,
       ),
-      buildTestQuestion(
-        uuid: '4',
-        status: 'wrong',
-        confidence: null,
-      ),
+      buildTestQuestion(uuid: '4', status: 'wrong', confidence: null),
       buildTestQuestion(
         uuid: '5',
         status: 'correct',

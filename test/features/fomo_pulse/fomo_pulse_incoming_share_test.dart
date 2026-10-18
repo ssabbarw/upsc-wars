@@ -39,16 +39,15 @@ void main() {
     });
 
     test('accepts a plain news https URI', () {
-      expect(
-        articleUrlFromIncomingUri(Uri.parse(article)),
-        article,
-      );
+      expect(articleUrlFromIncomingUri(Uri.parse(article)), article);
     });
 
     test('does not treat upscwars.in product links as articles', () {
       expect(
         articleUrlFromIncomingUri(
-          Uri.parse('https://upscwars.in/ca-shot/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee'),
+          Uri.parse(
+            'https://upscwars.in/ca-shot/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee',
+          ),
         ),
         isNull,
       );

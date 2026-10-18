@@ -25,6 +25,7 @@ import 'package:upsc_wars/features/community/providers/user_block_providers.dart
 import 'package:upsc_wars/features/home/providers/auth_providers.dart';
 import 'package:upsc_wars/shared/widgets/app_toast.dart';
 import 'package:upsc_wars/shared/widgets/test_config_sheet_widgets.dart';
+import '../../../l10n/l10n.dart';
 
 class BattleConfigScreen extends ConsumerStatefulWidget {
   const BattleConfigScreen({super.key, this.invite});
@@ -52,14 +53,16 @@ class _BattleConfigScreenState extends ConsumerState<BattleConfigScreen> {
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final me = ref.watch(authStateChangesProvider).asData?.value;
-    final hPad = AppBreakpoints.fullScreenHPadding(MediaQuery.sizeOf(context).width);
+    final hPad = AppBreakpoints.fullScreenHPadding(
+      MediaQuery.sizeOf(context).width,
+    );
 
     return Scaffold(
       backgroundColor: isDark
           ? AppColors.surfaceSecondaryDark
           : AppColors.surfaceSecondaryLight,
       appBar: AppBar(
-        title: Text('Configure battle', style: AppTextStyles.h3()),
+        title: Text(context.l10n.bcTitle, style: AppTextStyles.h3()),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -81,7 +84,7 @@ class _BattleConfigScreenState extends ConsumerState<BattleConfigScreen> {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Text(
-                        'Pick your battlefield',
+                        context.l10n.bcPick,
                         style: AppTextStyles.h1().copyWith(
                           color: scheme.onSurface,
                           fontWeight: FontWeight.w600,
@@ -90,17 +93,20 @@ class _BattleConfigScreenState extends ConsumerState<BattleConfigScreen> {
                       const SizedBox(height: AppSpacing.xs),
                       Text(
                         widget.invite != null
-                            ? 'Battle vs ${widget.invite!.displayName} · 10 MCQs · Timed '
-                                  '(${(10 * kDebugSecondsPerQuestion / 60).round()} min)'
-                            : 'Pick one subject or mixed misc · 10 MCQs · Timed '
-                                  '(${(10 * kDebugSecondsPerQuestion / 60).round()} min)',
+                            ? context.l10n.bcSubInvite(
+                                widget.invite!.displayName,
+                                (10 * kDebugSecondsPerQuestion / 60).round(),
+                              )
+                            : context.l10n.bcSubPick(
+                                (10 * kDebugSecondsPerQuestion / 60).round(),
+                              ),
                         style: AppTextStyles.bodySm().copyWith(
                           color: scheme.onSurfaceVariant,
                         ),
                       ),
                       const SizedBox(height: AppSpacing.lg),
                       Text(
-                        'Subject',
+                        context.l10n.commonSubject,
                         style: AppTextStyles.label().copyWith(
                           color: scheme.onSurface,
                         ),
@@ -127,7 +133,7 @@ class _BattleConfigScreenState extends ConsumerState<BattleConfigScreen> {
                                 width: _tileWidth,
                                 height: _tileHeight,
                                 child: SubjectPickChipTile(
-                                  label: 'Misc',
+                                  label: context.l10n.bcMisc,
                                   selected: _selectedSubject == _miscSubjectKey,
                                   onTap: () => setState(
                                     () => _selectedSubject = _miscSubjectKey,
@@ -166,7 +172,7 @@ class _BattleConfigScreenState extends ConsumerState<BattleConfigScreen> {
                           const SizedBox(width: AppSpacing.sm),
                           Expanded(
                             child: Text(
-                              'Timer runs during the battle. Answers lock in once chosen, with explanations shown so you learn as you go.',
+                              context.l10n.bcTimerNote,
                               style: AppTextStyles.caption().copyWith(
                                 color: scheme.onSurfaceVariant,
                                 height: 1.4,
@@ -181,7 +187,7 @@ class _BattleConfigScreenState extends ConsumerState<BattleConfigScreen> {
                 loading: () => const Center(child: CircularProgressIndicator()),
                 error: (e, st) => Center(
                   child: Text(
-                    'Could not load subjects',
+                    context.l10n.bcLoadFailed,
                     style: AppTextStyles.body(),
                   ),
                 ),
@@ -227,7 +233,7 @@ class _BattleConfigScreenState extends ConsumerState<BattleConfigScreen> {
                           ),
                         )
                       : Text(
-                          'Start battle',
+                          context.l10n.subjectTestStartBattle,
                           style: AppTextStyles.label().copyWith(
                             color: AppColors.onPrimary,
                             fontWeight: FontWeight.w600,
@@ -260,8 +266,7 @@ class _BattleConfigScreenState extends ConsumerState<BattleConfigScreen> {
           throw StateError('Sign in required to invite a player');
         }
         final guestEmail = invite.email.toLowerCase().trim();
-        final blockedByMe =
-            await ref.read(blockedUserEmailsProvider.future);
+        final blockedByMe = await ref.read(blockedUserEmailsProvider.future);
         final hostBlockedGuest = blockedByMe.contains(guestEmail);
         final repo = ref.read(communityRepositoryProvider);
         guestBlockedHost = await repo.isUserBlocked(
@@ -270,10 +275,7 @@ class _BattleConfigScreenState extends ConsumerState<BattleConfigScreen> {
         );
         if (hostBlockedGuest) {
           if (context.mounted) {
-            AppToast.showText(
-              context,
-              'Unblock this player in Community before inviting them.',
-            );
+            AppToast.showText(context, appL10n.bcUnblockFirst);
           }
           return;
         }
@@ -372,11 +374,9 @@ class _BattleConfigScreenState extends ConsumerState<BattleConfigScreen> {
       debugPrintStack(stackTrace: st);
       if (context.mounted) {
         final msg = switch (e.code) {
-          'permission-denied' =>
-            'Could not save the battle room. Sign in and try again, or check Firestore rules.',
-          'unavailable' =>
-            'Firestore is temporarily unavailable. Check your connection and try again.',
-          _ => e.message ?? 'Battle setup failed (${e.code}).',
+          'permission-denied' => appL10n.bcErrPermission,
+          'unavailable' => appL10n.bcErrUnavailable,
+          _ => e.message ?? appL10n.bcErrSetup(e.code),
         };
         AppToast.showText(context, msg);
       }
@@ -384,10 +384,7 @@ class _BattleConfigScreenState extends ConsumerState<BattleConfigScreen> {
       debugPrint('Battle start timed out: $e');
       debugPrintStack(stackTrace: st);
       if (context.mounted) {
-        AppToast.showText(
-          context,
-          'Saving the battle timed out. Check your internet connection and try again.',
-        );
+        AppToast.showText(context, appL10n.bcErrTimeout);
       }
     } catch (e, st) {
       debugPrint('Battle start: $e');

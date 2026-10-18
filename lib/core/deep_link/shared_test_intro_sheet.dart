@@ -5,6 +5,7 @@ import 'package:upsc_wars/core/theme/app_colors.dart';
 import 'package:upsc_wars/core/theme/app_radius.dart';
 import 'package:upsc_wars/core/theme/app_spacing.dart';
 import 'package:upsc_wars/core/theme/app_text_styles.dart';
+import '../../l10n/l10n.dart';
 
 /// Result of the colorful shared-test landing (name + Top 5 leaderboard).
 class SharedTestIntroOutcome {
@@ -99,16 +100,13 @@ class _SharedTestIntroSheetBodyState extends State<_SharedTestIntroSheetBody> {
     final name = _controller.text.trim();
     if (name.isEmpty) {
       setState(() {
-        _validationError =
-            "If you don't want to give your name, enter any random name";
+        _validationError = appL10n.stNameHint;
       });
       return;
     }
     Navigator.pop(
       context,
-      SharedTestIntroOutcome(
-        participantName: capitalizeShareDisplayName(name),
-      ),
+      SharedTestIntroOutcome(participantName: capitalizeShareDisplayName(name)),
     );
   }
 
@@ -146,7 +144,7 @@ class _SharedTestIntroSheetBodyState extends State<_SharedTestIntroSheetBody> {
                   children: [
                     Expanded(
                       child: Text(
-                        'Before you begin',
+                        context.l10n.stBefore,
                         style: AppTextStyles.h3().copyWith(
                           color: scheme.onSurface,
                         ),
@@ -173,7 +171,7 @@ class _SharedTestIntroSheetBodyState extends State<_SharedTestIntroSheetBody> {
                 ),
                 const SizedBox(height: AppSpacing.sm),
                 Text(
-                  '${widget.sharedBy} shared this test with you.',
+                  context.l10n.stSharedWithYou(widget.sharedBy),
                   style: AppTextStyles.body().copyWith(
                     color: scheme.onSurfaceVariant,
                   ),
@@ -184,9 +182,11 @@ class _SharedTestIntroSheetBodyState extends State<_SharedTestIntroSheetBody> {
                   textInputAction: TextInputAction.done,
                   autofocus: _controller.text.trim().isEmpty,
                   decoration: InputDecoration(
-                    labelText: 'Your name',
-                    hintText: 'Enter your display name',
-                    errorText: _validationError.isEmpty ? null : _validationError,
+                    labelText: context.l10n.cpYourName,
+                    hintText: context.l10n.stEnterName,
+                    errorText: _validationError.isEmpty
+                        ? null
+                        : _validationError,
                   ),
                   onSubmitted: (_) => _submit(),
                 ),
@@ -212,7 +212,7 @@ class _SharedTestIntroSheetBodyState extends State<_SharedTestIntroSheetBody> {
                           ),
                           const SizedBox(width: AppSpacing.xs),
                           Text(
-                            'Leaderboard · Top 5',
+                            context.l10n.stTop5,
                             style: AppTextStyles.label().copyWith(
                               color: Colors.white,
                               fontWeight: FontWeight.w800,
@@ -223,7 +223,7 @@ class _SharedTestIntroSheetBodyState extends State<_SharedTestIntroSheetBody> {
                       const SizedBox(height: AppSpacing.sm),
                       if (widget.leaderboard.isEmpty)
                         Text(
-                          'Be the first to take this test.',
+                          context.l10n.stBeFirst,
                           style: AppTextStyles.bodySm().copyWith(
                             color: Colors.white.withValues(alpha: 0.82),
                           ),
@@ -293,7 +293,7 @@ class _SharedTestIntroSheetBodyState extends State<_SharedTestIntroSheetBody> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'You are about to start a shared practice test.',
+                        context.l10n.stAbout,
                         style: AppTextStyles.bodySm().copyWith(
                           color: scheme.onSurface,
                           fontWeight: FontWeight.w600,
@@ -302,14 +302,14 @@ class _SharedTestIntroSheetBodyState extends State<_SharedTestIntroSheetBody> {
                       const SizedBox(height: AppSpacing.xs),
                       Text(
                         topic.isNotEmpty
-                            ? 'Subject: ${widget.subject} · $topic'
-                            : 'Subject: ${widget.subject}',
+                            ? context.l10n.stSubjectTopic(widget.subject, topic)
+                            : context.l10n.stSubject(widget.subject),
                         style: AppTextStyles.bodySm().copyWith(
                           color: scheme.onSurfaceVariant,
                         ),
                       ),
                       Text(
-                        'Questions: ${widget.questionCount}',
+                        context.l10n.stQuestions(widget.questionCount),
                         style: AppTextStyles.bodySm().copyWith(
                           color: scheme.onSurfaceVariant,
                         ),
@@ -320,7 +320,7 @@ class _SharedTestIntroSheetBodyState extends State<_SharedTestIntroSheetBody> {
                 const SizedBox(height: AppSpacing.lg),
                 ElevatedButton(
                   onPressed: _submit,
-                  child: const Text('Continue'),
+                  child: Text(context.l10n.commonContinue),
                 ),
               ],
             ),

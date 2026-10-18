@@ -10,6 +10,7 @@ import '../shared/revision_game_analytics.dart';
 import '../shared/revision_games_theme.dart';
 import '../shared/revision_games_widgets.dart';
 import 'fact_or_bluff_controller.dart';
+import '../../../l10n/l10n.dart';
 
 class FactOrBluffScreen extends HookConsumerWidget {
   const FactOrBluffScreen({
@@ -63,9 +64,9 @@ class FactOrBluffScreen extends HookConsumerWidget {
           Icons.looks_3_rounded,
         ],
         steps: [
-          'Read the statement fast.',
-          'You have $seconds seconds on the clock.',
-          'Tap FACT or BLUFF before time runs out.',
+          context.l10n.gmFobStep1,
+          context.l10n.gmFobStep2(seconds),
+          context.l10n.gmFobStep3,
         ],
       ),
     );
@@ -119,7 +120,7 @@ class FactOrBluffScreen extends HookConsumerWidget {
               onBluff: () => ref.read(provider.notifier).answer(false),
             )
           : RgPillButton(
-              label: 'Next →',
+              label: context.l10n.gmNext,
               onPressed: () => ref.read(provider.notifier).next(),
             ),
       body: async.when(
@@ -140,7 +141,7 @@ class FactOrBluffScreen extends HookConsumerWidget {
           if (item == null) {
             return Center(
               child: Text(
-                state.error ?? 'No content',
+                state.error ?? context.l10n.gmNoContent,
                 style: RgText.body(color: RgColors.muted),
               ),
             );
@@ -162,9 +163,9 @@ class FactOrBluffScreen extends HookConsumerWidget {
                 const SizedBox(height: 6),
                 Center(
                   child: RgMonoLabel(switch (state.verdict) {
-                    FactOrBluffVerdict.correct => 'You got it',
-                    FactOrBluffVerdict.wrong => 'Not this time',
-                    FactOrBluffVerdict.timeout => 'Too slow',
+                    FactOrBluffVerdict.correct => context.l10n.gmGotIt,
+                    FactOrBluffVerdict.wrong => context.l10n.gmNotThisTime,
+                    FactOrBluffVerdict.timeout => context.l10n.gmTooSlow,
                     FactOrBluffVerdict.none => '',
                   }),
                 ),

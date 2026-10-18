@@ -7,5 +7,6 @@ abstract final class PyqConstants {
   static String subjectSlugForYear(String year) => 'upsc_pyq_$year';
 
   /// Stored on [Sessions.topic] to identify which 25-Q block was attempted.
-  static String packTopic(int zeroBasedPackIndex) => 'pyq_25:$zeroBasedPackIndex';
+  static String packTopic(int zeroBasedPackIndex) =>
+      'pyq_25:$zeroBasedPackIndex';
 }

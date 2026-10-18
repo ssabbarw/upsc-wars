@@ -1,13 +1,7 @@
 // ignore_for_file: public_member_api_docs
 
 /// Readiness band shown on the performance home hero.
-enum ReadinessBand {
-  critical,
-  needsWork,
-  improving,
-  strong,
-  examReady,
-}
+enum ReadinessBand { critical, needsWork, improving, strong, examReady }
 
 class ReadinessSnapshot {
   const ReadinessSnapshot({

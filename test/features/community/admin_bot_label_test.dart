@@ -9,10 +9,7 @@ import 'package:upsc_wars/features/community/widgets/admin_bot_label.dart';
 void main() {
   const botEmail = 'priya.k42@community.upscwars.in';
   const botUid = 'bot_priya_k42';
-  const index = TrafficBotIndex(
-    emails: {botEmail},
-    uids: {botUid},
-  );
+  const index = TrafficBotIndex(emails: {botEmail}, uids: {botUid});
 
   Widget wrap({
     required bool isSuperUser,

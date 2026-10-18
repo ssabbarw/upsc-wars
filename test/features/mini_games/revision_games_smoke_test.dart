@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:upsc_wars/l10n/app_localizations.dart';
 import 'package:upsc_wars/features/mini_games/connect_the_dots/connect_the_dots_screen.dart';
 import 'package:upsc_wars/features/mini_games/duel/duel_screen.dart';
 import 'package:upsc_wars/features/mini_games/fact_or_bluff/fact_or_bluff_screen.dart';
@@ -25,7 +26,13 @@ void main() {
     });
   });
 
-  Widget wrap(Widget child) => ProviderScope(child: MaterialApp(home: child));
+  Widget wrap(Widget child) => ProviderScope(
+    child: MaterialApp(
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
+      home: child,
+    ),
+  );
 
   Future<void> pumpFrames(WidgetTester tester, {int count = 20}) async {
     for (var i = 0; i < count; i++) {
@@ -52,6 +59,8 @@ void main() {
     await tester.pumpWidget(
       ProviderScope(
         child: MaterialApp(
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
           home: Builder(
             builder: (context) => Scaffold(
               body: Center(

@@ -15,22 +15,22 @@ class AppTextStyles {
       GoogleFonts.dmSans(fontSize: 16, fontWeight: FontWeight.w500);
 
   static TextStyle body() => GoogleFonts.dmSans(
-        fontSize: 15,
-        fontWeight: FontWeight.w400,
-        height: 1.6,
-      );
+    fontSize: 15,
+    fontWeight: FontWeight.w400,
+    height: 1.6,
+  );
 
   static TextStyle bodyMd() => GoogleFonts.dmSans(
-        fontSize: 14,
-        fontWeight: FontWeight.w400,
-        height: 1.55,
-      );
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
+    height: 1.55,
+  );
 
   static TextStyle bodySm() => GoogleFonts.dmSans(
-        fontSize: 13,
-        fontWeight: FontWeight.w400,
-        height: 1.5,
-      );
+    fontSize: 13,
+    fontWeight: FontWeight.w400,
+    height: 1.5,
+  );
 
   static TextStyle label() =>
       GoogleFonts.dmSans(fontSize: 14, fontWeight: FontWeight.w500);
@@ -42,16 +42,16 @@ class AppTextStyles {
       GoogleFonts.dmSans(fontSize: 11, fontWeight: FontWeight.w400);
 
   static TextStyle question() => GoogleFonts.dmSans(
-        fontSize: 15,
-        fontWeight: FontWeight.w400,
-        height: 1.7,
-      );
+    fontSize: 15,
+    fontWeight: FontWeight.w400,
+    height: 1.7,
+  );
 
   static TextStyle option() => GoogleFonts.dmSans(
-        fontSize: 14,
-        fontWeight: FontWeight.w400,
-        height: 1.55,
-      );
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
+    height: 1.55,
+  );
 
   /// Bottom navigation labels (always visible).
   static TextStyle navLabel() =>

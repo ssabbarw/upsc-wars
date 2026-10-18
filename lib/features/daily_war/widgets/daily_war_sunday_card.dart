@@ -16,6 +16,7 @@ import '../theme/daily_war_theme.dart';
 import 'daily_war_help_sheet.dart';
 import 'daily_war_topics_sheet.dart';
 import 'daily_war_week_progress_sheet.dart';
+import '../../../l10n/l10n.dart';
 
 /// Sunday home hero — calm rest-day composition with week recap + Monday dock.
 class DailyWarSundayCard extends ConsumerWidget {
@@ -35,8 +36,10 @@ class DailyWarSundayCard extends ConsumerWidget {
     );
 
     final bundle = ref.watch(dailyWarHistoryBundleProvider).asData?.value;
-    final mondayDoc =
-        ref.watch(dailyWarDocByIdProvider(mondayId)).asData?.value;
+    final mondayDoc = ref
+        .watch(dailyWarDocByIdProvider(mondayId))
+        .asData
+        ?.value;
     DailyWarDoc? saturdayDoc;
     for (final w in bundle?.wars ?? const <DailyWarDoc>[]) {
       if (w.dateId == saturdayId) {
@@ -44,8 +47,10 @@ class DailyWarSundayCard extends ConsumerWidget {
         break;
       }
     }
-    saturdayDoc ??=
-        ref.watch(dailyWarDocByIdProvider(saturdayId)).asData?.value;
+    saturdayDoc ??= ref
+        .watch(dailyWarDocByIdProvider(saturdayId))
+        .asData
+        ?.value;
 
     final mondayTopics = mondayDoc?.topics.isNotEmpty == true
         ? mondayDoc!.topics
@@ -90,12 +95,12 @@ class DailyWarSundayCard extends ConsumerWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'SUNDAY · NO BATTLE TONIGHT',
+                context.l10n.dwSundayNoBattle,
                 style: DwText.eyebrow(color: const Color(0x99C5CDFF)),
               ),
               const SizedBox(height: 2),
               Text(
-                'Rest day · ${DailyWarCopy.dailyEventName} returns Monday 9 PM',
+                context.l10n.dwRestDay(DailyWarCopy.dailyEventName),
                 style: DwText.dm(
                   size: 11,
                   weight: FontWeight.w500,
@@ -165,36 +170,30 @@ class DailyWarSundayCard extends ConsumerWidget {
         const SizedBox(height: 14),
         _WeekSummaryPreview(summary: summary),
         const SizedBox(height: 16),
-        _MondayDock(
-          summary: summary,
-          mondayTopics: mondayTopics,
-        ),
+        _MondayDock(summary: summary, mondayTopics: mondayTopics),
       ],
     );
   }
 
   static String _headline(DailyWarWeekSummary s) {
     if (s.attemptedNone) {
-      return 'A quiet week';
+      return appL10n.dwQuietWeek;
     }
     if (s.attemptedAll) {
-      return 'Week ${s.weekNumber} complete';
+      return appL10n.dwWeekComplete(s.weekNumber);
     }
-    return '${s.attemptedNights} of ${s.warNights} nights';
+    return appL10n.dwNightsOf(s.attemptedNights, s.warNights);
   }
 
   static String _subhead(DailyWarWeekSummary s) {
     if (s.attemptedNone) {
       final n = s.missedTopics.length;
-      return n > 0
-          ? '$n topics went by · nothing lost for Monday'
-          : 'No battle nights this week · Monday is a fresh start';
+      return n > 0 ? appL10n.dwTopicsWentBy(n) : appL10n.dwNoBattleNights;
     }
     if (s.attemptedAll) {
-      return 'Streak safe · revise or rest until Monday';
+      return appL10n.dwStreakSafe;
     }
-    return '${s.topicsCovered} topics landed'
-        '${s.missedTopics.isEmpty ? '' : ' · ${s.missedTopics.length} still open'}';
+    return '${appL10n.dwTopicsLanded(s.topicsCovered)}${s.missedTopics.isEmpty ? '' : appL10n.dwStillOpen(s.missedTopics.length)}';
   }
 }
 
@@ -210,7 +209,8 @@ class _WeekSummaryPreview extends ConsumerWidget {
       for (final d in summary.days)
         if (!d.isRest) DailyWarSchedule.formatIsoDate(d.date),
     ].join('|');
-    final dangerCount = ref
+    final dangerCount =
+        ref
             .watch(dailyWarWeekConfidentWrongProvider(dateIds))
             .asData
             ?.value
@@ -226,10 +226,7 @@ class _WeekSummaryPreview extends ConsumerWidget {
 
     void openSummary() {
       unawaited(
-        showDailyWarWeekProgressSheet(
-          context: context,
-          summary: summary,
-        ),
+        showDailyWarWeekProgressSheet(context: context, summary: summary),
       );
     }
 
@@ -287,7 +284,7 @@ class _WeekSummaryPreview extends ConsumerWidget {
                     ),
                   ),
                   child: Text(
-                    'Full week summary',
+                    context.l10n.dwFullWeekSummary,
                     style: DwText.dm(
                       size: 13,
                       weight: FontWeight.w800,
@@ -456,10 +453,7 @@ class _OrbitNode extends StatelessWidget {
 
 /// Secondary Sunday dock — quiet “up next” for Monday, below week summary.
 class _MondayDock extends StatelessWidget {
-  const _MondayDock({
-    required this.summary,
-    required this.mondayTopics,
-  });
+  const _MondayDock({required this.summary, required this.mondayTopics});
 
   final DailyWarWeekSummary summary;
   final List<DailyWarTopicRef> mondayTopics;
@@ -468,24 +462,24 @@ class _MondayDock extends StatelessWidget {
   Widget build(BuildContext context) {
     final subjects = DailyWarCopy.subjectsLine(mondayTopics);
     final topicLine = mondayTopics.isEmpty
-        ? 'Topics up Monday morning'
+        ? appL10n.dwTopicsMonday
         : mondayTopics.map((t) => t.topic).take(2).join(' · ');
 
     final cta = summary.attemptedPartial && summary.missedTopics.isNotEmpty
-        ? 'Catch up'
+        ? appL10n.dwCatchUp
         : summary.attemptedAll
-            ? 'Revise week'
-            : 'Practice early';
+        ? appL10n.dwReviseWeek
+        : appL10n.dwPracticeEarly;
 
     final practiceTopics =
         summary.attemptedPartial && summary.missedTopics.isNotEmpty
-            ? [summary.missedTopics.first]
-            : summary.attemptedAll
-                ? summary.days
-                    .where((d) => d.attempted)
-                    .expand((d) => d.war?.topics ?? const <DailyWarTopicRef>[])
-                    .toList()
-                : mondayTopics;
+        ? [summary.missedTopics.first]
+        : summary.attemptedAll
+        ? summary.days
+              .where((d) => d.attempted)
+              .expand((d) => d.war?.topics ?? const <DailyWarTopicRef>[])
+              .toList()
+        : mondayTopics;
 
     void openPractice() {
       if (practiceTopics.isEmpty) {
@@ -507,9 +501,7 @@ class _MondayDock extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
             color: Colors.white.withValues(alpha: 0.03),
-            border: Border.all(
-              color: DwColors.onDark.withValues(alpha: 0.08),
-            ),
+            border: Border.all(color: DwColors.onDark.withValues(alpha: 0.08)),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -517,7 +509,7 @@ class _MondayDock extends StatelessWidget {
               Row(
                 children: [
                   Text(
-                    'UP NEXT',
+                    context.l10n.dwUpNext,
                     style: DwText.dm(
                       size: 10,
                       weight: FontWeight.w700,
@@ -527,7 +519,7 @@ class _MondayDock extends StatelessWidget {
                   ),
                   const SizedBox(width: 8),
                   Text(
-                    'Monday · 9 PM',
+                    context.l10n.dwMonday9,
                     style: DwText.dm(
                       size: 11,
                       weight: FontWeight.w600,

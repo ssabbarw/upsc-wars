@@ -5,6 +5,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../widgets/daily_revision_choice_sheet.dart';
+import '../../../l10n/l10n.dart';
 
 /// Notification / cold-start entry that lands on the revision queue.
 class DailyDrillLaunchScreen extends ConsumerStatefulWidget {
@@ -56,7 +57,7 @@ class _DailyDrillLaunchScreenState
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Text(
-                  'Could not open revision queue',
+                  context.l10n.ddOpenFailed,
                   style: AppTextStyles.h3().copyWith(color: scheme.onSurface),
                 ),
                 const SizedBox(height: AppSpacing.sm),
@@ -69,7 +70,7 @@ class _DailyDrillLaunchScreenState
                 const SizedBox(height: AppSpacing.lg),
                 FilledButton(
                   onPressed: () => context.go('/'),
-                  child: const Text('Go home'),
+                  child: Text(context.l10n.mpGoHome),
                 ),
               ],
             ),

@@ -211,9 +211,9 @@ class _SessionTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
     final when = session.joinedAtMs > 0
-        ? DateFormat('d MMM, h:mm a').format(
-            DateTime.fromMillisecondsSinceEpoch(session.joinedAtMs),
-          )
+        ? DateFormat(
+            'd MMM, h:mm a',
+          ).format(DateTime.fromMillisecondsSinceEpoch(session.joinedAtMs))
         : session.dateId;
     final human = session.humanDisplayName.isNotEmpty
         ? session.humanDisplayName

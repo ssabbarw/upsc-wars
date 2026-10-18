@@ -43,11 +43,7 @@ GoRouter? liveGoRouter({GoRouter? fallback}) {
   return fallback;
 }
 
-void navigateLive(
-  String location, {
-  GoRouter? fallback,
-  bool replace = false,
-}) {
+void navigateLive(String location, {GoRouter? fallback, bool replace = false}) {
   void go(GoRouter router) {
     if (replace) {
       router.go(location);
@@ -100,7 +96,9 @@ Future<void> openShareLinkPayload({
     var sharedBy = 'A friend';
 
     if (questionIds.isEmpty) {
-      debugPrint('[share-link] resolving questions from Firestore shareId=${payload.shareId}');
+      debugPrint(
+        '[share-link] resolving questions from Firestore shareId=${payload.shareId}',
+      );
       final repo = SharedSessionFirestoreRepository();
       final doc = await repo.fetch(payload.shareId);
       questionIds = doc.orderedQuestionUuids;
@@ -143,9 +141,7 @@ Future<void> openShareLinkPayload({
           } catch (e2, st2) {
             debugPrint('[share-link] retry failed for $loc: $e2');
             debugPrintStack(stackTrace: st2);
-            showShareLinkMessage(
-              'Could not open link. Please try again.',
-            );
+            showShareLinkMessage('Could not open link. Please try again.');
           }
         }());
       } catch (e, st) {

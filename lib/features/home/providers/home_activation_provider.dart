@@ -77,8 +77,8 @@ class HomeActivation extends _$HomeActivation {
     var activationComplete = prefs.homeActivationComplete;
 
     if (!activationComplete && completedCount > 0) {
-      final hasConfidence =
-          await db.sessionQuestionsDao.hasSureOrEducatedOnCompletedSessions();
+      final hasConfidence = await db.sessionQuestionsDao
+          .hasSureOrEducatedOnCompletedSessions();
       if (hasConfidence) {
         markHomeActivationComplete(prefs);
         activationComplete = true;

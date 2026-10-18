@@ -6,6 +6,7 @@ import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/widgets/contact_us_entry.dart';
+import '../../../l10n/l10n.dart';
 
 /// Explains "Revise before mock" vs "Safe areas" mock-prep cards.
 void showMockPrepWhyBottomSheet(
@@ -24,8 +25,10 @@ void showMockPrepWhyBottomSheet(
       final padding = MediaQuery.paddingOf(ctx);
       final safeH = MediaQuery.sizeOf(ctx).height - padding.vertical;
       // Reserve space for top inset, Done button, and outer padding (~100pt).
-      final maxBodyScrollHeight =
-          (safeH - 100 - padding.bottom).clamp(160.0, 640.0);
+      final maxBodyScrollHeight = (safeH - 100 - padding.bottom).clamp(
+        160.0,
+        640.0,
+      );
       return Padding(
         padding: const EdgeInsets.fromLTRB(8, 0, 8, 8),
         child: _MockPrepWhySheet(
@@ -88,14 +91,13 @@ class _MockPrepWhySheet extends StatelessWidget {
               children: [
                 if (isRevise) ...[
                   _TitleBlock(
-                    title: 'Revise Before Your Next Mock',
+                    title: context.l10n.mockReviseTitle,
                     accent: accent,
                     softBg: softBg,
                   ),
                   const SizedBox(height: AppSpacing.lg),
                   Text(
-                    'These are topics where your Sure + Incorrect and '
-                    'Educated Guess + Incorrect are higher than your usual average.',
+                    context.l10n.mockReviseWhy,
                     style: AppTextStyles.bodySm().copyWith(
                       color: scheme.onSurface,
                       height: 1.45,
@@ -110,25 +112,23 @@ class _MockPrepWhySheet extends StatelessWidget {
                   const SizedBox(height: AppSpacing.md),
                   _SectionHeader(
                     icon: doEmoji,
-                    label: 'What to do',
+                    label: context.l10n.mockWhatToDo,
                     accent: accent,
                   ),
                   const SizedBox(height: AppSpacing.sm),
                   Text(
-                    'Revise these topics from your notes first before your next mock to reduce '
-                    'costly mistakes and improve your score.',
+                    context.l10n.mockReviseAction,
                     style: _bodyStyle(scheme),
                   ),
                 ] else ...[
                   _TitleBlock(
-                    title: 'Safe Areas for Higher Attempts',
+                    title: context.l10n.mockSafeTitle,
                     accent: accent,
                     softBg: softBg,
                   ),
                   const SizedBox(height: AppSpacing.lg),
                   Text(
-                    'These are topics where your Sure + Correct and Educated '
-                    'Guess + Correct are better than your usual average.',
+                    context.l10n.mockSafeWhy,
                     style: AppTextStyles.bodySm().copyWith(
                       color: scheme.onSurface,
                       height: 1.45,
@@ -143,20 +143,14 @@ class _MockPrepWhySheet extends StatelessWidget {
                   const SizedBox(height: AppSpacing.md),
                   _SectionHeader(
                     icon: doEmoji,
-                    label: 'What to do',
+                    label: context.l10n.mockWhatToDo,
                     accent: accent,
                   ),
                   const SizedBox(height: AppSpacing.sm),
-                  Text(
-                    'Be more confident while attempting questions from these '
-                    'topics in mocks and exams.',
-                    style: _bodyStyle(scheme),
-                  ),
+                  Text(context.l10n.mockSafeAction, style: _bodyStyle(scheme)),
                 ],
                 const SizedBox(height: AppSpacing.xl),
-                const ContactUsTextButton(
-                  leadingText: 'Want further clarity? ',
-                ),
+                ContactUsTextButton(leadingText: context.l10n.mockMoreClarity),
                 const SizedBox(height: AppSpacing.lg),
               ],
             ),
@@ -181,7 +175,7 @@ class _MockPrepWhySheet extends StatelessWidget {
                 ),
               ),
               child: Text(
-                'Done',
+                context.l10n.commonDone,
                 style: AppTextStyles.label().copyWith(
                   color: AppColors.onPrimary,
                   fontWeight: FontWeight.w600,

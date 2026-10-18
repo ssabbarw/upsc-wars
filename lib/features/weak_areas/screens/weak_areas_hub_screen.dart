@@ -18,6 +18,7 @@ import '../../../core/analytics/analytics.dart';
 import '../../../core/analytics/analytics_events.dart';
 import '../../../core/providers/prefs_provider.dart';
 import '../../../shared/widgets/test_config_bottom_sheet.dart';
+import '../../../l10n/l10n.dart';
 
 class _NoScrollbarBehavior extends ScrollBehavior {
   const _NoScrollbarBehavior();
@@ -110,8 +111,10 @@ class WeakAreasHubScreen extends HookConsumerWidget {
             Expanded(
               child: weakTopicGroups.when(
                 loading: () => _skeletonList(scheme),
-                error: (e, st) =>
-                    _errorWidget(() => ref.invalidate(weakTopicGroupsProvider)),
+                error: (e, st) => _errorWidget(
+                  context,
+                  () => ref.invalidate(weakTopicGroupsProvider),
+                ),
                 data: (groups) {
                   final subjects = SubjectConstants.ordered
                       .map((s) => s.slug)
@@ -200,7 +203,7 @@ class WeakAreasHubScreen extends HookConsumerWidget {
                                 ),
                                 children: [
                                   Text(
-                                    'Accuracy = % correct among attempted questions in the topic.\nAttempt = % of topic questions you have attempted.',
+                                    context.l10n.weakLegend,
                                     style: AppTextStyles.caption().copyWith(
                                       color: scheme.onSurfaceVariant,
                                     ),
@@ -212,7 +215,9 @@ class WeakAreasHubScreen extends HookConsumerWidget {
                                         horizontal: AppSpacing.lg,
                                       ),
                                       child: Text(
-                                        'Attempt more questions to start seeing your weak areas for $currentSubject',
+                                        context.l10n.weakNeedMore(
+                                          currentSubject,
+                                        ),
                                         textAlign: TextAlign.center,
                                         style: AppTextStyles.bodySm().copyWith(
                                           color: scheme.onSurfaceVariant,
@@ -236,7 +241,7 @@ class WeakAreasHubScreen extends HookConsumerWidget {
                                 itemBuilder: (context, i) {
                                   if (i == 0) {
                                     return Text(
-                                      'Accuracy = % correct among attempted questions in the topic.\nAttempt = % of topic questions you have attempted.',
+                                      context.l10n.weakLegend,
                                       style: AppTextStyles.caption().copyWith(
                                         color: scheme.onSurfaceVariant,
                                       ),
@@ -276,8 +281,11 @@ class WeakAreasHubScreen extends HookConsumerWidget {
     ),
   );
 
-  Widget _errorWidget(VoidCallback retry) => Center(
-    child: OutlinedButton(onPressed: retry, child: const Text('Retry')),
+  Widget _errorWidget(BuildContext context, VoidCallback retry) => Center(
+    child: OutlinedButton(
+      onPressed: retry,
+      child: Text(context.l10n.commonRetry),
+    ),
   );
 }
 

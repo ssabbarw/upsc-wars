@@ -11,7 +11,10 @@ void main() {
     });
 
     test('only incorrect', () {
-      expect(DailyRevision.countsLine(missed: 12, saved: 0), '12\u00a0incorrects');
+      expect(
+        DailyRevision.countsLine(missed: 12, saved: 0),
+        '12\u00a0incorrects',
+      );
     });
 
     test('only bookmarked', () {

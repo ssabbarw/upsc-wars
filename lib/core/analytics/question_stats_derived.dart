@@ -47,9 +47,7 @@ abstract final class QuestionStatsDerived {
       'd': optionDCount.toDouble(),
     };
     counts.remove(correctOption.toLowerCase());
-    return {
-      for (final e in counts.entries) e.key: e.value / wrong,
-    };
+    return {for (final e in counts.entries) e.key: e.value / wrong};
   }
 
   static double? sureWrongRate({

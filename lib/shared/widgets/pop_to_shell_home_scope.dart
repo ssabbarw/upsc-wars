@@ -42,11 +42,7 @@ class ShellInnerBackRegistry {
 /// [PopScope] still blocks a route pop of this branch (sheets use the root
 /// navigator and are ignored here).
 class PopToShellHomeScope extends StatefulWidget {
-  const PopToShellHomeScope({
-    super.key,
-    required this.child,
-    this.onInnerBack,
-  });
+  const PopToShellHomeScope({super.key, required this.child, this.onInnerBack});
 
   final Widget child;
 

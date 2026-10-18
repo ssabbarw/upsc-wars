@@ -5,7 +5,8 @@ import 'prelims_notification_service.dart';
 class PrelimsSurfacesRefresh {
   PrelimsSurfacesRefresh._();
 
-  static const String periodicTaskUniqueName = 'prelims_surfaces_refresh_periodic';
+  static const String periodicTaskUniqueName =
+      'prelims_surfaces_refresh_periodic';
   static const String periodicTaskName = 'prelimsSurfacesRefresh';
 
   static Future<void> refreshAllSurfaces() async {

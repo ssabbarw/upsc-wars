@@ -59,10 +59,12 @@ class QotdPost {
   static QotdPost? parse(String id, Map<String, dynamic> data) {
     final qUuid = (data['question_uuid'] as String?)?.trim();
     final comment = (data['comment'] as String?)?.trim() ?? '';
-    final authorEmail = (data['author_email'] as String?)?.toLowerCase().trim() ?? '';
+    final authorEmail =
+        (data['author_email'] as String?)?.toLowerCase().trim() ?? '';
     final authorName = (data['author_name'] as String?)?.trim() ?? '';
     final authorPhotoUrl = (data['author_photo_url'] as String?)?.trim() ?? '';
-    final correctOpt = (data['correct_option'] as String?)?.toLowerCase().trim() ?? '';
+    final correctOpt =
+        (data['correct_option'] as String?)?.toLowerCase().trim() ?? '';
     if (qUuid == null ||
         qUuid.isEmpty ||
         authorEmail.isEmpty ||

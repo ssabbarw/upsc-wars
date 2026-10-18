@@ -27,19 +27,11 @@ class TestEngineQuestionShimmer extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  ShimmerBox(
-                    width: 40,
-                    height: 40,
-                    borderRadius: AppRadius.md,
-                  ),
+                  ShimmerBox(width: 40, height: 40, borderRadius: AppRadius.md),
                   const SizedBox(width: AppSpacing.sm),
                   const ShimmerBox(width: 88, height: 16),
                   const Spacer(),
-                  ShimmerBox(
-                    width: 72,
-                    height: 28,
-                    borderRadius: AppRadius.sm,
-                  ),
+                  ShimmerBox(width: 72, height: 28, borderRadius: AppRadius.sm),
                 ],
               ),
               const SizedBox(height: AppSpacing.lg),
@@ -51,11 +43,7 @@ class TestEngineQuestionShimmer extends StatelessWidget {
               const SizedBox(height: AppSpacing.xl),
               for (var i = 0; i < 4; i++) ...[
                 if (i > 0) const SizedBox(height: AppSpacing.sm),
-                ShimmerBox(
-                  width: w,
-                  height: 52,
-                  borderRadius: AppRadius.md,
-                ),
+                ShimmerBox(width: w, height: 52, borderRadius: AppRadius.md),
               ],
             ],
           ),

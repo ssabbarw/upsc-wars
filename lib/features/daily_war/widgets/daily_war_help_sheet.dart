@@ -6,6 +6,7 @@ import '../../../shared/widgets/dismissible_modal_sheet.dart';
 import '../domain/daily_war_copy.dart';
 import '../domain/daily_war_schedule.dart';
 import '../theme/daily_war_theme.dart';
+import '../../../l10n/l10n.dart';
 
 /// “How Static War works” — opened only from the `?` control.
 Future<void> showDailyWarHelpSheet(BuildContext context) {
@@ -62,7 +63,7 @@ class _DailyWarHelpSheet extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  'How ${DailyWarCopy.programName} works',
+                  context.l10n.dwHowWorks(DailyWarCopy.programName),
                   style: AppTextStyles.h2().copyWith(
                     color: scheme.onSurface,
                     fontWeight: FontWeight.w800,
@@ -72,32 +73,34 @@ class _DailyWarHelpSheet extends StatelessWidget {
                 _HelpRow(
                   icon: Icons.schedule_rounded,
                   iconColor: const Color(0xFF1D9E75),
-                  title: 'Live at 9:00 PM',
-                  body:
-                      'Same paper, All-India · '
-                      '${DailyWarSchedule.weekdayQuestionCount}Q / ${weekdayMins}m weeknights · '
-                      '${DailyWarSchedule.grandWarQuestionCount}Q / ${grandMins}m Sat ${DailyWarCopy.grandEventName}',
+                  title: context.l10n.dwHelpLiveTitle,
+                  body: context.l10n.dwHelpLiveBody(
+                    DailyWarSchedule.weekdayQuestionCount,
+                    weekdayMins,
+                    DailyWarSchedule.grandWarQuestionCount,
+                    grandMins,
+                    DailyWarCopy.grandEventName,
+                  ),
                 ),
                 _HelpRow(
                   icon: Icons.leaderboard_rounded,
                   iconColor: const Color(0xFF3B82F6),
-                  title: 'AIR at $rankClock',
-                  body:
-                      'See your score on submission · we\'ll notify you '
-                      'when ranks are ready',
+                  title: context.l10n.dwAirAt(rankClock),
+                  body: context.l10n.dwHelpAirBody,
                 ),
                 _HelpRow(
                   icon: Icons.calendar_month_rounded,
                   iconColor: const Color(0xFFEA580C),
-                  title: 'Week rhythm',
-                  body:
-                      '2 topics Mon–Fri · ${DailyWarCopy.grandEventName} Sat · Sunday off',
+                  title: context.l10n.dwHelpRhythmTitle,
+                  body: context.l10n.dwHelpRhythmBody(
+                    DailyWarCopy.grandEventName,
+                  ),
                 ),
                 _HelpRow(
                   icon: Icons.history_rounded,
                   iconColor: const Color(0xFF6B7280),
-                  title: 'Missed a night?',
-                  body: 'Practice later · no rank · streak breaks',
+                  title: context.l10n.dwHelpMissedTitle,
+                  body: context.l10n.dwHelpMissedBody,
                   isLast: true,
                 ),
                 const SizedBox(height: 16),
@@ -113,7 +116,7 @@ class _DailyWarHelpSheet extends StatelessWidget {
                       ),
                     ),
                     child: Text(
-                      'Got it',
+                      context.l10n.commonGotIt,
                       style: AppTextStyles.label().copyWith(
                         color: Colors.white,
                         fontWeight: FontWeight.w700,

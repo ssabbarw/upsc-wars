@@ -23,6 +23,7 @@ import '../../community/widgets/admin_bot_label.dart';
 import '../domain/entities/chat_message.dart';
 import '../domain/entities/chat_runtime_config.dart';
 import '../providers/chat_providers.dart';
+import '../../../l10n/l10n.dart';
 
 class ChatThreadScreen extends HookConsumerWidget {
   const ChatThreadScreen({
@@ -130,7 +131,7 @@ class ChatThreadScreen extends HookConsumerWidget {
         }
       } catch (e) {
         if (context.mounted) {
-          AppToast.showText(context, 'Message failed to send: $e');
+          AppToast.showText(context, context.l10n.chatSendFailed(e.toString()));
         }
       }
     }
@@ -266,8 +267,8 @@ class ChatThreadScreen extends HookConsumerWidget {
                   ? Center(
                       child: Text(
                         AuthSession.isCurrentAccountSignedIn()
-                            ? 'Could not start chat. Go back and try again.'
-                            : 'Sign in again to send messages.',
+                            ? context.l10n.chatStartFailed
+                            : context.l10n.chatSignInAgain,
                         textAlign: TextAlign.center,
                         style: AppTextStyles.bodyMd(),
                       ),
@@ -288,9 +289,8 @@ class ChatThreadScreen extends HookConsumerWidget {
                           return Center(
                             child: Text(
                               iBlockedPeer
-                                  ? 'You have blocked this person. Their messages are hidden. '
-                                        'Unblock them in Settings to chat.'
-                                  : 'Start the conversation.',
+                                  ? context.l10n.chatBlockedHidden
+                                  : context.l10n.bcfStartConv,
                               textAlign: TextAlign.center,
                               style: AppTextStyles.bodyMd(),
                             ),
@@ -362,7 +362,9 @@ class ChatThreadScreen extends HookConsumerWidget {
                       loading: () =>
                           const Center(child: CircularProgressIndicator()),
                       error: (error, _) => Center(
-                        child: Text('Could not load messages: $error'),
+                        child: Text(
+                          context.l10n.bcfLoadFailed(error.toString()),
+                        ),
                       ),
                     ),
             ),
@@ -382,8 +384,7 @@ class ChatThreadScreen extends HookConsumerWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(AppSpacing.md),
                       child: Text(
-                        'You have blocked this person. Unblock them in '
-                        'Settings to send messages.',
+                        context.l10n.chatBlockedSend,
                         style: AppTextStyles.bodySm().copyWith(
                           color: Theme.of(context).colorScheme.onSurfaceVariant,
                         ),
@@ -412,8 +413,8 @@ class ChatThreadScreen extends HookConsumerWidget {
                           minLines: 1,
                           maxLines: 4,
                           textCapitalization: TextCapitalization.sentences,
-                          decoration: const InputDecoration(
-                            hintText: 'Type a message',
+                          decoration: InputDecoration(
+                            hintText: context.l10n.bcfHint,
                             border: OutlineInputBorder(),
                           ),
                         ),
@@ -547,7 +548,7 @@ class _MessageText extends StatelessWidget {
   static Future<void> _openUri(BuildContext context, Uri uri) async {
     final ok = await launchUrl(uri, mode: LaunchMode.externalApplication);
     if (!ok && context.mounted) {
-      AppToast.showText(context, 'Could not open link');
+      AppToast.showText(context, context.l10n.chatOpenLink);
     }
   }
 }
