@@ -5325,4 +5325,702 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get stPreparing => 'Preparing configuration…';
+
+  @override
+  String tsAttemptedOf(int attempted, int total) {
+    return '$attempted of $total tests attempted';
+  }
+
+  @override
+  String tsAccuracyPct(int percent) {
+    return '$percent% accuracy';
+  }
+
+  @override
+  String tsCompletedOf(int attempted, int total) {
+    return '$attempted of $total tests completed';
+  }
+
+  @override
+  String tsTestsIn(String title) {
+    return 'Tests in $title';
+  }
+
+  @override
+  String tsQAnswered(int n) {
+    return '$n questions answered';
+  }
+
+  @override
+  String tsHcTests(int n) {
+    return '$n tests: subjects, current affairs and mocks';
+  }
+
+  @override
+  String tsHcFree(int n) {
+    return '$n free tests to try. Subject tests, current affairs, full mocks.';
+  }
+
+  @override
+  String tsUnlocksOn(String date) {
+    return 'Unlocks $date';
+  }
+
+  @override
+  String tsAvailFrom(String date) {
+    return 'Available from $date';
+  }
+
+  @override
+  String tsLiveSince(String date) {
+    return 'Live since $date';
+  }
+
+  @override
+  String tsQMin(int q, int m) {
+    return '$q Q · $m min';
+  }
+
+  @override
+  String tsInProgress(String meta) {
+    return 'In progress · $meta';
+  }
+
+  @override
+  String tsScoreLine(String marks, int correct, int wrong, int skipped) {
+    return 'Score $marks  ·  $correct correct, $wrong wrong, $skipped skipped';
+  }
+
+  @override
+  String tsNQuestions(int n) {
+    return '$n questions';
+  }
+
+  @override
+  String tsNMinutesTimed(int n) {
+    return '$n minutes, timed';
+  }
+
+  @override
+  String get tsLoadMineFail => 'Couldn\'t load your test series.';
+
+  @override
+  String get tsNoneStarted => 'You have not started a test series yet.';
+
+  @override
+  String get tsUnlocked => 'Unlocked';
+
+  @override
+  String get tsFreeTests => 'Free tests';
+
+  @override
+  String get tsPrelimsOver =>
+      'Prelims is over. All tests stay open for practice.';
+
+  @override
+  String get tsLoadSeriesFail => 'Couldn\'t load this series.';
+
+  @override
+  String get tsLoadSubjectFail => 'Couldn\'t load this subject.';
+
+  @override
+  String get tsSubjectNotFound => 'Subject not found.';
+
+  @override
+  String get tsTopicsToRevise => 'Topics to revise';
+
+  @override
+  String get tsNoOwnTests =>
+      'This subject has no tests of its own. Its numbers come from your full-length tests.';
+
+  @override
+  String get tsNoQAnswered => 'No questions answered yet';
+
+  @override
+  String get tsUnavailable => 'The test series is not available right now.';
+
+  @override
+  String get tsLoadFail =>
+      'Couldn\'t load the test series. Check your connection.';
+
+  @override
+  String get tsHcDefault =>
+      'Subject tests, current affairs and full-length mocks.';
+
+  @override
+  String get tsFreeLabel => 'Free';
+
+  @override
+  String get tsPublishingSoon => 'Publishing soon';
+
+  @override
+  String get tsReview => 'Review';
+
+  @override
+  String get tsSoon => 'Soon';
+
+  @override
+  String get tsLoadTestFail =>
+      'Couldn\'t load this test. Check your connection and try again.';
+
+  @override
+  String get tsPractiseAgain => 'Practise again (not scored)';
+
+  @override
+  String get tsMarking => '+2 for correct, -0.66 for wrong';
+
+  @override
+  String get tsOneAttempt =>
+      'One scored attempt. Afterwards you can review it and practise again without affecting your stats.';
+
+  @override
+  String get tsUnlockedAll =>
+      'Unlocked! Every test in this series is now yours.';
+
+  @override
+  String get tsPurchaseFail => 'The purchase could not be completed.';
+
+  @override
+  String get tsPaymentPendingSeries =>
+      'Your payment is pending. The series unlocks once it completes.';
+
+  @override
+  String get tsCodeCheckFail =>
+      'Could not check the code. Check your connection and try again.';
+
+  @override
+  String get tsUnlockAll => 'Unlock all tests';
+
+  @override
+  String tsPaidNoAccess(String entitlement, String product) {
+    return 'Payment went through, but access was not granted yet. Tap Restore purchase, or check that RevenueCat entitlement \"$entitlement\" is attached to product \"$product\".';
+  }
+
+  @override
+  String tsPwSubject(int n) {
+    return '$n subject tests, 50 questions each, with 10% PYQs';
+  }
+
+  @override
+  String tsPwCa(int n) {
+    return '$n current-affairs tests, added on the 1st of every month';
+  }
+
+  @override
+  String tsPwMocks(int n) {
+    return '$n full-length mocks that mirror the real paper (100 Q, 2 hrs)';
+  }
+
+  @override
+  String tsPwFree(int n) {
+    return '$n tests are free to try first, including all PYQ tests.';
+  }
+
+  @override
+  String tsUnlockAllPrice(String price) {
+    return 'Unlock all tests · $price';
+  }
+
+  @override
+  String get tsSignInPurchase =>
+      'Sign in with Google so your purchase is saved to your account.';
+
+  @override
+  String get tsPassUnavailable =>
+      'This pass is not available right now. Please try again later.';
+
+  @override
+  String get tsPaymentPending => 'Your payment is pending.';
+
+  @override
+  String get tsPurchasesUnavailable =>
+      'Purchases are not available on this device.';
+
+  @override
+  String get tsCodeNotApplied => 'That code could not be applied.';
+
+  @override
+  String get tsAlreadyHaveAccess => 'You already have access to this series.';
+
+  @override
+  String get tsAccessNotLoaded =>
+      'Your access was added but has not loaded yet. Tap Restore purchase in a moment.';
+
+  @override
+  String get tsEnterCode => 'Enter your code first.';
+
+  @override
+  String get tsSignInAccess =>
+      'Sign in with Google so your access is saved to your account.';
+
+  @override
+  String get tsSignInBefore =>
+      'Sign in with the Google account you used before.';
+
+  @override
+  String get tsAccessRestored => 'Access restored.';
+
+  @override
+  String get tsNothingFoundUnlock =>
+      'Nothing was found for this account. You can unlock the series below.';
+
+  @override
+  String get tsNothingFound => 'Nothing was found for this account.';
+
+  @override
+  String get tsRestoreFail =>
+      'Could not restore. Please check your connection and try again.';
+
+  @override
+  String get tsPayOnce =>
+      'One payment. No subscription. Yours forever, including every test added later.';
+
+  @override
+  String get tsPwBilingual =>
+      'Hindi and English on every question and explanation';
+
+  @override
+  String get tsPwDash =>
+      'Dashboard: accuracy by subject, danger-zone and risk topics';
+
+  @override
+  String get tsPwNoPurchases =>
+      'Purchases are not available on this device or build yet.';
+
+  @override
+  String get tsPwNotOnSale => 'This series is not on sale right now.';
+
+  @override
+  String get tsDiscountCode => 'Discount code';
+
+  @override
+  String get tsApply => 'Apply';
+
+  @override
+  String get tsHaveCode => 'Have a code?';
+
+  @override
+  String get tsRestorePurchase => 'Restore purchase';
+
+  @override
+  String get tsMissingQs =>
+      'Some questions for this test are not on your device yet. Check your connection, or update the app, and try again.';
+
+  @override
+  String get tsNoQsRevise => 'No questions to revise for this topic yet.';
+
+  @override
+  String get tsOpenTopicFail => 'Couldn\'t open this topic. Please try again.';
+
+  @override
+  String get tsSubConf => 'Questions you got wrong despite high confidence.';
+
+  @override
+  String get tsSubWrong =>
+      'Questions you got wrong. Tap a topic to read them again.';
+
+  @override
+  String get tsPrevYearQs => 'Previous year questions';
+
+  @override
+  String tsDoneOf(int a, int t) {
+    return '$a/$t done';
+  }
+
+  @override
+  String tsCompletedSlash(int a, int t) {
+    return '$a/$t tests completed';
+  }
+
+  @override
+  String tsFreePyqMix(int n) {
+    return '$n free PYQ mix tests';
+  }
+
+  @override
+  String tsCorrectOf(int c, int a) {
+    return '$c/$a correct';
+  }
+
+  @override
+  String tsMistakesN(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n mistakes',
+      one: '1 mistake',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String tsSeeAllTopics(int n) {
+    return 'See all topics ($n)';
+  }
+
+  @override
+  String tsQAnsweredFlt(int n) {
+    return '$n questions answered in full-length tests';
+  }
+
+  @override
+  String get tsWhatYouGet => 'What you get';
+
+  @override
+  String get tsFltDesc =>
+      'Each test has 100 questions, Time 2 hours.\nTest of all GS subjects + current affairs';
+
+  @override
+  String get tsSubjTestsDesc => 'Topic-wise 50-question tests for GS subjects';
+
+  @override
+  String get tsCaEveryMonth => 'Current affairs every month';
+
+  @override
+  String get tsCaMonthlyDesc =>
+      'A fresh test on the 1st of each month, built from the previous month\'s Current affairs.';
+
+  @override
+  String get tsKnowMarks => 'Know where you lose marks';
+
+  @override
+  String get tsKnowMarksDesc =>
+      'Accuracy by subject, topics to revise and safe areas, based on how sure you were.';
+
+  @override
+  String get tsBilingualOnePay => 'Hindi and English, one payment';
+
+  @override
+  String get tsNoSubExpire => 'No subscription. Pay once and it never expires.';
+
+  @override
+  String get tsSubSafe => 'Topics you answer reliably across your tests.';
+
+  @override
+  String get tsPrepOverview => 'Your Preparation Overview';
+
+  @override
+  String get tsBasedOn => 'Based on your full-length and subject-wise tests.';
+
+  @override
+  String get tsFinishATest =>
+      'Finish a test to see your progress, weak topics and strengths.';
+
+  @override
+  String get tsYourStats => 'YOUR STATS';
+
+  @override
+  String get tsTestsCompleted => 'Tests completed';
+
+  @override
+  String get tsOverallAccuracy => 'Overall accuracy';
+
+  @override
+  String get tsQsAttempted => 'Questions attempted';
+
+  @override
+  String get tsReviseFirst => 'Topics to revise first';
+
+  @override
+  String get tsKeepPractising => 'Keep practising';
+
+  @override
+  String get tsSeeAll => 'See all';
+
+  @override
+  String get tsFltIntro => 'Simulate the real exam: 100 questions, 2 hours.';
+
+  @override
+  String get tsReviseFromFlts => 'Topics to revise (from FLTs)';
+
+  @override
+  String get tsAvailableTests => 'Available Tests';
+
+  @override
+  String get tsSubjIntro => 'Practise by subject and strengthen your concepts.';
+
+  @override
+  String get tsFullSyllDesc =>
+      'Every subject in one paper, in Prelims proportion.';
+
+  @override
+  String get tsBySubject => 'By subject';
+
+  @override
+  String get tsPyqCaIntro =>
+      'Extra practice. These tests are not counted in your overview stats.';
+
+  @override
+  String get tsNewTest1st => 'A new test arrives on the 1st of each month.';
+
+  @override
+  String get tsNothingYet => 'Nothing here yet.';
+
+  @override
+  String get tsSubSafe2 =>
+      'Topics you answer reliably. Keep practising to stay sharp.';
+
+  @override
+  String get tsNoWeak =>
+      'No weak topics yet. Finish a test and they will show up here.';
+
+  @override
+  String get tsNoSafe =>
+      'No safe areas yet. A topic becomes safe at 80% accuracy over 4+ questions.';
+
+  @override
+  String get tsFromFlt => 'From full-length tests';
+
+  @override
+  String tsCorrectAnswer(String l) {
+    return 'Correct answer: $l';
+  }
+
+  @override
+  String tsCorrectBang(String l) {
+    return 'Correct! Answer: $l';
+  }
+
+  @override
+  String tsNotQuite(String l) {
+    return 'Not quite. The answer is $l';
+  }
+
+  @override
+  String tsQsCorrectOf(int c, int a) {
+    return '$c of $a questions correct';
+  }
+
+  @override
+  String tsLowScoreStory(String topic) {
+    return 'A low subject score is not the whole story. Inside Modern History, $topic is where you actually lose marks. Start there.';
+  }
+
+  @override
+  String tsPrelimsOn(String date) {
+    return 'Prelims on $date';
+  }
+
+  @override
+  String tsDaysToGo(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n days to go',
+      one: '1 day to go',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String tsSeeAllPyq(int n) {
+    return 'See all $n PYQ tests';
+  }
+
+  @override
+  String tsFreeInAll(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n tests are',
+      one: '1 test is',
+    );
+    return '$_temp0 free in all, across subjects, current affairs and mocks.';
+  }
+
+  @override
+  String tsWrapTests(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n tests',
+      one: '1 test',
+    );
+    return '$_temp0: mocks, subjects and current affairs';
+  }
+
+  @override
+  String get tsOneTimeNoSub => 'One-time, no subscription';
+
+  @override
+  String get tsYesterdayCa => 'Yesterday\'s current affairs';
+
+  @override
+  String get tsSampleQ => 'Sample question';
+
+  @override
+  String get tsHowExplained =>
+      'This is how every question in the series is explained.';
+
+  @override
+  String get tsTapOption => 'Tap an option to see the answer and explanation.';
+
+  @override
+  String get tsJustShow => 'Just show the answer';
+
+  @override
+  String get tsEveryQDetail =>
+      'Every question in the series comes with this level of detail: English and हिन्दी.';
+
+  @override
+  String get tsExampleNums => 'Example with sample numbers';
+
+  @override
+  String get tsTopicByTopic => 'Topic by topic';
+
+  @override
+  String get tsTapTopicHint =>
+      'In the app, tap any topic to re-read exactly the questions you attempted in it.';
+
+  @override
+  String get tsHeroTagline =>
+      'Practise. Learn. Find your weak areas. Be better prepared for Prelims.';
+
+  @override
+  String get tsTotalTests => 'Total tests';
+
+  @override
+  String get tsFreshMonthly =>
+      'A fresh test on the 1st of every month, built from the previous month\'s news.';
+
+  @override
+  String get tsFreePyqDesc =>
+      'Start with questions UPSC has already asked. Same interface, explanations and analysis as the paid tests.';
+
+  @override
+  String get tsFromYesterdayCa => 'From yesterday\'s current affairs';
+
+  @override
+  String get tsSampleGs => 'A sample GS question';
+
+  @override
+  String get tsExplTeach => 'Explanations that actually teach';
+
+  @override
+  String get tsExplTeachSub =>
+      'You learn the answer, and how to think like the paper-setter.';
+
+  @override
+  String get tsStmtDesc =>
+      'Every statement judged true or false, with the reason.';
+
+  @override
+  String get tsDistractorDesc =>
+      'The option that looks right but is not, and why it fools people.';
+
+  @override
+  String get tsElimDesc =>
+      'Step-by-step way to cross out options, even when unsure.';
+
+  @override
+  String get tsValueAddDesc =>
+      'Related facts worth remembering: one question, five lessons.';
+
+  @override
+  String get tsSeeRealExample => 'See a real example';
+
+  @override
+  String get tsSmarterTitle => 'Smarter than a score';
+
+  @override
+  String get tsSmarterSub =>
+      'Most test series stop at your marks. We show you what to do next.';
+
+  @override
+  String get tsToolQueueTitle => 'Your revision queue builds itself';
+
+  @override
+  String get tsToolQueueBody =>
+      'Got a question wrong? Bookmarked it to look at later? It goes into your revision queue automatically. No notebooks, no lists to maintain. Just open the queue and revise.';
+
+  @override
+  String get tsToolBlindTitle => 'Find your blind spots';
+
+  @override
+  String get tsToolBlindBody =>
+      'We ask how sure you were. Confident but wrong is a blind spot: fix it first. Confident and right is a safe area: attempt more there and take the risk.';
+
+  @override
+  String get tsToolTopicTitle => 'Know exactly which topics cost you marks';
+
+  @override
+  String get tsToolTopicBody =>
+      'Accuracy in Modern History is low? We also tell you which topics inside it are dragging it down, so you revise the right chapter, not the whole book.';
+
+  @override
+  String get tsSeeExample => 'See an example';
+
+  @override
+  String get tsSureRight => 'Sure and right';
+
+  @override
+  String get tsSafeAction => 'Attempt more here. Take the risk.';
+
+  @override
+  String get tsSureWrong => 'Sure but wrong';
+
+  @override
+  String get tsBlindAction => 'Fix these first. They cost marks.';
+
+  @override
+  String get tsGuessRight => 'Guessed and right';
+
+  @override
+  String get tsLuckyAction => 'Revise so it sticks.';
+
+  @override
+  String get tsGuessWrong => 'Guessed and wrong';
+
+  @override
+  String get tsGapAction => 'Learn it from the explanation.';
+
+  @override
+  String get tsPractiseLike => 'Practise like it\'s Prelims day';
+
+  @override
+  String get tsMocksMirror => 'The full-length mocks mirror the real paper.';
+
+  @override
+  String get ts100q2h => '100 Q, 2 hours';
+
+  @override
+  String get tsTimedPaper => 'Timed, exam-style paper with all GS subjects.';
+
+  @override
+  String get tsRealMarking => 'Real marking';
+
+  @override
+  String get tsMarkingSkip =>
+      '+2 for correct, −0.66 for wrong. Learn when to skip.';
+
+  @override
+  String get tsOneScored => 'One scored attempt';
+
+  @override
+  String get tsThenReview =>
+      'Then review it, and practise again without affecting stats.';
+
+  @override
+  String get tsBothLangs =>
+      'Every question and explanation, in both languages.';
+
+  @override
+  String get tsOnePayGood => 'One payment. Yours for good.';
+
+  @override
+  String get tsWrapExpl => 'Detailed explanations in English and हिन्दी';
+
+  @override
+  String get tsWrapQueue =>
+      'Revision queue, blind spots and topic-wise analysis';
+
+  @override
+  String get tsWrapNoExpiry =>
+      'No subscription, no expiry. Tests added later are included.';
+
+  @override
+  String get tsNotSure => 'Not sure yet? Try the free tests first.';
+
+  @override
+  String get tsTryFreePyq => 'Try the free PYQ tests';
 }

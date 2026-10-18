@@ -11,6 +11,7 @@ import '../../../core/providers/catalog_providers.dart';
 import '../../daily_ca/providers/daily_ca_providers.dart';
 import '../providers/test_series_providers.dart';
 import 'test_series_models.dart';
+import '../../../l10n/l10n.dart';
 
 /// Why a series test could not be opened.
 class SeriesTestOpenException implements Exception {
@@ -109,9 +110,6 @@ Future<void> startSeriesTest({
       name: 'TestSeries',
       stackTrace: st,
     );
-    throw const SeriesTestOpenException(
-      'Some questions for this test are not on your device yet. '
-      'Check your connection, or update the app, and try again.',
-    );
+    throw SeriesTestOpenException(appL10n.tsMissingQs);
   }
 }

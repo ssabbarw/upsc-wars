@@ -10,6 +10,7 @@ import '../providers/test_series_providers.dart';
 import '../widgets/intro/series_intro_tab.dart';
 import '../widgets/series_tabs.dart';
 import 'my_test_series_screen.dart';
+import '../../../l10n/l10n.dart';
 
 /// `/test-series`: opens the series on sale, or the user's own series when
 /// sales are off, or a short notice when there is nothing to show.
@@ -39,10 +40,10 @@ class TestSeriesEntryScreen extends ConsumerWidget {
     if (ownedIds.isNotEmpty) return const MyTestSeriesScreen();
     return Scaffold(
       appBar: AppBar(title: const Text('Test Series')),
-      body: const Center(
+      body: Center(
         child: Padding(
           padding: EdgeInsets.all(AppSpacing.xl),
-          child: Text('The test series is not available right now.'),
+          child: Text(context.l10n.tsUnavailable),
         ),
       ),
     );
@@ -166,9 +167,12 @@ class _LoadError extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const Text("Couldn't load the test series. Check your connection."),
+            Text(context.l10n.tsLoadFail),
             const SizedBox(height: AppSpacing.md),
-            FilledButton(onPressed: onRetry, child: const Text('Retry')),
+            FilledButton(
+              onPressed: onRetry,
+              child: Text(context.l10n.commonRetry),
+            ),
           ],
         ),
       ),

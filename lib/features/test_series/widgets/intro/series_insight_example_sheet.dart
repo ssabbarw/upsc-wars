@@ -5,6 +5,7 @@ import '../../../../core/theme/app_spacing.dart';
 import '../../../../core/theme/app_text_styles.dart';
 import '../series_dashboard_widgets.dart';
 import 'series_tone.dart';
+import '../../../../l10n/l10n.dart';
 
 /// Opens "what your analysis looks like" with sample numbers.
 Future<bool> showSeriesInsightExampleSheet(BuildContext context) async {
@@ -75,19 +76,19 @@ class _InsightExampleBody extends StatelessWidget {
         AppSpacing.xxxl,
       ),
       children: [
-        const TonePill(
-          label: 'Example with sample numbers',
+        TonePill(
+          label: context.l10n.tsExampleNums,
           tone: SeriesTone.purple,
           icon: Icons.insights_rounded,
         ),
         const SizedBox(height: AppSpacing.md),
         Text(
-          'Modern History: ${(overall * 100).round()}% accuracy',
+          'Modern History: ${context.l10n.tsAccuracyPct((overall * 100).round())}',
           style: AppTextStyles.h1().copyWith(fontWeight: FontWeight.w700),
         ),
         const SizedBox(height: 2),
         Text(
-          '$totalCorrect of $totalAnswered questions correct',
+          context.l10n.tsQsCorrectOf(totalCorrect, totalAnswered),
           style: AppTextStyles.bodySm().copyWith(
             color: scheme.onSurfaceVariant,
           ),
@@ -106,9 +107,7 @@ class _InsightExampleBody extends StatelessWidget {
               const SizedBox(width: AppSpacing.sm),
               Expanded(
                 child: Text(
-                  'A low subject score is not the whole story. Inside Modern '
-                  'History, ${weakest.first.name} is where you actually '
-                  'lose marks. Start there.',
+                  context.l10n.tsLowScoreStory(weakest.first.name),
                   style: AppTextStyles.bodySm().copyWith(color: red.fg),
                 ),
               ),
@@ -116,13 +115,12 @@ class _InsightExampleBody extends StatelessWidget {
           ),
         ),
         const SizedBox(height: AppSpacing.xl),
-        Text('Topic by topic', style: AppTextStyles.h3()),
+        Text(context.l10n.tsTopicByTopic, style: AppTextStyles.h3()),
         const SizedBox(height: AppSpacing.md),
         for (final t in _modernHistoryTopics) _TopicBar(topic: t),
         const SizedBox(height: AppSpacing.lg),
         Text(
-          'In the app, tap any topic to re-read exactly the questions you '
-          'attempted in it.',
+          context.l10n.tsTapTopicHint,
           textAlign: TextAlign.center,
           style: AppTextStyles.bodySm().copyWith(
             color: scheme.onSurfaceVariant,
@@ -137,7 +135,7 @@ class _InsightExampleBody extends StatelessWidget {
               borderRadius: BorderRadius.circular(AppRadius.lg),
             ),
           ),
-          child: const Text('Unlock all tests'),
+          child: Text(context.l10n.tsUnlockAll),
         ),
       ],
     );

@@ -3649,5 +3649,486 @@
   "stOhSnap": "Oh snap.",
   "stExpired": "This link is unavailable or expired.\nAsk your friend to reshare.",
   "stOpening": "Opening shared test…",
-  "stPreparing": "Preparing configuration…"
+  "stPreparing": "Preparing configuration…",
+  "tsAttemptedOf": "{attempted} of {total} tests attempted",
+  "@tsAttemptedOf": {
+    "placeholders": {
+      "attempted": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "tsAccuracyPct": "{percent}% accuracy",
+  "@tsAccuracyPct": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "tsCompletedOf": "{attempted} of {total} tests completed",
+  "@tsCompletedOf": {
+    "placeholders": {
+      "attempted": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "tsTestsIn": "Tests in {title}",
+  "@tsTestsIn": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "tsQAnswered": "{n} questions answered",
+  "@tsQAnswered": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "tsHcTests": "{n} tests: subjects, current affairs and mocks",
+  "@tsHcTests": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "tsHcFree": "{n} free tests to try. Subject tests, current affairs, full mocks.",
+  "@tsHcFree": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "tsUnlocksOn": "Unlocks {date}",
+  "@tsUnlocksOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "tsAvailFrom": "Available from {date}",
+  "@tsAvailFrom": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "tsLiveSince": "Live since {date}",
+  "@tsLiveSince": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "tsQMin": "{q} Q · {m} min",
+  "@tsQMin": {
+    "placeholders": {
+      "q": {
+        "type": "int"
+      },
+      "m": {
+        "type": "int"
+      }
+    }
+  },
+  "tsInProgress": "In progress · {meta}",
+  "@tsInProgress": {
+    "placeholders": {
+      "meta": {
+        "type": "String"
+      }
+    }
+  },
+  "tsScoreLine": "Score {marks}  ·  {correct} correct, {wrong} wrong, {skipped} skipped",
+  "@tsScoreLine": {
+    "placeholders": {
+      "marks": {
+        "type": "String"
+      },
+      "correct": {
+        "type": "int"
+      },
+      "wrong": {
+        "type": "int"
+      },
+      "skipped": {
+        "type": "int"
+      }
+    }
+  },
+  "tsNQuestions": "{n} questions",
+  "@tsNQuestions": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "tsNMinutesTimed": "{n} minutes, timed",
+  "@tsNMinutesTimed": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "tsLoadMineFail": "Couldn't load your test series.",
+  "tsNoneStarted": "You have not started a test series yet.",
+  "tsUnlocked": "Unlocked",
+  "tsFreeTests": "Free tests",
+  "tsPrelimsOver": "Prelims is over. All tests stay open for practice.",
+  "tsLoadSeriesFail": "Couldn't load this series.",
+  "tsLoadSubjectFail": "Couldn't load this subject.",
+  "tsSubjectNotFound": "Subject not found.",
+  "tsTopicsToRevise": "Topics to revise",
+  "tsNoOwnTests": "This subject has no tests of its own. Its numbers come from your full-length tests.",
+  "tsNoQAnswered": "No questions answered yet",
+  "tsUnavailable": "The test series is not available right now.",
+  "tsLoadFail": "Couldn't load the test series. Check your connection.",
+  "tsHcDefault": "Subject tests, current affairs and full-length mocks.",
+  "tsFreeLabel": "Free",
+  "tsPublishingSoon": "Publishing soon",
+  "tsReview": "Review",
+  "tsSoon": "Soon",
+  "tsLoadTestFail": "Couldn't load this test. Check your connection and try again.",
+  "tsPractiseAgain": "Practise again (not scored)",
+  "tsMarking": "+2 for correct, -0.66 for wrong",
+  "tsOneAttempt": "One scored attempt. Afterwards you can review it and practise again without affecting your stats.",
+  "tsUnlockedAll": "Unlocked! Every test in this series is now yours.",
+  "tsPurchaseFail": "The purchase could not be completed.",
+  "tsPaymentPendingSeries": "Your payment is pending. The series unlocks once it completes.",
+  "tsCodeCheckFail": "Could not check the code. Check your connection and try again.",
+  "tsUnlockAll": "Unlock all tests",
+  "tsPaidNoAccess": "Payment went through, but access was not granted yet. Tap Restore purchase, or check that RevenueCat entitlement \"{entitlement}\" is attached to product \"{product}\".",
+  "@tsPaidNoAccess": {
+    "placeholders": {
+      "entitlement": {
+        "type": "String"
+      },
+      "product": {
+        "type": "String"
+      }
+    }
+  },
+  "tsPwSubject": "{n} subject tests, 50 questions each, with 10% PYQs",
+  "@tsPwSubject": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "tsPwCa": "{n} current-affairs tests, added on the 1st of every month",
+  "@tsPwCa": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "tsPwMocks": "{n} full-length mocks that mirror the real paper (100 Q, 2 hrs)",
+  "@tsPwMocks": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "tsPwFree": "{n} tests are free to try first, including all PYQ tests.",
+  "@tsPwFree": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "tsUnlockAllPrice": "Unlock all tests · {price}",
+  "@tsUnlockAllPrice": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "tsSignInPurchase": "Sign in with Google so your purchase is saved to your account.",
+  "tsPassUnavailable": "This pass is not available right now. Please try again later.",
+  "tsPaymentPending": "Your payment is pending.",
+  "tsPurchasesUnavailable": "Purchases are not available on this device.",
+  "tsCodeNotApplied": "That code could not be applied.",
+  "tsAlreadyHaveAccess": "You already have access to this series.",
+  "tsAccessNotLoaded": "Your access was added but has not loaded yet. Tap Restore purchase in a moment.",
+  "tsEnterCode": "Enter your code first.",
+  "tsSignInAccess": "Sign in with Google so your access is saved to your account.",
+  "tsSignInBefore": "Sign in with the Google account you used before.",
+  "tsAccessRestored": "Access restored.",
+  "tsNothingFoundUnlock": "Nothing was found for this account. You can unlock the series below.",
+  "tsNothingFound": "Nothing was found for this account.",
+  "tsRestoreFail": "Could not restore. Please check your connection and try again.",
+  "tsPayOnce": "One payment. No subscription. Yours forever, including every test added later.",
+  "tsPwBilingual": "Hindi and English on every question and explanation",
+  "tsPwDash": "Dashboard: accuracy by subject, danger-zone and risk topics",
+  "tsPwNoPurchases": "Purchases are not available on this device or build yet.",
+  "tsPwNotOnSale": "This series is not on sale right now.",
+  "tsDiscountCode": "Discount code",
+  "tsApply": "Apply",
+  "tsHaveCode": "Have a code?",
+  "tsRestorePurchase": "Restore purchase",
+  "tsMissingQs": "Some questions for this test are not on your device yet. Check your connection, or update the app, and try again.",
+  "tsNoQsRevise": "No questions to revise for this topic yet.",
+  "tsOpenTopicFail": "Couldn't open this topic. Please try again.",
+  "tsSubConf": "Questions you got wrong despite high confidence.",
+  "tsSubWrong": "Questions you got wrong. Tap a topic to read them again.",
+  "tsPrevYearQs": "Previous year questions",
+  "tsDoneOf": "{a}/{t} done",
+  "@tsDoneOf": {
+    "placeholders": {
+      "a": {
+        "type": "int"
+      },
+      "t": {
+        "type": "int"
+      }
+    }
+  },
+  "tsCompletedSlash": "{a}/{t} tests completed",
+  "@tsCompletedSlash": {
+    "placeholders": {
+      "a": {
+        "type": "int"
+      },
+      "t": {
+        "type": "int"
+      }
+    }
+  },
+  "tsFreePyqMix": "{n} free PYQ mix tests",
+  "@tsFreePyqMix": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "tsCorrectOf": "{c}/{a} correct",
+  "@tsCorrectOf": {
+    "placeholders": {
+      "c": {
+        "type": "int"
+      },
+      "a": {
+        "type": "int"
+      }
+    }
+  },
+  "tsMistakesN": "{n, plural, =1{1 mistake} other{{n} mistakes}}",
+  "@tsMistakesN": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "tsSeeAllTopics": "See all topics ({n})",
+  "@tsSeeAllTopics": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "tsQAnsweredFlt": "{n} questions answered in full-length tests",
+  "@tsQAnsweredFlt": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "tsWhatYouGet": "What you get",
+  "tsFltDesc": "Each test has 100 questions, Time 2 hours.\nTest of all GS subjects + current affairs",
+  "tsSubjTestsDesc": "Topic-wise 50-question tests for GS subjects",
+  "tsCaEveryMonth": "Current affairs every month",
+  "tsCaMonthlyDesc": "A fresh test on the 1st of each month, built from the previous month's Current affairs.",
+  "tsKnowMarks": "Know where you lose marks",
+  "tsKnowMarksDesc": "Accuracy by subject, topics to revise and safe areas, based on how sure you were.",
+  "tsBilingualOnePay": "Hindi and English, one payment",
+  "tsNoSubExpire": "No subscription. Pay once and it never expires.",
+  "tsSubSafe": "Topics you answer reliably across your tests.",
+  "tsPrepOverview": "Your Preparation Overview",
+  "tsBasedOn": "Based on your full-length and subject-wise tests.",
+  "tsFinishATest": "Finish a test to see your progress, weak topics and strengths.",
+  "tsYourStats": "YOUR STATS",
+  "tsTestsCompleted": "Tests completed",
+  "tsOverallAccuracy": "Overall accuracy",
+  "tsQsAttempted": "Questions attempted",
+  "tsReviseFirst": "Topics to revise first",
+  "tsKeepPractising": "Keep practising",
+  "tsSeeAll": "See all",
+  "tsFltIntro": "Simulate the real exam: 100 questions, 2 hours.",
+  "tsReviseFromFlts": "Topics to revise (from FLTs)",
+  "tsAvailableTests": "Available Tests",
+  "tsSubjIntro": "Practise by subject and strengthen your concepts.",
+  "tsFullSyllDesc": "Every subject in one paper, in Prelims proportion.",
+  "tsBySubject": "By subject",
+  "tsPyqCaIntro": "Extra practice. These tests are not counted in your overview stats.",
+  "tsNewTest1st": "A new test arrives on the 1st of each month.",
+  "tsNothingYet": "Nothing here yet.",
+  "tsSubSafe2": "Topics you answer reliably. Keep practising to stay sharp.",
+  "tsNoWeak": "No weak topics yet. Finish a test and they will show up here.",
+  "tsNoSafe": "No safe areas yet. A topic becomes safe at 80% accuracy over 4+ questions.",
+  "tsFromFlt": "From full-length tests",
+  "tsCorrectAnswer": "Correct answer: {l}",
+  "@tsCorrectAnswer": {
+    "placeholders": {
+      "l": {
+        "type": "String"
+      }
+    }
+  },
+  "tsCorrectBang": "Correct! Answer: {l}",
+  "@tsCorrectBang": {
+    "placeholders": {
+      "l": {
+        "type": "String"
+      }
+    }
+  },
+  "tsNotQuite": "Not quite. The answer is {l}",
+  "@tsNotQuite": {
+    "placeholders": {
+      "l": {
+        "type": "String"
+      }
+    }
+  },
+  "tsQsCorrectOf": "{c} of {a} questions correct",
+  "@tsQsCorrectOf": {
+    "placeholders": {
+      "c": {
+        "type": "int"
+      },
+      "a": {
+        "type": "int"
+      }
+    }
+  },
+  "tsLowScoreStory": "A low subject score is not the whole story. Inside Modern History, {topic} is where you actually lose marks. Start there.",
+  "@tsLowScoreStory": {
+    "placeholders": {
+      "topic": {
+        "type": "String"
+      }
+    }
+  },
+  "tsPrelimsOn": "Prelims on {date}",
+  "@tsPrelimsOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "tsDaysToGo": "{n, plural, =1{1 day to go} other{{n} days to go}}",
+  "@tsDaysToGo": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "tsSeeAllPyq": "See all {n} PYQ tests",
+  "@tsSeeAllPyq": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "tsFreeInAll": "{n, plural, =1{1 test is} other{{n} tests are}} free in all, across subjects, current affairs and mocks.",
+  "@tsFreeInAll": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "tsWrapTests": "{n, plural, =1{1 test} other{{n} tests}}: mocks, subjects and current affairs",
+  "@tsWrapTests": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "tsOneTimeNoSub": "One-time, no subscription",
+  "tsYesterdayCa": "Yesterday's current affairs",
+  "tsSampleQ": "Sample question",
+  "tsHowExplained": "This is how every question in the series is explained.",
+  "tsTapOption": "Tap an option to see the answer and explanation.",
+  "tsJustShow": "Just show the answer",
+  "tsEveryQDetail": "Every question in the series comes with this level of detail: English and हिन्दी.",
+  "tsExampleNums": "Example with sample numbers",
+  "tsTopicByTopic": "Topic by topic",
+  "tsTapTopicHint": "In the app, tap any topic to re-read exactly the questions you attempted in it.",
+  "tsHeroTagline": "Practise. Learn. Find your weak areas. Be better prepared for Prelims.",
+  "tsTotalTests": "Total tests",
+  "tsFreshMonthly": "A fresh test on the 1st of every month, built from the previous month's news.",
+  "tsFreePyqDesc": "Start with questions UPSC has already asked. Same interface, explanations and analysis as the paid tests.",
+  "tsFromYesterdayCa": "From yesterday's current affairs",
+  "tsSampleGs": "A sample GS question",
+  "tsExplTeach": "Explanations that actually teach",
+  "tsExplTeachSub": "You learn the answer, and how to think like the paper-setter.",
+  "tsStmtDesc": "Every statement judged true or false, with the reason.",
+  "tsDistractorDesc": "The option that looks right but is not, and why it fools people.",
+  "tsElimDesc": "Step-by-step way to cross out options, even when unsure.",
+  "tsValueAddDesc": "Related facts worth remembering: one question, five lessons.",
+  "tsSeeRealExample": "See a real example",
+  "tsSmarterTitle": "Smarter than a score",
+  "tsSmarterSub": "Most test series stop at your marks. We show you what to do next.",
+  "tsToolQueueTitle": "Your revision queue builds itself",
+  "tsToolQueueBody": "Got a question wrong? Bookmarked it to look at later? It goes into your revision queue automatically. No notebooks, no lists to maintain. Just open the queue and revise.",
+  "tsToolBlindTitle": "Find your blind spots",
+  "tsToolBlindBody": "We ask how sure you were. Confident but wrong is a blind spot: fix it first. Confident and right is a safe area: attempt more there and take the risk.",
+  "tsToolTopicTitle": "Know exactly which topics cost you marks",
+  "tsToolTopicBody": "Accuracy in Modern History is low? We also tell you which topics inside it are dragging it down, so you revise the right chapter, not the whole book.",
+  "tsSeeExample": "See an example",
+  "tsSureRight": "Sure and right",
+  "tsSafeAction": "Attempt more here. Take the risk.",
+  "tsSureWrong": "Sure but wrong",
+  "tsBlindAction": "Fix these first. They cost marks.",
+  "tsGuessRight": "Guessed and right",
+  "tsLuckyAction": "Revise so it sticks.",
+  "tsGuessWrong": "Guessed and wrong",
+  "tsGapAction": "Learn it from the explanation.",
+  "tsPractiseLike": "Practise like it's Prelims day",
+  "tsMocksMirror": "The full-length mocks mirror the real paper.",
+  "ts100q2h": "100 Q, 2 hours",
+  "tsTimedPaper": "Timed, exam-style paper with all GS subjects.",
+  "tsRealMarking": "Real marking",
+  "tsMarkingSkip": "+2 for correct, −0.66 for wrong. Learn when to skip.",
+  "tsOneScored": "One scored attempt",
+  "tsThenReview": "Then review it, and practise again without affecting stats.",
+  "tsBothLangs": "Every question and explanation, in both languages.",
+  "tsOnePayGood": "One payment. Yours for good.",
+  "tsWrapExpl": "Detailed explanations in English and हिन्दी",
+  "tsWrapQueue": "Revision queue, blind spots and topic-wise analysis",
+  "tsWrapNoExpiry": "No subscription, no expiry. Tests added later are included.",
+  "tsNotSure": "Not sure yet? Try the free tests first.",
+  "tsTryFreePyq": "Try the free PYQ tests"
 }

@@ -13,6 +13,7 @@ import '../domain/test_series_models.dart';
 import '../providers/test_series_providers.dart';
 import 'series_paywall_sheet.dart';
 import 'series_test_tile.dart';
+import '../../../l10n/l10n.dart';
 
 /// A [SeriesTestTile] wired to everything a tap can mean: paywall, review,
 /// practise-again, resume, start, or "not unlocked yet".
@@ -106,13 +107,7 @@ class SeriesTestRow extends ConsumerWidget {
     } on SeriesTestOpenException catch (e) {
       messenger.showSnackBar(SnackBar(content: Text(e.message)));
     } on Object {
-      messenger.showSnackBar(
-        const SnackBar(
-          content: Text(
-            "Couldn't load this test. Check your connection and try again.",
-          ),
-        ),
-      );
+      messenger.showSnackBar(SnackBar(content: Text(appL10n.tsLoadTestFail)));
     }
   }
 
@@ -139,22 +134,25 @@ class SeriesTestRow extends ConsumerWidget {
               Text(test.title, style: AppTextStyles.h3()),
               const SizedBox(height: AppSpacing.xs),
               Text(
-                'Score ${seriesMarksLabel(attempt.netMarks, attempt.maxMarks)}  ·  '
-                '${attempt.correct} correct, ${attempt.wrong} wrong, '
-                '${attempt.unanswered} skipped',
+                context.l10n.tsScoreLine(
+                  seriesMarksLabel(attempt.netMarks, attempt.maxMarks),
+                  attempt.correct,
+                  attempt.wrong,
+                  attempt.unanswered,
+                ),
                 style: AppTextStyles.bodyMd(),
               ),
               const SizedBox(height: AppSpacing.lg),
               FilledButton.icon(
                 onPressed: () => Navigator.pop(ctx, 'review'),
                 icon: const Icon(Icons.fact_check_outlined),
-                label: const Text('Review answers'),
+                label: Text(context.l10n.dcaReviewAnswers),
               ),
               const SizedBox(height: AppSpacing.sm),
               OutlinedButton.icon(
                 onPressed: () => Navigator.pop(ctx, 'practice'),
                 icon: const Icon(Icons.replay_rounded),
-                label: const Text('Practise again (not scored)'),
+                label: Text(context.l10n.tsPractiseAgain),
               ),
             ],
           ),
@@ -201,24 +199,23 @@ class _StartSheet extends StatelessWidget {
               ),
             ],
             const SizedBox(height: AppSpacing.lg),
-            _Fact(Icons.quiz_outlined, '${test.questionCount} questions'),
-            _Fact(Icons.timer_outlined, '${test.durationMins} minutes, timed'),
-            const _Fact(
-              Icons.calculate_outlined,
-              '+2 for correct, -0.66 for wrong',
+            _Fact(
+              Icons.quiz_outlined,
+              context.l10n.tsNQuestions(test.questionCount),
             ),
-            const _Fact(
-              Icons.flag_outlined,
-              'One scored attempt. Afterwards you can review it and practise '
-              'again without affecting your stats.',
+            _Fact(
+              Icons.timer_outlined,
+              context.l10n.tsNMinutesTimed(test.durationMins),
             ),
+            _Fact(Icons.calculate_outlined, context.l10n.tsMarking),
+            _Fact(Icons.flag_outlined, context.l10n.tsOneAttempt),
             const SizedBox(height: AppSpacing.lg),
             FilledButton(
               onPressed: () => Navigator.pop(context, true),
               style: FilledButton.styleFrom(
                 minimumSize: const Size.fromHeight(50),
               ),
-              child: const Text('Start test'),
+              child: Text(context.l10n.testStartTest),
             ),
           ],
         ),

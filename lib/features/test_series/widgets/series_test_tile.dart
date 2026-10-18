@@ -8,6 +8,7 @@ import '../../../core/theme/app_text_styles.dart';
 import '../domain/series_stats.dart';
 import '../domain/test_series_models.dart';
 import 'free_badge.dart';
+import '../../../l10n/l10n.dart';
 
 enum SeriesTileState { locked, upcoming, available, inProgress, attempted }
 
@@ -25,13 +26,13 @@ SeriesTileState seriesTileState({
   return SeriesTileState.available;
 }
 
-/// "Unlocks 1 Nov", or "Publishing soon" once the date has passed but the
+/// "Unlocks 1 Nov", or appL10n.tsPublishingSoon once the date has passed but the
 /// paper is still waiting for its current-affairs questions.
 String seriesUnlockLabel(SeriesTest test, DateTime now) {
   if (test.unlockAt.isAfter(now)) {
-    return 'Unlocks ${DateFormat('d MMM').format(test.unlockAt)}';
+    return appL10n.tsUnlocksOn(DateFormat('d MMM').format(test.unlockAt));
   }
-  return 'Publishing soon';
+  return appL10n.tsPublishingSoon;
 }
 
 /// Availability line shown under a test that is not yet attempted.
@@ -41,10 +42,10 @@ String seriesUnlockLabel(SeriesTest test, DateTime now) {
 /// have been open since launch show nothing.
 String? seriesAvailabilityLabel(SeriesTest test, DateTime now) {
   if (test.unlockAt.isAfter(now)) {
-    return 'Available from ${DateFormat('d MMM y').format(test.unlockAt)}';
+    return appL10n.tsAvailFrom(DateFormat('d MMM y').format(test.unlockAt));
   }
   if (test.isCurrentAffairs || test.isFullLength) {
-    return 'Live since ${DateFormat('d MMM').format(test.unlockAt)}';
+    return appL10n.tsLiveSince(DateFormat('d MMM').format(test.unlockAt));
   }
   return null;
 }
@@ -78,7 +79,7 @@ class SeriesTestTile extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final border = isDark ? AppColors.borderDark : AppColors.borderLight;
 
-    final meta = '${test.questionCount} Q · ${test.durationMins} min';
+    final meta = context.l10n.tsQMin(test.questionCount, test.durationMins);
     final theme = (test.theme ?? '').trim();
     final availability = seriesAvailabilityLabel(test, now);
     final String subtitle;
@@ -88,7 +89,7 @@ class SeriesTestTile extends StatelessWidget {
         final done = a.completedAt;
         subtitle = [
           if (done != null) DateFormat('d MMM y').format(done),
-          '${(a.accuracy * 100).round()}% accuracy',
+          context.l10n.tsAccuracyPct((a.accuracy * 100).round()),
         ].join(' · ');
       case SeriesTileState.upcoming:
       case SeriesTileState.locked:
@@ -99,7 +100,7 @@ class SeriesTestTile extends StatelessWidget {
           ?availability,
         ].join('\n');
       case SeriesTileState.inProgress:
-        subtitle = 'In progress · $meta';
+        subtitle = context.l10n.tsInProgress(meta);
     }
 
     final (IconData icon, Color color) = switch (state) {
@@ -213,13 +214,13 @@ class _Trailing extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 4),
-            const _Pill('Review', color: AppColors.primary),
+            _Pill(context.l10n.tsReview, color: AppColors.primary),
           ],
         );
       case SeriesTileState.inProgress:
-        return const _Pill('Continue', color: AppColors.info);
+        return _Pill(context.l10n.commonContinue, color: AppColors.info);
       case SeriesTileState.available:
-        return const _Pill('Start', color: AppColors.info);
+        return _Pill(context.l10n.commonStart, color: AppColors.info);
       case SeriesTileState.locked:
         return Icon(
           Icons.chevron_right_rounded,
@@ -232,7 +233,7 @@ class _Trailing extends StatelessWidget {
             // The full date is in the subtitle; keep this short.
             test.unlockAt.isAfter(now)
                 ? DateFormat('d MMM').format(test.unlockAt)
-                : 'Soon',
+                : context.l10n.tsSoon,
             textAlign: TextAlign.end,
             style: AppTextStyles.labelSm().copyWith(
               color: scheme.onSurfaceVariant,

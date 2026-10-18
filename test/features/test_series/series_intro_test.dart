@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:upsc_wars/core/providers/catalog_providers.dart';
+import 'package:upsc_wars/l10n/app_localizations.dart';
 import 'package:upsc_wars/features/test_series/domain/series_sample_question.dart';
 import 'package:upsc_wars/features/test_series/domain/series_stats.dart';
 import 'package:upsc_wars/features/test_series/domain/test_series_models.dart';
@@ -165,6 +166,8 @@ void main() {
             seriesSampleQuestionProvider.overrideWith((ref) async => sample),
           ],
           child: const MaterialApp(
+            localizationsDelegates: AppLocalizations.localizationsDelegates,
+            supportedLocales: AppLocalizations.supportedLocales,
             home: TestSeriesHomeScreen(seriesId: 'prelims_2027'),
           ),
         ),

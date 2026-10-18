@@ -1,6 +1,7 @@
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
+import '../../../l10n/l10n.dart';
 
 /// Red scalloped "FREE" seal, used on free tests and in the series pitch.
 ///
@@ -16,7 +17,7 @@ class FreeBadge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Semantics(
-      label: 'Free',
+      label: context.l10n.tsFreeLabel,
       child: SizedBox(
         width: size,
         height: size,

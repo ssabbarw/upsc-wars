@@ -8881,6 +8881,1098 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Preparing configuration…'**
   String get stPreparing;
+
+  /// No description provided for @tsAttemptedOf.
+  ///
+  /// In en, this message translates to:
+  /// **'{attempted} of {total} tests attempted'**
+  String tsAttemptedOf(int attempted, int total);
+
+  /// No description provided for @tsAccuracyPct.
+  ///
+  /// In en, this message translates to:
+  /// **'{percent}% accuracy'**
+  String tsAccuracyPct(int percent);
+
+  /// No description provided for @tsCompletedOf.
+  ///
+  /// In en, this message translates to:
+  /// **'{attempted} of {total} tests completed'**
+  String tsCompletedOf(int attempted, int total);
+
+  /// No description provided for @tsTestsIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Tests in {title}'**
+  String tsTestsIn(String title);
+
+  /// No description provided for @tsQAnswered.
+  ///
+  /// In en, this message translates to:
+  /// **'{n} questions answered'**
+  String tsQAnswered(int n);
+
+  /// No description provided for @tsHcTests.
+  ///
+  /// In en, this message translates to:
+  /// **'{n} tests: subjects, current affairs and mocks'**
+  String tsHcTests(int n);
+
+  /// No description provided for @tsHcFree.
+  ///
+  /// In en, this message translates to:
+  /// **'{n} free tests to try. Subject tests, current affairs, full mocks.'**
+  String tsHcFree(int n);
+
+  /// No description provided for @tsUnlocksOn.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlocks {date}'**
+  String tsUnlocksOn(String date);
+
+  /// No description provided for @tsAvailFrom.
+  ///
+  /// In en, this message translates to:
+  /// **'Available from {date}'**
+  String tsAvailFrom(String date);
+
+  /// No description provided for @tsLiveSince.
+  ///
+  /// In en, this message translates to:
+  /// **'Live since {date}'**
+  String tsLiveSince(String date);
+
+  /// No description provided for @tsQMin.
+  ///
+  /// In en, this message translates to:
+  /// **'{q} Q · {m} min'**
+  String tsQMin(int q, int m);
+
+  /// No description provided for @tsInProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'In progress · {meta}'**
+  String tsInProgress(String meta);
+
+  /// No description provided for @tsScoreLine.
+  ///
+  /// In en, this message translates to:
+  /// **'Score {marks}  ·  {correct} correct, {wrong} wrong, {skipped} skipped'**
+  String tsScoreLine(String marks, int correct, int wrong, int skipped);
+
+  /// No description provided for @tsNQuestions.
+  ///
+  /// In en, this message translates to:
+  /// **'{n} questions'**
+  String tsNQuestions(int n);
+
+  /// No description provided for @tsNMinutesTimed.
+  ///
+  /// In en, this message translates to:
+  /// **'{n} minutes, timed'**
+  String tsNMinutesTimed(int n);
+
+  /// No description provided for @tsLoadMineFail.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t load your test series.'**
+  String get tsLoadMineFail;
+
+  /// No description provided for @tsNoneStarted.
+  ///
+  /// In en, this message translates to:
+  /// **'You have not started a test series yet.'**
+  String get tsNoneStarted;
+
+  /// No description provided for @tsUnlocked.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlocked'**
+  String get tsUnlocked;
+
+  /// No description provided for @tsFreeTests.
+  ///
+  /// In en, this message translates to:
+  /// **'Free tests'**
+  String get tsFreeTests;
+
+  /// No description provided for @tsPrelimsOver.
+  ///
+  /// In en, this message translates to:
+  /// **'Prelims is over. All tests stay open for practice.'**
+  String get tsPrelimsOver;
+
+  /// No description provided for @tsLoadSeriesFail.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t load this series.'**
+  String get tsLoadSeriesFail;
+
+  /// No description provided for @tsLoadSubjectFail.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t load this subject.'**
+  String get tsLoadSubjectFail;
+
+  /// No description provided for @tsSubjectNotFound.
+  ///
+  /// In en, this message translates to:
+  /// **'Subject not found.'**
+  String get tsSubjectNotFound;
+
+  /// No description provided for @tsTopicsToRevise.
+  ///
+  /// In en, this message translates to:
+  /// **'Topics to revise'**
+  String get tsTopicsToRevise;
+
+  /// No description provided for @tsNoOwnTests.
+  ///
+  /// In en, this message translates to:
+  /// **'This subject has no tests of its own. Its numbers come from your full-length tests.'**
+  String get tsNoOwnTests;
+
+  /// No description provided for @tsNoQAnswered.
+  ///
+  /// In en, this message translates to:
+  /// **'No questions answered yet'**
+  String get tsNoQAnswered;
+
+  /// No description provided for @tsUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'The test series is not available right now.'**
+  String get tsUnavailable;
+
+  /// No description provided for @tsLoadFail.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t load the test series. Check your connection.'**
+  String get tsLoadFail;
+
+  /// No description provided for @tsHcDefault.
+  ///
+  /// In en, this message translates to:
+  /// **'Subject tests, current affairs and full-length mocks.'**
+  String get tsHcDefault;
+
+  /// No description provided for @tsFreeLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Free'**
+  String get tsFreeLabel;
+
+  /// No description provided for @tsPublishingSoon.
+  ///
+  /// In en, this message translates to:
+  /// **'Publishing soon'**
+  String get tsPublishingSoon;
+
+  /// No description provided for @tsReview.
+  ///
+  /// In en, this message translates to:
+  /// **'Review'**
+  String get tsReview;
+
+  /// No description provided for @tsSoon.
+  ///
+  /// In en, this message translates to:
+  /// **'Soon'**
+  String get tsSoon;
+
+  /// No description provided for @tsLoadTestFail.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t load this test. Check your connection and try again.'**
+  String get tsLoadTestFail;
+
+  /// No description provided for @tsPractiseAgain.
+  ///
+  /// In en, this message translates to:
+  /// **'Practise again (not scored)'**
+  String get tsPractiseAgain;
+
+  /// No description provided for @tsMarking.
+  ///
+  /// In en, this message translates to:
+  /// **'+2 for correct, -0.66 for wrong'**
+  String get tsMarking;
+
+  /// No description provided for @tsOneAttempt.
+  ///
+  /// In en, this message translates to:
+  /// **'One scored attempt. Afterwards you can review it and practise again without affecting your stats.'**
+  String get tsOneAttempt;
+
+  /// No description provided for @tsUnlockedAll.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlocked! Every test in this series is now yours.'**
+  String get tsUnlockedAll;
+
+  /// No description provided for @tsPurchaseFail.
+  ///
+  /// In en, this message translates to:
+  /// **'The purchase could not be completed.'**
+  String get tsPurchaseFail;
+
+  /// No description provided for @tsPaymentPendingSeries.
+  ///
+  /// In en, this message translates to:
+  /// **'Your payment is pending. The series unlocks once it completes.'**
+  String get tsPaymentPendingSeries;
+
+  /// No description provided for @tsCodeCheckFail.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not check the code. Check your connection and try again.'**
+  String get tsCodeCheckFail;
+
+  /// No description provided for @tsUnlockAll.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock all tests'**
+  String get tsUnlockAll;
+
+  /// No description provided for @tsPaidNoAccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment went through, but access was not granted yet. Tap Restore purchase, or check that RevenueCat entitlement \"{entitlement}\" is attached to product \"{product}\".'**
+  String tsPaidNoAccess(String entitlement, String product);
+
+  /// No description provided for @tsPwSubject.
+  ///
+  /// In en, this message translates to:
+  /// **'{n} subject tests, 50 questions each, with 10% PYQs'**
+  String tsPwSubject(int n);
+
+  /// No description provided for @tsPwCa.
+  ///
+  /// In en, this message translates to:
+  /// **'{n} current-affairs tests, added on the 1st of every month'**
+  String tsPwCa(int n);
+
+  /// No description provided for @tsPwMocks.
+  ///
+  /// In en, this message translates to:
+  /// **'{n} full-length mocks that mirror the real paper (100 Q, 2 hrs)'**
+  String tsPwMocks(int n);
+
+  /// No description provided for @tsPwFree.
+  ///
+  /// In en, this message translates to:
+  /// **'{n} tests are free to try first, including all PYQ tests.'**
+  String tsPwFree(int n);
+
+  /// No description provided for @tsUnlockAllPrice.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock all tests · {price}'**
+  String tsUnlockAllPrice(String price);
+
+  /// No description provided for @tsSignInPurchase.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in with Google so your purchase is saved to your account.'**
+  String get tsSignInPurchase;
+
+  /// No description provided for @tsPassUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'This pass is not available right now. Please try again later.'**
+  String get tsPassUnavailable;
+
+  /// No description provided for @tsPaymentPending.
+  ///
+  /// In en, this message translates to:
+  /// **'Your payment is pending.'**
+  String get tsPaymentPending;
+
+  /// No description provided for @tsPurchasesUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Purchases are not available on this device.'**
+  String get tsPurchasesUnavailable;
+
+  /// No description provided for @tsCodeNotApplied.
+  ///
+  /// In en, this message translates to:
+  /// **'That code could not be applied.'**
+  String get tsCodeNotApplied;
+
+  /// No description provided for @tsAlreadyHaveAccess.
+  ///
+  /// In en, this message translates to:
+  /// **'You already have access to this series.'**
+  String get tsAlreadyHaveAccess;
+
+  /// No description provided for @tsAccessNotLoaded.
+  ///
+  /// In en, this message translates to:
+  /// **'Your access was added but has not loaded yet. Tap Restore purchase in a moment.'**
+  String get tsAccessNotLoaded;
+
+  /// No description provided for @tsEnterCode.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your code first.'**
+  String get tsEnterCode;
+
+  /// No description provided for @tsSignInAccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in with Google so your access is saved to your account.'**
+  String get tsSignInAccess;
+
+  /// No description provided for @tsSignInBefore.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in with the Google account you used before.'**
+  String get tsSignInBefore;
+
+  /// No description provided for @tsAccessRestored.
+  ///
+  /// In en, this message translates to:
+  /// **'Access restored.'**
+  String get tsAccessRestored;
+
+  /// No description provided for @tsNothingFoundUnlock.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing was found for this account. You can unlock the series below.'**
+  String get tsNothingFoundUnlock;
+
+  /// No description provided for @tsNothingFound.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing was found for this account.'**
+  String get tsNothingFound;
+
+  /// No description provided for @tsRestoreFail.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not restore. Please check your connection and try again.'**
+  String get tsRestoreFail;
+
+  /// No description provided for @tsPayOnce.
+  ///
+  /// In en, this message translates to:
+  /// **'One payment. No subscription. Yours forever, including every test added later.'**
+  String get tsPayOnce;
+
+  /// No description provided for @tsPwBilingual.
+  ///
+  /// In en, this message translates to:
+  /// **'Hindi and English on every question and explanation'**
+  String get tsPwBilingual;
+
+  /// No description provided for @tsPwDash.
+  ///
+  /// In en, this message translates to:
+  /// **'Dashboard: accuracy by subject, danger-zone and risk topics'**
+  String get tsPwDash;
+
+  /// No description provided for @tsPwNoPurchases.
+  ///
+  /// In en, this message translates to:
+  /// **'Purchases are not available on this device or build yet.'**
+  String get tsPwNoPurchases;
+
+  /// No description provided for @tsPwNotOnSale.
+  ///
+  /// In en, this message translates to:
+  /// **'This series is not on sale right now.'**
+  String get tsPwNotOnSale;
+
+  /// No description provided for @tsDiscountCode.
+  ///
+  /// In en, this message translates to:
+  /// **'Discount code'**
+  String get tsDiscountCode;
+
+  /// No description provided for @tsApply.
+  ///
+  /// In en, this message translates to:
+  /// **'Apply'**
+  String get tsApply;
+
+  /// No description provided for @tsHaveCode.
+  ///
+  /// In en, this message translates to:
+  /// **'Have a code?'**
+  String get tsHaveCode;
+
+  /// No description provided for @tsRestorePurchase.
+  ///
+  /// In en, this message translates to:
+  /// **'Restore purchase'**
+  String get tsRestorePurchase;
+
+  /// No description provided for @tsMissingQs.
+  ///
+  /// In en, this message translates to:
+  /// **'Some questions for this test are not on your device yet. Check your connection, or update the app, and try again.'**
+  String get tsMissingQs;
+
+  /// No description provided for @tsNoQsRevise.
+  ///
+  /// In en, this message translates to:
+  /// **'No questions to revise for this topic yet.'**
+  String get tsNoQsRevise;
+
+  /// No description provided for @tsOpenTopicFail.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t open this topic. Please try again.'**
+  String get tsOpenTopicFail;
+
+  /// No description provided for @tsSubConf.
+  ///
+  /// In en, this message translates to:
+  /// **'Questions you got wrong despite high confidence.'**
+  String get tsSubConf;
+
+  /// No description provided for @tsSubWrong.
+  ///
+  /// In en, this message translates to:
+  /// **'Questions you got wrong. Tap a topic to read them again.'**
+  String get tsSubWrong;
+
+  /// No description provided for @tsPrevYearQs.
+  ///
+  /// In en, this message translates to:
+  /// **'Previous year questions'**
+  String get tsPrevYearQs;
+
+  /// No description provided for @tsDoneOf.
+  ///
+  /// In en, this message translates to:
+  /// **'{a}/{t} done'**
+  String tsDoneOf(int a, int t);
+
+  /// No description provided for @tsCompletedSlash.
+  ///
+  /// In en, this message translates to:
+  /// **'{a}/{t} tests completed'**
+  String tsCompletedSlash(int a, int t);
+
+  /// No description provided for @tsFreePyqMix.
+  ///
+  /// In en, this message translates to:
+  /// **'{n} free PYQ mix tests'**
+  String tsFreePyqMix(int n);
+
+  /// No description provided for @tsCorrectOf.
+  ///
+  /// In en, this message translates to:
+  /// **'{c}/{a} correct'**
+  String tsCorrectOf(int c, int a);
+
+  /// No description provided for @tsMistakesN.
+  ///
+  /// In en, this message translates to:
+  /// **'{n, plural, =1{1 mistake} other{{n} mistakes}}'**
+  String tsMistakesN(int n);
+
+  /// No description provided for @tsSeeAllTopics.
+  ///
+  /// In en, this message translates to:
+  /// **'See all topics ({n})'**
+  String tsSeeAllTopics(int n);
+
+  /// No description provided for @tsQAnsweredFlt.
+  ///
+  /// In en, this message translates to:
+  /// **'{n} questions answered in full-length tests'**
+  String tsQAnsweredFlt(int n);
+
+  /// No description provided for @tsWhatYouGet.
+  ///
+  /// In en, this message translates to:
+  /// **'What you get'**
+  String get tsWhatYouGet;
+
+  /// No description provided for @tsFltDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Each test has 100 questions, Time 2 hours.\nTest of all GS subjects + current affairs'**
+  String get tsFltDesc;
+
+  /// No description provided for @tsSubjTestsDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Topic-wise 50-question tests for GS subjects'**
+  String get tsSubjTestsDesc;
+
+  /// No description provided for @tsCaEveryMonth.
+  ///
+  /// In en, this message translates to:
+  /// **'Current affairs every month'**
+  String get tsCaEveryMonth;
+
+  /// No description provided for @tsCaMonthlyDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'A fresh test on the 1st of each month, built from the previous month\'s Current affairs.'**
+  String get tsCaMonthlyDesc;
+
+  /// No description provided for @tsKnowMarks.
+  ///
+  /// In en, this message translates to:
+  /// **'Know where you lose marks'**
+  String get tsKnowMarks;
+
+  /// No description provided for @tsKnowMarksDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Accuracy by subject, topics to revise and safe areas, based on how sure you were.'**
+  String get tsKnowMarksDesc;
+
+  /// No description provided for @tsBilingualOnePay.
+  ///
+  /// In en, this message translates to:
+  /// **'Hindi and English, one payment'**
+  String get tsBilingualOnePay;
+
+  /// No description provided for @tsNoSubExpire.
+  ///
+  /// In en, this message translates to:
+  /// **'No subscription. Pay once and it never expires.'**
+  String get tsNoSubExpire;
+
+  /// No description provided for @tsSubSafe.
+  ///
+  /// In en, this message translates to:
+  /// **'Topics you answer reliably across your tests.'**
+  String get tsSubSafe;
+
+  /// No description provided for @tsPrepOverview.
+  ///
+  /// In en, this message translates to:
+  /// **'Your Preparation Overview'**
+  String get tsPrepOverview;
+
+  /// No description provided for @tsBasedOn.
+  ///
+  /// In en, this message translates to:
+  /// **'Based on your full-length and subject-wise tests.'**
+  String get tsBasedOn;
+
+  /// No description provided for @tsFinishATest.
+  ///
+  /// In en, this message translates to:
+  /// **'Finish a test to see your progress, weak topics and strengths.'**
+  String get tsFinishATest;
+
+  /// No description provided for @tsYourStats.
+  ///
+  /// In en, this message translates to:
+  /// **'YOUR STATS'**
+  String get tsYourStats;
+
+  /// No description provided for @tsTestsCompleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Tests completed'**
+  String get tsTestsCompleted;
+
+  /// No description provided for @tsOverallAccuracy.
+  ///
+  /// In en, this message translates to:
+  /// **'Overall accuracy'**
+  String get tsOverallAccuracy;
+
+  /// No description provided for @tsQsAttempted.
+  ///
+  /// In en, this message translates to:
+  /// **'Questions attempted'**
+  String get tsQsAttempted;
+
+  /// No description provided for @tsReviseFirst.
+  ///
+  /// In en, this message translates to:
+  /// **'Topics to revise first'**
+  String get tsReviseFirst;
+
+  /// No description provided for @tsKeepPractising.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep practising'**
+  String get tsKeepPractising;
+
+  /// No description provided for @tsSeeAll.
+  ///
+  /// In en, this message translates to:
+  /// **'See all'**
+  String get tsSeeAll;
+
+  /// No description provided for @tsFltIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Simulate the real exam: 100 questions, 2 hours.'**
+  String get tsFltIntro;
+
+  /// No description provided for @tsReviseFromFlts.
+  ///
+  /// In en, this message translates to:
+  /// **'Topics to revise (from FLTs)'**
+  String get tsReviseFromFlts;
+
+  /// No description provided for @tsAvailableTests.
+  ///
+  /// In en, this message translates to:
+  /// **'Available Tests'**
+  String get tsAvailableTests;
+
+  /// No description provided for @tsSubjIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Practise by subject and strengthen your concepts.'**
+  String get tsSubjIntro;
+
+  /// No description provided for @tsFullSyllDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Every subject in one paper, in Prelims proportion.'**
+  String get tsFullSyllDesc;
+
+  /// No description provided for @tsBySubject.
+  ///
+  /// In en, this message translates to:
+  /// **'By subject'**
+  String get tsBySubject;
+
+  /// No description provided for @tsPyqCaIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Extra practice. These tests are not counted in your overview stats.'**
+  String get tsPyqCaIntro;
+
+  /// No description provided for @tsNewTest1st.
+  ///
+  /// In en, this message translates to:
+  /// **'A new test arrives on the 1st of each month.'**
+  String get tsNewTest1st;
+
+  /// No description provided for @tsNothingYet.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing here yet.'**
+  String get tsNothingYet;
+
+  /// No description provided for @tsSubSafe2.
+  ///
+  /// In en, this message translates to:
+  /// **'Topics you answer reliably. Keep practising to stay sharp.'**
+  String get tsSubSafe2;
+
+  /// No description provided for @tsNoWeak.
+  ///
+  /// In en, this message translates to:
+  /// **'No weak topics yet. Finish a test and they will show up here.'**
+  String get tsNoWeak;
+
+  /// No description provided for @tsNoSafe.
+  ///
+  /// In en, this message translates to:
+  /// **'No safe areas yet. A topic becomes safe at 80% accuracy over 4+ questions.'**
+  String get tsNoSafe;
+
+  /// No description provided for @tsFromFlt.
+  ///
+  /// In en, this message translates to:
+  /// **'From full-length tests'**
+  String get tsFromFlt;
+
+  /// No description provided for @tsCorrectAnswer.
+  ///
+  /// In en, this message translates to:
+  /// **'Correct answer: {l}'**
+  String tsCorrectAnswer(String l);
+
+  /// No description provided for @tsCorrectBang.
+  ///
+  /// In en, this message translates to:
+  /// **'Correct! Answer: {l}'**
+  String tsCorrectBang(String l);
+
+  /// No description provided for @tsNotQuite.
+  ///
+  /// In en, this message translates to:
+  /// **'Not quite. The answer is {l}'**
+  String tsNotQuite(String l);
+
+  /// No description provided for @tsQsCorrectOf.
+  ///
+  /// In en, this message translates to:
+  /// **'{c} of {a} questions correct'**
+  String tsQsCorrectOf(int c, int a);
+
+  /// No description provided for @tsLowScoreStory.
+  ///
+  /// In en, this message translates to:
+  /// **'A low subject score is not the whole story. Inside Modern History, {topic} is where you actually lose marks. Start there.'**
+  String tsLowScoreStory(String topic);
+
+  /// No description provided for @tsPrelimsOn.
+  ///
+  /// In en, this message translates to:
+  /// **'Prelims on {date}'**
+  String tsPrelimsOn(String date);
+
+  /// No description provided for @tsDaysToGo.
+  ///
+  /// In en, this message translates to:
+  /// **'{n, plural, =1{1 day to go} other{{n} days to go}}'**
+  String tsDaysToGo(int n);
+
+  /// No description provided for @tsSeeAllPyq.
+  ///
+  /// In en, this message translates to:
+  /// **'See all {n} PYQ tests'**
+  String tsSeeAllPyq(int n);
+
+  /// No description provided for @tsFreeInAll.
+  ///
+  /// In en, this message translates to:
+  /// **'{n, plural, =1{1 test is} other{{n} tests are}} free in all, across subjects, current affairs and mocks.'**
+  String tsFreeInAll(int n);
+
+  /// No description provided for @tsWrapTests.
+  ///
+  /// In en, this message translates to:
+  /// **'{n, plural, =1{1 test} other{{n} tests}}: mocks, subjects and current affairs'**
+  String tsWrapTests(int n);
+
+  /// No description provided for @tsOneTimeNoSub.
+  ///
+  /// In en, this message translates to:
+  /// **'One-time, no subscription'**
+  String get tsOneTimeNoSub;
+
+  /// No description provided for @tsYesterdayCa.
+  ///
+  /// In en, this message translates to:
+  /// **'Yesterday\'s current affairs'**
+  String get tsYesterdayCa;
+
+  /// No description provided for @tsSampleQ.
+  ///
+  /// In en, this message translates to:
+  /// **'Sample question'**
+  String get tsSampleQ;
+
+  /// No description provided for @tsHowExplained.
+  ///
+  /// In en, this message translates to:
+  /// **'This is how every question in the series is explained.'**
+  String get tsHowExplained;
+
+  /// No description provided for @tsTapOption.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap an option to see the answer and explanation.'**
+  String get tsTapOption;
+
+  /// No description provided for @tsJustShow.
+  ///
+  /// In en, this message translates to:
+  /// **'Just show the answer'**
+  String get tsJustShow;
+
+  /// No description provided for @tsEveryQDetail.
+  ///
+  /// In en, this message translates to:
+  /// **'Every question in the series comes with this level of detail: English and हिन्दी.'**
+  String get tsEveryQDetail;
+
+  /// No description provided for @tsExampleNums.
+  ///
+  /// In en, this message translates to:
+  /// **'Example with sample numbers'**
+  String get tsExampleNums;
+
+  /// No description provided for @tsTopicByTopic.
+  ///
+  /// In en, this message translates to:
+  /// **'Topic by topic'**
+  String get tsTopicByTopic;
+
+  /// No description provided for @tsTapTopicHint.
+  ///
+  /// In en, this message translates to:
+  /// **'In the app, tap any topic to re-read exactly the questions you attempted in it.'**
+  String get tsTapTopicHint;
+
+  /// No description provided for @tsHeroTagline.
+  ///
+  /// In en, this message translates to:
+  /// **'Practise. Learn. Find your weak areas. Be better prepared for Prelims.'**
+  String get tsHeroTagline;
+
+  /// No description provided for @tsTotalTests.
+  ///
+  /// In en, this message translates to:
+  /// **'Total tests'**
+  String get tsTotalTests;
+
+  /// No description provided for @tsFreshMonthly.
+  ///
+  /// In en, this message translates to:
+  /// **'A fresh test on the 1st of every month, built from the previous month\'s news.'**
+  String get tsFreshMonthly;
+
+  /// No description provided for @tsFreePyqDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Start with questions UPSC has already asked. Same interface, explanations and analysis as the paid tests.'**
+  String get tsFreePyqDesc;
+
+  /// No description provided for @tsFromYesterdayCa.
+  ///
+  /// In en, this message translates to:
+  /// **'From yesterday\'s current affairs'**
+  String get tsFromYesterdayCa;
+
+  /// No description provided for @tsSampleGs.
+  ///
+  /// In en, this message translates to:
+  /// **'A sample GS question'**
+  String get tsSampleGs;
+
+  /// No description provided for @tsExplTeach.
+  ///
+  /// In en, this message translates to:
+  /// **'Explanations that actually teach'**
+  String get tsExplTeach;
+
+  /// No description provided for @tsExplTeachSub.
+  ///
+  /// In en, this message translates to:
+  /// **'You learn the answer, and how to think like the paper-setter.'**
+  String get tsExplTeachSub;
+
+  /// No description provided for @tsStmtDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Every statement judged true or false, with the reason.'**
+  String get tsStmtDesc;
+
+  /// No description provided for @tsDistractorDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'The option that looks right but is not, and why it fools people.'**
+  String get tsDistractorDesc;
+
+  /// No description provided for @tsElimDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Step-by-step way to cross out options, even when unsure.'**
+  String get tsElimDesc;
+
+  /// No description provided for @tsValueAddDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Related facts worth remembering: one question, five lessons.'**
+  String get tsValueAddDesc;
+
+  /// No description provided for @tsSeeRealExample.
+  ///
+  /// In en, this message translates to:
+  /// **'See a real example'**
+  String get tsSeeRealExample;
+
+  /// No description provided for @tsSmarterTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Smarter than a score'**
+  String get tsSmarterTitle;
+
+  /// No description provided for @tsSmarterSub.
+  ///
+  /// In en, this message translates to:
+  /// **'Most test series stop at your marks. We show you what to do next.'**
+  String get tsSmarterSub;
+
+  /// No description provided for @tsToolQueueTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your revision queue builds itself'**
+  String get tsToolQueueTitle;
+
+  /// No description provided for @tsToolQueueBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Got a question wrong? Bookmarked it to look at later? It goes into your revision queue automatically. No notebooks, no lists to maintain. Just open the queue and revise.'**
+  String get tsToolQueueBody;
+
+  /// No description provided for @tsToolBlindTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Find your blind spots'**
+  String get tsToolBlindTitle;
+
+  /// No description provided for @tsToolBlindBody.
+  ///
+  /// In en, this message translates to:
+  /// **'We ask how sure you were. Confident but wrong is a blind spot: fix it first. Confident and right is a safe area: attempt more there and take the risk.'**
+  String get tsToolBlindBody;
+
+  /// No description provided for @tsToolTopicTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Know exactly which topics cost you marks'**
+  String get tsToolTopicTitle;
+
+  /// No description provided for @tsToolTopicBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Accuracy in Modern History is low? We also tell you which topics inside it are dragging it down, so you revise the right chapter, not the whole book.'**
+  String get tsToolTopicBody;
+
+  /// No description provided for @tsSeeExample.
+  ///
+  /// In en, this message translates to:
+  /// **'See an example'**
+  String get tsSeeExample;
+
+  /// No description provided for @tsSureRight.
+  ///
+  /// In en, this message translates to:
+  /// **'Sure and right'**
+  String get tsSureRight;
+
+  /// No description provided for @tsSafeAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Attempt more here. Take the risk.'**
+  String get tsSafeAction;
+
+  /// No description provided for @tsSureWrong.
+  ///
+  /// In en, this message translates to:
+  /// **'Sure but wrong'**
+  String get tsSureWrong;
+
+  /// No description provided for @tsBlindAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Fix these first. They cost marks.'**
+  String get tsBlindAction;
+
+  /// No description provided for @tsGuessRight.
+  ///
+  /// In en, this message translates to:
+  /// **'Guessed and right'**
+  String get tsGuessRight;
+
+  /// No description provided for @tsLuckyAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Revise so it sticks.'**
+  String get tsLuckyAction;
+
+  /// No description provided for @tsGuessWrong.
+  ///
+  /// In en, this message translates to:
+  /// **'Guessed and wrong'**
+  String get tsGuessWrong;
+
+  /// No description provided for @tsGapAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Learn it from the explanation.'**
+  String get tsGapAction;
+
+  /// No description provided for @tsPractiseLike.
+  ///
+  /// In en, this message translates to:
+  /// **'Practise like it\'s Prelims day'**
+  String get tsPractiseLike;
+
+  /// No description provided for @tsMocksMirror.
+  ///
+  /// In en, this message translates to:
+  /// **'The full-length mocks mirror the real paper.'**
+  String get tsMocksMirror;
+
+  /// No description provided for @ts100q2h.
+  ///
+  /// In en, this message translates to:
+  /// **'100 Q, 2 hours'**
+  String get ts100q2h;
+
+  /// No description provided for @tsTimedPaper.
+  ///
+  /// In en, this message translates to:
+  /// **'Timed, exam-style paper with all GS subjects.'**
+  String get tsTimedPaper;
+
+  /// No description provided for @tsRealMarking.
+  ///
+  /// In en, this message translates to:
+  /// **'Real marking'**
+  String get tsRealMarking;
+
+  /// No description provided for @tsMarkingSkip.
+  ///
+  /// In en, this message translates to:
+  /// **'+2 for correct, −0.66 for wrong. Learn when to skip.'**
+  String get tsMarkingSkip;
+
+  /// No description provided for @tsOneScored.
+  ///
+  /// In en, this message translates to:
+  /// **'One scored attempt'**
+  String get tsOneScored;
+
+  /// No description provided for @tsThenReview.
+  ///
+  /// In en, this message translates to:
+  /// **'Then review it, and practise again without affecting stats.'**
+  String get tsThenReview;
+
+  /// No description provided for @tsBothLangs.
+  ///
+  /// In en, this message translates to:
+  /// **'Every question and explanation, in both languages.'**
+  String get tsBothLangs;
+
+  /// No description provided for @tsOnePayGood.
+  ///
+  /// In en, this message translates to:
+  /// **'One payment. Yours for good.'**
+  String get tsOnePayGood;
+
+  /// No description provided for @tsWrapExpl.
+  ///
+  /// In en, this message translates to:
+  /// **'Detailed explanations in English and हिन्दी'**
+  String get tsWrapExpl;
+
+  /// No description provided for @tsWrapQueue.
+  ///
+  /// In en, this message translates to:
+  /// **'Revision queue, blind spots and topic-wise analysis'**
+  String get tsWrapQueue;
+
+  /// No description provided for @tsWrapNoExpiry.
+  ///
+  /// In en, this message translates to:
+  /// **'No subscription, no expiry. Tests added later are included.'**
+  String get tsWrapNoExpiry;
+
+  /// No description provided for @tsNotSure.
+  ///
+  /// In en, this message translates to:
+  /// **'Not sure yet? Try the free tests first.'**
+  String get tsNotSure;
+
+  /// No description provided for @tsTryFreePyq.
+  ///
+  /// In en, this message translates to:
+  /// **'Try the free PYQ tests'**
+  String get tsTryFreePyq;
 }
 
 class _AppLocalizationsDelegate

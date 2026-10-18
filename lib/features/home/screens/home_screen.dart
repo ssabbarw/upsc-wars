@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:posthog_flutter/posthog_flutter.dart';
 
 import '../../../core/analytics/activation_milestones.dart';
 import '../../../core/auth/auth_session.dart';
@@ -200,6 +201,24 @@ class HomeScreen extends HookConsumerWidget {
                   AppSpacing.lg,
                 ),
                 children: [
+                  // TEMP: PostHog test button — remove after verifying.
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: AppSpacing.md),
+                    child: OutlinedButton(
+                      onPressed: () async {
+                        await Posthog().capture(
+                          eventName: 'button_clicked',
+                          properties: {'button_name': 'signup'},
+                        );
+                        if (context.mounted) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(content: Text('PostHog event sent')),
+                          );
+                        }
+                      },
+                      child: const Text('TEMP: PostHog test'),
+                    ),
+                  ),
                   if (bootstrap.hasError)
                     Padding(
                       padding: const EdgeInsets.only(bottom: AppSpacing.md),

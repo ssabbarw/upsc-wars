@@ -8,6 +8,7 @@ import '../../../core/providers/catalog_providers.dart';
 import '../providers/test_series_providers.dart';
 import 'series_stats.dart';
 import 'test_series_models.dart';
+import '../../../l10n/l10n.dart';
 
 /// Opens an untimed, unscored read-through of the questions the user already
 /// met in this series on one topic.
@@ -39,11 +40,7 @@ Future<void> startSeriesTopicRevision({
       topic: topic,
     );
     if (uuids.isEmpty) {
-      messenger.showSnackBar(
-        const SnackBar(
-          content: Text('No questions to revise for this topic yet.'),
-        ),
-      );
+      messenger.showSnackBar(SnackBar(content: Text(appL10n.tsNoQsRevise)));
       return;
     }
     if (!context.mounted) return;
@@ -66,10 +63,6 @@ Future<void> startSeriesTopicRevision({
     if (!context.mounted) return;
     await context.push('/test/$sessionId');
   } on Object {
-    messenger.showSnackBar(
-      const SnackBar(
-        content: Text("Couldn't open this topic. Please try again."),
-      ),
-    );
+    messenger.showSnackBar(SnackBar(content: Text(appL10n.tsOpenTopicFail)));
   }
 }

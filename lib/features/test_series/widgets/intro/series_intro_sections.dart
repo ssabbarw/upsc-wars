@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:intl/intl.dart';
 
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_radius.dart';
@@ -11,6 +12,7 @@ import '../../providers/series_sample_question_provider.dart';
 import '../series_dashboard_widgets.dart';
 import '../series_test_row.dart';
 import 'series_tone.dart';
+import '../../../../l10n/l10n.dart';
 
 /// Tab indexes of the series home, for the "see all" buttons.
 abstract final class SeriesBrowseTab {
@@ -22,6 +24,12 @@ abstract final class SeriesBrowseTab {
 
 String _plural(int n, String one, [String? many]) =>
     '$n ${n == 1 ? one : (many ?? '${one}s')}';
+
+/// "24th May" style in English; the ordinal suffix does not exist in Hindi,
+/// so Hindi gets a plain localized day + month.
+String _prelimsDateLabel(DateTime d) => AppL10n.locale.languageCode == 'hi'
+    ? DateFormat('d MMM').format(d)
+    : '${d.day}rd ${_months[d.month - 1]}';
 
 const _months = [
   'Jan',
@@ -91,8 +99,7 @@ class IntroHero extends StatelessWidget {
                     ),
                     const SizedBox(height: AppSpacing.sm),
                     Text(
-                      'Practise. Learn. Find your weak areas. '
-                      'Be better prepared for Prelims.',
+                      context.l10n.tsHeroTagline,
                       style: AppTextStyles.bodyMd().copyWith(
                         color: scheme.onSurfaceVariant,
                       ),
@@ -147,8 +154,7 @@ class IntroHero extends StatelessWidget {
                   const SizedBox(width: AppSpacing.sm),
                   Expanded(
                     child: Text(
-                      'Prelims on ${prelims.day}rd ${_months[prelims.month - 1]} '
-                      '·  $daysLeft days to go',
+                      '${context.l10n.tsPrelimsOn(_prelimsDateLabel(prelims))} ·  ${context.l10n.tsDaysToGo(daysLeft)}',
                       style: AppTextStyles.labelSm().copyWith(
                         fontWeight: FontWeight.w600,
                       ),
@@ -390,7 +396,7 @@ class IntroCounts extends StatelessWidget {
             children: [
               stat(
                 bundle.tests.length,
-                'Total tests',
+                context.l10n.tsTotalTests,
                 numberColor(SeriesTone.green),
               ),
               divider(),
@@ -426,8 +432,7 @@ class IntroCounts extends StatelessWidget {
                       ),
                       const SizedBox(height: 2),
                       Text(
-                        'A fresh test on the 1st of every month, built from '
-                        "the previous month's news.",
+                        context.l10n.tsFreshMonthly,
                         style: AppTextStyles.bodySm().copyWith(color: blue.fg),
                       ),
                     ],
@@ -494,8 +499,7 @@ class IntroFreePyq extends StatelessWidget {
                     ),
                     const SizedBox(height: 2),
                     Text(
-                      'Start with questions UPSC has already asked. Same '
-                      'interface, explanations and analysis as the paid tests.',
+                      context.l10n.tsFreePyqDesc,
                       style: AppTextStyles.bodySm().copyWith(color: green.fg),
                     ),
                   ],
@@ -510,7 +514,7 @@ class IntroFreePyq extends StatelessWidget {
           OutlinedButton.icon(
             onPressed: onSeeAll,
             icon: const Icon(Icons.arrow_forward_rounded, size: 18),
-            label: Text('See all ${pyq.length} PYQ tests'),
+            label: Text(context.l10n.tsSeeAllPyq(pyq.length)),
             style: OutlinedButton.styleFrom(
               minimumSize: const Size.fromHeight(46),
               foregroundColor: green.fg,
@@ -521,8 +525,7 @@ class IntroFreePyq extends StatelessWidget {
             const SizedBox(height: AppSpacing.sm),
             Center(
               child: Text(
-                '${_plural(freeTotal, 'test')} are free in all, across subjects, '
-                'current affairs and mocks.',
+                context.l10n.tsFreeInAll(freeTotal),
                 textAlign: TextAlign.center,
                 style: AppTextStyles.caption().copyWith(color: green.fg),
               ),
@@ -551,8 +554,8 @@ class IntroExplanations extends ConsumerWidget {
     final hint = sample == null
         ? null
         : sample.isCurrentAffairs
-        ? "From yesterday's current affairs"
-        : 'A sample GS question';
+        ? context.l10n.tsFromYesterdayCa
+        : context.l10n.tsSampleGs;
 
     Widget tile(SeriesTone tone, IconData icon, String title, String body) =>
         Expanded(
@@ -591,10 +594,9 @@ class IntroExplanations extends ConsumerWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const IntroSectionTitle(
-          'Explanations that actually teach',
-          subtitle:
-              'You learn the answer, and how to think like the paper-setter.',
+        IntroSectionTitle(
+          context.l10n.tsExplTeach,
+          subtitle: context.l10n.tsExplTeachSub,
         ),
         IntrinsicHeight(
           child: Row(
@@ -604,14 +606,14 @@ class IntroExplanations extends ConsumerWidget {
                 SeriesTone.green,
                 Icons.fact_check_rounded,
                 'Statement analysis',
-                'Every statement judged true or false, with the reason.',
+                context.l10n.tsStmtDesc,
               ),
               const SizedBox(width: AppSpacing.md),
               tile(
                 SeriesTone.red,
                 Icons.warning_amber_rounded,
                 'Strong distractor',
-                'The option that looks right but is not, and why it fools people.',
+                context.l10n.tsDistractorDesc,
               ),
             ],
           ),
@@ -625,14 +627,14 @@ class IntroExplanations extends ConsumerWidget {
                 SeriesTone.blue,
                 Icons.content_cut_rounded,
                 'Elimination technique',
-                'Step-by-step way to cross out options, even when unsure.',
+                context.l10n.tsElimDesc,
               ),
               const SizedBox(width: AppSpacing.md),
               tile(
                 SeriesTone.purple,
                 Icons.lightbulb_rounded,
                 'Value addition',
-                'Related facts worth remembering: one question, five lessons.',
+                context.l10n.tsValueAddDesc,
               ),
             ],
           ),
@@ -641,7 +643,7 @@ class IntroExplanations extends ConsumerWidget {
         FilledButton.icon(
           onPressed: onSeeExample,
           icon: const Icon(Icons.visibility_rounded, size: 20),
-          label: const Text('See a real example'),
+          label: Text(context.l10n.tsSeeRealExample),
           style: FilledButton.styleFrom(
             minimumSize: const Size.fromHeight(50),
             shape: RoundedRectangleBorder(
@@ -679,43 +681,33 @@ class IntroSmartTools extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const IntroSectionTitle(
-          'Smarter than a score',
-          subtitle:
-              'Most test series stop at your marks. We show you what to do next.',
+        IntroSectionTitle(
+          context.l10n.tsSmarterTitle,
+          subtitle: context.l10n.tsSmarterSub,
         ),
-        const _ToolCard(
+        _ToolCard(
           tone: SeriesTone.blue,
           icon: Icons.bookmark_added_rounded,
-          title: 'Your revision queue builds itself',
-          body:
-              'Got a question wrong? Bookmarked it to look at later? It goes '
-              'into your revision queue automatically. No notebooks, no '
-              'lists to maintain. Just open the queue and revise.',
+          title: context.l10n.tsToolQueueTitle,
+          body: context.l10n.tsToolQueueBody,
           visual: _QueueVisual(),
         ),
         const SizedBox(height: AppSpacing.lg),
-        const _ToolCard(
+        _ToolCard(
           tone: SeriesTone.red,
           icon: Icons.radar_rounded,
-          title: 'Find your blind spots',
-          body:
-              'We ask how sure you were. Confident but wrong is a blind spot: '
-              'fix it first. Confident and right is a safe area: attempt more '
-              'there and take the risk.',
+          title: context.l10n.tsToolBlindTitle,
+          body: context.l10n.tsToolBlindBody,
           visual: _BlindSpotVisual(),
         ),
         const SizedBox(height: AppSpacing.lg),
         _ToolCard(
           tone: SeriesTone.purple,
           icon: Icons.bar_chart_rounded,
-          title: 'Know exactly which topics cost you marks',
-          body:
-              'Accuracy in Modern History is low? We also tell you which '
-              'topics inside it are dragging it down, so you revise the right '
-              'chapter, not the whole book.',
+          title: context.l10n.tsToolTopicTitle,
+          body: context.l10n.tsToolTopicBody,
           visual: const _SubjectVisual(),
-          ctaLabel: 'See an example',
+          ctaLabel: context.l10n.tsSeeExample,
           onCta: onSeeAnalysisExample,
         ),
       ],
@@ -862,7 +854,12 @@ class _QueueVisual extends StatelessWidget {
                     ],
                   ),
                 ),
-                TonePill(label: r.$3, tone: r.$4),
+                TonePill(
+                  label: r.$3 == 'Wrong'
+                      ? context.l10n.resultsMatrixWrong
+                      : context.l10n.testBookmarked,
+                  tone: r.$4,
+                ),
               ],
             ),
           ),
@@ -936,16 +933,16 @@ class _BlindSpotVisual extends StatelessWidget {
             children: [
               cell(
                 SeriesTone.green,
-                'Sure and right',
+                context.l10n.tsSureRight,
                 'Safe area',
-                'Attempt more here. Take the risk.',
+                context.l10n.tsSafeAction,
               ),
               const SizedBox(width: AppSpacing.sm),
               cell(
                 SeriesTone.red,
-                'Sure but wrong',
+                context.l10n.tsSureWrong,
                 'Blind spot',
-                'Fix these first. They cost marks.',
+                context.l10n.tsBlindAction,
               ),
             ],
           ),
@@ -957,16 +954,16 @@ class _BlindSpotVisual extends StatelessWidget {
             children: [
               cell(
                 SeriesTone.amber,
-                'Guessed and right',
+                context.l10n.tsGuessRight,
                 'Lucky',
-                'Revise so it sticks.',
+                context.l10n.tsLuckyAction,
               ),
               const SizedBox(width: AppSpacing.sm),
               cell(
                 SeriesTone.blue,
-                'Guessed and wrong',
+                context.l10n.tsGuessWrong,
                 'Known gap',
-                'Learn it from the explanation.',
+                context.l10n.tsGapAction,
               ),
             ],
           ),
@@ -1086,9 +1083,9 @@ class IntroExamRealism extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const IntroSectionTitle(
-          "Practise like it's Prelims day",
-          subtitle: 'The full-length mocks mirror the real paper.',
+        IntroSectionTitle(
+          context.l10n.tsPractiseLike,
+          subtitle: context.l10n.tsMocksMirror,
         ),
         IntrinsicHeight(
           child: Row(
@@ -1097,15 +1094,15 @@ class IntroExamRealism extends StatelessWidget {
               tile(
                 SeriesTone.blue,
                 Icons.timer_rounded,
-                '100 Q, 2 hours',
-                'Timed, exam-style paper with all GS subjects.',
+                context.l10n.ts100q2h,
+                context.l10n.tsTimedPaper,
               ),
               const SizedBox(width: AppSpacing.md),
               tile(
                 SeriesTone.amber,
                 Icons.calculate_rounded,
-                'Real marking',
-                '+2 for correct, \u22120.66 for wrong. Learn when to skip.',
+                context.l10n.tsRealMarking,
+                context.l10n.tsMarkingSkip,
               ),
             ],
           ),
@@ -1118,15 +1115,15 @@ class IntroExamRealism extends StatelessWidget {
               tile(
                 SeriesTone.green,
                 Icons.flag_rounded,
-                'One scored attempt',
-                'Then review it, and practise again without affecting stats.',
+                context.l10n.tsOneScored,
+                context.l10n.tsThenReview,
               ),
               const SizedBox(width: AppSpacing.md),
               tile(
                 SeriesTone.purple,
                 Icons.translate_rounded,
                 'English + हिन्दी',
-                'Every question and explanation, in both languages.',
+                context.l10n.tsBothLangs,
               ),
             ],
           ),
@@ -1184,7 +1181,7 @@ class IntroWrapUp extends StatelessWidget {
               const SizedBox(width: AppSpacing.sm),
               Expanded(
                 child: Text(
-                  'One payment. Yours for good.',
+                  context.l10n.tsOnePayGood,
                   style: AppTextStyles.h2().copyWith(
                     color: green.fg,
                     fontWeight: FontWeight.w700,
@@ -1194,22 +1191,20 @@ class IntroWrapUp extends StatelessWidget {
             ],
           ),
           const SizedBox(height: AppSpacing.md),
-          line(
-            '${_plural(bundle.tests.length, 'test')}: mocks, subjects and current affairs',
-          ),
-          line('Detailed explanations in English and हिन्दी'),
-          line('Revision queue, blind spots and topic-wise analysis'),
-          line('No subscription, no expiry. Tests added later are included.'),
+          line(context.l10n.tsWrapTests(bundle.tests.length)),
+          line(context.l10n.tsWrapExpl),
+          line(context.l10n.tsWrapQueue),
+          line(context.l10n.tsWrapNoExpiry),
           const SizedBox(height: AppSpacing.sm),
           Text(
-            'Not sure yet? Try the free tests first.',
+            context.l10n.tsNotSure,
             style: AppTextStyles.bodySm().copyWith(color: green.fg),
           ),
           const SizedBox(height: AppSpacing.sm),
           OutlinedButton.icon(
             onPressed: onTryFree,
             icon: const Icon(Icons.play_arrow_rounded, size: 20),
-            label: const Text('Try the free PYQ tests'),
+            label: Text(context.l10n.tsTryFreePyq),
             style: OutlinedButton.styleFrom(
               minimumSize: const Size.fromHeight(46),
               foregroundColor: green.fg,

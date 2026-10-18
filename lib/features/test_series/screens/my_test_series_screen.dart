@@ -8,6 +8,7 @@ import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../providers/test_series_providers.dart';
+import '../../../l10n/l10n.dart';
 
 /// Every test series the user bought (or tried), across years. A bought series
 /// stays here after its Prelims is over: all tests remain attemptable and past
@@ -22,15 +23,14 @@ class MyTestSeriesScreen extends ConsumerWidget {
       appBar: AppBar(title: const Text('My Test Series')),
       body: idsAsync.when(
         loading: () => const Center(child: CircularProgressIndicator()),
-        error: (_, _) =>
-            const Center(child: Text("Couldn't load your test series.")),
+        error: (_, _) => Center(child: Text(context.l10n.tsLoadMineFail)),
         data: (ids) {
           if (ids.isEmpty) {
-            return const Center(
+            return Center(
               child: Padding(
                 padding: EdgeInsets.all(AppSpacing.xl),
                 child: Text(
-                  'You have not started a test series yet.',
+                  context.l10n.tsNoneStarted,
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -109,7 +109,9 @@ class _SeriesCard extends ConsumerWidget {
                         borderRadius: BorderRadius.circular(AppRadius.pill),
                       ),
                       child: Text(
-                        owned ? 'Unlocked' : 'Free tests',
+                        owned
+                            ? context.l10n.tsUnlocked
+                            : context.l10n.tsFreeTests,
                         style: AppTextStyles.labelSm().copyWith(
                           color: owned
                               ? AppColors.primaryDeep
@@ -123,16 +125,19 @@ class _SeriesCard extends ConsumerWidget {
                 const SizedBox(height: AppSpacing.sm),
                 if (stats != null)
                   Text(
-                    '${stats.overall.attempted} of ${stats.overall.total} tests attempted'
-                    '${stats.hasAnyAttempt ? ' · ${(stats.overallAccuracy * 100).round()}% accuracy' : ''}',
+                    '${context.l10n.tsAttemptedOf(stats.overall.attempted, stats.overall.total)}'
+                    '${stats.hasAnyAttempt ? ' · ${context.l10n.tsAccuracyPct((stats.overallAccuracy * 100).round())}' : ''}',
                     style: AppTextStyles.bodyMd(),
                   )
                 else
-                  Text('Loading…', style: AppTextStyles.bodyMd()),
+                  Text(
+                    context.l10n.commonLoading,
+                    style: AppTextStyles.bodyMd(),
+                  ),
                 if (over) ...[
                   const SizedBox(height: AppSpacing.xs),
                   Text(
-                    'Prelims is over. All tests stay open for practice.',
+                    context.l10n.tsPrelimsOver,
                     style: AppTextStyles.bodySm().copyWith(
                       color: scheme.onSurfaceVariant,
                     ),
@@ -141,7 +146,7 @@ class _SeriesCard extends ConsumerWidget {
                 if (bundle == null && bundleAsync.hasError) ...[
                   const SizedBox(height: AppSpacing.xs),
                   Text(
-                    "Couldn't load this series.",
+                    context.l10n.tsLoadSeriesFail,
                     style: AppTextStyles.bodySm().copyWith(
                       color: AppColors.wrong,
                     ),

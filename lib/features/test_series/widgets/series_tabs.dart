@@ -15,6 +15,7 @@ import '../providers/test_series_providers.dart';
 import 'free_badge.dart';
 import 'series_dashboard_widgets.dart';
 import 'series_test_row.dart';
+import '../../../l10n/l10n.dart';
 
 /// Opens the read-through of the user's questions on [topic].
 void openSeriesTopic({
@@ -91,7 +92,7 @@ class _TabIntro extends StatelessWidget {
 
 String _marks(double net, double max) => '${net.round()}/${max.round()}';
 
-/// "What you get" card on the Overview: the series' selling points, with real
+/// context.l10n.tsWhatYouGet card on the Overview: the series' selling points, with real
 /// counts from the published series.
 class SeriesUspCard extends StatelessWidget {
   const SeriesUspCard({super.key, required this.bundle});
@@ -178,31 +179,31 @@ class SeriesUspCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('What you get', style: AppTextStyles.h3()),
+          Text(context.l10n.tsWhatYouGet, style: AppTextStyles.h3()),
           const SizedBox(height: AppSpacing.md),
           row(
             Icons.timer_outlined,
             AppColors.primary,
             '$flt full-length mocks',
-            'Each test has 100 questions, Time 2 hours.\nTest of all GS subjects + current affairs',
+            context.l10n.tsFltDesc,
           ),
           row(
             Icons.menu_book_rounded,
             AppColors.info,
             '$subject subject tests',
-            'Topic-wise 50-question tests for GS subjects',
+            context.l10n.tsSubjTestsDesc,
           ),
           row(
             Icons.newspaper_rounded,
             AppColors.info,
-            'Current affairs every month',
-            'A fresh test on the 1st of each month, built from the previous month\'s Current affairs.',
+            context.l10n.tsCaEveryMonth,
+            context.l10n.tsCaMonthlyDesc,
           ),
           row(
             Icons.history_edu_rounded,
             AppColors.warning,
-            'Previous year questions',
-            '$pyq free PYQ mix tests',
+            context.l10n.tsPrevYearQs,
+            context.l10n.tsFreePyqMix(pyq),
             free: true,
           ),
           const Padding(
@@ -212,15 +213,14 @@ class SeriesUspCard extends StatelessWidget {
           row(
             Icons.insights_rounded,
             AppColors.primary,
-            'Know where you lose marks',
-            'Accuracy by subject, topics to revise and safe areas, based on '
-                'how sure you were.',
+            context.l10n.tsKnowMarks,
+            context.l10n.tsKnowMarksDesc,
           ),
           row(
             Icons.translate_rounded,
             AppColors.info,
-            'Hindi and English, one payment',
-            'No subscription. Pay once and it never expires.',
+            context.l10n.tsBilingualOnePay,
+            context.l10n.tsNoSubExpire,
           ),
         ],
       ),
@@ -271,9 +271,9 @@ class SeriesOverviewTab extends ConsumerWidget {
           title: revise ? 'Needs revision' : 'Safe areas',
           subtitle: revise
               ? (core.useConfidence
-                    ? 'Questions you got wrong despite high confidence.'
-                    : 'Questions you got wrong. Tap a topic to read them again.')
-              : 'Topics you answer reliably across your tests.',
+                    ? context.l10n.tsSubConf
+                    : context.l10n.tsSubWrong)
+              : context.l10n.tsSubSafe,
           topics: revise ? core.needsRevision : core.safeAreas,
           revise: revise,
           showSubject: true,
@@ -287,10 +287,10 @@ class SeriesOverviewTab extends ConsumerWidget {
       seriesId: bundle.info.id,
       children: [
         _TabIntro(
-          'Your Preparation Overview',
+          context.l10n.tsPrepOverview,
           stats.hasAnyAttempt
-              ? 'Based on your full-length and subject-wise tests.'
-              : 'Finish a test to see your progress, weak topics and strengths.',
+              ? context.l10n.tsBasedOn
+              : context.l10n.tsFinishATest,
         ),
         if (!owned || !stats.hasAnyAttempt) ...[
           SeriesUspCard(bundle: bundle),
@@ -298,7 +298,7 @@ class SeriesOverviewTab extends ConsumerWidget {
         ],
         if (!stats.hasAnyAttempt) ...[
           Text(
-            'YOUR STATS',
+            context.l10n.tsYourStats,
             style: AppTextStyles.caption().copyWith(
               color: Theme.of(context).colorScheme.onSurfaceVariant,
               fontWeight: FontWeight.w700,
@@ -321,7 +321,7 @@ class SeriesOverviewTab extends ConsumerWidget {
                         icon: Icons.assignment_turned_in_rounded,
                         color: AppColors.primary,
                         value: '${core.tests.attempted}/${core.tests.total}',
-                        label: 'Tests completed',
+                        label: context.l10n.tsTestsCompleted,
                       ),
                     ),
                     const SizedBox(width: AppSpacing.md),
@@ -332,7 +332,7 @@ class SeriesOverviewTab extends ConsumerWidget {
                         value: core.answered == 0
                             ? '—'
                             : '${(core.accuracy * 100).round()}%',
-                        label: 'Overall accuracy',
+                        label: context.l10n.tsOverallAccuracy,
                       ),
                     ),
                   ],
@@ -345,7 +345,7 @@ class SeriesOverviewTab extends ConsumerWidget {
                         icon: Icons.quiz_rounded,
                         color: AppColors.info,
                         value: '${core.answered}',
-                        label: 'Questions attempted',
+                        label: context.l10n.tsQsAttempted,
                       ),
                     ),
                     const SizedBox(width: AppSpacing.md),
@@ -375,7 +375,7 @@ class SeriesOverviewTab extends ConsumerWidget {
                           caption: core.useConfidence
                               ? 'Confident mistakes'
                               : 'Mistakes',
-                          action: 'Topics to revise first',
+                          action: context.l10n.tsReviseFirst,
                           onTap: () => openAll(revise: true),
                         ),
                       ),
@@ -385,7 +385,7 @@ class SeriesOverviewTab extends ConsumerWidget {
                           revise: false,
                           count: core.safeAreas.length,
                           caption: 'Reliable topics',
-                          action: 'Keep practising',
+                          action: context.l10n.tsKeepPractising,
                           onTap: () => openAll(revise: false),
                         ),
                       ),
@@ -399,7 +399,7 @@ class SeriesOverviewTab extends ConsumerWidget {
         const SizedBox(height: AppSpacing.xl),
         SeriesSectionHeader(
           'Full-Length Tests',
-          actionLabel: 'See all',
+          actionLabel: context.l10n.tsSeeAll,
           onAction: () => tabController.animateTo(1),
         ),
         for (final t in flts.take(3))
@@ -407,7 +407,7 @@ class SeriesOverviewTab extends ConsumerWidget {
         const SizedBox(height: AppSpacing.lg),
         SeriesSectionHeader(
           'Subject-wise Performance',
-          actionLabel: 'See all',
+          actionLabel: context.l10n.tsSeeAll,
           onAction: () => tabController.animateTo(2),
         ),
         for (final s in listed.take(3))
@@ -451,10 +451,7 @@ class SeriesFullLengthTab extends ConsumerWidget {
     return _TabList(
       seriesId: bundle.info.id,
       children: [
-        const _TabIntro(
-          'Full-Length Tests',
-          'Simulate the real exam: 100 questions, 2 hours.',
-        ),
+        _TabIntro('Full-Length Tests', context.l10n.tsFltIntro),
         Row(
           children: [
             Expanded(
@@ -462,7 +459,7 @@ class SeriesFullLengthTab extends ConsumerWidget {
                 icon: Icons.assignment_turned_in_rounded,
                 color: AppColors.primary,
                 value: '${flt.tests.attempted}/${flt.tests.total}',
-                label: 'Completed',
+                label: context.l10n.commonCompleted,
               ),
             ),
             const SizedBox(width: AppSpacing.sm),
@@ -494,7 +491,7 @@ class SeriesFullLengthTab extends ConsumerWidget {
           needsRevision: flt.needsRevision,
           safeAreas: flt.safeAreas,
           useConfidence: flt.useConfidence,
-          reviseTitle: 'Topics to revise (from FLTs)',
+          reviseTitle: context.l10n.tsReviseFromFlts,
           showSubject: true,
           isHindi: isHindi,
           onTopicTap: (t) => openSeriesTopic(
@@ -506,7 +503,7 @@ class SeriesFullLengthTab extends ConsumerWidget {
           ),
         ),
         const SizedBox(height: AppSpacing.xl),
-        const SeriesSectionHeader('Available Tests'),
+        SeriesSectionHeader(context.l10n.tsAvailableTests),
         for (final t in tests)
           SeriesTestRow(bundle: bundle, test: t, owned: owned, stats: stats),
       ],
@@ -544,20 +541,19 @@ class SeriesSubjectsTab extends ConsumerWidget {
     return _TabList(
       seriesId: bundle.info.id,
       children: [
-        const _TabIntro(
-          'Subject-wise Tests',
-          'Practise by subject and strengthen your concepts.',
-        ),
+        _TabIntro('Subject-wise Tests', context.l10n.tsSubjIntro),
         if (full.isNotEmpty) ...[
           SeriesSectionHeader(
             'Full Syllabus Tests',
-            trailingText:
-                '${full.where((t) => stats.attempts.containsKey(t.id)).length}/${full.length} done',
+            trailingText: context.l10n.tsDoneOf(
+              full.where((t) => stats.attempts.containsKey(t.id)).length,
+              full.length,
+            ),
           ),
           Padding(
             padding: const EdgeInsets.only(bottom: AppSpacing.sm),
             child: Text(
-              'Every subject in one paper, in Prelims proportion.',
+              context.l10n.tsFullSyllDesc,
               style: AppTextStyles.bodySm().copyWith(
                 color: Theme.of(context).colorScheme.onSurfaceVariant,
               ),
@@ -566,7 +562,7 @@ class SeriesSubjectsTab extends ConsumerWidget {
           for (final t in full)
             SeriesTestRow(bundle: bundle, test: t, owned: owned, stats: stats),
           const SizedBox(height: AppSpacing.lg),
-          const SeriesSectionHeader('By subject'),
+          SeriesSectionHeader(context.l10n.tsBySubject),
         ],
         for (final s in rows)
           SeriesSubjectRow(
@@ -607,15 +603,14 @@ class SeriesPyqCaTab extends ConsumerWidget {
     return _TabList(
       seriesId: bundle.info.id,
       children: [
-        const _TabIntro(
-          'PYQ & Current Affairs',
-          'Extra practice. These tests are not counted in your overview stats.',
-        ),
+        _TabIntro('PYQ & Current Affairs', context.l10n.tsPyqCaIntro),
         if (pyq.isNotEmpty) ...[
           SeriesSectionHeader(
-            'Previous year questions',
-            trailingText:
-                '${stats.pyqTests.attempted}/${stats.pyqTests.total} done',
+            context.l10n.tsPrevYearQs,
+            trailingText: context.l10n.tsDoneOf(
+              stats.pyqTests.attempted,
+              stats.pyqTests.total,
+            ),
           ),
           for (final t in pyq)
             SeriesTestRow(bundle: bundle, test: t, owned: owned, stats: stats),
@@ -624,13 +619,15 @@ class SeriesPyqCaTab extends ConsumerWidget {
         if (ca.isNotEmpty) ...[
           SeriesSectionHeader(
             'Current affairs',
-            trailingText:
-                '${stats.caTests.attempted}/${stats.caTests.total} done',
+            trailingText: context.l10n.tsDoneOf(
+              stats.caTests.attempted,
+              stats.caTests.total,
+            ),
           ),
           Padding(
             padding: const EdgeInsets.only(bottom: AppSpacing.sm),
             child: Text(
-              'A new test arrives on the 1st of each month.',
+              context.l10n.tsNewTest1st,
               style: AppTextStyles.bodySm().copyWith(
                 color: Theme.of(context).colorScheme.onSurfaceVariant,
               ),

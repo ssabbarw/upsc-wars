@@ -7,6 +7,7 @@ import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../domain/series_stats.dart';
 import '../domain/test_series_models.dart';
+import '../../../l10n/l10n.dart';
 
 /// Colour for an accuracy fraction: strong, middling or weak.
 Color seriesAccuracyColor(double accuracy) {
@@ -337,12 +338,12 @@ class SeriesTopicTile extends StatelessWidget {
         ? (isDark ? AppColors.wrongBgDark : AppColors.wrongBg)
         : (isDark ? AppColors.correctBgDark : AppColors.correctBg);
 
-    final detail = '${topic.correct}/${topic.answered} correct';
+    final detail = context.l10n.tsCorrectOf(topic.correct, topic.answered);
     final subtitle = showSubject
         ? '${SeriesSubjects.label(topic.subjectId, hindi: isHindi)} · $detail'
         : detail;
     final trailing = revise
-        ? '${topic.mistakes} ${topic.mistakes == 1 ? 'mistake' : 'mistakes'}'
+        ? context.l10n.tsMistakesN(topic.mistakes)
         : '${(topic.accuracy * 100).round()}%';
 
     return Padding(
@@ -457,9 +458,9 @@ Future<void> showSeriesTopicsSheet({
           ),
           const SizedBox(height: AppSpacing.lg),
           if (topics.isEmpty)
-            const Padding(
+            Padding(
               padding: EdgeInsets.all(AppSpacing.xl),
-              child: Center(child: Text('Nothing here yet.')),
+              child: Center(child: Text(context.l10n.tsNothingYet)),
             ),
           for (final t in topics)
             SeriesTopicTile(
@@ -509,13 +510,11 @@ class SeriesTopicsPanel extends HookWidget {
     final list = revise.value ? needsRevision : safeAreas;
     final title = revise.value ? reviseTitle : 'Safe areas';
     final subtitle = revise.value
-        ? (useConfidence
-              ? 'Questions you got wrong despite high confidence.'
-              : 'Questions you got wrong. Tap a topic to read them again.')
-        : 'Topics you answer reliably. Keep practising to stay sharp.';
+        ? (useConfidence ? context.l10n.tsSubConf : context.l10n.tsSubWrong)
+        : context.l10n.tsSubSafe2;
     final emptyText = revise.value
-        ? 'No weak topics yet. Finish a test and they will show up here.'
-        : 'No safe areas yet. A topic becomes safe at 80% accuracy over 4+ questions.';
+        ? context.l10n.tsNoWeak
+        : context.l10n.tsNoSafe;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -566,7 +565,7 @@ class SeriesTopicsPanel extends HookWidget {
                 isHindi: isHindi,
                 onTopicTap: onTopicTap,
               ),
-              child: Text('See all topics (${list.length})'),
+              child: Text(context.l10n.tsSeeAllTopics(list.length)),
             ),
         ],
       ],
@@ -597,11 +596,11 @@ class SeriesSubjectRow extends StatelessWidget {
     final tests = stat.tests;
     final String caption;
     if (tests != null) {
-      caption = '${tests.attempted}/${tests.total} tests completed';
+      caption = context.l10n.tsCompletedSlash(tests.attempted, tests.total);
     } else if (hasData) {
-      caption = '${stat.answered} questions answered in full-length tests';
+      caption = context.l10n.tsQAnsweredFlt(stat.answered);
     } else {
-      caption = 'From full-length tests';
+      caption = context.l10n.tsFromFlt;
     }
 
     return Padding(

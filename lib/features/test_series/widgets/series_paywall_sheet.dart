@@ -15,6 +15,7 @@ import '../data/test_series_access_service.dart';
 import '../data/test_series_purchase_service.dart';
 import '../domain/test_series_models.dart';
 import '../providers/test_series_providers.dart';
+import '../../../l10n/l10n.dart';
 
 /// Store listing (price) for a series' one-time pass.
 final seriesProductProvider = FutureProvider.autoDispose
@@ -87,8 +88,7 @@ class SeriesPaywallSheet extends HookConsumerWidget {
         final signedIn = await ensureAccountSignedIn(
           context: context,
           ref: ref,
-          reason:
-              'Sign in with Google so your purchase is saved to your account.',
+          reason: appL10n.tsSignInPurchase,
         );
         if (!signedIn || !context.mounted) return;
 
@@ -97,9 +97,7 @@ class SeriesPaywallSheet extends HookConsumerWidget {
             productAsync.asData?.value ??
             await service.loadProduct(bundle.info.productId);
         if (product == null) {
-          toast(
-            'This pass is not available right now. Please try again later.',
-          );
+          toast(appL10n.tsPassUnavailable);
           return;
         }
         final outcome = await service.buy(product);
@@ -117,24 +115,24 @@ class SeriesPaywallSheet extends HookConsumerWidget {
             }
             if (!context.mounted) return;
             if (unlocks(owned)) {
-              toast('Unlocked! Every test in this series is now yours.');
+              toast(appL10n.tsUnlockedAll);
               Navigator.of(context).pop(true);
             } else {
               toast(
-                'Payment went through, but access was not granted yet. '
-                'Tap Restore purchase, or check that RevenueCat entitlement '
-                '"${bundle.info.entitlementId}" is attached to product '
-                '"${bundle.info.productId}".',
+                appL10n.tsPaidNoAccess(
+                  bundle.info.entitlementId,
+                  bundle.info.productId,
+                ),
               );
             }
           case PurchaseOutcomeKind.cancelled:
             break;
           case PurchaseOutcomeKind.pending:
-            toast(outcome.message ?? 'Your payment is pending.');
+            toast(outcome.message ?? appL10n.tsPaymentPending);
           case PurchaseOutcomeKind.unavailable:
-            toast('Purchases are not available on this device.');
+            toast(appL10n.tsPurchasesUnavailable);
           case PurchaseOutcomeKind.failed:
-            toast(outcome.message ?? 'The purchase could not be completed.');
+            toast(outcome.message ?? appL10n.tsPurchaseFail);
         }
       } finally {
         busy.value = false;
@@ -159,7 +157,7 @@ class SeriesPaywallSheet extends HookConsumerWidget {
         final outcome = await access.redeem(code);
         if (!context.mounted) return;
         if (!outcome.granted) {
-          final message = outcome.message ?? 'That code could not be applied.';
+          final message = outcome.message ?? appL10n.tsCodeNotApplied;
           if (showCodeField.value) {
             codeError.value = message;
           } else {
@@ -176,18 +174,15 @@ class SeriesPaywallSheet extends HookConsumerWidget {
         if (unlocks(owned)) {
           toast(
             outcome.kind == RedeemKind.alreadyOwned
-                ? 'You already have access to this series.'
-                : 'Unlocked! Every test in this series is now yours.',
+                ? appL10n.tsAlreadyHaveAccess
+                : appL10n.tsUnlockedAll,
           );
           Navigator.of(context).pop(true);
         } else {
-          toast(
-            'Your access was added but has not loaded yet. '
-            'Tap Restore purchase in a moment.',
-          );
+          toast(appL10n.tsAccessNotLoaded);
         }
       } on Object {
-        toast('Something went wrong. Please try again.');
+        toast(appL10n.commonTryAgainError);
       } finally {
         busy.value = false;
       }
@@ -196,14 +191,10 @@ class SeriesPaywallSheet extends HookConsumerWidget {
     Future<void> applyTypedCode() async {
       final code = codeCtrl.text.trim();
       if (code.isEmpty) {
-        codeError.value = 'Enter your code first.';
+        codeError.value = appL10n.tsEnterCode;
         return;
       }
-      await redeem(
-        code,
-        signInReason:
-            'Sign in with Google so your access is saved to your account.',
-      );
+      await redeem(code, signInReason: appL10n.tsSignInAccess);
     }
 
     Future<void> restore() async {
@@ -214,22 +205,22 @@ class SeriesPaywallSheet extends HookConsumerWidget {
         final signedIn = await ensureAccountSignedIn(
           context: context,
           ref: ref,
-          reason: 'Sign in with the Google account you used before.',
+          reason: appL10n.tsSignInBefore,
         );
         if (!signedIn || !context.mounted) return;
         await service.sync(accountUid: FirebaseAuth.instance.currentUser?.uid);
         final owned = await ref.read(ownedSeriesIdsProvider.notifier).restore();
         if (!context.mounted) return;
         if (unlocks(owned)) {
-          toast('Access restored.');
+          toast(appL10n.tsAccessRestored);
           Navigator.of(context).pop(true);
         } else {
           restoreNote.value = canSell
-              ? 'Nothing was found for this account. You can unlock the series below.'
-              : 'Nothing was found for this account.';
+              ? appL10n.tsNothingFoundUnlock
+              : appL10n.tsNothingFound;
         }
       } on Object {
-        toast('Could not restore. Please check your connection and try again.');
+        toast(appL10n.tsRestoreFail);
       } finally {
         busy.value = false;
       }
@@ -264,32 +255,21 @@ class SeriesPaywallSheet extends HookConsumerWidget {
             ),
             const SizedBox(height: AppSpacing.sm),
             Text(
-              'One payment. No subscription. Yours forever, including every '
-              'test added later.',
+              context.l10n.tsPayOnce,
               style: AppTextStyles.bodyMd().copyWith(
                 color: scheme.onSurfaceVariant,
               ),
             ),
             const SizedBox(height: AppSpacing.lg),
-            _Bullet(
-              '$staticCount subject tests, 50 questions each, with 10% PYQs',
-            ),
-            _Bullet(
-              '$ca current-affairs tests, added on the 1st of every month',
-            ),
-            _Bullet(
-              '$mocks full-length mocks that mirror the real paper (100 Q, 2 hrs)',
-            ),
-            const _Bullet(
-              'Hindi and English on every question and explanation',
-            ),
-            const _Bullet(
-              'Dashboard: accuracy by subject, danger-zone and risk topics',
-            ),
+            _Bullet(context.l10n.tsPwSubject(staticCount)),
+            _Bullet(context.l10n.tsPwCa(ca)),
+            _Bullet(context.l10n.tsPwMocks(mocks)),
+            _Bullet(context.l10n.tsPwBilingual),
+            _Bullet(context.l10n.tsPwDash),
             if (free > 0) ...[
               const SizedBox(height: AppSpacing.sm),
               Text(
-                '$free tests are free to try first, including all PYQ tests.',
+                context.l10n.tsPwFree(free),
                 style: AppTextStyles.bodySm().copyWith(
                   color: scheme.onSurfaceVariant,
                 ),
@@ -302,12 +282,12 @@ class SeriesPaywallSheet extends HookConsumerWidget {
             ],
             if (!service.isSupported)
               _Notice(
-                'Purchases are not available on this device or build yet.',
+                context.l10n.tsPwNoPurchases,
                 color: scheme.onSurfaceVariant,
               )
             else if (!canSell)
               _Notice(
-                'This series is not on sale right now.',
+                context.l10n.tsPwNotOnSale,
                 color: scheme.onSurfaceVariant,
               )
             else
@@ -327,8 +307,8 @@ class SeriesPaywallSheet extends HookConsumerWidget {
                       )
                     : Text(
                         price == null
-                            ? 'Unlock all tests'
-                            : 'Unlock all tests · $price',
+                            ? context.l10n.tsUnlockAll
+                            : context.l10n.tsUnlockAllPrice(price),
                       ),
               ),
             const SizedBox(height: AppSpacing.sm),
@@ -350,7 +330,7 @@ class SeriesPaywallSheet extends HookConsumerWidget {
                         onChanged: (_) => codeError.value = null,
                         onSubmitted: (_) => unawaited(applyTypedCode()),
                         decoration: InputDecoration(
-                          labelText: 'Discount code',
+                          labelText: context.l10n.tsDiscountCode,
                           errorText: codeError.value,
                           errorMaxLines: 2,
                           border: OutlineInputBorder(
@@ -369,7 +349,7 @@ class SeriesPaywallSheet extends HookConsumerWidget {
                         style: FilledButton.styleFrom(
                           minimumSize: const Size(0, 48),
                         ),
-                        child: const Text('Apply'),
+                        child: Text(context.l10n.tsApply),
                       ),
                     ),
                   ],
@@ -378,11 +358,11 @@ class SeriesPaywallSheet extends HookConsumerWidget {
             else
               TextButton(
                 onPressed: busy.value ? null : () => showCodeField.value = true,
-                child: const Text('Have a code?'),
+                child: Text(context.l10n.tsHaveCode),
               ),
             TextButton(
               onPressed: busy.value ? null : () => unawaited(restore()),
-              child: const Text('Restore purchase'),
+              child: Text(context.l10n.tsRestorePurchase),
             ),
           ],
         ),

@@ -11,6 +11,7 @@ import '../providers/test_series_providers.dart';
 import '../widgets/series_dashboard_widgets.dart';
 import '../widgets/series_tabs.dart';
 import '../widgets/series_test_row.dart';
+import '../../../l10n/l10n.dart';
 
 /// One subject: accuracy, topics to revise / safe topics (from full-length and
 /// subject-wise tests) and that subject's own tests.
@@ -38,8 +39,7 @@ class SeriesSubjectScreen extends ConsumerWidget {
       appBar: AppBar(title: Text(title)),
       body: bundleAsync.when(
         loading: () => const Center(child: CircularProgressIndicator()),
-        error: (_, _) =>
-            const Center(child: Text("Couldn't load this subject.")),
+        error: (_, _) => Center(child: Text(context.l10n.tsLoadSubjectFail)),
         data: (bundle) {
           final stats =
               statsAsync.value ??
@@ -50,7 +50,7 @@ class SeriesSubjectScreen extends ConsumerWidget {
               );
           final subject = stats.core.subject(subjectId);
           if (subject == null) {
-            return const Center(child: Text('Subject not found.'));
+            return Center(child: Text(context.l10n.tsSubjectNotFound));
           }
           final tests = bundle.forBucket(subjectId);
 
@@ -66,7 +66,7 @@ class SeriesSubjectScreen extends ConsumerWidget {
                   needsRevision: subject.needsRevision,
                   safeAreas: subject.safeAreas,
                   useConfidence: stats.core.useConfidence,
-                  reviseTitle: 'Topics to revise',
+                  reviseTitle: context.l10n.tsTopicsToRevise,
                   isHindi: isHindi,
                   onTopicTap: (t) => openSeriesTopic(
                     context: context,
@@ -78,7 +78,7 @@ class SeriesSubjectScreen extends ConsumerWidget {
                 ),
                 const SizedBox(height: AppSpacing.xl),
                 if (tests.isNotEmpty) ...[
-                  SeriesSectionHeader('Tests in $title'),
+                  SeriesSectionHeader(context.l10n.tsTestsIn(title)),
                   for (final t in tests)
                     SeriesTestRow(
                       bundle: bundle,
@@ -88,8 +88,7 @@ class SeriesSubjectScreen extends ConsumerWidget {
                     ),
                 ] else
                   Text(
-                    'This subject has no tests of its own. Its numbers come '
-                    'from your full-length tests.',
+                    context.l10n.tsNoOwnTests,
                     style: AppTextStyles.bodySm().copyWith(
                       color: Theme.of(context).colorScheme.onSurfaceVariant,
                     ),
@@ -120,10 +119,10 @@ class _SubjectHeader extends StatelessWidget {
         : scheme.onSurfaceVariant;
     final tests = subject.tests;
     final caption = tests != null
-        ? '${tests.attempted} of ${tests.total} tests completed'
+        ? context.l10n.tsCompletedOf(tests.attempted, tests.total)
         : hasData
-        ? '${subject.answered} questions answered'
-        : 'No questions answered yet';
+        ? context.l10n.tsQAnswered(subject.answered)
+        : context.l10n.tsNoQAnswered;
 
     return Container(
       padding: const EdgeInsets.all(AppSpacing.lg),

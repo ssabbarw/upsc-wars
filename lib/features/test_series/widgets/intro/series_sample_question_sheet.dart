@@ -10,6 +10,7 @@ import '../../../../core/theme/app_text_styles.dart';
 import '../../../history/widgets/explanation_card.dart';
 import '../../providers/series_sample_question_provider.dart';
 import 'series_tone.dart';
+import '../../../../l10n/l10n.dart';
 
 /// Opens the sample question. Resolves to `true` when the reader tapped the
 /// unlock button at the bottom.
@@ -70,8 +71,8 @@ class _SampleQuestionBody extends HookConsumerWidget {
           children: [
             TonePill(
               label: sample.isCurrentAffairs
-                  ? "Yesterday's current affairs"
-                  : 'Sample question',
+                  ? context.l10n.tsYesterdayCa
+                  : context.l10n.tsSampleQ,
               tone: sample.isCurrentAffairs
                   ? SeriesTone.blue
                   : SeriesTone.purple,
@@ -93,7 +94,7 @@ class _SampleQuestionBody extends HookConsumerWidget {
         ),
         const SizedBox(height: AppSpacing.md),
         Text(
-          'This is how every question in the series is explained.',
+          context.l10n.tsHowExplained,
           style: AppTextStyles.bodySm().copyWith(
             color: scheme.onSurfaceVariant,
           ),
@@ -120,7 +121,7 @@ class _SampleQuestionBody extends HookConsumerWidget {
             children: [
               Expanded(
                 child: Text(
-                  'Tap an option to see the answer and explanation.',
+                  context.l10n.tsTapOption,
                   style: AppTextStyles.caption().copyWith(
                     color: scheme.onSurfaceVariant,
                   ),
@@ -128,7 +129,7 @@ class _SampleQuestionBody extends HookConsumerWidget {
               ),
               TextButton(
                 onPressed: () => revealed.value = true,
-                child: const Text('Just show the answer'),
+                child: Text(context.l10n.tsJustShow),
               ),
             ],
           ),
@@ -155,8 +156,7 @@ class _SampleQuestionBody extends HookConsumerWidget {
           ),
           const SizedBox(height: AppSpacing.xl),
           Text(
-            'Every question in the series comes with this level of detail: '
-            'English and हिन्दी.',
+            context.l10n.tsEveryQDetail,
             textAlign: TextAlign.center,
             style: AppTextStyles.bodySm().copyWith(
               color: scheme.onSurfaceVariant,
@@ -171,7 +171,7 @@ class _SampleQuestionBody extends HookConsumerWidget {
                 borderRadius: BorderRadius.circular(AppRadius.lg),
               ),
             ),
-            child: const Text('Unlock all tests'),
+            child: Text(context.l10n.tsUnlockAll),
           ),
         ],
       ],
@@ -304,10 +304,10 @@ class _ResultBanner extends StatelessWidget {
       isDark: isDark,
     );
     final label = !attempted
-        ? 'Correct answer: $correctLetter'
+        ? context.l10n.tsCorrectAnswer(correctLetter)
         : right
-        ? 'Correct! Answer: $correctLetter'
-        : 'Not quite. The answer is $correctLetter';
+        ? context.l10n.tsCorrectBang(correctLetter)
+        : context.l10n.tsNotQuite(correctLetter);
     return Container(
       padding: const EdgeInsets.all(AppSpacing.md),
       decoration: BoxDecoration(

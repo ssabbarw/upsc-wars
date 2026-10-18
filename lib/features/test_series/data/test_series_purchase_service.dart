@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
 
 import 'revenuecat_config.dart';
+import '../../../l10n/l10n.dart';
 
 enum PurchaseOutcomeKind { purchased, cancelled, pending, unavailable, failed }
 
@@ -138,10 +139,9 @@ class TestSeriesPurchaseService {
         case PurchasesErrorCode.purchaseCancelledError:
           return const PurchaseOutcome(PurchaseOutcomeKind.cancelled);
         case PurchasesErrorCode.paymentPendingError:
-          return const PurchaseOutcome(
+          return PurchaseOutcome(
             PurchaseOutcomeKind.pending,
-            message:
-                'Your payment is pending. The series unlocks once it completes.',
+            message: appL10n.tsPaymentPendingSeries,
           );
         case PurchasesErrorCode.productAlreadyPurchasedError:
           // Already owned: refresh entitlements so the UI unlocks.
@@ -161,7 +161,7 @@ class TestSeriesPurchaseService {
           _log('purchase failed: $code ${e.message}');
           return PurchaseOutcome(
             PurchaseOutcomeKind.failed,
-            message: e.message ?? 'The purchase could not be completed.',
+            message: e.message ?? appL10n.tsPurchaseFail,
           );
       }
     } on Object catch (e) {

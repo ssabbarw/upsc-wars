@@ -2,6 +2,7 @@ import 'dart:developer' as developer;
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cloud_functions/cloud_functions.dart';
+import '../../../l10n/l10n.dart';
 
 enum RedeemKind { redeemed, alreadyOwned, rejected, failed }
 
@@ -69,19 +70,14 @@ class TestSeriesAccessService {
         case 'unauthenticated':
           return RedeemOutcome(RedeemKind.rejected, message: e.message);
         default:
-          return const RedeemOutcome(
+          return RedeemOutcome(
             RedeemKind.failed,
-            message:
-                'Could not check the code. Check your connection and try again.',
+            message: appL10n.tsCodeCheckFail,
           );
       }
     } on Object catch (e) {
       developer.log('redeem failed: $e', name: _logName);
-      return const RedeemOutcome(
-        RedeemKind.failed,
-        message:
-            'Could not check the code. Check your connection and try again.',
-      );
+      return RedeemOutcome(RedeemKind.failed, message: appL10n.tsCodeCheckFail);
     }
   }
 }

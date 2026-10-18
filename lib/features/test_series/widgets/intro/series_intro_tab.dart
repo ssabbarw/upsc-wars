@@ -14,6 +14,7 @@ import '../series_paywall_sheet.dart';
 import 'series_insight_example_sheet.dart';
 import 'series_intro_sections.dart';
 import 'series_sample_question_sheet.dart';
+import '../../../../l10n/l10n.dart';
 
 /// Overview tab for people who have not unlocked the series: the sales page.
 ///
@@ -139,7 +140,7 @@ class SeriesUnlockBar extends ConsumerWidget {
                         ),
                       ),
                       Text(
-                        'One-time, no subscription',
+                        context.l10n.tsOneTimeNoSub,
                         style: AppTextStyles.caption().copyWith(
                           color: scheme.onSurfaceVariant,
                         ),
@@ -160,7 +161,7 @@ class SeriesUnlockBar extends ConsumerWidget {
                       borderRadius: BorderRadius.circular(AppRadius.lg),
                     ),
                   ),
-                  child: const Text('Unlock all tests'),
+                  child: Text(context.l10n.tsUnlockAll),
                 ),
               ),
             ],
