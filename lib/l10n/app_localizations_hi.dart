@@ -1761,6 +1761,14 @@ class AppLocalizationsHi extends AppLocalizations {
   }
 
   @override
+  String topicSeasonDangerLine(int sure, int edu) {
+    return 'Sure गलत $sure · Educated guess गलत $edu';
+  }
+
+  @override
+  String get topicSortDanger => 'Danger zone';
+
+  @override
   String subjectTestInfo(String questions, int topics) {
     return '$questions सवाल · $topics topics';
   }
@@ -5970,4 +5978,136 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get tsGetHelpEmail => 'Email';
+
+  @override
+  String practiceTestNumber(int n) {
+    return 'Test $n';
+  }
+
+  @override
+  String practiceTestsProgress(int done, int total) {
+    return '$done/$total tests';
+  }
+
+  @override
+  String practiceQuestionCount(int count) {
+    return '$count प्रश्न';
+  }
+
+  @override
+  String get practiceReviewLast => 'पिछला प्रयास देखें';
+
+  @override
+  String get practiceReattempt => 'फिर से करें';
+
+  @override
+  String get practiceNewSeason =>
+      'नया सीज़न: अगले prelims के लिए आपके tests नए सवालों से बन गए हैं।';
+
+  @override
+  String get practiceBrowseTopics => 'Topic-wise tests';
+
+  @override
+  String get practiceSeeStats => 'Stats देखें';
+
+  @override
+  String get practiceNoTests => 'इस पूल में अभी कोई test नहीं है।';
+
+  @override
+  String get statsTitle => 'Stats';
+
+  @override
+  String get statsAllSubjects => 'सभी subjects';
+
+  @override
+  String statsCoverage(String value) {
+    return '$value कवर';
+  }
+
+  @override
+  String get statsAccuracyLabel => 'Accuracy';
+
+  @override
+  String get statsRingCoverage => 'कवर';
+
+  @override
+  String get statsRingTests => 'Tests';
+
+  @override
+  String get statsAccuracyChart => 'Subject के हिसाब से accuracy';
+
+  @override
+  String get statsTopicChart => 'Topic के हिसाब से accuracy';
+
+  @override
+  String statsAccuracy(String value) {
+    return '$value accuracy';
+  }
+
+  @override
+  String statsAnswered(int count) {
+    return '$count हल किए';
+  }
+
+  @override
+  String get statsFocusNext => 'आगे कहाँ ध्यान दें';
+
+  @override
+  String get statsFocusEmpty =>
+      'अभ्यास जारी रखें। सुझाव तब दिखेंगे जब कोई topic कमज़ोर, अधूरा या अभी शुरू न हुआ हो।';
+
+  @override
+  String statsFocusRevise(String topic) {
+    return '$topic दोहराएँ';
+  }
+
+  @override
+  String statsFocusPractise(String topic) {
+    return '$topic का अभ्यास करें';
+  }
+
+  @override
+  String statsFocusStart(String topic) {
+    return '$topic शुरू करें';
+  }
+
+  @override
+  String get statsSortWeakest => 'सबसे कमज़ोर';
+
+  @override
+  String get statsSortLeastCovered => 'सबसे कम कवर';
+
+  @override
+  String get statsSortAz => 'A–Z';
+
+  @override
+  String statsConfidence(
+    int sureTotal,
+    int sureWrong,
+    int guessTotal,
+    int guessWrong,
+  ) {
+    return 'Sure $sureTotal ($sureWrong गलत) · Educated guess $guessTotal ($guessWrong गलत)';
+  }
+
+  @override
+  String get statsTrapPatterns => 'Trap patterns';
+
+  @override
+  String get statsUnlock => 'पूरी stats खोलें';
+
+  @override
+  String get todayQueueTitle => 'आज';
+
+  @override
+  String get todayQueueCaShots => 'CA shots';
+
+  @override
+  String get todayQueueCaTest => 'Current affairs test';
+
+  @override
+  String get todayQueueDailyWar => 'Daily war';
+
+  @override
+  String get todayQueueOpenChallenge => 'Open challenge';
 }

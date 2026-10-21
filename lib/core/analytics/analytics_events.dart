@@ -1108,6 +1108,43 @@ final class DemoTestSubmittedEvent extends AnalyticsEvent {
 ///
 /// **GA4:** `app_language_switched` with `from_language` and `to_language`
 /// (`en` | `hi`). Also sets user property `app_language` to [toLanguage].
+/// **User started a numbered practice test.**
+///
+/// **GA4:** `practice_test_start` with `test_id`.
+final class PracticeTestStartedEvent extends AnalyticsEvent {
+  const PracticeTestStartedEvent({required this.testId});
+
+  final String testId;
+}
+
+/// **User submitted a numbered practice test.**
+///
+/// **GA4:** `practice_test_complete` with `test_id`.
+final class PracticeTestCompletedEvent extends AnalyticsEvent {
+  const PracticeTestCompletedEvent({required this.testId});
+
+  final String testId;
+}
+
+/// **User opened the Stats tab or switched subject.**
+///
+/// **GA4:** `stats_view` with `subject` (`all` or a subject slug).
+final class StatsViewedEvent extends AnalyticsEvent {
+  const StatsViewedEvent({required this.subject});
+
+  final String subject;
+}
+
+/// **User tapped a Focus next suggestion.**
+///
+/// **GA4:** `stats_focus_tap` with `subject` and `topic`.
+final class StatsFocusTapEvent extends AnalyticsEvent {
+  const StatsFocusTapEvent({required this.subject, required this.topic});
+
+  final String subject;
+  final String topic;
+}
+
 final class AppLanguageSwitchedEvent extends AnalyticsEvent {
   const AppLanguageSwitchedEvent({
     required this.fromLanguage,

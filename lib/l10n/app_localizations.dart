@@ -3020,6 +3020,18 @@ abstract class AppLocalizations {
   /// **'Sure wrong: {sure} · Educated guess wrong: {edu} (all-time)'**
   String topicDangerLine(int sure, int edu);
 
+  /// No description provided for @topicSeasonDangerLine.
+  ///
+  /// In en, this message translates to:
+  /// **'Sure wrong {sure} · Educated guess wrong {edu}'**
+  String topicSeasonDangerLine(int sure, int edu);
+
+  /// No description provided for @topicSortDanger.
+  ///
+  /// In en, this message translates to:
+  /// **'Danger zone'**
+  String get topicSortDanger;
+
   /// No description provided for @subjectTestInfo.
   ///
   /// In en, this message translates to:
@@ -9997,6 +10009,221 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Email'**
   String get tsGetHelpEmail;
+
+  /// No description provided for @practiceTestNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Test {n}'**
+  String practiceTestNumber(int n);
+
+  /// No description provided for @practiceTestsProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'{done}/{total} tests'**
+  String practiceTestsProgress(int done, int total);
+
+  /// No description provided for @practiceQuestionCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} Qs'**
+  String practiceQuestionCount(int count);
+
+  /// No description provided for @practiceReviewLast.
+  ///
+  /// In en, this message translates to:
+  /// **'Review last attempt'**
+  String get practiceReviewLast;
+
+  /// No description provided for @practiceReattempt.
+  ///
+  /// In en, this message translates to:
+  /// **'Reattempt'**
+  String get practiceReattempt;
+
+  /// No description provided for @practiceNewSeason.
+  ///
+  /// In en, this message translates to:
+  /// **'New season: your tests have been reshuffled for the next prelims.'**
+  String get practiceNewSeason;
+
+  /// No description provided for @practiceBrowseTopics.
+  ///
+  /// In en, this message translates to:
+  /// **'Topic-wise tests'**
+  String get practiceBrowseTopics;
+
+  /// No description provided for @practiceSeeStats.
+  ///
+  /// In en, this message translates to:
+  /// **'See stats'**
+  String get practiceSeeStats;
+
+  /// No description provided for @practiceNoTests.
+  ///
+  /// In en, this message translates to:
+  /// **'No tests in this pool yet.'**
+  String get practiceNoTests;
+
+  /// No description provided for @statsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Stats'**
+  String get statsTitle;
+
+  /// No description provided for @statsAllSubjects.
+  ///
+  /// In en, this message translates to:
+  /// **'All subjects'**
+  String get statsAllSubjects;
+
+  /// No description provided for @statsCoverage.
+  ///
+  /// In en, this message translates to:
+  /// **'{value} covered'**
+  String statsCoverage(String value);
+
+  /// No description provided for @statsAccuracyLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Accuracy'**
+  String get statsAccuracyLabel;
+
+  /// No description provided for @statsRingCoverage.
+  ///
+  /// In en, this message translates to:
+  /// **'Covered'**
+  String get statsRingCoverage;
+
+  /// No description provided for @statsRingTests.
+  ///
+  /// In en, this message translates to:
+  /// **'Tests'**
+  String get statsRingTests;
+
+  /// No description provided for @statsAccuracyChart.
+  ///
+  /// In en, this message translates to:
+  /// **'Accuracy by subject'**
+  String get statsAccuracyChart;
+
+  /// No description provided for @statsTopicChart.
+  ///
+  /// In en, this message translates to:
+  /// **'Accuracy by topic'**
+  String get statsTopicChart;
+
+  /// No description provided for @statsAccuracy.
+  ///
+  /// In en, this message translates to:
+  /// **'{value} accuracy'**
+  String statsAccuracy(String value);
+
+  /// No description provided for @statsAnswered.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} answered'**
+  String statsAnswered(int count);
+
+  /// No description provided for @statsFocusNext.
+  ///
+  /// In en, this message translates to:
+  /// **'Focus next'**
+  String get statsFocusNext;
+
+  /// No description provided for @statsFocusEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep practising. Suggestions show up once a topic is weak, shaky, or still untouched.'**
+  String get statsFocusEmpty;
+
+  /// No description provided for @statsFocusRevise.
+  ///
+  /// In en, this message translates to:
+  /// **'Revise {topic}'**
+  String statsFocusRevise(String topic);
+
+  /// No description provided for @statsFocusPractise.
+  ///
+  /// In en, this message translates to:
+  /// **'Practise {topic}'**
+  String statsFocusPractise(String topic);
+
+  /// No description provided for @statsFocusStart.
+  ///
+  /// In en, this message translates to:
+  /// **'Start {topic}'**
+  String statsFocusStart(String topic);
+
+  /// No description provided for @statsSortWeakest.
+  ///
+  /// In en, this message translates to:
+  /// **'Weakest'**
+  String get statsSortWeakest;
+
+  /// No description provided for @statsSortLeastCovered.
+  ///
+  /// In en, this message translates to:
+  /// **'Least covered'**
+  String get statsSortLeastCovered;
+
+  /// No description provided for @statsSortAz.
+  ///
+  /// In en, this message translates to:
+  /// **'A–Z'**
+  String get statsSortAz;
+
+  /// No description provided for @statsConfidence.
+  ///
+  /// In en, this message translates to:
+  /// **'Sure {sureTotal} ({sureWrong} wrong) · Educated guess {guessTotal} ({guessWrong} wrong)'**
+  String statsConfidence(
+    int sureTotal,
+    int sureWrong,
+    int guessTotal,
+    int guessWrong,
+  );
+
+  /// No description provided for @statsTrapPatterns.
+  ///
+  /// In en, this message translates to:
+  /// **'Trap patterns'**
+  String get statsTrapPatterns;
+
+  /// No description provided for @statsUnlock.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock full stats'**
+  String get statsUnlock;
+
+  /// No description provided for @todayQueueTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'TODAY'**
+  String get todayQueueTitle;
+
+  /// No description provided for @todayQueueCaShots.
+  ///
+  /// In en, this message translates to:
+  /// **'CA shots'**
+  String get todayQueueCaShots;
+
+  /// No description provided for @todayQueueCaTest.
+  ///
+  /// In en, this message translates to:
+  /// **'Current affairs test'**
+  String get todayQueueCaTest;
+
+  /// No description provided for @todayQueueDailyWar.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily war'**
+  String get todayQueueDailyWar;
+
+  /// No description provided for @todayQueueOpenChallenge.
+  ///
+  /// In en, this message translates to:
+  /// **'Open challenge'**
+  String get todayQueueOpenChallenge;
 }
 
 class _AppLocalizationsDelegate

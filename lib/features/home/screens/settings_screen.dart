@@ -17,6 +17,7 @@ import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../core/theme/reading_font_scale.dart';
 import '../../../core/constants/creator_contact.dart';
+import '../../../shared/widgets/contact_us_entry.dart';
 import '../../../core/providers/super_user_provider.dart';
 import '../../community/providers/user_block_providers.dart';
 import '../../question_editor/widgets/question_editor_access.dart';
@@ -345,6 +346,8 @@ class SettingsScreen extends ConsumerWidget {
               ),
             ],
             const SizedBox(height: AppSpacing.xl),
+            const Center(child: ContactUsTextButton()),
+            const SizedBox(height: AppSpacing.md),
             Center(
               child: Text(
                 context.l10n.settingsFooter,

@@ -35,6 +35,7 @@ class TestConfigSheetArgs {
     this.specificQuestionUuids,
     this.fixedQuestionSetLabel,
     this.analyticsFeatureKey,
+    this.practiceTestId,
   });
 
   final String subject;
@@ -55,6 +56,7 @@ class TestConfigSheetArgs {
   /// Shown in the locked-count panel when [specificQuestionUuids] is set.
   final String? fixedQuestionSetLabel;
   final String? analyticsFeatureKey;
+  final String? practiceTestId;
 }
 
 Future<void> showTestConfigBottomSheet({
@@ -198,6 +200,7 @@ class TestConfigBottomSheet extends HookConsumerWidget {
           language: lang,
           specificQuestionUuids: args.specificQuestionUuids,
           analyticsFeatureKey: args.analyticsFeatureKey,
+          practiceTestId: args.practiceTestId,
         );
         final id = await uc.execute(config);
         if (!context.mounted) return;

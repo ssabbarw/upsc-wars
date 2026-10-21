@@ -466,6 +466,12 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
     await _userDb.sessionsDao.updateExamRemainingSecs(sessionId, null);
 
     await _userDb.sessionsDao.updateSessionStatus(sessionId, 'completed');
+    final practiceTestId = sessionMeta?.practiceTestId;
+    if (practiceTestId != null && practiceTestId.isNotEmpty) {
+      await _analytics.track(
+        PracticeTestCompletedEvent(testId: practiceTestId),
+      );
+    }
     await _userDb.sessionsDao.updateSessionCompletedAt(
       sessionId,
       DateTime.now(),

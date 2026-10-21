@@ -26,6 +26,9 @@ abstract final class PrefKeys {
   static const languageChosen = 'language_chosen';
   static const dbInitialized = 'db_initialized';
   static const dbAssetVersion = 'db_asset_version';
+
+  /// Last practice season year whose reshuffle notice was handled.
+  static const practiceSeasonNotice = 'practice_season_notice';
   static const darkModeEnabled = 'dark_mode_enabled';
 
   /// Android persistent status-bar style prelims countdown (days only).

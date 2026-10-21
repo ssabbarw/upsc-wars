@@ -116,20 +116,6 @@ class SubjectDetailScreen extends ConsumerWidget {
                 child: Padding(
                   padding: const EdgeInsets.fromLTRB(
                     AppSpacing.lg,
-                    AppSpacing.xxxl,
-                    AppSpacing.lg,
-                    0,
-                  ),
-                  child: _HistorySection(
-                    subject: subject,
-                    borderColor: borderColor,
-                  ),
-                ),
-              ),
-              SliverToBoxAdapter(
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(
-                    AppSpacing.lg,
                     AppSpacing.lg,
                     AppSpacing.lg,
                     AppSpacing.sm,
@@ -604,88 +590,6 @@ class _PracticeCard extends StatelessWidget {
   }
 }
 
-// ── History hub (opens paginated subject history) ─────────────────────────────
-
-class _HistorySection extends ConsumerWidget {
-  const _HistorySection({required this.subject, required this.borderColor});
-
-  final String subject;
-  final Color borderColor;
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final scheme = Theme.of(context).colorScheme;
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    final countAsync = ref.watch(subjectCompletedSessionCountProvider(subject));
-
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        _ScreenSectionHeader(
-          title: 'HISTORY',
-          subtitle: context.l10n.subjHistoryBody,
-        ),
-        const SizedBox(height: AppSpacing.sm),
-        countAsync.when(
-          loading: () => Container(
-            height: 72,
-            decoration: BoxDecoration(
-              color: scheme.surfaceContainerLow,
-              borderRadius: BorderRadius.circular(AppRadius.lg),
-            ),
-          ),
-          error: (_, _) => _SubjectPanel(
-            borderColor: borderColor,
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Icon(
-                  Icons.error_outline,
-                  size: 20,
-                  color: scheme.onSurfaceVariant,
-                ),
-                const SizedBox(width: AppSpacing.md),
-                Expanded(
-                  child: Text(
-                    context.l10n.subjSessionCountFailed,
-                    style: AppTextStyles.caption().copyWith(
-                      color: scheme.onSurfaceVariant,
-                      height: 1.45,
-                    ),
-                  ),
-                ),
-                TextButton(
-                  onPressed: () => ref.invalidate(
-                    subjectCompletedSessionCountProvider(subject),
-                  ),
-                  child: Text(
-                    context.l10n.commonRetry,
-                    style: AppTextStyles.label(),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          data: (count) => _PracticeCard(
-            icon: Icons.history_rounded,
-            iconColor: AppColors.info,
-            title: context.l10n.subjViewHistory,
-            subtitle: count == 0
-                ? context.l10n.subjNoSessionsYet
-                : context.l10n.subjCompletedSessions(count),
-            borderColor: borderColor,
-            isDark: isDark,
-            onTap: () => context.push(
-              '/subject/${Uri.encodeComponent(subject)}/history',
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-}
-
-/// Advice + danger-zone breakdown need at least one scored attempt marked
 /// Sure or Educated guess in this subject.
 bool _subjectHasConfidenceLabelsForInsights(SubjectScoredAccuracySummary s) =>
     s.sureTotal > 0 || s.educatedGuessTotal > 0;

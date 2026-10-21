@@ -63,9 +63,7 @@ class PrelimsCountdownCard extends HookWidget {
     }, const []);
 
     final timerLabel = PrelimsCountdown.timerLabel(now: now.value);
-    final quote = PrelimsCountdown.quoteForDate(now: now.value);
     final cardColor = isDark ? AppColors.infoBgDark : AppColors.infoBg;
-    final quoteColor = isDark ? AppColors.infoTextDark : AppColors.infoText;
 
     return Container(
       width: double.infinity,
@@ -96,11 +94,6 @@ class PrelimsCountdownCard extends HookWidget {
           Text(
             timerLabel,
             style: AppTextStyles.h2().copyWith(color: scheme.onSurface),
-          ),
-          const SizedBox(height: AppSpacing.sm),
-          Text(
-            quote,
-            style: AppTextStyles.bodySm().copyWith(color: quoteColor),
           ),
         ],
       ),

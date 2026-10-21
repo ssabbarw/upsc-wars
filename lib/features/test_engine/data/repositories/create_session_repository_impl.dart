@@ -120,6 +120,7 @@ class CreateSessionRepositoryImpl implements CreateSessionRepository {
           analyticsFeatureKey: Value(config.analyticsFeatureKey),
           seriesId: Value(config.seriesId),
           seriesTestId: Value(config.seriesTestId),
+          practiceTestId: Value(config.practiceTestId),
         ),
       );
       for (var i = 0; i < n; i++) {
@@ -195,6 +196,7 @@ class CreateSessionRepositoryImpl implements CreateSessionRepository {
           analyticsFeatureKey: Value(config.analyticsFeatureKey),
           seriesId: Value(config.seriesId),
           seriesTestId: Value(config.seriesTestId),
+          practiceTestId: Value(config.practiceTestId),
         ),
       );
       for (var i = 0; i < n; i++) {

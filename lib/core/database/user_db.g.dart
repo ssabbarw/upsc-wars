@@ -2861,6 +2861,17 @@ class $SessionsTable extends Sessions with TableInfo<$SessionsTable, Session> {
     type: DriftSqlType.string,
     requiredDuringInsert: false,
   );
+  static const VerificationMeta _practiceTestIdMeta = const VerificationMeta(
+    'practiceTestId',
+  );
+  @override
+  late final GeneratedColumn<String> practiceTestId = GeneratedColumn<String>(
+    'practice_test_id',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
   static const VerificationMeta _backedUpAtMeta = const VerificationMeta(
     'backedUpAt',
   );
@@ -2892,6 +2903,7 @@ class $SessionsTable extends Sessions with TableInfo<$SessionsTable, Session> {
     synced,
     seriesId,
     seriesTestId,
+    practiceTestId,
     backedUpAt,
   ];
   @override
@@ -3043,6 +3055,15 @@ class $SessionsTable extends Sessions with TableInfo<$SessionsTable, Session> {
         ),
       );
     }
+    if (data.containsKey('practice_test_id')) {
+      context.handle(
+        _practiceTestIdMeta,
+        practiceTestId.isAcceptableOrUnknown(
+          data['practice_test_id']!,
+          _practiceTestIdMeta,
+        ),
+      );
+    }
     if (data.containsKey('backed_up_at')) {
       context.handle(
         _backedUpAtMeta,
@@ -3133,6 +3154,10 @@ class $SessionsTable extends Sessions with TableInfo<$SessionsTable, Session> {
         DriftSqlType.string,
         data['${effectivePrefix}series_test_id'],
       ),
+      practiceTestId: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}practice_test_id'],
+      ),
       backedUpAt: attachedDatabase.typeMapping.read(
         DriftSqlType.dateTime,
         data['${effectivePrefix}backed_up_at'],
@@ -3173,6 +3198,10 @@ class Session extends DataClass implements Insertable<Session> {
   /// Test within the series (e.g. `static_polity_01`).
   final String? seriesTestId;
 
+  /// Numbered practice test this session belongs to
+  /// (`2027/subject:Polity/03`). Null for drills, battles, and series tests.
+  final String? practiceTestId;
+
   /// When this completed session's answers were last written to the cloud
   /// backup (`user_backups/{uid}/sessions/{id}`). Null = backup still pending
   /// (offline, signed out, or completed before backup existed).
@@ -3196,6 +3225,7 @@ class Session extends DataClass implements Insertable<Session> {
     required this.synced,
     this.seriesId,
     this.seriesTestId,
+    this.practiceTestId,
     this.backedUpAt,
   });
   @override
@@ -3236,6 +3266,9 @@ class Session extends DataClass implements Insertable<Session> {
     }
     if (!nullToAbsent || seriesTestId != null) {
       map['series_test_id'] = Variable<String>(seriesTestId);
+    }
+    if (!nullToAbsent || practiceTestId != null) {
+      map['practice_test_id'] = Variable<String>(practiceTestId);
     }
     if (!nullToAbsent || backedUpAt != null) {
       map['backed_up_at'] = Variable<DateTime>(backedUpAt);
@@ -3281,6 +3314,9 @@ class Session extends DataClass implements Insertable<Session> {
       seriesTestId: seriesTestId == null && nullToAbsent
           ? const Value.absent()
           : Value(seriesTestId),
+      practiceTestId: practiceTestId == null && nullToAbsent
+          ? const Value.absent()
+          : Value(practiceTestId),
       backedUpAt: backedUpAt == null && nullToAbsent
           ? const Value.absent()
           : Value(backedUpAt),
@@ -3313,6 +3349,7 @@ class Session extends DataClass implements Insertable<Session> {
       synced: serializer.fromJson<bool>(json['synced']),
       seriesId: serializer.fromJson<String?>(json['seriesId']),
       seriesTestId: serializer.fromJson<String?>(json['seriesTestId']),
+      practiceTestId: serializer.fromJson<String?>(json['practiceTestId']),
       backedUpAt: serializer.fromJson<DateTime?>(json['backedUpAt']),
     );
   }
@@ -3338,6 +3375,7 @@ class Session extends DataClass implements Insertable<Session> {
       'synced': serializer.toJson<bool>(synced),
       'seriesId': serializer.toJson<String?>(seriesId),
       'seriesTestId': serializer.toJson<String?>(seriesTestId),
+      'practiceTestId': serializer.toJson<String?>(practiceTestId),
       'backedUpAt': serializer.toJson<DateTime?>(backedUpAt),
     };
   }
@@ -3361,6 +3399,7 @@ class Session extends DataClass implements Insertable<Session> {
     bool? synced,
     Value<String?> seriesId = const Value.absent(),
     Value<String?> seriesTestId = const Value.absent(),
+    Value<String?> practiceTestId = const Value.absent(),
     Value<DateTime?> backedUpAt = const Value.absent(),
   }) => Session(
     id: id ?? this.id,
@@ -3387,6 +3426,9 @@ class Session extends DataClass implements Insertable<Session> {
     synced: synced ?? this.synced,
     seriesId: seriesId.present ? seriesId.value : this.seriesId,
     seriesTestId: seriesTestId.present ? seriesTestId.value : this.seriesTestId,
+    practiceTestId: practiceTestId.present
+        ? practiceTestId.value
+        : this.practiceTestId,
     backedUpAt: backedUpAt.present ? backedUpAt.value : this.backedUpAt,
   );
   Session copyWithCompanion(SessionsCompanion data) {
@@ -3421,6 +3463,9 @@ class Session extends DataClass implements Insertable<Session> {
       seriesTestId: data.seriesTestId.present
           ? data.seriesTestId.value
           : this.seriesTestId,
+      practiceTestId: data.practiceTestId.present
+          ? data.practiceTestId.value
+          : this.practiceTestId,
       backedUpAt: data.backedUpAt.present
           ? data.backedUpAt.value
           : this.backedUpAt,
@@ -3448,6 +3493,7 @@ class Session extends DataClass implements Insertable<Session> {
           ..write('synced: $synced, ')
           ..write('seriesId: $seriesId, ')
           ..write('seriesTestId: $seriesTestId, ')
+          ..write('practiceTestId: $practiceTestId, ')
           ..write('backedUpAt: $backedUpAt')
           ..write(')'))
         .toString();
@@ -3473,6 +3519,7 @@ class Session extends DataClass implements Insertable<Session> {
     synced,
     seriesId,
     seriesTestId,
+    practiceTestId,
     backedUpAt,
   );
   @override
@@ -3497,6 +3544,7 @@ class Session extends DataClass implements Insertable<Session> {
           other.synced == this.synced &&
           other.seriesId == this.seriesId &&
           other.seriesTestId == this.seriesTestId &&
+          other.practiceTestId == this.practiceTestId &&
           other.backedUpAt == this.backedUpAt);
 }
 
@@ -3519,6 +3567,7 @@ class SessionsCompanion extends UpdateCompanion<Session> {
   final Value<bool> synced;
   final Value<String?> seriesId;
   final Value<String?> seriesTestId;
+  final Value<String?> practiceTestId;
   final Value<DateTime?> backedUpAt;
   final Value<int> rowid;
   const SessionsCompanion({
@@ -3540,6 +3589,7 @@ class SessionsCompanion extends UpdateCompanion<Session> {
     this.synced = const Value.absent(),
     this.seriesId = const Value.absent(),
     this.seriesTestId = const Value.absent(),
+    this.practiceTestId = const Value.absent(),
     this.backedUpAt = const Value.absent(),
     this.rowid = const Value.absent(),
   });
@@ -3562,6 +3612,7 @@ class SessionsCompanion extends UpdateCompanion<Session> {
     this.synced = const Value.absent(),
     this.seriesId = const Value.absent(),
     this.seriesTestId = const Value.absent(),
+    this.practiceTestId = const Value.absent(),
     this.backedUpAt = const Value.absent(),
     this.rowid = const Value.absent(),
   }) : id = Value(id),
@@ -3590,6 +3641,7 @@ class SessionsCompanion extends UpdateCompanion<Session> {
     Expression<bool>? synced,
     Expression<String>? seriesId,
     Expression<String>? seriesTestId,
+    Expression<String>? practiceTestId,
     Expression<DateTime>? backedUpAt,
     Expression<int>? rowid,
   }) {
@@ -3613,6 +3665,7 @@ class SessionsCompanion extends UpdateCompanion<Session> {
       if (synced != null) 'synced': synced,
       if (seriesId != null) 'series_id': seriesId,
       if (seriesTestId != null) 'series_test_id': seriesTestId,
+      if (practiceTestId != null) 'practice_test_id': practiceTestId,
       if (backedUpAt != null) 'backed_up_at': backedUpAt,
       if (rowid != null) 'rowid': rowid,
     });
@@ -3637,6 +3690,7 @@ class SessionsCompanion extends UpdateCompanion<Session> {
     Value<bool>? synced,
     Value<String?>? seriesId,
     Value<String?>? seriesTestId,
+    Value<String?>? practiceTestId,
     Value<DateTime?>? backedUpAt,
     Value<int>? rowid,
   }) {
@@ -3659,6 +3713,7 @@ class SessionsCompanion extends UpdateCompanion<Session> {
       synced: synced ?? this.synced,
       seriesId: seriesId ?? this.seriesId,
       seriesTestId: seriesTestId ?? this.seriesTestId,
+      practiceTestId: practiceTestId ?? this.practiceTestId,
       backedUpAt: backedUpAt ?? this.backedUpAt,
       rowid: rowid ?? this.rowid,
     );
@@ -3723,6 +3778,9 @@ class SessionsCompanion extends UpdateCompanion<Session> {
     if (seriesTestId.present) {
       map['series_test_id'] = Variable<String>(seriesTestId.value);
     }
+    if (practiceTestId.present) {
+      map['practice_test_id'] = Variable<String>(practiceTestId.value);
+    }
     if (backedUpAt.present) {
       map['backed_up_at'] = Variable<DateTime>(backedUpAt.value);
     }
@@ -3753,6 +3811,7 @@ class SessionsCompanion extends UpdateCompanion<Session> {
           ..write('synced: $synced, ')
           ..write('seriesId: $seriesId, ')
           ..write('seriesTestId: $seriesTestId, ')
+          ..write('practiceTestId: $practiceTestId, ')
           ..write('backedUpAt: $backedUpAt, ')
           ..write('rowid: $rowid')
           ..write(')'))
@@ -9324,6 +9383,7 @@ typedef $$SessionsTableCreateCompanionBuilder =
       Value<bool> synced,
       Value<String?> seriesId,
       Value<String?> seriesTestId,
+      Value<String?> practiceTestId,
       Value<DateTime?> backedUpAt,
       Value<int> rowid,
     });
@@ -9347,6 +9407,7 @@ typedef $$SessionsTableUpdateCompanionBuilder =
       Value<bool> synced,
       Value<String?> seriesId,
       Value<String?> seriesTestId,
+      Value<String?> practiceTestId,
       Value<DateTime?> backedUpAt,
       Value<int> rowid,
     });
@@ -9507,6 +9568,11 @@ class $$SessionsTableFilterComposer
     builder: (column) => ColumnFilters(column),
   );
 
+  ColumnFilters<String> get practiceTestId => $composableBuilder(
+    column: $table.practiceTestId,
+    builder: (column) => ColumnFilters(column),
+  );
+
   ColumnFilters<DateTime> get backedUpAt => $composableBuilder(
     column: $table.backedUpAt,
     builder: (column) => ColumnFilters(column),
@@ -9663,6 +9729,11 @@ class $$SessionsTableOrderingComposer
     builder: (column) => ColumnOrderings(column),
   );
 
+  ColumnOrderings<String> get practiceTestId => $composableBuilder(
+    column: $table.practiceTestId,
+    builder: (column) => ColumnOrderings(column),
+  );
+
   ColumnOrderings<DateTime> get backedUpAt => $composableBuilder(
     column: $table.backedUpAt,
     builder: (column) => ColumnOrderings(column),
@@ -9741,6 +9812,11 @@ class $$SessionsTableAnnotationComposer
 
   GeneratedColumn<String> get seriesTestId => $composableBuilder(
     column: $table.seriesTestId,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get practiceTestId => $composableBuilder(
+    column: $table.practiceTestId,
     builder: (column) => column,
   );
 
@@ -9850,6 +9926,7 @@ class $$SessionsTableTableManager
                 Value<bool> synced = const Value.absent(),
                 Value<String?> seriesId = const Value.absent(),
                 Value<String?> seriesTestId = const Value.absent(),
+                Value<String?> practiceTestId = const Value.absent(),
                 Value<DateTime?> backedUpAt = const Value.absent(),
                 Value<int> rowid = const Value.absent(),
               }) => SessionsCompanion(
@@ -9871,6 +9948,7 @@ class $$SessionsTableTableManager
                 synced: synced,
                 seriesId: seriesId,
                 seriesTestId: seriesTestId,
+                practiceTestId: practiceTestId,
                 backedUpAt: backedUpAt,
                 rowid: rowid,
               ),
@@ -9894,6 +9972,7 @@ class $$SessionsTableTableManager
                 Value<bool> synced = const Value.absent(),
                 Value<String?> seriesId = const Value.absent(),
                 Value<String?> seriesTestId = const Value.absent(),
+                Value<String?> practiceTestId = const Value.absent(),
                 Value<DateTime?> backedUpAt = const Value.absent(),
                 Value<int> rowid = const Value.absent(),
               }) => SessionsCompanion.insert(
@@ -9915,6 +9994,7 @@ class $$SessionsTableTableManager
                 synced: synced,
                 seriesId: seriesId,
                 seriesTestId: seriesTestId,
+                practiceTestId: practiceTestId,
                 backedUpAt: backedUpAt,
                 rowid: rowid,
               ),

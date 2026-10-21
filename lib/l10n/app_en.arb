@@ -1191,6 +1191,14 @@
     }
   },
   "topicDangerLine": "Sure wrong: {sure} · Educated guess wrong: {edu} (all-time)",
+  "topicSeasonDangerLine": "Sure wrong {sure} · Educated guess wrong {edu}",
+  "topicSortDanger": "Danger zone",
+  "@topicSeasonDangerLine": {
+    "placeholders": {
+      "sure": {"type": "int"},
+      "edu": {"type": "int"}
+    }
+  },
   "@topicDangerLine": {
     "placeholders": {
       "sure": {
@@ -4200,5 +4208,78 @@
         "type": "int"
       }
     }
-  }
+  },
+  "practiceTestNumber": "Test {n}",
+  "@practiceTestNumber": {
+    "placeholders": {"n": {"type": "int"}}
+  },
+  "practiceTestsProgress": "{done}/{total} tests",
+  "@practiceTestsProgress": {
+    "placeholders": {
+      "done": {"type": "int"},
+      "total": {"type": "int"}
+    }
+  },
+  "practiceQuestionCount": "{count} Qs",
+  "@practiceQuestionCount": {
+    "placeholders": {"count": {"type": "int"}}
+  },
+  "practiceReviewLast": "Review last attempt",
+  "practiceReattempt": "Reattempt",
+  "practiceNewSeason": "New season: your tests have been reshuffled for the next prelims.",
+  "practiceBrowseTopics": "Topic-wise tests",
+  "practiceSeeStats": "See stats",
+  "practiceNoTests": "No tests in this pool yet.",
+  "statsTitle": "Stats",
+  "statsAllSubjects": "All subjects",
+  "statsCoverage": "{value} covered",
+  "@statsCoverage": {
+    "placeholders": {"value": {"type": "String"}}
+  },
+  "statsAccuracyLabel": "Accuracy",
+  "statsRingCoverage": "Covered",
+  "statsRingTests": "Tests",
+  "statsAccuracyChart": "Accuracy by subject",
+  "statsTopicChart": "Accuracy by topic",
+  "statsAccuracy": "{value} accuracy",
+  "@statsAccuracy": {
+    "placeholders": {"value": {"type": "String"}}
+  },
+  "statsAnswered": "{count} answered",
+  "@statsAnswered": {
+    "placeholders": {"count": {"type": "int"}}
+  },
+  "statsFocusNext": "Focus next",
+  "statsFocusEmpty": "Keep practising. Suggestions show up once a topic is weak, shaky, or still untouched.",
+  "statsFocusRevise": "Revise {topic}",
+  "@statsFocusRevise": {
+    "placeholders": {"topic": {"type": "String"}}
+  },
+  "statsFocusPractise": "Practise {topic}",
+  "@statsFocusPractise": {
+    "placeholders": {"topic": {"type": "String"}}
+  },
+  "statsFocusStart": "Start {topic}",
+  "@statsFocusStart": {
+    "placeholders": {"topic": {"type": "String"}}
+  },
+  "statsSortWeakest": "Weakest",
+  "statsSortLeastCovered": "Least covered",
+  "statsSortAz": "A–Z",
+  "statsConfidence": "Sure {sureTotal} ({sureWrong} wrong) · Educated guess {guessTotal} ({guessWrong} wrong)",
+  "@statsConfidence": {
+    "placeholders": {
+      "sureTotal": {"type": "int"},
+      "sureWrong": {"type": "int"},
+      "guessTotal": {"type": "int"},
+      "guessWrong": {"type": "int"}
+    }
+  },
+  "statsTrapPatterns": "Trap patterns",
+  "statsUnlock": "Unlock full stats",
+  "todayQueueTitle": "TODAY",
+  "todayQueueCaShots": "CA shots",
+  "todayQueueCaTest": "Current affairs test",
+  "todayQueueDailyWar": "Daily war",
+  "todayQueueOpenChallenge": "Open challenge"
 }

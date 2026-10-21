@@ -1853,6 +1853,14 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String topicSeasonDangerLine(int sure, int edu) {
+    return 'Sure wrong $sure · Educated guess wrong $edu';
+  }
+
+  @override
+  String get topicSortDanger => 'Danger zone';
+
+  @override
   String subjectTestInfo(String questions, int topics) {
     return '$questions questions · $topics topics';
   }
@@ -6063,4 +6071,136 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get tsGetHelpEmail => 'Email';
+
+  @override
+  String practiceTestNumber(int n) {
+    return 'Test $n';
+  }
+
+  @override
+  String practiceTestsProgress(int done, int total) {
+    return '$done/$total tests';
+  }
+
+  @override
+  String practiceQuestionCount(int count) {
+    return '$count Qs';
+  }
+
+  @override
+  String get practiceReviewLast => 'Review last attempt';
+
+  @override
+  String get practiceReattempt => 'Reattempt';
+
+  @override
+  String get practiceNewSeason =>
+      'New season: your tests have been reshuffled for the next prelims.';
+
+  @override
+  String get practiceBrowseTopics => 'Topic-wise tests';
+
+  @override
+  String get practiceSeeStats => 'See stats';
+
+  @override
+  String get practiceNoTests => 'No tests in this pool yet.';
+
+  @override
+  String get statsTitle => 'Stats';
+
+  @override
+  String get statsAllSubjects => 'All subjects';
+
+  @override
+  String statsCoverage(String value) {
+    return '$value covered';
+  }
+
+  @override
+  String get statsAccuracyLabel => 'Accuracy';
+
+  @override
+  String get statsRingCoverage => 'Covered';
+
+  @override
+  String get statsRingTests => 'Tests';
+
+  @override
+  String get statsAccuracyChart => 'Accuracy by subject';
+
+  @override
+  String get statsTopicChart => 'Accuracy by topic';
+
+  @override
+  String statsAccuracy(String value) {
+    return '$value accuracy';
+  }
+
+  @override
+  String statsAnswered(int count) {
+    return '$count answered';
+  }
+
+  @override
+  String get statsFocusNext => 'Focus next';
+
+  @override
+  String get statsFocusEmpty =>
+      'Keep practising. Suggestions show up once a topic is weak, shaky, or still untouched.';
+
+  @override
+  String statsFocusRevise(String topic) {
+    return 'Revise $topic';
+  }
+
+  @override
+  String statsFocusPractise(String topic) {
+    return 'Practise $topic';
+  }
+
+  @override
+  String statsFocusStart(String topic) {
+    return 'Start $topic';
+  }
+
+  @override
+  String get statsSortWeakest => 'Weakest';
+
+  @override
+  String get statsSortLeastCovered => 'Least covered';
+
+  @override
+  String get statsSortAz => 'A–Z';
+
+  @override
+  String statsConfidence(
+    int sureTotal,
+    int sureWrong,
+    int guessTotal,
+    int guessWrong,
+  ) {
+    return 'Sure $sureTotal ($sureWrong wrong) · Educated guess $guessTotal ($guessWrong wrong)';
+  }
+
+  @override
+  String get statsTrapPatterns => 'Trap patterns';
+
+  @override
+  String get statsUnlock => 'Unlock full stats';
+
+  @override
+  String get todayQueueTitle => 'TODAY';
+
+  @override
+  String get todayQueueCaShots => 'CA shots';
+
+  @override
+  String get todayQueueCaTest => 'Current affairs test';
+
+  @override
+  String get todayQueueDailyWar => 'Daily war';
+
+  @override
+  String get todayQueueOpenChallenge => 'Open challenge';
 }

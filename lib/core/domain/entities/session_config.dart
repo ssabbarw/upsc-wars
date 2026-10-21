@@ -27,6 +27,7 @@ class SessionConfig {
     this.requireAllSpecificUuids = false,
     this.seriesId,
     this.seriesTestId,
+    this.practiceTestId,
   });
 
   final String subject;
@@ -69,6 +70,9 @@ class SessionConfig {
   /// Test id within [seriesId] (e.g. `static_polity_01`).
   final String? seriesTestId;
 
+  /// Numbered practice test id (e.g. `2027/subject:Polity/03`).
+  final String? practiceTestId;
+
   SessionConfig copyWith({
     String? subject,
     String? topic,
@@ -84,6 +88,7 @@ class SessionConfig {
     bool? requireAllSpecificUuids,
     String? seriesId,
     String? seriesTestId,
+    String? practiceTestId,
   }) {
     return SessionConfig(
       subject: subject ?? this.subject,
@@ -103,6 +108,7 @@ class SessionConfig {
           requireAllSpecificUuids ?? this.requireAllSpecificUuids,
       seriesId: seriesId ?? this.seriesId,
       seriesTestId: seriesTestId ?? this.seriesTestId,
+      practiceTestId: practiceTestId ?? this.practiceTestId,
     );
   }
 }

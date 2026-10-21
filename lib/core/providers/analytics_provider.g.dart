@@ -8,14 +8,14 @@ part of 'analytics_provider.dart';
 
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, type=warning
-/// Global [AnalyticsService] wiring [FirebaseAnalyticsSink] and
-/// [LocalAnalyticsSink]; event meanings are on each [AnalyticsEvent] subclass.
+/// Global [AnalyticsService] wiring Firebase, PostHog, Drift, and admin
+/// dashboard sinks; event meanings are on each [AnalyticsEvent] subclass.
 
 @ProviderFor(analyticsService)
 final analyticsServiceProvider = AnalyticsServiceProvider._();
 
-/// Global [AnalyticsService] wiring [FirebaseAnalyticsSink] and
-/// [LocalAnalyticsSink]; event meanings are on each [AnalyticsEvent] subclass.
+/// Global [AnalyticsService] wiring Firebase, PostHog, Drift, and admin
+/// dashboard sinks; event meanings are on each [AnalyticsEvent] subclass.
 
 final class AnalyticsServiceProvider
     extends
@@ -25,8 +25,8 @@ final class AnalyticsServiceProvider
           AnalyticsService
         >
     with $Provider<AnalyticsService> {
-  /// Global [AnalyticsService] wiring [FirebaseAnalyticsSink] and
-  /// [LocalAnalyticsSink]; event meanings are on each [AnalyticsEvent] subclass.
+  /// Global [AnalyticsService] wiring Firebase, PostHog, Drift, and admin
+  /// dashboard sinks; event meanings are on each [AnalyticsEvent] subclass.
   AnalyticsServiceProvider._()
     : super(
         from: null,
@@ -60,4 +60,4 @@ final class AnalyticsServiceProvider
   }
 }
 
-String _$analyticsServiceHash() => r'9f0be590732f4d32f7ff69bf803e53599f1fb730';
+String _$analyticsServiceHash() => r'58b120814ad52ba3352c08fbdfedceee82f6b93b';

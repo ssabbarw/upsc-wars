@@ -19,6 +19,7 @@ import '../theme/app_colors.dart';
 import '../theme/app_radius.dart';
 import '../theme/app_spacing.dart';
 import '../constants/app_constants.dart';
+import '../constants/subject_constants.dart';
 import '../theme/app_text_styles.dart';
 import '../../features/test_series/screens/my_test_series_screen.dart';
 import '../../features/test_series/screens/series_subject_screen.dart';
@@ -66,7 +67,8 @@ import '../../features/home/screens/complete_profile_screen.dart';
 import '../../features/home/screens/profile_screen.dart';
 import '../../features/home/screens/settings_screen.dart';
 import '../../features/home/screens/about_us_screen.dart';
-import '../../features/home/screens/progress_hub_screen.dart';
+import '../../features/stats/screens/stats_screen.dart';
+import '../../features/practice_tests/screens/practice_test_list_screen.dart';
 import '../../features/daily_war/screens/daily_war_admin_screen.dart';
 import '../../features/internal/screens/bot_battles_admin_screen.dart';
 import '../../features/internal/screens/broadcast_announcement_screen.dart';
@@ -109,13 +111,11 @@ import '../../features/mini_games/duel/duel_screen.dart';
 import '../../features/revision_queue/screens/revision_queue_screen.dart';
 import '../../features/revision_queue/screens/revision_mode_screen.dart';
 import '../../features/subject_detail/screens/subject_detail_screen.dart';
-import '../../features/subject_detail/screens/subject_history_screen.dart';
 import '../../features/subject_detail/screens/topics_list_screen.dart';
 import '../../features/subject_test/screens/subject_test_screen.dart';
 import '../../features/test_engine/screens/demo_test_launch_screen.dart';
 import '../../features/test_engine/screens/test_engine_screen.dart';
 import '../deep_link/shared_test_launch_screen.dart';
-import '../../features/topic_test/screens/topic_test_screen.dart';
 import '../../features/weak_areas/screens/weak_areas_hub_screen.dart';
 import '../../features/weak_areas/screens/concept_detail_screen.dart'
     show SubTopicDetailScreen;
@@ -139,6 +139,11 @@ final GlobalKey<NavigatorState> rootNavigatorKey = GlobalKey<NavigatorState>(
 /// Survives [appRouterProvider] rebuilds (e.g. super-user flag flip) so we do
 /// not dump the user on `/` mid-flow.
 String? _appRouterRestoreLocation;
+
+String? _hideTestSeries(BuildContext context, GoRouterState state) {
+  if (FeatureFlags.testSeries) return null;
+  return '/';
+}
 
 @Riverpod(keepAlive: true)
 GoRouter appRouter(Ref ref) {
@@ -188,16 +193,9 @@ GoRouter appRouter(Ref ref) {
     StatefulShellBranch(
       routes: [
         GoRoute(
-          path: '/progress',
-          name: 'progress',
-          builder: (context, state) {
-            final tab = state.uri.queryParameters['tab'];
-            final history = tab == 'history';
-            return ProgressHubScreen(
-              initialTabIndex: history ? 1 : 0,
-              arrivedViaTabLink: history,
-            );
-          },
+          path: '/stats',
+          name: 'stats',
+          builder: (context, state) => const StatsScreen(),
         ),
       ],
     ),
@@ -463,8 +461,7 @@ GoRouter appRouter(Ref ref) {
             source: DailyCaShareConstants.entryShare,
             start: true,
           );
-          if (state.matchedLocation !=
-              Uri.parse(target).path) {
+          if (state.matchedLocation != Uri.parse(target).path) {
             return target;
           }
         }
@@ -499,9 +496,7 @@ GoRouter appRouter(Ref ref) {
       if (u.scheme == 'upscwars' &&
           DailyCaShareConstants.isPublicPathSegment(u.host) &&
           u.pathSegments.isNotEmpty &&
-          DailyCaShareConstants.isShareableDateSegment(
-            u.pathSegments.first,
-          )) {
+          DailyCaShareConstants.isShareableDateSegment(u.pathSegments.first)) {
         return DailyCaShareConstants.dateLocation(
           u.pathSegments.first,
           source: DailyCaShareConstants.entryShare,
@@ -870,11 +865,26 @@ GoRouter appRouter(Ref ref) {
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
-        path: '/subject/:name/history',
-        name: 'subject_history',
-        builder: (context, state) => SubjectHistoryScreen(
+        path: '/subject/:name/tests',
+        name: 'subject_practice_tests',
+        builder: (context, state) => PracticeTestListScreen(
           subject: Uri.decodeComponent(state.pathParameters['name']!),
         ),
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/subject/:name/topic/:topic/tests',
+        name: 'topic_practice_tests',
+        builder: (context, state) => PracticeTestListScreen(
+          subject: Uri.decodeComponent(state.pathParameters['name']!),
+          topic: Uri.decodeComponent(state.pathParameters['topic']!),
+        ),
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/subject/:name/history',
+        redirect: (context, state) =>
+            '/subject/${state.pathParameters['name']}/tests',
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
@@ -888,12 +898,14 @@ GoRouter appRouter(Ref ref) {
         parentNavigatorKey: rootNavigatorKey,
         path: '/test-series',
         name: 'test_series',
+        redirect: _hideTestSeries,
         builder: (context, state) => const TestSeriesEntryScreen(),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/test-series/:seriesId',
         name: 'test_series_home',
+        redirect: _hideTestSeries,
         builder: (context, state) =>
             TestSeriesHomeScreen(seriesId: state.pathParameters['seriesId']!),
       ),
@@ -901,6 +913,7 @@ GoRouter appRouter(Ref ref) {
         parentNavigatorKey: rootNavigatorKey,
         path: '/test-series/:seriesId/subject/:subjectId',
         name: 'test_series_subject',
+        redirect: _hideTestSeries,
         builder: (context, state) => SeriesSubjectScreen(
           seriesId: state.pathParameters['seriesId']!,
           subjectId: state.pathParameters['subjectId']!,
@@ -910,6 +923,7 @@ GoRouter appRouter(Ref ref) {
         parentNavigatorKey: rootNavigatorKey,
         path: '/my-test-series',
         name: 'my_test_series',
+        redirect: _hideTestSeries,
         builder: (context, state) => const MyTestSeriesScreen(),
       ),
       GoRoute(
@@ -1045,7 +1059,8 @@ GoRouter appRouter(Ref ref) {
         parentNavigatorKey: rootNavigatorKey,
         path: '/topic-test',
         name: 'topic_test',
-        builder: (context, state) => const TopicTestScreen(),
+        redirect: (context, state) =>
+            '/subject/${Uri.encodeComponent(SubjectConstants.ordered.first.slug)}/topics',
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
@@ -1234,10 +1249,8 @@ GoRouter appRouter(Ref ref) {
           );
         },
       ),
-      GoRoute(
-        path: '/history',
-        redirect: (context, state) => '/progress?tab=history',
-      ),
+      GoRoute(path: '/history', redirect: (context, state) => '/stats'),
+      GoRoute(path: '/progress', redirect: (context, state) => '/stats'),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/history/:sessionId',
@@ -1493,12 +1506,12 @@ class _AppShell extends HookConsumerWidget {
       const BottomNavigationBarItem(
         icon: Icon(Icons.home_outlined, size: 22),
         activeIcon: Icon(Icons.home, size: 22),
-        label: 'Home',
+        label: 'Practice',
       ),
       const BottomNavigationBarItem(
-        icon: Icon(Icons.bar_chart_outlined, size: 22),
-        activeIcon: Icon(Icons.bar_chart, size: 22),
-        label: 'Progress',
+        icon: Icon(Icons.insights_outlined, size: 22),
+        activeIcon: Icon(Icons.insights, size: 22),
+        label: 'Stats',
       ),
       const BottomNavigationBarItem(
         icon: Icon(Icons.sports_esports_outlined, size: 22),

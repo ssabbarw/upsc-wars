@@ -30,6 +30,7 @@ import '../../daily_ca/providers/daily_ca_providers.dart';
 import '../../home/domain/demo_diagnostic_ephemeral_store.dart';
 import '../../home/providers/home_activation_provider.dart';
 import '../../home/providers/home_activation_journey_provider.dart';
+import '../../practice_tests/providers/practice_catalog_provider.dart';
 import '../widgets/session_summary_coach.dart';
 import '../widgets/share_test_bottom_sheet.dart';
 import '../../../l10n/l10n.dart';
@@ -130,6 +131,7 @@ class ResultsScreen extends ConsumerWidget {
       if (next.hasValue && prev?.hasValue != true) {
         ref.invalidate(homeActivationProvider);
         ref.invalidate(homeActivationJourneyProvider);
+        ref.invalidate(practiceCatalogProvider);
         final result = next.requireValue;
         if (result.subject == QuestionSourceConstants.dailyCaSessionSubject) {
           final iso = result.topic;

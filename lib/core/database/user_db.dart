@@ -121,6 +121,10 @@ class Sessions extends Table {
   /// Test within the series (e.g. `static_polity_01`).
   TextColumn get seriesTestId => text().named('series_test_id').nullable()();
 
+  /// Numbered practice test this session belongs to
+  /// (`2027/subject:Polity/03`). Null for drills, battles, and series tests.
+  TextColumn get practiceTestId => text().named('practice_test_id').nullable()();
+
   /// When this completed session's answers were last written to the cloud
   /// backup (`user_backups/{uid}/sessions/{id}`). Null = backup still pending
   /// (offline, signed out, or completed before backup existed).
@@ -426,6 +430,47 @@ class QuestionsDao extends DatabaseAccessor<UserDatabase>
       readsFrom: {questions},
     ).getSingle();
     return row.read<int>('c');
+  }
+
+  /// Static-bank question ids for one subject (PYQ and current affairs excluded).
+  Future<List<String>> getStaticUuidsForSubject(String subject) async {
+    final rows = await customSelect(
+      "SELECT uuid FROM questions WHERE subject = ? AND source_kind = 'static'",
+      variables: [Variable.withString(subject)],
+      readsFrom: {questions},
+    ).get();
+    return [for (final row in rows) row.read<String>('uuid')];
+  }
+
+  /// Static-bank question ids for one topic. [topic] is the English topic name.
+  Future<List<String>> getStaticUuidsForTopic(
+    String subject,
+    String topic,
+  ) async {
+    final rows = await customSelect(
+      "SELECT uuid FROM questions "
+      "WHERE subject = ? AND topic = ? AND source_kind = 'static'",
+      variables: [Variable.withString(subject), Variable.withString(topic)],
+      readsFrom: {questions},
+    ).get();
+    return [for (final row in rows) row.read<String>('uuid')];
+  }
+
+  /// Subject and English topic for every static question.
+  Future<List<({String uuid, String subject, String topic})>>
+  getStaticQuestionLocations() async {
+    final rows = await customSelect(
+      "SELECT uuid, subject, topic FROM questions WHERE source_kind = 'static'",
+      readsFrom: {questions},
+    ).get();
+    return [
+      for (final row in rows)
+        (
+          uuid: row.read<String>('uuid'),
+          subject: row.read<String>('subject'),
+          topic: row.read<String>('topic'),
+        ),
+    ];
   }
 
   Future<List<Question>> getByTopic(String subject, String topic) =>
@@ -938,6 +983,69 @@ class SessionsDao extends DatabaseAccessor<UserDatabase>
             ..limit(limit, offset: offset))
           .get();
 
+  /// Latest submitted session for each practice test whose id starts with
+  /// [prefix] (for example `2027/subject:Polity/`).
+  Future<Map<String, PracticeTestCompletionRow>>
+  latestCompletedByPracticeTestIdPrefix(String prefix) async {
+    final rows = await customSelect(
+      '''
+      SELECT practice_test_id, id, score, question_count, completed_at
+      FROM sessions
+      WHERE status = 'completed' AND practice_test_id LIKE ?
+      ORDER BY completed_at DESC
+      ''',
+      variables: [Variable.withString('$prefix%')],
+      readsFrom: {sessions},
+    ).get();
+    final out = <String, PracticeTestCompletionRow>{};
+    for (final row in rows) {
+      final testId = row.read<String>('practice_test_id');
+      if (out.containsKey(testId)) continue;
+      out[testId] = PracticeTestCompletionRow(
+        testId: testId,
+        sessionId: row.read<String>('id'),
+        score: row.read<int?>('score'),
+        questionCount: row.read<int>('question_count'),
+        completedAt: _readSqlDateTime(row.data['completed_at']),
+      );
+    }
+    return out;
+  }
+
+  /// In-progress session id for each practice test under [prefix], newest first.
+  Future<Map<String, String>> inProgressByPracticeTestIdPrefix(
+    String prefix,
+  ) async {
+    final rows = await customSelect(
+      '''
+      SELECT practice_test_id, id FROM sessions
+      WHERE status = 'in_progress' AND practice_test_id LIKE ?
+      ORDER BY created_at DESC
+      ''',
+      variables: [Variable.withString('$prefix%')],
+      readsFrom: {sessions},
+    ).get();
+    final out = <String, String>{};
+    for (final row in rows) {
+      final testId = row.read<String>('practice_test_id');
+      out.putIfAbsent(testId, () => row.read<String>('id'));
+    }
+    return out;
+  }
+
+  /// True when any submitted practice test belongs to [seasonYear].
+  Future<bool> hasCompletedPracticeTestsForSeason(int seasonYear) async {
+    final row = await customSelect(
+      '''
+      SELECT COUNT(*) AS c FROM sessions
+      WHERE status = 'completed' AND practice_test_id LIKE ?
+      ''',
+      variables: [Variable.withString('$seasonYear/%')],
+      readsFrom: {sessions},
+    ).getSingle();
+    return (row.read<int?>('c') ?? 0) > 0;
+  }
+
   Future<int> countCompletedSessionsBySubject(String subject) async {
     final row = await customSelect(
       "SELECT COUNT(*) AS c FROM sessions WHERE subject = ? AND status = 'completed'",
@@ -1221,8 +1329,14 @@ class SessionQuestionsDao extends DatabaseAccessor<UserDatabase>
 
   Future<Set<String>> getAllAttemptedQuestionUuids() async {
     final rows = await customSelect(
-      'SELECT DISTINCT question_uuid FROM attempts',
-      readsFrom: {sessionQuestions},
+      '''
+      SELECT DISTINCT a.question_uuid AS question_uuid
+      FROM attempts a
+      INNER JOIN sessions s ON s.id = a.session_id
+      WHERE s.status = 'completed'
+        AND a.status IN ('correct', 'wrong')
+      ''',
+      readsFrom: {sessionQuestions, sessions},
     ).map((row) => row.read<String>('question_uuid')).get();
     return rows.toSet();
   }
@@ -1277,8 +1391,14 @@ class SessionQuestionsDao extends DatabaseAccessor<UserDatabase>
 
   Future<List<ScoredSessionQuestionRow>> getScoredPracticeRows() async {
     return customSelect(
-      "SELECT question_uuid, status FROM attempts WHERE status IN ('correct', 'wrong')",
-      readsFrom: {sessionQuestions},
+      '''
+      SELECT a.question_uuid AS question_uuid, a.status AS status
+      FROM attempts a
+      INNER JOIN sessions s ON s.id = a.session_id
+      WHERE s.status = 'completed'
+        AND a.status IN ('correct', 'wrong')
+      ''',
+      readsFrom: {sessionQuestions, sessions},
     ).map((row) {
       final status = row.read<String>('status');
       return ScoredSessionQuestionRow(
@@ -1287,6 +1407,67 @@ class SessionQuestionsDao extends DatabaseAccessor<UserDatabase>
       );
     }).get();
   }
+
+  /// Latest submitted answer for each question since [seasonStart].
+  Future<List<ScoredSessionQuestionRow>> getSeasonCoverage(
+    DateTime seasonStart,
+  ) async {
+    final rows = await customSelect(
+      '''
+      SELECT question_uuid, is_correct FROM (
+        SELECT a.question_uuid AS question_uuid,
+               CASE WHEN a.status = 'correct' THEN 1 ELSE 0 END AS is_correct,
+               ROW_NUMBER() OVER (
+                 PARTITION BY a.question_uuid
+                 ORDER BY s.completed_at DESC
+               ) AS rn
+        FROM attempts a
+        INNER JOIN sessions s ON s.id = a.session_id
+        WHERE s.status = 'completed'
+          AND s.completed_at >= ?
+          AND a.status IN ('correct', 'wrong')
+      )
+      WHERE rn = 1
+      ''',
+      variables: [
+        Variable.withInt(seasonStart.millisecondsSinceEpoch ~/ 1000),
+      ],
+      readsFrom: {sessionQuestions, sessions},
+    ).get();
+    return [
+      for (final row in rows)
+        ScoredSessionQuestionRow(
+          questionUuid: row.read<String>('question_uuid'),
+          isCorrect: (row.read<int?>('is_correct') ?? 0) != 0,
+        ),
+    ];
+  }
+}
+
+DateTime? _readSqlDateTime(Object? raw) {
+  if (raw == null) return null;
+  if (raw is DateTime) return raw;
+  if (raw is int) {
+    final ms = raw.abs() < 100000000000 ? raw * 1000 : raw;
+    return DateTime.fromMillisecondsSinceEpoch(ms);
+  }
+  return null;
+}
+
+class PracticeTestCompletionRow {
+  const PracticeTestCompletionRow({
+    required this.testId,
+    required this.sessionId,
+    required this.score,
+    required this.questionCount,
+    required this.completedAt,
+  });
+
+  final String testId;
+  final String sessionId;
+  final int? score;
+  final int questionCount;
+  final DateTime? completedAt;
 }
 
 class ScoredSessionQuestionRow {
@@ -1699,7 +1880,7 @@ class UserDatabase extends _$UserDatabase {
   UserDatabase([QueryExecutor? executor]) : super(executor ?? _openUnifiedDb());
 
   @override
-  int get schemaVersion => 9;
+  int get schemaVersion => 10;
 
   /// True when [column] already exists on [table] (handles prebuilt DBs whose
   /// `user_version` lags behind the actual schema).
@@ -1729,6 +1910,10 @@ class UserDatabase extends _$UserDatabase {
       await customStatement(
         'CREATE INDEX IF NOT EXISTS idx_questions_subject '
         'ON questions(subject)',
+      );
+      await customStatement(
+        'CREATE INDEX IF NOT EXISTS idx_sessions_practice_test '
+        'ON sessions(practice_test_id)',
       );
     },
     onUpgrade: (Migrator m, int from, int to) async {
@@ -1842,6 +2027,15 @@ class UserDatabase extends _$UserDatabase {
         if (!await _sqliteColumnExists('sessions', 'backed_up_at')) {
           await m.addColumn(sessions, sessions.backedUpAt);
         }
+      }
+      if (from < 10) {
+        if (!await _sqliteColumnExists('sessions', 'practice_test_id')) {
+          await m.addColumn(sessions, sessions.practiceTestId);
+        }
+        await customStatement(
+          'CREATE INDEX IF NOT EXISTS idx_sessions_practice_test '
+          'ON sessions(practice_test_id)',
+        );
       }
     },
   );

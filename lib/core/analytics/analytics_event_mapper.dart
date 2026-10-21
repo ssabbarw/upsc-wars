@@ -747,6 +747,33 @@ AnalyticsEventMapping mapAnalyticsEvent(AnalyticsEvent event) {
           }),
         ],
       );
+    case PracticeTestStartedEvent(:final testId):
+      return AnalyticsEventMapping(
+        events: [
+          AnalyticsMappedEvent('practice_test_start', {'test_id': testId}),
+        ],
+      );
+    case PracticeTestCompletedEvent(:final testId):
+      return AnalyticsEventMapping(
+        events: [
+          AnalyticsMappedEvent('practice_test_complete', {'test_id': testId}),
+        ],
+      );
+    case StatsViewedEvent(:final subject):
+      return AnalyticsEventMapping(
+        events: [
+          AnalyticsMappedEvent('stats_view', {'subject': subject}),
+        ],
+      );
+    case StatsFocusTapEvent(:final subject, :final topic):
+      return AnalyticsEventMapping(
+        events: [
+          AnalyticsMappedEvent('stats_focus_tap', {
+            'subject': subject,
+            'topic': topic,
+          }),
+        ],
+      );
     case AppLanguageSwitchedEvent(:final fromLanguage, :final toLanguage):
       return AnalyticsEventMapping(
         events: [

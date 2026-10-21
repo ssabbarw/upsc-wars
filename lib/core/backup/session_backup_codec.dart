@@ -35,6 +35,7 @@ abstract final class SessionBackupFormat {
   static const featureKey = 'fk';
   static const seriesId = 'seriesId';
   static const seriesTestId = 'seriesTestId';
+  static const practiceTestId = 'practiceTestId';
   static const questions = 'q';
   static const backedUpAt = 'backedUpAt';
 
@@ -106,6 +107,8 @@ abstract final class SessionBackupCodec {
         SessionBackupFormat.seriesId: session.seriesId,
       if (session.seriesTestId != null)
         SessionBackupFormat.seriesTestId: session.seriesTestId,
+      if (session.practiceTestId != null)
+        SessionBackupFormat.practiceTestId: session.practiceTestId,
       SessionBackupFormat.questions: [
         for (final a in attempts)
           {
@@ -168,6 +171,9 @@ abstract final class SessionBackupCodec {
         ),
         seriesId: Value(data[SessionBackupFormat.seriesId] as String?),
         seriesTestId: Value(data[SessionBackupFormat.seriesTestId] as String?),
+        practiceTestId: Value(
+          data[SessionBackupFormat.practiceTestId] as String?,
+        ),
         // Already counted in global question stats when first submitted;
         // never re-aggregate a restored session.
         synced: const Value(true),

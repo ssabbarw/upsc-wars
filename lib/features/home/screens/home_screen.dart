@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -10,16 +11,16 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../../core/analytics/activation_milestones.dart';
 import '../../../core/auth/auth_session.dart';
 import '../../../core/constants/app_constants.dart';
+import '../../../core/constants/prelims_countdown.dart';
 import '../../../core/constants/subject_constants.dart';
-import '../../../core/constants/timed_exam_debug_constants.dart';
-import '../../../core/domain/entities/session_config.dart';
 import '../../../core/domain/entities/subject_info.dart';
 import '../../../core/providers/app_language_helpers.dart';
 import '../../../core/providers/catalog_providers.dart';
 import '../../../core/providers/app_bootstrap.dart';
 import '../../../core/providers/kill_switch_provider.dart';
+import '../../../core/providers/prelims_date_provider.dart';
 import '../../../core/providers/prefs_provider.dart';
-import '../../../core/providers/quick_practice_providers.dart';
+import '../../../core/providers/user_database_provider.dart';
 import '../../../core/responsive/app_breakpoints.dart';
 import '../../../core/services/battle_messaging_service.dart';
 import '../../../core/theme/app_colors.dart';
@@ -30,11 +31,12 @@ import '../providers/auth_providers.dart';
 import '../providers/home_activation_provider.dart';
 import '../providers/home_activation_journey_provider.dart';
 import '../providers/daily_drill_provider.dart';
-import '../widgets/today_hub_section.dart';
 import '../../daily_ca/providers/daily_ca_providers.dart';
 import '../../daily_war/providers/daily_war_providers.dart';
-import '../../daily_war/widgets/daily_war_home_card.dart';
-import '../../test_series/widgets/test_series_home_card.dart';
+import '../../practice_tests/data/practice_demo_seed.dart';
+import '../../practice_tests/providers/practice_catalog_provider.dart';
+import '../../practice_tests/widgets/practice_season_notice.dart';
+import '../widgets/today_queue_strip.dart';
 import '../providers/today_hub_provider.dart';
 import '../providers/today_hero_intent_provider.dart';
 import '../domain/daily_streak_service.dart';
@@ -45,10 +47,6 @@ import '../../../shared/widgets/app_toast.dart';
 import '../../../shared/widgets/app_update_kill_switch_overlay.dart';
 import '../../../shared/widgets/content_language_picker.dart';
 import '../../../shared/widgets/prelims_countdown_card.dart';
-import '../../../shared/widgets/quick_practice_mode_sheet.dart';
-import '../../../shared/widgets/contact_us_entry.dart';
-import '../../../shared/widgets/home_page_video_banner.dart';
-import '../../../shared/widgets/rate_review_sheet.dart';
 import '../../../shared/widgets/soft_update_banner.dart';
 import '../widgets/daily_rituals_intro_sheet.dart';
 import '../widgets/data_restore_banner.dart';
@@ -81,14 +79,6 @@ class HomeScreen extends HookConsumerWidget {
       return null;
     }, [heroSlot]);
 
-    final past200ms = useState(false);
-    useEffect(() {
-      final t = Timer(const Duration(milliseconds: 200), () {
-        past200ms.value = true;
-      });
-      return t.cancel;
-    }, const []);
-
     // The streak is earned by closing a Today ring, not by opening the app, so
     // this only refreshes what home shows.
     useEffect(() {
@@ -97,6 +87,20 @@ class HomeScreen extends HookConsumerWidget {
         ref.invalidate(homeActivationProvider);
         ref.invalidate(homeActivationJourneyProvider);
         ref.invalidate(dailyDrillProvider);
+      });
+      return null;
+    }, const []);
+
+    useEffect(() {
+      if (!kDebugMode) return null;
+      Future(() async {
+        final prelims =
+            ref.read(prelimsDateProvider).value ?? PrelimsCountdown.prelimsDate;
+        final seeded = await seedPracticeDemoAttempts(
+          ref.read(userDatabaseProvider),
+          prelimsDate: prelims,
+        );
+        if (seeded) ref.invalidate(practiceCatalogProvider);
       });
       return null;
     }, const []);
@@ -486,123 +490,15 @@ class HomeScreen extends HookConsumerWidget {
                   const SoftUpdateBanner(),
                   const DataRestoreBanner(),
                   const PushDeniedBanner(compact: true),
-                  Consumer(
-                    builder: (context, ref, _) {
-                      final journey = ref.watch(homeActivationJourneyProvider);
-                      final state = journey.asData?.value ?? journey.value;
-                      return TodayHubSection(
-                        activationJourney: state,
-                        activationJourneyLoading:
-                            journey.isLoading && !journey.hasValue,
-                      );
-                    },
-                  ),
                   const SizedBox(height: AppSpacing.md),
-                  // Own section: hidden unless sales are on or the user owns a series.
-                  const TestSeriesHomeCard(),
-                  // Renders nothing unless Remote Config allows War; it owns
-                  // its own bottom gap, so no spacer follows it here.
-                  const DailyWarHomeCard(),
-                  // Practice section: PYQ carousel above Subjects
-                  Consumer(
-                    builder: (context, ref, _) {
-                      final journey = ref.watch(homeActivationJourneyProvider);
-                      final secondary = journey.maybeWhen(
-                        data: (s) => s.shouldShowChecklist,
-                        orElse: () => false,
-                      );
-                      return _PracticeSection(
-                        borderColor: borderColor,
-                        secondary: secondary,
-                      );
-                    },
-                  ),
-                  // Trap Patterns — immediately after practice, always visible
-                  home.when(
-                    loading: () => const SizedBox.shrink(),
-                    error: (_, _) => const SizedBox.shrink(),
-                    data: (h) => h.revisionTrapCount > 0
-                        ? Padding(
-                            padding: const EdgeInsets.only(top: AppSpacing.md),
-                            child: _TrapPatternsCard(
-                              trapCount: h.revisionTrapCount,
-                              borderColor: borderColor,
-                            ),
-                          )
-                        : const SizedBox.shrink(),
-                  ),
+                  const PrelimsCountdownCard(),
                   const SizedBox(height: AppSpacing.md),
-                  home.when(
-                    loading: () {
-                      if (!past200ms.value) {
-                        return SizedBox(
-                          height: 120,
-                          child: Center(
-                            child: SizedBox(
-                              width: 24,
-                              height: 24,
-                              child: CircularProgressIndicator(
-                                strokeWidth: 2,
-                                color: AppColors.primary,
-                              ),
-                            ),
-                          ),
-                        );
-                      }
-                      return _HeaderLoading(borderColor: borderColor);
-                    },
-                    error: (e, st) => Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        OutlinedButton(
-                          onPressed: () => ref.invalidate(homeStateProvider),
-                          child: Text(
-                            context.l10n.commonRetry,
-                            style: AppTextStyles.label(),
-                          ),
-                        ),
-                      ],
-                    ),
-                    data: (h) {
-                      return Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          HomePageVideoBanner(borderColor: borderColor),
-                          const SizedBox(height: AppSpacing.md),
-                          const PushDeniedBanner(reportShown: false),
-                          _QuickPracticeSection(borderColor: borderColor),
-                        ],
-                      );
-                    },
-                  ),
-                  const SizedBox(height: AppSpacing.lg),
-                  const Center(
-                    child: ContactUsTextButton(showRateReviewCta: false),
-                  ),
-                  Center(
-                    child: Consumer(
-                      builder: (context, ref, child) {
-                        return TextButton(
-                          style: TextButton.styleFrom(
-                            visualDensity: VisualDensity.compact,
-                            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                            foregroundColor: Theme.of(
-                              context,
-                            ).colorScheme.primary,
-                          ),
-                          onPressed: () =>
-                              unawaited(showRateReviewSheet(context, ref)),
-                          child: Text(
-                            context.l10n.homeRateReview,
-                            style: AppTextStyles.labelSm().copyWith(
-                              fontWeight: FontWeight.w700,
-                              decoration: TextDecoration.underline,
-                            ),
-                          ),
-                        );
-                      },
-                    ),
-                  ),
+                  const TodayQueueStrip(),
+                  const SizedBox(height: AppSpacing.md),
+                  const _BrowseTopicsCta(),
+                  const SizedBox(height: AppSpacing.md),
+                  _PracticeSection(borderColor: borderColor),
+                  const PracticeSeasonNotice(),
                   const SizedBox(height: AppSpacing.sm),
                 ],
               ),
@@ -744,110 +640,6 @@ class _TrapPill extends StatelessWidget {
               ),
             ),
           ],
-        ),
-      ),
-    );
-  }
-}
-
-class _HeaderLoading extends HookConsumerWidget {
-  const _HeaderLoading({required this.borderColor});
-  final Color borderColor;
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final scheme = Theme.of(context).colorScheme;
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Container(
-          height: 120,
-          decoration: BoxDecoration(
-            color: scheme.surfaceContainerLow,
-            borderRadius: BorderRadius.circular(AppRadius.lg),
-            border: Border.all(color: borderColor, width: 0.5),
-          ),
-        ),
-        const SizedBox(height: AppSpacing.md),
-        Container(
-          height: 160,
-          decoration: BoxDecoration(
-            color: scheme.surfaceContainerLow,
-            borderRadius: BorderRadius.circular(AppRadius.lg),
-          ),
-        ),
-      ],
-    );
-  }
-}
-
-class _TrapPatternsCard extends StatelessWidget {
-  const _TrapPatternsCard({required this.trapCount, required this.borderColor});
-
-  final int trapCount;
-  final Color borderColor;
-
-  @override
-  Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    return Material(
-      color: AppColors.transparent,
-      child: InkWell(
-        onTap: () => context.push('/weak-areas/traps'),
-        borderRadius: BorderRadius.circular(AppRadius.lg),
-        child: Container(
-          padding: const EdgeInsets.all(AppSpacing.lg),
-          decoration: BoxDecoration(
-            color: scheme.surface,
-            borderRadius: BorderRadius.circular(AppRadius.lg),
-            border: Border.all(color: borderColor, width: 0.5),
-          ),
-          child: Row(
-            children: [
-              Container(
-                width: 40,
-                height: 40,
-                decoration: BoxDecoration(
-                  color: AppColors.warning.withValues(
-                    alpha: isDark ? 0.22 : 0.12,
-                  ),
-                  borderRadius: BorderRadius.circular(AppRadius.md),
-                  border: Border.all(
-                    color: AppColors.warning.withValues(alpha: 0.35),
-                    width: 0.5,
-                  ),
-                ),
-                alignment: Alignment.center,
-                child: const Icon(
-                  Icons.psychology_alt_rounded,
-                  size: 22,
-                  color: AppColors.warning,
-                ),
-              ),
-              const SizedBox(width: AppSpacing.md),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Trap Patterns',
-                      style: AppTextStyles.label().copyWith(
-                        color: scheme.onSurface,
-                      ),
-                    ),
-                    const SizedBox(height: AppSpacing.xs),
-                    Text(
-                      context.l10n.homeCaughtByTraps(trapCount),
-                      style: AppTextStyles.bodySm().copyWith(
-                        color: scheme.onSurfaceVariant,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Icon(Icons.chevron_right, color: scheme.onSurfaceVariant),
-            ],
-          ),
         ),
       ),
     );
@@ -1058,11 +850,32 @@ class _HomeDiscoveryCard extends StatelessWidget {
 
 // ── Practice Section (PYQ by Year above Subjects) ────────────────────────────
 
+class _BrowseTopicsCta extends StatelessWidget {
+  const _BrowseTopicsCta();
+
+  @override
+  Widget build(BuildContext context) {
+    final subject = SubjectConstants.ordered.first.slug;
+    return SizedBox(
+      width: double.infinity,
+      child: FilledButton.icon(
+        onPressed: () =>
+            context.push('/subject/${Uri.encodeComponent(subject)}/topics'),
+        icon: const Icon(Icons.search),
+        label: Text(context.l10n.practiceBrowseTopics),
+        style: FilledButton.styleFrom(
+          padding: const EdgeInsets.symmetric(vertical: AppSpacing.lg),
+          textStyle: AppTextStyles.label(),
+        ),
+      ),
+    );
+  }
+}
+
 class _PracticeSection extends StatelessWidget {
-  const _PracticeSection({required this.borderColor, this.secondary = false});
+  const _PracticeSection({required this.borderColor});
 
   final Color borderColor;
-  final bool secondary;
 
   static const _pyqYears = ['2025', '2024', '2023', '2022', '2021', '2020'];
 
@@ -1073,7 +886,7 @@ class _PracticeSection extends StatelessWidget {
       children: [
         _PyqYearCarousel(borderColor: borderColor, years: _pyqYears),
         const SizedBox(height: AppSpacing.md),
-        _SubjectGrid(borderColor: borderColor, secondary: secondary),
+        _SubjectGrid(borderColor: borderColor),
       ],
     );
   }
@@ -1082,9 +895,8 @@ class _PracticeSection extends StatelessWidget {
 // ── Subject Grid ────────────────────────────────────────────────────────────────
 
 class _SubjectGrid extends ConsumerWidget {
-  const _SubjectGrid({required this.borderColor, this.secondary = false});
+  const _SubjectGrid({required this.borderColor});
   final Color borderColor;
-  final bool secondary;
 
   static const _accentColors = <Color>[
     AppColors.info,
@@ -1102,55 +914,49 @@ class _SubjectGrid extends ConsumerWidget {
     final scheme = Theme.of(context).colorScheme;
     final subjectsAsync = ref.watch(subjectTestListProvider);
 
-    return Opacity(
-      opacity: secondary ? 0.88 : 1,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            secondary
-                ? context.l10n.homePickAnySubject
-                : context.l10n.homeSubjects,
-            style: AppTextStyles.caption().copyWith(
-              color: scheme.onSurfaceVariant,
-              letterSpacing: secondary ? 0.8 : 0.6,
-              fontWeight: secondary ? FontWeight.w600 : FontWeight.normal,
-            ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          context.l10n.homeSubjects,
+          style: AppTextStyles.caption().copyWith(
+            color: scheme.onSurfaceVariant,
+            letterSpacing: 0.6,
           ),
-          const SizedBox(height: AppSpacing.sm),
-          subjectsAsync.when(
-            loading: () => _SubjectGridSkeleton(borderColor: borderColor),
-            error: (_, _) => const SizedBox.shrink(),
-            data: (subjects) => LayoutBuilder(
-              builder: (context, constraints) {
-                final cols = AppBreakpoints.gridColumns(constraints.maxWidth);
-                return GridView.builder(
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: cols,
-                    mainAxisSpacing: AppSpacing.sm,
-                    crossAxisSpacing: AppSpacing.sm,
-                    childAspectRatio: 1.55,
-                  ),
-                  itemCount: subjects.length,
-                  itemBuilder: (context, i) {
-                    final s = subjects[i];
-                    final def = SubjectConstants.bySlug(s.subject);
-                    final accent = _accentColors[i % _accentColors.length];
-                    return _SubjectGridCard(
-                      info: s,
-                      icon: def?.materialIcon ?? Icons.school_outlined,
-                      accent: accent,
-                      borderColor: borderColor,
-                    );
-                  },
-                );
-              },
-            ),
+        ),
+        const SizedBox(height: AppSpacing.sm),
+        subjectsAsync.when(
+          loading: () => _SubjectGridSkeleton(borderColor: borderColor),
+          error: (_, _) => const SizedBox.shrink(),
+          data: (subjects) => LayoutBuilder(
+            builder: (context, constraints) {
+              final cols = AppBreakpoints.gridColumns(constraints.maxWidth);
+              return GridView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: cols,
+                  mainAxisSpacing: AppSpacing.sm,
+                  crossAxisSpacing: AppSpacing.sm,
+                  childAspectRatio: 1.55,
+                ),
+                itemCount: subjects.length,
+                itemBuilder: (context, i) {
+                  final s = subjects[i];
+                  final def = SubjectConstants.bySlug(s.subject);
+                  final accent = _accentColors[i % _accentColors.length];
+                  return _SubjectGridCard(
+                    info: s,
+                    icon: def?.materialIcon ?? Icons.school_outlined,
+                    accent: accent,
+                    borderColor: borderColor,
+                  );
+                },
+              );
+            },
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
@@ -1185,7 +991,7 @@ class _SubjectGridCard extends ConsumerWidget {
       child: InkWell(
         onTap: () {
           unawaited(maybeLogPostDemoExplore(ref, surface: 'subject'));
-          context.push('/subject/${Uri.encodeComponent(info.subject)}');
+          context.push('/subject/${Uri.encodeComponent(info.subject)}/tests');
         },
         borderRadius: BorderRadius.circular(AppRadius.lg),
         child: Ink(
@@ -1214,6 +1020,30 @@ class _SubjectGridCard extends ConsumerWidget {
                 ),
               ),
               const Spacer(),
+              Builder(
+                builder: (context) {
+                  final progress = ref
+                      .watch(practiceCatalogProvider)
+                      .asData
+                      ?.value
+                      .subjectProgress[info.subject];
+                  if (progress == null || progress.testsTotal == 0) {
+                    return const SizedBox.shrink();
+                  }
+                  return Padding(
+                    padding: const EdgeInsets.only(bottom: AppSpacing.xs),
+                    child: Text(
+                      context.l10n.practiceTestsProgress(
+                        progress.testsDone,
+                        progress.testsTotal,
+                      ),
+                      style: AppTextStyles.caption().copyWith(
+                        color: scheme.onSurfaceVariant,
+                      ),
+                    ),
+                  );
+                },
+              ),
               Text(
                 info.displayName,
                 maxLines: 2,
@@ -1274,182 +1104,6 @@ class _SubjectGridSkeleton extends HookWidget {
             );
           },
         ),
-      ),
-    );
-  }
-}
-
-// ────────────────────────────────────────────────────────────────────────────────
-
-// ── Quick Practice Section ────────────────────────────────────────────────────
-
-class _QuickPracticeSection extends HookConsumerWidget {
-  const _QuickPracticeSection({required this.borderColor});
-  final Color borderColor;
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final bookmarkCount = ref.watch(bookmarkCountStreamProvider);
-    final bmN = bookmarkCount.asData?.value ?? 0;
-
-    if (bmN < 3) return const SizedBox.shrink();
-
-    final scheme = Theme.of(context).colorScheme;
-
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          'QUICK PRACTICE',
-          style: AppTextStyles.caption().copyWith(
-            color: scheme.onSurfaceVariant,
-          ),
-        ),
-        const SizedBox(height: AppSpacing.sm),
-        _QuickPracticeCard(
-          title: 'Bookmarked Questions',
-          subtitle: context.l10n.homeQuestionsYouSaved,
-          count: bmN,
-          icon: Icons.bookmark_outline,
-          color: AppColors.info,
-          borderColor: borderColor,
-          subject: 'bookmarks',
-        ),
-      ],
-    );
-  }
-}
-
-class _QuickPracticeCard extends HookConsumerWidget {
-  const _QuickPracticeCard({
-    required this.title,
-    required this.subtitle,
-    required this.count,
-    required this.icon,
-    required this.color,
-    required this.borderColor,
-    required this.subject,
-  });
-
-  final String title;
-  final String subtitle;
-  final int count;
-  final IconData icon;
-  final Color color;
-  final Color borderColor;
-  final String subject;
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final scheme = Theme.of(context).colorScheme;
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    final loading = useState(false);
-    final capped = count.clamp(1, 10);
-    final btnLabel = count >= 10
-        ? context.l10n.homeStartNQuestionTest(10)
-        : context.l10n.homeStartNQuestionTest(capped);
-    final iconBg = isDark
-        ? color.withValues(alpha: 0.25)
-        : color.withValues(alpha: 0.12);
-
-    Future<void> startSession() async {
-      if (loading.value) return;
-      if (!context.mounted) return;
-
-      final mode = await showQuickPracticeModeSheet(context);
-      if (mode == null) return;
-      if (!context.mounted) return;
-
-      loading.value = true;
-      try {
-        final create = await ref.read(createSessionUseCaseProvider.future);
-        final lang = await ref.read(appLanguageProvider.future);
-        final isTutor = mode == 'tutor';
-        final id = await create.execute(
-          SessionConfig(
-            subject: subject,
-            mode: isTutor ? 'learning' : 'exam',
-            questionCount: 10,
-            isTimed: true,
-            timeLimitSecs: isTutor ? 60 : capped * kDebugSecondsPerQuestion,
-            language: lang,
-          ),
-        );
-        if (context.mounted) context.push('/test/$id');
-      } finally {
-        loading.value = false;
-      }
-    }
-
-    return Container(
-      padding: const EdgeInsets.all(AppSpacing.lg),
-      decoration: BoxDecoration(
-        color: scheme.surface,
-        borderRadius: BorderRadius.circular(AppRadius.lg),
-        border: Border.all(color: borderColor, width: 0.5),
-      ),
-      child: Row(
-        children: [
-          Container(
-            width: 40,
-            height: 40,
-            decoration: BoxDecoration(
-              color: iconBg,
-              borderRadius: BorderRadius.circular(AppRadius.sm),
-            ),
-            child: Icon(icon, color: color, size: 20),
-          ),
-          const SizedBox(width: AppSpacing.md),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: AppTextStyles.label().copyWith(
-                    color: scheme.onSurface,
-                  ),
-                ),
-                const SizedBox(height: AppSpacing.xs),
-                Text(
-                  subtitle,
-                  style: AppTextStyles.caption().copyWith(
-                    color: scheme.onSurfaceVariant,
-                  ),
-                ),
-                const SizedBox(height: AppSpacing.xs),
-                Text(
-                  context.l10n.homeCountAvailable(count),
-                  style: AppTextStyles.caption().copyWith(color: color),
-                ),
-              ],
-            ),
-          ),
-          const SizedBox(width: AppSpacing.sm),
-          loading.value
-              ? SizedBox(
-                  width: 20,
-                  height: 20,
-                  child: CircularProgressIndicator(
-                    strokeWidth: 2,
-                    color: color,
-                  ),
-                )
-              : FilledButton(
-                  onPressed: startSession,
-                  style: FilledButton.styleFrom(
-                    backgroundColor: color,
-                    foregroundColor: AppColors.onPrimary,
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: AppSpacing.md,
-                      vertical: AppSpacing.sm,
-                    ),
-                    minimumSize: Size.zero,
-                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                  ),
-                  child: Text(btnLabel, style: AppTextStyles.caption()),
-                ),
-        ],
       ),
     );
   }
