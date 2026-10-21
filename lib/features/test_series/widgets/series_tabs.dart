@@ -14,6 +14,7 @@ import '../domain/test_series_models.dart';
 import '../providers/test_series_providers.dart';
 import 'free_badge.dart';
 import 'series_dashboard_widgets.dart';
+import 'series_get_help_card.dart';
 import 'series_test_row.dart';
 import '../../../l10n/l10n.dart';
 import '../domain/series_rules.dart';
@@ -241,14 +242,12 @@ class SeriesOverviewTab extends ConsumerWidget {
     super.key,
     required this.bundle,
     required this.owned,
-    required this.isHindi,
     required this.stats,
     required this.tabController,
   });
 
   final SeriesBundle bundle;
   final bool owned;
-  final bool isHindi;
   final SeriesStats stats;
   final TabController tabController;
 
@@ -281,7 +280,6 @@ class SeriesOverviewTab extends ConsumerWidget {
           topics: revise ? core.needsRevision : core.safeAreas,
           revise: revise,
           showSubject: true,
-          isHindi: isHindi,
           onTopicTap: onTopic,
         ),
       );
@@ -417,13 +415,14 @@ class SeriesOverviewTab extends ConsumerWidget {
         for (final s in listed.take(3))
           SeriesSubjectRow(
             stat: s,
-            isHindi: isHindi,
             onTap: () => unawaited(
               context.push(
                 '/test-series/${bundle.info.id}/subject/${s.subjectId}',
               ),
             ),
           ),
+        const SizedBox(height: AppSpacing.xl),
+        const SeriesGetHelpCard(),
       ],
     );
   }
@@ -438,13 +437,11 @@ class SeriesFullLengthTab extends ConsumerWidget {
     super.key,
     required this.bundle,
     required this.owned,
-    required this.isHindi,
     required this.stats,
   });
 
   final SeriesBundle bundle;
   final bool owned;
-  final bool isHindi;
   final SeriesStats stats;
 
   @override
@@ -503,7 +500,6 @@ class SeriesFullLengthTab extends ConsumerWidget {
           useConfidence: flt.useConfidence,
           reviseTitle: context.l10n.tsReviseFromFlts,
           showSubject: true,
-          isHindi: isHindi,
           onTopicTap: (t) => openSeriesTopic(
             context: context,
             ref: ref,
@@ -530,13 +526,11 @@ class SeriesSubjectsTab extends ConsumerWidget {
     super.key,
     required this.bundle,
     required this.owned,
-    required this.isHindi,
     required this.stats,
   });
 
   final SeriesBundle bundle;
   final bool owned;
-  final bool isHindi;
   final SeriesStats stats;
 
   @override
@@ -577,7 +571,6 @@ class SeriesSubjectsTab extends ConsumerWidget {
         for (final s in rows)
           SeriesSubjectRow(
             stat: s,
-            isHindi: isHindi,
             onTap: () => unawaited(
               context.push(
                 '/test-series/${bundle.info.id}/subject/${s.subjectId}',

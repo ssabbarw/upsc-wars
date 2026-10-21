@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -7,6 +9,7 @@ import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/widgets/dismissible_modal_sheet.dart';
+import '../data/daily_ca_share.dart';
 import '../domain/daily_ca_schedule.dart';
 import '../domain/daily_ca_source_links.dart';
 import 'daily_ca_source_link_row.dart';
@@ -231,6 +234,23 @@ class _DailyCaDaySheet extends StatelessWidget {
                         ),
                         child: Text(
                           'Paper ranks',
+                          style: AppTextStyles.label().copyWith(
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                  if (questionsReady) ...[
+                    const SizedBox(height: AppSpacing.sm),
+                    SizedBox(
+                      height: 44,
+                      child: TextButton.icon(
+                        onPressed: () =>
+                            unawaited(shareDailyCaPaper(isoDate: isoDate)),
+                        icon: const Icon(Icons.ios_share_rounded, size: 18),
+                        label: Text(
+                          'Share link',
                           style: AppTextStyles.label().copyWith(
                             fontWeight: FontWeight.w700,
                           ),

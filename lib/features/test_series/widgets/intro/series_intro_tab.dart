@@ -10,6 +10,7 @@ import '../../../../core/theme/app_text_styles.dart';
 import '../../domain/series_stats.dart';
 import '../../domain/test_series_models.dart';
 import '../../providers/test_series_providers.dart';
+import '../series_get_help_card.dart';
 import '../series_paywall_sheet.dart';
 import 'series_insight_example_sheet.dart';
 import 'series_intro_sections.dart';
@@ -89,6 +90,8 @@ class SeriesIntroTab extends ConsumerWidget {
             bundle: bundle,
             onTryFree: () => tabController.animateTo(SeriesBrowseTab.pyqAndCa),
           ),
+          const SizedBox(height: AppSpacing.xxl),
+          const SeriesGetHelpCard(),
         ],
       ),
     );

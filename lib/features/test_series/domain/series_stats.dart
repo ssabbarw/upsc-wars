@@ -31,18 +31,19 @@ abstract final class SeriesSubjects {
     currentAffairs,
   ];
 
-  static String label(String id, {bool hindi = false}) {
+  /// Subject names stay English in every app language.
+  static String label(String id) {
     switch (id) {
       case scienceTech:
-        return hindi ? 'विज्ञान और प्रौद्योगिकी' : 'Science & Technology';
+        return 'Science & Technology';
       case currentAffairs:
-        return hindi ? 'समसामयिकी' : 'Current Affairs';
+        return 'Current Affairs';
       case internationalRelations:
-        return hindi ? 'अंतर्राष्ट्रीय संबंध' : 'International Relations';
+        return 'International Relations';
       case other:
-        return hindi ? 'अन्य / मिश्रित' : 'Other / mixed';
+        return 'Other / mixed';
       default:
-        return SeriesBuckets.label(id, hindi: hindi);
+        return SeriesBuckets.label(id);
     }
   }
 

@@ -86,6 +86,7 @@ import '../../features/results/screens/mistake_review_screen.dart';
 import '../../features/push_spot_test/push_spot_test_launch_params.dart';
 import '../../features/push_spot_test/screens/push_spot_results_screen.dart';
 import '../../features/push_spot_test/screens/push_spot_test_launch_screen.dart';
+import '../../features/daily_ca/daily_ca_share_constants.dart';
 import '../../features/fomo_pulse/data/fomo_pulse_incoming_share.dart';
 import '../../features/fomo_pulse/fomo_pulse_constants.dart';
 import '../../features/fomo_pulse/screens/fomo_pulse_article_screen.dart';
@@ -452,6 +453,21 @@ GoRouter appRouter(Ref ref) {
             );
           }
         }
+
+        if ((host == 'upscwars.in' || host == 'www.upscwars.in') &&
+            segs.length == 2 &&
+            DailyCaShareConstants.isPublicPathSegment(segs[0]) &&
+            DailyCaShareConstants.isShareableDateSegment(segs[1])) {
+          final target = DailyCaShareConstants.dateLocation(
+            segs[1],
+            source: DailyCaShareConstants.entryShare,
+            start: true,
+          );
+          if (state.matchedLocation !=
+              Uri.parse(target).path) {
+            return target;
+          }
+        }
       }
 
       if (u.scheme == 'upscwars' && u.host.toLowerCase() == 'pulse-article') {
@@ -478,6 +494,19 @@ GoRouter appRouter(Ref ref) {
             source: FomoPulseConstants.entryShare,
           );
         }
+      }
+
+      if (u.scheme == 'upscwars' &&
+          DailyCaShareConstants.isPublicPathSegment(u.host) &&
+          u.pathSegments.isNotEmpty &&
+          DailyCaShareConstants.isShareableDateSegment(
+            u.pathSegments.first,
+          )) {
+        return DailyCaShareConstants.dateLocation(
+          u.pathSegments.first,
+          source: DailyCaShareConstants.entryShare,
+          start: true,
+        );
       }
 
       if (!communityTabVisibleForRedirect() &&
@@ -904,6 +933,27 @@ GoRouter appRouter(Ref ref) {
         name: 'daily_ca_leaderboard',
         builder: (context, state) =>
             DailyCaLeaderboardScreen(dateId: state.pathParameters['dateId']!),
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/daily-ca/:dateId',
+        name: 'daily_ca_date',
+        redirect: (context, state) {
+          final dateId = state.pathParameters['dateId']?.trim() ?? '';
+          if (!DailyCaShareConstants.isShareableDateSegment(dateId)) {
+            return DailyCaShareConstants.hubLocation;
+          }
+          return null;
+        },
+        builder: (context, state) {
+          final dateId = state.pathParameters['dateId']!;
+          final q = state.uri.queryParameters;
+          final fromShare = q['src'] == DailyCaShareConstants.entryShare;
+          return DailyCaScreen(
+            autoStartPaper: fromShare || q['start'] == '1',
+            focusDateId: dateId,
+          );
+        },
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,

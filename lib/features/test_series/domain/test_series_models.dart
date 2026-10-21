@@ -30,7 +30,8 @@ abstract final class SeriesBuckets {
     historyCulture,
   ];
 
-  static const _en = {
+  /// Subject names stay English in every app language.
+  static const _labels = {
     polity: 'Polity',
     economy: 'Economy',
     environment: 'Environment',
@@ -40,18 +41,7 @@ abstract final class SeriesBuckets {
     fullSyllabus: 'Full Syllabus',
   };
 
-  static const _hi = {
-    polity: 'राजव्यवस्था',
-    economy: 'अर्थव्यवस्था',
-    environment: 'पर्यावरण',
-    geography: 'भूगोल',
-    modernHistory: 'आधुनिक इतिहास',
-    historyCulture: 'प्राचीन, मध्यकालीन इतिहास और कला-संस्कृति',
-    fullSyllabus: 'पूर्ण पाठ्यक्रम',
-  };
-
-  static String label(String bucket, {bool hindi = false}) =>
-      (hindi ? _hi[bucket] : _en[bucket]) ?? _en[bucket] ?? bucket;
+  static String label(String bucket) => _labels[bucket] ?? bucket;
 }
 
 /// One question slot of a series test.

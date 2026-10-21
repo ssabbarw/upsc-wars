@@ -28,6 +28,14 @@
       {
         "source": "/share/**",
         "destination": "/share/index.html"
+      },
+      {
+        "source": "/daily-ca",
+        "destination": "/daily-ca/index.html"
+      },
+      {
+        "source": "/daily-ca/**",
+        "destination": "/daily-ca/index.html"
       }
     ]
   }

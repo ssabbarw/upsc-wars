@@ -30,6 +30,7 @@ Until this succeeds, the web player’s Firestore REST `GET` will return **403**
 | `/.well-known/apple-app-site-association` | iOS Universal Links (`Content-Type: application/json`, no redirects) |
 | `/.well-known/assetlinks.json` | Android App Links |
 | `/share/...` | Web player (`share/index.html` or SPA rewrite so path is `/share/test/{shareId}`) |
+| `/daily-ca/{YYYY-MM-DD}` or `/daily-ca/today` | Daily Current Affairs web quiz (app if installed) |
 
 ## Test in the browser **without** upscwars.in hosting (Mac)
 
@@ -63,12 +64,31 @@ Trailing slash is fine; the page reads `/share/test/{uuid}` from the path.
 
 5. Answer a question, set confidence, reload the page — progress should remain (**localStorage** key `upscwars_share_v1_{shareId}`).
 
+## Daily Current Affairs (Telegram / Universal Links)
+
+**Evergreen link for groups:** `https://upscwars.in/daily-ca/today`
+
+- App installed → opens today's paper in the app  
+- Browser → simple quiz → score (+2/−⅔) → explanations  
+- Dated: `https://upscwars.in/daily-ca/2026-10-17`  
+- Reads public Firestore `daily_mcqs/{YYYY}/{MM}/{DD}` (same rules as share sessions)
+
+Local browser test:
+
+```bash
+cd deploy/upscwars_deep_link/public
+mkdir -p daily-ca/today
+cp daily-ca/index.html daily-ca/today/index.html
+python3 -m http.server 8765
+# open http://localhost:8765/daily-ca/today/
+```
+
 ## Before production
 
 1. **assetlinks.json** — Set real SHA-256 cert fingerprint(s).
 2. **apple-app-site-association** — Confirm `appID` is `TEAM_ID.bundleId`.
-3. **Netlify** — Use `netlify.toml` so `/share/*` serves the player page if you use a SPA layout.
+3. **Netlify** — Use `netlify.toml` so `/share/*` and `/daily-ca/*` serve the player pages if you use a SPA layout.
 
 ## QA on devices
 
-Universal / App Links for **`https://upscwars.in/share/*`** need real **Android + iOS** hardware after DNS + `.well-known` are live.
+Universal / App Links for **`https://upscwars.in/share/*`** and **`https://upscwars.in/daily-ca/*`** need real **Android + iOS** hardware after DNS + `.well-known` are live.

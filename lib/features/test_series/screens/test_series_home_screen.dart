@@ -119,7 +119,6 @@ class TestSeriesHomeScreen extends HookConsumerWidget {
                 SeriesOverviewTab(
                   bundle: bundle,
                   owned: owned,
-                  isHindi: isHindi,
                   stats: stats,
                   tabController: tabController,
                 )
@@ -133,13 +132,11 @@ class TestSeriesHomeScreen extends HookConsumerWidget {
               SeriesFullLengthTab(
                 bundle: bundle,
                 owned: owned,
-                isHindi: isHindi,
                 stats: stats,
               ),
               SeriesSubjectsTab(
                 bundle: bundle,
                 owned: owned,
-                isHindi: isHindi,
                 stats: stats,
               ),
               SeriesPyqCaTab(bundle: bundle, owned: owned, stats: stats),

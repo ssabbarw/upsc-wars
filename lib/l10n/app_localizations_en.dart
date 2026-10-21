@@ -6050,4 +6050,17 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get tsTryFreePyq => 'Try the free PYQ tests';
+
+  @override
+  String get tsGetHelp => 'Need help?';
+
+  @override
+  String get tsGetHelpBody =>
+      'Questions about unlock, payment, or a test? Reach out — we reply.';
+
+  @override
+  String get tsGetHelpTelegram => 'Telegram';
+
+  @override
+  String get tsGetHelpEmail => 'Email';
 }

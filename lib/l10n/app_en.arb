@@ -4136,6 +4136,10 @@
   "tsWrapNoExpiry": "No subscription, no expiry. Tests added later are included.",
   "tsNotSure": "Not sure yet? Try the free tests first.",
   "tsTryFreePyq": "Try the free PYQ tests",
+  "tsGetHelp": "Need help?",
+  "tsGetHelpBody": "Questions about unlock, payment, or a test? Reach out — we reply.",
+  "tsGetHelpTelegram": "Telegram",
+  "tsGetHelpEmail": "Email",
   "@tsNoSafe": {
     "placeholders": {
       "pct": {

@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="data:," />
+  <title>Upsc Wars — Daily Current Affairs</title>
+  <style>
+    :root { color-scheme: dark; --bg: #0f172a; --card: #1e293b; --accent: #2563eb; --muted: #94a3b8; --ok: #22c55e; --bad: #ef4444; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 0; background: var(--bg); color: #e2e8f0; min-height: 100vh; }
+    .banner { background: #1d4ed8; color: #fff; padding: 12px 16px; font-weight: 600; text-align: center; font-size: 14px; }
+    .banner a { color: #fff; text-decoration: underline; }
+    main { max-width: 720px; margin: 0 auto; padding: 20px 16px 48px; }
+    .card { background: var(--card); border-radius: 12px; padding: 16px; margin-bottom: 16px; border: 1px solid #334155; }
+    h1 { font-size: 1.15rem; margin: 0 0 8px; }
+    h2 { font-size: 1rem; margin: 0 0 8px; }
+    .meta { color: var(--muted); font-size: 13px; margin-bottom: 12px; }
+    .stem { white-space: pre-wrap; line-height: 1.5; margin-bottom: 14px; font-size: 15px; }
+    .opts { display: flex; flex-direction: column; gap: 8px; }
+    button.opt { text-align: left; padding: 12px 14px; border-radius: 10px; border: 1px solid #475569; background: #0f172a; color: #e2e8f0; font-size: 14px; cursor: pointer; }
+    button.opt:hover:not(:disabled) { border-color: var(--accent); }
+    button.opt:disabled { opacity: 0.85; cursor: default; }
+    button.opt.picked { border-color: var(--accent); }
+    button.opt.right { border-color: var(--ok); background: rgba(34,197,94,0.12); }
+    button.opt.wrong { border-color: var(--bad); background: rgba(239,68,68,0.12); }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    button.pill { padding: 10px 14px; border-radius: 999px; border: none; background: var(--accent); color: #fff; font-weight: 600; cursor: pointer; font-size: 13px; }
+    button.pill.secondary { background: #334155; }
+    .explain { margin-top: 14px; padding: 12px; background: #0f172a; border-radius: 10px; font-size: 14px; line-height: 1.5; color: #cbd5e1; white-space: pre-wrap; }
+    .err { color: var(--bad); font-size: 14px; }
+    .prog { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+    .score { font-size: 1.4rem; font-weight: 800; margin: 8px 0; }
+    .store-note { font-size: 11px; color: var(--muted); margin-top: 20px; }
+    .analysis-item { border-top: 1px solid #334155; padding-top: 12px; margin-top: 12px; }
+  </style>
+</head>
+<body>
+  <div class="banner">Open in the <a id="app-link" href="https://upscwars.in">Upsc Wars app</a> for ranks and revise. Progress here is saved in this browser only.</div>
+  <main id="app">
+    <p class="err" id="status">Loading…</p>
+  </main>
+  <script>
+(function () {
+  var CONFIG = {
+    projectId: 'questionmaker-a821f',
+    apiKey: 'AIzaSyDFs4KrEfmvHWlBWoJLVKbt6PGAof7RKpM',
+  };
+  var POINTS_CORRECT = 2;
+  var POINTS_WRONG = 2 / 3;
+
+  function unwrapValue(v) {
+    if (!v || typeof v !== 'object') return null;
+    if ('stringValue' in v) return v.stringValue;
+    if ('booleanValue' in v) return v.booleanValue;
+    if ('integerValue' in v) return parseInt(v.integerValue, 10);
+    if ('doubleValue' in v) return v.doubleValue;
+    if ('nullValue' in v) return null;
+    if ('arrayValue' in v) {
+      return (v.arrayValue.values || []).map(unwrapValue);
+    }
+    if ('mapValue' in v) {
+      var out = {};
+      var f = v.mapValue.fields || {};
+      Object.keys(f).forEach(function (k) { out[k] = unwrapValue(f[k]); });
+      return out;
+    }
+    return null;
+  }
+
+  function pad2(n) { return String(n).padStart(2, '0'); }
+
+  function formatIso(d) {
+    return d.getFullYear() + '-' + pad2(d.getMonth() + 1) + '-' + pad2(d.getDate());
+  }
+
+  function nowIst() {
+    var utc = Date.now();
+    var shifted = new Date(utc + (5 * 60 + 30) * 60 * 1000);
+    return new Date(
+      shifted.getUTCFullYear(),
+      shifted.getUTCMonth(),
+      shifted.getUTCDate(),
+      shifted.getUTCHours(),
+      shifted.getUTCMinutes(),
+      shifted.getUTCSeconds()
+    );
+  }
+
+  function dateOnly(d) {
+    return new Date(d.getFullYear(), d.getMonth(), d.getDate());
+  }
+
+  function isSunday(d) { return d.getDay() === 0; }
+  function isTestDay(d) { return !isSunday(d); }
+
+  function addDays(d, n) {
+    var x = dateOnly(d);
+    x.setDate(x.getDate() + n);
+    return x;
+  }
+
+  function expectedPaperContentDate(now) {
+    var cursor = addDays(now, -1);
+    return isTestDay(cursor) ? cursor : addDays(cursor, -1);
+  }
+
+  function opensAtForDate(contentDate) {
+    var next = addDays(contentDate, 1);
+    return new Date(next.getFullYear(), next.getMonth(), next.getDate(), 6, 0, 0);
+  }
+
+  function isPublishedForDate(contentDate, now) {
+    if (!isTestDay(contentDate)) return false;
+    return now.getTime() >= opensAtForDate(contentDate).getTime();
+  }
+
+  function paperQuizContentDate(now) {
+    var expected = expectedPaperContentDate(now);
+    return isPublishedForDate(expected, now) ? expected : null;
+  }
+
+  function parsePath() {
+    var p = window.location.pathname.replace(/\/+$/, '').split('/').filter(Boolean);
+    if (p.length < 1 || p[0].toLowerCase() !== 'daily-ca') return null;
+    if (p.length === 1) return { segment: 'today' };
+    if (p.length === 2) return { segment: p[1].toLowerCase() };
+    return null;
+  }
+
+  function resolveDateId(segment) {
+    var now = nowIst();
+    if (segment === 'today') {
+      var live = paperQuizContentDate(now);
+      if (!live) {
+        throw new Error(
+          "Today's paper opens at 6:00 AM IST. Check back after that, or open a specific date link."
+        );
+      }
+      return formatIso(live);
+    }
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(segment)) {
+      throw new Error('Invalid date in link.');
+    }
+    return segment;
+  }
+
+  function storageKey(dateId) {
+    return 'upscwars_daily_ca_v1_' + dateId;
+  }
+
+  function loadProgress(dateId) {
+    try {
+      var raw = localStorage.getItem(storageKey(dateId));
+      if (!raw) return { cursor: 0, attempts: {}, phase: 'quiz' };
+      var j = JSON.parse(raw);
+      return {
+        cursor: typeof j.cursor === 'number' ? j.cursor : 0,
+        attempts: j.attempts && typeof j.attempts === 'object' ? j.attempts : {},
+        phase: j.phase === 'results' ? 'results' : 'quiz',
+      };
+    } catch (e) {
+      return { cursor: 0, attempts: {}, phase: 'quiz' };
+    }
+  }
+
+  function saveProgress() {
+    try {
+      localStorage.setItem(storageKey(state.dateId), JSON.stringify({
+        cursor: state.cursor,
+        attempts: state.attempts,
+        phase: state.phase,
+      }));
+    } catch (e) { /* quota */ }
+  }
+
+  function fetchPaperDoc(dateId) {
+    var parts = dateId.split('-');
+    var y = parts[0];
+    var m = pad2(parseInt(parts[1], 10));
+    var d = pad2(parseInt(parts[2], 10));
+    var url = 'https://firestore.googleapis.com/v1/projects/' + CONFIG.projectId +
+      '/databases/(default)/documents/daily_mcqs/' +
+      encodeURIComponent(y) + '/' + encodeURIComponent(m) + '/' + encodeURIComponent(d) +
+      '?key=' + encodeURIComponent(CONFIG.apiKey);
+    return fetch(url).then(function (r) {
+      if (r.status === 404) {
+        throw new Error('No Daily Current Affairs paper for ' + dateId + ' yet.');
+      }
+      if (r.status === 403) {
+        throw new Error('Could not read paper (permission denied).');
+      }
+      if (!r.ok) {
+        throw new Error('Could not load paper (HTTP ' + r.status + ').');
+      }
+      return r.json();
+    });
+  }
+
+  function coerceQuestionMaps(raw) {
+    if (Array.isArray(raw)) {
+      return raw.filter(function (x) { return x && typeof x === 'object'; });
+    }
+    if (raw && typeof raw === 'object') {
+      return Object.keys(raw)
+        .sort(function (a, b) { return Number(a) - Number(b); })
+        .map(function (k) { return raw[k]; })
+        .filter(function (x) { return x && typeof x === 'object'; });
+    }
+    return [];
+  }
+
+  function parseDisplayText(raw) {
+    var text = (raw || '').toString();
+    var re = /^\s*[\(\[]([a-dA-D])[\)\]]\s+/gm;
+    var matches = [];
+    var m;
+    while ((m = re.exec(text)) !== null) {
+      matches.push({ letter: m[1].toLowerCase(), start: m.index, end: m.index + m[0].length });
+    }
+    if (matches.length < 4) {
+      return { stem: text.trim(), a: '', b: '', c: '', d: '' };
+    }
+    var stem = text.substring(0, matches[0].start).trim();
+    var ordered = {};
+    for (var i = 0; i < matches.length; i++) {
+      var key = matches[i].letter;
+      var valueStart = matches[i].end;
+      var valueEnd = i + 1 < matches.length ? matches[i + 1].start : text.length;
+      if (!ordered[key]) ordered[key] = text.substring(valueStart, valueEnd).trim();
+    }
+    return {
+      stem: stem || text.trim(),
+      a: ordered.a || '',
+      b: ordered.b || '',
+      c: ordered.c || '',
+      d: ordered.d || '',
+    };
+  }
+
+  function pickOption(en, letter) {
+    if (!en) return '';
+    var key = 'option_' + letter;
+    if (en[key]) return String(en[key]);
+    var camel = 'option' + letter.toUpperCase();
+    if (en[camel]) return String(en[camel]);
+    if (en.options && typeof en.options === 'object') {
+      var o = en.options[letter] || en.options[letter.toUpperCase()];
+      if (o) return String(o);
+    }
+    return '';
+  }
+
+  function flattenQuestion(q, index) {
+    var shared = (q.shared && typeof q.shared === 'object') ? q.shared : {};
+    var en = (q.en && typeof q.en === 'object') ? q.en : {};
+    var display = (en.display_text || en.displayText || '').toString();
+    var parsed = parseDisplayText(display);
+    var a = pickOption(en, 'a') || parsed.a;
+    var b = pickOption(en, 'b') || parsed.b;
+    var c = pickOption(en, 'c') || parsed.c;
+    var d = pickOption(en, 'd') || parsed.d;
+    var stem = (a && b && c && d) ? (parsed.stem || display.trim()) : display.trim();
+    return {
+      uuid: String(q.uuid || ('q' + (index + 1))),
+      displayText: stem,
+      optionA: a,
+      optionB: b,
+      optionC: c,
+      optionD: d,
+      correctOption: String(shared.correct_option || shared.correctOption || 'a').toLowerCase().trim(),
+      finalExplanation: String(en.final_explanation || en.finalExplanation || ''),
+      trapExplanation: String(en.upsc_trap_explanation || en.upscTrapExplanation || ''),
+    };
+  }
+
+  function docToQuestions(doc) {
+    var fields = doc.fields || {};
+    var raw = unwrapValue(fields.questions);
+    var maps = coerceQuestionMaps(raw);
+    if (!maps.length) throw new Error('This paper has no questions.');
+    return maps.map(flattenQuestion);
+  }
+
+  var state = {
+    dateId: '',
+    questions: [],
+    cursor: 0,
+    attempts: {},
+    phase: 'quiz',
+  };
+
+  function el(tag, attrs, children) {
+    var n = document.createElement(tag);
+    if (attrs) Object.keys(attrs).forEach(function (k) {
+      if (k === 'class') n.className = attrs[k];
+      else if (k === 'text') n.textContent = attrs[k];
+      else if (k === 'html') n.innerHTML = attrs[k];
+      else n.setAttribute(k, attrs[k]);
+    });
+    (children || []).forEach(function (c) { n.appendChild(c); });
+    return n;
+  }
+
+  function scoreBreakdown() {
+    var correct = 0, wrong = 0, unanswered = 0;
+    state.questions.forEach(function (q) {
+      var att = state.attempts[q.uuid];
+      if (!att || !att.selectedOption) { unanswered++; return; }
+      if (att.correct) correct++; else wrong++;
+    });
+    var points = (correct * POINTS_CORRECT) - (wrong * POINTS_WRONG);
+    return {
+      correct: correct,
+      wrong: wrong,
+      unanswered: unanswered,
+      points: Math.round(points * 100) / 100,
+      max: state.questions.length * POINTS_CORRECT,
+    };
+  }
+
+  function allAnswered() {
+    return state.questions.every(function (q) {
+      return !!(state.attempts[q.uuid] && state.attempts[q.uuid].selectedOption);
+    });
+  }
+
+  function renderResults() {
+    var app = document.getElementById('app');
+    app.innerHTML = '';
+    var s = scoreBreakdown();
+    var card = el('div', { class: 'card' });
+    card.appendChild(el('h1', { text: 'Result' }));
+    card.appendChild(el('div', { class: 'meta', text: 'Daily Current Affairs · ' + state.dateId }));
+    card.appendChild(el('div', { class: 'score', text: s.points + ' / ' + s.max }));
+    card.appendChild(el('div', {
+      class: 'meta',
+      text: s.correct + ' correct · ' + s.wrong + ' wrong · ' + s.unanswered + ' unanswered (+2 / −⅔)',
+    }));
+    var nav = el('div', { class: 'row' });
+    var review = el('button', { class: 'pill', type: 'button', text: 'Review answers' });
+    review.onclick = function () {
+      state.phase = 'quiz';
+      state.cursor = 0;
+      saveProgress();
+      render();
+    };
+    nav.appendChild(review);
+    var reset = el('button', { class: 'pill secondary', type: 'button', text: 'Retake' });
+    reset.onclick = function () {
+      state.attempts = {};
+      state.cursor = 0;
+      state.phase = 'quiz';
+      saveProgress();
+      render();
+    };
+    nav.appendChild(reset);
+    card.appendChild(nav);
+    app.appendChild(card);
+
+    var analysis = el('div', { class: 'card' });
+    analysis.appendChild(el('h2', { text: 'Analysis & explanations' }));
+    state.questions.forEach(function (q, i) {
+      var att = state.attempts[q.uuid] || {};
+      var item = el('div', { class: 'analysis-item' });
+      item.appendChild(el('div', {
+        class: 'prog',
+        text: 'Q' + (i + 1) + ' · ' + (att.correct ? 'Correct' : (att.selectedOption ? 'Incorrect' : 'Unanswered')),
+      }));
+      item.appendChild(el('div', { class: 'stem', text: q.displayText }));
+      item.appendChild(el('div', {
+        class: 'meta',
+        text: 'Answer: ' + (q.correctOption || '').toUpperCase() +
+          (att.selectedOption ? ' · You chose ' + att.selectedOption.toUpperCase() : ''),
+      }));
+      if (q.finalExplanation) {
+        item.appendChild(el('div', { class: 'explain', text: q.finalExplanation }));
+      }
+      if (q.trapExplanation) {
+        item.appendChild(el('div', { class: 'explain', text: 'Trap: ' + q.trapExplanation }));
+      }
+      analysis.appendChild(item);
+    });
+    app.appendChild(analysis);
+    app.appendChild(el('p', { class: 'store-note', text: 'Progress key: ' + storageKey(state.dateId) }));
+  }
+
+  function render() {
+    if (state.phase === 'results') {
+      renderResults();
+      return;
+    }
+    var app = document.getElementById('app');
+    app.innerHTML = '';
+    var q = state.questions[state.cursor];
+    if (!q) {
+      app.appendChild(el('p', { class: 'err', text: 'No question.' }));
+      return;
+    }
+    var att = state.attempts[q.uuid] || null;
+    var revealed = !!(att && att.selectedOption);
+
+    var card = el('div', { class: 'card' });
+    card.appendChild(el('div', {
+      class: 'prog',
+      text: 'Question ' + (state.cursor + 1) + ' of ' + state.questions.length,
+    }));
+    card.appendChild(el('h1', { text: 'Daily Current Affairs' }));
+    card.appendChild(el('div', { class: 'meta', text: state.dateId }));
+    card.appendChild(el('div', { class: 'stem', text: q.displayText || '' }));
+
+    var opts = el('div', { class: 'opts' });
+    ['a', 'b', 'c', 'd'].forEach(function (letter) {
+      var labelMap = { a: q.optionA, b: q.optionB, c: q.optionC, d: q.optionD };
+      var label = labelMap[letter] || '';
+      var btn = el('button', { class: 'opt', type: 'button' });
+      btn.textContent = letter.toUpperCase() + ') ' + label;
+      if (revealed) {
+        btn.disabled = true;
+        if (letter === q.correctOption) btn.classList.add('right');
+        if (att && att.selectedOption === letter && !att.correct) btn.classList.add('wrong');
+        if (att && att.selectedOption === letter) btn.classList.add('picked');
+      } else {
+        btn.onclick = function () {
+          var correct = (q.correctOption || '') === letter;
+          state.attempts[q.uuid] = {
+            selectedOption: letter,
+            correct: correct,
+            at: Date.now(),
+          };
+          saveProgress();
+          render();
+        };
+      }
+      opts.appendChild(btn);
+    });
+    card.appendChild(opts);
+
+    if (revealed) {
+      card.appendChild(el('p', {
+        class: 'meta',
+        text: (att.correct ? 'Correct' : 'Incorrect') +
+          ' · You chose ' + att.selectedOption.toUpperCase() +
+          ' · Answer ' + (q.correctOption || '').toUpperCase(),
+      }));
+      if (q.finalExplanation) {
+        card.appendChild(el('div', { class: 'explain', text: q.finalExplanation }));
+      }
+      if (q.trapExplanation) {
+        card.appendChild(el('div', { class: 'explain', text: 'Trap: ' + q.trapExplanation }));
+      }
+      var nav = el('div', { class: 'row' });
+      if (state.cursor > 0) {
+        var prev = el('button', { class: 'pill secondary', type: 'button', text: 'Previous' });
+        prev.onclick = function () {
+          state.cursor--;
+          saveProgress();
+          render();
+        };
+        nav.appendChild(prev);
+      }
+      if (state.cursor < state.questions.length - 1) {
+        var next = el('button', { class: 'pill', type: 'button', text: 'Next' });
+        next.onclick = function () {
+          state.cursor++;
+          saveProgress();
+          render();
+        };
+        nav.appendChild(next);
+      } else {
+        var fin = el('button', { class: 'pill', type: 'button', text: allAnswered() ? 'See results' : 'Finish' });
+        fin.onclick = function () {
+          state.phase = 'results';
+          saveProgress();
+          render();
+        };
+        nav.appendChild(fin);
+      }
+      card.appendChild(nav);
+    }
+
+    app.appendChild(card);
+    app.appendChild(el('p', { class: 'store-note', text: 'Progress key: ' + storageKey(state.dateId) }));
+  }
+
+  function run() {
+    var path = parsePath();
+    var st = document.getElementById('status');
+    if (!path) {
+      st.textContent = 'Invalid link.';
+      return;
+    }
+    try {
+      state.dateId = resolveDateId(path.segment);
+    } catch (e) {
+      st.className = 'err';
+      st.textContent = e.message || String(e);
+      return;
+    }
+
+    var appLink = document.getElementById('app-link');
+    if (appLink) {
+      appLink.href = 'https://upscwars.in/daily-ca/' + encodeURIComponent(state.dateId);
+    }
+
+    var prog = loadProgress(state.dateId);
+    state.cursor = Math.min(prog.cursor, 999);
+    state.attempts = prog.attempts;
+    state.phase = prog.phase === 'results' ? 'results' : 'quiz';
+
+    fetchPaperDoc(state.dateId)
+      .then(docToQuestions)
+      .then(function (questions) {
+        state.questions = questions;
+        if (state.cursor >= state.questions.length) state.cursor = 0;
+        st.remove();
+        render();
+      })
+      .catch(function (e) {
+        st.className = 'err';
+        st.textContent = e.message || String(e);
+      });
+  }
+
+  run();
+})();
+  </script>
+</body>
+</html>

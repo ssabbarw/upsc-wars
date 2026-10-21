@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../core/providers/catalog_providers.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
@@ -27,13 +26,12 @@ class SeriesSubjectScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final isHindi = ref.watch(appLanguageProvider).asData?.value == 'hi';
     final owned =
         ref.watch(ownedSeriesIdsProvider).asData?.value.contains(seriesId) ??
         false;
     final bundleAsync = ref.watch(seriesBundleProvider(seriesId));
     final statsAsync = ref.watch(seriesStatsProvider(seriesId));
-    final title = SeriesSubjects.label(subjectId, hindi: isHindi);
+    final title = SeriesSubjects.label(subjectId);
 
     return Scaffold(
       appBar: AppBar(title: Text(title)),
@@ -60,14 +58,13 @@ class SeriesSubjectScreen extends ConsumerWidget {
               physics: const AlwaysScrollableScrollPhysics(),
               padding: const EdgeInsets.all(AppSpacing.lg),
               children: [
-                _SubjectHeader(subject: subject, isHindi: isHindi),
+                _SubjectHeader(subject: subject),
                 const SizedBox(height: AppSpacing.lg),
                 SeriesTopicsPanel(
                   needsRevision: subject.needsRevision,
                   safeAreas: subject.safeAreas,
                   useConfidence: stats.core.useConfidence,
                   reviseTitle: context.l10n.tsTopicsToRevise,
-                  isHindi: isHindi,
                   onTopicTap: (t) => openSeriesTopic(
                     context: context,
                     ref: ref,
@@ -104,10 +101,9 @@ class SeriesSubjectScreen extends ConsumerWidget {
 }
 
 class _SubjectHeader extends StatelessWidget {
-  const _SubjectHeader({required this.subject, required this.isHindi});
+  const _SubjectHeader({required this.subject});
 
   final SubjectStat subject;
-  final bool isHindi;
 
   @override
   Widget build(BuildContext context) {
@@ -155,7 +151,7 @@ class _SubjectHeader extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  SeriesSubjects.label(subject.subjectId, hindi: isHindi),
+                  SeriesSubjects.label(subject.subjectId),
                   style: AppTextStyles.h2(),
                 ),
                 const SizedBox(height: 2),

@@ -3,3 +3,13 @@
   from = "/share/*"
   to = "/share/index.html"
   status = 200
+
+[[redirects]]
+  from = "/daily-ca"
+  to = "/daily-ca/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/daily-ca/*"
+  to = "/daily-ca/index.html"
+  status = 200

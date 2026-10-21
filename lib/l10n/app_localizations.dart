@@ -9973,6 +9973,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Try the free PYQ tests'**
   String get tsTryFreePyq;
+
+  /// No description provided for @tsGetHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'Need help?'**
+  String get tsGetHelp;
+
+  /// No description provided for @tsGetHelpBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Questions about unlock, payment, or a test? Reach out — we reply.'**
+  String get tsGetHelpBody;
+
+  /// No description provided for @tsGetHelpTelegram.
+  ///
+  /// In en, this message translates to:
+  /// **'Telegram'**
+  String get tsGetHelpTelegram;
+
+  /// No description provided for @tsGetHelpEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Email'**
+  String get tsGetHelpEmail;
 }
 
 class _AppLocalizationsDelegate

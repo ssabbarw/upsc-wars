@@ -7,8 +7,9 @@ export 'app_localizations.dart';
 /// `context.l10n.someString` — app UI strings in English or Hindi.
 ///
 /// Brand / feature names (CA Shots, Traps, Prelims, Test Series, Danger Zone,
-/// Daily War, Battle, Pulse, Streak, Leaderboard, Daily CA, Games ...) are kept
-/// in English in both locales on purpose. Do not translate them.
+/// Daily War, Battle, Pulse, Streak, Leaderboard, Daily CA, Games ...) and the
+/// home greeting are kept in English in both locales on purpose. Do not
+/// translate them.
 extension AppL10nContext on BuildContext {
   AppLocalizations get l10n => AppLocalizations.of(this);
 }

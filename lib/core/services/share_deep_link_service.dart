@@ -7,6 +7,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'package:upsc_wars/core/analytics/session_entry_source.dart';
 import 'package:upsc_wars/core/deep_link/share_session_opener.dart';
+import 'package:upsc_wars/features/daily_ca/data/daily_ca_incoming_share.dart';
 import 'package:upsc_wars/features/fomo_pulse/data/fomo_pulse_incoming_share.dart';
 import 'package:upsc_wars/features/fomo_pulse/data/fomo_pulse_native_share.dart';
 
@@ -110,6 +111,12 @@ class ShareDeepLinkService {
       replaceStack: replaceStack,
     );
     if (openedCaShot) return;
+    final openedDailyCa = await openDailyCaFromIncomingLink(
+      router: router,
+      uri: uri,
+      replaceStack: replaceStack,
+    );
+    if (openedDailyCa) return;
     SessionEntrySource.capture(SessionEntrySource.deepLink, detail: 'share');
     await openShareUriIfApplicable(ref: ref, router: router, uri: uri);
   }

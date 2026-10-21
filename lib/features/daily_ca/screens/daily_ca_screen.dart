@@ -15,6 +15,8 @@ import '../../../core/theme/app_text_styles.dart';
 import '../domain/daily_ca_schedule.dart';
 import '../domain/open_daily_ca_test.dart';
 import '../daily_ca_admin_constants.dart';
+import '../daily_ca_share_constants.dart';
+import '../data/daily_ca_share.dart';
 import '../providers/daily_ca_providers.dart';
 import '../widgets/daily_ca_action_sheet.dart';
 import '../widgets/daily_ca_day_sheet.dart';
@@ -24,10 +26,17 @@ import '../../home/domain/daily_rituals.dart';
 import '../../../l10n/l10n.dart';
 
 class DailyCaScreen extends HookConsumerWidget {
-  const DailyCaScreen({super.key, this.autoStartPaper = false});
+  const DailyCaScreen({
+    super.key,
+    this.autoStartPaper = false,
+    this.focusDateId,
+  });
 
   /// Set from the morning notification tap so it lands on the quiz itself.
   final bool autoStartPaper;
+
+  /// From `https://upscwars.in/daily-ca/{date|today}` — opens that paper.
+  final String? focusDateId;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -111,9 +120,35 @@ class DailyCaScreen extends HookConsumerWidget {
       paperCompleted,
     ]);
 
+    final focusIso = () {
+      final raw = focusDateId?.trim();
+      if (raw == null || raw.isEmpty) return null;
+      if (DailyCaShareConstants.isTodaySegment(raw)) return paperIso;
+      if (DailyCaShareConstants.isValidDateId(raw)) return raw;
+      return null;
+    }();
+
     final autoStarted = useRef(false);
     useEffect(() {
       if (!autoStartPaper || autoStarted.value) return null;
+      if (focusIso != null) {
+        // Deep link / Universal Link: open the requested date once ready.
+        if (paperChecking && DailyCaShareConstants.isTodaySegment(
+              focusDateId?.trim() ?? '',
+            )) {
+          return null;
+        }
+        autoStarted.value = true;
+        final target = focusIso;
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          final completed = completedAsync.maybeWhen(
+            data: (dates) => dates.contains(target),
+            orElse: () => false,
+          );
+          unawaited(openDayTestStable(target, isRevise: completed));
+        });
+        return null;
+      }
       if (paperChecking) return null;
       autoStarted.value = true;
       if (!paperLive) return null;
@@ -121,7 +156,14 @@ class DailyCaScreen extends HookConsumerWidget {
         unawaited(openDayTestStable(paperIso, isRevise: paperCompleted));
       });
       return null;
-    }, [autoStartPaper, paperIso, paperLive, paperChecking]);
+    }, [
+      autoStartPaper,
+      paperIso,
+      paperLive,
+      paperChecking,
+      focusIso,
+      focusDateId,
+    ]);
 
     void shiftMonth(int delta) {
       final m = displayedMonth.value;
@@ -170,6 +212,11 @@ class DailyCaScreen extends HookConsumerWidget {
         centerTitle: true,
         title: const Text('Daily Current Affairs'),
         actions: [
+          IconButton(
+            tooltip: 'Share',
+            onPressed: () => unawaited(shareDailyCaPaper()),
+            icon: const Icon(Icons.ios_share_rounded),
+          ),
           IconButton(
             tooltip: context.l10n.dcaThisMonth,
             onPressed: jumpToThisMonth,

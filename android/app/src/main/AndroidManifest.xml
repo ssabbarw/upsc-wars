@@ -55,6 +55,12 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data android:scheme="upscwars" android:host="fomo-pulse" />
             </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="upscwars" android:host="daily-ca" />
+            </intent-filter>
             <intent-filter android:label="@string/make_pulse_share">
                 <action android:name="android.intent.action.SEND" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -106,6 +112,15 @@
                     android:scheme="https"
                     android:host="upscwars.in"
                     android:pathPrefix="/share" />
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:scheme="https"
+                    android:host="upscwars.in"
+                    android:pathPrefix="/daily-ca" />
             </intent-filter>
         </activity>
         <activity

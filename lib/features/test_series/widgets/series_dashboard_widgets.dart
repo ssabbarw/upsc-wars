@@ -321,14 +321,12 @@ class SeriesTopicTile extends StatelessWidget {
     required this.revise,
     required this.onTap,
     this.showSubject = false,
-    this.isHindi = false,
   });
 
   final TopicStat topic;
   final bool revise;
   final VoidCallback onTap;
   final bool showSubject;
-  final bool isHindi;
 
   @override
   Widget build(BuildContext context) {
@@ -341,7 +339,7 @@ class SeriesTopicTile extends StatelessWidget {
 
     final detail = context.l10n.tsCorrectOf(topic.correct, topic.answered);
     final subtitle = showSubject
-        ? '${SeriesSubjects.label(topic.subjectId, hindi: isHindi)} · $detail'
+        ? '${SeriesSubjects.label(topic.subjectId)} · $detail'
         : detail;
     final trailing = revise
         ? context.l10n.tsMistakesN(topic.mistakes)
@@ -428,7 +426,6 @@ Future<void> showSeriesTopicsSheet({
   required List<TopicStat> topics,
   required bool revise,
   required bool showSubject,
-  required bool isHindi,
   required ValueChanged<TopicStat> onTopicTap,
 }) {
   return showModalBottomSheet<void>(
@@ -468,7 +465,6 @@ Future<void> showSeriesTopicsSheet({
               topic: t,
               revise: revise,
               showSubject: showSubject,
-              isHindi: isHindi,
               onTap: () {
                 Navigator.pop(sheetContext);
                 onTopicTap(t);
@@ -490,7 +486,6 @@ class SeriesTopicsPanel extends HookWidget {
     required this.useConfidence,
     required this.reviseTitle,
     required this.onTopicTap,
-    required this.isHindi,
     this.showSubject = false,
     this.limit = 3,
   });
@@ -500,7 +495,6 @@ class SeriesTopicsPanel extends HookWidget {
   final bool useConfidence;
   final String reviseTitle;
   final ValueChanged<TopicStat> onTopicTap;
-  final bool isHindi;
   final bool showSubject;
   final int limit;
 
@@ -554,7 +548,6 @@ class SeriesTopicsPanel extends HookWidget {
               topic: t,
               revise: revise.value,
               showSubject: showSubject,
-              isHindi: isHindi,
               onTap: () => onTopicTap(t),
             ),
           if (list.length > limit)
@@ -566,7 +559,6 @@ class SeriesTopicsPanel extends HookWidget {
                 topics: list,
                 revise: revise.value,
                 showSubject: showSubject,
-                isHindi: isHindi,
                 onTopicTap: onTopicTap,
               ),
               child: Text(context.l10n.tsSeeAllTopics(list.length)),
@@ -582,12 +574,10 @@ class SeriesSubjectRow extends StatelessWidget {
   const SeriesSubjectRow({
     super.key,
     required this.stat,
-    required this.isHindi,
     required this.onTap,
   });
 
   final SubjectStat stat;
-  final bool isHindi;
   final VoidCallback onTap;
 
   @override
@@ -642,10 +632,7 @@ class SeriesSubjectRow extends StatelessWidget {
                         children: [
                           Expanded(
                             child: Text(
-                              SeriesSubjects.label(
-                                stat.subjectId,
-                                hindi: isHindi,
-                              ),
+                              SeriesSubjects.label(stat.subjectId),
                               style: AppTextStyles.bodyMd().copyWith(
                                 fontWeight: FontWeight.w600,
                               ),

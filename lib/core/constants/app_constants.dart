@@ -41,14 +41,21 @@ abstract final class AppConstants {
   // ── Email ─────────────────────────────────────────────────────────────────
   static const String supportEmail = 'upscwars@gmail.com';
 
-  static Uri supportMailtoUri() => Uri(
-    scheme: 'mailto',
-    path: supportEmail,
-    queryParameters: {
-      'subject': '$appDisplayName — feedback',
-      'body': 'Hi,\n\n',
-    },
-  );
+  /// Mailto with `%20` spaces. [Uri.queryParameters] uses `+`, which many
+  /// mail apps leave literally in the subject.
+  static Uri supportMailtoUri({
+    String subject = '$appDisplayName — feedback',
+    String body = 'Hi,\n\n',
+  }) =>
+      Uri(
+        scheme: 'mailto',
+        path: supportEmail,
+        query: _mailtoQuery({'subject': subject, 'body': body}),
+      );
+
+  static String _mailtoQuery(Map<String, String> params) => params.entries
+      .map((e) => '${e.key}=${Uri.encodeComponent(e.value)}')
+      .join('&');
 }
 
 /// Comparable version from `v2.1`, `2.1`, or `2.1.0`.

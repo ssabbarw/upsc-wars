@@ -286,17 +286,17 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String homeGreetingNamed(String name) {
-    return 'नमस्ते, $name';
+    return 'Hey, $name';
   }
 
   @override
-  String get homeGoodMorning => 'सुप्रभात';
+  String get homeGoodMorning => 'Good morning';
 
   @override
-  String get homeGoodAfternoon => 'शुभ दोपहर';
+  String get homeGoodAfternoon => 'Good afternoon';
 
   @override
-  String get homeGoodEvening => 'शुभ संध्या';
+  String get homeGoodEvening => 'Good evening';
 
   @override
   String homeTrapsCount(int count) {
@@ -424,7 +424,7 @@ class AppLocalizationsHi extends AppLocalizations {
       'Question database नहीं खुल सका। ऐप दोबारा install करें या देखें कि storage उपलब्ध है, फिर restart करें।';
 
   @override
-  String get homeGreetingGeneric => 'नमस्ते';
+  String get homeGreetingGeneric => 'Hey there';
 
   @override
   String get homeResumeDemoTest => 'Demo test जारी रखें';
@@ -5637,7 +5637,7 @@ class AppLocalizationsHi extends AppLocalizations {
       'वे topics जिनमें आप अपने tests में लगातार सही रहते हैं।';
 
   @override
-  String get tsPrepOverview => 'आपकी Preparation Overview';
+  String get tsPrepOverview => 'आपका Preparation Overview';
 
   @override
   String get tsBasedOn => 'आपके full-length और subject-wise tests के आधार पर।';
@@ -5957,4 +5957,17 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get tsTryFreePyq => 'Free PYQ tests आज़माएँ';
+
+  @override
+  String get tsGetHelp => 'मदद चाहिए?';
+
+  @override
+  String get tsGetHelpBody =>
+      'Unlock, payment या किसी test के बारे में सवाल? लिखें — हम जवाब देते हैं।';
+
+  @override
+  String get tsGetHelpTelegram => 'Telegram';
+
+  @override
+  String get tsGetHelpEmail => 'Email';
 }
