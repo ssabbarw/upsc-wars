@@ -16,6 +16,7 @@ import 'free_badge.dart';
 import 'series_dashboard_widgets.dart';
 import 'series_test_row.dart';
 import '../../../l10n/l10n.dart';
+import '../domain/series_rules.dart';
 
 /// Opens the read-through of the user's questions on [topic].
 void openSeriesTopic({
@@ -185,13 +186,16 @@ class SeriesUspCard extends StatelessWidget {
             Icons.timer_outlined,
             AppColors.primary,
             '$flt full-length mocks',
-            context.l10n.tsFltDesc,
+            context.l10n.tsFltDesc(
+              SeriesRules.fltQuestions,
+              SeriesRules.fltHours,
+            ),
           ),
           row(
             Icons.menu_book_rounded,
             AppColors.info,
             '$subject subject tests',
-            context.l10n.tsSubjTestsDesc,
+            context.l10n.tsSubjTestsDesc(SeriesRules.staticTestQuestions),
           ),
           row(
             Icons.newspaper_rounded,
@@ -451,7 +455,13 @@ class SeriesFullLengthTab extends ConsumerWidget {
     return _TabList(
       seriesId: bundle.info.id,
       children: [
-        _TabIntro('Full-Length Tests', context.l10n.tsFltIntro),
+        _TabIntro(
+          'Full-Length Tests',
+          context.l10n.tsFltIntro(
+            SeriesRules.fltQuestions,
+            SeriesRules.fltHours,
+          ),
+        ),
         Row(
           children: [
             Expanded(

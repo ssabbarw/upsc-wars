@@ -200,7 +200,7 @@ class TodayHubSection extends HookConsumerWidget {
           _TodayListRowData(
             icon: Icons.article_outlined,
             accent: AppColors.info,
-            title: 'Daily Current Affairs Test',
+            title: 'Today\'s Current affairs quiz',
             subtitle: caLive
                 ? context.l10n.todayCaLive
                 : !data.paperCompleted
@@ -878,7 +878,7 @@ class _CaTestHeroCard extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final bg = isDark ? AppColors.infoBgDark : AppColors.infoText;
     return _BigHeroCard(
-      eyebrow: 'DAILY CURRENT AFFAIRS',
+      eyebrow: 'CURRENT AFFAIRS',
       title: context.l10n.todayPaperQuizTitle,
       description: context.l10n.todayPaperQuizBody,
       ctaLabel: context.l10n.todayOpenPaper,

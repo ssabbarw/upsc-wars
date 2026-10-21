@@ -377,7 +377,7 @@ abstract class AppLocalizations {
   /// No description provided for @settingsLanguageTitle.
   ///
   /// In en, this message translates to:
-  /// **'Question language'**
+  /// **'Language'**
   String get settingsLanguageTitle;
 
   /// No description provided for @settingsDarkMode.
@@ -509,7 +509,7 @@ abstract class AppLocalizations {
   /// No description provided for @revisionCountIncorrect.
   ///
   /// In en, this message translates to:
-  /// **'{count, plural, =1{1 incorrect} other{{count} incorrects}}'**
+  /// **'{count, plural, =1{1 incorrect} other{{count} incorrect}}'**
   String revisionCountIncorrect(int count);
 
   /// No description provided for @revisionCountBookmark.
@@ -1103,7 +1103,7 @@ abstract class AppLocalizations {
   /// No description provided for @todayPaperQuizTitle.
   ///
   /// In en, this message translates to:
-  /// **'Today\'s paper quiz'**
+  /// **'Today\'s Current affairs quiz'**
   String get todayPaperQuizTitle;
 
   /// No description provided for @todayPaperQuizBody.
@@ -1481,7 +1481,7 @@ abstract class AppLocalizations {
   /// No description provided for @testHintCorrect.
   ///
   /// In en, this message translates to:
-  /// **'The marks are in the explanation — elimination, statement analysis, and the trap option.'**
+  /// **'The real learning is in the explanation — elimination, statement analysis, and the trap option.'**
   String get testHintCorrect;
 
   /// No description provided for @testHintWrong.
@@ -1973,7 +1973,7 @@ abstract class AppLocalizations {
   /// No description provided for @aboutBullet1.
   ///
   /// In en, this message translates to:
-  /// **'• Areas where confident answers or intelligent guesses often go wrong\n'**
+  /// **'• Areas where Sure answers or educated guesses often go wrong\n'**
   String get aboutBullet1;
 
   /// No description provided for @aboutArrow1.
@@ -1985,7 +1985,7 @@ abstract class AppLocalizations {
   /// No description provided for @aboutBullet2.
   ///
   /// In en, this message translates to:
-  /// **'• Areas where confident answers or intelligent guesses are usually correct\n'**
+  /// **'• Areas where Sure answers or educated guesses are usually correct\n'**
   String get aboutBullet2;
 
   /// No description provided for @aboutArrow2.
@@ -2723,7 +2723,7 @@ abstract class AppLocalizations {
   /// No description provided for @resultsNoDangerBody.
   ///
   /// In en, this message translates to:
-  /// **'Wrong answers without a confidence pick, or where you marked \"Guessing\", do not appear here.'**
+  /// **'Wrong answers without a confidence pick, or where you marked \"Pure guess\", do not appear here.'**
   String get resultsNoDangerBody;
 
   /// No description provided for @resultsInvalidFilter.
@@ -2831,7 +2831,7 @@ abstract class AppLocalizations {
   /// No description provided for @resultsCoverageHint.
   ///
   /// In en, this message translates to:
-  /// **'Questions where you tapped Sure, Intelligent, or Pure guess after answering.'**
+  /// **'Questions where you tapped Sure, Educated guess, or Pure guess after answering.'**
   String get resultsCoverageHint;
 
   /// No description provided for @resultsCoachMistakesTitle.
@@ -3221,7 +3221,7 @@ abstract class AppLocalizations {
   /// No description provided for @commonDaysAgo.
   ///
   /// In en, this message translates to:
-  /// **'{count} days ago'**
+  /// **'{count, plural, =1{1 day ago} other{{count} days ago}}'**
   String commonDaysAgo(int count);
 
   /// No description provided for @subjCorrectOfTotal.
@@ -3251,7 +3251,7 @@ abstract class AppLocalizations {
   /// No description provided for @dzTotalLine.
   ///
   /// In en, this message translates to:
-  /// **'Total: {count} wrong · about {marks} marks (0.66 each if counted)'**
+  /// **'Total: {count} wrong · about {marks} marks lost (0.66 per wrong answer)'**
   String dzTotalLine(int count, String marks);
 
   /// No description provided for @dzApproxMarks.
@@ -3497,7 +3497,7 @@ abstract class AppLocalizations {
   /// No description provided for @subjFeedbackLead.
   ///
   /// In en, this message translates to:
-  /// **'Any questions or feedback?\\n'**
+  /// **'Any questions or feedback?\n'**
   String get subjFeedbackLead;
 
   /// No description provided for @subjGetInTouch.
@@ -3581,7 +3581,7 @@ abstract class AppLocalizations {
   /// No description provided for @subjNoAttemptsYet.
   ///
   /// In en, this message translates to:
-  /// **'No attempted answers yet.\\nStart a test and mark confidence to see your insights'**
+  /// **'No attempted answers yet.\nStart a test and mark confidence to see your insights'**
   String get subjNoAttemptsYet;
 
   /// No description provided for @subjAccuracySuffix.
@@ -3671,7 +3671,7 @@ abstract class AppLocalizations {
   /// No description provided for @subjNoTopicsBody.
   ///
   /// In en, this message translates to:
-  /// **'No topic in this subject has enough wrong answers marked “Very sure” or “Somewhat sure” to show here yet. As that pattern shows up, you will see it broken down by type of confidence.'**
+  /// **'No topic in this subject has enough wrong answers marked “Sure” or “Educated guess” to show here yet. As that pattern shows up, you will see it broken down by type of confidence.'**
   String get subjNoTopicsBody;
 
   /// No description provided for @subjWhyTopics.
@@ -3773,7 +3773,7 @@ abstract class AppLocalizations {
   /// No description provided for @notifNoTestBody.
   ///
   /// In en, this message translates to:
-  /// **'Take 7 quick MCQs. Get coached to eliminate better, spot weak areas, and see where you’re strong.'**
+  /// **'Take 8 quick MCQs. Get coached to eliminate better, spot weak areas, and see where you’re strong.'**
   String get notifNoTestBody;
 
   /// No description provided for @notifBattleInviteTitle.
@@ -3845,7 +3845,7 @@ abstract class AppLocalizations {
   /// No description provided for @dcaOfCount.
   ///
   /// In en, this message translates to:
-  /// **'of {count}'**
+  /// **'out of {count} participants'**
   String dcaOfCount(int count);
 
   /// No description provided for @dcaAvailableIn.
@@ -4421,7 +4421,7 @@ abstract class AppLocalizations {
   /// No description provided for @dwTopicsWentBy.
   ///
   /// In en, this message translates to:
-  /// **'{n} topics went by · nothing lost for Monday'**
+  /// **'Missed {n, plural, =1{1 topic} other{{n} topics}} this week · nothing lost, Monday is a fresh start'**
   String dwTopicsWentBy(int n);
 
   /// No description provided for @dwTopicsLanded.
@@ -5003,8 +5003,8 @@ abstract class AppLocalizations {
   /// No description provided for @dwTiersNote.
   ///
   /// In en, this message translates to:
-  /// **'Consistency tiers climb over 30 War nights. Miss two nights in a row and you fall one tier.'**
-  String get dwTiersNote;
+  /// **'Consistency tiers climb over {days} War nights. Miss two nights in a row and you fall one tier.'**
+  String dwTiersNote(int days);
 
   /// No description provided for @dwTonight.
   ///
@@ -5417,7 +5417,7 @@ abstract class AppLocalizations {
   /// No description provided for @dwBetterThan.
   ///
   /// In en, this message translates to:
-  /// **'Better than {pct}%'**
+  /// **'Better than {pct}% of warriors'**
   String dwBetterThan(String pct);
 
   /// No description provided for @dwPts.
@@ -6101,8 +6101,8 @@ abstract class AppLocalizations {
   /// No description provided for @qotdCommentHint.
   ///
   /// In en, this message translates to:
-  /// **'Leave blank, or write at least 50 characters…'**
-  String get qotdCommentHint;
+  /// **'Leave blank, or write at least {n} characters…'**
+  String qotdCommentHint(int n);
 
   /// No description provided for @qotdSignInKept.
   ///
@@ -6413,7 +6413,7 @@ abstract class AppLocalizations {
   /// No description provided for @bwJoinWindow.
   ///
   /// In en, this message translates to:
-  /// **'If your opponent joins within {window}, \nyou can start the battle. Time remaining: {remaining}.'**
+  /// **'If your opponent joins within {window}, you can start the battle. Time remaining: {remaining}.'**
   String bwJoinWindow(String window, String remaining);
 
   /// No description provided for @bsoSubmitted.
@@ -6557,13 +6557,13 @@ abstract class AppLocalizations {
   /// No description provided for @bcErrPermission.
   ///
   /// In en, this message translates to:
-  /// **'Could not save the battle room. Sign in and try again, or check Firestore rules.'**
+  /// **'Could not save the battle room. Sign in and try again.'**
   String get bcErrPermission;
 
   /// No description provided for @bcErrUnavailable.
   ///
   /// In en, this message translates to:
-  /// **'Firestore is temporarily unavailable. Check your connection and try again.'**
+  /// **'This service is temporarily unavailable. Check your connection and try again.'**
   String get bcErrUnavailable;
 
   /// No description provided for @bcErrTimeout.
@@ -7037,7 +7037,7 @@ abstract class AppLocalizations {
   /// No description provided for @bspPermDenied.
   ///
   /// In en, this message translates to:
-  /// **'Battle permission denied by Firestore rules.'**
+  /// **'Battle permission denied.'**
   String get bspPermDenied;
 
   /// No description provided for @bspNetwork.
@@ -7073,7 +7073,7 @@ abstract class AppLocalizations {
   /// No description provided for @bicUnclear.
   ///
   /// In en, this message translates to:
-  /// **'Invite status unclear. Check Firebase Functions logs.'**
+  /// **'Invite status unclear. Please try again later.'**
   String get bicUnclear;
 
   /// No description provided for @gmSetTitle.
@@ -7487,7 +7487,7 @@ abstract class AppLocalizations {
   /// No description provided for @mpDaysAgo.
   ///
   /// In en, this message translates to:
-  /// **'{n} days ago'**
+  /// **'{n, plural, =1{1 day ago} other{{n} days ago}}'**
   String mpDaysAgo(int n);
 
   /// No description provided for @mpWkAgo.
@@ -9095,7 +9095,7 @@ abstract class AppLocalizations {
   /// No description provided for @tsMarking.
   ///
   /// In en, this message translates to:
-  /// **'+2 for correct, -0.66 for wrong'**
+  /// **'+2 for correct, −0.66 for wrong'**
   String get tsMarking;
 
   /// No description provided for @tsOneAttempt.
@@ -9137,14 +9137,14 @@ abstract class AppLocalizations {
   /// No description provided for @tsPaidNoAccess.
   ///
   /// In en, this message translates to:
-  /// **'Payment went through, but access was not granted yet. Tap Restore purchase, or check that RevenueCat entitlement \"{entitlement}\" is attached to product \"{product}\".'**
-  String tsPaidNoAccess(String entitlement, String product);
+  /// **'Payment went through, but access was not granted yet. Tap Restore purchase, or try again in a little while.'**
+  String get tsPaidNoAccess;
 
   /// No description provided for @tsPwSubject.
   ///
   /// In en, this message translates to:
-  /// **'{n} subject tests, 50 questions each, with 10% PYQs'**
-  String tsPwSubject(int n);
+  /// **'{n} subject tests, {questions} questions each, with {pct}% PYQs'**
+  String tsPwSubject(int n, int questions, int pct);
 
   /// No description provided for @tsPwCa.
   ///
@@ -9155,8 +9155,8 @@ abstract class AppLocalizations {
   /// No description provided for @tsPwMocks.
   ///
   /// In en, this message translates to:
-  /// **'{n} full-length mocks that mirror the real paper (100 Q, 2 hrs)'**
-  String tsPwMocks(int n);
+  /// **'{n} full-length mocks that mirror the real paper ({questions} Q, {hours} hrs)'**
+  String tsPwMocks(int n, int questions, int hours);
 
   /// No description provided for @tsPwFree.
   ///
@@ -9395,14 +9395,14 @@ abstract class AppLocalizations {
   /// No description provided for @tsFltDesc.
   ///
   /// In en, this message translates to:
-  /// **'Each test has 100 questions, Time 2 hours.\nTest of all GS subjects + current affairs'**
-  String get tsFltDesc;
+  /// **'Each test has {questions} questions, Time {hours} hours.\nTest of all GS subjects + current affairs'**
+  String tsFltDesc(int questions, int hours);
 
   /// No description provided for @tsSubjTestsDesc.
   ///
   /// In en, this message translates to:
-  /// **'Topic-wise 50-question tests for GS subjects'**
-  String get tsSubjTestsDesc;
+  /// **'Topic-wise {n}-question tests for GS subjects'**
+  String tsSubjTestsDesc(int n);
 
   /// No description provided for @tsCaEveryMonth.
   ///
@@ -9509,8 +9509,8 @@ abstract class AppLocalizations {
   /// No description provided for @tsFltIntro.
   ///
   /// In en, this message translates to:
-  /// **'Simulate the real exam: 100 questions, 2 hours.'**
-  String get tsFltIntro;
+  /// **'Simulate the real exam: {questions} questions, {hours} hours.'**
+  String tsFltIntro(int questions, int hours);
 
   /// No description provided for @tsReviseFromFlts.
   ///
@@ -9575,8 +9575,8 @@ abstract class AppLocalizations {
   /// No description provided for @tsNoSafe.
   ///
   /// In en, this message translates to:
-  /// **'No safe areas yet. A topic becomes safe at 80% accuracy over 4+ questions.'**
-  String get tsNoSafe;
+  /// **'No safe areas yet. A topic becomes safe at {pct}% accuracy over {min}+ questions.'**
+  String tsNoSafe(int pct, int min);
 
   /// No description provided for @tsFromFlt.
   ///
@@ -9611,8 +9611,8 @@ abstract class AppLocalizations {
   /// No description provided for @tsLowScoreStory.
   ///
   /// In en, this message translates to:
-  /// **'A low subject score is not the whole story. Inside Modern History, {topic} is where you actually lose marks. Start there.'**
-  String tsLowScoreStory(String topic);
+  /// **'A low subject score is not the whole story. Inside {subject}, {topic} is where you actually lose marks. Start there.'**
+  String tsLowScoreStory(String subject, String topic);
 
   /// No description provided for @tsPrelimsOn.
   ///
@@ -9863,7 +9863,7 @@ abstract class AppLocalizations {
   /// No description provided for @tsGuessRight.
   ///
   /// In en, this message translates to:
-  /// **'Guessed and right'**
+  /// **'Pure guess and right'**
   String get tsGuessRight;
 
   /// No description provided for @tsLuckyAction.
@@ -9875,7 +9875,7 @@ abstract class AppLocalizations {
   /// No description provided for @tsGuessWrong.
   ///
   /// In en, this message translates to:
-  /// **'Guessed and wrong'**
+  /// **'Pure guess and wrong'**
   String get tsGuessWrong;
 
   /// No description provided for @tsGapAction.
@@ -9899,8 +9899,8 @@ abstract class AppLocalizations {
   /// No description provided for @ts100q2h.
   ///
   /// In en, this message translates to:
-  /// **'100 Q, 2 hours'**
-  String get ts100q2h;
+  /// **'{questions} Q, {hours} hours'**
+  String ts100q2h(int questions, int hours);
 
   /// No description provided for @tsTimedPaper.
   ///

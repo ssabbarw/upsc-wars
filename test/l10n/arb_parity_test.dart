@@ -47,6 +47,22 @@ void main() {
     expect(bad, isEmpty);
   });
 
+  test('english declares exactly the placeholders it uses', () {
+    final bad = <String>[];
+    for (final k in keys) {
+      final used = placeholders(en[k] as String);
+      final meta = en['@$k'];
+      final declared = meta is Map && meta['placeholders'] is Map
+          ? (meta['placeholders'] as Map).keys.cast<String>().toSet()
+          : <String>{};
+      if (used.difference(declared).isNotEmpty ||
+          declared.difference(used).isNotEmpty) {
+        bad.add('$k: used=$used declared=$declared');
+      }
+    }
+    expect(bad, isEmpty);
+  });
+
   test('brand names are never translated', () {
     const brands = [
       'CA Shots',

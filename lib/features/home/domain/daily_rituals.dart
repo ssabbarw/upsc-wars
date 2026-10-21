@@ -49,7 +49,7 @@ abstract final class DailyRituals {
     ),
     DailyRitualCopy(
       id: DailyRitualIds.dailyCa,
-      title: 'Daily Current Affairs Test',
+      title: 'Today\'s Current affairs quiz',
       when: appL10n.ritualDailyCaWhen,
       body: appL10n.ritualDailyCaBody,
       route: '/daily-ca',

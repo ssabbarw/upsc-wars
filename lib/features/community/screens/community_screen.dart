@@ -27,6 +27,7 @@ import '../domain/entities/community_user.dart';
 import '../providers/community_providers.dart';
 import '../providers/open_challenge_providers.dart';
 import 'community_qotd_tab.dart';
+import '../widgets/community_profile_edit_sheet.dart';
 import '../widgets/community_user_profile_sheet.dart';
 import '../widgets/open_challenge_community_section.dart';
 import '../widgets/admin_bot_label.dart';
@@ -115,6 +116,12 @@ class CommunityScreen extends HookConsumerWidget {
               tooltip: 'Random connect',
               icon: const Icon(Icons.casino_outlined),
               onPressed: () => _showRandomConnectSheet(context),
+            ),
+            IconButton(
+              tooltip: 'Edit my community profile',
+              icon: const Icon(Icons.edit_outlined),
+              onPressed: () =>
+                  showCommunityProfileEditSheet(context: context, ref: ref),
             ),
             IconButton(
               tooltip: 'Visibility settings',
@@ -308,6 +315,17 @@ class _RecentTab extends HookConsumerWidget {
                       ),
                     ],
                     _AdminRecentsSummary(users: sortedUsers),
+                    if ((currentUserEmail ?? '').isNotEmpty) ...[
+                      const SizedBox(height: AppSpacing.md),
+                      OutlinedButton.icon(
+                        onPressed: () => showCommunityProfileEditSheet(
+                          context: context,
+                          ref: ref,
+                        ),
+                        icon: const Icon(Icons.edit_outlined, size: 18),
+                        label: const Text('Edit my community profile'),
+                      ),
+                    ],
                     const SizedBox(height: AppSpacing.md),
                     if (sortedUsers.isEmpty) ...[
                       Text(

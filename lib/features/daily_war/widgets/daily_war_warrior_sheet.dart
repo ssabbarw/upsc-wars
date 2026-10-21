@@ -177,7 +177,7 @@ class _WarriorSheet extends StatelessWidget {
                   ),
                 const SizedBox(height: 8),
                 Text(
-                  context.l10n.dwTiersNote,
+                  context.l10n.dwTiersNote(DailyWarBadges.ladderDays),
                   style: AppTextStyles.caption().copyWith(
                     color: scheme.onSurfaceVariant,
                     height: 1.35,

@@ -67,7 +67,7 @@
   "settingsLogOutConfirmTitle": "Log out?",
   "settingsLogOutConfirmBody": "Are you sure you want to log out?",
   "settingsLinkOpenFailed": "Could not open link.",
-  "settingsLanguageTitle": "Question language",
+  "settingsLanguageTitle": "Language",
   "settingsDarkMode": "Dark mode",
   "settingsDarkModeSubtitle": "Comfortable contrast for long sessions.",
   "settingsReadingSize": "Reading size",
@@ -89,7 +89,7 @@
   "commonNone": "None",
   "revisionIncorrectMcqs": "Incorrect MCQs",
   "revisionBookmarkedMcqs": "Bookmarked MCQs",
-  "revisionCountIncorrect": "{count, plural, =1{1 incorrect} other{{count} incorrects}}",
+  "revisionCountIncorrect": "{count, plural, =1{1 incorrect} other{{count} incorrect}}",
   "@revisionCountIncorrect": {
     "placeholders": {
       "count": {
@@ -383,7 +383,7 @@
   "todayDangerUnlocked": "Questions you got wrong while sure — trap patterns.",
   "todayWhatIsThis": "What is this?",
   "todayCaShotSubtitle": "Breaking news brief + 1 MCQ based on it.",
-  "todayPaperQuizTitle": "Today's paper quiz",
+  "todayPaperQuizTitle": "Today's Current affairs quiz",
   "todayPaperQuizBody": "Based on yesterday's news. Same questions for everyone — then All-India Rank.",
   "todayOpenPaper": "Open paper",
   "todayWeekDone": "Week review done",
@@ -528,7 +528,7 @@
   },
   "testCorrect": "Correct",
   "testNotThisTime": "Not this time",
-  "testHintCorrect": "The marks are in the explanation — elimination, statement analysis, and the trap option.",
+  "testHintCorrect": "The real learning is in the explanation — elimination, statement analysis, and the trap option.",
   "testHintWrong": "Read how to kill the other options — that's the real practice.",
   "testShowExplanation": "Show explanation",
   "testConfidenceIntroTitle": "From now on, let's also check how sure you are.",
@@ -610,9 +610,9 @@
   "aboutGoalBody": "So your preparation becomes smarter, not just harder.\n\nMy goal is simple:\n\nHelp aspirants prepare like someone who clears Prelims.\n\nBuilt independently. No coaching institute. No big team. Just a serious attempt to make UPSC preparation better.",
   "aboutConnectBody": "Your feedback directly improves UPSC Wars.\n\nIf something feels missing, confusing, or useful, please message me. I read every feedback personally.\n\n📩 upscwars@gmail.com",
   "aboutReviewBody": "If UPSC Wars helped your preparation, please leave a review.\n\nYour review helps more serious aspirants discover the app and helps improve the app faster.",
-  "aboutBullet1": "• Areas where confident answers or intelligent guesses often go wrong\n",
+  "aboutBullet1": "• Areas where Sure answers or educated guesses often go wrong\n",
   "aboutArrow1": "  → Avoid taking extra risks here\n\n",
-  "aboutBullet2": "• Areas where confident answers or intelligent guesses are usually correct\n",
+  "aboutBullet2": "• Areas where Sure answers or educated guesses are usually correct\n",
   "aboutArrow2": "  → Take smarter risks here\n\n",
   "aboutBullet3": "• Common UPSC trap patterns and tricky question types\n",
   "aboutArrow3": "  → Stay alert and avoid negative marking",
@@ -1019,7 +1019,7 @@
   "resultsEduBullet3": "Areas where elimination logic needs strengthening",
   "resultsReviewLoadFailed": "Could not load review",
   "resultsNoDangerItems": "No Danger Zone items",
-  "resultsNoDangerBody": "Wrong answers without a confidence pick, or where you marked \"Guessing\", do not appear here.",
+  "resultsNoDangerBody": "Wrong answers without a confidence pick, or where you marked \"Pure guess\", do not appear here.",
   "resultsInvalidFilter": "Invalid confidence filter.",
   "resultsNoReviewable": "No reviewable mistakes in this session.",
   "resultsReviewLoadFailedDot": "Could not load review.",
@@ -1083,7 +1083,7 @@
   "resultsLogMore": "Log a bit more next round",
   "resultsMatrixCorrect": "Correct",
   "resultsMatrixWrong": "Wrong",
-  "resultsCoverageHint": "Questions where you tapped Sure, Intelligent, or Pure guess after answering.",
+  "resultsCoverageHint": "Questions where you tapped Sure, Educated guess, or Pure guess after answering.",
   "resultsCoachMistakesTitle": "Review only your mistakes",
   "resultsCoachMistakesBody": "Just the questions you got wrong — the ones worth going back to.",
   "resultsCoachAllOr": "Or review all questions",
@@ -1299,7 +1299,7 @@
       }
     }
   },
-  "commonDaysAgo": "{count} days ago",
+  "commonDaysAgo": "{count, plural, =1{1 day ago} other{{count} days ago}}",
   "@commonDaysAgo": {
     "placeholders": {
       "count": {
@@ -1345,7 +1345,7 @@
       }
     }
   },
-  "dzTotalLine": "Total: {count} wrong · about {marks} marks (0.66 each if counted)",
+  "dzTotalLine": "Total: {count} wrong · about {marks} marks lost (0.66 per wrong answer)",
   "@dzTotalLine": {
     "placeholders": {
       "count": {
@@ -1458,7 +1458,7 @@
   "mockSafeWhy": "These are topics where your Sure + Correct and Educated Guess + Correct are better than your usual average.",
   "mockSafeAction": "Be more confident while attempting questions from these topics in mocks and exams.",
   "mockMoreClarity": "Want further clarity? ",
-  "subjFeedbackLead": "Any questions or feedback?\\n",
+  "subjFeedbackLead": "Any questions or feedback?\n",
   "subjGetInTouch": "Get in touch",
   "subjBrowseTopicsLower": "Browse topics",
   "subjNewTestBody": "Start a test or practice specific topics.",
@@ -1472,7 +1472,7 @@
   "subjStatsFailed": "Could not load subject stats.",
   "subjMarkHint": "Mark Sure or Educated guess when you answer scored questions in this subject — mock-prep advice and your confidence breakdown will appear here.",
   "subjStatsSharpen": "More scored answers with confidence labels sharpen these stats.",
-  "subjNoAttemptsYet": "No attempted answers yet.\\nStart a test and mark confidence to see your insights",
+  "subjNoAttemptsYet": "No attempted answers yet.\nStart a test and mark confidence to see your insights",
   "subjAccuracySuffix": " accuracy",
   "subjMcqsAttempted": " MCQs attempted",
   "subjSureNone": "Sure → wrong: — (no Sure-marked answers yet)",
@@ -1487,7 +1487,7 @@
   "subjReviseTopicsIntro": "You are likely to lose marks in these topics due to overconfidence and risky guessing.",
   "subjTopicsToRevise": "Topics to revise",
   "subjNoTopicsToList": "No topics to list",
-  "subjNoTopicsBody": "No topic in this subject has enough wrong answers marked “Very sure” or “Somewhat sure” to show here yet. As that pattern shows up, you will see it broken down by type of confidence.",
+  "subjNoTopicsBody": "No topic in this subject has enough wrong answers marked “Sure” or “Educated guess” to show here yet. As that pattern shows up, you will see it broken down by type of confidence.",
   "subjWhyTopics": "Why these topics?",
   "subjRevisitTopic": "Revisit this topic",
   "subjSafeIntro": "You can trust your judgment more in these topics. Attempt more from here in mocks and exams.",
@@ -1535,7 +1535,7 @@
     }
   },
   "notifNoTestTitle": "Find where UPSC Wars gives you an edge",
-  "notifNoTestBody": "Take 7 quick MCQs. Get coached to eliminate better, spot weak areas, and see where you’re strong.",
+  "notifNoTestBody": "Take 8 quick MCQs. Get coached to eliminate better, spot weak areas, and see where you’re strong.",
   "notifBattleInviteTitle": "Battle invite",
   "notifTapToJoin": "Tap to join",
   "notifCaShotTitle": "CA Shot",
@@ -1554,7 +1554,7 @@
       }
     }
   },
-  "dcaOfCount": "of {count}",
+  "dcaOfCount": "out of {count} participants",
   "@dcaOfCount": {
     "placeholders": {
       "count": {
@@ -1841,7 +1841,7 @@
       }
     }
   },
-  "dwTopicsWentBy": "{n} topics went by · nothing lost for Monday",
+  "dwTopicsWentBy": "Missed {n, plural, =1{1 topic} other{{n} topics}} this week · nothing lost, Monday is a fresh start",
   "@dwTopicsWentBy": {
     "placeholders": {
       "n": {
@@ -2249,7 +2249,7 @@
   "dwShowUpMonday": "Show up Monday to start collecting.",
   "dwNoBadgesWeek": "No badges this week.",
   "dwNoBadgesNight": "No badges earned this night yet.",
-  "dwTiersNote": "Consistency tiers climb over 30 War nights. Miss two nights in a row and you fall one tier.",
+  "dwTiersNote": "Consistency tiers climb over {days} War nights. Miss two nights in a row and you fall one tier.",
   "dwTonight": "TONIGHT",
   "dwLastNight": "LAST NIGHT",
   "dwLastWar": "LAST WAR",
@@ -2339,7 +2339,7 @@
       }
     }
   },
-  "dwBetterThan": "Better than {pct}%",
+  "dwBetterThan": "Better than {pct}% of warriors",
   "@dwBetterThan": {
     "placeholders": {
       "pct": {
@@ -2711,7 +2711,7 @@
   "commTapRandom": "Tap below for Random Battle Connect",
   "qotdNoteIntro": "Optional note for the community. You learned something new? Spotted something ironic? A concept felt challenged? Be specific — or leave this blank.",
   "qotdCommentLabel": "Comment (optional)",
-  "qotdCommentHint": "Leave blank, or write at least 50 characters…",
+  "qotdCommentHint": "Leave blank, or write at least {n} characters…",
   "qotdSignInKept": "Sign in to post. Your comment is kept.",
   "qotdPost": "Post",
   "qotdSignInPost": "Sign in to post",
@@ -2787,7 +2787,7 @@
       }
     }
   },
-  "bwJoinWindow": "If your opponent joins within {window}, \nyou can start the battle. Time remaining: {remaining}.",
+  "bwJoinWindow": "If your opponent joins within {window}, you can start the battle. Time remaining: {remaining}.",
   "@bwJoinWindow": {
     "placeholders": {
       "window": {
@@ -2856,8 +2856,8 @@
   "bcTimerNote": "Timer runs during the battle. Answers lock in once chosen, with explanations shown so you learn as you go.",
   "bcLoadFailed": "Could not load subjects",
   "bcUnblockFirst": "Unblock this player in Community before inviting them.",
-  "bcErrPermission": "Could not save the battle room. Sign in and try again, or check Firestore rules.",
-  "bcErrUnavailable": "Firestore is temporarily unavailable. Check your connection and try again.",
+  "bcErrPermission": "Could not save the battle room. Sign in and try again.",
+  "bcErrUnavailable": "This service is temporarily unavailable. Check your connection and try again.",
   "bcErrTimeout": "Saving the battle timed out. Check your internet connection and try again.",
   "bwLeaveTitle": "Leave match?",
   "bwLeaveBody": "Your opponent may still be waiting in the lobby.",
@@ -2993,13 +2993,13 @@
   "bspWaitJoin": "Waiting for your opponent to join…",
   "bspRecordFailed": "Could not record your answer.",
   "bspSubmitFailed": "Could not submit battle.",
-  "bspPermDenied": "Battle permission denied by Firestore rules.",
+  "bspPermDenied": "Battle permission denied.",
   "bspNetwork": "Network unavailable. Please check internet and retry.",
   "bspStartFailed": "Could not start online battle. Please retry.",
   "bicSent": "Battle invite sent.",
   "bicNoToken": "Invitee has no push token yet. They can still join using the session link.",
   "bicPushFailed": "Push could not be sent. They can still join using the session link.",
-  "bicUnclear": "Invite status unclear. Check Firebase Functions logs.",
+  "bicUnclear": "Invite status unclear. Please try again later.",
   "gmSetTitle": "{subject} · Set {n}/{total}",
   "@gmSetTitle": {
     "placeholders": {
@@ -3176,7 +3176,7 @@
       }
     }
   },
-  "mpDaysAgo": "{n} days ago",
+  "mpDaysAgo": "{n, plural, =1{1 day ago} other{{n} days ago}}",
   "@mpDaysAgo": {
     "placeholders": {
       "n": {
@@ -3808,28 +3808,24 @@
   "tsSoon": "Soon",
   "tsLoadTestFail": "Couldn't load this test. Check your connection and try again.",
   "tsPractiseAgain": "Practise again (not scored)",
-  "tsMarking": "+2 for correct, -0.66 for wrong",
+  "tsMarking": "+2 for correct, −0.66 for wrong",
   "tsOneAttempt": "One scored attempt. Afterwards you can review it and practise again without affecting your stats.",
   "tsUnlockedAll": "Unlocked! Every test in this series is now yours.",
   "tsPurchaseFail": "The purchase could not be completed.",
   "tsPaymentPendingSeries": "Your payment is pending. The series unlocks once it completes.",
   "tsCodeCheckFail": "Could not check the code. Check your connection and try again.",
   "tsUnlockAll": "Unlock all tests",
-  "tsPaidNoAccess": "Payment went through, but access was not granted yet. Tap Restore purchase, or check that RevenueCat entitlement \"{entitlement}\" is attached to product \"{product}\".",
-  "@tsPaidNoAccess": {
-    "placeholders": {
-      "entitlement": {
-        "type": "String"
-      },
-      "product": {
-        "type": "String"
-      }
-    }
-  },
-  "tsPwSubject": "{n} subject tests, 50 questions each, with 10% PYQs",
+  "tsPaidNoAccess": "Payment went through, but access was not granted yet. Tap Restore purchase, or try again in a little while.",
+  "tsPwSubject": "{n} subject tests, {questions} questions each, with {pct}% PYQs",
   "@tsPwSubject": {
     "placeholders": {
       "n": {
+        "type": "int"
+      },
+      "questions": {
+        "type": "int"
+      },
+      "pct": {
         "type": "int"
       }
     }
@@ -3842,10 +3838,16 @@
       }
     }
   },
-  "tsPwMocks": "{n} full-length mocks that mirror the real paper (100 Q, 2 hrs)",
+  "tsPwMocks": "{n} full-length mocks that mirror the real paper ({questions} Q, {hours} hrs)",
   "@tsPwMocks": {
     "placeholders": {
       "n": {
+        "type": "int"
+      },
+      "questions": {
+        "type": "int"
+      },
+      "hours": {
         "type": "int"
       }
     }
@@ -3961,8 +3963,8 @@
     }
   },
   "tsWhatYouGet": "What you get",
-  "tsFltDesc": "Each test has 100 questions, Time 2 hours.\nTest of all GS subjects + current affairs",
-  "tsSubjTestsDesc": "Topic-wise 50-question tests for GS subjects",
+  "tsFltDesc": "Each test has {questions} questions, Time {hours} hours.\nTest of all GS subjects + current affairs",
+  "tsSubjTestsDesc": "Topic-wise {n}-question tests for GS subjects",
   "tsCaEveryMonth": "Current affairs every month",
   "tsCaMonthlyDesc": "A fresh test on the 1st of each month, built from the previous month's Current affairs.",
   "tsKnowMarks": "Know where you lose marks",
@@ -3980,7 +3982,7 @@
   "tsReviseFirst": "Topics to revise first",
   "tsKeepPractising": "Keep practising",
   "tsSeeAll": "See all",
-  "tsFltIntro": "Simulate the real exam: 100 questions, 2 hours.",
+  "tsFltIntro": "Simulate the real exam: {questions} questions, {hours} hours.",
   "tsReviseFromFlts": "Topics to revise (from FLTs)",
   "tsAvailableTests": "Available Tests",
   "tsSubjIntro": "Practise by subject and strengthen your concepts.",
@@ -3991,7 +3993,7 @@
   "tsNothingYet": "Nothing here yet.",
   "tsSubSafe2": "Topics you answer reliably. Keep practising to stay sharp.",
   "tsNoWeak": "No weak topics yet. Finish a test and they will show up here.",
-  "tsNoSafe": "No safe areas yet. A topic becomes safe at 80% accuracy over 4+ questions.",
+  "tsNoSafe": "No safe areas yet. A topic becomes safe at {pct}% accuracy over {min}+ questions.",
   "tsFromFlt": "From full-length tests",
   "tsCorrectAnswer": "Correct answer: {l}",
   "@tsCorrectAnswer": {
@@ -4028,9 +4030,12 @@
       }
     }
   },
-  "tsLowScoreStory": "A low subject score is not the whole story. Inside Modern History, {topic} is where you actually lose marks. Start there.",
+  "tsLowScoreStory": "A low subject score is not the whole story. Inside {subject}, {topic} is where you actually lose marks. Start there.",
   "@tsLowScoreStory": {
     "placeholders": {
+      "subject": {
+        "type": "String"
+      },
       "topic": {
         "type": "String"
       }
@@ -4112,13 +4117,13 @@
   "tsSafeAction": "Attempt more here. Take the risk.",
   "tsSureWrong": "Sure but wrong",
   "tsBlindAction": "Fix these first. They cost marks.",
-  "tsGuessRight": "Guessed and right",
+  "tsGuessRight": "Pure guess and right",
   "tsLuckyAction": "Revise so it sticks.",
-  "tsGuessWrong": "Guessed and wrong",
+  "tsGuessWrong": "Pure guess and wrong",
   "tsGapAction": "Learn it from the explanation.",
   "tsPractiseLike": "Practise like it's Prelims day",
   "tsMocksMirror": "The full-length mocks mirror the real paper.",
-  "ts100q2h": "100 Q, 2 hours",
+  "ts100q2h": "{questions} Q, {hours} hours",
   "tsTimedPaper": "Timed, exam-style paper with all GS subjects.",
   "tsRealMarking": "Real marking",
   "tsMarkingSkip": "+2 for correct, −0.66 for wrong. Learn when to skip.",
@@ -4130,5 +4135,66 @@
   "tsWrapQueue": "Revision queue, blind spots and topic-wise analysis",
   "tsWrapNoExpiry": "No subscription, no expiry. Tests added later are included.",
   "tsNotSure": "Not sure yet? Try the free tests first.",
-  "tsTryFreePyq": "Try the free PYQ tests"
+  "tsTryFreePyq": "Try the free PYQ tests",
+  "@tsNoSafe": {
+    "placeholders": {
+      "pct": {
+        "type": "int"
+      },
+      "min": {
+        "type": "int"
+      }
+    }
+  },
+  "@tsFltDesc": {
+    "placeholders": {
+      "questions": {
+        "type": "int"
+      },
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "@tsFltIntro": {
+    "placeholders": {
+      "questions": {
+        "type": "int"
+      },
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "@ts100q2h": {
+    "placeholders": {
+      "questions": {
+        "type": "int"
+      },
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "@tsSubjTestsDesc": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "@qotdCommentHint": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "@dwTiersNote": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  }
 }

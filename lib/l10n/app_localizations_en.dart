@@ -167,7 +167,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settingsLinkOpenFailed => 'Could not open link.';
 
   @override
-  String get settingsLanguageTitle => 'Question language';
+  String get settingsLanguageTitle => 'Language';
 
   @override
   String get settingsDarkMode => 'Dark mode';
@@ -241,7 +241,7 @@ class AppLocalizationsEn extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count incorrects',
+      other: '$count incorrect',
       one: '1 incorrect',
     );
     return '$_temp0';
@@ -636,7 +636,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get todayCaShotSubtitle => 'Breaking news brief + 1 MCQ based on it.';
 
   @override
-  String get todayPaperQuizTitle => 'Today\'s paper quiz';
+  String get todayPaperQuizTitle => 'Today\'s Current affairs quiz';
 
   @override
   String get todayPaperQuizBody =>
@@ -864,7 +864,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get testHintCorrect =>
-      'The marks are in the explanation — elimination, statement analysis, and the trap option.';
+      'The real learning is in the explanation — elimination, statement analysis, and the trap option.';
 
   @override
   String get testHintWrong =>
@@ -1124,14 +1124,14 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get aboutBullet1 =>
-      '• Areas where confident answers or intelligent guesses often go wrong\n';
+      '• Areas where Sure answers or educated guesses often go wrong\n';
 
   @override
   String get aboutArrow1 => '  → Avoid taking extra risks here\n\n';
 
   @override
   String get aboutBullet2 =>
-      '• Areas where confident answers or intelligent guesses are usually correct\n';
+      '• Areas where Sure answers or educated guesses are usually correct\n';
 
   @override
   String get aboutArrow2 => '  → Take smarter risks here\n\n';
@@ -1648,7 +1648,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get resultsNoDangerBody =>
-      'Wrong answers without a confidence pick, or where you marked \"Guessing\", do not appear here.';
+      'Wrong answers without a confidence pick, or where you marked \"Pure guess\", do not appear here.';
 
   @override
   String get resultsInvalidFilter => 'Invalid confidence filter.';
@@ -1712,7 +1712,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get resultsCoverageHint =>
-      'Questions where you tapped Sure, Intelligent, or Pure guess after answering.';
+      'Questions where you tapped Sure, Educated guess, or Pure guess after answering.';
 
   @override
   String get resultsCoachMistakesTitle => 'Review only your mistakes';
@@ -1977,7 +1977,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String commonDaysAgo(int count) {
-    return '$count days ago';
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count days ago',
+      one: '1 day ago',
+    );
+    return '$_temp0';
   }
 
   @override
@@ -2002,7 +2008,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String dzTotalLine(int count, String marks) {
-    return 'Total: $count wrong · about $marks marks (0.66 each if counted)';
+    return 'Total: $count wrong · about $marks marks lost (0.66 per wrong answer)';
   }
 
   @override
@@ -2155,7 +2161,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get mockMoreClarity => 'Want further clarity? ';
 
   @override
-  String get subjFeedbackLead => 'Any questions or feedback?\\n';
+  String get subjFeedbackLead => 'Any questions or feedback?\n';
 
   @override
   String get subjGetInTouch => 'Get in touch';
@@ -2201,7 +2207,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get subjNoAttemptsYet =>
-      'No attempted answers yet.\\nStart a test and mark confidence to see your insights';
+      'No attempted answers yet.\nStart a test and mark confidence to see your insights';
 
   @override
   String get subjAccuracySuffix => ' accuracy';
@@ -2250,7 +2256,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get subjNoTopicsBody =>
-      'No topic in this subject has enough wrong answers marked “Very sure” or “Somewhat sure” to show here yet. As that pattern shows up, you will see it broken down by type of confidence.';
+      'No topic in this subject has enough wrong answers marked “Sure” or “Educated guess” to show here yet. As that pattern shows up, you will see it broken down by type of confidence.';
 
   @override
   String get subjWhyTopics => 'Why these topics?';
@@ -2313,7 +2319,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get notifNoTestBody =>
-      'Take 7 quick MCQs. Get coached to eliminate better, spot weak areas, and see where you’re strong.';
+      'Take 8 quick MCQs. Get coached to eliminate better, spot weak areas, and see where you’re strong.';
 
   @override
   String get notifBattleInviteTitle => 'Battle invite';
@@ -2353,7 +2359,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String dcaOfCount(int count) {
-    return 'of $count';
+    return 'out of $count participants';
   }
 
   @override
@@ -2713,7 +2719,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String dwTopicsWentBy(int n) {
-    return '$n topics went by · nothing lost for Monday';
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n topics',
+      one: '1 topic',
+    );
+    return 'Missed $_temp0 this week · nothing lost, Monday is a fresh start';
   }
 
   @override
@@ -3095,8 +3107,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get dwNoBadgesNight => 'No badges earned this night yet.';
 
   @override
-  String get dwTiersNote =>
-      'Consistency tiers climb over 30 War nights. Miss two nights in a row and you fall one tier.';
+  String dwTiersNote(int days) {
+    return 'Consistency tiers climb over $days War nights. Miss two nights in a row and you fall one tier.';
+  }
 
   @override
   String get dwTonight => 'TONIGHT';
@@ -3318,7 +3331,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String dwBetterThan(String pct) {
-    return 'Better than $pct%';
+    return 'Better than $pct% of warriors';
   }
 
   @override
@@ -3749,7 +3762,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get qotdCommentLabel => 'Comment (optional)';
 
   @override
-  String get qotdCommentHint => 'Leave blank, or write at least 50 characters…';
+  String qotdCommentHint(int n) {
+    return 'Leave blank, or write at least $n characters…';
+  }
 
   @override
   String get qotdSignInKept => 'Sign in to post. Your comment is kept.';
@@ -3923,7 +3938,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String bwJoinWindow(String window, String remaining) {
-    return 'If your opponent joins within $window, \nyou can start the battle. Time remaining: $remaining.';
+    return 'If your opponent joins within $window, you can start the battle. Time remaining: $remaining.';
   }
 
   @override
@@ -4010,11 +4025,11 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get bcErrPermission =>
-      'Could not save the battle room. Sign in and try again, or check Firestore rules.';
+      'Could not save the battle room. Sign in and try again.';
 
   @override
   String get bcErrUnavailable =>
-      'Firestore is temporarily unavailable. Check your connection and try again.';
+      'This service is temporarily unavailable. Check your connection and try again.';
 
   @override
   String get bcErrTimeout =>
@@ -4273,7 +4288,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get bspSubmitFailed => 'Could not submit battle.';
 
   @override
-  String get bspPermDenied => 'Battle permission denied by Firestore rules.';
+  String get bspPermDenied => 'Battle permission denied.';
 
   @override
   String get bspNetwork =>
@@ -4294,8 +4309,7 @@ class AppLocalizationsEn extends AppLocalizations {
       'Push could not be sent. They can still join using the session link.';
 
   @override
-  String get bicUnclear =>
-      'Invite status unclear. Check Firebase Functions logs.';
+  String get bicUnclear => 'Invite status unclear. Please try again later.';
 
   @override
   String gmSetTitle(String subject, int n, int total) {
@@ -4530,7 +4544,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String mpDaysAgo(int n) {
-    return '$n days ago';
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n days ago',
+      one: '1 day ago',
+    );
+    return '$_temp0';
   }
 
   @override
@@ -5467,7 +5487,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get tsPractiseAgain => 'Practise again (not scored)';
 
   @override
-  String get tsMarking => '+2 for correct, -0.66 for wrong';
+  String get tsMarking => '+2 for correct, −0.66 for wrong';
 
   @override
   String get tsOneAttempt =>
@@ -5492,13 +5512,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get tsUnlockAll => 'Unlock all tests';
 
   @override
-  String tsPaidNoAccess(String entitlement, String product) {
-    return 'Payment went through, but access was not granted yet. Tap Restore purchase, or check that RevenueCat entitlement \"$entitlement\" is attached to product \"$product\".';
-  }
+  String get tsPaidNoAccess =>
+      'Payment went through, but access was not granted yet. Tap Restore purchase, or try again in a little while.';
 
   @override
-  String tsPwSubject(int n) {
-    return '$n subject tests, 50 questions each, with 10% PYQs';
+  String tsPwSubject(int n, int questions, int pct) {
+    return '$n subject tests, $questions questions each, with $pct% PYQs';
   }
 
   @override
@@ -5507,8 +5526,8 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String tsPwMocks(int n) {
-    return '$n full-length mocks that mirror the real paper (100 Q, 2 hrs)';
+  String tsPwMocks(int n, int questions, int hours) {
+    return '$n full-length mocks that mirror the real paper ($questions Q, $hours hrs)';
   }
 
   @override
@@ -5667,11 +5686,14 @@ class AppLocalizationsEn extends AppLocalizations {
   String get tsWhatYouGet => 'What you get';
 
   @override
-  String get tsFltDesc =>
-      'Each test has 100 questions, Time 2 hours.\nTest of all GS subjects + current affairs';
+  String tsFltDesc(int questions, int hours) {
+    return 'Each test has $questions questions, Time $hours hours.\nTest of all GS subjects + current affairs';
+  }
 
   @override
-  String get tsSubjTestsDesc => 'Topic-wise 50-question tests for GS subjects';
+  String tsSubjTestsDesc(int n) {
+    return 'Topic-wise $n-question tests for GS subjects';
+  }
 
   @override
   String get tsCaEveryMonth => 'Current affairs every month';
@@ -5728,7 +5750,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get tsSeeAll => 'See all';
 
   @override
-  String get tsFltIntro => 'Simulate the real exam: 100 questions, 2 hours.';
+  String tsFltIntro(int questions, int hours) {
+    return 'Simulate the real exam: $questions questions, $hours hours.';
+  }
 
   @override
   String get tsReviseFromFlts => 'Topics to revise (from FLTs)';
@@ -5765,8 +5789,9 @@ class AppLocalizationsEn extends AppLocalizations {
       'No weak topics yet. Finish a test and they will show up here.';
 
   @override
-  String get tsNoSafe =>
-      'No safe areas yet. A topic becomes safe at 80% accuracy over 4+ questions.';
+  String tsNoSafe(int pct, int min) {
+    return 'No safe areas yet. A topic becomes safe at $pct% accuracy over $min+ questions.';
+  }
 
   @override
   String get tsFromFlt => 'From full-length tests';
@@ -5792,8 +5817,8 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String tsLowScoreStory(String topic) {
-    return 'A low subject score is not the whole story. Inside Modern History, $topic is where you actually lose marks. Start there.';
+  String tsLowScoreStory(String subject, String topic) {
+    return 'A low subject score is not the whole story. Inside $subject, $topic is where you actually lose marks. Start there.';
   }
 
   @override
@@ -5963,13 +5988,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get tsBlindAction => 'Fix these first. They cost marks.';
 
   @override
-  String get tsGuessRight => 'Guessed and right';
+  String get tsGuessRight => 'Pure guess and right';
 
   @override
   String get tsLuckyAction => 'Revise so it sticks.';
 
   @override
-  String get tsGuessWrong => 'Guessed and wrong';
+  String get tsGuessWrong => 'Pure guess and wrong';
 
   @override
   String get tsGapAction => 'Learn it from the explanation.';
@@ -5981,7 +6006,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get tsMocksMirror => 'The full-length mocks mirror the real paper.';
 
   @override
-  String get ts100q2h => '100 Q, 2 hours';
+  String ts100q2h(int questions, int hours) {
+    return '$questions Q, $hours hours';
+  }
 
   @override
   String get tsTimedPaper => 'Timed, exam-style paper with all GS subjects.';

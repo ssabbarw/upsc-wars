@@ -24,7 +24,7 @@ class AppLocalizationsHi extends AppLocalizations {
   String get commonExit => 'बाहर निकलें';
 
   @override
-  String get commonLogOut => 'लॉग आउट';
+  String get commonLogOut => 'Log out';
 
   @override
   String get languagePickerTitle => 'भाषा चुनें';
@@ -39,7 +39,7 @@ class AppLocalizationsHi extends AppLocalizations {
   String get languagePickerHintHi => 'ऐप और सवाल, दोनों हिन्दी में।';
 
   @override
-  String get languagePickerPracticeTest => 'प्रैक्टिस टेस्ट';
+  String get languagePickerPracticeTest => 'Practice test';
 
   @override
   String get readingSizeSmall => 'छोटा';
@@ -152,17 +152,17 @@ class AppLocalizationsHi extends AppLocalizations {
   String get settingsBlockedUsers => 'ब्लॉक किए गए यूज़र';
 
   @override
-  String get settingsLoggingOut => 'लॉग आउट हो रहा है...';
+  String get settingsLoggingOut => 'Log out हो रहा है...';
 
   @override
   String get settingsSignOutSubtitle => 'इस डिवाइस से साइन आउट करें';
 
   @override
-  String get settingsLogOutConfirmTitle => 'लॉग आउट करें?';
+  String get settingsLogOutConfirmTitle => 'Log out करें?';
 
   @override
   String get settingsLogOutConfirmBody =>
-      'क्या आप सच में लॉग आउट करना चाहते हैं?';
+      'क्या आप सच में log out करना चाहते हैं?';
 
   @override
   String get settingsLinkOpenFailed => 'लिंक नहीं खुल सका।';
@@ -314,7 +314,7 @@ class AppLocalizationsHi extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count तरह के traps',
+      other: '$count तरह के trap',
       one: '1 तरह के trap',
     );
     return 'आप $_temp0 में फँसे हैं';
@@ -322,7 +322,7 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String homeStartNQuestionTest(int count) {
-    return '$count सवालों का टेस्ट शुरू करें';
+    return '$count सवालों का test शुरू करें';
   }
 
   @override
@@ -458,7 +458,7 @@ class AppLocalizationsHi extends AppLocalizations {
       'देखिए, trap सवाल कैसे confident aspirants को भी फँसा देते हैं — और Danger Zone उसे कैसे पकड़ता है।';
 
   @override
-  String get activationStartTest => 'टेस्ट शुरू करें';
+  String get activationStartTest => 'Test शुरू करें';
 
   @override
   String get activationHideTitle => 'अभी छुपाएँ?';
@@ -580,7 +580,7 @@ class AppLocalizationsHi extends AppLocalizations {
       'Sure, educated guess या unsure — हम पकड़ते हैं कि क्या सही लगता है पर होता नहीं।';
 
   @override
-  String get demoPoint3Title => 'टेस्ट खत्म होते ही detailed insights';
+  String get demoPoint3Title => 'Test खत्म होते ही detailed insights';
 
   @override
   String get demoPoint3Body =>
@@ -626,7 +626,7 @@ class AppLocalizationsHi extends AppLocalizations {
   String get todayCaShotSubtitle => 'Breaking news brief + उस पर आधारित 1 MCQ।';
 
   @override
-  String get todayPaperQuizTitle => 'आज का paper quiz';
+  String get todayPaperQuizTitle => 'आज का Current affairs quiz';
 
   @override
   String get todayPaperQuizBody =>
@@ -708,7 +708,7 @@ class AppLocalizationsHi extends AppLocalizations {
   }
 
   @override
-  String get progressTabHistory => 'टेस्ट हिस्ट्री';
+  String get progressTabHistory => 'Test History';
 
   @override
   String get progressLoadFailed => 'Overview load नहीं हो सका।';
@@ -732,14 +732,14 @@ class AppLocalizationsHi extends AppLocalizations {
   String get profileInDelhi => ' दिल्ली में';
 
   @override
-  String get profileTitle => 'प्रोफ़ाइल';
+  String get profileTitle => 'Profile';
 
   @override
-  String get profileYourProfile => 'आपकी प्रोफ़ाइल';
+  String get profileYourProfile => 'आपकी Profile';
 
   @override
   String get profileSignInPitch =>
-      'Community से जुड़ने, battles में हिस्सा लेने और अपनी प्रोफ़ाइल बनाने के लिए sign in करें।';
+      'Community से जुड़ने, battles में हिस्सा लेने और अपनी Profile बनाने के लिए sign in करें।';
 
   @override
   String get authSigningIn => 'Sign in हो रहा है...';
@@ -751,11 +751,11 @@ class AppLocalizationsHi extends AppLocalizations {
   String get authContinueGoogle => 'Google से जारी रखें';
 
   @override
-  String get profilePhotoUpdated => 'प्रोफ़ाइल फ़ोटो अपडेट हो गई';
+  String get profilePhotoUpdated => 'Profile फ़ोटो अपडेट हो गई';
 
   @override
   String get profilePhotoWebHint =>
-      'प्रोफ़ाइल फ़ोटो Android या iOS ऐप में बदली जा सकती है।';
+      'Profile फ़ोटो Android या iOS ऐप में बदली जा सकती है।';
 
   @override
   String get profileNoEmail => 'कोई ईमेल नहीं';
@@ -777,10 +777,10 @@ class AppLocalizationsHi extends AppLocalizations {
       'Instagram username में / नहीं होना चाहिए';
 
   @override
-  String get profileCommunityUpdated => 'Community प्रोफ़ाइल अपडेट हो गई';
+  String get profileCommunityUpdated => 'Community Profile अपडेट हो गई';
 
   @override
-  String get profileCommunityTitle => 'Community प्रोफ़ाइल';
+  String get profileCommunityTitle => 'Community Profile';
 
   @override
   String get profileCommunityBody =>
@@ -843,7 +843,7 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get testHintCorrect =>
-      'Marks explanation में हैं — elimination, statement analysis और trap option।';
+      'असली सीख explanation में है — elimination, statement analysis और trap option।';
 
   @override
   String get testHintWrong =>
@@ -908,7 +908,7 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get testTimerPausedNotice =>
-      'ऐप बंद रहने के दौरान Timer रुका रहा। बचा हुआ समय सही न हो सकता है।';
+      'ऐप बंद रहने के दौरान Timer रुका रहा। बचा हुआ समय सटीक नहीं हो सकता।';
 
   @override
   String get testBookmarked => 'Bookmark किया';
@@ -953,7 +953,7 @@ class AppLocalizationsHi extends AppLocalizations {
   String get demoLoadFailed => 'Demo test load नहीं हो सका।';
 
   @override
-  String get historyTitle => 'हिस्ट्री';
+  String get historyTitle => 'History';
 
   @override
   String get historyLoadFailed => 'History load नहीं हो सकी';
@@ -1087,7 +1087,7 @@ class AppLocalizationsHi extends AppLocalizations {
   String get onbDepthEyebrow => 'UPSC की EDGE';
 
   @override
-  String get onbDepthTitle => 'UPSC Wars के हर सवाल में है:';
+  String get onbDepthTitle => 'UPSC Wars के\nहर सवाल में है:';
 
   @override
   String get aboutWhyBody =>
@@ -1107,14 +1107,14 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get aboutBullet1 =>
-      '• ऐसे areas जहाँ confident जवाब या सोच-समझकर लगाए गए guess अक्सर गलत निकलते हैं\n';
+      '• ऐसे areas जहाँ Sure जवाब या Educated guess अक्सर गलत निकलते हैं\n';
 
   @override
   String get aboutArrow1 => '  → यहाँ extra risk लेने से बचिए\n\n';
 
   @override
   String get aboutBullet2 =>
-      '• ऐसे areas जहाँ confident जवाब या सोच-समझकर लगाए गए guess अक्सर सही निकलते हैं\n';
+      '• ऐसे areas जहाँ Sure जवाब या Educated guess अक्सर सही निकलते हैं\n';
 
   @override
   String get aboutArrow2 => '  → यहाँ समझदारी से risk लीजिए\n\n';
@@ -1411,7 +1411,7 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get resultsCaseBSubtitle =>
-      'आपकी elimination strategy जितनी चली, उससे ज़्यादा बार फेल हुई।';
+      'आपकी elimination strategy जितनी बार चली, उससे ज़्यादा बार फेल हुई।';
 
   @override
   String get resultsCaseCSubtitle =>
@@ -1573,7 +1573,7 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get resultsNoDangerBody =>
-      'जिन गलत जवाबों में confidence नहीं चुना गया, या जहाँ आपने \"Guessing\" चुना, वे यहाँ नहीं दिखते।';
+      'जिन गलत जवाबों में confidence नहीं चुना गया, या जहाँ आपने \"Pure guess\" चुना, वे यहाँ नहीं दिखते।';
 
   @override
   String get resultsInvalidFilter => 'Confidence filter सही नहीं है।';
@@ -1638,7 +1638,7 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get resultsCoverageHint =>
-      'वे सवाल जिनमें जवाब देने के बाद आपने Sure, Intelligent या Pure guess चुना।';
+      'वे सवाल जिनमें जवाब देने के बाद आपने Sure, Educated guess या Pure guess चुना।';
 
   @override
   String get resultsCoachMistakesTitle => 'सिर्फ़ अपनी गलतियाँ review करें';
@@ -1879,7 +1879,13 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String commonDaysAgo(int count) {
-    return '$count दिन पहले';
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count दिन पहले',
+      one: '1 दिन पहले',
+    );
+    return '$_temp0';
   }
 
   @override
@@ -1904,7 +1910,7 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String dzTotalLine(int count, String marks) {
-    return 'कुल: $count गलत · लगभग $marks marks (गिनने पर हर एक के 0.66)';
+    return 'कुल: $count गलत · लगभग $marks marks कटे (हर गलत जवाब पर 0.66 marks कटते हैं)';
   }
 
   @override
@@ -2148,7 +2154,7 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get subjNoTopicsBody =>
-      'इस subject के किसी topic में अभी इतने गलत जवाब “Very sure” या “Somewhat sure” के साथ नहीं हैं कि यहाँ दिखाए जा सकें। जैसे ही यह pattern दिखेगा, आपको यह confidence के type के हिसाब से दिखेगा।';
+      'इस subject के किसी topic में अभी इतने गलत जवाब “Sure” या “Educated guess” के साथ नहीं हैं कि यहाँ दिखाए जा सकें। जैसे ही यह pattern दिखेगा, आपको यह confidence के type के हिसाब से दिखेगा।';
 
   @override
   String get subjWhyTopics => 'ये topics क्यों?';
@@ -2211,7 +2217,7 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get notifNoTestBody =>
-      'बस 7 quick MCQs दीजिए। बेहतर elimination सीखिए, weak areas पहचानिए और देखिए कि आप कहाँ strong हैं।';
+      'बस 8 quick MCQs दीजिए। बेहतर elimination सीखिए, weak areas पहचानिए और देखिए कि आप कहाँ strong हैं।';
 
   @override
   String get notifBattleInviteTitle => 'Battle invite';
@@ -2251,7 +2257,7 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String dcaOfCount(int count) {
-    return 'कुल $count में';
+    return 'कुल $count participants में से';
   }
 
   @override
@@ -2379,7 +2385,7 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get dcaNotLiveBody =>
-      'आज सुबह का paper बन चुका है, पर app में अभी publish नहीं हुआ है। एक मिनट बाद Home को नीचे खींचकर refresh करें।';
+      'आज सुबह का paper बन चुका है, पर ऐप में अभी publish नहीं हुआ है। एक मिनट बाद Home को नीचे खींचकर refresh करें।';
 
   @override
   String get dcaSoonBody =>
@@ -2609,7 +2615,13 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String dwTopicsWentBy(int n) {
-    return '$n topics निकल गए · सोमवार के लिए कुछ नहीं खोया';
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n topics',
+      one: '1 topic',
+    );
+    return 'इस हफ़्ते $_temp0 छूट गए · कुछ नहीं बिगड़ा, सोमवार से नई शुरुआत';
   }
 
   @override
@@ -2996,8 +3008,9 @@ class AppLocalizationsHi extends AppLocalizations {
   String get dwNoBadgesNight => 'इस रात अभी कोई badge नहीं मिला।';
 
   @override
-  String get dwTiersNote =>
-      'Consistency tiers 30 War nights में बढ़ते हैं। लगातार दो रातें छूटीं तो एक tier नीचे आ जाते हैं।';
+  String dwTiersNote(int days) {
+    return 'Consistency tiers $days War nights में बढ़ते हैं। लगातार दो रातें छूटीं तो एक tier नीचे आ जाते हैं।';
+  }
 
   @override
   String get dwTonight => 'आज रात';
@@ -3190,7 +3203,7 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get dwUpdateApp =>
-      'आज रात का War attempt करने के लिए app update करें — इस paper के कुछ सवाल आपके question bank में अभी नहीं हैं।';
+      'आज रात का War attempt करने के लिए ऐप update करें — इस paper के कुछ सवाल आपके question bank में अभी नहीं हैं।';
 
   @override
   String get dwTopicsLoadFailed => 'आज रात के topics load नहीं हुए';
@@ -3222,7 +3235,7 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String dwBetterThan(String pct) {
-    return '$pct% से बेहतर';
+    return '$pct% warriors से आगे';
   }
 
   @override
@@ -3655,7 +3668,9 @@ class AppLocalizationsHi extends AppLocalizations {
   String get qotdCommentLabel => 'Comment (optional)';
 
   @override
-  String get qotdCommentHint => 'खाली छोड़ें, या कम से कम 50 अक्षर लिखें…';
+  String qotdCommentHint(int n) {
+    return 'खाली छोड़ें, या कम से कम $n अक्षर लिखें…';
+  }
 
   @override
   String get qotdSignInKept =>
@@ -3832,7 +3847,7 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String bwJoinWindow(String window, String remaining) {
-    return 'अगर आपका opponent $window के अंदर join करता है, \nतो आप battle शुरू कर सकते हैं। बचा हुआ time: $remaining।';
+    return 'अगर आपका opponent $window के अंदर join करता है, तो आप battle शुरू कर सकते हैं। बचा हुआ time: $remaining।';
   }
 
   @override
@@ -4443,7 +4458,13 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String mpDaysAgo(int n) {
-    return '$n दिन पहले';
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n दिन पहले',
+      one: '1 दिन पहले',
+    );
+    return '$_temp0';
   }
 
   @override
@@ -4773,7 +4794,7 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get cpPhotoWeb =>
-      'Profile photo Android या iOS app में बदली जा सकती है।';
+      'Profile photo Android या iOS ऐप में बदली जा सकती है।';
 
   @override
   String get cpYourName => 'आपका नाम';
@@ -5382,7 +5403,7 @@ class AppLocalizationsHi extends AppLocalizations {
   String get tsPractiseAgain => 'दोबारा practice करें (score नहीं होगा)';
 
   @override
-  String get tsMarking => 'सही पर +2, गलत पर -0.66';
+  String get tsMarking => 'सही पर +2, गलत पर −0.66';
 
   @override
   String get tsOneAttempt =>
@@ -5406,13 +5427,12 @@ class AppLocalizationsHi extends AppLocalizations {
   String get tsUnlockAll => 'सभी tests unlock करें';
 
   @override
-  String tsPaidNoAccess(String entitlement, String product) {
-    return 'Payment हो गया, पर access अभी नहीं मिला। Restore purchase पर tap करें, या check करें कि RevenueCat entitlement \"$entitlement\" product \"$product\" से जुड़ा है।';
-  }
+  String get tsPaidNoAccess =>
+      'Payment हो गया, पर access अभी नहीं मिला। Restore purchase पर tap करें, या कुछ देर बाद फिर कोशिश करें।';
 
   @override
-  String tsPwSubject(int n) {
-    return '$n subject tests, हर एक में 50 सवाल, 10% PYQs के साथ';
+  String tsPwSubject(int n, int questions, int pct) {
+    return '$n subject tests, हर एक में $questions सवाल, $pct% PYQs के साथ';
   }
 
   @override
@@ -5421,13 +5441,13 @@ class AppLocalizationsHi extends AppLocalizations {
   }
 
   @override
-  String tsPwMocks(int n) {
-    return '$n full-length mocks जो असली paper जैसे हैं (100 सवाल, 2 घंटे)';
+  String tsPwMocks(int n, int questions, int hours) {
+    return '$n full-length mocks जो असली paper जैसे हैं ($questions सवाल, $hours घंटे)';
   }
 
   @override
   String tsPwFree(int n) {
-    return 'पहले $n tests free में आज़माएँ, सभी PYQ tests सहित।';
+    return '$n tests पहले free में आज़माएँ, सभी PYQ tests सहित।';
   }
 
   @override
@@ -5491,7 +5511,7 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get tsPwBilingual =>
-      'हर सवाल और explanation Hindi और English दोनों में';
+      'हर सवाल और explanation हिन्दी और English दोनों में';
 
   @override
   String get tsPwDash =>
@@ -5518,7 +5538,7 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get tsMissingQs =>
-      'इस test के कुछ सवाल अभी आपके device पर नहीं हैं। अपना connection check करें, या app update करें, और फिर कोशिश करें।';
+      'इस test के कुछ सवाल अभी आपके device पर नहीं हैं। अपना connection check करें, या ऐप update करें, और फिर कोशिश करें।';
 
   @override
   String get tsNoQsRevise =>
@@ -5582,12 +5602,14 @@ class AppLocalizationsHi extends AppLocalizations {
   String get tsWhatYouGet => 'आपको क्या मिलेगा';
 
   @override
-  String get tsFltDesc =>
-      'हर test में 100 सवाल, समय 2 घंटे।\nसभी GS subjects + current affairs का test';
+  String tsFltDesc(int questions, int hours) {
+    return 'हर test में $questions सवाल, समय $hours घंटे।\nसभी GS subjects + current affairs का test';
+  }
 
   @override
-  String get tsSubjTestsDesc =>
-      'GS subjects के लिए topic-wise 50 सवालों के tests';
+  String tsSubjTestsDesc(int n) {
+    return 'GS subjects के लिए topic-wise $n सवालों के tests';
+  }
 
   @override
   String get tsCaEveryMonth => 'हर महीने Current affairs';
@@ -5604,7 +5626,7 @@ class AppLocalizationsHi extends AppLocalizations {
       'Subject-wise accuracy, revise करने वाले topics और safe areas, इस आधार पर कि आप कितने sure थे।';
 
   @override
-  String get tsBilingualOnePay => 'Hindi और English, एक ही payment';
+  String get tsBilingualOnePay => 'हिन्दी और English, एक ही payment';
 
   @override
   String get tsNoSubExpire =>
@@ -5646,7 +5668,9 @@ class AppLocalizationsHi extends AppLocalizations {
   String get tsSeeAll => 'सभी देखें';
 
   @override
-  String get tsFltIntro => 'असली exam जैसा अनुभव: 100 सवाल, 2 घंटे।';
+  String tsFltIntro(int questions, int hours) {
+    return 'असली exam जैसा अनुभव: $questions सवाल, $hours घंटे।';
+  }
 
   @override
   String get tsReviseFromFlts => 'Revise करने वाले topics (FLTs से)';
@@ -5684,8 +5708,9 @@ class AppLocalizationsHi extends AppLocalizations {
       'अभी कोई weak topic नहीं है। एक test पूरा करें, वे यहाँ दिखने लगेंगे।';
 
   @override
-  String get tsNoSafe =>
-      'अभी कोई safe area नहीं है। 4+ सवालों में 80% accuracy होने पर topic safe बनता है।';
+  String tsNoSafe(int pct, int min) {
+    return 'अभी कोई safe area नहीं है। $min+ सवालों में $pct% accuracy होने पर topic safe बनता है।';
+  }
 
   @override
   String get tsFromFlt => 'Full-length tests से';
@@ -5711,8 +5736,8 @@ class AppLocalizationsHi extends AppLocalizations {
   }
 
   @override
-  String tsLowScoreStory(String topic) {
-    return 'Subject का कम score पूरी कहानी नहीं है। Modern History के अंदर, $topic में आपके असल में marks कटते हैं। वहीं से शुरू करें।';
+  String tsLowScoreStory(String subject, String topic) {
+    return 'Subject का कम score पूरी कहानी नहीं है। $subject के अंदर, $topic में आपके असल में marks कटते हैं। वहीं से शुरू करें।';
   }
 
   @override
@@ -5778,7 +5803,7 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get tsTapTopicHint =>
-      'App में किसी भी topic पर tap करके उसमें attempt किए गए सवाल ठीक वैसे ही दोबारा पढ़ें।';
+      'ऐप में किसी भी topic पर tap करके वही सवाल दोबारा पढ़ें जो आपने उसमें attempt किए थे।';
 
   @override
   String get tsHeroTagline =>
@@ -5872,13 +5897,13 @@ class AppLocalizationsHi extends AppLocalizations {
   String get tsBlindAction => 'इन्हें पहले ठीक करें। इनसे marks कटते हैं।';
 
   @override
-  String get tsGuessRight => 'Guessed और right';
+  String get tsGuessRight => 'Pure guess और right';
 
   @override
   String get tsLuckyAction => 'Revise करें ताकि याद रहे।';
 
   @override
-  String get tsGuessWrong => 'Guessed और wrong';
+  String get tsGuessWrong => 'Pure guess और wrong';
 
   @override
   String get tsGapAction => 'Explanation से सीखें।';
@@ -5890,7 +5915,9 @@ class AppLocalizationsHi extends AppLocalizations {
   String get tsMocksMirror => 'Full-length mocks असली paper जैसे होते हैं।';
 
   @override
-  String get ts100q2h => '100 सवाल, 2 घंटे';
+  String ts100q2h(int questions, int hours) {
+    return '$questions सवाल, $hours घंटे';
+  }
 
   @override
   String get tsTimedPaper => 'सभी GS subjects के साथ timed, exam-style paper।';

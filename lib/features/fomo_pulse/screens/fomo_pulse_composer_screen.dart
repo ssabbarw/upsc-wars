@@ -105,7 +105,7 @@ class FomoPulseComposerScreen extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final tab = useState(0);
+    final tab = useState(1); // URL tab first; Today's news is optional.
     final urlCtrl = useTextEditingController();
     useListenable(urlCtrl);
     final harvestLoading = useState(true);

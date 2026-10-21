@@ -11,6 +11,7 @@ import '../constants/prelims_countdown.dart';
 import '../constants/prelims_debug_flags.dart';
 import '../debug/upsc_wars_trace.dart';
 import '../providers/prefs_provider.dart';
+import '../providers/prelims_date_provider.dart';
 import '../../features/chat/chat_fcm.dart';
 import '../../l10n/l10n.dart';
 
@@ -482,13 +483,20 @@ class AppLocalNotificationsService {
     }
 
     final now = DateTime.now();
-    final title = PrelimsCountdown.persistentNotificationTitle();
-    var body = PrelimsCountdown.persistentNotificationBody(now: now);
+    final targetDate = resolvePrelimsDateFromRemoteConfig();
+    final title = PrelimsCountdown.persistentNotificationTitle(
+      now: now,
+      targetDate: targetDate,
+    );
+    var body = PrelimsCountdown.persistentNotificationBody(
+      now: now,
+      targetDate: targetDate,
+    );
     if (PrelimsDebugFlags.surfacesEveryMinute) {
       body = '$body\n@${DateFormat('HH:mm').format(now)}';
     }
 
-    const androidDetails = AndroidNotificationDetails(
+    final androidDetails = AndroidNotificationDetails(
       _prelimsChannelId,
       _prelimsChannelName,
       channelDescription: _prelimsChannelDescription,
@@ -500,17 +508,22 @@ class AppLocalNotificationsService {
       playSound: false,
       enableVibration: false,
       icon: '@drawable/ic_notification',
-      color: Color(0xFF085041),
-      largeIcon: DrawableResourceAndroidBitmap('@mipmap/ic_launcher'),
+      color: const Color(0xFF085041),
+      largeIcon: const DrawableResourceAndroidBitmap('@mipmap/ic_launcher'),
       category: AndroidNotificationCategory.reminder,
       visibility: NotificationVisibility.public,
+      styleInformation: BigTextStyleInformation(
+        body,
+        contentTitle: title,
+        summaryText: 'UPSC Prelims',
+      ),
     );
 
     await _plugin.show(
       id: prelimsPersistentNotificationId,
       title: title,
       body: body,
-      notificationDetails: const NotificationDetails(android: androidDetails),
+      notificationDetails: NotificationDetails(android: androidDetails),
     );
   }
 

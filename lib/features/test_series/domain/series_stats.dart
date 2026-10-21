@@ -1,5 +1,6 @@
 import '../../../core/constants/question_source_constants.dart';
 import 'test_series_models.dart';
+import 'series_rules.dart';
 
 /// Dashboard subject groups. Ancient, Medieval and Art & Culture share one
 /// group, matching how the static tests are bucketed.
@@ -597,8 +598,8 @@ class _TopicAcc {
     final accuracy = answered == 0 ? 0.0 : correct / answered;
     final needsRevision = mistakes >= 2 || (mistakes >= 1 && accuracy < 0.6);
     final isSafe =
-        answered >= 4 &&
-        accuracy >= 0.8 &&
+        answered >= SeriesRules.safeMinQuestions &&
+        accuracy >= SeriesRules.safeAccuracyPercent / 100 &&
         !needsRevision &&
         (!useConfidence || confidentWrong == 0);
     return TopicStat(

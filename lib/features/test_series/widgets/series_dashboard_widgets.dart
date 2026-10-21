@@ -8,6 +8,7 @@ import '../../../core/theme/app_text_styles.dart';
 import '../domain/series_stats.dart';
 import '../domain/test_series_models.dart';
 import '../../../l10n/l10n.dart';
+import '../domain/series_rules.dart';
 
 /// Colour for an accuracy fraction: strong, middling or weak.
 Color seriesAccuracyColor(double accuracy) {
@@ -514,7 +515,10 @@ class SeriesTopicsPanel extends HookWidget {
         : context.l10n.tsSubSafe2;
     final emptyText = revise.value
         ? context.l10n.tsNoWeak
-        : context.l10n.tsNoSafe;
+        : context.l10n.tsNoSafe(
+            SeriesRules.safeAccuracyPercent,
+            SeriesRules.safeMinQuestions,
+          );
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,

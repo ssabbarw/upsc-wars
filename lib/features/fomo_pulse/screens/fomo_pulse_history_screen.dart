@@ -85,6 +85,13 @@ class FomoPulseHistoryScreen extends HookConsumerWidget {
             const SizedBox(width: AppSpacing.xs),
           ],
         ),
+        floatingActionButton: isAdmin
+            ? FloatingActionButton.extended(
+                onPressed: () => context.push('/internal/fomo-pulse-composer'),
+                icon: const Icon(Icons.add_rounded),
+                label: const Text('Create'),
+              )
+            : null,
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -139,11 +146,11 @@ class FomoPulseHistoryScreen extends HookConsumerWidget {
                     },
                     child: ListView.builder(
                       physics: const AlwaysScrollableScrollPhysics(),
-                      padding: const EdgeInsets.fromLTRB(
+                      padding: EdgeInsets.fromLTRB(
                         AppSpacing.lg,
                         AppSpacing.sm,
                         AppSpacing.lg,
-                        AppSpacing.lg,
+                        isAdmin ? AppSpacing.lg + 72 : AppSpacing.lg,
                       ),
                       itemCount: sections.length,
                       itemBuilder: (context, sectionIndex) {

@@ -11,11 +11,12 @@ part 'prelims_date_provider.g.dart';
 /// Example: `2027-05-23`
 const prelimsDateRemoteConfigKey = 'prelims_date';
 
-const _defaultPrelimsDate = '2026-05-24';
+const defaultPrelimsDateRemote = '2027-05-23';
 
 final _dateOnlyPattern = RegExp(r'^(\d{4})-(\d{2})-(\d{2})$');
 
-DateTime _parsePrelimsDate(String raw) {
+/// Parses `YYYY-MM-DD` into local 09:30; falls back to [PrelimsCountdown.prelimsDate].
+DateTime parsePrelimsDate(String raw) {
   final trimmed = raw.trim();
   if (trimmed.isEmpty) return PrelimsCountdown.prelimsDate;
 
@@ -34,16 +35,22 @@ DateTime _parsePrelimsDate(String raw) {
   return PrelimsCountdown.prelimsDate;
 }
 
-@Riverpod(keepAlive: true)
-Future<DateTime> prelimsDate(Ref ref) async {
+/// Reads Remote Config without Riverpod (for notification sync / WorkManager).
+DateTime resolvePrelimsDateFromRemoteConfig() {
   if (kIsWeb) return PrelimsCountdown.prelimsDate;
-  await ref.watch(killSwitchProvider.future);
   try {
     final raw = FirebaseRemoteConfig.instance
         .getString(prelimsDateRemoteConfigKey)
         .trim();
-    return _parsePrelimsDate(raw.isEmpty ? _defaultPrelimsDate : raw);
+    return parsePrelimsDate(raw.isEmpty ? defaultPrelimsDateRemote : raw);
   } on Object catch (_) {
     return PrelimsCountdown.prelimsDate;
   }
+}
+
+@Riverpod(keepAlive: true)
+Future<DateTime> prelimsDate(Ref ref) async {
+  if (kIsWeb) return PrelimsCountdown.prelimsDate;
+  await ref.watch(killSwitchProvider.future);
+  return resolvePrelimsDateFromRemoteConfig();
 }

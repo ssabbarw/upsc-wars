@@ -11,6 +11,7 @@ import '../../../core/auth/auth_session.dart';
 import '../../../core/constants/prelims_countdown.dart';
 import '../../../core/constants/app_constants.dart';
 import '../../../core/providers/prefs_provider.dart';
+import '../../../core/providers/prelims_date_provider.dart';
 import '../../../core/services/prelims_surfaces_refresh.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
@@ -1158,13 +1159,19 @@ class _PrelimsPersistentNotificationTile extends ConsumerWidget {
   }
 }
 
-class _AndroidPrelimsNotificationPreview extends StatelessWidget {
+class _AndroidPrelimsNotificationPreview extends ConsumerWidget {
   const _AndroidPrelimsNotificationPreview();
 
   @override
-  Widget build(BuildContext context) {
-    final title = PrelimsCountdown.persistentNotificationTitle();
-    final body = PrelimsCountdown.persistentNotificationBody();
+  Widget build(BuildContext context, WidgetRef ref) {
+    final targetDate =
+        ref.watch(prelimsDateProvider).value ?? PrelimsCountdown.prelimsDate;
+    final title = PrelimsCountdown.persistentNotificationTitle(
+      targetDate: targetDate,
+    );
+    final body = PrelimsCountdown.persistentNotificationBody(
+      targetDate: targetDate,
+    );
     final primary = Theme.of(context).colorScheme.primary;
     return Material(
       elevation: 4,
@@ -1199,7 +1206,7 @@ class _AndroidPrelimsNotificationPreview extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    AppConstants.appDisplayName,
+                    'UPSC Prelims',
                     style: TextStyle(
                       color: Colors.white.withValues(alpha: 0.55),
                       fontSize: 12,
@@ -1207,24 +1214,24 @@ class _AndroidPrelimsNotificationPreview extends StatelessWidget {
                       letterSpacing: 0.2,
                     ),
                   ),
-                  const SizedBox(height: 4),
+                  const SizedBox(height: 6),
                   Text(
                     title,
                     style: const TextStyle(
                       color: Colors.white,
-                      fontSize: 17,
-                      fontWeight: FontWeight.w700,
-                      height: 1.15,
-                      letterSpacing: -0.2,
+                      fontSize: 28,
+                      fontWeight: FontWeight.w800,
+                      height: 1.05,
+                      letterSpacing: -0.6,
                     ),
                   ),
-                  const SizedBox(height: 8),
+                  const SizedBox(height: 6),
                   Text(
                     body,
                     style: TextStyle(
                       color: Colors.white.withValues(alpha: 0.9),
                       fontSize: 14,
-                      height: 1.45,
+                      height: 1.4,
                     ),
                   ),
                 ],

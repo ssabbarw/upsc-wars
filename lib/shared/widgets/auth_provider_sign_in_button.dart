@@ -2,6 +2,18 @@ import 'package:flutter/material.dart';
 
 enum AuthProviderButtonType { google, apple }
 
+/// Official "Sign in with Google" colors from
+/// https://developers.google.com/identity/branding-guidelines
+abstract final class _GoogleSignInColors {
+  static const lightFill = Color(0xFFFFFFFF);
+  static const lightStroke = Color(0xFF747775);
+  static const lightText = Color(0xFF1F1F1F);
+
+  static const darkFill = Color(0xFF131314);
+  static const darkStroke = Color(0xFF8E918F);
+  static const darkText = Color(0xFFE3E3E3);
+}
+
 class AuthProviderSignInButton extends StatelessWidget {
   const AuthProviderSignInButton({
     super.key,
@@ -27,20 +39,30 @@ class AuthProviderSignInButton extends StatelessWidget {
     final effectiveOnPressed = (isLoading) ? null : onPressed;
 
     final (bg, fg, border) = switch (type) {
-      AuthProviderButtonType.google => (
-        Colors.white,
-        const Color(0xFF1F1F1F),
-        const Color(0xFFDADCE0),
-      ),
+      AuthProviderButtonType.google => isDark
+          ? (
+              _GoogleSignInColors.darkFill,
+              _GoogleSignInColors.darkText,
+              _GoogleSignInColors.darkStroke,
+            )
+          : (
+              _GoogleSignInColors.lightFill,
+              _GoogleSignInColors.lightText,
+              _GoogleSignInColors.lightStroke,
+            ),
       AuthProviderButtonType.apple =>
         isDark
             ? (Colors.white, const Color(0xFF0A0A0A), const Color(0x00000000))
             : (Colors.black, Colors.white, const Color(0x00000000)),
     };
 
+    // Google: Medium 14/20. Apple keeps a slightly larger weight for parity.
     final textStyle = TextStyle(
-      fontSize: 16,
-      fontWeight: FontWeight.w600,
+      fontSize: type == AuthProviderButtonType.google ? 14 : 16,
+      fontWeight: type == AuthProviderButtonType.google
+          ? FontWeight.w500
+          : FontWeight.w600,
+      height: type == AuthProviderButtonType.google ? 20 / 14 : null,
       color: fg,
     );
 
@@ -51,18 +73,18 @@ class AuthProviderSignInButton extends StatelessWidget {
         color: bg,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(borderRadius),
-          side: BorderSide(color: border),
+          side: BorderSide(color: border, width: 1),
         ),
         clipBehavior: Clip.antiAlias,
         child: InkWell(
           onTap: effectiveOnPressed,
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 14),
+            padding: const EdgeInsets.symmetric(horizontal: 12),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                _Logo(type: type),
-                const SizedBox(width: 10),
+                _Logo(type: type, googleOnDarkButton: isDark),
+                const SizedBox(width: 12),
                 Flexible(
                   child: AnimatedSwitcher(
                     duration: const Duration(milliseconds: 180),
@@ -97,36 +119,57 @@ class AuthProviderSignInButton extends StatelessWidget {
 }
 
 class _Logo extends StatelessWidget {
-  const _Logo({required this.type});
+  const _Logo({required this.type, this.googleOnDarkButton = false});
 
   final AuthProviderButtonType type;
+  final bool googleOnDarkButton;
 
   @override
   Widget build(BuildContext context) {
-    final boxSize = switch (type) {
-      AuthProviderButtonType.google => 28.0,
-      AuthProviderButtonType.apple => 22.0,
-    };
-    return SizedBox(
-      width: boxSize,
-      height: boxSize,
-      child: Center(
-        child: switch (type) {
-          AuthProviderButtonType.google => Image.asset(
-            'assets/logos/google_light.png',
-            package: 'sign_in_button',
-            height: 24,
-            fit: BoxFit.contain,
-          ),
-          AuthProviderButtonType.apple => Icon(
-            Icons.apple_rounded,
-            size: 20,
-            color: Theme.of(context).brightness == Brightness.dark
-                ? Colors.black
-                : Colors.white,
-          ),
-        },
+    return switch (type) {
+      AuthProviderButtonType.google => _GoogleG(onDarkButton: googleOnDarkButton),
+      AuthProviderButtonType.apple => SizedBox(
+        width: 22,
+        height: 22,
+        child: Icon(
+          Icons.apple_rounded,
+          size: 20,
+          color: Theme.of(context).brightness == Brightness.dark
+              ? Colors.black
+              : Colors.white,
+        ),
       ),
+    };
+  }
+}
+
+/// Multicolor Google "G". On dark buttons it sits on a white pad, as required
+/// by Google's branding guidelines.
+class _GoogleG extends StatelessWidget {
+  const _GoogleG({required this.onDarkButton});
+
+  final bool onDarkButton;
+
+  static const _logo = AssetImage(
+    'assets/logos/google_light.png',
+    package: 'sign_in_button',
+  );
+
+  @override
+  Widget build(BuildContext context) {
+    final g = Image(image: _logo, height: 20, width: 20, fit: BoxFit.contain);
+    if (!onDarkButton) {
+      return SizedBox(width: 20, height: 20, child: g);
+    }
+    return Container(
+      width: 28,
+      height: 28,
+      alignment: Alignment.center,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(4),
+      ),
+      child: g,
     );
   }
 }

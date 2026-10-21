@@ -13,6 +13,7 @@ import '../series_dashboard_widgets.dart';
 import '../series_test_row.dart';
 import 'series_tone.dart';
 import '../../../../l10n/l10n.dart';
+import '../../domain/series_rules.dart';
 
 /// Tab indexes of the series home, for the "see all" buttons.
 abstract final class SeriesBrowseTab {
@@ -1094,7 +1095,10 @@ class IntroExamRealism extends StatelessWidget {
               tile(
                 SeriesTone.blue,
                 Icons.timer_rounded,
-                context.l10n.ts100q2h,
+                context.l10n.ts100q2h(
+                  SeriesRules.fltQuestions,
+                  SeriesRules.fltHours,
+                ),
                 context.l10n.tsTimedPaper,
               ),
               const SizedBox(width: AppSpacing.md),

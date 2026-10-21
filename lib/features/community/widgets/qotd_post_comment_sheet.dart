@@ -145,7 +145,9 @@ class _QotdPostCommentSheetContentState
                 ],
                 decoration: InputDecoration(
                   labelText: context.l10n.qotdCommentLabel,
-                  hintText: context.l10n.qotdCommentHint,
+                  hintText: context.l10n.qotdCommentHint(
+                    QotdCommentRules.minLengthWhenNonEmpty,
+                  ),
                   alignLabelWithHint: true,
                   border: OutlineInputBorder(),
                 ),

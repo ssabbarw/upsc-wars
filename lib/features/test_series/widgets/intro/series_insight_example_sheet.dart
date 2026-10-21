@@ -35,6 +35,9 @@ class _TopicSample {
   double get accuracy => correct / answered;
 }
 
+/// Subject the example below is about (sample data, shown in English).
+const _exampleSubject = 'Modern History';
+
 /// Illustrative numbers only (clearly labelled as such in the sheet).
 const _modernHistoryTopics = [
   _TopicSample('Freedom Movement', 15, 24),
@@ -83,7 +86,7 @@ class _InsightExampleBody extends StatelessWidget {
         ),
         const SizedBox(height: AppSpacing.md),
         Text(
-          'Modern History: ${context.l10n.tsAccuracyPct((overall * 100).round())}',
+          '$_exampleSubject: ${context.l10n.tsAccuracyPct((overall * 100).round())}',
           style: AppTextStyles.h1().copyWith(fontWeight: FontWeight.w700),
         ),
         const SizedBox(height: 2),
@@ -107,7 +110,10 @@ class _InsightExampleBody extends StatelessWidget {
               const SizedBox(width: AppSpacing.sm),
               Expanded(
                 child: Text(
-                  context.l10n.tsLowScoreStory(weakest.first.name),
+                  context.l10n.tsLowScoreStory(
+                    _exampleSubject,
+                    weakest.first.name,
+                  ),
                   style: AppTextStyles.bodySm().copyWith(color: red.fg),
                 ),
               ),

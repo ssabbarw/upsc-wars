@@ -1,12 +1,11 @@
 import '../../l10n/l10n.dart';
+import 'prelims_motivation_quotes.dart';
 
 class PrelimsCountdown {
   PrelimsCountdown._();
-  // UPSC Prelims start time (local device time): 24 May, 09:30 AM.
-  static final DateTime prelimsDate = DateTime(2026, 5, 24, 9, 30);
-
-  static const String motivationQuote =
-      '“The trouble is, you think you have time.”\n- Buddha';
+  // UPSC Prelims start time (local device time). Fallback when Remote Config
+  // `prelims_date` is missing — keep in sync with kill_switch defaults.
+  static final DateTime prelimsDate = DateTime(2027, 5, 23, 9, 30);
 
   static Duration remaining({DateTime? now, DateTime? targetDate}) {
     final current = now ?? DateTime.now();
@@ -31,7 +30,7 @@ class PrelimsCountdown {
   }
 
   static String quoteForDate({DateTime? now}) {
-    return motivationQuote;
+    return PrelimsMotivationQuotes.quoteForDate(now ?? DateTime.now());
   }
 
   static String timerLabel({DateTime? now, DateTime? targetDate}) {
@@ -45,22 +44,28 @@ class PrelimsCountdown {
     return '${two(days)}:${two(hours)}:${two(minutes)}:${two(seconds)}';
   }
 
-  /// Title for the Android persistent prelims notification (days-only UI).
-  static String persistentNotificationTitle() => 'UPSC Prelims';
-
-  /// Body for the persistent notification: days remaining only (no quote, no H:M:S).
-  static String persistentNotificationBody({
+  /// Big title line for the Android persistent notif (system renders titles larger).
+  static String persistentNotificationTitle({
     DateTime? now,
     DateTime? targetDate,
   }) {
     final days = daysLeft(now: now, targetDate: targetDate);
+    if (days <= 0) return 'Exam day';
+    if (days == 1) return '1 day';
+    return '$days days';
+  }
+
+  /// Supporting line under the big day count — cycles a quote each calendar day.
+  static String persistentNotificationBody({
+    DateTime? now,
+    DateTime? targetDate,
+  }) {
+    final current = now ?? DateTime.now();
+    final days = daysLeft(now: current, targetDate: targetDate);
 
     if (days <= 0) {
-      return appL10n.prelimsBodyToday;
+      return "You've prepared for this — breathe and execute.";
     }
-    if (days == 1) {
-      return appL10n.prelimsBodyOneDay;
-    }
-    return appL10n.prelimsBodyDays(days);
+    return quoteForDate(now: current);
   }
 }

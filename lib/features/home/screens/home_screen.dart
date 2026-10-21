@@ -6,7 +6,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:posthog_flutter/posthog_flutter.dart';
 
 import '../../../core/analytics/activation_milestones.dart';
 import '../../../core/auth/auth_session.dart';
@@ -15,6 +14,7 @@ import '../../../core/constants/subject_constants.dart';
 import '../../../core/constants/timed_exam_debug_constants.dart';
 import '../../../core/domain/entities/session_config.dart';
 import '../../../core/domain/entities/subject_info.dart';
+import '../../../core/providers/app_language_helpers.dart';
 import '../../../core/providers/catalog_providers.dart';
 import '../../../core/providers/app_bootstrap.dart';
 import '../../../core/providers/kill_switch_provider.dart';
@@ -201,24 +201,6 @@ class HomeScreen extends HookConsumerWidget {
                   AppSpacing.lg,
                 ),
                 children: [
-                  // TEMP: PostHog test button — remove after verifying.
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: AppSpacing.md),
-                    child: OutlinedButton(
-                      onPressed: () async {
-                        await Posthog().capture(
-                          eventName: 'button_clicked',
-                          properties: {'button_name': 'signup'},
-                        );
-                        if (context.mounted) {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(content: Text('PostHog event sent')),
-                          );
-                        }
-                      },
-                      child: const Text('TEMP: PostHog test'),
-                    ),
-                  ),
                   if (bootstrap.hasError)
                     Padding(
                       padding: const EdgeInsets.only(bottom: AppSpacing.md),
@@ -411,28 +393,13 @@ class HomeScreen extends HookConsumerWidget {
                           ),
                         ),
                       ),
-                      Material(
-                        color: AppColors.transparent,
-                        child: InkWell(
-                          onTap: () => context.push('/settings'),
-                          borderRadius: BorderRadius.circular(AppRadius.md),
-                          child: Container(
-                            padding: const EdgeInsets.all(AppSpacing.sm),
-                            decoration: BoxDecoration(
-                              color: scheme.surfaceContainerLow,
-                              borderRadius: BorderRadius.circular(AppRadius.md),
-                              border: Border.all(
-                                color: borderColor,
-                                width: 0.5,
-                              ),
-                            ),
-                            child: Icon(
-                              Icons.settings_outlined,
-                              size: 18,
-                              color: scheme.onSurfaceVariant,
-                            ),
-                          ),
-                        ),
+                      _LanguageToggle(
+                        isHindi: watchAppLanguage(ref) == 'hi',
+                        borderColor: borderColor,
+                        onChanged: (lang) {
+                          HapticFeedback.selectionClick();
+                          unawaited(persistAppLanguage(ref, lang));
+                        },
                       ),
                     ],
                   ),
@@ -678,6 +645,64 @@ class HomeScreen extends HookConsumerWidget {
     return isDark
         ? (bg: const Color(0xFF042C53), fg: AppColors.infoTextDark)
         : (bg: AppColors.infoText, fg: const Color(0xFFFFFFFF));
+  }
+}
+
+/// Compact EN | हि switch for the home header. Changes the app and question
+/// language together (same setting as Settings → Language).
+class _LanguageToggle extends StatelessWidget {
+  const _LanguageToggle({
+    required this.isHindi,
+    required this.borderColor,
+    required this.onChanged,
+  });
+
+  final bool isHindi;
+  final Color borderColor;
+  final ValueChanged<String> onChanged;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+
+    Widget segment(String label, String lang, bool selected) {
+      return Semantics(
+        button: true,
+        selected: selected,
+        child: GestureDetector(
+          behavior: HitTestBehavior.opaque,
+          onTap: selected ? null : () => onChanged(lang),
+          child: AnimatedContainer(
+            duration: const Duration(milliseconds: 160),
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 7),
+            decoration: BoxDecoration(
+              color: selected ? scheme.primary : AppColors.transparent,
+              borderRadius: BorderRadius.circular(AppRadius.sm),
+            ),
+            child: Text(
+              label,
+              style: AppTextStyles.labelSm().copyWith(
+                fontWeight: FontWeight.w700,
+                color: selected ? scheme.onPrimary : scheme.onSurfaceVariant,
+              ),
+            ),
+          ),
+        ),
+      );
+    }
+
+    return Container(
+      padding: const EdgeInsets.all(2),
+      decoration: BoxDecoration(
+        color: scheme.surfaceContainerLow,
+        borderRadius: BorderRadius.circular(AppRadius.md),
+        border: Border.all(color: borderColor, width: 0.5),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [segment('EN', 'en', !isHindi), segment('हि', 'hi', isHindi)],
+      ),
+    );
   }
 }
 

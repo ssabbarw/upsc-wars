@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer' as developer;
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +17,7 @@ import '../data/test_series_purchase_service.dart';
 import '../domain/test_series_models.dart';
 import '../providers/test_series_providers.dart';
 import '../../../l10n/l10n.dart';
+import '../domain/series_rules.dart';
 
 /// Store listing (price) for a series' one-time pass.
 final seriesProductProvider = FutureProvider.autoDispose
@@ -118,12 +120,14 @@ class SeriesPaywallSheet extends HookConsumerWidget {
               toast(appL10n.tsUnlockedAll);
               Navigator.of(context).pop(true);
             } else {
-              toast(
-                appL10n.tsPaidNoAccess(
-                  bundle.info.entitlementId,
-                  bundle.info.productId,
-                ),
+              // The ids are for support, not for the user.
+              developer.log(
+                'Purchase succeeded but entitlement '
+                '"${bundle.info.entitlementId}" is not active for product '
+                '"${bundle.info.productId}".',
+                name: 'TestSeriesPaywall',
               );
+              toast(appL10n.tsPaidNoAccess);
             }
           case PurchaseOutcomeKind.cancelled:
             break;
@@ -261,9 +265,21 @@ class SeriesPaywallSheet extends HookConsumerWidget {
               ),
             ),
             const SizedBox(height: AppSpacing.lg),
-            _Bullet(context.l10n.tsPwSubject(staticCount)),
+            _Bullet(
+              context.l10n.tsPwSubject(
+                staticCount,
+                SeriesRules.staticTestQuestions,
+                SeriesRules.staticTestPyqPercent,
+              ),
+            ),
             _Bullet(context.l10n.tsPwCa(ca)),
-            _Bullet(context.l10n.tsPwMocks(mocks)),
+            _Bullet(
+              context.l10n.tsPwMocks(
+                mocks,
+                SeriesRules.fltQuestions,
+                SeriesRules.fltHours,
+              ),
+            ),
             _Bullet(context.l10n.tsPwBilingual),
             _Bullet(context.l10n.tsPwDash),
             if (free > 0) ...[
