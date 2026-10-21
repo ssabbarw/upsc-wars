@@ -44,6 +44,7 @@ import '../core/router/app_router.dart' show appRouterProvider;
 import '../features/fomo_pulse/data/fomo_pulse_incoming_share.dart';
 import '../core/router/question_bank_loading_screen.dart';
 import '../core/services/prelims_surfaces_refresh.dart';
+import '../core/theme/app_colors.dart';
 import '../core/theme/app_theme.dart';
 import '../core/theme/reading_font_scale.dart';
 import '../features/battle/widgets/battle_chat_fab.dart';
@@ -334,6 +335,7 @@ class _RootMaterialApp extends HookConsumerWidget {
     final language = normalizeAppLanguage(
       ref.watch(appLanguageProvider).value ?? prefs.value?.language,
     );
+    final languageSwitchBusy = ref.watch(languageSwitchBusyProvider);
     AppL10n.locale = Locale(language);
     // Month / weekday names in `DateFormat(...)` follow the app language.
     Intl.defaultLocale = language;
@@ -361,10 +363,27 @@ class _RootMaterialApp extends HookConsumerWidget {
               child ?? const SizedBox.shrink(),
               const BattleSpectateFabHost(),
               const BattleChatFabHost(),
+              if (languageSwitchBusy) const _LanguageSwitchOverlay(),
             ],
           ),
         );
       },
+    );
+  }
+}
+
+class _LanguageSwitchOverlay extends StatelessWidget {
+  const _LanguageSwitchOverlay();
+
+  @override
+  Widget build(BuildContext context) {
+    return AbsorbPointer(
+      child: ColoredBox(
+        color: AppColors.gray900.withValues(alpha: 0.28),
+        child: const Center(
+          child: CircularProgressIndicator(color: AppColors.primary),
+        ),
+      ),
     );
   }
 }

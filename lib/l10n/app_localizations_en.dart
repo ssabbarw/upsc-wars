@@ -450,7 +450,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get homePickAnySubject => 'PICK ANY SUBJECT';
 
   @override
-  String get homeSubjects => 'SUBJECTS';
+  String get homeSubjects => 'Subjects';
+
+  @override
+  String get homePyqByYear => 'PYQ by year';
 
   @override
   String get homeQuestionsYouSaved => 'Questions you saved';
@@ -6101,6 +6104,17 @@ class AppLocalizationsEn extends AppLocalizations {
   String get practiceBrowseTopics => 'Topic-wise tests';
 
   @override
+  String get practiceBrowseTopicsSubtitle => 'Practice by subject and topic';
+
+  @override
+  String get practiceSectionTitle => 'Practice';
+
+  @override
+  String practiceSectionSubtitle(int year) {
+    return 'Your test series for prelims $year';
+  }
+
+  @override
   String get practiceSeeStats => 'See stats';
 
   @override
@@ -6190,17 +6204,31 @@ class AppLocalizationsEn extends AppLocalizations {
   String get statsUnlock => 'Unlock full stats';
 
   @override
-  String get todayQueueTitle => 'TODAY';
+  String get todayQueueTitle => 'What to do today?';
 
   @override
   String get todayQueueCaShots => 'CA shots';
 
   @override
+  String get todayQueueCaShotsSubtitle =>
+      'Quick revision of important current affairs';
+
+  @override
   String get todayQueueCaTest => 'Current affairs test';
+
+  @override
+  String get todayQueueCaTestSubtitle => 'Test your CA preparation';
 
   @override
   String get todayQueueDailyWar => 'Daily war';
 
   @override
+  String get todayQueueDailyWarSubtitle => 'Today\'s competitive CA challenge';
+
+  @override
   String get todayQueueOpenChallenge => 'Open challenge';
+
+  @override
+  String get todayQueueOpenChallengeSubtitle =>
+      'Join a live community challenge';
 }

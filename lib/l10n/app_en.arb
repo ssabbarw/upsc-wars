@@ -325,7 +325,8 @@
   "homeStartWithDemoTest": "Start with the demo test",
   "homeRateReview": "Rate & review",
   "homePickAnySubject": "PICK ANY SUBJECT",
-  "homeSubjects": "SUBJECTS",
+  "homeSubjects": "Subjects",
+  "homePyqByYear": "PYQ by year",
   "homeQuestionsYouSaved": "Questions you saved",
   "activationStartHere": "START HERE",
   "activationTakeDemo": "Take the 5-minute demo test",
@@ -4228,6 +4229,14 @@
   "practiceReattempt": "Reattempt",
   "practiceNewSeason": "New season: your tests have been reshuffled for the next prelims.",
   "practiceBrowseTopics": "Topic-wise tests",
+  "practiceBrowseTopicsSubtitle": "Practice by subject and topic",
+  "practiceSectionTitle": "Practice",
+  "practiceSectionSubtitle": "Your test series for prelims {year}",
+  "@practiceSectionSubtitle": {
+    "placeholders": {
+      "year": {"type": "int"}
+    }
+  },
   "practiceSeeStats": "See stats",
   "practiceNoTests": "No tests in this pool yet.",
   "statsTitle": "Stats",
@@ -4277,9 +4286,13 @@
   },
   "statsTrapPatterns": "Trap patterns",
   "statsUnlock": "Unlock full stats",
-  "todayQueueTitle": "TODAY",
+  "todayQueueTitle": "What to do today?",
   "todayQueueCaShots": "CA shots",
+  "todayQueueCaShotsSubtitle": "Quick revision of important current affairs",
   "todayQueueCaTest": "Current affairs test",
+  "todayQueueCaTestSubtitle": "Test your CA preparation",
   "todayQueueDailyWar": "Daily war",
-  "todayQueueOpenChallenge": "Open challenge"
+  "todayQueueDailyWarSubtitle": "Today's competitive CA challenge",
+  "todayQueueOpenChallenge": "Open challenge",
+  "todayQueueOpenChallengeSubtitle": "Join a live community challenge"
 }

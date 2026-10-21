@@ -5,6 +5,17 @@ import '../analytics/analytics_events.dart';
 import 'catalog_providers.dart';
 import 'prefs_provider.dart';
 
+/// True while [persistAppLanguage] is applying a new EN / हि choice.
+class LanguageSwitchBusy extends Notifier<bool> {
+  @override
+  bool build() => false;
+
+  void setBusy(bool value) => state = value;
+}
+
+final languageSwitchBusyProvider =
+    NotifierProvider<LanguageSwitchBusy, bool>(LanguageSwitchBusy.new);
+
 /// Normalizes persisted question/UI language to `en` or `hi`.
 String normalizeAppLanguage(String? lang) {
   if (lang == 'hi') return 'hi';
@@ -28,10 +39,21 @@ Future<void> persistAppLanguage(WidgetRef ref, String lang) async {
   final previous = normalizeAppLanguage(prefs.language);
   prefs.languageChosen = true;
   if (previous == normalized) return;
-  prefs.language = normalized;
-  ref.invalidate(appLanguageProvider);
-  await Analytics.track(
-    ref,
-    AppLanguageSwitchedEvent(fromLanguage: previous, toLanguage: normalized),
-  );
+
+  final busy = ref.read(languageSwitchBusyProvider.notifier);
+  busy.setBusy(true);
+  try {
+    prefs.language = normalized;
+    ref.invalidate(appLanguageProvider);
+    await ref.read(appLanguageProvider.future);
+    await Analytics.track(
+      ref,
+      AppLanguageSwitchedEvent(fromLanguage: previous, toLanguage: normalized),
+    );
+    // Keep the loader up briefly so the switch feels intentional even when
+    // prefs resolve immediately.
+    await Future<void>.delayed(const Duration(milliseconds: 350));
+  } finally {
+    busy.setBusy(false);
+  }
 }

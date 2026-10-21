@@ -73,10 +73,11 @@ class PrelimsCountdownCard extends HookWidget {
         borderRadius: BorderRadius.circular(AppRadius.lg),
       ),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
             context.l10n.pcTitle,
+            textAlign: TextAlign.center,
             style: AppTextStyles.caption().copyWith(
               color: scheme.onSurface,
               letterSpacing: 0.4,
@@ -85,15 +86,23 @@ class PrelimsCountdownCard extends HookWidget {
           const SizedBox(height: AppSpacing.xs),
           Text(
             context.l10n.pcUnits,
+            textAlign: TextAlign.center,
             style: AppTextStyles.caption().copyWith(
               color: scheme.onSurfaceVariant,
               letterSpacing: 0.3,
             ),
           ),
-          const SizedBox(height: AppSpacing.xs),
+          const SizedBox(height: AppSpacing.sm),
           Text(
             timerLabel,
-            style: AppTextStyles.h2().copyWith(color: scheme.onSurface),
+            textAlign: TextAlign.center,
+            style: AppTextStyles.h1().copyWith(
+              color: scheme.onSurface,
+              fontSize: 28,
+              fontWeight: FontWeight.w600,
+              letterSpacing: 0.5,
+              height: 1.15,
+            ),
           ),
         ],
       ),

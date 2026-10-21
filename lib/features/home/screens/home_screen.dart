@@ -21,7 +21,6 @@ import '../../../core/providers/kill_switch_provider.dart';
 import '../../../core/providers/prelims_date_provider.dart';
 import '../../../core/providers/prefs_provider.dart';
 import '../../../core/providers/user_database_provider.dart';
-import '../../../core/responsive/app_breakpoints.dart';
 import '../../../core/services/battle_messaging_service.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
@@ -71,8 +70,6 @@ class HomeScreen extends HookConsumerWidget {
       data: (s) => s.isActive,
       orElse: () => false,
     );
-    final cachedStreakText = useState<String?>(null);
-
     useEffect(() {
       if (heroSlot == null) return null;
       TodayHeroIntentStore.capture(heroSlot!);
@@ -148,13 +145,6 @@ class HomeScreen extends HookConsumerWidget {
       }());
       return null;
     }, [onHomeRoute, home]);
-
-    useEffect(() {
-      home.whenData((h) {
-        cachedStreakText.value = context.l10n.homeStreakDays(h.streakCount);
-      });
-      return null;
-    }, [home]);
 
     final greeting = _greeting(context);
     final user = authState.asData?.value;
@@ -407,85 +397,6 @@ class HomeScreen extends HookConsumerWidget {
                       ),
                     ],
                   ),
-                  const SizedBox(height: AppSpacing.sm),
-                  Row(
-                    children: [
-                      const PrelimsDaysInfo(),
-                      const Spacer(),
-                      // Trap pill — always visible, including for new users.
-                      Padding(
-                        padding: const EdgeInsets.only(right: AppSpacing.sm),
-                        child: _TrapPill(
-                          count: home.maybeWhen(
-                            data: (h) => h.revisionTrapCount,
-                            orElse: () => 0,
-                          ),
-                          borderColor: borderColor,
-                        ),
-                      ),
-                      Consumer(
-                        builder: (context, ref, _) {
-                          final streakCount = home.maybeWhen(
-                            data: (h) => h.streakCount,
-                            orElse: () => 0,
-                          );
-                          final streakLabel = home.when(
-                            data: (h) =>
-                                context.l10n.homeStreakDays(h.streakCount),
-                            loading: () =>
-                                cachedStreakText.value ??
-                                context.l10n.homeStreakDays(0),
-                            error: (_, __) =>
-                                cachedStreakText.value ??
-                                context.l10n.homeStreakDays(0),
-                          );
-                          final hot = streakCount >= 3;
-                          return Container(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: AppSpacing.md,
-                              vertical: AppSpacing.sm,
-                            ),
-                            decoration: BoxDecoration(
-                              color: hot
-                                  ? AppColors.streak.withValues(
-                                      alpha: isDark ? 0.22 : 0.12,
-                                    )
-                                  : scheme.surfaceContainerLow,
-                              borderRadius: BorderRadius.circular(
-                                AppRadius.pill,
-                              ),
-                              border: Border.all(
-                                color: hot
-                                    ? AppColors.streak.withValues(alpha: 0.45)
-                                    : borderColor,
-                                width: hot ? 1 : 0.5,
-                              ),
-                            ),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Icon(
-                                  Icons.local_fire_department,
-                                  color: AppColors.streak,
-                                  size: hot ? 18 : 16,
-                                ),
-                                const SizedBox(width: AppSpacing.xs),
-                                Text(
-                                  streakLabel,
-                                  style: AppTextStyles.caption().copyWith(
-                                    color: scheme.onSurface,
-                                    fontWeight: hot
-                                        ? FontWeight.w700
-                                        : FontWeight.w500,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          );
-                        },
-                      ),
-                    ],
-                  ),
                   const SizedBox(height: AppSpacing.md),
                   const SoftUpdateBanner(),
                   const DataRestoreBanner(),
@@ -494,6 +405,8 @@ class HomeScreen extends HookConsumerWidget {
                   const PrelimsCountdownCard(),
                   const SizedBox(height: AppSpacing.md),
                   const TodayQueueStrip(),
+                  const SizedBox(height: AppSpacing.lg),
+                  const _PracticeSectionHeader(),
                   const SizedBox(height: AppSpacing.md),
                   const _BrowseTopicsCta(),
                   const SizedBox(height: AppSpacing.md),
@@ -602,89 +515,181 @@ class _LanguageToggle extends StatelessWidget {
   }
 }
 
-class _TrapPill extends StatelessWidget {
-  const _TrapPill({required this.count, required this.borderColor});
+// ── Practice Section (PYQ by Year above Subjects) ────────────────────────────
 
-  final int count;
-  final Color borderColor;
-
-  @override
-  Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    final fg = isDark ? AppColors.wrongTextDark : AppColors.wrongText;
-    final bg = isDark ? AppColors.wrongBgDark : AppColors.wrongBg;
-
-    return GestureDetector(
-      onTap: () => context.push('/weak-areas/traps'),
-      child: Container(
-        padding: const EdgeInsets.symmetric(
-          horizontal: AppSpacing.sm,
-          vertical: AppSpacing.xs,
-        ),
-        decoration: BoxDecoration(
-          color: bg,
-          borderRadius: BorderRadius.circular(AppRadius.pill),
-          border: Border.all(color: fg.withValues(alpha: 0.35), width: 0.5),
-        ),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Icon(Icons.warning_amber_rounded, size: 13, color: fg),
-            const SizedBox(width: 3),
-            Text(
-              count > 0 ? context.l10n.homeTrapsCount(count) : 'Traps',
-              style: AppTextStyles.caption().copyWith(
-                color: scheme.onSurface,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class _CarouselSectionHeader extends StatelessWidget {
-  const _CarouselSectionHeader({
-    required this.title,
-    required this.leadingIcon,
-    required this.accent,
-  });
+class _SectionTitleRow extends StatelessWidget {
+  const _SectionTitleRow({required this.title, this.onViewAll});
 
   final String title;
-  final IconData leadingIcon;
-  final Color accent;
+  final VoidCallback? onViewAll;
 
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
     return Row(
       children: [
-        Container(
-          width: 28,
-          height: 28,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(AppRadius.sm),
-            color: accent.withValues(alpha: 0.16),
-            border: Border.all(
-              color: accent.withValues(alpha: 0.35),
-              width: 0.5,
-            ),
-          ),
-          child: Icon(leadingIcon, size: 16, color: accent),
-        ),
-        const SizedBox(width: AppSpacing.sm),
         Expanded(
           child: Text(
-            title.toUpperCase(),
-            style: AppTextStyles.caption().copyWith(
-              color: scheme.onSurfaceVariant,
-              letterSpacing: 0.6,
-            ),
+            title,
+            style: AppTextStyles.h2().copyWith(color: scheme.onSurface),
           ),
         ),
+        if (onViewAll != null)
+          TextButton(
+            onPressed: onViewAll,
+            style: TextButton.styleFrom(
+              foregroundColor: AppColors.primary,
+              padding: EdgeInsets.zero,
+              minimumSize: Size.zero,
+              tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  context.l10n.commonViewAll,
+                  style: AppTextStyles.labelSm().copyWith(
+                    color: AppColors.primary,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                const Icon(Icons.chevron_right, size: 18),
+              ],
+            ),
+          ),
+      ],
+    );
+  }
+}
+
+class _PracticeSectionHeader extends ConsumerWidget {
+  const _PracticeSectionHeader();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final scheme = Theme.of(context).colorScheme;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final border = isDark ? AppColors.borderDark : AppColors.borderLight;
+    final prelims =
+        ref.watch(prelimsDateProvider).value ?? PrelimsCountdown.prelimsDate;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Divider(height: 1, thickness: 0.5, color: border),
+        const SizedBox(height: AppSpacing.lg),
+        Text(
+          context.l10n.practiceSectionTitle,
+          style: AppTextStyles.h2().copyWith(
+            color: scheme.onSurface,
+            fontWeight: FontWeight.w700,
+          ),
+        ),
+        const SizedBox(height: AppSpacing.xs),
+        Text(
+          context.l10n.practiceSectionSubtitle(prelims.year),
+          style: AppTextStyles.bodySm().copyWith(
+            color: scheme.onSurfaceVariant,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class _BrowseTopicsCta extends StatelessWidget {
+  const _BrowseTopicsCta();
+
+  @override
+  Widget build(BuildContext context) {
+    final subject = SubjectConstants.ordered.first.slug;
+    return Material(
+      color: AppColors.transparent,
+      child: InkWell(
+        onTap: () =>
+            context.push('/subject/${Uri.encodeComponent(subject)}/topics'),
+        borderRadius: BorderRadius.circular(AppRadius.lg),
+        child: Ink(
+          width: double.infinity,
+          padding: const EdgeInsets.all(AppSpacing.lg),
+          decoration: BoxDecoration(
+            color: AppColors.primary,
+            borderRadius: BorderRadius.circular(AppRadius.lg),
+          ),
+          child: Row(
+            children: [
+              Container(
+                width: 44,
+                height: 44,
+                decoration: const BoxDecoration(
+                  color: AppColors.onPrimary,
+                  shape: BoxShape.circle,
+                ),
+                alignment: Alignment.center,
+                child: const Icon(
+                  Icons.search,
+                  color: AppColors.primary,
+                  size: 22,
+                ),
+              ),
+              const SizedBox(width: AppSpacing.md),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      context.l10n.practiceBrowseTopics,
+                      style: AppTextStyles.label().copyWith(
+                        color: AppColors.onPrimary,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                    const SizedBox(height: 2),
+                    Text(
+                      context.l10n.practiceBrowseTopicsSubtitle,
+                      style: AppTextStyles.caption().copyWith(
+                        color: AppColors.onPrimary.withValues(alpha: 0.9),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                width: 36,
+                height: 36,
+                decoration: BoxDecoration(
+                  color: AppColors.onPrimary.withValues(alpha: 0.18),
+                  shape: BoxShape.circle,
+                ),
+                alignment: Alignment.center,
+                child: const Icon(
+                  Icons.arrow_forward,
+                  color: AppColors.onPrimary,
+                  size: 18,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _PracticeSection extends StatelessWidget {
+  const _PracticeSection({required this.borderColor});
+
+  final Color borderColor;
+
+  static const _pyqYears = ['2025', '2024', '2023', '2022', '2021', '2020'];
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        _PyqYearCarousel(borderColor: borderColor, years: _pyqYears),
+        const SizedBox(height: AppSpacing.xl),
+        _SubjectStrip(borderColor: borderColor),
       ],
     );
   }
@@ -712,84 +717,98 @@ class _PyqYearCarousel extends StatelessWidget {
     AppColors.correct,
   ];
 
+  void _showAll(BuildContext context) {
+    showModalBottomSheet<void>(
+      context: context,
+      showDragHandle: true,
+      builder: (ctx) {
+        final scheme = Theme.of(ctx).colorScheme;
+        return SafeArea(
+          child: ListView(
+            shrinkWrap: true,
+            padding: const EdgeInsets.fromLTRB(
+              AppSpacing.lg,
+              0,
+              AppSpacing.lg,
+              AppSpacing.lg,
+            ),
+            children: [
+              Text(
+                context.l10n.homePyqByYear,
+                style: AppTextStyles.h2().copyWith(color: scheme.onSurface),
+              ),
+              const SizedBox(height: AppSpacing.sm),
+              for (final year in years)
+                ListTile(
+                  contentPadding: EdgeInsets.zero,
+                  title: Text(year, style: AppTextStyles.label()),
+                  trailing: Icon(
+                    Icons.chevron_right,
+                    color: scheme.onSurfaceVariant,
+                  ),
+                  onTap: () {
+                    Navigator.pop(ctx);
+                    context.push('/pyq-year/$year');
+                  },
+                ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const _CarouselSectionHeader(
-          title: 'PYQ by year',
-          leadingIcon: Icons.timeline,
-          accent: AppColors.primary,
+        _SectionTitleRow(
+          title: context.l10n.homePyqByYear,
+          onViewAll: () => _showAll(context),
         ),
-        const SizedBox(height: AppSpacing.sm),
-        _HorizontalDiscoveryStrip(
-          children: [
-            for (var i = 0; i < years.length; i++) ...[
-              if (i != 0) const SizedBox(width: AppSpacing.sm),
-              _HomeDiscoveryCard(
-                borderColor: borderColor,
-                titleText: years[i],
-                icon: _icons[i % _icons.length],
-                accent: _accents[i % _accents.length],
-                onTap: () => context.push('/pyq-year/${years[i]}'),
-              ),
+        const SizedBox(height: AppSpacing.md),
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          physics: const BouncingScrollPhysics(),
+          clipBehavior: Clip.none,
+          child: Row(
+            children: [
+              for (var i = 0; i < years.length; i++) ...[
+                if (i != 0) const SizedBox(width: AppSpacing.sm),
+                _PyqYearCard(
+                  year: years[i],
+                  icon: _icons[i % _icons.length],
+                  accent: _accents[i % _accents.length],
+                  onTap: () => context.push('/pyq-year/${years[i]}'),
+                ),
+              ],
             ],
-          ],
+          ),
         ),
       ],
     );
   }
 }
 
-/// Horizontal strip; row height follows the tallest card (no fixed outer height).
-class _HorizontalDiscoveryStrip extends StatelessWidget {
-  const _HorizontalDiscoveryStrip({required this.children});
-
-  final List<Widget> children;
-
-  @override
-  Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      physics: const BouncingScrollPhysics(),
-      clipBehavior: Clip.none,
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: children,
-      ),
-    );
-  }
-}
-
-class _HomeDiscoveryCard extends StatelessWidget {
-  const _HomeDiscoveryCard({
-    required this.borderColor,
-    required this.titleText,
+class _PyqYearCard extends StatelessWidget {
+  const _PyqYearCard({
+    required this.year,
     required this.icon,
     required this.accent,
-    this.onTap,
+    required this.onTap,
   });
 
-  final Color borderColor;
-  final String titleText;
+  final String year;
   final IconData icon;
   final Color accent;
-  final VoidCallback? onTap;
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final iconWellFill = isDark
-        ? accent.withValues(alpha: 0.22)
-        : accent.withValues(alpha: 0.12);
-    final iconWellBorder = accent.withValues(alpha: isDark ? 0.55 : 0.45);
-    final cardFill = Color.lerp(
-      scheme.surfaceContainerLow,
-      accent,
-      isDark ? 0.14 : 0.10,
-    )!;
+    final fill = Color.lerp(scheme.surface, accent, isDark ? 0.18 : 0.12)!;
 
     return Material(
       color: AppColors.transparent,
@@ -797,44 +816,40 @@ class _HomeDiscoveryCard extends StatelessWidget {
         onTap: onTap,
         borderRadius: BorderRadius.circular(AppRadius.lg),
         child: Ink(
-          width: 138,
-          padding: const EdgeInsets.all(AppSpacing.md),
+          width: 118,
+          padding: const EdgeInsets.fromLTRB(
+            AppSpacing.md,
+            AppSpacing.md,
+            AppSpacing.md,
+            AppSpacing.sm,
+          ),
           decoration: BoxDecoration(
-            color: cardFill,
+            color: fill,
             borderRadius: BorderRadius.circular(AppRadius.lg),
-            border: Border.all(color: borderColor, width: 0.5),
           ),
           child: Column(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                width: 60,
-                height: 60,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: iconWellFill,
-                  border: Border.all(color: iconWellBorder, width: 1.5),
-                ),
-                alignment: Alignment.center,
-                child: Icon(icon, size: 30, color: accent),
-              ),
-              const SizedBox(height: AppSpacing.sm),
+              Icon(icon, size: 26, color: accent),
+              const SizedBox(height: AppSpacing.md),
               Text(
-                titleText,
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-                textAlign: TextAlign.center,
+                year,
                 style: AppTextStyles.h2().copyWith(
                   color: scheme.onSurface,
-                  height: 1.2,
+                  fontWeight: FontWeight.w700,
                 ),
               ),
-              const SizedBox(height: AppSpacing.xs),
+              const SizedBox(height: 2),
+              Text(
+                context.l10n.practiceQuestionCount(100),
+                style: AppTextStyles.caption().copyWith(
+                  color: scheme.onSurfaceVariant,
+                ),
+              ),
+              const SizedBox(height: AppSpacing.md),
               Container(
-                width: 28,
                 height: 4,
+                width: double.infinity,
                 decoration: BoxDecoration(
                   color: accent,
                   borderRadius: BorderRadius.circular(AppRadius.pill),
@@ -848,112 +863,155 @@ class _HomeDiscoveryCard extends StatelessWidget {
   }
 }
 
-// ── Practice Section (PYQ by Year above Subjects) ────────────────────────────
+class _SubjectStrip extends ConsumerWidget {
+  const _SubjectStrip({required this.borderColor});
 
-class _BrowseTopicsCta extends StatelessWidget {
-  const _BrowseTopicsCta();
-
-  @override
-  Widget build(BuildContext context) {
-    final subject = SubjectConstants.ordered.first.slug;
-    return SizedBox(
-      width: double.infinity,
-      child: FilledButton.icon(
-        onPressed: () =>
-            context.push('/subject/${Uri.encodeComponent(subject)}/topics'),
-        icon: const Icon(Icons.search),
-        label: Text(context.l10n.practiceBrowseTopics),
-        style: FilledButton.styleFrom(
-          padding: const EdgeInsets.symmetric(vertical: AppSpacing.lg),
-          textStyle: AppTextStyles.label(),
-        ),
-      ),
-    );
-  }
-}
-
-class _PracticeSection extends StatelessWidget {
-  const _PracticeSection({required this.borderColor});
-
-  final Color borderColor;
-
-  static const _pyqYears = ['2025', '2024', '2023', '2022', '2021', '2020'];
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        _PyqYearCarousel(borderColor: borderColor, years: _pyqYears),
-        const SizedBox(height: AppSpacing.md),
-        _SubjectGrid(borderColor: borderColor),
-      ],
-    );
-  }
-}
-
-// ── Subject Grid ────────────────────────────────────────────────────────────────
-
-class _SubjectGrid extends ConsumerWidget {
-  const _SubjectGrid({required this.borderColor});
   final Color borderColor;
 
   static const _accentColors = <Color>[
     AppColors.info,
     AppColors.warning,
+    AppColors.gold,
     AppColors.primary,
     AppColors.correct,
     AppColors.wrong,
+    AppColors.purple,
     AppColors.info,
-    AppColors.warning,
-    AppColors.primary,
   ];
+
+  void _showAll(
+    BuildContext context,
+    WidgetRef ref,
+    List<SubjectInfo> subjects,
+  ) {
+    showModalBottomSheet<void>(
+      context: context,
+      showDragHandle: true,
+      isScrollControlled: true,
+      builder: (ctx) {
+        final scheme = Theme.of(ctx).colorScheme;
+        final catalog = ref.read(practiceCatalogProvider).asData?.value;
+        return SafeArea(
+          child: DraggableScrollableSheet(
+            expand: false,
+            initialChildSize: 0.55,
+            minChildSize: 0.35,
+            maxChildSize: 0.9,
+            builder: (context, controller) {
+              return ListView(
+                controller: controller,
+                padding: const EdgeInsets.fromLTRB(
+                  AppSpacing.lg,
+                  0,
+                  AppSpacing.lg,
+                  AppSpacing.lg,
+                ),
+                children: [
+                  Text(
+                    context.l10n.homeSubjects,
+                    style: AppTextStyles.h2().copyWith(color: scheme.onSurface),
+                  ),
+                  const SizedBox(height: AppSpacing.sm),
+                  for (var i = 0; i < subjects.length; i++) ...[
+                    Builder(
+                      builder: (context) {
+                        final subject = subjects[i];
+                        final progress =
+                            catalog?.subjectProgress[subject.subject];
+                        final progressLabel =
+                            progress == null || progress.testsTotal == 0
+                            ? null
+                            : context.l10n.practiceTestsProgress(
+                                progress.testsDone,
+                                progress.testsTotal,
+                              );
+                        return ListTile(
+                          contentPadding: EdgeInsets.zero,
+                          leading: Icon(
+                            SubjectConstants.bySlug(
+                                  subject.subject,
+                                )?.materialIcon ??
+                                Icons.school_outlined,
+                            color: _accentColors[i % _accentColors.length],
+                          ),
+                          title: Text(
+                            subject.displayName,
+                            style: AppTextStyles.label(),
+                          ),
+                          subtitle: progressLabel == null
+                              ? null
+                              : Text(
+                                  progressLabel,
+                                  style: AppTextStyles.caption().copyWith(
+                                    color: scheme.onSurfaceVariant,
+                                  ),
+                                ),
+                          trailing: Icon(
+                            Icons.chevron_right,
+                            color: scheme.onSurfaceVariant,
+                          ),
+                          onTap: () {
+                            Navigator.pop(ctx);
+                            unawaited(
+                              maybeLogPostDemoExplore(ref, surface: 'subject'),
+                            );
+                            context.push(
+                              '/subject/${Uri.encodeComponent(subject.subject)}/tests',
+                            );
+                          },
+                        );
+                      },
+                    ),
+                  ],
+                ],
+              );
+            },
+          ),
+        );
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final scheme = Theme.of(context).colorScheme;
     final subjectsAsync = ref.watch(subjectTestListProvider);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          context.l10n.homeSubjects,
-          style: AppTextStyles.caption().copyWith(
-            color: scheme.onSurfaceVariant,
-            letterSpacing: 0.6,
+        subjectsAsync.when(
+          loading: () => _SectionTitleRow(title: context.l10n.homeSubjects),
+          error: (_, _) => _SectionTitleRow(title: context.l10n.homeSubjects),
+          data: (subjects) => _SectionTitleRow(
+            title: context.l10n.homeSubjects,
+            onViewAll: () => _showAll(context, ref, subjects),
           ),
         ),
-        const SizedBox(height: AppSpacing.sm),
+        const SizedBox(height: AppSpacing.md),
         subjectsAsync.when(
-          loading: () => _SubjectGridSkeleton(borderColor: borderColor),
+          loading: () => const _SubjectStripSkeleton(),
           error: (_, _) => const SizedBox.shrink(),
-          data: (subjects) => LayoutBuilder(
-            builder: (context, constraints) {
-              final cols = AppBreakpoints.gridColumns(constraints.maxWidth);
-              return GridView.builder(
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: cols,
-                  mainAxisSpacing: AppSpacing.sm,
-                  crossAxisSpacing: AppSpacing.sm,
-                  childAspectRatio: 1.55,
-                ),
-                itemCount: subjects.length,
-                itemBuilder: (context, i) {
-                  final s = subjects[i];
-                  final def = SubjectConstants.bySlug(s.subject);
-                  final accent = _accentColors[i % _accentColors.length];
-                  return _SubjectGridCard(
-                    info: s,
-                    icon: def?.materialIcon ?? Icons.school_outlined,
-                    accent: accent,
+          data: (subjects) => SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            physics: const BouncingScrollPhysics(),
+            clipBehavior: Clip.none,
+            child: Row(
+              children: [
+                for (var i = 0; i < subjects.length; i++) ...[
+                  if (i != 0) const SizedBox(width: AppSpacing.sm),
+                  _SubjectChipCard(
+                    info: subjects[i],
+                    icon:
+                        SubjectConstants.bySlug(
+                          subjects[i].subject,
+                        )?.materialIcon ??
+                        Icons.school_outlined,
+                    accent: _accentColors[i % _accentColors.length],
                     borderColor: borderColor,
-                  );
-                },
-              );
-            },
+                  ),
+                ],
+              ],
+            ),
           ),
         ),
       ],
@@ -961,8 +1019,8 @@ class _SubjectGrid extends ConsumerWidget {
   }
 }
 
-class _SubjectGridCard extends ConsumerWidget {
-  const _SubjectGridCard({
+class _SubjectChipCard extends ConsumerWidget {
+  const _SubjectChipCard({
     required this.info,
     required this.icon,
     required this.accent,
@@ -978,13 +1036,11 @@ class _SubjectGridCard extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
-
-    // Subtle tonal background
-    final cardFill = Color.lerp(scheme.surface, accent, isDark ? 0.12 : 0.05);
-
-    // Colored border matching subject accent
-    final cardBorder = accent.withValues(alpha: isDark ? 0.4 : 0.2);
-    final iconBg = accent.withValues(alpha: isDark ? 0.25 : 0.1);
+    final progress = ref
+        .watch(practiceCatalogProvider)
+        .asData
+        ?.value
+        .subjectProgress[info.subject];
 
     return Material(
       color: AppColors.transparent,
@@ -995,63 +1051,62 @@ class _SubjectGridCard extends ConsumerWidget {
         },
         borderRadius: BorderRadius.circular(AppRadius.lg),
         child: Ink(
-          padding: const EdgeInsets.all(AppSpacing.md),
-          decoration: BoxDecoration(
-            color: cardFill,
-            borderRadius: BorderRadius.circular(AppRadius.lg),
-            border: Border.all(color: cardBorder, width: 1.0),
+          width: 168,
+          padding: const EdgeInsets.symmetric(
+            horizontal: AppSpacing.md,
+            vertical: AppSpacing.md,
           ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          decoration: BoxDecoration(
+            color: scheme.surface,
+            borderRadius: BorderRadius.circular(AppRadius.lg),
+            border: Border.all(color: borderColor, width: 0.5),
+            boxShadow: isDark
+                ? null
+                : [
+                    BoxShadow(
+                      color: AppColors.gray900.withValues(alpha: 0.04),
+                      blurRadius: 10,
+                      offset: const Offset(0, 2),
+                    ),
+                  ],
+          ),
+          child: Row(
             children: [
-              Container(
-                padding: const EdgeInsets.all(AppSpacing.xs),
-                decoration: BoxDecoration(
-                  color: iconBg,
-                  borderRadius: BorderRadius.circular(AppRadius.sm),
-                ),
-                child: Icon(
-                  icon,
-                  size: (MediaQuery.sizeOf(context).shortestSide * 0.06).clamp(
-                    20.0,
-                    45.0,
-                  ),
-                  color: accent,
-                ),
-              ),
-              const Spacer(),
-              Builder(
-                builder: (context) {
-                  final progress = ref
-                      .watch(practiceCatalogProvider)
-                      .asData
-                      ?.value
-                      .subjectProgress[info.subject];
-                  if (progress == null || progress.testsTotal == 0) {
-                    return const SizedBox.shrink();
-                  }
-                  return Padding(
-                    padding: const EdgeInsets.only(bottom: AppSpacing.xs),
-                    child: Text(
-                      context.l10n.practiceTestsProgress(
-                        progress.testsDone,
-                        progress.testsTotal,
-                      ),
-                      style: AppTextStyles.caption().copyWith(
-                        color: scheme.onSurfaceVariant,
+              Icon(icon, size: 22, color: accent),
+              const SizedBox(width: AppSpacing.sm),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      info.displayName,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: AppTextStyles.label().copyWith(
+                        color: scheme.onSurface,
                       ),
                     ),
-                  );
-                },
-              ),
-              Text(
-                info.displayName,
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-                style: AppTextStyles.label().copyWith(
-                  color: scheme.onSurface,
-                  height: 1.2,
+                    if (progress != null && progress.testsTotal > 0) ...[
+                      const SizedBox(height: 2),
+                      Text(
+                        context.l10n.practiceTestsProgress(
+                          progress.testsDone,
+                          progress.testsTotal,
+                        ),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: AppTextStyles.caption().copyWith(
+                          color: scheme.onSurfaceVariant,
+                        ),
+                      ),
+                    ],
+                  ],
                 ),
+              ),
+              Icon(
+                Icons.chevron_right,
+                size: 18,
+                color: scheme.onSurfaceVariant,
               ),
             ],
           ),
@@ -1061,9 +1116,8 @@ class _SubjectGridCard extends ConsumerWidget {
   }
 }
 
-class _SubjectGridSkeleton extends HookWidget {
-  const _SubjectGridSkeleton({required this.borderColor});
-  final Color borderColor;
+class _SubjectStripSkeleton extends HookWidget {
+  const _SubjectStripSkeleton();
 
   @override
   Widget build(BuildContext context) {
@@ -1082,27 +1136,25 @@ class _SubjectGridSkeleton extends HookWidget {
       animation: ctrl,
       builder: (_, _) => Opacity(
         opacity: opacity,
-        child: LayoutBuilder(
-          builder: (context, constraints) {
-            final cols = AppBreakpoints.gridColumns(constraints.maxWidth);
-            return GridView.count(
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              crossAxisCount: cols,
-              mainAxisSpacing: AppSpacing.sm,
-              crossAxisSpacing: AppSpacing.sm,
-              childAspectRatio: 1.55,
-              children: List.generate(
-                8,
-                (_) => Container(
+        child: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          physics: const NeverScrollableScrollPhysics(),
+          child: Row(
+            children: List.generate(
+              4,
+              (i) => Padding(
+                padding: EdgeInsets.only(left: i == 0 ? 0 : AppSpacing.sm),
+                child: Container(
+                  width: 168,
+                  height: 64,
                   decoration: BoxDecoration(
                     color: scheme.surfaceContainerLow,
                     borderRadius: BorderRadius.circular(AppRadius.lg),
                   ),
                 ),
               ),
-            );
-          },
+            ),
+          ),
         ),
       ),
     );

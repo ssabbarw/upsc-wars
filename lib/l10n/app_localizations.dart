@@ -755,8 +755,14 @@ abstract class AppLocalizations {
   /// No description provided for @homeSubjects.
   ///
   /// In en, this message translates to:
-  /// **'SUBJECTS'**
+  /// **'Subjects'**
   String get homeSubjects;
+
+  /// No description provided for @homePyqByYear.
+  ///
+  /// In en, this message translates to:
+  /// **'PYQ by year'**
+  String get homePyqByYear;
 
   /// No description provided for @homeQuestionsYouSaved.
   ///
@@ -10052,6 +10058,24 @@ abstract class AppLocalizations {
   /// **'Topic-wise tests'**
   String get practiceBrowseTopics;
 
+  /// No description provided for @practiceBrowseTopicsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Practice by subject and topic'**
+  String get practiceBrowseTopicsSubtitle;
+
+  /// No description provided for @practiceSectionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Practice'**
+  String get practiceSectionTitle;
+
+  /// No description provided for @practiceSectionSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your test series for prelims {year}'**
+  String practiceSectionSubtitle(int year);
+
   /// No description provided for @practiceSeeStats.
   ///
   /// In en, this message translates to:
@@ -10198,7 +10222,7 @@ abstract class AppLocalizations {
   /// No description provided for @todayQueueTitle.
   ///
   /// In en, this message translates to:
-  /// **'TODAY'**
+  /// **'What to do today?'**
   String get todayQueueTitle;
 
   /// No description provided for @todayQueueCaShots.
@@ -10207,11 +10231,23 @@ abstract class AppLocalizations {
   /// **'CA shots'**
   String get todayQueueCaShots;
 
+  /// No description provided for @todayQueueCaShotsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Quick revision of important current affairs'**
+  String get todayQueueCaShotsSubtitle;
+
   /// No description provided for @todayQueueCaTest.
   ///
   /// In en, this message translates to:
   /// **'Current affairs test'**
   String get todayQueueCaTest;
+
+  /// No description provided for @todayQueueCaTestSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Test your CA preparation'**
+  String get todayQueueCaTestSubtitle;
 
   /// No description provided for @todayQueueDailyWar.
   ///
@@ -10219,11 +10255,23 @@ abstract class AppLocalizations {
   /// **'Daily war'**
   String get todayQueueDailyWar;
 
+  /// No description provided for @todayQueueDailyWarSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Today\'s competitive CA challenge'**
+  String get todayQueueDailyWarSubtitle;
+
   /// No description provided for @todayQueueOpenChallenge.
   ///
   /// In en, this message translates to:
   /// **'Open challenge'**
   String get todayQueueOpenChallenge;
+
+  /// No description provided for @todayQueueOpenChallengeSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Join a live community challenge'**
+  String get todayQueueOpenChallengeSubtitle;
 }
 
 class _AppLocalizationsDelegate
