@@ -11,6 +11,7 @@ import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_radius.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_text_styles.dart';
+import '../utils/youtube_thumb_cache.dart';
 import '../utils/youtube_video_id.dart';
 import '../../l10n/l10n.dart';
 
@@ -79,110 +80,14 @@ class HomePageVideoBanner extends ConsumerWidget {
                 side: BorderSide(color: borderColor),
               ),
               clipBehavior: Clip.antiAlias,
-              child: LayoutBuilder(
-                builder: (context, constraints) {
-                  final maxW = constraints.maxWidth;
-                  final thumbW = (maxW * 0.34).clamp(104.0, 148.0);
-                  final thumbH = thumbW * 9 / 16;
-                  return Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      _VideoPromoThumbnail(
-                        width: thumbW,
-                        videoUrl: payload.videoUrl,
-                        onOpen: () => unawaited(_openVideo(payload.videoUrl)),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                          vertical: AppSpacing.xs,
-                        ),
-                        child: Container(
-                          width: 1,
-                          height: thumbH,
-                          color: scheme.outlineVariant.withValues(alpha: 0.4),
-                        ),
-                      ),
-                      Expanded(
-                        child: Padding(
-                          padding: const EdgeInsets.fromLTRB(
-                            AppSpacing.md,
-                            AppSpacing.md,
-                            AppSpacing.lg,
-                            AppSpacing.md,
-                          ),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                body,
-                                style: AppTextStyles.body(),
-                                maxLines: 6,
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                              const SizedBox(height: AppSpacing.sm),
-                              Wrap(
-                                spacing: AppSpacing.xs,
-                                runSpacing: AppSpacing.xs,
-                                crossAxisAlignment: WrapCrossAlignment.center,
-                                children: [
-                                  TextButton.icon(
-                                    style: TextButton.styleFrom(
-                                      padding: const EdgeInsets.symmetric(
-                                        horizontal: AppSpacing.sm,
-                                        vertical: AppSpacing.xs,
-                                      ),
-                                      tapTargetSize:
-                                          MaterialTapTargetSize.shrinkWrap,
-                                      visualDensity: VisualDensity.compact,
-                                    ),
-                                    onPressed: () =>
-                                        unawaited(_openVideo(payload.videoUrl)),
-                                    icon: Icon(
-                                      Icons.play_circle_outline_rounded,
-                                      size: 20,
-                                      color: scheme.primary,
-                                    ),
-                                    label: Text(
-                                      context.l10n.vbWatch,
-                                      style: AppTextStyles.label().copyWith(
-                                        color: scheme.primary,
-                                      ),
-                                    ),
-                                  ),
-                                  TextButton(
-                                    style: TextButton.styleFrom(
-                                      padding: const EdgeInsets.symmetric(
-                                        horizontal: AppSpacing.sm,
-                                        vertical: AppSpacing.xs,
-                                      ),
-                                      tapTargetSize:
-                                          MaterialTapTargetSize.shrinkWrap,
-                                      visualDensity: VisualDensity.compact,
-                                    ),
-                                    onPressed: () => unawaited(
-                                      _confirmAndDismiss(
-                                        context,
-                                        ref,
-                                        payload.version,
-                                      ),
-                                    ),
-                                    child: Text(
-                                      context.l10n.commonDismiss,
-                                      style: AppTextStyles.label().copyWith(
-                                        color: scheme.onSurfaceVariant,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  );
-                },
+              child: _VideoPromoRow(
+                videoUrl: payload.videoUrl,
+                body: body,
+                version: payload.version,
+                onOpen: () => unawaited(_openVideo(payload.videoUrl)),
+                onDismiss: () => unawaited(
+                  _confirmAndDismiss(context, ref, payload.version),
+                ),
               ),
             ),
             const SizedBox(height: AppSpacing.md),

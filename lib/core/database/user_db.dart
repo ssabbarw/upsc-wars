@@ -1108,6 +1108,21 @@ class SessionsDao extends DatabaseAccessor<UserDatabase>
     return row.read<int?>('c') ?? 0;
   }
 
+  /// Completed sessions that should count toward first-test activation.
+  ///
+  /// Debug [practice_demo_seed] rows fill Stats charts and must not hide
+  /// the post-onboarding demo CTA.
+  Future<int> countCompletedSessionsForActivation() async {
+    final row = await customSelect(
+      "SELECT COUNT(*) AS c FROM sessions "
+      "WHERE status = 'completed' "
+      "AND (analytics_feature_key IS NULL "
+      "OR analytics_feature_key != 'practice_demo_seed')",
+      readsFrom: {sessions},
+    ).getSingle();
+    return row.read<int?>('c') ?? 0;
+  }
+
   /// Whether this PYQ 25-question pack has at least one completed session.
   Future<bool> hasCompletedPyqPack({
     required String subject,

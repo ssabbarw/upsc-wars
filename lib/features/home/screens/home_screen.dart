@@ -45,8 +45,11 @@ import '../../../shared/theme/dark_mode_toggle.dart';
 import '../../../shared/widgets/app_toast.dart';
 import '../../../shared/widgets/app_update_kill_switch_overlay.dart';
 import '../../../shared/widgets/content_language_picker.dart';
+import '../../../core/providers/home_page_video_provider.dart';
+import '../../../shared/widgets/home_page_video_banner.dart';
 import '../../../shared/widgets/prelims_countdown_card.dart';
 import '../../../shared/widgets/soft_update_banner.dart';
+import '../widgets/activation_journey_card.dart';
 import '../widgets/daily_rituals_intro_sheet.dart';
 import '../widgets/data_restore_banner.dart';
 import '../../../l10n/l10n.dart';
@@ -400,8 +403,7 @@ class HomeScreen extends HookConsumerWidget {
                   const SizedBox(height: AppSpacing.md),
                   const SoftUpdateBanner(),
                   const DataRestoreBanner(),
-                  const PushDeniedBanner(compact: true),
-                  const SizedBox(height: AppSpacing.md),
+                  _RightNowSection(borderColor: borderColor),
                   const PrelimsCountdownCard(),
                   const SizedBox(height: AppSpacing.md),
                   const TodayQueueStrip(),
@@ -450,6 +452,66 @@ class HomeScreen extends HookConsumerWidget {
     return isDark
         ? (bg: const Color(0xFF042C53), fg: AppColors.infoTextDark)
         : (bg: AppColors.infoText, fg: const Color(0xFFFFFFFF));
+  }
+}
+
+/// Urgent home items: push permission, promo video, and the demo START HERE.
+class _RightNowSection extends ConsumerWidget {
+  const _RightNowSection({required this.borderColor});
+
+  final Color borderColor;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final scheme = Theme.of(context).colorScheme;
+    final pushVisible =
+        ref.watch(pushDeniedBannerVisibleProvider).asData?.value ?? false;
+    final videoVisible =
+        ref.watch(homePageVideoVisibleProvider).asData?.value != null;
+    final journey = ref.watch(homeActivationJourneyProvider).asData?.value;
+    final demoVisible = journey?.shouldShowChecklist ?? false;
+
+    if (!pushVisible && !videoVisible && !demoVisible) {
+      return const SizedBox.shrink();
+    }
+
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final fill = isDark
+        ? scheme.surfaceContainerLow
+        : Color.lerp(scheme.surface, AppColors.primary, 0.04)!;
+
+    return Padding(
+      padding: const EdgeInsets.only(bottom: AppSpacing.md),
+      child: Container(
+        width: double.infinity,
+        padding: const EdgeInsets.all(AppSpacing.lg),
+        decoration: BoxDecoration(
+          color: fill,
+          borderRadius: BorderRadius.circular(AppRadius.lg),
+          border: Border.all(color: borderColor, width: 0.5),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              context.l10n.homeRightNowTitle,
+              style: AppTextStyles.h2().copyWith(
+                color: scheme.onSurface,
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+            const SizedBox(height: AppSpacing.md),
+            if (pushVisible) const PushDeniedBanner(compact: true),
+            if (videoVisible) ...[
+              HomePageVideoBanner(borderColor: borderColor),
+              if (demoVisible) const SizedBox(height: AppSpacing.sm),
+            ],
+            if (demoVisible && journey != null)
+              ActivationJourneyCard(state: journey),
+          ],
+        ),
+      ),
+    );
   }
 }
 

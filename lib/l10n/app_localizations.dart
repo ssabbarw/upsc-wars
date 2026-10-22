@@ -10219,6 +10219,12 @@ abstract class AppLocalizations {
   /// **'Unlock full stats'**
   String get statsUnlock;
 
+  /// No description provided for @homeRightNowTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'What to do right now?'**
+  String get homeRightNowTitle;
+
   /// No description provided for @todayQueueTitle.
   ///
   /// In en, this message translates to:

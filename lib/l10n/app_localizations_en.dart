@@ -6204,6 +6204,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get statsUnlock => 'Unlock full stats';
 
   @override
+  String get homeRightNowTitle => 'What to do right now?';
+
+  @override
   String get todayQueueTitle => 'What to do today?';
 
   @override

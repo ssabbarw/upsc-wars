@@ -1686,6 +1686,7 @@
   "statsConfidence": "Sure {sureTotal} ({sureWrong} गलत) · Educated guess {guessTotal} ({guessWrong} गलत)",
   "statsTrapPatterns": "Trap patterns",
   "statsUnlock": "पूरी stats खोलें",
+  "homeRightNowTitle": "अभी क्या करें?",
   "todayQueueTitle": "आज क्या करें?",
   "todayQueueCaShots": "CA shots",
   "todayQueueCaShotsSubtitle": "महत्वपूर्ण current affairs की त्वरित revision",

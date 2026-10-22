@@ -60,7 +60,8 @@ final homeActivationJourneyProvider =
       final db = ref.watch(userDatabaseProvider);
 
       final scoredAttempts = await db.sessionQuestionsDao.countScoredAttempts();
-      final completedSessions = await db.sessionsDao.countCompletedSessions();
+      final completedSessions = await db.sessionsDao
+          .countCompletedSessionsForActivation();
       final demoDone = prefs.getStartedDiagnosticAttempted;
       final demoOrFirstTestDone = demoDone || completedSessions > 0;
 

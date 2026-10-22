@@ -5,6 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../../../core/auth/auth_session.dart';
 import '../../../core/providers/kill_switch_provider.dart';
 import '../../../core/providers/prefs_provider.dart';
 import '../../../core/providers/super_user_provider.dart';
@@ -147,6 +148,13 @@ final dailyCaLeaderboardProvider = FutureProvider.autoDispose
       final cache = await ref.watch(dailyCaLeaderboardCacheProvider.future);
       final cached = cache.get(isoDate);
       if (cached != null && cached.isFrozen) return cached;
+
+      // Leaderboard docs require a signed-in account. Skip the read for guests
+      // so we don't spam PERMISSION_DENIED and show a false "no ranks" empty.
+      final user = ref.watch(authStateChangesProvider).asData?.value;
+      if (!AuthSession.isAccountSignedIn(user)) {
+        return cached;
+      }
 
       try {
         final snap = await DailyCaFirestore.leaderboardDoc(isoDate).get();

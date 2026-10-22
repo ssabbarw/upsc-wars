@@ -6111,6 +6111,9 @@ class AppLocalizationsHi extends AppLocalizations {
   String get statsUnlock => 'पूरी stats खोलें';
 
   @override
+  String get homeRightNowTitle => 'अभी क्या करें?';
+
+  @override
   String get todayQueueTitle => 'आज क्या करें?';
 
   @override

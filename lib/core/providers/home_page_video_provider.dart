@@ -64,6 +64,10 @@ final class HomePageVideoPayload {
   }
 }
 
+/// Temporary preview link while we check the home video banner layout.
+const _temporaryHomePageVideoJson =
+    '{"video_link":"https://www.youtube.com/watch?v=Y1RKdq0YxL","message":"Watch this tip","version":99}';
+
 @Riverpod(keepAlive: true)
 Future<HomePageVideoPayload?> homePageVideoPayload(Ref ref) async {
   if (kIsWeb) return null;
@@ -71,7 +75,8 @@ Future<HomePageVideoPayload?> homePageVideoPayload(Ref ref) async {
   final raw = FirebaseRemoteConfig.instance
       .getString(homePageVideoRemoteConfigKey)
       .trim();
-  return HomePageVideoPayload.tryParse(raw);
+  return HomePageVideoPayload.tryParse(raw) ??
+      HomePageVideoPayload.tryParse(_temporaryHomePageVideoJson);
 }
 
 @Riverpod(keepAlive: true)

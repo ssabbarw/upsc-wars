@@ -132,7 +132,9 @@ Future<KillSwitchSnapshot> killSwitch(Ref ref) async {
       // YYYY-MM-DD (time defaults to 09:30 local)
       'prelims_date': '2027-05-23',
       // JSON: { "video_link": "https://...", "message": "...", "version": 1 }
-      'home_page_video': '',
+      // Temporary local default so we can preview the home video banner.
+      'home_page_video':
+          '{"video_link":"https://www.youtube.com/watch?v=Y1RKdq0YxL","message":"Watch this tip","version":99}',
       // Optional dismissible update banner (same format as kill_switch_version).
       'soft_update_version': '',
       'soft_update_message': '',
