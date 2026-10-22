@@ -68,7 +68,7 @@ final class HomePageVideoPayload {
 
 /// Debug-only preview when RC is empty / invalid. Never used in release.
 const _debugHomePageVideoJson =
-    '{"video_link":"https://www.youtube.com/shorts/qGL05qUFQTM","message":"Watch this tip","version":100}';
+    '{"video_link":"https://www.youtube.com/watch?v=qnNGelC7d14","message":"Watch this tip","version":100}';
 
 @Riverpod(keepAlive: true)
 Future<HomePageVideoPayload?> homePageVideoPayload(Ref ref) async {

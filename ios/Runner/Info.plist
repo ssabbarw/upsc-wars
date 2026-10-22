@@ -2,14 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
- <key>com.posthog.posthog.PROJECT_TOKEN</key>
-  <string>phc_ux6vbQGG3kUrdwbE4Sgd4qH7U5WwUnCubAZQUqSyHDgD</string>
-  <key>com.posthog.posthog.POSTHOG_HOST</key>
-  <string>https://us.i.posthog.com</string>
-  <key>com.posthog.posthog.CAPTURE_APPLICATION_LIFECYCLE_EVENTS</key>
-  <true/>
-  <key>com.posthog.posthog.DEBUG</key>
-  <true/>
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
 	<key>CFBundleDevelopmentRegion</key>
@@ -30,10 +22,6 @@
 	<string>$(FLUTTER_BUILD_NAME)</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
-	<key>CFBundleVersion</key>
-	<string>$(FLUTTER_BUILD_NUMBER)</string>
-	<key>LSRequiresIPhoneOS</key>
-	<true/>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -55,6 +43,14 @@
 			</array>
 		</dict>
 	</array>
+	<key>CFBundleVersion</key>
+	<string>$(FLUTTER_BUILD_NUMBER)</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Microphone access may be required only for optional media features such as video recording. The app primarily uses photo selection for profile pictures.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>UPSC Wars needs photo library access so you can choose a profile picture.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -97,12 +93,15 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>UPSC Wars needs photo library access so you can choose a profile picture.</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>Microphone access may be required only for optional media features such as video recording. The app primarily uses photo selection for profile pictures.</string>
-	<!-- PostHog: Dart PostHogBootstrap calls Posthog().setup() manually. -->
 	<key>com.posthog.posthog.AUTO_INIT</key>
 	<false/>
+	<key>com.posthog.posthog.CAPTURE_APPLICATION_LIFECYCLE_EVENTS</key>
+	<true/>
+	<key>com.posthog.posthog.DEBUG</key>
+	<true/>
+	<key>com.posthog.posthog.POSTHOG_HOST</key>
+	<string>https://us.i.posthog.com</string>
+	<key>com.posthog.posthog.PROJECT_TOKEN</key>
+	<string>phc_ux6vbQGG3kUrdwbE4Sgd4qH7U5WwUnCubAZQUqSyHDgD</string>
 </dict>
 </plist>
