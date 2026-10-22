@@ -10061,7 +10061,7 @@ abstract class AppLocalizations {
   /// No description provided for @practiceBrowseTopicsSubtitle.
   ///
   /// In en, this message translates to:
-  /// **'Practice by subject and topic'**
+  /// **'Browse topics'**
   String get practiceBrowseTopicsSubtitle;
 
   /// No description provided for @practiceSectionTitle.

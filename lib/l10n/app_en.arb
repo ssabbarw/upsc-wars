@@ -4229,7 +4229,7 @@
   "practiceReattempt": "Reattempt",
   "practiceNewSeason": "New season: your tests have been reshuffled for the next prelims.",
   "practiceBrowseTopics": "Topic-wise tests",
-  "practiceBrowseTopicsSubtitle": "Practice by subject and topic",
+  "practiceBrowseTopicsSubtitle": "Browse topics",
   "practiceSectionTitle": "Practice",
   "practiceSectionSubtitle": "Your test series for prelims {year}",
   "@practiceSectionSubtitle": {

@@ -6011,8 +6011,7 @@ class AppLocalizationsHi extends AppLocalizations {
   String get practiceBrowseTopics => 'Topic-wise tests';
 
   @override
-  String get practiceBrowseTopicsSubtitle =>
-      'Subject और topic से practice करें';
+  String get practiceBrowseTopicsSubtitle => 'Browse topics';
 
   @override
   String get practiceSectionTitle => 'Practice';

@@ -406,11 +406,7 @@ class HomeScreen extends HookConsumerWidget {
                   const SizedBox(height: AppSpacing.md),
                   const TodayQueueStrip(),
                   const SizedBox(height: AppSpacing.lg),
-                  const _PracticeSectionHeader(),
-                  const SizedBox(height: AppSpacing.md),
-                  const _BrowseTopicsCta(),
-                  const SizedBox(height: AppSpacing.md),
-                  _PracticeSection(borderColor: borderColor),
+                  _PracticeUnit(borderColor: borderColor),
                   const PracticeSeasonNotice(),
                   const SizedBox(height: AppSpacing.sm),
                 ],
@@ -562,36 +558,53 @@ class _SectionTitleRow extends StatelessWidget {
   }
 }
 
-class _PracticeSectionHeader extends ConsumerWidget {
-  const _PracticeSectionHeader();
+/// Practice header + topic CTA + PYQ + subjects as one visual block.
+class _PracticeUnit extends ConsumerWidget {
+  const _PracticeUnit({required this.borderColor});
+
+  final Color borderColor;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final border = isDark ? AppColors.borderDark : AppColors.borderLight;
     final prelims =
         ref.watch(prelimsDateProvider).value ?? PrelimsCountdown.prelimsDate;
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Divider(height: 1, thickness: 0.5, color: border),
-        const SizedBox(height: AppSpacing.lg),
-        Text(
-          context.l10n.practiceSectionTitle,
-          style: AppTextStyles.h2().copyWith(
-            color: scheme.onSurface,
-            fontWeight: FontWeight.w700,
+    final fill = isDark
+        ? scheme.surfaceContainerLow
+        : Color.lerp(scheme.surface, AppColors.primary, 0.04)!;
+
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(AppSpacing.lg),
+      decoration: BoxDecoration(
+        color: fill,
+        borderRadius: BorderRadius.circular(AppRadius.lg),
+        border: Border.all(color: borderColor, width: 0.5),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            context.l10n.practiceSectionTitle,
+            style: AppTextStyles.h2().copyWith(
+              color: scheme.onSurface,
+              fontWeight: FontWeight.w700,
+            ),
           ),
-        ),
-        const SizedBox(height: AppSpacing.xs),
-        Text(
-          context.l10n.practiceSectionSubtitle(prelims.year),
-          style: AppTextStyles.bodySm().copyWith(
-            color: scheme.onSurfaceVariant,
+          const SizedBox(height: AppSpacing.xs),
+          Text(
+            context.l10n.practiceSectionSubtitle(prelims.year),
+            style: AppTextStyles.bodySm().copyWith(
+              color: scheme.onSurfaceVariant,
+            ),
           ),
-        ),
-      ],
+          const SizedBox(height: AppSpacing.md),
+          const _BrowseTopicsCta(),
+          const SizedBox(height: AppSpacing.lg),
+          _PracticeSection(borderColor: borderColor),
+        ],
+      ),
     );
   }
 }
@@ -688,8 +701,8 @@ class _PracticeSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         _PyqYearCarousel(borderColor: borderColor, years: _pyqYears),
-        const SizedBox(height: AppSpacing.xl),
-        _SubjectStrip(borderColor: borderColor),
+        const SizedBox(height: AppSpacing.lg),
+        _SubjectList(borderColor: borderColor),
       ],
     );
   }
@@ -863,8 +876,8 @@ class _PyqYearCard extends StatelessWidget {
   }
 }
 
-class _SubjectStrip extends ConsumerWidget {
-  const _SubjectStrip({required this.borderColor});
+class _SubjectList extends ConsumerWidget {
+  const _SubjectList({required this.borderColor});
 
   final Color borderColor;
 
@@ -879,99 +892,6 @@ class _SubjectStrip extends ConsumerWidget {
     AppColors.info,
   ];
 
-  void _showAll(
-    BuildContext context,
-    WidgetRef ref,
-    List<SubjectInfo> subjects,
-  ) {
-    showModalBottomSheet<void>(
-      context: context,
-      showDragHandle: true,
-      isScrollControlled: true,
-      builder: (ctx) {
-        final scheme = Theme.of(ctx).colorScheme;
-        final catalog = ref.read(practiceCatalogProvider).asData?.value;
-        return SafeArea(
-          child: DraggableScrollableSheet(
-            expand: false,
-            initialChildSize: 0.55,
-            minChildSize: 0.35,
-            maxChildSize: 0.9,
-            builder: (context, controller) {
-              return ListView(
-                controller: controller,
-                padding: const EdgeInsets.fromLTRB(
-                  AppSpacing.lg,
-                  0,
-                  AppSpacing.lg,
-                  AppSpacing.lg,
-                ),
-                children: [
-                  Text(
-                    context.l10n.homeSubjects,
-                    style: AppTextStyles.h2().copyWith(color: scheme.onSurface),
-                  ),
-                  const SizedBox(height: AppSpacing.sm),
-                  for (var i = 0; i < subjects.length; i++) ...[
-                    Builder(
-                      builder: (context) {
-                        final subject = subjects[i];
-                        final progress =
-                            catalog?.subjectProgress[subject.subject];
-                        final progressLabel =
-                            progress == null || progress.testsTotal == 0
-                            ? null
-                            : context.l10n.practiceTestsProgress(
-                                progress.testsDone,
-                                progress.testsTotal,
-                              );
-                        return ListTile(
-                          contentPadding: EdgeInsets.zero,
-                          leading: Icon(
-                            SubjectConstants.bySlug(
-                                  subject.subject,
-                                )?.materialIcon ??
-                                Icons.school_outlined,
-                            color: _accentColors[i % _accentColors.length],
-                          ),
-                          title: Text(
-                            subject.displayName,
-                            style: AppTextStyles.label(),
-                          ),
-                          subtitle: progressLabel == null
-                              ? null
-                              : Text(
-                                  progressLabel,
-                                  style: AppTextStyles.caption().copyWith(
-                                    color: scheme.onSurfaceVariant,
-                                  ),
-                                ),
-                          trailing: Icon(
-                            Icons.chevron_right,
-                            color: scheme.onSurfaceVariant,
-                          ),
-                          onTap: () {
-                            Navigator.pop(ctx);
-                            unawaited(
-                              maybeLogPostDemoExplore(ref, surface: 'subject'),
-                            );
-                            context.push(
-                              '/subject/${Uri.encodeComponent(subject.subject)}/tests',
-                            );
-                          },
-                        );
-                      },
-                    ),
-                  ],
-                ],
-              );
-            },
-          ),
-        );
-      },
-    );
-  }
-
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final subjectsAsync = ref.watch(subjectTestListProvider);
@@ -979,38 +899,30 @@ class _SubjectStrip extends ConsumerWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        subjectsAsync.when(
-          loading: () => _SectionTitleRow(title: context.l10n.homeSubjects),
-          error: (_, _) => _SectionTitleRow(title: context.l10n.homeSubjects),
-          data: (subjects) => _SectionTitleRow(
-            title: context.l10n.homeSubjects,
-            onViewAll: () => _showAll(context, ref, subjects),
-          ),
-        ),
+        _SectionTitleRow(title: context.l10n.homeSubjects),
         const SizedBox(height: AppSpacing.md),
         subjectsAsync.when(
-          loading: () => const _SubjectStripSkeleton(),
+          loading: () => const _SubjectListSkeleton(),
           error: (_, _) => const SizedBox.shrink(),
-          data: (subjects) => SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            physics: const BouncingScrollPhysics(),
-            clipBehavior: Clip.none,
-            child: Row(
-              children: [
-                for (var i = 0; i < subjects.length; i++) ...[
-                  if (i != 0) const SizedBox(width: AppSpacing.sm),
-                  _SubjectChipCard(
-                    info: subjects[i],
-                    icon:
-                        SubjectConstants.bySlug(
-                          subjects[i].subject,
-                        )?.materialIcon ??
-                        Icons.school_outlined,
-                    accent: _accentColors[i % _accentColors.length],
-                    borderColor: borderColor,
-                  ),
-                ],
-              ],
+          data: (subjects) => GridView.builder(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              mainAxisSpacing: AppSpacing.sm,
+              crossAxisSpacing: AppSpacing.sm,
+              childAspectRatio: 2.35,
+            ),
+            itemCount: subjects.length,
+            itemBuilder: (context, i) => _SubjectCard(
+              info: subjects[i],
+              icon:
+                  SubjectConstants.bySlug(
+                    subjects[i].subject,
+                  )?.materialIcon ??
+                  Icons.school_outlined,
+              accent: _accentColors[i % _accentColors.length],
+              borderColor: borderColor,
             ),
           ),
         ),
@@ -1019,8 +931,8 @@ class _SubjectStrip extends ConsumerWidget {
   }
 }
 
-class _SubjectChipCard extends ConsumerWidget {
-  const _SubjectChipCard({
+class _SubjectCard extends ConsumerWidget {
+  const _SubjectCard({
     required this.info,
     required this.icon,
     required this.accent,
@@ -1051,7 +963,7 @@ class _SubjectChipCard extends ConsumerWidget {
         },
         borderRadius: BorderRadius.circular(AppRadius.lg),
         child: Ink(
-          width: 168,
+          width: double.infinity,
           padding: const EdgeInsets.symmetric(
             horizontal: AppSpacing.md,
             vertical: AppSpacing.md,
@@ -1072,18 +984,29 @@ class _SubjectChipCard extends ConsumerWidget {
           ),
           child: Row(
             children: [
-              Icon(icon, size: 22, color: accent),
+              Container(
+                width: 36,
+                height: 36,
+                decoration: BoxDecoration(
+                  color: accent.withValues(alpha: isDark ? 0.25 : 0.12),
+                  borderRadius: BorderRadius.circular(AppRadius.md),
+                ),
+                alignment: Alignment.center,
+                child: Icon(icon, size: 20, color: accent),
+              ),
               const SizedBox(width: AppSpacing.sm),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
                       info.displayName,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
-                      style: AppTextStyles.label().copyWith(
+                      style: AppTextStyles.labelSm().copyWith(
                         color: scheme.onSurface,
+                        fontWeight: FontWeight.w600,
                       ),
                     ),
                     if (progress != null && progress.testsTotal > 0) ...[
@@ -1103,11 +1026,6 @@ class _SubjectChipCard extends ConsumerWidget {
                   ],
                 ),
               ),
-              Icon(
-                Icons.chevron_right,
-                size: 18,
-                color: scheme.onSurfaceVariant,
-              ),
             ],
           ),
         ),
@@ -1116,8 +1034,8 @@ class _SubjectChipCard extends ConsumerWidget {
   }
 }
 
-class _SubjectStripSkeleton extends HookWidget {
-  const _SubjectStripSkeleton();
+class _SubjectListSkeleton extends HookWidget {
+  const _SubjectListSkeleton();
 
   @override
   Widget build(BuildContext context) {
@@ -1136,22 +1054,19 @@ class _SubjectStripSkeleton extends HookWidget {
       animation: ctrl,
       builder: (_, _) => Opacity(
         opacity: opacity,
-        child: SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
+        child: GridView.count(
+          shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
-          child: Row(
-            children: List.generate(
-              4,
-              (i) => Padding(
-                padding: EdgeInsets.only(left: i == 0 ? 0 : AppSpacing.sm),
-                child: Container(
-                  width: 168,
-                  height: 64,
-                  decoration: BoxDecoration(
-                    color: scheme.surfaceContainerLow,
-                    borderRadius: BorderRadius.circular(AppRadius.lg),
-                  ),
-                ),
+          crossAxisCount: 2,
+          mainAxisSpacing: AppSpacing.sm,
+          crossAxisSpacing: AppSpacing.sm,
+          childAspectRatio: 2.35,
+          children: List.generate(
+            6,
+            (_) => Container(
+              decoration: BoxDecoration(
+                color: scheme.surfaceContainerLow,
+                borderRadius: BorderRadius.circular(AppRadius.lg),
               ),
             ),
           ),

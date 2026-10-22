@@ -358,7 +358,7 @@ List<TopicInfo> _sortTopics(
             b.displayName.toLowerCase(),
           );
         }
-        final byAcc = aAcc!.compareTo(bAcc!);
+        final byAcc = bAcc!.compareTo(aAcc!);
         if (byAcc != 0) return byAcc;
         return a.displayName.toLowerCase().compareTo(
           b.displayName.toLowerCase(),

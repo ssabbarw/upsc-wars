@@ -186,14 +186,16 @@ class TodayQueueStrip extends ConsumerWidget {
           ],
         ),
         const SizedBox(height: AppSpacing.md),
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            for (var i = 0; i < preview.length; i++) ...[
-              if (i > 0) const SizedBox(width: AppSpacing.sm),
-              Expanded(child: _TodayCard(item: preview[i])),
+        IntrinsicHeight(
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              for (var i = 0; i < preview.length; i++) ...[
+                if (i > 0) const SizedBox(width: AppSpacing.sm),
+                Expanded(child: _TodayCard(item: preview[i])),
+              ],
             ],
-          ],
+          ),
         ),
       ],
     );
@@ -217,6 +219,7 @@ class _TodayCard extends StatelessWidget {
         onTap: item.onTap,
         borderRadius: BorderRadius.circular(AppRadius.lg),
         child: Ink(
+          width: double.infinity,
           padding: const EdgeInsets.all(AppSpacing.md),
           decoration: BoxDecoration(
             color: scheme.surface,
@@ -265,13 +268,15 @@ class _TodayCard extends StatelessWidget {
                 style: AppTextStyles.label().copyWith(color: scheme.onSurface),
               ),
               const SizedBox(height: AppSpacing.xs),
-              Text(
-                item.subtitle,
-                maxLines: 3,
-                overflow: TextOverflow.ellipsis,
-                style: AppTextStyles.caption().copyWith(
-                  color: scheme.onSurfaceVariant,
-                  height: 1.35,
+              Expanded(
+                child: Text(
+                  item.subtitle,
+                  maxLines: 3,
+                  overflow: TextOverflow.ellipsis,
+                  style: AppTextStyles.caption().copyWith(
+                    color: scheme.onSurfaceVariant,
+                    height: 1.35,
+                  ),
                 ),
               ),
             ],

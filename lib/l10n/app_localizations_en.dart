@@ -6104,7 +6104,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get practiceBrowseTopics => 'Topic-wise tests';
 
   @override
-  String get practiceBrowseTopicsSubtitle => 'Practice by subject and topic';
+  String get practiceBrowseTopicsSubtitle => 'Browse topics';
 
   @override
   String get practiceSectionTitle => 'Practice';
