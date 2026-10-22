@@ -29,6 +29,7 @@ import '../../../core/theme/app_text_styles.dart';
 import '../providers/auth_providers.dart';
 import '../providers/home_activation_provider.dart';
 import '../providers/home_activation_journey_provider.dart';
+import '../../../core/providers/understand_home_dismiss_provider.dart';
 import '../providers/daily_drill_provider.dart';
 import '../../daily_ca/providers/daily_ca_providers.dart';
 import '../../daily_war/providers/daily_war_providers.dart';
@@ -50,7 +51,6 @@ import '../../../shared/widgets/home_page_video_banner.dart';
 import '../../../shared/widgets/prelims_countdown_card.dart';
 import '../../../shared/widgets/soft_update_banner.dart';
 import '../widgets/activation_journey_card.dart';
-import '../widgets/daily_rituals_intro_sheet.dart';
 import '../widgets/data_restore_banner.dart';
 import '../../../l10n/l10n.dart';
 
@@ -125,8 +125,6 @@ class HomeScreen extends HookConsumerWidget {
             );
           },
         );
-        if (!context.mounted) return;
-        unawaited(maybeShowDailyRitualsIntro(context: context, ref: ref));
       }());
       return null;
     }, [onHomeRoute]);
@@ -455,7 +453,7 @@ class HomeScreen extends HookConsumerWidget {
   }
 }
 
-/// Urgent home items: push permission, promo video, and the demo START HERE.
+/// Home onboarding tips: push permission, promo video, and the demo START HERE.
 class _RightNowSection extends ConsumerWidget {
   const _RightNowSection({required this.borderColor});
 
@@ -464,12 +462,40 @@ class _RightNowSection extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
+    final prefs = ref.watch(prefsServiceProvider).asData?.value;
+    final sessionHidden = ref.watch(understandHomeSessionHiddenProvider);
+
+    // Prefer `.value` over `.asData` so a provider refresh keeps the previous
+    // value — otherwise sibling items flash away with the dismissed one.
+    // Session hide is applied here too so items vanish instantly (FutureProviders
+    // that also watch session still lag one async tick).
+    final pushEligible =
+        ref.watch(pushDeniedBannerVisibleProvider).value ?? false;
+    final videoPayload = ref.watch(homePageVideoVisibleProvider).value;
+    final journey = ref.watch(homeActivationJourneyProvider).value;
+    final demoEligible = journey?.shouldShowChecklist ?? false;
+
     final pushVisible =
-        ref.watch(pushDeniedBannerVisibleProvider).asData?.value ?? false;
+        pushEligible &&
+        !isUnderstandHomeHidden(
+          prefs,
+          sessionHidden,
+          UnderstandHomeDismissKeys.push,
+        );
     final videoVisible =
-        ref.watch(homePageVideoVisibleProvider).asData?.value != null;
-    final journey = ref.watch(homeActivationJourneyProvider).asData?.value;
-    final demoVisible = journey?.shouldShowChecklist ?? false;
+        videoPayload != null &&
+        !isUnderstandHomeHidden(
+          prefs,
+          sessionHidden,
+          UnderstandHomeDismissKeys.video(videoPayload.version),
+        );
+    final demoVisible =
+        demoEligible &&
+        !isUnderstandHomeHidden(
+          prefs,
+          sessionHidden,
+          UnderstandHomeDismissKeys.demo,
+        );
 
     if (!pushVisible && !videoVisible && !demoVisible) {
       return const SizedBox.shrink();
@@ -507,7 +533,12 @@ class _RightNowSection extends ConsumerWidget {
               if (demoVisible) const SizedBox(height: AppSpacing.sm),
             ],
             if (demoVisible && journey != null)
-              ActivationJourneyCard(state: journey),
+              ActivationJourneyCard(
+                state: journey,
+                onDismiss: () => unawaited(
+                  showDemoDismissPitchSheet(context, ref),
+                ),
+              ),
           ],
         ),
       ),

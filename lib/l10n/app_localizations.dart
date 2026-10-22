@@ -824,6 +824,96 @@ abstract class AppLocalizations {
   /// **'Keep going'**
   String get activationKeepGoing;
 
+  /// No description provided for @demoPitchTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'This year, pass Prelims with UPSC Wars'**
+  String get demoPitchTitle;
+
+  /// No description provided for @demoPitchLead.
+  ///
+  /// In en, this message translates to:
+  /// **'UPSC Wars can help you clear Prelims this year by:'**
+  String get demoPitchLead;
+
+  /// No description provided for @demoPitchPoint1.
+  ///
+  /// In en, this message translates to:
+  /// **'Catching places where you make confident mistakes'**
+  String get demoPitchPoint1;
+
+  /// No description provided for @demoPitchPoint1Body.
+  ///
+  /// In en, this message translates to:
+  /// **'Turn mistakes into strong, clear learning.'**
+  String get demoPitchPoint1Body;
+
+  /// No description provided for @demoPitchPoint2.
+  ///
+  /// In en, this message translates to:
+  /// **'Spotting topics where your accuracy is already high'**
+  String get demoPitchPoint2;
+
+  /// No description provided for @demoPitchPoint2Body.
+  ///
+  /// In en, this message translates to:
+  /// **'So you can take more risk there.'**
+  String get demoPitchPoint2Body;
+
+  /// No description provided for @demoPitchPerQue.
+  ///
+  /// In en, this message translates to:
+  /// **'Every question comes packed with:'**
+  String get demoPitchPerQue;
+
+  /// No description provided for @demoPitchCheckOutArrow.
+  ///
+  /// In en, this message translates to:
+  /// **'Check out →'**
+  String get demoPitchCheckOutArrow;
+
+  /// No description provided for @demoPitchFeatureRich.
+  ///
+  /// In en, this message translates to:
+  /// **'Rich explanation'**
+  String get demoPitchFeatureRich;
+
+  /// No description provided for @demoPitchFeatureStatements.
+  ///
+  /// In en, this message translates to:
+  /// **'Statement analysis'**
+  String get demoPitchFeatureStatements;
+
+  /// No description provided for @demoPitchFeatureElimination.
+  ///
+  /// In en, this message translates to:
+  /// **'Elimination method'**
+  String get demoPitchFeatureElimination;
+
+  /// No description provided for @demoPitchFeatureTraps.
+  ///
+  /// In en, this message translates to:
+  /// **'UPSC traps'**
+  String get demoPitchFeatureTraps;
+
+  /// No description provided for @demoPitchFeatureDistractors.
+  ///
+  /// In en, this message translates to:
+  /// **'Strong distractors'**
+  String get demoPitchFeatureDistractors;
+
+  /// No description provided for @demoPitchCheckOut.
+  ///
+  /// In en, this message translates to:
+  /// **'Check out'**
+  String get demoPitchCheckOut;
+
+  /// No description provided for @demoPitchDismiss.
+  ///
+  /// In en, this message translates to:
+  /// **'Dismiss'**
+  String get demoPitchDismiss;
+
   /// No description provided for @drillSubjectTitle.
   ///
   /// In en, this message translates to:
@@ -1484,6 +1574,18 @@ abstract class AppLocalizations {
   /// **'Not this time'**
   String get testNotThisTime;
 
+  /// No description provided for @demoFeedbackCorrectTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Shabash — that\'s correct'**
+  String get demoFeedbackCorrectTitle;
+
+  /// No description provided for @demoFeedbackWrongTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'That was wrong'**
+  String get demoFeedbackWrongTitle;
+
   /// No description provided for @testHintCorrect.
   ///
   /// In en, this message translates to:
@@ -1931,7 +2033,7 @@ abstract class AppLocalizations {
   /// No description provided for @onbAttemptMore.
   ///
   /// In en, this message translates to:
-  /// **'Attempt more from these topics'**
+  /// **'Attempt more from these'**
   String get onbAttemptMore;
 
   /// No description provided for @onbGainMarks.
@@ -10222,7 +10324,7 @@ abstract class AppLocalizations {
   /// No description provided for @homeRightNowTitle.
   ///
   /// In en, this message translates to:
-  /// **'What to do right now?'**
+  /// **'Understand UPSC Wars'**
   String get homeRightNowTitle;
 
   /// No description provided for @todayQueueTitle.

@@ -2,8 +2,24 @@ import 'dart:ui' as ui;
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'youtube_video_id.dart';
+
+/// Disk cache shared with [CachedNetworkImage] for YouTube stills.
+final youtubeThumbCacheManager = CacheManager(
+  Config(
+    'youtube_thumb_v1',
+    stalePeriod: const Duration(days: 14),
+    maxNrOfCacheObjects: 80,
+  ),
+);
+
+/// Disk + memory cached YouTube still for [videoUrl].
+final youtubeThumbMetaProvider = FutureProvider.autoDispose
+    .family<YoutubeThumbMeta?, String>((ref, videoUrl) {
+      return resolveYoutubeThumbMeta(videoUrl);
+    });
 
 /// Cached YouTube still for the home promo banner.
 class YoutubeThumbMeta {
@@ -58,7 +74,10 @@ Future<YoutubeThumbMeta?> resolveYoutubeThumbMeta(String videoUrl) async {
     if (meta != null) _memory[videoId] = meta;
     return meta;
   } finally {
-    _inFlight.remove(videoId);
+    // Only clear once the shared future has settled for this key.
+    if (identical(_inFlight[videoId], pending)) {
+      _inFlight.remove(videoId);
+    }
   }
 }
 
@@ -66,12 +85,31 @@ Future<YoutubeThumbMeta?> _resolve(
   String videoId, {
   required bool preferPortrait,
 }) async {
-  // Prefer higher quality; skip YouTube's tiny "missing maxres" placeholder.
-  const qualities = ['maxresdefault', 'sddefault', 'hqdefault', 'mqdefault'];
+  // Shorts expose true portrait frames as oardefault / oar2; regular videos
+  // use the landscape CDN stills. Prefer those first when the URL is Shorts.
+  final qualities = preferPortrait
+      ? const [
+          'oardefault',
+          'oar2',
+          'maxresdefault',
+          'hq720',
+          'hqdefault',
+          'mqdefault',
+        ]
+      : const [
+          'maxresdefault',
+          'hq720',
+          'sddefault',
+          'hqdefault',
+          'mqdefault',
+          'oardefault',
+          'oar2',
+        ];
+
   for (final quality in qualities) {
     final url = youtubeThumbUrl(videoId, quality);
     try {
-      final file = await DefaultCacheManager().getSingleFile(url);
+      final file = await youtubeThumbCacheManager.getSingleFile(url);
       final bytes = await file.readAsBytes();
       if (bytes.isEmpty) continue;
       final codec = await ui.instantiateImageCodec(bytes);

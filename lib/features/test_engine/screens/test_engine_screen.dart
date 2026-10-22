@@ -108,8 +108,8 @@ Future<void> _showDemoExplanationCoachSheet(
                 children: [
                   Text(
                     isCorrect
-                        ? context.l10n.testCorrect
-                        : context.l10n.testNotThisTime,
+                        ? context.l10n.demoFeedbackCorrectTitle
+                        : context.l10n.demoFeedbackWrongTitle,
                     style: AppTextStyles.h3().copyWith(color: scheme.onSurface),
                   ),
                   const SizedBox(height: AppSpacing.sm),

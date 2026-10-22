@@ -476,6 +476,55 @@ class AppLocalizationsHi extends AppLocalizations {
   String get activationKeepGoing => 'जारी रखें';
 
   @override
+  String get demoPitchTitle => 'इस साल UPSC Wars के साथ Prelims पास करें';
+
+  @override
+  String get demoPitchLead =>
+      'UPSC Wars इस साल Prelims पास करने में मदद कर सकता है:';
+
+  @override
+  String get demoPitchPoint1 =>
+      'उन topics को पहचानिए जहाँ आप confident mistakes कर रहे हैं।';
+
+  @override
+  String get demoPitchPoint1Body => 'गलतियों को साफ़, मज़बूत सीख में बदलें।';
+
+  @override
+  String get demoPitchPoint2 =>
+      'उन areas को पहचानिए जहाँ आपके guess सही जा रहे हैं।';
+
+  @override
+  String get demoPitchPoint2Body =>
+      'ताकि आप exam में यहाँ से ज़्यादा attempt कर सकें।';
+
+  @override
+  String get demoPitchPerQue => 'हर सवाल में मिलता है:';
+
+  @override
+  String get demoPitchCheckOutArrow => 'देखें →';
+
+  @override
+  String get demoPitchFeatureRich => 'Rich explanation';
+
+  @override
+  String get demoPitchFeatureStatements => 'Statement analysis';
+
+  @override
+  String get demoPitchFeatureElimination => 'Elimination method';
+
+  @override
+  String get demoPitchFeatureTraps => 'UPSC traps';
+
+  @override
+  String get demoPitchFeatureDistractors => 'Strong distractors';
+
+  @override
+  String get demoPitchCheckOut => 'देखें';
+
+  @override
+  String get demoPitchDismiss => 'Dismiss';
+
+  @override
   String get drillSubjectTitle => 'आज की practice का विषय';
 
   @override
@@ -845,12 +894,18 @@ class AppLocalizationsHi extends AppLocalizations {
   String get testNotThisTime => 'इस बार नहीं';
 
   @override
+  String get demoFeedbackCorrectTitle => 'शाबाश, जवाब सही है';
+
+  @override
+  String get demoFeedbackWrongTitle => 'गलत हो गया';
+
+  @override
   String get testHintCorrect =>
       'असली सीख explanation में है — elimination, statement analysis और trap option।';
 
   @override
   String get testHintWrong =>
-      'बाकी options कैसे काटने हैं, यह पढ़िए — असली practice यही है।';
+      'बाकी options कैसे eliminate करने हैं, यह पढ़िए — असली practice यही है।';
 
   @override
   String get testShowExplanation => 'Explanation दिखाइए';
@@ -6111,7 +6166,7 @@ class AppLocalizationsHi extends AppLocalizations {
   String get statsUnlock => 'पूरी stats खोलें';
 
   @override
-  String get homeRightNowTitle => 'अभी क्या करें?';
+  String get homeRightNowTitle => 'UPSC Wars को समझें';
 
   @override
   String get todayQueueTitle => 'आज क्या करें?';

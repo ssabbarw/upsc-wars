@@ -503,6 +503,18 @@ AnalyticsEventMapping mapAnalyticsEvent(AnalyticsEvent event) {
       return const AnalyticsEventMapping(
         events: [AnalyticsMappedEvent('activation_journey_snoozed')],
       );
+    case DemoTestAttemptedEvent(:final source):
+      return AnalyticsEventMapping(
+        events: [
+          AnalyticsMappedEvent('demo_test_attempted', {'source': source}),
+        ],
+      );
+    case DemoTestDismissedEvent(:final strike):
+      return AnalyticsEventMapping(
+        events: [
+          AnalyticsMappedEvent('demo_test_dismissed', {'strike': strike}),
+        ],
+      );
     case GameScreenOpenedEvent(:final gameName):
       return AnalyticsEventMapping(
         events: [

@@ -722,6 +722,26 @@ final class ActivationJourneySnoozedEvent extends AnalyticsEvent {
   const ActivationJourneySnoozedEvent();
 }
 
+/// **User started or resumed the demo test** (START HERE / Check out).
+///
+/// **GA4:** `demo_test_attempted` with `source`
+/// (`start_here_card` | `dismiss_pitch_checkout`).
+final class DemoTestAttemptedEvent extends AnalyticsEvent {
+  const DemoTestAttemptedEvent({required this.source});
+
+  final String source;
+}
+
+/// **User dismissed the demo test card** from the Understand pitch sheet.
+///
+/// **GA4:** `demo_test_dismissed` with `strike` (1 = soft / session,
+/// 2 = permanent).
+final class DemoTestDismissedEvent extends AnalyticsEvent {
+  const DemoTestDismissedEvent({required this.strike});
+
+  final int strike;
+}
+
 // ── Revision Games (mini-games hub + Memory Pairs) ───────────────────────────
 
 /// **User opened a revision-game surface** (hub or a specific game screen).

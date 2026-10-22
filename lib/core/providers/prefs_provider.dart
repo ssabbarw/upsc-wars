@@ -122,6 +122,10 @@ abstract final class PrefKeys {
   static const homePageVideoDismissedVersion =
       'home_page_video_dismissed_version_v1';
 
+  /// JSON map of Understand-home dismiss keys → strike count (1 = soft, 2 = gone).
+  static const understandHomeDismissCountsV1 =
+      'understand_home_dismiss_counts_v1';
+
   /// When the user last published an open challenge (local epoch ms); 24h cooldown for new creates.
   static const openChallengeLastPublishedAtMs =
       'open_challenge_last_published_at_ms_v1';
@@ -478,6 +482,43 @@ class PrefsService {
       _p.getInt(PrefKeys.homePageVideoDismissedVersion) ?? 0;
   set homePageVideoDismissedVersion(int v) =>
       _p.setInt(PrefKeys.homePageVideoDismissedVersion, v);
+
+  /// Strike counts for Understand UPSC Wars section / items (capped at 2).
+  Map<String, int> get understandHomeDismissCounts {
+    final raw = _p.getString(PrefKeys.understandHomeDismissCountsV1);
+    if (raw == null || raw.isEmpty) return const {};
+    try {
+      final decoded = jsonDecode(raw);
+      if (decoded is! Map) return const {};
+      final out = <String, int>{};
+      for (final e in decoded.entries) {
+        final k = e.key.toString();
+        final v = e.value;
+        if (v is int) {
+          out[k] = v;
+        } else if (v is num) {
+          out[k] = v.toInt();
+        }
+      }
+      return out;
+    } on Object {
+      return const {};
+    }
+  }
+
+  int understandHomeDismissCount(String key) =>
+      understandHomeDismissCounts[key] ?? 0;
+
+  void setUnderstandHomeDismissCount(String key, int count) {
+    final next = Map<String, int>.from(understandHomeDismissCounts);
+    final capped = count.clamp(0, 2);
+    if (capped <= 0) {
+      next.remove(key);
+    } else {
+      next[key] = capped;
+    }
+    _p.setString(PrefKeys.understandHomeDismissCountsV1, jsonEncode(next));
+  }
 
   /// Local-only: last time this device published an open challenge to Firestore.
   int? get openChallengeLastPublishedAtMs =>

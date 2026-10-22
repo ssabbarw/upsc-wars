@@ -42,15 +42,6 @@ class OnboardingThesisPage extends HookWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Text(
-                  context.l10n.onbThesisEyebrow,
-                  style: RgText.mono(
-                    size: onb(context, 11),
-                    letterSpacingEm: 0.14,
-                    color: RgColors.wrong,
-                  ),
-                ),
-                SizedBox(height: onb(context, 10)),
                 _Headline(scale: onboardingScale(context)),
                 SizedBox(height: onb(context, 10)),
                 const _GlowingSubline(),
@@ -240,13 +231,6 @@ class _Headline extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Lead-in is deliberately small; the UPSC Wars line is the highlight.
-    final lead = RgText.display(
-      size: 15 * scale,
-      weight: FontWeight.w700,
-      height: 1.25,
-      color: RgColors.muted,
-    );
     final accent =
         RgText.display(
           size: 26 * scale,
@@ -259,14 +243,7 @@ class _Headline extends StatelessWidget {
           decorationColor: RgColors.tealDeep,
           decorationThickness: 1.6,
         );
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(context.l10n.onbLead, style: lead),
-        SizedBox(height: 6 * scale),
-        Text(context.l10n.onbAccent, style: accent),
-      ],
-    );
+    return Text(context.l10n.onbAccent, style: accent);
   }
 }
 
@@ -448,74 +425,70 @@ class _SummaryStrip extends StatelessWidget {
         borderRadius: BorderRadius.circular(onb(context, 14)),
         border: Border.all(color: RgColors.border),
       ),
-      child: IntrinsicHeight(
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            for (var i = 0; i < items.length; i++) ...[
-              if (i > 0)
-                Container(
-                  width: 1,
-                  margin: EdgeInsets.symmetric(horizontal: onb(context, 10)),
-                  color: RgColors.border,
-                ),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          width: onb(context, 30),
-                          height: onb(context, 30),
-                          decoration: BoxDecoration(
-                            color: items[i].bg,
-                            shape: BoxShape.circle,
-                          ),
-                          child: Icon(
-                            items[i].icon,
-                            size: onb(context, 16),
-                            color: items[i].fg,
-                          ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          for (var i = 0; i < items.length; i++) ...[
+            if (i > 0)
+              Container(
+                width: 1,
+                margin: EdgeInsets.symmetric(horizontal: onb(context, 10)),
+                color: RgColors.border,
+              ),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        width: onb(context, 30),
+                        height: onb(context, 30),
+                        decoration: BoxDecoration(
+                          color: items[i].bg,
+                          shape: BoxShape.circle,
                         ),
-                        SizedBox(width: onb(context, 8)),
-                        Expanded(
-                          child: Text(
-                            items[i].title,
-                            softWrap: true,
-                            style: RgText.body(
-                              size: onb(context, 11.5),
-                              height: 1.3,
-                              weight: FontWeight.w700,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: onb(context, 6)),
-                    // Bottom-align captions so both columns line up even
-                    // when titles wrap to a different number of lines.
-                    const Expanded(child: SizedBox.shrink()),
-                    SizedBox(
-                      width: double.infinity,
-                      child: Text(
-                        items[i].caption,
-                        softWrap: true,
-                        textAlign: TextAlign.center,
-                        style: RgText.body(
-                          size: onb(context, 11),
-                          height: 1.3,
-                          color: RgColors.muted,
+                        child: Icon(
+                          items[i].icon,
+                          size: onb(context, 16),
+                          color: items[i].fg,
                         ),
                       ),
+                      SizedBox(width: onb(context, 8)),
+                      Expanded(
+                        child: Text(
+                          items[i].title,
+                          softWrap: true,
+                          style: RgText.body(
+                            size: onb(context, 11.5),
+                            height: 1.3,
+                            weight: FontWeight.w700,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: onb(context, 6)),
+                  SizedBox(
+                    width: double.infinity,
+                    child: Text(
+                      items[i].caption,
+                      softWrap: true,
+                      textAlign: TextAlign.center,
+                      style: RgText.body(
+                        size: onb(context, 11),
+                        height: 1.3,
+                        color: RgColors.muted,
+                      ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-            ],
+            ),
           ],
-        ),
+        ],
       ),
     );
   }

@@ -36,7 +36,6 @@ import '../providers/today_hero_intent_provider.dart';
 import '../providers/home_activation_journey_provider.dart';
 import 'activation_journey_card.dart';
 import 'daily_revision_choice_sheet.dart';
-import 'daily_rituals_intro_sheet.dart';
 import '../../../l10n/l10n.dart';
 
 /// Daily ritual on home: CA test hero until first submit, else Daily Drill,
@@ -369,49 +368,13 @@ class TodayHubSection extends HookConsumerWidget {
         // ── TODAY list ─────────────────────────────────────────────────────
         if (listRows.isNotEmpty) ...[
           const SizedBox(height: AppSpacing.md),
-          Row(
-            children: [
-              Text(
-                context.l10n.activationKeepGoing,
-                style: AppTextStyles.caption().copyWith(
-                  color: scheme.onSurfaceVariant,
-                  fontWeight: FontWeight.w700,
-                  letterSpacing: 1.1,
-                ),
-              ),
-              const Spacer(),
-              if (data.caShotsEnabled || data.caEnabled || data.warEnabled)
-                InkWell(
-                  onTap: () => unawaited(
-                    showDailyRitualsIntroSheet(context, ref, fromHelp: true),
-                  ),
-                  borderRadius: BorderRadius.circular(AppRadius.pill),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: AppSpacing.xs,
-                      vertical: 2,
-                    ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Icon(
-                          Icons.info_outline_rounded,
-                          size: 14,
-                          color: scheme.onSurfaceVariant,
-                        ),
-                        const SizedBox(width: 4),
-                        Text(
-                          context.l10n.todayWhatIsThis,
-                          style: AppTextStyles.caption().copyWith(
-                            color: scheme.onSurfaceVariant,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-            ],
+          Text(
+            context.l10n.activationKeepGoing,
+            style: AppTextStyles.caption().copyWith(
+              color: scheme.onSurfaceVariant,
+              fontWeight: FontWeight.w700,
+              letterSpacing: 1.1,
+            ),
           ),
           const SizedBox(height: AppSpacing.sm),
           ClipRRect(

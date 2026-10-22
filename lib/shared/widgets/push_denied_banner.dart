@@ -10,6 +10,7 @@ import 'package:upsc_wars/core/analytics/analytics.dart';
 import 'package:upsc_wars/core/analytics/analytics_events.dart';
 import 'package:upsc_wars/core/notifications/notification_prompt_policy.dart';
 import 'package:upsc_wars/core/providers/prefs_provider.dart';
+import 'package:upsc_wars/core/providers/understand_home_dismiss_provider.dart';
 import 'package:upsc_wars/core/services/battle_messaging_service.dart';
 import 'package:upsc_wars/core/theme/app_radius.dart';
 import 'package:upsc_wars/core/theme/app_spacing.dart';
@@ -22,7 +23,16 @@ final pushDeniedBannerVisibleProvider = FutureProvider.autoDispose<bool>((
 ) async {
   if (kIsWeb) return false;
   final prefs = await ref.watch(prefsServiceProvider.future);
+  final session = ref.watch(understandHomeSessionHiddenProvider);
+  // Legacy permanent flag + two-strike Understand dismiss.
   if (prefs.deferredPushHomeNudgeDismissedV2) return false;
+  if (isUnderstandHomeHidden(
+    prefs,
+    session,
+    UnderstandHomeDismissKeys.push,
+  )) {
+    return false;
+  }
   return BattleMessagingService.shouldShowPushDeniedBanner();
 });
 
@@ -128,7 +138,7 @@ class _CompactStrip extends StatelessWidget {
                 ),
               ),
               InkWell(
-                onTap: () => unawaited(_dismiss(ref)),
+                onTap: () => _dismiss(ref),
                 borderRadius: BorderRadius.circular(12),
                 child: Padding(
                   padding: const EdgeInsets.all(6),
@@ -204,7 +214,7 @@ class _OriginalCard extends StatelessWidget {
             IconButton(
               tooltip: context.l10n.commonDismiss,
               visualDensity: VisualDensity.compact,
-              onPressed: () => unawaited(_dismiss(ref)),
+              onPressed: () => _dismiss(ref),
               icon: Icon(
                 Icons.close_rounded,
                 size: 18,
@@ -241,12 +251,18 @@ Future<void> _promptThenOpenSettings(
   ref.invalidate(pushDeniedBannerVisibleProvider);
 }
 
-Future<void> _dismiss(WidgetRef ref) async {
+void _dismiss(WidgetRef ref) {
   unawaited(Analytics.track(ref, const DeferredPushHomeNudgeDismissedEvent()));
-  final prefs = await ref.read(prefsServiceProvider.future);
-  prefs.deferredPushHomeNudgeDismissedV2 = true;
-  ref.invalidate(prefsServiceProvider);
-  ref.invalidate(pushDeniedBannerVisibleProvider);
+  dismissUnderstandHomeItem(
+    ref,
+    UnderstandHomeDismissKeys.push,
+    afterPersist: (prefs, newCount) {
+      // Keep legacy flag in sync once permanently dismissed (second strike).
+      if (newCount >= 2) {
+        prefs.deferredPushHomeNudgeDismissedV2 = true;
+      }
+    },
+  );
 }
 
 class _PushDeniedBannerLifecycleObserver with WidgetsBindingObserver {

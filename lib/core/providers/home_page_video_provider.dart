@@ -4,8 +4,10 @@ import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/foundation.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
+import '../../shared/utils/youtube_video_id.dart';
 import 'kill_switch_provider.dart';
 import 'prefs_provider.dart';
+import 'understand_home_dismiss_provider.dart';
 
 part 'home_page_video_provider.g.dart';
 
@@ -64,9 +66,9 @@ final class HomePageVideoPayload {
   }
 }
 
-/// Temporary preview link while we check the home video banner layout.
-const _temporaryHomePageVideoJson =
-    '{"video_link":"https://www.youtube.com/watch?v=Y1RKdq0YxL","message":"Watch this tip","version":99}';
+/// Debug-only preview when RC is empty / invalid. Never used in release.
+const _debugHomePageVideoJson =
+    '{"video_link":"https://www.youtube.com/shorts/qGL05qUFQTM","message":"Watch this tip","version":100}';
 
 @Riverpod(keepAlive: true)
 Future<HomePageVideoPayload?> homePageVideoPayload(Ref ref) async {
@@ -75,8 +77,21 @@ Future<HomePageVideoPayload?> homePageVideoPayload(Ref ref) async {
   final raw = FirebaseRemoteConfig.instance
       .getString(homePageVideoRemoteConfigKey)
       .trim();
-  return HomePageVideoPayload.tryParse(raw) ??
-      HomePageVideoPayload.tryParse(_temporaryHomePageVideoJson);
+  var parsed = HomePageVideoPayload.tryParse(raw);
+
+  // Production: empty RC or bad YouTube id → hide the banner.
+  if (!kDebugMode) {
+    if (parsed == null) return null;
+    if (extractYoutubeVideoId(parsed.videoUrl) == null) return null;
+    return parsed;
+  }
+
+  // Debug: fall back to a local Shorts preview so layout can be checked.
+  parsed ??= HomePageVideoPayload.tryParse(_debugHomePageVideoJson);
+  if (parsed != null && extractYoutubeVideoId(parsed.videoUrl) == null) {
+    return HomePageVideoPayload.tryParse(_debugHomePageVideoJson);
+  }
+  return parsed;
 }
 
 @Riverpod(keepAlive: true)
@@ -86,6 +101,10 @@ Future<HomePageVideoPayload?> homePageVideoVisible(Ref ref) async {
   final uri = Uri.tryParse(payload.videoUrl);
   if (uri == null || !(uri.hasScheme && uri.hasAuthority)) return null;
   final prefs = await ref.watch(prefsServiceProvider.future);
+  final session = ref.watch(understandHomeSessionHiddenProvider);
+  final videoKey = UnderstandHomeDismissKeys.video(payload.version);
+  // Legacy permanent dismiss + two-strike soft/permanent.
   if (prefs.homePageVideoDismissedVersion >= payload.version) return null;
+  if (isUnderstandHomeHidden(prefs, session, videoKey)) return null;
   return payload;
 }

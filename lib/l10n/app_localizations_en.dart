@@ -487,6 +487,55 @@ class AppLocalizationsEn extends AppLocalizations {
   String get activationKeepGoing => 'Keep going';
 
   @override
+  String get demoPitchTitle => 'This year, pass Prelims with UPSC Wars';
+
+  @override
+  String get demoPitchLead =>
+      'UPSC Wars can help you clear Prelims this year by:';
+
+  @override
+  String get demoPitchPoint1 =>
+      'Catching places where you make confident mistakes';
+
+  @override
+  String get demoPitchPoint1Body =>
+      'Turn mistakes into strong, clear learning.';
+
+  @override
+  String get demoPitchPoint2 =>
+      'Spotting topics where your accuracy is already high';
+
+  @override
+  String get demoPitchPoint2Body => 'So you can take more risk there.';
+
+  @override
+  String get demoPitchPerQue => 'Every question comes packed with:';
+
+  @override
+  String get demoPitchCheckOutArrow => 'Check out →';
+
+  @override
+  String get demoPitchFeatureRich => 'Rich explanation';
+
+  @override
+  String get demoPitchFeatureStatements => 'Statement analysis';
+
+  @override
+  String get demoPitchFeatureElimination => 'Elimination method';
+
+  @override
+  String get demoPitchFeatureTraps => 'UPSC traps';
+
+  @override
+  String get demoPitchFeatureDistractors => 'Strong distractors';
+
+  @override
+  String get demoPitchCheckOut => 'Check out';
+
+  @override
+  String get demoPitchDismiss => 'Dismiss';
+
+  @override
   String get drillSubjectTitle => 'Daily practice subject';
 
   @override
@@ -866,6 +915,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get testNotThisTime => 'Not this time';
 
   @override
+  String get demoFeedbackCorrectTitle => 'Shabash — that\'s correct';
+
+  @override
+  String get demoFeedbackWrongTitle => 'That was wrong';
+
+  @override
   String get testHintCorrect =>
       'The real learning is in the explanation — elimination, statement analysis, and the trap option.';
 
@@ -1098,7 +1153,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get onbReviseTopics => 'Revise these topics.';
 
   @override
-  String get onbAttemptMore => 'Attempt more from these topics';
+  String get onbAttemptMore => 'Attempt more from these';
 
   @override
   String get onbGainMarks => 'Gain +ve marks.';
@@ -6204,7 +6259,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get statsUnlock => 'Unlock full stats';
 
   @override
-  String get homeRightNowTitle => 'What to do right now?';
+  String get homeRightNowTitle => 'Understand UPSC Wars';
 
   @override
   String get todayQueueTitle => 'What to do today?';

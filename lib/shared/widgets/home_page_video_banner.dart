@@ -6,7 +6,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../core/providers/home_page_video_provider.dart';
-import '../../core/providers/prefs_provider.dart';
+import '../../core/providers/understand_home_dismiss_provider.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_radius.dart';
 import '../../core/theme/app_spacing.dart';
@@ -21,32 +21,18 @@ class HomePageVideoBanner extends ConsumerWidget {
 
   final Color borderColor;
 
-  static Future<void> _confirmAndDismiss(
-    BuildContext context,
-    WidgetRef ref,
-    int version,
-  ) async {
-    final confirmed = await showDialog<bool>(
-      context: context,
-      builder: (ctx) => AlertDialog(
-        title: Text(ctx.l10n.vbDismissQ, style: AppTextStyles.h3()),
-        content: Text(ctx.l10n.vbDismissBody, style: AppTextStyles.body()),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(ctx, false),
-            child: Text(ctx.l10n.commonCancel, style: AppTextStyles.label()),
-          ),
-          TextButton(
-            onPressed: () => Navigator.pop(ctx, true),
-            child: Text(ctx.l10n.commonYes, style: AppTextStyles.label()),
-          ),
-        ],
-      ),
+  static void _dismiss(WidgetRef ref, int version) {
+    final key = UnderstandHomeDismissKeys.video(version);
+    dismissUnderstandHomeItem(
+      ref,
+      key,
+      afterPersist: (prefs, newCount) {
+        // Mirror permanent strike onto the legacy version flag.
+        if (newCount >= 2) {
+          prefs.homePageVideoDismissedVersion = version;
+        }
+      },
     );
-    if (confirmed != true || !context.mounted) return;
-    final prefs = await ref.read(prefsServiceProvider.future);
-    prefs.homePageVideoDismissedVersion = version;
-    ref.invalidate(homePageVideoVisibleProvider);
   }
 
   static Future<void> _openVideo(String videoUrl) async {
@@ -80,14 +66,33 @@ class HomePageVideoBanner extends ConsumerWidget {
                 side: BorderSide(color: borderColor),
               ),
               clipBehavior: Clip.antiAlias,
-              child: _VideoPromoRow(
-                videoUrl: payload.videoUrl,
-                body: body,
-                version: payload.version,
-                onOpen: () => unawaited(_openVideo(payload.videoUrl)),
-                onDismiss: () => unawaited(
-                  _confirmAndDismiss(context, ref, payload.version),
-                ),
+              child: Stack(
+                children: [
+                  _VideoPromoRow(
+                    videoUrl: payload.videoUrl,
+                    body: body,
+                    onOpen: () => unawaited(_openVideo(payload.videoUrl)),
+                  ),
+                  Positioned(
+                    top: 2,
+                    right: 2,
+                    child: IconButton(
+                      tooltip: context.l10n.commonDismiss,
+                      visualDensity: VisualDensity.compact,
+                      padding: EdgeInsets.zero,
+                      constraints: const BoxConstraints(
+                        minWidth: 32,
+                        minHeight: 32,
+                      ),
+                      onPressed: () => _dismiss(ref, payload.version),
+                      icon: Icon(
+                        Icons.close_rounded,
+                        size: 18,
+                        color: scheme.onSurfaceVariant.withValues(alpha: 0.7),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
             const SizedBox(height: AppSpacing.md),
@@ -98,46 +103,182 @@ class HomePageVideoBanner extends ConsumerWidget {
   }
 }
 
+class _VideoPromoRow extends ConsumerWidget {
+  const _VideoPromoRow({
+    required this.videoUrl,
+    required this.body,
+    required this.onOpen,
+  });
+
+  final String videoUrl;
+  final String body;
+  final VoidCallback onOpen;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final scheme = Theme.of(context).colorScheme;
+    final thumbAsync = ref.watch(youtubeThumbMetaProvider(videoUrl));
+    final meta = thumbAsync.asData?.value;
+    final loading = thumbAsync.isLoading;
+    final isPortrait = meta?.isPortrait ?? isYoutubeShortsUrl(videoUrl);
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final maxW = constraints.maxWidth;
+        final thumbW = isPortrait
+            ? (maxW * 0.22).clamp(64.0, 92.0)
+            : (maxW * 0.34).clamp(104.0, 148.0);
+        // Prefer decoded still aspect; fall back to 9:16 / 16:9 slots.
+        final double aspect;
+        if (meta != null && meta.height > meta.width) {
+          aspect = meta.width / meta.height;
+        } else if (isPortrait) {
+          aspect = 9 / 16;
+        } else if (meta != null && meta.width > 0 && meta.height > 0) {
+          aspect = meta.width / meta.height;
+        } else {
+          aspect = 16 / 9;
+        }
+        final thumbH = thumbW / aspect;
+        return Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Padding(
+              padding: const EdgeInsets.fromLTRB(
+                AppSpacing.lg,
+                AppSpacing.md,
+                AppSpacing.sm,
+                AppSpacing.md,
+              ),
+              child: _VideoPromoThumbnail(
+                width: thumbW,
+                aspectRatio: aspect,
+                videoUrl: videoUrl,
+                meta: meta,
+                loading: loading,
+                onOpen: onOpen,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: AppSpacing.xs),
+              child: Container(
+                width: 1,
+                height: thumbH,
+                color: scheme.outlineVariant.withValues(alpha: 0.4),
+              ),
+            ),
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(
+                  AppSpacing.md,
+                  AppSpacing.md,
+                  AppSpacing.xxl,
+                  AppSpacing.md,
+                ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      body,
+                      style: AppTextStyles.body(),
+                      maxLines: 6,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    const SizedBox(height: AppSpacing.sm),
+                    TextButton.icon(
+                      style: TextButton.styleFrom(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: AppSpacing.sm,
+                          vertical: AppSpacing.xs,
+                        ),
+                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        visualDensity: VisualDensity.compact,
+                      ),
+                      onPressed: onOpen,
+                      icon: Icon(
+                        Icons.play_circle_outline_rounded,
+                        size: 20,
+                        color: scheme.primary,
+                      ),
+                      label: Text(
+                        context.l10n.vbWatch,
+                        style: AppTextStyles.label().copyWith(
+                          color: scheme.primary,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        );
+      },
+    );
+  }
+}
+
 class _VideoPromoThumbnail extends StatelessWidget {
   const _VideoPromoThumbnail({
     required this.width,
+    required this.aspectRatio,
     required this.videoUrl,
+    required this.meta,
+    required this.loading,
     required this.onOpen,
   });
 
   final double width;
+  final double aspectRatio;
   final String videoUrl;
+  final YoutubeThumbMeta? meta;
+  final bool loading;
   final VoidCallback onOpen;
 
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final id = extractYoutubeVideoId(videoUrl);
+    final id = meta?.videoId ?? extractYoutubeVideoId(videoUrl);
     final dpr = MediaQuery.devicePixelRatioOf(context);
-    final memW = (width * dpr).round().clamp(160, 800);
-    final memH = (memW * 9 / 16).round();
-    final playSize = (width * 0.26).clamp(22.0, 32.0);
+    final memW = (width * dpr).round().clamp(120, 800);
+    final memH = (memW / aspectRatio).round().clamp(120, 1200);
+    final playSize = (width * 0.28).clamp(20.0, 32.0);
+    final scrim = AppColors.gray900;
 
     return Material(
       color: scheme.surfaceContainerHighest,
+      borderRadius: BorderRadius.circular(AppRadius.md),
+      clipBehavior: Clip.antiAlias,
       child: InkWell(
         onTap: onOpen,
         child: SizedBox(
           width: width,
           child: AspectRatio(
-            aspectRatio: 16 / 9,
+            aspectRatio: aspectRatio,
             child: Stack(
               fit: StackFit.expand,
               children: [
-                if (id != null)
-                  _CachedYoutubeStill(
-                    videoId: id,
+                if (meta != null)
+                  CachedNetworkImage(
+                    cacheManager: youtubeThumbCacheManager,
+                    imageUrl: meta!.imageUrl,
+                    fit: BoxFit.cover,
+                    fadeInDuration: const Duration(milliseconds: 220),
+                    fadeOutDuration: Duration.zero,
                     memCacheWidth: memW,
                     memCacheHeight: memH,
-                    scheme: scheme,
-                    isDark: isDark,
+                    placeholder: (_, _) => _ThumbLoading(
+                      scheme: scheme,
+                      isDark: isDark,
+                    ),
+                    errorWidget: (_, _, _) => _NonYoutubePlaceholder(
+                      scheme: scheme,
+                      isDark: isDark,
+                    ),
                   )
+                else if (loading)
+                  _ThumbLoading(scheme: scheme, isDark: isDark)
                 else
                   _NonYoutubePlaceholder(scheme: scheme, isDark: isDark),
                 DecoratedBox(
@@ -146,8 +287,8 @@ class _VideoPromoThumbnail extends StatelessWidget {
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
                       colors: [
-                        Colors.black.withValues(alpha: 0.05),
-                        Colors.black.withValues(alpha: 0.45),
+                        scrim.withValues(alpha: 0.05),
+                        scrim.withValues(alpha: 0.45),
                       ],
                     ),
                   ),
@@ -156,10 +297,10 @@ class _VideoPromoThumbnail extends StatelessWidget {
                   child: DecoratedBox(
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: Colors.black.withValues(alpha: 0.35),
+                      color: scrim.withValues(alpha: 0.35),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black.withValues(alpha: 0.25),
+                          color: scrim.withValues(alpha: 0.25),
                           blurRadius: 12,
                           offset: const Offset(0, 4),
                         ),
@@ -169,7 +310,7 @@ class _VideoPromoThumbnail extends StatelessWidget {
                       padding: const EdgeInsets.all(6),
                       child: Icon(
                         Icons.play_arrow_rounded,
-                        color: Colors.white,
+                        color: AppColors.onPrimary,
                         size: playSize,
                       ),
                     ),
@@ -180,7 +321,7 @@ class _VideoPromoThumbnail extends StatelessWidget {
                   top: 6,
                   child: DecoratedBox(
                     decoration: BoxDecoration(
-                      color: Colors.black.withValues(alpha: 0.45),
+                      color: scrim.withValues(alpha: 0.45),
                       borderRadius: BorderRadius.circular(AppRadius.sm),
                     ),
                     child: Padding(
@@ -196,13 +337,15 @@ class _VideoPromoThumbnail extends StatelessWidget {
                                 ? Icons.smart_display_rounded
                                 : Icons.link_rounded,
                             size: 11,
-                            color: Colors.white.withValues(alpha: 0.95),
+                            color: AppColors.onPrimary.withValues(alpha: 0.95),
                           ),
                           const SizedBox(width: 3),
                           Text(
                             id != null ? 'YouTube' : 'Video',
                             style: AppTextStyles.caption().copyWith(
-                              color: Colors.white.withValues(alpha: 0.95),
+                              color: AppColors.onPrimary.withValues(
+                                alpha: 0.95,
+                              ),
                               fontSize: 10,
                               fontWeight: FontWeight.w600,
                               letterSpacing: 0.15,
@@ -222,32 +365,16 @@ class _VideoPromoThumbnail extends StatelessWidget {
   }
 }
 
-class _CachedYoutubeStill extends StatelessWidget {
-  const _CachedYoutubeStill({
-    required this.videoId,
-    required this.memCacheWidth,
-    required this.memCacheHeight,
-    required this.scheme,
-    required this.isDark,
-  });
+class _ThumbLoading extends StatelessWidget {
+  const _ThumbLoading({required this.scheme, required this.isDark});
 
-  final String videoId;
-  final int memCacheWidth;
-  final int memCacheHeight;
   final ColorScheme scheme;
   final bool isDark;
 
-  String _thumbUrl(String quality) =>
-      'https://i.ytimg.com/vi/$videoId/$quality.jpg';
-
   @override
   Widget build(BuildContext context) {
-    final fallbackBg = isDark
-        ? AppColors.surfaceTertiaryDark
-        : AppColors.gray100;
-
-    Widget placeholder() => ColoredBox(
-      color: fallbackBg,
+    return ColoredBox(
+      color: isDark ? AppColors.surfaceTertiaryDark : AppColors.gray100,
       child: Center(
         child: SizedBox(
           width: 28,
@@ -257,36 +384,6 @@ class _CachedYoutubeStill extends StatelessWidget {
             color: scheme.primary.withValues(alpha: 0.85),
           ),
         ),
-      ),
-    );
-
-    Widget iconFallback() => ColoredBox(
-      color: fallbackBg,
-      child: Center(
-        child: Icon(
-          Icons.smart_display_rounded,
-          size: 36,
-          color: scheme.primary.withValues(alpha: 0.35),
-        ),
-      ),
-    );
-
-    return CachedNetworkImage(
-      imageUrl: _thumbUrl('maxresdefault'),
-      fit: BoxFit.cover,
-      fadeInDuration: const Duration(milliseconds: 220),
-      fadeOutDuration: Duration.zero,
-      memCacheWidth: memCacheWidth,
-      memCacheHeight: memCacheHeight,
-      placeholder: (_, _) => placeholder(),
-      errorWidget: (_, _, _) => CachedNetworkImage(
-        imageUrl: _thumbUrl('hqdefault'),
-        fit: BoxFit.cover,
-        fadeInDuration: const Duration(milliseconds: 220),
-        memCacheWidth: memCacheWidth,
-        memCacheHeight: memCacheHeight,
-        placeholder: (_, _) => placeholder(),
-        errorWidget: (_, _, _) => iconFallback(),
       ),
     );
   }
