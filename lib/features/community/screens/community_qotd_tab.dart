@@ -6,7 +6,6 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../../core/providers/prefs_provider.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
-import '../../../shared/widgets/en_hi_language_toggle.dart';
 import '../providers/qotd_providers.dart';
 import '../widgets/qotd_post_card.dart';
 import '../../../l10n/l10n.dart';
@@ -21,10 +20,7 @@ class CommunityQotdTab extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
     final prefs = ref.watch(prefsServiceProvider).value;
-    final tabLangOverride = useState<String?>(null);
-    final uiLang = _qotdNormLang(
-      tabLangOverride.value ?? prefs?.language ?? 'en',
-    );
+    final uiLang = _qotdNormLang(prefs?.language);
 
     final feed = ref.watch(qotdFeedNotifierProvider);
     final scroll = useScrollController();
@@ -78,20 +74,9 @@ class CommunityQotdTab extends HookConsumerWidget {
                   ],
                 ),
               ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  FilledButton.tonal(
-                    onPressed: () => context.push('/community/qotd/post'),
-                    child: const Text('✨ Create'),
-                  ),
-                  const SizedBox(height: AppSpacing.xs),
-                  EnHiLanguageToggle(
-                    language: uiLang,
-                    onChanged: (v) => tabLangOverride.value = v,
-                  ),
-                ],
+              FilledButton.tonal(
+                onPressed: () => context.push('/community/qotd/post'),
+                child: const Text('✨ Create'),
               ),
             ],
           ),
