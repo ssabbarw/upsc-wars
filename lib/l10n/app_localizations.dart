@@ -10298,12 +10298,6 @@ abstract class AppLocalizations {
   /// **'Topic-wise'**
   String get practiceTabTopics;
 
-  /// No description provided for @practiceSnapshotKicker.
-  ///
-  /// In en, this message translates to:
-  /// **'THIS SEASON'**
-  String get practiceSnapshotKicker;
-
   /// No description provided for @practiceSnapshotSee.
   ///
   /// In en, this message translates to:
@@ -10322,101 +10316,11 @@ abstract class AppLocalizations {
   /// **'Accuracy'**
   String get practiceSnapshotAccuracy;
 
-  /// No description provided for @practiceSnapshotMistakes.
-  ///
-  /// In en, this message translates to:
-  /// **'Confident mistakes'**
-  String get practiceSnapshotMistakes;
-
-  /// No description provided for @practiceSnapshotAttemptTopics.
-  ///
-  /// In en, this message translates to:
-  /// **'Topics to attempt more'**
-  String get practiceSnapshotAttemptTopics;
-
-  /// No description provided for @practiceInsightsMistakesTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Confident mistakes'**
-  String get practiceInsightsMistakesTitle;
-
-  /// No description provided for @practiceInsightsMistakesBody.
-  ///
-  /// In en, this message translates to:
-  /// **'Sure and Educated-guess answers that were wrong. Revise these before the next test.'**
-  String get practiceInsightsMistakesBody;
-
-  /// No description provided for @practiceInsightsMistakesEmpty.
-  ///
-  /// In en, this message translates to:
-  /// **'No confident mistakes this season.'**
-  String get practiceInsightsMistakesEmpty;
-
-  /// No description provided for @practiceInsightsAttemptTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Attempt more in the exam'**
-  String get practiceInsightsAttemptTitle;
-
-  /// No description provided for @practiceInsightsAttemptBody.
-  ///
-  /// In en, this message translates to:
-  /// **'Topics where your Educated guesses are usually right — at least 3, and 70% or more correct. Worth attempting instead of leaving blank.'**
-  String get practiceInsightsAttemptBody;
-
-  /// No description provided for @practiceInsightsAttemptEmpty.
-  ///
-  /// In en, this message translates to:
-  /// **'No topic qualifies yet. Keep marking Educated guess. A topic needs 3 guesses, with at least 70% correct.'**
-  String get practiceInsightsAttemptEmpty;
-
-  /// No description provided for @practiceInsightsGuessRight.
-  ///
-  /// In en, this message translates to:
-  /// **'{correct} of {total} guesses right'**
-  String practiceInsightsGuessRight(int correct, int total);
-
   /// No description provided for @practiceInsightsFailed.
   ///
   /// In en, this message translates to:
   /// **'Could not load this breakdown.'**
   String get practiceInsightsFailed;
-
-  /// No description provided for @practiceSnapshotConfidentWrong.
-  ///
-  /// In en, this message translates to:
-  /// **'You are {percent}% times confidently wrong in this subject.'**
-  String practiceSnapshotConfidentWrong(int percent);
-
-  /// No description provided for @practiceSnapshotReviseAdvice.
-  ///
-  /// In en, this message translates to:
-  /// **'Revise this subject, and watch the types of questions you miss.'**
-  String get practiceSnapshotReviseAdvice;
-
-  /// No description provided for @practiceSnapshotSeePatterns.
-  ///
-  /// In en, this message translates to:
-  /// **'See question types'**
-  String get practiceSnapshotSeePatterns;
-
-  /// No description provided for @practicePatternsTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Question types you miss'**
-  String get practicePatternsTitle;
-
-  /// No description provided for @practicePatternsEmpty.
-  ///
-  /// In en, this message translates to:
-  /// **'Not enough Sure or Educated-guess answers to spot a pattern yet.'**
-  String get practicePatternsEmpty;
-
-  /// No description provided for @practicePatternsPractice.
-  ///
-  /// In en, this message translates to:
-  /// **'Practise these'**
-  String get practicePatternsPractice;
 
   /// No description provided for @practicePatternsNoQuestions.
   ///
@@ -10424,29 +10328,83 @@ abstract class AppLocalizations {
   /// **'No questions of this type in this subject yet.'**
   String get practicePatternsNoQuestions;
 
-  /// No description provided for @practiceInsightsMistakesTab.
+  /// No description provided for @practiceOverallPerformance.
   ///
   /// In en, this message translates to:
-  /// **'Confident mistakes'**
-  String get practiceInsightsMistakesTab;
+  /// **'Overall performance'**
+  String get practiceOverallPerformance;
 
-  /// No description provided for @practiceInsightsStrongTab.
+  /// No description provided for @practiceTrapsScreenTitle.
   ///
   /// In en, this message translates to:
-  /// **'Strong guesses'**
-  String get practiceInsightsStrongTab;
+  /// **'Confidence traps'**
+  String get practiceTrapsScreenTitle;
 
-  /// No description provided for @practiceInsightsConfidentWrongPct.
+  /// No description provided for @practiceTrapsTitleSure.
   ///
   /// In en, this message translates to:
-  /// **'Confidently wrong'**
-  String get practiceInsightsConfidentWrongPct;
+  /// **'{count} question types are behind your sure mistakes'**
+  String practiceTrapsTitleSure(int count);
 
-  /// No description provided for @practiceInsightsRightGuesses.
+  /// No description provided for @practiceTrapsLeadSure.
   ///
   /// In en, this message translates to:
-  /// **'Right guesses'**
-  String get practiceInsightsRightGuesses;
+  /// **'You marked these Sure, but this question shape keeps catching you.'**
+  String get practiceTrapsLeadSure;
+
+  /// No description provided for @practiceTrapsReview.
+  ///
+  /// In en, this message translates to:
+  /// **'Review my traps'**
+  String get practiceTrapsReview;
+
+  /// No description provided for @practiceTrapsBannerKicker.
+  ///
+  /// In en, this message translates to:
+  /// **'{subject} · Sure answers'**
+  String practiceTrapsBannerKicker(String subject);
+
+  /// No description provided for @practiceTrapsBannerTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} recurring traps'**
+  String practiceTrapsBannerTitle(int count);
+
+  /// No description provided for @practiceTrapsBannerBody.
+  ///
+  /// In en, this message translates to:
+  /// **'These question types show up most in your incorrect Sure answers.'**
+  String get practiceTrapsBannerBody;
+
+  /// No description provided for @practiceTrapsErrors.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} errors'**
+  String practiceTrapsErrors(int count);
+
+  /// No description provided for @practiceTrapsPractise.
+  ///
+  /// In en, this message translates to:
+  /// **'Practise this trap'**
+  String get practiceTrapsPractise;
+
+  /// No description provided for @practiceTrapsEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Not enough answers yet to spot a question-type pattern.'**
+  String get practiceTrapsEmpty;
+
+  /// No description provided for @practiceTrapsInfoTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'What these traps are'**
+  String get practiceTrapsInfoTitle;
+
+  /// No description provided for @practiceTrapsInfoBody.
+  ///
+  /// In en, this message translates to:
+  /// **'These are question shapes from the bank — such as Match the following or How many of the above — that you miss most when you mark Sure. We cannot yet detect finer traps like misread qualifiers.'**
+  String get practiceTrapsInfoBody;
 
   /// No description provided for @practiceSeeStats.
   ///
@@ -10466,17 +10424,29 @@ abstract class AppLocalizations {
   /// **'Sure'**
   String get practiceLensSure;
 
+  /// No description provided for @practiceTopicsReviseTab.
+  ///
+  /// In en, this message translates to:
+  /// **'Revise'**
+  String get practiceTopicsReviseTab;
+
+  /// No description provided for @practiceLensTabSure.
+  ///
+  /// In en, this message translates to:
+  /// **'Confident mistakes'**
+  String get practiceLensTabSure;
+
+  /// No description provided for @practiceLensTabGuess.
+  ///
+  /// In en, this message translates to:
+  /// **'Guess mistakes'**
+  String get practiceLensTabGuess;
+
   /// No description provided for @practiceLensGuess.
   ///
   /// In en, this message translates to:
   /// **'Educated guess'**
   String get practiceLensGuess;
-
-  /// No description provided for @practiceLensRight.
-  ///
-  /// In en, this message translates to:
-  /// **'Right'**
-  String get practiceLensRight;
 
   /// No description provided for @practiceLensWrong.
   ///
@@ -10490,108 +10460,6 @@ abstract class AppLocalizations {
   /// **'{correct} right · {wrong} wrong'**
   String practiceLensSplit(int correct, int wrong);
 
-  /// No description provided for @practiceHeroAccuracy.
-  ///
-  /// In en, this message translates to:
-  /// **'{percent}% accuracy'**
-  String practiceHeroAccuracy(int percent);
-
-  /// No description provided for @practiceSureSnapBad.
-  ///
-  /// In en, this message translates to:
-  /// **'Sure answers are often wrong.'**
-  String get practiceSureSnapBad;
-
-  /// No description provided for @practiceSureSnapMixed.
-  ///
-  /// In en, this message translates to:
-  /// **'Some Sure answers are still wrong.'**
-  String get practiceSureSnapMixed;
-
-  /// No description provided for @practiceSureSnapGood.
-  ///
-  /// In en, this message translates to:
-  /// **'Sure answers are mostly right.'**
-  String get practiceSureSnapGood;
-
-  /// No description provided for @practiceSureSnapThin.
-  ///
-  /// In en, this message translates to:
-  /// **'Need more Sure answers.'**
-  String get practiceSureSnapThin;
-
-  /// No description provided for @practiceGuessSnapBad.
-  ///
-  /// In en, this message translates to:
-  /// **'Educated guesses are mostly wrong.'**
-  String get practiceGuessSnapBad;
-
-  /// No description provided for @practiceGuessSnapMixed.
-  ///
-  /// In en, this message translates to:
-  /// **'Educated guesses are hit and miss.'**
-  String get practiceGuessSnapMixed;
-
-  /// No description provided for @practiceGuessSnapGood.
-  ///
-  /// In en, this message translates to:
-  /// **'Educated guesses are usually right.'**
-  String get practiceGuessSnapGood;
-
-  /// No description provided for @practiceGuessSnapThin.
-  ///
-  /// In en, this message translates to:
-  /// **'Need more Educated guesses.'**
-  String get practiceGuessSnapThin;
-
-  /// No description provided for @practiceSureBodyBad.
-  ///
-  /// In en, this message translates to:
-  /// **'Revise these topics. You marked them Sure and still got them wrong.'**
-  String get practiceSureBodyBad;
-
-  /// No description provided for @practiceSureBodyMixed.
-  ///
-  /// In en, this message translates to:
-  /// **'Revise the topics below. You do not fully know them yet.'**
-  String get practiceSureBodyMixed;
-
-  /// No description provided for @practiceSureBodyGood.
-  ///
-  /// In en, this message translates to:
-  /// **'Keep marking Sure only when you know the answer.'**
-  String get practiceSureBodyGood;
-
-  /// No description provided for @practiceSureBodyThin.
-  ///
-  /// In en, this message translates to:
-  /// **'Mark more answers as Sure. We need 6 to judge this subject.'**
-  String get practiceSureBodyThin;
-
-  /// No description provided for @practiceGuessBodyBad.
-  ///
-  /// In en, this message translates to:
-  /// **'In the exam, skip these instead of guessing.'**
-  String get practiceGuessBodyBad;
-
-  /// No description provided for @practiceGuessBodyMixed.
-  ///
-  /// In en, this message translates to:
-  /// **'Guessing here can help, but it is still risky.'**
-  String get practiceGuessBodyMixed;
-
-  /// No description provided for @practiceGuessBodyGood.
-  ///
-  /// In en, this message translates to:
-  /// **'In the exam, attempt these instead of leaving them blank.'**
-  String get practiceGuessBodyGood;
-
-  /// No description provided for @practiceGuessBodyThin.
-  ///
-  /// In en, this message translates to:
-  /// **'Mark more answers as Educated guess. We need 6 to judge this subject.'**
-  String get practiceGuessBodyThin;
-
   /// No description provided for @practiceSureTopicsEmpty.
   ///
   /// In en, this message translates to:
@@ -10603,6 +10471,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Not enough Educated guesses in any topic yet.'**
   String get practiceGuessTopicsEmpty;
+
+  /// No description provided for @practiceReviseTopicsEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Not enough answers yet to rank topics by accuracy.'**
+  String get practiceReviseTopicsEmpty;
 
   /// No description provided for @practiceTopicWrongPct.
   ///

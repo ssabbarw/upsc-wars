@@ -7,6 +7,8 @@ PracticeTopicRollup _topic({
   int sureCorrect = 0,
   int educatedGuessWrong = 0,
   int educatedGuessCorrect = 0,
+  int? allCorrect,
+  int? allWrong,
 }) {
   return PracticeTopicRollup(
     topic: topic,
@@ -14,6 +16,8 @@ PracticeTopicRollup _topic({
     sureCorrect: sureCorrect,
     educatedGuessWrong: educatedGuessWrong,
     educatedGuessCorrect: educatedGuessCorrect,
+    allCorrect: allCorrect,
+    allWrong: allWrong,
   );
 }
 
@@ -129,5 +133,61 @@ void main() {
     expect(insights.sureTopics.first.band, InsightBand.bad);
     expect(insights.guessTopics.map((t) => t.topicKey), ['rights']);
     expect(insights.guessTopics.single.band, InsightBand.good);
+    expect(insights.reviseTopics.map((t) => t.topicKey), [
+      'parliament',
+      'rights',
+      'thin',
+    ]);
+    expect(insights.reviseTopics.first.wrongRate, closeTo(75, 0.01));
+  });
+
+  test('revise ranks by overall wrong rate, ignoring confidence', () {
+    final insights = assemblePracticeSubjectInsights(
+      displayNames: const {'a': 'A', 'b': 'B'},
+      topics: [
+        _topic(
+          topic: 'a',
+          sureCorrect: 9,
+          sureWrong: 1,
+          educatedGuessWrong: 8,
+          allCorrect: 9,
+          allWrong: 9,
+        ),
+        _topic(
+          topic: 'b',
+          sureWrong: 4,
+          sureCorrect: 0,
+          allCorrect: 6,
+          allWrong: 2,
+        ),
+      ],
+    );
+    expect(insights.reviseTopics.map((t) => t.topicKey), ['a', 'b']);
+    expect(insights.reviseTopics.first.wrong, 9);
+    expect(insights.reviseTopics.first.correct, 9);
+    expect(insights.sureTopics.map((t) => t.topicKey), ['b', 'a']);
+  });
+
+  test('keeps sure and guess question-type patterns apart', () {
+    const sure = SubjectMcqPatternStat(
+      pattern: UpscMcqPattern.matchFollowing,
+      otherSlug: null,
+      wrong: 4,
+      attempted: 6,
+    );
+    const guess = SubjectMcqPatternStat(
+      pattern: UpscMcqPattern.howMany,
+      otherSlug: null,
+      wrong: 3,
+      attempted: 5,
+    );
+    final insights = assemblePracticeSubjectInsights(
+      displayNames: const {},
+      topics: const [],
+      surePatterns: const [sure],
+      guessPatterns: const [guess],
+    );
+    expect(insights.surePatterns.single.pattern, UpscMcqPattern.matchFollowing);
+    expect(insights.guessPatterns.single.pattern, UpscMcqPattern.howMany);
   });
 }

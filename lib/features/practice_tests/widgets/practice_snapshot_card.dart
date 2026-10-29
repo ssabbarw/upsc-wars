@@ -11,22 +11,20 @@ import '../../../l10n/l10n.dart';
 import '../domain/practice_scope.dart';
 import '../domain/practice_subject_insights.dart';
 
-/// Season snapshot: accuracy ring, Sure / Educated-guess rows, tests + CTA.
+/// Season snapshot: accuracy ring, Sure / Educated-guess rows, and tests.
 class PracticeSnapshotCard extends StatelessWidget {
   const PracticeSnapshotCard({
     super.key,
     required this.progress,
     required this.insights,
-    required this.ctaLabel,
-    required this.onCta,
-    this.ctaFilled = false,
+    this.ctaLabel,
+    this.onCta,
   });
 
   final PracticeScopeProgress progress;
   final AsyncValue<PracticeSubjectInsights> insights;
-  final String ctaLabel;
+  final String? ctaLabel;
   final VoidCallback? onCta;
-  final bool ctaFilled;
 
   @override
   Widget build(BuildContext context) {
@@ -140,12 +138,9 @@ class PracticeSnapshotCard extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              if (onCta != null) ...[
+                              if (onCta != null && ctaLabel != null) ...[
                                 const SizedBox(width: AppSpacing.md),
-                                _SnapshotCta(
-                                  label: ctaLabel,
-                                  filled: ctaFilled,
-                                ),
+                                _SnapshotCta(label: ctaLabel!),
                               ],
                             ],
                           ),
@@ -164,15 +159,13 @@ class PracticeSnapshotCard extends StatelessWidget {
 }
 
 class _SnapshotCta extends StatelessWidget {
-  const _SnapshotCta({required this.label, required this.filled});
+  const _SnapshotCta({required this.label});
 
   final String label;
-  final bool filled;
 
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    final child = Row(
+    return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
         Text(
@@ -184,20 +177,6 @@ class _SnapshotCta extends StatelessWidget {
         ),
         Icon(Icons.chevron_right, size: 18, color: AppColors.primary),
       ],
-    );
-    if (!filled) return child;
-    return Container(
-      padding: const EdgeInsets.fromLTRB(
-        AppSpacing.md,
-        AppSpacing.sm,
-        AppSpacing.sm,
-        AppSpacing.sm,
-      ),
-      decoration: BoxDecoration(
-        color: isDark ? AppColors.correctBgDark : AppColors.correctBg,
-        borderRadius: BorderRadius.circular(AppRadius.pill),
-      ),
-      child: child,
     );
   }
 }

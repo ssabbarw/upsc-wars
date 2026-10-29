@@ -22,6 +22,9 @@ abstract final class PracticeInsightRules {
   /// Topic list includes Educated guesses after this many.
   static const guessMinTopic = 3;
 
+  /// Revise tab includes a topic after this many scored answers.
+  static const reviseMinTopic = 3;
+
   /// Sure is "often false" at or above this wrong share, 0–100.
   static const sureBadWrongPercent = 40;
 
@@ -43,6 +46,8 @@ class PracticeTopicRollup {
     this.sureCorrect = 0,
     required this.educatedGuessWrong,
     required this.educatedGuessCorrect,
+    this.allCorrect,
+    this.allWrong,
   });
 
   final String topic;
@@ -50,12 +55,20 @@ class PracticeTopicRollup {
   final int sureCorrect;
   final int educatedGuessWrong;
   final int educatedGuessCorrect;
+  final int? allCorrect;
+  final int? allWrong;
 
   int get sureTotal => sureWrong + sureCorrect;
 
   int get confidentWrong => sureWrong + educatedGuessWrong;
 
   int get educatedGuessTotal => educatedGuessWrong + educatedGuessCorrect;
+
+  int get overallCorrect => allCorrect ?? sureCorrect + educatedGuessCorrect;
+
+  int get overallWrong => allWrong ?? sureWrong + educatedGuessWrong;
+
+  int get overallTotal => overallCorrect + overallWrong;
 }
 
 /// Topic where Sure or Educated-guess answers were wrong.
@@ -126,6 +139,7 @@ class PracticeSubjectInsights {
     this.educatedGuessTotal = 0,
     this.educatedGuessCorrect = 0,
     this.educatedGuessWrong = 0,
+    this.reviseTopics = const [],
     this.sureTopics = const [],
     this.guessTopics = const [],
     this.surePatterns = const [],
@@ -139,6 +153,7 @@ class PracticeSubjectInsights {
   final int educatedGuessTotal;
   final int educatedGuessCorrect;
   final int educatedGuessWrong;
+  final List<LensTopic> reviseTopics;
   final List<LensTopic> sureTopics;
   final List<LensTopic> guessTopics;
   final List<SubjectMcqPatternStat> surePatterns;
@@ -233,23 +248,15 @@ int guessCorrectNeeded(int guessWrong) {
       : forRate;
 }
 
-int _bandRank(InsightBand band) {
-  switch (band) {
-    case InsightBand.bad:
-      return 0;
-    case InsightBand.mixed:
-      return 1;
-    case InsightBand.good:
-      return 2;
-    case InsightBand.thin:
-      return 3;
-  }
+int _byWrongRate(LensTopic a, LensTopic b) {
+  final byWrong = b.wrongRate.compareTo(a.wrongRate);
+  if (byWrong != 0) return byWrong;
+  return a.displayName.toLowerCase().compareTo(b.displayName.toLowerCase());
 }
 
-/// Builds the two lists from per-topic rollups.
+/// Builds topic lists from per-topic rollups.
 ///
-/// Sure topics use Sure right vs Sure wrong. Guess topics use Educated guess
-/// only: pure guesses are luck, not a reason to attempt more in the exam.
+/// Revise uses every scored answer. Sure / guess lists stay on that lens.
 PracticeSubjectInsights assemblePracticeSubjectInsights({
   required List<PracticeTopicRollup> topics,
   required Map<String, String> displayNames,
@@ -258,6 +265,7 @@ PracticeSubjectInsights assemblePracticeSubjectInsights({
 }) {
   final mistakes = <ConfidentMistakeTopic>[];
   final attemptMore = <AttemptMoreTopic>[];
+  final reviseTopics = <LensTopic>[];
   final sureTopics = <LensTopic>[];
   final guessTopics = <LensTopic>[];
 
@@ -280,6 +288,20 @@ PracticeSubjectInsights assemblePracticeSubjectInsights({
           displayName: name,
           guessCorrect: topic.educatedGuessCorrect,
           guessTotal: topic.educatedGuessTotal,
+        ),
+      );
+    }
+    if (topic.overallTotal >= PracticeInsightRules.reviseMinTopic) {
+      reviseTopics.add(
+        LensTopic(
+          topicKey: topic.topic,
+          displayName: name,
+          correct: topic.overallCorrect,
+          wrong: topic.overallWrong,
+          band: sureBandFor(
+            correct: topic.overallCorrect,
+            wrong: topic.overallWrong,
+          ),
         ),
       );
     }
@@ -324,20 +346,9 @@ PracticeSubjectInsights assemblePracticeSubjectInsights({
     if (byVolume != 0) return byVolume;
     return a.displayName.toLowerCase().compareTo(b.displayName.toLowerCase());
   });
-  sureTopics.sort((a, b) {
-    final byBand = _bandRank(a.band).compareTo(_bandRank(b.band));
-    if (byBand != 0) return byBand;
-    final byWrong = b.wrongRate.compareTo(a.wrongRate);
-    if (byWrong != 0) return byWrong;
-    return a.displayName.toLowerCase().compareTo(b.displayName.toLowerCase());
-  });
-  guessTopics.sort((a, b) {
-    final byBand = _bandRank(a.band).compareTo(_bandRank(b.band));
-    if (byBand != 0) return byBand;
-    final byRight = a.rightRate.compareTo(b.rightRate);
-    if (byRight != 0) return byRight;
-    return a.displayName.toLowerCase().compareTo(b.displayName.toLowerCase());
-  });
+  reviseTopics.sort(_byWrongRate);
+  sureTopics.sort(_byWrongRate);
+  guessTopics.sort(_byWrongRate);
 
   var sureTotal = 0;
   var sureWrong = 0;
@@ -360,6 +371,7 @@ PracticeSubjectInsights assemblePracticeSubjectInsights({
     educatedGuessTotal: guessTotal,
     educatedGuessCorrect: guessCorrect,
     educatedGuessWrong: guessWrong,
+    reviseTopics: reviseTopics,
     sureTopics: sureTopics,
     guessTopics: guessTopics,
     surePatterns: surePatterns,

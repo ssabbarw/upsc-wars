@@ -6149,9 +6149,6 @@ class AppLocalizationsHi extends AppLocalizations {
   String get practiceTabTopics => 'Topic-wise';
 
   @override
-  String get practiceSnapshotKicker => 'इस सीज़न';
-
-  @override
   String get practiceSnapshotSee => 'विवरण देखें';
 
   @override
@@ -6162,78 +6159,62 @@ class AppLocalizationsHi extends AppLocalizations {
   String get practiceSnapshotAccuracy => 'Accuracy';
 
   @override
-  String get practiceSnapshotMistakes => 'Confident mistakes';
-
-  @override
-  String get practiceSnapshotAttemptTopics => 'और प्रयास करने लायक topics';
-
-  @override
-  String get practiceInsightsMistakesTitle => 'Confident mistakes';
-
-  @override
-  String get practiceInsightsMistakesBody =>
-      'Sure या Educated guess के गलत जवाब। अगले test से पहले इन्हें दोहराएँ।';
-
-  @override
-  String get practiceInsightsMistakesEmpty =>
-      'इस सीज़न में कोई confident mistake नहीं।';
-
-  @override
-  String get practiceInsightsAttemptTitle => 'परीक्षा में और प्रयास करें';
-
-  @override
-  String get practiceInsightsAttemptBody =>
-      'जिन topics में Educated guess अक्सर सही होता है — कम से कम 3, और 70% या अधिक सही। इन्हें खाली छोड़ने के बजाय attempt करें।';
-
-  @override
-  String get practiceInsightsAttemptEmpty =>
-      'अभी कोई topic इस स्तर पर नहीं है। Educated guess मार्क करते रहें। एक topic के लिए 3 guesses चाहिए, जिनमें कम से कम 70% सही हों।';
-
-  @override
-  String practiceInsightsGuessRight(int correct, int total) {
-    return '$correct में से $total guesses सही';
-  }
-
-  @override
   String get practiceInsightsFailed => 'यह विवरण लोड नहीं हो सका।';
-
-  @override
-  String practiceSnapshotConfidentWrong(int percent) {
-    return 'इस subject में आप $percent% बार confidently गलत होते हैं।';
-  }
-
-  @override
-  String get practiceSnapshotReviseAdvice =>
-      'इस subject को revise करें, और जिन प्रकार के सवाल गलत हो रहे हैं उन पर नज़र रखें।';
-
-  @override
-  String get practiceSnapshotSeePatterns => 'सवालों के प्रकार देखें';
-
-  @override
-  String get practicePatternsTitle => 'जिन प्रकार के सवाल आप चूकते हैं';
-
-  @override
-  String get practicePatternsEmpty =>
-      'Pattern दिखाने के लिए अभी Sure या Educated guess के जवाब कम हैं।';
-
-  @override
-  String get practicePatternsPractice => 'ये practise करें';
 
   @override
   String get practicePatternsNoQuestions =>
       'इस subject में इस प्रकार का सवाल अभी नहीं है।';
 
   @override
-  String get practiceInsightsMistakesTab => 'Confident mistakes';
+  String get practiceOverallPerformance => 'कुल प्रदर्शन';
 
   @override
-  String get practiceInsightsStrongTab => 'Strong guesses';
+  String get practiceTrapsScreenTitle => 'Confidence traps';
 
   @override
-  String get practiceInsightsConfidentWrongPct => 'Confidently गलत';
+  String practiceTrapsTitleSure(int count) {
+    return '$count प्रकार के सवाल आपके sure mistakes के पीछे हैं';
+  }
 
   @override
-  String get practiceInsightsRightGuesses => 'सही guesses';
+  String get practiceTrapsLeadSure =>
+      'आपने इन्हें Sure मार्क किया, लेकिन सवाल का रूप आपको फँसा रहा है।';
+
+  @override
+  String get practiceTrapsReview => 'मेरे traps देखें';
+
+  @override
+  String practiceTrapsBannerKicker(String subject) {
+    return '$subject · Sure जवाब';
+  }
+
+  @override
+  String practiceTrapsBannerTitle(int count) {
+    return '$count recurring traps';
+  }
+
+  @override
+  String get practiceTrapsBannerBody =>
+      'गलत Sure जवाबों में ये question types सबसे ज़्यादा दिखते हैं।';
+
+  @override
+  String practiceTrapsErrors(int count) {
+    return '$count errors';
+  }
+
+  @override
+  String get practiceTrapsPractise => 'इस trap को practise करें';
+
+  @override
+  String get practiceTrapsEmpty =>
+      'Question-type pattern दिखाने के लिए अभी जवाब कम हैं।';
+
+  @override
+  String get practiceTrapsInfoTitle => 'ये traps क्या हैं';
+
+  @override
+  String get practiceTrapsInfoBody =>
+      'ये बैंक के सवालों के रूप हैं — जैसे Match the following या How many of the above — जिन्हें आप Sure मार्क करके सबसे ज़्यादा गलत करते हैं। Qualifier गलत पढ़ना जैसे बारीक traps हम अभी पकड़ नहीं सकते।';
 
   @override
   String get practiceSeeStats => 'Stats देखें';
@@ -6247,10 +6228,16 @@ class AppLocalizationsHi extends AppLocalizations {
   String get practiceLensSure => 'Sure';
 
   @override
-  String get practiceLensGuess => 'Educated guess';
+  String get practiceTopicsReviseTab => 'Revise';
 
   @override
-  String get practiceLensRight => 'सही';
+  String get practiceLensTabSure => 'Confident mistakes';
+
+  @override
+  String get practiceLensTabGuess => 'Guess mistakes';
+
+  @override
+  String get practiceLensGuess => 'Educated guess';
 
   @override
   String get practiceLensWrong => 'गलत';
@@ -6261,72 +6248,16 @@ class AppLocalizationsHi extends AppLocalizations {
   }
 
   @override
-  String practiceHeroAccuracy(int percent) {
-    return '$percent% accuracy';
-  }
-
-  @override
-  String get practiceSureSnapBad => 'Sure के जवाब अक्सर गलत हैं।';
-
-  @override
-  String get practiceSureSnapMixed => 'कुछ Sure जवाब अभी भी गलत हैं।';
-
-  @override
-  String get practiceSureSnapGood => 'Sure के जवाब ज़्यादातर सही हैं।';
-
-  @override
-  String get practiceSureSnapThin => 'Sure के और जवाब चाहिए।';
-
-  @override
-  String get practiceGuessSnapBad => 'Educated guess ज़्यादातर गलत हैं।';
-
-  @override
-  String get practiceGuessSnapMixed => 'Educated guess कभी सही, कभी गलत।';
-
-  @override
-  String get practiceGuessSnapGood => 'Educated guess आमतौर पर सही हैं।';
-
-  @override
-  String get practiceGuessSnapThin => 'Educated guess के और जवाब चाहिए।';
-
-  @override
-  String get practiceSureBodyBad =>
-      'ये topics revise करें। इन्हें Sure मार्क किया, फिर भी गलत हुए।';
-
-  @override
-  String get practiceSureBodyMixed =>
-      'नीचे के topics revise करें। ये अभी पूरी तरह याद नहीं हैं।';
-
-  @override
-  String get practiceSureBodyGood => 'Sure तभी मार्क करें जब जवाब पता हो।';
-
-  @override
-  String get practiceSureBodyThin =>
-      'और जवाब Sure मार्क करें। इस subject का फ़ैसला करने के लिए 6 चाहिए।';
-
-  @override
-  String get practiceGuessBodyBad =>
-      'परीक्षा में अनुमान लगाने के बजाय इन्हें skip करें।';
-
-  @override
-  String get practiceGuessBodyMixed =>
-      'यहाँ guess मदद कर सकता है, लेकिन जोखिम अभी भी है।';
-
-  @override
-  String get practiceGuessBodyGood =>
-      'परीक्षा में इन्हें खाली छोड़ने के बजाय attempt करें।';
-
-  @override
-  String get practiceGuessBodyThin =>
-      'और जवाब Educated guess मार्क करें। इस subject का फ़ैसला करने के लिए 6 चाहिए।';
-
-  @override
   String get practiceSureTopicsEmpty =>
       'अभी किसी topic में Sure के पर्याप्त जवाब नहीं हैं।';
 
   @override
   String get practiceGuessTopicsEmpty =>
       'अभी किसी topic में Educated guess के पर्याप्त जवाब नहीं हैं।';
+
+  @override
+  String get practiceReviseTopicsEmpty =>
+      'Accuracy के हिसाब से topics रैंक करने के लिए अभी जवाब कम हैं।';
 
   @override
   String practiceTopicWrongPct(int percent) {

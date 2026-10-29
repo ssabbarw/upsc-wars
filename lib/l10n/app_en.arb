@@ -4286,48 +4286,46 @@
   },
   "practiceTabTests": "Tests",
   "practiceTabTopics": "Topic-wise",
-  "practiceSnapshotKicker": "THIS SEASON",
   "practiceSnapshotSee": "View details",
   "practiceSnapshotEmpty": "Finish a test to see where marks leak, and where you can attempt more.",
   "practiceSnapshotAccuracy": "Accuracy",
-  "practiceSnapshotMistakes": "Confident mistakes",
-  "practiceSnapshotAttemptTopics": "Topics to attempt more",
-  "practiceInsightsMistakesTitle": "Confident mistakes",
-  "practiceInsightsMistakesBody": "Sure and Educated-guess answers that were wrong. Revise these before the next test.",
-  "practiceInsightsMistakesEmpty": "No confident mistakes this season.",
-  "practiceInsightsAttemptTitle": "Attempt more in the exam",
-  "practiceInsightsAttemptBody": "Topics where your Educated guesses are usually right — at least 3, and 70% or more correct. Worth attempting instead of leaving blank.",
-  "practiceInsightsAttemptEmpty": "No topic qualifies yet. Keep marking Educated guess. A topic needs 3 guesses, with at least 70% correct.",
-  "practiceInsightsGuessRight": "{correct} of {total} guesses right",
-  "@practiceInsightsGuessRight": {
-    "placeholders": {
-      "correct": {"type": "int"},
-      "total": {"type": "int"}
-    }
-  },
   "practiceInsightsFailed": "Could not load this breakdown.",
-  "practiceSnapshotConfidentWrong": "You are {percent}% times confidently wrong in this subject.",
-  "@practiceSnapshotConfidentWrong": {
-    "placeholders": {"percent": {"type": "int"}}
-  },
-  "practiceSnapshotReviseAdvice": "Revise this subject, and watch the types of questions you miss.",
-  "practiceSnapshotSeePatterns": "See question types",
-  "practicePatternsTitle": "Question types you miss",
-  "practicePatternsEmpty": "Not enough Sure or Educated-guess answers to spot a pattern yet.",
-  "practicePatternsPractice": "Practise these",
   "practicePatternsNoQuestions": "No questions of this type in this subject yet.",
-  "practiceInsightsMistakesTab": "Confident mistakes",
-  "practiceInsightsStrongTab": "Strong guesses",
-  "practiceInsightsConfidentWrongPct": "Confidently wrong",
-  "practiceInsightsRightGuesses": "Right guesses",
+  "practiceOverallPerformance": "Overall performance",
+  "practiceTrapsScreenTitle": "Confidence traps",
+  "practiceTrapsTitleSure": "{count} question types are behind your sure mistakes",
+  "@practiceTrapsTitleSure": {
+    "placeholders": {"count": {"type": "int"}}
+  },
+  "practiceTrapsLeadSure": "You marked these Sure, but this question shape keeps catching you.",
+  "practiceTrapsReview": "Review my traps",
+  "practiceTrapsBannerKicker": "{subject} · Sure answers",
+  "@practiceTrapsBannerKicker": {
+    "placeholders": {"subject": {"type": "String"}}
+  },
+  "practiceTrapsBannerTitle": "{count} recurring traps",
+  "@practiceTrapsBannerTitle": {
+    "placeholders": {"count": {"type": "int"}}
+  },
+  "practiceTrapsBannerBody": "These question types show up most in your incorrect Sure answers.",
+  "practiceTrapsErrors": "{count} errors",
+  "@practiceTrapsErrors": {
+    "placeholders": {"count": {"type": "int"}}
+  },
+  "practiceTrapsPractise": "Practise this trap",
+  "practiceTrapsEmpty": "Not enough answers yet to spot a question-type pattern.",
+  "practiceTrapsInfoTitle": "What these traps are",
+  "practiceTrapsInfoBody": "These are question shapes from the bank — such as Match the following or How many of the above — that you miss most when you mark Sure. We cannot yet detect finer traps like misread qualifiers.",
   "practiceSeeStats": "See stats",
   "practiceInsightsTitle": "Stats: {subject}",
   "@practiceInsightsTitle": {
     "placeholders": {"subject": {"type": "String"}}
   },
   "practiceLensSure": "Sure",
+  "practiceTopicsReviseTab": "Revise",
+  "practiceLensTabSure": "Confident mistakes",
+  "practiceLensTabGuess": "Guess mistakes",
   "practiceLensGuess": "Educated guess",
-  "practiceLensRight": "Right",
   "practiceLensWrong": "Wrong",
   "practiceLensSplit": "{correct} right · {wrong} wrong",
   "@practiceLensSplit": {
@@ -4336,28 +4334,9 @@
       "wrong": {"type": "int"}
     }
   },
-  "practiceHeroAccuracy": "{percent}% accuracy",
-  "@practiceHeroAccuracy": {
-    "placeholders": {"percent": {"type": "int"}}
-  },
-  "practiceSureSnapBad": "Sure answers are often wrong.",
-  "practiceSureSnapMixed": "Some Sure answers are still wrong.",
-  "practiceSureSnapGood": "Sure answers are mostly right.",
-  "practiceSureSnapThin": "Need more Sure answers.",
-  "practiceGuessSnapBad": "Educated guesses are mostly wrong.",
-  "practiceGuessSnapMixed": "Educated guesses are hit and miss.",
-  "practiceGuessSnapGood": "Educated guesses are usually right.",
-  "practiceGuessSnapThin": "Need more Educated guesses.",
-  "practiceSureBodyBad": "Revise these topics. You marked them Sure and still got them wrong.",
-  "practiceSureBodyMixed": "Revise the topics below. You do not fully know them yet.",
-  "practiceSureBodyGood": "Keep marking Sure only when you know the answer.",
-  "practiceSureBodyThin": "Mark more answers as Sure. We need 6 to judge this subject.",
-  "practiceGuessBodyBad": "In the exam, skip these instead of guessing.",
-  "practiceGuessBodyMixed": "Guessing here can help, but it is still risky.",
-  "practiceGuessBodyGood": "In the exam, attempt these instead of leaving them blank.",
-  "practiceGuessBodyThin": "Mark more answers as Educated guess. We need 6 to judge this subject.",
   "practiceSureTopicsEmpty": "Not enough Sure answers in any topic yet.",
   "practiceGuessTopicsEmpty": "Not enough Educated guesses in any topic yet.",
+  "practiceReviseTopicsEmpty": "Not enough answers yet to rank topics by accuracy.",
   "practiceTopicWrongPct": "{percent}% wrong",
   "@practiceTopicWrongPct": {
     "placeholders": {"percent": {"type": "int"}}

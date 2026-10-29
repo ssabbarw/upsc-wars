@@ -35,7 +35,9 @@ Future<PracticeSubjectInsights> loadPracticeSubjectInsights(
           COALESCE(SUM(CASE WHEN a.confidence = 'very_sure' AND a.is_correct = 0 THEN 1 ELSE 0 END), 0) AS sure_w,
           COALESCE(SUM(CASE WHEN a.confidence = 'very_sure' AND a.is_correct != 0 THEN 1 ELSE 0 END), 0) AS sure_c,
           COALESCE(SUM(CASE WHEN a.confidence = 'somewhat_sure' AND a.is_correct = 0 THEN 1 ELSE 0 END), 0) AS guess_w,
-          COALESCE(SUM(CASE WHEN a.confidence = 'somewhat_sure' AND a.is_correct != 0 THEN 1 ELSE 0 END), 0) AS guess_c
+          COALESCE(SUM(CASE WHEN a.confidence = 'somewhat_sure' AND a.is_correct != 0 THEN 1 ELSE 0 END), 0) AS guess_c,
+          COALESCE(SUM(CASE WHEN a.is_correct = 0 THEN 1 ELSE 0 END), 0) AS all_w,
+          COALESCE(SUM(CASE WHEN a.is_correct != 0 THEN 1 ELSE 0 END), 0) AS all_c
         FROM attempts a
         INNER JOIN questions q ON q.uuid = a.question_uuid
         INNER JOIN sessions s ON s.id = a.session_id
@@ -43,7 +45,6 @@ Future<PracticeSubjectInsights> loadPracticeSubjectInsights(
           AND s.status = 'completed'
           AND s.completed_at >= ?
           AND a.status IN ('correct', 'wrong')
-          AND a.confidence IN ('very_sure', 'somewhat_sure')
         GROUP BY q.topic
         ''',
         variables: [
@@ -65,6 +66,8 @@ Future<PracticeSubjectInsights> loadPracticeSubjectInsights(
         sureCorrect: row.read<int>('sure_c'),
         educatedGuessWrong: row.read<int>('guess_w'),
         educatedGuessCorrect: row.read<int>('guess_c'),
+        allWrong: row.read<int>('all_w'),
+        allCorrect: row.read<int>('all_c'),
       ),
     );
   }
@@ -74,6 +77,7 @@ Future<PracticeSubjectInsights> loadPracticeSubjectInsights(
         '''
         SELECT
           q.question_type AS qtype,
+          a.confidence AS conf,
           COALESCE(SUM(CASE WHEN a.is_correct = 0 THEN 1 ELSE 0 END), 0) AS wrongs,
           COALESCE(COUNT(*), 0) AS tot
         FROM attempts a
@@ -84,7 +88,7 @@ Future<PracticeSubjectInsights> loadPracticeSubjectInsights(
           AND s.completed_at >= ?
           AND a.status IN ('correct', 'wrong')
           AND a.confidence IN ('very_sure', 'somewhat_sure')
-        GROUP BY q.question_type
+        GROUP BY q.question_type, a.confidence
         ''',
         variables: [
           Variable.withString(subject),
@@ -94,17 +98,23 @@ Future<PracticeSubjectInsights> loadPracticeSubjectInsights(
       )
       .get();
 
+  List<({String type, int wrong, int attempted})> ofConf(String conf) {
+    return [
+      for (final r in patternRows)
+        if (r.read<String>('conf') == conf)
+          (
+            type: r.read<String>('qtype'),
+            wrong: r.read<int>('wrongs'),
+            attempted: r.read<int>('tot'),
+          ),
+    ];
+  }
+
   return assemblePracticeSubjectInsights(
     topics: topics,
     displayNames: displayNames,
-    patterns: rankMcqPatterns([
-      for (final r in patternRows)
-        (
-          type: r.read<String>('qtype'),
-          wrong: r.read<int>('wrongs'),
-          attempted: r.read<int>('tot'),
-        ),
-    ]),
+    surePatterns: rankMcqPatterns(ofConf('very_sure')),
+    guessPatterns: rankMcqPatterns(ofConf('somewhat_sure')),
   );
 }
 

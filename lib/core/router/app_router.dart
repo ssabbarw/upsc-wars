@@ -68,6 +68,7 @@ import '../../features/home/screens/profile_screen.dart';
 import '../../features/home/screens/settings_screen.dart';
 import '../../features/home/screens/about_us_screen.dart';
 import '../../features/stats/screens/stats_screen.dart';
+import '../../features/practice_tests/screens/practice_confidence_traps_screen.dart';
 import '../../features/practice_tests/screens/practice_subject_insights_screen.dart';
 import '../../features/practice_tests/screens/practice_test_list_screen.dart';
 import '../../features/daily_war/screens/daily_war_admin_screen.dart';
@@ -869,6 +870,14 @@ GoRouter appRouter(Ref ref) {
         path: '/subject/:name/insights',
         name: 'practice_subject_insights',
         builder: (context, state) => PracticeSubjectInsightsScreen(
+          subject: Uri.decodeComponent(state.pathParameters['name']!),
+        ),
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/subject/:name/insights/traps',
+        name: 'practice_confidence_traps',
+        builder: (context, state) => PracticeConfidenceTrapsScreen(
           subject: Uri.decodeComponent(state.pathParameters['name']!),
         ),
       ),
