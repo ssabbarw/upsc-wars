@@ -26,7 +26,7 @@ class TopicsListScreen extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final selectedSubject = useState(subject);
-    final sortMode = useState(TopicListSortMode.dangerZone);
+    final sortMode = useState(TopicListSortMode.alphabetical);
     final query = useState('');
     final searchController = useTextEditingController();
     final scheme = Theme.of(context).colorScheme;
@@ -42,9 +42,6 @@ class TopicsListScreen extends HookConsumerWidget {
             ?.value
             .topicProgress[subjectSlug] ??
         const <String, PracticeScopeProgress>{};
-    final dangerByTopic =
-        ref.watch(seasonTopicDangerProvider(subjectSlug)).asData?.value ??
-        const <String, ({int sure, int guess})>{};
 
     final hPadding = AppBreakpoints.fullScreenHPadding(
       MediaQuery.sizeOf(context).width,
@@ -192,7 +189,6 @@ class TopicsListScreen extends HookConsumerWidget {
                       matched,
                       sortMode.value,
                       progressByTopic: progressByTopic,
-                      dangerByTopic: dangerByTopic,
                     );
                     return LayoutBuilder(
                       builder: (context, constraints) {
@@ -214,7 +210,7 @@ class TopicsListScreen extends HookConsumerWidget {
                                   crossAxisCount: 2,
                                   crossAxisSpacing: AppSpacing.sm,
                                   mainAxisSpacing: AppSpacing.sm,
-                                  childAspectRatio: 2.1,
+                                  childAspectRatio: 2.05,
                                 ),
                             itemCount: sorted.length,
                             itemBuilder: (context, i) => _TopicCard(
@@ -224,7 +220,6 @@ class TopicsListScreen extends HookConsumerWidget {
                               progress:
                                   progressByTopic[sorted[i].topic] ??
                                   PracticeScopeProgress.empty,
-                              danger: dangerByTopic[sorted[i].topic],
                             ),
                           );
                         }
@@ -258,7 +253,6 @@ class TopicsListScreen extends HookConsumerWidget {
                               progress:
                                   progressByTopic[sorted[i].topic] ??
                                   PracticeScopeProgress.empty,
-                              danger: dangerByTopic[sorted[i].topic],
                             );
                           },
                         );
@@ -339,7 +333,6 @@ List<TopicInfo> _sortTopics(
   List<TopicInfo> topics,
   TopicListSortMode mode, {
   required Map<String, PracticeScopeProgress> progressByTopic,
-  required Map<String, ({int sure, int guess})> dangerByTopic,
 }) {
   final copy = List<TopicInfo>.from(topics);
   switch (mode) {
@@ -358,19 +351,18 @@ List<TopicInfo> _sortTopics(
             b.displayName.toLowerCase(),
           );
         }
-        final byAcc = bAcc!.compareTo(aAcc!);
+        final byAcc = aAcc!.compareTo(bAcc!);
         if (byAcc != 0) return byAcc;
         return a.displayName.toLowerCase().compareTo(
           b.displayName.toLowerCase(),
         );
       });
-    case TopicListSortMode.dangerZone:
+    case TopicListSortMode.coverage:
       copy.sort((a, b) {
-        final da = dangerByTopic[a.topic];
-        final db = dangerByTopic[b.topic];
-        final aCount = (da?.sure ?? 0) + (da?.guess ?? 0);
-        final bCount = (db?.sure ?? 0) + (db?.guess ?? 0);
-        if (bCount != aCount) return bCount.compareTo(aCount);
+        final aPct = progressByTopic[a.topic]?.completionPercent ?? 0;
+        final bPct = progressByTopic[b.topic]?.completionPercent ?? 0;
+        final byPct = aPct.compareTo(bPct);
+        if (byPct != 0) return byPct;
         return a.displayName.toLowerCase().compareTo(
           b.displayName.toLowerCase(),
         );
@@ -389,8 +381,8 @@ class _TopicSortMenu extends StatelessWidget {
     switch (mode) {
       case TopicListSortMode.accuracy:
         return context.l10n.statsAccuracyLabel;
-      case TopicListSortMode.dangerZone:
-        return context.l10n.topicSortDanger;
+      case TopicListSortMode.coverage:
+        return context.l10n.statsSortLeastCovered;
       case TopicListSortMode.alphabetical:
         return context.l10n.statsSortAz;
     }
@@ -462,23 +454,25 @@ class _TopicCard extends StatelessWidget {
     required this.subject,
     required this.borderColor,
     required this.progress,
-    required this.danger,
   });
 
   final TopicInfo topic;
   final String subject;
   final Color borderColor;
   final PracticeScopeProgress progress;
-  final ({int sure, int guess})? danger;
 
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
-    final isWeak =
-        (progress.accuracyPercent != null) && progress.accuracyPercent! < 50;
-    final sure = danger?.sure ?? 0;
-    final guess = danger?.guess ?? 0;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     String pct(double? value) => value == null ? '—' : '${value.round()}%';
+    final testsValue = progress.testsTotal <= 0
+        ? '0'
+        : '${progress.testsDone}/${progress.testsTotal}';
+    final fraction = progress.testsTotal <= 0
+        ? 0.0
+        : (progress.testsDone / progress.testsTotal).clamp(0.0, 1.0);
+    final started = progress.testsDone > 0;
 
     return Material(
       color: AppColors.transparent,
@@ -487,69 +481,83 @@ class _TopicCard extends StatelessWidget {
           '/subject/${Uri.encodeComponent(subject)}/topic/${Uri.encodeComponent(topic.topic)}/tests',
         ),
         borderRadius: BorderRadius.circular(AppRadius.lg),
-        child: Container(
-          clipBehavior: Clip.antiAlias,
-          constraints: const BoxConstraints(minHeight: 88),
+        child: Ink(
           decoration: BoxDecoration(
             color: scheme.surface,
             borderRadius: BorderRadius.circular(AppRadius.lg),
             border: Border.all(color: borderColor, width: 0.5),
           ),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Container(
-                width: 4,
-                color: isWeak ? AppColors.wrong : AppColors.transparent,
-              ),
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.all(AppSpacing.lg),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Text(
-                              topic.displayName,
-                              style: AppTextStyles.label().copyWith(
-                                color: scheme.onSurface,
-                              ),
-                            ),
-                            const SizedBox(height: AppSpacing.sm),
-                            Text(
-                              '${context.l10n.statsCoverage(pct(progress.coveragePercent))}'
-                              ' · ${context.l10n.statsAccuracy(pct(progress.accuracyPercent))}'
-                              ' · ${context.l10n.practiceTestsProgress(progress.testsDone, progress.testsTotal)}',
-                              style: AppTextStyles.caption().copyWith(
-                                color: scheme.onSurfaceVariant,
-                                height: 1.3,
-                              ),
-                            ),
-                            if (sure > 0 || guess > 0) ...[
-                              const SizedBox(height: AppSpacing.xs),
-                              Text(
-                                context.l10n.topicSeasonDangerLine(sure, guess),
-                                style: AppTextStyles.caption().copyWith(
-                                  color: scheme.onSurfaceVariant,
-                                  height: 1.3,
-                                ),
-                              ),
-                            ],
-                          ],
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(
+              AppSpacing.lg,
+              AppSpacing.md,
+              AppSpacing.sm,
+              AppSpacing.md,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Row(
+                  children: [
+                    Expanded(
+                      child: Text(
+                        topic.displayName,
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        style: AppTextStyles.label().copyWith(
+                          color: scheme.onSurface,
+                          fontWeight: FontWeight.w600,
+                          height: 1.25,
                         ),
                       ),
-                      const SizedBox(width: AppSpacing.sm),
-                      const _ActionButton(),
-                    ],
+                    ),
+                    Icon(
+                      Icons.chevron_right,
+                      color: scheme.onSurfaceVariant,
+                      size: 20,
+                    ),
+                  ],
+                ),
+                const SizedBox(height: AppSpacing.md),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(AppRadius.pill),
+                  child: LinearProgressIndicator(
+                    value: fraction,
+                    minHeight: 4,
+                    backgroundColor: isDark
+                        ? AppColors.gray800
+                        : AppColors.gray50,
+                    color: AppColors.primary,
                   ),
                 ),
-              ),
-            ],
+                const SizedBox(height: AppSpacing.md),
+                Row(
+                  children: [
+                    _TopicStat(
+                      value: pct(progress.completionPercent),
+                      label: context.l10n.topicStatComplete,
+                      valueColor: started
+                          ? AppColors.primary
+                          : scheme.onSurface,
+                    ),
+                    const SizedBox(width: AppSpacing.xxl),
+                    _TopicStat(
+                      value: testsValue,
+                      label: context.l10n.topicStatTestsDone,
+                      valueColor: scheme.onSurface,
+                    ),
+                    const SizedBox(width: AppSpacing.xxl),
+                    _TopicStat(
+                      value: pct(progress.accuracyPercent),
+                      label: context.l10n.topicStatAccuracy,
+                      valueColor: _accuracyColor(progress.accuracyPercent),
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -557,23 +565,49 @@ class _TopicCard extends StatelessWidget {
   }
 }
 
-class _ActionButton extends StatelessWidget {
-  const _ActionButton();
+Color _accuracyColor(double? accuracy) {
+  if (accuracy == null) return AppColors.gray400;
+  if (accuracy < 60) return AppColors.wrong;
+  if (accuracy < 80) return AppColors.warning;
+  return AppColors.correct;
+}
+
+class _TopicStat extends StatelessWidget {
+  const _TopicStat({
+    required this.value,
+    required this.label,
+    required this.valueColor,
+  });
+
+  final String value;
+  final String label;
+  final Color valueColor;
 
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
       children: [
         Text(
-          'Practice',
-          style: AppTextStyles.caption().copyWith(
-            color: AppColors.primary,
-            fontWeight: FontWeight.w600,
+          value,
+          maxLines: 1,
+          style: AppTextStyles.label().copyWith(
+            color: valueColor,
+            fontWeight: FontWeight.w700,
+            height: 1.1,
           ),
         ),
-        Icon(Icons.chevron_right, color: scheme.onSurfaceVariant, size: 18),
+        const SizedBox(height: 2),
+        Text(
+          label,
+          maxLines: 1,
+          style: AppTextStyles.caption().copyWith(
+            color: scheme.onSurfaceVariant,
+            height: 1.1,
+          ),
+        ),
       ],
     );
   }

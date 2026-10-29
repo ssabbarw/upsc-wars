@@ -221,6 +221,14 @@ class _InsightsLead extends StatelessWidget {
           progress: progress,
           insights: AsyncValue.data(insights),
         ),
+        const SizedBox(height: AppSpacing.md),
+        Text(
+          context.l10n.practiceStatsSourcesNote(displayName),
+          style: AppTextStyles.bodySm().copyWith(
+            color: scheme.onSurfaceVariant,
+            height: 1.4,
+          ),
+        ),
         if (guessVerdict != null) ...[
           const SizedBox(height: AppSpacing.lg),
           _TopicGuessVerdictCard(

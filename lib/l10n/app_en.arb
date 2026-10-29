@@ -1210,7 +1210,6 @@
   },
   "topicDangerLine": "Sure wrong: {sure} · Educated guess wrong: {edu} (all-time)",
   "topicSeasonDangerLine": "Sure wrong {sure} · Educated guess wrong {edu}",
-  "topicSortDanger": "Danger zone",
   "@topicSeasonDangerLine": {
     "placeholders": {
       "sure": {"type": "int"},
@@ -4291,6 +4290,9 @@
   "practiceNewSeason": "New season: your tests have been reshuffled for the next prelims.",
   "practiceBrowseTopics": "Topic-wise tests",
   "practiceBrowseTopicsSubtitle": "Browse topics",
+  "topicStatComplete": "complete",
+  "topicStatTestsDone": "tests",
+  "topicStatAccuracy": "accuracy",
   "practiceSectionTitle": "Practice",
   "practiceSectionSubtitle": "Your test series for prelims {year}",
   "@practiceSectionSubtitle": {
@@ -4302,6 +4304,14 @@
   "practiceTabTopics": "Topic-wise",
   "practiceSnapshotSee": "View details",
   "practiceSnapshotEmpty": "Finish a test to see where marks leak, and where you can attempt more.",
+  "practiceTopicStatsNote": "Stats for {topic} include Daily Battle, Daily CA, Open Challenge, and the tests below.",
+  "@practiceTopicStatsNote": {
+    "placeholders": {"topic": {"type": "String"}}
+  },
+  "practiceStatsSourcesNote": "Stats for {name} include Daily Battle, Daily CA, Open Challenge, and practice tests.",
+  "@practiceStatsSourcesNote": {
+    "placeholders": {"name": {"type": "String"}}
+  },
   "practiceSnapshotAccuracy": "Accuracy",
   "practiceInsightsFailed": "Could not load this breakdown.",
   "practicePatternsNoQuestions": "No questions of this type in this subject yet.",

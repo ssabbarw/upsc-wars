@@ -5,7 +5,6 @@ import '../../../core/domain/entities/subject_info.dart';
 import '../../../core/domain/entities/topic_info.dart';
 import '../../../core/providers/catalog_providers.dart';
 import '../../../core/providers/user_database_provider.dart';
-import '../../practice_tests/providers/practice_catalog_provider.dart';
 import '../data/subject_topic_danger.dart';
 
 /// SubjectInfo for a single subject, derived from the cached subject list.
@@ -68,14 +67,6 @@ final subjectTopicsProvider = FutureProvider.autoDispose
       );
 
       return enriched;
-    });
-
-/// Sure and educated-guess wrongs this season, keyed by English topic name.
-final seasonTopicDangerProvider = FutureProvider.autoDispose
-    .family<Map<String, ({int sure, int guess})>, String>((ref, subject) async {
-      final catalog = await ref.watch(practiceCatalogProvider.future);
-      final db = ref.watch(userDatabaseProvider);
-      return fetchSeasonTopicDanger(db, subject, catalog.season.start);
     });
 
 /// Completed session count for a subject (subject hub card).

@@ -1824,9 +1824,6 @@ class AppLocalizationsHi extends AppLocalizations {
   }
 
   @override
-  String get topicSortDanger => 'Danger zone';
-
-  @override
   String subjectTestInfo(String questions, int topics) {
     return '$questions सवाल · $topics topics';
   }
@@ -6188,6 +6185,15 @@ class AppLocalizationsHi extends AppLocalizations {
   String get practiceBrowseTopicsSubtitle => 'Browse topics';
 
   @override
+  String get topicStatComplete => 'पूरा';
+
+  @override
+  String get topicStatTestsDone => 'tests';
+
+  @override
+  String get topicStatAccuracy => 'accuracy';
+
+  @override
   String get practiceSectionTitle => 'Practice';
 
   @override
@@ -6207,6 +6213,16 @@ class AppLocalizationsHi extends AppLocalizations {
   @override
   String get practiceSnapshotEmpty =>
       'एक test पूरा करें। तब दिखेगा कि अंक कहाँ जा रहे हैं, और कहाँ और प्रयास करने चाहिए।';
+
+  @override
+  String practiceTopicStatsNote(String topic) {
+    return '$topic के stats में Daily Battle, Daily CA, Open Challenge और नीचे दिए tests शामिल हैं।';
+  }
+
+  @override
+  String practiceStatsSourcesNote(String name) {
+    return '$name के stats में Daily Battle, Daily CA, Open Challenge और practice tests शामिल हैं।';
+  }
 
   @override
   String get practiceSnapshotAccuracy => 'Accuracy';

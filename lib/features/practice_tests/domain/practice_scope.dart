@@ -83,6 +83,10 @@ class PracticeScopeProgress {
   double? get coveragePercent =>
       poolSize <= 0 ? null : (answered / poolSize) * 100;
 
+  /// Share of tests finished, 0–100. Zero when the topic has no tests.
+  double get completionPercent =>
+      testsTotal <= 0 ? 0 : (testsDone / testsTotal) * 100;
+
   /// Latest-answer accuracy this season, 0–100.
   double? get accuracyPercent =>
       answered <= 0 ? null : (correct / answered) * 100;

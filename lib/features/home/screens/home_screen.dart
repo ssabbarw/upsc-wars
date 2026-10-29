@@ -113,6 +113,22 @@ class HomeScreen extends HookConsumerWidget {
     final routeInfo = GoRouter.of(context).routeInformationProvider;
     useListenable(routeInfo);
     final onHomeRoute = routeInfo.value.uri.path == '/';
+    // Subject tests are pushed over the shell, so this screen stays mounted and
+    // the first-load effect above does not run again. Reload revision counts
+    // once the user is back on home.
+    final leftHomeRoute = useRef(false);
+    useEffect(() {
+      if (!onHomeRoute) {
+        leftHomeRoute.value = true;
+        return null;
+      }
+      if (!leftHomeRoute.value) return null;
+      leftHomeRoute.value = false;
+      Future(() {
+        ref.invalidate(dailyDrillProvider);
+      });
+      return null;
+    }, [onHomeRoute]);
     useEffect(() {
       if (!onHomeRoute) return null;
       unawaited(() async {

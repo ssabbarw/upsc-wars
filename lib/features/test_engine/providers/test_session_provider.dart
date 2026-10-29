@@ -14,6 +14,7 @@ import 'package:upsc_wars/core/providers/user_database_provider.dart';
 import 'package:upsc_wars/core/router/app_router.dart';
 import 'package:upsc_wars/core/theme/app_text_styles.dart';
 import 'package:upsc_wars/features/home/domain/create_get_started_session_use_case.dart';
+import 'package:upsc_wars/features/home/providers/daily_drill_provider.dart';
 import 'package:upsc_wars/features/test_engine/domain/confidence_prompt_policy.dart';
 import 'package:upsc_wars/shared/widgets/top_snack_bar.dart';
 
@@ -622,6 +623,7 @@ class TestSessionNotifier extends _$TestSessionNotifier {
       }
       final nextMap = {...current.bookmarkedByUuid, q.uuid: !isMarked};
       state = AsyncData(current.copyWith(bookmarkedByUuid: nextMap));
+      ref.invalidate(dailyDrillProvider);
       return !isMarked;
     } catch (_) {
       _showStorageSnack();

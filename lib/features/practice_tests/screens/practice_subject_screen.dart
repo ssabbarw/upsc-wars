@@ -73,6 +73,21 @@ class PracticeSubjectScreen extends ConsumerWidget {
               Padding(
                 padding: const EdgeInsets.fromLTRB(
                   AppSpacing.lg,
+                  0,
+                  AppSpacing.lg,
+                  AppSpacing.md,
+                ),
+                child: Text(
+                  context.l10n.practiceTopicStatsNote(title),
+                  style: AppTextStyles.bodySm().copyWith(
+                    color: scheme.onSurfaceVariant,
+                    height: 1.4,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(
+                  AppSpacing.lg,
                   AppSpacing.xs,
                   AppSpacing.lg,
                   AppSpacing.sm,

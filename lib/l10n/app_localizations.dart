@@ -3134,12 +3134,6 @@ abstract class AppLocalizations {
   /// **'Sure wrong {sure} · Educated guess wrong {edu}'**
   String topicSeasonDangerLine(int sure, int edu);
 
-  /// No description provided for @topicSortDanger.
-  ///
-  /// In en, this message translates to:
-  /// **'Danger zone'**
-  String get topicSortDanger;
-
   /// No description provided for @subjectTestInfo.
   ///
   /// In en, this message translates to:
@@ -10358,6 +10352,24 @@ abstract class AppLocalizations {
   /// **'Browse topics'**
   String get practiceBrowseTopicsSubtitle;
 
+  /// No description provided for @topicStatComplete.
+  ///
+  /// In en, this message translates to:
+  /// **'complete'**
+  String get topicStatComplete;
+
+  /// No description provided for @topicStatTestsDone.
+  ///
+  /// In en, this message translates to:
+  /// **'tests'**
+  String get topicStatTestsDone;
+
+  /// No description provided for @topicStatAccuracy.
+  ///
+  /// In en, this message translates to:
+  /// **'accuracy'**
+  String get topicStatAccuracy;
+
   /// No description provided for @practiceSectionTitle.
   ///
   /// In en, this message translates to:
@@ -10393,6 +10405,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Finish a test to see where marks leak, and where you can attempt more.'**
   String get practiceSnapshotEmpty;
+
+  /// No description provided for @practiceTopicStatsNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Stats for {topic} include Daily Battle, Daily CA, Open Challenge, and the tests below.'**
+  String practiceTopicStatsNote(String topic);
+
+  /// No description provided for @practiceStatsSourcesNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Stats for {name} include Daily Battle, Daily CA, Open Challenge, and practice tests.'**
+  String practiceStatsSourcesNote(String name);
 
   /// No description provided for @practiceSnapshotAccuracy.
   ///
