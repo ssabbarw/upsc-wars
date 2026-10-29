@@ -134,6 +134,14 @@ extension on SubjectMcqPatternStat {
   double get _wrongRate => attempted == 0 ? 0 : wrong / attempted;
 }
 
+/// True when bank [type] is the same stem shape as [stat].
+bool matchesMcqPattern(String type, SubjectMcqPatternStat stat) {
+  final classified = classifyUpscMcqPattern(type);
+  if (classified != stat.pattern) return false;
+  if (classified != UpscMcqPattern.other) return true;
+  return _normalizeType(type) == stat.otherSlug;
+}
+
 UpscMcqPattern classifyUpscMcqPattern(String raw) {
   switch (_normalizeType(raw)) {
     case 'multi-statement-count':

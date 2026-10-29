@@ -12,10 +12,10 @@ import '../domain/practice_pattern_visual.dart';
 import '../domain/practice_scope.dart';
 import '../domain/practice_subject_insights.dart';
 import '../domain/practice_topic_visual.dart';
+import '../open_insight_practice.dart';
 import '../providers/practice_catalog_provider.dart';
 import '../providers/practice_subject_insights_provider.dart';
 import '../widgets/practice_snapshot_card.dart';
-import '../widgets/practice_test_tile.dart';
 
 const _previewTrapCount = 3;
 
@@ -34,7 +34,7 @@ class PracticeSubjectInsightsScreen extends ConsumerWidget {
     final insights = ref.watch(practiceSubjectInsightsProvider(subject));
 
     return DefaultTabController(
-      length: 3,
+      length: 2,
       child: Scaffold(
         backgroundColor: scheme.surfaceContainerLowest,
         appBar: AppBar(
@@ -63,13 +63,6 @@ class PracticeSubjectInsightsScreen extends ConsumerWidget {
                 ),
               ),
               data: (value) {
-                void revise(String topicKey) => _reviseTopic(
-                  context,
-                  ref,
-                  catalog: data,
-                  subject: subject,
-                  topicKey: topicKey,
-                );
                 return NestedScrollView(
                   headerSliverBuilder: (context, _) => [
                     SliverToBoxAdapter(
@@ -133,7 +126,6 @@ class PracticeSubjectInsightsScreen extends ConsumerWidget {
                             alpha: 0.35,
                           ),
                           tabs: [
-                            Tab(text: context.l10n.practiceTopicsReviseTab),
                             Tab(text: context.l10n.practiceLensTabSure),
                             Tab(text: context.l10n.practiceLensTabGuess),
                           ],
@@ -144,19 +136,16 @@ class PracticeSubjectInsightsScreen extends ConsumerWidget {
                   body: TabBarView(
                     children: [
                       _TopicList(
-                        topics: value.reviseTopics,
-                        empty: context.l10n.practiceReviseTopicsEmpty,
-                        onRevise: revise,
-                      ),
-                      _TopicList(
+                        subject: subject,
+                        sureLens: true,
                         topics: value.sureTopics,
                         empty: context.l10n.practiceSureTopicsEmpty,
-                        onRevise: revise,
                       ),
                       _TopicList(
+                        subject: subject,
+                        sureLens: false,
                         topics: value.guessTopics,
                         empty: context.l10n.practiceGuessTopicsEmpty,
-                        onRevise: revise,
                       ),
                     ],
                   ),
@@ -200,14 +189,16 @@ class _TopicTabBarDelegate extends SliverPersistentHeaderDelegate {
 
 class _TopicList extends StatelessWidget {
   const _TopicList({
+    required this.subject,
+    required this.sureLens,
     required this.topics,
     required this.empty,
-    required this.onRevise,
   });
 
+  final String subject;
+  final bool sureLens;
   final List<LensTopic> topics;
   final String empty;
-  final ValueChanged<String> onRevise;
 
   @override
   Widget build(BuildContext context) {
@@ -233,38 +224,32 @@ class _TopicList extends StatelessWidget {
       separatorBuilder: (_, _) => const SizedBox(height: AppSpacing.sm),
       itemBuilder: (context, index) {
         final topic = topics[index];
-        return _TopicRow(topic: topic, onRevise: () => onRevise(topic.topicKey));
+        return _TopicRow(
+          topic: topic,
+          onRevise: () => showInsightDrillSheet(
+            context,
+            target: InsightDrillTarget.topic(
+              subject: subject,
+              topicKey: topic.topicKey,
+              title: topic.displayName,
+              sureLens: sureLens,
+            ),
+            intent: InsightDrillIntent.revise,
+          ),
+          onImprove: () => showInsightDrillSheet(
+            context,
+            target: InsightDrillTarget.topic(
+              subject: subject,
+              topicKey: topic.topicKey,
+              title: topic.displayName,
+              sureLens: sureLens,
+            ),
+            intent: InsightDrillIntent.improve,
+          ),
+        );
       },
     );
   }
-}
-
-Future<void> _reviseTopic(
-  BuildContext context,
-  WidgetRef ref, {
-  required PracticeCatalog catalog,
-  required String subject,
-  required String topicKey,
-}) async {
-  final tests =
-      catalog.topicTests[subject]?[topicKey] ?? const <PracticeTest>[];
-  if (tests.isEmpty) {
-    await context.push(
-      '/subject/${Uri.encodeComponent(subject)}/topic/${Uri.encodeComponent(topicKey)}/tests',
-    );
-    return;
-  }
-  final nextIndex = tests.indexWhere((t) => !t.isDone);
-  final test = tests[nextIndex < 0 ? 0 : nextIndex];
-  final title = catalog.topicDisplayNames[topicKey] ?? topicKey;
-  await openPracticeTest(
-    context,
-    ref,
-    subject: subject,
-    topic: topicKey,
-    title: title,
-    test: test,
-  );
 }
 
 class _TrapsPreview extends StatelessWidget {
@@ -419,10 +404,15 @@ class _TrapPreviewRow extends StatelessWidget {
 }
 
 class _TopicRow extends StatelessWidget {
-  const _TopicRow({required this.topic, required this.onRevise});
+  const _TopicRow({
+    required this.topic,
+    required this.onRevise,
+    required this.onImprove,
+  });
 
   final LensTopic topic;
   final VoidCallback onRevise;
+  final VoidCallback onImprove;
 
   @override
   Widget build(BuildContext context) {
@@ -457,54 +447,12 @@ class _TopicRow extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
-                  children: [
-                    Expanded(
-                      child: Text(
-                        topic.displayName,
-                        style: AppTextStyles.label().copyWith(
-                          color: scheme.onSurface,
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
-                    ),
-                    const SizedBox(width: AppSpacing.sm),
-                    OutlinedButton(
-                      onPressed: onRevise,
-                      style: OutlinedButton.styleFrom(
-                        visualDensity: VisualDensity.compact,
-                        foregroundColor: wrongColor,
-                        side: BorderSide(
-                          color: AppColors.wrong.withValues(alpha: 0.55),
-                        ),
-                        padding: const EdgeInsets.fromLTRB(
-                          AppSpacing.sm,
-                          4,
-                          AppSpacing.xs,
-                          4,
-                        ),
-                        minimumSize: Size.zero,
-                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                        shape: const StadiumBorder(),
-                      ),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Text(
-                            context.l10n.commonRevise,
-                            style: AppTextStyles.caption().copyWith(
-                              fontWeight: FontWeight.w700,
-                            ),
-                          ),
-                          Icon(
-                            Icons.chevron_right,
-                            size: 16,
-                            color: wrongColor,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
+                Text(
+                  topic.displayName,
+                  style: AppTextStyles.label().copyWith(
+                    color: scheme.onSurface,
+                    fontWeight: FontWeight.w700,
+                  ),
                 ),
                 const SizedBox(height: 2),
                 Row(
@@ -543,6 +491,38 @@ class _TopicRow extends StatelessWidget {
                       style: AppTextStyles.caption().copyWith(
                         color: wrongColor,
                         fontWeight: FontWeight.w800,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: AppSpacing.md),
+                Row(
+                  children: [
+                    Expanded(
+                      child: OutlinedButton(
+                        onPressed: onRevise,
+                        style: OutlinedButton.styleFrom(
+                          foregroundColor: AppColors.primary,
+                          side: const BorderSide(color: AppColors.primary),
+                          padding: const EdgeInsets.symmetric(
+                            vertical: AppSpacing.sm,
+                          ),
+                        ),
+                        child: Text(context.l10n.commonRevise),
+                      ),
+                    ),
+                    const SizedBox(width: AppSpacing.sm),
+                    Expanded(
+                      child: FilledButton(
+                        onPressed: onImprove,
+                        style: FilledButton.styleFrom(
+                          backgroundColor: AppColors.primary,
+                          foregroundColor: AppColors.onPrimary,
+                          padding: const EdgeInsets.symmetric(
+                            vertical: AppSpacing.sm,
+                          ),
+                        ),
+                        child: Text(context.l10n.practiceImproveScore),
                       ),
                     ),
                   ],

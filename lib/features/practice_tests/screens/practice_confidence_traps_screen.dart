@@ -9,7 +9,7 @@ import '../../../core/theme/app_text_styles.dart';
 import '../../../l10n/l10n.dart';
 import '../../subject_detail/domain/subject_mcq_pattern.dart';
 import '../domain/practice_pattern_visual.dart';
-import '../open_pattern_practice.dart';
+import '../open_insight_practice.dart';
 import '../providers/practice_subject_insights_provider.dart';
 
 /// Question-type patterns behind Sure mistakes.
@@ -156,7 +156,7 @@ void _showInfo(BuildContext context) {
   );
 }
 
-class _TrapDetailCard extends ConsumerStatefulWidget {
+class _TrapDetailCard extends StatelessWidget {
   const _TrapDetailCard({
     required this.index,
     required this.subject,
@@ -168,20 +168,13 @@ class _TrapDetailCard extends ConsumerStatefulWidget {
   final SubjectMcqPatternStat pattern;
 
   @override
-  ConsumerState<_TrapDetailCard> createState() => _TrapDetailCardState();
-}
-
-class _TrapDetailCardState extends ConsumerState<_TrapDetailCard> {
-  var _busy = false;
-
-  @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final visual = practicePatternVisual(
-      widget.pattern,
+      pattern,
       isDark: isDark,
-      index: widget.index,
+      index: index,
     );
     final fill = visual.accent.withValues(alpha: isDark ? 0.22 : 0.1);
     return Container(
@@ -205,7 +198,7 @@ class _TrapDetailCardState extends ConsumerState<_TrapDetailCard> {
                 radius: 12,
                 backgroundColor: fill,
                 child: Text(
-                  '${widget.index + 1}',
+                  '${index + 1}',
                   style: AppTextStyles.caption().copyWith(
                     color: visual.accent,
                     fontWeight: FontWeight.w800,
@@ -230,7 +223,7 @@ class _TrapDetailCardState extends ConsumerState<_TrapDetailCard> {
                   children: [
                     Expanded(
                       child: Text(
-                        widget.pattern.labelFor(context.l10n),
+                        pattern.labelFor(context.l10n),
                         style: AppTextStyles.label().copyWith(
                           color: scheme.onSurface,
                           fontWeight: FontWeight.w800,
@@ -239,7 +232,7 @@ class _TrapDetailCardState extends ConsumerState<_TrapDetailCard> {
                     ),
                     const SizedBox(width: AppSpacing.sm),
                     Text(
-                      context.l10n.practiceTrapsErrors(widget.pattern.wrong),
+                      context.l10n.practiceTrapsErrors(pattern.wrong),
                       style: AppTextStyles.caption().copyWith(
                         color: visual.accent,
                         fontWeight: FontWeight.w700,
@@ -252,7 +245,7 @@ class _TrapDetailCardState extends ConsumerState<_TrapDetailCard> {
           ),
           const SizedBox(height: AppSpacing.md),
           Text(
-            widget.pattern.explainFor(context.l10n),
+            pattern.explainFor(context.l10n),
             style: AppTextStyles.bodySm().copyWith(
               color: scheme.onSurface,
               height: 1.4,
@@ -261,9 +254,9 @@ class _TrapDetailCardState extends ConsumerState<_TrapDetailCard> {
           const SizedBox(height: AppSpacing.sm),
           Text(
             context.l10n.subjWeakPatternStat(
-              widget.pattern.wrong,
-              widget.pattern.attempted,
-              widget.pattern.wrongPercent,
+              pattern.wrong,
+              pattern.attempted,
+              pattern.wrongPercent,
             ),
             style: AppTextStyles.caption().copyWith(
               color: scheme.onSurfaceVariant,
@@ -271,42 +264,42 @@ class _TrapDetailCardState extends ConsumerState<_TrapDetailCard> {
             ),
           ),
           const SizedBox(height: AppSpacing.md),
-          SizedBox(
-            width: double.infinity,
-            child: OutlinedButton(
-              onPressed: _busy
-                  ? null
-                  : () async {
-                      setState(() => _busy = true);
-                      try {
-                        await openPatternPractice(
-                          context,
-                          ref,
-                          subject: widget.subject,
-                          pattern: widget.pattern,
-                        );
-                      } finally {
-                        if (mounted) setState(() => _busy = false);
-                      }
-                    },
-              style: OutlinedButton.styleFrom(
-                foregroundColor: AppColors.primary,
-                side: const BorderSide(color: AppColors.primary),
-              ),
-              child: _busy
-                  ? const SizedBox(
-                      width: 16,
-                      height: 16,
-                      child: CircularProgressIndicator(strokeWidth: 2),
-                    )
-                  : Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(context.l10n.practiceTrapsPractise),
-                        const Icon(Icons.chevron_right, size: 18),
-                      ],
+          Row(
+            children: [
+              Expanded(
+                child: OutlinedButton(
+                  onPressed: () => showInsightDrillSheet(
+                    context,
+                    target: InsightDrillTarget.trap(
+                      subject: subject,
+                      pattern: pattern,
+                      title: pattern.labelFor(context.l10n),
                     ),
-            ),
+                    intent: InsightDrillIntent.revise,
+                  ),
+                  style: OutlinedButton.styleFrom(
+                    foregroundColor: AppColors.primary,
+                    side: const BorderSide(color: AppColors.primary),
+                  ),
+                  child: Text(context.l10n.commonRevise),
+                ),
+              ),
+              const SizedBox(width: AppSpacing.sm),
+              Expanded(
+                child: FilledButton(
+                  onPressed: () => showInsightDrillSheet(
+                    context,
+                    target: InsightDrillTarget.trap(
+                      subject: subject,
+                      pattern: pattern,
+                      title: pattern.labelFor(context.l10n),
+                    ),
+                    intent: InsightDrillIntent.improve,
+                  ),
+                  child: Text(context.l10n.practiceImproveScore),
+                ),
+              ),
+            ],
           ),
         ],
       ),

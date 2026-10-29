@@ -10382,11 +10382,77 @@ abstract class AppLocalizations {
   /// **'{count} errors'**
   String practiceTrapsErrors(int count);
 
-  /// No description provided for @practiceTrapsPractise.
+  /// No description provided for @practiceImproveScore.
   ///
   /// In en, this message translates to:
-  /// **'Practise this trap'**
-  String get practiceTrapsPractise;
+  /// **'Improve score'**
+  String get practiceImproveScore;
+
+  /// No description provided for @practiceStartNQuestions.
+  ///
+  /// In en, this message translates to:
+  /// **'Start {count} questions'**
+  String practiceStartNQuestions(int count);
+
+  /// No description provided for @practiceReviseExistingInstead.
+  ///
+  /// In en, this message translates to:
+  /// **'Revise existing instead'**
+  String get practiceReviseExistingInstead;
+
+  /// No description provided for @practiceImproveInstead.
+  ///
+  /// In en, this message translates to:
+  /// **'Improve score instead'**
+  String get practiceImproveInstead;
+
+  /// No description provided for @practiceDrillReviseTopicSure.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'ll go through {count} questions you marked Sure and got wrong. Learning mode — explanation after each.'**
+  String practiceDrillReviseTopicSure(int count);
+
+  /// No description provided for @practiceDrillReviseTopicGuess.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'ll go through {count} questions you marked Educated guess and got wrong. Learning mode — explanation after each.'**
+  String practiceDrillReviseTopicGuess(int count);
+
+  /// No description provided for @practiceDrillReviseTrap.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'ll go through {count} Sure misses of this question type. Learning mode — explanation after each.'**
+  String practiceDrillReviseTrap(int count);
+
+  /// No description provided for @practiceDrillReviseEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No wrong questions to revise here yet.'**
+  String get practiceDrillReviseEmpty;
+
+  /// No description provided for @practiceDrillImproveTopic.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} new questions from this topic that you haven\'t tried yet.'**
+  String practiceDrillImproveTopic(int count);
+
+  /// No description provided for @practiceDrillImproveTrap.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} new questions of this type that you haven\'t tried yet.'**
+  String practiceDrillImproveTrap(int count);
+
+  /// No description provided for @practiceDrillImproveShort.
+  ///
+  /// In en, this message translates to:
+  /// **'Only {count} new questions are left — not enough for a full {full} question set.'**
+  String practiceDrillImproveShort(int count, int full);
+
+  /// No description provided for @practiceDrillImproveEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No new questions left here.'**
+  String get practiceDrillImproveEmpty;
 
   /// No description provided for @practiceTrapsEmpty.
   ///
@@ -10423,12 +10489,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Sure'**
   String get practiceLensSure;
-
-  /// No description provided for @practiceTopicsReviseTab.
-  ///
-  /// In en, this message translates to:
-  /// **'Revise'**
-  String get practiceTopicsReviseTab;
 
   /// No description provided for @practiceLensTabSure.
   ///
@@ -10471,12 +10531,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Not enough Educated guesses in any topic yet.'**
   String get practiceGuessTopicsEmpty;
-
-  /// No description provided for @practiceReviseTopicsEmpty.
-  ///
-  /// In en, this message translates to:
-  /// **'Not enough answers yet to rank topics by accuracy.'**
-  String get practiceReviseTopicsEmpty;
 
   /// No description provided for @practiceTopicWrongPct.
   ///

@@ -6203,7 +6203,55 @@ class AppLocalizationsHi extends AppLocalizations {
   }
 
   @override
-  String get practiceTrapsPractise => 'इस trap को practise करें';
+  String get practiceImproveScore => 'Improve score';
+
+  @override
+  String practiceStartNQuestions(int count) {
+    return '$count सवाल शुरू करें';
+  }
+
+  @override
+  String get practiceReviseExistingInstead => 'पहले वाले revise करें';
+
+  @override
+  String get practiceImproveInstead => 'Improve score करें';
+
+  @override
+  String practiceDrillReviseTopicSure(int count) {
+    return 'आप $count सवालों से गुज़रेंगे जिन्हें Sure मार्क करके गलत किया। Learning mode — हर सवाल के बाद explanation।';
+  }
+
+  @override
+  String practiceDrillReviseTopicGuess(int count) {
+    return 'आप $count सवालों से गुज़रेंगे जिन्हें Educated guess मार्क करके गलत किया। Learning mode — हर सवाल के बाद explanation।';
+  }
+
+  @override
+  String practiceDrillReviseTrap(int count) {
+    return 'आप इस प्रकार के $count Sure misses से गुज़रेंगे। Learning mode — हर सवाल के बाद explanation।';
+  }
+
+  @override
+  String get practiceDrillReviseEmpty =>
+      'यहाँ revise करने के लिए अभी गलत सवाल नहीं हैं।';
+
+  @override
+  String practiceDrillImproveTopic(int count) {
+    return 'इस topic के $count नए सवाल जो आपने अभी नहीं किए।';
+  }
+
+  @override
+  String practiceDrillImproveTrap(int count) {
+    return 'इस प्रकार के $count नए सवाल जो आपने अभी नहीं किए।';
+  }
+
+  @override
+  String practiceDrillImproveShort(int count, int full) {
+    return 'सिर्फ़ $count नए सवाल बचे हैं — पूरे $full के सेट के लिए कम हैं।';
+  }
+
+  @override
+  String get practiceDrillImproveEmpty => 'यहाँ नए सवाल नहीं बचे।';
 
   @override
   String get practiceTrapsEmpty =>
@@ -6226,9 +6274,6 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get practiceLensSure => 'Sure';
-
-  @override
-  String get practiceTopicsReviseTab => 'Revise';
 
   @override
   String get practiceLensTabSure => 'Confident mistakes';
@@ -6254,10 +6299,6 @@ class AppLocalizationsHi extends AppLocalizations {
   @override
   String get practiceGuessTopicsEmpty =>
       'अभी किसी topic में Educated guess के पर्याप्त जवाब नहीं हैं।';
-
-  @override
-  String get practiceReviseTopicsEmpty =>
-      'Accuracy के हिसाब से topics रैंक करने के लिए अभी जवाब कम हैं।';
 
   @override
   String practiceTopicWrongPct(int percent) {

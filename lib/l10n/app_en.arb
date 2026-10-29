@@ -4312,7 +4312,42 @@
   "@practiceTrapsErrors": {
     "placeholders": {"count": {"type": "int"}}
   },
-  "practiceTrapsPractise": "Practise this trap",
+  "practiceImproveScore": "Improve score",
+  "practiceStartNQuestions": "Start {count} questions",
+  "@practiceStartNQuestions": {
+    "placeholders": {"count": {"type": "int"}}
+  },
+  "practiceReviseExistingInstead": "Revise existing instead",
+  "practiceImproveInstead": "Improve score instead",
+  "practiceDrillReviseTopicSure": "You'll go through {count} questions you marked Sure and got wrong. Learning mode — explanation after each.",
+  "@practiceDrillReviseTopicSure": {
+    "placeholders": {"count": {"type": "int"}}
+  },
+  "practiceDrillReviseTopicGuess": "You'll go through {count} questions you marked Educated guess and got wrong. Learning mode — explanation after each.",
+  "@practiceDrillReviseTopicGuess": {
+    "placeholders": {"count": {"type": "int"}}
+  },
+  "practiceDrillReviseTrap": "You'll go through {count} Sure misses of this question type. Learning mode — explanation after each.",
+  "@practiceDrillReviseTrap": {
+    "placeholders": {"count": {"type": "int"}}
+  },
+  "practiceDrillReviseEmpty": "No wrong questions to revise here yet.",
+  "practiceDrillImproveTopic": "{count} new questions from this topic that you haven't tried yet.",
+  "@practiceDrillImproveTopic": {
+    "placeholders": {"count": {"type": "int"}}
+  },
+  "practiceDrillImproveTrap": "{count} new questions of this type that you haven't tried yet.",
+  "@practiceDrillImproveTrap": {
+    "placeholders": {"count": {"type": "int"}}
+  },
+  "practiceDrillImproveShort": "Only {count} new questions are left — not enough for a full {full} question set.",
+  "@practiceDrillImproveShort": {
+    "placeholders": {
+      "count": {"type": "int"},
+      "full": {"type": "int"}
+    }
+  },
+  "practiceDrillImproveEmpty": "No new questions left here.",
   "practiceTrapsEmpty": "Not enough answers yet to spot a question-type pattern.",
   "practiceTrapsInfoTitle": "What these traps are",
   "practiceTrapsInfoBody": "These are question shapes from the bank — such as Match the following or How many of the above — that you miss most when you mark Sure. We cannot yet detect finer traps like misread qualifiers.",
@@ -4322,7 +4357,6 @@
     "placeholders": {"subject": {"type": "String"}}
   },
   "practiceLensSure": "Sure",
-  "practiceTopicsReviseTab": "Revise",
   "practiceLensTabSure": "Confident mistakes",
   "practiceLensTabGuess": "Guess mistakes",
   "practiceLensGuess": "Educated guess",
@@ -4336,7 +4370,6 @@
   },
   "practiceSureTopicsEmpty": "Not enough Sure answers in any topic yet.",
   "practiceGuessTopicsEmpty": "Not enough Educated guesses in any topic yet.",
-  "practiceReviseTopicsEmpty": "Not enough answers yet to rank topics by accuracy.",
   "practiceTopicWrongPct": "{percent}% wrong",
   "@practiceTopicWrongPct": {
     "placeholders": {"percent": {"type": "int"}}

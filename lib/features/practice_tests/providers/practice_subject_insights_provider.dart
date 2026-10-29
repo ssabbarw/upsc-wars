@@ -6,7 +6,19 @@ import '../../../core/providers/user_database_provider.dart';
 import '../domain/practice_subject_insights.dart';
 import 'practice_catalog_provider.dart';
 
-const kPatternPracticeLimit = 10;
+/// Full Improve set size. Below this, the sheet offers a short test or Revise.
+const kInsightImproveSize = 10;
+
+/// Wrong + new question UUIDs for a topic or trap drill.
+class InsightDrillPool {
+  const InsightDrillPool({
+    required this.reviseUuids,
+    required this.improveUuids,
+  });
+
+  final List<String> reviseUuids;
+  final List<String> improveUuids;
+}
 
 /// Season confident-mistakes and attempt-more topics for one subject.
 final practiceSubjectInsightsProvider = FutureProvider.autoDispose
@@ -118,13 +130,122 @@ Future<PracticeSubjectInsights> loadPracticeSubjectInsights(
   );
 }
 
-/// UUIDs of this stem pattern in [subject], confident-wrongs first.
-Future<List<String>> loadPatternPracticeUuids(
+Future<InsightDrillPool> loadTopicDrillPool(
+  UserDatabase db, {
+  required String subject,
+  required String topic,
+  required bool sureLens,
+  required DateTime seasonStart,
+  int improveLimit = kInsightImproveSize,
+}) async {
+  final confidence = sureLens ? 'very_sure' : 'somewhat_sure';
+  final season = Variable.withInt(seasonStart.millisecondsSinceEpoch ~/ 1000);
+  final wrongRows = await db
+      .customSelect(
+        '''
+        SELECT a.question_uuid AS uuid
+        FROM attempts a
+        INNER JOIN questions q ON q.uuid = a.question_uuid
+        INNER JOIN sessions s ON s.id = a.session_id
+        WHERE q.subject = ?
+          AND q.topic = ?
+          AND s.status = 'completed'
+          AND s.completed_at >= ?
+          AND a.is_correct = 0
+          AND a.confidence = ?
+        GROUP BY a.question_uuid
+        ORDER BY MAX(a.attempted_at) DESC
+        ''',
+        variables: [
+          Variable.withString(subject),
+          Variable.withString(topic),
+          season,
+          Variable.withString(confidence),
+        ],
+        readsFrom: {db.sessionQuestions, db.questions, db.sessions},
+      )
+      .get();
+  final attempted = await _attemptedUuids(db);
+  final newRows = await db
+      .customSelect(
+        '''
+        SELECT uuid
+        FROM questions
+        WHERE subject = ?
+          AND topic = ?
+        ORDER BY RANDOM()
+        ''',
+        variables: [
+          Variable.withString(subject),
+          Variable.withString(topic),
+        ],
+        readsFrom: {db.questions},
+      )
+      .get();
+  final improve = <String>[];
+  for (final row in newRows) {
+    final id = row.read<String>('uuid');
+    if (attempted.contains(id)) continue;
+    improve.add(id);
+    if (improve.length >= improveLimit) break;
+  }
+  return InsightDrillPool(
+    reviseUuids: [for (final r in wrongRows) r.read<String>('uuid')],
+    improveUuids: improve,
+  );
+}
+
+Future<InsightDrillPool> loadTrapDrillPool(
   UserDatabase db, {
   required String subject,
   required SubjectMcqPatternStat pattern,
-  int limit = kPatternPracticeLimit,
+  required DateTime seasonStart,
+  int improveLimit = kInsightImproveSize,
 }) async {
+  final ofPattern = await _patternUuids(db, subject, pattern);
+  if (ofPattern.isEmpty) {
+    return const InsightDrillPool(reviseUuids: [], improveUuids: []);
+  }
+  final season = Variable.withInt(seasonStart.millisecondsSinceEpoch ~/ 1000);
+  final wrongRows = await db
+      .customSelect(
+        '''
+        SELECT a.question_uuid AS uuid
+        FROM attempts a
+        INNER JOIN questions q ON q.uuid = a.question_uuid
+        INNER JOIN sessions s ON s.id = a.session_id
+        WHERE q.subject = ?
+          AND s.status = 'completed'
+          AND s.completed_at >= ?
+          AND a.is_correct = 0
+          AND a.confidence = 'very_sure'
+        GROUP BY a.question_uuid
+        ORDER BY MAX(a.attempted_at) DESC
+        ''',
+        variables: [Variable.withString(subject), season],
+        readsFrom: {db.sessionQuestions, db.questions, db.sessions},
+      )
+      .get();
+  final revise = [
+    for (final r in wrongRows)
+      if (ofPattern.contains(r.read<String>('uuid'))) r.read<String>('uuid'),
+  ];
+  final attempted = await _attemptedUuids(db);
+  final unused = ofPattern.difference(attempted).toList()..shuffle();
+  return InsightDrillPool(
+    reviseUuids: revise,
+    improveUuids: unused.take(improveLimit).toList(),
+  );
+}
+
+Future<Set<String>> _attemptedUuids(UserDatabase db) =>
+    db.sessionQuestionsDao.getAllAttemptedQuestionUuids();
+
+Future<Set<String>> _patternUuids(
+  UserDatabase db,
+  String subject,
+  SubjectMcqPatternStat pattern,
+) async {
   final bank = await db
       .customSelect(
         '''
@@ -136,42 +257,9 @@ Future<List<String>> loadPatternPracticeUuids(
         readsFrom: {db.questions},
       )
       .get();
-  final ofPattern = <String>[];
-  for (final row in bank) {
-    final type = row.read<String>('qtype');
-    final classified = classifyUpscMcqPattern(type);
-    final matches =
-        classified == pattern.pattern &&
-        (classified != UpscMcqPattern.other ||
-            _normalizeForMatch(type) == pattern.otherSlug);
-    if (matches) ofPattern.add(row.read<String>('uuid'));
-  }
-  if (ofPattern.isEmpty) return const [];
-
-  final wrongRows = await db
-      .customSelect(
-        '''
-        SELECT DISTINCT a.question_uuid AS uuid
-        FROM attempts a
-        INNER JOIN questions q ON q.uuid = a.question_uuid
-        INNER JOIN sessions s ON s.id = a.session_id
-        WHERE q.subject = ?
-          AND s.status = 'completed'
-          AND a.is_correct = 0
-          AND a.confidence IN ('very_sure', 'somewhat_sure')
-        ''',
-        variables: [Variable.withString(subject)],
-        readsFrom: {db.sessionQuestions, db.questions, db.sessions},
-      )
-      .get();
-  final wrong = {for (final r in wrongRows) r.read<String>('uuid')};
-
-  final prioritized = [
-    ...ofPattern.where(wrong.contains),
-    ...ofPattern.where((id) => !wrong.contains(id)),
-  ];
-  return prioritized.take(limit).toList();
+  return {
+    for (final row in bank)
+      if (matchesMcqPattern(row.read<String>('qtype'), pattern))
+        row.read<String>('uuid'),
+  };
 }
-
-String _normalizeForMatch(String raw) =>
-    raw.trim().toLowerCase().replaceAll('_', '-');

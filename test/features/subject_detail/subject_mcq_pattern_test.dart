@@ -70,4 +70,16 @@ void main() {
       UpscMcqPattern.direct,
     ]);
   });
+
+  test('matchesMcqPattern groups hyphen and underscore slugs', () {
+    const howMany = SubjectMcqPatternStat(
+      pattern: UpscMcqPattern.howMany,
+      otherSlug: null,
+      wrong: 1,
+      attempted: 2,
+    );
+    expect(matchesMcqPattern('how-many', howMany), isTrue);
+    expect(matchesMcqPattern('multi_statement_count', howMany), isTrue);
+    expect(matchesMcqPattern('direct', howMany), isFalse);
+  });
 }

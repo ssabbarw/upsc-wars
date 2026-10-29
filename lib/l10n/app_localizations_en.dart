@@ -6296,7 +6296,55 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get practiceTrapsPractise => 'Practise this trap';
+  String get practiceImproveScore => 'Improve score';
+
+  @override
+  String practiceStartNQuestions(int count) {
+    return 'Start $count questions';
+  }
+
+  @override
+  String get practiceReviseExistingInstead => 'Revise existing instead';
+
+  @override
+  String get practiceImproveInstead => 'Improve score instead';
+
+  @override
+  String practiceDrillReviseTopicSure(int count) {
+    return 'You\'ll go through $count questions you marked Sure and got wrong. Learning mode — explanation after each.';
+  }
+
+  @override
+  String practiceDrillReviseTopicGuess(int count) {
+    return 'You\'ll go through $count questions you marked Educated guess and got wrong. Learning mode — explanation after each.';
+  }
+
+  @override
+  String practiceDrillReviseTrap(int count) {
+    return 'You\'ll go through $count Sure misses of this question type. Learning mode — explanation after each.';
+  }
+
+  @override
+  String get practiceDrillReviseEmpty =>
+      'No wrong questions to revise here yet.';
+
+  @override
+  String practiceDrillImproveTopic(int count) {
+    return '$count new questions from this topic that you haven\'t tried yet.';
+  }
+
+  @override
+  String practiceDrillImproveTrap(int count) {
+    return '$count new questions of this type that you haven\'t tried yet.';
+  }
+
+  @override
+  String practiceDrillImproveShort(int count, int full) {
+    return 'Only $count new questions are left — not enough for a full $full question set.';
+  }
+
+  @override
+  String get practiceDrillImproveEmpty => 'No new questions left here.';
 
   @override
   String get practiceTrapsEmpty =>
@@ -6319,9 +6367,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get practiceLensSure => 'Sure';
-
-  @override
-  String get practiceTopicsReviseTab => 'Revise';
 
   @override
   String get practiceLensTabSure => 'Confident mistakes';
@@ -6347,10 +6392,6 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get practiceGuessTopicsEmpty =>
       'Not enough Educated guesses in any topic yet.';
-
-  @override
-  String get practiceReviseTopicsEmpty =>
-      'Not enough answers yet to rank topics by accuracy.';
 
   @override
   String practiceTopicWrongPct(int percent) {
