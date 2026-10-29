@@ -1376,11 +1376,11 @@ abstract class AppLocalizations {
   /// **'Made with love '**
   String get profileMadeWithLove;
 
-  /// No description provided for @profileInDelhi.
+  /// No description provided for @profileInBengaluru.
   ///
   /// In en, this message translates to:
-  /// **' in Delhi'**
-  String get profileInDelhi;
+  /// **' in Bengaluru'**
+  String get profileInBengaluru;
 
   /// No description provided for @profileTitle.
   ///

@@ -178,7 +178,7 @@ class AppLocalizationsHi extends AppLocalizations {
       'लंबे समय तक पढ़ने के लिए आरामदायक कंट्रास्ट।';
 
   @override
-  String get settingsReadingSize => 'पढ़ने का साइज़';
+  String get settingsReadingSize => 'Text का साइज़';
 
   @override
   String get settingsReadingSizeSubtitle => 'सवाल और explanation का टेक्स्ट।';
@@ -756,7 +756,7 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String profileAppVersion(String version) {
-    return 'ऐप वर्ज़न: $version';
+    return 'Current app version: $version';
   }
 
   @override
@@ -778,10 +778,10 @@ class AppLocalizationsHi extends AppLocalizations {
   String get progressNotStarted => 'शुरू नहीं हुआ';
 
   @override
-  String get profileMadeWithLove => 'प्यार से बनाया ';
+  String get profileMadeWithLove => 'Made with love ';
 
   @override
-  String get profileInDelhi => ' दिल्ली में';
+  String get profileInBengaluru => ' बेंगलुरु में';
 
   @override
   String get profileTitle => 'Profile';

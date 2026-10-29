@@ -643,6 +643,7 @@ class _ProfileFooter extends ConsumerWidget {
       color: scheme.onSurfaceVariant,
       height: 1.45,
     );
+    final l10n = context.l10n;
     final versionLabel = ref
         .watch(packageInfoProvider)
         .maybeWhen(data: appVersionLabel, orElse: () => '');
@@ -650,7 +651,7 @@ class _ProfileFooter extends ConsumerWidget {
       children: [
         if (versionLabel.isNotEmpty) ...[
           Text(
-            'Current app version: $versionLabel',
+            l10n.profileAppVersion(versionLabel),
             textAlign: TextAlign.center,
             style: style,
           ),
@@ -660,13 +661,13 @@ class _ProfileFooter extends ConsumerWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text('Made with love ', style: style),
+            Text(l10n.profileMadeWithLove, style: style),
             Icon(
               Icons.favorite,
               size: 15,
               color: scheme.error.withValues(alpha: 0.9),
             ),
-            Text(' in Delhi', style: style),
+            Text(l10n.profileInBengaluru, style: style),
           ],
         ),
       ],

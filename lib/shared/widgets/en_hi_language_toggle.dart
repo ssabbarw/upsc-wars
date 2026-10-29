@@ -79,7 +79,7 @@ class _EnHiLanguageToggleState extends State<EnHiLanguageToggle> {
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 7),
             decoration: BoxDecoration(
               color: selected ? scheme.primary : AppColors.transparent,
-              borderRadius: BorderRadius.circular(AppRadius.sm),
+              borderRadius: BorderRadius.circular(AppRadius.pill),
             ),
             child: Text(
               label,
@@ -99,8 +99,8 @@ class _EnHiLanguageToggleState extends State<EnHiLanguageToggle> {
         padding: const EdgeInsets.all(2),
         decoration: BoxDecoration(
           color: scheme.surfaceContainerLow,
-          borderRadius: BorderRadius.circular(AppRadius.md),
-          border: Border.all(color: borderColor, width: 0.5),
+          borderRadius: BorderRadius.circular(AppRadius.pill),
+          border: Border.all(color: borderColor),
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,

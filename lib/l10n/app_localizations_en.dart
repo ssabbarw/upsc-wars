@@ -797,7 +797,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get profileMadeWithLove => 'Made with love ';
 
   @override
-  String get profileInDelhi => ' in Delhi';
+  String get profileInBengaluru => ' in Bengaluru';
 
   @override
   String get profileTitle => 'Profile';
