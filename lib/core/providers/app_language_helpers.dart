@@ -42,6 +42,7 @@ Future<void> persistAppLanguage(WidgetRef ref, String lang) async {
 
   final busy = ref.read(languageSwitchBusyProvider.notifier);
   busy.setBusy(true);
+  final started = Stopwatch()..start();
   try {
     prefs.language = normalized;
     ref.invalidate(appLanguageProvider);
@@ -50,9 +51,13 @@ Future<void> persistAppLanguage(WidgetRef ref, String lang) async {
       ref,
       AppLanguageSwitchedEvent(fromLanguage: previous, toLanguage: normalized),
     );
-    // Keep the loader up briefly so the switch feels intentional even when
-    // prefs resolve immediately.
-    await Future<void>.delayed(const Duration(milliseconds: 350));
+    // Hold the overlay for at least a second so a fast switch still reads as
+    // a deliberate change. Longer switches keep it up until they finish.
+    const minimum = Duration(seconds: 1);
+    final remaining = minimum - started.elapsed;
+    if (remaining > Duration.zero) {
+      await Future<void>.delayed(remaining);
+    }
   } finally {
     busy.setBusy(false);
   }

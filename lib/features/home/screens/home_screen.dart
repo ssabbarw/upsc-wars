@@ -967,13 +967,6 @@ class _PyqYearCard extends StatelessWidget {
                   fontWeight: FontWeight.w700,
                 ),
               ),
-              const SizedBox(height: 2),
-              Text(
-                context.l10n.practiceQuestionCount(100),
-                style: AppTextStyles.caption().copyWith(
-                  color: scheme.onSurfaceVariant,
-                ),
-              ),
               const SizedBox(height: AppSpacing.md),
               Container(
                 height: 4,
