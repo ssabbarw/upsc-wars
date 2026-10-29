@@ -22,6 +22,7 @@ import '../core/providers/analytics_provider.dart';
 import '../core/constants/app_constants.dart';
 import '../core/constants/prelims_debug_flags.dart';
 import '../core/crashlytics/firebase_crashlytics_bootstrap.dart';
+import '../core/presentation/topic_label.dart';
 import '../core/providers/app_bootstrap.dart';
 import '../core/providers/kill_switch_provider.dart';
 import '../core/services/battle_messaging_service.dart';
@@ -336,6 +337,8 @@ class _RootMaterialApp extends HookConsumerWidget {
       ref.watch(appLanguageProvider).value ?? prefs.value?.language,
     );
     final languageSwitchBusy = ref.watch(languageSwitchBusyProvider);
+    // Warm Hindi topic labels so lists can read them without a second fetch.
+    ref.watch(topicHindiNamesProvider);
     AppL10n.locale = Locale(language);
     // Month / weekday names in `DateFormat(...)` follow the app language.
     Intl.defaultLocale = language;

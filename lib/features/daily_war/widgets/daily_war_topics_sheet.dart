@@ -225,7 +225,7 @@ class _TopicPracticeRow extends ConsumerWidget {
                 ),
                 const SizedBox(height: 2),
                 Text(
-                  topic.topic,
+                  DailyWarCopy.topicDisplay(topic.topic),
                   style: AppTextStyles.label().copyWith(
                     color: scheme.onSurface,
                     fontWeight: FontWeight.w700,

@@ -168,6 +168,33 @@ void main() {
     expect(insights.sureTopics.map((t) => t.topicKey), ['b', 'a']);
   });
 
+  test('educated-guess net marks follow +2 / -2/3', () {
+    expect(guessNetVerdict(correct: 0, wrong: 0), isNull);
+    expect(guessNetVerdict(correct: 1, wrong: 3), isNull);
+    expect(guessNetVerdict(correct: 0, wrong: 1), GuessNetVerdict.negative);
+    expect(guessNetVerdict(correct: 1, wrong: 4), GuessNetVerdict.negative);
+    expect(guessNetVerdict(correct: 1, wrong: 0), GuessNetVerdict.positive);
+    expect(guessNetVerdict(correct: 2, wrong: 5), GuessNetVerdict.positive);
+  });
+
+  test('topic stats include thin sure and guess rows', () {
+    final insights = assemblePracticeSubjectInsights(
+      displayNames: const {'rights': 'Rights'},
+      sureMinTopic: 1,
+      guessMinTopic: 1,
+      topics: [
+        _topic(
+          topic: 'rights',
+          sureCorrect: 1,
+          sureWrong: 1,
+          educatedGuessCorrect: 2,
+        ),
+      ],
+    );
+    expect(insights.sureTopics.single.topicKey, 'rights');
+    expect(insights.guessTopics.single.topicKey, 'rights');
+  });
+
   test('keeps sure and guess content traps apart', () {
     const sure = SubjectTrapStat(
       trapType: 'entity-swap',

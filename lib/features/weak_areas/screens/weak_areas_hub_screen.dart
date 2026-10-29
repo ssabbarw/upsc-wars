@@ -8,6 +8,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../../core/database/user_db.dart' show UserTopicStat;
 import '../../../core/constants/subject_constants.dart';
 import '../../../core/domain/entities/revision_queue_item.dart';
+import '../../../core/presentation/topic_label.dart';
 import '../../../core/providers/catalog_providers.dart';
 import '../../../core/providers/user_database_provider.dart';
 import '../../../core/theme/app_colors.dart';
@@ -304,6 +305,10 @@ class _TopicRow extends StatelessWidget {
   Widget build(BuildContext context) {
     final subjectDisplayName =
         SubjectConstants.bySlug(group.subject)?.displayName ?? group.subject;
+    final topicLabel = localizedTopicName(
+      group.topic,
+      language: Localizations.localeOf(context).languageCode,
+    );
     return Material(
       color: AppColors.transparent,
       child: InkWell(
@@ -314,7 +319,7 @@ class _TopicRow extends StatelessWidget {
             subject: group.subject,
             topic: group.topic,
             subjectDisplayName: subjectDisplayName,
-            topicDisplayName: group.topic,
+            topicDisplayName: topicLabel,
             availableQuestionCount: group.questionCount,
             topicCountWhenSubjectOnly: 0,
             onSessionCreated: (id) => context.push('/test/$id'),
@@ -334,7 +339,7 @@ class _TopicRow extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                group.topic,
+                topicLabel,
                 style: AppTextStyles.bodyMd().copyWith(color: scheme.onSurface),
               ),
               const SizedBox(height: 2),

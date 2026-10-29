@@ -14,6 +14,7 @@ import '../../../core/analytics/screen_flow_analytics.dart';
 import '../../../core/domain/entities/revision_queue_item.dart';
 import '../../../core/domain/entities/session_result.dart';
 import '../../../core/domain/entities/test_question.dart';
+import '../../../core/presentation/topic_label.dart';
 import '../../../core/providers/catalog_providers.dart';
 import '../../../core/providers/prefs_provider.dart';
 import '../../../core/theme/app_colors.dart';
@@ -978,7 +979,10 @@ class _TopicAccuracyList extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Text(
-                  row.topic,
+                  localizedTopicName(
+                    row.topic,
+                    language: Localizations.localeOf(context).languageCode,
+                  ),
                   style: AppTextStyles.caption(),
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,

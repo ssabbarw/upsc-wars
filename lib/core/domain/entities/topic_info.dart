@@ -26,4 +26,18 @@ class TopicInfo {
 
   /// Wrong attempts with Educated-guess confidence (lifetime).
   final int dangerEducatedGuessWrong;
+
+  TopicInfo copyWith({String? displayName}) {
+    return TopicInfo(
+      topic: topic,
+      subject: subject,
+      displayName: displayName ?? this.displayName,
+      questionCount: questionCount,
+      attemptCount: attemptCount,
+      accuracyPercent: accuracyPercent,
+      accuracyTier: accuracyTier,
+      dangerSureWrong: dangerSureWrong,
+      dangerEducatedGuessWrong: dangerEducatedGuessWrong,
+    );
+  }
 }

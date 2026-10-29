@@ -168,6 +168,15 @@ class ResultsScreen extends ConsumerWidget {
         final result = next.requireValue;
         if (isInsightImproveFeature(result.analyticsFeatureKey)) {
           ref.invalidate(practiceSubjectInsightsProvider(result.subject));
+          final topic = result.topic;
+          if (topic != null && topic.isNotEmpty) {
+            ref.invalidate(
+              practiceTopicInsightsProvider((
+                subject: result.subject,
+                topic: topic,
+              )),
+            );
+          }
         }
         if (result.subject == QuestionSourceConstants.dailyCaSessionSubject) {
           final iso = result.topic;

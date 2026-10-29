@@ -35,8 +35,8 @@ class InsightDrillTarget {
     required this.subject,
     required this.trap,
     required this.title,
-  }) : topicKey = null,
-       sureLens = true,
+    this.topicKey,
+  }) : sureLens = true,
        kind = InsightDrillKind.trap;
 
   final InsightDrillKind kind;
@@ -111,6 +111,7 @@ class _InsightDrillSheetState extends ConsumerState<_InsightDrillSheet> {
           : await loadTrapDrillPool(
               db,
               subject: target.subject,
+              topic: target.topicKey,
               trapType: target.trap!.trapType,
               seasonStart: catalog.season.start,
             );

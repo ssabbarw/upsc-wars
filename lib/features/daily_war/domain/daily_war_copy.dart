@@ -1,6 +1,7 @@
 import 'package:intl/intl.dart';
 
 import '../../../core/constants/subject_constants.dart';
+import '../../../core/presentation/topic_label.dart';
 import '../domain/daily_war_models.dart';
 import '../domain/daily_war_schedule.dart';
 import '../../../l10n/l10n.dart';
@@ -55,12 +56,17 @@ abstract final class DailyWarCopy {
     return topics.map((t) => subjectDisplay(t.subjectSlug)).toSet().join(' + ');
   }
 
+  static String topicDisplay(String topic) => localizedTopicName(
+    topic,
+    language: AppL10n.locale.languageCode,
+  );
+
   static String topicsLine(
     List<DailyWarTopicRef> topics, {
     String sep = ' + ',
   }) {
     if (topics.isEmpty) return '';
-    return topics.map((t) => t.topic).join(sep);
+    return topics.map((t) => topicDisplay(t.topic)).join(sep);
   }
 
   /// e.g. `Sat · 2 Aug` from `YYYY-MM-DD`.

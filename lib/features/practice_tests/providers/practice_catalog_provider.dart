@@ -1,6 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/constants/prelims_countdown.dart';
+import '../../../core/presentation/topic_label.dart';
+import '../../../core/providers/app_language_helpers.dart';
 import '../../../core/database/user_db.dart';
 import '../../../core/providers/catalog_providers.dart';
 import '../../../core/providers/prelims_date_provider.dart';
@@ -49,7 +51,9 @@ final practiceCatalogProvider = FutureProvider<PracticeCatalog>((ref) async {
       ref.watch(prelimsDateProvider).value ?? PrelimsCountdown.prelimsDate;
   final season = practiceSeasonAt(prelims, DateTime.now());
   final db = ref.watch(userDatabaseProvider);
-  final language = await ref.watch(appLanguageProvider.future);
+  final language = normalizeAppLanguage(
+    await ref.watch(appLanguageProvider.future),
+  );
   return loadPracticeCatalog(db, season: season, language: language);
 });
 
@@ -81,9 +85,11 @@ Future<PracticeCatalog> loadPracticeCatalog(
 
   final names = <String, String>{};
   if (language == 'hi') {
+    names.addAll(await loadTopicHindiNames());
     final translations = await db.select(db.topicTranslations).get();
     for (final row in translations) {
-      names[row.englishName] = row.hindiName;
+      final hindi = row.hindiName.trim();
+      if (hindi.isNotEmpty) names[row.englishName] = hindi;
     }
   }
 

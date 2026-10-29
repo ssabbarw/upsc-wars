@@ -463,7 +463,10 @@ class _MondayDock extends StatelessWidget {
     final subjects = DailyWarCopy.subjectsLine(mondayTopics);
     final topicLine = mondayTopics.isEmpty
         ? appL10n.dwTopicsMonday
-        : mondayTopics.map((t) => t.topic).take(2).join(' · ');
+        : mondayTopics
+              .map((t) => DailyWarCopy.topicDisplay(t.topic))
+              .take(2)
+              .join(' · ');
 
     final cta = summary.attemptedPartial && summary.missedTopics.isNotEmpty
         ? appL10n.dwCatchUp

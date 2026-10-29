@@ -2,6 +2,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../domain/entities/subject_info.dart';
 import '../domain/entities/topic_info.dart';
+import '../presentation/topic_label.dart';
 import '../domain/repositories/create_session_repository.dart';
 import '../domain/repositories/test_catalog_repository.dart';
 import '../../features/subject_test/data/repositories/test_catalog_repository_impl.dart';
@@ -98,7 +99,20 @@ Future<List<SubjectInfo>> subjectTestList(Ref ref) async {
 Future<List<TopicInfo>> topicTestTopics(Ref ref, String subject) async {
   final lang = await ref.watch(appLanguageProvider.future);
   final uc = await ref.watch(getTopicListUseCaseProvider.future);
-  return uc.execute(subject, lang);
+  final topics = await uc.execute(subject, lang);
+  if (lang != 'hi') return topics;
+  final hindi = await ref.watch(topicHindiNamesProvider.future);
+  return [
+    for (final topic in topics)
+      topic.copyWith(
+        displayName: resolvedTopicDisplayName(
+          englishName: topic.topic,
+          currentDisplayName: topic.displayName,
+          language: lang,
+          hindiNames: hindi,
+        ),
+      ),
+  ];
 }
 
 @Riverpod(keepAlive: true)

@@ -228,6 +228,18 @@ InsightBand guessBandFor({
   return InsightBand.mixed;
 }
 
+/// Net Prelims marks from Educated guesses: +2 correct, −2/3 wrong.
+enum GuessNetVerdict { negative, positive }
+
+/// Null when there are no guesses, or marks sit at break-even.
+GuessNetVerdict? guessNetVerdict({required int correct, required int wrong}) {
+  if (correct + wrong <= 0) return null;
+  final sign = 3 * correct - wrong;
+  if (sign < 0) return GuessNetVerdict.negative;
+  if (sign > 0) return GuessNetVerdict.positive;
+  return null;
+}
+
 /// True when Educated guesses in [topic] clear the attempt-more bar.
 bool isAttemptMoreTopic(PracticeTopicRollup topic) {
   return guessBandFor(
@@ -262,6 +274,8 @@ PracticeSubjectInsights assemblePracticeSubjectInsights({
   required Map<String, String> displayNames,
   List<SubjectTrapStat> sureTraps = const [],
   List<SubjectTrapStat> guessTraps = const [],
+  int sureMinTopic = PracticeInsightRules.sureMinTopic,
+  int guessMinTopic = PracticeInsightRules.guessMinTopic,
 }) {
   final mistakes = <ConfidentMistakeTopic>[];
   final attemptMore = <AttemptMoreTopic>[];
@@ -305,7 +319,7 @@ PracticeSubjectInsights assemblePracticeSubjectInsights({
         ),
       );
     }
-    if (topic.sureTotal >= PracticeInsightRules.sureMinTopic) {
+    if (topic.sureTotal >= sureMinTopic) {
       sureTopics.add(
         LensTopic(
           topicKey: topic.topic,
@@ -316,7 +330,7 @@ PracticeSubjectInsights assemblePracticeSubjectInsights({
         ),
       );
     }
-    if (topic.educatedGuessTotal >= PracticeInsightRules.guessMinTopic) {
+    if (topic.educatedGuessTotal >= guessMinTopic) {
       guessTopics.add(
         LensTopic(
           topicKey: topic.topic,

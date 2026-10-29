@@ -104,6 +104,7 @@ class HomeScreen extends HookConsumerWidget {
         if (seeded || backfilled) {
           ref.invalidate(practiceCatalogProvider);
           ref.invalidate(practiceSubjectInsightsProvider);
+          ref.invalidate(practiceTopicInsightsProvider);
         }
       });
       return null;

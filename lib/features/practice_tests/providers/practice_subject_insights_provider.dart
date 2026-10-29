@@ -22,23 +22,48 @@ class InsightDrillPool {
 
 /// Season confident-mistakes and attempt-more topics for one subject.
 final practiceSubjectInsightsProvider = FutureProvider.autoDispose
-    .family<PracticeSubjectInsights, String>((ref, subject) async {
-      final catalog = await ref.watch(practiceCatalogProvider.future);
-      final db = ref.watch(userDatabaseProvider);
-      return loadPracticeSubjectInsights(
-        db,
-        subject: subject,
-        seasonStart: catalog.season.start,
-        displayNames: catalog.topicDisplayNames,
-      );
+    .family<PracticeSubjectInsights, String>((ref, subject) {
+      return _loadInsights(ref, subject: subject);
     });
+
+/// Season insights for one topic inside a subject.
+final practiceTopicInsightsProvider = FutureProvider.autoDispose
+    .family<PracticeSubjectInsights, ({String subject, String topic})>((
+      ref,
+      args,
+    ) {
+      return _loadInsights(ref, subject: args.subject, topic: args.topic);
+    });
+
+Future<PracticeSubjectInsights> _loadInsights(
+  Ref ref, {
+  required String subject,
+  String? topic,
+}) async {
+  final catalog = await ref.watch(practiceCatalogProvider.future);
+  final db = ref.watch(userDatabaseProvider);
+  return loadPracticeSubjectInsights(
+    db,
+    subject: subject,
+    topic: topic,
+    seasonStart: catalog.season.start,
+    displayNames: catalog.topicDisplayNames,
+  );
+}
 
 Future<PracticeSubjectInsights> loadPracticeSubjectInsights(
   UserDatabase db, {
   required String subject,
+  String? topic,
   required DateTime seasonStart,
   required Map<String, String> displayNames,
 }) async {
+  final topicFilter = topic == null ? '' : 'AND q.topic = ?';
+  final scopeVars = [
+    Variable.withString(subject),
+    if (topic != null) Variable.withString(topic),
+    Variable.withInt(seasonStart.millisecondsSinceEpoch ~/ 1000),
+  ];
   final rows = await db
       .customSelect(
         '''
@@ -54,15 +79,13 @@ Future<PracticeSubjectInsights> loadPracticeSubjectInsights(
         INNER JOIN questions q ON q.uuid = a.question_uuid
         INNER JOIN sessions s ON s.id = a.session_id
         WHERE q.subject = ?
+          $topicFilter
           AND s.status = 'completed'
           AND s.completed_at >= ?
           AND a.status IN ('correct', 'wrong')
         GROUP BY q.topic
         ''',
-        variables: [
-          Variable.withString(subject),
-          Variable.withInt(seasonStart.millisecondsSinceEpoch ~/ 1000),
-        ],
+        variables: scopeVars,
         readsFrom: {db.sessionQuestions, db.questions, db.sessions},
       )
       .get();
@@ -97,6 +120,7 @@ Future<PracticeSubjectInsights> loadPracticeSubjectInsights(
         INNER JOIN questions q ON q.uuid = a.question_uuid
         INNER JOIN sessions s ON s.id = a.session_id
         WHERE q.subject = ?
+          $topicFilter
           AND s.status = 'completed'
           AND s.completed_at >= ?
           AND a.status IN ('correct', 'wrong')
@@ -105,10 +129,7 @@ Future<PracticeSubjectInsights> loadPracticeSubjectInsights(
           AND TRIM(q.trap_type) != ''
         GROUP BY ttype, a.confidence
         ''',
-        variables: [
-          Variable.withString(subject),
-          Variable.withInt(seasonStart.millisecondsSinceEpoch ~/ 1000),
-        ],
+        variables: scopeVars,
         readsFrom: {db.sessionQuestions, db.questions, db.sessions},
       )
       .get();
@@ -130,6 +151,8 @@ Future<PracticeSubjectInsights> loadPracticeSubjectInsights(
     displayNames: displayNames,
     sureTraps: rankContentTraps(ofConf('very_sure')),
     guessTraps: rankContentTraps(ofConf('somewhat_sure')),
+    sureMinTopic: topic == null ? PracticeInsightRules.sureMinTopic : 1,
+    guessMinTopic: topic == null ? PracticeInsightRules.guessMinTopic : 1,
   );
 }
 
@@ -198,15 +221,17 @@ Future<InsightDrillPool> loadTopicDrillPool(
 Future<InsightDrillPool> loadTrapDrillPool(
   UserDatabase db, {
   required String subject,
+  String? topic,
   required String trapType,
   required DateTime seasonStart,
   int improveLimit = kInsightImproveSize,
 }) async {
-  final ofTrap = await _trapUuids(db, subject, trapType);
+  final ofTrap = await _trapUuids(db, subject, trapType, topic: topic);
   if (ofTrap.isEmpty) {
     return const InsightDrillPool(reviseUuids: [], improveUuids: []);
   }
   final season = Variable.withInt(seasonStart.millisecondsSinceEpoch ~/ 1000);
+  final topicFilter = topic == null ? '' : 'AND q.topic = ?';
   final wrongRows = await db
       .customSelect(
         '''
@@ -215,6 +240,7 @@ Future<InsightDrillPool> loadTrapDrillPool(
         INNER JOIN questions q ON q.uuid = a.question_uuid
         INNER JOIN sessions s ON s.id = a.session_id
         WHERE q.subject = ?
+          $topicFilter
           AND s.status = 'completed'
           AND s.completed_at >= ?
           AND a.is_correct = 0
@@ -222,7 +248,11 @@ Future<InsightDrillPool> loadTrapDrillPool(
         GROUP BY a.question_uuid
         ORDER BY MAX(a.attempted_at) DESC
         ''',
-        variables: [Variable.withString(subject), season],
+        variables: [
+          Variable.withString(subject),
+          if (topic != null) Variable.withString(topic),
+          season,
+        ],
         readsFrom: {db.sessionQuestions, db.questions, db.sessions},
       )
       .get();
@@ -244,18 +274,24 @@ Future<Set<String>> _attemptedUuids(UserDatabase db) =>
 Future<Set<String>> _trapUuids(
   UserDatabase db,
   String subject,
-  String trapType,
-) async {
+  String trapType, {
+  String? topic,
+}) async {
   final want = normalizeTrapType(trapType);
   if (want.isEmpty) return {};
+  final topicFilter = topic == null ? '' : 'AND topic = ?';
   final bank = await db
       .customSelect(
         '''
         SELECT uuid, trap_type AS ttype
         FROM questions
         WHERE subject = ?
+          $topicFilter
         ''',
-        variables: [Variable.withString(subject)],
+        variables: [
+          Variable.withString(subject),
+          if (topic != null) Variable.withString(topic),
+        ],
         readsFrom: {db.questions},
       )
       .get();

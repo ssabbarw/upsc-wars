@@ -6259,7 +6259,16 @@ class AppLocalizationsEn extends AppLocalizations {
   String get practiceReviewLast => 'Review last attempt';
 
   @override
+  String get practiceReviewLastBody => 'See your answers and explanations.';
+
+  @override
   String get practiceReattempt => 'Reattempt';
+
+  @override
+  String get practiceReattemptBody => 'Start again from question 1.';
+
+  @override
+  String get practiceLastScore => 'Last score';
 
   @override
   String get practiceNewSeason =>
@@ -6314,8 +6323,23 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get practiceTrapsLeadSure =>
-      'You marked these Sure, but this trap keeps catching you.';
+  String practiceTrapsLeadSure(String scope) {
+    return 'You may need more revision in this $scope or you are falling for the following traps.';
+  }
+
+  @override
+  String get practiceTrapsScopeSubject => 'subject';
+
+  @override
+  String get practiceTrapsScopeTopic => 'topic';
+
+  @override
+  String get practiceTopicGuessNegative =>
+      'You are losing marks to negative marking when you guess in this topic. Revise this topic.';
+
+  @override
+  String get practiceTopicGuessPositive =>
+      'You are better prepared in this topic than what you feel. You can attempt more from this topic in the exam.';
 
   @override
   String get practiceTrapsReview => 'Review my traps';
@@ -6453,6 +6477,16 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String practiceLensSplit(int correct, int wrong) {
     return '$correct right · $wrong wrong';
+  }
+
+  @override
+  String practiceSureTopicsLead(String subject) {
+    return 'In $subject, you made confident mistakes in the following topics.';
+  }
+
+  @override
+  String practiceGuessTopicsLead(String subject) {
+    return 'In $subject, your guesses are going wrong in these topics.';
   }
 
   @override

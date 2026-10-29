@@ -1,3 +1,6 @@
+import '../../core/presentation/topic_label.dart';
+import '../../l10n/l10n.dart';
+
 /// Push notification → 1-question spot test → lightweight results.
 abstract final class PushSpotTestConstants {
   static const analyticsKey = 'push_spot_test';
@@ -38,5 +41,8 @@ String _slugToLabel(String slug) =>
 String displayTopicLabel(String? slug) {
   final s = slug?.trim();
   if (s == null || s.isEmpty) return '';
-  return _slugToLabel(s);
+  return localizedTopicName(
+    _slugToLabel(s),
+    language: AppL10n.locale.languageCode,
+  );
 }

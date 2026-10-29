@@ -3,6 +3,8 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/constants/subject_constants.dart';
+import '../../../core/presentation/topic_label.dart';
+import '../../../core/providers/app_language_helpers.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
@@ -23,49 +25,89 @@ const _previewTrapCount = 3;
 
 /// Overall performance plus confident-mistake traps and topics.
 class PracticeSubjectInsightsScreen extends ConsumerWidget {
-  const PracticeSubjectInsightsScreen({super.key, required this.subject});
+  const PracticeSubjectInsightsScreen({
+    super.key,
+    required this.subject,
+    this.topic,
+  });
 
   final String subject;
+  final String? topic;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
-    final displayName =
-        SubjectConstants.bySlug(subject)?.displayName ?? subject;
     final catalog = ref.watch(practiceCatalogProvider);
-    final insights = ref.watch(practiceSubjectInsightsProvider(subject));
+    final displayName = topic == null
+        ? (SubjectConstants.bySlug(subject)?.displayName ?? subject)
+        : (catalog.asData?.value.topicDisplayNames[topic] ?? topic!);
+    final insights = topic == null
+        ? ref.watch(practiceSubjectInsightsProvider(subject))
+        : ref.watch(
+            practiceTopicInsightsProvider((subject: subject, topic: topic!)),
+          );
 
-    return DefaultTabController(
-      length: 2,
-      child: Scaffold(
+    return Scaffold(
+      backgroundColor: scheme.surfaceContainerLowest,
+      appBar: AppBar(
+        title: Text(context.l10n.practiceInsightsTitle(displayName)),
         backgroundColor: scheme.surfaceContainerLowest,
-        appBar: AppBar(
-          title: Text(context.l10n.practiceInsightsTitle(displayName)),
-          backgroundColor: scheme.surfaceContainerLowest,
-          surfaceTintColor: AppColors.transparent,
-        ),
-        body: catalog.when(
-          loading: () => const Center(child: CircularProgressIndicator()),
-          error: (_, _) => Center(
-            child: TextButton(
-              onPressed: () => ref.invalidate(practiceCatalogProvider),
-              child: Text(context.l10n.commonRetry),
-            ),
+        surfaceTintColor: AppColors.transparent,
+      ),
+      body: catalog.when(
+        loading: () => const Center(child: CircularProgressIndicator()),
+        error: (_, _) => Center(
+          child: TextButton(
+            onPressed: () => ref.invalidate(practiceCatalogProvider),
+            child: Text(context.l10n.commonRetry),
           ),
-          data: (data) {
-            final progress =
-                data.subjectProgress[subject] ?? PracticeScopeProgress.empty;
-            return insights.when(
-              loading: () => const Center(child: CircularProgressIndicator()),
-              error: (_, _) => Center(
-                child: TextButton(
-                  onPressed: () =>
-                      ref.invalidate(practiceSubjectInsightsProvider(subject)),
-                  child: Text(context.l10n.commonRetry),
-                ),
+        ),
+        data: (data) {
+          final progress = topic == null
+              ? (data.subjectProgress[subject] ?? PracticeScopeProgress.empty)
+              : (data.topicProgress[subject]?[topic] ??
+                    PracticeScopeProgress.empty);
+          return insights.when(
+            loading: () => const Center(child: CircularProgressIndicator()),
+            error: (_, _) => Center(
+              child: TextButton(
+                onPressed: () {
+                  if (topic == null) {
+                    ref.invalidate(practiceSubjectInsightsProvider(subject));
+                  } else {
+                    ref.invalidate(
+                      practiceTopicInsightsProvider((
+                        subject: subject,
+                        topic: topic!,
+                      )),
+                    );
+                  }
+                },
+                child: Text(context.l10n.commonRetry),
               ),
-              data: (value) {
-                return NestedScrollView(
+            ),
+            data: (value) {
+              final lead = _InsightsLead(
+                subject: subject,
+                topic: topic,
+                displayName: displayName,
+                progress: progress,
+                insights: value,
+              );
+              if (topic != null) {
+                return ListView(
+                  padding: const EdgeInsets.fromLTRB(
+                    AppSpacing.lg,
+                    AppSpacing.sm,
+                    AppSpacing.lg,
+                    AppSpacing.xxxl,
+                  ),
+                  children: [lead],
+                );
+              }
+              return DefaultTabController(
+                length: 2,
+                child: NestedScrollView(
                   headerSliverBuilder: (context, _) => [
                     SliverToBoxAdapter(
                       child: Padding(
@@ -75,35 +117,7 @@ class PracticeSubjectInsightsScreen extends ConsumerWidget {
                           AppSpacing.lg,
                           AppSpacing.md,
                         ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(
-                                left: AppSpacing.xs,
-                                bottom: AppSpacing.sm,
-                              ),
-                              child: Text(
-                                context.l10n.practiceOverallPerformance,
-                                style: AppTextStyles.label().copyWith(
-                                  color: scheme.onSurface,
-                                  fontWeight: FontWeight.w700,
-                                ),
-                              ),
-                            ),
-                            PracticeSnapshotCard(
-                              progress: progress,
-                              insights: AsyncValue.data(value),
-                            ),
-                            if (value.sureTraps.isNotEmpty) ...[
-                              const SizedBox(height: AppSpacing.xl),
-                              _TrapsPreview(
-                                subject: subject,
-                                traps: value.sureTraps,
-                              ),
-                            ],
-                          ],
-                        ),
+                        child: lead,
                       ),
                     ),
                     SliverPersistentHeader(
@@ -141,21 +155,189 @@ class PracticeSubjectInsightsScreen extends ConsumerWidget {
                         subject: subject,
                         sureLens: true,
                         topics: value.sureTopics,
+                        lead: context.l10n.practiceSureTopicsLead(displayName),
                         empty: context.l10n.practiceSureTopicsEmpty,
                       ),
                       _TopicList(
                         subject: subject,
                         sureLens: false,
                         topics: value.guessTopics,
+                        lead: context.l10n.practiceGuessTopicsLead(displayName),
                         empty: context.l10n.practiceGuessTopicsEmpty,
                       ),
                     ],
                   ),
-                );
-              },
-            );
-          },
+                ),
+              );
+            },
+          );
+        },
+      ),
+    );
+  }
+}
+
+class _InsightsLead extends StatelessWidget {
+  const _InsightsLead({
+    required this.subject,
+    this.topic,
+    required this.displayName,
+    required this.progress,
+    required this.insights,
+  });
+
+  final String subject;
+  final String? topic;
+  final String displayName;
+  final PracticeScopeProgress progress;
+  final PracticeSubjectInsights insights;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    final guessVerdict = topic == null
+        ? null
+        : guessNetVerdict(
+            correct: insights.educatedGuessCorrect,
+            wrong: insights.educatedGuessWrong,
+          );
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(
+            left: AppSpacing.xs,
+            bottom: AppSpacing.sm,
+          ),
+          child: Text(
+            context.l10n.practiceOverallPerformance,
+            style: AppTextStyles.label().copyWith(
+              color: scheme.onSurface,
+              fontWeight: FontWeight.w700,
+            ),
+          ),
         ),
+        PracticeSnapshotCard(
+          progress: progress,
+          insights: AsyncValue.data(insights),
+        ),
+        if (guessVerdict != null) ...[
+          const SizedBox(height: AppSpacing.lg),
+          _TopicGuessVerdictCard(
+            subject: subject,
+            topic: topic!,
+            title: displayName,
+            verdict: guessVerdict,
+          ),
+        ],
+        if (insights.sureTraps.isNotEmpty) ...[
+          const SizedBox(height: AppSpacing.xl),
+          _TrapsPreview(
+            subject: subject,
+            topic: topic,
+            traps: insights.sureTraps,
+          ),
+        ],
+      ],
+    );
+  }
+}
+
+class _TopicGuessVerdictCard extends StatelessWidget {
+  const _TopicGuessVerdictCard({
+    required this.subject,
+    required this.topic,
+    required this.title,
+    required this.verdict,
+  });
+
+  final String subject;
+  final String topic;
+  final String title;
+  final GuessNetVerdict verdict;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final negative = verdict == GuessNetVerdict.negative;
+    final bg = negative
+        ? (isDark ? AppColors.wrongBgDark : AppColors.wrongBg)
+        : (isDark ? AppColors.correctBgDark : AppColors.correctBg);
+    final accent = negative
+        ? (isDark ? AppColors.wrongTextDark : AppColors.wrong)
+        : (isDark ? AppColors.correctTextDark : AppColors.correct);
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(AppSpacing.lg),
+      decoration: BoxDecoration(
+        color: bg,
+        borderRadius: BorderRadius.circular(AppRadius.lg),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Icon(
+                negative
+                    ? Icons.warning_amber_rounded
+                    : Icons.trending_up_rounded,
+                size: 22,
+                color: accent,
+              ),
+              const SizedBox(width: AppSpacing.sm),
+              Expanded(
+                child: Text(
+                  negative
+                      ? context.l10n.practiceTopicGuessNegative
+                      : context.l10n.practiceTopicGuessPositive,
+                  style: AppTextStyles.bodySm().copyWith(
+                    color: scheme.onSurface,
+                    height: 1.4,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: AppSpacing.md),
+          SizedBox(
+            width: double.infinity,
+            child: negative
+                ? OutlinedButton(
+                    onPressed: () => showInsightDrillSheet(
+                      context,
+                      target: InsightDrillTarget.topic(
+                        subject: subject,
+                        topicKey: topic,
+                        title: title,
+                        sureLens: false,
+                      ),
+                      intent: InsightDrillIntent.revise,
+                    ),
+                    style: OutlinedButton.styleFrom(
+                      foregroundColor: AppColors.primary,
+                      side: const BorderSide(color: AppColors.primary),
+                    ),
+                    child: Text(context.l10n.practiceReviseIncorrects),
+                  )
+                : FilledButton(
+                    onPressed: () => showInsightDrillSheet(
+                      context,
+                      target: InsightDrillTarget.topic(
+                        subject: subject,
+                        topicKey: topic,
+                        title: title,
+                        sureLens: false,
+                      ),
+                      intent: InsightDrillIntent.improve,
+                    ),
+                    child: Text(context.l10n.practiceImproveScore),
+                  ),
+          ),
+        ],
       ),
     );
   }
@@ -188,75 +370,91 @@ class _TopicTabBarDelegate extends SliverPersistentHeaderDelegate {
   }
 }
 
-class _TopicList extends StatelessWidget {
+class _TopicList extends ConsumerWidget {
   const _TopicList({
     required this.subject,
     required this.sureLens,
     required this.topics,
+    required this.lead,
     required this.empty,
   });
 
   final String subject;
   final bool sureLens;
   final List<LensTopic> topics;
+  final String lead;
   final String empty;
 
   @override
-  Widget build(BuildContext context) {
-    if (topics.isEmpty) {
-      return ListView(
-        padding: const EdgeInsets.fromLTRB(
-          AppSpacing.lg,
-          AppSpacing.md,
-          AppSpacing.lg,
-          AppSpacing.xxxl,
-        ),
-        children: [_EmptyNote(empty)],
-      );
-    }
-    return ListView.separated(
+  Widget build(BuildContext context, WidgetRef ref) {
+    final scheme = Theme.of(context).colorScheme;
+    final language = watchAppLanguage(ref);
+    final hindi = ref.watch(topicHindiNamesProvider).asData?.value;
+    String titleOf(LensTopic topic) => localizedTopicName(
+      topic.topicKey,
+      language: language,
+      hindiNames: hindi,
+    );
+    return ListView(
       padding: const EdgeInsets.fromLTRB(
         AppSpacing.lg,
         AppSpacing.md,
         AppSpacing.lg,
         AppSpacing.xxxl,
       ),
-      itemCount: topics.length,
-      separatorBuilder: (_, _) => const SizedBox(height: AppSpacing.sm),
-      itemBuilder: (context, index) {
-        final topic = topics[index];
-        return _TopicRow(
-          topic: topic,
-          onRevise: () => showInsightDrillSheet(
-            context,
-            target: InsightDrillTarget.topic(
-              subject: subject,
-              topicKey: topic.topicKey,
-              title: topic.displayName,
-              sureLens: sureLens,
-            ),
-            intent: InsightDrillIntent.revise,
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(
+            left: AppSpacing.xs,
+            bottom: AppSpacing.md,
           ),
-          onImprove: () => showInsightDrillSheet(
-            context,
-            target: InsightDrillTarget.topic(
-              subject: subject,
-              topicKey: topic.topicKey,
-              title: topic.displayName,
-              sureLens: sureLens,
+          child: Text(
+            lead,
+            style: AppTextStyles.bodySm().copyWith(
+              color: scheme.onSurfaceVariant,
+              height: 1.4,
             ),
-            intent: InsightDrillIntent.improve,
           ),
-        );
-      },
+        ),
+        if (topics.isEmpty)
+          _EmptyNote(empty)
+        else
+          for (var i = 0; i < topics.length; i++) ...[
+            if (i > 0) const SizedBox(height: AppSpacing.sm),
+            _TopicRow(
+              topic: topics[i],
+              onRevise: () => showInsightDrillSheet(
+                context,
+                target: InsightDrillTarget.topic(
+                  subject: subject,
+                  topicKey: topics[i].topicKey,
+                  title: titleOf(topics[i]),
+                  sureLens: sureLens,
+                ),
+                intent: InsightDrillIntent.revise,
+              ),
+              onImprove: () => showInsightDrillSheet(
+                context,
+                target: InsightDrillTarget.topic(
+                  subject: subject,
+                  topicKey: topics[i].topicKey,
+                  title: titleOf(topics[i]),
+                  sureLens: sureLens,
+                ),
+                intent: InsightDrillIntent.improve,
+              ),
+            ),
+          ],
+      ],
     );
   }
 }
 
 class _TrapsPreview extends StatelessWidget {
-  const _TrapsPreview({required this.subject, required this.traps});
+  const _TrapsPreview({required this.subject, this.topic, required this.traps});
 
   final String subject;
+  final String? topic;
   final List<SubjectTrapStat> traps;
 
   @override
@@ -298,7 +496,11 @@ class _TrapsPreview extends StatelessWidget {
           ),
           const SizedBox(height: AppSpacing.sm),
           Text(
-            context.l10n.practiceTrapsLeadSure,
+            context.l10n.practiceTrapsLeadSure(
+              topic == null
+                  ? context.l10n.practiceTrapsScopeSubject
+                  : context.l10n.practiceTrapsScopeTopic,
+            ),
             style: AppTextStyles.bodySm().copyWith(
               color: scheme.onSurface,
               height: 1.4,
@@ -313,9 +515,13 @@ class _TrapsPreview extends StatelessWidget {
           SizedBox(
             width: double.infinity,
             child: FilledButton(
-              onPressed: () => context.push(
-                '/subject/${Uri.encodeComponent(subject)}/insights/traps',
-              ),
+              onPressed: () {
+                final encodedSubject = Uri.encodeComponent(subject);
+                final path = topic == null
+                    ? '/subject/$encodedSubject/insights/traps'
+                    : '/subject/$encodedSubject/topic/${Uri.encodeComponent(topic!)}/insights/traps';
+                context.push(path);
+              },
               style: FilledButton.styleFrom(
                 backgroundColor: AppColors.primary,
                 foregroundColor: AppColors.onPrimary,
@@ -403,7 +609,7 @@ class _TrapPreviewRow extends ConsumerWidget {
   }
 }
 
-class _TopicRow extends StatelessWidget {
+class _TopicRow extends ConsumerWidget {
   const _TopicRow({
     required this.topic,
     required this.onRevise,
@@ -415,7 +621,14 @@ class _TopicRow extends StatelessWidget {
   final VoidCallback onImprove;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final language = watchAppLanguage(ref);
+    final hindi = ref.watch(topicHindiNamesProvider).asData?.value;
+    final title = localizedTopicName(
+      topic.topicKey,
+      language: language,
+      hindiNames: hindi,
+    );
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final visual = practiceTopicVisual(topic.topicKey, isDark: isDark);
@@ -448,7 +661,7 @@ class _TopicRow extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  topic.displayName,
+                  title,
                   style: AppTextStyles.label().copyWith(
                     color: scheme.onSurface,
                     fontWeight: FontWeight.w700,

@@ -183,7 +183,7 @@ class _WeekProgressSheet extends ConsumerWidget {
                                                 ),
                                           ),
                                           Text(
-                                            t.topic,
+                                            DailyWarCopy.topicDisplay(t.topic),
                                             style: AppTextStyles.bodySm()
                                                 .copyWith(
                                                   color: scheme.onSurface,

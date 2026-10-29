@@ -4,6 +4,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 
 import '../../../core/presentation/session_subject_label.dart';
+import '../../../core/presentation/topic_label.dart';
 import '../../../core/providers/catalog_providers.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
@@ -159,7 +160,7 @@ class BookmarksScreen extends HookConsumerWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              '$subj · ${b.topic}',
+                              '$subj · ${localizedTopicName(b.topic, language: Localizations.localeOf(context).languageCode)}',
                               style: AppTextStyles.caption().copyWith(
                                 color: scheme.onSurfaceVariant,
                               ),

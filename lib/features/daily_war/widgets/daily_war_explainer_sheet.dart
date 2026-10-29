@@ -141,7 +141,7 @@ class _DailyWarExplainerSheet extends HookConsumerWidget {
                         for (final t in topics)
                           _TopicChip(
                             subject: DailyWarCopy.subjectDisplay(t.subjectSlug),
-                            topic: t.topic,
+                            topic: DailyWarCopy.topicDisplay(t.topic),
                           ),
                       ],
                     ),

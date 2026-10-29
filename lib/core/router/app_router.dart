@@ -901,6 +901,24 @@ GoRouter appRouter(Ref ref) {
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
+        path: '/subject/:name/topic/:topic/insights',
+        name: 'practice_topic_insights',
+        builder: (context, state) => PracticeSubjectInsightsScreen(
+          subject: Uri.decodeComponent(state.pathParameters['name']!),
+          topic: Uri.decodeComponent(state.pathParameters['topic']!),
+        ),
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/subject/:name/topic/:topic/insights/traps',
+        name: 'practice_topic_confidence_traps',
+        builder: (context, state) => PracticeConfidenceTrapsScreen(
+          subject: Uri.decodeComponent(state.pathParameters['name']!),
+          topic: Uri.decodeComponent(state.pathParameters['topic']!),
+        ),
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
         path: '/subject/:name/history',
         redirect: (context, state) =>
             '/subject/${state.pathParameters['name']}/tests',

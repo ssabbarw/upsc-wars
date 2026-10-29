@@ -6166,7 +6166,16 @@ class AppLocalizationsHi extends AppLocalizations {
   String get practiceReviewLast => 'पिछला प्रयास देखें';
 
   @override
+  String get practiceReviewLastBody => 'अपने उत्तर और explanations देखें।';
+
+  @override
   String get practiceReattempt => 'फिर से करें';
+
+  @override
+  String get practiceReattemptBody => 'पहले सवाल से फिर शुरू करें।';
+
+  @override
+  String get practiceLastScore => 'पिछला स्कोर';
 
   @override
   String get practiceNewSeason =>
@@ -6221,8 +6230,23 @@ class AppLocalizationsHi extends AppLocalizations {
   }
 
   @override
-  String get practiceTrapsLeadSure =>
-      'आपने इन्हें Sure मार्क किया, लेकिन यह trap आपको फँसा रहा है।';
+  String practiceTrapsLeadSure(String scope) {
+    return 'इस $scope में और revision की ज़रूरत हो सकती है, या आप नीचे दिए traps में फँस रहे हैं।';
+  }
+
+  @override
+  String get practiceTrapsScopeSubject => 'subject';
+
+  @override
+  String get practiceTrapsScopeTopic => 'topic';
+
+  @override
+  String get practiceTopicGuessNegative =>
+      'जब आप इस topic में guess करते हैं, negative marking से marks कट रहे हैं। इस topic को revise करें।';
+
+  @override
+  String get practiceTopicGuessPositive =>
+      'इस topic में आप जितना सोचते हैं, उससे बेहतर तैयार हैं। Exam में इस topic से और सवाल attempt कर सकते हैं।';
 
   @override
   String get practiceTrapsReview => 'मेरे traps देखें';
@@ -6247,10 +6271,10 @@ class AppLocalizationsHi extends AppLocalizations {
   }
 
   @override
-  String get practiceReviseIncorrects => 'गलत वाले revise करें';
+  String get practiceReviseIncorrects => 'गलतियाँ revise करें';
 
   @override
-  String get practiceImproveScore => 'Improve score';
+  String get practiceImproveScore => 'Score बढ़ाएँ';
 
   @override
   String get practiceImproveResultUp => 'Score बेहतर हुआ';
@@ -6360,6 +6384,16 @@ class AppLocalizationsHi extends AppLocalizations {
   @override
   String practiceLensSplit(int correct, int wrong) {
     return '$correct सही · $wrong गलत';
+  }
+
+  @override
+  String practiceSureTopicsLead(String subject) {
+    return '$subject में आपने नीचे दिए topics में confident mistakes की हैं।';
+  }
+
+  @override
+  String practiceGuessTopicsLead(String subject) {
+    return '$subject में आपके guesses इन topics में गलत जा रहे हैं।';
   }
 
   @override

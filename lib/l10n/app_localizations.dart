@@ -10316,11 +10316,29 @@ abstract class AppLocalizations {
   /// **'Review last attempt'**
   String get practiceReviewLast;
 
+  /// No description provided for @practiceReviewLastBody.
+  ///
+  /// In en, this message translates to:
+  /// **'See your answers and explanations.'**
+  String get practiceReviewLastBody;
+
   /// No description provided for @practiceReattempt.
   ///
   /// In en, this message translates to:
   /// **'Reattempt'**
   String get practiceReattempt;
+
+  /// No description provided for @practiceReattemptBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Start again from question 1.'**
+  String get practiceReattemptBody;
+
+  /// No description provided for @practiceLastScore.
+  ///
+  /// In en, this message translates to:
+  /// **'Last score'**
+  String get practiceLastScore;
 
   /// No description provided for @practiceNewSeason.
   ///
@@ -10415,8 +10433,32 @@ abstract class AppLocalizations {
   /// No description provided for @practiceTrapsLeadSure.
   ///
   /// In en, this message translates to:
-  /// **'You marked these Sure, but this trap keeps catching you.'**
-  String get practiceTrapsLeadSure;
+  /// **'You may need more revision in this {scope} or you are falling for the following traps.'**
+  String practiceTrapsLeadSure(String scope);
+
+  /// No description provided for @practiceTrapsScopeSubject.
+  ///
+  /// In en, this message translates to:
+  /// **'subject'**
+  String get practiceTrapsScopeSubject;
+
+  /// No description provided for @practiceTrapsScopeTopic.
+  ///
+  /// In en, this message translates to:
+  /// **'topic'**
+  String get practiceTrapsScopeTopic;
+
+  /// No description provided for @practiceTopicGuessNegative.
+  ///
+  /// In en, this message translates to:
+  /// **'You are losing marks to negative marking when you guess in this topic. Revise this topic.'**
+  String get practiceTopicGuessNegative;
+
+  /// No description provided for @practiceTopicGuessPositive.
+  ///
+  /// In en, this message translates to:
+  /// **'You are better prepared in this topic than what you feel. You can attempt more from this topic in the exam.'**
+  String get practiceTopicGuessPositive;
 
   /// No description provided for @practiceTrapsReview.
   ///
@@ -10633,6 +10675,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{correct} right · {wrong} wrong'**
   String practiceLensSplit(int correct, int wrong);
+
+  /// No description provided for @practiceSureTopicsLead.
+  ///
+  /// In en, this message translates to:
+  /// **'In {subject}, you made confident mistakes in the following topics.'**
+  String practiceSureTopicsLead(String subject);
+
+  /// No description provided for @practiceGuessTopicsLead.
+  ///
+  /// In en, this message translates to:
+  /// **'In {subject}, your guesses are going wrong in these topics.'**
+  String practiceGuessTopicsLead(String subject);
 
   /// No description provided for @practiceSureTopicsEmpty.
   ///

@@ -293,7 +293,10 @@ class _DailyWarLobbyBody extends HookConsumerWidget {
             for (final t in topics.take(2))
               Padding(
                 padding: const EdgeInsets.only(bottom: 4),
-                child: Text(t.topic, style: DwText.topic()),
+                child: Text(
+                  DailyWarCopy.topicDisplay(t.topic),
+                  style: DwText.topic(),
+                ),
               ),
             if (topics.length > 2)
               Padding(

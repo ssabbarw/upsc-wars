@@ -13,21 +13,33 @@ import '../../weak_areas/widgets/trap_info_button.dart';
 import '../../weak_areas/widgets/trap_pattern_visual.dart';
 import '../domain/subject_trap_stat.dart';
 import '../open_insight_practice.dart';
+import '../providers/practice_catalog_provider.dart';
 import '../providers/practice_subject_insights_provider.dart';
 
 /// Content traps behind Sure mistakes.
 class PracticeConfidenceTrapsScreen extends ConsumerWidget {
-  const PracticeConfidenceTrapsScreen({super.key, required this.subject});
+  const PracticeConfidenceTrapsScreen({
+    super.key,
+    required this.subject,
+    this.topic,
+  });
 
   final String subject;
+  final String? topic;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final displayName =
-        SubjectConstants.bySlug(subject)?.displayName ?? subject;
-    final insights = ref.watch(practiceSubjectInsightsProvider(subject));
+    final catalog = ref.watch(practiceCatalogProvider);
+    final displayName = topic == null
+        ? (SubjectConstants.bySlug(subject)?.displayName ?? subject)
+        : (catalog.asData?.value.topicDisplayNames[topic] ?? topic!);
+    final insights = topic == null
+        ? ref.watch(practiceSubjectInsightsProvider(subject))
+        : ref.watch(
+            practiceTopicInsightsProvider((subject: subject, topic: topic!)),
+          );
 
     return Scaffold(
       backgroundColor: scheme.surfaceContainerLowest,
@@ -46,8 +58,18 @@ class PracticeConfidenceTrapsScreen extends ConsumerWidget {
         loading: () => const Center(child: CircularProgressIndicator()),
         error: (_, _) => Center(
           child: TextButton(
-            onPressed: () =>
-                ref.invalidate(practiceSubjectInsightsProvider(subject)),
+            onPressed: () {
+              if (topic == null) {
+                ref.invalidate(practiceSubjectInsightsProvider(subject));
+              } else {
+                ref.invalidate(
+                  practiceTopicInsightsProvider((
+                    subject: subject,
+                    topic: topic!,
+                  )),
+                );
+              }
+            },
             child: Text(context.l10n.commonRetry),
           ),
         ),
@@ -126,7 +148,7 @@ class PracticeConfidenceTrapsScreen extends ConsumerWidget {
                 )
               else
                 for (final trap in patterns) ...[
-                  _TrapDetailCard(subject: subject, trap: trap),
+                  _TrapDetailCard(subject: subject, topic: topic, trap: trap),
                   const SizedBox(height: AppSpacing.md),
                 ],
             ],
@@ -154,9 +176,14 @@ void _showInfo(BuildContext context) {
 }
 
 class _TrapDetailCard extends ConsumerWidget {
-  const _TrapDetailCard({required this.subject, required this.trap});
+  const _TrapDetailCard({
+    required this.subject,
+    this.topic,
+    required this.trap,
+  });
 
   final String subject;
+  final String? topic;
   final SubjectTrapStat trap;
 
   @override
@@ -265,6 +292,7 @@ class _TrapDetailCard extends ConsumerWidget {
                     context,
                     target: InsightDrillTarget.trap(
                       subject: subject,
+                      topicKey: topic,
                       trap: trap,
                       title: name,
                     ),
@@ -284,6 +312,7 @@ class _TrapDetailCard extends ConsumerWidget {
                     context,
                     target: InsightDrillTarget.trap(
                       subject: subject,
+                      topicKey: topic,
                       trap: trap,
                       title: name,
                     ),

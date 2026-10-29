@@ -4284,7 +4284,10 @@
     "placeholders": {"count": {"type": "int"}}
   },
   "practiceReviewLast": "Review last attempt",
+  "practiceReviewLastBody": "See your answers and explanations.",
   "practiceReattempt": "Reattempt",
+  "practiceReattemptBody": "Start again from question 1.",
+  "practiceLastScore": "Last score",
   "practiceNewSeason": "New season: your tests have been reshuffled for the next prelims.",
   "practiceBrowseTopics": "Topic-wise tests",
   "practiceBrowseTopicsSubtitle": "Browse topics",
@@ -4308,7 +4311,14 @@
   "@practiceTrapsTitleSure": {
     "placeholders": {"count": {"type": "int"}}
   },
-  "practiceTrapsLeadSure": "You marked these Sure, but this trap keeps catching you.",
+  "practiceTrapsLeadSure": "You may need more revision in this {scope} or you are falling for the following traps.",
+  "@practiceTrapsLeadSure": {
+    "placeholders": {"scope": {"type": "String"}}
+  },
+  "practiceTrapsScopeSubject": "subject",
+  "practiceTrapsScopeTopic": "topic",
+  "practiceTopicGuessNegative": "You are losing marks to negative marking when you guess in this topic. Revise this topic.",
+  "practiceTopicGuessPositive": "You are better prepared in this topic than what you feel. You can attempt more from this topic in the exam.",
   "practiceTrapsReview": "Review my traps",
   "practiceTrapsBannerKicker": "{subject} · Sure answers",
   "@practiceTrapsBannerKicker": {
@@ -4393,6 +4403,14 @@
       "correct": {"type": "int"},
       "wrong": {"type": "int"}
     }
+  },
+  "practiceSureTopicsLead": "In {subject}, you made confident mistakes in the following topics.",
+  "@practiceSureTopicsLead": {
+    "placeholders": {"subject": {"type": "String"}}
+  },
+  "practiceGuessTopicsLead": "In {subject}, your guesses are going wrong in these topics.",
+  "@practiceGuessTopicsLead": {
+    "placeholders": {"subject": {"type": "String"}}
   },
   "practiceSureTopicsEmpty": "Not enough Sure answers in any topic yet.",
   "practiceGuessTopicsEmpty": "Not enough Educated guesses in any topic yet.",
