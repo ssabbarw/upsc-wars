@@ -1,13 +1,14 @@
 import 'package:drift/drift.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../core/database/user_db.dart';
 import '../../../core/providers/catalog_providers.dart';
 import '../../../core/providers/user_database_provider.dart';
 import '../data/subject_topic_danger.dart';
+import '../domain/subject_mcq_pattern.dart';
 import '../domain/subject_mock_prep_insights.dart';
 
 const _minTopicConfidentForSafe = 3;
-const _maxList = 5;
 
 /// Mock-oriented topic lists: where confident wrongs cluster (lifetime), and where confident play is above your global rate.
 final subjectMockPrepInsightsProvider = FutureProvider.autoDispose
@@ -52,15 +53,17 @@ final subjectMockPrepInsightsProvider = FutureProvider.autoDispose
       final double? globalRate = globalTotal > 0
           ? (100.0 * globalCorrect / globalTotal)
           : null;
+      final weakestPattern = await _weakestPattern(db, subject);
 
       if (globalRate == null || globalTotal == 0) {
         return SubjectMockPrepInsights(
-          reviseTopics: revise.take(_maxList).toList(),
+          reviseTopics: revise,
           safeTopics: const [],
           globalConfidentRatePercent: null,
           globalConfidentMistakeRatePercent: null,
           reviseTopicTotalCount: revise.length,
           safeTopicTotalCount: 0,
+          weakestPattern: weakestPattern,
         );
       }
       final globalMistakeRate =
@@ -167,15 +170,46 @@ final subjectMockPrepInsightsProvider = FutureProvider.autoDispose
           b.displayName.toLowerCase(),
         );
       });
-      final reviseTop = revise.take(_maxList).toList();
-      final safeTop = safeCandidates.take(_maxList).toList();
-
       return SubjectMockPrepInsights(
-        reviseTopics: reviseTop,
-        safeTopics: safeTop,
+        reviseTopics: revise,
+        safeTopics: safeCandidates,
         globalConfidentRatePercent: globalRate,
         globalConfidentMistakeRatePercent: globalMistakeRate,
         reviseTopicTotalCount: revise.length,
         safeTopicTotalCount: safeCandidates.length,
+        weakestPattern: weakestPattern,
       );
     });
+
+Future<SubjectMcqPatternStat?> _weakestPattern(
+  UserDatabase db,
+  String subject,
+) async {
+  final rows = await db
+      .customSelect(
+        '''
+        SELECT
+          q.question_type AS qtype,
+          COALESCE(SUM(CASE WHEN a.is_correct = 0 THEN 1 ELSE 0 END), 0) AS wrongs,
+          COALESCE(COUNT(*), 0) AS tot
+        FROM attempts a
+        INNER JOIN questions q ON q.uuid = a.question_uuid
+        WHERE q.subject = ?
+          AND a.attempted_at IS NOT NULL
+          AND a.status IN ('correct', 'wrong')
+          AND a.confidence IN ('very_sure', 'somewhat_sure')
+        GROUP BY q.question_type
+        ''',
+        variables: [Variable.withString(subject)],
+        readsFrom: {db.sessionQuestions, db.questions},
+      )
+      .get();
+  return pickWeakestMcqPattern([
+    for (final r in rows)
+      (
+        type: r.read<String>('qtype'),
+        wrong: r.read<int>('wrongs'),
+        attempted: r.read<int>('tot'),
+      ),
+  ]);
+}

@@ -1,3 +1,5 @@
+import 'subject_mcq_pattern.dart';
+
 /// One topic to highlight before mocks (confident wrongs, lifetime).
 class ReviseBeforeMockRow {
   const ReviseBeforeMockRow({
@@ -45,10 +47,14 @@ class SubjectMockPrepInsights {
     required this.globalConfidentMistakeRatePercent,
     required this.reviseTopicTotalCount,
     required this.safeTopicTotalCount,
+    required this.weakestPattern,
   });
 
   final List<ReviseBeforeMockRow> reviseTopics;
   final List<SafeAreaRow> safeTopics;
+
+  /// Sure / Educated-guess pattern missed most often in this subject.
+  final SubjectMcqPatternStat? weakestPattern;
 
   /// Share of (very_sure + somewhat_sure) scored attempts that are **correct**, all subjects. Null if none.
   final double? globalConfidentRatePercent;

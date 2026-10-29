@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../../core/constants/subject_constants.dart';
+import '../../../core/domain/entities/session_config.dart';
 import '../../../core/responsive/app_breakpoints.dart';
 import '../../../core/domain/entities/subject_info.dart';
 import '../../../core/domain/entities/topic_info.dart';
+import '../../../core/providers/catalog_providers.dart';
+import '../../../core/providers/user_database_provider.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
@@ -14,13 +18,14 @@ import '../../../shared/widgets/contact_us_entry.dart';
 import '../../../shared/widgets/app_toast.dart';
 import '../../../shared/widgets/test_config_bottom_sheet.dart';
 import '../domain/subject_insights.dart';
+import '../domain/subject_mcq_pattern.dart';
 import '../domain/subject_mock_prep_insights.dart';
 import '../domain/subject_scored_accuracy_summary.dart';
+import '../providers/subject_danger_zone_revise_uuids.dart';
 import '../providers/subject_detail_providers.dart';
 import '../providers/subject_insights_providers.dart';
 import '../providers/subject_mock_prep_provider.dart';
 import '../providers/subject_scored_accuracy_provider.dart';
-import '../widgets/danger_zone_summary_card.dart';
 import '../widgets/mock_prep_why_bottom_sheet.dart';
 import '../widgets/topic_entry_bottom_sheet.dart';
 import '../../../l10n/l10n.dart';
@@ -691,20 +696,12 @@ class _PerformanceInsightsSection extends ConsumerWidget {
                 mock: mock,
                 borderColor: borderColor,
                 subject: subject,
-              ),
-            ),
-            const SizedBox(height: AppSpacing.xxl),
-            insightsAsync.when(
-              loading: () => _InsightsSkeleton(borderColor: borderColor),
-              error: (e, _) => _InsightsLoadError(
-                borderColor: borderColor,
-                onRetry: () => ref.invalidate(subjectInsightsProvider(subject)),
-              ),
-              data: (insights) => _ConfidenceBreakdownSection(
-                subject: subject,
-                displayName: displayName,
-                borderColor: borderColor,
-                insights: insights,
+                insights: insightsAsync.asData?.value,
+                insightsLoading: insightsAsync.isLoading,
+                insightsFailed:
+                    insightsAsync.hasError && !insightsAsync.hasValue,
+                onInsightsRetry: () =>
+                    ref.invalidate(subjectInsightsProvider(subject)),
               ),
             ),
             const SizedBox(height: AppSpacing.md),
@@ -939,13 +936,11 @@ class _SubjectScoredSummaryCard extends StatelessWidget {
 class _ConfidenceBreakdownSection extends StatelessWidget {
   const _ConfidenceBreakdownSection({
     required this.subject,
-    required this.displayName,
     required this.borderColor,
     required this.insights,
   });
 
   final String subject;
-  final String displayName;
   final Color borderColor;
   final SubjectInsights insights;
 
@@ -962,8 +957,6 @@ class _ConfidenceBreakdownSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Divider(),
-        const SizedBox(height: AppSpacing.md),
         Text(
           context.l10n.subjBreakdownTitle,
           style: AppTextStyles.label().copyWith(
@@ -1009,30 +1002,9 @@ class _ConfidenceBreakdownSection extends StatelessWidget {
           ],
         ),
         const SizedBox(height: AppSpacing.lg),
-        FilledButton(
-          onPressed: insights.isWellCalibrated
-              ? null
-              : () => _openDangerZoneDetailSheet(
-                  context,
-                  subject: subject,
-                  displayName: displayName,
-                  borderColor: borderColor,
-                  insights: insights,
-                ),
-          style: FilledButton.styleFrom(
-            backgroundColor: AppColors.summaryCtaBlue,
-            foregroundColor: AppColors.onPrimary,
-            minimumSize: const Size.fromHeight(48),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(AppRadius.md),
-            ),
-          ),
-          child: Text(
-            insights.isWellCalibrated
-                ? context.l10n.subjNoConfidentWrongs
-                : context.l10n.subjReviseQuestions,
-            style: AppTextStyles.label().copyWith(color: AppColors.onPrimary),
-          ),
+        _StartRevisingTopicsButton(
+          subject: subject,
+          enabled: !insights.isWellCalibrated,
         ),
       ],
     );
@@ -1151,119 +1123,6 @@ Future<void> _openTopicEntryFromRow(
   }
 }
 
-void _openDangerZoneDetailSheet(
-  BuildContext context, {
-  required String subject,
-  required String displayName,
-  required Color borderColor,
-  required SubjectInsights insights,
-}) {
-  showModalBottomSheet<void>(
-    context: context,
-    isScrollControlled: true,
-    useSafeArea: true,
-    showDragHandle: true,
-    backgroundColor: Colors.transparent,
-    builder: (sheetContext) {
-      final scheme = Theme.of(sheetContext).colorScheme;
-      final bottomPad = MediaQuery.paddingOf(sheetContext).bottom;
-      final maxBodyHeight = MediaQuery.sizeOf(sheetContext).height * 0.82;
-
-      return Material(
-        color: scheme.surface,
-        borderRadius: const BorderRadius.vertical(
-          top: Radius.circular(AppRadius.xl + 4),
-        ),
-        clipBehavior: Clip.antiAlias,
-        child: Padding(
-          padding: EdgeInsets.only(bottom: bottomPad + AppSpacing.sm),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Padding(
-                padding: const EdgeInsets.fromLTRB(
-                  AppSpacing.xs,
-                  AppSpacing.sm,
-                  AppSpacing.lg,
-                  AppSpacing.sm,
-                ),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    IconButton(
-                      onPressed: () => Navigator.pop(sheetContext),
-                      icon: const Icon(Icons.arrow_back_rounded),
-                      color: scheme.onSurface,
-                      tooltip: context.l10n.commonBack,
-                    ),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            context.l10n.subjReviseMcqs,
-                            style: AppTextStyles.label().copyWith(
-                              color: scheme.onSurface,
-                              fontWeight: FontWeight.w800,
-                              letterSpacing: -0.2,
-                            ),
-                          ),
-                          const SizedBox(height: 2),
-                          Text(
-                            displayName,
-                            style: AppTextStyles.caption().copyWith(
-                              color: scheme.onSurfaceVariant,
-                              height: 1.25,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(width: 48),
-                  ],
-                ),
-              ),
-              Divider(
-                height: 1,
-                thickness: 1,
-                color: scheme.outlineVariant.withValues(alpha: 0.35),
-              ),
-              ConstrainedBox(
-                constraints: BoxConstraints(maxHeight: maxBodyHeight),
-                child: ListView(
-                  shrinkWrap: true,
-                  physics: const ClampingScrollPhysics(),
-                  padding: const EdgeInsets.fromLTRB(
-                    AppSpacing.lg,
-                    AppSpacing.md,
-                    AppSpacing.lg,
-                    AppSpacing.lg,
-                  ),
-                  children: [
-                    DangerZoneSummaryCard(
-                      dangerZoneContextLabel: displayName,
-                      subject: subject,
-                      insights: insights,
-                      borderColor: borderColor,
-                      onLearningSessionStarted: (sessionId) {
-                        Navigator.pop(sheetContext);
-                        if (context.mounted) {
-                          context.push('/test/$sessionId');
-                        }
-                      },
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
-      );
-    },
-  );
-}
-
 bool _mockPrepHasTopicLists(SubjectMockPrepInsights m) =>
     m.hasReviseData || m.hasSafeData;
 
@@ -1274,12 +1133,20 @@ class _AdviceForSubjectMockPrepGroup extends StatefulWidget {
     required this.mock,
     required this.borderColor,
     required this.subject,
+    required this.insights,
+    required this.insightsLoading,
+    required this.insightsFailed,
+    required this.onInsightsRetry,
   });
 
   final String displayName;
   final String subject;
   final SubjectMockPrepInsights mock;
   final Color borderColor;
+  final SubjectInsights? insights;
+  final bool insightsLoading;
+  final bool insightsFailed;
+  final VoidCallback onInsightsRetry;
 
   @override
   State<_AdviceForSubjectMockPrepGroup> createState() =>
@@ -1389,19 +1256,40 @@ class _AdviceForSubjectMockPrepGroupState
           ListenableBuilder(
             listenable: _tabController,
             builder: (context, _) {
-              return _tabController.index == 0
-                  ? _ReviseBeforeNextMockCard(
-                      subject: widget.subject,
-                      subjectDisplayName: widget.displayName,
-                      mock: widget.mock,
+              if (_tabController.index != 0) {
+                return _MockSafeAreasCard(
+                  subject: widget.subject,
+                  subjectDisplayName: widget.displayName,
+                  mock: widget.mock,
+                  borderColor: widget.borderColor,
+                );
+              }
+              final insights = widget.insights;
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  _ReviseBeforeNextMockCard(
+                    subject: widget.subject,
+                    subjectDisplayName: widget.displayName,
+                    mock: widget.mock,
+                    borderColor: widget.borderColor,
+                  ),
+                  const SizedBox(height: AppSpacing.lg),
+                  if (widget.insightsLoading)
+                    _InsightsSkeleton(borderColor: widget.borderColor)
+                  else if (widget.insightsFailed)
+                    _InsightsLoadError(
                       borderColor: widget.borderColor,
+                      onRetry: widget.onInsightsRetry,
                     )
-                  : _MockSafeAreasCard(
+                  else if (insights != null)
+                    _ConfidenceBreakdownSection(
                       subject: widget.subject,
-                      subjectDisplayName: widget.displayName,
-                      mock: widget.mock,
                       borderColor: widget.borderColor,
-                    );
+                      insights: insights,
+                    ),
+                ],
+              );
             },
           ),
         ],
@@ -1412,7 +1300,7 @@ class _AdviceForSubjectMockPrepGroupState
 
 // ── Mock prep: Revise (30d) + Safe confident topics ───────────────────────────
 
-const int _mockPrepTopicPreviewMax = 5;
+const int _mockPrepTopicPreviewMax = 4;
 
 class _ReviseBeforeNextMockCard extends StatelessWidget {
   const _ReviseBeforeNextMockCard({
@@ -1469,6 +1357,10 @@ class _ReviseBeforeNextMockCard extends StatelessWidget {
           ),
           const SizedBox(height: AppSpacing.md),
           _WhyTheseTopicsTile(isRevise: true, borderColor: borderColor),
+          if (mock.weakestPattern case final pattern?) ...[
+            const SizedBox(height: AppSpacing.md),
+            _WeakestPatternCallout(stat: pattern),
+          ],
           const SizedBox(height: AppSpacing.lg),
           Divider(color: scheme.outlineVariant.withValues(alpha: 0.35)),
           const SizedBox(height: AppSpacing.md),
@@ -1498,6 +1390,29 @@ class _ReviseBeforeNextMockCard extends StatelessWidget {
                 subjectDisplayName: subjectDisplayName,
                 row: previewRows[i],
                 statColor: accent,
+              ),
+            ],
+            if (mock.reviseTopics.length > _mockPrepTopicPreviewMax) ...[
+              const SizedBox(height: AppSpacing.sm),
+              _SeeAllTopicsButton(
+                count: mock.reviseTopics.length,
+                color: accent,
+                onPressed: () => _showAllMockTopicsSheet(
+                  context: context,
+                  title: context.l10n.subjTopicsToRevise,
+                  rows: [
+                    for (final row in mock.reviseTopics)
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: AppSpacing.md),
+                        child: _ReviseBeforeMockRowWidget(
+                          subject: subject,
+                          subjectDisplayName: subjectDisplayName,
+                          row: row,
+                          statColor: accent,
+                        ),
+                      ),
+                  ],
+                ),
               ),
             ],
           ],
@@ -1736,6 +1651,29 @@ class _MockSafeAreasCard extends StatelessWidget {
                 statColor: accent,
               ),
             ],
+            if (mock.safeTopics.length > _mockPrepTopicPreviewMax) ...[
+              const SizedBox(height: AppSpacing.sm),
+              _SeeAllTopicsButton(
+                count: mock.safeTopics.length,
+                color: accent,
+                onPressed: () => _showAllMockTopicsSheet(
+                  context: context,
+                  title: context.l10n.subjSafeTopics,
+                  rows: [
+                    for (final row in mock.safeTopics)
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: AppSpacing.md),
+                        child: _MockSafeAreaRow(
+                          subject: subject,
+                          subjectDisplayName: subjectDisplayName,
+                          row: row,
+                          statColor: accent,
+                        ),
+                      ),
+                  ],
+                ),
+              ),
+            ],
           ],
         ],
       ),
@@ -1818,6 +1756,229 @@ class _MockSafeAreaRow extends ConsumerWidget {
         ),
       ],
     );
+  }
+}
+
+class _WeakestPatternCallout extends StatelessWidget {
+  const _WeakestPatternCallout({required this.stat});
+
+  final SubjectMcqPatternStat stat;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final accent = isDark ? AppColors.wrongTextDark : AppColors.wrongText;
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(AppSpacing.md),
+      decoration: BoxDecoration(
+        color: scheme.surface.withValues(alpha: isDark ? 0.4 : 0.78),
+        borderRadius: BorderRadius.circular(AppRadius.md),
+        border: Border.all(color: accent.withValues(alpha: 0.3)),
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Icon(Icons.grid_view_rounded, size: 18, color: accent),
+          const SizedBox(width: AppSpacing.sm),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  context.l10n.subjWeakPatternLead,
+                  style: AppTextStyles.caption().copyWith(
+                    color: accent,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+                const SizedBox(height: 2),
+                Text(
+                  stat.labelFor(context.l10n),
+                  style: AppTextStyles.bodySm().copyWith(
+                    color: scheme.onSurface,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+                const SizedBox(height: 2),
+                Text(
+                  context.l10n.subjWeakPatternStat(
+                    stat.wrong,
+                    stat.attempted,
+                    stat.wrongPercent,
+                  ),
+                  style: AppTextStyles.caption().copyWith(
+                    color: scheme.onSurface,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                Text(
+                  context.l10n.subjWeakPatternScope,
+                  style: AppTextStyles.caption().copyWith(
+                    color: scheme.onSurfaceVariant,
+                    height: 1.3,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _SeeAllTopicsButton extends StatelessWidget {
+  const _SeeAllTopicsButton({
+    required this.count,
+    required this.color,
+    required this.onPressed,
+  });
+
+  final int count;
+  final Color color;
+  final VoidCallback onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return Align(
+      alignment: Alignment.centerLeft,
+      child: TextButton(
+        onPressed: onPressed,
+        style: TextButton.styleFrom(
+          foregroundColor: color,
+          padding: EdgeInsets.zero,
+          minimumSize: Size.zero,
+          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+          visualDensity: VisualDensity.compact,
+        ),
+        child: Text(
+          context.l10n.subjSeeAllTopics(count),
+          style: AppTextStyles.caption().copyWith(fontWeight: FontWeight.w700),
+        ),
+      ),
+    );
+  }
+}
+
+void _showAllMockTopicsSheet({
+  required BuildContext context,
+  required String title,
+  required List<Widget> rows,
+}) {
+  showModalBottomSheet<void>(
+    context: context,
+    isScrollControlled: true,
+    showDragHandle: true,
+    builder: (sheetContext) {
+      return DraggableScrollableSheet(
+        expand: false,
+        initialChildSize: 0.72,
+        minChildSize: 0.4,
+        maxChildSize: 0.92,
+        builder: (_, controller) => ListView(
+          controller: controller,
+          padding: const EdgeInsets.fromLTRB(
+            AppSpacing.lg,
+            0,
+            AppSpacing.lg,
+            AppSpacing.xxxl,
+          ),
+          children: [
+            Text(title, style: AppTextStyles.h3()),
+            const SizedBox(height: AppSpacing.lg),
+            ...rows,
+          ],
+        ),
+      );
+    },
+  );
+}
+
+class _StartRevisingTopicsButton extends HookConsumerWidget {
+  const _StartRevisingTopicsButton({
+    required this.subject,
+    required this.enabled,
+  });
+
+  final String subject;
+  final bool enabled;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final busy = useState(false);
+    final label = enabled
+        ? context.l10n.subjStartRevising
+        : context.l10n.subjNoConfidentWrongs;
+
+    return FilledButton.icon(
+      onPressed: !enabled || busy.value
+          ? null
+          : () => _start(context, ref, busy),
+      style: FilledButton.styleFrom(
+        backgroundColor: AppColors.wrong,
+        disabledBackgroundColor: AppColors.wrong.withValues(alpha: 0.38),
+        disabledForegroundColor: AppColors.onPrimary,
+        foregroundColor: AppColors.onPrimary,
+        minimumSize: const Size.fromHeight(48),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(AppRadius.md),
+        ),
+      ),
+      icon: busy.value
+          ? const SizedBox(
+              width: 18,
+              height: 18,
+              child: CircularProgressIndicator(
+                strokeWidth: 2,
+                color: AppColors.onPrimary,
+              ),
+            )
+          : const Icon(Icons.menu_book_rounded, size: 18),
+      label: Text(
+        label,
+        style: AppTextStyles.label().copyWith(color: AppColors.onPrimary),
+      ),
+    );
+  }
+
+  Future<void> _start(
+    BuildContext context,
+    WidgetRef ref,
+    ValueNotifier<bool> busy,
+  ) async {
+    busy.value = true;
+    try {
+      final db = ref.read(userDatabaseProvider);
+      final uuids = await querySubjectConfidentWrongUuids(db, subject: subject);
+      if (!context.mounted) return;
+      if (uuids.isEmpty) {
+        AppToast.showText(context, context.l10n.dzNoQuestions);
+        return;
+      }
+      final create = await ref.read(createSessionUseCaseProvider.future);
+      final lang = await ref.read(appLanguageProvider.future);
+      final id = await create.execute(
+        SessionConfig(
+          subject: subject,
+          mode: 'learning',
+          questionCount: uuids.length,
+          isTimed: false,
+          timeLimitSecs: null,
+          language: lang,
+          specificQuestionUuids: uuids,
+          analyticsFeatureKey: 'subject_danger_revise',
+        ),
+      );
+      if (context.mounted) context.push('/test/$id');
+    } catch (e) {
+      if (context.mounted) {
+        AppToast.showText(context, context.l10n.dzStartFailed(e.toString()));
+      }
+    } finally {
+      if (context.mounted) busy.value = false;
+    }
   }
 }
 

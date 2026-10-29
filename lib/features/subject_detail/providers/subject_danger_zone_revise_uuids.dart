@@ -32,6 +32,31 @@ Future<List<String>> querySubjectDangerZoneReviseUuids(
   return [for (final r in rows) r.read<String>('quid')];
 }
 
+/// Wrong questions marked Sure or Educated guess, one row per question.
+Future<List<String>> querySubjectConfidentWrongUuids(
+  UserDatabase db, {
+  required String subject,
+}) async {
+  final rows = await db
+      .customSelect(
+        '''
+        SELECT a.question_uuid AS quid
+        FROM attempts a
+        INNER JOIN questions q ON q.uuid = a.question_uuid
+        WHERE q.subject = ?
+          AND a.is_correct = 0
+          AND a.attempted_at IS NOT NULL
+          AND a.confidence IN ('very_sure', 'somewhat_sure')
+        GROUP BY a.question_uuid
+        ORDER BY MAX(a.attempted_at) DESC
+        ''',
+        variables: [Variable.withString(subject)],
+        readsFrom: {db.sessionQuestions, db.questions},
+      )
+      .get();
+  return [for (final r in rows) r.read<String>('quid')];
+}
+
 /// Same as [querySubjectDangerZoneReviseUuids] but limited to [topic] (catalog topic key).
 Future<List<String>> queryTopicDangerZoneReviseUuids(
   UserDatabase db, {

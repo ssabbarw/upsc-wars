@@ -2328,6 +2328,44 @@ class AppLocalizationsEn extends AppLocalizations {
   String get subjWhyTopics => 'Why these topics?';
 
   @override
+  String get subjWeakPatternLead => 'You miss this pattern most';
+
+  @override
+  String get subjWeakPatternScope =>
+      'Sure and Educated guess answers in this subject';
+
+  @override
+  String subjWeakPatternStat(int wrong, int attempted, int percent) {
+    return '$wrong of $attempted wrong · $percent%';
+  }
+
+  @override
+  String subjSeeAllTopics(int count) {
+    return 'See all $count topics';
+  }
+
+  @override
+  String get subjStartRevising => 'Start Revising These Topics';
+
+  @override
+  String get mcqHowMany => 'How many of the above';
+
+  @override
+  String get mcqStatementCombo => 'Which statements are correct';
+
+  @override
+  String get mcqAssertion => 'Assertion–Reason';
+
+  @override
+  String get mcqMatch => 'Match the following';
+
+  @override
+  String get mcqDirect => 'Direct fact';
+
+  @override
+  String get mcqSingle => 'Single statement';
+
+  @override
   String get subjRevisitTopic => 'Revisit this topic';
 
   @override

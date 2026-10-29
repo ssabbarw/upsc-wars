@@ -2226,6 +2226,44 @@ class AppLocalizationsHi extends AppLocalizations {
   String get subjWhyTopics => 'ये topics क्यों?';
 
   @override
+  String get subjWeakPatternLead => 'आप यह pattern सबसे ज़्यादा गलत करते हैं';
+
+  @override
+  String get subjWeakPatternScope =>
+      'इस subject में Sure और Educated guess वाले जवाब';
+
+  @override
+  String subjWeakPatternStat(int wrong, int attempted, int percent) {
+    return '$wrong/$attempted गलत · $percent%';
+  }
+
+  @override
+  String subjSeeAllTopics(int count) {
+    return 'सभी $count topics देखें';
+  }
+
+  @override
+  String get subjStartRevising => 'इन topics को revise करना शुरू करें';
+
+  @override
+  String get mcqHowMany => 'How many of the above';
+
+  @override
+  String get mcqStatementCombo => 'Which statements are correct';
+
+  @override
+  String get mcqAssertion => 'Assertion–Reason';
+
+  @override
+  String get mcqMatch => 'Match the following';
+
+  @override
+  String get mcqDirect => 'Direct fact';
+
+  @override
+  String get mcqSingle => 'Single statement';
+
+  @override
   String get subjRevisitTopic => 'यह topic फिर से देखें';
 
   @override

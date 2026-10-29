@@ -3800,6 +3800,72 @@ abstract class AppLocalizations {
   /// **'Why these topics?'**
   String get subjWhyTopics;
 
+  /// No description provided for @subjWeakPatternLead.
+  ///
+  /// In en, this message translates to:
+  /// **'You miss this pattern most'**
+  String get subjWeakPatternLead;
+
+  /// No description provided for @subjWeakPatternScope.
+  ///
+  /// In en, this message translates to:
+  /// **'Sure and Educated guess answers in this subject'**
+  String get subjWeakPatternScope;
+
+  /// No description provided for @subjWeakPatternStat.
+  ///
+  /// In en, this message translates to:
+  /// **'{wrong} of {attempted} wrong · {percent}%'**
+  String subjWeakPatternStat(int wrong, int attempted, int percent);
+
+  /// No description provided for @subjSeeAllTopics.
+  ///
+  /// In en, this message translates to:
+  /// **'See all {count} topics'**
+  String subjSeeAllTopics(int count);
+
+  /// No description provided for @subjStartRevising.
+  ///
+  /// In en, this message translates to:
+  /// **'Start Revising These Topics'**
+  String get subjStartRevising;
+
+  /// No description provided for @mcqHowMany.
+  ///
+  /// In en, this message translates to:
+  /// **'How many of the above'**
+  String get mcqHowMany;
+
+  /// No description provided for @mcqStatementCombo.
+  ///
+  /// In en, this message translates to:
+  /// **'Which statements are correct'**
+  String get mcqStatementCombo;
+
+  /// No description provided for @mcqAssertion.
+  ///
+  /// In en, this message translates to:
+  /// **'Assertion–Reason'**
+  String get mcqAssertion;
+
+  /// No description provided for @mcqMatch.
+  ///
+  /// In en, this message translates to:
+  /// **'Match the following'**
+  String get mcqMatch;
+
+  /// No description provided for @mcqDirect.
+  ///
+  /// In en, this message translates to:
+  /// **'Direct fact'**
+  String get mcqDirect;
+
+  /// No description provided for @mcqSingle.
+  ///
+  /// In en, this message translates to:
+  /// **'Single statement'**
+  String get mcqSingle;
+
   /// No description provided for @subjRevisitTopic.
   ///
   /// In en, this message translates to:

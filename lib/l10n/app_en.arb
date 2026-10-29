@@ -1515,6 +1515,29 @@
   "subjNoTopicsToList": "No topics to list",
   "subjNoTopicsBody": "No topic in this subject has enough wrong answers marked “Sure” or “Educated guess” to show here yet. As that pattern shows up, you will see it broken down by type of confidence.",
   "subjWhyTopics": "Why these topics?",
+  "subjWeakPatternLead": "You miss this pattern most",
+  "subjWeakPatternScope": "Sure and Educated guess answers in this subject",
+  "subjWeakPatternStat": "{wrong} of {attempted} wrong · {percent}%",
+  "@subjWeakPatternStat": {
+    "placeholders": {
+      "wrong": {"type": "int"},
+      "attempted": {"type": "int"},
+      "percent": {"type": "int"}
+    }
+  },
+  "subjSeeAllTopics": "See all {count} topics",
+  "@subjSeeAllTopics": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "subjStartRevising": "Start Revising These Topics",
+  "mcqHowMany": "How many of the above",
+  "mcqStatementCombo": "Which statements are correct",
+  "mcqAssertion": "Assertion–Reason",
+  "mcqMatch": "Match the following",
+  "mcqDirect": "Direct fact",
+  "mcqSingle": "Single statement",
   "subjRevisitTopic": "Revisit this topic",
   "subjSafeIntro": "You can trust your judgment more in these topics. Attempt more from here in mocks and exams.",
   "subjSafeTopics": "Safe scoring topics",
