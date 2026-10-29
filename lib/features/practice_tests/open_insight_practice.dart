@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../core/constants/subject_constants.dart';
 import '../../core/domain/entities/session_config.dart';
 import '../../core/layout/system_insets.dart';
 import '../../core/providers/catalog_providers.dart';
@@ -10,7 +11,10 @@ import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_text_styles.dart';
 import '../../l10n/l10n.dart';
 import '../../shared/widgets/app_toast.dart';
-import '../subject_detail/domain/subject_mcq_pattern.dart';
+import '../../shared/widgets/test_config_bottom_sheet.dart';
+import '../history/screens/question_list_review_screen.dart';
+import 'domain/insight_improve.dart';
+import 'domain/subject_trap_stat.dart';
 import 'providers/practice_catalog_provider.dart';
 import 'providers/practice_subject_insights_provider.dart';
 
@@ -24,12 +28,12 @@ class InsightDrillTarget {
     required this.topicKey,
     required this.title,
     required this.sureLens,
-  }) : pattern = null,
+  }) : trap = null,
        kind = InsightDrillKind.topic;
 
   const InsightDrillTarget.trap({
     required this.subject,
-    required this.pattern,
+    required this.trap,
     required this.title,
   }) : topicKey = null,
        sureLens = true,
@@ -39,7 +43,7 @@ class InsightDrillTarget {
   final String subject;
   final String title;
   final String? topicKey;
-  final SubjectMcqPatternStat? pattern;
+  final SubjectTrapStat? trap;
   final bool sureLens;
 }
 
@@ -107,7 +111,7 @@ class _InsightDrillSheetState extends ConsumerState<_InsightDrillSheet> {
           : await loadTrapDrillPool(
               db,
               subject: target.subject,
-              pattern: target.pattern!,
+              trapType: target.trap!.trapType,
               seasonStart: catalog.season.start,
             );
       if (!mounted) return;
@@ -136,11 +140,28 @@ class _InsightDrillSheetState extends ConsumerState<_InsightDrillSheet> {
     if (uuids.isEmpty || _starting) return;
     setState(() => _starting = true);
     try {
-      final create = await ref.read(createSessionUseCaseProvider.future);
-      final lang = await ref.read(appLanguageProvider.future);
-      final target = widget.target;
-      final revising = _intent == InsightDrillIntent.revise;
-      final id = await create.execute(
+      if (_intent == InsightDrillIntent.revise) {
+        await _startRevision(uuids);
+      } else {
+        await _startImprove(uuids);
+      }
+    } catch (e) {
+      if (mounted) {
+        AppToast.showText(context, context.l10n.dzStartFailed(e.toString()));
+        setState(() => _starting = false);
+      }
+    }
+  }
+
+  Future<void> _startRevision(List<String> uuids) async {
+    final create = await ref.read(createSessionUseCaseProvider.future);
+    final load = await ref.read(loadSessionUseCaseProvider.future);
+    final repo = await ref.read(testEngineRepositoryProvider.future);
+    final lang = await ref.read(appLanguageProvider.future);
+    final target = widget.target;
+    String? id;
+    try {
+      id = await create.execute(
         SessionConfig(
           subject: target.subject,
           topic: target.topicKey,
@@ -151,27 +172,77 @@ class _InsightDrillSheetState extends ConsumerState<_InsightDrillSheet> {
           language: lang,
           specificQuestionUuids: uuids,
           analyticsFeatureKey: target.kind == InsightDrillKind.trap
-              ? (revising
-                    ? 'practice_trap_revise'
-                    : 'practice_trap_improve')
-              : (revising
-                    ? 'practice_topic_revise'
-                    : 'practice_topic_improve'),
-          dangerReviseHistoryConfidence: revising
-              ? (target.sureLens ? 'very_sure' : 'somewhat_sure')
-              : null,
+              ? 'practice_trap_revise'
+              : 'practice_topic_revise',
+          dangerReviseHistoryConfidence: target.sureLens
+              ? 'very_sure'
+              : 'somewhat_sure',
         ),
       );
+      final active = await load.execute(id);
+      await repo.discardSession(id);
+      id = null;
       if (!mounted) return;
       final router = GoRouter.of(context);
+      final l10n = context.l10n;
       Navigator.pop(context);
-      await router.push('/test/$id');
-    } catch (e) {
-      if (mounted) {
-        AppToast.showText(context, context.l10n.dzStartFailed(e.toString()));
-        setState(() => _starting = false);
+      await router.push(
+        '/question-review',
+        extra: QuestionListReviewArgs(
+          questions: active.questions,
+          title: l10n.commonRevise,
+          progressRight: target.title,
+        ),
+      );
+    } finally {
+      if (id != null) {
+        try {
+          await repo.discardSession(id);
+        } catch (_) {}
       }
     }
+  }
+
+  Future<void> _startImprove(List<String> uuids) => _openImproveConfig(uuids);
+
+  Future<void> _openImproveConfig(List<String> uuids) async {
+    if (uuids.isEmpty || !mounted) return;
+    final target = widget.target;
+    final l10n = context.l10n;
+    final overlayContext = Navigator.of(context).context;
+    final subjectName =
+        SubjectConstants.bySlug(target.subject)?.displayName ?? target.subject;
+    final short = uuids.length < kInsightImproveSize;
+    Navigator.pop(context);
+    await Future<void>.delayed(Duration.zero);
+    if (!overlayContext.mounted) return;
+    await showTestConfigBottomSheet(
+      context: overlayContext,
+      useRootNavigator: true,
+      args: TestConfigSheetArgs(
+        subject: target.subject,
+        topic: target.topicKey,
+        subjectDisplayName: subjectName,
+        topicDisplayName: target.kind == InsightDrillKind.topic
+            ? target.title
+            : null,
+        fixedQuestionSetLabel: short
+            ? l10n.practiceDrillImproveShort(uuids.length, kInsightImproveSize)
+            : (target.kind == InsightDrillKind.trap
+                  ? target.title
+                  : l10n.practiceImproveScore),
+        availableQuestionCount: uuids.length,
+        topicCountWhenSubjectOnly: target.topicKey == null ? 1 : 0,
+        lockedQuestionCount: uuids.length,
+        specificQuestionUuids: uuids,
+        analyticsFeatureKey: target.kind == InsightDrillKind.trap
+            ? kPracticeTrapImproveKey
+            : kPracticeTopicImproveKey,
+        onSessionCreated: (id) {
+          GoRouter.of(overlayContext).push('/test/$id');
+        },
+      ),
+    );
   }
 
   @override
@@ -193,7 +264,7 @@ class _InsightDrillSheetState extends ConsumerState<_InsightDrillSheet> {
       children: [
         Text(
           _intent == InsightDrillIntent.revise
-              ? l10n.commonRevise
+              ? l10n.practiceReviseIncorrects
               : l10n.practiceImproveScore,
           style: AppTextStyles.h3().copyWith(
             color: scheme.onSurface,
@@ -234,7 +305,11 @@ class _InsightDrillSheetState extends ConsumerState<_InsightDrillSheet> {
                       height: 18,
                       child: CircularProgressIndicator(strokeWidth: 2),
                     )
-                  : Text(l10n.practiceStartNQuestions(n)),
+                  : Text(
+                      _intent == InsightDrillIntent.revise
+                          ? l10n.practiceStartRevision
+                          : l10n.commonContinue,
+                    ),
             ),
           if (_intent == InsightDrillIntent.improve &&
               shortImprove &&
@@ -290,11 +365,12 @@ class _InsightDrillSheetState extends ConsumerState<_InsightDrillSheet> {
           : l10n.practiceDrillReviseTopicGuess(n);
     }
     if (n == 0) return l10n.practiceDrillImproveEmpty;
+    final lead = target.kind == InsightDrillKind.trap
+        ? l10n.practiceDrillImproveTrap
+        : l10n.practiceDrillImproveTopic;
     if (shortImprove) {
-      return l10n.practiceDrillImproveShort(n, kInsightImproveSize);
+      return '$lead\n\n${l10n.practiceDrillImproveShort(n, kInsightImproveSize)}';
     }
-    return target.kind == InsightDrillKind.trap
-        ? l10n.practiceDrillImproveTrap(n)
-        : l10n.practiceDrillImproveTopic(n);
+    return lead;
   }
 }

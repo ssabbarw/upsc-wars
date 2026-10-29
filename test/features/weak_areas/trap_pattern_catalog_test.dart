@@ -24,6 +24,24 @@ void main() {
     expect(d.description, 'A much longer paragraph.');
   });
 
+  test('TrapDescription uses Hindi blurb and description when asked', () {
+    final d = TrapDescription.fromJson({
+      'trap_type': 'entity-swap',
+      'display_name': 'Entity Swap',
+      'blurb': 'The fact is real, but pinned to the wrong person.',
+      'description': 'A longer English paragraph.',
+      'blurb_hi': 'तथ्य सही है, लेकिन गलत व्यक्ति से जुड़ा है।',
+      'description_hi': 'लंबा हिन्दी विवरण।',
+    });
+    expect(d.blurbFor('hi'), 'तथ्य सही है, लेकिन गलत व्यक्ति से जुड़ा है।');
+    expect(d.descriptionFor('hi'), 'लंबा हिन्दी विवरण।');
+    expect(
+      d.blurbFor('en'),
+      'The fact is real, but pinned to the wrong person.',
+    );
+    expect(d.descriptionFor('en'), 'A longer English paragraph.');
+  });
+
   test('lists every catalog trap at 0× when the user has no data', () {
     final items = TrapPatternCatalog.merge(
       descriptions: {

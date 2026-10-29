@@ -3908,6 +3908,72 @@ abstract class AppLocalizations {
   /// **'A less common stem shape in this bank. Practise a few to get used to how it is framed.'**
   String get mcqOtherBody;
 
+  /// No description provided for @mcqIdentifyPairBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Each option is a pair (name — claim, place — fact). You pick which pair is correctly or incorrectly matched. One swapped date, place, or attribute makes the whole pair wrong even when both halves look familiar.'**
+  String get mcqIdentifyPairBody;
+
+  /// No description provided for @mcqOddOneBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Three options share a rule; one does not. Name the rule first — don\'t pick the option that merely looks different.'**
+  String get mcqOddOneBody;
+
+  /// No description provided for @mcqFillBlankBody.
+  ///
+  /// In en, this message translates to:
+  /// **'A missing word or phrase sits in the stem. The options look interchangeable until you recall the exact term used in the syllabus.'**
+  String get mcqFillBlankBody;
+
+  /// No description provided for @mcqChronologyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'You must put events in the right order. One event in the wrong century breaks the sequence even if you know every event separately.'**
+  String get mcqChronologyBody;
+
+  /// No description provided for @mcqQuantitativeBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Numbers, ratios, or paired figures. A nearby wrong figure is planted because it belongs to a related fact.'**
+  String get mcqQuantitativeBody;
+
+  /// No description provided for @mcqIncorrectBody.
+  ///
+  /// In en, this message translates to:
+  /// **'The stem asks for the incorrect statement. Easy to answer as if it asked for the correct one.'**
+  String get mcqIncorrectBody;
+
+  /// No description provided for @mcqApplicationBody.
+  ///
+  /// In en, this message translates to:
+  /// **'A short situation, then apply a principle. The trap is using a related but wrong principle that also sounds official.'**
+  String get mcqApplicationBody;
+
+  /// No description provided for @mcqTwoStatementBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Two statements and a link between them. Both can be true without the stated relationship.'**
+  String get mcqTwoStatementBody;
+
+  /// No description provided for @mcqMapBody.
+  ///
+  /// In en, this message translates to:
+  /// **'A location, range, or boundary. Neighbouring places are the bait.'**
+  String get mcqMapBody;
+
+  /// No description provided for @mcqNegativeBody.
+  ///
+  /// In en, this message translates to:
+  /// **'NOT / except / never in the stem. Answer the reversed task, not the familiar one.'**
+  String get mcqNegativeBody;
+
+  /// No description provided for @mcqConceptualBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Tests the idea, not a date. A true fact about a different concept is the usual bait.'**
+  String get mcqConceptualBody;
+
   /// No description provided for @subjRevisitTopic.
   ///
   /// In en, this message translates to:
@@ -10343,13 +10409,13 @@ abstract class AppLocalizations {
   /// No description provided for @practiceTrapsTitleSure.
   ///
   /// In en, this message translates to:
-  /// **'{count} question types are behind your sure mistakes'**
+  /// **'{count} traps are behind your sure mistakes'**
   String practiceTrapsTitleSure(int count);
 
   /// No description provided for @practiceTrapsLeadSure.
   ///
   /// In en, this message translates to:
-  /// **'You marked these Sure, but this question shape keeps catching you.'**
+  /// **'You marked these Sure, but this trap keeps catching you.'**
   String get practiceTrapsLeadSure;
 
   /// No description provided for @practiceTrapsReview.
@@ -10373,7 +10439,7 @@ abstract class AppLocalizations {
   /// No description provided for @practiceTrapsBannerBody.
   ///
   /// In en, this message translates to:
-  /// **'These question types show up most in your incorrect Sure answers.'**
+  /// **'These traps show up most in your incorrect Sure answers.'**
   String get practiceTrapsBannerBody;
 
   /// No description provided for @practiceTrapsErrors.
@@ -10382,17 +10448,65 @@ abstract class AppLocalizations {
   /// **'{count} errors'**
   String practiceTrapsErrors(int count);
 
+  /// No description provided for @practiceReviseIncorrects.
+  ///
+  /// In en, this message translates to:
+  /// **'Revise incorrects'**
+  String get practiceReviseIncorrects;
+
   /// No description provided for @practiceImproveScore.
   ///
   /// In en, this message translates to:
   /// **'Improve score'**
   String get practiceImproveScore;
 
+  /// No description provided for @practiceImproveResultUp.
+  ///
+  /// In en, this message translates to:
+  /// **'Score improved'**
+  String get practiceImproveResultUp;
+
+  /// No description provided for @practiceImproveResultDown.
+  ///
+  /// In en, this message translates to:
+  /// **'Score did not improve'**
+  String get practiceImproveResultDown;
+
+  /// No description provided for @practiceImproveResultFlat.
+  ///
+  /// In en, this message translates to:
+  /// **'Score unchanged'**
+  String get practiceImproveResultFlat;
+
+  /// No description provided for @practiceImproveResultFirst.
+  ///
+  /// In en, this message translates to:
+  /// **'First score here'**
+  String get practiceImproveResultFirst;
+
+  /// No description provided for @practiceImproveResultBody.
+  ///
+  /// In en, this message translates to:
+  /// **'{label}: {before}% → {after}%'**
+  String practiceImproveResultBody(String label, int before, int after);
+
+  /// No description provided for @practiceImproveResultBodyFirst.
+  ///
+  /// In en, this message translates to:
+  /// **'{label}: {after}%'**
+  String practiceImproveResultBodyFirst(String label, int after);
+
   /// No description provided for @practiceStartNQuestions.
   ///
   /// In en, this message translates to:
   /// **'Start {count} questions'**
   String practiceStartNQuestions(int count);
+
+  /// No description provided for @practiceStartRevision.
+  ///
+  /// In en, this message translates to:
+  /// **'Start Revision'**
+  String get practiceStartRevision;
 
   /// No description provided for @practiceReviseExistingInstead.
   ///
@@ -10409,19 +10523,19 @@ abstract class AppLocalizations {
   /// No description provided for @practiceDrillReviseTopicSure.
   ///
   /// In en, this message translates to:
-  /// **'You\'ll go through {count} questions you marked Sure and got wrong. Learning mode — explanation after each.'**
+  /// **'For this topic you have {count} questions you were confidently wrong about. Revise them.'**
   String practiceDrillReviseTopicSure(int count);
 
   /// No description provided for @practiceDrillReviseTopicGuess.
   ///
   /// In en, this message translates to:
-  /// **'You\'ll go through {count} questions you marked Educated guess and got wrong. Learning mode — explanation after each.'**
+  /// **'For this topic you have {count} questions you guessed and got wrong. Revise them.'**
   String practiceDrillReviseTopicGuess(int count);
 
   /// No description provided for @practiceDrillReviseTrap.
   ///
   /// In en, this message translates to:
-  /// **'You\'ll go through {count} Sure misses of this question type. Learning mode — explanation after each.'**
+  /// **'For this subject you have {count} questions you were confidently wrong about. Revise them.'**
   String practiceDrillReviseTrap(int count);
 
   /// No description provided for @practiceDrillReviseEmpty.
@@ -10433,14 +10547,14 @@ abstract class AppLocalizations {
   /// No description provided for @practiceDrillImproveTopic.
   ///
   /// In en, this message translates to:
-  /// **'{count} new questions from this topic that you haven\'t tried yet.'**
-  String practiceDrillImproveTopic(int count);
+  /// **'You can improve your score in this topic by attempting a test of new random questions.'**
+  String get practiceDrillImproveTopic;
 
   /// No description provided for @practiceDrillImproveTrap.
   ///
   /// In en, this message translates to:
-  /// **'{count} new questions of this type that you haven\'t tried yet.'**
-  String practiceDrillImproveTrap(int count);
+  /// **'You can improve your score on this trap by attempting a test of new random questions.'**
+  String get practiceDrillImproveTrap;
 
   /// No description provided for @practiceDrillImproveShort.
   ///
@@ -10457,7 +10571,7 @@ abstract class AppLocalizations {
   /// No description provided for @practiceTrapsEmpty.
   ///
   /// In en, this message translates to:
-  /// **'Not enough answers yet to spot a question-type pattern.'**
+  /// **'Not enough answers yet to spot which traps catch you when you are Sure.'**
   String get practiceTrapsEmpty;
 
   /// No description provided for @practiceTrapsInfoTitle.
@@ -10469,7 +10583,7 @@ abstract class AppLocalizations {
   /// No description provided for @practiceTrapsInfoBody.
   ///
   /// In en, this message translates to:
-  /// **'These are question shapes from the bank — such as Match the following or How many of the above — that you miss most when you mark Sure. We cannot yet detect finer traps like misread qualifiers.'**
+  /// **'When you mark Sure and still get it wrong, the question usually plants a specific trap — entity swap, partial truth, and the others in this list. Tap i to see what that trap is and an example.'**
   String get practiceTrapsInfoBody;
 
   /// No description provided for @practiceSeeStats.

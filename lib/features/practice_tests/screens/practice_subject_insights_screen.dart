@@ -8,7 +8,9 @@ import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../l10n/l10n.dart';
-import '../domain/practice_pattern_visual.dart';
+import '../../../core/providers/trap_descriptions_provider.dart';
+import '../../weak_areas/widgets/trap_info_button.dart';
+import '../../weak_areas/widgets/trap_pattern_visual.dart';
 import '../domain/practice_scope.dart';
 import '../domain/practice_subject_insights.dart';
 import '../domain/practice_topic_visual.dart';
@@ -93,11 +95,11 @@ class PracticeSubjectInsightsScreen extends ConsumerWidget {
                               progress: progress,
                               insights: AsyncValue.data(value),
                             ),
-                            if (value.surePatterns.isNotEmpty) ...[
+                            if (value.sureTraps.isNotEmpty) ...[
                               const SizedBox(height: AppSpacing.xl),
                               _TrapsPreview(
                                 subject: subject,
-                                patterns: value.surePatterns,
+                                traps: value.sureTraps,
                               ),
                             ],
                           ],
@@ -182,8 +184,7 @@ class _TopicTabBarDelegate extends SliverPersistentHeaderDelegate {
 
   @override
   bool shouldRebuild(covariant _TopicTabBarDelegate oldDelegate) {
-    return tabBar != oldDelegate.tabBar ||
-        background != oldDelegate.background;
+    return tabBar != oldDelegate.tabBar || background != oldDelegate.background;
   }
 }
 
@@ -253,16 +254,16 @@ class _TopicList extends StatelessWidget {
 }
 
 class _TrapsPreview extends StatelessWidget {
-  const _TrapsPreview({required this.subject, required this.patterns});
+  const _TrapsPreview({required this.subject, required this.traps});
 
   final String subject;
-  final List<SubjectMcqPatternStat> patterns;
+  final List<SubjectTrapStat> traps;
 
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final preview = patterns.take(_previewTrapCount).toList();
+    final preview = traps.take(_previewTrapCount).toList();
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.all(AppSpacing.lg),
@@ -285,7 +286,7 @@ class _TrapsPreview extends StatelessWidget {
               const SizedBox(width: AppSpacing.sm),
               Expanded(
                 child: Text(
-                  context.l10n.practiceTrapsTitleSure(patterns.length),
+                  context.l10n.practiceTrapsTitleSure(traps.length),
                   style: AppTextStyles.h3().copyWith(
                     color: scheme.onSurface,
                     fontWeight: FontWeight.w800,
@@ -305,7 +306,7 @@ class _TrapsPreview extends StatelessWidget {
           ),
           const SizedBox(height: AppSpacing.md),
           for (var i = 0; i < preview.length; i++) ...[
-            _TrapPreviewRow(index: i, pattern: preview[i]),
+            _TrapPreviewRow(index: i, trap: preview[i]),
             if (i < preview.length - 1) const SizedBox(height: AppSpacing.md),
           ],
           const SizedBox(height: AppSpacing.lg),
@@ -336,17 +337,19 @@ class _TrapsPreview extends StatelessWidget {
   }
 }
 
-class _TrapPreviewRow extends StatelessWidget {
-  const _TrapPreviewRow({required this.index, required this.pattern});
+class _TrapPreviewRow extends ConsumerWidget {
+  const _TrapPreviewRow({required this.index, required this.trap});
 
   final int index;
-  final SubjectMcqPatternStat pattern;
+  final SubjectTrapStat trap;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final visual = practicePatternVisual(pattern, isDark: isDark, index: index);
+    final catalog = ref.watch(trapDescriptionsProvider).asData?.value;
+    final name = catalog?[trap.trapType]?.displayName ?? trap.title;
+    final visual = TrapPatternVisual.of(trap.trapType);
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -368,32 +371,29 @@ class _TrapPreviewRow extends StatelessWidget {
               Row(
                 children: [
                   Expanded(
-                    child: Text(
-                      pattern.labelFor(context.l10n),
-                      style: AppTextStyles.labelSm().copyWith(
-                        color: scheme.onSurface,
-                        fontWeight: FontWeight.w800,
-                      ),
+                    child: Row(
+                      children: [
+                        Flexible(
+                          child: Text(
+                            name,
+                            style: AppTextStyles.labelSm().copyWith(
+                              color: scheme.onSurface,
+                              fontWeight: FontWeight.w800,
+                            ),
+                          ),
+                        ),
+                        TrapInfoButton(trapType: trap.trapType, tooltip: name),
+                      ],
                     ),
                   ),
                   Text(
-                    context.l10n.practiceTrapsErrors(pattern.wrong),
+                    context.l10n.practiceTrapsErrors(trap.wrong),
                     style: AppTextStyles.caption().copyWith(
                       color: visual.accent,
                       fontWeight: FontWeight.w700,
                     ),
                   ),
                 ],
-              ),
-              const SizedBox(height: 2),
-              Text(
-                pattern.explainFor(context.l10n),
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-                style: AppTextStyles.caption().copyWith(
-                  color: scheme.onSurfaceVariant,
-                  height: 1.35,
-                ),
               ),
             ],
           ),
@@ -508,7 +508,7 @@ class _TopicRow extends StatelessWidget {
                             vertical: AppSpacing.sm,
                           ),
                         ),
-                        child: Text(context.l10n.commonRevise),
+                        child: Text(context.l10n.practiceReviseIncorrects),
                       ),
                     ),
                     const SizedBox(width: AppSpacing.sm),

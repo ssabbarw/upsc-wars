@@ -26,6 +26,7 @@ abstract final class TrapPatternCatalog {
   static List<TrapPatternListItem> merge({
     required Map<String, TrapDescription> descriptions,
     required List<TrapPatternGroup> groups,
+    String language = 'en',
   }) {
     final counts = <String, int>{
       for (final g in groups) g.trapType: g.questionCount,
@@ -39,8 +40,8 @@ abstract final class TrapPatternCatalog {
         TrapPatternListItem(
           trapType: entry.key,
           displayName: entry.value.displayName,
-          blurb: entry.value.blurb,
-          description: entry.value.description,
+          blurb: entry.value.blurbFor(language),
+          description: entry.value.descriptionFor(language),
           caughtCount: counts[entry.key] ?? 0,
         ),
       );

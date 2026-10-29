@@ -67,9 +67,40 @@ class SubjectMcqPatternStat {
       case UpscMcqPattern.singleStatement:
         return l10n.mcqSingleBody;
       case UpscMcqPattern.other:
-        return l10n.mcqOtherBody;
+        return explainOtherMcqSlug(otherSlug, l10n);
     }
   }
+
+  /// Stable slug for the trap detail route (`/weak-areas/trap/:trapType`).
+  String get infoKey {
+    switch (pattern) {
+      case UpscMcqPattern.howMany:
+        return 'how-many';
+      case UpscMcqPattern.statementCombination:
+        return 'statement-combination';
+      case UpscMcqPattern.assertionReason:
+        return 'assertion-reason';
+      case UpscMcqPattern.matchFollowing:
+        return 'match-the-following';
+      case UpscMcqPattern.direct:
+        return 'direct';
+      case UpscMcqPattern.singleStatement:
+        return 'single-statement';
+      case UpscMcqPattern.other:
+        return otherSlug ?? 'other';
+    }
+  }
+}
+
+/// Reconstruct a zero-stat pattern from [SubjectMcqPatternStat.infoKey].
+SubjectMcqPatternStat mcqPatternStatFromInfoKey(String key) {
+  final pattern = classifyUpscMcqPattern(key);
+  return SubjectMcqPatternStat(
+    pattern: pattern,
+    otherSlug: pattern == UpscMcqPattern.other ? _normalizeType(key) : null,
+    wrong: 0,
+    attempted: 0,
+  );
 }
 
 /// Fewest attempts before a pattern can win on wrong-rate.
@@ -152,6 +183,7 @@ UpscMcqPattern classifyUpscMcqPattern(String raw) {
     case 'multi-statement-correct':
     case 'multi-statement':
     case 'statement-based':
+    case 'statement-combination':
       return UpscMcqPattern.statementCombination;
     case 'assertion-reason':
       return UpscMcqPattern.assertionReason;
@@ -180,4 +212,43 @@ String _titleCaseSlug(String slug) {
       .where((w) => w.isNotEmpty)
       .map((w) => '${w[0].toUpperCase()}${w.substring(1)}')
       .join(' ');
+}
+
+/// Pattern-specific copy for uncommon stem slugs (Identify the pair, …).
+String explainOtherMcqSlug(String? slug, AppLocalizations l10n) {
+  final key = slug ?? '';
+  if (key.contains('identify-the-pair') || key.contains('pair')) {
+    return l10n.mcqIdentifyPairBody;
+  }
+  if (key.contains('odd-one')) {
+    return l10n.mcqOddOneBody;
+  }
+  if (key.contains('fill-in') || key.contains('blank')) {
+    return l10n.mcqFillBlankBody;
+  }
+  if (key.contains('chronolog') || key.contains('timeline')) {
+    return l10n.mcqChronologyBody;
+  }
+  if (key.contains('quantitative') || key.contains('pairing')) {
+    return l10n.mcqQuantitativeBody;
+  }
+  if (key.contains('incorrect')) {
+    return l10n.mcqIncorrectBody;
+  }
+  if (key.contains('application') || key.contains('scenario')) {
+    return l10n.mcqApplicationBody;
+  }
+  if (key.contains('relationship') || key.contains('two-statement')) {
+    return l10n.mcqTwoStatementBody;
+  }
+  if (key.contains('map')) {
+    return l10n.mcqMapBody;
+  }
+  if (key.contains('negative')) {
+    return l10n.mcqNegativeBody;
+  }
+  if (key.contains('conceptual')) {
+    return l10n.mcqConceptualBody;
+  }
+  return l10n.mcqOtherBody;
 }

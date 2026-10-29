@@ -1,3 +1,5 @@
+import '../../../core/domain/entities/test_question.dart';
+
 /// Stem, options, and trap explanation in one language.
 class TrapExampleContent {
   const TrapExampleContent({
@@ -57,4 +59,49 @@ class TrapExample {
       hi: hiRaw == null ? null : TrapExampleContent.fromJson(hiRaw),
     );
   }
+
+  /// Bank question shown as a demo MCQ. Never scored.
+  factory TrapExample.fromQuestion(
+    TestQuestion question, {
+    required String trapType,
+  }) {
+    TrapExampleContent content({required bool hindi}) {
+      String pick(String en, String hi) =>
+          hindi && hi.trim().isNotEmpty ? hi : en;
+      final whyEn = _firstNonEmpty([
+        question.upscTrapExplanation,
+        question.finalExplanation,
+      ]);
+      final whyHi = _firstNonEmpty([
+        question.upscTrapExplanationHi,
+        question.finalExplanationHi,
+        whyEn,
+      ]);
+      return TrapExampleContent(
+        stem: pick(question.displayText, question.displayTextHi),
+        options: {
+          'a': pick(question.optionA, question.optionAHi),
+          'b': pick(question.optionB, question.optionBHi),
+          'c': pick(question.optionC, question.optionCHi),
+          'd': pick(question.optionD, question.optionDHi),
+        },
+        why: hindi ? whyHi : whyEn,
+      );
+    }
+
+    return TrapExample(
+      trapType: trapType,
+      correctOption: question.correctOption.toLowerCase().trim(),
+      en: content(hindi: false),
+      hi: question.displayTextHi.trim().isEmpty ? null : content(hindi: true),
+    );
+  }
+}
+
+String _firstNonEmpty(List<String?> values) {
+  for (final value in values) {
+    final trimmed = value?.trim() ?? '';
+    if (trimmed.isNotEmpty) return trimmed;
+  }
+  return '';
 }

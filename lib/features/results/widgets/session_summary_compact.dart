@@ -22,6 +22,7 @@ import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../home/domain/create_get_started_session_use_case.dart';
 import '../../home/domain/demo_diagnostic_ephemeral_store.dart';
+import '../../practice_tests/domain/insight_improve.dart';
 import '../domain/session_insight_case.dart';
 import '../domain/session_insight_metrics.dart';
 import '../providers/session_coach_providers.dart';
@@ -257,7 +258,11 @@ class SessionSummaryCompactView extends HookConsumerWidget {
           highlightKey: reviewAllKey,
           analyticsFeatureKey: result.analyticsFeatureKey,
         ),
-        _BackToHomeButton(sessionId: sessionId, scheme: scheme),
+        _BackToHomeButton(
+          sessionId: sessionId,
+          scheme: scheme,
+          analyticsFeatureKey: result.analyticsFeatureKey,
+        ),
         if (showRevisionQueue) ...[
           SizedBox(height: metrics.sectionGap),
           _RevisionQueueCard(
@@ -1011,13 +1016,20 @@ class _TopicAccuracyList extends StatelessWidget {
 }
 
 class _BackToHomeButton extends ConsumerWidget {
-  const _BackToHomeButton({required this.sessionId, required this.scheme});
+  const _BackToHomeButton({
+    required this.sessionId,
+    required this.scheme,
+    this.analyticsFeatureKey,
+  });
 
   final String sessionId;
   final ColorScheme scheme;
+  final String? analyticsFeatureKey;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final returnToCaller =
+        isInsightImproveFeature(analyticsFeatureKey) && context.canPop();
     return TextButton(
       onPressed: () {
         HapticFeedback.lightImpact();
@@ -1027,14 +1039,20 @@ class _BackToHomeButton extends ConsumerWidget {
         ScreenFlow.logAction(
           ref,
           screenName: ScreenFlow.sessionResults,
-          actionId: 'back_to_home_cta',
+          actionId: returnToCaller ? 'back_to_caller_cta' : 'back_to_home_cta',
           actionKind: 'back',
         );
         clearDemoDiagnosticEphemeral(sessionId);
-        context.go('/');
+        if (returnToCaller) {
+          context.pop();
+        } else {
+          context.go('/');
+        }
       },
       child: Text(
-        context.l10n.resultsBackToHome,
+        returnToCaller
+            ? context.l10n.commonDone
+            : context.l10n.resultsBackToHome,
         style: AppTextStyles.label().copyWith(
           fontWeight: FontWeight.w600,
           color: scheme.onSurfaceVariant,

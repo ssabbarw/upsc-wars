@@ -20,6 +20,7 @@ Future<void> showTrapExampleSheet({
   required String trapType,
   required String displayName,
   required String blurb,
+  TrapExample? exampleOverride,
 }) {
   return showModalBottomSheet<void>(
     context: context,
@@ -32,6 +33,7 @@ Future<void> showTrapExampleSheet({
         trapType: trapType,
         displayName: displayName,
         blurb: blurb,
+        exampleOverride: exampleOverride,
       ),
     ),
   );
@@ -148,7 +150,7 @@ class TrapExampleSheet extends HookConsumerWidget {
                           ),
                         );
                       }
-                      return _TrapExampleMcq(
+                      return TrapExampleMcq(
                         example: example,
                         language: language,
                       );
@@ -164,8 +166,13 @@ class TrapExampleSheet extends HookConsumerWidget {
   }
 }
 
-class _TrapExampleMcq extends HookWidget {
-  const _TrapExampleMcq({required this.example, required this.language});
+/// Interactive demo MCQ used on the trap example sheet and the pattern screen.
+class TrapExampleMcq extends HookWidget {
+  const TrapExampleMcq({
+    super.key,
+    required this.example,
+    required this.language,
+  });
 
   final TrapExample example;
   final String language;

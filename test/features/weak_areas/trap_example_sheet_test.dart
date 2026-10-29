@@ -6,6 +6,8 @@ import 'package:upsc_wars/l10n/app_localizations.dart';
 import 'package:upsc_wars/features/weak_areas/domain/trap_example.dart';
 import 'package:upsc_wars/features/weak_areas/widgets/trap_example_sheet.dart';
 
+import '../../support/test_question_builder.dart';
+
 void main() {
   setUpAll(() => GoogleFonts.config.allowRuntimeFetching = false);
 
@@ -131,5 +133,16 @@ void main() {
     await tester.pump();
 
     expect(find.text(en.stem), findsOneWidget);
+  });
+
+  test('fromQuestion copies stem, options, and the correct key', () {
+    final example = TrapExample.fromQuestion(
+      buildTestQuestion(uuid: 'pair-1', questionType: 'identify-the-pair'),
+      trapType: 'identify-the-pair',
+    );
+    expect(example.trapType, 'identify-the-pair');
+    expect(example.correctOption, 'a');
+    expect(example.en.stem, 'Q pair-1');
+    expect(example.en.options['b'], 'B');
   });
 }

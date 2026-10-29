@@ -2,61 +2,81 @@
   {
     "trap_type": "entity-swap",
     "display_name": "Entity Swap",
-    "blurb": "Right fact, wrong person or institution.",
-    "description": "A detail that belongs to one person, dynasty, or institution is attributed to another. Both entities are real and related to the topic, making the swap hard to catch without precise recall."
+    "blurb": "The fact is real, but it is pinned to the wrong person, dynasty, or institution.",
+    "description": "A detail that belongs to one person, dynasty, or institution is attributed to another. Both entities are real and related to the topic, making the swap hard to catch without precise recall.",
+    "blurb_hi": "तथ्य सही है, लेकिन वह गलत व्यक्ति, वंश या संस्था से जोड़ दिया गया है।",
+    "description_hi": "एक व्यक्ति, वंश या संस्था का विवरण किसी और पर मढ़ दिया जाता है। दोनों वास्तविक और विषय से जुड़े होते हैं, इसलिए बिना सटीक याद के यह अदल-बदल पकड़ना मुश्किल होता है।"
   },
   {
     "trap_type": "scope-extension",
     "display_name": "Scope Extension",
-    "blurb": "True in one case, written as if always true.",
-    "description": "Takes a statement that is true in a limited context and presents it as universally true. A policy, event, or phenomenon that applied to one region, period, or group is stated as if it applied everywhere or always."
+    "blurb": "Something true in one place or period is written as if it is always true everywhere.",
+    "description": "Takes a statement that is true in a limited context and presents it as universally true. A policy, event, or phenomenon that applied to one region, period, or group is stated as if it applied everywhere or always.",
+    "blurb_hi": "एक जगह या काल में सच बात को हर जगह हमेशा सच की तरह लिखा जाता है।",
+    "description_hi": "सीमित संदर्भ में सही कथन को सार्वभौमिक सच बना दिया जाता है। जो नीति, घटना या प्रक्रिया एक क्षेत्र, काल या समूह पर लागू थी, उसे हर जगह या हमेशा लागू बताया जाता है।"
   },
   {
     "trap_type": "conflation",
     "display_name": "Conflation",
-    "blurb": "Two distinct things fused into one claim.",
-    "description": "Merges two distinct events, people, or concepts into one. A characteristic of X is attributed to Y because both belong to the same broad topic or era. The merged statement sounds entirely plausible on the surface."
+    "blurb": "Two different people, events, or ideas are mixed into one claim that still sounds fine.",
+    "description": "Merges two distinct events, people, or concepts into one. A characteristic of X is attributed to Y because both belong to the same broad topic or era. The merged statement sounds entirely plausible on the surface.",
+    "blurb_hi": "दो अलग लोग, घटनाएँ या विचार एक दावे में मिला दिए जाते हैं, जो फिर भी ठीक लगता है।",
+    "description_hi": "दो अलग घटनाओं, लोगों या अवधारणाओं को एक में मिला दिया जाता है। X की विशेषता Y पर इसलिए मढ़ दी जाती है क्योंकि दोनों एक ही बड़े विषय या युग के हैं। मिला-जुला कथन सतह पर बिलकुल ठीक लगता है।"
   },
   {
     "trap_type": "temporal-swap",
     "display_name": "Temporal Swap",
-    "blurb": "Right fact, wrong year or era.",
-    "description": "Assigns the right fact to the wrong time period, or places the right event in the wrong century. Common where dates cluster closely and chronological precision is tested."
+    "blurb": "The fact is right, but the year, century, or era is wrong.",
+    "description": "Assigns the right fact to the wrong time period, or places the right event in the wrong century. Common where dates cluster closely and chronological precision is tested.",
+    "blurb_hi": "तथ्य सही है, लेकिन साल, शताब्दी या युग गलत है।",
+    "description_hi": "सही तथ्य गलत समय से जोड़ दिया जाता है, या सही घटना गलत शताब्दी में रख दी जाती है। जहाँ तारीखें पास-पास हों, वहाँ यह अक्सर जाँचा जाता है।"
   },
   {
     "trap_type": "partial-truth",
     "display_name": "Partial Truth",
-    "blurb": "Mostly right, with one planted error.",
-    "description": "The statement is mostly correct but contains one false detail — a wrong date, wrong name, or wrong attribute embedded in an otherwise accurate sentence. The correct parts lower your guard before the error lands."
+    "blurb": "Most of the sentence is correct, with one wrong detail planted in it.",
+    "description": "The statement is mostly correct but contains one false detail — a wrong date, wrong name, or wrong attribute embedded in an otherwise accurate sentence. The correct parts lower your guard before the error lands.",
+    "blurb_hi": "वाक्य का ज़्यादातर हिस्सा सही होता है, उसमें एक गलत बात बिठा दी जाती है।",
+    "description_hi": "कथन लगभग सही होता है, लेकिन उसमें एक गलत विवरण होता है — गलत तारीख, नाम या गुण, बाकी वाक्य सही रहता है। सही हिस्से आपकी सतर्कता घटा देते हैं, फिर गलती फँसती है।"
   },
   {
     "trap_type": "reversed-causation",
     "display_name": "Reversed Causation",
-    "blurb": "Cause and effect swapped.",
-    "description": "Swaps cause and effect. The consequence of an event is presented as its cause, or an outcome is attributed to the wrong preceding factor."
+    "blurb": "Cause and effect are flipped — the result is presented as the reason.",
+    "description": "Swaps cause and effect. The consequence of an event is presented as its cause, or an outcome is attributed to the wrong preceding factor.",
+    "blurb_hi": "कारण और परिणाम उल्टे कर दिए जाते हैं — नतीजे को वजह बता दिया जाता है।",
+    "description_hi": "कारण और प्रभाव की अदला-बदली। किसी घटना का परिणाम उसके कारण के रूप में लिखा जाता है, या नतीजे को गलत पूर्व कारक से जोड़ दिया जाता है।"
   },
   {
     "trap_type": "plausible-fabrication",
     "display_name": "Plausible Fabrication",
-    "blurb": "Sounds official. Never existed.",
-    "description": "The statement sounds authoritative and fits the context but is simply not true — no such treaty, provision, institution, or event exists. Designed to exploit gaps in knowledge rather than confuse between two real things."
+    "blurb": "It sounds official and fits the topic, but no such thing ever existed.",
+    "description": "The statement sounds authoritative and fits the context but is simply not true — no such treaty, provision, institution, or event exists. Designed to exploit gaps in knowledge rather than confuse between two real things.",
+    "blurb_hi": "आधिकारिक लगता है और विषय से मेल खाता है, लेकिन ऐसी कोई चीज़ कभी थी ही नहीं।",
+    "description_hi": "कथन आधिकारिक लगता है और संदर्भ में बैठता है, लेकिन सच नहीं है — ऐसी कोई संधि, प्रावधान, संस्था या घटना है ही नहीं। दो असली चीज़ों में उलझाने के बजाय ज्ञान की कमी का फायदा उठाया जाता है।"
   },
   {
     "trap_type": "geographic-swap",
     "display_name": "Geographic Swap",
-    "blurb": "Right fact, wrong place.",
-    "description": "Assigns a feature, event, or characteristic to the wrong location. A river, site, battle, or resource belonging to one region is placed in another that feels contextually similar."
+    "blurb": "The fact is right, but it is placed in the wrong region, river, or site.",
+    "description": "Assigns a feature, event, or characteristic to the wrong location. A river, site, battle, or resource belonging to one region is placed in another that feels contextually similar.",
+    "blurb_hi": "तथ्य सही है, लेकिन वह गलत क्षेत्र, नदी या स्थल पर रख दिया गया है।",
+    "description_hi": "कोई विशेषता, घटना या लक्षण गलत जगह से जोड़ दिया जाता है। एक क्षेत्र की नदी, स्थल, युद्ध या संसाधन दूसरे ऐसे क्षेत्र में रख दिया जाता है जो संदर्भ में मिलता-जुलता लगे।"
   },
   {
     "trap_type": "negation-trap",
     "display_name": "Negation Trap",
-    "blurb": "NOT / except / incorrect — easy to miss.",
-    "description": "Uses 'not','never','except', or 'which of the following is incorrect' framing to flip the task. Students answer as if selecting correct statements and pick the wrong option."
+    "blurb": "The stem uses not, except, or incorrect — easy to miss and answer the opposite.",
+    "description": "Uses 'not','never','except', or 'which of the following is incorrect' framing to flip the task. Students answer as if selecting correct statements and pick the wrong option.",
+    "blurb_hi": "सवाल में not, except या incorrect होता है — चूककर उल्टा उत्तर देना आसान है।",
+    "description_hi": "'not', 'never', 'except' या 'which of the following is incorrect' से काम उल्टा हो जाता है। छात्र सही कथन चुनने जैसा उत्तर देते हैं और गलत विकल्प पकड़ लेते हैं।"
   },
   {
     "trap_type": "negative-framing",
     "display_name": "Negative Framing",
-    "blurb": "The question itself asks for the wrong option.",
-    "description": "The question itself is framed in a negative form (for example asking for the incorrect statement, exception, or NOT true option). This framing increases error risk even when content knowledge is adequate."
+    "blurb": "The question asks you to pick the wrong or untrue option, not the correct one.",
+    "description": "The question itself is framed in a negative form (for example asking for the incorrect statement, exception, or NOT true option). This framing increases error risk even when content knowledge is adequate.",
+    "blurb_hi": "सवाल सही विकल्प नहीं, गलत या असत्य विकल्प चुनने को कहता है।",
+    "description_hi": "सवाल नकारात्मक रूप में पूछा जाता है — जैसे गलत कथन, अपवाद, या NOT true विकल्प। विषय पता होने पर भी यह फ्रेम गलती बढ़ा देता है।"
   }
 ]

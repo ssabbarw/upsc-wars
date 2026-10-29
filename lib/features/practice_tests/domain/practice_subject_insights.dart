@@ -1,6 +1,6 @@
-import '../../subject_detail/domain/subject_mcq_pattern.dart';
+import 'subject_trap_stat.dart';
 
-export '../../subject_detail/domain/subject_mcq_pattern.dart';
+export 'subject_trap_stat.dart';
 
 /// Rules for the practice subject snapshot and the screen it opens.
 abstract final class PracticeInsightRules {
@@ -142,8 +142,8 @@ class PracticeSubjectInsights {
     this.reviseTopics = const [],
     this.sureTopics = const [],
     this.guessTopics = const [],
-    this.surePatterns = const [],
-    this.guessPatterns = const [],
+    this.sureTraps = const [],
+    this.guessTraps = const [],
   });
 
   final List<ConfidentMistakeTopic> mistakes;
@@ -156,8 +156,8 @@ class PracticeSubjectInsights {
   final List<LensTopic> reviseTopics;
   final List<LensTopic> sureTopics;
   final List<LensTopic> guessTopics;
-  final List<SubjectMcqPatternStat> surePatterns;
-  final List<SubjectMcqPatternStat> guessPatterns;
+  final List<SubjectTrapStat> sureTraps;
+  final List<SubjectTrapStat> guessTraps;
 
   int get sureCorrect => (sureTotal - sureWrong).clamp(0, sureTotal);
 
@@ -260,8 +260,8 @@ int _byWrongRate(LensTopic a, LensTopic b) {
 PracticeSubjectInsights assemblePracticeSubjectInsights({
   required List<PracticeTopicRollup> topics,
   required Map<String, String> displayNames,
-  List<SubjectMcqPatternStat> surePatterns = const [],
-  List<SubjectMcqPatternStat> guessPatterns = const [],
+  List<SubjectTrapStat> sureTraps = const [],
+  List<SubjectTrapStat> guessTraps = const [],
 }) {
   final mistakes = <ConfidentMistakeTopic>[];
   final attemptMore = <AttemptMoreTopic>[];
@@ -374,7 +374,7 @@ PracticeSubjectInsights assemblePracticeSubjectInsights({
     reviseTopics: reviseTopics,
     sureTopics: sureTopics,
     guessTopics: guessTopics,
-    surePatterns: surePatterns,
-    guessPatterns: guessPatterns,
+    sureTraps: sureTraps,
+    guessTraps: guessTraps,
   );
 }

@@ -36,6 +36,7 @@ import '../../community/widgets/share_qotd_sheet.dart';
 import '../../history/widgets/explanation_card.dart';
 import '../../home/domain/create_get_started_session_use_case.dart';
 import '../../home/providers/home_activation_journey_provider.dart';
+import '../../practice_tests/domain/insight_improve.dart';
 import '../../push_spot_test/push_spot_test_constants.dart';
 import '../providers/test_session_provider.dart';
 import '../providers/test_session_state.dart';
@@ -67,6 +68,19 @@ Future<void> _showDemoConfidenceIntroThenPrompt(
   }
   if (!context.mounted) return;
   await _showConfidenceBottomSheet(context, ref, sessionId);
+}
+
+void _openSessionResults(
+  BuildContext context, {
+  required String sessionId,
+  required String? analyticsFeatureKey,
+}) {
+  final route = sessionResultsRouteForKey(sessionId, analyticsFeatureKey);
+  if (isInsightImproveFeature(analyticsFeatureKey) && context.canPop()) {
+    context.pushReplacement(route);
+  } else {
+    context.go(route);
+  }
 }
 
 Future<void> _showDemoExplanationCoachSheet(
@@ -555,7 +569,11 @@ class _TestEngineTimerTicker extends HookConsumerWidget {
                   'TestEngine timer submit -> go '
                   '${sessionResultsRouteForKey(submitted, featureKey)}',
                 );
-                context.go(sessionResultsRouteForKey(submitted, featureKey));
+                _openSessionResults(
+                  context,
+                  sessionId: submitted,
+                  analyticsFeatureKey: featureKey,
+                );
               }
             } catch (e, st) {
               upscWarsTrace(
@@ -1030,8 +1048,10 @@ Future<void> _showTestPaletteSheet(
                                     'TestEngine palette submit -> go '
                                     '${sessionResultsRouteForKey(id, featureKey)}',
                                   );
-                                  context.go(
-                                    sessionResultsRouteForKey(id, featureKey),
+                                  _openSessionResults(
+                                    context,
+                                    sessionId: id,
+                                    analyticsFeatureKey: featureKey,
                                   );
                                 } catch (e, st) {
                                   upscWarsTrace(

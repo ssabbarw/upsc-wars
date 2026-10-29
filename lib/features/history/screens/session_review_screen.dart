@@ -1167,9 +1167,11 @@ class _Options extends ConsumerWidget {
     final selected = question.selectedOption?.toLowerCase();
 
     Widget? stripFor(String letter) {
-      final sid = confidenceSessionId;
-      if (sid == null || !confidenceOn || !scored) return null;
+      if (!confidenceOn || !scored) return null;
       if (selected != letter) return null;
+      if (confidenceSessionId == null && question.confidence == null) {
+        return null;
+      }
       return Padding(
         padding: const EdgeInsets.fromLTRB(12, 8, 12, 10),
         child: Align(

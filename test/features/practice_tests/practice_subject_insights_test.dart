@@ -168,26 +168,24 @@ void main() {
     expect(insights.sureTopics.map((t) => t.topicKey), ['b', 'a']);
   });
 
-  test('keeps sure and guess question-type patterns apart', () {
-    const sure = SubjectMcqPatternStat(
-      pattern: UpscMcqPattern.matchFollowing,
-      otherSlug: null,
+  test('keeps sure and guess content traps apart', () {
+    const sure = SubjectTrapStat(
+      trapType: 'entity-swap',
       wrong: 4,
       attempted: 6,
     );
-    const guess = SubjectMcqPatternStat(
-      pattern: UpscMcqPattern.howMany,
-      otherSlug: null,
+    const guess = SubjectTrapStat(
+      trapType: 'partial-truth',
       wrong: 3,
       attempted: 5,
     );
     final insights = assemblePracticeSubjectInsights(
       displayNames: const {},
       topics: const [],
-      surePatterns: const [sure],
-      guessPatterns: const [guess],
+      sureTraps: const [sure],
+      guessTraps: const [guess],
     );
-    expect(insights.surePatterns.single.pattern, UpscMcqPattern.matchFollowing);
-    expect(insights.guessPatterns.single.pattern, UpscMcqPattern.howMany);
+    expect(insights.sureTraps.single.trapType, 'entity-swap');
+    expect(insights.guessTraps.single.trapType, 'partial-truth');
   });
 }

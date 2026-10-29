@@ -84,14 +84,15 @@ Future<PracticeSubjectInsights> loadPracticeSubjectInsights(
     );
   }
 
-  final patternRows = await db
+  final trapRows = await db
       .customSelect(
         '''
         SELECT
-          q.question_type AS qtype,
+          LOWER(REPLACE(q.trap_type, '_', '-')) AS ttype,
           a.confidence AS conf,
-          COALESCE(SUM(CASE WHEN a.is_correct = 0 THEN 1 ELSE 0 END), 0) AS wrongs,
-          COALESCE(COUNT(*), 0) AS tot
+          COUNT(DISTINCT CASE WHEN a.is_correct = 0 THEN a.question_uuid END)
+            AS wrongs,
+          COUNT(DISTINCT a.question_uuid) AS tot
         FROM attempts a
         INNER JOIN questions q ON q.uuid = a.question_uuid
         INNER JOIN sessions s ON s.id = a.session_id
@@ -100,7 +101,9 @@ Future<PracticeSubjectInsights> loadPracticeSubjectInsights(
           AND s.completed_at >= ?
           AND a.status IN ('correct', 'wrong')
           AND a.confidence IN ('very_sure', 'somewhat_sure')
-        GROUP BY q.question_type, a.confidence
+          AND q.trap_type IS NOT NULL
+          AND TRIM(q.trap_type) != ''
+        GROUP BY ttype, a.confidence
         ''',
         variables: [
           Variable.withString(subject),
@@ -112,10 +115,10 @@ Future<PracticeSubjectInsights> loadPracticeSubjectInsights(
 
   List<({String type, int wrong, int attempted})> ofConf(String conf) {
     return [
-      for (final r in patternRows)
+      for (final r in trapRows)
         if (r.read<String>('conf') == conf)
           (
-            type: r.read<String>('qtype'),
+            type: r.read<String>('ttype'),
             wrong: r.read<int>('wrongs'),
             attempted: r.read<int>('tot'),
           ),
@@ -125,8 +128,8 @@ Future<PracticeSubjectInsights> loadPracticeSubjectInsights(
   return assemblePracticeSubjectInsights(
     topics: topics,
     displayNames: displayNames,
-    surePatterns: rankMcqPatterns(ofConf('very_sure')),
-    guessPatterns: rankMcqPatterns(ofConf('somewhat_sure')),
+    sureTraps: rankContentTraps(ofConf('very_sure')),
+    guessTraps: rankContentTraps(ofConf('somewhat_sure')),
   );
 }
 
@@ -175,10 +178,7 @@ Future<InsightDrillPool> loadTopicDrillPool(
           AND topic = ?
         ORDER BY RANDOM()
         ''',
-        variables: [
-          Variable.withString(subject),
-          Variable.withString(topic),
-        ],
+        variables: [Variable.withString(subject), Variable.withString(topic)],
         readsFrom: {db.questions},
       )
       .get();
@@ -198,12 +198,12 @@ Future<InsightDrillPool> loadTopicDrillPool(
 Future<InsightDrillPool> loadTrapDrillPool(
   UserDatabase db, {
   required String subject,
-  required SubjectMcqPatternStat pattern,
+  required String trapType,
   required DateTime seasonStart,
   int improveLimit = kInsightImproveSize,
 }) async {
-  final ofPattern = await _patternUuids(db, subject, pattern);
-  if (ofPattern.isEmpty) {
+  final ofTrap = await _trapUuids(db, subject, trapType);
+  if (ofTrap.isEmpty) {
     return const InsightDrillPool(reviseUuids: [], improveUuids: []);
   }
   final season = Variable.withInt(seasonStart.millisecondsSinceEpoch ~/ 1000);
@@ -228,10 +228,10 @@ Future<InsightDrillPool> loadTrapDrillPool(
       .get();
   final revise = [
     for (final r in wrongRows)
-      if (ofPattern.contains(r.read<String>('uuid'))) r.read<String>('uuid'),
+      if (ofTrap.contains(r.read<String>('uuid'))) r.read<String>('uuid'),
   ];
   final attempted = await _attemptedUuids(db);
-  final unused = ofPattern.difference(attempted).toList()..shuffle();
+  final unused = ofTrap.difference(attempted).toList()..shuffle();
   return InsightDrillPool(
     reviseUuids: revise,
     improveUuids: unused.take(improveLimit).toList(),
@@ -241,15 +241,17 @@ Future<InsightDrillPool> loadTrapDrillPool(
 Future<Set<String>> _attemptedUuids(UserDatabase db) =>
     db.sessionQuestionsDao.getAllAttemptedQuestionUuids();
 
-Future<Set<String>> _patternUuids(
+Future<Set<String>> _trapUuids(
   UserDatabase db,
   String subject,
-  SubjectMcqPatternStat pattern,
+  String trapType,
 ) async {
+  final want = normalizeTrapType(trapType);
+  if (want.isEmpty) return {};
   final bank = await db
       .customSelect(
         '''
-        SELECT uuid, question_type AS qtype
+        SELECT uuid, trap_type AS ttype
         FROM questions
         WHERE subject = ?
         ''',
@@ -259,7 +261,7 @@ Future<Set<String>> _patternUuids(
       .get();
   return {
     for (final row in bank)
-      if (matchesMcqPattern(row.read<String>('qtype'), pattern))
+      if (normalizeTrapType(row.read<String?>('ttype') ?? '') == want)
         row.read<String>('uuid'),
   };
 }

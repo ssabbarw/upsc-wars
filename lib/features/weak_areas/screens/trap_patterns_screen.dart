@@ -8,6 +8,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../../core/analytics/analytics.dart';
 import '../../../core/analytics/analytics_events.dart';
 import '../../../core/domain/entities/trap_pattern_group.dart';
+import '../../../core/providers/app_language_helpers.dart';
 import '../../../core/providers/catalog_providers.dart';
 import '../../../core/providers/trap_descriptions_provider.dart'
     show trapDescriptionsProvider;
@@ -36,6 +37,7 @@ class TrapPatternsScreen extends HookConsumerWidget {
     final border = isDark ? AppColors.borderDark : AppColors.borderLight;
     final trapsAsync = ref.watch(weakTrapGroupsProvider);
     final descriptionsAsync = ref.watch(trapDescriptionsProvider);
+    final language = watchAppLanguage(ref);
 
     return Scaffold(
       body: SafeArea(
@@ -116,6 +118,7 @@ class TrapPatternsScreen extends HookConsumerWidget {
                   final items = TrapPatternCatalog.merge(
                     descriptions: descriptions,
                     groups: groups,
+                    language: language,
                   );
 
                   return ListView.separated(

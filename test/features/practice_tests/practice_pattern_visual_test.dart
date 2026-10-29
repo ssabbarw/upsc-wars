@@ -3,10 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:upsc_wars/features/practice_tests/domain/practice_pattern_visual.dart';
 import 'package:upsc_wars/features/subject_detail/domain/subject_mcq_pattern.dart';
 
-SubjectMcqPatternStat _stat(
-  UpscMcqPattern pattern, {
-  String? otherSlug,
-}) {
+SubjectMcqPatternStat _stat(UpscMcqPattern pattern, {String? otherSlug}) {
   return SubjectMcqPatternStat(
     pattern: pattern,
     otherSlug: otherSlug,
@@ -18,10 +15,7 @@ SubjectMcqPatternStat _stat(
 void main() {
   test('canonical patterns get a distinct stem icon', () {
     expect(
-      practicePatternVisual(
-        _stat(UpscMcqPattern.howMany),
-        isDark: false,
-      ).icon,
+      practicePatternVisual(_stat(UpscMcqPattern.howMany), isDark: false).icon,
       Icons.filter_3_rounded,
     );
     expect(

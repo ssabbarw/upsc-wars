@@ -2394,6 +2394,50 @@ class AppLocalizationsEn extends AppLocalizations {
       'A less common stem shape in this bank. Practise a few to get used to how it is framed.';
 
   @override
+  String get mcqIdentifyPairBody =>
+      'Each option is a pair (name — claim, place — fact). You pick which pair is correctly or incorrectly matched. One swapped date, place, or attribute makes the whole pair wrong even when both halves look familiar.';
+
+  @override
+  String get mcqOddOneBody =>
+      'Three options share a rule; one does not. Name the rule first — don\'t pick the option that merely looks different.';
+
+  @override
+  String get mcqFillBlankBody =>
+      'A missing word or phrase sits in the stem. The options look interchangeable until you recall the exact term used in the syllabus.';
+
+  @override
+  String get mcqChronologyBody =>
+      'You must put events in the right order. One event in the wrong century breaks the sequence even if you know every event separately.';
+
+  @override
+  String get mcqQuantitativeBody =>
+      'Numbers, ratios, or paired figures. A nearby wrong figure is planted because it belongs to a related fact.';
+
+  @override
+  String get mcqIncorrectBody =>
+      'The stem asks for the incorrect statement. Easy to answer as if it asked for the correct one.';
+
+  @override
+  String get mcqApplicationBody =>
+      'A short situation, then apply a principle. The trap is using a related but wrong principle that also sounds official.';
+
+  @override
+  String get mcqTwoStatementBody =>
+      'Two statements and a link between them. Both can be true without the stated relationship.';
+
+  @override
+  String get mcqMapBody =>
+      'A location, range, or boundary. Neighbouring places are the bait.';
+
+  @override
+  String get mcqNegativeBody =>
+      'NOT / except / never in the stem. Answer the reversed task, not the familiar one.';
+
+  @override
+  String get mcqConceptualBody =>
+      'Tests the idea, not a date. A true fact about a different concept is the usual bait.';
+
+  @override
   String get subjRevisitTopic => 'Revisit this topic';
 
   @override
@@ -6266,12 +6310,12 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String practiceTrapsTitleSure(int count) {
-    return '$count question types are behind your sure mistakes';
+    return '$count traps are behind your sure mistakes';
   }
 
   @override
   String get practiceTrapsLeadSure =>
-      'You marked these Sure, but this question shape keeps catching you.';
+      'You marked these Sure, but this trap keeps catching you.';
 
   @override
   String get practiceTrapsReview => 'Review my traps';
@@ -6288,7 +6332,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get practiceTrapsBannerBody =>
-      'These question types show up most in your incorrect Sure answers.';
+      'These traps show up most in your incorrect Sure answers.';
 
   @override
   String practiceTrapsErrors(int count) {
@@ -6296,12 +6340,40 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String get practiceReviseIncorrects => 'Revise incorrects';
+
+  @override
   String get practiceImproveScore => 'Improve score';
+
+  @override
+  String get practiceImproveResultUp => 'Score improved';
+
+  @override
+  String get practiceImproveResultDown => 'Score did not improve';
+
+  @override
+  String get practiceImproveResultFlat => 'Score unchanged';
+
+  @override
+  String get practiceImproveResultFirst => 'First score here';
+
+  @override
+  String practiceImproveResultBody(String label, int before, int after) {
+    return '$label: $before% → $after%';
+  }
+
+  @override
+  String practiceImproveResultBodyFirst(String label, int after) {
+    return '$label: $after%';
+  }
 
   @override
   String practiceStartNQuestions(int count) {
     return 'Start $count questions';
   }
+
+  @override
+  String get practiceStartRevision => 'Start Revision';
 
   @override
   String get practiceReviseExistingInstead => 'Revise existing instead';
@@ -6311,17 +6383,17 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String practiceDrillReviseTopicSure(int count) {
-    return 'You\'ll go through $count questions you marked Sure and got wrong. Learning mode — explanation after each.';
+    return 'For this topic you have $count questions you were confidently wrong about. Revise them.';
   }
 
   @override
   String practiceDrillReviseTopicGuess(int count) {
-    return 'You\'ll go through $count questions you marked Educated guess and got wrong. Learning mode — explanation after each.';
+    return 'For this topic you have $count questions you guessed and got wrong. Revise them.';
   }
 
   @override
   String practiceDrillReviseTrap(int count) {
-    return 'You\'ll go through $count Sure misses of this question type. Learning mode — explanation after each.';
+    return 'For this subject you have $count questions you were confidently wrong about. Revise them.';
   }
 
   @override
@@ -6329,14 +6401,12 @@ class AppLocalizationsEn extends AppLocalizations {
       'No wrong questions to revise here yet.';
 
   @override
-  String practiceDrillImproveTopic(int count) {
-    return '$count new questions from this topic that you haven\'t tried yet.';
-  }
+  String get practiceDrillImproveTopic =>
+      'You can improve your score in this topic by attempting a test of new random questions.';
 
   @override
-  String practiceDrillImproveTrap(int count) {
-    return '$count new questions of this type that you haven\'t tried yet.';
-  }
+  String get practiceDrillImproveTrap =>
+      'You can improve your score on this trap by attempting a test of new random questions.';
 
   @override
   String practiceDrillImproveShort(int count, int full) {
@@ -6348,14 +6418,14 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get practiceTrapsEmpty =>
-      'Not enough answers yet to spot a question-type pattern.';
+      'Not enough answers yet to spot which traps catch you when you are Sure.';
 
   @override
   String get practiceTrapsInfoTitle => 'What these traps are';
 
   @override
   String get practiceTrapsInfoBody =>
-      'These are question shapes from the bank — such as Match the following or How many of the above — that you miss most when you mark Sure. We cannot yet detect finer traps like misread qualifiers.';
+      'When you mark Sure and still get it wrong, the question usually plants a specific trap — entity swap, partial truth, and the others in this list. Tap i to see what that trap is and an example.';
 
   @override
   String get practiceSeeStats => 'See stats';

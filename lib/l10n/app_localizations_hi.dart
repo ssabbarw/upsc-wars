@@ -2292,6 +2292,50 @@ class AppLocalizationsHi extends AppLocalizations {
       'इस बैंक का कम दिखने वाला stem. कुछ सवाल हल करके फॉर्मैट पकड़ें।';
 
   @override
+  String get mcqIdentifyPairBody =>
+      'हर विकल्प एक जोड़ी होता है (नाम — दावा, जगह — तथ्य)। सही या गलत मेल चुनना होता है। एक बदली हुई तारीख, जगह या गुण पूरी जोड़ी को गलत कर देता है, भले दोनों हिस्से जाने-पहचाने लगें।';
+
+  @override
+  String get mcqOddOneBody =>
+      'तीन विकल्प एक नियम साझा करते हैं; एक नहीं। पहले नियम पहचानें — सिर्फ़ अलग दिखने वाला विकल्प न चुनें।';
+
+  @override
+  String get mcqFillBlankBody =>
+      'Stem में एक शब्द या वाक्यांश गायब है। विकल्प एक जैसे लगते हैं जब तक syllabus की सही शब्दावली याद न हो।';
+
+  @override
+  String get mcqChronologyBody =>
+      'घटनाओं को सही क्रम में रखना होता है। गलत सदी में रखी एक घटना पूरी श्रृंखला तोड़ देती है, भले हर घटना अलग-अलग पता हो।';
+
+  @override
+  String get mcqQuantitativeBody =>
+      'संख्या, अनुपात या जोड़ीदार आँकड़े। पास का गलत आँकड़ा इसलिए रखा जाता है क्योंकि वह किसी जुड़े तथ्य का है।';
+
+  @override
+  String get mcqIncorrectBody =>
+      'Stem गलत कथन माँगता है। सही कथन पूछा गया हो, ऐसा समझकर उत्तर देना आसान है।';
+
+  @override
+  String get mcqApplicationBody =>
+      'एक छोटा सा दृश्य, फिर सिद्धांत लगाना होता है। जाल संबंधित लेकिन गलत सिद्धांत है जो आधिकारिक लगता है।';
+
+  @override
+  String get mcqTwoStatementBody =>
+      'दो statements और उनके बीच एक लिंक। दोनों सही हो सकते हैं, बिना बताए गए संबंध के।';
+
+  @override
+  String get mcqMapBody =>
+      'स्थान, सीमा या विस्तार। पड़ोसी जगहें ही चारा होती हैं।';
+
+  @override
+  String get mcqNegativeBody =>
+      'Stem में NOT / except / never। उलटा काम करें, जाना-पहचाना नहीं।';
+
+  @override
+  String get mcqConceptualBody =>
+      'तारीख नहीं, विचार जाँचा जाता है। किसी और अवधारणा का सही तथ्य आमतौर पर चारा होता है।';
+
+  @override
   String get subjRevisitTopic => 'यह topic फिर से देखें';
 
   @override
@@ -6173,12 +6217,12 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String practiceTrapsTitleSure(int count) {
-    return '$count प्रकार के सवाल आपके sure mistakes के पीछे हैं';
+    return '$count traps आपके sure mistakes के पीछे हैं';
   }
 
   @override
   String get practiceTrapsLeadSure =>
-      'आपने इन्हें Sure मार्क किया, लेकिन सवाल का रूप आपको फँसा रहा है।';
+      'आपने इन्हें Sure मार्क किया, लेकिन यह trap आपको फँसा रहा है।';
 
   @override
   String get practiceTrapsReview => 'मेरे traps देखें';
@@ -6195,7 +6239,7 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get practiceTrapsBannerBody =>
-      'गलत Sure जवाबों में ये question types सबसे ज़्यादा दिखते हैं।';
+      'गलत Sure जवाबों में ये traps सबसे ज़्यादा दिखते हैं।';
 
   @override
   String practiceTrapsErrors(int count) {
@@ -6203,12 +6247,40 @@ class AppLocalizationsHi extends AppLocalizations {
   }
 
   @override
+  String get practiceReviseIncorrects => 'गलत वाले revise करें';
+
+  @override
   String get practiceImproveScore => 'Improve score';
+
+  @override
+  String get practiceImproveResultUp => 'Score बेहतर हुआ';
+
+  @override
+  String get practiceImproveResultDown => 'Score नहीं सुधरा';
+
+  @override
+  String get practiceImproveResultFlat => 'Score वही रहा';
+
+  @override
+  String get practiceImproveResultFirst => 'यहाँ पहला score';
+
+  @override
+  String practiceImproveResultBody(String label, int before, int after) {
+    return '$label: $before% → $after%';
+  }
+
+  @override
+  String practiceImproveResultBodyFirst(String label, int after) {
+    return '$label: $after%';
+  }
 
   @override
   String practiceStartNQuestions(int count) {
     return '$count सवाल शुरू करें';
   }
+
+  @override
+  String get practiceStartRevision => 'Revision शुरू करें';
 
   @override
   String get practiceReviseExistingInstead => 'पहले वाले revise करें';
@@ -6218,17 +6290,17 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String practiceDrillReviseTopicSure(int count) {
-    return 'आप $count सवालों से गुज़रेंगे जिन्हें Sure मार्क करके गलत किया। Learning mode — हर सवाल के बाद explanation।';
+    return 'इस topic में $count सवाल हैं जिन्हें आप confident होकर गलत किए। इन्हें revise करें।';
   }
 
   @override
   String practiceDrillReviseTopicGuess(int count) {
-    return 'आप $count सवालों से गुज़रेंगे जिन्हें Educated guess मार्क करके गलत किया। Learning mode — हर सवाल के बाद explanation।';
+    return 'इस topic में $count सवाल हैं जिन्हें आप guess करके गलत किए। इन्हें revise करें।';
   }
 
   @override
   String practiceDrillReviseTrap(int count) {
-    return 'आप इस प्रकार के $count Sure misses से गुज़रेंगे। Learning mode — हर सवाल के बाद explanation।';
+    return 'इस subject में $count सवाल हैं जिन्हें आप confident होकर गलत किए। इन्हें revise करें।';
   }
 
   @override
@@ -6236,14 +6308,12 @@ class AppLocalizationsHi extends AppLocalizations {
       'यहाँ revise करने के लिए अभी गलत सवाल नहीं हैं।';
 
   @override
-  String practiceDrillImproveTopic(int count) {
-    return 'इस topic के $count नए सवाल जो आपने अभी नहीं किए।';
-  }
+  String get practiceDrillImproveTopic =>
+      'इस topic में score बेहतर करने के लिए नए random सवालों का टेस्ट दे सकते हैं।';
 
   @override
-  String practiceDrillImproveTrap(int count) {
-    return 'इस प्रकार के $count नए सवाल जो आपने अभी नहीं किए।';
-  }
+  String get practiceDrillImproveTrap =>
+      'इस trap में score बेहतर करने के लिए नए random सवालों का टेस्ट दे सकते हैं।';
 
   @override
   String practiceDrillImproveShort(int count, int full) {
@@ -6255,14 +6325,14 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get practiceTrapsEmpty =>
-      'Question-type pattern दिखाने के लिए अभी जवाब कम हैं।';
+      'Sure होने पर कौन-सा trap फँसा रहा है, यह बताने के लिए अभी जवाब कम हैं।';
 
   @override
   String get practiceTrapsInfoTitle => 'ये traps क्या हैं';
 
   @override
   String get practiceTrapsInfoBody =>
-      'ये बैंक के सवालों के रूप हैं — जैसे Match the following या How many of the above — जिन्हें आप Sure मार्क करके सबसे ज़्यादा गलत करते हैं। Qualifier गलत पढ़ना जैसे बारीक traps हम अभी पकड़ नहीं सकते।';
+      'जब आप Sure मार्क करके भी गलत होते हैं, सवाल में आमतौर पर एक खास trap होता है — entity swap, partial truth, और इस सूची के बाकी। i दबाकर उस trap की परिभाषा और example देखें।';
 
   @override
   String get practiceSeeStats => 'Stats देखें';

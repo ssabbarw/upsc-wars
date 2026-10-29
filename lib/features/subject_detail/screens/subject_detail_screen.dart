@@ -26,6 +26,7 @@ import '../providers/subject_detail_providers.dart';
 import '../providers/subject_insights_providers.dart';
 import '../providers/subject_mock_prep_provider.dart';
 import '../providers/subject_scored_accuracy_provider.dart';
+import '../widgets/mcq_pattern_info_dialog.dart';
 import '../widgets/mock_prep_why_bottom_sheet.dart';
 import '../widgets/topic_entry_bottom_sheet.dart';
 import '../../../l10n/l10n.dart';
@@ -1794,12 +1795,19 @@ class _WeakestPatternCallout extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 2),
-                Text(
-                  stat.labelFor(context.l10n),
-                  style: AppTextStyles.bodySm().copyWith(
-                    color: scheme.onSurface,
-                    fontWeight: FontWeight.w700,
-                  ),
+                Row(
+                  children: [
+                    Flexible(
+                      child: Text(
+                        stat.labelFor(context.l10n),
+                        style: AppTextStyles.bodySm().copyWith(
+                          color: scheme.onSurface,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    ),
+                    McqPatternInfoButton(pattern: stat),
+                  ],
                 ),
                 const SizedBox(height: 2),
                 Text(

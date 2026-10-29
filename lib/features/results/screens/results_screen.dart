@@ -30,7 +30,10 @@ import '../../daily_ca/providers/daily_ca_providers.dart';
 import '../../home/domain/demo_diagnostic_ephemeral_store.dart';
 import '../../home/providers/home_activation_provider.dart';
 import '../../home/providers/home_activation_journey_provider.dart';
+import '../../practice_tests/domain/insight_improve.dart';
 import '../../practice_tests/providers/practice_catalog_provider.dart';
+import '../../practice_tests/providers/practice_subject_insights_provider.dart';
+import '../widgets/insight_improve_result_card.dart';
 import '../widgets/session_summary_coach.dart';
 import '../widgets/share_test_bottom_sheet.dart';
 import '../../../l10n/l10n.dart';
@@ -52,6 +55,10 @@ List<Widget> _resultsScrollChildren({
   String? sharedTestShareId,
 }) {
   return [
+    if (isInsightImproveFeature(result.analyticsFeatureKey)) ...[
+      InsightImproveResultCard(sessionId: sessionId),
+      const SizedBox(height: AppSpacing.md),
+    ],
     if (result.analyticsFeatureKey == 'mcq_battle') ...[
       BattleLiveScoreboard(sessionId: sessionId),
       const SizedBox(height: AppSpacing.md),
@@ -75,6 +82,32 @@ List<Widget> _resultsScrollChildren({
       maxHeight: contentHeight,
     ),
   ];
+}
+
+Future<void> _leaveResults(
+  BuildContext context,
+  WidgetRef ref, {
+  required String sessionId,
+  required String actionId,
+  String? analyticsFeatureKey,
+}) async {
+  if (isInsightImproveFeature(analyticsFeatureKey) && context.canPop()) {
+    clearDemoDiagnosticEphemeral(sessionId);
+    ScreenFlow.logAction(
+      ref,
+      screenName: ScreenFlow.sessionResults,
+      actionId: actionId,
+      actionKind: 'back',
+    );
+    context.pop();
+    return;
+  }
+  await _confirmLeaveResultsAndGoHome(
+    context,
+    ref,
+    sessionId: sessionId,
+    actionId: actionId,
+  );
 }
 
 Future<void> _confirmLeaveResultsAndGoHome(
@@ -133,6 +166,9 @@ class ResultsScreen extends ConsumerWidget {
         ref.invalidate(homeActivationJourneyProvider);
         ref.invalidate(practiceCatalogProvider);
         final result = next.requireValue;
+        if (isInsightImproveFeature(result.analyticsFeatureKey)) {
+          ref.invalidate(practiceSubjectInsightsProvider(result.subject));
+        }
         if (result.subject == QuestionSourceConstants.dailyCaSessionSubject) {
           final iso = result.topic;
           if (iso != null && iso.isNotEmpty) {
@@ -160,17 +196,22 @@ class ResultsScreen extends ConsumerWidget {
       MediaQuery.sizeOf(context).width,
     );
 
+    final improveReturn = isInsightImproveFeature(
+      async.asData?.value.analyticsFeatureKey,
+    );
     // Submit uses go('/results/...'), so the root stack often cannot pop.
+    // Improve-score tests replace the test route and can pop to the caller.
     return PopScope(
-      canPop: false,
+      canPop: improveReturn,
       onPopInvokedWithResult: (didPop, _) {
         if (didPop) return;
         unawaited(
-          _confirmLeaveResultsAndGoHome(
+          _leaveResults(
             context,
             ref,
             sessionId: sessionId,
             actionId: 'system_back_pop',
+            analyticsFeatureKey: async.asData?.value.analyticsFeatureKey,
           ),
         );
       },
@@ -255,11 +296,12 @@ class ResultsScreen extends ConsumerWidget {
                             foregroundColor: scheme.onSurface,
                           ),
                           onPressed: () => unawaited(
-                            _confirmLeaveResultsAndGoHome(
+                            _leaveResults(
                               context,
                               ref,
                               sessionId: sessionId,
                               actionId: 'app_bar_back',
+                              analyticsFeatureKey: r.analyticsFeatureKey,
                             ),
                           ),
                           icon: const Icon(Icons.arrow_back_ios_new_rounded),

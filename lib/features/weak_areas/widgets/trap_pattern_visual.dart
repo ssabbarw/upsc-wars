@@ -60,6 +60,34 @@ class TrapPatternVisual {
       icon: Icons.quiz_rounded,
       accent: AppColors.info,
     ),
+    'how-many': TrapPatternVisual(
+      icon: Icons.filter_3_rounded,
+      accent: AppColors.info,
+    ),
+    'statement-combination': TrapPatternVisual(
+      icon: Icons.fact_check_rounded,
+      accent: AppColors.warning,
+    ),
+    'assertion-reason': TrapPatternVisual(
+      icon: Icons.account_tree_rounded,
+      accent: AppColors.primary,
+    ),
+    'match-the-following': TrapPatternVisual(
+      icon: Icons.mediation_rounded,
+      accent: AppColors.info,
+    ),
+    'direct': TrapPatternVisual(
+      icon: Icons.bolt_rounded,
+      accent: AppColors.warning,
+    ),
+    'single-statement': TrapPatternVisual(
+      icon: Icons.format_quote_rounded,
+      accent: AppColors.primary,
+    ),
+    'identify-the-pair': TrapPatternVisual(
+      icon: Icons.looks_two_rounded,
+      accent: AppColors.info,
+    ),
   };
 }
 

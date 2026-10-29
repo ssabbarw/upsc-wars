@@ -1545,6 +1545,17 @@
   "mcqSingle": "Single statement",
   "mcqSingleBody": "True or false of one claim. Watch absolute words like always, only, never.",
   "mcqOtherBody": "A less common stem shape in this bank. Practise a few to get used to how it is framed.",
+  "mcqIdentifyPairBody": "Each option is a pair (name — claim, place — fact). You pick which pair is correctly or incorrectly matched. One swapped date, place, or attribute makes the whole pair wrong even when both halves look familiar.",
+  "mcqOddOneBody": "Three options share a rule; one does not. Name the rule first — don't pick the option that merely looks different.",
+  "mcqFillBlankBody": "A missing word or phrase sits in the stem. The options look interchangeable until you recall the exact term used in the syllabus.",
+  "mcqChronologyBody": "You must put events in the right order. One event in the wrong century breaks the sequence even if you know every event separately.",
+  "mcqQuantitativeBody": "Numbers, ratios, or paired figures. A nearby wrong figure is planted because it belongs to a related fact.",
+  "mcqIncorrectBody": "The stem asks for the incorrect statement. Easy to answer as if it asked for the correct one.",
+  "mcqApplicationBody": "A short situation, then apply a principle. The trap is using a related but wrong principle that also sounds official.",
+  "mcqTwoStatementBody": "Two statements and a link between them. Both can be true without the stated relationship.",
+  "mcqMapBody": "A location, range, or boundary. Neighbouring places are the bait.",
+  "mcqNegativeBody": "NOT / except / never in the stem. Answer the reversed task, not the familiar one.",
+  "mcqConceptualBody": "Tests the idea, not a date. A true fact about a different concept is the usual bait.",
   "subjRevisitTopic": "Revisit this topic",
   "subjSafeIntro": "You can trust your judgment more in these topics. Attempt more from here in mocks and exams.",
   "subjSafeTopics": "Safe scoring topics",
@@ -4293,11 +4304,11 @@
   "practicePatternsNoQuestions": "No questions of this type in this subject yet.",
   "practiceOverallPerformance": "Overall performance",
   "practiceTrapsScreenTitle": "Confidence traps",
-  "practiceTrapsTitleSure": "{count} question types are behind your sure mistakes",
+  "practiceTrapsTitleSure": "{count} traps are behind your sure mistakes",
   "@practiceTrapsTitleSure": {
     "placeholders": {"count": {"type": "int"}}
   },
-  "practiceTrapsLeadSure": "You marked these Sure, but this question shape keeps catching you.",
+  "practiceTrapsLeadSure": "You marked these Sure, but this trap keeps catching you.",
   "practiceTrapsReview": "Review my traps",
   "practiceTrapsBannerKicker": "{subject} · Sure answers",
   "@practiceTrapsBannerKicker": {
@@ -4307,39 +4318,54 @@
   "@practiceTrapsBannerTitle": {
     "placeholders": {"count": {"type": "int"}}
   },
-  "practiceTrapsBannerBody": "These question types show up most in your incorrect Sure answers.",
+  "practiceTrapsBannerBody": "These traps show up most in your incorrect Sure answers.",
   "practiceTrapsErrors": "{count} errors",
   "@practiceTrapsErrors": {
     "placeholders": {"count": {"type": "int"}}
   },
+  "practiceReviseIncorrects": "Revise incorrects",
   "practiceImproveScore": "Improve score",
+  "practiceImproveResultUp": "Score improved",
+  "practiceImproveResultDown": "Score did not improve",
+  "practiceImproveResultFlat": "Score unchanged",
+  "practiceImproveResultFirst": "First score here",
+  "practiceImproveResultBody": "{label}: {before}% → {after}%",
+  "@practiceImproveResultBody": {
+    "placeholders": {
+      "label": {"type": "String"},
+      "before": {"type": "int"},
+      "after": {"type": "int"}
+    }
+  },
+  "practiceImproveResultBodyFirst": "{label}: {after}%",
+  "@practiceImproveResultBodyFirst": {
+    "placeholders": {
+      "label": {"type": "String"},
+      "after": {"type": "int"}
+    }
+  },
   "practiceStartNQuestions": "Start {count} questions",
   "@practiceStartNQuestions": {
     "placeholders": {"count": {"type": "int"}}
   },
+  "practiceStartRevision": "Start Revision",
   "practiceReviseExistingInstead": "Revise existing instead",
   "practiceImproveInstead": "Improve score instead",
-  "practiceDrillReviseTopicSure": "You'll go through {count} questions you marked Sure and got wrong. Learning mode — explanation after each.",
+  "practiceDrillReviseTopicSure": "For this topic you have {count} questions you were confidently wrong about. Revise them.",
   "@practiceDrillReviseTopicSure": {
     "placeholders": {"count": {"type": "int"}}
   },
-  "practiceDrillReviseTopicGuess": "You'll go through {count} questions you marked Educated guess and got wrong. Learning mode — explanation after each.",
+  "practiceDrillReviseTopicGuess": "For this topic you have {count} questions you guessed and got wrong. Revise them.",
   "@practiceDrillReviseTopicGuess": {
     "placeholders": {"count": {"type": "int"}}
   },
-  "practiceDrillReviseTrap": "You'll go through {count} Sure misses of this question type. Learning mode — explanation after each.",
+  "practiceDrillReviseTrap": "For this subject you have {count} questions you were confidently wrong about. Revise them.",
   "@practiceDrillReviseTrap": {
     "placeholders": {"count": {"type": "int"}}
   },
   "practiceDrillReviseEmpty": "No wrong questions to revise here yet.",
-  "practiceDrillImproveTopic": "{count} new questions from this topic that you haven't tried yet.",
-  "@practiceDrillImproveTopic": {
-    "placeholders": {"count": {"type": "int"}}
-  },
-  "practiceDrillImproveTrap": "{count} new questions of this type that you haven't tried yet.",
-  "@practiceDrillImproveTrap": {
-    "placeholders": {"count": {"type": "int"}}
-  },
+  "practiceDrillImproveTopic": "You can improve your score in this topic by attempting a test of new random questions.",
+  "practiceDrillImproveTrap": "You can improve your score on this trap by attempting a test of new random questions.",
   "practiceDrillImproveShort": "Only {count} new questions are left — not enough for a full {full} question set.",
   "@practiceDrillImproveShort": {
     "placeholders": {
@@ -4348,9 +4374,9 @@
     }
   },
   "practiceDrillImproveEmpty": "No new questions left here.",
-  "practiceTrapsEmpty": "Not enough answers yet to spot a question-type pattern.",
+  "practiceTrapsEmpty": "Not enough answers yet to spot which traps catch you when you are Sure.",
   "practiceTrapsInfoTitle": "What these traps are",
-  "practiceTrapsInfoBody": "These are question shapes from the bank — such as Match the following or How many of the above — that you miss most when you mark Sure. We cannot yet detect finer traps like misread qualifiers.",
+  "practiceTrapsInfoBody": "When you mark Sure and still get it wrong, the question usually plants a specific trap — entity swap, partial truth, and the others in this list. Tap i to see what that trap is and an example.",
   "practiceSeeStats": "See stats",
   "practiceInsightsTitle": "Stats: {subject}",
   "@practiceInsightsTitle": {

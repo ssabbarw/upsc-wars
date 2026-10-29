@@ -12,12 +12,30 @@ class TrapDescription {
     required this.displayName,
     required this.blurb,
     required this.description,
+    this.blurbHi,
+    this.descriptionHi,
   });
 
   final String trapType;
   final String displayName;
   final String blurb;
   final String description;
+  final String? blurbHi;
+  final String? descriptionHi;
+
+  String blurbFor(String language) =>
+      _localized(language, hi: blurbHi, en: blurb);
+
+  String descriptionFor(String language) =>
+      _localized(language, hi: descriptionHi, en: description);
+
+  static String _localized(String language, {required String en, String? hi}) {
+    if (language == 'hi') {
+      final trimmed = hi?.trim() ?? '';
+      if (trimmed.isNotEmpty) return trimmed;
+    }
+    return en;
+  }
 
   factory TrapDescription.fromJson(Map<String, dynamic> json) {
     final description = json['description'] as String;
@@ -27,8 +45,16 @@ class TrapDescription {
       displayName: json['display_name'] as String,
       blurb: (blurb != null && blurb.isNotEmpty) ? blurb : description,
       description: description,
+      blurbHi: _optionalHi(json['blurb_hi']),
+      descriptionHi: _optionalHi(json['description_hi']),
     );
   }
+}
+
+String? _optionalHi(Object? value) {
+  final trimmed = (value as String?)?.trim();
+  if (trimmed == null || trimmed.isEmpty) return null;
+  return trimmed;
 }
 
 /// Loads the trap descriptions JSON once and keeps it alive.

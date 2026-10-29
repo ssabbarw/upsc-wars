@@ -2,17 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/constants/subject_constants.dart';
+import '../../../core/providers/app_language_helpers.dart';
+import '../../../core/providers/trap_descriptions_provider.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../l10n/l10n.dart';
-import '../../subject_detail/domain/subject_mcq_pattern.dart';
-import '../domain/practice_pattern_visual.dart';
+import '../../weak_areas/widgets/trap_info_button.dart';
+import '../../weak_areas/widgets/trap_pattern_visual.dart';
+import '../domain/subject_trap_stat.dart';
 import '../open_insight_practice.dart';
 import '../providers/practice_subject_insights_provider.dart';
 
-/// Question-type patterns behind Sure mistakes.
+/// Content traps behind Sure mistakes.
 class PracticeConfidenceTrapsScreen extends ConsumerWidget {
   const PracticeConfidenceTrapsScreen({super.key, required this.subject});
 
@@ -49,7 +52,7 @@ class PracticeConfidenceTrapsScreen extends ConsumerWidget {
           ),
         ),
         data: (value) {
-          final patterns = value.surePatterns;
+          final patterns = value.sureTraps;
           return ListView(
             padding: const EdgeInsets.fromLTRB(
               AppSpacing.lg,
@@ -82,9 +85,7 @@ class PracticeConfidenceTrapsScreen extends ConsumerWidget {
                         const SizedBox(width: AppSpacing.sm),
                         Expanded(
                           child: Text(
-                            context.l10n.practiceTrapsBannerKicker(
-                              displayName,
-                            ),
+                            context.l10n.practiceTrapsBannerKicker(displayName),
                             style: AppTextStyles.caption().copyWith(
                               color: isDark
                                   ? AppColors.warningTextDark
@@ -124,12 +125,8 @@ class PracticeConfidenceTrapsScreen extends ConsumerWidget {
                   ),
                 )
               else
-                for (var i = 0; i < patterns.length; i++) ...[
-                  _TrapDetailCard(
-                    index: i,
-                    subject: subject,
-                    pattern: patterns[i],
-                  ),
+                for (final trap in patterns) ...[
+                  _TrapDetailCard(subject: subject, trap: trap),
                   const SizedBox(height: AppSpacing.md),
                 ],
             ],
@@ -156,26 +153,22 @@ void _showInfo(BuildContext context) {
   );
 }
 
-class _TrapDetailCard extends StatelessWidget {
-  const _TrapDetailCard({
-    required this.index,
-    required this.subject,
-    required this.pattern,
-  });
+class _TrapDetailCard extends ConsumerWidget {
+  const _TrapDetailCard({required this.subject, required this.trap});
 
-  final int index;
   final String subject;
-  final SubjectMcqPatternStat pattern;
+  final SubjectTrapStat trap;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final visual = practicePatternVisual(
-      pattern,
-      isDark: isDark,
-      index: index,
-    );
+    final catalog = ref.watch(trapDescriptionsProvider).asData?.value;
+    final language = watchAppLanguage(ref);
+    final entry = catalog?[trap.trapType];
+    final name = entry?.displayName ?? trap.title;
+    final blurb = entry?.blurbFor(language) ?? '';
+    final visual = TrapPatternVisual.of(trap.trapType);
     final fill = visual.accent.withValues(alpha: isDark ? 0.22 : 0.1);
     return Container(
       width: double.infinity,
@@ -194,18 +187,6 @@ class _TrapDetailCard extends StatelessWidget {
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CircleAvatar(
-                radius: 12,
-                backgroundColor: fill,
-                child: Text(
-                  '${index + 1}',
-                  style: AppTextStyles.caption().copyWith(
-                    color: visual.accent,
-                    fontWeight: FontWeight.w800,
-                  ),
-                ),
-              ),
-              const SizedBox(width: AppSpacing.sm),
               Container(
                 width: 36,
                 height: 36,
@@ -222,17 +203,27 @@ class _TrapDetailCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Expanded(
-                      child: Text(
-                        pattern.labelFor(context.l10n),
-                        style: AppTextStyles.label().copyWith(
-                          color: scheme.onSurface,
-                          fontWeight: FontWeight.w800,
-                        ),
+                      child: Row(
+                        children: [
+                          Flexible(
+                            child: Text(
+                              name,
+                              style: AppTextStyles.label().copyWith(
+                                color: scheme.onSurface,
+                                fontWeight: FontWeight.w800,
+                              ),
+                            ),
+                          ),
+                          TrapInfoButton(
+                            trapType: trap.trapType,
+                            tooltip: name,
+                          ),
+                        ],
                       ),
                     ),
                     const SizedBox(width: AppSpacing.sm),
                     Text(
-                      context.l10n.practiceTrapsErrors(pattern.wrong),
+                      context.l10n.practiceTrapsErrors(trap.wrong),
                       style: AppTextStyles.caption().copyWith(
                         color: visual.accent,
                         fontWeight: FontWeight.w700,
@@ -243,20 +234,22 @@ class _TrapDetailCard extends StatelessWidget {
               ),
             ],
           ),
+          if (blurb.isNotEmpty) ...[
+            const SizedBox(height: AppSpacing.sm),
+            Text(
+              blurb,
+              style: AppTextStyles.bodySm().copyWith(
+                color: scheme.onSurfaceVariant,
+                height: 1.35,
+              ),
+            ),
+          ],
           const SizedBox(height: AppSpacing.md),
           Text(
-            pattern.explainFor(context.l10n),
-            style: AppTextStyles.bodySm().copyWith(
-              color: scheme.onSurface,
-              height: 1.4,
-            ),
-          ),
-          const SizedBox(height: AppSpacing.sm),
-          Text(
             context.l10n.subjWeakPatternStat(
-              pattern.wrong,
-              pattern.attempted,
-              pattern.wrongPercent,
+              trap.wrong,
+              trap.attempted,
+              trap.wrongPercent,
             ),
             style: AppTextStyles.caption().copyWith(
               color: scheme.onSurfaceVariant,
@@ -272,8 +265,8 @@ class _TrapDetailCard extends StatelessWidget {
                     context,
                     target: InsightDrillTarget.trap(
                       subject: subject,
-                      pattern: pattern,
-                      title: pattern.labelFor(context.l10n),
+                      trap: trap,
+                      title: name,
                     ),
                     intent: InsightDrillIntent.revise,
                   ),
@@ -281,7 +274,7 @@ class _TrapDetailCard extends StatelessWidget {
                     foregroundColor: AppColors.primary,
                     side: const BorderSide(color: AppColors.primary),
                   ),
-                  child: Text(context.l10n.commonRevise),
+                  child: Text(context.l10n.practiceReviseIncorrects),
                 ),
               ),
               const SizedBox(width: AppSpacing.sm),
@@ -291,8 +284,8 @@ class _TrapDetailCard extends StatelessWidget {
                     context,
                     target: InsightDrillTarget.trap(
                       subject: subject,
-                      pattern: pattern,
-                      title: pattern.labelFor(context.l10n),
+                      trap: trap,
+                      title: name,
                     ),
                     intent: InsightDrillIntent.improve,
                   ),

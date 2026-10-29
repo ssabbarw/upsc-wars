@@ -32,6 +32,7 @@ import '../../features/battle/screens/battle_join_screen.dart';
 import '../../features/battle/screens/battle_result_screen.dart';
 import '../../features/battle/screens/battle_test_screen.dart';
 import '../../features/battle/screens/battle_waiting_screen.dart';
+import '../../features/history/screens/question_list_review_screen.dart';
 import '../../features/history/screens/session_review_screen.dart';
 import '../../features/community/screens/community_screen.dart';
 import '../../features/community/screens/blocked_users_screen.dart';
@@ -1277,6 +1278,20 @@ GoRouter appRouter(Ref ref) {
           sessionId: state.pathParameters['sessionId']!,
           focusWrong: state.uri.queryParameters['focus'] == 'wrong',
         ),
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/question-review',
+        name: 'question_list_review',
+        builder: (context, state) {
+          final extra = state.extra;
+          if (extra is! QuestionListReviewArgs) {
+            return const Scaffold(
+              body: Center(child: Text('Invalid question review navigation')),
+            );
+          }
+          return QuestionListReviewScreen(args: extra);
+        },
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,

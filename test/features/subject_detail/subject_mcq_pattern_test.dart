@@ -1,5 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:upsc_wars/features/subject_detail/domain/subject_mcq_pattern.dart';
+import 'package:upsc_wars/l10n/app_localizations_en.dart';
 
 void main() {
   test('merges hyphen and underscore slugs of the same pattern', () {
@@ -69,6 +70,47 @@ void main() {
       UpscMcqPattern.assertionReason,
       UpscMcqPattern.direct,
     ]);
+  });
+
+  test('statement-combination infoKey classifies as statementCombination', () {
+    expect(
+      classifyUpscMcqPattern('statement-combination'),
+      UpscMcqPattern.statementCombination,
+    );
+  });
+
+  test(
+    'identify-the-pair explains the pair format, not the generic other body',
+    () {
+      const pair = SubjectMcqPatternStat(
+        pattern: UpscMcqPattern.other,
+        otherSlug: 'identify-the-pair',
+        wrong: 9,
+        attempted: 20,
+      );
+      final l10n = AppLocalizationsEn();
+      expect(pair.explainFor(l10n), l10n.mcqIdentifyPairBody);
+      expect(pair.explainFor(l10n), isNot(l10n.mcqOtherBody));
+    },
+  );
+
+  test('infoKey round-trips through mcqPatternStatFromInfoKey', () {
+    const howMany = SubjectMcqPatternStat(
+      pattern: UpscMcqPattern.howMany,
+      otherSlug: null,
+      wrong: 1,
+      attempted: 2,
+    );
+    const pair = SubjectMcqPatternStat(
+      pattern: UpscMcqPattern.other,
+      otherSlug: 'identify-the-pair',
+      wrong: 9,
+      attempted: 20,
+    );
+    expect(howMany.infoKey, 'how-many');
+    expect(mcqPatternStatFromInfoKey(howMany.infoKey).pattern, howMany.pattern);
+    expect(pair.infoKey, 'identify-the-pair');
+    expect(mcqPatternStatFromInfoKey(pair.infoKey).otherSlug, pair.otherSlug);
   });
 
   test('matchesMcqPattern groups hyphen and underscore slugs', () {
