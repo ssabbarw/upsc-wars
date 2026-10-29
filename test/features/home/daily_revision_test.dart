@@ -43,6 +43,24 @@ void main() {
     });
   });
 
+  group('DailyRevision.randomTestSize', () {
+    test('empty pool starts nothing', () {
+      expect(DailyRevision.randomTestSize(0), 0);
+      expect(DailyRevision.randomTestSize(-1), 0);
+    });
+
+    test('uses every question when fewer than 10', () {
+      expect(DailyRevision.randomTestSize(1), 1);
+      expect(DailyRevision.randomTestSize(9), 9);
+    });
+
+    test('caps a larger pool at 10', () {
+      expect(DailyRevision.randomTestSize(10), 10);
+      expect(DailyRevision.randomTestSize(18), 10);
+      expect(DailyRevision.randomTestSize(24), 10);
+    });
+  });
+
   group('DailyRevision.poolCountLabel', () {
     test('empty is None', () {
       expect(DailyRevision.poolCountLabel(0), 'None');

@@ -35,7 +35,9 @@ import '../../daily_ca/providers/daily_ca_providers.dart';
 import '../../daily_war/providers/daily_war_providers.dart';
 import '../../practice_tests/data/practice_demo_seed.dart';
 import '../../practice_tests/providers/practice_catalog_provider.dart';
+import '../../practice_tests/providers/practice_subject_insights_provider.dart';
 import '../../practice_tests/widgets/practice_season_notice.dart';
+import '../widgets/revision_test_cards.dart';
 import '../widgets/today_queue_strip.dart';
 import '../providers/today_hub_provider.dart';
 import '../providers/today_hero_intent_provider.dart';
@@ -96,11 +98,13 @@ class HomeScreen extends HookConsumerWidget {
       Future(() async {
         final prelims =
             ref.read(prelimsDateProvider).value ?? PrelimsCountdown.prelimsDate;
-        final seeded = await seedPracticeDemoAttempts(
-          ref.read(userDatabaseProvider),
-          prelimsDate: prelims,
-        );
-        if (seeded) ref.invalidate(practiceCatalogProvider);
+        final db = ref.read(userDatabaseProvider);
+        final seeded = await seedPracticeDemoAttempts(db, prelimsDate: prelims);
+        final backfilled = await backfillEducatedGuessCorrect(db);
+        if (seeded || backfilled) {
+          ref.invalidate(practiceCatalogProvider);
+          ref.invalidate(practiceSubjectInsightsProvider);
+        }
       });
       return null;
     }, const []);
@@ -407,6 +411,8 @@ class HomeScreen extends HookConsumerWidget {
                   const TodayQueueStrip(),
                   const SizedBox(height: AppSpacing.lg),
                   _PracticeUnit(borderColor: borderColor),
+                  const SizedBox(height: AppSpacing.lg),
+                  const RevisionTestCards(),
                   const PracticeSeasonNotice(),
                   const SizedBox(height: AppSpacing.sm),
                 ],
@@ -535,9 +541,8 @@ class _RightNowSection extends ConsumerWidget {
             if (demoVisible && journey != null)
               ActivationJourneyCard(
                 state: journey,
-                onDismiss: () => unawaited(
-                  showDemoDismissPitchSheet(context, ref),
-                ),
+                onDismiss: () =>
+                    unawaited(showDemoDismissPitchSheet(context, ref)),
               ),
           ],
         ),
@@ -1010,9 +1015,7 @@ class _SubjectList extends ConsumerWidget {
             itemBuilder: (context, i) => _SubjectCard(
               info: subjects[i],
               icon:
-                  SubjectConstants.bySlug(
-                    subjects[i].subject,
-                  )?.materialIcon ??
+                  SubjectConstants.bySlug(subjects[i].subject)?.materialIcon ??
                   Icons.school_outlined,
               accent: _accentColors[i % _accentColors.length],
               borderColor: borderColor,

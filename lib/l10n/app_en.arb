@@ -1533,11 +1533,18 @@
   },
   "subjStartRevising": "Start Revising These Topics",
   "mcqHowMany": "How many of the above",
+  "mcqHowManyBody": "Count how many statements are correct. Missing one statement flips the whole answer.",
   "mcqStatementCombo": "Which statements are correct",
+  "mcqStatementComboBody": "The options are codes like “1 and 2 only”. Eliminate pairs — don’t guess the code.",
   "mcqAssertion": "Assertion–Reason",
+  "mcqAssertionBody": "Both statements can be true and still not cause each other. Check the link, not just the facts.",
   "mcqMatch": "Match the following",
+  "mcqMatchBody": "One swapped pair poisons the whole match. Lock the pairs you know first.",
   "mcqDirect": "Direct fact",
+  "mcqDirectBody": "A single remembered fact. If you missed it, revise the fact — not the method.",
   "mcqSingle": "Single statement",
+  "mcqSingleBody": "True or false of one claim. Watch absolute words like always, only, never.",
+  "mcqOtherBody": "A less common stem shape in this bank. Practise a few to get used to how it is framed.",
   "subjRevisitTopic": "Revisit this topic",
   "subjSafeIntro": "You can trust your judgment more in these topics. Attempt more from here in mocks and exams.",
   "subjSafeTopics": "Safe scoring topics",
@@ -4277,7 +4284,84 @@
       "year": {"type": "int"}
     }
   },
+  "practiceTabTests": "Tests",
+  "practiceTabTopics": "Topic-wise",
+  "practiceSnapshotKicker": "THIS SEASON",
+  "practiceSnapshotSee": "View details",
+  "practiceSnapshotEmpty": "Finish a test to see where marks leak, and where you can attempt more.",
+  "practiceSnapshotAccuracy": "Accuracy",
+  "practiceSnapshotMistakes": "Confident mistakes",
+  "practiceSnapshotAttemptTopics": "Topics to attempt more",
+  "practiceInsightsMistakesTitle": "Confident mistakes",
+  "practiceInsightsMistakesBody": "Sure and Educated-guess answers that were wrong. Revise these before the next test.",
+  "practiceInsightsMistakesEmpty": "No confident mistakes this season.",
+  "practiceInsightsAttemptTitle": "Attempt more in the exam",
+  "practiceInsightsAttemptBody": "Topics where your Educated guesses are usually right — at least 3, and 70% or more correct. Worth attempting instead of leaving blank.",
+  "practiceInsightsAttemptEmpty": "No topic qualifies yet. Keep marking Educated guess. A topic needs 3 guesses, with at least 70% correct.",
+  "practiceInsightsGuessRight": "{correct} of {total} guesses right",
+  "@practiceInsightsGuessRight": {
+    "placeholders": {
+      "correct": {"type": "int"},
+      "total": {"type": "int"}
+    }
+  },
+  "practiceInsightsFailed": "Could not load this breakdown.",
+  "practiceSnapshotConfidentWrong": "You are {percent}% times confidently wrong in this subject.",
+  "@practiceSnapshotConfidentWrong": {
+    "placeholders": {"percent": {"type": "int"}}
+  },
+  "practiceSnapshotReviseAdvice": "Revise this subject, and watch the types of questions you miss.",
+  "practiceSnapshotSeePatterns": "See question types",
+  "practicePatternsTitle": "Question types you miss",
+  "practicePatternsEmpty": "Not enough Sure or Educated-guess answers to spot a pattern yet.",
+  "practicePatternsPractice": "Practise these",
+  "practicePatternsNoQuestions": "No questions of this type in this subject yet.",
+  "practiceInsightsMistakesTab": "Confident mistakes",
+  "practiceInsightsStrongTab": "Strong guesses",
+  "practiceInsightsConfidentWrongPct": "Confidently wrong",
+  "practiceInsightsRightGuesses": "Right guesses",
   "practiceSeeStats": "See stats",
+  "practiceInsightsTitle": "Stats: {subject}",
+  "@practiceInsightsTitle": {
+    "placeholders": {"subject": {"type": "String"}}
+  },
+  "practiceLensSure": "Sure",
+  "practiceLensGuess": "Educated guess",
+  "practiceLensRight": "Right",
+  "practiceLensWrong": "Wrong",
+  "practiceLensSplit": "{correct} right · {wrong} wrong",
+  "@practiceLensSplit": {
+    "placeholders": {
+      "correct": {"type": "int"},
+      "wrong": {"type": "int"}
+    }
+  },
+  "practiceHeroAccuracy": "{percent}% accuracy",
+  "@practiceHeroAccuracy": {
+    "placeholders": {"percent": {"type": "int"}}
+  },
+  "practiceSureSnapBad": "Sure answers are often wrong.",
+  "practiceSureSnapMixed": "Some Sure answers are still wrong.",
+  "practiceSureSnapGood": "Sure answers are mostly right.",
+  "practiceSureSnapThin": "Need more Sure answers.",
+  "practiceGuessSnapBad": "Educated guesses are mostly wrong.",
+  "practiceGuessSnapMixed": "Educated guesses are hit and miss.",
+  "practiceGuessSnapGood": "Educated guesses are usually right.",
+  "practiceGuessSnapThin": "Need more Educated guesses.",
+  "practiceSureBodyBad": "Revise these topics. You marked them Sure and still got them wrong.",
+  "practiceSureBodyMixed": "Revise the topics below. You do not fully know them yet.",
+  "practiceSureBodyGood": "Keep marking Sure only when you know the answer.",
+  "practiceSureBodyThin": "Mark more answers as Sure. We need 6 to judge this subject.",
+  "practiceGuessBodyBad": "In the exam, skip these instead of guessing.",
+  "practiceGuessBodyMixed": "Guessing here can help, but it is still risky.",
+  "practiceGuessBodyGood": "In the exam, attempt these instead of leaving them blank.",
+  "practiceGuessBodyThin": "Mark more answers as Educated guess. We need 6 to judge this subject.",
+  "practiceSureTopicsEmpty": "Not enough Sure answers in any topic yet.",
+  "practiceGuessTopicsEmpty": "Not enough Educated guesses in any topic yet.",
+  "practiceTopicWrongPct": "{percent}% wrong",
+  "@practiceTopicWrongPct": {
+    "placeholders": {"percent": {"type": "int"}}
+  },
   "practiceNoTests": "No tests in this pool yet.",
   "statsTitle": "Stats",
   "statsAllSubjects": "All subjects",
@@ -4335,5 +4419,28 @@
   "todayQueueDailyWar": "Daily war",
   "todayQueueDailyWarSubtitle": "Today's competitive CA challenge",
   "todayQueueOpenChallenge": "Open challenge",
-  "todayQueueOpenChallengeSubtitle": "Join a live community challenge"
+  "todayQueueOpenChallengeSubtitle": "Join a live community challenge",
+  "homeRevisionSectionTitle": "Revise",
+  "homeRevisionNoIncorrect": "You have no incorrect MCQs",
+  "homeRevisionNoBookmarked": "You have no bookmarked MCQs",
+  "homeRevisionNoIncorrectCard": "No incorrect MCQs",
+  "homeRevisionNoBookmarkedCard": "No bookmarked MCQs",
+  "homeRevisionNoIncorrectHint": "They show up when you get a question wrong.",
+  "homeRevisionNoBookmarkedHint": "Bookmark a question in a test and it will show up here.",
+  "homeRevisionCardTest": "{count, plural, =1{Random test · 1} other{Random test · {count}}}",
+  "@homeRevisionCardTest": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "homeRevisionRandomWillStart": "{count, plural, =1{A random test of 1 MCQ will start.} other{A random test of {count} MCQs will start.}}",
+  "@homeRevisionRandomWillStart": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  }
 }

@@ -2249,19 +2249,47 @@ class AppLocalizationsHi extends AppLocalizations {
   String get mcqHowMany => 'How many of the above';
 
   @override
+  String get mcqHowManyBody =>
+      'कितने statements सही हैं, गिनें। एक statement चूकने से पूरा उत्तर बदल जाता है।';
+
+  @override
   String get mcqStatementCombo => 'Which statements are correct';
+
+  @override
+  String get mcqStatementComboBody =>
+      'Options कोड होते हैं — “1 and 2 only”। जोड़ियों को काटें, कोड guess न करें।';
 
   @override
   String get mcqAssertion => 'Assertion–Reason';
 
   @override
+  String get mcqAssertionBody =>
+      'दोनों statements सही हो सकते हैं, फिर भी एक दूसरे का कारण न हों। लिंक जाँचें, सिर्फ़ तथ्य नहीं।';
+
+  @override
   String get mcqMatch => 'Match the following';
+
+  @override
+  String get mcqMatchBody =>
+      'एक जोड़ी उलटी हुई तो पूरा match गलत। पहले पक्की जोड़ियाँ लॉक करें।';
 
   @override
   String get mcqDirect => 'Direct fact';
 
   @override
+  String get mcqDirectBody =>
+      'एक याद किया हुआ तथ्य। चूक हुए तो तथ्य दोहराएँ — तरीका नहीं।';
+
+  @override
   String get mcqSingle => 'Single statement';
+
+  @override
+  String get mcqSingleBody =>
+      'एक दावे का सही/गलत। always, only, never जैसे शब्दों पर ध्यान दें।';
+
+  @override
+  String get mcqOtherBody =>
+      'इस बैंक का कम दिखने वाला stem. कुछ सवाल हल करके फॉर्मैट पकड़ें।';
 
   @override
   String get subjRevisitTopic => 'यह topic फिर से देखें';
@@ -6115,7 +6143,195 @@ class AppLocalizationsHi extends AppLocalizations {
   }
 
   @override
+  String get practiceTabTests => 'Tests';
+
+  @override
+  String get practiceTabTopics => 'Topic-wise';
+
+  @override
+  String get practiceSnapshotKicker => 'इस सीज़न';
+
+  @override
+  String get practiceSnapshotSee => 'विवरण देखें';
+
+  @override
+  String get practiceSnapshotEmpty =>
+      'एक test पूरा करें। तब दिखेगा कि अंक कहाँ जा रहे हैं, और कहाँ और प्रयास करने चाहिए।';
+
+  @override
+  String get practiceSnapshotAccuracy => 'Accuracy';
+
+  @override
+  String get practiceSnapshotMistakes => 'Confident mistakes';
+
+  @override
+  String get practiceSnapshotAttemptTopics => 'और प्रयास करने लायक topics';
+
+  @override
+  String get practiceInsightsMistakesTitle => 'Confident mistakes';
+
+  @override
+  String get practiceInsightsMistakesBody =>
+      'Sure या Educated guess के गलत जवाब। अगले test से पहले इन्हें दोहराएँ।';
+
+  @override
+  String get practiceInsightsMistakesEmpty =>
+      'इस सीज़न में कोई confident mistake नहीं।';
+
+  @override
+  String get practiceInsightsAttemptTitle => 'परीक्षा में और प्रयास करें';
+
+  @override
+  String get practiceInsightsAttemptBody =>
+      'जिन topics में Educated guess अक्सर सही होता है — कम से कम 3, और 70% या अधिक सही। इन्हें खाली छोड़ने के बजाय attempt करें।';
+
+  @override
+  String get practiceInsightsAttemptEmpty =>
+      'अभी कोई topic इस स्तर पर नहीं है। Educated guess मार्क करते रहें। एक topic के लिए 3 guesses चाहिए, जिनमें कम से कम 70% सही हों।';
+
+  @override
+  String practiceInsightsGuessRight(int correct, int total) {
+    return '$correct में से $total guesses सही';
+  }
+
+  @override
+  String get practiceInsightsFailed => 'यह विवरण लोड नहीं हो सका।';
+
+  @override
+  String practiceSnapshotConfidentWrong(int percent) {
+    return 'इस subject में आप $percent% बार confidently गलत होते हैं।';
+  }
+
+  @override
+  String get practiceSnapshotReviseAdvice =>
+      'इस subject को revise करें, और जिन प्रकार के सवाल गलत हो रहे हैं उन पर नज़र रखें।';
+
+  @override
+  String get practiceSnapshotSeePatterns => 'सवालों के प्रकार देखें';
+
+  @override
+  String get practicePatternsTitle => 'जिन प्रकार के सवाल आप चूकते हैं';
+
+  @override
+  String get practicePatternsEmpty =>
+      'Pattern दिखाने के लिए अभी Sure या Educated guess के जवाब कम हैं।';
+
+  @override
+  String get practicePatternsPractice => 'ये practise करें';
+
+  @override
+  String get practicePatternsNoQuestions =>
+      'इस subject में इस प्रकार का सवाल अभी नहीं है।';
+
+  @override
+  String get practiceInsightsMistakesTab => 'Confident mistakes';
+
+  @override
+  String get practiceInsightsStrongTab => 'Strong guesses';
+
+  @override
+  String get practiceInsightsConfidentWrongPct => 'Confidently गलत';
+
+  @override
+  String get practiceInsightsRightGuesses => 'सही guesses';
+
+  @override
   String get practiceSeeStats => 'Stats देखें';
+
+  @override
+  String practiceInsightsTitle(String subject) {
+    return 'Stats: $subject';
+  }
+
+  @override
+  String get practiceLensSure => 'Sure';
+
+  @override
+  String get practiceLensGuess => 'Educated guess';
+
+  @override
+  String get practiceLensRight => 'सही';
+
+  @override
+  String get practiceLensWrong => 'गलत';
+
+  @override
+  String practiceLensSplit(int correct, int wrong) {
+    return '$correct सही · $wrong गलत';
+  }
+
+  @override
+  String practiceHeroAccuracy(int percent) {
+    return '$percent% accuracy';
+  }
+
+  @override
+  String get practiceSureSnapBad => 'Sure के जवाब अक्सर गलत हैं।';
+
+  @override
+  String get practiceSureSnapMixed => 'कुछ Sure जवाब अभी भी गलत हैं।';
+
+  @override
+  String get practiceSureSnapGood => 'Sure के जवाब ज़्यादातर सही हैं।';
+
+  @override
+  String get practiceSureSnapThin => 'Sure के और जवाब चाहिए।';
+
+  @override
+  String get practiceGuessSnapBad => 'Educated guess ज़्यादातर गलत हैं।';
+
+  @override
+  String get practiceGuessSnapMixed => 'Educated guess कभी सही, कभी गलत।';
+
+  @override
+  String get practiceGuessSnapGood => 'Educated guess आमतौर पर सही हैं।';
+
+  @override
+  String get practiceGuessSnapThin => 'Educated guess के और जवाब चाहिए।';
+
+  @override
+  String get practiceSureBodyBad =>
+      'ये topics revise करें। इन्हें Sure मार्क किया, फिर भी गलत हुए।';
+
+  @override
+  String get practiceSureBodyMixed =>
+      'नीचे के topics revise करें। ये अभी पूरी तरह याद नहीं हैं।';
+
+  @override
+  String get practiceSureBodyGood => 'Sure तभी मार्क करें जब जवाब पता हो।';
+
+  @override
+  String get practiceSureBodyThin =>
+      'और जवाब Sure मार्क करें। इस subject का फ़ैसला करने के लिए 6 चाहिए।';
+
+  @override
+  String get practiceGuessBodyBad =>
+      'परीक्षा में अनुमान लगाने के बजाय इन्हें skip करें।';
+
+  @override
+  String get practiceGuessBodyMixed =>
+      'यहाँ guess मदद कर सकता है, लेकिन जोखिम अभी भी है।';
+
+  @override
+  String get practiceGuessBodyGood =>
+      'परीक्षा में इन्हें खाली छोड़ने के बजाय attempt करें।';
+
+  @override
+  String get practiceGuessBodyThin =>
+      'और जवाब Educated guess मार्क करें। इस subject का फ़ैसला करने के लिए 6 चाहिए।';
+
+  @override
+  String get practiceSureTopicsEmpty =>
+      'अभी किसी topic में Sure के पर्याप्त जवाब नहीं हैं।';
+
+  @override
+  String get practiceGuessTopicsEmpty =>
+      'अभी किसी topic में Educated guess के पर्याप्त जवाब नहीं हैं।';
+
+  @override
+  String practiceTopicWrongPct(int percent) {
+    return '$percent% गलत';
+  }
 
   @override
   String get practiceNoTests => 'इस पूल में अभी कोई test नहीं है।';
@@ -6234,4 +6450,42 @@ class AppLocalizationsHi extends AppLocalizations {
   @override
   String get todayQueueOpenChallengeSubtitle =>
       'Live community challenge में शामिल हों';
+
+  @override
+  String get homeRevisionSectionTitle => 'दोहराएँ';
+
+  @override
+  String get homeRevisionNoIncorrect => 'आपके पास कोई गलत MCQ नहीं है';
+
+  @override
+  String get homeRevisionNoBookmarked => 'आपके पास कोई bookmarked MCQ नहीं है';
+
+  @override
+  String get homeRevisionNoIncorrectCard => 'कोई गलत MCQ नहीं';
+
+  @override
+  String get homeRevisionNoBookmarkedCard => 'कोई bookmark नहीं';
+
+  @override
+  String get homeRevisionNoIncorrectHint => 'गलत किए सवाल यहाँ दिखेंगे।';
+
+  @override
+  String get homeRevisionNoBookmarkedHint =>
+      'Test में bookmark किए सवाल यहाँ दिखेंगे।';
+
+  @override
+  String homeRevisionCardTest(int count) {
+    return 'Random test · $count';
+  }
+
+  @override
+  String homeRevisionRandomWillStart(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count MCQs का random test शुरू होगा।',
+      one: '1 MCQ का random test शुरू होगा।',
+    );
+    return '$_temp0';
+  }
 }

@@ -58,4 +58,16 @@ void main() {
 
     expect(picked?.pattern, UpscMcqPattern.howMany);
   });
+
+  test('ranks every pattern that has a wrong', () {
+    final ranked = rankMcqPatterns(const [
+      (type: 'direct', wrong: 1, attempted: 10),
+      (type: 'assertion-reason', wrong: 4, attempted: 5),
+      (type: 'direct', wrong: 0, attempted: 2),
+    ]);
+    expect(ranked.map((s) => s.pattern), [
+      UpscMcqPattern.assertionReason,
+      UpscMcqPattern.direct,
+    ]);
+  });
 }

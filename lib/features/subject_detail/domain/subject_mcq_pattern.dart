@@ -51,6 +51,25 @@ class SubjectMcqPatternStat {
         return _titleCaseSlug(otherSlug ?? '');
     }
   }
+
+  String explainFor(AppLocalizations l10n) {
+    switch (pattern) {
+      case UpscMcqPattern.howMany:
+        return l10n.mcqHowManyBody;
+      case UpscMcqPattern.statementCombination:
+        return l10n.mcqStatementComboBody;
+      case UpscMcqPattern.assertionReason:
+        return l10n.mcqAssertionBody;
+      case UpscMcqPattern.matchFollowing:
+        return l10n.mcqMatchBody;
+      case UpscMcqPattern.direct:
+        return l10n.mcqDirectBody;
+      case UpscMcqPattern.singleStatement:
+        return l10n.mcqSingleBody;
+      case UpscMcqPattern.other:
+        return l10n.mcqOtherBody;
+    }
+  }
 }
 
 /// Fewest attempts before a pattern can win on wrong-rate.
@@ -69,10 +88,10 @@ const int kMcqPatternMinAttempts = 3;
 /// If every pattern is under the minimum, the one with the most wrongs wins,
 /// so a thin history still surfaces something. Returns null when nothing
 /// was answered wrong.
-SubjectMcqPatternStat? pickWeakestMcqPattern(
-  Iterable<({String type, int wrong, int attempted})> rows, {
-  int minAttempts = kMcqPatternMinAttempts,
-}) {
+/// Patterns with at least one wrong, weakest first.
+List<SubjectMcqPatternStat> rankMcqPatterns(
+  Iterable<({String type, int wrong, int attempted})> rows,
+) {
   final merged = <String, SubjectMcqPatternStat>{};
   for (final row in rows) {
     if (row.attempted <= 0) continue;
@@ -90,15 +109,17 @@ SubjectMcqPatternStat? pickWeakestMcqPattern(
     );
   }
 
-  final withWrongs = merged.values.where((s) => s.wrong > 0).toList();
-  if (withWrongs.isEmpty) return null;
+  return merged.values.where((s) => s.wrong > 0).toList()..sort(_byWeakness);
+}
 
-  final qualified = withWrongs
-      .where((s) => s.attempted >= minAttempts)
-      .toList();
-  final pool = qualified.isEmpty ? withWrongs : qualified;
-  pool.sort(_byWeakness);
-  return pool.first;
+SubjectMcqPatternStat? pickWeakestMcqPattern(
+  Iterable<({String type, int wrong, int attempted})> rows, {
+  int minAttempts = kMcqPatternMinAttempts,
+}) {
+  final ranked = rankMcqPatterns(rows);
+  if (ranked.isEmpty) return null;
+  final qualified = ranked.where((s) => s.attempted >= minAttempts).toList();
+  return (qualified.isEmpty ? ranked : qualified).first;
 }
 
 int _byWeakness(SubjectMcqPatternStat a, SubjectMcqPatternStat b) {

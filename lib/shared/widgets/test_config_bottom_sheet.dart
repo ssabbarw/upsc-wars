@@ -62,9 +62,11 @@ class TestConfigSheetArgs {
 Future<void> showTestConfigBottomSheet({
   required BuildContext context,
   required TestConfigSheetArgs args,
+  bool useRootNavigator = false,
 }) {
   return showModalBottomSheet<void>(
     context: context,
+    useRootNavigator: useRootNavigator,
     isScrollControlled: true,
     isDismissible: true,
     enableDrag: true,

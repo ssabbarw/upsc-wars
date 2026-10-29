@@ -40,6 +40,13 @@ abstract final class DailyRevision {
   static String poolCountLabel(int available) =>
       available <= 0 ? appL10n.commonNone : '$available';
 
+  /// Home shortcut length: 10 questions, or the whole pool when it is smaller.
+  static int randomTestSize(int available) {
+    if (available <= 0) return 0;
+    if (available < questionCount) return available;
+    return questionCount;
+  }
+
   static String analyticsSubject(DailyRevisionPool pool) => switch (pool) {
     DailyRevisionPool.missed => 'revision_missed',
     DailyRevisionPool.saved => 'revision_saved',
@@ -114,5 +121,40 @@ abstract final class DailyRevision {
         )
         .getSingle();
     return row.read<int>('c');
+  }
+
+  /// Random distinct wrong questions, capped at [limit].
+  static Future<List<String>> queryRandomWrongUuids(
+    UserDatabase db, {
+    required int limit,
+  }) async {
+    if (limit <= 0) return const [];
+    final rows = await db
+        .customSelect(
+          '''
+          SELECT quid FROM (
+            SELECT a.question_uuid AS quid
+            FROM attempts a
+            WHERE a.is_correct = 0
+              AND a.status = 'wrong'
+            GROUP BY a.question_uuid
+          )
+          ORDER BY RANDOM()
+          LIMIT ?
+          ''',
+          variables: [Variable.withInt(limit)],
+          readsFrom: {db.sessionQuestions},
+        )
+        .get();
+    return [for (final r in rows) r.read<String>('quid')];
+  }
+
+  /// Random bookmarks, capped at [limit].
+  static Future<List<String>> queryRandomBookmarkUuids(
+    UserDatabase db, {
+    required int limit,
+  }) {
+    if (limit <= 0) return Future.value(const []);
+    return db.bookmarksDao.getRandomBookmarkUuids(limit);
   }
 }

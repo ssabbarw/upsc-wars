@@ -2351,19 +2351,47 @@ class AppLocalizationsEn extends AppLocalizations {
   String get mcqHowMany => 'How many of the above';
 
   @override
+  String get mcqHowManyBody =>
+      'Count how many statements are correct. Missing one statement flips the whole answer.';
+
+  @override
   String get mcqStatementCombo => 'Which statements are correct';
+
+  @override
+  String get mcqStatementComboBody =>
+      'The options are codes like “1 and 2 only”. Eliminate pairs — don’t guess the code.';
 
   @override
   String get mcqAssertion => 'Assertion–Reason';
 
   @override
+  String get mcqAssertionBody =>
+      'Both statements can be true and still not cause each other. Check the link, not just the facts.';
+
+  @override
   String get mcqMatch => 'Match the following';
+
+  @override
+  String get mcqMatchBody =>
+      'One swapped pair poisons the whole match. Lock the pairs you know first.';
 
   @override
   String get mcqDirect => 'Direct fact';
 
   @override
+  String get mcqDirectBody =>
+      'A single remembered fact. If you missed it, revise the fact — not the method.';
+
+  @override
   String get mcqSingle => 'Single statement';
+
+  @override
+  String get mcqSingleBody =>
+      'True or false of one claim. Watch absolute words like always, only, never.';
+
+  @override
+  String get mcqOtherBody =>
+      'A less common stem shape in this bank. Practise a few to get used to how it is framed.';
 
   @override
   String get subjRevisitTopic => 'Revisit this topic';
@@ -6208,7 +6236,196 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String get practiceTabTests => 'Tests';
+
+  @override
+  String get practiceTabTopics => 'Topic-wise';
+
+  @override
+  String get practiceSnapshotKicker => 'THIS SEASON';
+
+  @override
+  String get practiceSnapshotSee => 'View details';
+
+  @override
+  String get practiceSnapshotEmpty =>
+      'Finish a test to see where marks leak, and where you can attempt more.';
+
+  @override
+  String get practiceSnapshotAccuracy => 'Accuracy';
+
+  @override
+  String get practiceSnapshotMistakes => 'Confident mistakes';
+
+  @override
+  String get practiceSnapshotAttemptTopics => 'Topics to attempt more';
+
+  @override
+  String get practiceInsightsMistakesTitle => 'Confident mistakes';
+
+  @override
+  String get practiceInsightsMistakesBody =>
+      'Sure and Educated-guess answers that were wrong. Revise these before the next test.';
+
+  @override
+  String get practiceInsightsMistakesEmpty =>
+      'No confident mistakes this season.';
+
+  @override
+  String get practiceInsightsAttemptTitle => 'Attempt more in the exam';
+
+  @override
+  String get practiceInsightsAttemptBody =>
+      'Topics where your Educated guesses are usually right — at least 3, and 70% or more correct. Worth attempting instead of leaving blank.';
+
+  @override
+  String get practiceInsightsAttemptEmpty =>
+      'No topic qualifies yet. Keep marking Educated guess. A topic needs 3 guesses, with at least 70% correct.';
+
+  @override
+  String practiceInsightsGuessRight(int correct, int total) {
+    return '$correct of $total guesses right';
+  }
+
+  @override
+  String get practiceInsightsFailed => 'Could not load this breakdown.';
+
+  @override
+  String practiceSnapshotConfidentWrong(int percent) {
+    return 'You are $percent% times confidently wrong in this subject.';
+  }
+
+  @override
+  String get practiceSnapshotReviseAdvice =>
+      'Revise this subject, and watch the types of questions you miss.';
+
+  @override
+  String get practiceSnapshotSeePatterns => 'See question types';
+
+  @override
+  String get practicePatternsTitle => 'Question types you miss';
+
+  @override
+  String get practicePatternsEmpty =>
+      'Not enough Sure or Educated-guess answers to spot a pattern yet.';
+
+  @override
+  String get practicePatternsPractice => 'Practise these';
+
+  @override
+  String get practicePatternsNoQuestions =>
+      'No questions of this type in this subject yet.';
+
+  @override
+  String get practiceInsightsMistakesTab => 'Confident mistakes';
+
+  @override
+  String get practiceInsightsStrongTab => 'Strong guesses';
+
+  @override
+  String get practiceInsightsConfidentWrongPct => 'Confidently wrong';
+
+  @override
+  String get practiceInsightsRightGuesses => 'Right guesses';
+
+  @override
   String get practiceSeeStats => 'See stats';
+
+  @override
+  String practiceInsightsTitle(String subject) {
+    return 'Stats: $subject';
+  }
+
+  @override
+  String get practiceLensSure => 'Sure';
+
+  @override
+  String get practiceLensGuess => 'Educated guess';
+
+  @override
+  String get practiceLensRight => 'Right';
+
+  @override
+  String get practiceLensWrong => 'Wrong';
+
+  @override
+  String practiceLensSplit(int correct, int wrong) {
+    return '$correct right · $wrong wrong';
+  }
+
+  @override
+  String practiceHeroAccuracy(int percent) {
+    return '$percent% accuracy';
+  }
+
+  @override
+  String get practiceSureSnapBad => 'Sure answers are often wrong.';
+
+  @override
+  String get practiceSureSnapMixed => 'Some Sure answers are still wrong.';
+
+  @override
+  String get practiceSureSnapGood => 'Sure answers are mostly right.';
+
+  @override
+  String get practiceSureSnapThin => 'Need more Sure answers.';
+
+  @override
+  String get practiceGuessSnapBad => 'Educated guesses are mostly wrong.';
+
+  @override
+  String get practiceGuessSnapMixed => 'Educated guesses are hit and miss.';
+
+  @override
+  String get practiceGuessSnapGood => 'Educated guesses are usually right.';
+
+  @override
+  String get practiceGuessSnapThin => 'Need more Educated guesses.';
+
+  @override
+  String get practiceSureBodyBad =>
+      'Revise these topics. You marked them Sure and still got them wrong.';
+
+  @override
+  String get practiceSureBodyMixed =>
+      'Revise the topics below. You do not fully know them yet.';
+
+  @override
+  String get practiceSureBodyGood =>
+      'Keep marking Sure only when you know the answer.';
+
+  @override
+  String get practiceSureBodyThin =>
+      'Mark more answers as Sure. We need 6 to judge this subject.';
+
+  @override
+  String get practiceGuessBodyBad =>
+      'In the exam, skip these instead of guessing.';
+
+  @override
+  String get practiceGuessBodyMixed =>
+      'Guessing here can help, but it is still risky.';
+
+  @override
+  String get practiceGuessBodyGood =>
+      'In the exam, attempt these instead of leaving them blank.';
+
+  @override
+  String get practiceGuessBodyThin =>
+      'Mark more answers as Educated guess. We need 6 to judge this subject.';
+
+  @override
+  String get practiceSureTopicsEmpty =>
+      'Not enough Sure answers in any topic yet.';
+
+  @override
+  String get practiceGuessTopicsEmpty =>
+      'Not enough Educated guesses in any topic yet.';
+
+  @override
+  String practiceTopicWrongPct(int percent) {
+    return '$percent% wrong';
+  }
 
   @override
   String get practiceNoTests => 'No tests in this pool yet.';
@@ -6327,4 +6544,49 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get todayQueueOpenChallengeSubtitle =>
       'Join a live community challenge';
+
+  @override
+  String get homeRevisionSectionTitle => 'Revise';
+
+  @override
+  String get homeRevisionNoIncorrect => 'You have no incorrect MCQs';
+
+  @override
+  String get homeRevisionNoBookmarked => 'You have no bookmarked MCQs';
+
+  @override
+  String get homeRevisionNoIncorrectCard => 'No incorrect MCQs';
+
+  @override
+  String get homeRevisionNoBookmarkedCard => 'No bookmarked MCQs';
+
+  @override
+  String get homeRevisionNoIncorrectHint =>
+      'They show up when you get a question wrong.';
+
+  @override
+  String get homeRevisionNoBookmarkedHint =>
+      'Bookmark a question in a test and it will show up here.';
+
+  @override
+  String homeRevisionCardTest(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Random test · $count',
+      one: 'Random test · 1',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String homeRevisionRandomWillStart(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'A random test of $count MCQs will start.',
+      one: 'A random test of 1 MCQ will start.',
+    );
+    return '$_temp0';
+  }
 }
