@@ -360,7 +360,7 @@ class _BattleTestSessionView extends HookConsumerWidget {
                     uiLanguage: uiLanguage.value,
                     onLanguageChanged: (value) {
                       uiLanguage.value = value;
-                      unawaited(persistAppLanguage(ref, value));
+                      unawaited(switchAppLanguage(context, ref, value));
                     },
                     revealed: revealed,
                     selectedOption: selectedForCurrent,

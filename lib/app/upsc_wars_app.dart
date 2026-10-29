@@ -366,7 +366,8 @@ class _RootMaterialApp extends HookConsumerWidget {
               child ?? const SizedBox.shrink(),
               const BattleSpectateFabHost(),
               const BattleChatFabHost(),
-              if (languageSwitchBusy) const _LanguageSwitchOverlay(),
+              if (languageSwitchBusy)
+                const Positioned.fill(child: _LanguageSwitchOverlay()),
             ],
           ),
         );
@@ -380,11 +381,33 @@ class _LanguageSwitchOverlay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AbsorbPointer(
+    return const AbsorbPointer(
       child: ColoredBox(
-        color: AppColors.gray900.withValues(alpha: 0.28),
-        child: const Center(
-          child: CircularProgressIndicator(color: AppColors.primary),
+        color: Color(0x8C111111),
+        child: Center(child: _LanguageSwitchSpinner()),
+      ),
+    );
+  }
+}
+
+class _LanguageSwitchSpinner extends StatelessWidget {
+  const _LanguageSwitchSpinner();
+
+  @override
+  Widget build(BuildContext context) {
+    return const Material(
+      color: Colors.white,
+      elevation: 6,
+      borderRadius: BorderRadius.all(Radius.circular(16)),
+      child: Padding(
+        padding: EdgeInsets.all(20),
+        child: SizedBox(
+          width: 32,
+          height: 32,
+          child: CircularProgressIndicator(
+            strokeWidth: 3,
+            color: AppColors.primary,
+          ),
         ),
       ),
     );

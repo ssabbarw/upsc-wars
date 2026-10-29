@@ -6318,6 +6318,30 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String get practiceStatsSourcesAll =>
+      'Stats include Daily Battle, Daily CA, Open Challenge, and practice tests across every subject.';
+
+  @override
+  String get practiceTrapsLeadAll =>
+      'These traps show up across every subject.';
+
+  @override
+  String get practiceSureSubjectsLead =>
+      'Subjects where you made the most confident mistakes.';
+
+  @override
+  String get practiceGuessSubjectsLead =>
+      'Subjects where your guesses are going wrong, most mistakes first.';
+
+  @override
+  String get practiceSureSubjectsEmpty =>
+      'Not enough Sure answers in any subject yet.';
+
+  @override
+  String get practiceGuessSubjectsEmpty =>
+      'Not enough Educated guesses in any subject yet.';
+
+  @override
   String get practiceSnapshotAccuracy => 'Accuracy';
 
   @override

@@ -1,91 +1,113 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
+import '../../core/providers/app_language_helpers.dart';
+import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_radius.dart';
+import '../../core/theme/app_text_styles.dart';
 
-/// Compact EN | हि control. A tap **anywhere** on the widget toggles language
-/// (avoids tiny per-segment hit targets).
-class EnHiLanguageToggle extends StatelessWidget {
+/// EN | हि switch used across the app. The selected side updates immediately.
+///
+/// [minHeight] is accepted so existing call sites keep compiling. The control
+/// matches the Home header switch.
+class EnHiLanguageToggle extends StatefulWidget {
   const EnHiLanguageToggle({
     super.key,
     required this.language,
     required this.onChanged,
+    this.borderColor,
     this.minHeight = 32,
   });
 
   /// Current language: `'en'` or `'hi'`.
   final String language;
 
-  /// Called with the language after a toggle (`'en'` ↔ `'hi'`).
+  /// Called with `'en'` or `'hi'` after the highlight has flipped.
   final ValueChanged<String> onChanged;
 
+  final Color? borderColor;
   final double minHeight;
+
+  @override
+  State<EnHiLanguageToggle> createState() => _EnHiLanguageToggleState();
+}
+
+class _EnHiLanguageToggleState extends State<EnHiLanguageToggle> {
+  late String _language = normalizeAppLanguage(widget.language);
+  var _busy = false;
+
+  @override
+  void didUpdateWidget(covariant EnHiLanguageToggle oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    final next = normalizeAppLanguage(widget.language);
+    if (!_busy && next != _language) {
+      _language = next;
+    }
+    if (_busy && next == _language) {
+      _busy = false;
+    }
+  }
+
+  void _select(String lang) {
+    if (_busy) return;
+    final next = normalizeAppLanguage(lang);
+    if (next == _language) return;
+    HapticFeedback.selectionClick();
+    setState(() {
+      _language = next;
+      _busy = true;
+    });
+    widget.onChanged(next);
+  }
 
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
-    final isHi = language == 'hi';
-    final radius = BorderRadius.circular(AppRadius.sm);
+    final isHindi = _language == 'hi';
+    final borderColor =
+        widget.borderColor ?? scheme.outlineVariant.withValues(alpha: 0.7);
 
-    return Material(
-      color: Colors.transparent,
-      child: InkWell(
-        onTap: () => onChanged(isHi ? 'en' : 'hi'),
-        borderRadius: radius,
-        child: Ink(
-          height: minHeight,
-          decoration: BoxDecoration(
-            borderRadius: radius,
-            border: Border.all(color: scheme.outlineVariant),
-          ),
-          child: IntrinsicHeight(
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                _Seg(label: 'EN', selected: !isHi, scheme: scheme, left: true),
-                _Seg(label: 'हि', selected: isHi, scheme: scheme, left: false),
-              ],
+    Widget segment(String label, String lang, bool selected) {
+      return Semantics(
+        button: true,
+        selected: selected,
+        child: GestureDetector(
+          behavior: HitTestBehavior.opaque,
+          onTap: selected || _busy ? null : () => _select(lang),
+          child: AnimatedContainer(
+            duration: const Duration(milliseconds: 160),
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 7),
+            decoration: BoxDecoration(
+              color: selected ? scheme.primary : AppColors.transparent,
+              borderRadius: BorderRadius.circular(AppRadius.sm),
+            ),
+            child: Text(
+              label,
+              style: AppTextStyles.labelSm().copyWith(
+                fontWeight: FontWeight.w700,
+                color: selected ? scheme.onPrimary : scheme.onSurfaceVariant,
+              ),
             ),
           ),
         ),
-      ),
-    );
-  }
-}
+      );
+    }
 
-class _Seg extends StatelessWidget {
-  const _Seg({
-    required this.label,
-    required this.selected,
-    required this.scheme,
-    required this.left,
-  });
-
-  final String label;
-  final bool selected;
-  final ColorScheme scheme;
-  final bool left;
-
-  @override
-  Widget build(BuildContext context) {
-    return AnimatedContainer(
-      duration: const Duration(milliseconds: 160),
-      curve: Curves.easeOut,
-      alignment: Alignment.center,
-      padding: const EdgeInsets.symmetric(horizontal: 12),
-      decoration: BoxDecoration(
-        color: selected ? scheme.primary : Colors.transparent,
-        borderRadius: BorderRadius.horizontal(
-          left: left ? Radius.circular(AppRadius.sm - 1) : Radius.zero,
-          right: left ? Radius.zero : Radius.circular(AppRadius.sm - 1),
+    return ConstrainedBox(
+      constraints: BoxConstraints(minHeight: widget.minHeight),
+      child: Container(
+        padding: const EdgeInsets.all(2),
+        decoration: BoxDecoration(
+          color: scheme.surfaceContainerLow,
+          borderRadius: BorderRadius.circular(AppRadius.md),
+          border: Border.all(color: borderColor, width: 0.5),
         ),
-      ),
-      child: Text(
-        label,
-        style: TextStyle(
-          fontSize: 11,
-          fontWeight: FontWeight.w600,
-          color: selected ? scheme.onPrimary : scheme.onSurfaceVariant,
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            segment('EN', 'en', !isHindi),
+            segment('हि', 'hi', isHindi),
+          ],
         ),
       ),
     );

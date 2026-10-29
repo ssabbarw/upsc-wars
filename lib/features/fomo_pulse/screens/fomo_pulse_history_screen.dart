@@ -108,7 +108,7 @@ class FomoPulseHistoryScreen extends HookConsumerWidget {
                   language: uiLang,
                   onChanged: (lang) {
                     langOverride.value = lang;
-                    unawaited(persistAppLanguage(ref, lang));
+                    unawaited(switchAppLanguage(context, ref, lang));
                   },
                 ),
               ),

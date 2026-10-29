@@ -876,6 +876,12 @@ GoRouter appRouter(Ref ref) {
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
+        path: '/stats/traps',
+        name: 'stats_traps',
+        builder: (context, state) => const PracticeConfidenceTrapsScreen(),
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
         path: '/subject/:name/insights/traps',
         name: 'practice_confidence_traps',
         builder: (context, state) => PracticeConfidenceTrapsScreen(

@@ -4309,6 +4309,12 @@
     "placeholders": {"topic": {"type": "String"}}
   },
   "practiceStatsSourcesNote": "Stats for {name} include Daily Battle, Daily CA, Open Challenge, and practice tests.",
+  "practiceStatsSourcesAll": "Stats include Daily Battle, Daily CA, Open Challenge, and practice tests across every subject.",
+  "practiceTrapsLeadAll": "These traps show up across every subject.",
+  "practiceSureSubjectsLead": "Subjects where you made the most confident mistakes.",
+  "practiceGuessSubjectsLead": "Subjects where your guesses are going wrong, most mistakes first.",
+  "practiceSureSubjectsEmpty": "Not enough Sure answers in any subject yet.",
+  "practiceGuessSubjectsEmpty": "Not enough Educated guesses in any subject yet.",
   "@practiceStatsSourcesNote": {
     "placeholders": {"name": {"type": "String"}}
   },

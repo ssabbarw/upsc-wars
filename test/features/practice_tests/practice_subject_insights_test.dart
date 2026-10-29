@@ -215,4 +215,52 @@ void main() {
     expect(insights.sureTraps.single.trapType, 'entity-swap');
     expect(insights.guessTraps.single.trapType, 'partial-truth');
   });
+
+  test('ranks subjects by most mistakes and keeps combined ratings', () {
+    final insights = assemblePracticeSubjectInsights(
+      topics: [
+        _topic(
+          topic: 'Polity',
+          sureWrong: 1,
+          sureCorrect: 5,
+          educatedGuessWrong: 1,
+          educatedGuessCorrect: 4,
+        ),
+        _topic(
+          topic: 'Economy',
+          sureWrong: 6,
+          sureCorrect: 2,
+          educatedGuessWrong: 4,
+          educatedGuessCorrect: 1,
+        ),
+        _topic(
+          topic: 'Geography',
+          sureWrong: 3,
+          sureCorrect: 3,
+          educatedGuessWrong: 2,
+          educatedGuessCorrect: 2,
+        ),
+      ],
+      displayNames: const {
+        'Polity': 'Polity',
+        'Economy': 'Economy',
+        'Geography': 'Geography',
+      },
+      sureMinTopic: 1,
+      guessMinTopic: 1,
+    ).rankedByMostMistakes();
+
+    expect(insights.sureTopics.map((t) => t.topicKey), [
+      'Economy',
+      'Geography',
+      'Polity',
+    ]);
+    expect(insights.guessTopics.map((t) => t.topicKey), [
+      'Economy',
+      'Geography',
+      'Polity',
+    ]);
+    expect(insights.sureWrong, 10);
+    expect(insights.educatedGuessWrong, 7);
+  });
 }

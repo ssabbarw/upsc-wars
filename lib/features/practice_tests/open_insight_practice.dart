@@ -24,11 +24,12 @@ enum InsightDrillIntent { revise, improve }
 
 class InsightDrillTarget {
   const InsightDrillTarget.topic({
-    required this.subject,
+    required String subject,
     required this.topicKey,
     required this.title,
     required this.sureLens,
-  }) : trap = null,
+  }) : subject = subject,
+       trap = null,
        kind = InsightDrillKind.topic;
 
   const InsightDrillTarget.trap({
@@ -40,7 +41,9 @@ class InsightDrillTarget {
        kind = InsightDrillKind.trap;
 
   final InsightDrillKind kind;
-  final String subject;
+
+  /// Null for a trap drill that spans every subject.
+  final String? subject;
   final String title;
   final String? topicKey;
   final SubjectTrapStat? trap;
@@ -103,7 +106,7 @@ class _InsightDrillSheetState extends ConsumerState<_InsightDrillSheet> {
       final pool = target.kind == InsightDrillKind.topic
           ? await loadTopicDrillPool(
               db,
-              subject: target.subject,
+              subject: target.subject!,
               topic: target.topicKey!,
               sureLens: target.sureLens,
               seasonStart: catalog.season.start,
@@ -164,7 +167,7 @@ class _InsightDrillSheetState extends ConsumerState<_InsightDrillSheet> {
     try {
       id = await create.execute(
         SessionConfig(
-          subject: target.subject,
+          subject: target.subject ?? 'All subjects',
           topic: target.topicKey,
           mode: 'learning',
           questionCount: uuids.length,
@@ -211,8 +214,10 @@ class _InsightDrillSheetState extends ConsumerState<_InsightDrillSheet> {
     final target = widget.target;
     final l10n = context.l10n;
     final overlayContext = Navigator.of(context).context;
-    final subjectName =
-        SubjectConstants.bySlug(target.subject)?.displayName ?? target.subject;
+    final subjectName = target.subject == null
+        ? l10n.statsAllSubjects
+        : (SubjectConstants.bySlug(target.subject!)?.displayName ??
+              target.subject!);
     final short = uuids.length < kInsightImproveSize;
     Navigator.pop(context);
     await Future<void>.delayed(Duration.zero);
@@ -221,7 +226,7 @@ class _InsightDrillSheetState extends ConsumerState<_InsightDrillSheet> {
       context: overlayContext,
       useRootNavigator: true,
       args: TestConfigSheetArgs(
-        subject: target.subject,
+        subject: target.subject ?? 'All subjects',
         topic: target.topicKey,
         subjectDisplayName: subjectName,
         topicDisplayName: target.kind == InsightDrillKind.topic

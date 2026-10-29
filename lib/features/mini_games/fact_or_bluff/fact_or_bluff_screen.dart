@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -39,7 +41,7 @@ class FactOrBluffScreen extends HookConsumerWidget {
     final lang = langState.value;
     void onLangChanged(String v) {
       langState.value = v;
-      persistAppLanguage(ref, v);
+      unawaited(switchAppLanguage(context, ref, v));
     }
 
     final provider = factOrBluffControllerProvider((

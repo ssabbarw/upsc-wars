@@ -202,7 +202,7 @@ class DuelScreen extends HookConsumerWidget {
                     language: p1Lang,
                     onLangChanged: (v) {
                       p1LangState.value = v;
-                      persistAppLanguage(ref, v);
+                      unawaited(switchAppLanguage(context, ref, v));
                     },
                     onTap: (i) =>
                         ref.read(provider.notifier).tap(DuelPlayer.one, i),

@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../core/theme/reading_font_scale.dart';
+import '../../../shared/widgets/en_hi_language_toggle.dart';
 import 'revision_games_theme.dart';
 import '../../../l10n/l10n.dart';
 
-/// Compact EN | हि control for cream games surfaces. Tap **anywhere** toggles
-/// (avoids tiny per-segment hit targets). Uses [RgColors], not app ColorScheme,
-/// so it stays visible on the fixed cream palette in light and dark app themes.
+/// EN | हि control on game screens. Same widget as Home.
 class RgLangToggle extends StatelessWidget {
   const RgLangToggle({
     super.key,
@@ -22,75 +21,16 @@ class RgLangToggle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isHi = language == 'hi';
-    final radius = BorderRadius.circular(RgRadius.sm);
-
-    return Material(
-      color: RgColors.transparent,
-      child: InkWell(
-        onTap: () => onChanged(isHi ? 'en' : 'hi'),
-        borderRadius: radius,
-        child: Ink(
-          height: minHeight,
-          decoration: BoxDecoration(
-            color: RgColors.neutralFill,
-            borderRadius: radius,
-            border: Border.all(color: RgColors.border14),
-          ),
-          child: IntrinsicHeight(
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                _RgLangSeg(label: 'EN', selected: !isHi, left: true),
-                _RgLangSeg(label: 'हि', selected: isHi, left: false),
-              ],
-            ),
-          ),
-        ),
-      ),
+    return EnHiLanguageToggle(
+      language: language,
+      onChanged: onChanged,
+      minHeight: minHeight,
     );
   }
 }
 
-class _RgLangSeg extends StatelessWidget {
-  const _RgLangSeg({
-    required this.label,
-    required this.selected,
-    required this.left,
-  });
-
-  final String label;
-  final bool selected;
-  final bool left;
-
-  @override
-  Widget build(BuildContext context) {
-    return AnimatedContainer(
-      duration: const Duration(milliseconds: 160),
-      curve: Curves.easeOut,
-      alignment: Alignment.center,
-      padding: const EdgeInsets.symmetric(horizontal: 10),
-      decoration: BoxDecoration(
-        color: selected ? RgColors.ink : RgColors.transparent,
-        borderRadius: BorderRadius.horizontal(
-          left: left ? Radius.circular(RgRadius.sm - 1) : Radius.zero,
-          right: left ? Radius.zero : Radius.circular(RgRadius.sm - 1),
-        ),
-      ),
-      child: Text(
-        label,
-        style: RgText.mono(
-          size: 10,
-          color: selected ? RgColors.onDark : RgColors.muted,
-        ),
-      ),
-    );
-  }
-}
-
-/// Cream page shell with the design's 46px white header bar and an optional
-/// white footer that holds the pill CTA.
+/// Cream page shell with a 46px header bar and an optional white footer that
+/// holds the pill CTA.
 class RgGameScaffold extends StatelessWidget {
   const RgGameScaffold({
     super.key,
@@ -101,6 +41,8 @@ class RgGameScaffold extends StatelessWidget {
     this.centerTitle = false,
     this.trailing,
     this.footer,
+    this.headerColor = RgColors.card,
+    this.showHeaderDivider = true,
   });
 
   final Widget body;
@@ -112,6 +54,13 @@ class RgGameScaffold extends StatelessWidget {
   final bool centerTitle;
   final Widget? trailing;
   final Widget? footer;
+
+  /// Header fill. Individual games keep the white bar; the hub matches the
+  /// page so the title sits on the same surface as Practice and Stats.
+  final Color headerColor;
+
+  /// Hairline under the header. Off when the header matches the page.
+  final bool showHeaderDivider;
 
   @override
   Widget build(BuildContext context) {
@@ -127,6 +76,8 @@ class RgGameScaffold extends StatelessWidget {
                 showBack: showBack && leadingIcon == null,
                 centerTitle: centerTitle,
                 trailing: trailing,
+                color: headerColor,
+                showDivider: showHeaderDivider,
               ),
             Expanded(child: body),
             if (footer != null) RgFooterBar(child: footer!),
@@ -144,6 +95,8 @@ class _RgHeader extends StatelessWidget {
     required this.showBack,
     required this.centerTitle,
     required this.trailing,
+    required this.color,
+    required this.showDivider,
   });
 
   final String title;
@@ -151,15 +104,19 @@ class _RgHeader extends StatelessWidget {
   final bool showBack;
   final bool centerTitle;
   final Widget? trailing;
+  final Color color;
+  final bool showDivider;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 46,
       padding: const EdgeInsets.symmetric(horizontal: 6),
-      decoration: const BoxDecoration(
-        color: RgColors.card,
-        border: Border(bottom: BorderSide(color: RgColors.border)),
+      decoration: BoxDecoration(
+        color: color,
+        border: showDivider
+            ? const Border(bottom: BorderSide(color: RgColors.border))
+            : null,
       ),
       child: Row(
         children: [

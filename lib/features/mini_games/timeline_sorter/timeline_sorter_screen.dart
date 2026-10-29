@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -40,7 +42,7 @@ class TimelineSorterScreen extends HookConsumerWidget {
     final lang = langState.value;
     void onLangChanged(String v) {
       langState.value = v;
-      persistAppLanguage(ref, v);
+      unawaited(switchAppLanguage(context, ref, v));
     }
 
     final provider = timelineSorterControllerProvider((

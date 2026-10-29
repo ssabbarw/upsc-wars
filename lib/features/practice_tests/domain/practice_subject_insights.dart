@@ -191,6 +191,30 @@ class PracticeSubjectInsights {
       sureTotal == 0 ? null : 100 * sureCorrect / sureTotal;
 
   static const empty = PracticeSubjectInsights(mistakes: [], attemptMore: []);
+
+  /// Same totals, with Sure and Educated-guess rows ordered by most wrongs.
+  PracticeSubjectInsights rankedByMostMistakes() {
+    int byMistakes(LensTopic a, LensTopic b) {
+      final byWrong = b.wrong.compareTo(a.wrong);
+      if (byWrong != 0) return byWrong;
+      return a.displayName.toLowerCase().compareTo(b.displayName.toLowerCase());
+    }
+
+    return PracticeSubjectInsights(
+      mistakes: mistakes,
+      attemptMore: attemptMore,
+      sureTotal: sureTotal,
+      sureWrong: sureWrong,
+      educatedGuessTotal: educatedGuessTotal,
+      educatedGuessCorrect: educatedGuessCorrect,
+      educatedGuessWrong: educatedGuessWrong,
+      reviseTopics: reviseTopics,
+      sureTopics: [...sureTopics]..sort(byMistakes),
+      guessTopics: [...guessTopics]..sort(byMistakes),
+      sureTraps: sureTraps,
+      guessTraps: guessTraps,
+    );
+  }
 }
 
 InsightBand sureBandFor({

@@ -786,7 +786,7 @@ class _TestEngineLoaded extends HookConsumerWidget {
                   languageToggleKey: languageToggleKey,
                   onLanguageChanged: (value) {
                     uiLanguage.value = value;
-                    unawaited(persistAppLanguage(ref, value));
+                    unawaited(switchAppLanguage(context, ref, value));
                   },
                   onBack: () => Navigator.of(context).maybePop(),
                 ),

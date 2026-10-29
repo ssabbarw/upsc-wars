@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
@@ -167,14 +169,16 @@ Future<void> _openGame(
     shape: const RoundedRectangleBorder(
       borderRadius: BorderRadius.vertical(top: Radius.circular(RgRadius.xl)),
     ),
-    builder: (context) => _SubjectPickerSheet(
+    builder: (sheetContext) => _SubjectPickerSheet(
       gameTitle: game.title,
       sessionSize: game.sessionSize,
       initialLang: watchAppLanguage(ref),
+      onLangChanged: (v) =>
+          unawaited(switchAppLanguage(sheetContext, ref, v)),
     ),
   );
   if (config == null || !context.mounted) return;
-  await persistAppLanguage(ref, config.lang);
+  await switchAppLanguage(context, ref, config.lang);
   if (!context.mounted) return;
   final params = <String>[
     if (config.subjects.isNotEmpty)
@@ -190,11 +194,13 @@ class _SubjectPickerSheet extends StatefulWidget {
     required this.gameTitle,
     required this.sessionSize,
     required this.initialLang,
+    required this.onLangChanged,
   });
 
   final String gameTitle;
   final int sessionSize;
   final String initialLang;
+  final ValueChanged<String> onLangChanged;
 
   @override
   State<_SubjectPickerSheet> createState() => _SubjectPickerSheetState();
@@ -308,7 +314,10 @@ class _SubjectPickerSheetState extends State<_SubjectPickerSheet> {
           const SizedBox(height: 6),
           RgLangToggle(
             language: _lang,
-            onChanged: (v) => setState(() => _lang = v),
+            onChanged: (v) {
+              setState(() => _lang = v);
+              widget.onLangChanged(v);
+            },
           ),
           const SizedBox(height: 12),
           RgMonoLabel(context.l10n.gmSubjects),
@@ -397,7 +406,6 @@ class GamesHubScreen extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     useGameScreenOpenedAnalytics(ref, RevisionGameNames.gamesHub);
-    final lang = watchAppLanguage(ref);
     final openedKey = useRef<String?>(null);
 
     useEffect(() {
@@ -418,10 +426,8 @@ class GamesHubScreen extends HookConsumerWidget {
       title: 'Revision Games',
       centerTitle: true,
       showBack: !asShellTab,
-      trailing: RgLangToggle(
-        language: lang,
-        onChanged: (v) => persistAppLanguage(ref, v),
-      ),
+      headerColor: RgColors.pageBg,
+      showHeaderDivider: false,
       body: ListView.separated(
         padding: const EdgeInsets.fromLTRB(14, 14, 14, 24),
         itemCount: _games.length,

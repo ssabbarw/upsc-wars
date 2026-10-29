@@ -18,9 +18,10 @@ class OnboardingLanguageGate extends ConsumerWidget {
 
   final VoidCallback onChosen;
 
-  Future<void> _pick(WidgetRef ref, String lang) async {
+  Future<void> _pick(BuildContext context, WidgetRef ref, String lang) async {
     await HapticFeedback.selectionClick();
-    await persistAppLanguage(ref, lang);
+    if (!context.mounted) return;
+    await switchAppLanguage(context, ref, lang);
     onChosen();
   }
 
@@ -80,13 +81,13 @@ class OnboardingLanguageGate extends ConsumerWidget {
                 _LanguageButton(
                   title: 'English',
                   subtitle: 'Continue in English',
-                  onTap: () => _pick(ref, 'en'),
+                  onTap: () => _pick(context, ref, 'en'),
                 ),
                 const SizedBox(height: AppSpacing.md),
                 _LanguageButton(
                   title: 'हिन्दी',
                   subtitle: 'हिन्दी में जारी रखें',
-                  onTap: () => _pick(ref, 'hi'),
+                  onTap: () => _pick(context, ref, 'hi'),
                 ),
                 const SizedBox(height: AppSpacing.md),
                 Text(

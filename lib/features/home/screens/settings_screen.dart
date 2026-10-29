@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -32,7 +34,7 @@ import '../../daily_ca/widgets/daily_ca_review_access.dart';
 import '../../../core/providers/app_language_helpers.dart';
 import '../../../shared/theme/dark_mode_toggle.dart';
 import '../../../shared/widgets/app_toast.dart';
-import '../../../shared/widgets/content_language_picker.dart';
+import '../../../shared/widgets/en_hi_language_toggle.dart';
 import '../../../l10n/l10n.dart';
 
 class SettingsScreen extends ConsumerWidget {
@@ -777,15 +779,14 @@ class _ContentLanguageTile extends ConsumerWidget {
             : context.l10n.settingsLanguageSubtitleEn,
         style: AppTextStyles.bodySm().copyWith(color: scheme.onSurfaceVariant),
       ),
-      trailing: Icon(
-        Icons.chevron_right_rounded,
-        color: scheme.onSurfaceVariant,
+      trailing: EnHiLanguageToggle(
+        language: language,
+        onChanged: (lang) => unawaited(switchAppLanguage(context, ref, lang)),
       ),
       contentPadding: const EdgeInsets.symmetric(
         horizontal: AppSpacing.lg,
         vertical: 10,
       ),
-      onTap: () => showContentLanguageChoiceSheet(context: context, ref: ref),
     );
   }
 }

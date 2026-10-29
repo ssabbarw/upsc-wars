@@ -217,7 +217,7 @@ class _DangerZonePager extends HookConsumerWidget {
             uiLanguage: uiLanguage.value,
             onLanguageChanged: (lang) {
               uiLanguage.value = lang;
-              unawaited(persistAppLanguage(ref, lang));
+              unawaited(switchAppLanguage(context, ref, lang));
             },
             confidenceBanner: context.l10n.resultsYouWere(confLabel),
           ),

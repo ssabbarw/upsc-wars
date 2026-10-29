@@ -1,6 +1,7 @@
 import 'package:drift/drift.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../core/constants/subject_constants.dart';
 import '../../../core/database/user_db.dart';
 import '../../../core/providers/user_database_provider.dart';
 import '../domain/practice_subject_insights.dart';
@@ -24,6 +25,23 @@ class InsightDrillPool {
 final practiceSubjectInsightsProvider = FutureProvider.autoDispose
     .family<PracticeSubjectInsights, String>((ref, subject) {
       return _loadInsights(ref, subject: subject);
+    });
+
+/// Season insights rolled up across every subject.
+///
+/// Sure and Educated-guess totals, traps, and the subject lists all use the
+/// same season. Subject rows are ordered by most mistakes.
+final practiceAllSubjectsInsightsProvider =
+    FutureProvider.autoDispose<PracticeSubjectInsights>((ref) async {
+      final catalog = await ref.watch(practiceCatalogProvider.future);
+      final db = ref.watch(userDatabaseProvider);
+      return loadPracticeAllSubjectsInsights(
+        db,
+        seasonStart: catalog.season.start,
+        displayNames: {
+          for (final def in SubjectConstants.ordered) def.slug: def.displayName,
+        },
+      );
     });
 
 /// Season insights for one topic inside a subject.
@@ -51,16 +69,55 @@ Future<PracticeSubjectInsights> _loadInsights(
   );
 }
 
+Future<PracticeSubjectInsights> loadPracticeAllSubjectsInsights(
+  UserDatabase db, {
+  required DateTime seasonStart,
+  required Map<String, String> displayNames,
+}) async {
+  final insights = await _loadPracticeInsights(
+    db,
+    seasonStart: seasonStart,
+    displayNames: displayNames,
+    groupBySubject: true,
+    sureMinTopic: 1,
+    guessMinTopic: 1,
+  );
+  return insights.rankedByMostMistakes();
+}
+
 Future<PracticeSubjectInsights> loadPracticeSubjectInsights(
   UserDatabase db, {
   required String subject,
   String? topic,
   required DateTime seasonStart,
   required Map<String, String> displayNames,
+}) {
+  return _loadPracticeInsights(
+    db,
+    subject: subject,
+    topic: topic,
+    seasonStart: seasonStart,
+    displayNames: displayNames,
+    sureMinTopic: topic == null ? PracticeInsightRules.sureMinTopic : 1,
+    guessMinTopic: topic == null ? PracticeInsightRules.guessMinTopic : 1,
+  );
+}
+
+Future<PracticeSubjectInsights> _loadPracticeInsights(
+  UserDatabase db, {
+  String? subject,
+  String? topic,
+  bool groupBySubject = false,
+  required DateTime seasonStart,
+  required Map<String, String> displayNames,
+  required int sureMinTopic,
+  required int guessMinTopic,
 }) async {
+  final subjectFilter = subject == null ? '' : 'AND q.subject = ?';
   final topicFilter = topic == null ? '' : 'AND q.topic = ?';
+  final groupExpr = groupBySubject ? 'q.subject' : 'q.topic';
   final scopeVars = [
-    Variable.withString(subject),
+    if (subject != null) Variable.withString(subject),
     if (topic != null) Variable.withString(topic),
     Variable.withInt(seasonStart.millisecondsSinceEpoch ~/ 1000),
   ];
@@ -68,7 +125,7 @@ Future<PracticeSubjectInsights> loadPracticeSubjectInsights(
       .customSelect(
         '''
         SELECT
-          q.topic AS topic,
+          $groupExpr AS topic,
           COALESCE(SUM(CASE WHEN a.confidence = 'very_sure' AND a.is_correct = 0 THEN 1 ELSE 0 END), 0) AS sure_w,
           COALESCE(SUM(CASE WHEN a.confidence = 'very_sure' AND a.is_correct != 0 THEN 1 ELSE 0 END), 0) AS sure_c,
           COALESCE(SUM(CASE WHEN a.confidence = 'somewhat_sure' AND a.is_correct = 0 THEN 1 ELSE 0 END), 0) AS guess_w,
@@ -78,12 +135,12 @@ Future<PracticeSubjectInsights> loadPracticeSubjectInsights(
         FROM attempts a
         INNER JOIN questions q ON q.uuid = a.question_uuid
         INNER JOIN sessions s ON s.id = a.session_id
-        WHERE q.subject = ?
+        WHERE s.status = 'completed'
+          $subjectFilter
           $topicFilter
-          AND s.status = 'completed'
           AND s.completed_at >= ?
           AND a.status IN ('correct', 'wrong')
-        GROUP BY q.topic
+        GROUP BY $groupExpr
         ''',
         variables: scopeVars,
         readsFrom: {db.sessionQuestions, db.questions, db.sessions},
@@ -119,9 +176,9 @@ Future<PracticeSubjectInsights> loadPracticeSubjectInsights(
         FROM attempts a
         INNER JOIN questions q ON q.uuid = a.question_uuid
         INNER JOIN sessions s ON s.id = a.session_id
-        WHERE q.subject = ?
+        WHERE s.status = 'completed'
+          $subjectFilter
           $topicFilter
-          AND s.status = 'completed'
           AND s.completed_at >= ?
           AND a.status IN ('correct', 'wrong')
           AND a.confidence IN ('very_sure', 'somewhat_sure')
@@ -151,8 +208,8 @@ Future<PracticeSubjectInsights> loadPracticeSubjectInsights(
     displayNames: displayNames,
     sureTraps: rankContentTraps(ofConf('very_sure')),
     guessTraps: rankContentTraps(ofConf('somewhat_sure')),
-    sureMinTopic: topic == null ? PracticeInsightRules.sureMinTopic : 1,
-    guessMinTopic: topic == null ? PracticeInsightRules.guessMinTopic : 1,
+    sureMinTopic: sureMinTopic,
+    guessMinTopic: guessMinTopic,
   );
 }
 
@@ -220,17 +277,18 @@ Future<InsightDrillPool> loadTopicDrillPool(
 
 Future<InsightDrillPool> loadTrapDrillPool(
   UserDatabase db, {
-  required String subject,
+  String? subject,
   String? topic,
   required String trapType,
   required DateTime seasonStart,
   int improveLimit = kInsightImproveSize,
 }) async {
-  final ofTrap = await _trapUuids(db, subject, trapType, topic: topic);
+  final ofTrap = await _trapUuids(db, trapType, subject: subject, topic: topic);
   if (ofTrap.isEmpty) {
     return const InsightDrillPool(reviseUuids: [], improveUuids: []);
   }
   final season = Variable.withInt(seasonStart.millisecondsSinceEpoch ~/ 1000);
+  final subjectFilter = subject == null ? '' : 'AND q.subject = ?';
   final topicFilter = topic == null ? '' : 'AND q.topic = ?';
   final wrongRows = await db
       .customSelect(
@@ -239,9 +297,9 @@ Future<InsightDrillPool> loadTrapDrillPool(
         FROM attempts a
         INNER JOIN questions q ON q.uuid = a.question_uuid
         INNER JOIN sessions s ON s.id = a.session_id
-        WHERE q.subject = ?
+        WHERE s.status = 'completed'
+          $subjectFilter
           $topicFilter
-          AND s.status = 'completed'
           AND s.completed_at >= ?
           AND a.is_correct = 0
           AND a.confidence = 'very_sure'
@@ -249,7 +307,7 @@ Future<InsightDrillPool> loadTrapDrillPool(
         ORDER BY MAX(a.attempted_at) DESC
         ''',
         variables: [
-          Variable.withString(subject),
+          if (subject != null) Variable.withString(subject),
           if (topic != null) Variable.withString(topic),
           season,
         ],
@@ -273,23 +331,25 @@ Future<Set<String>> _attemptedUuids(UserDatabase db) =>
 
 Future<Set<String>> _trapUuids(
   UserDatabase db,
-  String subject,
   String trapType, {
+  String? subject,
   String? topic,
 }) async {
   final want = normalizeTrapType(trapType);
   if (want.isEmpty) return {};
+  final subjectFilter = subject == null ? '' : 'AND subject = ?';
   final topicFilter = topic == null ? '' : 'AND topic = ?';
   final bank = await db
       .customSelect(
         '''
         SELECT uuid, trap_type AS ttype
         FROM questions
-        WHERE subject = ?
+        WHERE 1 = 1
+          $subjectFilter
           $topicFilter
         ''',
         variables: [
-          Variable.withString(subject),
+          if (subject != null) Variable.withString(subject),
           if (topic != null) Variable.withString(topic),
         ],
         readsFrom: {db.questions},

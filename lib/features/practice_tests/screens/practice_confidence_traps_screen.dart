@@ -18,13 +18,10 @@ import '../providers/practice_subject_insights_provider.dart';
 
 /// Content traps behind Sure mistakes.
 class PracticeConfidenceTrapsScreen extends ConsumerWidget {
-  const PracticeConfidenceTrapsScreen({
-    super.key,
-    required this.subject,
-    this.topic,
-  });
+  const PracticeConfidenceTrapsScreen({super.key, this.subject, this.topic});
 
-  final String subject;
+  /// Null rolls traps up across every subject.
+  final String? subject;
   final String? topic;
 
   @override
@@ -32,13 +29,18 @@ class PracticeConfidenceTrapsScreen extends ConsumerWidget {
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final catalog = ref.watch(practiceCatalogProvider);
-    final displayName = topic == null
-        ? (SubjectConstants.bySlug(subject)?.displayName ?? subject)
+    final allSubjects = subject == null;
+    final displayName = allSubjects
+        ? context.l10n.statsAllSubjects
+        : topic == null
+        ? (SubjectConstants.bySlug(subject!)?.displayName ?? subject!)
         : (catalog.asData?.value.topicDisplayNames[topic] ?? topic!);
-    final insights = topic == null
-        ? ref.watch(practiceSubjectInsightsProvider(subject))
+    final insights = allSubjects
+        ? ref.watch(practiceAllSubjectsInsightsProvider)
+        : topic == null
+        ? ref.watch(practiceSubjectInsightsProvider(subject!))
         : ref.watch(
-            practiceTopicInsightsProvider((subject: subject, topic: topic!)),
+            practiceTopicInsightsProvider((subject: subject!, topic: topic!)),
           );
 
     return Scaffold(
@@ -59,12 +61,14 @@ class PracticeConfidenceTrapsScreen extends ConsumerWidget {
         error: (_, _) => Center(
           child: TextButton(
             onPressed: () {
-              if (topic == null) {
-                ref.invalidate(practiceSubjectInsightsProvider(subject));
+              if (subject == null) {
+                ref.invalidate(practiceAllSubjectsInsightsProvider);
+              } else if (topic == null) {
+                ref.invalidate(practiceSubjectInsightsProvider(subject!));
               } else {
                 ref.invalidate(
                   practiceTopicInsightsProvider((
-                    subject: subject,
+                    subject: subject!,
                     topic: topic!,
                   )),
                 );
@@ -182,7 +186,7 @@ class _TrapDetailCard extends ConsumerWidget {
     required this.trap,
   });
 
-  final String subject;
+  final String? subject;
   final String? topic;
   final SubjectTrapStat trap;
 

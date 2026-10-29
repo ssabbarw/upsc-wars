@@ -2,16 +2,14 @@ import 'package:flutter/material.dart';
 
 enum AuthProviderButtonType { google, apple }
 
-/// Official "Sign in with Google" colors from
-/// https://developers.google.com/identity/branding-guidelines
+/// Colored Google button. Blue stays distinct on both light and dark surfaces;
+/// the dark fill is the lighter Google blue so it doesn't sink into a black page.
 abstract final class _GoogleSignInColors {
-  static const lightFill = Color(0xFFFFFFFF);
-  static const lightStroke = Color(0xFF747775);
-  static const lightText = Color(0xFF1F1F1F);
+  static const lightFill = Color(0xFF1A73E8);
+  static const lightText = Color(0xFFFFFFFF);
 
-  static const darkFill = Color(0xFF131314);
-  static const darkStroke = Color(0xFF8E918F);
-  static const darkText = Color(0xFFE3E3E3);
+  static const darkFill = Color(0xFF8AB4F8);
+  static const darkText = Color(0xFF202124);
 }
 
 class AuthProviderSignInButton extends StatelessWidget {
@@ -38,78 +36,74 @@ class AuthProviderSignInButton extends StatelessWidget {
 
     final effectiveOnPressed = (isLoading) ? null : onPressed;
 
-    final (bg, fg, border) = switch (type) {
-      AuthProviderButtonType.google => isDark
-          ? (
-              _GoogleSignInColors.darkFill,
-              _GoogleSignInColors.darkText,
-              _GoogleSignInColors.darkStroke,
-            )
-          : (
-              _GoogleSignInColors.lightFill,
-              _GoogleSignInColors.lightText,
-              _GoogleSignInColors.lightStroke,
-            ),
+    final (bg, fg) = switch (type) {
+      AuthProviderButtonType.google =>
+        isDark
+            ? (_GoogleSignInColors.darkFill, _GoogleSignInColors.darkText)
+            : (_GoogleSignInColors.lightFill, _GoogleSignInColors.lightText),
       AuthProviderButtonType.apple =>
         isDark
-            ? (Colors.white, const Color(0xFF0A0A0A), const Color(0x00000000))
-            : (Colors.black, Colors.white, const Color(0x00000000)),
+            ? (Colors.white, const Color(0xFF0A0A0A))
+            : (Colors.black, Colors.white),
     };
 
-    // Google: Medium 14/20. Apple keeps a slightly larger weight for parity.
     final textStyle = TextStyle(
-      fontSize: type == AuthProviderButtonType.google ? 14 : 16,
-      fontWeight: type == AuthProviderButtonType.google
-          ? FontWeight.w500
-          : FontWeight.w600,
-      height: type == AuthProviderButtonType.google ? 20 / 14 : null,
+      fontSize: type == AuthProviderButtonType.google ? 15 : 16,
+      fontWeight: FontWeight.w600,
+      height: 1.2,
       color: fg,
     );
 
-    return SizedBox(
-      width: double.infinity,
-      height: height,
-      child: Material(
-        color: bg,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(borderRadius),
-          side: BorderSide(color: border, width: 1),
-        ),
-        clipBehavior: Clip.antiAlias,
-        child: InkWell(
-          onTap: effectiveOnPressed,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 12),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                _Logo(type: type, googleOnDarkButton: isDark),
-                const SizedBox(width: 12),
-                Flexible(
-                  child: AnimatedSwitcher(
-                    duration: const Duration(milliseconds: 180),
-                    switchInCurve: Curves.easeOut,
-                    switchOutCurve: Curves.easeIn,
-                    child: isLoading
-                        ? SizedBox(
-                            key: const ValueKey('loading'),
-                            width: 18,
-                            height: 18,
-                            child: CircularProgressIndicator(
-                              strokeWidth: 2,
-                              color: fg.withValues(alpha: 0.85),
+    final dimmed = effectiveOnPressed == null && !isLoading;
+
+    return Opacity(
+      opacity: dimmed ? 0.5 : 1,
+      child: SizedBox(
+        width: double.infinity,
+        height: height,
+        child: Material(
+          color: bg,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(borderRadius),
+          ),
+          clipBehavior: Clip.antiAlias,
+          child: InkWell(
+            onTap: effectiveOnPressed,
+            splashColor: fg.withValues(alpha: 0.16),
+            highlightColor: fg.withValues(alpha: 0.08),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  _Logo(type: type),
+                  const SizedBox(width: 12),
+                  Flexible(
+                    child: AnimatedSwitcher(
+                      duration: const Duration(milliseconds: 180),
+                      switchInCurve: Curves.easeOut,
+                      switchOutCurve: Curves.easeIn,
+                      child: isLoading
+                          ? SizedBox(
+                              key: const ValueKey('loading'),
+                              width: 18,
+                              height: 18,
+                              child: CircularProgressIndicator(
+                                strokeWidth: 2,
+                                color: fg.withValues(alpha: 0.85),
+                              ),
+                            )
+                          : Text(
+                              text,
+                              key: const ValueKey('text'),
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              style: textStyle,
                             ),
-                          )
-                        : Text(
-                            text,
-                            key: const ValueKey('text'),
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                            style: textStyle,
-                          ),
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),
@@ -119,15 +113,14 @@ class AuthProviderSignInButton extends StatelessWidget {
 }
 
 class _Logo extends StatelessWidget {
-  const _Logo({required this.type, this.googleOnDarkButton = false});
+  const _Logo({required this.type});
 
   final AuthProviderButtonType type;
-  final bool googleOnDarkButton;
 
   @override
   Widget build(BuildContext context) {
     return switch (type) {
-      AuthProviderButtonType.google => _GoogleG(onDarkButton: googleOnDarkButton),
+      AuthProviderButtonType.google => const _GoogleG(),
       AuthProviderButtonType.apple => SizedBox(
         width: 22,
         height: 22,
@@ -143,33 +136,40 @@ class _Logo extends StatelessWidget {
   }
 }
 
-/// Multicolor Google "G". On dark buttons it sits on a white pad, as required
-/// by Google's branding guidelines.
+/// Multicolor Google "G". The packaged asset is a small mark centered on a
+/// white plate, so the plate is cropped and the G is scaled up to button size.
 class _GoogleG extends StatelessWidget {
-  const _GoogleG({required this.onDarkButton});
-
-  final bool onDarkButton;
+  const _GoogleG();
 
   static const _logo = AssetImage(
     'assets/logos/google_light.png',
     package: 'sign_in_button',
   );
 
+  static const _markSize = 25.0;
+
+  /// Source canvas is 48px; the colored G sits in the center ~18px.
+  static const _zoom = _markSize * (48 / 22);
+
   @override
   Widget build(BuildContext context) {
-    final g = Image(image: _logo, height: 20, width: 20, fit: BoxFit.contain);
-    if (!onDarkButton) {
-      return SizedBox(width: 20, height: 20, child: g);
-    }
-    return Container(
-      width: 28,
-      height: 28,
-      alignment: Alignment.center,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(4),
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(8),
+      child: SizedBox(
+        width: _markSize,
+        height: _markSize,
+        child: const OverflowBox(
+          maxWidth: _zoom,
+          maxHeight: _zoom,
+          child: Image(
+            image: _logo,
+            width: _zoom,
+            height: _zoom,
+            fit: BoxFit.fill,
+            filterQuality: FilterQuality.medium,
+          ),
+        ),
       ),
-      child: g,
     );
   }
 }

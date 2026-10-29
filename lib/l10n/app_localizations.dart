@@ -10418,6 +10418,42 @@ abstract class AppLocalizations {
   /// **'Stats for {name} include Daily Battle, Daily CA, Open Challenge, and practice tests.'**
   String practiceStatsSourcesNote(String name);
 
+  /// No description provided for @practiceStatsSourcesAll.
+  ///
+  /// In en, this message translates to:
+  /// **'Stats include Daily Battle, Daily CA, Open Challenge, and practice tests across every subject.'**
+  String get practiceStatsSourcesAll;
+
+  /// No description provided for @practiceTrapsLeadAll.
+  ///
+  /// In en, this message translates to:
+  /// **'These traps show up across every subject.'**
+  String get practiceTrapsLeadAll;
+
+  /// No description provided for @practiceSureSubjectsLead.
+  ///
+  /// In en, this message translates to:
+  /// **'Subjects where you made the most confident mistakes.'**
+  String get practiceSureSubjectsLead;
+
+  /// No description provided for @practiceGuessSubjectsLead.
+  ///
+  /// In en, this message translates to:
+  /// **'Subjects where your guesses are going wrong, most mistakes first.'**
+  String get practiceGuessSubjectsLead;
+
+  /// No description provided for @practiceSureSubjectsEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Not enough Sure answers in any subject yet.'**
+  String get practiceSureSubjectsEmpty;
+
+  /// No description provided for @practiceGuessSubjectsEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Not enough Educated guesses in any subject yet.'**
+  String get practiceGuessSubjectsEmpty;
+
   /// No description provided for @practiceSnapshotAccuracy.
   ///
   /// In en, this message translates to:

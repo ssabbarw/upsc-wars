@@ -353,7 +353,7 @@ Future<void> showContentLanguageChoiceSheet({
         scheme: scheme,
         bottomInset: bottom,
         confirmLabel: confirmLabel,
-        onPersist: (lang) => persistAppLanguage(ref, lang),
+        onPersist: (lang) => switchAppLanguage(context, ref, lang),
       );
     },
   );

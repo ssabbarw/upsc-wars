@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -73,7 +75,7 @@ class MemoryPairsSetsView extends ConsumerWidget {
                 ),
                 EnHiLanguageToggle(
                   language: lang,
-                  onChanged: (v) => persistAppLanguage(ref, v),
+                  onChanged: (v) => unawaited(switchAppLanguage(context, ref, v)),
                   minHeight: 32,
                 ),
                 const SizedBox(width: 4),

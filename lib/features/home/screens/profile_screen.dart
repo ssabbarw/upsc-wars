@@ -88,7 +88,8 @@ class _SignedOutProfileBody extends ConsumerWidget {
             type: AuthProviderButtonType.apple,
             onPressed: isBusy
                 ? null
-                : () => ref.read(authActionsProvider.notifier).signInWithApple(),
+                : () =>
+                      ref.read(authActionsProvider.notifier).signInWithApple(),
             isLoading: isBusy,
             text: isBusy
                 ? context.l10n.authSigningIn
@@ -288,7 +289,8 @@ class _QuickSettingsCard extends ConsumerWidget {
                 : context.l10n.settingsLanguageSubtitleEn,
             trailing: EnHiLanguageToggle(
               language: language,
-              onChanged: (lang) => unawaited(persistAppLanguage(ref, lang)),
+              onChanged: (lang) =>
+                  unawaited(switchAppLanguage(context, ref, lang)),
             ),
           ),
           const Divider(height: 1),
@@ -359,85 +361,58 @@ class _QuickSettingsCard extends ConsumerWidget {
             error: (_, _) => const SizedBox.shrink(),
           ),
           const Divider(height: 1),
+          _QuickRow(
+            icon: Icons.format_size_rounded,
+            title: context.l10n.settingsReadingSize,
+            subtitle: context.l10n.settingsReadingSizeSubtitle,
+            trailing: Text(
+              _readingSizeLabel(context, readingIndex),
+              style: AppTextStyles.caption().copyWith(
+                color: scheme.primary,
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.fromLTRB(
               AppSpacing.md,
-              AppSpacing.md,
+              0,
               AppSpacing.md,
               AppSpacing.sm,
             ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            child: Row(
               children: [
-                Row(
-                  children: [
-                    Icon(
-                      Icons.format_size_rounded,
-                      size: 20,
-                      color: scheme.onSurfaceVariant,
-                    ),
-                    const SizedBox(width: AppSpacing.sm),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            context.l10n.settingsReadingSize,
-                            style: AppTextStyles.label(),
-                          ),
-                          Text(
-                            context.l10n.settingsReadingSizeSubtitle,
-                            style: AppTextStyles.caption().copyWith(
-                              color: scheme.onSurfaceVariant,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Text(
-                      _readingSizeLabel(context, readingIndex),
-                      style: AppTextStyles.caption().copyWith(
-                        color: scheme.primary,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                  ],
-                ),
-                Row(
-                  children: [
-                    IconButton(
-                      visualDensity: VisualDensity.compact,
-                      tooltip: context.l10n.settingsReadingSmaller,
-                      onPressed: readingIndex == 0
-                          ? null
-                          : () => ref
-                                .read(readingFontScaleProvider.notifier)
-                                .setIndex(readingIndex - 1),
-                      icon: const Icon(Icons.text_decrease_rounded, size: 20),
-                    ),
-                    Expanded(
-                      child: Slider(
-                        value: readingIndex.toDouble(),
-                        min: 0,
-                        max: lastReading.toDouble(),
-                        divisions: lastReading,
-                        label: _readingSizeLabel(context, readingIndex),
-                        onChanged: (v) => ref
+                IconButton(
+                  visualDensity: VisualDensity.compact,
+                  tooltip: context.l10n.settingsReadingSmaller,
+                  onPressed: readingIndex == 0
+                      ? null
+                      : () => ref
                             .read(readingFontScaleProvider.notifier)
-                            .setIndex(v.round()),
-                      ),
-                    ),
-                    IconButton(
-                      visualDensity: VisualDensity.compact,
-                      tooltip: context.l10n.settingsReadingLarger,
-                      onPressed: readingIndex == lastReading
-                          ? null
-                          : () => ref
-                                .read(readingFontScaleProvider.notifier)
-                                .setIndex(readingIndex + 1),
-                      icon: const Icon(Icons.text_increase_rounded, size: 20),
-                    ),
-                  ],
+                            .setIndex(readingIndex - 1),
+                  icon: const Icon(Icons.text_decrease_rounded, size: 20),
+                ),
+                Expanded(
+                  child: Slider(
+                    value: readingIndex.toDouble(),
+                    min: 0,
+                    max: lastReading.toDouble(),
+                    divisions: lastReading,
+                    label: _readingSizeLabel(context, readingIndex),
+                    onChanged: (v) => ref
+                        .read(readingFontScaleProvider.notifier)
+                        .setIndex(v.round()),
+                  ),
+                ),
+                IconButton(
+                  visualDensity: VisualDensity.compact,
+                  tooltip: context.l10n.settingsReadingLarger,
+                  onPressed: readingIndex == lastReading
+                      ? null
+                      : () => ref
+                            .read(readingFontScaleProvider.notifier)
+                            .setIndex(readingIndex + 1),
+                  icon: const Icon(Icons.text_increase_rounded, size: 20),
                 ),
               ],
             ),
@@ -454,24 +429,34 @@ class _QuickRow extends StatelessWidget {
     required this.title,
     required this.subtitle,
     this.trailing,
+    this.onTap,
   });
+
+  /// Shared icon column so every title starts on the same vertical line.
+  static const iconSlot = 24.0;
 
   final IconData icon;
   final String title;
   final String subtitle;
   final Widget? trailing;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
-    return Padding(
+    final row = Padding(
       padding: const EdgeInsets.symmetric(
         horizontal: AppSpacing.md,
         vertical: 10,
       ),
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Icon(icon, size: 20, color: scheme.onSurfaceVariant),
+          SizedBox(
+            width: iconSlot,
+            height: iconSlot,
+            child: Icon(icon, size: 20, color: scheme.onSurfaceVariant),
+          ),
           const SizedBox(width: AppSpacing.sm),
           Expanded(
             child: Column(
@@ -494,6 +479,11 @@ class _QuickRow extends StatelessWidget {
         ],
       ),
     );
+    if (onTap == null) return row;
+    return Material(
+      type: MaterialType.transparency,
+      child: InkWell(onTap: onTap, child: row),
+    );
   }
 }
 
@@ -514,19 +504,23 @@ class _QuickSwitchRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-    return SwitchListTile(
-      contentPadding: const EdgeInsets.symmetric(horizontal: AppSpacing.md),
-      secondary: Icon(icon, size: 20, color: scheme.onSurfaceVariant),
-      title: Text(title, style: AppTextStyles.label()),
-      subtitle: Text(
-        subtitle,
-        style: AppTextStyles.caption().copyWith(
-          color: scheme.onSurfaceVariant,
+    return Semantics(
+      toggled: value,
+      child: _QuickRow(
+        icon: icon,
+        title: title,
+        subtitle: subtitle,
+        onTap: () => onChanged(!value),
+        trailing: ExcludeSemantics(
+          child: IgnorePointer(
+            child: Switch(
+              value: value,
+              onChanged: onChanged,
+              materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+            ),
+          ),
         ),
       ),
-      value: value,
-      onChanged: onChanged,
     );
   }
 }
