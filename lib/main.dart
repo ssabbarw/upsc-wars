@@ -51,6 +51,11 @@ Future<void> main() async {
   };
 
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+  if (!kIsWeb && defaultTargetPlatform == TargetPlatform.android) {
+    // Matches enableEdgeToEdge() in MainActivity so insets are applied on
+    // Android 14 and below, where the system does not force edge-to-edge.
+    await SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
+  }
   await Firebase.initializeApp();
   await AnonymousAuthService.ensureSignedIn();
   await setupFirebaseCrashlytics();

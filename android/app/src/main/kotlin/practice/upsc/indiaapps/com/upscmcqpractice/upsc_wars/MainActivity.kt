@@ -7,12 +7,13 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
-import io.flutter.embedding.android.FlutterActivity
+import androidx.activity.enableEdgeToEdge
+import io.flutter.embedding.android.FlutterFragmentActivity
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.EventChannel
 import io.flutter.plugin.common.MethodChannel
 
-class MainActivity : FlutterActivity() {
+class MainActivity : FlutterFragmentActivity() {
     companion object {
         private const val TAG = "UpscWarsIntent"
         private const val SHARE_CHANNEL = "upsc_wars/share"
@@ -55,9 +56,16 @@ class MainActivity : FlutterActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        // Play Console looks for this call. FlutterActivity is a plain Activity,
+        // so the host is FlutterFragmentActivity (a ComponentActivity). Call it
+        // before super so Android 14 and below draw edge-to-edge too, not only
+        // Android 15+ where targetSdk 36 forces it.
+        enableEdgeToEdge()
         logIntent("onCreate", intent)
         rewriteShareIntent(intent)
         super.onCreate(savedInstanceState)
+        // The embedding then paints a translucent status bar. Put edge-to-edge back.
+        enableEdgeToEdge()
         ensureNotificationChannel()
     }
 

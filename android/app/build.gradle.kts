@@ -18,6 +18,8 @@ if (keystorePropertiesFile.exists()) {
 
 dependencies {
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.4")
+    // enableEdgeToEdge() in MainActivity. 1.8+ is required; plugins may resolve higher.
+    implementation("androidx.activity:activity-ktx:1.10.1")
 }
 
 android {
@@ -29,11 +31,6 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
         isCoreLibraryDesugaringEnabled = true
-
-    }
-
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_17.toString()
     }
 
     defaultConfig {
@@ -61,10 +58,25 @@ android {
 
     buildTypes {
         release {
+            // Play Console: "Improve your app's memory and performance with R8".
+            // Code shrinking plus resource shrinking. AGP 9 also runs optimized
+            // resource shrinking when isShrinkResources is true.
+            isMinifyEnabled = true
+            isShrinkResources = true
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro",
+            )
             if (keystorePropertiesFile.exists()) {
                 signingConfig = signingConfigs.getByName("release")
             }
         }
+    }
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
     }
 }
 
