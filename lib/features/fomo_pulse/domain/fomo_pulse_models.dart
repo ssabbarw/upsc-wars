@@ -660,11 +660,9 @@ class FomoPulse {
     );
   }
 
-  bool get isExpired {
-    final exp = expiresAt;
-    if (exp == null) return false;
-    return DateTime.now().isAfter(exp);
-  }
+  /// Shots stay answerable. [expiresAt] is a legacy publish timestamp
+  /// (old docs were stamped sent + 48h) and is not a cutoff.
+  bool get isExpired => false;
 
   bool get hasHindiCopy =>
       headlineHi.trim().isNotEmpty || newsSummaryHi.trim().isNotEmpty;

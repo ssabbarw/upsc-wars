@@ -300,23 +300,21 @@ class _PulseBody extends HookConsumerWidget {
                       child: _BulletPoints(lines: points),
                     ),
                   ],
-                  if (!pulse.isExpired || alreadyAttempted) ...[
-                    const _SectionDivider(),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: AppSpacing.lg,
-                      ),
-                      child: FilledButton.icon(
-                        onPressed: () => tabController.animateTo(1),
-                        icon: const Icon(Icons.quiz_outlined),
-                        label: Text(
-                          alreadyAttempted
-                              ? context.l10n.fpReviewAttempt
-                              : context.l10n.fpAttemptMcq,
-                        ),
+                  const _SectionDivider(),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: AppSpacing.lg,
+                    ),
+                    child: FilledButton.icon(
+                      onPressed: () => tabController.animateTo(1),
+                      icon: const Icon(Icons.quiz_outlined),
+                      label: Text(
+                        alreadyAttempted
+                            ? context.l10n.fpReviewAttempt
+                            : context.l10n.fpAttemptMcq,
                       ),
                     ),
-                  ],
+                  ),
                 ],
               ),
               ListView(
@@ -337,30 +335,17 @@ class _PulseBody extends HookConsumerWidget {
                     ),
                     const _SectionDivider(),
                   ],
-                  if (pulse.isExpired && !alreadyAttempted)
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: AppSpacing.lg,
-                      ),
-                      child: Text(
-                        context.l10n.fpExpired,
-                        style: AppTextStyles.label().copyWith(
-                          color: scheme.error,
-                        ),
-                      ),
-                    )
-                  else
-                    _SectionBlock(
-                      title: context.l10n.fpAttemptMcq,
-                      icon: Icons.quiz_outlined,
-                      headerColor: AppColors.primaryLight,
-                      titleColor: AppColors.primaryDark,
-                      child: FomoPulseMcqPanel(
-                        pulse: pulse,
-                        existingAttempt: attempt,
-                        entrySource: entrySource,
-                      ),
+                  _SectionBlock(
+                    title: context.l10n.fpAttemptMcq,
+                    icon: Icons.quiz_outlined,
+                    headerColor: AppColors.primaryLight,
+                    titleColor: AppColors.primaryDark,
+                    child: FomoPulseMcqPanel(
+                      pulse: pulse,
+                      existingAttempt: attempt,
+                      entrySource: entrySource,
                     ),
+                  ),
                 ],
               ),
             ],
