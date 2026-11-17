@@ -48,6 +48,9 @@ app.*.map.json
 assets/db/upsc_wars_questions.db
 old
 android/key.properties
+android/app/key.properties
+android/**/*.jks
+android/**/*.keystore
 
 # Daily CA pipeline secrets (nested folder; never commit)
 daily-current-mcqs/.env
