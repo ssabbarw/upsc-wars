@@ -1,0 +1,125 @@
+name: Android Play release
+
+# Runs after a pull request is merged into release.
+# Produces a signed Android App Bundle plus the R8 mapping file. Upload to
+# Play Console comes later, via Fastlane, using these two artifacts.
+
+on:
+  pull_request:
+    types: [closed]
+    branches: [release]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: android-play-release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  appbundle:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Require a merge commit
+        run: |
+          if [ -z "${{ github.event.pull_request.merge_commit_sha }}" ]; then
+            echo "This merge did not create a merge commit."
+            echo "Merge into release with a merge commit or squash merge."
+            exit 1
+          fi
+
+      - name: Check out release
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.merge_commit_sha }}
+
+      # Local builds use Homebrew OpenJDK 21 and Flutter 3.47.2.
+      # The app still compiles to Java 17 bytecode; JDK 21 only runs Gradle.
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: gradle
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.47.2'
+          channel: stable
+          cache: true
+
+      - name: Decode the upload keystore
+        env:
+          ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+          ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          KEYSTORE_PATH: ${{ github.workspace }}/android/app/upload-keystore.jks
+        run: |
+          if [ -z "$ANDROID_KEYSTORE_BASE64" ] || [ -z "$ANDROID_KEYSTORE_PASSWORD" ] || [ -z "$ANDROID_KEY_PASSWORD" ] || [ -z "$ANDROID_KEY_ALIAS" ]; then
+            echo "Missing Android signing secret."
+            echo "Set ANDROID_KEYSTORE_BASE64, ANDROID_KEYSTORE_PASSWORD, ANDROID_KEY_PASSWORD, and ANDROID_KEY_ALIAS."
+            exit 1
+          fi
+          echo "$ANDROID_KEYSTORE_BASE64" | base64 --decode > "$KEYSTORE_PATH"
+          python3 - <<'PY'
+          import os
+          from pathlib import Path
+
+          def prop(value: str) -> str:
+              return value.replace("\\", "\\\\")
+
+          lines = [
+              f"storePassword={prop(os.environ['ANDROID_KEYSTORE_PASSWORD'])}",
+              f"keyPassword={prop(os.environ['ANDROID_KEY_PASSWORD'])}",
+              f"keyAlias={prop(os.environ['ANDROID_KEY_ALIAS'])}",
+              f"storeFile={os.environ['KEYSTORE_PATH']}",
+          ]
+          Path("android/app/key.properties").write_text("\n".join(lines) + "\n")
+          PY
+
+      - name: Write dart defines
+        env:
+          REVENUECAT_ANDROID_KEY: ${{ secrets.REVENUECAT_ANDROID_KEY }}
+          POSTHOG_API_KEY: ${{ secrets.POSTHOG_API_KEY }}
+          POSTHOG_HOST: ${{ secrets.POSTHOG_HOST }}
+          ENABLE_TEST_SERIES: ${{ vars.ENABLE_TEST_SERIES }}
+        run: |
+          if [ -z "$REVENUECAT_ANDROID_KEY" ]; then
+            echo "::warning::REVENUECAT_ANDROID_KEY is empty. The bundle will build, but Play purchases stay disabled."
+          fi
+          if [ -z "$POSTHOG_API_KEY" ]; then
+            echo "::warning::POSTHOG_API_KEY is empty. PostHog stays disabled in this bundle."
+          fi
+          python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          host = os.environ.get("POSTHOG_HOST") or "https://us.i.posthog.com"
+          test_series = os.environ.get("ENABLE_TEST_SERIES") or "false"
+          Path("dart_defines.json").write_text(json.dumps({
+              "REVENUECAT_ANDROID_KEY": os.environ.get("REVENUECAT_ANDROID_KEY", ""),
+              "POSTHOG_API_KEY": os.environ.get("POSTHOG_API_KEY", ""),
+              "POSTHOG_HOST": host,
+              "ENABLE_TEST_SERIES": test_series,
+          }) + "\n")
+          PY
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Build Play App Bundle
+        run: flutter build appbundle --release --dart-define-from-file=dart_defines.json
+
+      - name: Upload the bundle and R8 mapping
+        uses: actions/upload-artifact@v4
+        with:
+          name: play-appbundle-${{ github.event.pull_request.merge_commit_sha }}
+          retention-days: 30
+          if-no-files-found: error
+          path: |
+            build/app/outputs/bundle/release/*.aab
+            build/app/outputs/mapping/release/mapping.txt
