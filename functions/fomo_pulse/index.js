@@ -28,7 +28,6 @@ const DRAFTS = "daily_ca_drafts";
 const MAX_TITLE = 120;
 const MAX_BODY = 180;
 const MIN_STATS_ATTEMPTS = 20;
-const PULSE_TTL_MS = 48 * 60 * 60 * 1000;
 const HISTORY_LIMIT = 20;
 const IST_OFFSET_MS = (5 * 60 + 30) * 60 * 1000;
 
@@ -1060,9 +1059,6 @@ exports.sendFomoPulseNotification = onCall(generateOpts, async (request) => {
   const pulseId = crypto.randomUUID();
   const notificationId = pulseId;
   const now = admin.firestore.Timestamp.now();
-  const expiresAt = admin.firestore.Timestamp.fromMillis(
-    Date.now() + PULSE_TTL_MS,
-  );
 
   const pulseDoc = {
     pulse_id: pulseId,
@@ -1081,7 +1077,6 @@ exports.sendFomoPulseNotification = onCall(generateOpts, async (request) => {
     hindi_available: hasQuestionHindi(question),
     question,
     sent_at: now,
-    expires_at: expiresAt,
     attempt_count: 0,
     correct_count: 0,
     created_by: email,
@@ -1209,14 +1204,6 @@ exports.submitFomoPulseAttempt = onCall(
       const pulse = pulseSnap.data() || {};
       if (pulse.status !== "sent") {
         throw new HttpsError("failed-precondition", "Pulse is not active.");
-      }
-      const expiresAt = pulse.expires_at;
-      if (
-        expiresAt &&
-        expiresAt.toMillis &&
-        expiresAt.toMillis() < Date.now()
-      ) {
-        throw new HttpsError("failed-precondition", "Pulse has expired.");
       }
 
       const stateSnap = await tx.get(stateRef);
