@@ -40,11 +40,12 @@ List<List<String>> splitIntoTests({
     return (digest[0] << 24) | (digest[1] << 16) | (digest[2] << 8) | digest[3];
   }
 
-  final sorted = [...uuids]
+  final keyed = [for (final id in uuids) (id: id, key: keyOf(id))]
     ..sort((a, b) {
-      final byKey = keyOf(a).compareTo(keyOf(b));
-      return byKey != 0 ? byKey : a.compareTo(b);
+      final byKey = a.key.compareTo(b.key);
+      return byKey != 0 ? byKey : a.id.compareTo(b.id);
     });
+  final sorted = [for (final k in keyed) k.id];
 
   final tests = <List<String>>[];
   for (var i = 0; i < sorted.length; i += size) {

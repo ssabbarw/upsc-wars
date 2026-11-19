@@ -48,6 +48,9 @@ app.*.map.json
 assets/db/upsc_wars_questions.db
 old
 android/key.properties
+android/app/key.properties
+android/**/*.jks
+android/**/*.keystore
 
 # Daily CA pipeline secrets (nested folder; never commit)
 daily-current-mcqs/.env
@@ -61,3 +64,13 @@ tools/test_series/out/
 
 # Local Flutter --dart-define values (copy from dart_defines.example.json)
 dart_defines.json
+
+# Fastlane and store credentials generated on the runner
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/test_output
+fastlane/.env
+play-store-key.json
+ios/signing_profiles.json
+ios/ExportOptions.plist
+vendor/bundle

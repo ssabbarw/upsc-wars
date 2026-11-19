@@ -1,0 +1,111 @@
+require "json"
+
+opt_out_usage
+
+default_platform(:android)
+
+APP_BUNDLE_ID = "tinyminyapps.upsc.wars"
+EXTENSION_BUNDLE_ID = "tinyminyapps.upsc.wars.MakePulse"
+TEAM_ID = "PJFA69Q3GT"
+
+def repo_root
+  File.expand_path("..", __dir__)
+end
+
+def dart_define_args
+  path = File.join(repo_root, "dart_defines.json")
+  UI.user_error!("dart_defines.json is missing. The workflow writes it before Fastlane runs.") unless File.exist?(path)
+  ["--dart-define-from-file=#{path}"]
+end
+
+platform :android do
+  desc "Upload the signed App Bundle to a Play Console track. Defaults to internal."
+  lane :upload do
+    json_key = ENV["PLAY_STORE_JSON_KEY"].to_s
+    UI.user_error!("Set the PLAY_STORE_JSON_KEY secret to the Play Console service account JSON.") if json_key.empty?
+    JSON.parse(json_key)
+
+    track = ENV["PLAY_TRACK"].to_s.strip
+    track = "internal" if track.empty?
+
+    aab = File.join(repo_root, "build/app/outputs/bundle/release/app-release.aab")
+    UI.user_error!("App Bundle not found at #{aab}") unless File.exist?(aab)
+
+    options = {
+      track: track,
+      aab: aab,
+      json_key_data: json_key,
+      skip_upload_apk: true,
+      skip_upload_metadata: true,
+      skip_upload_images: true,
+      skip_upload_screenshots: true,
+      skip_upload_changelogs: true,
+    }
+    mapping = File.join(repo_root, "build/app/outputs/mapping/release/mapping.txt")
+    options[:mapping] = mapping if File.exist?(mapping)
+
+    upload_to_play_store(options)
+  end
+end
+
+platform :ios do
+  desc "Sign a release IPA and upload it to TestFlight."
+  lane :upload do
+    key_id = ENV["ASC_KEY_ID"].to_s
+    issuer_id = ENV["ASC_ISSUER_ID"].to_s
+    key_content = ENV["ASC_KEY_P8"].to_s
+    if key_id.empty? || issuer_id.empty? || key_content.empty?
+      UI.user_error!("Set ASC_KEY_ID, ASC_ISSUER_ID, and ASC_KEY_P8.")
+    end
+
+    profiles_path = File.join(repo_root, "ios/signing_profiles.json")
+    UI.user_error!("ios/signing_profiles.json is missing. The workflow writes it from the provisioning profile secrets.") unless File.exist?(profiles_path)
+    profiles = JSON.parse(File.read(profiles_path))
+    [APP_BUNDLE_ID, EXTENSION_BUNDLE_ID].each do |bundle_id|
+      UI.user_error!("No provisioning profile installed for #{bundle_id}") if profiles[bundle_id].to_s.empty?
+    end
+
+    apply_manual_signing(profiles)
+
+    api_key = app_store_connect_api_key(
+      key_id: key_id,
+      issuer_id: issuer_id,
+      key_content: key_content,
+      is_key_content_base64: true,
+    )
+
+    sh("flutter", "build", "ipa", "--release", *dart_define_args, "--export-options-plist=#{File.join(repo_root, "ios/ExportOptions.plist")}")
+
+    ipa = Dir[File.join(repo_root, "build/ios/ipa/*.ipa")].first
+    UI.user_error!("IPA was not created under build/ios/ipa") if ipa.nil?
+
+    upload_to_testflight(
+      api_key: api_key,
+      ipa: ipa,
+      skip_waiting_for_build_processing: true,
+    )
+  end
+end
+
+def apply_manual_signing(profiles)
+  require "xcodeproj"
+  project = Xcodeproj::Project.open(File.join(repo_root, "ios/Runner.xcodeproj"))
+  targets = {
+    "Runner" => profiles.fetch(APP_BUNDLE_ID),
+    "ShareExtension" => profiles.fetch(EXTENSION_BUNDLE_ID),
+  }
+  project.targets.each do |target|
+    profile_name = targets[target.name]
+    next if profile_name.nil?
+
+    target.build_configurations.each do |config|
+      next unless config.name == "Release"
+
+      config.build_settings["CODE_SIGN_STYLE"] = "Manual"
+      config.build_settings["DEVELOPMENT_TEAM"] = TEAM_ID
+      config.build_settings["CODE_SIGN_IDENTITY"] = "Apple Distribution"
+      config.build_settings["PROVISIONING_PROFILE_SPECIFIER"] = profile_name
+    end
+  end
+  project.save
+end
