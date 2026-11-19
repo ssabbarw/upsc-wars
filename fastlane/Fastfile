@@ -12,6 +12,33 @@ def repo_root
   File.expand_path("..", __dir__)
 end
 
+# bundle exec sets RUBYOPT and GEM_HOME so only Gemfile gems are visible.
+# Flutter shells out to `pod`. CocoaPods is installed beside the Gemfile, so
+# drop Bundler's sandbox for that child process, then restore it.
+def without_bundler_sandbox
+  keys = %w[RUBYOPT BUNDLE_GEMFILE BUNDLE_BIN_PATH BUNDLE_PATH BUNDLER_SETUP BUNDLER_VERSION]
+  gem_home = ENV["COCOAPODS_GEM_HOME"].to_s
+  keys += %w[GEM_HOME GEM_PATH PATH] unless gem_home.empty?
+  saved = keys.to_h { |key| [key, ENV[key]] }
+  %w[RUBYOPT BUNDLE_GEMFILE BUNDLE_BIN_PATH BUNDLE_PATH BUNDLER_SETUP BUNDLER_VERSION].each do |key|
+    ENV.delete(key)
+  end
+  unless gem_home.empty?
+    ENV["GEM_HOME"] = gem_home
+    ENV["GEM_PATH"] = gem_home
+    ENV["PATH"] = "#{File.join(gem_home, "bin")}#{File::PATH_SEPARATOR}#{saved["PATH"]}"
+  end
+  yield
+ensure
+  saved&.each do |key, value|
+    if value.nil?
+      ENV.delete(key)
+    else
+      ENV[key] = value
+    end
+  end
+end
+
 def dart_define_args
   path = File.join(repo_root, "dart_defines.json")
   UI.user_error!("dart_defines.json is missing. The workflow writes it before Fastlane runs.") unless File.exist?(path)
@@ -75,7 +102,10 @@ platform :ios do
       is_key_content_base64: true,
     )
 
-    sh("flutter", "build", "ipa", "--release", *dart_define_args, "--export-options-plist=#{File.join(repo_root, "ios/ExportOptions.plist")}")
+    without_bundler_sandbox do
+      sh("pod", "--version")
+      sh("flutter", "build", "ipa", "--release", *dart_define_args, "--export-options-plist=#{File.join(repo_root, "ios/ExportOptions.plist")}")
+    end
 
     ipa = Dir[File.join(repo_root, "build/ios/ipa/*.ipa")].first
     UI.user_error!("IPA was not created under build/ios/ipa") if ipa.nil?
