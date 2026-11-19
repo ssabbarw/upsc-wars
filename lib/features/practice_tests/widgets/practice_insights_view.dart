@@ -88,7 +88,7 @@ class PracticeSubjectInsightsView extends ConsumerWidget {
       loading: () => _InsightsBusy(expand: primaryScroll),
       error: (_, _) => _InsightsMessage(
         expand: primaryScroll,
-        child: retry(() => ref.invalidate(practiceCatalogProvider)),
+        child: retry(() => ref.invalidate(practiceStructureProvider)),
       ),
       data: (data) {
         final progress = allSubjects

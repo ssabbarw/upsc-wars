@@ -77,7 +77,7 @@ class StatsScreen extends HookConsumerWidget {
                 loading: () => const Center(child: CircularProgressIndicator()),
                 error: (_, _) => Center(
                   child: TextButton(
-                    onPressed: () => ref.invalidate(practiceCatalogProvider),
+                    onPressed: () => ref.invalidate(practiceStructureProvider),
                     child: Text(context.l10n.commonRetry),
                   ),
                 ),

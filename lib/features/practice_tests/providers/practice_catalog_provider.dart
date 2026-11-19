@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/constants/prelims_countdown.dart';
@@ -46,21 +47,48 @@ class PracticeCatalog {
   }
 }
 
+/// Which questions sit in each numbered test of one season.
+class PracticeStructure {
+  const PracticeStructure({
+    required this.subjectGroups,
+    required this.topicGroups,
+  });
+
+  /// Subject → question ids of test 1, test 2, …
+  final Map<String, List<List<String>>> subjectGroups;
+
+  /// Subject → English topic → question ids of test 1, test 2, …
+  final Map<String, Map<String, List<List<String>>>> topicGroups;
+}
+
+/// Test membership for a season year. Depends only on the static bank, so it
+/// is built once per season; finishing a test refreshes
+/// [practiceCatalogProvider], not this. Invalidate this to retry a failed load.
+final practiceStructureProvider = FutureProvider.family<PracticeStructure, int>(
+  (ref, seasonYear) {
+    final db = ref.watch(userDatabaseProvider);
+    return loadPracticeStructure(db, seasonYear: seasonYear);
+  },
+);
+
 final practiceCatalogProvider = FutureProvider<PracticeCatalog>((ref) async {
   final prelims =
       ref.watch(prelimsDateProvider).value ?? PrelimsCountdown.prelimsDate;
   final season = practiceSeasonAt(prelims, DateTime.now());
   final db = ref.watch(userDatabaseProvider);
-  final language = normalizeAppLanguage(
-    await ref.watch(appLanguageProvider.future),
+  final structure = ref.watch(practiceStructureProvider(season.year).future);
+  final language = ref.watch(appLanguageProvider.future);
+  return buildPracticeCatalog(
+    db,
+    season: season,
+    structure: await structure,
+    language: normalizeAppLanguage(await language),
   );
-  return loadPracticeCatalog(db, season: season, language: language);
 });
 
-Future<PracticeCatalog> loadPracticeCatalog(
+Future<PracticeStructure> loadPracticeStructure(
   UserDatabase db, {
-  required PracticeSeason season,
-  required String language,
+  required int seasonYear,
 }) async {
   final locations = await db.questionsDao.getStaticQuestionLocations();
   final bySubject = <String, List<String>>{};
@@ -73,6 +101,67 @@ Future<PracticeCatalog> loadPracticeCatalog(
         .add(loc.uuid);
   }
 
+  return compute(_splitAll, (
+    seasonYear: seasonYear,
+    bySubject: bySubject,
+    byTopic: byTopic,
+  ));
+}
+
+/// Hashes every static question (~50k SHA1s), so it runs off the UI isolate.
+PracticeStructure _splitAll(
+  ({
+    int seasonYear,
+    Map<String, List<String>> bySubject,
+    Map<String, Map<String, List<String>>> byTopic,
+  })
+  input,
+) {
+  return PracticeStructure(
+    subjectGroups: {
+      for (final entry in input.bySubject.entries)
+        entry.key: splitIntoTests(
+          season: input.seasonYear,
+          scope: PracticeScope.subject(entry.key).key,
+          uuids: entry.value,
+          maxTests: maxSubjectPracticeTests,
+        ),
+    },
+    topicGroups: {
+      for (final subjectEntry in input.byTopic.entries)
+        subjectEntry.key: {
+          for (final topicEntry in subjectEntry.value.entries)
+            topicEntry.key: splitIntoTests(
+              season: input.seasonYear,
+              scope: PracticeScope.topic(subjectEntry.key, topicEntry.key).key,
+              uuids: topicEntry.value,
+              maxTests: maxTopicPracticeTests,
+            ),
+        },
+    },
+  );
+}
+
+/// Loads structure and progress in one go, outside the providers.
+Future<PracticeCatalog> loadPracticeCatalog(
+  UserDatabase db, {
+  required PracticeSeason season,
+  required String language,
+}) async {
+  return buildPracticeCatalog(
+    db,
+    season: season,
+    structure: await loadPracticeStructure(db, seasonYear: season.year),
+    language: language,
+  );
+}
+
+Future<PracticeCatalog> buildPracticeCatalog(
+  UserDatabase db, {
+  required PracticeSeason season,
+  required PracticeStructure structure,
+  required String language,
+}) async {
   final prefix = '${season.year}/';
   final done = await db.sessionsDao.latestCompletedByPracticeTestIdPrefix(
     prefix,
@@ -93,17 +182,7 @@ Future<PracticeCatalog> loadPracticeCatalog(
     }
   }
 
-  List<PracticeTest> buildTests(
-    String scope,
-    List<String> uuids, {
-    required int maxTests,
-  }) {
-    final groups = splitIntoTests(
-      season: season.year,
-      scope: scope,
-      uuids: uuids,
-      maxTests: maxTests,
-    );
+  List<PracticeTest> buildTests(String scope, List<List<String>> groups) {
     return [
       for (var i = 0; i < groups.length; i++)
         _test(
@@ -140,13 +219,9 @@ Future<PracticeCatalog> loadPracticeCatalog(
 
   final subjectTests = <String, List<PracticeTest>>{};
   final subjectProgress = <String, PracticeScopeProgress>{};
-  for (final entry in bySubject.entries) {
+  for (final entry in structure.subjectGroups.entries) {
     final scope = PracticeScope.subject(entry.key).key;
-    final tests = buildTests(
-      scope,
-      entry.value,
-      maxTests: maxSubjectPracticeTests,
-    );
+    final tests = buildTests(scope, entry.value);
     subjectTests[entry.key] = tests;
     subjectProgress[entry.key] = progressOf(tests, [
       for (final test in tests) ...test.uuids,
@@ -155,16 +230,12 @@ Future<PracticeCatalog> loadPracticeCatalog(
 
   final topicTests = <String, Map<String, List<PracticeTest>>>{};
   final topicProgress = <String, Map<String, PracticeScopeProgress>>{};
-  for (final subjectEntry in byTopic.entries) {
+  for (final subjectEntry in structure.topicGroups.entries) {
     final testsForSubject = <String, List<PracticeTest>>{};
     final progressForSubject = <String, PracticeScopeProgress>{};
     for (final topicEntry in subjectEntry.value.entries) {
       final scope = PracticeScope.topic(subjectEntry.key, topicEntry.key).key;
-      final tests = buildTests(
-        scope,
-        topicEntry.value,
-        maxTests: maxTopicPracticeTests,
-      );
+      final tests = buildTests(scope, topicEntry.value);
       testsForSubject[topicEntry.key] = tests;
       progressForSubject[topicEntry.key] = progressOf(tests, [
         for (final test in tests) ...test.uuids,

@@ -108,6 +108,9 @@ jobs:
           }) + "\n")
           PY
 
+      - name: Build the question database
+        run: python3 tools/build_question_db.py assets/db/upsc_wars_questions.db
+
       - name: Install dependencies
         run: flutter pub get
 
