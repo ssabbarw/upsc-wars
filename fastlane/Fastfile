@@ -19,20 +19,21 @@ def dart_define_args
 end
 
 platform :android do
-  desc "Upload the signed App Bundle to a Play Console track. Defaults to internal."
+  desc "Upload the signed App Bundle to Play production, unless PLAY_TRACK overrides it."
   lane :upload do
     json_key = ENV["PLAY_STORE_JSON_KEY"].to_s
     UI.user_error!("Set the PLAY_STORE_JSON_KEY secret to the Play Console service account JSON.") if json_key.empty?
     JSON.parse(json_key)
 
     track = ENV["PLAY_TRACK"].to_s.strip
-    track = "internal" if track.empty?
+    track = "production" if track.empty?
 
     aab = File.join(repo_root, "build/app/outputs/bundle/release/app-release.aab")
     UI.user_error!("App Bundle not found at #{aab}") unless File.exist?(aab)
 
     options = {
       track: track,
+      release_status: "completed",
       aab: aab,
       json_key_data: json_key,
       skip_upload_apk: true,
@@ -49,7 +50,7 @@ platform :android do
 end
 
 platform :ios do
-  desc "Sign a release IPA and upload it to TestFlight."
+  desc "Sign a release IPA and submit it for public App Store release."
   lane :upload do
     key_id = ENV["ASC_KEY_ID"].to_s
     issuer_id = ENV["ASC_ISSUER_ID"].to_s
@@ -79,10 +80,22 @@ platform :ios do
     ipa = Dir[File.join(repo_root, "build/ios/ipa/*.ipa")].first
     UI.user_error!("IPA was not created under build/ios/ipa") if ipa.nil?
 
-    upload_to_testflight(
+    upload_to_app_store(
       api_key: api_key,
       ipa: ipa,
-      skip_waiting_for_build_processing: true,
+      submit_for_review: true,
+      automatic_release: true,
+      skip_metadata: true,
+      skip_screenshots: true,
+      force: true,
+      precheck_include_in_app_purchases: false,
+      run_precheck_before_submit: false,
+      submission_information: {
+        add_id_info_uses_idfa: false,
+        export_compliance_uses_encryption: false,
+        content_rights_contains_third_party_content: false,
+        content_rights_has_rights: true,
+      },
     )
   end
 end
