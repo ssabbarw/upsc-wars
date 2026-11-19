@@ -171,6 +171,11 @@ jobs:
           bundler: '2.6.9'
           bundler-cache: true
 
+      - name: Install CocoaPods
+        run: |
+          gem install cocoapods --no-document
+          pod --version
+
       - name: Write dart defines
         env:
           REVENUECAT_ANDROID_KEY: ${{ secrets.REVENUECAT_ANDROID_KEY }}
