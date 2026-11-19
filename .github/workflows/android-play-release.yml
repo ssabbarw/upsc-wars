@@ -1,6 +1,7 @@
 name: Store release
 
-# Runs after a pull request is merged into release.
+# A merged pull request into release runs both uploads.
+# Actions → Store release → Run workflow can run Android, iOS, or both.
 # Android goes to the Play production track.
 # iOS is submitted for App Store review and released after Apple approves it.
 
@@ -8,20 +9,35 @@ on:
   pull_request:
     types: [closed]
     branches: [release]
+  workflow_dispatch:
+    inputs:
+      platform:
+        description: Which store upload to run
+        required: true
+        type: choice
+        default: both
+        options:
+          - android
+          - ios
+          - both
 
 permissions:
   contents: read
 
 concurrency:
-  group: store-release-${{ github.ref }}
+  group: store-release-${{ github.ref }}-${{ github.event.inputs.platform || 'merged' }}
   cancel-in-progress: false
 
 jobs:
   android:
-    if: github.event.pull_request.merged == true
+    if: >-
+      github.event.pull_request.merged == true ||
+      (github.event_name == 'workflow_dispatch' &&
+        (inputs.platform == 'android' || inputs.platform == 'both'))
     runs-on: ubuntu-latest
     steps:
       - name: Require a merge commit
+        if: github.event_name == 'pull_request'
         run: |
           if [ -z "${{ github.event.pull_request.merge_commit_sha }}" ]; then
             echo "This merge did not create a merge commit."
@@ -32,7 +48,7 @@ jobs:
       - name: Check out release
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.merge_commit_sha }}
+          ref: ${{ github.event.pull_request.merge_commit_sha || github.sha }}
 
       # Local builds use Homebrew OpenJDK 21 and Flutter 3.47.2.
       # The app still compiles to Java 17 bytecode; JDK 21 only runs Gradle.
@@ -127,7 +143,7 @@ jobs:
       - name: Upload the bundle and R8 mapping
         uses: actions/upload-artifact@v4
         with:
-          name: play-appbundle-${{ github.event.pull_request.merge_commit_sha }}
+          name: play-appbundle-${{ github.event.pull_request.merge_commit_sha || github.sha }}
           retention-days: 30
           if-no-files-found: error
           path: |
@@ -141,10 +157,14 @@ jobs:
         run: bundle exec fastlane android upload
 
   ios:
-    if: github.event.pull_request.merged == true
+    if: >-
+      github.event.pull_request.merged == true ||
+      (github.event_name == 'workflow_dispatch' &&
+        (inputs.platform == 'ios' || inputs.platform == 'both'))
     runs-on: macos-latest
     steps:
       - name: Require a merge commit
+        if: github.event_name == 'pull_request'
         run: |
           if [ -z "${{ github.event.pull_request.merge_commit_sha }}" ]; then
             echo "This merge did not create a merge commit."
@@ -155,7 +175,7 @@ jobs:
       - name: Check out release
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.merge_commit_sha }}
+          ref: ${{ github.event.pull_request.merge_commit_sha || github.sha }}
 
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
@@ -229,7 +249,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: app-store-ipa-${{ github.event.pull_request.merge_commit_sha }}
+          name: app-store-ipa-${{ github.event.pull_request.merge_commit_sha || github.sha }}
           retention-days: 30
           if-no-files-found: ignore
           path: build/ios/ipa/*.ipa
