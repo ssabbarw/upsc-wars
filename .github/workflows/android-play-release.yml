@@ -89,18 +89,75 @@ jobs:
           echo "$ANDROID_KEYSTORE_BASE64" | base64 --decode > "$KEYSTORE_PATH"
           python3 - <<'PY'
           import os
+          import subprocess
+          import sys
           from pathlib import Path
+
+          def clean(value: str) -> str:
+              return value.strip().strip('"').strip("'")
 
           def prop(value: str) -> str:
               return value.replace("\\", "\\\\")
 
-          lines = [
-              f"storePassword={prop(os.environ['ANDROID_KEYSTORE_PASSWORD'])}",
-              f"keyPassword={prop(os.environ['ANDROID_KEY_PASSWORD'])}",
-              f"keyAlias={prop(os.environ['ANDROID_KEY_ALIAS'])}",
-              f"storeFile={os.environ['KEYSTORE_PATH']}",
-          ]
-          Path("android/app/key.properties").write_text("\n".join(lines) + "\n")
+          store_password = clean(os.environ["ANDROID_KEYSTORE_PASSWORD"])
+          key_password = clean(os.environ["ANDROID_KEY_PASSWORD"])
+          alias = clean(os.environ["ANDROID_KEY_ALIAS"])
+          keystore = os.environ["KEYSTORE_PATH"]
+
+          Path("android/app/key.properties").write_text("\n".join([
+              f"storePassword={prop(store_password)}",
+              f"keyPassword={prop(key_password)}",
+              f"keyAlias={prop(alias)}",
+              f"storeFile={keystore}",
+          ]) + "\n")
+
+          listed = subprocess.run(
+              ["keytool", "-list", "-keystore", keystore, "-storepass", store_password],
+              capture_output=True,
+              text=True,
+          )
+          if listed.returncode != 0:
+              print("Could not open the upload keystore.")
+              print("ANDROID_KEYSTORE_PASSWORD does not match ANDROID_KEYSTORE_BASE64, or that secret is not a keystore.")
+              for line in listed.stderr.splitlines():
+                  if "storepass" in line.lower() or store_password in line:
+                      continue
+                  print(line)
+              sys.exit(1)
+
+          aliases = []
+          lines = listed.stdout.splitlines()
+          for index, line in enumerate(lines):
+              if "PrivateKeyEntry" not in line:
+                  continue
+              name = line.split(",", 1)[0].strip()
+              fingerprint = ""
+              for follow in lines[index + 1:index + 4]:
+                  if "SHA-256" in follow:
+                      fingerprint = follow.split(":", 1)[-1].strip()
+                      break
+              aliases.append((name, fingerprint))
+
+          print("Keys in the uploaded keystore:")
+          for name, fingerprint in aliases:
+              print(f"  {name}")
+              if fingerprint:
+                  print(f"    SHA-256 {fingerprint}")
+
+          if alias not in [name for name, _ in aliases]:
+              print("ANDROID_KEY_ALIAS is not one of those keys.")
+              print("Set it to upscwarskey, and set ANDROID_KEYSTORE_BASE64 from /Users/sachin/dev-work/imp/kickel_key.")
+              sys.exit(1)
+
+          unlocked = subprocess.run(
+              ["keytool", "-list", "-keystore", keystore, "-alias", alias, "-storepass", store_password, "-keypass", key_password],
+              capture_output=True,
+              text=True,
+          )
+          if unlocked.returncode != 0:
+              print(f"ANDROID_KEY_PASSWORD cannot read the {alias} key.")
+              sys.exit(1)
+          print(f"Signing key {alias} is ready.")
           PY
 
       - name: Write dart defines
@@ -191,10 +248,16 @@ jobs:
           bundler: '2.6.9'
           bundler-cache: true
 
+      # The macOS image ships a CocoaPods built for a different Ruby than setup-ruby.
+      # Install one into its own gem home. Fastlane points `pod` at that home
+      # before Flutter runs, because bundle exec would hide it.
       - name: Install CocoaPods
         run: |
-          gem install cocoapods --no-document
-          pod --version
+          gem_home="$RUNNER_TEMP/cocoapods-gems"
+          gem install cocoapods --no-document --install-dir "$gem_home"
+          echo "COCOAPODS_GEM_HOME=$gem_home" >> "$GITHUB_ENV"
+          echo "$gem_home/bin" >> "$GITHUB_PATH"
+          GEM_HOME="$gem_home" GEM_PATH="$gem_home" "$gem_home/bin/pod" --version
 
       - name: Write dart defines
         env:
