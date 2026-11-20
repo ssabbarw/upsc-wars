@@ -2,7 +2,7 @@ name: upsc_wars
 description: "A new Flutter project."
 publish_to: 'none'
 
-version: 2046.0.0+2046
+version: 2047.0.0+2047
 
 environment:
   sdk: ^3.11.3

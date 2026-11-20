@@ -194,8 +194,19 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
+      - name: Choose the next Play version
+        env:
+          PLAY_STORE_JSON_KEY: ${{ secrets.PLAY_STORE_JSON_KEY }}
+          PLAY_TRACK: ${{ vars.PLAY_TRACK }}
+        run: bundle exec fastlane android next_version
+
       - name: Build Play App Bundle
-        run: flutter build appbundle --release --dart-define-from-file=dart_defines.json
+        run: |
+          next_store_version="$(cat .next_store_version)"
+          version_name="${next_store_version%%+*}"
+          version_code="${next_store_version##*+}"
+          echo "Building ${version_name} (${version_code})"
+          flutter build appbundle --release --build-name="$version_name" --build-number="$version_code" --dart-define-from-file=dart_defines.json
 
       - name: Upload the bundle and R8 mapping
         uses: actions/upload-artifact@v4

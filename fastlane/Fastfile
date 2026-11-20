@@ -6,6 +6,7 @@ default_platform(:android)
 
 APP_BUNDLE_ID = "tinyminyapps.upsc.wars"
 EXTENSION_BUNDLE_ID = "tinyminyapps.upsc.wars.MakePulse"
+ANDROID_PACKAGE = "practice.upsc.indiaapps.com.upscmcqpractice"
 TEAM_ID = "PJFA69Q3GT"
 
 def repo_root
@@ -39,6 +40,35 @@ ensure
   end
 end
 
+def pubspec_build_number
+  pubspec = File.read(File.join(repo_root, "pubspec.yaml"))
+  match = pubspec.match(/^version:\s+\d+\.\d+\.\d+\+(\d+)\s*$/)
+  UI.user_error!("pubspec.yaml version must look like 2047.0.0+2047") unless match
+  match[1].to_i
+end
+
+# Stores reject a build number that was already uploaded. Use the higher of the
+# pubspec number and one past the store, and keep the existing N.0.0+N scheme.
+def next_store_version(uploaded_build_number)
+  code = [pubspec_build_number, uploaded_build_number.to_i + 1].max
+  version = "#{code}.0.0+#{code}"
+  File.write(File.join(repo_root, ".next_store_version"), version)
+  UI.success("Next store version #{version}")
+  version
+end
+
+def play_version_codes(json_key, track)
+  google_play_track_version_codes(
+    package_name: ANDROID_PACKAGE,
+    track: track,
+    json_key_data: json_key,
+  )
+rescue StandardError => error
+  UI.message("Play track #{track} has no version codes yet.")
+  UI.message(error.message.to_s.lines.first.to_s.strip)
+  []
+end
+
 def dart_define_args
   path = File.join(repo_root, "dart_defines.json")
   UI.user_error!("dart_defines.json is missing. The workflow writes it before Fastlane runs.") unless File.exist?(path)
@@ -46,6 +76,19 @@ def dart_define_args
 end
 
 platform :android do
+  desc "Pick a versionCode higher than Play and pubspec.yaml."
+  lane :next_version do
+    json_key = ENV["PLAY_STORE_JSON_KEY"].to_s
+    UI.user_error!("Set the PLAY_STORE_JSON_KEY secret to the Play Console service account JSON.") if json_key.empty?
+    JSON.parse(json_key)
+
+    tracks = %w[internal alpha beta production]
+    selected = ENV["PLAY_TRACK"].to_s.strip
+    tracks << selected unless selected.empty?
+    uploaded = tracks.uniq.flat_map { |track| play_version_codes(json_key, track) }.map(&:to_i).max || 0
+    next_store_version(uploaded)
+  end
+
   desc "Upload the signed App Bundle to Play production, unless PLAY_TRACK overrides it."
   lane :upload do
     json_key = ENV["PLAY_STORE_JSON_KEY"].to_s
@@ -102,9 +145,22 @@ platform :ios do
       is_key_content_base64: true,
     )
 
+    uploaded = latest_testflight_build_number(
+      api_key: api_key,
+      app_identifier: APP_BUNDLE_ID,
+      initial_build_number: 0,
+    )
+    version_name, version_code = next_store_version(uploaded).split("+", 2)
+
     without_bundler_sandbox do
       sh("pod", "--version")
-      sh("flutter", "build", "ipa", "--release", *dart_define_args, "--export-options-plist=#{File.join(repo_root, "ios/ExportOptions.plist")}")
+      sh(
+        "flutter", "build", "ipa", "--release",
+        "--build-name=#{version_name}",
+        "--build-number=#{version_code}",
+        *dart_define_args,
+        "--export-options-plist=#{File.join(repo_root, "ios/ExportOptions.plist")}"
+      )
     end
 
     ipa = Dir[File.join(repo_root, "build/ios/ipa/*.ipa")].first
