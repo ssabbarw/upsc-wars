@@ -64,6 +64,7 @@ tools/test_series/out/
 
 # Local Flutter --dart-define values (copy from dart_defines.example.json)
 dart_defines.json
+.next_store_version
 
 # Fastlane and store credentials generated on the runner
 fastlane/report.xml
