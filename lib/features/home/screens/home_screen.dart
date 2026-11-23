@@ -952,88 +952,29 @@ class _SubjectList extends ConsumerWidget {
         subjectsAsync.when(
           loading: () => const _SubjectListSkeleton(),
           error: (_, _) => const SizedBox.shrink(),
-          data: (subjects) => LayoutBuilder(
-            builder: (context, constraints) {
-              final extent = homeSubjectCardExtent(
-                context,
-                constraints.maxWidth,
-              );
-              return GridView.builder(
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                gridDelegate: _subjectGridDelegate(extent),
-                itemCount: subjects.length,
-                itemBuilder: (context, i) => _SubjectCard(
-                  info: subjects[i],
-                  icon:
-                      SubjectConstants.bySlug(
-                        subjects[i].subject,
-                      )?.materialIcon ??
-                      Icons.school_outlined,
-                  accent: _accentColors[i % _accentColors.length],
-                  borderColor: borderColor,
-                ),
-              );
-            },
+          data: (subjects) => GridView.builder(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              mainAxisSpacing: AppSpacing.sm,
+              crossAxisSpacing: AppSpacing.sm,
+              childAspectRatio: 2.35,
+            ),
+            itemCount: subjects.length,
+            itemBuilder: (context, i) => _SubjectCard(
+              info: subjects[i],
+              icon:
+                  SubjectConstants.bySlug(subjects[i].subject)?.materialIcon ??
+                  Icons.school_outlined,
+              accent: _accentColors[i % _accentColors.length],
+              borderColor: borderColor,
+            ),
           ),
         ),
       ],
     );
   }
-}
-
-/// Height of one home subject tile.
-///
-/// At the default text size this matches the 2.35 aspect ratio. Larger system
-/// text grows the tile so the title and progress line stay inside the card.
-@visibleForTesting
-double homeSubjectCardExtent(BuildContext context, double maxWidth) {
-  final title = _subjectLineHeight(
-    context,
-    AppTextStyles.labelSm().copyWith(fontWeight: FontWeight.w600),
-  );
-  final caption = _subjectLineHeight(context, AppTextStyles.caption());
-  final textBlock = title + _subjectCardTextGap + caption;
-  final inner = textBlock > _subjectCardIconSlot
-      ? textBlock
-      : _subjectCardIconSlot;
-  final contentHeight = AppSpacing.md * 2 + inner;
-  if (!maxWidth.isFinite || maxWidth <= AppSpacing.sm) {
-    return contentHeight + 2;
-  }
-  final tileWidth = (maxWidth - AppSpacing.sm) / 2;
-  final baseHeight = tileWidth / _subjectCardAspectRatio;
-  if (contentHeight <= baseHeight) return baseHeight;
-  // Slack for subpixel rounding so the column does not paint an overflow.
-  return contentHeight + 2;
-}
-
-double _subjectLineHeight(BuildContext context, TextStyle style) {
-  final painter = TextPainter(
-    text: TextSpan(
-      text: 'Hyय',
-      style: DefaultTextStyle.of(context).style.merge(style),
-    ),
-    textDirection: Directionality.of(context),
-    textScaler: MediaQuery.textScalerOf(context),
-    maxLines: 1,
-  )..layout();
-  final height = painter.height;
-  painter.dispose();
-  return height;
-}
-
-const _subjectCardAspectRatio = 2.35;
-const _subjectCardIconSlot = 36.0;
-const _subjectCardTextGap = 2.0;
-
-SliverGridDelegate _subjectGridDelegate(double extent) {
-  return SliverGridDelegateWithFixedCrossAxisCount(
-    crossAxisCount: 2,
-    mainAxisSpacing: AppSpacing.sm,
-    crossAxisSpacing: AppSpacing.sm,
-    mainAxisExtent: extent,
-  );
 }
 
 class _SubjectCard extends ConsumerWidget {
@@ -1090,8 +1031,8 @@ class _SubjectCard extends ConsumerWidget {
           child: Row(
             children: [
               Container(
-                width: _subjectCardIconSlot,
-                height: _subjectCardIconSlot,
+                width: 36,
+                height: 36,
                 decoration: BoxDecoration(
                   color: accent.withValues(alpha: isDark ? 0.25 : 0.12),
                   borderRadius: BorderRadius.circular(AppRadius.md),
@@ -1115,7 +1056,7 @@ class _SubjectCard extends ConsumerWidget {
                       ),
                     ),
                     if (progress != null && progress.testsTotal > 0) ...[
-                      const SizedBox(height: _subjectCardTextGap),
+                      const SizedBox(height: 2),
                       Text(
                         context.l10n.practiceTestsProgress(
                           progress.testsDone,
@@ -1155,28 +1096,28 @@ class _SubjectListSkeleton extends HookWidget {
     );
     final scheme = Theme.of(context).colorScheme;
 
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        final extent = homeSubjectCardExtent(context, constraints.maxWidth);
-        return AnimatedBuilder(
-          animation: ctrl,
-          builder: (_, _) => Opacity(
-            opacity: opacity,
-            child: GridView.builder(
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              gridDelegate: _subjectGridDelegate(extent),
-              itemCount: 6,
-              itemBuilder: (_, _) => Container(
-                decoration: BoxDecoration(
-                  color: scheme.surfaceContainerLow,
-                  borderRadius: BorderRadius.circular(AppRadius.lg),
-                ),
+    return AnimatedBuilder(
+      animation: ctrl,
+      builder: (_, _) => Opacity(
+        opacity: opacity,
+        child: GridView.count(
+          shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
+          crossAxisCount: 2,
+          mainAxisSpacing: AppSpacing.sm,
+          crossAxisSpacing: AppSpacing.sm,
+          childAspectRatio: 2.35,
+          children: List.generate(
+            6,
+            (_) => Container(
+              decoration: BoxDecoration(
+                color: scheme.surfaceContainerLow,
+                borderRadius: BorderRadius.circular(AppRadius.lg),
               ),
             ),
           ),
-        );
-      },
+        ),
+      ),
     );
   }
 }
