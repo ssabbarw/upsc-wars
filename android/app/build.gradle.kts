@@ -72,6 +72,15 @@ android {
             }
         }
     }
+
+    // Play requires 16 KB page support for updates targeting Android 15+.
+    // Uncompressed JNI libs are what AGP 8.5.1+ zip-aligns to 16 KB.
+    // flutter.ndkVersion is NDK r28, which aligns ELF segments to 16 KB.
+    packaging {
+        jniLibs {
+            useLegacyPackaging = false
+        }
+    }
 }
 
 kotlin {
