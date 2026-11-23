@@ -71,6 +71,9 @@ class UpscWarsApp extends HookConsumerWidget {
         theme: AppTheme.light(),
         darkTheme: AppTheme.dark(),
         themeMode: themeMode,
+        builder: (context, child) => MediaQuery.withNoTextScaling(
+          child: child ?? const SizedBox.shrink(),
+        ),
         home: const QuestionBankLoadingScreen(),
       ),
       error: (error, stackTrace) => MaterialApp(
@@ -79,6 +82,9 @@ class UpscWarsApp extends HookConsumerWidget {
         theme: AppTheme.light(),
         darkTheme: AppTheme.dark(),
         themeMode: themeMode,
+        builder: (context, child) => MediaQuery.withNoTextScaling(
+          child: child ?? const SizedBox.shrink(),
+        ),
         home: _BootstrapErrorScreen(error: error, stackTrace: stackTrace),
       ),
     );
@@ -359,16 +365,19 @@ class _RootMaterialApp extends HookConsumerWidget {
             '(blank frame if this repeats)',
           );
         }
-        return ReadingFontScaleHost(
-          child: Stack(
-            fit: StackFit.expand,
-            children: [
-              child ?? const SizedBox.shrink(),
-              const BattleSpectateFabHost(),
-              const BattleChatFabHost(),
-              if (languageSwitchBusy)
-                const Positioned.fill(child: _LanguageSwitchOverlay()),
-            ],
+        // Layout is built for AppTextStyles. Ignore the platform text size.
+        return MediaQuery.withNoTextScaling(
+          child: ReadingFontScaleHost(
+            child: Stack(
+              fit: StackFit.expand,
+              children: [
+                child ?? const SizedBox.shrink(),
+                const BattleSpectateFabHost(),
+                const BattleChatFabHost(),
+                if (languageSwitchBusy)
+                  const Positioned.fill(child: _LanguageSwitchOverlay()),
+              ],
+            ),
           ),
         );
       },
