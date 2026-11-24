@@ -924,6 +924,26 @@ class _PyqYearCard extends StatelessWidget {
   }
 }
 
+/// Title (12) and progress (11) sit beside a 36px icon. A fixed 2.35 cell is
+/// a couple of pixels short of that stack on a narrow phone. Grow the cell
+/// only when 2.35 would clip.
+@visibleForTesting
+double subjectCardAspectRatio(double gridWidth, TextScaler textScaler) {
+  const preferred = 2.35;
+  final cardWidth = (gridWidth - AppSpacing.sm) / 2;
+  if (cardWidth <= 0) return preferred;
+
+  const lineHeight = 1.25;
+  final textBlock =
+      textScaler.scale(12) * lineHeight + 2 + textScaler.scale(11) * lineHeight;
+  const iconExtent = 36.0;
+  final content = textBlock > iconExtent ? textBlock : iconExtent;
+  final minHeight = content + AppSpacing.md * 2 + 4;
+  final preferredHeight = cardWidth / preferred;
+  final height = preferredHeight > minHeight ? preferredHeight : minHeight;
+  return cardWidth / height;
+}
+
 class _SubjectList extends ConsumerWidget {
   const _SubjectList({required this.borderColor});
 
@@ -952,24 +972,33 @@ class _SubjectList extends ConsumerWidget {
         subjectsAsync.when(
           loading: () => const _SubjectListSkeleton(),
           error: (_, _) => const SizedBox.shrink(),
-          data: (subjects) => GridView.builder(
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              mainAxisSpacing: AppSpacing.sm,
-              crossAxisSpacing: AppSpacing.sm,
-              childAspectRatio: 2.35,
-            ),
-            itemCount: subjects.length,
-            itemBuilder: (context, i) => _SubjectCard(
-              info: subjects[i],
-              icon:
-                  SubjectConstants.bySlug(subjects[i].subject)?.materialIcon ??
-                  Icons.school_outlined,
-              accent: _accentColors[i % _accentColors.length],
-              borderColor: borderColor,
-            ),
+          data: (subjects) => LayoutBuilder(
+            builder: (context, constraints) {
+              return GridView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  mainAxisSpacing: AppSpacing.sm,
+                  crossAxisSpacing: AppSpacing.sm,
+                  childAspectRatio: subjectCardAspectRatio(
+                    constraints.maxWidth,
+                    MediaQuery.textScalerOf(context),
+                  ),
+                ),
+                itemCount: subjects.length,
+                itemBuilder: (context, i) => _SubjectCard(
+                  info: subjects[i],
+                  icon:
+                      SubjectConstants.bySlug(
+                        subjects[i].subject,
+                      )?.materialIcon ??
+                      Icons.school_outlined,
+                  accent: _accentColors[i % _accentColors.length],
+                  borderColor: borderColor,
+                ),
+              );
+            },
           ),
         ),
       ],
@@ -1045,14 +1074,17 @@ class _SubjectCard extends ConsumerWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
                       info.displayName,
                       maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
+                      softWrap: false,
+                      overflow: TextOverflow.fade,
                       style: AppTextStyles.labelSm().copyWith(
                         color: scheme.onSurface,
                         fontWeight: FontWeight.w600,
+                        height: 1.25,
                       ),
                     ),
                     if (progress != null && progress.testsTotal > 0) ...[
@@ -1063,9 +1095,11 @@ class _SubjectCard extends ConsumerWidget {
                           progress.testsTotal,
                         ),
                         maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
+                        softWrap: false,
+                        overflow: TextOverflow.fade,
                         style: AppTextStyles.caption().copyWith(
                           color: scheme.onSurfaceVariant,
+                          height: 1.25,
                         ),
                       ),
                     ],
@@ -1100,19 +1134,24 @@ class _SubjectListSkeleton extends HookWidget {
       animation: ctrl,
       builder: (_, _) => Opacity(
         opacity: opacity,
-        child: GridView.count(
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-          crossAxisCount: 2,
-          mainAxisSpacing: AppSpacing.sm,
-          crossAxisSpacing: AppSpacing.sm,
-          childAspectRatio: 2.35,
-          children: List.generate(
-            6,
-            (_) => Container(
-              decoration: BoxDecoration(
-                color: scheme.surfaceContainerLow,
-                borderRadius: BorderRadius.circular(AppRadius.lg),
+        child: LayoutBuilder(
+          builder: (context, constraints) => GridView.count(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            crossAxisCount: 2,
+            mainAxisSpacing: AppSpacing.sm,
+            crossAxisSpacing: AppSpacing.sm,
+            childAspectRatio: subjectCardAspectRatio(
+              constraints.maxWidth,
+              MediaQuery.textScalerOf(context),
+            ),
+            children: List.generate(
+              6,
+              (_) => Container(
+                decoration: BoxDecoration(
+                  color: scheme.surfaceContainerLow,
+                  borderRadius: BorderRadius.circular(AppRadius.lg),
+                ),
               ),
             ),
           ),
