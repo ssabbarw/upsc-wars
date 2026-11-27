@@ -13,6 +13,7 @@ import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/extensions/count_formatting.dart';
 import '../../../shared/widgets/accuracy_percentage_text.dart';
 import '../../../shared/widgets/contact_us_entry.dart';
+import '../../../shared/widgets/natural_height_card_grid.dart';
 import '../../../shared/widgets/test_config_bottom_sheet.dart';
 import '../../../l10n/l10n.dart';
 
@@ -85,7 +86,7 @@ class SubjectTestScreen extends HookConsumerWidget {
                       final isWide =
                           constraints.maxWidth >= AppBreakpoints.tablet;
                       if (isWide) {
-                        return GridView.builder(
+                        return NaturalHeightCardGrid(
                           physics: const BouncingScrollPhysics(),
                           padding: const EdgeInsets.fromLTRB(
                             AppSpacing.lg,
@@ -93,13 +94,6 @@ class SubjectTestScreen extends HookConsumerWidget {
                             AppSpacing.lg,
                             AppSpacing.xxl,
                           ),
-                          gridDelegate:
-                              const SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 2,
-                                crossAxisSpacing: AppSpacing.sm,
-                                mainAxisSpacing: AppSpacing.sm,
-                                childAspectRatio: 2.4,
-                              ),
                           itemCount: subjects.length,
                           itemBuilder: (context, i) {
                             final s = subjects[i];

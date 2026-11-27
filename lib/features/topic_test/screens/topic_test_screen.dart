@@ -12,6 +12,7 @@ import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/widgets/accuracy_percentage_text.dart';
 import '../../../shared/widgets/contact_us_entry.dart';
+import '../../../shared/widgets/natural_height_card_grid.dart';
 import '../../subject_detail/widgets/topic_entry_bottom_sheet.dart';
 import '../providers/topic_test_ui_providers.dart';
 import '../../../l10n/l10n.dart';
@@ -222,7 +223,7 @@ class TopicTestScreen extends HookConsumerWidget {
                         }
 
                         if (isWide) {
-                          return GridView.builder(
+                          return NaturalHeightCardGrid(
                             physics: const BouncingScrollPhysics(),
                             padding: const EdgeInsets.fromLTRB(
                               AppSpacing.lg,
@@ -230,13 +231,6 @@ class TopicTestScreen extends HookConsumerWidget {
                               AppSpacing.lg,
                               AppSpacing.xxl,
                             ),
-                            gridDelegate:
-                                const SliverGridDelegateWithFixedCrossAxisCount(
-                                  crossAxisCount: 2,
-                                  crossAxisSpacing: AppSpacing.sm,
-                                  mainAxisSpacing: AppSpacing.sm,
-                                  childAspectRatio: 2.8,
-                                ),
                             itemCount: topics.length,
                             itemBuilder: (context, i) => buildRow(topics[i]),
                           );
