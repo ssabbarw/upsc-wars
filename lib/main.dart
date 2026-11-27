@@ -16,6 +16,7 @@ import 'core/debug/upsc_wars_trace.dart';
 import 'core/crashlytics/crashlytics_provider_observer.dart';
 import 'core/crashlytics/firebase_crashlytics_bootstrap.dart';
 import 'core/constants/prelims_debug_flags.dart';
+import 'core/responsive/orientation_policy.dart';
 import 'core/services/anonymous_auth_service.dart';
 import 'core/services/firebase_in_app_messaging_service.dart';
 import 'core/services/battle_messaging_service.dart';
@@ -50,7 +51,7 @@ Future<void> main() async {
     return false;
   };
 
-  await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+  await OrientationPolicy.applyForInitialView();
   if (!kIsWeb && defaultTargetPlatform == TargetPlatform.android) {
     // Matches enableEdgeToEdge() in MainActivity so insets are applied on
     // Android 14 and below, where the system does not force edge-to-edge.

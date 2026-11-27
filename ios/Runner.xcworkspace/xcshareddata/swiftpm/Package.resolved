@@ -1,5 +1,4 @@
 {
-  "originHash" : "db771fbd19155a1495c884556a4797c7a44aa186a58eae8afc3034b5e4cf6d94",
   "pins" : [
     {
       "identity" : "abseil-cpp-binary",
@@ -59,8 +58,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/google/GoogleAppMeasurement.git",
       "state" : {
-        "revision" : "8fe40b69bd53241847814422101188465f7ff728",
-        "version" : "12.19.0"
+        "revision" : "b8455dd2ff55cc269fda7a4f9eac6c1e3588c53f",
+        "version" : "12.19.2"
       }
     },
     {
@@ -149,8 +148,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/PostHog/posthog-ios",
       "state" : {
-        "revision" : "82f4bff50904c5d67a1e1d41b69928231b48c836",
-        "version" : "3.92.1"
+        "revision" : "a4deb7222130189d7cab89682fd3475ee0ed6e2d",
+        "version" : "3.98.2"
       }
     },
     {
@@ -185,10 +184,10 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/TimOliver/TOCropViewController.git",
       "state" : {
-        "revision" : "9782ecf30b5d16dfc95c89c939180adf457a2e82",
-        "version" : "3.2.0"
+        "revision" : "ed49bd95ed34debf02968fe1ec0d9bdb3577ba93",
+        "version" : "3.3.0"
       }
     }
   ],
-  "version" : 3
+  "version" : 2
 }

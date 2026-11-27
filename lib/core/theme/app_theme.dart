@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../responsive/side_inset_page_transitions.dart';
 import 'app_colors.dart';
 import 'app_radius.dart';
 import 'app_spacing.dart';
@@ -30,6 +31,7 @@ class AppTheme {
         onError: AppColors.onPrimary,
       ),
       scaffoldBackgroundColor: AppColors.surfaceTertiaryLight,
+      pageTransitionsTheme: SideInsetPageTransitionsBuilder.theme(),
       textTheme: GoogleFonts.dmSansTextTheme(base).apply(
         bodyColor: AppColors.onSurfaceLight,
         displayColor: AppColors.onSurfaceLight,
@@ -204,6 +206,7 @@ class AppTheme {
         onError: AppColors.onPrimary,
       ),
       scaffoldBackgroundColor: AppColors.surfaceTertiaryDark,
+      pageTransitionsTheme: SideInsetPageTransitionsBuilder.theme(),
       textTheme: GoogleFonts.dmSansTextTheme(base).apply(
         bodyColor: AppColors.onSurfaceDark,
         displayColor: AppColors.onSurfaceDark,
