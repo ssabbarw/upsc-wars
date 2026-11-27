@@ -15,6 +15,7 @@ import '../analytics/screen_dwell_route_observer.dart';
 import '../analytics/screen_flow_analytics.dart';
 import '../debug/upsc_wars_trace.dart';
 import '../config/feature_flags.dart';
+import '../responsive/side_inset_page_transitions.dart';
 import '../theme/app_colors.dart';
 import '../theme/app_radius.dart';
 import '../theme/app_spacing.dart';
@@ -530,9 +531,11 @@ GoRouter appRouter(Ref ref) {
         builder: (context, state) => const OnboardingFlowScreen(),
       ),
       StatefulShellRoute.indexedStack(
-        builder: (context, state, navigationShell) {
-          return _AppShell(navigationShell: navigationShell);
-        },
+        pageBuilder: (context, state, navigationShell) => MaterialPage<void>(
+          key: state.pageKey,
+          name: appShellPageName,
+          child: _AppShell(navigationShell: navigationShell),
+        ),
         branches: shellBranches,
       ),
       GoRoute(
@@ -1708,9 +1711,85 @@ class _AppShell extends HookConsumerWidget {
       const [],
     );
 
-    final screenWidth = MediaQuery.sizeOf(context).width;
-    final isTablet = screenWidth >= AppBreakpoints.tablet;
-    final isLargeTablet = screenWidth >= AppBreakpoints.largeTablet;
+    final size = MediaQuery.sizeOf(context);
+    final viewPadding = MediaQuery.viewPaddingOf(context);
+    final sideInset = viewPadding.right >= viewPadding.left
+        ? viewPadding.right
+        : viewPadding.left;
+    // iPhone Duo puts status/tab chrome in a vertical trailing column. Detect
+    // that pose from the large side safe-area inset.
+    final hasDuoSideChrome = sideInset >= 40;
+    final railOnEnd = viewPadding.right >= viewPadding.left;
+
+    // Duo inner portrait is ~669pt wide; keep bottom tabs there (Apple HIG).
+    // Real iPads start around 744pt shortest side.
+    final tabletThreshold = defaultTargetPlatform == TargetPlatform.iOS
+        ? 700.0
+        : AppBreakpoints.tablet;
+    final isTablet =
+        !hasDuoSideChrome && size.shortestSide >= tabletThreshold;
+    final isLargeTablet = size.width >= AppBreakpoints.largeTablet;
+
+    if (hasDuoSideChrome) {
+      final duoRail = Material(
+        color: scheme.surface,
+        child: SizedBox(
+          width: sideInset,
+          child: Column(
+            children: [
+              const Spacer(),
+              for (var i = 0; i < navItems.length; i++)
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 4),
+                  child: IconButton(
+                    onPressed: () => handleTab(i),
+                    tooltip: navItems[i].label,
+                    style: IconButton.styleFrom(
+                      foregroundColor: i == currentNavIndex
+                          ? AppColors.primary
+                          : scheme.onSurfaceVariant,
+                      backgroundColor: i == currentNavIndex
+                          ? AppColors.primary.withValues(alpha: 0.12)
+                          : null,
+                      minimumSize: const Size(44, 44),
+                    ),
+                    icon: IconTheme(
+                      data: const IconThemeData(size: 22),
+                      child: i == currentNavIndex
+                          ? navItems[i].activeIcon
+                          : navItems[i].icon,
+                    ),
+                  ),
+                ),
+              SizedBox(height: viewPadding.bottom > 0 ? viewPadding.bottom : 12),
+            ],
+          ),
+        ),
+      );
+
+      final body = MediaQuery.removePadding(
+        context: context,
+        removeLeft: !railOnEnd,
+        removeRight: railOnEnd,
+        child: navigationShell,
+      );
+
+      return Scaffold(
+        body: Row(
+          children: railOnEnd
+              ? [
+                  Expanded(child: body),
+                  Container(width: 0.5, color: borderColor),
+                  duoRail,
+                ]
+              : [
+                  duoRail,
+                  Container(width: 0.5, color: borderColor),
+                  Expanded(child: body),
+                ],
+        ),
+      ).wrappedWithShellBackListener(onShellBack);
+    }
 
     if (isTablet) {
       final railIconSize = isLargeTablet ? 30.0 : 26.0;
@@ -1777,26 +1856,64 @@ class _AppShell extends HookConsumerWidget {
       ).wrappedWithShellBackListener(onShellBack);
     }
 
+    // iOS: no bottom inset (home indicator is a thin line). Android: keep the
+    // full inset so tabs stay clear of 3-button system navigation.
+    final padBottomForSystemNav = defaultTargetPlatform != TargetPlatform.iOS;
+
     return Scaffold(
       body: navigationShell,
-      bottomNavigationBar: SafeArea(
-        top: false,
+      bottomNavigationBar: Material(
+        color: scheme.surface,
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             Container(height: 0.5, color: borderColor),
-            BottomNavigationBar(
-              currentIndex: currentNavIndex,
-              onTap: handleTab,
-              type: BottomNavigationBarType.fixed,
-              elevation: 0,
-              backgroundColor: scheme.surface,
-              selectedItemColor: AppColors.primary,
-              unselectedItemColor: scheme.onSurfaceVariant,
-              selectedLabelStyle: AppTextStyles.navLabel(),
-              unselectedLabelStyle: AppTextStyles.navLabel(),
-              showUnselectedLabels: true,
-              items: navItems,
+            SafeArea(
+              top: false,
+              bottom: padBottomForSystemNav,
+              child: Padding(
+                padding: const EdgeInsets.only(top: 6, bottom: 4),
+                child: Row(
+                  children: [
+                    for (var i = 0; i < navItems.length; i++)
+                      Expanded(
+                        child: InkWell(
+                          onTap: () => handleTab(i),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              IconTheme(
+                                data: IconThemeData(
+                                  color: i == currentNavIndex
+                                      ? AppColors.primary
+                                      : scheme.onSurfaceVariant,
+                                  size: 22,
+                                ),
+                                child: i == currentNavIndex
+                                    ? navItems[i].activeIcon
+                                    : navItems[i].icon,
+                              ),
+                              const SizedBox(height: 2),
+                              Text(
+                                navItems[i].label ?? '',
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                                style: AppTextStyles.navLabel().copyWith(
+                                  color: i == currentNavIndex
+                                      ? AppColors.primary
+                                      : scheme.onSurfaceVariant,
+                                  fontWeight: i == currentNavIndex
+                                      ? FontWeight.w600
+                                      : FontWeight.w500,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                  ],
+                ),
+              ),
             ),
           ],
         ),

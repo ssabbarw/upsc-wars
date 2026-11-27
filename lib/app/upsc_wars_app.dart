@@ -47,6 +47,8 @@ import '../core/router/question_bank_loading_screen.dart';
 import '../core/services/prelims_surfaces_refresh.dart';
 import '../core/theme/app_colors.dart';
 import '../core/theme/app_theme.dart';
+import '../core/responsive/duo_top_inset.dart';
+import '../core/responsive/orientation_policy.dart';
 import '../core/theme/reading_font_scale.dart';
 import '../features/battle/widgets/battle_chat_fab.dart';
 import '../features/battle/widgets/battle_spectate_overlay.dart';
@@ -366,17 +368,21 @@ class _RootMaterialApp extends HookConsumerWidget {
           );
         }
         // Layout is built for AppTextStyles. Ignore the platform text size.
-        return MediaQuery.withNoTextScaling(
-          child: ReadingFontScaleHost(
-            child: Stack(
-              fit: StackFit.expand,
-              children: [
-                child ?? const SizedBox.shrink(),
-                const BattleSpectateFabHost(),
-                const BattleChatFabHost(),
-                if (languageSwitchBusy)
-                  const Positioned.fill(child: _LanguageSwitchOverlay()),
-              ],
+        return OrientationPolicyHost(
+          child: DuoTopInset(
+            child: MediaQuery.withNoTextScaling(
+              child: ReadingFontScaleHost(
+                child: Stack(
+                  fit: StackFit.expand,
+                  children: [
+                    child ?? const SizedBox.shrink(),
+                    const BattleSpectateFabHost(),
+                    const BattleChatFabHost(),
+                    if (languageSwitchBusy)
+                      const Positioned.fill(child: _LanguageSwitchOverlay()),
+                  ],
+                ),
+              ),
             ),
           ),
         );

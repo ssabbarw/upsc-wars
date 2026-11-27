@@ -928,9 +928,18 @@ class _PyqYearCard extends StatelessWidget {
 /// a couple of pixels short of that stack on a narrow phone. Grow the cell
 /// only when 2.35 would clip.
 @visibleForTesting
+int subjectGridColumns(double gridWidth) {
+  if (gridWidth >= 900) return 4;
+  if (gridWidth >= 560) return 3;
+  return 2;
+}
+
 double subjectCardAspectRatio(double gridWidth, TextScaler textScaler) {
   const preferred = 2.35;
-  final cardWidth = (gridWidth - AppSpacing.sm) / 2;
+  // Wide grids would otherwise make tall, mostly empty cards.
+  const maxHeight = 84.0;
+  final columns = subjectGridColumns(gridWidth);
+  final cardWidth = (gridWidth - AppSpacing.sm * (columns - 1)) / columns;
   if (cardWidth <= 0) return preferred;
 
   const lineHeight = 1.25;
@@ -940,7 +949,8 @@ double subjectCardAspectRatio(double gridWidth, TextScaler textScaler) {
   final content = textBlock > iconExtent ? textBlock : iconExtent;
   final minHeight = content + AppSpacing.md * 2 + 4;
   final preferredHeight = cardWidth / preferred;
-  final height = preferredHeight > minHeight ? preferredHeight : minHeight;
+  var height = preferredHeight > minHeight ? preferredHeight : minHeight;
+  if (height > maxHeight && minHeight <= maxHeight) height = maxHeight;
   return cardWidth / height;
 }
 
@@ -978,7 +988,7 @@ class _SubjectList extends ConsumerWidget {
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
+                  crossAxisCount: subjectGridColumns(constraints.maxWidth),
                   mainAxisSpacing: AppSpacing.sm,
                   crossAxisSpacing: AppSpacing.sm,
                   childAspectRatio: subjectCardAspectRatio(
@@ -1138,7 +1148,7 @@ class _SubjectListSkeleton extends HookWidget {
           builder: (context, constraints) => GridView.count(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
-            crossAxisCount: 2,
+            crossAxisCount: subjectGridColumns(constraints.maxWidth),
             mainAxisSpacing: AppSpacing.sm,
             crossAxisSpacing: AppSpacing.sm,
             childAspectRatio: subjectCardAspectRatio(

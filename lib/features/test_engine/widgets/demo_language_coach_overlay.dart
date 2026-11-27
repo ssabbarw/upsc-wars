@@ -35,6 +35,13 @@ class _DemoLanguageCoachOverlayState extends State<DemoLanguageCoachOverlay>
     );
     _fade = CurvedAnimation(parent: _anim, curve: Curves.easeOut);
     _anim.forward();
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    // The target lays out after this build (first show, rotation); measure it
+    // on the next frame.
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (mounted) setState(() {});
     });
